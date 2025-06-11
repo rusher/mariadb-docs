@@ -60,13 +60,13 @@ Alphabetical list of all [mariadbd Options](../server-management/starting-and-st
 | [auto\_increment\_increment](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) |
 | [auto\_increment\_offset](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md)|
 | [automatic\_sp\_privileges](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#automatic_sp_privileges)|
-| [aws\_key\_management\_key\_spec](../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/aws-key-management-encryption-plugin.md#aws_key_management_key_spec)|
-| [aws\_key\_management\_log\_level](../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/aws-key-management-encryption-plugin.md#aws_key_management_log_level)|
-| [aws\_key\_management\_master\_key\_id](../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/aws-key-management-encryption-plugin.md#aws_key_management_master_key_id) |
-| [aws\_key\_management\_mock](../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/aws-key-management-encryption-plugin.md#aws_key_management_mock) |
-| [aws\_key\_management\_region](../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/aws-key-management-encryption-plugin.md#aws_key_management_region) |
-| [aws\_key\_management\_request\_timeout](../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/aws-key-management-encryption-plugin.md#aws_key_management_request_timeout)|
-| [aws\_key\_management\_rotate\_key](../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/aws-key-management-encryption-plugin.md#aws_key_management_rotate_key)|
+| [aws\_key\_management\_key\_spec](../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/aws-key-management-encryption-plugin.md#aws_key_management_key_spec)|
+| [aws\_key\_management\_log\_level](../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/aws-key-management-encryption-plugin.md#aws_key_management_log_level)|
+| [aws\_key\_management\_master\_key\_id](../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/aws-key-management-encryption-plugin.md#aws_key_management_master_key_id) |
+| [aws\_key\_management\_mock](../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/aws-key-management-encryption-plugin.md#aws_key_management_mock) |
+| [aws\_key\_management\_region](../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/aws-key-management-encryption-plugin.md#aws_key_management_region) |
+| [aws\_key\_management\_request\_timeout](../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/aws-key-management-encryption-plugin.md#aws_key_management_request_timeout)|
+| [aws\_key\_management\_rotate\_key](../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/aws-key-management-encryption-plugin.md#aws_key_management_rotate_key)|
 | [back\_log](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#back_log) |
 | -b, [basedir](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#basedir)|
 | [big\_tables](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#big_tables) |
@@ -454,9 +454,9 @@ Alphabetical list of all [mariadbd Options](../server-management/starting-and-st
 | [feedback\_server\_uid](plugins/other-plugins/feedback-plugin.md#feedback_server_uid)|
 | [feedback\_url](plugins/other-plugins/feedback-plugin.md#feedback_url) |
 | [feedback\_user\_info](plugins/other-plugins/feedback-plugin.md#feedback_user_info)|
-| [file\_key\_management\_encryption\_algorithm](../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/file-key-management-encryption-plugin.md#file_key_management_encryption_algorithm) |
-| [file\_key\_management\_filekey](../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/file-key-management-encryption-plugin.md#file_key_management_filekey)|
-| [file\_key\_management\_filename](../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/file-key-management-encryption-plugin.md#file_key_management_filename)|
+| [file\_key\_management\_encryption\_algorithm](../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/file-key-management-encryption-plugin.md#file_key_management_encryption_algorithm) |
+| [file\_key\_management\_filekey](../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/file-key-management-encryption-plugin.md#file_key_management_filekey)|
+| [file\_key\_management\_filename](../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/file-key-management-encryption-plugin.md#file_key_management_filename)|
 | --[flashback](../server-management/starting-and-stopping-mariadb/mariadbd-options.md)|
 | [flush](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#flush)|
 | [Flush\_commands](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#flush_commands) |
@@ -529,16 +529,16 @@ Alphabetical list of all [mariadbd Options](../server-management/starting-and-st
 | [handlersocket\_timeout](sql-structure/nosql/handlersocket/handlersocket-configuration-options.md#handlersocket_timeout) |
 | [handlersocket\_verbose](sql-structure/nosql/handlersocket/handlersocket-configuration-options.md#handlersocket_verbose) |
 | [handlersocket\_wrlock\_timeout](sql-structure/nosql/handlersocket/handlersocket-configuration-options.md#handlersocket_wrlock_timeout)|
-| [hashicorp-key-management-cache-timeout](../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/hashicorp-key-management-plugin.md#hashicorp-key-management-cache-timeout) |
-| [hashicorp-key-management-cache-version-timeout](../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/hashicorp-key-management-plugin.md#hashicorp-key-management-cache-version-timeout) |
-| [hashicorp-key-management-caching-enabled](../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/hashicorp-key-management-plugin.md#hashicorp-key-management-caching-enabled) |
-| [hashicorp-key-management-check-kv-version](../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/hashicorp-key-management-plugin.md#hashicorp-key-management-check-kv-version) |
-| [hashicorp-key-management-retries](../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/hashicorp-key-management-plugin.md#hashicorp-key-management-retries) |
-| [hashicorp-key-management-timeout](../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/hashicorp-key-management-plugin.md#hashicorp-key-management-timeout) |
-| [hashicorp-key-management-token](../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/hashicorp-key-management-plugin.md#hashicorp-key-management-token) |
-| [hashicorp-key-management-use-cache-on-timeout](../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/hashicorp-key-management-plugin.md#hashicorp-key-management-use-cache-on-timeout) |
-| [hashicorp-key-management-vault-ca](../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/hashicorp-key-management-plugin.md#hashicorp-key-management-vault-ca) |
-| [hashicorp-key-management-vault-url](../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/hashicorp-key-management-plugin.md#hashicorp-key-management-vault-url) |
+| [hashicorp-key-management-cache-timeout](../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/hashicorp-key-management-plugin.md#hashicorp-key-management-cache-timeout) |
+| [hashicorp-key-management-cache-version-timeout](../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/hashicorp-key-management-plugin.md#hashicorp-key-management-cache-version-timeout) |
+| [hashicorp-key-management-caching-enabled](../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/hashicorp-key-management-plugin.md#hashicorp-key-management-caching-enabled) |
+| [hashicorp-key-management-check-kv-version](../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/hashicorp-key-management-plugin.md#hashicorp-key-management-check-kv-version) |
+| [hashicorp-key-management-retries](../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/hashicorp-key-management-plugin.md#hashicorp-key-management-retries) |
+| [hashicorp-key-management-timeout](../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/hashicorp-key-management-plugin.md#hashicorp-key-management-timeout) |
+| [hashicorp-key-management-token](../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/hashicorp-key-management-plugin.md#hashicorp-key-management-token) |
+| [hashicorp-key-management-use-cache-on-timeout](../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/hashicorp-key-management-plugin.md#hashicorp-key-management-use-cache-on-timeout) |
+| [hashicorp-key-management-vault-ca](../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/hashicorp-key-management-plugin.md#hashicorp-key-management-vault-ca) |
+| [hashicorp-key-management-vault-url](../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/key-management-and-encryption-plugins/hashicorp-key-management-plugin.md#hashicorp-key-management-vault-url) |
 | [have\_compress](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#have_compress) |
 | [have\_crypt](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#have_crypt) |
 | [have\_csv](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#have_csv) |
@@ -546,12 +546,12 @@ Alphabetical list of all [mariadbd Options](../server-management/starting-and-st
 | [have\_geometry](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#have_geometry) |
 | [have\_innodb](../server-usage/storage-engines/innodb/innodb-system-variables.md#have_innodb)|
 | [have\_ndbcluster](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#have_ndbcluster) |
-| [have\_openssl](../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/ssltls-system-variables.md) |
+| [have\_openssl](../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/ssltls-system-variables.md) |
 | [have\_partitioning](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#have_partitioning) |
 | [have\_profiling](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#have_profiling) |
 | [have\_query\_cache](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#have_query_cache)|
 | [have\_rtree\_keys](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#have_rtree_keys)|
-| [have\_ssl](../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/ssltls-system-variables.md) |
+| [have\_ssl](../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/ssltls-system-variables.md) |
 | [have\_symlink](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#have_symlink) |
 | --[help](../server-management/starting-and-stopping-mariadb/mariadbd-options.md) |
 | [histogram\_size](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#histogram_size) |
@@ -1133,7 +1133,7 @@ Alphabetical list of all [mariadbd Options](../server-management/starting-and-st
 | --[max-sp-recursion-depth](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_sp_recursion_depth), [max\_sp\_recursion\_depth](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_sp_recursion_depth)|
 | --[max-statement-time](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_statement_time), [max\_statement\_time](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_statement_time) |
 | [Max\_statement\_time\_exceeded](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#max_statement_time_exceeded) |
-| [max\_tmp\_session\_space\_usage](../../security/limiting-size-of-created-disk-temporary-files-and-tables/max_tmp_session_space_usage-system-variable.md)|
+| [max\_tmp\_session\_space\_usage](../security/limiting-size-of-created-disk-temporary-files-and-tables/max_tmp_session_space_usage-system-variable.md)|
 | [Max\_tmp\_space\_used](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#max_tmp_space_used) |
 | [max\_tmp\_tables](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_tmp_tables)|
 | [max\_tmp\_total\_space\_usage](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_tmp_total_space_usage)|
@@ -2002,23 +2002,23 @@ Alphabetical list of all [mariadbd Options](../server-management/starting-and-st
 | --[ssl](../server-management/starting-and-stopping-mariadb/mariadbd-options.md)|
 | [Ssl\_accept\_renegotiates](../ha-and-performance/optimization-and-tuning/system-variables/ssltls-status-variables.md)|
 | [Ssl\_accepts](../ha-and-performance/optimization-and-tuning/system-variables/ssltls-status-variables.md) |
-| --[ssl-ca](../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/ssltls-system-variables.md), [ssl\_ca](../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/ssltls-system-variables.md)|
+| --[ssl-ca](../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/ssltls-system-variables.md), [ssl\_ca](../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/ssltls-system-variables.md)|
 | [Ssl\_callback\_cache\_hits](../ha-and-performance/optimization-and-tuning/system-variables/ssltls-status-variables.md) |
-| --[ssl-capath](../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/ssltls-system-variables.md), [ssl\_capath](../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/ssltls-system-variables.md)|
-| --[ssl-cert](../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/ssltls-system-variables.md), [ssl\_cert](../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/ssltls-system-variables.md)|
-| --[ssl-cipher](../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/ssltls-system-variables.md), [ssl\_cipher](../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/ssltls-system-variables.md)|
+| --[ssl-capath](../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/ssltls-system-variables.md), [ssl\_capath](../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/ssltls-system-variables.md)|
+| --[ssl-cert](../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/ssltls-system-variables.md), [ssl\_cert](../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/ssltls-system-variables.md)|
+| --[ssl-cipher](../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/ssltls-system-variables.md), [ssl\_cipher](../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/ssltls-system-variables.md)|
 | [Ssl\_cipher](../ha-and-performance/optimization-and-tuning/system-variables/ssltls-status-variables.md)|
 | [Ssl\_cipher\_list](../ha-and-performance/optimization-and-tuning/system-variables/ssltls-status-variables.md)|
 | [Ssl\_client\_connects](../ha-and-performance/optimization-and-tuning/system-variables/ssltls-status-variables.md)|
 | [Ssl\_connect\_renegotiates](../ha-and-performance/optimization-and-tuning/system-variables/ssltls-status-variables.md) |
-| --[ssl-crl](../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/ssltls-system-variables.md), [ssl\_crl](../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/ssltls-system-variables.md)|
-| --[ssl-crlpath](../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/ssltls-system-variables.md), [ssl\_crlpath](../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/ssltls-system-variables.md)|
+| --[ssl-crl](../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/ssltls-system-variables.md), [ssl\_crl](../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/ssltls-system-variables.md)|
+| --[ssl-crlpath](../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/ssltls-system-variables.md), [ssl\_crlpath](../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/ssltls-system-variables.md)|
 | [Ssl\_ctx\_verify\_depth](../ha-and-performance/optimization-and-tuning/system-variables/ssltls-status-variables.md)|
 | [Ssl\_ctx\_verify\_mode](../ha-and-performance/optimization-and-tuning/system-variables/ssltls-status-variables.md) |
 | [Ssl\_default\_timeout](../ha-and-performance/optimization-and-tuning/system-variables/ssltls-status-variables.md)|
 | [Ssl\_finished\_accepts](../ha-and-performance/optimization-and-tuning/system-variables/ssltls-status-variables.md) |
 | [Ssl\_finished\_connects](../ha-and-performance/optimization-and-tuning/system-variables/ssltls-status-variables.md)|
-| --[ssl-key](../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/ssltls-system-variables.md), [ssl\_key](../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/ssltls-system-variables.md)|
+| --[ssl-key](../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/ssltls-system-variables.md), [ssl\_key](../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/ssltls-system-variables.md)|
 | [Ssl\_server\_not\_after](../ha-and-performance/optimization-and-tuning/system-variables/ssltls-status-variables.md)|
 | [Ssl\_server\_not\_before](../ha-and-performance/optimization-and-tuning/system-variables/ssltls-status-variables.md) |
 | [Ssl\_session\_cache\_hits](../ha-and-performance/optimization-and-tuning/system-variables/ssltls-status-variables.md)|
@@ -2102,7 +2102,7 @@ Alphabetical list of all [mariadbd Options](../server-management/starting-and-st
 | [timestamp](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#timestamp)|
 | [time-format](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#time_format)|
 | [time\_zone](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#time_zone) |
-| [tls\_version](../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/ssltls-system-variables.md#tls_version)|
+| [tls\_version](../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/ssltls-system-variables.md#tls_version)|
 | [tmp\_disk\_table\_size](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#tmp_disk_table_size) |
 | [tmp\_memory\_table\_size](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#tmp_memory_table_size) |
 | [Tmp\_space\_used](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#tmp_space_used)|
@@ -2356,7 +2356,7 @@ Alphabetical list of all [mariadbd Options](../server-management/starting-and-st
 | [version\_compile\_os](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#version_compile_os)|
 | [version\_malloc\_library](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#version_malloc_library)|
 | [version\_source\_revision](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#version_source_revision)|
-| [version\_ssl\_library](../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/ssltls-system-variables.md) |
+| [version\_ssl\_library](../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/ssltls-system-variables.md) |
 | -W, [log\_warnings](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#log_warnings) |
 | [wait\_timeout](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#wait_timeout) |
 | [warning\_count](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#warning_count) |
