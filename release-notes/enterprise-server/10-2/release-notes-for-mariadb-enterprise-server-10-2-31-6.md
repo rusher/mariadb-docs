@@ -1,6 +1,6 @@
 # Release Notes for MariaDB Enterprise Server 10.2.31-6
 
-This sixth release of [MariaDB Enterprise Server 10.2](https://mariadb.com/docs/server/products/mariadb-enterprise-server/) is a maintenance release, including a variety of fixes.
+This sixth release of [MariaDB Enterprise Server 10.2](./) is a maintenance release, including a variety of fixes.
 
 MariaDB Enterprise Server 10.2.31-6 was released on 2020-03-02.
 
