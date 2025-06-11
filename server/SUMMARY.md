@@ -1188,7 +1188,7 @@
   * [Hardware Optimization](ha-and-performance/optimization-and-tuning/hardware-optimization.md)
   * [Connection Redirection Mechanism in the MariaDB Client/Server Protocol](ha-and-performance/connection-redirection-mechanism-in-the-mariadb-clientserver-protocol.md)
 * [Reference](reference/README.md)
-  * [Full List of MariaDB Options, System and Status Variables](reference/full-list-of-mariadb-options-system-and-status-variables.md)
+  * [Options, System & Status Variables](reference/full-list-of-mariadb-options-system-and-status-variables.md)
   * [SQL Structure](reference/sql-structure/README.md)
     * [Joins, Subqueries, and Set](reference/sql-structure/joins-subqueries-set.md)
     * [Geometry](reference/sql-structure/geometry/README.md)
