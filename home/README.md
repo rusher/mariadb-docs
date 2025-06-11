@@ -2,6 +2,17 @@
 description: >-
   Comprehensive documentation, release notes and learning resources for all
   MariaDB products.
+layout:
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: false
+  outline:
+    visible: true
+  pagination:
+    visible: false
 ---
 
 # Official MariaDB Documentation
@@ -12,7 +23,7 @@ New to MariaDB? Start here to set up your environment, connect to your first dat
 
 * [Installation Guides](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/mariadb-quickstart-guides/installing-mariadb-server-guide)
 * [Basic Concepts](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/mariadb-quickstart-guides/mariadb-advanced-usage-guide)
-* [Connecting to MariaDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/mariadb-quickstart-guides/mariadb-connecting-guide-1)
+* [Connecting to MariaDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/connecting/mariadb-connecting-guide-1)
 * [First SQL Queries](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/mariadb-quickstart-guides/mariadb-advanced-sql-guide)
 
 ### Product Documentation
@@ -31,8 +42,8 @@ Dedicated resources for specific MariaDB products and tools.
 
 Stay updated with the latest releases and version-specific changes.
 
-* [MariaDB Enterprise Server](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server)
-* [MariaDB Community Server](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server)
+* [MariaDB Enterprise Server](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes)
+* [MariaDB Community Server](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes)
 * [MariaDB ColumnStore](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/columnstore)
 * [MariaDB Enterprise Operator](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-enterprise-operator)
 * [MariaDB Connectors](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors)
