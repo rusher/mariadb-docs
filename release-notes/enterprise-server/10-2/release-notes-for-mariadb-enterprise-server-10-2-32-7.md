@@ -22,7 +22,7 @@ MariaDB CVEs are assigned a word rating instead of a CVSS base score. See the [M
 
 * [mysql\_upgrade](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/legacy-clients-and-utilities/mysql_upgrade) now displays a warning when upgrading a replica from MySQL Server to MariaDB Enterprise Server if data was present in the `mysql.slave_master_info` and `mysql.slave_relay_log_info` tables. A warning is needed as this information will be ignored. ([MDEV-10047](https://jira.mariadb.org/browse/MDEV-10047))
 * [mysqldump](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/legacy-clients-and-utilities/mysqldump) has a new `--ignore-table-data=<table>` option. When used, the dump will include the table definition for the listed tables, but not the [INSERT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/inserting-loading-data/insert) statements for the data in the table. ([MDEV-22037](https://jira.mariadb.org/browse/MDEV-22037))
-* [mariabackup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup) has a new [--rollback-xa](broken-reference) option. By default, [mariabackup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup) will not commit or rollback uncommitted XA transactions, and when the backup is restored any uncommitted XA transactions must be manually committed using XA [COMMIT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/transactions/commit) or be manually rolled-back using [XA ROLLBACK](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/transactions/rollback). The [--rollback-xa](broken-reference) option can be used to rollback uncommitted XA transactions while performing a [--prepare](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/prepared-statements/prepare-statement) operation, eliminating the need for manual commit or rollback when the backup is restored. ([MDEV-21168](https://jira.mariadb.org/browse/MDEV-21168))
+* [mariabackup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup) has a new [--rollback-xa](broken-reference/) option. By default, [mariabackup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup) will not commit or rollback uncommitted XA transactions, and when the backup is restored any uncommitted XA transactions must be manually committed using XA [COMMIT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/transactions/commit) or be manually rolled-back using [XA ROLLBACK](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/transactions/rollback). The [--rollback-xa](broken-reference/) option can be used to rollback uncommitted XA transactions while performing a [--prepare](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/prepared-statements/prepare-statement) operation, eliminating the need for manual commit or rollback when the backup is restored. ([MDEV-21168](https://jira.mariadb.org/browse/MDEV-21168))
 * [innodb\_encryption\_threads](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#innodb_encryption_threads) is now limited to `255`. ([MDEV-22258](https://jira.mariadb.org/browse/MDEV-22258))
 
 ## Issues Fixed
@@ -33,7 +33,7 @@ MariaDB CVEs are assigned a word rating instead of a CVSS base score. See the [M
 
 ### Can result in a hang or crash
 
-* [MariaDB Enterprise Backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup) ignored the timeout setting [--ftwrl-wait-timeout](broken-reference) when an explicit `LOCK TABLES ... WRITE` was active in another session. As a result, MariaDB Enterprise Server waited for release of the lock even if the timeout was reached. ([MDEV-20230](https://jira.mariadb.org/browse/MDEV-20230))
+* [MariaDB Enterprise Backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup) ignored the timeout setting [--ftwrl-wait-timeout](broken-reference/) when an explicit `LOCK TABLES ... WRITE` was active in another session. As a result, MariaDB Enterprise Server waited for release of the lock even if the timeout was reached. ([MDEV-20230](https://jira.mariadb.org/browse/MDEV-20230))
 * When additional `open_table_caches_instances` have been created, a crash could occur due to exceeding the limit of open file descriptors. ([MDEV-18027](https://jira.mariadb.org/browse/MDEV-18027))
 
 ### Can result in unexpected behavior
@@ -53,12 +53,12 @@ MariaDB CVEs are assigned a word rating instead of a CVSS base score. See the [M
 ## Interface Changes
 
 * [innodb\_encryption\_threads](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#innodb_encryption_threads) system variable maximum value changed from 4294967295 to 255
-* [mariabackup --rollback-xa](broken-reference) command-line option added
+* [mariabackup --rollback-xa](broken-reference/) command-line option added
 * [mysqldump --ignore-table-data](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/backup-restore-and-import-clients/mariadb-dump#options) command-line option added
 
 ## Platforms
 
-In alignment with the [enterprise lifecycle](../../enterprise-server-lifecycle.md), MariaDB Enterprise Server 10.2.32-7 is provided for:
+In alignment with the [enterprise lifecycle](../enterprise-server-lifecycle.md), MariaDB Enterprise Server 10.2.32-7 is provided for:
 
 * Red Hat Enterprise Linux 8
 * Red Hat Enterprise Linux 7

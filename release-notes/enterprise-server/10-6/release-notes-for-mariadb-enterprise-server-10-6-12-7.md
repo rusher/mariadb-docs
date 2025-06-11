@@ -8,7 +8,7 @@ Users of MariaDB Enterprise Server 10.6.12-7 are encouraged to upgrade to 10.6.1
 
 ### Backported Features
 
-MariaDB Enterprise Server enables a predictable development and operations experience through an [enterprise lifecycle](../../enterprise-server-lifecycle.md). These new features have been backported after reaching maturity in MariaDB Community Server.
+MariaDB Enterprise Server enables a predictable development and operations experience through an [enterprise lifecycle](../enterprise-server-lifecycle.md). These new features have been backported after reaching maturity in MariaDB Community Server.
 
 * In previous releases, the number of undo logs was configurable before InnoDB was initialized. With this release, the number of undo logs can also be configured after install.
   * The number of undo logs is configured by the InnoDB system variable `--innodb-undo-tablespaces`.
@@ -108,7 +108,7 @@ FATAL ERROR: ... failed to copy datafile.
 
 ### Platforms
 
-In alignment to the [enterprise lifecycle](../../enterprise-server-lifecycle.md), MariaDB Enterprise Server 10.6.12-7 is provided for:
+In alignment to the [enterprise lifecycle](../enterprise-server-lifecycle.md), MariaDB Enterprise Server 10.6.12-7 is provided for:
 
 * CentOS 7 (x86\_64)
 * Debian 10 (x86\_64, ARM64)

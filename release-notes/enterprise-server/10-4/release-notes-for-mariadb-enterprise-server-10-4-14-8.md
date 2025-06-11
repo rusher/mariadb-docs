@@ -84,7 +84,7 @@ MariaDB Enterprise Server 10.4.14-8 was released on 2020-09-08.
 
 ## Platforms
 
-In alignment to the [enterprise lifecycle](../../enterprise-server-lifecycle.md), MariaDB Enterprise Server 10.4.14-8 is provided for:
+In alignment to the [enterprise lifecycle](../enterprise-server-lifecycle.md), MariaDB Enterprise Server 10.4.14-8 is provided for:
 
 * Red Hat Enterprise Linux 8
 * Red Hat Enterprise Linux 7

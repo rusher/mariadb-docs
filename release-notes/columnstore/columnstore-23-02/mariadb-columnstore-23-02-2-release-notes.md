@@ -26,7 +26,7 @@ Users of earlier MariaDB Enterprise ColumnStore releases are encouraged to upgra
 
 ## Platforms
 
-In alignment with the [enterprise lifecycle](../../enterprise-server-lifecycle.md), MariaDB Enterprise ColumnStore 23.02.3 is provided for:
+In alignment with the [enterprise lifecycle](../../enterprise-server/enterprise-server-lifecycle.md), MariaDB Enterprise ColumnStore 23.02.3 is provided for:
 
 * Debian 11 (x86\_64, ARM64)
 * Red Hat Enterprise Linux 8 (x86\_64, ARM64)

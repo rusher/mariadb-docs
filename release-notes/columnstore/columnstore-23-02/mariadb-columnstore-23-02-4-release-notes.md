@@ -76,7 +76,7 @@ ERROR 1815 (HY000): Internal error: MCS-3009: Unknown column '.TABLE_ALIAS.COLUM
 
 ## Platforms
 
-In alignment with the [enterprise lifecycle](../../enterprise-server-lifecycle.md), MariaDB Enterprise ColumnStore 23.02.4 is provided for:
+In alignment with the [enterprise lifecycle](../../enterprise-server/enterprise-server-lifecycle.md), MariaDB Enterprise ColumnStore 23.02.4 is provided for:
 
 * Debian 11 (x86\_64, ARM64)
 * Red Hat Enterprise Linux 8 (x86\_64, ARM64)
@@ -98,8 +98,6 @@ In alignment with the [enterprise lifecycle](../../enterprise-server-lifecycle.m
 
 * Upgrade Multi-Node MariaDB Enterprise ColumnStore from 6 to 23.10
 * [Major Release Upgrades for MariaDB Enterprise ColumnStore](../)
-
-
 
 Copyright © 2025 MariaDB
 

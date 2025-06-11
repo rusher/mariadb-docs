@@ -28,7 +28,7 @@ MariaDB Enterprise Server 10.2.26-2 was released on 2019-08-19.
 ## Issues Fixed
 
 * [SERVER\_AUDIT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/mariadb-audit-plugin/mariadb-audit-plugin-options-and-system-variables#server_audit) does not work with PS protocol
-* Removed [--rsync](broken-reference) legacy option from enterprise build of MariaDB Backup
+* Removed [--rsync](broken-reference/) legacy option from enterprise build of MariaDB Backup
 * Changes to `mysql_install_db` script text
 * `DROP TABLE IF EXISTS` killed on master but was replicated ([MDEV-20348](https://jira.mariadb.org/browse/MDEV-20348))
 * Post-merge fixes for `rocksdb.group_min_max` test ([MDEV-20113](https://jira.mariadb.org/browse/MDEV-20113))
@@ -47,11 +47,11 @@ MariaDB Enterprise Server 10.2.26-2 was released on 2019-08-19.
 * `mysql_upgrade_service` throws exception upgrading from 10.0 to 10.3 ([MDEV-19427](https://jira.mariadb.org/browse/MDEV-19427))
 * Loading the [audit](https://mariadb.com/kb/en/audit) plugin causes performance regression ([MDEV-18661](https://jira.mariadb.org/browse/MDEV-18661))
 * [REPLACE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/changing-deleting-data/replace) on table with virtual\_field can cause crash ([MDEV-19771](https://jira.mariadb.org/browse/MDEV-19771))
-* Fix [Aria ER\_CRASHED\_ON\_USAGE](broken-reference) and Assertion ([MDEV-19595](https://jira.mariadb.org/browse/MDEV-19595))
+* Fix [Aria ER\_CRASHED\_ON\_USAGE](broken-reference/) and Assertion ([MDEV-19595](https://jira.mariadb.org/browse/MDEV-19595))
 
 ## Interface Changes
 
-* [mariabackup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup) [--rsync option](broken-reference) removed
+* [mariabackup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup) [--rsync option](broken-reference/) removed
 * [mysqld --innodb-encrypt-temporary-tables](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables#innodb_encrypt_temporary_tables) option added
 * [mysqld --rocksdb-cache-dump](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/myrocks/myrocks-system-variables#rocksdb_cache_dump) option added
 * [mysqld --rocksdb-cache-high-pri-pool-ratio](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/myrocks/myrocks-system-variables#rocksdb_cache_high_pri_pool_ratio) option added
@@ -77,7 +77,7 @@ MariaDB Enterprise Server 10.2.26-2 was released on 2019-08-19.
 
 ## Platforms
 
-In alignment with the [enterprise lifecycle](../../enterprise-server-lifecycle.md), MariaDB Enterprise Server 10.2.26-2 is provided for:
+In alignment with the [enterprise lifecycle](../enterprise-server-lifecycle.md), MariaDB Enterprise Server 10.2.26-2 is provided for:
 
 * CentOS 7
 * CentOS 6

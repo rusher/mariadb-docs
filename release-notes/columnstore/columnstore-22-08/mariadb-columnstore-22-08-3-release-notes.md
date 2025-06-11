@@ -20,7 +20,7 @@ Users of MariaDB Enterprise ColumnStore 22.08.1 or 22.08.2 are encouraged to upg
 
 ## Platforms
 
-In alignment with the [enterprise lifecycle](../../enterprise-server-lifecycle.md), MariaDB Enterprise ColumnStore 22.08.3 is provided for:
+In alignment with the [enterprise lifecycle](../../enterprise-server/enterprise-server-lifecycle.md), MariaDB Enterprise ColumnStore 22.08.3 is provided for:
 
 * CentOS 7 (x86\_64)
 * Debian 10 (x86\_64, ARM64)

@@ -58,7 +58,7 @@ what(): remote_endpoint: Transport endpoint is not connected
 ```
 
 * When a generated column is added to an InnoDB table with the `INSTANT` algorithm, the server can crash due to a buffer overflow. ([MDEV-26420](https://jira.mariadb.org/browse/MDEV-26420))
-* When [CREATE VIEW](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/views/create-view) is executed with a view definition that contains an unknown column in an ON condition, the server can crash instead of raising an error with the [ER\_BAD\_FIELD\_ERROR](broken-reference) error code. ([MDEV-29088](https://jira.mariadb.org/browse/MDEV-29088))
+* When [CREATE VIEW](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/views/create-view) is executed with a view definition that contains an unknown column in an ON condition, the server can crash instead of raising an error with the [ER\_BAD\_FIELD\_ERROR](broken-reference/) error code. ([MDEV-29088](https://jira.mariadb.org/browse/MDEV-29088))
 
 ### Can result in unexpected behavior
 
@@ -79,7 +79,7 @@ Last_SQL_Error	The incident LOST_EVENTS occurred on the master. Message: error w
 * When a replica server replicates an incident event, the details about the failure are not in the primary server's error log, the replica server's error log, or the output of [SHOW REPLICA STATUS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-replica-status). ([MDEV-21087](https://jira.mariadb.org/browse/MDEV-21087))
 * When a backup is performed with [mariadb-backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup), the backup includes binary logs. ([MDEV-28758](https://jira.mariadb.org/browse/MDEV-28758))
 * When a table is created from a [SELECT statement](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/selecting-data/select) that uses a recursive CTE, the table can use unexpected data types and contain truncated data if the calculated values from the recursive part of the CTE do not fit in the column types that are taken from the non-recursive part of the CTE. ([MDEV-12325](https://jira.mariadb.org/browse/MDEV-12325))
-  * Starting with this release, the CTE calculation is aborted when the calculated values do not fit in the column types. When this occurs, a warning or error (depending on [sql\_mode](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/sql-mode) is raised with the [ER\_WARN\_DATA\_OUT\_OF\_RANGE](broken-reference) error code and the following error message:
+  * Starting with this release, the CTE calculation is aborted when the calculated values do not fit in the column types. When this occurs, a warning or error (depending on [sql\_mode](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/sql-mode) is raised with the [ER\_WARN\_DATA\_OUT\_OF\_RANGE](broken-reference/) error code and the following error message:
 
 ```
 Out of range value for column 'COLUMN_NAME' at row ROW_NUM
@@ -98,8 +98,8 @@ ERROR 1845 (0A000): ALGORITHM=NOCOPY is not supported for this operation. Try AL
 
 ## Interface Changes
 
-* `mariabackup` [--sst-max-binlogs](broken-reference) command-line option removed
-* `mysql` [--enable-cleartext-plugin](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/full-list-of-mariadb-options-system-and-status-variables) command-line option added
+* `mariabackup` [--sst-max-binlogs](broken-reference/) command-line option removed
+* `mysql` [--enable-cleartext-plugin](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/full-list-of-mariadb-options-system-and-status-variables) command-line option added
 * `mysqld` [--spider-direct-aggregate](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/spider-status-variables) command-line option added
 * `mysqldump` [--max-statement-time](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/backup-restore-and-import-clients/mariadb-dump#options) command-line option added
 * [spider\_direct\_aggregate](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/spider-status-variables) system variable added

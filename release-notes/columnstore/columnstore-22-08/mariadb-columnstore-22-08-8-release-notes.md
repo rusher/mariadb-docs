@@ -149,7 +149,7 @@ ANALYZE SELECT * FROM t1 WHERE c1 = 1;
 
 ## Platforms
 
-In alignment with the [enterprise lifecycle](../../enterprise-server-lifecycle.md), MariaDB Enterprise ColumnStore 22.08.8 is provided for:
+In alignment with the [enterprise lifecycle](../../enterprise-server/enterprise-server-lifecycle.md), MariaDB Enterprise ColumnStore 22.08.8 is provided for:
 
 * CentOS 7 (x86\_64)
 * Debian 11 (x86\_64, ARM64)

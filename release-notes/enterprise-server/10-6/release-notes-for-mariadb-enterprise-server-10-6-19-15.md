@@ -267,7 +267,7 @@ id FOR ORDINALITY )) AS jt;
 
     **Platforms**
 
-    In alignment to the [enterprise lifecycle](../../enterprise-server-lifecycle.md), MariaDB Enterprise Server 10.6.19-15 is provided for:
+    In alignment to the [enterprise lifecycle](../enterprise-server-lifecycle.md), MariaDB Enterprise Server 10.6.19-15 is provided for:
 
     * AlmaLinux 8 (x86\_64, ARM64)
     * AlmaLinux 9 (x86\_64, ARM64)

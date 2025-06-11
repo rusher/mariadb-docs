@@ -130,7 +130,7 @@ Interface Changes
 
 ## Platforms
 
-In alignment to the [enterprise lifecycle](../../enterprise-server-lifecycle.md), MariaDB Enterprise Server 10.3.29-12 is provided for:
+In alignment to the [enterprise lifecycle](../enterprise-server-lifecycle.md), MariaDB Enterprise Server 10.3.29-12 is provided for:
 
 * CentOS 7
 * CentOS 8

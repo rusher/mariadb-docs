@@ -58,12 +58,12 @@ MariaDB Enterprise Server 10.2.33-8 was released on 2020-09-08.
 
 ## Interface Changes
 
-* [ER\_TRANSACTIONAL\_ARIA\_LOG\_ENGINE](broken-reference) error code added
+* [ER\_TRANSACTIONAL\_ARIA\_LOG\_ENGINE](broken-reference/) error code added
 * [max\_sort\_length](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#max_sort_length) system variable minimum value changed from 4 to 8
 
 ## Platforms
 
-In alignment with the [enterprise lifecycle](../../enterprise-server-lifecycle.md), MariaDB Enterprise Server 10.2.33-8 is provided for:
+In alignment with the [enterprise lifecycle](../enterprise-server-lifecycle.md), MariaDB Enterprise Server 10.2.33-8 is provided for:
 
 * Red Hat Enterprise Linux 8
 * Red Hat Enterprise Linux 7

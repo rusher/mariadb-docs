@@ -86,7 +86,7 @@ MariaDB CVEs are assigned a word rating instead of a CVSS base score. See the [M
 * [events\_waits\_summary\_by\_account\_by\_event\_name](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_waits_summary_by_account_by_event_name-table) performance schema table schema changed
 * [events\_waits\_summary\_by\_user\_by\_event\_name](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-events_waits_summary_by_user_by_event_name-table) performance schema table schema changed
 * [group\_concat\_max\_len](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#group_concat_max_len) system variable maximum value changed from `18446744073709551615` to `4294967295`
-* [mariadb-backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup) [--log-innodb-page-corruption](broken-reference) command-line option added
+* [mariadb-backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup) [--log-innodb-page-corruption](broken-reference/) command-line option added
 * [mariadb\_es\_repo\_setup --include-unsupported](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/mariadb-package-repository-setup-and-usage) command-line option added
 * [mariadb\_es\_repo\_setup --skip-check-installed](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/mariadb-package-repository-setup-and-usage#options) command-line option added
 * [mariadb\_es\_repo\_setup --version](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/mariadb-package-repository-setup-and-usage) command-line option added
@@ -99,7 +99,7 @@ MariaDB CVEs are assigned a word rating instead of a CVSS base score. See the [M
 
 ## Platforms
 
-In alignment with the [enterprise lifecycle](../../enterprise-server-lifecycle.md), MariaDB Enterprise Server 10.3.28-11 is provided for:
+In alignment with the [enterprise lifecycle](../enterprise-server-lifecycle.md), MariaDB Enterprise Server 10.3.28-11 is provided for:
 
 * Red Hat Enterprise Linux 7
 * Red Hat Enterprise Linux 8
