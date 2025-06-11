@@ -2,7 +2,7 @@
 
 {% include "../../../.gitbook/includes/for-a-full-list-of-server-v....md" %}
 
-Most are described on this page, but some are described elsewhere:
+Most status variables are described on this page, but some are described elsewhere:
 
 * [Aria Status Variables](../../../reference/storage-engines/aria/aria-status-variables.md)
 * [Galera Status Variables](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-status-variables)
