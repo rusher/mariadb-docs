@@ -60,7 +60,7 @@ MariaDB Enterprise Server 10.4.14-8 was released on 2020-09-08.
 * When giving a parallel optimistic slave a replication stop position with `START SLAVE UNTIL .. file .. pos` stops at an earlier position earlier than defined if the transaction that spans over the given stop position has to roll back due to conflicts. ([MDEV-15152](https://jira.mariadb.org/browse/MDEV-15152))
 * [mariabackup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup) [--prepare](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup#-prepare) does not stop on errors while applying [InnoDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb) redo log. ([MDEV-22354](https://jira.mariadb.org/browse/MDEV-22354))
 * Point in time recovery of binary log fails with syntax error when [sql\_mode=ORACLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/sql-mode). ([MDEV-23108](https://jira.mariadb.org/browse/MDEV-23108))
-* Replication aborts with [ER\_SLAVE\_CONVERSION\_FAILED](broken-reference) upon CREATE .. SELECT when [sql\_mode=ORACLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/sql-mode). ([MDEV-19632](https://jira.mariadb.org/browse/MDEV-19632))
+* Replication aborts with [ER\_SLAVE\_CONVERSION\_FAILED](broken-reference/) upon CREATE .. SELECT when [sql\_mode=ORACLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/sql-mode). ([MDEV-19632](https://jira.mariadb.org/browse/MDEV-19632))
 * Regression in Audit Plugin Performance. (MENT-700)
 * `ROW_FORMAT` mismatch in instant [ALTER TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/alter/alter-table) . An instant `ADD or DROP` column or reorder could create a dummy table object with the wrong `ROW_FORMAT` when [innodb\_default\_row\_format](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables#innodb_default_row_format) was changed between [CREATE TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/create/create-table) and [ALTER TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/alter/alter-table) . ([MDEV-23295](https://jira.mariadb.org/browse/MDEV-23295))
 * Slow [InnoDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb) shutdown on large instances when using Windows OS. ([MDEV-22778](https://jira.mariadb.org/browse/MDEV-22778))
@@ -84,7 +84,7 @@ MariaDB Enterprise Server 10.4.14-8 was released on 2020-09-08.
 
 ## Platforms
 
-In alignment to the [enterprise lifecycle](https://mariadb.com/docs/server/products/mariadb-enterprise-server/lifecycle), MariaDB Enterprise Server 10.4.14-8 is provided for:
+In alignment to the [enterprise lifecycle](../../enterprise-server-lifecycle.md), MariaDB Enterprise Server 10.4.14-8 is provided for:
 
 * Red Hat Enterprise Linux 8
 * Red Hat Enterprise Linux 7
@@ -110,16 +110,16 @@ CentOS 6, Debian 8, and Red Hat Enterprise Linux 6 are no longer supported as pe
 
 ## Installation Instructions
 
-* [MariaDB Enterprise Server 10.4](https://mariadb.com/docs/server/deploy/topologies/single-node/enterprise-server-10-4)
-* [Enterprise Cluster Topology with MariaDB Enterprise Server 10.4](https://mariadb.com/docs/server/deploy/topologies/galera-cluster/enterprise-server-10-4)
-* [Primary/Replica Topology with MariaDB Enterprise Server 10.4](https://mariadb.com/docs/server/deploy/topologies/primary-replica/enterprise-server-10-4)
-* [Enterprise Spider Sharded Topology with MariaDB Enterprise Server 10.4](https://mariadb.com/docs/server/deploy/topologies/spider-sharded/enterprise-server-10-4)
-* [Enterprise Spider Federated Topology with MariaDB Enterprise Server 10.4](https://mariadb.com/docs/server/deploy/topologies/spider-federated/enterprise-server-10-4)
+* [MariaDB Enterprise Server 10.4](./)
+* [Enterprise Cluster Topology with MariaDB Enterprise Server ](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/galera-cluster)[10](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/maxscale-architecture/mariadb-enterprise-spider-topologies/federated-mariadb-enterprise-spider-topology)[.4](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/galera-cluster)
+* [Primary/Replica Topology with MariaDB Enterprise Server ](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/primary-replica)[10](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/maxscale-architecture/mariadb-enterprise-spider-topologies/federated-mariadb-enterprise-spider-topology)[.4](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/galera-cluster)
+* [Enterprise Spider Sharded Topology with MariaDB Enterprise Server ](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/maxscale-architecture/mariadb-enterprise-spider-topologies/sharded-mariadb-enterprise-spider-topology)[10](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/maxscale-architecture/mariadb-enterprise-spider-topologies/federated-mariadb-enterprise-spider-topology)[.4](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/galera-cluster)
+* [Enterprise Spider Federated Topology with MariaDB Enterprise Server ](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/maxscale-architecture/mariadb-enterprise-spider-topologies/federated-mariadb-enterprise-spider-topology)[10](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/maxscale-architecture/mariadb-enterprise-spider-topologies/federated-mariadb-enterprise-spider-topology)[.4](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/galera-cluster)
 
 ## Upgrade Instructions
 
-* [Upgrade to MariaDB Enterprise Server 10.4](https://mariadb.com/docs/server/service-management/upgrades/enterprise-server/release-series-es10-4)
-* [Upgrade from MariaDB Community Server to MariaDB Enterprise Server 10.4](https://mariadb.com/docs/server/service-management/upgrades/enterprise-server/from-community-server-es10-4)
+* [Upgrade to MariaDB Enterprise Server ](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/upgrading/upgrading-from-to-specific-versions/upgrading-from-mariadb-10-5-to-mariadb-10-6)[10](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/maxscale-architecture/mariadb-enterprise-spider-topologies/federated-mariadb-enterprise-spider-topology)[.4](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/galera-cluster)
+* [Upgrade from MariaDB Community Server to MariaDB Enterprise Server ](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/upgrading/upgrading-between-major-mariadb-versions)[10](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/maxscale-architecture/mariadb-enterprise-spider-topologies/federated-mariadb-enterprise-spider-topology)[.4](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/galera-cluster)
 
 Copyright © 2025 MariaDB
 
