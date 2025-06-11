@@ -199,7 +199,7 @@ NOTE: Local Query Feature allows the ability to query data from a single Perform
 Enable Local Query feature? [y,n] (n) >
 ```
 
-[installing-and-configuring-a-multi-server-columnstore-system-11x.md](broken-reference)
+installing-and-configuring-a-multi-server-columnstore-system-11x.md
 
 ### Enable local PM query systemwide
 
