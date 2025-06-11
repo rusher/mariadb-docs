@@ -25,7 +25,7 @@ MariaDB CVEs are assigned a word rating instead of a CVSS base score. See the [M
 * The audit plugin (not MariaDB Enterprise Audit) did not log proxy users. The new plugin version 2.0.3 introduces an event sub-type PROXY\_CONNECT for event type CONNECT ([MDEV-19443](https://jira.mariadb.org/browse/MDEV-19443))
   * On connect, if a proxy user is used, an extra line will be logged:
     1. TIME,HOSTNAME,user,localhost,ID,0,PROXY\_CONNECT,test,plug\_dest@%,0\`\`
-* Better MariaDB GTID support for the [mariabackup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup) [--slave-info](broken-reference) option. ([MDEV-19264](https://jira.mariadb.org/browse/MDEV-19264))
+* Better MariaDB GTID support for the [mariabackup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup) [--slave-info](broken-reference/) option. ([MDEV-19264](https://jira.mariadb.org/browse/MDEV-19264))
 * New global [InnoDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb) variable [innodb\_max\_purge\_lag\_wait](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables#innodb_max_purge_lag_wait) ([MDEV-16952](https://jira.mariadb.org/browse/MDEV-16952))
 * The new parameter [--include-unsupported](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/mariadb-package-repository-setup-and-usage) for the script [mariadb\_es\_repo\_setup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/mariadb-package-repository-setup-and-usage) can be used to enable a repository of unsupported packages in the repository configuration. The repository currently includes the CONNECT Storage Engine. The storage engine can be installed by `yum install MariaDB-connect-engine` or `apt-get install mariadb-plugin-connect-engine` (MENT-1003)
 * Back port of a MariaDB Server 10.5 feature to not acquire [InnoDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb) record locks when covering table locks exist. (MENT-403)
@@ -89,10 +89,10 @@ MariaDB CVEs are assigned a word rating instead of a CVSS base score. See the [M
 * Linux AIO returned `OS error 22` if parameters set to [innodb\_flush\_method](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables#innodb_flush_method) O\_DIRECT and `innodb_use_native_aio=1` (default). ([MDEV-21584](https://jira.mariadb.org/browse/MDEV-21584))
 * `CREATE OR REPLACE TRIGGER` in [Galera cluster](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/galera/README.md) not replicating, if a trigger with the same name already exists. ([MDEV-21578](https://jira.mariadb.org/browse/MDEV-21578))
 * `mysqld_multi` no longer works with different server binaries. ([MDEV-21526](https://jira.mariadb.org/browse/MDEV-21526))
-* Possible error for incremental backup [--prepare](broken-reference) for encrypted tablespaces. ([MDEV-20755](https://jira.mariadb.org/browse/MDEV-20755))
+* Possible error for incremental backup [--prepare](broken-reference/) for encrypted tablespaces. ([MDEV-20755](https://jira.mariadb.org/browse/MDEV-20755))
 * Possible slow server start and stop if full text indexes are used. ([MDEV-18867](https://jira.mariadb.org/browse/MDEV-18867))
 * The parentheses in a `VIEW` can be defined incorrectly for a combination of = and BETWEEN ([MDEV-17408](https://jira.mariadb.org/browse/MDEV-17408))
-* [ER\_BASE64\_DECODE\_ERROR](broken-reference) upon replaying binary log. ([MDEV-16372](https://jira.mariadb.org/browse/MDEV-16372))
+* [ER\_BASE64\_DECODE\_ERROR](broken-reference/) upon replaying binary log. ([MDEV-16372](https://jira.mariadb.org/browse/MDEV-16372))
 * Several IPv6 issues with [MariaDB Enterprise Cluster](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/galera-cluster/README.md) powered by Galera. ([MDEV-21770](https://jira.mariadb.org/browse/MDEV-21770), [MDEV-23576](https://jira.mariadb.org/browse/MDEV-23576), [MDEV-23580](https://jira.mariadb.org/browse/MDEV-23580), [MDEV-23581](https://jira.mariadb.org/browse/MDEV-23581), [MDEV-23574](https://jira.mariadb.org/browse/MDEV-23574))
 * Subquery on `information_schema` fails with error message. (MENT-1016)
 * `AUTO_INCREMENT` does not increment with compound primary key on partitioned table. (MENT-997)
@@ -117,7 +117,7 @@ MariaDB CVEs are assigned a word rating instead of a CVSS base score. See the [M
 
 ## Platforms
 
-In alignment to the [enterprise lifecycle](https://mariadb.com/docs/server/products/mariadb-enterprise-server/lifecycle/), MariaDB Enterprise Server 10.3.27-10 is provided for:
+In alignment to the [enterprise lifecycle](../../enterprise-server-lifecycle.md), MariaDB Enterprise Server 10.3.27-10 is provided for:
 
 * Red Hat Enterprise Linux 7
 * Red Hat Enterprise Linux 8
