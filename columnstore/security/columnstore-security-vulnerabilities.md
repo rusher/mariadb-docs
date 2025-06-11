@@ -1,36 +1,37 @@
+---
+layout:
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: false
+---
 
 # ColumnStore Security Vulnerabilities
 
- 
-1. [About CVEs "About CVEs"](#about-cves)
-1. [CVEs fixed in ColumnStore "CVEs fixed in ColumnStore"](#cves-fixed-in-columnstore)
+1. [About CVEs "About CVEs"](columnstore-security-vulnerabilities.md#about-cves)
+2. [CVEs fixed in ColumnStore "CVEs fixed in ColumnStore"](columnstore-security-vulnerabilities.md#cves-fixed-in-columnstore)
 
-
-
-
-
-This page is about security vulnerabilities that have been fixed for or still affect MariaDB ColumnStore. In addition links are included to fixed security vulnerabilities in MariaDB Server since MariaDB ColumnStore is based on MariaDB Server.
-Sensitive security issues can be sent directly to the persons responsible for MariaDB security: security [AT] mariadb (dot) org.
-
+This page is about security vulnerabilities that have been fixed for or still affect MariaDB ColumnStore. In addition links are included to fixed security vulnerabilities in MariaDB Server since MariaDB ColumnStore is based on MariaDB Server.\
+Sensitive security issues can be sent directly to the persons responsible for MariaDB security: security \[AT] mariadb (dot) org.
 
 ## About CVEs
 
-
-CVE® stands for *"Common Vulnerabilities and Exposures"*. It is
-a publicly available and free to use database of known software
-vulnerabilities maintained at [](https://cve.mitre.org/)
-
+CVE® stands for _"Common Vulnerabilities and Exposures"_. It is\
+a publicly available and free to use database of known software\
+vulnerabilities maintained at
 
 ## CVEs fixed in ColumnStore
 
-
-The appropriate release notes listed [here](/kb/en/columnstore-release-notes/) document CVEs fixed within a given release. Additional information can also be found at [Security Vulnerabilities Fixed in MariaDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/security).
-
+The appropriate release notes listed [here](../../kb/en/columnstore-release-notes/) document CVEs fixed within a given release. Additional information can also be found at [Security Vulnerabilities Fixed in MariaDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/security).
 
 There are no known CVEs on ColumnStore specific infrastructure outside of the MariaDB Server at this time.
 
-
 CC BY-SA / Gnu FDL
-
 
 {% @marketo/form formId="4316" %}
