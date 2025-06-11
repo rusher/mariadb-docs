@@ -1,3 +1,17 @@
+---
+layout:
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: false
+---
+
 # Backup and Restore with Shared Local Storage
 
 ## Overview
@@ -6,7 +20,7 @@ MariaDB Enterprise ColumnStore supports backup and restore. If Enterprise Column
 
 ## Recovery Planning
 
-MariaDB Enterprise ColumnStore supports multiple [storage options](../../column-store-backup-and-restore/mariadb-enterprise-columnstore-storage-architecture/#storage-options).
+MariaDB Enterprise ColumnStore supports multiple [storage options](../../architecture/columnstore-storage-architecture.md#storage-options).
 
 This page discusses how to backup and restore Enterprise ColumnStore when it uses [shared local storage](../../column-store-backup-and-restore/mariadb-enterprise-columnstore-storage-architecture/#shared-local-storage) (such as NFS) for the [DB Root directories](../../column-store-backup-and-restore/mariadb-enterprise-columnstore-storage-architecture/#db-root-directories).
 
