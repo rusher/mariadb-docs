@@ -675,7 +675,7 @@ DBRM Read-Only Mode means that changes cannot be made to the MariaDB ColumnStore
 
 For non-root systems, the user file settings is required to be set as shown in the Preparing Guide. So if you have a Non-Root install where it fails to start and the 'mcsadmin getsystemi' shows that the PrimProc Process is in a failed state. Double check the user file settings on each node.
 
-[preparing-for-columnstore-installation-10x.md](broken-reference)
+preparing-for-columnstore-installation-10x.md
 
 ### Create table error - Error occurred when calling system catalog
 
