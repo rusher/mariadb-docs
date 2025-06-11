@@ -22,7 +22,7 @@ MariaDB Enterprise Server 10.2.29-4 was released on 2019-11-18.
 
 ### Can result in data loss
 
-* [mariabackup --prepare --export ...](https://mariadb.com/kb/en/mariabackup/prepare) could overwrite binary logs if certain conditions were present. ([MDEV-20703](https://jira.mariadb.org/browse/MDEV-20703))\
+* mariabackup --prepare --export ... could overwrite binary logs if certain conditions were present. ([MDEV-20703](https://jira.mariadb.org/browse/MDEV-20703))\
   Conditions which must be present to trigger this bug:
   * [mariabackup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup) is executed on the MariaDB Server host, and
   * Configuration files from the master are used, and
@@ -52,11 +52,11 @@ If unable to upgrade to MariaDB Enterprise Server 10.2.29-4, where this bug is f
 
 ## Interface Changes
 
-* [WARN\_INNODB\_PARTITION\_OPTION\_IGNORED](broken-reference) error code added
+* [WARN\_INNODB\_PARTITION\_OPTION\_IGNORED](broken-reference/) error code added
 
 ## Platforms
 
-In alignment to the [enterprise lifecycle](https://mariadb.com/docs/server/products/mariadb-enterprise-server/lifecycle), MariaDB Enterprise Server 10.2.29-4 is provided for:
+In alignment to the [enterprise lifecycle](../../enterprise-server-lifecycle.md), MariaDB Enterprise Server 10.2.29-4 is provided for:
 
 * CentOS 8
 * CentOS 7
