@@ -1741,7 +1741,7 @@
         * [CREATE DATABASE](reference/sql-statements/data-definition/create/create-database.md)
         * [CREATE EVENT](reference/sql-statements/data-definition/create/create-event.md)
         * [CREATE FUNCTION](reference/sql-statements/data-definition/create/create-function.md)
-        * [CREATE INDEX](reference/sql-statements-and-structure/sql-statements/data-definition/create/create-index.md)
+        * [CREATE INDEX](reference/sql-statements/data-definition/create/create-index.md)
         * [CREATE LOGFILE GROUP](reference/sql-statements/data-definition/create/create-logfile-group.md)
         * [CREATE PACKAGE BODY](reference/sql-statements/data-definition/create/create-package-body.md)
         * [CREATE PACKAGE](reference/sql-statements/data-definition/create/create-package.md)
