@@ -4,8 +4,8 @@ Alphabetical list of all [mariadbd Options](../server-management/starting-and-st
 
 | Name |
 | - |
-| [-a (--ansii)](../server-management/starting-and-stopping-mariadb/mariadbd-options.mda-ansi) |
-| [--abort-slave-event-count](../server-management/starting-and-stopping-mariadb/mariadbd-options.mdabort-slave-event-count) |
+| [-a (--ansii)](../server-management/starting-and-stopping-mariadb/mariadbd-options.md#a-ansi) |
+| [--abort-slave-event-count](../server-management/starting-and-stopping-mariadb/mariadbd-options.md#abort-slave-event-count) |
 | [Aborted\_clients](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#aborted_clients) |
 | [Aborted\_connects](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#aborted_connects) |
 | [Aborted\_connects\_preauth](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#aborted_connects)|
@@ -21,10 +21,10 @@ Alphabetical list of all [mariadbd Options](../server-management/starting-and-st
 | [Acl\_roles](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#acl_roles) |
 | [Acl\_table\_grants](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#acl_table_grants)|
 | [Acl\_users](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#acl_users) |
-| --[allow-suspicious-udfs](../server-management/starting-and-stopping-mariadb/mariadbd-options.mdallow-suspicious-udfs), [allow\_suspicious\_udfs](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#allow_suspicious_udfs)|
+| --[allow-suspicious-udfs](../server-management/starting-and-stopping-mariadb/mariadbd-options.md#allow-suspicious-udfs), [allow\_suspicious\_udfs](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#allow_suspicious_udfs)|
 | [alter\_algorithm](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#alter_algorithm) |
 | [analyze\_sample\_percentage](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#analyze_sample_percentage)|
-| --[ansii](../server-management/starting-and-stopping-mariadb/mariadbd-options.mda-ansi)|
+| --[ansii](../server-management/starting-and-stopping-mariadb/mariadbd-options.md#a-ansi)|
 | [aria\_block\_size](../../reference/storage-engines/aria/aria-system-variables.md) |
 | [aria\_checkpoint\_interval](../../reference/storage-engines/aria/aria-system-variables.md)|
 | [aria\_checkpoint\_log\_activity](../../reference/storage-engines/aria/aria-system-variables.md) |
@@ -83,7 +83,7 @@ Alphabetical list of all [mariadbd Options](../server-management/starting-and-st
 | [Binlog\_commits](../../ha-and-performance/standard-replication/replication-and-binary-log-status-variables.md)|
 | [binlog\_direct\_non\_transactional\_updates](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md)|
 | [Binlog\_disk\_use](../../ha-and-performance/standard-replication/replication-and-binary-log-status-variables.md#binlog_disk_use)|
-| --[binlog-do-db](../server-management/starting-and-stopping-mariadb/mariadbd-options.mdbinlog-do-db), [binlog\_do\_db](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) |
+| --[binlog-do-db](../server-management/starting-and-stopping-mariadb/mariadbd-options.md#binlog-do-db), [binlog\_do\_db](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) |
 | [binlog\_expire\_logs\_seconds](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md)|
 | [binlog\_file\_cache\_size](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md)|
 | [binlog\_format](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) |
@@ -101,7 +101,7 @@ Alphabetical list of all [mariadbd Options](../server-management/starting-and-st
 | [binlog\_legacy\_event\_pos](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#binlog_legacy_event_pos) |
 | [binlog\_optimize\_thread\_scheduling](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) |
 | [binlog\_row\_image](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) |
-| --[binlog-row-event-max-size](../server-management/starting-and-stopping-mariadb/mariadbd-options.mdbinlog-row-event-max-size), [binlog\_row\_event\_max\_size](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md)|
+| --[binlog-row-event-max-size](../server-management/starting-and-stopping-mariadb/mariadbd-options.md#binlog-row-event-max-size), [binlog\_row\_event\_max\_size](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md)|
 | [binlog\_row\_metadata](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md)|
 | [Binlog\_snapshot\_file](../../ha-and-performance/standard-replication/replication-and-binary-log-status-variables.md) |
 | [Binlog\_snapshot\_position](../../ha-and-performance/standard-replication/replication-and-binary-log-status-variables.md) |
