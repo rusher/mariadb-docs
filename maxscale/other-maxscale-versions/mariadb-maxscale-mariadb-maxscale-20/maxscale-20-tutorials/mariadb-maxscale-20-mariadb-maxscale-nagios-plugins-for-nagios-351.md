@@ -1,8 +1,4 @@
-# mariadb-maxscale-20-mariadb-maxscale-nagios-plugins-for-nagios-351
-
-## MariaDB MaxScale Nagios plugins, for Nagios 3.5.1
-
-## MariaDB MaxScale Nagios plugins, for Nagios 3.5.1
+# MariaDB MaxScale Nagios plugins, for Nagios 3.5.1
 
 Massimiliano Pinto
 

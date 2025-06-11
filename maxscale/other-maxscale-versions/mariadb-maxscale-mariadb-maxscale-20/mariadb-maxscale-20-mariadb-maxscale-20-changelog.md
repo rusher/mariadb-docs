@@ -1,77 +1,53 @@
-
 # MariaDB MaxScale 2.0 Changelog
 
-# Changelog
-
-
-## MariaDB MaxScale 2.0
-
+### MariaDB MaxScale 2.0
 
 * MariaDB MaxScale is licensed under MariaDB BSL.
 * SSL can be used in the communication between MariaDB MaxScale and the backend servers.
 * The number of allowed connections can explicitly be throttled.
 * MariaDB MaxScale can continue serving read request even if the master has gone down.
-* The security of MaxAdmin has been improved; Unix domain sockets can be used in the
- communication with MariaDB MaxScale and the Linux identity can be used for authorization.
-* MariaDB MaxScale can in real time make binlog events available as raw AVRO or
- as JSON objects (beta level functionality).
+* The security of MaxAdmin has been improved; Unix domain sockets can be used in the\
+  communication with MariaDB MaxScale and the Linux identity can be used for authorization.
+* MariaDB MaxScale can in real time make binlog events available as raw AVRO or\
+  as JSON objects (beta level functionality).
 
+For more details, please refer to:[_MariaDB MaxScale 2.0.6 Release Notes_](../mariadb-maxscale-21-06/) [MariaDB MaxScale 2.0.5 Release Notes](maxscale-20-release-notes/mariadb-maxscale-20-mariadb-maxscale-205-release-notes-2017-03-10.md)[_MariaDB MaxScale 2.0.4 Release Notes_](maxscale-20-release-notes/mariadb-maxscale-20-mariadb-maxscale-204-release-notes-2017-02-01.md) [MariaDB MaxScale 2.0.3 Release Notes](maxscale-20-release-notes/mariadb-maxscale-20-mariadb-maxscale-203-release-notes.md)[_MariaDB MaxScale 2.0.2 Release Notes_](maxscale-20-release-notes/mariadb-maxscale-20-mariadb-maxscale-202-release-notes.md) [MariaDB MaxScale 2.0.1 Release Notes](maxscale-20-release-notes/mariadb-maxscale-20-mariadb-maxscale-201-release-notes.md)
 
-For more details, please refer to:
-*[MariaDB MaxScale 2.0.6 Release Notes](../mariadb-maxscale-21-06/README.md)* [MariaDB MaxScale 2.0.5 Release Notes](maxscale-20-release-notes/mariadb-maxscale-20-mariadb-maxscale-205-release-notes-2017-03-10.md)
-*[MariaDB MaxScale 2.0.4 Release Notes](maxscale-20-release-notes/mariadb-maxscale-20-mariadb-maxscale-204-release-notes-2017-02-01.md)* [MariaDB MaxScale 2.0.3 Release Notes](maxscale-20-release-notes/mariadb-maxscale-20-mariadb-maxscale-203-release-notes.md)
-*[MariaDB MaxScale 2.0.2 Release Notes](maxscale-20-release-notes/mariadb-maxscale-20-mariadb-maxscale-202-release-notes.md)* [MariaDB MaxScale 2.0.1 Release Notes](maxscale-20-release-notes/mariadb-maxscale-20-mariadb-maxscale-201-release-notes.md)
 * [MariaDB MaxScale 2.0.0 Release Notes](maxscale-20-release-notes/mariadb-maxscale-20-mariadb-maxscale-200-release-notes.md)
 
+### MariaDB MaxScale 1.4
 
-## MariaDB MaxScale 1.4
-
-
-* Authentication now allows table level resolution of grants. MaxScale service
- users will now need SELECT privileges on `mysql.tables_priv` to be able to
- authenticate users at the database and table level.
+* Authentication now allows table level resolution of grants. MaxScale service\
+  users will now need SELECT privileges on `mysql.tables_priv` to be able to\
+  authenticate users at the database and table level.
 * Firewall filter allows whitelisting.
 * Client side SSL works.
 
+For more details, please refer to[_MariaDB MaxScale 1.4.3 Release Notes_](../mariadb-maxscale-14/maxscale-14-release-notes/mariadb-maxscale-143-release-notes.md) [MariaDB MaxScale 1.4.2 Release Notes](../mariadb-maxscale-14/maxscale-14-release-notes/mariadb-maxscale-142-release-notes.md)[_MariaDB MaxScale 1.4.1 Release Notes_](../mariadb-maxscale-14/maxscale-14-release-notes/mariadb-maxscale-141-release-notes.md) [MariaDB MaxScale 1.4.0 Release Notes](../mariadb-maxscale-14/maxscale-14-release-notes/mariadb-maxscale-140-beta-release-notes.md).
 
-For more details, please refer to
-*[MariaDB MaxScale 1.4.3 Release Notes](../mariadb-maxscale-14/maxscale-14-release-notes/mariadb-maxscale-143-release-notes.md)* [MariaDB MaxScale 1.4.2 Release Notes](../mariadb-maxscale-14/maxscale-14-release-notes/mariadb-maxscale-142-release-notes.md)
-*[MariaDB MaxScale 1.4.1 Release Notes](../mariadb-maxscale-14/maxscale-14-release-notes/mariadb-maxscale-141-release-notes.md)* [MariaDB MaxScale 1.4.0 Release Notes](../mariadb-maxscale-14/maxscale-14-release-notes/mariadb-maxscale-140-beta-release-notes.md).
-
-
-## MariaDB MaxScale 1.3
-
+### MariaDB MaxScale 1.3
 
 * Added support for persistent backend connections
 * The binlog server is now an integral component of MariaDB MaxScale.
 * The logging has been changed; instead of different log files there is one log file and different message priorities.
 
-
 For more details, please refer to [MariaDB MaxScale 1.3 Release Notes](../mariadb-maxscale-14/maxscale-14-release-notes/mariadb-maxscale-13-release-notes.md)
 
-
-## MariaDB MaxScale 1.2
-
+### MariaDB MaxScale 1.2
 
 * Logfiles have been renamed. The log names are now named error.log, messages.log, trace.log and debug.log.
 
-
-## MariaDB MaxScale 1.1.1
-
+### MariaDB MaxScale 1.1.1
 
 * Schemarouter now also allows for an upper limit to session commands.
 * Schemarouter correctly handles SHOW DATABASES responses that span multiple buffers.
 * Readwritesplit and Schemarouter now allow disabling of the session command history.
 
-
-## MariaDB MaxScale 1.1
-
+### MariaDB MaxScale 1.1
 
 **NOTE:** MariaDB MaxScale default installation directory has changed to `/usr/local/mariadb-maxscale` and the default password for MaxAdmin is now ´mariadb´.
 
-
 * New modules added
-
   * Binlog router
   * Firewall filter
   * Multi-Master monitor
@@ -86,11 +62,9 @@ For more details, please refer to [MariaDB MaxScale 1.3 Release Notes](../mariad
 * MariaDB MaxScale now requires libcurl and libcurl development headers.
 * Nagios plugins added.
 * Notification service added.
-* Readconnrouter has a new "running" router_option. This allows it to use any running server as a valid backend server.
+* Readconnrouter has a new "running" router\_option. This allows it to use any running server as a valid backend server.
 * Database names can be stripped of escape characters with the `strip_db_esc` service parameter.
 
-
 CC BY-SA / Gnu FDL
-
 
 {% @marketo/form formId="4316" %}

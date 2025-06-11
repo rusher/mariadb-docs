@@ -1,58 +1,34 @@
-
 # Session Resource
 
-# Session Resource
-
-
-A session is an abstraction of a client connection, any number of related backend
-connections, a router module session and possibly filter module sessions. Each
+A session is an abstraction of a client connection, any number of related backend\
+connections, a router module session and possibly filter module sessions. Each\
 session is created on a service and each service can have multiple sessions.
 
+* [Session Resource](mariadb-maxscale-25-session-resource.md#session-resource)
+  * [Resource Operations](mariadb-maxscale-25-session-resource.md#resource-operations)
+    * [Get a session](mariadb-maxscale-25-session-resource.md#get-a-session)
+      * [Response](mariadb-maxscale-25-session-resource.md#response)
+    * [Get all sessions](mariadb-maxscale-25-session-resource.md#get-all-sessions)
+      * [Response](mariadb-maxscale-25-session-resource.md#response_1)
 
+### Resource Operations
 
-
-* [Session Resource](#session-resource)
-
-  * [Resource Operations](#resource-operations)
-
-    * [Get a session](#get-a-session)
-
-      * [Response](#response)
-    * [Get all sessions](#get-all-sessions)
-
-      * [Response](#response_1)
-
-
-
-
-## Resource Operations
-
-
-### Get a session
-
-
+#### Get a session
 
 ```
 GET /v1/sessions/:id
 ```
 
-
-
-Get a single session. *:id* must be a valid session ID. The session ID is the
+Get a single session. _:id_ must be a valid session ID. The session ID is the\
 same that is exposed to the client as the connection ID.
 
-
-This endpoint also supports the `rdns=true` parameter, which instructs MaxScale to
-perform reverse DNS on the client IP address. As this requires communicating with
+This endpoint also supports the `rdns=true` parameter, which instructs MaxScale to\
+perform reverse DNS on the client IP address. As this requires communicating with\
 an external server, the operation may be expensive.
 
-
-#### Response
-
+**Response**
 
 `Status: 200 OK`
-
-
 
 ```
 {
@@ -108,27 +84,17 @@ an external server, the operation may be expensive.
 }
 ```
 
-
-
-### Get all sessions
-
-
+#### Get all sessions
 
 ```
 GET /v1/sessions
 ```
 
-
-
 Get all sessions.
 
-
-#### Response
-
+**Response**
 
 `Status: 200 OK`
-
-
 
 ```
 {
@@ -186,9 +152,6 @@ Get all sessions.
 }
 ```
 
-
-
 CC BY-SA / Gnu FDL
-
 
 {% @marketo/form formId="4316" %}

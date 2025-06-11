@@ -1,8 +1,4 @@
-# mariadb-maxscale-20-data-archiving-with-mqfilter-and-tee-filters
-
-## Data archiving with Mqfilter and Tee filters
-
-## Data archiving with Mqfilter and Tee filters
+# Data archiving with Mqfilter and Tee filters
 
 This tutorial gives a quick look into how you can combine various filters to create\
 systems for archiving data for analysis. The aim of this tutorial is to show\

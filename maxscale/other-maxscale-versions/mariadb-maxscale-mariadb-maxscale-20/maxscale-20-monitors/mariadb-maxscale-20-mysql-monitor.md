@@ -1,4 +1,4 @@
-# mariadb-maxscale-20-mysql-monitor
+# MySQL Monitor
 
 ## MySQL Monitor
 
@@ -114,7 +114,7 @@ Here is an example shell script which sends an email to an admin when a server g
 \#This script assumes that the local mail server is configured properly\
 \#The second argument is the event type\
 event=${$2/._=/}_\
-_server=${$3/._=/}\
+&#xNAN;_&#x73;erver=${$3/._=/}\
 message="A server has gone down at `date`."\
 echo $message|mail -s "The event was $event for server $server." admin@my.org |
 

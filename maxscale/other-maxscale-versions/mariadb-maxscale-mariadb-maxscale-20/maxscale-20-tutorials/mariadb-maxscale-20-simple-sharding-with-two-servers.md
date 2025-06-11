@@ -1,8 +1,4 @@
-# mariadb-maxscale-20-simple-sharding-with-two-servers
-
-## MaxScale 2.0 Simple Sharding with Two Servers
-
-## Simple Sharding with Two Servers
+# MaxScale 2.0 Simple Sharding with Two Servers
 
 ![](../../../.gitbook/assets/mariadb-corporation/MaxScale/2.0.6/Documentation/Tutorials/images/Simple-Sharding.png.png)
 

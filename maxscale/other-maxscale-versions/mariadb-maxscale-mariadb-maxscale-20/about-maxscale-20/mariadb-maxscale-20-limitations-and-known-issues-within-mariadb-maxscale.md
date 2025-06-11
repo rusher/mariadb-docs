@@ -1,8 +1,4 @@
-# mariadb-maxscale-20-limitations-and-known-issues-within-mariadb-maxscale
-
-## Limitations and Known Issues within MariaDB MaxScale
-
-## Limitations and Known Issues within MariaDB MaxScale
+# Limitations and Known Issues within MariaDB MaxScale
 
 The purpose of this documentation is to provide a central location that\
 will document known issues and limitations within the MariaDB MaxScale product and\

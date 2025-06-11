@@ -1,8 +1,4 @@
-# mariadb-maxscale-20-rabbitmq-consumer-client
-
-## RabbitMQ Consumer Client
-
-## RabbitMQ Consumer Client
+# RabbitMQ Consumer Client
 
 ### Overview
 

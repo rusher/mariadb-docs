@@ -1,6 +1,4 @@
-# mariadb-maxscale-20-maxscale-20-change-history
-
-## MaxScale 2.0 Change History
+# MaxScale 2.0 Change History
 
 MariaDB MaxScale
 

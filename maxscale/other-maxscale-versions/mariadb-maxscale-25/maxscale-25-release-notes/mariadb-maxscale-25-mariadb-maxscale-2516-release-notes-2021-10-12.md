@@ -1,34 +1,24 @@
-
 # MariaDB MaxScale 2.5.16 Release Notes -- 2021-10-12
-
-# MariaDB MaxScale 2.5.16 Release Notes -- 2021-10-12
-
 
 Release 2.5.16 is a GA release.
 
-
-This document describes the changes in release 2.5.16, when compared to the
+This document describes the changes in release 2.5.16, when compared to the\
 previous release in the same series.
 
-
-If you are upgrading from an older major version of MaxScale, please read the
-[upgrading document](../maxscale-25-upgrading/mariadb-maxscale-25-upgrading-mariadb-maxscale-from-24-to-25.md) for
+If you are upgrading from an older major version of MaxScale, please read the[upgrading document](../maxscale-25-upgrading/mariadb-maxscale-25-upgrading-mariadb-maxscale-from-24-to-25.md) for\
 this MaxScale version.
 
-
-For any problems you encounter, please consider submitting a bug
+For any problems you encounter, please consider submitting a bug\
 report on [our Jira](https://jira.mariadb.org/projects/MXS).
 
-
-## Bug fixes
-
+### Bug fixes
 
 * [MXS-3805](https://jira.mariadb.org/browse/MXS-3805) Binlogrouter error messages aren't specific enough
 * [MXS-3804](https://jira.mariadb.org/browse/MXS-3804) Result size accounting is wrong
 * [MXS-3799](https://jira.mariadb.org/browse/MXS-3799) Destroyed monitors are not deleted
 * [MXS-3798](https://jira.mariadb.org/browse/MXS-3798) Race condition in service destruction
 * [MXS-3790](https://jira.mariadb.org/browse/MXS-3790) Fix luafilter
-* [MXS-3788](https://jira.mariadb.org/browse/MXS-3788) Debug assertion with default config and transaction_replay=true
+* [MXS-3788](https://jira.mariadb.org/browse/MXS-3788) Debug assertion with default config and transaction\_replay=true
 * [MXS-3779](https://jira.mariadb.org/browse/MXS-3779) binlogrouter logs warnings for ignored SQL
 * [MXS-3766](https://jira.mariadb.org/browse/MXS-3766) Not able to insert data on Masking enabled table
 * [MXS-3759](https://jira.mariadb.org/browse/MXS-3759) Client hangs forever when server failed or restarted
@@ -48,38 +38,28 @@ report on [our Jira](https://jira.mariadb.org/projects/MXS).
 * [MXS-3063](https://jira.mariadb.org/browse/MXS-3063) error : Sync marker mismatch.
 * [MXS-3060](https://jira.mariadb.org/browse/MXS-3060) Failed to load current GTID
 * [MXS-3050](https://jira.mariadb.org/browse/MXS-3050) Setting Up MaxScale documentation should include instructions on how to configure the MaxScale grants in ClustrixDB
-* [MXS-3049](https://jira.mariadb.org/browse/MXS-3049) error : [avrorouter] Reading Avro file failed with error 'MAXAVRO_ERR_VALUE_OVERFLOW'.
+* [MXS-3049](https://jira.mariadb.org/browse/MXS-3049) error : \[avrorouter] Reading Avro file failed with error 'MAXAVRO\_ERR\_VALUE\_OVERFLOW'.
 
+### Known Issues and Limitations
 
-## Known Issues and Limitations
-
-
-There are some limitations and known issues within this version of MaxScale.
+There are some limitations and known issues within this version of MaxScale.\
 For more information, please refer to the [Limitations](../about-maxscale-25/mariadb-maxscale-25-limitations-and-known-issues-within-mariadb-maxscale.md) document.
 
-
-## Packaging
-
+### Packaging
 
 RPM and Debian packages are provided for supported the Linux distributions.
 
-
 Packages can be downloaded [here](https://mariadb.com/downloads/#mariadb_platform-mariadb_maxscale).
 
+### Source Code
 
-## Source Code
-
-
-The source code of MaxScale is tagged at GitHub with a tag, which is identical
-with the version of MaxScale. For instance, the tag of version X.Y.Z of MaxScale
-is `maxscale-X.Y.Z`. Further, the default branch is always the latest GA version
+The source code of MaxScale is tagged at GitHub with a tag, which is identical\
+with the version of MaxScale. For instance, the tag of version X.Y.Z of MaxScale\
+is `maxscale-X.Y.Z`. Further, the default branch is always the latest GA version\
 of MaxScale.
-
 
 The source code is available [here](https://github.com/mariadb-corporation/MaxScale).
 
-
 CC BY-SA / Gnu FDL
-
 
 {% @marketo/form formId="4316" %}

@@ -1,8 +1,4 @@
-# mariadb-maxscale-25-binlogrouter
-
-## Binlogrouter
-
-## Binlogrouter
+# Binlogrouter
 
 **NOTE:** The binlog router delivered with 2.5 is completely new and is **not**\
 100% backward compatible with the binlog router delivered with earlier\

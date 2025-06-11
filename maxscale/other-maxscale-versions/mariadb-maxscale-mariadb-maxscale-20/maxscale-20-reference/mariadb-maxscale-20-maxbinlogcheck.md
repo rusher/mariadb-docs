@@ -1,65 +1,42 @@
-
-# Maxbinlogcheck
-
-# Maxbinlogcheck
-
-
 # The MySQL/MariaDB binlog check utility
-
 
 Massimiliano Pinto
 
-
 Last Updated: 08th September 2015
 
+## Overview
 
-# Overview
-
-
-Maxbinlogcheck is a command line utility for checking binlogfiles downloaded by MariaDB MaxScale binlog router or the MySQL/MariaDB binlog files stored in a database server acting as a master in a replication environment.
-It checks the binlog file against any corruption and incomplete transaction stored and reports a transaction summary after reading all the events.
+Maxbinlogcheck is a command line utility for checking binlogfiles downloaded by MariaDB MaxScale binlog router or the MySQL/MariaDB binlog files stored in a database server acting as a master in a replication environment.\
+It checks the binlog file against any corruption and incomplete transaction stored and reports a transaction summary after reading all the events.\
 It may optionally truncate binlog file.
 
-
 Maxbinlogcheck supports
-
 
 * MariaDB 5.5 and MySQL 5.6
 * MariaDB 10.0 with a command line option
 
-
-# Running maxbinlogcheck
-
-
+## Running maxbinlogcheck
 
 ```
 # /usr/local/bin/maxbinlogcheck /path_to_file/bin.000002
 ```
 
-
-
-# Command Line Switches
-
+## Command Line Switches
 
 The maxbinlogcheck command accepts a number of switches
 
+|        |             |                                                                                                          |
+| ------ | ----------- | -------------------------------------------------------------------------------------------------------- |
+| Switch | Long Option | Description                                                                                              |
+| -f     | --fix       | If the option is set the binlog file will be truncated at last safe transaction pos in case of any error |
+| -M     | --mariadb10 | Check the current binlog against MariaDB 10.0.x events                                                   |
+| -d     | --debug     | Set the debug mode. If set the FD Events, Rotate events and opening/closing transactions are displayed.  |
+| -?     | --help      | Print usage information regarding maxbinlogcheck                                                         |
+| -V     | --version   | Print the maxbinlogcheck version information                                                             |
 
-|   |   |   |
-| --- | --- | --- |
-| Switch | Long Option | Description |
-| -f | --fix | If the option is set the binlog file will be truncated at last safe transaction pos in case of any error |
-| -M | --mariadb10 | Check the current binlog against MariaDB 10.0.x events |
-| -d | --debug | Set the debug mode. If set the FD Events, Rotate events and opening/closing transactions are displayed. |
-| -? | --help | Print usage information regarding maxbinlogcheck |
-| -V | --version | Print the maxbinlogcheck version information |
+### Example without debug:
 
-
-## Example without debug:
-
-
-1) No transactions
-
-
+1. No transactions
 
 ```
 [root@maxscale-02 build]# /usr/local/bin/maxbinlogcheck /servers/binlogs/new-trx/mar-bin.000002
@@ -68,11 +45,7 @@ The maxbinlogcheck command accepts a number of switches
 2015-09-08 09:38:03   Check retcode: 0, Binlog Pos = 290
 ```
 
-
-
-2) With complete transactions
-
-
+2. With complete transactions
 
 ```
 [root@maxscale-02 build]# /usr/local/bin/maxbinlogcheck /servers/binlogs/new-trx/mar-bin.000004
@@ -86,14 +59,9 @@ The maxbinlogcheck command accepts a number of switches
 2015-09-08 09:38:36   Check retcode: 0, Binlog Pos = 38738629
 ```
 
+### Example with debug:
 
-
-## Example with debug:
-
-
-1) one complete transaction
-
-
+1. one complete transaction
 
 ```
 [root@maxscale-02 build]# /usr/local/bin/maxbinlogcheck /servers/binlogs/new-trx/mar-bin.000001 -d
@@ -115,11 +83,7 @@ The maxbinlogcheck command accepts a number of switches
 2015-09-08 09:36:49   Check retcode: 0, Binlog Pos = 590760698
 ```
 
-
-
-2) some transactions
-
-
+2. some transactions
 
 ```
 [root@maxscale-02 build]# /usr/local/bin/maxbinlogcheck /servers/binlogs/new-trx/mar-bin.000004 -d
@@ -149,11 +113,7 @@ The maxbinlogcheck command accepts a number of switches
 2015-09-08 10:19:51   Check retcode: 0, Binlog Pos = 38738629
 ```
 
-
-
-3) No transactions
-
-
+3. No transactions
 
 ```
 2015-09-08 09:41:02   Check retcode: 0, Binlog Pos = 290
@@ -169,14 +129,9 @@ The maxbinlogcheck command accepts a number of switches
 2015-09-08 09:41:08   Check retcode: 0, Binlog Pos = 290
 ```
 
-
-
-## Fixing a corrupted binlog file
-
+### Fixing a corrupted binlog file
 
 This file is corrupted, as reported by the utility:
-
-
 
 ```
 [root@maxscale-02 build]# /usr/local/bin/maxbinlogcheck /servers/binlogs/new-trx/bin.000002 
@@ -187,14 +142,9 @@ This file is corrupted, as reported by the utility:
 2015-09-08 10:03:16   Check retcode: 1, Binlog Pos = 245
 ```
 
-
-
 The suggested safe pos is 245
 
-
 Use -f option for fix with debug:
-
-
 
 ```
 [root@maxscale-02 build]# /usr/local/bin/maxbinlogcheck /servers/binlogs/new-trx/bin.000002 -d -f
@@ -211,11 +161,7 @@ Use -f option for fix with debug:
 2015-09-08 09:56:52   Check retcode: 1, Binlog Pos = 245
 ```
 
-
-
 Check it again, last pos will be 245 and no errors will be reported:
-
-
 
 ```
 [root@maxscale-02 build]# /usr/local/bin/maxbinlogcheck /servers/binlogs/new-trx/bin.000002 -d 
@@ -229,11 +175,7 @@ Check it again, last pos will be 245 and no errors will be reported:
 2015-09-08 09:56:56   Check retcode: 0, Binlog Pos = 245
 ```
 
-
-
-## Detection of an incomplete big transaction
-
-
+### Detection of an incomplete big transaction
 
 ```
 [root@maxscale-02 build]# /usr/local/bin/maxbinlogcheck /servers/binlogs/new-trx/mar-bin.000003
@@ -243,11 +185,7 @@ Check it again, last pos will be 245 and no errors will be reported:
 2015-09-08 10:10:21   Check retcode: 0, Binlog Pos = 572
 ```
 
-
-
 with debug option:
-
-
 
 ```
 [root@maxscale-02 build]# /usr/local/bin/maxbinlogcheck /servers/binlogs/new-trx/mar-bin.000003 -d
@@ -263,14 +201,9 @@ with debug option:
 2015-09-08 10:11:08   Check retcode: 0, Binlog Pos = 572
 ```
 
-
-
 Retcode is 0 as the transaction may proceed over time, example:
 
-
 Another check ...
-
-
 
 ```
 [root@maxscale-02 build]# /usr/local/bin/maxbinlogcheck /servers/binlogs/new-trx/mar-bin.000003 -d
@@ -285,11 +218,7 @@ Another check ...
 2015-09-08 10:17:14   Check retcode: 0, Binlog Pos = 572
 ```
 
-
-
 And finally big transaction is now done.
-
-
 
 ```
 [root@maxscale-02 build]# /usr/local/bin/maxbinlogcheck /servers/binlogs/new-trx/mar-bin.000003 -d
@@ -311,25 +240,16 @@ And finally big transaction is now done.
 2015-09-08 10:17:16   Check retcode: 0, Binlog Pos = 590760698
 ```
 
-
-
-**Note**
+**Note**\
 with current maxbinlogcheck it's not possible to fix a binlog with incomplete transaction and no other errors
 
-
 If that is really desired it will be possible with UNIX command line:
-
-
 
 ```
 # truncate /servers/binlogs/new-trx/mar-bin.000003 --size=572
 ```
 
-
-
 In case of an error and incomplete transaction, the fix will work
-
-
 
 ```
 [root@maxscale-02 build]# /usr/local/bin/maxbinlogcheck /servers/binlogs/new-trx/mar-bin.000003 -d -f
@@ -346,11 +266,7 @@ In case of an error and incomplete transaction, the fix will work
 2015-09-08 10:35:57   Check retcode: 1, Binlog Pos = 572
 ```
 
-
-
 Check result:
-
-
 
 ```
 [root@maxscale-02 build]# /usr/local/bin/maxbinlogcheck /servers/binlogs/new-trx/mar-bin.000003 -d
@@ -364,11 +280,7 @@ Check result:
 2015-09-08 10:54:17   Check retcode: 0, Binlog Pos = 572
 ```
 
-
-
-### MariaDB 10 binlog check
-
-
+#### MariaDB 10 binlog check
 
 ```
 [root@maxscale-02 build]# /usr/local/bin/maxbinlogcheck -M -d /mariadb-10.0.11/data/mysql-bin.000008
@@ -390,9 +302,6 @@ Check result:
 2015-09-08 12:49:18   Check retcode: 0, Binlog Pos = 1215327
 ```
 
-
-
 CC BY-SA / Gnu FDL
-
 
 {% @marketo/form formId="4316" %}

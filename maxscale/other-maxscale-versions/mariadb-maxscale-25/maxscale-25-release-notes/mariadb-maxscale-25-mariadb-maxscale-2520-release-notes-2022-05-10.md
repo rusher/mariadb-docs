@@ -1,34 +1,22 @@
-
 # MariaDB MaxScale 2.5.20 Release Notes -- 2022-05-10
-
-# MariaDB MaxScale 2.5.20 Release Notes -- 2022-05-10
-
 
 Release 2.5.20 is a GA release.
 
-
-This document describes the changes in release 2.5.20, when compared to the
+This document describes the changes in release 2.5.20, when compared to the\
 previous release in the same series.
 
-
-If you are upgrading from an older major version of MaxScale, please read the
-[upgrading document](../maxscale-25-upgrading/mariadb-maxscale-25-upgrading-mariadb-maxscale-from-24-to-25.md) for
+If you are upgrading from an older major version of MaxScale, please read the[upgrading document](../maxscale-25-upgrading/mariadb-maxscale-25-upgrading-mariadb-maxscale-from-24-to-25.md) for\
 this MaxScale version.
 
-
-For any problems you encounter, please consider submitting a bug
+For any problems you encounter, please consider submitting a bug\
 report on [our Jira](https://jira.mariadb.org/projects/MXS).
 
-
-## New Features
-
+### New Features
 
 * [MXS-3997](https://jira.mariadb.org/browse/MXS-3997) Name threads for better CPU usage view
 * [MXS-3665](https://jira.mariadb.org/browse/MXS-3665) Provide more feedback on TLS cipher mismatch
 
-
-## Bug fixes
-
+### Bug fixes
 
 * [MXS-4110](https://jira.mariadb.org/browse/MXS-4110) Schemarouter does not ignore the sys schema
 * [MXS-4109](https://jira.mariadb.org/browse/MXS-4109) The /user/inet endpoint fails schema validation
@@ -41,7 +29,7 @@ report on [our Jira](https://jira.mariadb.org/projects/MXS).
 * [MXS-4053](https://jira.mariadb.org/browse/MXS-4053) The cache does not handle multi-statements properly.
 * [MXS-4045](https://jira.mariadb.org/browse/MXS-4045) Add maxctrl command for dumping the whole REST API output
 * [MXS-4040](https://jira.mariadb.org/browse/MXS-4040) Mariadbmon constantly logs errors if event scheduler is disabled
-* [MXS-4039](https://jira.mariadb.org/browse/MXS-4039) Debug assert with connection_keepalive and slow server
+* [MXS-4039](https://jira.mariadb.org/browse/MXS-4039) Debug assert with connection\_keepalive and slow server
 * [MXS-4038](https://jira.mariadb.org/browse/MXS-4038) maxctrl reload service does not bypass the users refresh rate limit
 * [MXS-4034](https://jira.mariadb.org/browse/MXS-4034) Persistent connection pool is not automatically flushed
 * [MXS-4024](https://jira.mariadb.org/browse/MXS-4024) CDC protocol logs a notice message for each new connection
@@ -58,36 +46,26 @@ report on [our Jira](https://jira.mariadb.org/projects/MXS).
 * [MXS-3931](https://jira.mariadb.org/browse/MXS-3931) Check certificates with extendedKeyUsage options set for correct purpose flags
 * [MXS-3808](https://jira.mariadb.org/browse/MXS-3808) Improve Rest API performance
 
+### Known Issues and Limitations
 
-## Known Issues and Limitations
-
-
-There are some limitations and known issues within this version of MaxScale.
+There are some limitations and known issues within this version of MaxScale.\
 For more information, please refer to the [Limitations](../about-maxscale-25/mariadb-maxscale-25-limitations-and-known-issues-within-mariadb-maxscale.md) document.
 
-
-## Packaging
-
+### Packaging
 
 RPM and Debian packages are provided for supported the Linux distributions.
 
-
 Packages can be downloaded [here](https://mariadb.com/downloads/#mariadb_platform-mariadb_maxscale).
 
+### Source Code
 
-## Source Code
-
-
-The source code of MaxScale is tagged at GitHub with a tag, which is identical
-with the version of MaxScale. For instance, the tag of version X.Y.Z of MaxScale
-is `maxscale-X.Y.Z`. Further, the default branch is always the latest GA version
+The source code of MaxScale is tagged at GitHub with a tag, which is identical\
+with the version of MaxScale. For instance, the tag of version X.Y.Z of MaxScale\
+is `maxscale-X.Y.Z`. Further, the default branch is always the latest GA version\
 of MaxScale.
-
 
 The source code is available [here](https://github.com/mariadb-corporation/MaxScale).
 
-
 CC BY-SA / Gnu FDL
-
 
 {% @marketo/form formId="4316" %}

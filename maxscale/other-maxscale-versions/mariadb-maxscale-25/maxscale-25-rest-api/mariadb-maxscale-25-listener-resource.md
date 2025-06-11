@@ -1,58 +1,33 @@
-
 # Listener Resource
 
-# Listener Resource
-
-
-A listener resource represents a listener of a service in MaxScale. All
+A listener resource represents a listener of a service in MaxScale. All\
 listeners point to a service in MaxScale.
 
+* [Listener Resource](mariadb-maxscale-25-listener-resource.md#listener-resource)
+  * [Resource Operations](mariadb-maxscale-25-listener-resource.md#resource-operations)
+    * [Get a listener](mariadb-maxscale-25-listener-resource.md#get-a-listener)
+      * [Response](mariadb-maxscale-25-listener-resource.md#response)
+    * [Get all listeners](mariadb-maxscale-25-listener-resource.md#get-all-listeners)
+      * [Response](mariadb-maxscale-25-listener-resource.md#response_1)
+    * [Create a new listener](mariadb-maxscale-25-listener-resource.md#create-a-new-listener)
+      * [Response](mariadb-maxscale-25-listener-resource.md#response_2)
+    * [Destroy a listener](mariadb-maxscale-25-listener-resource.md#destroy-a-listener)
+      * [Response](mariadb-maxscale-25-listener-resource.md#response_3)
 
+### Resource Operations
 
-
-* [Listener Resource](#listener-resource)
-
-  * [Resource Operations](#resource-operations)
-
-    * [Get a listener](#get-a-listener)
-
-      * [Response](#response)
-    * [Get all listeners](#get-all-listeners)
-
-      * [Response](#response_1)
-    * [Create a new listener](#create-a-new-listener)
-
-      * [Response](#response_2)
-    * [Destroy a listener](#destroy-a-listener)
-
-      * [Response](#response_3)
-
-
-
-
-## Resource Operations
-
-
-### Get a listener
-
-
+#### Get a listener
 
 ```
 GET /v1/listeners/:name
 ```
 
-
-
-Get a single listener. The *:name* in the URI must be the name of a listener in
+Get a single listener. The _:name_ in the URI must be the name of a listener in\
 MaxScale.
 
-
-#### Response
-
+**Response**
 
 `Status: 200 OK`
-
-
 
 ```
 {
@@ -103,27 +78,17 @@ MaxScale.
 }
 ```
 
-
-
-### Get all listeners
-
-
+#### Get all listeners
 
 ```
 GET /v1/listeners
 ```
 
-
-
 Get all listeners.
 
-
-#### Response
-
+**Response**
 
 `Status: 200 OK`
-
-
 
 ```
 {
@@ -217,36 +182,26 @@ Get all listeners.
 }
 ```
 
-
-
-### Create a new listener
-
-
+#### Create a new listener
 
 ```
 POST /v1/listeners
 ```
 
-
-
 Creates a new listener. The request body must define the following fields.
-
 
 * `data.id`
 * Name of the listener
 * `data.type`
 * Type of the object, must be `listeners`
 * `data.attributes.parameters.port` OR `data.attributes.parameters.socket`
-* The TCP port or UNIX Domain Socket the listener listens on. Only one of the
- fields can be defined.
+* The TCP port or UNIX Domain Socket the listener listens on. Only one of the\
+  fields can be defined.
 * `data.relationships.services.data`
-* The service relationships data, must define a JSON object with an `id` value
- that defines the service to use and a `type` value set to `services`.
-
+* The service relationships data, must define a JSON object with an `id` value\
+  that defines the service to use and a `type` value set to `services`.
 
 The following is the minimal required JSON object for defining a new listener.
-
-
 
 ```
 {
@@ -269,51 +224,34 @@ The following is the minimal required JSON object for defining a new listener.
 }
 ```
 
-
-
-Refer to the [Configuration Guide](../maxscale-25-getting-started/mariadb-maxscale-25-mariadb-maxscale-configuration-guide.md) for
+Refer to the [Configuration Guide](../maxscale-25-getting-started/mariadb-maxscale-25-mariadb-maxscale-configuration-guide.md) for\
 a full list of listener parameters.
 
-
-#### Response
-
+**Response**
 
 Listener is created:
 
-
 `Status: 204 No Content`
 
-
-### Destroy a listener
-
-
+#### Destroy a listener
 
 ```
 DELETE /v1/listeners/:name
 ```
 
-
-
-The *:name* must be a valid listener name. When a listener is destroyed, the
+The _:name_ must be a valid listener name. When a listener is destroyed, the\
 network port it listens on is available for reuse.
 
-
-#### Response
-
+**Response**
 
 Listener is destroyed:
 
-
 `Status: 204 No Content`
-
 
 Listener cannot be deleted:
 
-
 `Status: 403 Forbidden`
 
-
 CC BY-SA / Gnu FDL
-
 
 {% @marketo/form formId="4316" %}

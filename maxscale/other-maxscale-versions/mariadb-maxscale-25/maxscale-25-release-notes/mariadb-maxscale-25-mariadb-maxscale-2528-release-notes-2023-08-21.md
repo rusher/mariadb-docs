@@ -1,33 +1,23 @@
-
 # MariaDB MaxScale 2.5.28 Release Notes -- 2023-08-21
-
-# MariaDB MaxScale 2.5.28 Release Notes -- 2023-08-21
-
 
 Release 2.5.28 is a GA release.
 
-
-This document describes the changes in release 2.5.28, when compared to the
+This document describes the changes in release 2.5.28, when compared to the\
 previous release in the same series.
 
-
-If you are upgrading from an older major version of MaxScale, please read the
-[upgrading document](../maxscale-25-upgrading/mariadb-maxscale-25-upgrading-mariadb-maxscale-from-24-to-25.md) for
+If you are upgrading from an older major version of MaxScale, please read the[upgrading document](../maxscale-25-upgrading/mariadb-maxscale-25-upgrading-mariadb-maxscale-from-24-to-25.md) for\
 this MaxScale version.
 
-
-For any problems you encounter, please consider submitting a bug
+For any problems you encounter, please consider submitting a bug\
 report on [our Jira](https://jira.mariadb.org/projects/MXS).
 
-
-## Bug fixes
-
+### Bug fixes
 
 * [MXS-4722](https://jira.mariadb.org/browse/MXS-4722) Case-sensitiveness of enumerations is not documented
 * [MXS-4721](https://jira.mariadb.org/browse/MXS-4721) Galeramon does not update replication lag of replicating servers
 * [MXS-4720](https://jira.mariadb.org/browse/MXS-4720) Implement an option to switch to the old "ping" behaviour in MaxScale
 * [MXS-4719](https://jira.mariadb.org/browse/MXS-4719) Connection init sql file execution can hang
-* [MXS-4714](https://jira.mariadb.org/browse/MXS-4714) qc_sqlite does not properly parse a RENAME statement
+* [MXS-4714](https://jira.mariadb.org/browse/MXS-4714) qc\_sqlite does not properly parse a RENAME statement
 * [MXS-4701](https://jira.mariadb.org/browse/MXS-4701) GTID update may block the REST-API
 * [MXS-4700](https://jira.mariadb.org/browse/MXS-4700) Binlogrouter treats GTID sequences as 32-bit integers
 * [MXS-4696](https://jira.mariadb.org/browse/MXS-4696) Readwritesplit does not detect unrecoverable situations
@@ -42,36 +32,26 @@ report on [our Jira](https://jira.mariadb.org/projects/MXS).
 * [MXS-4664](https://jira.mariadb.org/browse/MXS-4664) xpandmon diagnostics are not useful
 * [MXS-4613](https://jira.mariadb.org/browse/MXS-4613) binlogrouter shows MaxScale's binary log coordinates in SHOW SLAVE STATUS
 
+### Known Issues and Limitations
 
-## Known Issues and Limitations
-
-
-There are some limitations and known issues within this version of MaxScale.
+There are some limitations and known issues within this version of MaxScale.\
 For more information, please refer to the [Limitations](../about-maxscale-25/mariadb-maxscale-25-limitations-and-known-issues-within-mariadb-maxscale.md) document.
 
-
-## Packaging
-
+### Packaging
 
 RPM and Debian packages are provided for supported the Linux distributions.
 
-
 Packages can be downloaded [here](https://mariadb.com/downloads/#mariadb_platform-mariadb_maxscale).
 
+### Source Code
 
-## Source Code
-
-
-The source code of MaxScale is tagged at GitHub with a tag, which is identical
-with the version of MaxScale. For instance, the tag of version X.Y.Z of MaxScale
-is `maxscale-X.Y.Z`. Further, the default branch is always the latest GA version
+The source code of MaxScale is tagged at GitHub with a tag, which is identical\
+with the version of MaxScale. For instance, the tag of version X.Y.Z of MaxScale\
+is `maxscale-X.Y.Z`. Further, the default branch is always the latest GA version\
 of MaxScale.
-
 
 The source code is available [here](https://github.com/mariadb-corporation/MaxScale).
 
-
 CC BY-SA / Gnu FDL
-
 
 {% @marketo/form formId="4316" %}

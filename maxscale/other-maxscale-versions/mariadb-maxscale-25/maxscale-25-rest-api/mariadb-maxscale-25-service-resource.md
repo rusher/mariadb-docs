@@ -1,79 +1,48 @@
-
 # Service Resource
 
-# Service Resource
-
-
-A service resource represents a service inside MaxScale. A service is a
+A service resource represents a service inside MaxScale. A service is a\
 collection of network listeners, filters, a router and a set of backend servers.
 
+* [Service Resource](mariadb-maxscale-25-service-resource.md#service-resource)
+  * [Resource Operations](mariadb-maxscale-25-service-resource.md#resource-operations)
+    * [Get a service](mariadb-maxscale-25-service-resource.md#get-a-service)
+      * [Response](mariadb-maxscale-25-service-resource.md#response)
+    * [Get all services](mariadb-maxscale-25-service-resource.md#get-all-services)
+      * [Response](mariadb-maxscale-25-service-resource.md#response_1)
+    * [Create a service](mariadb-maxscale-25-service-resource.md#create-a-service)
+      * [Response](mariadb-maxscale-25-service-resource.md#response_2)
+    * [Destroy a service](mariadb-maxscale-25-service-resource.md#destroy-a-service)
+      * [Response](mariadb-maxscale-25-service-resource.md#response_3)
+    * [Update a service](mariadb-maxscale-25-service-resource.md#update-a-service)
+      * [Response](mariadb-maxscale-25-service-resource.md#response_4)
+    * [Update service relationships](mariadb-maxscale-25-service-resource.md#update-service-relationships)
+      * [Response](mariadb-maxscale-25-service-resource.md#response_5)
+    * [Stop a service](mariadb-maxscale-25-service-resource.md#stop-a-service)
+      * [Response](mariadb-maxscale-25-service-resource.md#response_6)
+    * [Start a service](mariadb-maxscale-25-service-resource.md#start-a-service)
+      * [Response](mariadb-maxscale-25-service-resource.md#response_7)
+    * [Reload users of a service](mariadb-maxscale-25-service-resource.md#reload-users-of-a-service)
+      * [Response](mariadb-maxscale-25-service-resource.md#response_8)
+    * [Get service listeners](mariadb-maxscale-25-service-resource.md#get-service-listeners)
+    * [Get a single service listener](mariadb-maxscale-25-service-resource.md#get-a-single-service-listener)
+    * [Create a new listener](mariadb-maxscale-25-service-resource.md#create-a-new-listener)
+    * [Destroy a listener](mariadb-maxscale-25-service-resource.md#destroy-a-listener)
 
+### Resource Operations
 
+The _:name_ in all of the URIs must be the name of a service in MaxScale.
 
-* [Service Resource](#service-resource)
-
-  * [Resource Operations](#resource-operations)
-
-    * [Get a service](#get-a-service)
-
-      * [Response](#response)
-    * [Get all services](#get-all-services)
-
-      * [Response](#response_1)
-    * [Create a service](#create-a-service)
-
-      * [Response](#response_2)
-    * [Destroy a service](#destroy-a-service)
-
-      * [Response](#response_3)
-    * [Update a service](#update-a-service)
-
-      * [Response](#response_4)
-    * [Update service relationships](#update-service-relationships)
-
-      * [Response](#response_5)
-    * [Stop a service](#stop-a-service)
-
-      * [Response](#response_6)
-    * [Start a service](#start-a-service)
-
-      * [Response](#response_7)
-    * [Reload users of a service](#reload-users-of-a-service)
-
-      * [Response](#response_8)
-    * [Get service listeners](#get-service-listeners)
-    * [Get a single service listener](#get-a-single-service-listener)
-    * [Create a new listener](#create-a-new-listener)
-    * [Destroy a listener](#destroy-a-listener)
-
-
-
-
-## Resource Operations
-
-
-The *:name* in all of the URIs must be the name of a service in MaxScale.
-
-
-### Get a service
-
-
+#### Get a service
 
 ```
 GET /v1/services/:name
 ```
 
-
-
 Get a single service.
 
-
-#### Response
-
+**Response**
 
 `Status: 200 OK`
-
-
 
 ```
 {
@@ -277,27 +246,17 @@ Get a single service.
 }
 ```
 
-
-
-### Get all services
-
-
+#### Get all services
 
 ```
 GET /v1/services
 ```
 
-
-
 Get all services.
 
-
-#### Response
-
+**Response**
 
 `Status: 200 OK`
-
-
 
 ```
 {
@@ -717,21 +676,14 @@ Get all services.
 }
 ```
 
-
-
-### Create a service
-
-
+#### Create a service
 
 ```
 POST /v1/services
 ```
 
-
-
-Create a new service by defining the resource. The posted object must define at
+Create a new service by defining the resource. The posted object must define at\
 least the following fields.
-
 
 * `data.id`
 * Name of the service
@@ -744,35 +696,25 @@ least the following fields.
 * `data.attributes.parameters.password`
 * The [password](../maxscale-25-getting-started/mariadb-maxscale-25-mariadb-maxscale-configuration-guide.md#password) to use
 
-
-The `data.attributes.parameters` object is used to define router and service
-parameters. All configuration parameters that can be defined in the
-configuration file can also be added to the parameters object. The exceptions to
-this are the `type`, `router`, `servers` and `filters` parameters which must not
+The `data.attributes.parameters` object is used to define router and service\
+parameters. All configuration parameters that can be defined in the\
+configuration file can also be added to the parameters object. The exceptions to\
+this are the `type`, `router`, `servers` and `filters` parameters which must not\
 be defined.
 
-
-As with other REST API resources, the `data.relationships` field defines the
-relationships of the service to other resources. Services can have two types of
+As with other REST API resources, the `data.relationships` field defines the\
+relationships of the service to other resources. Services can have two types of\
 relationships: `servers` and `filters` relationships.
 
+If the request body defines a valid `relationships` object, the service is\
+linked to those resources. For servers, this is equivalent to adding the list of\
+server names into the[servers](../maxscale-25-getting-started/mariadb-maxscale-25-mariadb-maxscale-configuration-guide.md#servers) parameter. For\
+filters, this is equivalent to adding the filters in the`data.relationships.filters.data` array to the[filters](../maxscale-25-getting-started/mariadb-maxscale-25-mariadb-maxscale-configuration-guide.md#filters) parameter in the\
+order they appear. For other services, this is equivalent to adding the list of\
+server names into the[targets](../maxscale-25-getting-started/mariadb-maxscale-25-mariadb-maxscale-configuration-guide.md#targets) parameter.
 
-If the request body defines a valid `relationships` object, the service is
-linked to those resources. For servers, this is equivalent to adding the list of
-server names into the
-[servers](../maxscale-25-getting-started/mariadb-maxscale-25-mariadb-maxscale-configuration-guide.md#servers) parameter. For
-filters, this is equivalent to adding the filters in the
-`data.relationships.filters.data` array to the
-[filters](../maxscale-25-getting-started/mariadb-maxscale-25-mariadb-maxscale-configuration-guide.md#filters) parameter in the
-order they appear. For other services, this is equivalent to adding the list of
-server names into the
-[targets](../maxscale-25-getting-started/mariadb-maxscale-25-mariadb-maxscale-configuration-guide.md#targets) parameter.
-
-
-The following example defines a new service with both a server and a filter
+The following example defines a new service with both a server and a filter\
 relationship.
-
-
 
 ```
 {
@@ -808,86 +750,59 @@ relationship.
 }
 ```
 
-
-
-#### Response
-
+**Response**
 
 Service is created:
 
-
 `Status: 204 No Content`
 
-
-### Destroy a service
-
-
+#### Destroy a service
 
 ```
 DELETE /v1/services/:name
 ```
 
-
-
-A service can only be destroyed if the service uses no servers or filters and
-all the listeners pointing to the service have been destroyed. This means that
-the `data.relationships` must be an empty object and `data.attributes.listeners`
+A service can only be destroyed if the service uses no servers or filters and\
+all the listeners pointing to the service have been destroyed. This means that\
+the `data.relationships` must be an empty object and `data.attributes.listeners`\
 must be an empty array in order for the service to qualify for destruction.
 
-
-If there are open client connections that use the service when it is destroyed,
-they are allowed to gracefully close before the service is destroyed. This means
-that the destruction of a service can be acknowledged via the REST API before
+If there are open client connections that use the service when it is destroyed,\
+they are allowed to gracefully close before the service is destroyed. This means\
+that the destruction of a service can be acknowledged via the REST API before\
 the destruction process has fully completed.
 
-
-To find out whether a service is still in use after it has been destroyed, the
-[sessions](mariadb-maxscale-25-session-resource.md) resource should be used. If a session for
+To find out whether a service is still in use after it has been destroyed, the[sessions](mariadb-maxscale-25-session-resource.md) resource should be used. If a session for\
 the service is still open, it has not yet been destroyed.
 
-
-This endpoint also supports the `force=yes` parameter that will unconditionally
-delete the service by first unlinking it from all servers and filters that it
+This endpoint also supports the `force=yes` parameter that will unconditionally\
+delete the service by first unlinking it from all servers and filters that it\
 uses.
 
-
-#### Response
-
+**Response**
 
 Service is destroyed:
 
-
 `Status: 204 No Content`
 
-
-### Update a service
-
-
+#### Update a service
 
 ```
 PATCH /v1/services/:name
 ```
 
-
-
-The request body must be a JSON object which represents a set of new definitions
+The request body must be a JSON object which represents a set of new definitions\
 for the service.
 
-
-All standard service parameters can be modified. Refer to the
-[service](../maxscale-25-getting-started/mariadb-maxscale-25-mariadb-maxscale-configuration-guide.md#service) documentation on
+All standard service parameters can be modified. Refer to the[service](../maxscale-25-getting-started/mariadb-maxscale-25-mariadb-maxscale-configuration-guide.md#service) documentation on\
 the details of these parameters.
 
-
-In addition to the standard service parameters, router parameters can be updated
-at runtime if the router module supports it. Refer to the individual router
-documentation for more details on whether the router supports it and which
+In addition to the standard service parameters, router parameters can be updated\
+at runtime if the router module supports it. Refer to the individual router\
+documentation for more details on whether the router supports it and which\
 parameters can be updated at runtime.
 
-
 The following example modifies a service by changing the `user` parameter to `admin`.
-
-
 
 ```
 {
@@ -901,49 +816,35 @@ The following example modifies a service by changing the `user` parameter to `ad
 }
 ```
 
-
-
-#### Response
-
+**Response**
 
 Service is modified:
 
-
 `Status: 204 No Content`
 
-
-### Update service relationships
-
-
+#### Update service relationships
 
 ```
 PATCH /v1/services/:name/relationships/:type
 ```
 
-
-
-The *:type* in the URI must be either *servers*, *services* or *filters*,
+The _:type_ in the URI must be either _servers_, _services_ or _filters_,\
 depending on which relationship is being modified.
 
-
-The request body must be a JSON object that defines only the *data* field. The
-value of the *data* field must be an array of relationship objects that define
-the *id* and *type* fields of the relationship. This object will replace the
+The request body must be a JSON object that defines only the _data_ field. The\
+value of the _data_ field must be an array of relationship objects that define\
+the _id_ and _type_ fields of the relationship. This object will replace the\
 existing relationships of this type for the service.
 
+_Note:_ The order of the values in the `filters` relationship will define the\
+order the filters are set up in. The order in which the filters appear in the\
+array will be the order in which the filters are applied to each query. Refer\
+to the [filters](../maxscale-25-getting-started/mariadb-maxscale-25-mariadb-maxscale-configuration-guide.md#filters) parameter\
+for more details.
 
-*Note:* The order of the values in the `filters` relationship will define the
- order the filters are set up in. The order in which the filters appear in the
- array will be the order in which the filters are applied to each query. Refer
- to the [filters](../maxscale-25-getting-started/mariadb-maxscale-25-mariadb-maxscale-configuration-guide.md#filters) parameter
- for more details.
-
-
-The following is an example request and request body that defines a single
-server relationship for a service that is equivalent to a `servers=my-server`
+The following is an example request and request body that defines a single\
+server relationship for a service that is equivalent to a `servers=my-server`\
 parameter.
-
-
 
 ```
 PATCH /v1/services/my-rw-service/relationships/servers
@@ -955,12 +856,7 @@ PATCH /v1/services/my-rw-service/relationships/servers
 }
 ```
 
-
-
-All relationships for a service can be deleted by sending an empty array as the
-*data* field value. The following example removes all servers from a service.
-
-
+All relationships for a service can be deleted by sending an empty array as th&#x65;_&#x64;ata_ field value. The following example removes all servers from a service.
 
 ```
 PATCH /v1/services/my-rw-service/relationships/servers
@@ -970,146 +866,91 @@ PATCH /v1/services/my-rw-service/relationships/servers
 }
 ```
 
-
-
-#### Response
-
+**Response**
 
 Service relationships modified:
 
-
 `Status: 204 No Content`
-
 
 Invalid JSON body:
 
-
 `Status: 403 Forbidden`
 
-
-### Stop a service
-
-
+#### Stop a service
 
 ```
 PUT /v1/services/:name/stop
 ```
 
-
-
 Stops a started service.
 
-
-#### Response
-
+**Response**
 
 Service is stopped:
 
-
 `Status: 204 No Content`
 
-
-### Start a service
-
-
+#### Start a service
 
 ```
 PUT /v1/services/:name/start
 ```
 
-
-
 Starts a stopped service.
 
-
-#### Response
-
+**Response**
 
 Service is started:
 
-
 `Status: 204 No Content`
 
-
-### Reload users of a service
-
-
+#### Reload users of a service
 
 ```
 POST /v1/services/:name/reload
 ```
 
-
-
 Reloads the list of database users used for authentication.
 
-
-#### Response
-
+**Response**
 
 Users are reloaded:
 
-
 `Status: 204 No Content`
 
-
-### Get service listeners
-
-
+#### Get service listeners
 
 ```
 GET /v1/services/:name/listeners
 ```
 
+This endpoint is deprecated, use the[this](mariadb-maxscale-25-listener-resource.md) listeners endpoint instead.
 
-
-This endpoint is deprecated, use the
-[this](mariadb-maxscale-25-listener-resource.md) listeners endpoint instead.
-
-
-### Get a single service listener
-
-
+#### Get a single service listener
 
 ```
 GET /v1/services/:name/listeners/:listener
 ```
 
-
-
-This endpoint is deprecated, use the [this](mariadb-maxscale-25-listener-resource.md)
+This endpoint is deprecated, use the [this](mariadb-maxscale-25-listener-resource.md)\
 listeners endpoint instead.
 
-
-### Create a new listener
-
-
+#### Create a new listener
 
 ```
 POST /v1/services/:name/listeners
 ```
 
+This endpoint is deprecated, use the[this](mariadb-maxscale-25-listener-resource.md) listeners endpoint instead.
 
-
-This endpoint is deprecated, use the
-[this](mariadb-maxscale-25-listener-resource.md) listeners endpoint instead.
-
-
-### Destroy a listener
-
-
+#### Destroy a listener
 
 ```
 DELETE /v1/services/:service/listeners/:name
 ```
 
-
-
-This endpoint is deprecated, use the
-[this](mariadb-maxscale-25-listener-resource.md) listeners endpoint instead.
-
+This endpoint is deprecated, use the[this](mariadb-maxscale-25-listener-resource.md) listeners endpoint instead.
 
 CC BY-SA / Gnu FDL
-
 
 {% @marketo/form formId="4316" %}

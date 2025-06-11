@@ -1,10 +1,4 @@
-# mariadb-maxscale-20-maxadmin
-
-## Maxadmin
-
-## Maxadmin
-
-## The Maxscale Administrative & Monitoring Client Application
+# The Maxscale Administrative & Monitoring Client Application
 
 * [Overview](mariadb-maxscale-20-maxadmin.md#overview)
 * [Configuring MariaDB MaxScale for MaxAdmin](mariadb-maxscale-20-maxadmin.md#configuring)
@@ -43,7 +37,7 @@ There are two ways MaxAdmin can connect to to MaxScale.
 The first alternative is introduced in MaxScale 2.0 and is the secure and\
 recommended way. The second alternative is available for backward compatibility,\
 but is _insecure_ and **deprecated** and _will be removed in a future version of_\
-_MaxScale_.
+&#xNAN;_&#x4D;axScale_.
 
 An example configuration looks as follows:
 

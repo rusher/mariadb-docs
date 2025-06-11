@@ -1,8 +1,4 @@
-# mariadb-maxscale-25-rest-api-tutorial
-
-## MaxScale REST API Tutorial
-
-## REST API Tutorial
+# MaxScale REST API Tutorial
 
 This tutorial is a quick overview of what the MaxScale REST API offers, how it\
 can be used to inspect the state of MaxScale and how to use it to modify the\
@@ -76,7 +72,7 @@ Date: Mon, 04 Mar 19 08:29:41 GMT
 
 To query a resource collection endpoint, append it to the URL. The `/v1/filters/`\
 endpoint shows the list of filters configured in MaxScale. This is a _resource_\
-_collection_ endpoint: it contains the list of all resources of a particular\
+&#xNAN;_&#x63;ollection_ endpoint: it contains the list of all resources of a particular\
 type.
 
 `curl 127.0.0.1:8989/v1/filters`
