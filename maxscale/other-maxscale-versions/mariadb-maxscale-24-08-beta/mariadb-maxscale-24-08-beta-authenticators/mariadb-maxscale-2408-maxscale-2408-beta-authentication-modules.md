@@ -1,8 +1,4 @@
-# mariadb-maxscale-2408-maxscale-2408-beta-authentication-modules
-
-## MaxScale 24.08 Beta Authentication Modules
-
-## Authentication Modules
+# MaxScale 24.08 Beta Authentication Modules
 
 This document describes general MySQL protocol authentication in MaxScale. For\
 REST-api authentication, see the[configuration guide](../mariadb-maxscale-24-08-beta-getting-started/mariadb-maxscale-2408-maxscale-2408-beta-mariadb-maxscale-configuration-guide.md) and the[REST-api guide](../mariadb-maxscale-24-08-beta-rest-api/mariadb-maxscale-2408-maxscale-2408-beta-rest-api.md).

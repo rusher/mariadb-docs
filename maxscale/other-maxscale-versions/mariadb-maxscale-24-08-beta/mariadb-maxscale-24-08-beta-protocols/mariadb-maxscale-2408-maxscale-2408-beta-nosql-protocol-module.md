@@ -1,8 +1,4 @@
-# mariadb-maxscale-2408-maxscale-2408-beta-nosql-protocol-module
-
-## MaxScale 24.08 Beta NoSQL Protocol Module
-
-## NoSQL Protocol Module
+# MaxScale 24.08 Beta NoSQL Protocol Module
 
 The `nosqlprotocol` module allows a MariaDB server or cluster to be\
 used as the backend of an application using a MongoDB® client library.\
