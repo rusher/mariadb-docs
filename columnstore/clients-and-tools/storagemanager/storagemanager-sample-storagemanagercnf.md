@@ -1,3 +1,16 @@
+---
+layout:
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: false
+---
 
 # Sample storagemanager.cnf
 
@@ -30,10 +43,8 @@ cache_size = 2g
 path = /var/lib/columnstore/storagemanager/cache
 ```
 
-*Note: A region is required even when using an on-prem solution like [ActiveScale](https://qsupport.quantum.com/kb/flare/Content/ActiveScale/PDFs/ActiveScale_OS_S3_API_Reference.pdf) due to header expectations within the API.*
-
+_Note: A region is required even when using an on-prem solution like_ [_ActiveScale_](https://qsupport.quantum.com/kb/flare/Content/ActiveScale/PDFs/ActiveScale_OS_S3_API_Reference.pdf) _due to header expectations within the API._
 
 CC BY-SA / Gnu FDL
-
 
 {% @marketo/form formId="4316" %}
