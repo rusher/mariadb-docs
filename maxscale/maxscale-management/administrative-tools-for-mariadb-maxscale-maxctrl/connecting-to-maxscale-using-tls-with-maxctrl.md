@@ -1,6 +1,4 @@
-# connecting-to-maxscale-using-tls-with-maxctrl
-
-## Connecting to MaxScale using TLS with MaxCtrl
+# Connecting to MaxScale using TLS with MaxCtrl
 
 ## Overview
 

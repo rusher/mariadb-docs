@@ -1,6 +1,4 @@
-# creating-a-rest-api-user-for-maxscale-with-maxctrl
-
-## Creating a REST API User for MaxScale with MaxCtrl
+# Creating a REST API User for MaxScale with MaxCtrl
 
 ## Overview
 

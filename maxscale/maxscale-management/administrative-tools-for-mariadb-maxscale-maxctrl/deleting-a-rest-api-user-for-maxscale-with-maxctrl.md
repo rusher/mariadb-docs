@@ -1,6 +1,4 @@
-# deleting-a-rest-api-user-for-maxscale-with-maxctrl
-
-## Deleting a REST API User for MaxScale with MaxCtrl
+# Deleting a REST API User for MaxScale with MaxCtrl
 
 ## Overview
 

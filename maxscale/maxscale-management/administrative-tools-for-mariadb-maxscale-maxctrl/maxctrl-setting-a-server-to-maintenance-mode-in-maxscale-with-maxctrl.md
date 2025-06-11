@@ -1,27 +1,17 @@
-
 # Setting a Server to Maintenance Mode in MaxScale with MaxCtrl
 
-
-# Overview
-
+## Overview
 
 When using MaxScale, it is often necessary to temporarily remove a server from the load balancing pool without actually shutting down the server. This is usually needed to perform maintenance on the server, such as when upgrading the server's software or when performing schema upgrades.
 
-
 MaxScale allows users to set servers to "maintenance mode", which prevents MaxScale from routing traffic to the server and prevents it from being elected as the new primary server during failover or switchover.
-
 
 MaxCtrl is a command-line utility that can perform administrative tasks using MaxScale's REST API. It can be used to set a server to maintenance mode.
 
-
-# Setting a Server to Maintenance Mode
-
+## Setting a Server to Maintenance Mode
 
 1. Configure the REST API if the default configuration is not sufficient.
-
-
 2. Use MaxCtrl to execute the set server command with the maintenance option:
-
 
 ```
 $ maxctrl --secure \
@@ -36,15 +26,11 @@ $ maxctrl --secure \
 
 Replace server1 with the name of the specific server.
 
-
 If the specified server is a primary server, then MaxScale will allow open transactions to complete before closing any connections.
 
-
-# Forcing a Server to Maintenance Mode
-
+## Forcing a Server to Maintenance Mode
 
 1. Use MaxCtrl to execute the set server command with the maintenance --force option:
-
 
 ```
 $ maxctrl --secure \
@@ -56,14 +42,11 @@ $ maxctrl --secure \
    --tls-ca-cert=/certs/ca.pem \
 ```
 
-set server server1 maintenance --force
+set server server1 maintenance --force\
 Replace server1 with the name of the specific server.
-
 
 When --force is specified, MaxScale immediately close all connections, even if the server is a primary server that has open transactions.
 
-
 Copyright © 2025 MariaDB
-
 
 {% @marketo/form formId="4316" %}
