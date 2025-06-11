@@ -1,3 +1,17 @@
+---
+layout:
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: false
+---
+
 # Query Tuning Recommendations
 
 When tuning queries for MariaDB Enterprise ColumnStore, there are some important details to consider.
