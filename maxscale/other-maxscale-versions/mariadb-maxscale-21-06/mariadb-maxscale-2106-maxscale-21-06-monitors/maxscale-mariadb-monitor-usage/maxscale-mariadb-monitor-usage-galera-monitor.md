@@ -1,6 +1,6 @@
-# maxscale-mariadb-monitor-usage-galera-monitor
+# Galera Monitor
 
-## Galera Monitor
+##
 
 ## Designing for MaxScale's Galera Monitor
 

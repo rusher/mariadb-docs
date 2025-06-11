@@ -1,8 +1,4 @@
-# maxscale-rabbitmq-consumer-client
-
-## MaxScale RabbitMQ Consumer Client
-
-## RabbitMQ Consumer Client
+# MaxScale RabbitMQ Consumer Client
 
 ### Overview
 

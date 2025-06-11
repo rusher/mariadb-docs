@@ -1,8 +1,4 @@
-# mariadb-maxscale-23-changelog
-
-## MaxScale 2.3 Changelog
-
-## Changelog
+# MaxScale 2.3 Changelog
 
 ### MariaDB MaxScale 2.3
 

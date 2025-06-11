@@ -1,57 +1,44 @@
-
 # Query Log All Filter
 
-# Query Log All Filter
+##
 
+## Query Log All Filter
 
+* [Query Log All Filter](mariadb-maxscale-2302-query-log-all-filter.md#query-log-all-filter)
+  * [Overview](mariadb-maxscale-2302-query-log-all-filter.md#overview)
+  * [Configuration](mariadb-maxscale-2302-query-log-all-filter.md#configuration)
+  * [Log Rotation](mariadb-maxscale-2302-query-log-all-filter.md#log-rotation)
+  * [Filter Parameters](mariadb-maxscale-2302-query-log-all-filter.md#filter-parameters)
+    * [filebase](mariadb-maxscale-2302-query-log-all-filter.md#filebase)
+    * [match](mariadb-maxscale-2302-query-log-all-filter.md#match)
+    * [exclude](mariadb-maxscale-2302-query-log-all-filter.md#exclude)
+    * [options](mariadb-maxscale-2302-query-log-all-filter.md#options)
+    * [user](mariadb-maxscale-2302-query-log-all-filter.md#user)
+    * [source](mariadb-maxscale-2302-query-log-all-filter.md#source)
+    * [user\_match](mariadb-maxscale-2302-query-log-all-filter.md#user_match)
+    * [user\_exclude](mariadb-maxscale-2302-query-log-all-filter.md#user_exclude)
+    * [source\_match](mariadb-maxscale-2302-query-log-all-filter.md#source_match)
+    * [source\_exclude](mariadb-maxscale-2302-query-log-all-filter.md#source_exclude)
+    * [log\_type](mariadb-maxscale-2302-query-log-all-filter.md#log_type)
+    * [log\_data](mariadb-maxscale-2302-query-log-all-filter.md#log_data)
+    * [duration\_unit](mariadb-maxscale-2302-query-log-all-filter.md#duration_unit)
+    * [use\_canonical\_form](mariadb-maxscale-2302-query-log-all-filter.md#use_canonical_form)
+    * [flush](mariadb-maxscale-2302-query-log-all-filter.md#flush)
+    * [append](mariadb-maxscale-2302-query-log-all-filter.md#append)
+    * [separator](mariadb-maxscale-2302-query-log-all-filter.md#separator)
+    * [newline\_replacement](mariadb-maxscale-2302-query-log-all-filter.md#newline_replacement)
+  * [Examples](mariadb-maxscale-2302-query-log-all-filter.md#examples)
+    * [Example 1 - Query without primary key](mariadb-maxscale-2302-query-log-all-filter.md#example-1-query-without-primary-key)
 
+### Overview
 
-* [Query Log All Filter](#query-log-all-filter)
-
-  * [Overview](#overview)
-  * [Configuration](#configuration)
-  * [Log Rotation](#log-rotation)
-  * [Filter Parameters](#filter-parameters)
-
-    * [filebase](#filebase)
-    * [match](#match)
-    * [exclude](#exclude)
-    * [options](#options)
-    * [user](#user)
-    * [source](#source)
-    * [user_match](#user_match)
-    * [user_exclude](#user_exclude)
-    * [source_match](#source_match)
-    * [source_exclude](#source_exclude)
-    * [log_type](#log_type)
-    * [log_data](#log_data)
-    * [duration_unit](#duration_unit)
-    * [use_canonical_form](#use_canonical_form)
-    * [flush](#flush)
-    * [append](#append)
-    * [separator](#separator)
-    * [newline_replacement](#newline_replacement)
-  * [Examples](#examples)
-
-    * [Example 1 - Query without primary key](#example-1-query-without-primary-key)
-
-
-
-
-## Overview
-
-
-The Query Log All (QLA) filter logs query content. Logs are written to a file in
-CSV format. Log elements are configurable and include the time submitted and the
+The Query Log All (QLA) filter logs query content. Logs are written to a file in\
+CSV format. Log elements are configurable and include the time submitted and the\
 SQL statement text, among others.
 
-
-## Configuration
-
+### Configuration
 
 A minimal configuration is below.
-
-
 
 ```
 [MyLogFilter]
@@ -68,261 +55,193 @@ password=mypasswd
 filters=MyLogFilter
 ```
 
+### Log Rotation
 
-
-## Log Rotation
-
-
-The `qlafilter` logs can be rotated by executing the `maxctrl rotate logs`
-command. This will cause the log files to be reopened when the next message is
+The `qlafilter` logs can be rotated by executing the `maxctrl rotate logs`\
+command. This will cause the log files to be reopened when the next message is\
 written to the file. This applies to both unified and session type logging.
 
+### Filter Parameters
 
-## Filter Parameters
-
-
-The QLA filter has one mandatory parameter, `filebase`, and a number of optional
+The QLA filter has one mandatory parameter, `filebase`, and a number of optional\
 parameters. These were introduced in the 1.0 release of MariaDB MaxScale.
 
-
-### `filebase`
-
+#### `filebase`
 
 * Type: string
 * Mandatory: Yes
 * Dynamic: No
 
-
-The basename of the output file created for each session. A session index is
-added to the filename for each written session file. For unified log files,
-*.unified* is appended.
-
-
+The basename of the output file created for each session. A session index is\
+added to the filename for each written session file. For unified log files,_.unified_ is appended.
 
 ```
 filebase=/tmp/SqlQueryLog
 ```
 
-
-
-### `match`
-
+#### `match`
 
 * Type: [regex](../mariadb-maxscale-23-02-getting-started/mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#regular-expressions)
 * Mandatory: No
 * Dynamic: Yes
 * Default: None
-
 
 Include queries that match the regex.
 
-
-### `exclude`
-
+#### `exclude`
 
 * Type: [regex](../mariadb-maxscale-23-02-getting-started/mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#regular-expressions)
 * Mandatory: No
 * Dynamic: Yes
 * Default: None
 
-
 Exclude queries that match the regex.
 
+#### `options`
 
-### `options`
-
-
-* Type: [enum_mask](../mariadb-maxscale-23-02-getting-started/mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#enumerations)
+* Type: [enum\_mask](../mariadb-maxscale-23-02-getting-started/mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
 * Dynamic: Yes
 * Values: `case`, `ignorecase`, `extended`
 * Default: `case`
 
-
 The `extended` option enables PCRE2 extended regular expressions.
 
-
-### `user`
-
+#### `user`
 
 * Type: string
 * Mandatory: No
 * Dynamic: Yes
 * Default: `""`
-
 
 Limit logging to sessions with this user.
 
-
-### `source`
-
+#### `source`
 
 * Type: string
 * Mandatory: No
 * Dynamic: Yes
 * Default: `""`
 
-
 Limit logging to sessions with this client source address.
 
-
-### `user_match`
-
+#### `user_match`
 
 * Type: [regex](../mariadb-maxscale-23-02-getting-started/mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#regular-expressions)
 * Mandatory: No
 * Dynamic: Yes
 
-
-Only log queries from users that match this pattern. If the `user` parameter is
+Only log queries from users that match this pattern. If the `user` parameter is\
 used, the value of `user_match` is ignored.
 
-
 Here is an example pattern that matches the users `alice` and `bob`:
-
-
 
 ```
 user_match=/(^alice$)|(^bob$)/
 ```
 
-
-
-### `user_exclude`
-
+#### `user_exclude`
 
 * Type: [regex](../mariadb-maxscale-23-02-getting-started/mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#regular-expressions)
 * Mandatory: No
 * Dynamic: Yes
 
-
-Exclude all queries from users that match this pattern. If the `user` parameter
+Exclude all queries from users that match this pattern. If the `user` parameter\
 is used, the value of `user_exclude` is ignored.
 
-
 Here is an example pattern that excludes the users `alice` and `bob`:
-
-
 
 ```
 user_exclude=/(^alice$)|(^bob$)/
 ```
 
-
-
-### `source_match`
-
+#### `source_match`
 
 * Type: [regex](../mariadb-maxscale-23-02-getting-started/mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#regular-expressions)
 * Mandatory: No
 * Dynamic: Yes
 
-
-Only log queries from hosts that match this pattern. If the `source` parameter
+Only log queries from hosts that match this pattern. If the `source` parameter\
 is used, the value of `source_match` is ignored.
 
-
-Here is an example pattern that matches the loopback interface as well as the
+Here is an example pattern that matches the loopback interface as well as the\
 address `192.168.0.109`:
-
-
 
 ```
 source_match=/(^127[.]0[.]0[.]1)|(^192[.]168[.]0[.]109)/
 ```
 
-
-
-### `source_exclude`
-
+#### `source_exclude`
 
 * Type: [regex](../mariadb-maxscale-23-02-getting-started/mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#regular-expressions)
 * Mandatory: No
 * Dynamic: Yes
 
-
-Exclude all queries from hosts that match this pattern. If the `source`
+Exclude all queries from hosts that match this pattern. If the `source`\
 parameter is used, the value of `source_exclude` is ignored.
 
-
-Here is an example pattern that excludes the loopback interface as well as the
+Here is an example pattern that excludes the loopback interface as well as the\
 address `192.168.0.109`:
-
-
 
 ```
 source_exclude=/(^127[.]0[.]0[.]1)|(^192[.]168[.]0[.]109)/
 ```
 
+#### `log_type`
 
-
-### `log_type`
-
-
-* Type: [enum_mask](../mariadb-maxscale-23-02-getting-started/mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#enumerations)
+* Type: [enum\_mask](../mariadb-maxscale-23-02-getting-started/mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
 * Dynamic: Yes
 * Values: `session`, `unified`, `stdout`
 * Default: `session`
 
-
 The type of log file to use.
 
-
-| Value | Description |
-| --- | --- |
-| Value | Description |
+| Value   | Description                     |
+| ------- | ------------------------------- |
+| Value   | Description                     |
 | session | Write to session-specific files |
-| unified | Use one file for all sessions |
-| stdout | Same as unified, but to stdout |
+| unified | Use one file for all sessions   |
+| stdout  | Same as unified, but to stdout  |
 
+#### `log_data`
 
-### `log_data`
-
-
-* Type: [enum_mask](../mariadb-maxscale-23-02-getting-started/mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#enumerations)
+* Type: [enum\_mask](../mariadb-maxscale-23-02-getting-started/mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#enumerations)
 * Mandatory: No
 * Dynamic: Yes
 * Values: `service`, `session`, `date`, `user`, `reply_time`, `total_reply_time`, `query`, `default_db`, `num_rows`, `reply_size`, `transaction`, `transaction_time`, `num_warnings`, `error_msg`
 * Default: `date, user, query`
 
-
 Type of data to log in the log files.
 
+| Value              | Description                                             |
+| ------------------ | ------------------------------------------------------- |
+| Value              | Description                                             |
+| service            | Service name                                            |
+| session            | Unique session id (ignored for session files)           |
+| date               | Timestamp                                               |
+| user               | User and hostname of client                             |
+| reply\_time        | Duration from client query to first server reply        |
+| total\_reply\_time | Duration from client query to last server reply (v6.2)  |
+| query              | Query                                                   |
+| default\_db        | The default (current) database                          |
+| num\_rows          | Number of rows in the result set (v6.2)                 |
+| reply\_size        | Number of bytes received from the server (v6.2)         |
+| transaction        | BEGIN, COMMIT and ROLLBACK (v6.2)                       |
+| transaction\_time  | The duration of a transaction (v6.2)                    |
+| num\_warnings      | Number of warnings in the server reply (v6.2)           |
+| error\_msg         | Error message from the server (if any) (v6.2)           |
+| server             | The server where the query was routed (if any) (v22.08) |
 
-| Value | Description |
-| --- | --- |
-| Value | Description |
-| service | Service name |
-| session | Unique session id (ignored for session files) |
-| date | Timestamp |
-| user | User and hostname of client |
-| reply_time | Duration from client query to first server reply |
-| total_reply_time | Duration from client query to last server reply (v6.2) |
-| query | Query |
-| default_db | The default (current) database |
-| num_rows | Number of rows in the result set (v6.2) |
-| reply_size | Number of bytes received from the server (v6.2) |
-| transaction | BEGIN, COMMIT and ROLLBACK (v6.2) |
-| transaction_time | The duration of a transaction (v6.2) |
-| num_warnings | Number of warnings in the server reply (v6.2) |
-| error_msg | Error message from the server (if any) (v6.2) |
-| server | The server where the query was routed (if any) (v22.08) |
+The durations _reply\_time_ and _total\_reply\_time_ are by default in milliseconds,\
+but can be specified to another unit using _duration\_unit_.
 
+The log entry is written when the last reply from the server is received.\
+Prior to version 6.2 the entry was written when the query was received from\
+the client, or if _reply\_time_ was specified, on first reply from the server.
 
-The durations *reply_time* and *total_reply_time* are by default in milliseconds,
-but can be specified to another unit using *duration_unit*.
-
-
-The log entry is written when the last reply from the server is received.
-Prior to version 6.2 the entry was written when the query was received from
-the client, or if *reply_time* was specified, on first reply from the server.
-
-
-**NOTE** The *error_msg* is the raw message from the server. Even if *use_canonical_form*
+**NOTE** The _error\_msg_ is the raw message from the server. Even if _use\_canonical\_form_\
 is set the error message may contain user defined constants. For example:
-
-
 
 ```
 MariaDB [test]> select secret from T where x password="clear text pwd";
@@ -331,98 +250,75 @@ that corresponds to your MariaDB server version for the right syntax to
 use near 'password="clear text pwd"' at line 1
 ```
 
-
-
-### `duration_unit`
-
+#### `duration_unit`
 
 * Type: string
 * Mandatory: No
 * Dynamic: Yes
 * Default: `milliseconds`
 
-
-The unit for logging a duration. The unit can be `milliseconds` or `microseconds`.
-The abbreviations `ms` for milliseconds and `us` for microseconds are also valid.
+The unit for logging a duration. The unit can be `milliseconds` or `microseconds`.\
+The abbreviations `ms` for milliseconds and `us` for microseconds are also valid.\
 This option is available as of MaxScale version 6.2.
 
-
-### `use_canonical_form`
-
+#### `use_canonical_form`
 
 * Type: [bool](../mariadb-maxscale-23-02-getting-started/mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `false`
 
-
-When this option is true the canonical form of the query is logged. In the
-canonical form all user defined constants are replaced with question marks.
+When this option is true the canonical form of the query is logged. In the\
+canonical form all user defined constants are replaced with question marks.\
 This option is available as of MaxScale version 6.2.
 
-
-### `flush`
-
+#### `flush`
 
 * Type: [bool](../mariadb-maxscale-23-02-getting-started/mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `false`
-
 
 Flush log files after every write.
 
-
-### `append`
-
+#### `append`
 
 * Type: [bool](../mariadb-maxscale-23-02-getting-started/mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#booleans)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `true`
 
-
-### `separator`
-
+#### `separator`
 
 * Type: string
 * Mandatory: No
 * Dynamic: Yes
 * Default: `","`
 
-
-Defines the separator string between elements of
+Defines the separator string between elements of\
 log entries. The value should be enclosed in quotes.
 
-
-### `newline_replacement`
-
+#### `newline_replacement`
 
 * Type: string
 * Mandatory: No
 * Dynamic: Yes
 * Default: `" "`
 
-
-Default value is `" "` (one space). SQL-queries may include line breaks, which, if
-printed directly to the log, may break automatic parsing. This parameter defines
-what should be written in the place of a newline sequence (\r, \n or \r\n). If
-this is set as the empty string, then newlines are not replaced and printed as
+Default value is `" "` (one space). SQL-queries may include line breaks, which, if\
+printed directly to the log, may break automatic parsing. This parameter defines\
+what should be written in the place of a newline sequence (\r, \n or \r\n). If\
+this is set as the empty string, then newlines are not replaced and printed as\
 is to the output. The value should be enclosed in quotes.
 
+### Examples
 
-## Examples
+#### Example 1 - Query without primary key
 
-
-### Example 1 - Query without primary key
-
-
-Imagine you have observed an issue with a particular table and you want to
-determine if there are queries that are accessing that table but not using the
-primary key of the table. Let's assume the table name is PRODUCTS and the
-primary key is called PRODUCT_ID. Add a filter with the following definition:
-
-
+Imagine you have observed an issue with a particular table and you want to\
+determine if there are queries that are accessing that table but not using the\
+primary key of the table. Let's assume the table name is PRODUCTS and the\
+primary key is called PRODUCT\_ID. Add a filter with the following definition:
 
 ```
 [ProductsSelectLogger]
@@ -441,22 +337,14 @@ password=mypasswd
 filters=ProductsSelectLogger
 ```
 
-
-
-The result of using this filter with the service used by the application would
-be a log file of all select queries querying PRODUCTS without using the
-PRODUCT_ID primary key in the predicates of the query. Executing `SELECT * FROM
-PRODUCTS` would log the following into `/var/logs/qla/SelectProducts`:
-
-
+The result of using this filter with the service used by the application would\
+be a log file of all select queries querying PRODUCTS without using the\
+PRODUCT\_ID primary key in the predicates of the query. Executing `SELECT * FROM PRODUCTS` would log the following into `/var/logs/qla/SelectProducts`:
 
 ```
 07:12:56.324 7/01/2016, SELECT * FROM PRODUCTS
 ```
 
-
-
 CC BY-SA / Gnu FDL
-
 
 {% @marketo/form formId="4316" %}

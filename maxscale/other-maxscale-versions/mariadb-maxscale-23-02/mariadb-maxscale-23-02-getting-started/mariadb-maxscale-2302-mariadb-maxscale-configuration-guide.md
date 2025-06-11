@@ -1,6 +1,4 @@
-# MariaDB MaxScale Configuration Guide
-
-## Introduction
+# MaxScale Configuration Guide
 
 This document describes how to configure MariaDB MaxScale and presents some\
 possible usage scenarios. MariaDB MaxScale is designed with flexibility in mind,\
@@ -11,14 +9,14 @@ plugin modules that tailor the behavior of the program.
 
 ### Glossary
 
-| Word | Description |
-| ---- | ----------- |
+| Word                | Description                                                                                                                                                                                                                                                                                                                                      |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | connection routing  | Connection routing is a method of handling requests in which MariaDB MaxScale will accept connections from a client and route data on that connection to a single database using a single connection. Connection based routing will not examine individual requests on a connection and it will not move that connection once it is established. |
-| statement routing | Statement routing is a method of handling requests in which each request within a connection will be handled individually. Requests may be sent to one or more servers and connections may be dynamically added or removed from the session. |
-| module | A module is a separate code entity that may be loaded dynamically into MariaDB MaxScale to increase the available functionality. Modules are implemented as run-time loadable shared objects. |
-| connection failover | When a connection currently being used between MariaDB MaxScale and the database server fails a replacement will be automatically created to another server by MariaDB MaxScale without client intervention |
-| backend database | A term used to refer to a database that sits behind MariaDB MaxScale and is accessed by applications via MariaDB MaxScale. |
-| REST API | HTTP administrative interface |
+| statement routing   | Statement routing is a method of handling requests in which each request within a connection will be handled individually. Requests may be sent to one or more servers and connections may be dynamically added or removed from the session.                                                                                                     |
+| module              | A module is a separate code entity that may be loaded dynamically into MariaDB MaxScale to increase the available functionality. Modules are implemented as run-time loadable shared objects.                                                                                                                                                    |
+| connection failover | When a connection currently being used between MariaDB MaxScale and the database server fails a replacement will be automatically created to another server by MariaDB MaxScale without client intervention                                                                                                                                      |
+| backend database    | A term used to refer to a database that sits behind MariaDB MaxScale and is accessed by applications via MariaDB MaxScale.                                                                                                                                                                                                                       |
+| REST API            | HTTP administrative interface                                                                                                                                                                                                                                                                                                                    |
 
 ### Objects
 
@@ -29,17 +27,17 @@ connected via MariaDB MaxScale. The status of a server varies during the lifetim
 of the server and typically the status is updated by some monitor. However, it\
 is also possible to update the status of a server manually.
 
-| Status | Description |
-| ------ | ----------- |
-| Running | The server is running. |
-| Master | The server is the primary. |
-| Slave | The server is a replica. |
-| Draining | The server is being drained. Existing connections can continue to be used, but no new connections will be created to the server. Typically this status bit is turned on manually using maxctrl, but a monitor may also turn it on. |
-| Drained | The server has been drained. The server was being drained and now the number of connections to the server has dropped to 0. |
-| Auth Error | The monitor cannot login and query the server due to insufficient privileges. |
-| Maintenance | The server is under maintenance. Typically this status bit is turned on manually using maxctrl, but it will also be turned on for a server that for some reason is blocking connections from MaxScale. When a server is in maintenace mode, no connections will be created to it and existing connections will be closed. |
-| Slave of External Master | The server is a replica of a primary that is not being monitored. |
-| Master Stickiness | The server is monitored by a galeramon with disable\_master\_failback=true. See [disable\_master\_failback](../../mariadb-maxscale-21-06/) for more information. |
+| Status                   | Description                                                                                                                                                                                                                                                                                                               |
+| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Running                  | The server is running.                                                                                                                                                                                                                                                                                                    |
+| Master                   | The server is the primary.                                                                                                                                                                                                                                                                                                |
+| Slave                    | The server is a replica.                                                                                                                                                                                                                                                                                                  |
+| Draining                 | The server is being drained. Existing connections can continue to be used, but no new connections will be created to the server. Typically this status bit is turned on manually using maxctrl, but a monitor may also turn it on.                                                                                        |
+| Drained                  | The server has been drained. The server was being drained and now the number of connections to the server has dropped to 0.                                                                                                                                                                                               |
+| Auth Error               | The monitor cannot login and query the server due to insufficient privileges.                                                                                                                                                                                                                                             |
+| Maintenance              | The server is under maintenance. Typically this status bit is turned on manually using maxctrl, but it will also be turned on for a server that for some reason is blocking connections from MaxScale. When a server is in maintenace mode, no connections will be created to it and existing connections will be closed. |
+| Slave of External Master | The server is a replica of a primary that is not being monitored.                                                                                                                                                                                                                                                         |
+| Master Stickiness        | The server is monitored by a galeramon with disable\_master\_failback=true. See [disable\_master\_failback](../../mariadb-maxscale-21-06/) for more information.                                                                                                                                                          |
 
 For more information on how to manually set these states via MaxCtrl, read the[Administration Tutorial](../mariadb-maxscale-23-02-tutorials/mariadb-maxscale-2302-mariadb-maxscale-administration-tutorial.md).
 
@@ -73,7 +71,7 @@ referred to from _services_.
 A router module is capable of routing requests to backend servers according to\
 the characteristics of a request and/or the algorithm the router\
 implements. Examples of routers are `readconnroute` that provides _connection_\
-_routing_, that is, the server is chosen according to specified rules when the\
+&#xNAN;_&#x72;outing_, that is, the server is chosen according to specified rules when the\
 session is created and all requests are subsequently routed to that server,\
 and `readwritesplit` that provides _statement routing_, that is, each\
 individual request is routed to the most appropriate server.
@@ -422,10 +420,10 @@ particular server variable. With this parameter it can be specified whether`all`
 
 The current auto tunable parameters are:
 
-| MaxScale Parameter | Server Variable Dependency |
-| ------------------ | -------------------------- |
-| [connection\_keepalive](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#connection_keepalive) | 80% of the smallest [wait\_timeout](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#wait_timeout) value of the servers used by the service |
-| [wait\_timeout](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#wait_timeout) | The smallest [wait\_timeout](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#wait_timeout) value of the servers used by the service |
+| MaxScale Parameter                                                                                                                                               | Server Variable Dependency                                                                                                                                                                                                    |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [connection\_keepalive](mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#connection_keepalive)                                                      | 80% of the smallest [wait\_timeout](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#wait_timeout) value of the servers used by the service |
+| [wait\_timeout](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#wait_timeout) | The smallest [wait\_timeout](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#wait_timeout) value of the servers used by the service        |
 
 The values of the server variables are collected by monitors, which means that\
 if the servers of a service are not monitored by a monitor, then the parameters\
@@ -1114,13 +1112,13 @@ exactly known and over which we do not have direct control.
 Using `maxctrl show threads` it is possible to check what the actual size of\
 the cache is and to see performance statistics.
 
-| Key | Meaning |
-| --- | ------- |
-| QC cache size | The current size of the cache (bytes). |
-| QC cache inserts | How many entries have been inserted into the cache. |
-| QC cache hits | How many times the classification result has been found from the cache. |
-| QC cache misses | How many times the classification result has not been found from the cache, but the classification had to be performed. |
-| QC cache evictions | How many times a cache entry has had to be removed from the cache, in order to make place for another. |
+| Key                | Meaning                                                                                                                 |
+| ------------------ | ----------------------------------------------------------------------------------------------------------------------- |
+| QC cache size      | The current size of the cache (bytes).                                                                                  |
+| QC cache inserts   | How many entries have been inserted into the cache.                                                                     |
+| QC cache hits      | How many times the classification result has been found from the cache.                                                 |
+| QC cache misses    | How many times the classification result has not been found from the cache, but the classification had to be performed. |
+| QC cache evictions | How many times a cache entry has had to be removed from the cache, in order to make place for another.                  |
 
 #### `query_classifier_args`
 
@@ -1169,7 +1167,7 @@ some_parameter=$SOME_VALUE
 
 is encountered, then `$SOME_VALUE` will be replaced with the actual value\
 of the environment variable `SOME_VALUE`. Note:_Variable substitution will be made only if '$' is the first character_\
-_of the value._ _Everything_ following '$' is interpreted as the name of the environment\
+&#xNAN;_&#x6F;f the value._ _Everything_ following '$' is interpreted as the name of the environment\
 variable.
 
 * Referring to a non-existing environment variable is a fatal error.
@@ -4490,15 +4488,15 @@ The current limitations of MaxScale are listed in the [Limitations](../mariadb-m
 From 22.08.2 onwards, `maxctrl show maxscale` shows a `System` object with\
 information about the system MaxScale is running on. The fields are:
 
-| Field | Meaning |
-| ----- | ------- |
-| machine.cores\_physical | The number of physical CPU cores on the machine. |
-| machine.cores\_available | The number of CPU cores available to MaxScale. This number may be smaller than machine.cores\_physical, if CPU affinities are used and only a subset of the physical cores are available to MaxScale. |
-| machine.cores\_virtual | The number of virtual CPU cores available to MaxScale. This number may be a decimal and smaller than machine.cores\_available, if MaxScale is running in a container whose CPU quota and period has been restricted. Note that if MaxScale is not, or fails to detect it is running in a container, the value shown will be identical with machine.cores\_available. |
-| machine.memory\_physical | The amount of physical memory on the machine. |
-| machine.memory\_available | The amount of memory available to MaxScale. This number may be smaller than machine.memory\_physical, if MaxScale is running in a container whose memory has been restricted. Note that if MaxScale is not, or fails to detect it is running in a container, the value shown will be identical with machine.memory\_physical. Note also that the amount is available to all processes running in the same container, not just to MaxScale. |
-| maxscale.query\_classifier\_cache\_size | The maximum size of the MaxScale query classifier cache. |
-| maxscale.threads | The number of routing threads used by MaxScale. |
+| Field                                   | Meaning                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| --------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| machine.cores\_physical                 | The number of physical CPU cores on the machine.                                                                                                                                                                                                                                                                                                                                                                                           |
+| machine.cores\_available                | The number of CPU cores available to MaxScale. This number may be smaller than machine.cores\_physical, if CPU affinities are used and only a subset of the physical cores are available to MaxScale.                                                                                                                                                                                                                                      |
+| machine.cores\_virtual                  | The number of virtual CPU cores available to MaxScale. This number may be a decimal and smaller than machine.cores\_available, if MaxScale is running in a container whose CPU quota and period has been restricted. Note that if MaxScale is not, or fails to detect it is running in a container, the value shown will be identical with machine.cores\_available.                                                                       |
+| machine.memory\_physical                | The amount of physical memory on the machine.                                                                                                                                                                                                                                                                                                                                                                                              |
+| machine.memory\_available               | The amount of memory available to MaxScale. This number may be smaller than machine.memory\_physical, if MaxScale is running in a container whose memory has been restricted. Note that if MaxScale is not, or fails to detect it is running in a container, the value shown will be identical with machine.memory\_physical. Note also that the amount is available to all processes running in the same container, not just to MaxScale. |
+| maxscale.query\_classifier\_cache\_size | The maximum size of the MaxScale query classifier cache.                                                                                                                                                                                                                                                                                                                                                                                   |
+| maxscale.threads                        | The number of routing threads used by MaxScale.                                                                                                                                                                                                                                                                                                                                                                                            |
 
 In addition there is an `os` object that contains what the Linux command `uname` displays.
 

@@ -1,38 +1,24 @@
-
 # MariaDB MaxScale 1.2 Release Notes
 
-# MariaDB MaxScale 1.2 Release Notes
-
-
-## 1.2 GA
-
+### 1.2 GA
 
 This document details the changes in version 1.2 since the release of the 1.1.1 GA Release of the MaxScale product.
 
-
-### PLEASE NOTICE: MaxScale installation directories have changed in this version
-
+#### PLEASE NOTICE: MaxScale installation directories have changed in this version
 
 The 1.2 version of MaxScale differs from previous versions in its installation layout. Please take great care when upgrading MaxScale from previous versions to version 1.2. An automatic upgrade will not work due to the severe changes in the installation layout.
 
+### New Features
 
-## New Features
-
-
-### Non-root MaxScale
-
+#### Non-root MaxScale
 
 You can now run MaxScale as any user. The standard installation of a MaxScale package now creates the maxscale user and the maxscale group.
 
+#### FHS-compliant installation
 
-### FHS-compliant installation
-
-
-The 1.2 version of MaxScale now complies to the Filesystem Hierarchy Standard. This means that MAXSCALE_HOME is no longer necessary and directories can be moved to different locations.
-
+The 1.2 version of MaxScale now complies to the Filesystem Hierarchy Standard. This means that MAXSCALE\_HOME is no longer necessary and directories can be moved to different locations.
 
 A quick list of changes in installation directories and file names:
-
 
 * Binaries go into `/usr/bin`
 * Configuration files to `/etc` and the configuration file is now lower case: `maxscale.cnf`
@@ -41,30 +27,21 @@ A quick list of changes in installation directories and file names:
 * Data directory is `/var/lib/maxscale`. This is the default location for MaxScale-specific data.
 * PID file can be found at `/var/run/maxscale`
 
-
-### Client side SSL encryption
-
+#### Client side SSL encryption
 
 MaxScale now supports SSL/TLS encrypted connections to MaxScale.
 
-
-### Launchable scripts
-
+#### Launchable scripts
 
 Now you can configure MaxScale monitor module to automatically launch a script when it detects change in the state of a backend server. The script can be any customer script defined by you to take diagnostic or reporting action. With this you can easily customize MaxScale's behavior.
 
-
-### Lsyncd configuration guide
-
+#### Lsyncd configuration guide
 
 A new tutorial has been added which helps you keep MaxScale's configuration files in sync across multiple hosts. This allows for easier HA setups with MaxScale and guarantees up-to-date configuration files on all nodes. The tutorial can be found [here](https://mariadb.com/kb/en/).
 
-
-## Bug fixes
-
+### Bug fixes
 
 Here is a list of bugs fixed since the release of MaxScale 1.1.1.
-
 
 * [MXS-24](https://jira.mariadb.org/browse/MXS-24): bugzillaId-604: Module load path documentation issues ...
 * [MXS-40](https://jira.mariadb.org/browse/MXS-40): Display logged in users
@@ -72,11 +49,11 @@ Here is a list of bugs fixed since the release of MaxScale 1.1.1.
 * [MXS-116](https://jira.mariadb.org/browse/MXS-116): Do not run maxscale as root.
 * [MXS-117](https://jira.mariadb.org/browse/MXS-117): Allow configuration of the log file directory
 * [MXS-125](https://jira.mariadb.org/browse/MXS-125): inconsistency in maxkeys/maxpassword output and parameters
-* [MXS-128](https://jira.mariadb.org/browse/MXS-128): cyclic dependency utils -> log_manager -> utils
+* [MXS-128](https://jira.mariadb.org/browse/MXS-128): cyclic dependency utils -> log\_manager -> utils
 * [MXS-136](https://jira.mariadb.org/browse/MXS-136): Check for MaxScale replication heartbeat table existence before creating
 * [MXS-137](https://jira.mariadb.org/browse/MXS-137): cannot get sql for queries with length >= 0x80
-* [MXS-139](https://jira.mariadb.org/browse/MXS-139): Schemarouter authentication for wildcard grants fails without optimize_wildcard
-* [MXS-140](https://jira.mariadb.org/browse/MXS-140): strip_db_esc does not work without auth_all_servers
+* [MXS-139](https://jira.mariadb.org/browse/MXS-139): Schemarouter authentication for wildcard grants fails without optimize\_wildcard
+* [MXS-140](https://jira.mariadb.org/browse/MXS-140): strip\_db\_esc does not work without auth\_all\_servers
 * [MXS-162](https://jira.mariadb.org/browse/MXS-162): Fix Incorrect info in Configuration Guide
 * [MXS-165](https://jira.mariadb.org/browse/MXS-165): Concurrency issue while incrementing sessions in qlafilter
 * [MXS-166](https://jira.mariadb.org/browse/MXS-166): Memory leak when creating a new event
@@ -91,25 +68,19 @@ Here is a list of bugs fixed since the release of MaxScale 1.1.1.
 * [MXS-227](https://jira.mariadb.org/browse/MXS-227): Memory leak in Galera Monitor
 * [MXS-244](https://jira.mariadb.org/browse/MXS-244): Memory leak when using prepared statements without arguments
 
-
-## Known Issues and Limitations
-
+### Known Issues and Limitations
 
 There are a number bugs and known limitations within this version of MaxScale, the most serious of this are listed below.
-
 
 * MaxScale can not manage authentication that uses wildcard matching in hostnames in the mysql.user table of the backend database. The only wildcards that can be used are in IP address entries.
 * When users have different passwords based on the host from which they connect MaxScale is unable to determine which password it should use to connect to the backend database. This results in failed connections and unusable usernames in MaxScale.
 * LONGBLOB are currently not supported.
-* Galera Cluster variables, such as @@wsrep_node_name, are not resolved by the embedded MariaDB parser.
+* Galera Cluster variables, such as @@wsrep\_node\_name, are not resolved by the embedded MariaDB parser.
 * The Database Firewall filter does not support multi-statements. Using them will result in an error being sent to the client.
 
-
-## Packaging
-
+### Packaging
 
 Both RPM and Debian packages are available for MaxScale in addition to the tar based releases previously distributed we now provide
-
 
 * CentOS/RedHat 5
 * CentOS/RedHat 6
@@ -121,8 +92,6 @@ Both RPM and Debian packages are available for MaxScale in addition to the tar b
 * SuSE Linux Enterprise 11
 * SuSE Linux Enterprise 12
 
-
 CC BY-SA / Gnu FDL
-
 
 {% @marketo/form formId="4316" %}

@@ -1,6 +1,4 @@
-# maxscale-change-history
-
-## MaxScale Change History
+# MaxScale Change History
 
 MaxScale
 

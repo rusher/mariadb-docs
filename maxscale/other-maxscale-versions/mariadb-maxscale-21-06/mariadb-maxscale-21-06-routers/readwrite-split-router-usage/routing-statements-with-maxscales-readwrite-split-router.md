@@ -1,8 +1,4 @@
-# routing-statements-with-maxscales-readwrite-split-router
-
-## Routing Statements with MaxScale's Read/Write Split Router
-
-## Overview
+# Routing Statements with MaxScale's Read/Write Split Router
 
 The [Read/Write Split Router (readwritesplit)](../../../mariadb-maxscale-23-02/mariadb-maxscale-23-02-routers/mariadb-maxscale-2302-readwritesplit.md) uses well-defined rules to determine whether a statement can be routed to a replica server, or whether it needs to be routed to the primary server. Application designers must understand these rules to ensure that the router can properly load balance queries.
 

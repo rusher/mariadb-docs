@@ -1,8 +1,4 @@
-# mariadb-maxscale-2106-maxscale-2106-setting-up-mariadb-maxscale
-
-## MaxScale 21.06 Setting up MariaDB MaxScale
-
-## Setting up MariaDB MaxScale
+# MaxScale 21.06 Setting up MariaDB MaxScale
 
 This document is designed as a quick introduction to setting up MariaDB MaxScale.
 

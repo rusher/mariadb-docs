@@ -1,8 +1,4 @@
-# ensuring-causal-consistency-with-maxscales-readwrite-split-router
-
-## Ensuring Causal Consistency with MaxScale's Read/Write Split Router
-
-## Overview
+# Ensuring Causal Consistency with MaxScale's Read/Write Split Router
 
 The [Read/Write Split Router (readwritesplit)](../../../mariadb-maxscale-23-02/mariadb-maxscale-23-02-routers/mariadb-maxscale-2302-readwritesplit.md) load balances read-only queries between one or more replica servers. If the replica servers are using asynchronous [MariaDB replication](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication), then the data on the replica servers can sometimes lag behind the primary server. When this occurs, read-only queries that are executed on the replica servers can return stale results if they are not executed in a causally consistent manner. Causal consistency is the act of ensuring that interdependent operations maintain consistency by performing them in the same order on all servers.
 

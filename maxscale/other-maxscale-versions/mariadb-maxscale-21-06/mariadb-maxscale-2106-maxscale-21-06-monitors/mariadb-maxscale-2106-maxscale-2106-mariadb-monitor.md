@@ -1,8 +1,4 @@
-# mariadb-maxscale-2106-maxscale-2106-mariadb-monitor
-
-## MaxScale 21.06 MariaDB Monitor
-
-## MariaDB Monitor
+# MaxScale 21.06 MariaDB Monitor
 
 * [MariaDB Monitor](mariadb-maxscale-2106-maxscale-2106-mariadb-monitor.md#mariadb-monitor)
   * [Overview](mariadb-maxscale-2106-maxscale-2106-mariadb-monitor.md#overview)
@@ -365,7 +361,7 @@ this monitor but are a part of the replication topology.
 
 An external server is a server not monitored by this monitor. If a server is\
 replicating from an external server, it typically gains the _Slave of External_\
-_Server_-status. If this setting is enabled, the status is not set.
+&#xNAN;_&#x53;erver_-status. If this setting is enabled, the status is not set.
 
 #### `failcount`
 

@@ -1,8 +1,4 @@
-# maxscale-nagios-plugins-for-nagios-351
-
-## MaxScale Nagios plugins, for Nagios 3.5.1
-
-## MaxScale Nagios plugins, for Nagios 3.5.1
+# MaxScale Nagios plugins, for Nagios 3.5.1
 
 Massimiliano Pinto
 

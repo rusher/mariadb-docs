@@ -1,8 +1,4 @@
-# maxscale-mariadb-monitor-usage
-
-## MaxScale MariaDB Monitor Usage
-
-## Overview
+# MaxScale MariaDB Monitor Usage
 
 * [Aurora Monitor](maxscale-mariadb-monitor-usage-aurora-monitor/)
 * [ColumnStore Monitor](maxscale-mariadb-monitor-usage-columnstore-monitor.md)

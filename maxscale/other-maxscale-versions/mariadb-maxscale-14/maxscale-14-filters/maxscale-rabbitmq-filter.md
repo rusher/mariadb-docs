@@ -1,24 +1,14 @@
-
 # MaxScale RabbitMQ Filter
 
-# RabbitMQ Filter
-
-
-## Overview
-
+### Overview
 
 This filter is designed to extract queries and transform them into a canonical form e.g. `INSERT INTO database.table VALUES ("John Doe", "Downtown",100,50.0);` turns into `INSERT INTO database.table VALUES ("?", "?",?,?);`. The filter pushes these canonicalized queries and their replies in to a RabbitMQ broker where they can later be retrieved. The retrieval can be done with your own application or the [RabbitMQ Consumer Client](maxscale-rabbitmq-consumer-client.md) utility tool, which reads the messages from the broker and sends the contents of those messages as SQL queries to a database.
 
-
-## Configuration
-
+### Configuration
 
 The configuration block for the **mqfilter** filter requires the minimal filter options in it’s section within the maxscale.cnf file, stored in /etc/maxscale.cnf. Although the filter will start, it will use the default values which only work with a freshly installed RabbitMQ server and use its default values. This setup is mostly intended for testing the filter.
 
-
 The following is an example of a mqfilter configuration in the maxscale.cnf file used for actual logging of queries to a RabbitMQ broker on a different host.
-
-
 
 ```
 [RabbitMQ]
@@ -46,45 +36,37 @@ passwd=mypasswd
 filters=RabbitMQ
 ```
 
-
-
-### Filter Options
-
+#### Filter Options
 
 The mqfilter filter does not support any filter options.
 
-
-### Filter Parameters
-
+#### Filter Parameters
 
 The RabbitMQ filter has parameters to control which queries are logged based on either the attributes of the user or the query itself. These can be combined to to only log queries targeting a certain table in a certain database from a certain user from a certain network address.
 
-
-| Option | Description | Accepted Values | Default |
-| --- | --- | --- | --- |
-| Option | Description | Accepted Values | Default |
-| logging_trigger | Set the logging level | all, source, schema, object | all |
-| logging_strict | Sets whether to trigger when any of the parameters match or only if all parameters match | true, false | false |
-| logging_log_all | Log only SELECT, UPDATE, DELETE and INSERT or all possible queries | true, false | true |
-| logging_source_user | Comma-separated list of usernames to log |  |  |
-| logging_source_host | Comma-separated list of hostnames to log |  |  |
-| logging_schema | Comma-separated list of databases |  |  |
-| logging_object | Comma-separated list of database objects |  |  |
-| hostname | The server hostname where the messages are sent |  | localhost |
-| port | Port to send the messages to |  | 5672 |
-| username | Server login username |  | guest |
-| password | Server login password |  | guest |
-| vhost | The virtual host location on the server, where the messages are sent |  | / |
-| exchange | The name of the exchange |  | default_exchange |
-| exchange_type | The type of the exchange | direct, fanout, topic, headers | direct |
-| key | The routing key used when sending messages to the exchange |  | key |
-| queue | The queue that will be bound to the used exchange |  |  |
-| ssl_CA_cert | Path to the CA certificate in PEM format |  |  |
-| ssl_client_cert | Path to the client certificate in PEM format |  |  |
-| ssl_client_key | Path to the client public key in PEM format |  |  |
-
+| Option                | Description                                                                              | Accepted Values                | Default           |
+| --------------------- | ---------------------------------------------------------------------------------------- | ------------------------------ | ----------------- |
+| Option                | Description                                                                              | Accepted Values                | Default           |
+| logging\_trigger      | Set the logging level                                                                    | all, source, schema, object    | all               |
+| logging\_strict       | Sets whether to trigger when any of the parameters match or only if all parameters match | true, false                    | false             |
+| logging\_log\_all     | Log only SELECT, UPDATE, DELETE and INSERT or all possible queries                       | true, false                    | true              |
+| logging\_source\_user | Comma-separated list of usernames to log                                                 |                                |                   |
+| logging\_source\_host | Comma-separated list of hostnames to log                                                 |                                |                   |
+| logging\_schema       | Comma-separated list of databases                                                        |                                |                   |
+| logging\_object       | Comma-separated list of database objects                                                 |                                |                   |
+| hostname              | The server hostname where the messages are sent                                          |                                | localhost         |
+| port                  | Port to send the messages to                                                             |                                | 5672              |
+| username              | Server login username                                                                    |                                | guest             |
+| password              | Server login password                                                                    |                                | guest             |
+| vhost                 | The virtual host location on the server, where the messages are sent                     |                                | /                 |
+| exchange              | The name of the exchange                                                                 |                                | default\_exchange |
+| exchange\_type        | The type of the exchange                                                                 | direct, fanout, topic, headers | direct            |
+| key                   | The routing key used when sending messages to the exchange                               |                                | key               |
+| queue                 | The queue that will be bound to the used exchange                                        |                                |                   |
+| ssl\_CA\_cert         | Path to the CA certificate in PEM format                                                 |                                |                   |
+| ssl\_client\_cert     | Path to the client certificate in PEM format                                             |                                |                   |
+| ssl\_client\_key      | Path to the client public key in PEM format                                              |                                |                   |
 
 CC BY-SA / Gnu FDL
-
 
 {% @marketo/form formId="4316" %}

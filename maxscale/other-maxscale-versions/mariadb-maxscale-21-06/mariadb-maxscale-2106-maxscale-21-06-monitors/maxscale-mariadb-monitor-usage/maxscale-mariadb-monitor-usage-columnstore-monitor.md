@@ -1,6 +1,6 @@
-# maxscale-mariadb-monitor-usage-columnstore-monitor
+# ColumnStore Monitor
 
-## ColumnStore Monitor
+##
 
 ## Overview
 

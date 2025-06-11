@@ -1,8 +1,4 @@
-# maxscale-configuration-usage-scenarios
-
-## MaxScale Configuration & Usage Scenarios
-
-## MaxScale Configuration & Usage Scenarios
+# MaxScale Configuration & Usage Scenarios
 
 ### Introduction
 

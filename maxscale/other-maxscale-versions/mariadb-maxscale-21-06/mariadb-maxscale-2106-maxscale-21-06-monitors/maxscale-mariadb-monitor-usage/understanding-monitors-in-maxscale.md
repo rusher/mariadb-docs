@@ -1,8 +1,4 @@
-# understanding-monitors-in-maxscale
-
-## Understanding Monitors in MaxScale
-
-## Overview
+# Understanding Monitors in MaxScale
 
 In MariaDB MaxScale, monitors perform the following tasks:
 

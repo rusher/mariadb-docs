@@ -1,8 +1,4 @@
-# understanding-maxscales-readwrite-split-router
-
-## Understanding MaxScale's Read/Write Split Router
-
-## Overview
+# Understanding MaxScale's Read/Write Split Router
 
 MaxScale's [Read/Write Split Router (readwritesplit)](../../../mariadb-maxscale-23-02/mariadb-maxscale-23-02-routers/mariadb-maxscale-2302-readwritesplit.md) performs query-based load balancing. For each client connected to MaxScale, it opens up connections to multiple back-end database servers. When the client sends a write query to MaxScale, it routes the query to the connection opened with the primary server. When the client sends a read query to MaxScale, it routes the query to a connection opened with one of the replicas.
 

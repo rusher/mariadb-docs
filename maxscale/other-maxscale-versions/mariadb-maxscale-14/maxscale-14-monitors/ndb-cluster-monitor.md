@@ -1,21 +1,12 @@
-
 # NDB Cluster Monitor
 
-# NDB Cluster Monitor
-
-
-## Overview
-
+### Overview
 
 The MySQL Cluster Monitor is a monitoring module for MaxScale that monitors a MySQL Cluster. It assigns a NDB status for the server if it is a part of a MySQL Cluster.
 
-
-## Configuration
-
+### Configuration
 
 A minimal configuration for a monitor requires a set of servers for monitoring and a username and a password to connect to these servers. The user requires the REPLICATION CLIENT privilege to successfully monitor the state of the servers.
-
-
 
 ```
 [MySQL Cluster Monitor]
@@ -26,15 +17,10 @@ user=myuser
 passwd=mypwd
 ```
 
+#### Common Monitor Parameters
 
-
-### Common Monitor Parameters
-
-
-For a list of optional parameters that all monitors support, read the [Monitor Common](../../mariadb-maxscale-21-06/README.md) document.
-
+For a list of optional parameters that all monitors support, read the [Monitor Common](../../mariadb-maxscale-21-06/) document.
 
 CC BY-SA / Gnu FDL
-
 
 {% @marketo/form formId="4316" %}

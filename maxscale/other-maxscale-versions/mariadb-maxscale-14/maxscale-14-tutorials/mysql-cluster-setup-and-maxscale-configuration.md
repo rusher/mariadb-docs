@@ -1,63 +1,41 @@
-
 # MySQL Cluster setup and MaxScale configuration
-
-# MySQL Cluster setup and MaxScale configuration
-
 
 Massimiliano Pinto
 
-
 Last Updated: 1st August 2014
 
+### Contents
 
-## Contents
+### Document History
 
-
-## Document History
-
-
-|   |   |   |
-| --- | --- | --- |
-| Date | Change | Who |
+|                |                 |                    |
+| -------------- | --------------- | ------------------ |
+| Date           | Change          | Who                |
 | 31st July 2014 | Initial version | Massimiliano Pinto |
 
-
-## Overview
-
+### Overview
 
 The document covers the MySQL Cluster 7.2.17 setup and MaxScale configuration in order to load balancing the SQL nodes access.
 
-
-## MySQL Cluster setup
-
+### MySQL Cluster setup
 
 The MySQL Cluster 7.2.17 setup is based on two virtual servers with Linux Centos 6.5
 
-
 * server1:
-
 
 NDB Manager process
 
-
 SQL data node1
-
 
 MySQL 5.5.38 as SQL node1
 
-
 * server2:
-
 
 SQL data node2
 
-
 MySQL 5.5.38 as SQL node2
 
-
 Cluster configuration file is /var/lib/mysql-cluster/config.ini, copied on all servers
-
-
 
 ```
 [ndbd default]
@@ -83,14 +61,9 @@ hostname=178.62.38.199
 hostname=162.243.90.81
 ```
 
-
-
 Note, it’s possible to specify all node ids and datadir as well for each cluster component
 
-
 Example:
-
-
 
 ```
 [ndbd]
@@ -99,11 +72,7 @@ id=43
 datadir=/usr/local/mysql/data
 ```
 
-
-
 and /etc/my.cnf, copied as well in all servers
-
-
 
 ```
 [mysqld]
@@ -115,27 +84,17 @@ innodb_buffer_pool_size=16M
 ndb-connectstring=178.62.38.199
 ```
 
-
-
-## Startup of MySQL Cluster
-
+### Startup of MySQL Cluster
 
 Each cluster node process must be started separately, and on the host where it resides. The management node should be started first, followed by the data nodes, and then finally by any SQL nodes:
 
-
 * On the management host, server1, issue the following command from the system shell to start the management node process:
-
-
 
 ```
 [root@server1 ~]# ndb_mgmd -f /var/lib/mysql-cluster/config.ini
 ```
 
-
-
 * On each of the data node hosts, run this command to start the ndbd process:
-
-
 
 ```
 [root@server1 ~]# ndbd —-initial -—initial-start
@@ -143,11 +102,7 @@ Each cluster node process must be started separately, and on the host where it r
 [root@server2 ~]# ndbd —-initial -—initial-start
 ```
 
-
-
 * On each SQL node start the MySQL server process:
-
-
 
 ```
 [root@server1 ~]# /etc/init.d/mysql start
@@ -155,20 +110,13 @@ Each cluster node process must be started separately, and on the host where it r
 [root@server2 ~]# /etc/init.d/mysql start
 ```
 
-
-
-## Check the cluster status
-
+### Check the cluster status
 
 If all has gone well, and the cluster has been set up correctly, the cluster should now be operational.
 
-
-It’s possible to test this by invoking the ndb_mgm management node client.
-
+It’s possible to test this by invoking the ndb\_mgm management node client.
 
 The output should look like that shown here, although you might see some slight differences in the output depending upon the exact version of MySQL that you are using:
-
-
 
 ```
 [root@server1 ~]# ndb_mgm 
@@ -202,17 +150,11 @@ id=23   @162.243.90.81  (mysql-5.5.38 ndb-7.2.17)
 ndb_mgm>
 ```
 
+The SQL node is referenced here as \[mysqld(API)], which reflects the fact that the mysqld process is acting as a MySQL Cluster API node.
 
-
-The SQL node is referenced here as [mysqld(API)], which reflects the fact that the mysqld process is acting as a MySQL Cluster API node.
-
-
-## Working with NDBCLUSTER engine in MySQL
-
+### Working with NDBCLUSTER engine in MySQL
 
 * First create a table with NDBCLUSTER engine:
-
-
 
 ```
 [root@server1 ~]# mysql
@@ -238,11 +180,7 @@ mysql> show create table t1;
 1 row in set (0.01 sec)
 ```
 
-
-
 * Just add a row in the table:
-
-
 
 ```
 mysql> insert into test.t1 values(11);
@@ -250,11 +188,7 @@ mysql> insert into test.t1 values(11);
 Query OK, 1 row affected (0.15 sec)
 ```
 
-
-
 * Select the current number of rows:
-
-
 
 ```
 mysql> select count(1) from t1;
@@ -268,11 +202,7 @@ mysql> select count(1) from t1;
 1 row in set (0.07 sec)
 ```
 
-
-
 * The same from the MySQL client pointing to SQL node on server2
-
-
 
 ```
 [root@server2 ~]# mysql
@@ -288,14 +218,9 @@ mysql> select count(1) from test.t1;
 1 row in set (0.08 sec)
 ```
 
-
-
-## Configuring MaxScale for connection load balancing of SQL nodes
-
+### Configuring MaxScale for connection load balancing of SQL nodes
 
 Add these sections in maxscale.cnf config file:
-
-
 
 ```
 [Cluster Service]
@@ -337,11 +262,7 @@ port=3306
 protocol=MySQLBackend
 ```
 
-
-
 Assuming MaxScale is installed in server1, start it
-
-
 
 ```
 [root@server1 ~]# cd /usr/bin
@@ -349,11 +270,7 @@ Assuming MaxScale is installed in server1, start it
 [root@server1 bin]#  ./maxscale -c ../
 ```
 
-
-
 Using the debug interface it’s possible to check the status of monitored servers
-
-
 
 ```
 MaxScale> show monitors
@@ -396,14 +313,9 @@ Current no. of conns:       0
 Current no. of operations:  0
 ```
 
-
-
 It’s now possible to run basic tests with the read connection load balancing for the two configured SQL nodes
 
-
-(1) test MaxScale load balancing requesting the Ndb_cluster_node_id variable:
-
-
+(1) test MaxScale load balancing requesting the Ndb\_cluster\_node\_id variable:
 
 ```
 [root@server1 ~]# mysql -h 127.0.0.1 -P 4906 -u test -ptest -e "SHOW STATUS LIKE 'Ndb_cluster_node_id'"
@@ -423,14 +335,9 @@ It’s now possible to run basic tests with the read connection load balancing f
 +---------------------+-------+
 ```
 
-
-
 The MaxScale connection load balancing is working.
 
-
 (2) test a select statement on an NBDBCLUSTER table, database test and table t1 created before:
-
-
 
 ```
 [root@server1 ~] mysql -h 127.0.0.1 -P 4906 -utest -ptest -e "SELECT COUNT(1) FROM test.t1"
@@ -442,21 +349,13 @@ The MaxScale connection load balancing is working.
 +----------+
 ```
 
-
-
 (3) test an insert statement
-
-
 
 ```
 mysql -h 127.0.0.1 -P 4906 -utest -ptest -e "INSERT INTO test.t1 VALUES (19)"
 ```
 
-
-
 (4) test again the select and check the number of rows
-
-
 
 ```
 [root@server1 ~] mysql -h 127.0.0.1 -P 4906 -utest -ptest -e "SELECT COUNT(1) FROM test.t1"
@@ -468,9 +367,6 @@ mysql -h 127.0.0.1 -P 4906 -utest -ptest -e "INSERT INTO test.t1 VALUES (19)"
 +----------+
 ```
 
-
-
 CC BY-SA / Gnu FDL
-
 
 {% @marketo/form formId="4316" %}

@@ -1,8 +1,4 @@
-# selecting-replica-servers-with-maxscales-readwrite-split-router
-
-## Selecting Replica Servers with MaxScale's Read/Write Split Router
-
-## Overview
+# Selecting Replica Servers with MaxScale's Read/Write Split Router
 
 The [Read/Write Split Router (readwritesplit)](../../../mariadb-maxscale-23-02/mariadb-maxscale-23-02-routers/mariadb-maxscale-2302-readwritesplit.md) load balances read-only queries between one or more replica servers. It selects a replica server to execute a query using criteria configured by the `slave_selection_criteria` parameter.
 
