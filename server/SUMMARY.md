@@ -2064,7 +2064,7 @@
       * [Obsolete Table Commands](reference/sql-statements/table-statements/obsolete-table-commands/README.md)
         * [BACKUP TABLE (removed)](reference/sql-statements/table-statements/obsolete-table-commands/backup-table-removed.md)
         * [RESTORE TABLE (removed)](reference/sql-statements/table-statements/obsolete-table-commands/restore-table-removed.md)
-    * [Transactions](reference/sql-statements-and-structure/sql-statements/transactions/README.md)
+    * [Transactions](reference/sql-statements/transactions/README.md)
       * [COMMIT](reference/sql-statements/transactions/commit.md)
       * [LOCK TABLES](reference/sql-statements/transactions/lock-tables.md)
       * [Metadata Locking](reference/sql-statements/transactions/metadata-locking.md)
