@@ -2,9 +2,7 @@
 hidden: true
 ---
 
-# columnstore-system-monitoring-configuration
-
-## ColumnStore System Monitoring Configuration
+# ColumnStore System Monitoring Configuration
 
 1. [Introduction "Introduction"](columnstore-system-monitoring-configuration.md#introduction)
 2. [System monitoring configuration "System monitoring configuration"](columnstore-system-monitoring-configuration.md#system-monitoring-configuration)
@@ -102,7 +100,7 @@ WriteEngineServ     1507               1
 
 ## Viewing storage configuration
 
-To view the storage configuration, use the _getStorageConfig_ command in [mcsadmin](broken-reference), or simply use [mcsadmin](broken-reference) _getStorageConfig_ from the operating system prompt. This will provide information on DBRoots and which PM they are assigned to, if any.
+To view the storage configuration, use the _getStorageConfig_ command in [mcsadmin](../../columnstore-quickstart-guides/mariadb-columnstore-usage-guide.md#mcsadmin), or simply use [mcsadmin](../../columnstore-quickstart-guides/mariadb-columnstore-usage-guide.md#mcsadmin) _getStorageConfig_ from the operating system prompt. This will provide information on DBRoots and which PM they are assigned to, if any.
 
 Example:
 

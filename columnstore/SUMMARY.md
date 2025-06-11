@@ -24,7 +24,7 @@
     * [columnstore-audit-plugin](management/columnstore-system/columnstore-audit-plugin.md)
     * [ColumnStore Configuration File Update and Distribution](management/columnstore-system/columnstore-configuration-file-update-and-distribution.md)
     * [columnstore-redistribute-data](management/columnstore-system/columnstore-redistribute-data.md)
-    * [columnstore-system-monitoring-configuration](management/columnstore-system/columnstore-system-monitoring-configuration.md)
+    * [ColumnStore System Monitoring Configuration](management/columnstore-system/columnstore-system-monitoring-configuration.md)
     * [MariaDB ColumnStore Backup and Restore](management/columnstore-system/mariadb-columnstore-backup-and-restore/README.md)
       * [backup-and-restore-for-mariadb-columnstore-10x](management/columnstore-system/mariadb-columnstore-backup-and-restore/backup-and-restore-for-mariadb-columnstore-10x.md)
       * [backup-and-restore-for-mariadb-columnstore-110-onwards](management/columnstore-system/mariadb-columnstore-backup-and-restore/backup-and-restore-for-mariadb-columnstore-110-onwards.md)
