@@ -4,6 +4,8 @@ icon: briefcase-arrow-right
 
 # Galera Use Cases
 
+MariaDB Galera Cluster is ideal for high availability and disaster recovery, ensuring no data loss and continuous operation. Its multi-master synchronous replication allows reads and writes to any node, supporting read/write scalability and minimizing client latency. It's excellent for WAN clustering and cloud deployments. MariaDB Galera Cluster is suited for high availability and disaster recovery, offering synchronous multi-master replication to ensure no data loss and continuous operation. It supports read/write scalability, allowing applications to access any node, minimizing latency, and providing resilience for critical services and geographically distributed deployments.
+
 Common use cases for Galera replication include:
 
 | Read Master      | WAN Clustering                                                                                                                                                                                                                                                                                                                                                                                                                           |
