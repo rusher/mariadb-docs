@@ -90,7 +90,7 @@ MariaDB CVEs are assigned a word rating instead of a CVSS base score. See the [M
 * Possible error for incremental backup [--prepare](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/prepared-statements/prepare-statement) for encrypted tablespaces. ([MDEV-20755](https://jira.mariadb.org/browse/MDEV-20755))
 * Possible slow server start and stop if full text indexes are used. ([MDEV-18867](https://jira.mariadb.org/browse/MDEV-18867))
 * The parentheses in a `VIEW` can be defined incorrectly for a combination of = and BETWEEN ([MDEV-17408](https://jira.mariadb.org/browse/MDEV-17408))
-* [ER\_BASE64\_DECODE\_ERROR](broken-reference) upon replaying binary log. ([MDEV-16372](https://jira.mariadb.org/browse/MDEV-16372))
+* [ER\_BASE64\_DECODE\_ERROR](broken-reference/) upon replaying binary log. ([MDEV-16372](https://jira.mariadb.org/browse/MDEV-16372))
 * Several IPv6 issues with [MariaDB Enterprise Cluster](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/galera-cluster/README.md) powered by Galera. ([MDEV-21770](https://jira.mariadb.org/browse/MDEV-21770), [MDEV-23576](https://jira.mariadb.org/browse/MDEV-23576), [MDEV-23580](https://jira.mariadb.org/browse/MDEV-23580), [MDEV-23581](https://jira.mariadb.org/browse/MDEV-23581), [MDEV-23574](https://jira.mariadb.org/browse/MDEV-23574))
 
 ### Related to install and upgrade
@@ -101,7 +101,7 @@ MariaDB CVEs are assigned a word rating instead of a CVSS base score. See the [M
 
 * [InnoDB\_log\_optimize\_ddl](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#InnoDB_log_optimize_ddl) system variable default value changed from ON to OFF
 * [InnoDB\_max\_purge\_lag\_wait](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#InnoDB_max_purge_lag_wait) system variable added
-* [mysqld --InnoDB-max-purge-lag-wait](https://mariadb.com/docs/server/ref/mdb/cli/mariadbd/innodb-max-purge-lag-wait) command-line option added
+* [mysqld --InnoDB-max-purge-lag-wait](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables#innodb_max_purge_lag_wait) command-line option added
 * [performance\_schema\_digests\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#performance_schema_digests_size) system variable maximum value changed from 200 to 1048576
 
 ## Platforms
