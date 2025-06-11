@@ -1,6 +1,18 @@
-# Mariadb Enterprise Columnstore Query Evaluation
+---
+layout:
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: false
+---
 
-## MariaDB Enterprise ColumnStore Query Evaluation
+# Mariadb Enterprise Columnstore Query Evaluation
 
 ## Overview
 
