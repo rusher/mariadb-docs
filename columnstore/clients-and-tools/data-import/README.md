@@ -1,10 +1,24 @@
+---
+layout:
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: false
+---
+
 # Data Import
 
 ## Overview
 
 MariaDB Enterprise ColumnStore supports very efficient bulk data loads.
 
-MariaDB Enterprise ColumnStore performs bulk data loads very efficiently using a variety of mechanisms including the cpimport tool, specialized handling of certain SQL statements, and minimal locking during data import.
+MariaDB Enterprise ColumnStore performs bulk data loads very efficiently using a variety of mechanisms, including the cpimport tool, specialized handling of certain SQL statements, and minimal locking during data import.
 
 ## cpimport
 
