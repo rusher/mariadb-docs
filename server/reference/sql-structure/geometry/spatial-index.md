@@ -19,7 +19,7 @@ CREATE TABLE geom (g GEOMETRY NOT NULL, SPATIAL INDEX(g));
 ALTER TABLE geom ADD SPATIAL INDEX(g);
 ```
 
-* with [CREATE INDEX](../../sql-statements-and-structure/sql-statements/data-definition/create/create-index.md):
+* with [CREATE INDEX](../../sql-statements/data-definition/create/create-index.md):
 
 ```sql
 CREATE SPATIAL INDEX sp_index ON geom (g);
@@ -30,7 +30,7 @@ engines that support non-spatial indexing of spatial columns, the engine\
 creates a `B-tree` index. A `B-tree` index on spatial values is useful for\
 exact-value lookups, but not for range scans.
 
-For more information on indexing spatial columns, see [CREATE INDEX](../../sql-statements-and-structure/sql-statements/data-definition/create/create-index.md).
+For more information on indexing spatial columns, see [CREATE INDEX](../../sql-statements/data-definition/create/create-index.md).
 
 To drop spatial indexes, use [ALTER TABLE](../../sql-statements/data-definition/alter/alter-table.md) or [DROP INDEX](../../sql-statements/data-definition/drop/drop-index.md):
 

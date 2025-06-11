@@ -300,7 +300,7 @@ Issuing a [FLUSH STATUS](../../../reference/sql-statements/administrative-sql-st
 
 #### `Com_create_index`
 
-* Description: Number of [CREATE INDEX](../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-index.md) commands executed.
+* Description: Number of [CREATE INDEX](../../../reference/sql-statements/data-definition/create/create-index.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
 

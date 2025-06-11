@@ -30,7 +30,7 @@ Note that in [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/commu
 
 ## Enabling the Note
 
-By default, the warning is only shown when executing [EXPLAIN](../../../community/sql-statements/administrative-sql-statements/analyze-and-explain-statements/explain.md) on a query.\
+By default, the warning is only shown when executing [EXPLAIN](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/analyze-and-explain-statements/explain) on a query.\
 To enable for all queries, use the option/server variable:
 
 ```

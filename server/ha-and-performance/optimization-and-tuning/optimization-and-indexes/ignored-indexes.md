@@ -14,7 +14,7 @@ By default, an index is not ignored. One can mark existing index as ignored (or 
 ALTER TABLE table_name ALTER {KEY|INDEX} [IF EXISTS] key_name [NOT] IGNORED;
 ```
 
-It is also possible to specify IGNORED attribute when creating an index with a [CREATE TABLE](../../../reference/sql-statements/data-definition/create/create-table.md), or [CREATE INDEX](../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-index.md) statement:
+It is also possible to specify IGNORED attribute when creating an index with a [CREATE TABLE](../../../reference/sql-statements/data-definition/create/create-table.md), or [CREATE INDEX](../../../reference/sql-statements/data-definition/create/create-index.md) statement:
 
 ```sql
 CREATE TABLE table_name (

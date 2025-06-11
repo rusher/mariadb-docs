@@ -39,7 +39,7 @@ There is also a special value that can be specified:
 
 InnoDB supports the [ALGORITHM](../../../sql-statements/data-definition/alter/alter-table.md#algorithm) clause.
 
-The [ALGORITHM](../../../sql-statements/data-definition/alter/alter-table.md#algorithm) clause can be used to specify the _least efficient_ algorithm that the user is willing to accept. It is supported by the [ALTER TABLE](../../../sql-statements/data-definition/alter/alter-table.md) and [CREATE INDEX](../../../sql-statements-and-structure/sql-statements/data-definition/create/create-index.md) statements.
+The [ALGORITHM](../../../sql-statements/data-definition/alter/alter-table.md#algorithm) clause can be used to specify the _least efficient_ algorithm that the user is willing to accept. It is supported by the [ALTER TABLE](../../../sql-statements/data-definition/alter/alter-table.md) and [CREATE INDEX](../../../sql-statements/data-definition/create/create-index.md) statements.
 
 For example, if a user wanted to add a column to a table, but only if the operation used an algorithm that is at least as efficient as the `INPLACE`, then they could execute the following:
 
@@ -218,7 +218,7 @@ InnoDB supports multiple locking strategies for performing DDL operations. This 
 * `SHARED`
 * `EXCLUSIVE`
 
-Regardless of which locking strategy is used to perform a DDL operation, InnoDB will have to exclusively lock the table for a short time at the start and end of the operation's execution. This means that any active transactions that may have accessed the table must be committed or aborted for the operation to continue. This applies to most DDL statements, such as [ALTER TABLE](../../../sql-statements/data-definition/alter/alter-table.md), [CREATE INDEX](../../../sql-statements-and-structure/sql-statements/data-definition/create/create-index.md), [DROP INDEX](../../../sql-statements/data-definition/drop/drop-index.md), [OPTIMIZE TABLE](../../../../ha-and-performance/optimization-and-tuning/optimizing-tables/optimize-table.md), [RENAME TABLE](../../../sql-statements/data-definition/rename-table.md), etc.
+Regardless of which locking strategy is used to perform a DDL operation, InnoDB will have to exclusively lock the table for a short time at the start and end of the operation's execution. This means that any active transactions that may have accessed the table must be committed or aborted for the operation to continue. This applies to most DDL statements, such as [ALTER TABLE](../../../sql-statements/data-definition/alter/alter-table.md), [CREATE INDEX](../../../sql-statements/data-definition/create/create-index.md), [DROP INDEX](../../../sql-statements/data-definition/drop/drop-index.md), [OPTIMIZE TABLE](../../../../ha-and-performance/optimization-and-tuning/optimizing-tables/optimize-table.md), [RENAME TABLE](../../../sql-statements/data-definition/rename-table.md), etc.
 
 ## Specifying an Alter Locking Strategy
 
@@ -226,7 +226,7 @@ Regardless of which locking strategy is used to perform a DDL operation, InnoDB 
 
 The [ALTER TABLE](../../../sql-statements/data-definition/alter/alter-table.md) statement supports the [LOCK](../../../sql-statements/data-definition/alter/alter-table.md#lock) clause.
 
-The [LOCK](../../../sql-statements/data-definition/alter/alter-table.md#lock) clause can be used to specify the locking strategy that the user is willing to accept. It is supported by the [ALTER TABLE](../../../sql-statements/data-definition/alter/alter-table.md) and [CREATE INDEX](../../../sql-statements-and-structure/sql-statements/data-definition/create/create-index.md) statements.
+The [LOCK](../../../sql-statements/data-definition/alter/alter-table.md#lock) clause can be used to specify the locking strategy that the user is willing to accept. It is supported by the [ALTER TABLE](../../../sql-statements/data-definition/alter/alter-table.md) and [CREATE INDEX](../../../sql-statements/data-definition/create/create-index.md) statements.
 
 For example, if a user wanted to add a column to a table, but only if the operation is non-locking, then they could execute the following:
 

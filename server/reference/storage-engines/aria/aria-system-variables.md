@@ -209,7 +209,7 @@ Also see the [Full list of MariaDB options, system and status variables](../../.
 
 #### `aria_sort_buffer_size`
 
-* Description: The buffer that is allocated when sorting the index when doing a [REPAIR](../../sql-statements/table-statements/repair-table.md) or when creating indexes with [CREATE INDEX](../../sql-statements-and-structure/sql-statements/data-definition/create/create-index.md) or [ALTER TABLE](../../sql-statements/data-definition/alter/alter-table.md).
+* Description: The buffer that is allocated when sorting the index when doing a [REPAIR](../../sql-statements/table-statements/repair-table.md) or when creating indexes with [CREATE INDEX](../../sql-statements/data-definition/create/create-index.md) or [ALTER TABLE](../../sql-statements/data-definition/alter/alter-table.md).
 * Commandline: `--aria-sort-buffer-size=#`
 * Scope: Global, Session
 * Dynamic: Yes

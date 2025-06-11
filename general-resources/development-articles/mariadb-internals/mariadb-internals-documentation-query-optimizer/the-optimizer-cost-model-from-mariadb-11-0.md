@@ -169,7 +169,7 @@ The new, improved optimizer should be able to find a better plan
 * If you are using queries mixing different storage engines.
   * Like using tables from both InnoDB and Memory in the same query.
 * If you have had to use `FORCE INDEX` to get a good plan.
-* If using [ANALYZE TABLE](../../../community/sql-statements/table-statements/analyze-table.md) made your plans worse (or not good enough).
+* If using [ANALYZE TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/table-statements/analyze-table) made your plans worse (or not good enough).
 * If your queries have lots of derived tables (subselects).
 * You are using `ORDER BY / GROUP BY` that could be resolved via indexes.
 
@@ -198,7 +198,7 @@ SET GLOBAL innodb.OPTIMIZER_DISK_READ_RATIO=0.20;
 ```
 
 * Note engine costs are `GLOBAL` while other costs can also be `SESSION`.
-* To keep things fast, engine-specific costs are stored in the table definition (TABLE\_SHARE). One effect of this is that if one changes the cost for an engine, it will only take effect when new, not previously cached tables are accessed. You can use [FLUSH TABLES](../../../community/sql-statements/administrative-sql-statements/flush-commands/flush.md) to force the table to use the new costs at next access.
+* To keep things fast, engine-specific costs are stored in the table definition (TABLE\_SHARE). One effect of this is that if one changes the cost for an engine, it will only take effect when new, not previously cached tables are accessed. You can use [FLUSH TABLES](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/flush-commands/flush) to force the table to use the new costs at next access.
 
 ### Examples of Changing Costs
 
@@ -216,7 +216,7 @@ The costs for an engine are set the following way when the engine plugin is load
 * Call `handlerton->update_optimizer_costs()` to let the storage engine update the costs.
 * Apply all user specific engine costs (from configuration files/startup) to the engine costs structure.
 * When a TABLE\_SHARE is created, the costs are copied from `handlerton->costs` to `TABLE_SHARE.optimizer_costs` . `handler::update_optimizer_costs()` is called to allow the engine to tune the cost for this specific table instance. This is done to avoid having to take any "cost" mutex while running queries.
-* User changes to engine costs are stored in the data pointed to by `handlerton->costs`. This is why [FLUSH TABLES](../../../community/sql-statements/administrative-sql-statements/flush-commands/flush.md) is needed to activate new engine costs.
+* User changes to engine costs are stored in the data pointed to by `handlerton->costs`. This is why [FLUSH TABLES](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/flush-commands/flush) is needed to activate new engine costs.
 * To speed up cost access for the optimizer, `handler::set_optimizer_costs()` is called for each query to copy `OPTIMIZER_WHERE_COST` and `OPTIMIZER_SCAN_SETUP_COST` to the engine cost structure.
 
 CC BY-SA / Gnu FDL

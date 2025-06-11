@@ -1,6 +1,6 @@
 # Information Schema plugins: SHOW and FLUSH statements
 
-Information Schema plugins can support [SHOW](../../community/sql-statements/administrative-sql-statements/show/) and [FLUSH](../../community/sql-statements/administrative-sql-statements/flush-commands/flush.md) statements.
+Information Schema plugins can support [SHOW](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show) and [FLUSH](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/flush-commands/flush) statements.
 
 ## SHOW
 
@@ -25,7 +25,7 @@ static ST_FIELD_INFO locale_info_locale_fields_info[]=
 };
 ```
 
-While the the [INFORMATION\_SCHEMA.LOCALES](../../community/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-locales-table.md) table has 8 columns, the [SHOW LOCALES](../../community/sql-statements/administrative-sql-statements/show/show-locales.md) statement will only display 4 of them:
+While the the [INFORMATION\_SCHEMA.LOCALES](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-locales-table) table has 8 columns, the [SHOW LOCALES](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-locales) statement will only display 4 of them:
 
 ```
 MariaDB [test]> show locales;

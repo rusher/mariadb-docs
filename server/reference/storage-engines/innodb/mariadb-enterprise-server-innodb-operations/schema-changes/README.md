@@ -23,9 +23,9 @@ In MariaDB Enterprise Server, InnoDB supports many different schema change opera
 InnoDB schema changes are performed using the following DDL statements:
 
 * [ALTER TABLE](../../../../sql-statements/data-definition/alter/alter-table.md)
-* [CREATE INDEX](../../../../sql-statements-and-structure/sql-statements/data-definition/create/create-index.md)
-* [CREATE SPATIAL INDEX](../../../../sql-statements-and-structure/sql-statements/data-definition/create/create-index.md)
-* [CREATE UNIQUE INDEX](../../../../sql-statements-and-structure/sql-statements/data-definition/create/create-index.md)
+* [CREATE INDEX](../../../../sql-statements/data-definition/create/create-index.md)
+* [CREATE SPATIAL INDEX](../../../../sql-statements/data-definition/create/create-index.md)
+* [CREATE UNIQUE INDEX](../../../../sql-statements/data-definition/create/create-index.md)
 * [DROP INDEX](../../../../sql-statements/data-definition/drop/drop-index.md)
 * [RENAME TABLE](../../../../sql-statements/data-definition/rename-table.md)
 

@@ -28,7 +28,7 @@ CREATE TABLE `Employees` (
 );
 ```
 
-You cannot create a primary key with the [CREATE INDEX](../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-index.md) command. If you do want to add one after the table has already been created, use [ALTER TABLE](../../reference/sql-statements/data-definition/alter/alter-table.md), for example:
+You cannot create a primary key with the [CREATE INDEX](../../reference/sql-statements/data-definition/create/create-index.md) command. If you do want to add one after the table has already been created, use [ALTER TABLE](../../reference/sql-statements/data-definition/alter/alter-table.md), for example:
 
 ```sql
 ALTER TABLE Employees ADD PRIMARY KEY(ID);
@@ -75,7 +75,7 @@ CREATE TABLE `Employees` (
 );
 ```
 
-Unique keys can also be added after the table is created with the [CREATE INDEX](../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-index.md) command, or with the [ALTER TABLE](../../reference/sql-statements/data-definition/alter/alter-table.md) command, for example:
+Unique keys can also be added after the table is created with the [CREATE INDEX](../../reference/sql-statements/data-definition/create/create-index.md) command, or with the [ALTER TABLE](../../reference/sql-statements/data-definition/alter/alter-table.md) command, for example:
 
 ```sql
 ALTER TABLE Employees ADD UNIQUE `EmpCode`(`Employee_Code`);
@@ -250,7 +250,7 @@ If your table has a large number of reads and writes, consider using delayed\
 writes. This uses the db engine in a "batch" write mode, which cuts down on\
 disk io, therefore increasing performance.
 
-Use the [CREATE INDEX](../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-index.md) command to create an index.
+Use the [CREATE INDEX](../../reference/sql-statements/data-definition/create/create-index.md) command to create an index.
 
 If you are building a large table then for best performance add the index after\
 the table is populated with data. This is to increase the insert performance\
