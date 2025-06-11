@@ -1,3 +1,17 @@
+---
+layout:
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: false
+---
+
 # ColumnStore Partition Management
 
 1. [Introduction "Introduction"](columnstore-partition-management.md#introduction)
