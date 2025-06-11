@@ -77,7 +77,7 @@ mcsadmin: Launches the MariaDB ColumnStore Admin Console
 ## mcsadmin
 
 The MariaDB ColumnStore Management Console allows you to configure, monitor, and manage\
-the MariaDB ColumnStore system and servers. For more detailed information, see [MariaDB ColumnStore Administrative Console](broken-reference).
+the MariaDB ColumnStore system and servers. For more detailed information, see MariaDB ColumnStore Administrative Console.
 
 These 2 examples will provide a full command list
 
