@@ -1,3 +1,17 @@
+---
+layout:
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: false
+---
+
 # ColumnStore Streaming Data Adapters
 
 The [ColumnStore Bulk Data API](columnstore-bulk-data-loading.md) enables the creation of higher performance adapters for ETL integration and data ingestions. The Streaming Data Adapters are out of box adapters using these API for specific data sources and use cases.
@@ -91,9 +105,9 @@ Note: This mode is not as fast as the append-only mode and might not be suitable
 
 Download and install both [MaxScale](https://mariadb.com/downloads/mariadb-tx/maxscale) and [ColumnStore](https://mariadb.com/downloads/mariadb-ax).
 
-Copy the Columnstore.xml file from`/usr/local/mariadb/columnstore/etc/Columnstore.xml` from one of the ColumnStore UM or PM node to the server where the adapter is installed.
+Copy the Columnstore.xml file from `/usr/local/mariadb/columnstore/etc/Columnstore.xml` from one of the ColumnStore UM or PMnodese to the server where the adapter is installed.
 
-Configure MaxScale according to the[CDC tutorial](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/other-maxscale-versions/mariadb-maxscale-21-06).
+Configure MaxScale according to the [CDC tutorial](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/other-maxscale-versions/mariadb-maxscale-21-06).
 
 Create a CDC user by executing the following MaxAdmin command on the MaxScale server. Replace the `<service>` with the name of the avrorouter service and `<user>` and `<password>` with the credentials that are to be created.
 
@@ -121,15 +135,15 @@ A tutorial for the Kafka adapter for ingesting Avro formatted data can be found 
 
 ## ColumnStore - Pentaho Data Integration - Data Adapter
 
-Starting with MariaDB ColumnStore 1.1.4, a data adapter for Pentaho Data Integration (PDI) / Kettle is available to import data directly into ColumnStore’s WriteEngine. It is build on MariaDB’s rapid paced Bulk Write SDK.
+Starting with MariaDB ColumnStore 1.1.4, a data adapter for Pentaho Data Integration (PDI) / Kettle is available to import data directly into ColumnStore’s WriteEngine. It is built on MariaDB’s rapid-paced Bulk Write SDK.
 
 ![PDI Plugin Block info graphic](../../.gitbook/assets/columnstore-streaming-data-adapters/+image/cs_pdi_diagram.png)
 
 ### Compatibility notice
 
-The plugin was designed for following software composition:
+The plugin was designed for the following software composition:
 
-* Operating system: Windows 10 / Ubuntu 16.04 / RHEL/CentOS+ 7
+* Operating system: Windows 10 / Ubuntu 16.04 / RHEL/CentOS 7+
 * MariaDB ColumnStore >= 1.1.4
 * MariaDB Java Database client\* >= 2.2.1
 * Java >= 8
@@ -137,16 +151,16 @@ The plugin was designed for following software composition:
 
 +not officially supported by Pentaho.
 
-\*only needed if you want to execute DDL.
+\*Only needed if you want to execute DDL.
 
 ### Installation
 
-Following steps are necessary to install the ColumnStore Data adapter (bulk loader plugin):
+The following steps are necessary to install the ColumnStore Data adapter (bulk loader plugin):
 
-1. build the plugin from [source](https://github.com/mariadb-corporation/mariadb-columnstore-data-adapters/tree/master/kettle-columnstore-bulk-exporter-plugin) or download it from our [website](https://mariadb.com/downloads/mariadb-ax/data-adapters)
-2. extract the archive mariadb-columnstore-kettle-bulk-exporter-plugin-\*.zip into your PDI installation directory $PDI-INSTALLATION/plugins.
-3. copy [MariaDB's JDBC Client](https://mariadb.com/downloads/mariadb-ax/connector) mariadb-java-client-2.2.x.jar into PDI's lib directory $PDI-INSTALLATION/lib.
-4. install the additional library dependencies
+1. Build the plugin from [source](https://github.com/mariadb-corporation/mariadb-columnstore-data-adapters/tree/master/kettle-columnstore-bulk-exporter-plugin) or download it from our [website](https://mariadb.com/downloads/mariadb-ax/data-adapters)
+2. Extract the archive mariadb-columnstore-kettle-bulk-exporter-plugin-\*.zip into your PDI installation directory $PDI-INSTALLATION/plugins.
+3. Copy [MariaDB's JDBC Client](https://mariadb.com/downloads/mariadb-ax/connector) mariadb-java-client-2.2.x.jar into PDI's lib directory $PDI-INSTALLATION/lib.
+4. Install the additional library dependencies
 
 #### Ubuntu dependencies
 
@@ -167,7 +181,7 @@ On Windows the installation of the [Visual Studio 2015/2017 C++ Redistributable 
 
 ### Configuration
 
-Each MariaDB ColumnStore Bulk Loader block needs to be configured. On the one hand it needs to know how to connect to the underlying Bulk Write SDK to inject data into ColumnStore, and on the other hand it needs to have a proper JDBC connection to execute DDL.
+Each MariaDB ColumnStore Bulk Loader block needs to be configured. On the one hand, it needs to know how to connect to the underlying Bulk Write SDK to inject data into ColumnStore, and on the other hand, it needs to have a proper JDBC connection to execute DDL.
 
 Both configurations can be set in each block’s settings tab.
 
@@ -193,7 +207,7 @@ The SQL button can be used to generate DDL based on the defined mapping and to e
 
 This plugin is a beta release.
 
-In addition, it can't handle blob data types and only supports multi inputs to one block if the input field names are equal for all input sources.
+In addition, it can't handle blob data types and only supports multiple inputs to one block if the input field names are equal for all input sources.
 
 CC BY-SA / Gnu FDL
 
