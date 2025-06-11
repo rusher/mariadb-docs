@@ -25,42 +25,42 @@ MariaDB Enterprise Server 10.5 uses the "MariaDB" name in more places:
 * It uses `DBD::MariaDB` for bundled Perl scripts that previously used DBD::mysql.
 * It uses new MariaDB-based names as the primary names for many executables. The old names are still supported for backward compatibility using symbolic links. The new MariaDB-based names were first introduced in MariaDB Enterprise Server 10.4. However, in that version, the old names were still the primary names for the executables, and the new names were supported using symbolic links. See below for the new MariaDB-based names:
 
-| Old Executable Name | New Executable Name |
-| ------------------- | ------------------- |
-| mysql | [mariadb](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/mariadb-client)|
-| mysqld | [mariadbd](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/starting-and-stopping-mariadb/mariadbd) |
-| mariabackup | [mariadb-backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup) |
-| mysql\_plugin | [mariadb-plugin](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/administrative-tools/mariadb-plugin) |
-| mysql\_upgrade | [mariadb-upgrade](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/deployment-tools/mariadb-upgrade) |
-| mysql\_waitpid | [mariadb-waitpid](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/administrative-tools/mariadb-waitpid) |
-| mysqladmin | [mariadb-admin](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/administrative-tools/mariadb-admin) |
-| mysqlbinlog | [mariadb-binlog](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/logging-tools/mariadb-binlog) |
-| mysqlcheck | [mariadb-check](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/table-tools/mariadb-check) |
-| mysqldump | [mariadb-dump](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/backup-restore-and-import-clients/mariadb-dump) |
-| mysqlimport | [mariadb-import](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/backup-restore-and-import-clients/mariadb-import) |
-| mysqlshow | [mariadb-show](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/administrative-tools/mariadb-show) |
-| mysqlslap | [mariadb-slap](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/testing-tools/mariadb-slap) |
-| mysql\_client\_test | mariadb-client-test |
-| mysql\_client\_test\_embedded | mariadb-client-test-embedded |
-| mysql\_config | mariadb-config |
-| mysql\_convert\_table\_format | mariadb-convert-table-format |
-| mysql\_embedded | mariadb-embedded |
-| mysql\_find\_rows | mariadb-find-rows |
-| mysql\_fix\_extensions | mariadb-fix-extensions |
-| mysql\_install\_db | mariadb-install-db |
-| mysql\_ldb | mariadb-ldb. |
-| mysql\_secure\_installation | mariadb-secure-installation |
-| mysql\_setpermission | mariadb-setpermission |
-| mysql\_tzinfo\_to\_sql | mariadb-tzinfo-to-sql |
-| mysql\_upgrade\_service | mariadb-upgrade-service |
-| mysql\_upgrade\_wizard | mariadb-upgrade-wizard |
-| mysqld\_multi | mariadbd-multi |
-| mysqld\_safe | mariadbd-safe |
-| mysqld\_safe\_helper | mariadbd-safe-helper |
-| mysqldumpslow | mariadb-dumpslow |
-| mysqlhotcopy | mariadb-hotcopy |
-| mysqltest | mariadb-test |
-| mysqltest\_embedded | mariadb-test-embedded |
+| Old Executable Name           | New Executable Name                                                                                                                     |
+| ----------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| mysql                         | [mariadb](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/mariadb-client)                                          |
+| mysqld                        | [mariadbd](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/starting-and-stopping-mariadb/mariadbd)                     |
+| mariabackup                   | [mariadb-backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup)            |
+| mysql\_plugin                 | [mariadb-plugin](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/administrative-tools/mariadb-plugin)              |
+| mysql\_upgrade                | [mariadb-upgrade](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/deployment-tools/mariadb-upgrade)                |
+| mysql\_waitpid                | [mariadb-waitpid](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/administrative-tools/mariadb-waitpid)            |
+| mysqladmin                    | [mariadb-admin](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/administrative-tools/mariadb-admin)                |
+| mysqlbinlog                   | [mariadb-binlog](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/logging-tools/mariadb-binlog)                     |
+| mysqlcheck                    | [mariadb-check](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/table-tools/mariadb-check)                         |
+| mysqldump                     | [mariadb-dump](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/backup-restore-and-import-clients/mariadb-dump)     |
+| mysqlimport                   | [mariadb-import](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/backup-restore-and-import-clients/mariadb-import) |
+| mysqlshow                     | [mariadb-show](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/administrative-tools/mariadb-show)                  |
+| mysqlslap                     | [mariadb-slap](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/testing-tools/mariadb-slap)                         |
+| mysql\_client\_test           | mariadb-client-test                                                                                                                     |
+| mysql\_client\_test\_embedded | mariadb-client-test-embedded                                                                                                            |
+| mysql\_config                 | mariadb-config                                                                                                                          |
+| mysql\_convert\_table\_format | mariadb-convert-table-format                                                                                                            |
+| mysql\_embedded               | mariadb-embedded                                                                                                                        |
+| mysql\_find\_rows             | mariadb-find-rows                                                                                                                       |
+| mysql\_fix\_extensions        | mariadb-fix-extensions                                                                                                                  |
+| mysql\_install\_db            | mariadb-install-db                                                                                                                      |
+| mysql\_ldb                    | mariadb-ldb.                                                                                                                            |
+| mysql\_secure\_installation   | mariadb-secure-installation                                                                                                             |
+| mysql\_setpermission          | mariadb-setpermission                                                                                                                   |
+| mysql\_tzinfo\_to\_sql        | mariadb-tzinfo-to-sql                                                                                                                   |
+| mysql\_upgrade\_service       | mariadb-upgrade-service                                                                                                                 |
+| mysql\_upgrade\_wizard        | mariadb-upgrade-wizard                                                                                                                  |
+| mysqld\_multi                 | mariadbd-multi                                                                                                                          |
+| mysqld\_safe                  | mariadbd-safe                                                                                                                           |
+| mysqld\_safe\_helper          | mariadbd-safe-helper                                                                                                                    |
+| mysqldumpslow                 | mariadb-dumpslow                                                                                                                        |
+| mysqlhotcopy                  | mariadb-hotcopy                                                                                                                         |
+| mysqltest                     | mariadb-test                                                                                                                            |
+| mysqltest\_embedded           | mariadb-test-embedded                                                                                                                   |
 
 ### Packaging
 
@@ -139,9 +139,10 @@ MariaDB Enterprise Server 10.5 adds privileges that allow operations that previo
 
 | Present in ES10.4? | Present in ES10.5.8-5? |
 | ------------------ | ---------------------- |
-| no | yes |
+| no                 | yes                    |
 
 **Notes:**
+
 * Allows the user to execute [PURGE BINARY LOGS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/purge-binary-logs) statements
 * Allows the user to [SET](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/set-commands/set) the following system variables:
   * [binlog\_annotate\_row\_events](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
@@ -164,15 +165,14 @@ MariaDB Enterprise Server 10.5 adds privileges that allow operations that previo
   * [sql\_log\_bin](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
   * [sync\_binlog](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
 
-
-
 ### [BINLOG MONITOR](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#binlog-monitor)
 
 | Present in ES10.4? | Present in ES10.5.8-5? |
 | ------------------ | ---------------------- |
-| no | yes |
+| no                 | yes                    |
 
 **Notes:**
+
 * [Legacy REPLICATION CLIENT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#replication-client) privilege is an alias for this new privilege, but the capabilities have changed
 * Unlike legacy REPLICATION CLIENT privilege, [BINLOG MONITOR](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#binlog-monitor) can no longer execute SHOW SLAVE STATUS, SHOW REPLICA STATUS in ES10.5
 * BINLOG MONITOR allows the user to execute [SHOW BINLOG EVENTS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-binlog-events) statements
@@ -186,9 +186,10 @@ MariaDB Enterprise Server 10.5 adds privileges that allow operations that previo
 
 | Present in ES10.4? | Present in ES10.5.8-5? |
 | ------------------ | ---------------------- |
-| no | yes |
+| no                 | yes                    |
 
 **Notes:**
+
 * Allows the user to execute [BINLOG](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/binlog) statements, which are output by [mariadb-binlog](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/logging-tools/mariadb-binlog)
 * Allows the user to execute [SET TIMESTAMP](https://mariadb.com/kb/en/set-timestamp) statements when [secure\_timestamp](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#secure_timestamp) is set to replication
 * Allows the user to set the session values of several system variables that are usually included in [BINLOG](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/binlog) statements:
@@ -197,14 +198,14 @@ MariaDB Enterprise Server 10.5 adds privileges that allow operations that previo
   * [pseudo\_thread\_id](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#pseudo_thread_id)
   * [server\_id](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
 
-
 ### [CONNECTION ADMIN](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#connection-admi)
 
 | Present in ES10.4? | Present in ES10.5.8-5? |
 | ------------------ | ---------------------- |
-| no | yes |
+| no                 | yes                    |
 
 **Notes:**
+
 * Skips the execution of [init\_connect](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#init_connect) when the user connects
 * Ignores [max\_connections](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#max_connections) when the user connects
 * Ignores [max\_user\_connections](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#max_user_connections) when the user connects
@@ -237,9 +238,10 @@ MariaDB Enterprise Server 10.5 adds privileges that allow operations that previo
 
 | Present in ES10.4? | Present in ES10.5.8-5? |
 | ------------------ | ---------------------- |
-| no | yes |
+| no                 | yes                    |
 
 **Notes:**
+
 * Allows the user to execute [CREATE SERVER](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/create/create-server) statements
 * Allows the user to execute [ALTER SERVER](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/alter/alter-server) statements
 * Allows the user to execute [DROP SERVER](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/drop/drop-server) statements
@@ -248,9 +250,10 @@ MariaDB Enterprise Server 10.5 adds privileges that allow operations that previo
 
 | Present in ES10.4? | Present in ES10.5.8-5? |
 | ------------------ | ---------------------- |
-| no | yes |
+| no                 | yes                    |
 
 **Notes:**
+
 * Allows the user to write data even if the [read\_only](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#read_only) system variable is enabled
 * Allows the user to execute [DROP TRIGGER](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/drop/drop-trigger) statements even if the [read\_only](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#read_only) system variable is enabled
 * Allows the user to execute [START TRANSACTION READ WRITE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/transactions/start-transaction) statements even if the [read\_only](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#read_only) system variable is enabled
@@ -260,9 +263,10 @@ MariaDB Enterprise Server 10.5 adds privileges that allow operations that previo
 
 | Present in ES10.4? | Present in ES10.5.8-5? |
 | ------------------ | ---------------------- |
-| no | yes |
+| no                 | yes                    |
 
 **Notes:**
+
 * REPLICA MONITOR is a new privilege in ES10.5.8-5 and was not present in earlier releases
 * REPLICA MONITOR can execute:
   * [SHOW SLAVE STATUS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-replica-status)
@@ -278,9 +282,10 @@ MariaDB Enterprise Server 10.5 adds privileges that allow operations that previo
 
 | Present in ES10.4? | Present in ES10.5.8-5? |
 | ------------------ | ---------------------- |
-| yes | no |
+| yes                | no                     |
 
 **Notes:**
+
 * Replaced by [BINLOG MONITOR](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#binlog-monitor) in 10.5
 * REPLICATION CLIENT can be used as an alias for BINLOG MONITOR but the capabilities for BINLOG MONITOR are different than those of legacy REPLICATION CLIENT
   * Unlike legacy REPLICATION CLIENT privilege, [BINLOG MONITOR](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#binlog-monitor) can no longer execute SHOW SLAVE STATUS, SHOW REPLICA STATUS in ES10.5
@@ -296,9 +301,10 @@ MariaDB Enterprise Server 10.5 adds privileges that allow operations that previo
 
 | Present in ES10.4? | Present in ES10.5.8-5? |
 | ------------------ | ---------------------- |
-| no | yes |
+| no                 | yes                    |
 
 **Notes:**
+
 * Allows the user to execute [SHOW REPLICA HOSTS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-replica-hosts) statements
 * Allows the user to execute [SHOW SLAVE HOSTS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-replica-hosts) statements
 * Allows the user to set system variables:
@@ -311,18 +317,20 @@ MariaDB Enterprise Server 10.5 adds privileges that allow operations that previo
 
 | Present in ES10.4? | Present in ES10.5.8-5? |
 | ------------------ | ---------------------- |
-| no | yes |
+| no                 | yes                    |
 
 **Notes:**
+
 * Added in ES10.5 as an alias for [REPLICATION SLAVE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#replication-slave)
 
 ### [REPLICATION SLAVE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#replication-slave)
 
 | Present in ES10.4? | Present in ES10.5.8-5? |
 | ------------------ | ---------------------- |
-| yes | yes |
+| yes                | yes                    |
 
 **Notes:**
+
 * Can be used as an alias for [REPLICATION REPLICA](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#replication-replica)
 * In ES10.5 REPLICATION SLAVE can no longer execute SHOW RELAYLOG EVENTS. In ES10.5 versions earlier than ES10.5.8-5, SHOW RELAYLOG EVENTS requires [REPLICATION REPLICA ADMIN](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#replication-replica-admin). In ES10.5.8-5, SHOW RELAYLOG EVENTS requires [REPLICA MONITOR](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#replica-monitor)
 * In ES10.5 REPLICATION SLAVE can no longer execute [SHOW BINLOG EVENTS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-binlog-events). SHOW BINLOG EVENTS requires [BINLOG MONITOR](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#binlog-monitor)
@@ -333,9 +341,10 @@ MariaDB Enterprise Server 10.5 adds privileges that allow operations that previo
 
 | Present in ES10.4? | Present in ES10.5.8-5? |
 | ------------------ | ---------------------- |
-| no | yes |
+| no                 | yes                    |
 
 **Notes:**
+
 * Alias for [REPLICATION SLAVE ADMIN](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#replication-slave-admin)
 * Capabilities changed in ES10.5.8-5 with the following abilities removed from REPLICATION SLAVE ADMIN and now granted with [REPLICA MONITOR](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#replica-monitor):
   * [SHOW SLAVE STATUS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-replica-status)
@@ -392,18 +401,20 @@ MariaDB Enterprise Server 10.5 adds privileges that allow operations that previo
 
 | Present in ES10.4? | Present in ES10.5.8-5? |
 | ------------------ | ---------------------- |
-| no | yes |
+| no                 | yes                    |
 
 **Notes:**
+
 * Alias for [REPLICATION REPLICA ADMIN](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#replication-replica-admin) see [REPLICATION REPLICA ADMIN](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#replication-replica-admin) for details
 
 ### [SET USER](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#set-user)
 
 | Present in ES10.4? | Present in ES10.5.8-5? |
 | ------------------ | ---------------------- |
-| no | yes |
+| no                 | yes                    |
 
 **Notes:**
+
 * Allows the user to set the definer of views, triggers, stored procedures, stored functions, and events
 * Allows the user to view the definer of an object, even if the user account no longer exists. |
 
@@ -411,9 +422,10 @@ MariaDB Enterprise Server 10.5 adds privileges that allow operations that previo
 
 | Present in ES10.4? | Present in ES10.5.8-5? |
 | ------------------ | ---------------------- |
-| no | yes |
+| no                 | yes                    |
 
 **Notes:**
+
 * SLAVE MONITOR is a new privilege in ES10.5.8-5 and was not present in earlier releases
 * SLAVE MONITOR can execute:
   * [SHOW SLAVE STATUS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-replica-status)
@@ -429,9 +441,10 @@ MariaDB Enterprise Server 10.5 adds privileges that allow operations that previo
 
 | Present in ES10.4? | Present in ES10.5.8-5? |
 | ------------------ | ---------------------- |
-| yes | yes |
+| yes                | yes                    |
 
 **Notes:**
+
 * The SUPER privilege is present in ES10.4 and ES10.5 but the capabilities have changed. New privileges have been added in ES10.5 to provide finer grained control and reduce the need to grant SUPER privileges
 * With the addition of the new privileges in ES10.5, SUPER:
   * no longer executes SHOW MASTER STATUS, SHOW BINLOG STATUS, and SHOW BINARY LOGS. Those require BINLOG MONITOR in ES10.5
@@ -448,10 +461,11 @@ MariaDB Enterprise Server 10.5 adds privileges that allow operations that previo
 ### [BINLOG ADMIN](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#binlog-admin)
 
 | Present in ES10.4? | Present in ES10.5.8-5? |
-| ------------------ | -----------------------|
-| no | yes |
+| ------------------ | ---------------------- |
+| no                 | yes                    |
 
 **Notes:**
+
 * Allows the user to execute [PURGE BINARY LOGS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/purge-binary-logs) statements
 * Allows the user to [SET](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/set-commands/set) the following system variables:
   * [binlog\_annotate\_row\_events](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
@@ -477,10 +491,11 @@ MariaDB Enterprise Server 10.5 adds privileges that allow operations that previo
 ### [BINLOG MONITOR](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#binlog-monitor)
 
 | Present in ES10.4? | Present in ES10.5.8-5? |
-| ------------------ | -----------------------|
-| no | yes |
+| ------------------ | ---------------------- |
+| no                 | yes                    |
 
 **Notes:**
+
 * Legacy [grant/#replication-client](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#replication-client) privilege is an alias for this new privilege, but the capabilities have changed
 * Unlike legacy REPLICATION CLIENT privilege, [BINLOG MONITOR](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#binlog-monitor) can no longer execute SHOW SLAVE STATUS, SHOW REPLICA STATUS in ES10.5
 * BINLOG MONITOR allows the user to execute [SHOW BINLOG EVENTS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-binlog-events) statements
@@ -493,10 +508,11 @@ MariaDB Enterprise Server 10.5 adds privileges that allow operations that previo
 ### [BINLOG REPLAY](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#binlog-replay)
 
 | Present in ES10.4? | Present in ES10.5.8-5? |
-| ------------------ | -----------------------|
-| no | yes |
+| ------------------ | ---------------------- |
+| no                 | yes                    |
 
 **Notes:**
+
 * Allows the user to execute [BINLOG](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/binlog) statements, which are output by [mariadb-binlog](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/logging-tools/mariadb-binlog)
 * Allows the user to execute [SET TIMESTAMP](https://github.com/mariadb-corporation/docs-release-notes/blob/test/mariadb-enterprise-server-release-notes/mariadb-enterprise-server-10-5/set-timestamp/README.md) statements when [secure\_timestamp](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#secure_timestamp) is set to replication
 * Allows the user to set the session values of several system variables that are usually included in [BINLOG](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/binlog) statements:
@@ -508,10 +524,11 @@ MariaDB Enterprise Server 10.5 adds privileges that allow operations that previo
 ### [CONNECTION ADMIN](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#connection-admi)
 
 | Present in ES10.4? | Present in ES10.5.8-5? |
-| ------------------ | -----------------------|
-| no | yes |
+| ------------------ | ---------------------- |
+| no                 | yes                    |
 
 **Notes:**
+
 * Skips the execution of init\_connect when the user connects
 * Ignores max\_connections when the user connects
 * Ignores max\_user\_connections when the user connects
@@ -543,10 +560,11 @@ MariaDB Enterprise Server 10.5 adds privileges that allow operations that previo
 ### [FEDERATED ADMIN](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#federated-admin)
 
 | Present in ES10.4? | Present in ES10.5.8-5? |
-| ------------------ | -----------------------|
-| no | yes |
+| ------------------ | ---------------------- |
+| no                 | yes                    |
 
 **Notes:**
+
 * Allows the user to execute [CREATE SERVER](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/create/create-server) statements
 * Allows the user to execute [ALTER SERVER](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/alter/alter-server) statements
 * Allows the user to execute [DROP SERVER](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/drop/drop-server) statements
@@ -554,23 +572,24 @@ MariaDB Enterprise Server 10.5 adds privileges that allow operations that previo
 ### [READ\_ONLY ADMIN](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#readonly-admin)
 
 | Present in ES10.4? | Present in ES10.5.8-5? |
-| ------------------ | -----------------------|
-| no | yes |
+| ------------------ | ---------------------- |
+| no                 | yes                    |
 
 **Notes:**
+
 * Allows the user to write data even if the [read\_only](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#read_only) system variable is enabled
 * Allows the user to execute [DROP TRIGGER](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/drop/drop-trigger) statements even if the [read\_only](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#read_only) system variable is enabled
 * Allows the user to execute [START TRANSACTION READ WRITE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/transactions/start-transaction) statements even if the [read\_only](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#read_only) system variable is enabled
 * Allows the user to set system variables:[read\_only](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#read_only)
 
-
 ### [REPLICATION CLIENT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#replication-client)
 
 | Present in ES10.4? | Present in ES10.5.8-5? |
-| ------------------ | -----------------------|
-| yes | no |
+| ------------------ | ---------------------- |
+| yes                | no                     |
 
 **Notes:**
+
 * Replaced by [BINLOG MONITOR](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#binlog-monitor) in 10.5
 * REPLICATION CLIENT can be used as an alias for BINLOG MONITOR but the capabilities for BINLOG MONITOR are different than those of legacy REPLICATION CLIENT
 * Unlike legacy REPLICATION CLIENT privilege, [BINLOG MONITOR](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#binlog-monitor) can no longer execute SHOW SLAVE STATUS, SHOW REPLICA STATUS in ES10.5
@@ -585,10 +604,11 @@ MariaDB Enterprise Server 10.5 adds privileges that allow operations that previo
 ### [REPLICATION MASTER ADMIN](https://github.com/mariadb-corporation/docs-release-notes/blob/test/mariadb-enterprise-server-release-notes/mariadb-enterprise-server-10-5/replication-master-admin/README.md)
 
 | Present in ES10.4? | Present in ES10.5.8-5? |
-| ------------------ | -----------------------|
-| no | yes |
+| ------------------ | ---------------------- |
+| no                 | yes                    |
 
 **Notes:**
+
 * Allows the user to execute [SHOW REPLICA HOSTS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-replica-hosts) statements
 * Allows the user to execute [SHOW SLAVE HOSTS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-replica-hosts) statements
 * Allows the user to set system variables:
@@ -600,19 +620,21 @@ MariaDB Enterprise Server 10.5 adds privileges that allow operations that previo
 ### [REPLICATION REPLICA](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#replication-replica)
 
 | Present in ES10.4? | Present in ES10.5.8-5? |
-| ------------------ | -----------------------|
-| no | yes |
+| ------------------ | ---------------------- |
+| no                 | yes                    |
 
 **Notes:**
+
 * Added in ES10.5 as an alias for [REPLICATION SLAVE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#replication-slave)
 
 ### [REPLICATION SLAVE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#replication-slave)
 
 | Present in ES10.4? | Present in ES10.5.8-5? |
-| ------------------ | -----------------------|
-| yes | yes |
+| ------------------ | ---------------------- |
+| yes                | yes                    |
 
 **Notes:**
+
 * Can be used as an alias for [REPLICATION REPLICA](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#replication-replica)
 * In ES10.5 REPLICATION SLAVE can no longer execute SHOW RELAYLOG EVENTS. In ES10.5 versions earlier than ES10.5.8-5, SHOW RELAYLOG EVENTS requires [REPLICATION REPLICA ADMIN](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#replication-replica-admin). In ES10.5.8-5, SHOW RELAYLOG EVENTS requires [REPLICA MONITOR](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#replica-monitor)
 * In ES10.5 REPLICATION SLAVE can no longer execute [SHOW BINLOG EVENTS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-binlog-events). SHOW BINLOG EVENTS requires [BINLOG MONITOR](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#binlog-monitor)
@@ -622,10 +644,11 @@ MariaDB Enterprise Server 10.5 adds privileges that allow operations that previo
 ### [REPLICATION REPLICA ADMIN](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#replication-replica-admin)
 
 | Present in ES10.4? | Present in ES10.5.8-5? |
-| ------------------ | -----------------------|
-| no | yes |
+| ------------------ | ---------------------- |
+| no                 | yes                    |
 
 **Notes:**
+
 * Alias for REPLICATION SLAVE ADMIN
 * Capabilities changed in ES10.5.8-5 with the following abilities removed from REPLICATION SLAVE ADMIN and now granted with [REPLICA MONITOR](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#replica-monitor):
   * [SHOW SLAVE STATUS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-replica-status)
@@ -681,29 +704,32 @@ MariaDB Enterprise Server 10.5 adds privileges that allow operations that previo
 ### [REPLICATION SLAVE ADMIN](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#replication-slave-admin)
 
 | Present in ES10.4? | Present in ES10.5.8-5? |
-| ------------------ | -----------------------|
-| no | yes |
+| ------------------ | ---------------------- |
+| no                 | yes                    |
 
 **Notes:**
+
 * Alias for [REPLICATION REPLICA ADMIN](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#replication-replica-admin) see [REPLICATION REPLICA ADMIN](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#replication-replica-admin) for details
 
 ### [SET USER](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#set-user)
 
 | Present in ES10.4? | Present in ES10.5.8-5? |
-| ------------------ | -----------------------|
-| no | yes |
+| ------------------ | ---------------------- |
+| no                 | yes                    |
 
 **Notes:**
+
 * Allows the user to set the definer of views, triggers, stored procedures, stored functions, and events
 * Allows the user to view the definer of an object, even if the user account no longer exists.
 
 ### [SUPER](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#super)
 
 | Present in ES10.4? | Present in ES10.5.8-5? |
-| ------------------ | -----------------------|
-| yes | yes |
+| ------------------ | ---------------------- |
+| yes                | yes                    |
 
 **Notes:**
+
 * The SUPER privilege is present in ES10.4 and ES10.5 but the capabilities have changed. New privileges have been added in ES10.5 to provide finer grained control and reduce the need to grant SUPER privileges
 * With the addition of the new privileges in ES10.5, SUPER:
   * no longer executes SHOW MASTER STATUS, SHOW BINLOG STATUS, and SHOW BINARY LOGS. Those require BINLOG MONITOR in ES10.5
@@ -725,16 +751,17 @@ MariaDB Enterprise Server 10.5 improves [MariaDB Replication](https://app.gitboo
 ### BINLOG MONITOR (formerly REPLICATION CLIENT)
 
 **Newly Granted Operations:**
+
 * Allows the user to execute [SHOW BINLOG STATUS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-binlog-status) statements
 * Allows the user to execute [SHOW BINLOG EVENTS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-binlog-events) statements
 * Allows the user to execute [SHOW BINARY LOGS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-binary-logs) statements
 * Allows the user to execute [SHOW MASTER STATUS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-binlog-status) statements
-
 * It adds new replication-related privileges to allow operations that previously required the `SUPER` privilege:
 
 ### BINLOG ADMIN
 
-** Granted Operations:**
+\*\* Granted Operations:\*\*
+
 * Allows the user to execute PURGE BINARY LOGS statements
 * Allows the user to set system variables:
   * [binlog\_annotate\_row\_events](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
@@ -760,6 +787,7 @@ MariaDB Enterprise Server 10.5 improves [MariaDB Replication](https://app.gitboo
 ### BINLOG REPLAY
 
 **Granted Operations:**
+
 * Allows the user to execute [BINLOG](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/binlog) statements, which are output by [mariadb-binlog](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/logging-tools/mariadb-binlog)
 * Allows the user to execute [SET TIMESTAMP](https://github.com/mariadb-corporation/docs-release-notes/blob/test/mariadb-enterprise-server-release-notes/mariadb-enterprise-server-10-5/set-timestamp/README.md) statements when [secure\_timestamp](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#secure_timestamp) is set to replication
 * Allows the user to set the session values of several system variables that are usually included in [BINLOG](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/binlog) statements:
@@ -771,6 +799,7 @@ MariaDB Enterprise Server 10.5 improves [MariaDB Replication](https://app.gitboo
 ### REPLICATION MASTER ADMIN
 
 **Granted Operations:**
+
 * Allows the user to execute SHOW REPLICA HOSTS statements
 * Allows the user to execute SHOW SLAVE HOSTS statements
 * Allows the user to set system variables:
@@ -782,6 +811,7 @@ MariaDB Enterprise Server 10.5 improves [MariaDB Replication](https://app.gitboo
 ### REPLICATION SLAVE ADMIN
 
 **Granted Operations:**
+
 * Allows the user to execute [BINLOG](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/binlog) statements, which are output by [mariadb-binlog](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/logging-tools/mariadb-binlog)
 * Allows the user to execute [CHANGE MASTER TO](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/replication-statements/change-master-to) statements
 * Allows the user to execute [SHOW ALL REPLICAS STATUS](https://mariadb.com/kb/en/SHOW-ALL-REPLICAS-STATUS) statements
@@ -836,16 +866,16 @@ MariaDB Enterprise Server 10.5 improves [MariaDB Replication](https://app.gitboo
 
 * It adds aliases for statements that contain the word `SLAVE` that also allow the word `REPLICA`:
 
-| Statement | New Statement Alias |
-| --------- | ------------------- |
-| [START SLAVE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/replication-statements/start-replica) | [START REPLICA](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/replication-statements/start-replica) |
-| [START ALL SLAVES](https://github.com/mariadb-corporation/docs-release-notes/blob/test/mariadb-enterprise-server-release-notes/mariadb-enterprise-server-10-5/start-all-slaves/README.md) | [START ALL REPLICAS](https://github.com/mariadb-corporation/docs-release-notes/blob/test/mariadb-enterprise-server-release-notes/mariadb-enterprise-server-10-5/start-all-replicas/README.md) |
-| [STOP SLAVE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/replication-statements/stop-replica) | [STOP REPLICA](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/replication-statements/stop-replica) |
-| [STOP ALL SLAVES](https://github.com/mariadb-corporation/docs-release-notes/blob/test/mariadb-enterprise-server-release-notes/mariadb-enterprise-server-10-5/stop-all-slaves/README.md) | [STOP ALL REPLICAS](https://github.com/mariadb-corporation/docs-release-notes/blob/test/mariadb-enterprise-server-release-notes/mariadb-enterprise-server-10-5/stop-all-replicas/README.md) |
-| [SHOW SLAVE STATUS](https://mariadb.com/kb/en/show_slave_status) | [SHOW REPLICA STATUS](https://mariadb.com/kb/en/show_replica_status) |
+| Statement                                                                                                                                                                                             | New Statement Alias                                                                                                                                                                                       |
+| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [START SLAVE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/replication-statements/start-replica)                                             | [START REPLICA](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/replication-statements/start-replica)                                               |
+| [START ALL SLAVES](https://github.com/mariadb-corporation/docs-release-notes/blob/test/mariadb-enterprise-server-release-notes/mariadb-enterprise-server-10-5/start-all-slaves/README.md)             | [START ALL REPLICAS](https://github.com/mariadb-corporation/docs-release-notes/blob/test/mariadb-enterprise-server-release-notes/mariadb-enterprise-server-10-5/start-all-replicas/README.md)             |
+| [STOP SLAVE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/replication-statements/stop-replica)                                               | [STOP REPLICA](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/replication-statements/stop-replica)                                                 |
+| [STOP ALL SLAVES](https://github.com/mariadb-corporation/docs-release-notes/blob/test/mariadb-enterprise-server-release-notes/mariadb-enterprise-server-10-5/stop-all-slaves/README.md)               | [STOP ALL REPLICAS](https://github.com/mariadb-corporation/docs-release-notes/blob/test/mariadb-enterprise-server-release-notes/mariadb-enterprise-server-10-5/stop-all-replicas/README.md)               |
+| [SHOW SLAVE STATUS](https://mariadb.com/kb/en/show_slave_status)                                                                                                                                      | [SHOW REPLICA STATUS](https://mariadb.com/kb/en/show_replica_status)                                                                                                                                      |
 | [SHOW ALL SLAVES STATUS](https://github.com/mariadb-corporation/docs-release-notes/blob/test/mariadb-enterprise-server-release-notes/mariadb-enterprise-server-10-5/show-all-slaves-status/README.md) | [SHOW ALL REPLICAS STATUS](https://github.com/mariadb-corporation/docs-release-notes/blob/test/mariadb-enterprise-server-release-notes/mariadb-enterprise-server-10-5/show-all-replicas-status/README.md) |
-| [RESET SLAVE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/replication-statements/reset-replica) | [RESET REPLICA](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/replication-statements/reset-replica) |
-| [SHOW SLAVE HOSTS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-replica-hosts) | [SHOW REPLICA HOSTS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-replica-hosts) |
+| [RESET SLAVE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/replication-statements/reset-replica)                                             | [RESET REPLICA](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/replication-statements/reset-replica)                                               |
+| [SHOW SLAVE HOSTS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-replica-hosts)                                                     | [SHOW REPLICA HOSTS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-replica-hosts)                                                       |
 
 * It adds the shutdown\_wait\_for\_slaves system variable to control whether a replication-aware shutdown is the default shutdown behavior.
 
@@ -856,7 +886,7 @@ MariaDB Enterprise Server 10.5 improves support for [Galera Cluster](https://git
 * It allows Galera Cluster to be configured to prohibit DDL replication to only the storage engines that support Galera Cluster by configuring the [wsrep\_strict\_ddl](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_strict_ddl) system variable.
 * It adds full GTID support to Galera Cluster.
 * It adds an inconsistency voting protocol to mitigate the harm of inconsistencies by choosing very carefully which inconsistent nodes need to abort.
-* It adds support for [non-blocking operations](broken-reference) when [wsrep\_OSU\_method](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_osu_method) is set to NBO, including:
+* It adds support for [non-blocking operations](broken-reference/) when [wsrep\_OSU\_method](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_osu_method) is set to NBO, including:
   * [ALTER TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/alter/alter-table) operations executed in `SHARED` or `EXCLUSIVE` locking mode.
   * [CREATE INDEX](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/create/create-index) operations executed in `SHARED` or `EXCLUSIVE` locking mode.
   * [DROP INDEX](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/drop/drop-index) operations.
@@ -913,15 +943,16 @@ MariaDB Enterprise Server 10.5 includes several [security](https://app.gitbook.c
 ### BINLOG MONITOR (formerly REPLICATION CLIENT)
 
 **Newly Granted Operations:**
+
 * Allows the user to execute [SHOW BINLOG STATUS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-binlog-status) statements
 * Allows the user to execute [SHOW BINARY LOGS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-binary-logs) statements
 * Allows the user to execute [SHOW MASTER STATUS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-binlog-status) statements
-
 * It adds new privileges to allow operations that previously required the `SUPER` privilege.
 
 ### [BINLOG ADMIN](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#binlog-admin)
 
 **Granted Operations:**
+
 * Allows the user to execute [PURGE BINARY LOGS](https://mariadb.com/kb/en/purge-binary-log) statements
 * Allows the user to set system variables:
   * [binlog\_annotate\_row\_events](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables)
@@ -947,6 +978,7 @@ MariaDB Enterprise Server 10.5 includes several [security](https://app.gitbook.c
 ### [BINLOG REPLAY](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#binlog-replay)
 
 **Granted Operations:**
+
 * Allows the user to execute BINLOG statements, which are output by mariadb-binlog
 * Allows the user to execute SET TIMESTAMP statements when secure\_timestamp is set to replication
 * Allows the user to set the session values of several system variables that are usually included in BINLOG statements:
@@ -958,6 +990,7 @@ MariaDB Enterprise Server 10.5 includes several [security](https://app.gitbook.c
 ### CONNECTION ADMIN
 
 **Granted Operations:**
+
 * Skips the execution of init\_connect when the user connects
 * Ignores max\_connections when the user connects
 * Ignores max\_user\_connections when the user connects
@@ -989,6 +1022,7 @@ MariaDB Enterprise Server 10.5 includes several [security](https://app.gitbook.c
 ### FEDERATED ADMIN
 
 **Granted Operations:**
+
 * Allows the user to execute [CREATE SERVER](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/create/create-server) statements
 * Allows the user to execute [ALTER SERVER](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/alter/alter-server) statements
 * Allows the user to execute [DROP SERVER](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/drop/drop-server) statements
@@ -996,6 +1030,7 @@ MariaDB Enterprise Server 10.5 includes several [security](https://app.gitbook.c
 ### READ ONLY ADMIN
 
 **Granted Operations:**
+
 * Allows the user to write data even if the [read\_only](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#read_only) system variable is enabled
 * Allows the user to execute DROP TRIGGER statements even if the [read\_only](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#read_only) system variable is enabled
 * Allows the user to execute START TRANSACTION READ WRITE statements even if the [read\_only](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#read_only) system variable is enabled
@@ -1005,6 +1040,7 @@ MariaDB Enterprise Server 10.5 includes several [security](https://app.gitbook.c
 ### REPLICATION MASTER ADMIN
 
 **Granted Operations:**
+
 * Allows the user to execute [SHOW REPLICA HOSTS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-replica-hosts) statements
 * Allows the user to execute [SHOW SLAVE HOSTS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-replica-hosts) statements
 * Allows the user to set system variables:
@@ -1016,6 +1052,7 @@ MariaDB Enterprise Server 10.5 includes several [security](https://app.gitbook.c
 ### REPLICATION SLAVE ADMIN
 
 **Granted Operations:**
+
 * Allows the user to execute [BINLOG](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/binlog) statements, which are output by [mariadb-binlog](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/logging-tools/mariadb-binlog)
 * Allows the user to execute [CHANGE MASTER TO](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/replication-statements/change-master-to) statements
 * Allows the user to execute [SHOW ALL REPLICAS](https://mariadb.com/kb/en/show-all-replicas) STATUS statements
@@ -1069,6 +1106,7 @@ MariaDB Enterprise Server 10.5 includes several [security](https://app.gitbook.c
 ### SET USER
 
 **Granted Operations:**
+
 * Allows the user to set the definer of views, triggers, stored procedures, stored functions, and events.○ Allows the user to view the definer of an object, even if the user account no longer exists
 
 ## HashiCorp Vault Encryption Plugin
@@ -1081,7 +1119,7 @@ MariaDB Enterprise Server 10.5 introduces an encryption plugin to support for [H
 
 ## Performance Schema
 
-MariaDB Enterprise Server 10.5 includes several [Performance Schema](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/) improvements:
+MariaDB Enterprise Server 10.5 includes several [Performance Schema](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/performance-schema) improvements:
 
 * It adds support for some of the instrumentation and tables included in MySQL 5.7.
 * It adds the `CONNECTION_TYPE` column to the threads table, which can be used to determine which connections are using TLS.
