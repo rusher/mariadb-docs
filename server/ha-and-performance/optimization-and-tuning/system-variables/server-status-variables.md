@@ -1,6 +1,8 @@
 # Server Status Variables
 
-The full list of status variables are listed in the contents on this page; most are described on this page, but some are described elsewhere:
+{% include "../../../.gitbook/includes/for-a-full-list-of-server-v....md" %}
+
+Most are described on this page, but some are described elsewhere:
 
 * [Aria Status Variables](../../../reference/storage-engines/aria/aria-status-variables.md)
 * [Galera Status Variables](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-status-variables)
@@ -227,10 +229,10 @@ Issuing a [FLUSH STATUS](../../../reference/sql-statements/administrative-sql-st
 
 #### `Com_backup_table`
 
-* Description: Removed in [MariaDB 5.5](broken-reference). In older versions, Com\_backup\_table contains the number of [BACKUP TABLE](../../../reference/sql-statements/table-statements/obsolete-table-commands/backup-table-removed.md) commands executed.
+* Description: Removed in [MariaDB 5.5](broken-reference/). In older versions, Com\_backup\_table contains the number of [BACKUP TABLE](../../../reference/sql-statements/table-statements/obsolete-table-commands/backup-table-removed.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
-* Removed: [MariaDB 5.5](broken-reference)
+* Removed: [MariaDB 5.5](broken-reference/)
 
 #### `Com_begin`
 
@@ -591,14 +593,14 @@ Issuing a [FLUSH STATUS](../../../reference/sql-statements/administrative-sql-st
 * Description:
 * Scope: Global, Session
 * Data Type: `numeric`
-* Removed: [MariaDB 5.5](broken-reference)
+* Removed: [MariaDB 5.5](broken-reference/)
 
 #### `Com_load_master_table`
 
 * Description:
 * Scope: Global, Session
 * Data Type: `numeric`
-* Removed: [MariaDB 5.5](broken-reference)
+* Removed: [MariaDB 5.5](broken-reference/)
 
 #### `Com_multi`
 
@@ -692,10 +694,10 @@ Issuing a [FLUSH STATUS](../../../reference/sql-statements/administrative-sql-st
 
 #### `Com_restore_table`
 
-* Description: Removed in [MariaDB 5.5](broken-reference). In older versions, Com\_restore\_table contains the number of [RESTORE TABLE](../../../reference/sql-statements/table-statements/obsolete-table-commands/restore-table-removed.md) commands executed.
+* Description: Removed in [MariaDB 5.5](broken-reference/). In older versions, Com\_restore\_table contains the number of [RESTORE TABLE](../../../reference/sql-statements/table-statements/obsolete-table-commands/restore-table-removed.md) commands executed.
 * Scope: Global, Session
 * Data Type: `numeric`
-* Removed: [MariaDB 5.5](broken-reference)
+* Removed: [MariaDB 5.5](broken-reference/)
 
 #### `Com_revoke`
 
@@ -777,7 +779,7 @@ Issuing a [FLUSH STATUS](../../../reference/sql-statements/administrative-sql-st
 
 #### `Com_show_client_statistics`
 
-* Description: Number of [SHOW CLIENT STATISTICS](../../../reference/sql-statements/administrative-sql-statements/show/show-client-statistics.md) commands executed. Removed in [MariaDB 10.1.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-1-release-notes) when that statement was replaced by the generic [SHOW information\_schema\_table](broken-reference).
+* Description: Number of [SHOW CLIENT STATISTICS](../../../reference/sql-statements/administrative-sql-statements/show/show-client-statistics.md) commands executed. Removed in [MariaDB 10.1.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-1-release-notes) when that statement was replaced by the generic [SHOW information\_schema\_table](broken-reference/).
 * Scope: Global, Session
 * Data Type: `numeric`
 * Removed: [MariaDB 10.1.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-1-release-notes)
@@ -793,7 +795,7 @@ Issuing a [FLUSH STATUS](../../../reference/sql-statements/administrative-sql-st
 * Description:
 * Scope: Global, Session
 * Data Type: `numeric`
-* Removed: [MariaDB 5.5](broken-reference)
+* Removed: [MariaDB 5.5](broken-reference/)
 
 #### `Com_show_contributors`
 
@@ -929,7 +931,7 @@ Issuing a [FLUSH STATUS](../../../reference/sql-statements/administrative-sql-st
 
 #### `Com_show_index_statistics`
 
-* Description: Number of [SHOW INDEX\_STATISTICS](../../../reference/sql-statements/administrative-sql-statements/show/show-index-statistics.md) commands executed. Removed in [MariaDB 10.1.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-1-release-notes) when that statement was replaced by the generic [SHOW information\_schema\_table](broken-reference).
+* Description: Number of [SHOW INDEX\_STATISTICS](../../../reference/sql-statements/administrative-sql-statements/show/show-index-statistics.md) commands executed. Removed in [MariaDB 10.1.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-1-release-notes) when that statement was replaced by the generic [SHOW information\_schema\_table](broken-reference/).
 * Scope: Global, Session
 * Data Type: `numeric`
 * Removed: [MariaDB 10.1.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-1-release-notes)
@@ -1008,7 +1010,7 @@ Issuing a [FLUSH STATUS](../../../reference/sql-statements/administrative-sql-st
 
 #### `Com_show_table_statistics`
 
-* Description: Number of [SHOW TABLE STATISTICS](../../../reference/sql-statements/administrative-sql-statements/show/show-table-statistics.md) commands executed. Removed in [MariaDB 10.1.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-1-release-notes) when that statement was replaced by the generic [SHOW information\_schema\_table](broken-reference).
+* Description: Number of [SHOW TABLE STATISTICS](../../../reference/sql-statements/administrative-sql-statements/show/show-table-statistics.md) commands executed. Removed in [MariaDB 10.1.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-1-release-notes) when that statement was replaced by the generic [SHOW information\_schema\_table](broken-reference/).
 * Scope: Global, Session
 * Data Type: `numeric`
 * Removed: [MariaDB 10.1.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-1-release-notes)
@@ -1033,7 +1035,7 @@ Issuing a [FLUSH STATUS](../../../reference/sql-statements/administrative-sql-st
 
 #### `Com_show_user_statistics`
 
-* Description: Number of [SHOW USER STATISTICS](../../../reference/sql-statements/administrative-sql-statements/show/show-user-statistics.md) commands executed. Removed in [MariaDB 10.1.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-1-release-notes) when that statement was replaced by the generic [SHOW information\_schema\_table](broken-reference).
+* Description: Number of [SHOW USER STATISTICS](../../../reference/sql-statements/administrative-sql-statements/show/show-user-statistics.md) commands executed. Removed in [MariaDB 10.1.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-1-release-notes) when that statement was replaced by the generic [SHOW information\_schema\_table](broken-reference/).
 * Scope: Global, Session
 * Data Type: `numeric`
 * Removed: [MariaDB 10.1.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-1-release-notes)
@@ -1540,13 +1542,13 @@ Issuing a [FLUSH STATUS](../../../reference/sql-statements/administrative-sql-st
 
 #### `Handler_update`
 
-* Description: Number of requests to update a row in a table. Since [MariaDB 5.3](broken-reference), this no longer counts temporary tables - see [Handler\_tmp\_update](server-status-variables.md#handler_tmp_update).
+* Description: Number of requests to update a row in a table. Since [MariaDB 5.3](broken-reference/), this no longer counts temporary tables - see [Handler\_tmp\_update](server-status-variables.md#handler_tmp_update).
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Handler_write`
 
-* Description: Number of requests to write a row to a table. Since [MariaDB 5.3](broken-reference), this no longer counts temporary tables - see [Handler\_tmp\_write](server-status-variables.md#handler_tmp_write).
+* Description: Number of requests to write a row to a table. Since [MariaDB 5.3](broken-reference/), this no longer counts temporary tables - see [Handler\_tmp\_write](server-status-variables.md#handler_tmp_write).
 * Scope: Global, Session
 * Data Type: `numeric`
 
