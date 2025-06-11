@@ -19,4 +19,4 @@ layout:
 [mariadb-enterprise-operator](mariadb-enterprise-operator/)
 {% endcontent-ref %}
 
-MariaDB Enterprise Operator (quick intro/summary, to be fleshed out)
+MariaDB Enterprise Operator simplifies deploying and managing MariaDB Enterprise Server and MaxScale on Kubernetes/OpenShift. It automates critical tasks like HA, backups, and upgrades, using declarative configurations for efficient database lifecycle management.
