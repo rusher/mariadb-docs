@@ -1,3 +1,17 @@
+---
+layout:
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: false
+---
+
 # Backup and Restore with Object Storage
 
 ## Overview
@@ -6,7 +20,7 @@ MariaDB Enterprise ColumnStore supports backup and restore. If Enterprise Column
 
 ## Recovery Planning
 
-MariaDB Enterprise ColumnStore supports multiple [storage options](https://mariadb.com/kb/en/mariadb-enterprise-columnstore-storage-architecture/#storage-options).
+MariaDB Enterprise ColumnStore supports multiple [storage options](../../architecture/columnstore-storage-architecture.md#storage-options).
 
 This page discusses how to backup and restore Enterprise ColumnStore when it uses [S3-compatible object storage](../../column-store-backup-and-restore/mariadb-enterprise-columnstore-storage-architecture/#s3-compatible-object-storage) for data and shared local storage (such as NFS) for the [Storage Manager directory](../../column-store-backup-and-restore/mariadb-enterprise-columnstore-storage-architecture/#storage-manager-directory).
 
