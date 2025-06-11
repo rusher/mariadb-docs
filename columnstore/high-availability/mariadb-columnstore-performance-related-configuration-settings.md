@@ -1,6 +1,20 @@
-# Performance-Related Configuration Settings
+---
+layout:
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: false
+---
 
-## MariaDB ColumnStore&#x20;
+# Performance Related Configuration Settings
+
+## MariaDB ColumnStore
 
 1. [Introduction "Introduction"](mariadb-columnstore-performance-related-configuration-settings.md#introduction)
 2. [Memory management - NumBlocksPct and TotalUmMemory "Memory management - NumBlocksPct and TotalUmMemory"](mariadb-columnstore-performance-related-configuration-settings.md#memory-management-numblockspct-and-totalummemory)
