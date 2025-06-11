@@ -1,3 +1,17 @@
+---
+layout:
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: false
+---
+
 # ColumnStore Minimum Hardware Specification
 
 The following table outlines the minimum recommended production server specifications which can be followed for both on premise and cloud deployments:
