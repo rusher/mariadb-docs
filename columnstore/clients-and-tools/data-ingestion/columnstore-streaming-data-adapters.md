@@ -177,7 +177,7 @@ The database connection configuration follows PDI’s default schema.
 
 By default the plugin tries to use ColumnStore's default configuration _/usr/local/mariadb/columnstore/etc/Columnstore.xml_ to connect to the ColumnStore instance through the Bulk Write SDK. In addition, individual paths or variables can be used too.
 
-Information on how to prepare the _Columnstore.xml_ configuration file can be found [here](broken-reference).
+Information on how to prepare the _Columnstore.xml_ configuration file can be found here.
 
 ### Usage
 
