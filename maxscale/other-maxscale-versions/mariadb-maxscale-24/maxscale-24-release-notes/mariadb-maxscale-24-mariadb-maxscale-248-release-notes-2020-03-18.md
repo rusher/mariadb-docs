@@ -1,26 +1,18 @@
-
 # MariaDB MaxScale 2.4.8 Release Notes -- 2020-03-18
-
-# MariaDB MaxScale 2.4.8 Release Notes -- 2020-03-18
-
 
 Release 2.4.8 is a GA release.
 
-
-This document describes the changes in release 2.4.8, when compared to the
+This document describes the changes in release 2.4.8, when compared to the\
 previous release in the same series.
 
-
-For any problems you encounter, please consider submitting a bug
+For any problems you encounter, please consider submitting a bug\
 report on [our Jira](https://jira.mariadb.org/projects/MXS).
 
-
-## Bug fixes
-
+### Bug fixes
 
 * [MXS-2921](https://jira.mariadb.org/browse/MXS-2921) Memory leak in `alter maxscale`
-* [MXS-2919](https://jira.mariadb.org/browse/MXS-2919) max_slave_replication_lag uses servers with unknown replication lag
-* [MXS-2917](https://jira.mariadb.org/browse/MXS-2917) qc_sqlite leaks memory with complex CREATE TABLE query
+* [MXS-2919](https://jira.mariadb.org/browse/MXS-2919) max\_slave\_replication\_lag uses servers with unknown replication lag
+* [MXS-2917](https://jira.mariadb.org/browse/MXS-2917) qc\_sqlite leaks memory with complex CREATE TABLE query
 * [MXS-2907](https://jira.mariadb.org/browse/MXS-2907) Logrotate warnings when PID file does not exist
 * [MXS-2898](https://jira.mariadb.org/browse/MXS-2898) warning: The query can't be routed to all backend servers because it includes SELECT and SQL variable modifications which is not supported.
 * [MXS-2893](https://jira.mariadb.org/browse/MXS-2893) UnhandledPromiseRejectionWarning when creating a new filter
@@ -32,36 +24,26 @@ report on [our Jira](https://jira.mariadb.org/projects/MXS).
 * [MXS-2382](https://jira.mariadb.org/browse/MXS-2382) TLS/SSL setup is not a part of the server mini-tutorial
 * [MXS-2227](https://jira.mariadb.org/browse/MXS-2227) optimize table: Query could not be tokenized/Parsing the query failed, cannot report query type
 
+### Known Issues and Limitations
 
-## Known Issues and Limitations
-
-
-There are some limitations and known issues within this version of MaxScale.
+There are some limitations and known issues within this version of MaxScale.\
 For more information, please refer to the [Limitations](../about-maxscale-24/mariadb-maxscale-24-limitations-and-known-issues-within-mariadb-maxscale.md) document.
 
-
-## Packaging
-
+### Packaging
 
 RPM and Debian packages are provided for supported the Linux distributions.
 
-
 Packages can be downloaded [here](https://mariadb.com/downloads/#mariadb_platform-mariadb_maxscale).
 
+### Source Code
 
-## Source Code
-
-
-The source code of MaxScale is tagged at GitHub with a tag, which is identical
-with the version of MaxScale. For instance, the tag of version X.Y.Z of MaxScale
-is `maxscale-X.Y.Z`. Further, the default branch is always the latest GA version
+The source code of MaxScale is tagged at GitHub with a tag, which is identical\
+with the version of MaxScale. For instance, the tag of version X.Y.Z of MaxScale\
+is `maxscale-X.Y.Z`. Further, the default branch is always the latest GA version\
 of MaxScale.
-
 
 The source code is available [here](https://github.com/mariadb-corporation/MaxScale).
 
-
 CC BY-SA / Gnu FDL
-
 
 {% @marketo/form formId="4316" %}

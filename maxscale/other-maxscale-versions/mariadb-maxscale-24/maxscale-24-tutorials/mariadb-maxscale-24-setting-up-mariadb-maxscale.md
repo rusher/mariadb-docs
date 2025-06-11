@@ -1,8 +1,4 @@
-# mariadb-maxscale-24-setting-up-mariadb-maxscale
-
-## Setting up MariaDB MaxScale
-
-## Setting up MariaDB MaxScale
+# Setting up MariaDB MaxScale
 
 This document is designed as a quick introduction to setting up MariaDB MaxScale.
 

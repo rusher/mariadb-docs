@@ -1,36 +1,22 @@
-
 # Service Resource
 
-# Service Resource
-
-
-A service resource represents a service inside MaxScale. A service is a
+A service resource represents a service inside MaxScale. A service is a\
 collection of network listeners, filters, a router and a set of backend servers.
 
+### Resource Operations
 
-## Resource Operations
-
-
-### Get a service
-
-
+#### Get a service
 
 ```
 GET /v1/services/:name
 ```
 
-
-
-Get a single service. The *:name* in the URI must be a valid service name with
+Get a single service. The _:name_ in the URI must be a valid service name with\
 all whitespace replaced with hyphens. The service names are case-insensitive.
 
-
-#### Response
-
+**Response**
 
 `Status: 200 OK`
-
-
 
 ```
 {
@@ -100,27 +86,17 @@ all whitespace replaced with hyphens. The service names are case-insensitive.
 }
 ```
 
-
-
-### Get all services
-
-
+#### Get all services
 
 ```
 GET /v1/services
 ```
 
-
-
 Get all services.
 
-
-#### Response
-
+**Response**
 
 `Status: 200 OK`
-
-
 
 ```
 {
@@ -248,21 +224,14 @@ Get all services.
 }
 ```
 
-
-
-### Create a service
-
-
+#### Create a service
 
 ```
 POST /v1/services
 ```
 
-
-
-Create a new service by defining the resource. The posted object must define at
+Create a new service by defining the resource. The posted object must define at\
 least the following fields.
-
 
 * `data.id`
 * Name of the service
@@ -275,33 +244,24 @@ least the following fields.
 * `data.attributes.parameters.password`
 * The [password](../maxscale-24-getting-started/mariadb-maxscale-24-mariadb-maxscale-configuration-guide.md) to use
 
-
-The `data.attributes.parameters` object is used to define router and service
-parameters. All configuration parameters that can be defined in the
-configuration file can also be added to the parameters object. The exceptions to
-this are the `type`, `router`, `servers` and `filters` parameters which must not
+The `data.attributes.parameters` object is used to define router and service\
+parameters. All configuration parameters that can be defined in the\
+configuration file can also be added to the parameters object. The exceptions to\
+this are the `type`, `router`, `servers` and `filters` parameters which must not\
 be defined.
 
-
-As with other REST API resources, the `data.relationships` field defines the
-relationships of the service to other resources. Services can have two types of
+As with other REST API resources, the `data.relationships` field defines the\
+relationships of the service to other resources. Services can have two types of\
 relationships: `servers` and `filters` relationships.
 
-
-If the request body defines a valid `relationships` object, the service is
-linked to those resources. For servers, this is equivalent to adding the list of
-server names into the
-[servers](../maxscale-24-getting-started/mariadb-maxscale-24-mariadb-maxscale-configuration-guide.md) parameter. For
-filters, this is equivalent to adding the filters in the
-`data.relationships.filters.data` array to the
-[filters](../maxscale-24-getting-started/mariadb-maxscale-24-mariadb-maxscale-configuration-guide.md) parameter in the
+If the request body defines a valid `relationships` object, the service is\
+linked to those resources. For servers, this is equivalent to adding the list of\
+server names into the[servers](../maxscale-24-getting-started/mariadb-maxscale-24-mariadb-maxscale-configuration-guide.md) parameter. For\
+filters, this is equivalent to adding the filters in the`data.relationships.filters.data` array to the[filters](../maxscale-24-getting-started/mariadb-maxscale-24-mariadb-maxscale-configuration-guide.md) parameter in the\
 order they appear.
 
-
-The following example defines a new service with both a server and a filter
+The following example defines a new service with both a server and a filter\
 relationship.
-
-
 
 ```
 {
@@ -337,76 +297,51 @@ relationship.
 }
 ```
 
-
-
-#### Response
-
+**Response**
 
 Service is created:
 
-
 `Status: 204 No Content`
 
-
-### Destroy a service
-
-
+#### Destroy a service
 
 ```
 DELETE /v1/services/:service
 ```
 
+In the URI , the _:service_ must map to a service that is destroyed.
 
-
-In the URI , the *:service* must map to a service that is destroyed.
-
-
-A service can only be destroyed if the service uses no servers or filters and
-all the listeners pointing to the service have been destroyed. This means that
-the `data.relationships` must be an empty object and `data.attributes.listeners`
+A service can only be destroyed if the service uses no servers or filters and\
+all the listeners pointing to the service have been destroyed. This means that\
+the `data.relationships` must be an empty object and `data.attributes.listeners`\
 must be an empty array in order for the service to qualify for destruction.
 
-
-If there are open client connections that use the service when it is destroyed,
-they are allowed to gracefully close before the service is destroyed. This means
-that the destruction of a service can be acknowledged via the REST API before
+If there are open client connections that use the service when it is destroyed,\
+they are allowed to gracefully close before the service is destroyed. This means\
+that the destruction of a service can be acknowledged via the REST API before\
 the destruction process has fully completed.
 
-
-To find out whether a service is still in use after it has been destroyed, the
-[sessions](mariadb-maxscale-24-session-resource.md) resource should be used. If a session for
+To find out whether a service is still in use after it has been destroyed, the[sessions](mariadb-maxscale-24-session-resource.md) resource should be used. If a session for\
 the service is still open, it has not yet been destroyed.
 
-
-#### Response
-
+**Response**
 
 Service is destroyed:
 
-
 `Status: 204 No Content`
 
+#### Get service listeners
 
-### Get service listeners
-
-
-Get the listeners of a service. The *:name* in the URI must be a valid service
+Get the listeners of a service. The _:name_ in the URI must be a valid service\
 name with all whitespace replaced with hyphens.
-
-
 
 ```
 GET /v1/services/:name/listeners
 ```
 
-
-
-#### Response
-
+**Response**
 
 `Status: 200 OK`
-
-
 
 ```
 {
@@ -429,29 +364,19 @@ GET /v1/services/:name/listeners
 }
 ```
 
-
-
-### Get a single service listener
-
-
+#### Get a single service listener
 
 ```
 GET /v1/services/:name/listeners/:listener
 ```
 
-
-
-Get the listeners of a service. The *:name* in the URI must be a valid service
-name and *:listener* must be a valid listener name, both with all whitespace
+Get the listeners of a service. The _:name_ in the URI must be a valid service\
+name and _:listener_ must be a valid listener name, both with all whitespace\
 replaced with hyphens.
 
-
-#### Response
-
+**Response**
 
 `Status: 200 OK`
-
-
 
 ```
 {
@@ -472,26 +397,18 @@ replaced with hyphens.
 }
 ```
 
-
-
-### Create a new listener
-
-
+#### Create a new listener
 
 ```
 POST /v1/services/:name/listeners
 ```
 
-
-
-Create a new listener for a service by defining the resource. The *:name* in the
-URI must map to a service name with all whitespace replaced with hyphens. The
-posted object must define the *data.id* field with the name of the server and
-the *data.attributes.parameters.port* field with the port where the listener
-will listen on. The following is the minimal required JSON object for defining a
+Create a new listener for a service by defining the resource. The _:name_ in the\
+URI must map to a service name with all whitespace replaced with hyphens. The\
+posted object must define the _data.id_ field with the name of the server and\
+the _data.attributes.parameters.port_ field with the port where the listener\
+will listen on. The following is the minimal required JSON object for defining a\
 new listener.
-
-
 
 ```
 {
@@ -507,95 +424,67 @@ new listener.
 }
 ```
 
-
-
-The following values can be given in the *parameters* object. If SSL options are
-provided, the *ssl_key*, *ssl_cert* and *ssl_ca_cert* parameters must all be
+The following values can be given in the _parameters_ object. If SSL options are\
+provided, the _ssl\_key_, _ssl\_cert_ and _ssl\_ca\_cert_ parameters must all be\
 defined.
-
 
 * [address](../maxscale-24-getting-started/mariadb-maxscale-24-mariadb-maxscale-configuration-guide.md)
 * [port](../maxscale-24-getting-started/mariadb-maxscale-24-mariadb-maxscale-configuration-guide.md)
 * [protocol](../maxscale-24-getting-started/mariadb-maxscale-24-mariadb-maxscale-configuration-guide.md)
 * [authenticator](../maxscale-24-getting-started/mariadb-maxscale-24-mariadb-maxscale-configuration-guide.md)
-* [authenticator_options](../maxscale-24-getting-started/mariadb-maxscale-24-mariadb-maxscale-configuration-guide.md)
-* [ssl_key](../maxscale-24-getting-started/mariadb-maxscale-24-mariadb-maxscale-configuration-guide.md)
-* [ssl_cert](../maxscale-24-getting-started/mariadb-maxscale-24-mariadb-maxscale-configuration-guide.md)
-* [ssl_ca_cert](../maxscale-24-getting-started/mariadb-maxscale-24-mariadb-maxscale-configuration-guide.md)
-* [ssl_version](../maxscale-24-getting-started/mariadb-maxscale-24-mariadb-maxscale-configuration-guide.md)
-* [ssl_cert_verify_depth](../maxscale-24-getting-started/mariadb-maxscale-24-mariadb-maxscale-configuration-guide.md)
+* [authenticator\_options](../maxscale-24-getting-started/mariadb-maxscale-24-mariadb-maxscale-configuration-guide.md)
+* [ssl\_key](../maxscale-24-getting-started/mariadb-maxscale-24-mariadb-maxscale-configuration-guide.md)
+* [ssl\_cert](../maxscale-24-getting-started/mariadb-maxscale-24-mariadb-maxscale-configuration-guide.md)
+* [ssl\_ca\_cert](../maxscale-24-getting-started/mariadb-maxscale-24-mariadb-maxscale-configuration-guide.md)
+* [ssl\_version](../maxscale-24-getting-started/mariadb-maxscale-24-mariadb-maxscale-configuration-guide.md)
+* [ssl\_cert\_verify\_depth](../maxscale-24-getting-started/mariadb-maxscale-24-mariadb-maxscale-configuration-guide.md)
 
-
-#### Response
-
+**Response**
 
 Listener is created:
 
-
 `Status: 204 No Content`
 
-
-### Destroy a listener
-
-
+#### Destroy a listener
 
 ```
 DELETE /v1/services/:service/listeners/:name
 ```
 
-
-
-In the URI , the *:name* must map to a listener and the *:service* must map to a
+In the URI , the _:name_ must map to a listener and the _:service_ must map to a\
 service. Both names must have all whitespace replaced with hyphens.
 
-
-When a listener is destroyed, the network port it listens on is available for
+When a listener is destroyed, the network port it listens on is available for\
 reuse.
 
-
-#### Response
-
+**Response**
 
 Listener is destroyed:
 
-
 `Status: 204 No Content`
-
 
 Listener cannot be deleted:
 
-
 `Status: 403 Forbidden`
 
-
-### Update a service
-
-
+#### Update a service
 
 ```
 PATCH /v1/services/:name
 ```
 
-
-
-The *:name* in the URI must map to a service name and the request body must be a
+The _:name_ in the URI must map to a service name and the request body must be a\
 JSON object which is interpreted as the new definition of the service.
 
-
-All standard service parameters can be modified. Refer to the
-[service](../maxscale-24-getting-started/mariadb-maxscale-24-mariadb-maxscale-configuration-guide.md) documentation on
+All standard service parameters can be modified. Refer to the[service](../maxscale-24-getting-started/mariadb-maxscale-24-mariadb-maxscale-configuration-guide.md) documentation on\
 the details of these parameters.
 
-
-In addition to the standard service parameters, router parameters can be updated
-at runtime if the router module supports it. Refer to the individual router
-documentation for more details on whether the router supports it and which
+In addition to the standard service parameters, router parameters can be updated\
+at runtime if the router module supports it. Refer to the individual router\
+documentation for more details on whether the router supports it and which\
 parameters can be updated at runtime.
 
-
 The following example modifies a service by changing the `user` parameter to `admin`.
-
-
 
 ```
 {
@@ -609,51 +498,36 @@ The following example modifies a service by changing the `user` parameter to `ad
 }
 ```
 
-
-
-#### Response
-
+**Response**
 
 Service is modified:
 
-
 `Status: 204 No Content`
 
-
-### Update service relationships
-
-
+#### Update service relationships
 
 ```
 PATCH /v1/services/:name/relationships/:type
 ```
 
-
-
-The *:name* in the URI must map to a service name with all whitespace replaced
-with hyphens. The *:type* in the URI must be either *servers* or *filters*,
+The _:name_ in the URI must map to a service name with all whitespace replaced\
+with hyphens. The _:type_ in the URI must be either _servers_ or _filters_,\
 depending on which relationship is being modified.
 
+The request body must be a JSON object that defines only the _data_ field. The\
+value of the _data_ field must be an array of relationship objects that define\
+the _id_ and _type_ fields of the relationship. This object will replace the\
+existing relationships of this type for the service. Both `servers` and`filters` relationships can be modified.
 
-The request body must be a JSON object that defines only the *data* field. The
-value of the *data* field must be an array of relationship objects that define
-the *id* and *type* fields of the relationship. This object will replace the
-existing relationships of this type for the service. Both `servers` and
-`filters` relationships can be modified.
+_Note:_ The order of the values in the `filters` relationship will define the\
+order the filters are set up in. The order in which the filters appear in the\
+array will be the order in which the filters are applied to each query. Refer\
+to the [filters](../maxscale-24-getting-started/mariadb-maxscale-24-mariadb-maxscale-configuration-guide.md) parameter\
+for more details.
 
-
-*Note:* The order of the values in the `filters` relationship will define the
- order the filters are set up in. The order in which the filters appear in the
- array will be the order in which the filters are applied to each query. Refer
- to the [filters](../maxscale-24-getting-started/mariadb-maxscale-24-mariadb-maxscale-configuration-guide.md) parameter
- for more details.
-
-
-The following is an example request and request body that defines a single
-server relationship for a service that is equivalent to a `servers=my-server`
+The following is an example request and request body that defines a single\
+server relationship for a service that is equivalent to a `servers=my-server`\
 parameter.
-
-
 
 ```
 PATCH /v1/services/my-rw-service/relationships/servers
@@ -665,13 +539,8 @@ PATCH /v1/services/my-rw-service/relationships/servers
 }
 ```
 
-
-
-All relationships for a service can be deleted by sending an empty array or a
-`null` value as the *data* field value. The following example removes all
+All relationships for a service can be deleted by sending an empty array or a`null` value as the _data_ field value. The following example removes all\
 servers from a service.
-
-
 
 ```
 PATCH /v1/services/my-rw-service/relationships/servers
@@ -681,90 +550,58 @@ PATCH /v1/services/my-rw-service/relationships/servers
 }
 ```
 
-
-
-#### Response
-
+**Response**
 
 Service relationships modified:
 
-
 `Status: 204 No Content`
-
 
 Invalid JSON body:
 
-
 `Status: 403 Forbidden`
 
-
-### Stop a service
-
-
+#### Stop a service
 
 ```
 PUT /v1/services/:name/stop
 ```
 
-
-
 Stops a started service.
 
-
-#### Response
-
+**Response**
 
 Service is stopped:
 
-
 `Status: 204 No Content`
 
-
-### Start a service
-
-
+#### Start a service
 
 ```
 PUT /v1/services/:name/start
 ```
 
-
-
 Starts a stopped service.
 
-
-#### Response
-
+**Response**
 
 Service is started:
 
-
 `Status: 204 No Content`
 
-
-### Reload users of a service
-
-
+#### Reload users of a service
 
 ```
 POST /v1/services/:name/reload
 ```
 
-
-
 Reloads the list of database users used for authentication.
 
-
-#### Response
-
+**Response**
 
 Users are reloaded:
 
-
 `Status: 204 No Content`
 
-
 CC BY-SA / Gnu FDL
-
 
 {% @marketo/form formId="4316" %}

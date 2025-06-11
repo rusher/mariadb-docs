@@ -1,8 +1,4 @@
-# mariadb-maxscale-24-mariadb-monitor
-
-## MariaDB Monitor
-
-## MariaDB Monitor
+# MariaDB Monitor
 
 * [MariaDB Monitor](mariadb-maxscale-24-mariadb-monitor.md#mariadb-monitor)
   * [Overview](mariadb-maxscale-24-mariadb-monitor.md#overview)
@@ -214,7 +210,7 @@ but are a part of the replication topology.
 
 An external server is a server not monitored by this monitor. If a server is\
 replicating from an external server, it typically gains the _Slave of External_\
-_Server_-status. If this setting is enabled, the status is not set.
+&#xNAN;_&#x53;erver_-status. If this setting is enabled, the status is not set.
 
 #### `detect_standalone_master`
 

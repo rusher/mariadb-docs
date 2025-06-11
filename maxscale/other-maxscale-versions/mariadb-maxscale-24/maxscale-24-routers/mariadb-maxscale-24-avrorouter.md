@@ -1,8 +1,4 @@
-# mariadb-maxscale-24-avrorouter
-
-## Avrorouter
-
-## Avrorouter
+# Avrorouter
 
 The avrorouter is a MariaDB 10.0 binary log to Avro file converter. It consumes\
 binary logs from a local directory and transforms them into a set of Avro files.\

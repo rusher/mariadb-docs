@@ -1,8 +1,4 @@
-# mariadb-maxscale-24-smartrouter
-
-## SmartRouter
-
-## SmartRouter
+# SmartRouter
 
 * [SmartRouter](mariadb-maxscale-24-smartrouter.md#smartrouter)
   * [Overview](mariadb-maxscale-24-smartrouter.md#overview)

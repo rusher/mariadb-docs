@@ -1,8 +1,4 @@
-# mariadb-maxscale-2408-maxscale-2408-beta-kafkacdc
-
-## MaxScale 24.08 Beta KafkaCDC
-
-## KafkaCDC
+# MaxScale 24.08 Beta KafkaCDC
 
 * [KafkaCDC](mariadb-maxscale-2408-maxscale-2408-beta-kafkacdc.md#kafkacdc)
   * [Overview](mariadb-maxscale-2408-maxscale-2408-beta-kafkacdc.md#overview)

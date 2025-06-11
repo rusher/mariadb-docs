@@ -1,8 +1,4 @@
-# mariadb-maxscale-2408-maxscale-2408-beta-diff-router-for-comparing-servers
-
-## MaxScale 24.08 Beta Diff - router for comparing servers
-
-## Diff - router for comparing servers
+# MaxScale 24.08 Beta Diff - router for comparing servers
 
 **NOTE** The Diff router requires a MaxScale license. This license is included\
 with a MariaDB support agreement, but can also be purchased separately. The\
@@ -69,7 +65,7 @@ the router itself.
 #### Histogram
 
 Diff collects latency information separately for each _canonical_\
-_statement_, which simply means a statement where all literals have been\
+&#xNAN;_&#x73;tatement_, which simply means a statement where all literals have been\
 replaced with question marks. For instance, the canonical statement of`SELECT f FROM t WHERE f = 10` and `SELECT f FROM t WHERE f = 20` is\
 in both cases `SELECT f FROM t WHERE f = ?`. The latency information\
 of both of those statements will be collected under the same canonical\

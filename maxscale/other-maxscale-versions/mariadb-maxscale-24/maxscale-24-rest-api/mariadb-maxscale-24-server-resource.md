@@ -1,39 +1,24 @@
-
 # Server Resource
-
-# Server Resource
-
 
 A server resource represents a backend database server.
 
+### Resource Operations
 
-## Resource Operations
-
-
-### Get a server
-
-
+#### Get a server
 
 ```
 GET /v1/servers/:name
 ```
 
-
-
-Get a single server. The *:name* in the URI must be a valid server name with all
+Get a single server. The _:name_ in the URI must be a valid server name with all\
 whitespace replaced with hyphens. The server names are case-insensitive.
 
+**Note**: The _parameters_ field contains all custom parameters for\
+servers, including the server weighting parameters.
 
-**Note**: The *parameters* field contains all custom parameters for
- servers, including the server weighting parameters.
-
-
-#### Response
-
+**Response**
 
 `Status: 200 OK`
-
-
 
 ```
 {
@@ -104,27 +89,17 @@ whitespace replaced with hyphens. The server names are case-insensitive.
 }
 ```
 
-
-
-### Get all servers
-
-
+#### Get all servers
 
 ```
 GET /v1/servers
 ```
 
-
-
-#### Response
-
+**Response**
 
 Response contains a resource collection with all servers.
 
-
 `Status: 200 OK`
-
-
 
 ```
 {
@@ -251,41 +226,30 @@ Response contains a resource collection with all servers.
 }
 ```
 
-
-
-### Create a server
-
-
+#### Create a server
 
 ```
 POST /v1/servers
 ```
 
-
-
-Create a new server by defining the resource. The posted object must define at
+Create a new server by defining the resource. The posted object must define at\
 least the following fields.
-
 
 * `data.id`
 * Name of the server
 * `data.type`
 * Type of the object, must be `servers`
 * `data.attributes.parameters.protocol`
-* The [protocol](../maxscale-24-getting-started/mariadb-maxscale-24-mariadb-maxscale-configuration-guide.md) to use.
- Must be defined.
+* The [protocol](../maxscale-24-getting-started/mariadb-maxscale-24-mariadb-maxscale-configuration-guide.md) to use.\
+  Must be defined.
 * `data.attributes.parameters.address` OR `data.attributes.parameters.socket`
-* The [address](../maxscale-24-getting-started/mariadb-maxscale-24-mariadb-maxscale-configuration-guide.md) or
- [socket](../maxscale-24-getting-started/mariadb-maxscale-24-mariadb-maxscale-configuration-guide.md) to use. Only
- one of the fields can be defined.
+* The [address](../maxscale-24-getting-started/mariadb-maxscale-24-mariadb-maxscale-configuration-guide.md) or[socket](../maxscale-24-getting-started/mariadb-maxscale-24-mariadb-maxscale-configuration-guide.md) to use. Only\
+  one of the fields can be defined.
 * `data.attributes.parameters.port`
-* The [port](../maxscale-24-getting-started/mariadb-maxscale-24-mariadb-maxscale-configuration-guide.md) to use. Needs
- to be defined if the `address` field is defined.
-
+* The [port](../maxscale-24-getting-started/mariadb-maxscale-24-mariadb-maxscale-configuration-guide.md) to use. Needs\
+  to be defined if the `address` field is defined.
 
 The following is the minimal required JSON object for defining a new server.
-
-
 
 ```
 {
@@ -302,12 +266,8 @@ The following is the minimal required JSON object for defining a new server.
 }
 ```
 
-
-
-The relationships of a server can also be defined at creation time. This allows
+The relationships of a server can also be defined at creation time. This allows\
 new servers to be created and immediately taken into use.
-
-
 
 ```
 {
@@ -346,93 +306,66 @@ new servers to be created and immediately taken into use.
 }
 ```
 
-
-
 The following parameters can be defined when a server is being created.
-
 
 * [address](../maxscale-24-getting-started/mariadb-maxscale-24-mariadb-maxscale-configuration-guide.md)
 * [port](../maxscale-24-getting-started/mariadb-maxscale-24-mariadb-maxscale-configuration-guide.md)
 * [protocol](../maxscale-24-getting-started/mariadb-maxscale-24-mariadb-maxscale-configuration-guide.md)
 * [authenticator](../maxscale-24-getting-started/mariadb-maxscale-24-mariadb-maxscale-configuration-guide.md)
-* [ssl_key](../maxscale-24-getting-started/mariadb-maxscale-24-mariadb-maxscale-configuration-guide.md)
-* [ssl_cert](../maxscale-24-getting-started/mariadb-maxscale-24-mariadb-maxscale-configuration-guide.md)
-* [ssl_ca_cert](../maxscale-24-getting-started/mariadb-maxscale-24-mariadb-maxscale-configuration-guide.md)
-* [ssl_version](../maxscale-24-getting-started/mariadb-maxscale-24-mariadb-maxscale-configuration-guide.md)
-* [ssl_cert_verify_depth](../maxscale-24-getting-started/mariadb-maxscale-24-mariadb-maxscale-configuration-guide.md)
-* [ssl_verify_peer_certificate](../maxscale-24-getting-started/mariadb-maxscale-24-mariadb-maxscale-configuration-guide.md)
+* [ssl\_key](../maxscale-24-getting-started/mariadb-maxscale-24-mariadb-maxscale-configuration-guide.md)
+* [ssl\_cert](../maxscale-24-getting-started/mariadb-maxscale-24-mariadb-maxscale-configuration-guide.md)
+* [ssl\_ca\_cert](../maxscale-24-getting-started/mariadb-maxscale-24-mariadb-maxscale-configuration-guide.md)
+* [ssl\_version](../maxscale-24-getting-started/mariadb-maxscale-24-mariadb-maxscale-configuration-guide.md)
+* [ssl\_cert\_verify\_depth](../maxscale-24-getting-started/mariadb-maxscale-24-mariadb-maxscale-configuration-guide.md)
+* [ssl\_verify\_peer\_certificate](../maxscale-24-getting-started/mariadb-maxscale-24-mariadb-maxscale-configuration-guide.md)
 
-
-#### Response
-
+**Response**
 
 Server created:
 
-
 `Status: 204 No Content`
-
 
 Invalid JSON body:
 
-
 `Status: 403 Forbidden`
 
-
-### Update a server
-
-
+#### Update a server
 
 ```
 PATCH /v1/servers/:name
 ```
 
-
-
-The *:name* in the URI must map to a server name with all whitespace replaced
-with hyphens and the request body must be a valid JSON document representing the
-modified server. If the server in question is not found, a 404 Not Found
+The _:name_ in the URI must map to a server name with all whitespace replaced\
+with hyphens and the request body must be a valid JSON document representing the\
+modified server. If the server in question is not found, a 404 Not Found\
 response is returned.
 
-
-### Modifiable Fields
-
+#### Modifiable Fields
 
 The following standard server parameters can be modified.
-
 
 * [address](../maxscale-24-getting-started/mariadb-maxscale-24-mariadb-maxscale-configuration-guide.md)
 * [port](../maxscale-24-getting-started/mariadb-maxscale-24-mariadb-maxscale-configuration-guide.md)
 * [monitoruser](../maxscale-24-getting-started/mariadb-maxscale-24-mariadb-maxscale-configuration-guide.md)
 * [monitorpw](../maxscale-24-getting-started/mariadb-maxscale-24-mariadb-maxscale-configuration-guide.md)
 
-
 Refer to the documentation on these parameters for valid values.
 
-
-The server weighting parameters can also be added, removed and updated. To
-remove a parameter, define the value of that parameter as the *null* JSON type
-e.g. `{ "my-param": null }`. To add a parameter, add a new key-value pair to
-the *parameters* object with a name that does not conflict with the standard
+The server weighting parameters can also be added, removed and updated. To\
+remove a parameter, define the value of that parameter as the _null_ JSON type\
+e.g. `{ "my-param": null }`. To add a parameter, add a new key-value pair to\
+the _parameters_ object with a name that does not conflict with the standard\
 parameters. To modify a weighting parameter, simply change the value.
 
-
-In addition to standard parameters, the *services* and *monitors* fields of the
-*relationships* object can be modified. Removal, addition and modification of
+In addition to standard parameters, the _services_ and _monitors_ fields of th&#x65;_&#x72;elationships_ object can be modified. Removal, addition and modification of\
 the links will change which service and monitors use this server.
 
+For example, removing the first value in the _services_ list in th&#x65;_&#x72;elationships_ object from the following JSON document will remove th&#x65;_&#x73;erver1_ from the service _RW-Split-Router_.
 
-For example, removing the first value in the *services* list in the
-*relationships* object from the following JSON document will remove the
-*server1* from the service *RW-Split-Router*.
-
-
-Removing a service from a server is analogous to removing the server from the
+Removing a service from a server is analogous to removing the server from the\
 service. Both unlink the two objects from each other.
 
-
 Response to `GET /v1/servers/server1`:
-
-
 
 ```
 {
@@ -498,11 +431,7 @@ Response to `GET /v1/servers/server1`:
 }
 ```
 
-
-
 Request for `PATCH /v1/servers/server1`:
-
-
 
 ```
 {
@@ -531,54 +460,38 @@ Request for `PATCH /v1/servers/server1`:
 }
 ```
 
-
-
-If parts of the resource are not defined (e.g. the `attributes` field in the
-above example), those parts of the resource are not modified. All parts that are
-defined are interpreted as the new definition of those part of the resource. In
+If parts of the resource are not defined (e.g. the `attributes` field in the\
+above example), those parts of the resource are not modified. All parts that are\
+defined are interpreted as the new definition of those part of the resource. In\
 the above example, the `relationships` of the resource are completely redefined.
 
-
-#### Response
-
+**Response**
 
 Server modified:
 
-
 `Status: 204 No Content`
-
 
 Invalid JSON body:
 
-
 `Status: 403 Forbidden`
 
-
-### Update server relationships
-
-
+#### Update server relationships
 
 ```
 PATCH /v1/servers/:name/relationships/:type
 ```
 
+The _:name_ in the URI must map to a server name with all whitespace replaced\
+with hyphens. The _:type_ in the URI must be either _services_, for service\
+relationships, or _monitors_, for monitor relationships.
 
-
-The *:name* in the URI must map to a server name with all whitespace replaced
-with hyphens. The *:type* in the URI must be either *services*, for service
-relationships, or *monitors*, for monitor relationships.
-
-
-The request body must be a JSON object that defines only the *data* field. The
-value of the *data* field must be an array of relationship objects that define
-the *id* and *type* fields of the relationship. This object will replace the
+The request body must be a JSON object that defines only the _data_ field. The\
+value of the _data_ field must be an array of relationship objects that define\
+the _id_ and _type_ fields of the relationship. This object will replace the\
 existing relationships of the particular type from the server.
 
-
-The following is an example request and request body that defines a single
+The following is an example request and request body that defines a single\
 service relationship for a server.
-
-
 
 ```
 PATCH /v1/servers/my-db-server/relationships/services
@@ -590,12 +503,7 @@ PATCH /v1/servers/my-db-server/relationships/services
 }
 ```
 
-
-
-All relationships for a server can be deleted by sending an empty array as the
-*data* field value. The following example removes the server from all services.
-
-
+All relationships for a server can be deleted by sending an empty array as th&#x65;_&#x64;ata_ field value. The following example removes the server from all services.
 
 ```
 PATCH /v1/servers/my-db-server/relationships/services
@@ -605,156 +513,106 @@ PATCH /v1/servers/my-db-server/relationships/services
 }
 ```
 
-
-
-#### Response
-
+**Response**
 
 Server relationships modified:
 
-
 `Status: 204 No Content`
-
 
 Invalid JSON body:
 
-
 `Status: 403 Forbidden`
 
-
-### Destroy a server
-
-
+#### Destroy a server
 
 ```
 DELETE /v1/servers/:name
 ```
 
-
-
-The *:name* in the URI must map to a server name with all whitespace replaced
+The _:name_ in the URI must map to a server name with all whitespace replaced\
 with hyphens.
-
 
 A server can only be deleted if it is not used by any services or monitors.
 
-
-#### Response
-
+**Response**
 
 Server is destroyed:
 
-
 `Status: 204 No Content`
-
 
 Server is in use:
 
-
 `Status: 403 Forbidden`
 
-
-### Set server state
-
-
+#### Set server state
 
 ```
 PUT /v1/servers/:name/set
 ```
 
-
-
-The *:name* in the URI must map to a server name with all whitespace replaced
-with hyphens. This endpoint requires that the `state` parameter is passed with
+The _:name_ in the URI must map to a server name with all whitespace replaced\
+with hyphens. This endpoint requires that the `state` parameter is passed with\
 the request. The value of `state` must be one of the following values.
 
+| Value       | State Description                |
+| ----------- | -------------------------------- |
+| Value       | State Description                |
+| master      | Server is a Master               |
+| slave       | Server is a Slave                |
+| maintenance | Server is put into maintenance   |
+| running     | Server is up and running         |
+| synced      | Server is a Galera node          |
+| drain       | Server is drained of connections |
 
-| Value | State Description |
-| --- | --- |
-| Value | State Description |
-| master | Server is a Master |
-| slave | Server is a Slave |
-| maintenance | Server is put into maintenance |
-| running | Server is up and running |
-| synced | Server is a Galera node |
-| drain | Server is drained of connections |
-
-
-For example, to set the server *db-server-1* into maintenance mode, a request to
+For example, to set the server _db-server-1_ into maintenance mode, a request to\
 the following URL must be made:
-
-
 
 ```
 PUT /v1/servers/db-server-1/set?state=maintenance
 ```
 
-
-
-This endpoint also supports the `force=yes` parameter that will cause all
-connections to the server to be closed if `state=maintenance` is also set. By
-default setting a server into maintenance mode will cause connections to be
+This endpoint also supports the `force=yes` parameter that will cause all\
+connections to the server to be closed if `state=maintenance` is also set. By\
+default setting a server into maintenance mode will cause connections to be\
 closed only after the next request is sent.
 
-
-The following example forcefully closes all connections to server *db-server-1*
+The following example forcefully closes all connections to server _db-server-1_\
 and sets it into maintenance mode:
-
-
 
 ```
 PUT /v1/servers/db-server-1/set?state=maintenance&force=yes
 ```
 
-
-
-#### Response
-
+**Response**
 
 Server state modified:
 
-
 `Status: 204 No Content`
-
 
 Missing or invalid parameter:
 
-
 `Status: 403 Forbidden`
 
-
-### Clear server state
-
-
+#### Clear server state
 
 ```
 PUT /v1/servers/:name/clear
 ```
 
+The _:name_ in the URI must map to a server name with all whitespace replaced\
+with hyphens. This endpoint requires that the `state` parameter is passed with\
+the request. The value of `state` must be one of the values defined in th&#x65;_&#x73;et_ endpoint documentation.
 
-
-The *:name* in the URI must map to a server name with all whitespace replaced
-with hyphens. This endpoint requires that the `state` parameter is passed with
-the request. The value of `state` must be one of the values defined in the
-*set* endpoint documentation.
-
-
-#### Response
-
+**Response**
 
 Server state modified:
 
-
 `Status: 204 No Content`
-
 
 Missing or invalid parameter:
 
-
 `Status: 403 Forbidden`
 
-
 CC BY-SA / Gnu FDL
-
 
 {% @marketo/form formId="4316" %}

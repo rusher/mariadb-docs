@@ -1,8 +1,4 @@
-# mariadb-maxscale-24-maxadmin-admin-interface
-
-## MaxAdmin - Admin Interface
-
-## MaxAdmin - Admin Interface
+# MaxAdmin - Admin Interface
 
 **NOTE:** MaxAdmin is deprecated, use [MaxCtrl](mariadb-maxscale-24-maxctrl.md) instead.
 
@@ -110,7 +106,7 @@ There are two ways MaxAdmin can connect to to MaxScale.
 The first alternative is introduced in MaxScale 2.0 and is the secure and\
 recommended way. The second alternative is available for backward compatibility,\
 but is _insecure_ and **deprecated** and _will be removed in a future version of_\
-_MaxScale_.
+&#xNAN;_&#x4D;axScale_.
 
 An example configuration looks as follows:
 
@@ -223,7 +219,7 @@ Please note that `root` will not be shown.
 ### Enabling a Linux account
 
 To enable MaxAdmin usage for a particular Linux account, use the command _enable_\
-_account_. This command is passed a user name, which should be the same as that\
+&#xNAN;_&#x61;ccount_. This command is passed a user name, which should be the same as that\
 of an existing Linux user.
 
 ```
@@ -679,7 +675,7 @@ MaxScale>
 ### See Service Details
 
 It is possible to see the details of an individual service using the _show_\
-_service_ command. This command should be passed the name of the service you wish\
+&#xNAN;_&#x73;ervice_ command. This command should be passed the name of the service you wish\
 to examine as an argument. Where a service name contains spaces characters there\
 should either be escaped or the name placed in quotes.
 
@@ -803,7 +799,7 @@ MaxScale>
 ### Server Details
 
 It is possible to see more details regarding a given server using the _show_\
-_server_ command.
+&#xNAN;_&#x73;erver_ command.
 
 ```
 MaxScale> show server server2
@@ -907,7 +903,7 @@ This will give a list of client connections.
 
 Once the session ID has been determined using one of the above method it is\
 possible to determine more detail regarding a session by using the _show_\
-_session_ command.
+&#xNAN;_&#x73;ession_ command.
 
 ```
 MaxScale> show session 11
@@ -1032,7 +1028,7 @@ the client connection and MariaDB MaxScale router modules.
 
 Filters are configured in the configuration file for MariaDB MaxScale, they are\
 given names and may be included in the definition of a service. The _list_\
-_filters_ command can be used to determine which filters are defined.
+&#xNAN;_&#x66;ilters_ command can be used to determine which filters are defined.
 
 ```
 MaxScale> list filters
@@ -1199,7 +1195,7 @@ MaxScale>
 
 A monitor may be shutdown using the _shutdown monitor_ command. This allows for\
 manual control of the status of servers using the _set server_ and _clear_\
-_server_ commands.
+&#xNAN;_&#x73;erver_ commands.
 
 ```
 MaxScale> shutdown monitor MySQL-Monitor

@@ -1,33 +1,23 @@
-
-# MariaDB MaxScale 2.4.9 Release Notes -- 2020-04-30
-
-# MariaDB MaxScale 2.4.9 Release Notes -- 2020-04-30
-
+# MariaDB MaxScale 2.4.9 Release Notes -- 2020-04-3
 
 Release 2.4.9 is a GA release.
 
-
-This document describes the changes in release 2.4.9, when compared to the
+This document describes the changes in release 2.4.9, when compared to the\
 previous release in the same series.
 
-
-For any problems you encounter, please consider submitting a bug
+For any problems you encounter, please consider submitting a bug\
 report on [our Jira](https://jira.mariadb.org/projects/MXS).
 
-
-## New Features
-
+### New Features
 
 * [MXS-2861](https://jira.mariadb.org/browse/MXS-2861) Allow TLS cipher selection between Maxscale and client
 
-
-## Bug fixes
-
+### Bug fixes
 
 * [MXS-2972](https://jira.mariadb.org/browse/MXS-2972) USE sent to wrong server
 * [MXS-2969](https://jira.mariadb.org/browse/MXS-2969) maxscale service still not stopped / restarted on package upgrade
-* [MXS-2968](https://jira.mariadb.org/browse/MXS-2968) Avrorouter direct replication sets wrong server_id
-* [MXS-2956](https://jira.mariadb.org/browse/MXS-2956) admin_ssl_ca_cert reads the wrong certificate
+* [MXS-2968](https://jira.mariadb.org/browse/MXS-2968) Avrorouter direct replication sets wrong server\_id
+* [MXS-2956](https://jira.mariadb.org/browse/MXS-2956) admin\_ssl\_ca\_cert reads the wrong certificate
 * [MXS-2954](https://jira.mariadb.org/browse/MXS-2954) cluster sync doesn't update global configuration options
 * [MXS-2948](https://jira.mariadb.org/browse/MXS-2948) Fix cluster sync
 * [MXS-2943](https://jira.mariadb.org/browse/MXS-2943) csmon doesn't work with pluggable ColumnStore
@@ -35,36 +25,26 @@ report on [our Jira](https://jira.mariadb.org/projects/MXS).
 * [MXS-2939](https://jira.mariadb.org/browse/MXS-2939) Session commands do not trigger reconnection
 * [MXS-2931](https://jira.mariadb.org/browse/MXS-2931) MXS-2810 still unfixed in RHEL / CentOS 6 packages
 
+### Known Issues and Limitations
 
-## Known Issues and Limitations
-
-
-There are some limitations and known issues within this version of MaxScale.
+There are some limitations and known issues within this version of MaxScale.\
 For more information, please refer to the [Limitations](../about-maxscale-24/mariadb-maxscale-24-limitations-and-known-issues-within-mariadb-maxscale.md) document.
 
-
-## Packaging
-
+### Packaging
 
 RPM and Debian packages are provided for supported the Linux distributions.
 
-
 Packages can be downloaded [here](https://mariadb.com/downloads/#mariadb_platform-mariadb_maxscale).
 
+### Source Code
 
-## Source Code
-
-
-The source code of MaxScale is tagged at GitHub with a tag, which is identical
-with the version of MaxScale. For instance, the tag of version X.Y.Z of MaxScale
-is `maxscale-X.Y.Z`. Further, the default branch is always the latest GA version
+The source code of MaxScale is tagged at GitHub with a tag, which is identical\
+with the version of MaxScale. For instance, the tag of version X.Y.Z of MaxScale\
+is `maxscale-X.Y.Z`. Further, the default branch is always the latest GA version\
 of MaxScale.
-
 
 The source code is available [here](https://github.com/mariadb-corporation/MaxScale).
 
-
 CC BY-SA / Gnu FDL
-
 
 {% @marketo/form formId="4316" %}

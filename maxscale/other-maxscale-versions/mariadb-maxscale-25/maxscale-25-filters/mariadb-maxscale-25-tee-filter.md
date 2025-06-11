@@ -1,55 +1,36 @@
-
 # Tee Filter
 
-# Tee Filter
+* [Tee Filter](mariadb-maxscale-25-tee-filter.md#tee-filter)
+  * [Overview](mariadb-maxscale-25-tee-filter.md#overview)
+  * [Configuration](mariadb-maxscale-25-tee-filter.md#configuration)
+  * [Filter Parameters](mariadb-maxscale-25-tee-filter.md#filter-parameters)
+    * [target](mariadb-maxscale-25-tee-filter.md#target)
+    * [service](mariadb-maxscale-25-tee-filter.md#service)
+    * [match, exclude and options](mariadb-maxscale-25-tee-filter.md#match-exclude-and-options)
+    * [source](mariadb-maxscale-25-tee-filter.md#source)
+    * [user](mariadb-maxscale-25-tee-filter.md#user)
+  * [Limitations](mariadb-maxscale-25-tee-filter.md#limitations)
+  * [Module commands](mariadb-maxscale-25-tee-filter.md#module-commands)
+    * [tee disable \[FILTER\]](mariadb-maxscale-25-tee-filter.md#tee-disable-filter)
+    * [tee enable \[FILTER\]](mariadb-maxscale-25-tee-filter.md#tee-enable-filter)
+  * [Examples](mariadb-maxscale-25-tee-filter.md#examples)
+    * [Example 1 - Replicate all inserts into the orders table](mariadb-maxscale-25-tee-filter.md#example-1-replicate-all-inserts-into-the-orders-table)
 
+### Overview
 
-
-
-* [Tee Filter](#tee-filter)
-
-  * [Overview](#overview)
-  * [Configuration](#configuration)
-  * [Filter Parameters](#filter-parameters)
-
-    * [target](#target)
-    * [service](#service)
-    * [match, exclude and options](#match-exclude-and-options)
-    * [source](#source)
-    * [user](#user)
-  * [Limitations](#limitations)
-  * [Module commands](#module-commands)
-
-    * [tee disable [FILTER]](#tee-disable-filter)
-    * [tee enable [FILTER]](#tee-enable-filter)
-  * [Examples](#examples)
-
-    * [Example 1 - Replicate all inserts into the orders table](#example-1-replicate-all-inserts-into-the-orders-table)
-
-
-
-
-## Overview
-
-
-The tee filter is a "plumbing" fitting in the MariaDB MaxScale filter toolkit.
-It can be used in a filter pipeline of a service to make copies of requests from
+The tee filter is a "plumbing" fitting in the MariaDB MaxScale filter toolkit.\
+It can be used in a filter pipeline of a service to make copies of requests from\
 the client and send the copies to another service within MariaDB MaxScale.
 
+**Please Note:** Starting with MaxScale 2.2.0, any client that connects to a\
+service which uses a tee filter will require a grant for the loopback address,\
+i.e. `127.0.0.1`.
 
-**Please Note:** Starting with MaxScale 2.2.0, any client that connects to a
- service which uses a tee filter will require a grant for the loopback address,
- i.e. `127.0.0.1`.
+### Configuration
 
-
-## Configuration
-
-
-The configuration block for the TEE filter requires the minimal filter
-parameters in its section within the MaxScale configuration file. The service to
+The configuration block for the TEE filter requires the minimal filter\
+parameters in its section within the MaxScale configuration file. The service to\
 send the duplicates to must be defined.
-
-
 
 ```
 [DataMartFilter]
@@ -66,38 +47,27 @@ password=mypasswd
 filters=DataMartFilter
 ```
 
+### Filter Parameters
 
-
-## Filter Parameters
-
-
-The tee filter requires a mandatory parameter to define the service to replicate
+The tee filter requires a mandatory parameter to define the service to replicate\
 statements to and accepts a number of optional parameters.
 
+#### `target`
 
-### `target`
-
-
-The target where the filter will duplicate all queries. The target can be either
-a service or a server. The duplicate connection that is created to this target
+The target where the filter will duplicate all queries. The target can be either\
+a service or a server. The duplicate connection that is created to this target\
 will be referred to as the "branch target" in this document.
 
+#### `service`
 
-### `service`
-
-
-The service where the filter will duplicate all queries. This parameter is
-deprecated in favor of the `target` parameter and will be removed in a future
+The service where the filter will duplicate all queries. This parameter is\
+deprecated in favor of the `target` parameter and will be removed in a future\
 release. Both `target` and `service` cannot be defined.
 
+#### `match`, `exclude` and `options`
 
-### `match`, `exclude` and `options`
-
-
-These [regular expression settings](../maxscale-25-getting-started/mariadb-maxscale-25-mariadb-maxscale-configuration-guide.md#standard-regular-expression-settings-for-filters)
+These [regular expression settings](../maxscale-25-getting-started/mariadb-maxscale-25-mariadb-maxscale-configuration-guide.md#standard-regular-expression-settings-for-filters)\
 limit the queries replicated by the tee filter.
-
-
 
 ```
 match=/insert.*into.*order*/
@@ -105,95 +75,69 @@ exclude=/select.*from.*t1/
 options=case,extended
 ```
 
+#### `source`
 
-
-### `source`
-
-
-The optional source parameter defines an address that is used to match against
-the address from which the client connection to MariaDB MaxScale originates.
+The optional source parameter defines an address that is used to match against\
+the address from which the client connection to MariaDB MaxScale originates.\
 Only sessions that originate from this address will be replicated.
-
-
 
 ```
 source=127.0.0.1
 ```
 
+#### `user`
 
-
-### `user`
-
-
-The optional user parameter defines a user name that is used to match against
-the user from which the client connection to MariaDB MaxScale originates. Only
+The optional user parameter defines a user name that is used to match against\
+the user from which the client connection to MariaDB MaxScale originates. Only\
 sessions that are connected using this username are replicated.
-
-
 
 ```
 user=john
 ```
 
+### Limitations
 
+* All statements that are executed on the branch target are done in an\
+  asynchronous manner. This means that when the client receives the response\
+  there is no guarantee that the statement has completed on the branch target.
+* Any errors on the branch target will cause the connection to it to be\
+  closed. If `target` is a service, it is up to the router to decide whether the\
+  connection is closed. For direct connections to servers, any network errors\
+  cause the connection to be closed. When the connection is closed, no new\
+  queries will be routed to the branch target.
 
-## Limitations
+### Module commands
 
-
-* All statements that are executed on the branch target are done in an
- asynchronous manner. This means that when the client receives the response
- there is no guarantee that the statement has completed on the branch target.
-* Any errors on the branch target will cause the connection to it to be
- closed. If `target` is a service, it is up to the router to decide whether the
- connection is closed. For direct connections to servers, any network errors
- cause the connection to be closed. When the connection is closed, no new
- queries will be routed to the branch target.
-
-
-## Module commands
-
-
-Read [Module Commands](../maxscale-25-reference/mariadb-maxscale-25-module-commands.md) documentation for
+Read [Module Commands](../maxscale-25-reference/mariadb-maxscale-25-module-commands.md) documentation for\
 details about module commands.
-
 
 The tee filter supports the following module commands.
 
+#### `tee disable [FILTER]`
 
-### `tee disable [FILTER]`
-
-
-This command disables a tee filter instance. A disabled tee filter will not send
+This command disables a tee filter instance. A disabled tee filter will not send\
 any queries to the target service.
 
+#### `tee enable [FILTER]`
 
-### `tee enable [FILTER]`
-
-
-Enable a disabled tee filter. This resumes the sending of queries to the target
+Enable a disabled tee filter. This resumes the sending of queries to the target\
 service.
 
+### Examples
 
-## Examples
+#### Example 1 - Replicate all inserts into the orders table
 
-
-### Example 1 - Replicate all inserts into the orders table
-
-
-Assume an order processing system that has a table called orders. You also have
-another database server, the datamart server, that requires all inserts into
+Assume an order processing system that has a table called orders. You also have\
+another database server, the datamart server, that requires all inserts into\
 orders to be replicated to it. Deletes and updates are not, however, required.
 
-
-Set up a service in MariaDB MaxScale, called Orders, to communicate with the
-order processing system with the tee filter applied to it. Also set up a service
-to talk to the datamart server, using the DataMart service. The tee filter would
-have as its service entry the DataMart service, by adding a match parameter of
-"insert into orders" would then result in all requests being sent to the order
-processing system, and insert statements that include the orders table being
+Set up a service in MariaDB MaxScale, called Orders, to communicate with the\
+order processing system with the tee filter applied to it. Also set up a service\
+to talk to the datamart server, using the DataMart service. The tee filter would\
+have as its service entry the DataMart service, by adding a match parameter of\
+"insert into orders" would then result in all requests being sent to the order\
+processing system, and insert statements that include the orders table being\
 additionally sent to the datamart server.
-
-
 
 ```
 [Orders]
@@ -236,9 +180,6 @@ protocol=MariaDBClient
 port=4012
 ```
 
-
-
 CC BY-SA / Gnu FDL
-
 
 {% @marketo/form formId="4316" %}
