@@ -19,7 +19,7 @@ MariaDB Enterprise Server 10.6.9-5 was released on 2022-09-12.
 
 ## Backported Features
 
-MariaDB Enterprise Server enables a predictable development and operations experience through an [enterprise lifecycle](https://mariadb.com/docs/server/products/mariadb-enterprise-server/lifecycle). These new features have been backported after reaching maturity in MariaDB Community Server:
+MariaDB Enterprise Server enables a predictable development and operations experience through an [enterprise lifecycle](../../enterprise-server-lifecycle.md). These new features have been backported after reaching maturity in MariaDB Community Server:
 
 * The `UUID` data type has been backported from MariaDB Community Server 10.7 for more efficient storage of `UUID` values. (MENT-1459)
 
@@ -69,7 +69,7 @@ what(): remote_endpoint: Transport endpoint is not connected
 ```
 
 * When a generated column is added to an InnoDB table with the INSTANT algorithm, the server can crash due to a buffer overflow. ([MDEV-26420](https://jira.mariadb.org/browse/MDEV-26420))
-* When [CREATE VIEW](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/views/create-view) is executed with a view definition that contains an unknown column in an ON condition, the server can crash instead of raising an error with the [ER\_BAD\_FIELD\_ERROR error code](broken-reference). ([MDEV-29088](https://jira.mariadb.org/browse/MDEV-29088))
+* When [CREATE VIEW](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/views/create-view) is executed with a view definition that contains an unknown column in an ON condition, the server can crash instead of raising an error with the [ER\_BAD\_FIELD\_ERROR error code](broken-reference/). ([MDEV-29088](https://jira.mariadb.org/browse/MDEV-29088))
 * When [FLUSH BINARY LOGS](https://mariadb.com/kb/en/FLUSH-BINARY-LOGS) is executed, the server can hang. ([MDEV-28948](https://jira.mariadb.org/browse/MDEV-28948))
 * When the [innodb\_open\_files system variable](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables#innodb_open_files) is too low, the server can crash if InnoDB accesses too many tables or partitions. ([MDEV-26293](https://jira.mariadb.org/browse/MDEV-26293))
 * When InnoDB detects a corrupt data page, the server can crash. ([MDEV-22388](https://jira.mariadb.org/browse/MDEV-22388), [MDEV-21098](https://jira.mariadb.org/browse/MDEV-21098), [MDEV-13542](https://jira.mariadb.org/browse/MDEV-13542), [MDEV-28457](https://jira.mariadb.org/browse/MDEV-28457), [MDEV-18519](https://jira.mariadb.org/browse/MDEV-18519), [MDEV-22388](https://jira.mariadb.org/browse/MDEV-22388))
@@ -92,7 +92,7 @@ Last_SQL_Error	The incident LOST_EVENTS occurred on the master. Message: error w
 * When a replica server replicates an incident event, the details about the failure are not in the primary server's error log, the replica server's error log, or the output of [SHOW REPLICA STATUS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-replica-status). ([MDEV-21087](https://jira.mariadb.org/browse/MDEV-21087))
 * When a backup is performed with [mariadb-backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup), the backup includes binary logs. ([MDEV-28758](https://jira.mariadb.org/browse/MDEV-28758))
 * When a table is created from a [SELECT statement](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/selecting-data/select) that uses a recursive CTE, the table can use unexpected data types and contain truncated data if the calculated values from the recursive part of the CTE do not fit in the column types that are taken from the non-recursive part of the CTE. ([MDEV-12325](https://jira.mariadb.org/browse/MDEV-12325))
-  * Starting with this release, the CTE calculation is aborted when the calculated values do not fit in the column types. When this occurs, a warning or error (depending on `sql_mode` is raised with the [ER\_WARN\_DATA\_OUT\_OF\_RANGE error code](broken-reference) and the following error message:
+  * Starting with this release, the CTE calculation is aborted when the calculated values do not fit in the column types. When this occurs, a warning or error (depending on `sql_mode` is raised with the [ER\_WARN\_DATA\_OUT\_OF\_RANGE error code](broken-reference/) and the following error message:
 
 ```
 Out of range value for column 'COLUMN_NAME' at row ROW_NUM
