@@ -1,8 +1,4 @@
-# mariadb-maxscale-2402-maxscale-2402-mariadb-monitor
-
-## MaxScale 24.02 MariaDB Monitor
-
-## MariaDB Monitor
+# MaxScale 24.02 MariaDB Monitor
 
 * [MariaDB Monitor](mariadb-maxscale-2402-maxscale-2402-mariadb-monitor.md#mariadb-monitor)
   * [Overview](mariadb-maxscale-2402-maxscale-2402-mariadb-monitor.md#overview)

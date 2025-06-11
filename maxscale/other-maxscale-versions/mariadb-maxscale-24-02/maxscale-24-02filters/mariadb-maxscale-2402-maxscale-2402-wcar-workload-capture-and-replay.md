@@ -1,8 +1,4 @@
-# mariadb-maxscale-2402-maxscale-2402-wcar-workload-capture-and-replay
-
-## MaxScale 24.02 WCAR: Workload Capture and Replay
-
-## WCAR: Workload Capture and Replay
+# MaxScale 24.02 WCAR: Workload Capture and Replay
 
 * [WCAR: Workload Capture and Replay](mariadb-maxscale-2402-maxscale-2402-wcar-workload-capture-and-replay.md#wcar-workload-capture-and-replay)
   * [Overview](mariadb-maxscale-2402-maxscale-2402-wcar-workload-capture-and-replay.md#overview)

@@ -1,73 +1,43 @@
-
 # Monitor Resource
 
-# Monitor Resource
-
-
-A monitor resource represents a monitor inside MaxScale that monitors one or
+A monitor resource represents a monitor inside MaxScale that monitors one or\
 more servers.
 
+* [Monitor Resource](mariadb-maxscale-2302-monitor-resource.md#monitor-resource)
+  * [Resource Operations](mariadb-maxscale-2302-monitor-resource.md#resource-operations)
+    * [Get a monitor](mariadb-maxscale-2302-monitor-resource.md#get-a-monitor)
+      * [Response](mariadb-maxscale-2302-monitor-resource.md#response)
+    * [Get all monitors](mariadb-maxscale-2302-monitor-resource.md#get-all-monitors)
+      * [Response](mariadb-maxscale-2302-monitor-resource.md#response_1)
+    * [Create a monitor](mariadb-maxscale-2302-monitor-resource.md#create-a-monitor)
+      * [Response](mariadb-maxscale-2302-monitor-resource.md#response_2)
+    * [Update a monitor](mariadb-maxscale-2302-monitor-resource.md#update-a-monitor)
+    * [Modifiable Fields](mariadb-maxscale-2302-monitor-resource.md#modifiable-fields)
+      * [Response](mariadb-maxscale-2302-monitor-resource.md#response_3)
+    * [Update monitor relationships](mariadb-maxscale-2302-monitor-resource.md#update-monitor-relationships)
+      * [Response](mariadb-maxscale-2302-monitor-resource.md#response_4)
+    * [Destroy a monitor](mariadb-maxscale-2302-monitor-resource.md#destroy-a-monitor)
+      * [Response](mariadb-maxscale-2302-monitor-resource.md#response_5)
+    * [Stop a monitor](mariadb-maxscale-2302-monitor-resource.md#stop-a-monitor)
+      * [Response](mariadb-maxscale-2302-monitor-resource.md#response_6)
+    * [Start a monitor](mariadb-maxscale-2302-monitor-resource.md#start-a-monitor)
+      * [Response](mariadb-maxscale-2302-monitor-resource.md#response_7)
 
+### Resource Operations
 
+The _:name_ in all of the URIs must be the name of a monitor in MaxScale.
 
-* [Monitor Resource](#monitor-resource)
-
-  * [Resource Operations](#resource-operations)
-
-    * [Get a monitor](#get-a-monitor)
-
-      * [Response](#response)
-    * [Get all monitors](#get-all-monitors)
-
-      * [Response](#response_1)
-    * [Create a monitor](#create-a-monitor)
-
-      * [Response](#response_2)
-    * [Update a monitor](#update-a-monitor)
-    * [Modifiable Fields](#modifiable-fields)
-
-      * [Response](#response_3)
-    * [Update monitor relationships](#update-monitor-relationships)
-
-      * [Response](#response_4)
-    * [Destroy a monitor](#destroy-a-monitor)
-
-      * [Response](#response_5)
-    * [Stop a monitor](#stop-a-monitor)
-
-      * [Response](#response_6)
-    * [Start a monitor](#start-a-monitor)
-
-      * [Response](#response_7)
-
-
-
-
-## Resource Operations
-
-
-The *:name* in all of the URIs must be the name of a monitor in MaxScale.
-
-
-### Get a monitor
-
-
+#### Get a monitor
 
 ```
 GET /v1/monitors/:name
 ```
 
-
-
 Get a single monitor.
 
-
-#### Response
-
+**Response**
 
 `Status: 200 OK`
-
-
 
 ```
 {
@@ -222,27 +192,17 @@ Get a single monitor.
 }
 ```
 
-
-
-### Get all monitors
-
-
+#### Get all monitors
 
 ```
 GET /v1/monitors
 ```
 
-
-
 Get all monitors.
 
-
-#### Response
-
+**Response**
 
 `Status: 200 OK`
-
-
 
 ```
 {
@@ -399,21 +359,14 @@ Get all monitors.
 }
 ```
 
-
-
-### Create a monitor
-
-
+#### Create a monitor
 
 ```
 POST /v1/monitors
 ```
 
-
-
-Create a new monitor. The request body must define at least the following
+Create a new monitor. The request body must define at least the following\
 fields.
-
 
 * `data.id`
 * Name of the monitor
@@ -426,15 +379,11 @@ fields.
 * `data.attributes.parameters.password`
 * The [password](../mariadb-maxscale-23-02-getting-started/mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#password) to use
 
-
 All monitor parameters can be defined at creation time.
 
-
-The following example defines a request body which creates a new monitor and
-assigns two servers to be monitored by it. It also defines a custom value for
-the *monitor_interval* parameter.
-
-
+The following example defines a request body which creates a new monitor and\
+assigns two servers to be monitored by it. It also defines a custom value for\
+the _monitor\_interval_ parameter.
 
 ```
 {
@@ -467,86 +416,60 @@ the *monitor_interval* parameter.
 }
 ```
 
-
-
-#### Response
-
+**Response**
 
 Monitor is created:
 
-
 `Status: 204 No Content`
 
-
-### Update a monitor
-
-
+#### Update a monitor
 
 ```
 PATCH /v1/monitors/:name
 ```
 
-
-
-The request body must be a valid JSON document representing the modified
+The request body must be a valid JSON document representing the modified\
 monitor.
 
-
-### Modifiable Fields
-
+#### Modifiable Fields
 
 The following standard server parameter can be modified.
 
-
 * [user](../mariadb-maxscale-23-02-monitors/mariadb-maxscale-2302-common-monitor-parameters.md#user)
 * [password](../mariadb-maxscale-23-02-monitors/mariadb-maxscale-2302-common-monitor-parameters.md#password)
-* [monitor_interval](../mariadb-maxscale-23-02-monitors/mariadb-maxscale-2302-common-monitor-parameters.md#monitor_interval)
-* [backend_connect_timeout](../mariadb-maxscale-23-02-monitors/mariadb-maxscale-2302-common-monitor-parameters.md#backend_connect_timeout)
-* [backend_write_timeout](../mariadb-maxscale-23-02-monitors/mariadb-maxscale-2302-common-monitor-parameters.md#backend_write_timeout)
-* [backend_read_timeout](../mariadb-maxscale-23-02-monitors/mariadb-maxscale-2302-common-monitor-parameters.md#backend_read_timeout)
-* [backend_connect_attempts](../mariadb-maxscale-23-02-monitors/mariadb-maxscale-2302-common-monitor-parameters.md#backend_connect_attempts)
+* [monitor\_interval](../mariadb-maxscale-23-02-monitors/mariadb-maxscale-2302-common-monitor-parameters.md#monitor_interval)
+* [backend\_connect\_timeout](../mariadb-maxscale-23-02-monitors/mariadb-maxscale-2302-common-monitor-parameters.md#backend_connect_timeout)
+* [backend\_write\_timeout](../mariadb-maxscale-23-02-monitors/mariadb-maxscale-2302-common-monitor-parameters.md#backend_write_timeout)
+* [backend\_read\_timeout](../mariadb-maxscale-23-02-monitors/mariadb-maxscale-2302-common-monitor-parameters.md#backend_read_timeout)
+* [backend\_connect\_attempts](../mariadb-maxscale-23-02-monitors/mariadb-maxscale-2302-common-monitor-parameters.md#backend_connect_attempts)
 
-
-In addition to these standard parameters, the monitor specific parameters can
-also be modified. Refer to the monitor module documentation for details on these
+In addition to these standard parameters, the monitor specific parameters can\
+also be modified. Refer to the monitor module documentation for details on these\
 parameters.
 
-
-#### Response
-
+**Response**
 
 Monitor is modified:
 
-
 `Status: 204 No Content`
-
 
 Invalid request body:
 
-
 `Status: 400 Bad Request`
 
-
-### Update monitor relationships
-
-
+#### Update monitor relationships
 
 ```
 PATCH /v1/monitors/:name/relationships/servers
 ```
 
-
-
-The request body must be a JSON object that defines only the *data* field. The
-value of the *data* field must be an array of relationship objects that define
-the *id* and *type* fields of the relationship. This object will replace the
+The request body must be a JSON object that defines only the _data_ field. The\
+value of the _data_ field must be an array of relationship objects that define\
+the _id_ and _type_ fields of the relationship. This object will replace the\
 existing relationships of the monitor.
 
-
-The following is an example request and request body that defines a single
+The following is an example request and request body that defines a single\
 server relationship for a monitor.
-
-
 
 ```
 PATCH /v1/monitors/my-monitor/relationships/servers
@@ -558,12 +481,7 @@ PATCH /v1/monitors/my-monitor/relationships/servers
 }
 ```
 
-
-
-All relationships for a monitor can be deleted by sending an empty array as the
-*data* field value. The following example removes all servers from a monitor.
-
-
+All relationships for a monitor can be deleted by sending an empty array as th&#x65;_&#x64;ata_ field value. The following example removes all servers from a monitor.
 
 ```
 PATCH /v1/monitors/my-monitor/relationships/servers
@@ -573,101 +491,66 @@ PATCH /v1/monitors/my-monitor/relationships/servers
 }
 ```
 
-
-
-#### Response
-
+**Response**
 
 Monitor relationships modified:
 
-
 `Status: 204 No Content`
-
 
 Invalid JSON body:
 
-
 `Status: 400 Bad Request`
 
-
-### Destroy a monitor
-
-
+#### Destroy a monitor
 
 ```
 DELETE /v1/monitors/:name
 ```
 
-
-
-Destroy a created monitor. The monitor must not have relationships to any
+Destroy a created monitor. The monitor must not have relationships to any\
 servers in order to be destroyed.
 
-
-This endpoint also supports the `force=yes` parameter that will unconditionally
+This endpoint also supports the `force=yes` parameter that will unconditionally\
 delete the monitor by first unlinking it from all servers that it uses.
 
-
-#### Response
-
+**Response**
 
 Monitor is deleted:
 
-
 `Status: 204 No Content`
-
 
 Monitor could not be deleted:
 
-
 `Status: 400 Bad Request`
 
-
-### Stop a monitor
-
-
+#### Stop a monitor
 
 ```
 PUT /v1/monitors/:name/stop
 ```
 
-
-
 Stops a started monitor.
 
-
-#### Response
-
+**Response**
 
 Monitor is stopped:
 
-
 `Status: 204 No Content`
 
-
-### Start a monitor
-
-
+#### Start a monitor
 
 ```
 PUT /v1/monitors/:name/start
 ```
 
-
-
 Starts a stopped monitor.
 
-
-#### Response
-
+**Response**
 
 Monitor is started:
 
-
 `Status: 204 No Content`
 
-
 CC BY-SA / Gnu FDL
-
 
 {% @marketo/form formId="4316" %}

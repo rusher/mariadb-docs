@@ -1,8 +1,4 @@
-# mariadb-maxscale-2408-maxscale-2408-beta-changelog
-
-## MaxScale 24.08 Beta Changelog
-
-## Changelog
+# MaxScale 24.08 Beta Changelog
 
 ### MariaDB MaxScale 24.08
 

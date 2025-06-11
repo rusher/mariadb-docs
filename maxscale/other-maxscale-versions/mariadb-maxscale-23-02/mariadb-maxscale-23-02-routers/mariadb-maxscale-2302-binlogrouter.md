@@ -1,8 +1,4 @@
-# mariadb-maxscale-2302-binlogrouter
-
-## Binlogrouter
-
-## Binlogrouter
+# Binlogrouter
 
 The binlogrouter is a router that acts as a replication proxy for MariaDB\
 primary-replica replication. The router connects to a primary, retrieves the binary\

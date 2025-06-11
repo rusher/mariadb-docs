@@ -1,8 +1,4 @@
-# mariadb-maxscale-2402-maxscale-2402-using-maxgui-tutorial
-
-## MaxScale 24.02 Using MaxGUI Tutorial
-
-## Using MaxGUI Tutorial
+# MaxScale 24.02 Using MaxGUI Tutorial
 
 * [Using MaxGUI Tutorial](mariadb-maxscale-2402-maxscale-2402-using-maxgui-tutorial.md#using-maxgui-tutorial)
 * [Introduction](mariadb-maxscale-2402-maxscale-2402-using-maxgui-tutorial.md#introduction)

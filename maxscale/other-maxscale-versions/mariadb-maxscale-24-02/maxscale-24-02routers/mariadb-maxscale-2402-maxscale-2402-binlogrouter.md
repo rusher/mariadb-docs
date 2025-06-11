@@ -1,8 +1,4 @@
-# mariadb-maxscale-2402-maxscale-2402-binlogrouter
-
-## MaxScale 24.02 Binlogrouter
-
-## Binlogrouter
+# MaxScale 24.02 Binlogrouter
 
 The binlogrouter is a router that acts as a replication proxy for MariaDB\
 primary-replica replication. The router connects to a primary, retrieves the binary\
@@ -69,9 +65,9 @@ directory. See ['Modifying binlog files manually'](mariadb-maxscale-2402-maxscal
 
 The related configuration options, which are explained in more detail in the\
 configuration section are:[_expiration\_mode_](mariadb-maxscale-2402-maxscale-2402-binlogrouter.md#expiration_mode) _Select purge or archive._ [datadir](mariadb-maxscale-2402-maxscale-2402-binlogrouter.md#datadir) Directory where binlog files are stored (the default is usually fine).[_archivedir_](mariadb-maxscale-2402-maxscale-2402-binlogrouter.md#archivedir) _Directory to which files are archived. This directory_\
-_must exist when MaxScale is started._ [expire\_log\_minimum\_files](mariadb-maxscale-2402-maxscale-2402-binlogrouter.md#expire_log_minimum_files) The minimum number of\
+&#xNAN;_&#x6D;ust exist when MaxScale is started._ [expire\_log\_minimum\_files](mariadb-maxscale-2402-maxscale-2402-binlogrouter.md#expire_log_minimum_files) The minimum number of\
 binlogs to keep before purge or archive is allowed.[_expire\_log\_duration_](mariadb-maxscale-2402-maxscale-2402-binlogrouter.md#expire_log_duration) _Duration from the last file_\
-_modification until the binlog is eligible for purge or archive._ [compression\_algorithm](mariadb-maxscale-2402-maxscale-2402-binlogrouter.md#compression_algorithm) Select a compression algorithm\
+&#xNAN;_&#x6D;odification until the binlog is eligible for purge or archive._ [compression\_algorithm](mariadb-maxscale-2402-maxscale-2402-binlogrouter.md#compression_algorithm) Select a compression algorithm\
 or `none` for no compression. Currently only zstandard is supported.
 
 * [number\_of\_noncompressed\_files](mariadb-maxscale-2402-maxscale-2402-binlogrouter.md#number_of_noncompressed_files) The minimum number of\

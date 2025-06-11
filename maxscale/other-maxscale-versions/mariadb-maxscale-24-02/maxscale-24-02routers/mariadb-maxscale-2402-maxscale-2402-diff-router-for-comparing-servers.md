@@ -1,8 +1,4 @@
-# mariadb-maxscale-2402-maxscale-2402-diff-router-for-comparing-servers
-
-## MaxScale 24.02 Diff - router for comparing servers
-
-## Diff - router for comparing servers
+# MaxScale 24.02 Diff - router for comparing servers
 
 * [Diff - router for comparing servers](mariadb-maxscale-2402-maxscale-2402-diff-router-for-comparing-servers.md#diff-router-for-comparing-servers)
   * [Overview](mariadb-maxscale-2402-maxscale-2402-diff-router-for-comparing-servers.md#overview)
@@ -64,7 +60,7 @@ the router itself.
 #### Histogram
 
 Diff collects latency information separately for each _canonical_\
-_statement_, which simply means a statement where all literals have been\
+&#xNAN;_&#x73;tatement_, which simply means a statement where all literals have been\
 replaced with question marks. For instance, the canonical statement of`SELECT f FROM t WHERE f = 10` and `SELECT f FROM t WHERE f = 20` is\
 in both cases `SELECT f FROM t WHERE f = ?`. The latency information\
 of both of those statements will be collected under the same canonical\

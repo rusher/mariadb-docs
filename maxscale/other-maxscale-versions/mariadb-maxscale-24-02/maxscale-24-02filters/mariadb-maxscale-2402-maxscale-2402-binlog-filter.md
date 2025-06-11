@@ -1,8 +1,4 @@
-# mariadb-maxscale-2402-maxscale-2402-binlog-filter
-
-## MaxScale 24.02 Binlog Filter
-
-## Binlog Filter
+# MaxScale 24.02 Binlog Filter
 
 This filter was introduced in MariaDB MaxScale 2.3.0.
 

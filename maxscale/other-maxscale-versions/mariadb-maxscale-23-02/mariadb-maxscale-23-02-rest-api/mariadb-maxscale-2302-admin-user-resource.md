@@ -1,72 +1,43 @@
-
 # Admin User Resource
 
-# Admin User Resource
-
-
-Admin users represent administrative users that are able to query and change
+Admin users represent administrative users that are able to query and change\
 MaxScale's configuration.
 
+* [Admin User Resource](mariadb-maxscale-2302-admin-user-resource.md#admin-user-resource)
+  * [Resource Operations](mariadb-maxscale-2302-admin-user-resource.md#resource-operations)
+    * [Get network user](mariadb-maxscale-2302-admin-user-resource.md#get-network-user)
+      * [Response](mariadb-maxscale-2302-admin-user-resource.md#response)
+    * [Get all network users](mariadb-maxscale-2302-admin-user-resource.md#get-all-network-users)
+      * [Response](mariadb-maxscale-2302-admin-user-resource.md#response_1)
+    * [Get enabled UNIX account](mariadb-maxscale-2302-admin-user-resource.md#get-enabled-unix-account)
+    * [Get all enabled UNIX accounts](mariadb-maxscale-2302-admin-user-resource.md#get-all-enabled-unix-accounts)
+    * [Get all users](mariadb-maxscale-2302-admin-user-resource.md#get-all-users)
+      * [Response](mariadb-maxscale-2302-admin-user-resource.md#response_2)
+    * [Create a network user](mariadb-maxscale-2302-admin-user-resource.md#create-a-network-user)
+      * [Response](mariadb-maxscale-2302-admin-user-resource.md#response_3)
+    * [Enable a UNIX account](mariadb-maxscale-2302-admin-user-resource.md#enable-a-unix-account)
+      * [Response](mariadb-maxscale-2302-admin-user-resource.md#response_4)
+    * [Delete a network user](mariadb-maxscale-2302-admin-user-resource.md#delete-a-network-user)
+      * [Response](mariadb-maxscale-2302-admin-user-resource.md#response_5)
+    * [Disable a UNIX account](mariadb-maxscale-2302-admin-user-resource.md#disable-a-unix-account)
+      * [Response](mariadb-maxscale-2302-admin-user-resource.md#response_6)
+    * [Update a network user](mariadb-maxscale-2302-admin-user-resource.md#update-a-network-user)
+      * [Response](mariadb-maxscale-2302-admin-user-resource.md#response_7)
 
+### Resource Operations
 
-
-* [Admin User Resource](#admin-user-resource)
-
-  * [Resource Operations](#resource-operations)
-
-    * [Get network user](#get-network-user)
-
-      * [Response](#response)
-    * [Get all network users](#get-all-network-users)
-
-      * [Response](#response_1)
-    * [Get enabled UNIX account](#get-enabled-unix-account)
-    * [Get all enabled UNIX accounts](#get-all-enabled-unix-accounts)
-    * [Get all users](#get-all-users)
-
-      * [Response](#response_2)
-    * [Create a network user](#create-a-network-user)
-
-      * [Response](#response_3)
-    * [Enable a UNIX account](#enable-a-unix-account)
-
-      * [Response](#response_4)
-    * [Delete a network user](#delete-a-network-user)
-
-      * [Response](#response_5)
-    * [Disable a UNIX account](#disable-a-unix-account)
-
-      * [Response](#response_6)
-    * [Update a network user](#update-a-network-user)
-
-      * [Response](#response_7)
-
-
-
-
-## Resource Operations
-
-
-### Get network user
-
-
+#### Get network user
 
 ```
 GET /v1/users/inet/:name
 ```
 
-
-
-Get a single network user. The The *:name* in the URI must be a valid network
+Get a single network user. The The _:name_ in the URI must be a valid network\
 user name.
 
-
-#### Response
-
+**Response**
 
 `Status: 200 OK`
-
-
 
 ```
 {
@@ -90,27 +61,17 @@ user name.
 }
 ```
 
-
-
-### Get all network users
-
-
+#### Get all network users
 
 ```
 GET /v1/users/inet
 ```
 
-
-
 Get all network users.
 
-
-#### Response
-
+**Response**
 
 `Status: 200 OK`
-
-
 
 ```
 {
@@ -136,53 +97,33 @@ Get all network users.
 }
 ```
 
-
-
-### Get enabled UNIX account
-
-
+#### Get enabled UNIX account
 
 ```
 GET /v1/users/unix/:name
 ```
 
-
-
 **Note:** This endpoint has been deprecated and does nothing.
 
-
-### Get all enabled UNIX accounts
-
-
+#### Get all enabled UNIX accounts
 
 ```
 GET /v1/users/unix
 ```
 
-
-
 **Note:** This endpoint has been deprecated and does nothing.
 
-
-### Get all users
-
-
+#### Get all users
 
 ```
 GET /v1/users
 ```
 
-
-
 Get all administrative users.
 
-
-#### Response
-
+**Response**
 
 `Status: 200 OK`
-
-
 
 ```
 {
@@ -208,21 +149,14 @@ Get all administrative users.
 }
 ```
 
-
-
-### Create a network user
-
-
+#### Create a network user
 
 ```
 POST /v1/users/inet
 ```
 
-
-
-Create a new network user. The request body must define at least the
+Create a new network user. The request body must define at least the\
 following fields.
-
 
 * `data.id`
 * The username
@@ -233,16 +167,12 @@ following fields.
 * `data.attributes.account`
 * Set to `admin` for administrative users and `basic` to read-only users
 
-
-Only admin accounts can perform POST, PUT, DELETE and PATCH requests. If a basic
-account performs one of the aforementioned request, the REST API will respond
+Only admin accounts can perform POST, PUT, DELETE and PATCH requests. If a basic\
+account performs one of the aforementioned request, the REST API will respond\
 with a `401 Unauthorized` error.
 
-
-Here is an example request body defining the network user *my-user* with the
-password *my-password* that is allowed to execute only read-only operations.
-
-
+Here is an example request body defining the network user _my-user_ with the\
+password _my-password_ that is allowed to execute only read-only operations.
 
 ```
 {
@@ -257,31 +187,20 @@ password *my-password* that is allowed to execute only read-only operations.
 }
 ```
 
-
-
-#### Response
-
-
+**Response**
 
 ```
 Status: 204 No Content
 ```
 
-
-
-### Enable a UNIX account
-
-
+#### Enable a UNIX account
 
 ```
 POST /v1/users/unix
 ```
 
-
-
-This enables an existing UNIX account on the system for administrative
+This enables an existing UNIX account on the system for administrative\
 operations. The request body must define at least the following fields.
-
 
 * `data.id`
 * The username
@@ -290,10 +209,7 @@ operations. The request body must define at least the following fields.
 * `data.attributes.account`
 * Set to `admin` for administrative users and `basic` to read-only users
 
-
-Here is an example request body enabling the UNIX account *jdoe* for read-only operations.
-
-
+Here is an example request body enabling the UNIX account _jdoe_ for read-only operations.
 
 ```
 {
@@ -307,82 +223,51 @@ Here is an example request body enabling the UNIX account *jdoe* for read-only o
 }
 ```
 
-
-
-#### Response
-
-
+**Response**
 
 ```
 Status: 204 No Content
 ```
 
-
-
-### Delete a network user
-
-
+#### Delete a network user
 
 ```
 DELETE /v1/users/inet/:name
 ```
 
+The _:name_ part of the URI must be a valid user name.
 
-
-The *:name* part of the URI must be a valid user name.
-
-
-#### Response
-
-
+**Response**
 
 ```
 Status: 204 No Content
 ```
 
-
-
-### Disable a UNIX account
-
-
+#### Disable a UNIX account
 
 ```
 DELETE /v1/users/unix/:name
 ```
 
+The _:name_ part of the URI must be a valid user name.
 
-
-The *:name* part of the URI must be a valid user name.
-
-
-#### Response
-
-
+**Response**
 
 ```
 Status: 204 No Content
 ```
 
-
-
-### Update a network user
-
-
+#### Update a network user
 
 ```
 PATCH /v1/users/inet/:name
 ```
 
-
-
-Update network user. Currently, only the password can be updated. This
-means that the request body must define the `data.attributes.password`
+Update network user. Currently, only the password can be updated. This\
+means that the request body must define the `data.attributes.password`\
 field.
 
-
 Here is an example request body that updates the password.
-
-
 
 ```
 {
@@ -394,19 +279,12 @@ Here is an example request body that updates the password.
 }
 ```
 
-
-
-#### Response
-
-
+**Response**
 
 ```
 Status: 204 No Content
 ```
 
-
-
 CC BY-SA / Gnu FDL
-
 
 {% @marketo/form formId="4316" %}
