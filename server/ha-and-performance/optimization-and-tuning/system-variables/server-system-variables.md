@@ -4,9 +4,7 @@
 
 MariaDB has many system variables that can be changed to suit your needs.
 
-{% hint style="info" %}
-**For a full list of server variables,** [**see this page**](../../../reference/full-list-of-mariadb-options-system-and-status-variables.md).&#x20;
-{% endhint %}
+{% include "../../../.gitbook/includes/for-a-full-list-of-server-v....md" %}
 
 Most of the system variables are described on this page, but some are described elsewhere:
 
