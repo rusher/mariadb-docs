@@ -94,7 +94,7 @@ its slaves if the master is down.
 
 Only one server can have the _Master_ status flag at a time, even in a\
 multimaster setup. Others servers in the multimaster group are given the _Relay_\
-_Master_ and _Slave_ status flags.
+&#xNAN;_&#x4D;aster_ and _Slave_ status flags.
 
 **Switchover new master autoselection**
 

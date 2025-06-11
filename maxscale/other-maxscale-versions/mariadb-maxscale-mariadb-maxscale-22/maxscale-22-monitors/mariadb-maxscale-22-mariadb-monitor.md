@@ -1,8 +1,4 @@
-# mariadb-maxscale-22-mariadb-monitor
-
-## MariaDB Monitor
-
-## MariaDB Monitor
+# MariaDB Monitor
 
 Up until MariaDB MaxScale 2.2.0, this monitor was called _MySQL Monitor_.
 
@@ -548,7 +544,7 @@ when a server goes down.
 \#This script assumes that the local mail server is configured properly\
 \#The second argument is the event type\
 event=${$2/._=/}_\
-_server=${$3/._=/}\
+&#xNAN;_&#x73;erver=${$3/._=/}\
 message="A server has gone down at `date`."\
 echo $message|mail -s "The event was $event for server $server." admin@my.org |
 

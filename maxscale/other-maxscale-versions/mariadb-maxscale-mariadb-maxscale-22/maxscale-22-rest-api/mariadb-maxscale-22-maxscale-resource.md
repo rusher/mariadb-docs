@@ -1,36 +1,22 @@
-
 # MaxScale Resource
 
-# MaxScale Resource
-
-
-The MaxScale resource represents a MaxScale instance and it is the core on top
+The MaxScale resource represents a MaxScale instance and it is the core on top\
 of which the modules build upon.
 
+### Resource Operations
 
-## Resource Operations
+### Get global information
 
-
-## Get global information
-
-
-Retrieve global information about a MaxScale instance. This includes various
+Retrieve global information about a MaxScale instance. This includes various\
 file locations, configuration options and version information.
-
-
 
 ```
 GET /v1/maxscale
 ```
 
-
-
-#### Response
-
+**Response**
 
 `Status: 200 OK`
-
-
 
 ```
 {
@@ -79,66 +65,44 @@ GET /v1/maxscale
 }
 ```
 
+### Update MaxScale parameters
 
+Update MaxScale parameters. The request body must define updated values for the`data.attributes.parameters` object. The following parameters can be altered:
 
-## Update MaxScale parameters
-
-
-Update MaxScale parameters. The request body must define updated values for the
-`data.attributes.parameters` object. The following parameters can be altered:
-
-
-* [admin_auth](../maxscale-22-getting-started/mariadb-maxscale-22-mariadb-maxscale-configuration-usage-scenarios.md#admin_auth)
-* [auth_connect_timeout](../maxscale-22-getting-started/mariadb-maxscale-22-mariadb-maxscale-configuration-usage-scenarios.md#auth_connect_timeout)
-* [auth_read_timeout](../maxscale-22-getting-started/mariadb-maxscale-22-mariadb-maxscale-configuration-usage-scenarios.md#auth_read_timeout)
-* [auth_write_timeout](../maxscale-22-getting-started/mariadb-maxscale-22-mariadb-maxscale-configuration-usage-scenarios.md#auth_write_timeout)
-* [admin_log_auth_failures](../maxscale-22-getting-started/mariadb-maxscale-22-mariadb-maxscale-configuration-usage-scenarios.md#admin_log_auth_failures)
+* [admin\_auth](../maxscale-22-getting-started/mariadb-maxscale-22-mariadb-maxscale-configuration-usage-scenarios.md#admin_auth)
+* [auth\_connect\_timeout](../maxscale-22-getting-started/mariadb-maxscale-22-mariadb-maxscale-configuration-usage-scenarios.md#auth_connect_timeout)
+* [auth\_read\_timeout](../maxscale-22-getting-started/mariadb-maxscale-22-mariadb-maxscale-configuration-usage-scenarios.md#auth_read_timeout)
+* [auth\_write\_timeout](../maxscale-22-getting-started/mariadb-maxscale-22-mariadb-maxscale-configuration-usage-scenarios.md#auth_write_timeout)
+* [admin\_log\_auth\_failures](../maxscale-22-getting-started/mariadb-maxscale-22-mariadb-maxscale-configuration-usage-scenarios.md#admin_log_auth_failures)
 * [passive](../maxscale-22-getting-started/mariadb-maxscale-22-mariadb-maxscale-configuration-usage-scenarios.md#passive)
-
-
 
 ```
 PATCH /v1/maxscale
 ```
 
-
-
-#### Response
-
+**Response**
 
 Parameters modified:
 
-
 `Status: 204 No Content`
-
 
 Invalid JSON body:
 
-
 `Status: 403 Forbidden`
 
+### Get thread information
 
-## Get thread information
-
-
-Get the information and statistics of a particular thread. The *:id* in
-the URI must map to a valid thread number between 0 and the configured
+Get the information and statistics of a particular thread. The _:id_ in\
+the URI must map to a valid thread number between 0 and the configured\
 value of `threads`.
-
-
 
 ```
 GET /v1/maxscale/threads/:id
 ```
 
-
-
-#### Response
-
+**Response**
 
 `Status: 200 OK`
-
-
 
 ```
 {
@@ -169,27 +133,17 @@ GET /v1/maxscale/threads/:id
 }
 ```
 
-
-
-## Get information for all threads
-
+### Get information for all threads
 
 Get the informatino for all threads. Returns a collection of threads resources.
-
-
 
 ```
 GET /v1/maxscale/threads
 ```
 
-
-
-#### Response
-
+**Response**
 
 `Status: 200 OK`
-
-
 
 ```
 {
@@ -285,28 +239,18 @@ GET /v1/maxscale/threads
 }
 ```
 
+### Get logging information
 
-
-## Get logging information
-
-
-Get information about the current state of logging, enabled log files and the
+Get information about the current state of logging, enabled log files and the\
 location where the log files are stored.
-
-
 
 ```
 GET /v1/maxscale/logs
 ```
 
-
-
-#### Response
-
+**Response**
 
 `Status: 200 OK`
-
-
 
 ```
 {
@@ -344,77 +288,48 @@ GET /v1/maxscale/logs
 }
 ```
 
+### Update logging parameters
 
-
-## Update logging parameters
-
-
-Update logging parameters. The request body must define updated values for the
-`data.attributes.parameters` object. All logging parameters apart from
-`log_to_shm` can be altered at runtime.
-
-
+Update logging parameters. The request body must define updated values for the`data.attributes.parameters` object. All logging parameters apart from`log_to_shm` can be altered at runtime.
 
 ```
 PATCH /v1/maxscale/logs
 ```
 
-
-
-#### Response
-
+**Response**
 
 Parameters modified:
 
-
 `Status: 204 No Content`
-
 
 Invalid JSON body:
 
-
 `Status: 403 Forbidden`
 
+### Flush and rotate log files
 
-## Flush and rotate log files
-
-
-Flushes any pending messages to disk and reopens the log files. The body of the
+Flushes any pending messages to disk and reopens the log files. The body of the\
 message is ignored.
-
-
 
 ```
 POST /v1/maxscale/logs/flush
 ```
 
-
-
-#### Response
-
+**Response**
 
 `Status: 204 No Content`
 
-
-## Get task schedule
-
+### Get task schedule
 
 Retrieve all pending tasks that are queued for execution.
-
-
 
 ```
 GET /v1/maxscale/tasks
 ```
 
-
-
-#### Response
-
+**Response**
 
 `Status: 200 OK`
-
-
 
 ```
 {
@@ -425,28 +340,18 @@ GET /v1/maxscale/tasks
 }
 ```
 
+### Get loaded modules
 
-
-## Get loaded modules
-
-
-Retrieve information about a loaded module. This includes version, API and
+Retrieve information about a loaded module. This includes version, API and\
 maturity information as well as all the parameters that the module defines.
-
-
 
 ```
 GET /v1/maxscale/modules
 ```
 
-
-
-#### Response
-
+**Response**
 
 `Status: 200 OK`
-
-
 
 ```
 {
@@ -522,27 +427,17 @@ GET /v1/maxscale/modules
 }
 ```
 
-
-
-## Get all loaded modules
-
+### Get all loaded modules
 
 Retrieve information about all loaded modules.
-
-
 
 ```
 GET /v1/maxscale/modules
 ```
 
-
-
-#### Response
-
+**Response**
 
 `Status: 200 OK`
-
-
 
 ```
 {
@@ -584,62 +479,41 @@ GET /v1/maxscale/modules
 }
 ```
 
+### Call a module command
 
-
-## Call a module command
-
-
-Modules can expose commands that can be called via the REST API. The module
-resource lists all commands in the `data.attributes.commands` list. Each value
-is a command sub-resource identified by its `id` field and the HTTP method the
+Modules can expose commands that can be called via the REST API. The module\
+resource lists all commands in the `data.attributes.commands` list. Each value\
+is a command sub-resource identified by its `id` field and the HTTP method the\
 command uses is defined by the `attributes.method` field.
 
-
-The *:module* in the URI must be a valid name of a loaded module and *:command*
-must be a valid command identifier that is exposed by that module. All
+The _:module_ in the URI must be a valid name of a loaded module and _:command_\
+must be a valid command identifier that is exposed by that module. All\
 parameters to the module commands are passed as HTTP request parameters.
 
-
 For read-only commands:
-
-
 
 ```
 GET /v1/maxscale/modules/:module/:command
 ```
 
-
-
 For commands that can modify data:
-
-
 
 ```
 POST /v1/maxscale/modules/:module/:command
 ```
 
-
-
-Here is an example POST requests to the dbfwfilter module command *reload* with
+Here is an example POST requests to the dbfwfilter module command _reload_ with\
 two parameters, the name of the filter instance and the path to a file:
-
-
 
 ```
 POST /v1/maxscale/modules/dbfwfilter/reload?my-dbfwfilter-instance&/path/to/file.txt
 ```
 
-
-
-#### Response
-
+**Response**
 
 Command with output:
 
-
 `Status: 200 OK`
-
-
 
 ```
 {
@@ -656,20 +530,14 @@ Command with output:
 }
 ```
 
-
-
-The contents of the `meta` field will contain the output of the module
-command. This output depends on the command that is being executed. It can
+The contents of the `meta` field will contain the output of the module\
+command. This output depends on the command that is being executed. It can\
 contain any valid JSON value.
-
 
 Command with no output:
 
-
 `Status: 204 No Content`
 
-
 CC BY-SA / Gnu FDL
-
 
 {% @marketo/form formId="4316" %}

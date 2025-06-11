@@ -1,8 +1,4 @@
-# mariadb-maxscale-22-automatic-failover-with-mariadb-monitor
-
-## Automatic Failover With MariaDB Monitor
-
-## Automatic Failover With MariaDB Monitor
+# Automatic Failover With MariaDB Monitor
 
 The [MariaDB Monitor](../../mariadb-maxscale-21-06/) is not only capable\
 of monitoring the state of a MariaDB master-slave cluster but is also\
@@ -98,7 +94,7 @@ OK
 ```
 
 There are quite a few arguments, so let's look at each one separatel&#x79;_`call command` indicates that it is a module command that is to be_\
-_invoked,_ `mariadbmon` indicates the module whose command we want to invoke (that\
+&#xNAN;_&#x69;nvoked,_ `mariadbmon` indicates the module whose command we want to invoke (that\
 is the MariaDB Monitor),_`failover` is the command we want to invoke, and_ `TheMonitor` is the first and only argument to that command, the name of\
 the monitor as specified in the configuration file.
 
@@ -294,9 +290,9 @@ OK
 ```
 
 There are quite a few arguments, so let's look at each one separatel&#x79;_`call command` indicates that it is a module command that is to be_\
-_invoked,_ `mariadbmon` indicates the module whose command we want to invoke,_`switchover` is the command we want to invoke, and_ `TheMonitor` is the first argument to the command, the name of the monitor\
+&#xNAN;_&#x69;nvoked,_ `mariadbmon` indicates the module whose command we want to invoke,_`switchover` is the command we want to invoke, and_ `TheMonitor` is the first argument to the command, the name of the monitor\
 as specified in the configuration file,_`server1` is the second argument to the command, the name of the server we_\
-_want to make into master, and_ `server2` is the third argument to the command, the name of the _currentmaster_.
+&#xNAN;_&#x77;ant to make into master, and_ `server2` is the third argument to the command, the name of the _currentmaster_.
 
 If the command executes successfully, we will end up with the following\
 cluster state:

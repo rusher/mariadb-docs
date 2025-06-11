@@ -1,13 +1,7 @@
-
 # MaxScale 2.2 - Configuring Servers
 
-# Configuring Servers
-
-
-The first step is to define the servers that make up the cluster. These servers
+The first step is to define the servers that make up the cluster. These servers\
 will be used by the services and are monitored by the monitor.
-
-
 
 ```
 [dbserv1]
@@ -29,13 +23,8 @@ port=3306
 protocol=MariaDBBackend
 ```
 
-
-
-The `address` and `port` parameters tell where the server is located. The
-`protocol` should always be set to `MariaDBBackend`.
-
+The `address` and `port` parameters tell where the server is located. The`protocol` should always be set to `MariaDBBackend`.
 
 CC BY-SA / Gnu FDL
-
 
 {% @marketo/form formId="4316" %}

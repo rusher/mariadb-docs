@@ -1,8 +1,4 @@
-# mariadb-maxscale-22-cache
-
-## MaxScale 2.2 Cache
-
-## Cache
+# MaxScale 2.2 Cache
 
 This filter was introduced in MariaDB MaxScale 2.1.
 
@@ -752,7 +748,7 @@ is not without a cost.\
 From the [RocksDB Documentation](https://github.com/facebook/rocksdb/wiki/Statistics)
 
 _The overhead of statistics is usually small but non-negligible. We usually_\
-_observe an overhead of 5%-10%._
+&#xNAN;_&#x6F;bserve an overhead of 5%-10%._
 
 The value is a boolean and the default is `false`.
 

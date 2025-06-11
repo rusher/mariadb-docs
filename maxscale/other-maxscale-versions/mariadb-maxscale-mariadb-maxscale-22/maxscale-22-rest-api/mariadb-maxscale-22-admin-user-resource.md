@@ -1,36 +1,22 @@
-
 # Admin User Resource
 
-# Admin User Resource
-
-
-Admin users represent administrative users that are able to query and change
+Admin users represent administrative users that are able to query and change\
 MaxScale's configuration.
 
+### Resource Operations
 
-## Resource Operations
+#### Get network user
 
-
-### Get network user
-
-
-Get a single network user. The The *:name* in the URI must be a valid network
+Get a single network user. The The _:name_ in the URI must be a valid network\
 user name.
-
-
 
 ```
 GET /v1/users/inet/:name
 ```
 
-
-
-#### Response
-
+**Response**
 
 `Status: 200 OK`
-
-
 
 ```
 {
@@ -50,27 +36,17 @@ GET /v1/users/inet/:name
 }
 ```
 
-
-
-### Get all network users
-
+#### Get all network users
 
 Get all network users.
-
-
 
 ```
 GET /v1/users/inet
 ```
 
-
-
-#### Response
-
+**Response**
 
 `Status: 200 OK`
-
-
 
 ```
 {
@@ -92,28 +68,18 @@ GET /v1/users/inet
 }
 ```
 
+#### Get enabled UNIX account
 
-
-### Get enabled UNIX account
-
-
-Get a single enabled UNIX account. The The *:name* in the URI must be a valid
+Get a single enabled UNIX account. The The _:name_ in the URI must be a valid\
 UNIX account name that has been enabled.
-
-
 
 ```
 GET /v1/users/unix/:name
 ```
 
-
-
-#### Response
-
+**Response**
 
 `Status: 200 OK`
-
-
 
 ```
 {
@@ -133,27 +99,17 @@ GET /v1/users/unix/:name
 }
 ```
 
-
-
-### Get all enabled UNIX accounts
-
+#### Get all enabled UNIX accounts
 
 Get all enabled UNIX accounts.
-
-
 
 ```
 GET /v1/users/unix
 ```
 
-
-
-#### Response
-
+**Response**
 
 `Status: 200 OK`
-
-
 
 ```
 {
@@ -175,28 +131,18 @@ GET /v1/users/unix
 }
 ```
 
+#### Get all users
 
-
-### Get all users
-
-
-Get all administrative users. This fetches both network users and local UNIX
+Get all administrative users. This fetches both network users and local UNIX\
 accounts.
-
-
 
 ```
 GET /v1/users
 ```
 
-
-
-#### Response
-
+**Response**
 
 `Status: 200 OK`
-
-
 
 ```
 {
@@ -228,37 +174,25 @@ GET /v1/users
 }
 ```
 
-
-
-### Create a network user
-
+#### Create a network user
 
 Create a new network user.
-
-
 
 ```
 POST /v1/users/inet
 ```
 
-
-
 The request body must fulfill the following requirements.
 
-
-* The `/data/id`, `/data/type`, `/data/attributes/account` and
- `/data/attributes/password` fields must be defined.
+* The `/data/id`, `/data/type`, `/data/attributes/account` and`/data/attributes/password` fields must be defined.
 * The `/data/id` field defines the name of the account
 * The `/data/attributes/password` field defines the password for this user.
-* The `/data/attributes/account` field should be set to `admin` for
- administrative users and `basic` to read-only users.
+* The `/data/attributes/account` field should be set to `admin` for\
+  administrative users and `basic` to read-only users.
 * The value of the `/data/type` field must always be `inet`.
 
-
-Here is an example request body defining the network user *my-user* with the
-password *my-password* that is allowed to execute only read-only operations.
-
-
+Here is an example request body defining the network user _my-user_ with the\
+password _my-password_ that is allowed to execute only read-only operations.
 
 ```
 {
@@ -273,45 +207,30 @@ password *my-password* that is allowed to execute only read-only operations.
 }
 ```
 
-
-
-#### Response
-
-
+**Response**
 
 ```
 Status: 204 No Content
 ```
 
+#### Enable a UNIX account
 
-
-### Enable a UNIX account
-
-
-This enables an existing UNIX account on the system for administrative
+This enables an existing UNIX account on the system for administrative\
 operations.
-
-
 
 ```
 POST /v1/users/unix
 ```
 
-
-
 The request body must fulfill the following requirements.
-
 
 * The `/data/id`, `/data/type` and `/data/attributes/account` fields must be defined.
 * The `/data/id` field defines the name of the account
-* The `/data/attributes/account` field should be set to `admin` for
- administrative users and `basic` to read-only users.
+* The `/data/attributes/account` field should be set to `admin` for\
+  administrative users and `basic` to read-only users.
 * The value of the `/data/type` field must always be `unix`.
 
-
-Here is an example request body enabling the UNIX account *jdoe* for read-only operations.
-
-
+Here is an example request body enabling the UNIX account _jdoe_ for read-only operations.
 
 ```
 {
@@ -325,65 +244,40 @@ Here is an example request body enabling the UNIX account *jdoe* for read-only o
 }
 ```
 
-
-
-#### Response
-
-
+**Response**
 
 ```
 Status: 204 No Content
 ```
 
+#### Delete a network user
 
-
-### Delete a network user
-
-
-The *:name* part of the URI must be a valid user name.
-
-
+The _:name_ part of the URI must be a valid user name.
 
 ```
 DELETE /v1/users/inet/:name
 ```
 
-
-
-#### Response
-
-
+**Response**
 
 ```
 Status: 204 No Content
 ```
 
+#### Disable a UNIX account
 
-
-### Disable a UNIX account
-
-
-The *:name* part of the URI must be a valid user name.
-
-
+The _:name_ part of the URI must be a valid user name.
 
 ```
 DELETE /v1/users/unix/:name
 ```
 
-
-
-#### Response
-
-
+**Response**
 
 ```
 Status: 204 No Content
 ```
 
-
-
 CC BY-SA / Gnu FDL
-
 
 {% @marketo/form formId="4316" %}

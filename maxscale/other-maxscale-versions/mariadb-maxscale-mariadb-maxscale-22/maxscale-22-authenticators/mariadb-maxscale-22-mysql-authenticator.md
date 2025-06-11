@@ -1,8 +1,4 @@
-# mariadb-maxscale-22-mysql-authenticator
-
-## MySQL Authenticator
-
-## MySQL Authenticator
+# MySQL Authenticator
 
 The _MySQLAuth_ and _MySQLBackendAuth_ modules implement the client and\
 backend authentication for the MySQL native password authentication. This\

@@ -1,36 +1,22 @@
-
 # Monitor Resource
 
-# Monitor Resource
-
-
-A monitor resource represents a monitor inside MaxScale that monitors one or
+A monitor resource represents a monitor inside MaxScale that monitors one or\
 more servers.
 
+### Resource Operations
 
-## Resource Operations
+#### Get a monitor
 
-
-### Get a monitor
-
-
-Get a single monitor. The *:name* in the URI must be a valid monitor name with
+Get a single monitor. The _:name_ in the URI must be a valid monitor name with\
 all whitespace replaced with hyphens. The monitor names are case-sensitive.
-
-
 
 ```
 GET /v1/monitors/:name
 ```
 
-
-
-#### Response
-
+**Response**
 
 `Status: 200 OK`
-
-
 
 ```
 {
@@ -122,27 +108,17 @@ GET /v1/monitors/:name
 }
 ```
 
-
-
-### Get all monitors
-
+#### Get all monitors
 
 Get all monitors.
-
-
 
 ```
 GET /v1/monitors
 ```
 
-
-
-#### Response
-
+**Response**
 
 `Status: 200 OK`
-
-
 
 ```
 {
@@ -236,30 +212,20 @@ GET /v1/monitors
 }
 ```
 
+#### Create a monitor
 
-
-### Create a monitor
-
-
-Create a new monitor. The request body must define the `/data/id`
-field with the name of the monitor, the `/data/type` field with the
-value of `monitors` and the `/data/attributes/module` field with the
-monitor module for this monitor. All of the monitor parameters can
+Create a new monitor. The request body must define the `/data/id`\
+field with the name of the monitor, the `/data/type` field with the\
+value of `monitors` and the `/data/attributes/module` field with the\
+monitor module for this monitor. All of the monitor parameters can\
 be defined at creation time.
-
-
 
 ```
 POST /v1/monitors
 ```
 
-
-
-The following example defines a request body which creates the new monitor,
-*test-monitor*, and assigns two servers to be monitored by it. It also defines
-a custom value for the *monitor_interval* parameter.
-
-
+The following example defines a request body which creates the new monitor,_test-monitor_, and assigns two servers to be monitored by it. It also defines\
+a custom value for the _monitor\_interval_ parameter.
 
 ```
 {
@@ -290,90 +256,64 @@ a custom value for the *monitor_interval* parameter.
 }
 ```
 
-
-
-#### Response
-
+**Response**
 
 Monitor is created:
 
-
 `Status: 204 No Content`
 
+#### Update a monitor
 
-### Update a monitor
-
-
-The :name in the URI must map to a monitor name with all whitespace replaced with
+The :name in the URI must map to a monitor name with all whitespace replaced with\
 hyphens. The request body must be a valid JSON document representing the modified monitor.
-
-
 
 ```
 PATCH /v1/monitors/:name
 ```
 
-
-
-### Modifiable Fields
-
+#### Modifiable Fields
 
 The following standard server parameter can be modified.
-- [user](../../mariadb-maxscale-21-06/README.md)
-- [password](../../mariadb-maxscale-21-06/README.md)
-- [monitor_interval](../../mariadb-maxscale-21-06/README.md)
-- [backend_connect_timeout](../../mariadb-maxscale-21-06/README.md)
-- [backend_write_timeout](../../mariadb-maxscale-21-06/README.md)
-- [backend_read_timeout](../../mariadb-maxscale-21-06/README.md)
-- [backend_connect_attempts](../../mariadb-maxscale-21-06/README.md)
 
+* [user](../../mariadb-maxscale-21-06/)
+* [password](../../mariadb-maxscale-21-06/)
+* [monitor\_interval](../../mariadb-maxscale-21-06/)
+* [backend\_connect\_timeout](../../mariadb-maxscale-21-06/)
+* [backend\_write\_timeout](../../mariadb-maxscale-21-06/)
+* [backend\_read\_timeout](../../mariadb-maxscale-21-06/)
+* [backend\_connect\_attempts](../../mariadb-maxscale-21-06/)
 
 Refer to the documentation on these parameters for valid values.
 
-
-In addition to these standard parameters, the monitor specific parameters can also be
+In addition to these standard parameters, the monitor specific parameters can also be\
 modified. Refer to the monitor module documentation for details on these parameters.
 
-
-#### Response
-
+**Response**
 
 Monitor is modified:
 
-
 `Status: 204 No Content`
-
 
 Invalid request body:
 
-
 `Status: 403 Forbidden`
 
-
-### Update monitor relationships
-
-
+#### Update monitor relationships
 
 ```
 PATCH /v1/monitors/:name/relationships/servers
 ```
 
-
-
-The *:name* in the URI must map to a monitor name with all whitespace replaced
+The _:name_ in the URI must map to a monitor name with all whitespace replaced\
 with hyphens.
 
-
-The request body must be a JSON object that defines only the *data* field. The
-value of the *data* field must be an array of relationship objects that define
-the *id* and *type* fields of the relationship. This object will replace the
+The request body must be a JSON object that defines only the _data_ field. The\
+value of the _data_ field must be an array of relationship objects that define\
+the _id_ and _type_ fields of the relationship. This object will replace the\
 existing relationships of the monitor.
 
-
-The following is an example request and request body that defines a single
+The following is an example request and request body that defines a single\
 server relationship for a monitor.
-
-
 
 ```
 PATCH /v1/monitors/my-monitor/relationships/servers
@@ -385,12 +325,7 @@ PATCH /v1/monitors/my-monitor/relationships/servers
 }
 ```
 
-
-
-All relationships for a monitor can be deleted by sending an empty array as the
-*data* field value. The following example removes all servers from a monitor.
-
-
+All relationships for a monitor can be deleted by sending an empty array as th&#x65;_&#x64;ata_ field value. The following example removes all servers from a monitor.
 
 ```
 PATCH /v1/monitors/my-monitor/relationships/servers
@@ -400,98 +335,64 @@ PATCH /v1/monitors/my-monitor/relationships/servers
 }
 ```
 
-
-
-#### Response
-
+**Response**
 
 Monitor relationships modified:
 
-
 `Status: 204 No Content`
-
 
 Invalid JSON body:
 
-
 `Status: 403 Forbidden`
 
+#### Destroy a monitor
 
-### Destroy a monitor
-
-
-Destroy a created monitor. The monitor must not have relationships to any
-servers and if it does a PATCH request which removes these relationships is
+Destroy a created monitor. The monitor must not have relationships to any\
+servers and if it does a PATCH request which removes these relationships is\
 required before a DELETE request for the monitor can be made.
-
-
 
 ```
 DELETE /v1/monitors/:name/stop
 ```
 
-
-
-#### Response
-
+**Response**
 
 Monitor is deleted:
 
-
 `Status: 204 No Content`
-
 
 Monitor could not be deleted:
 
-
 `Status: 403 Forbidden`
 
-
-### Stop a monitor
-
+#### Stop a monitor
 
 Stops a started monitor.
-
-
 
 ```
 PUT /v1/monitors/:name/stop
 ```
 
-
-
-#### Response
-
+**Response**
 
 Monitor is stopped:
 
-
 `Status: 204 No Content`
 
-
-### Start a monitor
-
+#### Start a monitor
 
 Starts a stopped monitor.
-
-
 
 ```
 PUT /v1/monitors/:name/start
 ```
 
-
-
-#### Response
-
+**Response**
 
 Monitor is started:
 
-
 `Status: 204 No Content`
 
-
 CC BY-SA / Gnu FDL
-
 
 {% @marketo/form formId="4316" %}

@@ -1,36 +1,22 @@
-
 # Service Resource
 
-# Service Resource
-
-
-A service resource represents a service inside MaxScale. A service is a
+A service resource represents a service inside MaxScale. A service is a\
 collection of network listeners, filters, a router and a set of backend servers.
 
+### Resource Operations
 
-## Resource Operations
+#### Get a service
 
-
-### Get a service
-
-
-Get a single service. The *:name* in the URI must be a valid service name with
+Get a single service. The _:name_ in the URI must be a valid service name with\
 all whitespace replaced with hyphens. The service names are case-insensitive.
-
-
 
 ```
 GET /v1/services/:name
 ```
 
-
-
-#### Response
-
+**Response**
 
 `Status: 200 OK`
-
-
 
 ```
 {
@@ -100,27 +86,17 @@ GET /v1/services/:name
 }
 ```
 
-
-
-### Get all services
-
+#### Get all services
 
 Get all services.
-
-
 
 ```
 GET /v1/services
 ```
 
-
-
-#### Response
-
+**Response**
 
 `Status: 200 OK`
-
-
 
 ```
 {
@@ -248,28 +224,18 @@ GET /v1/services
 }
 ```
 
+#### Get service listeners
 
-
-### Get service listeners
-
-
-Get the listeners of a service. The *:name* in the URI must be a valid service
+Get the listeners of a service. The _:name_ in the URI must be a valid service\
 name with all whitespace replaced with hyphens.
-
-
 
 ```
 GET /v1/services/:name/listeners
 ```
 
-
-
-#### Response
-
+**Response**
 
 `Status: 200 OK`
-
-
 
 ```
 {
@@ -292,29 +258,19 @@ GET /v1/services/:name/listeners
 }
 ```
 
+#### Get a single service listener
 
-
-### Get a single service listener
-
-
-Get the listeners of a service. The *:name* in the URI must be a valid service
-name and *:listener* must be a valid listener name, both with all whitespace
+Get the listeners of a service. The _:name_ in the URI must be a valid service\
+name and _:listener_ must be a valid listener name, both with all whitespace\
 replaced with hyphens.
-
-
 
 ```
 GET /v1/services/:name/listeners/:listener
 ```
 
-
-
-#### Response
-
+**Response**
 
 `Status: 200 OK`
-
-
 
 ```
 {
@@ -335,26 +291,18 @@ GET /v1/services/:name/listeners/:listener
 }
 ```
 
-
-
-### Create a new listener
-
-
+#### Create a new listener
 
 ```
 POST /v1/services/:name/listeners
 ```
 
-
-
-Create a new listener for a service by defining the resource. The *:name* in the
-URI must map to a service name with all whitespace replaced with hyphens. The
-posted object must define the *data.id* field with the name of the server and
-the *data.attributes.parameters.port* field with the port where the listener
-will listen on. The following is the minimal required JSON object for defining a
+Create a new listener for a service by defining the resource. The _:name_ in the\
+URI must map to a service name with all whitespace replaced with hyphens. The\
+posted object must define the _data.id_ field with the name of the server and\
+the _data.attributes.parameters.port_ field with the port where the listener\
+will listen on. The following is the minimal required JSON object for defining a\
 new listener.
-
-
 
 ```
 {
@@ -370,122 +318,89 @@ new listener.
 }
 ```
 
-
-
-The following values can be given in the *parameters* object. If SSL options are
-provided, the *ssl_key*, *ssl_cert* and *ssl_ca_cert* parameters must all be
+The following values can be given in the _parameters_ object. If SSL options are\
+provided, the _ssl\_key_, _ssl\_cert_ and _ssl\_ca\_cert_ parameters must all be\
 defined.
-
 
 * [address](../maxscale-22-getting-started/mariadb-maxscale-22-mariadb-maxscale-configuration-usage-scenarios.md#user-content-address-1)
 * [port](../maxscale-22-getting-started/mariadb-maxscale-22-mariadb-maxscale-configuration-usage-scenarios.md#user-content-port-1)
 * [protocol](../maxscale-22-getting-started/mariadb-maxscale-22-mariadb-maxscale-configuration-usage-scenarios.md#user-content-protocol-1)
 * [authenticator](../maxscale-22-getting-started/mariadb-maxscale-22-mariadb-maxscale-configuration-usage-scenarios.md#user-content-authenticator-1)
-* [authenticator_options](../maxscale-22-getting-started/mariadb-maxscale-22-mariadb-maxscale-configuration-usage-scenarios.md#user-content-authenticator-options-1)
-* [ssl_key](../maxscale-22-getting-started/mariadb-maxscale-22-mariadb-maxscale-configuration-usage-scenarios.md#user-content-ssl_key-1)
-* [ssl_cert](../maxscale-22-getting-started/mariadb-maxscale-22-mariadb-maxscale-configuration-usage-scenarios.md#user-content-ssl_cert-1)
-* [ssl_ca_cert](../maxscale-22-getting-started/mariadb-maxscale-22-mariadb-maxscale-configuration-usage-scenarios.md#user-content-ssl_ca_cert-1)
-* [ssl_version](../maxscale-22-getting-started/mariadb-maxscale-22-mariadb-maxscale-configuration-usage-scenarios.md#user-content-ssl_version-1)
-* [ssl_cert_verify_depth](../maxscale-22-getting-started/mariadb-maxscale-22-mariadb-maxscale-configuration-usage-scenarios.md#user-content-ssl_cert_verify_depth-1)
+* [authenticator\_options](../maxscale-22-getting-started/mariadb-maxscale-22-mariadb-maxscale-configuration-usage-scenarios.md#user-content-authenticator-options-1)
+* [ssl\_key](../maxscale-22-getting-started/mariadb-maxscale-22-mariadb-maxscale-configuration-usage-scenarios.md#user-content-ssl_key-1)
+* [ssl\_cert](../maxscale-22-getting-started/mariadb-maxscale-22-mariadb-maxscale-configuration-usage-scenarios.md#user-content-ssl_cert-1)
+* [ssl\_ca\_cert](../maxscale-22-getting-started/mariadb-maxscale-22-mariadb-maxscale-configuration-usage-scenarios.md#user-content-ssl_ca_cert-1)
+* [ssl\_version](../maxscale-22-getting-started/mariadb-maxscale-22-mariadb-maxscale-configuration-usage-scenarios.md#user-content-ssl_version-1)
+* [ssl\_cert\_verify\_depth](../maxscale-22-getting-started/mariadb-maxscale-22-mariadb-maxscale-configuration-usage-scenarios.md#user-content-ssl_cert_verify_depth-1)
 
-
-### Destroy a listener
-
-
+#### Destroy a listener
 
 ```
 DELETE /v1/services/:service/listeners/:name
 ```
 
-
-
-In the URI , the *:name* must map to a listener and the *:service* must map to a
+In the URI , the _:name_ must map to a listener and the _:service_ must map to a\
 service. Both names must have all whitespace replaced with hyphens.
 
-
-#### Response
-
+**Response**
 
 Listener is destroyed:
 
-
 `Status: 204 No Content`
-
 
 Listener cannot be deleted:
 
-
 `Status: 403 Forbidden`
 
+#### Update a service
 
-### Update a service
-
-
-The *:name* in the URI must map to a service name and the request body must be a
+The _:name_ in the URI must map to a service name and the request body must be a\
 valid JSON Patch document which is applied to the resource.
-
-
 
 ```
 PATCH /v1/services/:name
 ```
 
-
-
 The following standard service parameters can be modified.
-
 
 * [user](../maxscale-22-getting-started/mariadb-maxscale-22-mariadb-maxscale-configuration-usage-scenarios.md#user)
 * [password](../maxscale-22-getting-started/mariadb-maxscale-22-mariadb-maxscale-configuration-usage-scenarios.md#password)
-* [enable_root_user](../maxscale-22-getting-started/mariadb-maxscale-22-mariadb-maxscale-configuration-usage-scenarios.md#enable_root_user)
-* [max_retry_interval](../maxscale-22-getting-started/mariadb-maxscale-22-mariadb-maxscale-configuration-usage-scenarios.md#max_retry_interval)
-* [max_connections](../maxscale-22-getting-started/mariadb-maxscale-22-mariadb-maxscale-configuration-usage-scenarios.md#max_connections)
-* [connection_timeout](../maxscale-22-getting-started/mariadb-maxscale-22-mariadb-maxscale-configuration-usage-scenarios.md#connection_timeout)
-* [auth_all_servers](../maxscale-22-getting-started/mariadb-maxscale-22-mariadb-maxscale-configuration-usage-scenarios.md#auth_all_servers)
-* [strip_db_esc](../maxscale-22-getting-started/mariadb-maxscale-22-mariadb-maxscale-configuration-usage-scenarios.md#strip_db_esc)
-* [localhost_match_wildcard_host](../maxscale-22-getting-started/mariadb-maxscale-22-mariadb-maxscale-configuration-usage-scenarios.md#localhost_match_wildcard_host)
-* [version_string](../maxscale-22-getting-started/mariadb-maxscale-22-mariadb-maxscale-configuration-usage-scenarios.md#version_string)
+* [enable\_root\_user](../maxscale-22-getting-started/mariadb-maxscale-22-mariadb-maxscale-configuration-usage-scenarios.md#enable_root_user)
+* [max\_retry\_interval](../maxscale-22-getting-started/mariadb-maxscale-22-mariadb-maxscale-configuration-usage-scenarios.md#max_retry_interval)
+* [max\_connections](../maxscale-22-getting-started/mariadb-maxscale-22-mariadb-maxscale-configuration-usage-scenarios.md#max_connections)
+* [connection\_timeout](../maxscale-22-getting-started/mariadb-maxscale-22-mariadb-maxscale-configuration-usage-scenarios.md#connection_timeout)
+* [auth\_all\_servers](../maxscale-22-getting-started/mariadb-maxscale-22-mariadb-maxscale-configuration-usage-scenarios.md#auth_all_servers)
+* [strip\_db\_esc](../maxscale-22-getting-started/mariadb-maxscale-22-mariadb-maxscale-configuration-usage-scenarios.md#strip_db_esc)
+* [localhost\_match\_wildcard\_host](../maxscale-22-getting-started/mariadb-maxscale-22-mariadb-maxscale-configuration-usage-scenarios.md#localhost_match_wildcard_host)
+* [version\_string](../maxscale-22-getting-started/mariadb-maxscale-22-mariadb-maxscale-configuration-usage-scenarios.md#version_string)
 * [weightby](../maxscale-22-getting-started/mariadb-maxscale-22-mariadb-maxscale-configuration-usage-scenarios.md#weightby)
-* [log_auth_warnings](../maxscale-22-getting-started/mariadb-maxscale-22-mariadb-maxscale-configuration-usage-scenarios.md#log_auth_warnings)
-* [retry_on_failure](../maxscale-22-getting-started/mariadb-maxscale-22-mariadb-maxscale-configuration-usage-scenarios.md#retry_on_failure)
-
+* [log\_auth\_warnings](../maxscale-22-getting-started/mariadb-maxscale-22-mariadb-maxscale-configuration-usage-scenarios.md#log_auth_warnings)
+* [retry\_on\_failure](../maxscale-22-getting-started/mariadb-maxscale-22-mariadb-maxscale-configuration-usage-scenarios.md#retry_on_failure)
 
 Refer to the documentation on these parameters for valid values.
 
-
-#### Response
-
+**Response**
 
 Service is modified:
 
-
 `Status: 204 No Content`
 
-
-### Update service relationships
-
-
+#### Update service relationships
 
 ```
 PATCH /v1/services/:name/relationships/servers
 ```
 
-
-
-The *:name* in the URI must map to a service name with all whitespace replaced
+The _:name_ in the URI must map to a service name with all whitespace replaced\
 with hyphens.
 
-
-The request body must be a JSON object that defines only the *data* field. The
-value of the *data* field must be an array of relationship objects that define
-the *id* and *type* fields of the relationship. This object will replace the
+The request body must be a JSON object that defines only the _data_ field. The\
+value of the _data_ field must be an array of relationship objects that define\
+the _id_ and _type_ fields of the relationship. This object will replace the\
 existing relationships of the service.
 
-
-The following is an example request and request body that defines a single
+The following is an example request and request body that defines a single\
 server relationship for a service.
-
-
 
 ```
 PATCH /v1/services/my-rw-service/relationships/servers
@@ -497,12 +412,7 @@ PATCH /v1/services/my-rw-service/relationships/servers
 }
 ```
 
-
-
-All relationships for a service can be deleted by sending an empty array as the
-*data* field value. The following example removes all servers from a service.
-
-
+All relationships for a service can be deleted by sending an empty array as th&#x65;_&#x64;ata_ field value. The following example removes all servers from a service.
 
 ```
 PATCH /v1/services/my-rw-service/relationships/servers
@@ -512,68 +422,44 @@ PATCH /v1/services/my-rw-service/relationships/servers
 }
 ```
 
-
-
-#### Response
-
+**Response**
 
 Service relationships modified:
 
-
 `Status: 204 No Content`
-
 
 Invalid JSON body:
 
-
 `Status: 403 Forbidden`
 
-
-### Stop a service
-
+#### Stop a service
 
 Stops a started service.
-
-
 
 ```
 PUT /v1/services/:name/stop
 ```
 
-
-
-#### Response
-
+**Response**
 
 Service is stopped:
 
-
 `Status: 204 No Content`
 
-
-### Start a service
-
+#### Start a service
 
 Starts a stopped service.
-
-
 
 ```
 PUT /v1/services/:name/start
 ```
 
-
-
-#### Response
-
+**Response**
 
 Service is started:
 
-
 `Status: 204 No Content`
 
-
 CC BY-SA / Gnu FDL
-
 
 {% @marketo/form formId="4316" %}

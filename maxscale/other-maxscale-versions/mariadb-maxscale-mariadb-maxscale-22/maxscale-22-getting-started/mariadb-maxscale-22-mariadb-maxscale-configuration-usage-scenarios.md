@@ -1,8 +1,4 @@
-# mariadb-maxscale-22-mariadb-maxscale-configuration-usage-scenarios
-
-## MariaDB MaxScale Configuration & Usage Scenarios
-
-## MariaDB MaxScale Configuration & Usage Scenarios
+# MariaDB MaxScale Configuration & Usage Scenarios
 
 ### Introduction
 
@@ -612,7 +608,7 @@ some_parameter=$SOME_VALUE
 
 is encountered, then `$SOME_VALUE` will be replaced with the actual value\
 of the environment variable `SOME_VALUE`. Note:_Variable substitution will be made only if '$' is the first character_\
-_of the value._ _Everything_ following '$' is interpreted as the name of the environment\
+&#xNAN;_&#x6F;f the value._ _Everything_ following '$' is interpreted as the name of the environment\
 variable.
 
 * Referring to a non-existing environment variable is a fatal error.
@@ -1018,8 +1014,8 @@ the percentages in this table.
 | serverD | 20         | 36%           |
 
 _Note: If the value of the weighting parameter of an individual server is_\
-_zero or the relative weight rounds down to zero, no queries will be routed to_\
-_that server as long as a server with a positive weight is available._
+&#xNAN;_&#x7A;ero or the relative weight rounds down to zero, no queries will be routed to_\
+&#xNAN;_&#x74;hat server as long as a server with a positive weight is available._
 
 Here is an excerpt from an example configuration with the `serv_weight`\
 parameter used as the weighting parameter.

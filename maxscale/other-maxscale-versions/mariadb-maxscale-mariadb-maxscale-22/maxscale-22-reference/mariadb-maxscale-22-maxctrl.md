@@ -1,54 +1,40 @@
-
 # MaxCtrl
 
-# MaxCtrl
-
-
-MaxCtrl is a command line administrative client for MaxScale which uses
-the MaxScale REST API for communication. It is intended to be the
+MaxCtrl is a command line administrative client for MaxScale which uses\
+the MaxScale REST API for communication. It is intended to be the\
 replacement software for the legacy MaxAdmin command line client.
 
-
-By default, the MaxScale REST API listens on port 8989 on the local host. The
-default credentials for the REST API are `admin:mariadb`. The users used by the
-REST API are the same that are used by the MaxAdmin network interface. This
-means that any users created for the MaxAdmin network interface should work with
+By default, the MaxScale REST API listens on port 8989 on the local host. The\
+default credentials for the REST API are `admin:mariadb`. The users used by the\
+REST API are the same that are used by the MaxAdmin network interface. This\
+means that any users created for the MaxAdmin network interface should work with\
 the MaxScale REST API and MaxCtrl.
 
+For more information about the MaxScale REST API, refer to the[REST API documentation](../../mariadb-maxscale-21-06/) and the[Configuration Guide](../maxscale-22-getting-started/mariadb-maxscale-22-mariadb-maxscale-configuration-usage-scenarios.md).
 
-For more information about the MaxScale REST API, refer to the
-[REST API documentation](../../mariadb-maxscale-21-06/README.md) and the
-[Configuration Guide](../maxscale-22-getting-started/mariadb-maxscale-22-mariadb-maxscale-configuration-usage-scenarios.md).
+## Commands
 
+* [list](mariadb-maxscale-22-maxctrl.md#list)
+* [show](mariadb-maxscale-22-maxctrl.md#show)
+* [set](mariadb-maxscale-22-maxctrl.md#set)
+* [clear](mariadb-maxscale-22-maxctrl.md#clear)
+* [enable](mariadb-maxscale-22-maxctrl.md#enable)
+* [disable](mariadb-maxscale-22-maxctrl.md#disable)
+* [create](mariadb-maxscale-22-maxctrl.md#create)
+* [destroy](mariadb-maxscale-22-maxctrl.md#destroy)
+* [link](mariadb-maxscale-22-maxctrl.md#link)
+* [unlink](mariadb-maxscale-22-maxctrl.md#unlink)
+* [start](mariadb-maxscale-22-maxctrl.md#start)
+* [stop](mariadb-maxscale-22-maxctrl.md#stop)
+* [alter](mariadb-maxscale-22-maxctrl.md#alter)
+* [rotate](mariadb-maxscale-22-maxctrl.md#rotate)
+* [call](mariadb-maxscale-22-maxctrl.md#call)
+* [cluster](mariadb-maxscale-22-maxctrl.md#cluster)
+* [api](mariadb-maxscale-22-maxctrl.md#api)
 
-# Commands
-
-
-* [list](#list)
-* [show](#show)
-* [set](#set)
-* [clear](#clear)
-* [enable](#enable)
-* [disable](#disable)
-* [create](#create)
-* [destroy](#destroy)
-* [link](#link)
-* [unlink](#unlink)
-* [start](#start)
-* [stop](#stop)
-* [alter](#alter)
-* [rotate](#rotate)
-* [call](#call)
-* [cluster](#cluster)
-* [api](#api)
-
-
-## Options
-
+### Options
 
 All command accept the following global options.
-
-
 
 ```
 -u, --user      Username to use                    [string] [default: "admin"]
@@ -76,11 +62,7 @@ Options:
   --help            Show help                                          [boolean]
 ```
 
-
-
-## list
-
-
+### list
 
 ```
 Usage: list <command>
@@ -97,92 +79,61 @@ Commands:
   commands             List module commands
 ```
 
-
-
-### list servers
-
+#### list servers
 
 `Usage: list servers`
 
-
 List all servers in MaxScale.
 
-
-### list services
-
+#### list services
 
 `Usage: list services`
 
-
 List all services and the servers they use.
 
-
-### list listeners
-
+#### list listeners
 
 `Usage: list listeners <service>`
 
-
 List listeners for a service.
 
-
-### list monitors
-
+#### list monitors
 
 `Usage: list monitors`
 
-
 List all monitors in MaxScale.
 
-
-### list sessions
-
+#### list sessions
 
 `Usage: list sessions`
 
-
 List all client sessions.
 
-
-### list filters
-
+#### list filters
 
 `Usage: list filters`
 
-
 List all filters in MaxScale.
 
-
-### list modules
-
+#### list modules
 
 `Usage: list modules`
 
-
 List all currently loaded modules.
 
-
-### list users
-
+#### list users
 
 `Usage: list users`
 
-
 List the users that can be used to connect to the MaxScale REST API.
 
-
-### list commands
-
+#### list commands
 
 `Usage: list commands`
 
-
 List all available module commands.
 
-
-## show
-
-
+### show
 
 ```
 Usage: show <command>
@@ -199,102 +150,71 @@ Commands:
   commands <module>  Show module commands of a module
 ```
 
-
-
-### show server
-
+#### show server
 
 `Usage: show server <server>`
 
-
-Show detailed information about a server. The `Parameters` field contains the
-currently configured parameters for this server. See `help alter server` for
+Show detailed information about a server. The `Parameters` field contains the\
+currently configured parameters for this server. See `help alter server` for\
 more details about altering server parameters.
 
-
-### show service
-
+#### show service
 
 `Usage: show service <service>`
 
-
-Show detailed information about a service. The `Parameters` field contains the
-currently configured parameters for this service. See `help alter service` for
+Show detailed information about a service. The `Parameters` field contains the\
+currently configured parameters for this service. See `help alter service` for\
 more details about altering service parameters.
 
-
-### show monitor
-
+#### show monitor
 
 `Usage: show monitor <monitor>`
 
-
-Show detailed information about a monitor. The `Parameters` field contains the
-currently configured parameters for this monitor. See `help alter monitor` for
+Show detailed information about a monitor. The `Parameters` field contains the\
+currently configured parameters for this monitor. See `help alter monitor` for\
 more details about altering monitor parameters.
 
-
-### show session
-
+#### show session
 
 `Usage: show session <session>`
 
-
-Show detailed information about a single session. The list of sessions can be
-retrieved with the `list sessions` command. The <session> is the session ID of a
+Show detailed information about a single session. The list of sessions can be\
+retrieved with the `list sessions` command. The is the session ID of a\
 particular session.
 
-
-### show filter
-
+#### show filter
 
 `Usage: show filter <filter>`
 
-
 The list of services that use this filter is show in the `Services` field.
 
-
-### show module
-
+#### show module
 
 `Usage: show module <module>`
 
-
-This command shows all available parameters as well as detailed version
+This command shows all available parameters as well as detailed version\
 information of a loaded module.
 
-
-### show maxscale
-
+#### show maxscale
 
 `Usage: show maxscale`
 
-
 See `help alter maxscale` for more details about altering MaxScale parameters.
 
-
-### show logging
-
+#### show logging
 
 `Usage: show logging`
 
-
 See `help alter logging` for more details about altering logging parameters.
 
-
-### show commands
-
+#### show commands
 
 `Usage: show commands <module>`
 
-
-This command shows the parameters the command expects with the parameter
+This command shows the parameters the command expects with the parameter\
 descriptions.
 
-
-## set
-
-
+### set
 
 ```
 Usage: set <command>
@@ -303,24 +223,17 @@ Commands:
   server <server> <state>  Set server state
 ```
 
-
-
-### set server
-
+#### set server
 
 `Usage: set server <server> <state>`
 
-
-If <server> is monitored by a monitor, this command should only be used to set
-the server into the `maintenance` state. Any other states will be overridden by
-the monitor on the next monitoring interval. To manually control server states,
-use the `stop monitor <name>` command to stop the monitor before setting the
+If is monitored by a monitor, this command should only be used to set\
+the server into the `maintenance` state. Any other states will be overridden by\
+the monitor on the next monitoring interval. To manually control server states,\
+use the `stop monitor <name>` command to stop the monitor before setting the\
 server states manually.
 
-
-## clear
-
-
+### clear
 
 ```
 Usage: clear <command>
@@ -329,21 +242,14 @@ Commands:
   server <server> <state>  Clear server state
 ```
 
-
-
-### clear server
-
+#### clear server
 
 `Usage: clear server <server> <state>`
 
-
-This command clears a server state set by the `set server <server> <state>`
+This command clears a server state set by the `set server <server> <state>`\
 command
 
-
-## enable
-
-
+### enable
 
 ```
 Usage: enable <command>
@@ -357,29 +263,19 @@ Enable account options:
                          [string] [choices: "admin", "basic"] [default: "basic"]
 ```
 
-
-
-### enable log-priority
-
+#### enable log-priority
 
 `Usage: enable log-priority <log>`
 
-
 The `debug` log priority is only available for debug builds of MaxScale.
 
-
-### enable account
-
+#### enable account
 
 `Usage: enable account <name>`
 
-
 The Linux user accounts are used by the MaxAdmin UNIX Domain Socket interface
 
-
-## disable
-
-
+### disable
 
 ```
 Usage: disable <command>
@@ -389,29 +285,19 @@ Commands:
   account <name>      Disable a Linux user account from administrative use
 ```
 
-
-
-### disable log-priority
-
+#### disable log-priority
 
 `Usage: disable log-priority <log>`
 
-
 The `debug` log priority is only available for debug builds of MaxScale.
 
-
-### disable account
-
+#### disable account
 
 `Usage: disable account <name>`
 
-
 The Linux user accounts are used by the MaxAdmin UNIX Domain Socket interface
 
-
-## create
-
-
+### create
 
 ```
 Usage: create <command>
@@ -449,52 +335,36 @@ Create user options:
                          [string] [choices: "admin", "basic"] [default: "basic"]
 ```
 
-
-
-### create server
-
+#### create server
 
 `Usage: create server <name> <host> <port>`
 
-
-The created server will not be used by any services or monitors unless the
---services or --monitors options are given. The list of servers a service or a
+The created server will not be used by any services or monitors unless the\
+\--services or --monitors options are given. The list of servers a service or a\
 monitor uses can be altered with the `link` and `unlink` commands.
 
-
-### create monitor
-
+#### create monitor
 
 `Usage: create monitor <name> <module>`
 
-
-The list of servers given with the --servers option should not contain any
+The list of servers given with the --servers option should not contain any\
 servers that are already monitored by another monitor.
 
-
-### create listener
-
+#### create listener
 
 `Usage: create listener <service> <name> <port>`
 
-
 The new listener will be taken into use immediately.
 
-
-### create user
-
+#### create user
 
 `Usage: create user <name> <password>`
 
-
-The created user can be used with the MaxScale REST API as well as the MaxAdmin
-network interface. By default the created user will have read-only privileges.
+The created user can be used with the MaxScale REST API as well as the MaxAdmin\
+network interface. By default the created user will have read-only privileges.\
 To make the user an administrative user, use the `--type=admin` option.
 
-
-## destroy
-
-
+### destroy
 
 ```
 Usage: destroy <command>
@@ -506,52 +376,36 @@ Commands:
   user <name>                Remove a network user
 ```
 
-
-
-### destroy server
-
+#### destroy server
 
 `Usage: destroy server <name>`
 
-
-The server must be unlinked from all services and monitor before it can be
+The server must be unlinked from all services and monitor before it can be\
 destroyed.
 
-
-### destroy monitor
-
+#### destroy monitor
 
 `Usage: destroy monitor <name>`
 
-
 The monitor must be unlinked from all servers before it can be destroyed.
 
-
-### destroy listener
-
+#### destroy listener
 
 `Usage: destroy listener <service> <name>`
 
-
-Destroying a monitor causes it to be removed on the next restart. Destroying a
-listener at runtime stops it from accepting new connections but it will still be
-bound to the listening socket. This means that new listeners cannot be created
+Destroying a monitor causes it to be removed on the next restart. Destroying a\
+listener at runtime stops it from accepting new connections but it will still be\
+bound to the listening socket. This means that new listeners cannot be created\
 to replace destroyed listeners without restarting MaxScale.
 
-
-### destroy user
-
+#### destroy user
 
 `Usage: destroy user <name>`
 
-
-The last remaining administrative user cannot be removed. Create a replacement
+The last remaining administrative user cannot be removed. Create a replacement\
 administrative user before attempting to remove the last administrative user.
 
-
-## link
-
-
+### link
 
 ```
 Usage: link <command>
@@ -561,35 +415,25 @@ Commands:
   monitor <name> <server...>  Link servers to a monitor
 ```
 
-
-
-### link service
-
+#### link service
 
 `Usage: link service <name> <server...>`
 
-
-This command links servers to a service, making them available for any
-connections that use the service. Before a server is linked to a service, it
-should be linked to a monitor so that the server state is up to date. Newly
-linked server are only available to new connections, existing connections will
+This command links servers to a service, making them available for any\
+connections that use the service. Before a server is linked to a service, it\
+should be linked to a monitor so that the server state is up to date. Newly\
+linked server are only available to new connections, existing connections will\
 use the old list of servers.
 
-
-### link monitor
-
+#### link monitor
 
 `Usage: link monitor <name> <server...>`
 
-
-Linking a server to a monitor will add it to the list of servers that are
-monitored by that monitor. A server can be monitored by only one monitor at a
+Linking a server to a monitor will add it to the list of servers that are\
+monitored by that monitor. A server can be monitored by only one monitor at a\
 time.
 
-
-## unlink
-
-
+### unlink
 
 ```
 Usage: unlink <command>
@@ -599,33 +443,23 @@ Commands:
   monitor <name> <server...>  Unlink servers from a monitor
 ```
 
-
-
-### unlink service
-
+#### unlink service
 
 `Usage: unlink service <name> <server...>`
 
-
-This command unlinks servers from a service, removing them from the list of
-available servers for that service. New connections to the service will not use
+This command unlinks servers from a service, removing them from the list of\
+available servers for that service. New connections to the service will not use\
 the unlinked servers but existing connections can still use the servers.
 
-
-### unlink monitor
-
+#### unlink monitor
 
 `Usage: unlink monitor <name> <server...>`
 
-
-This command unlinks servers from a monitor, removing them from the list of
-monitored servers. The servers will be left in their current state when they are
+This command unlinks servers from a monitor, removing them from the list of\
+monitored servers. The servers will be left in their current state when they are\
 unlinked from a monitor.
 
-
-## start
-
-
+### start
 
 ```
 Usage: start <command>
@@ -636,39 +470,26 @@ Commands:
   maxscale        Start MaxScale by starting all services
 ```
 
-
-
-### start service
-
+#### start service
 
 `Usage: start service <name>`
 
-
 This starts a service stopped by `stop service <name>`
 
-
-### start monitor
-
+#### start monitor
 
 `Usage: start monitor <name>`
 
-
 This starts a monitor stopped by `stop monitor <name>`
 
-
-### start maxscale
-
+#### start maxscale
 
 `Usage: start maxscale`
 
-
-This command will execute the `start service` command for all services in
+This command will execute the `start service` command for all services in\
 MaxScale.
 
-
-## stop
-
-
+### stop
 
 ```
 Usage: stop <command>
@@ -679,42 +500,29 @@ Commands:
   maxscale        Stop MaxScale by stopping all services
 ```
 
-
-
-### stop service
-
+#### stop service
 
 `Usage: stop service <name>`
 
-
-Stopping a service will prevent all the listeners for that service from
-accepting new connections. Existing connections will still be handled normally
+Stopping a service will prevent all the listeners for that service from\
+accepting new connections. Existing connections will still be handled normally\
 until they are closed.
 
-
-### stop monitor
-
+#### stop monitor
 
 `Usage: stop monitor <name>`
 
-
-Stopping a monitor will pause the monitoring of the servers. This can be used to
+Stopping a monitor will pause the monitoring of the servers. This can be used to\
 manually control server states with the `set server` command.
 
-
-### stop maxscale
-
+#### stop maxscale
 
 `Usage: stop maxscale`
 
-
-This command will execute the `stop service` command for all services in
+This command will execute the `stop service` command for all services in\
 MaxScale.
 
-
-## alter
-
-
+### alter
 
 ```
 Usage: alter <command>
@@ -727,83 +535,62 @@ Commands:
   maxscale <key> <value>           Alter MaxScale parameters
 ```
 
-
-
-### alter server
-
+#### alter server
 
 `Usage: alter server <server> <key> <value>`
 
-
 To display the server parameters, execute `show server <server>`
 
-
-### alter monitor
-
+#### alter monitor
 
 `Usage: alter monitor <monitor> <key> <value>`
 
-
 To display the monitor parameters, execute `show monitor <monitor>`
 
-
-### alter service
-
+#### alter service
 
 `Usage: alter service <service> <key> <value>`
 
-
-To display the service parameters, execute `show service <service>`. The
+To display the service parameters, execute `show service <service>`. The\
 following list of parameters can be altered at runtime:
 
-
-[
- "user",
- "passwd",
- "enable_root_user",
- "max_connections",
- "connection_timeout",
- "auth_all_servers",
- "optimize_wildcard",
- "strip_db_esc",
- "localhost_match_wildcard_host",
- "max_slave_connections",
- "max_slave_replication_lag"
+\[\
+"user",\
+"passwd",\
+"enable\_root\_user",\
+"max\_connections",\
+"connection\_timeout",\
+"auth\_all\_servers",\
+"optimize\_wildcard",\
+"strip\_db\_esc",\
+"localhost\_match\_wildcard\_host",\
+"max\_slave\_connections",\
+"max\_slave\_replication\_lag"\
 ]
 
-
-### alter logging
-
+#### alter logging
 
 `Usage: alter logging <key> <value>`
 
-
 To display the logging parameters, execute `show logging`
 
-
-### alter maxscale
-
+#### alter maxscale
 
 `Usage: alter maxscale <key> <value>`
 
-
-To display the MaxScale parameters, execute `show maxscale`. The following list
+To display the MaxScale parameters, execute `show maxscale`. The following list\
 of parameters can be altered at runtime:
 
-
-[
- "auth_connect_timeout",
- "auth_read_timeout",
- "auth_write_timeout",
- "admin_auth",
- "admin_log_auth_failures",
- "passive"
+\[\
+"auth\_connect\_timeout",\
+"auth\_read\_timeout",\
+"auth\_write\_timeout",\
+"admin\_auth",\
+"admin\_log\_auth\_failures",\
+"passive"\
 ]
 
-
-## rotate
-
-
+### rotate
 
 ```
 Usage: rotate <command>
@@ -812,20 +599,13 @@ Commands:
   logs  Rotate log files by closing and reopening the files
 ```
 
-
-
-### rotate logs
-
+#### rotate logs
 
 `Usage: rotate logs`
 
-
 This command is intended to be used with the `logrotate` command.
 
-
-## call
-
-
+### call
 
 ```
 Usage: call <command>
@@ -834,20 +614,13 @@ Commands:
   command <module> <command> [params...]  Call a module command
 ```
 
-
-
-### call command
-
+#### call command
 
 `Usage: call command <module> <command> [params...]`
 
-
 To inspect the list of module commands, execute `list commands`
 
-
-## cluster
-
-
+### cluster
 
 ```
 Usage: cluster <command>
@@ -857,37 +630,27 @@ Commands:
   sync <target>  Synchronize the cluster with target MaxScale server.
 ```
 
-
-
-### cluster diff
-
+#### cluster diff
 
 `Usage: cluster diff <target>`
 
-
-The list of host servers is controlled with the --hosts option. The target
-server should not be in the host list. Value of <target> must be in HOST:PORT
+The list of host servers is controlled with the --hosts option. The target\
+server should not be in the host list. Value of must be in HOST:PORT\
 format
 
-
-### cluster sync
-
+#### cluster sync
 
 `Usage: cluster sync <target>`
 
-
-This command will alter all MaxScale instances given in the --hosts option to
-represent the <target> MaxScale. If the synchronization of a MaxScale instance
-fails, it will be disabled by executing the `stop maxscale` command on that
-instance. Synchronization can be attempted again if a previous attempt failed
-due to a network failure or some other ephemeral error. Any other errors require
-manual synchronization of the MaxScale configuration files and a restart of the
+This command will alter all MaxScale instances given in the --hosts option to\
+represent the MaxScale. If the synchronization of a MaxScale instance\
+fails, it will be disabled by executing the `stop maxscale` command on that\
+instance. Synchronization can be attempted again if a previous attempt failed\
+due to a network failure or some other ephemeral error. Any other errors require\
+manual synchronization of the MaxScale configuration files and a restart of the\
 failed Maxscale.
 
-
-## api
-
-
+### api
 
 ```
 Usage: api <command>
@@ -901,20 +664,14 @@ API options:
                                                       [boolean] [default: false]
 ```
 
-
-
-### api get
-
+#### api get
 
 `Usage: get <resource> [path]`
 
-
-Perform a raw REST API call. The path definition uses JavaScript syntax to
-extract values. For example, the following command extracts all server states as
-an array of JSON values: maxctrl api get servers data[].attributes.state
-
+Perform a raw REST API call. The path definition uses JavaScript syntax to\
+extract values. For example, the following command extracts all server states as\
+an array of JSON values: maxctrl api get servers data\[].attributes.state
 
 CC BY-SA / Gnu FDL
-
 
 {% @marketo/form formId="4316" %}
