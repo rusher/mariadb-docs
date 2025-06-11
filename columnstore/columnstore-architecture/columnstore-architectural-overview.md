@@ -1,3 +1,17 @@
+---
+layout:
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: false
+---
+
 # ColumnStore Architectural Overview
 
 _MariaDB ColumnStore enhances MariaDB Enterprise Server with a columnar engine for OLAP and HTAP workloads, using MPP for scalability. It supports cross-engine JOINs, integrates with S3 storage, and provides high-speed bulk loading with multi-node management via REST API._
