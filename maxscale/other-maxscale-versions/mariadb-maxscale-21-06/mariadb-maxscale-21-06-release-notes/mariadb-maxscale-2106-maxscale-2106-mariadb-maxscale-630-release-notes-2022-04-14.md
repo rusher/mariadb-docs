@@ -1,27 +1,17 @@
-
-# MaxScale 21.06 MariaDB MaxScale 6.3.0 Release Notes -- 2022-04-14
-
 # MariaDB MaxScale 6.3.0 Release Notes -- 2022-04-14
-
 
 Release 6.3.0 is a GA release.
 
-
-This document describes the changes in release 6.3.0, when compared to the
+This document describes the changes in release 6.3.0, when compared to the\
 previous release in the same series.
 
-
-If you are upgrading from an older major version of MaxScale, please read the
-[upgrading document](https://mariadb.com/kb/Upgrading/Upgrading-To-MaxScale-6) for
+If you are upgrading from an older major version of MaxScale, please read the[upgrading document](https://mariadb.com/kb/Upgrading/Upgrading-To-MaxScale-6) for\
 this MaxScale version.
 
-
-For any problems you encounter, please consider submitting a bug
+For any problems you encounter, please consider submitting a bug\
 report on [our Jira](https://jira.mariadb.org/projects/MXS).
 
-
-## New Features
-
+### New Features
 
 * [MXS-3968](https://jira.mariadb.org/browse/MXS-3968) Add support for SSL
 * [MXS-3925](https://jira.mariadb.org/browse/MXS-3925) Implement authentication
@@ -30,9 +20,7 @@ report on [our Jira](https://jira.mariadb.org/projects/MXS).
 * [MXS-3806](https://jira.mariadb.org/browse/MXS-3806) Provide filtering for the KafkaCDC Router
 * [MXS-3413](https://jira.mariadb.org/browse/MXS-3413) The persistence of on-the-fly parameter changes needs to be somehow exposed, and more manageable.
 
-
-## Bug fixes
-
+### Bug fixes
 
 * [MXS-4082](https://jira.mariadb.org/browse/MXS-4082) SQL endpoint doesn't show errors for resultsets
 * [MXS-4080](https://jira.mariadb.org/browse/MXS-4080) Query Cache detects wrong parse error in INSERT or DELETE
@@ -45,36 +33,26 @@ report on [our Jira](https://jira.mariadb.org/projects/MXS).
 * [MXS-3977](https://jira.mariadb.org/browse/MXS-3977) The servers table in monitor details page shouldn't be sorted by default
 * [MXS-3962](https://jira.mariadb.org/browse/MXS-3962) Automatically generated dynamic config contains default values for unmodified params
 
+### Known Issues and Limitations
 
-## Known Issues and Limitations
-
-
-There are some limitations and known issues within this version of MaxScale.
+There are some limitations and known issues within this version of MaxScale.\
 For more information, please refer to the [Limitations](../mariadb-maxscale-21-06-about/mariadb-maxscale-2106-maxscale-2106-limitations-and-known-issues-within-mariadb-maxscale.md) document.
 
-
-## Packaging
-
+### Packaging
 
 RPM and Debian packages are provided for the supported Linux distributions.
 
-
 Packages can be downloaded [here](https://mariadb.com/downloads/#mariadb_platform-mariadb_maxscale).
 
+### Source Code
 
-## Source Code
-
-
-The source code of MaxScale is tagged at GitHub with a tag, which is identical
-with the version of MaxScale. For instance, the tag of version X.Y.Z of MaxScale
-is `maxscale-X.Y.Z`. Further, the default branch is always the latest GA version
+The source code of MaxScale is tagged at GitHub with a tag, which is identical\
+with the version of MaxScale. For instance, the tag of version X.Y.Z of MaxScale\
+is `maxscale-X.Y.Z`. Further, the default branch is always the latest GA version\
 of MaxScale.
-
 
 The source code is available [here](https://github.com/mariadb-corporation/MaxScale).
 
-
 CC BY-SA / Gnu FDL
-
 
 {% @marketo/form formId="4316" %}

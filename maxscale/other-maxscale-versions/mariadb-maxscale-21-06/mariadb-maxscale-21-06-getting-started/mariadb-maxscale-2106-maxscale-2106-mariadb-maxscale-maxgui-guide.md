@@ -1,8 +1,4 @@
-# mariadb-maxscale-2106-maxscale-2106-mariadb-maxscale-maxgui-guide
-
-## MaxScale 21.06 MariaDB MaxScale MaxGUI Guide
-
-## MariaDB MaxScale MaxGUI Guide
+# MariaDB MaxScale MaxGUI Guide
 
 * [MariaDB MaxScale MaxGUI Guide](mariadb-maxscale-2106-maxscale-2106-mariadb-maxscale-maxgui-guide.md#mariadb-maxscale-maxgui-guide)
 * [Introduction](mariadb-maxscale-2106-maxscale-2106-mariadb-maxscale-maxgui-guide.md#introduction)
@@ -111,7 +107,7 @@ page to full-screen mode.
 
 Located below the worksheet tab bar, this contains resource quick action\
 buttons on the left side and query action buttons on the right side._Resource quick action buttons are used to manage active_\
-_connections and active database._ Query action buttons are used to run SQL statements, visualize\
+&#xNAN;_&#x63;onnections and active database._ Query action buttons are used to run SQL statements, visualize\
 query result in graphs, and configure query settings.
 
 #### Schema sidebar
@@ -136,7 +132,7 @@ and `DESCRIBE database.table_name`, respectively.
 
 Located at the bottom of the page, the result section is comprised of three\
 tabs which are _Results_, _Data Preview_ and _History/FavoriteThe Results tab shows the query results of the SQL statements from_\
-_the SQL editor._ The _Data Preview_ contains two sub-tabs _DATA_ and _DETAILS_ showing\
+&#xNAN;_&#x74;he SQL editor._ The _Data Preview_ contains two sub-tabs _DATA_ and _DETAILS_ showing\
 the results of _Preview Data_ and _View Details_, respectively.
 
 * The _History/Favorite_ shows query history and favorite queries

@@ -1,61 +1,36 @@
-
 # MaxScale 21.06 Session Resource
 
-# Session Resource
-
-
-A session is an abstraction of a client connection, any number of related backend
-connections, a router module session and possibly filter module sessions. Each
+A session is an abstraction of a client connection, any number of related backend\
+connections, a router module session and possibly filter module sessions. Each\
 session is created on a service and each service can have multiple sessions.
 
+* [Session Resource](mariadb-maxscale-2106-maxscale-2106-session-resource.md#session-resource)
+  * [Resource Operations](mariadb-maxscale-2106-maxscale-2106-session-resource.md#resource-operations)
+    * [Get a session](mariadb-maxscale-2106-maxscale-2106-session-resource.md#get-a-session)
+      * [Response](mariadb-maxscale-2106-maxscale-2106-session-resource.md#response)
+    * [Get all sessions](mariadb-maxscale-2106-maxscale-2106-session-resource.md#get-all-sessions)
+      * [Response](mariadb-maxscale-2106-maxscale-2106-session-resource.md#response_1)
+    * [Update a Session](mariadb-maxscale-2106-maxscale-2106-session-resource.md#update-a-session)
+      * [Response](mariadb-maxscale-2106-maxscale-2106-session-resource.md#response_2)
 
+### Resource Operations
 
-
-* [Session Resource](#session-resource)
-
-  * [Resource Operations](#resource-operations)
-
-    * [Get a session](#get-a-session)
-
-      * [Response](#response)
-    * [Get all sessions](#get-all-sessions)
-
-      * [Response](#response_1)
-    * [Update a Session](#update-a-session)
-
-      * [Response](#response_2)
-
-
-
-
-## Resource Operations
-
-
-### Get a session
-
-
+#### Get a session
 
 ```
 GET /v1/sessions/:id
 ```
 
-
-
-Get a single session. *:id* must be a valid session ID. The session ID is the
+Get a single session. _:id_ must be a valid session ID. The session ID is the\
 same that is exposed to the client as the connection ID.
 
-
-This endpoint also supports the `rdns=true` parameter, which instructs MaxScale to
-perform reverse DNS on the client IP address. As this requires communicating with
+This endpoint also supports the `rdns=true` parameter, which instructs MaxScale to\
+perform reverse DNS on the client IP address. As this requires communicating with\
 an external server, the operation may be expensive.
 
-
-#### Response
-
+**Response**
 
 `Status: 200 OK`
-
-
 
 ```
 {
@@ -117,27 +92,17 @@ an external server, the operation may be expensive.
 }
 ```
 
-
-
-### Get all sessions
-
-
+#### Get all sessions
 
 ```
 GET /v1/sessions
 ```
 
-
-
 Get all sessions.
 
-
-#### Response
-
+**Response**
 
 `Status: 200 OK`
-
-
 
 ```
 {
@@ -201,26 +166,17 @@ Get all sessions.
 }
 ```
 
-
-
-### Update a Session
-
-
+#### Update a Session
 
 ```
 PATCH /v1/sessions/:id
 ```
 
-
-
-The request body must be a JSON object which represents the new configuration of
+The request body must be a JSON object which represents the new configuration of\
 the session. The `:id` must be a valid session ID that is active.
 
-
-The `log_debug`, `log_info`, `log_notice`, `log_warning` and `log_error` boolean
+The `log_debug`, `log_info`, `log_notice`, `log_warning` and `log_error` boolean\
 parameters control whether the associated logging level is enabled:
-
-
 
 ```
 {
@@ -234,16 +190,12 @@ parameters control whether the associated logging level is enabled:
 }
 ```
 
-
-
-The filters that a session uses can be updated by re-defining the filter
-relationship of the session. This causes new filter sessions to be opened
-immediately. The old filter session are closed and replaced with the new filter
-session the next time the session is idle. The order in which the filters are
-defined in the request body is the order in which the filters are installed,
+The filters that a session uses can be updated by re-defining the filter\
+relationship of the session. This causes new filter sessions to be opened\
+immediately. The old filter session are closed and replaced with the new filter\
+session the next time the session is idle. The order in which the filters are\
+defined in the request body is the order in which the filters are installed,\
 similar to how the filter relationship for services behaves.
-
-
 
 ```
 {
@@ -262,18 +214,12 @@ similar to how the filter relationship for services behaves.
 }
 ```
 
-
-
-#### Response
-
+**Response**
 
 Session is modified:
 
-
 `Status: 204 No Content`
 
-
 CC BY-SA / Gnu FDL
-
 
 {% @marketo/form formId="4316" %}

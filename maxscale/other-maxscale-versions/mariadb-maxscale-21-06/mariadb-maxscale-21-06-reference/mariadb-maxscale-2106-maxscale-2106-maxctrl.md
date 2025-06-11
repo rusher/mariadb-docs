@@ -1,173 +1,134 @@
-
 # MaxScale 21.06 MaxCtrl
 
-# MaxCtrl
-
-
-MaxCtrl is a command line administrative client for MaxScale which uses
-the MaxScale REST API for communication. It has replaced the legacy MaxAdmin
+MaxCtrl is a command line administrative client for MaxScale which uses\
+the MaxScale REST API for communication. It has replaced the legacy MaxAdmin\
 command line client that is no longer supported or included.
 
-
-By default, the MaxScale REST API listens on port 8989 on the local host. The
-default credentials for the REST API are `admin:mariadb`. The users used by the
-REST API are the same that are used by the MaxAdmin network interface. This
-means that any users created for the MaxAdmin network interface should work with
+By default, the MaxScale REST API listens on port 8989 on the local host. The\
+default credentials for the REST API are `admin:mariadb`. The users used by the\
+REST API are the same that are used by the MaxAdmin network interface. This\
+means that any users created for the MaxAdmin network interface should work with\
 the MaxScale REST API and MaxCtrl.
 
+For more information about the MaxScale REST API, refer to the[REST API documentation](../mariadb-maxscale-21-06-rest-api/mariadb-maxscale-2106-maxscale-2106-rest-api.md) and the[Configuration Guide](../mariadb-maxscale-21-06-getting-started/mariadb-maxscale-2106-maxscale-2106-mariadb-maxscale-configuration-guide.md).
 
-For more information about the MaxScale REST API, refer to the
-[REST API documentation](../mariadb-maxscale-21-06-rest-api/mariadb-maxscale-2106-maxscale-2106-rest-api.md) and the
-[Configuration Guide](../mariadb-maxscale-21-06-getting-started/mariadb-maxscale-2106-maxscale-2106-mariadb-maxscale-configuration-guide.md).
+* [MaxCtrl](mariadb-maxscale-2106-maxscale-2106-maxctrl.md#maxctrl)
+* [Limitations](mariadb-maxscale-2106-maxscale-2106-maxctrl.md#limitations)
+* [.maxctrl.cnf](mariadb-maxscale-2106-maxscale-2106-maxctrl.md#maxctrlcnf)
+* [Commands](mariadb-maxscale-2106-maxscale-2106-maxctrl.md#commands)
+  * [list](mariadb-maxscale-2106-maxscale-2106-maxctrl.md#list)
+    * [list servers](mariadb-maxscale-2106-maxscale-2106-maxctrl.md#list-servers)
+    * [list services](mariadb-maxscale-2106-maxscale-2106-maxctrl.md#list-services)
+    * [list listeners](mariadb-maxscale-2106-maxscale-2106-maxctrl.md#list-listeners)
+    * [list monitors](mariadb-maxscale-2106-maxscale-2106-maxctrl.md#list-monitors)
+    * [list sessions](mariadb-maxscale-2106-maxscale-2106-maxctrl.md#list-sessions)
+    * [list filters](mariadb-maxscale-2106-maxscale-2106-maxctrl.md#list-filters)
+    * [list modules](mariadb-maxscale-2106-maxscale-2106-maxctrl.md#list-modules)
+    * [list threads](mariadb-maxscale-2106-maxscale-2106-maxctrl.md#list-threads)
+    * [list users](mariadb-maxscale-2106-maxscale-2106-maxctrl.md#list-users)
+    * [list commands](mariadb-maxscale-2106-maxscale-2106-maxctrl.md#list-commands)
+    * [list queries](mariadb-maxscale-2106-maxscale-2106-maxctrl.md#list-queries)
+  * [show](mariadb-maxscale-2106-maxscale-2106-maxctrl.md#show)
+    * [show server](mariadb-maxscale-2106-maxscale-2106-maxctrl.md#show-server)
+    * [show servers](mariadb-maxscale-2106-maxscale-2106-maxctrl.md#show-servers)
+    * [show service](mariadb-maxscale-2106-maxscale-2106-maxctrl.md#show-service)
+    * [show services](mariadb-maxscale-2106-maxscale-2106-maxctrl.md#show-services)
+    * [show monitor](mariadb-maxscale-2106-maxscale-2106-maxctrl.md#show-monitor)
+    * [show monitors](mariadb-maxscale-2106-maxscale-2106-maxctrl.md#show-monitors)
+    * [show session](mariadb-maxscale-2106-maxscale-2106-maxctrl.md#show-session)
+    * [show sessions](mariadb-maxscale-2106-maxscale-2106-maxctrl.md#show-sessions)
+    * [show filter](mariadb-maxscale-2106-maxscale-2106-maxctrl.md#show-filter)
+    * [show filters](mariadb-maxscale-2106-maxscale-2106-maxctrl.md#show-filters)
+    * [show listener](mariadb-maxscale-2106-maxscale-2106-maxctrl.md#show-listener)
+    * [show listeners](mariadb-maxscale-2106-maxscale-2106-maxctrl.md#show-listeners)
+    * [show module](mariadb-maxscale-2106-maxscale-2106-maxctrl.md#show-module)
+    * [show modules](mariadb-maxscale-2106-maxscale-2106-maxctrl.md#show-modules)
+    * [show maxscale](mariadb-maxscale-2106-maxscale-2106-maxctrl.md#show-maxscale)
+    * [show thread](mariadb-maxscale-2106-maxscale-2106-maxctrl.md#show-thread)
+    * [show threads](mariadb-maxscale-2106-maxscale-2106-maxctrl.md#show-threads)
+    * [show logging](mariadb-maxscale-2106-maxscale-2106-maxctrl.md#show-logging)
+    * [show commands](mariadb-maxscale-2106-maxscale-2106-maxctrl.md#show-commands)
+    * [show qc\_cache](mariadb-maxscale-2106-maxscale-2106-maxctrl.md#show-qc_cache)
+    * [show dbusers](mariadb-maxscale-2106-maxscale-2106-maxctrl.md#show-dbusers)
+  * [set](mariadb-maxscale-2106-maxscale-2106-maxctrl.md#set)
+    * [set server](mariadb-maxscale-2106-maxscale-2106-maxctrl.md#set-server)
+  * [clear](mariadb-maxscale-2106-maxscale-2106-maxctrl.md#clear)
+    * [clear server](mariadb-maxscale-2106-maxscale-2106-maxctrl.md#clear-server)
+  * [drain](mariadb-maxscale-2106-maxscale-2106-maxctrl.md#drain)
+    * [drain server](mariadb-maxscale-2106-maxscale-2106-maxctrl.md#drain-server)
+  * [enable](mariadb-maxscale-2106-maxscale-2106-maxctrl.md#enable)
+    * [enable log-priority](mariadb-maxscale-2106-maxscale-2106-maxctrl.md#enable-log-priority)
+  * [disable](mariadb-maxscale-2106-maxscale-2106-maxctrl.md#disable)
+    * [disable log-priority](mariadb-maxscale-2106-maxscale-2106-maxctrl.md#disable-log-priority)
+  * [create](mariadb-maxscale-2106-maxscale-2106-maxctrl.md#create)
+    * [create server](mariadb-maxscale-2106-maxscale-2106-maxctrl.md#create-server)
+    * [create monitor](mariadb-maxscale-2106-maxscale-2106-maxctrl.md#create-monitor)
+    * [create service](mariadb-maxscale-2106-maxscale-2106-maxctrl.md#create-service)
+    * [create filter](mariadb-maxscale-2106-maxscale-2106-maxctrl.md#create-filter)
+    * [create listener](mariadb-maxscale-2106-maxscale-2106-maxctrl.md#create-listener)
+    * [create user](mariadb-maxscale-2106-maxscale-2106-maxctrl.md#create-user)
+    * [create report](mariadb-maxscale-2106-maxscale-2106-maxctrl.md#create-report)
+  * [destroy](mariadb-maxscale-2106-maxscale-2106-maxctrl.md#destroy)
+    * [destroy server](mariadb-maxscale-2106-maxscale-2106-maxctrl.md#destroy-server)
+    * [destroy monitor](mariadb-maxscale-2106-maxscale-2106-maxctrl.md#destroy-monitor)
+    * [destroy listener](mariadb-maxscale-2106-maxscale-2106-maxctrl.md#destroy-listener)
+    * [destroy service](mariadb-maxscale-2106-maxscale-2106-maxctrl.md#destroy-service)
+    * [destroy filter](mariadb-maxscale-2106-maxscale-2106-maxctrl.md#destroy-filter)
+    * [destroy user](mariadb-maxscale-2106-maxscale-2106-maxctrl.md#destroy-user)
+  * [link](mariadb-maxscale-2106-maxscale-2106-maxctrl.md#link)
+    * [link service](mariadb-maxscale-2106-maxscale-2106-maxctrl.md#link-service)
+    * [link monitor](mariadb-maxscale-2106-maxscale-2106-maxctrl.md#link-monitor)
+  * [unlink](mariadb-maxscale-2106-maxscale-2106-maxctrl.md#unlink)
+    * [unlink service](mariadb-maxscale-2106-maxscale-2106-maxctrl.md#unlink-service)
+    * [unlink monitor](mariadb-maxscale-2106-maxscale-2106-maxctrl.md#unlink-monitor)
+  * [start](mariadb-maxscale-2106-maxscale-2106-maxctrl.md#start)
+    * [start service](mariadb-maxscale-2106-maxscale-2106-maxctrl.md#start-service)
+    * [start listener](mariadb-maxscale-2106-maxscale-2106-maxctrl.md#start-listener)
+    * [start monitor](mariadb-maxscale-2106-maxscale-2106-maxctrl.md#start-monitor)
+    * [start services](mariadb-maxscale-2106-maxscale-2106-maxctrl.md#start-services)
+  * [stop](mariadb-maxscale-2106-maxscale-2106-maxctrl.md#stop)
+    * [stop service](mariadb-maxscale-2106-maxscale-2106-maxctrl.md#stop-service)
+    * [stop listener](mariadb-maxscale-2106-maxscale-2106-maxctrl.md#stop-listener)
+    * [stop monitor](mariadb-maxscale-2106-maxscale-2106-maxctrl.md#stop-monitor)
+    * [stop services](mariadb-maxscale-2106-maxscale-2106-maxctrl.md#stop-services)
+  * [alter](mariadb-maxscale-2106-maxscale-2106-maxctrl.md#alter)
+    * [alter server](mariadb-maxscale-2106-maxscale-2106-maxctrl.md#alter-server)
+    * [alter monitor](mariadb-maxscale-2106-maxscale-2106-maxctrl.md#alter-monitor)
+    * [alter service](mariadb-maxscale-2106-maxscale-2106-maxctrl.md#alter-service)
+    * [alter service-filters](mariadb-maxscale-2106-maxscale-2106-maxctrl.md#alter-service-filters)
+    * [alter filter](mariadb-maxscale-2106-maxscale-2106-maxctrl.md#alter-filter)
+    * [alter listener](mariadb-maxscale-2106-maxscale-2106-maxctrl.md#alter-listener)
+    * [alter logging](mariadb-maxscale-2106-maxscale-2106-maxctrl.md#alter-logging)
+    * [alter maxscale](mariadb-maxscale-2106-maxscale-2106-maxctrl.md#alter-maxscale)
+    * [alter user](mariadb-maxscale-2106-maxscale-2106-maxctrl.md#alter-user)
+    * [alter session](mariadb-maxscale-2106-maxscale-2106-maxctrl.md#alter-session)
+    * [alter session-filters](mariadb-maxscale-2106-maxscale-2106-maxctrl.md#alter-session-filters)
+  * [rotate](mariadb-maxscale-2106-maxscale-2106-maxctrl.md#rotate)
+    * [rotate logs](mariadb-maxscale-2106-maxscale-2106-maxctrl.md#rotate-logs)
+  * [reload](mariadb-maxscale-2106-maxscale-2106-maxctrl.md#reload)
+    * [reload service](mariadb-maxscale-2106-maxscale-2106-maxctrl.md#reload-service)
+  * [call](mariadb-maxscale-2106-maxscale-2106-maxctrl.md#call)
+    * [call command](mariadb-maxscale-2106-maxscale-2106-maxctrl.md#call-command)
+  * [cluster](mariadb-maxscale-2106-maxscale-2106-maxctrl.md#cluster)
+    * [cluster diff](mariadb-maxscale-2106-maxscale-2106-maxctrl.md#cluster-diff)
+    * [cluster sync](mariadb-maxscale-2106-maxscale-2106-maxctrl.md#cluster-sync)
+  * [api](mariadb-maxscale-2106-maxscale-2106-maxctrl.md#api)
+    * [api get](mariadb-maxscale-2106-maxscale-2106-maxctrl.md#api-get)
+    * [api post](mariadb-maxscale-2106-maxscale-2106-maxctrl.md#api-post)
+    * [api patch](mariadb-maxscale-2106-maxscale-2106-maxctrl.md#api-patch)
+  * [classify](mariadb-maxscale-2106-maxscale-2106-maxctrl.md#classify)
 
-
-
-
-* [MaxCtrl](#maxctrl)
-* [Limitations](#limitations)
-* [.maxctrl.cnf](#maxctrlcnf)
-* [Commands](#commands)
-
-  * [list](#list)
-
-    * [list servers](#list-servers)
-    * [list services](#list-services)
-    * [list listeners](#list-listeners)
-    * [list monitors](#list-monitors)
-    * [list sessions](#list-sessions)
-    * [list filters](#list-filters)
-    * [list modules](#list-modules)
-    * [list threads](#list-threads)
-    * [list users](#list-users)
-    * [list commands](#list-commands)
-    * [list queries](#list-queries)
-  * [show](#show)
-
-    * [show server](#show-server)
-    * [show servers](#show-servers)
-    * [show service](#show-service)
-    * [show services](#show-services)
-    * [show monitor](#show-monitor)
-    * [show monitors](#show-monitors)
-    * [show session](#show-session)
-    * [show sessions](#show-sessions)
-    * [show filter](#show-filter)
-    * [show filters](#show-filters)
-    * [show listener](#show-listener)
-    * [show listeners](#show-listeners)
-    * [show module](#show-module)
-    * [show modules](#show-modules)
-    * [show maxscale](#show-maxscale)
-    * [show thread](#show-thread)
-    * [show threads](#show-threads)
-    * [show logging](#show-logging)
-    * [show commands](#show-commands)
-    * [show qc_cache](#show-qc_cache)
-    * [show dbusers](#show-dbusers)
-  * [set](#set)
-
-    * [set server](#set-server)
-  * [clear](#clear)
-
-    * [clear server](#clear-server)
-  * [drain](#drain)
-
-    * [drain server](#drain-server)
-  * [enable](#enable)
-
-    * [enable log-priority](#enable-log-priority)
-  * [disable](#disable)
-
-    * [disable log-priority](#disable-log-priority)
-  * [create](#create)
-
-    * [create server](#create-server)
-    * [create monitor](#create-monitor)
-    * [create service](#create-service)
-    * [create filter](#create-filter)
-    * [create listener](#create-listener)
-    * [create user](#create-user)
-    * [create report](#create-report)
-  * [destroy](#destroy)
-
-    * [destroy server](#destroy-server)
-    * [destroy monitor](#destroy-monitor)
-    * [destroy listener](#destroy-listener)
-    * [destroy service](#destroy-service)
-    * [destroy filter](#destroy-filter)
-    * [destroy user](#destroy-user)
-  * [link](#link)
-
-    * [link service](#link-service)
-    * [link monitor](#link-monitor)
-  * [unlink](#unlink)
-
-    * [unlink service](#unlink-service)
-    * [unlink monitor](#unlink-monitor)
-  * [start](#start)
-
-    * [start service](#start-service)
-    * [start listener](#start-listener)
-    * [start monitor](#start-monitor)
-    * [start services](#start-services)
-  * [stop](#stop)
-
-    * [stop service](#stop-service)
-    * [stop listener](#stop-listener)
-    * [stop monitor](#stop-monitor)
-    * [stop services](#stop-services)
-  * [alter](#alter)
-
-    * [alter server](#alter-server)
-    * [alter monitor](#alter-monitor)
-    * [alter service](#alter-service)
-    * [alter service-filters](#alter-service-filters)
-    * [alter filter](#alter-filter)
-    * [alter listener](#alter-listener)
-    * [alter logging](#alter-logging)
-    * [alter maxscale](#alter-maxscale)
-    * [alter user](#alter-user)
-    * [alter session](#alter-session)
-    * [alter session-filters](#alter-session-filters)
-  * [rotate](#rotate)
-
-    * [rotate logs](#rotate-logs)
-  * [reload](#reload)
-
-    * [reload service](#reload-service)
-  * [call](#call)
-
-    * [call command](#call-command)
-  * [cluster](#cluster)
-
-    * [cluster diff](#cluster-diff)
-    * [cluster sync](#cluster-sync)
-  * [api](#api)
-
-    * [api get](#api-get)
-    * [api post](#api-post)
-    * [api patch](#api-patch)
-  * [classify](#classify)
-
-
-
-
-# Limitations
-
+## Limitations
 
 * MaxCtrl does not work when used from a SystemD unit with MemoryDenyWriteExecute=true.
 
+## .maxctrl.cnf
 
-# .maxctrl.cnf
-
-
-If the file `~/.maxctrl.cnf` exists, maxctrl will use any values in the
-section `[maxctrl]` as defaults for command line arguments. For instance,
-to avoid having to specify the user and password on the command line,
-create the file `.maxctrl.cnf` in your home directory, with the following
+If the file `~/.maxctrl.cnf` exists, maxctrl will use any values in the\
+section `[maxctrl]` as defaults for command line arguments. For instance,\
+to avoid having to specify the user and password on the command line,\
+create the file `.maxctrl.cnf` in your home directory, with the following\
 content:
-
-
 
 ```
 [maxctrl]
@@ -175,26 +136,18 @@ u = my-name
 p = my-password
 ```
 
-
-
-Note that all access rights to the file must be removed from everybody else
-but the owner. MaxCtrl refuses to use the file unless the rights have been
+Note that all access rights to the file must be removed from everybody else\
+but the owner. MaxCtrl refuses to use the file unless the rights have been\
 removed.
 
-
-Another file from which to read the defaults can be specified with the `-c`
+Another file from which to read the defaults can be specified with the `-c`\
 flag.
 
+## Commands
 
-# Commands
+### list
 
-
-## list
-
-
-### list servers
-
-
+#### list servers
 
 ```
 Usage: list servers
@@ -234,11 +187,7 @@ List all servers in MaxScale.
   GTID        | Current value of @@gtid_current_pos
 ```
 
-
-
-### list services
-
-
+#### list services
 
 ```
 Usage: list services
@@ -277,11 +226,7 @@ List all services and the servers they use.
   Targets           | Targets that the service uses
 ```
 
-
-
-### list listeners
-
-
+#### list listeners
 
 ```
 Usage: list listeners [service]
@@ -320,11 +265,7 @@ List listeners of all services. If a service is given, only listeners for that s
   Service | Service that this listener points to
 ```
 
-
-
-### list monitors
-
-
+#### list monitors
 
 ```
 Usage: list monitors
@@ -361,11 +302,7 @@ List all monitors in MaxScale.
   Servers | The servers that this monitor monitors
 ```
 
-
-
-### list sessions
-
-
+#### list sessions
 
 ```
 Usage: list sessions
@@ -406,11 +343,7 @@ List all client sessions.
   Service   | The service where the session connected
 ```
 
-
-
-### list filters
-
-
+#### list filters
 
 ```
 Usage: list filters
@@ -447,11 +380,7 @@ List all filters in MaxScale.
   Module  | The module that the filter uses
 ```
 
-
-
-### list modules
-
-
+#### list modules
 
 ```
 Usage: list modules
@@ -488,11 +417,7 @@ List all currently loaded modules.
   Version | Module version
 ```
 
-
-
-### list threads
-
-
+#### list threads
 
 ```
 Usage: list threads
@@ -532,11 +457,7 @@ List all worker threads.
   Load (1h)   | Load percentage over the last hour
 ```
 
-
-
-### list users
-
-
+#### list users
 
 ```
 Usage: list users
@@ -573,11 +494,7 @@ List network the users that can be used to connect to the MaxScale REST API.
   Privileges | User privileges
 ```
 
-
-
-### list commands
-
-
+#### list commands
 
 ```
 Usage: list commands
@@ -613,11 +530,7 @@ List all available module commands.
   Commands | Available commands
 ```
 
-
-
-### list queries
-
-
+#### list queries
 
 ```
 Usage: list queries
@@ -650,14 +563,9 @@ Options:
 List all active queries being executed through MaxScale. In order for this command to work, MaxScale must be configured with 'retain_last_statements' set to a value greater than 0.
 ```
 
+### show
 
-
-## show
-
-
-### show server
-
-
+#### show server
 
 ```
 Usage: show server <server>
@@ -708,11 +616,7 @@ Show detailed information about a server. The `Parameters` field contains the cu
   Parameters          | Server parameters
 ```
 
-
-
-### show servers
-
-
+#### show servers
 
 ```
 Usage: show servers
@@ -763,11 +667,7 @@ Show detailed information about all servers.
   Parameters          | Server parameters
 ```
 
-
-
-### show service
-
-
+#### show service
 
 ```
 Usage: show service <service>
@@ -814,11 +714,7 @@ Show detailed information about a service. The `Parameters` field contains the c
   Router Diagnostics  | Diagnostics provided by the router module
 ```
 
-
-
-### show services
-
-
+#### show services
 
 ```
 Usage: show services
@@ -865,11 +761,7 @@ Show detailed information about all services.
   Router Diagnostics  | Diagnostics provided by the router module
 ```
 
-
-
-### show monitor
-
-
+#### show monitor
 
 ```
 Usage: show monitor <monitor>
@@ -909,11 +801,7 @@ Show detailed information about a monitor. The `Parameters` field contains the c
   Monitor Diagnostics | Diagnostics provided by the monitor module
 ```
 
-
-
-### show monitors
-
-
+#### show monitors
 
 ```
 Usage: show monitors
@@ -953,11 +841,7 @@ Show detailed information about all monitors.
   Monitor Diagnostics | Diagnostics provided by the monitor module
 ```
 
-
-
-### show session
-
-
+#### show session
 
 ```
 Usage: show session <session>
@@ -1008,11 +892,7 @@ The `Connections` field lists the servers to which the session is connected and 
   Log               | Per-session log messages
 ```
 
-
-
-### show sessions
-
-
+#### show sessions
 
 ```
 Usage: show sessions
@@ -1061,11 +941,7 @@ Show detailed information about all sessions. See `--help show session` for more
   Log               | Per-session log messages
 ```
 
-
-
-### show filter
-
-
+#### show filter
 
 ```
 Usage: show filter <filter>
@@ -1104,11 +980,7 @@ The list of services that use this filter is show in the `Services` field.
   Diagnostics | Filter diagnostics
 ```
 
-
-
-### show filters
-
-
+#### show filters
 
 ```
 Usage: show filters
@@ -1147,11 +1019,7 @@ Show detailed information of all filters.
   Diagnostics | Filter diagnostics
 ```
 
-
-
-### show listener
-
-
+#### show listener
 
 ```
 Usage: show listener <listener>
@@ -1188,11 +1056,7 @@ Options:
                                                            Parameters | Listener parameters
 ```
 
-
-
-### show listeners
-
-
+#### show listeners
 
 ```
 Usage: show filters
@@ -1231,11 +1095,7 @@ Show detailed information of all filters.
   Diagnostics | Filter diagnostics
 ```
 
-
-
-### show module
-
-
+#### show module
 
 ```
 Usage: show module <module>
@@ -1276,11 +1136,7 @@ This command shows all available parameters as well as detailed version informat
   Commands    | Commands that the module provides
 ```
 
-
-
-### show modules
-
-
+#### show modules
 
 ```
 Usage: show modules
@@ -1321,11 +1177,7 @@ Displays detailed information about all modules.
   Commands    | Commands that the module provides
 ```
 
-
-
-### show maxscale
-
-
+#### show maxscale
 
 ```
 Usage: show maxscale
@@ -1366,11 +1218,7 @@ See `--help alter maxscale` for more details about altering MaxScale parameters.
   Parameters   | Global MaxScale parameters
 ```
 
-
-
-### show thread
-
-
+#### show thread
 
 ```
 Usage: show thread <thread>
@@ -1424,11 +1272,7 @@ Show detailed information about a worker thread.
   QC cache evictions     | How many times a query classification result was evicted from the query classification cache
 ```
 
-
-
-### show threads
-
-
+#### show threads
 
 ```
 Usage: show threads
@@ -1482,11 +1326,7 @@ Show detailed information about all worker threads.
   QC cache evictions     | How many times a query classification result was evicted from the query classification cache
 ```
 
-
-
-### show logging
-
-
+#### show logging
 
 ```
 Usage: show logging
@@ -1523,11 +1363,7 @@ See `--help alter logging` for more details about altering logging parameters.
   Parameters         | Logging parameters
 ```
 
-
-
-### show commands
-
-
+#### show commands
 
 ```
 Usage: show commands <module>
@@ -1564,11 +1400,7 @@ This command shows the parameters the command expects with the parameter descrip
   Descriptions | Parameter descriptions
 ```
 
-
-
-### show qc_cache
-
-
+#### show qc\_cache
 
 ```
 Usage: show qc_cache
@@ -1598,11 +1430,7 @@ Options:
 Show contents (statement and hits) of query classifier cache.
 ```
 
-
-
-### show dbusers
-
-
+#### show dbusers
 
 ```
 Usage: show dbusers <service>
@@ -1644,14 +1472,9 @@ Show information about the database users of the service.
   Role   | The default role for this user
 ```
 
+### set
 
-
-## set
-
-
-### set server
-
-
+#### set server
 
 ```
 Usage: set server <server> <state>
@@ -1688,14 +1511,9 @@ When a server is set into the `drain` state, no new connections to it are allowe
 To forcefully close all connections to a server, use `set server <name> maintenance --force`
 ```
 
+### clear
 
-
-## clear
-
-
-### clear server
-
-
+#### clear server
 
 ```
 Usage: clear server <server> <state>
@@ -1725,14 +1543,9 @@ Options:
 This command clears a server state set by the `set server <server> <state>` command
 ```
 
+### drain
 
-
-## drain
-
-
-### drain server
-
-
+#### drain server
 
 ```
 Usage: drain server <server>
@@ -1767,14 +1580,9 @@ This command drains the server of connections by first removing it from all serv
 Warning: This command is not safe to interrupt. If interrupted, the servers might not be added back to the service. For a better alternative, use `set server <server> drain`. This command has been deprecated in MaxScale 6.0.
 ```
 
+### enable
 
-
-## enable
-
-
-### enable log-priority
-
-
+#### enable log-priority
 
 ```
 Usage: enable log-priority <log>
@@ -1804,14 +1612,9 @@ Options:
 The `debug` log priority is only available for debug builds of MaxScale.
 ```
 
+### disable
 
-
-## disable
-
-
-### disable log-priority
-
-
+#### disable log-priority
 
 ```
 Usage: disable log-priority <log>
@@ -1841,14 +1644,9 @@ Options:
 The `debug` log priority is only available for debug builds of MaxScale.
 ```
 
+### create
 
-
-## create
-
-
-### create server
-
-
+#### create server
 
 ```
 Usage: create server <name> <host|socket> [port] [params...]
@@ -1895,11 +1693,7 @@ The created server will not be used by any services or monitors unless the --ser
 The recommended way of declaring parameters is with the new `key=value` syntax added in MaxScale 6.2.0. Note that for some parameters (e.g. `extra_port` and `proxy_protocol`) this is the only way to pass them.
 ```
 
-
-
-### create monitor
-
-
+#### create monitor
 
 ```
 Usage: create monitor <name> <module> [params...]
@@ -1934,11 +1728,7 @@ Options:
 The list of servers given with the --servers option should not contain any servers that are already monitored by another monitor. The last argument to this command is a list of key=value parameters given as the monitor parameters.
 ```
 
-
-
-### create service
-
-
+#### create service
 
 ```
 Usage: service <name> <router> <params...>
@@ -1976,11 +1766,7 @@ The last argument to this command is a list of key=value parameters given as the
 Note that the `user` and `password` parameters must be defined.
 ```
 
-
-
-### create filter
-
-
+#### create filter
 
 ```
 Usage: filter <name> <module> [params...]
@@ -2010,11 +1796,7 @@ Options:
 The last argument to this command is a list of key=value parameters given as the filter parameters.
 ```
 
-
-
-### create listener
-
-
+#### create listener
 
 ```
 Usage: create listener <service> <name> <port> [params...]
@@ -2058,11 +1840,7 @@ Options:
 The new listener will be taken into use immediately. The last argument to this command is a list of key=value parameters given as the listener parameters. These parameters override any parameters set via command line options: e.g. using `protocol=mariadb` will override the `--protocol=cdc` option.
 ```
 
-
-
-### create user
-
-
+#### create user
 
 ```
 Usage: create user <name> <password>
@@ -2095,11 +1873,7 @@ Options:
 By default the created user will have read-only privileges. To make the user an administrative user, use the `--type=admin` option. Basic users can only perform `list` and `show` commands.
 ```
 
-
-
-### create report
-
-
+#### create report
 
 ```
 Usage: create report <file>
@@ -2129,14 +1903,9 @@ Options:
 The generated report contains the state of all the objects in MaxScale as well as all other required information needed to diagnose problems.
 ```
 
+### destroy
 
-
-## destroy
-
-
-### destroy server
-
-
+#### destroy server
 
 ```
 Usage: destroy server <name>
@@ -2169,11 +1938,7 @@ Options:
 The server must be unlinked from all services and monitor before it can be destroyed.
 ```
 
-
-
-### destroy monitor
-
-
+#### destroy monitor
 
 ```
 Usage: destroy monitor <name>
@@ -2206,11 +1971,7 @@ Options:
 The monitor must be unlinked from all servers before it can be destroyed.
 ```
 
-
-
-### destroy listener
-
-
+#### destroy listener
 
 ```
 Usage: destroy listener { <listener> | <service> <listener> }
@@ -2240,11 +2001,7 @@ Options:
 Destroying a listener closes the listening socket, opening it up for immediate reuse. If only one argument is given and it is the name of a listener, it is unconditionally destroyed. If two arguments are given and they are a service and a listener, the listener is only destroyed if it is for the given service.
 ```
 
-
-
-### destroy service
-
-
+#### destroy service
 
 ```
 Usage: destroy service <name>
@@ -2277,11 +2034,7 @@ Options:
 The service must be unlinked from all servers and filters. All listeners for the service must be destroyed before the service itself can be destroyed.
 ```
 
-
-
-### destroy filter
-
-
+#### destroy filter
 
 ```
 Usage: destroy filter <name>
@@ -2314,11 +2067,7 @@ Options:
 The filter must not be used by any service when it is destroyed.
 ```
 
-
-
-### destroy user
-
-
+#### destroy user
 
 ```
 Usage: destroy user <name>
@@ -2348,14 +2097,9 @@ Options:
 The last remaining administrative user cannot be removed. Create a replacement administrative user before attempting to remove the last administrative user.
 ```
 
+### link
 
-
-## link
-
-
-### link service
-
-
+#### link service
 
 ```
 Usage: link service <name> <target...>
@@ -2385,11 +2129,7 @@ Options:
 This command links targets to a service, making them available for any connections that use the service. A target can be a server, another service or a cluster (i.e. a monitor). Before a server is linked to a service, it should be linked to a monitor so that the server state is up to date. Newly linked targets are only available to new connections, existing connections will use the old list of targets. If a monitor (a cluster of servers) is linked to a service, the service must not have any other targets linked to it.
 ```
 
-
-
-### link monitor
-
-
+#### link monitor
 
 ```
 Usage: link monitor <name> <server...>
@@ -2419,14 +2159,9 @@ Options:
 Linking a server to a monitor will add it to the list of servers that are monitored by that monitor. A server can be monitored by only one monitor at a time.
 ```
 
+### unlink
 
-
-## unlink
-
-
-### unlink service
-
-
+#### unlink service
 
 ```
 Usage: unlink service <name> <target...>
@@ -2456,11 +2191,7 @@ Options:
 This command unlinks targets from a service, removing them from the list of available targets for that service. New connections to the service will not use the unlinked targets but existing connections can still use the targets. A target can be a server, another service or a cluster (a monitor).
 ```
 
-
-
-### unlink monitor
-
-
+#### unlink monitor
 
 ```
 Usage: unlink monitor <name> <server...>
@@ -2490,14 +2221,9 @@ Options:
 This command unlinks servers from a monitor, removing them from the list of monitored servers. The servers will be left in their current state when they are unlinked from a monitor.
 ```
 
+### start
 
-
-## start
-
-
-### start service
-
-
+#### start service
 
 ```
 Usage: start service <name>
@@ -2527,11 +2253,7 @@ Options:
 This starts a service stopped by `stop service <name>`
 ```
 
-
-
-### start listener
-
-
+#### start listener
 
 ```
 Usage: start listener <name>
@@ -2561,11 +2283,7 @@ Options:
 This starts a listener stopped by `stop listener <name>`
 ```
 
-
-
-### start monitor
-
-
+#### start monitor
 
 ```
 Usage: start monitor <name>
@@ -2595,11 +2313,7 @@ Options:
 This starts a monitor stopped by `stop monitor <name>`
 ```
 
-
-
-### start services
-
-
+#### start services
 
 ```
 Usage: start [services|maxscale]
@@ -2629,14 +2343,9 @@ Options:
 This command will execute the `start service` command for all services in MaxScale.
 ```
 
+### stop
 
-
-## stop
-
-
-### stop service
-
-
+#### stop service
 
 ```
 Usage: stop service <name>
@@ -2669,11 +2378,7 @@ Options:
 Stopping a service will prevent all the listeners for that service from accepting new connections. Existing connections will still be handled normally until they are closed.
 ```
 
-
-
-### stop listener
-
-
+#### stop listener
 
 ```
 Usage: stop listener <name>
@@ -2706,11 +2411,7 @@ Options:
 Stopping a listener will prevent it from accepting new connections. Existing connections will still be handled normally until they are closed.
 ```
 
-
-
-### stop monitor
-
-
+#### stop monitor
 
 ```
 Usage: stop monitor <name>
@@ -2740,11 +2441,7 @@ Options:
 Stopping a monitor will pause the monitoring of the servers. This can be used to manually control server states with the `set server` command.
 ```
 
-
-
-### stop services
-
-
+#### stop services
 
 ```
 Usage: stop [services|maxscale]
@@ -2777,14 +2474,9 @@ Options:
 This command will execute the `stop service` command for all services in MaxScale.
 ```
 
+### alter
 
-
-## alter
-
-
-### alter server
-
-
+#### alter server
 
 ```
 Usage: alter server <server> <key=value> ...
@@ -2816,11 +2508,7 @@ The parameters should be given in the `key=value` format. This command also supp
 of passing parameters as `key value` pairs but the use of this is not recommended.
 ```
 
-
-
-### alter monitor
-
-
+#### alter monitor
 
 ```
 Usage: alter monitor <monitor> <key=value> ...
@@ -2852,11 +2540,7 @@ The parameters should be given in the `key=value` format. This command also supp
 of passing parameters as `key value` pairs but the use of this is not recommended.
 ```
 
-
-
-### alter service
-
-
+#### alter service
 
 ```
 Usage: alter service <service> <key=value> ...
@@ -2902,11 +2586,7 @@ The parameters should be given in the `key=value` format. This command also supp
 of passing parameters as `key value` pairs but the use of this is not recommended.
 ```
 
-
-
-### alter service-filters
-
-
+#### alter service-filters
 
 ```
 Usage: alter service-filters <service> [filters...]
@@ -2941,11 +2621,7 @@ The parameters should be given in the `key=value` format. This command also supp
 of passing parameters as `key value` pairs but the use of this is not recommended.
 ```
 
-
-
-### alter filter
-
-
+#### alter filter
 
 ```
 Usage: alter filter <filter> <key=value> ...
@@ -2981,11 +2657,7 @@ Note: To pass options with dashes in them, surround them in both single and doub
       maxctrl alter filter my-namedserverfilter target01 '"->master"'
 ```
 
-
-
-### alter listener
-
-
+#### alter listener
 
 ```
 Usage: alter listener <listener> <key=value> ...
@@ -3017,11 +2689,7 @@ The parameters should be given in the `key=value` format. This command also supp
 of passing parameters as `key value` pairs but the use of this is not recommended.
 ```
 
-
-
-### alter logging
-
-
+#### alter logging
 
 ```
 Usage: alter logging <key=value> ...
@@ -3053,11 +2721,7 @@ The parameters should be given in the `key=value` format. This command also supp
 of passing parameters as `key value` pairs but the use of this is not recommended.
 ```
 
-
-
-### alter maxscale
-
-
+#### alter maxscale
 
 ```
 Usage: alter maxscale <key=value> ...
@@ -3104,11 +2768,7 @@ The parameters should be given in the `key=value` format. This command also supp
 of passing parameters as `key value` pairs but the use of this is not recommended.
 ```
 
-
-
-### alter user
-
-
+#### alter user
 
 ```
 Usage: alter user <name> <password>
@@ -3138,11 +2798,7 @@ Options:
 Changes the password for a user. To change the user type, destroy the user and then create it again.
 ```
 
-
-
-### alter session
-
-
+#### alter session
 
 ```
 Usage: alter session <session> <key=value> ...
@@ -3174,11 +2830,7 @@ The parameters should be given in the `key=value` format. This command also supp
 of passing parameters as `key value` pairs but the use of this is not recommended.
 ```
 
-
-
-### alter session-filters
-
-
+#### alter session-filters
 
 ```
 Usage: alter session-filters <session> [filters...]
@@ -3208,14 +2860,9 @@ Options:
 The order of the filters given as the second parameter will also be the order in which queries pass through the filter chain. If no filters are given, all existing filters are removed from the session. The syntax is similar to `alter service-filters`.
 ```
 
+### rotate
 
-
-## rotate
-
-
-### rotate logs
-
-
+#### rotate logs
 
 ```
 Usage: rotate logs
@@ -3245,14 +2892,9 @@ Options:
 This command is intended to be used with the `logrotate` command.
 ```
 
+### reload
 
-
-## reload
-
-
-### reload service
-
-
+#### reload service
 
 ```
 Usage: reload service <service>
@@ -3280,14 +2922,9 @@ Options:
       --help     Show help  [boolean]
 ```
 
+### call
 
-
-## call
-
-
-### call command
-
-
+#### call command
 
 ```
 Usage: call command <module> <command> [params...]
@@ -3317,14 +2954,9 @@ Options:
 To inspect the list of module commands, execute `list commands`
 ```
 
+### cluster
 
-
-## cluster
-
-
-### cluster diff
-
-
+#### cluster diff
 
 ```
 Usage: cluster diff <target>
@@ -3354,11 +2986,7 @@ Options:
 The list of host servers is controlled with the --hosts option. The target server should not be in the host list. Value of <target> must be in HOST:PORT format
 ```
 
-
-
-### cluster sync
-
-
+#### cluster sync
 
 ```
 Usage: cluster sync <target>
@@ -3390,14 +3018,9 @@ This command will alter all MaxScale instances given in the --hosts option to re
 Note: New objects created by `cluster sync` will have a placeholder value and must be manually updated. Passwords for existing objects will not be updated by `cluster sync` and must also be manually updated.
 ```
 
+### api
 
-
-## api
-
-
-### api get
-
-
+#### api get
 
 ```
 Usage: get <resource> [path]
@@ -3431,11 +3054,7 @@ Options:
 Perform a raw REST API call. The path definition uses JavaScript syntax to extract values. For example, the following command extracts all server states as an array of JSON values: maxctrl api get servers data[].attributes.state
 ```
 
-
-
-### api post
-
-
+#### api post
 
 ```
 Usage: post <resource> <value>
@@ -3469,11 +3088,7 @@ Options:
 Perform a raw REST API call. The provided value is passed as-is to the REST API after building it with JSON.parse
 ```
 
-
-
-### api patch
-
-
+#### api patch
 
 ```
 Usage: patch <resource> [path]
@@ -3507,12 +3122,8 @@ Options:
 Perform a raw REST API call. The provided value is passed as-is to the REST API after building it with JSON.parse
 ```
 
-
-
-## classify
-
+### classify
 
 CC BY-SA / Gnu FDL
-
 
 {% @marketo/form formId="4316" %}

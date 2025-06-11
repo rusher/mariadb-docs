@@ -1,27 +1,17 @@
-
-# MaxScale 21.06 MariaDB MaxScale 6.2.0 Release Notes -- 2021-11-26
-
 # MariaDB MaxScale 6.2.0 Release Notes -- 2021-11-26
-
 
 Release 6.2.0 is a GA release.
 
-
-This document describes the changes in release 6.2.0, when compared to the
+This document describes the changes in release 6.2.0, when compared to the\
 previous release in the same series.
 
-
-If you are upgrading from an older major version of MaxScale, please read the
-[upgrading document](https://mariadb.com/kb/Upgrading/Upgrading-To-MaxScale-6) for
+If you are upgrading from an older major version of MaxScale, please read the[upgrading document](https://mariadb.com/kb/Upgrading/Upgrading-To-MaxScale-6) for\
 this MaxScale version.
 
-
-For any problems you encounter, please consider submitting a bug
+For any problems you encounter, please consider submitting a bug\
 report on [our Jira](https://jira.mariadb.org/projects/MXS).
 
-
-## New Features
-
+### New Features
 
 * [MXS-3813](https://jira.mariadb.org/browse/MXS-3813) Support PS direct execution in hintfilter
 * [MXS-3771](https://jira.mariadb.org/browse/MXS-3771) Add row count to qlafilter
@@ -39,19 +29,17 @@ report on [our Jira](https://jira.mariadb.org/projects/MXS).
 * [MXS-3635](https://jira.mariadb.org/browse/MXS-3635) Quicker access to "Place Schema in Editor"
 * [MXS-3634](https://jira.mariadb.org/browse/MXS-3634) Add DDL editor
 * [MXS-3632](https://jira.mariadb.org/browse/MXS-3632) Add right click context menu to schema tree
-* [MXS-3613](https://jira.mariadb.org/browse/MXS-3613) Support PS with metadata skip (i.e. MARIADB_CLIENT_CACHE_METADATA)
+* [MXS-3613](https://jira.mariadb.org/browse/MXS-3613) Support PS with metadata skip (i.e. MARIADB\_CLIENT\_CACHE\_METADATA)
 * [MXS-3526](https://jira.mariadb.org/browse/MXS-3526) GSSAPI authenticator supports only one principal and only the default location for the keytab
 * [MXS-3475](https://jira.mariadb.org/browse/MXS-3475) Extend PAM support to include Group Mapping
 * [MXS-3453](https://jira.mariadb.org/browse/MXS-3453) Add counter for failed authentication attempts
 * [MXS-3363](https://jira.mariadb.org/browse/MXS-3363) Make tee filter also syncronously
-* [MXS-3281](https://jira.mariadb.org/browse/MXS-3281) r/w split slave_selection_criteria should have none
+* [MXS-3281](https://jira.mariadb.org/browse/MXS-3281) r/w split slave\_selection\_criteria should have none
 * [MXS-3037](https://jira.mariadb.org/browse/MXS-3037) show detail processlist like at mariadb
 * [MXS-2074](https://jira.mariadb.org/browse/MXS-2074) Handle prepared statements in NamedServerFilter
 * [MXS-1892](https://jira.mariadb.org/browse/MXS-1892) Support deprecate eof
 
-
-## Bug fixes
-
+### Bug fixes
 
 * [MXS-3883](https://jira.mariadb.org/browse/MXS-3883) nosqlprotocol parameters are not serialized correctly
 * [MXS-3881](https://jira.mariadb.org/browse/MXS-3881) Maxscale killing connection to backend node when load data infile is run with transaction replay
@@ -64,14 +52,14 @@ report on [our Jira](https://jira.mariadb.org/projects/MXS).
 * [MXS-3846](https://jira.mariadb.org/browse/MXS-3846) debug=enable-statement-logging doesn't work with mxq::MariaDB
 * [MXS-3845](https://jira.mariadb.org/browse/MXS-3845) Sending binlog events is inefficient
 * [MXS-3838](https://jira.mariadb.org/browse/MXS-3838) Add reconnect functionality to the GUI
-* [MXS-3836](https://jira.mariadb.org/browse/MXS-3836) refresh_databases does nothing
+* [MXS-3836](https://jira.mariadb.org/browse/MXS-3836) refresh\_databases does nothing
 * [MXS-3835](https://jira.mariadb.org/browse/MXS-3835) Timeout for connection dialog in the GUI is not parsed as number
 * [MXS-3834](https://jira.mariadb.org/browse/MXS-3834) SQL API has no reconnect functionality
 * [MXS-3833](https://jira.mariadb.org/browse/MXS-3833) Query editor timeout is too aggressive
 * [MXS-3824](https://jira.mariadb.org/browse/MXS-3824) Allow symbolic link for path to directory /usr/share/maxscale/gui
 * [MXS-3815](https://jira.mariadb.org/browse/MXS-3815) maxscale crash
-* [MXS-3814](https://jira.mariadb.org/browse/MXS-3814) maxscale rpl_state is empty
-* [MXS-3809](https://jira.mariadb.org/browse/MXS-3809) When MariaDBMonitor acquires lock majority, the log message gives the impression that auto_failover is enabled even when it is not configured
+* [MXS-3814](https://jira.mariadb.org/browse/MXS-3814) maxscale rpl\_state is empty
+* [MXS-3809](https://jira.mariadb.org/browse/MXS-3809) When MariaDBMonitor acquires lock majority, the log message gives the impression that auto\_failover is enabled even when it is not configured
 * [MXS-3800](https://jira.mariadb.org/browse/MXS-3800) Not enough information in server state change messages
 * [MXS-3793](https://jira.mariadb.org/browse/MXS-3793) Race condition in GCUpdater shutdown
 * [MXS-3778](https://jira.mariadb.org/browse/MXS-3778) MaxScale crashes when using Cache filter
@@ -79,9 +67,9 @@ report on [our Jira](https://jira.mariadb.org/projects/MXS).
 * [MXS-3772](https://jira.mariadb.org/browse/MXS-3772) Qlafilter message timing is inconsistent
 * [MXS-3770](https://jira.mariadb.org/browse/MXS-3770) Bundle Connector-C plugins with MaxScale
 * [MXS-3736](https://jira.mariadb.org/browse/MXS-3736) Crash with kafkaimporter and no servers
-* [MXS-3730](https://jira.mariadb.org/browse/MXS-3730) idle_session_pool_time=0s doesn't immediately pool idle connections
-* [MXS-3720](https://jira.mariadb.org/browse/MXS-3720) idle_session_pool_time should support prepared statements
-* [MXS-3717](https://jira.mariadb.org/browse/MXS-3717) Crash on object type change with config_sync_cluster
+* [MXS-3730](https://jira.mariadb.org/browse/MXS-3730) idle\_session\_pool\_time=0s doesn't immediately pool idle connections
+* [MXS-3720](https://jira.mariadb.org/browse/MXS-3720) idle\_session\_pool\_time should support prepared statements
+* [MXS-3717](https://jira.mariadb.org/browse/MXS-3717) Crash on object type change with config\_sync\_cluster
 * [MXS-3711](https://jira.mariadb.org/browse/MXS-3711) Qlafilter cannot be modified at runtime
 * [MXS-3710](https://jira.mariadb.org/browse/MXS-3710) Namedserverfilter cannot be modified at runtime
 * [MXS-3709](https://jira.mariadb.org/browse/MXS-3709) Masking filter cannot be modified at runtime
@@ -93,47 +81,37 @@ report on [our Jira](https://jira.mariadb.org/projects/MXS).
 * [MXS-3685](https://jira.mariadb.org/browse/MXS-3685) nosqlprotocol doesn't start TLS session
 * [MXS-3672](https://jira.mariadb.org/browse/MXS-3672) MaxCtrl output is not very readable
 * [MXS-3630](https://jira.mariadb.org/browse/MXS-3630) Update user accounts when backend login fails
-* [MXS-3618](https://jira.mariadb.org/browse/MXS-3618) config_sync_cluster change detection is inadequate
+* [MXS-3618](https://jira.mariadb.org/browse/MXS-3618) config\_sync\_cluster change detection is inadequate
 * [MXS-3594](https://jira.mariadb.org/browse/MXS-3594) Filters can be altered but no filter declares parameters as alterable
 * [MXS-3580](https://jira.mariadb.org/browse/MXS-3580) Avrorouter should store full GTID coordinates
 * [MXS-3514](https://jira.mariadb.org/browse/MXS-3514) Speed up special query parsing (pcre2)
 * [MXS-3498](https://jira.mariadb.org/browse/MXS-3498) Improve Multistatement detect performance
-* [MXS-3458](https://jira.mariadb.org/browse/MXS-3458) Execution of PS fails when strict_sp_calls is enabled
-* [MXS-3359](https://jira.mariadb.org/browse/MXS-3359) QLA filter append= should default to true, at least when using log_type=unified
+* [MXS-3458](https://jira.mariadb.org/browse/MXS-3458) Execution of PS fails when strict\_sp\_calls is enabled
+* [MXS-3359](https://jira.mariadb.org/browse/MXS-3359) QLA filter append= should default to true, at least when using log\_type=unified
 * [MXS-3353](https://jira.mariadb.org/browse/MXS-3353) Tee filter loses statements if branch target is slower
 * [MXS-3308](https://jira.mariadb.org/browse/MXS-3308) Passing options in interactive mode returns an empty error
 * [MXS-2992](https://jira.mariadb.org/browse/MXS-2992) ALTER TABLE statements not working with masking filter
 
+### Known Issues and Limitations
 
-## Known Issues and Limitations
-
-
-There are some limitations and known issues within this version of MaxScale.
+There are some limitations and known issues within this version of MaxScale.\
 For more information, please refer to the [Limitations](../mariadb-maxscale-21-06-about/mariadb-maxscale-2106-maxscale-2106-limitations-and-known-issues-within-mariadb-maxscale.md) document.
 
-
-## Packaging
-
+### Packaging
 
 RPM and Debian packages are provided for the supported Linux distributions.
 
-
 Packages can be downloaded [here](https://mariadb.com/downloads/#mariadb_platform-mariadb_maxscale).
 
+### Source Code
 
-## Source Code
-
-
-The source code of MaxScale is tagged at GitHub with a tag, which is identical
-with the version of MaxScale. For instance, the tag of version X.Y.Z of MaxScale
-is `maxscale-X.Y.Z`. Further, the default branch is always the latest GA version
+The source code of MaxScale is tagged at GitHub with a tag, which is identical\
+with the version of MaxScale. For instance, the tag of version X.Y.Z of MaxScale\
+is `maxscale-X.Y.Z`. Further, the default branch is always the latest GA version\
 of MaxScale.
-
 
 The source code is available [here](https://github.com/mariadb-corporation/MaxScale).
 
-
 CC BY-SA / Gnu FDL
-
 
 {% @marketo/form formId="4316" %}

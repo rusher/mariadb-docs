@@ -1,30 +1,20 @@
-
-# MaxScale 21.06 MariaDB MaxScale 6.1.4 Release Notes -- 2021-10-18
-
 # MariaDB MaxScale 6.1.4 Release Notes -- 2021-10-18
-
 
 Release 6.1.4 is a GA release.
 
-
-This document describes the changes in release 6.1.4, when compared to the
+This document describes the changes in release 6.1.4, when compared to the\
 previous release in the same series.
 
-
-If you are upgrading from an older major version of MaxScale, please read the
-[upgrading document](https://mariadb.com/kb/Upgrading/Upgrading-To-MaxScale-6) for
+If you are upgrading from an older major version of MaxScale, please read the[upgrading document](https://mariadb.com/kb/Upgrading/Upgrading-To-MaxScale-6) for\
 this MaxScale version.
 
-
-For any problems you encounter, please consider submitting a bug
+For any problems you encounter, please consider submitting a bug\
 report on [our Jira](https://jira.mariadb.org/projects/MXS).
 
-
-## Bug fixes
-
+### Bug fixes
 
 * [MXS-3817](https://jira.mariadb.org/browse/MXS-3817) The location of the GUI web directory isn't documented
-* [MXS-3816](https://jira.mariadb.org/browse/MXS-3816) Queries are not always counted as reads with router_options=slave
+* [MXS-3816](https://jira.mariadb.org/browse/MXS-3816) Queries are not always counted as reads with router\_options=slave
 * [MXS-3812](https://jira.mariadb.org/browse/MXS-3812) Hints for prepared statements can be lost if a query fails
 * [MXS-3804](https://jira.mariadb.org/browse/MXS-3804) Result size accounting is wrong
 * [MXS-3803](https://jira.mariadb.org/browse/MXS-3803) Debug assertion in readwritesplit
@@ -33,40 +23,30 @@ report on [our Jira](https://jira.mariadb.org/projects/MXS).
 * [MXS-3798](https://jira.mariadb.org/browse/MXS-3798) Race condition in service destruction
 * [MXS-3791](https://jira.mariadb.org/browse/MXS-3791) Fix generix multistatement bug
 * [MXS-3790](https://jira.mariadb.org/browse/MXS-3790) Fix luafilter
-* [MXS-3788](https://jira.mariadb.org/browse/MXS-3788) Debug assertion with default config and transaction_replay=true
+* [MXS-3788](https://jira.mariadb.org/browse/MXS-3788) Debug assertion with default config and transaction\_replay=true
 * [MXS-3779](https://jira.mariadb.org/browse/MXS-3779) binlogrouter logs warnings for ignored SQL
 * [MXS-3768](https://jira.mariadb.org/browse/MXS-3768) Query Editor requires admin privileges
 
+### Known Issues and Limitations
 
-## Known Issues and Limitations
-
-
-There are some limitations and known issues within this version of MaxScale.
+There are some limitations and known issues within this version of MaxScale.\
 For more information, please refer to the [Limitations](../mariadb-maxscale-21-06-about/mariadb-maxscale-2106-maxscale-2106-limitations-and-known-issues-within-mariadb-maxscale.md) document.
 
-
-## Packaging
-
+### Packaging
 
 RPM and Debian packages are provided for the supported Linux distributions.
 
-
 Packages can be downloaded [here](https://mariadb.com/downloads/#mariadb_platform-mariadb_maxscale).
 
+### Source Code
 
-## Source Code
-
-
-The source code of MaxScale is tagged at GitHub with a tag, which is identical
-with the version of MaxScale. For instance, the tag of version X.Y.Z of MaxScale
-is `maxscale-X.Y.Z`. Further, the default branch is always the latest GA version
+The source code of MaxScale is tagged at GitHub with a tag, which is identical\
+with the version of MaxScale. For instance, the tag of version X.Y.Z of MaxScale\
+is `maxscale-X.Y.Z`. Further, the default branch is always the latest GA version\
 of MaxScale.
-
 
 The source code is available [here](https://github.com/mariadb-corporation/MaxScale).
 
-
 CC BY-SA / Gnu FDL
-
 
 {% @marketo/form formId="4316" %}

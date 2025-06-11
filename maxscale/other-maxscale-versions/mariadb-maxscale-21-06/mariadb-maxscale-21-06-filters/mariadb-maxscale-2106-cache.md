@@ -1,8 +1,4 @@
-# mariadb-maxscale-2106-cache
-
-## MaxScale 21.06 Cache
-
-## Cache
+# MaxScale 21.06 Cache
 
 This filter was introduced in MariaDB MaxScale 2.1.
 
@@ -1298,8 +1294,8 @@ the server there will be a network hop and often that network hop is, as far\
 as the performance goes, what costs the most.
 
 The presence of a shared cache _may_ provide a performance benefi&#x74;_&#x69;f the network between MaxScale and the storage server (memcached or_\
-_Redis) is faster than the network between MaxScale and the database_\
-_server,_ if the used SELECT statements are heavy (that is, take a significant\
+&#xNAN;_&#x52;edis) is faster than the network between MaxScale and the database_\
+&#xNAN;_&#x73;erver,_ if the used SELECT statements are heavy (that is, take a significant\
 amount of time) to process for the database server, or
 
 * if the presence of the cache reduces the overall load of an\
