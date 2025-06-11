@@ -1,8 +1,4 @@
-# mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-24020-release-notes-2024-02-29
-
-##
-
-## MariaDB MaxScale 24.02.0 Release Notes -- 2024-02-29
+# MariaDB MaxScale 24.02.0 Release Notes -- 2024-02-29
 
 Release 24.02.0 is a Beta release.
 

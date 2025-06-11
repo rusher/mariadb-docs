@@ -1,8 +1,4 @@
-# mariadb-maxscale-2106-maxscale-2106-changelog
-
-## MaxScale 21.06 Changelog
-
-## Changelog
+# MaxScale 21.06 Changelog
 
 **NOTE** MaxScale 6.4 was renamed to 21.06 in May 2024. Thus, what would have\
 been released as 6.4.16 in June, was released as 21.06.16. The purpose of this\

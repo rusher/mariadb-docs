@@ -1,6 +1,4 @@
-# mariadb-maxscale-2501-maxscale-2501-kafkacdc
-
-## MaxScale 25.01 KafkaCDC
+# MaxScale 25.01 KafkaCDC
 
 ## KafkaCDC
 

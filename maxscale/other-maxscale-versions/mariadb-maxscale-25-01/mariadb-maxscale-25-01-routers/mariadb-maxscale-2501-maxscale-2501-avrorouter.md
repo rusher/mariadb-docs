@@ -1,6 +1,6 @@
-# mariadb-maxscale-2501-maxscale-2501-avrorouter
+# MaxScale 25.01 Avrorouter
 
-## MaxScale 25.01 Avrorouter
+##
 
 ## Avrorouter
 

@@ -1,6 +1,4 @@
-# maxscale-14-contents
-
-## MaxScale 1.4 Contents
+# MaxScale 1.4 Contents
 
 [Search page for MaxScale Documentation](https://mariadb-corporation.github.io/MaxScale/Search/)
 

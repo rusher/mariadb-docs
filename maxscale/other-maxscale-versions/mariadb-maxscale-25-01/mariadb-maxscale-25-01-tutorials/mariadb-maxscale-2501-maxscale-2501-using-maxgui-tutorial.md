@@ -1,6 +1,4 @@
-# mariadb-maxscale-2501-maxscale-2501-using-maxgui-tutorial
-
-## MaxScale 25.01 Using MaxGUI Tutorial
+# MaxScale 25.01 Using MaxGUI Tutorial
 
 ## Using MaxGUI Tutorial
 
