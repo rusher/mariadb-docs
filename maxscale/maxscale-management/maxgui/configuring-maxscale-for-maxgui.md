@@ -1,6 +1,4 @@
-# configuring-maxscale-for-maxgui
-
-## Configuring MaxScale for MaxGUI
+# Configuring MaxScale for MaxGUI
 
 ## Overview
 

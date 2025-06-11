@@ -1,6 +1,4 @@
-# maxgui-setting-a-server-to-maintenance-mode-in-maxscale-with-maxgui
-
-## Setting a Server to Maintenance Mode in MaxScale with MaxGUI
+# Setting a Server to Maintenance Mode in MaxScale with MaxGUI
 
 ## Overview
 

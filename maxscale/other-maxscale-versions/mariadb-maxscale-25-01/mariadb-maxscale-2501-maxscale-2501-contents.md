@@ -1,34 +1,25 @@
-
 # MaxScale 25.01 Contents
 
-# Contents
+## Contents
 
-
-## About MariaDB MaxScale
-
+### About MariaDB MaxScale
 
 * [About MariaDB MaxScale](https://mariadb.com/kb/en/maxscale-25-01-about-mariadb-maxscale/)
 * [Changelog](mariadb-maxscale-2501-maxscale-2501-changelog.md)
 * [Limitations](https://mariadb.com/kb/en/maxscale-25-01-limitations-and-known-issues-within-mariadb-maxscale/)
 
-
-## Getting Started
-
+### Getting Started
 
 * [MariaDB MaxScale Installation Guide](mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-installation-guide.md)
 * [Building MariaDB MaxScale from Source Code](mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-building-mariadb-maxscale-from-source-code.md)
 * [Configuration Guide](mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * [MaxGUI](mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-maxgui-guide.md)
 
-
-## Upgrading MariaDB MaxScale
-
+### Upgrading MariaDB MaxScale
 
 * [Upgrading MaxScale](mariadb-maxscale-25-01-upgrading/mariadb-maxscale-2501-maxscale-2501-upgrading-mariadb-maxscale.md)
 
-
-## Reference
-
+### Reference
 
 * [Hardening](mariadb-maxscale-25-01-reference/mariadb-maxscale-2501-maxscale-2501-securing-your-maxscale-deployment.md)
 * [MaxCtrl - Command Line Admin Interface](mariadb-maxscale-25-01-reference/mariadb-maxscale-2501-maxscale-2501-maxctrl.md)
@@ -37,18 +28,13 @@
 * [Routing Hints](mariadb-maxscale-25-01-reference/mariadb-maxscale-2501-maxscale-2501-hint-syntax.md)
 * [Settings](mariadb-maxscale-25-01-reference/mariadb-maxscale-2501-maxscale-2501-configuration-settings.md)
 
-
-## Tutorials
-
+### Tutorials
 
 The main tutorial for MariaDB MaxScale consist of setting up MariaDB MaxScale for the environment you are using with either a connection-based or a read/write-based configuration.
 
-
 * [MariaDB MaxScale Tutorial](mariadb-maxscale-25-01-tutorials/mariadb-maxscale-2501-maxscale-2501-setting-up-mariadb-maxscale.md)
 
-
 These tutorials are for specific use cases and module combinations.
-
 
 * [Administration Tutorial](mariadb-maxscale-25-01-tutorials/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-administration-tutorial.md)
 * [Avro Router Tutorial](mariadb-maxscale-25-01-tutorials/mariadb-maxscale-2501-maxscale-2501-avrorouter-tutorial.md)
@@ -58,20 +44,15 @@ These tutorials are for specific use cases and module combinations.
 * [Read Write Splitting Tutorial](mariadb-maxscale-25-01-tutorials/mariadb-maxscale-2501-maxscale-2501-read-write-splitting-with-mariadb-maxscale.md)
 * [Simple Schema Sharding Tutorial](mariadb-maxscale-25-01-tutorials/mariadb-maxscale-2501-maxscale-2501-schemarouter-simple-sharding-with-two-servers.md)
 
-
 Here are tutorials on monitoring and managing MariaDB MaxScale in cluster environments.
-
 
 * [REST API Tutorial](mariadb-maxscale-25-01-tutorials/mariadb-maxscale-2501-maxscale-2501-rest-api-tutorial.md)
 
+### Routers
 
-## Routers
-
-
-The routing module is the core of a MariaDB MaxScale service. The router documentation
-contains all module specific configuration options and detailed explanations
+The routing module is the core of a MariaDB MaxScale service. The router documentation\
+contains all module specific configuration options and detailed explanations\
 of their use.
-
 
 * [Avrorouter](mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-avrorouter.md)
 * [Binlogrouter](mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-binlogrouter.md)
@@ -85,12 +66,9 @@ of their use.
 * [Schemarouter](mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-schemarouter.md)
 * [SmartRouter](mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-smartrouter.md)
 
-
-## Filters
-
+### Filters
 
 Here are detailed documents about the filters MariaDB MaxScale offers. They contain configuration guides and example use cases. Before reading these, you should have read the filter tutorial so that you know how they work and how to configure them.
-
 
 * [Binlog Filter](mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-binlog-filter.md)
 * [Cache](mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-cache.md)
@@ -113,56 +91,40 @@ Here are detailed documents about the filters MariaDB MaxScale offers. They cont
 * [Transaction Performance Monitoring Filter](mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-transaction-performance-monitoring-filter.md)
 * [Wcar](mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-workload-capture-and-replay.md)
 
-
-## Monitors
-
+### Monitors
 
 Common options for all monitor modules.
 
-
 * [Monitor Common](mariadb-maxscale-2501-maxscale-25-01-monitors/mariadb-maxscale-2501-maxscale-2501-common-monitor-parameters.md)
 
-
 Module specific documentation.
-
 
 * [Galera Monitor](mariadb-maxscale-2501-maxscale-25-01-monitors/mariadb-maxscale-2501-maxscale-2501-galera-monitor.md)
 * [MariaDB Monitor](mariadb-maxscale-2501-maxscale-25-01-monitors/mariadb-maxscale-2501-maxscale-2501-mariadb-monitor.md)
 
-
-## Protocols
-
+### Protocols
 
 Documentation for MaxScale protocol modules.
-
 
 * [MariaDB](mariadb-maxscale-25-01-protocols/mariadb-maxscale-2501-maxscale-2501-mariadb-protocol-module.md)
 * [Change Data Capture (CDC) Protocol](mariadb-maxscale-25-01-protocols/mariadb-maxscale-2501-maxscale-2501-change-data-capture-cdc-protocol.md)
 * [Change Data Capture (CDC) Users](mariadb-maxscale-25-01-protocols/mariadb-maxscale-2501-maxscale-2501-change-data-capture-cdc-users.md)
 * [NoSQL](mariadb-maxscale-25-01-protocols/mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md)
 
-
 The MaxScale CDC Connector provides a C++ API for consuming data from a CDC system.
-
 
 * [CDC Connector](mariadb-maxscale-25-01-connectors/mariadb-maxscale-2501-maxscale-2501-maxscale-cdc-connector.md)
 
+### Authenticators
 
-## Authenticators
-
-
-A short description of the authentication module type can be found in the
-[Authentication Modules](https://mariadb.com/kb/en/maxscale-25-01-authentication-modules/)
+A short description of the authentication module type can be found in the[Authentication Modules](https://mariadb.com/kb/en/maxscale-25-01-authentication-modules/)\
 document.
-
 
 * [MariaDB/MySQL Authenticator](mariadb-maxscale-25-01-authenticators/mariadb-maxscale-2501-maxscale-2501-mariadbmysql-authenticator.md)
 * [GSSAPI Authenticator](mariadb-maxscale-25-01-authenticators/mariadb-maxscale-2501-maxscale-2501-gssapi-client-authenticator.md)
 * [PAM Authenticator](mariadb-maxscale-25-01-authenticators/mariadb-maxscale-2501-maxscale-2501-pam-authenticator.md)
 * [Ed25519 Authenticator](mariadb-maxscale-25-01-authenticators/mariadb-maxscale-2501-maxscale-2501-ed25519-authenticator.md)
 
-
 CC BY-SA / Gnu FDL
-
 
 {% @marketo/form formId="4316" %}

@@ -1,6 +1,4 @@
-# mariadb-maxscale-2501-maxscale-2501-changelog
-
-## MaxScale 25.01 Changelog
+# MaxScale 25.01 Changelog
 
 ## Changelog
 

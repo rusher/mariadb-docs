@@ -1,6 +1,4 @@
-# maxscale-troubleshooting
-
-## MaxScale Troubleshooting
+# MaxScale Troubleshooting
 
 ## SystemD Watchdog Kills MaxScale
 

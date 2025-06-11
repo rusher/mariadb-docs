@@ -1,6 +1,4 @@
-# mariadb-maxscale-2501-maxscale-2501-binlog-filter
-
-## MaxScale 25.01 Binlog Filter
+# MaxScale 25.01 Binlog Filter
 
 ## Binlog Filter
 

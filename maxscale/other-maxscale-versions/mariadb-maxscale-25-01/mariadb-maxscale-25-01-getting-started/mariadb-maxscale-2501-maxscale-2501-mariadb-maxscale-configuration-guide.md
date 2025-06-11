@@ -1,6 +1,4 @@
-# mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide
-
-## MaxScale 25.01 MariaDB MaxScale Configuration Guide
+# MaxScale 25.01 MariaDB MaxScale Configuration Guide
 
 ## MariaDB MaxScale Configuration Guide
 
@@ -338,7 +336,7 @@ Limitations:
 A router module is capable of routing requests to backend servers according to\
 the characteristics of a request and/or the algorithm the router\
 implements. Examples of routers are `readconnroute` that provides _connection_\
-_routing_, that is, the server is chosen according to specified rules when the\
+&#xNAN;_&#x72;outing_, that is, the server is chosen according to specified rules when the\
 session is created and all requests are subsequently routed to that server,\
 and `readwritesplit` that provides _statement routing_, that is, each\
 individual request is routed to the most appropriate server.
@@ -711,7 +709,7 @@ The current auto tunable parameters are:
 | MaxScale Parameter                                                                                                        | Server Variable Dependency                                                                                                                                                                                             |
 | ------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | MaxScale Parameter                                                                                                        | Server Variable Dependency                                                                                                                                                                                             |
-| [connection\_keepalive](mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md#connection_keepalive) | 80% of the smallest[  ](#user-content-fn-1)[^1]value of the servers used by the service                                                                                                                                |
+| [connection\_keepalive](mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md#connection_keepalive) | 80% of the smallest value of the servers used by the service                                                                                                                                                           |
 | [wait\_timeout](mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md#wait_timeout)                 | The smallest [wait\_timeout](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#wait_timeout) value of the servers used by the service |
 
 The values of the server variables are collected by monitors, which means that\
@@ -1463,7 +1461,7 @@ some_parameter=$SOME_VALUE
 
 is encountered, then `$SOME_VALUE` will be replaced with the actual value\
 of the environment variable `SOME_VALUE`. Note:_Variable substitution will be made only if '$' is the first character_\
-_of the value._ _Everything_ following '$' is interpreted as the name of the environment\
+&#xNAN;_&#x6F;f the value._ _Everything_ following '$' is interpreted as the name of the environment\
 variable.
 
 * Referring to a non-existing environment variable is a fatal error.
@@ -5246,7 +5244,5 @@ with a "keep-alive ping".
 Systemd reference: [systemd.service.html](https://www.freedesktop.org/software/systemd/man/systemd.service.html)
 
 CC BY-SA / Gnu FDL
-
-[^1]: 
 
 {% @marketo/form formId="4316" %}

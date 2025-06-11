@@ -1,6 +1,4 @@
-# mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module
-
-## MaxScale 25.01 NoSQL Protocol Module
+# MaxScale 25.01 NoSQL Protocol Module
 
 ## NoSQL Protocol Module
 
