@@ -15,6 +15,6 @@ layout:
 
 # Tutorials
 
-MariaDB ColumnStore tutorials guide users through setting up the analytical engine, loading data efficiently, and running high-performance SQL queries. They demonstrate how to leverage its columnar storage for fast analytics on large datasets, often using Docker for easy setup.
+MariaDB ColumnStore tutorials provide instructions for setting up the analytical engine, loading data efficiently, and executing high-performance SQL queries. The tutorials illustrate how to utilize columnar storage for efficient analytics on large datasets, frequently employing Docker for straightforward setup.
 
 {% @marketo/form formId="4316" %}
