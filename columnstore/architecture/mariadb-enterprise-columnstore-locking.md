@@ -1,6 +1,18 @@
-# MariaDB Enterprise Columnstore Locking
+---
+layout:
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: false
+---
 
-## MariaDB Enterprise ColumnStore Locking
+# MariaDB Enterprise Columnstore Locking
 
 ## Overview
 
