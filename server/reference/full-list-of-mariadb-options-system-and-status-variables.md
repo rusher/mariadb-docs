@@ -4,7 +4,7 @@ Alphabetical list of all [mariadbd Options](../server-management/starting-and-st
 
 | Name |
 | - |
-| [-a (--ansii)](/server/server-management/starting-and-stopping-mariadb/mariadbd-options.md#a-ansi) |
+| [-a (--ansii)](../server-management/starting-and-stopping-mariadb/mariadbd-options.md#a-ansi) |
 | [--abort-slave-event-count](../server-management/starting-and-stopping-mariadb/mariadbd-options.md#abort-slave-event-count) |
 | [Aborted\_clients](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#aborted_clients) |
 | [Aborted\_connects](../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#aborted_connects) |
