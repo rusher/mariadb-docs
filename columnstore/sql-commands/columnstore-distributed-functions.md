@@ -124,7 +124,7 @@ ColumnStore supports the following functions. These functions can be specified i
 * [TRUNCATE()](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/numeric-functions/truncate)
 * [UCASE()](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/string-functions/ucase)
 * [UNIX\_TIMESTAMP()](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/date-time-functions/unix_timestamp)
-* [UNIX\_TIME()](https://mariadb.com/kb/en/unix_time)
+* [UNIX\_TIME()](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/date-time-functions/unix_timestamp)
 * [UPPER()](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/string-functions/upper)
 * [WEEK()](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/date-time-functions/week)
 * [WEEKDAY()](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/date-time-functions/weekday)
