@@ -30,7 +30,7 @@ mariabackup --backup  --galera-info \
    --password=$DB_USER_PASS
 ```
 
-* Verify that the MariaDB Server process is stopped on the joiner node. This will depend on your [service manager](https://mariadb.com/kb/en/).
+* Verify that the MariaDB Server process is stopped on the joiner node. This will depend on your [service manager](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/starting-and-stopping-mariadb/running-multiple-mariadb-server-processes#service-managers).
 
 For example, on [systemd](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/systemd) systems, you can execute::
 
@@ -123,7 +123,7 @@ mariabackup --copy-back \
 chown -R mysql:mysql $MYSQL_DATADIR/
 ```
 
-* Start the MariaDB Server process on the joiner node. This will depend on your [service manager](https://mariadb.com/kb/en/).
+* Start the MariaDB Server process on the joiner node. This will depend on your [service manager](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/starting-and-stopping-mariadb/running-multiple-mariadb-server-processes#service-managers).
 
 For example, on [systemd](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/systemd) systems, you can execute::
 
