@@ -1,4 +1,7 @@
 ---
+description: >-
+  MariaDB ColumnStore uses MariaDB Server’s security—encryption, access control,
+  auditing, and firewall—for secure analytics.
 icon: shield-halved
 layout:
   title:
@@ -15,4 +18,3 @@ layout:
 
 # Security
 
-MariaDB ColumnStore leverages MariaDB Server's security features, including data-at-rest and in-transit encryption, robust user and privilege management, auditing, and firewall integration for secure analytical workloads.
