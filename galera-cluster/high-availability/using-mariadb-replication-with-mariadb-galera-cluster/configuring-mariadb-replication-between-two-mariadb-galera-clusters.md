@@ -141,7 +141,7 @@ SHOW SLAVE STATUS\G
 
 ### Start the Second Cluster
 
-If the replica is replicating normally, then the next step would be to [start the MariaDB Server process](https://mariadb.com/kb/en/) on the other nodes in the second cluster.
+If the replica is replicating normally, then the next step would be to start the MariaDB Server process on the other nodes in the second cluster.
 
 Now that the second cluster is up, ensure that it does not start accepting writes yet if you want to set up [circular replication](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-overview#ring-replication) between the two clusters.
 
