@@ -1,8 +1,4 @@
-# operating-maxscale-with-maxgui-configuring-maxscale-for-maxgui
-
-## Configuring MaxScale for MaxGUI
-
-## Overview
+# Configuring MaxScale for MaxGUI
 
 MaxGUI is a graphical utility that can perform administrative tasks using MaxScale's [MaxScale's REST API](../../administrative-tools-for-mariadb-maxscale-maxctrl/operating-maxscale-with-maxctrl/). It is available starting in [MaxScale 2.5](../../../other-maxscale-versions/mariadb-maxscale-25/). It supports many different operations.
 
@@ -10,7 +6,7 @@ MaxGUI is not available out-of-the box. MaxScale requires some configuration bef
 
 ## Enabling MaxGUI
 
-1. If you want to use MaxGUI remotely, [configure the REST API](https://mariadb.com/kb/en/operating-maxscale-with-the-rest-api-configuring-maxscales-rest-api/#configuring-maxscales-rest-api-for-remote-connections) for remote connections.\
+1. If you want to use MaxGUI remotely, configure the REST API for remote connections.\
    Several global parameters must be configured in maxscale.cnf.
 
 | Parameter                                                                                                                                                                              | Description                                                                                                 |

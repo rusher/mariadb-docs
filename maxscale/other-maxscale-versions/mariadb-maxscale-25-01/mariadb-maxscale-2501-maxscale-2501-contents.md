@@ -4,9 +4,9 @@
 
 ### About MariaDB MaxScale
 
-* [About MariaDB MaxScale](https://mariadb.com/kb/en/maxscale-25-01-about-mariadb-maxscale/)
+* [About MariaDB MaxScale](../mariadb-maxscale-25/about-maxscale-25/mariadb-maxscale-25-about-mariadb-maxscale.md)
 * [Changelog](mariadb-maxscale-2501-maxscale-2501-changelog.md)
-* [Limitations](https://mariadb.com/kb/en/maxscale-25-01-limitations-and-known-issues-within-mariadb-maxscale/)
+* [Limitations](../mariadb-maxscale-14/about-maxscale-14/limitations-and-known-issues-within-maxscale.md)
 
 ### Getting Started
 
@@ -117,7 +117,7 @@ The MaxScale CDC Connector provides a C++ API for consuming data from a CDC syst
 
 ### Authenticators
 
-A short description of the authentication module type can be found in the[Authentication Modules](https://mariadb.com/kb/en/maxscale-25-01-authentication-modules/)\
+A short description of the authentication module type can be found in the[Authentication Modules](../mariadb-maxscale-24/maxscale-24-authenticators/mariadb-maxscale-24-authentication-modules-in-maxscale.md)\
 document.
 
 * [MariaDB/MySQL Authenticator](mariadb-maxscale-25-01-authenticators/mariadb-maxscale-2501-maxscale-2501-mariadbmysql-authenticator.md)

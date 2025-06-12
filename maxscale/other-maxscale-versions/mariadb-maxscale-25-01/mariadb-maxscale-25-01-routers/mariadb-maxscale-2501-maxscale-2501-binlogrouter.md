@@ -1,9 +1,5 @@
 # MaxScale 25.01 Binlogrouter
 
-##
-
-## Binlogrouter
-
 The binlogrouter is a router that acts as a replication proxy for MariaDB\
 primary-replica replication. The router connects to a primary, retrieves the binary\
 logs and stores them locally. Replica servers can connect to MaxScale like they\
@@ -320,7 +316,7 @@ This allows the Monitor to perform failover, and more importantly, switchover.\
 It also allows the user to manually redirect the Binlogrouter. The current\
 primary is "sticky", meaning that the same primary will be chosen on reboot.
 
-**NOTE:** Do not use the `mariadbmon` parameter[auto\_rejoin](https://mariadb.com/kb/Monitor/MariaDB-Monitor#auto_rejoin) if the monitor is\
+**NOTE:** Do not use the `mariadbmon` parameterauto\_rejoin if the monitor is\
 monitoring a binlogrouter. The binlogrouter does not support all the SQL\
 commands that the monitor will send and the rejoin will fail. This restriction\
 will be lifted in a future version.

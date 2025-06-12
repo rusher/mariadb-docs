@@ -1,8 +1,4 @@
-# setting-a-server-to-maintenance-mode-in-maxscale-with-maxgui
-
-## Setting a Server to Maintenance Mode in MaxScale with MaxGUI
-
-## Overview
+# Setting a Server to Maintenance Mode in MaxScale with MaxGUI
 
 When using MaxScale, it is often necessary to temporarily remove a server from the load balancing pool without actually shutting down the server. This is usually needed to perform maintenance on the server, such as when upgrading the server's software or when performing schema upgrades.
 
