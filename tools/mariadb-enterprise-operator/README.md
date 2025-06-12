@@ -1,7 +1,7 @@
 ---
 description: >-
-  Run and operate MariaDB Enterprise in Kubernetes using the Enterprise
-  Operator.
+  MariaDB Enterprise Operator automates provisioning, scaling, backups, and high
+  availability, making cloud-native database operations efficient and reliable.
 layout:
   title:
     visible: true
@@ -17,4 +17,5 @@ layout:
 
 # MariaDB Enterprise Operator
 
-The MariaDB Enterprise Operator simplifies deploying and managing MariaDB Enterprise Server and MaxScale in Kubernetes and OpenShift. It automates provisioning, scaling, backups, and high availability, making cloud-native database operations efficient and reliable.
+
+
