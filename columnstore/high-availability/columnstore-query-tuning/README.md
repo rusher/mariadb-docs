@@ -1,4 +1,7 @@
 ---
+description: >-
+  MariaDB ColumnStore query tuning optimizes analytics using data types, joins,
+  projection elimination, WHERE clauses, and EXPLAIN for performance insights.
 layout:
   title:
     visible: true
@@ -13,6 +16,4 @@ layout:
 ---
 
 # Query Tuning
-
-MariaDB ColumnStore query tuning focuses on optimizing analytical workloads. Key strategies involve using appropriate data types, ensuring efficient joins, leveraging projection elimination, optimizing WHERE clauses, and utilizing `EXPLAIN` to understand query plans and identify bottlenecks for improved performance.
 
