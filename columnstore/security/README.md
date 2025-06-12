@@ -15,3 +15,4 @@ layout:
 
 # Security
 
+MariaDB ColumnStore leverages MariaDB Server's security features, including data-at-rest and in-transit encryption, robust user and privilege management, auditing, and firewall integration for secure analytical workloads.
