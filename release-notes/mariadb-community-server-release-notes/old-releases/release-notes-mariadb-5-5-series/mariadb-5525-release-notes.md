@@ -1,8 +1,8 @@
 # MariaDB 5.5.25 Release Notes
 
-The most recent release in the [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) series is:[**MariaDB 5.5.68**](mariadb-5568-release-notes.md) [Download Now](https://downloads.mariadb.org/mariadb/5.5.68/)
+The most recent release in the [MariaDB 5.5](changes-improvements-in-mariadb-5-5.md) series is:[**MariaDB 5.5.68**](mariadb-5568-release-notes.md) [Download Now](https://downloads.mariadb.org/mariadb/5.5.68/)
 
-[Download](https://downloads.mariadb.org/mariadb/5.5.25) |**Release Notes** |[Changelog](../../../changelogs/changelogs-mariadb-55-series/mariadb-5525-changelog.md) |[Overview of 5.5](broken-reference)
+[Download](https://downloads.mariadb.org/mariadb/5.5.25) |**Release Notes** |[Changelog](../../../changelogs/changelogs-mariadb-55-series/mariadb-5525-changelog.md) |[Overview of 5.5](broken-reference/)
 
 **Release date:** 22 Jun 2012
 
@@ -12,7 +12,7 @@ except for those marked as feature requests, that no bugs were fixed\
 since last release that caused a notable code changes, and that we\
 believe the code is ready for general usage (based on bug inflow).
 
-**For a description of** [**MariaDB 5.5**](broken-reference) **see the**[**What is MariaDB 5.5**](broken-reference) **page.**
+**For a description of** [**MariaDB 5.5**](broken-reference/) **see the**[**What is MariaDB 5.5**](broken-reference/) **page.**
 
 For a list of changes made in [MariaDB 5.5.25](mariadb-5525-release-notes.md), with links to detailed\
 information on each push, see the[MariaDB 5.5.25 Changelog](../../../changelogs/changelogs-mariadb-55-series/mariadb-5525-changelog.md).

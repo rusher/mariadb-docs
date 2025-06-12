@@ -46,76 +46,76 @@ modified in that revision.
     Thu 2014-11-20 17:29:21 +0100
     * 10.0-connect
     * [Revision #4439.1.21](https://bazaar.launchpad.net/~maria-captains/maria/10.0/revision/4439.1.21)\
-      Sun 2014-11-16 20:14:36 +0100
-      *
-        * Commit resolved conflicted files
+      Sun 2014-11-16 20:14:36 +0100\
+      \*
+      * Commit resolved conflicted files
     * [Revision #4439.1.20](https://bazaar.launchpad.net/~maria-captains/maria/10.0/revision/4439.1.20)\
-      Sun 2014-11-16 01:16:51 +0100
-      *
-        * Remove gcc warning (no previous declaration of msglang)
+      Sun 2014-11-16 01:16:51 +0100\
+      \*
+      * Remove gcc warning (no previous declaration of msglang)
     * [Revision #4439.1.19](https://bazaar.launchpad.net/~maria-captains/maria/10.0/revision/4439.1.19)\
-      Sat 2014-11-15 18:28:24 +0100
-      *
-        * Implement the NEWMSG and XMSG methods They are still experimental and should not be used in production.
+      Sat 2014-11-15 18:28:24 +0100\
+      \*
+      * Implement the NEWMSG and XMSG methods They are still experimental and should not be used in production.
     * [Revision #4439.1.18](https://bazaar.launchpad.net/~maria-captains/maria/10.0/revision/4439.1.18)\
-      Sun 2014-11-09 14:18:44 +0100
-      *
-        * FIX ftell error when the line endings do not match the declared or default ending. Also takes care of files having mixed line endings. This is done by never using text mode for streams and handle the line endings in reading and writing. ([MDEV-7030](https://jira.mariadb.org/browse/MDEV-7030))
+      Sun 2014-11-09 14:18:44 +0100\
+      \*
+      * FIX ftell error when the line endings do not match the declared or default ending. Also takes care of files having mixed line endings. This is done by never using text mode for streams and handle the line endings in reading and writing. ([MDEV-7030](https://jira.mariadb.org/browse/MDEV-7030))
     * [Revision #4439.1.17](https://bazaar.launchpad.net/~maria-captains/maria/10.0/revision/4439.1.17)\
-      Sat 2014-11-08 16:44:52 +0100
-      *
-        * Compile protect against not fully implemented optione XMSG and NEWMSG
+      Sat 2014-11-08 16:44:52 +0100\
+      \*
+      * Compile protect against not fully implemented optione XMSG and NEWMSG
     * [Revision #4439.1.16](https://bazaar.launchpad.net/~maria-captains/maria/10.0/revision/4439.1.16)\
-      Sat 2014-11-08 16:29:16 +0100
-      *
-        * fix typo error
+      Sat 2014-11-08 16:29:16 +0100\
+      \*
+      * fix typo error
     * [Revision #4439.1.15](https://bazaar.launchpad.net/~maria-captains/maria/10.0/revision/4439.1.15)\
-      Sat 2014-11-08 13:35:03 +0100
-      *
-        * Calculate next position in filamap without assuming ENDING option is true.
+      Sat 2014-11-08 13:35:03 +0100\
+      \*
+      * Calculate next position in filamap without assuming ENDING option is true.
     * [Revision #4439.1.14](https://bazaar.launchpad.net/~maria-captains/maria/10.0/revision/4439.1.14)\
-      Sat 2014-11-01 17:08:39 +0100
-      *
-        * Fix [MDEV-6988](https://jira.mariadb.org/browse/MDEV-6988) and [MDEV-6994](https://jira.mariadb.org/browse/MDEV-6994)
+      Sat 2014-11-01 17:08:39 +0100\
+      \*
+      * Fix [MDEV-6988](https://jira.mariadb.org/browse/MDEV-6988) and [MDEV-6994](https://jira.mariadb.org/browse/MDEV-6994)
     * [Revision #4439.1.13](https://bazaar.launchpad.net/~maria-captains/maria/10.0/revision/4439.1.13)\
-      Fri 2014-10-31 13:58:43 +0100
-      *
-        * Add the new files to the source list
+      Fri 2014-10-31 13:58:43 +0100\
+      \*
+      * Add the new files to the source list
     * [Revision #4439.1.12](https://bazaar.launchpad.net/~maria-captains/maria/10.0/revision/4439.1.12)\
-      Fri 2014-10-31 12:43:55 +0100
-      *
-        * Adding the VIR table type implementation files
+      Fri 2014-10-31 12:43:55 +0100\
+      \*
+      * Adding the VIR table type implementation files
     * [Revision #4439.1.11](https://bazaar.launchpad.net/~maria-captains/maria/10.0/revision/4439.1.11)\
-      Fri 2014-10-31 12:28:07 +0100
-      *
-        * Add new table type VIR and virtual index
+      Fri 2014-10-31 12:28:07 +0100\
+      \*
+      * Add new table type VIR and virtual index
     * [Revision #4439.1.10](https://bazaar.launchpad.net/~maria-captains/maria/10.0/revision/4439.1.10)\
       Fri 2014-10-24 19:22:05 +0200
       * Fix a bug in XCOL tables. When a row was filtered internally the XColumn was not reset causing rows to be lost.
     * [Revision #4439.1.9](https://bazaar.launchpad.net/~maria-captains/maria/10.0/revision/4439.1.9)\
-      Fri 2014-10-24 16:21:39 +0200
-      *
-        * Fix bug: Server crash when using a special column in XCOL tables
+      Fri 2014-10-24 16:21:39 +0200\
+      \*
+      * Fix bug: Server crash when using a special column in XCOL tables
     * [Revision #4439.1.8](https://bazaar.launchpad.net/~maria-captains/maria/10.0/revision/4439.1.8)\
-      Wed 2014-10-22 13:51:33 +0200
-      *
-        * Remove some gcc warnings
+      Wed 2014-10-22 13:51:33 +0200\
+      \*
+      * Remove some gcc warnings
     * [Revision #4439.1.7](https://bazaar.launchpad.net/~maria-captains/maria/10.0/revision/4439.1.7)\
-      Wed 2014-10-22 12:02:46 +0200
-      *
-        * Fix (gcc error) passing cmd instead of cmd.Getstr() to htrc
+      Wed 2014-10-22 12:02:46 +0200\
+      \*
+      * Fix (gcc error) passing cmd instead of cmd.Getstr() to htrc
     * [Revision #4439.1.6](https://bazaar.launchpad.net/~maria-captains/maria/10.0/revision/4439.1.6)\
-      Tue 2014-10-21 17:29:51 +0200
-      *
-        1. Handling string memory allocation with a new STRING class. This is only the beginning. Defining the STRING class and begining to use it (MYSQL)
+      Tue 2014-10-21 17:29:51 +0200\
+      \*
+      1. Handling string memory allocation with a new STRING class. This is only the beginning. Defining the STRING class and begining to use it (MYSQL)
     * [Revision #4439.1.5](https://bazaar.launchpad.net/~maria-captains/maria/10.0/revision/4439.1.5) \[merge]\
-      Tue 2014-10-14 17:52:20 +0200
-      *
-        * Commit merged change removed: extra/yassl/certs/dsa512.der extra/yassl/certs/dsa512.pem
+      Tue 2014-10-14 17:52:20 +0200\
+      \*
+      * Commit merged change removed: extra/yassl/certs/dsa512.der extra/yassl/certs/dsa512.pem
     * [Revision #4439.1.4](https://bazaar.launchpad.net/~maria-captains/maria/10.0/revision/4439.1.4)\
-      Tue 2014-10-14 16:42:22 +0200
-      *
-        * Add Sergei fix to enable loading OEM table libs
+      Tue 2014-10-14 16:42:22 +0200\
+      \*
+      * Add Sergei fix to enable loading OEM table libs
   * [Revision #4500.1.27](https://bazaar.launchpad.net/~maria-captains/maria/10.0/revision/4500.1.27) \[merge]\
     Thu 2014-11-20 17:09:51 +0100
     * pcre-8.36
@@ -460,7 +460,7 @@ modified in that revision.
   * [MDEV-4396](https://jira.mariadb.org/browse/MDEV-4396): Fix innodb.innodb\_bug14676111 test.
 * [Revision #4471](https://bazaar.launchpad.net/~maria-captains/maria/10.0/revision/4471) \[merge]\
   Mon 2014-11-03 17:47:37 +0100
-  * [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) merge
+  * [MariaDB 5.5](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) merge
 * [Revision #4470](https://bazaar.launchpad.net/~maria-captains/maria/10.0/revision/4470)\
   Sun 2014-11-02 01:08:09 +0400
   * [MDEV-7001](https://jira.mariadb.org/browse/MDEV-7001) Bad result for NOT NOT STRCMP('a','b') and NOT NOT NULLIF(2,3) The bug is not very important per se, but it was helpful to move Item\_func\_strcmp out of Item\_bool\_func2 (to Item\_int\_func), for the purposes of "[MDEV-4912](https://jira.mariadb.org/browse/MDEV-4912) Add a plugin to field types (column types)".
@@ -585,17 +585,17 @@ modified in that revision.
   Mon 2014-10-13 12:31:55 +0400
   * Merge 10.0-connect -> 10.0
   * [Revision #4439.1.3](https://bazaar.launchpad.net/~maria-captains/maria/10.0/revision/4439.1.3)\
-    Sun 2014-10-12 15:46:31 +0200
-    *
-      * Remove one gcc warning
+    Sun 2014-10-12 15:46:31 +0200\
+    \*
+    * Remove one gcc warning
   * [Revision #4439.1.2](https://bazaar.launchpad.net/~maria-captains/maria/10.0/revision/4439.1.2)\
-    Sun 2014-10-12 12:05:05 +0200
-    *
-      * Fix null handling for date columns (see [MDEV-6744](https://jira.mariadb.org/browse/MDEV-6744))
+    Sun 2014-10-12 12:05:05 +0200\
+    \*
+    * Fix null handling for date columns (see [MDEV-6744](https://jira.mariadb.org/browse/MDEV-6744))
   * [Revision #4439.1.1](https://bazaar.launchpad.net/~maria-captains/maria/10.0/revision/4439.1.1)\
-    Fri 2014-10-10 13:27:52 +0200
-    *
-      * Fix a regression error from regarding Header as Boolean from some table types. Was added to ha\_connect::GetBooleanOption (otherwise ignored)
+    Fri 2014-10-10 13:27:52 +0200\
+    \*
+    * Fix a regression error from regarding Header as Boolean from some table types. Was added to ha\_connect::GetBooleanOption (otherwise ignored)
 * [Revision #4443](https://bazaar.launchpad.net/~maria-captains/maria/10.0/revision/4443) \[merge]\
   Sat 2014-10-11 12:52:55 +0200
   * merge
@@ -699,9 +699,9 @@ modified in that revision.
           Tue 2014-08-12 17:16:51 +0530
           * Bug #11755818 : LIKE DOESN'T MATCH WHEN CP932\_BIN/SJIS\_BIN COLLATIONS ARE USED.
         * [Revision #3077.204.20](https://bazaar.launchpad.net/~maria-captains/maria/10.0/revision/3077.204.20) \[merge]\
-          Wed 2014-08-06 09:56:37 +0200
-          *
-            * Merge from mysql-5.5.39-ol7-release branch - Reverted version variable
+          Wed 2014-08-06 09:56:37 +0200\
+          \*
+          * Merge from mysql-5.5.39-ol7-release branch - Reverted version variable
           * [Revision #3077.205.2](https://bazaar.launchpad.net/~maria-captains/maria/10.0/revision/3077.205.2)\
             Mon 2014-08-04 15:56:19 +0200
             * Updated for el7 regular rpms
@@ -812,9 +812,9 @@ modified in that revision.
   Fri 2014-10-10 13:18:03 +0400
   * Merge 10.0-connect -> 10.0
   * [Revision #4424.1.1](https://bazaar.launchpad.net/~maria-captains/maria/10.0/revision/4424.1.1)\
-    Thu 2014-10-09 17:23:37 +0200
-    *
-      * in CheckCond change strcat to strncat to avoid the case of non zero terminated string.
+    Thu 2014-10-09 17:23:37 +0200\
+    \*
+    * in CheckCond change strcat to strncat to avoid the case of non zero terminated string.
 * [Revision #4438](https://bazaar.launchpad.net/~maria-captains/maria/10.0/revision/4438) \[merge]\
   Fri 2014-10-10 13:16:41 +0400
   * Merge 10.0-mroonga -> 10.0
@@ -861,9 +861,9 @@ modified in that revision.
   Thu 2014-10-02 15:48:20 +0400
   * Merge 10.0-mroonga -> 10.0
   * [Revision #4410.1.2](https://bazaar.launchpad.net/~maria-captains/maria/10.0/revision/4410.1.2)\
-    Thu 2014-10-02 14:58:57 +0400
-    *
-      * Changing Mroonga maturnity from STABLE to BETA - removing libmysql/libmysql.version from .bzrignore, as we don't have this file any more
+    Thu 2014-10-02 14:58:57 +0400\
+    \*
+    * Changing Mroonga maturnity from STABLE to BETA - removing libmysql/libmysql.version from .bzrignore, as we don't have this file any more
   * [Revision #4410.1.1](https://bazaar.launchpad.net/~maria-captains/maria/10.0/revision/4410.1.1)\
     Sun 2014-09-21 00:33:45 +0900
     * Update Mroonga to the latest version on 2014-09-21T00:33:44+0900
@@ -892,9 +892,9 @@ modified in that revision.
     Sat 2014-09-27 12:09:37 +0200
     * Fix: Crash of an XCOL table when the Colname column size is too small. Was because of buffer overrun in XCLCOL::ReadColumn. The Cbuf buffer was unconditionally filled Now it is limited to its size. This happened because this buffer was allocated according to the XCOL column size. It is now allocated according to the source column size.
   * [Revision #3984.2.45](https://bazaar.launchpad.net/~maria-captains/maria/10.0/revision/3984.2.45)\
-    Wed 2014-09-17 00:51:40 +0200
-    *
-      * Fix a compile error ([MDEV-6723](https://jira.mariadb.org/browse/MDEV-6723))
+    Wed 2014-09-17 00:51:40 +0200\
+    \*
+    * Fix a compile error ([MDEV-6723](https://jira.mariadb.org/browse/MDEV-6723))
 * [Revision #4423](https://bazaar.launchpad.net/~maria-captains/maria/10.0/revision/4423)\
   Wed 2014-10-01 11:13:11 +0400
   * Tests connect.odbc\_postgresql and connect.odbc\_oracle failed after revision 4363 (fixes for [MDEV-6661](https://jira.mariadb.org/browse/MDEV-6661) and [MDEV-6666](https://jira.mariadb.org/browse/MDEV-6666)).

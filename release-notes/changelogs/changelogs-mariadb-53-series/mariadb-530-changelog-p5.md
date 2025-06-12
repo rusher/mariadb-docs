@@ -2,7 +2,7 @@
 
 [Download](https://downloads.askmonty.org/mariadb/5.3.0) |[Release Notes](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/mariadb-530-release-notes.md) |**Changelog**\
 (page:`[1](mariadb-530-changelog.md)[2](mariadb-530-changelog-p2.md)[3](mariadb-530-changelog-p3.md)[4](mariadb-530-changelog-p4.md)5[6](mariadb-530-changelog-p6.md)`\
-) |[Overview of 5.3](broken-reference)
+) |[Overview of 5.3](broken-reference/)
 
 **Release date:** 26 July 2011
 
@@ -39,7 +39,7 @@
       using a join buffer.
 * [Revision #2877](https://bazaar.launchpad.net/~maria-captains/maria/5.3/revision/2877) \[merge]\
   Fri 2011-01-14 13:07:50 +0300
-  * Merge backported subquery bugfixes/testcases into [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3)
+  * Merge backported subquery bugfixes/testcases into [MariaDB 5.3](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3.md)
   * [Revision #2869.2.5](https://bazaar.launchpad.net/~maria-captains/maria/5.3/revision/2869.2.5)\
     Fri 2011-01-14 00:47:03 +0300
     * Backport testcase for: [MySQL Bug #43360](https://bugs.mysql.com/bug.php?id=43360) - Server crash with a simple multi-table update
@@ -52,8 +52,8 @@
       * mybug #45092: join buffer contains two blob columns one of which is used in the key employed to access the joined table
   * [Revision #2869.2.2](https://bazaar.launchpad.net/~maria-captains/maria/5.3/revision/2869.2.2)\
     Thu 2011-01-13 19:25:31 +0300
-    * Backport of (see below) + temporary measures to make SJ-Materialization work with join buffering.
-      *
+    * Backport of (see below) + temporary measures to make SJ-Materialization work with join buffering.\
+      \*
       * Date: Mon, 01 Nov 2010 15:15:25 -0000<>
       * 3272 Roy Lyseng 2010-11-01
       * [MySQL Bug #52068](https://bugs.mysql.com/bug.php?id=52068): Optimizer generates invalid semijoin materialization plan
@@ -483,7 +483,7 @@
 * [Revision #2833](https://bazaar.launchpad.net/~maria-captains/maria/5.3/revision/2833)\
   Tue 2010-10-26 14:55:42 +0300
   * Fixed [Bug #601156](https://bugs.launchpad.net/bugs/601156)
-  * The cause for this bug is that [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3) still processes derived tables\
+  * The cause for this bug is that [MariaDB 5.3](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3.md) still processes derived tables\
     (subqueries in the FROM clause) by fully executing them during the parse\
     phase. This will be remedied by [MWL#106](https://askmonty.org/worklog/?tid=106) once merged into the main 5.3.
   * The assert statement is triggered when MATERIALIZATION is ON for EXPLAIN\

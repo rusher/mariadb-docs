@@ -1,8 +1,8 @@
 # MariaDB 5.5.24 Release Notes
 
-The most recent release in the [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) series is:[**MariaDB 5.5.68**](mariadb-5568-release-notes.md) [Download Now](https://downloads.mariadb.org/mariadb/5.5.68/)
+The most recent release in the [MariaDB 5.5](changes-improvements-in-mariadb-5-5.md) series is:[**MariaDB 5.5.68**](mariadb-5568-release-notes.md) [Download Now](https://downloads.mariadb.org/mariadb/5.5.68/)
 
-[Download](https://downloads.askmonty.org/mariadb/5.5.24) |**Release Notes** |[Changelog](../../../changelogs/changelogs-mariadb-55-series/mariadb-5524-changelog.md) |[Overview of 5.5](broken-reference)
+[Download](https://downloads.askmonty.org/mariadb/5.5.24) |**Release Notes** |[Changelog](../../../changelogs/changelogs-mariadb-55-series/mariadb-5524-changelog.md) |[Overview of 5.5](broken-reference/)
 
 **Release date:** 31 May 2012
 
@@ -12,7 +12,7 @@ those marked as feature requests, that no bugs were fixed since last release\
 that caused a notable code changes, and that we believe the code is ready for\
 general usage (based on bug inflow).
 
-**For a description of** [**MariaDB 5.5**](broken-reference) **see the**[**What is MariaDB 5.5**](broken-reference) **page.**
+**For a description of** [**MariaDB 5.5**](broken-reference/) **see the**[**What is MariaDB 5.5**](broken-reference/) **page.**
 
 For a list of changes made in [MariaDB 5.5.24](mariadb-5524-release-notes.md), with links to detailed\
 information on each push, see the[MariaDB 5.5.24 Changelog](../../../changelogs/changelogs-mariadb-55-series/mariadb-5524-changelog.md).
@@ -49,7 +49,7 @@ If you don't want to use yum you can, of course, still[download and install the 
 Lastly, we've created a page describing[what is included in each RPM file](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/rpm/about-the-mariadb-rpm-files), so you can\
 easily determine which of the rpm packages you need or want.
 
-This is our first attempt at providing YUM repositories for MariaDB, so please[let us know](broken-reference) if you run into\
+This is our first attempt at providing YUM repositories for MariaDB, so please[let us know](broken-reference/) if you run into\
 any issues.
 
 ## Ubuntu 12.04 "Precise"
@@ -62,7 +62,7 @@ If you've previously added MariaDB to your sources.list, use our [repository con
 
 [MariaDB 5.5.24](mariadb-5524-release-notes.md) also includes binaries for BSD 9 and MacOS X 10.5. As with the new\
 RPM packages, this is our first attempt at providing packages for these operating\
-systems. So please[let us know](broken-reference) if you run into\
+systems. So please[let us know](broken-reference/) if you run into\
 any issues.
 
 Thanks, and enjoy MariaDB!

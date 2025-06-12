@@ -1,8 +1,8 @@
 # MariaDB 5.5.32 Changelog
 
-The most recent release in the [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) series is:[**MariaDB 5.5.68**](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/mariadb-5568-release-notes.md) [Download Now](https://downloads.mariadb.org/mariadb/5.5.68/)
+The most recent release in the [MariaDB 5.5](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) series is:[**MariaDB 5.5.68**](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/mariadb-5568-release-notes.md) [Download Now](https://downloads.mariadb.org/mariadb/5.5.68/)
 
-[Download](https://downloads.mariadb.org/mariadb/5.5.32) | [Release Notes](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/mariadb-5532-release-notes.md) | **Changelog** | [Overview of 5.5](broken-reference)
+[Download](https://downloads.mariadb.org/mariadb/5.5.32) | [Release Notes](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/mariadb-5532-release-notes.md) | **Changelog** | [Overview of 5.5](broken-reference/)
 
 **Release date:** 18 Jul 2013
 
@@ -631,9 +631,9 @@ modified in that revision.
   Fri 2013-06-07 10:02:50 +0200
   * [MDEV-4564](https://jira.mariadb.org/browse/MDEV-4564) ALTER on a temporary table generates an audit event
 * [Revision #3789](https://bazaar.launchpad.net/~maria-captains/maria/5.5/revision/3789)\
-  Sun 2013-06-09 13:26:10 +0300
-  *
-    * Added -Wno-uninitialized to avoid warnings in release builds (uninitalized variables are detected by DBUG builds) - Fixed wrong declaration which cased compile failure on 32 bit
+  Sun 2013-06-09 13:26:10 +0300\
+  \*
+  * Added -Wno-uninitialized to avoid warnings in release builds (uninitalized variables are detected by DBUG builds) - Fixed wrong declaration which cased compile failure on 32 bit
 * [Revision #3788](https://bazaar.launchpad.net/~maria-captains/maria/5.5/revision/3788)\
   Thu 2013-06-06 15:14:23 +0300
   * Fixed some cache variables that could be set to higher value than what the code supported (size\_t) Fixed some cases that didn't work with > 4G buffers. Fixed compiler warnings

@@ -1,8 +1,8 @@
 # MariaDB 5.5.31 Changelog
 
-The most recent release in the [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) series is:[**MariaDB 5.5.68**](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/mariadb-5568-release-notes.md) [Download Now](https://downloads.mariadb.org/mariadb/5.5.68/)
+The most recent release in the [MariaDB 5.5](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) series is:[**MariaDB 5.5.68**](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/mariadb-5568-release-notes.md) [Download Now](https://downloads.mariadb.org/mariadb/5.5.68/)
 
-[Download](https://downloads.mariadb.org/mariadb/5.5.31) | [Release Notes](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/mariadb-5531-release-notes.md) | **Changelog** | [Overview of 5.5](broken-reference)
+[Download](https://downloads.mariadb.org/mariadb/5.5.31) | [Release Notes](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/mariadb-5531-release-notes.md) | **Changelog** | [Overview of 5.5](broken-reference/)
 
 **Release date:** 23 May 2013
 
@@ -76,9 +76,9 @@ modified in that revision.
   Fri 2013-05-17 10:16:56 +0400
   * Bug#[MDEV-4518](https://jira.mariadb.org/browse/MDEV-4518) Server crashes in is\_white\_space when it's run with query cache, charset ucs2 and collation ucs2\_unicode\_ci
 * [Revision #3769](https://bazaar.launchpad.net/~maria-captains/maria/5.5/revision/3769)\
-  Wed 2013-05-15 16:28:12 +0300
-  *
-    * Solaris fixes: - Fixed that wait\_timeout\_func and wait\_timeout tests works on solaris - We have to compile without NO\_ALARM on Solaris as Solaris doesn't support timeouts on sockets with setsockopt(.. SO\_RCVTIMEO). - Fixed that compile-solaris-amd64-debug works (before that we got a wrong ELF class: ELFCLASS64 on linkage) - Fixed some compiler warnings - Fixed some failing tests
+  Wed 2013-05-15 16:28:12 +0300\
+  \*
+  * Solaris fixes: - Fixed that wait\_timeout\_func and wait\_timeout tests works on solaris - We have to compile without NO\_ALARM on Solaris as Solaris doesn't support timeouts on sockets with setsockopt(.. SO\_RCVTIMEO). - Fixed that compile-solaris-amd64-debug works (before that we got a wrong ELF class: ELFCLASS64 on linkage) - Fixed some compiler warnings - Fixed some failing tests
 * [Revision #3768](https://bazaar.launchpad.net/~maria-captains/maria/5.5/revision/3768)\
   Wed 2013-05-15 02:36:37 +0500
   * [MDEV-4266](https://jira.mariadb.org/browse/MDEV-4266) Server upgrade via apt-get install does not work. Now empty 'highlevel' packages strictly depend on the same versions of files. These are mariadb-server, mariadb-client, mariadb-test

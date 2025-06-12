@@ -1,8 +1,8 @@
 # MariaDB 5.5.33 Changelog
 
-The most recent release in the [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) series is:[**MariaDB 5.5.68**](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/mariadb-5568-release-notes.md) [Download Now](https://downloads.mariadb.org/mariadb/5.5.68/)
+The most recent release in the [MariaDB 5.5](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) series is:[**MariaDB 5.5.68**](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/mariadb-5568-release-notes.md) [Download Now](https://downloads.mariadb.org/mariadb/5.5.68/)
 
-[Download](https://downloads.mariadb.org/mariadb/5.5.33) |[Release Notes](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/mariadb-5533-release-notes.md) |**Changelog** |[Overview of 5.5](broken-reference)
+[Download](https://downloads.mariadb.org/mariadb/5.5.33) |[Release Notes](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/mariadb-5533-release-notes.md) |**Changelog** |[Overview of 5.5](broken-reference/)
 
 **Release date:** 17 Sep 2013
 
@@ -132,9 +132,9 @@ modified in that revision.
     Thu 2013-06-27 10:08:30 +0200
     * Updated copyright year in the spec file
   * [Revision #3077.188.68](https://bazaar.launchpad.net/~maria-captains/maria/5.5/revision/3077.188.68)\
-    Thu 2013-06-27 09:18:48 +0200
-    *
-      * Spec file cleanup for 5.5.33 release to resolve rpm dependencies bugs
+    Thu 2013-06-27 09:18:48 +0200\
+    \*
+    * Spec file cleanup for 5.5.33 release to resolve rpm dependencies bugs
   * [Revision #3077.188.67](https://bazaar.launchpad.net/~maria-captains/maria/5.5/revision/3077.188.67)\
     Wed 2013-06-26 11:43:44 +0200
     * Cleaned up spec file for 5.5.33 release

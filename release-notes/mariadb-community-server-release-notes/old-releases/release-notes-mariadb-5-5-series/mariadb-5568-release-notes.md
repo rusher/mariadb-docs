@@ -1,12 +1,12 @@
 # MariaDB 5.5.68 Release Notes
 
-[Download](https://downloads.mariadb.org/mariadb/5.5.68/)[Release Notes](mariadb-5568-release-notes.md)[Changelog](../../../changelogs/changelogs-mariadb-55-series/mariadb-5568-changelog.md)[Overview of 5.5](broken-reference)
+[Download](https://downloads.mariadb.org/mariadb/5.5.68/)[Release Notes](mariadb-5568-release-notes.md)[Changelog](../../../changelogs/changelogs-mariadb-55-series/mariadb-5568-changelog.md)[Overview of 5.5](broken-reference/)
 
 **Release date:** 12 May 2020
 
-This is a [_**Stable**_](../../../mariadb-release-criteria.md) _**(GA)**_ release. Note that with this release, [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) is now end-of-life, and no longer supported.
+This is a [_**Stable**_](../../../mariadb-release-criteria.md) _**(GA)**_ release. Note that with this release, [MariaDB 5.5](changes-improvements-in-mariadb-5-5.md) is now end-of-life, and no longer supported.
 
-**For a description of** [**MariaDB 5.5**](broken-reference) **see the**[**What is MariaDB 5.5?**](broken-reference) **page.**
+**For a description of** [**MariaDB 5.5**](broken-reference/) **see the**[**What is MariaDB 5.5?**](broken-reference/) **page.**
 
 In most respects [MariaDB](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/mariadb/README.md) 5.5 will work exactly as MySQL 5.5: all commands,\
 interfaces, libraries and APIs that exist in MySQL also exist in MariaDB.

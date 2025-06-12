@@ -1,8 +1,8 @@
 # MariaDB 5.5.40 Release Notes
 
-The most recent release in the [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) series is:[**MariaDB 5.5.68**](mariadb-5568-release-notes.md) [Download Now](https://downloads.mariadb.org/mariadb/5.5.68/)
+The most recent release in the [MariaDB 5.5](changes-improvements-in-mariadb-5-5.md) series is:[**MariaDB 5.5.68**](mariadb-5568-release-notes.md) [Download Now](https://downloads.mariadb.org/mariadb/5.5.68/)
 
-[Download](https://downloads.mariadb.org/mariadb/5.5.40)[Release Notes](mariadb-5540-release-notes.md)[Changelog](../../../changelogs/changelogs-mariadb-55-series/mariadb-5540-changelog.md)[Overview of 5.5](broken-reference)
+[Download](https://downloads.mariadb.org/mariadb/5.5.40)[Release Notes](mariadb-5540-release-notes.md)[Changelog](../../../changelogs/changelogs-mariadb-55-series/mariadb-5540-changelog.md)[Overview of 5.5](broken-reference/)
 
 **Release date:** 9 Oct 2014
 
@@ -12,7 +12,7 @@ requests, that no bugs were fixed since last release that caused notable code\
 changes, and that we believe the code is ready for general usage (based on bug\
 inflow).
 
-**For a description of** [**MariaDB 5.5**](broken-reference) **see the**[**What is MariaDB 5.5?**](broken-reference) **page.**
+**For a description of** [**MariaDB 5.5**](broken-reference/) **see the**[**What is MariaDB 5.5?**](broken-reference/) **page.**
 
 For a list of changes made in this release, with links to detailed\
 information on each push, see the[MariaDB 5.5.40 Changelog](../../../changelogs/changelogs-mariadb-55-series/mariadb-5540-changelog.md).
@@ -37,7 +37,7 @@ from MySQL 5.5.40. Notable updates include:
   * [CVE-2014-6464](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2014-6464)
 * [XtraDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb) updated to the version from [Percona Server 5.5.40-36.1](https://www.percona.com/doc/percona-server/5.5/release-notes/Percona-Server-5.5.40-36.1.html)
 * [TokuDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/tokudb) updated to [version 7.5.0](https://docs.tokutek.com/tokudb/tokudb-release-notes.html#tokudb-7-5-0)
-* As per the [MariaDB Deprecation Policy](../../../mariadb-platform-deprecation-policy.md), this will be the last release of [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) for both Ubuntu 13.10 "Saucy" and Mint 16 "Petra".
+* As per the [MariaDB Deprecation Policy](../../../mariadb-platform-deprecation-policy.md), this will be the last release of [MariaDB 5.5](changes-improvements-in-mariadb-5-5.md) for both Ubuntu 13.10 "Saucy" and Mint 16 "Petra".
 * With the recent release of CentOS 7 and RHEL 7, we are pleased to now provide packages for both distributions. Instructions for how to enable the repositories can be found by visiting the "[Installing MariaDB with YUM](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/rpm/yum)" page and the [repository configuration tool](https://downloads.mariadb.org/mariadb/repositories/).\
   A full list of all changes is in the [changelog](../../../changelogs/changelogs-mariadb-55-series/mariadb-5540-changelog.md).
 

@@ -1,8 +1,8 @@
 # MariaDB 5.5.45 Changelog
 
-The most recent release in the [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) series is:[**MariaDB 5.5.68**](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/mariadb-5568-release-notes.md) [Download Now](https://downloads.mariadb.org/mariadb/5.5.68/)
+The most recent release in the [MariaDB 5.5](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) series is:[**MariaDB 5.5.68**](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/mariadb-5568-release-notes.md) [Download Now](https://downloads.mariadb.org/mariadb/5.5.68/)
 
-[Download](https://downloads.mariadb.org/mariadb/5.5.45)[Release Notes](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/mariadb-5545-release-notes.md)[Changelog](mariadb-5545-changelog.md)[Overview of 5.5](broken-reference)
+[Download](https://downloads.mariadb.org/mariadb/5.5.45)[Release Notes](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/mariadb-5545-release-notes.md)[Changelog](mariadb-5545-changelog.md)[Overview of 5.5](broken-reference/)
 
 **Release date:** 6 Aug 2015
 
@@ -27,7 +27,7 @@ The revision number links will take you to the revision's page on GitHub. On[Git
   * compilation error on windows
 * [Revision #79deefc](https://github.com/MariaDB/server/commit/79deefc)\
   2015-07-31 12:31:37 +0200
-  * [MDEV-8340](https://jira.mariadb.org/browse/MDEV-8340) Add "mysqlbinlog --binlog-row-event-max-size" support for [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5)
+  * [MDEV-8340](https://jira.mariadb.org/browse/MDEV-8340) Add "mysqlbinlog --binlog-row-event-max-size" support for [MariaDB 5.5](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md)
 * [Revision #4d5772c](https://github.com/MariaDB/server/commit/4d5772c)\
   2015-07-31 10:13:01 +0200
   * [MDEV-7810](https://jira.mariadb.org/browse/MDEV-7810) Wrong result on execution of a query as a PS (both 1st and further executions)

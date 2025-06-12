@@ -1,14 +1,14 @@
 # MariaDB 5.5.21 Release Notes
 
-The most recent release in the [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) series is:[**MariaDB 5.5.68**](mariadb-5568-release-notes.md) [Download Now](https://downloads.mariadb.org/mariadb/5.5.68/)
+The most recent release in the [MariaDB 5.5](changes-improvements-in-mariadb-5-5.md) series is:[**MariaDB 5.5.68**](mariadb-5568-release-notes.md) [Download Now](https://downloads.mariadb.org/mariadb/5.5.68/)
 
-[Download](https://downloads.askmonty.org/mariadb/5.5.21) |**Release Notes** |[Changelog](../../../changelogs/changelogs-mariadb-55-series/mariadb-5521-changelog.md) |[Overview of 5.5](broken-reference)
+[Download](https://downloads.askmonty.org/mariadb/5.5.21) |**Release Notes** |[Changelog](../../../changelogs/changelogs-mariadb-55-series/mariadb-5521-changelog.md) |[Overview of 5.5](broken-reference/)
 
 **Release date:** 16 Mar 2012
 
-[MariaDB 5.5.21](mariadb-5521-release-notes.md) is a [_**Beta**_](../../../mariadb-release-criteria.md) release. In general this means that there are no known serious bugs, except for those marked as feature requests. This is the second release of the [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) series and includes features left out of the 5.5.20-alpha release, and various bug fixes.
+[MariaDB 5.5.21](mariadb-5521-release-notes.md) is a [_**Beta**_](../../../mariadb-release-criteria.md) release. In general this means that there are no known serious bugs, except for those marked as feature requests. This is the second release of the [MariaDB 5.5](changes-improvements-in-mariadb-5-5.md) series and includes features left out of the 5.5.20-alpha release, and various bug fixes.
 
-**For a description of** [**MariaDB 5.5**](broken-reference) **see the**[**What is MariaDB 5.5**](broken-reference) **page.**
+**For a description of** [**MariaDB 5.5**](broken-reference/) **see the**[**What is MariaDB 5.5**](broken-reference/) **page.**
 
 For a list of changes made in [MariaDB 5.5.21](mariadb-5521-release-notes.md)-beta, with links to detailed\
 information on each push, see the[MariaDB 5.5.21 Changelog](../../../changelogs/changelogs-mariadb-55-series/mariadb-5521-changelog.md).
@@ -62,15 +62,15 @@ makes use of existing components of InnoDB/XtraDB keys to generate more\
 efficient execution plans. Using these components in many cases allows the\
 server to generate execution plans which employ index-only look-ups.
 
-See the [Extended Keys](broken-reference) page for more information.
+See the [Extended Keys](broken-reference/) page for more information.
 
 ## Non-blocking Client Library
 
-MariaDB, starting with version 5.5.21 supports [non-blocking operations in the client-library](broken-reference). This allows an application to start a query or other operation against the database, and then continue to do other work (in the same thread) while the request is sent over the network, the query is processed in the server, and the result travels back. As parts of the result become ready, the application can — at its leisure — call back into the library to continue processing, repeating this until the operation is completed.
+MariaDB, starting with version 5.5.21 supports [non-blocking operations in the client-library](broken-reference/). This allows an application to start a query or other operation against the database, and then continue to do other work (in the same thread) while the request is sent over the network, the query is processed in the server, and the result travels back. As parts of the result become ready, the application can — at its leisure — call back into the library to continue processing, repeating this until the operation is completed.
 
 Non-blocking operation is implemented entirely within the client library. This means no special server support is necessary and non-blocking operation works with any version of the MariaDB or MySQL server, the same as the normal blocking API. It also means that it is not possible to have two queries running at the same time on the same connection (this is a protocol limitation). But a single thread can have any number of non-blocking queries running at the same time, each using its own MYSQL connection object.
 
-See [Non-Blocking Client Library](broken-reference) for details.
+See [Non-Blocking Client Library](broken-reference/) for details.
 
 ## mysql\_real\_connect() Changes
 

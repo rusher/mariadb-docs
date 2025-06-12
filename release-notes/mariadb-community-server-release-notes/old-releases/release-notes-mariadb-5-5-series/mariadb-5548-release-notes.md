@@ -1,14 +1,14 @@
 # MariaDB 5.5.48 Release Notes
 
-The most recent release in the [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) series is:[**MariaDB 5.5.68**](mariadb-5568-release-notes.md) [Download Now](https://downloads.mariadb.org/mariadb/5.5.68/)
+The most recent release in the [MariaDB 5.5](changes-improvements-in-mariadb-5-5.md) series is:[**MariaDB 5.5.68**](mariadb-5568-release-notes.md) [Download Now](https://downloads.mariadb.org/mariadb/5.5.68/)
 
-[Download](https://downloads.mariadb.org/mariadb/5.5.48)[Release Notes](mariadb-5548-release-notes.md)[Changelog](../../../changelogs/changelogs-mariadb-55-series/mariadb-5548-changelog.md)[Overview of 5.5](broken-reference)
+[Download](https://downloads.mariadb.org/mariadb/5.5.48)[Release Notes](mariadb-5548-release-notes.md)[Changelog](../../../changelogs/changelogs-mariadb-55-series/mariadb-5548-changelog.md)[Overview of 5.5](broken-reference/)
 
 **Release date:** 11 Feb 2016
 
 This is a [_**Stable**_](../../../mariadb-release-criteria.md) _**(GA)**_ release.
 
-**For a description of** [**MariaDB 5.5**](broken-reference) **see the**[**What is MariaDB 5.5?**](broken-reference) **page.**
+**For a description of** [**MariaDB 5.5**](broken-reference/) **see the**[**What is MariaDB 5.5?**](broken-reference/) **page.**
 
 For a list of changes made in this release, with links to detailed\
 information on each push, see the[MariaDB 5.5.48 Changelog](../../../changelogs/changelogs-mariadb-55-series/mariadb-5548-changelog.md).
@@ -34,7 +34,7 @@ updates, including from MySQL 5.5.48. Notable updates include:
 ### Deprecated Distributions
 
 As per the [MariaDB Deprecation Policy](../../../mariadb-platform-deprecation-policy.md), this will be the\
-last release of [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) for Debian 6 "Squeeze".
+last release of [MariaDB 5.5](changes-improvements-in-mariadb-5-5.md) for Debian 6 "Squeeze".
 
 ## Changelog
 

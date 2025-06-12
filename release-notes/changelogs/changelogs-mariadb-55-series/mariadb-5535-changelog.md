@@ -1,8 +1,8 @@
 # MariaDB 5.5.35 Changelog
 
-The most recent release in the [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) series is:[**MariaDB 5.5.68**](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/mariadb-5568-release-notes.md) [Download Now](https://downloads.mariadb.org/mariadb/5.5.68/)
+The most recent release in the [MariaDB 5.5](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) series is:[**MariaDB 5.5.68**](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/mariadb-5568-release-notes.md) [Download Now](https://downloads.mariadb.org/mariadb/5.5.68/)
 
-[Download](https://downloads.mariadb.org/mariadb/5.5.35) |[Release Notes](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/mariadb-5535-release-notes.md) |**Changelog** |[Overview of 5.5](broken-reference)
+[Download](https://downloads.mariadb.org/mariadb/5.5.35) |[Release Notes](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/mariadb-5535-release-notes.md) |**Changelog** |[Overview of 5.5](broken-reference/)
 
 **Release date:** 29 Jan 2014
 
@@ -197,7 +197,7 @@ modified in that revision.
   * remove an unused error message
 * [Revision #4014](https://bazaar.launchpad.net/~maria-captains/maria/5.5/revision/4014)\
   Wed 2014-01-22 15:16:57 +0200
-  * Fix for [MDEV-5547](https://jira.mariadb.org/browse/MDEV-5547): Bad error message when moving very old .frm files to [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5). mysql\_upgrade `--help` now also prints out `--default` options and variable values. mysql\_upgrade now prints permission errors. mysql\_upgrade doesn't print some non essential info if `--silent` is used. Added handler error message about incompatible versions Fixed that mysqlbug and mysql\_install\_db have the executable flag set. Removed executable flag for some non executable files. Changed in mysql\_install\_db askmonty.org to mariadb.com. Ensured that all client executables prints `--default` options the same way. Allow REPAIR ... USE\_FRM for old .frm files if the are still compatible. Extended shown error for storage engine messages.
+  * Fix for [MDEV-5547](https://jira.mariadb.org/browse/MDEV-5547): Bad error message when moving very old .frm files to [MariaDB 5.5](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md). mysql\_upgrade `--help` now also prints out `--default` options and variable values. mysql\_upgrade now prints permission errors. mysql\_upgrade doesn't print some non essential info if `--silent` is used. Added handler error message about incompatible versions Fixed that mysqlbug and mysql\_install\_db have the executable flag set. Removed executable flag for some non executable files. Changed in mysql\_install\_db askmonty.org to mariadb.com. Ensured that all client executables prints `--default` options the same way. Allow REPAIR ... USE\_FRM for old .frm files if the are still compatible. Extended shown error for storage engine messages.
 * [Revision #4013](https://bazaar.launchpad.net/~maria-captains/maria/5.5/revision/4013)\
   Tue 2014-01-21 17:27:36 +0400
   * [MDEV-4974](https://jira.mariadb.org/browse/MDEV-4974): memory leak in 5.5.32-MariaDB-1wheezy-log

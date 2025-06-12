@@ -1,8 +1,8 @@
 # MariaDB 5.3.4 Release Notes
 
-The most recent release in the [MariaDB 5.3 series](broken-reference) is:[**MariaDB 5.3.12**](mariadb-5312-release-notes.md)
+The most recent release in the [MariaDB 5.3 series](broken-reference/) is:[**MariaDB 5.3.12**](mariadb-5312-release-notes.md)
 
-[Download](https://downloads.askmonty.org/mariadb/5.3.4) |**Release Notes** |[Changelog](../../../changelogs/changelogs-mariadb-53-series/mariadb-534-changelog.md) |[Overview of 5.3](broken-reference)
+[Download](https://downloads.askmonty.org/mariadb/5.3.4) |**Release Notes** |[Changelog](../../../changelogs/changelogs-mariadb-53-series/mariadb-534-changelog.md) |[Overview of 5.3](broken-reference/)
 
 **Release date:** 15 Feb 2012
 
@@ -12,13 +12,13 @@ feature requests and no bugs were fixed since the last release which caused any\
 notable code changes. We believe the code is ready for general usage (based on\
 bug inflow), but we want a short additional period of testing before calling it stable.
 
-**For a detailed description of** [**MariaDB 5.3**](broken-reference) **see the** [**What is MariaDB 5.3**](broken-reference) **page.**
+**For a detailed description of** [**MariaDB 5.3**](broken-reference/) **see the** [**What is MariaDB 5.3**](broken-reference/) **page.**
 
 Compared to [MariaDB 5.3.0](mariadb-530-release-notes.md), 5.3.1, 5.3.2, and 5.3.3, [MariaDB 5.3.4](mariadb-534-release-notes.md) is a bug-fix release\
 with a focus on stability, performance, and usability. It is the fourth release of the 5.3 series and fixes bugs found in the previous 5.3.x _beta_ and _rc_ releases.
 
 For a list of every change made in [MariaDB 5.3.4](mariadb-534-release-notes.md), with links to detailed\
-information on each push, see the[MariaDB 5.3.4 Changelog](../../../changelogs/changelogs-mariadb-53-series/mariadb-534-changelog.md). It is worth noting that[MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3) is built on [MariaDB 5.2](../release-notes-mariadb-5-2-series/changes-improvements-in-mariadb-5-2.md),[MariaDB 5.1](../release-notes-mariadb-5-1-series/changes-improvements-in-mariadb-5-1.md), and MySQL 5.1.
+information on each push, see the[MariaDB 5.3.4 Changelog](../../../changelogs/changelogs-mariadb-53-series/mariadb-534-changelog.md). It is worth noting that[MariaDB 5.3](changes-improvements-in-mariadb-5-3.md) is built on [MariaDB 5.2](../release-notes-mariadb-5-2-series/changes-improvements-in-mariadb-5-2.md),[MariaDB 5.1](../release-notes-mariadb-5-1-series/changes-improvements-in-mariadb-5-1.md), and MySQL 5.1.
 
 In most respects [MariaDB](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/mariadb/README.md) will work exactly as MySQL: all commands,\
 interfaces, libraries and APIs that exist in MySQL also exist in MariaDB.

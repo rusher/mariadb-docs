@@ -126,7 +126,7 @@ modified in that revision.
           * In open\_table() reuse code from find\_temporary\_table()
       * [Revision #3427.36.26](https://bazaar.launchpad.net/~maria-captains/maria/10.0/revision/3427.36.26)\
         Sun 2013-10-13 23:20:57 +0300
-        * Give a warning, not an error, if the log file size in innodb doesn't match what is on disk This helps when moving from [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) to [MariaDB 10.0](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md) as sometimes the log file size is rounded differently.
+        * Give a warning, not an error, if the log file size in innodb doesn't match what is on disk This helps when moving from [MariaDB 5.5](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) to [MariaDB 10.0](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md) as sometimes the log file size is rounded differently.
       * [Revision #3427.36.25](https://bazaar.launchpad.net/~maria-captains/maria/10.0/revision/3427.36.25)\
         Tue 2013-10-08 14:36:06 +0200
         * [MDEV-4506](https://jira.mariadb.org/browse/MDEV-4506): Parallel replication.

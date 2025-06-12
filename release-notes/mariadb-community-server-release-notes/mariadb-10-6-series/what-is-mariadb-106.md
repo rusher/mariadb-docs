@@ -25,7 +25,7 @@ See the [Differences in MariaDB Enterprise Server 10.6](../../enterprise-server/
 
 #### Oracle Compatibility
 
-* Anonymous [subqueries in a FROM clause](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/selecting-data/joins-subqueries/subqueries/subqueries-in-a-from-clause-derived-tables) (no AS clause) are permitted in [ORACLE mode](broken-reference) ([MDEV-19162](https://jira.mariadb.org/browse/MDEV-19162))
+* Anonymous [subqueries in a FROM clause](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/selecting-data/joins-subqueries/subqueries/subqueries-in-a-from-clause-derived-tables) (no AS clause) are permitted in [ORACLE mode](broken-reference/) ([MDEV-19162](https://jira.mariadb.org/browse/MDEV-19162))
 * [ADD\_MONTHS()](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/date-time-functions/add_months) added ([MDEV-20025](https://jira.mariadb.org/browse/MDEV-20025))
 * [TO\_CHAR()](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/string-functions/to_char) added ([MDEV-20017](https://jira.mariadb.org/browse/MDEV-20017))
 * [SYS\_GUID()](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/secondary-functions/miscellaneous-functions/sys_guid) added ([MDEV-24285](https://jira.mariadb.org/browse/MDEV-24285))
@@ -38,7 +38,7 @@ See the [Differences in MariaDB Enterprise Server 10.6](../../enterprise-server/
 * We intended to deprecate and eventually remove the [InnoDB's COMPRESSED row format](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-row-formats/innodb-compressed-row-format). The first step was to make the tables [read-only by default](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-row-formats/innodb-compressed-row-format#read-only), but this plan was abandoned from [MariaDB 10.6.6](mariadb-1066-release-notes.md) ([MDEV-23497](https://jira.mariadb.org/browse/MDEV-23497)) ([MDEV-27736](https://jira.mariadb.org/browse/MDEV-27736))
 * [Information Schema SYS\_TABLESPACES](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_sys_tablespaces-table) now directly reflects the filesystem, and [SYS\_DATAFILES](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_sys_datafiles-table) has been removed ([MDEV-22343](https://jira.mariadb.org/browse/MDEV-22343))
 * Defer writes to the InnoDB temporary tablespace ([MDEV-12227](https://jira.mariadb.org/browse/MDEV-12227))
-* The old [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5)-compatible `innodb` checksum is no longer supported, only `crc32`. Removed the `*innodb` and `*none` options from [innodb\_checksum\_algorithm](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables#innodb_checksum_algorithm), and the `--strict-check`/`-C` and `--write`/`-w` options from [innochecksum](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/administrative-tools/innochecksum) ([MDEV-25105](https://jira.mariadb.org/browse/MDEV-25105))
+* The old [MariaDB 5.5](../old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md)-compatible `innodb` checksum is no longer supported, only `crc32`. Removed the `*innodb` and `*none` options from [innodb\_checksum\_algorithm](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables#innodb_checksum_algorithm), and the `--strict-check`/`-C` and `--write`/`-w` options from [innochecksum](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/administrative-tools/innochecksum) ([MDEV-25105](https://jira.mariadb.org/browse/MDEV-25105))
 
 ### Replication, Galera and Binlog
 
@@ -118,20 +118,20 @@ page.
 
 * [CVE-2025-21490](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-21490): [MariaDB 10.6.21](mariadb-10-6-21-release-notes.md)
 * [CVE-2024-21096](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-21096): [MariaDB 10.6.18](mariadb-10-6-18-release-notes.md)
-* [CVE-2023-5157](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-5157): [MariaDB 10.6.9](broken-reference)
+* [CVE-2023-5157](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-5157): [MariaDB 10.6.9](broken-reference/)
 * [CVE-2023-22084](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-22084): [MariaDB 10.6.16](mariadb-10-6-16-release-notes.md)
 * [CVE-2022-47015](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-47015): [MariaDB 10.6.13](mariadb-10-6-13-release-notes.md)
-* [CVE-2022-38791](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-38791): [MariaDB 10.6.9](broken-reference)
-* [CVE-2022-32091](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-32091): [MariaDB 10.6.9](broken-reference)
-* [CVE-2022-32089](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-32089): [MariaDB 10.6.9](broken-reference)
+* [CVE-2022-38791](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-38791): [MariaDB 10.6.9](broken-reference/)
+* [CVE-2022-32091](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-32091): [MariaDB 10.6.9](broken-reference/)
+* [CVE-2022-32089](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-32089): [MariaDB 10.6.9](broken-reference/)
 * [CVE-2022-32088](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-32088): [MariaDB 10.6.8](mariadb-1068-release-notes.md)
 * [CVE-2022-32087](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-32087): [MariaDB 10.6.8](mariadb-1068-release-notes.md)
 * [CVE-2022-32086](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-32086): [MariaDB 10.6.8](mariadb-1068-release-notes.md)
 * [CVE-2022-32085](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-32085): [MariaDB 10.6.8](mariadb-1068-release-notes.md)
-* [CVE-2022-32084](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-32084): [MariaDB 10.6.9](broken-reference)
+* [CVE-2022-32084](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-32084): [MariaDB 10.6.9](broken-reference/)
 * [CVE-2022-32083](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-32083): [MariaDB 10.6.8](mariadb-1068-release-notes.md)
-* [CVE-2022-32082](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-32082): [MariaDB 10.6.9](broken-reference)
-* [CVE-2022-32081](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-32081): [MariaDB 10.6.9](broken-reference)
+* [CVE-2022-32082](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-32082): [MariaDB 10.6.9](broken-reference/)
+* [CVE-2022-32081](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-32081): [MariaDB 10.6.9](broken-reference/)
 * [CVE-2022-31624](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-31624): [MariaDB 10.6.5](mariadb-1065-release-notes.md)
 * [CVE-2022-27458](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-27458): [MariaDB 10.6.8](mariadb-1068-release-notes.md)
 * [CVE-2022-27457](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-27457): [MariaDB 10.6.8](mariadb-1068-release-notes.md)
@@ -176,7 +176,7 @@ page.
 * [CVE-2021-35604](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-35604): [MariaDB 10.6.3](mariadb-1063-release-notes.md)
 * [CVE-2021-2389](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-2389): [MariaDB 10.6.4](mariadb-1064-release-notes.md) \[[2](mariadb-1064-release-notes.md)]
 * [CVE-2021-2372](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-2372): [MariaDB 10.6.4](mariadb-1064-release-notes.md) \[[2](mariadb-1064-release-notes.md)]
-* [CVE-2018-25032](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-25032): [MariaDB 10.6.9](broken-reference)
+* [CVE-2018-25032](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-25032): [MariaDB 10.6.9](broken-reference/)
 
 ## List of All [MariaDB 10.6](what-is-mariadb-106.md) Releases
 
@@ -193,9 +193,9 @@ page.
 | 7 Jun 2023  | [MariaDB 10.6.14](mariadb-10-6-14-release-notes.md) | Stable (GA) | [Release Notes](mariadb-10-6-14-release-notes.md) | [Changelog](../../changelogs/changelogs-mariadb-106-series/mariadb-10-6-14-changelog.md) |
 | 10 May 2023 | [MariaDB 10.6.13](mariadb-10-6-13-release-notes.md) | Stable (GA) | [Release Notes](mariadb-10-6-13-release-notes.md) | [Changelog](../../changelogs/changelogs-mariadb-106-series/mariadb-10-6-13-changelog.md) |
 | 6 Feb 2023  | [MariaDB 10.6.12](mariadb-10-6-12-release-notes.md) | Stable (GA) | [Release Notes](mariadb-10-6-12-release-notes.md) | [Changelog](../../changelogs/changelogs-mariadb-106-series/mariadb-10-6-12-changelog.md) |
-| 7 Nov 2022  | [MariaDB 10.6.11](broken-reference)                 | Stable (GA) | [Release Notes](broken-reference)                 | [Changelog](../../changelogs/changelogs-mariadb-106-series/mariadb-10-6-11-changelog.md) |
+| 7 Nov 2022  | [MariaDB 10.6.11](broken-reference/)                | Stable (GA) | [Release Notes](broken-reference/)                | [Changelog](../../changelogs/changelogs-mariadb-106-series/mariadb-10-6-11-changelog.md) |
 | 19 Sep 2022 | [MariaDB 10.6.10](mariadb-10610-release-notes.md)   | Stable (GA) | [Release Notes](mariadb-10610-release-notes.md)   | [Changelog](../../changelogs/changelogs-mariadb-106-series/mariadb-10610-changelog.md)   |
-| 15 Aug 2022 | [MariaDB 10.6.9](broken-reference)                  | Stable (GA) | [Release Notes](broken-reference)                 | [Changelog](../../changelogs/changelogs-mariadb-106-series/mariadb-1069-changelog.md)    |
+| 15 Aug 2022 | [MariaDB 10.6.9](broken-reference/)                 | Stable (GA) | [Release Notes](broken-reference/)                | [Changelog](../../changelogs/changelogs-mariadb-106-series/mariadb-1069-changelog.md)    |
 | 20 May 2022 | [MariaDB 10.6.8](mariadb-1068-release-notes.md)     | Stable (GA) | [Release Notes](mariadb-1068-release-notes.md)    | [Changelog](../../changelogs/changelogs-mariadb-106-series/mariadb-1068-changelog.md)    |
 | 12 Feb 2022 | [MariaDB 10.6.7](mariadb-1067-release-notes.md)     | Stable (GA) | [Release Notes](mariadb-1067-release-notes.md)    | [Changelog](../../changelogs/changelogs-mariadb-106-series/mariadb-1067-changelog.md)    |
 | 9 Feb 2022  | [MariaDB 10.6.6](mariadb-1066-release-notes.md)     | Stable (GA) | [Release Notes](mariadb-1066-release-notes.md)    | [Changelog](../../changelogs/changelogs-mariadb-106-series/mariadb-1066-changelog.md)    |

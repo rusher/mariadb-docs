@@ -143,7 +143,7 @@ The revision number links will take you to the revision's page on GitHub. On[Git
   * Remove labs() warning from maria and myisam storage engines
 * [Revision #748d993](https://github.com/MariaDB/server/commit/748d993)\
   2016-11-29 11:28:15 -0800
-  * Fixed bug [MDEV-11364](https://jira.mariadb.org/browse/MDEV-11364). The function Item\_func\_isnull::update\_used\_tables() must handle the case when the predicate is over not nullable column in a special way. This is actually a bug of [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3)/5.5, but it's probably hard to demonstrate that it can cause problems there.
+  * Fixed bug [MDEV-11364](https://jira.mariadb.org/browse/MDEV-11364). The function Item\_func\_isnull::update\_used\_tables() must handle the case when the predicate is over not nullable column in a special way. This is actually a bug of [MariaDB 5.3](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3.md)/5.5, but it's probably hard to demonstrate that it can cause problems there.
 * [Revision #b209bc3](https://github.com/MariaDB/server/commit/b209bc3)\
   2016-11-29 09:01:46 +0200
   * [MDEV-10427](https://jira.mariadb.org/browse/MDEV-10427): innodb.innodb-wl5522-debug-zip fails sporadically in buildbot

@@ -2,11 +2,11 @@
 
 The most recent release in the [MariaDB 10.0](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md) series is:[**MariaDB 10.0.38**](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-10038-release-notes.md) [Download Now](https://downloads.mariadb.org/mariadb/10.0.38)
 
-[Download](https://downloads.mariadb.org/mariadb/10.0.24)[Release Notes](broken-reference)[Changelog](mariadb-10024-changelog.md)[Overview of 10.0](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md)
+[Download](https://downloads.mariadb.org/mariadb/10.0.24)[Release Notes](broken-reference/)[Changelog](mariadb-10024-changelog.md)[Overview of 10.0](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md)
 
 **Release date:** 19 Feb 2016
 
-For the highlights of this release, see the[release notes](broken-reference).
+For the highlights of this release, see the[release notes](broken-reference/).
 
 The revision number links will take you to the revision's page on GitHub. On[GitHub](https://github.com/MariaDB/server/tree/10.0) you can view more details of the revision and view diffs of the code modified in that revision.
 
@@ -68,9 +68,9 @@ The revision number links will take you to the revision's page on GitHub. On[Git
   2016-02-16 10:49:13 +0200
   * [MDEV-9355](https://jira.mariadb.org/browse/MDEV-9355): parts.partition\_debug\_innodb fails in buildbot on p8-rhel6-bintar-debug
 * [Revision #481e643](https://github.com/MariaDB/server/commit/481e643)\
-  2016-02-15 23:41:59 +0100
-  *
-    * Fix to [MDEV-9542](https://jira.mariadb.org/browse/MDEV-9542) Connect was not handling NULLs in the answer from catalog functions and tables. It does now and when decimal is NULL defines DOUBLE without parameters.
+  2016-02-15 23:41:59 +0100\
+  \*
+  * Fix to [MDEV-9542](https://jira.mariadb.org/browse/MDEV-9542) Connect was not handling NULLs in the answer from catalog functions and tables. It does now and when decimal is NULL defines DOUBLE without parameters.
 * [Revision #271fed4](https://github.com/MariaDB/server/commit/271fed4)\
   2016-02-15 22:50:59 +0100
   * Merge branch '5.5' into 10.0
@@ -282,9 +282,9 @@ The revision number links will take you to the revision's page on GitHub. On[Git
   2016-01-25 19:03:33 +0100
   * update test results
 * [Revision #62a5e56](https://github.com/MariaDB/server/commit/62a5e56)\
-  2016-01-25 18:44:51 +0100
-  *
-    * Change SQL\_NTS to 0 when the string is NULL
+  2016-01-25 18:44:51 +0100\
+  \*
+  * Change SQL\_NTS to 0 when the string is NULL
 * [Revision #1fa15f9](https://github.com/MariaDB/server/commit/1fa15f9)\
   2016-01-25 17:54:28 +0200
   * Updated README and CREDITS
@@ -311,7 +311,7 @@ The revision number links will take you to the revision's page on GitHub. On[Git
   * [MDEV-9106](https://jira.mariadb.org/browse/MDEV-9106) Audit plugin doesnt run with MySQL 5.7. updata thread\_pool\_server\_audit test result.
 * [Revision #cdc9aa5](https://github.com/MariaDB/server/commit/cdc9aa5)\
   2016-01-13 15:24:33 +0400
-  * [MDEV-9106](https://jira.mariadb.org/browse/MDEV-9106) Audit Plugin doesn't run with MySQL 5.7. [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) built in debug gets unhappy with mutexes. Although everything is correct, some DBUG\_ASSERT can happen. So this patch keeps safe\_mutex silent.
+  * [MDEV-9106](https://jira.mariadb.org/browse/MDEV-9106) Audit Plugin doesn't run with MySQL 5.7. [MariaDB 5.5](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) built in debug gets unhappy with mutexes. Although everything is correct, some DBUG\_ASSERT can happen. So this patch keeps safe\_mutex silent.
 * [Revision #c955253](https://github.com/MariaDB/server/commit/c955253)\
   2016-01-12 16:29:02 +0400
   * [MDEV-9106](https://jira.mariadb.org/browse/MDEV-9106) Audit plugin compiled with MariaDB can't install on MySQL 5.7. The audit API was seriously changed in MySQL 5.7. so we had to adapt the plugin's code to that.
@@ -322,9 +322,9 @@ The revision number links will take you to the revision's page on GitHub. On[Git
   2016-01-10 11:57:36 +0100
   * Merge branch 'ob-10.0' into 10.0
 * [Revision #0891ae2](https://github.com/MariaDB/server/commit/0891ae2)\
-  2016-01-09 20:52:17 +0100
-  *
-    * Fix [MDEV-9239](https://jira.mariadb.org/browse/MDEV-9239). Meanwhile, make all references to the database in XTAB Schema (was sometimes in XTAB Catalog)
+  2016-01-09 20:52:17 +0100\
+  \*
+  * Fix [MDEV-9239](https://jira.mariadb.org/browse/MDEV-9239). Meanwhile, make all references to the database in XTAB Schema (was sometimes in XTAB Catalog)
 * [Revision #3730d8a](https://github.com/MariaDB/server/commit/3730d8a)\
   2016-01-05 22:48:50 +0100
   * [MDEV-9366](https://jira.mariadb.org/browse/MDEV-9366) : do\_shutdown\_server fails to detect server shutdown on Windows. Fix test whether process is alive in mysqltest.
@@ -374,9 +374,9 @@ The revision number links will take you to the revision's page on GitHub. On[Git
   2015-12-27 21:14:07 +0100
   * Merge branch 'ob-10.0' into 10.0
 * [Revision #6883e5c](https://github.com/MariaDB/server/commit/6883e5c)\
-  2015-12-27 19:45:51 +0100
-  *
-    * Fix [MDEV-9322](https://jira.mariadb.org/browse/MDEV-9322).
+  2015-12-27 19:45:51 +0100\
+  \*
+  * Fix [MDEV-9322](https://jira.mariadb.org/browse/MDEV-9322).
 * [Revision #4fdf25a](https://github.com/MariaDB/server/commit/4fdf25a)\
   2015-12-21 16:37:59 +0100
   * after-merge: 10.0 part of [MDEV-9249](https://jira.mariadb.org/browse/MDEV-9249) (ERR\_remove\_state)
@@ -417,8 +417,8 @@ The revision number links will take you to the revision's page on GitHub. On[Git
   2015-12-14 23:47:05 +0100
   * Merge branch 'ob-10.0' into 10.0
 * [Revision #11c339f](https://github.com/MariaDB/server/commit/11c339f)\
-  2015-12-14 23:45:23 +0100
-  *
-    * Fix [MDEV-9279](https://jira.mariadb.org/browse/MDEV-9279). Replacing exit(1) in yy\_fatal\_error by a longjmp.
+  2015-12-14 23:45:23 +0100\
+  \*
+  * Fix [MDEV-9279](https://jira.mariadb.org/browse/MDEV-9279). Replacing exit(1) in yy\_fatal\_error by a longjmp.
 
 {% @marketo/form formid="4316" formId="4316" %}

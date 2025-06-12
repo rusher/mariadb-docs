@@ -1,8 +1,8 @@
 # MariaDB 5.5.34 Release Notes
 
-The most recent release in the [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) series is:[**MariaDB 5.5.68**](mariadb-5568-release-notes.md) [Download Now](https://downloads.mariadb.org/mariadb/5.5.68/)
+The most recent release in the [MariaDB 5.5](changes-improvements-in-mariadb-5-5.md) series is:[**MariaDB 5.5.68**](mariadb-5568-release-notes.md) [Download Now](https://downloads.mariadb.org/mariadb/5.5.68/)
 
-[Download](https://downloads.mariadb.org/mariadb/5.5.34) |**Release Notes** |[Changelog](../../../changelogs/changelogs-mariadb-55-series/mariadb-5534-changelog.md) |[Overview of 5.5](broken-reference)
+[Download](https://downloads.mariadb.org/mariadb/5.5.34) |**Release Notes** |[Changelog](../../../changelogs/changelogs-mariadb-55-series/mariadb-5534-changelog.md) |[Overview of 5.5](broken-reference/)
 
 **Release date:** 21 Nov 2013
 
@@ -12,7 +12,7 @@ requests, that no bugs were fixed since last release that caused a notable code\
 changes, and that we believe the code is ready for general usage (based on bug\
 inflow).
 
-**For a description of** [**MariaDB 5.5**](broken-reference) **see the**[**What is MariaDB 5.5?**](broken-reference) **page.**
+**For a description of** [**MariaDB 5.5**](broken-reference/) **see the**[**What is MariaDB 5.5?**](broken-reference/) **page.**
 
 For a list of changes made in this release, with links to detailed\
 information on each push, see the[MariaDB 5.5.34 Changelog](../../../changelogs/changelogs-mariadb-55-series/mariadb-5534-changelog.md).
@@ -40,7 +40,7 @@ Full details of all changes are in the [changelog](../../../changelogs/changelog
 
 ## Fedora & Ubuntu
 
-As per the [MariaDB Deprecation Policy](../../../mariadb-platform-deprecation-policy.md), this will be the final release of MariaDB for Fedora 17. When the next version of [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) is released, the Fedora 17 repositories will go away. This will likely also be the final release of MariaDB for Fedora 18.
+As per the [MariaDB Deprecation Policy](../../../mariadb-platform-deprecation-policy.md), this will be the final release of MariaDB for Fedora 17. When the next version of [MariaDB 5.5](changes-improvements-in-mariadb-5-5.md) is released, the Fedora 17 repositories will go away. This will likely also be the final release of MariaDB for Fedora 18.
 
 With this release Fedora 19 "Schrödinger's Cat" and Ubuntu 13.10 "Saucy Salamander" repositories have been added. It is worth noting that MariaDB is included in the official Fedora 19 repositories, so there is no need to add our repositories unless you are using [MariaDB Galera Cluster](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/galera/README.md) or for testing and development.
 

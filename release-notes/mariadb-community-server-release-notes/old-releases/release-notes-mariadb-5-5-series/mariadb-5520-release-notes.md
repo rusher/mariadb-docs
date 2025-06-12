@@ -1,14 +1,14 @@
 # MariaDB 5.5.20 Release Notes
 
-The most recent release in the [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) series is:[**MariaDB 5.5.68**](mariadb-5568-release-notes.md) [Download Now](https://downloads.mariadb.org/mariadb/5.5.68/)
+The most recent release in the [MariaDB 5.5](changes-improvements-in-mariadb-5-5.md) series is:[**MariaDB 5.5.68**](mariadb-5568-release-notes.md) [Download Now](https://downloads.mariadb.org/mariadb/5.5.68/)
 
-[Download](https://downloads.askmonty.org/mariadb/5.5.20) |**Release Notes** |[Changelog](../../../changelogs/changelogs-mariadb-55-series/mariadb-5520-changelog.md) |[Overview of 5.5](broken-reference)
+[Download](https://downloads.askmonty.org/mariadb/5.5.20) |**Release Notes** |[Changelog](../../../changelogs/changelogs-mariadb-55-series/mariadb-5520-changelog.md) |[Overview of 5.5](broken-reference/)
 
 **Release date:** 25 Feb 2012
 
-[MariaDB 5.5.20](mariadb-5520-release-notes.md) is an [_**Alpha**_](../../../mariadb-release-criteria.md) release. [MariaDB 5.5.20](mariadb-5520-release-notes.md)-alpha is a merge of [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3) and MySQL 5.5 with some limited additional bug fixes. This is the first 5.5-based release, and we are releasing it now, intentionally without any extra features and with it missing some features, to get it into the hands of any who might want to test it. Extra features planned for [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) will be pushed into subsequent releases. **Do not use alpha releases on production systems.**
+[MariaDB 5.5.20](mariadb-5520-release-notes.md) is an [_**Alpha**_](../../../mariadb-release-criteria.md) release. [MariaDB 5.5.20](mariadb-5520-release-notes.md)-alpha is a merge of [MariaDB 5.3](../release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3.md) and MySQL 5.5 with some limited additional bug fixes. This is the first 5.5-based release, and we are releasing it now, intentionally without any extra features and with it missing some features, to get it into the hands of any who might want to test it. Extra features planned for [MariaDB 5.5](changes-improvements-in-mariadb-5-5.md) will be pushed into subsequent releases. **Do not use alpha releases on production systems.**
 
-**For a description of** [**MariaDB 5.5**](broken-reference) **see the**[**What is MariaDB 5.5**](broken-reference) **page.**
+**For a description of** [**MariaDB 5.5**](broken-reference/) **see the**[**What is MariaDB 5.5**](broken-reference/) **page.**
 
 For a list of changes made in [MariaDB 5.5.20](mariadb-5520-release-notes.md)-alpha, with links to detailed\
 information on each push, see the[MariaDB 5.5.20 Changelog](../../../changelogs/changelogs-mariadb-55-series/mariadb-5520-changelog.md).

@@ -216,14 +216,14 @@ The revision number links will take you to the revision's page on GitHub. On[Git
   * [MDEV-9106](https://jira.mariadb.org/browse/MDEV-9106) Audit plugin doesnt run with MySQL 5.7. updata thread\_pool\_server\_audit test result.
 * [Revision #cdc9aa5](https://github.com/MariaDB/server/commit/cdc9aa5)\
   2016-01-13 15:24:33 +0400
-  * [MDEV-9106](https://jira.mariadb.org/browse/MDEV-9106) Audit Plugin doesn't run with MySQL 5.7. [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) built in debug gets unhappy with mutexes. Although everything is correct, some DBUG\_ASSERT can happen. So this patch keeps safe\_mutex silent.
+  * [MDEV-9106](https://jira.mariadb.org/browse/MDEV-9106) Audit Plugin doesn't run with MySQL 5.7. [MariaDB 5.5](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) built in debug gets unhappy with mutexes. Although everything is correct, some DBUG\_ASSERT can happen. So this patch keeps safe\_mutex silent.
 * [Revision #c955253](https://github.com/MariaDB/server/commit/c955253)\
   2016-01-12 16:29:02 +0400
   * [MDEV-9106](https://jira.mariadb.org/browse/MDEV-9106) Audit plugin compiled with MariaDB can't install on MySQL 5.7. The audit API was seriously changed in MySQL 5.7. so we had to adapt the plugin's code to that.
 * [Revision #3e20a0d](https://github.com/MariaDB/server/commit/3e20a0d)\
-  2016-01-09 19:51:51 +0100
-  *
-    * Fix [MDEV-9239](https://jira.mariadb.org/browse/MDEV-9239). Meanwhile, make all references to the database in XTAB Schema (was sometimes in XTAB Catalog)
+  2016-01-09 19:51:51 +0100\
+  \*
+  * Fix [MDEV-9239](https://jira.mariadb.org/browse/MDEV-9239). Meanwhile, make all references to the database in XTAB Schema (was sometimes in XTAB Catalog)
 * [Revision #3730d8a](https://github.com/MariaDB/server/commit/3730d8a)\
   2016-01-05 22:48:50 +0100
   * [MDEV-9366](https://jira.mariadb.org/browse/MDEV-9366) : do\_shutdown\_server fails to detect server shutdown on Windows. Fix test whether process is alive in mysqltest.
@@ -282,9 +282,9 @@ The revision number links will take you to the revision's page on GitHub. On[Git
   2015-12-29 14:17:31 +0400
   * [MDEV-9319](https://jira.mariadb.org/browse/MDEV-9319) ALTER from a bigger to a smaller blob type truncates too much data
 * [Revision #3e76d54](https://github.com/MariaDB/server/commit/3e76d54)\
-  2015-12-27 19:37:28 +0100
-  *
-    * Fix [MDEV-9322](https://jira.mariadb.org/browse/MDEV-9322).
+  2015-12-27 19:37:28 +0100\
+  \*
+  * Fix [MDEV-9322](https://jira.mariadb.org/browse/MDEV-9322).
 * [Revision #30b2447](https://github.com/MariaDB/server/commit/30b2447)\
   2015-12-27 15:40:34 +0400
   * [MDEV-9128](https://jira.mariadb.org/browse/MDEV-9128) - Compiling on IBM System Z fails

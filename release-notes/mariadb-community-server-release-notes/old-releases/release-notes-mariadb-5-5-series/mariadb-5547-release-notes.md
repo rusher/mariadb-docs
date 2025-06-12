@@ -1,14 +1,14 @@
 # MariaDB 5.5.47 Release Notes
 
-The most recent release in the [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) series is:[**MariaDB 5.5.68**](mariadb-5568-release-notes.md) [Download Now](https://downloads.mariadb.org/mariadb/5.5.68/)
+The most recent release in the [MariaDB 5.5](changes-improvements-in-mariadb-5-5.md) series is:[**MariaDB 5.5.68**](mariadb-5568-release-notes.md) [Download Now](https://downloads.mariadb.org/mariadb/5.5.68/)
 
-[Download](https://downloads.mariadb.org/mariadb/5.5.47)[Release Notes](mariadb-5547-release-notes.md)[Changelog](../../../changelogs/changelogs-mariadb-55-series/mariadb-5547-changelog.md)[Overview of 5.5](broken-reference)
+[Download](https://downloads.mariadb.org/mariadb/5.5.47)[Release Notes](mariadb-5547-release-notes.md)[Changelog](../../../changelogs/changelogs-mariadb-55-series/mariadb-5547-changelog.md)[Overview of 5.5](broken-reference/)
 
 **Release date:** 10 Dec 2015
 
 This is a [_**Stable**_](../../../mariadb-release-criteria.md) _**(GA)**_ release.
 
-**For a description of** [**MariaDB 5.5**](broken-reference) **see the**[**What is MariaDB 5.5?**](broken-reference) **page.**
+**For a description of** [**MariaDB 5.5**](broken-reference/) **see the**[**What is MariaDB 5.5?**](broken-reference/) **page.**
 
 For a list of changes made in this release, with links to detailed\
 information on each push, see the[MariaDB 5.5.47 Changelog](../../../changelogs/changelogs-mariadb-55-series/mariadb-5547-changelog.md).
@@ -43,7 +43,7 @@ updates, including from MySQL 5.5.47. Notable updates include:
 
 ### SLES 11 Support
 
-Previous builds of [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) for Suse Linux Enterprise Server (SLES) 11 only\
+Previous builds of [MariaDB 5.5](changes-improvements-in-mariadb-5-5.md) for Suse Linux Enterprise Server (SLES) 11 only\
 supported SLES 11 SP3 and SP4. Starting with this release, SLES 11 builds for\
 x86\_64 also support SLES 11 SP1 and SP2.
 

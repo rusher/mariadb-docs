@@ -1,8 +1,8 @@
 # MariaDB 5.3.10 Release Notes
 
-The most recent release in the [MariaDB 5.3 series](broken-reference) is:[**MariaDB 5.3.12**](mariadb-5312-release-notes.md)
+The most recent release in the [MariaDB 5.3 series](broken-reference/) is:[**MariaDB 5.3.12**](mariadb-5312-release-notes.md)
 
-[Download](https://downloads.mariadb.org/mariadb/5.3.10) |**Release Notes** |[Changelog](../../../changelogs/changelogs-mariadb-53-series/mariadb-5310-changelog.md) |[Overview of 5.3](broken-reference)
+[Download](https://downloads.mariadb.org/mariadb/5.3.10) |**Release Notes** |[Changelog](../../../changelogs/changelogs-mariadb-53-series/mariadb-5310-changelog.md) |[Overview of 5.3](broken-reference/)
 
 **Release date:** 13 Nov 2012
 
@@ -12,7 +12,7 @@ marked as feature requests, that no bugs were fixed since last release that\
 caused notable code changes, and that we believe the code is ready for\
 general usage (based on bug inflow).
 
-**For a description of** [**MariaDB 5.3**](broken-reference) **see the**[**What is MariaDB 5.3**](broken-reference) **page.**
+**For a description of** [**MariaDB 5.3**](broken-reference/) **see the**[**What is MariaDB 5.3**](broken-reference/) **page.**
 
 For a list of changes made in [MariaDB 5.3.10](mariadb-5310-release-notes.md), with links to detailed\
 information on each push, see the[MariaDB 5.3.10 Changelog](../../../changelogs/changelogs-mariadb-53-series/mariadb-5310-changelog.md).
@@ -29,14 +29,14 @@ for what changed between this and previous MySQL versions.
 ## Bug fixes and other improvements
 
 This MariaDB release includes several bug fixes and improvements. It is\
-recommended for all users of [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3).
+recommended for all users of [MariaDB 5.3](changes-improvements-in-mariadb-5-3.md).
 
 See the [MariaDB 5.3.10 Changelog](../../../changelogs/changelogs-mariadb-53-series/mariadb-5310-changelog.md) for a list of every\
 change made in [MariaDB 5.3.10](mariadb-5310-release-notes.md), with links to detailed information on each push.
 
 ## Alternative Linux binaries
 
-As with the previous version of [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3), this version includes alternative\
+As with the previous version of [MariaDB 5.3](changes-improvements-in-mariadb-5-3.md), this version includes alternative\
 Linux binaries built on a different build machine. Binaries created on this box\
 require at least GLIBC\_2.14. For continuity, we are still providing binaries\
 built with the same toolchain (and on the same builder) as previous releases.\

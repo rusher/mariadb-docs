@@ -1,8 +1,8 @@
 # MariaDB 5.5.28 Changelog
 
-The most recent release in the [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) series is:[**MariaDB 5.5.68**](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/mariadb-5568-release-notes.md) [Download Now](https://downloads.mariadb.org/mariadb/5.5.68/)
+The most recent release in the [MariaDB 5.5](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) series is:[**MariaDB 5.5.68**](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/mariadb-5568-release-notes.md) [Download Now](https://downloads.mariadb.org/mariadb/5.5.68/)
 
-[Download](https://downloads.mariadb.org/mariadb/5.5.28) |[Release Notes](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/mariadb-5528-release-notes.md) |**Changelog** |[Overview of 5.5](broken-reference)
+[Download](https://downloads.mariadb.org/mariadb/5.5.28) |[Release Notes](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/mariadb-5528-release-notes.md) |**Changelog** |[Overview of 5.5](broken-reference/)
 
 **Release date:** 22 Oct 2012
 
@@ -25,7 +25,7 @@ modified in that revision.
   * [Revision #2502.567.30](https://bazaar.launchpad.net/~maria-captains/maria/5.5/revision/2502.567.30)\
     Wed 2012-10-10 09:21:22 +0400
     * Backport of: olav.sandstaa@oracle.com-20120516074923-vd0dhp183vqcp2ql\
-      .. into [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3)
+      .. into [MariaDB 5.3](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3.md)
     * Fix for [Bug #12667154](https://bugs.launchpad.net/bugs/12667154) SAME QUERY EXEC AS WHERE SUBQ GIVES DIFFERENT\
       RESULTS ON IN() & NOT IN() COMP #3
     * This bug causes a wrong result in mysql-trunk when ICP is used\

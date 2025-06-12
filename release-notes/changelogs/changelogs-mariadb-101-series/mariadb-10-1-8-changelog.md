@@ -653,7 +653,7 @@ The revision number links will take you to the revision's page on GitHub. On[Git
   * Unify virtual-\* package definitions with official Debian packaging
 * [Revision #7b344bf](https://github.com/MariaDB/server/commit/7b344bf)\
   2015-09-01 23:06:12 +0300
-  * Add [MariaDB 10.0](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md) stanzas next to [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) in debian/control file
+  * Add [MariaDB 10.0](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md) stanzas next to [MariaDB 5.5](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) in debian/control file
 * [Revision #cc08c13](https://github.com/MariaDB/server/commit/cc08c13)\
   2015-09-01 23:01:43 +0300
   * Add MySQL 5.6 stanzas next to MySQL 5.5 in debian/control file

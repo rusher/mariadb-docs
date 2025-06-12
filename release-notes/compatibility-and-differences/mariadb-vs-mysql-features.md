@@ -2,7 +2,7 @@
 
 MariaDB Corporation has a [**MariaDB vs MySQL**](https://mariadb.com/resources/guides-whitepapers/MariaDB-vs-MySQL) white paper available for download.
 
-See also [**MariaDB vs MySQL - Compatibility**](broken-reference)
+See also [**MariaDB vs MySQL - Compatibility**](broken-reference/)
 
 #### Differences Per Release
 
@@ -48,25 +48,25 @@ packages:
 * [MyRocks](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/myrocks), a storage engine with great compression, in 10.2
 * [Aria](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/aria), MyISAM replacement with better caching.
 * [FederatedX](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/federatedx-storage-engine) (drop-in replacement for Federated)
-* [OQGRAPH](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/oqgraph-storage-engine) (In [MariaDB 5.2](../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-2-series/changes-improvements-in-mariadb-5-2.md) and later. Disabled in [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) only.)
+* [OQGRAPH](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/oqgraph-storage-engine) (In [MariaDB 5.2](../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-2-series/changes-improvements-in-mariadb-5-2.md) and later. Disabled in [MariaDB 5.5](../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) only.)
 * [SphinxSE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/sphinx-storage-engine) (In [MariaDB 5.2](../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-2-series/changes-improvements-in-mariadb-5-2.md) and later)
 * [CONNECT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/connect) in [MariaDB 10.0](../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md) and later.
 * [SEQUENCE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/sequence-storage-engine) in [MariaDB 10.0](../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md) and later.
 * [Spider](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/spider) in [MariaDB 10.0](../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md) and later.
-* [TokuDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/tokudb) (In [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) and later, removed in 10.6)
+* [TokuDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/tokudb) (In [MariaDB 5.5](../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) and later, removed in 10.6)
 * [Cassandra](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/legacy-storage-engines/cassandra/cassandra-storage-engine-overview) (In [MariaDB 10.0](../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md), removed in 10.6)
 
 #### Speed Improvements
 
 * MariaDB now provides much faster privilege checks for setups with many user accounts or many database
 * The new [FLUSH SSL](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/flush-commands/flush) command allows SSL certificates to be reloaded without restarting the server
-* Many optimizer enhancements in [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3). [Subqueries](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/selecting-data/joins-subqueries/subqueries) are now finally usable.\
+* Many optimizer enhancements in [MariaDB 5.3](../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3.md). [Subqueries](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/selecting-data/joins-subqueries/subqueries) are now finally usable.\
   The complete list and a comparison with MySQL is [here](optimizer-feature-comparison-matrix.md).\
   A benchmark can be found [here](https://mariadb.com/blog/mariadb-53-optimizer-benchmark).
 * Faster and safer replication:[Group commit for the binary log](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/server-monitoring-logs/binary-log/group-commit-for-the-binary-log). This makes many setups that use replication and lots of updates [more than 2x times faster](https://www.facebook.com/note.php?note_id=10150211546215933).
 * [Parallel replication](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/parallel-replication) — new in 10.0
 * [Improvements](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/development-articles/general-info/quality/benchmarks-and-long-running-tests/benchmarks/mariadb-53-asynchronous-io-on-windows-with-innodb) for InnoDB asynchronous IO subsystem on Windows.
-* Indexes for the [MEMORY(HEAP)](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/memory-storage-engine) engine are faster. According to a simple test, 24% faster on INSERT for integer index and 60% faster for index on a CHAR(20) column. Fixed in [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) and MySQL 5.7.
+* Indexes for the [MEMORY(HEAP)](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/memory-storage-engine) engine are faster. According to a simple test, 24% faster on INSERT for integer index and 60% faster for index on a CHAR(20) column. Fixed in [MariaDB 5.5](../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) and MySQL 5.7.
 * [Segmented Key Cache](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/segmented-key-cache) for MyISAM. Can speed up MyISAM tables with up to 4x\
   — new in 5.2
 * [Adjustable hash size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/myisam-storage-engine/myisam-system-variables#key_cache_file_hash_size) for MyISAM and Aria. This can greatly improve shutdown time (from hours to minutes) if using a lot of MyISAM/Aria tables with delayed keys — new in 10.0.13
@@ -98,8 +98,8 @@ every effort to include it in MariaDB. The most notable features are:
 * Support introduced for password expiration, using the [user password expiry](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/user-account-management/user-password-expiry) — new in 10.4
 * In order to support the use of multiple authentication plugins for a single user, the `[mysql.user](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table)` system table has been retired in favor of the `[mysql.glob_priv](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-global_priv-table)` system table. — new in 10.4
 * The [unix\_socket authentication plugin](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/authentication-plugins/authentication-plugin-unix-socket) is now the default on Unix-like systems. This represents a major change to authentication in MariaDB — new in 10.4
-* Support introduced for [Optimizer Trace](broken-reference), which provides detailed information on how the Optimizer processes queries. To enable Optimizer Trace, set the `[optimizer_trace](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables#optimizer_trace)` system variable — new in 10.4
-* The MariaDB SQL/PL stored procedure dialect (enabled with [sql\_mode=ORACLE](broken-reference)) now supports Oracle style packages. Support for the following statements are available: [CREATE PACKAGE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/create/create-package), [CREATE PACKAGE BODY](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/create/create-package-body), [DROP PACKAGE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/drop/drop-package), [DROP PACKAGE BODY](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/drop/drop-package-body), [SHOW CREATE PACKAGE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-create-package), [SHOW CREATE PACKAGE BODY](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-create-package-body) — new in 10.3
+* Support introduced for [Optimizer Trace](broken-reference/), which provides detailed information on how the Optimizer processes queries. To enable Optimizer Trace, set the `[optimizer_trace](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables#optimizer_trace)` system variable — new in 10.4
+* The MariaDB SQL/PL stored procedure dialect (enabled with [sql\_mode=ORACLE](broken-reference/)) now supports Oracle style packages. Support for the following statements are available: [CREATE PACKAGE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/create/create-package), [CREATE PACKAGE BODY](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/create/create-package-body), [DROP PACKAGE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/drop/drop-package), [DROP PACKAGE BODY](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/drop/drop-package-body), [SHOW CREATE PACKAGE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-create-package), [SHOW CREATE PACKAGE BODY](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-create-package-body) — new in 10.3
 * Automatic collection of [Engine Independent Table Statistics](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/engine-independent-table-statistics) — new in 10.4
 * Support for the use of parentheses (brackets) for specifying precedence in the ordering of execution for `[SELECT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select)` statements and [Table Value Operations](https://mariadb.com/kb/en/table-value-operations), (including the use of [UNION](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/selecting-data/joins-subqueries/union), [EXCEPT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/selecting-data/joins-subqueries/except), [INTERSECT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/selecting-data/joins-subqueries/intersect) operations) — new in 10.4
 * Support for [anchored data types](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/programmatic-compound-statements/declare-variable#type-of-row-type-of) added to local stored procedure variables. — new in 10.3
@@ -117,7 +117,7 @@ every effort to include it in MariaDB. The most notable features are:
 * New [WITH](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/selecting-data/common-table-expressions/with) statement. `WITH` is a common table expression that allows one to refer to a subquery expression many times in a query — new in 10.2
 * [CHECK CONSTRAINT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/constraint) — new in 10.2
 * [DEFAULT expression](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/create/create-table), including `DEFAULT` for `BLOB` and `TEXT` — new in 10.2
-* Added catchall for [list partitions](broken-reference) — new in 10.2
+* Added catchall for [list partitions](broken-reference/) — new in 10.2
 * Oracle-style [EXECUTE IMMEDIATE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/prepared-statements/execute-immediate) statement — new in 10.2
 * Several new [JSON functions](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/special-functions/json-functions) — new in 10.2
 * [Microsecond Precision in Processlist](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/time_ms-column-in-information_schemaprocesslist)
@@ -138,9 +138,9 @@ every effort to include it in MariaDB. The most notable features are:
 * [Group commit for the binary log](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/server-monitoring-logs/binary-log/group-commit-for-the-binary-log). This makes [replication notably faster!](https://www.facebook.com/note.php?note_id=10150261692455933) — new in 5.3
 * Added `--rewrite-db` [mysqlbinlog](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/logging-tools/mariadb-binlog) option to change the used database\
   — new in 5.2
-* [Progress reporting](broken-reference) for `[ALTER TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-table)`\
+* [Progress reporting](broken-reference/) for `[ALTER TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-table)`\
   and `[LOAD DATA INFILE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile)` — new in 5.3
-* Faster [joins and subqueries](broken-reference) — new in 5.3
+* Faster [joins and subqueries](broken-reference/) — new in 5.3
 * [HandlerSocket](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/nosql/handlersocket) and faster [HANDLER](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/nosql/handler) calls — new in 5.3
 * [Dynamic Columns](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/nosql/dynamic-columns) support — new in 5.3
 * [GIS Functionality](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/geometry) — new in 5.3
@@ -175,12 +175,12 @@ For a full list, please see [features for each release](https://github.com/maria
 * MariaDB does not have closed source modules like the ones that can be found in MySQL Enterprise Edition. In fact, all the closed source features in MySQL 5.5 Enterprise Edition are found in the MariaDB open source version.
 * MariaDB client libraries (for C, for Java (JDBC), for Windows (ODBC)) are released under LGPL to allow linking with closed source software. MySQL client libraries are released under GPL that does not allow linking with closed source software.
 * MariaDB includes test cases for all fixed bugs. Oracle doesn't provide test cases for new bugs fixed in MySQL 5.5.
-* All [bugs](https://jira.mariadb.org) and [development plans](broken-reference) are public.
-* MariaDB is [developed by the community](broken-reference) in true open source spirit.
+* All [bugs](https://jira.mariadb.org) and [development plans](broken-reference/) are public.
+* MariaDB is [developed by the community](broken-reference/) in true open source spirit.
 
 #### Related Links
 
-* [Compatiblity between MariaDB and MySQL](broken-reference)
+* [Compatiblity between MariaDB and MySQL](broken-reference/)
 * [Moving from MySQL](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/migrating-to-mariadb/moving-from-mysql)
 * [Troubleshooting Installation Issues](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/troubleshooting-installation-issues)
 
