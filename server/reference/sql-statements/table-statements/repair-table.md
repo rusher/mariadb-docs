@@ -35,7 +35,7 @@ aria_chk --recover tbl_name
 
 See [aria\_chk](../../../clients-and-utilities/aria-clients-and-utilities/aria_chk.md) and [myisamchk](../../../clients-and-utilities/myisam-clients-and-utilities/myisamchk.md) for more.
 
-`REPAIR TABLE` works for [Archive](../../storage-engines/archive/), [Aria](../../storage-engines/aria/), [CSV](../../storage-engines/csv/) and [MyISAM](../../storage-engines/myisam-storage-engine/) tables. For [InnoDB](../../storage-engines/innodb/), see [recovery modes](../../storage-engines/innodb/innodb-troubleshooting/innodb-recovery-modes.md). For CSV, see also [Checking and Repairing CSV Tables](../../storage-engines/csv/checking-and-repairing-csv-tables.md). For Archive, this statement also improves compression. If the storage engine does not support this statement, a warning is issued.
+`REPAIR TABLE` works for [Archive](../../../server-usage/storage-engines/archive/), [Aria](../../../server-usage/storage-engines/aria/), [CSV](../../../server-usage/storage-engines/csv/) and [MyISAM](../../../server-usage/storage-engines/myisam-storage-engine/) tables. For [InnoDB](../../../server-usage/storage-engines/innodb/), see [recovery modes](../../../server-usage/storage-engines/innodb/innodb-troubleshooting/innodb-recovery-modes.md). For CSV, see also [Checking and Repairing CSV Tables](../../../server-usage/storage-engines/csv/checking-and-repairing-csv-tables.md). For Archive, this statement also improves compression. If the storage engine does not support this statement, a warning is issued.
 
 This statement requires [SELECT and INSERT privileges](../account-management-sql-statements/grant.md) for the table.
 
@@ -43,7 +43,7 @@ By default, `REPAIR TABLE` statements are written to the [binary log](../../../s
 
 From [MariaDB 10.3.19](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-10319-release-notes), `REPAIR TABLE` statements are not logged to the binary log if [read\_only](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#read_only) is set. See also [Read-Only Replicas](../../../ha-and-performance/standard-replication/read-only-replicas.md).
 
-When an index is recreated, the storage engine may use a configurable buffer in the process. Incrementing the buffer speeds up the index creation. [Aria](../../storage-engines/aria/) and [MyISAM](../../storage-engines/myisam-storage-engine/) allocate a buffer whose size is defined by [aria\_sort\_buffer\_size](../../storage-engines/aria/aria-system-variables.md) or [myisam\_sort\_buffer\_size](../../storage-engines/myisam-storage-engine/myisam-system-variables.md), also used for [ALTER TABLE](../data-definition/alter/alter-table.md).
+When an index is recreated, the storage engine may use a configurable buffer in the process. Incrementing the buffer speeds up the index creation. [Aria](../../../server-usage/storage-engines/aria/) and [MyISAM](../../../server-usage/storage-engines/myisam-storage-engine/) allocate a buffer whose size is defined by [aria\_sort\_buffer\_size](../../../server-usage/storage-engines/aria/aria-system-variables.md) or [myisam\_sort\_buffer\_size](../../../server-usage/storage-engines/myisam-storage-engine/myisam-system-variables.md), also used for [ALTER TABLE](../data-definition/alter/alter-table.md).
 
 ### QUICK
 
@@ -69,7 +69,7 @@ The FORCE argument was added in [MariaDB 11.5](https://app.gitbook.com/s/aEnK0ZX
 
 ### Progress Reporting
 
-The [Aria](../../storage-engines/aria/) storage engine supports [progress reporting](broken-reference) for this statement.
+The [Aria](../../../server-usage/storage-engines/aria/) storage engine supports [progress reporting](broken-reference/) for this statement.
 
 ## See Also
 

@@ -2,7 +2,7 @@
 
 This page documents system variables related to the [Mroonga storage engine](./). See [Server System Variables](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md) for a complete list of system variables and instructions on setting them.
 
-See also the [Full list of MariaDB options, system and status variables](../../../server-management/variables-and-modes/full-list-of-mariadb-options-system-and-status-variables.md).
+See also the [Full list of MariaDB options, system and status variables](../../../reference/full-list-of-mariadb-options-system-and-status-variables.md).
 
 #### `mroonga_action_on_fulltext_query_error`
 
@@ -81,7 +81,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 
 #### `mroonga_enable_operations_recording`
 
-* Description: Whether recording operations for recovery to the Groonga database is enabled (default) or not. Requires reopening the database with [FLUSH TABLES](../../sql-statements/administrative-sql-statements/flush-commands/flush.md) after changing the variable.
+* Description: Whether recording operations for recovery to the Groonga database is enabled (default) or not. Requires reopening the database with [FLUSH TABLES](../../../reference/sql-statements/administrative-sql-statements/flush-commands/flush.md) after changing the variable.
 * Commandline: `--mroonga-enable-operations-recording={0|1}`
 * Scope: Global
 * Dynamic: Yes

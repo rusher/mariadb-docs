@@ -48,7 +48,7 @@ This system variable can be set to one of the following values:
 
 However, on many distributions, the standard MariaDB builds do not support all InnoDB page compression algorithms by default. From [MariaDB 10.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-7-series/what-is-mariadb-107), algorithms can be [installed as a plugin](../../../ha-and-performance/optimization-and-tuning/optimization-and-tuning-compression/compression-plugins.md).
 
-This system variable can be changed dynamically with [SET GLOBAL](../../sql-statements/administrative-sql-statements/set-commands/set.md#global-session). For example:
+This system variable can be changed dynamically with [SET GLOBAL](../../../reference/sql-statements/administrative-sql-statements/set-commands/set.md#global-session). For example:
 
 ```
 SET GLOBAL innodb_compression_algorithm='lzma';
@@ -68,7 +68,7 @@ On many distributions, the standard MariaDB builds do not support all InnoDB pag
 
 The [zlib](https://www.zlib.net/) compression algorithm is always supported. From [MariaDB 10.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-7-series/what-is-mariadb-107), algorithms can be [installed as a plugin](../../../ha-and-performance/optimization-and-tuning/optimization-and-tuning-compression/compression-plugins.md).
 
-A MariaDB build's support for other InnoDB page compression algorithms can be checked by querying the following status variables with [SHOW GLOBAL STATUS](../../sql-statements/administrative-sql-statements/show/show-status.md):
+A MariaDB build's support for other InnoDB page compression algorithms can be checked by querying the following status variables with [SHOW GLOBAL STATUS](../../../reference/sql-statements/administrative-sql-statements/show/show-status.md):
 
 | Status Variable                                                                                                         | Description                                                                                         |
 | ----------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
@@ -167,13 +167,13 @@ This system variable can be set to one of the following values:
 | OFF                   | New InnoDB tables do not use InnoDB page compression. This is the default value. |
 | ON                    | New InnoDB tables use InnoDB page compression.                                   |
 
-This system variable can be changed dynamically with [SET GLOBAL](../../sql-statements/administrative-sql-statements/set-commands/set.md#global-session). For example:
+This system variable can be changed dynamically with [SET GLOBAL](../../../reference/sql-statements/administrative-sql-statements/set-commands/set.md#global-session). For example:
 
 ```
 SET GLOBAL innodb_compression_default=ON;
 ```
 
-This system variable's session value can be changed dynamically with [SET SESSION](../../sql-statements/administrative-sql-statements/set-commands/set.md#global-session). For example:
+This system variable's session value can be changed dynamically with [SET SESSION](../../../reference/sql-statements/administrative-sql-statements/set-commands/set.md#global-session). For example:
 
 ```sql
 SET GLOBAL innodb_file_per_table=ON;
@@ -204,7 +204,7 @@ innodb_compression_default=ON
 
 ### Enabling InnoDB Page Compression for Individual Tables
 
-InnoDB page compression can be enabled for individual tables by setting the [PAGE\_COMPRESSED](../../sql-statements/data-definition/create/create-table.md#page_compressed) table option to `1`. For example:
+InnoDB page compression can be enabled for individual tables by setting the [PAGE\_COMPRESSED](../../../reference/sql-statements/data-definition/create/create-table.md#page_compressed) table option to `1`. For example:
 
 ```sql
 SET GLOBAL innodb_file_per_table=ON;
@@ -243,7 +243,7 @@ The default compression level can be configured by setting the[innodb\_compressi
 
 This system variable's default value is `6`.
 
-This system variable can be changed dynamically with [SET GLOBAL](../../sql-statements/administrative-sql-statements/set-commands/set.md#global-session). For example:
+This system variable can be changed dynamically with [SET GLOBAL](../../../reference/sql-statements/administrative-sql-statements/set-commands/set.md#global-session). For example:
 
 ```sql
 SET GLOBAL innodb_compression_level=9;
@@ -259,7 +259,7 @@ innodb_compression_level=9
 
 ### Configuring the Compression Level for Individual Tables
 
-The compression level for individual tables can also be configured by setting the [PAGE\_COMPRESSION\_LEVEL](../../sql-statements/data-definition/create/create-table.md#page_compression_level) table option for the table. For example:
+The compression level for individual tables can also be configured by setting the [PAGE\_COMPRESSION\_LEVEL](../../../reference/sql-statements/data-definition/create/create-table.md#page_compression_level) table option for the table. For example:
 
 ```sql
 SET GLOBAL innodb_file_per_table=ON;
@@ -296,7 +296,7 @@ This system variable's supported values range from `0` to `100`.
 
 This system variable's default value is `5`.
 
-This system variable can be changed dynamically with [SET GLOBAL](../../sql-statements/administrative-sql-statements/set-commands/set.md#global-session). For example:
+This system variable can be changed dynamically with [SET GLOBAL](../../../reference/sql-statements/administrative-sql-statements/set-commands/set.md#global-session). For example:
 
 ```
 SET GLOBAL innodb_compression_failure_threshold_pct=10;
@@ -318,7 +318,7 @@ This system variable's supported values range from `0` to `75`.
 
 This system variable's default value is `50`.
 
-This system variable can be changed dynamically with [SET GLOBAL](../../sql-statements/administrative-sql-statements/set-commands/set.md#global-session). For example:
+This system variable can be changed dynamically with [SET GLOBAL](../../../reference/sql-statements/administrative-sql-statements/set-commands/set.md#global-session). For example:
 
 ```sql
 SET GLOBAL innodb_compression_pad_pct_max=75;
@@ -412,7 +412,7 @@ With InnoDB page compression, pages are compressed when they are flushed to disk
 
 ## Monitoring InnoDB Page Compression
 
-InnoDB page compression can be monitored by querying the following status variables with [SHOW GLOBAL STATUS](../../sql-statements/administrative-sql-statements/show/show-status.md):
+InnoDB page compression can be monitored by querying the following status variables with [SHOW GLOBAL STATUS](../../../reference/sql-statements/administrative-sql-statements/show/show-status.md):
 
 | Status Variable                                                                                                                                   | Description                     |
 | ------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------- |
@@ -483,7 +483,7 @@ SHOW GLOBAL STATUS LIKE 'Innodb_num_pages_page_compressed';
 
 ## Compatibility with Backup Tools
 
-[Mariabackup](../../../server-usage/backing-up-and-restoring-databases/mariabackup/) supports InnoDB page compression.
+[Mariabackup](../../backing-up-and-restoring-databases/mariabackup/) supports InnoDB page compression.
 
 [Percona XtraBackup](../../../clients-and-utilities/legacy-clients-and-utilities/backing-up-and-restoring-databases-percona-xtrabackup/percona-xtrabackup-overview.md) does not support InnoDB page compression.
 

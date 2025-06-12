@@ -31,8 +31,8 @@ The `.CSM` file stores metadata about the table such as the state and the number
 * CSV tables do not support indexing.
 * CSV tables cannot be partitioned.
 * Columns in CSV tables must be declared as NOT NULL.
-* No [transactions](../../sql-statements-and-structure/sql-statements/transactions/).
-* The original CSV-format does not enable IETF-compatible parsing of embedded quote and comma characters. From [MariaDB 10.1.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-8-release-notes), it is possible to do so by setting the [IETF\_QUOTES](../../sql-statements/data-definition/create/create-table.md#ietf_quotes) option when creating a table.
+* No [transactions](../../../reference/sql-statements/transactions/).
+* The original CSV-format does not enable IETF-compatible parsing of embedded quote and comma characters. From [MariaDB 10.1.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-8-release-notes), it is possible to do so by setting the [IETF\_QUOTES](../../../reference/sql-statements/data-definition/create/create-table.md#ietf_quotes) option when creating a table.
 
 ## Examples
 

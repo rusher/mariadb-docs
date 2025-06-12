@@ -8,7 +8,7 @@ The [S3 storage engine](./) has been available since [MariaDB 10.5.4](https://ap
 
 The Aria table must be non transactional and have [ROW\_FORMAT=PAGE](../aria/aria-storage-formats.md#page).
 
-For `aria_s3_copy` to work reliably, the table should not be changed by the MariaDB server during the copy, and one should have first performed [FLUSH TABLES](../../sql-statements/administrative-sql-statements/flush-commands/flush.md) to ensure that the table is properly closed.
+For `aria_s3_copy` to work reliably, the table should not be changed by the MariaDB server during the copy, and one should have first performed [FLUSH TABLES](../../../reference/sql-statements/administrative-sql-statements/flush-commands/flush.md) to ensure that the table is properly closed.
 
 Example of properly created Aria table:
 

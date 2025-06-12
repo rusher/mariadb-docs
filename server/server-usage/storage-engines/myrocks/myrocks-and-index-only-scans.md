@@ -1,4 +1,4 @@
-# MyRocks and Index-Only Scans
+# Index-Only Scans
 
 This article is about [MyRocks](./) and index-only scans on secondary indexes. It applies to MariaDB's MyRocks, Facebook's MyRocks, and other variants.
 
@@ -12,7 +12,7 @@ Secondary keys may or may not support index-only scans, depending on the datatyp
 
 MyRocks indexes store "mem-comparable keys" (that is, the key values are compared with `memcmp`). For some datatypes, it is easily possible to convert between the column value and its mem-comparable form, while for others the conversion is one-way.
 
-For example, in case-insensitive collations capital and regular letters are considered identical, i.e. 'c' ='C'. For some datatypes, MyRocks stores some extra data which allows it to restore the original value back. (For the `latin1_general_ci` [collation](../../data-types/string-data-types/character-sets/) and character 'c', for example, it will store one bit which says whether the original value was a small 'c' or a capital letter 'C'). This doesn't work for all datatypes, though.
+For example, in case-insensitive collations capital and regular letters are considered identical, i.e. 'c' ='C'. For some datatypes, MyRocks stores some extra data which allows it to restore the original value back. (For the `latin1_general_ci` [collation](../../../reference/data-types/string-data-types/character-sets/) and character 'c', for example, it will store one bit which says whether the original value was a small 'c' or a capital letter 'C'). This doesn't work for all datatypes, though.
 
 ## Index-Only Support for Various Datatypes
 

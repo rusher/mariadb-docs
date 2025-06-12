@@ -20,7 +20,7 @@ INSTALL SONAME 'ha_spider';
 
 ### Setting the SUPER privilege for the Spider user on data nodes or alternatives to avoid privilege issues
 
-When explicitly setting the [spider\_internal\_sql\_log\_off](spider-system-variables.md#spider_internal_sql_log_off) system variable, please note that Spider will execute matching [SET SQL\_LOG\_OFF](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#sql_log_off) statements on each of the data nodes. It will attempt to do this on the data nodes using the [SUPER](../../sql-statements/account-management-sql-statements/grant.md#super) privilege, which thus requires one to grant this privilege to the Spider user on the data nodes.
+When explicitly setting the [spider\_internal\_sql\_log\_off](spider-system-variables.md#spider_internal_sql_log_off) system variable, please note that Spider will execute matching [SET SQL\_LOG\_OFF](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#sql_log_off) statements on each of the data nodes. It will attempt to do this on the data nodes using the [SUPER](../../../reference/sql-statements/account-management-sql-statements/grant.md#super) privilege, which thus requires one to grant this privilege to the Spider user on the data nodes.
 
 If the Spider user on the data note is not configured with the SUPER privilege, you may encounter issues when working with Spider tables like ERROR 1227 (42000): Access denied for the missing SUPER privilege. To avoid this, don't explicitly set spider\_internal\_sql\_log\_off, or set it to -1, or grant the SUPER privilege to the Spider user on the data node.
 
@@ -73,13 +73,13 @@ create server backend2 foreign data wrapper mysql options
 
 #### Unable to Connect Errors
 
-Bear in mind, if you ever need to remove, recreate or otherwise modify the server definition for any reason, you need to also execute a [FLUSH TABLES](../../sql-statements/administrative-sql-statements/flush-commands/flush.md) statement. Otherwise, Spider continues to use the old server definition, which can result in queries raising the error
+Bear in mind, if you ever need to remove, recreate or otherwise modify the server definition for any reason, you need to also execute a [FLUSH TABLES](../../../reference/sql-statements/administrative-sql-statements/flush-commands/flush.md) statement. Otherwise, Spider continues to use the old server definition, which can result in queries raising the error
 
 ```sql
 Error 1429: Unable to connect to foreign data source
 ```
 
-If you encounter this error when querying Spider tables, issue a [FLUSH TABLES](../../sql-statements/administrative-sql-statements/flush-commands/flush.md) statement to update the server definitions.
+If you encounter this error when querying Spider tables, issue a [FLUSH TABLES](../../../reference/sql-statements/administrative-sql-statements/flush-commands/flush.md) statement to update the server definitions.
 
 ```
 FLUSH TABLES;

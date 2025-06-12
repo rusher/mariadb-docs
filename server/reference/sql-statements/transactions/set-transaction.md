@@ -64,7 +64,7 @@ SELECT @@GLOBAL.transaction_isolation, @@transaction_isolation;
 InnoDB supports each of the translation isolation levels described here\
 using different locking strategies. The default level is`REPEATABLE READ`. For additional information about InnoDB\
 record-level locks and how it uses them to execute various types of statements,\
-see [InnoDB Lock Modes](../../storage-engines/innodb/innodb-lock-modes.md),\
+see [InnoDB Lock Modes](../../../server-usage/storage-engines/innodb/innodb-lock-modes.md),\
 and [innodb-locks-set.html](https://dev.mysql.com/doc/refman/en/innodb-locks-set.html).
 
 ### Isolation Levels
@@ -99,7 +99,7 @@ necessary because "phantom rows" must be blocked for MariaDB replication and\
 recovery to work.
 
 **Note:** If the `READ COMMITTED` isolation\
-level is used or the [innodb\_locks\_unsafe\_for\_binlog](../../storage-engines/innodb/innodb-system-variables.md#innodb_locks_unsafe_for_binlog) system variable is enabled,\
+level is used or the [innodb\_locks\_unsafe\_for\_binlog](../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_locks_unsafe_for_binlog) system variable is enabled,\
 there is no InnoDB gap locking except for [foreign-key](../../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/foreign-keys.md) constraint checking and\
 duplicate-key checking. Also, record locks for non-matching rows are released\
 after MariaDB has evaluated the `WHERE` condition.If you use `READ COMMITTED` or enable innodb\_locks\_unsafe\_for\_binlog, you must use row-based binary logging.
@@ -139,7 +139,7 @@ Distributed [XA transactions](xa-transactions.md) should always use this isolati
 
 #### innodb\_snapshop\_isolation
 
-If the [innodb\_snapshot\_isolation](../../storage-engines/innodb/innodb-system-variables.md#innodb_snapshot_isolation) system variable is not set to ON, strictly-speaking anything other than READ UNCOMMITTED is not clearly defined. [innodb\_snapshot\_isolation](../../storage-engines/innodb/innodb-system-variables.md#innodb_snapshot_isolation) was introduced in [MariaDB 10.6.18](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/mariadb-10-6-18-release-notes), [MariaDB 10.11.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-11-series/mariadb-10-11-8-release-notes), [MariaDB 11.0.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-0-series/mariadb-11-0-6-release-notes), [MariaDB 11.1.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-1-series/mariadb-11-1-5-release-notes), [MariaDB 11.2.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-4-release-notes), [MariaDB 11.4.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-4-series/mariadb-11-4-2-release-notes) to address this, but defaults to `OFF` for backwards compatibility. Setting to `ON` will result in attempts to acquire a lock on a record that does not exist in the current read view raising an error, and the transaction being rolled back.
+If the [innodb\_snapshot\_isolation](../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_snapshot_isolation) system variable is not set to ON, strictly-speaking anything other than READ UNCOMMITTED is not clearly defined. [innodb\_snapshot\_isolation](../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_snapshot_isolation) was introduced in [MariaDB 10.6.18](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/mariadb-10-6-18-release-notes), [MariaDB 10.11.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-11-series/mariadb-10-11-8-release-notes), [MariaDB 11.0.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-0-series/mariadb-11-0-6-release-notes), [MariaDB 11.1.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-1-series/mariadb-11-1-5-release-notes), [MariaDB 11.2.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-4-release-notes), [MariaDB 11.4.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-4-series/mariadb-11-4-2-release-notes) to address this, but defaults to `OFF` for backwards compatibility. Setting to `ON` will result in attempts to acquire a lock on a record that does not exist in the current read view raising an error, and the transaction being rolled back.
 
 ### Access Mode
 

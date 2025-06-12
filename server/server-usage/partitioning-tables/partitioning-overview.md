@@ -767,24 +767,24 @@ The `ALL` keyword can be used in place of the list of partition names, and the o
 
 ### Partitioning for Specific Storage Engines
 
-Some MariaDB [storage engines](../../reference/storage-engines/) allow more interesting uses for partitioning.
+Some MariaDB [storage engines](../storage-engines/) allow more interesting uses for partitioning.
 
-The [MERGE](../../reference/storage-engines/merge.md) storage engine allows one to:
+The [MERGE](../storage-engines/merge.md) storage engine allows one to:
 
-* Treat a set of identical defined [MyISAM](../../reference/storage-engines/myisam-storage-engine/) tables as one.
+* Treat a set of identical defined [MyISAM](../storage-engines/myisam-storage-engine/) tables as one.
 * A MyISAM table can be in many different MERGE sets and also used separately.
 
-[SPIDER](../../reference/storage-engines/spider/) allows one to:
+[SPIDER](../storage-engines/spider/) allows one to:
 
 * Move partitions of the same table on different servers. In this way, the workload can be distributed on more physical or virtual machines (data sharding).
 * All partitions of a SPIDER table can also live on the same machine. In this case there will be a small overhead (SPIDER will use connections to localhost), but queries that read multiple partitions will use parallel threads.
 
-[CONNECT](../../reference/storage-engines/connect/) allows one to:
+[CONNECT](../storage-engines/connect/) allows one to:
 
 * Build a table whose partitions are tables using different storage engines (like InnoDB, MyISAM, or even engines that do not support partitioning).
 * Build an indexable, writeable table on several data files. These files can be in different formats.
 
-See also: [Using CONNECT - Partitioning and Sharding](../../reference/storage-engines/connect/using-connect/using-connect-partitioning-and-sharding.md)
+See also: [Using CONNECT - Partitioning and Sharding](../storage-engines/connect/using-connect/using-connect-partitioning-and-sharding.md)
 
 ## See Also
 

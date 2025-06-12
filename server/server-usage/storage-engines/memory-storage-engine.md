@@ -6,7 +6,7 @@ It is best-used for read-only caches of data from other tables, or for temporary
 
 Since the data is stored in memory, it is highly vulnerable to power outages or hardware failure, and is unsuitable for permanent data storage. In fact, after a server restart, `MEMORY` tables will be recreated (because the definition file is stored on disk), but they will be empty. It is possible to re-populate them with a query using the `--init-file` server startup option.
 
-Variable-length types like [VARCHAR](../data-types/string-data-types/varchar.md) can be used in MEMORY tables. [BLOB](../data-types/string-data-types/blob.md) or [TEXT](../data-types/string-data-types/text.md) columns are not supported for MEMORY tables.
+Variable-length types like [VARCHAR](../../reference/data-types/string-data-types/varchar.md) can be used in MEMORY tables. [BLOB](../../reference/data-types/string-data-types/blob.md) or [TEXT](../../reference/data-types/string-data-types/text.md) columns are not supported for MEMORY tables.
 
 ## Memory Usage
 
@@ -14,7 +14,7 @@ The maximum total size of MEMORY tables cannot exceed the [max\_heap\_table\_siz
 
 The `MAX_ROWS` table option provides a hint about the number of rows you plan to store in them. This is not a hard limit that cannot be exceeded, and does not allow to exceed `max_heap_table_size`. The storage engine uses max\_heap\_table\_size and MAX\_ROWS to calculate the maximum memory that could be allocated for the table.
 
-Memory allocated to a MEMORY table is freed by running [DROP TABLE](../sql-statements/data-definition/drop/drop-table.md) or [TRUNCATE TABLE](../sql-statements/table-statements/truncate-table.md), or rebuilding with [ALTER TABLE tbl\_name ENGINE = MEMORY](../sql-statements/data-definition/alter/alter-table.md). When rows are deleted, space is not automatically freed.
+Memory allocated to a MEMORY table is freed by running [DROP TABLE](../../reference/sql-statements/data-definition/drop/drop-table.md) or [TRUNCATE TABLE](../../reference/sql-statements/table-statements/truncate-table.md), or rebuilding with [ALTER TABLE tbl\_name ENGINE = MEMORY](../../reference/sql-statements/data-definition/alter/alter-table.md). When rows are deleted, space is not automatically freed.
 
 ## Index Type
 

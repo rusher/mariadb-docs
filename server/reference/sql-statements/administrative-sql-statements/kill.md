@@ -28,7 +28,7 @@ statements.
 Killing queries that repair or create indexes on MyISAM and Aria tables may result in corrupted tables. Use the `SOFT` option to avoid this!
 
 The `HARD` option (default) kills a command as soon as possible. If you use`SOFT`, then critical operations that may leave a table in an\
-inconsistent state will not be interrupted. Such operations include `REPAIR` and `INDEX` creation for [MyISAM](../../storage-engines/myisam-storage-engine/) and [Aria](../../storage-engines/aria/) tables ([REPAIR TABLE](../table-statements/repair-table.md), [OPTIMIZE TABLE](../../../ha-and-performance/optimization-and-tuning/optimizing-tables/optimize-table.md)).
+inconsistent state will not be interrupted. Such operations include `REPAIR` and `INDEX` creation for [MyISAM](../../../server-usage/storage-engines/myisam-storage-engine/) and [Aria](../../../server-usage/storage-engines/aria/) tables ([REPAIR TABLE](../table-statements/repair-table.md), [OPTIMIZE TABLE](../../../ha-and-performance/optimization-and-tuning/optimizing-tables/optimize-table.md)).
 
 `KILL ... USER username` will kill all connections/queries for a\
 given user. `USER` can be specified one of the following ways:

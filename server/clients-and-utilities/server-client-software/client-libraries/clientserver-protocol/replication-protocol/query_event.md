@@ -4,7 +4,7 @@ This event is written into the binary log file for:
 
 * STATEMENT based replication (updating statements)
 * DDLs
-* COMMIT related to non transactional engines ([MyISAM](../../../../../reference/storage-engines/myisam-storage-engine/), [BLACKHOLE](../../../../../reference/storage-engines/blackhole.md) etc)
+* COMMIT related to non transactional engines ([MyISAM](../../../../../server-usage/storage-engines/myisam-storage-engine/), [BLACKHOLE](../../../../../server-usage/storage-engines/blackhole.md) etc)
 
 ### Header
 

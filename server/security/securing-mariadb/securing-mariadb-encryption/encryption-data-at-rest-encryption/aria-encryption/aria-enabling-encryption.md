@@ -1,6 +1,6 @@
 # Aria Enabling Encryption
 
-In order to enable data-at-rest encryption for tables using the [Aria](../../../../../reference/storage-engines/aria/) storage engine, you first need to configure the server to use an [Encryption Key Management](../key-management-and-encryption-plugins/encryption-key-management.md) plugin. Once this is done, you can enable encryption by setting the relevant system variables.
+In order to enable data-at-rest encryption for tables using the [Aria](../../../../../server-usage/storage-engines/aria/) storage engine, you first need to configure the server to use an [Encryption Key Management](../key-management-and-encryption-plugins/encryption-key-management.md) plugin. Once this is done, you can enable encryption by setting the relevant system variables.
 
 ## Encrypting User-created Tables
 
@@ -40,7 +40,7 @@ This statement causes Aria to rebuild the table using the `[ROW_FORMAT](../../..
 
 ## Encrypting Internal On-disk Temporary Tables
 
-During the execution of queries, MariaDB routinely creates internal temporary tables. These internal temporary tables initially use the [MEMORY](../../../../../reference/storage-engines/memory-storage-engine.md) storage engine, which is entirely stored in memory. When the table size exceeds the allocation defined by the `[max_heap_table_size](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#max_heap_table_size)` system variable, MariaDB writes the data to disk using another storage engine. If you have the `[aria_used_for_temp_tables](../../../../../reference/storage-engines/aria/aria-system-variables.md#aria_used_for_temp_tables)` set to `ON`, MariaDB uses Aria in writing the internal temporary tables to disk.
+During the execution of queries, MariaDB routinely creates internal temporary tables. These internal temporary tables initially use the [MEMORY](../../../../../server-usage/storage-engines/memory-storage-engine.md) storage engine, which is entirely stored in memory. When the table size exceeds the allocation defined by the `[max_heap_table_size](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#max_heap_table_size)` system variable, MariaDB writes the data to disk using another storage engine. If you have the `[aria_used_for_temp_tables](../../../../../reference/storage-engines/aria/aria-system-variables.md#aria_used_for_temp_tables)` set to `ON`, MariaDB uses Aria in writing the internal temporary tables to disk.
 
 Encryption for internal temporary tables is handled separately from encryption for user-created tables. To enable encryption for these tables, set the `[encrypt_tmp_disk_tables](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#encrypt_tmp_disk_tables)` system variable to `ON`. Once set, all internal temporary tables that are written to disk using Aria are automatically encrypted.
 

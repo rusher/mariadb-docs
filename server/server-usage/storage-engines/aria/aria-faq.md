@@ -152,7 +152,7 @@ Aria supports all aspects of MyISAM, except as noted below. This includes extern
 See:
 
 * [Aria storage engine](aria-storage-engine.md)
-* [MariaDB versus MySQL](broken-reference)
+* [MariaDB versus MySQL](../../../reference/storage-engines/aria/broken-reference/)
 
 ### Why do you use the `TRANSACTIONAL` keyword now when Aria is not yet transactional?
 
@@ -168,7 +168,7 @@ In the current development phase Aria tables created with `TRANSACTIONAL=1` are 
 If Aria doesn't start or you have an unrecoverable table (shouldn't happen):
 
 * Remove the `aria_log.%` files from the data directory.
-* Restart `mysqld` and run [CHECK TABLE](../../sql-statements/table-statements/check-table.md), [REPAIR TABLE](../../sql-statements/table-statements/repair-table.md) or [mariadb-check](../../../clients-and-utilities/table-tools/mariadb-check.md) on your Aria tables.
+* Restart `mysqld` and run [CHECK TABLE](../../../reference/sql-statements/table-statements/check-table.md), [REPAIR TABLE](../../../reference/sql-statements/table-statements/repair-table.md) or [mariadb-check](../../../clients-and-utilities/table-tools/mariadb-check.md) on your Aria tables.
 
 Alternatively,
 
@@ -176,7 +176,7 @@ Alternatively,
 
 ### What is going to change in later Aria main releases?
 
-The `LOCK TABLES` statement will not start a crash-safe segment. You should use [begin](begin/) and [COMMIT](../../sql-statements/transactions/commit.md) instead.
+The `LOCK TABLES` statement will not start a crash-safe segment. You should use [begin](../../../reference/storage-engines/aria/begin/) and [COMMIT](../../../reference/sql-statements/transactions/commit.md) instead.
 
 To make things future safe, you could do this:
 
@@ -252,7 +252,7 @@ It's safe to copy all the Aria files to another directory or MariaDB instance if
 
 or
 
-* If you have run a [FLUSH TABLES](../../sql-statements/administrative-sql-statements/flush-commands/flush.md) statement and not accessed the table using SQL from that time until the tables have been copied.
+* If you have run a [FLUSH TABLES](../../../reference/sql-statements/administrative-sql-statements/flush-commands/flush.md) statement and not accessed the table using SQL from that time until the tables have been copied.
 
 In addition, you must adhere the following rule for transactional tables:
 

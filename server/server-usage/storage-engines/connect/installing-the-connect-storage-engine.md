@@ -104,7 +104,7 @@ ERROR 1126 (HY000): Can't open shared library '/home/ian/MariaDB_Downloads/10.1.
 
 ## See Also
 
-* [PLUGIN OVERVIEW](../../plugins/plugin-overview.md)
+* [PLUGIN OVERVIEW](../../../reference/plugins/plugin-overview.md)
 
 GPLv2
 

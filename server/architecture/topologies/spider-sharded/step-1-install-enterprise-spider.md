@@ -4,7 +4,7 @@
 
 This page details step 1 of the 3-step procedure "[Deploy Spider Sharded Topology](./)".
 
-This step installs the [Enterprise Spider storage engine](../../../reference/storage-engines/spider/) plugin on the Spider Node.
+This step installs the [Enterprise Spider storage engine](../../../server-usage/storage-engines/spider/) plugin on the Spider Node.
 
 Interactive commands are detailed. Alternatively, the described operations can be performed using automation.
 
@@ -14,7 +14,7 @@ MariaDB Enterprise Spider depends on interconnect between the Spider Node and al
 
 ## Install Spider Package
 
-The [Enterprise Spider storage engine](../../../reference/storage-engines/spider/) plugin is not installed with MariaDB Enterprise Server by default. An additional package must be installed.
+The [Enterprise Spider storage engine](../../../server-usage/storage-engines/spider/) plugin is not installed with MariaDB Enterprise Server by default. An additional package must be installed.
 
 ### Install via YUM (CentOS, RHEL)
 
@@ -42,7 +42,7 @@ $ sudo zypper install MariaDB-spider-engine
 
 ## Load the Spider Plugin
 
-The [Enterprise Spider storage engine](../../../reference/storage-engines/spider/) plugin must be loaded by MariaDB Enterprise Server
+The [Enterprise Spider storage engine](../../../server-usage/storage-engines/spider/) plugin must be loaded by MariaDB Enterprise Server
 
 **On the Spider Node**, use one of the following methods to configure MariaDB Enterprise Server to load the Enterprise Spider storage engine plugin:
 
@@ -58,8 +58,6 @@ On the Spider Node, set the `plugin_load_add` option to `ha_spider` in a configu
    Ensure that your custom changes will be read last by creating a custom configuration file in one of the included directories. Configuration files in included directories are read in alphabetical order. Ensure that your custom configuration file is read last by using the z- prefix in the file name.\
    \
    Some example configuration file paths for different distributions are shown in the following table:
-
-
 
 <table><thead><tr><th width="180.81475830078125" valign="top">Distributions</th><th valign="top">Example configuration file path</th></tr></thead><tbody><tr><td valign="top"><ul><li>CentOS</li><li>RHEL</li><li>Rocky Linux</li><li>SLES</li></ul></td><td valign="top"><code>/etc/my.cnf.d/z-custom-mariadb.cnf</code></td></tr><tr><td valign="top"><ul><li>Debian</li><li>Ubuntu</li></ul></td><td valign="top"><code>/etc/mysql/mariadb.conf.d/z-custom-mariadb.cnf</code></td></tr></tbody></table>
 

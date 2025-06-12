@@ -33,9 +33,9 @@ The following components are deployed during this procedure:
 
 ### MariaDB Enterprise Server Components
 
-| Component                                            | Description                                                                                          |
-| ---------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| [InnoDB](../../../reference/storage-engines/innodb/) | <ul><li>General purpose storage engine</li></ul><ul><li>ACID-compliant</li><li>Performance</li></ul> |
+| Component                                               | Description                                                                                          |
+| ------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| [InnoDB](../../../server-usage/storage-engines/innodb/) | <ul><li>General purpose storage engine</li></ul><ul><li>ACID-compliant</li><li>Performance</li></ul> |
 
 ### MariaDB MaxScale Components
 
@@ -78,7 +78,7 @@ These requirements are for the Primary/Replica topology when deployed with Maria
 
 ### Operating System
 
-In alignment to the [enterprise lifecycle](../../../server-management/enterprise-server-lifecycle.md), the Primary/Replica topology with MariaDB Enterprise Server 11.4 and MariaDB MaxScale 25.01 is provided for:
+In alignment to the [enterprise lifecycle](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/enterprise-server/enterprise-server-lifecycle), the Primary/Replica topology with MariaDB Enterprise Server 11.4 and MariaDB MaxScale 25.01 is provided for:
 
 * AlmaLinux 8 (x86\_64, ARM64)
 * AlmaLinux 9 (x86\_64, ARM64)

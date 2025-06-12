@@ -30,8 +30,8 @@ Generated columns are also sometimes called computed columns or virtual columns.
 ERROR 1910 (HY000): TokuDB storage engine does not support computed columns
 ```
 
-* [InnoDB](../../../storage-engines/innodb/), [Aria](../../../storage-engines/aria/), [MyISAM](../../../storage-engines/myisam-storage-engine/) and [CONNECT](../../../storage-engines/connect/using-connect/using-connect-virtual-and-special-columns.md) support generated columns.
-* A column in a [MERGE](../../../storage-engines/merge.md) table can be built on a `PERSISTENT` generated column.
+* [InnoDB](../../../../server-usage/storage-engines/innodb/), [Aria](../../../../server-usage/storage-engines/aria/), [MyISAM](../../../../server-usage/storage-engines/myisam-storage-engine/) and [CONNECT](../../../../server-usage/storage-engines/connect/using-connect/using-connect-virtual-and-special-columns.md) support generated columns.
+* A column in a [MERGE](../../../../server-usage/storage-engines/merge.md) table can be built on a `PERSISTENT` generated column.
   * However, a column in a MERGE table can not be defined as a `VIRTUAL` and `PERSISTENT` generated column.
 
 ### Data Type Support

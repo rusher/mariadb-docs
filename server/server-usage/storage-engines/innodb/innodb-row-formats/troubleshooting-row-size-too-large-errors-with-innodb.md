@@ -20,9 +20,9 @@ These messages indicate that the table's definition allows rows that the table's
 
 These messages are raised in the following cases:
 
-* If [InnoDB strict mode](../innodb-strict-mode.md) is enabled and if a [DDL](../../../sql-statements/data-definition/) statement is executed that touches the table, such as [CREATE TABLE](../../../sql-statements/data-definition/create/create-table.md) or [ALTER TABLE](../../../sql-statements/data-definition/alter/alter-table.md), then InnoDB will raise an error with this message
-* If [InnoDB strict mode](../innodb-strict-mode.md) is disabled and if a [DDL](../../../sql-statements/data-definition/) statement is executed that touches the table, such as [CREATE TABLE](../../../sql-statements/data-definition/create/create-table.md) or [ALTER TABLE](../../../sql-statements/data-definition/alter/alter-table.md), then InnoDB will raise a warning with this message.
-* Regardless of whether [InnoDB strict mode](../innodb-strict-mode.md) is enabled, if a [DML](../../../sql-statements/data-manipulation/) statement is executed that attempts to write a row that the table's InnoDB row format can't store, then InnoDB will raise an error with this message.
+* If [InnoDB strict mode](../innodb-strict-mode.md) is enabled and if a [DDL](../../../../reference/sql-statements/data-definition/) statement is executed that touches the table, such as [CREATE TABLE](../../../../reference/sql-statements/data-definition/create/create-table.md) or [ALTER TABLE](../../../../reference/sql-statements/data-definition/alter/alter-table.md), then InnoDB will raise an error with this message
+* If [InnoDB strict mode](../innodb-strict-mode.md) is disabled and if a [DDL](../../../../reference/sql-statements/data-definition/) statement is executed that touches the table, such as [CREATE TABLE](../../../../reference/sql-statements/data-definition/create/create-table.md) or [ALTER TABLE](../../../../reference/sql-statements/data-definition/alter/alter-table.md), then InnoDB will raise a warning with this message.
+* Regardless of whether [InnoDB strict mode](../innodb-strict-mode.md) is enabled, if a [DML](../../../../reference/sql-statements/data-manipulation/) statement is executed that attempts to write a row that the table's InnoDB row format can't store, then InnoDB will raise an error with this message.
 
 ## Example of the Problem
 
@@ -253,7 +253,7 @@ InnoDB's row formats work around this limit by storing certain kinds of variable
 
 InnoDB does not currently have an easy way to check all existing tables to determine which tables have this problem. See [MDEV-20400](https://jira.mariadb.org/browse/MDEV-20400) for more information.
 
-One method to check a single existing table for this problem is to enable [InnoDB strict mode](../innodb-strict-mode.md), and then try to create a duplicate of the table with [CREATE TABLE ... LIKE](../../../sql-statements/data-definition/create/create-table.md#create-table-like). If the table has this problem, then the operation will fail. For example:
+One method to check a single existing table for this problem is to enable [InnoDB strict mode](../innodb-strict-mode.md), and then try to create a duplicate of the table with [CREATE TABLE ... LIKE](../../../../reference/sql-statements/data-definition/create/create-table.md#create-table-like). If the table has this problem, then the operation will fail. For example:
 
 ```sql
 SET SESSION innodb_strict_mode=ON;
@@ -340,7 +340,7 @@ Therefore, a potential solution to the _Row size too large_ error is to convert 
 ALTER TABLE tab ROW_FORMAT=DYNAMIC;
 ```
 
-You can use the [INNODB\_SYS\_TABLES](../../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_sys_tables-table.md) table in the [information\_schema](../../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/) database to find all tables that use the [REDUNDANT](innodb-redundant-row-format.md) or the [COMPACT](innodb-compact-row-format.md) row formats. This is helpful if you would like to convert all of your tables that you still use the older row formats to the [DYNAMIC](innodb-dynamic-row-format.md) row format. For example, the following query can find those tables, while excluding [InnoDB's internal system tables](../innodb-tablespaces/innodb-system-tablespaces.md#system-tables-within-the-innodb-system-tablespace):
+You can use the [INNODB\_SYS\_TABLES](../../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_sys_tables-table.md) table in the [information\_schema](../../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/) database to find all tables that use the [REDUNDANT](innodb-redundant-row-format.md) or the [COMPACT](innodb-compact-row-format.md) row formats. This is helpful if you would like to convert all of your tables that you still use the older row formats to the [DYNAMIC](innodb-dynamic-row-format.md) row format. For example, the following query can find those tables, while excluding [InnoDB's internal system tables](../innodb-tablespaces/innodb-system-tablespaces.md#system-tables-within-the-innodb-system-tablespace):
 
 ```sql
 SELECT NAME, ROW_FORMAT
@@ -363,25 +363,25 @@ Some possible ways to change the table schema are listed below.
 
 #### Converting Some Columns to `BLOB` or `TEXT`
 
-For [BLOB](../../../data-types/string-data-types/blob.md) and [TEXT](../../../data-types/string-data-types/text.md) columns, the [DYNAMIC](innodb-dynamic-row-format.md) row format can store these columns on overflow pages. See [InnoDB DYNAMIC Row Format: Overflow Pages with the DYNAMIC Row Format](innodb-dynamic-row-format.md#overflow-pages-with-the-dynamic-row-format) for more information.
+For [BLOB](../../../../reference/data-types/string-data-types/blob.md) and [TEXT](../../../../reference/data-types/string-data-types/text.md) columns, the [DYNAMIC](innodb-dynamic-row-format.md) row format can store these columns on overflow pages. See [InnoDB DYNAMIC Row Format: Overflow Pages with the DYNAMIC Row Format](innodb-dynamic-row-format.md#overflow-pages-with-the-dynamic-row-format) for more information.
 
-Therefore, a potential solution to the _Row size too large_ error is to convert some columns to the [BLOB](../../../data-types/string-data-types/blob.md) or [TEXT](../../../data-types/string-data-types/text.md) data types.
+Therefore, a potential solution to the _Row size too large_ error is to convert some columns to the [BLOB](../../../../reference/data-types/string-data-types/blob.md) or [TEXT](../../../../reference/data-types/string-data-types/text.md) data types.
 
 #### Increasing the Length of `VARBINARY` Columns
 
-For [VARBINARY](../../../data-types/string-data-types/varbinary.md) columns, the [DYNAMIC](innodb-dynamic-row-format.md) row format can only store these columns on overflow pages if the maximum length of the column is 256 bytes or longer. See [InnoDB DYNAMIC Row Format: Overflow Pages with the DYNAMIC Row Format](innodb-dynamic-row-format.md#overflow-pages-with-the-dynamic-row-format) for more information.
+For [VARBINARY](../../../../reference/data-types/string-data-types/varbinary.md) columns, the [DYNAMIC](innodb-dynamic-row-format.md) row format can only store these columns on overflow pages if the maximum length of the column is 256 bytes or longer. See [InnoDB DYNAMIC Row Format: Overflow Pages with the DYNAMIC Row Format](innodb-dynamic-row-format.md#overflow-pages-with-the-dynamic-row-format) for more information.
 
-Therefore, a potential solution to the _Row size too large_ error is to ensure that all [VARBINARY](../../../data-types/string-data-types/varbinary.md) columns are at least as long as `varbinary(256)`.
+Therefore, a potential solution to the _Row size too large_ error is to ensure that all [VARBINARY](../../../../reference/data-types/string-data-types/varbinary.md) columns are at least as long as `varbinary(256)`.
 
 #### Increasing the Length of `VARCHAR` Columns
 
-For [VARCHAR](../../../data-types/string-data-types/varchar.md) columns, the [DYNAMIC](innodb-dynamic-row-format.md) row format can only store these columns on overflow pages if the maximum length of the column is 256 bytes or longer. See [InnoDB DYNAMIC Row Format: Overflow Pages with the DYNAMIC Row Format](innodb-dynamic-row-format.md#overflow-pages-with-the-dynamic-row-format) for more information.
+For [VARCHAR](../../../../reference/data-types/string-data-types/varchar.md) columns, the [DYNAMIC](innodb-dynamic-row-format.md) row format can only store these columns on overflow pages if the maximum length of the column is 256 bytes or longer. See [InnoDB DYNAMIC Row Format: Overflow Pages with the DYNAMIC Row Format](innodb-dynamic-row-format.md#overflow-pages-with-the-dynamic-row-format) for more information.
 
-The original table schema shown earlier on this page causes the _Row size too large_ error, because all of the table's [VARCHAR](../../../data-types/string-data-types/varchar.md) columns are smaller than 256 bytes, which means that they have to be stored on the row's main data page.
+The original table schema shown earlier on this page causes the _Row size too large_ error, because all of the table's [VARCHAR](../../../../reference/data-types/string-data-types/varchar.md) columns are smaller than 256 bytes, which means that they have to be stored on the row's main data page.
 
-Therefore, a potential solution to the _Row size too large_ error is to ensure that all [VARCHAR](../../../data-types/string-data-types/varchar.md) columns are at least as long as 256 bytes. The number of characters required to reach the 256 byte limit depends on the [character set](../../../data-types/string-data-types/character-sets/) used by the column.
+Therefore, a potential solution to the _Row size too large_ error is to ensure that all [VARCHAR](../../../../reference/data-types/string-data-types/varchar.md) columns are at least as long as 256 bytes. The number of characters required to reach the 256 byte limit depends on the [character set](../../../../reference/data-types/string-data-types/character-sets/) used by the column.
 
-For example, when using InnoDB's [DYNAMIC](innodb-dynamic-row-format.md) row format and a default character set of [latin1](../../../data-types/string-data-types/character-sets/supported-character-sets-and-collations.md) (which requires up to 1 byte per character), the 256 byte limit means that a [VARCHAR](../../../data-types/string-data-types/varchar.md) column will only be stored on overflow pages if it is at least as large as a `varchar(256)`:
+For example, when using InnoDB's [DYNAMIC](innodb-dynamic-row-format.md) row format and a default character set of [latin1](../../../../reference/data-types/string-data-types/character-sets/supported-character-sets-and-collations.md) (which requires up to 1 byte per character), the 256 byte limit means that a [VARCHAR](../../../../reference/data-types/string-data-types/varchar.md) column will only be stored on overflow pages if it is at least as large as a `varchar(256)`:
 
 ```sql
 SET GLOBAL innodb_default_row_format='dynamic';
@@ -589,7 +589,7 @@ CREATE OR REPLACE TABLE tab (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 ```
 
-And when using InnoDB's [DYNAMIC](innodb-dynamic-row-format.md) row format and a default character set of [utf8](../../../data-types/string-data-types/character-sets/unicode.md) (which requires up to 3 bytes per character), the 256 byte limit means that a [VARCHAR](../../../data-types/string-data-types/varchar.md) column will only be stored on overflow pages if it is at least as large as a `varchar(86)`:
+And when using InnoDB's [DYNAMIC](innodb-dynamic-row-format.md) row format and a default character set of [utf8](../../../../reference/data-types/string-data-types/character-sets/unicode.md) (which requires up to 3 bytes per character), the 256 byte limit means that a [VARCHAR](../../../../reference/data-types/string-data-types/varchar.md) column will only be stored on overflow pages if it is at least as large as a `varchar(86)`:
 
 ```sql
 SET GLOBAL innodb_default_row_format='dynamic';
@@ -797,7 +797,7 @@ CREATE OR REPLACE TABLE tab (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 ```
 
-And when using InnoDB's [DYNAMIC](innodb-dynamic-row-format.md) row format and a default character set of [utf8mb4](../../../data-types/string-data-types/character-sets/unicode.md) (which requires up to 4 bytes per character), the 256 byte limit means that a [VARCHAR](../../../data-types/string-data-types/varchar.md) column will only be stored on overflow pages if it is at least as large as a `varchar(64)`:
+And when using InnoDB's [DYNAMIC](innodb-dynamic-row-format.md) row format and a default character set of [utf8mb4](../../../../reference/data-types/string-data-types/character-sets/unicode.md) (which requires up to 4 bytes per character), the 256 byte limit means that a [VARCHAR](../../../../reference/data-types/string-data-types/varchar.md) column will only be stored on overflow pages if it is at least as large as a `varchar(64)`:
 
 ```sql
 SET GLOBAL innodb_default_row_format='dynamic';
@@ -1021,14 +1021,14 @@ This workaround can even work if your table is so wide that the previous solutio
 
 A _safe_ workaround is to refactor some of the columns into a JSON document.
 
-The JSON document can be queried and manipulated using MariaDB's [JSON functions](../../../sql-functions/special-functions/json-functions/).
+The JSON document can be queried and manipulated using MariaDB's [JSON functions](../../../../reference/sql-functions/special-functions/json-functions/).
 
 The JSON document can be stored in a column that uses one of the following data types:
 
-* [TEXT](../../../data-types/string-data-types/text.md): The maximum size of a [TEXT](../../../data-types/string-data-types/text.md) column is 64 KB.
-* [MEDIUMTEXT](../../../data-types/string-data-types/mediumtext.md): The maximum size of a [MEDIUMTEXT](../../../data-types/string-data-types/mediumtext.md) column is 16 MB.
-* [LONGTEXT](../../../data-types/string-data-types/longtext.md): The maximum size of a [LONGTEXT](../../../data-types/string-data-types/longtext.md) column is 4 GB.
-* [JSON](../../../data-types/string-data-types/json.md): This is just an alias for the [LONGTEXT](../../../data-types/string-data-types/longtext.md) data type.
+* [TEXT](../../../../reference/data-types/string-data-types/text.md): The maximum size of a [TEXT](../../../../reference/data-types/string-data-types/text.md) column is 64 KB.
+* [MEDIUMTEXT](../../../../reference/data-types/string-data-types/mediumtext.md): The maximum size of a [MEDIUMTEXT](../../../../reference/data-types/string-data-types/mediumtext.md) column is 16 MB.
+* [LONGTEXT](../../../../reference/data-types/string-data-types/longtext.md): The maximum size of a [LONGTEXT](../../../../reference/data-types/string-data-types/longtext.md) column is 4 GB.
+* [JSON](../../../../reference/data-types/string-data-types/json.md): This is just an alias for the [LONGTEXT](../../../../reference/data-types/string-data-types/longtext.md) data type.
 
 This workaround can even work if your table is so wide that the previous solutions have failed to solve them problem for your table.
 
@@ -1244,7 +1244,7 @@ CREATE OR REPLACE TABLE tab (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 ```
 
-But as mentioned above, if [InnoDB strict mode](../innodb-strict-mode.md) is **disabled** and if a [DDL](../../../sql-statements/data-definition/) statement is executed, then InnoDB will still raise a **warning** with this message. The [SHOW WARNINGS](../../../sql-statements/administrative-sql-statements/show/show-warnings.md) statement can be used to view the warning. For example:
+But as mentioned above, if [InnoDB strict mode](../innodb-strict-mode.md) is **disabled** and if a [DDL](../../../../reference/sql-statements/data-definition/) statement is executed, then InnoDB will still raise a **warning** with this message. The [SHOW WARNINGS](../../../../reference/sql-statements/administrative-sql-statements/show/show-warnings.md) statement can be used to view the warning. For example:
 
 ```sql
 SHOW WARNINGS;
@@ -1256,7 +1256,7 @@ SHOW WARNINGS;
 1 row in set (0.000 sec)
 ```
 
-As mentioned above, even though InnoDB is allowing the table to be created, there is still an opportunity for errors. Regardless of whether [InnoDB strict mode](../innodb-strict-mode.md) is enabled, if a [DML](../../../sql-statements/data-manipulation/) statement is executed that attempts to write a row that the table's InnoDB row format can't store, then InnoDB will raise an **error** with this message. This creates a somewhat _unsafe_ situation, because it means that the application has the chance to encounter an additional error while executing [DML](../../../sql-statements/data-manipulation/).
+As mentioned above, even though InnoDB is allowing the table to be created, there is still an opportunity for errors. Regardless of whether [InnoDB strict mode](../innodb-strict-mode.md) is enabled, if a [DML](../../../../reference/sql-statements/data-manipulation/) statement is executed that attempts to write a row that the table's InnoDB row format can't store, then InnoDB will raise an **error** with this message. This creates a somewhat _unsafe_ situation, because it means that the application has the chance to encounter an additional error while executing [DML](../../../../reference/sql-statements/data-manipulation/).
 
 CC BY-SA / Gnu FDL
 

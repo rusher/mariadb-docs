@@ -24,7 +24,7 @@ variables that affect the operation of the server or your client. Older\
 versions of MySQL employed `SET OPTION`, but this syntax was\
 deprecated in favor of `SET` without `OPTION`, and was removed in [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0).
 
-Changing a system variable by using the SET statement does not make the change permanently. To do so, the change must be made in a [configuration file](broken-reference).
+Changing a system variable by using the SET statement does not make the change permanently. To do so, the change must be made in a [configuration file](broken-reference/).
 
 For setting variables on a per-query basis, see [SET STATEMENT](set-statement.md).
 
@@ -48,7 +48,7 @@ Setting a global variable to DEFAULT will restore it to the server default, and 
 
 ## Examples
 
-* [innodb\_sync\_spin\_loops](../../../storage-engines/innodb/innodb-system-variables.md#innodb_sync_spin_loops) is a global variable.
+* [innodb\_sync\_spin\_loops](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_sync_spin_loops) is a global variable.
 * [skip\_parallel\_replication](../../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) is a session variable.
 * [max\_error\_count](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_error_count) is both global and session.
 

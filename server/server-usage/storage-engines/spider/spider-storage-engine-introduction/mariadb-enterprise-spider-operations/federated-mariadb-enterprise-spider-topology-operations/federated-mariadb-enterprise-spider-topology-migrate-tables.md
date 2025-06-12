@@ -49,7 +49,7 @@ CREATE TABLE hq_sales.invoices (
 
 The table data can be migrated to the local table using the Spider Tables.
 
-* On the Spider Node\*, migrate the table data to the local copy of the table using the [INSERT SELECT](../../../../../sql-statements/data-manipulation/inserting-loading-data/insert.md) statement:
+* On the Spider Node\*, migrate the table data to the local copy of the table using the [INSERT SELECT](../../../../../../reference/sql-statements/data-manipulation/inserting-loading-data/insert.md) statement:
 
 ```sql
 INSERT INTO hq_sales.invoices
@@ -58,7 +58,7 @@ INSERT INTO hq_sales.invoices
 
 ## Test Read Operations
 
-On the Spider Node, read from the local copy of the table using a [SELECT](../../../../../sql-statements/data-manipulation/selecting-data/select.md) statement to confirm that the data has been migrated:
+On the Spider Node, read from the local copy of the table using a [SELECT](../../../../../../reference/sql-statements/data-manipulation/selecting-data/select.md) statement to confirm that the data has been migrated:
 
 ```sql
 SELECT * FROM hq_sales.invoices;

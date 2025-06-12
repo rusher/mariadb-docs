@@ -4,7 +4,7 @@ There are many variables in MariaDB that you can use to define what to log and w
 
 This article will give you an overview of the different logs and how to enable/disable logging to these.
 
-Note that storage engines can have their logs too: for example, InnoDB keeps an [Undo Log](../../reference/storage-engines/innodb/innodb-undo-log.md) and a Redo Log which are used for rollback and crash recovery. However, this page only lists MariaDB server logs.
+Note that storage engines can have their logs too: for example, InnoDB keeps an [Undo Log](../../server-usage/storage-engines/innodb/innodb-undo-log.md) and a Redo Log which are used for rollback and crash recovery. However, this page only lists MariaDB server logs.
 
 ### [Error Log](error-log.md)
 

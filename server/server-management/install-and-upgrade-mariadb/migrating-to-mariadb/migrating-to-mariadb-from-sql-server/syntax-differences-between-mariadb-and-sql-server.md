@@ -10,7 +10,7 @@ Some features are meant to improve syntax and semantics compatibility between Ma
 
 SQL semantics and syntax, in MariaDB, are affected by the [sql\_mode](../../../variables-and-modes/sql-mode.md) variable. Its value is a comma-separated list of flags, and each of them, if specified, affects a different aspect of SQL syntax and semantics.
 
-A particularly important flag for users familiar with SQL Server is [MSSQL](broken-reference).
+A particularly important flag for users familiar with SQL Server is [MSSQL](broken-reference/).
 
 sql\_mode can be changed locally, in which case it only affects the current session; or globally, in which case it will affect all new connections (but not the connections already established). sql\_mode must be assigned a comma-separated list of flags.
 
@@ -150,11 +150,11 @@ MariaDB offers the following solutions to help:
 * The [ALTER TABLE ... ALGORITHM](../../../../reference/sql-statements/data-definition/alter/alter-table.md#algorithm) clause allows one to specify which algorithm should be used to run a certain operation. For example `INPLACE` tells MariaDB not to create a table copy (perhaps because we don't have enough disk space), and `INSTANT` tells MariaDB to execute the operation instantaneously. Not all algorithms are supported for certain operations. If the algorithm we've chosen cannot be used, the [ALTER TABLE](../../../../reference/sql-statements/data-definition/alter/alter-table.md) statement will fail with an error.
 * The [ALTER TABLE ... LOCK](../../../../reference/sql-statements/data-definition/alter/alter-table.md#alock) clause allows one to specify which lock type should be used. For example `NONE` tells MariaDB to avoid any lock on the table, and `SHARED` only allows one to acquire a share lock. If the operation requires a lock that is more strict than the one we are requesting, the [ALTER TABLE](../../../../reference/sql-statements/data-definition/alter/alter-table.md) statement will fail with an error. Sometimes this happens because the `LOCK` level we want is not available for the specified `ALGORITHM`.
 
-To find out which operations require a table copy and which lock levels are necessary, see [InnoDB Online DDL Overview](../../../../reference/storage-engines/innodb/innodb-online-ddl/innodb-online-ddl-overview.md).
+To find out which operations require a table copy and which lock levels are necessary, see [InnoDB Online DDL Overview](../../../../server-usage/storage-engines/innodb/innodb-online-ddl/innodb-online-ddl-overview.md).
 
 An `ALTER TABLE` can be queued because a long-running statement (even a `SELECT`) required a [metadata lock](../../../../reference/sql-statements/transactions/metadata-locking.md). Since this may cause troubles, sometimes we want the operation to simply fail if the wait is too long. This can be achieved with the [WAIT and NOWAIT](../../../../reference/sql-statements/transactions/wait-and-nowait.md) clauses, whose syntax is a bit different from SQL Server.
 
-SQL Server `WITH ONLINE = ON` is equivalent to MariaDB `LOCK = NONE`. However, note that [most ALTER TABLE statements](../../../../reference/storage-engines/innodb/innodb-online-ddl/innodb-online-ddl-operations-with-the-instant-alter-algorithm.md) support `ALGORITHM = INSTANT`, which is non-blocking and much faster (almost instantaneous, as the syntax suggests).
+SQL Server `WITH ONLINE = ON` is equivalent to MariaDB `LOCK = NONE`. However, note that [most ALTER TABLE statements](../../../../server-usage/storage-engines/innodb/innodb-online-ddl/innodb-online-ddl-operations-with-the-instant-alter-algorithm.md) support `ALGORITHM = INSTANT`, which is non-blocking and much faster (almost instantaneous, as the syntax suggests).
 
 ### IF EXISTS, IF NOT EXISTS, OR REPLACE
 
@@ -272,7 +272,7 @@ See also [How to Quickly Insert Data Into MariaDB](../../../../ha-and-performanc
 
 * [SQL Server and MariaDB Types Comparison](sql-server-and-mariadb-types-comparison.md)
 * [MariaDB Transactions and Isolation Levels for SQL Server Users](mariadb-transactions-and-isolation-levels-for-sql-server-users.md)
-* [SQL\_MODE=MSSQL](broken-reference)
+* [SQL\_MODE=MSSQL](broken-reference/)
 
 CC BY-SA / Gnu FDL
 

@@ -9,7 +9,7 @@ Currently two such systems are supported: libxml2, a part of the GNOME\
 framework, but which does not require GNOME and, on Windows, MS-DOM (DOMDOC), the Microsoft standard support of XML documents.
 
 DOMDOC is the default for the Windows version of CONNECT and libxml2 is always\
-used on other systems. On Windows the choice can be specified using the XMLSUP[CREATE TABLE](../../../sql-statements/data-definition/create/create-table.md) list option, for instance specifying`option_list='xmlsup=libxml2'`.
+used on other systems. On Windows the choice can be specified using the XMLSUP[CREATE TABLE](../../../../reference/sql-statements/data-definition/create/create-table.md) list option, for instance specifying`option_list='xmlsup=libxml2'`.
 
 ## Creating XML tables
 
@@ -384,7 +384,7 @@ This time, all ‘ele\` tags are recognized. This solution does not work with DO
 
 ## Having Columns defined by Discovery
 
-It is possible to let the MariaDB discovery process do the job of column specification. When columns are not defined in the [CREATE TABLE](../../../sql-statements/data-definition/create/create-table.md) statement, CONNECT endeavours to analyze the XML file and to provide the column specifications. This is possible only for true XML tables, but not for HTML tables.
+It is possible to let the MariaDB discovery process do the job of column specification. When columns are not defined in the [CREATE TABLE](../../../../reference/sql-statements/data-definition/create/create-table.md) statement, CONNECT endeavours to analyze the XML file and to provide the column specifications. This is possible only for true XML tables, but not for HTML tables.
 
 For instance, the _xsamp_ table could have been created specifying:
 
@@ -410,7 +410,7 @@ CREATE TABLE `xsamp` (
   `FILE_NAME`='E:/Data/Xml/Xsample.xml' `TABNAME`='BIBLIO' `OPTION_LIST`='rownode=BOOK';
 ```
 
-It is equivalent except for the column sizes that have been calculated from the file as the maximum length of the corresponding column when it was a normal value. Also, all columns are specified as type [CHAR](../../../data-types/string-data-types/char.md) because XML does not provide information about the node content data type. Nullable is set to true if the column is missing in some rows.
+It is equivalent except for the column sizes that have been calculated from the file as the maximum length of the corresponding column when it was a normal value. Also, all columns are specified as type [CHAR](../../../../reference/data-types/string-data-types/char.md) because XML does not provide information about the node content data type. Nullable is set to true if the column is missing in some rows.
 
 If a more complex definition is desired, you can ask CONNECT to analyse the XPATH up to a given level using the level option in the option list. The level value is the number of nodes that are taken in the XPATH. For instance:
 

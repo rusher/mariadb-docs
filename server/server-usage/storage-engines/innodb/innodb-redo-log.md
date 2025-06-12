@@ -113,7 +113,7 @@ The checkpoint age can also be determined by the process shown below.
 
 To determine the InnoDB checkpoint age, do the following:
 
-* Query [SHOW ENGINE INNODB STATUS](../../sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md).
+* Query [SHOW ENGINE INNODB STATUS](../../../reference/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md).
 * Find the `LOG` section. For example:
 
 ```
@@ -162,7 +162,7 @@ A number of redo log improvements were made in [MariaDB 10.8](https://app.gitboo
 * Improve the redo log for concurrency ([MDEV-14425](https://jira.mariadb.org/browse/MDEV-14425)).
 * Remove FIL\_PAGE\_FILE\_FLUSH\_LSN ([MDEV-27199](https://jira.mariadb.org/browse/MDEV-27199)).
 
-Before [MariaDB 10.8.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-8-series/mariadb-1081-release-notes), [mariadb-backup --prepare](../../../server-usage/backing-up-and-restoring-databases/mariabackup/mariabackup-options.md#-prepare) created a zero-length ib\_logfile0 as a dummy placeholder. From [MariaDB 10.8.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-8-series/mariadb-1081-release-notes) ([MDEV-14425](https://jira.mariadb.org/browse/MDEV-14425)), the size of that dummy file was increased to 12304 (0x3010) bytes, and all updates of FIL\_PAGE\_FILE\_FLUSH\_LSN in the first page of the system tablespace are removed.
+Before [MariaDB 10.8.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-8-series/mariadb-1081-release-notes), [mariadb-backup --prepare](../../backing-up-and-restoring-databases/mariabackup/mariabackup-options.md#-prepare) created a zero-length ib\_logfile0 as a dummy placeholder. From [MariaDB 10.8.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-8-series/mariadb-1081-release-notes) ([MDEV-14425](https://jira.mariadb.org/browse/MDEV-14425)), the size of that dummy file was increased to 12304 (0x3010) bytes, and all updates of FIL\_PAGE\_FILE\_FLUSH\_LSN in the first page of the system tablespace are removed.
 
 From [MariaDB 10.8.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-8-series/mariadb-1081-release-notes), if the server is started up with a zero-sized ib\_logfile0, it is assumed that an upgrade is being performed after a backup had been prepared. The start LSN will then be read from FIL\_PAGE\_FILE\_FLUSH\_LSN, and a new log file will be created starting from exactly that LSN.
 

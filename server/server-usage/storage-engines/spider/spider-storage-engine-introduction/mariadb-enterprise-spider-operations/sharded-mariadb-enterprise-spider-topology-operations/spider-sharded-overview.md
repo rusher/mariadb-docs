@@ -4,12 +4,12 @@
 
 Choose an operation for the Sharded MariaDB Enterprise Spider topology:
 
-| Operation                                                                                                                                                                                                                                                               | Description                                                      |
-| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------- |
-| [Add a Shard](../../../../../../reference/storage-engines/spider/spider-storage-engine-introduction/mariadb-enterprise-spider-operations/sharded-mariadb-enterprise-spider-topology-operations/sharded-mariadb-enterprise-spider-topology-add-a-shard.md)               | How to add a new shard to a Spider Table.                        |
-| [Backup and Restore](../../../../../../reference/storage-engines/spider/spider-storage-engine-introduction/mariadb-enterprise-spider-operations/sharded-mariadb-enterprise-spider-topology-operations/sharded-mariadb-enterprise-spider-topology-backup-and-restore.md) | How to create a new backup or restore an existing backup.        |
-| [Update Character Set or Collation](spider-sharded-overview.md#update-character-sets-and-collations)                                                                                                                                                                    | How to update the character set or collation for a Spider Table. |
-| [Update Connection Options](spider-sharded-overview.md#update-connection-options)                                                                                                                                                                                       | How to update the connection options for a Data Node.            |
+| Operation                                                                                            | Description                                                      |
+| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------- |
+| [Add a Shard](sharded-mariadb-enterprise-spider-topology-add-a-shard.md)                             | How to add a new shard to a Spider Table.                        |
+| [Backup and Restore](sharded-mariadb-enterprise-spider-topology-backup-and-restore.md)               | How to create a new backup or restore an existing backup.        |
+| [Update Character Set or Collation](spider-sharded-overview.md#update-character-sets-and-collations) | How to update the character set or collation for a Spider Table. |
+| [Update Connection Options](spider-sharded-overview.md#update-connection-options)                    | How to update the connection options for a Data Node.            |
 
 ## Update Character Sets and Collations
 

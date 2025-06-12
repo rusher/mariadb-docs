@@ -33,7 +33,7 @@ as his prize for suggesting the winning name from Monty Program.
 
 ## See Also
 
-* [Why is the Software Called MariaDB?](broken-reference)
+* [Why is the Software Called MariaDB?](../../../reference/storage-engines/aria/broken-reference/)
 
 CC BY-SA / Gnu FDL
 

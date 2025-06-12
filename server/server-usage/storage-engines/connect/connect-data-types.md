@@ -7,21 +7,21 @@ is possible.
 
 The data types currently supported by CONNECT are:
 
-| Type name    | Description            | Used for                                                                                                                                                                                                                                                                                                              |
-| ------------ | ---------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Type name    | Description            | Used for                                                                                                                                                                                                                                                                                                              |
-| TYPE\_STRING | Zero ended string      | [char](../../data-types/string-data-types/char.md), [varchar](../../data-types/string-data-types/varchar.md), [text](../../data-types/string-data-types/text.md)                                                                                                                                                      |
-| TYPE\_INT    | 4 bytes integer        | [int](../../data-types/numeric-data-types/int.md), [mediumint](../../data-types/numeric-data-types/mediumint.md), [integer](../../data-types/numeric-data-types/integer.md)                                                                                                                                           |
-| TYPE\_SHORT  | 2 bytes integer        | [smallint](../../data-types/numeric-data-types/smallint.md)                                                                                                                                                                                                                                                           |
-| TYPE\_TINY   | 1 byte integer         | [tinyint](../../data-types/numeric-data-types/tinyint.md)                                                                                                                                                                                                                                                             |
-| TYPE\_BIGINT | 8 bytes integer        | [bigint](../../data-types/numeric-data-types/bigint.md), longlong                                                                                                                                                                                                                                                     |
-| TYPE\_DOUBLE | 8 bytes floating point | [double](../../data-types/numeric-data-types/double.md), [float](../../data-types/numeric-data-types/float.md), real                                                                                                                                                                                                  |
-| TYPE\_DECIM  | Numeric value          | [decimal](../../data-types/numeric-data-types/decimal.md), numeric, number                                                                                                                                                                                                                                            |
-| TYPE\_DATE   | 4 bytes integer        | [date](../../data-types/date-and-time-data-types/date.md), [datetime](../../data-types/date-and-time-data-types/datetime.md), [time](../../data-types/date-and-time-data-types/time.md), [timestamp](../../data-types/date-and-time-data-types/timestamp.md), [year](../../sql-functions/date-time-functions/year.md) |
+| Type name    | Description            | Used for                                                                                                                                                                                                                                                                                                                                                                               |
+| ------------ | ---------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Type name    | Description            | Used for                                                                                                                                                                                                                                                                                                                                                                               |
+| TYPE\_STRING | Zero ended string      | [char](../../../reference/data-types/string-data-types/char.md), [varchar](../../../reference/data-types/string-data-types/varchar.md), [text](../../../reference/data-types/string-data-types/text.md)                                                                                                                                                                                |
+| TYPE\_INT    | 4 bytes integer        | [int](../../../reference/data-types/numeric-data-types/int.md), [mediumint](../../../reference/data-types/numeric-data-types/mediumint.md), [integer](../../../reference/data-types/numeric-data-types/integer.md)                                                                                                                                                                     |
+| TYPE\_SHORT  | 2 bytes integer        | [smallint](../../../reference/data-types/numeric-data-types/smallint.md)                                                                                                                                                                                                                                                                                                               |
+| TYPE\_TINY   | 1 byte integer         | [tinyint](../../../reference/data-types/numeric-data-types/tinyint.md)                                                                                                                                                                                                                                                                                                                 |
+| TYPE\_BIGINT | 8 bytes integer        | [bigint](../../../reference/data-types/numeric-data-types/bigint.md), longlong                                                                                                                                                                                                                                                                                                         |
+| TYPE\_DOUBLE | 8 bytes floating point | [double](../../../reference/data-types/numeric-data-types/double.md), [float](../../../reference/data-types/numeric-data-types/float.md), real                                                                                                                                                                                                                                         |
+| TYPE\_DECIM  | Numeric value          | [decimal](../../../reference/data-types/numeric-data-types/decimal.md), numeric, number                                                                                                                                                                                                                                                                                                |
+| TYPE\_DATE   | 4 bytes integer        | [date](../../../reference/data-types/date-and-time-data-types/date.md), [datetime](../../../reference/data-types/date-and-time-data-types/datetime.md), [time](../../../reference/data-types/date-and-time-data-types/time.md), [timestamp](../../../reference/data-types/date-and-time-data-types/timestamp.md), [year](../../../reference/sql-functions/date-time-functions/year.md) |
 
 ## TYPE\_STRING
 
-This type corresponds to what is generally known as [CHAR](../../data-types/string-data-types/char.md) or [VARCHAR](../../data-types/string-data-types/varchar.md) by\
+This type corresponds to what is generally known as [CHAR](../../../reference/data-types/string-data-types/char.md) or [VARCHAR](../../../reference/data-types/string-data-types/varchar.md) by\
 database users, or as strings by programmers. Columns containing characters\
 have a maximum length but the character string is of fixed or variable length\
 depending on the file format.
@@ -33,24 +33,24 @@ the number of characters.
 
 ## TYPE\_INT
 
-The [INTEGER](../../data-types/numeric-data-types/integer.md) type contains signed integer numeric 4-byte values (the _int/ of_\
-&#xNAN;_&#x74;he C language) ranging from `–2,147,483,648` to `2,147,483,647` for signed_\
-&#xNAN;_&#x74;ype and `0` to `4,294,967,295` for unsigned type._
+The [INTEGER](../../../reference/data-types/numeric-data-types/integer.md) type contains signed integer numeric 4-byte values (the _int/ of_\
+\&#xNAN;_the C language) ranging from `–2,147,483,648` to `2,147,483,647` for signed_\
+\&#xNAN;_type and `0` to `4,294,967,295` for unsigned type._
 
 ## TYPE\_SHORT
 
-The SHORT data type contains signed [integer numeric 2-byte](../../data-types/numeric-data-types/smallint.md) values (the _short_\
-&#xNAN;_&#x69;nteger_ of the C language) ranging from `–32,768` to `32,767` for signed\
+The SHORT data type contains signed [integer numeric 2-byte](../../../reference/data-types/numeric-data-types/smallint.md) values (the _short_\
+\&#xNAN;_integer_ of the C language) ranging from `–32,768` to `32,767` for signed\
 type and `0` to `65,535` for unsigned type.
 
 ## TYPE\_TINY
 
-The TINY data type contains [integer numeric 1-byte](../../data-types/numeric-data-types/tinyint.md) values (the _char_ of\
+The TINY data type contains [integer numeric 1-byte](../../../reference/data-types/numeric-data-types/tinyint.md) values (the _char_ of\
 the C language) ranging from `–128` to `127` for signed type and `0` to`255` for unsigned type. For some table types, TYPE\_TINY is used to represent Boolean values (0 is false, anything else is true).
 
 ## TYPE\_BIGINT
 
-The [BIGINT](../../data-types/numeric-data-types/bigint.md) data type contains signed integer 8-byte values (the _long long_ of the C language) ranging from `-9,223,372,036,854,775,808` to`9,223,372,036,854,775,807` for signed type and from `0` to`18,446,744,073,709,551,615` for unsigned type.
+The [BIGINT](../../../reference/data-types/numeric-data-types/bigint.md) data type contains signed integer 8-byte values (the _long long_ of the C language) ranging from `-9,223,372,036,854,775,808` to`9,223,372,036,854,775,807` for signed type and from `0` to`18,446,744,073,709,551,615` for unsigned type.
 
 Inside tables, the coding of all integer values depends on the table type. In\
 tables represented by text files, the number is written in characters, while in\
@@ -63,7 +63,7 @@ set the output field length for all table types.
 
 ## TYPE\_DOUBLE
 
-The DOUBLE data type corresponds to the C language [double](../../data-types/numeric-data-types/double.md) type, a\
+The DOUBLE data type corresponds to the C language [double](../../../reference/data-types/numeric-data-types/double.md) type, a\
 floating-point double precision value coded with 8 bytes. Like for integers,\
 the internal coding in tables depends on the table type, characters for text\
 files, and platform binary representation for binary files.
@@ -75,7 +75,7 @@ decimals for all types of tables.
 
 ## TYPE\_DECIM
 
-The DECIMAL data type corresponds to what MariaDB or ODBC data sources call NUMBER, NUMERIC, or [DECIMAL](../../data-types/numeric-data-types/decimal.md): a numeric value with a maximum number of digits (the precision) some of them eventually being decimal digits (the scale). The internal coding in CONNECT is a character representation of the number. For instance:
+The DECIMAL data type corresponds to what MariaDB or ODBC data sources call NUMBER, NUMERIC, or [DECIMAL](../../../reference/data-types/numeric-data-types/decimal.md): a numeric value with a maximum number of digits (the precision) some of them eventually being decimal digits (the scale). The internal coding in CONNECT is a character representation of the number. For instance:
 
 ```sql
 colname decimal(14,6)
@@ -102,7 +102,7 @@ of ODBC, JDBC and MySQL table types, CONNECT does not provide decimal calculatio
 
 Internally, date/time values are stored by CONNECT as a signed 4-byte integer.\
 The value 0 corresponds to 01 January 1970 12:00:00 am coordinated universal\
-time ([UTC](../../data-types/string-data-types/character-sets/internationalization-and-localization/coordinated-universal-time.md)). All other date/time values are\
+time ([UTC](../../../reference/data-types/string-data-types/character-sets/internationalization-and-localization/coordinated-universal-time.md)). All other date/time values are\
 represented by the number of seconds elapsed since or before midnight\
 (00:00:00), 1 January 1970, to that date/time value. Date/time values before\
 midnight 1 January 1970 are represented by a negative number of seconds.
@@ -209,7 +209,7 @@ as if they were real dates. Of course they must be inserted and will be displaye
 
 ## NULL handling
 
-CONNECT handles [null values](../../data-types/null-values.md) for data sources able to produce nulls. Currently\
+CONNECT handles [null values](../../../reference/data-types/null-values.md) for data sources able to produce nulls. Currently\
 this concerns mainly the [ODBC](connect-table-types/connect-odbc-table-type-accessing-tables-from-another-dbms.md), [JDBC](connect-table-types/connect-jdbc-table-type-accessing-tables-from-another-dbms.md), MONGO, [MYSQL](connect-table-types/connect-mysql-table-type-accessing-mysqlmariadb-tables.md), [XML](connect-table-types/connect-table-types-data-files.md#xml-table-type), [JSON](connect-table-types/connect-json-table-type.md) and [INI](connect-table-types/connect-table-types-data-files.md#ini-table-type) table types. For INI, [JSON](connect-table-types/connect-json-table-type.md), MONGO or XML types, null values are returned when the key is missing in the section (INI) or when the corresponding node does not exist in a row (XML, JSON, MONGO).
 
 For other file tables, the issue is to define what a null value is. In a numeric column, 0 can sometimes be a valid value but, in some other cases, it\
@@ -217,7 +217,7 @@ can make no sense. The same for character columns; is a blank field a valid valu
 
 A special case is DATE columns with a DATE\_FORMAT specified. Any value not matching the format can be regarded as NULL.
 
-CONNECT leaves the decision to you. When declaring a column in the [CREATE TABLE](../../sql-statements/data-definition/create/create-table.md)\
+CONNECT leaves the decision to you. When declaring a column in the [CREATE TABLE](../../../reference/sql-statements/data-definition/create/create-table.md)\
 statement, if it is declared NOT NULL, blank or zero values will be considered\
 as valid values. Otherwise they will be considered as NULL values. In all\
 cases, nulls are replaced on insert or update by pseudo null values, a zero-length character string for text types or a zero value for numeric types. Once\
@@ -295,26 +295,26 @@ They are converted when possible to CONNECT types.
 
 When converted, MariaDB types are converted as:
 
-| MariaDB Types                                                                                                                 | CONNECT Type             | Remark                                                                                                                    |
-| ----------------------------------------------------------------------------------------------------------------------------- | ------------------------ | ------------------------------------------------------------------------------------------------------------------------- |
-| MariaDB Types                                                                                                                 | CONNECT Type             | Remark                                                                                                                    |
-| [integer](../../data-types/numeric-data-types/integer.md), [medium integer](../../data-types/numeric-data-types/mediumint.md) | TYPE\_INT                | 4 byte integer                                                                                                            |
-| [small integer](../../data-types/numeric-data-types/smallint.md)                                                              | TYPE\_SHORT              | 2 byte integer                                                                                                            |
-| [tiny integer](../../data-types/numeric-data-types/tinyint.md)                                                                | TYPE\_TINY               | 1 byte integer                                                                                                            |
-| [char](../../data-types/string-data-types/char.md), [varchar](../../data-types/string-data-types/varchar.md)                  | TYPE\_STRING             | Same length                                                                                                               |
-| [double](../../data-types/numeric-data-types/double.md), [float](../../data-types/numeric-data-types/float.md), real          | TYPE\_DOUBLE             | 8 byte floating point                                                                                                     |
-| [decimal](../../data-types/numeric-data-types/decimal.md), numeric                                                            | TYPE\_DECIM              | Length depends on precision and scale                                                                                     |
-| all [date](../../data-types/date-and-time-data-types/date.md) related types                                                   | TYPE\_DATE               | Date format can be set accordingly                                                                                        |
-| [bigint](../../data-types/numeric-data-types/bigint.md), longlong                                                             | TYPE\_BIGINT             | 8 byte integer                                                                                                            |
-| [enum](../../data-types/string-data-types/enum.md), [set](../../data-types/string-data-types/set-data-type.md)                | TYPE\_STRING             | Numeric value not accessible                                                                                              |
-| All text types                                                                                                                | TYPE\_STRING TYPE\_ERROR | Depending on the value of the [connect\_type\_conv](connect-system-variables.md#connect_type_conv) system variable value. |
-| Other types                                                                                                                   | TYPE\_ERROR              | Not supported, no conversion provided.                                                                                    |
+| MariaDB Types                                                                                                                                           | CONNECT Type             | Remark                                                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------ | ------------------------------------------------------------------------------------------------------------------------- |
+| MariaDB Types                                                                                                                                           | CONNECT Type             | Remark                                                                                                                    |
+| [integer](../../../reference/data-types/numeric-data-types/integer.md), [medium integer](../../../reference/data-types/numeric-data-types/mediumint.md) | TYPE\_INT                | 4 byte integer                                                                                                            |
+| [small integer](../../../reference/data-types/numeric-data-types/smallint.md)                                                                           | TYPE\_SHORT              | 2 byte integer                                                                                                            |
+| [tiny integer](../../../reference/data-types/numeric-data-types/tinyint.md)                                                                             | TYPE\_TINY               | 1 byte integer                                                                                                            |
+| [char](../../../reference/data-types/string-data-types/char.md), [varchar](../../../reference/data-types/string-data-types/varchar.md)                  | TYPE\_STRING             | Same length                                                                                                               |
+| [double](../../../reference/data-types/numeric-data-types/double.md), [float](../../../reference/data-types/numeric-data-types/float.md), real          | TYPE\_DOUBLE             | 8 byte floating point                                                                                                     |
+| [decimal](../../../reference/data-types/numeric-data-types/decimal.md), numeric                                                                         | TYPE\_DECIM              | Length depends on precision and scale                                                                                     |
+| all [date](../../../reference/data-types/date-and-time-data-types/date.md) related types                                                                | TYPE\_DATE               | Date format can be set accordingly                                                                                        |
+| [bigint](../../../reference/data-types/numeric-data-types/bigint.md), longlong                                                                          | TYPE\_BIGINT             | 8 byte integer                                                                                                            |
+| [enum](../../../reference/data-types/string-data-types/enum.md), [set](../../../reference/data-types/string-data-types/set-data-type.md)                | TYPE\_STRING             | Numeric value not accessible                                                                                              |
+| All text types                                                                                                                                          | TYPE\_STRING TYPE\_ERROR | Depending on the value of the [connect\_type\_conv](connect-system-variables.md#connect_type_conv) system variable value. |
+| Other types                                                                                                                                             | TYPE\_ERROR              | Not supported, no conversion provided.                                                                                    |
 
-For [ENUM](../../data-types/string-data-types/enum.md), the length of the column is the length of the longest value of the enumeration. For [SET](../../data-types/string-data-types/set-data-type.md) the length is enough to contain all the set values concatenated with comma separator.
+For [ENUM](../../../reference/data-types/string-data-types/enum.md), the length of the column is the length of the longest value of the enumeration. For [SET](../../../reference/data-types/string-data-types/set-data-type.md) the length is enough to contain all the set values concatenated with comma separator.
 
-In the case of [TEXT](../../data-types/string-data-types/text.md) columns, the handling depends on the values given to the [connect\_type\_conv](connect-system-variables.md#connect_type_conv) and[connect\_conv\_size](connect-system-variables.md#connect_conv_size) system variables.
+In the case of [TEXT](../../../reference/data-types/string-data-types/text.md) columns, the handling depends on the values given to the [connect\_type\_conv](connect-system-variables.md#connect_type_conv) and[connect\_conv\_size](connect-system-variables.md#connect_conv_size) system variables.
 
-Note: [BLOB](../../data-types/string-data-types/blob.md) is currently not converted by default until a TYPE\_BIN type is added to CONNECT. However, the FORCE option (from Connect 1.06.006) can be specified for blob columns containing text and the SKIP option also applies to ODBC BLOB columns.
+Note: [BLOB](../../../reference/data-types/string-data-types/blob.md) is currently not converted by default until a TYPE\_BIN type is added to CONNECT. However, the FORCE option (from Connect 1.06.006) can be specified for blob columns containing text and the SKIP option also applies to ODBC BLOB columns.
 
 ODBC SQL types are converted as:
 
@@ -360,7 +360,7 @@ Note: The [connect\_type\_conv](connect-system-variables.md#connect_type_conv) S
 1. [↑](connect-data-types.md#_ref-0) Here input and output are\
    used to specify respectively decoding the date to get its numeric value from\
    the data file and encoding a date to write it in the table file. Input is\
-   performed within [SELECT](../../sql-statements/data-manipulation/selecting-data/select.md) queries; output is performed in [UPDATE](../../sql-statements/data-manipulation/changing-deleting-data/update.md) or [INSERT](../../sql-statements/data-manipulation/inserting-loading-data/insert.md)\
+   performed within [SELECT](../../../reference/sql-statements/data-manipulation/selecting-data/select.md) queries; output is performed in [UPDATE](../../../reference/sql-statements/data-manipulation/changing-deleting-data/update.md) or [INSERT](../../../reference/sql-statements/data-manipulation/inserting-loading-data/insert.md)\
    queries.
 
 GPLv2

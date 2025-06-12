@@ -2,13 +2,13 @@
 
 The [MyISAM](./) storage engine supports three different table storage formats.
 
-These are FIXED, DYNAMIC and COMPRESSED. FIXED and DYNAMIC can be set with the ROW FORMAT option in the [CREATE TABLE](../../sql-statements/data-definition/create/create-table.md) statement, or will be chosen automatically depending on the columns the table contains. COMPRESSED can only be set via the [myisampack](../../../clients-and-utilities/myisam-clients-and-utilities/myisampack.md) tool.
+These are FIXED, DYNAMIC and COMPRESSED. FIXED and DYNAMIC can be set with the ROW FORMAT option in the [CREATE TABLE](../../../reference/sql-statements/data-definition/create/create-table.md) statement, or will be chosen automatically depending on the columns the table contains. COMPRESSED can only be set via the [myisampack](../../../clients-and-utilities/myisam-clients-and-utilities/myisampack.md) tool.
 
-The [SHOW TABLE STATUS](../../sql-statements/administrative-sql-statements/show/show-table-status.md) statement can be used to see the storage format used by a table. Note that `COMPRESSED` tables are reported as `DYNAMIC` in that context.
+The [SHOW TABLE STATUS](../../../reference/sql-statements/administrative-sql-statements/show/show-table-status.md) statement can be used to see the storage format used by a table. Note that `COMPRESSED` tables are reported as `DYNAMIC` in that context.
 
 ## Fixed-length
 
-Fixed-length (or static) tables contain records of a fixed-length. Each column is the same length for all records, regardless of the actual contents. It is the default format if a table has no [BLOB](../../data-types/string-data-types/blob.md), [TEXT](../../data-types/string-data-types/text.md), [VARCHAR](../../data-types/string-data-types/varchar.md) or [VARBINARY](../../data-types/string-data-types/varbinary.md) fields, and no ROW FORMAT is provided. You can also specify a fixed table with ROW\_FORMAT=FIXED in the table definition.
+Fixed-length (or static) tables contain records of a fixed-length. Each column is the same length for all records, regardless of the actual contents. It is the default format if a table has no [BLOB](../../../reference/data-types/string-data-types/blob.md), [TEXT](../../../reference/data-types/string-data-types/text.md), [VARCHAR](../../../reference/data-types/string-data-types/varchar.md) or [VARBINARY](../../../reference/data-types/string-data-types/varbinary.md) fields, and no ROW FORMAT is provided. You can also specify a fixed table with ROW\_FORMAT=FIXED in the table definition.
 
 Tables containing BLOB or TEXT fields cannot be FIXED, as by design these are both dynamic fields. However, no error or warning will be raised if you specify FIXED.
 
@@ -41,7 +41,7 @@ Compressed tables are a read-only format, created with the [myisampack](../../..
 
 Compressed tables have a number of characteristics:
 
-* while the data is read-only, DDL statements such as [DROP TABLE](../../sql-statements/data-definition/drop/drop-table.md) and [TRUNCATE TABLE](../../sql-statements/table-statements/truncate-table.md) will still function.
+* while the data is read-only, DDL statements such as [DROP TABLE](../../../reference/sql-statements/data-definition/drop/drop-table.md) and [TRUNCATE TABLE](../../../reference/sql-statements/table-statements/truncate-table.md) will still function.
 * take much less space than fixed or dynamic tables. Each data has usually a 40-70% compression ratio
 * rows are compressed separately, reducing access overhead.
 * row headers will be from one to three bytes.

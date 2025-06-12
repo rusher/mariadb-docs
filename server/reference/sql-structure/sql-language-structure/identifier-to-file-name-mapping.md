@@ -1,6 +1,6 @@
 # Identifier to File Name Mapping
 
-Some identifiers map to a file name on the filesystem. Databases each have their own directory, while, depending on the [storage engine](../../storage-engines/), table names and index names may map to a file name.
+Some identifiers map to a file name on the filesystem. Databases each have their own directory, while, depending on the [storage engine](../../../server-usage/storage-engines/), table names and index names may map to a file name.
 
 Not all characters that are allowed in table names can be used in file names. Every filesystem has its own rules of what characters can be used in file names. To let the user create tables using all characters allowed in the SQL Standard and to not depend on whatever particular filesystem a particular database resides, MariaDB encodes "potentially unsafe" characters in the table name to derive the corresponding file name.
 

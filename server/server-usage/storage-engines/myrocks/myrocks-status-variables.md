@@ -1,8 +1,8 @@
 # Status Variables
 
-This page documents status variables related to the [MyRocks](./) storage engine. See [Server Status Variables](../../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md) for a complete list of status variables that can be viewed with [SHOW STATUS](../../sql-statements/administrative-sql-statements/show/show-status.md).
+This page documents status variables related to the [MyRocks](./) storage engine. See [Server Status Variables](../../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md) for a complete list of status variables that can be viewed with [SHOW STATUS](../../../reference/sql-statements/administrative-sql-statements/show/show-status.md).
 
-See also the [Full list of MariaDB options, system and status variables](../../../server-management/variables-and-modes/full-list-of-mariadb-options-system-and-status-variables.md).
+See also the [Full list of MariaDB options, system and status variables](../../../reference/full-list-of-mariadb-options-system-and-status-variables.md).
 
 #### `Rocksdb_block_cache_add`
 
@@ -223,7 +223,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 
 #### `Rocksdb_covered_secondary_key_lookups`
 
-* Description: Incremented when avoiding reading a record via a keyread. This indicates lookups that were performed via a secondary index containing a field that is only a prefix of the [VARCHAR](../../data-types/string-data-types/varchar.md) column, and that could return all requested fields directly from the secondary index.
+* Description: Incremented when avoiding reading a record via a keyread. This indicates lookups that were performed via a secondary index containing a field that is only a prefix of the [VARCHAR](../../../reference/data-types/string-data-types/varchar.md) column, and that could return all requested fields directly from the secondary index.
 * Scope: Global, Session
 * Data Type: `numeric`
 

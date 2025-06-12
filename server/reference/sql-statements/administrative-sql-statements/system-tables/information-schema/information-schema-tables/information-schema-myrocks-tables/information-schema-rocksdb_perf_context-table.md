@@ -1,6 +1,6 @@
 # Information Schema ROCKSDB\_PERF\_CONTEXT Table
 
-The [Information Schema](../../) `ROCKSDB_PERF_CONTEXT` table is included as part of the [MyRocks](../../../../../../storage-engines/myrocks/) storage engine and includes per-table/partition counters .
+The [Information Schema](../../) `ROCKSDB_PERF_CONTEXT` table is included as part of the [MyRocks](../../../../../../../server-usage/storage-engines/myrocks/) storage engine and includes per-table/partition counters .
 
 The `PROCESS` [privilege](../../../../../account-management-sql-statements/grant.md) is required to view the table.
 

@@ -2,7 +2,7 @@
 
 The [Information Schema](../../) `INNODB_FT_CONFIG` table contains InnoDB [fulltext index](../../../../../../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/full-text-indexes/) metadata.
 
-The `SUPER` [privilege](../../../../../account-management-sql-statements/grant.md) is required to view the table, and it also requires the [innodb\_ft\_aux\_table](../../../../../../storage-engines/innodb/innodb-system-variables.md) system variable to be set.
+The `SUPER` [privilege](../../../../../account-management-sql-statements/grant.md) is required to view the table, and it also requires the [innodb\_ft\_aux\_table](../../../../../../../server-usage/storage-engines/innodb/innodb-system-variables.md) system variable to be set.
 
 It has the following columns:
 

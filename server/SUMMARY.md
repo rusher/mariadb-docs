@@ -504,7 +504,6 @@
       * [Upgrading Between Minor Versions on Linux](server-management/install-and-upgrade-mariadb/upgrading/upgrading-between-minor-versions-on-linux.md)
       * [Upgrading MariaDB on Windows](server-management/install-and-upgrade-mariadb/upgrading/upgrading-mariadb-on-windows.md)
       * [Upgrading MariaDB Enterprise Server](server-management/upgrades/README.md)
-        * [Enterprise Server Lifecycle](server-management/enterprise-server-lifecycle.md)
         * [Upgrade to MariaDB Enterprise Server 11.8](server-management/install-and-upgrade-mariadb/upgrading/upgrading-to-mariadb-enterprise-server/upgrade-to-mariadb-enterprise-server-11.8.md)
         * [Upgrade to MariaDB Enterprise Server 11.4](server-management/install-and-upgrade-mariadb/upgrading/upgrading-to-mariadb-enterprise-server/upgrade-to-mariadb-enterprise-server-11.4.md)
         * [Upgrade to MariaDB Enterprise Server 10.6](server-management/install-and-upgrade-mariadb/upgrading/upgrading-to-mariadb-enterprise-server/upgrade-to-mariadb-enterprise-server-10.6.md)

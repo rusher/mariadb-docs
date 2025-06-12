@@ -41,20 +41,20 @@ On most servers upgrading from 10.7 should be painless. However, there are some 
 
 #### Options That Have Changed Default Values
 
-| Option                                                                                                                                     | Old default value | New default value |
-| ------------------------------------------------------------------------------------------------------------------------------------------ | ----------------- | ----------------- |
-| Option                                                                                                                                     | Old default value | New default value |
-| [innodb\_buffer\_pool\_chunk\_size](../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_chunk_size) | 134217728         | Autosized         |
-| [spider\_semi\_table\_lock](../../../../reference/storage-engines/spider/spider-system-variables.md)                                       | 1                 | 0                 |
+| Option                                                                                                                                        | Old default value | New default value |
+| --------------------------------------------------------------------------------------------------------------------------------------------- | ----------------- | ----------------- |
+| Option                                                                                                                                        | Old default value | New default value |
+| [innodb\_buffer\_pool\_chunk\_size](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_chunk_size) | 134217728         | Autosized         |
+| [spider\_semi\_table\_lock](../../../../server-usage/storage-engines/spider/spider-system-variables.md)                                       | 1                 | 0                 |
 
 #### Options That Have Been Removed or Renamed
 
 The following options should be removed or renamed if you use them in your [option files](../../configuring-mariadb/configuring-mariadb-with-option-files.md):
 
-| Option                                                                                                                                 | Reason                                                                                                |
-| -------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
-| Option                                                                                                                                 | Reason                                                                                                |
-| [innodb\_log\_write\_ahead\_size](../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_log_write_ahead_size) | On Linux and Windows, the physical block size of the underlying storage is instead detected and used. |
+| Option                                                                                                                                    | Reason                                                                                                |
+| ----------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| Option                                                                                                                                    | Reason                                                                                                |
+| [innodb\_log\_write\_ahead\_size](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_log_write_ahead_size) | On Linux and Windows, the physical block size of the underlying storage is instead detected and used. |
 
 #### Deprecated Options
 

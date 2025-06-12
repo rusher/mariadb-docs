@@ -92,7 +92,7 @@ AND TABLE_NAME='invoices';
 
 ### Operations
 
-* [Configure Page Compression](configure-innodb-page-compression/)
+* [Configure Page Compression](../../../reference/storage-engines/innodb/configure-innodb-page-compression/)
 * [Configure the Buffer Pool](mariadb-enterprise-server-innodb-operations/configure-the-innodb-buffer-pool.md)
 * [Configure the I/O Threads](mariadb-enterprise-server-innodb-operations/configure-the-innodb-io-threads.md)
 * [Configure the Purge Threads](mariadb-enterprise-server-innodb-operations/configure-the-innodb-purge-threads.md)

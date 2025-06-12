@@ -2,7 +2,7 @@
 
 The `mysql.func` table stores information about [user-defined functions](../../../../../server-usage/user-defined-functions/) (UDFs) created with the [CREATE FUNCTION UDF](../../../../../server-usage/user-defined-functions/create-function-udf.md) statement.
 
-This table uses the [Aria](../../../../storage-engines/aria/) storage engine.
+This table uses the [Aria](../../../../../server-usage/storage-engines/aria/) storage engine.
 
 The `mysql.func` table contains the following fields:
 

@@ -31,7 +31,7 @@ four values:
 
 |   |                                                                                                                                                                |
 | - | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 0 | Not a multiple table (the default). This can be used in an [ALTER TABLE](../../../sql-statements/data-definition/alter/alter-table.md) statement.              |
+| 0 | Not a multiple table (the default). This can be used in an [ALTER TABLE](../../../../reference/sql-statements/data-definition/alter/alter-table.md) statement. |
 | 1 | The table is made from files located in the same directory. The FILE\_NAME option is a pattern such as 'cash\*.log' that all the table file path/names verify. |
 | 2 | The FILE\_NAME gives the name of a file that contains the path/names of all the table files. This file can be made using a DIR table.                          |
 | 3 | Like multiple=1 but also including eligible files from the directory sub-folders.                                                                              |
@@ -103,7 +103,7 @@ These are based on files that do not match the relational format but often repre
 
 The way it is done is different from what PostgreSQL does. In addition to including in a table some column values of a specific data format (JSON, XML) to be handled by specific functions, CONNECT can directly use JSON, XML or INI files that can be produced by other applications and this is the table definition that describes where and how the contained information must be retrieved.
 
-This is also different from what MariaDB does with [dynamic columns](../../../sql-structure/nosql/dynamic-columns.md), which is close to what MySQL and PostgreSQL do with the JSON column type.
+This is also different from what MariaDB does with [dynamic columns](../../../../reference/sql-structure/nosql/dynamic-columns.md), which is close to what MySQL and PostgreSQL do with the JSON column type.
 
 The following NoSQL types are supported:
 

@@ -4,7 +4,7 @@ The following variables are available when the [Spider](./) storage engine has b
 
 See [Server System Variables](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md) for a complete list of system variables and instructions on setting them.
 
-See also the [Full list of MariaDB options, system and status variables](../../../server-management/variables-and-modes/full-list-of-mariadb-options-system-and-status-variables.md).
+See also the [Full list of MariaDB options, system and status variables](../../../reference/full-list-of-mariadb-options-system-and-status-variables.md).
 
 **MariaDB starting with** [**10.5.22**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-10-5-22-release-notes)
 
@@ -13,7 +13,7 @@ Before this change, a non-minus-one system variable value would override the tab
 
 #### `spider_auto_increment_mode`
 
-* Description: The [auto increment](../../data-types/auto_increment.md) mode.
+* Description: The [auto increment](../../../reference/data-types/auto_increment.md) mode.
   * `-1` Falls back to the default value, if the [table parameter](spider-table-parameters.md) is not set.
   * `0` Normal Mode. Uses a counter that Spider gets from the remote backend server with an exclusive lock for the auto-increment value. This mode is slow. Use Quick Mode (`2`), if you use Spider tables with the table partitioning feature and the auto-increment column is the first column of the index.
   * `1` Quick Mode. Uses an internal Spider counter for the auto-increment value. This mode is fast, but it is possible for duplicates to occur when updating the same table from multiple Spider proxies.
@@ -365,7 +365,7 @@ Before this change, a non-minus-one system variable value would override the tab
 
 #### `spider_direct_dup_insert`
 
-* Description: Manages duplicate key check for [REPLACE](../../sql-statements/data-manipulation/changing-deleting-data/replace.md), [INSERT IGNORE](../../sql-statements/data-manipulation/inserting-loading-data/ignore.md) and [LOAD DATA LOCAL INFILE](../../sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile.md) to remote servers. This can save on network roundtrips if the key always maps to a single partition. For bulk operations, records are checked for duplicate key errors one by one on the remote server, unless you set it to avoid duplicate checks on local servers (`1`).
+* Description: Manages duplicate key check for [REPLACE](../../../reference/sql-statements/data-manipulation/changing-deleting-data/replace.md), [INSERT IGNORE](../../../reference/sql-statements/data-manipulation/inserting-loading-data/ignore.md) and [LOAD DATA LOCAL INFILE](../../../reference/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile.md) to remote servers. This can save on network roundtrips if the key always maps to a single partition. For bulk operations, records are checked for duplicate key errors one by one on the remote server, unless you set it to avoid duplicate checks on local servers (`1`).
   * `-1` Falls back to the default value, if the [table parameter](spider-table-parameters.md) is not set.
   * `0` Performs duplicate checks on the local server.
   * `1` Avoids duplicate checks on the local server.
@@ -508,7 +508,7 @@ Before this change, a non-minus-one system variable value would override the tab
 * Default Table Value: `1024`
 * DSN Parameter Name: `isa`
 * Range: `-1` to `2147483647`
-* Deprecated: [MariaDB 10.7.5](broken-reference), [MariaDB 10.8.4](broken-reference), [MariaDB 10.9.2](broken-reference)
+* Deprecated: [MariaDB 10.7.5](../../../reference/storage-engines/spider/broken-reference/), [MariaDB 10.8.4](../../../reference/storage-engines/spider/broken-reference/), [MariaDB 10.9.2](../../../reference/storage-engines/spider/broken-reference/)
 
 #### `spider_internal_limit`
 
@@ -646,7 +646,7 @@ Before this change, a non-minus-one system variable value would override the tab
 
 #### `spider_local_lock_table`
 
-* Description: Whether to push [LOCK TABLES](../../sql-statements/transactions/lock-tables.md) statements down to the remote server.
+* Description: Whether to push [LOCK TABLES](../../../reference/sql-statements/transactions/lock-tables.md) statements down to the remote server.
   * `0` Transmitted.
   * `1` Not transmitted.
 * Scope: Global, Session
@@ -657,7 +657,7 @@ Before this change, a non-minus-one system variable value would override the tab
 #### `spider_lock_exchange`
 
 * Description:\
-  Whether to convert [SELECT... LOCK IN SHARE MODE](../../sql-statements/data-manipulation/selecting-data/lock-in-share-mode.md) and [SELECT... FOR UPDATE](../../sql-statements/data-manipulation/selecting-data/for-update.md) statements into a [LOCK TABLE](../../sql-statements/transactions/lock-tables.md) statement.
+  Whether to convert [SELECT... LOCK IN SHARE MODE](../../../reference/sql-statements/data-manipulation/selecting-data/lock-in-share-mode.md) and [SELECT... FOR UPDATE](../../../reference/sql-statements/data-manipulation/selecting-data/for-update.md) statements into a [LOCK TABLE](../../../reference/sql-statements/transactions/lock-tables.md) statement.
   * `0` Not converted.
   * `1` Converted.
 * Scope: Global, Session
@@ -839,7 +839,7 @@ Before this change, a non-minus-one system variable value would override the tab
 
 #### `spider_remote_access_charset`
 
-* Description: Forces the specified session [character set](../../data-types/string-data-types/character-sets/) when connecting to the backend server. This can improve connection time performance.
+* Description: Forces the specified session [character set](../../../reference/data-types/string-data-types/character-sets/) when connecting to the backend server. This can improve connection time performance.
 * Scope: Global, Session
 * Dynamic: Yes
 * Data Type: `string`
@@ -879,7 +879,7 @@ Before this change, a non-minus-one system variable value would override the tab
 
 #### `spider_remote_time_zone`
 
-* Description: Forces the specified [time zone](../../data-types/string-data-types/character-sets/internationalization-and-localization/time-zones.md) setting when connecting to backend servers.\
+* Description: Forces the specified [time zone](../../../reference/data-types/string-data-types/character-sets/internationalization-and-localization/time-zones.md) setting when connecting to backend servers.\
   This can improve connection performance when you know the time zone.
 * Scope: Global
 * Dynamic: Yes
@@ -888,7 +888,7 @@ Before this change, a non-minus-one system variable value would override the tab
 
 #### `spider_remote_trx_isolation`
 
-* Description: Sets the [Transaction Isolation Level](../../sql-statements/transactions/set-transaction.md#isolation-levels) when connecting to the backend server.
+* Description: Sets the [Transaction Isolation Level](../../../reference/sql-statements/transactions/set-transaction.md#isolation-levels) when connecting to the backend server.
   * `-1` Doesn't set the Isolation Level.
   * `0` Sets to the `READ UNCOMMITTED` level.
   * `1` Sets to the `READ COMMITTED` level.
@@ -1006,7 +1006,7 @@ Before this change, a non-minus-one system variable value would override the tab
 
 #### `spider_semi_table_lock`
 
-* Description: Enables semi-table locking. This adds a [LOCK TABLES](../../sql-statements/transactions/lock-tables.md) statement to SQL executions sent to the remote backend server when using non-transactional storage engines to preserve consistency between roundtrips.
+* Description: Enables semi-table locking. This adds a [LOCK TABLES](../../../reference/sql-statements/transactions/lock-tables.md) statement to SQL executions sent to the remote backend server when using non-transactional storage engines to preserve consistency between roundtrips.
   * `0` Disables semi-table locking.
   * `1` Enables semi-table locking.
 * Scope: Global, Session
@@ -1032,7 +1032,7 @@ Before this change, a non-minus-one system variable value would override the tab
 
 #### `spider_semi_trx`
 
-* Description: Enables semi-transactions. This controls transaction consistency when an SQL statement is split into multiple statements issued to the backend servers. You can preserve or relax consistency as need. Spider encapsulates auto-committed SQL statements within a transaction on the remote backend server. When using `READ COMMITTED` or `READ UNCOMMITTED` [transaction isolation levels](../../sql-statements/transactions/set-transaction.md#isolation-levels) to force consistency, set the [spider\_semi\_trx\_isolation](spider-system-variables.md#spider_semi_trx_isolation) system variable to `2`.
+* Description: Enables semi-transactions. This controls transaction consistency when an SQL statement is split into multiple statements issued to the backend servers. You can preserve or relax consistency as need. Spider encapsulates auto-committed SQL statements within a transaction on the remote backend server. When using `READ COMMITTED` or `READ UNCOMMITTED` [transaction isolation levels](../../../reference/sql-statements/transactions/set-transaction.md#isolation-levels) to force consistency, set the [spider\_semi\_trx\_isolation](spider-system-variables.md#spider_semi_trx_isolation) system variable to `2`.
   * `0` Disables semi-transaction consistency.
   * `1` Enables semi-transaction consistency.
 * Scope: Global, Session
@@ -1189,7 +1189,7 @@ Before this change, a non-minus-one system variable value would override the tab
 #### `spider_sts_mode`
 
 * Description: Table statistics mode.\
-  Mode for table statistics. The [SHOW](../../sql-statements/administrative-sql-statements/show/) command is used at the table level default.
+  Mode for table statistics. The [SHOW](../../../reference/sql-statements/administrative-sql-statements/show/) command is used at the table level default.
   * `-1,0` Uses the [table parameter](spider-table-parameters.md).
   * `1` Uses the `SHOW` command.
   * `2` Uses the Information Schema.
@@ -1458,13 +1458,13 @@ Before this change, a non-minus-one system variable value would override the tab
 
 #### `spider_use_handler`
 
-* Description: Converts [HANDLER](../../sql-structure/nosql/handler/) SQL statements.\
-  When the [spider\_sync\_trx\_isolation](spider-system-variables.md#spider_sync_trx_isolation) system variable is set to `0`, Spider disables [HANDLER](../../sql-structure/nosql/handler/) conversions to prevent use of the statement on the [SERIALIZABLE](../../sql-statements/transactions/set-transaction.md#serializable) isolation level.
+* Description: Converts [HANDLER](../../../reference/sql-structure/nosql/handler/) SQL statements.\
+  When the [spider\_sync\_trx\_isolation](spider-system-variables.md#spider_sync_trx_isolation) system variable is set to `0`, Spider disables [HANDLER](../../../reference/sql-structure/nosql/handler/) conversions to prevent use of the statement on the [SERIALIZABLE](../../../reference/sql-statements/transactions/set-transaction.md#serializable) isolation level.
   * `-1` Falls back to the default value, if the [table parameter](spider-table-parameters.md) is not set.
-  * `0` Converts [HANDLER](../../sql-structure/nosql/handler/) statements into [SELECT](../../sql-statements/data-manipulation/selecting-data/select.md) statements.
-  * `1` Passes [HANDLER](../../sql-structure/nosql/handler/) to the remote backend server.
-  * `2` Converts SQL statements to [HANDLER](../../sql-structure/nosql/handler/) statements.
-  * `3` Converts SQL statements to [HANDLER](../../sql-structure/nosql/handler/) statements and [HANDLER](../../sql-structure/nosql/handler/) statements to SQL statements.
+  * `0` Converts [HANDLER](../../../reference/sql-structure/nosql/handler/) statements into [SELECT](../../../reference/sql-statements/data-manipulation/selecting-data/select.md) statements.
+  * `1` Passes [HANDLER](../../../reference/sql-structure/nosql/handler/) to the remote backend server.
+  * `2` Converts SQL statements to [HANDLER](../../../reference/sql-structure/nosql/handler/) statements.
+  * `3` Converts SQL statements to [HANDLER](../../../reference/sql-structure/nosql/handler/) statements and [HANDLER](../../../reference/sql-structure/nosql/handler/) statements to SQL statements.
 * Scope: Global, Session
 * Dynamic: Yes
 * Data Type: `numeric`
@@ -1493,11 +1493,11 @@ Before this change, a non-minus-one system variable value would override the tab
 #### `spider_use_snapshot_with_flush_tables`
 
 * Description:\
-  Whether to encapsulate [FLUSH LOGS](flush-logs/) and [UNLOCK TABLES](../../sql-statements/transactions/lock-tables.md) statements when `START TRANSACTION WITH CONSISTENT` and `FLUSH TABLE WITH READ LOCK` statements are sent to the remote backend servers.
+  Whether to encapsulate [FLUSH LOGS](../../../reference/storage-engines/spider/flush-logs/) and [UNLOCK TABLES](../../../reference/sql-statements/transactions/lock-tables.md) statements when `START TRANSACTION WITH CONSISTENT` and `FLUSH TABLE WITH READ LOCK` statements are sent to the remote backend servers.
   * `0` : No encapsulation.
   * `1` : Encapsulates, only when the [spider\_use\_all\_conns\_snapshot](spider-system-variables.md#spider_use_all_conns_snapshot) system variable i set to `1`.
   * `2` :\
-    Synchronizes the snapshot using a [LOCK TABLES](../../sql-statements/transactions/lock-tables.md) statement and \[flush|FLUSH TABLES]] at the XA transaction level. This is only effective when the [spider\_use\_all\_cons\_snapshot](spider-system-variables.md#spider_use_all_cons_snapshot) system variable is set to `1`.
+    Synchronizes the snapshot using a [LOCK TABLES](../../../reference/sql-statements/transactions/lock-tables.md) statement and \[flush|FLUSH TABLES]] at the XA transaction level. This is only effective when the [spider\_use\_all\_cons\_snapshot](spider-system-variables.md#spider_use_all_cons_snapshot) system variable is set to `1`.
 * Scope: Global, Session
 * Dynamic: Yes
 * Data Type: `numeric`
@@ -1506,7 +1506,7 @@ Before this change, a non-minus-one system variable value would override the tab
 
 #### `spider_use_table_charset`
 
-* Description: Whether to use the local table [character set](../../data-types/string-data-types/character-sets/) for the remote backend server connections.
+* Description: Whether to use the local table [character set](../../../reference/data-types/string-data-types/character-sets/) for the remote backend server connections.
   * `-1` Falls back to the default value, if the [table parameter](spider-table-parameters.md) is not set.
   * `0` Use `utf8`.
   * `1` Uses the table character set.
@@ -1520,11 +1520,11 @@ Before this change, a non-minus-one system variable value would override the tab
 
 #### `spider_version`
 
-* Description: The current Spider version. Removed in [MariaDB 10.9.2](broken-reference) when the Spider version number was matched with the server version.
+* Description: The current Spider version. Removed in [MariaDB 10.9.2](../../../reference/storage-engines/spider/broken-reference/) when the Spider version number was matched with the server version.
 * Scope: Global
 * Dynamic: No
 * Data Type: `string`
-* Removed: [MariaDB 10.9.2](broken-reference)
+* Removed: [MariaDB 10.9.2](../../../reference/storage-engines/spider/broken-reference/)
 
 #### `spider_wait_timeout`
 

@@ -44,8 +44,8 @@ Level    Files   Size     Score Read(GB)  Rn(GB) Rnp1(GB) Write(GB) Wnew(GB) Mov
 
 RocksDB has an internal mechanism called "perf context". The counter values are exposed through two tables:
 
-* [INFORMATION\_SCHEMA.ROCKSDB\_PERF\_CONTEXT\_GLOBAL](../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-myrocks-tables/information-schema-rocksdb_perf_context_global-table.md) - global counters
-* [INFORMATION\_SCHEMA.ROCKSDB\_PERF\_CONTEXT](../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-myrocks-tables/information-schema-rocksdb_perf_context-table.md) - Per-table/partition counters
+* [INFORMATION\_SCHEMA.ROCKSDB\_PERF\_CONTEXT\_GLOBAL](../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-myrocks-tables/information-schema-rocksdb_perf_context_global-table.md) - global counters
+* [INFORMATION\_SCHEMA.ROCKSDB\_PERF\_CONTEXT](../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-myrocks-tables/information-schema-rocksdb_perf_context-table.md) - Per-table/partition counters
 
 By default statistics are NOT collected. One needs to set [rocksdb\_perf\_context\_level](myrocks-system-variables.md#rocksdb_perf_context_level) to some value (e.g. 3) to enable collection.
 

@@ -36,7 +36,7 @@ The [innodb\_old\_blocks\_time](innodb-system-variables.md#innodb_old_blocks_tim
 
 Before changing either of these values from their defaults, make sure you understand the impact and how your system currently uses the buffer. Their main reason for existence is to reduce the impact of full table scans, which are usually infrequent, but large, and previously could clear everything from the buffer. Setting a non-zero delay could help in situations where full table scans are performed in quick succession.
 
-Temporarily changing these values can also be useful to avoid the negative impact of a full table scan, as explained in [InnoDB logical backups](../../../server-usage/backing-up-and-restoring-databases/backup-and-restore-overview.md#innodb-logical-backups).
+Temporarily changing these values can also be useful to avoid the negative impact of a full table scan, as explained in [InnoDB logical backups](../../backing-up-and-restoring-databases/backup-and-restore-overview.md#innodb-logical-backups).
 
 ## Dumping and Restoring the Buffer Pool
 
@@ -53,7 +53,7 @@ The file which contains the buffer pool dump is specified via the [innodb\_buffe
 ## See Also
 
 * [InnoDB Change Buffering](innodb-change-buffering.md)
-* [Information Schema INNODB\_BUFFER\_POOL\_STATS Table](../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_buffer_pool_stats-table.md)
+* [Information Schema INNODB\_BUFFER\_POOL\_STATS Table](../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_buffer_pool_stats-table.md)
 * [Setting Innodb Buffer Pool Size Dynamically](../../../ha-and-performance/optimization-and-tuning/system-variables/setting-innodb-buffer-pool-size-dynamically.md)
 
 CC BY-SA / Gnu FDL

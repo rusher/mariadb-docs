@@ -159,7 +159,7 @@ SELECT * FROM animal_count;
 
 If a trigger contains an error and the engine is transactional, or it is a BEFORE trigger, the trigger will not run, and will prevent the original statement from running as well. If the engine is non-transactional, and it is an AFTER trigger, the trigger will not run, but the original statement will.
 
-Here, we'll drop the above examples, and then recreate the trigger with an error, a field that doesn't exist, first using the default [InnoDB](../../../reference/storage-engines/innodb/), a transactional engine, and then again using [MyISAM](../../../reference/storage-engines/myisam-storage-engine/), a non-transactional engine.
+Here, we'll drop the above examples, and then recreate the trigger with an error, a field that doesn't exist, first using the default [InnoDB](../../storage-engines/innodb/), a transactional engine, and then again using [MyISAM](../../storage-engines/myisam-storage-engine/), a non-transactional engine.
 
 ```sql
 DROP TABLE animals;

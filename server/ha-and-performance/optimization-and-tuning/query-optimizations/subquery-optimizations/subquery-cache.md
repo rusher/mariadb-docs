@@ -54,7 +54,7 @@ using the subquery cache.
 
 Every subquery cache creates a temporary table where the results and all\
 parameters are stored. It has a unique index over all parameters. First the\
-cache is created in a [MEMORY](../../../../reference/storage-engines/memory-storage-engine.md) table (if doing this is impossible the cache becomes\
+cache is created in a [MEMORY](../../../../server-usage/storage-engines/memory-storage-engine.md) table (if doing this is impossible the cache becomes\
 disabled for that expression). When the table grows up to the minimum of`tmp_table_size` and `max_heap_table_size`, the hit rate will be checked:
 
 * if the hit rate is really small (<0.2) the cache will be disabled.
@@ -175,7 +175,7 @@ order by
 * [Query cache](../../buffers-caches-and-threads/query-cache.md)
 * blog post describing impact of subquery cache optimization on queries used by DynamicPageList MediaWiki extension
 * [mariadb-subquery-cache-in-real-use-case.html](https://varokism.blogspot.ru/2013/06/mariadb-subquery-cache-in-real-use-case.html) Another use case from the real world
-* [What is MariaDB 5.3](broken-reference)
+* [What is MariaDB 5.3](broken-reference/)
 
 CC BY-SA / Gnu FDL
 

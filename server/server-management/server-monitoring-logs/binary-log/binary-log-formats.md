@@ -34,10 +34,10 @@ In certain cases when it would be impossible to execute the statement on the rep
 row-based logging for the statement. Some cases of this are:
 
 * When replication has been changed from row-based to statement-based and a statement uses data from a temporary table created during row-based mode. In this case, the temporary tables are not stored on the replica, so row logging is the only alternative.
-* [ALTER TABLE](../../../reference/sql-statements/data-definition/alter/alter-table.md) of a table using a storage engine that stores data remotely, such as the [S3 storage engine](../../../reference/storage-engines/s3-storage-engine/), to another storage engine.
+* [ALTER TABLE](../../../reference/sql-statements/data-definition/alter/alter-table.md) of a table using a storage engine that stores data remotely, such as the [S3 storage engine](../../../server-usage/storage-engines/s3-storage-engine/), to another storage engine.
 * One is using [SEQUENCEs](../../../reference/sql-structure/sequences/) in the statement or the [CREATE TABLE](../../../reference/sql-statements/data-definition/create/create-table.md) definition.
 
-In certain cases, a statement may not be deterministic, and therefore not safe for [replication](broken-reference). If MariaDB determines that an unsafe statement has been executed, then it will issue a warning. For example:
+In certain cases, a statement may not be deterministic, and therefore not safe for [replication](broken-reference/). If MariaDB determines that an unsafe statement has been executed, then it will issue a warning. For example:
 
 ```
 [Warning] Unsafe statement written to the binary log using statement format since 
@@ -107,7 +107,7 @@ It can also be set in a server [option group](../../install-and-upgrade-mariadb/
 binlog_format=ROW
 ```
 
-Be careful when changing the binary log format when using [replication](broken-reference). When you change the binary log format on a server, it only changes the format for that server. Changing the binary log format on a primary has no effect on the replica's binary log format. This can cause replication to give inconsistent results or to fail.
+Be careful when changing the binary log format when using [replication](broken-reference/). When you change the binary log format on a server, it only changes the format for that server. Changing the binary log format on a primary has no effect on the replica's binary log format. This can cause replication to give inconsistent results or to fail.
 
 Be careful changing the binary log format dynamically when the server is a replica and [parallel replication](../../../ha-and-performance/standard-replication/parallel-replication.md) is enabled. If you change the global value dynamically, then that does not also affect the session values of any currently running threads. This can cause problems with [parallel replication](../../../ha-and-performance/standard-replication/parallel-replication.md), because the [worker threads](../../../ha-and-performance/standard-replication/replication-threads.md#worker-threads) will remain running even after [STOP SLAVE](../../../reference/sql-statements/administrative-sql-statements/replication-statements/stop-replica.md) is executed. This can be worked around by resetting the [slave\_parallel\_threads](../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) system variable. For example:
 

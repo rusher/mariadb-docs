@@ -4,7 +4,7 @@
 
 The [HandlerSocket](./) plugin has the following options.
 
-See also the [Full list of MariaDB options, system and status variables](../../../../server-management/variables-and-modes/full-list-of-mariadb-options-system-and-status-variables.md).
+See also the [Full list of MariaDB options, system and status variables](../../../full-list-of-mariadb-options-system-and-status-variables.md).
 
 Add the options to the \[mysqld] section of your my.cnf file.
 

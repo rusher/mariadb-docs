@@ -1,8 +1,8 @@
 # Spider Status Variables
 
-The following status variables are associated with the [Spider storage engine](../../../reference/storage-engines/spider/). See [Server Status Variables](server-status-variables.md) for a complete list of status variables that can be viewed with [SHOW STATUS](../../../reference/sql-statements/administrative-sql-statements/show/show-status.md).
+The following status variables are associated with the [Spider storage engine](../../../server-usage/storage-engines/spider/). See [Server Status Variables](server-status-variables.md) for a complete list of status variables that can be viewed with [SHOW STATUS](../../../reference/sql-statements/administrative-sql-statements/show/show-status.md).
 
-See also the [Full list of MariaDB options, system and status variables](../../../server-management/variables-and-modes/full-list-of-mariadb-options-system-and-status-variables.md).
+See also the [Full list of MariaDB options, system and status variables](../../../reference/full-list-of-mariadb-options-system-and-status-variables.md).
 
 #### `Spider_direct_aggregate`
 
@@ -39,7 +39,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 
 #### `Spider_mon_table_cache_version_req`
 
-* Description: The required version of the spider monitoring table cache. A call to the spider udf [spider\_flush\_table\_mon\_cache](../../../reference/storage-engines/spider/spider-functions/spider_flush_table_mon_cache.md) will cause its value to be incremented by one, thus ensuring a refresh of the cache will happen when needed.
+* Description: The required version of the spider monitoring table cache. A call to the spider udf [spider\_flush\_table\_mon\_cache](../../../server-usage/storage-engines/spider/spider-functions/spider_flush_table_mon_cache.md) will cause its value to be incremented by one, thus ensuring a refresh of the cache will happen when needed.
 * Scope: Global, Session
 * Initial value: 1
 * Data Type: `numeric`

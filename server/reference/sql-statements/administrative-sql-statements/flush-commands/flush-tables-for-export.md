@@ -8,7 +8,7 @@ FLUSH TABLE[S] table_name [, table_name] FOR EXPORT
 
 ## Description
 
-`FLUSH TABLES ... FOR EXPORT` flushes changes to the specified tables to disk so that binary copies can be made while the server is still running. This works for [Archive](../../../storage-engines/archive/), [Aria](../../../storage-engines/aria/), [CSV](../../../storage-engines/csv/), [InnoDB](../../../storage-engines/innodb/), [MyISAM](../../../storage-engines/myisam-storage-engine/) and [MERGE](../../../storage-engines/merge.md) tables.
+`FLUSH TABLES ... FOR EXPORT` flushes changes to the specified tables to disk so that binary copies can be made while the server is still running. This works for [Archive](../../../../server-usage/storage-engines/archive/), [Aria](../../../../server-usage/storage-engines/aria/), [CSV](../../../../server-usage/storage-engines/csv/), [InnoDB](../../../../server-usage/storage-engines/innodb/), [MyISAM](../../../../server-usage/storage-engines/myisam-storage-engine/) and [MERGE](../../../../server-usage/storage-engines/merge.md) tables.
 
 The table is read locked until one has issued [UNLOCK TABLES](../../transactions/transactions-unlock-tables.md).
 
@@ -60,7 +60,7 @@ For a full description, please see [copying MariaDB tables](../../../../server-u
 
 * [FLUSH TABLES](flush.md)
 * [Copying Tables Between Different MariaDB Databases and MariaDB Servers](../../../../server-usage/tables/copying-tables-between-different-mariadb-databases-and-mariadb-servers.md)
-* [Copying Transportable InnoDB Tablespaces](../../../storage-engines/innodb/innodb-tablespaces/innodb-file-per-table-tablespaces.md#copying-transportable-tablespaces)
+* [Copying Transportable InnoDB Tablespaces](../../../../server-usage/storage-engines/innodb/innodb-tablespaces/innodb-file-per-table-tablespaces.md#copying-transportable-tablespaces)
 * [myisampack](../../../../clients-and-utilities/myisam-clients-and-utilities/myisampack.md) - Compressing the MyISAM data file for easier distribution.
 * [aria\_pack](../../../../clients-and-utilities/aria-clients-and-utilities/aria_pack.md) - Compressing the Aria data file for easier distribution
 

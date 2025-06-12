@@ -2,7 +2,7 @@
 
 This page documents system variables related to the [CONNECT storage engine](./). See [Server System Variables](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md) for a complete list of system variables and instructions on setting them.
 
-See also the [Full list of MariaDB options, system and status variables](../../../server-management/variables-and-modes/full-list-of-mariadb-options-system-and-status-variables.md).
+See also the [Full list of MariaDB options, system and status variables](../../../reference/full-list-of-mariadb-options-system-and-status-variables.md).
 
 #### `connect_class_path`
 
@@ -24,7 +24,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 
 #### `connect_conv_size`
 
-* Description: The size of the [VARCHAR](../../data-types/string-data-types/varchar.md) created when converting from a [TEXT](../../data-types/string-data-types/text.md) type. See [connect\_type\_conv](connect-system-variables.md#connect_type_conv).
+* Description: The size of the [VARCHAR](../../../reference/data-types/string-data-types/varchar.md) created when converting from a [TEXT](../../../reference/data-types/string-data-types/text.md) type. See [connect\_type\_conv](connect-system-variables.md#connect_type_conv).
 * Commandline: `--connect-conv-size=#`
 * Scope: Global, Session
 * Dynamic: Yes
@@ -145,7 +145,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 
 #### `connect_type_conv`
 
-* Description: Determines the handling of [TEXT](../../data-types/string-data-types/text.md) columns.
+* Description: Determines the handling of [TEXT](../../../reference/data-types/string-data-types/text.md) columns.
   * `NO`: The default until Connect 1.06.005, no conversion takes place, and a TYPE\_ERROR is returned, resulting in a “not supported” message.
   * `YES`: The default from Connect 1.06.006. The column is internally converted to a column declared as VARCHAR(n), `n` being the value of [connect\_conv\_size](connect-system-variables.md#connect_conv_size).
   * `FORCE` (>= Connect 1.06.006): Also convert ODBC blob columns to TYPE\_STRING.

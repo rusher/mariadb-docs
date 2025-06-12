@@ -4,13 +4,13 @@
 
 A foreign key is a constraint which can be used to enforce data integrity. It is composed by a column (or a set of columns) in a table called the child table, which references to a column (or a set of columns) in a table called the parent table. If foreign keys are used, MariaDB performs some checks to enforce that some integrity rules are always enforced. For a more exhaustive explanation, see [Relational databases: Foreign Keys](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/database-theory/relational-databases-foreign-keys).
 
-Foreign keys can only be used with storage engines that support them. The default [InnoDB](../../../reference/storage-engines/innodb/) and the obsolete [PBXT](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/PBXT/) support foreign keys.
+Foreign keys can only be used with storage engines that support them. The default [InnoDB](../../../server-usage/storage-engines/innodb/) and the obsolete [PBXT](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/PBXT/) support foreign keys.
 
 [Partitioned tables](../../../server-usage/partitioning-tables/) cannot contain foreign keys, and cannot be referenced by a foreign key.
 
 ## Syntax
 
-**Note:** Until [MariaDB 10.4](broken-reference), MariaDB accepts the shortcut format with a REFERENCES clause only in ALTER TABLE and CREATE TABLE statements, but that syntax does nothing. For example:
+**Note:** Until [MariaDB 10.4](broken-reference/), MariaDB accepts the shortcut format with a REFERENCES clause only in ALTER TABLE and CREATE TABLE statements, but that syntax does nothing. For example:
 
 ```
 CREATE TABLE b(for_key INT REFERENCES a(not_key));
@@ -157,7 +157,7 @@ ERROR 1451 (23000): Cannot delete or update a parent row: a foreign key constrai
 
 ### REFERENCES
 
-Until [MariaDB 10.4](broken-reference)
+Until [MariaDB 10.4](broken-reference/)
 
 ```sql
 CREATE TABLE a(a_key INT primary key, not_key INT);

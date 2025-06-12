@@ -4,7 +4,7 @@
 
 [MariaDB Enterprise Server](../../../en/mariadb-enterprise-server/) features pluggable storage engines to allow per-table workload optimization.
 
-A storage engine is a type of [plugin](../plugins/) for [MariaDB Enterprise Server](../../../en/mariadb-enterprise-server/):
+A storage engine is a type of [plugin](../../reference/plugins/) for [MariaDB Enterprise Server](../../../en/mariadb-enterprise-server/):
 
 * Different storage engines may be optimized for different workloads, such as transactional workloads, analytical workloads, or high throughput workloads.
 * Different storage engines may be designed for different use cases, such as federated table access, table sharding, and table archiving in the cloud.
@@ -26,7 +26,7 @@ A storage engine is a type of [plugin](../plugins/) for [MariaDB Enterprise Serv
 
 ### Identify the Default Storage Engine
 
-Identify the server's global default storage engine by using [SHOW GLOBAL VARIABLES](../sql-statements/administrative-sql-statements/show/show-variables.md) to query the [default\_storage\_engine](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#default_storage_engine) system variable:
+Identify the server's global default storage engine by using [SHOW GLOBAL VARIABLES](../../reference/sql-statements/administrative-sql-statements/show/show-variables.md) to query the [default\_storage\_engine](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#default_storage_engine) system variable:
 
 ```sql
 SHOW GLOBAL VARIABLES LIKE 'default_storage_engine';
@@ -40,7 +40,7 @@ SHOW GLOBAL VARIABLES LIKE 'default_storage_engine';
 +------------------------+--------+
 ```
 
-Identify the session's default storage engine by using [SHOW SESSION VARIABLES](../sql-statements/administrative-sql-statements/show/show-variables.md):
+Identify the session's default storage engine by using [SHOW SESSION VARIABLES](../../reference/sql-statements/administrative-sql-statements/show/show-variables.md):
 
 ```
 SHOW SESSION VARIABLES LIKE 'default_storage_engine';
@@ -109,7 +109,7 @@ Standard MariaDB storage engines are used for System Table storage:
 ### Can I use more than one storage engine on a server?
 
 * Yes, different tables can use different storage engines on the same server.
-* To create a table with a specific storage engine, specify the ENGINE table option to the [CREATE TABLE](../sql-statements/data-definition/create/create-table.md) statement.
+* To create a table with a specific storage engine, specify the ENGINE table option to the [CREATE TABLE](../../reference/sql-statements/data-definition/create/create-table.md) statement.
 
 ### Can I use more than one storage engine in a single query?
 
@@ -134,9 +134,9 @@ HTAP can be implemented with MariaDB Enterprise Server by using [InnoDB](innodb/
 
 ### MariaDB Server Reference
 
-* [Plugins](../plugins/).
-* [Information Schema ENGINES table](../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-engines-table.md), which shows available storage engines.
-* [Information Schema TABLES table](../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-tables-table.md), which shows storage engine by table.
+* [Plugins](../../reference/plugins/).
+* [Information Schema ENGINES table](../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-engines-table.md), which shows available storage engines.
+* [Information Schema TABLES table](../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-tables-table.md), which shows storage engine by table.
 
 Copyright © 2025 MariaDB
 

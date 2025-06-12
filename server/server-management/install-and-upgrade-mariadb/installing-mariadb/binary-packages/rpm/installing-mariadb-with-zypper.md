@@ -26,7 +26,7 @@ To use the script, execute the following command:
 curl -sS https://downloads.mariadb.com/MariaDB/mariadb_repo_setup | sudo bash
 ```
 
-Note that this script also configures a repository for [MariaDB MaxScale](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/) and a repository for MariaDB Tools, which currently only contains [Percona XtraBackup](../../../../../clients-and-utilities/legacy-clients-and-utilities/backing-up-and-restoring-databases-percona-xtrabackup/percona-xtrabackup-overview.md) and its dependencies.
+Note that this script also configures a repository for [MariaDB MaxScale](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/0pSbu5DcMSW4KwAkUcmX/) and a repository for MariaDB Tools, which currently only contains [Percona XtraBackup](../../../../../clients-and-utilities/legacy-clients-and-utilities/backing-up-and-restoring-databases-percona-xtrabackup/percona-xtrabackup-overview.md) and its dependencies.
 
 See [MariaDB Package Repository Setup and Usage](../mariadb-package-repository-setup-and-usage.md) for more information.
 
@@ -109,7 +109,7 @@ Once the GPG public key is imported, you are ready to install packages from the 
 
 ## Installing MariaDB Packages with ZYpp
 
-After the `zypper` repository is configured, you can install MariaDB by executing the [zypper](https://en.opensuse.org/SDB:Zypper_manual_%28plain%29) command. The specific command that you would use would depend on which specific packages that you want to install.
+After the `zypper` repository is configured, you can install MariaDB by executing the [zypper](https://en.opensuse.org/SDB:Zypper_manual_\(plain\)) command. The specific command that you would use would depend on which specific packages that you want to install.
 
 ### Installing the Most Common Packages with ZYpp
 
@@ -133,7 +133,7 @@ The process to install MariaDB Galera Cluster with the MariaDB `zypper` reposito
 
 Galera Cluster support has been included in the standard MariaDB Server packages, so you will need to install the `MariaDB-server` package, as you normally would.
 
-You also need to install the `galera-4` package to obtain the [Galera](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/) 4 wsrep provider library.
+You also need to install the `galera-4` package to obtain the [Galera](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/3VYeeVGUV4AMqrA3zwy7/) 4 wsrep provider library.
 
 To install MariaDB Galera Cluster, you could execute the following command:
 
@@ -144,7 +144,7 @@ sudo zypper install MariaDB-server MariaDB-client galera-4
 If you haven't yet imported the MariaDB GPG public key, then `zypper` will prompt you to\
 import it after it downloads the packages, but before it prompts you to install them.
 
-See [MariaDB Galera Cluster](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/) for more information on MariaDB Galera Cluster.
+See [MariaDB Galera Cluster](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/3VYeeVGUV4AMqrA3zwy7/) for more information on MariaDB Galera Cluster.
 
 ### Installing MariaDB Clients and Client Libraries with ZYpp
 
@@ -168,7 +168,7 @@ sudo zypper install MariaDB-backup
 
 Some [plugins](../../../../../reference/plugins/) may also need to be installed.
 
-For example, to install the [cracklib_password_check](../../../../../reference/plugins/password-validation-plugins/cracklib-password-check-plugin.md) password validation plugin, execute the following command:
+For example, to install the [cracklib\_password\_check](../../../../../reference/plugins/password-validation-plugins/cracklib-password-check-plugin.md) password validation plugin, execute the following command:
 
 ```
 sudo zypper install MariaDB-cracklib-password-check
@@ -216,7 +216,7 @@ sudo zypper install MariaDB-backup-debuginfo
 
 For some [plugins](../../../../../reference/plugins/), [debuginfo](https://en.opensuse.org/openSUSE:Packaging_guidelines#Debuginfo) may also need to be installed.
 
-For example, to install [debuginfo](https://en.opensuse.org/openSUSE:Packaging_guidelines#Debuginfo) for the [cracklib_password_check](../../../../../reference/plugins/password-validation-plugins/cracklib-password-check-plugin.md) password validation plugin, execute the following command:
+For example, to install [debuginfo](https://en.opensuse.org/openSUSE:Packaging_guidelines#Debuginfo) for the [cracklib\_password\_check](../../../../../reference/plugins/password-validation-plugins/cracklib-password-check-plugin.md) password validation plugin, execute the following command:
 
 ```
 sudo zypper install MariaDB-cracklib-password-check-debuginfo
@@ -253,7 +253,7 @@ The rest of the install and setup process is as normal.
 
 After the installation is complete, you can [start MariaDB](../../../../starting-and-stopping-mariadb/).
 
-If you are using [MariaDB Galera Cluster](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/), then keep in mind that the first node will have to be [bootstrapped](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/galera-management/getting-started-with-mariadb-galera-cluster#bootstrapping-a-new-cluster).
+If you are using [MariaDB Galera Cluster](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/3VYeeVGUV4AMqrA3zwy7/), then keep in mind that the first node will have to be [bootstrapped](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/galera-management/getting-started-with-mariadb-galera-cluster#bootstrapping-a-new-cluster).
 
 CC BY-SA / Gnu FDL
 

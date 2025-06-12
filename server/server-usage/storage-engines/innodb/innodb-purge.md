@@ -10,7 +10,7 @@ The Purge Threads perform garbage collection of various items:
 
 * The Purge Threads perform garbage collection of the [InnoDB Undo Log](innodb-undo-log.md). When a row is updated in the clustered index, InnoDB updates the values in the clustered index, and the old row version is added to the Undo Log. The Purge Threads scan the Undo Log for row versions that are not needed by open transactions and permanently delete them. In ES 10.5 and later, if the remaining clustered index record is the oldest possible row version, the Purge Thread resets the record's hidden `DB_TRX_ID` field to 0.
 * The Purge Threads perform garbage collection of index records. When an indexed column is updated, InnoDB creates a new index record for the updated value in each affected index, and the old index records are delete-marked. When the primary key column is updated, InnoDB creates a new index record for the updated value in every index, and each old index record is delete-marked. The Purge Threads scan for delete-marked index records and permanently delete them.
-* The Purge Threads perform garbage collection of freed overflow pages. [BLOB](data-types-blob/), [CHAR](data-types-char/), [TEXT](data-types-text/), [VARCHAR](data-types-varchar/), [VARBINARY](data-types-varbinary/), and related types are sometimes stored on overflow pages. When the value on the overflow page is deleted or updated, the overflow page is no longer needed. The Purge Threads delete these freed overflow pages.
+* The Purge Threads perform garbage collection of freed overflow pages. [BLOB](../../../reference/storage-engines/innodb/data-types-blob/), [CHAR](../../../reference/storage-engines/innodb/data-types-char/), [TEXT](../../../reference/storage-engines/innodb/data-types-text/), [VARCHAR](../../../reference/storage-engines/innodb/data-types-varchar/), [VARBINARY](../../../reference/storage-engines/innodb/data-types-varbinary/), and related types are sometimes stored on overflow pages. When the value on the overflow page is deleted or updated, the overflow page is no longer needed. The Purge Threads delete these freed overflow pages.
 
 ### Feature Summary
 
@@ -64,7 +64,7 @@ innodb_purge_batch_size = 50
 
 If purge operations are lagging on a busy server, then this can be a tough situation to recover from. As a solution, InnoDB allows you to set the max purge lag. The max purge lag is defined as the maximum number of [InnoDB undo log](innodb-undo-log.md) that can be waiting to be purged from the history until InnoDB begins delaying DML statements.
 
-The max purge lag can be set by configuring the [innodb\_max\_purge\_lag](innodb-system-variables.md#innodb_max_purge_lag) system variable. This system variable can be changed dynamically with [SET GLOBAL](../../sql-statements/administrative-sql-statements/set-commands/set.md#global-session). For example:
+The max purge lag can be set by configuring the [innodb\_max\_purge\_lag](innodb-system-variables.md#innodb_max_purge_lag) system variable. This system variable can be changed dynamically with [SET GLOBAL](../../../reference/sql-statements/administrative-sql-statements/set-commands/set.md#global-session). For example:
 
 ```sql
 SET GLOBAL innodb_max_purge_lag=1000;
@@ -78,7 +78,7 @@ This system variable can also be specified as a command-line argument to [mysqld
 innodb_max_purge_lag = 1000
 ```
 
-The maximum delay can be set by configuring the [innodb\_max\_purge\_lag\_delay](innodb-system-variables.md#innodb_max_purge_lag_delay) system variable. This system variable can be changed dynamically with [SET GLOBAL](../../sql-statements/administrative-sql-statements/set-commands/set.md#global-session). For example:
+The maximum delay can be set by configuring the [innodb\_max\_purge\_lag\_delay](innodb-system-variables.md#innodb_max_purge_lag_delay) system variable. This system variable can be changed dynamically with [SET GLOBAL](../../../reference/sql-statements/administrative-sql-statements/set-commands/set.md#global-session). For example:
 
 ```sql
 SET GLOBAL innodb_max_purge_lag_delay=100;
@@ -94,7 +94,7 @@ innodb_max_purge_lag_delay = 100
 
 ### Configuring the Purge Rollback Segment Truncation Frequency
 
-The purge rollback segment truncation frequency is defined as the number of purge loops that are run before unnecessary rollback segments are truncated. The purge rollback segment truncation frequency can be set by configuring the [innodb\_purge\_rseg\_truncate\_frequency](innodb-system-variables.md#innodb_purge_rseg_truncate_frequency) system variable. This system variable can be changed dynamically with [SET GLOBAL](../../sql-statements/administrative-sql-statements/set-commands/set.md#global-session). For example:
+The purge rollback segment truncation frequency is defined as the number of purge loops that are run before unnecessary rollback segments are truncated. The purge rollback segment truncation frequency can be set by configuring the [innodb\_purge\_rseg\_truncate\_frequency](innodb-system-variables.md#innodb_purge_rseg_truncate_frequency) system variable. This system variable can be changed dynamically with [SET GLOBAL](../../../reference/sql-statements/administrative-sql-statements/set-commands/set.md#global-session). For example:
 
 ```sql
 SET GLOBAL innodb_purge_rseg_truncate_frequency=64;
@@ -112,7 +112,7 @@ innodb_purge_rseg_truncate_frequency = 64
 
 Purge undo log truncation occurs when InnoDB truncates an entire [InnoDB undo log](innodb-undo-log.md) tablespace, rather than deleting individual [InnoDB undo log](innodb-undo-log.md) records.
 
-Purge undo log truncation can be enabled by configuring the [innodb\_undo\_log\_truncate](innodb-system-variables.md#innodb_undo_log_truncate) system variable. This system variable can be changed dynamically with [SET GLOBAL](../../sql-statements/administrative-sql-statements/set-commands/set.md#global-session). For example:
+Purge undo log truncation can be enabled by configuring the [innodb\_undo\_log\_truncate](innodb-system-variables.md#innodb_undo_log_truncate) system variable. This system variable can be changed dynamically with [SET GLOBAL](../../../reference/sql-statements/administrative-sql-statements/set-commands/set.md#global-session). For example:
 
 ```sql
 SET GLOBAL innodb_undo_log_truncate=ON;
@@ -126,7 +126,7 @@ This system variable can also be specified as a command-line argument to [mysqld
 innodb_undo_log_truncate = ON
 ```
 
-An [InnoDB undo log](innodb-undo-log.md) tablespace is truncated when it exceeds the maximum size that is configured for [InnoDB undo log](innodb-undo-log.md) tablespaces. The maximum size can be set by configuring the [innodb\_max\_undo\_log\_size](innodb-system-variables.md#innodb_max_undo_log_size) system variable. This system variable can be changed dynamically with [SET GLOBAL](../../sql-statements/administrative-sql-statements/set-commands/set.md#global-session). For example:
+An [InnoDB undo log](innodb-undo-log.md) tablespace is truncated when it exceeds the maximum size that is configured for [InnoDB undo log](innodb-undo-log.md) tablespaces. The maximum size can be set by configuring the [innodb\_max\_undo\_log\_size](innodb-system-variables.md#innodb_max_undo_log_size) system variable. This system variable can be changed dynamically with [SET GLOBAL](../../../reference/sql-statements/administrative-sql-statements/set-commands/set.md#global-session). For example:
 
 ```sql
 SET GLOBAL innodb_max_undo_log_size='64M';

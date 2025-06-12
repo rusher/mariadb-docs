@@ -10,10 +10,10 @@ A MyISAM table is stored in three files on disk. There's a table definition file
 
 ## MyISAM features
 
-* Does not support [transactions](../../sql-statements-and-structure/sql-statements/transactions/).
+* Does not support [transactions](../../../reference/sql-statements/transactions/).
 * Does not support foreign keys.
 * Supports [FULLTEXT indexes](../../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/full-text-indexes/).
-* Supports [GIS](../../sql-structure/geometry/) data types.
+* Supports [GIS](../../../reference/sql-structure/geometry/) data types.
 * Storage limit of 256TB.
 * Maximum of 64 indexes per table.
 * Maximum of 32 columns per index.
@@ -24,11 +24,11 @@ A MyISAM table is stored in three files on disk. There's a table definition file
 * The data file and the index file can be placed on different devices to improve speed.
 * Supports table locking, not row locking.
 * Supports a key buffer that is [segmented](../../../ha-and-performance/optimization-and-tuning/system-variables/segmented-key-cache.md) in MariaDB.
-* Supports [concurrent inserts](../../sql-statements/data-manipulation/inserting-loading-data/concurrent-inserts.md).
+* Supports [concurrent inserts](../../../reference/sql-statements/data-manipulation/inserting-loading-data/concurrent-inserts.md).
 * Supports fixed length, dynamic and compressed formats - see [MyISAM Storage Formats](myisam-storage-formats.md).
 * Numeric index values are stored with the high byte first, which enables more efficient index compression.
 * Data values are stored with the low byte first, making it mostly machine and operating system independent. The only exceptions are if a machine doesn't use two's-complement signed integers and the IEEE floating-point format.
-* Can be copied between databases or systems with normal system tools, as long as the files are not open on either system. Use [FLUSH\_TABLES](../../sql-statements/administrative-sql-statements/flush-commands/flush.md) to ensure files are not in use.
+* Can be copied between databases or systems with normal system tools, as long as the files are not open on either system. Use [FLUSH\_TABLES](../../../reference/sql-statements/administrative-sql-statements/flush-commands/flush.md) to ensure files are not in use.
 * There are a number of tools for working with MyISAM tables. These include:
   * [mariadb-check](../../../clients-and-utilities/table-tools/mariadb-check.md) for checking or repairing
   * [myisamchk](../../../clients-and-utilities/myisam-clients-and-utilities/myisamchk.md) for checking or repairing

@@ -28,11 +28,11 @@ The method to configure the Redo Log size depends on the server version and whet
 
 ## Configure the InnoDB Redo Log Size with SET GLOBAL (ES 10.5 and Later)
 
-Starting in MariaDB Enterprise Server 10.5, the size of the InnoDB Redo Log can be changed dynamically by setting the [innodb\_log\_file\_size](../innodb-system-variables.md#innodb_log_file_size) system variable using the [SET GLOBAL](../../../sql-statements/administrative-sql-statements/set-commands/set.md) statement. The [SET GLOBAL](../../../sql-statements/administrative-sql-statements/set-commands/set.md) statement requires the SUPER privilege.
+Starting in MariaDB Enterprise Server 10.5, the size of the InnoDB Redo Log can be changed dynamically by setting the [innodb\_log\_file\_size](../innodb-system-variables.md#innodb_log_file_size) system variable using the [SET GLOBAL](../../../../reference/sql-statements/administrative-sql-statements/set-commands/set.md) statement. The [SET GLOBAL](../../../../reference/sql-statements/administrative-sql-statements/set-commands/set.md) statement requires the SUPER privilege.
 
 The resize operation is performed asynchronously in the background. If the server is restarted before the operation completes, the request may be ignored. To ensure that the change survives server restarts, the [innodb\_log\_file\_size](../innodb-system-variables.md#innodb_log_file_size) system variable should also be set in a configuration file.
 
-To configure the InnoDB Redo Log with the [SET GLOBAL](../../../sql-statements/administrative-sql-statements/set-commands/set.md) statement, use the following procedure:
+To configure the InnoDB Redo Log with the [SET GLOBAL](../../../../reference/sql-statements/administrative-sql-statements/set-commands/set.md) statement, use the following procedure:
 
 1. Connect to the server using MariaDB Client as the `root@localhost` user account or another user account with the SUPER privilege:
 
@@ -40,7 +40,7 @@ To configure the InnoDB Redo Log with the [SET GLOBAL](../../../sql-statements/a
 $ mariadb --user=root
 ```
 
-2. Set the [innodb\_log\_file\_size](../innodb-system-variables.md#innodb_log_file_size) system variable to the new size using the [SET GLOBAL](../../../sql-statements/administrative-sql-statements/set-commands/set.md) statement.
+2. Set the [innodb\_log\_file\_size](../innodb-system-variables.md#innodb_log_file_size) system variable to the new size using the [SET GLOBAL](../../../../reference/sql-statements/administrative-sql-statements/set-commands/set.md) statement.
 
 For example, to set the size to 512 MB:
 
@@ -54,7 +54,7 @@ And to set the size to 2 GB:
 SET GLOBAL innodb_log_file_size=(2 * 1024 * 1024 * 1024);
 ```
 
-3. The resize operation is performed asynchronously in the background. Confirm that the resize operation is complete by querying the [innodb\_log\_file\_size](../innodb-system-variables.md#innodb_log_file_size) system variable using the [SHOW GLOBAL VARIABLES](../../../sql-statements/administrative-sql-statements/show/show-variables.md) statement. The resize operation is complete when the output shows the new size as the value of the system variable.
+3. The resize operation is performed asynchronously in the background. Confirm that the resize operation is complete by querying the [innodb\_log\_file\_size](../innodb-system-variables.md#innodb_log_file_size) system variable using the [SHOW GLOBAL VARIABLES](../../../../reference/sql-statements/administrative-sql-statements/show/show-variables.md) statement. The resize operation is complete when the output shows the new size as the value of the system variable.
 
 Execute the following statement until it shows the new size:
 
@@ -144,7 +144,7 @@ innodb_log_file_size=2G
 $ sudo systemctl restart mariadb
 ```
 
-4. Starting in MariaDB Enterprise Server 10.5, the server can use the configuration change without a restart if you use [SET GLOBAL](../../../sql-statements/administrative-sql-statements/set-commands/set.md).
+4. Starting in MariaDB Enterprise Server 10.5, the server can use the configuration change without a restart if you use [SET GLOBAL](../../../../reference/sql-statements/administrative-sql-statements/set-commands/set.md).
 
 Copyright © 2025 MariaDB
 

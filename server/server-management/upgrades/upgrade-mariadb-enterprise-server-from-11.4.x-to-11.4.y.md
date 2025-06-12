@@ -56,7 +56,7 @@ The instructions below show how to perform a backup using [MariaDB Backup](../..
 
 Before the new version can be installed, we first need to stop the current MariaDB Server process.
 
-1.  Set the [innodb\_fast\_shutdown](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_fast_shutdown) system variable to `1`:
+1.  Set the [innodb\_fast\_shutdown](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_fast_shutdown) system variable to `1`:
 
     ```sql
     SET GLOBAL innodb_fast_shutdown = 1;

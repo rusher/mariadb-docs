@@ -22,7 +22,7 @@ CREATE TABLE customer (
 
 ## Syntax
 
-The case of `NULL` is not relevant.  (uppercase) is an alias for `NULL`.
+The case of `NULL` is not relevant. (uppercase) is an alias for `NULL`.
 
 The `[IS](../sql-statements-and-structure/operators/comparison-operators/is.md)` operator accepts `UNKNOWN` as an alias for `NULL`, which is meant for [boolean contexts](../sql-structure/sql-language-structure/sql-language-structure-boolean-literals.md).
 
@@ -258,13 +258,13 @@ Primary keys are never nullable.
 
 ## Oracle Compatibility
 
-In [Oracle mode](broken-reference), NULL can be used as a statement:
+In [Oracle mode](broken-reference/), NULL can be used as a statement:
 
 ```
 IF a=10 THEN NULL; ELSE NULL; END IF
 ```
 
-In [Oracle mode](broken-reference), [CONCAT](../sql-functions/string-functions/concat.md) and the [Logical OR operator ||](../sql-structure/operators/logical-operators/or.md) ignore [null](https://mariadb.com/kb/en/null).
+In [Oracle mode](broken-reference/), [CONCAT](../sql-functions/string-functions/concat.md) and the [Logical OR operator ||](../sql-structure/operators/logical-operators/or.md) ignore [null](https://mariadb.com/kb/en/null).
 
 When setting [sql\_mode=EMPTY\_STRING\_IS\_NULL](../../server-management/variables-and-modes/sql-mode.md), empty strings and NULLs are the same thing. For example:
 
@@ -283,8 +283,8 @@ INSERT INTO t1 VALUES (''); -- inserts NULL
 * [COALESCE function](../sql-structure/operators/comparison-operators/coalesce.md)
 * [IFNULL function](../sql-functions/control-flow-functions/ifnull.md)
 * [NULLIF function](../sql-functions/control-flow-functions/nullif.md)
-* [CONNECT data types](../storage-engines/connect/connect-data-types.md#null-handling)
-* [Oracle mode from MariaDB 10.3](broken-reference)
+* [CONNECT data types](../../server-usage/storage-engines/connect/connect-data-types.md#null-handling)
+* [Oracle mode from MariaDB 10.3](broken-reference/)
 
 CC BY-SA / Gnu FDL
 

@@ -1,6 +1,6 @@
 # Concurrent Inserts
 
-The [MyISAM](../../../storage-engines/myisam-storage-engine/) storage engine supports concurrent inserts. This feature allows [SELECT](../selecting-data/select.md) statements to be executed during [INSERT](insert.md) operations, reducing contention.
+The [MyISAM](../../../../server-usage/storage-engines/myisam-storage-engine/) storage engine supports concurrent inserts. This feature allows [SELECT](../selecting-data/select.md) statements to be executed during [INSERT](insert.md) operations, reducing contention.
 
 Whether concurrent inserts can be used or not depends on the value of the [concurrent\_insert](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#concurrent_insert) server system variable:
 
@@ -10,7 +10,7 @@ Whether concurrent inserts can be used or not depends on the value of the [concu
 
 If the [binary log](../../../../server-management/server-monitoring-logs/binary-log/) is used, [CREATE TABLE ... SELECT](../../data-definition/create/create-table.md#create-table-select) and [INSERT ... SELECT](insert-select.md) statements cannot use concurrent inserts. These statements acquire a read lock on the table, so concurrent inserts will need to wait. This way the log can be safely used to restore data.
 
-Concurrent inserts are not used by replicas with the row based [replication](broken-reference) (see [binary log formats](../../../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md)).
+Concurrent inserts are not used by replicas with the row based [replication](broken-reference/) (see [binary log formats](../../../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md)).
 
 If an [INSERT](insert.md) statement contain the [HIGH\_PRIORITY](../changing-deleting-data/high_priority-and-low_priority.md) clause, concurrent inserts cannot be used. [INSERT ... DELAYED](insert-delayed.md) is usually unneeded if concurrent inserts are enabled.
 

@@ -10,7 +10,7 @@ The size of each page in the Buffer Pool depends on the value of the [innodb\_pa
 
 Starting with ES 10.5 and CS 10.5, the [Buffer Pool](../innodb-system-variables.md#innodb_buffer_pool_instances) always has a single instance.
 
-For additional information, see "[InnoDB Buffer Pool](mariadb-enterprise-server-innodb-buffer-pool/)".
+For additional information, see "[InnoDB Buffer Pool](../../../../reference/storage-engines/innodb/mariadb-enterprise-server-innodb-operations/mariadb-enterprise-server-innodb-buffer-pool/)".
 
 This page describes how to configure the InnoDB Buffer Pool.
 
@@ -39,11 +39,11 @@ The method to configure the Buffer Pool size depends on whether a server restart
 
 ## Configure the InnoDB Buffer Pool Size with SET GLOBAL
 
-The size of the InnoDB buffer pool can be changed dynamically by setting the [innodb\_buffer\_pool\_size](../innodb-system-variables.md#innodb_buffer_pool_size) system variable using the [SET GLOBAL](../../../sql-statements/administrative-sql-statements/set-commands/set.md) statement. The [SET GLOBAL](../../../sql-statements/administrative-sql-statements/set-commands/set.md) statement requires the SUPER privilege.
+The size of the InnoDB buffer pool can be changed dynamically by setting the [innodb\_buffer\_pool\_size](../innodb-system-variables.md#innodb_buffer_pool_size) system variable using the [SET GLOBAL](../../../../reference/sql-statements/administrative-sql-statements/set-commands/set.md) statement. The [SET GLOBAL](../../../../reference/sql-statements/administrative-sql-statements/set-commands/set.md) statement requires the SUPER privilege.
 
 To ensure that the change survives server restarts, the [innodb\_buffer\_pool\_size](../innodb-system-variables.md#innodb_buffer_pool_size) system variable should also be set in a configuration file.
 
-To configure the InnoDB Buffer Pool with the [SET GLOBAL](../../../sql-statements/administrative-sql-statements/set-commands/set.md) statement, use the following procedure:
+To configure the InnoDB Buffer Pool with the [SET GLOBAL](../../../../reference/sql-statements/administrative-sql-statements/set-commands/set.md) statement, use the following procedure:
 
 1. Connect to the server using MariaDB Client as the `root@localhost` user account or another user account with the SUPER privilege:
 
@@ -51,7 +51,7 @@ To configure the InnoDB Buffer Pool with the [SET GLOBAL](../../../sql-statement
 $ mariadb --user=root
 ```
 
-2. Set the [innodb\_buffer\_pool\_size](../innodb-system-variables.md#innodb_buffer_pool_size) system variable to the new size using the [SET GLOBAL](../../../sql-statements/administrative-sql-statements/set-commands/set.md) statement.
+2. Set the [innodb\_buffer\_pool\_size](../innodb-system-variables.md#innodb_buffer_pool_size) system variable to the new size using the [SET GLOBAL](../../../../reference/sql-statements/administrative-sql-statements/set-commands/set.md) statement.
 
 For example, to set the size to 2 GB:
 
@@ -59,7 +59,7 @@ For example, to set the size to 2 GB:
 SET GLOBAL innodb_buffer_pool_size=(2 * 1024 * 1024 * 1024);
 ```
 
-3. Confirm that the resize operation has been completed by querying the [Innodb\_buffer\_pool\_resize\_status](../../../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_buffer_pool_resize_status) status variable using the [SHOW GLOBAL STATUS](../../../sql-statements/administrative-sql-statements/show/show-status.md) statement:
+3. Confirm that the resize operation has been completed by querying the [Innodb\_buffer\_pool\_resize\_status](../../../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_buffer_pool_resize_status) status variable using the [SHOW GLOBAL STATUS](../../../../reference/sql-statements/administrative-sql-statements/show/show-status.md) statement:
 
 ```sql
 SHOW GLOBAL STATUS
@@ -137,7 +137,7 @@ innodb_buffer_pool_size=2G
 $ sudo systemctl restart mariadb
 ```
 
-The server can use the configuration change without a restart if you use [SET GLOBAL](../../../sql-statements/administrative-sql-statements/set-commands/set.md).
+The server can use the configuration change without a restart if you use [SET GLOBAL](../../../../reference/sql-statements/administrative-sql-statements/set-commands/set.md).
 
 Copyright © 2025 MariaDB
 

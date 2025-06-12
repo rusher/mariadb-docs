@@ -31,9 +31,9 @@ On Debian and Ubuntu mroonga engine will be installed with
 sudo apt-get install mariadb-plugin-mroonga
 ```
 
-See [Plugin overview](../../plugins/plugin-overview.md) for details on installing and uninstalling plugins.
+See [Plugin overview](../../../reference/plugins/plugin-overview.md) for details on installing and uninstalling plugins.
 
-[SHOW ENGINES](../../sql-statements/administrative-sql-statements/show/show-engines.md) can be used to check whether Mroonga is installed correctly:
+[SHOW ENGINES](../../../reference/sql-statements/administrative-sql-statements/show/show-engines.md) can be used to check whether Mroonga is installed correctly:
 
 ```sql
 SHOW ENGINES;
@@ -68,7 +68,7 @@ For more details, see [limitations.html](https://mroonga.org/docs/reference/limi
 
 ## Available Character Sets
 
-Mroonga supports a limited number of [character sets](../../data-types/string-data-types/character-sets/). These include:
+Mroonga supports a limited number of [character sets](../../../reference/data-types/string-data-types/character-sets/). These include:
 
 * ASCII
 * BINARY

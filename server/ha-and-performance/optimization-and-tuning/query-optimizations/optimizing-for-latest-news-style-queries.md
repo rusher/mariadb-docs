@@ -43,7 +43,7 @@ First, let me give you the solution, then I will elaborate on why it works well.
 * Lists has _exactly_ 3 columns: topic, article\_id, sequence
 * Lists has _exactly_ 2 indexes: PRIMARY KEY(topic, sequence, article\_id), INDEX(article\_id)
 * Only viewable articles are in Lists. (This avoids the filtering on "is\_deleted", etc)
-* Lists is [InnoDB](../../../reference/storage-engines/innodb/). (This gets "clustering".)
+* Lists is [InnoDB](../../../server-usage/storage-engines/innodb/). (This gets "clustering".)
 * "sequence" is typically the date of the article, but could be some other ordering.
 * "topic" should probably be normalized, but that is not critical to this discussion.
 * "article\_id" is a link to the bulky row in another table(s) that provide all the details about the article.

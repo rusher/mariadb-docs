@@ -4,7 +4,7 @@
 
 This page details step 1 of the 3-step procedure "[Deploy Spider Federated Topology](./)".
 
-This step installs the [Enterprise Spider storage engine](../../../reference/storage-engines/spider/) plugin on the Spider Node.
+This step installs the [Enterprise Spider storage engine](../../../server-usage/storage-engines/spider/) plugin on the Spider Node.
 
 Interactive commands are detailed. Alternatively, the described operations can be performed using automation.
 
@@ -14,7 +14,7 @@ MariaDB Enterprise Spider depends on interconnect between the Spider Node and th
 
 ## Install Spider Package
 
-The [Enterprise Spider storage engine](../../../reference/storage-engines/spider/) plugin is not installed with MariaDB Enterprise Server by default. An additional package must be installed.
+The [Enterprise Spider storage engine](../../../server-usage/storage-engines/spider/) plugin is not installed with MariaDB Enterprise Server by default. An additional package must be installed.
 
 ### Install via YUM (CentOS, RHEL)
 
@@ -42,7 +42,7 @@ $ sudo zypper install MariaDB-spider-engine
 
 ## Load the Spider Plugin
 
-The [Enterprise Spider storage engine](../../../reference/storage-engines/spider/) plugin must be loaded by MariaDB Enterprise Server.
+The [Enterprise Spider storage engine](../../../server-usage/storage-engines/spider/) plugin must be loaded by MariaDB Enterprise Server.
 
 **On the Spider Node**, use one of the following methods to configure MariaDB Enterprise Server to load the Enterprise Spider storage engine plugin:
 

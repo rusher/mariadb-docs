@@ -47,13 +47,13 @@ The method to configure the number of I/O threads depends on the server version 
 
 ## Configure InnoDB's Maximum Number of Asynchronous I/O Requests with SET GLOBAL (ES 10.5) and Later
 
-Starting with [MariaDB Enterprise Server 10.5](../../../../../kb/en/mariadb-server-releases-mariadb-enterprise-server-10-5/), InnoDB's maximum number of asynchronous I/O requests can be changed dynamically by setting the [innodb\_read\_io\_threads](../innodb-system-variables.md#innodb_read_io_threads)[innodb\_write\_io\_threads](../innodb-system-variables.md#innodb_write_io_threads) system variables using the [SET GLOBAL](../../../sql-statements/administrative-sql-statements/set-commands/set.md) statement. The [SET GLOBAL](../../../sql-statements/administrative-sql-statements/set-commands/set.md) statement requires the SUPER privilege.
+Starting with [MariaDB Enterprise Server 10.5](../../../../../kb/en/mariadb-server-releases-mariadb-enterprise-server-10-5/), InnoDB's maximum number of asynchronous I/O requests can be changed dynamically by setting the [innodb\_read\_io\_threads](../innodb-system-variables.md#innodb_read_io_threads)[innodb\_write\_io\_threads](../innodb-system-variables.md#innodb_write_io_threads) system variables using the [SET GLOBAL](../../../../reference/sql-statements/administrative-sql-statements/set-commands/set.md) statement. The [SET GLOBAL](../../../../reference/sql-statements/administrative-sql-statements/set-commands/set.md) statement requires the SUPER privilege.
 
 The value of each system variable is multiplied by 256 to determine the maximum number of asynchronous I/O requests that can be performed by the Background Thread Pool. For example, if you want to allow a maximum of 1024 concurrent asynchronous write I/O requests, the [innodb\_write\_io\_threads](../innodb-system-variables.md#innodb_write_io_threads) system variable should be set to 4 (since 1024/256=4).
 
 To ensure that the change survives server restarts, the [innodb\_read\_io\_threads](../innodb-system-variables.md#innodb_read_io_threads) [innodb\_write\_io\_threads](../innodb-system-variables.md#innodb_write_io_threads)system variables should also be set in a configuration file.
 
-To configure InnoDB's maximum number of asynchronous I/O requests with the [SET GLOBAL](../../../sql-statements/administrative-sql-statements/set-commands/set.md) statement, use the following procedure:
+To configure InnoDB's maximum number of asynchronous I/O requests with the [SET GLOBAL](../../../../reference/sql-statements/administrative-sql-statements/set-commands/set.md) statement, use the following procedure:
 
 1. Connect to the server using MariaDB Client as the `root@localhost` user account or another user account with the SUPER privilege:
 
@@ -61,7 +61,7 @@ To configure InnoDB's maximum number of asynchronous I/O requests with the [SET 
 $ mariadb --user=root
 ```
 
-2. Set the [innodb\_read\_io\_threads](../innodb-system-variables.md#innodb_read_io_threads) and [innodb\_write\_io\_threads](../innodb-system-variables.md#innodb_write_io_threads) system variables to the new values using the [SET GLOBAL](../../../sql-statements/administrative-sql-statements/set-commands/set.md) statement.
+2. Set the [innodb\_read\_io\_threads](../innodb-system-variables.md#innodb_read_io_threads) and [innodb\_write\_io\_threads](../innodb-system-variables.md#innodb_write_io_threads) system variables to the new values using the [SET GLOBAL](../../../../reference/sql-statements/administrative-sql-statements/set-commands/set.md) statement.
 
 For example:
 
@@ -136,7 +136,7 @@ innodb_write_io_threads=8
 $ sudo systemctl restart mariadb
 ```
 
-Starting with [MariaDB Enterprise Server 10.5](../../../../../kb/en/mariadb-server-releases-mariadb-enterprise-server-10-5/), the server can use the configuration change without a restart if you use [SET GLOBAL](../../../sql-statements/administrative-sql-statements/set-commands/set.md).
+Starting with [MariaDB Enterprise Server 10.5](../../../../../kb/en/mariadb-server-releases-mariadb-enterprise-server-10-5/), the server can use the configuration change without a restart if you use [SET GLOBAL](../../../../reference/sql-statements/administrative-sql-statements/set-commands/set.md).
 
 Copyright © 2025 MariaDB
 

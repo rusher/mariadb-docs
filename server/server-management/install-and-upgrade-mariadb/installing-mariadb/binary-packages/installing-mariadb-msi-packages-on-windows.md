@@ -52,7 +52,7 @@ not recommended to change this setting.
 
 * Install as service
 * Defines whether the database should be run as a service. If it should be run as a service, then it also defines the service name. It is recommended to run your database instance as a service as it greatly\
-  simplifies database management. In [MariaDB 10.4](broken-reference) and later, the default service name used by the MSI installer is "MariaDB". In 10.3 and before, the default service name used by the MSI installer is "MySQL". Note that the default service name for the `[--install](../starting-and-stopping-mariadb/mariadbd-options.md)` and `[--install-manual](../starting-and-stopping-mariadb/mariadbd-options.md)` options for `mysqld.exe` is "MySQL" in all versions of MariaDB.
+  simplifies database management. In [MariaDB 10.4](broken-reference/) and later, the default service name used by the MSI installer is "MariaDB". In 10.3 and before, the default service name used by the MSI installer is "MySQL". Note that the default service name for the `[--install](../starting-and-stopping-mariadb/mariadbd-options.md)` and `[--install-manual](../starting-and-stopping-mariadb/mariadbd-options.md)` options for `mysqld.exe` is "MySQL" in all versions of MariaDB.
 * Enable Networking
 * Whether to enable TCP/IP (recommended) and which port MariaDB should\
   listen to. If security is a concern, you can change the [bind-address](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#bind_address)\
@@ -60,7 +60,7 @@ not recommended to change this setting.
   networking" checkbox is deselected, the database will use named pipes for\
   communication.
 * InnoDB engine settings
-* Defines the [InnoDB buffer pool](../../../../reference/storage-engines/innodb/innodb-buffer-pool.md) size, and the InnoDB [page size](../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_page_size). The default buffer pool size is 12.5% of RAM, and depending on your requirements you can give InnoDB more (up to 70-80% RAM). 32 bit versions of MariaDB have restrictions on maximum buffer pool size, which is approximately 1GB, due to virtual address space limitations for 32bit processes. A 16k page size is suitable for most situations. See the [innodb\_page\_size](../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_page_size) system variable for details on other settings.
+* Defines the [InnoDB buffer pool](../../../../server-usage/storage-engines/innodb/innodb-buffer-pool.md) size, and the InnoDB [page size](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_page_size). The default buffer pool size is 12.5% of RAM, and depending on your requirements you can give InnoDB more (up to 70-80% RAM). 32 bit versions of MariaDB have restrictions on maximum buffer pool size, which is approximately 1GB, due to virtual address space limitations for 32bit processes. A 16k page size is suitable for most situations. See the [innodb\_page\_size](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_page_size) system variable for details on other settings.
 
 ### Ready to Install
 

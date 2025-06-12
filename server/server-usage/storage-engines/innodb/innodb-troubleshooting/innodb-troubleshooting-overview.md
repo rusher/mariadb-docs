@@ -4,7 +4,7 @@ As with most errors, first take a look at the contents of the [MariaDB error log
 
 It can also help to enable the various [InnoDB Monitors](../innodb-monitors.md) relating to the problem you are experiencing. There are four types: the standard InnoDB monitor, the InnoDB Lock Monitor, InnoDB Tablespace Monitor and the InnoDB Table Monitor.
 
-Running [CHECK TABLE](../../../sql-statements/table-statements/check-table.md) will help determine whether there are errors in the table.
+Running [CHECK TABLE](../../../../reference/sql-statements/table-statements/check-table.md) will help determine whether there are errors in the table.
 
 For problems with the InnoDB Data Dictionary, see [InnoDB Data Dictionary Troubleshooting](innodb-data-dictionary-troubleshooting.md).
 
@@ -12,7 +12,7 @@ For problems with the InnoDB Data Dictionary, see [InnoDB Data Dictionary Troubl
 
 * [InnoDB Data Dictionary Troubleshooting](innodb-data-dictionary-troubleshooting.md)
 * [InnoDB Recovery Modes](innodb-recovery-modes.md)
-* [Error Codes](broken-reference)
+* [Error Codes](../../../../reference/storage-engines/innodb/innodb-troubleshooting/broken-reference/)
 
 CC BY-SA / Gnu FDL
 

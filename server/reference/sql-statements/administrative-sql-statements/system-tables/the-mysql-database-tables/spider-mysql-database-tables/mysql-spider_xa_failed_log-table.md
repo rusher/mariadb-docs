@@ -1,8 +1,8 @@
 # mysql.spider\_xa\_failed\_log Table
 
-The `mysql.spider_xa_failed_log` table is installed by the [Spider storage engine](../../../../../storage-engines/spider/).
+The `mysql.spider_xa_failed_log` table is installed by the [Spider storage engine](../../../../../../server-usage/storage-engines/spider/).
 
-This table uses the [Aria](../../../../../storage-engines/aria/) storage engine.
+This table uses the [Aria](../../../../../../server-usage/storage-engines/aria/) storage engine.
 
 It contains the following fields:
 

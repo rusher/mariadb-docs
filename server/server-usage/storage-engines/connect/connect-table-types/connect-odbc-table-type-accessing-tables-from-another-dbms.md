@@ -73,7 +73,7 @@ Currently, some restrictions apply to ODBC tables:
 2. No indexing of ODBC tables (do not specify any columns as key). However,\
    because CONNECT can often add a where clause to the query sent to the data\
    source, indexing will be used by the data source if it supports it. (Remote indexing is available with version 1.04, released with [MariaDB 10.1.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-6-release-notes))
-3. CONNECT ODBC supports [SELECT](../../../sql-statements/data-manipulation/selecting-data/select.md) and [INSERT](../../../sql-statements/data-manipulation/inserting-loading-data/insert.md). [UPDATE](../../../sql-statements/data-manipulation/changing-deleting-data/update.md) and [DELETE](../../../sql-statements/data-manipulation/changing-deleting-data/delete.md) are also supported\
+3. CONNECT ODBC supports [SELECT](../../../../reference/sql-statements/data-manipulation/selecting-data/select.md) and [INSERT](../../../../reference/sql-statements/data-manipulation/inserting-loading-data/insert.md). [UPDATE](../../../../reference/sql-statements/data-manipulation/changing-deleting-data/update.md) and [DELETE](../../../../reference/sql-statements/data-manipulation/changing-deleting-data/delete.md) are also supported\
    in a somewhat restricted way (see below). For other operations, use an ODBC\
    table with the EXECSRC option (see below) to directly send proper commands\
    to the data source.
@@ -272,7 +272,7 @@ minimizes the data transfer through ODBC.
 
 ## Data Modifying Operations
 
-The only data modifying operations are the [INSERT](../../../sql-statements/data-manipulation/inserting-loading-data/insert.md) , [UPDATE](../../../sql-statements/data-manipulation/changing-deleting-data/update.md) and [DELETE](../../../sql-statements/data-manipulation/changing-deleting-data/delete.md) commands.\
+The only data modifying operations are the [INSERT](../../../../reference/sql-statements/data-manipulation/inserting-loading-data/insert.md) , [UPDATE](../../../../reference/sql-statements/data-manipulation/changing-deleting-data/update.md) and [DELETE](../../../../reference/sql-statements/data-manipulation/changing-deleting-data/delete.md) commands.\
 They can be executed successfully only if the data source database or tables\
 are not read/only.
 
@@ -301,7 +301,7 @@ result in error if the key value is duplicated.
 
 ### UPDATE and DELETE Commands
 
-Unlike the [INSERT](../../../sql-statements/data-manipulation/inserting-loading-data/insert.md) command, [UPDATE](../../../sql-statements/data-manipulation/changing-deleting-data/update.md) and [DELETE](../../../sql-statements/data-manipulation/changing-deleting-data/delete.md) are supported in a simplified way. Only simple table commands are supported; CONNECT does not support multi-table commands, commands sent from a procedure, or issued via a trigger.\
+Unlike the [INSERT](../../../../reference/sql-statements/data-manipulation/inserting-loading-data/insert.md) command, [UPDATE](../../../../reference/sql-statements/data-manipulation/changing-deleting-data/update.md) and [DELETE](../../../../reference/sql-statements/data-manipulation/changing-deleting-data/delete.md) are supported in a simplified way. Only simple table commands are supported; CONNECT does not support multi-table commands, commands sent from a procedure, or issued via a trigger.\
 These commands are just rephrased to correspond to the data source syntax and sent to the\
 data source for execution. Let us suppose we created the table:
 
@@ -445,7 +445,7 @@ CONNECTION='Driver=SQLite3 ODBC Driver;Database=test.sqlite3;NoWCHAR=yes'
 CHARSET=utf8 DATA_CHARSET=utf8;
 ```
 
-We can populate it directly using the supported [INSERT](../../../sql-statements/data-manipulation/inserting-loading-data/insert.md) statement:
+We can populate it directly using the supported [INSERT](../../../../reference/sql-statements/data-manipulation/inserting-loading-data/insert.md) statement:
 
 ```
 insert into tlite(name,birth) values('Toto','2005-06-12');
@@ -468,7 +468,7 @@ select * from tlite;
 | 3  | Truc | 1998-10-27 | NULL  |
 | 4  | John | 1968-05-30 | Last  |
 
-Any command, for instance [UPDATE](../../../sql-statements/data-manipulation/changing-deleting-data/update.md), can be executed from the _crlite_ table:
+Any command, for instance [UPDATE](../../../../reference/sql-statements/data-manipulation/changing-deleting-data/update.md), can be executed from the _crlite_ table:
 
 ```
 select * from crlite where command =

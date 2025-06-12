@@ -1,6 +1,6 @@
 # Spider Table Parameters
 
-When a table uses the [Spider](./) storage engine, the following Spider table parameters can be set in the `COMMENT` clause of the [CREATE TABLE](../../sql-statements/data-definition/create/create-table.md) statement. Many Spider table parameters have corresponding system variables, so they can be set for all Spider tables on the node. For additional information, see the [Spider System Variables](spider-system-variables.md) page.
+When a table uses the [Spider](./) storage engine, the following Spider table parameters can be set in the `COMMENT` clause of the [CREATE TABLE](../../../reference/sql-statements/data-definition/create/create-table.md) statement. Many Spider table parameters have corresponding system variables, so they can be set for all Spider tables on the node. For additional information, see the [Spider System Variables](spider-system-variables.md) page.
 
 From [MariaDB 11.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-3-rolling-releases/what-is-mariadb-113), many table parameters can be set using dedicated Spider table options, see the Table Option Name fields below. From [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-4-series/what-is-mariadb-114), using the `COMMENT` clause is deprecated, as well as table parameters that do not have corresponding table options.
 

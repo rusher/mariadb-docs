@@ -176,7 +176,7 @@ See also [#notes](https://docs.openssl.org/master/man3/SSL_CTX_set_verify/#notes
 ## See Also
 
 * [Server Status Variables](server-status-variables.md) - complete list of status variables.
-* [Full list of MariaDB options, system and status variables](../../../server-management/variables-and-modes/full-list-of-mariadb-options-system-and-status-variables.md)
+* [Full list of MariaDB options, system and status variables](../../../reference/full-list-of-mariadb-options-system-and-status-variables.md)
 
 CC BY-SA / Gnu FDL
 

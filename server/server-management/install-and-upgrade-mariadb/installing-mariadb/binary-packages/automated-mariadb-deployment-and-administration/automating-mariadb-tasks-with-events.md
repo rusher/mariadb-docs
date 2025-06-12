@@ -31,7 +31,7 @@ Just like cron jobs, events should log whether if they succeed or not. Logging d
 
 Some examples of tasks that could easily be automated with events:
 
-* Copying data from a remote table to a local table by night, using the [CONNECT](../../../../../reference/storage-engines/connect/) storage engine. This can be a good idea if many rows need be copied, because data won't be sent to an external client.
+* Copying data from a remote table to a local table by night, using the [CONNECT](../../../../../server-usage/storage-engines/connect/) storage engine. This can be a good idea if many rows need be copied, because data won't be sent to an external client.
 * Periodically delete historical data. For example, rows that are older than 5 years. Nothing prevents us from doing this with an external script, but probably this wouldn't add any value.
 * Periodically delete invalid rows. In an e-commerce, they could be abandoned carts. In a messaging system, they could be messages to users that don't exist anymore.
 * Add a new [partition](../../../../../server-usage/partitioning-tables/) to a table and drop the oldest one (partition rotation).

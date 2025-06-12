@@ -146,7 +146,7 @@ In [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-communi
 This is as of [MariaDB 5.1.50](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-1-series/mariadb-5150-release-notes):
 
 * MariaDB will convert long [table names](../../reference/sql-structure/sql-language-structure/identifier-names.md) properly.
-* MariaDB will convert [InnoDB](../../reference/storage-engines/innodb/) tables (no need to do a dump/restore or `[ALTER TABLE](../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md)`).
+* MariaDB will convert [InnoDB](../../server-usage/storage-engines/innodb/) tables (no need to do a dump/restore or `[ALTER TABLE](../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md)`).
 * MariaDB will convert old archive tables to the new 5.1 format.
 * "mysql\_upgrade --verbose" will run "mariadb-check --verbose" so that you get more information of what is happening. Running with 3 times --verbose will in [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0) print out all CHECK, RENAME and ALTER TABLE commands executed.
 * The [mysql.event table](../../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-event-table.md) is upgraded live; no need to restart the server to use events if the event table has changed ([MariaDB 10.0.22](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-10022-release-notes) and [MariaDB 10.1.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-9-release-notes)).
@@ -169,7 +169,7 @@ If you are 100% sure this applies to you, you can just run `mariadb-upgrade` wit
 
 * Errors in the [error log](../../server-management/server-monitoring-logs/error-log.md) that some system tables don't have all needed columns.
 * Updates or searches may not find the record they are attempting to update or search for.
-* [CHECKSUM TABLE](../../reference/sql-statements/table-statements/checksum-table.md) may report the wrong checksum for [MyISAM](../../reference/storage-engines/myisam-storage-engine/) or [Aria](../../reference/storage-engines/aria/) tables.
+* [CHECKSUM TABLE](../../reference/sql-statements/table-statements/checksum-table.md) may report the wrong checksum for [MyISAM](../../server-usage/storage-engines/myisam-storage-engine/) or [Aria](../../server-usage/storage-engines/aria/) tables.
 * The error message "Cannot load from mysql.proc. The table is probably corrupted."
 
 To fix issues like this, run `mariadb-upgrade`, [mariadb-check](../table-tools/mariadb-check.md), [CHECK TABLE](../../reference/sql-statements/table-statements/check-table.md) and if needed [REPAIR TABLE](../../reference/sql-statements/table-statements/repair-table.md) on the wrong table.

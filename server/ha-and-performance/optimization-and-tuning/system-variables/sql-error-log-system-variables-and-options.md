@@ -2,7 +2,7 @@
 
 This page documents system variables and options related to the [SQL\_Error\_Log Plugin](../../../server-management/server-monitoring-logs/sql-error-log-plugin.md). See [Server System Variables](server-system-variables.md) for a complete list of system variables and instructions on setting them.
 
-See also the [Full list of MariaDB options, system and status variables](../../../server-management/variables-and-modes/full-list-of-mariadb-options-system-and-status-variables.md).
+See also the [Full list of MariaDB options, system and status variables](../../../reference/full-list-of-mariadb-options-system-and-status-variables.md).
 
 ## Options
 

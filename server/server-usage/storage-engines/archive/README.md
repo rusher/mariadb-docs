@@ -38,19 +38,19 @@ If you installed the plugin by providing the `[--plugin-load](../../../server-ma
 
 ## Characteristics
 
-* Supports [INSERT](../../sql-statements/data-manipulation/inserting-loading-data/insert.md) and [SELECT](../../sql-statements/data-manipulation/selecting-data/select.md), but not [DELETE](../../sql-statements/data-manipulation/changing-deleting-data/delete.md), [UPDATE](../../sql-statements/data-manipulation/changing-deleting-data/update.md) or [REPLACE](../../sql-statements/data-manipulation/changing-deleting-data/replace.md).
+* Supports [INSERT](../../../reference/sql-statements/data-manipulation/inserting-loading-data/insert.md) and [SELECT](../../../reference/sql-statements/data-manipulation/selecting-data/select.md), but not [DELETE](../../../reference/sql-statements/data-manipulation/changing-deleting-data/delete.md), [UPDATE](../../../reference/sql-statements/data-manipulation/changing-deleting-data/update.md) or [REPLACE](../../../reference/sql-statements/data-manipulation/changing-deleting-data/replace.md).
 * Data is compressed with zlib as it is inserted, making it very small.
 * Data is slow the select, as it needs to be uncompressed, and, besides the [query cache](../../../ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/query-cache.md), there is no cache.
 * Supports AUTO\_INCREMENT (since MariaDB/MySQL 5.1.6), which can be a unique or a non-unique index.
 * Since MariaDB/MySQL 5.1.6, selects scan past BLOB columns unless they are specifically requested, making these queries much more efficient.
-* Does not support [spatial](../../sql-structure/geometry/spatial-index.md) data types.
-* Does not support [transactions](../../sql-statements-and-structure/sql-statements/transactions/).
+* Does not support [spatial](../../../reference/sql-structure/geometry/spatial-index.md) data types.
+* Does not support [transactions](../../../reference/sql-statements/transactions/).
 * Does not support foreign keys.
-* Does not support [virtual columns](../../sql-statements/data-definition/create/generated-columns.md).
+* Does not support [virtual columns](../../../reference/sql-statements/data-definition/create/generated-columns.md).
 * No storage limit.
 * Supports row locking.
 * Supports [table discovery](../storage-engines-storage-engine-development/table-discovery.md), and the server can access ARCHIVE tables even if the corresponding `.frm` file is missing.
-* [OPTIMIZE TABLE](../../../ha-and-performance/optimization-and-tuning/optimizing-tables/optimize-table.md) and [REPAIR TABLE](../../sql-statements/table-statements/repair-table.md) can be used to compress the table in its entirety, resulting in slightly better compression.
+* [OPTIMIZE TABLE](../../../ha-and-performance/optimization-and-tuning/optimizing-tables/optimize-table.md) and [REPAIR TABLE](../../../reference/sql-statements/table-statements/repair-table.md) can be used to compress the table in its entirety, resulting in slightly better compression.
 * With MariaDB, it is possible to upgrade from the MySQL 5.0 format without having to dump the tables.
-* [INSERT DELAYED](../../sql-statements/data-manipulation/inserting-loading-data/insert-delayed.md) is supported.
+* [INSERT DELAYED](../../../reference/sql-statements/data-manipulation/inserting-loading-data/insert-delayed.md) is supported.
 * Running many SELECTs during the insertions can deteriorate the compression, unless only multi-rows INSERTs and INSERT DELAYED are used.

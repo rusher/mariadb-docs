@@ -196,7 +196,7 @@ Let us suppose for instance that the preceding example file could be:
 ```
 
 This will display an error message such as _“Bad format line x field y of_\
-_FMTSAMPLE”._ To avoid this and accept these records, the corresponding fields\
+&#xNAN;_&#x46;MTSAMPLE”._ To avoid this and accept these records, the corresponding fields\
 must be specified as "optional". In the above example, fields 2 and 3 can have\
 null values (in lines 3 and 2 respectively). To specify them as optional, their\
 format must be terminated by `%m` (instead of the second `%n`). A statement\

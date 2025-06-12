@@ -10,7 +10,7 @@ If [autocommit](../../../../ha-and-performance/optimization-and-tuning/system-va
 
 * [SELECT](select.md)
 * [FOR UPDATE](for-update.md)
-* [InnoDB Lock Modes](../../../storage-engines/innodb/innodb-lock-modes.md)
+* [InnoDB Lock Modes](../../../../server-usage/storage-engines/innodb/innodb-lock-modes.md)
 
 CC BY-SA / Gnu FDL
 

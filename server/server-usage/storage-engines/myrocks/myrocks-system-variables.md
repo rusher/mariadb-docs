@@ -2,7 +2,7 @@
 
 This page documents system variables related to the [MyRocks](./) storage engine. See [Server System Variables](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md) for a complete list of system variables and instructions on setting them.
 
-See also the [Full list of MariaDB options, system and status variables](../../../server-management/variables-and-modes/full-list-of-mariadb-options-system-and-status-variables.md).
+See also the [Full list of MariaDB options, system and status variables](../../../reference/full-list-of-mariadb-options-system-and-status-variables.md).
 
 #### `rocksdb_access_hint_on_compaction_start`
 
@@ -516,7 +516,7 @@ column of the `INFORMATION_SCHEMA.ROCKSDB_DBSTATS` table.
 
 #### `rocksdb_enable_insert_with_update_caching`
 
-* Description: Whether to enable optimization where we cache the read from a failed insertion attempt in [INSERT ON DUPLICATE KEY UPDATE](../../sql-statements/data-manipulation/inserting-loading-data/insert-on-duplicate-key-update.md).
+* Description: Whether to enable optimization where we cache the read from a failed insertion attempt in [INSERT ON DUPLICATE KEY UPDATE](../../../reference/sql-statements/data-manipulation/inserting-loading-data/insert-on-duplicate-key-update.md).
 * Commandline: `--rocksdb-enable-insert-with-update-caching={0|1}`
 * Scope: Global
 * Dynamic: Yes
@@ -1087,7 +1087,7 @@ column of the `INFORMATION_SCHEMA.ROCKSDB_DBSTATS` table.
 
 #### `rocksdb_remove_mariabackup_checkpoint`
 
-* Description: Remove [mariabackup](../../../server-usage/backing-up-and-restoring-databases/mariabackup/) checkpoint.
+* Description: Remove [mariabackup](../../backing-up-and-restoring-databases/mariabackup/) checkpoint.
 * Commandline: `--rocksdb-remove-mariabackup-checkpoint={0|1}`
 * Scope: Global
 * Dynamic: Yes

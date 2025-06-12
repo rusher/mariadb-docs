@@ -191,7 +191,7 @@ command:
 INSTALL SONAME 'ha_tokudb';
 ```
 
-TokuDB will be installed until someone executes [UNINSTALL SONAME](../../sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md).
+TokuDB will be installed until someone executes [UNINSTALL SONAME](../../../reference/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md).
 
 ### Temporarily Enabling TokuDB When Starting MariaDB
 

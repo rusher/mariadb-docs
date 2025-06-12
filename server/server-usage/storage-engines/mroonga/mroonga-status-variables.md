@@ -1,6 +1,6 @@
 # Mroonga Status Variables
 
-This page documents status variables related to the [Mroonga storage engine](./). See [Server Status Variables](../../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md) for a complete list of status variables that can be viewed with [SHOW STATUS](../../sql-statements/administrative-sql-statements/show/show-status.md).
+This page documents status variables related to the [Mroonga storage engine](./). See [Server Status Variables](../../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md) for a complete list of status variables that can be viewed with [SHOW STATUS](../../../reference/sql-statements/administrative-sql-statements/show/show-status.md).
 
 #### `Mroonga_count_skip`
 

@@ -8,24 +8,24 @@ MariaDB has many system variables that can be changed to suit your needs.
 
 Most of the system variables are described on this page, but some are described elsewhere:
 
-* [Aria System Variables](../../../reference/storage-engines/aria/aria-system-variables.md)
-* [CONNECT System Variables](../../../reference/storage-engines/connect/connect-system-variables.md)
+* [Aria System Variables](../../../server-usage/storage-engines/aria/aria-system-variables.md)
+* [CONNECT System Variables](../../../server-usage/storage-engines/connect/connect-system-variables.md)
 * [Galera System Variables](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables)
 * [Global Transaction ID System Variables](../../standard-replication/gtid.md#system-variables-for-global-transaction-id)
 * [HandlerSocket Plugin System Variables](../../../reference/sql-structure/nosql/handlersocket/handlersocket-configuration-options.md)
-* [InnoDB System Variables](../../../reference/storage-engines/innodb/innodb-system-variables.md)
-* [Mroonga System Variables](../../../reference/storage-engines/mroonga/mroonga-system-variables.md)
-* [MyRocks System Variables](../../../reference/storage-engines/myrocks/myrocks-system-variables.md)
-* [MyISAM System Variables](../../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md)
+* [InnoDB System Variables](../../../server-usage/storage-engines/innodb/innodb-system-variables.md)
+* [Mroonga System Variables](../../../server-usage/storage-engines/mroonga/mroonga-system-variables.md)
+* [MyRocks System Variables](../../../server-usage/storage-engines/myrocks/myrocks-system-variables.md)
+* [MyISAM System Variables](../../../server-usage/storage-engines/myisam-storage-engine/myisam-system-variables.md)
 * [Performance Schema System Variables](../../../reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md)
 * [Replication and Binary Log System Variables](../../standard-replication/replication-and-binary-log-system-variables.md)
-* [S3 Storage Engine System Variables](../../../reference/storage-engines/s3-storage-engine/s3-storage-engine-system-variables.md)
+* [S3 Storage Engine System Variables](../../../server-usage/storage-engines/s3-storage-engine/s3-storage-engine-system-variables.md)
 * [Server\_Audit System Variables](../../../reference/plugins/mariadb-audit-plugin/mariadb-audit-plugin-options-and-system-variables.md)
-* [Spider System Variables](../../../reference/storage-engines/spider/spider-system-variables.md)
+* [Spider System Variables](../../../server-usage/storage-engines/spider/spider-system-variables.md)
 * [SQL\_ERROR\_LOG Plugin System Variables](sql-error-log-system-variables-and-options.md)
 * [SSL System Variables](../../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/ssltls-system-variables.md)
 * [Threadpool System Variables](../buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables.md)
-* [TokuDB System Variables](../../../reference/storage-engines/tokudb/tokudb-system-variables.md)
+* [TokuDB System Variables](../../../server-usage/storage-engines/tokudb/tokudb-system-variables.md)
 * [Vector System Variables](../../../reference/sql-structure/vectors/vector-system-variables.md)
 
 See also the [Full list of MariaDB options, system and status variables](../../../reference/full-list-of-mariadb-options-system-and-status-variables.md).
@@ -203,7 +203,7 @@ The suffix can be upper or lower-case.
 
 #### `bulk_insert_buffer_size`
 
-* Description: Size in bytes of the per-thread cache tree used to speed up bulk inserts into [MyISAM](../../../reference/storage-engines/myisam-storage-engine/) and [Aria](../../../reference/storage-engines/aria/) tables. A value of 0 disables the cache tree.
+* Description: Size in bytes of the per-thread cache tree used to speed up bulk inserts into [MyISAM](../../../server-usage/storage-engines/myisam-storage-engine/) and [Aria](../../../server-usage/storage-engines/aria/) tables. A value of 0 disables the cache tree.
 * Commandline: `--bulk-insert-buffer-size=#`
 * Scope: Global, Session
 * Dynamic: Yes
@@ -343,7 +343,7 @@ The suffix can be upper or lower-case.
 
 #### `concurrent_insert`
 
-* Description: If set to `AUTO` or `1`, the default, MariaDB allows [concurrent INSERTs](../../../reference/sql-statements/data-manipulation/inserting-loading-data/concurrent-inserts.md) and SELECTs for [MyISAM](../../../reference/storage-engines/myisam-storage-engine/) tables with no free blocks in the data (deleted rows in the middle). If set to `NEVER` or `0`, concurrent inserts are disabled. If set to `ALWAYS` or `2`, concurrent inserts are permitted for all MyISAM tables, even those with holes, in which case new rows are added at the end of a table if the table is being used by another thread. If the [--skip-new](../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md#-skip-new) option is used when starting the server, concurrent\_insert is set to `NEVER`. Changing the variable only affects new opened tables. Use [FLUSH TABLES](../../../reference/sql-statements/administrative-sql-statements/flush-commands/flush.md) If you want it to also affect cached tables. See [Concurrent Inserts](../../../reference/sql-statements/data-manipulation/inserting-loading-data/concurrent-inserts.md) for more.
+* Description: If set to `AUTO` or `1`, the default, MariaDB allows [concurrent INSERTs](../../../reference/sql-statements/data-manipulation/inserting-loading-data/concurrent-inserts.md) and SELECTs for [MyISAM](../../../server-usage/storage-engines/myisam-storage-engine/) tables with no free blocks in the data (deleted rows in the middle). If set to `NEVER` or `0`, concurrent inserts are disabled. If set to `ALWAYS` or `2`, concurrent inserts are permitted for all MyISAM tables, even those with holes, in which case new rows are added at the end of a table if the table is being used by another thread. If the [--skip-new](../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md#-skip-new) option is used when starting the server, concurrent\_insert is set to `NEVER`. Changing the variable only affects new opened tables. Use [FLUSH TABLES](../../../reference/sql-statements/administrative-sql-statements/flush-commands/flush.md) If you want it to also affect cached tables. See [Concurrent Inserts](../../../reference/sql-statements/data-manipulation/inserting-loading-data/concurrent-inserts.md) for more.
 * Commandline: `--concurrent-insert[=value]`
 * Scope: Global
 * Dynamic: Yes
@@ -459,7 +459,7 @@ The suffix can be upper or lower-case.
 
 #### `default_storage_engine`
 
-* Description: The default [storage engine](../../../reference/storage-engines/). The default storage engine must be enabled at server startup or the server won't start.
+* Description: The default [storage engine](../../../server-usage/storage-engines/). The default storage engine must be enabled at server startup or the server won't start.
 * Commandline: `--default-storage-engine=name`
 * Scope: Global, Session
 * Dynamic: Yes
@@ -476,7 +476,7 @@ The suffix can be upper or lower-case.
 
 #### `default_tmp_storage_engine`
 
-* Description: Default storage engine that will be used for tables created with [CREATE TEMPORARY TABLE](../../../reference/sql-statements/data-definition/create/create-table.md) where no engine is specified. For internal temporary tables see [aria\_used\_for\_temp\_tables](../../../reference/storage-engines/aria/aria-system-variables.md#aria_used_for_temp_tables)). The storage engine used must be active or the server will not start. See [default\_storage\_engine](server-system-variables.md#default_storage_engine) for the default for non-temporary tables. Defaults to NULL, in which case the value from [default\_storage\_engine](server-system-variables.md#default_storage_engine) is used. [ROCKSDB](../../../reference/storage-engines/myrocks/) temporary tables cannot be created. Before [MariaDB 10.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-7-series/what-is-mariadb-107), attempting to do so would silently fail, and a MyISAM table would instead be created. From [MariaDB 10.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-7-series/what-is-mariadb-107), an error is returned.
+* Description: Default storage engine that will be used for tables created with [CREATE TEMPORARY TABLE](../../../reference/sql-statements/data-definition/create/create-table.md) where no engine is specified. For internal temporary tables see [aria\_used\_for\_temp\_tables](../../../server-usage/storage-engines/aria/aria-system-variables.md#aria_used_for_temp_tables)). The storage engine used must be active or the server will not start. See [default\_storage\_engine](server-system-variables.md#default_storage_engine) for the default for non-temporary tables. Defaults to NULL, in which case the value from [default\_storage\_engine](server-system-variables.md#default_storage_engine) is used. [ROCKSDB](../../../server-usage/storage-engines/myrocks/) temporary tables cannot be created. Before [MariaDB 10.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-7-series/what-is-mariadb-107), attempting to do so would silently fail, and a MyISAM table would instead be created. From [MariaDB 10.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-7-series/what-is-mariadb-107), an error is returned.
 * Commandline: `--default-tmp-storage-engine=name`
 * Scope: Global, Session
 * Dynamic: Yes
@@ -616,7 +616,7 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 
 #### `enforce_storage_engine`
 
-* Description: Force the use of a particular storage engine for new tables. Used to avoid unwanted creation of tables using another engine. For example, setting to [InnoDB](../../../reference/storage-engines/innodb/) will prevent any [MyISAM](../../../reference/storage-engines/myisam-storage-engine/) tables from being created. If another engine is specified in a [CREATE TABLE](../../../reference/sql-statements/data-definition/create/create-table.md) statement, the outcome depends on whether the `NO_ENGINE_SUBSTITUTION` [SQL\_MODE](../../../server-management/variables-and-modes/sql-mode.md) has been set or not. If set, the query will fail, while if not set, a warning will be returned and the table created according to the engine specified by this variable. The variable has a session scope, but is only modifiable by a user with the SUPER privilege.
+* Description: Force the use of a particular storage engine for new tables. Used to avoid unwanted creation of tables using another engine. For example, setting to [InnoDB](../../../server-usage/storage-engines/innodb/) will prevent any [MyISAM](../../../server-usage/storage-engines/myisam-storage-engine/) tables from being created. If another engine is specified in a [CREATE TABLE](../../../reference/sql-statements/data-definition/create/create-table.md) statement, the outcome depends on whether the `NO_ENGINE_SUBSTITUTION` [SQL\_MODE](../../../server-management/variables-and-modes/sql-mode.md) has been set or not. If set, the query will fail, while if not set, a warning will be returned and the table created according to the engine specified by this variable. The variable has a session scope, but is only modifiable by a user with the SUPER privilege.
 * Commandline: None
 * Scope: Session
 * Dynamic: Yes
@@ -712,7 +712,7 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 
 #### `foreign_key_checks`
 
-* Description: If set to 1 (the default) [foreign key constraints](../optimization-and-indexes/foreign-keys.md) (including ON UPDATE and ON DELETE behavior) [InnoDB](../../../reference/storage-engines/innodb/) tables are checked, while if set to 0, they are not checked. `0` is not recommended for normal use, though it can be useful in situations where you know the data is consistent, but want to reload data in a different order from that that specified by parent/child relationships. Setting this variable to 1 does not retrospectively check for inconsistencies introduced while set to 0.
+* Description: If set to 1 (the default) [foreign key constraints](../optimization-and-indexes/foreign-keys.md) (including ON UPDATE and ON DELETE behavior) [InnoDB](../../../server-usage/storage-engines/innodb/) tables are checked, while if set to 0, they are not checked. `0` is not recommended for normal use, though it can be useful in situations where you know the data is consistent, but want to reload data in a different order from that that specified by parent/child relationships. Setting this variable to 1 does not retrospectively check for inconsistencies introduced while set to 0.
 * Commandline: None
 * Scope: Global, Session
 * Dynamic: Yes
@@ -730,7 +730,7 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 
 #### `ft_max_word_len`
 
-* Description: Maximum length for a word to be included in the [MyISAM](../../../reference/storage-engines/myisam-storage-engine/) [full-text index](../optimization-and-indexes/full-text-indexes/). If this variable is changed, the full-text index must be rebuilt in order for the new value to take effect. The quickest way to do this is by issuing a `REPAIR TABLE table_name QUICK` statement. See [innodb\_ft\_max\_token\_size](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_ft_max_token_size) for the [InnoDB](../../../reference/storage-engines/innodb/) equivalent.
+* Description: Maximum length for a word to be included in the [MyISAM](../../../server-usage/storage-engines/myisam-storage-engine/) [full-text index](../optimization-and-indexes/full-text-indexes/). If this variable is changed, the full-text index must be rebuilt in order for the new value to take effect. The quickest way to do this is by issuing a `REPAIR TABLE table_name QUICK` statement. See [innodb\_ft\_max\_token\_size](../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_ft_max_token_size) for the [InnoDB](../../../server-usage/storage-engines/innodb/) equivalent.
 * Commandline: `--ft-max-word-len=#`
 * Scope: Global
 * Dynamic: No
@@ -740,7 +740,7 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 
 #### `ft_min_word_len`
 
-* Description: Minimum length for a word to be included in the [MyISAM](../../../reference/storage-engines/myisam-storage-engine/) [full-text index](../optimization-and-indexes/full-text-indexes/). If this variable is changed, the full-text index must be rebuilt in order for the new value to take effect. The quickest way to do this is by issuing a `REPAIR TABLE table_name QUICK` statement. See [innodb\_ft\_min\_token\_size](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_ft_min_token_size) for the [InnoDB](../../../reference/storage-engines/innodb/) equivalent.
+* Description: Minimum length for a word to be included in the [MyISAM](../../../server-usage/storage-engines/myisam-storage-engine/) [full-text index](../optimization-and-indexes/full-text-indexes/). If this variable is changed, the full-text index must be rebuilt in order for the new value to take effect. The quickest way to do this is by issuing a `REPAIR TABLE table_name QUICK` statement. See [innodb\_ft\_min\_token\_size](../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_ft_min_token_size) for the [InnoDB](../../../server-usage/storage-engines/innodb/) equivalent.
 * Commandline: `--ft-min-word-len=#`
 * Scope: Global
 * Dynamic: No
@@ -760,7 +760,7 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 
 #### `ft_stopword_file`
 
-* Description: File containing a list of [stopwords](../optimization-and-indexes/full-text-indexes/full-text-index-stopwords.md) for use in [MyISAM](../../../reference/storage-engines/myisam-storage-engine/) [full-text searches](../optimization-and-indexes/full-text-indexes/). Unless an absolute path is specified the file will be looked for in the data directory. The file is not parsed for comments, so all words found become stopwords. By default, a built-in list of words (built from `storage/myisam/ft_static.c file`) is used. Stopwords can be disabled by setting this variable to `''` (an empty string). If this variable is changed, the full-text index must be rebuilt. The quickest way to do this is by issuing a `REPAIR TABLE table_name QUICK` statement. See [innodb\_ft\_server\_stopword\_table](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_ft_server_stopword_table) for the [InnoDB](../../../reference/storage-engines/innodb/) equivalent.
+* Description: File containing a list of [stopwords](../optimization-and-indexes/full-text-indexes/full-text-index-stopwords.md) for use in [MyISAM](../../../server-usage/storage-engines/myisam-storage-engine/) [full-text searches](../optimization-and-indexes/full-text-indexes/). Unless an absolute path is specified the file will be looked for in the data directory. The file is not parsed for comments, so all words found become stopwords. By default, a built-in list of words (built from `storage/myisam/ft_static.c file`) is used. Stopwords can be disabled by setting this variable to `''` (an empty string). If this variable is changed, the full-text index must be rebuilt. The quickest way to do this is by issuing a `REPAIR TABLE table_name QUICK` statement. See [innodb\_ft\_server\_stopword\_table](../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_ft_server_stopword_table) for the [InnoDB](../../../server-usage/storage-engines/innodb/) equivalent.
 * Commandline: `--ft-stopword-file=file_name`
 * Scope: Global
 * Dynamic: No
@@ -812,7 +812,7 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 
 #### `have_csv`
 
-* Description: If the server supports [CSV tables](../../../reference/storage-engines/csv/), will be set to `YES`, otherwise will be set to `NO`. Removed in [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0), use the [Information Schema PLUGINS](../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/plugins-table-information-schema.md) table or [SHOW ENGINES](../../../reference/sql-statements/administrative-sql-statements/show/show-engines.md) instead.
+* Description: If the server supports [CSV tables](../../../server-usage/storage-engines/csv/), will be set to `YES`, otherwise will be set to `NO`. Removed in [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0), use the [Information Schema PLUGINS](../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/plugins-table-information-schema.md) table or [SHOW ENGINES](../../../reference/sql-statements/administrative-sql-statements/show/show-engines.md) instead.
 * Scope: Global
 * Dynamic: No
 * Removed: [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0)
@@ -1048,7 +1048,7 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 
 #### `keep_files_on_create`
 
-* Description: If a [MyISAM](../../../reference/storage-engines/myisam-storage-engine/) table is created with no DATA DIRECTORY option, the .MYD file is stored in the database directory. When set to `0`, the default, if MariaDB finds another .MYD file in the database directory it will overwrite it. Setting this variable to `1` means that MariaDB will return an error instead, just as it usually does in the same situation outside of the database directory. The same applies for .MYI files and no INDEX DIRECTORY option. Deprecated in [MariaDB 10.8.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-8-series/mariadb-10-8-0-release-notes).
+* Description: If a [MyISAM](../../../server-usage/storage-engines/myisam-storage-engine/) table is created with no DATA DIRECTORY option, the .MYD file is stored in the database directory. When set to `0`, the default, if MariaDB finds another .MYD file in the database directory it will overwrite it. Setting this variable to `1` means that MariaDB will return an error instead, just as it usually does in the same situation outside of the database directory. The same applies for .MYI files and no INDEX DIRECTORY option. Deprecated in [MariaDB 10.8.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-8-series/mariadb-10-8-0-release-notes).
 * Commandline: `--keep-files-on-create=#`
 * Scope: Global, Session
 * Dynamic: Yes
@@ -1073,7 +1073,7 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 
 #### `large_pages`
 
-* Description: Indicates whether large page support (prior to [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105), Linux only, by now supported Windows and BSD distros, also called huge pages) is used. This is set with `--large-pages` or disabled with `--skip-large-pages`. Large pages are used for the [innodb buffer pool](../../../reference/storage-engines/innodb/innodb-buffer-pool.md) and for online DDL (of size 3\* [innodb\_sort\_buffer\_size](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_sort_buffer_size) (or 6 when encryption is used)). To use large pages, the Linux `sysctl` variable `kernel.shmmax` must be large than the llocation. Also the `sysctl` variable `vm.nr_hugepages` multipled by [large-page](server-system-variables.md#large_page_size)) must be larger than the usage. The ulimit for locked memory must be sufficient to cover the amount used (`ulimit -l` and equalivent in /etc/security/limits.conf / or in systemd [LimitMEMLOCK](../../../server-management/starting-and-stopping-mariadb/systemd.md)). If these operating system controls or insufficient free huge pages are available, the allocation of large pages will fall back to conventional memory allocation and a warning will appear in the logs. Only allocations of the default `Hugepagesize` currently occur (see `/proc/meminfo`).
+* Description: Indicates whether large page support (prior to [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105), Linux only, by now supported Windows and BSD distros, also called huge pages) is used. This is set with `--large-pages` or disabled with `--skip-large-pages`. Large pages are used for the [innodb buffer pool](../../../server-usage/storage-engines/innodb/innodb-buffer-pool.md) and for online DDL (of size 3\* [innodb\_sort\_buffer\_size](../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_sort_buffer_size) (or 6 when encryption is used)). To use large pages, the Linux `sysctl` variable `kernel.shmmax` must be large than the llocation. Also the `sysctl` variable `vm.nr_hugepages` multipled by [large-page](server-system-variables.md#large_page_size)) must be larger than the usage. The ulimit for locked memory must be sufficient to cover the amount used (`ulimit -l` and equalivent in /etc/security/limits.conf / or in systemd [LimitMEMLOCK](../../../server-management/starting-and-stopping-mariadb/systemd.md)). If these operating system controls or insufficient free huge pages are available, the allocation of large pages will fall back to conventional memory allocation and a warning will appear in the logs. Only allocations of the default `Hugepagesize` currently occur (see `/proc/meminfo`).
 * Commandline: `--large-pages`, `--skip-large-pages`
 * Scope: Global
 * Dynamic: No
@@ -1389,7 +1389,7 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 * Either the default `relay-log.info` file or the file that is configured by the `[relay_log_info_file](../../standard-replication/replication-and-binary-log-system-variables.md#relay_log_info_file)` system variable.
 * Information about a master's [binary log dump thread](../../standard-replication/replication-threads.md#binary-log-dump-thread).
 * log\_warnings >= 3
-* All errors and warnings during [MyISAM](../../../reference/storage-engines/myisam-storage-engine/) repair and auto recover.
+* All errors and warnings during [MyISAM](../../../server-usage/storage-engines/myisam-storage-engine/) repair and auto recover.
 * Information about old-style language options.
 * Information about [progress of InnoDB online DDL](https://mariadb.org/monitoring-progress-and-temporal-memory-usage-of-online-ddl-in-innodb/).
 * log\_warnings >=4
@@ -1421,7 +1421,7 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 
 #### `low_priority_updates`
 
-* Description: If set to 1 (0 is the default), for [storage engines](../../../reference/storage-engines/) that use only table-level locking ([Aria](../../../reference/storage-engines/aria/), [MyISAM](../../../reference/storage-engines/myisam-storage-engine/), [MEMORY](../../../reference/storage-engines/memory-storage-engine.md) and [MERGE](../../../reference/storage-engines/merge.md)), all INSERTs, UPDATEs, DELETEs and LOCK TABLE WRITEs will wait until there are no more SELECTs or LOCK TABLE READs pending on the relevant tables. Set this to 1 if reads are prioritized over writes.
+* Description: If set to 1 (0 is the default), for [storage engines](../../../server-usage/storage-engines/) that use only table-level locking ([Aria](../../../server-usage/storage-engines/aria/), [MyISAM](../../../server-usage/storage-engines/myisam-storage-engine/), [MEMORY](../../../server-usage/storage-engines/memory-storage-engine.md) and [MERGE](../../../server-usage/storage-engines/merge.md)), all INSERTs, UPDATEs, DELETEs and LOCK TABLE WRITEs will wait until there are no more SELECTs or LOCK TABLE READs pending on the relevant tables. Set this to 1 if reads are prioritized over writes.
   * In [MariaDB 5.5](broken-reference/) and earlier, `[sql_low_priority_updates](#sql_low_priority_updates)` is a synonym.
 * Commandline: `--low-priority-updates`
 * Scope: Global, Session
@@ -1512,7 +1512,7 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 
 #### `max_heap_table_size`
 
-* Description: Maximum size in bytes for user-created [MEMORY](../../../reference/storage-engines/memory-storage-engine.md) tables. Setting the variable while the server is active has no effect on existing tables unless they are recreated or altered. The smaller of max\_heap\_table\_size and [tmp\_table\_size](server-system-variables.md#tmp_table_size) also limits internal in-memory tables. When the maximum size is reached, any further attempts to insert data will receive a "table ... is full" error. Temporary tables created with [CREATE TEMPORARY](../../../reference/sql-statements/data-definition/create/create-table.md) will not be converted to Aria, as occurs with internal temporary tables, but will also receive a table full error.
+* Description: Maximum size in bytes for user-created [MEMORY](../../../server-usage/storage-engines/memory-storage-engine.md) tables. Setting the variable while the server is active has no effect on existing tables unless they are recreated or altered. The smaller of max\_heap\_table\_size and [tmp\_table\_size](server-system-variables.md#tmp_table_size) also limits internal in-memory tables. When the maximum size is reached, any further attempts to insert data will receive a "table ... is full" error. Temporary tables created with [CREATE TEMPORARY](../../../reference/sql-statements/data-definition/create/create-table.md) will not be converted to Aria, as occurs with internal temporary tables, but will also receive a table full error.
 * Commandline: `--max-heap-table-size=#`
 * Scope: Global, Session
 * Dynamic: Yes
@@ -1667,7 +1667,7 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 
 #### `max_write_lock_count`
 
-* Description: Read lock requests will be permitted for processing after this many write locks. Applies only to storage engines that use table level locks (thr\_lock), so no effect with [InnoDB](../../../reference/storage-engines/innodb/) or [Archive](../../../reference/storage-engines/archive/).
+* Description: Read lock requests will be permitted for processing after this many write locks. Applies only to storage engines that use table level locks (thr\_lock), so no effect with [InnoDB](../../../server-usage/storage-engines/innodb/) or [Archive](../../../server-usage/storage-engines/archive/).
 * Commandline: `--max-write-lock-count=#`
 * Scope: Global
 * Dynamic: No
@@ -2245,7 +2245,7 @@ MariaDB sets the limit with `[setrlimit](https://linux.die.net/man/2/setrlimit)`
 
 #### `read_buffer_size`
 
-* Description: Each thread performing a sequential scan (for MyISAM, Aria and MERGE tables) allocates a buffer of this size in bytes for each table scanned. Increase if you perform many sequential scans. If not in a multiple of 4KB, will be rounded down to the nearest multiple. Also used in ORDER BY's for caching indexes in a temporary file (not temporary table), for caching results of nested queries, for bulk inserts into partitions, and to determine the memory block size of [MEMORY](../../../reference/storage-engines/memory-storage-engine.md) tables.
+* Description: Each thread performing a sequential scan (for MyISAM, Aria and MERGE tables) allocates a buffer of this size in bytes for each table scanned. Increase if you perform many sequential scans. If not in a multiple of 4KB, will be rounded down to the nearest multiple. Also used in ORDER BY's for caching indexes in a temporary file (not temporary table), for caching results of nested queries, for bulk inserts into partitions, and to determine the memory block size of [MEMORY](../../../server-usage/storage-engines/memory-storage-engine.md) tables.
 * Commandline: `--read-buffer-size=#`
 * Scope: Global, Session
 * Dynamic: Yes
@@ -2264,7 +2264,7 @@ MariaDB sets the limit with `[setrlimit](https://linux.die.net/man/2/setrlimit)`
 
 #### `read_rnd_buffer_size`
 
-* Description: Size in bytes of the buffer used when reading rows from a [MyISAM](../../../reference/storage-engines/myisam-storage-engine/) table in sorted order after a key sort. Larger values improve ORDER BY performance, although rather increase the size by SESSION where the need arises to avoid excessive memory use.
+* Description: Size in bytes of the buffer used when reading rows from a [MyISAM](../../../server-usage/storage-engines/myisam-storage-engine/) table in sorted order after a key sort. Larger values improve ORDER BY performance, although rather increase the size by SESSION where the need arises to avoid excessive memory use.
 * Commandline: `--read-rnd-buffer-size=#`
 * Scope: Global, Session
 * Dynamic: Yes
@@ -2414,9 +2414,9 @@ MariaDB sets the limit with `[setrlimit](https://linux.die.net/man/2/setrlimit)`
 
 #### `skip_external_locking`
 
-* Description: If this system variable is set, then some kinds of external table locks will be disabled for some [storage engines](../../../reference/storage-engines/).
-  * If this system variable is set, then the [MyISAM](../../../reference/storage-engines/myisam-storage-engine/) storage engine will not use file-based locks. Otherwise, it will use the `[fcntl()](https://linux.die.net/man/2/fcntl)` function with the `F_SETLK` option to get file-based locks on Unix, and it will use the `[LockFileEx()](https://docs.microsoft.com/en-us/windows/desktop/api/fileapi/nf-fileapi-lockfileex)` function to get file-based locks on Windows.
-  * If this system variable is set, then the [Aria](../../../reference/storage-engines/aria/) storage engine will not lock a table when it decrements the table's in-file counter that keeps track of how many connections currently have the table open. See [MDEV-19393](https://jira.mariadb.org/browse/MDEV-19393) for more information.
+* Description: If this system variable is set, then some kinds of external table locks will be disabled for some [storage engines](../../../server-usage/storage-engines/).
+  * If this system variable is set, then the [MyISAM](../../../server-usage/storage-engines/myisam-storage-engine/) storage engine will not use file-based locks. Otherwise, it will use the `[fcntl()](https://linux.die.net/man/2/fcntl)` function with the `F_SETLK` option to get file-based locks on Unix, and it will use the `[LockFileEx()](https://docs.microsoft.com/en-us/windows/desktop/api/fileapi/nf-fileapi-lockfileex)` function to get file-based locks on Windows.
+  * If this system variable is set, then the [Aria](../../../server-usage/storage-engines/aria/) storage engine will not lock a table when it decrements the table's in-file counter that keeps track of how many connections currently have the table open. See [MDEV-19393](https://jira.mariadb.org/browse/MDEV-19393) for more information.
   * Note that command line option name is the opposite of the variable name, and the value is the opposite too. `--external-locking=1` means `@@skip_external_locking=0`, and vice versa.
 * Commandline: `--external-locking`
 * Scope: Global
@@ -2568,7 +2568,7 @@ MariaDB sets the limit with `[setrlimit](https://linux.die.net/man/2/setrlimit)`
 
 #### `sql_low_priority_updates`
 
-* Description: If set to 1 (0 is the default), for [storage engines](../../../reference/storage-engines/) that use only table-level locking ([Aria](../../../reference/storage-engines/aria/), [MyISAM](../../../reference/storage-engines/myisam-storage-engine/), [MEMORY](../../../reference/storage-engines/memory-storage-engine.md) and [MERGE](../../../reference/storage-engines/merge.md)), all INSERTs, UPDATEs, DELETEs and LOCK TABLE WRITEs will wait until there are no more SELECTs or LOCK TABLE READs pending on the relevant tables. Set this to 1 if reads are prioritized over writes.
+* Description: If set to 1 (0 is the default), for [storage engines](../../../server-usage/storage-engines/) that use only table-level locking ([Aria](../../../server-usage/storage-engines/aria/), [MyISAM](../../../server-usage/storage-engines/myisam-storage-engine/), [MEMORY](../../../server-usage/storage-engines/memory-storage-engine.md) and [MERGE](../../../server-usage/storage-engines/merge.md)), all INSERTs, UPDATEs, DELETEs and LOCK TABLE WRITEs will wait until there are no more SELECTs or LOCK TABLE READs pending on the relevant tables. Set this to 1 if reads are prioritized over writes.
   * This is a synonym for `[low_priority_updates](#low_priority_updates)`.
 * Commandline: `--sql-low-priority-updates`
 * Scope: Global, Session
@@ -2822,7 +2822,7 @@ MariaDB sets the limit with `[setrlimit](https://linux.die.net/man/2/setrlimit)`
 
 #### `timed_mutexes`
 
-* Description: Determines whether [InnoDB](../../../reference/storage-engines/innodb/) mutexes are timed. `OFF`, the default, disables mutex timing, while `ON` enables it. See also [SHOW ENGINE](../../../reference/sql-statements/administrative-sql-statements/show/show-engine.md) for more on mutex statistics. Deprecated and has no effect.
+* Description: Determines whether [InnoDB](../../../server-usage/storage-engines/innodb/) mutexes are timed. `OFF`, the default, disables mutex timing, while `ON` enables it. See also [SHOW ENGINE](../../../reference/sql-statements/administrative-sql-statements/show/show-engine.md) for more on mutex statistics. Deprecated and has no effect.
 * Commandline: `--timed-mutexes`
 * Scope: Global
 * Dynamic: Yes
@@ -2840,7 +2840,7 @@ MariaDB sets the limit with `[setrlimit](https://linux.die.net/man/2/setrlimit)`
 
 #### `tmp_disk_table_size`
 
-* Description: Max size for data for an internal temporary on-disk [MyISAM](../../../reference/storage-engines/myisam-storage-engine/) or [Aria](../../../reference/storage-engines/aria/) table. These tables are created as part of complex queries when the result doesn't fit into the memory engine. You can set this variable if you want to limit the size of temporary tables created in your temporary directory [tmpdir](server-system-variables.md#tmpdir).
+* Description: Max size for data for an internal temporary on-disk [MyISAM](../../../server-usage/storage-engines/myisam-storage-engine/) or [Aria](../../../server-usage/storage-engines/aria/) table. These tables are created as part of complex queries when the result doesn't fit into the memory engine. You can set this variable if you want to limit the size of temporary tables created in your temporary directory [tmpdir](server-system-variables.md#tmpdir).
 * Commandline: `--tmp-disk-table-size=#`
 * Scope: Global, Session
 * Dynamic: Yes
@@ -2855,7 +2855,7 @@ MariaDB sets the limit with `[setrlimit](https://linux.die.net/man/2/setrlimit)`
 
 #### `tmp_table_size`
 
-* Description: The largest size for temporary tables in memory (not [MEMORY](../../../reference/storage-engines/memory-storage-engine.md) tables) although if [max\_heap\_table\_size](server-system-variables.md#max_heap_table_size) is smaller the lower limit will apply. You can see if it's necessary to increase by comparing the [status variables](server-status-variables.md) `Created_tmp_disk_tables` and `Created_tmp_tables` to see how many temporary tables out of the total created needed to be converted to disk. Often complex GROUP BY queries are responsible for exceeding the limit. Defaults may be different on some systems, see for example [Differences in MariaDB in Debian](../../../server-management/install-and-upgrade-mariadb/installing-mariadb/troubleshooting-installation-issues/installation-issues-on-debian-and-ubuntu/differences-in-mariadb-in-debian-and-ubuntu.md). From [MariaDB 10.2.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-1027-release-notes), [tmp\_memory\_table\_size](server-system-variables.md#tmp_memory_table_size) is an alias.
+* Description: The largest size for temporary tables in memory (not [MEMORY](../../../server-usage/storage-engines/memory-storage-engine.md) tables) although if [max\_heap\_table\_size](server-system-variables.md#max_heap_table_size) is smaller the lower limit will apply. You can see if it's necessary to increase by comparing the [status variables](server-status-variables.md) `Created_tmp_disk_tables` and `Created_tmp_tables` to see how many temporary tables out of the total created needed to be converted to disk. Often complex GROUP BY queries are responsible for exceeding the limit. Defaults may be different on some systems, see for example [Differences in MariaDB in Debian](../../../server-management/install-and-upgrade-mariadb/installing-mariadb/troubleshooting-installation-issues/installation-issues-on-debian-and-ubuntu/differences-in-mariadb-in-debian-and-ubuntu.md). From [MariaDB 10.2.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-1027-release-notes), [tmp\_memory\_table\_size](server-system-variables.md#tmp_memory_table_size) is an alias.
 * Commandline: `--tmp-table-size=#`
 * Scope: Global, Session
 * Dynamic: Yes

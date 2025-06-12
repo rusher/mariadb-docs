@@ -16,7 +16,7 @@ HANDLER tbl_name CLOSE
 ## Description
 
 The `HANDLER` statement provides direct access to table\
-storage engine interfaces for key lookups and key or table scans. It is available for at least [Aria](../../../storage-engines/aria/), [Memory](../../../storage-engines/memory-storage-engine.md), [MyISAM](../../../storage-engines/myisam-storage-engine/) and [InnoDB](../../../storage-engines/innodb/) tables (and should work with most 'normal' storage engines, but not with system tables, [MERGE](../../../storage-engines/merge.md) or [views](../../../../server-usage/views/)).
+storage engine interfaces for key lookups and key or table scans. It is available for at least [Aria](../../../../server-usage/storage-engines/aria/), [Memory](../../../../server-usage/storage-engines/memory-storage-engine.md), [MyISAM](../../../../server-usage/storage-engines/myisam-storage-engine/) and [InnoDB](../../../../server-usage/storage-engines/innodb/) tables (and should work with most 'normal' storage engines, but not with system tables, [MERGE](../../../../server-usage/storage-engines/merge.md) or [views](../../../../server-usage/views/)).
 
 `HANDLER ... OPEN` opens a table, allowing it to be accessible to subsequent `HANDLER ... READ` statements. The table can either be opened using an alias, or a table name. If opened with an alias, references to this table by further HANDLER statements must use this alias, and not the table name. If opened with a table name qualified by database name, further references to this table must use the unqualified table name. For example, if a table is opened with `db1.t1`, further references must use `t1`.
 
@@ -99,14 +99,14 @@ You may also find rows committed since the scan originally started.
 * If you do an ALTER TABLE for a table that is used by some other connection with HANDLER, the ALTER TABLE will wait for the HANDLER to be closed.
 * For HASH keys, you must use all key parts when searching for a row.
 * For HASH keys, you can't do a key scan of all values. You can only find all rows with the same key value.
-* While each HANDLER READ command is atomic, if you do a scan in many steps, then some engines may give you [error 1020](broken-reference) if the table changed between the commands. Please refer to the [specific engine handler page](./) if this happens.
+* While each HANDLER READ command is atomic, if you do a scan in many steps, then some engines may give you [error 1020](broken-reference/) if the table changed between the commands. Please refer to the [specific engine handler page](./) if this happens.
 
 ## Error Codes
 
-* [Error 1031](broken-reference) (ER\_ILLEGAL\_HA) Table storage engine for 't1' doesn't have this option
+* [Error 1031](broken-reference/) (ER\_ILLEGAL\_HA) Table storage engine for 't1' doesn't have this option
   * If you get this for HANDLER OPEN it means the storage engine doesn't support HANDLER calls.
   * If you get this for HANDLER READ it means you are trying to use an incomplete HASH key.
-* [Error 1020](broken-reference) (ER\_CHECKREAD) Record has changed since last read in table '...'
+* [Error 1020](broken-reference/) (ER\_CHECKREAD) Record has changed since last read in table '...'
   * This means that the table changed between two reads and the handler can't handle this case for the given scan.
 
 ## Examples
@@ -133,7 +133,7 @@ HANDLER t1 READ NEXT;
 +------+
 ```
 
-In the previous example, the HANDLER was opened with the t1 table name. Since HANDLERs use unqualified table names, trying to access another table with this same name, even though it's in another database, will result in ambiguity. An alias needs to be used to avoid the ambiguity, resulting in [Error 1066: Not unique table/alias](broken-reference):
+In the previous example, the HANDLER was opened with the t1 table name. Since HANDLERs use unqualified table names, trying to access another table with this same name, even though it's in another database, will result in ambiguity. An alias needs to be used to avoid the ambiguity, resulting in [Error 1066: Not unique table/alias](broken-reference/):
 
 ```
 CREATE DATABASE db_new;
@@ -159,7 +159,7 @@ HANDLER db_new_t1 READ NEXT LIMIT 3;
 
 ## See Also
 
-* [What is MariaDB 5.3](broken-reference)
+* [What is MariaDB 5.3](broken-reference/)
 
 GPLv2 fill\_help\_tables.sql
 

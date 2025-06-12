@@ -10,9 +10,9 @@ The Purge Threads perform garbage collection of the [InnoDB Undo Log](../innodb-
 
 The Purge Threads perform garbage collection of index records. When an indexed column is updated, InnoDB creates a new index record for the updated value in each affected index, and the old index records are delete-marked. When the primary key column is updated, InnoDB creates a new index record for the updated value in every index, and each old index record is delete-marked. The Purge Threads scan for delete-marked index records and permanently delete them.
 
-The Purge Threads perform garbage collection of freed overflow pages. [BLOB](data-types-blob/), [CHAR](data-types-char/), [TEXT](data-types-text/), [VARCHAR](data-types-varchar/), [VARBINARY](data-types-varbinary/), and related types are sometimes stored on overflow pages. When the value on the overflow page is deleted or updated, the overflow page is no longer needed. The Purge Threads delete these freed overflow pages.
+The Purge Threads perform garbage collection of freed overflow pages. [BLOB](../../../../reference/storage-engines/innodb/mariadb-enterprise-server-innodb-operations/data-types-blob/), [CHAR](../../../../reference/storage-engines/innodb/mariadb-enterprise-server-innodb-operations/data-types-char/), [TEXT](../../../../reference/storage-engines/innodb/mariadb-enterprise-server-innodb-operations/data-types-text/), [VARCHAR](../../../../reference/storage-engines/innodb/mariadb-enterprise-server-innodb-operations/data-types-varchar/), [VARBINARY](../../../../reference/storage-engines/innodb/mariadb-enterprise-server-innodb-operations/data-types-varbinary/), and related types are sometimes stored on overflow pages. When the value on the overflow page is deleted or updated, the overflow page is no longer needed. The Purge Threads delete these freed overflow pages.
 
-For additional information, see "[InnoDB Purge Threads](mariadb-enterprise-server-innodb-purge-threads/)".
+For additional information, see "[InnoDB Purge Threads](../../../../reference/storage-engines/innodb/mariadb-enterprise-server-innodb-operations/mariadb-enterprise-server-innodb-purge-threads/)".
 
 This page describes how to configure the InnoDB Purge Threads.
 
@@ -30,11 +30,11 @@ The method to configure the number of Purge Threads depends on the server versio
 
 ## Configure the Number of InnoDB Purge Threads with SET GLOBAL (ES 10.5) and Later
 
-Starting in MariaDB Enterprise Server 10.5, the number of InnoDB purge threads can be changed dynamically by setting the [innodb\_purge\_threads](../innodb-system-variables.md#innodb_purge_threads) system variable using the [SET GLOBAL](../../../sql-statements/administrative-sql-statements/set-commands/set.md) statement. The [SET GLOBAL](../../../sql-statements/administrative-sql-statements/set-commands/set.md) statement requires the SUPER privilege.
+Starting in MariaDB Enterprise Server 10.5, the number of InnoDB purge threads can be changed dynamically by setting the [innodb\_purge\_threads](../innodb-system-variables.md#innodb_purge_threads) system variable using the [SET GLOBAL](../../../../reference/sql-statements/administrative-sql-statements/set-commands/set.md) statement. The [SET GLOBAL](../../../../reference/sql-statements/administrative-sql-statements/set-commands/set.md) statement requires the SUPER privilege.
 
 To ensure that the change survives server restarts, the [innodb\_purge\_threads](../innodb-system-variables.md#innodb_purge_threads) system variable should also be set in a configuration file.
 
-To configure the number of InnoDB Purge threads with the [SET GLOBAL](../../../sql-statements/administrative-sql-statements/set-commands/set.md) statement, use the following procedure:
+To configure the number of InnoDB Purge threads with the [SET GLOBAL](../../../../reference/sql-statements/administrative-sql-statements/set-commands/set.md) statement, use the following procedure:
 
 1. Connect to the server using [MariaDB Client](../../../../clients-and-utilities/mariadb-client/) as the `root@localhost` user account or another user account with the SUPER privilege:
 
@@ -42,7 +42,7 @@ To configure the number of InnoDB Purge threads with the [SET GLOBAL](../../../s
 $ mariadb --user=root
 ```
 
-2. Set the [innodb\_purge\_threads](../innodb-system-variables.md#innodb_purge_threads) system variable to the new size using the [SET GLOBAL](../../../sql-statements/administrative-sql-statements/set-commands/set.md) statement.
+2. Set the [innodb\_purge\_threads](../innodb-system-variables.md#innodb_purge_threads) system variable to the new size using the [SET GLOBAL](../../../../reference/sql-statements/administrative-sql-statements/set-commands/set.md) statement.
 
 For example:
 
@@ -110,7 +110,7 @@ innodb_purge_threads=8
 $ sudo systemctl restart mariadb
 ```
 
-Starting in MariaDB Enterprise Server 10.5, the server can use the configuration change without a restart if you use [SET GLOBAL](../../../sql-statements/administrative-sql-statements/set-commands/set.md).
+Starting in MariaDB Enterprise Server 10.5, the server can use the configuration change without a restart if you use [SET GLOBAL](../../../../reference/sql-statements/administrative-sql-statements/set-commands/set.md).
 
 Copyright © 2025 MariaDB
 

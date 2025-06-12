@@ -34,7 +34,7 @@ CREATE TABLE tab (
 
 ## Setting a Table's Row Format
 
-One way to specify an InnoDB table's row format is by setting the [ROW\_FORMAT](../../../sql-statements/data-definition/create/create-table.md#row_format) table option to the relevant row format in a [CREATE TABLE](../../../sql-statements/data-definition/create/create-table.md) or [ALTER TABLE](../../../sql-statements/data-definition/alter/alter-table.md) statement. For example:
+One way to specify an InnoDB table's row format is by setting the [ROW\_FORMAT](../../../../reference/sql-statements/data-definition/create/create-table.md#row_format) table option to the relevant row format in a [CREATE TABLE](../../../../reference/sql-statements/data-definition/create/create-table.md) or [ALTER TABLE](../../../../reference/sql-statements/data-definition/alter/alter-table.md) statement. For example:
 
 ```sql
 SET SESSION innodb_strict_mode=ON;
@@ -51,7 +51,7 @@ CREATE TABLE tab (
 
 ## Checking a Table's Row Format
 
-The [SHOW TABLE STATUS](../../../sql-statements/administrative-sql-statements/show/show-table-status.md) statement can be used to see the row format used by a table. For example:
+The [SHOW TABLE STATUS](../../../../reference/sql-statements/administrative-sql-statements/show/show-table-status.md) statement can be used to see the row format used by a table. For example:
 
 ```sql
 SHOW TABLE STATUS FROM db1 WHERE Name='tab'\G
@@ -76,7 +76,7 @@ Max_data_length: 0
         Comment:
 ```
 
-The [information\_schema.INNODB\_SYS\_TABLES](../../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_sys_tables-table.md) table can also be queried to see the row format used by a table. For example:
+The [information\_schema.INNODB\_SYS\_TABLES](../../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_sys_tables-table.md) table can also be queried to see the row format used by a table. For example:
 
 ```sql
 SELECT * FROM information_schema.INNODB_SYS_TABLES WHERE name='db1/tab'\G
@@ -92,7 +92,7 @@ ZIP_PAGE_SIZE: 0
    SPACE_TYPE: Single
 ```
 
-A table's tablespace is tagged with the lowest InnoDB file format that supports the table's row format. So, even if the `Barracuda` file format is enabled, tables that use the `COMPACT` or `REDUNDANT` row formats will be tagged with the `Antelope` file format in the [information\_schema.INNODB\_SYS\_TABLES](../../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_sys_tables-table.md) table.
+A table's tablespace is tagged with the lowest InnoDB file format that supports the table's row format. So, even if the `Barracuda` file format is enabled, tables that use the `COMPACT` or `REDUNDANT` row formats will be tagged with the `Antelope` file format in the [information\_schema.INNODB\_SYS\_TABLES](../../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_sys_tables-table.md) table.
 
 ## Row Formats
 
@@ -116,7 +116,7 @@ See [InnoDB COMPACT Row Format](innodb-compact-row-format.md) for more informati
 
 `DYNAMIC` is the default row format.
 
-The `DYNAMIC` row format is similar to the `COMPACT` row format, but tables using the `DYNAMIC` row format can store even more data on overflow pages than tables using the `COMPACT` row format. This results in more efficient data storage than tables using the `COMPACT` row format, especially for tables containing columns using the [VARBINARY](../../../data-types/string-data-types/varbinary.md), [VARCHAR](../../../data-types/string-data-types/varchar.md), [BLOB](../../../data-types/string-data-types/blob.md) and [TEXT](../../../data-types/string-data-types/text.md) data types. However, InnoDB tables using the `COMPRESSED` row format are more efficient.
+The `DYNAMIC` row format is similar to the `COMPACT` row format, but tables using the `DYNAMIC` row format can store even more data on overflow pages than tables using the `COMPACT` row format. This results in more efficient data storage than tables using the `COMPACT` row format, especially for tables containing columns using the [VARBINARY](../../../../reference/data-types/string-data-types/varbinary.md), [VARCHAR](../../../../reference/data-types/string-data-types/varchar.md), [BLOB](../../../../reference/data-types/string-data-types/blob.md) and [TEXT](../../../../reference/data-types/string-data-types/text.md) data types. However, InnoDB tables using the `COMPRESSED` row format are more efficient.
 
 See [InnoDB DYNAMIC Row Format](innodb-dynamic-row-format.md) for more information.
 
@@ -124,7 +124,7 @@ See [InnoDB DYNAMIC Row Format](innodb-dynamic-row-format.md) for more informati
 
 An alternative way to compress InnoDB tables is by using [InnoDB Page Compression](../innodb-page-compression.md).
 
-The `COMPRESSED` row format is similar to the `COMPACT` row format, but tables using the `COMPRESSED` row format can store even more data on overflow pages than tables using the `COMPACT` row format. This results in more efficient data storage than tables using the `COMPACT` row format, especially for tables containing columns using the [VARBINARY](../../../data-types/string-data-types/varbinary.md), [VARCHAR](../../../data-types/string-data-types/varchar.md), [BLOB](../../../data-types/string-data-types/blob.md) and [TEXT](../../../data-types/string-data-types/text.md) data types.
+The `COMPRESSED` row format is similar to the `COMPACT` row format, but tables using the `COMPRESSED` row format can store even more data on overflow pages than tables using the `COMPACT` row format. This results in more efficient data storage than tables using the `COMPACT` row format, especially for tables containing columns using the [VARBINARY](../../../../reference/data-types/string-data-types/varbinary.md), [VARCHAR](../../../../reference/data-types/string-data-types/varchar.md), [BLOB](../../../../reference/data-types/string-data-types/blob.md) and [TEXT](../../../../reference/data-types/string-data-types/text.md) data types.
 
 The `COMPRESSED` row format also supports compression of all data and index pages.
 
@@ -134,7 +134,7 @@ See [InnoDB COMPRESSED Row Format](innodb-compressed-row-format.md) for more inf
 
 Several factors help determine the maximum row size of an InnoDB table.
 
-First, MariaDB enforces a 65,535 byte limit on a table's maximum row size. The total size of a table's [BLOB](../../../data-types/string-data-types/blob.md) and [TEXT](../../../data-types/string-data-types/text.md) columns do not count towards this limit. Only the pointers for a table's [BLOB](../../../data-types/string-data-types/blob.md) and [TEXT](../../../data-types/string-data-types/text.md) columns count towards this limit. MariaDB enforces this limit for all storage engines, so this limit also applies to InnoDB tables. Therefore, this limit is the absolute maximum row size for an InnoDB table.
+First, MariaDB enforces a 65,535 byte limit on a table's maximum row size. The total size of a table's [BLOB](../../../../reference/data-types/string-data-types/blob.md) and [TEXT](../../../../reference/data-types/string-data-types/text.md) columns do not count towards this limit. Only the pointers for a table's [BLOB](../../../../reference/data-types/string-data-types/blob.md) and [TEXT](../../../../reference/data-types/string-data-types/text.md) columns count towards this limit. MariaDB enforces this limit for all storage engines, so this limit also applies to InnoDB tables. Therefore, this limit is the absolute maximum row size for an InnoDB table.
 
 If you try to create a table that exceeds MariaDB's global limit on a table's maximum row size, then you will see an error like this:
 
@@ -176,9 +176,9 @@ TEXT or BLOB may help. In current row format, BLOB prefix of 0 bytes is stored i
 
 These messages are raised in the following cases:
 
-* If [InnoDB strict mode](../innodb-strict-mode.md) is enabled and if a [DDL](../../../sql-statements/data-definition/) statement is executed that touches the table, such as [CREATE TABLE](../../../sql-statements/data-definition/create/create-table.md) or [ALTER TABLE](../../../sql-statements/data-definition/alter/alter-table.md), then InnoDB will raise an error with this message
-* If [InnoDB strict mode](../innodb-strict-mode.md) is disabled and if a [DDL](../../../sql-statements/data-definition/) statement is executed that touches the table, such as [CREATE TABLE](../../../sql-statements/data-definition/create/create-table.md)`or [ALTER TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md)`, then InnoDB will raise a warning with this message.
-* Regardless of whether [InnoDB strict mode](../innodb-strict-mode.md) is enabled, if a [DML](../../../sql-statements/data-manipulation/) statement is executed that attempts to write a row that the table's InnoDB row format can't store, then InnoDB will raise an error with this message.
+* If [InnoDB strict mode](../innodb-strict-mode.md) is enabled and if a [DDL](../../../../reference/sql-statements/data-definition/) statement is executed that touches the table, such as [CREATE TABLE](../../../../reference/sql-statements/data-definition/create/create-table.md) or [ALTER TABLE](../../../../reference/sql-statements/data-definition/alter/alter-table.md), then InnoDB will raise an error with this message
+* If [InnoDB strict mode](../innodb-strict-mode.md) is disabled and if a [DDL](../../../../reference/sql-statements/data-definition/) statement is executed that touches the table, such as [CREATE TABLE](../../../../reference/sql-statements/data-definition/create/create-table.md)`or [ALTER TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md)`, then InnoDB will raise a warning with this message.
+* Regardless of whether [InnoDB strict mode](../innodb-strict-mode.md) is enabled, if a [DML](../../../../reference/sql-statements/data-manipulation/) statement is executed that attempts to write a row that the table's InnoDB row format can't store, then InnoDB will raise an error with this message.
 
 For information on how to solve the problem, see [Troubleshooting Row Size Too Large Errors with InnoDB](troubleshooting-row-size-too-large-errors-with-innodb.md).
 

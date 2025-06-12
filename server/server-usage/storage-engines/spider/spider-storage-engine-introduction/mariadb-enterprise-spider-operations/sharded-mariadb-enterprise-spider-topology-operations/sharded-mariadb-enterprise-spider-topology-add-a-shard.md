@@ -8,7 +8,7 @@ In a Sharded MariaDB Enterprise Spider topology, new shards can be added using t
 
 Each data node requires a user account that the Spider Node uses to connect.
 
-On the Data Node hosting the new shard, create the Spider user account for the Spider Node using the [CREATE USER](../../../../../sql-statements/account-management-sql-statements/create-user.md) statement:
+On the Data Node hosting the new shard, create the Spider user account for the Spider Node using the [CREATE USER](../../../../../../reference/sql-statements/account-management-sql-statements/create-user.md) statement:
 
 ```sql
 CREATE USER spider_user@192.0.2.1 IDENTIFIED BY "password";
@@ -28,7 +28,7 @@ $ mariadb --user spider_user --host 192.0.2.2 --password
 
 The Spider Node requires connection details for each Data Node.
 
-On the Spider Node, create a server object to configure the connection details for the Data Node hosting the new shard using the [CREATE SERVER](../../../../../sql-statements/data-definition/create/create-server.md) statement:
+On the Spider Node, create a server object to configure the connection details for the Data Node hosting the new shard using the [CREATE SERVER](../../../../../../reference/sql-statements/data-definition/create/create-server.md) statement:
 
 ```sql
 CREATE SERVER southern_server
@@ -44,7 +44,7 @@ OPTIONS (
 
 The Data Node runs MariaDB Enterprise Server, so the `FOREIGN DATA WRAPPER` is set to mariadb.
 
-Using a server object for connection details is optional. Alternatively, the connection details for the Data Node can be specified in the `COMMENT` table option of the [CREATE TABLE](../../../../../sql-statements/data-definition/create/create-table.md) statement when creating the Spider Table.
+Using a server object for connection details is optional. Alternatively, the connection details for the Data Node can be specified in the `COMMENT` table option of the [CREATE TABLE](../../../../../../reference/sql-statements/data-definition/create/create-table.md) statement when creating the Spider Table.
 
 ## Create the Data Table
 
@@ -91,7 +91,7 @@ GRANT ALL PRIVILEGES ON southern_sales.invoices TO 'spider_user'@'192.0.2.1';
 
 ### Privileges for Spider BKA Mode
 
-By default, the Spider user also requires the [CREATE TEMPORARY TABLES](../../../../../sql-statements/data-definition/create/create-table.md) privilege on the database containing the Data Table. The [CREATE TEMPORARY TABLES](../../../../../sql-statements/data-definition/create/create-table.md) privilege is required, because Spider uses temporary tables to optimize read queries when Spider BKA Mode is 1.
+By default, the Spider user also requires the [CREATE TEMPORARY TABLES](../../../../../../reference/sql-statements/data-definition/create/create-table.md) privilege on the database containing the Data Table. The [CREATE TEMPORARY TABLES](../../../../../../reference/sql-statements/data-definition/create/create-table.md) privilege is required, because Spider uses temporary tables to optimize read queries when Spider BKA Mode is 1.
 
 Spider BKA Mode is configured using the following methods:
 
@@ -100,7 +100,7 @@ Spider BKA Mode is configured using the following methods:
 
 The default spider\_bka\_mode value is -1, and the implicit Spider Table value is 1, so the default [Spider BKA Mode](../../../spider-system-variables.md#spider_bka_mode) is 1.
 
-On the Data Node hosting the new shard, grant the Spider user the [CREATE TEMPORARY TABLES](../../../../../sql-statements/data-definition/create/create-table.md) privilege on the database:
+On the Data Node hosting the new shard, grant the Spider user the [CREATE TEMPORARY TABLES](../../../../../../reference/sql-statements/data-definition/create/create-table.md) privilege on the database:
 
 ```sql
 GRANT CREATE TEMPORARY TABLES ON southern_sales.* TO 'spider_user'@'192.0.2.1';
@@ -121,7 +121,7 @@ ALTER TABLE spider_sharded_sales.invoices
 
 ## Test Read Operations
 
-On the Spider Node, read from the Spider Table using a [SELECT](../../../../../sql-statements/data-manipulation/selecting-data/select.md) statement:
+On the Spider Node, read from the Spider Table using a [SELECT](../../../../../../reference/sql-statements/data-manipulation/selecting-data/select.md) statement:
 
 ```sql
 SELECT * FROM spider_sharded_sales.invoices;

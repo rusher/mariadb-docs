@@ -17,7 +17,7 @@ If another connection is using the table, a [metadata lock](../../transactions/m
 
 See [ALTER TABLE](../alter/alter-table.md).
 
-Another shortcut, [CREATE INDEX](../../../sql-statements/data-definition/create/create-index.md), allows the creation of an index.
+Another shortcut, [CREATE INDEX](../create/create-index.md), allows the creation of an index.
 
 To remove the primary key, `PRIMARY` must be specified as index\_name. Note that [the quotes](../../../sql-structure/sql-language-structure/identifier-qualifiers.md) are necessary, because `PRIMARY` is a keyword.
 
@@ -29,7 +29,7 @@ Executing the `DROP INDEX` statement requires the `[INDEX](../../account-managem
 
 Online DDL is used by default with InnoDB, when the drop index operation supports it.
 
-See [InnoDB Online DDL Overview](../../../storage-engines/innodb/innodb-online-ddl/innodb-online-ddl-overview.md) for more information on online DDL with [InnoDB](../../../storage-engines/innodb/).
+See [InnoDB Online DDL Overview](../../../../server-usage/storage-engines/innodb/innodb-online-ddl/innodb-online-ddl-overview.md) for more information on online DDL with [InnoDB](../../../../server-usage/storage-engines/innodb/).
 
 ## DROP INDEX IF EXISTS ...
 
@@ -47,7 +47,7 @@ that support the new progress reporting protocol. For example, if you were using
 ## See Also
 
 * [Getting Started with Indexes](../../../../../kb/en/getting-started-with-indexes/)
-* [CREATE INDEX](../../../sql-statements/data-definition/create/create-index.md)
+* [CREATE INDEX](../create/create-index.md)
 * [ALTER TABLE](../alter/alter-table.md)
 
 GPLv2 fill\_help\_tables.sql

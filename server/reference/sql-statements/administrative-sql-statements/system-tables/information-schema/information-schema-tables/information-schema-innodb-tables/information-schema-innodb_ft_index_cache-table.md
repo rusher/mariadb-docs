@@ -2,7 +2,7 @@
 
 The [Information Schema](../../) `INNODB_FT_INDEX_CACHE` table contains information about rows that have recently been inserted into an InnoDB [fulltext index](../../../../../../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/full-text-indexes/). To avoid re-organizing the fulltext index each time a change is made, which would be very expensive, new changes are stored separately and only integrated when an [OPTIMIZE TABLE](../../../../../../../ha-and-performance/optimization-and-tuning/optimizing-tables/optimize-table.md) is run.
 
-The `SUPER` [privilege](../../../../../account-management-sql-statements/grant.md) is required to view the table, and it also requires the [innodb\_ft\_aux\_table](../../../../../../storage-engines/innodb/innodb-system-variables.md) system variable to be set.
+The `SUPER` [privilege](../../../../../account-management-sql-statements/grant.md) is required to view the table, and it also requires the [innodb\_ft\_aux\_table](../../../../../../../server-usage/storage-engines/innodb/innodb-system-variables.md) system variable to be set.
 
 It has the following columns:
 
@@ -16,7 +16,7 @@ It has the following columns:
 | DOC\_ID        | Document ID of the newly added row, either an appropriate ID column or an internal InnoDB value.                                  |
 | POSITION       | Position of this word instance within the DOC\_ID, as an offset added to the previous POSITION instance.                          |
 
-Note that for `OPTIMIZE TABLE` to process InnoDB fulltext index data, the [innodb\_optimize\_fulltext\_only](../../../../../../storage-engines/innodb/innodb-system-variables.md) system variable needs to be set to `1`. When this is done, and an `OPTIMIZE TABLE` statement run, the `INNODB_FT_INDEX_CACHE` table will be emptied, and the [INNODB\_FT\_INDEX\_TABLE](information-schema-innodb_ft_index_table-table.md) table will be updated.
+Note that for `OPTIMIZE TABLE` to process InnoDB fulltext index data, the [innodb\_optimize\_fulltext\_only](../../../../../../../server-usage/storage-engines/innodb/innodb-system-variables.md) system variable needs to be set to `1`. When this is done, and an `OPTIMIZE TABLE` statement run, the `INNODB_FT_INDEX_CACHE` table will be emptied, and the [INNODB\_FT\_INDEX\_TABLE](information-schema-innodb_ft_index_table-table.md) table will be updated.
 
 ## Examples
 

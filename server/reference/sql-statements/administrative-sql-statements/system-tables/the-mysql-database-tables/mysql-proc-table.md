@@ -2,7 +2,7 @@
 
 The `mysql.proc` table contains information about [stored procedures](../../../../../server-usage/stored-routines/stored-procedures/) and [stored functions](../../../../../server-usage/stored-routines/stored-functions/). It contains similar information to that stored in the [INFORMATION SCHEMA.ROUTINES](../information-schema/information-schema-tables/information-schema-routines-table.md) table.
 
-This table uses the [Aria](../../../../storage-engines/aria/) storage engine.
+This table uses the [Aria](../../../../../server-usage/storage-engines/aria/) storage engine.
 
 The `mysql.proc` table contains the following fields:
 
@@ -34,7 +34,7 @@ The `mysql.proc` table contains the following fields:
 
 ## See Also
 
-* [Stored Procedure Internals](broken-reference)
+* [Stored Procedure Internals](broken-reference/)
 * [MySQL to MariaDB migration: handling privilege table differences when using mysqldump](https://mariadb.com/blog/mysql-mariadb-migration-handling-privilege-table-differences-when-using-mysqldump)
 
 CC BY-SA / Gnu FDL

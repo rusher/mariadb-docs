@@ -36,7 +36,7 @@ If you try to insert a new row into a MERGE table with INSERT\_METHOD=NO, you wi
 ERROR 1036 (HY000): Table 'tbl_name' is read only
 ```
 
-It is possible to build a MERGE table on MyISAM tables which have one or more [virtual columns](../sql-statements/data-definition/create/generated-columns.md). MERGE itself does not support virtual columns, thus such columns will be seen as regular columns. The data types and sizes will still need to be identical, and they cannot be NOT NULL.
+It is possible to build a MERGE table on MyISAM tables which have one or more [virtual columns](../../reference/sql-statements/data-definition/create/generated-columns.md). MERGE itself does not support virtual columns, thus such columns will be seen as regular columns. The data types and sizes will still need to be identical, and they cannot be NOT NULL.
 
 ## Examples
 

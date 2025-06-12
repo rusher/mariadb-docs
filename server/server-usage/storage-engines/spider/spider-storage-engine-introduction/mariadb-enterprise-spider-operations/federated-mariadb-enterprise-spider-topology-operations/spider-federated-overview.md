@@ -4,13 +4,13 @@
 
 Choose an operation for the Sharded MariaDB Enterprise Spider topology:
 
-| Operation                                                                                                                                                                                                                                                                   | Description                                               |
-| --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------- |
-| Operation                                                                                                                                                                                                                                                                   | Description                                               |
-| [Backup and Restore](../../../../../../reference/storage-engines/spider/spider-storage-engine-introduction/mariadb-enterprise-spider-operations/federated-mariadb-enterprise-spider-topology-operations/federated-mariadb-enterprise-spider-topology-backup-and-restore.md) | How to create a new backup or restore an existing backup. |
-| [Migrate Tables](../../../../../../reference/storage-engines/spider/spider-storage-engine-introduction/mariadb-enterprise-spider-operations/federated-mariadb-enterprise-spider-topology-operations/federated-mariadb-enterprise-spider-topology-migrate-tables.md)         | How to update the character set or collation.             |
-| [Update Character Set or Collation](spider-federated-overview.md#update-character-sets-and-collations)                                                                                                                                                                      | How to update the character set or collation.             |
-| [Update Connection Options](spider-federated-overview.md#update-connection-options)                                                                                                                                                                                         | How to update the connection options for a Data Node.     |
+| Operation                                                                                              | Description                                               |
+| ------------------------------------------------------------------------------------------------------ | --------------------------------------------------------- |
+| Operation                                                                                              | Description                                               |
+| [Backup and Restore](federated-mariadb-enterprise-spider-topology-backup-and-restore.md)               | How to create a new backup or restore an existing backup. |
+| [Migrate Tables](federated-mariadb-enterprise-spider-topology-migrate-tables.md)                       | How to update the character set or collation.             |
+| [Update Character Set or Collation](spider-federated-overview.md#update-character-sets-and-collations) | How to update the character set or collation.             |
+| [Update Connection Options](spider-federated-overview.md#update-connection-options)                    | How to update the connection options for a Data Node.     |
 
 ## Update Character Sets and Collations
 

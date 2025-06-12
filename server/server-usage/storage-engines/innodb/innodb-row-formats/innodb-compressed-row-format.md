@@ -2,7 +2,7 @@
 
 An alternative (and usually superior) way to compress InnoDB tables is by using [InnoDB Page Compression](../innodb-page-compression.md). See [Comparison with the COMPRESSED Row Format](../innodb-page-compression.md#comparison-with-the-compressed-row-format).
 
-The `COMPRESSED` row format is similar to the `COMPACT` row format, but tables using the `COMPRESSED` row format can store even more data on overflow pages than tables using the `COMPACT` row format. This results in more efficient data storage than tables using the `COMPACT` row format, especially for tables containing columns using the [VARBINARY](../../../data-types/string-data-types/varbinary.md), [VARCHAR](../../../data-types/string-data-types/varchar.md), [BLOB](../../../data-types/string-data-types/blob.md) and [TEXT](../../../data-types/string-data-types/text.md) data types.
+The `COMPRESSED` row format is similar to the `COMPACT` row format, but tables using the `COMPRESSED` row format can store even more data on overflow pages than tables using the `COMPACT` row format. This results in more efficient data storage than tables using the `COMPACT` row format, especially for tables containing columns using the [VARBINARY](../../../../reference/data-types/string-data-types/varbinary.md), [VARCHAR](../../../../reference/data-types/string-data-types/varchar.md), [BLOB](../../../../reference/data-types/string-data-types/blob.md) and [TEXT](../../../../reference/data-types/string-data-types/text.md) data types.
 
 The `COMPRESSED` row format also supports compression of all data and index pages.
 
@@ -36,16 +36,16 @@ The limit for indexing column values depends on the [innodb\_page\_size](../../.
 
 ## Using the `COMPRESSED` Row Format
 
-The Compressed row format does not efficiently use the InnoDB buffer pool, so it is not the recommended way to achieve InnoDB table compression. For more information about how to compress InnoDB tables, see [Configure InnoDB Page Compression](configure-innodb-page-compression/).
+The Compressed row format does not efficiently use the InnoDB buffer pool, so it is not the recommended way to achieve InnoDB table compression. For more information about how to compress InnoDB tables, see [Configure InnoDB Page Compression](../../../../reference/storage-engines/innodb/innodb-row-formats/configure-innodb-page-compression/).
 
-An InnoDB table that uses the `COMPRESSED` row format can be created by setting the [ROW\_FORMAT](../../../sql-statements/data-definition/create/create-table.md#row_format) table option to `COMPRESSED` and by setting the [KEY\_BLOCK\_SIZE](../../../sql-statements/data-definition/create/create-table.md#key_block_size) table option to one of the following values in a [CREATE TABLE](../../../sql-statements/data-definition/create/create-table.md) or [ALTER TABLE](../../../sql-statements/data-definition/alter/alter-table.md) statement, where the units are in `KB`.
+An InnoDB table that uses the `COMPRESSED` row format can be created by setting the [ROW\_FORMAT](../../../../reference/sql-statements/data-definition/create/create-table.md#row_format) table option to `COMPRESSED` and by setting the [KEY\_BLOCK\_SIZE](../../../../reference/sql-statements/data-definition/create/create-table.md#key_block_size) table option to one of the following values in a [CREATE TABLE](../../../../reference/sql-statements/data-definition/create/create-table.md) or [ALTER TABLE](../../../../reference/sql-statements/data-definition/alter/alter-table.md) statement, where the units are in `KB`.
 
 `16k` is the default value of the [innodb\_page\_size](../innodb-system-variables.md#innodb_page_size) system variable, so using `16` will usually result in minimal compression unless one of the following is true:
 
-* The table has many columns that can be stored in overflow pages, such as columns that use the [VARBINARY](../../../data-types/string-data-types/varbinary.md), [VARCHAR](../../../data-types/string-data-types/varchar.md), [BLOB](../../../data-types/string-data-types/blob.md) and [TEXT](../../../data-types/string-data-types/text.md) data types.
+* The table has many columns that can be stored in overflow pages, such as columns that use the [VARBINARY](../../../../reference/data-types/string-data-types/varbinary.md), [VARCHAR](../../../../reference/data-types/string-data-types/varchar.md), [BLOB](../../../../reference/data-types/string-data-types/blob.md) and [TEXT](../../../../reference/data-types/string-data-types/text.md) data types.
 * The server is using a non-default [innodb\_page\_size](../innodb-system-variables.md#innodb_page_size) value that is greater than `16k`.
 
-The value of the [innodb\_page\_size](../innodb-system-variables.md#innodb_page_size) system variable can be set to `32k` and `64k`. This is especially useful because the larger page size permits more columns using the [VARBINARY](../../../data-types/string-data-types/varbinary.md), [VARCHAR](../../../data-types/string-data-types/varchar.md), [BLOB](../../../data-types/string-data-types/blob.md) and [TEXT](../../../data-types/string-data-types/text.md) data types. Regardless, even when the value of the [innodb\_page\_size](../innodb-system-variables.md#innodb_page_size) system variable is set to some value higher than `16k`, `16` is still the maximum value for the [KEY\_BLOCK\_SIZE](../../../sql-statements/data-definition/create/create-table.md#key_block_size) table option for InnoDB tables using the `COMPRESSED` row format.
+The value of the [innodb\_page\_size](../innodb-system-variables.md#innodb_page_size) system variable can be set to `32k` and `64k`. This is especially useful because the larger page size permits more columns using the [VARBINARY](../../../../reference/data-types/string-data-types/varbinary.md), [VARCHAR](../../../../reference/data-types/string-data-types/varchar.md), [BLOB](../../../../reference/data-types/string-data-types/blob.md) and [TEXT](../../../../reference/data-types/string-data-types/text.md) data types. Regardless, even when the value of the [innodb\_page\_size](../innodb-system-variables.md#innodb_page_size) system variable is set to some value higher than `16k`, `16` is still the maximum value for the [KEY\_BLOCK\_SIZE](../../../../reference/sql-statements/data-definition/create/create-table.md#key_block_size) table option for InnoDB tables using the `COMPRESSED` row format.
 
 The `COMPRESSED` row format cannot be set as the default row format with the [innodb\_default\_row\_format](../innodb-system-variables.md#innodb_default_row_format) system variable.
 
@@ -55,7 +55,7 @@ In earlier versions, the `COMPRESSED` row format is also only supported if the t
 
 It is also recommended to set the [innodb\_strict\_mode](../innodb-system-variables.md#innodb_strict_mode) system variable to `ON` when using this row format.
 
-InnoDB automatically uses the `COMPRESSED` row format for a table if the [KEY\_BLOCK\_SIZE](../../../sql-statements/data-definition/create/create-table.md#key_block_size) table option is set to some value in a [CREATE TABLE](../../../sql-statements/data-definition/create/create-table.md) or [ALTER TABLE](../../../sql-statements/data-definition/alter/alter-table.md) statement. For example:
+InnoDB automatically uses the `COMPRESSED` row format for a table if the [KEY\_BLOCK\_SIZE](../../../../reference/sql-statements/data-definition/create/create-table.md#key_block_size) table option is set to some value in a [CREATE TABLE](../../../../reference/sql-statements/data-definition/create/create-table.md) or [ALTER TABLE](../../../../reference/sql-statements/data-definition/alter/alter-table.md) statement. For example:
 
 ```sql
 SET SESSION innodb_strict_mode=ON;
@@ -70,7 +70,7 @@ CREATE TABLE tab (
 ) ENGINE=InnoDB KEY_BLOCK_SIZE=4;
 ```
 
-If the [KEY\_BLOCK\_SIZE](../../../sql-statements/data-definition/create/create-table.md#key_block_size) table option is **not** set to some value, but the [ROW\_FORMAT](../../../sql-statements/data-definition/create/create-table.md#row_format) table option is set to `COMPRESSED` in a [CREATE TABLE](../../../sql-statements/data-definition/create/create-table.md) or [ALTER TABLE](../../../sql-statements/data-definition/alter/alter-table.md) statement, then InnoDB uses a default value of `8` for the [KEY\_BLOCK\_SIZE](../../../sql-statements/data-definition/create/create-table.md#key_block_size) table option. For example:
+If the [KEY\_BLOCK\_SIZE](../../../../reference/sql-statements/data-definition/create/create-table.md#key_block_size) table option is **not** set to some value, but the [ROW\_FORMAT](../../../../reference/sql-statements/data-definition/create/create-table.md#row_format) table option is set to `COMPRESSED` in a [CREATE TABLE](../../../../reference/sql-statements/data-definition/create/create-table.md) or [ALTER TABLE](../../../../reference/sql-statements/data-definition/alter/alter-table.md) statement, then InnoDB uses a default value of `8` for the [KEY\_BLOCK\_SIZE](../../../../reference/sql-statements/data-definition/create/create-table.md#key_block_size) table option. For example:
 
 ```sql
 SET SESSION innodb_strict_mode=ON;
@@ -109,7 +109,7 @@ CREATE TABLE hq_sales.invoices (
 $ mariadb --user=root
 ```
 
-2. Confirm that the default storage engine is InnoDB by checking the [default\_storage\_engine](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#default_storage_engine) system variable using the [SHOW SESSION VARIABLES](../../../sql-statements/administrative-sql-statements/show/show-variables.md) statement:
+2. Confirm that the default storage engine is InnoDB by checking the [default\_storage\_engine](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#default_storage_engine) system variable using the [SHOW SESSION VARIABLES](../../../../reference/sql-statements/administrative-sql-statements/show/show-variables.md) statement:
 
 ```sql
 SHOW SESSION VARIABLES
@@ -124,7 +124,7 @@ SHOW SESSION VARIABLES
 +------------------------+--------+
 ```
 
-3. Create the table using the [CREATE TABLE](../../../sql-statements/data-definition/create/create-table.md) statement, and specify the Compressed row format using the `ROW_FORMAT` table option:
+3. Create the table using the [CREATE TABLE](../../../../reference/sql-statements/data-definition/create/create-table.md) statement, and specify the Compressed row format using the `ROW_FORMAT` table option:
 
 ```sql
 CREATE TABLE hq_sales.invoices (
@@ -138,7 +138,7 @@ CREATE TABLE hq_sales.invoices (
 ) ROW_FORMAT = Compressed;
 ```
 
-4. Confirm that the table uses the Compressed row format with an 8 KB block size by querying the [information\_schema.INNODB\_SYS\_TABLES](../../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_sys_tables-table.md) table:
+4. Confirm that the table uses the Compressed row format with an 8 KB block size by querying the [information\_schema.INNODB\_SYS\_TABLES](../../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_sys_tables-table.md) table:
 
 ```sql
 SELECT NAME, ROW_FORMAT, ZIP_PAGE_SIZE
@@ -178,7 +178,7 @@ CREATE TABLE hq_sales.invoices (
 $ mariadb --user=root
 ```
 
-2. Confirm that the default storage engine is InnoDB by checking the [default\_storage\_engine](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#default_storage_engine) system variable using the [SHOW SESSION VARIABLES](../../../sql-statements/administrative-sql-statements/show/show-variables.md) statement:
+2. Confirm that the default storage engine is InnoDB by checking the [default\_storage\_engine](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#default_storage_engine) system variable using the [SHOW SESSION VARIABLES](../../../../reference/sql-statements/administrative-sql-statements/show/show-variables.md) statement:
 
 ```
 SHOW SESSION VARIABLES
@@ -207,7 +207,7 @@ CREATE TABLE hq_sales.invoices (
 ) KEY_BLOCK_SIZE = 4;
 ```
 
-4. Confirm that the table uses the Compressed row format with an 8 KB block size by querying the [information\_schema.INNODB\_SYS\_TABLES](../../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_sys_tables-table.md) table:
+4. Confirm that the table uses the Compressed row format with an 8 KB block size by querying the [information\_schema.INNODB\_SYS\_TABLES](../../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_sys_tables-table.md) table:
 
 ```sql
 SELECT NAME, ROW_FORMAT, ZIP_PAGE_SIZE
@@ -239,9 +239,9 @@ Before writing a compressed page into a data file, InnoDB writes it into the [re
 
 The following `INFORMATION_SCHEMA` tables can be used to monitor the performances of InnoDB compressed tables:
 
-* [INNODB\_CMP and INNODB\_CMP\_RESET](../../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_cmp-and-innodb_cmp_reset-tables.md)
-* [INNODB\_CMP\_PER\_INDEX and INNODB\_CMP\_PER\_INDEX\_RESET](../../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb-tables-information-schema-innodb_cmp_per_index-an.md)
-* [INNODB\_CMPMEM and INNODB\_CMPMEM\_RESET](../../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_cmpmem-and-innodb_cmpmem_reset-tables.md)
+* [INNODB\_CMP and INNODB\_CMP\_RESET](../../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_cmp-and-innodb_cmp_reset-tables.md)
+* [INNODB\_CMP\_PER\_INDEX and INNODB\_CMP\_PER\_INDEX\_RESET](../../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb-tables-information-schema-innodb_cmp_per_index-an.md)
+* [INNODB\_CMPMEM and INNODB\_CMPMEM\_RESET](../../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_cmpmem-and-innodb_cmpmem_reset-tables.md)
 
 ## Index Prefixes with the `COMPRESSED` Row Format
 
@@ -251,19 +251,19 @@ The `COMPRESSED` row format supports index prefixes up to 3072 bytes. In [MariaD
 
 All InnoDB row formats can store certain kinds of data in overflow pages. This allows for the maximum row size of an InnoDB table to be larger than the maximum amount of data that can be stored in the row's main data page. See [Maximum Row Size](innodb-compressed-row-format.md#maximum-row-size) for more information about the other factors that can contribute to the maximum row size for InnoDB tables.
 
-In the `COMPRESSED` row format variable-length columns, such as columns using the [VARBINARY](../../../data-types/string-data-types/varbinary.md), [VARCHAR](../../../data-types/string-data-types/varchar.md), [BLOB](../../../data-types/string-data-types/blob.md) and [TEXT](../../../data-types/string-data-types/text.md) data types, can be completely stored in overflow pages.
+In the `COMPRESSED` row format variable-length columns, such as columns using the [VARBINARY](../../../../reference/data-types/string-data-types/varbinary.md), [VARCHAR](../../../../reference/data-types/string-data-types/varchar.md), [BLOB](../../../../reference/data-types/string-data-types/blob.md) and [TEXT](../../../../reference/data-types/string-data-types/text.md) data types, can be completely stored in overflow pages.
 
 InnoDB only considers using overflow pages if the table's row size is greater than half of [innodb\_page\_size](../innodb-system-variables.md#innodb_page_size). If the row size is greater than this, then InnoDB chooses variable-length columns to be stored on overflow pages until the row size is less than half of [innodb\_page\_size](../innodb-system-variables.md#innodb_page_size).
 
-For [BLOB](../../../data-types/string-data-types/blob.md) and [TEXT](../../../data-types/string-data-types/text.md) columns, only values longer than 40 bytes are considered for storage on overflow pages. For [VARBINARY](../../../data-types/string-data-types/varbinary.md) and [VARCHAR](../../../data-types/string-data-types/varchar.md) columns, only values longer than 255 bytes are considered for storage on overflow pages. Bytes that are stored to track a value's length do not count towards these limits. These limits are only based on the length of the actual column's data.
+For [BLOB](../../../../reference/data-types/string-data-types/blob.md) and [TEXT](../../../../reference/data-types/string-data-types/text.md) columns, only values longer than 40 bytes are considered for storage on overflow pages. For [VARBINARY](../../../../reference/data-types/string-data-types/varbinary.md) and [VARCHAR](../../../../reference/data-types/string-data-types/varchar.md) columns, only values longer than 255 bytes are considered for storage on overflow pages. Bytes that are stored to track a value's length do not count towards these limits. These limits are only based on the length of the actual column's data.
 
 These limits differ from the limits for the `COMPACT` row format, where the limit is 767 bytes for all types.
 
-Fixed-length columns greater than 767 bytes are encoded as variable-length columns, so they can also be stored in overflow pages if the table's row size is greater than half of [innodb\_page\_size](../innodb-system-variables.md#innodb_page_size). Even though a column using the [CHAR](../../../data-types/string-data-types/char.md) data type can hold at most 255 characters, a [CHAR](../../../data-types/string-data-types/char.md) column can still exceed 767 bytes in some cases. For example, a `char(255)` column can exceed 767 bytes if the [character set](../../../data-types/string-data-types/character-sets/) is `utf8mb4`.
+Fixed-length columns greater than 767 bytes are encoded as variable-length columns, so they can also be stored in overflow pages if the table's row size is greater than half of [innodb\_page\_size](../innodb-system-variables.md#innodb_page_size). Even though a column using the [CHAR](../../../../reference/data-types/string-data-types/char.md) data type can hold at most 255 characters, a [CHAR](../../../../reference/data-types/string-data-types/char.md) column can still exceed 767 bytes in some cases. For example, a `char(255)` column can exceed 767 bytes if the [character set](../../../../reference/data-types/string-data-types/character-sets/) is `utf8mb4`.
 
 If a column is chosen to be stored on overflow pages, then the entire value of the column is stored on overflow pages, and only a 20-byte pointer to the column's first overflow page is stored on the main page. Each overflow page is the size of [innodb\_page\_size](../innodb-system-variables.md#innodb_page_size). If a column is too large to be stored on a single overflow page, then it is stored on multiple overflow pages. Each overflow page contains part of the data and a 20-byte pointer to the next overflow page, if a next page exists.
 
-This behavior differs from the behavior of the `COMPACT` row format, which always stores the column prefix on the main page. This allows tables using the `COMPRESSED` row format to contain a high number of columns using the [VARBINARY](../../../data-types/string-data-types/varbinary.md), [VARCHAR](../../../data-types/string-data-types/varchar.md), [BLOB](../../../data-types/string-data-types/blob.md) and [TEXT](../../../data-types/string-data-types/text.md) data types.
+This behavior differs from the behavior of the `COMPACT` row format, which always stores the column prefix on the main page. This allows tables using the `COMPRESSED` row format to contain a high number of columns using the [VARBINARY](../../../../reference/data-types/string-data-types/varbinary.md), [VARCHAR](../../../../reference/data-types/string-data-types/varchar.md), [BLOB](../../../../reference/data-types/string-data-types/blob.md) and [TEXT](../../../../reference/data-types/string-data-types/text.md) data types.
 
 ## Read-Only
 

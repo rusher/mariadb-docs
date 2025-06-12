@@ -13,14 +13,14 @@ To get a functional MariaDB - MindsDB installation, one needs to install the fol
 
 MindsDB connects to MariaDB Server via a regular user to setup a dedicated database called `mindsdb`. Which user will be used is specified within MindsDB's [configuration file](https://docs.mindsdb.com/sql/create/databases/?h=maria#mariadb).
 
-For example, if MindsDB is installed locally, one can create a user called `mindsdb@localhost`. MindsDB only authenticates via the [mysql\_native\_password](../plugins/authentication-plugins/authentication-plugin-mysql_native_password.md) plugin, hence one must set a password for the user:
+For example, if MindsDB is installed locally, one can create a user called `mindsdb@localhost`. MindsDB only authenticates via the [mysql\_native\_password](../../reference/plugins/authentication-plugins/authentication-plugin-mysql_native_password.md) plugin, hence one must set a password for the user:
 
 ```sql
 CREATE USER mindsdb@localhost;
 SET PASSWORD for mindsdb@localhost=PASSWORD("password");
 ```
 
-The user must be granted the global [FILE](../sql-statements/account-management-sql-statements/grant.md#file) privilege and all privileges on the `mindsdb` database.
+The user must be granted the global [FILE](../../reference/sql-statements/account-management-sql-statements/grant.md#file) privilege and all privileges on the `mindsdb` database.
 
 ```sql
 GRANT FILE on *.* to mindsdb@localhost;

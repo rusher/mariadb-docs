@@ -28,7 +28,7 @@ SELECT * FROM res;
 EOF
 ```
 
-Or if you are using a [SERVER](../../sql-statements/data-definition/create/create-server.md):
+Or if you are using a [SERVER](../../../reference/sql-statements/data-definition/create/create-server.md):
 
 ```sql
 SELECT spider_direct_sql( 
@@ -59,7 +59,7 @@ SELECT spider_bg_direct_sql( 'SELECT count(*) ,min(NOW(6)),min(DATABASE())) FROM
 
 The Spider Handler Socket support has been removed, see [MDEV-26858](https://jira.mariadb.org/browse/MDEV-26858).
 
-Check that [Handler Socket](../../sql-structure/nosql/handlersocket/) is running on the backend nodes
+Check that [Handler Socket](../../../reference/sql-structure/nosql/handlersocket/) is running on the backend nodes
 
 ```
 :~# backend2 -e "show variables like 'handler%'"
@@ -102,7 +102,7 @@ SELECT spider_direct_sql('1\t=\t1\t2\t100000\t0','res', 'host "192.168.0.202", t
 
 **MariaDB starting with** [**10.8.1**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-8-series/mariadb-1081-release-notes)
 
-The UDF spider\_copy\_tables relies on Spider's high availability feature, which has been deprecated ([MDEV-28479](https://jira.mariadb.org/browse/MDEV-28479)), and will be deleted. Please use other high availability solutions like [replication](broken-reference) or [galera-cluster](../../../../kb/en/galera-cluster/).
+The UDF spider\_copy\_tables relies on Spider's high availability feature, which has been deprecated ([MDEV-28479](https://jira.mariadb.org/browse/MDEV-28479)), and will be deleted. Please use other high availability solutions like [replication](../../../reference/storage-engines/spider/broken-reference/) or [galera-cluster](../../../../kb/en/galera-cluster/).
 
 The UDF function [spider\_copy\_tables](spider-functions/spider_copy_tables.md) is available for copying table data from the source link ID to the destination link ID list without stopping your service for copying
 
@@ -150,7 +150,7 @@ A number of new [status variables](../../../ha-and-performance/optimization-and-
 
 ## Information Schema Tables
 
-* A new [Information Schema](../../sql-statements/administrative-sql-statements/system-tables/information-schema/) table is installed - [SPIDER\_ALLOC\_MEM](../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-spider_alloc_mem-table.md).
+* A new [Information Schema](../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/) table is installed - [SPIDER\_ALLOC\_MEM](../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-spider_alloc_mem-table.md).
 
 ```
 +-------------------+---------------------+------+-----+---------+-------+
@@ -171,9 +171,9 @@ From [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-commu
 
 ## Performance Schema
 
-The [Performance schema](../../sql-statements/administrative-sql-statements/system-tables/performance-schema/) is commonly used to troubleshoot issues that consume time inside your workload. The Performance schema should not be activated for servers that are experimenting constant heavy load, but most of time it is acceptable to lose 5% to 20% additional CPU to keep track of server internals execution.
+The [Performance schema](../../../reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/) is commonly used to troubleshoot issues that consume time inside your workload. The Performance schema should not be activated for servers that are experimenting constant heavy load, but most of time it is acceptable to lose 5% to 20% additional CPU to keep track of server internals execution.
 
-To activate the performance schema, use the [performance\_schema](../../sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema) system variable and add the following to the server section of the [MariaDB configuration file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md).
+To activate the performance schema, use the [performance\_schema](../../../reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema) system variable and add the following to the server section of the [MariaDB configuration file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md).
 
 ```sql
 performance_schema=on

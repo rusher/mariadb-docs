@@ -1,6 +1,6 @@
-# MyRocks and CHECK TABLE
+# CHECK TABLE
 
-MyRocks supports the [CHECK TABLE](../../sql-statements/table-statements/check-table.md) command.
+MyRocks supports the [CHECK TABLE](../../../reference/sql-statements/table-statements/check-table.md) command.
 
 The command will do a number of checks to verify that the table data is self-consistent.
 

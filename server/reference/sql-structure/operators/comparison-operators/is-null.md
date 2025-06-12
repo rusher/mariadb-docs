@@ -45,7 +45,7 @@ SELECT * FROM t1 WHERE auto_increment_column IS NULL;
 * [COALESCE function](coalesce.md)
 * [IFNULL function](../../../sql-functions/control-flow-functions/ifnull.md)
 * [NULLIF function](../../../sql-functions/control-flow-functions/nullif.md)
-* [CONNECT data types](../../../storage-engines/connect/connect-data-types.md#null-handling)
+* [CONNECT data types](../../../../server-usage/storage-engines/connect/connect-data-types.md#null-handling)
 
 GPLv2 fill\_help\_tables.sql
 

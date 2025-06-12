@@ -4,18 +4,18 @@
 
 Most status variables are described on this page, but some are described elsewhere:
 
-* [Aria Status Variables](../../../reference/storage-engines/aria/aria-status-variables.md)
+* [Aria Status Variables](../../../server-usage/storage-engines/aria/aria-status-variables.md)
 * [Galera Status Variables](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-status-variables)
 * [InnoDB Status Variables](innodb-status-variables.md)
-* [Mroonga Status Variables](../../../reference/storage-engines/mroonga/mroonga-status-variables.md)
-* [MyRocks Status Variables](../../../reference/storage-engines/myrocks/myrocks-status-variables.md)
+* [Mroonga Status Variables](../../../server-usage/storage-engines/mroonga/mroonga-status-variables.md)
+* [MyRocks Status Variables](../../../server-usage/storage-engines/myrocks/myrocks-status-variables.md)
 * [Performance Scheme Status Variables](../../../reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-status-variables.md)
 * [Replication and Binary Log Status Variables](../../standard-replication/replication-and-binary-log-status-variables.md)
-* [S3 Storage Engine Status Variables](../../../reference/storage-engines/s3-storage-engine/s3-storage-engine-status-variables.md)
+* [S3 Storage Engine Status Variables](../../../server-usage/storage-engines/s3-storage-engine/s3-storage-engine-status-variables.md)
 * [Server\_Audit Status Variables](../../../reference/plugins/mariadb-audit-plugin/mariadb-audit-plugin-status-variables.md)
 * [Sphinx Status Variables](sphinx-status-variables.md)
 * [Spider Status Variables](spider-status-variables.md)
-* [TokuDB Status Variables](../../../reference/storage-engines/tokudb/tokudb-status-variables.md)
+* [TokuDB Status Variables](../../../server-usage/storage-engines/tokudb/tokudb-status-variables.md)
 
 See also the [Full list of MariaDB options, system and status variables](../../../server-management/variables-and-modes/full-list-of-mariadb-options-system-and-status-variables.md).
 
@@ -1337,7 +1337,7 @@ Issuing a [FLUSH STATUS](../../../reference/sql-statements/administrative-sql-st
 
 #### `Feature_json`
 
-* Description: Number of times JSON functionality has been used, such as one of the [JSON functions](../../../reference/sql-functions/special-functions/json-functions/). Does not include the [CONNECT engine JSON type](../../../reference/storage-engines/connect/connect-table-types/connect-json-table-type.md), or [EXPLAIN/ANALYZE FORMAT=JSON](../../../reference/sql-statements/administrative-sql-statements/analyze-and-explain-statements/analyze-statement.md#analyze-formatjson).
+* Description: Number of times JSON functionality has been used, such as one of the [JSON functions](../../../reference/sql-functions/special-functions/json-functions/). Does not include the [CONNECT engine JSON type](../../../server-usage/storage-engines/connect/connect-table-types/connect-json-table-type.md), or [EXPLAIN/ANALYZE FORMAT=JSON](../../../reference/sql-statements/administrative-sql-statements/analyze-and-explain-statements/analyze-statement.md#analyze-formatjson).
 * Scope: Global, Session
 * Data Type: `numeric`
 
@@ -1608,7 +1608,7 @@ Issuing a [FLUSH STATUS](../../../reference/sql-statements/administrative-sql-st
 
 #### `Maria_*`
 
-* Description: When the Maria storage engine was renamed Aria, the Maria variables existing at the time were renamed at the same time. See [Aria Server Status Variables](../../../reference/storage-engines/aria/aria-status-variables.md).
+* Description: When the Maria storage engine was renamed Aria, the Maria variables existing at the time were renamed at the same time. See [Aria Server Status Variables](../../../server-usage/storage-engines/aria/aria-status-variables.md).
 
 #### `Max_memory_used`
 
@@ -1899,7 +1899,7 @@ Issuing a [FLUSH STATUS](../../../reference/sql-statements/administrative-sql-st
 #### `Syncs`
 
 * Description: Number of times my\_sync() has been called, or the number of times the server has had to force data to disk. Covers the [binary log](../../../server-management/server-monitoring-logs/binary-log/), .frm creation (if these\
-  operations are configured to sync) and some storage engines ([Archive](../../../reference/storage-engines/archive/),[CSV](../../../reference/storage-engines/csv/), [Aria](../../../reference/storage-engines/aria/)), but not [XtraDB/InnoDB](../../../reference/storage-engines/innodb/)).
+  operations are configured to sync) and some storage engines ([Archive](../../../server-usage/storage-engines/archive/),[CSV](../../../server-usage/storage-engines/csv/), [Aria](../../../server-usage/storage-engines/aria/)), but not [XtraDB/InnoDB](../../../server-usage/storage-engines/innodb/)).
 * Scope: Global, Session
 * Data Type: `numeric`
 

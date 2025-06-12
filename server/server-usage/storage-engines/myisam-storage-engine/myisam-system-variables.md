@@ -4,7 +4,7 @@ This page documents system variables related to the [MyISAM](./) storage engine.
 
 See [Server System Variables](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md) for a complete list of system variables and instructions on setting them.
 
-See also the [Full list of MariaDB options, system and status variables](../../../server-management/variables-and-modes/full-list-of-mariadb-options-system-and-status-variables.md).
+See also the [Full list of MariaDB options, system and status variables](../../../reference/full-list-of-mariadb-options-system-and-status-variables.md).
 
 #### `key_buffer_size`
 
@@ -77,7 +77,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 
 #### `myisam_data_pointer_size`
 
-* Description: Size in bytes of the default pointer, used in a [MyISAM](./) [CREATE TABLE](../../sql-statements/data-definition/create/create-table.md) with no MAX\_ROWS option.
+* Description: Size in bytes of the default pointer, used in a [MyISAM](./) [CREATE TABLE](../../../reference/sql-statements/data-definition/create/create-table.md) with no MAX\_ROWS option.
 * Commandline: `--myisam-data-pointer-size=#`
 * Scope: Global
 * Dynamic: Yes

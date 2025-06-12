@@ -16,14 +16,14 @@ The `[information_schema.ENGINES](../system-tables/information-schema/informatio
 
 Since storage engines are plugins, different information about them is also shown in the `[information_schema.PLUGINS](../system-tables/information-schema/information-schema-tables/plugins-table-information-schema.md)` table and by the `[SHOW PLUGINS](show-plugins.md)` statement.
 
-Note that both MySQL's InnoDB and Percona's XtraDB replacement are labeled as `InnoDB`. However, if XtraDB is in use, it will be specified in the `COMMENT` field. See [XtraDB and InnoDB](../../../storage-engines/innodb/). The same applies to [FederatedX](../../../storage-engines/federatedx-storage-engine/).
+Note that both MySQL's InnoDB and Percona's XtraDB replacement are labeled as `InnoDB`. However, if XtraDB is in use, it will be specified in the `COMMENT` field. See [XtraDB and InnoDB](../../../../server-usage/storage-engines/innodb/). The same applies to [FederatedX](../../../../server-usage/storage-engines/federatedx-storage-engine/).
 
 The output consists of the following columns:
 
 * `Engine` indicates the engine's name.
 * `Support` indicates whether the engine is installed, and whether it is the default engine for the current session.
 * `Comment` is a brief description.
-* `Transactions`, `XA` and `Savepoints` indicate whether [transactions](../../../sql-statements-and-structure/sql-statements/transactions/), [XA transactions](../../transactions/xa-transactions.md) and [transaction savepoints](../../transactions/savepoint.md) are supported by the engine.
+* `Transactions`, `XA` and `Savepoints` indicate whether [transactions](../../transactions/), [XA transactions](../../transactions/xa-transactions.md) and [transaction savepoints](../../transactions/savepoint.md) are supported by the engine.
 
 ## Examples
 

@@ -2,7 +2,7 @@
 
 ### SQL Syntax
 
-* With `SpiderForMySQL`, the [CREATE TABLE](../../sql-statements/data-definition/create/create-table.md) statement uses `CONNECTION` to define spider table variables whereas MariaDB uses `COMMENT`.
+* With `SpiderForMySQL`, the [CREATE TABLE](../../../reference/sql-statements/data-definition/create/create-table.md) statement uses `CONNECTION` to define spider table variables whereas MariaDB uses `COMMENT`.
 
 ### Features
 

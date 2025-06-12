@@ -4,7 +4,7 @@
 
 ![spider\_overview](../../../.gitbook/assets/spider-storage-engine-overview/+image/spider_overview.png)
 
-The Spider storage engine is a [storage engine](../) with built-in sharding features. It supports partitioning and [xa transactions](../../sql-statements/transactions/xa-transactions.md), and allows tables of different MariaDB instances to be handled as if they were on the same instance. It refers to one possible implementation of ISO/IEC 9075-9:2008 SQL/MED.
+The Spider storage engine is a [storage engine](../) with built-in sharding features. It supports partitioning and [xa transactions](../../../reference/sql-statements/transactions/xa-transactions.md), and allows tables of different MariaDB instances to be handled as if they were on the same instance. It refers to one possible implementation of ISO/IEC 9075-9:2008 SQL/MED.
 
 When a table is created with the Spider storage engine, the table links to the table on a remote server. The remote table can be of any storage engine. The table link is concretely achieved by the establishment of the connection from a local MariaDB server to a remote MariaDB server. The link is shared for all tables that are part of a the same transaction.
 
@@ -25,14 +25,14 @@ The Spider documentation on the MariaDB Knowledge Base is currently incomplete. 
 | Spider 3.2.18  | [MariaDB 10.0.17](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-10017-release-notes)                                                                                                                                                                                      | Gamma    |
 | Spider 3.2.11  | [MariaDB 10.0.14](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-10014-release-notes)                                                                                                                                                                                      | Gamma    |
 | Spider 3.2.4   | [MariaDB 10.0.12](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-10012-release-notes)                                                                                                                                                                                      | Gamma    |
-| Spider 3.2     | [MariaDB 10.0.11](broken-reference)                                                                                                                                                                                                                                                                                                                                      | Gamma    |
+| Spider 3.2     | [MariaDB 10.0.11](../../../reference/storage-engines/spider/broken-reference/)                                                                                                                                                                                                                                                                                           | Gamma    |
 | Spider 3.0     | [MariaDB 10.0.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-1004-release-notes)                                                                                                                                                                                        | Beta     |
 
 ## Usage
 
 ### Basic Usage
 
-To create a table in the Spider storage engine format, the COMMENT and/or CONNECTION clauses of the [CREATE TABLE](../../sql-statements/data-definition/create/create-table.md) statement are used to pass connection information about the remote server.
+To create a table in the Spider storage engine format, the COMMENT and/or CONNECTION clauses of the [CREATE TABLE](../../../reference/sql-statements/data-definition/create/create-table.md) statement are used to pass connection information about the remote server.
 
 For example, the following table exists on a remote server (in this example, the remote node was created with the [MySQL Sandbox](../../../clients-and-utilities/legacy-clients-and-utilities/mysql-sandbox.md) tool, an easy way to test with multiple installations)::
 
@@ -491,9 +491,9 @@ mysql> select sum(k) from sbtest;
 
 #### High Availability Setup
 
-**MariaDB starting with** [**10.7.5**](broken-reference)
+**MariaDB starting with** [**10.7.5**](../../../reference/storage-engines/spider/broken-reference/)
 
-Spider's high availability feature has been deprecated ([MDEV-28479](https://jira.mariadb.org/browse/MDEV-28479)), and will be deleted. Please use other high availability solutions like [replication](broken-reference) or [galera-cluster](../../../../kb/en/galera-cluster/).
+Spider's high availability feature has been deprecated ([MDEV-28479](https://jira.mariadb.org/browse/MDEV-28479)), and will be deleted. Please use other high availability solutions like [replication](../../../reference/storage-engines/spider/broken-reference/) or [galera-cluster](../../../../kb/en/galera-cluster/).
 
 ![spider9](../../../.gitbook/assets/spider-storage-engine-overview/+image/spider9.png)
 

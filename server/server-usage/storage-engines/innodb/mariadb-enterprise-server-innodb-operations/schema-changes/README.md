@@ -22,12 +22,12 @@ In MariaDB Enterprise Server, InnoDB supports many different schema change opera
 
 InnoDB schema changes are performed using the following DDL statements:
 
-* [ALTER TABLE](../../../../sql-statements/data-definition/alter/alter-table.md)
-* [CREATE INDEX](../../../../sql-statements/data-definition/create/create-index.md)
-* [CREATE SPATIAL INDEX](../../../../sql-statements/data-definition/create/create-index.md)
-* [CREATE UNIQUE INDEX](../../../../sql-statements/data-definition/create/create-index.md)
-* [DROP INDEX](../../../../sql-statements/data-definition/drop/drop-index.md)
-* [RENAME TABLE](../../../../sql-statements/data-definition/rename-table.md)
+* [ALTER TABLE](../../../../../reference/sql-statements/data-definition/alter/alter-table.md)
+* [CREATE INDEX](../../../../../reference/sql-statements/data-definition/create/create-index.md)
+* [CREATE SPATIAL INDEX](../../../../../reference/sql-statements/data-definition/create/create-index.md)
+* [CREATE UNIQUE INDEX](../../../../../reference/sql-statements/data-definition/create/create-index.md)
+* [DROP INDEX](../../../../../reference/sql-statements/data-definition/drop/drop-index.md)
+* [RENAME TABLE](../../../../../reference/sql-statements/data-definition/rename-table.md)
 
 ## About InnoDB Schema Changes and Online DDL
 
@@ -35,11 +35,11 @@ InnoDB schema changes and online DDL are performed with a wide range of statemen
 
 Each operation supports a subset of the following algorithms: `INSTANT, NOCOPY, INPLACE, or COPY`.
 
-By default, InnoDB will use the most efficient algorithm supported by an operation. This behavior can be changed by using the `ALGORITHM` clause with the [ALTER TABLE](../../../../sql-statements/data-definition/alter/alter-table.md) statement or by changing the value of the alter\_algorithm system variable.
+By default, InnoDB will use the most efficient algorithm supported by an operation. This behavior can be changed by using the `ALGORITHM` clause with the [ALTER TABLE](../../../../../reference/sql-statements/data-definition/alter/alter-table.md) statement or by changing the value of the alter\_algorithm system variable.
 
 Each operation supports a subset of the following locking strategies: `NONE, SHARED, or EXCLUSIVE`.
 
-By default, InnoDB will use the most permissive locking strategy supported by an operation. This behavior can be changed by using the LOCK clause with the [ALTER TABLE](../../../../sql-statements/data-definition/alter/alter-table.md) statement.
+By default, InnoDB will use the most permissive locking strategy supported by an operation. This behavior can be changed by using the LOCK clause with the [ALTER TABLE](../../../../../reference/sql-statements/data-definition/alter/alter-table.md) statement.
 
 | Feature                                              | Detail | Resources                                                                                   |
 | ---------------------------------------------------- | ------ | ------------------------------------------------------------------------------------------- |

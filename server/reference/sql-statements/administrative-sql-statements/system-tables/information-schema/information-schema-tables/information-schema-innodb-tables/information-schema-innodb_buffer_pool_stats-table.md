@@ -1,6 +1,6 @@
 # Information Schema INNODB\_BUFFER\_POOL\_STATS Table
 
-The [Information Schema](../../) `INNODB_BUFFER_POOL_STATS` table contains information about pages in the [buffer pool](../../../../../../storage-engines/innodb/innodb-buffer-pool.md), similar to what is returned with the `[SHOW ENGINE INNODB STATUS](../../../../show/show-engine-innodb-status.md)` statement.
+The [Information Schema](../../) `INNODB_BUFFER_POOL_STATS` table contains information about pages in the [buffer pool](../../../../../../../server-usage/storage-engines/innodb/innodb-buffer-pool.md), similar to what is returned with the `[SHOW ENGINE INNODB STATUS](../../../../show/show-engine-innodb-status.md)` statement.
 
 The `PROCESS` [privilege](../../../../../account-management-sql-statements/grant.md) is required to view the table.
 
@@ -22,7 +22,7 @@ It has the following columns:
 | PAGES\_MADE\_YOUNG                    | Pages moved from the old sublist to the new sublist.                                                                                                                                                                                                                    |
 | PAGES\_NOT\_MADE\_YOUNG               | Pages that have remained in the old sublist without moving to the new sublist.                                                                                                                                                                                          |
 | PAGES\_MADE\_YOUNG\_RATE              | Hits that cause blocks to move to the top of the new sublist.                                                                                                                                                                                                           |
-| PAGES\_MADE\_NOT\_YOUNG\_RATE         | Hits that do not cause blocks to move to the top of the new sublist due to the [innodb\_old\_blocks](../../../../../../storage-engines/innodb/innodb-system-variables.md) delay not being met.                                                                          |
+| PAGES\_MADE\_NOT\_YOUNG\_RATE         | Hits that do not cause blocks to move to the top of the new sublist due to the [innodb\_old\_blocks](../../../../../../../server-usage/storage-engines/innodb/innodb-system-variables.md) delay not being met.                                                          |
 | NUMBER\_PAGES\_READ                   | Number of pages read.                                                                                                                                                                                                                                                   |
 | NUMBER\_PAGES\_CREATED                | Number of pages created.                                                                                                                                                                                                                                                |
 | NUMBER\_PAGES\_WRITTEN                | Number of pages written.                                                                                                                                                                                                                                                |

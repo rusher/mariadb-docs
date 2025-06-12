@@ -1,14 +1,14 @@
 # Sequence
 
-This article is about the Sequence storage engine. For details about sequence objects, see [Sequences](../sql-structure/sequences/).
+This article is about the Sequence storage engine. For details about sequence objects, see [Sequences](../../reference/sql-structure/sequences/).
 
 A **Sequence** engine allows the creation of ascending or descending sequences of numbers (positive integers) with a given starting value, ending value and increment.
 
-It creates completely virtual, ephemeral tables automatically when you need them. There is no way to create a Sequence table explicitly. Nor are they ever written to disk or create `.frm` files. They are read-only, [transactional](../sql-statements-and-structure/sql-statements/transactions/), and [support XA](../sql-statements/transactions/xa-transactions.md).
+It creates completely virtual, ephemeral tables automatically when you need them. There is no way to create a Sequence table explicitly. Nor are they ever written to disk or create `.frm` files. They are read-only, [transactional](../../reference/sql-statements/transactions/), and [support XA](../../reference/sql-statements/transactions/xa-transactions.md).
 
 ## Installing
 
-The Sequence engine is installed by default, and [SHOW ENGINES](../sql-statements/administrative-sql-statements/show/show-engines.md) will list the Sequence storage engine as supported:
+The Sequence engine is installed by default, and [SHOW ENGINES](../../reference/sql-statements/administrative-sql-statements/show/show-engines.md) will list the Sequence storage engine as supported:
 
 ```sql
 SHOW ENGINES\G
@@ -185,7 +185,7 @@ SELECT DAYNAME('1980-12-05' + INTERVAL (seq) YEAR) day,
 +-----------+------------+
 ```
 
-Although Sequence tables can only directly make use of positive integers, they can indirectly be used to return negative results by making use of the [CAST](../sql-functions/string-functions/cast.md) statement. For example:
+Although Sequence tables can only directly make use of positive integers, they can indirectly be used to return negative results by making use of the [CAST](../../reference/sql-functions/string-functions/cast.md) statement. For example:
 
 ```sql
 SELECT CAST(seq AS INT) - 5 x FROM seq_5_to_1;
@@ -200,9 +200,9 @@ SELECT CAST(seq AS INT) - 5 x FROM seq_5_to_1;
 +----+
 ```
 
-[CAST](../sql-functions/string-functions/cast.md) is required to avoid a `BIGINT UNSIGNED value is out of range` error.
+[CAST](../../reference/sql-functions/string-functions/cast.md) is required to avoid a `BIGINT UNSIGNED value is out of range` error.
 
-Sequence tables, while virtual, are still tables, so they must be in a database. This means that a default database must be selected (for example, via the [USE](../sql-statements/administrative-sql-statements/use-database.md) command) to be able to query a Sequence table. The [information\_schema](../sql-statements/administrative-sql-statements/system-tables/information-schema/) database cannot be used as the default for a Sequence table.
+Sequence tables, while virtual, are still tables, so they must be in a database. This means that a default database must be selected (for example, via the [USE](../../reference/sql-statements/administrative-sql-statements/use-database.md) command) to be able to query a Sequence table. The [information\_schema](../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/) database cannot be used as the default for a Sequence table.
 
 ## Table Name Conflicts
 
@@ -247,7 +247,7 @@ Empty set (0.00 sec)
 
 ## See Also
 
-* For details about sequence objects, see [Sequences](../sql-structure/sequences/).
+* For details about sequence objects, see [Sequences](../../reference/sql-structure/sequences/).
 * [Sometimes its the little things](https://mariadb.com/blog/sometimes-its-little-things) - Dean Ellis tries out the Sequence engine.
 * [MariaDB’s Sequence Storage Engine](https://falseisnotnull.wordpress.com/2013/06/23/mariadbs-sequence-storage-engine/) - Federico Razzoli writes more in-depth on the engine.
 

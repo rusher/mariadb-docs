@@ -97,7 +97,7 @@ signs.
 
 **Note 1:** Creating a CONNECT table based on file does not erase or create the\
 file if the file name is specified in the CREATE TABLE statement ([“outward”](connect-table-types/inward-and-outward-tables.md#outward-tables) table). If the file does not exist, it will be populated by subsequent INSERT or LOAD\
-commands or by the “AS select statement” of the [CREATE TABLE](../../sql-statements/data-definition/create/create-table.md)\
+commands or by the “AS select statement” of the [CREATE TABLE](../../../reference/sql-statements/data-definition/create/create-table.md)\
 command. Unlike the CSV engine, CONNECT easily permits the creation of tables\
 based on already existing files, for instance files made by other applications.\
 However, if the file name is not specified, a file with a name defaulting to`tablename.tabletype` will be created in the data directory ([“inward”](connect-table-types/inward-and-outward-tables.md#inward-tables) table).

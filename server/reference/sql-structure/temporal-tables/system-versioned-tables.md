@@ -264,7 +264,7 @@ A point in time when a row was inserted or deleted does not necessarily mean tha
 
 For some applications — for example, when doing data analytics on one-year-old data — this distinction does not matter much. For others — forensic analysis — it might be crucial.
 
-MariaDB supports transaction-precise history (only for the [InnoDB storage engine](../../storage-engines/innodb/)) that allows seeing the data exactly as it would've been seen by a new connection doing a `SELECT` at the specified point in time — rows inserted _before_ that point, but committed _after_ will not be shown.
+MariaDB supports transaction-precise history (only for the [InnoDB storage engine](../../../server-usage/storage-engines/innodb/)) that allows seeing the data exactly as it would've been seen by a new connection doing a `SELECT` at the specified point in time — rows inserted _before_ that point, but committed _after_ will not be shown.
 
 To use transaction-precise history, InnoDB needs to remember not timestamps, but transaction identifier per row. This is done by creating generated columns as `BIGINT UNSIGNED`, not `TIMESTAMP(6)`:
 

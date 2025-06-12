@@ -51,7 +51,7 @@ vice versa.
 
 This is why it is possible to specify the field format when it does not\
 correspond to the column type default using the _field\_format_ column option\
-in the [CREATE TABLE](../../../sql-statements/data-definition/create/create-table.md) statement. Here are the available field formats for BIN tables:
+in the [CREATE TABLE](../../../../reference/sql-statements/data-definition/create/create-table.md) statement. Here are the available field formats for BIN tables:
 
 | Field\_format         | Internal representation                                                           |
 | --------------------- | --------------------------------------------------------------------------------- |

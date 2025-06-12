@@ -101,7 +101,7 @@ $ mariadb --user=root
 ```
 
 11. If your server had preexisting data, then reload the backup taken at the beginning of the procedure.
-12. Confirm that the configuration changes were properly applied by checking the values of the system variables using the [SHOW GLOBAL VARIABLES](../../../sql-statements/administrative-sql-statements/show/show-variables.md) statement:
+12. Confirm that the configuration changes were properly applied by checking the values of the system variables using the [SHOW GLOBAL VARIABLES](../../../../reference/sql-statements/administrative-sql-statements/show/show-variables.md) statement:
 
 ```sql
 SHOW GLOBAL VARIABLES
@@ -124,13 +124,13 @@ SHOW GLOBAL VARIABLES
 
 ## Enable InnoDB Undo Log Truncation
 
-If a server is configured to have 2 or more separate InnoDB undo log files, then InnoDB undo log truncation can be enabled by setting the [innodb\_undo\_log\_truncate](../innodb-system-variables.md#innodb_undo_log_truncate) system variable using the [SET GLOBAL](../../../sql-statements/administrative-sql-statements/set-commands/set.md) statement. The [SET GLOBAL](../../../sql-statements/administrative-sql-statements/set-commands/set.md) statement requires the SUPER privilege.
+If a server is configured to have 2 or more separate InnoDB undo log files, then InnoDB undo log truncation can be enabled by setting the [innodb\_undo\_log\_truncate](../innodb-system-variables.md#innodb_undo_log_truncate) system variable using the [SET GLOBAL](../../../../reference/sql-statements/administrative-sql-statements/set-commands/set.md) statement. The [SET GLOBAL](../../../../reference/sql-statements/administrative-sql-statements/set-commands/set.md) statement requires the SUPER privilege.
 
 When InnoDB undo log truncation is enabled, the InnoDB purge threads can truncate an entire undo log at once, rather than individually freeing each rollback segment within the undo log.
 
 An undo log is truncated when its size exceeds the [innodb\_max\_undo\_log\_size](../innodb-system-variables.md#innodb_max_undo_log_size) system variable.
 
-The frequency at which the InnoDB purge threads check for undo logs to truncate is configured by setting the innodb\_purge\_rseg\_truncate\_frequency system variable using the [SET GLOBAL](../../../sql-statements/administrative-sql-statements/set-commands/set.md) statement.
+The frequency at which the InnoDB purge threads check for undo logs to truncate is configured by setting the innodb\_purge\_rseg\_truncate\_frequency system variable using the [SET GLOBAL](../../../../reference/sql-statements/administrative-sql-statements/set-commands/set.md) statement.
 
 To ensure that the changes survive server restarts, the system variables should also be set in a configuration file.
 
@@ -142,7 +142,7 @@ To enable InnoDB undo log truncation:
 $ mariadb --user=root
 ```
 
-2. Set the [innodb\_undo\_log\_truncate](../innodb-system-variables.md#innodb_undo_log_truncate) system variable to ON using the [SET GLOBAL](../../../sql-statements/administrative-sql-statements/set-commands/set.md) statement.
+2. Set the [innodb\_undo\_log\_truncate](../innodb-system-variables.md#innodb_undo_log_truncate) system variable to ON using the [SET GLOBAL](../../../../reference/sql-statements/administrative-sql-statements/set-commands/set.md) statement.
 
 For example:
 
@@ -150,7 +150,7 @@ For example:
 SET GLOBAL innodb_undo_log_truncate=ON;
 ```
 
-3. If you would like to change the size at which undo logs are truncated, then also set the [innodb\_max\_undo\_log\_size](../innodb-system-variables.md#innodb_max_undo_log_size) system variable to the new size using the [SET GLOBAL](../../../sql-statements/administrative-sql-statements/set-commands/set.md) statement.
+3. If you would like to change the size at which undo logs are truncated, then also set the [innodb\_max\_undo\_log\_size](../innodb-system-variables.md#innodb_max_undo_log_size) system variable to the new size using the [SET GLOBAL](../../../../reference/sql-statements/administrative-sql-statements/set-commands/set.md) statement.
 
 For example, to set the size to 2 GB:
 
@@ -158,7 +158,7 @@ For example, to set the size to 2 GB:
 SET GLOBAL innodb_max_undo_log_size=(2 * 1024 * 1024 * 1024);
 ```
 
-4. If you would like the InnoDB purge threads to check the undo logs more frequently, then also set the [innodb\_purge\_rseg\_truncate\_frequency](../innodb-system-variables.md#innodb_purge_rseg_truncate_frequency) system variable to a lower value using the [SET GLOBAL](../../../sql-statements/administrative-sql-statements/set-commands/set.md) statement.
+4. If you would like the InnoDB purge threads to check the undo logs more frequently, then also set the [innodb\_purge\_rseg\_truncate\_frequency](../innodb-system-variables.md#innodb_purge_rseg_truncate_frequency) system variable to a lower value using the [SET GLOBAL](../../../../reference/sql-statements/administrative-sql-statements/set-commands/set.md) statement.
 
 For example, to configure the purge threads to check the undo logs for truncation every 64 iterations:
 

@@ -26,7 +26,7 @@ The backup of the Data Node contains:
 
 The following procedure shows how to take a consistent backup of a Spider Node and a Data Node deployed in a Spider Federated MariaDB Enterprise Spider topology.
 
-1. On the Spider Node and on the Data Node, create a user account to perform the backup using the [CREATE USER](../../../../../sql-statements/account-management-sql-statements/create-user.md) and [GRANT](../../../../../sql-statements/account-management-sql-statements/grant.md) statements:
+1. On the Spider Node and on the Data Node, create a user account to perform the backup using the [CREATE USER](../../../../../../reference/sql-statements/account-management-sql-statements/create-user.md) and [GRANT](../../../../../../reference/sql-statements/account-management-sql-statements/grant.md) statements:
 
 ```sql
 CREATE USER 'mariadb-backup'@'localhost'
@@ -37,7 +37,7 @@ GRANT RELOAD, PROCESS, LOCK TABLES, BINLOG MONITOR
    TO 'mariadb-backup'@'localhost';
 ```
 
-2. On the Data Node, grant the user account Spider uses to operate on the Data Node sufficient privileges to lock the Data Tables using the [GRANT](../../../../../sql-statements/account-management-sql-statements/grant.md) statement.
+2. On the Data Node, grant the user account Spider uses to operate on the Data Node sufficient privileges to lock the Data Tables using the [GRANT](../../../../../../reference/sql-statements/account-management-sql-statements/grant.md) statement.
 
 For example, on the hq\_server Data Node:
 
@@ -45,7 +45,7 @@ For example, on the hq\_server Data Node:
 GRANT LOCK TABLES ON hq_sales.* TO 'spider_user'@'192.0.2.2';
 ```
 
-3. On the Spider Node, acquire a read lock on Spider Tables using the [LOCK TABLES](../../../../../sql-statements/transactions/lock-tables.md) statement:
+3. On the Spider Node, acquire a read lock on Spider Tables using the [LOCK TABLES](../../../../../../reference/sql-statements/transactions/lock-tables.md) statement:
 
 ```sql
 LOCK TABLES spider_federated_sales.invoices READ;
@@ -73,7 +73,7 @@ $ sudo mariadb-backup --backup \
    --password='mb_passwd'
 ```
 
-6. When the Spider Node backup is complete, release the table locks in your original session using the [UNLOCK TABLES](../../../../../sql-statements/transactions/transactions-unlock-tables.md) statement:
+6. When the Spider Node backup is complete, release the table locks in your original session using the [UNLOCK TABLES](../../../../../../reference/sql-statements/transactions/transactions-unlock-tables.md) statement:
 
 ```sql
 UNLOCK TABLES;
@@ -141,7 +141,7 @@ SELECT * FROM spider_hq_sales.invoices;
 
 ## MariaDB Dump
 
-[MariaDB Dump](../../../../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md) generates backup files containing the SQL statements necessary to recreate the database. [MariaDB Dump](../../../../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md) is included with MariaDB Enterprise Server and can be used to backup databases in Spider deployments. The MariaDB Client can then be used to restore databases from a [MariaDB Dump backup](../../../../../../server-usage/backing-up-and-restoring-databases/mariabackup/).
+[MariaDB Dump](../../../../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md) generates backup files containing the SQL statements necessary to recreate the database. [MariaDB Dump](../../../../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md) is included with MariaDB Enterprise Server and can be used to backup databases in Spider deployments. The MariaDB Client can then be used to restore databases from a [MariaDB Dump backup](../../../../../backing-up-and-restoring-databases/mariabackup/).
 
 ### Backing Up Spider with MariaDB Dump
 
@@ -163,7 +163,7 @@ The backup of the Data Node contains:
 
 The following procedure shows how to take a consistent backup of a Spider Node and a Data Node deployed in a Federated MariaDB Enterprise Spider topology.
 
-1. On the Spider Node and on the Data Node, create a user account to perform the backup using the [CREATE USER](../../../../../sql-statements/account-management-sql-statements/create-user.md) and [GRANT](../../../../../sql-statements/account-management-sql-statements/grant.md) statements:
+1. On the Spider Node and on the Data Node, create a user account to perform the backup using the [CREATE USER](../../../../../../reference/sql-statements/account-management-sql-statements/create-user.md) and [GRANT](../../../../../../reference/sql-statements/account-management-sql-statements/grant.md) statements:
 
 ```sql
 CREATE USER 'mariadb-dump'@'localhost'

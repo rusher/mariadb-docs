@@ -310,8 +310,8 @@ MariaDB ColumnStore requires configuration after it is installed. The configurat
 
 MariaDB Community Server can be configured in the following ways:
 
-* [System variables](../../../ha-and-performance/optimization-and-tuning/system-variables/) and [options](../../../server-management/variables-and-modes/full-list-of-mariadb-options-system-and-status-variables.md) can be set in a configuration file (such as `/etc/my.cnf`). MariaDB Community Server must be restarted to apply changes made to the configuration file.
-* [System variables](../../../ha-and-performance/optimization-and-tuning/system-variables/) and [options](../../../server-management/variables-and-modes/full-list-of-mariadb-options-system-and-status-variables.md) can be set on the command-line.
+* [System variables](../../../ha-and-performance/optimization-and-tuning/system-variables/) and [options](../../../reference/full-list-of-mariadb-options-system-and-status-variables.md) can be set in a configuration file (such as `/etc/my.cnf`). MariaDB Community Server must be restarted to apply changes made to the configuration file.
+* [System variables](../../../ha-and-performance/optimization-and-tuning/system-variables/) and [options](../../../reference/full-list-of-mariadb-options-system-and-status-variables.md) can be set on the command-line.
 * If a system variable supports dynamic changes, then it can be set on-the-fly using the [SET](../../../reference/sql-statements/administrative-sql-statements/set-commands/set.md) statement.
 
 ### Configuration Files

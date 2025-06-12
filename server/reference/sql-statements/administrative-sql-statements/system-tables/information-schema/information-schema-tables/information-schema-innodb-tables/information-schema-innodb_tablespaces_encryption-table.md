@@ -20,7 +20,7 @@ It contains the following columns:
 | CURRENT\_KEY\_ID                 | Key ID for the encryption key currently in use.                                                                                                                                                                                                                                                                                                       |
 | ROTATING\_OR\_FLUSHING           | Current key rotation status. If this value is 1, then the [background encryption threads](../../../../../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/innodb-encryption/innodb-encryption-overview.md) are working on the tablespace. See [MDEV-11738](https://jira.mariadb.org/browse/MDEV-11738). |
 
-When the [InnoDB system tablespace](../../../../../../storage-engines/innodb/innodb-tablespaces/innodb-system-tablespaces.md) is encrypted, it is represented in this table with the special name: `innodb_system`.
+When the [InnoDB system tablespace](../../../../../../../server-usage/storage-engines/innodb/innodb-tablespaces/innodb-system-tablespaces.md) is encrypted, it is represented in this table with the special name: `innodb_system`.
 
 ## Example
 

@@ -109,7 +109,7 @@ Also see the [Full list of MariaDB options, system and status variables](../../.
 
 #### `aria_log_purge_type`
 
-* Description: Specifies how the Aria transactional log will be purged. Set to `at_flush` to keep a copy of the transaction logs (good as an extra backup). The logs will stay until the next [FLUSH LOGS](../../sql-statements/administrative-sql-statements/flush-commands/flush.md);
+* Description: Specifies how the Aria transactional log will be purged. Set to `at_flush` to keep a copy of the transaction logs (good as an extra backup). The logs will stay until the next [FLUSH LOGS](../../../reference/sql-statements/administrative-sql-statements/flush-commands/flush.md);
 * Commandline: `--aria-log-purge-type=name`
 * Scope: Global
 * Dynamic: Yes
@@ -129,7 +129,7 @@ Also see the [Full list of MariaDB options, system and status variables](../../.
 
 #### `aria_page_checksum`
 
-* Description: Determines whether index and data should use page checksums for extra safety. Can be overridden per table with PAGE\_CHECKSUM clause in [CREATE TABLE](../../sql-statements/data-definition/create/create-table.md).
+* Description: Determines whether index and data should use page checksums for extra safety. Can be overridden per table with PAGE\_CHECKSUM clause in [CREATE TABLE](../../../reference/sql-statements/data-definition/create/create-table.md).
 * Commandline: `--aria-page-checksum=#`
 * Scope: Global
 * Dynamic: Yes
@@ -178,7 +178,7 @@ Also see the [Full list of MariaDB options, system and status variables](../../.
 
 #### `aria_recover`
 
-* Description: `aria_recover` has been renamed to `aria_recover_options` in [MariaDB 10.2.0](broken-reference). See [aria\_recover\_options](aria-system-variables.md#aria_recover_options) for the description.
+* Description: `aria_recover` has been renamed to `aria_recover_options` in [MariaDB 10.2.0](../../../reference/storage-engines/aria/broken-reference/). See [aria\_recover\_options](aria-system-variables.md#aria_recover_options) for the description.
 
 #### `aria_recover_options`
 
@@ -196,7 +196,7 @@ Also see the [Full list of MariaDB options, system and status variables](../../.
   * `BACKUP,QUICK` (>= [MariaDB 10.2.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-1024-release-notes))
   * `NORMAL` (<= [MariaDB 10.2.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-1023-release-notes))
 * Valid Values: `NORMAL`, `BACKUP`, `FORCE`, `QUICK`, `OFF`
-* Introduced: [MariaDB 10.2.0](broken-reference)
+* Introduced: [MariaDB 10.2.0](../../../reference/storage-engines/aria/broken-reference/)
 
 #### `aria_repair_threads`
 
@@ -209,7 +209,7 @@ Also see the [Full list of MariaDB options, system and status variables](../../.
 
 #### `aria_sort_buffer_size`
 
-* Description: The buffer that is allocated when sorting the index when doing a [REPAIR](../../sql-statements/table-statements/repair-table.md) or when creating indexes with [CREATE INDEX](../../sql-statements/data-definition/create/create-index.md) or [ALTER TABLE](../../sql-statements/data-definition/alter/alter-table.md).
+* Description: The buffer that is allocated when sorting the index when doing a [REPAIR](../../../reference/sql-statements/table-statements/repair-table.md) or when creating indexes with [CREATE INDEX](../../../reference/sql-statements/data-definition/create/create-index.md) or [ALTER TABLE](../../../reference/sql-statements/data-definition/alter/alter-table.md).
 * Commandline: `--aria-sort-buffer-size=#`
 * Scope: Global, Session
 * Dynamic: Yes

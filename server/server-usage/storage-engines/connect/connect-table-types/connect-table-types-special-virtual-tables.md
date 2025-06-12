@@ -230,7 +230,7 @@ This syntax must be strictly respected. The text has the format:
 yyyymmddHHMMSS.mmmmmmsUUU
 ```
 
-It is: year, month, day, hour, minute, second, millisecond, and signed minute deviation from [UTC](../../../data-types/string-data-types/character-sets/internationalization-and-localization/coordinated-universal-time.md). This format is locale-independent so you can write a query that runs on any machine.
+It is: year, month, day, hour, minute, second, millisecond, and signed minute deviation from [UTC](../../../../reference/data-types/string-data-types/character-sets/internationalization-and-localization/coordinated-universal-time.md). This format is locale-independent so you can write a query that runs on any machine.
 
 **Note 1:** The WMI table type is available only in Windows versions of CONNECT.
 

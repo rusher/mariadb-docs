@@ -52,7 +52,7 @@ The [Information Schema TABLE\_CONSTRAINTS Table](../administrative-sql-statemen
 
 ### FOREIGN KEY Constraints
 
-[InnoDB](../../storage-engines/innodb/) supports [foreign key](../../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/foreign-keys.md) constraints. The syntax for a foreign key\
+[InnoDB](../../../server-usage/storage-engines/innodb/) supports [foreign key](../../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/foreign-keys.md) constraints. The syntax for a foreign key\
 constraint definition in InnoDB looks like this:
 
 ```
@@ -90,7 +90,7 @@ One can disable all constraint expression checks by setting the [check\_constrai
 
 ### Replication
 
-In [row-based](../../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md#row-based) [replication](broken-reference), only the master checks constraints, and failed statements will not be replicated. In [statement-based](../../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md#statement-based) replication, the slaves will also check constraints. Constraints should therefore be identical, as well as deterministic, in a replication environment.
+In [row-based](../../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md#row-based) [replication](broken-reference/), only the master checks constraints, and failed statements will not be replicated. In [statement-based](../../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md#statement-based) replication, the slaves will also check constraints. Constraints should therefore be identical, as well as deterministic, in a replication environment.
 
 ### Auto\_increment
 

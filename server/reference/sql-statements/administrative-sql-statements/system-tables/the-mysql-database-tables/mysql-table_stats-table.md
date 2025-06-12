@@ -6,7 +6,7 @@ It is populated when the [ANALYZE TABLE](../../../table-statements/analyze-table
 
 It is possible to manually update the table and, unlike most system tables, there are some scenarios where this could be useful. See [Manual updates to statistics tables](../../../../../ha-and-performance/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/engine-independent-table-statistics.md#manual-updates-to-statistics-tables) for details.
 
-This table uses the [Aria](../../../../storage-engines/aria/) storage engine.
+This table uses the [Aria](../../../../../server-usage/storage-engines/aria/) storage engine.
 
 The `mysql.table_stats` table contains the following fields:
 

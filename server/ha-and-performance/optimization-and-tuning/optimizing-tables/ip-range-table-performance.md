@@ -73,7 +73,7 @@ The Ips table's size is proportional to the number of blocks. A million 'owned' 
 
 * number of 'free' gaps (between zero and the number of owned blocks)
 * datatypes used for `ip` and `owner`
-* [InnoDB](../../../reference/storage-engines/innodb/) overhead\
+* [InnoDB](../../../server-usage/storage-engines/innodb/) overhead\
   Even 100M blocks is quite manageable in today's hardware. Once things are cached, most operations would take only a few milliseconds. A trillion blocks would work, but most operations would hit the disk a few times -- only a few times.
 
 ## Reference implementation of IPv4

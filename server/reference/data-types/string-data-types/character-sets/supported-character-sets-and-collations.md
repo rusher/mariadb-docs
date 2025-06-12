@@ -53,7 +53,7 @@ MariaDB supports the following character sets:
 | utf8mb3  | UTF-8 Unicode               | utf8mb3\_general\_ci (<= [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-4-series/what-is-mariadb-114))utf8mb3\_uca1400\_ai\_ci (>=[MariaDB 11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115))                              | 3                                                                                    |
 | utf8mb4  | UTF-8 Unicode               | utf8mb4\_general\_ci (<= [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-4-series/what-is-mariadb-114))utf8mb4\_uca1400\_ai\_ci (>=[MariaDB 11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115))                              | 4                                                                                    |
 
-Note that the [Mroonga Storage Engine](../../../storage-engines/mroonga/) only supports a limited number of character sets. See [Mroonga available character sets](../../../storage-engines/mroonga/about-mroonga.md#available-character-sets).
+Note that the [Mroonga Storage Engine](../../../../server-usage/storage-engines/mroonga/) only supports a limited number of character sets. See [Mroonga available character sets](../../../../server-usage/storage-engines/mroonga/about-mroonga.md#available-character-sets).
 
 ## Collations
 
@@ -619,7 +619,7 @@ SELECT collation_name, character_set_name as cs_name, id, is_default AS def, is_
 550 rows in set (0.005 sec)
 ```
 
-The UCA-14.0.0 collations were added in [MariaDB 10.10.1](broken-reference).
+The UCA-14.0.0 collations were added in [MariaDB 10.10.1](broken-reference/).
 
 Before [MariaDB 10.6.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/mariadb-1061-release-notes), the `utf8mb3*` collations listed above were named `utf8*`.
 

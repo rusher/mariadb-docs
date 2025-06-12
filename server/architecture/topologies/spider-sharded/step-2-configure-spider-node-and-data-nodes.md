@@ -34,8 +34,7 @@ The Spider Node requires connection details for each Data Node.
 
 **On the Spider Node**, create a server object to configure the connection details for each Data Node using the [CREATE SERVER](../../../reference/sql-statements/data-definition/create/create-server.md) statement:
 
-1.  Create a Server object to configure the connection details for the Data Node at the headquarters branch:\
-
+1.  Create a Server object to configure the connection details for the Data Node at the headquarters branch:\\
 
     ```sql
     CREATE SERVER hq_server
@@ -48,8 +47,7 @@ The Spider Node requires connection details for each Data Node.
        DATABASE "hq_sales"
     );
     ```
-2.  Create a server object to configure the connection details for the Data Node at the eastern branch:\
-
+2.  Create a server object to configure the connection details for the Data Node at the eastern branch:\\
 
     ```sql
     CREATE SERVER eastern_server
@@ -62,11 +60,7 @@ The Spider Node requires connection details for each Data Node.
        DATABASE "eastern_sales"
     );
     ```
-
-
 3.  Create a server object to configure the connection details for the Data Node at the western branch:
-
-
 
     ```sql
     CREATE SERVER western_server
@@ -119,8 +113,7 @@ If your Data Tables already exist, [grant privileges on the tables](step-2-confi
 
     \
     The Spider Node reads and writes to the Data Table using the server and user account configured in "[Configure Connection Details](step-2-configure-spider-node-and-data-nodes.md#configure-connection-details)". The user account must have [privileges on the tables](step-2-configure-spider-node-and-data-nodes.md#grant-privileges).
-2.  On the Data Node for the eastern branch of the business, create a database and table and add sample data:\
-
+2.  On the Data Node for the eastern branch of the business, create a database and table and add sample data:\\
 
     ```sql
     CREATE DATABASE eastern_sales;
@@ -146,10 +139,8 @@ If your Data Tables already exist, [grant privileges on the tables](step-2-confi
     ```
 
     \
-    The Spider Node reads and writes to the Data Table using the server and user account configured in "[Configure Connection Details](step-2-configure-spider-node-and-data-nodes.md#configure-connection-details)". The user account must have [privileges on the tables](step-2-configure-spider-node-and-data-nodes.md#grant-privileges).\
-
-3.  On the Data Node for the western branch of the business, create a database and table and add sample data:\
-
+    The Spider Node reads and writes to the Data Table using the server and user account configured in "[Configure Connection Details](step-2-configure-spider-node-and-data-nodes.md#configure-connection-details)". The user account must have [privileges on the tables](step-2-configure-spider-node-and-data-nodes.md#grant-privileges).\\
+3.  On the Data Node for the western branch of the business, create a database and table and add sample data:\\
 
     ```sql
     CREATE DATABASE western_sales;
@@ -175,8 +166,7 @@ If your Data Tables already exist, [grant privileges on the tables](step-2-confi
     ```
 
     \
-    The Spider Node reads and writes to the Data Table using the server and user account configured in "[Configure Connection Details](step-2-configure-spider-node-and-data-nodes.md#configure-connection-details)". The user account must have [privileges on the tables](step-2-configure-spider-node-and-data-nodes.md#grant-privileges).\
-
+    The Spider Node reads and writes to the Data Table using the server and user account configured in "[Configure Connection Details](step-2-configure-spider-node-and-data-nodes.md#configure-connection-details)". The user account must have [privileges on the tables](step-2-configure-spider-node-and-data-nodes.md#grant-privileges).\\
 
 ## Grant Privileges
 
@@ -194,10 +184,10 @@ By default, the Spider user also requires the `CREATE TEMPORARY TABLES` privileg
 
 Spider BKA Mode is configured using the following methods:
 
-* The session value is configured by setting the [spider\_bka\_mode](../../../reference/storage-engines/spider/spider-system-variables.md#spider_bka_mode) system variable on the Spider Node. The default value is `-1`. When the session value is `-1`, the value for each [Spider Table](step-2-configure-spider-node-and-data-nodes.md#create-the-spider-table) is used.
+* The session value is configured by setting the [spider\_bka\_mode](../../../server-usage/storage-engines/spider/spider-system-variables.md#spider_bka_mode) system variable on the Spider Node. The default value is `-1`. When the session value is `-1`, the value for each [Spider Table](step-2-configure-spider-node-and-data-nodes.md#create-the-spider-table) is used.
 * The value for each Spider Table is configured by setting the `bka_mode` option in the `COMMENT` table option. When the `bka_mode` option is not set, the implicit value is 1.
 
-The default [spider\_bka\_mode](../../../reference/storage-engines/spider/spider-system-variables.md#spider_bka_mode) value is `-1`, and the implicit Spider Table value is `1`, so the default Spider BKA Mode is `1`.
+The default [spider\_bka\_mode](../../../server-usage/storage-engines/spider/spider-system-variables.md#spider_bka_mode) value is `-1`, and the implicit Spider Table value is `1`, so the default Spider BKA Mode is `1`.
 
 **On the Data Node**, grant the Spider user the `CREATE TEMPORARY TABLES` privilege on the database:
 

@@ -2,7 +2,7 @@
 
 Repairing tables in MariaDB is not similar to repairing tables in SQL Server.
 
-The first thing to understand is that every MariaDB table is handled by a [storage engine](understanding-mariadb-architecture.md#storage-engines). Storage engines are plugins that know how to physically read and write a table, so each storage engine allows one to repair tables in different ways. The default storage engine is [InnoDB](../../../../reference/storage-engines/innodb/).
+The first thing to understand is that every MariaDB table is handled by a [storage engine](understanding-mariadb-architecture.md#storage-engines). Storage engines are plugins that know how to physically read and write a table, so each storage engine allows one to repair tables in different ways. The default storage engine is [InnoDB](../../../../server-usage/storage-engines/innodb/).
 
 MariaDB provides specific SQL statements to deal with corrupted tables:
 
@@ -39,7 +39,7 @@ Here we discuss how to repair tables, depending on the storage engine.
 
 ### InnoDB
 
-InnoDB follows the "fail fast" philosophy. If table corruption is detected, by default InnoDB deliberately causes MariaDB to crash to avoid corruption propagation, logging an error into the [error log](../../../server-monitoring-logs/error-log.md). This happens even if the corruption is found with a `CHECK TABLE` statement. This behavior can be changed with the [innodb\_corrupt\_table\_action](../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_corrupt_table_action) server variable.
+InnoDB follows the "fail fast" philosophy. If table corruption is detected, by default InnoDB deliberately causes MariaDB to crash to avoid corruption propagation, logging an error into the [error log](../../../server-monitoring-logs/error-log.md). This happens even if the corruption is found with a `CHECK TABLE` statement. This behavior can be changed with the [innodb\_corrupt\_table\_action](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_corrupt_table_action) server variable.
 
 To repair an InnoDB table after a crash:
 
@@ -61,19 +61,19 @@ Recovering existing data:
 4. Drop the table with [DROP TABLE](../../../../reference/sql-statements/data-definition/drop/drop-table.md).
 5. Recreate the table and restore the dump.
 
-For more details, see [InnoDB Recovery Modes](../../../../reference/storage-engines/innodb/innodb-troubleshooting/innodb-recovery-modes.md).
+For more details, see [InnoDB Recovery Modes](../../../../server-usage/storage-engines/innodb/innodb-troubleshooting/innodb-recovery-modes.md).
 
 ### Aria and MyISAM
 
-[MyISAM](../../../../reference/storage-engines/myisam-storage-engine/) is not crash-safe. In case of a MariaDB crash, the changes applied to MyISAM tables but not yet flushed to the disk are lost.
+[MyISAM](../../../../server-usage/storage-engines/myisam-storage-engine/) is not crash-safe. In case of a MariaDB crash, the changes applied to MyISAM tables but not yet flushed to the disk are lost.
 
-[Aria](../../../../reference/storage-engines/aria/) is crash-safe by default, which means that in case of a crash, after repairing any table that is damaged, no changes are lost. However, Aria tables are not crash-safe if created with `TRANSACTIONAL=0` or `ROW_FORMAT` set to `FIXED` or `DYNAMIC`.
+[Aria](../../../../server-usage/storage-engines/aria/) is crash-safe by default, which means that in case of a crash, after repairing any table that is damaged, no changes are lost. However, Aria tables are not crash-safe if created with `TRANSACTIONAL=0` or `ROW_FORMAT` set to `FIXED` or `DYNAMIC`.
 
 System tables use the Aria storage engine and they are crash-safe.
 
-To check if a MyISAM/Aria table is corrupted, we can use [CHECK TABLE](../../../../reference/sql-statements/table-statements/check-table.md). To repair a MyISAM/Aria table, one can use [REPAIR TABLE](../../../../reference/sql-statements/table-statements/repair-table.md). Before running `REPAIR TABLE` against big tables, consider increasing [myisam\_repair\_threads](../../../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md#myisam_repair_threads) or [aria\_repair\_threads](../../../../reference/storage-engines/aria/aria-system-variables.md#aria_repair_threads).
+To check if a MyISAM/Aria table is corrupted, we can use [CHECK TABLE](../../../../reference/sql-statements/table-statements/check-table.md). To repair a MyISAM/Aria table, one can use [REPAIR TABLE](../../../../reference/sql-statements/table-statements/repair-table.md). Before running `REPAIR TABLE` against big tables, consider increasing [myisam\_repair\_threads](../../../../server-usage/storage-engines/myisam-storage-engine/myisam-system-variables.md#myisam_repair_threads) or [aria\_repair\_threads](../../../../server-usage/storage-engines/aria/aria-system-variables.md#aria_repair_threads).
 
-MyISAM and Aria tables can also be automatically repaired when corruption is detected. This is particularly useful for Aria, in case corrupted system tables prevent MariaDB from starting. See [myisam\_recover\_options](../../../../reference/storage-engines/myisam-storage-engine/myisam-system-variables.md#myisam_recover_options) and [aria\_recover\_options](../../../../reference/storage-engines/aria/aria-system-variables.md#aria_recover_options). By default Aria runs the quickest repair type. Occasionally, to repair a system table, we may have to start MariaDB in this way:
+MyISAM and Aria tables can also be automatically repaired when corruption is detected. This is particularly useful for Aria, in case corrupted system tables prevent MariaDB from starting. See [myisam\_recover\_options](../../../../server-usage/storage-engines/myisam-storage-engine/myisam-system-variables.md#myisam_recover_options) and [aria\_recover\_options](../../../../server-usage/storage-engines/aria/aria-system-variables.md#aria_recover_options). By default Aria runs the quickest repair type. Occasionally, to repair a system table, we may have to start MariaDB in this way:
 
 ```
 mysqld --aria-recover-options=BACKUP,FORCE
@@ -85,10 +85,10 @@ It is also possible to stop MariaDB and repair MyISAM tables with [myisamchk](..
 
 Notes on the different storage engines:
 
-* For [MyRocks](../../../../reference/storage-engines/myrocks/), see [MyRocks and CHECK TABLE](../../../../reference/storage-engines/myrocks/myrocks-and-check-table.md).
-* With [ARCHIVE](../../../../reference/storage-engines/archive/), `REPAIR TABLE` also improves the compression rate.
-* For [CSV](../../../../reference/storage-engines/csv/), see [Checking and Rpairing CSV Tables](../../../../reference/storage-engines/csv/checking-and-repairing-csv-tables.md).
-* Some special storage engines, like [MEMORY](../../../../reference/storage-engines/memory-storage-engine.md) or [BLACKHOLE](../../../../reference/storage-engines/blackhole.md), do not support any form of check and repair.
+* For [MyRocks](../../../../server-usage/storage-engines/myrocks/), see [MyRocks and CHECK TABLE](../../../../server-usage/storage-engines/myrocks/myrocks-and-check-table.md).
+* With [ARCHIVE](../../../../server-usage/storage-engines/archive/), `REPAIR TABLE` also improves the compression rate.
+* For [CSV](../../../../server-usage/storage-engines/csv/), see [Checking and Rpairing CSV Tables](../../../../server-usage/storage-engines/csv/checking-and-repairing-csv-tables.md).
+* Some special storage engines, like [MEMORY](../../../../server-usage/storage-engines/memory-storage-engine.md) or [BLACKHOLE](../../../../server-usage/storage-engines/blackhole.md), do not support any form of check and repair.
 
 CC BY-SA / Gnu FDL
 

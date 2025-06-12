@@ -37,7 +37,7 @@ server_audit_excl_users='bob,ted'
 
 ### System Variables
 
-Below is a list of all system variables related to the Audit Plugin. See [Server System Variables](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md) for a complete list of system variables and instructions on setting them. See also the [full list of MariaDB options, system and status variables](../../../server-management/variables-and-modes/full-list-of-mariadb-options-system-and-status-variables.md).
+Below is a list of all system variables related to the Audit Plugin. See [Server System Variables](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md) for a complete list of system variables and instructions on setting them. See also the [full list of MariaDB options, system and status variables](../../full-list-of-mariadb-options-system-and-status-variables.md).
 
 #### `server_audit_events`
 
@@ -122,7 +122,7 @@ Below is a list of all system variables related to the Audit Plugin. See [Server
 * Dynamic: No
 * Data Type: `string`
 * Default Value: Empty string
-* Introduced: [MariaDB 10.1.12](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10112-release-notes), [MariaDB 10.0.24](broken-reference), [MariaDB 5.5.48](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/mariadb-5548-release-notes)
+* Introduced: [MariaDB 10.1.12](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10112-release-notes), [MariaDB 10.0.24](broken-reference/), [MariaDB 5.5.48](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/mariadb-5548-release-notes)
 * Hidden: [MariaDB 10.1.18](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10118-release-notes), [MariaDB 10.0.28](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-10028-release-notes), [MariaDB 5.5.53](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/mariadb-5553-release-notes)
 
 #### `server_audit_logging`

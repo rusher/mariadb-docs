@@ -97,7 +97,7 @@ version.
 
 ## Modifying Operations
 
-All [INSERT](../../../sql-statements/data-manipulation/inserting-loading-data/insert.md) / [UPDATE](../../../sql-statements/data-manipulation/changing-deleting-data/update.md) / [DELETE](../../../sql-statements/data-manipulation/changing-deleting-data/delete.md) operations can be used with proxy tables. However, the same restrictions applying to the source table also apply to the proxy table.
+All [INSERT](../../../../reference/sql-statements/data-manipulation/inserting-loading-data/insert.md) / [UPDATE](../../../../reference/sql-statements/data-manipulation/changing-deleting-data/update.md) / [DELETE](../../../../reference/sql-statements/data-manipulation/changing-deleting-data/delete.md) operations can be used with proxy tables. However, the same restrictions applying to the source table also apply to the proxy table.
 
 Note: All PROXY and PROXY-based table types are not indexable.
 

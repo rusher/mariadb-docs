@@ -94,7 +94,7 @@ $ mariabackup --prepare \
    --target-dir=/var/mariadb/backup
 ```
 
-Running this command brings the base full backup, that is, `/var/mariadb/backup`, into sync with the changes contained in the [InnoDB redo log](../../../reference/storage-engines/innodb/innodb-redo-log.md) collected while the backup was taken.
+Running this command brings the base full backup, that is, `/var/mariadb/backup`, into sync with the changes contained in the [InnoDB redo log](../../storage-engines/innodb/innodb-redo-log.md) collected while the backup was taken.
 
 Then, apply the incremental changes to the base full backup:
 
