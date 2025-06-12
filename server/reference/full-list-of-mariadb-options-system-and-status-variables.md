@@ -1231,6 +1231,7 @@ Alphabetical list of all [mariadbd Options](../server-management/starting-and-st
 | --[pam-use-cleartext-plugin](plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam.md#pam_use_cleartext_plugin), [pam\_use\_cleartext\_plugin](plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam.md#pam_use_cleartext_plugin)|
 | --[pam-windbind-workaround](plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam.md#pam_winbind_workaround), [pam\_windbind\_workaround](plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam.md#pam_winbind_workaround) |
 | --[password-reuse-check-interval](plugins/password-validation-plugins/password_reuse_check_interval.md), [password\_reuse\_check\_interval](plugins/password-validation-plugins/password_reuse_check_interval.md)|
+<!--
 | --pbxt |
 | --[pbxt-auto-increment-mode](https://mariadb.com/kb/en/pbxt-system-variables/#pbxt_auto_increment_mode)|
 | --[pbxt-checkpoint-frequency](https://mariadb.com/kb/en/pbxt-system-variables/#pbxt_checkpoint_frequency)|
@@ -1251,6 +1252,7 @@ Alphabetical list of all [mariadbd Options](../server-management/starting-and-st
 | --[pbxt-sweeper-priority](https://mariadb.com/kb/en/pbxt-system-variables/#pbxt_sweeper_priority)|
 | --[pbxt-support-xa](https://mariadb.com/kb/en/pbxt-system-variables/#pbxt_support_xa)|
 | --[pbxt-transaction-buffer-size](https://mariadb.com/kb/en/pbxt-system-variables/#pbxt_transaction_buffer_size)|
+-->
 | --[performance-schema](sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema), [performance\_schema](sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema)|
 | [Performance\_schema\_accounts\_lost](sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-status-variables.md#performance_schema_accounts_lost) |
 | --[performance-schema-accounts-size](sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_accounts_size), [performance\_schema\_accounts\_size](sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-system-variables.md#performance_schema_accounts_size)|
