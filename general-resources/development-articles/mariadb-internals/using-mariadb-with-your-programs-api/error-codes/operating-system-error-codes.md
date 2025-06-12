@@ -8,7 +8,6 @@ The [perror](../../../../clients-and-utilities/perror.md) tool can be used to fi
 
 | Number | Error Code      | Description                                     |
 | ------ | --------------- | ----------------------------------------------- |
-| Number | Error Code      | Description                                     |
 | 1      | EPERM           | Operation not permitted                         |
 | 2      | ENOENT          | No such file or directory                       |
 | 3      | ESRCH           | No such process                                 |
