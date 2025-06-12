@@ -13,7 +13,8 @@ Failover and high availability were introduced in 1.2.0.
 
 ## Load balancing and failover distinction
 
-Failover occurs when a connection to a primary database server fails and the connector opens up a connection to another database server.\
+Failover occurs when a connection to a primary database server fails and the connector opens up a connection to another database server.
+
 For example, server A has the current connection. After a failure (server crash, network down …) the connection will switch to another server (B).
 
 Load balancing allows load (read and write) to be distributed over multiple servers.
@@ -90,7 +91,7 @@ When no failover/high availability parameter is set, the failover support is bas
 
 ### Standard failover
 
-When a failover/high availability parameter is set. Check the [configuration](broken-reference) section for an overview on how to set the parameters.
+When a failover/high availability parameter is set. Check the [configuration](failover-and-high-availability-with-mariadb-connector-j-for-2x-driver.md#configuration) section for an overview on how to set the parameters.
 
 There can be multiple fail causes. When a failure occurs many things will be done:
 
@@ -168,9 +169,10 @@ Here are the different connection error codes:
 
 A connection pool will detect connection error in SQLException (SQLState begin with "08"), and this connection will be discarded from pool.
 
-When a failover occur the connector cannot know if the last request has been received by the database server and executed. Applications may have failover design to handle these particular cases:\
-If the application was in autoCommit mode (not recommended), the last query may have been executed and committed. The application will have no possibility to know that but the application will be functional.\
-If not in autoCommit mode, the query has been launched in a transaction that will not be committed. Depending of what caused the exception, the host may have the connection open on his side during a certain amount of time. Take care of [transaction isolation](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/transactions/set-transaction) level that may lock too much rows.
+When a failover occurs, the connector cannot know if the last request has been received by the database server and executed. Applications may have failover design to handle these particular cases:
+
+* If the application was in autoCommit mode (not recommended), the last query may have been executed and committed. The application will have no possibility to know that but the application will be functional.
+* If not in autoCommit mode, the query has been launched in a transaction that will not be committed. Depending of what caused the exception, the host may have the connection open on his side during a certain amount of time. Take care of [transaction isolation](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/transactions/set-transaction) level that may lock too much rows.
 
 ## Configuration
 
@@ -181,9 +183,11 @@ JDBC connection string format is :
 jdbc:(mysql|mariadb):[replication:|sequential:|loadbalance:|aurora:]//<hostDescription>[,<hostDescription>...]/[database][?<key1>=<value1>[&<key2>=<value2>]...]
 ```
 
-The standard option "connectTimeout" defines the socket connection timeout. By default, this option is set to 0 (no timeout).\
+The standard option "connectTimeout" defines the socket connection timeout. By default, this option is set to 0 (no timeout).
+
 Since there are many servers, setting this option to a small amount of time make sense.\
-During the [connection loop phase](failover-and-high-availability-with-mariadb-connector-j-for-2x-driver.md#connection-loop), the driver will try to connect to the server sequentially until the creation of an active connection.\
+During the [connection loop phase](failover-and-high-availability-with-mariadb-connector-j-for-2x-driver.md#connection-loop), the driver will try to connect to the server sequentially until the creation of an active connection.
+
 Set this option to a small value (such as 2000ms - to be set according to your environment) which will permit rejecting a faulty server quickly.
 
 ### Failover and Load Balancing Modes
