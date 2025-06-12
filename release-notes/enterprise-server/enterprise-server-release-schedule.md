@@ -19,7 +19,8 @@ Upcoming minor or maintenance releases are scheduled for:
 
 Previously-announced minor or maintenance release dates:
 
-* 2025-06-11
+* 2025-06-11 ([ES 11.4.7-4](11-4/release-notes-for-mariadb-enterprise-server-11.4.7-4.md), [ES 10.6.22-18](10-6/release-notes-for-mariadb-enterprise-server-10.6.22-18.md), [ES 10.5.29-23](10-5/release-notes-for-mariadb-enterprise-server-10.5.29-23.md))
+* 2025-06-04 ([ES 11.8.2-0 Technical Preview](11.8/release-notes-for-mariadb-enterprise-server-11.8.2-0-tech-preview.md))
 * 2025-03-19 ([ES 11.4.5-3](11-4/release-notes-for-mariadb-enterprise-server-11-4-5-3.md), [ES 10.6.21-17](10-6/release-notes-for-mariadb-enterprise-server-10-6-21-17.md), [ES 10.5.28-22](10-5/release-notes-for-mariadb-enterprise-server-10-5-28-22.md))
 * 2025-01-16 ([ES 11.4.4-2](11-4/release-notes-for-mariadb-enterprise-server-11-4-4-2.md), [ES 11.4.0-1 Technical Preview](11-4/release-notes-for-mariadb-enterprise-server-11-4-0-1.md))
 * 2024-12-10 ([ES 10.6.20-16](10-6/changelog-for-mariadb-enterprise-server-10-6-20-16.md), [ES 10.5.27-21](10-5/release-notes-for-mariadb-enterprise-server-10-5-27-21.md))
