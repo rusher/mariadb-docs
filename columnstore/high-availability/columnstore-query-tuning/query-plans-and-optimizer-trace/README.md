@@ -1,5 +1,8 @@
 ---
-description: Query Plans and Optimizer Trace
+description: >-
+  MariaDB ColumnStore's query plans and Optimizer Trace show how analytical
+  queries run in parallel across its distributed, columnar architecture, aiding
+  performance tuning.
 layout:
   title:
     visible: true
@@ -15,4 +18,3 @@ layout:
 
 # Query Plans and Optimizer Trace
 
-MariaDB ColumnStore's query plans detail how analytical queries are executed across its distributed architecture, showcasing parallel processing. The Optimizer Trace feature helps developers and DBAs understand the optimizer's decisions, revealing how it leverages columnar storage and partitioning for efficiency, and crucial for fine-tuning the performance.
