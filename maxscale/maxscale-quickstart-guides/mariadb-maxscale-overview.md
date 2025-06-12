@@ -24,37 +24,19 @@ MariaDB MaxScale follows the MariaDB Enterprise release schedule, which can be f
 | -------------- | ------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Release Series | Latest Release Date | Latest Release                                                                                                                                                                                             |
 | 24.02          | 2024-12-09          | [MariaDB MaxScale 24.02.4](../other-maxscale-versions/mariadb-maxscale-24-02/maxscale-24-02release-notes/mariadb-maxscale-2402-maxscale-2402-mariadb-maxscale-24022-release-notes-2024-06-03.md)           |
-| 23.08          | 2024-12-09          | [MariaDB MaxScale 23.08.8](https://mariadb.com/kb/en/mariadb-maxscale-2308-maxscale-2308-mariadb-maxscale-23085-release-notes-2024-03-11/)                                                                 |
+| 23.08          | 2024-12-09          | MariaDB MaxScale 23.08.8                                                                                                                                                                                   |
 | 23.02          | 2024-12-09          | [MariaDB MaxScale 23.02.12](../other-maxscale-versions/mariadb-maxscale-23-02/mariadb-maxscale-23-02-release-notes/mariadb-maxscale-2302-maxscale-2302-mariadb-maxscale-23029-release-notes-2024-03-11.md) |
-| 22.08          | 2024-12-09          | [MariaDB MaxScale 22.08.15](https://mariadb.com/kb/en/mariadb-maxscale-2208-mariadb-maxscale-220812-release-notes-2024-03-11/)                                                                             |
+| 22.08          | 2024-12-09          | MariaDB MaxScale 22.08.15                                                                                                                                                                                  |
 | 6              | 2024-03-11          | [MariaDB MaxScale 6.4.15](../other-maxscale-versions/mariadb-maxscale-21-06/)                                                                                                                              |
 | 2.5            | 2023-10-25          | [MariaDB MaxScale 2.5.29](../other-maxscale-versions/mariadb-maxscale-25/maxscale-25-release-notes/mariadb-maxscale-25-mariadb-maxscale-2529-release-notes-2023-10-25.md)                                  |
 | 2.4            | 2022-01-10          | [MariaDB MaxScale 2.4.19](../other-maxscale-versions/mariadb-maxscale-24/maxscale-24-release-notes/mariadb-maxscale-24-mariadb-maxscale-2419-release-notes-2022-01-10.md)                                  |
 
 ## Available Documentation
 
-### Deployment
-
-* [Deploy ColumnStore Object Storage Topology](https://mariadb.com/kb/en/Deploy_ColumnStore_Object_Storage_Topology)
-* [Deploy ColumnStore Shared Local Storage Topology](https://mariadb.com/kb/en/Deploy_ColumnStore_Shared_Local_Storage_Topology)
-* [Deploy Galera Cluster Topology](https://mariadb.com/kb/en/Deploy_Galera_Cluster_Topology)
-* [Deploy Primary/Replica Topology](https://mariadb.com/kb/en/Deploy_Primary/Replica_Topology)
-* [Deploy Xpand Topology](https://mariadb.com/kb/en/Deploy_Xpand_Topology)
-
-### Service Management
-
-* [Administrative Tools for MariaDB MaxScale](https://mariadb.com/kb/en/Administrative_Tools_for_MariaDB_MaxScale)
-
-### Connect and Query
-
-* [Connect and Query](https://mariadb.com/kb/en/Connect_and_Query)
-
 ### Security
 
 * [Authentication with MariaDB MaxScale](../maxscale-security/mariadb-maxscale-authentication/)
 * [Data-in-Transit Encryption for MariaDB MaxScale](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption)
-* [Enabling TLS for MaxScale's REST API](https://mariadb.com/kb/en/Enabling_TLS_for_MaxScale's_REST_API)
-* [Enabling TLS on MaxScale](https://mariadb.com/kb/en/Enabling_TLS_on_MaxScale)
 
 ### Architecture
 
