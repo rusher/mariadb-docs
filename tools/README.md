@@ -15,8 +15,9 @@ layout:
 
 # Tools
 
+MariaDB offers various tools for management, development, and connectivity. Command-line utilities like `mariadb` for client interaction and `mariadb-admin` for server administration are fundamental. MariaDB MaxScale provides advanced features like load balancing, query routing, and high availability. Connectors for diverse programming languages and GUI tools like DBeaver or MySQL Workbench (compatible with MariaDB) further enhance usability.
+
 {% content-ref url="mariadb-enterprise-operator/" %}
 [mariadb-enterprise-operator](mariadb-enterprise-operator/)
 {% endcontent-ref %}
 
-MariaDB offers various tools for database management. Command-line utilities like `mariadb` for SQL interaction, `mariadb-dump` for backups, and `mariadb-import` for data loading are essential. Additionally, graphical tools and third-party clients enhance administration and development workflows.
