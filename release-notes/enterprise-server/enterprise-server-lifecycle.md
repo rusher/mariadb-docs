@@ -1,6 +1,6 @@
 # Enterprise Server Lifecycle
 
-MariaDB Enterprise Server enables a predictable development and operations experience through an `enterprise lifecycle` This enterprise lifecycle incorporates optimized builds, predictable release behavior, and vendor support.
+MariaDB Enterprise Server enables a predictable development and operations experience through an _enterprise lifecycle_ This enterprise lifecycle incorporates optimized builds, predictable release behavior, and vendor support.
 
 ## Enterprise Server Builds
 
@@ -12,7 +12,11 @@ MariaDB Enterprise Server incorporates enhancements that are not present in Mari
 * Risk reduction from untested or incompatible features through the inclusion of only features with level 3 support (engineering code-level support) from MariaDB Corporation.
 * Optimized the configuration defaults.
 
-For details on features added to enhance, harden, and secure MariaDB Enterprise Server, see [What's New in MariaDB Enterprise Server 10.6?](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/aEnK0ZXmUbJzqQrTjFyb/~/changes/31/mariadb-enterprise-server-release-notes/mariadb-enterprise-server-10-6/https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/aEnK0ZXmUbJzqQrTjFyb/~/changes/31/mariadb-enterprise-server-release-notes/mariadb-enterprise-server-10-6/whats-new-in-mariadb-enterprise-server-10-6whats-new-in-mariadb-enterprise-server-10-6).
+For details on features added to enhance, harden, and secure MariaDB Enterprise Server, see the following pages:
+
+* [What's New in MariaDB Enterprise Server 10.6](10-6/whats-new-in-mariadb-enterprise-server-10-6.md)
+* [What's New in MariaDB Enterprise Server 11.4](11-4/whats-new-in-mariadb-enterprise-server-11-4.md)
+* [What's New in MariaDB Enterprise Server 11.8](11.8/whats-new-in-mariadb-enterprise-server-11.8.md)
 
 ## Enterprise Server Releases <a href="#enterprise-server-releases" id="enterprise-server-releases"></a>
 
@@ -54,10 +58,10 @@ Additional information on the release numbering for MariaDB Enterprise Server ca
 
 MariaDB Corporation offers vendor support for MariaDB Enterprise Server, including,
 
-* [Customer support](https://mariadb.com/kb/en/support-questions/) as detailed in the [Subscription Services Policy](https://mariadb.com/subscription-services-policies).
-* [Professional services](https://mariadb.com/services), including migration services, remote DBA services, and consulting.
-* Customer communications, managed via the [MariaDB Customer Portal](https://customers.mariadb.com/).
-* [Training](https://mariadb.com/services/training).
-* [Documentation](https://mariadb.com/kb/en).
+* Customer support as detailed in the [Subscription Services Policy](https://mariadb.com/subscription-services-policies)
+* [Professional services](https://mariadb.com/services), including migration services, remote DBA services, and consulting
+* Customer communications, managed via the [MariaDB Customer Portal](https://customers.mariadb.com/)
+* [Training](https://mariadb.com/services/training)
+* [Documentation](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/gmXC0YXB3rRhXvpg5mb1/)
 
 {% @marketo/form formid="4316" formId="4316" %}
