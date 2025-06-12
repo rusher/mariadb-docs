@@ -1,4 +1,8 @@
 ---
+description: >-
+  Managing MariaDB ColumnStore means deploying its architecture, scaling
+  modules, and maintaining performance through monitoring, optimization, and
+  backups.
 layout:
   title:
     visible: true
@@ -24,4 +28,3 @@ Release notes and other documentation for ColumnStore is also available in the E
 * [ColumnStore 5.6 Release Notes](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/columnstore/columnstore-5-6)
 * [Deployment Instructions](../../../en/mariadb-columnstore/)
 {% endhint %}
-
