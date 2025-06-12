@@ -13,7 +13,7 @@ layout:
     visible: false
 ---
 
-# MariaDB Server 10.11.5
+# Thank you for downloading MariaDB Server 10.11.5
 
 {% @marketo/form formId="4279" %}
 
@@ -35,17 +35,16 @@ layout:
 
 * The prior release in this series was MariaDB Server 10.11.2, released on 16 Feb 2023
 * This release (MariaDB Server 10.11.3) was released on 10 May 2023
-* The next release in this series is MariaDB Server 10.11.4, released on 7 Jun 2023
-The latest release in this series is [MariaDB 10.11.13](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-11-series/mariadb-10-11-13-release-notes), released on 22 May 2025
+* The next release in this series is MariaDB Server 10.11.4, released on 7 Jun 2023\
+  The latest release in this series is [MariaDB 10.11.13](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-11-series/mariadb-10-11-13-release-notes), released on 22 May 2025
 
 ## Useful Resources
 
-* [MariaDB Server Documentation](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/)
-* [MariaDB Connector Documentation](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/)
-* [Contact Us](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/about/contact-us/)
-* [Learn about the MariaDB Community](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/community/)
+* [MariaDB Server Documentation](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/SsmexDFPv2xG2OTyO5yV/)
+* [MariaDB Connector Documentation](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors)
+* [Contact Us](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/about/contact-us)
+* [Learn about the MariaDB Community](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/community)
 
 CC BY-SA / Gnu FDL
-
 
 {% @marketo/form formId="4316" %}
