@@ -45,7 +45,7 @@ Notable changes of this release include:
 
 * [slave\_parallel\_mode](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables#slave_parallel_mode) now defaults to `optimistic` ([MDEV-18648](https://jira.mariadb.org/browse/MDEV-18648)).
 * Make REPLICA a synonym for [SLAVE in SQL statements](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/replication-statements) ([MDEV-20601](https://jira.mariadb.org/browse/MDEV-20601))
-* [Galera](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/galera-cluster/README.md) [GTID](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid) support ([commit](https://github.com/MariaDB/server/commit/41bc736871))
+* [Galera](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/) [GTID](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid) support ([commit](https://github.com/MariaDB/server/commit/41bc736871))
 * Add new mode to wsrep\_OSU\_method in which Galera checks storage engine of the effected table ([MDEV-20051](https://jira.mariadb.org/browse/MDEV-20051))
 * Galera: Replicate MariaDB GTID to other nodes in the cluster ([MDEV-20720](https://jira.mariadb.org/browse/MDEV-20720))
 

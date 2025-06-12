@@ -92,12 +92,12 @@ Thanks, and enjoy MariaDB!
 
 ## Changelog
 
-For a complete list of changes made in [MariaDB 10.5.29](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/mariadb-10529-release-notes/README.md), with links to detailed\
+For a complete list of changes made in MariaDB 10.5.29, with links to detailed\
 information on each push, see the [changelog](../../changelogs/changelogs-mariadb-105-series/mariadb-10-5-29-changelog.md).
 
 ## Contributors
 
-For a full list of contributors to [MariaDB 10.5.29](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/mariadb-10529-release-notes/README.md), see the [MariaDB Foundation release announcement](https://mariadb.org/mariadb-11-0-3-10-11-5-10-10-6-10-9-8-10-6-15-10-5-22-10-4-31-now-available/).
+For a full list of contributors to MariaDB 10.5.29, see the [MariaDB Foundation release announcement](https://mariadb.org/mariadb-11-0-3-10-11-5-10-10-6-10-9-8-10-6-15-10-5-22-10-4-31-now-available/).
 
 Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
 

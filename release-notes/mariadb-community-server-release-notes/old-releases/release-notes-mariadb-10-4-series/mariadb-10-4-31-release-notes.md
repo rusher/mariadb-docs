@@ -41,7 +41,7 @@ Thanks, and enjoy MariaDB!
 ### InnoDB
 
 * innochecksum dies with Floating point exception ([MDEV-31641](https://jira.mariadb.org/browse/MDEV-31641))
-* Deadlock with 3 concurrent [DELETEs](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/changing-deleting-data/delete) by [unique key](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/getting-started-with-indexes/README.md#unique-index) ([MDEV-10962](https://jira.mariadb.org/browse/MDEV-10962))
+* Deadlock with 3 concurrent [DELETEs](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/changing-deleting-data/delete) by [unique key](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/mariadb-quickstart-guides/mariadb-indexes-guide#unique-index) ([MDEV-10962](https://jira.mariadb.org/browse/MDEV-10962))
 * Assertion \`\`!strcmp(index->table->name.m\_name, "SYS\_FOREIGN") || !strcmp(index->table->name.m\_name, "SYS\_FOREIGN\_COLS")'`failed in`btr\_node\_ptr\_max\_size\` ([MDEV-19216](https://jira.mariadb.org/browse/MDEV-19216))
 * `MODIFY COLUMN` can break FK constraints, and lead to unrestorable dumps ([MDEV-31086](https://jira.mariadb.org/browse/MDEV-31086))
 

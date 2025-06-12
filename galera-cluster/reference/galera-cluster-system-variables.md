@@ -51,7 +51,7 @@ Also see the [Full list of MariaDB options, system and status variables](https:/
 
 #### `wsrep_certify_nonPK`
 
-* Description: When set to `ON` (the default), Galera will still certify transactions for tables with no [primary key](../../kb/en/getting-started-with-indexes/#primary-key). However, this can still cause undefined behavior in some circumstances. It is recommended to define primary keys for every InnoDB table when using Galera.
+* Description: When set to `ON` (the default), Galera will still certify transactions for tables with no [primary key](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/mariadb-quickstart-guides/mariadb-indexes-guide#primary-key). However, this can still cause undefined behavior in some circumstances. It is recommended to define primary keys for every InnoDB table when using Galera.
 * Commandline: `--wsrep-certify-nonPK[={0|1}]`
 * Scope: Global
 * Dynamic: Yes

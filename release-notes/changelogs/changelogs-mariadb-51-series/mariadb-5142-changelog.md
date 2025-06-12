@@ -12,7 +12,7 @@ in previous [changelogs](../../connectors/odbc/changelogs/) it includes the foll
 
 * Includes MySQL 5.1.42
 * Includes [XtraDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb) 1.0.6-9
-* Includes [PBXT](https://github.com/mariadb-corporation/docs-release-notes/blob/test/changelogs/changelogs-mariadb-51-series/pbxt-storage-engine/README.md) 1.0.09f RC3
+* Includes PBXT 1.0.09f RC3
 * Includes [FederatedX](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/federatedx-storage-engine)
 * Added page fault counters for SHOW PROFILE on Windows.
 * Fixed bug where one connection didn't see newly committed data from another\

@@ -34,7 +34,7 @@ The revision number links will take you to the revision's page on Launchpad. On 
   * Updated test results after the mysql 5.1 merge.
 * [Revision #3164](https://bazaar.launchpad.net/~maria-captains/maria/5.1/revision/3164) \[merge]\
   Tue 2012-11-06 11:52:55 +0200
-  * Merge MySQL 5.1.66 -> [MariaDB 5.1.65](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/mariadb-5165-release-notes/README.md)
+  * Merge MySQL 5.1.66 -> MariaDB 5.1.65
   * [Revision #2502.1195.40](https://bazaar.launchpad.net/~maria-captains/maria/5.1/revision/2502.1195.40)\
     Tue 2012-09-11 12:47:32 +0200
     * Spec file change to work around cast ulonglong -> int.

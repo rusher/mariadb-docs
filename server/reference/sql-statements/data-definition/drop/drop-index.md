@@ -46,7 +46,7 @@ that support the new progress reporting protocol. For example, if you were using
 
 ## See Also
 
-* [Getting Started with Indexes](../../../../../kb/en/getting-started-with-indexes/)
+* [Getting Started with Indexes](../../../../mariadb-quickstart-guides/mariadb-indexes-guide.md)
 * [CREATE INDEX](../create/create-index.md)
 * [ALTER TABLE](../alter/alter-table.md)
 

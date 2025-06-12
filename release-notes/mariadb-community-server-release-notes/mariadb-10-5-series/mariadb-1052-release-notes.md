@@ -95,7 +95,7 @@ Notable changes of this release include:
 
 ### Galera
 
-* [Galera wsrep library](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/what-is-mariadb-galera-cluster/README.md) updated to 26.4.4
+* [Galera wsrep library](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/galera-cluster-quickstart-guides/mariadb-galera-cluster-guide) updated to 26.4.4
 * Galera Cluster Node During IST gets stuck going from "Synced" to "Joining:..." ([MDEV-21002](https://jira.mariadb.org/browse/MDEV-21002))
 
 ### Other

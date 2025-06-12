@@ -35,13 +35,13 @@ INSERT [LOW_PRIORITY | HIGH_PRIORITY] [IGNORE]
 
 ## Description
 
-INSERT ... ON DUPLICATE KEY UPDATE is a MariaDB/MySQL extension to the [INSERT](insert.md) statement that, if it finds a duplicate unique or [primary key](../../../../../kb/en/getting-started-with-indexes/#primary-key), will instead perform an [UPDATE](../changing-deleting-data/update.md).
+INSERT ... ON DUPLICATE KEY UPDATE is a MariaDB/MySQL extension to the [INSERT](insert.md) statement that, if it finds a duplicate unique or [primary key](../../../../mariadb-quickstart-guides/mariadb-indexes-guide.md#primary-key), will instead perform an [UPDATE](../changing-deleting-data/update.md).
 
 The row/s affected value is reported as 1 if a row is inserted, and 2 if a row is updated, unless the API's `CLIENT_FOUND_ROWS` flag is set.
 
 If more than one unique index is matched, only the first is updated. It is not recommended to use this statement on tables with more than one unique index.
 
-If the table has an [AUTO\_INCREMENT](../../../data-types/auto_increment.md) [primary key](../../../../../kb/en/getting-started-with-indexes/#primary-key) and the statement inserts or updates a row, the [LAST\_INSERT\_ID()](../../../sql-functions/secondary-functions/information-functions/last_insert_id.md) function returns its AUTO\_INCREMENT value.
+If the table has an [AUTO\_INCREMENT](../../../data-types/auto_increment.md) [primary key](../../../../mariadb-quickstart-guides/mariadb-indexes-guide.md#primary-key) and the statement inserts or updates a row, the [LAST\_INSERT\_ID()](../../../sql-functions/secondary-functions/information-functions/last_insert_id.md) function returns its AUTO\_INCREMENT value.
 
 The [VALUES()](../../../sql-functions/secondary-functions/miscellaneous-functions/values-value.md) function can only be used in a `ON DUPLICATE KEY UPDATE` clause and has no meaning in any other context. It returns the column values from the `INSERT` portion of the statement. This function is particularly useful for multi-rows inserts.
 

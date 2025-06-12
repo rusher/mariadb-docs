@@ -297,7 +297,7 @@ SELECT * FROM t1;
 
 ## See Also
 
-* [Getting Started with Indexes](../../../kb/en/getting-started-with-indexes/)
+* [Getting Started with Indexes](../../mariadb-quickstart-guides/mariadb-indexes-guide.md)
 * [Sequences](../sql-structure/sequences/) - an alternative to auto\_increment available from [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103)
 * [AUTO\_INCREMENT FAQ](auto_increment-faq.md)
 * [LAST\_INSERT\_ID()](../sql-functions/secondary-functions/information-functions/last_insert_id.md)

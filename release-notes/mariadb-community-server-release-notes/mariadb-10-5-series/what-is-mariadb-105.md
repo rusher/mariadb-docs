@@ -116,7 +116,7 @@ See the [Differences in MariaDB Enterprise Server 10.5](../../enterprise-server/
 
 ### Galera: Full GTID Support
 
-* Add full [GTID](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid) support to [Galera](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/galera-cluster/README.md) cluster ([commit](https://github.com/MariaDB/server/commit/41bc736871)). With this feature all nodes in a cluster\
+* Add full [GTID](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid) support to [Galera](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/) cluster ([commit](https://github.com/MariaDB/server/commit/41bc736871)). With this feature all nodes in a cluster\
   will have the same GTID for replicated events originating from the cluster. Also added a new variable, `wsrep_gtid_seq_no`, to manually update the WSREP GTID sequence number in the cluster (similar to how the `gtid_seq_no` variable is used for non-WSREP transactions).
 * Add new mode to wsrep\_OSU\_method in which Galera checks storage engine of the affected table ([MDEV-20051](https://jira.mariadb.org/browse/MDEV-20051))
 * Galera: Replicate MariaDB GTID to other nodes in the cluster ([MDEV-20720](https://jira.mariadb.org/browse/MDEV-20720))

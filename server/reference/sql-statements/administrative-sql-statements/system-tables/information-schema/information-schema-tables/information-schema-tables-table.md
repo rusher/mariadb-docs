@@ -164,7 +164,7 @@ SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='foo' AND TEMPORARY='
 
 * [mysqlshow](../../../../../../clients-and-utilities/legacy-clients-and-utilities/mysqlshow.md)
 * [SHOW TABLE STATUS](../../../show/show-table-status.md)
-* [Finding Tables Without Primary Keys](../../../../../../../kb/en/getting-started-with-indexes/#finding-tables-without-primary-keys)
+* [Finding Tables Without Primary Keys](../../../../../../mariadb-quickstart-guides/mariadb-indexes-guide.md#finding-tables-without-primary-keys)
 
 CC BY-SA / Gnu FDL
 

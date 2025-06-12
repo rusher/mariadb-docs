@@ -309,13 +309,13 @@ For limits on InnoDB indexes, see [InnoDB Limitations](../../../../server-usage/
 
 Plain indexes are regular indexes that are not unique, and are not acting as a primary key or a foreign key. They are also not the "specialized" `FULLTEXT` or `SPATIAL` indexes.
 
-See [Getting Started with Indexes: Plain Indexes](https://mariadb.com/kb/en/getting-started-with-indexes/#plain-indexes) for more information.
+See [Getting Started with Indexes: Plain Indexes](../../../../mariadb-quickstart-guides/mariadb-indexes-guide.md#plain-indexes) for more information.
 
 #### PRIMARY KEY
 
 For `PRIMARY KEY` indexes, you can specify a name for the index, but it is ignored, and the name of the index is always `PRIMARY`. A warning is explicitly issued if a name is specified. Before then, the name was silently ignored.
 
-See [Getting Started with Indexes: Primary Key](../../../../../kb/en/getting-started-with-indexes/#primary-key) for more information.
+See [Getting Started with Indexes: Primary Key](../../../../mariadb-quickstart-guides/mariadb-indexes-guide.md#primary-key) for more information.
 
 #### UNIQUE
 
@@ -327,7 +327,7 @@ For `UNIQUE` indexes, you can specify a name for the constraint, using the `CONS
 
 Unique, if index type is not specified, is normally a BTREE index that can also be used by the optimizer to find rows. If the key is longer than the max key length for the used storage engine, a HASH key will be created. This enables MariaDB to enforce uniqueness for any type or number of columns.
 
-See [Getting Started with Indexes: Unique Index](../../../../../kb/en/getting-started-with-indexes/#unique-index) for more information.
+See [Getting Started with Indexes: Unique Index](../../../../mariadb-quickstart-guides/mariadb-indexes-guide.md#unique-index) for more information.
 
 #### FOREIGN KEY
 

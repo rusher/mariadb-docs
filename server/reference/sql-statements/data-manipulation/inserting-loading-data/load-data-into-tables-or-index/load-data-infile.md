@@ -64,7 +64,7 @@ The used command is not allowed because the MariaDB server or client
 
 ### `REPLACE` and `IGNORE`
 
-If you load data from a file into a table that already contains data and has a [primary key](../../../../../../kb/en/getting-started-with-indexes/#primary-key), you may encounter issues where the statement attempts to insert a row with a primary key that already exists. When this happens, the statement fails with Error 1064, protecting the data already on the table. If you want MariaDB to overwrite duplicates, use the `REPLACE` keyword.
+If you load data from a file into a table that already contains data and has a [primary key](../../../../../mariadb-quickstart-guides/mariadb-indexes-guide.md#primary-key), you may encounter issues where the statement attempts to insert a row with a primary key that already exists. When this happens, the statement fails with Error 1064, protecting the data already on the table. If you want MariaDB to overwrite duplicates, use the `REPLACE` keyword.
 
 The `REPLACE` keyword works like the [REPLACE](../../changing-deleting-data/replace.md) statement. Here, the statement attempts to load the data from the file. If the row does not exist, it adds it to the table. If the row contains an existing primary key, it replaces the table data. That is, in the event of a conflict, it assumes the file contains the desired row.
 

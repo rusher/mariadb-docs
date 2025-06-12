@@ -324,7 +324,7 @@ SELECT * FROM table2;
 1 row in set (0.00 sec)
 ```
 
-You can also use virtual columns to implement a "poor man's partial index". See example at the end of [Unique Index](../../../../../kb/en/getting-started-with-indexes/#unique-index).
+You can also use virtual columns to implement a "poor man's partial index". See example at the end of [Unique Index](../../../../mariadb-quickstart-guides/mariadb-indexes-guide.md#unique-index).
 
 ## See Also
 

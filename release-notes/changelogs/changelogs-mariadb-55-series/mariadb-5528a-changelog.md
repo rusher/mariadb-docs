@@ -117,7 +117,7 @@ The revision number links will take you to the revision's page on Launchpad. On 
       * Merge [MariaDB 5.1.66](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-1-series/mariadb-5166-release-notes.md) -> 5.2.12
       * [Revision #2502.565.13](https://bazaar.launchpad.net/~maria-captains/maria/5.5/revision/2502.565.13) \[merge]\
         Tue 2012-11-06 11:52:55 +0200
-        * Merge MySQL 5.1.66 -> [MariaDB 5.1.65](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/mariadb-5165-release-notes/README.md)
+        * Merge MySQL 5.1.66 -> MariaDB 5.1.65
         * [Revision #2661.817.84](https://bazaar.launchpad.net/~maria-captains/maria/5.5/revision/2661.817.84)\
           Tue 2012-09-11 12:47:32 +0200
           * Spec file change to work around cast ulonglong -> int.

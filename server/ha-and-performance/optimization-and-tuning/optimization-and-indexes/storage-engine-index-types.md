@@ -2,7 +2,7 @@
 
 This refers to the index\_type definition when creating an index, i.e. BTREE, HASH or RTREE.
 
-For more information on general types of indexes, such as primary keys, unique indexes etc, go to [Getting Started with Indexes](https://mariadb.com/kb/en/getting-started-with-indexes/).
+For more information on general types of indexes, such as primary keys, unique indexes etc, go to [Getting Started with Indexes](../../../mariadb-quickstart-guides/mariadb-indexes-guide.md).
 
 | Storage Engine                                                                | Permitted Indexes |
 | ----------------------------------------------------------------------------- | ----------------- |

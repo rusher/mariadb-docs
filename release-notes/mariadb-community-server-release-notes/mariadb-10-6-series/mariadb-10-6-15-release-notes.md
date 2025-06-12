@@ -53,7 +53,7 @@ Thanks, and enjoy MariaDB!
 * Crashing on I/O error is unhelpful ([MDEV-27593](https://jira.mariadb.org/browse/MDEV-27593))
 * SIGSEGV in `log_sort_flush_list()` in InnoDB crash recovery ([MDEV-31354](https://jira.mariadb.org/browse/MDEV-31354))
 * InnoDB tables are being flagged as corrupted on an I/O bound server ([MDEV-31767](https://jira.mariadb.org/browse/MDEV-31767))
-* Deadlock with 3 concurrent [DELETEs](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/changing-deleting-data/delete) by [unique key](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/getting-started-with-indexes/README.md#unique-index) ([MDEV-10962](https://jira.mariadb.org/browse/MDEV-10962))
+* Deadlock with 3 concurrent [DELETEs](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/changing-deleting-data/delete) by [unique key](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/mariadb-quickstart-guides/mariadb-indexes-guide#unique-index) ([MDEV-10962](https://jira.mariadb.org/browse/MDEV-10962))
 * Server Status [Innodb\_row\_lock\_time%](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables#innodb_row_lock_time) is reported in seconds ([MDEV-29311](https://jira.mariadb.org/browse/MDEV-29311))
 * innochecksum dies with Floating point exception ([MDEV-31641](https://jira.mariadb.org/browse/MDEV-31641))
 * Add InnoDB engine information to the [slow query log](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/server-monitoring-logs/slow-query-log) ([MDEV-31558](https://jira.mariadb.org/browse/MDEV-31558))

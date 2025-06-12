@@ -37,7 +37,7 @@ lock_option:
 The _CREATE INDEX_ statement is used to add indexes to a table. Indexes can be created at the same as the table, with the [CREATE TABLE](../../../../sql-statements/data-definition/create/create-table.md) statement. In some cases, such as for InnoDB primary keys, doing so during creation is preferable, as adding a primary key will involve rebuilding the table.
 
 The statement is mapped to an ALTER TABLE statement to create [indexes](../../../../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/).\
-See [ALTER TABLE](../../../../sql-statements/data-definition/alter/alter-table.md). CREATE INDEX cannot be used to create a[PRIMARY KEY](../../../../../../kb/en/getting-started-with-indexes/#primary-key); use ALTER TABLE instead.
+See [ALTER TABLE](../../../../sql-statements/data-definition/alter/alter-table.md). CREATE INDEX cannot be used to create a[PRIMARY KEY](../../../../mariadb-quickstart-guides/mariadb-indexes-guide.md#primary-key); use ALTER TABLE instead.
 
 If another connection is using the table, a [metadata lock](../../../../sql-statements/transactions/metadata-locking.md) is active, and this statement will wait until the lock is released. This is also true for non-transactional tables.
 
@@ -143,7 +143,7 @@ CREATE UNIQUE INDEX u ON rooms (room_number, p WITHOUT OVERLAPS);
 ## See Also
 
 * [Identifier Names](../../../../sql-structure/sql-language-structure/identifier-names.md)
-* [Getting Started with Indexes](../../../../../../kb/en/getting-started-with-indexes/)
+* [Getting Started with Indexes](../../../../mariadb-quickstart-guides/mariadb-indexes-guide.md)
 * [ALTER TABLE](../../../../sql-statements/data-definition/alter/alter-table.md)
 * [DROP INDEX](../../../../sql-statements/data-definition/drop/drop-index.md)
 * [SHOW INDEX](../../../../sql-statements/administrative-sql-statements/show/show-index.md)

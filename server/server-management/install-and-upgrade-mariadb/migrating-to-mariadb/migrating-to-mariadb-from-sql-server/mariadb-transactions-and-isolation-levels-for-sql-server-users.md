@@ -67,8 +67,8 @@ This section only covers the basic syntax for transactions. Much more options ar
 
 MariaDB supports the following [constraints](../../../../reference/sql-statements/data-definition/constraint.md):
 
-* [Primary keys](https://mariadb.com/kb/en/getting-started-with-indexes/#primary-key)
-* [UNIQUE](../../../../../kb/en/getting-started-with-indexes/#unique-index)
+* [Primary keys](../../../../mariadb-quickstart-guides/mariadb-indexes-guide.md#primary-key)
+* [UNIQUE](../../../../mariadb-quickstart-guides/mariadb-indexes-guide.md#unique-index)
 * [CHECK](../../../../reference/sql-statements/data-definition/constraint.md#check-constraints)
 * [Foreign keys](../../../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/foreign-keys.md)
 

@@ -40,7 +40,7 @@ POSITION_IN_UNIQUE_CONSTRAINT: NULL
 
 ## See Also
 
-* [Finding Tables Without Primary Keys](https://mariadb.com/kb/en/getting-started-with-indexes/#finding-tables-without-primary-keys)
+* [Finding Tables Without Primary Keys](../../../../../../mariadb-quickstart-guides/mariadb-indexes-guide.md#finding-tables-without-primary-keys)
 
 CC BY-SA / Gnu FDL
 
