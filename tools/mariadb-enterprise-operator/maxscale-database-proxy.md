@@ -39,7 +39,7 @@ A server defines the backend database servers that MaxScale forwards traffic to.
 
 #### Monitors
 
-A monitor is an agent that queries the state of the servers and makes it available to the services in order to route traffic based on it. For more detailed information, please consult the [monitor reference](https://mariadb.com/kb/en/mariadb-maxscale-2501-maxscale-25-01-monitors/).
+A monitor is an agent that queries the state of the servers and makes it available to the services in order to route traffic based on it. For more detailed information, please consult the [monitor reference](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/other-maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-monitors).
 
 Depending on which highly available configuration your servers have, you will need to choose betweeen the following modules:
 
@@ -521,7 +521,7 @@ The GUI is exposed via a dedicated Kubernetes `Service` in the same port as the 
 
 ## MaxScale API
 
-MariaDB Enterprise Operator interacts with the [MaxScale REST API](https://mariadb.com/kb/en/mariadb-maxscale-25-01-rest-api/) to reconcile the specification provided by the user, considering both the MaxScale status retrieved from the API and the provided spec.
+MariaDB Enterprise Operator interacts with the [MaxScale REST API](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/other-maxscale-versions/mariadb-maxscale-25-01/maxscale-25-01-rest-api) to reconcile the specification provided by the user, considering both the MaxScale status retrieved from the API and the provided spec.
 
 ## Troubleshooting
 
