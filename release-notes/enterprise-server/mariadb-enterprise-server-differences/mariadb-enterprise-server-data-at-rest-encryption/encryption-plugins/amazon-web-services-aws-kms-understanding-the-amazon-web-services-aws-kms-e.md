@@ -1,7 +1,5 @@
 # Understanding the Amazon Web Services (AWS) KMS Encryption Plugin
 
-##
-
 ## Overview
 
 The AWS KMS Encryption Plugin (aws\_key\_management) integrates with Amazon Web Services (AWS) KMS.
