@@ -15,6 +15,7 @@ layout:
 
 # Managing ColumnStore
 
+{% hint style="info" %}
 Release notes and other documentation for ColumnStore is also available in the Enterprise docs section of the MariaDB website. For example:
 
 * [ColumnStore 23.10 Release Notes](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/columnstore/columnstore-23-10)
@@ -23,3 +24,5 @@ Release notes and other documentation for ColumnStore is also available in the E
 * [ColumnStore 6 Release Notes](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/columnstore/columnstore-6)
 * [ColumnStore 5.6 Release Notes](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/columnstore/columnstore-5-6)
 * [Deployment Instructions](../../en/mariadb-columnstore/)
+{% endhint %}
+

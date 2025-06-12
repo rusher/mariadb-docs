@@ -81,8 +81,9 @@ The high level steps involved in performing a full backup of MariaDB ColumnStore
 In MariaDB ColumnStore 1.1.0 a tool - columnstoreBackup to automate the backup/restore across the MariaDB ColumnStore nodes is available.
 
 
+{% hint style="info" %}
 Note: columnstoreBackup tool is only for ColumnStore data backups. Other engines may not be fully backed up and data could be lost when restoring.
-
+{% endhint %}
 
 ### Backup Setup
 

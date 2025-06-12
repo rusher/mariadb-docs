@@ -75,8 +75,9 @@ where r.r_regionkey = n.n_regionkey
 and n.n_nationkey = c.c_nationkey
 ```
 
-Note:\
-INFINIDB\_ORDERED is deprecated and not work anymore for 1.2 and above.
+{% hint style="danger" %}
+Note: `INFINIDB\_ORDERED` is deprecated and not work anymore for 1.2 and above.
+{% endhint %}
 
 use\
 set infinidb\_ordered\_only=ON;

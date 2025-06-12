@@ -17,8 +17,11 @@ layout:
 1. [About CVEs "About CVEs"](columnstore-security-vulnerabilities.md#about-cves)
 2. [CVEs fixed in ColumnStore "CVEs fixed in ColumnStore"](columnstore-security-vulnerabilities.md#cves-fixed-in-columnstore)
 
-This page is about security vulnerabilities that have been fixed for or still affect MariaDB ColumnStore. In addition, links are included to fixed security vulnerabilities in MariaDB Server since MariaDB ColumnStore is based on MariaDB Server.\
+{% hint style="warning" %}
+This page is about security vulnerabilities that have been fixed for or still affect MariaDB ColumnStore. In addition, links are included to fixed security vulnerabilities in MariaDB Server since MariaDB ColumnStore is based on MariaDB Server.
+
 Sensitive security issues can be sent directly to the persons responsible for MariaDB security: security \[AT] mariadb (dot) org.
+{% endhint %}
 
 ## About CVEs
 

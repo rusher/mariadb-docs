@@ -21,7 +21,9 @@ The [ColumnStore Bulk Data API](columnstore-bulk-data-loading.md) enables the cr
 
 ## MaxScale CDC Data Adapter
 
+{% hint style="danger" %}
 The MaxScale CDC Data Adapter has been deprecated.
+{% endhint %}
 
 The MaxScale CDC Data Adapter allows to stream change data events(binary log events) from MariaDB Master hosting non-columnstore engines(InnoDB, MyRocks, MyISAM) to MariaDB ColumnStore. In another words replicate data from MariaDB Master to MariaDB ColumnStore. It acts as a CDC Client for MaxScale and uses the events received from MaxScale as input to MariaDB ColumnStore Bulk Data API to push the data to MariaDB ColumnStore.![maxscale-cdc-adapter](../../.gitbook/assets/columnstore-streaming-data-adapters/+image/maxscale-cdc-adapter.jpg)\
 It registers with MariaDB MaxScale as a CDC Client using the [MaxScale CDC Connector API](https://mariadb.com/downloads/mariadb-ax/connector), receiving change data records from MariaDB MaxScale (that are converted from binlog events received from the Master on MariaDB TX) in a JSON format. Then, using the MariaDB ColumnStore bulk write SDK, converts the JSON data into API calls and streams it to a MariaDB PM node. The adapter has options to insert all the events in the same schema as the source database table or insert each event with metadata as well as table data. The event meta data includes the event timestamp, the GTID, event sequence and event type (insert, update, delete).
@@ -99,7 +101,9 @@ You can have the adapter automatically create the tables on the ColumnStore inst
 
 The -z option enables the data transformation mode. In this mode, the data is converted from historical, append-only data to the current version of the data. In practice, this replicates changes from a MariaDB master server to ColumnStore via the MaxScale CDC.
 
+{% hint style="info" %}
 Note: This mode is not as fast as the append-only mode and might not be suitable for heavy workloads. This is due to the fact that the data transformation is done via various DML statements.
+{% endhint %}
 
 ### Quick Start
 

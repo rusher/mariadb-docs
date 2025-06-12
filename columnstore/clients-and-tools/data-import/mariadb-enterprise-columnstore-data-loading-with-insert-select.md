@@ -78,7 +78,9 @@ CREATE TABLE inventory.products (
 ) ENGINE=Columnstore DEFAULT CHARSET=utf8;
 ```
 
+{% hint style="info" %}
 **Note:** To get the best performance from Enterprise ColumnStore, make sure to follow Enterprise ColumnStore's best practices for schema design.
+{% endhint %}
 
 ## Appends Data
 

@@ -48,7 +48,9 @@ To run the command, you would need to enter the full path or you can setup the a
 
 Now you can run both console commands for a non-root user account: 'mcsmysql' and 'mcsadmin'
 
+{% hint style="info" %}
 NOTE: The same setup can be done for other commands like 'cpimport'.
+{% endhint %}
 
 ## MariaDB ColumnStore aliases
 

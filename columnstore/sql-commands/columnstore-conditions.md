@@ -33,8 +33,9 @@ NOT (filter)
 (filter|function) [AND|OR] (filter|function)
 ```
 
+{% hint style="info" %}
 Note: A ‘literal’ may be a constant (e.g. 3) or an expression that evaluates to a constant [e.g. 100 - (27 * 3)]. For date columns, you may use the SQL ‘interval’ syntax to perform date arithmetic, as long as all the components of the expression are constants (e.g. ‘1998-12-01’ - interval ‘1’ year)
-
+{% endhint %}
 
 ### String comparisons
 

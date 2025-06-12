@@ -28,7 +28,9 @@ If the master copy of the extent map becomes corrupted, the entire system could 
 
 ## Backup Procedure
 
+{% hint style="info" %}
 **Note**: MariaDB recommends implementing regular backups to ensure data integrity and recovery. A common default is to back up every 3 hours and retain backups for at least 10 days.
+{% endhint %}
 
 To safeguard against potential Extent Map corruption, regularly back up the master copy:
 

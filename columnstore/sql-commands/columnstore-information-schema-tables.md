@@ -94,7 +94,9 @@ You can also request all tables for a specified schema:
 > call columnstore_info.table_usage('my_schema', NULL);
 ```
 
+{% hint style="info" %}
 **Note:** The quotes around the table name are required; an error will occur without them.
+{% endhint %}
 
 ### compression\_ratio()
 

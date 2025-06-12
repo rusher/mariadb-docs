@@ -155,7 +155,9 @@ The columns headings in the output are as follows:
 * Elapsed – Elapsed time for a give step.
 * Rows – Intermediate rows returned
 
+{% hint style="info" %}
 **Note: The time recorded is the time from PrimProc and ExeMgr. Execution time from withing mysqld is not tracked here. There could be extra processing time in mysqld due to a number of factors such as ORDER BY.**
+{% endhint %}
 
 ## Cache clearing to enable cold testing
 
