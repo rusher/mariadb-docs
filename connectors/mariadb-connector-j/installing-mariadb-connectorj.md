@@ -22,7 +22,7 @@ To install MariaDB Connector/J with [Maven](https://maven.apache.org/what-is-mav
 </dependency>
 ```
 
-Be sure to replace `$VERSION` with a valid MariaDB Connector/J version number. See [About MariaDB Connector/J: Java Compatibility](https://mariadb.com/kb/en/about-mariadb-connector-j/#java-compatibility) to determine which MariaDB Connector/J release series supports your Java version.
+Be sure to replace `$VERSION` with a valid MariaDB Connector/J version number. See [About MariaDB Connector/J: Java Compatibility](about-mariadb-connector-j.md) to determine which MariaDB Connector/J release series supports your Java version.
 
 ### Installing MariaDB Connector/J with Gradle
 
@@ -84,6 +84,5 @@ mvn -Dmaven.test.skip=true package
 ```
 
 Once the build is complete, you should have a `.jar` file with a name like `mariadb-java-client-x.y.z.jar` in the `target` subdirectory.
-
 
 {% @marketo/form formId="4316" %}

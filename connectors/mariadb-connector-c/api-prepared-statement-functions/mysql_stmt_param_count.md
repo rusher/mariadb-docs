@@ -13,13 +13,12 @@ unsigned long mysql_stmt_param_count(MYSQL_STMT * stmt);
 Returns the number of parameter markers present in the prepared statement.
 
 {% hint style="info" %}
-This function will not deliver a valid result until [mysql\_stmt\_prepare()](https://mariadb.com/kb/en/mysql_stmt_prepare\(\)) was called.
+This function will not deliver a valid result until [mysql\_stmt\_prepare()](mysql_stmt_prepare.md) was called.
 {% endhint %}
 
 ## See Also
 
 * [mysql\_stmt\_prepare()](https://github.com/mariadb-corporation/docs-connectors/blob/test/mariadb-connector-c/mariadb-connectorc-api-prepared-statement-functions/mysql_stmt_prepare\(\)/README.md)
 * [mysql\_stmt\_field\_count()](mysql_stmt_field_count.md)
-
 
 {% @marketo/form formId="4316" %}

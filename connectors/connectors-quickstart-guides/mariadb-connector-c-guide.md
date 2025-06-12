@@ -107,8 +107,8 @@ MariaDB Connector/C provides an API that is compatible with MySQL Connector/C fo
 
 You can find the function reference at:
 
-* [MariaDB Client Library for C API Functions](https://mariadb.com/kb/en/mariadb-client-library-for-c-api-functions/)
-* [MariaDB Client Library for C API Prepared Statement Functions](https://mariadb.com/kb/en/mariadb-client-library-for-c-api-prepared-statement-functions/)
+* [MariaDB Client Library for C API Functions](../mariadb-connector-c/api-functions/)
+* [MariaDB Client Library for C API Prepared Statement Functions](../mariadb-connector-c/api-prepared-statement-functions/)
 
 An HTML version is also available for download in `mariadb-client-doc.zip`.
 

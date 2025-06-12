@@ -1,8 +1,4 @@
-# application-development-with-mariadb-connector-r2dbc-native-api
-
-## Application Development with MariaDB Connector/R2DBC (Native API)
-
-## Overview
+# Application Development with MariaDB Connector/R2DBC (Native API)
 
 Methods for building projects with MariaDB Connector/R2DBC vary depending on the installation method you use.
 
@@ -44,6 +40,5 @@ $ java App
 ```
 
 Copyright © 2025 MariaDB
-
 
 {% @marketo/form formId="4316" %}

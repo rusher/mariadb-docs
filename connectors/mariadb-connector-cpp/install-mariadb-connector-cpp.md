@@ -10,13 +10,13 @@ MariaDB Connector/C++ has dependencies. You must install MariaDB Connector/C to 
 | 1.1                   | 3.3.3 or later      |
 | 1.0                   | 3.1.1 or later      |
 
-For additional information, see "[MariaDB Connector/C++ Release Notes](https://mariadb.com/kb/en/mariadb-connector-cpp-release-notes/)".
+For additional information, see "[MariaDB Connector/C++ Release Notes](../mariadb-connector-c/list-of-mariadb-connector-c-releases.md)".
 
 ## Linux Installation (Binary Tarball)
 
 To install MariaDB Connector/C++ on Linux:
 
-1. [Install MariaDB Connector/C](https://mariadb.com/kb/en/about-mariadb-connector-c/#installing-mariadb-connectorc).
+1. [Install MariaDB Connector/C](../mariadb-connector-c/install-mariadb-connectorc/).
 2. Go to the [MariaDB Connector C++ download page](https://mariadb.com/downloads/connectors/connectors-data-access/cpp-connector)
 3. Ensure the "Product" dropdown reads "C++ connector."
 4. In the "Version" dropdown, select the version you want to download.
@@ -93,6 +93,5 @@ To install MariaDB Connector/C++ on Windows:
 12. Add the directory path that contains the `mariadbcpp LIB` file (example `"C:\Program Files\MariaDB\MariaDB C++ Connector 64-bit"`) to `PATH` environment variable.
 
 Copyright © 2025 MariaDB
-
 
 {% @marketo/form formId="4316" %}

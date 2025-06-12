@@ -1,8 +1,4 @@
-# install-mariadb-connector-r2dbc
-
-## Install MariaDB Connector/R2DBC
-
-## Overview
+# Install MariaDB Connector/R2DBC
 
 MariaDB Connector/R2DBC is usually installed using Maven or by manually downloading the JAR file. The Maven build process connects to repositories to download and install dependencies, including MariaDB Connector/R2DBC and any other specified dependencies your application may require.
 
@@ -74,6 +70,5 @@ $ mvn package
 During the build process, Maven downloads and installs MariaDB Connector/R2DBC and other dependencies from the relevant repositories. After the build process completes and the MariaDB Connector/R2DBC has been installed, it can be used in a Java application.
 
 Copyright © 2025 MariaDB
-
 
 {% @marketo/form formId="4316" %}

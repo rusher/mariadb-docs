@@ -33,12 +33,12 @@ you should take a look at this project.
 * [Config Example](../other/mariadb-jupyter-kernel/configuring-the-mariadb-jupyter-kernel.md#config-example)
 * [The Full List of JSON Options](../other/mariadb-jupyter-kernel/configuring-the-mariadb-jupyter-kernel.md#the-full-list-of-json-options)
 
-### [Using the Kernel](https://mariadb.com/kb/en/using-the-mariadb-jupyter-kernel/)
+### [Using the Kernel](../other/mariadb-jupyter-kernel/)
 
 * [General Usage Information](../other/mariadb-jupyter-kernel/using-the-kernel/general-mariadb-jupyter-kernel-usage-information.md)
 * [SQL Autocompletion and Introspection](../other/mariadb-jupyter-kernel/using-the-kernel/sql-autocompletion-and-introspection.md)
 * [Magic Commands](../other/mariadb-jupyter-kernel/using-the-kernel/mariadb-jupyter-kernel-magic-commands.md)
-* [Restrictions and Limitations](https://mariadb.com/kb/en/using-the-mariadb-jupyter-kernel/#restrictions-and-limitations)
+* [Restrictions and Limitations](../other/mariadb-jupyter-kernel/using-the-kernel/mariadb-jupyter-kernel-restrictions-and-limitations.md)
 
 ### [Main Components and Architecture](../other/mariadb-jupyter-kernel/the-mariadb-jupyter-kernel-main-components-and-architecture.md)
 
@@ -67,6 +67,5 @@ you should take a look at this project.
 * [v0.2.2](../other/mariadb-jupyter-kernel/changes-in-mariadb-jupyter-kernel.md#v020-02-november-2021)
 * [v0.1.1](../other/mariadb-jupyter-kernel/changes-in-mariadb-jupyter-kernel.md#v011-29-march-2021)
 * [v0.1.0 First release!](../other/mariadb-jupyter-kernel/changes-in-mariadb-jupyter-kernel.md#v010-11-january-2021)
-
 
 {% @marketo/form formId="4316" %}

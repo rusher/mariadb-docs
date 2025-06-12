@@ -1,8 +1,4 @@
-# transactions-with-mariadb-connector-r2dbc-native-api
-
-## Transactions with MariaDB Connector/R2DBC (Native API)
-
-## Overview
+# Transactions with MariaDB Connector/R2DBC (Native API)
 
 Java developers can use MariaDB Connector/R2DBC to connect to MariaDB database products using the Reactive Relational Database Connectivity (R2DBC) API. R2DBC operations are non-blocking, which makes R2DBC more scalable than Java's standard JDBC API.
 
@@ -15,6 +11,5 @@ The native implementation of MariaDB Connector/R2DBC does not provide out-of-the
 To use Spring framework-managed reactive streams transactions from your Java code, use [MariaDB Connector/R2DBC with Spring Data R2DBC](../using-the-spring-data-framework-with-mariadb-connector-r2dbc/transactions-with-mariadb-connector-r2dbc-spring-data.md).
 
 Copyright © 2025 MariaDB
-
 
 {% @marketo/form formId="4316" %}

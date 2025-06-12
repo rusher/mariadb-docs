@@ -44,7 +44,7 @@ Linux uses [UnixODBC](https://www.unixodbc.org) as a Driver Manager. To create a
 * First, configure UnixODBC to recognize MariaDB Connector/ODBC as a `Driver`.
 * Second, configure UnixODBC with a Data Source Name (DSN) for your MariaDB Server.
 
-You will need to ensure that [UnixODBC has been installed](https://mariadb.com/kb/en/about-mariadb-connector-odbc/#installing-unixodbc-on-linux) before you can perform these steps.
+You will need to ensure that [UnixODBC has been installed](creating-a-data-source-with-mariadb-connectorodbc.md#changing-unixodbcs-configuration-file-paths) before you can perform these steps.
 
 ### Configuring MariaDB Connector/ODBC as a UnixODBC Driver on Linux
 
@@ -233,6 +233,5 @@ For example, if the `DSN` is called `MariaDB-server`, then we can verify that it
 ```bash
 $ iodbctest "DSN=MariaDB-server"
 ```
-
 
 {% @marketo/form formId="4316" %}

@@ -140,7 +140,7 @@ For a slave connection :
 A thread pool is created in case of a master/slave cluster, the size is defined according to the number of connection.\
 After a failure on a slave connection, readonly operations are temporary executed on the master connection. Some “failover threads” will try to reconnect the failed underlying connections.\
 When a new slave connection is retrieved, this one will be immediately used if connection was still in read-only mode.\
-More details in [Failover loop threads](https://mariadb.com/kb/en/failover_loop.creole).
+
 
 ### Connection validation thread
 
@@ -174,7 +174,7 @@ If not in autoCommit mode, the query has been launched in a transaction that wil
 
 ## Configuration
 
-(See [About MariaDB java connector](https://mariadb.com/kb/en/about-mariadb-connector-j.creole) for all connection parameters)\
+(See [About MariaDB java connector](about-mariadb-connector-j.md) for all connection parameters)\
 JDBC connection string format is :
 
 ```java

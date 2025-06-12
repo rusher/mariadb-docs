@@ -1,8 +1,4 @@
-# connect-with-mariadb-connector-r2dbc-native-api
-
-## Connect with MariaDB Connector/R2DBC (Native API)
-
-## Overview
+# Connect with MariaDB Connector/R2DBC (Native API)
 
 Java developers can use MariaDB Connector/R2DBC to establish client connections with MariaDB database products.
 
@@ -72,6 +68,5 @@ public class App {
 * When you are done with a connection, close it to free resources. Close the connection using the close() method.
 
 Copyright © 2025 MariaDB
-
 
 {% @marketo/form formId="4316" %}

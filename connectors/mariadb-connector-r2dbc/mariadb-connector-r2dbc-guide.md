@@ -97,10 +97,9 @@ For details on how to use MariaDB Connector/R2DBC, choose a supported framework:
 
 ## Resources
 
-* [Release Notes](https://mariadb.com/kb/en/release-notes-for-mariadb-connector-r2dbc/)
+* [Release Notes](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/aEnK0ZXmUbJzqQrTjFyb/)
 * [GitHub](https://github.com/mariadb-corporation/mariadb-connector-r2dbc/)
 
 Copyright © 2025 MariaDB
-
 
 {% @marketo/form formId="4316" %}

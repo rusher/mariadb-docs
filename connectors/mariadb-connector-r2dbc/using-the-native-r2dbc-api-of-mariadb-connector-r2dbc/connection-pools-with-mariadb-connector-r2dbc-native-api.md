@@ -1,8 +1,4 @@
-# connection-pools-with-mariadb-connector-r2dbc-native-api
-
-## Connection Pools with MariaDB Connector/R2DBC (Native API)
-
-## Overview
+# Connection Pools with MariaDB Connector/R2DBC (Native API)
 
 Connection pools enable the reuse of database connections to minimize the performance overhead of connecting to the database and the churn of opening and closing connections.
 
@@ -162,6 +158,5 @@ conn.close();
 Connections retrieved from connection pools are returned to the pool when closed. The pool keeps a certain pre-configured number of connections available for use. If a connection is retrieved with the create() method again, a connection from the pool is returned.
 
 Copyright © 2025 MariaDB
-
 
 {% @marketo/form formId="4316" %}

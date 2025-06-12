@@ -6,11 +6,11 @@ MariaDB Connector/C provides the following types and definitions.
 
 #### enum mysql\_option
 
-`enum mysql_option` is used as a parameter in [mysql\_optionsv()](api-functions/mysql_optionsv.md) and [mysql\_get\_optionsv()](https://mariadb.com/kb/en/library/mysql_get_optionsv) API functions. For a list of integral constants and their meanings please check the documentation of [mysql\_get\_optionsv()](https://github.com/mariadb-corporation/docs-connectors/blob/test/mariadb-connector-c/library/mysql_get_optionsv/README.md).
+`enum mysql_option` is used as a parameter in [mysql\_optionsv()](api-functions/mysql_optionsv.md) and [mysql\_get\_optionsv()](api-functions/mysql_get_optionv.md) API functions. For a list of integral constants and their meanings please check the documentation of [mysql\_get\_optionsv()](https://github.com/mariadb-corporation/docs-connectors/blob/test/mariadb-connector-c/library/mysql_get_optionsv/README.md).
 
 #### enum enum\_mysql\_timestamp\_type
 
-`enum enum_mysql_timestamp_type` is used in the [MYSQL\_TIME](https://mariadb.com/kb/en/MYSQL_TIME) structure and indicates the type. It has the following constants:
+`enum enum_mysql_timestamp_type` is used in the MYSQL\_TIME structure and indicates the type. It has the following constants:
 
 * MYSQL\_TIMESTAMP\_NONE
 * MYSQL\_TIMESTAMP\_ERROR
@@ -63,7 +63,7 @@ MariaDB Connector/C provides the following types and definitions.
 
 #### enum mysql\_enum\_shutdown\_level
 
-`enum mysql_enum_shutdown_level` is used as a parameter in [mysql\_server\_shutdown()](https://mariadb.com/kb/en/library/mysql_server_shutdown) and has the following constants:
+`enum mysql_enum_shutdown_level` is used as a parameter in [mysql\_server\_shutdown()](api-functions/mysql_server_end.md) and has the following constants:
 
 * SHUTDOWN\_DEFAULT
 * KILL\_QUERY
@@ -148,6 +148,5 @@ The server\_status can be obtained by the [mariadb\_get\_infov()](api-functions/
 | IS\_BLOB(flags)            | True if the field is a text or blob field  |
 | IS\_NUM(column\_type)      | True if the column type is numeric         |
 | IS\_LONGDATA(column\_type) | True if the column is a blob or text field |
-
 
 {% @marketo/form formId="4316" %}

@@ -41,7 +41,7 @@ For these information types parameter mysql needs to be set to NULL.
 * `MARIADB_CONNECTION_ASYNC_TIMEOUT`: Retrieves the timeout for non blocking calls in seconds.Parameter type: `unsigned int`.
 * `MARIADB_CONNECTION_ASYNC_TIMEOUT_MS`: Retrieves the timeout for non blocking calls in milliseconds.Parameter type: `unsigned int`.
 * `MARIADB_CONNECTION_MARIADB_CHARSET_INFO`: Retrieves character set information for given connection. Parameter type: `const MY_CHARSET_INFO *`.
-* `MARIADB_CONNECTION_CLIENT_CAPABILITIES`: Returns the [capability flags](https://mariadb.com/kb/en/initial-handshake-packet) of the client.Parameter type: `unsigned long`.
+* `MARIADB_CONNECTION_CLIENT_CAPABILITIES`: Returns the capability flags of the client.Parameter type: `unsigned long`.
 * `MARIADB_CONNECTION_ERROR`: Retrieves error message for last used command. Parameter type: `const char *`.
 * `MARIADB_CONNECTION_ERROR_ID`: Retrieves error number for last used command. Parameter type: `unsigned int`.
 * `MARIADB_CONNECTION_EXTENDED_SERVER_CAPABILITIES`: Returns the extended [capability flags](https://github.com/mariadb-corporation/docs-connectors/blob/test/mariadb-connector-c/mariadb-connectorc-api-functions/initial-handshake-packet/README.md) of the connected MariaDB server.Parameter type: `unsigned long`.
@@ -52,7 +52,7 @@ For these information types parameter mysql needs to be set to NULL.
 * `MARIADB_CONNECTION_PVIO_TYPE`: Retrives the pvio plugin used for specified connection.Parameter type: `unsigned int`.
 * `MARIADB_CONNECTION_SCHEMA`: Retrieves the current schema.Parameter type: `const char*`.
 * `MARIADB_CONNECTION_SERVER_CAPABILITIES`: Returns the [capability flags](https://github.com/mariadb-corporation/docs-connectors/blob/test/mariadb-connector-c/mariadb-connectorc-api-functions/initial-handshake-packet/README.md) of the connected server.Parameter type: `unsigned long`.
-* `MARIADB_CONNECTION_SERVER_STATUS`: Returns server status after last operation. A list of possible flags can be found in the description [OK packet](https://mariadb.com/kb/en/pk_packet).Parameter type: `unsigned int`.
+* `MARIADB_CONNECTION_SERVER_STATUS`: Returns server status after last operation. A list of possible flags can be found in the description OK packet.Parameter type: `unsigned int`.
 * `MARIADB_CONNECTION_SERVER_TYPE`: Retrieves the type of the server.Parameter type: `const char*`.
 * `MARIADB_CONNECTION_SERVER_VERSION`: Retrieves the server version in literal format.Parameter type: `const char *`.
 * `MARIADB_CONNECTION_SERVER_VERSION_ID`: Retrieves the server version in numeric format.Parameter type: `unsigned int`.
@@ -81,6 +81,5 @@ mariadb_get_infov(mysql, MARIADB_CONNECTION_USER, (void *)&user);
 ## See also
 
 * [mysql\_get\_optionv()](mysql_get_optionv.md)
-
 
 {% @marketo/form formId="4316" %}
