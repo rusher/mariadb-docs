@@ -96,7 +96,7 @@ Alphabetical list of all [mariadbd Options](../server-management/starting-and-st
 | [Binlog\_gtid\_index\_miss](../ha-and-performance/standard-replication/replication-and-binary-log-status-variables.md#binlog_gtid_index_miss)|
 | [binlog\_gtid\_index\_page\_size](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) |
 | [binlog\_gtid\_index\_span\_min](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md)|
-| --[binlog-ignore-db](../server-management/starting-and-stopping-mariadb/mariadbd-options.mdbinlog-ignore-db), [binlog\_ignore\_db](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md)|
+| --[binlog-ignore-db](../server-management/starting-and-stopping-mariadb/mariadbd-options.md#binlog-ignore-db), [binlog\_ignore\_db](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#binlog_ignore_db)|
 | [binlog\_large\_commit\_threshold](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#binlog_large_commit_threshold)|
 | [binlog\_legacy\_event\_pos](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#binlog_legacy_event_pos)|
 | [binlog\_optimize\_thread\_scheduling](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md)|
@@ -110,7 +110,7 @@ Alphabetical list of all [mariadbd Options](../server-management/starting-and-st
 | [Binlog\_stmt\_cache\_use](../ha-and-performance/standard-replication/replication-and-binary-log-status-variables.md)|
 | [binlog\_stmt\_cache\_size](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) |
 | [block\_encryption\_mode](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#block_encryption_mode) |
-| --[bootstrap](../server-management/starting-and-stopping-mariadb/mariadbd-options.mdbootstrap) |
+| --[bootstrap](../server-management/starting-and-stopping-mariadb/mariadbd-options.md#bootstrap) |
 | [bulk\_insert\_buffer\_size](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#bulk_insert_buffer_size)|
 | [Busy\_time](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#busy_time)|
 | [Bytes\_received](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#bytes_received)|
@@ -141,7 +141,7 @@ Alphabetical list of all [mariadbd Options](../server-management/starting-and-st
 | [character\_set\_system](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#character_set_system) |
 | [character\_sets\_dir](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#character_sets_dir) |
 | [check\_constraint\_checks](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#check_constraint_checks) |
-| -r, --[chroot](../server-management/starting-and-stopping-mariadb/mariadbd-options.mdchroot) |
+| -r, --[chroot](../server-management/starting-and-stopping-mariadb/mariadbd-options.md#chroot) |
 | [collation\_connection](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#collation_connection)|
 | [collation\_database](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#collation_database)|
 | [collation\_server](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#collation_server)|
@@ -363,7 +363,7 @@ Alphabetical list of all [mariadbd Options](../server-management/starting-and-st
 | [Connection\_errors\_select](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#connection_errors_select) |
 | [Connection\_errors\_tcpwrap](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#connection_errors_tcpwrap) |
 | [Connections](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#connections) |
-| [--console](../server-management/starting-and-stopping-mariadb/mariadbd-options.mdconsole) |
+| [--console](../server-management/starting-and-stopping-mariadb/mariadbd-options.md#console) |
 | [core\_file](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#core_file)|
 | [Cpu\_time](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#cpu_time)|
 | --[cracklib-password-check](plugins/password-validation-plugins/cracklib-password-check-plugin.md) |
@@ -1068,7 +1068,7 @@ Alphabetical list of all [mariadbd Options](../server-management/starting-and-st
 | --[log-short-format](../server-management/starting-and-stopping-mariadb/mariadbd-options.md) |
 | [log\_slave\_updates](../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) |
 | [log\_slow\_admin\_statements](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#log_slow_admin_statements)|
-| [log\_slow\_always\_query\_time](../server-monitoring-logs/slow-query-log/log_slow_always_query_time-system-variable.md) |
+| [log\_slow\_always\_query\_time](../server-management/server-monitoring-logs/slow-query-log/log_slow_always_query_time-system-variable.md) |
 | [log\_slow\_disabled\_statements](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#log_slow_disabled_statements)|
 | --[log-slow-file](../server-management/starting-and-stopping-mariadb/mariadbd-options.md)|
 | [log\_slow\_filter](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#log_slow_filter) |
