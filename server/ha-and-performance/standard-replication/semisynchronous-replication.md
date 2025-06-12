@@ -1,3 +1,10 @@
+---
+description: >-
+  Implement semi-synchronous replication in MariaDB Server. How to ensure data
+  durability by requiring at least one replica to acknowledge receipt of
+  transactions before the master commits.
+---
+
 # Semisynchronous Replication
 
 ## Description
@@ -162,10 +169,10 @@ The effects of the `AFTER_COMMIT` wait point are:
 | ------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Version | Status  | Introduced                                                                                                                                                                                                                                        |
 | N/A     | N/A     | [MariaDB 10.3.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-1033-release-notes) (feature is built-in, no longer available as a separate plugin) |
-| 1.0     | Stable  | [MariaDB 10.1.13](broken-reference)                                                                                                                                                                                                               |
+| 1.0     | Stable  | [MariaDB 10.1.13](broken-reference/)                                                                                                                                                                                                              |
 | 1.0     | Gamma   | [MariaDB 10.0.13](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-10013-release-notes)                                                               |
-| 1.0     | Unknown | [MariaDB 10.0.11](broken-reference)                                                                                                                                                                                                               |
-| 1.0     | N/A     | [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5)                                                                                                                                                                                                                   |
+| 1.0     | Unknown | [MariaDB 10.0.11](broken-reference/)                                                                                                                                                                                                              |
+| 1.0     | N/A     | [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5)                                                            |
 
 ## System Variables
 
@@ -228,7 +235,7 @@ The effects of the `AFTER_COMMIT` wait point are:
     3. Commits the transaction to the storage engine.
     4. Waits for acknowledgement from the replica.
     5. Returns an acknowledgement to the client.
-  * In [MariaDB 10.1.2](broken-reference) and before, this system variable does not exist. However, in those versions, the primary waits for the acknowledgement from replicas at a point that is equivalent to `AFTER_COMMIT`.
+  * In [MariaDB 10.1.2](broken-reference/) and before, this system variable does not exist. However, in those versions, the primary waits for the acknowledgement from replicas at a point that is equivalent to `AFTER_COMMIT`.
   * See [Configuring the Primary Wait Point](semisynchronous-replication.md#configuring-the-primary-wait-point) for more information.
 * Commandline: `--rpl-semi-sync-master-wait-point=value`
 * Scope: Global

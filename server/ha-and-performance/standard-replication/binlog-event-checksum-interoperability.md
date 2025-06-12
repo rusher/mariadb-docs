@@ -1,3 +1,10 @@
+---
+description: >-
+  Understand binlog event checksum interoperability in replication. This section
+  explains how checksums ensure data integrity during replication and their
+  compatibility across different server versions.
+---
+
 # Binlog Event Checksum Interoperability
 
 {% hint style="info" %}

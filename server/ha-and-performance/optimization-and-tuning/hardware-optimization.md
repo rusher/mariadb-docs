@@ -1,3 +1,10 @@
+---
+description: >-
+  Optimize MariaDB Server performance through hardware. This section covers
+  selecting appropriate CPU, memory, and storage configurations to maximize your
+  database's speed and throughput.
+---
+
 # Hardware Optimization
 
 Better hardware is one of the easiest ways to improve performance.

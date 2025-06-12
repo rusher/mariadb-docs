@@ -1,3 +1,10 @@
+---
+description: >-
+  Control binlog reading speed from a primary by a replica. This section
+  explains how to configure replicas to regulate the rate at which they consume
+  binary log events, optimizing network usage.
+---
+
 # Restricting Speed of Reading Binlog from Primary by a Replica
 
 When a replica starts after being stopped for some time, or a new replica starts\

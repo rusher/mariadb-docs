@@ -1,3 +1,10 @@
+---
+description: >-
+  Implement multi-source replication in MariaDB Server. This section explains
+  how a replica can receive events from multiple masters, enhancing data
+  aggregation and complex high-availability setups.
+---
+
 # Multi-Source Replication
 
 {% hint style="info" %}

@@ -1,3 +1,10 @@
+---
+description: >-
+  Implement delayed replication in MariaDB Server. This section explains how to
+  configure a time delay for replica application, providing a safety net against
+  accidental data changes or logical errors.
+---
+
 # Delayed Replication
 
 {% hint style="info" %}

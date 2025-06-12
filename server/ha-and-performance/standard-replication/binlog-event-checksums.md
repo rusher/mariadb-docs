@@ -1,3 +1,10 @@
+---
+description: >-
+  Understand binlog event checksums in MariaDB Server. This section explains how
+  checksums ensure data integrity and detect corruption in the binary log during
+  replication processes.
+---
+
 # Binlog Event Checksums
 
 {% hint style="info" %}
@@ -60,7 +67,7 @@ The [mariadb-binlog](../../clients-and-utilities/mariadb-binlog/) client program
 ## See Also
 
 * [Binlog Event Checksum Interoperability](binlog-event-checksum-interoperability.md)
-* [What is MariaDB 5.3](broken-reference)
+* [What is MariaDB 5.3](broken-reference/)
 
 CC BY-SA / Gnu FDL
 

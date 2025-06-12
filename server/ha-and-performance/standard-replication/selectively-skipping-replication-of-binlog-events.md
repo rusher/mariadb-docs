@@ -1,3 +1,10 @@
+---
+description: >-
+  Selectively skip replication of binlog events in MariaDB Server. This section
+  details how to bypass specific events, enabling granular control over
+  replication and aiding in troubleshooting.
+---
+
 # Selectively Skipping Replication of Binlog Events
 
 {% hint style="info" %}

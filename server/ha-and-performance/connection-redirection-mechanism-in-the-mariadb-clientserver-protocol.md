@@ -1,3 +1,10 @@
+---
+description: >-
+  Explore connection redirection. This section details how the client/server
+  protocol handles redirection for high availability and load balancing,
+  ensuring seamless database access and failover.
+---
+
 # Connection Redirection Mechanism in the MariaDB Client/Server Protocol
 
 **MariaDB starting with** [**11.3**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-3-rolling-releases/what-is-mariadb-113)
@@ -35,13 +42,13 @@ This variable is appended to the default value of the [session\_track\_system\_v
 
 ## Example
 
-```
+```sql
 set global redirect_url="mysql://mariadb.org:12345";
 ```
 
 Invalid formats are not permitted:
 
-```
+```sql
 set global redirect_url="mysql://mariadb.org:"; 
 ERROR 1231 (42000): Variable 'redirect_url' can't be set to the value of 'mysql://mariadb.org:'
 ```

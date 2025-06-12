@@ -1,8 +1,8 @@
 ---
 description: >-
-  This section is for replication-related items that are obsolete. The
-  information in these articles is old or outdated, but rather than throwing it
-  away, we're preserving it here
+  This section contains obsolete information regarding MariaDB Server standard
+  replication. While outdated, it may offer historical context or insights for
+  specific compatibility or migration scenarios.
 layout:
   title:
     visible: true

@@ -1,3 +1,10 @@
+---
+description: >-
+  Learn to set up standard replication in MariaDB Server. This section provides
+  step-by-step instructions for configuring master and replica servers to ensure
+  data redundancy and high availability.
+---
+
 # Setting Up Replication
 
 {% hint style="info" %}
@@ -52,7 +59,7 @@ log-bin
 server_id=1
 ```
 
-For replication from MySQL 8.0 to MariaDB [requires slight more configurations](broken-reference).
+For replication from MySQL 8.0 to MariaDB [requires slight more configurations](broken-reference/).
 
 ### Settings to Check
 
@@ -158,7 +165,7 @@ Slave_SQL_Running: Yes
 * [Replication and Binary Log Status Variables](replication-and-binary-log-status-variables.md)
 * [Semisynchronous Replication](semisynchronous-replication.md)
 * [Delayed Replication](delayed-replication.md)
-* [Replication Compatibility Between MariaDB and MySQL](broken-reference)
+* [Replication Compatibility Between MariaDB and MySQL](broken-reference/)
 
 CC BY-SA / Gnu FDL
 

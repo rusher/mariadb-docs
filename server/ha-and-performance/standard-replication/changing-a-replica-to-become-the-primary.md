@@ -1,3 +1,10 @@
+---
+description: >-
+  Learn how to transition a replica to become the primary server in MariaDB.
+  This section provides the steps and considerations for promoting a replica to
+  handle write operations and maintain HA.
+---
+
 # Changing a Replica to Become the Primary
 
 {% hint style="info" %}

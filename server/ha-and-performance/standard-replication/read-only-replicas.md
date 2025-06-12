@@ -1,3 +1,10 @@
+---
+description: >-
+  Utilize read-only replicas in MariaDB Server for enhanced performance. This
+  section explains how to configure replicas to offload read traffic from the
+  master, improving scalability.
+---
+
 # Read-Only Replicas
 
 A common [replication](./) setup is to have the replicas[read-only](../optimization-and-tuning/system-variables/server-system-variables.md#read_only) to ensure that no one\

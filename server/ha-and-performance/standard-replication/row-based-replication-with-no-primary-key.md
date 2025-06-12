@@ -1,3 +1,10 @@
+---
+description: >-
+  Learn about row-based replication in MariaDB Server without a primary key.
+  This section discusses the implications and challenges of replicating data
+  when tables lack a unique identifier.
+---
+
 # Row-based Replication With No Primary Key
 
 {% hint style="info" %}
@@ -39,7 +46,7 @@ replication to break in this case; this was also fixed in [MariaDB 5.3](https://
 
 ## See Also
 
-* [What is MariaDB 5.3](broken-reference)
+* [What is MariaDB 5.3](broken-reference/)
 
 CC BY-SA / Gnu FDL
 

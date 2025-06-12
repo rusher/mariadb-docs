@@ -1,3 +1,10 @@
+---
+description: >-
+  Understand MariaDB Server memory allocation. This section explains how memory
+  is managed, key configuration parameters, and strategies for optimizing memory
+  usage for enhanced performance.
+---
+
 # MariaDB Memory Allocation
 
 ### Allocating RAM for MariaDB - The Short Answer
@@ -62,7 +69,7 @@ executing the following sql statement. If you are running into\
 out-of-memory issues, it is very likely that the problematic variable is\
 in this list!
 
-```
+```sql
 select information_schema.system_variables.variable_name,
 information_schema.system_variables.default_value,
 global_variables.variable_value from
@@ -80,7 +87,7 @@ system_variables.default_value <> 0
 * Data block caching (from .MYD file) is left to the OS, so be sure to leave a bunch of free space for this.\
   Caveat: Some flavors of OS always claim to be using over 90%, even when there is really lots of free space.
 
-```
+```sql
 SHOW GLOBAL STATUS LIKE 'Key%';
 ```
 
@@ -108,7 +115,7 @@ If that leads to swapping, cut both settings back. Suggest cutting them down pro
 
 Run this to see the values for your system. (If you have a lot of tables, it can take minute(s).)
 
-```
+```sql
 SELECT  ENGINE,
         ROUND(SUM(data_length) /1024/1024, 1) AS "Data MB",
         ROUND(SUM(index_length)/1024/1024, 1) AS "Index MB",
@@ -142,7 +149,7 @@ Example: FreeBSD's maxdsiz, which defaults to 512MB.
 
 Example:
 
-```
+```bash
 $ ulimit -a
 ...
 max memory size (kbytes, -m) 524288
@@ -230,7 +237,7 @@ If you decide the QC is right for you, then I recommend
 
 ### thread\_cache\_size
 
-It is not necessary to tune [thread\_cache\_size](system-variables/server-system-variables.md#thread_cache_size) from [MariaDB 10.2.0](broken-reference). Previously, it was minor tunable variable. Zero will slow down thread (connection) creation. A small (say, 10), non-zero number is good. The setting has essentially no impact on RAM usage.
+It is not necessary to tune [thread\_cache\_size](system-variables/server-system-variables.md#thread_cache_size) from [MariaDB 10.2.0](broken-reference/). Previously, it was minor tunable variable. Zero will slow down thread (connection) creation. A small (say, 10), non-zero number is good. The setting has essentially no impact on RAM usage.
 
 It is the number of extra processes to hang onto. It does not restrict the number of threads; [max\_connections](system-variables/server-system-variables.md#max_connections) does.
 
@@ -325,7 +332,7 @@ The settings in my.cnf or my.ini will not take effect until you restart the serv
 
 Most settings can be changed on the live system by connecting as user root (or other user with SUPER privilege) and doing something like
 
-```
+```sql
 SET @@global.key_buffer_size = 77000000;
 ```
 
@@ -333,7 +340,7 @@ Note: No M or G suffix is allowed here.
 
 To see the setting a global VARIABLE do something like
 
-```
+```sql
 SHOW GLOBAL VARIABLES LIKE "key_buffer_size";
 +-----------------+----------+
 | Variable_name   | Value    |

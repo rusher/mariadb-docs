@@ -1,3 +1,10 @@
+---
+description: >-
+  Implement multi-master ring replication in MariaDB Server. This section covers
+  configuring a circular replication topology for high availability and load
+  balancing across multiple active master server
+---
+
 # Multi-Master Ring Replication
 
 {% hint style="info" %}

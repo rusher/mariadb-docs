@@ -1,3 +1,10 @@
+---
+description: >-
+  Explore enhancements for START TRANSACTION WITH CONSISTENT SNAPSHOT. This
+  section details how these improvements aid in achieving consistent backups and
+  replication in highly active environments.
+---
+
 # Enhancements for START TRANSACTION WITH CONSISTENT SNAPSHOT
 
 With the introduction of [group commit](../../server-management/server-monitoring-logs/binary-log/group-commit-for-the-binary-log.md), MariaDB also introduced an enhanced storage engine API for COMMIT that allows engines to coordinate commit ordering and visibility with each other and with the [binary log](../../server-management/server-monitoring-logs/binary-log/).

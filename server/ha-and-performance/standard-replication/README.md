@@ -1,4 +1,8 @@
 ---
+description: >-
+  Learn about standard replication in MariaDB Server for high availability. This
+  section covers configuring and managing master-replica setups to ensure data
+  redundancy and improve read scalability.
 layout:
   title:
     visible: true
@@ -14,8 +18,3 @@ layout:
 
 # MariaDB Replication
 
-{% hint style="info" %}
-The terms _master_ and _slave_ have historically been used in replication, and MariaDB has begun the process of adding _primary_ and _replica_ synonyms. The old terms will continue to be used to maintain backward compatibility - see [MDEV-18777](https://jira.mariadb.org/browse/MDEV-18777) to follow progress on this effort.
-{% endhint %}
-
-Replication is a feature allowing the contents of one or more primary servers to be mirrored on one or more replica servers.

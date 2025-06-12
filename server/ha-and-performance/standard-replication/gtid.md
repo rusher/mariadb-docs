@@ -1,3 +1,10 @@
+---
+description: >-
+  Learn about Global Transaction IDs (GTIDs) in MariaDB Server. This section
+  explains how GTIDs simplify replication management, ensuring data consistency
+  and enabling automatic failover and repair.
+---
+
 # Global Transaction ID
 
 {% hint style="info" %}
@@ -8,7 +15,7 @@ Note that MariaDB and MySQL have different GTID implementations, and that these 
 
 ## Overview
 
-MariaDB replication in general works as follows (see[Replication overview](replication-overview.md) for more information):
+MariaDB replication in general works as follows (see [Replication overview](replication-overview.md) for more information):
 
 On a master server, all updates to the database (DML and DDL) are written into the [binary log](../../server-management/server-monitoring-logs/binary-log/) as binlog events. A replica server connects to the primary and reads the binlog\
 events, then applies the events locally to replicate the same changes as done\

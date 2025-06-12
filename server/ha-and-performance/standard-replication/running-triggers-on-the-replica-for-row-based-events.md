@@ -1,3 +1,10 @@
+---
+description: >-
+  Learn about running triggers on MariaDB replicas for row-based events. This
+  section explains how to configure triggers to execute on replicated data,
+  enabling custom logic and data consistency.
+---
+
 # Running Triggers on the Replica for Row-based Events
 
 {% hint style="info" %}
