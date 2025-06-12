@@ -1,5 +1,7 @@
 ---
-description: SQL syntax supported by MariaDB ColumnStore
+description: >-
+  The MariaDB ColumnStore Reference is a key guide to its architecture, setup,
+  SQL, and analytics use.
 icon: paperclip
 layout:
   title:
@@ -15,6 +17,4 @@ layout:
 ---
 
 # Reference
-
-The MariaDB ColumnStore Reference provides comprehensive documentation on its architecture, installation, configuration, SQL syntax, and specific limitations. It's an essential guide for leveraging ColumnStore's analytical capabilities within MariaDB.
 
