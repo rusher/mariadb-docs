@@ -1,4 +1,8 @@
 ---
+description: >-
+  MariaDB ColumnStore uses a shared-nothing, distributed architecture with
+  separate modules for SQL and storage, enabling scalable, high-performance
+  analytics.
 icon: house-blank
 layout:
   title:
@@ -15,7 +19,7 @@ layout:
 
 # ColumnStore Architecture
 
-MariaDB ColumnStore features a distributed, shared-nothing architecture for parallel processing. It consists of User Modules handling SQL parsing and optimization, and Performance Modules for data storage and query execution across multiple nodes, enabling linear scalability and high analytical performance.
+
 
 {% hint style="info" %}
 Release notes and other documentation for ColumnStore is also available in the Enterprise docs section of the MariaDB website. For example:
