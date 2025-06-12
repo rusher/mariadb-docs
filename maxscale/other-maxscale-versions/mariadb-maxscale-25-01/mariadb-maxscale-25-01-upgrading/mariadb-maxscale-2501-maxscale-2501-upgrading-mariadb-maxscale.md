@@ -1,6 +1,6 @@
 # Upgrading MariaDB MaxScale
 
-For more information about what has changed, please refer to the[ChangeLog](../mariadb-maxscale-2501-maxscale-2501-changelog.md) and to the[release notes](https://mariadb.com/kb/Release-Notes/).
+For more information about what has changed, please refer to the[ChangeLog](../mariadb-maxscale-2501-maxscale-2501-changelog.md) and to the release notes.
 
 Before starting the upgrade, any existing configuration files should\
 be backed up.
@@ -256,7 +256,7 @@ no longer be used.
 ### Authentication
 
 The credentials used by services now require additional grants. For a full list\
-of required grants, refer to the[protocol documentation](https://mariadb.com/kb/en/maxscale-25-01-authentication-modules/#required-grants).
+of required grants, refer to the [protocol documentation](../mariadb-maxscale-25-01-protocols/).
 
 ### MariaDB-Monitor
 
@@ -286,9 +286,6 @@ module=csmon
 version=1.5
 ...
 ```
-
-Please see the [documentation](https://mariadb.com/kb/Monitors/ColumnStore-Monitor#master-selection)\
-for details.
 
 ### New binlog router
 
@@ -485,7 +482,7 @@ add `address=0.0.0.0` to the listener definition.
 
 ### Persisted Configuration Files
 
-Starting with MaxScale 2.1, any changes made with the newly added[runtime configuration change](https://mariadb.com/kb/Reference/MaxAdmin#runtime-configuration-changes)\
+Starting with MaxScale 2.1, any changes made with the newly added runtime configuration change\
 will be persisted in a configuration file. These files are located in `/var/lib/maxscale/maxscale.cnf.d/`.
 
 ### MaxScale Log Files

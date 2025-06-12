@@ -1122,7 +1122,7 @@ maxctrl call command readwritesplit reset-gtid My-RW-Router
 
 ### Examples
 
-Examples of the readwritesplit router in use can be found in the[Tutorials](https://mariadb.com/kb/Tutorials) folder.
+Examples of the readwritesplit router in use can be found in the [Tutorials](../../../mariadb-maxscale-tutorials/) folder.
 
 ### Readwritesplit routing decisions
 

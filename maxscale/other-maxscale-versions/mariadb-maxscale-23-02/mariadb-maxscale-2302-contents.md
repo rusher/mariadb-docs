@@ -54,7 +54,7 @@ of their use.
 * [Binlogrouter](mariadb-maxscale-23-02-routers/mariadb-maxscale-2302-binlogrouter.md)
 * [Cat](mariadb-maxscale-23-02-routers/mariadb-maxscale-2302-cat.md)
 * [KafkaCDC](mariadb-maxscale-23-02-routers/mariadb-maxscale-2302-kafkacdc.md)
-* [KafkaImporter](https://mariadb.com/kb/en/mariadb-maxscale-2302-kafkaimporter/)
+* KafkaImporter
 * [MirrorRouter](mariadb-maxscale-23-02-routers/mariadb-maxscale-2302-mirror.md)
 * [Read Connection Router](mariadb-maxscale-23-02-routers/mariadb-maxscale-2302-readconnroute.md)
 * [Read Write Split](mariadb-maxscale-23-02-routers/mariadb-maxscale-2302-readwritesplit.md)

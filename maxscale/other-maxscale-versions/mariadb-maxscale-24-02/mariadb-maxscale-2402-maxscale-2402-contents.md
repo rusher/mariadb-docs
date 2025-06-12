@@ -19,7 +19,6 @@
 
 ### Reference
 
-* [Hardening](https://mariadb.com/kb/en/Reference/Hardening)
 * [MaxCtrl - Command Line Admin Interface](maxscale-24-02reference/mariadb-maxscale-2402-maxscale-2402-maxctrl.md)
 * [MaxScale REST API](maxscale-24-02rest-api/mariadb-maxscale-2402-maxscale-2402-rest-api.md)
 * [Module Commands](maxscale-24-02reference/mariadb-maxscale-2402-maxscale-2402-module-commands.md)

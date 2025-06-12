@@ -6,7 +6,6 @@ This page contains topics that need to be considered when designing applications
 
 * How does the [Read/Write Split Router route queries?](routing-statements-with-maxscales-readwrite-split-router.md)
 * How does the [Read/Write Split Router select replica servers to load balance queries?](selecting-replica-servers-with-maxscales-readwrite-split-router.md)
-* How does the [ensuring-causal-consistency-with-maxscales-readwrite-split-routerRead/Write Split Router ensure that load-balanced read-only queries are causally consistent?](https://mariadb.com/kb/en/ensuring-causal-consistency-with-maxscales-readwrite-split-routerRead/Write_Split_Router_ensure_that_load-balanced_read-only_queries_are_causally_consistent%3F)
 * How does the [Write Split Router reconnect client connections to the new primary server after automatic failover?](reconnecting-to-the-primary-server-with-maxscales-readwrite-split-router.md)
 * How does the [Read/Write Split Router retry failed reads?](retrying-failed-reads-with-maxscales-readwrite-split-router.md)
 * How does the [Read/Write Split Router retry failed queries during automatic failover?](delayed-retrying-of-failed-queries-with-maxscales-readwrite-split-router.md)

@@ -6,7 +6,7 @@
 
 ### About MaxScale
 
-* [About MaxScale](https://mariadb.com/kb/en/about-maxscale/)
+* [About MaxScale](about-maxscale-14/)
 * [MaxScale 1.4.3 Release Notes](maxscale-14-release-notes/mariadb-maxscale-143-release-notes.md)
 * [Changelog](../mariadb-maxscale-21-06/)
 * [Limitations](about-maxscale-14/limitations-and-known-issues-within-maxscale.md)
@@ -96,7 +96,7 @@ Module specific documentation.
 * [MySQL Monitor](maxscale-14-monitors/mysql-monitor.md)
 * [Galera Monitor](maxscale-14-monitors/maxscale-galera-monitor.md)
 * [Multi-Master Monitor](maxscale-14-monitors/multi-master-monitor.md)
-* [MySQL Cluster Monitor](maxscale-14-monitors/ndb-cluster-monitor.md)
+* [MySQL Cluster Monitor](../mariadb-maxscale-mariadb-maxscale-21/maxscale-21-monitors/mariadb-maxscale-21-ndb-cluster-monitor.md)
 
 ### Utilities
 

@@ -4,7 +4,7 @@
 
 ## Designing for MaxScale's Xpand Monitor
 
-MaxScale's [Xpand Monitor (xpandmon)](https://mariadb.com/kb/en/mariadb-maxscale-2208-xpand-monitor/) monitors nodes in Xpand deployments.
+MaxScale's Xpand Monitor (xpandmon) monitors nodes in Xpand deployments.
 
 Additional information is available [here](../../../../../en/mariadb-maxscale-2208-xpand-monitor/).
 

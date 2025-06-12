@@ -29,7 +29,7 @@ The [Read/Write Split Router (readwritesplit)](../../../mariadb-maxscale-23-02/m
 * [Deploy Galera Cluster Topology](https://mariadb.com/kb/en/topologies-galera-cluster/)
 * [Deploy Primary/Replica Topology](https://mariadb.com/kb/en/deploy-primaryreplica-topology-with-enterprise-server/)
 * Deploy Xpand Topology
-* [write-split-router-usageDeploy MaxScale with MariaDB Monitor and Read/Write Split Router](https://mariadb.com/kb/en/read)
+* write-split-router-usageDeploy MaxScale with MariaDB Monitor and Read/Write Split Router
 * [Deploy MaxScale with Galera Monitor and Read/Write Split Router](../../mariadb-maxscale-2106-maxscale-21-06-monitors/maxscale-mariadb-monitor-usage/maxscale-mariadb-monitor-usage-galera-monitor.md)
 
 Copyright © 2025 MariaDB

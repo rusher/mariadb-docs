@@ -1,8 +1,4 @@
-# understanding-maxscales-mariadb-monitor
-
-## Understanding MaxScale's MariaDB Monitor
-
-## Overview
+# Understanding MaxScale's MariaDB Monitor
 
 MaxScale's [MariaDB Monitor](../../../../mariadb-maxscale-23-02/mariadb-maxscale-23-02-monitors/mariadb-maxscale-2302-mariadb-monitor.md) (mariadbmon) monitors [MariaDB replication](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication) deployments.
 

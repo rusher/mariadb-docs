@@ -1,8 +1,4 @@
-# using-cooperative-locking-for-ha-with-maxscales-mariadb-monitor
-
-## Using Cooperative Locking for HA with MaxScale's MariaDB Monitor
-
-## Overview
+# Using Cooperative Locking for HA with MaxScale's MariaDB Monitor
 
 MaxScale's [MariaDB Monitor (mariadbmon)](../../../../mariadb-maxscale-23-02/mariadb-maxscale-23-02-monitors/mariadb-maxscale-2302-mariadb-monitor.md) monitors [MariaDB replication](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication) deployments.
 
