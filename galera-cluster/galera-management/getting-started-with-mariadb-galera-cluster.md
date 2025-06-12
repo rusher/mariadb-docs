@@ -115,7 +115,7 @@ For example, if you were manually starting [mariadbd](https://app.gitbook.com/s/
 $ mariadbd --wsrep-new-cluster
 ```
 
-However, keep in mind that most users are not going to be starting [mariadbd](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options) manually. Instead, most users will use a [service manager](https://mariadb.com/kb/en/) to start [mariadbd](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options). See the following sections on how to bootstrap a node with the most common service managers.
+However, keep in mind that most users are not going to be starting [mariadbd](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options) manually. Instead, most users will use a [service manager](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/starting-and-stopping-mariadb/starting-and-stopping-mariadb-automatically#service-managers) to start [mariadbd](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options). See the following sections on how to bootstrap a node with the most common service managers.
 
 ### Systemd and Bootstrapping
 
@@ -163,7 +163,7 @@ Once all members agree on the membership, the cluster's state will be exchanged.
 
 If you shut down all nodes at the same time, then you have effectively terminated the cluster. Of course, the cluster's data still exists, but the running cluster no longer exists. When this happens, you'll need to bootstrap the cluster again.
 
-If the cluster is not bootstrapped and [mariadbd](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options) on the first node is just [started normally](https://mariadb.com/kb/en/), then the node willl try to connect to at least one of the nodes listed in the `[wsrep_cluster_address](../reference/galera-cluster-system-variables.md#wsrep_cluster_address)` option. If no nodes are currently running, then this will fail. Bootstrapping the first node solves this problem.
+If the cluster is not bootstrapped and [mariadbd](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options) on the first node is just started normally, then the node willl try to connect to at least one of the nodes listed in the `[wsrep_cluster_address](../reference/galera-cluster-system-variables.md#wsrep_cluster_address)` option. If no nodes are currently running, then this will fail. Bootstrapping the first node solves this problem.
 
 ### Determining the Most Advanced Node
 
