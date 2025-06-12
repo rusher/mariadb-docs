@@ -79,7 +79,7 @@ The following table lists each version of the [Galera](../../kb/en/galera/) 4 ws
 
 ### Galera 3 Versions
 
-See here for Galera 3 versions.
+See here for [Galera 3 versions](mariadb-galera-cluster-guide.md#galera-versions).
 
 ## See Also
 
