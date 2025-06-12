@@ -55,7 +55,7 @@ path = /var/lib/columnstore/storagemanager/cache
 ```
 
 {% hint style="info" %}
-_Note: This is an AWS only feature. For other deployment methods, see the example_ [_here_](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/rBEU9juWLfTDcdwF3Q14/)_._
+_Note: This is an AWS only feature. For other deployment methods, see the example_ [_here_](storagemanager-sample-storagemanagercnf.md)_._
 {% endhint %}
 
 CC BY-SA / Gnu FDL
