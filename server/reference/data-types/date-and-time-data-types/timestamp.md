@@ -56,7 +56,7 @@ MariaDB does not currently support time zone literals that contain time zone ide
 ## Limitations
 
 * Because the TIMESTAMP value is stored as Epoch Seconds, the timestamp value '1970-01-01 00:00:00' (UTC) is reserved since the second #0 is used to represent '0000-00-00 00:00:00'.
-* In [MariaDB 5.5](broken-reference) and before there could only be one TIMESTAMP column per table that had CURRENT\_TIMESTAMP defined as its default value. This limit has no longer applied since [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0).
+* In [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) and before there could only be one TIMESTAMP column per table that had CURRENT\_TIMESTAMP defined as its default value. This limit has no longer applied since [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0).
 
 ## SQL\_MODE=MAXDB
 

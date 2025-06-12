@@ -1,6 +1,6 @@
 # MariaDB 5.5.35 Release Notes
 
-The most recent release in the [MariaDB 5.5](broken-reference) series is:[**MariaDB 5.5.68**](mariadb-5568-release-notes.md) [Download Now](https://downloads.mariadb.org/mariadb/5.5.68/)
+The most recent release in the [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) series is:[**MariaDB 5.5.68**](mariadb-5568-release-notes.md) [Download Now](https://downloads.mariadb.org/mariadb/5.5.68/)
 
 [Download](https://downloads.mariadb.org/mariadb/5.5.35) |**Release Notes** |[Changelog](../../../changelogs/changelogs-mariadb-55-series/mariadb-5535-changelog.md) |[Overview of 5.5](broken-reference)
 
@@ -42,7 +42,7 @@ Full details of all changes are in the [changelog](../../../changelogs/changelog
 
 As per the [MariaDB Deprecation Policy](../../../mariadb-platform-deprecation-policy.md), this will\
 be the final release of MariaDB for Fedora 18 "Spherical Cow", Ubuntu 13.04\
-"Raring", and Mint 15 "Olivia". When the next version of [MariaDB 5.5](broken-reference) is\
+"Raring", and Mint 15 "Olivia". When the next version of [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) is\
 released, repositories for these distributions will go away.
 
 Thanks, and enjoy MariaDB!

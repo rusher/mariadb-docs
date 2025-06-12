@@ -2,7 +2,7 @@
 
 **Note:** This page is obsolete. The information is old, outdated, or otherwise currently incorrect. We are keeping the page for historical reasons only. **Do not** rely on the information in this article.
 
-This page describes a _"feature preview release"_ which previewed some replication-related features which are included in [MariaDB 5.3](broken-reference). If you would like to try out the features mentioned here, it is recommended that you use [MariaDB 5.3](broken-reference) ([download MariaDB 5.3 here](https://downloads.askmonty.org/mariadb/5.3/)) instead of the actual release described below. Likewise, the code is available in the [MariaDB 5.3 tree on Launchpad](https://launchpad.net/maria/5.3).
+This page describes a _"feature preview release"_ which previewed some replication-related features which are included in [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3). If you would like to try out the features mentioned here, it is recommended that you use [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3) ([download MariaDB 5.3 here](https://downloads.askmonty.org/mariadb/5.3/)) instead of the actual release described below. Likewise, the code is available in the [MariaDB 5.3 tree on Launchpad](https://launchpad.net/maria/5.3).
 
 ## About this release
 
@@ -18,7 +18,7 @@ however not a stable or GA release, nor is it planned to be so.
 The stable\
 release including these features will be [**MariaDB 5.3**](broken-reference). That being said, we\
 greatly welcome any feedback / bug reports, and will strive to fix any issues\
-found and we will update the feature preview until [MariaDB 5.3](broken-reference) stable is ready.
+found and we will update the feature preview until [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3) stable is ready.
 
 ## Download/Installation
 

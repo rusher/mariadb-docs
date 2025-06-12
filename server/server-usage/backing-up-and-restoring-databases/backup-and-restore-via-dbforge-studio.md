@@ -1,6 +1,8 @@
 # Backup and Restore via dbForge Studio
 
+{% hint style="info" %}
 dbForge Studio is a proprietary third-party tool, not included with MariaDB Server. Content contributed by devart.
+{% endhint %}
 
 In the modern world, data importance is non-negotiable, and keeping data integrity and consistency is the top priority. Data stored in databases is vulnerable to system crashes, hardware problems, security breaches, and other failures causing data loss or corruption. To prevent database damage, it is important to back the data up regularly and implement the data restore policies.\
 MariaDB, one of the most popular database management systems, provides several methods to configure routines for backing up and recovering data. The current guideline illustrates both processes performed with the help of dbForge Studio for MySQL which is also a fully-functional [GUI client for MariaDB](https://www.devart.com/dbforge/mysql/studio/mariadb-gui-client.html) that has everything you need to accomplish the database-related tasks on MariaDB.

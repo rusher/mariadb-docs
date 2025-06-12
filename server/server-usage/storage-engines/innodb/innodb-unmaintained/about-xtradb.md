@@ -76,7 +76,7 @@ XtraDB was also available in MariaDB for Windows.
 * XtraDB from [Percona Server 5.6.17-65.0](https://www.percona.com/doc/percona-server/5.6/release-notes/Percona-Server-5.6.17-65.0.html) in [MariaDB 10.0.11](broken-reference)
 * XtraDB from [Percona Server 5.6.14-rel62.0](https://www.percona.com/doc/percona-server/5.6/release-notes/Percona-Server-5.6.14-62.0.html) in [MariaDB 10.0.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-1007-release-notes)
 
-### [MariaDB 5.5](broken-reference)
+### [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5)
 
 * XtraDB from [Percona Server 5.5.61-38.13](https://www.percona.com/doc/percona-server/5.5/release-notes/Percona-Server-5.5.61-38.13.html) in [MariaDB 5.5.62](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/mariadb-5562-release-notes)
 * XtraDB from [Percona Server 5.5.59-38.11](https://www.percona.com/doc/percona-server/5.5/release-notes/Percona-Server-5.5.59-38.11.html) in [MariaDB 5.5.60](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/mariadb-5560-release-notes)
@@ -102,7 +102,7 @@ XtraDB was also available in MariaDB for Windows.
 * XtraDB from [Percona Server 5.5.33-31.1](https://www.percona.com/doc/percona-server/5.5/release-notes/Percona-Server-5.5.33-31.1.html) in [MariaDB 5.5.33](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/mariadb-5533-release-notes)
 * XtraDB from [Percona Server-5.5.32-31.0](https://www.percona.com/doc/percona-server/5.5/release-notes/Percona-Server-5.5.32-31.0.html) in [MariaDB 5.5.32](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/mariadb-5532-release-notes)
 
-### [MariaDB 5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-2-series/changes-improvements-in-mariadb-5-2) and [MariaDB 5.3](broken-reference)
+### [MariaDB 5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-2-series/changes-improvements-in-mariadb-5-2) and [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3)
 
 * [MariaDB 5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-2-series/changes-improvements-in-mariadb-5-2) and 5.3 include the latest XtraDB version from [MariaDB 5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-1-series/changes-improvements-in-mariadb-5-1) at the time they were released.
 

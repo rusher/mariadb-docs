@@ -71,7 +71,9 @@ result of fast authentication.
 #### Public key request
 
 
+{% hint style="warning" %}
 Value send is not 0x01 like sha256_password use, but 0x02
+{% endhint %}
 
 
 

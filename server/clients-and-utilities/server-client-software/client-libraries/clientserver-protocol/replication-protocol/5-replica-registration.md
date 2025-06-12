@@ -21,8 +21,9 @@ Then COM\_REGISTER\_SLAVE completes the registration.
 
 The COM\_BINLOG\_DUMP marks the request of binlog events stream.
 
-**Note**\
-If semi-sync is in use, the request for the network protocol change is sent between COM\_REGISTER\_SLAVE and COM\_BINLOG\_DUMP.
+{% hint style="info" %}
+**Note**: If semi-sync is in use, the request for the network protocol change is sent between COM\_REGISTER\_SLAVE and COM\_BINLOG\_DUMP.
+{% endhint %}
 
 #### Example Using 'ngrep'
 

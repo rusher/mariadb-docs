@@ -9,8 +9,9 @@ This matters of course when the slave connects with the GTID option (no filename
 The Event Type is set ROTATE_EVENT (0x4)
 
 
-**Note**: the fake ROTATE_EVENT event is not written in the binlog file.
-It's created by the master and sent to new connected slave before [FORMAT_DESCRIPTION_EVENT](format_description_event.md)
+{% hint style="info" %}
+**Note**: the fake ROTATE_EVENT event is not written in the binlog file. It's created by the master and sent to new connected slave before [FORMAT_DESCRIPTION_EVENT](format_description_event.md)
+{% endhint %}
 
 
 #### Header

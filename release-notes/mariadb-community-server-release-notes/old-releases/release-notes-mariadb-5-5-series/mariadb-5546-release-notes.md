@@ -1,6 +1,6 @@
 # MariaDB 5.5.46 Release Notes
 
-The most recent release in the [MariaDB 5.5](broken-reference) series is:[**MariaDB 5.5.68**](mariadb-5568-release-notes.md) [Download Now](https://downloads.mariadb.org/mariadb/5.5.68/)
+The most recent release in the [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) series is:[**MariaDB 5.5.68**](mariadb-5568-release-notes.md) [Download Now](https://downloads.mariadb.org/mariadb/5.5.68/)
 
 [Download](https://downloads.mariadb.org/mariadb/5.5.46)[Release Notes](mariadb-5546-release-notes.md)[Changelog](../../../changelogs/changelogs-mariadb-55-series/mariadb-5546-changelog.md)[Overview of 5.5](broken-reference)
 
@@ -43,7 +43,7 @@ updates, including from MySQL 5.5.46. Notable updates include:
 
 ### Deprecated Distributions
 
-As per the [MariaDB Deprecation Policy](../../../mariadb-platform-deprecation-policy.md), this will be the last release of [MariaDB 5.5](broken-reference) for Ubuntu 14.10 "Utopic" and Fedora 20.
+As per the [MariaDB Deprecation Policy](../../../mariadb-platform-deprecation-policy.md), this will be the last release of [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) for Ubuntu 14.10 "Utopic" and Fedora 20.
 
 ### Changelog
 

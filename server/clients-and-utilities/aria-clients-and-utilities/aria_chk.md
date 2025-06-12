@@ -11,8 +11,10 @@ icon: question
 With the MariaDB server you can use [CHECK TABLE](../../reference/sql-statements/table-statements/check-table.md),[REPAIR TABLE](../../reference/sql-statements/table-statements/repair-table.md) and [OPTIMIZE TABLE](../../ha-and-performance/optimization-and-tuning/optimizing-tables/optimize-table.md) to do\
 similar things.
 
-Note: `aria_chk` should not be used when MariaDB is running. MariaDB\
-assumes that no one is changing the tables it's using!
+{% hint style="danger" %}
+Note: `aria_chk` should not be used when MariaDB is running. MariaDB assumes that no one is changing the tables it's using!
+{% endhint %}
+
 
 Usage:
 

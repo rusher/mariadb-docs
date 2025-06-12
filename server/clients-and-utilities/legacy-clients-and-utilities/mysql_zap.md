@@ -1,7 +1,9 @@
 
 # mysql_zap
 
+{% hint style="danger" %}
 mysql_zap was removed from MariaDB. pkill can be used  [as an alternative](#pkill-as-an-alternative).
+{% endhint %}
 
 
 *mysql_zap* kills processes that match a pattern. It uses the *ps* command and Unix signals, so it runs on Unix and Unix-like systems.

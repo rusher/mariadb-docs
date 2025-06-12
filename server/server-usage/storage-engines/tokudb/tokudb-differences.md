@@ -13,7 +13,7 @@ On this page we list all the known differences between the TokuDB from [Tokutek]
 * Auto increment for second part of a key behaves as documented (and as it does in MyISAM and other storage engines).
 * The DDL syntax is different. While binaries from Tokutek have the patched SQL parser, TokuDB in MariaDB uses the special [Storage Engine API extension](../storage-engines-storage-engine-development/engine-defined-new-tablefieldindex-attributes.md). Thus in Tokutek binaries you write `CLUSTERED KEY (columns)` and, for example, `ROW_FORMAT=TOKUDB_LZMA`. And in MariaDB you write `KEY (columns) CLUSTERING=YES` and `COMPRESSION=TOKUDB_LZMA`.
 
-## Features missing in [MariaDB 5.5](broken-reference)
+## Features missing in [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5)
 
 * No online [ALTER TABLE](../../sql-statements/data-definition/alter/alter-table.md).
   * All alter table that changes data or indexes requires a table copy.

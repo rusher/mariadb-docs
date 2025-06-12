@@ -79,11 +79,12 @@ for each variable data :
 * [string](../protocol-data-types.md#length-encoded-strings) variable name
 * [string](../protocol-data-types.md#length-encoded-strings) variable value
 
-Possible tracked variables list is tracked by [session\_track\_system\_variables](../../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md)\
-special variable value description:
+{% hint style="info" %}
+Possible tracked variables list is tracked by [session\_track\_system\_variables](../../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md) special variable value description:
 
 * [redirect\_url](../../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#redirect_url): format is `mariadb/mysql:[<user>[:<password>]@]<host>[:<port>]/[<db>[?<opt1>=<value1>[&<opt2>=<value2>]]]`. Possible options:
   * `ttl` : cache timeout in ms to remember redirection, in order to reconnect directly to new host. 0=no caching
+{% endhint %}
 
 **SESSION\_TRACK\_STATE\_CHANGE**
 

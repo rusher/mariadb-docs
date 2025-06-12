@@ -1,6 +1,6 @@
 # MariaDB 5.5.43 Release Notes
 
-The most recent release in the [MariaDB 5.5](broken-reference) series is:[**MariaDB 5.5.68**](mariadb-5568-release-notes.md) [Download Now](https://downloads.mariadb.org/mariadb/5.5.68/)
+The most recent release in the [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) series is:[**MariaDB 5.5.68**](mariadb-5568-release-notes.md) [Download Now](https://downloads.mariadb.org/mariadb/5.5.68/)
 
 [Download](https://downloads.mariadb.org/mariadb/5.5.43)[Release Notes](mariadb-5543-release-notes.md)[Changelog](../../../changelogs/changelogs-mariadb-55-series/mariadb-5543-changelog.md)[Overview of 5.5](broken-reference)
 
@@ -23,7 +23,7 @@ interfaces, libraries and APIs that exist in MySQL also exist in MariaDB.
 ### Deprecated Distributions
 
 As per the [MariaDB Deprecation Policy](../../../mariadb-platform-deprecation-policy.md), this will\
-be the final release of [MariaDB 5.5](broken-reference) for Fedora 19 "Schrödinger's Cat", Ubuntu\
+be the final release of [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) for Fedora 19 "Schrödinger's Cat", Ubuntu\
 10.04 LTS "Lucid", and Mint 9 LTS "Isadora". When the next version of [MariaDB\
 5.5](broken-reference) is released, repositories for these distributions will go away.
 

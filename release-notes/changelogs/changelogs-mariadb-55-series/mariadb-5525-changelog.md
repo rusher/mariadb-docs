@@ -1,6 +1,6 @@
 # MariaDB 5.5.25 Changelog
 
-The most recent release in the [MariaDB 5.5](broken-reference) series is:[**MariaDB 5.5.68**](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/mariadb-5568-release-notes.md) [Download Now](https://downloads.mariadb.org/mariadb/5.5.68/)
+The most recent release in the [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) series is:[**MariaDB 5.5.68**](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/mariadb-5568-release-notes.md) [Download Now](https://downloads.mariadb.org/mariadb/5.5.68/)
 
 [Download](https://downloads.mariadb.org/mariadb/5.5.25) |[Release Notes](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/mariadb-5525-release-notes.md) |**Changelog** |[Overview of 5.5](broken-reference)
 
@@ -488,7 +488,7 @@ modified in that revision.
   * Fixed [MDEV-331](https://jira.mariadb.org/browse/MDEV-331): last\_insert\_id() returns a signed number
 * [Revision #3429](https://bazaar.launchpad.net/~maria-captains/maria/5.5/revision/3429)\
   Fri 2012-06-08 11:18:56 +0200
-  * [MDEV-329](https://jira.mariadb.org/browse/MDEV-329): [MariaDB 5.5](broken-reference) does not use fdatasync().
+  * [MDEV-329](https://jira.mariadb.org/browse/MDEV-329): [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) does not use fdatasync().
   * The `--debug-no-sync` incorrectly defaulted to ON, disabling sync calls\
     by default which can loose data or cause corruption. Also, the code\
     used fsync() instead of the sometimes more efficient fdatasync().

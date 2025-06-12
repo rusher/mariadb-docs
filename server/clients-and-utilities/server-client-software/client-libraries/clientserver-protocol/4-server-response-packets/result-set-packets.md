@@ -32,8 +32,10 @@ A resultset consists of different packets:
 
 
 
+{% hint style="warning" %}
 It would be unsafe to assume that any packet with a 0xFE header is an [OK packet (OK_Packet)](ok_packet.md) or an [EOF packet (EOF_Packet)](eof_packet.md), because [result-set row packets (ResultsetRow)](resultset-row.md) can also begin with 0xFE when using the text protocol with a field length greater than 0xFFFFFF.
 To safely confirm that a packet with a 0xFE header is an [OK packet (OK_Packet)](ok_packet.md) or an [EOF packet (EOF_Packet)](eof_packet.md), you must also check that the packet length is less than 0xFFFFFF.
+{% endhint %}
 
 
 ## Column Count Packet
@@ -157,8 +159,11 @@ It is a bitmask with the following flags:
 
 
 
+{% hint style="info" %}
 The `BLOB` flag cannot be used to determine if a column has binary data, because `[BINARY](../../../../../reference/data-types/string-data-types/binary.md)` and `[VARBINARY](../../../../../reference/data-types/string-data-types/varbinary.md)` columns are treated as strings, instead of blobs.
+
 The `BINARY_COLLATION` flag can be used to determine if a string column has binary data.
+{% endhint %}
 
 
 ### Extended metadata

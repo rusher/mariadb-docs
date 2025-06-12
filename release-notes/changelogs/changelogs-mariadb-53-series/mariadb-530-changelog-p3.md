@@ -160,7 +160,7 @@
   * Fixed compiler warnings
 * [Revision #2981](https://bazaar.launchpad.net/~maria-captains/maria/5.3/revision/2981) \[merge]\
   Sat 2011-05-07 15:48:45 +0200
-  * Merge [MWL#180](https://askmonty.org/worklog/?tid=180) into main [MariaDB 5.3](broken-reference).
+  * Merge [MWL#180](https://askmonty.org/worklog/?tid=180) into main [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3).
   * [Revision #2977.1.3](https://bazaar.launchpad.net/~maria-captains/maria/5.3/revision/2977.1.3) \[merge]\
     Thu 2011-05-05 16:35:02 +0200
     * [MWL#180](https://askmonty.org/worklog/?tid=180): Merge bugfix from 5.2 to 5.3 codebase + really fix version from which mariadb supports binlog checksums.
@@ -169,7 +169,7 @@
     * [MWL#180](https://askmonty.org/worklog/?tid=180): merge fixes from 5.2-rpl + forgot to adjust revision from which checksums are supported when merging into 5.3-based tree.
   * [Revision #2977.1.1](https://bazaar.launchpad.net/~maria-captains/maria/5.3/revision/2977.1.1) \[merge]\
     Tue 2011-05-03 14:44:25 +0200
-    * Merge [MWL#180](https://askmonty.org/worklog/?tid=180), binlog checksum backport, into [MariaDB 5.3](broken-reference)-based tree.
+    * Merge [MWL#180](https://askmonty.org/worklog/?tid=180), binlog checksum backport, into [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3)-based tree.
 * [Revision #2980](https://bazaar.launchpad.net/~maria-captains/maria/5.3/revision/2980)\
   Wed 2011-05-04 18:08:44 -0700
   * Fixed [Bug #776295](https://bugs.launchpad.net/bugs/776295).\
@@ -278,7 +278,7 @@
   * merge
 * [Revision #2966](https://bazaar.launchpad.net/~maria-captains/maria/5.3/revision/2966) \[merge]\
   Fri 2011-04-08 09:39:33 +0200
-  * Merge various replication-related patches into [MariaDB 5.3](broken-reference):
+  * Merge various replication-related patches into [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3):
     * [MWL#116](https://askmonty.org/worklog/?tid=116) Group commit
     * [MWL#136](https://askmonty.org/worklog/?tid=136) Enhancements for START TRANSACTION WITH CONSISTENT SNAPSHOT
     * [MWL#47](https://askmonty.org/worklog/?tid=47) Annotate\_rows\_log\_event

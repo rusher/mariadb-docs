@@ -165,7 +165,7 @@ The effects of the `AFTER_COMMIT` wait point are:
 | 1.0     | Stable  | [MariaDB 10.1.13](broken-reference)                                                                                                                                                                                                               |
 | 1.0     | Gamma   | [MariaDB 10.0.13](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-10013-release-notes)                                                               |
 | 1.0     | Unknown | [MariaDB 10.0.11](broken-reference)                                                                                                                                                                                                               |
-| 1.0     | N/A     | [MariaDB 5.5](broken-reference)                                                                                                                                                                                                                   |
+| 1.0     | N/A     | [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5)                                                                                                                                                                                                                   |
 
 ## System Variables
 

@@ -41,7 +41,7 @@ MySQL [world]> explain select * from City where City.Country in (select Country.
 
 It shows that the optimizer is going to do a full scan on table `City`, and for each city it will do a lookup in table `Country`.
 
-If one runs the same query in [MariaDB 5.3](broken-reference), they will get this plan:
+If one runs the same query in [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3), they will get this plan:
 
 ```sql
 MariaDB [world]> explain select * from City where City.Country in (select Country.Code from Country where Country.Population < 100*1000);

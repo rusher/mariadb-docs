@@ -1,7 +1,9 @@
 
 # Backup/Restore + Data Export/Import via dbForge Studio
 
+{% hint style="info" %}
 dbForge Studio is a proprietary third-party tool, not included with MariaDB Server. Content contributed by devart.
+{% endhint %}
 
 
 Without a doubt, you want your backup/restore and export/import operations to be fast, easy, and automated wherever possible. You can have it all that way with [dbForge Studio for MySQL](https://www.devart.com/dbforge/mysql/studio/). As the name implies, it is an IDE for MySQL development, management, and administration, yet it works just as perfectly as a [MariaDB GUI client](https://www.devart.com/dbforge/mysql/studio/mariadb-gui-client.html). Now, let's see how it tackles routine database backups.

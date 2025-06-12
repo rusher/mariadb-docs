@@ -36,17 +36,15 @@ See also:
 * [Using git](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/development-articles/general-info/tools/using-git-with-mariadb/using-git) page for instructions on how to use git to check out the source code and switch between the various branches.
 * [Compiling MariaDB from source](../../../server-management/install-and-upgrade-mariadb/installing-mariadb/compiling-mariadb-from-source/)
 
-The rest of this page contains information on checking out the\
-MariaDB source from Launchpad. As the current source is now on GitHub, the\
-information is mainly of historical interest and not useful for current\
-development.\
-The instructions on this page will help you download your own local branch of\
-the [MariaDB](../../../../kb/en/mariadb/) source code repository with the full revision history. If you\
-want a tarball of the source without the revision history, see the[MariaDB download page](https://mariadb.org/download).
+{% hint style="danger" %}
+The rest of this page contains information on checking out the MariaDB source from Launchpad. As the current source is now on GitHub, the information is mainly of historical interest and not useful for current development.
+{% endhint %}
+
+The instructions on this page will help you download your own local branch of the MariaDB source code repository with the full revision history. If you want a tarball of the source without the revision history, see the [MariaDB download page](https://mariadb.com/downloads/).
 
 ## Checking out the Source with Bazaar
 
-If you simply want to browse the source code, you can do so from[maria](https://code.launchpad.net/maria).
+If you simply want to browse the source code, you can do so from [maria](https://code.launchpad.net/maria).
 
 ### Prerequisites
 
@@ -208,7 +206,7 @@ $BZR branch $MARIA_REPO $MARIA_MASTER
 $BZR branch $MARIA_MASTER $MARIA_WORK
 ```
 
-Check out packaging sources (only for [MariaDB 5.3](broken-reference) and below):
+Check out packaging sources (only for [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3) and below):
 
 ```
 $BZR branch $PACKAGING_REPO $PACKAGING_MASTER

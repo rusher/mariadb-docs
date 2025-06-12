@@ -1,6 +1,6 @@
 # MariaDB 5.5.42 Release Notes
 
-The most recent release in the [MariaDB 5.5](broken-reference) series is:[**MariaDB 5.5.68**](mariadb-5568-release-notes.md) [Download Now](https://downloads.mariadb.org/mariadb/5.5.68/)
+The most recent release in the [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) series is:[**MariaDB 5.5.68**](mariadb-5568-release-notes.md) [Download Now](https://downloads.mariadb.org/mariadb/5.5.68/)
 
 [Download](https://downloads.mariadb.org/mariadb/5.5.42)[Release Notes](mariadb-5542-release-notes.md)[Changelog](../../../changelogs/changelogs-mariadb-55-series/mariadb-5542-changelog.md)[Overview of 5.5](broken-reference)
 
@@ -22,7 +22,7 @@ interfaces, libraries and APIs that exist in MySQL also exist in MariaDB.
 
 ### Moved to Git
 
-With this release of [MariaDB 5.5](broken-reference), the source code has been moved to Github. See\
+With this release of [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5), the source code has been moved to Github. See\
 the [Using Git](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/development-articles/general-info/tools/using-git-with-mariadb/using-git) page for more information on how to checkout and\
 work with the 5.5 branch.
 

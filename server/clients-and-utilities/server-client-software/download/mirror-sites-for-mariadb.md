@@ -6,7 +6,9 @@ download site at [download](https://mariadb.org/download). If you would like to
 volunteer to become a mirror, thank you! Getting you set up is easy.
 
 
+{% hint style="success" %}
 The state of MariaDB mirrors is monitored at [](https://mirmon.mariadb.org/)
+{% endhint %}
 
 
 ## How to Become a MariaDB Mirror

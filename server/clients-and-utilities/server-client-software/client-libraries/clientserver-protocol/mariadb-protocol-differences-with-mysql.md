@@ -31,7 +31,7 @@ When MARIADB\_CLIENT\_CACHE\_METADATA capability is set, the Resultset [Column c
 
 java code:
 
-```
+```java
 stmt.execute("CREATE TABLE test_table (id int, val varchar(32))");
 stmt.execute("INSERT INTO test_table VALUES (1, 'a'), (2, 'b')");
 try (PreparedStatement prep = sharedConnBinary.prepareStatement("SELECT * FROM test_table WHERE id = ?")) {
@@ -129,7 +129,7 @@ The MARIADB\_CLIENT\_STMT\_BULK\_OPERATIONS capability enables the [COM\_STMT\_B
 
 java code:
 
-```
+```java
 Statement stmt = connection.createStatement();
 stmt.execute("CREATE TABLE test_table (id int, val varchar(32))");
 

@@ -14,7 +14,9 @@ The full list of options are listed below. One or more MyISAM tables can be spec
 
 The path to the files must also be specified if they're not in the current directory.
 
+{% hint style="danger" %}
 myisamchk should not be run while anyone is accessing any of the affected tables. It is also best to make a backup before running.
+{% endhint %}
 
 With no options, myisamchk simply checks your table as the default operation.
 

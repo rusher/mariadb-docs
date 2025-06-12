@@ -39,7 +39,7 @@
       using a join buffer.
 * [Revision #2877](https://bazaar.launchpad.net/~maria-captains/maria/5.3/revision/2877) \[merge]\
   Fri 2011-01-14 13:07:50 +0300
-  * Merge backported subquery bugfixes/testcases into [MariaDB 5.3](broken-reference)
+  * Merge backported subquery bugfixes/testcases into [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3)
   * [Revision #2869.2.5](https://bazaar.launchpad.net/~maria-captains/maria/5.3/revision/2869.2.5)\
     Fri 2011-01-14 00:47:03 +0300
     * Backport testcase for: [MySQL Bug #43360](https://bugs.mysql.com/bug.php?id=43360) - Server crash with a simple multi-table update
@@ -483,7 +483,7 @@
 * [Revision #2833](https://bazaar.launchpad.net/~maria-captains/maria/5.3/revision/2833)\
   Tue 2010-10-26 14:55:42 +0300
   * Fixed [Bug #601156](https://bugs.launchpad.net/bugs/601156)
-  * The cause for this bug is that [MariaDB 5.3](broken-reference) still processes derived tables\
+  * The cause for this bug is that [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3) still processes derived tables\
     (subqueries in the FROM clause) by fully executing them during the parse\
     phase. This will be remedied by [MWL#106](https://askmonty.org/worklog/?tid=106) once merged into the main 5.3.
   * The assert statement is triggered when MATERIALIZATION is ON for EXPLAIN\

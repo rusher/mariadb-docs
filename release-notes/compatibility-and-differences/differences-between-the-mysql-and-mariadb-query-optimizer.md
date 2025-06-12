@@ -6,7 +6,7 @@ To make things easier to understand, let's first partition the optimizer into ar
 
 ![optimizer-areas-r2](../.gitbook/assets/disk_access.PNG)
 
-Let's look at things in historical order. There is no known evidence of the use of SQL query optimization by ancient Egyptians. In April 2012, [MariaDB 5.3](broken-reference) and [MariaDB 5.5](broken-reference) became stable. (5.5 was a merge of 5.3 with MySQL 5.5). The 5.3/5.5 release included a number of major new query optimizer features:
+Let's look at things in historical order. There is no known evidence of the use of SQL query optimization by ancient Egyptians. In April 2012, [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3) and [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) became stable. (5.5 was a merge of 5.3 with MySQL 5.5). The 5.3/5.5 release included a number of major new query optimizer features:
 
 ![optimizer-areas-mariadb-55-r2](../.gitbook/assets/optimizer2.PNG)
 
@@ -16,7 +16,7 @@ In February 2013, MySQL 5.6 had its first stable release. It had a number of new
 
 ![optimizer-areas-mysql-56-r2](../.gitbook/assets/optimizer3.PNG)
 
-In April 2014, [MariaDB 10.0](../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md) became stable. As compared to [MariaDB 5.5](broken-reference)had some features that were backported from MySQL 5.6, and also some new features were implemented:
+In April 2014, [MariaDB 10.0](../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md) became stable. As compared to [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5)had some features that were backported from MySQL 5.6, and also some new features were implemented:
 
 ![optimizer-areas-mariadb-100-r2](../.gitbook/assets/optimizer4.PNG)
 

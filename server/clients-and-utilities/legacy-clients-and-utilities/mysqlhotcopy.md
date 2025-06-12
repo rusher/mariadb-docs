@@ -1,6 +1,8 @@
 # mysqlhotcopy
 
+{% hint style="warning" %}
 mysqlhotcopy is deprecated and may be removed in a future release.
+{% endhint %}
 
 `mysqlhotcopy` uses [FLUSH TABLES](../../reference/sql-statements/administrative-sql-statements/flush-commands/flush.md), [LOCK TABLES](../../reference/sql-statements/transactions/lock-tables.md), and cp or scp to make a database backup.
 

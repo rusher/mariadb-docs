@@ -10,7 +10,9 @@ A new binary log file is always created but there is no ROTATE_EVENT.
 STOP_EVENT is then the last written event after clean shutdown or resuming a crash.
 
 
-this event is never sent to slave servers.
+{% hint style="info" %}
+This event is never sent to slave servers.
+{% endhint %}
 
 
 ### Header

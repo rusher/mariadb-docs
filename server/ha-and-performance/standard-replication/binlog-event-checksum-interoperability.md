@@ -1,6 +1,8 @@
 # Binlog Event Checksum Interoperability
 
+{% hint style="info" %}
 The terms _master_ and _slave_ have historically been used in replication, and MariaDB has begun the process of adding _primary_ and _replica_ synonyms. The old terms will continue to be used to maintain backward compatibility - see [MDEV-18777](https://jira.mariadb.org/browse/MDEV-18777) to follow progress on this effort.
+{% endhint %}
 
 The introduction of [checksums on binlog events](binlog-event-checksums.md) changes the format that events\
 are stored in [binary log](../../server-management/server-monitoring-logs/binary-log/) files and sent over the network to replicas. This raises the question on what happens when replicating between different versions of the\

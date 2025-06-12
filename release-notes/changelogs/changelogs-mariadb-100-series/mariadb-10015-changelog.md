@@ -460,7 +460,7 @@ modified in that revision.
   * [MDEV-4396](https://jira.mariadb.org/browse/MDEV-4396): Fix innodb.innodb\_bug14676111 test.
 * [Revision #4471](https://bazaar.launchpad.net/~maria-captains/maria/10.0/revision/4471) \[merge]\
   Mon 2014-11-03 17:47:37 +0100
-  * [MariaDB 5.5](broken-reference) merge
+  * [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) merge
 * [Revision #4470](https://bazaar.launchpad.net/~maria-captains/maria/10.0/revision/4470)\
   Sun 2014-11-02 01:08:09 +0400
   * [MDEV-7001](https://jira.mariadb.org/browse/MDEV-7001) Bad result for NOT NOT STRCMP('a','b') and NOT NOT NULLIF(2,3) The bug is not very important per se, but it was helpful to move Item\_func\_strcmp out of Item\_bool\_func2 (to Item\_int\_func), for the purposes of "[MDEV-4912](https://jira.mariadb.org/browse/MDEV-4912) Add a plugin to field types (column types)".

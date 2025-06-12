@@ -410,7 +410,7 @@ See [System-versioned tables](../../../sql-structure/temporal-tables/system-vers
 
 `ALTER TABLE ... FORCE` can force MariaDB to re-build the table.
 
-In [MariaDB 5.5](broken-reference) and before, this could only be done by setting the [ENGINE](../create/create-table.md#storage-engine) table option to its old value. For example, for an InnoDB table, one could execute the following:
+In [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) and before, this could only be done by setting the [ENGINE](../create/create-table.md#storage-engine) table option to its old value. For example, for an InnoDB table, one could execute the following:
 
 ```
 ALTER TABLE tab_name ENGINE = InnoDB;

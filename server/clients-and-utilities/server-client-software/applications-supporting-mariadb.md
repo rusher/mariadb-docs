@@ -2,7 +2,9 @@
 
 This page lists projects which officially implement MariaDB's enhanced features, or state that they work with MariaDB. If you know of a project which officially supports MariaDB and it isn't listed here, please let us know in the comments.
 
+{% hint style="info" %}
 Note: Every project we know of which works with MySQL also works with MariaDB. This page is just to point out projects which officially support MariaDB (e.g. by mentioning MariaDB in their documentation or setup instructions).
+{% endhint %}
 
 ## Supports Enhanced MariaDB Features
 

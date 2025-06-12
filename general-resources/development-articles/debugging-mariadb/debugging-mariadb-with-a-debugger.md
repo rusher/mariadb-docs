@@ -24,7 +24,7 @@ for debugging and tracing.
 
 On Unix you need to pass `-DCMAKE_BUILD_TYPE=Debug` to cmake to compile with debug information.
 
-### Building [MariaDB 5.3](broken-reference) and Older
+### Building [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3) and Older
 
 Here is how you compile with debug on older versions:
 

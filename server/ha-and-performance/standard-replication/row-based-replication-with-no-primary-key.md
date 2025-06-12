@@ -1,6 +1,8 @@
 # Row-based Replication With No Primary Key
 
+{% hint style="info" %}
 The terms _master_ and _slave_ have historically been used in replication, and MariaDB has begun the process of adding _primary_ and _replica_ synonyms. The old terms will continue to be used to maintain backward compatibility - see [MDEV-18777](https://jira.mariadb.org/browse/MDEV-18777) to follow progress on this effort.
+{% endhint %}
 
 MariaDB improves on row-based [replication](./) (see [binary log formats](../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md)) of tables which have no primary key\
 but do have some other index. This is based in part on the original Percona\
@@ -30,10 +32,10 @@ has been run on the slave, otherwise statistics about index cardinality will\
 not be available. In the absence of index cardinality, the first unique index\
 will be chosen, if any, else the first non-unique index.
 
-Prior to [MariaDB 5.3](broken-reference), the slave would always choose the first index without\
+Prior to [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3), the slave would always choose the first index without\
 considering cardinality. The slave could even choose an unusable index (like\
 FULLTEXT) if no other index was available ([MySQL Bug #58997](https://bugs.mysql.com/bug.php?id=58997)), causing row-based\
-replication to break in this case; this was also fixed in [MariaDB 5.3](broken-reference).
+replication to break in this case; this was also fixed in [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3).
 
 ## See Also
 

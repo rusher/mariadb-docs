@@ -13,7 +13,7 @@ InnoDB plugin in addition to xtradb:
 ./mysql-test-run --suite=innodb_plugin
 ```
 
-To use the innodb\_plugin instead of xtradb you can do (for [MariaDB 5.5](broken-reference)):
+To use the innodb\_plugin instead of xtradb you can do (for [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5)):
 
 ```
 mysqld --ignore-builtin-innodb --plugin-load=innodb=ha_innodb.so \

@@ -4,7 +4,7 @@
 
 **Release date:** 12 May 2020
 
-This is a [_**Stable**_](../../../mariadb-release-criteria.md) _**(GA)**_ release. Note that with this release, [MariaDB 5.5](broken-reference) is now end-of-life, and no longer supported.
+This is a [_**Stable**_](../../../mariadb-release-criteria.md) _**(GA)**_ release. Note that with this release, [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) is now end-of-life, and no longer supported.
 
 **For a description of** [**MariaDB 5.5**](broken-reference) **see the**[**What is MariaDB 5.5?**](broken-reference) **page.**
 

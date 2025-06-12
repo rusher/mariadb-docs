@@ -8,9 +8,9 @@ In the binary log, each Annotate\_rows event precedes the corresponding Table ma
 
 For additional information refer to the [annotate\_rows\_log\_event](../../../../mariadb-binlog/annotate_rows_log_event.md) documentation.
 
-**Note**: the master server sends ANNOTATE\_ROWS\_EVENT events only\
-if the Slave server connects with the BINLOG\_SEND\_ANNOTATE\_ROWS\_EVENT flag (value is 2)\
-in the COM\_BINLOG\_DUMP Slave Registration phase.
+{% hint style="info" %}
+**Note**: the master server sends ANNOTATE\_ROWS\_EVENT events only if the Slave server connects with the BINLOG\_SEND\_ANNOTATE\_ROWS\_EVENT flag (value is 2) in the COM\_BINLOG\_DUMP Slave Registration phase.
+{% endhint %}
 
 #### Header
 

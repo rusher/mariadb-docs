@@ -27,8 +27,9 @@ and recover options) to rebuild its indexes.
 
 `myisampack` does not support partitioned tables.
 
-Do not run myisampack if the tables could be updated during the operation, and[skip\_external\_locking](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#skip_external_locking) has\
-been set.
+{% hint style="danger" %}
+Do not run myisampack if the tables could be updated during the operation, and[skip\_external\_locking](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#skip_external_locking) has been set.
+{% endhint %}
 
 ### Options
 

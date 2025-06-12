@@ -1,6 +1,8 @@
 # Replication and Foreign Keys
 
+{% hint style="info" %}
 The terms _master_ and _slave_ have historically been used in replication, and MariaDB has begun the process of adding _primary_ and _replica_ synonyms. The old terms will continue to be used to maintain backward compatibility - see [MDEV-18777](https://jira.mariadb.org/browse/MDEV-18777) to follow progress on this effort.
+{% endhint %}
 
 Replication is based upon the [binary log](../../server-management/server-monitoring-logs/binary-log/). However, cascading deletes or updates based on foreign key relations are an internal mechanism, and are not written to the binary log.
 

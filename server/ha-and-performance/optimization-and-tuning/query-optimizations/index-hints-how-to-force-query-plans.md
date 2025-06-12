@@ -291,7 +291,7 @@ temporary table for the result set.
 
 ## Optimizer Switch
 
-In [MariaDB 5.3](broken-reference) we added an [optimizer switch](../system-variables/server-system-variables.md#optimizer_switch)\
+In [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3) we added an [optimizer switch](../system-variables/server-system-variables.md#optimizer_switch)\
 which allows you to specify which algorithms will be considered when optimizing\
 a query.
 

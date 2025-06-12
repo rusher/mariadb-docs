@@ -160,7 +160,9 @@ Client response :
 
 #### mysql\_clear\_password Plugin
 
+{% hint style="danger" %}
 Since password is transmitted in clear, this has be used only when using SSL connection
+{% endhint %}
 
 send clear password to server
 

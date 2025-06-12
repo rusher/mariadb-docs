@@ -55,7 +55,7 @@ From [MariaDB 10.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-commu
 
 The [optimizer\_use\_condition\_selectivity](../../system-variables/server-system-variables.md#optimizer_use_condition_selectivity) controls which statistics can be used by the optimizer when looking for the best query execution plan.
 
-* `1` Use selectivity of predicates as in [MariaDB 5.5](broken-reference).
+* `1` Use selectivity of predicates as in [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5).
 * `2` Use selectivity of all range predicates supported by indexes.
 * `3` Use selectivity of all range predicates estimated without histogram.
 * `4` Use selectivity of all range predicates estimated with histogram.

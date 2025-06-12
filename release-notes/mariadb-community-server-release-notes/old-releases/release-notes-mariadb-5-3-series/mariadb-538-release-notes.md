@@ -30,7 +30,7 @@ for what changed between this and previous MySQL versions.
 
 This release fixes numerous cases of the incorrect identifier quoting in the replication code. They were open [SQL injection](https://en.wikipedia.org/wiki/SQL_injection) vulnerabilities, that allowed, to a certain extent, to bypass the database privilege system and modify the data, that one was granted no access to. See [MDEV-382](https://jira.mariadb.org/browse/MDEV-382) ([CVE-2012-4414](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-4414)) for details.
 
-This MariaDB release includes several other bug fixes and improvements. It is recommended for all users of [MariaDB 5.3](broken-reference).
+This MariaDB release includes several other bug fixes and improvements. It is recommended for all users of [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3).
 
 See the [MariaDB 5.3.8 Changelog](broken-reference) for a list of every change\
 made in [MariaDB 5.3.8](mariadb-538-release-notes.md), with links to detailed information on each push.

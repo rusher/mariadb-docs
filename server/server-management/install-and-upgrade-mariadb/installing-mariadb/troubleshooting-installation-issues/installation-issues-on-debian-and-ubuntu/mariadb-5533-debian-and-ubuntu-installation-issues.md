@@ -10,7 +10,7 @@ If you ran into issues when moving from [MariaDB 5.5.32](https://app.gitbook.com
 
 To get your system ready to apply the fix, do the following:
 
-* Comment out the standard [MariaDB 5.5](broken-reference) repo in the `/etc/apt/sources.list` or `/etc/apt/sources.list.d/mariadb.repo` file (or wherever you have the repositories configured).
+* Comment out the standard [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) repo in the `/etc/apt/sources.list` or `/etc/apt/sources.list.d/mariadb.repo` file (or wherever you have the repositories configured).
 * Add a [MariaDB 5.5.32](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/mariadb-5532-release-notes) repository to the `sources.list`. The easiest way is to add the following. Just replace '`{os}`' and '`{dist}`' with the appropriate values.
 
 ```

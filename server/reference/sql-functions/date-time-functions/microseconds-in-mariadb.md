@@ -89,7 +89,7 @@ SELECT CAST('2009-12-31 23:59:59.998877' as DATETIME(3));
 
 ## MySQL 5.6 Microseconds
 
-MySQL 5.6 introduced microseconds using a slightly different implementation to [MariaDB 5.3](broken-reference). Since [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1), MariaDB has defaulted to the MySQL format, by means of the [--mysql56-temporal-format](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#mysql56_temporal_format) variable. The MySQL version requires slightly [more storage](../../data-types/data-type-storage-requirements.md) but has some advantages in permitting the eventual support of negative dates, and in replication.
+MySQL 5.6 introduced microseconds using a slightly different implementation to [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3). Since [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1), MariaDB has defaulted to the MySQL format, by means of the [--mysql56-temporal-format](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#mysql56_temporal_format) variable. The MySQL version requires slightly [more storage](../../data-types/data-type-storage-requirements.md) but has some advantages in permitting the eventual support of negative dates, and in replication.
 
 ## See Also
 

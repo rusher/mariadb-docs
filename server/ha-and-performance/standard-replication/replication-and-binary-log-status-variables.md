@@ -1,6 +1,8 @@
 # Replication and Binary Log Status Variables
 
+{% hint style="info" %}
 The terms _master_ and _slave_ have historically been used in replication, and MariaDB has begun the process of adding _primary_ and _replica_ synonyms. The old terms will continue to be used to maintain backward compatibility - see [MDEV-18777](https://jira.mariadb.org/browse/MDEV-18777) to follow progress on this effort.
+{% endhint %}
 
 The following status variables are useful in [binary logging](../../server-management/server-monitoring-logs/binary-log/) and [replication](broken-reference). See [Server Status Variables](../optimization-and-tuning/system-variables/server-status-variables.md) for a complete list of status variables that can be viewed with [SHOW STATUS](../../reference/sql-statements/administrative-sql-statements/show/show-status.md).
 

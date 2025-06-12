@@ -8,7 +8,7 @@ The most recent release in the [MariaDB 5.3 series](broken-reference) is:[**Mari
 
 [MariaDB 5.3.1](mariadb-531-release-notes.md) is a [Beta release](../../../mariadb-release-criteria.md). In general this means\
 that there are no known serious bugs, except for those marked as feature\
-requests. [MariaDB 5.3](broken-reference) radically improves performance for subqueries as well as\
+requests. [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3) radically improves performance for subqueries as well as\
 for joins and single-table queries over large data sets.
 
 **For a detailed description of** [**MariaDB 5.3**](broken-reference) **see the** [**What is MariaDB 5.3**](broken-reference) **page.**
@@ -18,7 +18,7 @@ beta release of the 5.3 series and fixes bugs found in the initial 5.3.0 beta\
 release.
 
 For a list of every change made in [MariaDB 5.3.1](mariadb-531-release-notes.md), with links to detailed\
-information on each push, see the[MariaDB 5.3.1 Changelog](broken-reference). It is worth noting that[MariaDB 5.3](broken-reference) is built on [MariaDB 5.2](../release-notes-mariadb-5-2-series/changes-improvements-in-mariadb-5-2.md),[MariaDB 5.1](../release-notes-mariadb-5-1-series/changes-improvements-in-mariadb-5-1.md), and MySQL 5.1.
+information on each push, see the[MariaDB 5.3.1 Changelog](broken-reference). It is worth noting that[MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3) is built on [MariaDB 5.2](../release-notes-mariadb-5-2-series/changes-improvements-in-mariadb-5-2.md),[MariaDB 5.1](../release-notes-mariadb-5-1-series/changes-improvements-in-mariadb-5-1.md), and MySQL 5.1.
 
 In most respects [MariaDB](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/mariadb/README.md) will work exactly as MySQL: all commands,\
 interfaces, libraries and APIs that exist in MySQL also exist in MariaDB.

@@ -5,8 +5,9 @@ This event does not appear in the [binary log](../../../../../server-management/
 It's only sent over the network by a master to a slave server to let it know that the master is still alive, and is only sent when the master has no binlog events to send to slave servers.
 
 
+{% hint style="info" %}
 This event is never written into the binary log file
-
+{% endhint %}
 
 ### Header
 

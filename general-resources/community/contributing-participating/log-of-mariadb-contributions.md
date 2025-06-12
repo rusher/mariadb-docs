@@ -506,7 +506,7 @@ The MariaDB Foundation website provides a more detailed list of contributors by 
 * [MariaDB Galera Cluster 10.0.35 contributors](https://mariadb.org/mariadb-10-1-33-and-mariadb-galera-cluster-10-0-35-now-available/)
 * [MariaDB 10.0.35 contributors](https://mariadb.org/mariadb-10-0-35-mariadb-galera-cluster-5-5-60-and-mariadb-connector-c-3-0-4-now-available/)
 
-### [MariaDB 5.5](broken-reference) Log of Contributions
+### [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) Log of Contributions
 
 Function last\_value() which returns the last value but evaluates all arguments as a side effect.
 

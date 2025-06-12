@@ -1,7 +1,7 @@
 # 4-Semi-Sync Replication
 
 [Regular MariaDB replication](../../../../../ha-and-performance/standard-replication/) is asynchronous.\
-MariaDB, since [MariaDB 5.5](broken-reference), has included [semisynchronous replication](../../../../../ha-and-performance/standard-replication/semisynchronous-replication.md) semi-synchronous Binlog Event.
+MariaDB, since [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5), has included [semisynchronous replication](../../../../../ha-and-performance/standard-replication/semisynchronous-replication.md) semi-synchronous Binlog Event.
 
 ### Event Header Changes
 

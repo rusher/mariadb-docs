@@ -2,7 +2,7 @@
 
 ## What you need to know
 
-There are no changes in table or index formats between [MariaDB 5.3](broken-reference) and [MariaDB\
+There are no changes in table or index formats between [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3) and [MariaDB\
 5.5](broken-reference), so on most servers the upgrade should be painless.
 
 ### How to upgrade
@@ -10,16 +10,16 @@ There are no changes in table or index formats between [MariaDB 5.3](broken-refe
 The suggested upgrade procedure is:
 
 1. For Windows, see [Upgrading MariaDB on Windows](../upgrading-mariadb-on-windows.md) instead.
-2. Shutdown [MariaDB 5.3](broken-reference)
+2. Shutdown [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3)
 3. Take a backup (this is the perfect time to take a backup of your databases)
-4. Uninstall [MariaDB 5.3](broken-reference)
-5. Install [MariaDB 5.5](broken-reference) \[[1](upgrading-from-mariadb-53-to-mariadb-55.md#_note-0)]
+4. Uninstall [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3)
+5. Install [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) \[[1](upgrading-from-mariadb-53-to-mariadb-55.md#_note-0)]
 6. Run [mysql\_upgrade](../../../../clients-and-utilities/legacy-clients-and-utilities/mysql_upgrade.md)
 
 * Ubuntu and Debian packages do this automatically when they are installed; Red Hat, CentOS, and Fedora packages do not
 * `mysql_upgrade` does two things:
   1. Upgrades the permission tables in the `mysql` database with some new fields
-  2. Does a very quick check of all tables and marks them as compatible with [MariaDB 5.5](broken-reference)
+  2. Does a very quick check of all tables and marks them as compatible with [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5)
 * In most cases this should be a fast operation (depending of course on the number of tables)
 
 1. Add new options to [my.cnf](../../configuring-mariadb/configuring-mariadb-with-option-files.md) to enable features
@@ -35,13 +35,12 @@ However, there are some things that have changed which could affect an upgrade:
 
 | Option                                                                                                    | Old value | New value |
 | --------------------------------------------------------------------------------------------------------- | --------- | --------- |
-| Option                                                                                                    | Old value | New value |
 | [innodb\_change\_buffering](../../../../reference/storage-engines/innodb/innodb-system-variables.md)      | inserts   | all       |
 | [innodb\_flush\_neighbor\_pages](../../../../reference/storage-engines/innodb/innodb-system-variables.md) | 1         | area      |
 
 #### Options that have been removed or renamed
 
-Percona, the provider of [XtraDB](../../../../reference/storage-engines/innodb/), does not provide all earlier XtraDB features in the 5.5 code base. Because of that, [MariaDB 5.5](broken-reference) can't provide them either. The following options are not supported by XtraDB 5.5. If you are using them in any of your my.cnf files, you should remove them before upgrading to 5.5.
+Percona, the provider of [XtraDB](../../../../reference/storage-engines/innodb/), does not provide all earlier XtraDB features in the 5.5 code base. Because of that, [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) can't provide them either. The following options are not supported by XtraDB 5.5. If you are using them in any of your my.cnf files, you should remove them before upgrading to 5.5.
 
 * [innodb\_adaptive\_checkpoint](../../../../reference/storage-engines/innodb/innodb-system-variables.md); Use[innodb\_adaptive\_flushing\_method](../../../../reference/storage-engines/innodb/innodb-system-variables.md) instead.
 * [innodb\_auto\_lru\_dump](../../../../reference/storage-engines/innodb/innodb-system-variables.md); Use [innodb\_buffer\_pool\_restore\_at\_startup](../../../../reference/storage-engines/innodb/innodb-system-variables.md) instead (and [innodb\_buffer\_pool\_load\_at\_startup](../../../../reference/storage-engines/innodb/innodb-system-variables.md) in [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0)).

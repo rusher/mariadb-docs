@@ -28,7 +28,7 @@ Here is a list of environment variables used by MariaDB.
 | TZ                   | Local [time zone](../../../reference/data-types/string-data-types/character-sets/internationalization-and-localization/time-zones.md).                                                                                                                               |
 | UMASK                | Creation mode when creating files. See [Specifying Permissions for Schema (Data) Directories and Tables](../../starting-and-stopping-mariadb/specifying-permissions-for-schema-data-directories-and-tables.md).                                                      |
 | UMASK\_DIR           | Creation mode when creating directories. See [Specifying Permissions for Schema (Data) Directories and Tables](../../starting-and-stopping-mariadb/specifying-permissions-for-schema-data-directories-and-tables.md).                                                |
-| USER                 | On Windows, up to [MariaDB 5.5](broken-reference), the default user name when connecting to the mysqld server. API GetUserName() is used in later versions.                                                                                                          |
+| USER                 | On Windows, up to [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5), the default user name when connecting to the mysqld server. API GetUserName() is used in later versions.                                                                                                          |
 
 CC BY-SA / Gnu FDL
 

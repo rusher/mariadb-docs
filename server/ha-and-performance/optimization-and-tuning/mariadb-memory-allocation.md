@@ -90,7 +90,7 @@ then calculate [Key\_read\_requests](system-variables/server-status-variables.md
 
 InnoDB does all its caching in a the [buffer pool](../../reference/storage-engines/innodb/innodb-buffer-pool.md), whose size is controlled by [innodb\_buffer\_pool\_size](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_size). By default it contains 16KB data and index blocks from the open tables (see [innodb\_page\_size](../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_page_size)), plus some maintenance overhead.
 
-From [MariaDB 5.5](broken-reference), multiple buffer pools are permitted; this can help because there is one mutex per pool, thereby relieving some of the mutex bottleneck.
+From [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5), multiple buffer pools are permitted; this can help because there is one mutex per pool, thereby relieving some of the mutex bottleneck.
 
 [More on InnoDB tuning](https://www.mysqlperformanceblog.com/2007/11/01/innodb-performance-optimization-basics/)
 
@@ -176,7 +176,7 @@ If you have a mixture of engines, lower both numbers.
 max\_connections, thread\_stack\
 Each "thread" takes some amount of RAM. This used to be about 200KB; 100 threads would be 20MB, not a significant size. If you have [max\_connections](system-variables/server-system-variables.md#max_connections) = 1000, then you are talking about 200MB, maybe more. Having that many connections probably implies other issues that should be addressed.
 
-In 5.6 (or [MariaDB 5.5](broken-reference)), optional thread pooling interacts with [max\_connections](system-variables/server-system-variables.md#max_connections). This is a more advanced topic.
+In 5.6 (or [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5)), optional thread pooling interacts with [max\_connections](system-variables/server-system-variables.md#max_connections). This is a more advanced topic.
 
 Thread stack overrun rarely happens. If it does, do something like thread\_stack=256K
 

@@ -9,7 +9,7 @@ Upgrades are normally easy because:
 * The MariaDB connection protocol is backward compatible. You don't normally need to upgrade any of your old clients to be able to connect to a newer MariaDB version.
 * The MariaDB replica can be of any newer version than the primary.
 
-MariaDB Corporation regularly runs tests to check that one can upgrade from [MariaDB 5.5](broken-reference) to the latest MariaDB version without any trouble. All older versions should work too (as long as the storage engines you were using are still around).
+MariaDB Corporation regularly runs tests to check that one can upgrade from [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) to the latest MariaDB version without any trouble. All older versions should work too (as long as the storage engines you were using are still around).
 
 Note that if you are using [MariaDB Galera Cluster](../../../../kb/en/galera-cluster/), you have to follow the [Galera upgrading instructions](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/galera-management/upgrading-galera-cluster)!
 

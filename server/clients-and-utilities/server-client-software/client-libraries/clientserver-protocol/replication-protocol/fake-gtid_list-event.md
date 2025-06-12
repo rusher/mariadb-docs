@@ -2,8 +2,9 @@
 
 This event is sent by master server to the registering slave and it's sent only once, after[Format Description Event](format_description_event.md)
 
-**Note**: the fake GTID\_LIST event is not written in the binlog file.\
-It's created by the master and sent to new connected slave before any "real" binlog event.
+{% hint style="info" %}
+**Note**: the fake GTID\_LIST event is not written in the binlog file. It's created by the master and sent to new connected slave before any "real" binlog event.
+{% endhint %}
 
 #### Header
 

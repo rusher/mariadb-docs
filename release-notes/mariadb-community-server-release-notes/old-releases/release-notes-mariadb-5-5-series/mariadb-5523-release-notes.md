@@ -1,6 +1,6 @@
 # MariaDB 5.5.23 Release Notes
 
-The most recent release in the [MariaDB 5.5](broken-reference) series is:[**MariaDB 5.5.68**](mariadb-5568-release-notes.md) [Download Now](https://downloads.mariadb.org/mariadb/5.5.68/)
+The most recent release in the [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) series is:[**MariaDB 5.5.68**](mariadb-5568-release-notes.md) [Download Now](https://downloads.mariadb.org/mariadb/5.5.68/)
 
 [Download](https://downloads.askmonty.org/mariadb/5.5.23) |**Release Notes** |[Changelog](../../../changelogs/changelogs-mariadb-55-series/mariadb-5523-changelog.md) |[Overview of 5.5](broken-reference)
 
@@ -34,7 +34,7 @@ This release includes fixes for the following security vulnerabilities:
 [MariaDB 5.5.23](mariadb-5523-release-notes.md) includes [MariaDB 5.3.6](../release-notes-mariadb-5-3-series/mariadb-536-release-notes.md), which, among other things, fixes a bug\
 that under certain rare circumstances allowed a user to connect with an invalid\
 password. **This is a serious security issue.** We recommend upgrading from\
-older versions of [MariaDB 5.5](broken-reference) as soon as possible. See the [MariaDB 5.3.6](../release-notes-mariadb-5-3-series/mariadb-536-release-notes.md)[Release Notes](../release-notes-mariadb-5-3-series/mariadb-536-release-notes.md) and[Changelog](../../../changelogs/changelogs-mariadb-53-series/mariadb-536-changelog.md) for more information.
+older versions of [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) as soon as possible. See the [MariaDB 5.3.6](../release-notes-mariadb-5-3-series/mariadb-536-release-notes.md)[Release Notes](../release-notes-mariadb-5-3-series/mariadb-536-release-notes.md) and[Changelog](../../../changelogs/changelogs-mariadb-53-series/mariadb-536-changelog.md) for more information.
 
 ## Includes MySQL 5.5.23
 

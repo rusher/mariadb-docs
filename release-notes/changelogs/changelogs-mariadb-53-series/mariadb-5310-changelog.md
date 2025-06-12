@@ -126,7 +126,7 @@ modified in that revision.
 * [Revision #3586](https://bazaar.launchpad.net/~maria-captains/maria/5.3/revision/3586)\
   Wed 2012-10-10 09:21:22 +0400
   * Backport of: olav.sandstaa@oracle.com-20120516074923-vd0dhp183vqcp2ql
-  * .. into [MariaDB 5.3](broken-reference)
+  * .. into [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3)
 
 ```
 Fix for Bug#12667154 SAME QUERY EXEC AS WHERE SUBQ GIVES DIFFERENT

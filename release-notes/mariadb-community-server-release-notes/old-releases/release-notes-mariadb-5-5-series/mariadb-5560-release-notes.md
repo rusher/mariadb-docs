@@ -1,6 +1,6 @@
 # MariaDB 5.5.60 Release Notes
 
-The most recent release in the [MariaDB 5.5](broken-reference) series is:[**MariaDB 5.5.68**](mariadb-5568-release-notes.md) [Download Now](https://downloads.mariadb.org/mariadb/5.5.68/)
+The most recent release in the [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) series is:[**MariaDB 5.5.68**](mariadb-5568-release-notes.md) [Download Now](https://downloads.mariadb.org/mariadb/5.5.68/)
 
 [Download](https://downloads.mariadb.org/mariadb/5.5.60)[Release Notes](mariadb-5560-release-notes.md)[Changelog](../../../changelogs/changelogs-mariadb-55-series/mariadb-5560-changelog.md)[Overview of 5.5](broken-reference)
 
@@ -22,7 +22,7 @@ updates, including from MySQL 5.5.60.
 * The embedded server library now supports SSL when connecting to remote servers.
 * [MDEV-7049](https://jira.mariadb.org/browse/MDEV-7049) MySQL#74585 - InnoDB: Failing assertion: \*mbmaxlen < 5
 * As per the [MariaDB Deprecation Policy](../../../mariadb-platform-deprecation-policy.md), this will be\
-  the last release of [MariaDB 5.5](broken-reference) for Debian 7 Wheezy
+  the last release of [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) for Debian 7 Wheezy
 * Fixes for the following [security vulnerabilities](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/security):
   * [CVE-2018-2755](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-2755)
   * [CVE-2018-2761](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-2761)

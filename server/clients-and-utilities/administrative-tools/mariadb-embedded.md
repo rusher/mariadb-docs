@@ -6,7 +6,9 @@ Prior to [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-c
 
 Upon execution, an embedded MariaDB server is instantiated and you can execute statements just as you would using the normal mariadb client, using the same options.
 
+{% hint style="danger" %}
 Do not run _mariadb-embedded_ using the same database as a running MariaDB server!
+{% endhint %}
 
 ## Examples
 

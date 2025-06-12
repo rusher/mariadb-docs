@@ -1,12 +1,12 @@
 # MariaDB 5.5.21 Release Notes
 
-The most recent release in the [MariaDB 5.5](broken-reference) series is:[**MariaDB 5.5.68**](mariadb-5568-release-notes.md) [Download Now](https://downloads.mariadb.org/mariadb/5.5.68/)
+The most recent release in the [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) series is:[**MariaDB 5.5.68**](mariadb-5568-release-notes.md) [Download Now](https://downloads.mariadb.org/mariadb/5.5.68/)
 
 [Download](https://downloads.askmonty.org/mariadb/5.5.21) |**Release Notes** |[Changelog](../../../changelogs/changelogs-mariadb-55-series/mariadb-5521-changelog.md) |[Overview of 5.5](broken-reference)
 
 **Release date:** 16 Mar 2012
 
-[MariaDB 5.5.21](mariadb-5521-release-notes.md) is a [_**Beta**_](../../../mariadb-release-criteria.md) release. In general this means that there are no known serious bugs, except for those marked as feature requests. This is the second release of the [MariaDB 5.5](broken-reference) series and includes features left out of the 5.5.20-alpha release, and various bug fixes.
+[MariaDB 5.5.21](mariadb-5521-release-notes.md) is a [_**Beta**_](../../../mariadb-release-criteria.md) release. In general this means that there are no known serious bugs, except for those marked as feature requests. This is the second release of the [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) series and includes features left out of the 5.5.20-alpha release, and various bug fixes.
 
 **For a description of** [**MariaDB 5.5**](broken-reference) **see the**[**What is MariaDB 5.5**](broken-reference) **page.**
 

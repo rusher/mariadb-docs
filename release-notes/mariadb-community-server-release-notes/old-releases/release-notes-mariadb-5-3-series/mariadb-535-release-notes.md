@@ -14,7 +14,7 @@ caused any notable code changes. We believe the code is ready for general usage\
 
 **For a detailed description of** [**MariaDB 5.3**](broken-reference) **see the** [**What is MariaDB 5.3**](broken-reference) **page.**
 
-Compared to previous releases in the [MariaDB 5.3](broken-reference) series, [MariaDB 5.3.5](mariadb-535-release-notes.md) is\
+Compared to previous releases in the [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3) series, [MariaDB 5.3.5](mariadb-535-release-notes.md) is\
 primarily a bug-fix release with a focus on stability, performance, and\
 usability. It is first **stable** or **GA** release of the 5.3 series and the\
 fifth overall release in the series.
@@ -24,7 +24,7 @@ releases, [MariaDB 5.3.5](mariadb-535-release-notes.md) introduces counters for 
 optimizations.
 
 For a list of every change made in [MariaDB 5.3.5](mariadb-535-release-notes.md), with links to detailed\
-information on each push, see the[MariaDB 5.3.5 Changelog](../../../changelogs/changelogs-mariadb-53-series/mariadb-535-changelog.md). It is worth noting that[MariaDB 5.3](broken-reference) is built on [MariaDB 5.2](../release-notes-mariadb-5-2-series/changes-improvements-in-mariadb-5-2.md),[MariaDB 5.1](../release-notes-mariadb-5-1-series/changes-improvements-in-mariadb-5-1.md), and MySQL 5.1.
+information on each push, see the[MariaDB 5.3.5 Changelog](../../../changelogs/changelogs-mariadb-53-series/mariadb-535-changelog.md). It is worth noting that[MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3) is built on [MariaDB 5.2](../release-notes-mariadb-5-2-series/changes-improvements-in-mariadb-5-2.md),[MariaDB 5.1](../release-notes-mariadb-5-1-series/changes-improvements-in-mariadb-5-1.md), and MySQL 5.1.
 
 In most respects [MariaDB](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/mariadb/README.md) will work exactly as MySQL: all commands,\
 interfaces, libraries and APIs that exist in MySQL also exist in MariaDB.

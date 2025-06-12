@@ -102,7 +102,7 @@ It is to be used with `runall-new.pl`
 
 ## LimitRowsExamined Transformer
 
-The transformer was developed for testing new [LIMIT ROWS EXAMINED](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/query-optimizations/limit-rows-examined) functionality added in [MariaDB 5.5](broken-reference). It can be used in the usual way, by providing its name in the `--transformers` list.
+The transformer was developed for testing new [LIMIT ROWS EXAMINED](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/query-optimizations/limit-rows-examined) functionality added in [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5). It can be used in the usual way, by providing its name in the `--transformers` list.
 
 The transformer checks whether the original query already contains a `ROWS EXAMINED` clause. If it does not, it adds the clause either after the `LIMIT` clause, or at the end of the query. In any case (even if `ROWS EXAMINED` was already there), the transformer returns the following sequence of statements:
 

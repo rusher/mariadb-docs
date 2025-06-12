@@ -1,6 +1,6 @@
 # MariaDB 5.5.54 Release Notes
 
-The most recent release in the [MariaDB 5.5](broken-reference) series is:[**MariaDB 5.5.68**](mariadb-5568-release-notes.md) [Download Now](https://downloads.mariadb.org/mariadb/5.5.68/)
+The most recent release in the [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) series is:[**MariaDB 5.5.68**](mariadb-5568-release-notes.md) [Download Now](https://downloads.mariadb.org/mariadb/5.5.68/)
 
 [Download](https://downloads.mariadb.org/mariadb/5.5.54)[Release Notes](mariadb-5554-release-notes.md)[Changelog](../../../changelogs/changelogs-mariadb-55-series/mariadb-5554-changelog.md)[Overview of 5.5](broken-reference)
 
@@ -19,7 +19,7 @@ interfaces, libraries and APIs that exist in MySQL also exist in MariaDB.
 updates, including from MySQL 5.5.54.
 
 * [HeidiSQL](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/graphical-and-enhanced-clients/heidisql) updated to 9.4
-* As per the [MariaDB Deprecation Policy](../../../mariadb-platform-deprecation-policy.md), this is the last release of [MariaDB 5.5](broken-reference) for CentOS 5, RHEL 5, and openSUSE 13
+* As per the [MariaDB Deprecation Policy](../../../mariadb-platform-deprecation-policy.md), this is the last release of [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) for CentOS 5, RHEL 5, and openSUSE 13
 * Fixes for the following [security vulnerabilities](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/security):
   * [CVE-2016-6664](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-6664)
   * [CVE-2017-3238](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-3238)

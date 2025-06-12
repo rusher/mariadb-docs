@@ -1,6 +1,6 @@
 # MariaDB 5.5.20 Changelog
 
-The most recent release in the [MariaDB 5.5](broken-reference) series is:[**MariaDB 5.5.68**](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/mariadb-5568-release-notes.md) [Download Now](https://downloads.mariadb.org/mariadb/5.5.68/)
+The most recent release in the [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) series is:[**MariaDB 5.5.68**](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/mariadb-5568-release-notes.md) [Download Now](https://downloads.mariadb.org/mariadb/5.5.68/)
 
 [Download](https://downloads.askmonty.org/mariadb/5.5.20) |[Release Notes](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/mariadb-5520-release-notes.md) |**Changelog** |[Overview of 5.5](broken-reference)
 
@@ -227,14 +227,14 @@ modified in that revision.
   * Fix wrong type causing build failure on windows.
 * [Revision #3269](https://bazaar.launchpad.net/~maria-captains/maria/5.5/revision/3269) \[merge]\
   Wed 2012-02-15 15:37:38 +0100
-  * Merge XtraDB from Percona-Server-5.5.20-24.1 into [MariaDB 5.5](broken-reference).
+  * Merge XtraDB from Percona-Server-5.5.20-24.1 into [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5).
   * [Revision #0.12.52](https://bazaar.launchpad.net/~maria-captains/maria/5.5/revision/0.12.52)\
     Wed 2012-02-15 11:49:53 +0100
     * Updated with XtraDB from Percona Server 5.5.20-24.1
     * Files copied from Percona-Server-5.5.20-rel24.1.tar.gz source tarball.
 * [Revision #3268](https://bazaar.launchpad.net/~maria-captains/maria/5.5/revision/3268) \[merge]\
   Tue 2012-02-14 16:06:41 +0100
-  * Merge MySQL 5.5.20 into [MariaDB 5.5](broken-reference).
+  * Merge MySQL 5.5.20 into [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5).
 * [Revision #3267](https://bazaar.launchpad.net/~maria-captains/maria/5.5/revision/3267)\
   Tue 2012-02-14 13:24:03 +0100
   * Fix wrong error code in the test case.
@@ -437,7 +437,7 @@ modified in that revision.
   * Buildbot VMs have cmake in /usr/local/, so we need to include that in the path.
 * [Revision #3229](https://bazaar.launchpad.net/~maria-captains/maria/5.5/revision/3229)\
   Mon 2012-01-23 12:20:16 +0100
-  * Initial draft for building .deb packages for [MariaDB 5.5](broken-reference).
+  * Initial draft for building .deb packages for [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5).
 * [Revision #3228](https://bazaar.launchpad.net/~maria-captains/maria/5.5/revision/3228)\
   Fri 2012-01-20 22:32:31 +0100
   * Always compile my\_new.cc and safemalloc.c with mysys
@@ -672,7 +672,7 @@ modified in that revision.
     * Add file accidentally omitted in last commit
 * [Revision #3179](https://bazaar.launchpad.net/~maria-captains/maria/5.5/revision/3179) \[merge]\
   Thu 2011-12-15 10:34:14 +0100
-  * Merge XtraDB from Percona-server-5.5.17-rel22.1 into [MariaDB 5.5](broken-reference)
+  * Merge XtraDB from Percona-server-5.5.17-rel22.1 into [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5)
   * [Revision #0.12.50](https://bazaar.launchpad.net/~maria-captains/maria/5.5/revision/0.12.50)\
     Wed 2011-12-14 14:58:22 +0100
     * Updated with XtraDB from Percona Server 5.5.17-rel22.1

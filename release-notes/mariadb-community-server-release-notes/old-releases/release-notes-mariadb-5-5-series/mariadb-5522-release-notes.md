@@ -1,6 +1,6 @@
 # MariaDB 5.5.22 Release Notes
 
-The most recent release in the [MariaDB 5.5](broken-reference) series is:[**MariaDB 5.5.68**](mariadb-5568-release-notes.md) [Download Now](https://downloads.mariadb.org/mariadb/5.5.68/)
+The most recent release in the [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) series is:[**MariaDB 5.5.68**](mariadb-5568-release-notes.md) [Download Now](https://downloads.mariadb.org/mariadb/5.5.68/)
 
 [Download](https://downloads.askmonty.org/mariadb/5.5.22) |**Release Notes** |[Changelog](../../../changelogs/changelogs-mariadb-55-series/mariadb-5522-changelog.md) |[Overview of 5.5](broken-reference)
 
@@ -11,7 +11,7 @@ release. In general this means that there are no known serious bugs, except for\
 those marked as feature requests, that no bugs were fixed since last release\
 that caused a notable code changes, and that we believe the code is ready for\
 general usage (based on bug inflow), but we want more testing before calling it\
-stable. This is the third release of the [MariaDB 5.5](broken-reference) series.
+stable. This is the third release of the [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) series.
 
 **For a description of** [**MariaDB 5.5**](broken-reference) **see the**[**What is MariaDB 5.5**](broken-reference) **page.**
 

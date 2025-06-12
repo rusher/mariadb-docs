@@ -31,7 +31,7 @@ for what changed between this and previous MySQL versions.
 [MariaDB 5.3.9](mariadb-539-release-notes.md) includes a fix for a bug with EXT3 and EXT4 filesystems which could result in data loss after a crash. We've reported the bug to the upstream filesystem maintainers and they will be fixing it in the Linux kernel. This fix is a workaround to fix the issue now, rather than waiting for the kernel-level fix. See [MDEV-381](https://jira.mariadb.org/browse/MDEV-381) for more information.
 
 This MariaDB release also includes several other bug fixes and improvements. It is\
-recommended for all users of [MariaDB 5.3](broken-reference).
+recommended for all users of [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3).
 
 See the [MariaDB 5.3.9 Changelog](../../../changelogs/changelogs-mariadb-53-series/mariadb-539-changelog.md) for a list of every\
 change made in [MariaDB 5.3.9](mariadb-539-release-notes.md), with links to detailed information on each push.

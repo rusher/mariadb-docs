@@ -332,16 +332,16 @@ SELECT COLUMN_GET(blob, 'colname' as CHAR) ...
 ```
 
 without specifying a maximum length (i.e. using #as CHAR#, not `as CHAR(n)`),\
-MariaDB will report the maximum length of the resultset column to be`53,6870,911` (bytes or characters?) for [MariaDB 5.3](broken-reference)-10.0.0 and`16,777,216` for [MariaDB 10.0.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-1001-release-notes)+. This may cause excessive memory usage in\
+MariaDB will report the maximum length of the resultset column to be`53,6870,911` (bytes or characters?) for [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3)-10.0.0 and`16,777,216` for [MariaDB 10.0.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-1001-release-notes)+. This may cause excessive memory usage in\
 some client libraries, because they try to pre-allocate a buffer of maximum\
 resultset width. If you suspect you're hitting this problem, use `CHAR(n)`\
 whenever you're using `COLUMN_GET` in the select list.
 
-### [MariaDB 5.3](broken-reference) vs [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0)
+### [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3) vs [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0)
 
 The dynamic columns feature was introduced into MariaDB in two steps:
 
-1. [MariaDB 5.3](broken-reference) was the first version to support dynamic columns. Only numbers\
+1. [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3) was the first version to support dynamic columns. Only numbers\
    could be used as column names in this version.
 2. In [MariaDB 10.0.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-1001-release-notes), column names can be either numbers or strings.\
    Also, the `COLUMN_JSON` and `COLUMN_CHECK` functions were added.

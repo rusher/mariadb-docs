@@ -43,7 +43,7 @@ If used out of a [HANDLER](../../reference/sql-structure/nosql/handler/) constru
 ERROR 1645 (0K000): RESIGNAL when handler not active
 ```
 
-In [MariaDB 5.5](broken-reference), if a [HANDLER](../../reference/sql-structure/nosql/handler/) contained a [CALL](../../reference/sql-statements/stored-routine-statements/call.md) to another procedure, that procedure could use `RESIGNAL`. Since [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0), trying to do this raises the above error.
+In [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5), if a [HANDLER](../../reference/sql-structure/nosql/handler/) contained a [CALL](../../reference/sql-statements/stored-routine-statements/call.md) to another procedure, that procedure could use `RESIGNAL`. Since [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0), trying to do this raises the above error.
 
 For a list of `SQLSTATE` values and MariaDB error codes, see [MariaDB Error Codes](broken-reference).
 
@@ -102,7 +102,7 @@ CALL test_error( );
 ERROR 1146 (42S02): `temptab` does not exist
 ```
 
-As explained above, this works on [MariaDB 5.5](broken-reference), but produces a 1645 error since 10.0.
+As explained above, this works on [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5), but produces a 1645 error since 10.0.
 
 ```
 CREATE PROCEDURE handle_error()

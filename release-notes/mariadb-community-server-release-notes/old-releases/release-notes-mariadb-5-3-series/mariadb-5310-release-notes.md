@@ -29,14 +29,14 @@ for what changed between this and previous MySQL versions.
 ## Bug fixes and other improvements
 
 This MariaDB release includes several bug fixes and improvements. It is\
-recommended for all users of [MariaDB 5.3](broken-reference).
+recommended for all users of [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3).
 
 See the [MariaDB 5.3.10 Changelog](../../../changelogs/changelogs-mariadb-53-series/mariadb-5310-changelog.md) for a list of every\
 change made in [MariaDB 5.3.10](mariadb-5310-release-notes.md), with links to detailed information on each push.
 
 ## Alternative Linux binaries
 
-As with the previous version of [MariaDB 5.3](broken-reference), this version includes alternative\
+As with the previous version of [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3), this version includes alternative\
 Linux binaries built on a different build machine. Binaries created on this box\
 require at least GLIBC\_2.14. For continuity, we are still providing binaries\
 built with the same toolchain (and on the same builder) as previous releases.\

@@ -1,8 +1,8 @@
 # System Variables Added in MariaDB 5.5
 
-This is a list of [system variables](../../server-system-variables.md) that were added in the [MariaDB 5.5](broken-reference) series.
+This is a list of [system variables](../../server-system-variables.md) that were added in the [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) series.
 
-The list excludes variables related to non-default storage engines and plugins that can be added to [MariaDB 5.5](broken-reference):
+The list excludes variables related to non-default storage engines and plugins that can be added to [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5):
 
 | Variable                                                                                                                       | Added                                                                                                                                                                            |
 | ------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

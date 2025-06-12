@@ -83,7 +83,7 @@ Assuming a single-byte character-set:
 
 ### Microseconds
 
-[MariaDB 5.3](broken-reference) and MySQL 5.6 introduced [microseconds](../sql-functions/date-time-functions/microseconds-in-mariadb.md). The underlying storage implementations were different, but from [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1), MariaDB defaults to the MySQL format (by means of the [mysql56\_temporal\_format](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#mysql56_temporal_format) variable). Microseconds have the following additional storage requirements:
+[MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3) and MySQL 5.6 introduced [microseconds](../sql-functions/date-time-functions/microseconds-in-mariadb.md). The underlying storage implementations were different, but from [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1), MariaDB defaults to the MySQL format (by means of the [mysql56\_temporal\_format](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#mysql56_temporal_format) variable). Microseconds have the following additional storage requirements:
 
 #### MySQL 5.6+ and [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1)+
 
@@ -95,7 +95,7 @@ Assuming a single-byte character-set:
 | 3,4       | 2 bytes             |
 | 5,6       | 3 bytes             |
 
-#### [MariaDB 5.3](broken-reference) - [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0)
+#### [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3) - [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0)
 
 | Precision | Storage Requirement |
 | --------- | ------------------- |

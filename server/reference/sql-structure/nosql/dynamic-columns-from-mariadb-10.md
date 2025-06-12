@@ -4,7 +4,7 @@ MariaDB introduced the following improvements to the [dynamic columns](dynamic-c
 
 ## Column Name Support
 
-It is possible to refer to column by names. Names can be used everywhere where in [MariaDB 5.3](broken-reference) one could use only strings:
+It is possible to refer to column by names. Names can be used everywhere where in [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3) one could use only strings:
 
 * Create a dynamic column blob:
 

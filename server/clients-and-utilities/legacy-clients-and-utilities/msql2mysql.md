@@ -11,8 +11,9 @@ with MySQL by changing the names of their C API functions.
 The `msql2mysql` utility performs the conversion of mSQL C API\
 function calls to their MySQL equivalents.
 
-**Warning:** `msql2mysql` converts the input\
-file in place, so make a copy of the original before converting it.
+{% hint style="warning" %}
+**Warning:** `msql2mysql` converts the input file in place, so make a copy of the original before converting it.
+{% endhint %}
 
 ## Example
 
