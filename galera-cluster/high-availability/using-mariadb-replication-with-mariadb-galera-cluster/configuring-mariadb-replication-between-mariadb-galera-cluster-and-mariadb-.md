@@ -82,7 +82,7 @@ $ chown -R mysql:mysql /var/lib/mysql/
 
 ### Start the New Replica
 
-Now that the backup has been restored to the MariaDB Server replica, you can [start the MariaDB Server process](https://mariadb.com/kb/en/).
+Now that the backup has been restored to the MariaDB Server replica, you can start the MariaDB Server process.
 
 ### Create a Replication User on the Cluster's Primary
 
