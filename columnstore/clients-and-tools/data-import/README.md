@@ -1,4 +1,8 @@
 ---
+description: >-
+  Learn how to import data into MariaDB ColumnStore. This section covers various
+  methods and tools for efficiently loading large datasets into your columnar
+  database for analytical workloads.
 layout:
   title:
     visible: true
@@ -9,7 +13,7 @@ layout:
   outline:
     visible: true
   pagination:
-    visible: true
+    visible: false
 ---
 
 # Data Import

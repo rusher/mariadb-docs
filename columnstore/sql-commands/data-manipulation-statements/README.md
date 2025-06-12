@@ -1,7 +1,8 @@
 ---
 description: >-
-  ColumnStore SQL statements for querying and manipulating data, such as SELECT,
-  UPDATE, DELETE etc...
+  Learn data manipulation statements for MariaDB ColumnStore. This section
+  covers INSERT, UPDATE, DELETE, and LOAD DATA operations, optimized for
+  efficient handling of large analytical datasets.
 layout:
   title:
     visible: true
