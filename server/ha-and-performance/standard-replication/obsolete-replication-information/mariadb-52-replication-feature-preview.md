@@ -16,7 +16,7 @@ isolated features that are considered complete and fairly well-tested. It is\
 however not a stable or GA release, nor is it planned to be so.
 
 The stable\
-release including these features will be [**MariaDB 5.3**](broken-reference). That being said, we\
+release including these features will be [**MariaDB 5.3**](broken-reference/). That being said, we\
 greatly welcome any feedback / bug reports, and will strive to fix any issues\
 found and we will update the feature preview until [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3) stable is ready.
 
@@ -40,21 +40,21 @@ First import the [public key](https://ftp.osuosl.org/pub/mariadb/PublicKey) with
 which the repositories are signed, so that `apt` can verify the integrity of\
 the packages it downloads. For example like this:
 
-```
+```bash
 wget -O- http://ftp.osuosl.org/pub/mariadb/PublicKey | sudo apt-key add -
 ```
 
 Now add the appropriate repository. An easy way is to create a file called`mariadb-5.2-rpl.list` in `/etc/apt/sources.list.d/` with contents like\
 this for Debian:
 
-```
+```bash
 deb http://ftp.osuosl.org/pub/mariadb/mariadb-5.2-rpl/debian squeeze main
 deb-src http://ftp.osuosl.org/pub/mariadb/mariadb-5.2-rpl/debian squeeze main
 ```
 
 Or this for Ubuntu:
 
-```
+```bash
 deb http://ftp.osuosl.org/pub/mariadb/mariadb-5.2-rpl/ubuntu maverick main
 deb-src http://ftp.osuosl.org/pub/mariadb/mariadb-5.2-rpl/ubuntu maverick main
 ```
@@ -65,14 +65,14 @@ distribution name. Supported are "lenny" and "squeeze" for Debian, and\
 
 Now run
 
-```
+```bash
 sudo apt-get update
 ```
 
 The packages can now be installed with your package manager of choice, for\
 example:
 
-```
+```bash
 sudo apt-get install mariadb-server-5.2
 ```
 

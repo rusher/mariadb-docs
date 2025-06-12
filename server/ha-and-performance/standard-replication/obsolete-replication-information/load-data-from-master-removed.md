@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 LOAD DATA FROM MASTER
 ```
 

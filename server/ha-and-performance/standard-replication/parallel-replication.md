@@ -202,7 +202,7 @@ One simple but effective usage is to run long-running statements, such as\
 ALTER TABLE, in a separate replication domain. This allows replication of\
 other transactions to proceed uninterrupted:
 
-```
+```sql
 SET SESSION gtid_domain_id=1
 ALTER TABLE t ADD INDEX myidx(b)
 SET SESSION gtid_domain_id=0

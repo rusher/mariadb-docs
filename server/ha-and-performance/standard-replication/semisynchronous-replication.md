@@ -31,7 +31,7 @@ If a server needs to be able to switch between acting as a primary and a replica
 
 Semisynchronous replication can be enabled on the primary by setting the [rpl\_semi\_sync\_master\_enabled](semisynchronous-replication.md#rpl_semi_sync_master_enabled) system variable to `ON`. It can be set dynamically with [SET GLOBAL](../../reference/sql-statements/administrative-sql-statements/set-commands/set.md#global-session). For example:
 
-```
+```sql
 SET GLOBAL rpl_semi_sync_master_enabled=ON;
 ```
 
@@ -47,7 +47,7 @@ rpl_semi_sync_master_enabled=ON
 
 Semisynchronous replication can be enabled on the replica by setting the [rpl\_semi\_sync\_slave\_enabled](semisynchronous-replication.md#rpl_semi_sync_slave_enabled) system variable to `ON`. It can be set dynamically with [SET GLOBAL](../../reference/sql-statements/administrative-sql-statements/set-commands/set.md#global-session). For example:
 
-```
+```sql
 SET GLOBAL rpl_semi_sync_slave_enabled=ON;
 ```
 
@@ -61,7 +61,7 @@ rpl_semi_sync_slave_enabled=ON
 
 When switching between semisynchronous replication and asynchronous replication on a replica with[replica IO threads](replication-threads.md#threads-on-the-slave) already running, the replica I/O thread will need to be restarted. For example:
 
-```
+```sql
 STOP SLAVE IO_THREAD;
 START SLAVE IO_THREAD;
 ```
@@ -91,7 +91,7 @@ The number of times that semisynchronous replication has been switched off can b
 
 If you see a lot of timeouts like this in your environment, then you may want to change the timeout period. The timeout period can be changed by setting the [rpl\_semi\_sync\_master\_timeout](semisynchronous-replication.md#rpl_semi_sync_master_timeout) system variable. It can be set dynamically with [SET GLOBAL](../../reference/sql-statements/administrative-sql-statements/set-commands/set.md#global-session). For example:
 
-```
+```sql
 SET GLOBAL rpl_semi_sync_master_timeout=20000;
 ```
 
@@ -116,7 +116,7 @@ The wait point is configured by the [rpl\_semi\_sync\_master\_wait\_point](semis
 
 It can be set dynamically with [SET GLOBAL](../../reference/sql-statements/administrative-sql-statements/set-commands/set.md#global-session). For example:
 
-```
+```sql
 SET GLOBAL rpl_semi_sync_master_wait_point='AFTER_SYNC';
 ```
 

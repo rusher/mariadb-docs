@@ -36,7 +36,7 @@ If neither of the above is true, you have to do this step manually:
 
 First we have to set the primary to read only to ensure that there are no new updates on the primary:
 
-```
+```sql
 FLUSH TABLES WITH READ LOCK;
 ```
 
@@ -44,7 +44,7 @@ Note that you should not disconnect this session as otherwise the read lock will
 
 Then you should check the current position of the primary:
 
-```
+```sql
 SHOW MASTER STATUS;
 +--------------------+----------+--------------+------------------+
 | File               | Position | Binlog_Do_DB | Binlog_Ignore_DB |
@@ -62,7 +62,7 @@ SELECT @@global.gtid_binlog_pos;
 And wait until you have the same position on the replica:\
 (The following should be expected on the replica)
 
-```
+```sql
 SHOW SLAVE [connection_name] STATUS;
 +-------------------+-------------------+
 Master_Log_File     | narttu-bin.000003 +
@@ -83,7 +83,7 @@ primary is also on the replica.
 
 When replica is up to date, you can then take the **PRIMARY** down. This should be on the same connection where you executed [FLUSH TABLES WITH READ LOCK](../../reference/sql-statements/administrative-sql-statements/flush-commands/flush.md).
 
-```
+```sql
 SHUTDOWN;
 ```
 
@@ -93,7 +93,7 @@ Stop all old connections to the old primary(s) and reset **read only**\
 **mode**, if you had it enabled. You also want to save the values of[SHOW MASTER STATUS](../../reference/sql-statements/administrative-sql-statements/show/show-binlog-status.md) and `gtid_binlog_pos`, as\
 you may need these to setup new replicas.
 
-```
+```sql
 STOP ALL SLAVES;
 RESET SLAVE ALL;
 SHOW MASTER STATUS;
@@ -105,11 +105,15 @@ SET @@global.read_only=0;
 
 On the other replicas you have point them to the new primary (the replica you promoted to a primary).
 
-```
+```sql
 STOP SLAVE [connection_name];
-CHANGE MASTER [connection_name] TO MASTER_HOST="new_master_name",
-MASTER_PORT=3306, MASTER_USER='root', MASTER_USE_GTID=current_pos,
-MASTER_LOG_FILE="XXX", MASTER_LOG_POS=XXX;
+CHANGE MASTER [connection_name] TO 
+ MASTER_HOST="new_master_name",
+ MASTER_PORT=3306, 
+ MASTER_USER='root', 
+ MASTER_USE_GTID=current_pos,
+ MASTER_LOG_FILE="XXX", 
+ MASTER_LOG_POS=XXX;
 START SLAVE;
 ```
 
@@ -132,14 +136,18 @@ applications doesn't by accident try to update the old primary by mistake.\
 It only affects normal connections to the replica, not changes from the\
 new primary.
 
-```
+```sql
 set @@global.read_only=1;
 STOP ALL SLAVES;
 RESET MASTER;
 RESET SLAVE ALL;
-CHANGE MASTER [connection_name] TO MASTER_HOST="new_master_name",
-MASTER_PORT=3306, MASTER_USER='root', MASTER_USE_GTID=current_pos,
-MASTER_LOG_FILE="XXX", MASTER_LOG_POS=XXX;
+CHANGE MASTER [connection_name] TO 
+ MASTER_HOST="new_master_name",
+ MASTER_PORT=3306, 
+ MASTER_USER='root', 
+ MASTER_USE_GTID=current_pos,
+ MASTER_LOG_FILE="XXX", 
+ MASTER_LOG_POS=XXX;
 START SLAVE;
 ```
 

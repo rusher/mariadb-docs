@@ -144,7 +144,7 @@ group logged to the binlog receives a GTID event, as can be seen with[mariadb-bi
 The replica automatically keeps track of the GTID of the last applied event\
 group, as can be seen from the [gtid\_slave\_pos](gtid.md#gtid_slave_pos) variable:
 
-```
+```sql
 SELECT @@GLOBAL.gtid_slave_pos
 0-1-1
 ```
@@ -207,7 +207,7 @@ was specified and will use it also\
 for subsequent connects, until it is explicitly changed by specifying`master_log_file/pos=...` or`master_use_gtid=no`.\
 The current value can be seen as the field Using\_Gtid of SHOW SLAVE STATUS:
 
-```
+```sql
 SHOW SLAVE STATUS\G
 ...
 Using_Gtid: Slave_pos
@@ -246,7 +246,7 @@ You may run into issues when you use the value `current_pos` if you write any lo
 
 You can correct this issue by setting the [MASTER\_USE\_GTID](../../reference/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md#master_use_gtid) replication parameter to `slave_pos` instead of `current_pos`. For example:
 
-```
+```sql
 CHANGE MASTER TO MASTER_USE_GTID = slave_pos;
 START SLAVE;
 ```
@@ -286,8 +286,12 @@ Next, point the replica to the master with [CHANGE MASTER](../../reference/sql-s
 etc. as usual. But instead of specifying master\_log\_file and master\_log\_pos\
 manually, use `master_use_gtid=current_pos` (or`slave_pos` to have GTID do it automatically:
 
-```
-CHANGE MASTER TO master_host="127.0.0.1", master_port=3310, master_user="root", master_use_gtid=current_pos;
+```sql
+CHANGE MASTER TO 
+ master_host="127.0.0.1", 
+ master_port=3310, 
+ master_user="root", 
+ master_use_gtid=current_pos;
 START SLAVE;
 ```
 
@@ -307,15 +311,19 @@ Once the current binary log position for the backup has been obtained, in the fo
 of a binary log file name and position, the corresponding GTID position can be\
 obtained from [BINLOG\_GTID\_POS()](../../reference/sql-functions/secondary-functions/information-functions/binlog_gtid_pos.md) on the server that was backed up:
 
-```
+```sql
 SELECT BINLOG_GTID_POS("master-bin.000001", 600);
 ```
 
 The new replica can then start replicating from the primary by setting the correct value for[gtid\_slave\_pos](gtid.md#gtid_slave_pos), and then executing [CHANGE MASTER](../../reference/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) with the relevant values for the primary, and then starting the [replica threads](replication-threads.md#threads-on-the-slave) by executing [START SLAVE](../../reference/sql-statements/administrative-sql-statements/replication-statements/start-replica.md). For example:
 
-```
+```sql
 SET GLOBAL gtid_slave_pos = "0-1-2";
-CHANGE MASTER TO master_host="127.0.0.1", master_port=3310, master_user="root", master_use_gtid=slave_pos;
+CHANGE MASTER TO 
+ master_host="127.0.0.1", 
+ master_port=3310, 
+ master_user="root", 
+ master_use_gtid=slave_pos;
 START SLAVE;
 ```
 
@@ -349,9 +357,13 @@ automatically downloads the GTID position at connect and updates it during\
 replication. Thus, once a replica has connected to the GTID-aware primary at\
 least once, it can be switched to using GTID without any other actions needed;
 
-```
+```sql
 STOP SLAVE;
-CHANGE MASTER TO master_host="127.0.0.1", master_port=3310, master_user="root", master_use_gtid=current_pos;
+CHANGE MASTER TO 
+ master_host="127.0.0.1", 
+ master_port=3310, 
+ master_user="root", 
+ master_use_gtid=current_pos;
 START SLAVE;
 ```
 
@@ -366,9 +378,11 @@ the replica can be\
 pointed to a new primary simply by specifying in CHANGE MASTER the new\
 master\_host (and if required master\_port, master\_user, and master\_password):
 
-```
+```sql
 STOP SLAVE;
-CHANGE MASTER TO master_host='127.0.0.1', master_port=3312;
+CHANGE MASTER TO 
+ master_host='127.0.0.1', 
+ master_port=3312;
 START SLAVE;
 ```
 
@@ -512,7 +526,7 @@ If the command completes successfully, then it also rotates the binary log.
 The old domains will still appear in [gtid\_io\_pos](../../reference/sql-statements/administrative-sql-statements/show/show-replica-status.md). To get rid of these, you can\
 stop the replica and execute on the replica:
 
-```
+```sql
 SET gtid_slave_pos="<position with domains removed>"
 ```
 
@@ -579,7 +593,7 @@ needs to be ahead of all the other replicas to avoid losing events. This can be\
 achieved by picking one server, say S1, and replicating any missing events\
 from each other server S2, S3, ..., Sn:
 
-```
+```sql
 CHANGE MASTER TO master_host="S2";
     START SLAVE UNTIL master_gtid_pos = "<S2 GTID position>";
     ...
@@ -598,7 +612,7 @@ set to replicate from it.
 [MariaDB 11.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-3-rolling-releases/what-is-mariadb-113) extended the START SLAVE UNTIL command with the options `SQL_BEFORE_GTIDS` and `SQL_AFTER_GTIDS` to allow control of whether the replica stops before or after a provided GTID state. Its\
 syntax is:
 
-```
+```sql
 START SLAVE UNTIL (SQL_BEFORE_GTIDS|SQL_AFTER_GTIDS)="<gtid_list>"
 ```
 
@@ -667,7 +681,7 @@ When using [multi-source replication](multi-source-replication.md), the same GTI
 
 This system variable's value can be manually changed by executing [SET GLOBAL](../../reference/sql-statements/administrative-sql-statements/set-commands/set.md#global-session), but all replica threads to be stopped with [STOP SLAVE](../../reference/sql-statements/administrative-sql-statements/replication-statements/stop-replica.md) first. For example:
 
-```
+```sql
 STOP ALL SLAVES;
 SET GLOBAL gtid_slave_pos = "1-10-100,2-20-500";
 START ALL SLAVES;
@@ -675,7 +689,7 @@ START ALL SLAVES;
 
 This system variable's value can be reset by manually changing its value to the empty string. For example:
 
-```
+```sql
 SET GLOBAL gtid_slave_pos = '';
 ```
 

@@ -120,7 +120,7 @@ When setting it dynamically, it is not possible to specify database names that c
 
 When setting it dynamically, the [replica threads](replication-threads.md#threads-on-the-slave) must be stopped. For example:
 
-```
+```sql
 STOP SLAVE;
 SET GLOBAL replicate_do_db='db1,db2';
 START SLAVE;
@@ -156,7 +156,7 @@ When setting it dynamically, it is not possible to specify database names that c
 
 When setting it dynamically, the [replica threads](replication-threads.md#threads-on-the-slave) must be stopped. For example:
 
-```
+```sql
 STOP SLAVE;
 SET GLOBAL replicate_ignore_db='db1,db2';
 START SLAVE;
@@ -196,7 +196,7 @@ or patterns that contain commas. If you need to specify database or table names 
 
 When setting it dynamically, the [replica threads](replication-threads.md#threads-on-the-slave) must be stopped. For example:
 
-```
+```sql
 STOP SLAVE;
 SET GLOBAL replicate_do_table='db1.tab,db2.tab';
 START SLAVE;
@@ -231,7 +231,7 @@ When setting it dynamically, it is not possible to specify database or table nam
 
 When setting it dynamically, the [replica threads](replication-threads.md#threads-on-the-slave) must be stopped. For example:
 
-```
+```sql
 STOP SLAVE;
 SET GLOBAL replicate_ignore_table='db1.tab,db2.tab';
 START SLAVE;
@@ -280,7 +280,7 @@ When setting it dynamically, it is not possible to specify database or table nam
 
 When setting it dynamically, the [replica threads](replication-threads.md#threads-on-the-slave) must be stopped. For example:
 
-```
+```sql
 STOP SLAVE;
 SET GLOBAL replicate_wild_do_table='db%.tab%,app1.%';
 START SLAVE;
@@ -327,7 +327,7 @@ When setting it dynamically, it is not possible to specify database or table nam
 
 When setting it dynamically, the [replica threads](replication-threads.md#threads-on-the-slave) must be stopped. For example:
 
-```
+```sql
 STOP SLAVE;
 SET GLOBAL replicate_wild_ignore_table='db%.tab%,app1.%';
 START SLAVE;
@@ -364,7 +364,7 @@ The usage of dynamic replication filters changes somewhat when [multi-source rep
 
 One way to change a replication filter for a multi-source connection is to explicitly specify the name when changing the filter. For example:
 
-```
+```sql
 STOP SLAVE 'gandalf';
 SET GLOBAL gandalf.replicate_do_table='database1.table1,database1.table2,database1.table3';
 START SLAVE 'gandalf';
@@ -374,7 +374,7 @@ START SLAVE 'gandalf';
 
 Alternatively, the default connection can be changed by setting the [default\_master\_connection](replication-and-binary-log-system-variables.md) system variable, and then the replication filter can be changed in the usual fashion. For example:
 
-```
+```sql
 SET default_master_connection = 'gandalf';
 STOP SLAVE; 
 SET GLOBAL replicate_do_table='database1.table1,database1.table2,database1.table3';
@@ -429,7 +429,7 @@ When an event is logged in its statement-based format, many replication filters 
 
 This means that cross-database updates **not** work with replication filters and statement-based binary logging. For example, if [replicate\_do\_table=db2.tab](https://mariadb.com/kb/en/replicate_do_table%3Ddb2.tab) were set, then the following would not replicate with statement-based binary logging:
 
-```
+```sql
 USE db1;
 INSERT INTO db2.tab VALUES (1);
 ```

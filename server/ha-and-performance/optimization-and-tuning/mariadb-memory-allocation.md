@@ -70,12 +70,12 @@ out-of-memory issues, it is very likely that the problematic variable is\
 in this list!
 
 ```sql
-select information_schema.system_variables.variable_name,
+SELECT information_schema.system_variables.variable_name,
 information_schema.system_variables.default_value,
-global_variables.variable_value from
-information_schema.system_variables,information_schema.global_variables where
-system_variables.variable_name=global_variables.variable_name and
-system_variables.default_value <> global_variables.variable_value and
+global_variables.variable_value FROM
+information_schema.system_variables,information_schema.global_variables WHERE
+system_variables.variable_name=global_variables.variable_name AND
+system_variables.default_value <> global_variables.variable_value AND
 system_variables.default_value <> 0
 ```
 
@@ -122,7 +122,11 @@ SELECT  ENGINE,
         ROUND(SUM(data_length + index_length)/1024/1024, 1) AS "Total MB",
         COUNT(*) "Num Tables"
     FROM  INFORMATION_SCHEMA.TABLES
-    WHERE  table_schema not in ("information_schema", "PERFORMANCE_SCHEMA", "SYS_SCHEMA", "ndbinfo")
+    WHERE  table_schema not in (
+             "information_schema", 
+             "PERFORMANCE_SCHEMA", 
+             "SYS_SCHEMA", 
+             "ndbinfo")
     GROUP BY  ENGINE;
 ```
 

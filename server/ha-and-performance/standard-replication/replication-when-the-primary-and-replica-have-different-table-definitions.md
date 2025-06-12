@@ -29,7 +29,7 @@ Replicating to a replica where the column is defined as smaller than on the prim
 
 Master:
 
-```
+```sql
 DESC r;
 +-------+-------------+------+-----+---------+-------+
 | Field | Type        | Null | Key | Default | Extra |
@@ -41,19 +41,19 @@ DESC r;
 
 Slave
 
-```
+```sql
 DESC r;
 +-------+-------------+------+-----+---------+-------+
 | Field | Type        | Null | Key | Default | Extra |
 +-------+-------------+------+-----+---------+-------+
 | id    | tinyint(4)  | YES  |     | NULL    |       |
-| v     | varchar(8) | YES  |     | NULL    |       |
+| v     | varchar(8) | YES   |     | NULL    |       |
 +-------+-------------+------+-----+---------+-------+
 ```
 
 the statement
 
-```
+```sql
 INSERT INTO r VALUES (6,'hi');
 ```
 
@@ -61,13 +61,13 @@ would successfully replicate because the value inserted into the `v` field can s
 
 However, the following statement would fail:
 
-```
+```sql
 INSERT INTO r VALUES (7,'abcdefghi')
 ```
 
 In this case, the value fits in the primary definition, but is too long for the replica field, and so replication will fail.
 
-```
+```sql
 SHOW SLAVE STATUS\G
 *************************** 1. row ***************************
 ...
@@ -88,7 +88,7 @@ For example:
 
 Master:
 
-```
+```sql
 DESC r;
 +-------+-------------+------+-----+---------+-------+
 | Field | Type        | Null | Key | Default | Extra |
@@ -100,7 +100,7 @@ DESC r;
 
 Slave:
 
-```
+```sql
 SHOW VARIABLES LIKE 'slave_ty%';
 +------------------------+-------+
 | Variable_name          | Value |
@@ -119,11 +119,11 @@ SHOW VARIABLES LIKE 'slave_ty%';
 
 The following query will fail:
 
-```
+```sql
 INSERT INTO r VALUES (3,'c');
 ```
 
-```
+```sql
 SHOW SLAVE STATUS\G;
 ...
 Slave_IO_Running: Yes
@@ -137,13 +137,13 @@ Last_Error: Column 0 of table 'test.r' cannot be converted from
 
 By changing the value of the [slave\_type\_conversions](replication-and-binary-log-system-variables.md), replication can proceed:
 
-```
+```sql
 SET GLOBAL slave_type_conversions='ALL_NON_LOSSY,ALL_LOSSY';
 
 START SLAVE;
 ```
 
-```
+```sql
 SHOW SLAVE STATUS\G;
 *************************** 1. row ***************************
 ...
@@ -170,19 +170,19 @@ The following example replicates incorrectly (replication proceeds, but the data
 
 Master:
 
-```
+```sql
 CREATE OR REPLACE TABLE r (i1 INT, i2 INT);
 ```
 
 Slave:
 
-```
+```sql
 ALTER TABLE r ADD i3 INT AFTER i1;
 ```
 
 Master:
 
-```
+```sql
 INSERT INTO r (i1,i2) VALUES (1,1);
 
 SELECT * FROM r;
@@ -195,7 +195,7 @@ SELECT * FROM r;
 
 Slave:
 
-```
+```sql
 SELECT * FROM r;
 +------+------+------+
 | i1   | i3   | i2   |
@@ -210,19 +210,19 @@ Using statement-based replication, the same example may work, even though the co
 
 Master:
 
-```
+```sql
 CREATE OR REPLACE TABLE r (i1 INT, i2 INT);
 ```
 
 Slave:
 
-```
+```sql
 ALTER TABLE r ADD i3 INT AFTER i1;
 ```
 
 Master:
 
-```
+```sql
 INSERT INTO r (i1,i2) VALUES (1,1);
 
 SELECT * FROM r;
@@ -235,7 +235,7 @@ SELECT * FROM r;
 
 Slave:
 
-```
+```sql
 SELECT * FROM r;
 +------+------+------+
 | i1   | i3   | i2   |

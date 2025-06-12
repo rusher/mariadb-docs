@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 LOAD TABLE tbl_name FROM MASTER
 ```
 

@@ -19,7 +19,7 @@ Because of this, an identical statement run on the master and the slave may resu
 
 Take the following example:
 
-```
+```sql
 CREATE TABLE employees (
     x INT PRIMARY KEY,
     name VARCHAR(10)
@@ -36,7 +36,7 @@ CREATE TABLE children (
 
 The slave, however, has been set up without InnoDB support, and defaults to MyISAM, so the foreign key restrictions are not in place.
 
-```
+```sql
 INSERT INTO employees VALUES (1, 'Yaser'), (2, 'Prune');
 
 INSERT INTO children VALUES (1, 1, 'Haruna'), (2, 1, 'Hera'), (3, 2, 'Eva');
@@ -44,7 +44,7 @@ INSERT INTO children VALUES (1, 1, 'Haruna'), (2, 1, 'Hera'), (3, 2, 'Eva');
 
 At this point, the slave and the master are in sync:
 
-```
+```sql
 SELECT * FROM employees;
 +---+-------+
 | x | name  |
@@ -66,7 +66,7 @@ SELECT * FROM children;
 
 However, after:
 
-```
+```sql
 DELETE FROM employees WHERE x=1;
 ```
 
@@ -74,7 +74,7 @@ there are different outcomes on the slave and the master.
 
 On the master, the cascading deletes have taken effect:
 
-```
+```sql
 SELECT * FROM children;
 +---+------+------+
 | y | f    | name |
@@ -85,7 +85,7 @@ SELECT * FROM children;
 
 On the slave, the cascading deletes did not take effect:
 
-```
+```sql
 SELECT * FROM children;
 +---+------+--------+
 | y | f    | name   |

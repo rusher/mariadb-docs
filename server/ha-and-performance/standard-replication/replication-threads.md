@@ -39,7 +39,7 @@ mariadb-admin --wait-for-all-slaves shutdown
 
 Or this problem can be solved by shutting down the server with the [SHUTDOWN](../../reference/sql-statements/administrative-sql-statements/shutdown.md) command and by providing the `WAIT FOR ALL SLAVES` option to the command:
 
-```
+```sql
 SHUTDOWN WAIT FOR ALL SLAVES;
 ```
 

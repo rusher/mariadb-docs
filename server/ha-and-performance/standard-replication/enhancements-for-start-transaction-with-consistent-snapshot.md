@@ -26,7 +26,7 @@ For example, suppose the following two transactions run in parallel:
 
 Transaction T1:
 
-```
+```sql
 BEGIN;
     SET @t = NOW();
     UPDATE xtradb_table SET a= @t WHERE id = 5;
@@ -36,7 +36,7 @@ BEGIN;
 
 Transaction T2:
 
-```
+```sql
 SET TRANSACTION ISOLATION LEVEL REPEATABLE READ;
     START TRANSACTION WITH CONSISTENT SNAPSHOT;
     SELECT t1.a, t2.b

@@ -28,9 +28,9 @@ From [MariaDB 10.3.19](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-co
 
 If you are using an older MariaDB version with read-only replicas and binary logging enabled on the replica, and you need to do some changes but don't want to have them logged to the binary log, the easiest way to avoid the logging is to [disable binary logging](../../server-management/server-monitoring-logs/binary-log/activating-the-binary-log.md) while running as root during maintenance:
 
-```
-set sql_log_bin=0;
-alter table test engine=rocksdb;
+```sql
+SET sql_log_bin=0;
+ALTER TABLE test ENGINE=rocksdb;
 ```
 
 The above changes the test table on the replica to rocksdb without registering\

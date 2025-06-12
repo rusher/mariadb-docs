@@ -21,7 +21,7 @@ The default is zero, or no delay, and the maximum value is 2147483647, or about 
 
 Delayed replication is enabled using the MASTER\_DELAY option to [CHANGE MASTER](../../reference/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md):
 
-```
+```sql
 CHANGE MASTER TO master_delay=3600;
 ```
 

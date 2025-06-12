@@ -43,13 +43,13 @@ This variable is appended to the default value of the [session\_track\_system\_v
 ## Example
 
 ```sql
-set global redirect_url="mysql://mariadb.org:12345";
+SET GLOBAL redirect_url="mysql://mariadb.org:12345";
 ```
 
 Invalid formats are not permitted:
 
 ```sql
-set global redirect_url="mysql://mariadb.org:"; 
+SET GLOBAL redirect_url="mysql://mariadb.org:"; 
 ERROR 1231 (42000): Variable 'redirect_url' can't be set to the value of 'mysql://mariadb.org:'
 ```
 

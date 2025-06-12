@@ -44,7 +44,7 @@ The server id is a unique number for each MariaDB/MySQL server in your network.[
 
 Then execute the following SQL with the [mysql](../../clients-and-utilities/mariadb-client/mysql-command-line-client.md) command line client:
 
-```
+```sql
 CREATE USER 'replication_user'@'%' IDENTIFIED BY 'bigs3cret';
 GRANT REPLICATION SLAVE ON *.* TO 'replication_user'@'%';
 ```
@@ -79,7 +79,7 @@ Now you need prevent any changes to the data while you view the binary log posit
 * On the master, flush and lock all tables by running `FLUSH TABLES WITH READ LOCK`. Keep this session running - exiting it will release the lock.
 * Get the current position in the binary log by running `[SHOW MASTER STATUS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-binlog-status.md)`:
 
-```
+```sql
 SHOW MASTER STATUS;
 +--------------------+----------+--------------+------------------+
 | File               | Position | Binlog_Do_DB | Binlog_Ignore_DB |
@@ -93,7 +93,7 @@ SHOW MASTER STATUS;
 * Note for live databases: You just need to make a local copy of the data, you don't need to keep the master locked until the slave has imported the data.
 * Once the data has been copied, you can release the lock on the master by running [UNLOCK TABLES](../../reference/sql-statements/transactions/lock-tables.md).
 
-```
+```sql
 UNLOCK TABLES;
 ```
 
@@ -101,7 +101,7 @@ UNLOCK TABLES;
 
 * Once the data has been imported, you are ready to start replicating. Begin by running a [CHANGE MASTER TO](../../reference/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md), making sure that MASTER\_LOG\_FILE matches the file and MASTER\_LOG\_POS the position returned by the earlier SHOW MASTER STATUS. For example:
 
-```
+```sql
 CHANGE MASTER TO
   MASTER_HOST='master.domain.com',
   MASTER_USER='replication_user',
@@ -118,7 +118,7 @@ If you are starting a slave against a fresh master that was configured for repli
 
 It is generally recommended to use (GTIDs), as it has a number of benefits. All that is needed is to add the `MASTER_USE_GTID` option to the `CHANGE MASTER` statement, for example:
 
-```
+```sql
 CHANGE MASTER TO MASTER_USE_GTID = slave_pos
 ```
 
@@ -127,19 +127,19 @@ See [Global Transaction ID](gtid.md) for a full description.\
 
 * Now start the slave with the [START SLAVE](../../reference/sql-statements/administrative-sql-statements/replication-statements/start-replica.md) command:
 
-```
+```sql
 START SLAVE;
 ```
 
 * Check that the replication is working by executing the [SHOW SLAVE STATUS](../../reference/sql-statements/administrative-sql-statements/show/show-replica-status.md) command:
 
-```
+```sql
 SHOW SLAVE STATUS \G
 ```
 
 * If replication is working correctly, both the values of `Slave_IO_Running` and `Slave_SQL_Running` should be `Yes`:
 
-```
+```sql
 Slave_IO_Running: Yes
 Slave_SQL_Running: Yes
 ```
