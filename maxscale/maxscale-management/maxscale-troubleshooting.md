@@ -1,3 +1,10 @@
+---
+description: >-
+  Troubleshoot MariaDB MaxScale issues effectively. This section provides common
+  problems, diagnostic steps, and solutions to help you maintain a stable and
+  high-performing database proxy.
+---
+
 # MaxScale Troubleshooting
 
 ## SystemD Watchdog Kills MaxScale

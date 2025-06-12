@@ -1,3 +1,21 @@
+---
+description: >-
+  Learn about authentication in MariaDB MaxScale. This section covers
+  configuring user authentication for clients connecting through MaxScale and
+  securing access to your database instances.
+layout:
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: false
+---
+
 # MariaDB MaxScale Authentication
 
 ## Overview
