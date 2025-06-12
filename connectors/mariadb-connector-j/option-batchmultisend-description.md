@@ -1,8 +1,4 @@
-# option-batchmultisend-description
-
-## Option batchMultiSend Description
-
-## Option "useBatchMultiSend"
+# Option batchMultiSend Description
 
 ### Definition
 
@@ -56,6 +52,5 @@ Inconvenient:
 
 All data is not sent at once, but by batch corresponding to the useBatchMultiSendNumber value.\
 Reads begin asynchronously after the first send command. The driver will then wait until it has read all results corresponding to the sent data before sending new data.
-
 
 {% @marketo/form formId="4316" %}

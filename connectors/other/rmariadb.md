@@ -2,11 +2,7 @@
 icon: link
 ---
 
-# rmariadb
-
-## RMariaDB: MariaDB Driver for R
-
-## Description
+# RMariaDB: MariaDB Driver for R
 
 RMariaDB is a database interface and MariaDB driver for R. This version is aimed at full compliance with R's DBI specification.
 
@@ -58,6 +54,5 @@ dbClearResult(res)
 # Disconnect from the database
 dbDisconnect(con)
 ```
-
 
 {% @marketo/form formId="4316" %}

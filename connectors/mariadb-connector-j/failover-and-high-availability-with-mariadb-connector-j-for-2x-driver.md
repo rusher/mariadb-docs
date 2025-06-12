@@ -1,6 +1,4 @@
-# failover-and-high-availability-with-mariadb-connector-j-for-2x-driver
-
-## Failover and High availability with MariaDB Connector/J for 2.x driver
+# Failover and High availability with MariaDB Connector/J for 2.x driver
 
 _This guide will cover:_
 
@@ -92,7 +90,7 @@ When no failover/high availability parameter is set, the failover support is bas
 
 ### Standard failover
 
-When a failover/high availability parameter is set. Check the [configuration](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/mariadb-enterprise-operator/configuration) section for an overview on how to set the parameters.
+When a failover/high availability parameter is set. Check the [configuration](broken-reference) section for an overview on how to set the parameters.
 
 There can be multiple fail causes. When a failure occurs many things will be done:
 
@@ -293,6 +291,5 @@ Without any query during the time defined by the validConnectionTimeout paramete
 
 Aurora as a specific [connection validation thread](failover-and-high-availability-with-mariadb-connector-j-for-2x-driver.md#connection-validation-thread) implementation.\
 Since the role of each instance can change over time, this will validate that connections are active AND roles have not changed.
-
 
 {% @marketo/form formId="4316" %}

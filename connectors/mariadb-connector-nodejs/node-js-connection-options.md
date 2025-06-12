@@ -1,8 +1,4 @@
-# node-js-connection-options
-
-## Node.js Connection Options
-
-## Connection Options
+# Node.js Connection Options
 
 * [Essential options](node-js-connection-options.md#essential-option)
 * [Support for big integer](node-js-connection-options.md#support-for-big-integer)
@@ -341,6 +337,5 @@ This can be solved by :
 
 * Server side: update MariaDB to a recent version
 * Client side: permit lesser version with "tls.DEFAULT\_MIN\_VERSION = 'TLSv1.1';" or permitting lesser version of protocol by connection configuration: using option \`ssl: { secureProtocol: 'TLSv1\_1\_method' }'
-
 
 {% @marketo/form formId="4316" %}

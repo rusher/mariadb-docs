@@ -1,6 +1,4 @@
-# mariadb-connector-r2dbc-connection-parameters
-
-## MariaDB Connector/R2DBC Connection Parameters
+# MariaDB Connector/R2DBC Connection Parameters
 
 ## Overview
 
@@ -50,6 +48,5 @@ MariaDB Connector/R2DBC supports several connection parameters:
 | useServerPrepStmts               | Configures whether queries with parameters are evaluated using server-side prepared statements or client-side prepared statements. When server-side prepared statements are used, queries are transmitted using the binary protocol by default, but the text protocol can be used by prefixing the query string with /_text_/. When client-side prepared statements are used, queries are always transmitted using the text protocol.                                                                                                                                                                                                                                                                  | boolean             | false         |
 
 Copyright © 2025 MariaDB
-
 
 {% @marketo/form formId="4316" %}
