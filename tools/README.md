@@ -1,5 +1,8 @@
 ---
-description: MariaDB offers core tools for database administration and development.
+description: >-
+  Discover essential tools for MariaDB. This section provides an overview of
+  utilities for database management, development, migration, and monitoring to
+  enhance your MariaDB experience.
 layout:
   title:
     visible: true
