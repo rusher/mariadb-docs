@@ -96,7 +96,7 @@ This SST method does **not** support [Data at Rest Encryption](https://app.gitbo
 
 This SST method is available from MariaDB Galera Cluster 5.5.37 and MariaDB Galera Cluster 10.0.10.
 
-See [xtrabackup-v2 SST method](https://mariadb.com/kb/en/) for more information.
+See xtrabackup-v2 SST method for more information.
 
 ### xtrabackup
 
@@ -187,7 +187,7 @@ When using an SST method that blocks the donor, there is yet another reason to r
 In some cases, if Galera Cluster's automatic SSTs repeatedly fail, then it can be helpful to perform a "manual SST". See the following pages on how to do that:
 
 * [Manual SST of Galera Cluster node with Mariabackup](manual-sst-of-galera-cluster-node-with-mariabackup.md)
-* [Manual SST of Galera Cluster node with Percona XtraBackup](https://mariadb.com/kb/en/)
+* [Manual SST of Galera Cluster node with Percona XtraBackup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/legacy-clients-and-utilities/backing-up-and-restoring-databases-percona-xtrabackup/percona-xtrabackup-overview)
 
 ## Known Issues
 
