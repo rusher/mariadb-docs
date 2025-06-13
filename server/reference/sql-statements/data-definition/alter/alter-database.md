@@ -1,10 +1,10 @@
-# alter-database
+---
+description: Modifies a database, changing its overall characteristics.
+---
 
-## ALTER DATABASE
+# ALTER DATABASE
 
-Modifies a database, changing its overall characteristics.
-
-### Syntax
+## Syntax
 
 ```
 ALTER {DATABASE | SCHEMA} [db_name]
@@ -18,7 +18,7 @@ alter_specification:
   | COMMENT [=] 'comment'
 ```
 
-### Description
+## Description
 
 `ALTER DATABASE` enables you to change the overall characteristics of a\
 database. These characteristics are stored in the `db.opt` file in the\
@@ -47,50 +47,36 @@ clause is for use under these conditions:
 * It is intended to update a database directory name to the current encoding format if the name contains special characters that need encoding.
 * The statement is used by [mariadb-check](../../../../clients-and-utilities/table-tools/mariadb-check.md) (as invoked by [mariadb-upgrade](../../../../clients-and-utilities/deployment-tools/mariadb-upgrade.md)).
 
-For example,if a database in MySQL 5.0 has a name of a-b-c, the name\
-contains instance of the \`-' character. In 5.0, the database directory\
-is also named a-b-c, which is not necessarily safe for all file\
-systems. In MySQL 5.1 and up, the same database name is encoded as\
-a@002db@002dc to produce a file system-neutral directory name.
+For example,if a database in MySQL 5.0 has a name of a-b-c, the name contains instance of the \`-' character. In 5.0, the database directory is also named a-b-c, which is not necessarily safe for all file systems. In MySQL 5.1 and up, the same database name is encoded as a@002db@002dc to produce a file system-neutral directory name.
 
-When a MySQL installation is upgraded to MySQL 5.1 or later from an\
-older version,the server displays a name such as a-b-c (which is in\
-the old format) as #mysql50#a-b-c, and you must refer to the name\
-using the #mysql50
-
-## prefix. Use `UPGRADE DATA DIRECTORY NAME` in this
-
-case to explicitly tell the server to re-encode the database directory\
-name to the current encoding format:
+When a MySQL installation is upgraded to MySQL 5.1 or later from an older version,the server displays a name such as a-b-c (which is in the old format) as `#mysql50#a-b-c`, and you must refer to the name using the `#mysql50#` prefix. Use `UPGRADE DATA DIRECTORY NAME` in this case to explicitly tell the server to re-encode the database directory name to the current encoding format:
 
 ```
 ALTER DATABASE `#mysql50#a-b-c` UPGRADE DATA DIRECTORY NAME;
 ```
 
 After executing this statement, you can refer to the database as a-b-c\
-without the special #mysql50
+without the special `#mysql50` prefix.
 
-## prefix.
-
-**COMMENT**
-
+{% hint style="info" %}
 **MariaDB starting with** [**10.5.0**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1050-release-notes)
 
 From [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1050-release-notes), it is possible to add a comment of a maximum of 1024 bytes. If the comment length exceeds this length, a error/warning code 4144 is thrown. The database comment is also added to the db.opt file, as well as to the [information\_schema.schemata table](../../administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-schemata-table.md).
+{% endhint %}
 
-### Examples
+## Examples
 
-```
+```sql
 ALTER DATABASE test CHARACTER SET='utf8'  COLLATE='utf8_bin';
 ```
 
 From [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1050-release-notes):
 
-```
+```sql
 ALTER DATABASE p COMMENT='Presentations';
 ```
 
-### See Also
+## See Also
 
 * [CREATE DATABASE](../create/create-database.md)
 * [DROP DATABASE](../drop/drop-database.md)
@@ -99,6 +85,6 @@ ALTER DATABASE p COMMENT='Presentations';
 * [Character Sets and Collations](../../../data-types/string-data-types/character-sets/supported-character-sets-and-collations.md)
 * [Information Schema SCHEMATA Table](../../administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-schemata-table.md)
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

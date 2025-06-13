@@ -1728,7 +1728,7 @@
       * [CONSTRAINT](reference/sql-statements/data-definition/constraint.md)
       * [RENAME TABLE](reference/sql-statements/data-definition/rename-table.md)
       * [ALTER](reference/sql-statements/data-definition/alter/README.md)
-        * [alter-database](reference/sql-statements/data-definition/alter/alter-database.md)
+        * [ALTER DATABASE](reference/sql-statements/data-definition/alter/alter-database.md)
         * [ALTER FUNCTION](reference/sql-statements/data-definition/alter/alter-function.md)
         * [ALTER LOGFILE GROUP](reference/sql-statements/data-definition/alter/alter-logfile-group.md)
         * [ALTER SERVER](reference/sql-statements/data-definition/alter/alter-server.md)
