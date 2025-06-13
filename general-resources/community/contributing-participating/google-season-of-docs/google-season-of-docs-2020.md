@@ -1,8 +1,6 @@
-# google-season-of-docs-2020
+# Google Season of Docs 2020
 
-## Google Season of Docs 2020
-
-MariaDB is applying to participate in the 2020 Google Season of Docs.
+MariaDB applied to participate in the 2020 Google Season of Docs, but was unsuccessful.
 
 ## Where to Start
 
