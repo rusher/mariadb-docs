@@ -1584,4 +1584,4 @@
 * [Tutorials](tutorials.md)
 * [Videos](videos.md)
 * [Whitepapers](whitepapers.md)
-* [Distributions Including MariaDB](<README (1).md>)
+* [Distributions Including MariaDB](distributions-including-mariadb.md)

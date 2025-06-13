@@ -24,7 +24,7 @@ Feature/Patch name
 
 (Please enhance the example with anything that makes sense.)
 
-### [MariaDB 11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-7-rolling-releases/what-is-mariadb-117) Log of Contributions
+### [MariaDB 11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-11-7-rolling-releases/what-is-mariadb-117) Log of Contributions
 
 * [MariaDB 11.7.1 contributors](https://mariadb.org/mariadb-11-6-2-and-mariadb-11-7-1-now-available/)
 
