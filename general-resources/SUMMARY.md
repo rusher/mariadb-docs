@@ -66,9 +66,6 @@
   * [Sponsoring the MariaDB Project](community/contributing-participating/sponsoring-the-mariadb-project.md)
   * [Log of MariaDB Contributions](community/contributing-participating/log-of-mariadb-contributions.md)
   * [Web Hosting Providers Offering MariaDB](community/contributing-participating/web-hosting-providers-offering-mariadb.md)
-  * [Google Season of Docs](community/contributing-participating/google-season-of-docs/README.md)
-    * [Google Season of Docs 2019](community/contributing-participating/google-season-of-docs/google-season-of-docs-2019.md)
-    * [Google Season of Docs 2020](community/contributing-participating/google-season-of-docs/google-season-of-docs-2020.md)
   * [Google Summers of Code](community/contributing-participating/google-summers-of-code/README.md)
     * [Google Summer of Code 2025](community/contributing-participating/google-summers-of-code/google-summer-of-code-2025.md)
     * [Google Summer of Code 2024](community/contributing-participating/google-summers-of-code/google-summer-of-code-2024.md)
@@ -83,6 +80,9 @@
     * [Google Summer of Code 2015](community/contributing-participating/google-summers-of-code/google-summer-of-code-2015.md)
     * [Google Summer of Code 2014](community/contributing-participating/google-summers-of-code/google-summer-of-code-2014.md)
     * [Google Summer of Code 2013](community/contributing-participating/google-summers-of-code/google-summer-of-code-2013.md)
+  * [Google Season of Docs](community/contributing-participating/google-season-of-docs/README.md)
+    * [Google Season of Docs 2019](community/contributing-participating/google-season-of-docs/google-season-of-docs-2019.md)
+    * [Google Season of Docs 2020](community/contributing-participating/google-season-of-docs/google-season-of-docs-2020.md)
 
 ***
 
