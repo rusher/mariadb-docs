@@ -1,4 +1,8 @@
 ---
+description: >-
+  Access the comprehensive reference for MariaDB MaxScale 2.0. This section
+  provides detailed documentation on all MaxScale components, including
+  configuration parameters, modules, MaxAdmin, and CLI.
 layout:
   title:
     visible: true

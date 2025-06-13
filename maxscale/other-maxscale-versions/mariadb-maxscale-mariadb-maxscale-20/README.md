@@ -1,4 +1,8 @@
 ---
+description: >-
+  Explore MariaDB MaxScale 2.0, an advanced database proxy for high
+  availability, scalability, and security. Learn about its features for robust
+  MariaDB deployments.
 layout:
   title:
     visible: true

@@ -1,4 +1,8 @@
 ---
+description: >-
+  Learn MariaDB MaxScale 2.0 with practical, step-by-step tutorials. These
+  guides cover common use cases like replication proxy setup, data streaming to
+  Kafka, and high availability.
 layout:
   title:
     visible: true

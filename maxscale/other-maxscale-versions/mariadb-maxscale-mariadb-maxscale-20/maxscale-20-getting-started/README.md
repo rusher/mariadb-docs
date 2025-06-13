@@ -1,4 +1,8 @@
 ---
+description: >-
+  Get started with MariaDB MaxScale 2.0! This guide provides essential steps for
+  installation, configuration, and initial setup to quickly leverage MaxScale's
+  powerful features.
 layout:
   title:
     visible: true

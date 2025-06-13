@@ -1,4 +1,8 @@
 ---
+description: >-
+  Learn how to upgrade MariaDB MaxScale. This section provides comprehensive
+  guides for upgrading across versions, including essential pre-upgrade steps,
+  configuration changes, and post-upgrade verifica
 layout:
   title:
     visible: true
@@ -12,5 +16,5 @@ layout:
     visible: false
 ---
 
-# Upgrading MaxScale
+# Upgrading MaxScale 1.4
 

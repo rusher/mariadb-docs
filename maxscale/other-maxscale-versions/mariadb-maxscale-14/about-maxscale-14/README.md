@@ -1,4 +1,8 @@
 ---
+description: >-
+  Learn about MariaDB MaxScale 1.4, an intelligent proxy designed for high
+  availability and scalability. Discover its core features, including connection
+  routing, filtering, and load balancing for Maria
 layout:
   title:
     visible: true
