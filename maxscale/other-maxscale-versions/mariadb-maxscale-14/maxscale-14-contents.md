@@ -1,3 +1,17 @@
+---
+layout:
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
+---
+
 # MaxScale 1.4 Contents
 
 [Search page for MaxScale Documentation](https://mariadb-corporation.github.io/MaxScale/Search/)
