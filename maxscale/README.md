@@ -35,8 +35,8 @@ layout:
 [MaxScale Security](maxscale-security/)
 {% endcontent-ref %}
 
-{% content-ref url="maxscale-use-cases/" %}
-[MaxScale Use Cases](maxscale-use-cases/)
+{% content-ref url="maxscale-use-cases.md" %}
+[MaxScale Use Cases](maxscale-use-cases.md)
 {% endcontent-ref %}
 
 {% content-ref url="mariadb-maxscale-tutorials/" %}
@@ -46,3 +46,4 @@ layout:
 {% content-ref url="reference/" %}
 [Reference](reference/)
 {% endcontent-ref %}
+
