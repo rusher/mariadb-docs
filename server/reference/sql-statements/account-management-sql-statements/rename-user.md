@@ -45,7 +45,7 @@ RENAME USER 'foo'@'1.2.3.4' TO 'foo'@'10.20.30.40';
 ```
 
 
-GPLv2 fill_help_tables.sql
+<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
 
 
 {% @marketo/form formId="4316" %}

@@ -29,7 +29,7 @@ SELECT TIME_FORMAT('100:00:00', '%H %k %h %I %l');
 ```
 
 
-GPLv2 fill_help_tables.sql
+<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
 
 
 {% @marketo/form formId="4316" %}

@@ -43,7 +43,7 @@ SELECT DATE_SUB('2005-01-01 00:00:00', INTERVAL '1 1:1:1' DAY_SECOND);
 ```
 
 
-GPLv2 fill_help_tables.sql
+<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
 
 
 {% @marketo/form formId="4316" %}

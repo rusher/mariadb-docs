@@ -111,7 +111,7 @@ SELECT DATE_ADD('1992-12-31 23:59:59.000002', INTERVAL '1.999999' SECOND_MICROSE
 * [ADD_MONTHS](add_months.md)
 
 
-GPLv2 fill_help_tables.sql
+<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
 
 
 {% @marketo/form formId="4316" %}

@@ -36,7 +36,7 @@ SELECT TIMEDIFF('2008-12-31 23:59:59.000001', '2008-12-30 01:01:01.000002');
 ```
 
 
-GPLv2 fill_help_tables.sql
+<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
 
 
 {% @marketo/form formId="4316" %}
