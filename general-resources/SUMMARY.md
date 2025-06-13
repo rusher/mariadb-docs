@@ -82,7 +82,7 @@
     * [google-summer-of-code-2022](community/contributing-participating/google-summers-of-code/google-summer-of-code-2022.md)
     * [google-summer-of-code-2023](community/contributing-participating/google-summers-of-code/google-summer-of-code-2023.md)
     * [google-summer-of-code-2024](community/contributing-participating/google-summers-of-code/google-summer-of-code-2024.md)
-    * [google-summer-of-code-2025](community/contributing-participating/google-summers-of-code/google-summer-of-code-2025.md)
+    * [Google Summer of Code 2025](community/contributing-participating/google-summers-of-code/google-summer-of-code-2025.md)
 
 ***
 
