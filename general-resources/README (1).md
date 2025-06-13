@@ -1,8 +1,3 @@
----
-description: Discuss with Max
-icon: question
----
-
 # Distributions Including MariaDB
 
 The following is a partial list of distributions which include MariaDB in their package repositories. For these you can use the distribution's management system to install MariaDB.
