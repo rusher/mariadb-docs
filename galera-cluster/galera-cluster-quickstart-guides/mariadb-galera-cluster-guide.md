@@ -1,109 +1,188 @@
 ---
-layout:
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
+description: MariaDB Galera Cluster quickstart guide
+icon: rabbit
 ---
 
-# What is MariaDB Galera Cluster?
+# MariaDB Galera Cluster Guide
 
-The most recent release of [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-11-4-series/what-is-mariadb-114) is:[**MariaDB 11.4.5**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-11-4-series/mariadb-11-4-5-release-notes) Stable (GA) [Download Now](https://mariadb.com/downloads/)[_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/11.4.5/)
+### Quickstart Guide: MariaDB Galera Cluster
 
-_MariaDB Galera Cluster is a Linux-exclusive, multi-primary cluster designed for MariaDB, offering features such as active-active topology, read/write capabilities on any node, automatic membership and node joining, true parallel replication at the row level, and direct client connections, with an emphasis on the native MariaDB experience._
+MariaDB Galera Cluster provides a multi-primary (active-active) cluster solution for MariaDB, enabling high availability, read/write scalability, and true synchronous replication. This means any node can handle read and write operations, with changes instantly replicated to all other nodes, ensuring no replica lag and no lost transactions. It's exclusively available on Linux.
 
-## About
+#### 1. Prerequisites
 
-![galera\_small](../.gitbook/assets/1.PNG)
+Before starting, ensure you have:
 
-MariaDB Galera Cluster is a [virtually synchronous](about-galera-replication.md) multi-primary cluster for MariaDB. It is available on Linux only, and only supports the[InnoDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/innodb) storage engine (although there is\
-experimental support for [MyISAM](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/myisam-storage-engine) and, from [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/what-is-mariadb-106), [Aria](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/aria). See the[wsrep\_replicate\_myisam](../reference/galera-cluster-system-variables.md#wsrep_replicate_myisam) system variable, or, from [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/what-is-mariadb-106), the [wsrep\_mode](../reference/galera-cluster-system-variables.md#wsrep_mode) system variable).
+* **At least three nodes:** For redundancy and avoiding split-brain scenarios (bare-metal or virtual machines).
+* **Linux Operating System:** A compatible Debian-based (e.g., Ubuntu, Debian) or RHEL-based (e.g., CentOS, Fedora) distribution.
+* **Synchronized Clocks:** All nodes should have NTP configured for time synchronization.
+* **SSH Access:** Root or sudo access to all nodes for installation and configuration.
+* **Network Connectivity:** All nodes must be able to communicate with each other over specific ports (see Firewall section). Low latency between nodes is ideal.
+* **`rsync`:** Install `rsync` on all nodes, as it's commonly used for State Snapshot Transfers (SST).
+  * `sudo apt install rsync` (Debian/Ubuntu)
+  * `sudo yum install rsync` (RHEL/CentOS)
 
-## Features
+#### 2. Installation (on Each Node)
 
-* [Virtually synchronous replication](about-galera-replication.md)
-* Active-active multi-primary topology
-* Read and write to any cluster node
-* Automatic membership control, failed nodes drop from the cluster
-* Automatic node joining
-* True parallel replication, on row level
-* Direct client connections, native MariaDB look & feel
+Install MariaDB Server and the Galera replication provider on **all nodes** of your cluster.
 
-## Benefits
+**a. Add MariaDB Repository:**
 
-The above features yield several benefits for a DBMS clustering solution, including:
+It's recommended to install from the official MariaDB repositories to get the latest stable versions. Use the MariaDB Repository Configuration Tool (search "MariaDB Repository Generator") to get specific instructions for your OS and MariaDB version.
 
-* No replica lag
-* No lost transactions
-* Read scalability
-* Smaller client latencies
+**Example for Debian/Ubuntu (MariaDB 10.11):**
 
-The [Getting Started with MariaDB\
-Galera Cluster](../galera-management/getting-started-with-mariadb-galera-cluster.md) page has instructions on how to get up and running with\
-MariaDB Galera Cluster.
+```bash
+sudo apt update
+sudo apt install dirmngr software-properties-common apt-transport-https ca-certificates curl -y
+curl -LsS https://r.mariadb.com/downloads/mariadb_repo_setup | sudo bash
+sudo apt update
+```
 
-A great resource for Galera users is [Codership on Google Groups](https://groups.google.com/forum/?fromgroups#!forum/codership-team) (_`codership-team`_ _`'at'`_ _`googlegroups`_ _`(dot)`_ _`com`_) - If you use Galera it is recommended you subscribe.
+**b. Install MariaDB Server and Galera:**
 
-## Galera Versions
+```bash
+sudo apt install mariadb-server mariadb-client galera-4 -y # For MariaDB 10.4+ or later, galera-4 is the provider.
+                                                           # For older versions (e.g., 10.3), use galera-3.
+```
 
-MariaDB Galera Cluster is powered by:
+**c. Secure MariaDB Installation:**
 
-* MariaDB Server.
-* The [Galera wsrep provider library](https://github.com/codership/galera/).
+Run the security script on each node to set the root password and remove insecure defaults.
 
-The functionality of MariaDB Galera Cluster can be obtained by installing the standard MariaDB Server packages and the [Galera wsrep provider library](https://github.com/codership/galera/) package. The following [Galera](../../kb/en/galera/) version corresponds to each MariaDB Server version:
+```bash
+sudo mariadb-secure-installation
+```
 
-* In [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104) and later, MariaDB Galera Cluster uses [Galera](../../kb/en/galera/) 4. This means that the wsrep API version is 26 and the [Galera wsrep provider library](https://github.com/codership/galera/) is version 4.X.
-* In [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103) and before, MariaDB Galera Cluster uses [Galera](../../kb/en/galera/) 3. This means that the wsrep API is version 25 and the [Galera wsrep provider library](https://github.com/codership/galera/) is version 3.X.
+* Set a strong root password.
+* Answer `Y` to remove anonymous users, disallow remote root login, remove test database, and reload privilege tables.
 
-See [Deciphering Galera Version Numbers](https://galeracluster.com/library/documentation/versioning-information.html/) for more information about how to interpret these version numbers.
+#### 3. Firewall Configuration (on Each Node)
 
-### Galera 4 Versions
+Open the necessary ports on each node's firewall to allow inter-node communication.
 
-The following table lists each version of the [Galera](../../kb/en/galera/) 4 wsrep provider, and it lists which version of MariaDB each one was first released in. If you would like to install [Galera](../../kb/en/galera/) 4 using [yum](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/binary-packages/rpm/yum), [apt](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/binary-packages/installing-mariadb-deb-files#installing-mariadb-with-apt), or [zypper](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/binary-packages/rpm/installing-mariadb-with-zypper), then the package is called `galera-4`.
+```bash
+# Example for UFW (Ubuntu)
+sudo ufw allow 3306/tcp  # MariaDB client connections
+sudo ufw allow 4567/tcp  # Galera replication (multicast and unicast)
+sudo ufw allow 4567/udp  # Galera replication (multicast)
+sudo ufw allow 4568/tcp  # Incremental State Transfer (IST)
+sudo ufw allow 4444/tcp  # State Snapshot Transfer (SST)
+sudo ufw reload
+sudo ufw enable # If firewall is not already enabled
+```
 
-| Galera Version | Released in MariaDB Version                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
-| -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Galera Version | Released in MariaDB Version                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
-| 26.4.21        | [11.8.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-11-8-series/mariadb-11-8-1-release-notes), [11.7.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-11-7-rolling-releases/mariadb-11-7-2-release-notes), [11.4.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-11-4-series/mariadb-11-4-5-release-notes),[10.11.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-11-series/mariadb-10-11-11-release-notes), [10.6.21](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/mariadb-10-6-21-release-notes), [10.5.28](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-10-5-28-release-notes)                                                                                                                                                                                                                                                                                                                                                                                            |
-| 26.4.20        | [11.7.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-11-7-rolling-releases/mariadb-11-7-1-release-notes), [11.6.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-6-rolling-releases/mariadb-11-6-2-release-notes), [11.4.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-11-4-series/mariadb-11-4-4-release-notes), [11.2.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-6-release-notes), [10.11.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-11-series/mariadb-10-11-10-release-notes), [10.6.20](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/mariadb-10-6-20-release-notes), [10.5.27](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-10-5-27-release-notes)                                                                                                                                                                                       |
-| 26.4.19        | [11.4.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-11-4-series/mariadb-11-4-3-release-notes), [11.2.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-5-release-notes), [11.1.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-1-series/mariadb-11-1-6-release-notes), [10.11.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-11-series/mariadb-10-11-9-release-notes), [10.6.19](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/mariadb-10-6-19-release-notes), [10.5.26](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-10-5-26-release-notes)                                                                                                                                                                                                                                                                                                                                                                             |
-| 26.4.18        | [11.2.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-4-release-notes), [11.1.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-1-series/mariadb-11-1-5-release-notes), [11.0.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-0-series/mariadb-11-0-6-release-notes), [10.11.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-11-series/mariadb-10-11-8-release-notes), [10.6.18](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/mariadb-10-6-18-release-notes), [10.5.25](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-10-5-25-release-notes), [10.4.34](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-10-4-34-release-notes)                                                                                                                                                                                 |
-| 26.4.16        | [11.2.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-2-release-notes), [11.1.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-1-series/mariadb-11-1-3-release-notes), [11.0.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-0-series/mariadb-11-0-4-release-notes), [10.11.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-11-series/mariadb-10-11-6-release-notes), [10.10.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-10-series/mariadb-10-10-7-release-notes), [10.6.16](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/mariadb-10-6-16-release-notes), [10.5.23](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-10-5-23-release-notes), [10.4.32](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-10-4-32-release-notes) |
-| 26.4.14        | [10.10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-10-series/mariadb-10-10-3-release-notes), [10.9.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-9-series/mariadb-10-9-5-release-notes), [10.8.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-8-series/mariadb-10-8-7-release-notes), [10.7.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-7-series/mariadb-10-7-8-release-notes), [10.6.12](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/mariadb-10-6-12-release-notes), [10.5.19](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-10-5-19-release-notes), [10.4.28](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-10-4-28-release-notes)                                                                                                                                                                    |
-| 26.4.13        | [10.10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-10-series/mariadb-10-10-2-release-notes), [10.9.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-9-series/mariadb-10-9-4-release-notes), [10.8.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-8-series/mariadb-10-8-6-release-notes), [10.7.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-7-series/mariadb-10-7-7-release-notes), [10.6.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/mariadb-10-6-11-release-notes), [10.5.18](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-10-5-18-release-notes), [10.4.27](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-10-4-27-release-notes)                                                                                                                                                                    |
-| 26.4.12        | [10.10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-10-series/mariadb-10101-release-notes), [10.9.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-9-series/mariadb-1092-release-notes), [10.8.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-8-series/mariadb-1084-release-notes), [10.7.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-7-series/mariadb-1075-release-notes), [10.6.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/mariadb-1069-release-notes), [10.5.17](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-10517-release-notes), [10.4.26](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-10426-release-notes)                                                                                                                                                                                    |
-| 26.4.11        | [10.8.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-8-series/mariadb-1081-release-notes), [10.7.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-7-series/mariadb-1072-release-notes), [10.6.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/mariadb-1066-release-notes), [10.5.14](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-10514-release-notes), [10.4.22](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-10422-release-notes)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
-| 26.4.9         | [10.6.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/mariadb-1064-release-notes), [10.5.12](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-10512-release-notes), [10.4.21](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-10421-release-notes)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-| 26.4.8         | [10.6.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/mariadb-1061-release-notes), [10.5.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-10510-release-notes), [10.4.19](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-10419-release-notes)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-| 26.4.7         | [10.5.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1059-release-notes), [10.4.18](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-10418-release-notes)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-| 26.4.6         | [10.5.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1057-release-notes), [10.4.16](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-10416-release-notes)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-| 26.4.5         | [10.5.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1054-release-notes), [10.4.14](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-10414-release-notes)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-| 26.4.4         | [10.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1051-release-notes), [10.4.13](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-10413-release-notes)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-| 26.4.3         | [10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1050-release-notes), [10.4.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-1049-release-notes)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| 26.4.2         | [10.4.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-1044-release-notes)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-| 26.4.1         | [10.4.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-1043-release-notes)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-| 26.4.0         | [10.4.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-1042-release-notes)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+Adjust for your firewall system (e.g., `firewalld` for RHEL-based systems).
 
-### Galera 3 Versions
+#### 4. Configure Galera Cluster (`galera.cnf` on Each Node)
 
-See here for [Galera 3 versions](mariadb-galera-cluster-guide.md#galera-versions).
+Create a configuration file (e.g., `/etc/mysql/conf.d/galera.cnf`) on **each node**. The content will be largely identical, with specific changes for each node's name and address.
 
-## See Also
+**Example `galera.cnf` content:**
 
-* [Codership on Google Groups](https://groups.google.com/forum/?fromgroups#!forum/codership-team) (`codership-team 'at' googlegroups (dot) com`) - A great mailing list for Galera users.
-* [About Galera Replication](about-galera-replication.md)
-* [Codership: Using Galera Cluster](https://codership.com/content/using-galera-cluster)
-* [Galera Use Cases](../galera-use-cases.md)
-* [Getting Started with MariaDB Galera Cluster](../galera-management/getting-started-with-mariadb-galera-cluster.md)
-* [MariaDB Galera Cluster - Known Limitations](../galera-management/mariadb-galera-cluster-known-limitations.md)
+```toml
+[mysqld]
+# Basic MariaDB settings
+binlog_format=ROW
+default_storage_engine=InnoDB
+innodb_autoinc_lock_mode=2
+bind-address=0.0.0.0 # Binds to all network interfaces. Adjust if you have a specific private IP for cluster traffic.
 
-<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+# Galera Provider Configuration
+wsrep_on=ON
+wsrep_provider=/usr/lib/galera/libgalera_smm.so # Adjust path if different (e.g., /usr/lib64/galera-4/libgalera_smm.so)
 
-{% @marketo/form formId="4316" %}
+# Galera Cluster Configuration
+wsrep_cluster_name="my_galera_cluster" # A unique name for your cluster
+
+# IP addresses of ALL nodes in the cluster, comma-separated.
+# Use private IPs if available for cluster communication.
+wsrep_cluster_address="gcomm://node1_ip_address,node2_ip_address,node3_ip_address"
+
+# This node's specific configuration
+wsrep_node_name="node1" # Must be unique for each node (e.g., node1, node2, node3)
+wsrep_node_address="node1_ip_address" # This node's own IP address
+```
+
+**Important:**
+
+* **`wsrep_cluster_address`:** List the IP addresses of _all_ nodes in the cluster on _every_ node.
+* **`wsrep_node_name`:** Must be unique for each node (e.g., `node1`, `node2`, `node3`).
+* **`wsrep_node_address`:** Set to the specific IP address of the node you are configuring.
+
+#### 5. Start the Cluster
+
+a. Bootstrapping the First Node:
+
+Start MariaDB on the first node with the --wsrep-new-cluster option. This tells it to form a new cluster. Do this only once for the initial node of a new cluster.
+
+```bash
+sudo systemctl stop mariadb # Ensure it's stopped
+sudo galera_new_cluster    # This command often wraps the systemctl start --wsrep-new-cluster
+                           # Alternatively: sudo systemctl start mariadb --wsrep-new-cluster
+```
+
+b. Starting Subsequent Nodes:
+
+For the second and third nodes, start the MariaDB service normally. They will discover and join the existing cluster using the wsrep\_cluster\_address specified in their configuration.
+
+```bash
+sudo systemctl start mariadb
+```
+
+#### 6. Verify Cluster Operation
+
+After all nodes are started, verify that they have joined the cluster.
+
+a. Check Cluster Size (on any node):
+
+Connect to MariaDB on any node and check the cluster status:
+
+```bash
+sudo mariadb -u root -p
+```
+
+Inside the MariaDB shell:
+
+```sql
+SHOW STATUS LIKE 'wsrep_cluster_size';
+```
+
+The `Value` should match the number of nodes in your cluster (e.g., `3`).
+
+**b. Test Replication:**
+
+1.  On `node1`, create a new database and a table:
+
+    ```sql
+    CREATE DATABASE test_db;
+    USE test_db;
+    CREATE TABLE messages (id INT AUTO_INCREMENT PRIMARY KEY, text VARCHAR(255));
+    INSERT INTO messages (text) VALUES ('Hello from node1!');
+    ```
+2.  On `node2` (or `node3`), connect to MariaDB and check for the new database and table:
+
+    ```sql
+    SHOW DATABASES; -- test_db should appear
+    USE test_db;
+    SELECT * FROM messages; -- 'Hello from node1!' should appear
+    ```
+3.  Insert data from `node2`:
+
+    ```sql
+    INSERT INTO messages (text) VALUES ('Hello from node2!');
+    ```
+4.  Verify on `node1` that the new data is present:
+
+    ```sql
+    USE test_db;
+    SELECT * FROM messages; -- 'Hello from node2!' should appear
+    ```
+
+This confirms synchronous replication is working.
+
+#### Further Resources:
+
+* [How to Set up MariaDB Galera Clusters on Ubuntu 22.04 (Linode)](https://www.linode.com/docs/guides/how-to-set-up-mariadb-galera-clusters-on-ubuntu-2204/)
+* [MariaDB Galera Cluster - Binary Installation (galeracluster.com)](https://galeracluster.com/documentation/html_docs_mariadb-installation/documentation/install-mariadb.html)
+* [Getting Started with MariaDB Galera Cluster (MariaDB.com/kb)](https://mariadb.com/kb/en/getting-started-with-mariadb-galera-cluster/)

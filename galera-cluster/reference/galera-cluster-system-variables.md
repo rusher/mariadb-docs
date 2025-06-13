@@ -445,7 +445,7 @@ It is an enum. Valid values are:`0: NONE`: Off (default)`1: SERVER`: MariaDB ser
 
 #### `wsrep_slave_threads`
 
-* Description: Number of replica threads used to apply Galera write sets in parallel. The Galera replica threads are able to determine which write sets are safe to apply in parallel. However, if your cluster nodes seem to have frequent consistency problems, then setting the value to `1` will probably fix the problem. See [About Galera Replication: Galera Replica Threads](../galera-cluster-quickstart-guides/about-galera-replication.md#galera-slave-threads) for more information.
+* Description: Number of replica threads used to apply Galera write sets in parallel. The Galera replica threads are able to determine which write sets are safe to apply in parallel. However, if your cluster nodes seem to have frequent consistency problems, then setting the value to `1` will probably fix the problem. See [About Galera Replication: Galera Replica Threads](../readme/about-galera-replication.md#galera-slave-threads) for more information.
 * Commandline: `--wsrep-slave-threads=`#
 * Scope: Global
 * Dynamic: Yes

@@ -1,10 +1,13 @@
 # Table of contents
 
 * [MariaDB Galera Cluster](README.md)
+  * [MariaDB Galera Cluster Overview](readme/mariadb-galera-cluster-usage-guide.md)
+  * [What is MariaDB Galera Cluster?](readme/mariadb-galera-cluster-guide.md)
+  * [What is Galera Replication?](readme/about-galera-replication.md)
 * [Quickstart Guides](galera-cluster-quickstart-guides/README.md)
-  * [What is MariaDB Galera Cluster?](galera-cluster-quickstart-guides/mariadb-galera-cluster-guide.md)
-  * [What is Galera Replication?](galera-cluster-quickstart-guides/about-galera-replication.md)
-  * [MariaDB Galera Cluster Quickstart](galera-cluster-quickstart-guides/mariadb-galera-cluster-usage-guide.md)
+  * [MariaDB Galera Cluster Guide](galera-cluster-quickstart-guides/mariadb-galera-cluster-guide.md)
+  * [MariaDB Galera Cluster Replication Guide](galera-cluster-quickstart-guides/mariadb-galera-cluster-replication-guide.md)
+  * [MariaDB Galera Cluster Usage Guide](galera-cluster-quickstart-guides/mariadb-galera-cluster-usage-guide.md)
 * [Galera Management](galera-management/README.md)
   * [Building the Galera wsrep Package on Fedora](galera-management/building-the-galera-wsrep-package-on-fedora.md)
   * [Building the Galera wsrep Package on Ubuntu and Debian](galera-management/building-the-galera-wsrep-package-on-ubuntu-and-debian.md)
