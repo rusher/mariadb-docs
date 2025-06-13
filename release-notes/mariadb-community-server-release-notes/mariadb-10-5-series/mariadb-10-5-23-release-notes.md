@@ -6,7 +6,7 @@ The most recent release of [MariaDB 10.5](what-is-mariadb-105.md) is:[**MariaDB 
 
 **Release date:** 13 Nov 2023
 
-[MariaDB 10.5](what-is-mariadb-105.md) is a previous _stable_ series of MariaDB, [maintained until](https://mariadb.org/about/#maintenance-policy) June 2025. It is an evolution of [MariaDB 10.4](broken-reference) with several entirely new features not found anywhere else and with backported and reimplemented features from MySQL.
+[MariaDB 10.5](what-is-mariadb-105.md) is a previous _stable_ series of MariaDB, [maintained until](https://mariadb.org/about/#maintenance-policy) June 2025. It is an evolution of [MariaDB 10.4](broken-reference/) with several entirely new features not found anywhere else and with backported and reimplemented features from MySQL.
 
 [MariaDB 10.5.23](mariadb-10-5-23-release-notes.md) is a [_**Stable (GA)**_](../../mariadb-release-criteria.md) release.
 
@@ -59,9 +59,9 @@ Thanks, and enjoy MariaDB!
 * detailize the semisync replication magic number error ([MDEV-32365](https://jira.mariadb.org/browse/MDEV-32365))
 * Parallel replication deadlock victim preference code errorneously removed ([MDEV-31655](https://jira.mariadb.org/browse/MDEV-31655))
 
-### [Galera](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/)
+### [Galera](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/3VYeeVGUV4AMqrA3zwy7/)
 
-* [Galera](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/) updated to 26.4.16
+* [Galera](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/3VYeeVGUV4AMqrA3zwy7/) updated to 26.4.16
 * Assertion \`state() == s\_executing || state() == s\_prepared || state() == s\_committing || state() == s\_must\_abort || state() == s\_replaying' failed. ([MDEV-24912](https://jira.mariadb.org/browse/MDEV-24912))
 * Assertion \`state() == s\_executing || state() == s\_preparing || state() == s\_prepared || state() == s\_must\_abort || state() == s\_aborting || state() == s\_cert\_failed || state() == s\_must\_replay' failed ([MDEV-31285](https://jira.mariadb.org/browse/MDEV-31285))
 * wsrep\_sst\_mariabackup not working on FreeBSD ([MDEV-31467](https://jira.mariadb.org/browse/MDEV-31467))

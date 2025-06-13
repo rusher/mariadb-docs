@@ -6,7 +6,7 @@ The most recent release of [MariaDB 10.5](what-is-mariadb-105.md) is:[**MariaDB 
 
 **Release date:** 8 Aug 2024
 
-[MariaDB 10.5](what-is-mariadb-105.md) is a previous _stable_ series of MariaDB, [maintained until](https://mariadb.org/about/#maintenance-policy) June 2025. It is an evolution of [MariaDB 10.4](broken-reference) with several entirely new features not found anywhere else and with backported and reimplemented features from MySQL.
+[MariaDB 10.5](what-is-mariadb-105.md) is a previous _stable_ series of MariaDB, [maintained until](https://mariadb.org/about/#maintenance-policy) June 2025. It is an evolution of [MariaDB 10.4](broken-reference/) with several entirely new features not found anywhere else and with backported and reimplemented features from MySQL.
 
 [MariaDB 10.5.26](mariadb-10-5-26-release-notes.md) is a [_**Stable (GA)**_](../../mariadb-release-criteria.md) release.
 
@@ -76,7 +76,7 @@ Thanks, and enjoy MariaDB!
 
 ### Galera
 
-* [Galera](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/) updated to 26.4.19
+* [Galera](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/3VYeeVGUV4AMqrA3zwy7/) updated to 26.4.19
   * NOTE: Includes increasing the GCS protocol version, which prevents downgrades of individual nodes in the cluster as soon as all nodes nodes have been updated
 * `galera_gtid_2_cluster`: Assertion \`\`thd->wsrep\_next\_trx\_id() != (0x7fffffffffffffffLL \* 2ULL + 1)'\` ([MDEV-32633](https://jira.mariadb.org/browse/MDEV-32633))
 * table `gtid_slave_pos` entries never been deleted with `wsrep_gtid_mode = 0` ([MDEV-34170](https://jira.mariadb.org/browse/MDEV-34170))

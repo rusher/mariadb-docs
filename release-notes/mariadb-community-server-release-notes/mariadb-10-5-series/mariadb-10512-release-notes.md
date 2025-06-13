@@ -9,7 +9,7 @@ The most recent release of [MariaDB 10.5](what-is-mariadb-105.md) is:[**MariaDB 
 Warning: This version can cause InnoDB file corruption on FreeBSD and on AIX. If you are using AIX, please, stick to an earlier release, or upgrade to a more recent release. If you are using FreeBSD, upgrade to the bugfix release (the version ends with \_1) of the mariadb-server from the Ports Collection. See [MDEV-26537](https://jira.mariadb.org/browse/MDEV-26537).
 
 [MariaDB 10.5](what-is-mariadb-105.md) is a previous _stable_ series of MariaDB. It is an evolution\
-of [MariaDB 10.4](broken-reference) with several entirely new features not found anywhere else\
+of [MariaDB 10.4](broken-reference/) with several entirely new features not found anywhere else\
 and with backported and reimplemented features from MySQL.
 
 [MariaDB 10.5.12](mariadb-10512-release-notes.md) is a [_**Stable (GA)**_](../../mariadb-release-criteria.md) release.
@@ -51,7 +51,7 @@ Thanks, and enjoy MariaDB!
 
 * As per the [MariaDB Deprecation Policy](../../mariadb-platform-deprecation-policy.md), this will be the last release of [MariaDB 10.5](what-is-mariadb-105.md) for Ubuntu 20.10 Groovy
 * Debian 11 Bullseye repositories added
-* [Galera](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/) updated to 26.4.9
+* [Galera](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/3VYeeVGUV4AMqrA3zwy7/) updated to 26.4.9
 * Linux on IBM Z (s390x) architecture added with releases on Ubuntu-20.04 Focal
 
 ### Security

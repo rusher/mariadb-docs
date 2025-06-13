@@ -6,7 +6,7 @@ The most recent release of [MariaDB 10.5](what-is-mariadb-105.md) is:[**MariaDB 
 
 **Release date:** 16 May 2024
 
-[MariaDB 10.5](what-is-mariadb-105.md) is a previous _stable_ series of MariaDB, [maintained until](https://mariadb.org/about/#maintenance-policy) June 2025. It is an evolution of [MariaDB 10.4](broken-reference) with several entirely new features not found anywhere else and with backported and reimplemented features from MySQL.
+[MariaDB 10.5](what-is-mariadb-105.md) is a previous _stable_ series of MariaDB, [maintained until](https://mariadb.org/about/#maintenance-policy) June 2025. It is an evolution of [MariaDB 10.4](broken-reference/) with several entirely new features not found anywhere else and with backported and reimplemented features from MySQL.
 
 [MariaDB 10.5.25](mariadb-10-5-25-release-notes.md) is a [_**Stable (GA)**_](../../mariadb-release-criteria.md) release.
 
@@ -103,7 +103,7 @@ From this version, the [mariadb-dump](https://app.gitbook.com/s/SsmexDFPv2xG2OTy
 
 ### Galera
 
-* [Galera](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/) updated to 26.4.18
+* [Galera](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/3VYeeVGUV4AMqrA3zwy7/) updated to 26.4.18
   * NOTE: Includes increasing the GCS protocol version, which prevents downgrades of individual nodes in the cluster as soon as all nodes nodes have been updated
 
 ### SQL, Data Definition, and Data Manipulation

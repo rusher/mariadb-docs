@@ -9,7 +9,7 @@ The most recent release of [MariaDB 10.5](what-is-mariadb-105.md) is:[**MariaDB 
 **Last month long-time MariaDB VP of Engineering, Rasmus Johansson, passed due to complications from cancer. His loss has been felt keenly by the whole MariaDB team. Our thoughts are with his family during this difficult time and this release is dedicated to his memory.**
 
 [MariaDB 10.5](what-is-mariadb-105.md) is the current _stable_ series of MariaDB. It is an evolution\
-of [MariaDB 10.4](broken-reference) with several entirely new features not found anywhere else\
+of [MariaDB 10.4](broken-reference/) with several entirely new features not found anywhere else\
 and with backported and reimplemented features from MySQL.
 
 [MariaDB 10.5.9](mariadb-1059-release-notes.md) is a [_**Stable (GA)**_](../../mariadb-release-criteria.md) release.
@@ -32,7 +32,7 @@ Thanks, and enjoy MariaDB!
 
 ### Galera
 
-* [Galera](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/) updated to 26.4.7
+* [Galera](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/3VYeeVGUV4AMqrA3zwy7/) updated to 26.4.7
 * [MDEV-23328](https://jira.mariadb.org/browse/MDEV-23328) - Server hang due to Galera lock conflict resolution
 * [MDEV-23851](https://jira.mariadb.org/browse/MDEV-23851) - BF-BF Conflict issue because of UK GAP locks
 * [MDEV-20717](https://jira.mariadb.org/browse/MDEV-20717) - Plugin system variables and activation options can break [mysqld --wsrep\_recover](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_recover)
@@ -53,7 +53,7 @@ Thanks, and enjoy MariaDB!
 ### ColumnStore
 
 * MariaDB ColumnStore updated to 5.5.1
-* MariaDB ColumnStore deb and rpm packages now have a version of `10.5.9-5.5.1` so one can see both the server version (10.5.9) and the plugin version (5.5.1) without needing to check the [Available Versions](broken-reference) table in the ColumnStore docs
+* MariaDB ColumnStore deb and rpm packages now have a version of `10.5.9-5.5.1` so one can see both the server version (10.5.9) and the plugin version (5.5.1) without needing to check the [Available Versions](broken-reference/) table in the ColumnStore docs
 * The MariaDB ColumnStore plugin is no longer provided for 32-bit x86 (i386) builds
 
 ### Misc

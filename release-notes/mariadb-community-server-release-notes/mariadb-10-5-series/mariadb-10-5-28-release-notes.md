@@ -6,7 +6,7 @@
 
 **Release date:** 4 Feb 2025
 
-[MariaDB 10.5](what-is-mariadb-105.md) is a previous _stable_ series of MariaDB, [maintained until](https://mariadb.org/about/#maintenance-policy) June 2025. It is an evolution of [MariaDB 10.4](broken-reference) with several entirely new features not found anywhere else and with backported and reimplemented features from MySQL.
+[MariaDB 10.5](what-is-mariadb-105.md) is a previous _stable_ series of MariaDB, [maintained until](https://mariadb.org/about/#maintenance-policy) June 2025. It is an evolution of [MariaDB 10.4](broken-reference/) with several entirely new features not found anywhere else and with backported and reimplemented features from MySQL.
 
 [MariaDB 10.5.28](mariadb-10-5-28-release-notes.md) is a [_**Stable (GA)**_](../../mariadb-release-criteria.md) release.
 
@@ -44,7 +44,7 @@ Thanks, and enjoy MariaDB!
 * NULL-aware materialization with IN predicate and single column no longer skips building sorted Ordered\_key structures ([MDEV-34665](https://jira.mariadb.org/browse/MDEV-34665))
 * Fix possibly wrong result using a degenerated subquery (SELECT ) with window function ([MDEV-35869](https://jira.mariadb.org/browse/MDEV-35869))
 
-### [Partitioning](broken-reference)
+### [Partitioning](broken-reference/)
 
 * History is now stored on the same partitions on different Galera nodes when system versioning is enabled ([MDEV-35096](https://jira.mariadb.org/browse/MDEV-35096))
 * Fix possible hang or crash during InnoDB purge with HASH indexes during ALTER TABLE ([MDEV-25654](https://jira.mariadb.org/browse/MDEV-25654))
@@ -59,9 +59,9 @@ Thanks, and enjoy MariaDB!
 * Fix possible runtime error caused by XA RECOVER applying a zero offset to a null pointer ([MDEV-35549](https://jira.mariadb.org/browse/MDEV-35549))
 * Fix issue where functions in default values in tables with certain character sets could break SHOW CREATE and mariadb-dump ([MDEV-29968](https://jira.mariadb.org/browse/MDEV-29968))
 
-### [Galera](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/)
+### [Galera](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/3VYeeVGUV4AMqrA3zwy7/)
 
-* [Galera](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/) updated to 26.4.21
+* [Galera](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/3VYeeVGUV4AMqrA3zwy7/) updated to 26.4.21
   * NOTE: Includes increasing the GCS protocol version, which prevents downgrades of individual nodes in the cluster as soon as all nodes nodes have been updated
 * Fix sporadic failure of async replication on Galera async replica nodes with parallel replication enabled ([MDEV-35465](https://jira.mariadb.org/browse/MDEV-35465))
 * Fix possible failure of wsrep\_sst\_rsync SST script if user specified aria\_log\_dir\_path different from default data directory ([MDEV-35387](https://jira.mariadb.org/browse/MDEV-35387))

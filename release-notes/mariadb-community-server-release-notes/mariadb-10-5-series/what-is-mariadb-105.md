@@ -29,7 +29,7 @@ See the [Differences in MariaDB Enterprise Server 10.5](../../enterprise-server/
 ### Amazon S3
 
 * The [S3 storage engine](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/s3-storage-engine) allows one to archive MariaDB tables in Amazon S3, or any third-party public or private cloud that implements S3 API ( [MDEV-22606](https://jira.mariadb.org/browse/MDEV-22606))
-* Both S3 tables and [partitioned](broken-reference) S3 tables are discoverable. This means that if you create a partitioned S3 table, both the partitioned table and its partitions can be directly used by another server that has access to the S3 storage. ([MDEV-22088](https://jira.mariadb.org/browse/MDEV-22088))
+* Both S3 tables and [partitioned](broken-reference/) S3 tables are discoverable. This means that if you create a partitioned S3 table, both the partitioned table and its partitions can be directly used by another server that has access to the S3 storage. ([MDEV-22088](https://jira.mariadb.org/browse/MDEV-22088))
 
 ### Privileges Made More Granular
 
@@ -116,7 +116,7 @@ See the [Differences in MariaDB Enterprise Server 10.5](../../enterprise-server/
 
 ### Galera: Full GTID Support
 
-* Add full [GTID](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid) support to [Galera](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/) cluster ([commit](https://github.com/MariaDB/server/commit/41bc736871)). With this feature all nodes in a cluster\
+* Add full [GTID](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid) support to [Galera](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/3VYeeVGUV4AMqrA3zwy7/) cluster ([commit](https://github.com/MariaDB/server/commit/41bc736871)). With this feature all nodes in a cluster\
   will have the same GTID for replicated events originating from the cluster. Also added a new variable, `wsrep_gtid_seq_no`, to manually update the WSREP GTID sequence number in the cluster (similar to how the `gtid_seq_no` variable is used for non-WSREP transactions).
 * Add new mode to wsrep\_OSU\_method in which Galera checks storage engine of the affected table ([MDEV-20051](https://jira.mariadb.org/browse/MDEV-20051))
 * Galera: Replicate MariaDB GTID to other nodes in the cluster ([MDEV-20720](https://jira.mariadb.org/browse/MDEV-20720))
@@ -216,20 +216,20 @@ page.
 
 * [CVE-2025-21490](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-21490): [MariaDB 10.5.28](mariadb-10-5-28-release-notes.md)
 * [CVE-2024-21096](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-21096): [MariaDB 10.5.25](mariadb-10-5-25-release-notes.md)
-* [CVE-2023-5157](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-5157): [MariaDB 10.5.17](broken-reference)
+* [CVE-2023-5157](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-5157): [MariaDB 10.5.17](broken-reference/)
 * [CVE-2023-22084](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-22084): [MariaDB 10.5.23](mariadb-10-5-23-release-notes.md)
 * [CVE-2022-47015](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-47015): [MariaDB 10.5.20](mariadb-10-5-20-release-notes.md)
-* [CVE-2022-38791](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-38791): [MariaDB 10.5.17](broken-reference)
-* [CVE-2022-32091](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-32091): [MariaDB 10.5.17](broken-reference)
-* [CVE-2022-32089](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-32089): [MariaDB 10.5.17](broken-reference)
+* [CVE-2022-38791](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-38791): [MariaDB 10.5.17](broken-reference/)
+* [CVE-2022-32091](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-32091): [MariaDB 10.5.17](broken-reference/)
+* [CVE-2022-32089](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-32089): [MariaDB 10.5.17](broken-reference/)
 * [CVE-2022-32088](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-32088): [MariaDB 10.5.16](mariadb-10516-release-notes.md)
 * [CVE-2022-32087](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-32087): [MariaDB 10.5.16](mariadb-10516-release-notes.md)
 * [CVE-2022-32086](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-32086): [MariaDB 10.5.16](mariadb-10516-release-notes.md)
 * [CVE-2022-32085](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-32085): [MariaDB 10.5.16](mariadb-10516-release-notes.md)
-* [CVE-2022-32084](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-32084): [MariaDB 10.5.17](broken-reference)
+* [CVE-2022-32084](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-32084): [MariaDB 10.5.17](broken-reference/)
 * [CVE-2022-32083](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-32083): [MariaDB 10.5.16](mariadb-10516-release-notes.md)
-* [CVE-2022-32082](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-32082): [MariaDB 10.5.17](broken-reference)
-* [CVE-2022-32081](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-32081): [MariaDB 10.5.17](broken-reference)
+* [CVE-2022-32082](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-32082): [MariaDB 10.5.17](broken-reference/)
+* [CVE-2022-32081](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-32081): [MariaDB 10.5.17](broken-reference/)
 * [CVE-2022-31624](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-31624): [MariaDB 10.5.13](mariadb-10513-release-notes.md)
 * [CVE-2022-27458](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-27458): [MariaDB 10.5.16](mariadb-10516-release-notes.md)
 * [CVE-2022-27457](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-27457): [MariaDB 10.5.16](mariadb-10516-release-notes.md)
@@ -289,7 +289,7 @@ page.
 * [CVE-2020-14789](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-14789): [MariaDB 10.5.7](mariadb-1057-release-notes.md)
 * [CVE-2020-14776](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-14776): [MariaDB 10.5.7](mariadb-1057-release-notes.md)
 * [CVE-2020-14765](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-14765): [MariaDB 10.5.7](mariadb-1057-release-notes.md)
-* [CVE-2018-25032](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-25032): [MariaDB 10.5.17](broken-reference)
+* [CVE-2018-25032](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-25032): [MariaDB 10.5.17](broken-reference/)
 
 ## Resources
 
@@ -310,8 +310,8 @@ page.
 | 7 Jun 2023  | [MariaDB 10.5.21](mariadb-10-5-21-release-notes.md) | Stable (GA) | [Release Notes](mariadb-10-5-21-release-notes.md) | [Changelog](../../changelogs/changelogs-mariadb-105-series/mariadb-10-5-21-changelog.md) |
 | 10 May 2023 | [MariaDB 10.5.20](mariadb-10-5-20-release-notes.md) | Stable (GA) | [Release Notes](mariadb-10-5-20-release-notes.md) | [Changelog](../../changelogs/changelogs-mariadb-105-series/mariadb-10-5-20-changelog.md) |
 | 6 Feb 2023  | [MariaDB 10.5.19](mariadb-10-5-19-release-notes.md) | Stable (GA) | [Release Notes](mariadb-10-5-19-release-notes.md) | [Changelog](../../changelogs/changelogs-mariadb-105-series/mariadb-10-5-19-changelog.md) |
-| 7 Nov 2022  | [MariaDB 10.5.18](broken-reference)                 | Stable (GA) | [Release Notes](broken-reference)                 | [Changelog](../../changelogs/changelogs-mariadb-105-series/mariadb-10-5-18-changelog.md) |
-| 15 Aug 2022 | [MariaDB 10.5.17](broken-reference)                 | Stable (GA) | [Release Notes](broken-reference)                 | [Changelog](../../changelogs/changelogs-mariadb-105-series/mariadb-10517-changelog.md)   |
+| 7 Nov 2022  | [MariaDB 10.5.18](broken-reference/)                | Stable (GA) | [Release Notes](broken-reference/)                | [Changelog](../../changelogs/changelogs-mariadb-105-series/mariadb-10-5-18-changelog.md) |
+| 15 Aug 2022 | [MariaDB 10.5.17](broken-reference/)                | Stable (GA) | [Release Notes](broken-reference/)                | [Changelog](../../changelogs/changelogs-mariadb-105-series/mariadb-10517-changelog.md)   |
 | 20 May 2022 | [MariaDB 10.5.16](mariadb-10516-release-notes.md)   | Stable (GA) | [Release Notes](mariadb-10516-release-notes.md)   | [Changelog](../../changelogs/changelogs-mariadb-105-series/mariadb-10516-changelog.md)   |
 | 12 Feb 2022 | [MariaDB 10.5.15](mariadb-10515-release-notes.md)   | Stable (GA) | [Release Notes](mariadb-10515-release-notes.md)   | [Changelog](../../changelogs/changelogs-mariadb-105-series/mariadb-10515-changelog.md)   |
 | 9 Feb 2022  | [MariaDB 10.5.14](mariadb-10514-release-notes.md)   | Stable (GA) | [Release Notes](mariadb-10514-release-notes.md)   | [Changelog](../../changelogs/changelogs-mariadb-105-series/mariadb-10514-changelog.md)   |

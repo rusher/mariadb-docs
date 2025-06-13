@@ -9,7 +9,7 @@ The most recent release of [MariaDB 10.5](what-is-mariadb-105.md) is:[**MariaDB 
 This release is no longer available for download after a problem was noticed when manually running mariadb-upgrade. See [MDEV-27789](https://jira.mariadb.org/browse/MDEV-27789) for more details.**Please use a later release.**
 
 [MariaDB 10.5](what-is-mariadb-105.md) is a previous _stable_ series of MariaDB. It is an evolution\
-of [MariaDB 10.4](broken-reference) with several entirely new features not found anywhere else\
+of [MariaDB 10.4](broken-reference/) with several entirely new features not found anywhere else\
 and with backported and reimplemented features from MySQL.
 
 [MariaDB 10.5.14](mariadb-10514-release-notes.md) is a [_**Stable (GA)**_](../../mariadb-release-criteria.md) release.
@@ -29,7 +29,7 @@ Thanks, and enjoy MariaDB!
 
 ### Galera
 
-* [Galera](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/) updated to 26.4.11
+* [Galera](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/3VYeeVGUV4AMqrA3zwy7/) updated to 26.4.11
 * Galera SST scripts should use ssl\_capath (not ssl\_ca) for CA directory ([MDEV-27181](https://jira.mariadb.org/browse/MDEV-27181))
 * Alter Sequence do not replicate to another nodes with in Galera Cluster ([MDEV-19353](https://jira.mariadb.org/browse/MDEV-19353))
 * Galera crash - Assertion. Possible parallel writeset problem ([MDEV-26803](https://jira.mariadb.org/browse/MDEV-26803))

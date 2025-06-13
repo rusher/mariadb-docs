@@ -7,7 +7,7 @@ The most recent release of [MariaDB 10.5](what-is-mariadb-105.md) is:[**MariaDB 
 **Release date:** 14 Feb 2020
 
 [MariaDB 10.5](what-is-mariadb-105.md) is the current _development_ series of MariaDB. It is an evolution\
-of [MariaDB 10.4](broken-reference) with several entirely new features not found anywhere else\
+of [MariaDB 10.4](broken-reference/) with several entirely new features not found anywhere else\
 and with backported and reimplemented features from MySQL.
 
 [MariaDB 10.5.1](mariadb-1051-release-notes.md) is a [_**Beta**_](../../mariadb-release-criteria.md) release.
@@ -45,7 +45,7 @@ Notable changes of this release include:
 
 * [slave\_parallel\_mode](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables#slave_parallel_mode) now defaults to `optimistic` ([MDEV-18648](https://jira.mariadb.org/browse/MDEV-18648)).
 * Make REPLICA a synonym for [SLAVE in SQL statements](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/replication-statements) ([MDEV-20601](https://jira.mariadb.org/browse/MDEV-20601))
-* [Galera](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/) [GTID](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid) support ([commit](https://github.com/MariaDB/server/commit/41bc736871))
+* [Galera](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/3VYeeVGUV4AMqrA3zwy7/) [GTID](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid) support ([commit](https://github.com/MariaDB/server/commit/41bc736871))
 * Add new mode to wsrep\_OSU\_method in which Galera checks storage engine of the effected table ([MDEV-20051](https://jira.mariadb.org/browse/MDEV-20051))
 * Galera: Replicate MariaDB GTID to other nodes in the cluster ([MDEV-20720](https://jira.mariadb.org/browse/MDEV-20720))
 

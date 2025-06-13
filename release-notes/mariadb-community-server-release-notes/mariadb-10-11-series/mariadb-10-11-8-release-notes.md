@@ -73,7 +73,7 @@ From this version, the [mariadb-dump](https://app.gitbook.com/s/SsmexDFPv2xG2OTy
 
 ### Backup
 
-* Port backup features from Enterprise Server. This adds support for [BACKUP STAGE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/backup-commands/backup-stage) to [mariabackup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup), and obsoletes the [no-backup-locks](broken-reference) and [rysnc](broken-reference) options ([MDEV-32932](https://jira.mariadb.org/browse/MDEV-32932))
+* Port backup features from Enterprise Server. This adds support for [BACKUP STAGE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/backup-commands/backup-stage) to [mariabackup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup), and obsoletes the [no-backup-locks](broken-reference/) and [rysnc](broken-reference/) options ([MDEV-32932](https://jira.mariadb.org/browse/MDEV-32932))
 * [mariadb-backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup) now preserves [innodb\_encrypt\_tables](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables#innodb_encrypt_tables) ([MDEV-33334](https://jira.mariadb.org/browse/MDEV-33334))
 * Fix [mariabackup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup) problem on older mariadb (opendir(NULL)) caused by [MDEV-30968](https://jira.mariadb.org/browse/MDEV-30968) ([MDEV-31251](https://jira.mariadb.org/browse/MDEV-31251))
 * Fix [mariabackup --backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup) FATAL ERROR: ... Can't open datafile cool\_down/t3 ([MDEV-33011](https://jira.mariadb.org/browse/MDEV-33011))
@@ -133,7 +133,7 @@ From this version, the [mariadb-dump](https://app.gitbook.com/s/SsmexDFPv2xG2OTy
 
 #### Galera
 
-* [Galera](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/) updated to 26.4.18
+* [Galera](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/3VYeeVGUV4AMqrA3zwy7/) updated to 26.4.18
   * NOTE: Includes increasing the GCS protocol version, which prevents downgrades of individual nodes in the cluster as soon as all nodes have been updated
 * Disallow bulk insert operation during partition update statement ([MDEV-33979](https://jira.mariadb.org/browse/MDEV-33979))
 

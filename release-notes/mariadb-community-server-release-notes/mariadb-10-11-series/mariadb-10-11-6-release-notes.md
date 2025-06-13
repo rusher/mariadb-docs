@@ -85,9 +85,9 @@ Thanks, and enjoy MariaDB!
 * Parallel replication deadlock victim preference code errorneously removed ([MDEV-31655](https://jira.mariadb.org/browse/MDEV-31655))
 * Parallel replication lags because innobase\_kill\_query() may fail to interrupt a lock wait ([MDEV-32096](https://jira.mariadb.org/browse/MDEV-32096))
 
-### [Galera](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/)
+### [Galera](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/3VYeeVGUV4AMqrA3zwy7/)
 
-* [Galera](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/) updated to 26.4.16
+* [Galera](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/3VYeeVGUV4AMqrA3zwy7/) updated to 26.4.16
 * Assertion \`state() == s\_executing || state() == s\_prepared || state() == s\_committing || state() == s\_must\_abort || state() == s\_replaying' failed. ([MDEV-24912](https://jira.mariadb.org/browse/MDEV-24912))
 * Assertion \`state() == s\_executing || state() == s\_preparing || state() == s\_prepared || state() == s\_must\_abort || state() == s\_aborting || state() == s\_cert\_failed || state() == s\_must\_replay' failed ([MDEV-31285](https://jira.mariadb.org/browse/MDEV-31285))
 * wsrep\_sst\_mariabackup not working on FreeBSD ([MDEV-31467](https://jira.mariadb.org/browse/MDEV-31467))
@@ -207,7 +207,7 @@ Thanks, and enjoy MariaDB!
 
 ### Warnings and Notes
 
-* Added the [note\_verbosity](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#note_verbosity) system variable to manage [notes when an index cannot be used](broken-reference).
+* Added the [note\_verbosity](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#note_verbosity) system variable to manage [notes when an index cannot be used](broken-reference/).
 
 ### Security
 

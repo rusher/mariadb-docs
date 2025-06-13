@@ -7,7 +7,7 @@ The most recent release of [MariaDB 10.5](what-is-mariadb-105.md) is:[**MariaDB 
 **Release date:** 7 May 2021
 
 [MariaDB 10.5](what-is-mariadb-105.md) is the current _stable_ series of MariaDB. It is an evolution\
-of [MariaDB 10.4](broken-reference) with several entirely new features not found anywhere else\
+of [MariaDB 10.4](broken-reference/) with several entirely new features not found anywhere else\
 and with backported and reimplemented features from MySQL.
 
 [MariaDB 10.5.10](mariadb-10510-release-notes.md) is a [_**Stable (GA)**_](../../mariadb-release-criteria.md) release.
@@ -51,7 +51,7 @@ Thanks, and enjoy MariaDB!
 
 ### Galera
 
-* [Galera](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/) updated to 26.4.8
+* [Galera](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/3VYeeVGUV4AMqrA3zwy7/) updated to 26.4.8
 * SET PASSWORD command fail with wsrep api ([MDEV-25258](https://jira.mariadb.org/browse/MDEV-25258))
 * Long BF log wait turns on InnoDB Monitor output without telling, never turns it off ([MDEV-25319](https://jira.mariadb.org/browse/MDEV-25319))
 * Assertion \`\`state\_ == s\_exec'`failed in`wsrep::client\_state::start\_transaction\` ([MDEV-22227](https://jira.mariadb.org/browse/MDEV-22227))

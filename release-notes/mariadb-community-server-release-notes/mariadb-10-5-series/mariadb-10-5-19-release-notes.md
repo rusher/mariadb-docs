@@ -5,7 +5,7 @@
 **Release date:** 6 Feb 2023
 
 [MariaDB 10.5](what-is-mariadb-105.md) is a previous _stable_ series of MariaDB, maintained until June 2025. It is an evolution\
-of [MariaDB 10.4](broken-reference) with several entirely new features not found anywhere else\
+of [MariaDB 10.4](broken-reference/) with several entirely new features not found anywhere else\
 and with backported and reimplemented features from MySQL.
 
 [MariaDB 10.5.19](mariadb-10-5-19-release-notes.md) is a [_**Stable (GA)**_](../../mariadb-release-criteria.md) release.
@@ -16,7 +16,7 @@ Thanks, and enjoy MariaDB!
 
 ## Notable Items
 
-* As mentioned in the [10.5.18 release notes](broken-reference), our Yum/DNF/Zypper repositories for Red Hat Enterprise Linux, CentOS, Fedora, openSUSE, and SUSE are changing with this release to being signed with a new GPG key with SHA2 digest algorithms instead of SHA1. See [this blog post](https://mariadb.org/new-gpg-release-key-rpms/) and the [GPG](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/gpg) page for more details.
+* As mentioned in the [10.5.18 release notes](broken-reference/), our Yum/DNF/Zypper repositories for Red Hat Enterprise Linux, CentOS, Fedora, openSUSE, and SUSE are changing with this release to being signed with a new GPG key with SHA2 digest algorithms instead of SHA1. See [this blog post](https://mariadb.org/new-gpg-release-key-rpms/) and the [GPG](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/gpg) page for more details.
 
 ### InnoDB
 
@@ -29,7 +29,7 @@ Thanks, and enjoy MariaDB!
 
 ### Galera
 
-* [Galera](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/) updated to 26.4.14
+* [Galera](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/3VYeeVGUV4AMqrA3zwy7/) updated to 26.4.14
 * Fixes for cluster wide write conflict resolving ([MDEV-29684](https://jira.mariadb.org/browse/MDEV-29684))
 
 ### Replication
