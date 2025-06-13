@@ -1,6 +1,6 @@
 # Table of contents
 
-* [MariaDB Connectors Documentation](README.md)
+* [MariaDB Connectors](README.md)
 * [Quickstart Guides](connectors-quickstart-guides/README.md)
   * [MariaDB Connector/C Guide](connectors-quickstart-guides/mariadb-connector-c-guide.md)
   * [MariaDB Connector/C++ Guide](connectors-quickstart-guides/mariadb-connector-c++-guide.md)
