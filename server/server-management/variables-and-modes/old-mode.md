@@ -60,7 +60,7 @@ From [MariaDB 11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-commu
 
 ### SESSION\_USER\_IS\_USER
 
-From [MariaDB 11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-7-rolling-releases/what-is-mariadb-117), restores the pre-[MariaDB 11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-7-rolling-releases/what-is-mariadb-117) behavior of [SESSION\_USER](../../reference/sql-functions/secondary-functions/information-functions/session_user.md).
+From [MariaDB 11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-11-7-rolling-releases/what-is-mariadb-117), restores the pre-[MariaDB 11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-11-7-rolling-releases/what-is-mariadb-117) behavior of [SESSION\_USER](../../reference/sql-functions/secondary-functions/information-functions/session_user.md).
 
 ### UTF8\_IS\_UTF8MB3
 

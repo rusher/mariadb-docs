@@ -18,9 +18,9 @@ or `YYYYMMDDHHMMSS.uuuuuu` format, depending on whether the function is\
 used in a string or numeric context. The value is expressed in the\
 current [time zone](../../data-types/string-data-types/character-sets/internationalization-and-localization/time-zones.md).
 
-**MariaDB starting with** [**11.7**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-7-rolling-releases/what-is-mariadb-117)
+**MariaDB starting with** [**11.7**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-11-7-rolling-releases/what-is-mariadb-117)
 
-Starting from [MariaDB 11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-7-rolling-releases/what-is-mariadb-117), these functions return SQL standard compliant types:
+Starting from [MariaDB 11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-11-7-rolling-releases/what-is-mariadb-117), these functions return SQL standard compliant types:
 
 * `NOW()` and `CURRENT_TIMESTAMP()` return a `TIMESTAMP` value\
   (analogous to the standard type `TIMESTAMP WITH LOCAL TIME ZONE`)\
@@ -106,6 +106,6 @@ SELECT * FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA='test'
 * [Microseconds in MariaDB](microseconds-in-mariadb.md)
 * [timestamp server system variable](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#timestamp)
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

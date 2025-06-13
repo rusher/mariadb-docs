@@ -55,17 +55,17 @@ Customers can obtain support by submitting a support case.
 
 The following components are deployed during this procedure:
 
-| Component                                                                                        | Function                                                                                                   |
-| ------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------- |
-| [MariaDB Enterprise Server](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/)                     | Modern SQL RDBMS with high availability, pluggable storage engines, hot online backups, and audit logging. |
-| [MariaDB MaxScale 25.01](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/mariadb-maxscale-25-01/) | Database proxy that extends the availability, scalability, and security of MariaDB Enterprise Servers      |
+| Component                                                                                           | Function                                                                                                   |
+| --------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| [MariaDB Enterprise Server](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/SsmexDFPv2xG2OTyO5yV/) | Modern SQL RDBMS with high availability, pluggable storage engines, hot online backups, and audit logging. |
+| [MariaDB MaxScale 25.01](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/mariadb-maxscale-25-01/)    | Database proxy that extends the availability, scalability, and security of MariaDB Enterprise Servers      |
 
 ### MariaDB Enterprise Server Components
 
-| Component                                                             | Description                                                                                                                                                                                                                                                                                                                                 |
-| --------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [Enterprise Cluster](https://app.gitbook.com/s/rBEU9juWLfTDcdwF3Q14/) | MariaDB Enterprise Server leverages the Galera Enterprise 4 wsrep provider plugin • Provides virtually synchronous multi-primary replication for MariaDB Enterprise Server • All nodes can handle both reads and writes • Replicates write-sets to all other nodes in the cluster • Supports data-at-rest encryption of the write-set cache |
-| InnoDB                                                                | • General purpose storage engine • ACID-compliant • Performance • Required for Enterprise Cluster                                                                                                                                                                                                                                           |
+| Component                                                                                    | Description                                                                                                                                                                                                                                                                                                                                 |
+| -------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [Enterprise Cluster](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/rBEU9juWLfTDcdwF3Q14/) | MariaDB Enterprise Server leverages the Galera Enterprise 4 wsrep provider plugin • Provides virtually synchronous multi-primary replication for MariaDB Enterprise Server • All nodes can handle both reads and writes • Replicates write-sets to all other nodes in the cluster • Supports data-at-rest encryption of the write-set cache |
+| InnoDB                                                                                       | • General purpose storage engine • ACID-compliant • Performance • Required for Enterprise Cluster                                                                                                                                                                                                                                           |
 
 ### MariaDB MaxScale Components
 
@@ -217,4 +217,4 @@ Navigation in the procedure "Deploy Galera Cluster Topology":
 Next: Step 1: Install MariaDB Enterprise Server
 
 <sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>\
-\
+\\

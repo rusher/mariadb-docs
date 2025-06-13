@@ -2,7 +2,7 @@
 
 **MariaDB starting with** [**11.7.1**](https://mariadb.com/kb/en/mariadb-1171-release-notes/)
 
-The VECTOR data type was added in [MariaDB 11.7.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-7-rolling-releases/mariadb-11-7-1-release-notes)
+The VECTOR data type was added in [MariaDB 11.7.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-11-7-rolling-releases/mariadb-11-7-1-release-notes)
 
 ## Syntax
 

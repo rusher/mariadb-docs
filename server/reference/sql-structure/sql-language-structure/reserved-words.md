@@ -252,7 +252,7 @@ The definitive list of reserved words for each version can be found by examining
 | VARCHAR                           |                                                                                                                                                                               |
 | VARCHARACTER                      |                                                                                                                                                                               |
 | VARYING                           |                                                                                                                                                                               |
-| VECTOR                            | From [MariaDB 11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-7-rolling-releases/what-is-mariadb-117)                  |
+| VECTOR                            | From [MariaDB 11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-11-7-rolling-releases/what-is-mariadb-117)     |
 | WHEN                              |                                                                                                                                                                               |
 | WHERE                             |                                                                                                                                                                               |
 | WHILE                             |                                                                                                                                                                               |
@@ -281,7 +281,7 @@ Some keywords are exceptions for historical reasons, and are permitted as unquot
 
 ## Oracle Mode
 
-In [Oracle mode, from MariaDB 10.3](broken-reference), there are a number of extra reserved words:
+In [Oracle mode, from MariaDB 10.3](broken-reference/), there are a number of extra reserved words:
 
 | Keyword      | Notes                                                                                                                                                                                                                                                                                                                                              |
 | ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

@@ -1126,7 +1126,7 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 * Scope: Global, Session
 * Dynamic: Yes
 * Data Type: `boolean`
-* Introduced: [MariaDB 10.5.27](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-10-5-27-release-notes), [MariaDB 10.6.20](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/mariadb-10-6-20-release-notes), [MariaDB 10.11.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-11-series/mariadb-10-11-10-release-notes), [MariaDB 11.4.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-4-series/mariadb-11-4-4-release-notes), [MariaDB 11.7.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-7-rolling-releases/mariadb-11-7-1-release-notes)
+* Introduced: [MariaDB 10.5.27](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-10-5-27-release-notes), [MariaDB 10.6.20](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/mariadb-10-6-20-release-notes), [MariaDB 10.11.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-11-series/mariadb-10-11-10-release-notes), [MariaDB 11.4.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-4-series/mariadb-11-4-4-release-notes), [MariaDB 11.7.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-11-7-rolling-releases/mariadb-11-7-1-release-notes)
 
 #### `license`
 
@@ -1270,7 +1270,7 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 
 #### `log_slow_min_examined_row_limit`
 
-* Description: Don't write queries to [slow query log](../../../server-management/server-monitoring-logs/slow-query-log/) that examine fewer rows than the set value. If set to `0`, the default, no row limit is used. `min_examined_row_limit` is an alias. From [MariaDB 11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-7-rolling-releases/what-is-mariadb-117), queries slower than [log\_slow\_always\_query\_time](../../../server-management/server-monitoring-logs/slow-query-log/log_slow_always_query_time-system-variable.md) will always be logged.
+* Description: Don't write queries to [slow query log](../../../server-management/server-monitoring-logs/slow-query-log/) that examine fewer rows than the set value. If set to `0`, the default, no row limit is used. `min_examined_row_limit` is an alias. From [MariaDB 11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-11-7-rolling-releases/what-is-mariadb-117), queries slower than [log\_slow\_always\_query\_time](../../../server-management/server-monitoring-logs/slow-query-log/log_slow_always_query_time-system-variable.md) will always be logged.
 * Commandline: `--log-slow-min-examined-row-limit=#`
 * Scope: Global, Session
 * Dynamic: Yes
@@ -1323,7 +1323,7 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 
 #### `log_slow_rate_limit`
 
-* Description: The [slow query log](../../../server-management/server-monitoring-logs/slow-query-log/) will log every this many queries. The default is `1`, or every query, while setting it to `20` would log every 20 queries, or five percent. Aims to reduce I/O usage and excessively large slow query logs. See also [Slow Query Log Extended Statistics](../query-optimizations/statistics-for-optimizing-queries/slow-query-log-extended-statistics.md). From [MariaDB 11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-7-rolling-releases/what-is-mariadb-117), queries slower than [log\_slow\_always\_query\_time](../../../server-management/server-monitoring-logs/slow-query-log/log_slow_always_query_time-system-variable.md) will always be logged.
+* Description: The [slow query log](../../../server-management/server-monitoring-logs/slow-query-log/) will log every this many queries. The default is `1`, or every query, while setting it to `20` would log every 20 queries, or five percent. Aims to reduce I/O usage and excessively large slow query logs. See also [Slow Query Log Extended Statistics](../query-optimizations/statistics-for-optimizing-queries/slow-query-log-extended-statistics.md). From [MariaDB 11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-11-7-rolling-releases/what-is-mariadb-117), queries slower than [log\_slow\_always\_query\_time](../../../server-management/server-monitoring-logs/slow-query-log/log_slow_always_query_time-system-variable.md) will always be logged.
 * Commandline: `log-slow-rate-limit=#`
 * Scope: Global, Session
 * Dynamic: Yes
@@ -1619,7 +1619,7 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 
 #### `max_sort_length`
 
-* Description: Maximum size in bytes used for sorting data values - anything exceeding this is ignored. The server uses only the first `max_sort_length` bytes of each value and ignores the rest. Increasing this may require [sort\_buffer\_size](server-system-variables.md#sort_buffer_size) to be increased (especially if ER\_OUT\_OF\_SORTMEMORY errors start appearing). From [MariaDB 11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-7-rolling-releases/what-is-mariadb-117), a warning is generated when max\_sort\_length is exceeded.
+* Description: Maximum size in bytes used for sorting data values - anything exceeding this is ignored. The server uses only the first `max_sort_length` bytes of each value and ignores the rest. Increasing this may require [sort\_buffer\_size](server-system-variables.md#sort_buffer_size) to be increased (especially if ER\_OUT\_OF\_SORTMEMORY errors start appearing). From [MariaDB 11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-11-7-rolling-releases/what-is-mariadb-117), a warning is generated when max\_sort\_length is exceeded.
 * Commandline: `--max-sort-length=#`
 * Scope: Global, Session
 * Dynamic: Yes

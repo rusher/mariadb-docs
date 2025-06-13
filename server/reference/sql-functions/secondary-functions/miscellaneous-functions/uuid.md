@@ -8,7 +8,7 @@ UUID()
 
 ## Description
 
-Returns a Universally Unique Identifier (UUID) version 1. Functions to generate v4 and v7 UUIDs are available from [MariaDB 11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-7-rolling-releases/what-is-mariadb-117). See [UUIDv4](uuid_v4.md) and [UUIDv7](uuid_v7.md) respectively.
+Returns a Universally Unique Identifier (UUID) version 1. Functions to generate v4 and v7 UUIDs are available from [MariaDB 11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-11-7-rolling-releases/what-is-mariadb-117). See [UUIDv4](uuid_v4.md) and [UUIDv7](uuid_v7.md) respectively.
 
 A UUID is designed as a number that is globally unique in space and time. Two\
 calls to `UUID()` are expected to generate two different\
@@ -58,6 +58,6 @@ SELECT UUID();
 * [MDEV-11339](https://jira.mariadb.org/browse/MDEV-11339) (Support UUID v4 generation)
 * [MDEV-32637](https://jira.mariadb.org/browse/MDEV-32637) (Implement native UUID7 function)
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

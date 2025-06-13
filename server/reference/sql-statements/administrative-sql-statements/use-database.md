@@ -6,7 +6,7 @@
 USE db_name
 ```
 
-From [MariaDB 11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-7-rolling-releases/what-is-mariadb-117), one can also use
+From [MariaDB 11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-11-7-rolling-releases/what-is-mariadb-117), one can also use
 
 ```
 USE DATABASE db_name;
@@ -37,6 +37,6 @@ a user with no privileges to a database should not be able to know if a database
 * [Identifier Qualifiers](../../sql-structure/sql-language-structure/identifier-qualifiers.md)
 * [USE CATALOG](../../../security/user-account-management/catalogs/use-catalog.md)
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

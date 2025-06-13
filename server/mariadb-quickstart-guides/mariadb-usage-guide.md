@@ -182,7 +182,6 @@ Using MariaDB involves understanding SQL syntax. It doesn't allow for typing mis
 
 ### See Also
 
-* [MariaDB Basics](mariadb-advanced-usage-guide.md)
-
+* [MariaDB Basics](basics-guide.md)
 
 {% @marketo/form formId="4316" %}

@@ -66,9 +66,9 @@ the [binary log format](../../../../server-management/server-monitoring-logs/bin
 
 For valid identifiers to use as server names, see [Identifier Names](../../../sql-structure/sql-language-structure/identifier-names.md).
 
-**MariaDB starting with** [**11.7**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-7-rolling-releases/what-is-mariadb-117)
+**MariaDB starting with** [**11.7**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-11-7-rolling-releases/what-is-mariadb-117)
 
-From [MariaDB 11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-7-rolling-releases/what-is-mariadb-117), the [SHOW CREATE SERVER](../../administrative-sql-statements/show/show-create-server.md) statement can be used to show the CREATE SERVER statement that created a given server definition.
+From [MariaDB 11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-11-7-rolling-releases/what-is-mariadb-117), the [SHOW CREATE SERVER](../../administrative-sql-statements/show/show-create-server.md) statement can be used to show the CREATE SERVER statement that created a given server definition.
 
 #### OR REPLACE
 
@@ -127,6 +127,6 @@ SHOW WARNINGS;
 * [mysql.servers table](../../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-servers-table.md)
 * [SHOW CREATE SERVER](../../administrative-sql-statements/show/show-create-server.md)
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

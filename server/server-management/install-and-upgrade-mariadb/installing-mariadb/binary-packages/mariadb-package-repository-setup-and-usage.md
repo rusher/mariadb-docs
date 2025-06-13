@@ -175,7 +175,7 @@ The distributions currently supported by the script include:
 * Ubuntu 20.04 LTS (Focal), 22.04 LTS (Jammy), and 24.04 LTS (Noble)
 * SUSE Linux Enterprise Server (SLES) 12 and 15
 
-To install MariaDB on distributions not supported by the MariaDB Package Repository setup script, please consider using MariaDB Foundation's [MariaDB Repository Configuration Tool](https://mariadb.org/download/?t=repo-config). Some Linux distributions also include MariaDB [in their own repositories](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/readme-1).
+To install MariaDB on distributions not supported by the MariaDB Package Repository setup script, please consider using MariaDB Foundation's [MariaDB Repository Configuration Tool](https://mariadb.org/download/?t=repo-config). Some Linux distributions also include MariaDB [in their own repositories](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-including-mariadb).
 
 ## Options
 

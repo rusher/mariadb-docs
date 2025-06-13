@@ -15,7 +15,7 @@ Instructions how to install the packages can be found[here](../../../server-mana
 
 ## Distributions Which Include MariaDB
 
-* Most distributions already include MariaDB. See [Distributions Which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/readme-1).
+* Most distributions already include MariaDB. See [Distributions Which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-including-mariadb).
 
 ## Pre-Release Binaries
 

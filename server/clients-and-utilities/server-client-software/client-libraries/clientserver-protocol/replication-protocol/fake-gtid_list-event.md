@@ -17,7 +17,7 @@ This event is sent by master server to the registering slave and it's sent only 
 
 The content is the same as the "real" [GTID\_LIST](gtid_list_event.md).
 
-* ### of GTIDs
+* #### of GTIDs
 * domain\_id
 * server\_id
 * sequence

@@ -99,9 +99,9 @@ Create Table: CREATE TABLE `t` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 WITH SYSTEM VERSIONING
 ```
 
-**MariaDB starting with** [**11.7**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-7-rolling-releases/what-is-mariadb-117)
+**MariaDB starting with** [**11.7**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-11-7-rolling-releases/what-is-mariadb-117)
 
-From [MariaDB 11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-7-rolling-releases/what-is-mariadb-117), it is possible to convert a versioned table from implicit to explicit row\_start/row\_end columns. Note that in order to do any ALTER on a system versioned table, [system\_versioning\_alter\_history](system-versioned-tables.md#system_versioning_alter_history) must be set to `KEEP`.
+From [MariaDB 11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-11-7-rolling-releases/what-is-mariadb-117), it is possible to convert a versioned table from implicit to explicit row\_start/row\_end columns. Note that in order to do any ALTER on a system versioned table, [system\_versioning\_alter\_history](system-versioned-tables.md#system_versioning_alter_history) must be set to `KEEP`.
 
 ```
 CREATE OR REPLACE TABLE t1 (x INT) WITH SYSTEM VERSIONING;
@@ -112,7 +112,7 @@ ALTER TABLE t1 ADD COLUMN rs TIMESTAMP(6) AS ROW START,
   ADD COLUMN re TIMESTAMP(6) AS ROW END, ADD PERIOD FOR SYSTEM_TIME (rs,re)
 ```
 
-Prior to [MariaDB 11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-7-rolling-releases/what-is-mariadb-117), this would result in a duplicate row error:
+Prior to [MariaDB 11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-11-7-rolling-releases/what-is-mariadb-117), this would result in a duplicate row error:
 
 ```
 CREATE OR REPLACE TABLE t1 (x INT) WITH SYSTEM VERSIONING;

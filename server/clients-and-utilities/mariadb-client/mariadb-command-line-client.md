@@ -158,7 +158,7 @@ Delimiter to be used. The default is the semicolon character (“;”).
 
 **`--enable-cleartext-plugin`**
 
-Obsolete option. Exists only for MySQL compatibility. From [MariaDB 10.3.36](broken-reference).
+Obsolete option. Exists only for MySQL compatibility. From [MariaDB 10.3.36](broken-reference/).
 
 **`-e, --execute=name`**
 
@@ -246,7 +246,7 @@ Print the program argument list and exit. Must be given as the first option.
 
 **`--progress-reports`**
 
-Get [progress reports](broken-reference) for long running commands (such as [ALTER TABLE](../../reference/sql-statements/data-definition/alter/alter-table.md)). (Defaults to on; use `--skip-progress-reports` to disable.)
+Get [progress reports](broken-reference/) for long running commands (such as [ALTER TABLE](../../reference/sql-statements/data-definition/alter/alter-table.md)). (Defaults to on; use `--skip-progress-reports` to disable.)
 
 **`--prompt=name`**
 
@@ -262,7 +262,7 @@ Don't cache result, print it row by row. This may slow down the server if the ou
 
 **`--quick-max-column-width=N`**
 
-Maximal field length limit in case of --quick (since [MariaDB 10.5.27](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-10-5-27-release-notes), [MariaDB 10.6.20](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/mariadb-10-6-20-release-notes), [MariaDB 10.11.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-11-series/mariadb-10-11-10-release-notes), [MariaDB 11.4.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-4-series/mariadb-11-4-4-release-notes), [MariaDB 11.6.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-6-rolling-releases/mariadb-11-6-2-release-notes) and [MariaDB 11.7.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-7-rolling-releases/mariadb-11-7-1-release-notes))
+Maximal field length limit in case of --quick (since [MariaDB 10.5.27](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-10-5-27-release-notes), [MariaDB 10.6.20](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/mariadb-10-6-20-release-notes), [MariaDB 10.11.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-11-series/mariadb-10-11-10-release-notes), [MariaDB 11.4.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-4-series/mariadb-11-4-4-release-notes), [MariaDB 11.6.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-6-rolling-releases/mariadb-11-6-2-release-notes) and [MariaDB 11.7.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-11-7-rolling-releases/mariadb-11-7-1-release-notes))
 
 **`-r, --raw`**
 
@@ -330,7 +330,7 @@ Don't write line number for errors. See `--line-numbers`.
 
 **`--skip-progress-reports`**
 
-Disables getting [progress reports](broken-reference) for long running commands. See `--progress-reports`.
+Disables getting [progress reports](broken-reference/) for long running commands. See `--progress-reports`.
 
 **`--skip-reconnect`**
 
