@@ -8,7 +8,7 @@ The most recent release of [MariaDB 11.8](mariadb-community-server-release-notes
 
 ### MariaDB Server Rolling Release
 
-The most recent release of [MariaDB 11.7](mariadb-community-server-release-notes/old-releases/mariadb-11-7-rolling-releases/what-is-mariadb-117.md) is:[**MariaDB 11.7.2**](mariadb-community-server-release-notes/old-releases/mariadb-11-7-rolling-releases/mariadb-11-7-2-release-notes.md) [Download Now](https://mariadb.com/downloads)[_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/11.7.2)
+The most recent release of [MariaDB 11.7](mariadb-community-server-release-notes/mariadb-11-7-rolling-releases/what-is-mariadb-117.md) is:[**MariaDB 11.7.2**](mariadb-community-server-release-notes/mariadb-11-7-rolling-releases/mariadb-11-7-2-release-notes.md) [Download Now](https://mariadb.com/downloads)[_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/11.7.2)
 
 ### MariaDB Server Long-Term Release
 

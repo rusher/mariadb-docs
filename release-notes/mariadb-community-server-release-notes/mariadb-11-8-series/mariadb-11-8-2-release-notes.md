@@ -3,9 +3,9 @@
 **Note:** This page describes features in the source repository for [**MariaDB 11.8**](what-is-mariadb-118.md). There are currently no official packages or binaries available for download which contain the features. If you want to try out any of the new features described here you will need to [get](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/server-client-software/download/getting-the-mariadb-source-code) and [compile](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/compiling-mariadb-from-source) the\
 code yourself.
 
-[Download](https://mariadb.com/downloads)[Release Notes](mariadb-11-8-2-release-notes.md)[Changelog](https://mariadb.com/kb/en/mariadb-11-8-2-changelog)[Overview of 11.8](../old-releases/mariadb-11-7-rolling-releases/what-is-mariadb-117.md)[_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/11.8.2/)**Release date:** ?
+[Download](https://mariadb.com/downloads)[Release Notes](mariadb-11-8-2-release-notes.md)[Changelog](https://mariadb.com/kb/en/mariadb-11-8-2-changelog)[Overview of 11.8](../mariadb-11-7-rolling-releases/what-is-mariadb-117.md)[_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/11.8.2/)**Release date:** ?
 
-[MariaDB 11.8.2](mariadb-11-8-2-release-notes.md) is a [_**Stable (GA)**_](../../mariadb-release-criteria.md) release. It is an evolution of [MariaDB 11.7](../old-releases/mariadb-11-7-rolling-releases/what-is-mariadb-117.md) with several entirely new features.
+[MariaDB 11.8.2](mariadb-11-8-2-release-notes.md) is a [_**Stable (GA)**_](../../mariadb-release-criteria.md) release. It is an evolution of [MariaDB 11.7](../mariadb-11-7-rolling-releases/what-is-mariadb-117.md) with several entirely new features.
 
 [MariaDB 11.8](what-is-mariadb-118.md) is a [long-term release](https://mariadb.org/11-8-is-lts/).
 

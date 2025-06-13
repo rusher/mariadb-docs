@@ -8,7 +8,7 @@ The most recent release of [MariaDB 11.8](what-is-mariadb-118.md) is: [**MariaDB
 
 **Do not use&#x20;**_**alpha**_**&#x20;releases in production!**
 
-[MariaDB 11.8](what-is-mariadb-118.md) is a long-term development series of MariaDB. It is an evolution of [MariaDB 11.7](../old-releases/mariadb-11-7-rolling-releases/what-is-mariadb-117.md) with several entirely new features.
+[MariaDB 11.8](what-is-mariadb-118.md) is a long-term development series of MariaDB. It is an evolution of [MariaDB 11.7](../mariadb-11-7-rolling-releases/what-is-mariadb-117.md) with several entirely new features.
 
 [MariaDB 11.8.0](mariadb-11-8-0-release-notes.md) is a single preview release. Features are to be considered previews, and none are guaranteed to make it into [MariaDB 11.8](what-is-mariadb-118.md).
 

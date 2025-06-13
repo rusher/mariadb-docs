@@ -8,7 +8,7 @@
 
 [MariaDB 11.6.2](mariadb-11-6-2-release-notes.md) is a [_**Stable (GA)**_](../../../mariadb-release-criteria.md) release. It is an evolution of [MariaDB 11.5](../release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115.md) with several entirely new features.
 
-[MariaDB 11.6](what-is-mariadb-116.md) is a [rolling release](../../../mariadb-release-model.md). One is expected to upgrade to [MariaDB 11.7.2](../mariadb-11-7-rolling-releases/mariadb-11-7-2-release-notes.md), there will be no 11.6.3.
+[MariaDB 11.6](what-is-mariadb-116.md) is a [rolling release](../../../mariadb-release-model.md). One is expected to upgrade to [MariaDB 11.7.2](../../mariadb-11-7-rolling-releases/mariadb-11-7-2-release-notes.md), there will be no 11.6.3.
 
 **For an overview of** [**MariaDB 11.6**](what-is-mariadb-116.md) **see the**[**What is MariaDB 11.6?**](what-is-mariadb-116.md) **page.**
 
