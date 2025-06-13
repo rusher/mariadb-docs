@@ -31,13 +31,9 @@ The most recent [_**Stable**_](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/ma
 | 4 Dec 2023  | MariaDB Connector/ODBC 3.1.20 | Stable (GA) | [Release Notes](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/odbc/mariadb-connector-odbc-3-1-release-notes/mariadb-connector-odbc-3-1-20-release-notes) | [Changelog](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/odbc/changelogs/mariadb-connector-odbc-31-changelogs/mariadb-connector-odbc-3-1-20-changelog) |
 | 7 Jul 2023  | MariaDB Connector/ODBC 3.1.19 | Stable (GA) | [Release Notes](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/odbc/mariadb-connector-odbc-3-1-release-notes/mariadb-connector-odbc-3-1-19-release-notes) | [Changelog](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/odbc/changelogs/mariadb-connector-odbc-31-changelogs/mariadb-connector-odbc-3-1-19-changelog) |
 
-[see all releases](../mariadb-connector-odbc/list-of-mariadb-connector-odbc-releases.md)
+[see all releases](list-of-mariadb-connector-odbc-releases.md)
 
 ## Installing MariaDB Connector/ODBC
-
-MariaDB Connector/ODBC packages can be downloaded by selecting your desired version from the following page:
-
-*
 
 MariaDB Connector/ODBC packages can also be downloaded by selecting **ODBC connector** as the **Product** on the following page:
 
@@ -121,7 +117,7 @@ MariaDB Connector/ODBC supports the built-in [iODBC](https://www.iodbc.org) Driv
 
 ### Installing MariaDB Connector/ODBC from Source
 
-See [Building MariaDB Connector/ODBC from Source](../mariadb-connector-odbc/building-mariadb-connectorodbc-from-source.md) for information on how to build MariaDB Connector/ODBC from source.
+See [Building MariaDB Connector/ODBC from Source](building-mariadb-connectorodbc-from-source.md) for information on how to build MariaDB Connector/ODBC from source.
 
 ## Installing UnixODBC on Linux
 
@@ -159,7 +155,7 @@ If you can't find the UnixODBC packages with your Linux distribution's package m
 
 ## Creating a Data Source with MariaDB Connector/ODBC
 
-See [Creating a Data Source with MariaDB Connector/ODBC](../mariadb-connector-odbc/creating-a-data-source-with-mariadb-connectorodbc.md) for information on how to create a data source.
+See [Creating a Data Source with MariaDB Connector/ODBC](creating-a-data-source-with-mariadb-connectorodbc.md) for information on how to create a data source.
 
 ## Installing Client Authentication Plugins
 
@@ -197,7 +193,7 @@ When you install the client authentication plugins, ensure that they are for the
 ### DSN-Related Parameters
 
 * `DSN`: Name of the DSN
-* `Driver`: The name of the MariaDB ODBC Driver. On Windows, this must be `{MariaDB ODBC 3.1 Driver}` for 3.1 drivers, or for versions from other release series, you must use the corresponding version number for that release series. On Linux, either this must be a path to the driver's shared library or it must match the `Driver` name that you provided when you [configured the Driver with UnixODBC](../mariadb-connector-odbc/creating-a-data-source-with-mariadb-connectorodbc.md#configuring-mariadb-connectorodbc-as-a-unixodbc-driver-on-linux).
+* `Driver`: The name of the MariaDB ODBC Driver. On Windows, this must be `{MariaDB ODBC 3.1 Driver}` for 3.1 drivers, or for versions from other release series, you must use the corresponding version number for that release series. On Linux, either this must be a path to the driver's shared library or it must match the `Driver` name that you provided when you [configured the Driver with UnixODBC](creating-a-data-source-with-mariadb-connectorodbc.md#configuring-mariadb-connectorodbc-as-a-unixodbc-driver-on-linux).
 * `Description`: Description of the data source.
 * `SaveFile`: Save a string representation of the DSN to this file.
 * `FileDSN`: The file where the string representation of the DSN can be read.
@@ -535,6 +531,5 @@ The source code is available at the [mariadb-connector-odbc repository](https://
 GNU Lesser General Public License as published by the Free Software Foundation; either version 2.1 of the License, or (at your option) any later version.
 
 For licensing questions, see the [Licensing FAQ](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/faq/licensing-questions/licensing-faq).
-
 
 {% @marketo/form formId="4316" %}
