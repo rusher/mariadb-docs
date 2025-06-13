@@ -16,7 +16,7 @@ For additional information, see "[MariaDB Connector/C++ Release Notes](../mariad
 
 To install MariaDB Connector/C++ on Linux:
 
-1. [Install MariaDB Connector/C](../mariadb-connector-c/install-mariadb-connectorc/).
+1. [Install MariaDB Connector/C](../mariadb-connector-c/install-mariadb-connectorc.md).
 2. Go to the [MariaDB Connector C++ download page](https://mariadb.com/downloads/connectors/connectors-data-access/cpp-connector)
 3. Ensure the "Product" dropdown reads "C++ connector."
 4. In the "Version" dropdown, select the version you want to download.

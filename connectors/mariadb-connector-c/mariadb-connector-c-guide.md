@@ -81,7 +81,7 @@ sudo zypper install MariaDB-devel
 
 ### Installing MariaDB Connector/C from Source
 
-See [Building Connector/C From Source](install-mariadb-connectorc/building-connectorc-from-source/) for information on how to build MariaDB Connector/C from source.
+See [Building Connector/C From Source](building-connectorc-from-source/) for information on how to build MariaDB Connector/C from source.
 
 ## API - Function Reference
 
@@ -118,6 +118,5 @@ The source code is available at the [mariadb-connector-c repository](https://git
 GNU Lesser General Public License as published by the Free Software Foundation; either version 2.1 of the License, or (at your option) any later version.
 
 For licensing questions, see the [Licensing FAQ](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/faq/licensing-questions/licensing-faq).
-
 
 {% @marketo/form formId="4316" %}
