@@ -4,14 +4,14 @@
 
 Enable:
 
-```
-set optimizer_switch='extended_keys=on';
+```sql
+SET optimizer_switch='extended_keys=on';
 ```
 
 Disable:
 
-```
-set optimizer_switch='extended_keys=off';
+```sql
+SET optimizer_switch='extended_keys=off';
 ```
 
 ## Description
@@ -28,13 +28,13 @@ Extended keys can be used with:
 
 ## Examples
 
-An example of how extended keys could be employed for a query built over a[DBT-3/TPC-H database](https://www.tpc.org/tpch/specs.asp) with one added index\
+An example of how extended keys could be employed for a query built over a [DBT-3/TPC-H database](https://www.tpc.org/tpch/specs.asp) with one added index\
 defined on `p_retailprice`:
 
-```
-select o_orderkey
-from part, lineitem, orders
-where p_retailprice > 2095 and o_orderdate='1992-07-01'
+```sql
+SELECT o_orderkey
+FROM  part, lineitem, orders
+WHERE p_retailprice > 2095 and o_orderdate='1992-07-01'
       and o_orderkey=l_orderkey and p_partkey=l_partkey;
 ```
 
@@ -60,7 +60,7 @@ better performance.
 
 Here is the explain output for the above query:
 
-```
+```sql
 MariaDB [dbt3sf10]> explain
    -> select o_orderkey
    ->   from part, lineitem, orders

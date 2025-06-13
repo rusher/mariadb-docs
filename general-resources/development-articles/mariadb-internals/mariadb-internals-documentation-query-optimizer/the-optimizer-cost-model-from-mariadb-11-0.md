@@ -42,7 +42,7 @@ For example:
 
 The "default" cost for an engine can be found with:
 
-```
+```sql
 select * from information_schema.optimizer_costs where engine="default"\G
 *************************** 1. row ***************************
                          ENGINE: default
@@ -65,7 +65,7 @@ The above costs are the default (base) for all engines and should be reasonable 
 An engine can tune some or all of the above cost in the storage engine interface.\
 Here follows the cost for the [InnoDB storage engine](../../../community/storage-engines/innodb/).
 
-```
+```sql
 select * from information_schema.optimizer_costs where engine="innodb"\G
 *************************** 1. row ***************************
                          ENGINE: InnoDB
@@ -93,7 +93,7 @@ why some of the cost numbers for these engines are 0.
 
 There are also some SQL level costs that are independent of the storage engine:
 
-```
+```sql
 select * from information_schema.global_variables where variable_name like "%where%cost%" or variable_name like "%scan%cost%";
 +---------------------------+----------------+
 | VARIABLE_NAME             | VARIABLE_VALUE |
@@ -190,7 +190,7 @@ OPTIMIZER_DISK_READ_COST=10.240000
 
 ### From SQL
 
-```
+```sql
 # Tell optimizer to find a plan with as few accepted rows as possible
 SET SESSION OPTIMIZER_WHERE_COST=1.0;
 # Inform the optimizer that InnoDB buffer pool has a 80% hit rate

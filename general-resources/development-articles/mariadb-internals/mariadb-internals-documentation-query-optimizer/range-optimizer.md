@@ -12,7 +12,7 @@ indexes to compute a union (formed from multiple condition disjunctions) and/or 
 
 Consider a table
 
-```
+```sql
 create table t1 (
   key1 int,
   key2 varchar(100),
@@ -24,7 +24,7 @@ create table t1 (
 
 and query
 
-```
+```sql
 -- Turn on optimizer trace so we can see the ranges:
 set optimizer_trace=1; 
 explain select * from t1 where key1<10 and key2='foo';
@@ -33,7 +33,7 @@ select * from information_schema.optimizer_trace\G
 
 This shows the ranges that the optimizer was able to infer:
 
-```
+```json
 "range_scan_alternatives": [
                       {
                         "index": "key1",
@@ -52,14 +52,14 @@ This shows the ranges that the optimizer was able to infer:
 
 Range optimizer produces a list of ranges without overlaps. Consider this WHERE clause where conditions do have overlaps:
 
-```
+```sql
 select * from t1 where (key1 between 10 and 20  and key1 > 14)  or key1 in (17, 22, 33);
 select * from information_schema.optimizer_trace\G
 ```
 
 We get
 
-```
+```json
 ...
                   "analyzing_range_alternatives": {
                     "range_scan_alternatives": [
@@ -76,7 +76,7 @@ We get
 
 Let's consider an index with multiple key parts. (note: due to [Extended Keys](extended-keys.md) optimization, an index may have more key parts than you've explicitly defined)
 
-```
+```sql
 create table t2 (
   keypart1 int,
   keypart2 varchar(100),
@@ -89,14 +89,14 @@ Range optimizer will generate a _finite_ set of ranges over lexicographical orde
 
 Example:
 
-```
+```sql
 select * from t2 where keypart1 in (1,2,3) and keypart2 between 'bar' and 'foo';
 select * from information_schema.optimizer_trace\G
 ```
 
 gives
 
-```
+```json
 "range_scan_alternatives": [
                       {
                         "index": "idx",
@@ -109,14 +109,14 @@ gives
 
 Compare with a similar query:
 
-```
+```sql
 select * from t2 where keypart1 between 1 and 3 and keypart2 between 'bar' and 'foo';
 select * from information_schema.optimizer_trace\G
 ```
 
 this will generate just one bigger range:
 
-```
+```json
 "range_scan_alternatives": [
                       {
                         "index": "idx",
@@ -133,13 +133,13 @@ The governing rule is the same: the conditions together must produce an interval
 
 Some examples:
 
-```
+```sql
 where keypart1<= 10 and keypart2<'foo'
 ```
 
 can use the second keypart:
 
-```
+```json
 "ranges": ["(NULL) < (keypart1,keypart2) < (10,foo)"],
 ```
 
@@ -147,7 +147,7 @@ but the interval will still include rows like `(keypart1, keypart2) = (8, 'zzzz'
 
 Non-inclusive bound on keypart1 prevents any use of keypart2. For
 
-```
+```sql
 where keypart1< 10 keypart2<'foo';
 ```
 
@@ -159,7 +159,7 @@ we get
 
 Non-agreeing comparison (less than and greater than) do not produce a multi-part range:
 
-```
+```sql
 where keypart1<= 10 and keypart2>'foo';
 ```
 
@@ -171,7 +171,7 @@ gives
 
 A "Hole" in keyparts means higher keypart cannot be used.
 
-```
+```sql
 where keypart1= 10 and keypart3<='foo';
 ```
 
@@ -194,7 +194,7 @@ select * from t2 where keypart1 in (1,2,3,4) and keypart2 in ('a','b', 'c')
 
 two IN-lists produce 3\*4 =12 ranges:
 
-```
+```json
 "range_scan_alternatives": [
                       {
                         "index": "idx",

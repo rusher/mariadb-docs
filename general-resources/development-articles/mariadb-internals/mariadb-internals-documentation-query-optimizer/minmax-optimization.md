@@ -13,7 +13,7 @@ MariaDB and MySQL can optimize the [MIN()](../../../community/sql-functions/aggr
 Here are some examples to clarify this.\
 In this case we assume there is an index on columns `(a,b,c)`
 
-```
+```sql
 SELECT MIN(a),MAX(a) from t1
 SELECT MIN(b) FROM t1 WHERE a=const
 SELECT MIN(b),MAX(b) FROM t1 WHERE a=const
@@ -26,15 +26,15 @@ SELECT MAX(b) FROM t1 WHERE a=const AND b BETWEEN const AND const
 
 * Instead of `a=const` the condition `a IS NULL` can be used.
 
-The above optimization also works for [subqueries](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/selecting-data/joins-subqueries/subqueries/):
+The above optimization also works for [subqueries](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/selecting-data/joins-subqueries/subqueries):
 
-```
+```sql
 SELECT x from t2 where y= (SELECT MIN(b) FROM t1 WHERE a=const)
 ```
 
 Cross joins, where there is no join condition for a table, can also be optimized to a few key lookups:
 
-```
+```sql
 select min(t1.key_part_1), max(t2.key_part_1) from t1, t2
 ```
 
@@ -54,7 +54,7 @@ In this case the optimizer will do only one extra row fetch to calculate the val
 
 The following examples assume that the table `t1` has an index on `(a,b,c)`.
 
-```
+```sql
 SELECT a, b, MIN(c),MAX(c) FROM t1 GROUP BY a,b
 ```
 

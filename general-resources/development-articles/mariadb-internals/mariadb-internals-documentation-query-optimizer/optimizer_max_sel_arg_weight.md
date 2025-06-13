@@ -14,8 +14,8 @@ SEL\_ARG objects that can be created. This is a different limitation)
 
 Let's reuse the example from the [Range Optimizer](range-optimizer.md) page.
 
-```
-create table t2 (
+```sql
+CREATE TABLE t2 (
   keypart1 int,
   keypart2 varchar(100),
   keypart3 int,
@@ -23,7 +23,7 @@ create table t2 (
 );
 ```
 
-```
+```sql
 select * from t2 
 where
   keypart1 in (1,2,3,4,5,6,7,8,9,10) and keypart2 in ('a','b', 'c') and keypart3 in (1,2,3,4);
@@ -31,7 +31,7 @@ where
 
 Range optimizer will produce 10 \* 3 \* 4 = 120 ranges.
 
-```
+```sql
 select * from information_schema.optimizer_trace\G
 ```
 
@@ -94,7 +94,7 @@ SEL\_ARG graphs are constructed for all parts of WHERE clause and are AND/ORed a
 
 Continuing with our example:
 
-```
+```sql
 -- This is very low, don't use in production:
 set @@optimizer_max_sel_arg_weight=50;
 select * from t2 where keypart1 in (1,2,3,4,5,6,7,8,9,10) and keypart2 in ('a','b', 'c') and keypart3 in (1,2,3,4);
@@ -103,7 +103,7 @@ select * from information_schema.optimizer_trace\G
 
 shows
 
-```
+```json
 "range_scan_alternatives": [
                       {
                         "index": "idx",

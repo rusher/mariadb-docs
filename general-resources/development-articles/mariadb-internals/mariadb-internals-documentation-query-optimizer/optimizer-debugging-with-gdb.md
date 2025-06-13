@@ -14,7 +14,7 @@ Some useful things for debugging optimizer code.
 The optimizer trace is collected as plain text.\
 One can print the contents of the trace collected so far as follows:
 
-```
+```bash
 printf "%s\n", thd->opt_trace->current_trace->current_json->output.str.Ptr
 ```
 
@@ -28,7 +28,7 @@ When in or around that function, the following can be useful:
 
 A macro to print the join prefix already constructed:
 
-```
+```bash
 define bap_print_prefix
   set $i=0
   while ($i < idx)
@@ -58,7 +58,7 @@ Also consider `set global innodb_max_purge_lag_wait=0;`\
 
 Run this to get your patch auto-formatted according to our coding style in `.clang-format` :
 
-```
+```bash
 git diff -U0 --no-color --relative HEAD^ | clang-format-diff -p1 -i
 ```
 
