@@ -74,7 +74,7 @@
     * [google-summer-of-code-2014](community/contributing-participating/google-summers-of-code/google-summer-of-code-2014.md)
     * [google-summer-of-code-2015](community/contributing-participating/google-summers-of-code/google-summer-of-code-2015.md)
     * [google-summer-of-code-2016](community/contributing-participating/google-summers-of-code/google-summer-of-code-2016.md)
-    * [google-summer-of-code-2017](community/contributing-participating/google-summers-of-code/google-summer-of-code-2017.md)
+    * [Google Summer of Code 2017](community/contributing-participating/google-summers-of-code/google-summer-of-code-2017.md)
     * [Google Summer of Code 2018](community/contributing-participating/google-summers-of-code/google-summer-of-code-2018.md)
     * [Google Summer of Code 2019](community/contributing-participating/google-summers-of-code/google-summer-of-code-2019.md)
     * [Google Summer of Code 2020](community/contributing-participating/google-summers-of-code/google-summer-of-code-2020.md)
