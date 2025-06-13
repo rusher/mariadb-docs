@@ -10,6 +10,6 @@ From [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-commu
 
 See [mariadb-hotcopy](../backup-restore-and-import-clients/mariadb-hotcopy.md) for details.
 
-GPLv2
+<sub>_This page is licensed: GPLv2_</sub>
 
 {% @marketo/form formId="4316" %}

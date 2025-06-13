@@ -1747,6 +1747,6 @@ You can verify the default values for an option by doing:
 mariadbd --no-defaults --help --verbose
 ```
 
-GPLv2
+<sub>_This page is licensed: GPLv2_</sub>
 
 {% @marketo/form formId="4316" %}

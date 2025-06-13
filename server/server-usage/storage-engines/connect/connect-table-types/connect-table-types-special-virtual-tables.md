@@ -308,6 +308,6 @@ It will return, for example:
 | OLIVIER | 00-A0-D1-A4-61-36 | 0.0.0.0      | 0.0.0.0       | 1970-01-01 00:00:00 |
 | OLIVIER | 00-1D-E0-9B-90-0B | 192.168.0.10 | 192.168.0.254 | 2011-09-18 10:28:5  |
 
-GPLv2
+<sub>_This page is licensed: GPLv2_</sub>
 
 {% @marketo/form formId="4316" %}

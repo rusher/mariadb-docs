@@ -106,6 +106,6 @@ ERROR 1126 (HY000): Can't open shared library '/home/ian/MariaDB_Downloads/10.1.
 
 * [PLUGIN OVERVIEW](../../../reference/plugins/plugin-overview.md)
 
-GPLv2
+<sub>_This page is licensed: GPLv2_</sub>
 
 {% @marketo/form formId="4316" %}

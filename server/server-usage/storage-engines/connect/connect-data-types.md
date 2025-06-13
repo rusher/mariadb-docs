@@ -363,6 +363,6 @@ Note: The [connect\_type\_conv](connect-system-variables.md#connect_type_conv) S
    performed within [SELECT](../../../reference/sql-statements/data-manipulation/selecting-data/select.md) queries; output is performed in [UPDATE](../../../reference/sql-statements/data-manipulation/changing-deleting-data/update.md) or [INSERT](../../../reference/sql-statements/data-manipulation/inserting-loading-data/insert.md)\
    queries.
 
-GPLv2
+<sub>_This page is licensed: GPLv2_</sub>
 
 {% @marketo/form formId="4316" %}

@@ -11,6 +11,6 @@ This last statement creates the [MyISAM](../../myisam-storage-engine/) table and
 All these can be combined or transformed by further SQL operations. This makes working with\
 CONNECT much more flexible than just using the [LOAD](../../../../reference/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/) statement.
 
-GPLv2
+<sub>_This page is licensed: GPLv2_</sub>
 
 {% @marketo/form formId="4316" %}

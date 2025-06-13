@@ -152,6 +152,6 @@ Additional options available for this table type:
 
 These options can be specified in the `OPTION_LIST`.
 
-GPLv2
+<sub>_This page is licensed: GPLv2_</sub>
 
 {% @marketo/form formId="4316" %}

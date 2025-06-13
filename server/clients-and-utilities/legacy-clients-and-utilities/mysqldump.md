@@ -10,6 +10,6 @@ From [MariaDB 11.0.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-com
 
 See [mariadb-dump](../backup-restore-and-import-clients/mariadb-dump.md) for details.
 
-GPLv2
+<sub>_This page is licensed: GPLv2_</sub>
 
 {% @marketo/form formId="4316" %}

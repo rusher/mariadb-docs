@@ -53,6 +53,6 @@ CONNECT can execute these commands using two different algorithms:
 
 The choice between these algorithms depends on the session variable [connect\_use\_tempfile](../connect-system-variables.md#connect_use_tempfile).
 
-GPLv2
+<sub>_This page is licensed: GPLv2_</sub>
 
 {% @marketo/form formId="4316" %}

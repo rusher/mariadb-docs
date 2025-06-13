@@ -111,6 +111,6 @@ The following NoSQL types are supported:
 * [JSON Table Type](connect-json-table-type.md)
 * [INI Table Type](connect-ini-table-type.md)
 
-GPLv2
+<sub>_This page is licensed: GPLv2_</sub>
 
 {% @marketo/form formId="4316" %}

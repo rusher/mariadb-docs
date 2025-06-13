@@ -334,6 +334,6 @@ executed; the returned value would be limited even on a query such as:
 select count(*) from allcols;
 ```
 
-GPLv2
+<sub>_This page is licensed: GPLv2_</sub>
 
 {% @marketo/form formId="4316" %}

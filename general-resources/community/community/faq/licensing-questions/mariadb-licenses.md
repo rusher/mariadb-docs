@@ -963,6 +963,6 @@ Package Name                  Qualifying License and Version
 Apache Portable Runtime (APR) Apache Software License 2.0
 ```
 
-GPLv2
+<sub>_This page is licensed: GPLv2_</sub>
 
 {% @marketo/form formId="4316" %}

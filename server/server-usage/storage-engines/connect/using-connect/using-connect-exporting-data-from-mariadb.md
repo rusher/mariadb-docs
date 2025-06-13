@@ -28,6 +28,6 @@ Here the column definition is not given and will come from the Select statement 
 
 **Note 2:** The source “plugins” table column “description” is a long text column, data type not supported for CONNECT tables. It has been silently internally replaced by varchar(256).
 
-GPLv2
+<sub>_This page is licensed: GPLv2_</sub>
 
 {% @marketo/form formId="4316" %}

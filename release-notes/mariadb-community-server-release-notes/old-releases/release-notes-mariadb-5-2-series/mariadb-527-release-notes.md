@@ -38,7 +38,7 @@ without summary functions).
 
 ## HeidiSQL GUI client now included in Windows MSI package
 
-Beginning with [MariaDB 5.2.7](mariadb-527-release-notes.md), the GPLv2 licensed[HeidiSQL](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/graphical-and-enhanced-clients/heidisql) graphical client is now included in the\
+Beginning with [MariaDB 5.2.7](mariadb-527-release-notes.md), the GPLv2 licensed [HeidiSQL](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/graphical-and-enhanced-clients/heidisql) graphical client is now included in the\
 Windows MSI installer package. A big thanks to Ansgar Becker for helping make\
 this happen.
 

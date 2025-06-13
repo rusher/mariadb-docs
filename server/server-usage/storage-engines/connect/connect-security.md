@@ -6,6 +6,6 @@ knowing the files existing on it and must be protected anyway. On the other\
 hand, using it on the local client machine is not an issue because it is always\
 possible to create locally a user with the `FILE` privilege.
 
-GPLv2
+<sub>_This page is licensed: GPLv2_</sub>
 
 {% @marketo/form formId="4316" %}

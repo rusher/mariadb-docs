@@ -124,6 +124,6 @@ MariaDB and a federated server named _server\_one_.
 
 1. [↑](connect-using-the-tbl-and-mysql-table-types-together.md#_ref-0) To generate the columns from the `SRCDEF` query, CONNECT must execute it. This will make sure it is ok. However, if the remote server is not connected yet, or the remote table not existing yet, you can alternatively specify the columns in the create table statement.
 
-GPLv2
+<sub>_This page is licensed: GPLv2_</sub>
 
 {% @marketo/form formId="4316" %}

@@ -56,6 +56,6 @@ Existing special columns are listed in the following table:
 **Note:** CONNECT does not currently support auto incremented columns. However,\
 a `ROWID` special column will do the job of a column auto incremented by 1.
 
-GPLv2
+<sub>_This page is licensed: GPLv2_</sub>
 
 {% @marketo/form formId="4316" %}

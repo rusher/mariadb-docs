@@ -4,6 +4,6 @@ The [ODBC](../connect-table-types/connect-odbc-table-type-accessing-tables-from-
 
 The CONDITION\_PUSHDOWN argument used in old versions of CONNECT is no longer needed because CONNECT uses condition pushdown unconditionally.
 
-GPLv2
+<sub>_This page is licensed: GPLv2_</sub>
 
 {% @marketo/form formId="4316" %}

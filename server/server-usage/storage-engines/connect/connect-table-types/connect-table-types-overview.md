@@ -45,6 +45,6 @@ automatically constructed by CONNECT when creating the table.
 
 When marked with a ‘$’ the file can be the result returned by a REST query.
 
-GPLv2
+<sub>_This page is licensed: GPLv2_</sub>
 
 {% @marketo/form formId="4316" %}

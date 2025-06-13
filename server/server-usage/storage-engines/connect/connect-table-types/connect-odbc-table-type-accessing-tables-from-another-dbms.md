@@ -844,6 +844,6 @@ The following options can be given as comma-separated string to the `OPTION_LIST
 | QueryTimeout   | -1      | Query timeout in seconds, unlimited by default       |
 | UseDSN         | false   | Use pre-configured DSN                               |
 
-GPLv2
+<sub>_This page is licensed: GPLv2_</sub>
 
 {% @marketo/form formId="4316" %}
