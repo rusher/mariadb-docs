@@ -9,15 +9,15 @@
 ### Getting Started
 
 * [MariaDB MaxScale Installation Guide](maxscale-23-getting-started/mariadb-maxscale-23-mariadb-maxscale-installation-guide.md)
-* [Building MariaDB MaxScale from Source Code](maxscale-23-getting-started/mariadb-maxscale-23-building-mariadb-maxscale-from-source-code.md)
+* [Building MariaDB MaxScale from Source Code](../mariadb-maxscale-mariadb-maxscale-22/maxscale-22-getting-started/mariadb-maxscale-22-building-mariadb-maxscale-from-source-code.md)
 * [Configuration Guide](../mariadb-maxscale-21-06/)
 
 ### Upgrading MariaDB MaxScale
 
 * [Upgrading MariaDB MaxScale from 2.2 to 2.3](../mariadb-maxscale-21-06/)
-* [Upgrading MariaDB MaxScale from 2.1 to 2.2](maxscale-23-upgrading/mariadb-maxscale-23-upgrading-mariadb-maxscale-from-21-to-22.md)
+* [Upgrading MariaDB MaxScale from 2.1 to 2.2](../mariadb-maxscale-mariadb-maxscale-22/maxscale-22-upgrading/mariadb-maxscale-22-upgrading-mariadb-maxscale-from-21-to-22.md)
 * [Upgrading MariaDB MaxScale from 2.0 to 2.1](maxscale-23-upgrading/mariadb-maxscale-23-upgrading-mariadb-maxscale-from-20-to-21.md)
-* [Upgrading MariaDB MaxScale from 1.4 to 2.0](maxscale-23-upgrading/mariadb-maxscale-23-upgrading-mariadb-maxscale-from-14-to-20.md)
+* [Upgrading MariaDB MaxScale from 1.4 to 2.0](../mariadb-maxscale-14/mariadb-maxscale-14-upgrading-maxscale/upgrading-mariadb-maxscale-from-14-to-20.md)
 
 ### Reference
 
@@ -37,7 +37,7 @@ These tutorials are for specific use cases and module combinations.
 
 * [Connection Routing Tutorial](maxscale-tutorials/mariadb-maxscale-23-connection-routing-with-mariadb-maxscale.md)
 * [Read Write Splitting Tutorial](maxscale-tutorials/mariadb-maxscale-23-readwrite-splitting-with-mariadb-maxscale.md)
-* [Administration Tutorial](maxscale-tutorials/mariadb-maxscale-23-mariadb-maxscale-administration-tutorial.md)
+* [Administration Tutorial](../mariadb-maxscale-mariadb-maxscale-22/maxscale-22-tutorials/mariadb-maxscale-22-mariadb-maxscale-administration-tutorial.md)
 * [Avro Router Tutorial](maxscale-tutorials/mariadb-maxscale-23-avrorouter-tutorial.md)
 * [MaxScale Failover with Keepalived and MaxCtrl](https://mariadb.com/kb/en/)
 * [MariaDB Monitor Failover Tutorial](maxscale-tutorials/mariadb-maxscale-23-automatic-failover-with-mariadb-monitor.md)
@@ -81,7 +81,7 @@ Here are detailed documents about the filters MariaDB MaxScale offers. They cont
 * [Cache](maxscale-23-filters/mariadb-maxscale-23-cache.md)
 * [Consistent Critical Read Filter](maxscale-23-filters/mariadb-maxscale-23-consistent-critical-read-filter.md)
 * [Database Firewall Filter](maxscale-23-filters/mariadb-maxscale-23-database-firewall-filter.md)
-* [Insert Stream Filter](maxscale-23-filters/mariadb-maxscale-23-insert-stream-filter.md)
+* [Insert Stream Filter](../mariadb-maxscale-mariadb-maxscale-21/maxscale-21-filters/mariadb-maxscale-21-insert-stream-filter.md)
 * [Luafilter](maxscale-23-filters/mariadb-maxscale-23-lua-filter.md)
 * [Masking Filter](maxscale-23-filters/mariadb-maxscale-23-masking.md)
 * [Maxrows Filter](maxscale-23-filters/mariadb-maxscale-23-maxrows.md)

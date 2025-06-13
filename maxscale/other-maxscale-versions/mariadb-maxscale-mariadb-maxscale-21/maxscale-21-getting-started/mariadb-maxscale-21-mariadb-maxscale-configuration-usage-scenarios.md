@@ -817,8 +817,8 @@ the percentages in this table.
 | serverD | 20         | 36%           |
 
 _Note: If the value of the weighting parameter of an individual server is_\
-&#xNAN;_&#x7A;ero or the relative weight rounds down to zero, no queries will be routed to_\
-&#xNAN;_&#x74;hat server as long as a server with a positive weight is available._
+\&#xNAN;_zero or the relative weight rounds down to zero, no queries will be routed to_\
+\&#xNAN;_that server as long as a server with a positive weight is available._
 
 Here is an excerpt from an example configuration with the `serv_weight`\
 parameter used as the weighting parameter.
@@ -1252,7 +1252,7 @@ These modules are used for diagnostic purposes and can tell about the status of\
 MariaDB MaxScale and the cluster it is monitoring.
 
 * [MaxAdmin Module](../maxscale-21-routers/mariadb-maxscale-21-maxscale-21-cli.md)
-* [Telnet Module](../maxscale-21-routers/mariadb-maxscale-21-debug-cli.md)
+* [Telnet Module](../../mariadb-maxscale-mariadb-maxscale-22/maxscale-22-routers/mariadb-maxscale-22-debug-cli.md)
 
 ### Monitor Modules
 
@@ -1270,7 +1270,7 @@ which sets the status of each server via MaxAdmin is needed.
 * [Mysql Monitor](../maxscale-21-monitors/mariadb-maxscale-21-mysql-monitor.md)
 * [Galera Monitor](../maxscale-21-monitors/mariadb-maxscale-21-galera-monitor.md)
 * [NDBCluster Monitor](../maxscale-21-monitors/mariadb-maxscale-21-ndb-cluster-monitor.md)
-* [Multi-Master Monitor](../maxscale-21-monitors/mariadb-maxscale-21-multi-master-monitor.md)
+* [Multi-Master Monitor](../../mariadb-maxscale-mariadb-maxscale-22/maxscale-22-monitors/mariadb-maxscale-22-multi-master-monitor.md)
 
 ### Filter Modules
 

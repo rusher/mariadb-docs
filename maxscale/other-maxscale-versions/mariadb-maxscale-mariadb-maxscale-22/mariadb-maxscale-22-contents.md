@@ -9,7 +9,7 @@
 ### Getting Started
 
 * [MariaDB MaxScale Installation Guide](maxscale-22-getting-started/mariadb-maxscale-22-mariadb-maxscale-installation-guide.md)
-* [Building MariaDB MaxScale from Source Code](maxscale-22-getting-started/mariadb-maxscale-22-building-mariadb-maxscale-from-source-code.md)
+* [Building MariaDB MaxScale from Source Code](../mariadb-maxscale-mariadb-maxscale-23/maxscale-23-getting-started/mariadb-maxscale-23-building-mariadb-maxscale-from-source-code.md)
 * [Configuration Guide](maxscale-22-getting-started/mariadb-maxscale-22-mariadb-maxscale-configuration-usage-scenarios.md)
 
 ### Upgrading MariaDB MaxScale
@@ -24,7 +24,7 @@
 * [Routing Hints](maxscale-22-reference/mariadb-maxscale-22-hint-syntax.md)
 * [MaxBinlogCheck](../mariadb-maxscale-21-06/)
 * [MaxScale REST API](../mariadb-maxscale-21-06/)
-* [Module Commands](maxscale-22-reference/mariadb-maxscale-22-module-commands.md)
+* [Module Commands](../mariadb-maxscale-mariadb-maxscale-21/maxscale-21-reference/mariadb-maxscale-21-module-commands.md)
 
 ### Tutorials
 
@@ -36,7 +36,7 @@ These tutorials are for specific use cases and module combinations.
 
 * [Connection Routing Tutorial](maxscale-22-tutorials/mariadb-maxscale-22-connection-routing-with-mariadb-maxscale.md)
 * [Read Write Splitting Tutorial](../mariadb-maxscale-21-06/)
-* [Administration Tutorial](maxscale-22-tutorials/mariadb-maxscale-22-mariadb-maxscale-administration-tutorial.md)
+* [Administration Tutorial](../mariadb-maxscale-mariadb-maxscale-23/maxscale-tutorials/mariadb-maxscale-23-mariadb-maxscale-administration-tutorial.md)
 * [Avro Router Tutorial](maxscale-22-tutorials/mariadb-maxscale-22-avrorouter-tutorial.md)
 * [MariaDB Monitor Failover Tutorial](../mariadb-maxscale-21-06/)
 * [MariaDB MaxScale Information Schema Tutorial](maxscale-22-tutorials/mariadb-maxscale-22-maxinfo-plugin.md)
@@ -97,11 +97,11 @@ Common options for all monitor modules.
 
 Module specific documentation.
 
-* [Aurora Monitor](maxscale-22-monitors/mariadb-maxscale-22-aurora-monitor.md)
+* [Aurora Monitor](../mariadb-maxscale-mariadb-maxscale-21/maxscale-21-monitors/mariadb-maxscale-21-aurora-monitor.md)
 * [Galera Monitor](maxscale-22-monitors/mariadb-maxscale-22-galera-monitor.md)
-* [Multi-Master Monitor](maxscale-22-monitors/mariadb-maxscale-22-multi-master-monitor.md)
+* [Multi-Master Monitor](../mariadb-maxscale-mariadb-maxscale-21/maxscale-21-monitors/mariadb-maxscale-21-multi-master-monitor.md)
 * [MariaDB Monitor](../mariadb-maxscale-21-06/)
-* [MySQL Cluster Monitor](maxscale-22-monitors/mariadb-maxscale-22-ndb-cluster-monitor.md)
+* [MySQL Cluster Monitor](../mariadb-maxscale-14/maxscale-14-monitors/ndb-cluster-monitor.md)
 
 ### Protocols
 
@@ -119,7 +119,7 @@ The MaxScale CDC Connector provides a C++ API for consuming data from a CDC syst
 A short description of the authentication module type can be found in the[Authentication Modules](maxscale-22-authenticators/mariadb-maxscale-22-authentication-modules-in-maxscale.md)\
 document.
 
-* [MySQL Authenticator](maxscale-22-authenticators/mariadb-maxscale-22-mysql-authenticator.md)
+* [MySQL Authenticator](../mariadb-maxscale-mariadb-maxscale-21/maxscale-21-authenticators/mariadb-maxscale-21-mysql-authenticator.md)
 * [GSSAPI Authenticator](maxscale-22-authenticators/mariadb-maxscale-22-gssapi-client-authenticator.md)
 
 ### Utilities

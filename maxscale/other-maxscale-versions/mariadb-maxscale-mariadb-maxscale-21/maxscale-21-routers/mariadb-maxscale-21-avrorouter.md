@@ -166,7 +166,7 @@ value if individual events in the binary logs are very large.
 
 ### Module commands
 
-Read [Module Commands](../maxscale-21-reference/mariadb-maxscale-21-module-commands.md) documentation for details about module commands.
+Read [Module Commands](../../mariadb-maxscale-mariadb-maxscale-22/maxscale-22-reference/mariadb-maxscale-22-module-commands.md) documentation for details about module commands.
 
 The avrorouter supports the following module commands.
 

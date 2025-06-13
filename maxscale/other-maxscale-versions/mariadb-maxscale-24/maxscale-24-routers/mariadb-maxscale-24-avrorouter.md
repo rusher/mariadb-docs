@@ -465,7 +465,7 @@ configuring the Avro C library.
 -DCMAKE_C_FLAGS=-fPIC -DCMAKE_CXX_FLAGS=-fPIC
 ```
 
-For more details about building MaxScale from source, please refer to the[Building MaxScale from Source Code](../maxscale-24-getting-started/mariadb-maxscale-24-building-mariadb-maxscale-from-source-code.md)\
+For more details about building MaxScale from source, please refer to the[Building MaxScale from Source Code](../../mariadb-maxscale-25/maxscale-25-getting-started/mariadb-maxscale-25-building-mariadb-maxscale-from-source-code.md)\
 document.
 
 ### Router Diagnostics

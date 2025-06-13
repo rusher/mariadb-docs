@@ -86,7 +86,7 @@ The `match` and `exclude` parameters were changed to use PCRE2 syntax for the\
 regular expressions. The regular expression should be enclosed by slashes\
 e.g. `match=/select.*from.*test/`.
 
-A tee filter instance can be disabled with the new `tee disable [FILTER]` and`tee enable [FILTER]` module commands. Refer to the[module command documentation](../maxscale-22-reference/mariadb-maxscale-22-module-commands.md) for more\
+A tee filter instance can be disabled with the new `tee disable [FILTER]` and`tee enable [FILTER]` module commands. Refer to the[module command documentation](../../mariadb-maxscale-mariadb-maxscale-21/maxscale-21-reference/mariadb-maxscale-21-module-commands.md) for more\
 details on module commands and the[Tee Filter documentation](../maxscale-22-filters/mariadb-maxscale-22-tee-filter.md) for details on the tee\
 filter specific commands.
 

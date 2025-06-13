@@ -37,7 +37,7 @@ layout:
 
 * [Upgrading MaxScale from 1.3 to 1.4](mariadb-maxscale-14-upgrading-maxscale/upgrading-maxscale-from-13-to-14.md)
 * [Upgrading MaxScale from 1.2 to 1.3](mariadb-maxscale-14-upgrading-maxscale/upgrading-maxscale-from-12-to-13.md)
-* [Upgrading MaxScale from 1.1.1 to 1.2](mariadb-maxscale-14-upgrading-maxscale/5379.md)
+* [Upgrading MaxScale from 1.1.1 to 1.2](../mariadb-maxscale-mariadb-maxscale-21/maxscale-21-upgrading/6368.md)
 * [Upgrading MaxScale from 1.0.5 to 1.1.0](mariadb-maxscale-14-upgrading-maxscale/5380.md)
 
 ### Reference

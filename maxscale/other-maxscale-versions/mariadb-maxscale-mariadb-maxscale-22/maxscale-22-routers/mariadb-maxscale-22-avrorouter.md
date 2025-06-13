@@ -196,7 +196,7 @@ details about size type parameters and how to use them.
 
 ### Module commands
 
-Read [Module Commands](../maxscale-22-reference/mariadb-maxscale-22-module-commands.md) documentation for details about module commands.
+Read [Module Commands](../../mariadb-maxscale-mariadb-maxscale-21/maxscale-21-reference/mariadb-maxscale-21-module-commands.md) documentation for details about module commands.
 
 The avrorouter supports the following module commands.
 
@@ -348,7 +348,7 @@ adding the following flags to the CMake invocation when configuring the Avro C l
 -DCMAKE_C_FLAGS=-fPIC -DCMAKE_CXX_FLAGS=-fPIC
 ```
 
-For more details about building MaxScale from source, please refer to the[Building MaxScale from Source Code](../maxscale-22-getting-started/mariadb-maxscale-22-building-mariadb-maxscale-from-source-code.md) document.
+For more details about building MaxScale from source, please refer to the[Building MaxScale from Source Code](../../mariadb-maxscale-mariadb-maxscale-23/maxscale-23-getting-started/mariadb-maxscale-23-building-mariadb-maxscale-from-source-code.md) document.
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

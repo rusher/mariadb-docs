@@ -7,7 +7,7 @@ MaxScale.
 The constants described in this document are defined in the authenticator.h\
 header unless otherwise mentioned.
 
-Authenticator modules compatible with MySQL protocol in MaxScale are[MySQL](mariadb-maxscale-22-mysql-authenticator.md), [GSSAPI](mariadb-maxscale-22-gssapi-client-authenticator.md) and[PAM](../../mariadb-maxscale-21-06/).
+Authenticator modules compatible with MySQL protocol in MaxScale are[MySQL](../../mariadb-maxscale-mariadb-maxscale-21/maxscale-21-authenticators/mariadb-maxscale-21-mysql-authenticator.md), [GSSAPI](mariadb-maxscale-22-gssapi-client-authenticator.md) and[PAM](../../mariadb-maxscale-21-06/).
 
 ### Authenticator initialization
 

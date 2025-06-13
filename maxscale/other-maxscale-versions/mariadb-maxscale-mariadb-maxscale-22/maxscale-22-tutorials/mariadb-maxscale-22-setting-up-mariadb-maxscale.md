@@ -10,7 +10,7 @@ article will help you set up a Galera cluster.
 
 This tutorial will assume the user is running from one of the binary distributions\
 available and has installed this in the default location.\
-Building from source code in GitHub is covered in the[Building from Source](../../mariadb-maxscale-mariadb-maxscale-23/maxscale-23-getting-started/mariadb-maxscale-23-building-mariadb-maxscale-from-source-code.md) document.
+Building from source code in GitHub is covered in the[Building from Source](../maxscale-22-getting-started/mariadb-maxscale-22-building-mariadb-maxscale-from-source-code.md) document.
 
 ### Installing MaxScale
 

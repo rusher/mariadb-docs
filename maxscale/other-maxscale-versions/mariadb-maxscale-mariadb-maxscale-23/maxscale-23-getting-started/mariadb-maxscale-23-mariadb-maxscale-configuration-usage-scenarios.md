@@ -1705,7 +1705,7 @@ server will only be reused if the elapsed time since it joined the pool is less\
 than the given value. Otherwise, the DCB will be discarded and the connection\
 closed.
 
-For more information about persistent connections, please read the[Administration Tutorial](../maxscale-tutorials/mariadb-maxscale-23-mariadb-maxscale-administration-tutorial.md).
+For more information about persistent connections, please read the[Administration Tutorial](../../mariadb-maxscale-mariadb-maxscale-22/maxscale-22-tutorials/mariadb-maxscale-22-mariadb-maxscale-administration-tutorial.md).
 
 #### `proxy_protocol`
 

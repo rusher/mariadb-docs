@@ -114,7 +114,7 @@ server receive the master status. To do this:
 * Enable `@@read_only` on all servers (preferably through the configuration file)
 * Manually disable `@@read_only` on the server which should be the master
 
-This functionality is similar to the [Multi-Master Monitor](mariadb-maxscale-21-multi-master-monitor.md)\
+This functionality is similar to the [Multi-Master Monitor](../../mariadb-maxscale-mariadb-maxscale-22/maxscale-22-monitors/mariadb-maxscale-22-multi-master-monitor.md)\
 functionality. The only difference is that the MySQL monitor will also detect\
 traditional Master-Slave topologies.
 
@@ -226,7 +226,7 @@ when a server goes down.
 \#This script assumes that the local mail server is configured properly\
 \#The second argument is the event type\
 event=${$2/._=/}_\
-&#xNAN;_&#x73;erver=${$3/._=/}\
+\&#xNAN;_server=${$3/._=/}\
 message="A server has gone down at `date`."\
 echo $message|mail -s "The event was $event for server $server." admin@my.org |
 

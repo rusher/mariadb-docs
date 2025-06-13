@@ -774,7 +774,7 @@ The use of monitors is highly recommended but it is also possible to run MaxScal
 
 * [Mysql Monitor](../maxscale-14-monitors/mysql-monitor.md)
 * [Galera Monitor](../maxscale-14-monitors/maxscale-galera-monitor.md)
-* [NDBCluster Monitor](../maxscale-14-monitors/ndb-cluster-monitor.md)
+* [NDBCluster Monitor](../../mariadb-maxscale-mariadb-maxscale-22/maxscale-22-monitors/mariadb-maxscale-22-ndb-cluster-monitor.md)
 * [Multi-Master Monitor](../maxscale-14-monitors/multi-master-monitor.md)
 
 ### Filter Modules

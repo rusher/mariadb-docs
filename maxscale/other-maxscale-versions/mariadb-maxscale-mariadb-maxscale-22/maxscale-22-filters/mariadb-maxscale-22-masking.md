@@ -382,7 +382,7 @@ string should be a MariaDB account string, that is, `%` is a wildcard.
 
 ### Module commands
 
-Read [Module Commands](../maxscale-22-reference/mariadb-maxscale-22-module-commands.md) documentation for details about module commands.
+Read [Module Commands](../../mariadb-maxscale-mariadb-maxscale-21/maxscale-21-reference/mariadb-maxscale-21-module-commands.md) documentation for details about module commands.
 
 The masking filter supports the following module commands.
 

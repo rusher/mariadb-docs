@@ -19,7 +19,7 @@ MaxScale versions side by side. For instructions on how to do that, please refer
 ### Building MariaDB MaxScale From Source Code
 
 Alternatively you may download the MariaDB MaxScale source and build your own binaries.\
-To do this, refer to the separate document[Building MariaDB MaxScale from Source Code](mariadb-maxscale-22-building-mariadb-maxscale-from-source-code.md)
+To do this, refer to the separate document[Building MariaDB MaxScale from Source Code](../../mariadb-maxscale-mariadb-maxscale-23/maxscale-23-getting-started/mariadb-maxscale-23-building-mariadb-maxscale-from-source-code.md)
 
 ### Configuring MariaDB MaxScale
 
@@ -44,7 +44,7 @@ MariaDB MaxScale and allow the status of MariaDB MaxScale to be monitored and\
 give some control of the MariaDB MaxScale functionality.\
 There are a separate reference guides for the [maxctrl](../../mariadb-maxscale-21-06/) and [maxadmin](../maxscale-22-reference/mariadb-maxscale-22-maxadmin-admin-interface.md) utilities.
 
-[The administration tutorial](../maxscale-22-tutorials/mariadb-maxscale-22-mariadb-maxscale-administration-tutorial.md)\
+[The administration tutorial](../../mariadb-maxscale-mariadb-maxscale-23/maxscale-tutorials/mariadb-maxscale-23-mariadb-maxscale-administration-tutorial.md)\
 covers the common administration tasks that need to be done with MariaDB MaxScale.
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>

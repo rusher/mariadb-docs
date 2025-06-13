@@ -54,7 +54,7 @@ Users may change parameters according to their configuration.
 **Note**: the "servers" parameter is no longer required in the service\
 definition.
 
-Additional information is available in the following documents:[_Binlogrouter Tutorial_](../maxscale-14-tutorials/maxscale-as-a-replication-proxy.md) [Upgrading Binlogrouter to 1.3](../mariadb-maxscale-14-upgrading-maxscale/upgrading-binlog-router-to-maxscale-to-13.md)
+Additional information is available in the following documents:[_Binlogrouter Tutorial_](../maxscale-14-tutorials/maxscale-as-a-replication-proxy.md) [Upgrading Binlogrouter to 1.3](../../mariadb-maxscale-mariadb-maxscale-21/maxscale-21-upgrading/6364.md)
 
 * [Binlogrouter Documentation](../maxscale-14-routers/binlogrouter.md)
 

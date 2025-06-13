@@ -22,9 +22,9 @@
 
 * [MaxAdmin - Admin Interface](maxscale-21-reference/mariadb-maxscale-21-maxadmin-admin-interface.md)
 * [Routing Hints](maxscale-21-reference/mariadb-maxscale-21-hint-syntax.md)
-* [MaxBinlogCheck](maxscale-21-reference/mariadb-maxscale-21-maxbinlogcheck.md)
+* [MaxBinlogCheck](../mariadb-maxscale-mariadb-maxscale-22/maxscale-22-reference/mariadb-maxscale-22-maxbinlogcheck-the-mariadb-binlog-check-utility.md)
 * [MaxScale REST API](https://mariadb.com/kb/en/mariadb-maxscale-21-rest-api-design-document/)
-* [Module Commands](maxscale-21-reference/mariadb-maxscale-21-module-commands.md)
+* [Module Commands](../mariadb-maxscale-mariadb-maxscale-22/maxscale-22-reference/mariadb-maxscale-22-module-commands.md)
 
 ### Tutorials
 
@@ -77,7 +77,7 @@ Here are detailed documents about the filters MariaDB MaxScale offers. They cont
 * [Cache](maxscale-21-filters/mariadb-maxscale-21-maxscale-21-cache.md)
 * [Consistent Critical Read Filter](maxscale-21-filters/mariadb-maxscale-21-consistent-critical-read-filter.md)
 * [Database Firewall Filter](maxscale-21-filters/mariadb-maxscale-21-database-firewall-filter.md)
-* [Insert Stream Filter](maxscale-21-filters/mariadb-maxscale-21-insert-stream-filter.md)
+* [Insert Stream Filter](../mariadb-maxscale-mariadb-maxscale-23/maxscale-23-filters/mariadb-maxscale-23-insert-stream-filter.md)
 * [Luafilter](maxscale-21-filters/mariadb-maxscale-21-lua-filter.md)
 * [Masking Filter](maxscale-21-filters/mariadb-maxscale-21-masking.md)
 * [Maxrows Filter](maxscale-21-filters/mariadb-maxscale-21-maxrows.md)
@@ -97,9 +97,9 @@ Common options for all monitor modules.
 
 Module specific documentation.
 
-* [Aurora Monitor](maxscale-21-monitors/mariadb-maxscale-21-aurora-monitor.md)
+* [Aurora Monitor](../mariadb-maxscale-mariadb-maxscale-22/maxscale-22-monitors/mariadb-maxscale-22-aurora-monitor.md)
 * [Galera Monitor](maxscale-21-monitors/mariadb-maxscale-21-galera-monitor.md)
-* [Multi-Master Monitor](maxscale-21-monitors/mariadb-maxscale-21-multi-master-monitor.md)
+* [Multi-Master Monitor](../mariadb-maxscale-mariadb-maxscale-22/maxscale-22-monitors/mariadb-maxscale-22-multi-master-monitor.md)
 * [MySQL Monitor](maxscale-21-monitors/mariadb-maxscale-21-mysql-monitor.md)
 * [MySQL Cluster Monitor](maxscale-21-monitors/mariadb-maxscale-21-ndb-cluster-monitor.md)
 
@@ -115,7 +115,7 @@ Documentation for MaxScale protocol modules.
 A short description of the authentication module type can be found in the[Authentication Modules](maxscale-21-authenticators/mariadb-maxscale-21-authentication-modules-in-maxscale.md)\
 document.
 
-* [MySQL Authenticator](maxscale-21-authenticators/mariadb-maxscale-21-mysql-authenticator.md)
+* [MySQL Authenticator](../mariadb-maxscale-mariadb-maxscale-22/maxscale-22-authenticators/mariadb-maxscale-22-mysql-authenticator.md)
 * [GSSAPI Authenticator](maxscale-21-authenticators/mariadb-maxscale-21-gssapi-client-authenticator.md)
 
 ### Utilities

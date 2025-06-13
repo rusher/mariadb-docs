@@ -229,13 +229,13 @@ All registered module commands can be shown with `maxadmin list commands` and\
 they can be executed with `maxadmin call command <module> <name> ARGS...` whereis the name of the module and is the name of the\
 command. _ARGS_ is a command specific list of arguments.
 
-Read [Module Commands](../maxscale-21-reference/mariadb-maxscale-21-module-commands.md) documentation for more details.
+Read [Module Commands](../../mariadb-maxscale-mariadb-maxscale-22/maxscale-22-reference/mariadb-maxscale-22-module-commands.md) documentation for more details.
 
 In the 2.1 release of MaxScale, the \[_dbfwfilter_}(../Filters/Database-Firewall-Filter.md),[avrorouter](../maxscale-21-routers/mariadb-maxscale-21-avrorouter.md), [cache](../maxscale-21-filters/mariadb-maxscale-21-maxscale-21-cache.md) and[masking](../maxscale-21-filters/mariadb-maxscale-21-masking.md) modules implement module commands.
 
 #### Amazon RDS Aurora monitor
 
-The new [Aurora Monitor](../maxscale-21-monitors/mariadb-maxscale-21-aurora-monitor.md) module allows monitoring\
+The new [Aurora Monitor](../../mariadb-maxscale-mariadb-maxscale-22/maxscale-22-monitors/mariadb-maxscale-22-aurora-monitor.md) module allows monitoring\
 of Aurora clusters. The monitor detects which of the nodes are read replicas and\
 which of them is the real write node and assigns the appropriate status for each\
 node. This module also supports launchable scripts on monitored events. Read the[Monitor Common Documentation](../../mariadb-maxscale-21-06/) for more details.
@@ -304,7 +304,7 @@ leverages the speed advantage of LOAD DATA LOCAL INFILE over regular inserts\
 while also reducing the overall network traffic by condensing the inserted\
 values into CSV.
 
-For more information, refer to the [Insert Stream Filter](../maxscale-21-filters/mariadb-maxscale-21-insert-stream-filter.md)\
+For more information, refer to the [Insert Stream Filter](../../mariadb-maxscale-mariadb-maxscale-23/maxscale-23-filters/mariadb-maxscale-23-insert-stream-filter.md)\
 documentation.
 
 #### Galeramon Monitor new option

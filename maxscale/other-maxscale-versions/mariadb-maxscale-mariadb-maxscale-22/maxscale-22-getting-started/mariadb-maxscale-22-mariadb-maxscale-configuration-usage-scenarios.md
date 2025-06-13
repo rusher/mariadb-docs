@@ -608,7 +608,7 @@ some_parameter=$SOME_VALUE
 
 is encountered, then `$SOME_VALUE` will be replaced with the actual value\
 of the environment variable `SOME_VALUE`. Note:_Variable substitution will be made only if '$' is the first character_\
-&#xNAN;_&#x6F;f the value._ _Everything_ following '$' is interpreted as the name of the environment\
+\&#xNAN;_of the value._ _Everything_ following '$' is interpreted as the name of the environment\
 variable.
 
 * Referring to a non-existing environment variable is a fatal error.
@@ -1014,8 +1014,8 @@ the percentages in this table.
 | serverD | 20         | 36%           |
 
 _Note: If the value of the weighting parameter of an individual server is_\
-&#xNAN;_&#x7A;ero or the relative weight rounds down to zero, no queries will be routed to_\
-&#xNAN;_&#x74;hat server as long as a server with a positive weight is available._
+\&#xNAN;_zero or the relative weight rounds down to zero, no queries will be routed to_\
+\&#xNAN;_that server as long as a server with a positive weight is available._
 
 Here is an excerpt from an example configuration with the `serv_weight`\
 parameter used as the weighting parameter.
@@ -1215,7 +1215,7 @@ server will only be reused if the elapsed time since it joined the pool is less\
 than the given value. Otherwise, the DCB will be discarded and the connection\
 closed.
 
-For more information about persistent connections, please read the[Administration Tutorial](../maxscale-22-tutorials/mariadb-maxscale-22-mariadb-maxscale-administration-tutorial.md).
+For more information about persistent connections, please read the[Administration Tutorial](../../mariadb-maxscale-mariadb-maxscale-23/maxscale-tutorials/mariadb-maxscale-23-mariadb-maxscale-administration-tutorial.md).
 
 **`proxy_protocol`**
 
@@ -1522,7 +1522,7 @@ These modules are used for diagnostic purposes and can tell about the status of\
 MariaDB MaxScale and the cluster it is monitoring.
 
 * [MaxAdmin Module](../../mariadb-maxscale-21-06/)
-* [Telnet Module](../maxscale-22-routers/mariadb-maxscale-22-debug-cli.md)
+* [Telnet Module](../../mariadb-maxscale-mariadb-maxscale-21/maxscale-21-routers/mariadb-maxscale-21-debug-cli.md)
 
 ### Monitor Modules
 
@@ -1539,8 +1539,8 @@ which sets the status of each server via MaxAdmin is needed.
 
 * [MariaDB Monitor](../../mariadb-maxscale-21-06/)
 * [Galera Monitor](../maxscale-22-monitors/mariadb-maxscale-22-galera-monitor.md)
-* [NDBCluster Monitor](../maxscale-22-monitors/mariadb-maxscale-22-ndb-cluster-monitor.md)
-* [Multi-Master Monitor](../maxscale-22-monitors/mariadb-maxscale-22-multi-master-monitor.md)
+* [NDBCluster Monitor](../../mariadb-maxscale-14/maxscale-14-monitors/ndb-cluster-monitor.md)
+* [Multi-Master Monitor](../../mariadb-maxscale-mariadb-maxscale-21/maxscale-21-monitors/mariadb-maxscale-21-multi-master-monitor.md)
 
 ### Filter Modules
 

@@ -9,7 +9,7 @@
 ### Getting Started
 
 * [MariaDB MaxScale Installation Guide](maxscale-25-getting-started/mariadb-maxscale-25-mariadb-maxscale-installation-guide.md)
-* [Building MariaDB MaxScale from Source Code](maxscale-25-getting-started/mariadb-maxscale-25-building-mariadb-maxscale-from-source-code.md)
+* [Building MariaDB MaxScale from Source Code](../mariadb-maxscale-24/maxscale-24-getting-started/mariadb-maxscale-24-building-mariadb-maxscale-from-source-code.md)
 * [Configuration Guide](maxscale-25-getting-started/mariadb-maxscale-25-mariadb-maxscale-configuration-guide.md)
 * [MaxGUI](maxscale-25-getting-started/mariadb-maxscale-25-mariadb-maxscale-maxgui-guide.md)
 
@@ -60,7 +60,7 @@ of their use.
 * [Avrorouter](maxscale-25-routers/mariadb-maxscale-25-avrorouter.md)
 * [Binlogrouter](maxscale-25-routers/mariadb-maxscale-25-binlogrouter.md)
 * [Cat](maxscale-25-routers/mariadb-maxscale-25-cat.md)
-* [HintRouter](maxscale-25-routers/mariadb-maxscale-25-hintrouter.md)
+* [HintRouter](../mariadb-maxscale-24/maxscale-24-routers/mariadb-maxscale-24-hintrouter.md)
 * [KafkaCDC](maxscale-25-routers/mariadb-maxscale-25-kafkacdc.md)
 * [MirrorRouter](maxscale-25-routers/mariadb-maxscale-25-mirror.md)
 * [Read Connection Router](maxscale-25-routers/mariadb-maxscale-25-readconnroute.md)
@@ -112,7 +112,7 @@ Documentation for MaxScale protocol modules.
 
 The MaxScale CDC Connector provides a C++ API for consuming data from a CDC system.
 
-* [CDC Connector](maxscale-25-connectors/mariadb-maxscale-25-maxscale-cdc-connector.md)
+* [CDC Connector](../mariadb-maxscale-24/maxscale-24-connectors/mariadb-maxscale-24-maxscale-cdc-connector.md)
 
 ### Authenticators
 

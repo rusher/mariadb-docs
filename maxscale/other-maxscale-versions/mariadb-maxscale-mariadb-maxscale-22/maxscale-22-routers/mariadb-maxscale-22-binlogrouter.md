@@ -43,7 +43,7 @@ From 2.1 onwards, the 'cache' directory is stored in the same location as other\
 user credential caches. This means that with the default options, the user\
 credential cache is stored in`/var/cache/maxscale/<Service Name>/<Listener Name>/cache/`.
 
-Read the [MySQL Authenticator](../maxscale-22-authenticators/mariadb-maxscale-22-mysql-authenticator.md)\
+Read the [MySQL Authenticator](../../mariadb-maxscale-mariadb-maxscale-21/maxscale-21-authenticators/mariadb-maxscale-21-mysql-authenticator.md)\
 documentation for instructions on how to define a custom location for the user\
 cache.
 
@@ -112,7 +112,7 @@ This user is the only one available for MySQL connection to MaxScale Binlog\
 Server for administration when master connection is not done yet.
 
 In MaxScale 2.1, the service user injection is done by the MySQLAuth\
-authenticator module. Read the[MySQL Authenticator](../maxscale-22-authenticators/mariadb-maxscale-22-mysql-authenticator.md)\
+authenticator module. Read the[MySQL Authenticator](../../mariadb-maxscale-mariadb-maxscale-21/maxscale-21-authenticators/mariadb-maxscale-21-mysql-authenticator.md)\
 documentation for more details.
 
 The user that is used for replication must be granted replication privileges on\

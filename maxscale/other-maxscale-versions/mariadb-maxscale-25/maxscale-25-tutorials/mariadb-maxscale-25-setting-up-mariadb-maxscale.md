@@ -11,7 +11,7 @@ and[Getting Started With MariaDB Galera Cluster](https://app.gitbook.com/s/3VYee
 This tutorial assumes that one of the standard MaxScale binary distributions is used and\
 that MaxScale is installed using default options.
 
-Building from source code in GitHub is covered in[Building from Source](../maxscale-25-getting-started/mariadb-maxscale-25-building-mariadb-maxscale-from-source-code.md).
+Building from source code in GitHub is covered in[Building from Source](../../mariadb-maxscale-24/maxscale-24-getting-started/mariadb-maxscale-24-building-mariadb-maxscale-from-source-code.md).
 
 **Note:** This tutorial is for normal MariaDB installations. Read the[MaxScale Xpand Tutorial](mariadb-maxscale-25-maxscale-and-xpand-tutorial.md) for a tutorial on how\
 to set up a native Xpand cluster.
@@ -103,8 +103,8 @@ configuration instructions.
 ### Configuring the monitor
 
 The type of monitor used depends on the type of cluster used. For a master-slave cluster\
-read[Configuring MariaDB Monitor](mariadb-maxscale-25-configuring-the-mariadb-monitor.md).\
-For a Galera cluster read[Configuring Galera Monitor](mariadb-maxscale-25-configuring-the-galera-monitor.md).
+read[Configuring MariaDB Monitor](../../mariadb-maxscale-24/maxscale-24-tutorials/mariadb-maxscale-24-configuring-the-mariadb-monitor.md).\
+For a Galera cluster read[Configuring Galera Monitor](../../mariadb-maxscale-24/maxscale-24-tutorials/mariadb-maxscale-24-configuring-the-galera-monitor.md).
 
 ### Configuring the services and listeners
 
