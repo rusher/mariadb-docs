@@ -527,7 +527,7 @@ spec:
       - TLSv1.0
 ```
 
-If not specified, the MariaDB's default TLS versions will be used. See [MariaDB docs](../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/ssltls-system-variables.md#tls_version.).
+If not specified, the MariaDB's default TLS versions will be used. See [MariaDB docs](https://github.com/mariadb-corporation/docs-server/blob/test/security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/ssltls-system-variables.md#tls_version.).
 
 Regarding `MaxScale`, you can also configure the supported TLS versions, both for the Admin REST API and MariaDB servers:
 
@@ -853,7 +853,7 @@ spec:
 
 When any of these TLS requirements are not met, the user will not be able to connect to the instance.
 
-See [MariaDB docs](../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/securing-connections-for-client-and-server.md#requiring-tls) and the [API reference](api-reference.md) for further detail.
+See [MariaDB docs](https://github.com/mariadb-corporation/docs-server/blob/test/security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/securing-connections-for-client-and-server.md#requiring-tls) and the [API reference](api-reference.md) for further detail.
 
 ## Galera Enterprise SSL modes
 
