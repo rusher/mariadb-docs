@@ -1,44 +1,94 @@
 ---
-layout:
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
+description: Quickstart guide for MariaDB ColumnStore
 ---
 
-# About MariaDB ColumnStore
+# MariaDB ColumnStore Guide
 
-MariaDB ColumnStore is a columnar storage engine that utilizes a massively parallel distributed data architecture. It's a columnar storage system built by porting InfiniDB 4.6.7 to MariaDB and released under the GPL license.
+### Quickstart Guide: MariaDB ColumnStore
 
-[MariaDB 10.5.4 ](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-5-series/mariadb-1054-release-notes)is available as a storage engine for MariaDB Server. Before then, it is available as a separate download.
+MariaDB ColumnStore is a specialized columnar storage engine designed for high-performance analytical processing and big data workloads. Unlike traditional row-based storage engines, ColumnStore organizes data by columns, which is highly efficient for analytical queries that often access only a subset of columns across vast datasets.
 
-{% hint style="info" %}
-Release notes and other documentation for ColumnStore is also available in the Enterprise docs section of the MariaDB website. For example:
+#### 1. What is MariaDB ColumnStore?
 
-* [ColumnStore 23.10 Release Notes](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/columnstore/columnstore-23-10)
-* [ColumnStore 23.02 Release Notes](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/columnstore/columnstore-23-02)
-* [ColumnStore 22.08 Release Notes](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/columnstore/columnstore-22-08)
-* [ColumnStore 6 Release Notes](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/columnstore/columnstore-6)
-* [ColumnStore 5.6 Release Notes](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/columnstore/columnstore-5-6)
-* [Deployment Instructions](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/deployment-general-installing-and-upgrading-instructions)
-{% endhint %}
+MariaDB ColumnStore is a **columnar storage engine** that integrates with MariaDB Server. It employs a **massively parallel distributed data architecture**, making it ideal for processing petabytes of data with linear scalability. It was originally ported from InfiniDB and is released under the GPL license.
 
-It is designed for big data scaling to process petabytes of data, linear scalability, and exceptional performance with real-time response to analytical queries. It leverages the I/O benefits of columnar storage, compression, just-in-time projection, and horizontal and vertical partitioning to deliver tremendous performance when analyzing large data sets.
+#### 2. Key Benefits
 
-Links:
+* **Exceptional Analytical Performance:** Delivers superior performance for complex analytical queries (OLAP) due to its columnar nature, which minimizes disk I/O by reading only necessary columns.
+* **High Data Compression:** Columnar storage allows for much higher compression ratios compared to row-based storage, reducing disk space usage and improving query speed.
+* **Massive Scalability:** Designed to scale horizontally across multiple nodes, processing petabytes of data with ease.
+* **Just-in-Time Projection:** Only the required columns are processed and returned, further optimizing query execution.
+* **Real-time Analytics:** Capable of handling real-time analytical queries efficiently.
 
-* [MariaDB Columnstore Blogs](https://mariadb.com/resources/blog/tag/columnstore/).
-* A Google Group exists for MariaDB ColumnStore that can be used to discuss ideas and issues and communicate with the community: Send email to mariadb-columnstore@googlegroups.com or use the [forum interface](https://groups.google.com/forum/#!forum/mariadb-columnstore)
-* Bugs can be reported in MariaDB Jira: [jira.mariadb.org](https://jira.mariadb.org) (see [Reporting Bugs](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/community/community/bug-tracking/reporting-bugs)). Please file bugs under the MCOL project and include the output from the [support utility](../management/system-troubleshooting-mariadb-columnstore.md) if possible.
+#### 3. Architecture Concepts (Simplified)
 
-MariaDB ColumnStore is released under the GPL license.
+MariaDB ColumnStore utilizes a distributed architecture with different components working together:
 
-<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+* **User Module (UM):** Handles incoming SQL queries, optimizes them for columnar processing, and distributes tasks.
+* **Performance Module (PM):** Manages data storage, compression, and execution of query fragments on the data segments.
+* **Data Files:** Data is stored in column-segments across the nodes, highly compressed.
 
-{% @marketo/form formId="4316" %}
+#### 4. Installation Overview
+
+MariaDB ColumnStore is installed as a separate package that integrates with MariaDB Server. The exact installation steps vary depending on your operating system and desired deployment type (single server or distributed cluster).
+
+**General Steps (conceptual):**
+
+1. **Install MariaDB Server:** Ensure you have a compatible MariaDB Server version installed (e.g., MariaDB 10.5.4 or later).
+2. **Install ColumnStore Package:** Download and install the specific MariaDB ColumnStore package for your OS. This package includes the ColumnStore storage engine and its associated tools.
+   * **Linux (e.g., Debian/Ubuntu):** You would typically add the MariaDB repository configured for ColumnStore and then install `mariadb-plugin-columnstore`.
+   * **Single Server vs. Distributed:** For a single-server setup, you install all ColumnStore components on one machine. For a distributed setup, you install and configure components across multiple machines.
+3. **Configure MariaDB:** After installation, you might need to adjust your MariaDB server configuration (`my.cnf` or equivalent) to properly load and manage the ColumnStore engine.
+4. **Initialize ColumnStore:** Run a specific `columnstore-setup` or `post-install` script to initialize the ColumnStore environment.
+
+#### 5. Basic Usage
+
+Once MariaDB ColumnStore is installed and configured, you can create and interact with ColumnStore tables using standard SQL.
+
+**a. Create a ColumnStore Table:**
+
+Specify ENGINE=ColumnStore when creating your table. Note that ColumnStore tables do not support primary keys in the same way as InnoDB, as their primary focus is analytical processing.
+
+```sql
+CREATE TABLE sales_data (
+    sale_id INT,
+    product_name VARCHAR(255),
+    category VARCHAR(100),
+    sale_date DATE,
+    quantity INT,
+    price DECIMAL(10, 2)
+) ENGINE=ColumnStore;
+```
+
+**b. Insert Data:**
+
+You can insert data using standard INSERT statements. For large datasets, bulk loading utilities (e.g., LOAD DATA INFILE) are highly recommended for performance.
+
+```sql
+INSERT INTO sales_data (sale_id, product_name, category, sale_date, quantity, price) VALUES
+(1, 'Laptop', 'Electronics', '2023-01-15', 1, 1200.00),
+(2, 'Mouse', 'Electronics', '2023-01-15', 2, 25.00),
+(3, 'Keyboard', 'Electronics', '2023-01-16', 1, 75.00);
+```
+
+**c. Query Data:**
+
+Perform analytical queries. ColumnStore will efficiently process these, often leveraging its columnar nature and parallelism.
+
+```sql
+-- Get total sales per category
+SELECT category, SUM(quantity * price) AS total_sales
+FROM sales_data
+WHERE sale_date BETWEEN '2023-01-01' AND '2023-01-31'
+GROUP BY category
+ORDER BY total_sales DESC;
+
+-- Count distinct products
+SELECT COUNT(DISTINCT product_name) FROM sales_data;
+```
+
+#### Further Resources:
+
+* [MariaDB ColumnStore Overview](https://mariadb.com/products/columnstore/)
+* [MariaDB Knowledge Base: MariaDB ColumnStore](https://mariadb.com/kb/en/mariadb-columnstore/)
+* [DigitalOcean: How to Install MariaDB ColumnStore on Ubuntu 20.04](https://www.google.com/search?q=https://www.digitalocean.com/community/tutorials/how-to-install-mariadb-columnstore-on-ubuntu-20-04\&authuser=1)
