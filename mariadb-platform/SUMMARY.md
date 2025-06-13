@@ -11,7 +11,6 @@
   * [Thank you](post-download/fallthrough.md)
   * [MariaDB Server 11.8.2](post-download/mariadb-server-11.8.2.md)
   * [MariaDB Server 12.0.1](post-download/mariadb-server-12.0.1.md)
-  * [MariaDB Connector/C x.x.x](post-download/mariadb-connector-c-x.x.x.md)
   * [MariaDB Connector/C 2.1.0](post-download/mariadb-connector-c-2-1-0.md)
   * [MariaDB Connector/C 2.2.0](post-download/mariadb-connector-c-2-2-0.md)
   * [MariaDB Connector/C 2.2.1](post-download/mariadb-connector-c-2-2-1.md)
