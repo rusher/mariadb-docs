@@ -1,4 +1,4 @@
-# MaxScale 24.02 Module commands
+# MaxScale Module Commands
 
 Introduced in MaxScale 2.1, the module commands are special, module-specific\
 commands. They allow the modules to expand beyond the capabilities of the module\
