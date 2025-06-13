@@ -2,9 +2,98 @@
 
 ## Syntax
 
-```
-|
-```
+<pre><code>ALTER [ONLINE] [IGNORE] TABLE [IF EXISTS] tbl_name
+    [WAIT n | NOWAIT]
+    alter_specification [, alter_specification] ...
+
+alter_specification:
+    <a data-footnote-ref href="#user-content-fn-1">table_option</a> ...
+  | ADD [COLUMN] [IF NOT EXISTS] col_name <a data-footnote-ref href="#user-content-fn-2">column_definition</a>
+        [FIRST | AFTER col_name ]
+  | ADD [COLUMN] [IF NOT EXISTS] (col_name <a data-footnote-ref href="#user-content-fn-2">column_definition</a>,...)
+  | ADD {INDEX|KEY} [IF NOT EXISTS] [index_name]
+        [index_type] (index_col_name,...) [index_option] ...
+  | ADD [CONSTRAINT [symbol]] PRIMARY KEY [IF NOT EXISTS]
+        [index_type] (index_col_name,...) [index_option] ...
+  | ADD [CONSTRAINT [symbol]]
+        UNIQUE [INDEX|KEY] [IF NOT EXISTS] [index_name]
+        [index_type] (index_col_name,...) [index_option] ...
+  | ADD FULLTEXT [INDEX|KEY] [IF NOT EXISTS [index_name]
+        (index_col_name,...) [index_option] ...
+  | ADD SPATIAL [INDEX|KEY] [IF NOT EXISTS [index_name]
+        (index_col_name,...) [index_option] ...
+  | ADD VECTOR [INDEX|KEY] [IF NOT EXISTS [index_name]
+        (index_col_name,...) [index_option] ...
+  | ADD [CONSTRAINT [symbol]]
+        FOREIGN KEY [IF NOT EXISTS] [index_name] (index_col_name,...)
+        reference_definition
+  | ADD PERIOD FOR [time_period_name|SYSTEM_TIME] (start_column_name, end_column_name)
+  | ALTER [COLUMN] col_name SET DEFAULT literal | (expression)
+  | ALTER [COLUMN] col_name DROP DEFAULT
+  | ALTER {INDEX|KEY} index_name [NOT] INVISIBLE
+  | CHANGE [COLUMN] [IF EXISTS] old_col_name new_col_name column_definition
+        [FIRST|AFTER col_name]
+  | MODIFY [COLUMN] [IF EXISTS] col_name column_definition
+        [FIRST | AFTER col_name]
+  | DROP [COLUMN] [IF EXISTS] col_name [RESTRICT|CASCADE]
+  | DROP [CONSTRAINT] PRIMARY KEY
+  | DROP {INDEX|KEY} [IF EXISTS] index_name
+  | DROP FOREIGN KEY [IF EXISTS] fk_symbol
+  | DROP CONSTRAINT [IF EXISTS] constraint_name
+  | DISABLE KEYS
+  | ENABLE KEYS
+  | RENAME [TO] new_tbl_name
+  | ORDER BY col_name [, col_name] ...
+  | RENAME COLUMN old_col_name TO new_col_name
+  | RENAME {INDEX|KEY} old_index_name TO new_index_name
+  | CONVERT TO CHARACTER SET charset_name [COLLATE collation_name]
+  | [DEFAULT] CHARACTER SET [=] charset_name
+  | [DEFAULT] COLLATE [=] collation_name
+  | DISCARD TABLESPACE
+  | IMPORT TABLESPACE
+  | ALGORITHM [=] {DEFAULT|INPLACE|COPY|NOCOPY|INSTANT}
+  | LOCK [=] {DEFAULT|NONE|SHARED|EXCLUSIVE}
+  | FORCE
+  | <a data-footnote-ref href="#user-content-fn-3">partition_options</a>
+  | CONVERT TABLE normal_table TO partition_definition [{WITH | WITHOUT} VALIDATION]
+  | CONVERT PARTITION partition_name TO TABLE tbl_name
+  | ADD PARTITION [IF NOT EXISTS] (partition_definition)
+  | DROP PARTITION [IF EXISTS] partition_names
+  | TRUNCATE PARTITION partition_names
+  | COALESCE PARTITION number
+  | REORGANIZE PARTITION [partition_names INTO (partition_definitions)]
+  | ANALYZE PARTITION partition_names
+  | CHECK PARTITION partition_names
+  | OPTIMIZE PARTITION partition_names
+  | REBUILD PARTITION partition_names
+  | REPAIR PARTITION partition_names
+  | EXCHANGE PARTITION partition_name WITH TABLE tbl_name [{WITH | WITHOUT} VALIDATION]
+  | REMOVE PARTITIONING
+  | ADD SYSTEM VERSIONING
+  | DROP SYSTEM VERSIONING
+
+
+index_col_name:
+    col_name [(length)] [ASC | DESC]
+
+
+index_type:
+    USING {BTREE | HASH | RTREE}
+
+
+<a data-footnote-ref href="#user-content-fn-4">index_option</a>:
+    [ KEY_BLOCK_SIZE [=] value
+  | index_type
+  | WITH PARSER parser_name
+  | VISIBLE
+  | COMMENT 'string'
+  | CLUSTERING={YES| NO} ]
+  [ IGNORED | NOT IGNORED ]
+
+
+<a data-footnote-ref href="#user-content-fn-5">table_options</a>:
+    table_option [[,] table_option] ...
+</code></pre>
 
 ## Description
 
@@ -92,7 +181,7 @@ See [CREATE TABLE: Column Definitions](../create/create-table.md#column-definiti
 
 See [CREATE TABLE: Index Definitions](../create/create-table.md#index-definitions) for information about index definitions.
 
-The [CREATE INDEX](../../../sql-statements/data-definition/create/create-index.md) and [DROP INDEX](../drop/drop-index.md) statements can also be used to add or remove an index.
+The [CREATE INDEX](../create/create-index.md) and [DROP INDEX](../drop/drop-index.md) statements can also be used to add or remove an index.
 
 ## Character Sets and Collations
 
@@ -455,7 +544,7 @@ Reduces the number of HASH or KEY partitions in a table. See [Partitioning Overv
 
 #### CONVERT PARTITION / TABLE
 
-`CONVERT PARTITION` and `CONVERT TABLE` were introduced in [MariaDB 10.7.1](broken-reference).
+`CONVERT PARTITION` and `CONVERT TABLE` were introduced in [MariaDB 10.7.1](broken-reference/).
 
 `CONVERT PARTITION` can be used to remove a partition from a table and make this an ordinary table. For example:
 
@@ -649,7 +738,7 @@ Stage: 1 of 2 'copy to tmp table'    46% of stage
 
 The progress report is also shown in the output of the [SHOW PROCESSLIST](../../administrative-sql-statements/show/show-processlist.md) statement and in the contents of the [information\_schema.PROCESSLIST](../../administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-processlist-table.md) table.
 
-See [Progress Reporting](broken-reference) for more information.
+See [Progress Reporting](broken-reference/) for more information.
 
 ## Aborting ALTER TABLE Operations
 
@@ -762,6 +851,16 @@ of which the first one gets delivered to replicas before ALTER is taken to actua
 * [SHOW CREATE TABLE](../../administrative-sql-statements/show/show-create-table.md)
 * [Instant ADD COLUMN for InnoDB](../../../storage-engines/innodb/innodb-online-ddl/instant-add-column-for-innodb.md)
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}
+
+[^1]: [table o](../create/create-table.md#table-options)[ptions](../create/create-table.md#table-options)
+
+[^2]: [column definitions](../create/create-table.md#column-definitions)
+
+[^3]: [partition options](../create/create-table.md#partitions)
+
+[^4]: [index options](../create/create-table.md#index-options)
+
+[^5]: [table options](../create/create-table.md#table-options)
