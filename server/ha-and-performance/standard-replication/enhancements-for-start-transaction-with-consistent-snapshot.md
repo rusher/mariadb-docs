@@ -83,7 +83,7 @@ queries until all updates that have already started have finished.
 ### mariadb-dump
 
 The [mariadb-dump](../../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md) program was extended to use these status\
-variables. This means that a backup suitable for provisioning a slave can be\
+variables. This means that a backup suitable for provisioning a replica can be\
 obtained as normal like this:
 
 ```
