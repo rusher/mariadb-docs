@@ -1,4 +1,8 @@
 ---
+description: >-
+  Routers are the core of MariaDB MaxScale services, intelligently managing
+  database traffic. This section details available routers, from read-write
+  splitting to sharding and replication.
 layout:
   title:
     visible: true
