@@ -70,6 +70,6 @@ ERROR 1301 (HY000): Result of rpad() was larger than max_allowed_packet (1677721
 * [Data Type Storage Requirements](../data-type-storage-requirements.md)
 * [Oracle mode from MariaDB 10.3](broken-reference)
 
-GPLv2 fill\_help\_tables.sql
+<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
 
 {% @marketo/form formId="4316" %}

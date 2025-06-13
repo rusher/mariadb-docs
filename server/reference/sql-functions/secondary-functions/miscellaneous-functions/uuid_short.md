@@ -62,6 +62,6 @@ select * from t1;
 * [SYS\_GUID](sys_guid.md) - UUID without the `-` character for Oracle compatibility
 * [UUID data type](../../../data-types/string-data-types/uuid-data-type.md)
 
-GPLv2 fill\_help\_tables.sql
+<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
 
 {% @marketo/form formId="4316" %}

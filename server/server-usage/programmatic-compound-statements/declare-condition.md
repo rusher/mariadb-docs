@@ -30,6 +30,6 @@ ERROR 1407 (42000): Bad SQLSTATE: '00000'
 For a list of SQLSTATE values and MariaDB error\
 codes, see [MariaDB Error Codes](broken-reference).
 
-GPLv2 fill\_help\_tables.sql
+<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
 
 {% @marketo/form formId="4316" %}

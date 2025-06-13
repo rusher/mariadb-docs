@@ -116,6 +116,6 @@ SELECT SUBSTR('abc',1,2);
 * [LOCATE()](locate.md) - Returns the position of a string within a string
 * [SUBSTRING\_INDEX()](substring_index.md) - Returns a string based on substring
 
-GPLv2 fill\_help\_tables.sql
+<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
 
 {% @marketo/form formId="4316" %}

@@ -55,6 +55,6 @@ Note (Code 1008): Can't drop database 'bufg'; database doesn't exist
 * [Information Schema SCHEMATA Table](../../administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-schemata-table.md)
 * [SHOW CREATE DATABASE](../../administrative-sql-statements/show/show-create-database.md)
 
-GPLv2 fill\_help\_tables.sql
+<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
 
 {% @marketo/form formId="4316" %}

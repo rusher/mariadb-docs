@@ -23,6 +23,6 @@ their subclasses and are included for extensibility.
 
 [Point](point-properties/), [LineString](linestring-properties/), [Polygon](polygon-properties/), [GeometryCollection](../../sql-statements/geometry-constructors/geometry-constructors/geometrycollection.md), [MultiPoint](../../sql-statements/geometry-constructors/geometry-constructors/multipoint.md),[MultiLineString](../../sql-statements/geometry-constructors/geometry-constructors/multilinestring.md), and [MultiPolygon](../../sql-statements/geometry-constructors/geometry-constructors/multipolygon.md) are instantiable classes.
 
-GPLv2 fill\_help\_tables.sql
+<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
 
 {% @marketo/form formId="4316" %}

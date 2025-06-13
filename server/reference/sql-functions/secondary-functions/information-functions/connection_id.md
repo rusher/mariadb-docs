@@ -28,6 +28,6 @@ SELECT CONNECTION_ID();
 * [SHOW PROCESSLIST](../../../sql-statements/administrative-sql-statements/show/show-processlist.md)
 * [INFORMATION\_SCHEMA.PROCESSLIST](../../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-processlist-table.md)
 
-GPLv2 fill\_help\_tables.sql
+<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
 
 {% @marketo/form formId="4316" %}

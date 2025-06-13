@@ -15,6 +15,6 @@ This statement is for use only when the master is started for the first time, an
 
 * The [PURGE BINARY LOGS](../purge-binary-logs.md) statement is intended for use in active replication.
 
-GPLv2 fill\_help\_tables.sql
+<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
 
 {% @marketo/form formId="4316" %}

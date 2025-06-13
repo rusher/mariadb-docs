@@ -63,6 +63,6 @@ SET PASSWORD FOR 'bob'@'%.loc.gov' = PASSWORD('newpass');
 * [Password Validation Plugins](../../../plugins/password-validation-plugins/) - permits the setting of basic criteria for passwords
 * [OLD\_PASSWORD()](old_password.md) - pre-MySQL 4.1 password function
 
-GPLv2 fill\_help\_tables.sql
+<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
 
 {% @marketo/form formId="4316" %}

@@ -59,6 +59,6 @@ See [Defragmenting InnoDB Tablespaces](defragmenting-innodb-tablespaces.md) for 
 * [Optimize Table in InnoDB with ALGORITHM set to NOCOPY](../../../server-usage/storage-engines/innodb/innodb-online-ddl/innodb-online-ddl-operations-with-the-nocopy-alter-algorithm.md#optimize-table)
 * [Optimize Table in InnoDB with ALGORITHM set to INSTANT](../../../server-usage/storage-engines/innodb/innodb-online-ddl/innodb-online-ddl-operations-with-the-instant-alter-algorithm.md#optimize-table)
 
-GPLv2 fill\_help\_tables.sql
+<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
 
 {% @marketo/form formId="4316" %}

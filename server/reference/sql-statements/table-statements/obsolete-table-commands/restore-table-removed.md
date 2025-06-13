@@ -28,6 +28,6 @@ them to rebuild the .MYI index file. Restoring takes longer than\
 backing up due to the need to rebuild the indexes. The more indexes the\
 table has, the longer it takes.
 
-GPLv2 fill\_help\_tables.sql
+<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
 
 {% @marketo/form formId="4316" %}

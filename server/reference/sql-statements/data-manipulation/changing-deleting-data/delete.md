@@ -175,6 +175,6 @@ Query OK, 0 rows affected (0.00 sec)
 * [INSERT ... RETURNING](../inserting-loading-data/insertreturning.md)
 * [Returning clause](https://www.youtube.com/watch?v=n-LTdEBeAT4) (video)
 
-GPLv2 fill\_help\_tables.sql
+<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
 
 {% @marketo/form formId="4316" %}

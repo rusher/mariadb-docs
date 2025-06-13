@@ -106,6 +106,6 @@ Old triggers created before MySQL 5.7 and [MariaDB 10.2.3](https://app.gitbook.c
 * [SHOW CREATE TRIGGER](show-create-trigger.md)
 * [Trigger Limitations](../../../../server-usage/triggers-events/triggers/trigger-limitations.md)
 
-GPLv2 fill\_help\_tables.sql
+<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
 
 {% @marketo/form formId="4316" %}

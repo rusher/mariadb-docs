@@ -57,6 +57,6 @@ DECLARE rec2 ROW TYPE OF cur1; -- Get the row data type from the cursor {{cur1}}
 
 * [User-Defined variables](../../reference/sql-structure/sql-language-structure/user-defined-variables.md)
 
-GPLv2 fill\_help\_tables.sql
+<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
 
 {% @marketo/form formId="4316" %}

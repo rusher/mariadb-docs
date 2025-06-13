@@ -50,6 +50,6 @@ that support the new progress reporting protocol. For example, if you were using
 * [CREATE INDEX](../create/create-index.md)
 * [ALTER TABLE](../alter/alter-table.md)
 
-GPLv2 fill\_help\_tables.sql
+<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
 
 {% @marketo/form formId="4316" %}

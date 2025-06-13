@@ -16,6 +16,6 @@ STDDEV\_SAMP() can be used as a [window function](../special-functions/window-fu
 
 STDDEV\_SAMP() returns `NULL` if there were no matching rows.
 
-GPLv2 fill\_help\_tables.sql
+<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
 
 {% @marketo/form formId="4316" %}

@@ -77,6 +77,6 @@ SELECT 5 IN (1, 2, NULL);
 * [Conversion of Big IN Predicates Into Subqueries](../../../../ha-and-performance/optimization-and-tuning/query-optimizations/subquery-optimizations/conversion-of-big-in-predicates-into-subqueries.md)
 * [Operator Precedence](../operator-precedence.md)
 
-GPLv2 fill\_help\_tables.sql
+<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
 
 {% @marketo/form formId="4316" %}

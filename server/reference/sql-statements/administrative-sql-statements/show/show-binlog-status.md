@@ -40,6 +40,6 @@ SELECT @@global.gtid_binlog_pos;
 * [Using and Maintaining the Binary Log](../../../../server-management/server-monitoring-logs/binary-log/using-and-maintaining-the-binary-log.md)
 * [The gtid\_binlog\_pos variable](../../../../ha-and-performance/standard-replication/gtid.md)
 
-GPLv2 fill\_help\_tables.sql
+<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
 
 {% @marketo/form formId="4316" %}

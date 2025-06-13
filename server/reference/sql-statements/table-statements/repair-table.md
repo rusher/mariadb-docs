@@ -77,6 +77,6 @@ The [Aria](../../../server-usage/storage-engines/aria/) storage engine supports 
 * [aria\_chk](../../../clients-and-utilities/aria-clients-and-utilities/aria_chk.md)
 * [myisamchk](../../../clients-and-utilities/myisam-clients-and-utilities/myisamchk.md)
 
-GPLv2 fill\_help\_tables.sql
+<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
 
 {% @marketo/form formId="4316" %}

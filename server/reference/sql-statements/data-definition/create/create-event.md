@@ -194,6 +194,6 @@ Query OK, 0 rows affected, 1 warning (0.00 sec)
 * [ALTER EVENT](../../../../server-usage/triggers-events/event-scheduler/alter-event.md)
 * [DROP EVENT](../drop/drop-event.md)
 
-GPLv2 fill\_help\_tables.sql
+<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
 
 {% @marketo/form formId="4316" %}

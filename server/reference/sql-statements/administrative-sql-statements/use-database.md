@@ -37,6 +37,6 @@ a user with no privileges to a database should not be able to know if a database
 * [Identifier Qualifiers](../../sql-structure/sql-language-structure/identifier-qualifiers.md)
 * [USE CATALOG](../../../security/user-account-management/catalogs/use-catalog.md)
 
-GPLv2 fill\_help\_tables.sql
+<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
 
 {% @marketo/form formId="4316" %}

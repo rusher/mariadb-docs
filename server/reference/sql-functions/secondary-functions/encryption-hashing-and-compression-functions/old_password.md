@@ -23,6 +23,6 @@ The return value is 16 bytes in length, or NULL if the argument was NULL.
 * [PASSWORD()](password.md)
 * [MySQL manual on password hashing](https://dev.mysql.com/doc/refman/5.1/en/password-hashing.html)
 
-GPLv2 fill\_help\_tables.sql
+<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
 
 {% @marketo/form formId="4316" %}

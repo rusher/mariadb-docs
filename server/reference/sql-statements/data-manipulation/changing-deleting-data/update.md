@@ -111,6 +111,6 @@ UPDATE tab1, tab2 SET tab1.column1 = value1, tab1.column2 = value2 WHERE tab1.id
 * [LIMIT](../selecting-data/limit.md)
 * [Identifier Qualifiers](../../../sql-structure/sql-language-structure/identifier-qualifiers.md)
 
-GPLv2 fill\_help\_tables.sql
+<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
 
 {% @marketo/form formId="4316" %}

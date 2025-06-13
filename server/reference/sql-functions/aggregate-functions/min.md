@@ -123,6 +123,6 @@ SELECT name, test, score, MIN(score)
 * [MIN/MAX optimization](broken-reference) used by the optimizer
 * [LEAST()](../../sql-structure/operators/comparison-operators/least.md) returns the smallest value from a list.
 
-GPLv2 fill\_help\_tables.sql
+<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
 
 {% @marketo/form formId="4316" %}

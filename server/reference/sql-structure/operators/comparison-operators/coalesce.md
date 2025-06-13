@@ -95,6 +95,6 @@ SELECT COALESCE(SUM(score),0) FROM student;
 * [NULLIF function](../../../sql-functions/control-flow-functions/nullif.md)
 * [CONNECT data types](../../../../server-usage/storage-engines/connect/connect-data-types.md#null-handling)
 
-GPLv2 fill\_help\_tables.sql
+<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
 
 {% @marketo/form formId="4316" %}

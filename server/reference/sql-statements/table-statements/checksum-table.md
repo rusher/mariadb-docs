@@ -48,6 +48,6 @@ versions should calculate checksums the same way as MariaDB). You can get the\
 using this old mode, the `CHECKSUM` command will be\
 slower as it needs to calculate the checksum row by row.
 
-GPLv2 fill\_help\_tables.sql
+<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
 
 {% @marketo/form formId="4316" %}

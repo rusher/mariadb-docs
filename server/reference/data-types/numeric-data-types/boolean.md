@@ -108,6 +108,6 @@ to neither 1 nor 0.
 * [Boolean Literals](../../sql-structure/sql-language-structure/sql-language-structure-boolean-literals.md)
 * [IS operator](../../sql-structure/operators/comparison-operators/is.md)
 
-GPLv2 fill\_help\_tables.sql
+<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
 
 {% @marketo/form formId="4316" %}

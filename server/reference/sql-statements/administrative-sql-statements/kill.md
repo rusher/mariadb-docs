@@ -75,6 +75,6 @@ use `mariadb-admin processlist`. See [mariadb-admin](../../../clients-and-utilit
 * [Aborting statements that exceed a certain time to execute](../../../ha-and-performance/optimization-and-tuning/query-optimizations/aborting-statements.md)
 * [idle\_transaction\_timeout](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#idle_transaction_timeout)
 
-GPLv2 fill\_help\_tables.sql
+<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
 
 {% @marketo/form formId="4316" %}

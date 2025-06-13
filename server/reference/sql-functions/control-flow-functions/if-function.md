@@ -47,6 +47,6 @@ SELECT IF(STRCMP('test','test1'),'no','yes');
 
 There is also an [IF statement](../../../server-usage/programmatic-compound-statements/if.md), which differs from the `IF()` function described above.
 
-GPLv2 fill\_help\_tables.sql
+<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
 
 {% @marketo/form formId="4316" %}

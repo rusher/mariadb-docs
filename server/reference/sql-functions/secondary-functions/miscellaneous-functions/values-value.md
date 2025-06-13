@@ -23,6 +23,6 @@ INSERT INTO t (a,b,c) VALUES (1,2,3),(4,5,6)
     ON DUPLICATE KEY UPDATE c=VALUE(a)+VALUE(b);
 ```
 
-GPLv2 fill\_help\_tables.sql
+<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
 
 {% @marketo/form formId="4316" %}

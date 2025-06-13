@@ -54,6 +54,6 @@ In order to skip transactions in cases like this, you will have to manually chan
 
 * [Selectively Skipping Replication of Binlog Events](../../../../ha-and-performance/standard-replication/selectively-skipping-replication-of-binlog-events.md)
 
-GPLv2 fill\_help\_tables.sql
+<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
 
 {% @marketo/form formId="4316" %}

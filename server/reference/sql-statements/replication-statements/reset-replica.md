@@ -56,6 +56,6 @@ From [MariaDB 11.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-commu
 
 * [STOP REPLICA](../administrative-sql-statements/replication-statements/stop-replica.md) stops the replica, but it can be restarted with [START REPLICA](../administrative-sql-statements/replication-statements/start-replica.md) or after next MariaDB server restart.
 
-GPLv2 fill\_help\_tables.sql
+<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
 
 {% @marketo/form formId="4316" %}

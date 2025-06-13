@@ -72,6 +72,6 @@ terminated with `END CASE` instead of `END`.
 * The [CASE operator](../../reference/sql-functions/control-flow-functions/case-operator.md), which differs from the CASE statement described above.
 * The [IF statement](if.md).
 
-GPLv2 fill\_help\_tables.sql
+<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
 
 {% @marketo/form formId="4316" %}

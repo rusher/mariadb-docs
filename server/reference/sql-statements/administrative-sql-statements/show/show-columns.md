@@ -135,6 +135,6 @@ SHOW COLUMNS FROM employees WHERE Type LIKE 'Varchar%';
 * [Extended SHOW](extended-show.md)
 * [Silent Column Changes](../../data-definition/create/silent-column-changes.md)
 
-GPLv2 fill\_help\_tables.sql
+<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
 
 {% @marketo/form formId="4316" %}

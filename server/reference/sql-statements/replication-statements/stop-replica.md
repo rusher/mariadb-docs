@@ -51,6 +51,6 @@ using the channel\_name directly after `STOP REPLICA`.
 * [START REPLICA](../administrative-sql-statements/replication-statements/start-replica.md) is used to start a predefined connection.
 * [RESET REPLICA](../administrative-sql-statements/replication-statements/reset-replica.md) is used to reset parameters for a connection and also to permanently delete a master connection.
 
-GPLv2 fill\_help\_tables.sql
+<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
 
 {% @marketo/form formId="4316" %}

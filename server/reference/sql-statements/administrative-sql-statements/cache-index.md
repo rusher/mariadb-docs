@@ -50,6 +50,6 @@ The only possible long operations are getting the locks for the table and flushi
 
 We plan to also add CACHE INDEX for Aria tables if there is a need for this.
 
-GPLv2 fill\_help\_tables.sql
+<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
 
 {% @marketo/form formId="4316" %}

@@ -80,6 +80,6 @@ SHOW GRANTS FOR public;
 * [SHOW PRIVILEGES](show-privileges.md) shows the privileges supported by MariaDB.
 * [Roles](../../../../security/user-account-management/roles/)
 
-GPLv2 fill\_help\_tables.sql
+<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
 
 {% @marketo/form formId="4316" %}

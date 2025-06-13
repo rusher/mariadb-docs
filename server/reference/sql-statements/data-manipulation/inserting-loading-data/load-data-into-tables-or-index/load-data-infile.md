@@ -169,6 +169,6 @@ SELECT * FROM ld;
 * [SELECT ... INTO OUTFILE](../../selecting-data/select-into-outfile.md)
 * [mariadb-import](../../../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-import.md)
 
-GPLv2 fill\_help\_tables.sql
+<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
 
 {% @marketo/form formId="4316" %}

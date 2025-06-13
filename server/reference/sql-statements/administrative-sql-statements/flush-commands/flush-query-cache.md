@@ -8,6 +8,6 @@ the `FLUSH QUERY CACHE` statement. The statement does not remove any queries fro
 The [RESET QUERY CACHE](../reset.md) statement removes all query results from the query cache.\
 The [FLUSH TABLES](flush.md) statement also does this.
 
-GPLv2 fill\_help\_tables.sql
+<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
 
 {% @marketo/form formId="4316" %}

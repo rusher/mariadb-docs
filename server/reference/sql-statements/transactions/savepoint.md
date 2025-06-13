@@ -31,6 +31,6 @@ If SAVEPOINT is issued and no transaction was started, no error is reported but 
 ERROR 1305 (42000): SAVEPOINT svp_name does not exist
 ```
 
-GPLv2 fill\_help\_tables.sql
+<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
 
 {% @marketo/form formId="4316" %}

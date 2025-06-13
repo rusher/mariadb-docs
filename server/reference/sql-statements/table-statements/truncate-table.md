@@ -88,6 +88,6 @@ Setting [innodb\_adaptive\_hash\_index=OFF](../../../server-usage/storage-engine
 * [innodb\_safe\_truncate](../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_safe_truncate) system variable
 * [Oracle mode from MariaDB 10.3](broken-reference/)
 
-GPLv2 fill\_help\_tables.sql
+<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
 
 {% @marketo/form formId="4316" %}

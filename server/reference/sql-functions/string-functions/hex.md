@@ -63,6 +63,6 @@ SELECT HEX(CAST('2001:db8::ff00:42:8329' AS INET6));
 * [BIN()](bin.md)
 * [OCT()](../numeric-functions/oct.md)
 
-GPLv2 fill\_help\_tables.sql
+<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
 
 {% @marketo/form formId="4316" %}

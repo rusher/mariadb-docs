@@ -216,6 +216,6 @@ ECT...RETURNING if the table in the RETURNING clause is not the same as the REPL
 * [HIGH\_PRIORITY and LOW\_PRIORITY clauses](high_priority-and-low_priority.md)
 * [INSERT DELAYED](../inserting-loading-data/insert-delayed.md) for details on the `DELAYED` clause
 
-GPLv2 fill\_help\_tables.sql
+<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
 
 {% @marketo/form formId="4316" %}

@@ -33,6 +33,6 @@ It is possible to set a unique index on columns that use the BLOB or TEXT data t
 
 * [Store a column as compressed](../../sql-statements/data-definition/create/create-table.md#compressed)
 
-GPLv2 fill\_help\_tables.sql
+<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
 
 {% @marketo/form formId="4316" %}

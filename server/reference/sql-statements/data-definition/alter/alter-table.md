@@ -762,6 +762,6 @@ of which the first one gets delivered to replicas before ALTER is taken to actua
 * [SHOW CREATE TABLE](../../administrative-sql-statements/show/show-create-table.md)
 * [Instant ADD COLUMN for InnoDB](../../../storage-engines/innodb/innodb-online-ddl/instant-add-column-for-innodb.md)
 
-GPLv2 fill\_help\_tables.sql
+<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
 
 {% @marketo/form formId="4316" %}

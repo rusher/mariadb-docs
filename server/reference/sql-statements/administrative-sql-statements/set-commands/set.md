@@ -162,6 +162,6 @@ SELECT @a;
 * [SET Data Type](../../../data-types/string-data-types/set-data-type.md)
 * [DECLARE Variable](../../../../server-usage/programmatic-compound-statements/declare-variable.md)
 
-GPLv2 fill\_help\_tables.sql
+<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
 
 {% @marketo/form formId="4316" %}

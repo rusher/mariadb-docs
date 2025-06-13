@@ -140,6 +140,6 @@ SELECT CAST(2019-01-04 AS INTERVAL DAY_SECOND(2)) AS "Cast";
 * [COLLATION()](../secondary-functions/information-functions/collation.md)
 * [CONVERT()](convert.md)
 
-GPLv2 fill\_help\_tables.sql
+<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
 
 {% @marketo/form formId="4316" %}

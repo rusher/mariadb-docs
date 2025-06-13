@@ -22,6 +22,6 @@ The different `RESET` options are:
 | [MASTER](replication-statements/reset-master.md)                              | Deletes all old binary logs, makes the binary index file ([--log-bin-index](../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md)) empty and creates a new binary log file. This is useful when you want to reset the master to an initial state. If you want to just delete old, not used binary logs, you should use the [PURGE BINARY LOGS](purge-binary-logs.md) command. |
 | QUERY CACHE                                                                   | Removes all queries from [the query cache](../../../ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/query-cache.md). See also [FLUSH QUERY CACHE](flush-commands/flush-query-cache.md).                                                                                                                                                                                         |
 
-GPLv2 fill\_help\_tables.sql
+<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
 
 {% @marketo/form formId="4316" %}

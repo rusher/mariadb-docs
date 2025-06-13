@@ -42,6 +42,6 @@ Requires the [REPLICATION MASTER ADMIN](../../account-management-sql-statements/
 * [Replication threads](../../../../ha-and-performance/standard-replication/replication-threads.md)
 * [SHOW PROCESSLIST](show-processlist.md). In `[SHOW PROCESSLIST](show-processlist.md)` output, replica threads are identified by `Binlog Dump`
 
-GPLv2 fill\_help\_tables.sql
+<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
 
 {% @marketo/form formId="4316" %}
