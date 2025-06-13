@@ -1,4 +1,5 @@
 ---
+description: MariaDB 10.6 Changelog Series
 layout:
   title:
     visible: true
