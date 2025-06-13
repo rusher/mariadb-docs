@@ -1,8 +1,8 @@
-# google-summer-of-code-2023
+# Google Summer of Code 2023
 
-## Google Summer of Code 2023
 
-This year we are again participating in the [Google Summer of Code](https://summerofcode.withgoogle.com/). The [MariaDB Foundation](https://www.mariadb.org) believes we are making a better database that remains application compatible with MySQL. We also work on making LGPL connectors (currently [C](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c), [C++](../../../company-and-community/contributing-participating/google-summers-of-code/mariadb-connector-c++/), [ODBC](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-odbc), [Java](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-j), [Node.js](../../../../kb/en/nodejs-connector/)) and on [MariaDB Galera Cluster](../../../../kb/en/galera/), which allows you to scale your reads & writes. And we have [MariaDB ColumnStore](../../../../kb/en/mariadb-columnstore/), which is a columnar storage engine, designed to process petabytes of data with real-time response to analytical queries.
+
+In 2023, MariaDB participated in the [Google Summer of Code](https://summerofcode.withgoogle.com/). The [MariaDB Foundation](https://www.mariadb.org) believes we are making a better database that remains application compatible with MySQL. We also work on making LGPL connectors (currently [C](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c), [C++](../../../company-and-community/contributing-participating/google-summers-of-code/mariadb-connector-c++/), [ODBC](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-odbc), [Java](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-j), [Node.js](../../../../kb/en/nodejs-connector/)) and on [MariaDB Galera Cluster](../../../../kb/en/galera/), which allows you to scale your reads & writes. And we have [MariaDB ColumnStore](../../../../kb/en/mariadb-columnstore/), which is a columnar storage engine, designed to process petabytes of data with real-time response to analytical queries.
 
 ## Where to Start
 

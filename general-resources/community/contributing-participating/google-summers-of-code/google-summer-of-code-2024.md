@@ -1,12 +1,10 @@
-# google-summer-of-code-2024
+# Google Summer of Code 2024
 
-## Google Summer of Code 2024
-
-This year we are again participating in the [Google Summer of Code](https://summerofcode.withgoogle.com/). We, joined with the [MariaDB Foundation](https://www.mariadb.org), believe we are making a better database that remains application compatible with MySQL. We also work on making LGPL connectors (currently [C](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c), [C++](../../../company-and-community/contributing-participating/google-summers-of-code/mariadb-connector-c++/), [ODBC](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-odbc), [Java](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-j), [Node.js](../../../../en/nodejs-connector/)) and on [MariaDB Galera Cluster](../../../../en/galera/), which allows you to scale your reads & writes. And we have [MariaDB ColumnStore](../../../../en/mariadb-columnstore/), which is a columnar storage engine, designed to process petabytes of data with real-time response to analytical queries.
+In 2024, MariaDB again participated in the [Google Summer of Code](https://summerofcode.withgoogle.com/). We believe we are making a better database that remains application compatible with MySQL. We also work on making LGPL connectors (currently [C](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c), [C++](../../../company-and-community/contributing-participating/google-summers-of-code/mariadb-connector-c++/), [ODBC](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-odbc), [Java](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-j), [Node.js](../../../../en/nodejs-connector/)) and on [MariaDB Galera Cluster](../../../../en/galera/), which allows you to scale your reads & writes. And we have [MariaDB ColumnStore](../../../../en/mariadb-columnstore/), which is a columnar storage engine, designed to process petabytes of data with real-time response to analytical queries.
 
 ## Where to Start
 
-Please join us on [Zulip](../../../../en/irc-chat-servers-and-zulip-instance/) to mingle with the community. You should also subscribe to the [developers mailing list](https://lists.mariadb.org/postorius/lists/developers.lists.mariadb.org) (this is the main list where we discuss development - there are also [other mailing lists](broken-reference)).
+Please join us on [Zulip](../../../../en/irc-chat-servers-and-zulip-instance/) to mingle with the community. You should also subscribe to the [developers mailing list](https://lists.mariadb.org/postorius/lists/developers.lists.mariadb.org) (this is the main list where we discuss development - there are also [other mailing lists](broken-reference/)).
 
 To improve your chances of being accepted, it is a good idea to submit a pull request with a bug fix to the server.
 
