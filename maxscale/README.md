@@ -20,30 +20,29 @@ layout:
 # MariaDB MaxScale
 
 {% content-ref url="maxscale-quickstart-guides/" %}
-[Quickstart Guides](maxscale-quickstart-guides/)
+[maxscale-quickstart-guides](maxscale-quickstart-guides/)
 {% endcontent-ref %}
 
 {% content-ref url="maxscale-architecture/" %}
-[MaxScale Architecture](maxscale-architecture/)
+[maxscale-architecture](maxscale-architecture/)
 {% endcontent-ref %}
 
 {% content-ref url="maxscale-management/" %}
-[MaxScale Management](maxscale-management/)
+[maxscale-management](maxscale-management/)
 {% endcontent-ref %}
 
 {% content-ref url="maxscale-security/" %}
-[MaxScale Security](maxscale-security/)
+[maxscale-security](maxscale-security/)
 {% endcontent-ref %}
 
 {% content-ref url="maxscale-use-cases.md" %}
-[MaxScale Use Cases](maxscale-use-cases.md)
+[maxscale-use-cases.md](maxscale-use-cases.md)
 {% endcontent-ref %}
 
 {% content-ref url="mariadb-maxscale-tutorials/" %}
-[Tutorials](mariadb-maxscale-tutorials/)
+[mariadb-maxscale-tutorials](mariadb-maxscale-tutorials/)
 {% endcontent-ref %}
 
-{% content-ref url="reference/" %}
-[Reference](reference/)
+{% content-ref url="reference.md" %}
+[reference.md](reference.md)
 {% endcontent-ref %}
-
