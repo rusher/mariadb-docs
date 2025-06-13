@@ -1,6 +1,7 @@
 # Table of contents
 
 * [MariaDB MaxScale](README.md)
+  * [MaxScale Overview](readme/maxscale-overview.md)
   * [MaxScale Trial](readme/maxscale-trial.md)
 * [Quickstart Guides](maxscale-quickstart-guides/README.md)
   * [MariaDB MaxScale Guide](maxscale-quickstart-guides/mariadb-maxscale-guide.md)
