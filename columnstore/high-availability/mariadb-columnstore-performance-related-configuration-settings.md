@@ -27,7 +27,7 @@ layout:
 
 A number of system configuration variables exist to allow fine tuning of the system to suit the physical hardware and query characteristics. In general the default values will work relatively well for many cases.
 
-The configuration parameters are maintained in the /usr/local/mariadb/columnstore/etc/Columnstore.xml file. In a multiple server deployment these should only be edited on the PM1 server as this will be automatically replicated to other servers by the system. A system restart will be required for the configuration change to take affect.
+The configuration parameters are maintained in the `/usr/local/mariadb/columnstore/etc/Columnstore.xml` file. In a multiple server deployment these should only be edited on the PM1 server as this will be automatically replicated to other servers by the system. A system restart will be required for the configuration change to take affect.
 
 Convenience utility programs _getConfig_ and _setConfig_ are available to safely update the Columnstore.xml without needing to be comfortable with editing XML files. The -h argument will display usage information.
 
@@ -66,7 +66,7 @@ ColumnStore maintains statistics for table and utilizes this to determine which 
 
 ## Multi table join tuning
 
-The above logic for a single table join extrapolates out to multi table joins where the small table values are precalculated and performed as one single scan against the large table. This works well for the typical star schema case joining multiple dimension tables with a large fact table. For some join scenarios it may be necessary to sequence joins to create the intermediate datasets for joining, this would happen for instance with a snowflake schema structure. In some extreme cases it may be hard for the optimizer to be able to determine the most optimal join path. In this case a hint is available to force a join ordering. The INFINIDB\_ORDERED hint will force the first table in the from clause to be considered the largest table and override any statistics based decision, for example:
+The above logic for a single table join extrapolates out to multi table joins where the small table values are precalculated and performed as one single scan against the large table. This works well for the typical star schema case joining multiple dimension tables with a large fact table. For some join scenarios it may be necessary to sequence joins to create the intermediate datasets for joining, this would happen for instance with a snowflake schema structure. In some extreme cases it may be hard for the optimizer to be able to determine the most optimal join path. In this case a hint is available to force a join ordering. The `INFINIDB_ORDERED` hint will force the first table in the from clause to be considered the largest table and override any statistics based decision, for example:
 
 ```
 select /*! INFINIDB_ORDERED */ r_regionkey     
@@ -76,7 +76,7 @@ and n.n_nationkey = c.c_nationkey
 ```
 
 {% hint style="danger" %}
-Note: `INFINIDB\_ORDERED` is deprecated and not work anymore for 1.2 and above.
+Note: `INFINIDB\_ORDERED` is deprecated and does not work anymore for ColumnStore 1.2 and above.
 {% endhint %}
 
 use\
@@ -90,12 +90,12 @@ set columnstore\_ordered\_only=ON;
 When a join is very large and exceeds the _PmMaxMemorySmallSide_ setting it is performed in memory in the UM server. For very large joins this could exceed the available memory in which case this is detected and a query error reported. A number of configuration parameters are available to enable and configure usage of disk overflow should this occur:
 
 * AllowDiskBasedJoin – Controls the option to use disk Based joins or not. Valid values are Y (enabled) or N (disabled). By default, this option is disabled.
-* TempFileCompression – Controls whether the disk join files are compressed or noncompressed. Valid values are Y (use compressed files) or N (use non-compressed files).
-* TempFilePath – The directory path used for the disk joins. By default, this path is the tmp directory for your installation (i.e., /usr/local/mariadb/columnstore/tmp). Files (named infinidb-join-data\*) in this directory will be created and cleaned on an as needed basis. The entire directory is removed and recreated by ExeMgr at startup. It is strongly recommended that this directory is stored on a dedicated partition.
+* TempFileCompression – Controls whether the disk join files are compressed or noncompressed. Valid values are `Y` (use compressed files) or `N` (use non-compressed files).
+* TempFilePath – The directory path used for the disk joins. By default, this path is the tmp directory for your installation (i.e., `/usr/local/mariadb/columnstore/tmp`). Files (named `infinidb-join-data*`) in this directory will be created and cleaned on an as needed basis. The entire directory is removed and recreated by `ExeMgr` at startup. It is strongly recommended that this directory is stored on a dedicated partition.
 
 A mariadb global or session variable is available to specify a memory limit at which point the query is switched over to disk based joins:
 
-* infinidb\_um\_mem\_limit - Memory limit in MB per user (i.e. switch to disk based join if this limit is exceeded). By default, this limit is not set (value of 0).
+* `infinidb_um_mem_limit` - Memory limit in MB per user (i.e. switch to disk based join if this limit is exceeded). By default, this limit is not set (value of 0).
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
