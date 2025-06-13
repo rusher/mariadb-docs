@@ -9,7 +9,7 @@ The most recent [_**Stable**_](../../../mariadb-release-criteria.md) _**(GA)**_ 
 This is a [_**Stable (GA)**_](../../../mariadb-release-criteria.md) release of MariaDB\
 Connector/C, formerly known as MariaDB Client Library for C.
 
-MariaDB Connector/C 3.4.2 was not released separately but is included in [MariaDB Community Server 11.4.4](../../../mariadb-community-server-release-notes/mariadb-11-4-series/mariadb-11-4-4-release-notes.md). MariaDB Connector/C 3.4.3 includes additional bug fixes for the Connector and is included in [MariaDB Community Server 11.6.2](../../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-6-rolling-releases/mariadb-11-6-2-release-notes.md), and [11.7.1](../../../mariadb-community-server-release-notes/mariadb-11-7-rolling-releases/mariadb-11-7-1-release-notes.md).
+MariaDB Connector/C 3.4.2 was not released separately but is included in [MariaDB Community Server 11.4.4](../../../mariadb-community-server-release-notes/mariadb-11-4-series/mariadb-11-4-4-release-notes.md). MariaDB Connector/C 3.4.3 includes additional bug fixes for the Connector and is included in [MariaDB Community Server 11.6.2](../../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-6-rolling-releases/mariadb-11-6-2-release-notes.md), and [11.7.1](../../../mariadb-community-server-release-notes/old-releases/mariadb-11-7-rolling-releases/mariadb-11-7-1-release-notes.md).
 
 **For a description of this library see the**[**MariaDB Connector/C**](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c) **page.**
 

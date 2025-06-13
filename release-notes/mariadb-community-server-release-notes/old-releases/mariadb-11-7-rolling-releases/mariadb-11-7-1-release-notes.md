@@ -1,6 +1,6 @@
 # MariaDB 11.7.1 Release Notes
 
-[Download](https://mariadb.com/downloads)[Release Notes](mariadb-11-7-1-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-11-7-series/mariadb-11-7-1-changelog.md)[Overview of 11.7](what-is-mariadb-117.md)
+[Download](https://mariadb.com/downloads)[Release Notes](mariadb-11-7-1-release-notes.md)[Changelog](../../../changelogs/changelogs-mariadb-11-7-series/mariadb-11-7-1-changelog.md)[Overview of 11.7](what-is-mariadb-117.md)
 
 [_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/11.7.1/)
 
@@ -8,9 +8,9 @@
 
 **Do not use non-stable (non-GA) releases in production!**
 
-[MariaDB 11.7](what-is-mariadb-117.md) is a [rolling release](../../mariadb-release-model.md). It is an evolution of [MariaDB 11.6](../old-releases/release-notes-mariadb-11-6-rolling-releases/what-is-mariadb-116.md) with several entirely new features.
+[MariaDB 11.7](what-is-mariadb-117.md) is a [rolling release](../../../mariadb-release-model.md). It is an evolution of [MariaDB 11.6](../release-notes-mariadb-11-6-rolling-releases/what-is-mariadb-116.md) with several entirely new features.
 
-[MariaDB 11.7.1](mariadb-11-7-1-release-notes.md) is a [_**Release Candidate (RC)**_](../../mariadb-release-criteria.md) release.
+[MariaDB 11.7.1](mariadb-11-7-1-release-notes.md) is a [_**Release Candidate (RC)**_](../../../mariadb-release-criteria.md) release.
 
 **For an overview of** [**MariaDB 11.7**](what-is-mariadb-117.md) **see the**[**What is MariaDB 11.7?**](what-is-mariadb-117.md) **page.**
 
@@ -20,7 +20,7 @@ Thanks, and enjoy MariaDB!
 
 ### Vectors
 
-* [Vectors](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/vectors) are a feature that allow MariaDB Server to perform as a relational vector database. Previously available in the special [Vector preview release](../old-releases/release-notes-mariadb-11-6-rolling-releases/mariadb-11-6-0-vector-release-notes.md), it has now been added to MariaDB Community Server 11.7.1 with various enhancements ([MDEV-34939](https://jira.mariadb.org/browse/MDEV-34939))
+* [Vectors](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/vectors) are a feature that allow MariaDB Server to perform as a relational vector database. Previously available in the special [Vector preview release](../release-notes-mariadb-11-6-rolling-releases/mariadb-11-6-0-vector-release-notes.md), it has now been added to MariaDB Community Server 11.7.1 with various enhancements ([MDEV-34939](https://jira.mariadb.org/browse/MDEV-34939))
   * Data type VECTOR ([MDEV-33410](https://jira.mariadb.org/browse/MDEV-33410))
   * Conversion functions VEC\_FromText and VEC\_ToText ([MDEV-32886](https://jira.mariadb.org/browse/MDEV-32886))
   * Configuration options ([MDEV-35244](https://jira.mariadb.org/browse/MDEV-35244))
@@ -94,7 +94,7 @@ Thanks, and enjoy MariaDB!
 
 ### General
 
-* As per the [MariaDB Deprecation Policy](../../mariadb-platform-deprecation-policy.md), this will be the last release of [MariaDB 11.7](what-is-mariadb-117.md) for Windows 11 22H2
+* As per the [MariaDB Deprecation Policy](../../../mariadb-platform-deprecation-policy.md), this will be the last release of [MariaDB 11.7](what-is-mariadb-117.md) for Windows 11 22H2
 * [mariadbd](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/starting-and-stopping-mariadb/mariadbd) no longer hangs on startup when --init-file target does not exist ([MDEV-34814](https://jira.mariadb.org/browse/MDEV-34814))
 * LOAD DATA INFILE with geometry data no longer fails ([MDEV-34883](https://jira.mariadb.org/browse/MDEV-34883))
 * Fix heap-use-after-free in group\_concat with compressed or GIS columns ([MDEV-16699](https://jira.mariadb.org/browse/MDEV-16699))
@@ -111,7 +111,7 @@ Thanks, and enjoy MariaDB!
 ## Changelog
 
 For a complete list of changes made in [MariaDB 11.7.1](mariadb-11-7-1-release-notes.md), with links to detailed\
-information on each push, see the [changelog](../../changelogs/changelogs-mariadb-11-7-series/mariadb-11-7-1-changelog.md).
+information on each push, see the [changelog](../../../changelogs/changelogs-mariadb-11-7-series/mariadb-11-7-1-changelog.md).
 
 ## Contributors
 

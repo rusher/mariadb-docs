@@ -15,7 +15,7 @@ The most recent release of [MariaDB 11.6](what-is-mariadb-116.md) is:[**MariaDB 
 ### Vectors
 
 * [Vectors](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/vectors) are a feature that allow MariaDB Server to perform as a relational vector database. In [MariaDB 10.6](../../mariadb-10-6-series/what-is-mariadb-106.md), only available in the [Vector preview release](mariadb-11-6-0-vector-release-notes.md).
-* Vector Search was added to [MariaDB 11.7](../../mariadb-11-7-rolling-releases/what-is-mariadb-117.md).
+* Vector Search was added to [MariaDB 11.7](../mariadb-11-7-rolling-releases/what-is-mariadb-117.md).
 
 ### Character Sets
 

@@ -8,7 +8,7 @@ The most recent release of [MariaDB 11.7](what-is-mariadb-117.md) is:[**MariaDB 
 
 **Do not use&#x20;**_**alpha**_**&#x20;releases in production!**
 
-[MariaDB 11.7](what-is-mariadb-117.md) is a [rolling release](../../mariadb-release-model.md). It is an evolution of [MariaDB 11.6](../old-releases/release-notes-mariadb-11-6-rolling-releases/what-is-mariadb-116.md) with several entirely new features.
+[MariaDB 11.7](what-is-mariadb-117.md) is a [rolling release](../../../mariadb-release-model.md). It is an evolution of [MariaDB 11.6](../release-notes-mariadb-11-6-rolling-releases/what-is-mariadb-116.md) with several entirely new features.
 
 [MariaDB 11.7.0](mariadb-11-7-0-release-notes.md) is a single preview release. Features are to be considered preview, and none are guaranteed to make it into [MariaDB 11.7](what-is-mariadb-117.md).
 
