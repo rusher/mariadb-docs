@@ -1,6 +1,4 @@
-# google-summer-of-code-2015
-
-## Google Summer of Code 2015
+# Google Summer of Code 2015
 
 We participated in the Google Summer of Code 2015. MariaDB and the MariaDB Foundation believe we are making a better database that remains a drop-in replacement to MySQL. We also work on making LGPL connectors (currently in C, Java, C++ in development) and on [MariaDB Galera Cluster](../../../../en/galera/), which allows you to scale your reads & writes. Lately, we also have MariaDB MaxScale which is a pluggable database proxy.
 
@@ -30,7 +28,7 @@ The [mysqlbinlog](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-uti
 
 #### Remote backup of binary logs
 
-[mysqlbinlog](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/mariadb-binlog) in MySQL 5.6 also supports streaming [binlog](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/server-monitoring-logs/binary-log) servers for [backups](broken-reference). This is important as the MHA tool can also use this feature.
+[mysqlbinlog](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/mariadb-binlog) in MySQL 5.6 also supports streaming [binlog](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/server-monitoring-logs/binary-log) servers for [backups](broken-reference/). This is important as the MHA tool can also use this feature.
 
 | Details: | Skills:                                                | Mentor: |
 | -------- | ------------------------------------------------------ | ------- |
@@ -91,7 +89,7 @@ MySQL 5.6 has a memcached plugin to InnoDB. MySQL 5.7 has improved performance o
 
 ### Automatic provisioning of slave
 
-The purpose of this task is to create an easy-to-use facility for setting up a new MariaDB [replication](broken-reference) slave.
+The purpose of this task is to create an easy-to-use facility for setting up a new MariaDB [replication](broken-reference/) slave.
 
 | Details: | Skills:                                                | Mentor: |
 | -------- | ------------------------------------------------------ | ------- |
