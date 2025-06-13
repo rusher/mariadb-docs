@@ -47,7 +47,7 @@ To properly fetch user account information, the MaxScale service user must be\
 able to read from various tables in the _mysql_-database: _user_, _db_,_tables\_priv_, _columns\_priv_, _procs\_priv_, _proxies\_priv_ and _roles\_mapping_.\
 The user should also have the _SHOW DATABASES_-grant.
 
-```
+```sql
 CREATE USER 'maxscale'@'maxscalehost' IDENTIFIED BY 'maxscale-password';
 GRANT SELECT ON mysql.user TO 'maxscale'@'maxscalehost';
 GRANT SELECT ON mysql.db TO 'maxscale'@'maxscalehost';
@@ -61,7 +61,7 @@ GRANT SHOW DATABASES ON *.* TO 'maxscale'@'maxscalehost';
 
 If using MariaDB ColumnStore, the following grant is required:
 
-```
+```sql
 GRANT ALL ON infinidb_vtable.* TO 'maxscale'@'maxscalehost';
 ```
 

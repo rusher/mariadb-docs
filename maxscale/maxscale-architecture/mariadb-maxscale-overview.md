@@ -1,3 +1,10 @@
+---
+description: >-
+  Get an overview of MariaDB MaxScale. This section introduces its core
+  functionalities, including intelligent routing, load balancing, and high
+  availability, for managing and optimizing deployment.
+---
+
 # MariaDB MaxScale Overview
 
 ## Overview
