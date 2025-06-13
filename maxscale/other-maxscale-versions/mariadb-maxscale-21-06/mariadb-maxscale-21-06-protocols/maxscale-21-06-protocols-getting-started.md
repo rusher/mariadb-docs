@@ -1,3 +1,6 @@
+---
+hidden: true
+---
 
 # MaxScale 21.06 Getting-Started
 

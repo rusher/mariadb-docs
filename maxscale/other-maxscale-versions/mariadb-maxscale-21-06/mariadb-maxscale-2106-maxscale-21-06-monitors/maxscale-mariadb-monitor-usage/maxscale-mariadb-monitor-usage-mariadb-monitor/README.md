@@ -1,6 +1,20 @@
+---
+description: >-
+  Learn about the MariaDB Monitor in MaxScale 21.06. This module tracks primary
+  and replica servers, enabling automatic failover, switchover, and other
+  essential high-availability features.
+layout:
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: false
+---
+
 # MariaDB Monitor
 
-* [Designing for MaxScale's MariaDB Monitor](designing-for-maxscales-mariadb-monitor.md)
-* [Understanding MaxScale's MariaDB Monitor](understanding-maxscales-mariadb-monitor.md)
-* [Using Automatic Failover with MaxScale's MariaDB Monitor](using-automatic-failover-with-maxscales-mariadb-monitor.md)
-* [Using Cooperative Locking for HA with MaxScale's MariaDB Monitor](using-cooperative-locking-for-ha-with-maxscales-mariadb-monitor.md)

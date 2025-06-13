@@ -1,11 +1,20 @@
+---
+description: >-
+  This router sends write queries to a single primary server while
+  load-balancing read queries across replica servers. Learn how to configure
+  this for scaling out read workloads.
+layout:
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: false
+---
+
 # Read/Write Split Router Usage
 
-* [Delayed Retrying of Failed Queries with MaxScale's Read/Write Split Router](delayed-retrying-of-failed-queries-with-maxscales-readwrite-split-router.md)
-* [Designing for MaxScale's Read/Write Split Router](designing-for-maxscales-readwrite-split-router.md)
-* [Ensuring Causal Consistency with MaxScale's Read/Write Split Router](ensuring-causal-consistency-with-maxscales-readwrite-split-router.md)
-* [Reconnecting to the Primary Server with MaxScale's Read/Write Split Router](reconnecting-to-the-primary-server-with-maxscales-readwrite-split-router.md)
-* [Replaying Transactions with MaxScale's Read/Write Split Router](replaying-transactions-with-maxscales-readwrite-split-router.md)
-* [Retrying Failed Reads with MaxScale's Read/Write Split Router](retrying-failed-reads-with-maxscales-readwrite-split-router.md)
-* [Routing Statements with MaxScale's Read/Write Split Router](routing-statements-with-maxscales-readwrite-split-router.md)
-* [Selecting Replica Servers with MaxScale's Read/Write Split Router](selecting-replica-servers-with-maxscales-readwrite-split-router.md)
-* [Understanding MaxScale's Read/Write Split Router](understanding-maxscales-readwrite-split-router.md).
