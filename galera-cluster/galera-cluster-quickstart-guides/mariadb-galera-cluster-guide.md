@@ -1,6 +1,5 @@
 ---
 description: MariaDB Galera Cluster quickstart guide
-icon: rabbit
 ---
 
 # MariaDB Galera Cluster Guide

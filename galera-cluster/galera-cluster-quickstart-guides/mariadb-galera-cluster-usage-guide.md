@@ -1,6 +1,5 @@
 ---
 description: MariaDB Galera Cluster usage guide
-icon: rabbit
 ---
 
 # MariaDB Galera Cluster Usage Guide
