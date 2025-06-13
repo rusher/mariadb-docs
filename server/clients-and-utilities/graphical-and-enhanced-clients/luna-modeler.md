@@ -43,7 +43,7 @@ Luna Modeler is available for Windows, Linux and macOS.
 See [www.datensen.com](https://www.datensen.com) for more information.
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

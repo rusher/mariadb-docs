@@ -16,6 +16,6 @@ The table contains the following columns:
 
 [TRUNCATE TABLE](../../../../table-statements/truncate-table.md) resets global status variables, including thread, account, host, and user status, but not those that are never reset by the server.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

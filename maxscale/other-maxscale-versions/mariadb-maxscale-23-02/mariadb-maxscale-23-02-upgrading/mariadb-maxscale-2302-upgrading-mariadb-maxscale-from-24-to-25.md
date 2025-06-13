@@ -64,6 +64,6 @@ your requirements, before upgrading MaxScale.
 The tee filter parameter `service` has been deprecated in favor of the `target`\
 parameter. All usages of `service` can be replaced with `target`.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

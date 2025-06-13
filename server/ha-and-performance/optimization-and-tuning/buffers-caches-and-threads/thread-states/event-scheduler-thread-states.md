@@ -13,6 +13,6 @@ These correspond to the `STATE` values listed by the [SHOW PROCESSLIST](../../..
 | Waiting for scheduler to stop | Waiting for the event scheduler to stop after issuing SET GLOBAL event\_scheduler=OFF. |
 | Waiting on empty queue        | Sleeping, as the event scheduler's queue is empty.                                     |
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

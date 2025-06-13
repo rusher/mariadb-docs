@@ -41,6 +41,6 @@ Queries to the `TRIGGERS` table will return information only for databases and t
 * `[SHOW CREATE TRIGGER](../../../show/show-create-trigger.md)`
 * [Trigger Limitations](../../../../../../server-usage/triggers-events/triggers/trigger-limitations.md)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

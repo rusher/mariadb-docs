@@ -148,6 +148,6 @@ is an example log that is generated from the above TPM filter with the above con
 
 Note that 3 and 5 are latencies of each transaction in milliseconds.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

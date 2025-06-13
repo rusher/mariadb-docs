@@ -188,6 +188,6 @@ navigation.
 The global search input located next to the _+ Create New_ button can be\
 used for searching for keywords in tables.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

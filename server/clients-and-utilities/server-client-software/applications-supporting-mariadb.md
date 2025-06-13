@@ -81,6 +81,6 @@ Note: Every project we know of which works with MySQL also works with MariaDB. T
 * [Graphical clients](../graphical-and-enhanced-clients/)
 * [Distributions which include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/readme-1)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

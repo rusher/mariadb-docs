@@ -254,6 +254,6 @@ The [thread\_cache\_size](../../system-variables/server-system-variables.md#thre
 * [Threadpool Benchmarks](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/development-articles/general-info/quality/benchmarks-and-long-running-tests/benchmark-results/threadpool-benchmarks)
 * [Thread Pool in MariaDB 5.1 - 5.3](thread-pool-in-mariadb-51-53.md)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

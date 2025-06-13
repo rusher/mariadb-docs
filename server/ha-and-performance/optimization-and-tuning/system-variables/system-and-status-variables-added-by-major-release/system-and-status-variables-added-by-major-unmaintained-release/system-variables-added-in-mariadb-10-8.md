@@ -14,6 +14,6 @@ For system variables that have been removed or deprecated, see [Upgrading from M
 
 * [System Variables Added in MariaDB 10.6](../system-variables-added-in-mariadb-10-6.md)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

@@ -74,6 +74,6 @@ shell> perldoc mariadb-hotcopy
 * [mariadb-ldump](mariadb-ldump/)
 * [Mariabackup](../../server-usage/backing-up-and-restoring-databases/mariabackup/)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

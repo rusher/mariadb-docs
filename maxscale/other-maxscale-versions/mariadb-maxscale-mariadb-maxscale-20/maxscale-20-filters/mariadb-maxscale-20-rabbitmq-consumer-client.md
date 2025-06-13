@@ -69,6 +69,6 @@ The source broker, the destination database and the message log file can be conf
 | dbpasswd | Database password                            |
 | logfile  | Message log filename                         |
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

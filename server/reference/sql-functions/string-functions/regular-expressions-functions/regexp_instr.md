@@ -55,6 +55,6 @@ SELECT REGEXP_INSTR('ABC' COLLATE utf8_bin,'(?i)b');
 -> 2
 ```
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

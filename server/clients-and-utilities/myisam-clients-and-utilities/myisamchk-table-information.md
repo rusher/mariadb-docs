@@ -214,6 +214,6 @@ Blocks in 0 out 0, Messages in 0 out 0, Signals 0
 Voluntary context switches 0, Involuntary context switches 74
 ```
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

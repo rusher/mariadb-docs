@@ -27,6 +27,6 @@ SELECT JSON_OBJECT("id", 1, "name", "Monty");
 
 * [JSON\_MAKE\_OBJECT](../../../../server-usage/storage-engines/connect/connect-table-types/connect-json-table-type.md#json_make_object), the CONNECT storage engine function
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

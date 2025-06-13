@@ -106,6 +106,6 @@ sudo apt-get install \
 
 After switching back to the 5.5 repo, the libraries won't get upgraded, they will stay 5.5.32 until you upgrade the server to 5.5.33a.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

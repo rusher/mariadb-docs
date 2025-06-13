@@ -212,6 +212,6 @@ ce 22 28 5a 02 8c 27 00  00 54 00 00 00 87 0c 00  ."(Z..'..T......
 * The default database\[string] = 74 65 73 74 00 =>test
 * The SQL statement\[string] = TRUNCATE TABLE test.t4
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

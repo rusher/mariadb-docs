@@ -106,6 +106,6 @@ Aggregate functions cannot be used in the RETURNING clause. Since aggregate func
 * [DELETE ... RETURNING](../changing-deleting-data/delete.md#returning)
 * [Returning clause](https://www.youtube.com/watch?v=n-LTdEBeAT4) (video)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

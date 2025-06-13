@@ -108,6 +108,6 @@ The minimum set of router options that must be given in the configuration are ar
 
 The [Replication Proxy](../maxscale-14-tutorials/maxscale-as-a-replication-proxy.md) tutorial will show you how to configure and administrate a binlogrouter installation.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

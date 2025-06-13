@@ -186,6 +186,6 @@ This article describes the system and status variables used by the MariaDB threa
 
 * [Thread Pool in MariaDB](thread-pool-in-mariadb.md)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

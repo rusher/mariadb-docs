@@ -44,6 +44,6 @@ Warning (Code 4201): Invalid binary vector format. Must use IEEE standard float
 
 * [Error 4201: Invalid binary vector format](broken-reference)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

@@ -182,6 +182,6 @@ The following example shows how you might set up an option file for use with mar
            user       = jani
 ```
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

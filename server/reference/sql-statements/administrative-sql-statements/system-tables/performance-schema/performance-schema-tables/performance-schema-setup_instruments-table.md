@@ -1020,6 +1020,6 @@ SELECT * FROM setup_instruments ORDER BY name;
 996 rows in set (0.005 sec)
 ```
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

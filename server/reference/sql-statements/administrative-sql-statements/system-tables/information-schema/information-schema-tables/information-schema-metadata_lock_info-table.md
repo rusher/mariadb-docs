@@ -93,6 +93,6 @@ SELECT * FROM information_schema.METADATA_LOCK_INFO;
 * [Performance Schema metadata\_locks table](../../performance-schema/performance-schema-tables/performance-schema-metadata_locks-table.md)
 * [GET\_LOCK](../../../../../sql-functions/secondary-functions/miscellaneous-functions/get_lock.md)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

@@ -240,6 +240,6 @@ modified in that revision.
     * `--with-plugins=XXX --without-plugin-XXX`
     * `--with-plugins=META --without-plugin-XXX`
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formid="4316" formId="4316" %}

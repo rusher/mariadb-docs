@@ -13,6 +13,6 @@ This is a list of [system variables](../server-system-variables.md) that have be
 
 * [System Variables Added in MariaDB 11.5](system-and-status-variables-added-by-major-unmaintained-release/system-variables-added-in-mariadb-11-5.md)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

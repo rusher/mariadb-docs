@@ -21,6 +21,6 @@ The `mysql.index_stats` table contains the following fields:
 
 It is possible to manually update the table. See [Manual updates to statistics tables](../../../../../ha-and-performance/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/engine-independent-table-statistics.md#manual-updates-to-statistics-tables) for details.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

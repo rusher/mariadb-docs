@@ -17,7 +17,7 @@ The following are the steps in the operation phase:
 1. Make any final changes based on the problems discovered by users.
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

@@ -177,6 +177,6 @@ order by
 * [mariadb-subquery-cache-in-real-use-case.html](https://varokism.blogspot.ru/2013/06/mariadb-subquery-cache-in-real-use-case.html) Another use case from the real world
 * [What is MariaDB 5.3](broken-reference/)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

@@ -99,6 +99,6 @@ Some examples of divergences between MariaDB's InnoDB and MySQL's InnoDB are:
 * [Why MariaDB uses InnoDB instead of XtraDB from MariaDB 10.2](../../../../kb/en/why-does-mariadb-102-use-innodb-instead-of-xtradb/)
 * [XtraDB Versions](innodb-unmaintained/about-xtradb.md)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

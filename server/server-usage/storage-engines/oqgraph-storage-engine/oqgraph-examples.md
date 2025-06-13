@@ -184,6 +184,6 @@ The use of integer latches is controlled using the [oqgraph\_allow\_create\_inte
 
 * [OQGRAPH Overview](oqgraph-overview.md)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

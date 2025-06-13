@@ -69,7 +69,7 @@ If the key file is not in the default location, the
 set to the directory that contains it.
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

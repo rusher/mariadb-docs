@@ -14,6 +14,6 @@ In general terms it is equivalent to Greenwich Mean Time (GMT), but UTC is used 
 * [UTC\_TIME](../../../../sql-functions/date-time-functions/utc_time.md)
 * [UTC\_TIMESTAMP](../../../../sql-functions/date-time-functions/utc_timestamp.md)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

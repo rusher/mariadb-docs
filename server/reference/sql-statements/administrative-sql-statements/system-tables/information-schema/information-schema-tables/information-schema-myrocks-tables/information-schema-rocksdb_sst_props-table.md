@@ -23,6 +23,6 @@ It contains the following columns:
 | COMPRESSION\_ALGO       |             |
 | CREATION\_TIME          |             |
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

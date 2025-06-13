@@ -63,6 +63,6 @@ See the [this page](mariadb-package-repository-setup-and-usage.md) for details o
 
 See the [this page](https://downloads.mariadb.org/mariadb/repositories/) for details on configuring MariaDB Foundation repositories that use these keys.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

@@ -69,6 +69,6 @@ and bug fixes:
 * test maria.maria fails if server built without '`--with-partition`'\
   ([Bug #330611](https://bugs.launchpad.net/bugs/330611)).
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formid="4316" formId="4316" %}

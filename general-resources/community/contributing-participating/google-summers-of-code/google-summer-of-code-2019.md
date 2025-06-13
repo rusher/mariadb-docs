@@ -525,6 +525,6 @@ We expect to have both unit and regression tests but this is optional.
 
 Do you have an idea of your own, not listed above? Do let us know!
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

@@ -52,6 +52,6 @@ ftp> quit
 * [Compiling MariaDB for debugging](../../../development-articles/debugging-mariadb/compiling-mariadb-for-debugging.md)
 * [How to produce a stack trace from a core file](../../../development-articles/debugging-mariadb/how-to-produce-a-full-stack-trace-for-mariadbd.md)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

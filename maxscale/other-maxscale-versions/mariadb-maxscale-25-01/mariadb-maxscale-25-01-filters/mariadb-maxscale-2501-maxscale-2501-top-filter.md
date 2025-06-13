@@ -272,6 +272,6 @@ Total connection time               46.500 seconds
 -bash-4.1$
 ```
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

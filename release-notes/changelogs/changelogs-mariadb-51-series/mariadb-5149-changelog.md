@@ -111,6 +111,6 @@ The revision number links will take you to the revision's page on Launchpad. On 
 * [Revision #2860](https://bazaar.launchpad.net/~maria-captains/maria/5.1/revision/2860) \[merge]\
   Automerge [MariaDB 5.1.47](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-1-series/mariadb-5147-release-notes.md) release into main.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formid="4316" formId="4316" %}

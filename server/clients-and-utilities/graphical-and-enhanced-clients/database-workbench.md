@@ -30,7 +30,7 @@ Database Workbench comes in multiple editions and is licensed on a per module ba
 ![dbwoverview](../../.gitbook/assets/database-workbench/+image/dbwoverview.jpg "dbwoverview")
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

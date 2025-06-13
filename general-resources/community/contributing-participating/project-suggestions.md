@@ -51,6 +51,6 @@ Keystone is the OpenStack Identity Service. The idea would be to ensure that Mar
 
 * Skills: Python, C/C++
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

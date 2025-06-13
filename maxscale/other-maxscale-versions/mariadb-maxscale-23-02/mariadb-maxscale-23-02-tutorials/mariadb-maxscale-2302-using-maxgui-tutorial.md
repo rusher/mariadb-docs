@@ -363,6 +363,6 @@ To retain the report and terminate open connections after migration, click the`M
 Deleting the worksheet will not delete the migration task. To clean-up\
 everything after migration, click the `Manage` button, then select`Delete`.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

@@ -63,6 +63,6 @@ modified in that revision.
   * [Revision #2849.1.1](https://bazaar.launchpad.net/~maria-captains/maria/5.2/revision/2849.1.1)
     * Fix usage of mysqld option `--new`, `--old`, `--safe` and `--skip_new` to not disable things that are proven stable or enable things that are not usefull.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formid="4316" formId="4316" %}

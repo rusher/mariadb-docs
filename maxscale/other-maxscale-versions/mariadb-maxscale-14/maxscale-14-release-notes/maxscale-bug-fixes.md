@@ -19,6 +19,6 @@ The version\_string is optional, the default value will be taken from the embedd
 
 This fix changes the behavior so that is autocommit is disabled, all statements are routed to the master and in case of session variable updates, to both master and slave. |
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

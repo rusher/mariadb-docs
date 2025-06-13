@@ -37,7 +37,7 @@ UPDATE table_references
 Note: It can only 1 table (but multiple columns) be updated from the table list in table_references.
 {% endhint %}
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

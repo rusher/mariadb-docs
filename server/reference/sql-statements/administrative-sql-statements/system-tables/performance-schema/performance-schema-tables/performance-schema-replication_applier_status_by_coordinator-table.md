@@ -20,6 +20,6 @@ It contains the following fields.
 | LAST\_SEEN\_TRANSACTION   | char(57)            | NO   | The transaction the worker has last seen.                                  |
 | LAST\_TRANS\_RETRY\_COUNT | int(11)             | NO   | Total number of retries attempted by last transaction.                     |
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

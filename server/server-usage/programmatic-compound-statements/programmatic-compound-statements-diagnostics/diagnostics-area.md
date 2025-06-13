@@ -117,6 +117,6 @@ All these statements can also be executed inside a stored routine. However, only
 * [DECLARE HANDLER](../declare-handler.md)
 * [MariaDB Error Codes](broken-reference)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

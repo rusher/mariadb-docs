@@ -27,7 +27,7 @@ In order for key rotation to work, both the backend key management service (KMS)
 
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

@@ -50,7 +50,7 @@ There are currently three options for key management:
 See [Encryption Key Management](key-management-and-encryption-plugins/encryption-key-management.md) for details.
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

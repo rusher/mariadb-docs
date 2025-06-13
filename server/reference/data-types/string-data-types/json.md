@@ -134,6 +134,6 @@ There are a a few different ways to move the table to MariaDB:
 * [CONNECT JSON Table Type](../../../server-usage/storage-engines/connect/connect-table-types/connect-json-table-type.md)
 * [MDEV-9144](https://jira.mariadb.org/browse/MDEV-9144)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

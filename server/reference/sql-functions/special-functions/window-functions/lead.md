@@ -67,7 +67,7 @@ FROM t1;
 * [LAG](lag.md) - Window function to access a previous row
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

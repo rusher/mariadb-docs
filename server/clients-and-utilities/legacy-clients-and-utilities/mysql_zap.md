@@ -56,7 +56,7 @@ mysql     4258  3.3 15.7 939740 81236 ?        Sl   08:51  30:18 /usr/sbin/mysql
 To use pkill in the same way, one must run it twice; `pkill --signal 15 mysqld ; sleep(10) ; pkill -f --signal 9 pattern`
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

@@ -91,6 +91,6 @@ different tutorials.
 For a fully automated read/write splitting setup, read the[Read Write Splitting Tutorial](../../mariadb-maxscale-21-06/).\
 For a simpler connection based setup, read the[Connection Routing Tutorial](mariadb-maxscale-22-connection-routing-with-mariadb-maxscale.md).
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

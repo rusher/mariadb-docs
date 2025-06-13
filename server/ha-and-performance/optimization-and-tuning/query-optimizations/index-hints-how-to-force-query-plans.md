@@ -306,6 +306,6 @@ algorithms which are used.
 * [GROUP BY](../../../reference/sql-statements/data-manipulation/selecting-data/group-by.md)
 * [Ignored Indexes](../optimization-and-indexes/ignored-indexes.md)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

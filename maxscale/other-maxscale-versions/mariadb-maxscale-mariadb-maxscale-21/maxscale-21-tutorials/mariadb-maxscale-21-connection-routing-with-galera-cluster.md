@@ -266,6 +266,6 @@ obtain unequal balancing operations.\
 These options may be found in the MariaDB MaxScale Configuration Guide.\
 More detail on the use of maxadmin can be found in the document["MaxAdmin - The MariaDB MaxScale Administration & Monitoring Client Application"](../maxscale-21-reference/mariadb-maxscale-21-maxadmin-admin-interface.md).
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

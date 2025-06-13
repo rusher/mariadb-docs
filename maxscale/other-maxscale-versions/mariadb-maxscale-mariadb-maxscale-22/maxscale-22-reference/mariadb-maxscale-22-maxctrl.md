@@ -672,6 +672,6 @@ Perform a raw REST API call. The path definition uses JavaScript syntax to\
 extract values. For example, the following command extracts all server states as\
 an array of JSON values: maxctrl api get servers data\[].attributes.state
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

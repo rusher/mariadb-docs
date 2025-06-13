@@ -42,6 +42,6 @@ SELECT * FROM mysql.time_zone_name;
 * [mysql.time\_zone\_transition table](mysql-time_zone_transition-table.md)
 * [mysql.time\_zone\_transition\_type table](mysql-time_zone_transition_type-table.md)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

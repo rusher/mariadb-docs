@@ -15,6 +15,6 @@ A list of users or clients that are using Spider and agree to be referenced:
 * Believe Digital\
   Using for back office analytics queries to aggregate multi billions tables in real time
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

@@ -237,6 +237,6 @@ This is not applicable to [InnoDB](../../reference/storage-engines/innodb/) tabl
 
 Good planning is certainly important in developing a MariaDB database. However, as you can see, MariaDB is malleable enough that it can be reshaped without much trouble. Just be sure to make a backup before restructuring a table and be sure to check your work and the data when you're finished. With all of this in mind, you should feel comfortable in creating tables since they don't have to be perfect from the beginning.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

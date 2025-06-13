@@ -714,7 +714,7 @@ Please make sure you understand the [Galera backup limitations](#galera-backup-l
 After doing so, ensure that your backup does not contain a `DROP TABLE mysql.global_priv;` statement, as it will make your liveness and readiness probes to fail after the backup restoration.
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

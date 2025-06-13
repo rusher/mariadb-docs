@@ -255,6 +255,6 @@ is 1.2.1. Further, _master_ always refers to the latest released non-beta versio
 
 The source code is available [here](https://github.com/mariadb-corporation/MaxScale).
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

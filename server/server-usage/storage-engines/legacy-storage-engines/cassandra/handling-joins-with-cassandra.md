@@ -52,6 +52,6 @@ then Cassandra Storage engine is not a good answer. Queries like this are answer
 
 It is possible to run Hive/Pig on Cassandra.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

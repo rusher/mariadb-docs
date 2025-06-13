@@ -45,6 +45,6 @@ sum_of_other_index_sizes: 2
 * [mysql.innodb\_index\_stats](mysql-innodb_index_stats.md)
 * [ANALYZE TABLE](../../../table-statements/analyze-table.md)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

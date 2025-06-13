@@ -17,6 +17,6 @@ The `mysql.table_stats` table contains the following fields:
 | table\_name | varchar(64)         | NO   | PRI | NULL    | Table name.                     |
 | cardinality | bigint(21) unsigned | YES  |     | NULL    | Number of records in the table. |
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

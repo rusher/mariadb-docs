@@ -147,7 +147,7 @@ WHERE  Bookcolumn_1.page_count >
  (it seems to contain a false assumption that there's only one edition).
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

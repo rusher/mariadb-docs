@@ -48,6 +48,6 @@ from another host than the one where MariaDB MaxScale runs.
 Note that the latter approach is **deprecated** and will be removed in a future\
 version of MariaDB MaxScale.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

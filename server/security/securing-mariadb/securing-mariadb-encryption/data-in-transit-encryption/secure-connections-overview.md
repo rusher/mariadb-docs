@@ -243,6 +243,6 @@ The server verifies a client certificate by checking the client's known `SUBJECT
 * [Data-at-Rest Encryption](../encryption-data-at-rest-encryption/data-at-rest-encryption-overview.md)
 * [Cyberciti tutorial: How to setup MariaDB SSL and secure connections from clients](https://www.cyberciti.biz/faq/how-to-setup-mariadb-ssl-and-secure-connections-from-clients/)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

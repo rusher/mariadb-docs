@@ -37,6 +37,6 @@ To enhance your understanding of MariaDB and MySQL, explore these tutorials. For
 
 * [MariaDB Knowledge Base Training and Tutorials](https://mariadb.com/kb/en/training-tutorials/)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

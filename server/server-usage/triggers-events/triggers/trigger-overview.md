@@ -246,6 +246,6 @@ Empty set (0.00 sec)
 * [Trigger Limitations](trigger-limitations.md)
 * [Creative uses of triggers: Things you people wouldn't believe](https://www.youtube.com/watch?v=-O2up6Fr9M0) (video)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

@@ -465,6 +465,6 @@ topic=my-cdc-topic
   events. This means that each replication event is delivered to kafka at least\
   once but there can be duplicate events in case of failures.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

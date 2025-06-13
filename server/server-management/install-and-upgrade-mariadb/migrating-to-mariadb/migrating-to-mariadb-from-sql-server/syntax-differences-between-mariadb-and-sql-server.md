@@ -274,6 +274,6 @@ See also [How to Quickly Insert Data Into MariaDB](../../../../ha-and-performanc
 * [MariaDB Transactions and Isolation Levels for SQL Server Users](mariadb-transactions-and-isolation-levels-for-sql-server-users.md)
 * [SQL\_MODE=MSSQL](broken-reference/)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

@@ -228,6 +228,6 @@ MariaDB MaxScale is now ready to start accepting client connections and routing 
 
 More detail on the use of maxadmin can be found in the document [MaxAdmin - The MariaDB MaxScale Administration & Monitoring Client Application](mariadb-maxscale-21-mariadb-maxscale-administration-tutorial.md).
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

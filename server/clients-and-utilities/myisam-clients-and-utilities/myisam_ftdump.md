@@ -51,6 +51,6 @@ myisam_ftdump -c mytexttable 1 | sort -r
 | -s, --stats   | Report global stats.                                  |
 | -v, --verbose | Be verbose.                                           |
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

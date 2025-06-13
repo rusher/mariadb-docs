@@ -17,6 +17,6 @@ The table contains the following fields:
 | deletes   | bigint(20) unsigned | NO   |     | NULL    |
 | schemaops | bigint(20) unsigned | NO   |     | NULL    |
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

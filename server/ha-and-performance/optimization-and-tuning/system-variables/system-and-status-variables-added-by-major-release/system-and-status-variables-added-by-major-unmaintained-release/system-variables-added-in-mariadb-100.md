@@ -129,6 +129,6 @@ The list excludes the following variables, related to storage engines and plugin
 * [System Variables Added in MariaDB 10.1](system-variables-added-in-mariadb-101.md)
 * [Upgrading from MariaDB 5.5 to MariaDB 10.0](../../../../../server-management/install-and-upgrade-mariadb/upgrading/upgrading-from-to-specific-versions/upgrading-from-mariadb-10-4-to-mariadb-10-5.md)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

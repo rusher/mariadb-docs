@@ -35,6 +35,6 @@ VARIABLE_VALUE: debian-linux-gnu
 VARIABLE_VALUE: 600
 ```
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

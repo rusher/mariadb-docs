@@ -286,6 +286,6 @@ This procedure will be a bit easier after an in-the-works patch for InnoDB relat
 
 * [MDEV-31542](https://jira.mariadb.org/browse/MDEV-31542) Add multi-tenancy catalogs to MariaDB
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

@@ -41,6 +41,6 @@ Note, when functions check for configuration options, they first check whether a
 
 Some early versions of _sys\_config_ were stored in [InnoDB](../../../../../server-usage/storage-engines/innodb/) format.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

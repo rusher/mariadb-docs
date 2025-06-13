@@ -115,6 +115,6 @@ Query OK, 0 rows affected (0.00 sec)
 * [Event Limitations](event-limitations.md)
 * [Automating MariaDB Tasks with Events](../../../server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/automated-mariadb-deployment-and-administration/automating-mariadb-tasks-with-events.md)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

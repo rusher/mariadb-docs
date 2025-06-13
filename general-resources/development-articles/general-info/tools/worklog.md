@@ -41,7 +41,7 @@ The source code for the Worklog application is hosted on
 [Launchpad](https://launchpad.net/worklog). The license is GPL.
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

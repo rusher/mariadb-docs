@@ -21,6 +21,6 @@ The appropriate release notes listed [here](https://app.gitbook.com/s/aEnK0ZXmUb
 
 There are no known CVEs on ColumnStore-specific infrastructure outside of the MariaDB server at this time.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

@@ -286,6 +286,6 @@ INSERT INTO t1 VALUES (''); -- inserts NULL
 * [CONNECT data types](../../server-usage/storage-engines/connect/connect-data-types.md#null-handling)
 * [Oracle mode from MariaDB 10.3](broken-reference/)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

@@ -42,6 +42,6 @@ Concurrent_connections: 0
          Empty_queries: 7
 ```
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

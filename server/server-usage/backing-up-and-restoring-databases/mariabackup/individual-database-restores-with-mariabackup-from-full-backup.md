@@ -197,6 +197,6 @@ ALTER TABLE schmeaname.tablename ADD CONSTRAINT key_name FOREIGN KEY (`column_na
 ...
 ```
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

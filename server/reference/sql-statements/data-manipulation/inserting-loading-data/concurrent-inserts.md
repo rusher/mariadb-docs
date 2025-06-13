@@ -32,6 +32,6 @@ The decision to enable concurrent insert for a table is done when the table is o
 * [INSERT IGNORE](insert-ignore.md)
 * [INSERT ON DUPLICATE KEY UPDATE](insert-on-duplicate-key-update.md)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

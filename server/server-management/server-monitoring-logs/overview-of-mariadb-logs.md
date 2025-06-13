@@ -62,6 +62,6 @@ SET LOCAL SQL_LOG_OFF=1, LOCAL SLOW_QUERY_LOG=0;
 
 * [MariaDB audit plugin](../../reference/plugins/mariadb-audit-plugin/)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

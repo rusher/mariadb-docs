@@ -74,6 +74,6 @@ NET STOP MariaDB
 * [mariadb-admin shutdown](../../../clients-and-utilities/administrative-tools/mariadb-admin.md).
 * [InnoDB fast shutdown option](../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_fast_shutdown)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

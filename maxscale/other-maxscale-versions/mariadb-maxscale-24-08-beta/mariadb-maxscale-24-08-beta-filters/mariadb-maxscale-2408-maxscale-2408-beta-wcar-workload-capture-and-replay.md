@@ -472,6 +472,6 @@ Input file: /home/mariadb/maxscale/var/lib/maxscale/wcar/WCAR/capture\_2024-06-1
   architectures than the original capture server has. Different combinations will require further\
   testing, and once done, this document will be updated.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

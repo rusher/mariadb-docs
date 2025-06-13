@@ -40,6 +40,6 @@ The `db_name` argument indicates the database containing the tables to be conver
 | -v, --verbose           | Verbose mode. Print more information about what the program does.                                                                                                                                                                |
 | -V, --version           | Display version information and exit.                                                                                                                                                                                            |
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

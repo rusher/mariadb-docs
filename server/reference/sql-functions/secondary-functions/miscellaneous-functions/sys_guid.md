@@ -31,6 +31,6 @@ SELECT SYS_GUID();
 * [UUID\_SHORT](uuid_short.md)
 * [UUID data type](../../../data-types/string-data-types/uuid-data-type.md)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

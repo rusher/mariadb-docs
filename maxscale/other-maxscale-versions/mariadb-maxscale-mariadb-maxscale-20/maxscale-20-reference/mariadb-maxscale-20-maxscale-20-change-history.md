@@ -2007,6 +2007,6 @@ The commands above can be executed either by using maxadmin utility or via debug
 
 More information about log files and administering them can be found from **MaxScale Administration Tutorial**.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

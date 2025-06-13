@@ -51,6 +51,6 @@ me@desktop:~$ rpm --checksig $(find . -name '*.rpm')
 * [Installing MariaDB RPM Files](./)
 * [Troubleshooting MariaDB Installs on RedHat/CentOS](troubleshooting-mariadb-installs-on-rhel-centos.md)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

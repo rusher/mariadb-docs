@@ -24,6 +24,6 @@ thread_stack: {"rankdir": "LR","nodesep": "0.10",
   "events": []}
 ```
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

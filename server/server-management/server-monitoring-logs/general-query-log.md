@@ -154,6 +154,6 @@ Unix and Linux distributions offer the [logrotate](https://linux.die.net/man/8/l
 
 * [MariaDB audit plugin](../../reference/plugins/mariadb-audit-plugin/)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

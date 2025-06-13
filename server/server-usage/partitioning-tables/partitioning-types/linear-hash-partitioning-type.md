@@ -21,6 +21,6 @@ CREATE OR REPLACE TABLE t1 (c1 INT, c2 DATETIME)
   PARTITIONS 5;
 ```
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

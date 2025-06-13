@@ -132,6 +132,6 @@ $ mariadb --host=ww.xx.yyy.zzz --port=3306 --user=admin --password=admin -e “S
 
 (switch ww.xx.yyy.zzz for your IP address from step 14).
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

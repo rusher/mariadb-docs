@@ -176,6 +176,6 @@ CREATE TABLE `8981e56cce5d` (x INT);
 Query OK, 0 rows affected (0.39 sec)
 ```
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

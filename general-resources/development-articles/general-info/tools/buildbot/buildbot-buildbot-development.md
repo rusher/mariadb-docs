@@ -71,7 +71,7 @@ With this I was able to hack away at the code and just restart the master and sl
 * [BuildBot ToDo](buildbot-todo.md)
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

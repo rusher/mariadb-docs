@@ -396,6 +396,6 @@ A couple of easy ways to get attention to your proposed merge are:
 <</nowiki>>
 ```
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

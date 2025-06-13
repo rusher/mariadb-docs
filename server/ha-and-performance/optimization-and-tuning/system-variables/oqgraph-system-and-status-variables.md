@@ -33,6 +33,6 @@ This page documents system and status variables related to the [OQGRAPH storage 
 * Scope: Global, Session
 * Data Type: `string`
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

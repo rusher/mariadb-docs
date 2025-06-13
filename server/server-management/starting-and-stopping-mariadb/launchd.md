@@ -41,7 +41,7 @@ Then from a shell, run `launchctl load /Library/LaunchDaemons/com.mariadb.server
 * [A launchd Tutorial](https://www.launchd.info/)
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

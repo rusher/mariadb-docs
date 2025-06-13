@@ -48,6 +48,6 @@ If the command succeeds, different packets will be received:
 * [string<1>](../protocol-data-types.md#fixed-length-strings) -not used-
 * [int<2>](../protocol-data-types.md#fixed-length-integers) number of warnings
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

@@ -167,6 +167,6 @@ SELECT * FROM oq2_graph;
 
 See [OQGRAPH Examples](oqgraph-examples.md) for OQGRAPH usage examples.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

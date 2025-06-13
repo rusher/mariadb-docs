@@ -57,7 +57,7 @@ Given this kind of structure, the database gives you a way to manipulate this da
 * [DBMS vs RDBMS: Definitions, Differences, and a Comparison Table](https://www.devart.com/difference-between-rdbms-and-dbms/)
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

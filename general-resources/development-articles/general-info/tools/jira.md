@@ -16,6 +16,6 @@ You can easily create links to Jira tasks in the Knowledge Base using their "MDE
 
 * [Jira MDEV workflow - statuses and transitions](jira-status-and-transition-definitions.md)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

@@ -14,6 +14,6 @@ It has the following columns:
 | FIX\_COUNT    | Page reference count, incremented each time the page is accessed. 0 if the page is not currently being accessed.                                   |
 | FLUSH\_TYPE   | Flush type of the most recent flush.0 (LRU), 2 (flush\_list)                                                                                       |
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

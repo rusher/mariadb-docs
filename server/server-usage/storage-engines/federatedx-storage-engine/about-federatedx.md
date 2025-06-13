@@ -393,6 +393,6 @@ FederatedX is part of [MariaDB 5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjF
 * [ALTER SERVER](../../../reference/sql-statements/data-definition/alter/alter-server.md)
 * [DROP SERVER](../../../reference/sql-statements/data-definition/drop/drop-server.md)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

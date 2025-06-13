@@ -68,6 +68,6 @@ You need to ensure that each instance is configured with a different `[datadir](
 
 You also need to ensure that each instance is configured with different [network ports](configuring-mariadb-galera-cluster.md#network-ports).
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

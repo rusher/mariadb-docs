@@ -23,6 +23,6 @@ MaxScale 1.2 follows the [FHS-standard](https://www.pathname.com/fhs/) and insta
 
 MaxScale can run as a non-root user with the 1.2 version. RPM and DEB packages install the `maxscale` user and `maxscale` group which are used by the init scripts and systemd configuration files. If you are installing from a binary tarball, you can run the `postinst` script included in it to manually create these groups.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

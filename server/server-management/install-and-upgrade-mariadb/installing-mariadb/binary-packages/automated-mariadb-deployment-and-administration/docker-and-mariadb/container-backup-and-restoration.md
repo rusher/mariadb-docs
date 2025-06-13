@@ -123,6 +123,6 @@ On the environment variables here:
 
 For further information on Mariabackup, see [Mariabackup Overview](../../../../../../server-usage/backing-up-and-restoring-databases/mariabackup/mariabackup-overview.md).
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

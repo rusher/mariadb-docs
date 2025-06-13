@@ -21,6 +21,6 @@ It contains the following fields:
 | update\_time            | datetime            | NO   |     | 0000-00-00 00:00:00 |             |
 | checksum                | bigint(20) unsigned | YES  |     | NULL                |             |
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

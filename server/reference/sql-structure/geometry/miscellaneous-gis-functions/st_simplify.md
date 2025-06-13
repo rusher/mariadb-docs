@@ -44,6 +44,6 @@ SELECT ST_AsText(ST_Simplify(ST_GeomFromText('LINESTRING(0 0,0 2,2 2,2 4,4 4,4 6
 * [ST\_AsText](../wkt/st_astext.md)
 * [ST\_GeomFromText](../wkt/st_geomfromtext.md)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

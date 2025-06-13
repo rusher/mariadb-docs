@@ -85,7 +85,7 @@ The server can answer with 3 different responses:
 * a resultset containing affected rows and auto-increment IDs when bulk flag SEND_UNIT_RESULTS is set
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

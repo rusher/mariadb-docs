@@ -18,6 +18,6 @@ Query OK, 1000 rows affected (0.14 sec)
 
 We could use the new [engine-independent-table-statistics](../../../../ha-and-performance/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/engine-independent-table-statistics.md) feature to get some data statistics.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

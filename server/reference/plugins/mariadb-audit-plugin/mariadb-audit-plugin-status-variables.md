@@ -40,6 +40,6 @@ Below is a list of all status variables related to the Audit Plugin. These canno
 * Data Type: `numeric`
 * Default Value: `0`
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

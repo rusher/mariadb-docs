@@ -107,6 +107,6 @@ $ echo "GRANT ALL PRIVILEGES ON *.* TO anel;" > my_init_db/my_grants.sql
 
 * [Installing and using MariaDB via Docker](installing-and-using-mariadb-via-docker.md)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

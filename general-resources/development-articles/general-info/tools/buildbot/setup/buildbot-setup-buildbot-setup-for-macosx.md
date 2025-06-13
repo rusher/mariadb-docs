@@ -190,7 +190,7 @@ sudo cp /sw/share/doc/buildbot-py26/contrib/os-x/net.sourceforge.buildbot.slave.
 Note: you have to start your buildslave via launchd, otherwise you will run into several problems. For further details, please refer to [Using Launchd](https://buildbot.net/trac/wiki/UsingLaunchd)
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

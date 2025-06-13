@@ -265,6 +265,6 @@ sudo maxadmin clear server dbserver3 maintenance
 If multiple MariaDB MaxScale instances are configured to use the node\
 them maintenance mode must be set within each MariaDB MaxScale instance.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

@@ -8,6 +8,6 @@ Numeric indexes can also be prefix-compressed compressed if the [PACK\_KEYS=1](.
 
 In the worst case, with no strings being space-compressed, the total index storage space will be (index\_length+4)/0.67 per index.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

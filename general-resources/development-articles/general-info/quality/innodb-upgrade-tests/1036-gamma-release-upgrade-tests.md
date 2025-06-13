@@ -386,7 +386,7 @@ One new (previously unknown) bug [MDEV-15912](https://jira.mariadb.org/browse/MD
 
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

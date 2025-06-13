@@ -235,6 +235,6 @@ SELECT * FROM c;
 
 * [MariaDB: InnoDB foreign key constraint errors](https://blog.mariadb.org/mariadb-innodb-foreign-key-constraint-errors/), a post in the MariaDB blog
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

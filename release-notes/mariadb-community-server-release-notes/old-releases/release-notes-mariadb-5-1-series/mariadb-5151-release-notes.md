@@ -53,6 +53,6 @@ Like [previous releases](https://github.com/mariadb-corporation/docs-release-not
 * [Bug #634955](https://bugs.launchpad.net/bugs/634955) ma\_blockrec.c:3932: \_ma\_update\_at\_original\_place: Assertion \`blocks->count > 1 || ((new\_row->total\_length) > (share->base.min\_block\_length) ? (new\_row->total\_length) : (share->base.min\_block\_length)) <= length\_on\_head\_page' on Aria recovery
 * [Bug #643463](https://bugs.launchpad.net/bugs/643463) slow XtraDB shutdown due to 10 second sleep in purge thread
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formid="4316" formId="4316" %}

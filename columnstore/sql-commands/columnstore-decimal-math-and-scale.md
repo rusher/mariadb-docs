@@ -47,6 +47,6 @@ set columnstore_use_decimal_scale
 
 where _n_ is the amount of precision desired for calculations.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

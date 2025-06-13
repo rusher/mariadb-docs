@@ -3036,6 +3036,6 @@ MariaDB sets the limit with `[setrlimit](https://linux.die.net/man/2/setrlimit)`
 * Dynamic: No
 * Type: numeric
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

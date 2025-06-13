@@ -49,6 +49,6 @@ Foreign keys also allow _cascading_ deletes and updates. For example, if Anne Co
 
 Foreign keys can also contain null values, indicating that no relationship exists.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

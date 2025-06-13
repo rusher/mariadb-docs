@@ -215,6 +215,6 @@ DELIMITER ;
 * [DROP PACKAGE BODY](../drop/drop-package-body.md)
 * [Oracle SQL\_MODE](broken-reference)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

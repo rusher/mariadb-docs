@@ -520,6 +520,6 @@ Note that before Galera 3, the `repl` tag was named `replicator`.
 
 * [Galera parameters documentation from Codership](https://galeracluster.com/library/documentation/galera-parameters.html)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

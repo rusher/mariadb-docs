@@ -53,6 +53,6 @@ Query OK, 1 row affected (35.23 sec)
 Records: 1  Duplicates: 0  Warnings: 0
 ```
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

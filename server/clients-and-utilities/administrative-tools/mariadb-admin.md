@@ -273,6 +273,6 @@ You can use the [SHUTDOWN](../../reference/sql-statements/administrative-sql-sta
   MariaDB/MySQL that allows you to see what the server is doing. A mytop\
   optimized for MariaDB is included in [MariaDB 5.3](../broken-reference/)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

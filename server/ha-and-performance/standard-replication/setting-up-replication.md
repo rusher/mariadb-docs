@@ -167,6 +167,6 @@ Slave_SQL_Running: Yes
 * [Delayed Replication](delayed-replication.md)
 * [Replication Compatibility Between MariaDB and MySQL](broken-reference/)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

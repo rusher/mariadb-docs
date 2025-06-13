@@ -104,6 +104,6 @@ In the above example, the choice produces a better query plan. Without pullout, 
 
 There is no separate @@optimizer\_switch flag for table pullout. Table pullout can be disabled by switching off all semi-join optimizations with`SET @@optimizer_switch='semijoin=off'` command.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

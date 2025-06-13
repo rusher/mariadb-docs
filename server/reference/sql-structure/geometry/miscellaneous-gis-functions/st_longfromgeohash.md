@@ -34,6 +34,6 @@ SELECT ST_LongFromGeoHash('zzzzzzzzz'), ST_LongFromGeoHash('sj248j248j248j2');
 * [ST\_GeoHash](st_geohash.md)
 * [ST\_LatFromGeoHash](st_latfromgeohash.md)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

@@ -37,6 +37,6 @@ MariaDB is not using Oracle's fix (we believe `make_join_select` is not the righ
 
 * Blog post [MariaDB 10.1: Better query optimization for ORDER BY … LIMIT](https://s.petrunia.net/blog/?p=103)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

@@ -52,6 +52,6 @@ See [configuring Linux for MariaDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5
 
 [threads\_cache\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#threads_cache_size) should be the same as [max\_connections](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#max_connections) (unless using thread pools).
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

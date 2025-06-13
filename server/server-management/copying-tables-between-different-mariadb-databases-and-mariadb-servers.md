@@ -118,6 +118,6 @@ However, this is not true for tables that use [InnoDB](../reference/storage-engi
 * [aria\_pack](../clients-and-utilities/aria-clients-and-utilities/aria_pack.md) - Compressing the Aria data file for easier distribution
 * [mariadb-dump](../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md) - Copying tables to other SQL servers. You can use the `--tab` to create a CSV file of your table content.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

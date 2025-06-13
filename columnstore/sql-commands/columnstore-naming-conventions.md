@@ -92,6 +92,6 @@ In addition to MariaDB Server [reserved words](https://app.gitbook.com/s/SsmexDF
 | WITH            |
 | ZONE            |
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

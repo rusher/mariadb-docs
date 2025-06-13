@@ -132,6 +132,6 @@ XtraDB was also available in MariaDB for Windows.
 
 More information can be found in the[Percona documentation](https://www.percona.com/doc/percona-server/5.5/percona_xtradb.html?id=percona-xtradb:start).
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

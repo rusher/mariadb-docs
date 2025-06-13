@@ -33,6 +33,6 @@ The following link will take you to the `#tokutek` channel using Freenode's web 
 
 The [Where to find other MariaDB users and developers](../../../reference/storage-engines/tokudb/broken-reference/) page has many great MariaDB resources listed.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

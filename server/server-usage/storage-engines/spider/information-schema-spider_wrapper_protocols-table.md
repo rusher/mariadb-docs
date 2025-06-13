@@ -14,6 +14,6 @@ It contains the following columns:
 | WRAPPER\_DESCRIPTION | longtext    |             |
 | WRAPPER\_MATURITY    | varchar(12) |             |
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

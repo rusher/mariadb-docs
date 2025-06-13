@@ -21,6 +21,6 @@ It contains the following fields.
 | WORKER\_IDLE\_TIME        | Total idle time in seconds that the worker thread has spent waiting for work from SQL thread.                                                                                                                                                     |
 | LAST\_TRANS\_RETRY\_COUNT | Total number of retries attempted by last transaction.                                                                                                                                                                                            |
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

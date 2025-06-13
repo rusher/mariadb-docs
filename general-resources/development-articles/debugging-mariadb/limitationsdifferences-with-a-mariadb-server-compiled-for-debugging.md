@@ -11,7 +11,7 @@ A MariaDB server configured with `--with-debug=full` has the following differenc
 * You can get a trace of what `mysqld` (and most other binaries) is doing by starting it with the `--debug` option. The trace is usually put in `/tmp` or `C:\`
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

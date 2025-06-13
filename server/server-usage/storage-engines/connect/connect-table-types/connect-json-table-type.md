@@ -2760,6 +2760,6 @@ Variables used with Json tables are:
 2. [↑](connect-json-table-type.md#_ref-1) See for instance: [json-functions](../../../../reference/sql-functions/special-functions/json-functions/), [lib\_mysqludf\_json#readme](https://github.com/mysqludf/lib_mysqludf_json#readme) and [json\_udf\_functions\_version\_04](https://blogs.oracle.com/svetasmirnova/entry/json_udf_functions_version_04)
 3. [↑](connect-json-table-type.md#_ref-2) This will not work when CONNECT is compiled embedded
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

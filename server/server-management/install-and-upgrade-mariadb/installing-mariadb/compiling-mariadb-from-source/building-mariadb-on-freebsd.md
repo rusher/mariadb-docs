@@ -148,7 +148,7 @@ You can then install MariaDB from Poudriere using the package manager.
 ```
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

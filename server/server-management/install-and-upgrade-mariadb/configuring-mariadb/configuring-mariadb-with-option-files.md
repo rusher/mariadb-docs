@@ -482,6 +482,6 @@ loose-abort-source-on-error
 * [Configuring MariaDB for Remote Client Access](../../../../kb/en/configuring-mariadb-for-remote-client-access/)
 * [MySQL 5.6: Security through Complacency?](https://mariadb.com/resources/blog/mysql-5-6-security-through-complacency)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

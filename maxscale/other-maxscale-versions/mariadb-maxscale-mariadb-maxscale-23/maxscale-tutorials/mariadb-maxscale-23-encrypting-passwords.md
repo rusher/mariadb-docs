@@ -42,6 +42,6 @@ password=96F99AA1315BDC3604B006F427DD9484
 If the key file is not in the default location, the[datadir](../../mariadb-maxscale-21-06/) parameter must be\
 set to the directory that contains it.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

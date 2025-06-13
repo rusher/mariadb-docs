@@ -20,6 +20,6 @@ The [SHOW ENGINE PERFORMANCE\_SCHEMA STATUS](../../reference/sql-statements/admi
 
 See [Performance Schema](../../reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/) for more details.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

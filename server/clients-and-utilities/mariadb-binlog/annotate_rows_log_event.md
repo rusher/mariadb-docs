@@ -314,6 +314,6 @@ ROLLBACK /* added by mariadb-binlog */;
 * [mariadbd Options](../../server-management/starting-and-stopping-mariadb/mariadbd-options.md)
 * [What is MariaDB 5.3](broken-reference)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

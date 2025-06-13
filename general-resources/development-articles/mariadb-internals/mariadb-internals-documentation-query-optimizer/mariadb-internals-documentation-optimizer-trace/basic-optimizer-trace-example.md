@@ -171,6 +171,6 @@ MISSING_BYTES_BEYOND_MAX_MEM_SIZE: 0
           INSUFFICIENT_PRIVILEGES: 0
 ```
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

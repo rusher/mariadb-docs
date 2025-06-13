@@ -499,6 +499,6 @@ stored using the InnoDB storage engine.
 * [MariaDB Enterprise Backup](../../server-usage/backing-up-and-restoring-databases/mariabackup/)
 * [Upgrading to a newer major version of MariaDB](https://www.youtube.com/watch?v=1kLIXN2DoEo) (video)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

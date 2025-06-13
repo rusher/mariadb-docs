@@ -59,6 +59,6 @@ If the master modifies a table that has triggers, it will produce row-based binl
 
 * Task in Jira, [MDEV-5095](https://jira.mariadb.org/browse/MDEV-5095).
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

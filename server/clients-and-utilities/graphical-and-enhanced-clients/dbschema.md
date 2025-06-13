@@ -13,7 +13,7 @@ You can download and evaluate DbSchema 15 days for free.
 [DBSchema Webpage](https://www.dbschema.com/index.html)
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

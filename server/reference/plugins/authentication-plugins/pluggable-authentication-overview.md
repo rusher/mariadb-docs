@@ -432,6 +432,6 @@ Providing this callback is particularly important on Windows, because Windows GU
 * [MySQL 5.6 Reference Manual: Pluggable Authentication](https://dev.mysql.com/doc/refman/5.6/en/pluggable-authentication.html)
 * [MySQL 5.6 Reference Manual: Writing Authentication Plugins](https://dev.mysql.com/doc/refman/5.6/en/writing-authentication-plugins.html)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

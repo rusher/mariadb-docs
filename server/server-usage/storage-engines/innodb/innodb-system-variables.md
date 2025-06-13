@@ -2806,6 +2806,6 @@ Also see the [Full list of MariaDB options, system and status variables](../../.
 * Default Value: `4`
 * Range: `1` to `64`
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

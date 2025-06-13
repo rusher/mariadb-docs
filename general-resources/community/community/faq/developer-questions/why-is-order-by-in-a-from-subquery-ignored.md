@@ -21,6 +21,6 @@ Source: [MDEV-3926, Comment by Sergei Golubchik](https://jira.mariadb.org/browse
 * [SELECT](../../../../sql-statements/data-manipulation/selecting-data/select.md)
 * [ORDER BY](../../../../sql-statements/data-manipulation/selecting-data/order-by.md)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

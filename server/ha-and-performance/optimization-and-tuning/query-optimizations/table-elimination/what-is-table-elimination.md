@@ -90,6 +90,6 @@ And this is where table elimination will be needed.
 
 * This page is based on the following blog post about table elimination:[?p=58](https://s.petrunia.net/blog/?p=58)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

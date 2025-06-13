@@ -57,6 +57,6 @@ Similar variables exist for write operations:
 * [innodb\_async\_writes\_wait\_slot\_sec](../../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_async_writes_wait_slot_sec)
 * [innodb\_async\_writes\_total\_enqueues](../../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_async_writes_total_enqueues)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

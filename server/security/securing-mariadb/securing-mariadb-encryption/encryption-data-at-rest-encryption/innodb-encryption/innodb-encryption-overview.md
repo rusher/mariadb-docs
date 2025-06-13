@@ -139,6 +139,6 @@ Beginning in [MariaDB 10.4](broken-reference/), where the encryption key managem
 * [Encryption Key Management](../key-management-and-encryption-plugins/encryption-key-management.md)
 * [Information Schema INNODB\_TABLESPACES\_ENCRYPTION table](../../../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_tablespaces_encryption-table.md)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

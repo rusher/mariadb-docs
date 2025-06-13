@@ -13,7 +13,7 @@ The password_reuse_check_interval system variable is available when the [passwor
 
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

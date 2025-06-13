@@ -593,6 +593,6 @@ MariaDB [(none)]> SELECT USER(), CURRENT_USER();
 
 We can verify that our `alice` Unix user was properly mapped to the `dba` MariaDB user by looking at the return values of `[CURRENT_USER()](../../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/current_user.md)`.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

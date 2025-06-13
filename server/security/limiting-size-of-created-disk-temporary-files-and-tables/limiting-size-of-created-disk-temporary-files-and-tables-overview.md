@@ -57,6 +57,6 @@ There are two system variables used for controlling this feature:
 
 * [MDEV-9101](https://jira.mariadb.org/browse/MDEV-9101) - Limit size of created disk temporary files and tables
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

@@ -48,6 +48,6 @@ SELECT RELEASE_ALL_LOCKS();
 * [IS\_USED\_LOCK](is_used_lock.md)
 * [RELEASE\_LOCK](release_lock.md)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

@@ -76,6 +76,6 @@ SELECT NEXTVAL(s);
 * [AUTO\_INCREMENT](../../../data-types/auto_increment.md)
 * [Information Schema SEQUENCES Table](../../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-sequences-table.md)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

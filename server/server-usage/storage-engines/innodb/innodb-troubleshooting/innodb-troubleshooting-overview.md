@@ -14,6 +14,6 @@ For problems with the InnoDB Data Dictionary, see [InnoDB Data Dictionary Troubl
 * [InnoDB Recovery Modes](innodb-recovery-modes.md)
 * [Error Codes](../../../../reference/storage-engines/innodb/innodb-troubleshooting/broken-reference/)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

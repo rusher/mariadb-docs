@@ -66,6 +66,6 @@ MyRocks builds are available on platforms that support a sufficiently modern com
 * OpenSUSE 42 (amd64)
 * Windows 64 (zip and MSI)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

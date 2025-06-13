@@ -121,6 +121,6 @@ The value is specified as documented[here](../maxscale-25-getting-started/mariad
 If no explicit unit is provided, the value is interpreted as milliseconds\
 in MaxScale 2.4. In subsequent versions a value without a unit may be rejected.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

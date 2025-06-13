@@ -131,6 +131,6 @@ $ chown -R mysql:mysql /var/lib/mysql/
 
 * Finally, [start the MariaDB Server process](https://mariadb.com/kb/en/).
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

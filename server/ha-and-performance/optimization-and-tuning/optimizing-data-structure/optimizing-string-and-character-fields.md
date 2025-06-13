@@ -8,6 +8,6 @@ When values from different columns are compared, the comparison runs more quickl
 
 ORDER BY and GROUP BY clauses can generate temporary tables in memory (see [MEMORY Storage Engine](../../../server-usage/storage-engines/memory-storage-engine.md)) if the original table doesn't contain any BLOB fields. If a column is less than 8KB, you can make use of a Binary VARCHAR rather than a BLOB.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

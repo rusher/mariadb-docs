@@ -210,6 +210,6 @@ The following types are supported by MariaDB and don't have a direct equivalent 
 * [INET6](../../../../reference/data-types/string-data-types/inet6.md) - IPv6 addresses.
 * [INET4](../../../../reference/data-types/string-data-types/inet4.md) - IPv4 addresses.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

@@ -61,6 +61,6 @@ DROP TABLE `#mysql50##sql-ib87-856498050`;
 
 * [InnoDB Troubleshooting Overview](innodb-troubleshooting-overview.md)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

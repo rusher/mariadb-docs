@@ -181,7 +181,7 @@ The data<N> directories should simply be copied from the backup location or rest
 ```
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

@@ -45,6 +45,6 @@ building from source code, is included in the[MariaDB MaxScale Installation Guid
 The same guide also provides basic information on running MaxScale.\
 More detailed information about configuring MaxScale is given in the[Configuration Guide](../maxscale-14-getting-started/maxscale-configuration-usage-scenarios.md).
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

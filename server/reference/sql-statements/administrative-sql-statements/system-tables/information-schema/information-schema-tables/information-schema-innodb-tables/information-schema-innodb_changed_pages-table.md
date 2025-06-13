@@ -16,6 +16,6 @@ It has the following columns:
 | START\_LSN | Interval start after which page was changed (equal to checkpoint LSN) |
 | END\_LSN   | Interval end before which page was changed (equal to checkpoint LSN)  |
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

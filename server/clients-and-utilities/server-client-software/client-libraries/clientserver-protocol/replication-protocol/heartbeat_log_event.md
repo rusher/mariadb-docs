@@ -64,7 +64,7 @@ T 127.0.0.1:8808 -> 127.0.0.1:57157 [AP]
 * log-bin.1000139
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

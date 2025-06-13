@@ -14,6 +14,6 @@ It has the following columns:
 | REF\_COL\_NAME | Parent column name.                                                                                                                          |
 | POS            | Ordinal position of the column in the table, starting from 0.                                                                                |
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

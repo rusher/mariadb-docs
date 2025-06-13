@@ -44,6 +44,6 @@ MyRocks upstream (that is, Facebook's MySQL branch) has a number of unique repli
 <</quote>>
 ```
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

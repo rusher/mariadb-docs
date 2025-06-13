@@ -20,6 +20,6 @@ If [TRUNCATE TABLE](../../../../table-statements/truncate-table.md) is run, will
 
 If [FLUSH STATUS](../../../../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/flush-status/) is run, session status from all active sessions are added to the global status variables, the status of all active sessions are reset, and values aggregated from disconnected sessions are reset.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

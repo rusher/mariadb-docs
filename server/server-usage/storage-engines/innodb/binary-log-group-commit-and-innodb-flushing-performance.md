@@ -27,6 +27,6 @@ One should be aware that if [sync\_binlog=0](../../../ha-and-performance/standar
 
 Note that the backup will still be fully consistent with itself and the [binary log](../../../server-management/server-monitoring-logs/binary-log/). This problem is normally not an issue in practice. A backup usually takes a long time to complete (relative to the 1 second or so that [binlog\_commit\_wait\_usec](../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#binlog_commit_wait_usec) is normally set to), and a backup usually includes a lot of transactions that were committed during the backup. With this in mind, it is not generally noticeable if the backup does not include transactions that were committed during the last 1 second or so of the backup process. It is just mentioned here for completeness.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

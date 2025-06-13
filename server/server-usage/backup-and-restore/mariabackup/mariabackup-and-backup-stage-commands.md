@@ -139,6 +139,6 @@ Mariabackup from MariaDB Enterprise Server performs the following tasks in the `
 
 * Copy the [MyRocks](../../../reference/storage-engines/myrocks/) checkpoint into the backup.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

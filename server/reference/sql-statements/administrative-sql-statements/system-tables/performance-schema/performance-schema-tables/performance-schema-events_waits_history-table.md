@@ -39,7 +39,7 @@ It is possible to empty this table with a `TRUNCATE TABLE` statement.
 [events_waits_current](performance-schema-events_waits_current-table.md) and [events_waits_history_long](performance-schema-events_waits_history_long-table.md) are related tables.
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

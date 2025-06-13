@@ -30,7 +30,7 @@ MariaDB Vector has integrations in several frameworks.
 For further alternatives, see e.g. [Qdrant's list of framework integrations](https://qdrant.tech/documentation/frameworks/).
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

@@ -130,6 +130,6 @@ See the article [Stored Routine Privileges](stored-routine-privileges.md).
 * [Information Schema ROUTINES Table](../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-routines-table.md)
 * [Stored Aggregate Functions](stored-aggregate-functions.md).
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

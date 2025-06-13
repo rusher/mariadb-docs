@@ -53,6 +53,6 @@ SELECT * FROM t;
 ERROR 2006 (HY000): MySQL server has gone away
 ```
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

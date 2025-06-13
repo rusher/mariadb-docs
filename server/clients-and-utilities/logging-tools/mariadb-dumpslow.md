@@ -30,6 +30,6 @@ mariadb-dumpslow [ options... ] [ logs... ]
 | -t NUM        | Just show the top NUM queries. |
 | -v, --verbose | Verbose mode. |
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

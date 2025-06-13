@@ -12,6 +12,6 @@ Invoke mariadb-fix-extensions as follows, where data\_dir is the path name to th
 mariadb-fix-extensions data_dir
 ```
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

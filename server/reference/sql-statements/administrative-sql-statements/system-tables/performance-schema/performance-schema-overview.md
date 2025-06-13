@@ -129,6 +129,6 @@ column_comment: Open handles on the file. A value of greater than zero means
 * [ANALYZE STATEMENT](../../analyze-and-explain-statements/analyze-statement.md)
 * [Performance schema in MySQL 5.6](https://dev.mysql.com/doc/refman/5.6/en/performance-schema.html). All things here should also work for MariaDB.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

@@ -206,6 +206,6 @@ mysqld --plugin-load=ha_tokudb --plugin-dir=/usr/local/mysql/lib/mysql/plugin
 * [Differences between TokuDB from Tokutek.com and the TokuDB version in MariaDB from MariaDB.org](tokudb-differences.md).
 * [TokuDB System and Status Variables](tokudb-system-variables.md)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

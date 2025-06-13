@@ -221,6 +221,6 @@ modified in that revision.
   * ifdef'ed ETIMEDOUT, because it is defined by VS 2010 now
   * Removed not needed /MAP's from cmake files
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formid="4316" formId="4316" %}

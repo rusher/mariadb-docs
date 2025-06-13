@@ -47,7 +47,7 @@ SELECT INET6_NTOA(UNHEX('48F3000000000000D4321431BA23846F'));
 * [INET_NTOA()](inet_ntoa.md)
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

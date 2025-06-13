@@ -360,6 +360,6 @@ operations; no need to call any special `_start()` variant. (Even if a`_start()`
 * mysql\_get\_timeout\_value
 * mysql\_get\_timeout\_value\_ms
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

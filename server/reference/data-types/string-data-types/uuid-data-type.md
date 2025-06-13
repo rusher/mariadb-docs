@@ -164,6 +164,6 @@ SELECT * FROM t1;
 * [UUID\_SHORT function](../../sql-functions/secondary-functions/miscellaneous-functions/uuid_short.md)
 * [SYS\_GUID](../../sql-functions/secondary-functions/miscellaneous-functions/sys_guid.md) - UUID without the `-` character for Oracle compatibility
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

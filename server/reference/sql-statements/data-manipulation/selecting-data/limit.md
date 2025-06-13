@@ -180,6 +180,6 @@ SELECT GROUP_CONCAT(CONCAT_WS(":",dd,cc) ORDER BY cc DESC LIMIT 1) FROM d;
 * [Optimizer Hints](optimizer-hints.md)
 * [SELECT ... OFFSET ... FETCH](select-offset-fetch.md)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

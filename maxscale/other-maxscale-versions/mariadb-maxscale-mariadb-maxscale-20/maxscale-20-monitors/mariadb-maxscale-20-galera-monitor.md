@@ -91,6 +91,6 @@ In this example `node-1` is always used as the master if available. If `node-1` 
 
 With priority ranks you can control the order in which MaxScale chooses the master node. This will allow for a controlled failure and replacement of nodes.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

@@ -137,6 +137,6 @@ ColumnStore supports the following functions. These functions can be specified i
 
 * [ColumnStore Non-Distributed Post-Processed Functions](columnstore-non-distributed-post-processed-functions.md)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

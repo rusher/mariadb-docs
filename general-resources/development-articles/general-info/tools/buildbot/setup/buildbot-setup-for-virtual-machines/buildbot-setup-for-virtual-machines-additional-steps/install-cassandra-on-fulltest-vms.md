@@ -187,6 +187,6 @@ Elapsed time: 57 msec(s).
 rsync -avP host::kvm/vms/*fulltest* /kvm/vms/
 ```
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

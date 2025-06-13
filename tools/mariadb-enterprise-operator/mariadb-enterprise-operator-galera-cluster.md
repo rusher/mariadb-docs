@@ -703,6 +703,6 @@ This is error is returned by the `mariadb-enterprise-operator` after exceeding t
 
 Increase this timeout if you consider that your Galera cluster may take longer to recover.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

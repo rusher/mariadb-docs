@@ -77,6 +77,6 @@ $ rsync -avrP /var/mariadb/backup /var/lib/mysql/
 $ chown -R mysql:mysql /var/lib/mysql/
 ```
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

@@ -111,7 +111,7 @@ There are a number of variables that cannot be set on per-query basis. These inc
 * MariaDB ported the patch and fixed many bugs. The task in MariaDB Jira is [MDEV-5231](https://jira.mariadb.org/browse/MDEV-5231).
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

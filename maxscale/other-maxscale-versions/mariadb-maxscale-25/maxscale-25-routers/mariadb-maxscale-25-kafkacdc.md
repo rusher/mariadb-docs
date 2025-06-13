@@ -222,6 +222,6 @@ topic=my-cdc-topic
   once but there can be duplicate events in case of failures.
 * Authentication to Kafka is not currently supported.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

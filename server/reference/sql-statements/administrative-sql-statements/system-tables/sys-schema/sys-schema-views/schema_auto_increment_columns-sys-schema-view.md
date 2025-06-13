@@ -51,6 +51,6 @@ SELECT * FROM sys.schema_auto_increment_columns\G
 auto_increment_ratio: 0.0551
 ```
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

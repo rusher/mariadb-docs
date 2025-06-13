@@ -156,6 +156,6 @@ SELECT * FROM cte;
 * [Non-Recursive Common Table Expressions Overview](non-recursive-common-table-expressions-overview.md)
 * [Recursive Common Table Expressions Overview](recursive-common-table-expressions-overview.md)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

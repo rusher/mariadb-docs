@@ -21,6 +21,6 @@ The table provides performance counter information for the [thread pool](../../.
 | DEQUEUES\_BY\_LISTENER            |                                                                                                                                                                                                                                                                                |
 | DEQUEUES\_BY\_WORKER              |                                                                                                                                                                                                                                                                                |
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

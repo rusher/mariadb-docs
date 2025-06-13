@@ -161,6 +161,6 @@ increased using for example:
 option_list='seclen=16K';
 ```
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

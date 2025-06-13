@@ -300,6 +300,6 @@ show you how to configure and administrate a binlogrouter installation.
 Tutorial also includes SSL communication setup to the master server and SSL\
 client connections setup to MaxScale Binlog Server.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

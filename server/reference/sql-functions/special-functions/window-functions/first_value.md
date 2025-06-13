@@ -105,7 +105,7 @@ FROM t1;
 * [LAST_VALUE](../../secondary-functions/information-functions/last_value.md)
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

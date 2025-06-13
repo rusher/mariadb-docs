@@ -167,6 +167,6 @@ Add the options to the \[mysqld] section of your my.cnf file.
 * Type: number
 * Range: `0` to \`3600\`\`\`
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

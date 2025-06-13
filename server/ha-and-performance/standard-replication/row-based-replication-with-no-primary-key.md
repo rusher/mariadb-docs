@@ -48,6 +48,6 @@ replication to break in this case; this was also fixed in [MariaDB 5.3](https://
 
 * [What is MariaDB 5.3](broken-reference/)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

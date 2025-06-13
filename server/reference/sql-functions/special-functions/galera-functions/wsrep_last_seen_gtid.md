@@ -12,6 +12,6 @@ Returns the [Global Transaction ID](../../../../ha-and-performance/standard-repl
 
 The result can be useful to determine the transaction to provide to [WSREP\_SYNC\_WAIT\_UPTO\_GTID](wsrep_sync_wait_upto_gtid.md) for waiting and unblocking purposes.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

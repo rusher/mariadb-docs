@@ -20,7 +20,7 @@ In addition to standard client features, it includes:
 A [feature comparison matrix](https://www.navicat.com/products/navicat-for-mysql-feature-matrix) is available. More information, including pricing and "trial" versions, is available on the [Navicat website](https://www.navicat.com).
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

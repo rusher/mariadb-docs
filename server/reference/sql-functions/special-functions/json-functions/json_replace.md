@@ -42,7 +42,7 @@ SELECT JSON_REPLACE('{ "A": 1, "B": [2, 3]}', '$.B[1]', 4);
 * [JSON video tutorial](https://www.youtube.com/watch?v=sLE7jPETp8g) covering JSON_REPLACE.
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

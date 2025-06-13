@@ -239,7 +239,7 @@ Available options:
 *This page is based on a [blog post](https://kristiannielsen.livejournal.com/11007.html) by Kristian Nielsen, the primary developer of* `runvm`.
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

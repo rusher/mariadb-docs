@@ -76,6 +76,6 @@ Supported compression libraries are listed in [rocksdb\_supported\_compression\_
 Snappy,Zlib,LZ4,LZ4HC
 ```
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

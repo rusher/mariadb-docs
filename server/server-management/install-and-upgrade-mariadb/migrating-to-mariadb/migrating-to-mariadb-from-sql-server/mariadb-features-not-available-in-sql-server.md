@@ -57,6 +57,6 @@ For compatibility with some other database systems, MariaDB supports the [JSON](
   * Subpartitions.
 * [Progress reporting](broken-reference/) for some typically expensive statements.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

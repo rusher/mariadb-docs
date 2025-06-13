@@ -22,6 +22,6 @@ After the session ends the closeSession is called where the session is set to a 
 
 ![](https://raw.githubusercontent.com/mariadb-corporation/MaxScale/2.2.10/Documentation/Design-Documents/schemarouter-lifecycle.png)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

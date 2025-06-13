@@ -16,6 +16,6 @@ Tools used for quality assurance testing:
 * [Optimizer Quality](optimizer-quality.md)
 * [QA Tools](qa-tools.md)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

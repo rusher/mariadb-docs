@@ -35,6 +35,6 @@ SELECT JSON_MERGE(@json1,@json2);
 * [JSON\_MERGE\_PATCH](json_merge_patch.md)
 * [JSON\_MERGE\_PRESERVE](json_merge_preserve.md)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

@@ -26,6 +26,6 @@ The [Acl\_function\_grants](../../../../../ha-and-performance/optimization-and-t
 
 The [Acl\_procedure\_grants](../../../../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#acl_procedure_grants) status variable indicates how many rows the `mysql.columns_priv` table contains with the `PROCEDURE` routine type.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

@@ -86,6 +86,6 @@ instances to MariaDB.
 See [Upgrading MariaDB on Windows](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/upgrading/upgrading-mariadb-on-windows) for\
 instructions on using the upgrade wizard.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formid="4316" formId="4316" %}

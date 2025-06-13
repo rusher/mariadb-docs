@@ -41,6 +41,6 @@ The following variables can be set while passed as commandline options to aria\_
 | -v, --verbose                | Print more information during apply/undo phase.                                                                                                                                                                                            |
 | -V, --version                | Print version and exit.                                                                                                                                                                                                                    |
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

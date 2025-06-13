@@ -97,6 +97,6 @@ be closed.
 Read the individual authenticator module documentation for more details on the\
 authentication process of each authentication plugin.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

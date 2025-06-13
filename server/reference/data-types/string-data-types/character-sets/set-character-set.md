@@ -68,6 +68,6 @@ SHOW VARIABLES LIKE 'collation%';
 * [Setting Character Sets and Collations](setting-character-sets-and-collations.md)
 * [SET NAMES](set-names.md)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

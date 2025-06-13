@@ -162,7 +162,7 @@ MariaDB's JSONPath syntax supports a subset of JSON Path's definition in the SQL
 MariaDB's JSONPath is close to MySQL's JSONPath. The wildcard step ( `**` ) is a non-standard extension that has the same meaning as in MySQL. The difference between MariaDB and MySQL's JSONPath is: MySQL doesn't allow one to specify the mode explicitly (but uses `lax` mode implicitly).
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

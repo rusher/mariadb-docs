@@ -12,6 +12,6 @@ The following restrictions apply to [stored functions](./).
 * ROLLBACK TO SAVEPOINT and RELEASE SAVEPOINT statement which are in a stored function cannot refer to a savepoint which has been defined out of the current function.
 * Prepared statements ([PREPARE](../../../reference/sql-statements/prepared-statements/prepare-statement.md), [EXECUTE](../../../reference/sql-statements/prepared-statements/execute-statement.md), [DEALLOCATE PREPARE](../../../reference/sql-statements/prepared-statements/deallocate-drop-prepare.md)) cannot be used, and therefore nor can statements be constructed as strings and then executed.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

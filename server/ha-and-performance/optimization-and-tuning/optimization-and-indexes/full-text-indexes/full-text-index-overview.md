@@ -205,6 +205,6 @@ SELECT * FROM ft2 WHERE MATCH(copy) AGAINST('+MariaDB -database'
 
 * For simpler searches of a substring in text columns, see the [LIKE](../../../../reference/sql-functions/string-functions/like.md) operator.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

@@ -45,6 +45,6 @@ The following is an incomplete list of when one will not be able to use a table 
   * Any InnoDB table where one has used `ALTER TABLE…ADD COLUMN` (unless [innodb\_instant\_alter\_column\_allowed=never](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_instant_alter_column_allowed)).
   * A prior shutdown with [innodb\_fast\_shutdown=0](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_fast_shutdown) will be needed in order to empty the undo logs whose format changed in [MDEV-12288](https://jira.mariadb.org/browse/MDEV-12288), and even then, you might need to set [innodb\_force\_recovery=3](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_force_recovery).
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

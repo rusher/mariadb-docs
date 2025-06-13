@@ -12,6 +12,6 @@ Other recent versions of Boost, Judy or MSVC may work but these combinations hav
   * Ensure that the following variable is set to CMAKE: `JUDY_ROOT=path\to\judy\unzipped`
   * See also comments in `storage/oqgraph/cmake/FindJudy.cmake`
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

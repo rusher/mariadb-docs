@@ -6,6 +6,6 @@ For more information, see [MDEV-7472](https://jira.mariadb.org/browse/MDEV-7472)
 
 The `PROCESS` [privilege](../../../../../account-management-sql-statements/grant.md) is required to view the table.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

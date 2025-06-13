@@ -59,6 +59,6 @@ For more details, see ["Dev" Server Mode](https://www.vaultproject.io/docs/conce
 
 Content initially contributed by [Vettabase Ltd](https://vettabase.com/).
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

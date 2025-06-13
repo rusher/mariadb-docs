@@ -67,7 +67,7 @@ FROM t1;
 * [LEAD](lead.md) - Window function to access a following row
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

@@ -24,6 +24,6 @@ For a description of the privileges that are shown in this table, see [table pri
 
 * [sys.privileges\_by\_table\_by\_level](../../sys-schema/sys-schema-views/privileges_by_table_by_level-sys-schema-view.md)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

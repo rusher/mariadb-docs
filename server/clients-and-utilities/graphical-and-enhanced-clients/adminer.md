@@ -10,7 +10,7 @@ Adminer mainly supports MySQL, but it also supports MySQL, MariaDB, PostgreSQL, 
 Adminer is distributed with a dual license: Apache License 2.0 and GPL 2. Adminer does not have a commercial edition, but it accepts donations.
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

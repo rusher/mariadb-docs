@@ -188,6 +188,6 @@ can be influenced with the server priority mechanic described in the[Galera Moni
 
 Refer to individual router documentation for a list of their limitations.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

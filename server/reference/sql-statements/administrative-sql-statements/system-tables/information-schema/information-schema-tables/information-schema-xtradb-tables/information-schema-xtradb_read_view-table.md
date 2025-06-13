@@ -14,6 +14,6 @@ It has the following columns:
 | READ\_VIEW\_UPPER\_LIMIT\_TRX\_ID   | Highest transaction ID at the time the view was created. Should not see newer transactions with IDs equal to or greater than the value.        |
 | READ\_VIEW\_LOW\_LIMIT\_TRX\_ID     | Latest committed transaction ID at the time the oldest view was created. Should see all transactions with IDs equal to or less than the value. |
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

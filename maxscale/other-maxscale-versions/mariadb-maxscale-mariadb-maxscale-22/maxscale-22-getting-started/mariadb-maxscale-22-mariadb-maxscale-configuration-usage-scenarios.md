@@ -1809,6 +1809,6 @@ TCP/IP Traffic must be permitted to 192.168.3.33 port 4408
 For Unix socket, the socket file path (example: `/servers/maxscale/galera.sock`)\
 must be writable by the Unix user MariaDB MaxScale runs as.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

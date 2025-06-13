@@ -1570,7 +1570,7 @@ DBT3 benchmark for the following configuration:
 Results page: (TODO)
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 ```
 

@@ -58,6 +58,6 @@ Also see the [Full list of MariaDB options, system and status variables](../../f
 * Range: `1048576` to `18446744073709551615`
 * Introduced: [MariaDB 11.7.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-7-rolling-releases/mariadb-11-7-1-release-notes)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

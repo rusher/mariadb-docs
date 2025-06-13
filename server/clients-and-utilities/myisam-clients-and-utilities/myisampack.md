@@ -76,6 +76,6 @@ Data records: 1680
 * [FLUSH TABLES FOR EXPORT](../../reference/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md)
 * [myisamchk](myisamchk.md)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

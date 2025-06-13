@@ -142,6 +142,6 @@ CREATE TABLE ... SELECT can use a combination of logging formats. The [CREATE TA
 * [Setting up replication](../../../ha-and-performance/standard-replication/setting-up-replication.md)
 * [Compressing the binary log](compressing-events-to-reduce-size-of-the-binary-log.md)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

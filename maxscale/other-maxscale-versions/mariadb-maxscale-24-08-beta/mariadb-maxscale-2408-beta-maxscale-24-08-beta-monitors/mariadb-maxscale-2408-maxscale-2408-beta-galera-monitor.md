@@ -232,6 +232,6 @@ having a priority of 0 and will be used only if all nodes with a positiv&#x65;_&
 With priority ranks you can control the order in which MaxScale chooses the\
 primary node. This will allow for a controlled failure and replacement of nodes.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

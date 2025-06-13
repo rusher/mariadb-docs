@@ -34,6 +34,6 @@ SELECT * FROM information_schema.XTRADB_INTERNAL_HASH_TABLES;
 +--------------------------------+--------------+-----------------+-----------------+
 ```
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

@@ -1035,6 +1035,6 @@ See also the [Full list of MariaDB options, system and status variables](../../s
 * Default Value: `10000`
 * Range: `0` to `4294967295`
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

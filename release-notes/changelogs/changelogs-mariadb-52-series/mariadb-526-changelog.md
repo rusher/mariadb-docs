@@ -459,6 +459,6 @@ modified in that revision.
   Fri 2011-03-04 12:38:46 +0200
   * Updated version number
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formid="4316" formId="4316" %}

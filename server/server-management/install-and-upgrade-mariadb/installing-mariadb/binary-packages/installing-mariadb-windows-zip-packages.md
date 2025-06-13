@@ -14,6 +14,6 @@ C:\zip_unpack\directory> bin\mariadbd.exe --console
 
 If you like to customize the server instance (data directory, install as service etc), please refer to [mariadb-install-db.exe documentation](../installing-system-tables-mariadb-install-db/mariadb-install-db-exe.md)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

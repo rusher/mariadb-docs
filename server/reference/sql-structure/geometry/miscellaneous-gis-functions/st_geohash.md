@@ -40,6 +40,6 @@ SELECT ST_GeoHash(ST_GeomFromText('POINT(1 1)'),15), ST_GeoHash(0,30,15);
 * [Geometry Constructors](../geometry-constructors/)
 * [ST\_GeomFromText](../wkt/st_geomfromtext.md)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

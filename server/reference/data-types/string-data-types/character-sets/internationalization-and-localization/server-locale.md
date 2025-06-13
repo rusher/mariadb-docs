@@ -153,6 +153,6 @@ SELECT blah;
 ERROR 1054 (42S22): Onbekende kolom 'blah' in field list
 ```
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

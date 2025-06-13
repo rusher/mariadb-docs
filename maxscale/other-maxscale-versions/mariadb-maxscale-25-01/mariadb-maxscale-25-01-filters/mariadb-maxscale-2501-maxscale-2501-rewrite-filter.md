@@ -365,6 +365,6 @@ maxctrl alter filter Rewrite log_replacement=false
 * Grep Same as Posix with the addition of newline '\n' as an alternation separator.
 * EGrep Same as EPosix with the addition of newline '\n' as an alternation separator in addition to '|'.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

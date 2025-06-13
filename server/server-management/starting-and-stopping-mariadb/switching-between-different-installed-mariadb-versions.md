@@ -149,6 +149,6 @@ datadir=/usr/local/mariadb-data
 If you create an `~/.my.cnf` file, you should start`mysqld` with `--defaults-file=~/.my.cnf`\
 instead of `--no-defaults` in the examples above.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

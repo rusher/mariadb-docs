@@ -153,7 +153,7 @@ conflict), it will send mail with details.
 * `mysqltest --require` not-staging to speed up Valgrind
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

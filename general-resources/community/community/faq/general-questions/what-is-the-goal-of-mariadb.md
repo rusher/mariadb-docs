@@ -15,6 +15,6 @@ Since [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-se
 We strive to keep our main trees as free from bugs as possible. It should be\
 reasonably safe to pull from our trees at any time.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

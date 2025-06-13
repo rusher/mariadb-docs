@@ -71,6 +71,6 @@ SELECT 'Mueller' = 'Müller';
 
 See [Setting Character Sets and Collations](setting-character-sets-and-collations.md) for more.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

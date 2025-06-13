@@ -132,6 +132,6 @@ SELECT * FROM performance_schema.session_connect_attrs WHERE processlist_id=34;
 +----------------+-----------------+--------------------+------------------+
 ```
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

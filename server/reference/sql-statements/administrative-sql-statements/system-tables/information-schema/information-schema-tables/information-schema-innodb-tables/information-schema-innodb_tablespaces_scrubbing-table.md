@@ -37,6 +37,6 @@ CURRENT_SCRUB_MAX_PAGE_NUMBER: 0
 1 rows in set (0.00 sec)
 ```
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

@@ -45,6 +45,6 @@ If we had not used USE INDEX, the Name index would have been in possible keys.
 * [FORCE INDEX](force-index.md)
 * [Ignored Indexes](../optimization-and-indexes/ignored-indexes.md)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

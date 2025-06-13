@@ -41,6 +41,6 @@ If the above test doesn't pass, check the logs in the `'var'` directory.\
 If there is a problem with the sphinx installation, the reason can probably\
 be found in the log file at: `var/log/sphinx.sphinx/searchd/sphinx.log`.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

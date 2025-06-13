@@ -208,6 +208,6 @@ After making changes to this restart the syslog process, e.g:
 
 Log rotation and archiving are also configured by the installer and the settings for this may be found and managed similarly in the file _/etc/logrotate.d/columnstore_. If the current log files are manually deleted restart the syslog process to resume logging.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

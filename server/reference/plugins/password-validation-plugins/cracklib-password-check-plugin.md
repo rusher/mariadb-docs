@@ -186,6 +186,6 @@ See [MDEV-18374](https://jira.mariadb.org/browse/MDEV-18374) for more informatio
 * [Password Validation](broken-reference)
 * [simple\_password\_check plugin](simple-password-check-plugin.md) - permits the setting of basic criteria for passwords
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

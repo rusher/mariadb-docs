@@ -121,6 +121,6 @@ The [mariadb client](../../clients-and-utilities/mariadb-client/mariadb-command-
 
 * [Account Locking and Password Expiry](https://www.youtube.com/watch?v=AWM_fWZ3XIw) video tutorial
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

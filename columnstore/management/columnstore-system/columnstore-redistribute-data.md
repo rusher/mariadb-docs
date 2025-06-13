@@ -52,6 +52,6 @@ To see how much data resides on any given DBRoot for a table, you can use a quer
 select count(*) from <table> where idbdbroot(<any column>)=<dbrootnum>;
 ```
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

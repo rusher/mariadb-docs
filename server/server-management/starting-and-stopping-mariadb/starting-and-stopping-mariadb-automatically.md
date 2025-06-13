@@ -68,7 +68,7 @@ Ubuntu 14.10 and below use Upstart by default.
 [mysql.server](mysql-server.md) is a wrapper that works as a standard [sysVinit](sysvinit.md) script. However, it can be used independently of [sysVinit](sysvinit.md) as a regular `sh` script. The script starts the [mariadbd](mariadbd-options.md) server process by first changing its current working directory to the MariaDB install directory and then starting [mariadbd-safe](mariadbd-safe.md). The script requires the standard [sysVinit](sysvinit.md) arguments, such as `start`, `stop`, and `status`. See [mysql.server](mysql-server.md) for more information.
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

@@ -60,6 +60,6 @@ monitor configuration.
 The default editing mode was changed from _vim_ to _emacs_ mode. To start\
 maxadmin in the legacy mode, use the `-i` option.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

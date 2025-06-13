@@ -170,6 +170,6 @@ More options can be found in the[Configuration Guide](../maxscale-24-02getting-s
 
 For more information about MaxCtrl and how to secure it, see the[REST-API Tutorial](mariadb-maxscale-2402-maxscale-2402-rest-api-tutorial.md).
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

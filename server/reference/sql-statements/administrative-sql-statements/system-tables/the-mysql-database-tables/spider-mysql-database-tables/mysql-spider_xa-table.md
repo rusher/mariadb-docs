@@ -15,6 +15,6 @@ It contains the following fields:
 | data          | binary(128) | NO   | PRI |         |             |
 | status        | char(8)     | NO   | MUL |         |             |
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

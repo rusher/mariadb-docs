@@ -14,6 +14,6 @@ It contains the following columns:
 
 The table is often used in conjunction with the [INNODB\_LOCKS](information-schema-innodb_locks-table.md) and [INNODB\_TRX](information-schema-innodb_trx-table.md) tables to diagnose problematic locks and transactions.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

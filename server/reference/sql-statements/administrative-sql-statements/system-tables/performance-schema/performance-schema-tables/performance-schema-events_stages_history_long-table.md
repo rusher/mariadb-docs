@@ -30,7 +30,7 @@ It is possible to empty this table with a `TRUNCATE TABLE` statement.
 [events_stages_current](performance-schema-events_stages_current-table.md) and [events_stages_history](performance-schema-events_stages_history-table.md) are related tables.
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

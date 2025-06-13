@@ -24,7 +24,7 @@ used inside server only
 [ERR_Packet](../4-server-response-packets/err_packet.md)
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

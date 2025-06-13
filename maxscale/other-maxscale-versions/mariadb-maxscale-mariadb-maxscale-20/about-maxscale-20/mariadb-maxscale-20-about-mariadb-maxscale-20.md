@@ -64,7 +64,7 @@ More detailed information about configuring MariaDB MaxScale is given in the
 [Configuration Guide](../../mariadb-maxscale-21-06/README.md).
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

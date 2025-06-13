@@ -35,7 +35,7 @@ SELECT JSON_COMPACT(@j), @j;
 * [JSON video tutorial](https://www.youtube.com/watch?v=sLE7jPETp8g) covering JSON_COMPACT.
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

@@ -62,6 +62,6 @@ More information about this essential feature is available on the [dedicated bac
 
 To test-drive this and other features of the Studio (the IDE includes all the tools necessary for the development, management, and administration of databases on MariaDB), [download dbForge Studio for a free 30-day trial](https://www.devart.com/dbforge/mysql/studio/download.html). dbForge Studio for MySQL and MariaDB boasts truly advanced functionality that will help your teams deliver more value.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

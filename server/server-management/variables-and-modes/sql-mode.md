@@ -299,6 +299,6 @@ Query OK, 1 row affected, 2 warnings (0.15 sec)
 * [SQL\_MODE=MSSQL](broken-reference/)
 * [SQL\_MODE=ORACLE](broken-reference/)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

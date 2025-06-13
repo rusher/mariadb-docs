@@ -95,6 +95,6 @@ CREATE TABLE cmp2 (i TEXT COMPRESSED=zlib);
 * [InnoDB Page Compression](../../../server-usage/storage-engines/innodb/innodb-page-compression.md)
 * [InnoDB Compressed Row Format](../../../server-usage/storage-engines/innodb/innodb-row-formats/innodb-compressed-row-format.md)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

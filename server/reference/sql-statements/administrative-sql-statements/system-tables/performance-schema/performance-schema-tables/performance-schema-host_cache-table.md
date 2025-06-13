@@ -39,6 +39,6 @@ The host\_cache table contains the following columns:
 
 The `host_cache` table, along with the `host_cache`, is cleared with [FLUSH HOSTS](../../../flush-commands/flush.md), [TRUNCATE TABLE](../../../../table-statements/truncate-table.md) `host_cache` or by setting the [host\_cache\_size](../../../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#host_cache_size) system variable at runtime.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

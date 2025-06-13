@@ -59,6 +59,6 @@ In alignment with the [enterprise lifecycle](../../enterprise-server/enterprise-
 * Ubuntu 22.04 (x86\_64, ARM64)
 * Ubuntu 24.04 (x86\_64, ARM64)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formid="4316" formId="4316" %}

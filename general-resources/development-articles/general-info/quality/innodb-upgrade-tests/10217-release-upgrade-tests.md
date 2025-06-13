@@ -336,7 +336,7 @@ Known bug [MDEV-13094](https://jira.mariadb.org/browse/MDEV-13094). A few upgrad
 
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

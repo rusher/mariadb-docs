@@ -19,6 +19,6 @@ This article documents thread states that are related to [replication](broken-re
 | Waiting for slave mutex on exit                                                             | Thread is stopping. Only occurs very briefly.                                                                                                                                                                                  |
 | Waiting for the next event in relay log                                                     | State before reading next event from the [relay log](../../../../server-management/server-monitoring-logs/binary-log/relay-log.md).                                                                                            |
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

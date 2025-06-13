@@ -414,6 +414,6 @@ view or a srcdef option.
 
 All PIVOT tables are read only.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

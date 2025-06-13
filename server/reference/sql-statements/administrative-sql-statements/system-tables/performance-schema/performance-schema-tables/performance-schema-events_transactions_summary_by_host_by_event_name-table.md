@@ -29,6 +29,6 @@ The table contains the following columns:
 | AVG\_TIMER\_READ\_ONLY  | bigint(20) unsigned | The average wait time of only READ ONLY transaction events.                                                                                                                                                  |
 | MAX\_TIMER\_READ\_ONLY  | bigint(20) unsigned | The maximum wait time of only READ ONLY transaction events.                                                                                                                                                  |
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

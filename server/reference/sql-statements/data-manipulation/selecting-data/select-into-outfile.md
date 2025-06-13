@@ -67,6 +67,6 @@ SELECT  * INTO OUTFILE "/tmp/skr3" FROM (SELECT * FROM t1 UNION SELECT * FROM t1
 * [SELECT INTO Variable](../../../../server-usage/programmatic-compound-statements/selectinto.md)
 * [SELECT INTO DUMPFILE](select-into-dumpfile.md)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

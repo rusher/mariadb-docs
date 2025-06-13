@@ -20,6 +20,6 @@ For system variables that have been removed or deprecated, see [Upgrading from M
 * [Status Variables Added in MariaDB 11.0](status-variables-added-in-mariadb-11-0.md)
 * [System Variables Added in MariaDB 10.11](../system-variables-added-in-mariadb-10-11.md)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

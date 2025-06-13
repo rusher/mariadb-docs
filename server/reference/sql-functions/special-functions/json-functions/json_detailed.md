@@ -44,6 +44,6 @@ SELECT JSON_DETAILED(@j);
 
 * [JSON video tutorial](https://www.youtube.com/watch?v=sLE7jPETp8g) covering JSON\_DETAILED.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

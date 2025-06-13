@@ -35,6 +35,6 @@ SELECT IS_IPV6('10.0.1.1');
 * [INET6\_ATON](inet6_aton.md)
 * [INET6\_NTOA](inet6_ntoa.md)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

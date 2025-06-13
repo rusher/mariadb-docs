@@ -8,6 +8,6 @@ Does the same maximum (61) applies to MariaDB, too?
 
 If yes, are there plans for raising this limit?
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

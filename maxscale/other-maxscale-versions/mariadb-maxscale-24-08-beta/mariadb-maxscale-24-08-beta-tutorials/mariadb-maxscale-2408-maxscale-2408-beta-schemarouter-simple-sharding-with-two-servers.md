@@ -277,6 +277,6 @@ In most multi-tenant situations, this is an acceptable limitation. If you do\
 need cross-shard joins, the[Spider](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/spider/spider-storage-engine-overview) storage\
 engine will provide you this.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

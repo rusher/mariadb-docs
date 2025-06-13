@@ -675,6 +675,6 @@ API could return them.
 * The user has sent too many requests in a given amount of time. Intended for\
   use with rate-limiting schemes.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

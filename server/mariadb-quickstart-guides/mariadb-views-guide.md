@@ -212,6 +212,6 @@ Views offer a powerful way to:
 * **Enhance security:** Control access to specific rows and columns.
 * **Improve maintainability:** Changes to underlying tables can often be managed by updating the view definition without altering application queries.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

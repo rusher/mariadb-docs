@@ -23,6 +23,6 @@ Take the following example, a sequence of 21 bytes each represented by two hex d
 * The Y-co-ordinate is 4.0
   * 000000000140000000000000004010000000000000
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

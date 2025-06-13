@@ -87,7 +87,7 @@ package, the remedy is to remove the offending package (and possibly install or 
 the correct package) so that the correct library can be used.
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

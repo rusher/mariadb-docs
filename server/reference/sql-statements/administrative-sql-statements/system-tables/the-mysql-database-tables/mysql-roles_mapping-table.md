@@ -18,6 +18,6 @@ The `mysql.roles_mapping` table contains the following fields:
 
 The [Acl\_role\_grants](../../../../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#acl_role_grants) status variable indicates how many rows the `mysql.roles_mapping` table contains.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

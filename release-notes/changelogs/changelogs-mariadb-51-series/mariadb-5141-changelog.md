@@ -71,6 +71,6 @@ changes and bug fixes:
   binary tarball release.
 * Various test suite fixes and improvements.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formid="4316" formId="4316" %}

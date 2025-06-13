@@ -51,7 +51,7 @@ Feature limited free version is available for download. Advanced features are av
 See [www.soft-builder.com](https://www.soft-builder.com) for more information.
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

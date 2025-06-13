@@ -77,6 +77,6 @@ slave servers.
 For more complex examples of the readconnroute router, take a look at the\
 examples in the [Tutorials](https://mariadb.com/kb/Tutorials) folder.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

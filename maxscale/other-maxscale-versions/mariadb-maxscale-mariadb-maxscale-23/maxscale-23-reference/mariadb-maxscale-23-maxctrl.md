@@ -1134,6 +1134,6 @@ an array of JSON values: maxctrl api get servers data\[].attributes.state
 Usage: classify <statement>
 ```
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

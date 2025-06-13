@@ -41,6 +41,6 @@ SELECT sys.ps_is_consumer_enabled('nonexistent_consumer');
 
 * [Performance Schema setup\_consumers Table](../../performance-schema/performance-schema-tables/performance-schema-setup_consumers-table.md)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

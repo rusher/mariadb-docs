@@ -102,7 +102,7 @@ This can be disk corruption where MariaDB reads data and that data wasn't what w
 RAM corruptions can also result in undefined behaviour that is unfixable with software.
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

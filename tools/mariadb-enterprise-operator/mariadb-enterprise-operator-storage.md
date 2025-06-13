@@ -102,6 +102,6 @@ spec:
 
 This may be useful for multiple use cases, like provisioning ephemeral `MariaDBs` for the integration tests of your CI.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

@@ -2437,6 +2437,6 @@ Alphabetical list of all [mariadbd Options](../server-management/starting-and-st
 
 * [System and Status Variables Added By Major Release](../ha-and-performance/optimization-and-tuning/system-variables/system-and-status-variables-added-by-major-release/)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

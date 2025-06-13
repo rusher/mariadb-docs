@@ -2631,6 +2631,6 @@ Perform a raw REST API call. The path definition uses JavaScript syntax to extra
 
 ### classify
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

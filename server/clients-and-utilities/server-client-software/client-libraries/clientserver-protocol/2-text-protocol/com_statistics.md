@@ -18,7 +18,7 @@ Get internal server statistics.
 [string<EOF>](../protocol-data-types.md#end-of-file-length-strings) Human readable string
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

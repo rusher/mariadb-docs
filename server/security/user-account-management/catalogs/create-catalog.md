@@ -51,6 +51,6 @@ The directory will not be recognized as a catalog or show up in [SHOW CATALOGS](
 * [marriadb-install-db](../../../clients-and-utilities/deployment-tools/mariadb-install-db.md) can be used to create multiple catalogs with a default root user in one go.
 * [DROP CATALOG](drop-catalog.md)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

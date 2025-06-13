@@ -32,6 +32,6 @@ SELECT IS_IPV4_MAPPED(INET6_ATON('::ffff:10.0.1.1'));
 +-----------------------------------------------+
 ```
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

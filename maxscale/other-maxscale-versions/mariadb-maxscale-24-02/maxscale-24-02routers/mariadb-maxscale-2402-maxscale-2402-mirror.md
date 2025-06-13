@@ -201,6 +201,6 @@ port=3306
   is not guaranteed. This means that result mismatches can be reported when the\
   data is only eventually consistent.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

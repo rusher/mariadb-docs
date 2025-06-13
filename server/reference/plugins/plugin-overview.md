@@ -340,6 +340,6 @@ Plugins that were enabled as a `--plugin-load` option do not need to be uninstal
 * [INFORMATION\_SCHEMA.PLUGINS Table](../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/plugins-table-information-schema.md)
 * [mariadb-plugin](../../clients-and-utilities/administrative-tools/mariadb-plugin.md)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

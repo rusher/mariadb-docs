@@ -87,6 +87,6 @@ Below is a list of all [Performance Schema](../) tables as well as a brief descr
 | [user\_variables\_by\_thread](performance-schema-user_variables_by_thread-table.md)                                                                                   | [User-defined variables](../../../../../sql-structure/sql-language-structure/user-defined-variables.md) by thread. |
 | [users](performance-schema-users-table.md)                                                                                                                            | Connection statistics by user.                                                                                     |
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

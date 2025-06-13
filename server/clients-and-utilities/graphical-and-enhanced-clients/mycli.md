@@ -13,7 +13,7 @@ It is written in Python, and runs on Linux, Mac and Windows.
 Read more at [mycli.net](https://mycli.net).
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

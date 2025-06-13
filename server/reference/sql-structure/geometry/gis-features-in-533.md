@@ -50,6 +50,6 @@ Predicates, return boolean result of the relationship
 | [ST\_DISJOINT(A,B)](geometry-relations/st_disjoint.md)      | if A and B have no intersection |
 | [ST\_TOUCHES(A,B)](geometry-relations/st-touches.md)        | if A touches B                  |
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

@@ -12,6 +12,6 @@ You can also consider [sponsoring a feature](../../../contributing-participating
 
 Welcome to the [MariaDB community](../../../../../en/community/)!
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

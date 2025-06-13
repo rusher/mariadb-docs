@@ -10,7 +10,7 @@ It requires a web server, PHP, and a browser.
 Read more at [phpmyadmin.net](https://phpmyadmin.net)
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

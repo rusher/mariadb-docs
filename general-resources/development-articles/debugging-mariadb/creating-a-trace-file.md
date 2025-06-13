@@ -48,6 +48,6 @@ The '`o`' option redirects the output to a file (`/tmp/mariadbd.trace` in the ex
 
 * [Options for --debug](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/api-functions/mysql_debug)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

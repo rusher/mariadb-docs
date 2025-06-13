@@ -18,7 +18,7 @@ Additional Highlights
 Click here for the Community version. [README](https://github.com/webyog/sqlyog-community/blob/master/README)
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

@@ -250,6 +250,6 @@ After setting up logrotate in Ansible, you may want to deploy it to a non-produc
 
 For more information on how to use Ansible to automate MariaDB configuration, see [Ansible and MariaDB](../install-and-upgrade-mariadb/installing-mariadb/binary-packages/automated-mariadb-deployment-and-administration/ansible-and-mariadb/).
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

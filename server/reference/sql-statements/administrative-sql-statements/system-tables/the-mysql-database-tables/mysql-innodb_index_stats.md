@@ -87,6 +87,6 @@ stat_description: Number of leaf pages in the index
 * [mysql.innodb\_table\_stats](mysql-innodb_table_stats.md)
 * [ANALYZE TABLE](../../../table-statements/analyze-table.md)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

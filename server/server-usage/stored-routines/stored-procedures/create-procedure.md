@@ -238,6 +238,6 @@ Query OK, 0 rows affected (0.03 sec)
 * [Stored Routine Privileges](../stored-functions/stored-routine-privileges.md)
 * [Information Schema ROUTINES Table](../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-routines-table.md)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

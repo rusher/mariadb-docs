@@ -370,7 +370,7 @@ where (salary_ranks.ranking <= 5)
 * [Introduction to Window Functions in MariaDB Server 10.2](https://mariadb.com/resources/blog/introduction-window-functions-mariadb-server-102)
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

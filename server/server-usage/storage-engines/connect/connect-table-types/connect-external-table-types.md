@@ -89,6 +89,6 @@ Another option exists, phpos, enabling to specify what place holders are present
 
 SRCDEF is not available for MONGO tables, but other ways of achieving this exist and are described in the MONGO table type chapter.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

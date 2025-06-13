@@ -39,6 +39,6 @@ SELECT ST_WITHIN(@g2,ST_BUFFER(@g1,1));
 +---------------------------------+
 ```
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

@@ -51,6 +51,6 @@ Works like in `non group commit'` but the thread doesn't do any real sync(). If 
 
 The code for this can be found in storage/maria/ma\_loghandler.c::translog\_flush()
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

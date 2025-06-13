@@ -656,6 +656,6 @@ long-running sessions might cause MariaDB MaxScale to consume a growing amount\
 of memory unless the sessions are closed. This can be solved by adjusting the\
 value of `max_sescmd_history`.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

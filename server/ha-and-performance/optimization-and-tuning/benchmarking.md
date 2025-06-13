@@ -8,6 +8,6 @@
 
 * Useful scripts: [keyword-index.html#DISK](https://sourceware.org/systemtap/examples/keyword-index.html#DISK)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

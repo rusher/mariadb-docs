@@ -62,6 +62,6 @@ Each insert or update portion of the undo log is known as a rollback segment. Th
 
 The related [innodb\_available\_undo\_logs](../../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_available_undo_logs) status variable stores the total number of available InnoDB undo logs.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

@@ -181,7 +181,7 @@ spec:
 When the resources from the previous examples are created, a `Job` with both `mariadb-enterprise` and `backup-registry` `imagePullSecrets` will be reconciled.
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

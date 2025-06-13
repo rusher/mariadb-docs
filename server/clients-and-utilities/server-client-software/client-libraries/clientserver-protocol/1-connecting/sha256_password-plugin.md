@@ -65,7 +65,7 @@ RSA encrypted value of XOR(password, seed) using server public key (RSA_PKCS1_OA
 
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

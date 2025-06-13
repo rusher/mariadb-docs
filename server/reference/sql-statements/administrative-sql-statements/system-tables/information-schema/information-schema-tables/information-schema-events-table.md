@@ -34,6 +34,6 @@ It contains the following columns:
 
 The `[SHOW EVENTS](../../../show/show-events.md)` and `[SHOW CREATE EVENT](../../../show/show-create-event.md)` statements provide similar information.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

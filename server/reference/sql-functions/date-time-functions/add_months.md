@@ -94,6 +94,6 @@ SELECT ADD_MONTHS('2011-01-15', 2.1);
 
 * [SQL\_MODE=ORACLE](broken-reference)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

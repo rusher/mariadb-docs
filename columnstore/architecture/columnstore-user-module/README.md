@@ -48,4 +48,4 @@ In addition to these, the User Module also runs processes for DMLProc, DDLPrc an
 
 DMLProc and DDLProc distribute DML and DDL statements to the appropriate Performance Modules. When cpimport runs on the User Module, it distributes source files to the Performance Modules.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>

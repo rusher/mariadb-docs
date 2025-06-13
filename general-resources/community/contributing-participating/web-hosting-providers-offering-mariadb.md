@@ -98,6 +98,6 @@ Here is an incomplete list of web hosting providers offering MariaDB for their h
 * [Hoo.st](https://hoo.st/es/alojamiento-mariadb)
 * [miHosting.com](https://mihosting.com/)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

@@ -12,6 +12,6 @@ The `IS` operator accepts a third constant exists: `UNKNOWN`. It is always a syn
 
 * [BOOLEAN](../../data-types/numeric-data-types/boolean.md) type
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

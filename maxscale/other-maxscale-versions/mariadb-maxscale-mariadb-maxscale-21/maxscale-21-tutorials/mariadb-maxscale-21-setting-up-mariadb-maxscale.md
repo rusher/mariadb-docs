@@ -169,6 +169,6 @@ The configuration file creation is covered in different tutorials.
 * [Galera Cluster Connection Routing Tutorial](mariadb-maxscale-21-connection-routing-with-galera-cluster.md)
 * [Galera Cluster Read Write Splitting Tutorial](mariadb-maxscale-21-readwrite-splitting-with-galera-cluster.md)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

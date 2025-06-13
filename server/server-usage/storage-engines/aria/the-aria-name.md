@@ -35,6 +35,6 @@ as his prize for suggesting the winning name from Monty Program.
 
 * [Why is the Software Called MariaDB?](../../../reference/storage-engines/aria/broken-reference/)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

@@ -231,6 +231,6 @@ modified in that revision.
       * Fixed [Bug #613418](https://bugs.launchpad.net/bugs/613418) (M)aria recovery failure: ma\_key\_recover.c:981:\
         \_ma\_apply\_redo\_index: Assertion \`check\_page\_length == page\_length' failed
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formid="4316" formId="4316" %}

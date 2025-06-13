@@ -17,6 +17,6 @@ This is a list of [system variables](../../server-system-variables.md) that have
 
 * [System Variables Added in MariaDB 10.9](system-variables-added-in-mariadb-10-9.md)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

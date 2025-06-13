@@ -156,6 +156,6 @@ myisamchk --silent --force --fast --update-state \
 
 * [Memory and Disk Use With myisamchk](memory-and-disk-use-with-myisamchk.md)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

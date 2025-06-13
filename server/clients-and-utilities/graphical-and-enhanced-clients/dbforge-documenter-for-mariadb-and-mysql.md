@@ -59,6 +59,6 @@ Download a free 30-day trial of dbForge Documenter for MariaDB and MySQL [here](
 | dbForge Documenter 1.2  | Support for [MariaDB 10.4](broken-reference) |
 | dbForge Documenter 1.1  | Support for [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103) |
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

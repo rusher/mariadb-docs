@@ -28,6 +28,6 @@ This is also safe to do when using the standard C library.
 * [mysql\_library\_init](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/api-functions/mysql_library_init)
 * [mariadb client with MariaDB embedded](../../../../clients-and-utilities/mariadb-embedded.md)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

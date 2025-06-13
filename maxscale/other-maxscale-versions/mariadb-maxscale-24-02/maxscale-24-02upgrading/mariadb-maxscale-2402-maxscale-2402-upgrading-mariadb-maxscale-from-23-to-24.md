@@ -94,6 +94,6 @@ if defined:
 * If transaction replay is enabled and a deadlock occurs (SQLSTATE 40XXX), the\
   transaction is automatically retried.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

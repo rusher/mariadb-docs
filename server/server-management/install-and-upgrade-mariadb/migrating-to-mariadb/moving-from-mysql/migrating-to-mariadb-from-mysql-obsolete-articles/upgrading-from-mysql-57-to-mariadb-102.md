@@ -16,7 +16,7 @@ Following compatibility report was done on 10.2.4 and may get some fixing in nex
 * MySQL re-implemented partitioning in 5.7, thus you cannot perform in-place upgrades for partitioned tables. They will require mysqldump/import to work correctly in MariaDB.
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

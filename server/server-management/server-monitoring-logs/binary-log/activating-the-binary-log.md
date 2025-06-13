@@ -54,6 +54,6 @@ There are three formats for the binary log. The default is [mixed logging](binar
 * [FLUSH LOGS](../../../reference/sql-statements/administrative-sql-statements/flush-commands/flush.md) - Close and rotate logs
 * [GTID binlog indexing](../../../ha-and-performance/standard-replication/gtid.md#binlog-indexing)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

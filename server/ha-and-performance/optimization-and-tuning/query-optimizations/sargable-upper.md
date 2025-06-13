@@ -73,6 +73,6 @@ The optimization is implemented as a rewrite for a query's WHERE/ON conditions. 
 * [MDEV-31496](https://jira.mariadb.org/browse/MDEV-31496): Make optimizer handle UCASE(varchar\_col)=...
 * An analog for [LCASE](../../../reference/sql-functions/string-functions/lcase.md) is not possible. See [MDEV-31955](https://jira.mariadb.org/browse/MDEV-31955): Make optimizer handle LCASE(varchar\_col)=... for details.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

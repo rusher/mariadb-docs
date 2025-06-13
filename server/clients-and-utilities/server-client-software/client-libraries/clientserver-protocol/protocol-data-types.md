@@ -161,7 +161,7 @@ Strings whose length will be calculated by the packet remaining length.
 For an example see [COM_STMT_PREPARE](3-binary-protocol-prepared-statements/com_stmt_prepare.md) packet.
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

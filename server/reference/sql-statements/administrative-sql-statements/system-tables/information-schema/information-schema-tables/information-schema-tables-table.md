@@ -166,6 +166,6 @@ SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='foo' AND TEMPORARY='
 * [SHOW TABLE STATUS](../../../show/show-table-status.md)
 * [Finding Tables Without Primary Keys](../../../../../../mariadb-quickstart-guides/mariadb-indexes-guide.md#finding-tables-without-primary-keys)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

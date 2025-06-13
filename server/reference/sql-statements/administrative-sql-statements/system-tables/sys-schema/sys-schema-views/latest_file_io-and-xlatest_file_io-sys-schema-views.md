@@ -25,6 +25,6 @@ They contain the following columns:
 | operation | Type of operation                                 |
 | requested | Number of bytes requested for the file I/O event. |
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

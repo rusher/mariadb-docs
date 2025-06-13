@@ -94,6 +94,6 @@ Here is a table of all possible event types and their descriptions that the moni
 | new\_slave   | A new Slave was detected                     |
 | new\_ndb     | A new MySQL Cluster node was found           |
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

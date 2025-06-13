@@ -48,6 +48,6 @@ For more details, please refer to [MaxScale 1.3 Release Notes](maxscale-14-relea
 * Readconnrouter has a new "running" router\_option. This allows it to use any running server as a valid backend server.
 * Database names can be stripped of escape characters with the `strip_db_esc` service parameter.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

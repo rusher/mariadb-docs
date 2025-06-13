@@ -14,6 +14,6 @@ It contains the following fields:
 | hash  | binary(64) | NO   | PRI | NULL                 |             |
 | time  | timestamp  | NO   | MUL | current\_timestamp() |             |
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

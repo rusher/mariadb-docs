@@ -177,6 +177,6 @@ The default InnoDB stopword list differs from the default MyISAM list, being muc
 | when | where | who  | will |
 | with | und   | the  | www  |
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

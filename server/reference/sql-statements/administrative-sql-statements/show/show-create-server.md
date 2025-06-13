@@ -29,6 +29,6 @@ Create Server: CREATE SERVER `srv1` FOREIGN DATA WRAPPER mysql
 * [CREATE SERVER](../../data-definition/create/create-server.md)
 * [SHOW](./)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

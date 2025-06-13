@@ -215,6 +215,6 @@ mariadb-dump does not have a REPLACE flag like LOAD DATA INFILE. If the target t
 * **Character Sets:** Ensure your data file's character set is compatible with the target table's character set to avoid data corruption. You can specify character sets in `LOAD DATA INFILE`.
 * **Other Tools/Methods:** For very complex transformations or ETL (Extract, Transform, Load) processes, dedicated ETL tools or scripting languages (e.g., Python, Perl with database modules) might be more suitable, though they are beyond the scope of this guide.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

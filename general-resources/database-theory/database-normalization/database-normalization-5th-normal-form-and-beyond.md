@@ -94,7 +94,7 @@ Beyond 5th normal form you enter the heady realms of domain key normal form, a k
 For those interested in pursuing this academic and highly theoretical topic further, I suggest obtaining a copy of *An Introduction to Database Systems* by C.J. Date, at the time of writing in its 8th edition, or *Relational Theory for Computer Professionals* by the same author.
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

@@ -25,7 +25,7 @@ Payload:
 * [byte<n>](../protocol-data-types.md#fixed-length-bytes) xid, where n is sum of gtrid and bqual lengths
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

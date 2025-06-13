@@ -22,6 +22,6 @@ There are `NO RELEASE` and `AND NO CHAIN` options. By default, commits do not `R
 * [completion\_type](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#completion_type) - server system variable that determines whether COMMIT's are standard, COMMIT AND CHAIN or COMMIT RELEASE.
 * [SQL statements that cause an implicit commit](sql-statements-that-cause-an-implicit-commit.md)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

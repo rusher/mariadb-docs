@@ -173,6 +173,6 @@ the desired strategy and join order.
 
 * See mysql-test/t/debug\_optimizer.test (in the MariaDB source code) for examples
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

@@ -200,6 +200,6 @@ $ mysql -u root -p
 
 You have succesfully deployed MariaDB IBM Cloud!
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

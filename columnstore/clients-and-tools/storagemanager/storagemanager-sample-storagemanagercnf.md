@@ -47,6 +47,6 @@ path = /var/lib/columnstore/storagemanager/cache
 _Note: A region is required even when using an on-prem solution like_ [_ActiveScale_](https://qsupport.quantum.com/kb/flare/Content/ActiveScale/PDFs/ActiveScale_OS_S3_API_Reference.pdf) _due to header expectations within the API._
 {% endhint %}
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

@@ -124,6 +124,6 @@ SELECT (wins / plays) AS winavg, AVG(plays) FROM plays
 * [LOCK IN SHARE MODE](lock-in-share-mode.md)
 * [Optimizer Hints](optimizer-hints.md)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

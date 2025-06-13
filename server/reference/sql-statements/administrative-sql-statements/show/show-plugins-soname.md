@@ -30,7 +30,7 @@ SHOW PLUGINS SONAME 'ha_example.so';
 There is also a corresponding `[information_schema](../system-tables/information-schema/README.md)` table, called `[ALL_PLUGINS](../system-tables/information-schema/information-schema-tables/all-plugins-table-information-schema.md)`, which contains more complete information.
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

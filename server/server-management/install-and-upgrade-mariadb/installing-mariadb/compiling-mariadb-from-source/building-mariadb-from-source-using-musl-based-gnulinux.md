@@ -26,6 +26,6 @@ sudo make install
 
 Note that building with MariaDB this way will disable tokuDB, till tokuDB becomes fully supported on musl.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

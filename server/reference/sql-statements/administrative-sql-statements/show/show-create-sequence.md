@@ -82,6 +82,6 @@ NUMERIC_PRECISION_RADIX: 2
 * [ALTER SEQUENCE](../../../sql-structure/sequences/alter-sequence.md)
 * [Information Schema SEQUENCES Table](../system-tables/information-schema/information-schema-tables/information-schema-sequences-table.md)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

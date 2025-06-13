@@ -686,6 +686,6 @@ will be that _other_ receives the same writes twice; once via the\
 replication from the server it is replicating from and once when\
 Diff executes the same writes.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

@@ -108,6 +108,6 @@ The effect of this is that on table open of an Aria table, the server will think
 
 * [Aria FAQ](aria-faq.md)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

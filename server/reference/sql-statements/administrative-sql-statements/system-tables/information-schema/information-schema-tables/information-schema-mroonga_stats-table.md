@@ -11,6 +11,6 @@ The [Information Schema](../) `MROONGA_STATS` table only exists if the [Mroonga]
 
 This table always contains 1 row.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

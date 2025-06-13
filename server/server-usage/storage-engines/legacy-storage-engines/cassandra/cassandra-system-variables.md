@@ -59,6 +59,6 @@ This page documents system variables related to the [Cassandra storage engine](.
 * Default Value: `ONE`
 * Valid Values: `ONE`, `TWO`, `THREE`, `ANY`, `ALL`, `QUORUM`, `EACH_QUORUM`, `LOCAL_QUORUM`, \`\`
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

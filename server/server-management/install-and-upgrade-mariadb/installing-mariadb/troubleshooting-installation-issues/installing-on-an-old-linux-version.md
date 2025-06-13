@@ -30,6 +30,6 @@ The options you have are:
 * or
 * [Download the source](../../../../clients-and-utilities/server-client-software/download/getting-the-mariadb-source-code.md) and [build it](../compiling-mariadb-from-source/generic-build-instructions.md).
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

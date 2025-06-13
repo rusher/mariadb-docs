@@ -14,6 +14,6 @@ It contains the following fields:
 | link\_id     | char(64)  | NO   |     |                      |             |
 | failed\_time | timestamp | NO   |     | current\_timestamp() |             |
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

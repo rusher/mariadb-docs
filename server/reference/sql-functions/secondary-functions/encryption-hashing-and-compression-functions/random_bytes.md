@@ -20,6 +20,6 @@ Statements containing the RANDOM\_BYTES function are [unsafe for statement-based
 
 An error occurs if _length_ is outside the range 1 to 1024.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

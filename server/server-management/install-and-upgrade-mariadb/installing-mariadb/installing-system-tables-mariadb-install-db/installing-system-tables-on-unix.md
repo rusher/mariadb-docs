@@ -25,6 +25,6 @@ See [mariadb-install-db: Troubleshooting Issues](../../../../clients-and-utiliti
 * [mariadb-install-db](../../../../clients-and-utilities/deployment-tools/mariadb-install-db.md)
 * The Windows version of `mariadb-install-db`: [mysql\_install\_db.exe](mariadb-install-db-exe.md)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

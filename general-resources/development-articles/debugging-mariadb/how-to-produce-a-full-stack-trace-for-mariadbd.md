@@ -440,6 +440,6 @@ For very difficult or critical errors, you should consider uploading the followi
 This information will allow the MariaDB developers at the MariaDB Corporation to analyze it and try to\
 create a fix.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

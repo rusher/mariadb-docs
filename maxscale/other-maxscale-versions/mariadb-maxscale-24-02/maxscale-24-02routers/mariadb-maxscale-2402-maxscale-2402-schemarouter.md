@@ -380,6 +380,6 @@ cache clearing.
 [Here](../maxscale-24-02tutorials/mariadb-maxscale-2402-maxscale-2402-simple-sharding-with-two-servers.md) is a small tutorial on how\
 to set up a sharded database.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

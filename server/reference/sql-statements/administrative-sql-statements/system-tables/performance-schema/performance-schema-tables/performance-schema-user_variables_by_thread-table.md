@@ -35,6 +35,6 @@ SELECT * FROM user_variables_by_thread;
 * [User-defined variables](../../../../../sql-structure/sql-language-structure/user-defined-variables.md)
 * [Information Schema USER\_VARIABLES Table](../../information-schema/information-schema-tables/information-schema-user_variables-table.md)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

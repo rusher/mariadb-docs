@@ -82,6 +82,6 @@ In some cases, there may be easier ways to run multiple MariaDB Server instances
 * Starting multiple [Docker](../install-and-upgrade-mariadb/installing-mariadb/binary-packages/automated-mariadb-deployment-and-administration/docker-and-mariadb/installing-and-using-mariadb-via-docker.md) containers.
 * Using [dbdeployer](../../clients-and-utilities/administrative-tools/dbdeployer.md) (no longer maintained).
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

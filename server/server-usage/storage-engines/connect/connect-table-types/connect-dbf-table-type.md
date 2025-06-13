@@ -84,6 +84,6 @@ alter table tabdbf option_list='Readmode=1';
 
 To come back to normal mode, specify READMODE=0.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

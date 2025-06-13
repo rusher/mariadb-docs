@@ -112,6 +112,6 @@ patch from [Percona](https://www.percona.com/).
 
 * [Notes when an index cannot be used because of type conversions](broken-reference)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

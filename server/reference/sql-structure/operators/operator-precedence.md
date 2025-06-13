@@ -54,6 +54,6 @@ This is a speed optimization. Also, since functions can have side-effects, this 
 SELECT some_function() OR log_error();
 ```
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

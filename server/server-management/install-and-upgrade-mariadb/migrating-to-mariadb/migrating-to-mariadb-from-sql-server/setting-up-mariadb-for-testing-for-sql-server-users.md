@@ -50,6 +50,6 @@ While experimenting with MariaDB, you could end up with an unusable installation
 
 To know where your data directory is, check the [datadir](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#datadir) system variable.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

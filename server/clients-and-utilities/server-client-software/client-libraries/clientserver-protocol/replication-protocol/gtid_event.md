@@ -95,6 +95,6 @@ ec d5 26 5a a2 8c 27 00  00 2a 00 00 00 8c 02 00 ..&Z..'..*......
 * commit\_id\[6] = 00 00 00 00 00 00 = 0
 * CRC32\[4] = 37 d3 c8 23
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

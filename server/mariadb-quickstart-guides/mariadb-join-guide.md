@@ -146,6 +146,6 @@ While this syntax works, the explicit `JOIN` syntax (`INNER JOIN`, `LEFT JOIN`, 
 
 `JOIN` clauses can be concatenated (chained) to retrieve results from three or more tables by progressively joining them.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

@@ -247,6 +247,6 @@ The cluster nodes can be configured to invoke a command when cluster membership 
 
 ## Footnotes
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

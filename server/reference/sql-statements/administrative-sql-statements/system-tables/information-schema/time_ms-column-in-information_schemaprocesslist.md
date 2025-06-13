@@ -32,6 +32,6 @@ if a slave is lagging behind. For this, use instead the`Seconds_Behind_Master` c
 The addition of the TIME\_MS column is based on the microsec\_process patch,\
 developed by [Percona](https://www.percona.com/).
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

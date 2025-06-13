@@ -11,6 +11,6 @@ This article documents thread states that are related to connection threads that
 | Reading master dump table data            | After the table created by a master dump (the Opening master dump table state) the table is now being read.                                               |
 | Rebuilding the index on master dump table | After the table created by a master dump has been opened and read (the Reading master dump table data state), the index is built.                         |
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

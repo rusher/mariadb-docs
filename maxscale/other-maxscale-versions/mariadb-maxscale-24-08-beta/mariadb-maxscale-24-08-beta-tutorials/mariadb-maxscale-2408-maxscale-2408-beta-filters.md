@@ -150,6 +150,6 @@ password=6628C50E07CCE1F0392EDEEB9D1203F3
 filters=HighScores
 ```
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

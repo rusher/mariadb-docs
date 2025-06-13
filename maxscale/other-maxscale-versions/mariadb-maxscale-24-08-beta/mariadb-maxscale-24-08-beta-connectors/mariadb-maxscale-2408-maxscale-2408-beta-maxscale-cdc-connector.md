@@ -69,6 +69,6 @@ To build and package the connector as a library, follow MaxScale build\
 instructions with the exception of adding `-DTARGET_COMPONENT=devel` to the\
 CMake call.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

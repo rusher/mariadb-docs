@@ -97,6 +97,6 @@ mariadb-binlog mysql-bin.000687-extract-offset-129619
 
 Upload this to the [private uploads](https://mariadb.com/kb/en/ftp/) or attach to the public bug report if nothing sensitive there.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

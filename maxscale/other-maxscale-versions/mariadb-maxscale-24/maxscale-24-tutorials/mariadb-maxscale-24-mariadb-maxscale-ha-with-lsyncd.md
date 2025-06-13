@@ -183,6 +183,6 @@ lsyncd lsyncd.cnf
 
 For more information on the lsyncd executable and its options, please see the --help output of lsyncd or the lsyncd(1) manpage.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

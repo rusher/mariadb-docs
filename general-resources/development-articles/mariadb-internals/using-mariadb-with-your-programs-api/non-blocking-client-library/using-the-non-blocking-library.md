@@ -215,6 +215,6 @@ pipes or shared memory
 Named pipes and shared memory can still be used, using either the blocking or the non-blocking API. However, operations that need to wait on I/O on the named pipe will not return control to the application; instead they will "hang" waiting for the\
 operation to complete, just like the normal blocking API calls.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

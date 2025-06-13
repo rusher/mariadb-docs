@@ -52,6 +52,6 @@ The issue number links will take you to the corresponding issue in MariaDB proje
 * Revision: 3906, 2013-11-14
   * [MDEV-4472](https://jira.mariadb.org/browse/MDEV-4472) \_my\_hash\_init in 10.0 fix.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

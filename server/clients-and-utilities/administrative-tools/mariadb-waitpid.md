@@ -28,6 +28,6 @@ Signal 1 is used if the kill() system call cannot handle signal 0
 | -v, --verbose | Be more verbose. Give a warning, if kill can't handle signal 0 |
 | -V, --version | Print version information and exit                             |
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

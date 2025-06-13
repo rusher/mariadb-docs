@@ -95,6 +95,6 @@ We are grateful to these companies for their support of MariaDB!
 * [DES\_ENCRYPT()](../../../../reference/sql-functions/secondary-functions/encryption-hashing-and-compression-functions/des_encrypt.md)
 * A [blog post about table encryption](https://mariadb.com/blog/table-and-tablespace-encryption-mariadb-101/) with benchmark results
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

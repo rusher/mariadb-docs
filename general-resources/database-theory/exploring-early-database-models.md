@@ -13,7 +13,7 @@ A *database model* is a logical model concerned with how the data is represented
 There are a number of database models. The next two articles cover two common models; the [hierarchical database model](understanding-the-hierarchical-database-model.md) and the [network database model](understanding-the-network-database-model.md). After that comes the one MariaDB, along with most modern DBMSs uses, the relational model.
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

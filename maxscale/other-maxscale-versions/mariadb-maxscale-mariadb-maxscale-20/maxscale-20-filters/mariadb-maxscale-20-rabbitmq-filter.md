@@ -67,6 +67,6 @@ The RabbitMQ filter has parameters to control which queries are logged based on 
 | ssl\_client\_cert     | Path to the client certificate in PEM format                                             |                                |                   |
 | ssl\_client\_key      | Path to the client public key in PEM format                                              |                                |                   |
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

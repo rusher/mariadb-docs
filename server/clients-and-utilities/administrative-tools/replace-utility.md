@@ -55,6 +55,6 @@ The replace program is used by [msql2mysql](../legacy-clients-and-utilities/msql
 | -v               | Verbose mode. Print more information about what the program does. |
 | -V               | Display version information and exit.                             |
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

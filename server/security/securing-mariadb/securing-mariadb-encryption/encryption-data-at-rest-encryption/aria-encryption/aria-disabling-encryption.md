@@ -38,6 +38,6 @@ MariaDB routinely creates internal temporary tables. When these temporary tables
 
 To decrypt these tables, set the `[encrypt_tmp_disk_tables](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#encrypt_tmp_disk_tables)` to `OFF`. Once set, all internal temporary tables that are created from that point on are written unencrypted to disk.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

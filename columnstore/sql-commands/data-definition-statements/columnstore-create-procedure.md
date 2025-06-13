@@ -58,7 +58,7 @@ call sp_complex_variable(1000, '1998-10-10');
 ```
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

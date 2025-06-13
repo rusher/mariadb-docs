@@ -14,6 +14,6 @@ The `CHECK VIEW` statement was introduced in [MariaDB 10.0.18](https://app.gitbo
 
 * [REPAIR VIEW](repair-view.md)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

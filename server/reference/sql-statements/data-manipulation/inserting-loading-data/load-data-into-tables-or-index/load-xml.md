@@ -90,6 +90,6 @@ This statement activates INSERT [triggers](../../../../../server-usage/triggers-
 
 * The [CONNECT](../../../../../server-usage/storage-engines/connect/) storage engine has an [XML table type](../../../../../server-usage/storage-engines/connect/connect-table-types/connect-table-types-data-files.md#xml-table-type).
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

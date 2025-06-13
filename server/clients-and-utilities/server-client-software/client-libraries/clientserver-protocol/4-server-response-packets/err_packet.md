@@ -27,6 +27,6 @@ Note that the ERR packet is supposed to send a server error to the client. In pa
 
 ["Progress reporting"](broken-reference)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

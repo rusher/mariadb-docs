@@ -31,6 +31,6 @@ Increasing the time interval of `memleak` is important to run longer than the us
 
 Note: Very old Linux kernels like Centos/RHEL 7 might not have sufficient hooks to measure this correctly.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

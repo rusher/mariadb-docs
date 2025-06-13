@@ -175,6 +175,6 @@ shut down in an uncontrolled fashion, the journal will be read when MaxScale is\
 started. To skip the recovery process, manually delete the journal file before\
 starting MaxScale.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

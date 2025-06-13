@@ -96,6 +96,6 @@ OLDEST_MODIFICATION: 0
 * [InnoDB Buffer Pool](../../../../../../../server-usage/storage-engines/innodb/innodb-buffer-pool.md)
 * [innodb\_buffer\_stats\_by\_schema and x$innodb\_buffer\_stats\_by\_schema Sys Schema Views](https://mariadb.com/kb/en/sys-schema-views-innodb_buffer_stats_by_schema-and-xinnodb_buffer_stats_by_/)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

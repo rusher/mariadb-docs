@@ -166,6 +166,6 @@ SHOW CREATE VIEW db.b2;
 
 * [Roles Review](https://ocelot.ca/blog/blog/2014/01/12/roles-review/) by Peter Gulutzan
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

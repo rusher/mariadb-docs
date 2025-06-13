@@ -87,6 +87,6 @@ SELECT * FROM table_name;
 Empty set (0.001 sec)
 ```
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

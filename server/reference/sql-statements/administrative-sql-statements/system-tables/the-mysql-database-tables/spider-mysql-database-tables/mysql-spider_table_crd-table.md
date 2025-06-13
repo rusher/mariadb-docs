@@ -14,6 +14,6 @@ It contains the following fields:
 | key\_seq    | int(10) unsigned | NO   | PRI | 0       |             |
 | cardinality | bigint(20)       | NO   |     | 0       |             |
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

@@ -37,6 +37,6 @@ A thread can have any of the following `COMMAND` values (displayed by the `COMMA
 | Table Dump | Sending the contents of a table to a slave. |
 | Time | Not used. |
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

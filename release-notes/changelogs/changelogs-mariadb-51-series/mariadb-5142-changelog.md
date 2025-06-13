@@ -63,6 +63,6 @@ in previous [changelogs](../../connectors/odbc/changelogs/) it includes the foll
 * Fix for [MySQL Bug #31173](https://bugs.mysql.com/bug.php?id=31173): mysqlslap.exe crashes if called without any parameters
 * Fix Windows build of embedded server (forgotten dependency).
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formid="4316" formId="4316" %}

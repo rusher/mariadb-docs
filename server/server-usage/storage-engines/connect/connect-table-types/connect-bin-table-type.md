@@ -142,6 +142,6 @@ modified in the OPTION\_LIST with an "align" option ("packed" meaning `align=1` 
 4. [↑](connect-bin-table-type.md#_ref-3) It can be specified\
    with more than one character, but only the first one is significant.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

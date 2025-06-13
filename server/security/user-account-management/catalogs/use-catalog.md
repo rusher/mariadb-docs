@@ -24,6 +24,6 @@ user to import SQL scripts that use `USE CATALOG...`.
 
 * [USE database](../../../reference/sql-statements/administrative-sql-statements/use-database.md). Changing database.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

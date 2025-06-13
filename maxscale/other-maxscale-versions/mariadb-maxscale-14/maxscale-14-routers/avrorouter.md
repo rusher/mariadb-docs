@@ -225,6 +225,6 @@ configuring MaxScale with CMake, you will need to add `-DBUILD_AVRO=Y -DBUILD_CD
 
 For more details about building MaxScale from source, please refer to the[Building MaxScale from Source Code](../maxscale-14-getting-started/building-maxscale-from-source-code.md) document.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

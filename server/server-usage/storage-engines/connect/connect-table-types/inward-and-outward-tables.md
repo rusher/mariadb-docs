@@ -85,6 +85,6 @@ it is when converting a table from another engine to an outward table. However\
 there are no restrictions to convert another engine table to a CONNECT inward\
 table.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

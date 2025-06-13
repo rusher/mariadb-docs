@@ -494,6 +494,6 @@ The avrorouter does not do any crash recovery. This means that the avro files\
 need to be removed or truncated to valid block lengths before starting the\
 avrorouter.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

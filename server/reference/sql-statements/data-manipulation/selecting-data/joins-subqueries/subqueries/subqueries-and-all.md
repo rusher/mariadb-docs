@@ -97,7 +97,7 @@ SELECT * FROM sq1 WHERE num > ALL (SELECT * FROM sq2);
 ```
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

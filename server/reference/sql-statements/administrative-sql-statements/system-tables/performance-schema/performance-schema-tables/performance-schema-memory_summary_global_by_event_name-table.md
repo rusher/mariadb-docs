@@ -52,6 +52,6 @@ CURRENT_NUMBER_OF_BYTES_USED: 0
    HIGH_NUMBER_OF_BYTES_USED: 275808
 ```
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

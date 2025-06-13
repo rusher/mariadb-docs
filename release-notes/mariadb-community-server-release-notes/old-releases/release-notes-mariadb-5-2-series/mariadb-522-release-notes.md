@@ -32,6 +32,6 @@ beta releases) was to fix bugs and otherwise prepare for a stable release of[Mar
 many bug fixes and other improvements were made. See the[Changelog](../../../changelogs/changelogs-mariadb-52-series/mariadb-522-changelog.md) for details and links to the bugs that were\
 fixed.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formid="4316" formId="4316" %}

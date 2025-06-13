@@ -157,6 +157,6 @@ part has had anything to do with this KB article but they are the\
 default authorities to turn to when you want to know more about the\
 GPL or LGPL.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

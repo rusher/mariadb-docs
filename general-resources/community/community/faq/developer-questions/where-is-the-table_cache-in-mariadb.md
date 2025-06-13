@@ -24,6 +24,6 @@ MariaDB [(none)]> SELECT @@table_open_cache;
 1 row in set (0.00 sec)
 ```
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

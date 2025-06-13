@@ -125,6 +125,6 @@ document.
 * [PAM Authenticator](mariadb-maxscale-25-01-authenticators/mariadb-maxscale-2501-maxscale-2501-pam-authenticator.md)
 * [Ed25519 Authenticator](mariadb-maxscale-25-01-authenticators/mariadb-maxscale-2501-maxscale-2501-ed25519-authenticator.md)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

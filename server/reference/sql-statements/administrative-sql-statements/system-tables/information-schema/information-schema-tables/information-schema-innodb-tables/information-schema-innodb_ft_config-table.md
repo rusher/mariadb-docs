@@ -32,6 +32,6 @@ SELECT * FROM INNODB_FT_CONFIG;
 +---------------------------+-------+
 ```
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

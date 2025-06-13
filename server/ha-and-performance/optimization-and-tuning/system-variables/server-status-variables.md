@@ -2008,6 +2008,6 @@ Issuing a [FLUSH STATUS](../../../reference/sql-statements/administrative-sql-st
 * Scope: Global
 * Data Type: `numeric`
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

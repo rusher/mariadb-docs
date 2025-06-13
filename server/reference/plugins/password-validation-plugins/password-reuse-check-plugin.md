@@ -73,6 +73,6 @@ The bump to version 2.0 required the change of the stored format to mitigate an 
 * [Password Validation](broken-reference)
 * [10.7 preview feature: Password Reuse Check plugin](https://mariadb.org/10-7-preview-feature-password-reuse-check-plugin/) (mariadb.org blog post)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

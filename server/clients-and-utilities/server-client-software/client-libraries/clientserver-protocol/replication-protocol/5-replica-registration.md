@@ -298,6 +298,6 @@ We can see:
 6. GTID\_EVENT packet: 2b 00 00 06 ... 22 87 c0 61
 7. QUERY\_EVENT packet: 4c 00 00 07 ... 6e c8 89 60
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

@@ -22,7 +22,7 @@ Here are some detailed instructions for various systems:
 See the [Buildbot TODO](../buildbot-todo.md) for plans and ideas on improving Buildbot.
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

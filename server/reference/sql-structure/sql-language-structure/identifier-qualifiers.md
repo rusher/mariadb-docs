@@ -34,6 +34,6 @@ For DML statements, it is possible to specify a list of the partitions using the
 * [USE](../../sql-statements/administrative-sql-statements/use-database.md)
 * [DATABASE()](../../sql-functions/secondary-functions/information-functions/database.md)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

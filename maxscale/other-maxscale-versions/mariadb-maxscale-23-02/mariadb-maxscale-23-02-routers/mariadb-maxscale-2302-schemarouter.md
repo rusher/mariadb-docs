@@ -336,6 +336,6 @@ following fields.
 [Here](../mariadb-maxscale-23-02-tutorials/mariadb-maxscale-2302-simple-sharding-with-two-servers.md) is a small tutorial on how\
 to set up a sharded database.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

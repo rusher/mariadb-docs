@@ -129,6 +129,6 @@ modified in that revision.
     * [Revision #2891.3.59](https://bazaar.launchpad.net/~maria-captains/maria/5.1-release/revision/2891.3.59)
       * Fix test failure with OpenSSL due to different error message than in YaSSL.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formid="4316" formId="4316" %}

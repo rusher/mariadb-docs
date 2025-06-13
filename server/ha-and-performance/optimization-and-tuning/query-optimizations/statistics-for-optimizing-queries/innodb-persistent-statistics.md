@@ -29,6 +29,6 @@ Prior to [MariaDB 10.11.12](broken-reference/), [MariaDB 11.4.6](broken-referenc
 * [Engine-independent Statistics](engine-independent-table-statistics.md)
 * [Histogram-based Statistics](histogram-based-statistics.md)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

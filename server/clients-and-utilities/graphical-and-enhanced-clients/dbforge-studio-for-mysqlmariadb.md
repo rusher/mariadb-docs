@@ -25,6 +25,6 @@ The Express edition with basic features is offered _free of charge_. Also, a fre
 * [Learn more about dbForge Studio here](https://www.devart.com/dbforge/mysql/studio/mariadb-gui-client.html).
 * [Download a 30-day free trial here](https://www.devart.com/dbforge/mysql/studio/download.html).
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

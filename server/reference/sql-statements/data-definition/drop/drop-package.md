@@ -23,6 +23,6 @@ The `DROP PACKAGE` statement drops a stored package entirely:
 * [DROP PACKAGE BODY](drop-package-body.md)
 * [Oracle SQL\_MODE](broken-reference)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

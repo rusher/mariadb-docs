@@ -78,6 +78,6 @@ See the [Limitations](../about-maxscale-23/mariadb-maxscale-23-limitations-and-k
 The GSSAPI authenticator modules require the GSSAPI and the SQLite3 development\
 libraries (krb5-devel and sqlite-devel on CentOS 7).
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

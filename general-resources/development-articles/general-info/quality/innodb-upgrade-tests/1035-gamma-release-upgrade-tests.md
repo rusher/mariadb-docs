@@ -386,7 +386,7 @@ Known bugs [MDEV-13103](https://jira.mariadb.org/browse/MDEV-13103), [MDEV-13094
 
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

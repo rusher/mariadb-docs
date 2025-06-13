@@ -100,6 +100,6 @@ The "Data Migration" feature facilitates seamless transitions from PostgreSQL\
 to MariaDB. Transfer data and database structures between the two systems while\
 ensuring data integrity and consistency throughout the process.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

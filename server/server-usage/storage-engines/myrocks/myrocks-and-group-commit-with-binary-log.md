@@ -46,6 +46,6 @@ The test took 38 seconds, Number of syncs was 1400+400=1800, which gives 45 sync
 
 Note that the WAL was synced fewer times than there were binlog commit groups (?)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

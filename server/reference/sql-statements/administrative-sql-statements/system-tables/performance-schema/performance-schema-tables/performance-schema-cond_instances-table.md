@@ -20,7 +20,7 @@ The maximum number of conditions stored in the performance schema is determined 
 
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

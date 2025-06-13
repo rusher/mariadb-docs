@@ -138,6 +138,6 @@ The `access` field contains the grants of the user which can be mapped to indivi
 | SLAVE\_MONITOR        | (1ULL << 38) |
 | SHOW\_CREATE\_ROUTINE | (1ULL << 39) |
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

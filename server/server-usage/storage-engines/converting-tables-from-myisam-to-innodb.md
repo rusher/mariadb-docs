@@ -277,6 +277,6 @@ optimizations, and debugging tips.
 
 Original source: [myisam2innodb](https://mysql.rjweb.org/doc.php/myisam2innodb)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

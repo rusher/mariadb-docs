@@ -50,6 +50,6 @@ MySQL 5.7.4 introduced similar functionality, but the MariaDB implementation dif
 * [Query limits and timeouts](query-limits-and-timeouts.md)
 * [lock\_wait\_timeout](../system-variables/server-system-variables.md#lock_wait_timeout) variable
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

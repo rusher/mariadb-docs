@@ -30,7 +30,7 @@ Resets a prepared statement on the client and server to state after preparing.
 
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

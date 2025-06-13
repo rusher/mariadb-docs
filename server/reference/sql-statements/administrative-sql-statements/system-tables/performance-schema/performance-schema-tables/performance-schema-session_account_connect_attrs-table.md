@@ -34,6 +34,6 @@ SELECT * FROM performance_schema.session_account_connect_attrs;
 +----------------+-----------------+------------------+------------------+
 ```
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

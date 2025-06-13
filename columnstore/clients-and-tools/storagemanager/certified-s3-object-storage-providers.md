@@ -29,6 +29,6 @@ layout:
 
 _Due to the frequent code changes and deviation from the AWS standards, none are approved at this time._
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

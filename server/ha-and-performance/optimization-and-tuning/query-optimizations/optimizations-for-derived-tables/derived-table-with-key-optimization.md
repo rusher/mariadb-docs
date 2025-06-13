@@ -61,6 +61,6 @@ set optimizer_switch='derived_with_keys=off'
 * [What is MariaDB 5.3](broken-reference)
 * [Subquery Optimizations Map](../subquery-optimizations/subquery-optimizations-map.md)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

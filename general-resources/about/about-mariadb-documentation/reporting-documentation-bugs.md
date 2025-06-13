@@ -31,6 +31,6 @@ Join the `#documentation` channel in [MariaDB Community Slack](https://r.mariadb
 
 ![Screenshot of the MariaDB Community Slack, with the #documentation channel highlighted.](../../.gitbook/assets/image.png)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

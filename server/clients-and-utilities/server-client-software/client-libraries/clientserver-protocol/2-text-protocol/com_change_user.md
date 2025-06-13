@@ -53,7 +53,7 @@ Server response is like [connection authentication](../1-connecting/connection.m
   * Authentication switch ends with server sending either [OK_Packet](../4-server-response-packets/ok_packet.md) or [ERR_Packet](../4-server-response-packets/err_packet.md).
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

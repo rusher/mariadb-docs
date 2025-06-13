@@ -44,7 +44,7 @@ SELECT JSON_CONTAINS_PATH(@json, 'all', '$.A', '$.D');
 ```
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

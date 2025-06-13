@@ -51,7 +51,7 @@ So far, the plant example has no keys, and there are repeating groups. To get it
 This table is now in 1st normal formal. The process for turning a table into 2nd normal form is continued in the next article.
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

@@ -30,7 +30,7 @@ The designer asks various questions to get more detailed information, such as "W
 * Not all publications make sales — some may be special editions, and others simply never sell any copies.
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

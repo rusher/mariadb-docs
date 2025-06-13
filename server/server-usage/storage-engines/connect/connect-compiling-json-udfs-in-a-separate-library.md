@@ -101,6 +101,6 @@ There are some restrictions when using the UDFs this way:
 * In case of error, warnings are replaced by messages sent to stderr.
 * No trace.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

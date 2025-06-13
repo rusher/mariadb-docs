@@ -64,6 +64,6 @@ all existing signed contributor agreements to the Foundation.
 Question not answered? Subscribe to the[maria-developers mailing list](https://launchpad.net/~maria-developers)\
 and ask there or visit us on our [Zulip channel](https://mariadb.zulipchat.com) or the **#maria** [IRC](../../../../en/irc/) channel on.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

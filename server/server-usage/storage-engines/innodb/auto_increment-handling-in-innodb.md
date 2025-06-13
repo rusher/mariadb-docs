@@ -87,6 +87,6 @@ Create Table: CREATE TABLE `t1` (
 * [LAST\_INSERT\_ID](../../../reference/sql-functions/secondary-functions/information-functions/last_insert_id.md)
 * [Sequences](../../../reference/sql-structure/sequences/) - an alternative to auto\_increment available from [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

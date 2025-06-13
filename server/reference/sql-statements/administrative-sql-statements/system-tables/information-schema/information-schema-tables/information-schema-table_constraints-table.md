@@ -23,7 +23,7 @@ It has the following columns:
 The [REFERENTIAL_CONSTRAINTS](information-schema-referential_constraints-table.md) table has more information about foreign keys.
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

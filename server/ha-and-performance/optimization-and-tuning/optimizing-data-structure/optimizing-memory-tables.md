@@ -4,6 +4,6 @@
 
 The [MEMORY Storage Engine](../../../server-usage/storage-engines/memory-storage-engine.md) has a key feature in that it permits its indexes to be either B-tree or Hash. Choosing the best index type can lead to better performance. See [Storage Engine index types](../optimization-and-indexes/storage-engine-index-types.md) for more on the characteristics of each index type.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

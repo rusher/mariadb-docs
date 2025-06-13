@@ -54,6 +54,6 @@ versions of MariaDB will be migrated here over the next few months. Redirects\
 will be created for items as they are moved from the[wiki](https://askmonty.org/wiki), so any bookmarks will continue to work after\
 a page has been moved.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formid="4316" formId="4316" %}

@@ -11,6 +11,6 @@ This clause cannot be used in a [view](../../../../server-usage/views/)'s defini
 * [SELECT](select.md)
 * [Stored Procedures](../../../../server-usage/stored-routines/stored-procedures/)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

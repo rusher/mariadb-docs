@@ -46,6 +46,6 @@ ERROR 3037 (22023): Invalid GIS data provided to function st_isvalid.
 * [Geometry Constructors](../geometry-constructors/)
 * [ST\_AsText](../wkt/st_astext.md)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

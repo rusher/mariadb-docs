@@ -196,6 +196,6 @@ mysql -u root -p -e "SHOW STATUS LIKE 'wsrep_cluster_size'"
 
 You have successfully deployed MariaDB Galera on IBM Cloud!
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

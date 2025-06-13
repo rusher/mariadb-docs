@@ -128,6 +128,6 @@ Caution: If your server crashes when using this feature, this is likely because 
 A Release version of GetRest must be linked to the release version of the cpprestsdk lib (cpprest\_2\_10.dll) but if you make a Debug version of GetRest, make sure it is linked to the Debug version of cpprestsdk lib (cpprest\_2\_10d.dll)\
 This may be automatic if you use Visual Studio to make the GetRest.dll.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

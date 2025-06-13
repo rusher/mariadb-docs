@@ -66,6 +66,6 @@ The [Aria storage engine](../../../../../server-usage/storage-engines/aria/) doe
 
 New key management and encryption plugins can be developed using the [encryption plugin API](broken-reference/).
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

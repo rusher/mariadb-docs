@@ -539,6 +539,6 @@ rules add the following line to the rule file.
 users %@% match all rules safe_delete managers_table
 ```
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

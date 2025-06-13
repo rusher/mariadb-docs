@@ -429,6 +429,6 @@ See [Server System Variables](../../../ha-and-performance/optimization-and-tunin
 * Default Value: `1000`
 * Range: `0` to `4294967295`
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

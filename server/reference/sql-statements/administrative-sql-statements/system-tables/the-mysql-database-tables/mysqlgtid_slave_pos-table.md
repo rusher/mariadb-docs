@@ -79,6 +79,6 @@ Number of transactions that changed data in multiple (transactional)\
 storage engines. If this is significantly larger than\
 Rpl\_transactions\_multi\_engine, it indicates that setting`gtid_pos_auto_engines` could reduce the need for cross-engine transactions.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

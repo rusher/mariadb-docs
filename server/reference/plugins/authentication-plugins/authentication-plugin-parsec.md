@@ -50,6 +50,6 @@ install soname 'auth_parsec';
 create user test1@'%' identified via parsec using PASSWORD('pwd');
 ```
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

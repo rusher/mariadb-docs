@@ -88,6 +88,6 @@ to enable the optimization.
 * [MDEV-32113](https://jira.mariadb.org/browse/MDEV-32113): utf8mb3\_key\_col=utf8mb4\_value cannot be used for ref access
 * Blog post: [Making “tbl.utf8mb3\_key\_column=utf8mb4\_expr” sargable](https://petrunia.net/2023/10/11/making-tbl-utf8mb3_key_columnutf8mb4_expr-sargable/)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

@@ -17,6 +17,6 @@ It contains the following columns:
 
 Note: for multi-table queries, all counter increments are "billed" to the first table in the query:[1018](https://github.com/facebook/mysql-5.6/issues/1018)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

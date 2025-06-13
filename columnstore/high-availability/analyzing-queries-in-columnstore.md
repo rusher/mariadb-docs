@@ -275,6 +275,6 @@ MariaDB [infinidb_querystats]> select min(endtime-starttime), max(endtime-startt
 where querytype='INSERT SELECT' and starttime >= now() - interval 12 hour;
 ```
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

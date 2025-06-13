@@ -29,7 +29,7 @@ After the file is sent, the client must send an empty packet to indicate that no
 Once the client has finished sending the file, the server will respond with an [OK_packet](ok_packet.md) or an [ERR_packet](err_packet.md).
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

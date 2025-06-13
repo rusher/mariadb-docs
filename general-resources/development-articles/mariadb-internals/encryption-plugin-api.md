@@ -213,6 +213,6 @@ int encryption_crypt(const unsigned char *src, unsigned int slen,
                      unsigned int key_id, unsigned int key_version);
 ```
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

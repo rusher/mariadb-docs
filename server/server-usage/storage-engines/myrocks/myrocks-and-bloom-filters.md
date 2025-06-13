@@ -62,6 +62,6 @@ Other useful variables are:
 * `rocksdb_force_flush_memtable_now` - bloom filter is only used when reading data from disk. If you are doing testing, flush the data to disk first.
 * `rocksdb_skip_bloom_filter_on_read` - skip using the bloom filter (default is FALSE).
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

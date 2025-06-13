@@ -112,6 +112,6 @@ preserve the flag in the events logged into the binlog on the replica.
 
 * [Using SQL\_SLAVE\_SKIP\_COUNTER](../../reference/sql-statements/administrative-sql-statements/replication-statements/set-global-sql_slave_skip_counter.md) - How to skip a number of events on the replica
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

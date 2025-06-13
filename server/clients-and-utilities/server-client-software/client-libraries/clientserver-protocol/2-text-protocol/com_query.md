@@ -52,7 +52,7 @@ The server can answer with 4 different responses that can be differentiated by t
 
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

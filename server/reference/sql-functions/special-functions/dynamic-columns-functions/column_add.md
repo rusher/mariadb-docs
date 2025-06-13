@@ -27,6 +27,6 @@ UPDATE t1 SET dyncol_blob=COLUMN_ADD(dyncol_blob, "column_name", "value") WHERE 
 Note: `COLUMN_ADD()` is a regular function (just like`[CONCAT()](../../string-functions/concat.md)`), hence, in order to update the value in the table\
 you have to use the `UPDATE ... SET dynamic_col=COLUMN_ADD(dynamic_col, ....)` pattern.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

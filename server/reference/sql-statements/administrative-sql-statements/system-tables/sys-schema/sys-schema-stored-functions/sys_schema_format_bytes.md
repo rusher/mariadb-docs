@@ -55,6 +55,6 @@ SELECT sys.format_bytes(1000000000000000),sys.format_bytes(1125899906842624);
 +------------------------------------+------------------------------------+
 ```
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

@@ -11,7 +11,7 @@ Some resources and documentation about HandlerSocket.
 * [HandlerSocket plugin for MySQL](https://www.slideshare.net/akirahiguchi/handlersocket-plugin-for-mysql-4664154) presentation by Akira Higuchi of DeNA - June 29 2011 - in Japanese
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

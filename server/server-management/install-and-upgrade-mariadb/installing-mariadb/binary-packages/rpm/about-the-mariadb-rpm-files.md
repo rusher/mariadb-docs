@@ -54,6 +54,6 @@ When the `MariaDB-server` RPM package is installed, it will create a user and gr
 
 * [Installing MariaDB with yum](yum.md)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

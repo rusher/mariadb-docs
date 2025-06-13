@@ -79,7 +79,7 @@ G_GEOMETRY_COLUMN: g
 * The `[SPATIAL_REF_SYS](information-schema-spatial_ref_sys-table.md)` table.
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

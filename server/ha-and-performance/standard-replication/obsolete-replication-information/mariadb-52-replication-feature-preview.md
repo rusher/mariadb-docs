@@ -165,6 +165,6 @@ to not be visible.)
   decided to omit this feature from future MariaDB releases because of a\
   fundamental design bug, [lp:798213](https://bugs.launchpad.net/maria/+bug/798213).
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

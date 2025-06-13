@@ -617,6 +617,6 @@ Jan 25 18:08:32 ip-172-30-0-249.us-west-2.compute.internal systemd[1]: mariadb.s
 
 Implicitly high defaults of `[open-files-limit](mariadbd-safe.md#mariadbd-safe-options)` may be missed by the conversion script and require explicit configuration. See [Configuring the Open Files Limit](systemd.md#configuring-the-open-files-limit).
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

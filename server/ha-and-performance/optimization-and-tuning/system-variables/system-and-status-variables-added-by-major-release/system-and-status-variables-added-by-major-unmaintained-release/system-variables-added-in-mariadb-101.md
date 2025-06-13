@@ -69,6 +69,6 @@ The list excludes the following variables, related to storage engines and plugin
 * [System Variables Added in MariaDB 10.2](system-variables-added-in-mariadb-102.md)
 * [System Variables Added in MariaDB 10.0](system-variables-added-in-mariadb-100.md)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

@@ -6,6 +6,6 @@ The [SHOW TABLE STATUS](../../reference/sql-statements/administrative-sql-statem
 
 The [SHOW CREATE TABLE](../../reference/sql-statements/administrative-sql-statements/show/show-create-table.md) statement returns the [CREATE TABLE](../../reference/sql-statements/data-definition/create/create-table.md) statement that can be used to re-create a table, including the partitions definition.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

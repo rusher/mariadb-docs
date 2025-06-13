@@ -57,6 +57,6 @@ SELECT FORMAT_BYTES(1000000000000000),FORMAT_BYTES(1125899906842624);
 +--------------------------------+--------------------------------+
 ```
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

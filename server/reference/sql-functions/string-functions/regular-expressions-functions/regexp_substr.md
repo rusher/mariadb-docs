@@ -47,6 +47,6 @@ SELECT REGEXP_SUBSTR('ABC' COLLATE utf8_bin,'(?+i)b');
 -> B
 ```
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

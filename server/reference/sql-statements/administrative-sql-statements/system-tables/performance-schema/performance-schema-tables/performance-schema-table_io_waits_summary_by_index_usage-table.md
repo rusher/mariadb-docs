@@ -56,7 +56,7 @@ You can [TRUNCATE](../../../../table-statements/truncate-table.md) the table, wh
 If a table's index structure is changed, index statistics recorded in this table may also be reset.
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

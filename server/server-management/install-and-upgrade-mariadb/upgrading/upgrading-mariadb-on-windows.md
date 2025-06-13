@@ -86,6 +86,6 @@ Upgrade wizard to upgrade an instance running as a 32-bit process to run as\
 Both UpgradeWizard and mysql\_upgrade\_service can also be used to upgrade\
 database instances that were installed with the[ZIP installation](../installing-mariadb/binary-packages/installing-mariadb-windows-zip-packages.md).
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

@@ -99,6 +99,6 @@ n = event_size - header length - offset (2 + 50 + 4 + 1) - checksum_algo - check
 * checksum\_algo = 0 => 0 (NONE)
 * CRC32 bytes = 2b 91 c2 91 (useless)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

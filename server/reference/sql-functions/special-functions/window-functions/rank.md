@@ -52,6 +52,6 @@ FROM student ORDER BY course, mark DESC;
 * [ROW\_NUMBER()](row_number.md)
 * [ORDER BY](../../../sql-statements/data-manipulation/selecting-data/order-by.md)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

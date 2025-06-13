@@ -83,6 +83,6 @@ Here is the MariaDB Server (MDEV) [Jira](jira.md) project workflow.
 * Transitions
   * Reopen Issue → STALLED
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

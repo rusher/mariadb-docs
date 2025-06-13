@@ -23,6 +23,6 @@ After issuing the statement, one can examine the [binlog\_snapshot\_file](../../
 * [START TRANSACTION](../../../reference/sql-statements/transactions/start-transaction.md)
 * [Enhancements for START TRANSACTION WITH CONSISTENT SNAPSHOT](../../../ha-and-performance/standard-replication/enhancements-for-start-transaction-with-consistent-snapshot.md)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

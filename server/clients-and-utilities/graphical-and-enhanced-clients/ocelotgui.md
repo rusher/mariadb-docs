@@ -7,7 +7,7 @@ The Ocelot GUI (ocelotgui), a database client, allows users to connect to a MySQ
 Visit [ocelot.ca](https://ocelot.ca/) for more information and to download.
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

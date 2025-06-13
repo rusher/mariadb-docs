@@ -12,6 +12,6 @@ If [autocommit](../../../../ha-and-performance/optimization-and-tuning/system-va
 * [FOR UPDATE](for-update.md)
 * [InnoDB Lock Modes](../../../../server-usage/storage-engines/innodb/innodb-lock-modes.md)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

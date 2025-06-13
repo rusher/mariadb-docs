@@ -158,6 +158,6 @@ See the article [here](extracting-entries-from-the-binary-log.md).
 
 If you require personalized assistance, want to ensure that the bug is fixed with high priority, or want someone to login to your server to find out what's wrong, you can always purchase a [Support](https://www.mariadb.com/products/mysql-support) contract from MariaDB plc or use their consulting services.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

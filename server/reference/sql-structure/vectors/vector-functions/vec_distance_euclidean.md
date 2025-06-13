@@ -56,6 +56,6 @@ SELECT id FROM v
 * [Vector Overview](../vector-overview.md)
 * [CREATE TABLE with Vectors](../create-table-with-vectors.md)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

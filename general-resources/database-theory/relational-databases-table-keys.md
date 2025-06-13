@@ -35,7 +35,7 @@ At first glance, there are two possible candidate keys for this table. Either *c
 There may be many Ariane Edisons, but you avoid confusion by assigning each a unique number. Once a primary key has been created, the remaining candidates are labeled as *alternate keys*.
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

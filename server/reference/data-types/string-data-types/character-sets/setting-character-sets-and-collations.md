@@ -461,6 +461,6 @@ Note that the `default-character-set` option is a client option, not a server op
 * [CONVERT()](../../../sql-functions/string-functions/convert.md)
 * [Operator Precedence](../../../sql-structure/operators/operator-precedence.md)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

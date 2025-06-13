@@ -41,6 +41,6 @@ my_print_defaults --defaults-file=example.cnf client client-server mysql
 my_print_defaults mariadb-check client
 ```
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

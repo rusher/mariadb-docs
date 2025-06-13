@@ -52,6 +52,6 @@ Variable_value: 1725891368.745
        Enabled: YES
 ```
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

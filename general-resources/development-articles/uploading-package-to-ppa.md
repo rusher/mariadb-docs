@@ -206,7 +206,7 @@ It should ask for the gpg key password again
 [edit#slide=id.p4](https://docs.google.com/presentation/d/1euJrK7MJ9QRvwW33iwESIEo5Dyi7JWExIKFrISktFao/edit#slide=id.p4)
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

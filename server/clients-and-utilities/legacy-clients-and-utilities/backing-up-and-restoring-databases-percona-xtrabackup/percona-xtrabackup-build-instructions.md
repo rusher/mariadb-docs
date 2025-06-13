@@ -32,6 +32,6 @@ AUTO\_DOWNLOAD="yes" ./utils/build.sh xtradb55 (build against XtraDB 5.5)
 
 AUTO\_DOWNLOAD="yes" ./utils/build.sh innodb55 (build against InnoDB in MySQL 5.5)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

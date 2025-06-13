@@ -43,7 +43,7 @@ SELECT JSON_KEYS('{"A": 1, "B": 2, "C": {"D": 3}}', '$.C');
 ```
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

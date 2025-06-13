@@ -24,7 +24,7 @@ Multiple COM_STMT_SEND_LONG_DATA commands with the same column id will append th
 Server doesn't send response.
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

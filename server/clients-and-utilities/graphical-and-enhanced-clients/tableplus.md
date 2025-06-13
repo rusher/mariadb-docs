@@ -23,7 +23,7 @@ Some notable features:
 TablePlus is available for free, but users can purchase a license to remove some limitations and customize the tool for higher needs on [TablePlus website](https://tableplus.com/pricing).
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

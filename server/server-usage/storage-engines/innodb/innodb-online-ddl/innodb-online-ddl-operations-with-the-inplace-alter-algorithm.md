@@ -1100,6 +1100,6 @@ This applies to [ALTER TABLE ... RENAME TO](../../../../reference/sql-statements
 
 See [Generated (Virtual and Persistent/Stored) Columns: Statement Support](../../../../reference/sql-statements/data-definition/create/generated-columns.md#statement-support) for more information on the limitations.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

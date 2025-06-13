@@ -38,7 +38,7 @@ It contains similar information to the `[SHOW PROFILE](../../../show/show-profil
 Profiling is enabled per session. When a session ends, its profiling information is lost.
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

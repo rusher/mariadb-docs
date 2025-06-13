@@ -33,7 +33,7 @@ We are very grateful to our [current members and sponsors](https://mariadb.org/e
 More information about the Foundation can be found on the [MariaDB foundation website](https://mariadb.org/en/foundation/).
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

@@ -329,6 +329,6 @@ Linux program iconv is one utility to convert it.
 iconv -f ISO-8859-1 -t UTF-8 < input.txt > output.txt
 ```
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

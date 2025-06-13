@@ -13,6 +13,6 @@ The `mysql.transaction_registry` table was introduced in [MariaDB 10.3.4](https:
 | commit           | timestamp(6)                                                               | NO   | Multiple | 0000-00-00 00:00:00.000000 | Timestamp when the transaction was committed.                                                                                 |
 | isolation\_level | enum('READ-UNCOMMITTED','READ-COMMITTED','REPEATABLE-READ','SERIALIZABLE') | NO   |          | NULL                       | Transaction [isolation level](../../../transactions/set-transaction.md#isolation-levels).                                     |
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

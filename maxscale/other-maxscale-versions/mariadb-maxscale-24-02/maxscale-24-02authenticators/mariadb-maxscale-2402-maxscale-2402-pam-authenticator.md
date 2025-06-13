@@ -294,6 +294,6 @@ credentials to login to the given service. _test\_pam\_login_ uses the same code
 as MaxScale itself to communicate with the OS PAM interface and may be useful\
 for diagnosing PAM login issues.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

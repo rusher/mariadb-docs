@@ -126,6 +126,6 @@ than the actual replication lag between the master and its slaves. If the number
 of critical read statements is known, the _count_ parameter could be used to\
 control the number reads that are sent to the master.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

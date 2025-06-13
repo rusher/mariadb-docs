@@ -108,6 +108,6 @@ Note:
 * The `-c` option is needed to ignore conversion errors for Cyrillic and CJK characters.
 * `--delimiter=` additionally needs the carriage return character&#x20;
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

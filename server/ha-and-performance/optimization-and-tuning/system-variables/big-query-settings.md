@@ -39,6 +39,6 @@ If your queries examine big fraction of the tables (somewhere more than \~ 30%),
 join_cache_level = 8
 ```
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

@@ -38,6 +38,6 @@ SELECT LOAD_FILE('/tmp/world') AS world;
 * [SELECT INTO Variable](../../../../server-usage/programmatic-compound-statements/selectinto.md)
 * [SELECT INTO OUTFILE](select-into-outfile.md)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

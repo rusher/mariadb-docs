@@ -31,6 +31,6 @@ details of the revision and view diffs of the code modified in that revision.
   2025-05-13 12:27:36 +0300
   * bump the VERSION
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formid="4316" formId="4316" %}

@@ -90,6 +90,6 @@ the user. This feature should only be used to diagnose authentication issues in\
 MaxScale and should be done on a secure system as the logging of the password\
 hashes can be considered a security risk.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

@@ -47,6 +47,6 @@ SHOW USER_VARIABLES;
 * [User-defined variables](../../../../../sql-structure/sql-language-structure/user-defined-variables.md)
 * [Performance Schema user\_variables\_by\_thread Table](../../performance-schema/performance-schema-tables/performance-schema-user_variables_by_thread-table.md)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

@@ -145,6 +145,6 @@ Because of the `IGNORE` flag, errors will not be generated, duplicates won't be 
 
 As you can see from some of these SQL statements, MariaDB offers you quite a few ways to add and to change data. In addition to these methods, there are also some bulk methods of adding and changing data in a table. You could use the [LOAD DATA INFILE](../../reference/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile.md) statement and the [mariadb-dump](../../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md) command-line utility. These methods are covered in another article on [Importing Data into MariaDB](https://mariadb.com/kb/en/importing-data-into-mariadb/).
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

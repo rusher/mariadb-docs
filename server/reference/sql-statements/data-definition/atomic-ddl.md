@@ -99,6 +99,6 @@ Thanks to Atomic/Crash-safe DDL, the MariaDB server is now much more stable and 
 
 * [MDEV-17567](https://jira.mariadb.org/browse/MDEV-17567) Atomic DDL. This MDEV entry links to all other entries related to Atomic operations that contains a lot of information how things are implemented.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

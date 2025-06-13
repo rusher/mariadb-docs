@@ -2,6 +2,6 @@
 
 A synonym for [ST\_GeomCollFromText](st_geomcollfromtext.md).
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

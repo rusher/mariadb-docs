@@ -235,6 +235,6 @@ If the softfailing and unsoftfailing is initiated using the `softfail`\
 and `unsoftfail` commands of the Xpand monitor, then there will be\
 no delay between the softfailing or unsoftfailing being initiated and the`Draining` status being turned on/off.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

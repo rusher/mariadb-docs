@@ -120,6 +120,6 @@ These tools are meant to create and manage test clusters on a personal machine. 
 
 Content initially contributed by [Vettabase Ltd](https://vettabase.com/).
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

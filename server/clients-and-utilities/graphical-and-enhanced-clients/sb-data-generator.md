@@ -30,7 +30,7 @@ The tool includes multiple built-in generators that allow populating MariaDB dat
 [Learn more about SB Data Generator](https://soft-builder.com/sb-data-generator/)
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

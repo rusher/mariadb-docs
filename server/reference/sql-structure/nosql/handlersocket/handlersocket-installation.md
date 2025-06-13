@@ -23,6 +23,6 @@ On the client side, to make use of the plugin you will need to install the\
 appropriate client library (i.e. libhsclient for C++ applications and\
 perl-Net-HandlerSocket for perl applications).
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

@@ -48,6 +48,6 @@ For information about the parameters accepted by the routine, you can query the 
 * [Stored Function Overview](../../../../../../server-usage/stored-routines/stored-functions/stored-function-overview.md)
 * [Stored Procedure Overview](../../../../../../server-usage/stored-routines/stored-procedures/stored-procedure-overview.md)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

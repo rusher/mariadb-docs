@@ -90,6 +90,6 @@ You should now have your build environment set up and can proceed to [Getting th
 
 * [Installing Galera from source](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/galera-management/installing-galera-from-source)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

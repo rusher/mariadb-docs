@@ -190,6 +190,6 @@ MariaDB builds with `readline`; using an alternative such as `Editline` may resu
 * [Installing system tables (mariadb-install-db)](../installing-system-tables-mariadb-install-db/)
 * [Starting and Stopping MariaDB Automatically](../../../starting-and-stopping-mariadb/starting-and-stopping-mariadb-automatically.md)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

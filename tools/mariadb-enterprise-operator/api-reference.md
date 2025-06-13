@@ -2385,6 +2385,6 @@ _Appears in:_
 | weight integer                                                      |             |         |            |
 | podAffinityTerm [PodAffinityTerm](api-reference.md#podaffinityterm) |             |         |            |
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

@@ -12,6 +12,6 @@ This article documents thread states that are related to the [Query Cache](../qu
 | storing result in query cache       | Saving the the result of a query into the query cache.                          |
 | Waiting for query cache lock        | Waiting to take a query cache lock.                                             |
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

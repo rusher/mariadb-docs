@@ -52,6 +52,6 @@ The BuildBot instance atalso runs tests with this argument, see `mtr_opttrace` p
 
 See [optimizer-debugging-with-gdb/#printing-the-optimizer-trace](../optimizer-debugging-with-gdb.md#printing-the-optimizer-trace) for commands to print the trace for the current statement.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

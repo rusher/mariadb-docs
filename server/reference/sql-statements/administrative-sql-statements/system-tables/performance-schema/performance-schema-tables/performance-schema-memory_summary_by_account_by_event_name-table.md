@@ -33,6 +33,6 @@ The table contains the following columns:
 | CURRENT\_NUMBER\_OF\_BYTES\_USED | bigint(20)          | NO   | NULL    | Current number of bytes used (total allocated minus total freed).                     |
 | HIGH\_NUMBER\_OF\_BYTES\_USED    | bigint(20)          | NO   | NULL    | Highest number of bytes used.                                                         |
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

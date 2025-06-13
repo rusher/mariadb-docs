@@ -34,6 +34,6 @@ When using index hints (USE, FORCE or IGNORE INDEX), the index name value can al
 * [IGNORE INDEX](ignore-index.md)
 * [Ignored Indexes](../optimization-and-indexes/ignored-indexes.md)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

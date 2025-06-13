@@ -20,6 +20,6 @@ additional changes and bug fixes.
 * Some (still not all) compiler warnings eliminated.
 * [Bug #443014](https://bugs.launchpad.net/bugs/443014) Too many 'skipped' messages in mysql-test-run
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formid="4316" formId="4316" %}

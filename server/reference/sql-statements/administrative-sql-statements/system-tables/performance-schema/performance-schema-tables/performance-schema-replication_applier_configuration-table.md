@@ -14,6 +14,6 @@ It contains the following fields.
 | CHANNEL\_NAME  | char(64) | NO   | Replication channel name.                                             |
 | DESIRED\_DELAY | int(11)  | NO   | Target number of seconds the replica should be delayed to the master. |
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

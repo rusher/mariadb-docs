@@ -15,6 +15,6 @@ Here are the options which relate to SSL and certificates.
 | ssl\_version             | SSLV3,TLSV10,TLSV11,TLSV12,MAX | The SSL method level, defaults to highest available encryption level which is TLSv1.2                                                                                                                                                                   |
 | ssl\_cert\_verify\_depth | integer                        | Certificate authority certificate verification depth, default is 100.                                                                                                                                                                                   |
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

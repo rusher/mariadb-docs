@@ -24,7 +24,7 @@ Free Valentina Studio offers the following features:
 Use the [Valentina Studio FREE vs Valentina Studio PRO feature matrix](https://valentina-db.com/en/compare-free-vs-pro) to see which version is best for your needs or [download to immediately evaluate.](https://valentina-db.com/en/all-downloads/current)
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

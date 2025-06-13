@@ -202,6 +202,6 @@ LOAD_OPTION: FORCE
 * [UNINSTALL PLUGIN](../../../plugin-sql-statements/uninstall-plugin.md)
 * [UNINSTALL SONAME](../../../plugin-sql-statements/uninstall-soname.md)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

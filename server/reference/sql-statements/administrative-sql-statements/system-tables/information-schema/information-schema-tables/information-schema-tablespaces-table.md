@@ -24,7 +24,7 @@ The table is a MariaDB and MySQL extension, and does not include information abo
 
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

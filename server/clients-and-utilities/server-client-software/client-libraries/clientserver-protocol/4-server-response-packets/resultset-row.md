@@ -206,7 +206,7 @@ Data is encoded in 9 bytes without fractional seconds, 13 bytes with fractional 
 
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

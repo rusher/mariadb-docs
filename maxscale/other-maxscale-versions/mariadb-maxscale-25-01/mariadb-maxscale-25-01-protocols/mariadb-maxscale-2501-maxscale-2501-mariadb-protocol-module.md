@@ -42,6 +42,6 @@ disabled with `mariadbprotocol.allow_replication=false`, all attempts to start\
 replication will be rejected with a ER\_FEATURE\_DISABLED error (error number\
 1289\).
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

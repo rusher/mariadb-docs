@@ -103,6 +103,6 @@ For more information on the design and implementation of this feature, see [MWL#
 * [What is MariaDB 5.3](broken-reference/)
 * [MyRocks and START TRANSACTION WITH CONSISTENT SNAPSHOT](../../server-usage/storage-engines/myrocks/myrocks-and-start-transaction-with-consistent-snapshot.md)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

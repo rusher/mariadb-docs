@@ -12,6 +12,6 @@ Sponsorships are crucial for ongoing and future development of the MariaDB proje
 * Hire a developer that you dedicate to work on the MariaDB project.
 * A pure [donation](https://mariadb.org/donate/) with no strings attached
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

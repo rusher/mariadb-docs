@@ -57,6 +57,6 @@ Spider column is for SpiderForMySQL found on the Spider web sIte.
 | Load Balance Reads to replicate weight control                                                       | Yes    | Yes   |
 | Fine tuning tcp timeout, connections retry                                                           | Yes    | Yes   |
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

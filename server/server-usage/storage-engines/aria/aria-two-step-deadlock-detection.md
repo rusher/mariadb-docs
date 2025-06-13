@@ -19,6 +19,6 @@ First, if the lock request cannot be granted immediately, we do a short search o
 
 When a deadlock is detected the system uses a weighting algorithm to determine which thread in the deadlock should be killed and then kills it.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

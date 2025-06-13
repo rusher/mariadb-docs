@@ -118,6 +118,6 @@ CREATE OR REPLACE TABLE t1 (
 ERROR 1503 (HY000): A PRIMARY KEY must include all columns in the table's partitioning function
 ```
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

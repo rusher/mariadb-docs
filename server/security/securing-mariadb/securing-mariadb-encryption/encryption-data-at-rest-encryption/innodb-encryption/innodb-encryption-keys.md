@@ -134,6 +134,6 @@ Otherwise, in older versions of MariaDB, if you disable key rotation while there
 
 For more information, see [MDEV-14398](https://jira.mariadb.org/browse/MDEV-14398).
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

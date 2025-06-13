@@ -1082,6 +1082,6 @@ MaxScale>
 
 The statics are defined in 100ms buckets, with the count of the events that fell into that bucket being recorded.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

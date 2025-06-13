@@ -670,6 +670,6 @@ port=3306
 * Old encrypted binary logs are not re-encrypted with newer key versions ([MXS-4140](https://jira.mariadb.org/browse/MXS-4140))
 * The MariaDB server where the replication is done from must be configured with`binlog_checksum=CRC32`.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

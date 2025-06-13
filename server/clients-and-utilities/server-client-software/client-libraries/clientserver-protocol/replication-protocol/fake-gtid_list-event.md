@@ -23,6 +23,6 @@ The content is the same as the "real" [GTID\_LIST](gtid_list_event.md).
 * sequence
 * ...
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

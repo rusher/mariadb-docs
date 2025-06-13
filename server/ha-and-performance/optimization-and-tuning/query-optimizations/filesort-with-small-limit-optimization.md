@@ -39,6 +39,6 @@ As for `EXPLAIN`, it will give no indication whether filesort uses priority queu
 * MySQL WorkLog entry, [WL#1393](https://dev.mysql.com/worklog/task/?id=1393)
 * [MDEV-415](https://jira.mariadb.org/browse/MDEV-415), [MDEV-6430](https://jira.mariadb.org/browse/MDEV-6430)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

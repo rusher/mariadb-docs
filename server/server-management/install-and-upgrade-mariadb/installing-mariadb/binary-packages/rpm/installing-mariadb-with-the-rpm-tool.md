@@ -100,6 +100,6 @@ cursor.
 * [Troubleshooting MariaDB Installs on RedHat/CentOS](troubleshooting-mariadb-installs-on-rhel-centos.md)
 * [Checking MariaDB RPM Package Signatures](checking-mariadb-rpm-package-signatures.md)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

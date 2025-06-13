@@ -298,6 +298,6 @@ The 20 byte string 'seed' is calculated by concatenating scramble first part (8 
 
 SHA1( passwd) ^ SHA1( seed + SHA1( SHA1( passwd ) ) )
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

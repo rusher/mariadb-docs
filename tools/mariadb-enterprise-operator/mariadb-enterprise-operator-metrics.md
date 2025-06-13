@@ -1183,7 +1183,7 @@ The following metrics are available for `MaxScale` instances:
 | maxscale_version | Maxscale Version | GAUGE |
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

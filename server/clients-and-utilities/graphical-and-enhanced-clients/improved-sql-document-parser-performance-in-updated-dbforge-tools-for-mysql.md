@@ -22,6 +22,6 @@ About Devart
 Devart is one of the leading developers of database tools and administration software, ALM solutions, data providers for various database servers, data integration and backup solutions. The company also implements Web and Mobile development projects.\
 For additional information about Devart, visit.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

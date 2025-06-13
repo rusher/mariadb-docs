@@ -69,6 +69,6 @@ SELECT field1, field2 FROM table_name WHERE (field3 > '2013-06-01') AND (field1 
 
 When connecting with `AND`, parentheses are added to make sure the correct precedence is used.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

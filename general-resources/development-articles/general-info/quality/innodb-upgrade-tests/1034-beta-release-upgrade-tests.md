@@ -386,7 +386,7 @@ All major upgrades fail with [MDEV-14990](https://jira.mariadb.org/browse/MDEV-1
 
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

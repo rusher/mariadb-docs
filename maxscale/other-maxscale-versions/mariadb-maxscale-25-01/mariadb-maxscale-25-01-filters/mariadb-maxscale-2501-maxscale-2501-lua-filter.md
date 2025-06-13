@@ -196,6 +196,6 @@ end
   execution of it can cause the MaxScale process to become slower or to be\
   aborted due to a SystemD watchdog timeout.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

@@ -44,7 +44,7 @@ The number of bytes 'n' is the length of the status variable block (read in fixe
 TODO: Add an example
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

@@ -40,6 +40,6 @@ To handle duplicates you can use the [IGNORE](ignore.md) clause, [INSERT ON DUPL
 * [INSERT IGNORE](insert-ignore.md)
 * [INSERT ON DUPLICATE KEY UPDATE](insert-on-duplicate-key-update.md)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

@@ -7,6 +7,6 @@ TODO:
 * SERIALIZABLE is not supported
   * There is no "Gap Locking" which makes Statement Based Replication unsafe (See MyRocks and Replication).
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

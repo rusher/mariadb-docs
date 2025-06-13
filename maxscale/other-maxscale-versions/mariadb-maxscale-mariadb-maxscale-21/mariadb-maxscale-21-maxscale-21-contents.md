@@ -128,6 +128,6 @@ document.
 * [Schema Sharding Router Technical Documentation](maxscale-21-design-documents/mariadb-maxscale-21-schemarouter-router-technical-overview.md)
 * [Plugin development guide](maxscale-21-design-documents/mariadb-maxscale-21-mariadb-maxscale-plugin-development-guide.md)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

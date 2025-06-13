@@ -1711,6 +1711,6 @@ Using this option, you can print the Mariabackup version information to stdout.
 $ mariabackup --version
 ```
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

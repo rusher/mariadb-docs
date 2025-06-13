@@ -136,6 +136,6 @@ SELECT * FROM ranges;
 
 The `AUTO_INCREMENT` attribute can be used to generate a unique identity for new rows. For more details, see [auto\_increment](../auto_increment.md).
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

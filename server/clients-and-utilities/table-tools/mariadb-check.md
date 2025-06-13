@@ -163,6 +163,6 @@ Using two `--verbose` options will also give you connection information.
 
 If you use three `--verbose` options you will also get, on stdout, all [ALTER](../reference/sql-statements/data-definition/alter/alter-table.md), [RENAME](../reference/sql-statements/data-definition/rename-table.md), and [CHECK](../reference/sql-statements/table-statements/check-table.md) commands that mariadb-check executes.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

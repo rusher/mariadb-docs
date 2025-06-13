@@ -127,6 +127,6 @@ Now you can start testing S3 from your [mariadb command client](../../../clients
 * [Using the S3 Storage Engine](using-the-s3-storage-engine.md)
 * [Using MinIO with mysql-test-run to test the S3 storage engine](../../../clients-and-utilities/mariadb-test/installing-minio-for-usage-with-mariadb-test-run.md)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

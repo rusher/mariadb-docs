@@ -188,6 +188,6 @@ Now we can see where the query is spending time.
 * [ANALYZE command](../analyze-and-explain-statements/analyze-statement.md)
 * [MDEV-27021: Extend SHOW EXPLAIN to support SHOW ANALYZE \[FORMAT=JSON\]](https://jira.mariadb.org/browse/MDEV-27021)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

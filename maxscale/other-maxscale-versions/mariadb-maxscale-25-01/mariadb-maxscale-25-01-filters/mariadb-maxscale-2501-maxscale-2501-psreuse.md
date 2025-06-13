@@ -39,6 +39,6 @@ filters=PsReuse
   will succeed. This happens as the prepared statement reuse uses the SQL string\
   in the comparison to detect if a statement is already prepared.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

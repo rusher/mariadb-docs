@@ -547,7 +547,7 @@ If you would like to become a full archive mirror of MariaDB and be listed
 here, just let us know via the [contact information above](#getting-added-to-the-mirror-list). Thanks!
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

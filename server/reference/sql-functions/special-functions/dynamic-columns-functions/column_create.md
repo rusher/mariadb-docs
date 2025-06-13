@@ -29,6 +29,6 @@ a date. See [Dynamic Columns:Datatypes](../../../sql-structure/nosql/dynamic-col
 INSERT INTO tbl SET dyncol_blob=COLUMN_CREATE("column_name", "value");
 ```
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

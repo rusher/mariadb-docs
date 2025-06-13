@@ -252,6 +252,6 @@ router.
 The Database Firewall filter does not support multi-statements. Using them\
 will result in an error being sent to the client.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

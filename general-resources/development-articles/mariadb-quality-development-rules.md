@@ -34,7 +34,7 @@ Those are quality-improving rules that everyone with a write access to the Maria
   * but if there will be serial violators, some kind of a penalty can be introduced later
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

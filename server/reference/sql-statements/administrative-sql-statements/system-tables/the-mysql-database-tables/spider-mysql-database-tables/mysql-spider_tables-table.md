@@ -38,6 +38,6 @@ It contains the following fields:
 | block\_status                        | tinyint(4) | NO   |     | 0       |             |
 | static\_link\_id                     | char(64)   | YES  |     | NULL    |             |
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

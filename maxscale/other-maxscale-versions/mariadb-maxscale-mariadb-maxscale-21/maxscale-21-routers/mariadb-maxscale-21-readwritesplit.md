@@ -348,6 +348,6 @@ long-running sessions might cause MariaDB MaxScale to consume a growing amount\
 of memory unless the sessions are closed. This can be solved by setting a\
 connection timeout on the application side.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

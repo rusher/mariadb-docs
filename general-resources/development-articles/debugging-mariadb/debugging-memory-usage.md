@@ -70,7 +70,7 @@ pprof --dot /usr/sbin/mysqld heap-prof-1.0007.heap  > 7.dot
 Then, please send us the 7.dot file.
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

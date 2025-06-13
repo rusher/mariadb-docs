@@ -903,6 +903,6 @@ For maximum performance:
 * If `selects=verify_cacheable` has been configured, non-regex based\
   matching can be used.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

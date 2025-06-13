@@ -130,6 +130,6 @@ document.
 
 * [Plugin development guide](maxscale-22-design-documents/mariadb-maxscale-22-mariadb-maxscale-plugin-development-guide.md)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

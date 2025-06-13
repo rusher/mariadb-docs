@@ -643,6 +643,6 @@ Facebook has sponsored many features, including:
 * [SHOW CONTRIBUTORS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-contributors) lists [all members and sponsors of the MariaDB Foundation](https://mariadb.org/en/supporters) and other sponsors.
 * [SHOW AUTHORS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-authors) lists the authors of MariaDB (including documentation, QA etc).
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

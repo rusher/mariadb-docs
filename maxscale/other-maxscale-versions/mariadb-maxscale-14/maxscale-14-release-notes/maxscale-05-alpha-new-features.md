@@ -144,6 +144,6 @@ A number of bug fixes have been applied between the 0.4 alpha and this alpha rel
 | 125 | readconnroute causes maxscale server crash if no slaves are available                                        |
 | 375 | Tarball contains UID and maxscale base dir                                                                   |
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

@@ -57,6 +57,6 @@ adding the ability to send extra commands to the server to setup the\
 environment prior to starting tests, adding new benchmark tests, and fixing\
 some tests that were failing because of time zone issues.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formid="4316" formId="4316" %}

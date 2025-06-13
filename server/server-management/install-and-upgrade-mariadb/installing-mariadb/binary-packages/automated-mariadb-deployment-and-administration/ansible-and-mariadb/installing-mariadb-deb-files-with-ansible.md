@@ -140,7 +140,7 @@ There is also a system-independent [package module](https://docs.ansible.com/ans
 Content initially contributed by [Vettabase Ltd](https://vettabase.com/).
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

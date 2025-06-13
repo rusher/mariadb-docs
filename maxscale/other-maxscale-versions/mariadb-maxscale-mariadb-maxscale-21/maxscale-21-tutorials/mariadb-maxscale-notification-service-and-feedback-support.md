@@ -75,6 +75,6 @@ module_telnetd_api      1.0.0
 module_telnetd_releasestatus    GA
 ```
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

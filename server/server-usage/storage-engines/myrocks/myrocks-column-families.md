@@ -58,6 +58,6 @@ Options that are frequently configured are:
 
 See the [INFORMATION\_SCHEMA.ROCKSDB\_CF\_OPTIONS](../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-myrocks-tables/information-schema-rocksdb_cf_options-table.md) table.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

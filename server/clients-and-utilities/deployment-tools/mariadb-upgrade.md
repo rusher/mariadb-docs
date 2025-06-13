@@ -185,6 +185,6 @@ To fix issues like this, run `mariadb-upgrade`, [mariadb-check](../table-tools/m
 * [REPAIR TABLE](../../reference/sql-statements/table-statements/repair-table.md)
 * [Downgrading between Major Versions of MariaDB](../../server-management/install-and-upgrade-mariadb/downgrading-between-major-versions-of-mariadb.md)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

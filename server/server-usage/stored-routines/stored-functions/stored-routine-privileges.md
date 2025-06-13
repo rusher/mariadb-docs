@@ -38,6 +38,6 @@ All privileges that are specific to a stored routine will be dropped when a [DRO
 
 * [Changing the DEFINER of MySQL stored routines etc.](https://mariadb.com/blog/changing-definer-mysql-stored-routines-etc) - maria.com post on what to do after you've dropped a user, and now want to change the DEFINER on all database objects that currently have it set to this dropped user.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

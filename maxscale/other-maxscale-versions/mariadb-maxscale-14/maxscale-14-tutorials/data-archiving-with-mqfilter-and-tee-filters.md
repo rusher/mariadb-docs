@@ -377,6 +377,6 @@ To read the data from the RabbitMQ, we can use the RabbitMQ Consumer tool\
 included in the MaxScale source. For a tutorial on how to use this tool,\
 please read [RabbitMQ Consumer Client](../maxscale-14-filters/maxscale-rabbitmq-consumer-client.md).
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

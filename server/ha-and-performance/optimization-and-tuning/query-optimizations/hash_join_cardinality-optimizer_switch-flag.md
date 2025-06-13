@@ -37,6 +37,6 @@ If one sets it to ON, the optimizer will make use of column histograms when comp
 
 One can see the computation in the Optimizer Trace, search for `hash_join_cardinality`.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

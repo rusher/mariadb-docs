@@ -42,6 +42,6 @@ The table contains the following columns:
 | NESTING\_EVENT\_ID                  | bigint(20) unsigned                               | The EVENT\_ID value of the event within which this event is nested.                                                                                                                       |
 | NESTING\_EVENT\_TYPE                | enum('TRANSACTION',' STATEMENT', 'STAGE', 'WAIT') | The nesting event type.                                                                                                                                                                   |
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

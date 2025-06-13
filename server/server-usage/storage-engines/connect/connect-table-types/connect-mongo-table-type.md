@@ -499,6 +499,6 @@ This table type is still under development. It has significant advantages over t
 * Option “CATFUNC=tables” is not implemented yet.
 * Options SRCDEF and EXECSRC do not apply to MONGO tables.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

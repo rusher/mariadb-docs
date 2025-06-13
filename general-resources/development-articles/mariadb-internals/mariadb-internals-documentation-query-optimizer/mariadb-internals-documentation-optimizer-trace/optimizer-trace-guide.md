@@ -303,6 +303,6 @@ If you are interested in how the join order of #t1,t2,t3
 * `"plan_prefix":["t1"], "table":"t2"`
 * `"plan_prefix":["t1", "t2"], "table":"t3"`
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

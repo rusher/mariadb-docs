@@ -64,6 +64,6 @@ primary=um1
 
 It defines a set of three UMs and defines the UM `um1` as the primary UM.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

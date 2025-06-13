@@ -9,6 +9,6 @@ We merge TokuDB from Tokutek **git** repositories on GutHub:
 
 Just merge normally at release points (use tag names) and don't forget to update `storage/tokudb/CMakeLists.txt`, setting `TOKUDB_VERSION` correctly.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

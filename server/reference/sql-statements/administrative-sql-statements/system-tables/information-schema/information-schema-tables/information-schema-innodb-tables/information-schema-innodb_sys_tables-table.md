@@ -65,6 +65,6 @@ ZIP_PAGE_SIZE: 0
 
 * [InnoDB Data Dictionary Troubleshooting](../../../../../../../server-usage/storage-engines/innodb/innodb-troubleshooting/innodb-data-dictionary-troubleshooting.md)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

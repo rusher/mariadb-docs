@@ -29,6 +29,6 @@ For system variables added since the previous long-term release, [MariaDB 10.6](
 
 For system variables that have been removed or deprecated, see [Upgrading from MariaDB 10.6 to MariaDB 10.11](../../../../server-management/install-and-upgrade-mariadb/upgrading/upgrading-from-to-specific-versions/upgrading-from-mariadb-10-6-to-mariadb-10-11.md).
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

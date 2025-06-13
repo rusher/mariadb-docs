@@ -10,6 +10,6 @@ detailed information in the [release notes](../maxscale-14-release-notes/mariadb
 Before starting the upgrade, we **strongly** recommend you back up your current\
 configuration file.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

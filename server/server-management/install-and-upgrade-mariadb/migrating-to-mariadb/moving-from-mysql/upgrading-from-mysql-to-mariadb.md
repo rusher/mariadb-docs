@@ -257,6 +257,6 @@ However as MariaDB has more features than MySQL, there are a few things that you
 * There is a [Screencast for upgrading MySQL to MariaDB](migrating-to-mariadb-from-mysql-obsolete-articles/screencast-for-upgrading-mysql-to-mariadb-obsolete.md).
 * [Upgrading to MariaDB in Debian 9](../../installing-mariadb/troubleshooting-installation-issues/installation-issues-on-debian-and-ubuntu/moving-from-mysql-to-mariadb-in-debian-9.md)
 
-<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+<sub>_This page is licensed: <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>_</sub>
 
 {% @marketo/form formId="4316" %}

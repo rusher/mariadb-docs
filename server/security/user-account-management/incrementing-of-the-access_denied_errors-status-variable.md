@@ -19,6 +19,6 @@ Login failures can be found in the [general log](../../server-management/server-
 * [GRANT](../../reference/sql-statements/account-management-sql-statements/grant.md)
 * [Error 1045: Access denied for user (using password)](broken-reference)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

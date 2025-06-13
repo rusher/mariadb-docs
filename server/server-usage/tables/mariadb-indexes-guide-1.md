@@ -278,6 +278,6 @@ _The initial version of this article was copied, with permission, from_ [_Proper
 * [AUTO\_INCREMENT](../../reference/data-types/auto_increment.md)
 * [The Essentials of an Index](broken-reference/)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

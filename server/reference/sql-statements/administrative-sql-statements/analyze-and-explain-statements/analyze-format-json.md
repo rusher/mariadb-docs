@@ -62,6 +62,6 @@ extends `ANALYZE [FORMAT=JSON] <select>` to allow one to analyze a query current
 
 See [Examples of ANALYZE FORMAT=JSON](analyze-formatjson-examples.md).
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

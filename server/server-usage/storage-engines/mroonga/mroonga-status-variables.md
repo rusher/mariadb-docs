@@ -12,6 +12,6 @@ This page documents status variables related to the [Mroonga storage engine](./)
 * Description: Incremented each time the 'fast ORDER BY LIMIT feature' is used. Can be used to check if the feature is working after enabling it.
 * Data Type: `numeric`
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

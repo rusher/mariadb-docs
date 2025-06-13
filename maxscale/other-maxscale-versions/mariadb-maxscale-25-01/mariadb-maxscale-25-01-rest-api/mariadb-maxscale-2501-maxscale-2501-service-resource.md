@@ -1080,6 +1080,6 @@ DELETE /v1/services/:service/listeners/:name
 
 This endpoint is deprecated, use the[this](mariadb-maxscale-2501-maxscale-2501-listener-resource.md) listeners endpoint instead.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

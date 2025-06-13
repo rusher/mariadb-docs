@@ -131,6 +131,6 @@ QUERY-TRANSACTION 0-14-1245
 MaxScale includes an example CDC client application written in Python 3. You can\
 find the source code for it [in the MaxScale repository](https://github.com/mariadb-corporation/MaxScale/tree/2.0/server/modules/protocol/examples/cdc.py).
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

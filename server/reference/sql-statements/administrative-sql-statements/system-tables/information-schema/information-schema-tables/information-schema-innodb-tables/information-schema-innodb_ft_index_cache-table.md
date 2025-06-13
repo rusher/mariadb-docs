@@ -117,6 +117,6 @@ SELECT * FROM INNODB_FT_INDEX_CACHE;
 Empty set (0.00 sec)
 ```
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

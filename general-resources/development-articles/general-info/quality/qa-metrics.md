@@ -13,7 +13,7 @@ The gcov/lcov reports are run by BuildBot and can be viewed [here](https://i7.as
 The list of MariaDB bugs is available on [JIRA](https://jira.mariadb.org).
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

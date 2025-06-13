@@ -716,6 +716,6 @@ the `--skip-reconnect` option.
 * [Troubleshooting Connection Issues](../../../kb/en/troubleshooting-connection-issues/)
 * [Readline commands and configuration](https://docs.freebsd.org/info/readline/readline.pdf)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

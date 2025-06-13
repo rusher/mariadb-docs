@@ -239,6 +239,6 @@ There is [a separate reference guide](../maxscale-21-reference/mariadb-maxscale-
 and also [a short administration tutorial](../maxscale-21-tutorials/mariadb-maxscale-21-mariadb-maxscale-administration-tutorial.md)\
 that covers the common administration tasks that need to be done with MariaDB MaxScale.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

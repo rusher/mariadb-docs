@@ -25,6 +25,6 @@ protocol=MariaDBBackend
 
 The `address` and `port` parameters tell where the server is located. The`protocol` should always be set to `MariaDBBackend`.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

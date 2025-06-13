@@ -60,6 +60,6 @@ The list excludes status related to the following storage engines included in [M
 * [System variables added in MariaDB 10.0](system-variables-added-in-mariadb-100.md)
 * [Status variables added in MariaDB 10.1](status-variables-added-in-mariadb-101.md)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

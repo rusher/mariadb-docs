@@ -572,6 +572,6 @@ Each partition being handled separately as one table, the ROWID special column r
 row in its partition, not in the whole table. This means that for partition tables ROWID and ROWNUM are\
 equivalent.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

@@ -295,6 +295,6 @@ open files                      (-n) 16384
 # Disk(s): 1 x ST3500320NS S-ATA
 ```
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

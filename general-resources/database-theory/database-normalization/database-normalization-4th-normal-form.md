@@ -94,7 +94,7 @@ Thus, a table is in 4th normal form if:
 * it does not contain more than one multivalued dependency
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

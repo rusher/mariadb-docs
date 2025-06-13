@@ -27,7 +27,7 @@ If you want to download the MariaDB Audit Plugin separately from the MariaDB ser
 * [MDEV-5862](https://jira.mariadb.org/browse/MDEV-5862) server_audit test fails in buildbot on Mac (labrador). The RTLD_DEFAULT value on Labrador machine is not NULL, so the dlsym() commands in the server_audit just fail to bind the necessary functions. Fixed by using RTLD_DEFAULT explicitly.
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

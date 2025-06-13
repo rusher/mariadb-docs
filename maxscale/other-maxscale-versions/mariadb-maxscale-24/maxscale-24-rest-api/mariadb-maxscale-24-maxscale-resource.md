@@ -612,6 +612,6 @@ GET /v1/maxscale/query_classifier/classify?sql=SELECT+1
 }
 ```
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

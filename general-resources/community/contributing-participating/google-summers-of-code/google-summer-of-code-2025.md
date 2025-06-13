@@ -146,6 +146,6 @@ Joins are very heavy algorithms, both in computation and/or in memory use. They 
 
 Do you have an idea of your own, not listed above? Do let us know in the comments below (Click 'Login' on the top of the page first)!
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

@@ -46,7 +46,7 @@ This way, each row will be updated only once.
 The `Using buffer` [EXPLAIN](explain.md) output indicates that the buffer as described above will be used.
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

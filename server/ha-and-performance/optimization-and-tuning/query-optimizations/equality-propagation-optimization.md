@@ -86,6 +86,6 @@ Equality propagation doesn't just happen at the top of the WHERE clause. It is d
 * The top level of any ON expression
 * (the same as above about OR-levels)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

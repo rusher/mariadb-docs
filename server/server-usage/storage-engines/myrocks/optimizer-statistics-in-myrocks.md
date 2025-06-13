@@ -42,6 +42,6 @@ There are a few variables that will cause MyRocks to report certain pre-defined 
 * @@rocksdb\_force\_index\_records\_in\_range - if not 0, and FORCE INDEX hint is used, report that any range has this many rows.
 * @@rocksdb\_debug\_optimizer\_n\_rows - if not 0, report that any MyRocks table has this many rows.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

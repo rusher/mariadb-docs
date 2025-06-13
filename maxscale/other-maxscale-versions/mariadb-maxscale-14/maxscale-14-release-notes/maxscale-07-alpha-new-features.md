@@ -126,6 +126,6 @@ A number of bug fixes have been applied between the 0.6 alpha and this alpha rel
 
 Following reported issues with incompatibilities between MaxScale and the shared library used by MySQL this version of MaxScale will be statically linked with the MariaDB 5.5 embedded library that it requires. This library is used for internal purposes only and does not result in MaxScale support for other versions of MySQL or MariaDB being affected.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

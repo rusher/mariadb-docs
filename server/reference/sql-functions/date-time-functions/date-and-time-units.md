@@ -67,6 +67,6 @@ Time units can be used in the following contexts:
 * [Date and time literals](../../sql-structure/sql-language-structure/date-and-time-literals.md)
 * [Operator Precedence](../../sql-structure/operators/operator-precedence.md)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

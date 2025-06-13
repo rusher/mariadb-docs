@@ -174,6 +174,6 @@ As a rule of thumb, use _readwritesplit_ if it is important that\
 changes taking place in the cluster configuration are hidden from the\
 applications, otherwise use _readconnroute_.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

@@ -34,6 +34,6 @@ mariadb-find-rows --regexp=problem_table --rows=20 < update.log
 mariadb-find-rows --regexp=problem_table  update-log.1 update-log.2
 ```
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

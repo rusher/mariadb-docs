@@ -23,6 +23,6 @@ Note, `DROP PACKAGE BODY` drops only the package implementation, but does not dr
 * [SHOW CREATE PACKAGE BODY](../../administrative-sql-statements/show/show-create-package-body.md)
 * [Oracle SQL\_MODE](broken-reference)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

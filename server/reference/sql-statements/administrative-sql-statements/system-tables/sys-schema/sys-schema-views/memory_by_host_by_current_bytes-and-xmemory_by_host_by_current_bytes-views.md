@@ -22,6 +22,6 @@ They contain the following columns:
 | current\_max\_alloc  | Largest single current memory allocation in bytes for the host.                                                                                                                                   |
 | total\_allocated     | Total memory allocation in bytes for the host.                                                                                                                                                    |
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

@@ -47,6 +47,6 @@ INSTALL SONAME 'ha_oqgraph';
 
 More information on this engine is found on the OpenQuery website: [graph-engine](https://openquery.com.au/products/graph-engine)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

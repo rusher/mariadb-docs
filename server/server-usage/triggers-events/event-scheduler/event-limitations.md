@@ -12,6 +12,6 @@ The following restrictions apply to [Events](./).
 * A new connection is used for each execution of statements within the body of an event, so the session counts for [server status variables](../../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md) such as Com\_delete and Com\_select will not reflect these.
 * Because the Event Scheduler depends on grant tables for its functionality, it is automatically disabled when the server is running with [--skip-grant-tables](../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md#-skip-grant-tables).
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

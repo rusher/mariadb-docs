@@ -323,6 +323,6 @@ size calculated by default too small.
 
 **Note 3:** FMT tables are currently read only.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

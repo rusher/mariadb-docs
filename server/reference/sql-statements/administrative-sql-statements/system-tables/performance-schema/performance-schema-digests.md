@@ -47,7 +47,7 @@ Digest information is used in a number of performance scheme tables. These inclu
 * [events_statements_summary_by_digest](performance-schema-tables/performance-schema-events_statements_summary_by_digest-table.md) (a summary table by schema and digest)
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

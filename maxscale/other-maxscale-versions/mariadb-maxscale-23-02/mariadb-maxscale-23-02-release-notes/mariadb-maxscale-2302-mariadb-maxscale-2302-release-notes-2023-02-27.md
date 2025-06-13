@@ -150,6 +150,6 @@ of MaxScale.
 
 The source code is available [here](https://github.com/mariadb-corporation/MaxScale).
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

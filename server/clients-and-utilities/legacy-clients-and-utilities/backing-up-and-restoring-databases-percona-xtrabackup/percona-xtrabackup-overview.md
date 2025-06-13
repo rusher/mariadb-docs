@@ -207,6 +207,6 @@ The `xtrabackup-v2` SST method uses the [Percona XtraBackup](./) utility for per
 * [Percona XtraBackup documentation](https://www.percona.com/doc/percona-xtrabackup/)
 * [Percona JIRA](https://jira.percona.com/secure/Dashboard.jspa)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

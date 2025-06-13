@@ -161,6 +161,6 @@ Query OK, 0 rows affected (0.000 sec)
 
 * [LOOP](loop.md)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

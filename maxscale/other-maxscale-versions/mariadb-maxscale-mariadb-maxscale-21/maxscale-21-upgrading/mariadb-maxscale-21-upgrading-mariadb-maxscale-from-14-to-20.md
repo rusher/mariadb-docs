@@ -33,6 +33,6 @@ In addition to this, the slave servers receive the stale slave state when they\
 lose the connection to the master. This should not cause changes in behavior\
 but the output of MaxAdmin will show new states when replication is broken.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

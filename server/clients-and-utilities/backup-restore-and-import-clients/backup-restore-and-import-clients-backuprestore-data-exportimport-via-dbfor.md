@@ -255,7 +255,7 @@ There is much more to dbForge Studio when it comes to MariaDB development and ma
 That said, if you'd love to have a single IDE that doesn't need any 3rd-party extensions because it can perfectly deal with nearly any task on its own, feel free to [download dbForge Studio for a free 30-day trial](https://www.devart.com/dbforge/mysql/studio/download.html) and give it a go in your daily work.
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

@@ -61,6 +61,6 @@ See also the pages for new developers on the MariaDB Foundation website:
 * [Writing Good Test Cases for MariaDB Server](https://mariadb.org/get-involved/getting-started-for-developers/writing-good-test-cases-mariadb-server/)
 * [Submitting a Pull Request](https://mariadb.org/get-involved/getting-started-for-developers/submitting-pull-request/)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

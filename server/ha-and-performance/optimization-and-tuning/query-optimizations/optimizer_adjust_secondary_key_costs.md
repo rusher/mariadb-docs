@@ -40,6 +40,6 @@ The reason for the max\_seek optimization was originally to ensure that MariaDB 
 
 * The [optimizer\_switch](optimizer-switch.md) system variable.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

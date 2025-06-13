@@ -17,6 +17,6 @@ These correspond to the `STATE` values listed by the [SHOW PROCESSLIST](../../..
 | waiting for handler lock   | Waiting for delayed insert-handler lock to access the delayed-insert handler thread.                                                                             |
 | waiting for handler open   | Waiting for the delayed-insert handler thread to initialize. Follows from the Creating delayed handler state and before the got old table state.                 |
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

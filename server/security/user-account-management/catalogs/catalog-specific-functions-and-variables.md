@@ -38,6 +38,6 @@ SELECT @@catalogs;
 
 1 means that the server is configured for catalogs.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

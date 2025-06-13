@@ -23,6 +23,6 @@ For user-defined conditions, MariaDB and MySQL recommend the '45000' SQLSTATE cl
 
 A partial list of error codes and matching SQLSTATE values can be found in the page [MariaDB Error Codes](broken-reference).
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

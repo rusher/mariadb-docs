@@ -203,6 +203,6 @@ CLI                  | maxscaled          | localhost       |  6603 | Running
 
 MariaDB MaxScale is now ready to start accepting client connections and routing them to the master or slaves within your cluster. Other configuration options are available that can alter the criteria used for routing, these include monitoring the replication lag within the cluster and routing only to slaves that are within a predetermined delay from the current master or using weights to obtain unequal balancing operations. These options may be found in the MariaDB MaxScale Configuration Guide. More details on the use of maxadmin can be found in the document _MaxAdmin - The MariaDB MaxScale Administration & Monitoring Client Application_.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

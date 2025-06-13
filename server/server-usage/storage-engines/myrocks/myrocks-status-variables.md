@@ -709,6 +709,6 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 * Scope: Global, Session
 * Data Type: `numeric`
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

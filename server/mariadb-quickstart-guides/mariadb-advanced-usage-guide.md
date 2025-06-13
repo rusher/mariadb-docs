@@ -207,6 +207,6 @@ WHERE author_id = '2034'; -- Assuming '2034' is the author_id to be deleted
 
 This deletes all books associated with `author_id` '2034'.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

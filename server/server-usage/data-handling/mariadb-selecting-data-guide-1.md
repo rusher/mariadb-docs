@@ -338,6 +338,6 @@ This value is temporary and will be lost if the connection is terminated. It can
 
 There are several more parameters and possibilities for the [SELECT](../../reference/sql-statements/data-manipulation/selecting-data/select.md) statement that we had to skip to keep this article a reasonable length. A popular one that we left out is the [GROUP BY](../../reference/sql-statements/data-manipulation/selecting-data/select.md#group-by) clause for calculating aggregate data for columns (e.g., an average). There are several flags for caching results and a clause for exporting a results set to a text file. If you would like to learn more about [SELECT](../../reference/sql-statements/data-manipulation/selecting-data/select.md) and all of the options available, look at the on-line documentation for [SELECT](../../reference/sql-statements/data-manipulation/selecting-data/select.md) statements.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

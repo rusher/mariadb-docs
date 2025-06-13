@@ -90,6 +90,6 @@ Notes on the different storage engines:
 * For [CSV](../../../../server-usage/storage-engines/csv/), see [Checking and Rpairing CSV Tables](../../../../server-usage/storage-engines/csv/checking-and-repairing-csv-tables.md).
 * Some special storage engines, like [MEMORY](../../../../server-usage/storage-engines/memory-storage-engine.md) or [BLACKHOLE](../../../../server-usage/storage-engines/blackhole.md), do not support any form of check and repair.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

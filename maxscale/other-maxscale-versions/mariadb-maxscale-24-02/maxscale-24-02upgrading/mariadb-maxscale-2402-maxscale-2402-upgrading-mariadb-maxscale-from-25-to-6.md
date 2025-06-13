@@ -70,6 +70,6 @@ routers that support it.
 The default value of `prune_sescmd_history` was changed from `false` to`true`. This was done as most MaxScale installations either benefit from it\
 being enabled or are not affected by it.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

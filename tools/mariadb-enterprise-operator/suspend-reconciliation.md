@@ -56,7 +56,7 @@ mariadb-galera   True    Suspended   mariadb-galera-0  ReplicasFirstPrimaryLast 
 To re-enable it, simply remove the `suspend` setting or set it to `suspend=false`.
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

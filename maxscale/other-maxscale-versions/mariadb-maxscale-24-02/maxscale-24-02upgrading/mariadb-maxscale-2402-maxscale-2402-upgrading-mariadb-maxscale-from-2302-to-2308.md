@@ -8,6 +8,6 @@ For more information about MaxScale 23.08, refer to the[ChangeLog](../mariadb-ma
 Before starting the upgrade, any existing configuration files should be backed\
 up.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

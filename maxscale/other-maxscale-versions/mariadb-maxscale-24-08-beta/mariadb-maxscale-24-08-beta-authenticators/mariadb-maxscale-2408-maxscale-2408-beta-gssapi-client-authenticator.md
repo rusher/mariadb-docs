@@ -74,6 +74,6 @@ keytab file and sends the final OK packet to the client.
 The GSSAPI authenticator modules require the GSSAPI development libraries\
 (krb5-devel on CentOS 7).
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

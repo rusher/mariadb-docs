@@ -94,6 +94,6 @@ After starting MaxScale check the error log in /var/log/maxscale to see if any e
 
 MaxScale is now ready to start accepting client connections and routing them. Queries are routed to the right servers based on the database they target and switching between the shards is seamless since MaxScale keeps the session state intact between servers.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

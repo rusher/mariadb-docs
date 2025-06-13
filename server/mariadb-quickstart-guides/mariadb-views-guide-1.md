@@ -324,6 +324,6 @@ queries to make application debugging easier and more efficient.
 
 _The initial version of this article was copied, with permission, from_ [_Views\_(Basic_](https://hashmysql.org/wiki/Views_\(Basic\)) _on 2012-10-05._
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

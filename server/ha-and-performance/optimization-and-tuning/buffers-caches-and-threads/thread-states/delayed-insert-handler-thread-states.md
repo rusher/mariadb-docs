@@ -12,6 +12,6 @@ These correspond to the `STATE` values listed by the [SHOW PROCESSLIST](../../..
 | upgrading lock     | Attempting to get lock on the table in order to insert rows.                                      |
 | Waiting for INSERT | Waiting for the delayed-insert connection thread to add rows to the queue.                        |
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

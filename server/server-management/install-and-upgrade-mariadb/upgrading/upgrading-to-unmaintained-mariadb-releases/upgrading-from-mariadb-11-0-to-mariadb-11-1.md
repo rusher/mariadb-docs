@@ -76,6 +76,6 @@ The following options have been deprecated. They have not yet been removed, but 
 * [Upgrading from MariaDB 10.11 to MariaDB 11.0](upgrading-from-mariadb-10-11-to-mariadb-11-0.md)
 * [Upgrading from MariaDB 10.6 to MariaDB 10.11](../upgrading-from-to-specific-versions/upgrading-from-mariadb-10-6-to-mariadb-10-11.md)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

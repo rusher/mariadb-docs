@@ -46,7 +46,7 @@ SELECT JSON_DEPTH('[1, 2, [3, 4, 5, 6], 7]');
 ```
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

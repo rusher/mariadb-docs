@@ -13,6 +13,6 @@ It contains the following columns:
 | PASSWORD\_ERRORS           | A current accumulated value of consecutive password login failures. If password\_errors is not applicable for the user (see [max\_password\_errors](../../../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_password_errors)), PASSWORD\_ERRORS will be NULL. Only password login attempts with nonempty password are taken into account. |
 | PASSWORD\_EXPIRATION\_TIME | A timestamp with the exact point in time calculated from password\_last\_changed and password\_lifetime (i.e. days) stored for the user.                                                                                                                                                                                                                                                       |
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

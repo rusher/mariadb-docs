@@ -45,6 +45,6 @@ shell> perror --silent 1979
 You are not owner of query %lu
 ```
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

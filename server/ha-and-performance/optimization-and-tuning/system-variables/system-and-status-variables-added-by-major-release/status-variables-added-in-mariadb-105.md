@@ -52,6 +52,6 @@ This is a list of [status variables](../server-status-variables.md) that were ad
 * [Status variables added in MariaDB 10.4](system-and-status-variables-added-by-major-unmaintained-release/status-variables-added-in-mariadb-104.md)
 * [Status variables added in MariaDB 10.3](system-and-status-variables-added-by-major-unmaintained-release/status-variables-added-in-mariadb-103.md)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

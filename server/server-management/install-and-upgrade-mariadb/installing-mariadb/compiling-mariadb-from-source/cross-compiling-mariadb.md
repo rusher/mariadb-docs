@@ -48,7 +48,7 @@ Here you invoke cmake, specifying the path to your toolchain file and the path t
 See also [msg02911.html](https://lists.launchpad.net/maria-discuss/msg02911.html)
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

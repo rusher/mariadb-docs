@@ -152,7 +152,7 @@ was fixed by using the kvm "-cpu qemu32,-nx" option. Some background
 information [here](https://bugs.launchpad.net/ubuntu/+source/kvm/+bug/396219).
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

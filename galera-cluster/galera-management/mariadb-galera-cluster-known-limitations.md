@@ -74,6 +74,6 @@ This article contains information on known problems and limitations of MariaDB G
 * The disk-based [Galera gcache](https://galeracluster.com/library/documentation/state-transfer.html#write-set-cache-gcache) is not encrypted ([MDEV-8072](https://jira.mariadb.org/browse/MDEV-8072)).
 * Nodes may have different table definitions, especially temporarily during [rolling schema upgrade](../reference/galera-cluster-system-variables.md#wsrep_osu_method) operations, but the same [schema compatibility restrictions](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-when-the-primary-and-replica-have-different-table-definitions) apply as they do for ROW based replication
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

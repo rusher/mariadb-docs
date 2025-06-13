@@ -44,6 +44,6 @@ It contains the following fields.
 | SUM\_NO\_INDEX\_USED            | bigint(20) unsigned                                        | NO   | The total number of statements that performed a table scan without using an index.                                                                                                                                           |
 | SUM\_NO\_GOOD\_INDEX\_USED      | bigint(20) unsigned                                        | NO   | The total number of statements where no good index was found.                                                                                                                                                                |
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

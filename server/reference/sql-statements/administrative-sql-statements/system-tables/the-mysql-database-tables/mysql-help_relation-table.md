@@ -36,6 +36,6 @@ The `mysql.help_relation` table contains the following fields:
 +---------------+-----------------+
 ```
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

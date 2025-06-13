@@ -17,6 +17,6 @@ The following are the steps in the testing phase:
 3. Test the data integrity
 4. Fine-tune the parameters or modify the logical or physical designs in response to the tests.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

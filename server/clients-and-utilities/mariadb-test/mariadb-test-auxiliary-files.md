@@ -365,6 +365,6 @@ the first `.result` file is found. A `.rdiff` is applied to that`.result`.
 This file defines valgrind suppressions, and it is used when mtr is started\
 with a `--valgrind` option.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

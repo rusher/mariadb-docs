@@ -70,6 +70,6 @@ previous [changelogs](../../connectors/odbc/changelogs/) it includes the followi
 * hide nm warnings in configure
 * Support building with system libevent
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formid="4316" formId="4316" %}

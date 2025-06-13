@@ -80,6 +80,6 @@ the inherent security issues with allowing SSL and non-SSL connections on\
 the same port. In addition to this, SSLv3 is no longer supported due to\
 vulnerabilities found in it.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

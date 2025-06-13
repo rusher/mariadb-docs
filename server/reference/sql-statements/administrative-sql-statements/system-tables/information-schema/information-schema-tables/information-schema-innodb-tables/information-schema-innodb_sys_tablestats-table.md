@@ -23,6 +23,6 @@ It contains the following columns:
 | REF\_COUNT             | Countdown to zero, when table metadata can be removed from the table cache. (InnoDB only)                                                                  |
 | MYSQL\_HANDLES\_OPENED | (XtraDB only).                                                                                                                                             |
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

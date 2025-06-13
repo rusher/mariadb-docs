@@ -12,6 +12,6 @@ You can consult the manual for a possible OS-dependent bug when trying to connec
 
 Review your connections and thread consumption usage prior to doing an upgrade to avoid this being a problem.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

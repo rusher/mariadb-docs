@@ -116,6 +116,6 @@ Note that usage of `ROWNUM()` in functions or [stored procedures](../../../../se
 * [MDEV-24089](https://jira.mariadb.org/browse/MDEV-24089) support oracle syntax: rownum
 * [LIMIT clause](../../../sql-statements/data-manipulation/selecting-data/limit.md)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

@@ -20,7 +20,7 @@ See this [OpenSSL blog post](https://www.openssl.org/blog/blog/2018/02/08/tlsv1.
 * [Secure Connections Overview](secure-connections-overview.md)
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

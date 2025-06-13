@@ -69,6 +69,6 @@ This is taken from an original Facebook note from Vladislav Vaintroub, and it ca
 
 It is also worth noting a note from Vlad about the graph: "The graph is given for 5.2, because I developed that patch for 5.2. I pushed it into 5.3 though :)"
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

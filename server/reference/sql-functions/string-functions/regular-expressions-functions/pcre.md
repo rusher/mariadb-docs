@@ -710,6 +710,6 @@ SELECT 'a\nb\nc' RLIKE '^b$';
 
 * [MariaDB upgrades to PCRE-8.34](https://blog.mariadb.org/mariadb-upgrades-to-pcre-8-34/)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

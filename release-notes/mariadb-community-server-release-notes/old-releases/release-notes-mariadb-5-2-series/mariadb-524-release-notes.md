@@ -42,6 +42,6 @@ fixes and other improvements. Specific bugs fixed in [MariaDB 5.2.4](mariadb-524
   * [Bug #616307](https://bugs.launchpad.net/bugs/616307) Upgrade failure on Debian 6 "Squeeze"
 * and others...
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formid="4316" formId="4316" %}

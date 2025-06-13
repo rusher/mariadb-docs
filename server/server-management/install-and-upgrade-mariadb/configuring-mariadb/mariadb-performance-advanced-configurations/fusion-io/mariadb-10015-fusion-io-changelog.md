@@ -125,6 +125,6 @@ modified in that revision.
   Tue 2014-04-15 14:28:25 +0300
   * Added support for LZO compression method.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

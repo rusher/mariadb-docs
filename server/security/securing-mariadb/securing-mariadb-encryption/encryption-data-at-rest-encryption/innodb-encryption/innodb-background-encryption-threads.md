@@ -67,6 +67,6 @@ LEFT JOIN information_schema.INNODB_TABLESPACES_ENCRYPTION ite
    ON tablespace_ids.SPACE = ite.SPACE
 ```
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

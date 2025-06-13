@@ -22,7 +22,7 @@ The following are the steps in the maintenance phase:
 1. Change the design to meet new requirements
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

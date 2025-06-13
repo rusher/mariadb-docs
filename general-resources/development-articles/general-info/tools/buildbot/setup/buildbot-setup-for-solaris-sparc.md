@@ -117,7 +117,7 @@ problems or questions setting up your buildbot. Or ask on the on the [maria-deve
 This howto was contributed by Adam Dutko. The original version is [here](https://littlehat.homelinux.org/tuts/MariaDB/buildbot/README-SOL10-SPARC).
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

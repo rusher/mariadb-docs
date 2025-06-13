@@ -179,6 +179,6 @@ select operation, instance, avg(opsize/(unix_timestamp(ended)-unix_timestamp(sta
 from results group by operation, instance;
 ```
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

@@ -59,6 +59,6 @@ Tasks that currently have no apparent solutions:
    inserts made into all relevant column families in Cassandra.
 2. ...
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

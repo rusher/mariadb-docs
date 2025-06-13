@@ -129,6 +129,6 @@ would normally be routed to the slave but with the added routing hint it will be
 routed to the master. This way we can do an INSERT and a SELECT right after it\
 and still get up-to-date data.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

@@ -166,6 +166,6 @@ instead.
 
 For details on the exact steps used to build the binaries, see the[compiling MariaDB section](../compiling-mariadb-from-source/) of the KB.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

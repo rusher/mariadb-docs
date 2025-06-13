@@ -58,6 +58,6 @@ The values inserted into predictors act as a command instructing MindsDB to:
 3. The input data is generated via the select statement 'SELECT \* FROM test.bike\_data'.\
    The `select_data_query` should be a valid select that MindsDB can run against MariaDB.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

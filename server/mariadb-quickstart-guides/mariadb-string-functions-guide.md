@@ -191,6 +191,6 @@ Functions that provide information about strings or assist in specific compariso
 
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

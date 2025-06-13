@@ -347,7 +347,7 @@ Crash upgrade from 10.3.2 fails due to an incompatible change (removal of MLOG_U
 
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

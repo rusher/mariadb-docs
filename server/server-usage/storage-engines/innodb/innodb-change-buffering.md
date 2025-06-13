@@ -56,6 +56,6 @@ The [innodb\_change\_buffer\_max\_size](innodb-system-variables.md#innodb_change
 
 * [InnoDB Buffer Pool](innodb-buffer-pool.md)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

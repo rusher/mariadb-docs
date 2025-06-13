@@ -55,6 +55,6 @@ SELECT SFORMAT('MariaDB Server {} has a preview for MDEV-{} which is about {}',
 
 * [10.7 preview feature: Python-like string formatting](https://mariadb.org/10-7-preview-feature-sformat/)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

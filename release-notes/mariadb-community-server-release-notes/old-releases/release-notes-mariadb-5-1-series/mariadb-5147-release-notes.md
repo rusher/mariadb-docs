@@ -70,6 +70,6 @@ several of the bugs that we have fixed.
 
 We have also continued our work in improving the test suite.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formid="4316" formId="4316" %}

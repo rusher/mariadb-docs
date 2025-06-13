@@ -19,6 +19,6 @@ It has the following columns:
 | TABLE\_NAME                 | Table name from the TABLE\_CONSTRAINTS table.                                                                                   |
 | REFERENCED\_TABLE\_NAME     | Referenced key table name, together with UNIQUE\_CONSTRAINT\_SCHEMA and UNIQUE\_CONSTRAINT\_NAME identifies the referenced key. |
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

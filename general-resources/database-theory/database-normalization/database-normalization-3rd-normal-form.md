@@ -113,7 +113,7 @@ The normal forms beyond this, such as Boyce-Codd normal form and 4th normal form
 The next article covers Boyce-Codd normal form.
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

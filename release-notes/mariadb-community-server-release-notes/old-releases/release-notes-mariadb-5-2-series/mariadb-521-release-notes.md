@@ -31,6 +31,6 @@ When used, MySQL will refuse to load plugins that have a maturity less than spec
 Several bugfixes and buildbot improvements have also been incorporated into\
 this version of [MariaDB 5.2](changes-improvements-in-mariadb-5-2.md) including some that were discussed during the[2010 Storage Engine summit](broken-reference). See the[changelog](../../../changelogs/changelogs-mariadb-52-series/mariadb-521-changelog.md) for links to the details.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formid="4316" formId="4316" %}

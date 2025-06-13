@@ -303,6 +303,6 @@ routed. Here is a list of the current limitations:
   the server pointed by a routing hint attached to the query. In practice this\
   means that prepared statements aren't supported by the schemarouter.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

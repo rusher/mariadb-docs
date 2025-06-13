@@ -45,6 +45,6 @@ Mariabackup does **not** back up the files listed below.
 * [Binary logs](../../../server-management/server-monitoring-logs/binary-log/)
 * [Relay logs](../../../server-management/server-monitoring-logs/binary-log/relay-log.md)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

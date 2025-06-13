@@ -10,6 +10,6 @@ This article documents thread states that are related to [replication](broken-re
 | Sending binlog event to slave                                         | An event has been read from the [binary log](../../../../server-management/server-monitoring-logs/binary-log/), and is now being sent to the slave.     |
 | Waiting to finalize termination                                       | State that only occurs very briefly while the thread is terminating.                                                                                    |
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

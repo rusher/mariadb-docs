@@ -110,6 +110,6 @@ ICP and its observed filtering. The optimizer doesn't compute an estimate for th
 
 `attached_condition` and its observed filtering.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

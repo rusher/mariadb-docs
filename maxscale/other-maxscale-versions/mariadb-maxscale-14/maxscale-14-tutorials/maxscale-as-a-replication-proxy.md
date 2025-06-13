@@ -427,6 +427,6 @@ MariaDB 10 GTID Event 0
 MariaDB 10 GTID List Event 0
 ```
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

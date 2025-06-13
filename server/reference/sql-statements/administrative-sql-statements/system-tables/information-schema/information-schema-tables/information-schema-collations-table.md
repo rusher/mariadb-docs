@@ -72,6 +72,6 @@ SELECT * FROM information_schema.COLLATIONS;
 * [Setting Character Sets and Collations](../../../../../data-types/string-data-types/character-sets/setting-character-sets-and-collations.md) - specifying the character set at the server, database, table and column levels
 * [Supported Character Sets and Collations](../../../../../data-types/string-data-types/character-sets/supported-character-sets-and-collations.md) - full list of supported characters sets and collations.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

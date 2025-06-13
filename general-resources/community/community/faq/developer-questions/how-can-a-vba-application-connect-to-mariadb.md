@@ -6,6 +6,6 @@ Tried several things but it does not work.\
 Anyone knows how to do this?\
 Thank you, Martin.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

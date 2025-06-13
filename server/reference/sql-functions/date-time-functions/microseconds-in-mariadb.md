@@ -95,6 +95,6 @@ MySQL 5.6 introduced microseconds using a slightly different implementation to [
 
 * [Data Type Storage Requirements](../../data-types/data-type-storage-requirements.md)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

@@ -154,6 +154,6 @@ The [mariadb-dump](../../clients-and-utilities/backup-restore-and-import-clients
 
 It's always amazing to me how much can be involved in the simplest of statements in MariaDB. MariaDB is deceptively powerful and feature rich. One can keep the statements pretty minimal or one can develop a fairly detailed, single statement to allow for accuracy of action. There are many other aspects of importing data into MariaDB that we did not address—in particular dealing with utilities. We also didn't talk about the Perl modules that could be used to convert data files. These can be useful in scripting imports. There are many ways in which one can handle importing data. Hopefully, this article has presented most of the basics and pertinent advanced details that may be of use to most MariaDB developers.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

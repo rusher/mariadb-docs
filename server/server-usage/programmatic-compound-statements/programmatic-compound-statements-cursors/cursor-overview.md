@@ -137,6 +137,6 @@ SELECT * FROM t1;
 * [CLOSE cursor\_name](close.md)
 * [Cursors in Oracle mode](broken-reference)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

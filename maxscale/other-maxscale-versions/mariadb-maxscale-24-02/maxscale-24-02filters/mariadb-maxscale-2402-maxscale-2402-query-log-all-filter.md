@@ -361,6 +361,6 @@ PRODUCT\_ID primary key in the predicates of the query. Executing `SELECT * FROM
 07:12:56.324 7/01/2016, SELECT * FROM PRODUCTS
 ```
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

@@ -47,6 +47,6 @@ We can see from the example:
 * rank \[4] = 0
 * master server id = 0
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

@@ -98,7 +98,7 @@ SELECT name, PERCENTILE_CONT(0.6) WITHIN GROUP (ORDER BY star_rating)
 * [MEDIAN()](median.md) - a special case of `PERCENTILE_CONT` equivalent to `PERCENTILE_CONT(0.5)`
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

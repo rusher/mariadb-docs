@@ -150,6 +150,6 @@ The following options relate to how MariaDB command-line tools handles option fi
 | user                          | (No default value)            |
 | verbose                       | FALSE                         |
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

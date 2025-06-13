@@ -197,6 +197,6 @@ To clarify, the `[thread_pool_oversubscribe](thread-pool-system-status-variables
 
 In general, the default value of `3` should be adequate for most users. Most users should not need to change the value of the `[thread_pool_oversubscribe](thread-pool-system-status-variables.md#thread_pool_oversubscribe)` system variable.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

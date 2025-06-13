@@ -60,6 +60,6 @@ There are two cases:
 * Table T uses ref access. In this case, the returned rows match the equalities ref\_access is constructed from. Restrictions on just table T are not checked, yet.
 * Table T uses ALL/index/quick select. In this case, restrictions on table T have been applied but cross-table restrictions were not.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

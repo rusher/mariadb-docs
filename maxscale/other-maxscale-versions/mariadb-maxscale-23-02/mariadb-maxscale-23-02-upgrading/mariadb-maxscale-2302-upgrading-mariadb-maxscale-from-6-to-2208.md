@@ -16,6 +16,6 @@ up.
   format, create a new key file with `maxkeys` and re-encrypt the passwords with`maxpasswd`.
 * The deprecated Database Firewall filter has been removed.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

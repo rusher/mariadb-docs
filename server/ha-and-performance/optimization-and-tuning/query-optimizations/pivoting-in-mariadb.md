@@ -269,6 +269,6 @@ Posted, Feb. 2015
 
 Original source: [pivot](https://mysql.rjweb.org/doc.php/pivot)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

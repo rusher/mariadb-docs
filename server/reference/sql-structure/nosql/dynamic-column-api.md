@@ -423,7 +423,7 @@ int mariadb_dyncol_column_cmp_named(const MYSQL_LEX_STRING *s1,
 ```
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

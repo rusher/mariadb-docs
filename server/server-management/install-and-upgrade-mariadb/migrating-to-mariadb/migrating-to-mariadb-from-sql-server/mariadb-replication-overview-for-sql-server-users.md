@@ -281,6 +281,6 @@ Galera is not suitable for all databases and workloads.
 * Long transactions will damage performance.
 * Some applications use an integer [AUTO\_INCREMENT](../../../../reference/data-types/auto_increment.md) primary key. In case of failover from a crashed node to another, Galera does not guarantee that `AUTO_INCREMENT` follows a chronological order. Therere, applications should use [TIMESTAMP](../../../../reference/data-types/date-and-time-data-types/timestamp.md) columns for chronological order instead.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

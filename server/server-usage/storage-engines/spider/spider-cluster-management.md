@@ -196,6 +196,6 @@ SELECT * FROM performance_schema.events_waits_summary_global_by_event_name
   ORDER BY SUM_TIMER_WAIT DESC LIMIT 10;
 ```
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

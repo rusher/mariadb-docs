@@ -77,6 +77,6 @@ The luafilter exposes three functions that can be called from the Lua script.
 * This function generates unique integers that can be used to distinct\
   sessions from each other.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

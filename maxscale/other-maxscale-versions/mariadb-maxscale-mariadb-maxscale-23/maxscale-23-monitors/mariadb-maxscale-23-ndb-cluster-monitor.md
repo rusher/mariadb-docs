@@ -23,6 +23,6 @@ password=mypwd
 
 For a list of optional parameters that all monitors support, read the [Monitor Common](mariadb-maxscale-23-common-monitor-parameters.md) document.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

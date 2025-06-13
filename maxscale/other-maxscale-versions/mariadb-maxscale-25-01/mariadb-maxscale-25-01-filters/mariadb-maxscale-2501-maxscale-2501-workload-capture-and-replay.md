@@ -502,6 +502,6 @@ input file:       capture_2024-09-06_090002.cx
   architectures than the original capture server has. Different combinations will require further\
   testing, and once done, this document will be updated.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

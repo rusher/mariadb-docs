@@ -87,6 +87,6 @@ functionality.
 [The administration tutorial](../mariadb-maxscale-24-08-beta-tutorials/mariadb-maxscale-2408-maxscale-2408-beta-mariadb-maxscale-administration-tutorial.md)\
 covers the common administration tasks that need to be done with MariaDB MaxScale.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

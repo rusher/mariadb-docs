@@ -56,6 +56,6 @@ Compressed tables have a number of characteristics:
 
 * [Why we still need MyISAM (for read-only tables)](https://jfg-mysql.blogspot.nl/2017/08/why-we-still-need-myisam.html) describes an important use case for MyISAM compressed tables.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

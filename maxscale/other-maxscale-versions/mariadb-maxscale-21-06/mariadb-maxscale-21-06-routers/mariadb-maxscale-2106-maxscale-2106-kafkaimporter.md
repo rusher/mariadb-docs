@@ -211,6 +211,6 @@ Timeout for both Kafka and MariaDB network communication.
 * The backend servers used by this service must be MariaDB version 10.2 or\
   newer.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

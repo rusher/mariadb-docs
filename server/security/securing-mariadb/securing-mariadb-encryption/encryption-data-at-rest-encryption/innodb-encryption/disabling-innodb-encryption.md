@@ -99,6 +99,6 @@ After the server has been successfully restarted with encryption disabled, you m
 
 * [Enabling InnoDB encryption](innodb-enabling-encryption.md)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

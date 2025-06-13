@@ -26,6 +26,6 @@ error_reporting($err_level);
 1. Recompile PHP with the MariaDB client libraries.
 2. Use your original MySQL client library with the MariaDB.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

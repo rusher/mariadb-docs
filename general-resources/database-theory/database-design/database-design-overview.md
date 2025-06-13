@@ -17,7 +17,7 @@ A database is much more flexible; a similar set of data to what's in a phone boo
 * Concurrency control with transactions
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

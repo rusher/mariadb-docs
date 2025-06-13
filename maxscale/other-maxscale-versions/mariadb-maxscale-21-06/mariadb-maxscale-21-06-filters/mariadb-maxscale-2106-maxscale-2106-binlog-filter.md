@@ -127,6 +127,6 @@ port=4000
 
 For more information about the binlogrouter and how to use it, refer to the[binlogrouter documentation](../mariadb-maxscale-21-06-routers/mariadb-maxscale-2106-maxscale-2106-binlogrouter.md).
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

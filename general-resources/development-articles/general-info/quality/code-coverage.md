@@ -87,6 +87,6 @@ following:
 
 [buildbot](../tools/buildbot/), the MariaDB build system, is doing [automatic coverage testing for each push](https://buildbot.askmonty.org/buildbot/builders/kvm-dgcov-jaunty-i386).
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

@@ -501,6 +501,6 @@ SHOW GLOBAL STATUS LIKE 'Innodb_num_pages_page_compressed';
 * [Significant performance boost with new MariaDB page compression on FusionIO](https://blog.mariadb.org/significant-performance-boost-with-new-mariadb-page-compression-on-fusionio/)
 * [INFLOW '14: NVM Compression—Hybrid Flash-Aware Application Level Compression](https://www.usenix.org/conference/inflow14/workshop-program/presentation/das)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

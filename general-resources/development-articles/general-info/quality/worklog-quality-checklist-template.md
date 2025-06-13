@@ -231,6 +231,6 @@ _This makes it much faster to review code as one knows what it tested and what o
 * [Optimizer Quality](optimizer-quality.md)
 * [QA Tools](qa-tools.md)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

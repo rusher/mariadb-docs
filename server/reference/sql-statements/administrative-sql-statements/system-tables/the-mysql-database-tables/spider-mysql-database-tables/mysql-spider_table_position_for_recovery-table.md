@@ -17,6 +17,6 @@ It contains the following fields:
 | position         | text      | YES  |     | NULL    |             |
 | gtid             | text      | YES  |     | NULL    |             |
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

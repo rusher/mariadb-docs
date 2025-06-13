@@ -15,6 +15,6 @@ as [MariaDB 5.1.44](mariadb-5144-release-notes.md).
 See the [MariaDB 5.1.44 Release Notes](mariadb-5144-release-notes.md)\
 for a summary of the differences between [MariaDB 5.1.42](mariadb-5142-release-notes.md) and [MariaDB 5.1.44](mariadb-5144-release-notes.md).
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formid="4316" formId="4316" %}

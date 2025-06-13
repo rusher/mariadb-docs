@@ -45,6 +45,6 @@ replication breaks for some reason.
 detect_stale_master=true
 ```
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

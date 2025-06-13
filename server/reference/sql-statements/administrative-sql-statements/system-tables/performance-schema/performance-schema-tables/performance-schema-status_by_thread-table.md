@@ -17,6 +17,6 @@ The table contains the following columns:
 
 If [TRUNCATE TABLE](../../../../table-statements/truncate-table.md) is run, will aggregate the status for all threads to the global status and account status, then reset the thread status. If account statistics are not collected but host and user status are, the session status is added to host and user status.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

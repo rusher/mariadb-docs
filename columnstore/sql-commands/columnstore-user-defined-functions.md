@@ -132,6 +132,6 @@ MariaDB [test]> select i1, i2 from t1 where mcs_add(i1,i2) = 4;
 1 row in set (0.02 sec)
 ```
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

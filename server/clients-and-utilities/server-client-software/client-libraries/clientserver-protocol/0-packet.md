@@ -91,6 +91,6 @@ If data size needs splitting, it's better to separate compress packet.
 
 ![compress\_packet](../../../../.gitbook/assets/0-packet/+image/compress_packet.png)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

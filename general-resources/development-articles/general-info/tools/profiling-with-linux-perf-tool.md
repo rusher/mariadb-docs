@@ -78,6 +78,6 @@ perf record -e 'probe_ha_rocksdb:*' -p $(pidof mysqld) -- sleep 60
 perf script
 ```
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

@@ -67,6 +67,6 @@ MariaDB since 10.1.7 behaves in a standard compatible manner — being part of a
 
 * [MDEV-12248](https://jira.mariadb.org/browse/MDEV-12248) describes an edge-case that may result in replication problems when replicating from a master server before this change to a slave server after this change.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

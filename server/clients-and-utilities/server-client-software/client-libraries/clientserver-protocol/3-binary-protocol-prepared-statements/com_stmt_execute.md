@@ -125,7 +125,7 @@ The server can answer with 3 different responses:
 * one (or more) [Resultset](../4-server-response-packets/result-set-packets.md), when query execution return rows (in case of SELECT query for example).
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

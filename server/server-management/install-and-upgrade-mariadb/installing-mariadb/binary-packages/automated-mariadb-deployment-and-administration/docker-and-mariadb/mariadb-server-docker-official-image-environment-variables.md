@@ -66,6 +66,6 @@ When MARIADB\_MASTER\_HOST is specified, MARIADB\_REPLICATION\_USER and MARIADB\
 
 When not specified, the MARIADB\_REPLICATION\_USER will be created with the REPLICATION REPLICA grants required to a client to start replication.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

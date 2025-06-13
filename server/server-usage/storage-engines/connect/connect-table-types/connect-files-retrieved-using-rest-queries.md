@@ -110,6 +110,6 @@ Note: For JSON tables, specifying the file name is optional and defaults to tabn
 
 See the [JSON table type](connect-json-table-type.md) for changes that will occur in the new CONNECT versions (distributed in early 2021).
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

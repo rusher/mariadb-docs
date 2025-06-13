@@ -170,6 +170,6 @@ Manually creating a zero-sized ib\_logfile0 without manually updating the FIL\_P
 
 If the database was initialized with a server that never updates the FIL\_PAGE\_FILE\_FLUSH\_LSN field, then any server startup attempts with a zero-size ib\_logfile0 will be refused because of an invalid LSN. If that field was ever updated with a valid LSN by an older server, this safety mechanism cannot work, and the server may "rewind" to an earlier LSN.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

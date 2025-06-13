@@ -20,6 +20,6 @@ port=4442
 
 Connections using the telnet protocol to port 4442 of the MariaDB MaxScale host will result in a new debug CLI session. A default username and password are used for this module, new users may be created using the administrative interface. As soon as any users are explicitly created the default username will no longer continue to work. The default username is `admin` with a password of `mariadb`.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

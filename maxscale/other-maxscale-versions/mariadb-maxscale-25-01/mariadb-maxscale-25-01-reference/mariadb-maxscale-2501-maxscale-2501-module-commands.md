@@ -62,6 +62,6 @@ are interpreted as the types the command expects.
 When the module command is executed, the _argv_ parameter for th&#x65;_&#x6D;y\_simple\_cmd_ contains the parsed arguments received from the caller of the\
 command.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

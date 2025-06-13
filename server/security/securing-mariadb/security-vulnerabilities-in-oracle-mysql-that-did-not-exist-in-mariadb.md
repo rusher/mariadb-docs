@@ -1559,7 +1559,7 @@ Not a vulnerability:
 * [CVE-2012-1696](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-1696)
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

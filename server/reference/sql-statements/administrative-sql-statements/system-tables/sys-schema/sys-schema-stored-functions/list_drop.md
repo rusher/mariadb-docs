@@ -40,6 +40,6 @@ NO_AUTO_CREATE_USER |
 
 * [list\_add](list_add.md)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

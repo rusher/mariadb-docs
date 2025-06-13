@@ -115,6 +115,6 @@ The following buildbot considerations apply under this setup:
 * buildbot will not perform a proper cleanup of the build directory on the Windows host before each build (it will only clean up things on the linux side). So, a directory cleanup via rmdir must be placed as as an explicit first step in the build sequence;
 * Bzr() can not be used to check out BZR trees, as it expects that the bzr checkout command will run locally. Instead, an explicit call to bzr checkout via a SSH command must be used;
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

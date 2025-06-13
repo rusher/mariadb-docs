@@ -41,7 +41,7 @@ SELECT * FROM performance_schema.file_instances WHERE OPEN_COUNT>0;
 
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

@@ -43,6 +43,6 @@ Without doubt, the discussions around that was a highlight in my very short stin
 
 Taken from a note on Facebook: [note.php?note\_id=238505812835782](https://www.facebook.com/note.php?note_id=238505812835782) by Vladislav Vaintroub.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

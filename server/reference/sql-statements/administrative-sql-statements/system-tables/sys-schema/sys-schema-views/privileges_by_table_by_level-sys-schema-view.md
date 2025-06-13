@@ -108,6 +108,6 @@ SELECT * FROM sys.privileges_by_table_by_level;
 * [INFORMATION\_SCHEMA.TABLE\_PRIVILEGES](../../information-schema/information-schema-tables/information-schema-table_privileges-table.md)
 * [MDEV-24486](https://jira.mariadb.org/browse/MDEV-24486)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

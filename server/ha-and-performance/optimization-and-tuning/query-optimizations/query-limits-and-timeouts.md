@@ -71,6 +71,6 @@ If the [max\_statement\_time](../system-variables/server-system-variables.md#max
 * [Aborting statements that take longer than a certain time to execute](aborting-statements.md)
 * [lock\_wait\_timeout](../system-variables/server-system-variables.md#lock_wait_timeout) variable
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

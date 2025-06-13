@@ -285,6 +285,6 @@ ERROR 1265 (01000): Data truncated for column 'd1' at row 1
 * [System-versioned Tables](system-versioned-tables.md)
 * [Bitemporal Tables](bitemporal-tables.md)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

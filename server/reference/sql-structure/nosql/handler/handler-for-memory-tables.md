@@ -30,6 +30,6 @@ The limitations for HANDLER READ with Memory|HEAP tables are:
 
 See also the the limitations listed in [HANDLER commands](handler-commands.md).
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

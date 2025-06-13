@@ -101,6 +101,6 @@ promises at least 100x speedup.
 * [MDEV-34720](https://jira.mariadb.org/browse/MDEV-34720) introduces optimizer\_join\_limit\_pref\_ratio optimization
 * [MDEV-18079](https://jira.mariadb.org/browse/MDEV-18079) is about future development that would make the optimizer handle such cases without user guidance.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

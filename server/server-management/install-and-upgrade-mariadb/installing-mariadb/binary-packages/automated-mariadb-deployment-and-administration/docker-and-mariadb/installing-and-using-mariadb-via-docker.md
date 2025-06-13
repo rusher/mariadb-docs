@@ -302,6 +302,6 @@ Now we are ready to [install MariaDB](../../../../) in the way we prefer.
 * [Docker Hub](https://hub.docker.com/).
 * [Docker documentation](https://docs.docker.com/).
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

@@ -404,6 +404,6 @@ In Extent Elimination, ColumnStore scans the columns in join and filter conditio
 
 This behavior is automatic and well suited for series, ordered, patterned and time-based data, where the data is loaded frequently and often referenced by time. Any column with clustered values is a good candidate for Extent Elimination.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

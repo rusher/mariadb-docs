@@ -125,6 +125,6 @@ This is achieved by grouping asserts in MariaDB server code into two groups:
 * [Creating a trace file](creating-a-trace-file.md)
 * [Using ASAN with MariaDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/compiling-mariadb-from-source/compile-and-using-mariadb-with-sanitizers-asan-ubsan-tsan-msan)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

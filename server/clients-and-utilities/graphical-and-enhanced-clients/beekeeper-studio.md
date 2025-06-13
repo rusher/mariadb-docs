@@ -29,7 +29,7 @@ The Community Edition is [free and open source](https://github.com/beekeeper-stu
 * GitHub - [beekeeper-studio](https://github.com/beekeeper-studio/beekeeper-studio)
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

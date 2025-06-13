@@ -236,6 +236,6 @@ would normally be routed to the replica but with the added routing hint it will 
 routed to the primary. This way we can do an INSERT and a SELECT right after it\
 and still get up-to-date data.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

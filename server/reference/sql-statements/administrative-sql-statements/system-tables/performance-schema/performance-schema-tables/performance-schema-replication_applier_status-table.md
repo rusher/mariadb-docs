@@ -16,6 +16,6 @@ It contains the following fields.
 | REMAINING\_DELAY             | int(10) unsigned    | YES  | Seconds the replica needs to wait to reach the desired delay from master.                                                      |
 | COUNT\_TRANSACTIONS\_RETRIES | bigint(20) unsigned | NO   | The number of retries that were made because the replication SQL thread failed to apply a transaction.                         |
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

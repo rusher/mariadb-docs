@@ -333,7 +333,7 @@ db 29 1e 5b 17 01 00 00 00 4a 00       .).[.....J.
 ```
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

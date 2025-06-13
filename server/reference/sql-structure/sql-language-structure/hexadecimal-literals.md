@@ -117,6 +117,6 @@ SELECT 0x0a+0;
 * [HEX()](../../sql-functions/string-functions/hex.md)
 * [UNHEX()](../../sql-functions/string-functions/unhex.md)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

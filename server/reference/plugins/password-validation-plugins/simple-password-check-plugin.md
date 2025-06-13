@@ -120,6 +120,6 @@ Prior to [MariaDB 10.4.0](broken-reference), all [password validation plugins](.
 * [Password Validation](broken-reference)
 * [cracklib\_password\_check plugin](cracklib-password-check-plugin.md) - use the Cracklib password-strength checking library
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

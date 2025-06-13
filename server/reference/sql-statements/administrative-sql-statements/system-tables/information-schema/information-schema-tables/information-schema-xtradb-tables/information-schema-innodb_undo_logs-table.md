@@ -18,6 +18,6 @@ It has the following columns:
 | STATE         | Segment state; one of ACTIVE (contains active transaction undo log), CACHED, TO\_FREE (insert undo segment can be freed), TO\_PURGE (update undo segment won't be re-used and can be purged when all undo data is removed) or PREPARED (segment of a prepared transaction). |
 | SIZE          | Size in pages of the segment.                                                                                                                                                                                                                                               |
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

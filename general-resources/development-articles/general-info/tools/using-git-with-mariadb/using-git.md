@@ -322,7 +322,7 @@ mariadb-galera-10.0.30
 * [Sergei's "Using GIT" presentation. Malaga Meeting, January 2015 "Sergei's "Using GIT" presentation. Malaga Meeting, January 2015"](https://mariadb.com/kb/en/usare-git/+attachment/using-git)
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

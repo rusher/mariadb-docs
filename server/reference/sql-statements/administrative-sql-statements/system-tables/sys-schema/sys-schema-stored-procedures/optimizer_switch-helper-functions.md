@@ -87,6 +87,6 @@ call sys.optimizer_switch_off();
 
 * [optimizer-switch](../../../../../../ha-and-performance/optimization-and-tuning/query-optimizations/optimizer-switch.md) Documentation for optimizer\_switch
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

@@ -157,6 +157,6 @@ By having the **mariadb.socket**, **my.cnf** file and **databases** in **/opt/ma
 * start MariaDB
 * run upgrade script... but remember you will need to provide the socket option --socket=/opt/mariadb-data/mariadb.sock
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

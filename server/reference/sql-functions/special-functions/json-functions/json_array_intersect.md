@@ -28,6 +28,6 @@ SELECT json_array_intersect(@json1, @json2);
 +--------------------------------------+
 ```
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

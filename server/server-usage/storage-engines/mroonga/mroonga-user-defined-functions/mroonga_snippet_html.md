@@ -9,6 +9,6 @@
 * [Creating Mroonga User-Defined Functions](creating-mroonga-user-defined-functions.md)
 * [mroonga\_snippet](mroonga_snippet.md)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

@@ -302,6 +302,6 @@ details of the revision and view diffs of the code modified in that revision.
   2025-01-30 16:30:56 +0200
   * [MDEV-35955](https://jira.mariadb.org/browse/MDEV-35955) Wrong result for UPDATE ... ORDER BY LIMIT which uses tmp.table
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formid="4316" formId="4316" %}

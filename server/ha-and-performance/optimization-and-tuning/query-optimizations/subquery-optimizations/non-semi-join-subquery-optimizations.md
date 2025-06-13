@@ -335,6 +335,6 @@ The two main optimizer switches - _materialization_ and _in\_to\_exists_\
 cannot be simultaneously off. If both are set to off, the server will\
 issue an error.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

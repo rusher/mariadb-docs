@@ -101,6 +101,6 @@ All [INSERT](../../../../reference/sql-statements/data-manipulation/inserting-lo
 
 Note: All PROXY and PROXY-based table types are not indexable.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

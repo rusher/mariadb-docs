@@ -32,6 +32,6 @@ git checkout merge-innodb-5.6
 * for XtraDB-5.5: update `storage/xtradb/include/univ.i`, setting `PERCONA_INNODB_VERSION`, `INNODB_VERSION_STR` to whatever Percona-Server version you were merging from.
 * for XtraDB-5.6: update `storage/xtradb/include/univ.i`, setting `PERCONA_INNODB_VERSION`, `INNODB_VERSION_MAJOR`, `INNODB_VERSION_MINOR`, `INNODB_VERSION_BUGFIX` to whatever Percona-Server version you were merging from.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

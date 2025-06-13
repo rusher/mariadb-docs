@@ -62,6 +62,6 @@ operations in the library for applications which do not use them.
 
 The library internally uses co-routines, and requires a co-routine implementation to work. Native implementations are included for i386, amd64, and (since Connector/C version 3.3.12) aarch64 architectures. For other architectures, a fallback to `ucontext` is automatically used if available. An alternate fallback `boost::context` can also be used instead of `ucontext` by building with `-DWITH_BOOST_CONTEXT=ON` (`boost::context` is not used by default). If no co-routine implementation is available the non-blocking operations are disabled and will not work.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

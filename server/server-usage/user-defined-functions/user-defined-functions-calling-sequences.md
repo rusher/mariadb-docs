@@ -106,6 +106,6 @@ It adds more efficient support of aggregate UDFs as [window functions](../../ref
 
 If _x\_remove()_ supported (defined) detected automatically.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

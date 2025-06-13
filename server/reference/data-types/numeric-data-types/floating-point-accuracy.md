@@ -34,6 +34,6 @@ SELECT f1*f1, f2*f2, f3*f3 FROM fpn;
 +----------------------+----------------------+----------+
 ```
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

@@ -23,6 +23,6 @@ Note that when backing up off a replica server, it is important to ensure that t
 * [Replication Compatibility](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/comparison/mariadb-vs-mysql-compatibility#replication-compatibility)
 * [Backing Up and Restoring](broken-reference)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

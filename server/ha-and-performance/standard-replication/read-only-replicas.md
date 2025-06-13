@@ -36,6 +36,6 @@ ALTER TABLE test ENGINE=rocksdb;
 The above changes the test table on the replica to rocksdb without registering\
 the change in the binary log.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

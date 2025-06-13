@@ -18,7 +18,7 @@ Using the COM_QUIT command, the client tells the server that the connection shou
 Server terminates connection.
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

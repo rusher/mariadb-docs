@@ -156,7 +156,7 @@ sudo ln -s /compat/linux/usr/bin/md5sum md5sum
 ```
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

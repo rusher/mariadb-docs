@@ -12,6 +12,6 @@ Returns a comma-separated list of column names. The names are quoted with backti
 
 See [dynamic columns](../../../sql-structure/nosql/dynamic-columns.md) for more information.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

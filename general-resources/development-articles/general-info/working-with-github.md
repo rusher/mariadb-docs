@@ -69,6 +69,6 @@ From the pull request number created, substitute that into the ID of the URL bel
 * Automerge
 * Rebasing your PR on a different branch (quick version - rebase, force push and then edit the title of the PR to the base branch).
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

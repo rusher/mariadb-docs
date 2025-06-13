@@ -792,6 +792,6 @@ See also: [Using CONNECT - Partitioning and Sharding](../storage-engines/connect
 * [INFORMATION\_SCHEMA.PARTITIONS](../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-partitions-table.md) contains information about existing partitions.
 * [Partition Maintenance](partition-maintenance.md) for suggestions on using partitions
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

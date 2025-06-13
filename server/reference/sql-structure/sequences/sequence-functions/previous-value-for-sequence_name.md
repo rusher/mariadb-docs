@@ -125,6 +125,6 @@ SELECT LASTVAL(s);
 * [Information Schema SEQUENCES Table](../../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-sequences-table.md)
 * [Error 4084: Sequence has run out](broken-reference)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

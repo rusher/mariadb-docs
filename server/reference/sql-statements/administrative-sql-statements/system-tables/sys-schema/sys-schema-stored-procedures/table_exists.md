@@ -39,6 +39,6 @@ CALL sys.table_exists('mysql', 'user', @table_type); SELECT @table_type;
 +-------------+
 ```
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

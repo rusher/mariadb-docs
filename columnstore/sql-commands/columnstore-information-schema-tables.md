@@ -106,6 +106,6 @@ The compression\_ratio() procedure calculates the average compression ratio acro
 > call columnstore_info.compression_ratio();
 ```
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

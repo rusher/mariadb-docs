@@ -32,6 +32,6 @@ It contains the following fields.
 | REPL\_DO\_DOMAIN\_IDS            | longtext                                 | NO   | Only apply binary logs from these domain ids.                                                                                                   |
 | REPL\_IGNORE\_DOMAIN\_IDS        | longtext                                 | NO   | Binary log events from domains to ignore.                                                                                                       |
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

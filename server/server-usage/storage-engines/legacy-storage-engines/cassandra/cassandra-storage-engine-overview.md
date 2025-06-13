@@ -302,6 +302,6 @@ that were defined `WITH COMPACT STORAGE` attribute.
 * [Cassandra Storage Engine - Issues](cassandra-storage-engine-issues.md)
 * [HBase Storage Engine](../../../../reference/storage-engines/legacy-storage-engines/cassandra/broken-reference/)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

@@ -79,6 +79,6 @@ One benefit of our change to using Ubuntu 8.04 and glibc 2.7 for our builds is\
 that we are now able to create CentOS 5 RPM packages. The[download](https://downloads.askmonty.org/) page has links to both the\
 individual files and to a CentOS 5 YUM repository.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formid="4316" formId="4316" %}

@@ -89,6 +89,6 @@ nodes that the Xpand monitor discovers at runtime.
 
 For additional details, please consult the monitor[documentation](../maxscale-25-monitors/mariadb-maxscale-25-xpand-monitor.md).
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

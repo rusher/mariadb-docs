@@ -10,7 +10,7 @@ ColumnStore supports all MariaDB functions that can be used in a post-processing
 * [ColumnStore Distributed Functions](columnstore-distributed-functions.md)
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

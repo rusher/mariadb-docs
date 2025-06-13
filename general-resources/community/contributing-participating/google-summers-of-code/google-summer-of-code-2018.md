@@ -434,6 +434,6 @@ MEM\_ROOT can be changed to have debug mode which make it read only which can be
 | Details: | [MDEV-14959](https://jira.mariadb.org/browse/MDEV-14959) |
 | Mentor:  | Oleksandr Byelkin                                        |
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

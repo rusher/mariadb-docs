@@ -133,6 +133,6 @@ You might consider using the following major new features in [MariaDB 10.5](http
 * [Upgrading from MariaDB 10.2 to MariaDB 10.3](../upgrading-to-unmaintained-mariadb-releases/upgrading-from-mariadb-102-to-mariadb-103.md)
 * [Upgrading from MariaDB 10.1 to MariaDB 10.2](../upgrading-to-unmaintained-mariadb-releases/upgrading-from-mariadb-101-to-mariadb-102.md)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

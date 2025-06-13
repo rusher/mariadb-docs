@@ -64,6 +64,6 @@ $ ./debian/autobake-deb.sh
 
 After building the packages, it is a good idea to put them in a repository. See the [Creating a Debian Repository](creating_a_debian_repository.md) page for instructions.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

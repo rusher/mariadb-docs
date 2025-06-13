@@ -80,6 +80,6 @@ EXISTS-to-IN doesn't handle
 * subqueries are UNIONs
 * a number of degenerate edge cases
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

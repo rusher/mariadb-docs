@@ -54,6 +54,6 @@ ERROR 1062 (23000): Duplicate entry '{"color":"blue","name":"alice"}' for key 'j
 
 * [JSON\_EQUALS](json_equals.md)
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

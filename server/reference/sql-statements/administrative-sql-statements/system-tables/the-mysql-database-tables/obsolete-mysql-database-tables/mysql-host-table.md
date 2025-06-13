@@ -70,6 +70,6 @@ engine=MyISAM CHARACTER SET utf8 COLLATE utf8_bin
 comment='Host privileges;  Merged with database privileges';
 ```
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

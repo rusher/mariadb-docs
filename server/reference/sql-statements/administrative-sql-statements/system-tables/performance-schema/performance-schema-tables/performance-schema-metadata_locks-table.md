@@ -39,6 +39,6 @@ The table contains the following columns:
 | OWNER\_THREAD\_ID       | bigint(20) unsigned | YES  | NULL    | Thread that requested the lock.                                                                                                                                                                                                                                                                     |
 | OWNER\_EVENT\_ID        | bigint(20) unsigned | YES  | NULL    | Event that requested the lock.                                                                                                                                                                                                                                                                      |
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

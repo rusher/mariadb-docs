@@ -84,6 +84,6 @@ SELECT COUNT(*) FROM mytable; -- Or SELECT COUNT(1) FROM mytable;
 
 _(Note: This query would typically be run on an existing table, for example, before it or its database is dropped.)_
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

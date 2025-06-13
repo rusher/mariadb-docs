@@ -176,6 +176,6 @@ delimiter ;
 See [Server System Variables](../system-variables/server-system-variables.md) for the full list of server\
 variables.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

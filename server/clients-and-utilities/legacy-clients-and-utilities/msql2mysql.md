@@ -29,6 +29,6 @@ post-conversion revisions.
 `msql2mysql` uses the `[replace](replace-utility.md)` utility to make the function name\
 substitutions.
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

@@ -72,7 +72,7 @@ c3 e0 1c 5b 0e 01 00 00 00 2b 00       ...[.....+.
 ```
 
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 
 {% @marketo/form formId="4316" %}

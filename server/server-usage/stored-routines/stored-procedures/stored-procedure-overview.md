@@ -127,6 +127,6 @@ To change the characteristics of a stored procedure, use [ALTER PROCEDURE](alter
 
 See the article [Stored Routine Privileges](../stored-functions/stored-routine-privileges.md).
 
-CC BY-SA / Gnu FDL
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}
