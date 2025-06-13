@@ -1,5 +1,18 @@
 ---
-description: This category contains release notes for releases in the MariaDB Connector/Node.js 3.x series
+description: >-
+  This category contains release notes for releases in the MariaDB
+  Connector/Node.js 3.x series
+layout:
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: false
 ---
 
 # MariaDB Connector/Node.js 3.x Release Notes
