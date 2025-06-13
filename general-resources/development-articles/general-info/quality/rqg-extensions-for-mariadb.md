@@ -6,7 +6,7 @@ While all described changes were made in order to test MariaDB code, many of the
 
 ## Galera Mode
 
-A set of changes to support running RQG tests with multi-master Galera replication, implemented to test [MariaDB Galera cluster](../../../../en/galera/).
+A set of changes to support running RQG tests with multi-master Galera replication, implemented to test [MariaDB Galera cluster](https://github.com/mariadb-corporation/docs-server/blob/test/en/galera/README.md).
 
 The top-level script `runall-new.pl` got a new option --galera, which takes a string value. The string can be a combination of 'm' or 's', where each symbol represents a Galera node. 'm' stands for 'master', and 's' stands for 'slave'.
 

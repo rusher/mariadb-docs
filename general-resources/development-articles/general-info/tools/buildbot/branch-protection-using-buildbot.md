@@ -43,11 +43,11 @@ All other checks are not required in order to make the push. However, please tak
 
 The build status can be seen directly from GitHub near the commit message. Below, you can find an example (please note the **yellow dot** near the commit message):
 
-![Commit example](../../../../.gitbook/assets/branch-protection-using-buildbot/+image/commit-example.png)
+![Commit example](../../../../.gitbook/assets/commit-example.png)
 
 If you click on the **yellow dot**, you can find the list of checks performed and their status, as shown below:
 
-![Build status](../../../../.gitbook/assets/branch-protection-using-buildbot/+image/build-status.png)
+![Build status](../../../../.gitbook/assets/build-status.png)
 
 By clicking on **Details** you will be redirected to the buildbot page showing all the build details.
 
@@ -70,7 +70,7 @@ In some cases it might be useful to re-trigger one or more checks. This can easi
 
 1. Login to [buildbot.mariadb.org](https://buildbot.mariadb.org) using the GitHub credentials: Hit the "Anonymous" button from the upper right corner and then "Login with GitHub" as shown below:
 
-* ![Login](../../../../.gitbook/assets/branch-protection-using-buildbot/+image/login.png)
+* ![Login](../../../../.gitbook/assets/login.png)
 
 1. Open the build details of the build you want to re-trigger
 2. Hit the "Rebuild" button from the upper right corner

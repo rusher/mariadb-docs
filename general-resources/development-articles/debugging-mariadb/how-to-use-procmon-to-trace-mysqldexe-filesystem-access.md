@@ -18,7 +18,7 @@ We assume that mysqld.exe is already started.
 
 1. Start procmon.exe . Dialog will pop up that offers to set filter. Use this dialog to set filter to "Process name" "is" "mysqld.exe", as shown in the screenshot below.
 
-![Filter Setup](../../.gitbook/assets/how-to-use-procmon-to-trace-mysqldexe-filesystem-access/+image/filtersetup.png)
+![Filter Setup](../../.gitbook/assets/filtersetup.png)
 
 Click on "Add" button to mysqld.exe to include it in the filter, "Apply" and "OK".
 
@@ -35,7 +35,7 @@ Query OK, 0 rows affected (0.03 sec)
 
 Back to Process Monitor Windows, you should see the filesystem events initiated by the "INSTALL PLUGIN" operation
 
-![Process Monitor Events](../../.gitbook/assets/how-to-use-procmon-to-trace-mysqldexe-filesystem-access/+image/procmon_events.png)
+![Process Monitor Events](../../.gitbook/assets/procmon_events.png)
 
 To save it, choose File/Save.
 
@@ -53,11 +53,11 @@ It is also possible to see stacktraces corresponding to the events. For this to 
 
 This is how it looks on my machine:
 
-![Symbol Config](../../.gitbook/assets/how-to-use-procmon-to-trace-mysqldexe-filesystem-access/+image/symbol_config.png)
+![Symbol Config](../../.gitbook/assets/symbol_config.png)
 
 Once symbols are configured, you'll get a stack trace corresponding to a filesystem event by simply doubleclicking on the line corresponding to the event. This is what I see after clicking on the first event of my tracing session (corresponds to opening my.ini file)
 
-![Callstack](../../.gitbook/assets/how-to-use-procmon-to-trace-mysqldexe-filesystem-access/+image/Callstack.png)
+![Callstack](../../.gitbook/assets/Callstack.png)
 
 It is also possible to save the the whole trace with callstacks as text (File/Save, choose XML, include callstack + resolve callstack).
 

@@ -15,16 +15,16 @@ this page lists possible projects. The projects are picked to be
   of the code and/or make high-risk changes that could be rejected out of\
   concern that they could destabilize the codebase
 
-This list is by no means complete. You can find more open tasks in [our project planning tool, JIRA](../../development-articles/general-info/tools/jira.md). You can also ask for tasks on the[MariaDB mailing list/IRC](broken-reference/).
+This list is by no means complete. You can find more open tasks in [our project planning tool, JIRA](../../development-articles/general-info/tools/jira.md). You can also ask for tasks on the[MariaDB mailing list/IRC](https://github.com/mariadb-corporation/docs-server/blob/test/general-resources/community/contributing-participating/broken-reference/README.md).
 
 ## Progress reporting for ALTER TABLE ... ADD INDEX
 
-* Description: MariaDB has support for[progress reporting](broken-reference/) during DDL statements. In some\
+* Description: MariaDB has support for[progress reporting](https://github.com/mariadb-corporation/docs-server/blob/test/general-resources/community/contributing-participating/broken-reference/README.md) during DDL statements. In some\
   scenarios, progress reporting actually works. In\
   others (`ALTER TABLE ... ADD INDEX` being the most important of them) it\
   has not been implemented. The task is to place progress reporting statements\
   at appropriate places in the code, so that `ALTER TABLE ... ADD INDEX`\
-  provides some clues about which fraction of work it has done/has left. The[progress reporting](broken-reference/) page has a section which gives\
+  provides some clues about which fraction of work it has done/has left. The[progress reporting](https://github.com/mariadb-corporation/docs-server/blob/test/general-resources/community/contributing-participating/broken-reference/README.md) page has a section which gives\
   clues what kind of statements will need to be inserted. Finding where to put\
   them is left as an exercise for the implementer :)
 * Background required: C, C++

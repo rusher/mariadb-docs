@@ -1,10 +1,10 @@
 # Reporting Software Bugs
 
-For reporting documentation bugs specifically, see [Reporting Documentation Bugs](../../../about/about-mariadb-documentation/reporting-documentation-bugs.md).
+For reporting documentation bugs specifically, see [Reporting Documentation Bugs](../../../about/readme/reporting-documentation-bugs.md).
 
 MariaDB's bug and feature tracker is found at [jira.mariadb.org](https://jira.mariadb.org).
 
-This page contains general guidelines for the community for reporting bugs and feature requests in MariaDB products. If you want to discuss a problem or a new feature with other MariaDB developers, you can find the email lists and forums [here](broken-reference).
+This page contains general guidelines for the community for reporting bugs and feature requests in MariaDB products. If you want to discuss a problem or a new feature with other MariaDB developers, you can find the email lists and forums [here](https://github.com/mariadb-corporation/docs-server/blob/test/general-resources/community/community/bug-tracking/broken-reference/README.md).
 
 ## Known Issues
 
@@ -88,7 +88,7 @@ Some project names include:
 
 Feature requests are not the same as bug reports. Specify a `New feature` type for feature requests in [Jira](../../../development-articles/general-info/tools/jira.md), and a `Bug` type for bug reports. Like with the project field, choosing a wrong type will put the request to the wrong queue and can delay its processing, but eventually it will be noticed and amended.
 
-See also [plans for next release](broken-reference) for things that we are considering to have in the next MariaDB release.
+See also [plans for next release](https://github.com/mariadb-corporation/docs-server/blob/test/general-resources/community/community/bug-tracking/broken-reference/README.md) for things that we are considering to have in the next MariaDB release.
 
 #### Summary
 

@@ -56,15 +56,15 @@ For each instance of entity A, many instances of entity B can exist, and vice ve
 
 There are numerous ways of showing these relationships. The image below shows _student_ and _course_ entities. In this case, each student must have registered for at least one course, but a course does not necessarily have to have students registered. The student-to-course relationship is mandatory, and the course-to-student relationship is optional.
 
-![many-to-many](../../.gitbook/assets/database-design-phase-2-conceptual-design/+image/many-to-many.png)
+![many-to-many](../../.gitbook/assets/many-to-many.png)
 
 The image below shows _invoice\_line_ and _product_ entities. Each invoice line must have at least one product (but no more than one); however each product can appear on many invoice lines, or none at all. The _invoice\_line-to-product_ relationship is mandatory, while the _product-to-invoice\_line_ relationship is optional.
 
-![one\_to\_many](../../.gitbook/assets/database-design-phase-2-conceptual-design/+image/one_to_many.png)
+![one\_to\_many](../../.gitbook/assets/one_to_many.png)
 
 The figure below shows husband and wife entities. In this system (others are of course possible), each husband must have one and only one wife, and each wife must have one, and only one, husband. Both relationships are mandatory.
 
-![one-to-one](../../.gitbook/assets/database-design-phase-2-conceptual-design/+image/one-to-one.png)
+![one-to-one](../../.gitbook/assets/one-to-one.png)
 
 An entity can also have a relationship with itself. Such an entity is called a _recursive entity_. Take a _person_ entity. If you're interested in storing data about which people are brothers, you wlll have an "is brother to" relationship. In this case, the relationship is an M:N relationship.
 
@@ -86,11 +86,11 @@ It is important to remember that there is no one right or wrong answer. The more
 
 Once the diagram has been approved, the next stage is to replace many-to-many relationships with two one-to-many relationships. A DBMS cannot directly implement many-to-many relationships, so they are decomposed into two smaller relationships. To achieve this, you have to create an _intersection_, or _composite_ entity type. Because intersection entities are less "real-world" than ordinary entities, they are sometimes difficult to name. In this case, you can name them according to the two entities being intersected. For example, you can intersect the many-to-many relationship between _student_ and _course_ by a _student-course_ entity.
 
-![student-course](../../.gitbook/assets/database-design-phase-2-conceptual-design/+image/student-course.png)
+![student-course](../../.gitbook/assets/student-course.png)
 
 The same applies even if the entity is recursive. The person entity that has an M:N relationship "is brother to" also needs an intersection entity. You can come up with a good name for the intersection entity in this case: _brother_. This entity would contain two fields, one for each person of the brother relationship — in other words, the primary key of the first brother and the primary key of the other brother.
 
-![brother-intersection](../../.gitbook/assets/database-design-phase-2-conceptual-design/+image/brother-intersection.png)
+![brother-intersection](../../.gitbook/assets/brother-intersection.png)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

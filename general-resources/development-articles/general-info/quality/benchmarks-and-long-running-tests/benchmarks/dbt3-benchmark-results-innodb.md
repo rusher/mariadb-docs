@@ -70,7 +70,7 @@ perl launcher.pl --test={PROJECT_HOME}/mariadb-tools/dbt3_benchmark/tests/mariad
 
 Here is the graphics of the results:
 
-![innodb-test-scale-10-timeout-600](../../../../../.gitbook/assets/dbt3-benchmark-results-innodb/+image/innodb-test-scale-10-timeout-600.png)
+![innodb-test-scale-10-timeout-600](../../../../../.gitbook/assets/innodb-test-scale-10-timeout-600.png)
 
 **NOTE:** Queries that are cut off by the graphics have timed out the period of\
 600 seconds for that test.

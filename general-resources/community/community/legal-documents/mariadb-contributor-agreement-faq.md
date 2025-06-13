@@ -62,7 +62,7 @@ all existing signed contributor agreements to the Foundation.
 #### Other Questions?
 
 Question not answered? Subscribe to the[maria-developers mailing list](https://launchpad.net/~maria-developers)\
-and ask there or visit us on our [Zulip channel](https://mariadb.zulipchat.com) or the **#maria** [IRC](../../../../en/irc/) channel on.
+and ask there or visit us on our [Zulip channel](https://mariadb.zulipchat.com) or the **#maria** [IRC](https://github.com/mariadb-corporation/docs-server/blob/test/en/irc/README.md) channel on.
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

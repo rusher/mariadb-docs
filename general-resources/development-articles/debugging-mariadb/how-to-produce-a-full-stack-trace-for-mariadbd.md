@@ -95,7 +95,7 @@ Currently, `debuginfo` packages may not allow the server to print a nice stack t
 
 The MariaDB `yum` repository contains `[debuginfo](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Developer_Guide/intro.debuginfo.html)` packages.
 
-On RHEL, CentOS, Fedora, and other similar Linux distributions, it is highly recommended to install the relevant [RPM package](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/rpm) from MariaDB's repository using [yum](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/rpm/yum) or [dnf](https://en.wikipedia.org/wiki/DNF_(software)). Starting with RHEL 8 and Fedora 22, `yum` has been replaced by `dnf`, which is the next major version of `yum`. However, `yum` commands still work on many systems that use `dnf`. For example:
+On RHEL, CentOS, Fedora, and other similar Linux distributions, it is highly recommended to install the relevant [RPM package](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/rpm) from MariaDB's repository using [yum](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/rpm/yum) or [dnf](https://en.wikipedia.org/wiki/DNF_\(software\)). Starting with RHEL 8 and Fedora 22, `yum` has been replaced by `dnf`, which is the next major version of `yum`. However, `yum` commands still work on many systems that use `dnf`. For example:
 
 ```bash
 sudo yum install MariaDB-server-debuginfo
@@ -267,7 +267,7 @@ For example, to open a core file with `[gdb](https://www.gnu.org/software/gdb/do
 sudo gdb /usr/sbin/mariadbd  /var/lib/mysql/core.932
 ```
 
-Be sure to replace `/usr/sbin/mariadbd` with the path to your `mariadbd` binary (might be `mysqld` on [MariaDB 10.4](broken-reference) and earlier) and to also replace `/var/lib/mysql/core.932` with the path to your core file.
+Be sure to replace `/usr/sbin/mariadbd` with the path to your `mariadbd` binary (might be `mysqld` on [MariaDB 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/general-resources/development-articles/debugging-mariadb/broken-reference/README.md) and earlier) and to also replace `/var/lib/mysql/core.932` with the path to your core file.
 
 Once `[gdb](https://www.gnu.org/software/gdb/documentation)` has opened the core file, if you want to [log all output to a file](https://sourceware.org/gdb/current/onlinedocs/gdb/Logging-Output.html#Logging-Output), then you could execute the following commands:
 
@@ -428,9 +428,9 @@ If you encounter some problem in MariaDB, then MariaDB's developers would apprec
 * [SHOW ENGINE INNODB STATUS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-engine-innodb-status)
 * [SHOW CREATE TABLE {table](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-create-table) (for each table in query) and [EXPLAIN {query}](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/analyze-and-explain-statements/explain) if a query related crash.
 
-A [MariaDB FTP server](../../../kb/en/mariadb-ftp-server/) is available for large and/or sensitive information. Please upload in `.tar.gz` or `.zip` archive.
+A [MariaDB FTP server](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/mariadb-ftp-server/README.md) is available for large and/or sensitive information. Please upload in `.tar.gz` or `.zip` archive.
 
-For very difficult or critical errors, you should consider uploading the following information to the [MariaDB FTP server](../../../kb/en/mariadb-ftp-server/) the following:
+For very difficult or critical errors, you should consider uploading the following information to the [MariaDB FTP server](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/mariadb-ftp-server/README.md) the following:
 
 * Your build of `mariadbd` (if you compiled it), otherwise version information on the mariadb-server package.
 * Your core file.
