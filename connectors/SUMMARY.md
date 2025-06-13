@@ -206,6 +206,7 @@
   * [Other Node.js Connectors](mariadb-connector-nodejs/other-nodejs-connectors/README.md)
     * [JavaScript - mariasql for node.js](mariadb-connector-nodejs/other-nodejs-connectors/javascript-mariasql-for-nodejs.md)
 * [ODBC Connector](mariadb-connector-odbc/README.md)
+  * [About ODBC Connector](mariadb-connector-odbc/about-odbc-connector.md)
   * [Building MariaDB Connector/ODBC from Source](mariadb-connector-odbc/building-mariadb-connectorodbc-from-source.md)
   * [Creating a Data Source with MariaDB Connector/ODBC](mariadb-connector-odbc/creating-a-data-source-with-mariadb-connectorodbc.md)
   * [List of MariaDB Connector/ODBC Releases](mariadb-connector-odbc/list-of-mariadb-connector-odbc-releases.md)
