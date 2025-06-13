@@ -45,7 +45,7 @@
   * [MaxScale Trial](readme/maxscale-trial.md)
 * [Tutorials](mariadb-maxscale-tutorials/README.md)
   * [Analyzing MaxCtrl Create Report Output](mariadb-maxscale-tutorials/analyzing-maxctrl-create-report-output.md)
-* [Reference](reference/README.md)
+* [Reference](reference.md)
   * [MaxScale Module Commands](reference/mariadb-maxscale-2402-maxscale-2402-module-commands.md)
 
 ## Other MaxScale Versions
