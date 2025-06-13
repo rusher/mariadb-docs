@@ -1,5 +1,5 @@
 ---
-description: Release notes for MariaDB 11.4 rolling releases
+description: Release notes for MariaDB 11.4 series.
 layout:
   title:
     visible: true
