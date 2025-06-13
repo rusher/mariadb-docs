@@ -1,8 +1,6 @@
-# google-summer-of-code-2021
+# Google Summer of Code 2021
 
-## Google Summer of Code 2021
-
-This year we are again participating in the [Google Summer of Code](https://summerofcode.withgoogle.com/). The [MariaDB Foundation](https://www.mariadb.org) believes we are making a better database that remains application compatible with MySQL. We also work on making LGPL connectors (currently [C](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c), [ODBC](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-odbc), [Java](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-j), [Node.js](../../../../kb/en/nodejs-connector/)) and on [MariaDB Galera Cluster](../../../../kb/en/galera/), which allows you to scale your reads & writes. And we have [MariaDB ColumnStore](../../../../kb/en/mariadb-columnstore/), which is a columnar storage engine, designed to process petabytes of data with real-time response to analytical queries.
+In 2021, we again participated in the [Google Summer of Code](https://summerofcode.withgoogle.com/). The [MariaDB Foundation](https://www.mariadb.org) believes we are making a better database that remains application compatible with MySQL. We also work on making LGPL connectors (currently [C](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c), [ODBC](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-odbc), [Java](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-j), [Node.js](../../../../kb/en/nodejs-connector/)) and on [MariaDB Galera Cluster](../../../../kb/en/galera/), which allows you to scale your reads & writes. And we have [MariaDB ColumnStore](../../../../kb/en/mariadb-columnstore/), which is a columnar storage engine, designed to process petabytes of data with real-time response to analytical queries.
 
 ## Where to Start
 
@@ -142,7 +140,7 @@ Some have also been added to Columnstore.
 #### Create utility to parse frm files and print their DDL
 
 It would be useful if MariaDB had a utility that was able to parse frm files and print the DDL associated with the table.\
-For example, it would be useful for users who performed a partial backup with Mariabackup:[partial-backup-and-restore-with-mariabackup](broken-reference)\
+For example, it would be useful for users who performed a partial backup with Mariabackup:[partial-backup-and-restore-with-mariabackup](broken-reference/)\
 But they forgot to also backup the table DDL, so they can't restore the tables using the following process:[innodb-file-per-table-tablespaces](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-tablespaces/innodb-file-per-table-tablespaces)\
 mysqlfrm is a tool that already exists that does similar things:[mysqlfrm.py](https://github.com/mysql/mysql-utilities/blob/master/scripts/mysqlfrm.py)\
 But it doesn't seem very user-friendly. It needs to be able to contact the local MariaDB server, and it also needs to be able to spawn a server instance, and it seems to need to be able to create a bunch of files during this process. e.g.:
@@ -284,7 +282,7 @@ select histogram from mysql.column_stats where table_name='t1' ;
 
 this should produce {"hello":"world"}.\
 h2. Milestone-2: produce JSON with histogram(_)._\
-_(_)- the exact format is not specified, for now, print the bucket endpoints and produce output like this:
+&#xNAN;_(_)- the exact format is not specified, for now, print the bucket endpoints and produce output like this:
 
 ```
 [
