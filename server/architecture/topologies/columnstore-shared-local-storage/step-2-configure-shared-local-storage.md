@@ -237,6 +237,6 @@ This page was step 2 of 9.
 
 Next: Step 3: Install MariaDB Enterprise Server.
 
-Copyright © 2025 MariaDB
+<sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
 
 {% @marketo/form formId="4316" %}

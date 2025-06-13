@@ -224,6 +224,6 @@ public class App {
 John Smith <js@example.com>
 ```
 
-Copyright © 2025 MariaDB
+<sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
 
 {% @marketo/form formId="4316" %}

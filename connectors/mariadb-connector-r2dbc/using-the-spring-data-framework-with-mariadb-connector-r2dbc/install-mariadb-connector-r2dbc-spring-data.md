@@ -45,7 +45,7 @@ $ mvn package
 
 During the build process, Maven downloads and installs MariaDB Connector/R2DBC and other dependencies from the relevant repositories.
 
-Copyright © 2025 MariaDB
+<sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
 
 
 {% @marketo/form formId="4316" %}

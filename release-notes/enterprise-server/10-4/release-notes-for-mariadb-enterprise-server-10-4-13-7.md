@@ -130,6 +130,6 @@ CentOS 6, Debian 8, and Red Hat Enterprise Linux 6 are no longer supported as pe
 
 ##
 
-Copyright © 2025 MariaDB
+<sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
 
 {% @marketo/form formid="4316" formId="4316" %}

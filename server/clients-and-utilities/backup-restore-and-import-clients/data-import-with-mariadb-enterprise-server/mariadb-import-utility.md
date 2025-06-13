@@ -178,7 +178,7 @@ $ mariadb-import --host FULLY_QUALIFIED_DOMAIN_NAME --port TCP_PORT \
 The instructions provided above are written for MariaDB Import 10.4 and later, which uses the binary filename of `mariadb-import`.
 
 
-Copyright © 2025 MariaDB
+<sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
 
 
 {% @marketo/form formId="4316" %}

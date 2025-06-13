@@ -97,6 +97,6 @@ The MariaDB Enterprise Docker Registry provides Docker images for MariaDB Enterp
 
 For additional information, see "[Deploy with Docker](deployment-methods.md)".
 
-Copyright © 2025 MariaDB
+<sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
 
 {% @marketo/form formId="4316" %}

@@ -128,6 +128,6 @@ Each column in a table has a specified data type that defines what kind of data 
 | [SET](../string-data-types/set-data-type.md) | Set     | One or more comma-separated values from a set of up to 64 pre-selected options |
 | [TYPE OF](../type-of.md)                     | SQL/PSM | This is special declaration only available inside a stored procedure           |
 
-Copyright © 2025 MariaDB
+<sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
 
 {% @marketo/form formId="4316" %}

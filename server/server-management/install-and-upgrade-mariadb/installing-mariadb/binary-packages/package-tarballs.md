@@ -61,6 +61,6 @@ Once downloaded and extracted, you can:
 
 Installation loads software to the system. This software requires configuration before the database server is ready for use.
 
-Copyright © 2025 MariaDB
+<sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
 
 {% @marketo/form formId="4316" %}

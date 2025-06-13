@@ -19,6 +19,6 @@ For more information, see the following resources:
 * Enabling GCache Encryption
 * Disabling GCache Encryption
 
-Copyright © 2025 MariaDB
+<sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
 
 {% @marketo/form formid="4316" formId="4316" %}

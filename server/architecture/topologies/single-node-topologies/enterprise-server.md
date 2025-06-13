@@ -221,6 +221,6 @@ Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 MariaDB [(none)]>
 ```
 
-Copyright © 2025 MariaDB
+<sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
 
 {% @marketo/form formId="4316" %}

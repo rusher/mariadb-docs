@@ -79,6 +79,6 @@ This page was step 6 of 9.
 
 Next: Step 7: Start and Configure MariaDB MaxScale.
 
-Copyright © 2025 MariaDB
+<sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
 
 {% @marketo/form formId="4316" %}

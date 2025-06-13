@@ -75,6 +75,6 @@ CREATE USER 'USER'@'192.0.2.%'
    IDENTIFIED VIA gssapi USING 'USER@DOMAIN';
 ```
 
-Copyright © 2025 MariaDB
+<sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
 
 {% @marketo/form formId="4316" %}

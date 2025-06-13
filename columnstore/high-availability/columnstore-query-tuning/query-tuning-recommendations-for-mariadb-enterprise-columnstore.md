@@ -121,6 +121,6 @@ To support distributed execution of custom sql, MariaDB Enterprise ColumnStore s
 * The Distributed User Defined Aggregate Functions (UDAF) C++ API allows anyone to create aggregate functions of arbitrary complexity for distributed execution in the ColumnStore storage engine.
 * These functions can also be used as Analytic (Window) functions just like any built-in aggregate function.
 
-Copyright © 2025 MariaDB
+<sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
 
 {% @marketo/form formId="4316" %}

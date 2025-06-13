@@ -20,6 +20,6 @@ The [Xpand Monitor (xpandmon)](../../../../../en/mariadb-maxscale-2208-xpand-mon
 
 * Monitoring Xpand deployments.
 
-Copyright © 2025 MariaDB
+<sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
 
 {% @marketo/form formId="4316" %}

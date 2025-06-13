@@ -47,6 +47,6 @@ In alignment with the [enterprise lifecycle](../../enterprise-server/enterprise-
 * Upgrade Multi-Node MariaDB Enterprise ColumnStore from 6 to 23.10
 * [Major Release Upgrades for MariaDB Enterprise ColumnStore](../)
 
-Copyright © 2025 MariaDB
+<sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
 
 {% @marketo/form formid="4316" formId="4316" %}

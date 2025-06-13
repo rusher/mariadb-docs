@@ -6,6 +6,6 @@ MariaDB Enterprise Server 10.5.4-1 was released on 2020-07-16.
 
 This release substantially aligns to the features made available in [MariaDB Enterprise Server 10.5.4-2](release-notes-for-mariadb-enterprise-server-10-5-4-2.md).
 
-Copyright © 2025 MariaDB
+<sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
 
 {% @marketo/form formid="4316" formId="4316" %}

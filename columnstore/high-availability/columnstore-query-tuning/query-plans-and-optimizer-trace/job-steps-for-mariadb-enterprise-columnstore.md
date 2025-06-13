@@ -137,6 +137,6 @@ In `calGetTrace()` output, a window function step is abbreviated WFS.
 
 Window function steps are evaluated locally by the [ExeMgr process](../../../architecture/mariadb-enterprise-columnstore-query-evaluation.md#exemgr-processfacility) on the initiator/aggregator node.
 
-Copyright © 2025 MariaDB
+<sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
 
 {% @marketo/form formId="4316" %}

@@ -638,6 +638,6 @@ This page was step 8 of 9.
 
 Next: Step 9: Import Data.
 
-Copyright © 2025 MariaDB
+<sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
 
 {% @marketo/form formId="4316" %}

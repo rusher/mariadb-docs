@@ -22,7 +22,7 @@ Using MariaDB Connector/C++ in C++ applications enables design with an object-or
 | Smart Pointers      | Yes           | No                                     |
 | Implements JDBC API | Yes           | No                                     |
 
-Copyright © 2025 MariaDB
+<sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
 
 
 {% @marketo/form formId="4316" %}

@@ -122,6 +122,6 @@ The following statements are routed to all servers:
 * [PREPARE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/prepared-statements/prepare-statement) statements that create prepared statements
 * Internal client commands, such as `QUIT, PING, STMT RESET, and CHANGE USER`.
 
-Copyright © 2025 MariaDB
+<sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
 
 {% @marketo/form formId="4316" %}

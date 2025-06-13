@@ -22,6 +22,6 @@ They support multiple encryption plugins, which are suited for different use cas
 | Supported by MariaDB Community Server  | No              | Yes                           | Yes                   |
 | Supports key rotation                  | Yes             | Yes                           | No                    |
 
-Copyright © 2025 MariaDB
+<sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
 
 {% @marketo/form formid="4316" formId="4316" %}

@@ -165,6 +165,6 @@ MariaDB Enterprise Server 10.5.26-20 was released on 2024-09-09.
 * ([MDEV-34670](https://jira.mariadb.org/browse/MDEV-34670)) IMPORT TABLESPACE unnecessarily traverses tablespaces list
 * ([MDEV-33875](https://jira.mariadb.org/browse/MDEV-33875)) ORDER BY DESC causes ROWID Filter optimization performance degradation
 
-Copyright © 2025 MariaDB
+<sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
 
 {% @marketo/form formid="4316" formId="4316" %}

@@ -193,6 +193,6 @@ innodb_max_undo_log_size=2G
 innodb_purge_rseg_truncate_frequency=64
 ```
 
-Copyright © 2025 MariaDB
+<sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
 
 {% @marketo/form formId="4316" %}

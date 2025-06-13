@@ -9,6 +9,6 @@ This page contains topics that need to be considered when designing applications
 
 Additional information is available [here](../../../../mariadb-maxscale-25/maxscale-25-monitors/mariadb-maxscale-25-mariadb-monitor.md).
 
-Copyright © 2025 MariaDB
+<sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
 
 {% @marketo/form formId="4316" %}

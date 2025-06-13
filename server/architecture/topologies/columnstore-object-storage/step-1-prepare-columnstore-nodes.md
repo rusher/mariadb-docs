@@ -225,6 +225,6 @@ This page was step 1 of 9.
 
 Next: Step 2: Configure Shared Local Storage.
 
-Copyright © 2025 MariaDB
+<sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
 
 {% @marketo/form formId="4316" %}

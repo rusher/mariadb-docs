@@ -77,6 +77,6 @@ This page was step 5 of 5.
 
 This procedure is complete.
 
-Copyright © 2025 MariaDB
+<sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
 
 {% @marketo/form formId="4316" %}

@@ -47,6 +47,6 @@ Replace server1 with the name of the specific server.
 
 When --force is specified, MaxScale immediately close all connections, even if the server is a primary server that has open transactions.
 
-Copyright © 2025 MariaDB
+<sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
 
 {% @marketo/form formId="4316" %}

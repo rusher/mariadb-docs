@@ -69,6 +69,6 @@ In alignment with the [enterprise lifecycle](../../enterprise-server/enterprise-
 | ---- |
 | Note |
 
-Copyright © 2025 MariaDB
+<sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
 
 {% @marketo/form formid="4316" formId="4316" %}

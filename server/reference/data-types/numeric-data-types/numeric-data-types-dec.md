@@ -22,6 +22,6 @@ Create Table: CREATE TABLE `dec_example` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1
 ```
 
-Copyright © 2025 MariaDB
+<sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
 
 {% @marketo/form formId="4316" %}

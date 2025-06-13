@@ -46,6 +46,6 @@ MariaDB MaxScale follows the MariaDB Enterprise release schedule, which can be f
 
 * See the [MariaDB MaxScale 24.02 Changelog](../other-maxscale-versions/mariadb-maxscale-24-02/mariadb-maxscale-2402-maxscale-2402-changelog.md) for a list of what's new in MaxScale 24.02 and prior versions.
 
-Copyright © 2025 MariaDB
+<sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
 
 {% @marketo/form formId="4316" %}

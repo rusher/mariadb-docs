@@ -34,7 +34,7 @@ Create Table: CREATE TABLE "raw_example" (
 ```
 
 
-Copyright © 2025 MariaDB
+<sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
 
 
 {% @marketo/form formId="4316" %}

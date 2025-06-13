@@ -38,6 +38,6 @@ Enterprise ColumnStore's optimizer statistics are not updated automatically. To 
 
 Enterprise ColumnStore does not implement an interface to show optimizer statistics.
 
-Copyright © 2025 MariaDB
+<sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
 
 {% @marketo/form formId="4316" %}

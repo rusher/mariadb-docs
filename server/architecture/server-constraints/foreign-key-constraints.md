@@ -417,6 +417,6 @@ A foreign key constraint requires an index on the column. If a foreign key const
 
 When the [foreign\_key\_checks](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#foreign_key_checks) system variable is disabled, it is possible to drop the index used by a foreign key constraint. When the [foreign\_key\_checks](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#foreign_key_checks) system variable is re-enabled, InnoDB will have no way to enforce the foreign key constraint, so all operations that could potentially violate the foreign key constraint will fail.
 
-Copyright © 2025 MariaDB
+<sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
 
 {% @marketo/form formId="4316" %}

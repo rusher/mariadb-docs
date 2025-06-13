@@ -10,6 +10,6 @@ MaxScale's [Aurora Monitor (auroramon)](../../../../mariadb-maxscale-25/maxscale
 
 Additional information is available [here](../../../../mariadb-maxscale-25/maxscale-25-monitors/mariadb-maxscale-25-aurora-monitor.md).
 
-Copyright © 2025 MariaDB
+<sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
 
 {% @marketo/form formId="4316" %}

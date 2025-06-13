@@ -161,4 +161,4 @@ Navigation in the procedure ["Deploy Primary/Replica Topology"](https://mariadb.
 
 * Next: [Step 1: Install MariaDB Enterprise Server](https://mariadb.com/docs/server/deploy/topologies/primary-replica/enterprise-server-11-4/install-es/)
 
-Copyright © 2025 MariaDB\
+<sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>\

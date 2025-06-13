@@ -11,6 +11,6 @@
 | Configuring MaxScale for MaxGUI      | [Configuring MaxScale for MaxGUI](maxgui/configuring-maxscale-for-maxgui.md)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 | Setting a Server to Maintenance Mode | <p></p><ul><li><a href="maxgui/">Setting a Server to Maintenance Mode in MaxScale with MaxGUI</a></li><li><a href="administrative-tools-for-mariadb-maxscale-maxctrl/">MaxScale with MaxCtrl</a></li></ul>                                                                                                                                                                                                                                                                                                                                                                                                                              |
 
-Copyright © 2025 MariaDB
+<sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
 
 {% @marketo/form formId="4316" %}

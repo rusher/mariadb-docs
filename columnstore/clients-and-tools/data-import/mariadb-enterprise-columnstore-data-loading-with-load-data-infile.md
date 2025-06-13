@@ -226,6 +226,6 @@ MariaDB Enterprise ColumnStore ignores the `ON DUPLICATE KEY` clause.
 
 Please ensure that duplicate data is removed prior to performing a bulk data load.
 
-Copyright © 2025 MariaDB
+<sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
 
 {% @marketo/form formId="4316" %}

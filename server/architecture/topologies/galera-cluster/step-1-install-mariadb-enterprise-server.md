@@ -95,6 +95,6 @@ This page was step 1 of 6.
 
 Next: Step 2: Start and Configure MariaDB Enterprise Server
 
-Copyright © 2025 MariaDB
+<sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
 
 {% @marketo/form formId="4316" %}

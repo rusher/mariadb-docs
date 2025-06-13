@@ -130,6 +130,6 @@ Some components of MariaDB Enterprise Server might not support all platforms. Fo
 
 ##
 
-Copyright © 2025 MariaDB
+<sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
 
 {% @marketo/form formid="4316" formId="4316" %}

@@ -12,6 +12,6 @@ This page contains topics that need to be considered when designing applications
 
 Additional information is available [here](../../../mariadb-maxscale-25/maxscale-25-routers/mariadb-maxscale-25-readwritesplit.md).
 
-Copyright © 2025 MariaDB
+<sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
 
 {% @marketo/form formId="4316" %}

@@ -81,6 +81,6 @@ How backups are stored can impact backup viability. Backup storage also presents
 * Business requirements may define a need for offsite storage of backups as a means of guaranteeing delivery on RPO. In these cases you should also consider onsite storage of backups as a means of guaranteeing delivery on RTO.
 * Retention requirements and the run-rate of new data production can aid in capacity planning.
 
-Copyright © 2025 MariaDB
+<sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
 
 {% @marketo/form formId="4316" %}

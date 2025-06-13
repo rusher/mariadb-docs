@@ -74,6 +74,6 @@ Creating a local mirror of the MariaDB Enterprise Repository or the MariaDB Comm
 
 1. Secure the repository mirror to prevent outside access.
 
-Copyright © 2025 MariaDB
+<sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
 
 {% @marketo/form formId="4316" %}

@@ -177,6 +177,6 @@ This page was step 6 of 7.
 
 Next: Step 7: Test MariaDB MaxScale
 
-Copyright © 2025 MariaDB
+<sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
 
 {% @marketo/form formId="4316" %}

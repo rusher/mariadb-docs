@@ -67,6 +67,6 @@ $ maxctrl --secure \
 
 Replace `maxscale_rest_admin and maxscale_rest_admin_password` with the actual user and password.
 
-Copyright © 2025 MariaDB
+<sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
 
 {% @marketo/form formId="4316" %}

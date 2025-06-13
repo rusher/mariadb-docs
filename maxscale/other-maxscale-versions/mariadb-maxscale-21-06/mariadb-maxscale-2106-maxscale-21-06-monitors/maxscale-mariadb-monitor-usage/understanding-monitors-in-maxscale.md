@@ -20,6 +20,6 @@ MaxScale supports different monitors for different kinds of deployments:
 | Xpand                                                                                                         | [Xpand Monitor (xpandmon)](../../../../../en/mariadb-maxscale-2208-xpand-monitor/)                                        |
 | Amazon Aurora                                                                                                 | Aurora Monitor (auroramon)                                                                                                |
 
-Copyright © 2025 MariaDB
+<sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
 
 {% @marketo/form formId="4316" %}

@@ -60,6 +60,6 @@ INSERT INTO ab(col1) VALUES (1) ON DUPLICATE KEY UPDATE col2=2;INSERT INTO TABLE
 
 [Install MariaDB Connector/C++](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-cpp/install-mariadb-connector-cpp)
 
-Copyright © 2025 MariaDB
+<sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
 
 {% @marketo/form formid="4316" formId="4316" %}

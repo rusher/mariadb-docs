@@ -30,6 +30,6 @@ When using connection redirection, error "Connection is closed. Cannot send anyt
 * [Report Issues](https://jira.mariadb.org/browse/R2DBC)
 * [Source code](https://github.com/mariadb-corporation/mariadb-connector-r2dbc/)
 
-Copyright © 2025 MariaDB
+<sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
 
 {% @marketo/form formid="4316" formId="4316" %}

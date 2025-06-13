@@ -6,6 +6,6 @@ A regression has been reported for MariaDB Enterprise Server 10.5.19-14, which r
 
 Customers who have deployed MariaDB Enterprise Server 10.5.19-14 may contact MariaDB Support for assistance or upgrade to the next maintenance release. The next maintenance release of MariaDB Enterprise Server is scheduled for 2023-06-12.
 
-Copyright © 2025 MariaDB
+<sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
 
 {% @marketo/form formid="4316" formId="4316" %}

@@ -161,4 +161,4 @@ Navigation in the Single-Node Enterprise ColumnStore topology with Object storag
 
 Next: Step 1: Install MariaDB Enterprise ColumnStore.
 
-Copyright © 2025 MariaDB
+<sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>

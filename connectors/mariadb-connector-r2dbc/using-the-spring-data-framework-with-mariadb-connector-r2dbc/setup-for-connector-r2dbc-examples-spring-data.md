@@ -29,7 +29,7 @@ GRANT ALL PRIVILEGES
    TO 'connr2dbc_test'@'192.0.2.50';
 ```
 
-Copyright © 2025 MariaDB
+<sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
 
 
 {% @marketo/form formId="4316" %}

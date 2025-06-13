@@ -32,6 +32,6 @@ The [Read/Write Split Router (readwritesplit)](../../../mariadb-maxscale-23-02/m
 * write-split-router-usageDeploy MaxScale with MariaDB Monitor and Read/Write Split Router
 * [Deploy MaxScale with Galera Monitor and Read/Write Split Router](../../mariadb-maxscale-2106-maxscale-21-06-monitors/maxscale-mariadb-monitor-usage/maxscale-mariadb-monitor-usage-galera-monitor.md)
 
-Copyright © 2025 MariaDB
+<sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
 
 {% @marketo/form formId="4316" %}

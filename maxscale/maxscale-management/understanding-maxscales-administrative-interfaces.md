@@ -20,6 +20,6 @@ MaxScale supports different administrative interfaces for different kinds of env
 | [MaxGUI](maxgui/operating-maxscale-with-maxgui/)                                              | Graphical administrative utility.         |
 | [REST API](administrative-tools-for-mariadb-maxscale-rest-api/)                               | REST API for programmatic administration. |
 
-Copyright © 2025 MariaDB
+<sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
 
 {% @marketo/form formId="4316" %}

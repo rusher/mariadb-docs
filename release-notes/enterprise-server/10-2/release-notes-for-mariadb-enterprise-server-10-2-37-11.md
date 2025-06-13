@@ -104,6 +104,6 @@ Some components of MariaDB Enterprise Server might not support all platforms. Fo
 
 In alignment with the [MariaDB Engineering Policies](https://mariadb.com/engineering-policies/), this release does not include CentOS 6.x and RHEL 6.x packages.
 
-Copyright © 2025 MariaDB
+<sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
 
 {% @marketo/form formid="4316" formId="4316" %}

@@ -114,6 +114,6 @@ This page was step 2 of 5.
 
 Next: Step 3: Start and Configure MariaDB Enterprise ColumnStore.
 
-Copyright © 2025 MariaDB
+<sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
 
 {% @marketo/form formId="4316" %}

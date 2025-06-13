@@ -16,6 +16,6 @@ Deploy MaxScale with MariaDB Monitor and Read/Write Split Router
 
 Deploy MaxScale with MariaDB Monitor and Read Connection Router
 
-Copyright © 2025 MariaDB
+<sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
 
 {% @marketo/form formId="4316" %}
