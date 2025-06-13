@@ -1,6 +1,5 @@
 ---
 description: Remove from the navigation. Discuss those pages with Max.
-icon: question
 ---
 
 # Google Season of Docs
