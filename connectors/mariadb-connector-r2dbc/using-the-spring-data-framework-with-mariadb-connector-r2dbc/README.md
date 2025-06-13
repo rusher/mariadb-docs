@@ -1,3 +1,10 @@
+---
+description: >-
+  Learn to integrate MariaDB Connector/R2DBC with Spring Data Framework. This
+  guide covers reactive, non-blocking data access using Spring Data R2DBC for
+  efficient and modern Java applications.
+---
+
 # Using the Spring Data Framework with MariaDB Connector/R2DBC
 
 ## Overview
@@ -25,6 +32,5 @@ Spring Data R2DBC supports many features from the Spring Data framework:
 | Transaction Management | Yes       |
 
 ## Resources
-
 
 {% @marketo/form formId="4316" %}
