@@ -32,7 +32,7 @@ Additional information on the release cycle for MariaDB Enterprise Server can be
 
 ### Upcoming Minor and Maintenance Releases <a href="#upcoming-minor-and-maintenance-releases" id="upcoming-minor-and-maintenance-releases"></a>
 
-Planned releases of MariaDB Enterprise Server are scheduled.
+Planned releases of MariaDB Enterprise Server are [scheduled](enterprise-server-release-schedule.md).
 
 ### Obtaining MariaDB Enterprise Server <a href="#obtaining-mariadb-enterprise-server" id="obtaining-mariadb-enterprise-server"></a>
 
