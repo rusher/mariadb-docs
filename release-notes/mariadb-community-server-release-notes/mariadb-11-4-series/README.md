@@ -1,5 +1,5 @@
 ---
-description: Release notes for MariaDB 11.4 series.
+description: Release notes for MariaDB Community Server 11.4 series releases
 layout:
   title:
     visible: true
