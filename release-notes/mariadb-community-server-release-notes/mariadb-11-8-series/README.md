@@ -1,4 +1,5 @@
 ---
+description: Release notes for MariaDB Community Server 11.8 series
 layout:
   title:
     visible: true
