@@ -39,6 +39,5 @@ layout:
 * [Contact Us](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/about/contact-us)
 * [Learn about the MariaDB Community](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/community)
 
-<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}
