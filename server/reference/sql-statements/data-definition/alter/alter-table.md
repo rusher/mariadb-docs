@@ -109,7 +109,7 @@ When adding a `UNIQUE` index on a column (or a set of columns) which have duplic
 
 This statement can also be used to rename a table. For details see [RENAME TABLE](../rename-table.md).
 
-When an index is created, the storage engine may use a configurable buffer in the process. Incrementing the buffer speeds up the index creation. [Aria](../../../storage-engines/aria/) and [MyISAM](../../../storage-engines/myisam-storage-engine/) allocate a buffer whose size is defined by [aria\_sort\_buffer\_size](../../../storage-engines/aria/aria-system-variables.md#aria_sort_buffer_size) or [myisam\_sort\_buffer\_size](../../../storage-engines/myisam-storage-engine/myisam-system-variables.md#myisam_sort_buffer_size), also used for [REPAIR TABLE](../../table-statements/repair-table.md). [InnoDB](../../../storage-engines/innodb/) allocates three buffers whose size is defined by [innodb\_sort\_buffer\_size](../../../storage-engines/innodb/innodb-system-variables.md#innodb_sort_buffer_size).
+When an index is created, the storage engine may use a configurable buffer in the process. Incrementing the buffer speeds up the index creation. [Aria](../../../../server-usage/storage-engines/aria/) and [MyISAM](../../../../server-usage/storage-engines/myisam-storage-engine/) allocate a buffer whose size is defined by [aria\_sort\_buffer\_size](../../../../server-usage/storage-engines/aria/aria-system-variables.md#aria_sort_buffer_size) or [myisam\_sort\_buffer\_size](../../../../server-usage/storage-engines/myisam-storage-engine/myisam-system-variables.md#myisam_sort_buffer_size), also used for [REPAIR TABLE](../../table-statements/repair-table.md). [InnoDB](../../../../server-usage/storage-engines/innodb/) allocates three buffers whose size is defined by [innodb\_sort\_buffer\_size](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_sort_buffer_size).
 
 ## Privileges
 
@@ -121,7 +121,7 @@ If you are renaming a table, then it also requires the [DROP](../../account-mana
 
 Online DDL is supported with the [ALGORITHM](alter-table.md#algorithm) and [LOCK](alter-table.md#lock) clauses.
 
-See [InnoDB Online DDL Overview](../../../storage-engines/innodb/innodb-online-ddl/innodb-online-ddl-overview.md) for more information on online DDL with [InnoDB](../../../storage-engines/innodb/).
+See [InnoDB Online DDL Overview](../../../../server-usage/storage-engines/innodb/innodb-online-ddl/innodb-online-ddl-overview.md) for more information on online DDL with [InnoDB](../../../../server-usage/storage-engines/innodb/).
 
 ### ALTER ONLINE TABLE
 
@@ -210,7 +210,7 @@ If you are using `IF NOT_EXISTS` the column will not be added if it was not ther
 
 The `FIRST` and `AFTER` clauses affect the physical order of columns in the datafile. Use `FIRST` to add a column in the first (leftmost) position, or `AFTER` followed by a column name to add the new column in any other position. Note that, nowadays, the physical position of a column is usually irrelevant.
 
-See also [Instant ADD COLUMN for InnoDB](../../../storage-engines/innodb/innodb-online-ddl/instant-add-column-for-innodb.md).
+See also [Instant ADD COLUMN for InnoDB](../../../../server-usage/storage-engines/innodb/innodb-online-ddl/instant-add-column-for-innodb.md).
 
 ### DROP COLUMN
 
@@ -334,7 +334,7 @@ See [Foreign Keys](../../../../ha-and-performance/optimization-and-tuning/optimi
 
 Add a plain index.
 
-Plain indexes are regular indexes that are not unique, and are not acting as a primary key or a foreign key. They are also not the "specialized" `FULLTEXT` or `SPATIAL` indexes. For limits on InnoDB indexes, see [InnoDB Limitations](../../../sql-statements-and-structure/sql-statements/data-definition/alter/InnoDB_Limitations/).
+Plain indexes are regular indexes that are not unique, and are not acting as a primary key or a foreign key. They are also not the "specialized" `FULLTEXT` or `SPATIAL` indexes. For limits on InnoDB indexes, see [InnoDB Limitations](../../../../server-usage/storage-engines/innodb/innodb-limitations.md).
 
 See [Getting Started with Indexes: Plain Indexes](../../../../mariadb-quickstart-guides/mariadb-indexes-guide.md#plain-indexes) for more information.
 
@@ -511,7 +511,7 @@ The `FORCE` option can be used instead. For example, :
 ALTER TABLE tab_name FORCE;
 ```
 
-With InnoDB, the table rebuild will only reclaim unused space (i.e. the space previously used for deleted rows) if the [innodb\_file\_per\_table](../../../storage-engines/innodb/innodb-system-variables.md#innodb_file_per_table) system variable is set to `ON` (the default). If the system variable is `OFF`, then the space will not be reclaimed, but it will be-re-used for new data that's later added.
+With InnoDB, the table rebuild will only reclaim unused space (i.e. the space previously used for deleted rows) if the [innodb\_file\_per\_table](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_file_per_table) system variable is set to `ON` (the default). If the system variable is `OFF`, then the space will not be reclaimed, but it will be-re-used for new data that's later added.
 
 The rebuild may fail if conditions are violated due to a change in the [sql\_mode](../../../../server-management/variables-and-modes/sql-mode.md). For example:
 
@@ -544,17 +544,17 @@ Reduces the number of HASH or KEY partitions in a table. See [Partitioning Overv
 
 #### CONVERT PARTITION / TABLE
 
-`CONVERT PARTITION` and `CONVERT TABLE` were introduced in [MariaDB 10.7.1](broken-reference/).
+`CONVERT PARTITION` and `CONVERT TABLE` were introduced in [MariaDB 10.7.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-7-series/mariadb-1071-release-notes).
 
 `CONVERT PARTITION` can be used to remove a partition from a table and make this an ordinary table. For example:
 
-```
+```sql
 ALTER TABLE partitioned_table CONVERT PARTITION part1 TO TABLE normal_table;
 ```
 
 `CONVERT TABLE` will take an existing table and move this to another table as its own partition with a specified [partition definition](../create/create-table.md#partitions). For example the following moves `normal_table` to a partition of `partitioned_table` with a definition that its values, based on the `PARTITION BY` of the `partitioned_table`, are less than 12345.
 
-```
+```sql
 ALTER TABLE partitioned_table CONVERT TABLE normal_table 
   TO PARTITION part1 VALUES LESS THAN (12345);
 ```
@@ -577,7 +577,7 @@ From [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-commu
 
 See [Partitioning Overview: Exchanging Partitions](../../../../server-usage/partitioning-tables/partitioning-overview.md#exchanging-partitions) for more details.
 
-See also [copying InnoDB's transportable tablespaces](../../../storage-engines/innodb/innodb-tablespaces/innodb-file-per-table-tablespaces.md#copying-transportable-tablespaces).
+See also [copying InnoDB's transportable tablespaces](../../../../server-usage/storage-engines/innodb/innodb-tablespaces/innodb-file-per-table-tablespaces.md#copying-transportable-tablespaces).
 
 #### OPTIMIZE PARTITION
 
@@ -599,7 +599,7 @@ See [Partitioning Overview: Truncating Partitions](../../../../server-usage/part
 
 This is used to discard an InnoDB table's tablespace.
 
-See [copying InnoDB's transportable tablespaces](../../../storage-engines/innodb/innodb-tablespaces/innodb-file-per-table-tablespaces.md#copying-transportable-tablespaces) for more information.
+See [copying InnoDB's transportable tablespaces](../../../../server-usage/storage-engines/innodb/innodb-tablespaces/innodb-file-per-table-tablespaces.md#copying-transportable-tablespaces) for more information.
 
 ### IMPORT TABLESPACE
 
@@ -619,7 +619,7 @@ The `ALTER TABLE` statement supports the `ALGORITHM` clause. This clause is one 
 * `ALGORITHM=NOCOPY`
 * `ALGORITHM=INSTANT`
 
-See [InnoDB Online DDL Overview: ALGORITHM](../../../storage-engines/innodb/innodb-online-ddl/innodb-online-ddl-overview.md#algorithm) for information on how the `ALGORITHM` clause affects InnoDB.
+See [InnoDB Online DDL Overview: ALGORITHM](../../../../server-usage/storage-engines/innodb/innodb-online-ddl/innodb-online-ddl-overview.md#alter-algorithms) for information on how the `ALGORITHM` clause affects InnoDB.
 
 #### ALGORITHM=DEFAULT
 
@@ -639,7 +639,7 @@ The [old\_alter\_table](../../../../ha-and-performance/optimization-and-tuning/s
 
 When `ALGORITHM=COPY` is set, MariaDB essentially does the following operations:
 
-```
+```sql
 -- Create a temporary table with the new definition
 CREATE TEMPORARY TABLE tmp_tab (
 ...
@@ -672,7 +672,7 @@ A more accurate name would have been `ALGORITHM=ENGINE`, where `ENGINE` refers t
 
 If an [ALTER TABLE](alter-table.md) operation supports `ALGORITHM=INPLACE`, then it can be performed using optimizations by the underlying storage engine, but it may rebuilt.
 
-See [InnoDB Online DDL Operations with ALGORITHM=INPLACE](../../../storage-engines/innodb/innodb-online-ddl/innodb-online-ddl-operations-with-the-inplace-alter-algorithm.md) for more.
+See [InnoDB Online DDL Operations with ALGORITHM=INPLACE](../../../../server-usage/storage-engines/innodb/innodb-online-ddl/innodb-online-ddl-operations-with-the-inplace-alter-algorithm.md) for more.
 
 #### ALGORITHM=NOCOPY
 
@@ -682,7 +682,7 @@ If an `ALTER TABLE` operation supports `ALGORITHM=NOCOPY`, then it can be perfor
 
 If `ALGORITHM=NOCOPY` is specified for an `ALTER TABLE` operation that does not support `ALGORITHM=NOCOPY`, then an error will be raised. In this case, raising an error is preferable, if the alternative is for the operation to rebuild the clustered index, and perform unexpectedly slowly.
 
-See [InnoDB Online DDL Operations with ALGORITHM=NOCOPY](../../../storage-engines/innodb/innodb-online-ddl/innodb-online-ddl-operations-with-the-nocopy-alter-algorithm.md) for more.
+See [InnoDB Online DDL Operations with ALGORITHM=NOCOPY](../../../../server-usage/storage-engines/innodb/innodb-online-ddl/innodb-online-ddl-operations-with-the-nocopy-alter-algorithm.md) for more.
 
 #### ALGORITHM=INSTANT
 
@@ -692,7 +692,7 @@ If an `ALTER TABLE` operation supports `ALGORITHM=INSTANT`, then it can be perfo
 
 If `ALGORITHM=INSTANT` is specified for an `ALTER TABLE` operation that does not support `ALGORITHM=INSTANT`, then an error will be raised. In this case, raising an error is preferable, if the alternative is for the operation to modify data files, and perform unexpectedly slowly.
 
-See [InnoDB Online DDL Operations with ALGORITHM=INSTANT](../../../storage-engines/innodb/innodb-online-ddl/innodb-online-ddl-operations-with-the-instant-alter-algorithm.md) for more.
+See [InnoDB Online DDL Operations with ALGORITHM=INSTANT](../../../../server-usage/storage-engines/innodb/innodb-online-ddl/innodb-online-ddl-operations-with-the-instant-alter-algorithm.md) for more.
 
 ### LOCK
 
@@ -718,9 +718,9 @@ Different storage engines support different locking strategies for different ope
 
 If the `LOCK` clause is not explicitly set, then the operation uses `LOCK=DEFAULT`.
 
-[ALTER ONLINE TABLE](https://mariadb.com/kb/en/alter-online-table) is equivalent to `LOCK=NONE`. Therefore, the [ALTER ONLINE TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-online-table/) statement can be used to ensure that your `ALTER TABLE` operation allows all concurrent DML.
+[ALTER ONLINE TABLE](alter-table.md#alter-online-table) is equivalent to `LOCK=NONE`. Therefore, the [ALTER ONLINE TABLE](alter-table.md#alter-online-table) statement can be used to ensure that your `ALTER TABLE` operation allows all concurrent DML.
 
-See [InnoDB Online DDL Overview: LOCK](../../../storage-engines/innodb/innodb-online-ddl/innodb-online-ddl-overview.md#lock) for information on how the `LOCK` clause affects InnoDB.
+See [InnoDB Online DDL Overview: LOCK](../../../../server-usage/storage-engines/innodb/innodb-online-ddl/innodb-online-ddl-overview.md#supported-alter-locking-strategies) for information on how the `LOCK` clause affects InnoDB.
 
 ### Index Options
 
@@ -738,7 +738,7 @@ Stage: 1 of 2 'copy to tmp table'    46% of stage
 
 The progress report is also shown in the output of the [SHOW PROCESSLIST](../../administrative-sql-statements/show/show-processlist.md) statement and in the contents of the [information\_schema.PROCESSLIST](../../administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-processlist-table.md) table.
 
-See [Progress Reporting](broken-reference/) for more information.
+See [Progress Reporting](alter-table.md#progress-reporting) for more information.
 
 ## Aborting ALTER TABLE Operations
 
@@ -766,37 +766,37 @@ Before [MariaDB 10.8.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-c
 
 Adding a new column:
 
-```
+```sql
 ALTER TABLE t1 ADD x INT;
 ```
 
 Dropping a column:
 
-```
+```sql
 ALTER TABLE t1 DROP x;
 ```
 
 Modifying the type of a column:
 
-```
+```sql
 ALTER TABLE t1 MODIFY x bigint unsigned;
 ```
 
 Changing the name and type of a column:
 
-```
+```sql
 ALTER TABLE t1 CHANGE a b bigint unsigned auto_increment;
 ```
 
 Combining multiple clauses in a single ALTER TABLE statement, separated by commas:
 
-```
+```sql
 ALTER TABLE t1 DROP x, ADD x2 INT,  CHANGE y y2 INT;
 ```
 
 Changing the storage engine and adding a comment:
 
-```
+```sql
 ALTER TABLE t1 
   ENGINE = InnoDB 
   COMMENT = 'First of three tables containing usage info';
@@ -804,19 +804,19 @@ ALTER TABLE t1
 
 Rebuilding the table (the previous example will also rebuild the table if it was already InnoDB):
 
-```
+```sql
 ALTER TABLE t1 FORCE;
 ```
 
 Dropping an index:
 
-```
+```sql
 ALTER TABLE rooms DROP INDEX u;
 ```
 
 Adding a unique index:
 
-```
+```sql
 ALTER TABLE rooms ADD UNIQUE INDEX u(room_number);
 ```
 
@@ -849,7 +849,7 @@ of which the first one gets delivered to replicas before ALTER is taken to actua
 * [DROP TABLE](../drop/drop-table.md)
 * [Character Sets and Collations](../../../data-types/string-data-types/character-sets/supported-character-sets-and-collations.md)
 * [SHOW CREATE TABLE](../../administrative-sql-statements/show/show-create-table.md)
-* [Instant ADD COLUMN for InnoDB](../../../storage-engines/innodb/innodb-online-ddl/instant-add-column-for-innodb.md)
+* [Instant ADD COLUMN for InnoDB](../../../../server-usage/storage-engines/innodb/innodb-online-ddl/instant-add-column-for-innodb.md)
 
 <sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
