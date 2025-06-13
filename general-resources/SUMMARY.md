@@ -71,7 +71,7 @@
     * [google-season-of-docs-2020](community/contributing-participating/google-season-of-docs/google-season-of-docs-2020.md)
   * [Google Summers of Code](community/contributing-participating/google-summers-of-code/README.md)
     * [google-summer-of-code-2013](community/contributing-participating/google-summers-of-code/google-summer-of-code-2013.md)
-    * [google-summer-of-code-2014](community/contributing-participating/google-summers-of-code/google-summer-of-code-2014.md)
+    * [Google Summer of Code 2014](community/contributing-participating/google-summers-of-code/google-summer-of-code-2014.md)
     * [Google Summer of Code 2015](community/contributing-participating/google-summers-of-code/google-summer-of-code-2015.md)
     * [Google Summer of Code 2016](community/contributing-participating/google-summers-of-code/google-summer-of-code-2016.md)
     * [Google Summer of Code 2017](community/contributing-participating/google-summers-of-code/google-summer-of-code-2017.md)
