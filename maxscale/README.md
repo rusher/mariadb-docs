@@ -19,3 +19,4 @@ layout:
 
 # MariaDB MaxScale
 
+{% content-ref url="maxscale-quickstart-guides/" %} Quickstart Guides {% endcontent-ref %}
