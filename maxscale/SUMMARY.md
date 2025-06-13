@@ -1,8 +1,6 @@
 # Table of contents
 
 * [MariaDB MaxScale](README.md)
-  * [MaxScale Overview](readme/maxscale-overview.md)
-  * [MaxScale Trial](readme/maxscale-trial.md)
 * [Quickstart Guides](maxscale-quickstart-guides/README.md)
   * [MariaDB MaxScale Guide](maxscale-quickstart-guides/mariadb-maxscale-guide.md)
   * [MariaDB MaxScale Installation Guide](maxscale-quickstart-guides/mariadb-maxscale-installation-guide.md)
@@ -42,7 +40,9 @@
   * [Authentication Modules](maxscale-security/mariadb-maxscale-authentication-modules-guide.md)
   * [MariaDB MaxScale Authentication](maxscale-security/mariadb-maxscale-authentication/README.md)
     * [Native Authenticator](maxscale-security/mariadb-maxscale-authentication/native-authenticator.md)
-* [MaxScale Use Cases](maxscale-use-cases.md)
+* [MaxScale Use Cases](maxscale-use-cases/README.md)
+  * [MaxScale Overview](maxscale-use-cases/maxscale-overview.md)
+  * [MaxScale Trial](maxscale-use-cases/maxscale-trial.md)
 * [Tutorials](mariadb-maxscale-tutorials/README.md)
   * [Analyzing MaxCtrl Create Report Output](mariadb-maxscale-tutorials/analyzing-maxctrl-create-report-output.md)
 * [Reference](reference.md)
