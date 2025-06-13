@@ -1,3 +1,17 @@
+---
+layout:
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: false
+---
+
 # MariaDB ColumnStore Release Notes
 
 Release notes and other documentation for ColumnStore is also available in the Enterprise docs section of the MariaDB website. For example:
