@@ -4,6 +4,8 @@ description: MariaDB Primer
 
 # A MariaDB Primer Guide
 
+{% include "https://app.gitbook.com/s/GxVnu02ec8KJuFSxmB93/~/reusable/G9gr3KMrlccJhmFh3SNT/" %}
+
 This primer offers a quick jump-start for beginners using an existing MariaDB database via the `mariadb` command-line client. Learn how to log in, understand basic database concepts, and perform essential SQL operations like creating tables, inserting data, and retrieving or modifying records.
 
 ### Logging into MariaDB

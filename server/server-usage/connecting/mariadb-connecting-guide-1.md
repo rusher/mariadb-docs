@@ -1,5 +1,7 @@
 # Connecting to MariaDB Server
 
+{% include "https://app.gitbook.com/s/GxVnu02ec8KJuFSxmB93/~/reusable/G9gr3KMrlccJhmFh3SNT/" %}
+
 This article covers connecting to MariaDB and the basic connection parameters. If you are completely new to MariaDB, take a look at [A MariaDB Primer](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/a-mariadb-primer/README.md) first.
 
 In order to connect to the MariaDB server, the client software must provide the correct connection parameters. The client software will most often be the [mariadb client](../../clients-and-utilities/mariadb-client/), used for entering statements from the command line, but the same concepts apply to any client, such as a [graphical client](../../clients-and-utilities/graphical-and-enhanced-clients/), a client to run backups such as [mariadb-dump](../../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md), etc. The rest of this article assumes that the mariadb command line client is used.

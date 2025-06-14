@@ -1,5 +1,7 @@
 # Basic SQL Debugging
 
+{% include "https://app.gitbook.com/s/GxVnu02ec8KJuFSxmB93/~/reusable/G9gr3KMrlccJhmFh3SNT/" %}
+
 ## Designing Queries
 
 Following a few conventions makes finding errors in queries a lot easier,\

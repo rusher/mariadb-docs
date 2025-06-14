@@ -1,5 +1,7 @@
 # Connecting to MariaDB Guide
 
+{% include "https://app.gitbook.com/s/GxVnu02ec8KJuFSxmB93/~/reusable/G9gr3KMrlccJhmFh3SNT/" %}
+
 This guide details the parameters for connecting to a MariaDB server using client programs like `mariadb`. Learn about default connection behaviors and how to use various command-line options to customize your connection, including secure TLS configurations.
 
 While the examples focus on the `mariadb` command-line client, the concepts apply to other clients like graphical interfaces or backup utilities (e.g., `mariadb-dump`). If you are completely new to MariaDB, refer to [A MariaDB Primer](mariadb-usage-guide.md) first.

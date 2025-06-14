@@ -1,5 +1,7 @@
 # A MariaDB Primer
 
+{% include "https://app.gitbook.com/s/GxVnu02ec8KJuFSxmB93/~/reusable/G9gr3KMrlccJhmFh3SNT/" %}
+
 This primer is designed to teach you the basics of getting information into and out of an existing MariaDB database using the [mariadb](../../clients-and-utilities/mariadb-client/mariadb-command-line-client.md) command-line client program. It's not a complete reference and will not touch on any advanced topics. It is just a quick jump-start into using MariaDB.
 
 #### Logging into MariaDB
