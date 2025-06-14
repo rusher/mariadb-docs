@@ -1,5 +1,7 @@
 # Vector System Variables
 
+{% include "https://app.gitbook.com/s/GxVnu02ec8KJuFSxmB93/~/reusable/pBQsCgBA6SJpi0m3pZuk/" %}
+
 **MariaDB starting with** [**11.7.1**](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/mariadb-1171-release-notes/README.md)
 
 Vectors were introduced in [MariaDB 11.7.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-11-7-rolling-releases/mariadb-11-7-1-release-notes)
