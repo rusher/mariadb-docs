@@ -28,7 +28,7 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #1d2d8dd](https://github.com/mariadb-corporation/mariadb-connector-j/commit/1d2d8dd) - \[misc] code style prettier correction
 * [Revision #8754b82](https://github.com/mariadb-corporation/mariadb-connector-j/commit/8754b82) - \[misc] update test for timeout
 * [Revision #dc361ac](https://github.com/mariadb-corporation/mariadb-connector-j/commit/dc361ac) - Merge branch 'master' into develop
-* [Revision #f63f42c](https://github.com/mariadb-corporation/mariadb-connector-j/commit/f63f42c) - \[misc] correcting [mariadb 5.5](broken-reference) timeout test
+* [Revision #f63f42c](https://github.com/mariadb-corporation/mariadb-connector-j/commit/f63f42c) - \[misc] correcting [mariadb 5.5](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/connectors/node.js/changelogs/mariadb-connector-nodejs-2x-changelogs/broken-reference/README.md) timeout test
 * [Revision #bd8a2dd](https://github.com/mariadb-corporation/mariadb-connector-j/commit/bd8a2dd) - \[[CONJS-128](https://jira.mariadb.org/browse/CONJS-128)] error when using multipleStatements with metaAsArray #106
 * [Revision #a0551d8](https://github.com/mariadb-corporation/mariadb-connector-j/commit/a0551d8) - \[misc] mysql 8 error detection correction
 * [Revision #a6a09f5](https://github.com/mariadb-corporation/mariadb-connector-j/commit/a6a09f5) - \[misc] timeout test correction
@@ -37,7 +37,7 @@ details of the revision and view diffs of the code modified in that revision.
 Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
 
 MariaDB may already be included in your favorite OS distribution. More\
-information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/readme-1)\
+information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-including-mariadb)\
 page.
 
 {% @marketo/form formid="4316" formId="4316" %}

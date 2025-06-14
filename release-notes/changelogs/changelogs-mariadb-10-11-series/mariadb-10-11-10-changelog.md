@@ -30,7 +30,7 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-34830](https://jira.mariadb.org/browse/MDEV-34830): LSN in the future is not being treated as serious corruption
 * [Revision #3b58c6b93f](https://github.com/MariaDB/server/commit/3b58c6b93f)\
   2024-10-04 18:40:34 +0200
-  * [MDEV-35079](https://jira.mariadb.org/browse/MDEV-35079) Migrate MySQL5.7 to [MariaDB 10.4](broken-reference), then to [MariaDB 10.11](../../mariadb-community-server-release-notes/mariadb-10-11-series/what-is-mariadb-1011.md) Failed
+  * [MDEV-35079](https://jira.mariadb.org/browse/MDEV-35079) Migrate MySQL5.7 to [MariaDB 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/changelogs/changelogs-mariadb-10-11-series/broken-reference/README.md), then to [MariaDB 10.11](../../mariadb-community-server-release-notes/mariadb-10-11-series/what-is-mariadb-1011.md) Failed
 * [Revision #7842cab8c0](https://github.com/MariaDB/server/commit/7842cab8c0)\
   2024-09-14 08:01:31 +0200
   * [MDEV-34318](https://jira.mariadb.org/browse/MDEV-34318) post-merge fix

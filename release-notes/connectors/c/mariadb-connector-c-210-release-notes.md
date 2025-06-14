@@ -17,7 +17,7 @@ ready for general usage (based on bug inflow).
 
 ## New features
 
-* Non blocking (asynchronous) API. For a detailed description see[Non-blocking Client Library](broken-reference).
+* Non blocking (asynchronous) API. For a detailed description see[Non-blocking Client Library](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/connectors/c/broken-reference/README.md).
 * New dialog and mysql\_clear\_text authentication plugins.
 
 ## New configuration options

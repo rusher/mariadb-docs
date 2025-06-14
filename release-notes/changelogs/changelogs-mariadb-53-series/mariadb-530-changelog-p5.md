@@ -2,7 +2,7 @@
 
 [Download](https://downloads.askmonty.org/mariadb/5.3.0) |[Release Notes](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/mariadb-530-release-notes.md) |**Changelog**\
 (page:`[1](mariadb-530-changelog.md)[2](mariadb-530-changelog-p2.md)[3](mariadb-530-changelog-p3.md)[4](mariadb-530-changelog-p4.md)5[6](mariadb-530-changelog-p6.md)`\
-) |[Overview of 5.3](broken-reference/)
+) |[Overview of 5.3](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/changelogs/changelogs-mariadb-53-series/broken-reference/README.md)
 
 **Release date:** 26 July 2011
 

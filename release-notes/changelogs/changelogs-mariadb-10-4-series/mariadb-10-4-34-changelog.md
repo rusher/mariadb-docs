@@ -1,6 +1,6 @@
 # MariaDB 10.4.34 Changelog
 
-[Download](https://mariadb.com/downloads/)[Release Notes](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-10-4-34-release-notes.md)[Changelog](mariadb-10-4-34-changelog.md)[Overview of 10.4](broken-reference)
+[Download](https://mariadb.com/downloads/)[Release Notes](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-10-4-34-release-notes.md)[Changelog](mariadb-10-4-34-changelog.md)[Overview of 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/changelogs/changelogs-mariadb-10-4-series/broken-reference/README.md)
 
 [_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/10.4.34/)
 

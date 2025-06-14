@@ -18,7 +18,7 @@ MariaDB Connector/J 1.8.x version is the maintenance version for Java 7. **Suppo
 
 Report issue from 2.3.x 2.4.x to 1.8.0:
 
-* \[[CONJ-675](https://jira.mariadb.org/browse/CONJ-675)] permit multiple alternative authentication methods for the same user (future [MariaDB 10.4](broken-reference) feature)
+* \[[CONJ-675](https://jira.mariadb.org/browse/CONJ-675)] permit multiple alternative authentication methods for the same user (future [MariaDB 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/connectors/java/mariadb-connector-j-18-release-notes/broken-reference/README.md) feature)
 * {[CONJ-678](https://jira.mariadb.org/browse/CONJ-678)] permit indication of truststore/keystore type (JKS/PKCS12), then not relying on java default type
 * \[[CONJ-378](https://jira.mariadb.org/browse/CONJ-378)] GSSAPI: client can provide SPN
 * \[[CONJ-667](https://jira.mariadb.org/browse/CONJ-667)] Support MYSQL\_TYPE\_JSON datatype
@@ -62,7 +62,7 @@ h3. Bugfixes
 Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
 
 MariaDB may already be included in your favorite OS distribution. More\
-information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/readme-1)\
+information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-including-mariadb)\
 page.
 
 {% @marketo/form formid="4316" formId="4316" %}

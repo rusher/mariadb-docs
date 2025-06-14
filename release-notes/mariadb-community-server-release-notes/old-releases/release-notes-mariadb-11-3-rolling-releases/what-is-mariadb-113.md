@@ -28,7 +28,7 @@ The most recent release of [MariaDB 11.3](what-is-mariadb-113.md) is:[**MariaDB 
 
 ### Data Types
 
-* It is now possible to create [partitions](broken-reference) on tables that contain [GEOMETRY types](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/geometry/geometry-types) ([MDEV-19177](https://jira.mariadb.org/browse/MDEV-19177))
+* It is now possible to create [partitions](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-3-rolling-releases/broken-reference/README.md) on tables that contain [GEOMETRY types](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/geometry/geometry-types) ([MDEV-19177](https://jira.mariadb.org/browse/MDEV-19177))
 * [INET4](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/string-data-types/inet4) data types can now be cast into [INET6](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/string-data-types/inet6) types ([MDEV-31626](https://jira.mariadb.org/browse/MDEV-31626))
 * This means INET4 values can be compared with INET6 values and can be inserted into INET6 columns;\
   the server can automatically convert INET4 value into INET6 as needed.
@@ -60,7 +60,7 @@ The most recent release of [MariaDB 11.3](what-is-mariadb-113.md) is:[**MariaDB 
 
 ### Mariabackup
 
-* [mariabackup --innobackupex](broken-reference) mode has been deprecated ([MDEV-31505](https://jira.mariadb.org/browse/MDEV-31505))
+* [mariabackup --innobackupex](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-3-rolling-releases/broken-reference/README.md) mode has been deprecated ([MDEV-31505](https://jira.mariadb.org/browse/MDEV-31505))
 
 ### Spider
 
@@ -70,9 +70,9 @@ The most recent release of [MariaDB 11.3](what-is-mariadb-113.md) is:[**MariaDB 
 
 The following deprecated features and system variables have been removed ([MDEV-32104](https://jira.mariadb.org/browse/MDEV-32104)):
 
-* sr\_YU [locale](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/string-data-types/character-sets/internationalization-and-localization/server-locale) (deprecated since [MariaDB 10.0.11](broken-reference))
+* sr\_YU [locale](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/string-data-types/character-sets/internationalization-and-localization/server-locale) (deprecated since [MariaDB 10.0.11](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-3-rolling-releases/broken-reference/README.md))
 * "engine\_condition\_pushdown" in [optimizer\_switch](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/query-optimizations/optimizer-switch) (deprecated since [MariaDB 10.1.1](../release-notes-mariadb-10-1-series/mariadb-10-1-1-release-notes.md))
-* [date\_format](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#date_format), [datetime\_format](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#datetime_format), [time\_format](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#time_format), [max\_tmp\_tables](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#max_tmp_tables) (deprecated since [MariaDB 10.1.2](broken-reference))
+* [date\_format](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#date_format), [datetime\_format](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#datetime_format), [time\_format](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#time_format), [max\_tmp\_tables](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#max_tmp_tables) (deprecated since [MariaDB 10.1.2](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-3-rolling-releases/broken-reference/README.md))
 * [wsrep\_causal\_reads](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_causal_reads) (deprecated since [MariaDB 10.1.3](../release-notes-mariadb-10-1-series/mariadb-10-1-3-release-notes.md))
 * "parser" in [mroonga](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/mroonga) table comment (deprecated since [MariaDB 10.2.11](../release-notes-mariadb-10-2-series/mariadb-10211-release-notes.md))
 

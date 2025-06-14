@@ -886,7 +886,7 @@ MariaDB Enterprise Server 10.5 improves support for [Galera Cluster](https://git
 * It allows Galera Cluster to be configured to prohibit DDL replication to only the storage engines that support Galera Cluster by configuring the [wsrep\_strict\_ddl](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_strict_ddl) system variable.
 * It adds full GTID support to Galera Cluster.
 * It adds an inconsistency voting protocol to mitigate the harm of inconsistencies by choosing very carefully which inconsistent nodes need to abort.
-* It adds support for [non-blocking operations](broken-reference/) when [wsrep\_OSU\_method](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_osu_method) is set to NBO, including:
+* It adds support for [non-blocking operations](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/enterprise-server/10-5/broken-reference/README.md) when [wsrep\_OSU\_method](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_osu_method) is set to NBO, including:
   * [ALTER TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/alter/alter-table) operations executed in `SHARED` or `EXCLUSIVE` locking mode.
   * [CREATE INDEX](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/create/create-index) operations executed in `SHARED` or `EXCLUSIVE` locking mode.
   * [DROP INDEX](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/drop/drop-index) operations.

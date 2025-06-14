@@ -2,11 +2,11 @@
 
 The most recent release of [MariaDB 10.1](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1.md) is:[**MariaDB 10.1.48**](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10148-release-notes.md) Stable (GA) [Download Now](https://downloads.mariadb.org/mariadb/10.1.48/)
 
-[Download](https://downloads.mariadb.org/mariadb/10.1.14)[Release Notes](broken-reference)[Changelog](mariadb-10114-changelog.md)[Overview of 10.1](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1.md)
+[Download](https://downloads.mariadb.org/mariadb/10.1.14)[Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/changelogs/changelogs-mariadb-101-series/broken-reference/README.md)[Changelog](mariadb-10114-changelog.md)[Overview of 10.1](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1.md)
 
 **Release date:** 10 May 2016
 
-For the highlights of this release, see the[release notes](broken-reference).
+For the highlights of this release, see the[release notes](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/changelogs/changelogs-mariadb-101-series/broken-reference/README.md).
 
 The revision number links will take you to the revision's page on GitHub. On[GitHub](https://github.com/MariaDB/server/tree/10.1) you can view more details of the revision and view diffs of the code modified in that revision.
 
@@ -86,25 +86,25 @@ The revision number links will take you to the revision's page on GitHub. On[Git
   * [MDEV-9940](https://jira.mariadb.org/browse/MDEV-9940) CREATE ROLE blocked by password validation plugin
 * [Revision #357f4d8](https://github.com/MariaDB/server/commit/357f4d8) 2016-05-05 01:04:05 +0200 - Merge branch 'connect/10.1' into 10.1
 * [Revision #4a62480](https://github.com/MariaDB/server/commit/4a62480)\
-  2016-04-26 11:22:30 +0200
-  *
-    * Add the use of prepared statement in the JDBC table type. modified: storage/connect/jdbconn.cpp modified: storage/connect/jdbconn.h modified: storage/connect/tabjdbc.cpp modified: storage/connect/tabjdbc.h
+  2016-04-26 11:22:30 +0200\
+  \*
+  * Add the use of prepared statement in the JDBC table type. modified: storage/connect/jdbconn.cpp modified: storage/connect/jdbconn.h modified: storage/connect/tabjdbc.cpp modified: storage/connect/tabjdbc.h
 * [Revision #c086a96](https://github.com/MariaDB/server/commit/c086a96)\
-  2016-04-24 19:56:32 +0200
-  *
-    * Fix an error causing MYSQL table to fail saying "no result set" when joining a table to a MYSQL indexed table. modified: storage/connect/myconn.cpp modified: storage/connect/myconn.h modified: storage/connect/tabmysql.cpp
+  2016-04-24 19:56:32 +0200\
+  \*
+  * Fix an error causing MYSQL table to fail saying "no result set" when joining a table to a MYSQL indexed table. modified: storage/connect/myconn.cpp modified: storage/connect/myconn.h modified: storage/connect/tabmysql.cpp
 * [Revision #afecdd2](https://github.com/MariaDB/server/commit/afecdd2)\
-  2016-04-23 23:20:10 +0200
-  *
-    * Fix and error causing remote indexing to fail when for not unique index. Was experienced with MYSQL, ODBC and JDBC tables. modified: storage/connect/connect.cc
+  2016-04-23 23:20:10 +0200\
+  \*
+  * Fix and error causing remote indexing to fail when for not unique index. Was experienced with MYSQL, ODBC and JDBC tables. modified: storage/connect/connect.cc
 * [Revision #a1b2a28](https://github.com/MariaDB/server/commit/a1b2a28)\
-  2016-03-25 13:02:34 +0100
-  *
-    * Fix [MDEV-9779](https://jira.mariadb.org/browse/MDEV-9779). Avoid buffer overflow when setting partname. modified: storage/connect/ha\_connect.cc modified: storage/connect/ha\_connect.h
+  2016-03-25 13:02:34 +0100\
+  \*
+  * Fix [MDEV-9779](https://jira.mariadb.org/browse/MDEV-9779). Avoid buffer overflow when setting partname. modified: storage/connect/ha\_connect.cc modified: storage/connect/ha\_connect.h
 * [Revision #d681c50](https://github.com/MariaDB/server/commit/d681c50)\
-  2016-03-24 23:18:54 +0100
-  *
-    * Fix [MDEV-9779](https://jira.mariadb.org/browse/MDEV-9779). Connection was not recognized in the option list. This was a regression bug. modified: storage/connect/ha\_connect.cc modified: storage/connect/mysql-test/connect/r/part\_table.result modified: storage/connect/mysql-test/connect/t/part\_table.test
+  2016-03-24 23:18:54 +0100\
+  \*
+  * Fix [MDEV-9779](https://jira.mariadb.org/browse/MDEV-9779). Connection was not recognized in the option list. This was a regression bug. modified: storage/connect/ha\_connect.cc modified: storage/connect/mysql-test/connect/r/part\_table.result modified: storage/connect/mysql-test/connect/t/part\_table.test
 * [Revision #4040565](https://github.com/MariaDB/server/commit/4040565)\
   2016-05-04 20:28:20 +0200
   * fixes for buildbot
@@ -127,40 +127,40 @@ The revision number links will take you to the revision's page on GitHub. On[Git
 * [Revision #8b1563e](https://github.com/MariaDB/server/commit/8b1563e) 2016-04-26 23:48:18 +0200 - Merge branch 'connect/10.0' into 10.0
 * [Revision #10de438](https://github.com/MariaDB/server/commit/10de438) 2016-04-25 11:41:48 +0200 - Merge branch 'ob-10.0' into 10.0
 * [Revision #26adbb2](https://github.com/MariaDB/server/commit/26adbb2)\
-  2016-04-25 00:13:06 +0200
-  *
-    * Fix an error causing MYSQL table to fail saying "no result set" when joining a table to a MYSQL indexed table. modified: storage/connect/myconn.cpp modified: storage/connect/myconn.h modified: storage/connect/tabmysql.cpp
+  2016-04-25 00:13:06 +0200\
+  \*
+  * Fix an error causing MYSQL table to fail saying "no result set" when joining a table to a MYSQL indexed table. modified: storage/connect/myconn.cpp modified: storage/connect/myconn.h modified: storage/connect/tabmysql.cpp
 * [Revision #6e48347](https://github.com/MariaDB/server/commit/6e48347) 2016-03-25 18:11:21 +0100 - Merge branch 'ob-10.0' into 10.0
 * [Revision #8c9fd07](https://github.com/MariaDB/server/commit/8c9fd07)\
-  2016-03-25 12:46:42 +0100
-  *
-    * Fix [MDEV-9779](https://jira.mariadb.org/browse/MDEV-9779). Avoid buffer overflow when setting partname. modified: storage/connect/ha\_connect.cc modified: storage/connect/ha\_connect.h
+  2016-03-25 12:46:42 +0100\
+  \*
+  * Fix [MDEV-9779](https://jira.mariadb.org/browse/MDEV-9779). Avoid buffer overflow when setting partname. modified: storage/connect/ha\_connect.cc modified: storage/connect/ha\_connect.h
 * [Revision #2c4715b](https://github.com/MariaDB/server/commit/2c4715b)\
   2016-03-25 11:11:25 +0100
   * Bigger partname to avoid [MDEV-9779](https://jira.mariadb.org/browse/MDEV-9779)
 * [Revision #e80c4b3](https://github.com/MariaDB/server/commit/e80c4b3)\
-  2016-03-24 23:36:39 +0100
-  *
-    * Fix [MDEV-9779](https://jira.mariadb.org/browse/MDEV-9779). Connection was not recognized in the option list. This was a regression bug. modified: storage/connect/ha\_connect.cc modified: storage/connect/mysql-test/connect/r/part\_table.result modified: storage/connect/mysql-test/connect/t/part\_table.test
+  2016-03-24 23:36:39 +0100\
+  \*
+  * Fix [MDEV-9779](https://jira.mariadb.org/browse/MDEV-9779). Connection was not recognized in the option list. This was a regression bug. modified: storage/connect/ha\_connect.cc modified: storage/connect/mysql-test/connect/r/part\_table.result modified: storage/connect/mysql-test/connect/t/part\_table.test
 * [Revision #cbe3511](https://github.com/MariaDB/server/commit/cbe3511) 2016-03-19 13:32:28 +0100 - Merge branch 'ob-10.0' into 10.0
 * [Revision #c1efc4a](https://github.com/MariaDB/server/commit/c1efc4a)\
-  2016-03-19 12:13:36 +0100
-  *
-    * Fix compile error when copying a string on itself. modified: storage/connect/value.cpp
+  2016-03-19 12:13:36 +0100\
+  \*
+  * Fix compile error when copying a string on itself. modified: storage/connect/value.cpp
 * [Revision #433c8a8](https://github.com/MariaDB/server/commit/433c8a8) 2016-03-17 10:17:42 +0100 - Merge branch 'ob-10.0' into 10.0
 * [Revision #6689097](https://github.com/MariaDB/server/commit/6689097)\
-  2016-03-16 23:56:43 +0100
-  *
-    * Fix crash when sorting a TBL table with thread=yes. This was because Tablist can be NULL when no lacal tables are in the list. modified: storage/connect/tabtbl.cpp modified: storage/connect/mysql-test/connect/r/tbl.result modified: storage/connect/mysql-test/connect/t/tbl.test
+  2016-03-16 23:56:43 +0100\
+  \*
+  * Fix crash when sorting a TBL table with thread=yes. This was because Tablist can be NULL when no lacal tables are in the list. modified: storage/connect/tabtbl.cpp modified: storage/connect/mysql-test/connect/r/tbl.result modified: storage/connect/mysql-test/connect/t/tbl.test
 * [Revision #fb9e2fa](https://github.com/MariaDB/server/commit/fb9e2fa)\
-  2016-03-16 19:17:55 +0100
-  *
-    * Fix [MDEV-9603](https://jira.mariadb.org/browse/MDEV-9603) compiler error. modified: storage/connect/tabmysql.cpp
+  2016-03-16 19:17:55 +0100\
+  \*
+  * Fix [MDEV-9603](https://jira.mariadb.org/browse/MDEV-9603) compiler error. modified: storage/connect/tabmysql.cpp
 * [Revision #539b736](https://github.com/MariaDB/server/commit/539b736) 2016-02-20 10:40:32 +0100 - Merge branch 'ob-10.0' into 10.0
 * [Revision #02fa3b8](https://github.com/MariaDB/server/commit/02fa3b8)\
-  2016-02-20 01:02:48 +0100
-  *
-    * Fix to [MDEV-9579](https://jira.mariadb.org/browse/MDEV-9579) be testing for void result. modified: storage/connect/tabodbc.cpp
+  2016-02-20 01:02:48 +0100\
+  \*
+  * Fix to [MDEV-9579](https://jira.mariadb.org/browse/MDEV-9579) be testing for void result. modified: storage/connect/tabodbc.cpp
 * [Revision #cfad394](https://github.com/MariaDB/server/commit/cfad394) 2016-04-26 23:43:48 +0200 - Merge branch 'merge-xtradb-5.6' into 10.0
 * [Revision #5b8ac23](https://github.com/MariaDB/server/commit/5b8ac23)\
   2016-04-26 19:07:11 +0200

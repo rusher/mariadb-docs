@@ -29,7 +29,7 @@ MariaDB Enterprise Server 10.3.17-2 was released on 2019-08-19.
 ## Issues Fixed
 
 * [SERVER\_AUDIT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/mariadb-audit-plugin) does not work with PS protocol
-* Removed [--rsync](broken-reference) legacy option from enterprise build of [MariaDB Backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup)
+* Removed [--rsync](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/enterprise-server/10-3/broken-reference/README.md) legacy option from enterprise build of [MariaDB Backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup)
 * Changes to `mysql_install_db` script text
 * `DROP TABLE IF EXISTS` killed on master but was replicated ([MDEV-20348](https://jira.mariadb.org/browse/MDEV-20348))
 * Post-merge fixes for `rocksdb.group_min_max` test ([MDEV-20113](https://jira.mariadb.org/browse/MDEV-20113))
@@ -47,7 +47,7 @@ MariaDB Enterprise Server 10.3.17-2 was released on 2019-08-19.
 * `mysql_upgrade_service` throws exception upgrading from 10.0 to 10.3 ([MDEV-19427](https://jira.mariadb.org/browse/MDEV-19427))
 * Loading the `AUDIT` plugin causes performance regression ([MDEV-18661](https://jira.mariadb.org/browse/MDEV-18661))
 * [REPLACE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/changing-deleting-data/replace) on table with virtual\_field can cause crash ([MDEV-19771](https://jira.mariadb.org/browse/MDEV-19771))
-* Fix Aria [ER\_CRASHED\_ON\_USAGE](broken-reference) and Assertion ([MDEV-19595](https://jira.mariadb.org/browse/MDEV-19595))
+* Fix Aria [ER\_CRASHED\_ON\_USAGE](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/enterprise-server/10-3/broken-reference/README.md) and Assertion ([MDEV-19595](https://jira.mariadb.org/browse/MDEV-19595))
 * Test change: `innodb.trx_id_future` fails on 10.3+ ([MDEV-20138](https://jira.mariadb.org/browse/MDEV-20138))
 * Possible foreign key corruption for `ALTER TABLE ... ADD COLUMN` with InnoDB ([MDEV-19630](https://jira.mariadb.org/browse/MDEV-19630))
 * Corruption after instant `ADD` or `DROP` when the index tree shrinks ([MDEV-19916](https://jira.mariadb.org/browse/MDEV-19916))

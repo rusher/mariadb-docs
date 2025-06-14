@@ -18,7 +18,7 @@ The most recent release of [MariaDB 11.0](what-is-mariadb-110.md) is:[**MariaDB 
 
 ### Optimizer
 
-* Major improvements to the Optimizer. See [The Optimizer Cost Model from MariaDB 11.0](broken-reference).
+* Major improvements to the Optimizer. See [The Optimizer Cost Model from MariaDB 11.0](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-0-series/broken-reference/README.md).
 
 ### InnoDB
 

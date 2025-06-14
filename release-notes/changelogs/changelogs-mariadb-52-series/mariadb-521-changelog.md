@@ -40,7 +40,7 @@ The revision number links will take you to the revision's page on Launchpad. On 
 * [Revision #2802](https://bazaar.launchpad.net/~maria-captains/maria/5.2/revision/2802): handle a case when a user connects with a password to a passwordless account
 * [Revision #2803](https://bazaar.launchpad.net/~maria-captains/maria/5.2/revision/2803): fixes for test suite
 * [Revision #2804](https://bazaar.launchpad.net/~maria-captains/maria/5.2/revision/2804): include guards
-* [Revision #2805](https://bazaar.launchpad.net/~maria-captains/maria/5.2/revision/2805): fixes for a few small MySQL bugs/issues that impact the engines, as discussed in the [Storage Engine summit](broken-reference)
+* [Revision #2805](https://bazaar.launchpad.net/~maria-captains/maria/5.2/revision/2805): fixes for a few small MySQL bugs/issues that impact the engines, as discussed in the [Storage Engine summit](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/changelogs/changelogs-mariadb-52-series/broken-reference/README.md)
   * remove handler::index\_read\_last()
   * create handler::keyread\_read\_time() (was get\_index\_only\_read\_time() in opt\_range.cc)
   * ha\_show\_status() allows engine's show\_status() to fail

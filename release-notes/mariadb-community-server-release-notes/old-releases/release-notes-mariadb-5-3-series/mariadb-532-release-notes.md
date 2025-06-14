@@ -1,8 +1,8 @@
 # MariaDB 5.3.2 Release Notes
 
-The most recent release in the [MariaDB 5.3 series](broken-reference/) is:[**MariaDB 5.3.12**](mariadb-5312-release-notes.md)
+The most recent release in the [MariaDB 5.3 series](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/broken-reference/README.md) is:[**MariaDB 5.3.12**](mariadb-5312-release-notes.md)
 
-[Download](https://downloads.askmonty.org/mariadb/5.3.2) |**Release Notes** |[Changelog](../../../changelogs/changelogs-mariadb-53-series/mariadb-532-changelog.md) |[Overview of 5.3](broken-reference/)
+[Download](https://downloads.askmonty.org/mariadb/5.3.2) |**Release Notes** |[Changelog](../../../changelogs/changelogs-mariadb-53-series/mariadb-532-changelog.md) |[Overview of 5.3](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/broken-reference/README.md)
 
 **Release date:** 14 Oct 2011
 
@@ -11,7 +11,7 @@ that there are no known serious bugs, except for those marked as feature\
 requests. [MariaDB 5.3](changes-improvements-in-mariadb-5-3.md) radically improves performance for subqueries as well as\
 for joins and single-table queries over large data sets.
 
-**For a detailed description of** [**MariaDB 5.3**](broken-reference/) **see the** [**What is MariaDB 5.3**](broken-reference/) **page.**
+**For a detailed description of** [**MariaDB 5.3**](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/broken-reference/README.md) **see the** [**What is MariaDB 5.3**](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/broken-reference/README.md) **page.**
 
 Compared to [MariaDB 5.3.0](mariadb-530-release-notes.md) and 5.3.1, [MariaDB 5.3.2](mariadb-532-release-notes.md) is mainly a bug-fix release. It is the\
 third beta release of the 5.3 series and fixes bugs found in the initial 5.3.0 and\
@@ -29,7 +29,7 @@ announce 'at' mariadb.org announcement list (this is a low traffic,\
 announce-only list).
 
 MariaDB may already be included in your favorite OS distribution. More\
-information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/readme-1)\
+information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-including-mariadb)\
 page.
 
 ## User Feedback plugin

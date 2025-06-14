@@ -14,7 +14,7 @@ For general "how to questions" ask questions [here](https://mariadb.com/kb/en/ma
 ## Notable changes
 
 * [MCOL-506](https://jira.mariadb.org/browse/MCOL-506) - The MariaDB server version has been upgraded to version 10.1.21 including key security fixes. See the [Server Release Notes](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10121-release-notes.md) for further details.
-* [MCOL-462](https://jira.mariadb.org/browse/MCOL-462) - The AMI Image now supports utilization of the IAM role to manage keys. Please see the [installing-and-configuring-a-columnstore-system-using-the-amazon-ami](broken-reference) article for more details.
+* [MCOL-462](https://jira.mariadb.org/browse/MCOL-462) - The AMI Image now supports utilization of the IAM role to manage keys. Please see the [installing-and-configuring-a-columnstore-system-using-the-amazon-ami](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/columnstore/columnstore-1-0/broken-reference/README.md) article for more details.
 * [MCOL-481](https://jira.mariadb.org/browse/MCOL-481) - For a multi node install with mulitple UMs the installer now prompts you whether you want to install "MariaDB ColumnStore Schema Sync feature". If yes is answered then a default master / slave replication setup will be installed. Answer no if you prefer to perform your own setup or utilize another solution for this.
 
 ## Bugs and issues fixed
@@ -47,7 +47,7 @@ For general "how to questions" ask questions [here](https://mariadb.com/kb/en/ma
 
 Multi version upgrades are not supported, please upgrade versions prior to 1.0.6 before upgrading to 1.0.7:
 
-* [1.0.6 GA to 1.0.7 upgrade procedure](broken-reference)
+* [1.0.6 GA to 1.0.7 upgrade procedure](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/columnstore/columnstore-1-0/broken-reference/README.md)
 
 ## Known issues and limitations
 
@@ -79,7 +79,7 @@ RPM, Debian, and binary packages are provided for the Linux distributions suppor
 
 * The supported OS for the GA version are CentOS 6, CentOS 7, Debian 8.6, RedHat 6, RedHat 7, and Ubuntu 16.0.4.
 * Packages can be downloaded [here](https://mariadb.com/downloads/columnstore)
-* An Amazon AWS AMI Image is available for this release, please search for AMI name "MariaDB-ColumnStore-1.0.7". AMI specific installation instructions can be found [here](broken-reference).
+* An Amazon AWS AMI Image is available for this release, please search for AMI name "MariaDB-ColumnStore-1.0.7". AMI specific installation instructions can be found [here](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/columnstore/columnstore-1-0/broken-reference/README.md).
 * Instructions for setting up OS software repositories as the download mechanism will be published shortly.
 
 ## Source code

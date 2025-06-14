@@ -2,11 +2,11 @@
 
 The most recent release of [MariaDB 10.7](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-7-series/what-is-mariadb-107.md) is:[**MariaDB 10.7.8**](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-7-series/mariadb-10-7-8-release-notes.md) Stable (GA) [Download Now](https://downloads.mariadb.org/mariadb/10.7.8/)
 
-[Download 10.7.7](https://downloads.mariadb.org/mariadb/10.7.7/)[Release Notes](broken-reference)[Changelog](mariadb-10-7-7-changelog.md)[Overview of 10.7](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-7-series/what-is-mariadb-107.md)
+[Download 10.7.7](https://downloads.mariadb.org/mariadb/10.7.7/)[Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/changelogs/changelogs-mariadb-10-7-series/broken-reference/README.md)[Changelog](mariadb-10-7-7-changelog.md)[Overview of 10.7](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-7-series/what-is-mariadb-107.md)
 
 **Release date:** 7 Nov 2022
 
-For the highlights of this release, see the[release notes](broken-reference).
+For the highlights of this release, see the[release notes](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/changelogs/changelogs-mariadb-10-7-series/broken-reference/README.md).
 
 The revision number links will take you to the revision's page on GitHub. On[GitHub](https://github.com/MariaDB/server/tree/10.7) you can view more\
 details of the revision and view diffs of the code modified in that revision.

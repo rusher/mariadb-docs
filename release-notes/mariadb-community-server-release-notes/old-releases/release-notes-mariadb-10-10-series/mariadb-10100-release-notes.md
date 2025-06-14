@@ -43,8 +43,8 @@ Available as container: quay.io/mariadb-foundation/mariadb-devel:10.10-uca14
 
 ### DDL
 
-* [ALTER ONLINE TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/alter/alter-table#alter-online-table) ([MDEV-16329](https://jira.mariadb.org/browse/MDEV-16329)) (not included in [MariaDB 10.10.1](broken-reference))
-* Atomic CREATE OR REPLACE TABLE ([MDEV-25292](https://jira.mariadb.org/browse/MDEV-25292)) (not included in [MariaDB 10.10.1](broken-reference))
+* [ALTER ONLINE TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/alter/alter-table#alter-online-table) ([MDEV-16329](https://jira.mariadb.org/browse/MDEV-16329)) (not included in [MariaDB 10.10.1](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-10-series/broken-reference/README.md))
+* Atomic CREATE OR REPLACE TABLE ([MDEV-25292](https://jira.mariadb.org/browse/MDEV-25292)) (not included in [MariaDB 10.10.1](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-10-series/broken-reference/README.md))
 
 Available as container: quay.io/mariadb-foundation/mariadb-devel:10.10-ddl
 
@@ -70,7 +70,7 @@ information on each push, see the [changelog](https://github.com/mariadb-corpora
 Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
 
 MariaDB may already be included in your favorite OS distribution. More\
-information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/readme-1)\
+information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-including-mariadb)\
 page.
 
 {% @marketo/form formid="4316" formId="4316" %}

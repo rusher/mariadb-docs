@@ -30,7 +30,7 @@ Thanks, and enjoy MariaDB!
   * [CVE-2016-0641](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-0641)
   * [CVE-2016-0640](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-0640)
 
-This release includes all bug fixes from [MariaDB 5.5.48](../release-notes-mariadb-5-5-series/mariadb-5548-release-notes.md), [MariaDB 10.0.24](broken-reference), and[MariaDB Galera Cluster 10.0.24](../mariadb-galera-cluster-releases/mariadb-galera-100-release-notes/mariadb-galera-cluster-10024-release-notes.md)\
+This release includes all bug fixes from [MariaDB 5.5.48](../release-notes-mariadb-5-5-series/mariadb-5548-release-notes.md), [MariaDB 10.0.24](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/broken-reference/README.md), and[MariaDB Galera Cluster 10.0.24](../mariadb-galera-cluster-releases/mariadb-galera-100-release-notes/mariadb-galera-cluster-10024-release-notes.md)\
 releases.
 
 ## Changelog
@@ -41,7 +41,7 @@ information on each push, see the [changelog](../../../changelogs/changelogs-mar
 Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
 
 MariaDB may already be included in your favorite OS distribution. More\
-information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/readme-1)\
+information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-including-mariadb)\
 page.
 
 {% @marketo/form formid="4316" formId="4316" %}

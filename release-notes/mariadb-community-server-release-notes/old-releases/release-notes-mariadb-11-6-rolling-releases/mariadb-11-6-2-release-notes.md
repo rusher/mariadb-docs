@@ -8,7 +8,7 @@
 
 [MariaDB 11.6.2](mariadb-11-6-2-release-notes.md) is a [_**Stable (GA)**_](../../../mariadb-release-criteria.md) release. It is an evolution of [MariaDB 11.5](../release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115.md) with several entirely new features.
 
-[MariaDB 11.6](what-is-mariadb-116.md) is a [rolling release](../../../mariadb-release-model.md). One is expected to upgrade to [MariaDB 11.7.2](../../mariadb-11-7-rolling-releases/mariadb-11-7-2-release-notes.md), there will be no 11.6.3.
+[MariaDB 11.6](what-is-mariadb-116.md) is a [rolling release](../../../mariadb-release-model.md). One is expected to upgrade to [MariaDB 11.7.2](../mariadb-11-7-rolling-releases/mariadb-11-7-2-release-notes.md), there will be no 11.6.3.
 
 **For an overview of** [**MariaDB 11.6**](what-is-mariadb-116.md) **see the**[**What is MariaDB 11.6?**](what-is-mariadb-116.md) **page.**
 
@@ -103,7 +103,7 @@ For a full list of contributors to [MariaDB 11.6.2](mariadb-11-6-2-release-notes
 Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
 
 MariaDB may already be included in your favorite OS distribution. More\
-information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/readme-1)\
+information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-including-mariadb)\
 page.
 
 {% @marketo/form formid="4316" formId="4316" %}

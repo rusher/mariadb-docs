@@ -49,7 +49,7 @@ Below is list of some of the bugs and issues fixed. A number of regression test 
 
 ## Upgrade
 
-Multi version upgrades are not supported, please upgrade versions prior to 1.0.4 before upgrading to 1.0.5. Details on upgrading from version to 1.0.4 to 1.0.5 can be found [here](broken-reference).
+Multi version upgrades are not supported, please upgrade versions prior to 1.0.4 before upgrading to 1.0.5. Details on upgrading from version to 1.0.4 to 1.0.5 can be found [here](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/columnstore/columnstore-1-0/broken-reference/README.md).
 
 Upgrade from MariaDB ColumnStore Alpha versions 1.0.0 to 1.0.2 is not supported, please upgrade to version 1.0.4 prior to upgrading to 1.0.5.
 

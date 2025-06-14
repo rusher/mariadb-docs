@@ -2,7 +2,7 @@
 
 The most recent release in the [MariaDB 5.5](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) series is:[**MariaDB 5.5.68**](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/mariadb-5568-release-notes.md) [Download Now](https://downloads.mariadb.org/mariadb/5.5.68/)
 
-[Download](https://downloads.mariadb.org/mariadb/5.5.39)[Release Notes](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/mariadb-5539-release-notes.md)[Changelog](mariadb-5539-changelog.md)[Overview of 5.5](broken-reference/)
+[Download](https://downloads.mariadb.org/mariadb/5.5.39)[Release Notes](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/mariadb-5539-release-notes.md)[Changelog](mariadb-5539-changelog.md)[Overview of 5.5](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/changelogs/changelogs-mariadb-55-series/broken-reference/README.md)
 
 **Release date:** 5 Aug 2014
 
@@ -62,7 +62,7 @@ modified in that revision.
     * \#236 mysqld\_safe should use libjemalloc.so if it exists in the tarball
   * [Revision #0.28.1639](https://bazaar.launchpad.net/~maria-captains/maria/5.5/revision/0.28.1639)\
     Wed 2014-05-14 14:43:44 -0400
-    * \#206 merge [mariadb 10.0.11](broken-reference/) changes
+    * \#206 merge [mariadb 10.0.11](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/changelogs/changelogs-mariadb-55-series/broken-reference/README.md) changes
   * [Revision #0.28.1638](https://bazaar.launchpad.net/~maria-captains/maria/5.5/revision/0.28.1638)\
     Tue 2014-05-13 08:56:06 -0400
     * \#221 fix tokudb::estimate\_num\_rows

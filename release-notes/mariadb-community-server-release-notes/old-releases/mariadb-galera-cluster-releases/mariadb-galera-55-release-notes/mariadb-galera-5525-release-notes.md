@@ -7,7 +7,7 @@ The most recent [MariaDB Galera Cluster 5.5](https://github.com/mariadb-corporat
 **Release date:** 4 Sep 2012
 
 [MariaDB Galera 5.5.25](https://mariadb.com/kb/en/mariadb-galera-cluster-5525-release-notes/) is an [_**Alpha**_](../../../../mariadb-release-criteria.md) release. It is a\
-merge of [MariaDB 5.5.25](broken-reference) and Galera Cluster with some\
+merge of [MariaDB 5.5.25](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/mariadb-galera-cluster-releases/mariadb-galera-55-release-notes/broken-reference/README.md) and Galera Cluster with some\
 limited additional bug fixes. This is the first MariaDB Galera release, and we\
 are releasing it now to get it into the hands of any who might want to test it.**Do not use alpha releases on production systems.**
 
@@ -30,7 +30,7 @@ Thanks, and enjoy MariaDB Galera Cluster!
 Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
 
 MariaDB may already be included in your favorite OS distribution. More\
-information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/readme-1)\
+information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-including-mariadb)\
 page.
 
 {% @marketo/form formid="4316" formId="4316" %}

@@ -6,7 +6,7 @@ The most recent release in the [MariaDB 5.1 series](changes-improvements-in-mari
 
 **Release date:** 29 Oct 2009
 
-See the [MariaDB versus MySQL](broken-reference) page for a high-level\
+See the [MariaDB versus MySQL](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-1-series/broken-reference/README.md) page for a high-level\
 overview of the differences between MariaDB and MySQL.
 
 [MariaDB](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/mariadb/README.md) 5.1.38 Beta is based on [MySQL](https://mysql.com) 5.1.38\

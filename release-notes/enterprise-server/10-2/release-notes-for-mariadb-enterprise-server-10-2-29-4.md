@@ -52,7 +52,7 @@ If unable to upgrade to MariaDB Enterprise Server 10.2.29-4, where this bug is f
 
 ## Interface Changes
 
-* [WARN\_INNODB\_PARTITION\_OPTION\_IGNORED](broken-reference/) error code added
+* [WARN\_INNODB\_PARTITION\_OPTION\_IGNORED](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/enterprise-server/10-2/broken-reference/README.md) error code added
 
 ## Platforms
 

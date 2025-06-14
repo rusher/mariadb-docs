@@ -67,8 +67,8 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #506953f](https://github.com/mariadb-corporation/mariadb-connector-nodejs/commit/506953f) - Improving documentation
 * [Revision #b721f82](https://github.com/mariadb-corporation/mariadb-connector-nodejs/commit/b721f82) - \[misc] changing stream function to queryStream to follow promise-mysql API remove not accessible code adding test coverage for failing socket using callback
 * [Revision #ee1b58f](https://github.com/mariadb-corporation/mariadb-connector-nodejs/commit/ee1b58f) - \[misc] adding the option "metaAsArray" for mysql2 and existing mysql promise package implementation compatibility
-* [Revision #d406d4b](https://github.com/mariadb-corporation/mariadb-connector-nodejs/commit/d406d4b) - \[misc] appveyor correction for [mariadb 5.5](broken-reference) (with less memory use)
-* [Revision #4c09946](https://github.com/mariadb-corporation/mariadb-connector-nodejs/commit/4c09946) - \[misc] test appveyor correction for [mariadb 5.5](broken-reference)
+* [Revision #d406d4b](https://github.com/mariadb-corporation/mariadb-connector-nodejs/commit/d406d4b) - \[misc] appveyor correction for [mariadb 5.5](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/connectors/node.js/changelogs/mariadb-connector-nodejs-0x-changelogs/broken-reference/README.md) (with less memory use)
+* [Revision #4c09946](https://github.com/mariadb-corporation/mariadb-connector-nodejs/commit/4c09946) - \[misc] test appveyor correction for [mariadb 5.5](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/connectors/node.js/changelogs/mariadb-connector-nodejs-0x-changelogs/broken-reference/README.md)
 * [Revision #b9a3f22](https://github.com/mariadb-corporation/mariadb-connector-nodejs/commit/b9a3f22) - \[misc] test correction debug log when compression
 * [Revision #2eccb16](https://github.com/mariadb-corporation/mariadb-connector-nodejs/commit/2eccb16) - \[misc] streaming when using callback implementation
 * [Revision #b191638](https://github.com/mariadb-corporation/mariadb-connector-nodejs/commit/b191638) - \[misc] correcting debug range since default connectAttributes now default to false
@@ -356,7 +356,7 @@ details of the revision and view diffs of the code modified in that revision.
 Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
 
 MariaDB may already be included in your favorite OS distribution. More\
-information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/readme-1)\
+information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-including-mariadb)\
 page.
 
 {% @marketo/form formid="4316" formId="4316" %}

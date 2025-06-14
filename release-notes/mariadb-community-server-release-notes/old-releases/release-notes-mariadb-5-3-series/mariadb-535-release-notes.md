@@ -1,8 +1,8 @@
 # MariaDB 5.3.5 Release Notes
 
-The most recent release in the [MariaDB 5.3 series](broken-reference/) is:[**MariaDB 5.3.12**](mariadb-5312-release-notes.md)
+The most recent release in the [MariaDB 5.3 series](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/broken-reference/README.md) is:[**MariaDB 5.3.12**](mariadb-5312-release-notes.md)
 
-[Download](https://downloads.askmonty.org/mariadb/5.3.5) |**Release Notes** |[Changelog](../../../changelogs/changelogs-mariadb-53-series/mariadb-535-changelog.md) |[Overview of 5.3](broken-reference/)
+[Download](https://downloads.askmonty.org/mariadb/5.3.5) |**Release Notes** |[Changelog](../../../changelogs/changelogs-mariadb-53-series/mariadb-535-changelog.md) |[Overview of 5.3](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/broken-reference/README.md)
 
 **Release date:** 29 Feb 2012
 
@@ -12,7 +12,7 @@ marked as feature requests and no bugs were fixed since the last release which\
 caused any notable code changes. We believe the code is ready for general usage\
 (based on bug inflow).
 
-**For a detailed description of** [**MariaDB 5.3**](broken-reference/) **see the** [**What is MariaDB 5.3**](broken-reference/) **page.**
+**For a detailed description of** [**MariaDB 5.3**](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/broken-reference/README.md) **see the** [**What is MariaDB 5.3**](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/broken-reference/README.md) **page.**
 
 Compared to previous releases in the [MariaDB 5.3](changes-improvements-in-mariadb-5-3.md) series, [MariaDB 5.3.5](mariadb-535-release-notes.md) is\
 primarily a bug-fix release with a focus on stability, performance, and\
@@ -35,7 +35,7 @@ announce 'at' mariadb.org announcement list (this is a low traffic,\
 announce-only list).
 
 MariaDB may already be included in your favorite OS distribution. More\
-information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/readme-1)\
+information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-including-mariadb)\
 page.
 
 {% @marketo/form formid="4316" formId="4316" %}

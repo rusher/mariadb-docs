@@ -40,7 +40,7 @@ Connections with idle transactions can be automatically killed after a specified
 
 ### Compatibility
 
-When running with [sql\_mode=ORACLE](broken-reference), the server now understands a subset of Oracle's PL/SQL language instead of the traditional MariaDB syntax for stored routines. This work is in progress. See [MDEV-10142](https://jira.mariadb.org/browse/MDEV-10142) and [MDEV-10764](https://jira.mariadb.org/browse/MDEV-10764)\
+When running with [sql\_mode=ORACLE](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/broken-reference/README.md), the server now understands a subset of Oracle's PL/SQL language instead of the traditional MariaDB syntax for stored routines. This work is in progress. See [MDEV-10142](https://jira.mariadb.org/browse/MDEV-10142) and [MDEV-10764](https://jira.mariadb.org/browse/MDEV-10764)\
 for the current status and subtasks. The 10.3.0 release includes:
 
 * Providing compatibility for basic PL/SQL constructs - [MDEV-10411](https://jira.mariadb.org/browse/MDEV-10411)
@@ -123,7 +123,7 @@ information on each push, see the [changelog](../../../changelogs/changelogs-mar
 Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
 
 MariaDB may already be included in your favorite OS distribution. More\
-information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/readme-1)\
+information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-including-mariadb)\
 page.
 
 {% @marketo/form formid="4316" formId="4316" %}

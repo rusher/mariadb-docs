@@ -44,11 +44,11 @@ In addition, all bugs fixed in MariaDB ColumnStore 1.2.4 and earlier are implici
 
 The following procedure outlines upgrading a 1.1.7 ColumnStore install to 1.2.5:
 
-* [1.1.7 GA to 1.2.5 GA upgrade procedure](broken-reference)
+* [1.1.7 GA to 1.2.5 GA upgrade procedure](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/columnstore/columnstore-1-2/broken-reference/README.md)
 
 The following procedure outlines upgrading a 1.2.x ColumnStore install to 1.2.5:
 
-* [1.2.x GA to 1.2.5 GA upgrade procedure](broken-reference)
+* [1.2.x GA to 1.2.5 GA upgrade procedure](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/columnstore/columnstore-1-2/broken-reference/README.md)
 
 Multi version upgrades generally will work using the same procedure however we can't test every possible permutation so you should test your specific scenario outside of production first if you wish to try this (and this is good practice regardless).
 
@@ -67,8 +67,8 @@ There are a number bugs and known limitations within this version of MariaDB Col
 RPM, Debian, and binary packages are provided for the Linux distributions supported by MariaDB ColumnStore 1.2.5 GA version.
 
 * The supported OS for the GA version are CentOS 6, CentOS 7, Debian 8, Debian 9, RedHat 6, RedHat 7, SUSE 12, Ubuntu 16.04 and Ubuntu 18.04.
-* Packages can be downloaded [here](https://mariadb.com/downloads/mariadb-ax) or can be installed from the [repositories](broken-reference).
-* An Amazon AWS AMI Image is available for this release, please search for AMI name "MariaDB-ColumnStore-1.2.5". AMI specific installation instructions can be found [here](broken-reference).
+* Packages can be downloaded [here](https://mariadb.com/downloads/mariadb-ax) or can be installed from the [repositories](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/columnstore/columnstore-1-2/broken-reference/README.md).
+* An Amazon AWS AMI Image is available for this release, please search for AMI name "MariaDB-ColumnStore-1.2.5". AMI specific installation instructions can be found [here](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/columnstore/columnstore-1-2/broken-reference/README.md).
 * Certified to run in Google Cloud Environment in the GA OSs.
 
 ## Source code

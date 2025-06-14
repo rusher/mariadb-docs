@@ -2,11 +2,11 @@
 
 The most recent release of [MariaDB 10.6](../../mariadb-community-server-release-notes/mariadb-10-6-series/what-is-mariadb-106.md) is:[**MariaDB 10.6.21**](../../mariadb-community-server-release-notes/mariadb-10-6-series/mariadb-10-6-21-release-notes.md) Stable (GA) [Download Now](https://mariadb.com/downloads/)[_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/10.6.21/)
 
-[Download 10.6.9](https://downloads.mariadb.org/mariadb/10.6.9/)[Release Notes](broken-reference)[Changelog](mariadb-1069-changelog.md)[Overview of 10.6](../../mariadb-community-server-release-notes/mariadb-10-6-series/what-is-mariadb-106.md)
+[Download 10.6.9](https://downloads.mariadb.org/mariadb/10.6.9/)[Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/changelogs/changelogs-mariadb-106-series/broken-reference/README.md)[Changelog](mariadb-1069-changelog.md)[Overview of 10.6](../../mariadb-community-server-release-notes/mariadb-10-6-series/what-is-mariadb-106.md)
 
 **Release date:** 15 Aug 2022
 
-For the highlights of this release, see the[release notes](broken-reference).
+For the highlights of this release, see the[release notes](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/changelogs/changelogs-mariadb-106-series/broken-reference/README.md).
 
 The revision number links will take you to the revision's page on GitHub. On[GitHub](https://github.com/MariaDB/server/tree/10.6) you can view more\
 details of the revision and view diffs of the code modified in that revision.
@@ -52,9 +52,9 @@ details of the revision and view diffs of the code modified in that revision.
   2022-07-20 10:26:51 -0700
   * [MDEV-28782](https://jira.mariadb.org/browse/MDEV-28782): modify mariadb-tzinfo-to-sql to set 'wsrep\*' variables appropriately in cases where Galera is not compiled in
 * [Revision #38d0256b14](https://github.com/MariaDB/server/commit/38d0256b14)\
-  2022-07-28 21:03:32 +0530
-  *
-    * Fixed the change\_column\_collation test case to avoid the loss of debug sync signal
+  2022-07-28 21:03:32 +0530\
+  \*
+  * Fixed the change\_column\_collation test case to avoid the loss of debug sync signal
 * [Revision #2658410afc](https://github.com/MariaDB/server/commit/2658410afc)\
   2022-07-28 15:53:56 +1000
   * [MDEV-29187](https://jira.mariadb.org/browse/MDEV-29187): Deadlock output in InnoDB status always shows transaction (0)

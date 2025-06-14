@@ -106,9 +106,9 @@ modified in that revision.
   Thu 2014-12-11 11:17:58 +0100
   * Added clear\_text plugin for pam authentication. To use the clear text plugin pam-use-cleartext-plugin setting must be enabled in MariaDB server.
 * [Revision #168](https://bazaar.launchpad.net/~maria-captains/mariadb-native-client/trunk/revision/168)\
-  Thu 2014-12-11 09:47:49 +0100
-  *
-    * mysql\_load\_plugin\_v supports now the environment variable MARIADB\_PLUGIN\_DIR to load plugins from a different destination than PLUGINDIR.
+  Thu 2014-12-11 09:47:49 +0100\
+  \*
+  * mysql\_load\_plugin\_v supports now the environment variable MARIADB\_PLUGIN\_DIR to load plugins from a different destination than PLUGINDIR.
 * [Revision #167](https://bazaar.launchpad.net/~maria-captains/mariadb-native-client/trunk/revision/167)\
   Tue 2014-12-09 20:11:54 +0100
   * Fixed misc.c (was test case for [CONC-114](https://jira.mariadb.org/browse/CONC-114))
@@ -170,9 +170,9 @@ modified in that revision.
   Mon 2014-07-14 11:50:16 +0200
   * Fix for [CONC-101](https://jira.mariadb.org/browse/CONC-101): redefinition of dlerror
 * [Revision #147](https://bazaar.launchpad.net/~maria-captains/mariadb-native-client/trunk/revision/147)\
-  Fri 2014-06-27 06:48:43 +0200
-  *
-    * Removed unused \_PC macrofrom my\_global.h: it clashes with \_PC macro in tchar.h (windows) - removed unused global.h file
+  Fri 2014-06-27 06:48:43 +0200\
+  \*
+  * Removed unused \_PC macrofrom my\_global.h: it clashes with \_PC macro in tchar.h (windows) - removed unused global.h file
 * [Revision #146](https://bazaar.launchpad.net/~maria-captains/mariadb-native-client/trunk/revision/146)\
   Tue 2014-06-24 08:13:43 +0200
   * Fix for asynchronous api (windows): Context iitialization didn't work, since client library doesn't use WIN definition (instead we use \_WIN32).
@@ -210,12 +210,12 @@ modified in that revision.
   Fri 2014-05-02 16:13:21 +0200
   * Fix for [CONC-90](https://jira.mariadb.org/browse/CONC-90): Incorrect output for mariadb\_config - When linking against external zlib the linker options are - added missing space for CMAKE\_C\_FLAGS
 * [Revision #134](https://bazaar.launchpad.net/~maria-captains/mariadb-native-client/trunk/revision/134)\
-  Thu 2014-04-10 10:17:45 +0200
-  *
-    * Windows build fixes for async API
+  Thu 2014-04-10 10:17:45 +0200\
+  \*
+  * Windows build fixes for async API
 * [Revision #133](https://bazaar.launchpad.net/~maria-captains/mariadb-native-client/trunk/revision/133)\
   Tue 2014-04-08 12:18:08 +0200
-  * Added MariaDB's asnychronous client API. For more information please visit [non-blocking-api-reference](broken-reference)
+  * Added MariaDB's asnychronous client API. For more information please visit [non-blocking-api-reference](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/connectors/c/changelogs/broken-reference/README.md)
 * [Revision #132](https://bazaar.launchpad.net/~maria-captains/mariadb-native-client/trunk/revision/132)\
   Fri 2014-04-04 12:43:00 +0200
   * Fix for [CONC-88](https://jira.mariadb.org/browse/CONC-88): Out-of-source build touches files in source dir removed duplicate CONFIGURE\_FILE directives

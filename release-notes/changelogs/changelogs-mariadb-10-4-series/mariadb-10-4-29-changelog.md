@@ -1,8 +1,8 @@
 # MariaDB 10.4.29 Changelog
 
-The most recent release of [MariaDB 10.4](broken-reference) is:[**MariaDB 10.4.34**](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-10-4-34-release-notes.md) Stable (GA) [Download Now](https://downloads.mariadb.org/mariadb/10.4.34/)
+The most recent release of [MariaDB 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/changelogs/changelogs-mariadb-10-4-series/broken-reference/README.md) is:[**MariaDB 10.4.34**](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-10-4-34-release-notes.md) Stable (GA) [Download Now](https://downloads.mariadb.org/mariadb/10.4.34/)
 
-[Download 10.4.29](https://downloads.mariadb.org/mariadb/10.4.29/)[Release Notes](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-10-4-29-release-notes.md)[Changelog](mariadb-10-4-29-changelog.md)[Overview of 10.4](broken-reference)
+[Download 10.4.29](https://downloads.mariadb.org/mariadb/10.4.29/)[Release Notes](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-10-4-29-release-notes.md)[Changelog](mariadb-10-4-29-changelog.md)[Overview of 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/changelogs/changelogs-mariadb-10-4-series/broken-reference/README.md)
 
 [_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/10.4.29/)
 
@@ -323,7 +323,7 @@ details of the revision and view diffs of the code modified in that revision.
   * Fix few vulnerabilities found by Cppcheck
 * [Revision #acfb5dfd97](https://github.com/MariaDB/server/commit/acfb5dfd97)\
   2023-03-01 20:46:18 +0000
-  * [MDEV-22683](https://jira.mariadb.org/browse/MDEV-22683): Ensure system tables are correctly upgraded in [MariaDB 10.4](broken-reference)
+  * [MDEV-22683](https://jira.mariadb.org/browse/MDEV-22683): Ensure system tables are correctly upgraded in [MariaDB 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/changelogs/changelogs-mariadb-10-4-series/broken-reference/README.md)
 * [Revision #965bdf3e66](https://github.com/MariaDB/server/commit/965bdf3e66)\
   2023-02-28 10:49:25 +0400
   * [MDEV-30746](https://jira.mariadb.org/browse/MDEV-30746) Regression in ucs2\_general\_mysql500\_ci

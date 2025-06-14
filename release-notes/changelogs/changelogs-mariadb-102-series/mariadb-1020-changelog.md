@@ -2,11 +2,11 @@
 
 The most recent release of [MariaDB 10.2](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102.md) is:[**MariaDB 10.2.44**](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-10244-release-notes.md) Stable (GA) [Download Now](https://downloads.mariadb.org/mariadb/10.2.44/)
 
-[Download](https://downloads.mariadb.org/mariadb/10.2.0)[Release Notes](broken-reference)[Changelog](mariadb-1020-changelog.md)[Overview of 10.2](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102.md)
+[Download](https://downloads.mariadb.org/mariadb/10.2.0)[Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/changelogs/changelogs-mariadb-102-series/broken-reference/README.md)[Changelog](mariadb-1020-changelog.md)[Overview of 10.2](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102.md)
 
 **Release date:** 18 Apr 2016
 
-For the highlights of this release, see the[release notes](broken-reference).
+For the highlights of this release, see the[release notes](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/changelogs/changelogs-mariadb-102-series/broken-reference/README.md).
 
 The revision number links will take you to the revision's page on GitHub. On[GitHub](https://github.com/MariaDB/server/tree/10.2) you can view more details of the revision and view diffs of the code modified in that revision.
 
@@ -752,9 +752,9 @@ The revision number links will take you to the revision's page on GitHub. On[Git
   2015-12-02 10:49:16 +0400
   * [MDEV-9215](https://jira.mariadb.org/browse/MDEV-9215) Detect cmp\_type() and result\_type() from field\_type() Part4: Deriving Item\_temporal\_hybrid\_func from Type\_handler\_hybrid\_field\_type
 * [Revision #47a8c6c](https://github.com/MariaDB/server/commit/47a8c6c)\
-  2015-12-02 09:26:34 +0400
-  *
-    * [MDEV-9215](https://jira.mariadb.org/browse/MDEV-9215) Detect cmp\_type() and result\_type() from field\_type() Part3: Deriving Item\_splocal from Type\_handler\_hybrid\_field\_type
+  2015-12-02 09:26:34 +0400\
+  \*
+  * [MDEV-9215](https://jira.mariadb.org/browse/MDEV-9215) Detect cmp\_type() and result\_type() from field\_type() Part3: Deriving Item\_splocal from Type\_handler\_hybrid\_field\_type
 * [Revision #3e471bf](https://github.com/MariaDB/server/commit/3e471bf)\
   2015-12-01 14:20:09 +0400
   * [MDEV-9215](https://jira.mariadb.org/browse/MDEV-9215) Detect cmp\_type() and result\_type() from field\_type() Part2: deriving Item\_sum\_sum from Type\_handler\_hybrid\_field\_type, removing "Item\_result Item\_sum\_sum::hybrid\_type".

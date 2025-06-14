@@ -677,7 +677,7 @@ The revision number links will take you to the revision's page on GitHub. On[Git
   * [MDEV-6616](https://jira.mariadb.org/browse/MDEV-6616) Server crashes in my\_hash\_first if shutdown is performed when FLUSH LOGS is running
 * [Revision #1a43425](https://github.com/MariaDB/server/commit/1a43425)\
   2014-09-05 09:49:27 -0400
-  * DB-310 run tokudb\_support\_xa.test on mysql and [mariadb 5.5](broken-reference/)
+  * DB-310 run tokudb\_support\_xa.test on mysql and [mariadb 5.5](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/changelogs/changelogs-mariadb-101-series/broken-reference/README.md)
 * [Revision #4aac44d](https://github.com/MariaDB/server/commit/4aac44d)\
   2014-09-05 14:18:31 +0200\
   \*

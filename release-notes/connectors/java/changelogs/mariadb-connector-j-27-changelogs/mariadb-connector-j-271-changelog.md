@@ -22,7 +22,7 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #2af5b1a2](https://github.com/mariadb-corporation/mariadb-connector-j/commit/2af5b1a2) - \[[CONJ-839](https://jira.mariadb.org/browse/CONJ-839)] batch exception message correction when with option `rewriteBatchedStatements`
 * [Revision #29df5f5a](https://github.com/mariadb-corporation/mariadb-connector-j/commit/29df5f5a) - \[misc] ensure test before will be executed before test class
 * [Revision #37fde5fc](https://github.com/mariadb-corporation/mariadb-connector-j/commit/37fde5fc) - \[misc] test correction for maxscale and SkySQL environment
-* [Revision #cb926cdc](https://github.com/mariadb-corporation/mariadb-connector-j/commit/cb926cdc) - \[misc] enable load local infile test for [MariaDB 10.4](broken-reference)+
+* [Revision #cb926cdc](https://github.com/mariadb-corporation/mariadb-connector-j/commit/cb926cdc) - \[misc] enable load local infile test for [MariaDB 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/connectors/java/changelogs/mariadb-connector-j-27-changelogs/broken-reference/README.md)+
 * [Revision #d633c8df](https://github.com/mariadb-corporation/mariadb-connector-j/commit/d633c8df) - \[[CONJ-842](https://jira.mariadb.org/browse/CONJ-842)] Byte array parameters are not send as long data
 * [Revision #256fa8f1](https://github.com/mariadb-corporation/mariadb-connector-j/commit/256fa8f1) - \[misc] added benchmark description
 * [Revision #0ebe5eab](https://github.com/mariadb-corporation/mariadb-connector-j/commit/0ebe5eab) - \[[CONJ-843](https://jira.mariadb.org/browse/CONJ-843)] ParameterMetaData::getParameterType for CallableStatement parameter BINARY type now return 'BINARY'
