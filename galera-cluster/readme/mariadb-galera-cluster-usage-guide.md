@@ -20,7 +20,7 @@ As a multi-primary replication solution, any MariaDB Enterprise Server can opera
 
 There are a few things to consider when planning the hardware, virtual machines, or containers for MariaDB Enterprise Cluster.
 
-MariaDB Enterprise Cluster architecture involves deploying [MariaDB MaxScale](../../en/maxscale/) with multiple instances of MariaDB Enterprise Server. The Servers are configured to use multi-primary replication to maintain consistency between themselves while MariaDB MaxScale routes reads and writes between them.
+MariaDB Enterprise Cluster architecture involves deploying [MariaDB MaxScale](https://github.com/mariadb-corporation/docs-server/blob/test/en/maxscale/README.md) with multiple instances of MariaDB Enterprise Server. The Servers are configured to use multi-primary replication to maintain consistency between themselves while MariaDB MaxScale routes reads and writes between them.
 
 The application establishes a client connection to MariaDB MaxScale. MaxScale then routes statements to one of the MariaDB Enterprise Servers in the cluster. Writes made to any node in this cluster replicate to all the other nodes of the cluster.
 
@@ -232,7 +232,7 @@ Being a multi-primary replication solution means that any MariaDB Enterprise Ser
 
 ### Failover
 
-MariaDB Enterprise Cluster does not provide failover capabilities on its own. [MariaDB MaxScale](../../en/maxscale/) is used to route client connections to MariaDB Enterprise Server.
+MariaDB Enterprise Cluster does not provide failover capabilities on its own. [MariaDB MaxScale](https://github.com/mariadb-corporation/docs-server/blob/test/en/maxscale/README.md) is used to route client connections to MariaDB Enterprise Server.
 
 Unlike a traditional load balancer, MariaDB MaxScale is aware of changes in the node and cluster states.
 

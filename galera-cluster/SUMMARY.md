@@ -34,7 +34,7 @@
 * [High Availability](high-availability/README.md)
   * [Galera Load Balancer](high-availability/galera-load-balancer.md)
   * [Using MariaDB Replication with MariaDB Galera Cluster](high-availability/using-mariadb-replication-with-mariadb-galera-cluster/README.md)
-    * [Configuring MariaDB Replication between MariaDB Galera Cluster and MariaDB Server](high-availability/using-mariadb-replication-with-mariadb-galera-cluster/configuring-mariadb-replication-between-mariadb-galera-cluster-and-mariadb-.md)
+    * [Configuring MariaDB Replication between MariaDB Galera Cluster and MariaDB Server](high-availability/using-mariadb-replication-with-mariadb-galera-cluster/configuring-mariadb-replication-between-mariadb-galera-cluster-and-mariadb.md)
     * [Configuring MariaDB Replication between Two MariaDB Galera Clusters](high-availability/using-mariadb-replication-with-mariadb-galera-cluster/configuring-mariadb-replication-between-two-mariadb-galera-clusters.md)
     * [Using MariaDB GTIDs with MariaDB Galera Cluster](high-availability/using-mariadb-replication-with-mariadb-galera-cluster/using-mariadb-gtids-with-mariadb-galera-cluster.md)
     * [Using MariaDB Replication with MariaDB Galera Cluster](high-availability/using-mariadb-replication-with-mariadb-galera-cluster/using-mariadb-replication-with-mariadb-galera-cluster-using-mariadb-replica.md)

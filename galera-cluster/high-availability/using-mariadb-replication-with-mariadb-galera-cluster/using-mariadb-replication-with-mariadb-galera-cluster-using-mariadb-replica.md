@@ -1,12 +1,12 @@
 # Using MariaDB Replication with MariaDB Galera Cluster
 
-[MariaDB replication](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication) and [MariaDB Galera Cluster](../../../kb/en/galera-cluster/) can be used together. However, there are some things that have to be taken into account.
+[MariaDB replication](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication) and [MariaDB Galera Cluster](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/galera-cluster/README.md) can be used together. However, there are some things that have to be taken into account.
 
 ## Tutorials
 
-If you want to use [MariaDB replication](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication) and [MariaDB Galera Cluster](../../../kb/en/galera-cluster/) together, then the following tutorials may be useful:
+If you want to use [MariaDB replication](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication) and [MariaDB Galera Cluster](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/galera-cluster/README.md) together, then the following tutorials may be useful:
 
-* [Configuring MariaDB Replication between MariaDB Galera Cluster and MariaDB Server](../../../kb/en/using-mariadb-replication-with-mariadb-galera-cluster-configuring-mariadb-r/)
+* [Configuring MariaDB Replication between MariaDB Galera Cluster and MariaDB Server](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/using-mariadb-replication-with-mariadb-galera-cluster-configuring-mariadb-r/README.md)
 * [Configuring MariaDB Replication between Two MariaDB Galera Clusters](configuring-mariadb-replication-between-two-mariadb-galera-clusters.md)
 
 ## Configuring a Cluster Node as a Replication Master
@@ -29,13 +29,13 @@ If the node is a replication slave, then it is probably also a good idea to enab
 
 ## Replication Filters
 
-Both [MariaDB replication](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication) and [MariaDB Galera Cluster](../../../kb/en/galera-cluster/) support [replication filters](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-filters), so extra caution must be taken when using all of these features together. See [Configuring MariaDB Galera Cluster: Replication Filters](../../galera-management/configuring-mariadb-galera-cluster.md#replication-filters) for more details on how MariaDB Galera Cluster interprets replication filters.
+Both [MariaDB replication](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication) and [MariaDB Galera Cluster](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/galera-cluster/README.md) support [replication filters](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-filters), so extra caution must be taken when using all of these features together. See [Configuring MariaDB Galera Cluster: Replication Filters](../../galera-management/configuring-mariadb-galera-cluster.md#replication-filters) for more details on how MariaDB Galera Cluster interprets replication filters.
 
 ## Setting server\_id on Cluster Nodes
 
 ### Setting the Same server\_id on Each Cluster Node
 
-It is most common to set `[server_id](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables#server_id)` to the same value on each node in a given cluster. Since [MariaDB Galera Cluster](../../../kb/en/galera-cluster/) uses a [virtually synchronous certification-based replication](../../readme/about-galera-replication.md), all nodes should have the same data, so in a logical sense, a cluster can be considered in many cases a single logical server for purposes related to [MariaDB replication](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication). The [binary logs](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/server-monitoring-logs/binary-log) of each cluster node might even contain roughly the same transactions and [GTIDs](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid) if `[log_slave_updates=ON](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables#log_slave_updates)` is set and if [wsrep GTID mode](using-mariadb-gtids-with-mariadb-galera-cluster.md#wsrep-gtid-mode) is enabled and if non-Galera transactions are not being executed on any nodes.
+It is most common to set `[server_id](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables#server_id)` to the same value on each node in a given cluster. Since [MariaDB Galera Cluster](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/galera-cluster/README.md) uses a [virtually synchronous certification-based replication](../../readme/about-galera-replication.md), all nodes should have the same data, so in a logical sense, a cluster can be considered in many cases a single logical server for purposes related to [MariaDB replication](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication). The [binary logs](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/server-monitoring-logs/binary-log) of each cluster node might even contain roughly the same transactions and [GTIDs](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid) if `[log_slave_updates=ON](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables#log_slave_updates)` is set and if [wsrep GTID mode](using-mariadb-gtids-with-mariadb-galera-cluster.md#wsrep-gtid-mode) is enabled and if non-Galera transactions are not being executed on any nodes.
 
 ### Setting a Different server\_id on Each Cluster Node
 
