@@ -51,7 +51,7 @@ is known as _Service as a Server_.
 
 **Example**
 
-![](../../../.gitbook/assets/mariadb-corporation/MaxScale/2.5.29/Documentation/Routers/images/sr-config.png.png)
+![](../../../.gitbook/assets/sr-config.png.png)
 
 Suppose we have a service like
 

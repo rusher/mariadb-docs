@@ -569,7 +569,7 @@ create/add users when connecting over a domain socket, or use[TLS/SSL](mariadb-m
 #### TLS/SSL
 
 Since `nosqlprotocol` is a regular protocol module used in a listener,\
-the TLS/SSL support of listeners is available. Please see[TSLSSL encryption](../../../mariadb-maxscale-21-06/mariadb-maxscale-21-06-protocols/Getting-Started/Configuration-Guide.md#tsl-encryption)\
+the TLS/SSL support of listeners is available. Please see[TSLSSL encryption](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-21-06/mariadb-maxscale-21-06-protocols/Getting-Started/Configuration-Guide.md#tsl-encryption)\
 for details.
 
 ### Local Account Database

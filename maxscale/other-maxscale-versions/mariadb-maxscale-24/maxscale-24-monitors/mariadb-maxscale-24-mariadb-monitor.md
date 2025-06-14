@@ -210,7 +210,7 @@ but are a part of the replication topology.
 
 An external server is a server not monitored by this monitor. If a server is\
 replicating from an external server, it typically gains the _Slave of External_\
-&#xNAN;_&#x53;erver_-status. If this setting is enabled, the status is not set.
+\&#xNAN;_Server_-status. If this setting is enabled, the status is not set.
 
 #### `detect_standalone_master`
 
@@ -662,8 +662,8 @@ will be put to maintenance during the next monitor iteration.
 
 For this parameter to have any effect, `disk_space_threshold` must be specified\
 for the [server](../maxscale-24-getting-started/mariadb-maxscale-24-mariadb-maxscale-configuration-guide.md)\
-or the [monitor](../../../mariadb-maxscale-24/maxscale-24-monitors/node:mariadb-maxscale-24-common-monitor-parameters/#disk_space_threshold).\
-Also, [disk\_space\_check\_interval](../../../mariadb-maxscale-24/maxscale-24-monitors/node:mariadb-maxscale-24-common-monitor-parameters/#disk_space_check_interval)\
+or the [monitor](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-24/maxscale-24-monitors/node:mariadb-maxscale-24-common-monitor-parameters/README.md#disk_space_threshold).\
+Also, [disk\_space\_check\_interval](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-24/maxscale-24-monitors/node:mariadb-maxscale-24-common-monitor-parameters/README.md#disk_space_check_interval)\
 must be defined for the monitor.
 
 ```

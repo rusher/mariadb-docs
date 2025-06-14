@@ -17,7 +17,7 @@ Nagios® Core™ is an Open Source system and network monitoring application. It
 Nagios plugins are compiled executables or scripts (Perl scripts, shell scripts, etc.) that can be run from a command line to check the status or a host or service. Nagios uses the results from plugins to determine the current status of hosts and services on your network.\
 Nagios core executes a plugin whenever there is a need to check the status of a service or host.
 
-While MaxScale resources and status can be monitored via CLI using maxadmin commands, Nagios Plugin provides an automated way for system administration and database administrators to monitor MaxScale. The diagram below provides view of how Nagios and MaxScale interact.![](../../../.gitbook/assets/mariadb-corporation/MaxScale/1.4.5/Documentation/Tutorials/images/HowMaxScaleWorksWithNagios.png.png)
+While MaxScale resources and status can be monitored via CLI using maxadmin commands, Nagios Plugin provides an automated way for system administration and database administrators to monitor MaxScale. The diagram below provides view of how Nagios and MaxScale interact.![](../../../.gitbook/assets/HowMaxScaleWorksWithNagios.png.png)
 
 There are three Nagios plugin scripts that MaxScale provides.
 

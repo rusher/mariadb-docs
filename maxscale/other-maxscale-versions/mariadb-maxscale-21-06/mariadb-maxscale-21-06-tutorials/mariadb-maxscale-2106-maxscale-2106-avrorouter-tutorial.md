@@ -8,7 +8,7 @@ file conversion. The second part of this tutorial uses the client listener\
 interface for the avrorouter and shows how to communicate with the the service\
 over the network.
 
-![](../../../.gitbook/assets/mariadb-corporation/MaxScale/21.06.19/Documentation/Routers/images/Binlog-Avro.png.png)
+![](../../../.gitbook/assets/Binlog-Avro.png.png)
 
 ## Configuration
 

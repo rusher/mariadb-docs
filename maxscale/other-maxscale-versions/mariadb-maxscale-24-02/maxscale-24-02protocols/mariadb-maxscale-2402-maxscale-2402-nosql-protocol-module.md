@@ -1,4 +1,4 @@
-# mariadb-maxscale-2402-maxscale-2402-nosql-protocol-module
+# MaxScale 24.02 NoSQL Protocol Module
 
 ## MaxScale 24.02 NoSQL Protocol Module
 
@@ -903,7 +903,7 @@ which means that only the `test` database can be accessed and modified.
 #### TLS/SSL
 
 Since `nosqlprotocol` is a regular protocol module used in a listener,\
-the TLS/SSL support of listeners is available. Please see[TLS/SSL encryption](../../../mariadb-maxscale-24-02/maxscale-24-02protocols/Getting-Started/Configuration-Guide.md#tls-encryption)\
+the TLS/SSL support of listeners is available. Please see[TLS/SSL encryption](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-24-02/maxscale-24-02protocols/Getting-Started/Configuration-Guide.md#tls-encryption)\
 for details.
 
 ### NoSQL Account Database

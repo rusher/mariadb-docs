@@ -251,7 +251,7 @@ for the mmmon module. For more details, please read the[MySQL Monitor Documentat
 A simple failover mode has been added to the MySQL Monitor. This mode is\
 aimed for two node master-slave clusters where the slave can act as a\
 master in case the original master fails. For more details, please read\
-the [MySQL Monitor Documentation](../../../../en/mariadb-maxscale-22-mysql-monitor/).
+the [MySQL Monitor Documentation](https://github.com/mariadb-corporation/docs-server/blob/test/en/mariadb-maxscale-22-mysql-monitor/README.md).
 
 #### Permissive authentication mode for MySQLAuth
 

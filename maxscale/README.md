@@ -35,14 +35,14 @@ layout:
 [maxscale-security](maxscale-security/)
 {% endcontent-ref %}
 
-{% content-ref url="maxscale-use-cases.md" %}
-[maxscale-use-cases.md](maxscale-use-cases.md)
+{% content-ref url="maxscale-use-cases/" %}
+[maxscale-use-cases](maxscale-use-cases/)
 {% endcontent-ref %}
 
 {% content-ref url="mariadb-maxscale-tutorials/" %}
 [mariadb-maxscale-tutorials](mariadb-maxscale-tutorials/)
 {% endcontent-ref %}
 
-{% content-ref url="reference.md" %}
-[reference.md](reference.md)
+{% content-ref url="reference/" %}
+[reference](reference/)
 {% endcontent-ref %}

@@ -1,7 +1,5 @@
 # Avrorouter Tutorial
 
-
-
 This tutorial is a short introduction to the[Avrorouter](../mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-avrorouter.md), how to set it up and how it interacts\
 with the binlogrouter.
 
@@ -10,7 +8,7 @@ file conversion. The second part of this tutorial uses the client listener\
 interface for the avrorouter and shows how to communicate with the service\
 over the network.
 
-![](../../../.gitbook/assets/mariadb-corporation/MaxScale/25.01.2-docs/Documentation/Routers/images/Binlog-Avro.png.png)
+![](<../../../.gitbook/assets/Binlog-Avro.png (4).png>)
 
 ## Configuration
 

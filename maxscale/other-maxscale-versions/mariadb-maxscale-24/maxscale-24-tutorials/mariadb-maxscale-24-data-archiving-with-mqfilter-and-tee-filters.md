@@ -8,7 +8,7 @@ archiving the data and one for actual use, a RabbitMQ server and a MariaDB MaxSc
 For testing purposes some of these can locate on the same server but for actual\
 use, an HA solution is recommended.
 
-![](../../../.gitbook/assets/mariadb-corporation/MaxScale/2.4.19/Documentation/Tutorials/images/rabbit-and-tee.png.png)
+![](<../../../.gitbook/assets/rabbit-and-tee.png (1).png>)
 
 The use case for this tutorial is a production system with one main server where all\
 queries are routed and an archive server where only INSERT, UPDATE and DELETE statements\

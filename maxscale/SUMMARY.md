@@ -40,12 +40,12 @@
   * [Authentication Modules](maxscale-security/mariadb-maxscale-authentication-modules-guide.md)
   * [MariaDB MaxScale Authentication](maxscale-security/mariadb-maxscale-authentication/README.md)
     * [Native Authenticator](maxscale-security/mariadb-maxscale-authentication/native-authenticator.md)
-* [MaxScale Use Cases](maxscale-use-cases.md)
-  * [MaxScale Overview](readme/maxscale-overview.md)
-  * [MaxScale Trial](readme/maxscale-trial.md)
+* [MaxScale Use Cases](maxscale-use-cases/README.md)
+  * [MaxScale Overview](maxscale-use-cases/maxscale-overview.md)
+  * [MaxScale Trial](maxscale-use-cases/maxscale-trial.md)
 * [Tutorials](mariadb-maxscale-tutorials/README.md)
   * [Analyzing MaxCtrl Create Report Output](mariadb-maxscale-tutorials/analyzing-maxctrl-create-report-output.md)
-* [Reference](reference.md)
+* [Reference](reference/README.md)
   * [MaxScale Module Commands](reference/mariadb-maxscale-2402-maxscale-2402-module-commands.md)
 
 ## Other MaxScale Versions

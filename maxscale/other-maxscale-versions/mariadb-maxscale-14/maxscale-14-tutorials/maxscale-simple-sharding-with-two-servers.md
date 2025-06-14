@@ -1,6 +1,6 @@
 # MaxScale Simple Sharding with Two Servers
 
-![](../../../.gitbook/assets/mariadb-corporation/MaxScale/1.4.5/Documentation/Tutorials/images/Simple-Sharding.png.png)
+![](../../../.gitbook/assets/Simple-Sharding.png.png)
 
 Sharding is the method of splitting a single database server into separate parts. This tutorial describes a very simple way of sharding. Each schema is located on a different database server and MaxScale's **schemarouter** module is used to combine them into a single database server.
 

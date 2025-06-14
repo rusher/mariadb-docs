@@ -229,17 +229,17 @@ For more details, please refer to:
 * [MariaDB MaxScale 23.02.13 Release Notes](../mariadb-maxscale-23-02/mariadb-maxscale-23-02-release-notes/mariadb-maxscale-2302-maxscale-2302-mariadb-maxscale-230213-release-notes.md)
 * [MariaDB MaxScale 23.02.12 Release Notes](../mariadb-maxscale-23-02/mariadb-maxscale-23-02-release-notes/mariadb-maxscale-2302-maxscale-2302-mariadb-maxscale-230212-release-notes-2024-12-09.md)
 * [MariaDB MaxScale 23.02.11 Release Notes](../mariadb-maxscale-23-02/mariadb-maxscale-23-02-release-notes/mariadb-maxscale-2302-maxscale-2302-mariadb-maxscale-230211-release-notes-2024-09-09.md)
-* [MariaDB MaxScale 23.02.10 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-23.02.10-Release-Notes.md)
-* [MariaDB MaxScale 23.02.9 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-23.02.9-Release-Notes.md)
-* [MariaDB MaxScale 23.02.8 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-23.02.8-Release-Notes.md)
-* [MariaDB MaxScale 23.02.7 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-23.02.7-Release-Notes.md)
-* [MariaDB MaxScale 23.02.6 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-23.02.6-Release-Notes.md)
-* [MariaDB MaxScale 23.02.5 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-23.02.5-Release-Notes.md)
-* [MariaDB MaxScale 23.02.4 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-23.02.4-Release-Notes.md)
-* [MariaDB MaxScale 23.02.3 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-23.02.3-Release-Notes.md)
-* [MariaDB MaxScale 23.02.2 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-23.02.2-Release-Notes.md)
-* [MariaDB MaxScale 23.02.1 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-23.02.1-Release-Notes.md)
-* [MariaDB MaxScale 23.02.0 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-23.02.0-Release-Notes.md)
+* [MariaDB MaxScale 23.02.10 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-23.02.10-Release-Notes.md)
+* [MariaDB MaxScale 23.02.9 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-23.02.9-Release-Notes.md)
+* [MariaDB MaxScale 23.02.8 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-23.02.8-Release-Notes.md)
+* [MariaDB MaxScale 23.02.7 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-23.02.7-Release-Notes.md)
+* [MariaDB MaxScale 23.02.6 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-23.02.6-Release-Notes.md)
+* [MariaDB MaxScale 23.02.5 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-23.02.5-Release-Notes.md)
+* [MariaDB MaxScale 23.02.4 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-23.02.4-Release-Notes.md)
+* [MariaDB MaxScale 23.02.3 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-23.02.3-Release-Notes.md)
+* [MariaDB MaxScale 23.02.2 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-23.02.2-Release-Notes.md)
+* [MariaDB MaxScale 23.02.1 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-23.02.1-Release-Notes.md)
+* [MariaDB MaxScale 23.02.0 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-23.02.0-Release-Notes.md)
 
 ### MariaDB MaxScale 22.08
 
@@ -271,20 +271,20 @@ For more details, please refer to:
 
 For more details, please refer to:
 
-* [MariaDB MaxScale 22.08.13 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-22.08.13-Release-Notes.md)
-* [MariaDB MaxScale 22.08.12 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-22.08.12-Release-Notes.md)
-* [MariaDB MaxScale 22.08.11 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-22.08.11-Release-Notes.md)
-* [MariaDB MaxScale 22.08.10 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-22.08.10-Release-Notes.md)
-* [MariaDB MaxScale 22.08.9 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-22.08.9-Release-Notes.md)
-* [MariaDB MaxScale 22.08.8 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-22.08.8-Release-Notes.md)
-* [MariaDB MaxScale 22.08.7 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-22.08.7-Release-Notes.md)
-* [MariaDB MaxScale 22.08.6 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-22.08.6-Release-Notes.md)
-* [MariaDB MaxScale 22.08.5 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-22.08.5-Release-Notes.md)
-* [MariaDB MaxScale 22.08.4 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-22.08.4-Release-Notes.md)
-* [MariaDB MaxScale 22.08.3 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-22.08.3-Release-Notes.md)
-* [MariaDB MaxScale 22.08.2 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-22.08.2-Release-Notes.md)
-* [MariaDB MaxScale 22.08.1 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-22.08.1-Release-Notes.md)
-* [MariaDB MaxScale 22.08.0 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-22.08.0-Release-Notes.md)
+* [MariaDB MaxScale 22.08.13 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-22.08.13-Release-Notes.md)
+* [MariaDB MaxScale 22.08.12 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-22.08.12-Release-Notes.md)
+* [MariaDB MaxScale 22.08.11 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-22.08.11-Release-Notes.md)
+* [MariaDB MaxScale 22.08.10 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-22.08.10-Release-Notes.md)
+* [MariaDB MaxScale 22.08.9 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-22.08.9-Release-Notes.md)
+* [MariaDB MaxScale 22.08.8 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-22.08.8-Release-Notes.md)
+* [MariaDB MaxScale 22.08.7 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-22.08.7-Release-Notes.md)
+* [MariaDB MaxScale 22.08.6 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-22.08.6-Release-Notes.md)
+* [MariaDB MaxScale 22.08.5 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-22.08.5-Release-Notes.md)
+* [MariaDB MaxScale 22.08.4 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-22.08.4-Release-Notes.md)
+* [MariaDB MaxScale 22.08.3 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-22.08.3-Release-Notes.md)
+* [MariaDB MaxScale 22.08.2 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-22.08.2-Release-Notes.md)
+* [MariaDB MaxScale 22.08.1 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-22.08.1-Release-Notes.md)
+* [MariaDB MaxScale 22.08.0 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-22.08.0-Release-Notes.md)
 
 ### MariaDB MaxScale 21.06
 
@@ -300,23 +300,23 @@ identical. 21.06 denotes the year and month when the first 6 release was made.
 
 For more details, please refer to:
 
-* [MariaDB MaxScale 21.06.16 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-21.06.16-Release-Notes.md)
-* [MariaDB MaxScale 6.4.15 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-6.4.15-Release-Notes.md)
-* [MariaDB MaxScale 6.4.14 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-6.4.14-Release-Notes.md)
-* [MariaDB MaxScale 6.4.13 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-6.4.13-Release-Notes.md)
-* [MariaDB MaxScale 6.4.12 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-6.4.12-Release-Notes.md)
-* [MariaDB MaxScale 6.4.11 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-6.4.11-Release-Notes.md)
-* [MariaDB MaxScale 6.4.10 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-6.4.10-Release-Notes.md)
-* [MariaDB MaxScale 6.4.9 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-6.4.9-Release-Notes.md)
-* [MariaDB MaxScale 6.4.8 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-6.4.8-Release-Notes.md)
-* [MariaDB MaxScale 6.4.7 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-6.4.7-Release-Notes.md)
-* [MariaDB MaxScale 6.4.6 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-6.4.6-Release-Notes.md)
-* [MariaDB MaxScale 6.4.5 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-6.4.5-Release-Notes.md)
-* [MariaDB MaxScale 6.4.4 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-6.4.4-Release-Notes.md)
-* [MariaDB MaxScale 6.4.3 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-6.4.3-Release-Notes.md)
-* [MariaDB MaxScale 6.4.2 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-6.4.2-Release-Notes.md)
-* [MariaDB MaxScale 6.4.1 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-6.4.1-Release-Notes.md)
-* [MariaDB MaxScale 6.4.0 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-6.4.0-Release-Notes.md)
+* [MariaDB MaxScale 21.06.16 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-21.06.16-Release-Notes.md)
+* [MariaDB MaxScale 6.4.15 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-6.4.15-Release-Notes.md)
+* [MariaDB MaxScale 6.4.14 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-6.4.14-Release-Notes.md)
+* [MariaDB MaxScale 6.4.13 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-6.4.13-Release-Notes.md)
+* [MariaDB MaxScale 6.4.12 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-6.4.12-Release-Notes.md)
+* [MariaDB MaxScale 6.4.11 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-6.4.11-Release-Notes.md)
+* [MariaDB MaxScale 6.4.10 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-6.4.10-Release-Notes.md)
+* [MariaDB MaxScale 6.4.9 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-6.4.9-Release-Notes.md)
+* [MariaDB MaxScale 6.4.8 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-6.4.8-Release-Notes.md)
+* [MariaDB MaxScale 6.4.7 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-6.4.7-Release-Notes.md)
+* [MariaDB MaxScale 6.4.6 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-6.4.6-Release-Notes.md)
+* [MariaDB MaxScale 6.4.5 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-6.4.5-Release-Notes.md)
+* [MariaDB MaxScale 6.4.4 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-6.4.4-Release-Notes.md)
+* [MariaDB MaxScale 6.4.3 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-6.4.3-Release-Notes.md)
+* [MariaDB MaxScale 6.4.2 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-6.4.2-Release-Notes.md)
+* [MariaDB MaxScale 6.4.1 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-6.4.1-Release-Notes.md)
+* [MariaDB MaxScale 6.4.0 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-6.4.0-Release-Notes.md)
 
 ### MariaDB MaxScale 6.3
 
@@ -331,8 +331,8 @@ For more details, please refer to:
 
 For more details, please refer to:
 
-* [MariaDB MaxScale 6.3.1 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-6.3.1-Release-Notes.md)
-* [MariaDB MaxScale 6.3.0 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-6.3.0-Release-Notes.md)
+* [MariaDB MaxScale 6.3.1 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-6.3.1-Release-Notes.md)
+* [MariaDB MaxScale 6.3.0 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-6.3.0-Release-Notes.md)
 
 ### MariaDB MaxScale 6.2
 
@@ -349,11 +349,11 @@ For more details, please refer to:
 
 For more details, please refer to:
 
-* [MariaDB MaxScale 6.2.4 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-6.2.4-Release-Notes.md)
-* [MariaDB MaxScale 6.2.3 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-6.2.3-Release-Notes.md)
-* [MariaDB MaxScale 6.2.2 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-6.2.2-Release-Notes.md)
-* [MariaDB MaxScale 6.2.1 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-6.2.1-Release-Notes.md)
-* [MariaDB MaxScale 6.2.0 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-6.2.0-Release-Notes.md)
+* [MariaDB MaxScale 6.2.4 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-6.2.4-Release-Notes.md)
+* [MariaDB MaxScale 6.2.3 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-6.2.3-Release-Notes.md)
+* [MariaDB MaxScale 6.2.2 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-6.2.2-Release-Notes.md)
+* [MariaDB MaxScale 6.2.1 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-6.2.1-Release-Notes.md)
+* [MariaDB MaxScale 6.2.0 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-6.2.0-Release-Notes.md)
 
 ### MariaDB MaxScale 6.1
 
@@ -381,12 +381,12 @@ For more details, please refer to:
 
 For more details, please refer to:
 
-* [MariaDB MaxScale 6.1.4 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-6.1.4-Release-Notes.md)
-* [MariaDB MaxScale 6.1.3 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-6.1.3-Release-Notes.md)
-* [MariaDB MaxScale 6.1.2 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-6.1.2-Release-Notes.md)
-* [MariaDB MaxScale 6.1.1 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-6.1.1-Release-Notes.md)
-* [MariaDB MaxScale 6.1.0 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-6.1.0-Release-Notes.md)
-* [MariaDB MaxScale 6.0.0 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-6.0.0-Release-Notes.md)
+* [MariaDB MaxScale 6.1.4 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-6.1.4-Release-Notes.md)
+* [MariaDB MaxScale 6.1.3 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-6.1.3-Release-Notes.md)
+* [MariaDB MaxScale 6.1.2 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-6.1.2-Release-Notes.md)
+* [MariaDB MaxScale 6.1.1 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-6.1.1-Release-Notes.md)
+* [MariaDB MaxScale 6.1.0 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-6.1.0-Release-Notes.md)
+* [MariaDB MaxScale 6.0.0 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-6.0.0-Release-Notes.md)
 
 ### MariaDB MaxScale 2.5
 
@@ -420,36 +420,36 @@ For more details, please refer to:
 
 For more details, please refer to:
 
-* [MariaDB MaxScale 2.5.29 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.5.29-Release-Notes.md)
-* [MariaDB MaxScale 2.5.28 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.5.28-Release-Notes.md)
-* [MariaDB MaxScale 2.5.27 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.5.27-Release-Notes.md)
-* [MariaDB MaxScale 2.5.26 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.5.26-Release-Notes.md)
-* [MariaDB MaxScale 2.5.25 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.5.25-Release-Notes.md)
-* [MariaDB MaxScale 2.5.24 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.5.24-Release-Notes.md)
-* [MariaDB MaxScale 2.5.23 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.5.23-Release-Notes.md)
-* [MariaDB MaxScale 2.5.22 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.5.22-Release-Notes.md)
-* [MariaDB MaxScale 2.5.21 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.5.21-Release-Notes.md)
-* [MariaDB MaxScale 2.5.20 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.5.20-Release-Notes.md)
-* [MariaDB MaxScale 2.5.19 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.5.19-Release-Notes.md)
-* [MariaDB MaxScale 2.5.18 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.5.18-Release-Notes.md)
-* [MariaDB MaxScale 2.5.17 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.5.17-Release-Notes.md)
-* [MariaDB MaxScale 2.5.16 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.5.16-Release-Notes.md)
-* [MariaDB MaxScale 2.5.15 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.5.15-Release-Notes.md)
-* [MariaDB MaxScale 2.5.14 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.5.14-Release-Notes.md)
-* [MariaDB MaxScale 2.5.13 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.5.13-Release-Notes.md)
-* [MariaDB MaxScale 2.5.12 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.5.12-Release-Notes.md)
-* [MariaDB MaxScale 2.5.11 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.5.11-Release-Notes.md)
-* [MariaDB MaxScale 2.5.10 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.5.10-Release-Notes.md)
-* [MariaDB MaxScale 2.5.9 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.5.9-Release-Notes.md)
-* [MariaDB MaxScale 2.5.8 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.5.8-Release-Notes.md)
-* [MariaDB MaxScale 2.5.7 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.5.7-Release-Notes.md)
-* [MariaDB MaxScale 2.5.6 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.5.6-Release-Notes.md)
-* [MariaDB MaxScale 2.5.5 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.5.5-Release-Notes.md)
-* [MariaDB MaxScale 2.5.4 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.5.4-Release-Notes.md)
-* [MariaDB MaxScale 2.5.3 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.5.3-Release-Notes.md)
-* [MariaDB MaxScale 2.5.2 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.5.2-Release-Notes.md)
-* [MariaDB MaxScale 2.5.1 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.5.1-Release-Notes.md)
-* [MariaDB MaxScale 2.5.0 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.5.0-Release-Notes.md)
+* [MariaDB MaxScale 2.5.29 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.5.29-Release-Notes.md)
+* [MariaDB MaxScale 2.5.28 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.5.28-Release-Notes.md)
+* [MariaDB MaxScale 2.5.27 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.5.27-Release-Notes.md)
+* [MariaDB MaxScale 2.5.26 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.5.26-Release-Notes.md)
+* [MariaDB MaxScale 2.5.25 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.5.25-Release-Notes.md)
+* [MariaDB MaxScale 2.5.24 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.5.24-Release-Notes.md)
+* [MariaDB MaxScale 2.5.23 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.5.23-Release-Notes.md)
+* [MariaDB MaxScale 2.5.22 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.5.22-Release-Notes.md)
+* [MariaDB MaxScale 2.5.21 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.5.21-Release-Notes.md)
+* [MariaDB MaxScale 2.5.20 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.5.20-Release-Notes.md)
+* [MariaDB MaxScale 2.5.19 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.5.19-Release-Notes.md)
+* [MariaDB MaxScale 2.5.18 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.5.18-Release-Notes.md)
+* [MariaDB MaxScale 2.5.17 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.5.17-Release-Notes.md)
+* [MariaDB MaxScale 2.5.16 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.5.16-Release-Notes.md)
+* [MariaDB MaxScale 2.5.15 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.5.15-Release-Notes.md)
+* [MariaDB MaxScale 2.5.14 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.5.14-Release-Notes.md)
+* [MariaDB MaxScale 2.5.13 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.5.13-Release-Notes.md)
+* [MariaDB MaxScale 2.5.12 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.5.12-Release-Notes.md)
+* [MariaDB MaxScale 2.5.11 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.5.11-Release-Notes.md)
+* [MariaDB MaxScale 2.5.10 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.5.10-Release-Notes.md)
+* [MariaDB MaxScale 2.5.9 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.5.9-Release-Notes.md)
+* [MariaDB MaxScale 2.5.8 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.5.8-Release-Notes.md)
+* [MariaDB MaxScale 2.5.7 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.5.7-Release-Notes.md)
+* [MariaDB MaxScale 2.5.6 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.5.6-Release-Notes.md)
+* [MariaDB MaxScale 2.5.5 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.5.5-Release-Notes.md)
+* [MariaDB MaxScale 2.5.4 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.5.4-Release-Notes.md)
+* [MariaDB MaxScale 2.5.3 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.5.3-Release-Notes.md)
+* [MariaDB MaxScale 2.5.2 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.5.2-Release-Notes.md)
+* [MariaDB MaxScale 2.5.1 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.5.1-Release-Notes.md)
+* [MariaDB MaxScale 2.5.0 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.5.0-Release-Notes.md)
 
 ### MariaDB MaxScale 2.4
 
@@ -474,26 +474,26 @@ For more details, please refer to:
 
 For more details, please refer to:
 
-* [MariaDB MaxScale 2.4.19 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.4.19-Release-Notes.md)
-* [MariaDB MaxScale 2.4.18 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.4.18-Release-Notes.md)
-* [MariaDB MaxScale 2.4.17 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.4.17-Release-Notes.md)
-* [MariaDB MaxScale 2.4.16 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.4.16-Release-Notes.md)
-* [MariaDB MaxScale 2.4.15 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.4.15-Release-Notes.md)
-* [MariaDB MaxScale 2.4.14 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.4.14-Release-Notes.md)
-* [MariaDB MaxScale 2.4.13 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.4.13-Release-Notes.md)
-* [MariaDB MaxScale 2.4.12 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.4.12-Release-Notes.md)
-* [MariaDB MaxScale 2.4.11 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.4.11-Release-Notes.md)
-* [MariaDB MaxScale 2.4.10 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.4.10-Release-Notes.md)
-* [MariaDB MaxScale 2.4.9 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.4.9-Release-Notes.md)
-* [MariaDB MaxScale 2.4.8 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.4.8-Release-Notes.md)
-* [MariaDB MaxScale 2.4.7 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.4.7-Release-Notes.md)
-* [MariaDB MaxScale 2.4.6 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.4.6-Release-Notes.md)
-* [MariaDB MaxScale 2.4.5 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.4.5-Release-Notes.md)
-* [MariaDB MaxScale 2.4.4 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.4.4-Release-Notes.md)
-* [MariaDB MaxScale 2.4.3 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.4.3-Release-Notes.md)
-* [MariaDB MaxScale 2.4.2 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.4.2-Release-Notes.md)
-* [MariaDB MaxScale 2.4.1 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.4.1-Release-Notes.md)
-* [MariaDB MaxScale 2.4.0 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.4.0-Release-Notes.md)
+* [MariaDB MaxScale 2.4.19 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.4.19-Release-Notes.md)
+* [MariaDB MaxScale 2.4.18 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.4.18-Release-Notes.md)
+* [MariaDB MaxScale 2.4.17 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.4.17-Release-Notes.md)
+* [MariaDB MaxScale 2.4.16 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.4.16-Release-Notes.md)
+* [MariaDB MaxScale 2.4.15 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.4.15-Release-Notes.md)
+* [MariaDB MaxScale 2.4.14 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.4.14-Release-Notes.md)
+* [MariaDB MaxScale 2.4.13 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.4.13-Release-Notes.md)
+* [MariaDB MaxScale 2.4.12 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.4.12-Release-Notes.md)
+* [MariaDB MaxScale 2.4.11 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.4.11-Release-Notes.md)
+* [MariaDB MaxScale 2.4.10 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.4.10-Release-Notes.md)
+* [MariaDB MaxScale 2.4.9 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.4.9-Release-Notes.md)
+* [MariaDB MaxScale 2.4.8 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.4.8-Release-Notes.md)
+* [MariaDB MaxScale 2.4.7 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.4.7-Release-Notes.md)
+* [MariaDB MaxScale 2.4.6 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.4.6-Release-Notes.md)
+* [MariaDB MaxScale 2.4.5 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.4.5-Release-Notes.md)
+* [MariaDB MaxScale 2.4.4 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.4.4-Release-Notes.md)
+* [MariaDB MaxScale 2.4.3 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.4.3-Release-Notes.md)
+* [MariaDB MaxScale 2.4.2 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.4.2-Release-Notes.md)
+* [MariaDB MaxScale 2.4.1 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.4.1-Release-Notes.md)
+* [MariaDB MaxScale 2.4.0 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.4.0-Release-Notes.md)
 
 ### MariaDB MaxScale 2.3
 
@@ -528,27 +528,27 @@ For more details, please refer to:
 
 For more details, please refer to:
 
-* [MariaDB MaxScale 2.3.20 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.3.20-Release-Notes.md)
-* [MariaDB MaxScale 2.3.19 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.3.19-Release-Notes.md)
-* [MariaDB MaxScale 2.3.18 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.3.18-Release-Notes.md)
-* [MariaDB MaxScale 2.3.17 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.3.17-Release-Notes.md)
-* [MariaDB MaxScale 2.3.16 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.3.16-Release-Notes.md)
-* [MariaDB MaxScale 2.3.15 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.3.15-Release-Notes.md)
-* [MariaDB MaxScale 2.3.14 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.3.14-Release-Notes.md)
-* [MariaDB MaxScale 2.3.13 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.3.13-Release-Notes.md)
-* [MariaDB MaxScale 2.3.12 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.3.12-Release-Notes.md)
-* [MariaDB MaxScale 2.3.11 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.3.11-Release-Notes.md)
-* [MariaDB MaxScale 2.3.10 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.3.10-Release-Notes.md)
-* [MariaDB MaxScale 2.3.9 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.3.9-Release-Notes.md)
-* [MariaDB MaxScale 2.3.8 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.3.8-Release-Notes.md)
-* [MariaDB MaxScale 2.3.7 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.3.7-Release-Notes.md)
-* [MariaDB MaxScale 2.3.6 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.3.6-Release-Notes.md)
-* [MariaDB MaxScale 2.3.5 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.3.5-Release-Notes.md)
-* [MariaDB MaxScale 2.3.4 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.3.4-Release-Notes.md)
-* [MariaDB MaxScale 2.3.3 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.3.3-Release-Notes.md)
-* [MariaDB MaxScale 2.3.2 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.3.2-Release-Notes.md)
-* [MariaDB MaxScale 2.3.1 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.3.1-Release-Notes.md)
-* [MariaDB MaxScale 2.3.0 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.3.0-Release-Notes.md)
+* [MariaDB MaxScale 2.3.20 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.3.20-Release-Notes.md)
+* [MariaDB MaxScale 2.3.19 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.3.19-Release-Notes.md)
+* [MariaDB MaxScale 2.3.18 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.3.18-Release-Notes.md)
+* [MariaDB MaxScale 2.3.17 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.3.17-Release-Notes.md)
+* [MariaDB MaxScale 2.3.16 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.3.16-Release-Notes.md)
+* [MariaDB MaxScale 2.3.15 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.3.15-Release-Notes.md)
+* [MariaDB MaxScale 2.3.14 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.3.14-Release-Notes.md)
+* [MariaDB MaxScale 2.3.13 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.3.13-Release-Notes.md)
+* [MariaDB MaxScale 2.3.12 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.3.12-Release-Notes.md)
+* [MariaDB MaxScale 2.3.11 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.3.11-Release-Notes.md)
+* [MariaDB MaxScale 2.3.10 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.3.10-Release-Notes.md)
+* [MariaDB MaxScale 2.3.9 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.3.9-Release-Notes.md)
+* [MariaDB MaxScale 2.3.8 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.3.8-Release-Notes.md)
+* [MariaDB MaxScale 2.3.7 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.3.7-Release-Notes.md)
+* [MariaDB MaxScale 2.3.6 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.3.6-Release-Notes.md)
+* [MariaDB MaxScale 2.3.5 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.3.5-Release-Notes.md)
+* [MariaDB MaxScale 2.3.4 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.3.4-Release-Notes.md)
+* [MariaDB MaxScale 2.3.3 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.3.3-Release-Notes.md)
+* [MariaDB MaxScale 2.3.2 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.3.2-Release-Notes.md)
+* [MariaDB MaxScale 2.3.1 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.3.1-Release-Notes.md)
+* [MariaDB MaxScale 2.3.0 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.3.0-Release-Notes.md)
 
 ### MariaDB MaxScale 2.2
 
@@ -579,28 +579,28 @@ For more details, please refer to:
 
 For more details, please refer to:
 
-* [MariaDB MaxScale 2.2.21 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.2.21-Release-Notes.md)
-* [MariaDB MaxScale 2.2.20 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.2.20-Release-Notes.md)
-* [MariaDB MaxScale 2.2.19 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.2.19-Release-Notes.md)
-* [MariaDB MaxScale 2.2.18 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.2.18-Release-Notes.md)
-* [MariaDB MaxScale 2.2.17 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.2.17-Release-Notes.md)
-* [MariaDB MaxScale 2.2.16 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.2.16-Release-Notes.md)
-* [MariaDB MaxScale 2.2.15 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.2.15-Release-Notes.md)
-* [MariaDB MaxScale 2.2.14 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.2.14-Release-Notes.md)
-* [MariaDB MaxScale 2.2.13 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.2.13-Release-Notes.md)
-* [MariaDB MaxScale 2.2.12 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.2.12-Release-Notes.md)
-* [MariaDB MaxScale 2.2.11 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.2.11-Release-Notes.md)
-* [MariaDB MaxScale 2.2.10 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.2.10-Release-Notes.md)
-* [MariaDB MaxScale 2.2.9 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.2.9-Release-Notes.md)
-* [MariaDB MaxScale 2.2.8 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.2.8-Release-Notes.md)
-* [MariaDB MaxScale 2.2.7 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.2.7-Release-Notes.md)
-* [MariaDB MaxScale 2.2.6 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.2.6-Release-Notes.md)
-* [MariaDB MaxScale 2.2.5 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.2.5-Release-Notes.md)
-* [MariaDB MaxScale 2.2.4 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.2.4-Release-Notes.md)
-* [MariaDB MaxScale 2.2.3 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.2.3-Release-Notes.md)
-* [MariaDB MaxScale 2.2.2 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.2.2-Release-Notes.md)
-* [MariaDB MaxScale 2.2.1 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.2.1-Release-Notes.md)
-* [MariaDB MaxScale 2.2.0 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.2.0-Release-Notes.md)
+* [MariaDB MaxScale 2.2.21 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.2.21-Release-Notes.md)
+* [MariaDB MaxScale 2.2.20 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.2.20-Release-Notes.md)
+* [MariaDB MaxScale 2.2.19 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.2.19-Release-Notes.md)
+* [MariaDB MaxScale 2.2.18 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.2.18-Release-Notes.md)
+* [MariaDB MaxScale 2.2.17 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.2.17-Release-Notes.md)
+* [MariaDB MaxScale 2.2.16 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.2.16-Release-Notes.md)
+* [MariaDB MaxScale 2.2.15 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.2.15-Release-Notes.md)
+* [MariaDB MaxScale 2.2.14 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.2.14-Release-Notes.md)
+* [MariaDB MaxScale 2.2.13 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.2.13-Release-Notes.md)
+* [MariaDB MaxScale 2.2.12 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.2.12-Release-Notes.md)
+* [MariaDB MaxScale 2.2.11 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.2.11-Release-Notes.md)
+* [MariaDB MaxScale 2.2.10 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.2.10-Release-Notes.md)
+* [MariaDB MaxScale 2.2.9 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.2.9-Release-Notes.md)
+* [MariaDB MaxScale 2.2.8 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.2.8-Release-Notes.md)
+* [MariaDB MaxScale 2.2.7 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.2.7-Release-Notes.md)
+* [MariaDB MaxScale 2.2.6 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.2.6-Release-Notes.md)
+* [MariaDB MaxScale 2.2.5 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.2.5-Release-Notes.md)
+* [MariaDB MaxScale 2.2.4 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.2.4-Release-Notes.md)
+* [MariaDB MaxScale 2.2.3 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.2.3-Release-Notes.md)
+* [MariaDB MaxScale 2.2.2 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.2.2-Release-Notes.md)
+* [MariaDB MaxScale 2.2.1 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.2.1-Release-Notes.md)
+* [MariaDB MaxScale 2.2.0 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.2.0-Release-Notes.md)
 
 ### MariaDB MaxScale 2.1
 
@@ -625,24 +625,24 @@ For more details, please refer to:
 
 For more details, please refer to:
 
-* [MariaDB MaxScale 2.1.17 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.1.17-Release-Notes.md)
-* [MariaDB MaxScale 2.1.16 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.1.16-Release-Notes.md)
-* [MariaDB MaxScale 2.1.15 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.1.15-Release-Notes.md)
-* [MariaDB MaxScale 2.1.14 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.1.14-Release-Notes.md)
-* [MariaDB MaxScale 2.1.13 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.1.13-Release-Notes.md)
-* [MariaDB MaxScale 2.1.12 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.1.12-Release-Notes.md)
-* [MariaDB MaxScale 2.1.11 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.1.11-Release-Notes.md)
-* [MariaDB MaxScale 2.1.10 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.1.10-Release-Notes.md)
-* [MariaDB MaxScale 2.1.9 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.1.9-Release-Notes.md)
-* [MariaDB MaxScale 2.1.8 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.1.8-Release-Notes.md)
-* [MariaDB MaxScale 2.1.7 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.1.7-Release-Notes.md)
-* [MariaDB MaxScale 2.1.6 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.1.6-Release-Notes.md)
-* [MariaDB MaxScale 2.1.5 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.1.5-Release-Notes.md)
-* [MariaDB MaxScale 2.1.4 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.1.4-Release-Notes.md)
-* [MariaDB MaxScale 2.1.3 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.1.3-Release-Notes.md)
-* [MariaDB MaxScale 2.1.2 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.1.2-Release-Notes.md)
-* [MariaDB MaxScale 2.1.1 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.1.1-Release-Notes.md)
-* [MariaDB MaxScale 2.1.0 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.1.0-Release-Notes.md)
+* [MariaDB MaxScale 2.1.17 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.1.17-Release-Notes.md)
+* [MariaDB MaxScale 2.1.16 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.1.16-Release-Notes.md)
+* [MariaDB MaxScale 2.1.15 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.1.15-Release-Notes.md)
+* [MariaDB MaxScale 2.1.14 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.1.14-Release-Notes.md)
+* [MariaDB MaxScale 2.1.13 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.1.13-Release-Notes.md)
+* [MariaDB MaxScale 2.1.12 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.1.12-Release-Notes.md)
+* [MariaDB MaxScale 2.1.11 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.1.11-Release-Notes.md)
+* [MariaDB MaxScale 2.1.10 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.1.10-Release-Notes.md)
+* [MariaDB MaxScale 2.1.9 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.1.9-Release-Notes.md)
+* [MariaDB MaxScale 2.1.8 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.1.8-Release-Notes.md)
+* [MariaDB MaxScale 2.1.7 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.1.7-Release-Notes.md)
+* [MariaDB MaxScale 2.1.6 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.1.6-Release-Notes.md)
+* [MariaDB MaxScale 2.1.5 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.1.5-Release-Notes.md)
+* [MariaDB MaxScale 2.1.4 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.1.4-Release-Notes.md)
+* [MariaDB MaxScale 2.1.3 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.1.3-Release-Notes.md)
+* [MariaDB MaxScale 2.1.2 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.1.2-Release-Notes.md)
+* [MariaDB MaxScale 2.1.1 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.1.1-Release-Notes.md)
+* [MariaDB MaxScale 2.1.0 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.1.0-Release-Notes.md)
 
 ### MariaDB MaxScale 2.0
 
@@ -657,13 +657,13 @@ For more details, please refer to:
 
 For more details, please refer to:
 
-* [MariaDB MaxScale 2.0.6 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.0.6-Release-Notes.md)
-* [MariaDB MaxScale 2.0.5 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.0.5-Release-Notes.md)
-* [MariaDB MaxScale 2.0.4 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.0.4-Release-Notes.md)
-* [MariaDB MaxScale 2.0.3 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.0.3-Release-Notes.md)
-* [MariaDB MaxScale 2.0.2 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.0.2-Release-Notes.md)
-* [MariaDB MaxScale 2.0.1 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.0.1-Release-Notes.md)
-* [MariaDB MaxScale 2.0.0 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-2.0.0-Release-Notes.md)
+* [MariaDB MaxScale 2.0.6 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.0.6-Release-Notes.md)
+* [MariaDB MaxScale 2.0.5 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.0.5-Release-Notes.md)
+* [MariaDB MaxScale 2.0.4 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.0.4-Release-Notes.md)
+* [MariaDB MaxScale 2.0.3 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.0.3-Release-Notes.md)
+* [MariaDB MaxScale 2.0.2 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.0.2-Release-Notes.md)
+* [MariaDB MaxScale 2.0.1 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.0.1-Release-Notes.md)
+* [MariaDB MaxScale 2.0.0 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-2.0.0-Release-Notes.md)
 
 ### MariaDB MaxScale 1.4
 
@@ -675,10 +675,10 @@ For more details, please refer to:
 
 For more details, please refer to
 
-* [MariaDB MaxScale 1.4.3 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-1.4.3-Release-Notes.md)
-* [MariaDB MaxScale 1.4.2 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-1.4.2-Release-Notes.md)
-* [MariaDB MaxScale 1.4.1 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-1.4.1-Release-Notes.md)
-* [MariaDB MaxScale 1.4.0 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-1.4.0-Release-Notes.md).
+* [MariaDB MaxScale 1.4.3 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-1.4.3-Release-Notes.md)
+* [MariaDB MaxScale 1.4.2 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-1.4.2-Release-Notes.md)
+* [MariaDB MaxScale 1.4.1 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-1.4.1-Release-Notes.md)
+* [MariaDB MaxScale 1.4.0 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-1.4.0-Release-Notes.md).
 
 ### MariaDB MaxScale 1.3
 
@@ -686,7 +686,7 @@ For more details, please refer to
 * The binlog server is now an integral component of MariaDB MaxScale.
 * The logging has been changed; instead of different log files there is one log file and different message priorities.
 
-For more details, please refer to [MariaDB MaxScale 1.3 Release Notes](../../mariadb-maxscale-25-01/Release-Notes/MaxScale-1.3.0-Release-Notes.md)
+For more details, please refer to [MariaDB MaxScale 1.3 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/Release-Notes/MaxScale-1.3.0-Release-Notes.md)
 
 ### MariaDB MaxScale 1.2
 

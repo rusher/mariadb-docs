@@ -1274,13 +1274,13 @@ which sets the status of each server via MaxAdmin is needed.
 
 ### Filter Modules
 
-![](../../../.gitbook/assets/mariadb-corporation/MaxScale/2.1.17/Documentation/Getting-Started/images/image_10.png.png)
+![](<../../../.gitbook/assets/image_10.png (4).png>)
 
 Filters provide a means to manipulate or process requests as they pass through\
 MariaDB MaxScale between the client side protocol and the query router. A full\
 explanation of each filter's functionality can be found in its documentation.
 
-The [Filter Tutorial](../../../../en/maxscale-21-tutorials-filters/) document shows how you\
+The [Filter Tutorial](https://github.com/mariadb-corporation/docs-server/blob/test/en/maxscale-21-tutorials-filters/README.md) document shows how you\
 can add a filter to a service and combine multiple filters in one service.
 
 * [Query Log All (QLA) Filter](../maxscale-21-filters/mariadb-maxscale-21-query-log-all-filter.md)

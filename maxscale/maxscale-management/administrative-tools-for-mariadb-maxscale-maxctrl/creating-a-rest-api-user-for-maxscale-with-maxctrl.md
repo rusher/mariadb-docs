@@ -36,7 +36,7 @@ Replace maxscale\_rest and maxscale\_rest\_password with the desired user and pa
 
 ## Creating an Admin User
 
-1. Configure the [REST API](../../administrative-tools-for-mariadb-maxscale/administrative-tools-for-mariadb-maxscale-maxctrl/operating-maxscale-with-the-rest-api-configuring-maxscales-rest-api/) if the default configuration is not sufficient.
+1. Configure the [REST API](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/administrative-tools-for-mariadb-maxscale/administrative-tools-for-mariadb-maxscale-maxctrl/operating-maxscale-with-the-rest-api-configuring-maxscales-rest-api/README.md) if the default configuration is not sufficient.
 2. Use [MaxCtrl](./) to execute the create user command with the --type=admin option:
 
 ```

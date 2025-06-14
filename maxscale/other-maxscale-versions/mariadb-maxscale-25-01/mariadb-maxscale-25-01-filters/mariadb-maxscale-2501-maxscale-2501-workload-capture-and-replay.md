@@ -219,7 +219,7 @@ the configuration file the command line options have priority. The supported key
 
 * **prefix** The prefix added to capture files. The default value is `capture`.
 * **duration** Limit capture to this duration. See also configuration file value ['capture\_duration'](mariadb-maxscale-2501-maxscale-2501-workload-capture-and-replay.md#capture_duration).
-* **size** Limit capture to approximately this many bytes in the file system. See also configuration file value ['capture\_size'](../../../mariadb-maxscale-25-01/mariadb-maxscale-25-01-filters/capture_size/).
+* **size** Limit capture to approximately this many bytes in the file system. See also configuration file value ['capture\_size'](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-25-01/mariadb-maxscale-25-01-filters/capture_size/README.md).
 
 The start command options are not persistent, and only apply to the capture that was thus started.
 

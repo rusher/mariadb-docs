@@ -71,7 +71,7 @@ solution to [MaxCtrl](../mariadb-maxscale-24-08-beta-reference/mariadb-maxscale-
 
 ## Dashboard
 
-![](../../../.gitbook/assets/mariadb-corporation/MaxScale/24.08.0/Documentation/Tutorials/images/MaxGUI-dashboard.png.png)
+![](<../../../.gitbook/assets/MaxGUI-dashboard.png (2).png>)
 
 ### Annotation
 
@@ -110,7 +110,7 @@ replication\_state, seconds\_behind\_master, slave\_io\_running, slave\_sql\_run
 A session can be killed easily on the "Current Sessions" list which can be\
 found on the [Dashboard](mariadb-maxscale-2408-maxscale-2408-beta-using-maxgui-tutorial.md#dashboard), Server detail, and Service detail page.
 
-![](../../../.gitbook/assets/mariadb-corporation/MaxScale/24.08.0/Documentation/Tutorials/images/MaxGUI-kill-session.png.png)
+![](<../../../.gitbook/assets/MaxGUI-kill-session.png (2).png>)
 
 #### Annotation
 
@@ -124,7 +124,7 @@ two places:
 
 #### Dashboard "Current Sessions" tab
 
-![](../../../.gitbook/assets/mariadb-corporation/MaxScale/24.08.0/Documentation/Tutorials/images/MaxGUI-session-by-workspace.png.png)
+![](../../../.gitbook/assets/MaxGUI-session-by-workspace.png.png)
 
 **Annotation**
 
@@ -136,7 +136,7 @@ two places:
 This table displays the result set from the `PROCESSLIST` table, with options to\
 filter processes created by the "Workspace".
 
-![](../../../.gitbook/assets/mariadb-corporation/MaxScale/24.08.0/Documentation/Tutorials/images/MaxGUI-workspace-processlist.png.png)
+![](../../../.gitbook/assets/MaxGUI-workspace-processlist.png.png)
 
 **Annotation**
 
@@ -150,7 +150,7 @@ control buttons will be shown on the mouse hover. Below is a screenshot of a\
 Monitor Detail page, other Detail pages also have a similar layout structure so\
 this is used for illustration purpose.
 
-![](../../../.gitbook/assets/mariadb-corporation/MaxScale/24.08.0/Documentation/Tutorials/images/MaxGUI-detail.png.png)
+![](<../../../.gitbook/assets/MaxGUI-detail.png (2).png>)
 
 ### Annotation
 
@@ -183,7 +183,7 @@ This page visualizes MaxScale configuration and clusters.
 
 This page visualizes MaxScale configuration as shown in the figure below.
 
-![](../../../.gitbook/assets/mariadb-corporation/MaxScale/24.08.0/Documentation/Tutorials/images/MaxGUI-config-visualization.png.png)
+![](<../../../.gitbook/assets/MaxGUI-config-visualization.png (2).png>)
 
 #### Annotation
 
@@ -206,7 +206,7 @@ This page shows all monitor clusters using[mariadbmon](../mariadb-maxscale-2408-
 Clicking on the card will visualize the cluster into a tree graph as shown in\
 the figure below.
 
-![](../../../.gitbook/assets/mariadb-corporation/MaxScale/24.08.0/Documentation/Tutorials/images/MaxGUI-cluster-visualization.png.png)
+![](<../../../.gitbook/assets/MaxGUI-cluster-visualization.png (2).png>)
 
 #### Annotation
 
@@ -258,7 +258,7 @@ ColumnStore operations:
 
 This page shows and allows editing of MaxScale parameters.
 
-![](../../../.gitbook/assets/mariadb-corporation/MaxScale/24.08.0/Documentation/Tutorials/images/MaxGUI-settings.png.png)
+![](<../../../.gitbook/assets/MaxGUI-settings.png (2).png>)
 
 ### Annotation
 
@@ -273,7 +273,7 @@ This page shows and allows editing of MaxScale parameters.
 
 This page show real-time MaxScale logs with filter options.
 
-![](../../../.gitbook/assets/mariadb-corporation/MaxScale/24.08.0/Documentation/Tutorials/images/MaxGUI-logs-archive.png.png)
+![](<../../../.gitbook/assets/MaxGUI-logs-archive.png (2).png>)
 
 ### Annotation
 
@@ -285,7 +285,7 @@ This page show real-time MaxScale logs with filter options.
 On this page, you may add numerous worksheets, each of which can be used for\
 "Run queries", "Data migration" or "Create an ERD" task.
 
-![](../../../.gitbook/assets/mariadb-corporation/MaxScale/24.08.0/Documentation/Tutorials/images/MaxGUI-workspace.png.png)
+![](<../../../.gitbook/assets/MaxGUI-workspace.png (2).png>)
 
 ### Run Queries
 
@@ -299,7 +299,7 @@ The Query Editor worksheet will be rendered in the active worksheet after correc
 
 There are various features in the Query Editor worksheet, the most notable ones are listed below.
 
-![](../../../.gitbook/assets/mariadb-corporation/MaxScale/24.08.0/Documentation/Tutorials/images/MaxGUI-workspace-query-editor.png.png)
+![](<../../../.gitbook/assets/MaxGUI-workspace-query-editor.png (2).png>)
 
 **Create a new connection**
 
@@ -379,7 +379,7 @@ By default, all statements in the "Query Tab" are split by semicolons and\
 executed one by one on the server. To write the compound statements, use\
 the `DELIMITER` command to change the delimiter.
 
-![](../../../.gitbook/assets/mariadb-corporation/MaxScale/24.08.0/Documentation/Tutorials/images/MaxGUI-workspace-query-editor-delimiter-change.png.png)
+![](../../../.gitbook/assets/MaxGUI-workspace-query-editor-delimiter-change.png.png)
 
 **Annotation**
 
@@ -421,7 +421,7 @@ and limitations [here](../mariadb-maxscale-24-08-beta-about/mariadb-maxscale-240
 
 **Connections**
 
-![](../../../.gitbook/assets/mariadb-corporation/MaxScale/24.08.0/Documentation/Tutorials/images/MaxGUI-workspace-data-migration-set-up-connections.png.png)
+![](<../../../.gitbook/assets/MaxGUI-workspace-data-migration-set-up-connections.png (2).png>)
 
 Source connection shows the most common parameter inputs for creating\
 an ODBC connection. For extra parameters, enable the `Advanced` mode\
@@ -432,7 +432,7 @@ click on the `Select objects to migrate` to navigate to the next stage.
 
 **Objects Selection**
 
-![](../../../.gitbook/assets/mariadb-corporation/MaxScale/24.08.0/Documentation/Tutorials/images/MaxGUI-workspace-data-migration-objects-selection.png.png)
+![](<../../../.gitbook/assets/MaxGUI-workspace-data-migration-objects-selection.png (2).png>)
 
 Select the objects you wish to migrate to the MariaDB server.
 
@@ -443,7 +443,7 @@ the question icon for additional information on the modes.
 
 **Migration**
 
-![](../../../.gitbook/assets/mariadb-corporation/MaxScale/24.08.0/Documentation/Tutorials/images/MaxGUI-workspace-data-migration-migration-script.png.png)
+![](<../../../.gitbook/assets/MaxGUI-workspace-data-migration-migration-script.png (2).png>)
 
 As shown in the screenshot, you can quickly modify the script for each object\
 by selecting the corresponding object in the table and using the editors on the\
@@ -454,7 +454,7 @@ executed in parallel.
 
 **Migration report**
 
-![](../../../.gitbook/assets/mariadb-corporation/MaxScale/24.08.0/Documentation/Tutorials/images/MaxGUI-workspace-data-migration-migration-report.png.png)
+![](<../../../.gitbook/assets/MaxGUI-workspace-data-migration-migration-report.png (2).png>)
 
 If errors are reported for certain objects, review the output messages and\
 adjust the script accordingly. Then, click the `Manage` button and select `Restart`.
@@ -472,7 +472,7 @@ everything after migration, click the `Manage` button, then select`Delete`.
 There are various features in the ERD worksheet, the most notable ones are\
 listed below.
 
-![](../../../.gitbook/assets/mariadb-corporation/MaxScale/24.08.0/Documentation/Tutorials/images/MaxGUI-workspace-erd.png.png)
+![](<../../../.gitbook/assets/MaxGUI-workspace-erd.png (1).png>)
 
 #### ERD worksheet
 
@@ -510,7 +510,7 @@ entity. The entity editor will be shown at the bottom of the worksheet.
 
 **Foreign keys quick common options**
 
-![](../../../.gitbook/assets/mariadb-corporation/MaxScale/24.08.0/Documentation/Tutorials/images/MaxGUI-workspace-erd-fk-options.png.png)
+![](<../../../.gitbook/assets/MaxGUI-workspace-erd-fk-options.png (1).png>)
 
 * Edit Foreign Key, this opens an editor for viewing/editing foreign keys.
 * Remove Foreign Key.
@@ -530,7 +530,7 @@ be shown in a tooltip.
 
 **Quickly draw a foreign key link**
 
-![](../../../.gitbook/assets/mariadb-corporation/MaxScale/24.08.0/Documentation/Tutorials/images/MaxGUI-workspace-erd-fk-quick-option.png.png)
+![](<../../../.gitbook/assets/MaxGUI-workspace-erd-fk-quick-option.png (1).png>)
 
 As shown in the screenshot, a foreign key can be quickly established by\
 performing the following actions:
@@ -541,7 +541,7 @@ performing the following actions:
 
 **Entity editor**
 
-![](../../../.gitbook/assets/mariadb-corporation/MaxScale/24.08.0/Documentation/Tutorials/images/MaxGUI-workspace-erd-entity-editor.png.png)
+![](<../../../.gitbook/assets/MaxGUI-workspace-erd-entity-editor.png (1).png>)
 
 Table columns, foreign keys and indexes can be modified via\
 the entity editor which can be accessed quickly by double-clicking\
@@ -564,7 +564,7 @@ editor within the dialog.
 
 **Visual Enhancement options**
 
-![](../../../.gitbook/assets/mariadb-corporation/MaxScale/24.08.0/Documentation/Tutorials/images/MaxGUI-workspace-erd-visual-enhancements.png.png)
+![](<../../../.gitbook/assets/MaxGUI-workspace-erd-visual-enhancements.png (1).png>)
 
 The first section of the top toolbar, there are options to improve the visual of\
 the diagram as follows:

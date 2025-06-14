@@ -1,4 +1,4 @@
-# mariadb-maxscale-20-maxscale-20-contents
+# MaxScale 2.0 Contents
 
 ## MaxScale 2.0 Contents
 
@@ -110,7 +110,7 @@ Documentation for MaxScale protocol modules.
 
 * [Core Objects Design (in development)](https://mariadb-corporation.github.io/MaxScale/Design-Documents/core-objects-html-docs)
 * [Binlog Router Design (in development)](https://mariadb-corporation.github.io/MaxScale/Design-Documents/binlog-router-html-docs)
-* [DCB States (to be replaced in StarUML)](../../mariadb-maxscale-mariadb-maxscale-20/Design-Documents/DCB-States.pdf)
+* [DCB States (to be replaced in StarUML)](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-mariadb-maxscale-20/Design-Documents/DCB-States.pdf)
 * [Schema Sharding Router Technical Documentation](../mariadb-maxscale-21-06/)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
