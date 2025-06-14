@@ -1,6 +1,6 @@
 # Index Condition Pushdown
 
-Index Condition Pushdown is an optimization that is applied for access methods that access table data through indexes: `range`, `ref`, `eq_ref`, `ref_or_null`, and [Batched Key Access](broken-reference).
+Index Condition Pushdown is an optimization that is applied for access methods that access table data through indexes: `range`, `ref`, `eq_ref`, `ref_or_null`, and [Batched Key Access](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/optimization-and-tuning/query-optimizations/broken-reference/README.md).
 
 The idea is to check part of the WHERE condition that refers to index fields (we call it _Pushed Index Condition_) as soon as we've accessed the index. If the _Pushed Index Condition_ is not satisfied, we won't need to read the whole table record.
 
@@ -25,11 +25,11 @@ MariaDB [test]> EXPLAIN SELECT * from tbl where key_col1 between 10 and 11 and k
 
 In disk-based storage engines, making an index lookup is done in two steps, like shown on the picture:
 
-![index-access-2phases](../../../.gitbook/assets/index-condition-pushdown/+image/index-access-2phases.png)
+![index-access-2phases](../../../.gitbook/assets/index-access-2phases.png)
 
 Index Condition Pushdown optimization tries to cut down the number of full record reads by checking whether index records satisfy part of the WHERE condition that can be checked for them:
 
-![index-access-with-icp](../../../.gitbook/assets/index-condition-pushdown/+image/index-access-with-icp.png)
+![index-access-with-icp](../../../.gitbook/assets/index-access-with-icp.png)
 
 How much speed will be gained depends on
 

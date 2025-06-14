@@ -32,7 +32,7 @@ mysql> EXPLAIN SELECT * FROM (SELECT * FROM City WHERE Population > 1*1000)
 
 It plans to do the following actions:
 
-![derived-inefficent](../../../../.gitbook/assets/derived-table-merge-optimization/+image/derived-inefficent.png)
+![derived-inefficent](../../../../.gitbook/assets/derived-inefficent.png)
 
 From left to right:
 
@@ -93,7 +93,7 @@ set @@optimizer_switch='derived_merge=OFF'
 
 ## See Also
 
-* FAQ entry: [Why is ORDER BY in a FROM subquery ignored?](broken-reference)
+* FAQ entry: [Why is ORDER BY in a FROM subquery ignored?](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/optimization-and-tuning/query-optimizations/optimizations-for-derived-tables/broken-reference/README.md)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

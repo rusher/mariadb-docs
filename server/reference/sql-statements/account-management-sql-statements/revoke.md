@@ -59,7 +59,7 @@ REVOKE ADMIN OPTION FOR role FROM grantee [, grantee2]
 
 `REVOKE` is also used to remove a [role](../../../security/user-account-management/roles/) from a user or another role that it's previously been assigned to. If a role has previously been set as a [default role](set-default-role.md), `REVOKE` does not remove the record of the default role from the [mysql.user](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md) table. If the role is subsequently granted again, it will again be the user's default. Use [SET DEFAULT ROLE NONE](set-default-role.md) to explicitly remove this.
 
-Before [MariaDB 10.1.13](broken-reference), the `REVOKE role` statement was not permitted in [prepared statements](../prepared-statements/).
+Before [MariaDB 10.1.13](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/account-management-sql-statements/broken-reference/README.md), the `REVOKE role` statement was not permitted in [prepared statements](../prepared-statements/).
 
 ### Example
 
@@ -67,6 +67,6 @@ Before [MariaDB 10.1.13](broken-reference), the `REVOKE role` statement was not 
 REVOKE journalist FROM hulda
 ```
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

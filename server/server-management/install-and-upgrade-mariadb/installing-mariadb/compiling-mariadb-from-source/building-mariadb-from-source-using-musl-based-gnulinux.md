@@ -2,7 +2,7 @@
 
 ## Instructions on compiling MariaDB on musl-based operating systems (Alpine)
 
-The instructions on this page will help you compile [MariaDB](../../../../../en/mariadb/) from source.\
+The instructions on this page will help you compile [MariaDB](https://github.com/mariadb-corporation/docs-server/blob/test/en/mariadb/README.md) from source.\
 Links to more complete instructions for specific platforms can be found on the[source](./) page.
 
 * First, [get a copy of the MariaDB source](../../../../clients-and-utilities/server-client-software/download/getting-the-mariadb-source-code.md).

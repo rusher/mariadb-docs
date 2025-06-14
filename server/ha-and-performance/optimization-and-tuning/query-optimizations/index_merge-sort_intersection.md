@@ -62,7 +62,7 @@ without `sort_intersect`.
 The `sort_intersect` strategy has higher overhead than `intersect` but is\
 able to handle a broader set of `WHERE` conditions.
 
-![intersect-vs-sort-intersect](../../../.gitbook/assets/index_merge-sort_intersection/+image/intersect-vs-sort-intersect.png)
+![intersect-vs-sort-intersect](../../../.gitbook/assets/intersect-vs-sort-intersect.png)
 
 ## When to Use
 
@@ -74,7 +74,7 @@ The benefit is expected to be bigger for io-bound loads.
 
 ## See Also
 
-* [What is MariaDB 5.3](broken-reference)
+* [What is MariaDB 5.3](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/optimization-and-tuning/query-optimizations/broken-reference/README.md)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

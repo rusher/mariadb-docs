@@ -4,7 +4,7 @@ This page documents system variables related to the [Aria storage engine](./). F
 
 See [Server System Variables](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md) for a complete list of system variables and instructions on setting system variables.
 
-Also see the [Full list of MariaDB options, system and status variables](../../../server-management/variables-and-modes/full-list-of-mariadb-options-system-and-status-variables.md).
+Also see the [Full list of MariaDB options, system and status variables](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-management/variables-and-modes/full-list-of-mariadb-options-system-and-status-variables.md).
 
 #### `aria_block_size`
 
@@ -178,7 +178,7 @@ Also see the [Full list of MariaDB options, system and status variables](../../.
 
 #### `aria_recover`
 
-* Description: `aria_recover` has been renamed to `aria_recover_options` in [MariaDB 10.2.0](../../../reference/storage-engines/aria/broken-reference/). See [aria\_recover\_options](aria-system-variables.md#aria_recover_options) for the description.
+* Description: `aria_recover` has been renamed to `aria_recover_options` in [MariaDB 10.2.0](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/aria/broken-reference/README.md). See [aria\_recover\_options](aria-system-variables.md#aria_recover_options) for the description.
 
 #### `aria_recover_options`
 
@@ -196,7 +196,7 @@ Also see the [Full list of MariaDB options, system and status variables](../../.
   * `BACKUP,QUICK` (>= [MariaDB 10.2.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-1024-release-notes))
   * `NORMAL` (<= [MariaDB 10.2.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-1023-release-notes))
 * Valid Values: `NORMAL`, `BACKUP`, `FORCE`, `QUICK`, `OFF`
-* Introduced: [MariaDB 10.2.0](../../../reference/storage-engines/aria/broken-reference/)
+* Introduced: [MariaDB 10.2.0](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/aria/broken-reference/README.md)
 
 #### `aria_repair_threads`
 

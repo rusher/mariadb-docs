@@ -10,14 +10,14 @@ This process shows how to deploy MariaDB in a Docker container running on an GCE
 4. Click create instance, give instance a name (e.g. mrdb-ubuntu-docker-use1b), choose a region and zone.
 5. Machine configuration: Choose general-purpose / E2 micro
 
-![gcp-e2](../../../../../../.gitbook/assets/docker-and-google-cloud/+image/gcp-e2.png) ![gcp-e2-micro](../../../../../../.gitbook/assets/docker-and-google-cloud/+image/gcp-e2-micro.png)
+![gcp-e2](../../../../../../.gitbook/assets/gcp-e2.png) ![gcp-e2-micro](../../../../../../.gitbook/assets/gcp-e2-micro.png)
 
 6. Boot Disk > Change
 
-Switch the operating system to a modern Ubuntu release x86/64 CPU architecture, or similar free tier offering.![gcp-ubuntu](../../../../../../.gitbook/assets/docker-and-google-cloud/+image/gcp-ubuntu.png)
+Switch the operating system to a modern Ubuntu release x86/64 CPU architecture, or similar free tier offering.![gcp-ubuntu](../../../../../../.gitbook/assets/gcp-ubuntu.png)
 
-7. [Create a firewall rule](https://console.cloud.google.com/net-security/firewall-manager/firewall-policies/add) in the Firewall Policies section of the console. After naming it, change the targets, add 0.0.0.0/0 as a source IP range, and open TCP port 3306. Then Click create.![gcp-firewall](../../../../../../.gitbook/assets/docker-and-google-cloud/+image/gcp-firewall.png)
-8. Connect using Google Cloud’s built in browser SSH. Accept all prompts for authorization.![gcp-verify-ssh](../../../../../../.gitbook/assets/docker-and-google-cloud/+image/gcp-verify-ssh.png)
+7. [Create a firewall rule](https://console.cloud.google.com/net-security/firewall-manager/firewall-policies/add) in the Firewall Policies section of the console. After naming it, change the targets, add 0.0.0.0/0 as a source IP range, and open TCP port 3306. Then Click create.![gcp-firewall](../../../../../../.gitbook/assets/gcp-firewall.png)
+8. Connect using Google Cloud’s built in browser SSH. Accept all prompts for authorization.![gcp-verify-ssh](../../../../../../.gitbook/assets/gcp-verify-ssh.png)
 
 **Install Docker on the GCE VM**
 

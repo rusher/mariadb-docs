@@ -23,7 +23,7 @@ DELIMITER ;
 
 First, the delimiter is changed, since the function definition will contain the regular semicolon delimiter. See [Delimiters in the mariadb client](../../../clients-and-utilities/mariadb-client/delimiters.md) for more. Then the function is named `FortyTwo` and defined to return a `tinyin`. The `DETERMINISTIC` keyword is not necessary in all cases (although if binary logging is on, leaving it out will throw an error), and is to help the query optimizer choose a query plan. A deterministic function is one that, given the same arguments, will always return the same result.
 
-Next, the function body is placed between [BEGIN and END](../../programmatic-compound-statements/begin-end.md) statements. It declares a tinyint, `X`, which is simply set to 42, and this is the result returned.
+Next, the function body is placed between [BEGIN and END](../../../reference/sql-statements/programmatic-compound-statements/begin-end.md) statements. It declares a tinyint, `X`, which is simply set to 42, and this is the result returned.
 
 ```sql
 SELECT FortyTwo();

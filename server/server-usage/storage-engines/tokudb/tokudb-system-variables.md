@@ -4,7 +4,7 @@ TokuDB has been deprecated by its upstream maintainer. It is disabled from [Mari
 
 This page lists system variables that are related to [TokuDB](./).
 
-See [Server System Variables](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md) for a complete list of system variables and instructions on setting them, and [Full list of MariaDB options, system and status variables](../../../server-management/variables-and-modes/full-list-of-mariadb-options-system-and-status-variables.md) for a complete list of all options, statis variable and system variables in MariaDB.
+See [Server System Variables](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md) for a complete list of system variables and instructions on setting them, and [Full list of MariaDB options, system and status variables](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-management/variables-and-modes/full-list-of-mariadb-options-system-and-status-variables.md) for a complete list of all options, statis variable and system variables in MariaDB.
 
 ## System Variables
 
@@ -18,7 +18,7 @@ See [Server System Variables](../../../ha-and-performance/optimization-and-tunin
 
 #### `tokudb_analyze_time`
 
-* Description: Time in seconds that [ANALYZE](../../sql-statements/table-statements/analyze-table.md) operations spend on each index when calculating cardinality. Accurate cardinality helps in particular with the performance of complex queries. If no analyzes are run, cardinality will be 1 for primary indexes, and unknown (NULL) for other types of indexes.
+* Description: Time in seconds that [ANALYZE](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-usage/sql-statements/table-statements/analyze-table.md) operations spend on each index when calculating cardinality. Accurate cardinality helps in particular with the performance of complex queries. If no analyzes are run, cardinality will be 1 for primary indexes, and unknown (NULL) for other types of indexes.
 * Scope: Global, Session
 * Dynamic: Yes
 * Data Type: numeric
@@ -301,8 +301,8 @@ See [Server System Variables](../../../ha-and-performance/optimization-and-tunin
 
 #### `tokudb_pk_insert_mode`
 
-* Description: Mode for primary key inserts using either [REPLACE INTO](../../sql-statements/data-manipulation/changing-deleting-data/replace.md) or [INSERT IGNORE](../../sql-statements/data-manipulation/inserting-loading-data/ignore.md) on tables with no secondary index, or where all columns in the secondary index are in the primary key. For example `PRIMARY KEY (a,b,c), key (b,c)`
-  * `0`: Fast inserts. [Triggers](../../../server-usage/triggers-events/triggers/) may not work, and [row-based replication](../../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md) will not work
+* Description: Mode for primary key inserts using either [REPLACE INTO](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-usage/sql-statements/data-manipulation/changing-deleting-data/replace.md) or [INSERT IGNORE](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-usage/sql-statements/data-manipulation/inserting-loading-data/ignore.md) on tables with no secondary index, or where all columns in the secondary index are in the primary key. For example `PRIMARY KEY (a,b,c), key (b,c)`
+  * `0`: Fast inserts. [Triggers](../../triggers-events/triggers/) may not work, and [row-based replication](../../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md) will not work
   * `1`: Fast inserts if no triggers are defined, otherwise inserts may be slow. Row-based replication will not work.
   * `2`: Slow inserts. Triggers and row-based replication work normally.
 * Scope: Global, Session
@@ -339,7 +339,7 @@ See [Server System Variables](../../../ha-and-performance/optimization-and-tunin
 
 #### `tokudb_read_status_frequency`
 
-* Description: Progress is measured every this many reads for display by [SHOW PROCESSLIST](../../sql-statements/administrative-sql-statements/show/show-processlist.md). Useful to set to `1` to examine slow queries.
+* Description: Progress is measured every this many reads for display by [SHOW PROCESSLIST](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-usage/sql-statements/administrative-sql-statements/show/show-processlist.md). Useful to set to `1` to examine slow queries.
 * Scope: Global,
 * Dynamic: Yes
 * Data Type: numeric
@@ -348,7 +348,7 @@ See [Server System Variables](../../../ha-and-performance/optimization-and-tunin
 
 #### `tokudb_row_format`
 
-* Description: Compression algorithm used by default to compress data. Can be overridden by a row format specified in the [CREATE TABLE](../../sql-statements/data-definition/create/create-table.md) statement. note that the library can be specified directly, or an alias used, the mapping of which may change in future. Note that in [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5), and before [MariaDB 10.0.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-10010-release-notes), the compression type did not default to this value. See [TokuDB Differences](tokudb-differences.md).
+* Description: Compression algorithm used by default to compress data. Can be overridden by a row format specified in the [CREATE TABLE](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-usage/sql-statements/data-definition/create/create-table.md) statement. note that the library can be specified directly, or an alias used, the mapping of which may change in future. Note that in [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5), and before [MariaDB 10.0.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-10010-release-notes), the compression type did not default to this value. See [TokuDB Differences](tokudb-differences.md).
   * `tokudb_default`, `tokudb_zlib`: Use the zlib library,
   * `tokudb_fast`, `tokudb_quicklz`: Use the quicklz library, the lightest compression with low CPU usage,
   * `tokudb_small`, `tokudb_lzma`: Use the lzma library. the highest compression and highest CPU usage
@@ -422,7 +422,7 @@ See [Server System Variables](../../../ha-and-performance/optimization-and-tunin
 
 #### `tokudb_write_status_frequency`
 
-* Description: Progress is measured every this many writes for display by [SHOW PROCESSLIST](../../sql-statements/administrative-sql-statements/show/show-processlist.md). Useful to set to `1` to examine slow queries.
+* Description: Progress is measured every this many writes for display by [SHOW PROCESSLIST](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-usage/sql-statements/administrative-sql-statements/show/show-processlist.md). Useful to set to `1` to examine slow queries.
 * Scope: Global,
 * Dynamic: Yes
 * Data Type: `numeric`

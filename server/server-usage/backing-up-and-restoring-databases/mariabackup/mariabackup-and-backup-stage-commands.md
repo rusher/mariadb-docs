@@ -1,6 +1,6 @@
 # Mariabackup and BACKUP STAGE Commands
 
-The `[BACKUP STAGE](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/backup-commands/backup-stage.md)` commands are a set of commands to make it possible to make an efficient external backup tool. How Mariabackup uses these commands depends on whether you are using the version that is bundled with MariaDB Community Server or the version that is bundled with [MariaDB Enterprise Server](../../../../en/mariadb-enterprise-server/).
+The `[BACKUP STAGE](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/backup-commands/backup-stage.md)` commands are a set of commands to make it possible to make an efficient external backup tool. How Mariabackup uses these commands depends on whether you are using the version that is bundled with MariaDB Community Server or the version that is bundled with [MariaDB Enterprise Server](https://github.com/mariadb-corporation/docs-server/blob/test/en/mariadb-enterprise-server/README.md).
 
 ## Mariabackup and `BACKUP STAGE` Commands in MariaDB Community Server
 
@@ -17,7 +17,7 @@ When the backup is complete, it executes the following `[BACKUP STAGE](../../../
 BACKUP STAGE END;
 ```
 
-If you would like to use a version of Mariabackup that uses the `[BACKUP STAGE](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/backup-commands/backup-stage.md)` commands in the most efficient way, then your best option is to use [MariaDB Backup](./) that is bundled with [MariaDB Enterprise Server](../../../../en/mariadb-enterprise-server/).
+If you would like to use a version of Mariabackup that uses the `[BACKUP STAGE](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/backup-commands/backup-stage.md)` commands in the most efficient way, then your best option is to use [MariaDB Backup](./) that is bundled with [MariaDB Enterprise Server](https://github.com/mariadb-corporation/docs-server/blob/test/en/mariadb-enterprise-server/README.md).
 
 ### Tasks Performed Prior to `BACKUP STAGE` in MariaDB Community Server
 
@@ -49,13 +49,13 @@ Mariabackup from MariaDB Community Server performs the following tasks in the `B
 * Copy the non-transactional tables.
   * [MyISAM](../../storage-engines/myisam-storage-engine/) (i.e. file extensions `.MYD` and `.MYI`)
   * [MERGE](../../storage-engines/merge.md) (i.e. file extensions `.MRG`)
-  * [ARCHIVE](../../storage-engines/archive/) (i.e. file extensions `.ARM` and `.ARZ`)
+  * [ARCHIVE](../../storage-engines/archive.md) (i.e. file extensions `.ARM` and `.ARZ`)
   * [CSV](../../storage-engines/csv/) (i.e. file extensions `.CSM` and `.CSV`)
 * Create a [MyRocks](../../storage-engines/myrocks/) checkpoint using the `[rocksdb_create_checkpoint](../../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_create_checkpoint)` system variable.
 * Copy the tail of some transaction logs.
   * The tail of the [InnoDB redo log](../../storage-engines/innodb/innodb-redo-log.md) (i.e. `ib_logfileN` files) will be copied for [InnoDB](../../storage-engines/innodb/) tables.
 * Save the [binary log](../../../server-management/server-monitoring-logs/binary-log/) position to `[xtrabackup_binlog_info](files-created-by-mariabackup.md#xtrabackup_binlog_info)`.
-* Save the [Galera Cluster](../../../../en/galera/) state information to `[xtrabackup_galera_info](files-created-by-mariabackup.md#xtrabackup_galera_info)`.
+* Save the [Galera Cluster](https://github.com/mariadb-corporation/docs-server/blob/test/en/galera/README.md) state information to `[xtrabackup_galera_info](files-created-by-mariabackup.md#xtrabackup_galera_info)`.
 
 ### `BACKUP STAGE END` in MariaDB Community Server
 
@@ -65,7 +65,7 @@ Mariabackup from MariaDB Community Server performs the following tasks in the `E
 
 ## Mariabackup and `BACKUP STAGE` Commands in MariaDB Enterprise Server
 
-The following sections describe how the [MariaDB Backup](./) version of Mariabackup that is bundled with [MariaDB Enterprise Server](../../../../en/mariadb-enterprise-server/) uses each `[BACKUP STAGE](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/backup-commands/backup-stage.md)` command in an efficient way.
+The following sections describe how the [MariaDB Backup](./) version of Mariabackup that is bundled with [MariaDB Enterprise Server](https://github.com/mariadb-corporation/docs-server/blob/test/en/mariadb-enterprise-server/README.md) uses each `[BACKUP STAGE](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/backup-commands/backup-stage.md)` command in an efficient way.
 
 ### `BACKUP STAGE START` in MariaDB Enterprise Server
 
@@ -85,7 +85,7 @@ Mariabackup from MariaDB Enterprise Server performs the following tasks in the `
 * Copy all non-transactional tables that are not in use. This list of used tables is found with `[SHOW OPEN TABLES](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-open-tables.md)`.
   * [MyISAM](../../storage-engines/myisam-storage-engine/) (i.e. file extensions `.MYD` and `.MYI`)
   * [MERGE](../../storage-engines/merge.md) (i.e. file extensions `.MRG`)
-  * [ARCHIVE](../../storage-engines/archive/) (i.e. file extensions `.ARM` and `.ARZ`)
+  * [ARCHIVE](../../storage-engines/archive.md) (i.e. file extensions `.ARM` and `.ARZ`)
   * [CSV](../../storage-engines/csv/) (i.e. file extensions `.CSM` and `.CSV`)
 * Copy the tail of all transaction logs.
   * The tail of the [InnoDB redo log](../../storage-engines/innodb/innodb-redo-log.md) (i.e. `ib_logfileN` files) will be copied for [InnoDB](../../storage-engines/innodb/) tables.
@@ -100,7 +100,7 @@ Mariabackup from MariaDB Enterprise Server performs the following tasks in the `
 * Copy the non-transactional tables that were in use during `BACKUP STAGE FLUSH`.
   * [MyISAM](../../storage-engines/myisam-storage-engine/) (i.e. file extensions `.MYD` and `.MYI`)
   * [MERGE](../../storage-engines/merge.md) (i.e. file extensions `.MRG`)
-  * [ARCHIVE](../../storage-engines/archive/) (i.e. file extensions `.ARM` and `.ARZ`)
+  * [ARCHIVE](../../storage-engines/archive.md) (i.e. file extensions `.ARM` and `.ARZ`)
   * [CSV](../../storage-engines/csv/) (i.e. file extensions `.CSM` and `.CSV`)
 * Check `ddl.log` for DDL executed before the `BLOCK DDL` stage.
   * The file names of newly created tables can be read from `ddl.log`.
@@ -131,7 +131,7 @@ Mariabackup from MariaDB Enterprise Server performs the following tasks in the `
   * The tail of the [InnoDB redo log](../../storage-engines/innodb/innodb-redo-log.md) (i.e. `ib_logfileN` files) will be copied for [InnoDB](../../storage-engines/innodb/) tables.
   * The tail of the Aria redo log (i.e. `aria_log.N` files) will be copied for [Aria](../../storage-engines/aria/) tables.
 * Save the [binary log](../../../server-management/server-monitoring-logs/binary-log/) position to `[xtrabackup_binlog_info](files-created-by-mariabackup.md#xtrabackup_binlog_info)`.
-* Save the [Galera Cluster](../../../../en/galera/) state information to `[xtrabackup_galera_info](files-created-by-mariabackup.md#xtrabackup_galera_info)`.
+* Save the [Galera Cluster](https://github.com/mariadb-corporation/docs-server/blob/test/en/galera/README.md) state information to `[xtrabackup_galera_info](files-created-by-mariabackup.md#xtrabackup_galera_info)`.
 
 ### `BACKUP STAGE END` in MariaDB Enterprise Server
 

@@ -77,7 +77,7 @@ On Windows, if the [console](../starting-and-stopping-mariadb/mariadbd-options.m
 
 On Windows, error log messages are also written to the Windows Event Viewer. You can find MariaDB's error log messages by browsing **Windows Logs**, and then selecting **Application** or **Application Log**, depending on the Windows version.
 
-You can find MariaDB's error log messages by searching for the **Source** `MariaDB` (prior to [MariaDB 10.4](broken-reference/), this was `MySQL`).
+You can find MariaDB's error log messages by searching for the **Source** `MariaDB` (prior to [MariaDB 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-management/server-monitoring-logs/broken-reference/README.md), this was `MySQL`).
 
 ## Finding the Error Log
 

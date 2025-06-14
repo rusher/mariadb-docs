@@ -26,7 +26,7 @@ We currently have APT repositories for the following Linux distributions:
 
 If you want to install MariaDB with `apt`, then you can configure `apt` to install from MariaDB Corporation's MariaDB Package Repository by using the [MariaDB Package Repository setup script](mariadb-package-repository-setup-and-usage.md).
 
-MariaDB Corporation provides a MariaDB Package Repository for several Linux distributions that use `apt` to manage packages. This repository contains software packages related to MariaDB Server, including the server itself, [clients and utilities](../../../../../kb/en/clients-utilities/), [client libraries](../../../../clients-and-utilities/server-client-software/client-libraries/), [plugins](../../../../reference/plugins/), and [Mariabackup](../../../../server-usage/backing-up-and-restoring-databases/mariabackup/). The MariaDB Package Repository setup script automatically configures your system to install packages from the MariaDB Package Repository.
+MariaDB Corporation provides a MariaDB Package Repository for several Linux distributions that use `apt` to manage packages. This repository contains software packages related to MariaDB Server, including the server itself, [clients and utilities](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/clients-utilities/README.md), [client libraries](../../../../clients-and-utilities/server-client-software/client-libraries/), [plugins](../../../../reference/plugins/), and [Mariabackup](../../../../server-usage/backing-up-and-restoring-databases/mariabackup/). The MariaDB Package Repository setup script automatically configures your system to install packages from the MariaDB Package Repository.
 
 To use the script, execute the following command:
 
@@ -34,7 +34,7 @@ To use the script, execute the following command:
 curl -sS https://downloads.mariadb.com/MariaDB/mariadb_repo_setup | sudo bash
 ```
 
-Note that this script also configures a repository for [MariaDB MaxScale](../../../../../kb/en/maxscale/) and a repository for MariaDB Tools, which currently only contains [Percona XtraBackup](../../../../clients-and-utilities/legacy-clients-and-utilities/backing-up-and-restoring-databases-percona-xtrabackup/percona-xtrabackup-overview.md) and its dependencies.
+Note that this script also configures a repository for [MariaDB MaxScale](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/maxscale/README.md) and a repository for MariaDB Tools, which currently only contains [Percona XtraBackup](../../../../clients-and-utilities/legacy-clients-and-utilities/backing-up-and-restoring-databases-percona-xtrabackup/percona-xtrabackup-overview.md) and its dependencies.
 
 See [MariaDB Package Repository Setup and Usage](mariadb-package-repository-setup-and-usage.md) for more information.
 
@@ -42,7 +42,7 @@ See [MariaDB Package Repository Setup and Usage](mariadb-package-repository-setu
 
 If you want to install MariaDB with `apt`, then you can configure `apt` to install from MariaDB Foundation's MariaDB Repository by using the [MariaDB Repository Configuration Tool](https://mariadb.org/download/?t=repo-config).
 
-The MariaDB Foundation provides a MariaDB repository for several Linux distributions that use `apt-get` to manage packages. This repository contains software packages related to MariaDB Server, including the server itself, [clients and utilities](../../../../../kb/en/clients-utilities/), [client libraries](../../../../clients-and-utilities/server-client-software/client-libraries/), [plugins](../../../../reference/plugins/), and [Mariabackup](../../../../server-usage/backing-up-and-restoring-databases/mariabackup/). The MariaDB Repository Configuration Tool can easily generate the appropriate commands to add the repository for your distribution.
+The MariaDB Foundation provides a MariaDB repository for several Linux distributions that use `apt-get` to manage packages. This repository contains software packages related to MariaDB Server, including the server itself, [clients and utilities](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/clients-utilities/README.md), [client libraries](../../../../clients-and-utilities/server-client-software/client-libraries/), [plugins](../../../../reference/plugins/), and [Mariabackup](../../../../server-usage/backing-up-and-restoring-databases/mariabackup/). The MariaDB Repository Configuration Tool can easily generate the appropriate commands to add the repository for your distribution.
 
 There are several ways to add the repository.
 
@@ -271,7 +271,7 @@ The process to install MariaDB Galera Cluster with the MariaDB `apt-get` reposit
 
 Galera Cluster support is included in the standard MariaDB Server packages, so you will need to install the `mariadb-server` package, as you normally would.
 
-You also need to install the `galera-4` package to obtain the [Galera](../../../../../kb/en/galera/) 4 wsrep provider library.
+You also need to install the `galera-4` package to obtain the [Galera](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/galera/README.md) 4 wsrep provider library.
 
 To install MariaDB Galera Cluster, first you would have to update the package cache by executing the following command:
 
@@ -295,11 +295,11 @@ sudo apt-get install galera-arbitrator-4
 
 <>
 
-See [MariaDB Galera Cluster](../../../../../kb/en/galera/) for more information on MariaDB Galera Cluster.
+See [MariaDB Galera Cluster](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/galera/README.md) for more information on MariaDB Galera Cluster.
 
 #### Installing MariaDB Clients and Client Libraries with APT
 
-[MariaDB Connector/C](../../../../../kb/en/about-mariadb-connector-c/) is included as the client library.
+[MariaDB Connector/C](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/about-mariadb-connector-c/README.md) is included as the client library.
 
 To Install the clients and client libraries, first you would have to update the package cache by executing the following command:
 
@@ -394,7 +394,7 @@ sudo dpkg --install ./mariadb-server*.deb \
 
 After the installation is complete, you can start MariaDB.
 
-If you are using [MariaDB Galera Cluster](../../../../../kb/en/galera/), then keep in mind that the first node will have to be [bootstrapped](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/galera-management/getting-started-with-mariadb-galera-cluster#bootstrapping-a-new-cluster).
+If you are using [MariaDB Galera Cluster](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/galera/README.md), then keep in mind that the first node will have to be [bootstrapped](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/galera-management/getting-started-with-mariadb-galera-cluster#bootstrapping-a-new-cluster).
 
 ## Available DEB Packages
 
@@ -407,7 +407,7 @@ For MariaDB, the following DEBs are available:
 | Package Name                           | Description                                                                                                                                                                                                                                        |
 | -------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Package Name                           | Description                                                                                                                                                                                                                                        |
-| galera-4                               | The WSREP provider for [Galera](../../../../../kb/en/galera/) 4.                                                                                                                                                                                   |
+| galera-4                               | The WSREP provider for [Galera](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/galera/README.md) 4.                                                                                                                            |
 | libmariadb3                            | Dynamic client libraries.                                                                                                                                                                                                                          |
 | libmariadb-dev                         | Development headers and static libraries.                                                                                                                                                                                                          |
 | libmariadbclient18                     | Virtual package to satisfy external depends                                                                                                                                                                                                        |

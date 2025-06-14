@@ -29,7 +29,7 @@ MASTER\_GTID\_WAIT() can be useful to ensure that a slave has caught up to\
 a master. Simply take the value of [gtid\_binlog\_pos](../../../../ha-and-performance/standard-replication/gtid.md) on the master, and use it in a MASTER\_GTID\_WAIT() call on the slave; when the call completes, the slave\
 will have caught up with that master position.
 
-MASTER\_GTID\_WAIT() can also be used in client applications together with the[last\_gtid](../../../../ha-and-performance/standard-replication/gtid.md) session variable. This is useful in a read-scaleout [replication](broken-reference) setup, where the application writes to a single master but divides the\
+MASTER\_GTID\_WAIT() can also be used in client applications together with the[last\_gtid](../../../../ha-and-performance/standard-replication/gtid.md) session variable. This is useful in a read-scaleout [replication](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-functions/secondary-functions/miscellaneous-functions/broken-reference/README.md) setup, where the application writes to a single master but divides the\
 reads out to a number of slaves to distribute the load. In such a setup, there\
 is a risk that an application could first do an update on the master, and then\
 a bit later do a read on a slave, and if the slave is not fast enough, the\

@@ -46,7 +46,7 @@ replication to break in this case; this was also fixed in [MariaDB 5.3](https://
 
 ## See Also
 
-* [What is MariaDB 5.3](broken-reference/)
+* [What is MariaDB 5.3](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/standard-replication/broken-reference/README.md)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

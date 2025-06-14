@@ -17,7 +17,7 @@ explain what each of them actually does:
   host, so you must remove this bind-address directive or replace it either 0.0.0.0\
   to listen on all interfaces, or the address of a specific public interface.
 
-**MariaDB starting with** [**10.11**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-11-series/what-is-mariadb-1011)
+**MariaDB starting with** [**10.11**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-11-series/what-is-mariadb-1011)
 
 Multiple comma-separated addresses can now be given to `bind_address` to allow the server to listen on more than one specific interface while not listening on others.
 
@@ -45,7 +45,7 @@ Welcome to the MariaDB monitor.  Commands end with ; or \g.
 ## Finding the Defaults File
 
 To enable MariaDB to listen to remote connections, you need to edit your defaults\
-file. See [Configuring MariaDB with my.cnf](../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md) for more detail.
+file. See [Configuring MariaDB with my.cnf](../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) for more detail.
 
 Common locations for defaults files:
 
@@ -113,7 +113,7 @@ skip-bind-address
 
 This works as one can have any number of \[mysqld] sections.
 
-Save the file and restart the mariadbd daemon or service (see [Starting and Stopping MariaDB](../../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/)).
+Save the file and restart the mariadbd daemon or service (see [Starting and Stopping MariaDB](../../server-management/starting-and-stopping-mariadb/)).
 
 You can check the options mariadbd is using by executing:
 

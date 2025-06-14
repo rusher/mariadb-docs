@@ -30,7 +30,7 @@ a precision of 65 digits.
 
 For more details on the attributes, see [Numeric Data Type Overview](numeric-data-type-overview.md).
 
-`DEC`, `NUMERIC` and `FIXED` are synonyms, as well as `NUMBER` in [Oracle mode](broken-reference).
+`DEC`, `NUMERIC` and `FIXED` are synonyms, as well as `NUMBER` in [Oracle mode](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/data-types/numeric-data-types/broken-reference/README.md).
 
 ## Examples
 
@@ -262,8 +262,8 @@ SELECT * FROM decimal_zerofill_example;
 ## See Also
 
 * [Numeric Data Type Overview](numeric-data-type-overview.md)
-* [Oracle mode from MariaDB 10.3](broken-reference)
+* [Oracle mode from MariaDB 10.3](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/data-types/numeric-data-types/broken-reference/README.md)
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

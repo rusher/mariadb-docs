@@ -2,7 +2,7 @@
 
 ## Overview
 
-[MariaDB Server](../../../../../en/mariadb-enterprise-server/) and MariaDB Community Server support data-in-transit encryption, which secures data transmitted over the network. The server and the clients encrypt data using the Transport Layer Security (TLS) protocol, which is a newer version of the Secure Socket Layer (SSL) protocol.
+[MariaDB Server](https://github.com/mariadb-corporation/docs-server/blob/test/en/mariadb-enterprise-server/README.md) and MariaDB Community Server support data-in-transit encryption, which secures data transmitted over the network. The server and the clients encrypt data using the Transport Layer Security (TLS) protocol, which is a newer version of the Secure Socket Layer (SSL) protocol.
 
 TLS must be manually enabled on the server.
 
@@ -39,7 +39,7 @@ Useful system variables and options for TLS include:
 * On Debian and Ubuntu, a good custom configuration file would be: /etc/mysql/mariadb.conf.d/z-custom-my.cnf
 
 4. Set your system variables and options in the configuration file.\
-   They need to be set in a group that will be read by [MariaDB Server](../../../../../en/mariadb-enterprise-server/), such as \[mariadb] or \[server].\
+   They need to be set in a group that will be read by [MariaDB Server](https://github.com/mariadb-corporation/docs-server/blob/test/en/mariadb-enterprise-server/README.md), such as \[mariadb] or \[server].\
    For example:
 
 ```

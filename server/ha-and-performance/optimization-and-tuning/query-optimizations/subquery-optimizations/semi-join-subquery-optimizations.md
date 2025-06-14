@@ -27,11 +27,11 @@ WHERE
 
 One can execute it "naturally", by starting from countries in Europe and checking if they have populous Cities:
 
-![semi-join-outer-to-inner](../../../../.gitbook/assets/semi-join-subquery-optimizations/+image/semi-join-outer-to-inner.png)
+![semi-join-outer-to-inner](../../../../.gitbook/assets/semi-join-outer-to-inner.png)
 
 The semi-join property also allows "backwards" execution: we can start from big cities, and check which countries they are in:
 
-![semi-join-inner-to-outer](../../../../.gitbook/assets/semi-join-subquery-optimizations/+image/semi-join-inner-to-outer.png)
+![semi-join-inner-to-outer](../../../../.gitbook/assets/semi-join-inner-to-outer.png)
 
 To contrast, let's change the subquery to be non-semi-join:
 
@@ -50,7 +50,7 @@ It is still possible to start from countries, and then check
 * if a country has any big cities
 * if it has a large surface area:
 
-![non-semi-join-subquery](../../../../.gitbook/assets/semi-join-subquery-optimizations/+image/non-semi-join-subquery.png)
+![non-semi-join-subquery](../../../../.gitbook/assets/non-semi-join-subquery.png)
 
 The opposite, city-to-country way is not possible. This is not a semi-join.
 
@@ -76,7 +76,7 @@ MariaDB has five different semi-join execution strategies:
 
 ## See Also
 
-* [What is MariaDB 5.3](broken-reference)
+* [What is MariaDB 5.3](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/optimization-and-tuning/query-optimizations/subquery-optimizations/broken-reference/README.md)
 * [Subquery Optimizations Map](subquery-optimizations-map.md)
 * ["Observations about subquery use cases"](https://s.petrunia.net/blog/?p=35) blog post
 * [http:en.wikipedia.org/wiki/Semijoin](https://en.wikipedia.org/wiki/Semijoin)

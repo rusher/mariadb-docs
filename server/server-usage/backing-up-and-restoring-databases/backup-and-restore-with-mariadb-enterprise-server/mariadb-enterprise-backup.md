@@ -2,7 +2,7 @@
 
 ## Overview
 
-Regular and reliable backups are essential to successful recovery of mission critical applications. [MariaDB Enterprise Server](../../../../en/mariadb-enterprise-server/) backup and restore operations are performed using [MariaDB Enterprise Backup](../mariabackup/), an enterprise-build of [MariaDB Backup](../mariabackup/).
+Regular and reliable backups are essential to successful recovery of mission critical applications. [MariaDB Enterprise Server](https://github.com/mariadb-corporation/docs-server/blob/test/en/mariadb-enterprise-server/README.md) backup and restore operations are performed using [MariaDB Enterprise Backup](../mariabackup/), an enterprise-build of [MariaDB Backup](../mariabackup/).
 
 MariaDB Enterprise Backup is compatible with MariaDB Enterprise Server 10.2, 10.3, 10.4, 10.5, and 10.6.
 
@@ -226,7 +226,7 @@ Once the incremental backup has been applied to the full backup, the full backup
 
 ### Restoring from Incremental Backups
 
-Once you have prepared the full backup directory with all the incremental changes you need (as described above), stop the MariaDB Community Server, [Empty](../../../server-management/backing-up-and-restoring-databases/backup-and-restore-with-mariadb-enterprise-server/mariadb-backup-enterprise-docs/#restore-requires-empty-data-directory) its data directory, and restore from the original full backup directory using the --copy-back option:
+Once you have prepared the full backup directory with all the incremental changes you need (as described above), stop the MariaDB Community Server, [Empty](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-management/backing-up-and-restoring-databases/backup-and-restore-with-mariadb-enterprise-server/mariadb-backup-enterprise-docs/README.md#restore-requires-empty-data-directory) its data directory, and restore from the original full backup directory using the --copy-back option:
 
 ```bash
 # mariabackup --copy-back --target-dir=/data/backups/full
@@ -517,7 +517,7 @@ Create Table: CREATE TABLE `t1` (
 
 Recovering from a backup restores the data directory at a specific point-in-time, but it does not restore the binary log. In a point-in-time recovery, you begin by restoring the data directory from a full or incremental backup, then use the mysqlbinlog utility to recover the binary log data to a specific point in time.
 
-1. First, prepare the backup as you normally would for a [full](../../../server-management/backing-up-and-restoring-databases/backup-and-restore-with-mariadb-enterprise-server/mariadb-backup-enterprise-docs/#preparing-a-full-backup-for-recovery) or [incremental](../mariabackup/incremental-backup-and-restore-with-mariabackup.md) backup:
+1. First, prepare the backup as you normally would for a [full](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-management/backing-up-and-restoring-databases/backup-and-restore-with-mariadb-enterprise-server/mariadb-backup-enterprise-docs/README.md#preparing-a-full-backup-for-recovery) or [incremental](../mariabackup/incremental-backup-and-restore-with-mariabackup.md) backup:
 
 ```bash
 # mariabackup --prepare --target-dir=/data/backups/full

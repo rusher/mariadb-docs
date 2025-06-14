@@ -281,7 +281,7 @@ Some keywords are exceptions for historical reasons, and are permitted as unquot
 
 ## Oracle Mode
 
-In [Oracle mode, from MariaDB 10.3](broken-reference/), there are a number of extra reserved words:
+In [Oracle mode, from MariaDB 10.3](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-structure/sql-language-structure/broken-reference/README.md), there are a number of extra reserved words:
 
 | Keyword      | Notes                                                                                                                                                                                                                                                                                                                                              |
 | ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

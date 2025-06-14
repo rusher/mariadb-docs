@@ -10,7 +10,7 @@ Whether concurrent inserts can be used or not depends on the value of the [concu
 
 If the [binary log](../../../../server-management/server-monitoring-logs/binary-log/) is used, [CREATE TABLE ... SELECT](../../data-definition/create/create-table.md#create-table-select) and [INSERT ... SELECT](insert-select.md) statements cannot use concurrent inserts. These statements acquire a read lock on the table, so concurrent inserts will need to wait. This way the log can be safely used to restore data.
 
-Concurrent inserts are not used by replicas with the row based [replication](broken-reference/) (see [binary log formats](../../../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md)).
+Concurrent inserts are not used by replicas with the row based [replication](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/data-manipulation/inserting-loading-data/broken-reference/README.md) (see [binary log formats](../../../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md)).
 
 If an [INSERT](insert.md) statement contain the [HIGH\_PRIORITY](../changing-deleting-data/high_priority-and-low_priority.md) clause, concurrent inserts cannot be used. [INSERT ... DELAYED](insert-delayed.md) is usually unneeded if concurrent inserts are enabled.
 

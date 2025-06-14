@@ -21,8 +21,8 @@ Geometry, Curve, Surface, MultiCurve, and MultiSurface are defined as\
 non-instantiable classes. They define a common set of methods for\
 their subclasses and are included for extensibility.
 
-[Point](point-properties/), [LineString](linestring-properties/), [Polygon](polygon-properties/), [GeometryCollection](../../sql-statements/geometry-constructors/geometry-constructors/geometrycollection.md), [MultiPoint](../../sql-statements/geometry-constructors/geometry-constructors/multipoint.md),[MultiLineString](../../sql-statements/geometry-constructors/geometry-constructors/multilinestring.md), and [MultiPolygon](../../sql-statements/geometry-constructors/geometry-constructors/multipolygon.md) are instantiable classes.
+[Point](../../sql-statements/geometry-constructors/point-properties/), [LineString](../../sql-statements/geometry-constructors/linestring-properties/), [Polygon](../../sql-statements/geometry-constructors/polygon-properties/), [GeometryCollection](../../sql-statements/geometry-constructors/geometry-constructors/geometrycollection.md), [MultiPoint](../../sql-statements/geometry-constructors/geometry-constructors/multipoint.md),[MultiLineString](../../sql-statements/geometry-constructors/geometry-constructors/multilinestring.md), and [MultiPolygon](../../sql-statements/geometry-constructors/geometry-constructors/multipolygon.md) are instantiable classes.
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

@@ -89,7 +89,7 @@ such that the entire result set is treated as a group.
 
 ### DISTINCT
 
-A query may produce some identical rows. By default, all rows are retrieved, even when their values are the same. To explicitly specify that you want to retrieve identical rows, use the `ALL` option. If you want duplicates to be removed from the resultset, use the `DISTINCT` option. `DISTINCTROW` is a synonym for `DISTINCT`. See also [COUNT DISTINCT](../../../sql-functions/aggregate-functions/count-distinct.md) and [SELECT UNIQUE in Oracle mode](broken-reference/).
+A query may produce some identical rows. By default, all rows are retrieved, even when their values are the same. To explicitly specify that you want to retrieve identical rows, use the `ALL` option. If you want duplicates to be removed from the resultset, use the `DISTINCT` option. `DISTINCTROW` is a synonym for `DISTINCT`. See also [COUNT DISTINCT](../../../sql-functions/aggregate-functions/count-distinct.md) and [SELECT UNIQUE in Oracle mode](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/data-manipulation/selecting-data/broken-reference/README.md).
 
 ### INTO
 
@@ -97,7 +97,7 @@ The `INTO` clause is used to specify that the query results should be written to
 
 * [SELECT INTO OUTFILE](select-into-outfile.md) - formatting and writing the result to an external file.
 * [SELECT INTO DUMPFILE](select-into-dumpfile.md) - binary-safe writing of the unformatted results to an external file.
-* [SELECT INTO Variable](../../../../server-usage/programmatic-compound-statements/selectinto.md) - selecting and setting variables.
+* [SELECT INTO Variable](../../programmatic-compound-statements/selectinto.md) - selecting and setting variables.
 
 The reverse of `SELECT INTO OUTFILE` is [LOAD DATA](../inserting-loading-data/load-data-into-tables-or-index/).
 
@@ -159,11 +159,11 @@ Set the lock wait timeout. See [WAIT and NOWAIT](../../transactions/wait-and-now
 SELECT f1,f2 FROM t1 WHERE (f3<=10) AND (f4='y');
 ```
 
-See [Getting Data from MariaDB](../../../../../kb/en/getting-data-from-mariadb/) (Beginner tutorial), or the various sub-articles, for more examples.
+See [Getting Data from MariaDB](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/getting-data-from-mariadb/README.md) (Beginner tutorial), or the various sub-articles, for more examples.
 
 ## See Also
 
-* [Getting Data from MariaDB](../../../../../kb/en/getting-data-from-mariadb/) (Beginner tutorial)
+* [Getting Data from MariaDB](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/getting-data-from-mariadb/README.md) (Beginner tutorial)
 * [Joins and Subqueries](joins-subqueries/)
 * [LIMIT](limit.md)
 * [ORDER BY](order-by.md)
@@ -175,8 +175,8 @@ See [Getting Data from MariaDB](../../../../../kb/en/getting-data-from-mariadb/)
 * [FOR UPDATE](for-update.md)
 * [LOCK IN SHARE MODE](lock-in-share-mode.md)
 * [Optimizer Hints](optimizer-hints.md)
-* [Oracle mode from MariaDB 10.3](broken-reference/)
+* [Oracle mode from MariaDB 10.3](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/data-manipulation/selecting-data/broken-reference/README.md)
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

@@ -2,7 +2,7 @@
 
 It is possible to use `SHOW QUERY_RESPONSE_TIME` as an alternative for retrieving information from the [QUERY\_RESPONSE\_TIME](../../../plugins/other-plugins/query-response-time-plugin.md) plugin.
 
-This was introduced as part of the [Information Schema plugin extension](broken-reference).
+This was introduced as part of the [Information Schema plugin extension](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/administrative-sql-statements/show/broken-reference/README.md).
 
 ## Example
 

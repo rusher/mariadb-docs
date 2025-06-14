@@ -1,6 +1,6 @@
 # SHOW LOCALES
 
-`SHOW LOCALES` was introduced as part of the [Information Schema plugin extension](broken-reference).
+`SHOW LOCALES` was introduced as part of the [Information Schema plugin extension](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/administrative-sql-statements/show/broken-reference/README.md).
 
 `SHOW LOCALES` is used to return [locales](../../../data-types/string-data-types/character-sets/internationalization-and-localization/server-locale.md) information as part of the [Locales](../../../data-types/string-data-types/character-sets/internationalization-and-localization/locales-plugin.md) plugin. It requires this plugin to be installed to work.
 

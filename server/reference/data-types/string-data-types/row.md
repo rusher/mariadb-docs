@@ -57,7 +57,7 @@ EXECUTE IMMEDIATE 'CALL proc_with_out_param(?)' USING rec.a;
 
 ### ROW type variables as FETCH targets
 
-`ROW` type variables are allowed as [FETCH](../../../server-usage/programmatic-compound-statements/programmatic-compound-statements-cursors/fetch.md) targets:
+`ROW` type variables are allowed as [FETCH](../../sql-statements/programmatic-compound-statements/programmatic-compound-statements-cursors/fetch.md) targets:
 
 ```
 FETCH cur INTO rec;
@@ -355,7 +355,7 @@ CALL row_proc();
 ## See Also
 
 * [STORED PROCEDURES](../../../server-usage/stored-routines/stored-procedures/)
-* [DECLARE Variable](../../../server-usage/programmatic-compound-statements/declare-variable.md)
+* [DECLARE Variable](../../sql-statements/programmatic-compound-statements/declare-variable.md)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

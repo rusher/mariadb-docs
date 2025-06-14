@@ -1,6 +1,6 @@
 # Fixing Connection Issues
 
-If you are completely new to MariaDB and relational databases, you may want to start with the [MariaDB Primer](../../../kb/en/a-mariadb-primer/). Also, make sure you understand the connection parameters discussed in the [Connecting to MariaDB](https://mariadb.com/kb/en/connecting-to-mariadb/) article.
+If you are completely new to MariaDB and relational databases, you may want to start with the [MariaDB Primer](../../mariadb-quickstart-guides/mariadb-usage-guide.md). Also, make sure you understand the connection parameters discussed in the [Connecting to MariaDB](../../mariadb-quickstart-guides/mariadb-connecting-guide.md) article.
 
 There are a number of common problems that can occur when connecting to MariaDB.
 
@@ -22,7 +22,7 @@ ERROR 2003 (HY000): Can't connect to MySQL server on  'localhost'
   (111 "Connection refused")
 ```
 
-the server is either not running, or not running on the specified port, socket or pipe. Make sure you are using the correct [host](https://mariadb.com/kb/en/connecting-to-mariadb/#host), [port](https://mariadb.com/kb/en/connecting-to-mariadb/#port), [pipe](https://mariadb.com/kb/en/connecting-to-mariadb/#pipe), [socket](https://mariadb.com/kb/en/connecting-to-mariadb/#socket) and [protocol](https://mariadb.com/kb/en/connecting-to-mariadb/#protocol) options, or alternatively, see [Getting, Installing and Upgrading MariaDB](../../server-management/install-and-upgrade-mariadb/), [Starting and Stopping MariaDB](../../server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/) or [Troubleshooting Installation Issues](../../server-management/install-and-upgrade-mariadb/installing-mariadb/troubleshooting-installation-issues/).
+the server is either not running, or not running on the specified port, socket or pipe. Make sure you are using the correct host, port, pipe, socket and protocol options, or alternatively, see [Getting, Installing and Upgrading MariaDB](../../server-management/install-and-upgrade-mariadb/), [Starting and Stopping MariaDB](../../server-management/starting-and-stopping-mariadb/) or [Troubleshooting Installation Issues](../../server-management/install-and-upgrade-mariadb/installing-mariadb/troubleshooting-installation-issues/).
 
 The socket file can be in a non-standard path. In this case, the `socket` option is probably written in the my.cnf file. Check that its value is identical in the \[mysqld] and \[client] sections; if not, the client will look for a socket in a wrong place.
 
@@ -47,11 +47,11 @@ telnet: connect to address 192.168.0.11: Connection refused
 OS error code 115:  Operation now in progress
 ```
 
-To solve this, see [Configuring MariaDB for Remote Client Access](../../../kb/en/configuring-mariadb-for-remote-client-access/)
+To solve this, see [Configuring MariaDB for Remote Client Access](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/configuring-mariadb-for-remote-client-access/README.md)
 
 ### Authentication Problems
 
-Note that from [MariaDB 10.4.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-1043-release-notes), the [unix\_socket authentication plugin](../../reference/plugins/authentication-plugins/authentication-plugin-unix-socket.md) is enabled by default on Unix-like systems. This uses operating system credentials when connecting to MariaDB via the local Unix socket file. See [unix\_socket authentication plugin](../../reference/plugins/authentication-plugins/authentication-plugin-unix-socket.md) for instructions on connecting and on switching to password-based authentication as well as [Authentication from MariaDB 10.4](../../security/user-account-management/authentication-from-mariadb-10-4.md) for an overview of the [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104) changes..
+Note that from [MariaDB 10.4.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-1043-release-notes), the [unix\_socket authentication plugin](../../reference/plugins/authentication-plugins/authentication-plugin-unix-socket.md) is enabled by default on Unix-like systems. This uses operating system credentials when connecting to MariaDB via the local Unix socket file. See [unix\_socket authentication plugin](../../reference/plugins/authentication-plugins/authentication-plugin-unix-socket.md) for instructions on connecting and on switching to password-based authentication as well as [Authentication from MariaDB 10.4](../../security/user-account-management/authentication-from-mariadb-10-4.md) for an overview of the [MariaDB 10.4](broken-reference) changes..
 
 Authentication is granted to a particular username/host combination. `user1'@'localhost'`, for example, is not the same as `user1'@'166.78.144.191'`. See the [GRANT](../../reference/sql-statements/account-management-sql-statements/grant.md) article for details on granting permissions.
 
@@ -74,7 +74,7 @@ or can connect to a particular database, but not another, for example`mariadb -u
 
 #### Option Files and Environment Variables
 
-It's possible that option files or environment variables may be providing incorrect connection parameters. Check the values provided in any option files read by the client you are using (see [mariadbd Configuration Files and Groups](../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md) and the documentation for the particular client you're using - see [Clients and Utilities](../../clients-and-utilities/)).
+It's possible that option files or environment variables may be providing incorrect connection parameters. Check the values provided in any option files read by the client you are using (see [mariadbd Configuration Files and Groups](../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) and the documentation for the particular client you're using - see [Clients and Utilities](../../clients-and-utilities/)).
 
 Option files can usually be suppressed with `no-defaults` option, for example:
 
@@ -84,7 +84,7 @@ mariadb-import --no-defaults ...
 
 #### Unable to Connect to a Running Server / Lost root Password
 
-If you are unable to connect to a server, for example because you have lost the root password, you can start the server without using the privilege tables by running the [--skip-grant-tables](../../mariadb-quickstart-guides/mariadb-options/#-skip-grant-tables) option, which gives users full access to all tables. You can then run [FLUSH PRIVILEGES](../../reference/sql-statements/administrative-sql-statements/flush-commands/flush.md) to resume using the grant tables, followed by [SET PASSWORD](../../reference/sql-statements/account-management-sql-statements/set-password.md) to change the password for an account.
+If you are unable to connect to a server, for example because you have lost the root password, you can start the server without using the privilege tables by running the [--skip-grant-tables](https://github.com/mariadb-corporation/docs-server/blob/test/server/mariadb-quickstart-guides/mariadb-options/README.md#-skip-grant-tables) option, which gives users full access to all tables. You can then run [FLUSH PRIVILEGES](../../reference/sql-statements/administrative-sql-statements/flush-commands/flush.md) to resume using the grant tables, followed by [SET PASSWORD](../../reference/sql-statements/account-management-sql-statements/set-password.md) to change the password for an account.
 
 #### localhost and %
 
@@ -125,8 +125,6 @@ Since you are connecting from localhost, the anonymous credentials, rather than 
 * [GRANT](../../reference/sql-statements/account-management-sql-statements/grant.md)
 * [Authentication from MariaDB 10.4](../../security/user-account-management/authentication-from-mariadb-10-4.md)
 * [Authentication from MariaDB 10 4 video tutorial](https://www.youtube.com/watch?v=aWFG4uLbimM)
-* [Error 1698: Access denied for user](../../reference/mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-codes-1600-to-1699/e1698.md)
+* [Error 1698: Access denied for user](broken-reference)
 
-<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
-
-{% @marketo/form formId="4316" %}
+CC BY-SA / Gnu FDL

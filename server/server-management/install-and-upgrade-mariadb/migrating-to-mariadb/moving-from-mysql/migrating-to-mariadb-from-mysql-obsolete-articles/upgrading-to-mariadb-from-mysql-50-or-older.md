@@ -29,7 +29,7 @@ mysql_upgrade --socket=127.0.0.1 --protocol=socket
 
 To see other options, use [--help](../../../../../clients-and-utilities/legacy-clients-and-utilities/mysql_upgrade.md).
 
-"mysql\_upgrade" reads the [my.cnf](broken-reference/) sections \[mysql\_upgrade] and \[client] for default values.
+"mysql\_upgrade" reads the [my.cnf](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-management/install-and-upgrade-mariadb/migrating-to-mariadb/moving-from-mysql/migrating-to-mariadb-from-mysql-obsolete-articles/broken-reference/README.md) sections \[mysql\_upgrade] and \[client] for default values.
 
 There are a variety of reasons tables need to be converted; they could be any of the following:
 
@@ -37,7 +37,7 @@ There are a variety of reasons tables need to be converted; they could be any of
 * A field type has changed storage format
   * `[DECIMAL](../../../../../reference/data-types/data-types-numeric-data-types/decimal.md)` and `[VARCHAR](../../../../../reference/data-types/string-data-types/varchar.md)` changed format between MySQL 4.1 and MySQL 5.0
 * An engine has a new storage format
-  * [ARCHIVE](../../../../../server-usage/storage-engines/archive/) changed storage format between 5.0 and 5.1
+  * [ARCHIVE](../../../../../server-usage/storage-engines/archive.md) changed storage format between 5.0 and 5.1
 * The format for storing [table names](../../../../../reference/sql-structure/sql-language-structure/identifier-names.md) has changed
   * In MySQL 5.1 table names are encoded so that the file names are identical on all computers. Old table names that contains forbidden file name characters will show up prefixed with #mysql50
 

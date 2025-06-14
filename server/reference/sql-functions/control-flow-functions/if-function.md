@@ -12,7 +12,7 @@ If `expr1` is `TRUE` (`expr1 <> 0` and `expr1 <> NULL`) then `IF()`\
 returns `expr2`; otherwise it returns `expr3`. `IF()` returns a numeric\
 or string value, depending on the context in which it is used.
 
-**Note:** There is also an [IF statement](../../../server-usage/programmatic-compound-statements/if.md) which differs from the`IF()` function described here.
+**Note:** There is also an [IF statement](../../sql-statements/programmatic-compound-statements/if.md) which differs from the`IF()` function described here.
 
 ## Examples
 
@@ -45,8 +45,8 @@ SELECT IF(STRCMP('test','test1'),'no','yes');
 
 ## See Also
 
-There is also an [IF statement](../../../server-usage/programmatic-compound-statements/if.md), which differs from the `IF()` function described above.
+There is also an [IF statement](../../sql-statements/programmatic-compound-statements/if.md), which differs from the `IF()` function described above.
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

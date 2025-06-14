@@ -150,7 +150,7 @@ ERROR 1406 (22001): Data too long for column 'example' at row 1
 
 ## Oracle Mode
 
-In [Oracle mode](broken-reference/), `VARCHAR2` is a synonym.
+In [Oracle mode](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/data-types/string-data-types/broken-reference/README.md), `VARCHAR2` is a synonym.
 
 ### For Storage Engine Developers
 
@@ -164,8 +164,8 @@ In [Oracle mode](broken-reference/), `VARCHAR2` is a synonym.
 * [CHAR](char.md)
 * [Character Sets and Collations](character-sets/)
 * [Data Type Storage Requirements](../data-type-storage-requirements.md)
-* [Oracle mode from MariaDB 10.3](broken-reference/)
+* [Oracle mode from MariaDB 10.3](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/data-types/string-data-types/broken-reference/README.md)
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

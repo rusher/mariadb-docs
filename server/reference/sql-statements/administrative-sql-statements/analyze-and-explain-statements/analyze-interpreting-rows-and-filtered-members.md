@@ -38,13 +38,13 @@ The access is performed as follows:
 
 ### Access diagram
 
-![index-read-diagram-3](../../../../.gitbook/assets/analyze-interpreting-rows-and-filtered-members/+image/index-read-diagram-3.png)
+![index-read-diagram-3](../../../../.gitbook/assets/index-read-diagram-3.png)
 
 ## Statistics values in MariaDB before 11.5
 
 In MariaDB versions before 11.5, the counters were counted as follows:
 
-![index-read-stats-old](../../../../.gitbook/assets/analyze-interpreting-rows-and-filtered-members/+image/index-read-stats-old.png)
+![index-read-stats-old](../../../../.gitbook/assets/index-read-stats-old.png)
 
 that is,
 
@@ -66,7 +66,7 @@ The selectivity counters are:
 * `r_filtered` is the selectivity of `attached_condition` check, as before.
 * `r_total_filtered` is the combined selectivity of all checks.
 
-![index-read-stats-new](../../../../.gitbook/assets/analyze-interpreting-rows-and-filtered-members/+image/index-read-stats-new.png)
+![index-read-stats-new](../../../../.gitbook/assets/index-read-stats-new.png)
 
 ### ANALYZE output members
 

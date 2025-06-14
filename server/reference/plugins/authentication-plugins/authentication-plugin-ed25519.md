@@ -136,7 +136,7 @@ For clients that use the `libmysqlclient` or [MariaDB Connector/C](https://app.g
 
 * `client_ed25519`
 
-When connecting with a [client or utility](../../../../kb/en/clients-utilities/) to a server as a user account that authenticates with the `ed25519` authentication plugin, you may need to tell the client where to find the relevant client authentication plugin by specifying the `--plugin-dir` option. For example:
+When connecting with a [client or utility](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/clients-utilities/README.md) to a server as a user account that authenticates with the `ed25519` authentication plugin, you may need to tell the client where to find the relevant client authentication plugin by specifying the `--plugin-dir` option. For example:
 
 ```
 mysql --plugin-dir=/usr/local/mysql/lib64/mysql/plugin --user=alice
@@ -150,11 +150,11 @@ The `client_ed25519` client authentication plugin hashes and signs the password 
 
 ### Using the Plugin with MariaDB Connector/C
 
-[MariaDB Connector/C](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c) supports `ed25519` authentication using the [client authentication plugins](client-authentication-plugins/) mentioned in the previous section since MariaDB Connector/C 3.1.0.
+[MariaDB Connector/C](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c) supports `ed25519` authentication using the [client authentication plugins](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/plugins/authentication-plugins/client-authentication-plugins/README.md) mentioned in the previous section since MariaDB Connector/C 3.1.0.
 
 ### Using the Plugin with MariaDB Connector/ODBC
 
-[MariaDB Connector/ODBC](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-odbc) supports `ed25519` authentication using the [client authentication plugins](client-authentication-plugins/) mentioned in the previous section since MariaDB Connector/ODBC 3.1.2.
+[MariaDB Connector/ODBC](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-odbc) supports `ed25519` authentication using the [client authentication plugins](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/plugins/authentication-plugins/client-authentication-plugins/README.md) mentioned in the previous section since MariaDB Connector/ODBC 3.1.2.
 
 ### Using the Plugin with MariaDB Connector/J
 
@@ -162,11 +162,11 @@ The `client_ed25519` client authentication plugin hashes and signs the password 
 
 ### Using the Plugin with MariaDB Connector/Node.js
 
-[MariaDB Connector/Node.js](../../../../kb/en/nodejs-connector/) supports `ed25519` authentication since MariaDB Connector/Node.js 2.1.0.
+[MariaDB Connector/Node.js](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/nodejs-connector/README.md) supports `ed25519` authentication since MariaDB Connector/Node.js 2.1.0.
 
 ### Using the Plugin with MySqlConnector for .NET
 
-[MySqlConnector for ADO.NET](../../../../kb/en/mysqlconnector-for-adonet/) supports `ed25519` authentication since MySqlConnector 0.56.0.
+[MySqlConnector for ADO.NET](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/mysqlconnector-for-adonet/README.md) supports `ed25519` authentication since MySqlConnector 0.56.0.
 
 The connector implemented support for this authentication plugin in a separate [NuGet](https://docs.microsoft.com/en-us/nuget/what-is-nuget) package called [MySqlConnector.Authentication.Ed25519](https://www.nuget.org/packages/MySqlConnector.Authentication.Ed25519/). After the package is installed, your application must call `Ed25519AuthenticationPlugin.Install` to enable it.
 
@@ -175,7 +175,7 @@ The connector implemented support for this authentication plugin in a separate [
 | Version | Status | Introduced                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 | ------- | ------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Version | Status | Introduced                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-| 1.1     | Stable | [MariaDB 10.4.0](broken-reference)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| 1.1     | Stable | [MariaDB 10.4.0](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/plugins/authentication-plugins/broken-reference/README.md)                                                                                                                                                                                                                                                                                                                                                                                                   |
 | 1.0     | Stable | [MariaDB 10.3.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-1038-release-notes), [MariaDB 10.2.17](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-10217-release-notes), [MariaDB 10.1.35](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10135-release-notes) |
 | 1.0     | Beta   | [MariaDB 10.2.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-1025-release-notes), [MariaDB 10.1.22](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10122-release-notes)                                                                                                                                                                                      |
 

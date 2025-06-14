@@ -2,7 +2,7 @@
 
 ## Description
 
-The [Information Schema](../) `OPTIMIZER_TRACE` table contains [Optimizer Trace](broken-reference) information.
+The [Information Schema](../) `OPTIMIZER_TRACE` table contains [Optimizer Trace](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/broken-reference/README.md) information.
 
 It contains the following columns:
 

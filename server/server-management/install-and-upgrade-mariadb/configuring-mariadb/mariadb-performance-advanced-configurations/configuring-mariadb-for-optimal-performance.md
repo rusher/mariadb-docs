@@ -10,7 +10,7 @@ Feel free to update this article if you have more ideas.
 
 ## [my.cnf](../configuring-mariadb-with-option-files.md) Files
 
-MariaDB is normally configured by editing the [my.cnf](broken-reference/) file. In the next section you have a list of variables that you may want to configure for dedicated MariaDB servers.
+MariaDB is normally configured by editing the [my.cnf](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-management/install-and-upgrade-mariadb/configuring-mariadb/mariadb-performance-advanced-configurations/broken-reference/README.md) file. In the next section you have a list of variables that you may want to configure for dedicated MariaDB servers.
 
 ## [InnoDB](../../../../server-usage/storage-engines/innodb/) Storage Engine
 
@@ -58,7 +58,7 @@ If `Aria_pagecache_reads` is much smaller than `Aria_pagecache_read_request` and
 
 ## [MyISAM](../../../../server-usage/storage-engines/myisam-storage-engine/)
 
-* If you don't use MyISAM tables explicitly (true for most [MariaDB 10.4](broken-reference/)+ users), you can set [key\_buffer\_size](../../../../server-usage/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_buffer_size) to a very low value, like 64K.
+* If you don't use MyISAM tables explicitly (true for most [MariaDB 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-management/install-and-upgrade-mariadb/configuring-mariadb/mariadb-performance-advanced-configurations/broken-reference/README.md)+ users), you can set [key\_buffer\_size](../../../../server-usage/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_buffer_size) to a very low value, like 64K.
 
 ## Using in memory temporary tables
 
@@ -95,7 +95,7 @@ You can increase the storage for internal temporary tables by setting [max\_heap
 
 ## See Also
 
-* [MariaDB Memory Allocation](../../../../ha-and-performance/optimization-and-tuning/mariadb-memory-allocation.md)
+* [MariaDB Memory Allocation](../../../../ha-and-performance/mariadb-memory-allocation.md)
 * [Full List of MariaDB Options, System and Status Variables](../../../../reference/full-list-of-mariadb-options-system-and-status-variables.md)
 * [Server system variables](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md)
 * [mysqld options](../../../starting-and-stopping-mariadb/mariadbd-options.md)

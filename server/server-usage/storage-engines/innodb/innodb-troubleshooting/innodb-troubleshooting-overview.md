@@ -12,7 +12,7 @@ For problems with the InnoDB Data Dictionary, see [InnoDB Data Dictionary Troubl
 
 * [InnoDB Data Dictionary Troubleshooting](innodb-data-dictionary-troubleshooting.md)
 * [InnoDB Recovery Modes](innodb-recovery-modes.md)
-* [Error Codes](../../../../reference/storage-engines/innodb/innodb-troubleshooting/broken-reference/)
+* [Error Codes](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-troubleshooting/broken-reference/README.md)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

@@ -139,7 +139,7 @@ default of 0 on all servers.
 ## Using Global Transaction IDs
 
 Global transaction ID is enabled automatically. Each event\
-group logged to the binlog receives a GTID event, as can be seen with[mariadb-binlog](../../clients-and-utilities/mariadb-binlog/) or [SHOW BINLOG EVENTS](../../reference/sql-statements/administrative-sql-statements/show/show-binlog-events.md).
+group logged to the binlog receives a GTID event, as can be seen with[mariadb-binlog](../../clients-and-utilities/logging-tools/mariadb-binlog/) or [SHOW BINLOG EVENTS](../../reference/sql-statements/administrative-sql-statements/show/show-binlog-events.md).
 
 The replica automatically keeps track of the GTID of the last applied event\
 group, as can be seen from the [gtid\_slave\_pos](gtid.md#gtid_slave_pos) variable:
@@ -221,7 +221,7 @@ In order to be crash-safe, this table must use a transactional storage engine\
 such as InnoDB. When MariaDB is first installed (or upgraded to 10.0.2+) the\
 table is created using the default storage engine - which itself defaults to\
 InnoDB. If there is a need to change the storage engine for this table (to\
-make it transactional on a system configured with [MyISAM](../../reference/storage-engines/myisam-storage-engine/) as the default\
+make it transactional on a system configured with [MyISAM](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/myisam-storage-engine/README.md) as the default\
 storage engine, for example), use [ALTER TABLE](../../reference/sql-statements/data-definition/alter/alter-table.md):
 
 `ALTER TABLE mysql.gtid_slave_pos ENGINE = InnoDB`
@@ -834,7 +834,7 @@ offending replica, to be able to replicate past the problem point (perhaps using
 
 #### `gtid_domain_id`
 
-* Description: This variable is used to decide which replication domain new GTIDs are logged in for a primary server. See [Use with multi-source replication and other multi-primary setups](gtid.md#use-with-multi-source-replication-and-other-multi-primary-setups) for details. This variable can also be set on the session level by a user with the SUPER privilege. This is used by [mariadb-binlog](../../clients-and-utilities/mariadb-binlog/) to preserve the domain ID of GTID events.
+* Description: This variable is used to decide which replication domain new GTIDs are logged in for a primary server. See [Use with multi-source replication and other multi-primary setups](gtid.md#use-with-multi-source-replication-and-other-multi-primary-setups) for details. This variable can also be set on the session level by a user with the SUPER privilege. This is used by [mariadb-binlog](../../clients-and-utilities/logging-tools/mariadb-binlog/) to preserve the domain ID of GTID events.
 * Commandline: `--gtid-domain-id=#`
 * Scope: Global, Session
 * Dynamic: Yes
@@ -858,7 +858,7 @@ offending replica, to be able to replicate past the problem point (perhaps using
 
 #### `gtid_seq_no`
 
-* Description: gtid\_seq\_no can be set on the session level to change which sequence number is logged in the following GTID event. The variable, along with [@@gtid\_domain\_id](gtid.md#gtid_domain_id) and [@@server\_id](gtid.md#server_id), is typically used by [mariadb-binlog](../../clients-and-utilities/mariadb-binlog/) to set up the gtid value of the transaction being decoded into the output.
+* Description: gtid\_seq\_no can be set on the session level to change which sequence number is logged in the following GTID event. The variable, along with [@@gtid\_domain\_id](gtid.md#gtid_domain_id) and [@@server\_id](gtid.md#server_id), is typically used by [mariadb-binlog](../../clients-and-utilities/logging-tools/mariadb-binlog/) to set up the gtid value of the transaction being decoded into the output.
 * Commandline: None
 * Scope: Session
 * Dynamic: Yes
@@ -883,7 +883,7 @@ The value is a list of engine names, separated by commas (','). Replication\
 of transactions using these engines will automatically create new versions\
 of the mysql.gtid\_slave\_pos table in the same engine and use that for future\
 transactions (table creation takes place in a background thread). This avoids introducing a cross-engine transaction to update the GTID position. Only transactional storage engines are supported for\
-gtid\_pos\_auto\_engines (this currently means [InnoDB](../../reference/storage-engines/innodb/), [TokuDB](../../reference/storage-engines/tokudb/), or [MyRocks](../../reference/storage-engines/myrocks/)).
+gtid\_pos\_auto\_engines (this currently means [InnoDB](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/README.md), [TokuDB](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/tokudb/README.md), or [MyRocks](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/myrocks/README.md)).
 
 The variable can be changed dynamically, but replica SQL threads should be stopped when changing it, and it will take effect when the replicas are running again.
 

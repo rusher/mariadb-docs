@@ -4,13 +4,13 @@
 
 A foreign key is a constraint which can be used to enforce data integrity. It is composed by a column (or a set of columns) in a table called the child table, which references to a column (or a set of columns) in a table called the parent table. If foreign keys are used, MariaDB performs some checks to enforce that some integrity rules are always enforced. For a more exhaustive explanation, see [Relational databases: Foreign Keys](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/database-theory/relational-databases-foreign-keys).
 
-Foreign keys can only be used with storage engines that support them. The default [InnoDB](../../../server-usage/storage-engines/innodb/) and the obsolete [PBXT](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/PBXT/) support foreign keys.
+Foreign keys can only be used with storage engines that support them. The default [InnoDB](../../../server-usage/storage-engines/innodb/) and the obsolete [PBXT](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/PBXT/README.md) support foreign keys.
 
 [Partitioned tables](../../../server-usage/partitioning-tables/) cannot contain foreign keys, and cannot be referenced by a foreign key.
 
 ## Syntax
 
-**Note:** Until [MariaDB 10.4](broken-reference/), MariaDB accepts the shortcut format with a REFERENCES clause only in ALTER TABLE and CREATE TABLE statements, but that syntax does nothing. For example:
+**Note:** Until [MariaDB 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/optimization-and-tuning/optimization-and-indexes/broken-reference/README.md), MariaDB accepts the shortcut format with a REFERENCES clause only in ALTER TABLE and CREATE TABLE statements, but that syntax does nothing. For example:
 
 ```
 CREATE TABLE b(for_key INT REFERENCES a(not_key));
@@ -50,15 +50,15 @@ If a foreign keys exists, each row in the child table must match a row in the pa
 
 MariaDB performs certain checks to guarantee that the data integrity is enforced:
 
-* Trying to insert non-matching rows (or update matching rows in a way that makes them non-matching rows) in the child table produces a 1452 error ([SQLSTATE](../../../server-usage/programmatic-compound-statements/programmatic-compound-statements-diagnostics/sqlstate.md) '23000').
+* Trying to insert non-matching rows (or update matching rows in a way that makes them non-matching rows) in the child table produces a 1452 error ([SQLSTATE](../../../reference/sql-statements/programmatic-compound-statements/programmatic-compound-statements-diagnostics/sqlstate.md) '23000').
 * When a row in the parent table is deleted and at least one child row exists, MariaDB performs an action which depends on the `ON DELETE` clause of the foreign key.
 * When a value in the column referenced by a foreign key changes and at least one child row exists, MariaDB performs an action which depends on the `ON UPDATE` clause of the foreign key.
-* Trying to drop a table that is referenced by a foreign key produces a 1217 error ([SQLSTATE](../../../server-usage/programmatic-compound-statements/programmatic-compound-statements-diagnostics/sqlstate.md) '23000').
+* Trying to drop a table that is referenced by a foreign key produces a 1217 error ([SQLSTATE](../../../reference/sql-statements/programmatic-compound-statements/programmatic-compound-statements-diagnostics/sqlstate.md) '23000').
 * A [TRUNCATE TABLE](../../../reference/sql-statements/table-statements/truncate-table.md) against a table containing one or more foreign keys is executed as a [DELETE](../../../reference/sql-statements/data-manipulation/changing-deleting-data/delete.md) without WHERE, so that the foreign keys are enforced for each row.
 
 The allowed actions for `ON DELETE` and `ON UPDATE` are:
 
-* `RESTRICT`: The change on the parent table is prevented. The statement terminates with a 1451 error ([SQLSTATE](../../../server-usage/programmatic-compound-statements/programmatic-compound-statements-diagnostics/sqlstate.md) '2300'). This is the default behavior for both `ON DELETE` and `ON UPDATE`.
+* `RESTRICT`: The change on the parent table is prevented. The statement terminates with a 1451 error ([SQLSTATE](../../../reference/sql-statements/programmatic-compound-statements/programmatic-compound-statements-diagnostics/sqlstate.md) '2300'). This is the default behavior for both `ON DELETE` and `ON UPDATE`.
 * `NO ACTION`: Synonym for `RESTRICT`.
 * `CASCADE`: The change is allowed and propagates on the child table. For example, if a parent row is deleted, the child row is also deleted; if a parent row's ID changes, the child row's ID will also change.
 * `SET NULL`: The change is allowed, and the child row's foreign key columns are set to `NULL`.
@@ -157,7 +157,7 @@ ERROR 1451 (23000): Cannot delete or update a parent row: a foreign key constrai
 
 ### REFERENCES
 
-Until [MariaDB 10.4](broken-reference/)
+Until [MariaDB 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/optimization-and-tuning/optimization-and-indexes/broken-reference/README.md)
 
 ```sql
 CREATE TABLE a(a_key INT primary key, not_key INT);

@@ -9,7 +9,7 @@ There are two kinds of CTEs:
 
 SQL is generally poor at recursive structures.
 
-![trees\_and\_graphs](../../../../../.gitbook/assets/recursive-common-table-expressions-overview/+image/trees_and_graphs.png)
+![trees\_and\_graphs](../../../../../.gitbook/assets/trees_and_graphs.png)
 
 CTEs permit a query to reference itself. A recursive CTE will repeatedly execute subsets of the data until it obtains the complete result set. This makes it particularly useful for handing hierarchical or tree-structured data. [max\_recursive\_iterations](../../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_recursive_iterations) avoids infinite loops.
 
@@ -17,25 +17,25 @@ CTEs permit a query to reference itself. A recursive CTE will repeatedly execute
 
 [WITH RECURSIVE](with.md) signifies a recursive CTE. It is given a name, followed by a body (the main query) as follows:
 
-![rcte\_syntax](../../../../../.gitbook/assets/recursive-common-table-expressions-overview/+image/rcte_syntax.png)
+![rcte\_syntax](../../../../../.gitbook/assets/rcte_syntax.png)
 
-![cte\_syntax](../../../../../.gitbook/assets/recursive-common-table-expressions-overview/+image/cte_syntax.png)
+![cte\_syntax](<../../../../../.gitbook/assets/cte_syntax (1).png>)
 
 ### Computation
 
-Given the following structure:![rcte\_computation](../../../../../.gitbook/assets/recursive-common-table-expressions-overview/+image/rcte_computation.png)
+Given the following structure:![rcte\_computation](../../../../../.gitbook/assets/rcte_computation.png)
 
-First execute the anchor part of the query:![rcte1](../../../../../.gitbook/assets/recursive-common-table-expressions-overview/+image/rcte1.png)
+First execute the anchor part of the query:![rcte1](../../../../../.gitbook/assets/rcte1.png)
 
-Next, execute the recursive part of the query:![rcte\_computation\_2](../../../../../.gitbook/assets/recursive-common-table-expressions-overview/+image/rcte_computation_2.png)
+Next, execute the recursive part of the query:![rcte\_computation\_2](../../../../../.gitbook/assets/rcte_computation_2.png)
 
-![rcte\_computation\_2b](../../../../../.gitbook/assets/recursive-common-table-expressions-overview/+image/rcte_computation_2b.png)
+![rcte\_computation\_2b](../../../../../.gitbook/assets/rcte_computation_2b.png)
 
-![rcte\_computation\_3](../../../../../.gitbook/assets/recursive-common-table-expressions-overview/+image/rcte_computation_3.png)
+![rcte\_computation\_3](../../../../../.gitbook/assets/rcte_computation_3.png)
 
-![rcte\_computation\_3b](../../../../../.gitbook/assets/recursive-common-table-expressions-overview/+image/rcte_computation_3b.png)
+![rcte\_computation\_3b](../../../../../.gitbook/assets/rcte_computation_3b.png)
 
-![rcte\_computation\_4](../../../../../.gitbook/assets/recursive-common-table-expressions-overview/+image/rcte_computation_4.png)
+![rcte\_computation\_4](../../../../../.gitbook/assets/rcte_computation_4.png)
 
 ### Summary so far
 
@@ -63,7 +63,7 @@ As currently implemented by MariaDB and by the SQL Standard, data may be truncat
 
 Sample data:
 
-![tc\_1](../../../../../.gitbook/assets/recursive-common-table-expressions-overview/+image/tc_1.png)
+![tc\_1](../../../../../.gitbook/assets/tc_1.png)
 
 ```
 CREATE TABLE bus_routes (origin varchar(50), dst varchar(50));

@@ -1,8 +1,8 @@
 # Basic SQL Statements
 
-This page lists the most important SQL statements and contains links to their documentation pages. If you need a basic tutorial on how to use the MariaDB database server and how to execute simple commands, see [A MariaDB Primer](../../../en/a-mariadb-primer/).
+This page lists the most important SQL statements and contains links to their documentation pages. If you need a basic tutorial on how to use the MariaDB database server and how to execute simple commands, see [A MariaDB Primer](https://github.com/mariadb-corporation/docs-server/blob/test/en/a-mariadb-primer/README.md).
 
-Also see [Common MariaDB Queries](https://mariadb.com/kb/en/common-mariadb-queries/) for examples of commonly-used queries.
+Also see [Common MariaDB Queries](../../mariadb-quickstart-guides/mariadb-advanced-sql-guide.md) for examples of commonly-used queries.
 
 ## Defining How Your Data Is Stored
 

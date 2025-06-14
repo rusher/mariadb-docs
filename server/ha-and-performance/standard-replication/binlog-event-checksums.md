@@ -58,7 +58,7 @@ checksum computation outside of holding LOCK\_log, improving scalability. See [M
 * Data Type: `bool`
 * Default Value: `ON (1)`
 
-The [mariadb-binlog](../../clients-and-utilities/mariadb-binlog/) client program by default does not verify checksums when reading a binlog file, however it can be instructed to do so with the option `verify-binlog-checksum`:
+The [mariadb-binlog](../../clients-and-utilities/logging-tools/mariadb-binlog/) client program by default does not verify checksums when reading a binlog file, however it can be instructed to do so with the option `verify-binlog-checksum`:
 
 * Variable Name: `verify-binlog-checksum`
 * Data Type: `bool`
@@ -67,7 +67,7 @@ The [mariadb-binlog](../../clients-and-utilities/mariadb-binlog/) client program
 ## See Also
 
 * [Binlog Event Checksum Interoperability](binlog-event-checksum-interoperability.md)
-* [What is MariaDB 5.3](broken-reference/)
+* [What is MariaDB 5.3](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/standard-replication/broken-reference/README.md)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

@@ -16,7 +16,7 @@ length prefix that indicates the number of bytes in the value.
 
 ### Oracle Mode
 
-In [Oracle mode](broken-reference), `BLOB` is a synonym for `LONGBLOB`.
+In [Oracle mode](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/data-types/string-data-types/broken-reference/README.md), `BLOB` is a synonym for `LONGBLOB`.
 
 ## EXAMPLES
 
@@ -68,8 +68,8 @@ ERROR 1301 (HY000): Result of rpad() was larger than max_allowed_packet (1677721
 * [BLOB](blob.md)
 * [BLOB and TEXT Data Types](blob-and-text-data-types.md)
 * [Data Type Storage Requirements](../data-type-storage-requirements.md)
-* [Oracle mode from MariaDB 10.3](broken-reference)
+* [Oracle mode from MariaDB 10.3](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/data-types/string-data-types/broken-reference/README.md)
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

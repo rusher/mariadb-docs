@@ -1,6 +1,6 @@
 # dbForge Fusion: MySQL & MariaDB Plugin for VS
 
-![dbforge\_fusion\_for\_mysql](../../.gitbook/assets/dbforge-fusion-mysql-mariadb-plugin-for-vs/+image/dbforge_fusion_for_mysql.png) [dbForge Fusion](https://www.devart.com/dbforge/mysql/fusion/) is a powerful add-in for Visual Studio. It provides automatic and simple MariaDB database development and boosts data management capacity. With this tool integrated, it is easy to work with database development and administration tasks from Visual Studio.
+![dbforge\_fusion\_for\_mysql](../../.gitbook/assets/dbforge_fusion_for_mysql.png) [dbForge Fusion](https://www.devart.com/dbforge/mysql/fusion/) is a powerful add-in for Visual Studio. It provides automatic and simple MariaDB database development and boosts data management capacity. With this tool integrated, it is easy to work with database development and administration tasks from Visual Studio.
 
 {% hint style="info" %}
 Note: dbForge Fusion will officially be discontinued on the 1st of July 2024. However, you can access the features available in dbForge Fusion for MySQL/MariaDB through [dbForge Studio for MySQL](https://www.devart.com/dbforge/mysql/studio/), which is actively supported and regularly updated.
@@ -28,7 +28,7 @@ Filter the results of a comparison process
 
 Generate comparison reports
 
-![mysql-schema-compare-wizard](../../.gitbook/assets/dbforge-fusion-mysql-mariadb-plugin-for-vs/+image/mysql-schema-compare-wizard.png)
+![mysql-schema-compare-wizard](../../.gitbook/assets/mysql-schema-compare-wizard.png)
 
 ### 4. Data Comparison
 
@@ -40,7 +40,7 @@ Generate a schema synchronization script
 
 Filter objects during data comparison
 
-![generatedatacomparisonreport](../../.gitbook/assets/dbforge-fusion-mysql-mariadb-plugin-for-vs/+image/generatedatacomparisonreport.png)
+![generatedatacomparisonreport](../../.gitbook/assets/generatedatacomparisonreport.png)
 
 ### 5. Integration with Devart dotConnect
 
@@ -88,9 +88,9 @@ Download a free 30-day trial of dbForge Fusion for MariaDB and MySQL [here](http
 
 [Editions](https://www.devart.com/dbforge/mysql/fusion/editions.html)
 
-| Version | Introduced |
-| ------- | ---------- |
-| dbForge Fusion for MariaDB and MySQL 6.6 | [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1)-10.5|
+| Version                                  | Introduced                                                                                                                                                                                                                                                                                                                                                                        |
+| ---------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| dbForge Fusion for MariaDB and MySQL 6.6 | [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1)-10.5                                                                                                                                                                                    |
 | dbForge Fusion for MariaDB and MySQL 6.1 | [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0), [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) |
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>

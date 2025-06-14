@@ -173,7 +173,7 @@ The default value will be used if you [INSERT](../../data-manipulation/inserting
 [CURRENT\_TIMESTAMP](../../../sql-functions/date-time-functions/now.md) may also be used as\
 the default value for a [DATETIME](../../../data-types/date-and-time-data-types/datetime.md)
 
-You can use most functions in `DEFAULT`. Expressions should have parentheses around them. If you use a non deterministic function in `DEFAULT` then all inserts to the table will be [replicated](broken-reference/) in [row mode](../../../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md#row-based). You can even refer to earlier columns in the `DEFAULT` expression (excluding `AUTO_INCREMENT` columns):
+You can use most functions in `DEFAULT`. Expressions should have parentheses around them. If you use a non deterministic function in `DEFAULT` then all inserts to the table will be [replicated](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/data-definition/create/broken-reference/README.md) in [row mode](../../../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md#row-based). You can even refer to earlier columns in the `DEFAULT` expression (excluding `AUTO_INCREMENT` columns):
 
 ```
 CREATE TABLE t1 (a int DEFAULT (1+1), b int DEFAULT (a+1));
@@ -660,7 +660,7 @@ The number of defined partitions can be optionally specified as `PARTITION count
 
 Also see [Partitioning Types Overview](../../../../server-usage/partitioning-tables/partitioning-types/partitioning-types-overview.md).
 
-**MariaDB starting with** [**10.7.1**](broken-reference/)
+**MariaDB starting with** [**10.7.1**](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/data-definition/create/broken-reference/README.md)
 
 From [MariaDB 10.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-7-series/what-is-mariadb-107), the PARTITION keyword is now optional as part of the partition definition, for example, instead of:
 
@@ -738,6 +738,6 @@ CREATE TABLE t1(
 * Variable [slave-ddl-exec-mode](../../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md)
 * [InnoDB Limitations](https://mariadb.com/kb/en/InnoDB_Limitations)
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

@@ -62,7 +62,7 @@ are Server\_name, Host, Db, Username, Password, Port and Socket.
 [DROP SERVER](../drop/drop-server.md) removes a previously created server definition.
 
 CREATE SERVER is not written to the [binary log](../../../../server-management/server-monitoring-logs/binary-log/), irrespective of\
-the [binary log format](../../../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md) being used and therefore will not replicate. From [MariaDB 10.1.13](broken-reference/), [Galera](../../../../../en/galera/) replicates the CREATE SERVER, [ALTER SERVER](../alter/alter-server.md) and [DROP SERVER](../drop/drop-server.md) statements.
+the [binary log format](../../../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md) being used and therefore will not replicate. From [MariaDB 10.1.13](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/data-definition/create/broken-reference/README.md), [Galera](https://github.com/mariadb-corporation/docs-server/blob/test/en/galera/README.md) replicates the CREATE SERVER, [ALTER SERVER](../alter/alter-server.md) and [DROP SERVER](../drop/drop-server.md) statements.
 
 For valid identifiers to use as server names, see [Identifier Names](../../../sql-structure/sql-language-structure/identifier-names.md).
 

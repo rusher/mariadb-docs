@@ -18,7 +18,7 @@ cache. It is used only for [MyISAM](../../../server-usage/storage-engines/myisam
 
 A default key cache exists and cannot be destroyed. To create more key caches, the [key\_buffer\_size](../../../server-usage/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_buffer_size) server system variable.
 
-The associations between tables indexes and key caches are lost on server restart. To recreate them automatically, it is necessary to configure caches in a [configuration file](broken-reference/) and include some `CACHE INDEX` (and optionally `[LOAD INDEX](../data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-index.md)`) statements in the init file.
+The associations between tables indexes and key caches are lost on server restart. To recreate them automatically, it is necessary to configure caches in a [configuration file](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/administrative-sql-statements/broken-reference/README.md) and include some `CACHE INDEX` (and optionally `[LOAD INDEX](../data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-index.md)`) statements in the init file.
 
 ## Examples
 
@@ -50,6 +50,6 @@ The only possible long operations are getting the locks for the table and flushi
 
 We plan to also add CACHE INDEX for Aria tables if there is a need for this.
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

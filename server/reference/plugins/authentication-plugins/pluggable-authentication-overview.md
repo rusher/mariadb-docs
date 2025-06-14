@@ -54,7 +54,7 @@ MariaDB supports the following server options related to authentication plugins:
 
 ### Client Options Related to Authentication Plugins
 
-Most [clients and utilities](../../../../kb/en/clients-utilities/) support some command line arguments related to client authentication plugins:
+Most [clients and utilities](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/clients-utilities/README.md) support some command line arguments related to client authentication plugins:
 
 | Client Option              | Description                                                                                                                                                                                                                                                                  |
 | -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -174,7 +174,7 @@ The following server-side authentication plugins are installed by default:
 
 Client-side authentication plugins do not need to be _installed_ in the same way that server-side authentication plugins do. If the client uses either the `libmysqlclient` or [MariaDB Connector/C](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c) library, then the library automatically loads client-side authentication plugins from the library's plugin directory whenever they are needed.
 
-Most [clients and utilities](../../../../kb/en/clients-utilities/) support the `--plugin-dir` command line argument that can be used to set the path to the library's plugin directory:
+Most [clients and utilities](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/clients-utilities/README.md) support the `--plugin-dir` command line argument that can be used to set the path to the library's plugin directory:
 
 | Client Option     | Description                        |
 | ----------------- | ---------------------------------- |
@@ -229,7 +229,7 @@ However, the [mysql\_old\_password](authentication-plugin-mysql_old_password.md)
 | \[old\_passwords={1                                                                                                         | 0}]\(../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#old\_passwords)                                                                                             |
 | [secure\_auth](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#secure_auth) | Connections will be blocked if they use the the [mysql\_old\_password](authentication-plugin-mysql_old_password.md) authentication plugin. The server will also fail to start if the privilege tables are in the old, pre-MySQL 4.1 format. |
 
-Most [clients and utilities](../../../../kb/en/clients-utilities/) also support the `--secure-auth` command line argument that can also be used to configure the client to refuse to connect to servers that use the [mysql\_old\_password](authentication-plugin-mysql_old_password.md) authentication plugin:
+Most [clients and utilities](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/clients-utilities/README.md) also support the `--secure-auth` command line argument that can also be used to configure the client to refuse to connect to servers that use the [mysql\_old\_password](authentication-plugin-mysql_old_password.md) authentication plugin:
 
 | Client Option | Description                                                                                                                                                                                                                                                                  |
 | ------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -256,7 +256,7 @@ If the server's handshake packet contains a 20-byte scramble, then the client wi
 
 #### Setting the Default Client Authentication Plugin
 
-Most [clients and utilities](../../../../kb/en/clients-utilities/) support the `--default-auth` command line argument that can be used to set the default client-side authentication plugin:
+Most [clients and utilities](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/clients-utilities/README.md) support the `--default-auth` command line argument that can be used to set the default client-side authentication plugin:
 
 | Client Option       | Description                                       |
 | ------------------- | ------------------------------------------------- |

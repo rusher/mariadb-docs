@@ -32,7 +32,7 @@ sudo gpasswd -a "${USER}" docker
 If you don't have `dockerd` running, you will get the following error for most `docker` commands:\
 installing-and-using-mariadb-via-docker\
 Cannot connect to the Docker daemon at unix:_/var/run/docker.sock. Is the docker daemon running?_\
-&#xNAN;_<>_
+\&#xNAN;_<>_
 
 ## Using MariaDB Images
 
@@ -225,7 +225,7 @@ apt-get install vim
 
 In some images, no repository is configured by default, so we may need to add them.
 
-Note that if we run [mariadb-admin shutdown](../../../../../../clients-and-utilities/mariadb-admin.md#mariadb-admin-commands) or the [SHUTDOWN](../../../../../../reference/sql-statements/administrative-sql-statements/shutdown.md) command to stop the container, the container will be deactivated, and we will automatically exit to our system.
+Note that if we run [mariadb-admin shutdown](https://github.com/mariadb-corporation/docs-server/blob/test/server/clients-and-utilities/mariadb-admin.md#mariadb-admin-commands) or the [SHUTDOWN](../../../../../../reference/sql-statements/administrative-sql-statements/shutdown.md) command to stop the container, the container will be deactivated, and we will automatically exit to our system.
 
 ### Connecting to MariaDB from Outside the Container
 

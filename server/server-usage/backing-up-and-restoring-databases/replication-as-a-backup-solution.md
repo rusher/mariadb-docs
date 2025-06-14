@@ -1,6 +1,6 @@
 # Replication as a Backup Solution
 
-[Replication](broken-reference/) can be used to support the [backup](broken-reference/) strategy.
+[Replication](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-usage/backing-up-and-restoring-databases/broken-reference/README.md) can be used to support the [backup](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-usage/backing-up-and-restoring-databases/broken-reference/README.md) strategy.
 
 Replication alone is _not_ sufficient for backup. It assists in protecting against hardware failure on the primary server, but does not protect against data loss. An accidental or malicious `DROP DATABASE` or `TRUNCATE TABLE` statement will be replicated onto the replica as well. Care needs to be taken to prevent data getting out of sync between the primary and the replica.
 
@@ -19,9 +19,9 @@ Note that when backing up off a replica server, it is important to ensure that t
 
 ## See Also
 
-* [Replication](broken-reference/)
-* [Replication Compatibility](broken-reference)
-* [Backing Up and Restoring](broken-reference/)
+* [Replication](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-usage/backing-up-and-restoring-databases/broken-reference/README.md)
+* [Replication Compatibility](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-usage/backing-up-and-restoring-databases/broken-reference/README.md)
+* [Backing Up and Restoring](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-usage/backing-up-and-restoring-databases/broken-reference/README.md)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

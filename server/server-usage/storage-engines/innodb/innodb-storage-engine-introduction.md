@@ -8,7 +8,7 @@ MariaDB Enterprise Server uses the InnoDB storage engine by default. InnoDB is a
 
 The InnoDB storage engine:
 
-* Is available with all versions of [MariaDB Enterprise Server](../../../../en/mariadb-enterprise-server/) and MariaDB Community Server.
+* Is available with all versions of [MariaDB Enterprise Server](https://github.com/mariadb-corporation/docs-server/blob/test/en/mariadb-enterprise-server/README.md) and MariaDB Community Server.
 * Is a general purpose storage engine.
 * Is transactional and well-suited for online transactional processing (OLTP) workloads.
 * Is ACID-compliant.
@@ -21,7 +21,7 @@ The InnoDB storage engine:
 | ----------------------- | ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Feature                 | Detail                 | Resources                                                                                                                                                                                |
 | Storage Engine          | InnoDB                 |                                                                                                                                                                                          |
-| Availability            | All ES and CS versions | [MariaDB Enterprise Server](../../../../en/mariadb-enterprise-server/)                                                                                                                   |
+| Availability            | All ES and CS versions | [MariaDB Enterprise Server](https://github.com/mariadb-corporation/docs-server/blob/test/en/mariadb-enterprise-server/README.md)                                                         |
 | Workload Optimization   | Transactional          |                                                                                                                                                                                          |
 | Table Orientation       | Row                    |                                                                                                                                                                                          |
 | Default Row Format      | Dynamic                | [InnoDB Row Formats](innodb-row-formats/) [InnoDB Dynamic Row Format](innodb-row-formats/innodb-dynamic-row-format.md)                                                                   |
@@ -38,7 +38,7 @@ The InnoDB storage engine:
 | Spatial Indexes         | Yes                    | InnoDB Spatial Indexes                                                                                                                                                                   |
 | Compression             | Yes                    | [Configure InnoDB Page Compression](innodb-page-compression.md)                                                                                                                          |
 | Data-at-Rest Encryption | Yes                    |                                                                                                                                                                                          |
-| High Availability (HA)  | Yes                    | • [MariaDB Replication](../../../ha-and-performance/standard-replication/) • [Galera Cluster](../../../../en/galera-cluster/)                                                            |
+| High Availability (HA)  | Yes                    | • [MariaDB Replication](../../../ha-and-performance/standard-replication/) • [Galera Cluster](https://github.com/mariadb-corporation/docs-server/blob/test/en/galera-cluster/README.md)  |
 | Main Memory Caching     | Yes                    | [InnoDB Buffer Pool](innodb-buffer-pool.md)                                                                                                                                              |
 | Transaction Logging     | Yes                    | • [InnoDB Redo Log (Crash Safety)](mariadb-enterprise-server-innodb-operations/configure-the-innodb-redo-log.md) • [InnoDB Undo Log (MVCC)](innodb-system-variables.md#innodb_undo_logs) |
 | Garbage Collection      | Yes                    | [InnoDB Purge Threads](innodb-system-variables.md#innodb_purge_threads)                                                                                                                  |
@@ -92,7 +92,7 @@ AND TABLE_NAME='invoices';
 
 ### Operations
 
-* [Configure Page Compression](../../../reference/storage-engines/innodb/configure-innodb-page-compression/)
+* [Configure Page Compression](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/configure-innodb-page-compression/README.md)
 * [Configure the Buffer Pool](mariadb-enterprise-server-innodb-operations/configure-the-innodb-buffer-pool.md)
 * [Configure the I/O Threads](mariadb-enterprise-server-innodb-operations/configure-the-innodb-io-threads.md)
 * [Configure the Purge Threads](mariadb-enterprise-server-innodb-operations/configure-the-innodb-purge-threads.md)

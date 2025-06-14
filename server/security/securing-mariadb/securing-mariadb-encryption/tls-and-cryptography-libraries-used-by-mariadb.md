@@ -113,29 +113,29 @@ MariaDB Server is dynamically linked with the system's [OpenSSL](https://www.ope
 
 ### MariaDB Clients and Utilities
 
-[MariaDB Connector/C](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c) has been included with MariaDB Server, and the bundled and the clients and utilities are linked with it. On some platforms, [MariaDB Connector/C](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c) and these [clients and utilities](../../../../en/clients-utilities/) may use a different TLS library than the one used by MariaDB Server and [libmysqlclient](https://dev.mysql.com/doc/refman/5.5/en/c-api.html).
+[MariaDB Connector/C](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c) has been included with MariaDB Server, and the bundled and the clients and utilities are linked with it. On some platforms, [MariaDB Connector/C](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c) and these [clients and utilities](https://github.com/mariadb-corporation/docs-server/blob/test/en/clients-utilities/README.md) may use a different TLS library than the one used by MariaDB Server and [libmysqlclient](https://dev.mysql.com/doc/refman/5.5/en/c-api.html).
 
 #### MariaDB Clients and Utilities on Windows
 
-MariaDB's [clients and utilities](../../../../en/clients-utilities/) and [MariaDB Connector/C](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c) are are dynamically linked with the system's [Schannel](https://docs.microsoft.com/en-us/windows/desktop/secauthn/secure-channel) libraries in [MSI](../../../server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/installing-mariadb-msi-packages-on-windows.md) and [ZIP](../../../server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/installing-mariadb-windows-zip-packages.md) packages on Windows. [libmysqlclient](https://dev.mysql.com/doc/refman/5.5/en/c-api.html) is still statically linked with the bundled [wolfSSL](https://www.wolfssl.com/products/wolfssl/) library.\
+MariaDB's [clients and utilities](https://github.com/mariadb-corporation/docs-server/blob/test/en/clients-utilities/README.md) and [MariaDB Connector/C](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c) are are dynamically linked with the system's [Schannel](https://docs.microsoft.com/en-us/windows/desktop/secauthn/secure-channel) libraries in [MSI](../../../server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/installing-mariadb-msi-packages-on-windows.md) and [ZIP](../../../server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/installing-mariadb-windows-zip-packages.md) packages on Windows. [libmysqlclient](https://dev.mysql.com/doc/refman/5.5/en/c-api.html) is still statically linked with the bundled [wolfSSL](https://www.wolfssl.com/products/wolfssl/) library.\
 <>
 
 #### MariaDB Clients and Utilities on Linux
 
 **MariaDB Clients and Utilities in Binary Tarballs**
 
-MariaDB's [clients and utilities](../../../../en/clients-utilities/) and [MariaDB Connector/C](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c) are statically linked with the [GnuTLS](https://www.gnutls.org/) library in [binary tarballs](../../../server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/installing-mariadb-binary-tarballs.md) on Linux. [libmysqlclient](https://dev.mysql.com/doc/refman/5.5/en/c-api.html) is still statically linked with the bundled [wolfSSL](https://www.wolfssl.com/products/wolfssl/) library.\
+MariaDB's [clients and utilities](https://github.com/mariadb-corporation/docs-server/blob/test/en/clients-utilities/README.md) and [MariaDB Connector/C](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c) are statically linked with the [GnuTLS](https://www.gnutls.org/) library in [binary tarballs](../../../server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/installing-mariadb-binary-tarballs.md) on Linux. [libmysqlclient](https://dev.mysql.com/doc/refman/5.5/en/c-api.html) is still statically linked with the bundled [wolfSSL](https://www.wolfssl.com/products/wolfssl/) library.\
 <>
 
 **MariaDB Clients and Utilities in DEB Packages**
 
-MariaDB's [clients and utilities](../../../../en/clients-utilities/), [libmysqlclient](https://dev.mysql.com/doc/refman/5.5/en/c-api.html), and [MariaDB Connector/C](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c) are dynamically linked with the system's [OpenSSL](https://www.openssl.org/) library in `[.deb](../../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/installing-mariadb-deb-files.md)` packages.
+MariaDB's [clients and utilities](https://github.com/mariadb-corporation/docs-server/blob/test/en/clients-utilities/README.md), [libmysqlclient](https://dev.mysql.com/doc/refman/5.5/en/c-api.html), and [MariaDB Connector/C](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c) are dynamically linked with the system's [OpenSSL](https://www.openssl.org/) library in `[.deb](../../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/installing-mariadb-deb-files.md)` packages.
 
 See [Differences in MariaDB in Debian (and Ubuntu)](../../../server-management/install-and-upgrade-mariadb/installing-mariadb/troubleshooting-installation-issues/installation-issues-on-debian-and-ubuntu/differences-in-mariadb-in-debian-and-ubuntu.md) for more information.
 
 **MariaDB Clients and Utilities in RPM Packages**
 
-MariaDB's [clients and utilities](../../../../en/clients-utilities/), [libmysqlclient](https://dev.mysql.com/doc/refman/5.5/en/c-api.html), and [MariaDB Connector/C](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c) are dynamically linked with the system's [OpenSSL](https://www.openssl.org/) library in `[.rpm](../../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/rpm/README.md)` packages.
+MariaDB's [clients and utilities](https://github.com/mariadb-corporation/docs-server/blob/test/en/clients-utilities/README.md), [libmysqlclient](https://dev.mysql.com/doc/refman/5.5/en/c-api.html), and [MariaDB Connector/C](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c) are dynamically linked with the system's [OpenSSL](https://www.openssl.org/) library in `[.rpm](../../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/rpm/README.md)` packages.
 
 ## Updating Dynamically Linked OpenSSL Libraries on Linux
 

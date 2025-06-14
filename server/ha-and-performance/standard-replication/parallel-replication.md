@@ -31,7 +31,7 @@ potentially increase replication performance by applying multiple events in para
 
 ## How to Enable Parallel Replica
 
-To enable, specify [slave-parallel-threads=#](replication-and-binary-log-system-variables.md) in your [my.cnf](broken-reference/) file as an argument to mysql.\
+To enable, specify [slave-parallel-threads=#](replication-and-binary-log-system-variables.md) in your [my.cnf](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/standard-replication/broken-reference/README.md) file as an argument to mysql.\
 Parallel replication can in addition be disabled on a per-multi-source\
 connection by setting [@@connection\_name.slave-parallel-mode](replication-and-binary-log-system-variables.md) to "none".
 
@@ -99,7 +99,7 @@ earlier events (it is however possible to apply a MyISAM update in parallel\
 with a later InnoDB update). DDL statements are not applied in parallel with\
 any other transactions, earlier or later.
 
-The different kind of transactions can be identified in the output of[mariadb-binlog](../../clients-and-utilities/mariadb-binlog/). For example:
+The different kind of transactions can be identified in the output of[mariadb-binlog](../../clients-and-utilities/logging-tools/mariadb-binlog/). For example:
 
 ```
 #150324 13:06:26 server id 1  end_log_pos 6881 	GTID 0-1-42 ddl
@@ -137,7 +137,7 @@ transaction begins the commit step; at this point it is safe to start the\
 second transaction, as it can no longer disrupt the execution of the first\
 one.
 
-Here is example output from [mariadb-binlog](../../clients-and-utilities/mariadb-binlog/) that shows how GTID events are marked\
+Here is example output from [mariadb-binlog](../../clients-and-utilities/logging-tools/mariadb-binlog/) that shows how GTID events are marked\
 with commit id. The GTID 0-1-47 has no commit id, and can not run in\
 parallel. The GTIDs 0-1-48 and 0-1-49 have the same commit id 630, and can\
 thus replicate in parallel with one another on a replica:
@@ -169,7 +169,7 @@ Note that even if there is no parallelism available from the primary [group comm
 replication, since the actual commit steps of different transactions can run\
 in parallel. This can be particularly effective on a replica with binlog enabled\
 ([log\_slave\_updates=1](replication-and-binary-log-system-variables.md)), and more so if replica is configured\
-to be crash-safe ([sync\_binlog=1](replication-and-binary-log-system-variables.md) and[innodb\_flush\_log\_at\_trx\_commit=1](../../reference/storage-engines/innodb/innodb-system-variables.md)), as this makes [group commit](../../server-management/server-monitoring-logs/binary-log/group-commit-for-the-binary-log.md) possible on the replica.
+to be crash-safe ([sync\_binlog=1](replication-and-binary-log-system-variables.md) and[innodb\_flush\_log\_at\_trx\_commit=1](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md)), as this makes [group commit](../../server-management/server-monitoring-logs/binary-log/group-commit-for-the-binary-log.md) possible on the replica.
 
 #### Minimal Mode of In-Order Parallel Replication
 

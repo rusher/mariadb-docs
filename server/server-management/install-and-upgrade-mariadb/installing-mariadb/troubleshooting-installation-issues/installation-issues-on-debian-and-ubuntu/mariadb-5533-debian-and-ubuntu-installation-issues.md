@@ -1,6 +1,6 @@
 # MariaDB 5.5.33 Debian and Ubuntu Installation Issues
 
-Shortly after the [MariaDB 5.5.33](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/mariadb-5533-release-notes) release we became aware of some installation issues with the Debian and Ubuntu repositories. These issues were fixed in [MariaDB 5.5.33a](broken-reference), but due to how apt works, steps need to be taken to solve the broken dependencies before upgrading.
+Shortly after the [MariaDB 5.5.33](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/mariadb-5533-release-notes) release we became aware of some installation issues with the Debian and Ubuntu repositories. These issues were fixed in [MariaDB 5.5.33a](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-management/install-and-upgrade-mariadb/installing-mariadb/troubleshooting-installation-issues/installation-issues-on-debian-and-ubuntu/broken-reference/README.md), but due to how apt works, steps need to be taken to solve the broken dependencies before upgrading.
 
 We know of three scenarios when dependencies were broken. The steps to fix each of them are pretty much the same, only the list of broken dependencies and hence the list of packages to take care of them differs. The basic idea is to downgrade those certain packages to 5.5.32 temporarily before upgrading them to 5.5.33a.
 
@@ -33,7 +33,7 @@ deb http://ftp.osuosl.org/pub/mariadb/mariadb-5.5.32/repo/ubuntu raring main
 * Then '`sudo apt-get install`' the list of packages to downgrade as given in the applicable section below.
 * Next, modify our sources.list to remove the 5.5.32 repo and switch back to the normal 5.5 repo
 * Then '`sudo apt-get update`' to get things back to normal
-* As a final optional step, once your normal mirror has at least [MariaDB 5.5.33a](broken-reference) you can '`sudo apt-get upgrade`' to upgrade. To check what version of MariaDB our mirror has, run the following command (after running '`sudo apt-get update`'):
+* As a final optional step, once your normal mirror has at least [MariaDB 5.5.33a](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-management/install-and-upgrade-mariadb/installing-mariadb/troubleshooting-installation-issues/installation-issues-on-debian-and-ubuntu/broken-reference/README.md) you can '`sudo apt-get upgrade`' to upgrade. To check what version of MariaDB our mirror has, run the following command (after running '`sudo apt-get update`'):
 
 ```
 apt-cache show mariadb-server | grep Version

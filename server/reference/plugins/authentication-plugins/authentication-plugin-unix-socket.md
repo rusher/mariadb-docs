@@ -185,7 +185,7 @@ In this example, a user `serg` is already logged into the operating system and h
 | Version | Status | Introduced                                                                                                                                                                     |
 | ------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | Version | Status | Introduced                                                                                                                                                                     |
-| 1.0     | Stable | [MariaDB 10.0.11](broken-reference)                                                                                                                                            |
+| 1.0     | Stable | [MariaDB 10.0.11](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/plugins/authentication-plugins/broken-reference/README.md)                     |
 | 1.0     | Beta   | [MariaDB 5.2.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-2-series/mariadb-520-release-notes) |
 
 ## Options

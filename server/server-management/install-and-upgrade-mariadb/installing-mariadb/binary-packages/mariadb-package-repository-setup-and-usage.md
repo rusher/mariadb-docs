@@ -140,7 +140,7 @@ Ubuntu needs a separate debug repository for MariaDB Server debug packages. Othe
 
 ### MariaDB Server Repository
 
-The **MariaDB Repository** contains software packages related to MariaDB Server, including the server itself, [clients and utilities](../../../../../kb/en/clients-utilities/), [client libraries](../../../../clients-and-utilities/server-client-software/client-libraries/), [plugins](../../../../reference/plugins/), and [Mariabackup](../../../../server-usage/backing-up-and-restoring-databases/mariabackup/).
+The **MariaDB Repository** contains software packages related to MariaDB Server, including the server itself, [clients and utilities](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/clients-utilities/README.md), [client libraries](../../../../clients-and-utilities/server-client-software/client-libraries/), [plugins](../../../../reference/plugins/), and [Mariabackup](../../../../server-usage/backing-up-and-restoring-databases/mariabackup/).
 
 The binaries in MariaDB Corporation's **MariaDB Repository** are currently identical to the binaries in MariaDB Foundation's MariaDB Repository that is configured with the [MariaDB Repository Configuration Tool](https://mariadb.org/download/?t=repo-config).
 
@@ -154,7 +154,7 @@ If you do not want to configure the **MariaDB Repository** on your system, for e
 
 ### MariaDB MaxScale Repository
 
-The **MariaDB MaxScale Repository** contains software packages related to [MariaDB MaxScale](../../../../../kb/en/maxscale/).
+The **MariaDB MaxScale Repository** contains software packages related to [MariaDB MaxScale](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/maxscale/README.md).
 
 By default, the script will configure your system to install from the repository of the _latest_ GA version of MariaDB MaxScale. When a new major GA release occurs, the repository will automatically switch to the new version. If instead you would like to stay on a particular version you will need to manually edit the repository configuration file and change '`latest`' to the version you want (e.g. '`6.1`') or run the MariaDB Package Repository setup script again, specifying the particular version or series you want.
 

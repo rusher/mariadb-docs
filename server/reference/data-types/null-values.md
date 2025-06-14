@@ -18,7 +18,7 @@ CREATE TABLE customer (
 
 [User-defined variables](../sql-structure/sql-language-structure/user-defined-variables.md) are NULL until a value is explicitly assigned.
 
-[Stored routines](../../server-usage/stored-routines/) parameters and [local variables](../../server-usage/programmatic-compound-statements/declare-variable.md) can always be set to NULL. If no DEFAULT value is specified for a local variable, its initial value will be NULL. If no value is assigned to an OUT parameter in a stored procedure, NULL is assigned at the end of the procedure.
+[Stored routines](../../server-usage/stored-routines/) parameters and [local variables](../sql-statements/programmatic-compound-statements/declare-variable.md) can always be set to NULL. If no DEFAULT value is specified for a local variable, its initial value will be NULL. If no value is assigned to an OUT parameter in a stored procedure, NULL is assigned at the end of the procedure.
 
 ## Syntax
 
@@ -258,13 +258,13 @@ Primary keys are never nullable.
 
 ## Oracle Compatibility
 
-In [Oracle mode](broken-reference/), NULL can be used as a statement:
+In [Oracle mode](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/data-types/broken-reference/README.md), NULL can be used as a statement:
 
 ```
 IF a=10 THEN NULL; ELSE NULL; END IF
 ```
 
-In [Oracle mode](broken-reference/), [CONCAT](../sql-functions/string-functions/concat.md) and the [Logical OR operator ||](../sql-structure/operators/logical-operators/or.md) ignore [null](https://mariadb.com/kb/en/null).
+In [Oracle mode](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/data-types/broken-reference/README.md), [CONCAT](../sql-functions/string-functions/concat.md) and the [Logical OR operator ||](../sql-structure/operators/logical-operators/or.md) ignore [null](https://mariadb.com/kb/en/null).
 
 When setting [sql\_mode=EMPTY\_STRING\_IS\_NULL](../../server-management/variables-and-modes/sql-mode.md), empty strings and NULLs are the same thing. For example:
 
@@ -284,7 +284,7 @@ INSERT INTO t1 VALUES (''); -- inserts NULL
 * [IFNULL function](../sql-functions/control-flow-functions/ifnull.md)
 * [NULLIF function](../sql-functions/control-flow-functions/nullif.md)
 * [CONNECT data types](../../server-usage/storage-engines/connect/connect-data-types.md#null-handling)
-* [Oracle mode from MariaDB 10.3](broken-reference/)
+* [Oracle mode from MariaDB 10.3](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/data-types/broken-reference/README.md)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

@@ -6,18 +6,18 @@ The size of individual partitions depends on the partitioning type. Read and wri
 
 MariaDB supports the following partitioning types:
 
-* [RANGE](broken-reference)
-* [LIST](broken-reference)
-* [RANGE COLUMNS and LIST COLUMNS](broken-reference)
-* [HASH](broken-reference)
-* [LINEAR HASH](broken-reference)
-* [KEY](broken-reference)
-* [LINEAR KEY](broken-reference)
+* [RANGE](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-usage/partitioning-tables/partitioning-types/broken-reference/README.md)
+* [LIST](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-usage/partitioning-tables/partitioning-types/broken-reference/README.md)
+* [RANGE COLUMNS and LIST COLUMNS](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-usage/partitioning-tables/partitioning-types/broken-reference/README.md)
+* [HASH](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-usage/partitioning-tables/partitioning-types/broken-reference/README.md)
+* [LINEAR HASH](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-usage/partitioning-tables/partitioning-types/broken-reference/README.md)
+* [KEY](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-usage/partitioning-tables/partitioning-types/broken-reference/README.md)
+* [LINEAR KEY](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-usage/partitioning-tables/partitioning-types/broken-reference/README.md)
 * [SYSTEM\_TIME](../../../reference/sql-structure/temporal-tables/system-versioned-tables.md)
 
 ### See Also
 
-* [Partitioning Overview](broken-reference)
+* [Partitioning Overview](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-usage/partitioning-tables/partitioning-types/broken-reference/README.md)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

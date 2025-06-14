@@ -8,7 +8,7 @@ MultiPolygon(poly1,poly2,...)
 
 ## Description
 
-Constructs a [WKB](../../../sql-structure/geometry/wkb/) MultiPolygon value from a set of WKB [Polygon](polygon.md) arguments. If any argument is not a WKB Polygon, the return value is `NULL`.
+Constructs a [WKB](../wkb/) MultiPolygon value from a set of WKB [Polygon](polygon.md) arguments. If any argument is not a WKB Polygon, the return value is `NULL`.
 
 ## Example
 
@@ -58,6 +58,6 @@ SELECT ST_AsWKT(m) FROM multipolygon_example;
 +-------------------------------------------------------------------------------------------------------------------------------+
 ```
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

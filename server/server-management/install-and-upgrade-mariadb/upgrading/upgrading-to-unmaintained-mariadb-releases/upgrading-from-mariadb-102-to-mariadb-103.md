@@ -123,7 +123,7 @@ You might consider using the following major new features in [MariaDB 10.3](http
 ### See Also
 
 * [The features in MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103)
-* [Upgrading from MariaDB 10.2 to MariaDB 10.3 with Galera Cluster](../../../getting-installing-and-upgrading-mariadb/upgrading/upgrading-to-unmaintained-mariadb-releases/upgrading-from-mariadb-102-to-mariadb-103-with-galera-cluster/)
+* [Upgrading from MariaDB 10.2 to MariaDB 10.3 with Galera Cluster](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-management/getting-installing-and-upgrading-mariadb/upgrading/upgrading-to-unmaintained-mariadb-releases/upgrading-from-mariadb-102-to-mariadb-103-with-galera-cluster/README.md)
 * [Upgrading from MariaDB 10.1 to MariaDB 10.2](upgrading-from-mariadb-101-to-mariadb-102.md)
 * [Upgrading from MariaDB 10.0 to MariaDB 10.1](upgrading-from-mariadb-100-to-mariadb-101.md)
 

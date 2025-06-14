@@ -86,7 +86,7 @@ It is also possible to stop MariaDB and repair MyISAM tables with [myisamchk](..
 Notes on the different storage engines:
 
 * For [MyRocks](../../../../server-usage/storage-engines/myrocks/), see [MyRocks and CHECK TABLE](../../../../server-usage/storage-engines/myrocks/myrocks-and-check-table.md).
-* With [ARCHIVE](../../../../server-usage/storage-engines/archive/), `REPAIR TABLE` also improves the compression rate.
+* With [ARCHIVE](../../../../server-usage/storage-engines/archive.md), `REPAIR TABLE` also improves the compression rate.
 * For [CSV](../../../../server-usage/storage-engines/csv/), see [Checking and Rpairing CSV Tables](../../../../server-usage/storage-engines/csv/checking-and-repairing-csv-tables.md).
 * Some special storage engines, like [MEMORY](../../../../server-usage/storage-engines/memory-storage-engine.md) or [BLACKHOLE](../../../../server-usage/storage-engines/blackhole.md), do not support any form of check and repair.
 

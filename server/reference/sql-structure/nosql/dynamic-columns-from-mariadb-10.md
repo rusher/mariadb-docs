@@ -126,14 +126,14 @@ select column_json(column_create('column1', 1, 'column2', "two"));
 CassandraSE is no longer actively being developed and has been removed in [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/what-is-mariadb-106). See [MDEV-23024](https://jira.mariadb.org/browse/MDEV-23024).
 
 Some internal changes were added to dynamic columns to allow them to serve as\
-an interface to Apache Cassandra dynamic columns. The [Cassandra engine](../../storage-engines/legacy-storage-engines/cassandra/cassandra-storage-engine-overview.md) may pack all columns which were not mentioned in the MariaDB interface table definition\
+an interface to Apache Cassandra dynamic columns. The [Cassandra engine](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/legacy-storage-engines/cassandra/cassandra-storage-engine-overview.md) may pack all columns which were not mentioned in the MariaDB interface table definition\
 and even bring changes in the dynamic column contents back to the cassandra\
 columns family (the table analog in cassandra).
 
 ## See Also
 
 * [Dynamic Columns](dynamic-columns.md)
-* [Cassandra Storage Engine](../../storage-engines/legacy-storage-engines/cassandra/cassandra-storage-engine-overview.md)
+* [Cassandra Storage Engine](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/legacy-storage-engines/cassandra/cassandra-storage-engine-overview.md)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

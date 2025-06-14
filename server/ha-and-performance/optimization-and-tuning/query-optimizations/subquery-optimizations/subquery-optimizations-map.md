@@ -16,7 +16,7 @@ the optimizer strategies available to handle them.
 * The color of optimization indicates which version of MySQL/MariaDB it was\
   available in (see legend below)
 
-![](../../../../.gitbook/assets/subquery-optimizations-map/+image/subquery-optimizations-map-2025.png)
+![](../../../../.gitbook/assets/subquery-optimizations-map-2025.png)
 
 Some things are not on the map:
 
@@ -40,7 +40,7 @@ Some things are not on the map:
 
 ## See also
 
-* [Subquery optimizations in MariaDB 5.3](broken-reference)
+* [Subquery optimizations in MariaDB 5.3](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/optimization-and-tuning/query-optimizations/subquery-optimizations/broken-reference/README.md)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

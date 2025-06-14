@@ -39,7 +39,7 @@ The number of concurrent `INSERT DELAYED` threads is limited by the `[max_delaye
 
 There are some limitations on the use of `DELAYED`:
 
-* `INSERT DELAYED` works only with [MyISAM](../../../../server-usage/storage-engines/myisam-storage-engine/), [MEMORY](../../../../server-usage/storage-engines/memory-storage-engine.md), [ARCHIVE](../../../../server-usage/storage-engines/archive/),\
+* `INSERT DELAYED` works only with [MyISAM](../../../../server-usage/storage-engines/myisam-storage-engine/), [MEMORY](../../../../server-usage/storage-engines/memory-storage-engine.md), [ARCHIVE](../../../../server-usage/storage-engines/archive.md),\
   and [BLACKHOLE](../../../../server-usage/storage-engines/blackhole.md) tables. If you execute INSERT DELAYED with another storage engine, you will get an error like this: `ERROR 1616 (HY000): DELAYED option not supported for table 'tab_name'`
 * For MyISAM tables, if there are no free blocks in the middle of the data\
   file, concurrent SELECT and INSERT statements are supported. Under these\
@@ -74,6 +74,6 @@ There are some limitations on the use of `DELAYED`:
 * [INSERT IGNORE](insert-ignore.md)
 * [INSERT ON DUPLICATE KEY UPDATE](insert-on-duplicate-key-update.md)
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

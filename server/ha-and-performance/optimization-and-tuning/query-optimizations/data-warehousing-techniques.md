@@ -204,7 +204,7 @@ For "read scaling", backup, and failover, use master-slave replication or someth
 
 ## Sharding
 
-"Sharding" is the splitting of data across multiple servers. (In contrast, [replication](broken-reference) and [Galera](../../../../kb/en/galera/) have the same data on all servers, requiring all data to be written to all servers.)
+"Sharding" is the splitting of data across multiple servers. (In contrast, [replication](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/optimization-and-tuning/query-optimizations/broken-reference/README.md) and [Galera](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/galera/README.md) have the same data on all servers, requiring all data to be written to all servers.)
 
 With the non-sharding techniques described here, terabyte(s) of data can be handled by a single machine. Tens of terabytes probably requires sharding.
 

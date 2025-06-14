@@ -25,7 +25,7 @@ SELECT @@error_count;
 
 The value of [error\_count](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#error_count) might be greater than the number of messages displayed by [SHOW WARNINGS](show-warnings.md) if the [max\_error\_count](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_error_count) system variable is set so low that not all messages are stored.
 
-For a list of MariaDB error codes, see [MariaDB Error Codes](broken-reference).
+For a list of MariaDB error codes, see [MariaDB Error Codes](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/administrative-sql-statements/show/broken-reference/README.md).
 
 ## Examples
 
@@ -48,6 +48,6 @@ SHOW ERRORS;
 +-------+------+---------------------------+
 ```
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

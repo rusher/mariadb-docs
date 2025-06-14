@@ -57,12 +57,12 @@ SELECT * FROM INFORMATION_SCHEMA.LOCALES;
 
 ## Versions
 
-| Version | Status | Introduced                                                                                                                                                                          |
-| ------- | ------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Version | Status | Introduced                                                                                                                                                                          |
-| 1.0     | Stable | [MariaDB 10.1.13](broken-reference)                                                                                                                                                 |
-| 1.0     | Gamma  | [MariaDB 10.0.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-10010-release-notes) |
-| 1.0     | Alpha  | [MariaDB 10.0.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-1004-release-notes)   |
+| Version | Status | Introduced                                                                                                                                                                                                    |
+| ------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Version | Status | Introduced                                                                                                                                                                                                    |
+| 1.0     | Stable | [MariaDB 10.1.13](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/data-types/string-data-types/character-sets/internationalization-and-localization/broken-reference/README.md) |
+| 1.0     | Gamma  | [MariaDB 10.0.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-10010-release-notes)                           |
+| 1.0     | Alpha  | [MariaDB 10.0.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-1004-release-notes)                             |
 
 ## Options
 

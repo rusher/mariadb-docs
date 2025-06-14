@@ -139,7 +139,7 @@ SELECT id FROM t;
 +----+
 ```
 
-The [ARCHIVE](../../server-usage/storage-engines/archive/) storage engine does not allow to insert a value that is lower than the current maximum.
+The [ARCHIVE](../../server-usage/storage-engines/archive.md) storage engine does not allow to insert a value that is lower than the current maximum.
 
 ## Missing Values
 
@@ -306,6 +306,6 @@ SELECT * FROM t1;
 * [UUID\_SHORT()](../sql-functions/secondary-functions/miscellaneous-functions/uuid_short.md) - Generate unique ids
 * [Generating Identifiers – from AUTO\_INCREMENT to Sequence (percona.com)](https://www.percona.com/community-blog/2018/10/12/generating-identifiers-auto_increment-sequence/)
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

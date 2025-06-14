@@ -10,19 +10,19 @@ All nodes have been running a mysqlslap client attached to the local spider node
 
 `spider_conn_recycle_mode=1;`
 
-![spbench4](../../../.gitbook/assets/spider-benchmarks/+image/spbench4.png)
+![spbench4](../../../.gitbook/assets/spbench4.png)
 
 The read point select is produce with a 10M rows sysbench table
 
-![spbench5](../../../.gitbook/assets/spider-benchmarks/+image/spbench5.png)
+![spbench5](../../../.gitbook/assets/spbench5.png)
 
 The write insert a single string into a memory table
 
-![spbench6](../../../.gitbook/assets/spider-benchmarks/+image/spbench6.png)
+![spbench6](../../../.gitbook/assets/spbench6.png)
 
 Before Engine Condition Push Down patch .
 
-![benchspider7](../../../.gitbook/assets/spider-benchmarks/+image/benchspider7.png)
+![benchspider7](../../../.gitbook/assets/benchspider7.png)
 
 Spider can benefit by 10% additional performance with Independent Storage Engine Statistics.
 

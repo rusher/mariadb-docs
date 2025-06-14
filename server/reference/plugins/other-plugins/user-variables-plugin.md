@@ -78,7 +78,7 @@ If you installed the plugin by providing the [--plugin-load](../../../server-man
 | Version | Status | Introduced                                                                                                                                                                          |
 | 1.0     | Stable | [MariaDB 10.3.13](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-10313-release-notes) |
 | 1.0     | Gamma  | [MariaDB 10.2.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-1026-release-notes)   |
-| 1.0     | Alpha  | [MariaDB 10.2.0](broken-reference)                                                                                                                                                  |
+| 1.0     | Alpha  | [MariaDB 10.2.0](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/plugins/other-plugins/broken-reference/README.md)                                    |
 
 ## Options
 

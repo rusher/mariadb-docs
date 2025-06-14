@@ -32,7 +32,7 @@ Generate next value for a `SEQUENCE`.
 * `NEXT VALUE` requires the `INSERT` [privilege](../../../sql-statements/account-management-sql-statements/grant.md).
 * You can also use `NEXT VALUE FOR sequence` for column `DEFAULT`.
 
-Once the sequence is complete, unless the sequence has been created with the [CYCLE](../create-sequence.md#cycle-nocycle) attribute (not the default), calling the function will result in [Error 4084: Sequence has run out](broken-reference).
+Once the sequence is complete, unless the sequence has been created with the [CYCLE](../create-sequence.md#cycle-nocycle) attribute (not the default), calling the function will result in [Error 4084: Sequence has run out](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-structure/sequences/sequence-functions/broken-reference/README.md).
 
 ## Examples
 

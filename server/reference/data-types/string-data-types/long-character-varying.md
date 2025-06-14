@@ -1,15 +1,12 @@
+# long-character-varying
 
-# LONG CHARACTER VARYING
+## LONG CHARACTER VARYING
 
+## Overview
 
-# Overview
+See [MEDIUMTEXT](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/data-types/string-data-types/data-types-mediumtext/README.md).
 
-
-See [MEDIUMTEXT](data-types-mediumtext).
-
-
-# EXAMPLES
-
+## EXAMPLES
 
 ```
 CREATE TABLE long_character_varying_example (
@@ -29,8 +26,6 @@ Create Table: CREATE TABLE `long_character_varying_example` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1
 ```
 
-
 <sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
-
 
 {% @marketo/form formId="4316" %}

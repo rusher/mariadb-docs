@@ -19,7 +19,7 @@ Note that, if the `PIPES_AS_CONCAT` [SQL\_MODE](../../../../server-management/va
 
 ### Oracle Mode
 
-In [Oracle mode](broken-reference), `||` ignores [null](../../../sql-statements-and-structure/operators/logical-operators/null/).
+In [Oracle mode](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-structure/operators/logical-operators/broken-reference/README.md), `||` ignores [null](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements-and-structure/operators/logical-operators/null/README.md).
 
 ## Examples
 
@@ -60,7 +60,7 @@ SELECT 1 || NULL;
 +-----------+
 ```
 
-In [Oracle mode](broken-reference):
+In [Oracle mode](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-structure/operators/logical-operators/broken-reference/README.md):
 
 ```
 SELECT 0 || NULL;
@@ -76,8 +76,8 @@ SELECT 0 || NULL;
 ## See Also
 
 * [Operator Precedence](../operator-precedence.md)
-* [Oracle mode](broken-reference)
+* [Oracle mode](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-structure/operators/logical-operators/broken-reference/README.md)
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

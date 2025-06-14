@@ -28,11 +28,11 @@ EXPLAIN: {
 
 The output of MariaDB's `EXPLAIN FORMAT=JSON` is different from `EXPLAIN FORMAT=JSON` in MySQL.The reasons for that are:
 
-* MySQL's output has deficiencies. Some are listed here: [EXPLAIN FORMAT=JSON in MySQL](broken-reference)
+* MySQL's output has deficiencies. Some are listed here: [EXPLAIN FORMAT=JSON in MySQL](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/administrative-sql-statements/analyze-and-explain-statements/broken-reference/README.md)
 * The output of MySQL's `EXPLAIN FORMAT=JSON` is not defined. Even MySQL Workbench has trouble parsing it (see this [blog post](https://s.petrunia.net/blog/?p=93)).
 * MariaDB has query optimizations that MySQL does not have. Ergo, MariaDB generates query plans that MySQL does not generate.
 
-A (as yet incomplete) list of how MariaDB's output is different from MySQL can be found here: [EXPLAIN FORMAT=JSON differences from MySQL](broken-reference).
+A (as yet incomplete) list of how MariaDB's output is different from MySQL can be found here: [EXPLAIN FORMAT=JSON differences from MySQL](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/administrative-sql-statements/analyze-and-explain-statements/broken-reference/README.md).
 
 ## Output Format
 

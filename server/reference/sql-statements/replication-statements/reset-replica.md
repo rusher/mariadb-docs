@@ -12,7 +12,7 @@ RESET { SLAVE | REPLICA } ["connection_name"] [ALL]  [FOR CHANNEL "connection_na
 
 ## Description
 
-RESET REPLICA makes the replica forget its [replication](broken-reference) position in the\
+RESET REPLICA makes the replica forget its [replication](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/replication-statements/broken-reference/README.md) position in the\
 master's [binary log](../../../server-management/server-monitoring-logs/binary-log/). This statement is meant to be used for a clean\
 start. It deletes the master.info and relay-log.info files, all the[relay log](../../../server-management/server-monitoring-logs/binary-log/relay-log.md) files, and starts a new relay log file. To use RESET REPLICA,\
 the replica threads must be stopped (use [STOP REPLICA](../administrative-sql-statements/replication-statements/stop-replica.md) if\
@@ -56,6 +56,6 @@ From [MariaDB 11.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-commu
 
 * [STOP REPLICA](../administrative-sql-statements/replication-statements/stop-replica.md) stops the replica, but it can be restarted with [START REPLICA](../administrative-sql-statements/replication-statements/start-replica.md) or after next MariaDB server restart.
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

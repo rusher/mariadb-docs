@@ -13,7 +13,7 @@ description: >-
 
 With regular asynchronous replication, replicas request events from the primary's binary log whenever the replicas are ready. The primary does not wait for a replica to confirm that an event has been received.
 
-With fully synchronous replication, all replicas are required to respond that they have received the events. See [Galera Cluster](../../../kb/en/galera-cluster/).
+With fully synchronous replication, all replicas are required to respond that they have received the events. See [Galera Cluster](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/galera-cluster/README.md).
 
 Semisynchronous replication waits for just one replica to acknowledge that it has received and logged the events.
 
@@ -25,7 +25,7 @@ Semisynchronous replication is built into the server. See [MDEV-13073](https://j
 
 Semisynchronous replication can be enabled by setting the relevant system variables on the primary and the replica.
 
-If a server needs to be able to switch between acting as a primary and a replica, then you can enable both the primary and replica system variables on the server. For example, you might need to do this if [MariaDB MaxScale](../../../kb/en/maxscale/) is being used to enable [auto-failover or switchover](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/other-maxscale-versions/mariadb-maxscale-mariadb-maxscale-23/maxscale-23-monitors/mariadb-maxscale-23-mariadb-monitor#cluster-manipulation-operations) with [MariaDB Monitor](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/other-maxscale-versions/mariadb-maxscale-mariadb-maxscale-23/maxscale-23-monitors/mariadb-maxscale-23-mariadb-monitor).
+If a server needs to be able to switch between acting as a primary and a replica, then you can enable both the primary and replica system variables on the server. For example, you might need to do this if [MariaDB MaxScale](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/maxscale/README.md) is being used to enable [auto-failover or switchover](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/other-maxscale-versions/mariadb-maxscale-mariadb-maxscale-23/maxscale-23-monitors/mariadb-maxscale-23-mariadb-monitor#cluster-manipulation-operations) with [MariaDB Monitor](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/other-maxscale-versions/mariadb-maxscale-mariadb-maxscale-23/maxscale-23-monitors/mariadb-maxscale-23-mariadb-monitor).
 
 ### Enabling Semisynchronous Replication on the Primary
 
@@ -169,9 +169,9 @@ The effects of the `AFTER_COMMIT` wait point are:
 | ------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Version | Status  | Introduced                                                                                                                                                                                                                                        |
 | N/A     | N/A     | [MariaDB 10.3.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-1033-release-notes) (feature is built-in, no longer available as a separate plugin) |
-| 1.0     | Stable  | [MariaDB 10.1.13](broken-reference/)                                                                                                                                                                                                              |
+| 1.0     | Stable  | [MariaDB 10.1.13](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/standard-replication/broken-reference/README.md)                                                                                         |
 | 1.0     | Gamma   | [MariaDB 10.0.13](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-10013-release-notes)                                                               |
-| 1.0     | Unknown | [MariaDB 10.0.11](broken-reference/)                                                                                                                                                                                                              |
+| 1.0     | Unknown | [MariaDB 10.0.11](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/standard-replication/broken-reference/README.md)                                                                                         |
 | 1.0     | N/A     | [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5)                                                            |
 
 ## System Variables
@@ -235,7 +235,7 @@ The effects of the `AFTER_COMMIT` wait point are:
     3. Commits the transaction to the storage engine.
     4. Waits for acknowledgement from the replica.
     5. Returns an acknowledgement to the client.
-  * In [MariaDB 10.1.2](broken-reference/) and before, this system variable does not exist. However, in those versions, the primary waits for the acknowledgement from replicas at a point that is equivalent to `AFTER_COMMIT`.
+  * In [MariaDB 10.1.2](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/standard-replication/broken-reference/README.md) and before, this system variable does not exist. However, in those versions, the primary waits for the acknowledgement from replicas at a point that is equivalent to `AFTER_COMMIT`.
   * See [Configuring the Primary Wait Point](semisynchronous-replication.md#configuring-the-primary-wait-point) for more information.
 * Commandline: `--rpl-semi-sync-master-wait-point=value`
 * Scope: Global

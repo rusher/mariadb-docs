@@ -242,7 +242,7 @@ For clients that use the `libmysqlclient` or [MariaDB Connector/C](https://app.g
 
 * `auth_gssapi_client`
 
-When connecting with a [client or utility](../../../../kb/en/clients-utilities/) to a server as a user account that authenticates with the `gssapi` authentication plugin, you may need to tell the client where to find the relevant client authentication plugin by specifying the `--plugin-dir` option. For example:
+When connecting with a [client or utility](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/clients-utilities/README.md) to a server as a user account that authenticates with the `gssapi` authentication plugin, you may need to tell the client where to find the relevant client authentication plugin by specifying the `--plugin-dir` option. For example:
 
 ```
 mysql --plugin-dir=/usr/local/mysql/lib64/mysql/plugin --user=alice
@@ -268,7 +268,7 @@ The `auth_gssapi_client` client authentication plugin receives the principal nam
 
 ### Using the Plugin with MariaDB Connector/Node.js
 
-[MariaDB Connector/Node.js](../../../../kb/en/nodejs-connector/) does not yet support `gssapi` authentication. See [CONJS-72](https://jira.mariadb.org/browse/CONJS-72) for more information.
+[MariaDB Connector/Node.js](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/nodejs-connector/README.md) does not yet support `gssapi` authentication. See [CONJS-72](https://jira.mariadb.org/browse/CONJS-72) for more information.
 
 ### Using the Plugin with MySqlConnector for .NET
 

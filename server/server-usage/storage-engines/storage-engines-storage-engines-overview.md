@@ -2,9 +2,9 @@
 
 ## Overview
 
-[MariaDB Enterprise Server](../../../en/mariadb-enterprise-server/) features pluggable storage engines to allow per-table workload optimization.
+[MariaDB Enterprise Server](https://github.com/mariadb-corporation/docs-server/blob/test/en/mariadb-enterprise-server/README.md) features pluggable storage engines to allow per-table workload optimization.
 
-A storage engine is a type of [plugin](../../reference/plugins/) for [MariaDB Enterprise Server](../../../en/mariadb-enterprise-server/):
+A storage engine is a type of [plugin](../../reference/plugins/) for [MariaDB Enterprise Server](https://github.com/mariadb-corporation/docs-server/blob/test/en/mariadb-enterprise-server/README.md):
 
 * Different storage engines may be optimized for different workloads, such as transactional workloads, analytical workloads, or high throughput workloads.
 * Different storage engines may be designed for different use cases, such as federated table access, table sharding, and table archiving in the cloud.

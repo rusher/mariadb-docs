@@ -25,7 +25,7 @@ which indexes to use for a specific table within a query.
 
 This statement requires [SELECT and INSERT privileges](../account-management-sql-statements/grant.md) for the table.
 
-By default, ANALYZE TABLE statements are written to the [binary log](../../../server-management/server-monitoring-logs/binary-log/) and will be [replicated](broken-reference/). The `NO_WRITE_TO_BINLOG` keyword (`LOCAL` is an alias) will ensure the statement is not written to the binary log.
+By default, ANALYZE TABLE statements are written to the [binary log](../../../server-management/server-monitoring-logs/binary-log/) and will be [replicated](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/table-statements/broken-reference/README.md). The `NO_WRITE_TO_BINLOG` keyword (`LOCAL` is an alias) will ensure the statement is not written to the binary log.
 
 From [MariaDB 10.3.19](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-10319-release-notes), `ANALYZE TABLE` statements are not logged to the binary log if [read\_only](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#read_only) is set. See also [Read-Only Replicas](../../../ha-and-performance/standard-replication/read-only-replicas.md).
 
@@ -35,7 +35,7 @@ From [MariaDB 10.6.16](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-co
 can use `[ALTER TABLE](../data-definition/alter/alter-table.md) ... ANALYZE PARTITION` to analyze one or\
 more partitions.
 
-The [Aria](../../../server-usage/storage-engines/aria/) storage engine supports [progress reporting](broken-reference/) for the `ANALYZE TABLE` statement.
+The [Aria](../../../server-usage/storage-engines/aria/) storage engine supports [progress reporting](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/table-statements/broken-reference/README.md) for the `ANALYZE TABLE` statement.
 
 ## Performance Impact
 
@@ -99,11 +99,11 @@ ANALYZE TABLE tbl;
 * [This one trick can make MariaDB 30x faster!](https://mariadb.org/mariadb-30x-faster/) (mariadb.org blog)
 * [Index Statistics](../../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/index-statistics.md)
 * [InnoDB Persistent Statistics](../../../ha-and-performance/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/innodb-persistent-statistics.md)
-* [Progress Reporting](broken-reference/)
+* [Progress Reporting](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/table-statements/broken-reference/README.md)
 * [Engine-independent Statistics](../../../ha-and-performance/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/engine-independent-table-statistics.md)
 * [Histogram-based Statistics](../../../ha-and-performance/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/histogram-based-statistics.md)
 * [ANALYZE Statement](../administrative-sql-statements/analyze-and-explain-statements/analyze-statement.md)
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

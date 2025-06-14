@@ -16,7 +16,7 @@ isolated features that are considered complete and fairly well-tested. It is\
 however not a stable or GA release, nor is it planned to be so.
 
 The stable\
-release including these features will be [**MariaDB 5.3**](broken-reference/). That being said, we\
+release including these features will be [**MariaDB 5.3**](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/standard-replication/obsolete-replication-information/broken-reference/README.md). That being said, we\
 greatly welcome any feedback / bug reports, and will strive to fix any issues\
 found and we will update the feature preview until [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3) stable is ready.
 
@@ -126,7 +126,7 @@ a fully non-blocking backup which can be used to provision a new slave.
 between transactions involving more than one storage engine (currently XTraDB\
 and PBXT support this).
 
-### [Annotation of row-based replication events with the original SQL statement](../../../clients-and-utilities/mariadb-binlog/annotate_rows_log_event.md)
+### [Annotation of row-based replication events with the original SQL statement](../../../clients-and-utilities/logging-tools/mariadb-binlog/annotate_rows_log_event.md)
 
 When using row-based replication, the binary log does not contain SQL\
 statements, only discrete single-row insert/update/delete _events_. This can\

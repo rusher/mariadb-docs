@@ -8,13 +8,13 @@ The `Spider Proxy Nodes` are instances running at least MariaDB 10. `Spider Prox
 
 ### Spider Common Usage
 
-![Spider3](../../../.gitbook/assets/spider-storage-engine-core-concepts/+image/Spider3.png) ![Spider4](../../../.gitbook/assets/spider-storage-engine-core-concepts/+image/Spider4.png)
+![Spider3](../../../.gitbook/assets/Spider3.png) ![Spider4](../../../.gitbook/assets/Spider4.png)
 
 In the default high availability setup Spider Nodes produce SQL errors when a backend server is not responding. Per table monitoring can be setup to enable availability in case of unresponsive backends `monotoring_bg_kind=1` or `monotoring_bg_kind=2`. The Monitoring Spider Nodes will be inter-connected with usage of the system table `mysql.link_mon_servers` to manage network partitioning. Better known as split brain, an even number of `Spider Monitor Nodes` should be setup to allow a consensus based on the majority. Rather a single separated shared `Monitoring Node` instance or a minimum set of 3 `Spider Nodes`. More information can be found [here](https://fr.slideshare.net/Kentoku/spider-ha-20100922dtt7).
 
-**MariaDB starting with** [**10.7.5**](../../../reference/storage-engines/spider/broken-reference/)
+**MariaDB starting with** [**10.7.5**](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/spider/broken-reference/README.md)
 
-Spider's high availability feature has been deprecated ([MDEV-28479](https://jira.mariadb.org/browse/MDEV-28479)), and will be deleted. Please use other high availability solutions like [replication](../../../reference/storage-engines/spider/broken-reference/) or [galera-cluster](../../../../kb/en/galera-cluster/).
+Spider's high availability feature has been deprecated ([MDEV-28479](https://jira.mariadb.org/browse/MDEV-28479)), and will be deleted. Please use other high availability solutions like [replication](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/spider/broken-reference/README.md) or [galera-cluster](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/galera-cluster/README.md).
 
 ### Spider Storage Engine Federation
 
@@ -23,13 +23,13 @@ Preserving atomic operation during execution is used at multiple levels in the a
 
 Costly queries can be more efficient when it is possible to fully push down part of the execution plan on each backend and reduce the result afterwards. Spider enables such execution with some direct execution shortcuts.
 
-![Spider1](../../../.gitbook/assets/spider-storage-engine-core-concepts/+image/Spider1.png)
+![Spider1](../../../.gitbook/assets/Spider1.png)
 
 ### Spider Threading Model
 
 Spider uses the per partitions and per table model to concurrently access the remote backend nodes. For memory workload that property can be used to define multiple partitions on a single remote backend node to better adapt the concurrency to available CPUs in the hardware.
 
-![Spider2](../../../.gitbook/assets/spider-storage-engine-core-concepts/+image/Spider2.png)
+![Spider2](../../../.gitbook/assets/Spider2.png)
 
 Spider maintains an internal dictionary of Table and Index statistics based on separated threads. The statistics are pulled per default on a time line basis and refer to `crd` for cardinality and `sts` for table status.
 

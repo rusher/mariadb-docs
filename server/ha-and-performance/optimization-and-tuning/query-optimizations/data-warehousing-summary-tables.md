@@ -274,7 +274,7 @@ How fast should you flip-flop? Probably the best scheme is to
 
 If Staging is 'big', an iteration will take longer, but run more efficiently. Hence, it is self-regulating.
 
-In a [Galera](../../../../kb/en/galera/) (or InnoDB Cluster?) environment, each node could be receiving input. If can afford to loose a few rows, have `Staging` be a non-replicated MEMORY table. Otherwise, have one `Staging` per node and be InnoDB; it will be more secure, but slower and not without problems. In particular, if a node dies completely, you somehow need to process its `Staging` table.
+In a [Galera](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/galera/README.md) (or InnoDB Cluster?) environment, each node could be receiving input. If can afford to loose a few rows, have `Staging` be a non-replicated MEMORY table. Otherwise, have one `Staging` per node and be InnoDB; it will be more secure, but slower and not without problems. In particular, if a node dies completely, you somehow need to process its `Staging` table.
 
 ## Multiple summary tables
 

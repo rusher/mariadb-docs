@@ -1,6 +1,6 @@
 # Connecting to MariaDB Server
 
-This article covers connecting to MariaDB and the basic connection parameters. If you are completely new to MariaDB, take a look at [A MariaDB Primer](../../../kb/en/a-mariadb-primer/) first.
+This article covers connecting to MariaDB and the basic connection parameters. If you are completely new to MariaDB, take a look at [A MariaDB Primer](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/a-mariadb-primer/README.md) first.
 
 In order to connect to the MariaDB server, the client software must provide the correct connection parameters. The client software will most often be the [mariadb client](../../clients-and-utilities/mariadb-client/), used for entering statements from the command line, but the same concepts apply to any client, such as a [graphical client](../../clients-and-utilities/graphical-and-enhanced-clients/), a client to run backups such as [mariadb-dump](../../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md), etc. The rest of this article assumes that the mariadb command line client is used.
 
@@ -42,7 +42,7 @@ In this case:
 -h name
 ```
 
-Connect to the MariaDB server on the given host. The default host is `localhost`. By default, MariaDB does not permit remote logins - see [Configuring MariaDB for Remote Client Access](https://mariadb.com/kb/en/configuring-mariadb-for-remote-client-access/).
+Connect to the MariaDB server on the given host. The default host is `localhost`. By default, MariaDB does not permit remote logins - see [Configuring MariaDB for Remote Client Access](../../mariadb-quickstart-guides/mariadb-remote-connection-guide.md).
 
 ### password
 
@@ -194,10 +194,10 @@ It's also possible to use option files (or configuration files) to set these opt
 
 ## See Also
 
-* [A MariaDB Primer](../../../kb/en/a-mariadb-primer/)
+* [A MariaDB Primer](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/a-mariadb-primer/README.md)
 * [mariadb client](../../clients-and-utilities/mariadb-client/)
 * [Clients and Utilities](../../clients-and-utilities/)
-* [Configuring MariaDB for Remote Client Access](../../../kb/en/configuring-mariadb-for-remote-client-access/)
+* [Configuring MariaDB for Remote Client Access](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/configuring-mariadb-for-remote-client-access/README.md)
 * [--skip-grant-tables](../../server-management/starting-and-stopping-mariadb/mariadbd-options.md) allows you to start MariaDB without `GRANT`. This is useful if you lost your root password.
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>

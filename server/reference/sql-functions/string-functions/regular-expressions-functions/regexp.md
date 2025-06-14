@@ -69,7 +69,7 @@ SELECT 'a' REGEXP '^[a-d]';
 
 ### default\_regex\_flags examples
 
-[MariaDB 10.0.11](broken-reference) introduced the [default\_regex\_flags](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#default_regex_flags) variable to address the remaining compatibilities between PCRE and the old regex library.
+[MariaDB 10.0.11](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-functions/string-functions/regular-expressions-functions/broken-reference/README.md) introduced the [default\_regex\_flags](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#default_regex_flags) variable to address the remaining compatibilities between PCRE and the old regex library.
 
 The default behaviour (multiline match is off)
 
@@ -109,6 +109,6 @@ SELECT 'a\nb\nc' RLIKE '^b$';
 
 * [Operator Precedence](../../../sql-structure/operators/operator-precedence.md)
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

@@ -1,6 +1,6 @@
 # DECODE\_ORACLE
 
-`DECODE_ORACLE` is a synonym for the [Oracle mode](broken-reference) version of the [DECODE function](../secondary-functions/encryption-hashing-and-compression-functions/decode.md), and is available in all modes.
+`DECODE_ORACLE` is a synonym for the [Oracle mode](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-functions/control-flow-functions/broken-reference/README.md) version of the [DECODE function](../secondary-functions/encryption-hashing-and-compression-functions/decode.md), and is available in all modes.
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

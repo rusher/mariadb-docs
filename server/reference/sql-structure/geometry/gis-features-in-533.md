@@ -12,7 +12,7 @@ a subset of the 'SQL with Geometry Types' environment proposed by the OGC. And\
 the SQL environment was extended with a set of geometry types.
 
 MariaDB supports spatial extensions to operate on spatial features.\
-These features are available for [Aria](../../../server-usage/storage-engines/aria/), [MyISAM](../../../server-usage/storage-engines/myisam-storage-engine/), [InnoDB](../../../server-usage/storage-engines/innodb/), NDB, and [ARCHIVE](../../../server-usage/storage-engines/archive/) tables.
+These features are available for [Aria](../../../server-usage/storage-engines/aria/), [MyISAM](../../../server-usage/storage-engines/myisam-storage-engine/), [InnoDB](../../../server-usage/storage-engines/innodb/), NDB, and [ARCHIVE](../../../server-usage/storage-engines/archive.md) tables.
 
 For spatial columns, Aria and MyISAM supports both [SPATIAL](spatial-index.md) and non-SPATIAL\
 indexes. Other storage engines support non-SPATIAL indexes.
@@ -39,16 +39,16 @@ Spatial operators. They produce new geometries.
 
 Predicates, return boolean result of the relationship
 
-| Name                                                        | Description                     |
-| ----------------------------------------------------------- | ------------------------------- |
-| Name                                                        | Description                     |
-| [ST\_INTERSECTS(A, B)](geometry-relations/st-intersects.md) | if A and B have an intersection |
-| [ST\_CROSSES(A, B)](geometry-relations/st-crosses.md)       | if A and B cross                |
-| [ST\_EQUALS(A, B)](geometry-relations/st-equals.md)         | if A and B are equal            |
-| [ST\_WITHIN(A, B)](geometry-relations/st-within.md)         | if A lies within B              |
-| [ST\_CONTAINS(A,B)](geometry-relations/st-contains.md)      | if B lies within A              |
-| [ST\_DISJOINT(A,B)](geometry-relations/st_disjoint.md)      | if A and B have no intersection |
-| [ST\_TOUCHES(A,B)](geometry-relations/st-touches.md)        | if A touches B                  |
+| Name                                                                                                   | Description                     |
+| ------------------------------------------------------------------------------------------------------ | ------------------------------- |
+| Name                                                                                                   | Description                     |
+| [ST\_INTERSECTS(A, B)](../../sql-statements/geometry-constructors/geometry-relations/st-intersects.md) | if A and B have an intersection |
+| [ST\_CROSSES(A, B)](../../sql-statements/geometry-constructors/geometry-relations/st-crosses.md)       | if A and B cross                |
+| [ST\_EQUALS(A, B)](../../sql-statements/geometry-constructors/geometry-relations/st-equals.md)         | if A and B are equal            |
+| [ST\_WITHIN(A, B)](../../sql-statements/geometry-constructors/geometry-relations/st-within.md)         | if A lies within B              |
+| [ST\_CONTAINS(A,B)](../../sql-statements/geometry-constructors/geometry-relations/st-contains.md)      | if B lies within A              |
+| [ST\_DISJOINT(A,B)](../../sql-statements/geometry-constructors/geometry-relations/st_disjoint.md)      | if A and B have no intersection |
+| [ST\_TOUCHES(A,B)](../../sql-statements/geometry-constructors/geometry-relations/st-touches.md)        | if A touches B                  |
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

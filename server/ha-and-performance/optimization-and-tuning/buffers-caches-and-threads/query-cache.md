@@ -194,7 +194,7 @@ SHOW STATUS LIKE 'Qcache%';
 
 The above example could indicate a poorly performing cache. More queries have been added, and more queries have been dropped, than have actually been used.
 
-Note that before [MariaDB 5.5](broken-reference/), queries returned from the query cache did not increment the [Com\_select](../system-variables/server-status-variables.md#com_select) status variable, so to find the total number of valid queries run on the server, add [Com\_select](../system-variables/server-status-variables.md#com_select) to [Qcache\_hits](../system-variables/server-status-variables.md#qcache_hits). Starting from [MariaDB 5.5](broken-reference/), results returned by the query cache count towards `Com_select` (see [MDEV-4981](https://jira.mariadb.org/browse/MDEV-4981)).
+Note that before [MariaDB 5.5](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/broken-reference/README.md), queries returned from the query cache did not increment the [Com\_select](../system-variables/server-status-variables.md#com_select) status variable, so to find the total number of valid queries run on the server, add [Com\_select](../system-variables/server-status-variables.md#com_select) to [Qcache\_hits](../system-variables/server-status-variables.md#qcache_hits). Starting from [MariaDB 5.5](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/broken-reference/README.md), results returned by the query cache count towards `Com_select` (see [MDEV-4981](https://jira.mariadb.org/browse/MDEV-4981)).
 
 The [QUERY\_CACHE\_INFO plugin](../../../reference/plugins/other-plugins/query-cache-information-plugin.md) creates the [QUERY\_CACHE\_INFO](../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-query_cache_info-table.md) table in the [INFORMATION\_SCHEMA](../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/), allowing you to examine the contents of the query cache.
 
@@ -234,7 +234,7 @@ Setting either [query\_cache\_type](../system-variables/server-system-variables.
 
 * The query cache needs to be disabled in order to use [OQGRAPH](../../../server-usage/storage-engines/oqgraph-storage-engine/).
 * The query cache is not used by the [Spider](../../../server-usage/storage-engines/spider/) storage engine (amongst others).
-* The query cache also needs to be disabled for MariaDB [Galera](../../../../kb/en/galera/) cluster versions prior to "5.5.40-galera", "10.0.14-galera" and "10.1.2".
+* The query cache also needs to be disabled for MariaDB [Galera](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/galera/README.md) cluster versions prior to "5.5.40-galera", "10.0.14-galera" and "10.1.2".
 
 ## LOCK TABLES and the Query Cache
 

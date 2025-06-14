@@ -15,7 +15,7 @@ that's important for table elimination can be shown with an example.
 Suppose the database stores information about actors, together with their\
 names, birthdays, and ratings, where ratings can change over time:
 
-![actor-attrs](../../../../.gitbook/assets/what-is-table-elimination/+image/actor-attrs.png)
+![actor-attrs](../../../../.gitbook/assets/actor-attrs.png)
 
 According to anchor modeling, each attribute should go into its own table:
 

@@ -54,7 +54,7 @@ For other storage engines, `TRUNCATE TABLE` differs from`DELETE` in the followin
   the `TRUNCATE` statement does not invoke `ON DELETE` triggers.
 * `TRUNCATE TABLE` will only reset the values in the [Performance Schema summary tables](../administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/list-of-performance-schema-tables.md) to zero or null, and will not remove the rows.
 
-For the purposes of binary logging and [replication](broken-reference/), `TRUNCATE TABLE` is treated as [DROP TABLE](../data-definition/drop/drop-table.md) followed by [CREATE TABLE](../data-definition/create/create-table.md) (DDL rather than DML).
+For the purposes of binary logging and [replication](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/table-statements/broken-reference/README.md), `TRUNCATE TABLE` is treated as [DROP TABLE](../data-definition/drop/drop-table.md) followed by [CREATE TABLE](../data-definition/create/create-table.md) (DDL rather than DML).
 
 `TRUNCATE TABLE` does not work on [views](../../../server-usage/views/). Currently, `TRUNCATE TABLE` drops all historical records from a [system-versioned table](../../sql-structure/temporal-tables/system-versioned-tables.md).
 
@@ -64,7 +64,7 @@ Set the lock wait timeout. See [WAIT and NOWAIT](../transactions/wait-and-nowait
 
 ### Oracle-mode
 
-[Oracle-mode](broken-reference/) from [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103) permits the optional keywords REUSE STORAGE or DROP STORAGE to be used.
+[Oracle-mode](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/table-statements/broken-reference/README.md) from [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103) permits the optional keywords REUSE STORAGE or DROP STORAGE to be used.
 
 ```
 TRUNCATE [TABLE] tbl_name [{DROP | REUSE} STORAGE] [WAIT n | NOWAIT]
@@ -86,8 +86,8 @@ Setting [innodb\_adaptive\_hash\_index=OFF](../../../server-usage/storage-engine
 
 * [TRUNCATE function](../../sql-functions/numeric-functions/truncate.md)
 * [innodb\_safe\_truncate](../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_safe_truncate) system variable
-* [Oracle mode from MariaDB 10.3](broken-reference/)
+* [Oracle mode from MariaDB 10.3](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/table-statements/broken-reference/README.md)
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

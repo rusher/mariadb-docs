@@ -17,7 +17,7 @@ Login failures can be found in the [general log](../../server-management/server-
 
 * [Troubleshooting Connection Issues](../../mariadb-quickstart-guides/mariadb-connection-troubleshooting-guide.md)
 * [GRANT](../../reference/sql-statements/account-management-sql-statements/grant.md)
-* [Error 1045: Access denied for user (using password)](broken-reference)
+* [Error 1045: Access denied for user (using password)](https://github.com/mariadb-corporation/docs-server/blob/test/server/security/user-account-management/broken-reference/README.md)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

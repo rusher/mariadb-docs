@@ -101,7 +101,7 @@ Note that in any case, only queries that takes longer than **log\_slow\_time** o
 
 **MariaDB starting with** [**10.6.16**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/mariadb-10-6-16-release-notes)
 
-If one enables the warning option for `log_slow_verbosity`, all notes and warnings for a slow query will also be added to the slow query log. This is very usable when one has enabled warnings for [Notes when an index cannot be used](broken-reference).`log_slow_max_warnings` limits the number of warnings printed to the slow query log per query. The default value is 10.
+If one enables the warning option for `log_slow_verbosity`, all notes and warnings for a slow query will also be added to the slow query log. This is very usable when one has enabled warnings for [Notes when an index cannot be used](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/broken-reference/README.md).`log_slow_max_warnings` limits the number of warnings printed to the slow query log per query. The default value is 10.
 
 ## Credits
 
@@ -110,7 +110,7 @@ patch from [Percona](https://www.percona.com/).
 
 ## See also
 
-* [Notes when an index cannot be used because of type conversions](broken-reference)
+* [Notes when an index cannot be used because of type conversions](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/broken-reference/README.md)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

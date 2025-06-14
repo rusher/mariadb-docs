@@ -7,7 +7,7 @@ MyRocks is an open source storage engine that was originally developed by Facebo
 MyRocks has been extended by the MariaDB engineering team to be a pluggable storage engine that you use in your MariaDB solutions. It works seamlessly with MariaDB features. This openness in the storage layer allows you to use the right storage engine to optimize your usage requirements, which provides optimum performance. Community contributions are one of MariaDB’s greatest advantages over other databases. Under the lead of our developer Sergey Petrunia, MyRocks in MariaDB is occasionally being merged with upstream MyRocks from Facebook.\
 See more at: [facebook-myrocks-mariadb#sthash.ZlEr7kNq.dpuf](https://mariadb.com/resources/blog/facebook-myrocks-mariadb#sthash.ZlEr7kNq.dpuf)
 
-![storage engine options](../../../.gitbook/assets/about-myrocks-for-mariadb/+image/mariaDBstorageEngineOpt.png)
+![storage engine options](../../../.gitbook/assets/mariaDBstorageEngineOpt.png)
 
 MyRocks, typically, gives greater performance for web scale type applications. It can be an ideal storage engine solution when you have workloads that require greater compression and IO efficiency. It uses a Log Structured Merge (LSM) architecture, which has advantages over B-Tree algorithms, to provide efficient data ingestion, like read-free replication slaves, or fast bulk data loading.\
 MyRocks distinguishing features include:
@@ -52,7 +52,7 @@ On production workloads, MyRocks was tested to prove that it provides:
 * MyRocks is available in the MariaDB Server packages for Linux and Windows.
 * Maria DB optimistic parallel replication may not be supported.
 * MyRocks is not available for 32-bit platforms
-* [Galera Cluster](../../../../en/galera/) is tightly integrated into InnoDB storage engine (it also supports Percona's XtraDB which is a modified version of InnoDB). Galera Cluster does not work with any other storage engines, including MyRocks (or TokuDB for example).
+* [Galera Cluster](https://github.com/mariadb-corporation/docs-server/blob/test/en/galera/README.md) is tightly integrated into InnoDB storage engine (it also supports Percona's XtraDB which is a modified version of InnoDB). Galera Cluster does not work with any other storage engines, including MyRocks (or TokuDB for example).
 
 MyRocks builds are available on platforms that support a sufficiently modern compiler, for example:
 

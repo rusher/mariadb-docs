@@ -11,7 +11,7 @@ It is best practice not to rely upon implicit conversion; rather use [CAST](cast
 * If both arguments are strings, they are compared as strings.
 * If one argument is decimal and the other argument is decimal or integer, they are compared as decimals.
 * If one argument is decimal and the other argument is a floating point, they are compared as floating point values.
-* If one argument is string and the other argument is integer, they are compared as decimals. This conversion was added in [MariaDB 10.3.36](broken-reference). Prior to 10.3.36, this combination was compared as floating point values, which did not always work well for huge 64-bit integers because of a possible precision loss on conversion to double.
+* If one argument is string and the other argument is integer, they are compared as decimals. This conversion was added in [MariaDB 10.3.36](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-functions/string-functions/broken-reference/README.md). Prior to 10.3.36, this combination was compared as floating point values, which did not always work well for huge 64-bit integers because of a possible precision loss on conversion to double.
 * If a hexadecimal argument is not compared to a number, it is treated as a binary string.
 * If a constant is compared to a TIMESTAMP or DATETIME, the constant is converted to a timestamp, unless used as an argument to the [IN](../../sql-structure/operators/comparison-operators/in.md) function.
 * In other cases, arguments are compared as floating point, or real, numbers.
@@ -197,7 +197,7 @@ SELECT "2.2" / 3;
 
 ## See also
 
-* [Notes when an index cannot be used because of type conversions](broken-reference)
+* [Notes when an index cannot be used because of type conversions](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-functions/string-functions/broken-reference/README.md)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

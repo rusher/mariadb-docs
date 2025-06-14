@@ -7,7 +7,7 @@ MariaDB is available on Amazon AWS, as one of the database options when using Am
 To get started with MariaDB on Amazon's RDS service, click on the RDS link in\
 the Database section of the [AWS console](https://console.aws.amazon.com/console/home).
 
-![rds-link](../../.gitbook/assets/mariadb-on-amazon-rds/+image/rds-link.png)
+![rds-link](../../.gitbook/assets/rds-link.png)
 
 Next, click on the **Get Started Now** button. Alternatively, you can click on\
 the **Launch DB Instance** button from the [Instances section of the RDS Dashboard](https://console.aws.amazon.com/rds/home#dbinstances:).
@@ -16,7 +16,7 @@ In either case, you will be brought to the page where you can select the\
 database engine you want to use. Click on the **MariaDB** logo and then click\
 on the **Select** button.
 
-![](../../.gitbook/assets/mariadb-on-amazon-rds/+image/rds-select-mariadb.png)
+![](../../.gitbook/assets/rds-select-mariadb.png)
 
 You will then move to step 2 where you choose whether or not you want to use\
 your MariaDB instance for production or non-production usage. Amazon has links\
@@ -26,7 +26,7 @@ After selecting the choice you want you will move to step 3 where you specify\
 the details for your database, including setting up an admin user in the\
 database.
 
-![](../../.gitbook/assets/mariadb-on-amazon-rds/+image/rds-db-details.png)
+![](../../.gitbook/assets/rds-db-details.png)
 
 You will then move to step 4 where you can configure advanced settings,\
 including security settings, various options, backup settings, maintenance\

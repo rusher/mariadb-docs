@@ -85,7 +85,7 @@ unsigned int enable_local_infile = 1;
 mysql_optionsv(mysql, MYSQL_OPT_LOCAL_INFILE, (void *) &enable_local_infile);
 ```
 
-If you are using [MariaDB Connector/J](../../../../en/about-mariadb-connector-j/), the allowLocalInfile parameter can be set for the connection:
+If you are using [MariaDB Connector/J](https://github.com/mariadb-corporation/docs-server/blob/test/en/about-mariadb-connector-j/README.md), the allowLocalInfile parameter can be set for the connection:
 
 ```
 Connection connection = DriverManager.getConnection("jdbc:mariadb://FULLY_QUALIFIED_DOMAIN_NAME:TCP_PORT/test?user=DATABASE_USER&password=DATABASE_PASSWORD&allowLocalInfile=true");
@@ -103,7 +103,7 @@ mariadb.createConnection({
  });
 ```
 
-If you are using [MariaDB Connector/Python](../../../../en/mariadb-connector-python/), the `local_infile` parameter can be set for the connection:
+If you are using [MariaDB Connector/Python](https://github.com/mariadb-corporation/docs-server/blob/test/en/mariadb-connector-python/README.md), the `local_infile` parameter can be set for the connection:
 
 ```
 conn = mariadb.connect(

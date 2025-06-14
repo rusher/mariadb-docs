@@ -2,7 +2,7 @@
 
 _perror_ is a utility that displays descriptions for system or storage engine error codes.
 
-See [MariaDB Error Codes](broken-reference) for a full list of MariaDB error codes, and [Operating System Error Codes](broken-reference) for a list of Linux and Windows error codes.
+See [MariaDB Error Codes](https://github.com/mariadb-corporation/docs-server/blob/test/server/clients-and-utilities/administrative-tools/broken-reference/README.md) for a full list of MariaDB error codes, and [Operating System Error Codes](https://github.com/mariadb-corporation/docs-server/blob/test/server/clients-and-utilities/administrative-tools/broken-reference/README.md) for a list of Linux and Windows error codes.
 
 ## Usage
 
@@ -32,7 +32,7 @@ shell> perror 96
 OS error code  96:  Protocol family not supported
 ```
 
-MariaDB/MySQL [error code](broken-reference):
+MariaDB/MySQL [error code](https://github.com/mariadb-corporation/docs-server/blob/test/server/clients-and-utilities/administrative-tools/broken-reference/README.md):
 
 ```
 shell> perror 1005 1006

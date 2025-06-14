@@ -28,7 +28,7 @@ has all information on the primary.
 
 If you are using [Semisynchronous Replication](semisynchronous-replication.md) you can just stop the server with the [SHUTDOWN](../../reference/sql-statements/administrative-sql-statements/shutdown.md) command as the replicas should be automatically up to date.
 
-If you are using [MariaDB MaxScale proxy](../../../kb/en/maxscale/), then you [can use MaxScale](https://mariadb.com/resources/blog/mariadb-maxscale-2-2-introducing-failover-switchover-and-automatic-rejoin) to handle the whole process of taking down the primary and replacing it with one of the replicas.
+If you are using [MariaDB MaxScale proxy](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/maxscale/README.md), then you [can use MaxScale](https://mariadb.com/resources/blog/mariadb-maxscale-2-2-introducing-failover-switchover-and-automatic-rejoin) to handle the whole process of taking down the primary and replacing it with one of the replicas.
 
 If neither of the above is true, you have to do this step manually:
 
@@ -154,7 +154,7 @@ START SLAVE;
 ### Moving Applications to Use New Primary
 
 You should now point your applications to use the new primary.\
-If you are using the [MariaDB MaxScale proxy](../../../kb/en/maxscale/), then you don't\
+If you are using the [MariaDB MaxScale proxy](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/maxscale/README.md), then you don't\
 have to do this step as MaxScale will take care of sending write request\
 to the new primary.
 

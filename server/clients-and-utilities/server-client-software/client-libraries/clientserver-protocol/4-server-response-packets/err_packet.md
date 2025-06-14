@@ -7,7 +7,7 @@ ERR\_Packet indicates that an error occured.
 ### Fields
 
 * [int<1>](../protocol-data-types.md#fixed-length-integers) ERR\_Packet header = 0xFF
-* [int<2>](../protocol-data-types.md#fixed-length-integers) error code. see [error list](broken-reference)
+* [int<2>](../protocol-data-types.md#fixed-length-integers) error code. see [error list](https://github.com/mariadb-corporation/docs-server/blob/test/server/clients-and-utilities/server-client-software/client-libraries/clientserver-protocol/4-server-response-packets/broken-reference/README.md)
 * if (errorcode == 0xFFFF) /\* progress reporting \*/
   * [int<1>](../protocol-data-types.md#fixed-length-integers) stage
   * [int<1>](../protocol-data-types.md#fixed-length-integers) max\_stage
@@ -25,7 +25,7 @@ Note that the ERR packet is supposed to send a server error to the client. In pa
 
 #### See also
 
-["Progress reporting"](broken-reference)
+["Progress reporting"](https://github.com/mariadb-corporation/docs-server/blob/test/server/clients-and-utilities/server-client-software/client-libraries/clientserver-protocol/4-server-response-packets/broken-reference/README.md)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

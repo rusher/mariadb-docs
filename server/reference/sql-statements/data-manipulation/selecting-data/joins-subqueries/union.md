@@ -24,7 +24,7 @@ Table names can be specified as `db_name`.`tbl_name`. This permits writing `UNIO
 
 UNION queries cannot be used with [aggregate functions](../../../../sql-functions/aggregate-functions/).
 
-`EXCEPT` and `UNION` have the same operation precedence and `INTERSECT` has a higher precedence, unless [running in Oracle mode](broken-reference), in which case all three have the same precedence.
+`EXCEPT` and `UNION` have the same operation precedence and `INTERSECT` has a higher precedence, unless [running in Oracle mode](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/data-manipulation/selecting-data/joins-subqueries/broken-reference/README.md), in which case all three have the same precedence.
 
 ### ALL/DISTINCT
 
@@ -52,11 +52,11 @@ ERROR 1234 (42000): Incorrect usage/placement of 'HIGH_PRIORITY'
 
 Individual SELECTs cannot be written [INTO DUMPFILE](../select-into-dumpfile.md) or [INTO OUTFILE](../select-into-outfile.md). If the last SELECT statement specifies INTO DUMPFILE or INTO OUTFILE, the entire result of the UNION will be written. Placing the clause after any other SELECT will result in a syntax error.
 
-If the result is a single row, [SELECT ... INTO @var\_name](../../../../../server-usage/programmatic-compound-statements/selectinto.md) can also be used.
+If the result is a single row, [SELECT ... INTO @var\_name](../../../programmatic-compound-statements/selectinto.md) can also be used.
 
 ### Parentheses
 
-Parentheses can be used to specify precedence. Prior to [MariaDB 10.4](broken-reference), a syntax error would be returned.
+Parentheses can be used to specify precedence. Prior to [MariaDB 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/data-manipulation/selecting-data/joins-subqueries/broken-reference/README.md), a syntax error would be returned.
 
 ## Examples
 
@@ -209,6 +209,6 @@ INSERT INTO t3 VALUES (1),(6);
 * [Recursive Common Table Expressions Overview](../common-table-expressions/recursive-common-table-expressions-overview.md)
 * [Get Set for Set Theory: UNION, INTERSECT and EXCEPT in SQL](https://www.youtube.com/watch?v=UNi-fVSpRm0) (video tutorial)
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

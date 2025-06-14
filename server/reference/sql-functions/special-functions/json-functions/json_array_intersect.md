@@ -1,6 +1,6 @@
 # JSON\_ARRAY\_INTERSECT
 
-**MariaDB starting with** [**11.2.0**](../../../../../kb/en/mariadb-1120-release-notes/)
+**MariaDB starting with** [**11.2.0**](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/mariadb-1120-release-notes/README.md)
 
 JSON\_ARRAY\_INTERSECT was added in [MariaDB 11.2.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-0-release-notes).
 

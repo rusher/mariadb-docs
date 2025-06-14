@@ -14,7 +14,7 @@ corresponding row within the [mysql.servers table](../../administrative-sql-stat
 Dropping a server for a table does not affect any [FederatedX](../../../../server-usage/storage-engines/federatedx-storage-engine/), [FEDERATED](../../../../server-usage/storage-engines/legacy-storage-engines/federated-storage-engine.md), [Connect](../../../../server-usage/storage-engines/connect/) or [Spider](../../../../server-usage/storage-engines/spider/) tables that used this connection information when they were created.
 
 DROP SERVER is not written to the [binary log](../../../../server-management/server-monitoring-logs/binary-log/), irrespective of\
-the [binary log format](../../../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md) being used. From [MariaDB 10.1.13](broken-reference/), [Galera](../../../../../kb/en/galera/) replicates the [CREATE SERVER](../create/create-server.md), [ALTER SERVER](../alter/alter-server.md) and DROP SERVER statements.
+the [binary log format](../../../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md) being used. From [MariaDB 10.1.13](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/data-definition/drop/broken-reference/README.md), [Galera](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/galera/README.md) replicates the [CREATE SERVER](../create/create-server.md), [ALTER SERVER](../alter/alter-server.md) and DROP SERVER statements.
 
 #### IF EXISTS
 
@@ -46,6 +46,6 @@ Query OK, 0 rows affected (0.00 sec)
 * [Connect Storage Engine](../../../../server-usage/storage-engines/connect/)
 * [mysql.servers table](../../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-servers-table.md)
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

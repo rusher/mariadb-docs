@@ -39,7 +39,7 @@ collation_connection: utf8_general_ci
 * [SHOW CREATE PACKAGE](show-create-package.md)
 * [CREATE PACKAGE](../../data-definition/create/create-package.md)
 * [DROP PACKAGE](../../data-definition/drop/drop-package.md)
-* [Oracle SQL\_MODE](broken-reference)
+* [Oracle SQL\_MODE](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/administrative-sql-statements/show/broken-reference/README.md)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

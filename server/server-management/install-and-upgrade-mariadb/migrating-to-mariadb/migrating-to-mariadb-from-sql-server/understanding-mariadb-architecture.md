@@ -73,7 +73,7 @@ InnoDB transaction logs are written in a circular fashion: their size is normall
 
 #### InnoDB Buffer Pool
 
-MariaDB doesn't have a central buffer pool. Each storage engine may or may not have a buffer pool. The [InnoDB buffer pool](../../../../server-usage/storage-engines/innodb/innodb-buffer-pool.md) is typically assigned a big amount of memory. See [MariaDB Memory Allocation](../../../../ha-and-performance/optimization-and-tuning/mariadb-memory-allocation.md).
+MariaDB doesn't have a central buffer pool. Each storage engine may or may not have a buffer pool. The [InnoDB buffer pool](../../../../server-usage/storage-engines/innodb/innodb-buffer-pool.md) is typically assigned a big amount of memory. See [MariaDB Memory Allocation](../../../../ha-and-performance/mariadb-memory-allocation.md).
 
 MariaDB has no extension like the SQL Server buffer pool extension.
 
@@ -201,7 +201,7 @@ The binary log allows:
 
 If you don't plan to use any of these features on a server, it is possible to [disable](../../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#log_bin) the binary log to slightly improve the performance.
 
-The binary log can be inspected using the [mariadb-binlog](../../../../clients-and-utilities/mariadb-binlog/) utility, which comes with MariaDB. Enabling or disabling the binary log requires restarting MariaDB.
+The binary log can be inspected using the [mariadb-binlog](../../../../clients-and-utilities/logging-tools/mariadb-binlog/) utility, which comes with MariaDB. Enabling or disabling the binary log requires restarting MariaDB.
 
 See also [MariaDB Replication Overview for SQL Server Users](mariadb-replication-overview-for-sql-server-users.md) and [MariaDB Backups Overview for SQL Server Users](mariadb-backups-overview-for-sql-server-users.md) for a better understanding of how the binary log is used.
 

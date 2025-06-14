@@ -20,7 +20,7 @@ The other option is to have a MariaDB container for each tenant. The problem wit
 
 The suggested solution is to solve all of the above and thus create a better multi-tenant database is to add support for catalogs to MariaDB.
 
-The following picture shows the change:![moving-to-catalogs](../../../.gitbook/assets/catalogs-overview/+image/moving-to-catalogs.png)
+The following picture shows the change:![moving-to-catalogs](../../../.gitbook/assets/moving-to-catalogs.png)
 
 By each user having their own catalog, they will get very close to the same user experience as if they would have the MariaDB server for themselves.
 

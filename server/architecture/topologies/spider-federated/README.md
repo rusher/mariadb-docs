@@ -30,7 +30,7 @@ If you have not yet deployed MariaDB Enterprise Server on the Spider Node and Da
 
 ## Support
 
-Customers can obtain support by [submitting a support case](broken-reference/).
+Customers can obtain support by [submitting a support case](https://github.com/mariadb-corporation/docs-server/blob/test/server/architecture/topologies/spider-federated/broken-reference/README.md).
 
 ## Components
 

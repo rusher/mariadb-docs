@@ -15,7 +15,7 @@ displays `DATE` values in '`YYYY-MM-DD`' format, but can be assigned dates in lo
 
 ### Oracle Mode
 
-In [Oracle mode](broken-reference), `DATE` with a time portion is a synonym for [DATETIME](datetime.md). See also [mariadb\_schema](../../sql-statements/administrative-sql-statements/system-tables/mariadb_schema.md).
+In [Oracle mode](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/data-types/date-and-time-data-types/broken-reference/README.md), `DATE` with a time portion is a synonym for [DATETIME](datetime.md). See also [mariadb\_schema](../../sql-statements/administrative-sql-statements/system-tables/mariadb_schema.md).
 
 ## Examples
 
@@ -190,6 +190,6 @@ SELECT * FROM date_range_example;
 
 * [mariadb\_schema](../../sql-statements/administrative-sql-statements/system-tables/mariadb_schema.md) data type qualifier
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

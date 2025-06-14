@@ -8,11 +8,11 @@ Polygon(ls1,ls2,...)
 
 ## Description
 
-Constructs a WKB Polygon value from a number of [WKB](../../../sql-structure/geometry/wkb/) [LineString](linestring.md)\
+Constructs a WKB Polygon value from a number of [WKB](../wkb/) [LineString](linestring.md)\
 arguments. If any argument does not represent the WKB of a LinearRing (that is,\
 not a closed and simple LineString) the return value is `NULL`.
 
-Note that according to the OpenGIS standard, a POLYGON should have exactly one ExteriorRing and all other rings should lie within that ExteriorRing and thus be the InteriorRings. Practically, however, some systems, including MariaDB's, permit polygons to have several 'ExteriorRings'. In the case of there being multiple, non-overlapping exterior rings [ST\_NUMINTERIORRINGS()](../../../sql-structure/geometry/polygon-properties/st_numinteriorrings.md) will return 1.
+Note that according to the OpenGIS standard, a POLYGON should have exactly one ExteriorRing and all other rings should lie within that ExteriorRing and thus be the InteriorRings. Practically, however, some systems, including MariaDB's, permit polygons to have several 'ExteriorRings'. In the case of there being multiple, non-overlapping exterior rings [ST\_NUMINTERIORRINGS()](../polygon-properties/st_numinteriorrings.md) will return 1.
 
 ## Examples
 
@@ -68,6 +68,6 @@ SELECT ST_AsWKT(p) FROM polygon_example;
 +------------------------------------------------------+
 ```
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

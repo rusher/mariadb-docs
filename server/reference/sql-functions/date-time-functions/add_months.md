@@ -92,7 +92,7 @@ SELECT ADD_MONTHS('2011-01-15', 2.1);
 
 ## See Also
 
-* [SQL\_MODE=ORACLE](broken-reference)
+* [SQL\_MODE=ORACLE](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-functions/date-time-functions/broken-reference/README.md)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
