@@ -27,6 +27,6 @@ Release notes and other documentation for ColumnStore is also available in the E
 * [ColumnStore 22.08 Release Notes](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/columnstore/columnstore-22-08)
 * [ColumnStore 6 Release Notes](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/columnstore/columnstore-6)
 * [ColumnStore 5.6 Release Notes](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/columnstore/columnstore-5-6)
-* [Deployment Instructions](../../en/mariadb-columnstore/)
+* [Deployment Instructions](https://github.com/mariadb-corporation/docs-server/blob/test/en/mariadb-columnstore/README.md)
 {% endhint %}
 

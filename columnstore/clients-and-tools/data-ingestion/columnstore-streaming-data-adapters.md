@@ -25,7 +25,7 @@ The [ColumnStore Bulk Data API](columnstore-bulk-data-loading.md) enables the cr
 The MaxScale CDC Data Adapter has been deprecated.
 {% endhint %}
 
-The MaxScale CDC Data Adapter allows to stream change data events(binary log events) from MariaDB Master hosting non-columnstore engines(InnoDB, MyRocks, MyISAM) to MariaDB ColumnStore. In another words replicate data from MariaDB Master to MariaDB ColumnStore. It acts as a CDC Client for MaxScale and uses the events received from MaxScale as input to MariaDB ColumnStore Bulk Data API to push the data to MariaDB ColumnStore.![maxscale-cdc-adapter](../../.gitbook/assets/columnstore-streaming-data-adapters/+image/maxscale-cdc-adapter.jpg)\
+The MaxScale CDC Data Adapter allows to stream change data events(binary log events) from MariaDB Master hosting non-columnstore engines(InnoDB, MyRocks, MyISAM) to MariaDB ColumnStore. In another words replicate data from MariaDB Master to MariaDB ColumnStore. It acts as a CDC Client for MaxScale and uses the events received from MaxScale as input to MariaDB ColumnStore Bulk Data API to push the data to MariaDB ColumnStore.![maxscale-cdc-adapter](../../.gitbook/assets/maxscale-cdc-adapter.jpg)\
 It registers with MariaDB MaxScale as a CDC Client using the [MaxScale CDC Connector API](https://mariadb.com/downloads/mariadb-ax/connector), receiving change data records from MariaDB MaxScale (that are converted from binlog events received from the Master on MariaDB TX) in a JSON format. Then, using the MariaDB ColumnStore bulk write SDK, converts the JSON data into API calls and streams it to a MariaDB PM node. The adapter has options to insert all the events in the same schema as the source database table or insert each event with metadata as well as table data. The event meta data includes the event timestamp, the GTID, event sequence and event type (insert, update, delete).
 
 ### Installation
@@ -133,7 +133,7 @@ The `-c` flag is optional if you are running the adapter on the server where Col
 
 ## Kafka to ColumnStore Adapter
 
-The Kafka data adapter streams all messages published to Apache Kafka topics in Avro format to MariaDB AX automatically and continuously - enabling data from many sources to be streamed and collected for analysis without complex code. The Kafka adapter is built using [librdkafka](https://cwiki.apache.org/confluence/display/KAFKA/Clients#Clients-C/C++) and the MariaDB ColumnStore bulk write SDK![kafka-data-adapter](../../.gitbook/assets/columnstore-streaming-data-adapters/+image/kafka-data-adapter.jpg)
+The Kafka data adapter streams all messages published to Apache Kafka topics in Avro format to MariaDB AX automatically and continuously - enabling data from many sources to be streamed and collected for analysis without complex code. The Kafka adapter is built using [librdkafka](https://cwiki.apache.org/confluence/display/KAFKA/Clients#Clients-C/C++) and the MariaDB ColumnStore bulk write SDK![kafka-data-adapter](../../.gitbook/assets/kafka-data-adapter.jpg)
 
 A tutorial for the Kafka adapter for ingesting Avro formatted data can be found in the [kafka-to-columnstore-data-adapter](columnstore-streaming-data-adapters.md#kafka-to-columnstore-adapter) document.
 
@@ -141,7 +141,7 @@ A tutorial for the Kafka adapter for ingesting Avro formatted data can be found 
 
 Starting with MariaDB ColumnStore 1.1.4, a data adapter for Pentaho Data Integration (PDI) / Kettle is available to import data directly into ColumnStore’s WriteEngine. It is built on MariaDB’s rapid-paced Bulk Write SDK.
 
-![PDI Plugin Block info graphic](../../.gitbook/assets/columnstore-streaming-data-adapters/+image/cs_pdi_diagram.png)
+![PDI Plugin Block info graphic](../../.gitbook/assets/cs_pdi_diagram.png)
 
 ### Compatibility notice
 
@@ -189,7 +189,7 @@ Each MariaDB ColumnStore Bulk Loader block needs to be configured. On the one ha
 
 Both configurations can be set in each block’s settings tab.
 
-![PDI Plugin Block settings info graphic](../../.gitbook/assets/columnstore-streaming-data-adapters/+image/cs_pdi_block_settings.png)
+![PDI Plugin Block settings info graphic](../../.gitbook/assets/cs_pdi_block_settings.png)
 
 The database connection configuration follows PDI’s default schema.
 
@@ -199,7 +199,7 @@ Information on how to prepare the _Columnstore.xml_ configuration file can be fo
 
 ### Usage
 
-![PDI Plugin Block mapping info graphic](../../.gitbook/assets/columnstore-streaming-data-adapters/+image/cs_pdi_block_mapping.png)
+![PDI Plugin Block mapping info graphic](../../.gitbook/assets/cs_pdi_block_mapping.png)
 
 Once a block is configured and all inputs are connected in PDI, the inputs have to be mapped to ColumnStore’s table format.
 

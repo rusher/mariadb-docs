@@ -8,17 +8,17 @@ MariaDB Enterprise ColumnStore supports backup and restore. If Enterprise Column
 
 MariaDB Enterprise ColumnStore supports multiple [storage options](../../architecture/columnstore-storage-architecture.md#storage-options).
 
-This page discusses how to backup and restore Enterprise ColumnStore when it uses [shared local storage](../../column-store-backup-and-restore/mariadb-enterprise-columnstore-storage-architecture/#shared-local-storage) (such as NFS) for the [DB Root directories](../../column-store-backup-and-restore/mariadb-enterprise-columnstore-storage-architecture/#db-root-directories).
+This page discusses how to backup and restore Enterprise ColumnStore when it uses [shared local storage](https://github.com/mariadb-corporation/docs-server/blob/test/columnstore/column-store-backup-and-restore/mariadb-enterprise-columnstore-storage-architecture/README.md#shared-local-storage) (such as NFS) for the [DB Root directories](https://github.com/mariadb-corporation/docs-server/blob/test/columnstore/column-store-backup-and-restore/mariadb-enterprise-columnstore-storage-architecture/README.md#db-root-directories).
 
 Any file can become corrupt due to hardware issues, crashes, power loss, and other reasons. If the Enterprise ColumnStore data or metadata were to become corrupt, Enterprise ColumnStore could become unusable, and data loss could occur.
 
 If Enterprise ColumnStore is your [system of record](backup-and-restore-with-mariadb-enterprise-columnstore.md#system-of-record), it should be backed up regularly.
 
-If Enterprise ColumnStore uses [shared local storage](../../column-store-backup-and-restore/mariadb-enterprise-columnstore-storage-architecture/#shared-local-storage) for the [DB Root directories](../../column-store-backup-and-restore/mariadb-enterprise-columnstore-storage-architecture/#db-root-directories), the following items must be backed up:
+If Enterprise ColumnStore uses [shared local storage](https://github.com/mariadb-corporation/docs-server/blob/test/columnstore/column-store-backup-and-restore/mariadb-enterprise-columnstore-storage-architecture/README.md#shared-local-storage) for the [DB Root directories](https://github.com/mariadb-corporation/docs-server/blob/test/columnstore/column-store-backup-and-restore/mariadb-enterprise-columnstore-storage-architecture/README.md#db-root-directories), the following items must be backed up:
 
 * The MariaDB Data directory is backed up using [MariaDB Backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariabackup)
-* The [Storage Manager directory](../../column-store-backup-and-restore/mariadb-enterprise-columnstore-storage-architecture/#storage-manager-directory) must be backed up
-* Each [DB Root directories](../../column-store-backup-and-restore/mariadb-enterprise-columnstore-storage-architecture/#db-root-directories) must be backed up
+* The [Storage Manager directory](https://github.com/mariadb-corporation/docs-server/blob/test/columnstore/column-store-backup-and-restore/mariadb-enterprise-columnstore-storage-architecture/README.md#storage-manager-directory) must be backed up
+* Each [DB Root directories](https://github.com/mariadb-corporation/docs-server/blob/test/columnstore/column-store-backup-and-restore/mariadb-enterprise-columnstore-storage-architecture/README.md#db-root-directories) must be backed up
 
 See the instructions below for more details.
 
@@ -98,7 +98,7 @@ FLUSH TABLES WITH READ LOCK;
 
 Ensure that the client remains connected to the primary server, so that the lock is held for the remaining steps.
 
-4. Make a copy or snapshot of the [Storage Manager directory](../../column-store-backup-and-restore/mariadb-enterprise-columnstore-storage-architecture/#storage-manager-directory). By default, it is located at `/var/lib/columnstore/storagemanager`.
+4. Make a copy or snapshot of the [Storage Manager directory](https://github.com/mariadb-corporation/docs-server/blob/test/columnstore/column-store-backup-and-restore/mariadb-enterprise-columnstore-storage-architecture/README.md#storage-manager-directory). By default, it is located at `/var/lib/columnstore/storagemanager`.
 
 For example, to make a copy of the directory with rsync:
 
@@ -107,7 +107,7 @@ $ sudo mkdir -p /backups/columnstore/202101291600/
 $ sudo rsync -av /var/lib/columnstore/storagemanager /backups/columnstore/202101291600/
 ```
 
-5. Make a copy or snapshot of the [DB Root directories](../../column-store-backup-and-restore/mariadb-enterprise-columnstore-storage-architecture/#db-root-directories). By default, they are located at `/var/lib/columnstore/dataN`, where the N in dataN represents a range of integers that starts at 1 and stops at the number of nodes in the deployment.
+5. Make a copy or snapshot of the [DB Root directories](https://github.com/mariadb-corporation/docs-server/blob/test/columnstore/column-store-backup-and-restore/mariadb-enterprise-columnstore-storage-architecture/README.md#db-root-directories). By default, they are located at `/var/lib/columnstore/dataN`, where the N in dataN represents a range of integers that starts at 1 and stops at the number of nodes in the deployment.
 
 For example, to make a copy of the directories with rsync in a 3-node deployment:
 
@@ -117,7 +117,7 @@ $ sudo rsync -av /var/lib/columnstore/data2 /backups/columnstore/202101291600/
 $ sudo rsync -av /var/lib/columnstore/data3 /backups/columnstore/202101291600/
 ```
 
-6. Use [MariaDB Backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariabackup) to backup the [Storage Manager directory](../../column-store-backup-and-restore/mariadb-enterprise-columnstore-storage-architecture/#storage-manager-directory):
+6. Use [MariaDB Backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariabackup) to backup the [Storage Manager directory](https://github.com/mariadb-corporation/docs-server/blob/test/columnstore/column-store-backup-and-restore/mariadb-enterprise-columnstore-storage-architecture/README.md#storage-manager-directory):
 
 ```
 $ sudo mkdir -p /backups/mariadb/202101291600/
@@ -154,7 +154,7 @@ $ sudo systemctl stop mariadb-columnstore
 $ sudo systemctl stop mariadb
 ```
 
-3. Restore the backup of the [Storage Manager directory](../../column-store-backup-and-restore/mariadb-enterprise-columnstore-storage-architecture/#storage-manager-directory). By default, it is located at `/var/lib/columnstore/storagemanager`.
+3. Restore the backup of the [Storage Manager directory](https://github.com/mariadb-corporation/docs-server/blob/test/columnstore/column-store-backup-and-restore/mariadb-enterprise-columnstore-storage-architecture/README.md#storage-manager-directory). By default, it is located at `/var/lib/columnstore/storagemanager`.
 
 For example, to restore the backup with rsync:
 

@@ -27,7 +27,7 @@ You can load data using the [LOAD DATA INFILE](https://app.gitbook.com/s/SsmexDF
 
 ## Batch Insert Mode
 
-![ECStoreDataLoadingS3FlowChart](../../.gitbook/assets/mariadb-enterprise-columnstore-data-loading-with-load-data-infile/+image/ecstoredataloadings3flowchart.png)
+![ECStoreDataLoadingS3FlowChart](<../../.gitbook/assets/ecstoredataloadings3flowchart (1).png>)
 
 MariaDB Enterprise ColumnStore enables batch insert mode by default.
 
@@ -142,7 +142,7 @@ $ mariadb --host 192.168.0.1 \
       --local-infile
 ```
 
-If you are using [MariaDB Connector/C](../../../en/about-mariadb-connector-c/), the `MYSQL_OPT_LOCAL_INFILE` option can be set with the `mysql_optionsv()` function:
+If you are using [MariaDB Connector/C](https://github.com/mariadb-corporation/docs-server/blob/test/en/about-mariadb-connector-c/README.md), the `MYSQL_OPT_LOCAL_INFILE` option can be set with the `mysql_optionsv()` function:
 
 ```
 /* enable local infile */
@@ -150,13 +150,13 @@ unsigned int enable_local_infile = 1;
 mysql_optionsv(mysql, MYSQL_OPT_LOCAL_INFILE, (void *) &enable_local_infile);
 ```
 
-If you are using [MariaDB Connector/J](../../../en/about-mariadb-connector-j/), the `allowLocalInfile` parameter can be set for the connection:
+If you are using [MariaDB Connector/J](https://github.com/mariadb-corporation/docs-server/blob/test/en/about-mariadb-connector-j/README.md), the `allowLocalInfile` parameter can be set for the connection:
 
 ```
 Connection connection = DriverManager.getConnection("jdbc:mariadb://192.168.0.1/test?user=test_user&password=myPassword&allowLocalInfile=true");
 ```
 
-If you are using [MariaDB Connector/Node.js](../../../en/about-mariadb-connector-nodejs/), the `permitLocalInfile` parameter can be set for the connection:
+If you are using [MariaDB Connector/Node.js](https://github.com/mariadb-corporation/docs-server/blob/test/en/about-mariadb-connector-nodejs/README.md), the `permitLocalInfile` parameter can be set for the connection:
 
 ```
 mariadb.createConnection({
@@ -167,7 +167,7 @@ mariadb.createConnection({
  });
 ```
 
-If you are using [MariaDB Connector/Python](../../../en/mariadb-connector-python/), the `local_infile` parameter can be set for the connection:
+If you are using [MariaDB Connector/Python](https://github.com/mariadb-corporation/docs-server/blob/test/en/mariadb-connector-python/README.md), the `local_infile` parameter can be set for the connection:
 
 ```
 conn = mariadb.connect(
