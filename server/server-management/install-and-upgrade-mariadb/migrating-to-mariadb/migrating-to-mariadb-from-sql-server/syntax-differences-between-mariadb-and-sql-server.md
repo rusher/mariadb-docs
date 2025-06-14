@@ -1,5 +1,7 @@
 # Syntax Differences between MariaDB and SQL Server
 
+{% include "https://app.gitbook.com/s/GxVnu02ec8KJuFSxmB93/~/reusable/UQS8KgfG8jtpHBvT83fL/" %}
+
 This article contains a non-exhaustive list of syntax differences between MariaDB and SQL Server, and is written for SQL Server users that are unfamiliar with MariaDB.
 
 ## Compatibility Features

@@ -1,5 +1,7 @@
 # Moving Data Between SQL Server and MariaDB
 
+{% include "https://app.gitbook.com/s/GxVnu02ec8KJuFSxmB93/~/reusable/UQS8KgfG8jtpHBvT83fL/" %}
+
 There are several ways to move data between SQL Server and MariaDB. Here we will discuss them and we will highlight some caveats.
 
 ## Moving Data Definition from SQL Server to MariaDB

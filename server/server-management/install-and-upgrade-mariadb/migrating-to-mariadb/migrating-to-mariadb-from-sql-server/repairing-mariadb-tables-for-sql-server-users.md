@@ -1,5 +1,7 @@
 # Repairing MariaDB Tables for SQL Server Users
 
+{% include "https://app.gitbook.com/s/GxVnu02ec8KJuFSxmB93/~/reusable/UQS8KgfG8jtpHBvT83fL/" %}
+
 Repairing tables in MariaDB is not similar to repairing tables in SQL Server.
 
 The first thing to understand is that every MariaDB table is handled by a [storage engine](understanding-mariadb-architecture.md#storage-engines). Storage engines are plugins that know how to physically read and write a table, so each storage engine allows one to repair tables in different ways. The default storage engine is [InnoDB](../../../../server-usage/storage-engines/innodb/).

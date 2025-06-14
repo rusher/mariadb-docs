@@ -1,5 +1,7 @@
 # MariaDB Transactions and Isolation Levels for SQL Server Users
 
+{% include "https://app.gitbook.com/s/GxVnu02ec8KJuFSxmB93/~/reusable/UQS8KgfG8jtpHBvT83fL/" %}
+
 This page explains how transactions work in MariaDB, and highlights the main differences between MariaDB and SQL Server transactions.
 
 Note that XA transactions are handled in a completely different way and are not covered in this page. See [XA Transactions](../../../../reference/sql-statements/transactions/xa-transactions.md).

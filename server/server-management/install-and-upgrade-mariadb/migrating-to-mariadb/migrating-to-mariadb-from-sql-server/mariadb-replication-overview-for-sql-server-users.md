@@ -1,5 +1,7 @@
 # MariaDB Replication Overview for SQL Server Users
 
+{% include "https://app.gitbook.com/s/GxVnu02ec8KJuFSxmB93/~/reusable/UQS8KgfG8jtpHBvT83fL/" %}
+
 MariaDB supports the following types of replication:
 
 * Asynchronous replication.

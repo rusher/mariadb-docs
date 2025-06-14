@@ -1,5 +1,7 @@
 # Upgrading from MySQL to MariaDB
 
+{% include "https://app.gitbook.com/s/GxVnu02ec8KJuFSxmB93/~/reusable/tWsl3iOmmAdATPgw6nAL/" %}
+
 For [all practical purposes](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-management/install-and-upgrade-mariadb/migrating-to-mariadb/moving-from-mysql/broken-reference/README.md), you can view MariaDB as an upgrade of MySQL:
 
 * Before upgrading, please [check if there are any known incompatibilities](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-management/install-and-upgrade-mariadb/migrating-to-mariadb/moving-from-mysql/broken-reference/README.md) between your MySQL release and the MariaDB release you want to move to.
