@@ -1,5 +1,7 @@
 # MaxScale 25.01 Contents
 
+{% include "https://app.gitbook.com/s/GxVnu02ec8KJuFSxmB93/~/reusable/DobjxO0sqF3MWCEIIL8Z/" %}
+
 ## Contents
 
 ### About MariaDB MaxScale
