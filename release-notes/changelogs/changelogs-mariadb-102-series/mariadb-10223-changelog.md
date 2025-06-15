@@ -2,11 +2,11 @@
 
 The most recent release of [MariaDB 10.2](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102.md) is:[**MariaDB 10.2.44**](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-10244-release-notes.md) Stable (GA) [Download Now](https://downloads.mariadb.org/mariadb/10.2.44/)
 
-[Download](https://downloads.mariadb.org/mariadb/10.2.23)[Release Notes](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-10223-release-notes.md)[Changelog](mariadb-10223-changelog.md)[Overview of 10.2](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102.md)
+[Download](https://downloads.mariadb.org/mariadb/10.2.23)[Release Notes](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-1023-release-notes/mariadb-10223-release-notes.md)[Changelog](mariadb-10223-changelog.md)[Overview of 10.2](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102.md)
 
 **Release date:** 25 Mar 2019
 
-For the highlights of this release, see the[release notes](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-10223-release-notes.md).
+For the highlights of this release, see the[release notes](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-1023-release-notes/mariadb-10223-release-notes.md).
 
 The revision number links will take you to the revision's page on GitHub. On[GitHub](https://github.com/MariaDB/server/tree/10.2)\
 you can view more details of the revision and view diffs of the code modified\
@@ -456,9 +456,9 @@ in that revision.
   * [MDEV-18669](https://jira.mariadb.org/browse/MDEV-18669) mariabackup writes timestamp in version line
 * Merge [Revision #91d506cf2d](https://github.com/MariaDB/server/commit/91d506cf2d) 2019-02-19 16:47:45 +0100 - Merge branch '10.1' into 10.2
 * [Revision #431da59f1c](https://github.com/MariaDB/server/commit/431da59f1c)\
-  2019-02-19 16:09:46 +0100
-  *
-    1. centos has symlinks /bin->usr/bin and /sbin -> usr/sbin, but even if this script called as /bin/mysql\_install\_db it is still standard install and scripts are in /usr/share/ (but not in the /share/) 2. fix of bindir path
+  2019-02-19 16:09:46 +0100\
+  \*
+  1. centos has symlinks /bin->usr/bin and /sbin -> usr/sbin, but even if this script called as /bin/mysql\_install\_db it is still standard install and scripts are in /usr/share/ (but not in the /share/) 2. fix of bindir path
 * [Revision #2de0b57dd1](https://github.com/MariaDB/server/commit/2de0b57dd1)\
   2019-02-18 11:12:52 +0100
   * Don't build aws\_key\_management plugin by default
