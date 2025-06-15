@@ -1,5 +1,7 @@
 # MaxScale Database Proxy
 
+{% include "https://app.gitbook.com/s/GxVnu02ec8KJuFSxmB93/~/reusable/DobjxO0sqF3MWCEIIL8Z/" %}
+
 MaxScale is a sophisticated database proxy, router, and load balancer designed specifically for and by MariaDB. It provides a range of features that ensure optimal high availability:
 
 * Query-based routing: Transparently route write queries to the primary nodes and read queries to the replica nodes.
