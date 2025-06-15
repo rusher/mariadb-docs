@@ -2,11 +2,11 @@
 
 The most recent release of [MariaDB 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/changelogs/changelogs-mariadb-10-4-series/broken-reference/README.md) is:[**MariaDB 10.4.34**](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-10-4-34-release-notes.md) Stable (GA) [Download Now](https://downloads.mariadb.org/mariadb/10.4.34/)
 
-[Download 10.4.32](https://downloads.mariadb.org/mariadb/10.4.32/)[Release Notes](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-10-4-32-release-notes.md)[Changelog](mariadb-10-4-32-changelog.md)[Overview of 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/changelogs/changelogs-mariadb-10-4-series/broken-reference/README.md)
+[Download 10.4.32](https://downloads.mariadb.org/mariadb/10.4.32/)[Release Notes](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-10-4-33-release-notes/mariadb-10-4-32-release-notes.md)[Changelog](mariadb-10-4-32-changelog.md)[Overview of 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/changelogs/changelogs-mariadb-10-4-series/broken-reference/README.md)
 
 **Release date:** 13 Nov 2023
 
-For the highlights of this release, see the[release notes](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-10-4-32-release-notes.md).
+For the highlights of this release, see the[release notes](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-10-4-33-release-notes/mariadb-10-4-32-release-notes.md).
 
 The revision number links will take you to the revision's page on GitHub. On[GitHub](https://github.com/MariaDB/server/tree/10.4) you can view more\
 details of the revision and view diffs of the code modified in that revision.
