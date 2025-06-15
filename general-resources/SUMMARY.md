@@ -1583,5 +1583,5 @@
 * [Support](support.md)
 * [Tutorials](tutorials.md)
 * [Videos](videos.md)
-* [Whitepapers](whitepapers.md)
+* [White Papers](whitepapers.md)
 * [Distributions Including MariaDB](distributions-including-mariadb.md)
