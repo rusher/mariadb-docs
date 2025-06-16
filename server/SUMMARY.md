@@ -271,7 +271,7 @@
       * [MyRocks Performance Troubleshooting](server-usage/storage-engines/myrocks/myrocks-performance-troubleshooting.md)
       * [Optimizer Statistics in MyRocks](server-usage/storage-engines/myrocks/optimizer-statistics-in-myrocks.md)
       * [MyRocks Transactional Isolation](server-usage/storage-engines/myrocks/myrocks-transactional-isolation.md)
-      * [Status Variables](server-usage/storage-engines/myrocks/myrocks-status-variables.md)
+      * [MyRocks Status Variables](server-usage/storage-engines/myrocks/myrocks-status-variables.md)
       * [System Variables](server-usage/storage-engines/myrocks/myrocks-system-variables.md)
     * [OQGRAPH](server-usage/storage-engines/oqgraph-storage-engine/README.md)
       * [OQGRAPH Overview](server-usage/storage-engines/oqgraph-storage-engine/oqgraph-overview.md)
