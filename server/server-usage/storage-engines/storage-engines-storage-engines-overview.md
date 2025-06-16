@@ -2,9 +2,9 @@
 
 ## Overview
 
-[MariaDB Enterprise Server](https://github.com/mariadb-corporation/docs-server/blob/test/en/mariadb-enterprise-server/README.md) features pluggable storage engines to allow per-table workload optimization.
+MariaDB features pluggable storage engines to allow per-table workload optimization.
 
-A storage engine is a type of [plugin](../../reference/plugins/) for [MariaDB Enterprise Server](https://github.com/mariadb-corporation/docs-server/blob/test/en/mariadb-enterprise-server/README.md):
+A storage engine is a type of [plugin](../../reference/plugins/) for MariaDB:
 
 * Different storage engines may be optimized for different workloads, such as transactional workloads, analytical workloads, or high throughput workloads.
 * Different storage engines may be designed for different use cases, such as federated table access, table sharding, and table archiving in the cloud.
@@ -114,7 +114,7 @@ Standard MariaDB storage engines are used for System Table storage:
 ### Can I use more than one storage engine in a single query?
 
 * Yes, a single query can reference tables that use multiple storage engines.
-* In some cases, special configuration may be required. For example, Enterprise ColumnStore requires cross engine joins to be configured.
+* In some cases, special configuration may be required. For example, ColumnStore requires cross engine joins to be configured.
 
 ### What storage engine should I use for transactional or OLTP workloads?
 
@@ -128,7 +128,7 @@ Standard MariaDB storage engines are used for System Table storage:
 
 An application that performs both transactional and analytical queries is known as [hybrid transactional-analytical processing (HTAP)](https://mariadb.com/kb/en/deploy-htap-topology/).
 
-HTAP can be implemented with MariaDB Enterprise Server by using [InnoDB](innodb/) for transactional queries and [ColumnStore](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/columnstore) for analytical queries.
+HTAP can be implemented with MariaDB by using [InnoDB](innodb/) for transactional queries and [ColumnStore](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/columnstore) for analytical queries.
 
 ## Reference
 
