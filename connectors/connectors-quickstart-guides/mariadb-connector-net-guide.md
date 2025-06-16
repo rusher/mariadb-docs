@@ -1,6 +1,5 @@
 ---
 description: Quickstart guide for MysqlConnector for ADO.NET
-icon: rabbit
 ---
 
 # MariaDB Connector/NET Guide

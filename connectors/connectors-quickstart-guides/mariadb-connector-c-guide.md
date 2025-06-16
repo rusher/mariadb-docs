@@ -1,12 +1,6 @@
 ---
 description: Quickstart Guide for Connector/C
-icon: rabbit-running
-cover: ../.gitbook/assets/Group 15568.png
-coverY: 0
 layout:
-  cover:
-    visible: true
-    size: hero
   title:
     visible: true
   description:

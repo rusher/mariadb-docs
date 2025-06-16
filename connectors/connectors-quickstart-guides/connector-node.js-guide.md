@@ -1,6 +1,5 @@
 ---
 description: Quickstart guide for MariaDB Connector/Node.js
-icon: rabbit
 ---
 
 # Connector/Node.js Guide
