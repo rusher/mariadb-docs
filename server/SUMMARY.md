@@ -166,7 +166,7 @@
         * [CONNECT Zipped File Tables](server-usage/storage-engines/connect/connect-table-types/connect-zipped-file-tables.md)
         * [Inward and Outward Tables](server-usage/storage-engines/connect/connect-table-types/inward-and-outward-tables.md)
       * [Security](server-usage/storage-engines/connect/connect-security.md)
-      * [System Variables](server-usage/storage-engines/connect/connect-system-variables.md)
+      * [Connect System Variables](server-usage/storage-engines/connect/connect-system-variables.md)
       * [Adding the REST Feature as a Library Called by an OEM Table](server-usage/storage-engines/connect/connect-adding-the-rest-feature-as-a-library-called-by-an-oem-table.md)
       * [Compiling JSON UDFs in a Separate Library](server-usage/storage-engines/connect/connect-compiling-json-udfs-in-a-separate-library.md)
       * [Making the GetRest Library](server-usage/storage-engines/connect/connect-making-the-getrest-library.md)
