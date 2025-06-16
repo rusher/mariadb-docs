@@ -1,8 +1,10 @@
 # Security Vulnerabilities Fixed in MariaDB
 
-This page is about security vulnerabilities fixed in MariaDB. If you are\
-looking for information on securing your MariaDB installation, see[Securing MariaDB](./).\
-Sensitive security issues can be reported on [mariadb](https://hackerone.com/mariadb) or sent directly to the persons responsible for MariaDB security: security \[AT] mariadb (dot) org.
+{% hint style="info" %}
+This page is about security vulnerabilities fixed in MariaDB. If you are looking for information on securing your MariaDB installation, see [Securing MariaDB](./).
+
+Sensitive security issues can be reported on [https://hackerone.com/mariadb](https://hackerone.com/mariadb) or sent directly to the persons responsible for MariaDB security: security \[AT] mariadb (dot) org.
+{% endhint %}
 
 ## About CVEs
 
