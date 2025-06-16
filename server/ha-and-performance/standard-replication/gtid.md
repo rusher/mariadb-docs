@@ -36,8 +36,7 @@ is replicated from primary server to replica server, the global transaction ID i
 preserved. The GTID is globally unique across an entire group of servers,\
 making it easy to uniquely identify the same binlog events on different\
 servers that replicate each other. GTIDs are generated for all event groups,\
-independent of[binlog\_format](replication-and-binary-log-system-variables.md#binlog_format)\
-(i.e. `ROW`, `STATEMENT`, and`MIXED` formats are all supported).
+independent of [binlog\_format](replication-and-binary-log-system-variables.md#binlog_format) (i.e. `ROW`, `STATEMENT`, and`MIXED` formats are all supported).
 
 ## Benefits
 
