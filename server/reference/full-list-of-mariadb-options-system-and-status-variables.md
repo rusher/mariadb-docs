@@ -4,6 +4,13 @@
 
 Alphabetical list of all [mariadbd Options](../server-management/starting-and-stopping-mariadb/mariadbd-options.md), [Server System Variables](../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md) and [Server Status Variables](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md). The convention used is that variable names are listed with '\_' and options with '-'.
 
+[-a (--ansii)](../server-management/starting-and-stopping-mariadb/mariadbd-options.md#a-ansi)
+[--abort-slave-event-count](../server-management/starting-and-stopping-mariadb/mariadbd-options.md#abort-slave-event-count)
+[Aborted\_clients](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#aborted_clients)
+
+* [Aborted\_connects](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#aborted_connects)
+* [Aborted\_connects\_preauth](../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#aborted_connects)
+
 | Name                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [-a (--ansii)](../server-management/starting-and-stopping-mariadb/mariadbd-options.md#a-ansi)                                                                                                                                                                                                                                                                                                                                                                                                |
