@@ -281,7 +281,7 @@
       * [OQGRAPH Examples](server-usage/storage-engines/oqgraph-storage-engine/oqgraph-examples.md)
     * [S3 Storage Engine](server-usage/storage-engines/s3-storage-engine/README.md)
       * [Using the S3 Storage Engine](server-usage/storage-engines/s3-storage-engine/using-the-s3-storage-engine.md)
-      * [Status Variables](server-usage/storage-engines/s3-storage-engine/s3-storage-engine-status-variables.md)
+      * [S3 Status Variables](server-usage/storage-engines/s3-storage-engine/s3-storage-engine-status-variables.md)
       * [System Variables](server-usage/storage-engines/s3-storage-engine/s3-storage-engine-system-variables.md)
       * [Engine Internals](server-usage/storage-engines/s3-storage-engine/s3-storage-engine-internals.md)
       * [Testing Connections](server-usage/storage-engines/s3-storage-engine/testing-the-connections-to-s3.md)
