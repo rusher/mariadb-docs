@@ -26,7 +26,7 @@ Issuing a [FLUSH STATUS](../../../reference/sql-statements/administrative-sql-st
 
 #### `Aborted_clients`
 
-* Description: Number of aborted client connections. This can be due to the client not calling mysql\_close() before exiting, the client sleeping without issuing a request to the server for more seconds than specified by [wait\_timeout](server-system-variables.md#wait_timeout) or [interactive\_timeout](server-system-variables.md#interactive_timeout), or by the client program ending in the midst of transferring data. The global value can be flushed by `[FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md)`.
+* Description: Number of aborted client connections. This can be due to the client not calling mysql\_close() before exiting, the client sleeping without issuing a request to the server for more seconds than specified by [wait\_timeout](server-system-variables.md#wait_timeout) or [interactive\_timeout](server-system-variables.md#interactive_timeout), or by the client program ending in the midst of transferring data. The global value can be flushed by [FLUSH STATUS](../../../reference/sql-statements/administrative-sql-statements/flush-commands/flush.md#flush-status).
 * Scope: Global
 * Data Type: `numeric`
 
