@@ -32,7 +32,7 @@ Issuing a [FLUSH STATUS](../../../reference/sql-statements/administrative-sql-st
 
 #### `Aborted_connects`
 
-* Description: Number of failed server connection attempts. This can be due to a client using an incorrect password, a client not having privileges to connect to a database, a connection packet not containing the correct information, or if it takes more than [connect\_timeout](server-system-variables.md#connect_timeout) seconds to get a connect packet. The global value can be flushed by `[FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md)`.
+* Description: Number of failed server connection attempts. This can be due to a client using an incorrect password, a client not having privileges to connect to a database, a connection packet not containing the correct information, or if it takes more than [connect\_timeout](server-system-variables.md#connect_timeout) seconds to get a connect packet. The global value can be flushed by [FLUSH STATUS](../../../reference/sql-statements/administrative-sql-statements/flush-commands/flush.md#flush-status).
 * Scope: Global
 * Data Type: `numeric`
 
