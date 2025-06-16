@@ -1,5 +1,4 @@
 ---
-description: Discuss with Max
 hidden: true
 icon: question
 ---

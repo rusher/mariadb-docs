@@ -1,5 +1,4 @@
 ---
-description: Discuss with Max - is this page up to date? Should we mention developer names?
 hidden: true
 icon: question
 ---
