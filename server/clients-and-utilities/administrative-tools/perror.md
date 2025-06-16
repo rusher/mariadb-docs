@@ -2,7 +2,7 @@
 
 _perror_ is a utility that displays descriptions for system or storage engine error codes.
 
-See [MariaDB Error Codes](https://github.com/mariadb-corporation/docs-server/blob/test/server/clients-and-utilities/administrative-tools/broken-reference/README.md) for a full list of MariaDB error codes, and [Operating System Error Codes](https://github.com/mariadb-corporation/docs-server/blob/test/server/clients-and-utilities/administrative-tools/broken-reference/README.md) for a list of Linux and Windows error codes.
+See [MariaDB Error Codes](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/development-articles/mariadb-internals/using-mariadb-with-your-programs-api/error-codes) for a full list of MariaDB error codes, and [Operating System Error Codes](https://github.com/mariadb-corporation/docs-server/blob/test/server/clients-and-utilities/administrative-tools/broken-reference/README.md) for a list of Linux and Windows error codes.
 
 ## Usage
 
