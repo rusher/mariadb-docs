@@ -61,7 +61,6 @@
 * [Contributing & Participating](community/contributing-participating/README.md)
   * [Contributing Code](community/contributing-participating/contributing-code.md)
   * [Contributing to the MariaDB Project](community/contributing-participating/contributing-to-the-mariadb-project.md)
-  * [Project Suggestions](community/contributing-participating/project-suggestions.md)
   * [MariaDB Public FTP Server](community/contributing-participating/mariadb-public-ftp-server.md)
   * [Sponsoring the MariaDB Project](community/contributing-participating/sponsoring-the-mariadb-project.md)
   * [Log of MariaDB Contributions](community/contributing-participating/log-of-mariadb-contributions.md)

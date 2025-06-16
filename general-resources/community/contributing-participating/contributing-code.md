@@ -19,7 +19,7 @@ to (in addition to any ideas you may have yourself).
 * Check the [development plans](https://github.com/mariadb-corporation/docs-server/blob/test/general-resources/community/contributing-participating/broken-reference/README.md) for the next MariaDB\
   version.
 * Join [maria-developers](https://lists.mariadb.org/postorius/lists/developers.lists.mariadb.org/) and ask for suggestions of tasks you could do. Please include your programming experience and your knowledge of the MariaDB source and how much you know about using MySQL/MariaDB with the email so that we know which tasks we can suggest to you.
-* If this is your first project, check out the[Suggested Development](project-suggestions.md) page. It lists\
+* If this is your first project, check out the[Suggested Development](broken-reference) page. It lists\
   projects that will make a good start.
 * Join MariaDB's Zulip instance at [mariadb.zulipchat.com](https://mariadb.zulipchat.com) and ask for suggestions.
 * Join #/maria on[IRC](https://github.com/mariadb-corporation/docs-server/blob/test/en/irc/README.md) and ask for suggestions.
