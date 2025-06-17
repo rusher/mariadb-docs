@@ -90,7 +90,7 @@ MariaDB Enterprise Server 10.6.22-18 was released on 11 Jun 2025.
 
 ## Changelog <a href="#changelog" id="changelog"></a>
 
-For the complete list of changes in this release, see the [changelog](https://mariadb.com/kb/en/changelog-for-mariadb-enterprise-server-10-6-22-18/).
+For the complete list of changes in this release, see the [changelog](changelog-for-mariadb-enterprise-server-10.6.22-18.md).
 
 ## Platforms <a href="#platforms" id="platforms"></a>
 

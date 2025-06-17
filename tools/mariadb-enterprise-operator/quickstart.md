@@ -47,7 +47,7 @@ spec:
     name: mariadb
     key: password
   imagePullSecrets:
-  -  name: mariadb-registry
+  -  name: mariadb-enterprise
   maxScaleRef:
     name: maxscale-galera
   username: mariadb
@@ -108,7 +108,7 @@ metadata:
   name: maxscale-galera
 spec:
   imagePullSecrets:
-   -  name: mariadb-registry
+   -  name: mariadb-enterprise
   mariaDbRef:
     name: mariadb-galera
   replicas: 2

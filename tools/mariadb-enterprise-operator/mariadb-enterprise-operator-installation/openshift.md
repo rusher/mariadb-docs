@@ -126,17 +126,17 @@ oc delete clusterserviceversion mariadb-enterprise-operator.v1.0.0
 
 As an alternative to create `Subscription` objects via the command line, you can install operators by using the OpenShift console. Go to the `Operators > OperatorHub` section and search by `mariadb enterprise`:
 
-![](../../.gitbook/assets/1.PNG)
+![](../../.gitbook/assets/certified-operator.png)
 
 Select `MariaDB Enterprise Operator`, click on install, and you will be able to create a `Subscription` object via the UI.
 
 Once deployed, the operator comes with example resources that can be deployed from the console directly. For instance, to create a `MariaDB`:
 
-![](../../.gitbook/assets/2.PNG)
+![](../../.gitbook/assets/openshift-console-form.png)
 
 As you can see in the previous screenshot, the form view that the OpenShift console offers is limited, we recommend using the YAML view:
 
-![](../../.gitbook/assets/3.PNG)
+![](../../.gitbook/assets/openshift-console-yaml.png)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
