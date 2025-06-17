@@ -41,9 +41,9 @@ general_log
 general_log_file=mariadb.log
 ```
 
-If it is a relative path, then the [general_log_file](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#general_log_file) is relative to the [datadir](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir) directory.
+If it is a relative path, then the [general_log_file](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#general_log_file) is relative to the [datadir](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#datadir) directory.
 
-However, the [general_log_file](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#general_log_file) system variable can also be an absolute path. For example:
+However, the [general_log_file](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#general_log_file) system variable can also be an absolute path. For example:
 
 ```
 [mariadb]
