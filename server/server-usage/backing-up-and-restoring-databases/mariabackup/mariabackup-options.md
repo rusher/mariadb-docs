@@ -450,11 +450,11 @@ $ mariabackup --backup \
 
 ### `--galera-info`
 
-Defines whether you want to back up information about a [Galera Cluster](../../../../kb/en/galera/) node's state.
+Defines whether you want to back up information about a [Galera Cluster](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/galera/README.md) node's state.
 
-When this option is used, Mariabackup creates an additional file called `[xtrabackup_galera_info](files-created-by-mariabackup.md#xtrabackup_galera_info)`, which records information about a [Galera Cluster](../../../../kb/en/galera/) node's state. It records the values of the `[wsrep_local_state_uuid](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-status-variables#wsrep_local_state_uuid)` and `[wsrep_last_committed](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-status-variables#wsrep_last_committed)` status variables.
+When this option is used, Mariabackup creates an additional file called `[xtrabackup_galera_info](files-created-by-mariabackup.md#xtrabackup_galera_info)`, which records information about a [Galera Cluster](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/galera/README.md) node's state. It records the values of the `[wsrep_local_state_uuid](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-status-variables#wsrep_local_state_uuid)` and `[wsrep_last_committed](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-status-variables#wsrep_last_committed)` status variables.
 
-You should only use this option when backing up a [Galera Cluster](../../../../kb/en/galera/) node. If the server is not a [Galera Cluster](../../../../kb/en/galera/) node, then this option has no effect.
+You should only use this option when backing up a [Galera Cluster](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/galera/README.md) node. If the server is not a [Galera Cluster](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/galera/README.md) node, then this option has no effect.
 
 This option, when enabled and used with [GTID replication](../../../ha-and-performance/standard-replication/gtid.md), will rotate the binary logs at backup time.
 
@@ -1321,7 +1321,7 @@ $ mariabackup --backup --skip-secure-auth
 
 Prints the binary log position and the name of the primary server.
 
-If the server is a [replica](broken-reference/), then this option causes Mariabackup to print the hostname of the replica's replication primary and the [binary log](../../../server-management/server-monitoring-logs/binary-log/) file and position of the [replica's SQL thread](../../../ha-and-performance/standard-replication/replication-threads.md#replica-sql-thread) to `stdout`.
+If the server is a [replica](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-usage/backing-up-and-restoring-databases/mariabackup/broken-reference/README.md), then this option causes Mariabackup to print the hostname of the replica's replication primary and the [binary log](../../../server-management/server-monitoring-logs/binary-log/) file and position of the [replica's SQL thread](../../../ha-and-performance/standard-replication/replication-threads.md#replica-sql-thread) to `stdout`.
 
 This option also causes Mariabackup to record this information as a [CHANGE MASTER](../../../reference/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) command that can be used to set up a new server as a replica of the original server's primary after the backup has been restored. This information will be written to to the [xtrabackup\_slave\_info](files-created-by-mariabackup.md#xtrabackup_slave_info) file.
 

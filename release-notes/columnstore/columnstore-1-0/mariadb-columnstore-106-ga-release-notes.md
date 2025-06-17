@@ -42,8 +42,8 @@ For general "how to questions" ask questions [here](https://app.gitbook.com/o/di
 
 Multi version upgrades are not supported, please upgrade versions prior to 1.0.4 before upgrading to 1.0.6:
 
-* [1.0.4 Beta to 1.0.6 upgrade procedure](broken-reference)
-* [1.0.5 RC to 1.0.6 upgrade procedure](broken-reference)
+* [1.0.4 Beta to 1.0.6 upgrade procedure](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/columnstore/columnstore-1-0/broken-reference/README.md)
+* [1.0.5 RC to 1.0.6 upgrade procedure](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/columnstore/columnstore-1-0/broken-reference/README.md)
 
 Upgrade from MariaDB ColumnStore Alpha versions 1.0.0 to 1.0.2 is not supported, please upgrade to version 1.0.4 or 1.0.5 prior to upgrading to 1.0.6.
 
@@ -78,7 +78,7 @@ RPM, Debian, and binary packages are provided for the Linux distributions suppor
 
 * The supported OS for the GA version are CentOS 6, CentOS 7, Debian 8.6, RedHat 6, RedHat 7, and Ubuntu 16.0.4.
 * Packages can be downloaded [here](https://mariadb.com/downloads/columnstore)
-* An Amazon AWS AMI Image is available for this release, please search for AMI name "MariaDB-ColumnStore-1.0.6". AMI specific installation instructions can be found [here](broken-reference).
+* An Amazon AWS AMI Image is available for this release, please search for AMI name "MariaDB-ColumnStore-1.0.6". AMI specific installation instructions can be found [here](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/columnstore/columnstore-1-0/broken-reference/README.md).
 * Instructions for setting up OS software repositories as the download mechanism will be published shortly.
 
 ## Source Code

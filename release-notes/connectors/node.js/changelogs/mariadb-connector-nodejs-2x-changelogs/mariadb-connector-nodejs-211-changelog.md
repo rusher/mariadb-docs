@@ -15,7 +15,7 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #0c0df1a](https://github.com/mariadb-corporation/mariadb-connector-j/commit/0c0df1a) - \[misc] test TLS minimum version change in order to test old mysql server with Node.js 12
 * [Revision #0f542cc](https://github.com/mariadb-corporation/mariadb-connector-j/commit/0f542cc) - \[misc] small performance improvement to avoid testing debug each packet
 * [Revision #74ceab5](https://github.com/mariadb-corporation/mariadb-connector-j/commit/74ceab5) - \[misc] force test TLSv1.1 compatibility if Node.js 12 and MySQL before version 8.0
-* [Revision #a9e11b1](https://github.com/mariadb-corporation/mariadb-connector-j/commit/a9e11b1) - \[misc] correcting SSL test that now can use TLSv1.3 protocol for [MariaDB 10.4](broken-reference)
+* [Revision #a9e11b1](https://github.com/mariadb-corporation/mariadb-connector-j/commit/a9e11b1) - \[misc] correcting SSL test that now can use TLSv1.3 protocol for [MariaDB 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/connectors/node.js/changelogs/mariadb-connector-nodejs-2x-changelogs/broken-reference/README.md)
 * [Revision #fbe82aa](https://github.com/mariadb-corporation/mariadb-connector-j/commit/fbe82aa) - \[misc] removing memory leak detection for node.js 12 until mem-watch compatibility
 * [Revision #6ae18cc](https://github.com/mariadb-corporation/mariadb-connector-j/commit/6ae18cc) - \[misc] removing node.js 6 from CI, ESLint 6 requiring 8 or newer
 * [Revision #4da0e5a](https://github.com/mariadb-corporation/mariadb-connector-j/commit/4da0e5a) - \[misc] CI testing replacing node.js v11 by supported LTS v12
@@ -46,7 +46,7 @@ details of the revision and view diffs of the code modified in that revision.
 Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
 
 MariaDB may already be included in your favorite OS distribution. More\
-information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/readme-1)\
+information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-including-mariadb)\
 page.
 
 {% @marketo/form formid="4316" formId="4316" %}

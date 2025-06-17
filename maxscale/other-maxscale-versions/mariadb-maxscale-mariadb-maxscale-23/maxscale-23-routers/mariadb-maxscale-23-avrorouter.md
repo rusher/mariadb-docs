@@ -10,7 +10,7 @@ These records can then consumed by the avrorouter directly from the binlog cache
 of the Binlog Server. This allows MariaDB MaxScale to automatically transform\
 binlog events on the master to local Avro format files.
 
-![](../../../.gitbook/assets/mariadb-corporation/MaxScale/2.3.20/Documentation/Routers/images/Binlog-Avro.png.png)
+![](<../../../.gitbook/assets/Binlog-Avro.png (11).png>)
 
 The avrorouter can also consume binary logs straight from the master. This will\
 remove the need to configure the Binlog Server but it will increase the disk space\
@@ -220,7 +220,7 @@ for more details about size type parameters and how to use them.
 
 ### Module commands
 
-Read [Module Commands](broken-reference) documentation for\
+Read [Module Commands](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/other-maxscale-versions/mariadb-maxscale-mariadb-maxscale-23/maxscale-23-routers/broken-reference/README.md) documentation for\
 details about module commands.
 
 The avrorouter supports the following module commands.
@@ -413,7 +413,7 @@ configuring the Avro C library.
 -DCMAKE_C_FLAGS=-fPIC -DCMAKE_CXX_FLAGS=-fPIC
 ```
 
-For more details about building MaxScale from source, please refer to the[Building MaxScale from Source Code](broken-reference)\
+For more details about building MaxScale from source, please refer to the[Building MaxScale from Source Code](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/other-maxscale-versions/mariadb-maxscale-mariadb-maxscale-23/maxscale-23-routers/broken-reference/README.md)\
 document.
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>

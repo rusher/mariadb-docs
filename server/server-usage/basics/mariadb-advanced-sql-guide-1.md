@@ -2,6 +2,8 @@
 
 This page is intended to be a quick reference of commonly-used and/or useful queries in MariaDB.
 
+{% include "https://app.gitbook.com/s/GxVnu02ec8KJuFSxmB93/~/reusable/G9gr3KMrlccJhmFh3SNT/" %}
+
 ## Creating a Table
 
 ```sql
@@ -307,6 +309,4 @@ SELECT * FROM t;
 +------+------
 ```
 
-<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
-
-{% @marketo/form formId="4316" %}
+CC BY-SA / Gnu FDL

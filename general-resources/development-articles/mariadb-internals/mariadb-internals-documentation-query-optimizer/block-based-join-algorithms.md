@@ -86,14 +86,14 @@ Then BKA join repeatedly calls the MRR function multi\_range\_read\_next. The fu
 
 Currently 4 different types of block-based join algorithms are supported. For a particular join operation each of them can be employed with a regular (flat) join buffer or with an incremental join buffer.
 
-Three optimizer switches - `join_cache_incremental`, `join_cache_hashed`, `join_cache_bka` – and the system variable [join\_cache\_level](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#join_cache_level) control which of the 8 variants of the block-based algorithms will be used for join operations.
+Three optimizer switches - `join_cache_incremental`, `join_cache_hashed`, `join_cache_bka` – and the system variable [join\_cache\_level](https://github.com/mariadb-corporation/docs-server/blob/test/general-resources/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#join_cache_level) control which of the 8 variants of the block-based algorithms will be used for join operations.
 
 If `join_cache_bka` is off then BKA and BKAH join algorithms are not allowed.\
 If `join_cache_hashed` is off then BNLH and BKAH join algorithms are not allowed.\
 If `join_cache_incremental` is off then no incremental variants of the block-based join algorithms are allowed.
 
 By default the switches `join_cache_incremental`, `join_cache_hashed`, `join_cache_bka` are set to 'on'.\
-However it does not mean that by default any of block-based join algorithms is allowed to be used. All of them are allowed only if the system variable [join\_cache\_level](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#join_cache_level) is set to 8. This variable can take an integer value in the interval from 0 to 8.
+However it does not mean that by default any of block-based join algorithms is allowed to be used. All of them are allowed only if the system variable [join\_cache\_level](https://github.com/mariadb-corporation/docs-server/blob/test/general-resources/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#join_cache_level) is set to 8. This variable can take an integer value in the interval from 0 to 8.
 
 If the value is set to 0 no block-based algorithm can be used for a join operation.\
 The values from 1 to 8 correspond to the following variants of block-based join algorithms :
@@ -107,11 +107,11 @@ The values from 1 to 8 correspond to the following variants of block-based join 
 * 7 – Flat BKAH
 * 8 – Incremental BKAH
 
-If the value of [join\_cache\_level](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#join_cache_level) is set to N, any of block-based algorithms with the level greater than N is disallowed.
+If the value of [join\_cache\_level](https://github.com/mariadb-corporation/docs-server/blob/test/general-resources/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#join_cache_level) is set to N, any of block-based algorithms with the level greater than N is disallowed.
 
-So if [join\_cache\_level](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#join_cache_level) is set to 5, no usage of BKAH is allowed and usage of incremental BKA is not allowed either while usage of all remaining variants are controlled by the settings of the optimizer switches `join_cache_incremental`, `join_cache_hashed`, `join_cache_bka`.
+So if [join\_cache\_level](https://github.com/mariadb-corporation/docs-server/blob/test/general-resources/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#join_cache_level) is set to 5, no usage of BKAH is allowed and usage of incremental BKA is not allowed either while usage of all remaining variants are controlled by the settings of the optimizer switches `join_cache_incremental`, `join_cache_hashed`, `join_cache_bka`.
 
-By default [join\_cache\_level](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#join_cache_level) is set to 2. In other words only usage of flat or incremental BNL is allowed.
+By default [join\_cache\_level](https://github.com/mariadb-corporation/docs-server/blob/test/general-resources/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#join_cache_level) is set to 2. In other words only usage of flat or incremental BNL is allowed.
 
 By default block-based algorithms can be used only for regular (inner) join operations. To allow them for outer join operations (left outer joins and right outer joins) the optimizer switch `outer_join_with_cache` has to be set to 'on'.\
 Setting the optimizer switch `semijoin_with_cache` to 'on' allows using these algorithms for semi-join operations.
@@ -120,13 +120,13 @@ Currently, only incremental variants of the block-based join algorithms can be u
 
 ### Size of Join Buffers
 
-The maximum size of join buffers used by block-based algorithms is controlled by setting the [join\_buffer\_size](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#join_buffer_size) system variable.\
+The maximum size of join buffers used by block-based algorithms is controlled by setting the [join\_buffer\_size](https://github.com/mariadb-corporation/docs-server/blob/test/general-resources/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#join_buffer_size) system variable.\
 This value must be large enough in order for the join buffer employed for a join operation to contain all relevant fields for at least one joined record.
 
-[MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3) introduced the system variable [join\_buffer\_space\_limit](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#join_buffer_space_limit) that limits the total memory used for join buffers in a query.
+[MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3) introduced the system variable [join\_buffer\_space\_limit](https://github.com/mariadb-corporation/docs-server/blob/test/general-resources/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#join_buffer_space_limit) that limits the total memory used for join buffers in a query.
 
-To optimize the usage of the join buffers within the limit set by `join_buffer_space_limit`, one should use the [optimizer switch](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#optimizer_switch) `optimize_join_buffer_size=on`.\
-When this flag is set to 'off' (default until [MariaDB 10.4.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-1042-release-notes)), the size of the used join buffer is taken directly from the [join\_buffer\_size](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#join_buffer_size) system variable.\
+To optimize the usage of the join buffers within the limit set by `join_buffer_space_limit`, one should use the [optimizer switch](https://github.com/mariadb-corporation/docs-server/blob/test/general-resources/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#optimizer_switch) `optimize_join_buffer_size=on`.\
+When this flag is set to 'off' (default until [MariaDB 10.4.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-1042-release-notes)), the size of the used join buffer is taken directly from the [join\_buffer\_size](https://github.com/mariadb-corporation/docs-server/blob/test/general-resources/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#join_buffer_size) system variable.\
 When this flag is set to 'on' (default from [MariaDB 10.4.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-4-series/mariadb-1043-release-notes)) then the size of the buffer depends on the estimated number of rows in the partial join whose records are to be stored in the buffer.
 
 ### Related MRR Settings

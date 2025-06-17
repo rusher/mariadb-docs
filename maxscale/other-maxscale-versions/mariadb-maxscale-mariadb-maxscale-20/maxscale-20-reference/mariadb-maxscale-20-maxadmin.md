@@ -37,7 +37,7 @@ There are two ways MaxAdmin can connect to to MaxScale.
 The first alternative is introduced in MaxScale 2.0 and is the secure and\
 recommended way. The second alternative is available for backward compatibility,\
 but is _insecure_ and **deprecated** and _will be removed in a future version of_\
-&#xNAN;_&#x4D;axScale_.
+\&#xNAN;_MaxScale_.
 
 An example configuration looks as follows:
 
@@ -500,15 +500,15 @@ MariaDB MaxScale maintains a number of status bits for each server that is confi
 
 The status bit that can be controlled are
 
-|             |                                                                                                                                                                                |
-| ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Bit Name    | Description                                                                                                                                                                    |
-| running     | The server is responding to requests, accepting connections and executing database commands                                                                                    |
-| master      | The server is a master in a replication setup or should be considered as a destination for database updates.                                                                   |
-| slave       | The server is a replication slave or is considered as a read only database.                                                                                                    |
-| synced      | The server is a fully fledged member of a Galera cluster                                                                                                                       |
-| maintenance | The server is in maintenance mode. In this mode no new connections will be established to the server. The monitors will also not monitor servers that are in maintenance mode. |
-| stale       | The server is a stale master server. Read [MySQL Monitor](../../../../kb/en/mariadb-maxscale-20-mysql-monitor/) documentation for more details.                                |
+|             |                                                                                                                                                                                                           |
+| ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Bit Name    | Description                                                                                                                                                                                               |
+| running     | The server is responding to requests, accepting connections and executing database commands                                                                                                               |
+| master      | The server is a master in a replication setup or should be considered as a destination for database updates.                                                                                              |
+| slave       | The server is a replication slave or is considered as a read only database.                                                                                                                               |
+| synced      | The server is a fully fledged member of a Galera cluster                                                                                                                                                  |
+| maintenance | The server is in maintenance mode. In this mode no new connections will be established to the server. The monitors will also not monitor servers that are in maintenance mode.                            |
+| stale       | The server is a stale master server. Read [MySQL Monitor](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/mariadb-maxscale-20-mysql-monitor/README.md) documentation for more details. |
 
 All status bits, with the exception of the maintenance bit, will be set by the monitors that are monitoring the server. If manual control is required the monitor should be stopped.
 

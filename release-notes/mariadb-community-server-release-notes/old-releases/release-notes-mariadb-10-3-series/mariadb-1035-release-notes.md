@@ -20,7 +20,7 @@ Thanks, and enjoy MariaDB!
 
 ## Notable Changes
 
-* The PL/SQL stored procedure dialect (enabled with [sql\_mode=ORACLE](broken-reference)) now supports Oracle style packages. Support for the following statements has been added ([MDEV-10591](https://jira.mariadb.org/browse/MDEV-10591)):
+* The PL/SQL stored procedure dialect (enabled with [sql\_mode=ORACLE](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/broken-reference/README.md)) now supports Oracle style packages. Support for the following statements has been added ([MDEV-10591](https://jira.mariadb.org/browse/MDEV-10591)):
   * [CREATE PACKAGE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/create/create-package)
   * [CREATE PACKAGE BODY](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/create/create-package-body)
   * [DROP PACKAGE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/drop/drop-package)
@@ -65,7 +65,7 @@ For a full list of contributors to [MariaDB 10.3.5](mariadb-1035-release-notes.m
 Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
 
 MariaDB may already be included in your favorite OS distribution. More\
-information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/readme-1)\
+information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-including-mariadb)\
 page.
 
 {% @marketo/form formid="4316" formId="4316" %}

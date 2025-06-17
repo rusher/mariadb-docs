@@ -9,7 +9,7 @@ The `WSREP_MEMBERSHIP` plugin creates the [WSREP\_MEMBERSHIP](../../sql-statemen
 
 The `WSREP_STATUS` plugin creates the [WSREP\_STATUS](../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-wsrep_status-table.md) table in the [INFORMATION\_SCHEMA](../../sql-statements/administrative-sql-statements/system-tables/information-schema/) database. The plugin also adds the [SHOW WSREP\_STATUS](../../sql-statements/administrative-sql-statements/show/show-wsrep_status.md) statement.
 
-These tables and statements provide information about [Galera](../../../../kb/en/galera/). Only users with the [SUPER](../../sql-statements/account-management-sql-statements/grant.md#global-privileges) privilege can access this information.
+These tables and statements provide information about [Galera](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/galera/README.md). Only users with the [SUPER](../../sql-statements/account-management-sql-statements/grant.md#global-privileges) privilege can access this information.
 
 ## Installing the Plugin
 
@@ -57,8 +57,8 @@ SHOW TABLES FROM information_schema LIKE 'WSREP%';
 | ------- | ------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Version | Status | Introduced                                                                                                                                                                          |
 | 1.0     | Stable | [MariaDB 10.1.18](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10118-release-notes) |
-| 1.0     | Gamma  | [MariaDB 10.1.13](broken-reference)                                                                                                                                                 |
-| 1.0     | Alpha  | [MariaDB 10.1.2](broken-reference)                                                                                                                                                  |
+| 1.0     | Gamma  | [MariaDB 10.1.13](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/plugins/mariadb-replication-cluster-plugins/broken-reference/README.md)             |
+| 1.0     | Alpha  | [MariaDB 10.1.2](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/plugins/mariadb-replication-cluster-plugins/broken-reference/README.md)              |
 
 ## Options
 

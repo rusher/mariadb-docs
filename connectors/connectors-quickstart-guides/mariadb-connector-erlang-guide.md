@@ -1,6 +1,5 @@
 ---
 description: Quickstart Guide for MySQL/OTP (Erlang/OTP Client)
-icon: rabbit-running
 ---
 
 # Erlang Guide

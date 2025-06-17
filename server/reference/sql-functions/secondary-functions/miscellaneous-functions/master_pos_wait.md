@@ -8,7 +8,7 @@ MASTER_POS_WAIT(log_name,log_pos[,timeout,["connection_name"]])
 
 ## Description
 
-This function is useful in [replication](broken-reference) for controlling primary/replica synchronization. It blocks until the replica has read and applied all updates up to the specified position (`log_name,log_pos`) in the primary log. The return value is the number of log events the replica had to wait for to advance to the specified position. The function returns NULL if\
+This function is useful in [replication](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-functions/secondary-functions/miscellaneous-functions/broken-reference/README.md) for controlling primary/replica synchronization. It blocks until the replica has read and applied all updates up to the specified position (`log_name,log_pos`) in the primary log. The return value is the number of log events the replica had to wait for to advance to the specified position. The function returns NULL if\
 the replica SQL thread is not started, the replica's primary information is not\
 initialized, the arguments are incorrect, or an error occurs. It returns -1 if\
 the timeout has been exceeded. If the replica SQL thread stops while`MASTER_POS_WAIT()` is waiting, the function returns NULL. If\
@@ -22,6 +22,6 @@ The `connection_name` is used when you are using [multi-source-replication](../.
 
 Statements using the MASTER\_POS\_WAIT() function are not [safe for statement-based replication](../../../../ha-and-performance/standard-replication/unsafe-statements-for-statement-based-replication.md).
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

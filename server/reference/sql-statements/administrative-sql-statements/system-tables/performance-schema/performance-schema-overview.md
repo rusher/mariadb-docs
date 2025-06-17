@@ -103,9 +103,9 @@ Note that the "consumer" events are not shown on this list, as they are only ava
 
 ## Column Comments
 
-**MariaDB starting with** [**10.7.1**](broken-reference)
+**MariaDB starting with** [**10.7.1**](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/broken-reference/README.md)
 
-From [MariaDB 10.7.1](broken-reference), comments have been added to table columns in the Performance Schema. These can be viewed with, for example:
+From [MariaDB 10.7.1](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/broken-reference/README.md), comments have been added to table columns in the Performance Schema. These can be viewed with, for example:
 
 ```
 SELECT column_name, column_comment FROM information_schema.columns 

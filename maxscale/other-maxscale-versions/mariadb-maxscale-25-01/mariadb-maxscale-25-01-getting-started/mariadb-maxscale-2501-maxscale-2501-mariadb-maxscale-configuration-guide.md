@@ -336,7 +336,7 @@ Limitations:
 A router module is capable of routing requests to backend servers according to\
 the characteristics of a request and/or the algorithm the router\
 implements. Examples of routers are `readconnroute` that provides _connection_\
-&#xNAN;_&#x72;outing_, that is, the server is chosen according to specified rules when the\
+\&#xNAN;_routing_, that is, the server is chosen according to specified rules when the\
 session is created and all requests are subsequently routed to that server,\
 and `readwritesplit` that provides _statement routing_, that is, each\
 individual request is routed to the most appropriate server.
@@ -1461,7 +1461,7 @@ some_parameter=$SOME_VALUE
 
 is encountered, then `$SOME_VALUE` will be replaced with the actual value\
 of the environment variable `SOME_VALUE`. Note:_Variable substitution will be made only if '$' is the first character_\
-&#xNAN;_&#x6F;f the value._ _Everything_ following '$' is interpreted as the name of the environment\
+\&#xNAN;_of the value._ _Everything_ following '$' is interpreted as the name of the environment\
 variable.
 
 * Referring to a non-existing environment variable is a fatal error.
@@ -2574,7 +2574,7 @@ user=maxscale
 password=Mhu87p2D
 ```
 
-See [MySQL protocol authentication documentation](../../../../kb/en/maxscale-25-01-authentication-modules/)\
+See [MySQL protocol authentication documentation](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/maxscale-25-01-authentication-modules/README.md)\
 for more information (such as required grants) and troubleshooting tips\
 regarding user account management and client authentication.
 
@@ -2594,7 +2594,7 @@ user=maxscale
 password=Mhu87p2D
 ```
 
-See [MySQL protocol authentication documentation](../../../../kb/en/maxscale-25-01-authentication-modules/)\
+See [MySQL protocol authentication documentation](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/maxscale-25-01-authentication-modules/README.md)\
 for more information (such as required grants) and troubleshooting tips\
 regarding user account management and client authentication.
 
@@ -4502,7 +4502,7 @@ API. **Only do this if you know what you are doing.**
 
 ### Filter Modules
 
-![](../../../.gitbook/assets/mariadb-corporation/MaxScale/25.01.2-docs/Documentation/Getting-Started/images/filter_example.png.png)
+![](<../../../.gitbook/assets/filter_example.png (4).png>)
 
 Filters provide a means to manipulate or process requests as they pass through\
 MariaDB MaxScale between the client side protocol and the query router. A full\
@@ -5098,7 +5098,7 @@ error log file. By default, MariaDB MaxScale will log to a file in`/var/log/maxs
 
 ## Limitations
 
-The current limitations of MaxScale are listed in the [Limitations](../../../../kb/en/maxscale-25-01-limitations-and-known-issues-within-mariadb-maxscale/) document.
+The current limitations of MaxScale are listed in the [Limitations](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/maxscale-25-01-limitations-and-known-issues-within-mariadb-maxscale/README.md) document.
 
 ## Performance Optimization
 

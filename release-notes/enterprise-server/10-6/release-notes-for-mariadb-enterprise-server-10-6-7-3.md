@@ -125,8 +125,8 @@ InnoDB: Failing assertion: lsn >= log_sys.get_flushed_lsn()
 * Subquery using the `ALL` keyword on [TIME](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/date-and-time-data-types/time) columns produces a wrong result. ([MDEV-27098](https://jira.mariadb.org/browse/MDEV-27098))
 * Subquery using the `ALL` keyword on [DATE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/date-and-time-data-types/date) columns produces a wrong result. ([MDEV-27072](https://jira.mariadb.org/browse/MDEV-27072))
 * When float literals are defined using scientific notation and the token also contains certain special characters, the parser incorrectly parses the float value and completely drops it from the request. ([MDEV-27066](https://jira.mariadb.org/browse/MDEV-27066))
-* When a double-encapsulated CTE query calls a function which reads a table that has been aliased in the CTE query, the server incorrectly raises an error with the [ER\_NO\_SUCH\_TABLE](broken-reference) error code. ([MDEV-26825](https://jira.mariadb.org/browse/MDEV-26825))
-* When a CTE is used in a subquery of a `DELETE` statement, the server incorrectly raises an error with the [ER\_NO\_DB\_ERROR](broken-reference) error code. ([MDEV-26470](https://jira.mariadb.org/browse/MDEV-26470))
+* When a double-encapsulated CTE query calls a function which reads a table that has been aliased in the CTE query, the server incorrectly raises an error with the [ER\_NO\_SUCH\_TABLE](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/enterprise-server/10-6/broken-reference/README.md) error code. ([MDEV-26825](https://jira.mariadb.org/browse/MDEV-26825))
+* When a CTE is used in a subquery of a `DELETE` statement, the server incorrectly raises an error with the [ER\_NO\_DB\_ERROR](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/enterprise-server/10-6/broken-reference/README.md) error code. ([MDEV-26470](https://jira.mariadb.org/browse/MDEV-26470))
 * When MariaDB Enterprise Cluster performs an SST, the SST scripts incorrectly try to read [ssl\_ca](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/ssltls-system-variables) as a path to a directory of TLS CA certificates instead of using [ssl\_capath](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/ssltls-system-variables) for that purpose. ([MDEV-27181](https://jira.mariadb.org/browse/MDEV-27181))
 * When MariaDB Enterprise Cluster performs an SST, the SST scripts do not always interpret `log_bin_index` correctly. ([MDEV-26915](https://jira.mariadb.org/browse/MDEV-26915))
 * When an index is used for an `ORDER BY .. LIMIT` query, the optimizer does not disable the `Range Checked for Each Record` optimization. ([MDEV-27270](https://jira.mariadb.org/browse/MDEV-27270))
@@ -140,12 +140,12 @@ InnoDB: Failing assertion: lsn >= log_sys.get_flushed_lsn()
 * When the [DATABASE()](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/secondary-functions/information-functions/database) function is used in some queries (such as queries using `UNION ALL`), database names can be truncated to 34 characters, even though database names can have up to 64 characters. ([MDEV-27544](https://jira.mariadb.org/browse/MDEV-27544))
 * When the [--symbolic-links](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/starting-and-stopping-mariadb/mariadbd-options#-symbolic-links) option is disabled, such as when `--skip-symbolic-links` or `--disable-symbolic-links` is set, InnoDB still allows symbolic links and `.isl` files to be created if tables have the `DATA DIRECTORY` option. ([MDEV-26870](https://jira.mariadb.org/browse/MDEV-26870))
 * When `CREATE TABLE t1 LIKE t2` is executed and the `t2` table is a partitioned table that uses the MyISAM or Aria storage engines and has the `DATA DIRECTORY` option defined for partitions, the operation fails with a file system error. ([MDEV-25917](https://jira.mariadb.org/browse/MDEV-25917))
-* When [sql\_mode=ONLY\_FULL\_GROUP\_BY](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/sql-mode) is set, some window functions incorrectly raise an error with the [ER\_MIX\_OF\_GROUP\_FUNC\_AND\_FIELDS](broken-reference) error code. ([MDEV-17785](https://jira.mariadb.org/browse/MDEV-17785))
+* When [sql\_mode=ONLY\_FULL\_GROUP\_BY](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/sql-mode) is set, some window functions incorrectly raise an error with the [ER\_MIX\_OF\_GROUP\_FUNC\_AND\_FIELDS](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/enterprise-server/10-6/broken-reference/README.md) error code. ([MDEV-17785](https://jira.mariadb.org/browse/MDEV-17785))
 * When a [system-versioned table](https://mariadb.com/kb/en/system-versioned-table) is partitioned by [SYSTEM\_TIME\` with a \`\`LIMIT clause, CHECK TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/table-statements/check-table) can incorrectly return an error. ([MDEV-25552](https://jira.mariadb.org/browse/MDEV-25552))
 * The lateral derived optimization is not disabled for queries that use `WITH ROLLUP`, which causes queries that use GROUP BY to return incorrect results. ([MDEV-26337](https://jira.mariadb.org/browse/MDEV-26337))
 * When [optimizer\_switch='split\_materialized=on'](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#optimizer_switch) is set, queries that use the split optimization can return the wrong results. ([MDEV-27510](https://jira.mariadb.org/browse/MDEV-27510), [MDEV-27132](https://jira.mariadb.org/browse/MDEV-27132))
 * When a row is deleted from an InnoDB table, and then a new row with the same key is inserted into the table by a different transaction, InnoDB's MVCC code can incorrectly hide the new row from transactions that should see the changes: (MENT-1414)
-  * Consequently, queries can try to insert another new row with the same key, which results in an error with the [ER\_DUP\_ENTRY](broken-reference) error code.
+  * Consequently, queries can try to insert another new row with the same key, which results in an error with the [ER\_DUP\_ENTRY](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/enterprise-server/10-6/broken-reference/README.md) error code.
   * When a replica server has [slave\_parallel\_mode](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables) set to `'optimistic'` or `'aggressive'`, this can result in the following error in [SHOW REPLICA STATUS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-replica-status):
 
 ```
@@ -211,7 +211,7 @@ FATAL ERROR: Upgrade failed
 
 ## Interface Changes
 
-* [ER\_VERS\_NOT\_ALLOWED](broken-reference) error code added
+* [ER\_VERS\_NOT\_ALLOWED](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/enterprise-server/10-6/broken-reference/README.md) error code added
 * [innodb\_buffer\_pool\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables#innodb_buffer_pool_size) system variable minimum value changed from `5242880` to `2097152`
 * [innodb\_change\_buffering](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables#innodb_change_buffering) system variable default value changed from `all` to `none`
 * [innodb\_force\_load\_corrupted](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables#innodb_force_load_corrupted) system variable removed
@@ -225,7 +225,7 @@ FATAL ERROR: Upgrade failed
 * `mariadbd` --hashicorp-key-management-cache-version-timeout command-line option added
 * `mariadbd` --innodb-force-load-corrupted command-line option removed
 * `mariadbd` --rocksdb-ignore-datadic-errors command-line option added
-* [rocksdb\_ignore\_datadic\_errors](broken-reference) system variable added
+* [rocksdb\_ignore\_datadic\_errors](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/enterprise-server/10-6/broken-reference/README.md) system variable added
 
 ## Platforms
 

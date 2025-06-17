@@ -619,7 +619,7 @@ SELECT collation_name, character_set_name as cs_name, id, is_default AS def, is_
 550 rows in set (0.005 sec)
 ```
 
-The UCA-14.0.0 collations were added in [MariaDB 10.10.1](broken-reference/).
+The UCA-14.0.0 collations were added in [MariaDB 10.10.1](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/data-types/string-data-types/character-sets/broken-reference/README.md).
 
 Before [MariaDB 10.6.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/mariadb-1061-release-notes), the `utf8mb3*` collations listed above were named `utf8*`.
 

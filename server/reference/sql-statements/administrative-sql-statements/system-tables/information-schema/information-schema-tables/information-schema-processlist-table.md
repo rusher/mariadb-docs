@@ -34,7 +34,7 @@ Note that as a difference to MySQL, in MariaDB the `TIME`\
 column (and also the `TIME_MS` column) are not affected by\
 any setting of `[@TIMESTAMP](../../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#timestamp)`. This means that it can be\
 reliably used also for threads that change `@TIMESTAMP` (such\
-as the [replication](broken-reference) SQL thread). See also [MySQL Bug #22047](https://bugs.mysql.com/bug.php?id=22047).
+as the [replication](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/broken-reference/README.md) SQL thread). See also [MySQL Bug #22047](https://bugs.mysql.com/bug.php?id=22047).
 
 As a consequence of this, the `TIME` column of`SHOW FULL PROCESSLIST` and`INFORMATION_SCHEMA.PROCESSLIST` can not be used to determine\
 if a slave is lagging behind. For this, use instead the`Seconds_Behind_Master` column in the output of[SHOW SLAVE STATUS](../../../show/show-replica-status.md).

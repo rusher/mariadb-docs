@@ -95,7 +95,7 @@ ERROR 1406 (22001): Data too long for column 'example' at row 1
 
 ## Indexing
 
-A [unique index](../../../mariadb-quickstart-guides/mariadb-indexes-guide.md#unique-index) can be created on a `TEXT` column. This was not possible prior to [MariaDB 10.4](broken-reference/)
+A [unique index](../../../mariadb-quickstart-guides/mariadb-indexes-guide.md#unique-index) can be created on a `TEXT` column. This was not possible prior to [MariaDB 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/data-types/string-data-types/broken-reference/README.md)
 
 Internally, this uses hash indexing to quickly check the values and if a hash collision is found, the actual stored values are compared in order to retain the uniqueness.
 
@@ -115,6 +115,6 @@ Internally, this uses hash indexing to quickly check the values and if a hash co
 * [MEDIUMTEXT](mediumtext.md)
 * [Data Type Storage Requirements](../data-type-storage-requirements.md)
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

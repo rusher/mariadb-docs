@@ -2,7 +2,7 @@
 
 The most recent release in the [MariaDB 5.2 series](changes-improvements-in-mariadb-5-2.md) is:[**MariaDB 5.2.14**](mariadb-5214-release-notes.md)
 
-[Download](https://downloads.askmonty.org/mariadb/5.2.8) |**Release Notes** |[Changelog](broken-reference) |[Overview of 5.2](changes-improvements-in-mariadb-5-2.md)
+[Download](https://downloads.askmonty.org/mariadb/5.2.8) |**Release Notes** |[Changelog](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-2-series/broken-reference/README.md) |[Overview of 5.2](changes-improvements-in-mariadb-5-2.md)
 
 **Release date:** 18 Aug 2011
 
@@ -13,7 +13,7 @@ usage. A "stable" MariaDB release is equivalent to a MySQL "GA" release.
 For a high-level description of [MariaDB 5.2.8](mariadb-528-release-notes.md) see the[What is MariaDB 5.2](changes-improvements-in-mariadb-5-2.md) page.
 
 For a list of every change made in [MariaDB 5.2.8](mariadb-528-release-notes.md), including the various bugs\
-that were fixed and links to detailed information on each push, see the[MariaDB 5.2.8 Changelog](broken-reference). See previous[release notes](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/release-notes/README.md) and [changelogs](../../../connectors/odbc/changelogs/) for changes made in previous\
+that were fixed and links to detailed information on each push, see the[MariaDB 5.2.8 Changelog](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-2-series/broken-reference/README.md). See previous[release notes](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/release-notes/README.md) and [changelogs](../../../connectors/odbc/changelogs/) for changes made in previous\
 versions of MariaDB.
 
 In most respects [MariaDB](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/mariadb/README.md) will work exactly as MySQL: all commands,\
@@ -25,7 +25,7 @@ announce 'at' mariadb.org announcement list (this is a low traffic,\
 announce-only list).
 
 MariaDB may already be included in your favorite OS distribution. More\
-information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/readme-1)\
+information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-including-mariadb)\
 page.
 
 Some highlights of this release:
@@ -39,6 +39,6 @@ Some highlights of this release:
 
 ## Various Bug Fixes
 
-Several bugs were fixed in this version of MariaDB. See the[MariaDB 5.2.8 Changelog](broken-reference) for details.
+Several bugs were fixed in this version of MariaDB. See the[MariaDB 5.2.8 Changelog](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-2-series/broken-reference/README.md) for details.
 
 {% @marketo/form formid="4316" formId="4316" %}

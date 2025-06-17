@@ -21,7 +21,7 @@ thread_type: IO_THREAD | SQL_THREAD
 
 ## Description
 
-`START SLAVE` or `START REPLICA` from [MariaDB 10.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1051-release-notes) with no thread\_type options starts both of the replica threads (see [replication](broken-reference)) needed to connect with a master setup with [CHANGE MASTER TO](change-master-to.md) .\
+`START SLAVE` or `START REPLICA` from [MariaDB 10.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1051-release-notes) with no thread\_type options starts both of the replica threads (see [replication](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/administrative-sql-statements/replication-statements/broken-reference/README.md)) needed to connect with a master setup with [CHANGE MASTER TO](change-master-to.md) .\
 The I/O thread reads events from the primary server and stores\
 them in the [relay log](../../../../server-management/server-monitoring-logs/binary-log/relay-log.md). The SQL thread reads events from the relay log\
 and executes them. `START REPLICA` requires the [SUPER](../../account-management-sql-statements/grant.md#super) privilege, or, from [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1052-release-notes), the [REPLICATION SLAVE ADMIN](../../account-management-sql-statements/grant.md#replication-slave-admin) privilege.
@@ -41,7 +41,7 @@ STATUS](../show/show-replica-status.md) ([SHOW REPLICA STATUS](../show/show-repl
 
 `START REPLICA UNTIL master_gtid_pos=xxx` is also supported. See [Global Transaction ID/START REPLICA UNTIL master\_gtid\_pos=xxx](../../../../ha-and-performance/standard-replication/gtid.md) for more details.
 
-**MariaDB starting with** [**11.3.0**](../../../../../en/mariadb-1130-release-notes/)
+**MariaDB starting with** [**11.3.0**](https://github.com/mariadb-corporation/docs-server/blob/test/en/mariadb-1130-release-notes/README.md)
 
 **SQL\_BEFORE\_GTIDS|SQL\_AFTER\_GTIDS**
 
@@ -74,6 +74,6 @@ using the channel\_name directly after `START REPLICA`.
 * [STOP REPLICA](stop-replica.md) is used to stop a running connection.
 * [RESET REPLICA](reset-replica.md) is used to reset parameters for a connection and also to permanently delete a primary connection.
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

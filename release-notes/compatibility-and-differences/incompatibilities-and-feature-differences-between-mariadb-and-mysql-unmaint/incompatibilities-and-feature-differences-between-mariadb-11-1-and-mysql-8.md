@@ -27,9 +27,9 @@ The most notable [features available in MariaDB](https://github.com/mariadb-corp
   * [Application-time periods](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/temporal-tables/application-time-periods) (allow you to query and operate on a temporal range of data), including the [WITHOUT OVERLAPS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/temporal-tables/application-time-periods#without-overlaps) clause.
   * [Bitemporal tables](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/temporal-tables/bitemporal-tables) (which combine both system-versioning and application-time periods).
 * [DML-only flashback](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/server-monitoring-logs/binary-log/flashback), allowing instances, databases or tables to be rolled back to an old snapshot.
-* [Oracle compatibility mode](broken-reference)
+* [Oracle compatibility mode](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/compatibility-and-differences/incompatibilities-and-feature-differences-between-mariadb-and-mysql-unmaint/broken-reference/README.md)
 * MariaDB supports [localization](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/string-data-types/character-sets/internationalization-and-localization/setting-the-language-for-error-messages) in a number of additional languages: Bulgarian, Chinese, Georgian, Hindi, Serbian, and Ukrainian.
-* MariaDB has made [major improvements to the optimizer](broken-reference).
+* MariaDB has made [major improvements to the optimizer](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/compatibility-and-differences/incompatibilities-and-feature-differences-between-mariadb-and-mysql-unmaint/broken-reference/README.md).
 * [Sequences](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/sequences)
 * [Table Value Constructors](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/sql-language-structure/table-value-constructors)
 * [Dynamic Columns](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/nosql/dynamic-columns) support
@@ -45,7 +45,7 @@ The most notable [features available in MariaDB](https://github.com/mariadb-corp
 * Multiple [compression algorithms available as plugins](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/optimization-and-tuning-compression/compression-plugins)
 * Number of supported decimals in [DECIMAL](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/numeric-data-types/decimal) has increased from `30` to `38`
 * Number of parts of an index increased from `16` to `32`.
-* Added catchall for [list partitions](broken-reference)
+* Added catchall for [list partitions](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/compatibility-and-differences/incompatibilities-and-feature-differences-between-mariadb-and-mysql-unmaint/broken-reference/README.md)
 * Oracle-style [EXECUTE IMMEDIATE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/prepared-statements/execute-immediate) statement
 * Lots of new [JSON functions](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/special-functions/json-functions)
 * [Microsecond Precision in Processlist](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/time_ms-column-in-information_schemaprocesslist)
@@ -60,12 +60,12 @@ The most notable [features available in MariaDB](https://github.com/mariadb-corp
 * [Enhancements to INFORMATION SCHEMA.PLUGINS table](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/plugins-table-information-schema)
 * [Group commit for the binary log](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/server-monitoring-logs/binary-log/group-commit-for-the-binary-log). This makes [replication notably faster!](https://www.facebook.com/note.php?note_id=10150261692455933)
 * [BACKUP STAGE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/backup-commands/backup-stage) allows one to implement very efficient backups with minimal locking.
-* [Progress reporting](broken-reference) for [ALTER TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/alter/alter-table) and [LOAD DATA INFILE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile)
+* [Progress reporting](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/compatibility-and-differences/incompatibilities-and-feature-differences-between-mariadb-and-mysql-unmaint/broken-reference/README.md) for [ALTER TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/alter/alter-table) and [LOAD DATA INFILE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile)
 * [SHOW EXPLAIN](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-explain) gives the EXPLAIN plan for a query running in another thread. MySQL introduced the EXPLAIN FOR CONNECTION syntax to do the same thing.
 * [PCRE Regular Expressions](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/string-functions/regular-expressions-functions/pcre) (including [REGEXP\_REPLACE()](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/string-functions/regular-expressions-functions/regexp_replace))
 * [HandlerSocket](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/nosql/handlersocket) and faster [HANDLER](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/nosql/handler) calls
 * MySQL 8 does not support [PROCEDURE ANALYSE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/secondary-functions/information-functions/procedure-analyse)
-* MySQL 8 does not support the use of  as an alias for [NULL](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/null-values)
+* MySQL 8 does not support the use of as an alias for [NULL](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/null-values)
 
 ## Incompatibilities
 

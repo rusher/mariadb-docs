@@ -1,21 +1,15 @@
-
 # More Advanced Joins
 
-This article is a follow up to the
-[Introduction to JOINs](https://mariadb.com/kb/en/introduction-to-joins/) page. If you're just getting
+This article is a follow up to the[Introduction to JOINs](https://mariadb.com/kb/en/introduction-to-joins/) page. If you're just getting\
 started with JOINs, go through that page first and then come back here.
-
 
 ## The Employee Database
 
-
-Let us begin by using an example employee database of a fairly small family
+Let us begin by using an example employee database of a fairly small family\
 business, which does not anticipate expanding in the future.
 
-
-First, we create the table that will hold all of the employees and their
+First, we create the table that will hold all of the employees and their\
 contact information:
-
 
 ```
 CREATE TABLE `Employees` (
@@ -31,7 +25,6 @@ CREATE TABLE `Employees` (
 
 Next, we add a few employees to the table:
 
-
 ```
 INSERT INTO `Employees` (`First_Name`, `Last_Name`, `Position`, `Home_Address`, `Home_Phone`)
   VALUES
@@ -43,9 +36,8 @@ INSERT INTO `Employees` (`First_Name`, `Last_Name`, `Position`, `Home_Address`, 
   ('Helmholtz', 'Watson', 'Janitor', '944 Soma Court', '329-555-2478');
 ```
 
-Now, we create a second table, containing the hours which each employee clocked
+Now, we create a second table, containing the hours which each employee clocked\
 in and out during the week:
-
 
 ```
 CREATE TABLE `Hours` (
@@ -55,9 +47,8 @@ CREATE TABLE `Hours` (
 ) ENGINE=MyISAM;
 ```
 
-Finally, although it is a lot of information, we add a full week of hours for
+Finally, although it is a lot of information, we add a full week of hours for\
 each of the employees into the second table that we created:
-
 
 ```
 INSERT INTO `Hours`
@@ -96,19 +87,15 @@ INSERT INTO `Hours`
 
 ## Working with the Employee Database
 
-
-Now that we have a cleanly structured database to work with, let us begin this
-tutorial by stepping up one notch from the last tutorial and filtering our
+Now that we have a cleanly structured database to work with, let us begin this\
+tutorial by stepping up one notch from the last tutorial and filtering our\
 information a little.
-
 
 ### Filtering by Name
 
-
-Earlier in the week, an anonymous employee reported that Helmholtz came into
-work almost four minutes late; to verify this, we will begin our investigation
+Earlier in the week, an anonymous employee reported that Helmholtz came into\
+work almost four minutes late; to verify this, we will begin our investigation\
 by filtering out employees whose first names are "Helmholtz":
-
 
 ```
 SELECT
@@ -123,7 +110,6 @@ WHERE `Employees`.`First_Name` = 'Helmholtz';
 
 The result:
 
-
 ```
 +------------+-----------+---------------------+---------------------+
 | First_Name | Last_Name | Clock_In            | Clock_Out           |
@@ -137,18 +123,15 @@ The result:
 5 rows in set (0.00 sec)
 ```
 
-This is obviously more information than we care to trudge through, considering
-we only care about when he arrived past 7:00:59 on any given day within this
+This is obviously more information than we care to trudge through, considering\
+we only care about when he arrived past 7:00:59 on any given day within this\
 week; thus, we need to add a couple more conditions to our WHERE clause.
-
 
 ### Filtering by Name, Date and Time
 
-
-In the following example, we will filter out all of the times which Helmholtz
-clocked in that were before 7:01:00 and during the work week that lasted from
+In the following example, we will filter out all of the times which Helmholtz\
+clocked in that were before 7:01:00 and during the work week that lasted from\
 the 8th to the 12th of August:
-
 
 ```
 SELECT
@@ -166,7 +149,6 @@ AND DATE_FORMAT(`Hours`.`Clock_In`, '%H:%i:%S') > '07:00:59';
 
 The result:
 
-
 ```
 +------------+-----------+---------------------+---------------------+
 | First_Name | Last_Name | Clock_In            | Clock_Out           |
@@ -177,19 +159,16 @@ The result:
 2 rows in set (0.00 sec)
 ```
 
-We have now, by merely adding a few more conditions, eliminated all of the
-irrelevant information; Helmholtz was late to work on the 9th and the 12th of
+We have now, by merely adding a few more conditions, eliminated all of the\
+irrelevant information; Helmholtz was late to work on the 9th and the 12th of\
 August.
-
 
 ### Displaying Total Work Hours per Day
 
-
-Suppose you would like to—based on the information stored in both of our
-tables in the employee database—develop a quick list of the total hours each
-employee has worked for each day recorded; a simple way to estimate the time
+Suppose you would like to—based on the information stored in both of our\
+tables in the employee database—develop a quick list of the total hours each\
+employee has worked for each day recorded; a simple way to estimate the time\
 each employee worked per day is exemplified below:
-
 
 ```
 SELECT
@@ -203,7 +182,6 @@ FROM `Employees` INNER JOIN `Hours` ON `Employees`.`ID` = `Hours`.`ID`;
 ```
 
 The result (limited by 10):
-
 
 ```
 +----+------------+-----------+---------------------+---------------------+-------------+
@@ -225,15 +203,10 @@ The result (limited by 10):
 
 ## See Also
 
+* [Introduction to JOINs](https://github.com/mariadb-corporation/docs-server/blob/test/en/introduction-to-joins/README.md)
 
-* [Introduction to JOINs](/en/introduction-to-joins/)
-
-
-*The first version of this article was copied, with permission, from [More_Advanced_Joins](https://hashmysql.org/wiki/More_Advanced_Joins) on 2012-10-05.*
-
-
+_The first version of this article was copied, with permission, from_ [_More\_Advanced\_Joins_](https://hashmysql.org/wiki/More_Advanced_Joins) _on 2012-10-05._
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
-
 
 {% @marketo/form formId="4316" %}

@@ -55,7 +55,7 @@ For general "how to questions" ask questions [here](https://app.gitbook.com/o/di
 
 The following procedure outlines upgrading a 1.0.11 ColumnStore install to 1.0.12:
 
-* [1.0.11 GA to 1.0.12 upgrade procedure](broken-reference)\
+* [1.0.11 GA to 1.0.12 upgrade procedure](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/columnstore/columnstore-1-0/broken-reference/README.md)\
   Multi version upgrades generally will work using the same procedure however we can't test every possible permutation so you should test your specific scenario outside of production first if you wish to try this (and this is good practice regardless).
 
 ## Known issues and limitations
@@ -89,7 +89,7 @@ RPM, Debian, and binary packages are provided for the Linux distributions suppor
 
 * The supported OS for the GA version are CentOS 6, CentOS 7, Debian 8.6, Debian 9.1, RedHat 6, RedHat 7, SUSE 12, and Ubuntu 16.0.4.
 * Packages can be downloaded [here](https://mariadb.com/downloads/columnstore)
-* An Amazon AWS AMI Image is available for this release, please search for AMI name "MariaDB-ColumnStore-1.0.12". AMI specific installation instructions can be found [here](broken-reference).
+* An Amazon AWS AMI Image is available for this release, please search for AMI name "MariaDB-ColumnStore-1.0.12". AMI specific installation instructions can be found [here](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/columnstore/columnstore-1-0/broken-reference/README.md).
 * Certified to run in Google Cloud Environment in the GA OSs.
 
 ## Source code

@@ -1,15 +1,12 @@
+# long-varbinary
 
-# LONG VARBINARY
+## LONG VARBINARY
 
+## Overview
 
-# Overview
+See [MEDIUMBLOB](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/data-types/string-data-types/data-types-mediumblob/README.md).
 
-
-See [MEDIUMBLOB](data-types-mediumblob).
-
-
-# EXAMPLES
-
+## EXAMPLES
 
 ```
 CREATE TABLE long_varbinary_example (
@@ -29,8 +26,6 @@ Create Table: CREATE TABLE `long_varbinary_example` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1
 ```
 
-
 <sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
-
 
 {% @marketo/form formId="4316" %}

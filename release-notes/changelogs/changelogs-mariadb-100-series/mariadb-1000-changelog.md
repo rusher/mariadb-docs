@@ -188,7 +188,7 @@ and
     * SHOW EXPLAIN: merge to 10.0-base.
     * [Revision #3413.1.132](https://bazaar.launchpad.net/~maria-captains/maria/10.0/revision/3413.1.132) \[merge]\
       Sat 2012-10-06 11:17:30 +0400
-      * SHOW EXPLAIN: merge with [mariadb 5.5](broken-reference)-main
+      * SHOW EXPLAIN: merge with [mariadb 5.5](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/changelogs/changelogs-mariadb-100-series/broken-reference/README.md)-main
   * [Revision #3427.1.15](https://bazaar.launchpad.net/~maria-captains/maria/10.0/revision/3427.1.15) \[merge]\
     Fri 2012-10-05 00:02:20 +0300
     * Automatic merge

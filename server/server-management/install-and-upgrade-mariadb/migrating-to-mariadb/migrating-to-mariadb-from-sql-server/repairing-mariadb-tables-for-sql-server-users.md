@@ -1,5 +1,7 @@
 # Repairing MariaDB Tables for SQL Server Users
 
+{% include "https://app.gitbook.com/s/GxVnu02ec8KJuFSxmB93/~/reusable/UQS8KgfG8jtpHBvT83fL/" %}
+
 Repairing tables in MariaDB is not similar to repairing tables in SQL Server.
 
 The first thing to understand is that every MariaDB table is handled by a [storage engine](understanding-mariadb-architecture.md#storage-engines). Storage engines are plugins that know how to physically read and write a table, so each storage engine allows one to repair tables in different ways. The default storage engine is [InnoDB](../../../../server-usage/storage-engines/innodb/).
@@ -86,7 +88,7 @@ It is also possible to stop MariaDB and repair MyISAM tables with [myisamchk](..
 Notes on the different storage engines:
 
 * For [MyRocks](../../../../server-usage/storage-engines/myrocks/), see [MyRocks and CHECK TABLE](../../../../server-usage/storage-engines/myrocks/myrocks-and-check-table.md).
-* With [ARCHIVE](../../../../server-usage/storage-engines/archive/), `REPAIR TABLE` also improves the compression rate.
+* With [ARCHIVE](../../../../server-usage/storage-engines/archive.md), `REPAIR TABLE` also improves the compression rate.
 * For [CSV](../../../../server-usage/storage-engines/csv/), see [Checking and Rpairing CSV Tables](../../../../server-usage/storage-engines/csv/checking-and-repairing-csv-tables.md).
 * Some special storage engines, like [MEMORY](../../../../server-usage/storage-engines/memory-storage-engine.md) or [BLACKHOLE](../../../../server-usage/storage-engines/blackhole.md), do not support any form of check and repair.
 

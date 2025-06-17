@@ -9,7 +9,7 @@ The most recent release of [MariaDB 10.5](what-is-mariadb-105.md) is:[**MariaDB 
 **Last month long-time MariaDB VP of Engineering, Rasmus Johansson, passed due to complications from cancer. His loss has been felt keenly by the whole MariaDB team. Our thoughts are with his family during this difficult time and this release is dedicated to his memory.**
 
 [MariaDB 10.5](what-is-mariadb-105.md) is the current _stable_ series of MariaDB. It is an evolution\
-of [MariaDB 10.4](broken-reference/) with several entirely new features not found anywhere else\
+of [MariaDB 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/mariadb-10-5-series/broken-reference/README.md) with several entirely new features not found anywhere else\
 and with backported and reimplemented features from MySQL.
 
 [MariaDB 10.5.9](mariadb-1059-release-notes.md) is a [_**Stable (GA)**_](../../mariadb-release-criteria.md) release.
@@ -53,7 +53,7 @@ Thanks, and enjoy MariaDB!
 ### ColumnStore
 
 * MariaDB ColumnStore updated to 5.5.1
-* MariaDB ColumnStore deb and rpm packages now have a version of `10.5.9-5.5.1` so one can see both the server version (10.5.9) and the plugin version (5.5.1) without needing to check the [Available Versions](broken-reference/) table in the ColumnStore docs
+* MariaDB ColumnStore deb and rpm packages now have a version of `10.5.9-5.5.1` so one can see both the server version (10.5.9) and the plugin version (5.5.1) without needing to check the [Available Versions](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/mariadb-10-5-series/broken-reference/README.md) table in the ColumnStore docs
 * The MariaDB ColumnStore plugin is no longer provided for 32-bit x86 (i386) builds
 
 ### Misc
@@ -79,7 +79,7 @@ For a full list of contributors to [MariaDB 10.5.9](mariadb-1059-release-notes.m
 Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
 
 MariaDB may already be included in your favorite OS distribution. More\
-information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/readme-1)\
+information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-including-mariadb)\
 page.
 
 {% @marketo/form formid="4316" formId="4316" %}

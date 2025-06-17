@@ -8,7 +8,7 @@ DROP PACKAGE [IF EXISTS]  [ db_name . ] package_name
 
 ## Description
 
-The `DROP PACKAGE` statement can be used when [Oracle SQL\_MODE](broken-reference) is set.
+The `DROP PACKAGE` statement can be used when [Oracle SQL\_MODE](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/data-definition/drop/broken-reference/README.md) is set.
 
 The `DROP PACKAGE` statement drops a stored package entirely:
 
@@ -21,7 +21,7 @@ The `DROP PACKAGE` statement drops a stored package entirely:
 * [CREATE PACKAGE](../create/create-package.md)
 * [CREATE PACKAGE BODY](../create/create-package-body.md)
 * [DROP PACKAGE BODY](drop-package-body.md)
-* [Oracle SQL\_MODE](broken-reference)
+* [Oracle SQL\_MODE](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/data-definition/drop/broken-reference/README.md)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

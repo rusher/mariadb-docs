@@ -1,6 +1,6 @@
 # DEC
 
-See [DECIMAL](../data-types-numeric-data-types/data-types-decimal/).
+See [DECIMAL](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/data-types/data-types-numeric-data-types/data-types-decimal/README.md).
 
 ## EXAMPLES
 

@@ -1,18 +1,18 @@
 # MariaDB 10.4.6 Release Notes
 
-The most recent release of [MariaDB 10.4](broken-reference) is:[**MariaDB 10.4.34**](mariadb-10-4-34-release-notes.md) Stable (GA) [Download Now](https://downloads.mariadb.org/mariadb/10.4.34/)
+The most recent release of [MariaDB 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/broken-reference/README.md) is:[**MariaDB 10.4.34**](mariadb-10-4-34-release-notes.md) Stable (GA) [Download Now](https://downloads.mariadb.org/mariadb/10.4.34/)
 
-[Download](https://downloads.mariadb.org/mariadb/10.4.6/)[Release Notes](mariadb-1046-release-notes.md)[Changelog](../../../changelogs/changelogs-mariadb-10-4-series/mariadb-1046-changelog.md)[Overview of 10.4](broken-reference)
+[Download](https://downloads.mariadb.org/mariadb/10.4.6/)[Release Notes](mariadb-1046-release-notes.md)[Changelog](../../../changelogs/changelogs-mariadb-10-4-series/mariadb-1046-changelog.md)[Overview of 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/broken-reference/README.md)
 
 **Release date:** 18 Jun 2019
 
-With this release, [MariaDB 10.4](broken-reference) is now the current _stable_ series of MariaDB. It is an evolution\
+With this release, [MariaDB 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/broken-reference/README.md) is now the current _stable_ series of MariaDB. It is an evolution\
 of [MariaDB 10.3](../release-notes-mariadb-10-3-series/what-is-mariadb-103.md) with several entirely new features not found anywhere else\
 and with backported and reimplemented features from MySQL.
 
 [MariaDB 10.4.6](mariadb-1046-release-notes.md) is a [_**Stable (GA)**_](../../../mariadb-release-criteria.md) release.
 
-**For an overview of** [**MariaDB 10.4**](broken-reference) **see the**[**What is MariaDB 10.4?**](broken-reference) **page.**
+**For an overview of** [**MariaDB 10.4**](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/broken-reference/README.md) **see the**[**What is MariaDB 10.4?**](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/broken-reference/README.md) **page.**
 
 Thanks, and enjoy MariaDB!
 
@@ -46,7 +46,7 @@ For a full list of contributors to [MariaDB 10.4.6](mariadb-1046-release-notes.m
 Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
 
 MariaDB may already be included in your favorite OS distribution. More\
-information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/readme-1)\
+information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-including-mariadb)\
 page.
 
 {% @marketo/form formid="4316" formId="4316" %}

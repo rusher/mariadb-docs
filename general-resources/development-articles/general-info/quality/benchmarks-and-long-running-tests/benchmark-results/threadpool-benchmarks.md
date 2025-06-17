@@ -45,7 +45,7 @@ Some notes on how the benchmarks were run:
 | thread per connection | 3944 | 4725 | 4878 | 4863 | 4732 | 4554 | 4345 | 4103 | 1670 |                       |            |
 | threadpool            | 3822 | 4955 | 4991 | 5017 | 4908 | 4716 | 4610 | 4307 | 2962 |                       |            |
 
-![oltp-ro-facebook-maria1](../../../../../.gitbook/assets/threadpool-benchmarks/+image/oltp-ro-facebook-maria1.png)
+![oltp-ro-facebook-maria1](../../../../../.gitbook/assets/oltp-ro-facebook-maria1.png)
 
 ### OLTP\_RO pitbull
 
@@ -55,7 +55,7 @@ Some notes on how the benchmarks were run:
 | thread per connection | 6754 | 7905 | 8152 | 7948 | 7924 | 7587 | 5313 | 3827 | 208  |                       |            |
 | threadpool            | 6566 | 7725 | 8108 | 8079 | 7976 | 7793 | 7429 | 6523 | 4456 |                       |            |
 
-![oltp\_ro-pitbull](../../../../../.gitbook/assets/threadpool-benchmarks/+image/oltp_ro-pitbull.png)
+![oltp\_ro-pitbull](../../../../../.gitbook/assets/oltp_ro-pitbull.png)
 
 ### OLTP\_RO Windows
 
@@ -65,7 +65,7 @@ Some notes on how the benchmarks were run:
 | thread per connection | 1822 | 1831 | 1825 | 1829 | 1816 | 1879 | 1866 | 1783 | 987  |                       |            |
 | threadpool            | 2019 | 2049 | 2024 | 1992 | 1924 | 1897 | 1855 | 1825 | 1403 |                       |            |
 
-![oltp\_ro-windows](../../../../../.gitbook/assets/threadpool-benchmarks/+image/oltp_ro-windows.png)
+![oltp\_ro-windows](../../../../../.gitbook/assets/oltp_ro-windows.png)
 
 ## OLTP\_RW
 
@@ -77,7 +77,7 @@ Some notes on how the benchmarks were run:
 | thread per connection | 2833 | 3510 | 3545 | 3420 | 3259 | 2818 | 1788 | 820  | 113  |                       |            |
 | threadpool            | 3163 | 3590 | 3498 | 3459 | 3354 | 3117 | 2190 | 1064 | 506  |                       |            |
 
-![oltp\_rw-facebook-maria1](../../../../../.gitbook/assets/threadpool-benchmarks/+image/oltp_rw-facebook-maria1.png)
+![oltp\_rw-facebook-maria1](../../../../../.gitbook/assets/oltp_rw-facebook-maria1.png)
 
 ### OLTP\_RW pitbull
 
@@ -87,7 +87,7 @@ Some notes on how the benchmarks were run:
 | thread per connection | 4561 | 5316 | 5332 | 3512 | 2874 | 2476 | 1380 | 265  | 53   |                       |            |
 | threadpool            | 4504 | 5382 | 5694 | 5567 | 5302 | 4514 | 2548 | 1186 | 484  |                       |            |
 
-![oltp\_rw-pitbull](../../../../../.gitbook/assets/threadpool-benchmarks/+image/oltp_rw-pitbull.png)
+![oltp\_rw-pitbull](../../../../../.gitbook/assets/oltp_rw-pitbull.png)
 
 ### OLTP\_RW Windows
 
@@ -97,7 +97,7 @@ Some notes on how the benchmarks were run:
 | thread per connection | 1480 | 1498 | 1472 | 1477 | 1456 | 1371 | 731  | 328  | 82   |                       |            |
 | threadpool            | 1449 | 1523 | 1527 | 1492 | 1443 | 1409 | 1365 | 1240 | 862  |                       |            |
 
-![oltp\_rw-windows](../../../../../.gitbook/assets/threadpool-benchmarks/+image/oltp_rw-windows.png)
+![oltp\_rw-windows](../../../../../.gitbook/assets/oltp_rw-windows.png)
 
 ## POINT\_SELECT
 
@@ -109,7 +109,7 @@ Some notes on how the benchmarks were run:
 | thread per connection | 91322  | 113116 | 115418 | 114484 | 111169 | 104612 | 26902  | 12843  | 5038   |                       |            |
 | threadpool            | 100359 | 115618 | 118115 | 120136 | 119165 | 113931 | 110787 | 109970 | 104985 |                       |            |
 
-![point\_select-facebook-maria1](../../../../../.gitbook/assets/threadpool-benchmarks/+image/point_select-facebook-maria1.png)
+![point\_select-facebook-maria1](../../../../../.gitbook/assets/point_select-facebook-maria1.png)
 
 ### POINT\_SELECT pitbull
 
@@ -119,7 +119,7 @@ Some notes on how the benchmarks were run:
 | thread per connection | 148673 | 161547 | 169747 | 172083 | 69036  | 42041  | 21775  | 4368   | 282    |                       |            |
 | threadpool            | 143222 | 167069 | 167270 | 165977 | 164983 | 158410 | 148690 | 147107 | 143934 |                       |            |
 
-![point\_select-pitbull](../../../../../.gitbook/assets/threadpool-benchmarks/+image/point_select-pitbull.png)
+![point\_select-pitbull](../../../../../.gitbook/assets/point_select-pitbull.png)
 
 ### POINT\_SELECT Windows
 
@@ -129,7 +129,7 @@ Some notes on how the benchmarks were run:
 | thread per connection | 39734 | 42885 | 44448 | 44478 | 41720 | 38196 | 36844 | 35404 | 23306 |                       |            |
 | threadpool            | 42143 | 45679 | 47066 | 47753 | 46720 | 44215 | 43677 | 43093 | 44364 |                       |            |
 
-![point\_select-windows](../../../../../.gitbook/assets/threadpool-benchmarks/+image/point_select-windows.png)
+![point\_select-windows](../../../../../.gitbook/assets/point_select-windows.png)
 
 ## UPDATE\_NOKEY
 
@@ -141,7 +141,7 @@ Some notes on how the benchmarks were run:
 | thread per connection | 60165 | 65761 | 67727 | 57232 | 47612 | 26341 | 8981  | 3265  | 389   |                       |            |
 | threadpool            | 65092 | 68683 | 67053 | 64141 | 64815 | 63047 | 63346 | 63638 | 62843 |                       |            |
 
-![update\_nokey-facebook-maria1](../../../../../.gitbook/assets/threadpool-benchmarks/+image/update_nokey-facebook-maria1.png)
+![update\_nokey-facebook-maria1](../../../../../.gitbook/assets/update_nokey-facebook-maria1.png)
 
 ### UPDATE\_NOKEY pitbull
 
@@ -151,7 +151,7 @@ Some notes on how the benchmarks were run:
 | thread per connection | 65213 | 71680 | 19418 | 13008 | 11155 | 8742  | 5645  | 635   | 332   |                       |            |
 | threadpool            | 64902 | 70236 | 70037 | 68926 | 69930 | 69929 | 67099 | 62376 | 17766 |                       |            |
 
-![update\_nokey-pitbull](../../../../../.gitbook/assets/threadpool-benchmarks/+image/update_nokey-pitbull.png)
+![update\_nokey-pitbull](../../../../../.gitbook/assets/update_nokey-pitbull.png)
 
 ### UPDATE\_NOKEY Windows
 
@@ -161,7 +161,7 @@ Some notes on how the benchmarks were run:
 | thread per connection | 24790 | 25634 | 25639 | 25309 | 24754 | 19420 | 5249  | 2361  | 824   |                       |            |
 | threadpool            | 25251 | 25259 | 25406 | 25327 | 24850 | 23818 | 23137 | 23003 | 22047 |                       |            |
 
-![update\_nokey-windows](../../../../../.gitbook/assets/threadpool-benchmarks/+image/update_nokey-windows.png)
+![update\_nokey-windows](../../../../../.gitbook/assets/update_nokey-windows.png)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

@@ -22,7 +22,7 @@ All behavior for naming columns, `ORDER BY` and `LIMIT` is the same as for [UNIO
 
 The result of an intersect is the intersection of right and left `SELECT` results, i.e. only records that are present in both result sets will be included in the result of the operation.
 
-`INTERSECT` has higher precedence than `UNION` and `EXCEPT` (unless running [running in Oracle mode](broken-reference), in which case all three have the same precedence). If possible it will be executed linearly but if not it will be translated to a subquery in the `FROM` clause:
+`INTERSECT` has higher precedence than `UNION` and `EXCEPT` (unless running [running in Oracle mode](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/data-manipulation/selecting-data/joins-subqueries/broken-reference/README.md), in which case all three have the same precedence). If possible it will be executed linearly but if not it will be translated to a subquery in the `FROM` clause:
 
 ```
 (select a,b from t1)
@@ -49,7 +49,7 @@ union
 
 ### Parentheses
 
-Parentheses can be used to specify precedence. Prior to [MariaDB 10.4](broken-reference), a syntax error would be returned.
+Parentheses can be used to specify precedence. Prior to [MariaDB 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/data-manipulation/selecting-data/joins-subqueries/broken-reference/README.md), a syntax error would be returned.
 
 **MariaDB starting with** [**10.5.0**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1050-release-notes)
 

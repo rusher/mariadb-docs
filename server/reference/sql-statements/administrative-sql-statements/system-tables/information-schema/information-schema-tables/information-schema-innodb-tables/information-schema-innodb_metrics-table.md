@@ -27,7 +27,7 @@ It has the following columns:
 | TYPE              | Item type; one of counter, value, status\_counter, set\_owner, set\_member.                                                                                                                                                                                                                                                                                                                                      |
 | COMMENT           | Counter description.                                                                                                                                                                                                                                                                                                                                                                                             |
 
-Note: In [MariaDB 10.4](broken-reference/) and earlier the `ENABLED` column was called `STATUS`.
+Note: In [MariaDB 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/broken-reference/README.md) and earlier the `ENABLED` column was called `STATUS`.
 
 ## Enabling and Disabling Counters
 

@@ -6,13 +6,13 @@ This means that statements such as [CREATE](../../../reference/sql-statements/da
 
 If a statement may potentially have an effect, but doesn't, such as an UPDATE or DELETE that returns no rows, it will still be logged (this applies to the default statement-based logging, not to row-based logging - see [Binary Log Formats](binary-log-formats.md)).
 
-The purpose of the binary log is to allow [replication](broken-reference), where data is sent from one or more masters to one or more slave servers based on the contents of the binary log, as well as assisting in backup operations.
+The purpose of the binary log is to allow [replication](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-management/server-monitoring-logs/binary-log/broken-reference/README.md), where data is sent from one or more masters to one or more slave servers based on the contents of the binary log, as well as assisting in backup operations.
 
 A MariaDB server with the binary log enabled will run slightly more slowly.
 
 It is important to protect the binary log, as it may contain sensitive information, including passwords.
 
-Binary logs are stored in a binary, not plain text, format, and so are not viewable with a regular editor. However, MariaDB includes [mariadb-binlog](../../../clients-and-utilities/mariadb-binlog/), a commandline tool for plain text processing of binary logs.
+Binary logs are stored in a binary, not plain text, format, and so are not viewable with a regular editor. However, MariaDB includes [mariadb-binlog](../../../clients-and-utilities/logging-tools/mariadb-binlog/), a commandline tool for plain text processing of binary logs.
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

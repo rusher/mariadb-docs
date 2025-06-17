@@ -11,7 +11,7 @@ description: >-
 The terms _master_ and _slave_ have historically been used in replication, and MariaDB has begun the process of adding _primary_ and _replica_ synonyms. The old terms will continue to be used to maintain backward compatibility - see [MDEV-18777](https://jira.mariadb.org/browse/MDEV-18777) to follow progress on this effort.
 {% endhint %}
 
-Getting [replication](broken-reference/) working involves steps on both the master server/s and steps on the replica server/s.
+Getting [replication](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/standard-replication/broken-reference/README.md) working involves steps on both the master server/s and steps on the replica server/s.
 
 ### Setting up a Replication Replica with MariaDB-Backup
 
@@ -59,7 +59,7 @@ log-bin
 server_id=1
 ```
 
-For replication from MySQL 8.0 to MariaDB [requires slight more configurations](broken-reference/).
+For replication from MySQL 8.0 to MariaDB [requires slight more configurations](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/standard-replication/broken-reference/README.md).
 
 ### Settings to Check
 
@@ -165,7 +165,7 @@ Slave_SQL_Running: Yes
 * [Replication and Binary Log Status Variables](replication-and-binary-log-status-variables.md)
 * [Semisynchronous Replication](semisynchronous-replication.md)
 * [Delayed Replication](delayed-replication.md)
-* [Replication Compatibility Between MariaDB and MySQL](broken-reference/)
+* [Replication Compatibility Between MariaDB and MySQL](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/standard-replication/broken-reference/README.md)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

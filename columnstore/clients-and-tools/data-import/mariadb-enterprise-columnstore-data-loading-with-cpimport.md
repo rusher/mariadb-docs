@@ -160,7 +160,7 @@ The binary file should use the following format for data:
 
 ### Binary DATE Format
 
-In binary input files, the cpimport tool expects [DATE](../../data-import-with-mariadb-enterprise-columnstore/data-types-date/) columns to be in the following format:
+In binary input files, the cpimport tool expects [DATE](https://github.com/mariadb-corporation/docs-server/blob/test/columnstore/data-import-with-mariadb-enterprise-columnstore/data-types-date/README.md) columns to be in the following format:
 
 ```
 struct Date
@@ -174,7 +174,7 @@ struct Date
 
 ### Binary DATETIME Format
 
-In binary input files, the cpimport tool expects [DATETIME](../../data-import-with-mariadb-enterprise-columnstore/data-types-datetime/) columns to be in the following format:
+In binary input files, the cpimport tool expects [DATETIME](https://github.com/mariadb-corporation/docs-server/blob/test/columnstore/data-import-with-mariadb-enterprise-columnstore/data-types-datetime/README.md) columns to be in the following format:
 
 ```
 struct DateTime
@@ -277,7 +277,7 @@ The cpimport tool requires column values to be be in the same order in the input
 
 ### Date Format
 
-The cpimport tool requires [DATE](../../data-import-with-mariadb-enterprise-columnstore/data-types-date/) values to be specified in the format YYYY-MM-DD.
+The cpimport tool requires [DATE](https://github.com/mariadb-corporation/docs-server/blob/test/columnstore/data-import-with-mariadb-enterprise-columnstore/data-types-date/README.md) values to be specified in the format YYYY-MM-DD.
 
 ### Transaction Log
 

@@ -662,8 +662,8 @@ will be put to maintenance during the next monitor iteration.
 
 For this parameter to have any effect, `disk_space_threshold` must be specified\
 for the [server](../../mariadb-maxscale-21-06/)\
-or the [monitor](../../../mariadb-maxscale-mariadb-maxscale-23/maxscale-23-monitors/node:mariadb-maxscale-23-common-monitor-parameters/#disk_space_threshold).\
-Also, [disk\_space\_check\_interval](../../../mariadb-maxscale-mariadb-maxscale-23/maxscale-23-monitors/node:mariadb-maxscale-23-common-monitor-parameters/#disk_space_check_interval)\
+or the [monitor](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-mariadb-maxscale-23/maxscale-23-monitors/node:mariadb-maxscale-23-common-monitor-parameters/README.md#disk_space_threshold).\
+Also, [disk\_space\_check\_interval](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-mariadb-maxscale-23/maxscale-23-monitors/node:mariadb-maxscale-23-common-monitor-parameters/README.md#disk_space_check_interval)\
 must be defined for the monitor.
 
 ```

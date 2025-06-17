@@ -1,5 +1,7 @@
 # Syntax Differences between MariaDB and SQL Server
 
+{% include "https://app.gitbook.com/s/GxVnu02ec8KJuFSxmB93/~/reusable/UQS8KgfG8jtpHBvT83fL/" %}
+
 This article contains a non-exhaustive list of syntax differences between MariaDB and SQL Server, and is written for SQL Server users that are unfamiliar with MariaDB.
 
 ## Compatibility Features
@@ -10,7 +12,7 @@ Some features are meant to improve syntax and semantics compatibility between Ma
 
 SQL semantics and syntax, in MariaDB, are affected by the [sql\_mode](../../../variables-and-modes/sql-mode.md) variable. Its value is a comma-separated list of flags, and each of them, if specified, affects a different aspect of SQL syntax and semantics.
 
-A particularly important flag for users familiar with SQL Server is [MSSQL](broken-reference/).
+A particularly important flag for users familiar with SQL Server is [MSSQL](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-management/install-and-upgrade-mariadb/migrating-to-mariadb/migrating-to-mariadb-from-sql-server/broken-reference/README.md).
 
 sql\_mode can be changed locally, in which case it only affects the current session; or globally, in which case it will affect all new connections (but not the connections already established). sql\_mode must be assigned a comma-separated list of flags.
 
@@ -69,7 +71,7 @@ It is rarely necessary to use `;` in SQL Server. It is required for certain comm
 
 But the same doesn't apply to MariaDB. **Normally, with MariaDB you only use `;`.**
 
-However, MariaDB also has some situations where you want to use a `;` but you don't want the [mariadb](../../../../clients-and-utilities/mariadb-client/mariadb-command-line-client.md) command-line client to send the query yet. This can be done in any situation, but it is particularly useful when creating [stored routines](../../../../server-usage/stored-routines/) or using [BEGIN NOT ATOMIC](../../../../server-usage/programmatic-compound-statements/begin-end.md).
+However, MariaDB also has some situations where you want to use a `;` but you don't want the [mariadb](../../../../clients-and-utilities/mariadb-client/mariadb-command-line-client.md) command-line client to send the query yet. This can be done in any situation, but it is particularly useful when creating [stored routines](../../../../server-usage/stored-routines/) or using [BEGIN NOT ATOMIC](../../../../reference/sql-statements/programmatic-compound-statements/begin-end.md).
 
 The reason is better explained with an example:
 
@@ -248,9 +250,9 @@ MariaDB [SHOW ERRORS](../../../../reference/sql-statements/administrative-sql-st
 
 Instead, inside stored procedures you can:
 
-* Use the [GET DIAGNOSTICS](../../../../server-usage/programmatic-compound-statements/programmatic-compound-statements-diagnostics/get-diagnostics.md) command to assign error properties to variables. This is the equivalent of using SQL Server functions like `ERROR_NUMBER()` or `ERROR_STATE()`.
-* Add a [DECLARE HANDLER](../../../../server-usage/programmatic-compound-statements/declare-handler.md) block to handle all errors, a class of errors, or a specific error. This is the equivalent of SQL Server `TRY ... CATCH`.
-* An error or warning can be generated on purpose using [SIGNAL](../../../../server-usage/programmatic-compound-statements/signal.md). Inside a `DECLARE HANDLER` block, [RESIGNAL](../../../../server-usage/programmatic-compound-statements/resignal.md) can be used to issue the error again, and interrupt the execution of the block. These are the equivalents of SQL Server `RAISERROR()`.
+* Use the [GET DIAGNOSTICS](../../../../reference/sql-statements/programmatic-compound-statements/programmatic-compound-statements-diagnostics/get-diagnostics.md) command to assign error properties to variables. This is the equivalent of using SQL Server functions like `ERROR_NUMBER()` or `ERROR_STATE()`.
+* Add a [DECLARE HANDLER](../../../../reference/sql-statements/programmatic-compound-statements/declare-handler.md) block to handle all errors, a class of errors, or a specific error. This is the equivalent of SQL Server `TRY ... CATCH`.
+* An error or warning can be generated on purpose using [SIGNAL](../../../../reference/sql-statements/programmatic-compound-statements/signal.md). Inside a `DECLARE HANDLER` block, [RESIGNAL](../../../../reference/sql-statements/programmatic-compound-statements/resignal.md) can be used to issue the error again, and interrupt the execution of the block. These are the equivalents of SQL Server `RAISERROR()`.
 
 ## Administration
 
@@ -272,7 +274,7 @@ See also [How to Quickly Insert Data Into MariaDB](../../../../ha-and-performanc
 
 * [SQL Server and MariaDB Types Comparison](sql-server-and-mariadb-types-comparison.md)
 * [MariaDB Transactions and Isolation Levels for SQL Server Users](mariadb-transactions-and-isolation-levels-for-sql-server-users.md)
-* [SQL\_MODE=MSSQL](broken-reference/)
+* [SQL\_MODE=MSSQL](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-management/install-and-upgrade-mariadb/migrating-to-mariadb/migrating-to-mariadb-from-sql-server/broken-reference/README.md)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

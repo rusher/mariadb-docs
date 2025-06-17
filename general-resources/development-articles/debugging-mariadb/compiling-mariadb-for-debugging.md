@@ -18,7 +18,7 @@ To compile:
 cmake --build .
 ```
 
-You can find a list of the needed packages/libraries for building on Linux [here](../../../kb/en/Build_Environment_Setup_for_Linux/).
+You can find a list of the needed packages/libraries for building on Linux [here](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/Build_Environment_Setup_for_Linux/README.md).
 
 ## Building Optimized Build With Debug Symbols
 
@@ -120,7 +120,7 @@ This is achieved by grouping asserts in MariaDB server code into two groups:
 
 ## See Also
 
-* [Build environment setup for Linux](../../../kb/en/Build_Environment_Setup_for_Linux/)
+* [Build environment setup for Linux](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/Build_Environment_Setup_for_Linux/README.md)
 * [Debugging MariaDB with a debugger](debugging-mariadb-with-a-debugger.md)
 * [Creating a trace file](creating-a-trace-file.md)
 * [Using ASAN with MariaDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/compiling-mariadb-from-source/compile-and-using-mariadb-with-sanitizers-asan-ubsan-tsan-msan)

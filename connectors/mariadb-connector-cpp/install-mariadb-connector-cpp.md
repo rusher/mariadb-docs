@@ -1,5 +1,7 @@
 # Install MariaDB Connector/C++
 
+{% include "https://app.gitbook.com/s/GxVnu02ec8KJuFSxmB93/~/reusable/97ObD80oLdZu6qT33Vhb/" %}
+
 ## Requirement
 
 MariaDB Connector/C++ has dependencies. You must install MariaDB Connector/C to use it.

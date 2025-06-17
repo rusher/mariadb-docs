@@ -18,7 +18,7 @@ We see up to 250% performance gain depending on the amount of concurrent users.
 
 #### On pitbull with --random-points=10
 
-![pitbull\_rp10](../../../../../.gitbook/assets/segmented-key-cache-performance/+image/pitbull_rp10.png)
+![pitbull\_rp10](../../../../../.gitbook/assets/pitbull_rp10.png)
 
 In relative numbers:
 
@@ -32,7 +32,7 @@ select_random_points.lua --random-points=10
 
 #### On pitbull with --random-points=50
 
-![pitbull\_rp50](../../../../../.gitbook/assets/segmented-key-cache-performance/+image/pitbull_rp50.png)
+![pitbull\_rp50](../../../../../.gitbook/assets/pitbull_rp50.png)
 
 In relative numbers:
 
@@ -46,7 +46,7 @@ select_random_points.lua --random-points=50
 
 #### On pitbull with --random-points=100
 
-![pitbull\_rp100](../../../../../.gitbook/assets/segmented-key-cache-performance/+image/pitbull_rp100.png)
+![pitbull\_rp100](../../../../../.gitbook/assets/pitbull_rp100.png)
 
 In relative numbers:
 
@@ -66,7 +66,7 @@ You can find the absolute and relative numbers in our OpenOffice.org spread shee
 
 #### On perro with --random-points=10
 
-![perro\_rp10](../../../../../.gitbook/assets/segmented-key-cache-performance/+image/perro_rp10.png)
+![perro\_rp10](../../../../../.gitbook/assets/perro_rp10.png)
 
 In relative numbers:
 
@@ -80,7 +80,7 @@ select_random_points.lua --random-points=10
 
 #### On perro with --random-points=50
 
-![perro\_rp50](../../../../../.gitbook/assets/segmented-key-cache-performance/+image/perro_rp50.png)
+![perro\_rp50](../../../../../.gitbook/assets/perro_rp50.png)
 
 In relative numbers:
 
@@ -94,7 +94,7 @@ select_random_points.lua --random-points=50
 
 #### On perro with --random-points=100
 
-![perro\_rp100](../../../../../.gitbook/assets/segmented-key-cache-performance/+image/perro_rp100.png)
+![perro\_rp100](../../../../../.gitbook/assets/perro_rp100.png)
 
 In relative numbers:
 

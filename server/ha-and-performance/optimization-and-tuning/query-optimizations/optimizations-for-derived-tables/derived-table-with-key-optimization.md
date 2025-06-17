@@ -58,7 +58,7 @@ set optimizer_switch='derived_with_keys=off'
 ## See Also
 
 * [Optimizing Subqueries in the FROM Clause](https://dev.mysql.com/doc/refman/5.6/en/from-clause-subquery-optimization.html) in MySQL 5.6 manual
-* [What is MariaDB 5.3](broken-reference)
+* [What is MariaDB 5.3](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/optimization-and-tuning/query-optimizations/optimizations-for-derived-tables/broken-reference/README.md)
 * [Subquery Optimizations Map](../subquery-optimizations/subquery-optimizations-map.md)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>

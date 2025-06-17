@@ -68,7 +68,7 @@ For clients that use the `libmysqlclient` or [MariaDB Connector/C](https://app.g
 
 * `mysql_native_password`
 
-When connecting with a [client or utility](../../../../kb/en/clients-utilities/) to a server as a user account that authenticates with the `mysql_native_password` authentication plugin, you may need to tell the client where to find the relevant client authentication plugin by specifying the `--plugin-dir` option. For example:
+When connecting with a [client or utility](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/clients-utilities/README.md) to a server as a user account that authenticates with the `mysql_native_password` authentication plugin, you may need to tell the client where to find the relevant client authentication plugin by specifying the `--plugin-dir` option. For example:
 
 ```
 mysql --plugin-dir=/usr/local/mysql/lib64/mysql/plugin --user=alice

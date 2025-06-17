@@ -61,7 +61,7 @@ However, if I have not done the above, then I would be measuring the latency of 
 
 And here is the obligatory graph:
 
-![mariadbasynciowindowsinnodb](../../../../../.gitbook/assets/mariadb-53-asynchronous-io-on-windows-with-innodb/+image/mariadbasynciowindowsinnodb.jpg)
+![mariadbasynciowindowsinnodb](../../../../../.gitbook/assets/mariadbasynciowindowsinnodb.jpg)
 
 ## Notes
 

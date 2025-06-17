@@ -46,7 +46,7 @@ Below is list of some of the bugs and issues fixed. For the complete list please
 
 With the fixing of [MCOL-59](https://jira.mariadb.org/browse/MCOL-59), the MariaDB Columnstore Platform Configuration file name has changed between 1.0.1 and 1.0.2. So if you have a 1.0.0 or 1.0.1 system and you want to upgrade to 1.0.2, you will need to do the following as part of the upgrade process. If you decide to reinstall 1.0.2 from scratch, this is isn’t required.
 
-For details on how to execute the workaround please see [upgrading-mariadb-columnstore-from-102-to-103](broken-reference)
+For details on how to execute the workaround please see [upgrading-mariadb-columnstore-from-102-to-103](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/columnstore/columnstore-1-0/broken-reference/README.md)
 
 ## Known Issues and Limitations
 

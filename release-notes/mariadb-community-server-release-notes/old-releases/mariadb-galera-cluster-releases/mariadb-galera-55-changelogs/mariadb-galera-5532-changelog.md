@@ -31,7 +31,7 @@ modified in that revision.
   * References [MDEV-4404](https://jira.mariadb.org/browse/MDEV-4404) - Added log message to catch information of log event corruption
 * [Revision #3412](https://bazaar.launchpad.net/~maria-captains/maria/maria-5.5-galera/revision/3412) \[merge]\
   Wed 2013-08-21 16:34:31 +0300
-  * Merge with [mariadb 5.5](broken-reference): `bzr merge lp:maria/5.5 --rtag:mariadb-5.5.32`
+  * Merge with [mariadb 5.5](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/mariadb-galera-cluster-releases/mariadb-galera-55-changelogs/broken-reference/README.md): `bzr merge lp:maria/5.5 --rtag:mariadb-5.5.32`
   * [Revision #3334.1.504](https://bazaar.launchpad.net/~maria-captains/maria/maria-5.5-galera/revision/3334.1.504)\
     Wed 2013-07-17 17:03:59 +0300
     * Revert of marko.makela@oracle.com-20130430103950-j353faze84zzk9xf for xtradb (fix of [bug.php?id=69623](https://bugs.mysql.com/bug.php?id=69623))
@@ -1185,9 +1185,9 @@ Tue 2013-03-05 12:19:07 +0100
   Fri 2013-06-07 10:02:50 +0200
   * [MDEV-4564](https://jira.mariadb.org/browse/MDEV-4564) ALTER on a temporary table generates an audit event
 * [Revision #3334.1.455](https://bazaar.launchpad.net/~maria-captains/maria/maria-5.5-galera/revision/3334.1.455)\
-  Sun 2013-06-09 13:26:10 +0300
-  *
-    * Added -Wno-uninitialized to avoid warnings in release builds (uninitalized variables are detected by DBUG builds) - Fixed wrong declaration which cased compile failure on 32 bit
+  Sun 2013-06-09 13:26:10 +0300\
+  \*
+  * Added -Wno-uninitialized to avoid warnings in release builds (uninitalized variables are detected by DBUG builds) - Fixed wrong declaration which cased compile failure on 32 bit
 * [Revision #3334.1.454](https://bazaar.launchpad.net/~maria-captains/maria/maria-5.5-galera/revision/3334.1.454)\
   Thu 2013-06-06 15:14:23 +0300
   * Fixed some cache variables that could be set to higher value than what the code supported (size\_t) Fixed some cases that didn't work with > 4G buffers. Fixed compiler warnings
@@ -1333,9 +1333,9 @@ Tue 2013-03-05 12:19:07 +0100
     Fri 2013-05-17 10:16:56 +0400
     * Bug#[MDEV-4518](https://jira.mariadb.org/browse/MDEV-4518) Server crashes in is\_white\_space when it's run with query cache, charset ucs2 and collation ucs2\_unicode\_ci
   * [Revision #3334.1.435](https://bazaar.launchpad.net/~maria-captains/maria/maria-5.5-galera/revision/3334.1.435)\
-    Wed 2013-05-15 16:28:12 +0300
-    *
-      * Solaris fixes: - Fixed that wait\_timeout\_func and wait\_timeout tests works on solaris - We have to compile without NO\_ALARM on Solaris as Solaris doesn't support timeouts on sockets with setsockopt(.. SO\_RCVTIMEO). - Fixed that compile-solaris-amd64-debug works (before that we got a wrong ELF class: ELFCLASS64 on linkage) - Fixed some compiler warnings - Fixed some failing tests
+    Wed 2013-05-15 16:28:12 +0300\
+    \*
+    * Solaris fixes: - Fixed that wait\_timeout\_func and wait\_timeout tests works on solaris - We have to compile without NO\_ALARM on Solaris as Solaris doesn't support timeouts on sockets with setsockopt(.. SO\_RCVTIMEO). - Fixed that compile-solaris-amd64-debug works (before that we got a wrong ELF class: ELFCLASS64 on linkage) - Fixed some compiler warnings - Fixed some failing tests
   * [Revision #3334.1.434](https://bazaar.launchpad.net/~maria-captains/maria/maria-5.5-galera/revision/3334.1.434)\
     Wed 2013-05-15 02:36:37 +0500
     * [MDEV-4266](https://jira.mariadb.org/browse/MDEV-4266) Server upgrade via apt-get install does not work. Now empty 'highlevel' packages strictly depend on the same versions of files. These are mariadb-server, mariadb-client, mariadb-test
@@ -1723,13 +1723,13 @@ Tue 2013-03-05 12:19:07 +0100
       Wed 2013-01-30 10:53:43 +0530
       * Bug#14756795 SELECT FROM NEW INNODB I\_S TABLES CRASHES SERVER WITH `--SKIP-INNODB`
     * [Revision #3077.184.35](https://bazaar.launchpad.net/~maria-captains/maria/maria-5.5-galera/revision/3077.184.35) \[merge]\
-      Wed 2013-01-30 08:27:33 +0530
-      *
-        * BUG#1608883: KILLING A QUERY INSIDE INNODB CAUSES IT TO EVENTUALLY CRASH WITH AN ASSERTION Null merge from mysql-5.1
+      Wed 2013-01-30 08:27:33 +0530\
+      \*
+      * BUG#1608883: KILLING A QUERY INSIDE INNODB CAUSES IT TO EVENTUALLY CRASH WITH AN ASSERTION Null merge from mysql-5.1
       * [Revision #2661.844.20](https://bazaar.launchpad.net/~maria-captains/maria/maria-5.5-galera/revision/2661.844.20)\
-        Wed 2013-01-30 08:17:24 +0530
-        *
-          * BUG#1608883: KILLING A QUERY INSIDE INNODB CAUSES IT TO EVENTUALLY CRASH WITH AN ASSERTION
+        Wed 2013-01-30 08:17:24 +0530\
+        \*
+        * BUG#1608883: KILLING A QUERY INSIDE INNODB CAUSES IT TO EVENTUALLY CRASH WITH AN ASSERTION
     * [Revision #3077.184.34](https://bazaar.launchpad.net/~maria-captains/maria/maria-5.5-galera/revision/3077.184.34) \[merge]\
       Tue 2013-01-29 10:06:31 +0530
       * Bug#16208709 - CRASH IN GET\_SEL\_ARG\_FOR\_KEYPART ON SELECT DISTINCT ON COL WITH COMPOSITE INDEX
@@ -1835,9 +1835,9 @@ Tue 2013-03-05 12:19:07 +0100
       Mon 2013-01-14 10:57:04 +0530
       * Merge from mysql-5.1 to mysql-5.5
       * [Revision #2661.844.7](https://bazaar.launchpad.net/~maria-captains/maria/maria-5.5-galera/revision/2661.844.7)\
-        Mon 2013-01-14 10:49:51 +0530
-        *
-          * BUG#1608883: KILLING A QUERY INSIDE INNODB CAUSES IT TO EVENTUALLY CRASH WITH AN ASSERTION
+        Mon 2013-01-14 10:49:51 +0530\
+        \*
+        * BUG#1608883: KILLING A QUERY INSIDE INNODB CAUSES IT TO EVENTUALLY CRASH WITH AN ASSERTION
     * [Revision #3077.184.10](https://bazaar.launchpad.net/~maria-captains/maria/maria-5.5-galera/revision/3077.184.10) \[merge]\
       Sat 2013-01-12 11:17:03 +0530
       * BUG#11757250: REPLACE(...) INSIDE A STORED PROCEDURE.

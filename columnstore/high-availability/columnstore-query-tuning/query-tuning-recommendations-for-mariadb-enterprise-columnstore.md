@@ -84,7 +84,7 @@ For additional information, see "[Configure In-Memory Joins](../../architecture/
 
 ## Load Ordered Data in Proper Order
 
-Enterprise ColumnStore uses extent elimination to optimize queries. [Extent elimination](../../architecture/mariadb-enterprise-columnstore-query-evaluation.md#extent-elimination) uses the minimum and maximum values in the [extent map](../../columnstore-performance-tuning/columnstore-query-tuning/mariadb-enterprise-columnstore-storage-architecture/#extent-map) to determine which extents can be skipped for a query.
+Enterprise ColumnStore uses extent elimination to optimize queries. [Extent elimination](../../architecture/mariadb-enterprise-columnstore-query-evaluation.md#extent-elimination) uses the minimum and maximum values in the [extent map](https://github.com/mariadb-corporation/docs-server/blob/test/columnstore/columnstore-performance-tuning/columnstore-query-tuning/mariadb-enterprise-columnstore-storage-architecture/README.md#extent-map) to determine which extents can be skipped for a query.
 
 When data is loaded into Enterprise ColumnStore, it appends the data to the latest extent. When an extent reaches the maximum number of column values, Enterprise ColumnStore creates a new extent. As a consequence, if ordered data is loaded in its proper order, then similar values will be clustered together in the same extent. This can improve query performance, because extent elimination performs best when similar values are clustered together.
 
@@ -94,7 +94,7 @@ For best performance, load ordered data in proper order.
 
 ## Enable Decimal Overflow Checks
 
-When Enterprise ColumnStore performs mathematical operations with very big values using the [DECIMAL](../../columnstore-performance-tuning/columnstore-query-tuning/data-types-decimal/), [NUMERIC](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/data-types-numeric-data-types/numeric), and [FIXED](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/data-types-numeric-data-types/fixed) data types, the operation can sometimes overflow ColumnStore's maximum precision or scale. The maximum precision and scale depends on the version of Enterprise ColumnStore:
+When Enterprise ColumnStore performs mathematical operations with very big values using the [DECIMAL](https://github.com/mariadb-corporation/docs-server/blob/test/columnstore/columnstore-performance-tuning/columnstore-query-tuning/data-types-decimal/README.md), [NUMERIC](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/data-types-numeric-data-types/numeric), and [FIXED](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/data-types-numeric-data-types/fixed) data types, the operation can sometimes overflow ColumnStore's maximum precision or scale. The maximum precision and scale depends on the version of Enterprise ColumnStore:
 
 * In Enterprise ColumnStore 6, the maximum precision (M) is 38, and the maximum scale (D) is 38.
 * In Enterprise ColumnStore 5, the maximum precision (M) is 18, and the maximum scale (D) is 18.

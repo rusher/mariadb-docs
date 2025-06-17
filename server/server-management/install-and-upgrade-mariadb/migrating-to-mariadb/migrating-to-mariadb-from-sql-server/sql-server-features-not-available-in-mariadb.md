@@ -1,5 +1,7 @@
 # SQL Server Features Not Available in MariaDB
 
+{% include "https://app.gitbook.com/s/GxVnu02ec8KJuFSxmB93/~/reusable/UQS8KgfG8jtpHBvT83fL/" %}
+
 When planning a migration between different DBMSs, one of the most important aspects to consider is that the new database system will probably miss some features supported by the old one. This is not relevant for all users. The most widely used features are supported by most DBMSs. However, it is important to make a list of unsupported features and check which of them are currently used by applications. In most cases it is possible to implement such features on the application side, or simply stop using them.
 
 This page has a list of SQL Server features that are not supported in MariaDB. The list is not exhaustive.
@@ -21,7 +23,7 @@ This page has a list of SQL Server features that are not supported in MariaDB. T
   * Triggers on DDL and login.
   * `INSTEAD OF` triggers.
   * The `DISABLE TRIGGER` syntax.
-* [Cursors](../../../../server-usage/programmatic-compound-statements/programmatic-compound-statements-cursors/) advanced features.
+* [Cursors](../../../../reference/sql-statements/programmatic-compound-statements/programmatic-compound-statements-cursors/) advanced features.
   * Global cursors.
   * `DELETE ... CURRENT OF`, `UPDATE ... CURRENT OF` statements: MariaDB cursors are read-only.
   * Specifying a direction (MariaDB cursors can only advance by one row).
@@ -42,7 +44,7 @@ This page has a list of SQL Server features that are not supported in MariaDB. T
 * Native data masking
 * PolyBase (however, [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105) supports accessing Amazon S3 via the [S3 storage engine](../../../../server-usage/storage-engines/s3-storage-engine/) and several DBMSs via [CONNECT](../../../../server-usage/storage-engines/connect/))
 * R and Python services
-* ColumnStore indexes. MariaDB has a storage engine called [ColumnStore](../../../../../kb/en/mariadb-columnstore/), but this is a completely different feature.
+* ColumnStore indexes. MariaDB has a storage engine called [ColumnStore](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/mariadb-columnstore/README.md), but this is a completely different feature.
 
 ## Introduced in SQL Server 2017
 

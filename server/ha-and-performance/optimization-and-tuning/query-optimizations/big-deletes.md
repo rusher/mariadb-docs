@@ -18,7 +18,7 @@ Any suggestions on how to speed this up?
 * [MyISAM](../../../server-usage/storage-engines/myisam-storage-engine/) will lock the table during the entire operation, thereby nothing else can be done with the table.
 * [InnoDB](../../../server-usage/storage-engines/innodb/) won't lock the table, but it will chew up a lot of resources, leading to sluggishness.
 * InnoDB has to write the undo information to its transaction logs; this significantly increases the I/O required.
-* [Replication](broken-reference/), being asynchronous, will effectively be delayed (on Slaves) while the DELETE is running.
+* [Replication](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/optimization-and-tuning/query-optimizations/broken-reference/README.md), being asynchronous, will effectively be delayed (on Slaves) while the DELETE is running.
 
 ## InnoDB and undo
 

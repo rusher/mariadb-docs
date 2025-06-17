@@ -171,7 +171,7 @@ For clients that use the `libmysqlclient` or [MariaDB Connector/C](https://app.g
 * `dialog`
 * `mysql_clear_password`
 
-When connecting with a [client or utility](../../../../../kb/en/clients-utilities/) to a server as a user account that authenticates with the `pam` authentication plugin, you may need to tell the client where to find the relevant client authentication plugin by specifying the `--plugin-dir` option. For example:
+When connecting with a [client or utility](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/clients-utilities/README.md) to a server as a user account that authenticates with the `pam` authentication plugin, you may need to tell the client where to find the relevant client authentication plugin by specifying the `--plugin-dir` option. For example:
 
 ```
 mariadb --plugin-dir=/usr/local/mysql/lib64/mysql/plugin --user=alice
@@ -239,11 +239,11 @@ For MySQL compatibility, [MariaDB Connector/C](https://app.gitbook.com/s/CjGYMsT
 
 ### Using the Plugin with MariaDB Connector/C
 
-[MariaDB Connector/C](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c) supports `pam` authentication using the [client authentication plugins](client-authentication-plugins/) mentioned in the previous section since MariaDB Connector/C 2.1.0, regardless of the value of the [pam\_use\_cleartext\_plugin](authentication-plugin-pam.md#pam_use_cleartext_plugin) system variable.
+[MariaDB Connector/C](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c) supports `pam` authentication using the [client authentication plugins](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/client-authentication-plugins/README.md) mentioned in the previous section since MariaDB Connector/C 2.1.0, regardless of the value of the [pam\_use\_cleartext\_plugin](authentication-plugin-pam.md#pam_use_cleartext_plugin) system variable.
 
 ### Using the Plugin with MariaDB Connector/ODBC
 
-[MariaDB Connector/ODBC](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-odbc) supports `pam` authentication using the [client authentication plugins](client-authentication-plugins/) mentioned in the previous section since MariaDB Connector/ODBC 1.0.0, regardless of the value of the [pam\_use\_cleartext\_plugin](authentication-plugin-pam.md#pam_use_cleartext_plugin) system variable.
+[MariaDB Connector/ODBC](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-odbc) supports `pam` authentication using the [client authentication plugins](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/client-authentication-plugins/README.md) mentioned in the previous section since MariaDB Connector/ODBC 1.0.0, regardless of the value of the [pam\_use\_cleartext\_plugin](authentication-plugin-pam.md#pam_use_cleartext_plugin) system variable.
 
 ### Using the Plugin with MariaDB Connector/J
 
@@ -253,11 +253,11 @@ For MySQL compatibility, [MariaDB Connector/C](https://app.gitbook.com/s/CjGYMsT
 
 ### Using the Plugin with MariaDB Connector/Node.js
 
-[MariaDB Connector/Node.js](../../../../../kb/en/nodejs-connector/) supports `pam` authentication since MariaDB Connector/Node.js 0.7.0, regardless of the value of the [pam\_use\_cleartext\_plugin](authentication-plugin-pam.md#pam_use_cleartext_plugin) system variable.
+[MariaDB Connector/Node.js](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/nodejs-connector/README.md) supports `pam` authentication since MariaDB Connector/Node.js 0.7.0, regardless of the value of the [pam\_use\_cleartext\_plugin](authentication-plugin-pam.md#pam_use_cleartext_plugin) system variable.
 
 ### Using the Plugin with MySqlConnector for .NET
 
-[MySqlConnector for ADO.NET](../../../../../kb/en/mysqlconnector-for-adonet/) supports `pam` authentication since MySqlConnector 0.20.0, but only if the [pam\_use\_cleartext\_plugin](authentication-plugin-pam.md#pam_use_cleartext_plugin) system variable is enabled on the server.
+[MySqlConnector for ADO.NET](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/mysqlconnector-for-adonet/README.md) supports `pam` authentication since MySqlConnector 0.20.0, but only if the [pam\_use\_cleartext\_plugin](authentication-plugin-pam.md#pam_use_cleartext_plugin) system variable is enabled on the server.
 
 ## Logging
 
@@ -412,7 +412,7 @@ The `pam` authentication plugin isolates PAM module code from the server address
 
 When a [password validation plugin](../../password-validation-plugins/) is enabled, MariaDB won't allow an account to be created if the password validation plugin says that the account's password is too weak. This creates a problem for accounts that authenticate with the `pam` authentication plugin, since MariaDB has no knowledge of the user's password. When a user tries to create an account that authenticates with the `pam` authentication plugin, the password validation plugin would throw an error, even with [strict\_password\_validation=OFF](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#strict_password_validation) set.
 
-The workaround is to uninstall the [password validation plugin](../../password-validation-plugins/) with [UNINSTALL PLUGIN](../../../sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md), and then create the account, and then reinstall the [password validation plugin](broken-reference) with [INSTALL PLUGIN](../../../sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin.md).
+The workaround is to uninstall the [password validation plugin](../../password-validation-plugins/) with [UNINSTALL PLUGIN](../../../sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md), and then create the account, and then reinstall the [password validation plugin](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/broken-reference/README.md) with [INSTALL PLUGIN](../../../sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin.md).
 
 For example:
 
@@ -491,12 +491,12 @@ You may find the following PAM-related tutorials helpful:
 
 ## Versions
 
-| Version | Status | Introduced                                                                                                                                                                          |
-| ------- | ------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Version | Status | Introduced                                                                                                                                                                          |
-| 2.0     | Beta   | [MariaDB 10.4.0](broken-reference)                                                                                                                                                  |
-| 1.0     | Stable | [MariaDB 10.0.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-10010-release-notes) |
-| 1.0     | Beta   | [MariaDB 5.2.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-2-series/mariadb-5210-release-notes)    |
+| Version | Status | Introduced                                                                                                                                                                                                         |
+| ------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Version | Status | Introduced                                                                                                                                                                                                         |
+| 2.0     | Beta   | [MariaDB 10.4.0](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/broken-reference/README.md) |
+| 1.0     | Stable | [MariaDB 10.0.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-10010-release-notes)                                |
+| 1.0     | Beta   | [MariaDB 5.2.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-2-series/mariadb-5210-release-notes)                                   |
 
 ## System Variables
 

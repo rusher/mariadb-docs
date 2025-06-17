@@ -44,7 +44,7 @@ MariaDB CVEs are assigned a word rating instead of a CVSS base score. See the Ma
 
 ### Can result in a hang or crash
 
-* [MariaDB Enterprise Backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup) ignored the timeout setting [--ftwrl-wait-timeout](broken-reference) when an explicit `LOCK TABLES ... WRITE` was active in another session. As a result, MariaDB Enterprise Server waited for release of the lock even if the timeout was reached. ([MDEV-20230](https://jira.mariadb.org/browse/MDEV-20230))
+* [MariaDB Enterprise Backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup) ignored the timeout setting [--ftwrl-wait-timeout](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/enterprise-server/10-4/broken-reference/README.md) when an explicit `LOCK TABLES ... WRITE` was active in another session. As a result, MariaDB Enterprise Server waited for release of the lock even if the timeout was reached. ([MDEV-20230](https://jira.mariadb.org/browse/MDEV-20230))
 * When additional `open_table_caches_instances` have been created, a crash could occur due to exceeding the limit of open file descriptors. ([MDEV-18027](https://jira.mariadb.org/browse/MDEV-18027))
 * Clean shutdown of [MariaDB Enterprise Cluster](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/galera-cluster/README.md) was not possible due to a deadlock situation between Galera Nodes. (MENT-432)
 * Adding a column to discarded [InnoDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb) tablespace was possible, resulting in a crash. ([MDEV-22446](https://jira.mariadb.org/browse/MDEV-22446))
@@ -77,7 +77,7 @@ MariaDB CVEs are assigned a word rating instead of a CVSS base score. See the Ma
 
 ## Interface Changes
 
-* [ER\_SLAVE\_IGNORED\_SHARED\_TABLE](broken-reference) error code added
+* [ER\_SLAVE\_IGNORED\_SHARED\_TABLE](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/enterprise-server/10-4/broken-reference/README.md) error code added
 * [innodb\_encryption\_threads](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables#innodb_encryption_threads) system variable maximum value changed from 4294967295 to 255
 * [innodb\_instant\_alter\_column\_allowed](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables#innodb_instant_alter_column_allowed) system variable added
 * [mariabackup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup) --rollback-xa command-line option added

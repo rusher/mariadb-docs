@@ -9,17 +9,17 @@ the mariadb-...msi
 
 ### Welcome
 
-![Welcome dialog](../../../../.gitbook/assets/installing-mariadb-msi-packages-on-windows/+image/WelcomeDialog_New.png)
+![Welcome dialog](../../../../.gitbook/assets/WelcomeDialog_New.png)
 
 ### License Agreement
 
-![License Agreement](../../../../.gitbook/assets/installing-mariadb-msi-packages-on-windows/+image/LicenseAgreementDialog_New.png)
+![License Agreement](../../../../.gitbook/assets/LicenseAgreementDialog_New.png)
 
 Click on "I accept the terms"
 
 ### Custom Setup
 
-![Custom Setup](../../../../.gitbook/assets/installing-mariadb-msi-packages-on-windows/+image/CustomSetupDialog_New.png)
+![Custom Setup](../../../../.gitbook/assets/CustomSetupDialog_New.png)
 
 Here, you can choose what features to install. By default, all features are\
 installed with the exception of the debug symbols. If the "Database instance"\
@@ -38,7 +38,7 @@ directory location, select "Database instance" in the feature tree, and use the\
 
 ### Database Authentication/Security Related Properties
 
-![Database security properties](../../../../.gitbook/assets/installing-mariadb-msi-packages-on-windows/+image/DatabaseProperties_1_New.png)
+![Database security properties](../../../../.gitbook/assets/DatabaseProperties_1_New.png)
 
 This dialog is shown if you selected the "Database instance" feature. Here, you\
 can set the password for the "root" database user and specify whether root can\
@@ -48,11 +48,11 @@ not recommended to change this setting.
 
 ### Other Database Properties
 
-![Other database properties](../../../../.gitbook/assets/installing-mariadb-msi-packages-on-windows/+image/DatabaseProperties_2_New.png)
+![Other database properties](../../../../.gitbook/assets/DatabaseProperties_2_New.png)
 
 * Install as service
 * Defines whether the database should be run as a service. If it should be run as a service, then it also defines the service name. It is recommended to run your database instance as a service as it greatly\
-  simplifies database management. In [MariaDB 10.4](broken-reference/) and later, the default service name used by the MSI installer is "MariaDB". In 10.3 and before, the default service name used by the MSI installer is "MySQL". Note that the default service name for the `[--install](../starting-and-stopping-mariadb/mariadbd-options.md)` and `[--install-manual](../starting-and-stopping-mariadb/mariadbd-options.md)` options for `mysqld.exe` is "MySQL" in all versions of MariaDB.
+  simplifies database management. In [MariaDB 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/broken-reference/README.md) and later, the default service name used by the MSI installer is "MariaDB". In 10.3 and before, the default service name used by the MSI installer is "MySQL". Note that the default service name for the `[--install](../starting-and-stopping-mariadb/mariadbd-options.md)` and `[--install-manual](../starting-and-stopping-mariadb/mariadbd-options.md)` options for `mysqld.exe` is "MySQL" in all versions of MariaDB.
 * Enable Networking
 * Whether to enable TCP/IP (recommended) and which port MariaDB should\
   listen to. If security is a concern, you can change the [bind-address](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#bind_address)\
@@ -64,14 +64,14 @@ not recommended to change this setting.
 
 ### Ready to Install
 
-![Ready Dialog](../../../../.gitbook/assets/installing-mariadb-msi-packages-on-windows/+image/ReadyDialog_New.png)
+![Ready Dialog](../../../../.gitbook/assets/ReadyDialog_New.png)
 
 At this point, all installation settings are collected. Click on the "Install"\
 button.
 
 ### End
 
-![Finish](../../../../.gitbook/assets/installing-mariadb-msi-packages-on-windows/+image/FinishDialog_New.png)
+![Finish](../../../../.gitbook/assets/FinishDialog_New.png)
 
 Installation is finished now. If you have upgradable instances of\
 MariaDB/MySQL, running as services, this dialog will present a "Do you want to\
@@ -85,7 +85,7 @@ already.
 
 Installation will add some entries in the Start Menu:
 
-![Start Menu](../../../../.gitbook/assets/installing-mariadb-msi-packages-on-windows/+image/StartMenu_New.png)
+![Start Menu](../../../../.gitbook/assets/StartMenu_New.png)
 
 * MariaDB Client - Starts command line client mysql.exe
 * Command Prompt - Starts a command prompt. Environment is set such that "bin"\
@@ -104,12 +104,12 @@ In the Explorer applet "Programs and Features" (or "Add/Remove programs" on\
 older Windows), find the entry for MariaDB, choose Uninstall/Change and click\
 on the "Remove" button in the dialog below.
 
-![UninstallChangeDialog\_New](../../../../.gitbook/assets/installing-mariadb-msi-packages-on-windows/+image/UninstallChangeDialog_New.png)
+![UninstallChangeDialog\_New](../../../../.gitbook/assets/UninstallChangeDialog_New.png)
 
 If you installed a database instance, you will need to decide if you want to\
 remove or keep the data in the database directory.
 
-![KeepOrRemoveDataDialog\_New](../../../../.gitbook/assets/installing-mariadb-msi-packages-on-windows/+image/KeepOrRemoveDataDialog_New.png)
+![KeepOrRemoveDataDialog\_New](../../../../.gitbook/assets/KeepOrRemoveDataDialog_New.png)
 
 ## Silent Installation
 

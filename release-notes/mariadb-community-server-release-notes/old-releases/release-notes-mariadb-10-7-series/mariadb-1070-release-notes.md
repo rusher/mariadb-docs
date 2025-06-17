@@ -37,7 +37,7 @@ Notable changes of this series of releases include:
 
 ## JSON Histograms
 
-* Histograms in the statistics tables are more precise and stored as JSON, not binary ([MDEV-21130](https://jira.mariadb.org/browse/MDEV-21130), [MDEV-26519](https://jira.mariadb.org/browse/MDEV-26519), [blog post](https://mariadb.org/10-7-preview-feature-json-histograms/)). Note that this feature was not included in [MariaDB 10.7.1](broken-reference).
+* Histograms in the statistics tables are more precise and stored as JSON, not binary ([MDEV-21130](https://jira.mariadb.org/browse/MDEV-21130), [MDEV-26519](https://jira.mariadb.org/browse/MDEV-26519), [blog post](https://mariadb.org/10-7-preview-feature-json-histograms/)). Note that this feature was not included in [MariaDB 10.7.1](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-7-series/broken-reference/README.md).
 
 ## Convert Partitions
 
@@ -72,7 +72,7 @@ information on each push, see the [changelog](https://github.com/mariadb-corpora
 Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
 
 MariaDB may already be included in your favorite OS distribution. More\
-information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/readme-1)\
+information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-including-mariadb)\
 page.
 
 {% @marketo/form formid="4316" formId="4316" %}

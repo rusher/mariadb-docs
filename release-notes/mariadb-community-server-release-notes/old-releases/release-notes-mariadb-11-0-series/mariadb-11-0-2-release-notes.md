@@ -34,7 +34,7 @@ Thanks, and enjoy MariaDB!
 * New optimizer\_switch option, [hash\_join\_cardinality](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/query-optimizations/hash_join_cardinality-optimizer_switch-flag), is added. It is ON by default. When set to ON, the optimizer will produce tighter bounds for hash join output cardinality. ([MDEV-30812](https://jira.mariadb.org/browse/MDEV-30812))
 * Crash with condition pushable into derived and containing outer reference ([MDEV-31403](https://jira.mariadb.org/browse/MDEV-31403) [MDEV-31240](https://jira.mariadb.org/browse/MDEV-31240))
 * Crash with [EXPLAIN EXTENDED](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/analyze-and-explain-statements/explain) for multi-table update of system table ([MDEV-31224](https://jira.mariadb.org/browse/MDEV-31224))
-* [ANALYZE FORMAT=JSON](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/analyze-and-explain-statements/analyze-format-json) now prints more information about [Block Nested Loop joins](broken-reference): `block-nl-join` element now has `r_loops`, `r_effective_rows` and `r_other_time_ms` fields ([MDEV-30806](https://jira.mariadb.org/browse/MDEV-30806), [MDEV-30830](https://jira.mariadb.org/browse/MDEV-30830), [MDEV-30972](https://jira.mariadb.org/browse/MDEV-30972)).
+* [ANALYZE FORMAT=JSON](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/analyze-and-explain-statements/analyze-format-json) now prints more information about [Block Nested Loop joins](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-0-series/broken-reference/README.md): `block-nl-join` element now has `r_loops`, `r_effective_rows` and `r_other_time_ms` fields ([MDEV-30806](https://jira.mariadb.org/browse/MDEV-30806), [MDEV-30830](https://jira.mariadb.org/browse/MDEV-30830), [MDEV-30972](https://jira.mariadb.org/browse/MDEV-30972)).
 
 ### Variables
 
@@ -57,7 +57,7 @@ For a full list of contributors to [MariaDB 11.0.2](mariadb-11-0-2-release-notes
 Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
 
 MariaDB may already be included in your favorite OS distribution. More\
-information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/readme-1)\
+information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-including-mariadb)\
 page.
 
 {% @marketo/form formid="4316" formId="4316" %}

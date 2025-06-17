@@ -6,14 +6,14 @@ Generally speaking, writing plugins for MariaDB is very similar to writing plugi
 
 ## Authentication Plugins
 
-See [Pluggable Authentication](../../community/plugins/authentication-plugins/pluggable-authentication-overview.md).
+See [Pluggable Authentication](https://github.com/mariadb-corporation/docs-server/blob/test/general-resources/community/plugins/authentication-plugins/pluggable-authentication-overview.md).
 
 ## Storage Engine Plugins
 
 Storage engines can extend `CREATE TABLE` syntax with optional\
-index, field, and table attribute clauses. See[Extending CREATE TABLE](../../community/storage-engines/storage-engines-storage-engine-development/engine-defined-new-tablefieldindex-attributes.md) for more information.
+index, field, and table attribute clauses. See[Extending CREATE TABLE](https://github.com/mariadb-corporation/docs-server/blob/test/general-resources/community/storage-engines/storage-engines-storage-engine-development/engine-defined-new-tablefieldindex-attributes.md) for more information.
 
-See [Storage Engine Development](../../community/storage-engines/storage-engines-storage-engine-development/).
+See [Storage Engine Development](https://github.com/mariadb-corporation/docs-server/blob/test/general-resources/community/storage-engines/storage-engines-storage-engine-development/README.md).
 
 ## Information Schema Plugins
 
@@ -21,11 +21,11 @@ Information Schema plugins can have their own [FLUSH](https://app.gitbook.com/s/
 
 ## Encryption Plugins
 
-[Encryption plugins](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/enterprise-server/mariadb-enterprise-server-differences/mariadb-enterprise-server-data-at-rest-encryption/encryption-plugins) in MariaDB are used for the [data at rest encryption](../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/data-at-rest-encryption-overview.md) feature. They are responsible for both key management and for the actual encryption and decryption of data.
+[Encryption plugins](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/enterprise-server/mariadb-enterprise-server-differences/mariadb-enterprise-server-data-at-rest-encryption/encryption-plugins) in MariaDB are used for the [data at rest encryption](https://github.com/mariadb-corporation/docs-server/blob/test/general-resources/security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/data-at-rest-encryption-overview.md) feature. They are responsible for both key management and for the actual encryption and decryption of data.
 
 ## Function Plugins
 
-Function plugins add new SQL functions to MariaDB. Unlike the old [UDF](../../server-usage/user-defined-functions/) API, function plugins can do almost anything that a built-function can.
+Function plugins add new SQL functions to MariaDB. Unlike the old [UDF](https://github.com/mariadb-corporation/docs-server/blob/test/general-resources/server-usage/user-defined-functions/README.md) API, function plugins can do almost anything that a built-function can.
 
 ## Plugin Declaration Structure
 

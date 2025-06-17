@@ -27,7 +27,7 @@ The columns shown in `SHOW PROCESSLIST` are:
 | TIME     | The amount of time, in seconds, the process has been in its current state. For a replica SQL thread before [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1), this is the time in seconds between the last replicated event's timestamp and the replica machine's real time. |
 | STATE    | See [Thread States](../../../../ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-states/).                                                                                                                                                                                                                                                                                               |
 | INFO     | The statement being executed.                                                                                                                                                                                                                                                                                                                                                                                        |
-| PROGRESS | The total progress of the process (0-100%) (see [Progress Reporting](broken-reference)).                                                                                                                                                                                                                                                                                                                             |
+| PROGRESS | The total progress of the process (0-100%) (see [Progress Reporting](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/administrative-sql-statements/show/broken-reference/README.md)).                                                                                                                                                                                   |
 
 The [information\_schema.PROCESSLIST](../system-tables/information-schema/information-schema-tables/information-schema-processlist-table.md) table contains a number of additional columns. See `TIME_MS` column in [information\_schema.PROCESSLIST](../system-tables/information-schema/time_ms-column-in-information_schemaprocesslist.md) for differences in the `TIME` column between MariaDB and MySQL.
 
@@ -53,6 +53,6 @@ SHOW PROCESSLIST;
 
 [CONNECTION\_ID()](../../../sql-functions/secondary-functions/information-functions/connection_id.md)
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

@@ -519,8 +519,8 @@ using the percentages in this table.
 | serverD | 20         | 36%           |
 
 _Note: If the value of the weighting parameter of an individual server is_\
-&#xNAN;_&#x7A;ero or the relative weight rounds down to zero, no queries will be routed to_\
-&#xNAN;_&#x74;hat server as long as a server with a positive weight is available._
+\&#xNAN;_zero or the relative weight rounds down to zero, no queries will be routed to_\
+\&#xNAN;_that server as long as a server with a positive weight is available._
 
 Here is an excerpt from an example configuration with the `serv_weight` parameter\
 used as the weighting parameter.
@@ -897,7 +897,7 @@ The use of monitors is highly recommended but it is also possible to run MariaDB
 
 ### Filter Modules
 
-![](../../../.gitbook/assets/mariadb-corporation/MaxScale/2.0.6/Documentation/Getting-Started/images/image_10.png.png)
+![](<../../../.gitbook/assets/image_10.png (3).png>)
 
 Filters provide a means to manipulate or process requests as they pass through MariaDB MaxScale between the client side protocol and the query router. A full explanation of each filter's functionality can be found in its documentation.
 

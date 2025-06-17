@@ -17,7 +17,7 @@ The table contains the following columns:
 
 If [TRUNCATE TABLE](../../../../table-statements/truncate-table.md) is run, will reset the aggregated host status from terminated sessions.
 
-If [FLUSH STATUS](../../../../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/flush-status/) is run, session status from all active sessions are added to the global status variables, the status of all active sessions are reset, and values aggregated from disconnected sessions are reset.
+If [FLUSH STATUS](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/flush-status/README.md) is run, session status from all active sessions are added to the global status variables, the status of all active sessions are reset, and values aggregated from disconnected sessions are reset.
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

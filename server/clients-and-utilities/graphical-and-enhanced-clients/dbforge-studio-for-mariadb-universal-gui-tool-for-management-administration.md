@@ -1,6 +1,6 @@
 # dbForge Studio for MariaDB
 
-![dbForge-Studio-for-MySQL-new](../../.gitbook/assets/dbforge-studio-for-mariadb-universal-gui-tool-for-management-administration/+image/dbForge-Studio-for-MySQL-new.png) [**dbForge Studio for MariaDB**](https://www.devart.com/dbforge/mysql/studio/mariadb-gui-client.html) is a universal IDE with GUI tools that has all the necessary built-in capabilities to work with MariaDB and MySQL databases for their development, management, and administration.\
+![dbForge-Studio-for-MySQL-new](../../.gitbook/assets/dbForge-Studio-for-MySQL-new.png) [**dbForge Studio for MariaDB**](https://www.devart.com/dbforge/mysql/studio/mariadb-gui-client.html) is a universal IDE with GUI tools that has all the necessary built-in capabilities to work with MariaDB and MySQL databases for their development, management, and administration.\
 It allows for creating, managing, and editing the data without the need to store them locally.
 
 This powerful GUI tool offers a rich visual design that is perfect for working with large scripts, preparing data reports, and database projects. At any time, you can back up or restore your data, export or import them to and from the most commonly used formats, and compare or synchronize the MariaDB databases. Apart from that, dbForge Studio supports the following servers:
@@ -23,7 +23,7 @@ This powerful GUI tool offers a rich visual design that is perfect for working w
 * Code refactoring and formatting
 * CRUD generation
 
-![start-page-1-sql-development](../../.gitbook/assets/dbforge-studio-for-mariadb-universal-gui-tool-for-management-administration/+image/start-page-1-sql-development.png)
+![start-page-1-sql-development](../../.gitbook/assets/start-page-1-sql-development.png)
 
 ### 2. Database Compare and Sync
 
@@ -31,7 +31,7 @@ This powerful GUI tool offers a rich visual design that is perfect for working w
 * Recurring database sync tasks planning
 * Comparison report generation
 
-![start-page-3-database-sync](../../.gitbook/assets/dbforge-studio-for-mariadb-universal-gui-tool-for-management-administration/+image/start-page-3-database-sync.png)
+![start-page-3-database-sync](../../.gitbook/assets/start-page-3-database-sync.png)
 
 ### 3. Import/Export Data MariaDB
 
@@ -40,7 +40,7 @@ This powerful GUI tool offers a rich visual design that is perfect for working w
 * Rich customization ability
 * Command-line automation for data tasks
 
-![start-page-5-data-pump](../../.gitbook/assets/dbforge-studio-for-mariadb-universal-gui-tool-for-management-administration/+image/start-page-5-data-pump.png)
+![start-page-5-data-pump](../../.gitbook/assets/start-page-5-data-pump.png)
 
 ### 4. MariaDB Admin Tools
 
@@ -49,7 +49,7 @@ This powerful GUI tool offers a rich visual design that is perfect for working w
 * Table maintenance
 * Database scripts generation
 
-![start-page-4-administration](../../.gitbook/assets/dbforge-studio-for-mariadb-universal-gui-tool-for-management-administration/+image/start-page-4-administration.png)
+![start-page-4-administration](../../.gitbook/assets/start-page-4-administration.png)
 
 ### 5. Copy Database
 
@@ -64,7 +64,7 @@ This powerful GUI tool offers a rich visual design that is perfect for working w
 * Visual database construction
 * Foreign key relations between tables
 
-![start-page-2-database-design](../../.gitbook/assets/dbforge-studio-for-mariadb-universal-gui-tool-for-management-administration/+image/start-page-2-database-design.png)
+![start-page-2-database-design](../../.gitbook/assets/start-page-2-database-design.png)
 
 ### 7. Data Generator
 
@@ -118,7 +118,7 @@ This powerful GUI tool offers a rich visual design that is perfect for working w
 * Full command-line support
 * 9 formats for reports' delivery
 
-![start-page-6-data-analysis](../../.gitbook/assets/dbforge-studio-for-mariadb-universal-gui-tool-for-management-administration/+image/start-page-6-data-analysis.png)
+![start-page-6-data-analysis](../../.gitbook/assets/start-page-6-data-analysis.png)
 
 ### 15. Database Documenter
 
@@ -140,17 +140,17 @@ Download a free 30-day trial of dbForge Studio for MariaDB and MySQL [here](http
 
 [Editions](https://www.devart.com/dbforge/mysql/studio/editions.html)
 
-| Version | Introduced |
-| ------- | ---------- |
-| dbForge Studio for MySQL 10.1 | Support for the rds-ca-rsa2048-g1 SSL/TLS certificate for connecting to MariaDB servers on AWS and enhanced cloud compatibility features, new automation capabilities|
-| dbForge Studio for MySQL 10.0 | Support for [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-4-series/what-is-mariadb-114), added Source Control, support for temporal tables in MariaDB|
-| dbForge Studio for MySQL 9.2  | Support for [MariaDB 11.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-3-rolling-releases/what-is-mariadb-113), enhanced code completion for application-period temporal tables, support for sequence tables in MariaDB databases|
-| dbForge Studio for MySQL 9.1  | Connectivity support for [MariaDB 10.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-9-series/what-is-mariadb-109) -10.10|
-| dbForge Studio for MySQL 9.0  | Connectivity support for [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105)-10.6|
-| dbForge Studio for MySQL 8.1  | Support for [MariaDB 10.4](broken-reference)|
-| dbForge Studio for MySQL 8.0  | Support for [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103)|
+| Version                       | Introduced                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| dbForge Studio for MySQL 10.1 | Support for the rds-ca-rsa2048-g1 SSL/TLS certificate for connecting to MariaDB servers on AWS and enhanced cloud compatibility features, new automation capabilities                                                                                                                                                                                                                                                                       |
+| dbForge Studio for MySQL 10.0 | Support for [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-4-series/what-is-mariadb-114), added Source Control, support for temporal tables in MariaDB                                                                                                                                                                                                                     |
+| dbForge Studio for MySQL 9.2  | Support for [MariaDB 11.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-3-rolling-releases/what-is-mariadb-113), enhanced code completion for application-period temporal tables, support for sequence tables in MariaDB databases                                                                                                                           |
+| dbForge Studio for MySQL 9.1  | Connectivity support for [MariaDB 10.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-9-series/what-is-mariadb-109) -10.10                                                                                                                                                                                                                                    |
+| dbForge Studio for MySQL 9.0  | Connectivity support for [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105)-10.6                                                                                                                                                                                                                                                                 |
+| dbForge Studio for MySQL 8.1  | Support for [MariaDB 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/server/clients-and-utilities/graphical-and-enhanced-clients/broken-reference/README.md)                                                                                                                                                                                                                                                             |
+| dbForge Studio for MySQL 8.0  | Support for [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103)                                                                                                                                                                                                                                                        |
 | dbForge Studio for MySQL 7.3  | Support for [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102), Support for [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1), Support for MariaDB Galera Cluster 10.0 Series |
-| dbForge Studio for MySQL 6.1  | [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0), [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5)|
+| dbForge Studio for MySQL 6.1  | [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0), [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5)                                                           |
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

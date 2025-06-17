@@ -18,13 +18,13 @@ Set the lock wait timeout. See [WAIT and NOWAIT](../../../reference/sql-statemen
 
 ### Defragmenting
 
-`OPTIMIZE TABLE` works for [InnoDB](../../../server-usage/storage-engines/innodb/) (before [MariaDB 10.1.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-1-release-notes), only if the [innodb\_file\_per\_table](../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_file_per_table) server system variable is set), [Aria](../../../server-usage/storage-engines/aria/), [MyISAM](../../../server-usage/storage-engines/myisam-storage-engine/) and [ARCHIVE](../../../server-usage/storage-engines/archive/) tables, and should be used if you have deleted a large part of a table or if you have made many changes to a table with variable-length\
+`OPTIMIZE TABLE` works for [InnoDB](../../../server-usage/storage-engines/innodb/) (before [MariaDB 10.1.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-1-release-notes), only if the [innodb\_file\_per\_table](../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_file_per_table) server system variable is set), [Aria](../../../server-usage/storage-engines/aria/), [MyISAM](../../../server-usage/storage-engines/myisam-storage-engine/) and [ARCHIVE](../../../server-usage/storage-engines/archive.md) tables, and should be used if you have deleted a large part of a table or if you have made many changes to a table with variable-length\
 rows (tables that have [VARCHAR](../../../reference/data-types/string-data-types/varchar.md), [VARBINARY](../../../reference/data-types/string-data-types/varbinary.md), [BLOB](../../../reference/data-types/string-data-types/blob.md), or [TEXT](../../../reference/data-types/string-data-types/text.md) columns). Deleted rows are maintained in a\
 linked list and subsequent `INSERT` operations reuse old row positions.
 
 This statement requires [SELECT and INSERT privileges](../../../reference/sql-statements/account-management-sql-statements/grant.md) for the table.
 
-By default, `OPTIMIZE TABLE` statements are written to the [binary log](../../../server-management/server-monitoring-logs/binary-log/) and will be [replicated](broken-reference/). The `NO_WRITE_TO_BINLOG` keyword (`LOCAL` is an alias) will ensure the statement is not written to the binary log.
+By default, `OPTIMIZE TABLE` statements are written to the [binary log](../../../server-management/server-monitoring-logs/binary-log/) and will be [replicated](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/optimization-and-tuning/optimizing-tables/broken-reference/README.md). The `NO_WRITE_TO_BINLOG` keyword (`LOCAL` is an alias) will ensure the statement is not written to the binary log.
 
 `OPTIMIZE TABLE` statements are not logged to the binary log if [read\_only](../system-variables/server-system-variables.md#read_only) is set. See also [Read-Only Replicas](../../standard-replication/read-only-replicas.md).
 
@@ -35,7 +35,7 @@ to optimize one or more partitions.
 You can use `OPTIMIZE TABLE` to reclaim the unused\
 space and to defragment the data file. With other storage engines, `OPTIMIZE TABLE` does nothing by default, and returns this message: " The storage engine for the table doesn't support optimize". However, if the server has been started with the `--skip-new` option, `OPTIMIZE TABLE` is linked to [ALTER TABLE](../../../reference/sql-statements/data-definition/alter/alter-table.md), and recreates the table. This operation frees the unused space and updates index statistics.
 
-The [Aria](../../../server-usage/storage-engines/aria/) storage engine supports [progress reporting](broken-reference/) for this statement.
+The [Aria](../../../server-usage/storage-engines/aria/) storage engine supports [progress reporting](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/optimization-and-tuning/optimizing-tables/broken-reference/README.md) for this statement.
 
 If a [MyISAM](../../../server-usage/storage-engines/myisam-storage-engine/) table is fragmented, [concurrent inserts](../../../reference/sql-statements/data-manipulation/inserting-loading-data/concurrent-inserts.md) will not be performed until an `OPTIMIZE TABLE` statement is executed on that table, unless the [concurrent\_insert](../system-variables/server-system-variables.md#concurrent_insert) server system variable is set to `ALWAYS`.
 
@@ -59,6 +59,6 @@ See [Defragmenting InnoDB Tablespaces](defragmenting-innodb-tablespaces.md) for 
 * [Optimize Table in InnoDB with ALGORITHM set to NOCOPY](../../../server-usage/storage-engines/innodb/innodb-online-ddl/innodb-online-ddl-operations-with-the-nocopy-alter-algorithm.md#optimize-table)
 * [Optimize Table in InnoDB with ALGORITHM set to INSTANT](../../../server-usage/storage-engines/innodb/innodb-online-ddl/innodb-online-ddl-operations-with-the-instant-alter-algorithm.md#optimize-table)
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

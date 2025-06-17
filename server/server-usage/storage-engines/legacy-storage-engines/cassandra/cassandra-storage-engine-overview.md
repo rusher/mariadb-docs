@@ -38,12 +38,12 @@ The Cassandra Storage Engine allows access to data in a Cassandra cluster from\
 MariaDB. The overall architecture is shown in the picture below and is similar\
 to that of the NDB cluster storage engine.
 
-![cassandra-se-overview](../../../../.gitbook/assets/cassandra-storage-engine-overview/+image/cassandra-se-overview.png)
+![cassandra-se-overview](../../../../.gitbook/assets/cassandra-se-overview.png)
 
 You can access the same Cassandra cluster from multiple MariaDB instances,\
 provided each of them runs the Cassandra Storage Engine:
 
-![mariadb-and-cassandra](../../../../.gitbook/assets/cassandra-storage-engine-overview/+image/mariadb-and-cassandra.png)
+![mariadb-and-cassandra](../../../../.gitbook/assets/mariadb-and-cassandra.png)
 
 The primary goal of Cassandra SE (Storage Engine) is data integration between\
 the SQL and NoSQL worlds. Have you ever needed to:
@@ -300,7 +300,7 @@ that were defined `WITH COMPACT STORAGE` attribute.
 * [Cassandra Storage Engine - Future Plans](cassandra-storage-engine-future-plans.md)
 * [Cassandra Storage Engine - Use Example](cassandra-storage-engine-use-example.md)
 * [Cassandra Storage Engine - Issues](cassandra-storage-engine-issues.md)
-* [HBase Storage Engine](../../../../reference/storage-engines/legacy-storage-engines/cassandra/broken-reference/)
+* [HBase Storage Engine](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/legacy-storage-engines/cassandra/broken-reference/README.md)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

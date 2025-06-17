@@ -69,7 +69,7 @@ user=john
 
 ### Module commands
 
-Read [Module Commands](broken-reference) documentation for\
+Read [Module Commands](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/other-maxscale-versions/mariadb-maxscale-mariadb-maxscale-23/maxscale-23-filters/broken-reference/README.md) documentation for\
 details about module commands.
 
 The tee filter supports the following module commands.

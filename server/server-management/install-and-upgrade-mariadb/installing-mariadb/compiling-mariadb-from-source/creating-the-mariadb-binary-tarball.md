@@ -2,7 +2,7 @@
 
 How to generate binary tar.gz files.
 
-* [Setup your build environment](../../../../../en/Linux_Build_Environment_Setup/).
+* [Setup your build environment](https://github.com/mariadb-corporation/docs-server/blob/test/en/Linux_Build_Environment_Setup/README.md).
 * [Build binaries](https://kb.askmonty.org/en/generic-build-instructions) with your preferred options/plugins.
 
 If the binaries are already built, you can generate a binary tarball with

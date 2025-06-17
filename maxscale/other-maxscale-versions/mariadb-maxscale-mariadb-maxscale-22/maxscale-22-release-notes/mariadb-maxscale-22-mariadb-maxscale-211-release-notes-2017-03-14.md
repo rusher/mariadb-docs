@@ -56,7 +56,7 @@ after a failover has been triggered. This makes it possible for external actors\
 to recover the failed nodes without having to manually clear the maintenance\
 mode.
 
-For more information about the failover mode and how it works, please read the[MySQL Monitor](../../../../en/mariadb-maxscale-22-mysql-monitor/) documentation.
+For more information about the failover mode and how it works, please read the[MySQL Monitor](https://github.com/mariadb-corporation/docs-server/blob/test/en/mariadb-maxscale-22-mysql-monitor/README.md) documentation.
 
 #### GSSAPI
 

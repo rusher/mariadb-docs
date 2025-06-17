@@ -26,7 +26,7 @@ SHOW SLAVE HOSTS;
 * `Master_id`: The unique server ID of the primary server that the replica server is replicating from.
 
 Some MariaDB and MySQL versions report another variable, [rpl\_recovery\_rank](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#rpl_recovery_rank). This\
-variable was never used, and was eventually removed in [MariaDB 10.1.2](broken-reference) .
+variable was never used, and was eventually removed in [MariaDB 10.1.2](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/administrative-sql-statements/show/broken-reference/README.md) .
 
 Requires the [REPLICATION MASTER ADMIN](../../account-management-sql-statements/grant.md#replication-master-admin) privilege (>= [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1052-release-notes)) or the [REPLICATION SLAVE](../../account-management-sql-statements/grant.md#replication-slave) privilege (<= [MariaDB 10.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1051-release-notes)).
 
@@ -42,6 +42,6 @@ Requires the [REPLICATION MASTER ADMIN](../../account-management-sql-statements/
 * [Replication threads](../../../../ha-and-performance/standard-replication/replication-threads.md)
 * [SHOW PROCESSLIST](show-processlist.md). In `[SHOW PROCESSLIST](show-processlist.md)` output, replica threads are identified by `Binlog Dump`
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

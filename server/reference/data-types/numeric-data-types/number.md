@@ -4,7 +4,7 @@
 NUMBER[(M[,D])] [SIGNED | UNSIGNED | ZEROFILL]
 ```
 
-In [Oracle mode](broken-reference), `NUMBER` is a synonym for [DECIMAL](decimal.md).
+In [Oracle mode](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/data-types/numeric-data-types/broken-reference/README.md), `NUMBER` is a synonym for [DECIMAL](decimal.md).
 
 ## EXAMPLES
 

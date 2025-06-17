@@ -3,9 +3,9 @@
 ## About
 
 * [About MariaDB Documentation](README.md)
-  * [Contributing Documentation](about/about-mariadb-documentation/contributing-documentation.md)
-  * [Documentation Style Guide](about/about-mariadb-documentation/documentation-style-guide.md)
-  * [Reporting Documentation Issues](about/about-mariadb-documentation/reporting-documentation-bugs.md)
+  * [Contributing Documentation](about/readme/contributing-documentation.md)
+  * [Documentation Style Guide](about/readme/documentation-style-guide.md)
+  * [Reporting Documentation Issues](about/readme/reporting-documentation-bugs.md)
 * [About MariaDB](about/about-mariadb.md)
 * [Contact Us](about/contact-us.md)
 
@@ -61,7 +61,6 @@
 * [Contributing & Participating](community/contributing-participating/README.md)
   * [Contributing Code](community/contributing-participating/contributing-code.md)
   * [Contributing to the MariaDB Project](community/contributing-participating/contributing-to-the-mariadb-project.md)
-  * [Project Suggestions](community/contributing-participating/project-suggestions.md)
   * [MariaDB Public FTP Server](community/contributing-participating/mariadb-public-ftp-server.md)
   * [Sponsoring the MariaDB Project](community/contributing-participating/sponsoring-the-mariadb-project.md)
   * [Log of MariaDB Contributions](community/contributing-participating/log-of-mariadb-contributions.md)
@@ -1583,5 +1582,5 @@
 * [Support](support.md)
 * [Tutorials](tutorials.md)
 * [Videos](videos.md)
-* [Whitepapers](whitepapers.md)
+* [White Papers](whitepapers.md)
 * [Distributions Including MariaDB](distributions-including-mariadb.md)

@@ -49,7 +49,7 @@ MariaDB Enterprise Server 10.4.12-6 was released on 2020-03-02.
 * [ALTER USER IF EXISTS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/alter) generated a SQL syntax error. (MENT-643)
 * A query using `GROUP BY` with an expression containing a field of a view could return wrong results. ([MDEV-20922](https://jira.mariadb.org/browse/MDEV-20922))
 * Running the script `mysql_tzinfo_to_sql` for [MariaDB Enterprise Cluster](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/galera-cluster/README.md) could result in inconsistent timezone information across different nodes. ([MDEV-21209](https://jira.mariadb.org/browse/MDEV-21209))
-* Using the [--use-memory](broken-reference) option with [mariabackup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup) would cause it to run out of memory. ([MDEV-20679](https://jira.mariadb.org/browse/MDEV-20679))
+* Using the [--use-memory](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/enterprise-server/10-4/broken-reference/README.md) option with [mariabackup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup) would cause it to run out of memory. ([MDEV-20679](https://jira.mariadb.org/browse/MDEV-20679))
 * For [MariaDB Enterprise Cluster](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/galera-cluster/README.md) (Galera Library 26.4.4):
   * GCS delivered a JOIN message even if the node was in a DONOR state.
   * GCache could contain mixed histories from different clusters.

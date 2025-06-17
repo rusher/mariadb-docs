@@ -10,7 +10,7 @@ From [MariaDB 10.6.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-com
 ROWNUM()
 ```
 
-In [Oracle mode](broken-reference) one can just use `ROWNUM`, without the parentheses.
+In [Oracle mode](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-functions/secondary-functions/information-functions/broken-reference/README.md) one can just use `ROWNUM`, without the parentheses.
 
 ## Description
 

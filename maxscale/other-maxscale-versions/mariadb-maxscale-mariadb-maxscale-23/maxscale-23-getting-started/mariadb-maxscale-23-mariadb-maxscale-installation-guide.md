@@ -27,7 +27,7 @@ MaxScale versions side by side. For instructions on how to do that, please refer
 ### Building MariaDB MaxScale From Source Code
 
 Alternatively you may download the MariaDB MaxScale source and build your own binaries.\
-To do this, refer to the separate document[Building MariaDB MaxScale from Source Code](broken-reference/)
+To do this, refer to the separate document[Building MariaDB MaxScale from Source Code](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/other-maxscale-versions/mariadb-maxscale-mariadb-maxscale-23/maxscale-23-getting-started/broken-reference/README.md)
 
 ### Configuring MariaDB MaxScale
 

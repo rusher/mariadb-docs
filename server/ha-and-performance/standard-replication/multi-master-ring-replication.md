@@ -13,13 +13,13 @@ The terms _master_ and _slave_ have historically been used in replication, and M
 
 ## What is Multi-Master Ring Replication
 
-Multi-Master "Ring" Replication means that you have two or more masters where each master is replicating its data to another master asynchronously. This is not to be confused with [MariaDB Galera Cluster](../../../kb/en/galera-cluster/) which is a [virtually synchronous](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/readme/about-galera-replication) multi-primary cluster for MariaDB.
+Multi-Master "Ring" Replication means that you have two or more masters where each master is replicating its data to another master asynchronously. This is not to be confused with [MariaDB Galera Cluster](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/galera-cluster/README.md) which is a [virtually synchronous](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/readme/about-galera-replication) multi-primary cluster for MariaDB.
 
-The benefit of asynchronous replication compared to [Galera Cluster](../../../kb/en/galera-cluster/), is that Ring Replication is resilient against bad network connections between the master servers. If a connection goes down, all masters will continue to serve its clients locally and data will automatically be synced when the link is available again.
+The benefit of asynchronous replication compared to [Galera Cluster](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/galera-cluster/README.md), is that Ring Replication is resilient against bad network connections between the master servers. If a connection goes down, all masters will continue to serve its clients locally and data will automatically be synced when the link is available again.
 
 The following picture shows one of the more advanced Multi-Master setups that is resilient against any master going down but can also handle 'human failures', like an accidental drop table, thanks to the addition of [delayed slaves](delayed-replication.md).
 
-![](../../.gitbook/assets/multi-master-ring-replication/+image/multi-master-ring-replication1.png)
+![](../../.gitbook/assets/multi-master-ring-replication1.png)
 
 One should [setup replication](setting-up-replication.md) on each master like one does in [standard MariaDB replication](./). The replication setup among the masters should be a ring. In other words, each master should replicate to one other master and each master should only have one other master as a slave.
 
@@ -78,7 +78,7 @@ log_slave_updates
 ### How does Multi-Master Ring Replication work
 
 * The main difference between Multi-Master Ring Replication and normal replication is that a change done by a master will eventually replicate back to it. When this happens, the master will see that the binary log event has the same server\_id as the master has and will ignore the event. This is why it is critical to ensure that all server\_id's are unique and that one does not change the server id.
-* When doing [ALTER TABLE](https://mariadb.com/kb/en/alter_table) in a Multi-Master Ring replication setup, you should be aware the while you are running an [ALTER TABLE](../../server-usage/replication-cluster-multi-master/standard-replication/alter_table/) on one master, another master can generate events that uses the old table definition. You should especially take care to not drop columns that could be in use by any application or still available in the upcoming replication stream.
+* When doing [ALTER TABLE](https://mariadb.com/kb/en/alter_table) in a Multi-Master Ring replication setup, you should be aware the while you are running an [ALTER TABLE](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-usage/replication-cluster-multi-master/standard-replication/alter_table/README.md) on one master, another master can generate events that uses the old table definition. You should especially take care to not drop columns that could be in use by any application or still available in the upcoming replication stream.
 
 ### How to resolve things if they go wrong in Multi-Master Ring Replication
 
@@ -87,7 +87,7 @@ When used correctly, Multi-Master Ring Replication is as resilient to errors as 
 #### What to do when one of the masters dies and has to be replaced by a slave.
 
 * Ensure that the slave is up to date (has digested all relay events).
-* Check if there are any events on the old master that have not been sent to the slave. You can use [mariadb-binlog](../../clients-and-utilities/mariadb-binlog/) to read the old master binary log files and apply them to the slave.
+* Check if there are any events on the old master that have not been sent to the slave. You can use [mariadb-binlog](../../clients-and-utilities/logging-tools/mariadb-binlog/) to read the old master binary log files and apply them to the slave.
 * You can now treat the slave as a new master and put it back in the replication ring. The new master will use its replication GTID position to continue replication from the other master in the ring.
 
 If the slave is **not up to date** and one cannot access any information of the old master, then one can continue the following way:
@@ -119,7 +119,7 @@ To fix this:
 An alternative setup to use for Multi-master ring replications is to replicate to the other\
 masters through slaves. The following setup shows how this can be done.
 
-![](../../.gitbook/assets/multi-master-ring-replication/+image/multi-master-ring-replication2.png)
+![](../../.gitbook/assets/multi-master-ring-replication2.png)
 
 ### Benefits of replication through slaves
 

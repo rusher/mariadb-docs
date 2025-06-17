@@ -4,7 +4,7 @@ Common Table Expressions (CTEs) are a standard SQL feature, and are essentially 
 
 ## Non-Recursive CTEs
 
-The [WITH](with.md) keyword signifies a CTE. It is given a name, followed by a body (the main query) as follows:![cte\_syntax](../../../../../.gitbook/assets/non-recursive-common-table-expressions-overview/+image/cte_syntax.png)
+The [WITH](with.md) keyword signifies a CTE. It is given a name, followed by a body (the main query) as follows:![cte\_syntax](../../../../../.gitbook/assets/cte_syntax.png)
 
 CTEs are similar to derived tables. For example
 

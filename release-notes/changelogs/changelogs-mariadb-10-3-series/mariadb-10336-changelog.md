@@ -2,13 +2,13 @@
 
 The most recent release of [MariaDB 10.3](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103.md) is:[**MariaDB 10.3.39**](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-10-3-39-release-notes.md) Stable (GA) [Download Now](https://downloads.mariadb.org/mariadb/10.3.39/)
 
-[Download 10.3.36](https://downloads.mariadb.org/mariadb/10.3.36/)[Release Notes](broken-reference)[Changelog](mariadb-10336-changelog.md)[Overview of 10.3](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103.md)
+[Download 10.3.36](https://downloads.mariadb.org/mariadb/10.3.36/)[Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/changelogs/changelogs-mariadb-10-3-series/broken-reference/README.md)[Changelog](mariadb-10336-changelog.md)[Overview of 10.3](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103.md)
 
 **Release date:** 15 Aug 2022
 
-For the highlights of this release, see the[release notes](broken-reference).
+For the highlights of this release, see the[release notes](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/changelogs/changelogs-mariadb-10-3-series/broken-reference/README.md).
 
-The revision number links will take you to the revision's page on GitHub. On[GitHub](https://github.com/MariaDB/server/tree/10.3) you can view more\
+The revision number links will take you to the revision's page on GitHub. On [GitHub](https://github.com/MariaDB/server/tree/10.3) you can view more\
 details of the revision and view diffs of the code modified in that revision.
 
 * Includes all fixes from [MariaDB 10.2.44](../changelogs-mariadb-102-series/mariadb-10244-changelog.md)
@@ -77,9 +77,9 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-18702](https://jira.mariadb.org/browse/MDEV-18702) mysqldump: add variable 'max-statement-time'
 * Merge [Revision #5ac528a91f](https://github.com/MariaDB/server/commit/5ac528a91f) 2022-08-02 10:23:53 +0200 - Merge remote-tracking branch 'connect/10.3' into 10.3
 * [Revision #e3163524ea](https://github.com/MariaDB/server/commit/e3163524ea)\
-  2020-05-18 23:52:33 +0200
-  *
-    * Fix [MDEV-22571](https://jira.mariadb.org/browse/MDEV-22571) and [MDEV-22572](https://jira.mariadb.org/browse/MDEV-22572). Allow multiple ZIP table and enable using special column in them. modified: storage/connect/tabzip.cpp modified: storage/connect/tabzip.h
+  2020-05-18 23:52:33 +0200\
+  \*
+  * Fix [MDEV-22571](https://jira.mariadb.org/browse/MDEV-22571) and [MDEV-22572](https://jira.mariadb.org/browse/MDEV-22572). Allow multiple ZIP table and enable using special column in them. modified: storage/connect/tabzip.cpp modified: storage/connect/tabzip.h
 * [Revision #674197e2ff](https://github.com/MariaDB/server/commit/674197e2ff)\
   2020-03-14 18:08:15 +0100
   * Disable set warnings as errors for Windows
@@ -91,9 +91,9 @@ details of the revision and view diffs of the code modified in that revision.
   * Resolved ha\_connect.cc and CMakeLists.txt
 * Merge [Revision #d26b4eb4c0](https://github.com/MariaDB/server/commit/d26b4eb4c0) 2020-03-12 19:16:36 +0100 - Pull new version from origin
 * [Revision #4ba36cfa0c](https://github.com/MariaDB/server/commit/4ba36cfa0c)\
-  2020-03-12 19:06:03 +0100
-  *
-    * Fix [60637429#60637429](https://stackoverflow.com/questions/60625778/import-complex-xml-from-multiple-files-in-mariadb/60637429#60637429) Import complex XML from multiple files in MariaDB Some row results are missing and replaced by the last file one. Thats because Nx and Sx column members are not reset when changing file. modified: storage/connect/tabxml.cpp modified: storage/connect/tabxml.h
+  2020-03-12 19:06:03 +0100\
+  \*
+  * Fix [60637429#60637429](https://stackoverflow.com/questions/60625778/import-complex-xml-from-multiple-files-in-mariadb/60637429#60637429) Import complex XML from multiple files in MariaDB Some row results are missing and replaced by the last file one. Thats because Nx and Sx column members are not reset when changing file. modified: storage/connect/tabxml.cpp modified: storage/connect/tabxml.h
 * Merge [Revision #ce49812ec5](https://github.com/MariaDB/server/commit/ce49812ec5) 2019-11-24 18:19:33 +0100 - Commit conflict resolving after pulling from origin 10.3
 * [Revision #afc21ab6d8](https://github.com/MariaDB/server/commit/afc21ab6d8)\
   2019-11-23 16:11:46 +0100
@@ -114,29 +114,29 @@ details of the revision and view diffs of the code modified in that revision.
   2019-03-04 12:26:47 +0100
   * Typo
 * [Revision #0a43be3929](https://github.com/MariaDB/server/commit/0a43be3929)\
-  2019-03-04 12:18:35 +0100
-  *
-    * Fix [MDEV-18292](https://jira.mariadb.org/browse/MDEV-18292): CONNECT Engine JDBC not able to issue simple UPDATE statement from trigger or stored procedure Was not fixed when the same table was called several times with different modes. Fixed by checking if a new statement is compatible in the start\_stmt function. It nows do the same checks than external\_lock. modified: storage/connect/ha\_connect.cc modified: storage/connect/ha\_connect.h
+  2019-03-04 12:18:35 +0100\
+  \*
+  * Fix [MDEV-18292](https://jira.mariadb.org/browse/MDEV-18292): CONNECT Engine JDBC not able to issue simple UPDATE statement from trigger or stored procedure Was not fixed when the same table was called several times with different modes. Fixed by checking if a new statement is compatible in the start\_stmt function. It nows do the same checks than external\_lock. modified: storage/connect/ha\_connect.cc modified: storage/connect/ha\_connect.h
 * [Revision #990f8e8146](https://github.com/MariaDB/server/commit/990f8e8146)\
-  2019-02-03 12:34:30 +0100
-  *
-    * Fix [MDEV-13136](https://jira.mariadb.org/browse/MDEV-13136): enhance CREATE SERVER MyServerName FOREIGN DATA WRAPPER to work with CONNECT engine modified: storage/connect/tabjdbc.cpp
+  2019-02-03 12:34:30 +0100\
+  \*
+  * Fix [MDEV-13136](https://jira.mariadb.org/browse/MDEV-13136): enhance CREATE SERVER MyServerName FOREIGN DATA WRAPPER to work with CONNECT engine modified: storage/connect/tabjdbc.cpp
 * [Revision #0f388dd4d0](https://github.com/MariaDB/server/commit/0f388dd4d0)\
-  2019-01-27 15:10:03 +0100
-  *
-    * Enable CONNECT tables to have triggers Update version number modified: storage/connect/ha\_connect.cc
+  2019-01-27 15:10:03 +0100\
+  \*
+  * Enable CONNECT tables to have triggers Update version number modified: storage/connect/ha\_connect.cc
 * [Revision #27fec12fae](https://github.com/MariaDB/server/commit/27fec12fae)\
-  2019-01-26 18:11:45 +0100
-  *
-    * Make user and password defined in CREATE TABLE have precedence on the ones specified in a Federated Server. modified: storage/connect/tabjdbc.cpp
+  2019-01-26 18:11:45 +0100\
+  \*
+  * Make user and password defined in CREATE TABLE have precedence on the ones specified in a Federated Server. modified: storage/connect/tabjdbc.cpp
 * [Revision #a4834755ec](https://github.com/MariaDB/server/commit/a4834755ec)\
-  2019-01-24 23:49:57 +0100
-  *
-    * Fix [MDEV-18192](https://jira.mariadb.org/browse/MDEV-18192): CONNECT Engine JDBC not able to issue simple UPDATE statement from trigger or stored procedure modified: storage/connect/tabext.cpp modified: storage/connect/tabext.h modified: storage/connect/tabjdbc.cpp
+  2019-01-24 23:49:57 +0100\
+  \*
+  * Fix [MDEV-18192](https://jira.mariadb.org/browse/MDEV-18192): CONNECT Engine JDBC not able to issue simple UPDATE statement from trigger or stored procedure modified: storage/connect/tabext.cpp modified: storage/connect/tabext.h modified: storage/connect/tabjdbc.cpp
 * [Revision #547ce1b22a](https://github.com/MariaDB/server/commit/547ce1b22a)\
-  2019-01-02 10:44:03 +0100
-  *
-    * Fix a few bug mainly concerning discovery and call from OEM (and prepare new table types)
+  2019-01-02 10:44:03 +0100\
+  \*
+  * Fix a few bug mainly concerning discovery and call from OEM (and prepare new table types)
 * [Revision #c2482c76dc](https://github.com/MariaDB/server/commit/c2482c76dc)\
   2018-12-05 19:01:37 +0100
   * Modified because different result on Windows and Linux
@@ -144,28 +144,28 @@ details of the revision and view diffs of the code modified in that revision.
   2018-12-05 16:36:25 +0100
   * Modified to avoid make index error (AVG\_ROW\_LENGTH=5)
 * [Revision #4a572631aa](https://github.com/MariaDB/server/commit/4a572631aa)\
-  2018-12-04 23:26:47 +0100
-  *
-    * Make PlugSubAlloc to be exportable Suppress unused parameter from PlugSubSet modified: storage/connect/global.h modified: storage/connect/plugutil.cpp modified: storage/connect/jsonudf.cpp modified: storage/connect/tabjson.cpp modified: storage/connect/user\_connect.cc
+  2018-12-04 23:26:47 +0100\
+  \*
+  * Make PlugSubAlloc to be exportable Suppress unused parameter from PlugSubSet modified: storage/connect/global.h modified: storage/connect/plugutil.cpp modified: storage/connect/jsonudf.cpp modified: storage/connect/tabjson.cpp modified: storage/connect/user\_connect.cc
 * [Revision #28000d8141](https://github.com/MariaDB/server/commit/28000d8141)\
   2018-10-14 19:39:21 +0200
   * Restore mysql\_exec.result
 * [Revision #ad09ea0df0](https://github.com/MariaDB/server/commit/ad09ea0df0)\
-  2018-10-14 17:56:02 +0200
-  *
-    * Implement the CHECK TABLE statement and accept REPAIR and ANALYZE modified: storage/connect/connect.cc modified: storage/connect/ha\_connect.cc modified: storage/connect/ha\_connect.h modified: storage/connect/tabjdbc.cpp modified: storage/connect/tabmysql.cpp modified: storage/connect/tabodbc.cpp
+  2018-10-14 17:56:02 +0200\
+  \*
+  * Implement the CHECK TABLE statement and accept REPAIR and ANALYZE modified: storage/connect/connect.cc modified: storage/connect/ha\_connect.cc modified: storage/connect/ha\_connect.h modified: storage/connect/tabjdbc.cpp modified: storage/connect/tabmysql.cpp modified: storage/connect/tabodbc.cpp
 * [Revision #15194de2c2](https://github.com/MariaDB/server/commit/15194de2c2)\
-  2018-08-08 12:10:30 +0200
-  *
-    * Fix [MDEV-16672](https://jira.mariadb.org/browse/MDEV-16672) Connect: Warnings with 10.0 filamtxt.cpp: DOSFAM::RenameTempFile: Change sprintf to snprintf. filamvct.cpp: VECFAM::RenameTempFile: Change sprintf to snprintf. javaconn.cpp: Add JAVAConn::GetUTFString function. Use it instead of env->GetStringUTFChars. Fix wrong identation. javaconn.h: Add GetUTFString declaration. jdbconn.cpp: Use GetUTFString function instead of env->GetStringUTFChars. jmgoconn.cpp: Use GetUTFString function instead of env->GetStringUTFChars. Fix wrong identation. jsonudf.cpp: change 139 to BMX line 4631. tabjmg.cpp: Add ReleaseStringUTF. Fix wrong identation. tabpivot.cpp: Fix wrong identation. tabutil.cpp: TDBPRX::GetSubTable: Change sprintf to snprintf. modified: storage/connect/filamtxt.cpp modified: storage/connect/filamvct.cpp modified: storage/connect/javaconn.cpp modified: storage/connect/javaconn.h modified: storage/connect/jdbconn.cpp modified: storage/connect/jmgoconn.cpp modified: storage/connect/jsonudf.cpp modified: storage/connect/tabjmg.cpp modified: storage/connect/tabpivot.cpp modified: storage/connect/tabutil.cpp
+  2018-08-08 12:10:30 +0200\
+  \*
+  * Fix [MDEV-16672](https://jira.mariadb.org/browse/MDEV-16672) Connect: Warnings with 10.0 filamtxt.cpp: DOSFAM::RenameTempFile: Change sprintf to snprintf. filamvct.cpp: VECFAM::RenameTempFile: Change sprintf to snprintf. javaconn.cpp: Add JAVAConn::GetUTFString function. Use it instead of env->GetStringUTFChars. Fix wrong identation. javaconn.h: Add GetUTFString declaration. jdbconn.cpp: Use GetUTFString function instead of env->GetStringUTFChars. jmgoconn.cpp: Use GetUTFString function instead of env->GetStringUTFChars. Fix wrong identation. jsonudf.cpp: change 139 to BMX line 4631. tabjmg.cpp: Add ReleaseStringUTF. Fix wrong identation. tabpivot.cpp: Fix wrong identation. tabutil.cpp: TDBPRX::GetSubTable: Change sprintf to snprintf. modified: storage/connect/filamtxt.cpp modified: storage/connect/filamvct.cpp modified: storage/connect/javaconn.cpp modified: storage/connect/javaconn.h modified: storage/connect/jdbconn.cpp modified: storage/connect/jmgoconn.cpp modified: storage/connect/jsonudf.cpp modified: storage/connect/tabjmg.cpp modified: storage/connect/tabpivot.cpp modified: storage/connect/tabutil.cpp
 * [Revision #c0fd3be272](https://github.com/MariaDB/server/commit/c0fd3be272)\
-  2018-06-28 23:33:02 +0200
-  *
-    * Fix [MDEV-16167](https://jira.mariadb.org/browse/MDEV-16167) Cannot insert unsigned values into a VEC table modified: storage/connect/filamvct.cpp modified: storage/connect/tabvct.cpp
+  2018-06-28 23:33:02 +0200\
+  \*
+  * Fix [MDEV-16167](https://jira.mariadb.org/browse/MDEV-16167) Cannot insert unsigned values into a VEC table modified: storage/connect/filamvct.cpp modified: storage/connect/tabvct.cpp
 * [Revision #fa7bbe5a73](https://github.com/MariaDB/server/commit/fa7bbe5a73)\
-  2018-05-07 00:56:45 +0200
-  *
-    * Fix [MDEV-15735](https://jira.mariadb.org/browse/MDEV-15735) CONNECT \[filamtxt.cpp:429]: Suspicious condition modified: storage/connect/filamtxt.cpp
+  2018-05-07 00:56:45 +0200\
+  \*
+  * Fix [MDEV-15735](https://jira.mariadb.org/browse/MDEV-15735) CONNECT \[filamtxt.cpp:429]: Suspicious condition modified: storage/connect/filamtxt.cpp
 * [Revision #182a6383cd](https://github.com/MariaDB/server/commit/182a6383cd)\
   2022-08-01 22:00:05 +1000
   * [MDEV-16605](https://jira.mariadb.org/browse/MDEV-16605) Always include buf\_madvise\_do\_dump in binaries
@@ -443,9 +443,9 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #37ea077873](https://github.com/MariaDB/server/commit/37ea077873)\
   2022-06-07 15:49:41 +0200
   * main.help: flush help tables after modifying them
-* [Revision #7c4efab903](https://github.com/MariaDB/server/commit/7c4efab903)\
+* [Revision #7c4efab903](https://github.com/MariaDB/server/commit/7c4efab903)\`\
   2022-05-19 13:58:31 +0200
-  * typo fixed: [space](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/string-functions/space) -> [:space:](https://mariadb.com/kb/en/space%3A)
+  * typo fixed: [space](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/string-functions/space) -> [:](https://mariadb.com/kb/en/space%3A)[space](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/string-functions/space)[:](https://mariadb.com/kb/en/space%3A)
 * [Revision #19c721631e](https://github.com/MariaDB/server/commit/19c721631e)\
   2022-06-06 22:21:22 +0300
   * [MDEV-28749](https://jira.mariadb.org/browse/MDEV-28749): restore\_prev\_nj\_state() doesn't update cur\_sj\_inner\_tables correctly

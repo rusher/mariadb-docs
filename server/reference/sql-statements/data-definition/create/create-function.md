@@ -25,7 +25,7 @@ statement must return a single value. If more than one column is returned when t
 error 1241 results. If more than one row is returned when the function is called, error 1242\
 results. Use a `LIMIT` clause to ensure only one row is returned.
 
-You can also replace the `RETURN` clause with a [BEGIN...END](../../../../server-usage/programmatic-compound-statements/begin-end.md) compound\
+You can also replace the `RETURN` clause with a [BEGIN...END](../../programmatic-compound-statements/begin-end.md) compound\
 statement. The compound statement must contain a `RETURN` statement. When the function is\
 called, the `RETURN` statement immediately returns its result, and any statements after `RETURN`\
 are effectively ignored.
@@ -161,7 +161,7 @@ The `[NOT] DETERMINISTIC` clause also affects [binary logging](../../../../serve
 
 #### Oracle Mode
 
-A subset of Oracle's PL/SQL language is supported in addition to the traditional SQL/PSM-based MariaDB syntax. See [Oracle mode](broken-reference) for details on changes when running Oracle mode.
+A subset of Oracle's PL/SQL language is supported in addition to the traditional SQL/PSM-based MariaDB syntax. See [Oracle mode](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/data-definition/create/broken-reference/README.md) for details on changes when running Oracle mode.
 
 ## Security
 
@@ -265,6 +265,6 @@ CREATE FUNCTION hello2 (s CHAR(20))
 * [Stored Routine Privileges](../../../../server-usage/stored-routines/stored-functions/stored-routine-privileges.md)
 * [Information Schema ROUTINES Table](../../administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-routines-table.md)
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

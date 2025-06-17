@@ -20,7 +20,7 @@ If parentheses are used, any number of spaces, tab characters and newline charac
 
 `CALL` can pass back values to its caller using parameters\
 that are declared as `OUT` or `INOUT`\
-parameters. If no value is assigned to an `OUT` parameter, `NULL` is assigned (and its former value is lost). To pass such values from another stored program you can use [user-defined variables](../../sql-structure/sql-language-structure/user-defined-variables.md), [local variables](../../../server-usage/programmatic-compound-statements/declare-variable.md) or routine's parameters; in other contexts, you can only use user-defined variables.
+parameters. If no value is assigned to an `OUT` parameter, `NULL` is assigned (and its former value is lost). To pass such values from another stored program you can use [user-defined variables](../../sql-structure/sql-language-structure/user-defined-variables.md), [local variables](../programmatic-compound-statements/declare-variable.md) or routine's parameters; in other contexts, you can only use user-defined variables.
 
 `CALL` can also be executed as a prepared statement. Placeholders can be used for `IN` parameters in all versions of MariaDB; for `OUT` and `INOUT` parameters, placeholders can be used since [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5).
 
@@ -31,6 +31,6 @@ API, call the `mysql_affected_rows()` function.
 
 If the `CLIENT_MULTI_RESULTS` API flag is set, `CALL` can return any number of resultsets and the called stored procedure can execute prepared statements. If it is not set, at most one resultset can be returned and prepared statements cannot be used within procedures.
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

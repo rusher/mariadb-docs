@@ -90,7 +90,7 @@ One can disable all constraint expression checks by setting the [check\_constrai
 
 ### Replication
 
-In [row-based](../../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md#row-based) [replication](broken-reference/), only the master checks constraints, and failed statements will not be replicated. In [statement-based](../../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md#statement-based) replication, the slaves will also check constraints. Constraints should therefore be identical, as well as deterministic, in a replication environment.
+In [row-based](../../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md#row-based) [replication](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/data-definition/broken-reference/README.md), only the master checks constraints, and failed statements will not be replicated. In [statement-based](../../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md#statement-based) replication, the slaves will also check constraints. Constraints should therefore be identical, as well as deterministic, in a replication environment.
 
 ### Auto\_increment
 
@@ -190,6 +190,6 @@ Compare the definition of table _t2_ to table _t3_. `CHAR_LENGTH(name)>2` is ver
 
 * [Foreign Keys](../../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/foreign-keys.md)
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

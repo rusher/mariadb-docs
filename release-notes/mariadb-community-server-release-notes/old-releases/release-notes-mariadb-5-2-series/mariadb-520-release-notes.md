@@ -8,7 +8,7 @@ The most recent release in the [MariaDB 5.2 series](changes-improvements-in-mari
 
 ### Release Notes
 
-See the [MariaDB versus MySQL](broken-reference) page for a high-level overview of the differences between MariaDB and MySQL. For a description of this release see the [MariaDB 5.1 overview](../release-notes-mariadb-5-1-series/changes-improvements-in-mariadb-5-1.md).
+See the [MariaDB versus MySQL](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-2-series/broken-reference/README.md) page for a high-level overview of the differences between MariaDB and MySQL. For a description of this release see the [MariaDB 5.1 overview](../release-notes-mariadb-5-1-series/changes-improvements-in-mariadb-5-1.md).
 
 This is a beta release of MariaDB. We believe it to be relatively bug-free, and want to get it out so everyone can try it. Development is ongoing, see [MariaDB 5.2 TODO](https://askmonty.org/wiki/MariaDB_5.2_TODO) for a list of features that are planned for future [MariaDB 5.2](changes-improvements-in-mariadb-5-2.md) releases.
 
@@ -53,7 +53,7 @@ New features and changes in this version include:
 * We've added two new columns to the[INFORMATION\_SCHEMA.PLUGINS table](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/plugins-table-information-schema).
 * For plugin authors: As part of this change, the MariaDB plugin declaration\
   now differs slightly from the MySQL plugin declaration (the MySQL plugin\
-  declaration is still supported for dynamically loaded plugins). See:[Writing Plugins](broken-reference) for details.
+  declaration is still supported for dynamically loaded plugins). See:[Writing Plugins](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-2-series/broken-reference/README.md) for details.
 
 #### Segmented Key Cache for MyISAM [MWL#85](https://askmonty.org/worklog/?tid=85)
 

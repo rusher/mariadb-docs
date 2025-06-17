@@ -16,7 +16,7 @@ The return value is a nonbinary string in the connection [character set and coll
 
 This is the function that is used for hashing MariaDB passwords for storage in the Password column of the [user table](../../../sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md) (see [privileges](../../../sql-statements/account-management-sql-statements/grant.md)), usually used with the [SET PASSWORD](../../../sql-statements/account-management-sql-statements/set-password.md) statement. It is not intended for use in other applications.
 
-Until [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103), the return value is 41-bytes in length, and the first character is always '\*'. From [MariaDB 10.4](broken-reference), the function takes into account the authentication plugin where applicable (A [CREATE USER](../../../sql-statements/account-management-sql-statements/create-user.md) or [SET PASSWORD](../../../sql-statements/account-management-sql-statements/set-password.md) statement). For example, when used in conjunction with a user authenticated by the [ed25519 plugin](../../../plugins/authentication-plugins/authentication-plugin-ed25519.md), the statement will create a longer hash:
+Until [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103), the return value is 41-bytes in length, and the first character is always '\*'. From [MariaDB 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-functions/secondary-functions/encryption-hashing-and-compression-functions/broken-reference/README.md), the function takes into account the authentication plugin where applicable (A [CREATE USER](../../../sql-statements/account-management-sql-statements/create-user.md) or [SET PASSWORD](../../../sql-statements/account-management-sql-statements/set-password.md) statement). For example, when used in conjunction with a user authenticated by the [ed25519 plugin](../../../plugins/authentication-plugins/authentication-plugin-ed25519.md), the statement will create a longer hash:
 
 ```
 CREATE USER edtest@localhost IDENTIFIED VIA ed25519 USING PASSWORD('secret');
@@ -63,6 +63,6 @@ SET PASSWORD FOR 'bob'@'%.loc.gov' = PASSWORD('newpass');
 * [Password Validation Plugins](../../../plugins/password-validation-plugins/) - permits the setting of basic criteria for passwords
 * [OLD\_PASSWORD()](old_password.md) - pre-MySQL 4.1 password function
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

@@ -2,7 +2,7 @@
 
 [Download](https://downloads.askmonty.org/mariadb/5.3.0) |[Release Notes](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/mariadb-530-release-notes.md) |**Changelog**\
 (page:`1[2](mariadb-530-changelog-p2.md)[3](mariadb-530-changelog-p3.md)[4](mariadb-530-changelog-p4.md)[5](mariadb-530-changelog-p5.md)[6](mariadb-530-changelog-p6.md)`\
-) |[Overview of 5.3](broken-reference)
+) |[Overview of 5.3](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/changelogs/changelogs-mariadb-53-series/broken-reference/README.md)
 
 **Release date:** 26 July 2011
 
@@ -227,14 +227,14 @@
   * [Revision #3100.1.2](https://bazaar.launchpad.net/~maria-captains/maria/5.3/revision/3100.1.2)\
     Sat 2011-07-16 23:57:43 -0700
     * Fixed [Bug #794901](https://bugs.launchpad.net/bugs/794901).
-    * Also:
-      *
-        1. simplified the code of the function mysql\_derived\_merge\_for\_insert.
-      *
-        2. moved merge of views/dt for multi-update/delete to the prepare stage.
-      *
-        3. the list of the references to the candidates for semi-join now is\
-           allocated in the statement memory.
+    * Also:\
+      \*
+      1. simplified the code of the function mysql\_derived\_merge\_for\_insert.
+      2.
+         2. moved merge of views/dt for multi-update/delete to the prepare stage.
+      3.
+         3. the list of the references to the candidates for semi-join now is\
+            allocated in the statement memory.
   * [Revision #3100.1.1](https://bazaar.launchpad.net/~maria-captains/maria/5.3/revision/3100.1.1) \[merge]\
     Mon 2011-07-11 14:00:44 -0700
     * Merge with the latest 5.3 code.

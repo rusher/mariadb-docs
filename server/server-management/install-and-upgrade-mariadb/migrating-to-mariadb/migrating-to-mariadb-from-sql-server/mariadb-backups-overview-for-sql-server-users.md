@@ -1,5 +1,7 @@
 # MariaDB Backups Overview for SQL Server Users
 
+{% include "https://app.gitbook.com/s/GxVnu02ec8KJuFSxmB93/~/reusable/UQS8KgfG8jtpHBvT83fL/" %}
+
 MariaDB has the following types of backups:
 
 * Logical backups (dumps).
@@ -63,7 +65,7 @@ As mentioned [here](understanding-mariadb-architecture.md#the-binary-log), Maria
 
 ### Replaying the Binary Log
 
-The page [Using mariadb-binlog](../../../../clients-and-utilities/mariadb-binlog/using-mariadb-binlog.md) shows how to use the mariadb-binlog utility to replay a binary log file.
+The page [Using mariadb-binlog](../../../../clients-and-utilities/logging-tools/mariadb-binlog/using-mariadb-binlog.md) shows how to use the mariadb-binlog utility to replay a binary log file.
 
 The page also shows how to edit the binary log before replaying it. This allows one to undo an SQL statement that was executed by mistake, for example a `DROP TABLE` against a wrong table. The high level procedure is the following:
 

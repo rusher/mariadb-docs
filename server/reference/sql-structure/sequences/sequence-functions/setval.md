@@ -158,7 +158,7 @@ SELECT NEXTVAL(s1);
 * [NEXT VALUE FOR](next-value-for-sequence_name.md)
 * [PREVIOUS VALUE FOR](previous-value-for-sequence_name.md)
 * [Information Schema SEQUENCES Table](../../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-sequences-table.md)
-* [Error 4084: Sequence has run out](broken-reference)
+* [Error 4084: Sequence has run out](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-structure/sequences/sequence-functions/broken-reference/README.md)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

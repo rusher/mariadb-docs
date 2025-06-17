@@ -1,6 +1,6 @@
 # MariaDB 10.1.15 Release Notes
 
-**MariaDB-10.1.15 was never released,** [**MariaDB 10.1.16**](mariadb-10116-release-notes.md) **is the release that followed** [**MariaDB 10.1.14**](broken-reference)**.**
+**MariaDB-10.1.15 was never released,** [**MariaDB 10.1.16**](mariadb-10116-release-notes.md) **is the release that followed** [**MariaDB 10.1.14**](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/broken-reference/README.md)**.**
 
 The most recent release of [MariaDB 10.1](changes-improvements-in-mariadb-10-1.md) is:[**MariaDB 10.1.48**](mariadb-10148-release-notes.md) Stable (GA) [Download Now](https://downloads.mariadb.org/mariadb/10.1.48/)
 
@@ -43,7 +43,7 @@ information on each push, see the [changelog](../../../changelogs/changelogs-mar
 Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
 
 MariaDB may already be included in your favorite OS distribution. More\
-information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/readme-1)\
+information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-including-mariadb)\
 page.
 
 {% @marketo/form formid="4316" formId="4316" %}

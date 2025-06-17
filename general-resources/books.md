@@ -30,10 +30,9 @@ Helps you further develop your analytical abilities as you discover how to write
 Helps you develop your analytical abilities as you discover how to write powerful SQL queries.
 
 [_MariaDB and MySQL Common Table Expressions and Window Functions Revealed_](http://apress.com/9781484231197) by Daniel Bartholomew, November 2017\
-An introduction to [Common Table Expressions](https://mariadb.com/kb/en/common-table-expressions/) (CTEs) and [Window Functions](https://mariadb.com/kb/en/window-functions/) in MariaDB and MySQL.
+An introduction to [Common Table Expressions](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/selecting-data/common-table-expressions) (CTEs) and [Window Functions](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/special-functions/window-functions) in MariaDB and MySQL.
 
 [_MariaDB : Administration et optimisation_](https://www.amazon.co.uk/MariaDB-Administration-optimisation-St%C3%A9phane-Combaudon/dp/2409008550) by Stéphane Combaudon, July 2017 (French)\
 S'adresse aux développeurs et administrateurs MySQL ou MariaDB désireux de consolider leurs connaissances sur la principale variante de MySQL.
-
 
 {% @marketo/form formId="4316" %}

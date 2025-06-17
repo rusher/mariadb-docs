@@ -5,11 +5,11 @@ Multi Range Read is an optimization aimed at improving performance for IO-bound 
 Multi Range Read can be used with
 
 * `range` access
-* `ref` and `eq_ref` access, when they are using [Batched Key Access](broken-reference)
+* `ref` and `eq_ref` access, when they are using [Batched Key Access](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/optimization-and-tuning/mariadb-internal-optimizations/broken-reference/README.md)
 
 as shown in this diagram:
 
-![possible-mrr-uses](../../../.gitbook/assets/multi-range-read-optimization/+image/possible-mrr-uses.png)
+![possible-mrr-uses](../../../.gitbook/assets/possible-mrr-uses.png)
 
 ## The Idea
 
@@ -28,7 +28,7 @@ EXPLAIN SELECT * from tbl where tbl.key1 between 1000 and 2000;
 
 When this query is executed, disk IO access pattern will follow the red line in this figure:
 
-![no-mrr-access-pattern](../../../.gitbook/assets/multi-range-read-optimization/+image/no-mrr-access-pattern.png)
+![no-mrr-access-pattern](../../../.gitbook/assets/no-mrr-access-pattern.png)
 
 Execution will hit the table rows in random places, as marked with the blue line/numbers in the figure.
 
@@ -53,7 +53,7 @@ EXPLAIN select * from tbl where tbl.key1 between 1000 and 2000;
 
 and the execution will proceed as follows:
 
-![mrr-access-pattern](../../../.gitbook/assets/multi-range-read-optimization/+image/mrr-access-pattern.png)
+![mrr-access-pattern](../../../.gitbook/assets/mrr-access-pattern.png)
 
 Reading disk data sequentially is generally faster, because
 
@@ -120,11 +120,11 @@ EXPLAIN select * from t1,t2 where t2.key1=t1.col1;
 
 Execution of this query plan will cause random hits to be made into the index `t2.key1`, as shown in this picture:
 
-![key-sorting-regular-nl-join](../../../.gitbook/assets/multi-range-read-optimization/+image/key-sorting-regular-nl-join.png)
+![key-sorting-regular-nl-join](../../../.gitbook/assets/key-sorting-regular-nl-join.png)
 
 In particular, on step #5 we'll read the same index page that we've read on step #2, and the page we've read on step #4 will be re-read on step#6. If all pages you're accessing are in the cache (in the buffer pool, if you're using InnoDB, and in the key cache, if you're using MyISAM), this is not a problem. However, if your hit ratio is poor and you're going to hit the disk, it makes sense to sort the lookup keys, like shown in this figure:
 
-![key-sorting-join](../../../.gitbook/assets/multi-range-read-optimization/+image/key-sorting-join.png)
+![key-sorting-join](../../../.gitbook/assets/key-sorting-join.png)
 
 This is roughly what `Key-ordered scan` optimization does. In EXPLAIN, it looks as follows:
 
@@ -231,7 +231,7 @@ Multi Range Read will make separate calls for steps #1 and #2, causing TWO incre
 
 ## See Also
 
-* [What is MariaDB 5.3](broken-reference)
+* [What is MariaDB 5.3](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/optimization-and-tuning/mariadb-internal-optimizations/broken-reference/README.md)
 * [Multi-Range Read Optimization](https://dev.mysql.com/doc/refman/5.6/en/mrr-optimization.html) page in MySQL manual
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>

@@ -120,7 +120,7 @@ Module specific documentation.
 
 * [Core Objects Design (in development)](https://mariadb-corporation.github.io/MaxScale/Design-Documents/core-objects-html-docs)
 * [Binlog Router Design (in development)](https://mariadb-corporation.github.io/MaxScale/Design-Documents/binlog-router-html-docs)
-* [DCB States (to be replaced in StarUML)](../../mariadb-maxscale-14/Design-Documents/DCB-States.pdf)
+* [DCB States (to be replaced in StarUML)](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/mariadb-maxscale-14/Design-Documents/DCB-States.pdf)
 * [Schema Sharding Router Technical Documentation](maxscale-design-documents/schemarouter-router-technical-overview.md)
 
 ### Earlier Release Notes

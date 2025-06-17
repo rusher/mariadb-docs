@@ -4,7 +4,7 @@
 
 ## SQL-Level Extensions
 
-MariaDB comes with three password validation plugins — the [simple\_password\_check](../../community/plugins/password-validation-plugins/simple-password-check-plugin.md) plugin, the [cracklib\_password\_check](../../community/plugins/password-validation-plugins/cracklib-password-check-plugin.md) plugin and the [password\_reuse\_check](../../community/plugins/password-validation-plugins/password-reuse-check-plugin.md) plugin. They are not enabled by default; use [INSTALL SONAME](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/plugin-sql-statements/install-soname) (or [INSTALL PLUGIN](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin)) statement to install them.
+MariaDB comes with three password validation plugins — the [simple\_password\_check](https://github.com/mariadb-corporation/docs-server/blob/test/general-resources/community/plugins/password-validation-plugins/simple-password-check-plugin.md) plugin, the [cracklib\_password\_check](https://github.com/mariadb-corporation/docs-server/blob/test/general-resources/community/plugins/password-validation-plugins/cracklib-password-check-plugin.md) plugin and the [password\_reuse\_check](https://github.com/mariadb-corporation/docs-server/blob/test/general-resources/community/plugins/password-validation-plugins/password-reuse-check-plugin.md) plugin. They are not enabled by default; use [INSTALL SONAME](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/plugin-sql-statements/install-soname) (or [INSTALL PLUGIN](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin)) statement to install them.
 
 When at least one password plugin is loaded, all new passwords will be validated and password-changing statements will fail if the password will not pass validation checks. Several password validation plugin can be loaded at the same time — in this case a password must pass **all** validation checks by **all** plugins.
 
@@ -39,7 +39,7 @@ GRANT privileges TO `user`@`host` IDENTIFIED VIA mysql_old_password USING 'passw
 ```
 
 These statements can not possibly use password validation — there is nothing to validate, the original plain-text password is not available.\
-MariaDB introduces a **strict password validation** mode — controlled by a [strict\_password\_validation](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#strict_password_validation) global server variable.\
+MariaDB introduces a **strict password validation** mode — controlled by a [strict\_password\_validation](https://github.com/mariadb-corporation/docs-server/blob/test/general-resources/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#strict_password_validation) global server variable.\
 If the strict password validation is enabled and at least one password validation plugin is loaded then these “unvalidatable” passwords will be rejected. Otherwise they will be accepted. By default a strict password validation is enabled (but note that it has no effect if no password validation plugin is loaded).
 
 ## Examples

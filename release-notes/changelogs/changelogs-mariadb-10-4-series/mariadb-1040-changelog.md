@@ -1,12 +1,12 @@
 # MariaDB 10.4.0 Changelog
 
-The most recent release of [MariaDB 10.4](broken-reference) is:[**MariaDB 10.4.34**](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-10-4-34-release-notes.md) Stable (GA) [Download Now](https://downloads.mariadb.org/mariadb/10.4.34/)
+The most recent release of [MariaDB 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/changelogs/changelogs-mariadb-10-4-series/broken-reference/README.md) is:[**MariaDB 10.4.34**](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-10-4-34-release-notes.md) Stable (GA) [Download Now](https://downloads.mariadb.org/mariadb/10.4.34/)
 
-[Download](https://downloads.mariadb.org/mariadb/10.4.0/)[Release Notes](broken-reference)[Changelog](mariadb-1040-changelog.md)[Overview of 10.4](broken-reference)
+[Download](https://downloads.mariadb.org/mariadb/10.4.0/)[Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/changelogs/changelogs-mariadb-10-4-series/broken-reference/README.md)[Changelog](mariadb-1040-changelog.md)[Overview of 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/changelogs/changelogs-mariadb-10-4-series/broken-reference/README.md)
 
 **Release date:** 9 Nov 2018
 
-For the highlights of this release, see the[release notes](broken-reference).
+For the highlights of this release, see the[release notes](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/changelogs/changelogs-mariadb-10-4-series/broken-reference/README.md).
 
 The revision number links will take you to the revision's page on GitHub. On[GitHub](https://github.com/MariaDB/server/tree/10.4) you can view more\
 details of the revision and view diffs of the code modified in that revision.
@@ -488,9 +488,9 @@ details of the revision and view diffs of the code modified in that revision.
   2018-10-04 16:08:25 +0300
   * Fix a Galera result
 * [Revision #6f2389b22d](https://github.com/MariaDB/server/commit/6f2389b22d)\
-  2018-10-05 16:45:27 +0530
-  *
-    * Added flush table at the beginning of crash\_recovery test case.
+  2018-10-05 16:45:27 +0530\
+  \*
+  * Added flush table at the beginning of crash\_recovery test case.
 * [Revision #2af67150cf](https://github.com/MariaDB/server/commit/2af67150cf)\
   2018-10-05 16:44:51 +0530
   * [MDEV-17289](https://jira.mariadb.org/browse/MDEV-17289) Multi-pass recovery fails to apply some redo log records

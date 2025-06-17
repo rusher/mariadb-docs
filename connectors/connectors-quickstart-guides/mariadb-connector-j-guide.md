@@ -1,12 +1,6 @@
 ---
 description: Quickstart Guide for Connector/J
-icon: rabbit-running
-cover: ../.gitbook/assets/Group 15569 (2).png
-coverY: 0
 layout:
-  cover:
-    visible: true
-    size: hero
   title:
     visible: true
   description:
@@ -150,6 +144,5 @@ For production applications, it's highly recommended to use a connection pool to
 * **`MariaDbPoolDataSource`**: Maintains a pool of connections for reuse.
 
 When using an external pool, configure it to use `org.mariadb.jdbc.Driver` as the JDBC driver class.
-
 
 {% @marketo/form formId="4316" %}

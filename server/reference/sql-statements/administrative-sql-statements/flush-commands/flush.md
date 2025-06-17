@@ -31,7 +31,7 @@ If a listed table is a view, an error like the following will be produced:
 ERROR 1347 (HY000): 'test.v' is not BASE TABLE
 ```
 
-By default, `FLUSH` statements are written to the [binary log](../../../../server-management/server-monitoring-logs/binary-log/) and will be [replicated](broken-reference/). The `NO_WRITE_TO_BINLOG` keyword (`LOCAL` is an alias) will ensure the statement is not written to the binary log.
+By default, `FLUSH` statements are written to the [binary log](../../../../server-management/server-monitoring-logs/binary-log/) and will be [replicated](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/administrative-sql-statements/flush-commands/broken-reference/README.md). The `NO_WRITE_TO_BINLOG` keyword (`LOCAL` is an alias) will ensure the statement is not written to the binary log.
 
 The different flush options are:
 
@@ -183,9 +183,9 @@ Not all global status variables support being reset by `FLUSH STATUS`. Currently
 
 ## FLUSH TABLES
 
-**MariaDB starting with** [**10.11.12**](../../../../../en/mariadb-101112-release-notes/)
+**MariaDB starting with** [**10.11.12**](https://github.com/mariadb-corporation/docs-server/blob/test/en/mariadb-101112-release-notes/README.md)
 
-Prior to [MariaDB 10.11.12](broken-reference/), [MariaDB 11.4.6](broken-reference/) and [MariaDB 11.8.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-8-series/mariadb-11-8-2-release-notes), FLUSH TABLES caused [InnoDB statistics](../../../../ha-and-performance/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/innodb-persistent-statistics.md) to be reloaded or recalculated. From [MariaDB 10.11.12](broken-reference/), [MariaDB 11.4.6](broken-reference/) and [MariaDB 11.8.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-8-series/mariadb-11-8-2-release-notes), this is no longer the case. [RENAME TABLE](../../data-definition/rename-table.md) is unaffected, and will continue to trigger a reload of the statistics.
+Prior to [MariaDB 10.11.12](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/administrative-sql-statements/flush-commands/broken-reference/README.md), [MariaDB 11.4.6](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/administrative-sql-statements/flush-commands/broken-reference/README.md) and [MariaDB 11.8.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-8-series/mariadb-11-8-2-release-notes), FLUSH TABLES caused [InnoDB statistics](../../../../ha-and-performance/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/innodb-persistent-statistics.md) to be reloaded or recalculated. From [MariaDB 10.11.12](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/administrative-sql-statements/flush-commands/broken-reference/README.md), [MariaDB 11.4.6](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/administrative-sql-statements/flush-commands/broken-reference/README.md) and [MariaDB 11.8.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-8-series/mariadb-11-8-2-release-notes), this is no longer the case. [RENAME TABLE](../../data-definition/rename-table.md) is unaffected, and will continue to trigger a reload of the statistics.
 
 ### Purpose of FLUSH TABLES
 
@@ -288,6 +288,6 @@ FLUSH LOCAL HOSTS,
    USER_STATISTICS;
 ```
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

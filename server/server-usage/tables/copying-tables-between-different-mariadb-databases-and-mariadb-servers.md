@@ -1,7 +1,7 @@
 # Copying Tables Between Databases and Servers
 
 With MariaDB it's very easy to copy tables between different MariaDB databases\
-and different MariaDB servers. This works for tables created with the [Archive](../storage-engines/archive/), [Aria](../storage-engines/aria/), [CSV](../storage-engines/csv/), [InnoDB](../storage-engines/innodb/), [MyISAM](../storage-engines/myisam-storage-engine/), [MERGE](../storage-engines/merge.md), and [XtraDB](../storage-engines/innodb/) engines.
+and different MariaDB servers. This works for tables created with the [Archive](../storage-engines/archive.md), [Aria](../storage-engines/aria/), [CSV](../storage-engines/csv/), [InnoDB](../storage-engines/innodb/), [MyISAM](../storage-engines/myisam-storage-engine/), [MERGE](../storage-engines/merge.md), and [XtraDB](../storage-engines/innodb/) engines.
 
 The normal procedures to copy a table is:
 
@@ -34,7 +34,7 @@ The following storage engines support export without `FLUSH TABLES ... FOR EXPOR
 | Engine                                              | Comment                                                                                                                                                                                                         |
 | --------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Engine                                              | Comment                                                                                                                                                                                                         |
-| [Archive](../storage-engines/archive/)              |                                                                                                                                                                                                                 |
+| [Archive](../storage-engines/archive.md)            |                                                                                                                                                                                                                 |
 | [Aria](../storage-engines/aria/)                    | Requires clean shutdown. Table will automatically be fixed on the receiving server if aria\_chk --zerofill was not run. If aria\_chk --zerofill is run, then the table is immediately usable without any delays |
 | [CSV](../storage-engines/csv/)                      |                                                                                                                                                                                                                 |
 | [MyISAM](../storage-engines/myisam-storage-engine/) |                                                                                                                                                                                                                 |

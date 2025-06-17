@@ -9,7 +9,7 @@ LineString(pt1,pt2,...)
 ## Description
 
 WKB LineString from WKB Point coordinate data.\
-Constructs a [WKB](../../../sql-structure/geometry/wkb/) LineString value from a number of WKB [Point](point.md) arguments. If any argument is not a WKB Point, the return value is`NULL`. If the number of [Point](point.md) arguments is less than two, the return value is `NULL`.
+Constructs a [WKB](../wkb/) LineString value from a number of WKB [Point](point.md) arguments. If any argument is not a WKB Point, the return value is`NULL`. If the number of [Point](point.md) arguments is less than two, the return value is `NULL`.
 
 ## Examples
 
@@ -59,6 +59,6 @@ SELECT ST_AsWKT(g) FROM linestring_example;
 +-------------------------------------------+
 ```
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

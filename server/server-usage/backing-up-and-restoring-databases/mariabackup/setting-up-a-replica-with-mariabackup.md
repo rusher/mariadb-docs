@@ -6,7 +6,7 @@ The terms _master_ and _slave_ have historically been used in replication, and M
 
 Mariabackup makes it very easy to set up a [replica](../../../ha-and-performance/standard-replication/) using a [full backup](full-backup-and-restore-with-mariabackup.md). This page documents how to set up a replica from a backup.
 
-If you are using [MariaDB Galera Cluster](../../../../en/galera/), then you may want to try one of the following pages instead:
+If you are using [MariaDB Galera Cluster](https://github.com/mariadb-corporation/docs-server/blob/test/en/galera/README.md), then you may want to try one of the following pages instead:
 
 * [Configuring MariaDB Replication between MariaDB Galera Cluster and MariaDB Server](../../../ha-and-performance/standard-replication/)
 * [Configuring MariaDB Replication between Two MariaDB Galera Clusters](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/high-availability/using-mariadb-replication-with-mariadb-galera-cluster/configuring-mariadb-replication-between-two-mariadb-galera-clusters)

@@ -8,7 +8,7 @@
 
 **Do not use non-stable (non-GA) releases in production!**
 
-[MariaDB 11.8](what-is-mariadb-118.md) is a current long-term development series of MariaDB. It is an evolution of [MariaDB 11.7](../mariadb-11-7-rolling-releases/what-is-mariadb-117.md) with several entirely new features.
+[MariaDB 11.8](what-is-mariadb-118.md) is a current long-term development series of MariaDB. It is an evolution of [MariaDB 11.7](../old-releases/mariadb-11-7-rolling-releases/what-is-mariadb-117.md) with several entirely new features.
 
 [MariaDB 11.8.1](mariadb-11-8-1-release-notes.md) is a [_**Release Candidate (RC)**_](../../mariadb-release-criteria.md) release.
 
@@ -80,7 +80,7 @@ For a full list of contributors to [MariaDB 11.8.1](mariadb-11-8-1-release-notes
 Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
 
 MariaDB may already be included in your favorite OS distribution. More\
-information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/readme-1)\
+information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-including-mariadb)\
 page.
 
 {% @marketo/form formid="4316" formId="4316" %}

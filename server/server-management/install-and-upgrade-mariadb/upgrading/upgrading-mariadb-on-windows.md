@@ -54,7 +54,7 @@ This is a GUI tool that is typically invoked at the end of a MariaDB\
 installation if upgradable services are found. The UI allows you to select\
 instances you want to upgrade.
 
-![UpgradeWizard](../../../.gitbook/assets/upgrading-mariadb-on-windows/+image/UpgradeWizard.png)
+![UpgradeWizard](../../../.gitbook/assets/UpgradeWizard.png)
 
 ## mysql\_upgrade\_service
 

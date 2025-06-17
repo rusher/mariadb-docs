@@ -195,7 +195,7 @@ Feature/Patch name
 * [MariaDB 10.5.1 contributors](https://mariadb.org/mariadb-10-5-1-now-available/)
 * [MariaDB 10.5.0 contributors](https://mariadb.org/mariadb-10-5-0-now-available/)
 
-### [MariaDB 10.4](broken-reference/) Log of Contributions
+### [MariaDB 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/general-resources/community/contributing-participating/broken-reference/README.md) Log of Contributions
 
 * [MariaDB 10.4.34 contributors](https://mariadb.org/mariadb-11-2-4-11-1-5-11-0-6-10-11-8-10-6-18-10-5-25-10-4-34-now-available/)
 * [MariaDB 10.4.33 contributors](https://mariadb.org/mariadb-11-2-3-11-1-4-11-0-5-10-11-7-10-6-17-10-5-24-10-4-33-now-available/)
@@ -349,7 +349,7 @@ The MariaDB Foundation website provides a more detailed list of contributors by 
 
 ### [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1) Log of Contributions
 
-[Replication](broken-reference/), optimizer, security, speed enhancements, bug fixing, etc
+[Replication](https://github.com/mariadb-corporation/docs-server/blob/test/general-resources/community/contributing-participating/broken-reference/README.md), optimizer, security, speed enhancements, bug fixing, etc
 
 * [MariaDB Corporation](https://mariadb.com)
 
@@ -375,7 +375,7 @@ Power8 optimization
 
 * [MariaDB Foundation](https://mariadb.org)
 
-Reviews for [replication](broken-reference/), [encryption](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption), compression, [Galera](../../../en/mariadb-galera-cluster/), [Connect](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/connect) storage engine, [Mroonga](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/mroonga) storage engine, [Spider](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/spider), [OR REPLACE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/create) etc.
+Reviews for [replication](https://github.com/mariadb-corporation/docs-server/blob/test/general-resources/community/contributing-participating/broken-reference/README.md), [encryption](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption), compression, [Galera](https://github.com/mariadb-corporation/docs-server/blob/test/en/mariadb-galera-cluster/README.md), [Connect](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/connect) storage engine, [Mroonga](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/mroonga) storage engine, [Spider](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/spider), [OR REPLACE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/create) etc.
 
 * [MariaDB Foundation](https://mariadb.org)
 
@@ -391,7 +391,7 @@ Table level [encryption](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security
 
 * [Kakao Inc](https://www.kakao.com)
 
-[Galera (wsrep patches)](../../../en/mariadb-galera-cluster/)
+[Galera (wsrep patches)](https://github.com/mariadb-corporation/docs-server/blob/test/en/mariadb-galera-cluster/README.md)
 
 * [Codership](https://galeracluster.com/)
 
@@ -630,7 +630,7 @@ Google has sponsored:
 Facebook has sponsored many features, including:
 
 * [LIMIT ROWS EXAMINED](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/query-optimizations/limit-rows-examined)
-* The [non-blocking client library](broken-reference/)
+* The [non-blocking client library](https://github.com/mariadb-corporation/docs-server/blob/test/general-resources/community/contributing-participating/broken-reference/README.md)
 * Facebook employees do frequent the mailing list
 
 ### See Also

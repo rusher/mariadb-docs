@@ -47,4 +47,6 @@ layout:
 * [Learn about the MariaDB Community](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/community)
 
 
+<sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
+
 {% @marketo/form formId="4316" %}

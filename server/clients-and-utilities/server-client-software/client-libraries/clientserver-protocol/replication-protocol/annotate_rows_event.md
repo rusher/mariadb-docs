@@ -6,7 +6,7 @@ You can enable this with [--binlog-annotate-row-events](../../../../../ha-and-pe
 
 In the binary log, each Annotate\_rows event precedes the corresponding Table map event.
 
-For additional information refer to the [annotate\_rows\_log\_event](../../../../mariadb-binlog/annotate_rows_log_event.md) documentation.
+For additional information refer to the [annotate\_rows\_log\_event](../../../../logging-tools/mariadb-binlog/annotate_rows_log_event.md) documentation.
 
 {% hint style="info" %}
 **Note**: the master server sends ANNOTATE\_ROWS\_EVENT events only if the Slave server connects with the BINLOG\_SEND\_ANNOTATE\_ROWS\_EVENT flag (value is 2) in the COM\_BINLOG\_DUMP Slave Registration phase.

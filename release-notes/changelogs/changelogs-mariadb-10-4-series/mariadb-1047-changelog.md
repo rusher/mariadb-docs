@@ -1,10 +1,8 @@
 # MariaDB 10.4.7 Changelog
 
+The most recent release of [MariaDB 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/changelogs/changelogs-mariadb-10-4-series/broken-reference/README.md) is:[**MariaDB 10.4.34**](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-10-4-34-release-notes.md) Stable (GA) [Download Now](https://downloads.mariadb.org/mariadb/10.4.34/)
 
-
-The most recent release of [MariaDB 10.4](broken-reference) is:[**MariaDB 10.4.34**](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-10-4-34-release-notes.md) Stable (GA) [Download Now](https://downloads.mariadb.org/mariadb/10.4.34/)
-
-[Download](https://downloads.mariadb.org/mariadb/10.4.7/)[Release Notes](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-1047-release-notes.md)[Changelog](mariadb-1047-changelog.md)[Overview of 10.4](broken-reference)
+[Download](https://downloads.mariadb.org/mariadb/10.4.7/)[Release Notes](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-1047-release-notes.md)[Changelog](mariadb-1047-changelog.md)[Overview of 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/changelogs/changelogs-mariadb-10-4-series/broken-reference/README.md)
 
 **Release date:** 31 Jul 2019
 
@@ -53,14 +51,14 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-19876](https://jira.mariadb.org/browse/MDEV-19876) pam v2: auth\_pam\_tool\_dir and auth\_pam\_tool permissions are wrong in RPMs
 * [Revision #c9f0f88838](https://github.com/MariaDB/server/commit/c9f0f88838)\
   2019-07-08 12:32:17 +0200
-  * [MDEV-19822](https://jira.mariadb.org/browse/MDEV-19822) [MariaDB 10.4](broken-reference) install fails on Ubuntu 18.04 if Prometheus mysqld\_exporter is running
+  * [MDEV-19822](https://jira.mariadb.org/browse/MDEV-19822) [MariaDB 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/changelogs/changelogs-mariadb-10-4-series/broken-reference/README.md) install fails on Ubuntu 18.04 if Prometheus mysqld\_exporter is running
 * [Revision #bccd9d0e3a](https://github.com/MariaDB/server/commit/bccd9d0e3a)\
   2019-07-24 13:20:36 +0200
   * [MDEV-20108](https://jira.mariadb.org/browse/MDEV-20108): \[ERROR] mysqld got signal 11 in st\_select\_lex::add\_table\_to\_list
 * [Revision #819c40d694](https://github.com/MariaDB/server/commit/819c40d694)\
-  2019-07-22 14:34:12 +0100
-  *
-    * wsrep-lib update (SR cleanups and voting support) (#1359)
+  2019-07-22 14:34:12 +0100\
+  \*
+  * wsrep-lib update (SR cleanups and voting support) (#1359)
 * [Revision #1f54b662ae](https://github.com/MariaDB/server/commit/1f54b662ae)\
   2019-07-22 12:24:01 +0200
   * The test for the wsrep\_info plugin needs the same flexible wsrep version checking as the tests for Galera (continuation of [MDEV-18565](https://jira.mariadb.org/browse/MDEV-18565) task)
@@ -154,7 +152,7 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-19879](https://jira.mariadb.org/browse/MDEV-19879) server can send empty error message to client with pam\_use\_cleartext\_plugin
 * [Revision #3914a792d8](https://github.com/MariaDB/server/commit/3914a792d8)\
   2019-06-30 17:18:26 +0200
-  * [MDEV-19880](https://jira.mariadb.org/browse/MDEV-19880) pam v1: pam password authentication doesn't work at all in [MariaDB 10.4](broken-reference)
+  * [MDEV-19880](https://jira.mariadb.org/browse/MDEV-19880) pam v1: pam password authentication doesn't work at all in [MariaDB 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/changelogs/changelogs-mariadb-10-4-series/broken-reference/README.md)
 * [Revision #dd93028dae](https://github.com/MariaDB/server/commit/dd93028dae)\
   2019-06-30 20:41:26 +0200
   * [MDEV-19878](https://jira.mariadb.org/browse/MDEV-19878) pam v2: pam password authentication doesn't work at all

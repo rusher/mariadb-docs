@@ -18,11 +18,11 @@ where Country.code IN (select City.Country
 
 Suppose, our execution plan is to find countries in Europe, and then, for each found country, check if it has any big cities. Regular inner join execution will look as follows:
 
-![firstmatch-inner-join](../../../../.gitbook/assets/firstmatch-strategy/+image/firstmatch-inner-join.png)
+![firstmatch-inner-join](../../../../.gitbook/assets/firstmatch-inner-join.png)
 
 Since Germany has two big cities (in this diagram), it will be put into the query output twice. This is not correct, `SELECT ... FROM Country` should not produce the same country record twice. The `FirstMatch` strategy avoids the production of duplicates by short-cutting execution as soon as the first genuine match is found:
 
-![firstmatch-firstmatch](../../../../.gitbook/assets/firstmatch-strategy/+image/firstmatch-firstmatch.png)
+![firstmatch-firstmatch](../../../../.gitbook/assets/firstmatch-firstmatch.png)
 
 Note that the short-cutting has to take place after "Using where" has been applied. It would have been wrong to short-cut after we found Trier.
 

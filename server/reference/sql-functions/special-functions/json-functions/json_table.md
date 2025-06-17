@@ -249,9 +249,9 @@ In the current code, evaluation of JSON\_TABLE is deterministic, that is, for a 
 
 ### Extracting a Subdocument into a Column
 
-**MariaDB starting with** [**10.6.9**](broken-reference)
+**MariaDB starting with** [**10.6.9**](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-functions/special-functions/json-functions/broken-reference/README.md)
 
-Prior to [MariaDB 10.6.9](broken-reference), JSON\_TABLE did not allow one to extract a JSON "subdocument" into a JSON column.
+Prior to [MariaDB 10.6.9](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-functions/special-functions/json-functions/broken-reference/README.md), JSON\_TABLE did not allow one to extract a JSON "subdocument" into a JSON column.
 
 ```
 SELECT * FROM JSON_TABLE('{"foo": [1,2,3,4]}','$' columns( jscol json path '$.foo') ) AS T;
@@ -262,7 +262,7 @@ SELECT * FROM JSON_TABLE('{"foo": [1,2,3,4]}','$' columns( jscol json path '$.fo
 +-------+
 ```
 
-This is supported from [MariaDB 10.6.9](broken-reference):
+This is supported from [MariaDB 10.6.9](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-functions/special-functions/json-functions/broken-reference/README.md):
 
 ```
 SELECT * FROM JSON_TABLE('{"foo": [1,2,3,4]}','$' columns( jscol json path '$.foo') ) AS T;

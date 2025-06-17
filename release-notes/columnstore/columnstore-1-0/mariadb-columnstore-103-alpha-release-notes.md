@@ -37,7 +37,7 @@ Below is list of some of the bugs and issues fixed. For the complete list please
 
 ## Upgrade
 
-Multi version upgrades are not supported, please upgrade versions prior to 1.0.2 before upgrading to 1.0.3. Details on upgrading from version to 1.0.2 to 1.0.3 can be found [here](broken-reference).
+Multi version upgrades are not supported, please upgrade versions prior to 1.0.2 before upgrading to 1.0.3. Details on upgrading from version to 1.0.2 to 1.0.3 can be found [here](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/columnstore/columnstore-1-0/broken-reference/README.md).
 
 Upgrade from MariaDB ColumnStore Alpha versions 1.0.0 and 1.0.1 is not supported, please upgrade to version 1.0.2 prior to upgrading to 1.0.3.
 

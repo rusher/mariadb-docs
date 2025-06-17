@@ -91,7 +91,7 @@ insert **many** rows at a time, where it may be faster to create a file\
 locally, add the rows there, and then use `LOAD DATA INFILE` to load them;\
 compared to using `INSERT` to insert the rows.
 
-You will also get [progress reporting](broken-reference/) for`LOAD DATA INFILE`.
+You will also get [progress reporting](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/optimization-and-tuning/query-optimizations/broken-reference/README.md) for`LOAD DATA INFILE`.
 
 ### mariadb-import
 

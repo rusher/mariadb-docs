@@ -170,7 +170,7 @@ The suffix can be upper or lower-case.
   * This system variable's original intention was to allow result sets that were too big for memory-based temporary tables and to avoid the resulting 'table full' errors.
   * This system variable is no longer needed, because the server can automatically convert large memory-based temporary tables into disk-based temporary tables when they exceed the value of the `[tmp_memory_table_size](#tmp_memory_table_size)` system variable.
   * To prevent memory-based temporary tables from being used at all, set the `[tmp_memory_table_size](#tmp_memory_table_size)` system variable to `0`.
-  * In [MariaDB 5.5](broken-reference/) and earlier, `[sql_big_tables](#sql_big_tables)` is a synonym.
+  * In [MariaDB 5.5](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/optimization-and-tuning/system-variables/broken-reference/README.md) and earlier, `[sql_big_tables](#sql_big_tables)` is a synonym.
   * In [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105), this system variable is deprecated.
 * Commandline: `--big-tables`
 * Scope: Global, Session
@@ -181,7 +181,7 @@ The suffix can be upper or lower-case.
 
 #### `bind_address`
 
-* Description: By default, the MariaDB server listens for TCP/IP connections on all addresses. You can specify an alternative when the server starts using this option; either a host name, an IPv4 or an IPv6 address, "::" or "_" (all addresses). In some systems, such as Debian and Ubuntu, the bind\_address is set to 127.0.0.1, which binds the server to listen on localhost only. `bind_address` has always been available as a_ [_mariadbd option_](../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md)_; from_ [_MariaDB 10.3.3_](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-1033-release-notes) _its also available as a system variable. Before_ [_MariaDB 10.6.0_](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/mariadb-1060-release-notes) _"::" implied listening additionally on IPv4 addresses like "_". From 10.6.0 onwards it refers to IPv6 stictly. Starting with [MariaDB 10.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-11-series/what-is-mariadb-1011), a comma-separated list of addresses to bind to can be given. See also [Configuring MariaDB for Remote Client Access](../../../../kb/en/configuring-mariadb-for-remote-client-access/).
+* Description: By default, the MariaDB server listens for TCP/IP connections on all addresses. You can specify an alternative when the server starts using this option; either a host name, an IPv4 or an IPv6 address, "::" or "_" (all addresses). In some systems, such as Debian and Ubuntu, the bind\_address is set to 127.0.0.1, which binds the server to listen on localhost only. `bind_address` has always been available as a_ [_mariadbd option_](../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md)_; from_ [_MariaDB 10.3.3_](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-1033-release-notes) _its also available as a system variable. Before_ [_MariaDB 10.6.0_](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/mariadb-1060-release-notes) _"::" implied listening additionally on IPv4 addresses like "_". From 10.6.0 onwards it refers to IPv6 stictly. Starting with [MariaDB 10.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-11-series/what-is-mariadb-1011), a comma-separated list of addresses to bind to can be given. See also [Configuring MariaDB for Remote Client Access](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/configuring-mariadb-for-remote-client-access/README.md).
 * Commandline: `--bind-address=addr`
 * Scope: Global
 * Dynamic: No
@@ -417,7 +417,7 @@ The suffix can be upper or lower-case.
 
 #### `debug_sync`
 
-* Description: Used in debugging to show the interface to the [Debug Sync facility](../../../clients-and-utilities/mariadb-test/the-debug-sync-facility.md). MariaDB needs to be configured with -DENABLE\_DEBUG\_SYNC=1 for this variable to be available.
+* Description: Used in debugging to show the interface to the [Debug Sync facility](../../../clients-and-utilities/testing-tools/mariadb-test/the-debug-sync-facility.md). MariaDB needs to be configured with -DENABLE\_DEBUG\_SYNC=1 for this variable to be available.
 * Scope: Session
 * Dynamic: Yes
 * Data Type: `string`
@@ -468,11 +468,11 @@ The suffix can be upper or lower-case.
 
 #### `default_table_type`
 
-* Description: A synonym for [default\_storage\_engine](server-system-variables.md#default_storage_engine). Removed in [MariaDB 5.5](broken-reference/).
+* Description: A synonym for [default\_storage\_engine](server-system-variables.md#default_storage_engine). Removed in [MariaDB 5.5](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/optimization-and-tuning/system-variables/broken-reference/README.md).
 * Commandline: `--default-table-type=name`
 * Scope: Global, Session
 * Dynamic: Yes
-* Removed: [MariaDB 5.5](broken-reference/)
+* Removed: [MariaDB 5.5](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/optimization-and-tuning/system-variables/broken-reference/README.md)
 
 #### `default_tmp_storage_engine`
 
@@ -625,13 +625,13 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 
 #### `engine_condition_pushdown`
 
-* Description: Deprecated in [MariaDB 5.5](broken-reference/) and removed and replaced by the [optimizer\_switch](server-system-variables.md#optimizer_switch) `engine_condition_pushdown={on|off}` flag in [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0).. Specifies whether the engine condition pushdown optimization is enabled. Since [MariaDB 10.1.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-1-release-notes), engine condition pushdown is enabled for all engines that support it.
+* Description: Deprecated in [MariaDB 5.5](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/optimization-and-tuning/system-variables/broken-reference/README.md) and removed and replaced by the [optimizer\_switch](server-system-variables.md#optimizer_switch) `engine_condition_pushdown={on|off}` flag in [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0).. Specifies whether the engine condition pushdown optimization is enabled. Since [MariaDB 10.1.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-1-release-notes), engine condition pushdown is enabled for all engines that support it.
 * Commandline: `--engine-condition-pushdown`
 * Scope: Global, Session
 * Dynamic: Yes
 * Data Type: `boolean`
 * Default Value: `OFF`
-* Deprecated: [MariaDB 5.5](broken-reference/)
+* Deprecated: [MariaDB 5.5](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/optimization-and-tuning/system-variables/broken-reference/README.md)
 * Removed: [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0)
 
 #### `eq_range_index_dive_limit`
@@ -676,10 +676,10 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 * Description: This option causes [CREATE TABLE](../../../reference/sql-statements/data-definition/create/create-table.md) to create all [TIMESTAMP](../../../reference/data-types/date-and-time-data-types/timestamp.md) columns as [NULL](../../../reference/data-types/null-values.md) with the DEFAULT NULL attribute, Without this option, TIMESTAMP columns are NOT NULL and have implicit DEFAULT clauses.
 * Commandline: `--explicit-defaults-for-timestamp=[={0|1}]`
 * Scope:
-  * Global, Session (>= [MariaDB 10.8.4](broken-reference/), [MariaDB 10.7.5](broken-reference/), [MariaDB 10.6.9](broken-reference/), [MariaDB 10.5.17](broken-reference/))
+  * Global, Session (>= [MariaDB 10.8.4](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/optimization-and-tuning/system-variables/broken-reference/README.md), [MariaDB 10.7.5](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/optimization-and-tuning/system-variables/broken-reference/README.md), [MariaDB 10.6.9](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/optimization-and-tuning/system-variables/broken-reference/README.md), [MariaDB 10.5.17](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/optimization-and-tuning/system-variables/broken-reference/README.md))
   * Global (<= [MariaDB 10.8.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-8-series/mariadb-1083-release-notes), [MariaDB 10.7.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-7-series/mariadb-1074-release-notes), [MariaDB 10.6.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/mariadb-1068-release-notes), [MariaDB 10.5.16](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-10516-release-notes))
 * Dynamic:
-  * Yes (>= [MariaDB 10.8.4](broken-reference/), [MariaDB 10.7.5](broken-reference/), [MariaDB 10.6.9](broken-reference/), [MariaDB 10.5.17](broken-reference/))
+  * Yes (>= [MariaDB 10.8.4](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/optimization-and-tuning/system-variables/broken-reference/README.md), [MariaDB 10.7.5](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/optimization-and-tuning/system-variables/broken-reference/README.md), [MariaDB 10.6.9](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/optimization-and-tuning/system-variables/broken-reference/README.md), [MariaDB 10.5.17](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/optimization-and-tuning/system-variables/broken-reference/README.md))
   * No (<= [MariaDB 10.8.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-8-series/mariadb-1083-release-notes), [MariaDB 10.7.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-7-series/mariadb-1074-release-notes), [MariaDB 10.6.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/mariadb-1068-release-notes), [MariaDB 10.5.16](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-10516-release-notes))
 * Data Type: `boolean`
 * Default Value:`ON` (>= [MariaDB 10.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-10-series/what-is-mariadb-1010)), `OFF` (<= [MariaDB 10.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-9-series/what-is-mariadb-109))
@@ -831,7 +831,7 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 
 #### `have_ndbcluster`
 
-* Description: If the server supports NDBCluster ([disabled in MariaDB](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/ndb-disabled-in-mariadb/)).
+* Description: If the server supports NDBCluster ([disabled in MariaDB](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/ndb-disabled-in-mariadb/README.md)).
 * Scope: Global
 * Dynamic: No
 * Removed: [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0)
@@ -1009,7 +1009,7 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 
 #### `join_buffer_size`
 
-* Description: Minimum size in bytes of the buffer used for queries that cannot use an index, and instead perform a full table scan. Increase to get faster full joins when adding indexes is not possible, although be aware of memory issues, since joins will always allocate the minimum size. Best left low globally and set high in sessions that require large full joins. In 64-bit platforms, Windows truncates values above 4GB to 4GB with a warning. See also [Block-Based Join Algorithms - Size of Join Buffers](broken-reference/).
+* Description: Minimum size in bytes of the buffer used for queries that cannot use an index, and instead perform a full table scan. Increase to get faster full joins when adding indexes is not possible, although be aware of memory issues, since joins will always allocate the minimum size. Best left low globally and set high in sessions that require large full joins. In 64-bit platforms, Windows truncates values above 4GB to 4GB with a warning. See also [Block-Based Join Algorithms - Size of Join Buffers](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/optimization-and-tuning/system-variables/broken-reference/README.md).
 * Commandline: `--join-buffer-size=#`
 * Scope: Global, Session
 * Dynamic: Yes
@@ -1020,7 +1020,7 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 
 #### `join_buffer_space_limit`
 
-* Description: Maximum size in bytes of the query buffer, By default 102&#x34;_&#x31;2&#x38;_&#x31;0. See [Block-based join algorithms](broken-reference/).
+* Description: Maximum size in bytes of the query buffer, By default 102&#x34;_&#x31;2&#x38;_&#x31;0. See [Block-based join algorithms](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/optimization-and-tuning/system-variables/broken-reference/README.md).
 * Commandline: `--join-buffer-space-limit=#`
 * Scope: Global, Session
 * Dynamic: Yes
@@ -1030,7 +1030,7 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 
 #### `join_cache_level`
 
-* Description: Controls which of the eight block-based algorithms can be used for join operations. See [Block-based join algorithms](broken-reference/) for more information.
+* Description: Controls which of the eight block-based algorithms can be used for join operations. See [Block-based join algorithms](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/optimization-and-tuning/system-variables/broken-reference/README.md) for more information.
   * 1 – flat (Block Nested Loop) BNL
   * 2 – incremental BNL
   * 3 – flat Block Nested Loop Hash (BNLH)
@@ -1422,7 +1422,7 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 #### `low_priority_updates`
 
 * Description: If set to 1 (0 is the default), for [storage engines](../../../server-usage/storage-engines/) that use only table-level locking ([Aria](../../../server-usage/storage-engines/aria/), [MyISAM](../../../server-usage/storage-engines/myisam-storage-engine/), [MEMORY](../../../server-usage/storage-engines/memory-storage-engine.md) and [MERGE](../../../server-usage/storage-engines/merge.md)), all INSERTs, UPDATEs, DELETEs and LOCK TABLE WRITEs will wait until there are no more SELECTs or LOCK TABLE READs pending on the relevant tables. Set this to 1 if reads are prioritized over writes.
-  * In [MariaDB 5.5](broken-reference/) and earlier, `[sql_low_priority_updates](#sql_low_priority_updates)` is a synonym.
+  * In [MariaDB 5.5](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/optimization-and-tuning/system-variables/broken-reference/README.md) and earlier, `[sql_low_priority_updates](#sql_low_priority_updates)` is a synonym.
 * Commandline: `--low-priority-updates`
 * Scope: Global, Session
 * Dynamic: Yes
@@ -1546,7 +1546,7 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 
 #### `max_long_data_size`
 
-* Description: Maximum size for parameter values sent with mysql\_stmt\_send\_long\_data(). If not set, will default to the value of [max\_allowed\_packet](server-system-variables.md#max_allowed_packet). Deprecated in [MariaDB 5.5](broken-reference/) and removed in [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1050-release-notes); use [max\_allowed\_packet](server-system-variables.md#max_allowed_packet) instead.
+* Description: Maximum size for parameter values sent with mysql\_stmt\_send\_long\_data(). If not set, will default to the value of [max\_allowed\_packet](server-system-variables.md#max_allowed_packet). Deprecated in [MariaDB 5.5](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/optimization-and-tuning/system-variables/broken-reference/README.md) and removed in [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1050-release-notes); use [max\_allowed\_packet](server-system-variables.md#max_allowed_packet) instead.
 * Commandline: `--max-long-data-size=#`
 * Scope: Global
 * Dynamic: No
@@ -1554,7 +1554,7 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 * Default Value:
   * `16777216` (16M)
 * Range: `1024` to `4294967295`
-* Deprecated: [MariaDB 5.5](broken-reference/)
+* Deprecated: [MariaDB 5.5](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/optimization-and-tuning/system-variables/broken-reference/README.md)
 * Removed: [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1050-release-notes)
 
 #### `max_password_errors`
@@ -1667,7 +1667,7 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 
 #### `max_write_lock_count`
 
-* Description: Read lock requests will be permitted for processing after this many write locks. Applies only to storage engines that use table level locks (thr\_lock), so no effect with [InnoDB](../../../server-usage/storage-engines/innodb/) or [Archive](../../../server-usage/storage-engines/archive/).
+* Description: Read lock requests will be permitted for processing after this many write locks. Applies only to storage engines that use table level locks (thr\_lock), so no effect with [InnoDB](../../../server-usage/storage-engines/innodb/) or [Archive](../../../server-usage/storage-engines/archive.md).
 * Commandline: `--max-write-lock-count=#`
 * Scope: Global
 * Dynamic: No
@@ -1724,7 +1724,7 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 
 #### `mysql56_temporal_format`
 
-* Description: If set (the default), MariaDB uses the MySQL 5.6 low level formats for [TIME](../../../reference/data-types/date-and-time-data-types/time.md), [DATETIME](../../../reference/data-types/date-and-time-data-types/datetime.md) and [TIMESTAMP](../../../reference/data-types/date-and-time-data-types/timestamp.md) instead of the [MariaDB 5.3](broken-reference/) version. The version MySQL introduced in 5.6 requires more storage, but potentially allows negative dates and has some advantages in replication. There should be no reason to revert to the old [MariaDB 5.3](broken-reference/) microsecond format. See also [MDEV-10723](https://jira.mariadb.org/browse/MDEV-10723).
+* Description: If set (the default), MariaDB uses the MySQL 5.6 low level formats for [TIME](../../../reference/data-types/date-and-time-data-types/time.md), [DATETIME](../../../reference/data-types/date-and-time-data-types/datetime.md) and [TIMESTAMP](../../../reference/data-types/date-and-time-data-types/timestamp.md) instead of the [MariaDB 5.3](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/optimization-and-tuning/system-variables/broken-reference/README.md) version. The version MySQL introduced in 5.6 requires more storage, but potentially allows negative dates and has some advantages in replication. There should be no reason to revert to the old [MariaDB 5.3](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/optimization-and-tuning/system-variables/broken-reference/README.md) microsecond format. See also [MDEV-10723](https://jira.mariadb.org/browse/MDEV-10723).
 * Commandline: `--mysql56-temporal-format`
 * Scope: Global
 * Dynamic: Yes
@@ -1782,7 +1782,7 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 
 #### `note_verbosity`
 
-* Description: Verbosity level for note-warnings given to the user. Options are added in a comma-delimited string, except for `all`, which sets all options. See also [Notes when an index cannot be used](broken-reference/). Be aware that if the old [sql\_notes](server-system-variables.md#sql_notes) variable is 0, one will not get any notes. Setting `note_verbosity` to "" is the recommended way to disable notes.
+* Description: Verbosity level for note-warnings given to the user. Options are added in a comma-delimited string, except for `all`, which sets all options. See also [Notes when an index cannot be used](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/optimization-and-tuning/system-variables/broken-reference/README.md). Be aware that if the old [sql\_notes](server-system-variables.md#sql_notes) variable is 0, one will not get any notes. Setting `note_verbosity` to "" is the recommended way to disable notes.
   * `basic` All old notes.
   * `unusable_keys` Give warnings for unusable keys for SELECT, DELETE and UPDATE.
   * `explain` Give warnings for unusable keys for EXPLAIN.
@@ -1862,7 +1862,7 @@ MariaDB sets the limit with `[setrlimit](https://linux.die.net/man/2/setrlimit)`
 * Data Type: `numeric`
 * Default Value: `8`
 * Range: `0` to `62`
-* Introduced: [MariaDB 10.10.1](broken-reference/)
+* Introduced: [MariaDB 10.10.1](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/optimization-and-tuning/system-variables/broken-reference/README.md)
 
 **optimizer\_join\_limit\_pref\_ratio**
 
@@ -1878,7 +1878,7 @@ MariaDB sets the limit with `[setrlimit](https://linux.die.net/man/2/setrlimit)`
 #### `optimizer_max_sel_arg_weight`
 
 * Description: This is an actively enforced maximum effective SEL\_ARG tree weight limit. A SEL\_ARG weight is the number of effective "ranges" hanging off this root (that is, merged tree elements are "unmerged" to count the weight). During range analysis, looking for possible index merges, SEL\_ARG graphs related to key ranges in query conditions are being processed. Graphs exceeding this limit will stop keys being 'and'ed and 'or'ed together to form a new larger SEL\_ARG graph. After each 'and' or 'or' process, this maximum weight limit is enforced. It enforces this limit by pruning the key part being used. This key part pruning can be used to limit/disable index merge SEL\_ARG graph construction on overly long query conditions.\
-  See [optimizer\_max\_sel\_arg\_weight](broken-reference/) for details.
+  See [optimizer\_max\_sel\_arg\_weight](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/optimization-and-tuning/system-variables/broken-reference/README.md) for details.
 * Commandline: `--optimizer-max-sel-arg-weight=#`
 * Scope: Global, Session
 * Dynamic: Yes
@@ -1948,7 +1948,7 @@ MariaDB sets the limit with `[setrlimit](https://linux.die.net/man/2/setrlimit)`
   * `duplicateweedout={on|off}`. From [MariaDB 11.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-8-series/what-is-mariadb-118).
   * `engine_condition_pushdown={on|off}`. Deprecated in [MariaDB 10.1.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-1-release-notes) as engine condition pushdown is now automatically enabled for all engines that support it.
   * `exists_to_in={on|off}` - see [EXISTS-to-IN optimization](../query-optimizations/subquery-optimizations/exists-to-in-optimization.md)
-  * `extended_keys={on|off}` - see [Extended Keys](broken-reference/)
+  * `extended_keys={on|off}` - see [Extended Keys](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/optimization-and-tuning/system-variables/broken-reference/README.md)
   * `firstmatch={on|off}` - see [First Match Strategy](../query-optimizations/optimization-strategies/firstmatch-strategy.md)
   * `hash_join_cardinality={on|off}` - see [hash\_join\_cardinality-optimizer\_switch-flag](../query-optimizations/hash_join_cardinality-optimizer_switch-flag.md) (>= [MariaDB 11.0.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-0-series/mariadb-11-0-2-release-notes), [MariaDB 10.11.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-11-series/mariadb-10-11-3-release-notes), [MariaDB 10.6.13](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/mariadb-10-6-13-release-notes))
   * `index_condition_pushdown={on|off}` - see [Index Condition Pushdown](../query-optimizations/index-condition-pushdown.md)
@@ -1958,31 +1958,31 @@ MariaDB sets the limit with `[setrlimit](https://linux.die.net/man/2/setrlimit)`
   * `index_merge_sort_union={on|off}`
   * `index_merge_union={on|off}`
   * `in_to_exists={on|off}` - see [IN-TO-EXISTS transformation](../query-optimizations/subquery-optimizations/non-semi-join-subquery-optimizations.md#the-in-to-exists-transformation)
-  * `join_cache_bka={on|off}` - see [Block-Based Join Algorithms](broken-reference/)
-  * `join_cache_hashed={on|off}` - see [Block-Based Join Algorithms](broken-reference/)
-  * `join_cache_incremental={on|off}` - see [Block-Based Join Algorithms](broken-reference/)
+  * `join_cache_bka={on|off}` - see [Block-Based Join Algorithms](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/optimization-and-tuning/system-variables/broken-reference/README.md)
+  * `join_cache_hashed={on|off}` - see [Block-Based Join Algorithms](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/optimization-and-tuning/system-variables/broken-reference/README.md)
+  * `join_cache_incremental={on|off}` - see [Block-Based Join Algorithms](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/optimization-and-tuning/system-variables/broken-reference/README.md)
   * `loosescan={on|off}` - see [LooseScan strategy](../query-optimizations/optimization-strategies/loosescan-strategy.md)
   * `materialization={on|off}` - [Semi-join](../query-optimizations/optimization-strategies/semi-join-materialization-strategy.md) and [non semi-join](../query-optimizations/subquery-optimizations/non-semi-join-subquery-optimizations.md#materialization-for-non-correlated-in-subqueries) materialization.
   * `mrr={on|off}` - see [Multi Range Read optimization](../mariadb-internal-optimizations/multi-range-read-optimization.md)
   * `mrr_cost_based={on|off}` - see [Multi Range Read optimization](../mariadb-internal-optimizations/multi-range-read-optimization.md)
   * `mrr_sort_keys={on|off}` - see [Multi Range Read optimization](../mariadb-internal-optimizations/multi-range-read-optimization.md)
   * `not_null_range_scan={on|off}` - see [not\_null\_range\_scan optimization](../query-optimizations/not_null_range_scan-optimization.md) ( >= [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1050-release-notes))
-  * `optimize_join_buffer_size={on|off}` - see [Block-Based Join Algorithms](broken-reference/)
+  * `optimize_join_buffer_size={on|off}` - see [Block-Based Join Algorithms](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/optimization-and-tuning/system-variables/broken-reference/README.md)
   * `orderby_uses_equalities={on|off}` - if not set, the optimizer ignores equality propagation. See [MDEV-8989](https://jira.mariadb.org/browse/MDEV-8989).
-  * `outer_join_with_cache={on|off}` - see [Block-Based Join Algorithms](broken-reference/)
+  * `outer_join_with_cache={on|off}` - see [Block-Based Join Algorithms](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/optimization-and-tuning/system-variables/broken-reference/README.md)
   * `partial_match_rowid_merge={on|off}` - see [Non-semi-join subquery optimizations](../query-optimizations/subquery-optimizations/non-semi-join-subquery-optimizations.md)
   * `partial_match_table_scan={on|off}` - see [Non-semi-join subquery optimizations](../query-optimizations/subquery-optimizations/non-semi-join-subquery-optimizations.md)
   * `rowid_filter={on|off}` - see [Rowid Filtering Optimization](../query-optimizations/rowid-filtering-optimization.md)
   * `sargable_casefold={on|off}` (>= [MariaDB 11.3.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-3-rolling-releases/mariadb-11-3-0-release-notes))
   * `semijoin={on|off}` - see [Semi-join subquery optimizations](../query-optimizations/subquery-optimizations/semi-join-subquery-optimizations.md)
-  * `semijoin_with_cache={on|off}` - see [Block-Based Join Algorithms](broken-reference/)
+  * `semijoin_with_cache={on|off}` - see [Block-Based Join Algorithms](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/optimization-and-tuning/system-variables/broken-reference/README.md)
   * `split_materialized={on|off}`
   * `subquery_cache={on|off}` - see [subquery cache](../query-optimizations/subquery-optimizations/subquery-cache.md).
   * `table_elimination={on|off}` - see [Table Elimination User Interface](../query-optimizations/table-elimination/table-elimination-user-interface.md)
 
 #### `optimizer_trace`
 
-* Description: Controls [tracing of the optimizer](broken-reference/): optimizer\_trace=option=val\[,option=val...], where option is one of {enabled} and val is one of {on, off, default}
+* Description: Controls [tracing of the optimizer](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/optimization-and-tuning/system-variables/broken-reference/README.md): optimizer\_trace=option=val\[,option=val...], where option is one of {enabled} and val is one of {on, off, default}
 * Commandline: `--optimizer-trace=value`
 * Scope: Global, Session
 * Dynamic: Yes
@@ -1992,7 +1992,7 @@ MariaDB sets the limit with `[setrlimit](https://linux.die.net/man/2/setrlimit)`
 
 #### `optimizer_trace_max_mem_size`
 
-* Description: Limits the memory used while tracing a query by specifying the maximum allowed cumulated size, in bytes, of stored [optimizer traces](broken-reference/).
+* Description: Limits the memory used while tracing a query by specifying the maximum allowed cumulated size, in bytes, of stored [optimizer traces](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/optimization-and-tuning/system-variables/broken-reference/README.md).
 * Commandline: `--optimizer-trace-max-mem-size=#`
 * Scope: Global, Session
 * Dynamic: Yes
@@ -2004,7 +2004,7 @@ MariaDB sets the limit with `[setrlimit](https://linux.die.net/man/2/setrlimit)`
 
 * Description: Controls which statistics can be used by the optimizer when looking for\
   the best query execution plan. In most cases, the default value, `4` will be suitable. However, if you are hitting some of the rare cases where this does not work well (see [MDEV-23707](https://jira.mariadb.org/browse/MDEV-23707)), you can usually work around this by setting this variable to `1`.
-  * `1` Use selectivity of predicates as in [MariaDB 5.5](broken-reference/).
+  * `1` Use selectivity of predicates as in [MariaDB 5.5](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/optimization-and-tuning/system-variables/broken-reference/README.md).
   * `2` Use selectivity of all range predicates supported by indexes.
   * `3` Use selectivity of all range predicates estimated without [histogram](../query-optimizations/statistics-for-optimizing-queries/histogram-based-statistics.md).
   * `4` Use selectivity of all range predicates estimated with [histogram](../query-optimizations/statistics-for-optimizing-queries/histogram-based-statistics.md).
@@ -2083,7 +2083,7 @@ MariaDB sets the limit with `[setrlimit](https://linux.die.net/man/2/setrlimit)`
 
 #### `progress_report_time`
 
-* Description: Time in seconds between sending [progress reports](broken-reference/) to the client for time-consuming statements. If set to `0`, progress reporting will be disabled.
+* Description: Time in seconds between sending [progress reports](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/optimization-and-tuning/system-variables/broken-reference/README.md) to the client for time-consuming statements. If set to `0`, progress reporting will be disabled.
 * Commandline: `--progress-report-time=#`
 * Scope: Global, Session
 * Dynamic: Yes
@@ -2307,16 +2307,16 @@ MariaDB sets the limit with `[setrlimit](https://linux.die.net/man/2/setrlimit)`
 #### `rpl_recovery_rank`
 
 * Description: Unused.
-* Removed: [MariaDB 10.1.2](broken-reference/)
+* Removed: [MariaDB 10.1.2](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/optimization-and-tuning/system-variables/broken-reference/README.md)
 
 #### `safe_show_database`
 
-* Description: This variable was removed in [MariaDB 5.5](broken-reference/), and has been replaced by the more flexible [SHOW DATABASES](../../../reference/sql-statements/administrative-sql-statements/show/show-databases.md) privilege.
+* Description: This variable was removed in [MariaDB 5.5](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/optimization-and-tuning/system-variables/broken-reference/README.md), and has been replaced by the more flexible [SHOW DATABASES](../../../reference/sql-statements/administrative-sql-statements/show/show-databases.md) privilege.
 * Commandline: `--safe-show-database` (until MySQL 4.1.1)
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `boolean`
-* Removed: [MariaDB 5.5](broken-reference/)
+* Removed: [MariaDB 5.5](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/optimization-and-tuning/system-variables/broken-reference/README.md)
 
 #### `secure_auth`
 
@@ -2580,7 +2580,7 @@ MariaDB sets the limit with `[setrlimit](https://linux.die.net/man/2/setrlimit)`
 #### `sql_max_join_size`
 
 * Description: Synonym for [max\_join\_size](server-system-variables.md#max_join_size), the preferred name.
-* Deprecated: [MariaDB 5.5](broken-reference/)
+* Deprecated: [MariaDB 5.5](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/optimization-and-tuning/system-variables/broken-reference/README.md)
 * Removed: [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0)
 
 #### `sql_mode`
@@ -2640,7 +2640,7 @@ MariaDB sets the limit with `[setrlimit](https://linux.die.net/man/2/setrlimit)`
 #### `storage_engine`
 
 * Description: See [default\_storage\_engine](server-system-variables.md#default_storage_engine).
-* Deprecated: [MariaDB 5.5](broken-reference/)
+* Deprecated: [MariaDB 5.5](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/optimization-and-tuning/system-variables/broken-reference/README.md)
 
 #### `standard_compliant_cte`
 
@@ -2663,7 +2663,7 @@ MariaDB sets the limit with `[setrlimit](https://linux.die.net/man/2/setrlimit)`
 
 #### `strict_password_validation`
 
-* Description: When [password validation](broken-reference/) plugins are enabled, reject passwords that cannot be validated (passwords specified as a hash). This excludes direct updates to the privilege tables.
+* Description: When [password validation](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/optimization-and-tuning/system-variables/broken-reference/README.md) plugins are enabled, reject passwords that cannot be validated (passwords specified as a hash). This excludes direct updates to the privilege tables.
 * Commandline: `--strict-password-validation`
 * Scope: Global
 * Dynamic: Yes
@@ -2705,7 +2705,7 @@ MariaDB sets the limit with `[setrlimit](https://linux.die.net/man/2/setrlimit)`
 * Data Type: `numeric`
 * Default Value: `50`
 * Range: `1` to `1073741824`
-* Removed: [MariaDB 5.5](broken-reference/)
+* Removed: [MariaDB 5.5](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/optimization-and-tuning/system-variables/broken-reference/README.md)
 
 #### `table_open_cache`
 
@@ -2775,7 +2775,7 @@ MariaDB sets the limit with `[setrlimit](https://linux.die.net/man/2/setrlimit)`
 
 #### `thread_cache_size`
 
-* Description: Number of threads server caches for re-use. If this limit hasn't been reached, when a client disconnects, its threads are put into the cache, and re-used where possible. In [MariaDB 10.2.0](broken-reference/) and newer the threads are freed after 5 minutes of idle time. Normally this setting has little effect, as the other aspects of the thread implementation are more important, but increasing it can help servers with high volumes of connections per second so that most can use a cached, rather than a new, thread. The cache miss rate can be calculated as the [server status variables](server-status-variables.md) threads\_created/connections. If the [thread pool](../buffers-caches-and-threads/thread-pool/) is active, `thread_cache_size` is ignored. If `thread_cache_size` is set to greater than the value of [max\_connections](server-system-variables.md#max_connections), `thread_cache_size` will be set to the [max\_connections](server-system-variables.md#max_connections) value.
+* Description: Number of threads server caches for re-use. If this limit hasn't been reached, when a client disconnects, its threads are put into the cache, and re-used where possible. In [MariaDB 10.2.0](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/optimization-and-tuning/system-variables/broken-reference/README.md) and newer the threads are freed after 5 minutes of idle time. Normally this setting has little effect, as the other aspects of the thread implementation are more important, but increasing it can help servers with high volumes of connections per second so that most can use a cached, rather than a new, thread. The cache miss rate can be calculated as the [server status variables](server-status-variables.md) threads\_created/connections. If the [thread pool](../buffers-caches-and-threads/thread-pool/) is active, `thread_cache_size` is ignored. If `thread_cache_size` is set to greater than the value of [max\_connections](server-system-variables.md#max_connections), `thread_cache_size` will be set to the [max\_connections](server-system-variables.md#max_connections) value.
 * Commandline: `--thread-cache-size=#`
 * Scope: Global
 * Dynamic: Yes
@@ -2785,14 +2785,14 @@ MariaDB sets the limit with `[setrlimit](https://linux.die.net/man/2/setrlimit)`
 
 #### `thread_concurrency`
 
-* Description: Allows applications to give the system a hint about the desired number of threads. Specific to Solaris only, invokes thr\_setconcurrency(). Deprecated and has no effect from [MariaDB 5.5](broken-reference/).
+* Description: Allows applications to give the system a hint about the desired number of threads. Specific to Solaris only, invokes thr\_setconcurrency(). Deprecated and has no effect from [MariaDB 5.5](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/optimization-and-tuning/system-variables/broken-reference/README.md).
 * Commandline: `--thread-concurrency=#`
 * Scope: Global
 * Dynamic: No
 * Data Type: `numeric`
 * Default Value: `10`
 * Range: `1` to `512`
-* Deprecated: [MariaDB 5.5](broken-reference/)
+* Deprecated: [MariaDB 5.5](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/optimization-and-tuning/system-variables/broken-reference/README.md)
 * Removed: [MariaDB 10.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1051-release-notes)
 
 #### `thread_stack`
@@ -2867,7 +2867,7 @@ MariaDB sets the limit with `[setrlimit](https://linux.die.net/man/2/setrlimit)`
 
 #### `tmpdir`
 
-* Description: Directory for storing temporary tables and files. Can specify a list (separated by semicolons in Windows, and colons in Unix) that will then be used in round-robin fashion. This can be used for load balancing across several disks. Note that if the server is a [replication](broken-reference/) replica, and [slave\_load\_tmpdir](../../standard-replication/replication-and-binary-log-system-variables.md#slave_load_tmpdir), which overrides `tmpdir` for replicas, is not set, you should not set `tmpdir` to a directory that is cleared when the machine restarts, or else replication may fail.
+* Description: Directory for storing temporary tables and files. Can specify a list (separated by semicolons in Windows, and colons in Unix) that will then be used in round-robin fashion. This can be used for load balancing across several disks. Note that if the server is a [replication](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/optimization-and-tuning/system-variables/broken-reference/README.md) replica, and [slave\_load\_tmpdir](../../standard-replication/replication-and-binary-log-system-variables.md#slave_load_tmpdir), which overrides `tmpdir` for replicas, is not set, you should not set `tmpdir` to a directory that is cleared when the machine restarts, or else replication may fail.
 * Commandline: `--tmpdir=path` or `-t path`
 * Scope: Global
 * Dynamic: No

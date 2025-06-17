@@ -1,6 +1,5 @@
 ---
 description: Quickstart guide for MariaDB Connector/ODBC
-icon: rabbit
 ---
 
 # Connector/ODBC Guide

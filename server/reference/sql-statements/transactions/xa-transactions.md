@@ -12,9 +12,9 @@ Like regular transactions, XA transactions create [metadata locks](metadata-lock
 
 XA transactions require [REPEATABLE READ](set-transaction.md#repeatable-read) as a minimum isolation level. However, distributed transactions should always use [SERIALIZABLE](set-transaction.md#serializable).
 
-Trying to start more than one XA transaction at the same time produces a 1400 error ([SQLSTATE](../../../server-usage/programmatic-compound-statements/programmatic-compound-statements-diagnostics/sqlstate.md) 'XAE09'). The same error is produced when attempting to start an XA transaction while a regular transaction is in effect. Trying to start a regular transaction while an XA transaction is in effect produces a 1399 error ([SQLSTATE](../../../server-usage/programmatic-compound-statements/programmatic-compound-statements-diagnostics/sqlstate.md) 'XAE07').
+Trying to start more than one XA transaction at the same time produces a 1400 error ([SQLSTATE](../programmatic-compound-statements/programmatic-compound-statements-diagnostics/sqlstate.md) 'XAE09'). The same error is produced when attempting to start an XA transaction while a regular transaction is in effect. Trying to start a regular transaction while an XA transaction is in effect produces a 1399 error ([SQLSTATE](../programmatic-compound-statements/programmatic-compound-statements-diagnostics/sqlstate.md) 'XAE07').
 
-The [statements that cause an implicit COMMIT](sql-statements-that-cause-an-implicit-commit.md) for regular transactions produce a 1400 error ([SQLSTATE](../../../server-usage/programmatic-compound-statements/programmatic-compound-statements-diagnostics/sqlstate.md) 'XAE09') if a XA transaction is in effect.
+The [statements that cause an implicit COMMIT](sql-statements-that-cause-an-implicit-commit.md) for regular transactions produce a 1400 error ([SQLSTATE](../programmatic-compound-statements/programmatic-compound-statements-diagnostics/sqlstate.md) 'XAE09') if a XA transaction is in effect.
 
 ## Internal XA vs External XA
 
@@ -223,9 +223,9 @@ xa rollback X'31320d3334093637763738',X'6162630a646566',3;
 
 ### MariaDB Galera Cluster
 
-[MariaDB Galera Cluster](../../../../kb/en/galera-cluster/) does not support XA transactions.
+[MariaDB Galera Cluster](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/galera-cluster/README.md) does not support XA transactions.
 
-However, [MariaDB Galera Cluster](../../../../kb/en/galera-cluster/) builds include a built-in plugin called `wsrep`. Consequently, these [MariaDB Galera Cluster](../../../../kb/en/galera-cluster/) builds have multiple XA-capable storage engines by default, even if the only "real" storage engine that supports external [XA transactions](xa-transactions.md) enabled on these builds by default is [InnoDB](../../../server-usage/storage-engines/innodb/). Therefore, when using one these builds MariaDB would be forced to use a [transaction coordinator log](../../../server-management/server-monitoring-logs/transaction-coordinator-log/) by default, which could have performance implications.
+However, [MariaDB Galera Cluster](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/galera-cluster/README.md) builds include a built-in plugin called `wsrep`. Consequently, these [MariaDB Galera Cluster](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/galera-cluster/README.md) builds have multiple XA-capable storage engines by default, even if the only "real" storage engine that supports external [XA transactions](xa-transactions.md) enabled on these builds by default is [InnoDB](../../../server-usage/storage-engines/innodb/). Therefore, when using one these builds MariaDB would be forced to use a [transaction coordinator log](../../../server-management/server-monitoring-logs/transaction-coordinator-log/) by default, which could have performance implications.
 
 See [Transaction Coordinator Log Overview: MariaDB Galera Cluster](../../../server-management/server-monitoring-logs/transaction-coordinator-log/transaction-coordinator-log-overview.md#mariadb-galera-cluster) for more information.
 

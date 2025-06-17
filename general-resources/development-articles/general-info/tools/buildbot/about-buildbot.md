@@ -47,7 +47,7 @@ Buildbot should be used by each MariaDB developer to ensure that the new changes
 
 ## How does the Buildbot work?
 
-![Buildbot overview](../../../../.gitbook/assets/about-buildbot/+image/buildbot_schematic.png)
+![Buildbot overview](../../../../.gitbook/assets/buildbot_schematic.png)
 
 As it comes to the Buildbot Master, we use a multi-master configuration. This means that we have multiple running master processes. So, we have a dedicated master for the user interface and several other that deal with looking for changes and scheduling builds.
 
@@ -105,7 +105,7 @@ integration test framework. For more information on BuildBot, see the[the BuildB
 
 ## Volunteering to Run a Build Slave
 
-Many of our build hosts are run by [community](../../../../../en/community/) members, and we are always\
+Many of our build hosts are run by [community](https://github.com/mariadb-corporation/docs-server/blob/test/en/community/README.md) members, and we are always\
 looking for additional volunteers to help us cover additional platforms or\
 build options in BuildBot.
 

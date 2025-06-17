@@ -1,12 +1,6 @@
 ---
 description: Quickstart Guide for Connector/C++
-icon: rabbit-running
-cover: ../.gitbook/assets/Group 15570.png
-coverY: 0
 layout:
-  cover:
-    visible: true
-    size: hero
   title:
     visible: true
   description:
@@ -51,6 +45,5 @@ To get started with MariaDB Connector/C++, you'll typically need to:
 Unfortunately, the content you provided does not include specific installation instructions or code examples for MariaDB Connector/C++. If you have further documentation for installation or usage examples, please provide it, and I can help integrate it into this quickstart guide.
 
 <sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
-
 
 {% @marketo/form formId="4316" %}

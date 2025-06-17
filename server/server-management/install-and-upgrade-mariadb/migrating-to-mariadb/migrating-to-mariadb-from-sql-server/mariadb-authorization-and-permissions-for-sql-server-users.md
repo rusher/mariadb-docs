@@ -1,5 +1,7 @@
 # MariaDB Authorization and Permissions for SQL Server Users
 
+{% include "https://app.gitbook.com/s/GxVnu02ec8KJuFSxmB93/~/reusable/UQS8KgfG8jtpHBvT83fL/" %}
+
 ## Understanding Accounts and Users
 
 MariaDB authorizes access and check permissions on accounts, rather than users. Even if MariaDB supports standard SQL commands like [CREATE USER](../../../../reference/sql-statements/account-management-sql-statements/create-user.md) and [DROP USER](../../../../reference/sql-statements/account-management-sql-statements/drop-user.md), it is important to remember that it actually works with accounts.

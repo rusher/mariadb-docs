@@ -2,7 +2,7 @@
 
 The relay log is a set of log files created by a replica during [replication](../../../ha-and-performance/standard-replication/).
 
-It's the same format as the [binary log](./), containing a record of events that affect the data or structure; thus, [mariadb-binlog](../../../clients-and-utilities/mariadb-binlog/) can be used to display its contents. It consists of a set of relay log files and an index file containing a list of all relay log files.
+It's the same format as the [binary log](./), containing a record of events that affect the data or structure; thus, [mariadb-binlog](../../../clients-and-utilities/logging-tools/mariadb-binlog/) can be used to display its contents. It consists of a set of relay log files and an index file containing a list of all relay log files.
 
 Events are read from the primary's binary log and written to the replica's relay log. They are then performed on the replica. Old relay log files are automatically removed once they are no longer needed.
 
@@ -31,7 +31,7 @@ shell> mv OLD_relay_log_name.index NEW_relay_log_name.index
 
 ## Viewing Relay Logs
 
-The [SHOW RELAYLOG EVENTS](../../../reference/sql-statements/administrative-sql-statements/show/show-relaylog-events.md) shows events in the relay log, and, since relay log files are the same format as binary log files, they can be read with the [mariadb-binlog](../../../clients-and-utilities/mariadb-binlog/) utility.
+The [SHOW RELAYLOG EVENTS](../../../reference/sql-statements/administrative-sql-statements/show/show-relaylog-events.md) shows events in the relay log, and, since relay log files are the same format as binary log files, they can be read with the [mariadb-binlog](../../../clients-and-utilities/logging-tools/mariadb-binlog/) utility.
 
 ## Removing Old Relay Logs
 

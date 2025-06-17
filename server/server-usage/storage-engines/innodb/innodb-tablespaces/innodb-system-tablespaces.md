@@ -51,7 +51,7 @@ Technically, how this works is:
 6. Update the FSP\_SIZE and FSP\_FREE\_LIMIT in header page.
 7. In case of multiple files, calculate the truncated last file size and do the truncation in last file.
 
-**MariaDB until** [**11.2.0**](../../../../../kb/en/mariadb-1120-release-notes/)
+**MariaDB until** [**11.2.0**](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/mariadb-1120-release-notes/README.md)
 
 In cases where the InnoDB system tablespace has grown too large, before [MariaDB 11.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-2-series/what-is-mariadb-112), the process to reduce it in size is a little more complicated than increasing the size. MariaDB does not allow you to remove data from the tablespace file itself. Instead you need to delete the tablespace files themselves, then restore the database from backups.\
 The backup utility [mariadb-dump](../../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md) produces backup files containing the SQL statements needed to recreate the database. As a result, it restores a database with the bare minimum data rather than any additional information that might have built up in the tablespace file.\

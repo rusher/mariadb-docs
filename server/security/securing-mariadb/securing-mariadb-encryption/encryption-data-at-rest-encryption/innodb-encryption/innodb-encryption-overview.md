@@ -130,7 +130,7 @@ ROTATING_OR_FLUSHING: 0
 
 Using data-at-rest encryption with InnoDB, the [innodb\_encrypt\_tables](../../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_tables) system variable only encrypts the InnoDB tablespaces. In order to also encrypt the InnoDB Redo Logs, you also need to set the [innodb\_encrypt\_log](../../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_encrypt_log) system variable.
 
-Beginning in [MariaDB 10.4](broken-reference/), where the encryption key management plugin supports key rotation the InnoDB Redo Log can also rotate encryption keys. In previous releases, the Redo Log can only use the first encryption key.
+Beginning in [MariaDB 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/server/security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/innodb-encryption/broken-reference/README.md), where the encryption key management plugin supports key rotation the InnoDB Redo Log can also rotate encryption keys. In previous releases, the Redo Log can only use the first encryption key.
 
 ## See Also
 

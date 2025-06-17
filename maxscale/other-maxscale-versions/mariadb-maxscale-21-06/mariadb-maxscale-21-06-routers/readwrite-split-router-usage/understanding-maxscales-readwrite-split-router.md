@@ -7,8 +7,8 @@ MaxScale's [Read/Write Split Router (readwritesplit)](../../../mariadb-maxscale-
 The [Read/Write Split Router (readwritesplit)](../../../mariadb-maxscale-23-02/mariadb-maxscale-23-02-routers/mariadb-maxscale-2302-readwritesplit.md) supports:
 
 * [MariaDB replication](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication) deployments
-* [Galera Cluster](../../../../../en/mariadb-galera-cluster-quickstart/) deployments
-* [Multi-Node Enterprise ColumnStore](../../../../../en/mariadb-columnstore/) deployments
+* [Galera Cluster](https://github.com/mariadb-corporation/docs-server/blob/test/en/mariadb-galera-cluster-quickstart/README.md) deployments
+* [Multi-Node Enterprise ColumnStore](https://github.com/mariadb-corporation/docs-server/blob/test/en/mariadb-columnstore/README.md) deployments
 
 ## When to Use the Read/Write Split Router?
 

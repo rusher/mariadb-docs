@@ -2,7 +2,7 @@
 
 The most recent release in the [MariaDB 5.5](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) series is:[**MariaDB 5.5.68**](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/mariadb-5568-release-notes.md) [Download Now](https://downloads.mariadb.org/mariadb/5.5.68/)
 
-[Download](https://downloads.mariadb.org/mariadb/5.5.29) | [Release Notes](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/mariadb-5529-release-notes.md) | **Changelog** |[Overview of 5.5](broken-reference/)
+[Download](https://downloads.mariadb.org/mariadb/5.5.29) | [Release Notes](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/mariadb-5529-release-notes.md) | **Changelog** |[Overview of 5.5](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/changelogs/changelogs-mariadb-55-series/broken-reference/README.md)
 
 **Release date:** 30 Jan 2013
 
@@ -140,7 +140,7 @@ The revision number links will take you to the revision's page on Launchpad. On 
         * [Revision #2502.571.1](https://bazaar.launchpad.net/~maria-captains/maria/5.5/revision/2502.571.1)\
           Mon 2013-01-21 11:47:45 -0800
           * Fixed bug [MDEV-4063](https://jira.mariadb.org/browse/MDEV-4063) (bug #56927). This bug could result in returning 0 for the expressions of the form \<aggregate\_function>(distinct field) when the system variable max\_heap\_table\_size was set to a small enough number. It happened because the method Unique::walk() did not support the case when more than one pass was needed to merge the trees of distinct values saved in an external file.
-          * Backported a fix in grant\_lowercase.test from [mariadb 5.5](broken-reference/).
+          * Backported a fix in grant\_lowercase.test from [mariadb 5.5](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/changelogs/changelogs-mariadb-55-series/broken-reference/README.md).
       * [Revision #2502.565.26](https://bazaar.launchpad.net/~maria-captains/maria/5.5/revision/2502.565.26)\
         Mon 2013-01-21 10:52:39 +0100
         * [MDEV-4029](https://jira.mariadb.org/browse/MDEV-4029) SELECT on information\_schema using a subquery locks up the information\_schema table due to incorrect mutexes handling

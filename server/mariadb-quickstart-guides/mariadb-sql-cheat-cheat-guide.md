@@ -6,7 +6,7 @@ description: Core SQL Statements Guide
 
 This guide provides a quick overview of essential SQL statements in MariaDB, categorized by their function in data definition, data manipulation, and transaction control. Find brief descriptions and links to detailed documentation for each statement, along with a simple illustrative example sequence.
 
-_(If you need a basic tutorial on how to use the MariaDB database server and execute simple commands, see_ [_A MariaDB Primer_](mariadb-usage-guide-1.md)_. Also see_ [_Essential Queries Guide_](mariadb-advanced-sql-guide.md) _for examples of commonly-used queries.)_
+_(If you need a basic tutorial on how to use the MariaDB database server and execute simple commands, see_ [_A MariaDB Primer_](../server-usage/basics/mariadb-usage-guide-1.md)_. Also see_ [_Essential Queries Guide_](mariadb-advanced-sql-guide.md) _for examples of commonly-used queries.)_
 
 ### Defining How Your Data Is Stored (Data Definition Language - DDL)
 

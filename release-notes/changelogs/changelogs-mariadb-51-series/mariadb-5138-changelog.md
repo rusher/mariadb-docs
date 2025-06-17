@@ -32,7 +32,7 @@ and bug fixes:
   internal storage engine handler API.
 * ./configure now outputs a summary section at the end of the output. (By C.J.\
   Adams-Collier).
-* [NDB storage engine disabled](https://mariadb.com/kb/en/ndb-disabled-in-mariadb) in MariaDB builds. (NDB is not supported in\
+* NDB storage engine disabled in MariaDB builds. (NDB is not supported in\
   MariaDB).
 * Added `--abort-source-on-error` to the [mysql\
   client](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/mariadb-client/mysql-command-line-client).

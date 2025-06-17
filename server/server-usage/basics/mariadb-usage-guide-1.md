@@ -1,5 +1,7 @@
 # A MariaDB Primer
 
+{% include "https://app.gitbook.com/s/GxVnu02ec8KJuFSxmB93/~/reusable/G9gr3KMrlccJhmFh3SNT/" %}
+
 This primer is designed to teach you the basics of getting information into and out of an existing MariaDB database using the [mariadb](../../clients-and-utilities/mariadb-client/mariadb-command-line-client.md) command-line client program. It's not a complete reference and will not touch on any advanced topics. It is just a quick jump-start into using MariaDB.
 
 #### Logging into MariaDB
@@ -10,7 +12,7 @@ Log into your MariaDB server from the command-line like so:
 mariadb -u user_name -p -h ip_address db_name
 ```
 
-Replace _user\_name_ with your database username. Replace _ip\_address_ with the host name or address of your server. If you're accessing MariaDB from the same server you're logged into, then don't include `-h` and the _ip\_address_. Replace _db\_name_ with the name of the database you want to access (such as _test_, which sometimes comes already created for testing purposes - note that Windows does not create this database, and some setups may also have removed the `test` database by running [mariadb-secure-installation](../../clients-and-utilities/mariadb-secure-installation.md), in which case you can leave the _db\_name_ out).
+Replace _user\_name_ with your database username. Replace _ip\_address_ with the host name or address of your server. If you're accessing MariaDB from the same server you're logged into, then don't include `-h` and the _ip\_address_. Replace _db\_name_ with the name of the database you want to access (such as _test_, which sometimes comes already created for testing purposes - note that Windows does not create this database, and some setups may also have removed the `test` database by running [mariadb-secure-installation](../../clients-and-utilities/deployment-tools/mariadb-secure-installation.md), in which case you can leave the _db\_name_ out).
 
 When prompted to enter your password, enter it. If your login is successful you should see something that looks similar to this:
 
@@ -144,7 +146,7 @@ As you can see, using MariaDB isn't very difficult. You just have to understand 
 
 #### See Also
 
-* [MariaDB Basics](../../../kb/en/mariadb-basics/)
+* [MariaDB Basics](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/mariadb-basics/README.md)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

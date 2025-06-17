@@ -1,6 +1,6 @@
 # mysql.gtid\_slave\_pos Table
 
-The `mysql.gtid_slave_pos` table is used in [replication](broken-reference) by replica servers to keep track of their current position (the [global transaction ID](../../../../../ha-and-performance/standard-replication/gtid.md) of the last transaction applied). Using the table allows the replica to maintain a consistent value for the [gtid\_slave\_pos](../../../../../ha-and-performance/standard-replication/gtid.md) system variable across server restarts. See [Global Transaction ID](../../../../../ha-and-performance/standard-replication/gtid.md).
+The `mysql.gtid_slave_pos` table is used in [replication](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/broken-reference/README.md) by replica servers to keep track of their current position (the [global transaction ID](../../../../../ha-and-performance/standard-replication/gtid.md) of the last transaction applied). Using the table allows the replica to maintain a consistent value for the [gtid\_slave\_pos](../../../../../ha-and-performance/standard-replication/gtid.md) system variable across server restarts. See [Global Transaction ID](../../../../../ha-and-performance/standard-replication/gtid.md).
 
 You should never attempt to modify the table directly. If you do need to change the global gtid\_slave\_pos value, use `SET GLOBAL gtid_slave_pos = ...` instead.
 

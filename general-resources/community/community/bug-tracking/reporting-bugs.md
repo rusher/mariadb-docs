@@ -1,10 +1,10 @@
 # Reporting Software Bugs
 
-For reporting documentation bugs specifically, see [Reporting Documentation Bugs](../../../about/about-mariadb-documentation/reporting-documentation-bugs.md).
+For reporting documentation bugs specifically, see [Reporting Documentation Bugs](../../../about/readme/reporting-documentation-bugs.md).
 
 MariaDB's bug and feature tracker is found at [jira.mariadb.org](https://jira.mariadb.org).
 
-This page contains general guidelines for the community for reporting bugs and feature requests in MariaDB products. If you want to discuss a problem or a new feature with other MariaDB developers, you can find the email lists and forums [here](broken-reference).
+This page contains general guidelines for the community for reporting bugs and feature requests in MariaDB products. If you want to discuss a problem or a new feature with other MariaDB developers, you can find the email lists and forums [here](https://github.com/mariadb-corporation/docs-server/blob/test/general-resources/community/community/bug-tracking/broken-reference/README.md).
 
 ## Known Issues
 
@@ -39,7 +39,7 @@ Attachments in JIRA are also public.
 
 Access to a comment can be restricted to a certain group (e.g. Developers only), but the existing groups are rather wide, so you should not rely on it either.
 
-If you have private information -- SQL fragments, logs, database dumps, etc. -- that you are willing to share with MariaDB team, but not with the entire world, put it into a file, compress if necessary, upload to the [mariadb-ftp-server](https://mariadb.com/kb/en/mariadb-ftp-server/), and just mention it in the JIRA description. This way only the MariaDB team will have access to it.
+If you have private information -- SQL fragments, logs, database dumps, etc. -- that you are willing to share with MariaDB team, but not with the entire world, put it into a file, compress if necessary, upload to the [mariadb-ftp-server](../../contributing-participating/mariadb-public-ftp-server.md), and just mention it in the JIRA description. This way only the MariaDB team will have access to it.
 
 ### Reporting Security Vulnerabilities
 
@@ -55,9 +55,9 @@ A good bug report consists of:
 2. Any related errors or warnings from the server error log file. Normally it is `hostname.err` file in your database directory, but it can be different depending on the distribution and version; if you cannot find it, run `SELECT @@log_error` on the running server. If either the variable or the file it points at is empty, the error log most likely goes to your system log. If this is systemd you can get the last 50 lines of the MariaDB log with `journalctl -n 50 -u mariadb.service`. If possible, attach the full unabridged error log at least from the last server restart and till the end of the log.,
 3. If the problem is related to MariaDB updates, or otherwise changing the version of the server, recovery from a previous crash, and such, then include the previous versions used, and the error log from previous server sessions.
 4. The content of your my.cnf file or alternatively the output from `mariadbd --print-defaults` or `SHOW VARIABLES`.
-5. Any background information you can provide ([stack trace](https://mariadb.com/kb/en/how-to-produce-a-full-stack-trace-for-mariadbd-the-mariadb-server), tables, table definitions (`[show-create-table SHOW CREATE TABLE {tablename}](https://mariadb.com/kb/en/show-create-table_SHOW_CREATE_TABLE_%7Btablename%7D)`), data dumps, query logs).
+5. Any background information you can provide ([stack trace](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/starting-and-stopping-mariadb/mariadbd-options#stack-trace), tables, table definitions (`[show-create-table SHOW CREATE TABLE {tablename}](https://mariadb.com/kb/en/show-create-table_SHOW_CREATE_TABLE_%7Btablename%7D)`), data dumps, query logs).
 6. If the bug is about server producing wrong query results: the actual result (what you are getting), the expected result (what you think should be produced instead), and, unless it is obvious, the reason why you think the current result is wrong.
-7. If the bug about a performance problem, e.g. a certain query is slower on one version than on another, output of `EXPLAIN EXTENDED <query>` on both servers. If its a `SELECT` query use [analyze-format-json ANALYZE FORMAT=JSON](https://mariadb.com/kb/en/analyze-format-json_ANALYZE_FORMAT%3DJSON).
+7. If the bug about a performance problem, e.g. a certain query is slower on one version than on another, output of `EXPLAIN EXTENDED <query>` on both servers. If its a `SELECT` query use [analyze-format-json ANALYZE FORMAT=JSON](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/analyze-and-explain-statements/analyze-format-json).
 8. A test case or some other way to repeat the bug. This should preferably be in plain SQL or in mysqltest format. See mysqltest/README for information about this.
 9. If it's impossible to do a test case, then providing us with a [backtrace information](../../../development-articles/debugging-mariadb/how-to-produce-a-full-stack-trace-for-mariadbd.md) would be of great help.
 
@@ -88,7 +88,7 @@ Some project names include:
 
 Feature requests are not the same as bug reports. Specify a `New feature` type for feature requests in [Jira](../../../development-articles/general-info/tools/jira.md), and a `Bug` type for bug reports. Like with the project field, choosing a wrong type will put the request to the wrong queue and can delay its processing, but eventually it will be noticed and amended.
 
-See also [plans for next release](broken-reference) for things that we are considering to have in the next MariaDB release.
+See also [plans for next release](https://github.com/mariadb-corporation/docs-server/blob/test/general-resources/community/community/bug-tracking/broken-reference/README.md) for things that we are considering to have in the next MariaDB release.
 
 #### Summary
 

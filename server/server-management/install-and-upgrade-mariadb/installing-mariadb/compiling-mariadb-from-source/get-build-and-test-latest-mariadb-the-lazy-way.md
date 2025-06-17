@@ -35,7 +35,7 @@ The following command builds a server the same way that is used for building rel
 cmake . -DBUILD_CONFIG=mysql_release && cmake --build . --parallel=8
 ```
 
-## [Check the Server (If You Want To)](../../../../clients-and-utilities/mariadb-test/)
+## [Check the Server (If You Want To)](../../../../clients-and-utilities/testing-tools/mariadb-test/)
 
 ```
 mysql-test/mtr --parallel=8 --force

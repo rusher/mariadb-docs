@@ -3,9 +3,9 @@
 **Note:** This page describes features in the source repository for [**MariaDB 11.4**](../../mariadb-community-server-release-notes/mariadb-11-4-series/what-is-mariadb-114.md). There are currently no official packages or binaries available for download which contain the features. If you want to try out any of the new features described here you will need to [get](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/server-client-software/download/getting-the-mariadb-source-code) and [compile](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/compiling-mariadb-from-source) the\
 code yourself.
 
-[Download](https://mariadb.com/downloads/)[Release Notes](broken-reference)[Changelog](mariadb-11-4-6-changelog.md)[Overview of 11.4](../../mariadb-community-server-release-notes/mariadb-11-4-series/what-is-mariadb-114.md)[_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/11.4.6/)**Release date:** ?
+[Download](https://mariadb.com/downloads/)[Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/changelogs/changelogs-mariadb-11-4-series/broken-reference/README.md)[Changelog](mariadb-11-4-6-changelog.md)[Overview of 11.4](../../mariadb-community-server-release-notes/mariadb-11-4-series/what-is-mariadb-114.md)[_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/11.4.6/)**Release date:** ?
 
-For the highlights of this release, see the[release notes](broken-reference).
+For the highlights of this release, see the[release notes](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/changelogs/changelogs-mariadb-11-4-series/broken-reference/README.md).
 
 The revision number links will take you to the revision's page on GitHub. On[GitHub](https://github.com/MariaDB/server/tree/11.4) you can view more\
 details of the revision and view diffs of the code modified in that revision.

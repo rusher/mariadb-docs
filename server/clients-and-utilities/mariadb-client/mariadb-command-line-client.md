@@ -84,7 +84,7 @@ Print results using tab as the column separator, with each row on a new line. Wi
 
 **`--binary-mode`**
 
-By default, ASCII '\0' is disallowed and '\r\n' is translated to '\n'. This switch turns off both features, and also turns off parsing of all client commands except \C and DELIMITER, in non-interactive mode (for input piped to mariadb or loaded using the 'source' command). This is necessary when processing output from [mariadb-binlog](../mariadb-binlog/) that may contain blobs.
+By default, ASCII '\0' is disallowed and '\r\n' is translated to '\n'. This switch turns off both features, and also turns off parsing of all client commands except \C and DELIMITER, in non-interactive mode (for input piped to mariadb or loaded using the 'source' command). This is necessary when processing output from [mariadb-binlog](../logging-tools/mariadb-binlog/) that may contain blobs.
 
 **`--character-sets-dir=name`**
 
@@ -158,7 +158,7 @@ Delimiter to be used. The default is the semicolon character (“;”).
 
 **`--enable-cleartext-plugin`**
 
-Obsolete option. Exists only for MySQL compatibility. From [MariaDB 10.3.36](broken-reference/).
+Obsolete option. Exists only for MySQL compatibility. From [MariaDB 10.3.36](https://github.com/mariadb-corporation/docs-server/blob/test/server/clients-and-utilities/mariadb-client/broken-reference/README.md).
 
 **`-e, --execute=name`**
 
@@ -246,7 +246,7 @@ Print the program argument list and exit. Must be given as the first option.
 
 **`--progress-reports`**
 
-Get [progress reports](broken-reference/) for long running commands (such as [ALTER TABLE](../../reference/sql-statements/data-definition/alter/alter-table.md)). (Defaults to on; use `--skip-progress-reports` to disable.)
+Get [progress reports](https://github.com/mariadb-corporation/docs-server/blob/test/server/clients-and-utilities/mariadb-client/broken-reference/README.md) for long running commands (such as [ALTER TABLE](../../reference/sql-statements/data-definition/alter/alter-table.md)). (Defaults to on; use `--skip-progress-reports` to disable.)
 
 **`--prompt=name`**
 
@@ -330,7 +330,7 @@ Don't write line number for errors. See `--line-numbers`.
 
 **`--skip-progress-reports`**
 
-Disables getting [progress reports](broken-reference/) for long running commands. See `--progress-reports`.
+Disables getting [progress reports](https://github.com/mariadb-corporation/docs-server/blob/test/server/clients-and-utilities/mariadb-client/broken-reference/README.md) for long running commands. See `--progress-reports`.
 
 **`--skip-reconnect`**
 
@@ -444,20 +444,20 @@ The following options relate to how MariaDB command-line tools handles option fi
 | --defaults-extra-file=#   | Read this file after the global files are read.                                     |
 | --defaults-group-suffix=# | In addition to the default option groups, also read option groups with this suffix. |
 
-`mariadb` is linked with [MariaDB Connector/C](../../../kb/en/about-mariadb-connector-c/). However, MariaDB Connector/C does not yet handle the parsing of option files for this client. That is still performed by the server option file parsing code. See [MDEV-19035](https://jira.mariadb.org/browse/MDEV-19035) for more information.
+`mariadb` is linked with [MariaDB Connector/C](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/about-mariadb-connector-c/README.md). However, MariaDB Connector/C does not yet handle the parsing of option files for this client. That is still performed by the server option file parsing code. See [MDEV-19035](https://jira.mariadb.org/browse/MDEV-19035) for more information.
 
 **Option Groups**
 
 `mariadb` reads options from the following [option groups](../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) from [option files](../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md):
 
-| Group             | Description                                                                                                                                                                                                                         |
-| ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Group             | Description                                                                                                                                                                                                                         |
-| \[mysql]          | Options read by mysql, which includes both MariaDB Server and MySQL Server.                                                                                                                                                         |
-| \[mariadb-client] | Options read by mariadb. Available starting with [MariaDB 10.4.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-1046-release-notes). |
-| \[client]         | Options read by all MariaDB and MySQL [client programs](../../../kb/en/clients-utilities/), which includes both MariaDB and MySQL clients. For example, mysqldump.                                                                  |
-| \[client-server]  | Options read by all MariaDB [client programs](../../../kb/en/clients-utilities/) and the MariaDB Server. This is useful for options like socket and port, which is common between the server and the clients.                       |
-| \[client-mariadb] | Options read by all MariaDB [client programs](../../../kb/en/clients-utilities/).                                                                                                                                                   |
+| Group             | Description                                                                                                                                                                                                                                                                |
+| ----------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Group             | Description                                                                                                                                                                                                                                                                |
+| \[mysql]          | Options read by mysql, which includes both MariaDB Server and MySQL Server.                                                                                                                                                                                                |
+| \[mariadb-client] | Options read by mariadb. Available starting with [MariaDB 10.4.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-1046-release-notes).                                        |
+| \[client]         | Options read by all MariaDB and MySQL [client programs](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/clients-utilities/README.md), which includes both MariaDB and MySQL clients. For example, mysqldump.                                            |
+| \[client-server]  | Options read by all MariaDB [client programs](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/clients-utilities/README.md) and the MariaDB Server. This is useful for options like socket and port, which is common between the server and the clients. |
+| \[client-mariadb] | Options read by all MariaDB [client programs](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/clients-utilities/README.md).                                                                                                                             |
 
 ### How to Specify Which Protocol to Use When Connecting to the Server
 
@@ -713,7 +713,7 @@ the `--skip-reconnect` option.
 
 ### See Also
 
-* [Troubleshooting Connection Issues](../../../kb/en/troubleshooting-connection-issues/)
+* [Troubleshooting Connection Issues](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/troubleshooting-connection-issues/README.md)
 * [Readline commands and configuration](https://docs.freebsd.org/info/readline/readline.pdf)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>

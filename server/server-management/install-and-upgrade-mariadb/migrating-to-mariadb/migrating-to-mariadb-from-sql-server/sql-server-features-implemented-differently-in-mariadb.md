@@ -1,5 +1,7 @@
 # SQL Server Features Implemented Differently in MariaDB
 
+{% include "https://app.gitbook.com/s/GxVnu02ec8KJuFSxmB93/~/reusable/UQS8KgfG8jtpHBvT83fL/" %}
+
 Modern DBMSs implement several advanced features. While an SQL standard exists, the complete feature list is different for every database system. Sometimes different features allow achieving the same purpose, but with a different logic and different limitations. This is something to take into account when planning a migration.
 
 Some features are implemented by different DBMSs, with a similar logic and similar syntax. But there could be important differences that users should be aware of.

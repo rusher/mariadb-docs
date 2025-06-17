@@ -150,7 +150,7 @@ This article describes the system and status variables used by the MariaDB threa
 * Dynamic: Yes
 * Data Type: `numeric`
 * Default Value: Based on the number of processors (but see [MDEV-7806](https://jira.mariadb.org/browse/MDEV-7806)).
-* Range: `1` to `128` (< [MariaDB 5.5.37](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/mariadb-5537-release-notes), [MariaDB 10.0.11](broken-reference/)), `1` to `100000` (>= [MariaDB 5.5.37](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/mariadb-5537-release-notes), [MariaDB 10.0.11](broken-reference/))
+* Range: `1` to `128` (< [MariaDB 5.5.37](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/mariadb-5537-release-notes), [MariaDB 10.0.11](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/broken-reference/README.md)), `1` to `100000` (>= [MariaDB 5.5.37](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/mariadb-5537-release-notes), [MariaDB 10.0.11](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/broken-reference/README.md))
 * Documentation: [Using the thread pool](thread-pool-in-mariadb.md).
 
 #### `thread_pool_stall_limit`

@@ -120,9 +120,9 @@ SELECT name, test, score, MIN(score)
 * [AVG](avg.md) (average)
 * [MAX](max.md) (maximum)
 * [SUM](sum.md) (sum total)
-* [MIN/MAX optimization](broken-reference) used by the optimizer
+* [MIN/MAX optimization](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-functions/aggregate-functions/broken-reference/README.md) used by the optimizer
 * [LEAST()](../../sql-structure/operators/comparison-operators/least.md) returns the smallest value from a list.
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

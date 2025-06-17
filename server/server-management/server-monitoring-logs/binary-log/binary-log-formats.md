@@ -8,7 +8,7 @@ There are three supported formats for [binary log](./) events:
 * Row-Based Logging
 * Mixed Logging
 
-Regardless of the format, [binary log](./) events are always stored in a binary format, rather than in plain text. MariaDB includes the [mariadb-binlog](../../../clients-and-utilities/mariadb-binlog/) utility that can be used to output [binary log](./) events in a human-readable format.
+Regardless of the format, [binary log](./) events are always stored in a binary format, rather than in plain text. MariaDB includes the [mariadb-binlog](../../../clients-and-utilities/logging-tools/mariadb-binlog/) utility that can be used to output [binary log](./) events in a human-readable format.
 
 You may want to set the binary log format in the following cases:
 
@@ -37,7 +37,7 @@ row-based logging for the statement. Some cases of this are:
 * [ALTER TABLE](../../../reference/sql-statements/data-definition/alter/alter-table.md) of a table using a storage engine that stores data remotely, such as the [S3 storage engine](../../../server-usage/storage-engines/s3-storage-engine/), to another storage engine.
 * One is using [SEQUENCEs](../../../reference/sql-structure/sequences/) in the statement or the [CREATE TABLE](../../../reference/sql-statements/data-definition/create/create-table.md) definition.
 
-In certain cases, a statement may not be deterministic, and therefore not safe for [replication](broken-reference/). If MariaDB determines that an unsafe statement has been executed, then it will issue a warning. For example:
+In certain cases, a statement may not be deterministic, and therefore not safe for [replication](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-management/server-monitoring-logs/binary-log/broken-reference/README.md). If MariaDB determines that an unsafe statement has been executed, then it will issue a warning. For example:
 
 ```
 [Warning] Unsafe statement written to the binary log using statement format since 
@@ -69,7 +69,7 @@ When row-based logging is enabled, DML statements are **not** logged to the [bin
 
 Row-based logging uses more storage than the other log formats but is the safest to use. In practice [mixed logging](binary-log-formats.md#mixed-logging) should be as safe.
 
-If one wants to be able to see the original query that was logged, one can enable [annotated rows events](../../../clients-and-utilities/server-client-software/client-libraries/clientserver-protocol/replication-protocol/annotate_rows_event.md), that is shown with [mariadb-binlog](../../../clients-and-utilities/mariadb-binlog/), with [--binlog-annotate-row-events](../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md). This option is on by default.
+If one wants to be able to see the original query that was logged, one can enable [annotated rows events](../../../clients-and-utilities/server-client-software/client-libraries/clientserver-protocol/replication-protocol/annotate_rows_event.md), that is shown with [mariadb-binlog](../../../clients-and-utilities/logging-tools/mariadb-binlog/), with [--binlog-annotate-row-events](../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md). This option is on by default.
 
 This mode can be enabled by setting the [binlog\_format](../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) system variable to `ROW`.
 
@@ -107,7 +107,7 @@ It can also be set in a server [option group](../../install-and-upgrade-mariadb/
 binlog_format=ROW
 ```
 
-Be careful when changing the binary log format when using [replication](broken-reference/). When you change the binary log format on a server, it only changes the format for that server. Changing the binary log format on a primary has no effect on the replica's binary log format. This can cause replication to give inconsistent results or to fail.
+Be careful when changing the binary log format when using [replication](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-management/server-monitoring-logs/binary-log/broken-reference/README.md). When you change the binary log format on a server, it only changes the format for that server. Changing the binary log format on a primary has no effect on the replica's binary log format. This can cause replication to give inconsistent results or to fail.
 
 Be careful changing the binary log format dynamically when the server is a replica and [parallel replication](../../../ha-and-performance/standard-replication/parallel-replication.md) is enabled. If you change the global value dynamically, then that does not also affect the session values of any currently running threads. This can cause problems with [parallel replication](../../../ha-and-performance/standard-replication/parallel-replication.md), because the [worker threads](../../../ha-and-performance/standard-replication/replication-threads.md#worker-threads) will remain running even after [STOP SLAVE](../../../reference/sql-statements/administrative-sql-statements/replication-statements/stop-replica.md) is executed. This can be worked around by resetting the [slave\_parallel\_threads](../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) system variable. For example:
 

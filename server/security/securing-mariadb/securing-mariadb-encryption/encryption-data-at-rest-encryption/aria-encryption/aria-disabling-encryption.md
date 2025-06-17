@@ -12,7 +12,7 @@ With tables that the user creates, you can disable encryption by setting the `[a
 SET GLOBAL aria_encrypt_tables = OFF;
 ```
 
-Unlike [InnoDB](../innodb-encryption/), Aria does not currently use background encryption threads. Before removing the [Encryption Key Management](key-management-encryption-plugins/) plugin from the configuration file, you first need to manually rebuild each table to an unencrypted state.
+Unlike [InnoDB](../innodb-encryption/), Aria does not currently use background encryption threads. Before removing the [Encryption Key Management](https://github.com/mariadb-corporation/docs-server/blob/test/server/security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/aria-encryption/key-management-encryption-plugins/README.md) plugin from the configuration file, you first need to manually rebuild each table to an unencrypted state.
 
 To find the encrypted tables, query the Information Schema, filtering the `[TABLES](https://mariadb.com/kb/en/information_schema-tables-table)` table for those that use the Aria storage engine and the `PAGE` `[ROW_FORMAT](../../../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#row_format)`.
 

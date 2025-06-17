@@ -1544,7 +1544,7 @@ which sets the status of each server via MaxAdmin is needed.
 
 ### Filter Modules
 
-![](../../../.gitbook/assets/mariadb-corporation/MaxScale/2.2.21/Documentation/Getting-Started/images/image_10.png.png)
+![](<../../../.gitbook/assets/image_10.png (6).png>)
 
 Filters provide a means to manipulate or process requests as they pass through\
 MariaDB MaxScale between the client side protocol and the query router. A full\

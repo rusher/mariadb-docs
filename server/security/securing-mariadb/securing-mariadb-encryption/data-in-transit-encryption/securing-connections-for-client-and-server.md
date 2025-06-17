@@ -58,7 +58,7 @@ See [FLUSH SSL](../../../../reference/sql-statements/administrative-sql-statemen
 
 ### Enabling TLS for MariaDB Clients
 
-Different [clients and utilities](../../../../../kb/en/clients-utilities/) may use different methods to enable TLS. You can let the client to use TLS without specifying client-side certificate — this is called a **one-way TLS** below — to have the connection encrypted. Or you can additionally provide client-side certificate — this is **two-way TLS** — which will allow the server to do the certificate based client authentication.
+Different [clients and utilities](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/clients-utilities/README.md) may use different methods to enable TLS. You can let the client to use TLS without specifying client-side certificate — this is called a **one-way TLS** below — to have the connection encrypted. Or you can additionally provide client-side certificate — this is **two-way TLS** — which will allow the server to do the certificate based client authentication.
 
 #### Enabling One-Way TLS for MariaDB Clients
 

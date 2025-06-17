@@ -44,7 +44,7 @@ When you execute the `LOAD DATA INFILE` statement, MariaDB Server attempts to re
 If you don't want to permit this operation (perhaps for security reasons), you can disable the `LOAD DATA LOCAL INFILE` statement on either the server or the client.
 
 * The `LOAD DATA LOCAL INFILE` statement can be disabled on the server by setting the [local\_infile](../../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#local_infile) system variable to `0`.
-* The `LOAD DATA LOCAL INFILE` statement can be disabled on the client. If you are using [MariaDB Connector/C](../../../../../../kb/en/about-mariadb-connector-c/), this can be done by unsetting the `CLIENT_LOCAL_FILES` capability flag with the [mysql\_real\_connect](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/api-functions/mysql_real_connect) function or by unsetting the `MYSQL_OPT_LOCAL_INFILE` option with [mysql\_optionsv](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/api-functions/mysql_optionsv) function. If you are using a different client or client library, then see the documentation for your specific client or client library to determine how it handles the `LOAD DATA LOCAL INFILE` statement.
+* The `LOAD DATA LOCAL INFILE` statement can be disabled on the client. If you are using [MariaDB Connector/C](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/about-mariadb-connector-c/README.md), this can be done by unsetting the `CLIENT_LOCAL_FILES` capability flag with the [mysql\_real\_connect](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/api-functions/mysql_real_connect) function or by unsetting the `MYSQL_OPT_LOCAL_INFILE` option with [mysql\_optionsv](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/api-functions/mysql_optionsv) function. If you are using a different client or client library, then see the documentation for your specific client or client library to determine how it handles the `LOAD DATA LOCAL INFILE` statement.
 * The `LOAD DATA LOCAL INFILE` strict modes like `STRICT_TRANS_TABLES` are disabled with keyword "local". ([MDEV-11235](https://jira.mariadb.org/browse/MDEV-11235))
 
 If the `LOAD DATA LOCAL INFILE` statement is disabled by either the server or the client and if the user attempts to execute it, then the server will cause the statement to fail with the following error message:
@@ -101,7 +101,7 @@ The `LOW_PRIORITY` and `CONCURRENT` keywords are mutually exclusive. They cannot
 
 ### Progress Reporting
 
-The `LOAD DATA INFILE` statement supports [progress reporting](broken-reference/). You may find this useful when dealing with long-running operations. Using another client you can issue a [SHOW PROCESSLIST](../../../administrative-sql-statements/show/show-processlist.md) query to check the progress of the data load.
+The `LOAD DATA INFILE` statement supports [progress reporting](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/broken-reference/README.md). You may find this useful when dealing with long-running operations. Using another client you can issue a [SHOW PROCESSLIST](../../../administrative-sql-statements/show/show-processlist.md) query to check the progress of the data load.
 
 ### Using mariadb-import
 
@@ -169,6 +169,6 @@ SELECT * FROM ld;
 * [SELECT ... INTO OUTFILE](../../selecting-data/select-into-outfile.md)
 * [mariadb-import](../../../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-import.md)
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

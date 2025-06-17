@@ -14,7 +14,7 @@ For general "how to questions" ask questions [here](https://app.gitbook.com/o/di
 ## Notable changes
 
 * [MCOL-802](https://jira.mariadb.org/browse/MCOL-802) - MariaDB ColumnStore is now based on MariaDB Server 10.1.25.
-* [MCOL-723](https://jira.mariadb.org/browse/MCOL-723) - The MariaDB ColumnStore Cluster Tester tool is included in the install. This can be run to validate ColumnStore pre-requisities across servers prior to performing a multi node postConfigure. For further details please see [here](broken-reference).
+* [MCOL-723](https://jira.mariadb.org/browse/MCOL-723) - The MariaDB ColumnStore Cluster Tester tool is included in the install. This can be run to validate ColumnStore pre-requisities across servers prior to performing a multi node postConfigure. For further details please see [here](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/columnstore/columnstore-1-0/broken-reference/README.md).
 
 ## Bugs and issues fixed
 
@@ -45,7 +45,7 @@ For general "how to questions" ask questions [here](https://app.gitbook.com/o/di
 
 Multi version upgrades are not supported, please upgrade versions prior to 1.0.9 before upgrading to 1.0.10:
 
-* [1.0.9 GA to 1.0.10 upgrade procedure](broken-reference)
+* [1.0.9 GA to 1.0.10 upgrade procedure](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/columnstore/columnstore-1-0/broken-reference/README.md)
 
 ## Known issues and limitations
 
@@ -77,7 +77,7 @@ RPM, Debian, and binary packages are provided for the Linux distributions suppor
 
 * The supported OS for the GA version are CentOS 6, CentOS 7, Debian 8.6, RedHat 6, RedHat 7, SUSE 12, and Ubuntu 16.0.4.
 * Packages can be downloaded [here](https://mariadb.com/downloads/columnstore)
-* An Amazon AWS AMI Image is available for this release, please search for AMI name "MariaDB-ColumnStore-1.0.10". AMI specific installation instructions can be found [here](broken-reference).
+* An Amazon AWS AMI Image is available for this release, please search for AMI name "MariaDB-ColumnStore-1.0.10". AMI specific installation instructions can be found [here](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/columnstore/columnstore-1-0/broken-reference/README.md).
 * Certified to run in Google Cloud Environment in the GA OSs.
 
 ## Source code

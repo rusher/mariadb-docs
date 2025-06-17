@@ -8,7 +8,7 @@ Information Schema plugins can support [SHOW](https://app.gitbook.com/s/SsmexDFP
 
 Note that `SHOW` statement is a user-friendly shortcut; it's easier to type and should be easier to view — if the Information Schema table contains many columns, the `SHOW` statement is supposed to display only most important columns and fit nicely on the 80x25 terminal screen.
 
-Consider an example, [LOCALES plugin](../../community/data-types/string-data-types/character-sets/internationalization-and-localization/locales-plugin.md):
+Consider an example, [LOCALES plugin](https://github.com/mariadb-corporation/docs-server/blob/test/general-resources/community/data-types/string-data-types/character-sets/internationalization-and-localization/locales-plugin.md):
 
 ```
 static ST_FIELD_INFO locale_info_locale_fields_info[]=
@@ -41,7 +41,7 @@ MariaDB [test]> show locales;
 
 ## FLUSH
 
-To support the `FLUSH` statement a plugin must declare the `reset_table` callback. For example, in the [QUERY\_RESPONSE\_TIME](../../community/plugins/other-plugins/query-response-time-plugin.md) plugin:
+To support the `FLUSH` statement a plugin must declare the `reset_table` callback. For example, in the [QUERY\_RESPONSE\_TIME](https://github.com/mariadb-corporation/docs-server/blob/test/general-resources/community/plugins/other-plugins/query-response-time-plugin.md) plugin:
 
 ```
 static int query_response_time_info_init(void *p)

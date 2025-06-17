@@ -32,7 +32,7 @@ The minimum content size for 1 GTID is:\
 
 ### Example With 1 GTID, With CRC32
 
-From the [mysqlbinlog](../../../../mariadb-binlog/) utility:
+From the [mysqlbinlog](../../../../logging-tools/mariadb-binlog/) utility:
 
 170824 9:52:04 server id 10124 end\_log\_pos 292 CRC32 **0xb6d8f0a8** Gtid list **\[0-10124-3584]**
 

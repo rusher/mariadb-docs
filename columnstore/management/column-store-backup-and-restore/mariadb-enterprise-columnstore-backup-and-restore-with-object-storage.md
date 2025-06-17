@@ -2,29 +2,29 @@
 
 ## Overview
 
-MariaDB Enterprise ColumnStore supports backup and restore. If Enterprise ColumnStore uses S3-compatible object storage for data and shared local storage for the [Storage Manager directory](../../column-store-backup-and-restore/mariadb-enterprise-columnstore-storage-architecture/#storage-manager-directory), the S3 bucket, the Storage Manager directory, and the MariaDB data directory must be backed up separately.
+MariaDB Enterprise ColumnStore supports backup and restore. If Enterprise ColumnStore uses S3-compatible object storage for data and shared local storage for the [Storage Manager directory](https://github.com/mariadb-corporation/docs-server/blob/test/columnstore/column-store-backup-and-restore/mariadb-enterprise-columnstore-storage-architecture/README.md#storage-manager-directory), the S3 bucket, the Storage Manager directory, and the MariaDB data directory must be backed up separately.
 
 ## Recovery Planning
 
 MariaDB Enterprise ColumnStore supports multiple [storage options](../../architecture/columnstore-storage-architecture.md#storage-options).
 
-This page discusses how to backup and restore Enterprise ColumnStore when it uses [S3-compatible object storage](../../column-store-backup-and-restore/mariadb-enterprise-columnstore-storage-architecture/#s3-compatible-object-storage) for data and shared local storage (such as NFS) for the [Storage Manager directory](../../column-store-backup-and-restore/mariadb-enterprise-columnstore-storage-architecture/#storage-manager-directory).
+This page discusses how to backup and restore Enterprise ColumnStore when it uses [S3-compatible object storage](https://github.com/mariadb-corporation/docs-server/blob/test/columnstore/column-store-backup-and-restore/mariadb-enterprise-columnstore-storage-architecture/README.md#s3-compatible-object-storage) for data and shared local storage (such as NFS) for the [Storage Manager directory](https://github.com/mariadb-corporation/docs-server/blob/test/columnstore/column-store-backup-and-restore/mariadb-enterprise-columnstore-storage-architecture/README.md#storage-manager-directory).
 
 Any file can become corrupt due to hardware issues, crashes, power loss, and other reasons. If the Enterprise ColumnStore data or metadata were to become corrupt, Enterprise ColumnStore could become unusable, and data loss could occur.
 
 If Enterprise ColumnStore is your [system of record](backup-and-restore-with-mariadb-enterprise-columnstore.md#system-of-record), it should be backed up regularly.
 
-If Enterprise ColumnStore uses S3-compatible object storage for data and shared local storage for the [Storage Manager directory](../../column-store-backup-and-restore/mariadb-enterprise-columnstore-storage-architecture/#storage-manager-directory), the following items must be backed up:
+If Enterprise ColumnStore uses S3-compatible object storage for data and shared local storage for the [Storage Manager directory](https://github.com/mariadb-corporation/docs-server/blob/test/columnstore/column-store-backup-and-restore/mariadb-enterprise-columnstore-storage-architecture/README.md#storage-manager-directory), the following items must be backed up:
 
 * The MariaDB Data directory is backed up using [mariadb-backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariabackup).
 * The S3 bucket must be backed up using the vendor's snapshot procedure.
-* The [Storage Manager directory](../../column-store-backup-and-restore/mariadb-enterprise-columnstore-storage-architecture/#storage-manager-directory) must be backed up.
+* The [Storage Manager directory](https://github.com/mariadb-corporation/docs-server/blob/test/columnstore/column-store-backup-and-restore/mariadb-enterprise-columnstore-storage-architecture/README.md#storage-manager-directory) must be backed up.
 
 See the instructions below for more details.
 
 ## Backup
 
-![Enterprise-ColumnStore-Backup-with-S3-Flow-Chart](../../.gitbook/assets/mariadb-enterprise-columnstore-backup-and-restore-with-object-storage/+image/enterprise-columnstore-backup-with-s3-flow-chart.png)
+![Enterprise-ColumnStore-Backup-with-S3-Flow-Chart](../../.gitbook/assets/enterprise-columnstore-backup-with-s3-flow-chart.png)
 
 Use the following process to take a backup:
 
@@ -100,7 +100,7 @@ FLUSH TABLES WITH READ LOCK;
 
 Ensure that the client remains connected to the primary server, so that the lock is held for the remaining steps.
 
-4. Make a copy or snapshot of the [Storage Manager directory](../../column-store-backup-and-restore/mariadb-enterprise-columnstore-storage-architecture/#storage-manager-directory). By default, it is located at `/var/lib/columnstore/storagemanager`.
+4. Make a copy or snapshot of the [Storage Manager directory](https://github.com/mariadb-corporation/docs-server/blob/test/columnstore/column-store-backup-and-restore/mariadb-enterprise-columnstore-storage-architecture/README.md#storage-manager-directory). By default, it is located at `/var/lib/columnstore/storagemanager`.
 
 For example, to make a copy of the directory with rsync:
 
@@ -148,7 +148,7 @@ $ sudo systemctl stop mariadb-columnstore
 $ sudo systemctl stop mariadb
 ```
 
-3. Restore the backup of the [Storage Manager directory](../../column-store-backup-and-restore/mariadb-enterprise-columnstore-storage-architecture/#storage-manager-directory). By default, it is located at `/var/lib/columnstore/storagemanager`.
+3. Restore the backup of the [Storage Manager directory](https://github.com/mariadb-corporation/docs-server/blob/test/columnstore/column-store-backup-and-restore/mariadb-enterprise-columnstore-storage-architecture/README.md#storage-manager-directory). By default, it is located at `/var/lib/columnstore/storagemanager`.
 
 For example, to restore the backup with rsync:
 

@@ -18,8 +18,8 @@ MariaDB Connector/ODBC 3.1.16 is built on top of[MariaDB Connector/C v.3.3.1](..
   * hostname:port pairs must be be separated by a comma (,)
   * if only one host:port was specified, the host string needs to end with a comma.
   * if no port was specified, the default port will be used.
-  * Examples for failover host string:
-    *
+  * Examples for failover host string:\
+    \*
     * 127.0.0.1:3307,
 * MariaDB Connector/ODBC 3.1.16 is statically linked for Windows and MacOS with MariaDB Connector/C 3.3.1\
   MariaDB Connector/ODBC 3.1.16 is dynamically linked for Linux with MariaDB Connector/C, version 3.2 and 3.3 can be used, but 3.3 is required for the failover feature
@@ -44,7 +44,7 @@ detailed information on each push, see the[changelog](../changelogs/mariadb-conn
 Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
 
 MariaDB may already be included in your favorite OS distribution. More\
-information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/readme-1)\
+information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-including-mariadb)\
 page.
 
 {% @marketo/form formid="4316" formId="4316" %}

@@ -35,7 +35,7 @@ Notable changes of this release include:
 * [Compound statements can be used outside of stored programs](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/programmatic-compound-statements/using-compound-statements-outside-of-stored-programs).
 * The [engine\_condition\_pushdown optimizer\_switch flag](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/query-optimizations/optimizer-switch) has been deprecated. Engine condition pushdown is now always enabled for all engines that support it.
 * New Information Schema table [SYSTEM\_VARIABLES](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-system_variables-table) shows for every system variable its session and global variable values as well as various metadata.
-* [Information Schema plugins can now support SHOW and FLUSH statements](broken-reference). New statements in this release:
+* [Information Schema plugins can now support SHOW and FLUSH statements](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/broken-reference/README.md). New statements in this release:
   * [SHOW QUERY\_RESPONSE\_TIME](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-query_response_time)
   * [FLUSH QUERY\_RESPONSE\_TIME](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/other-plugins/query-response-time-plugin)
   * [SHOW LOCALES](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-locales)
@@ -54,7 +54,7 @@ information on each push, see the [changelog](../../../changelogs/changelogs-mar
 Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
 
 MariaDB may already be included in your favorite OS distribution. More\
-information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/readme-1)\
+information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-including-mariadb)\
 page.
 
 {% @marketo/form formid="4316" formId="4316" %}

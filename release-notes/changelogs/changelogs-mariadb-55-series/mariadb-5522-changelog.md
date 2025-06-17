@@ -2,7 +2,7 @@
 
 The most recent release in the [MariaDB 5.5](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) series is:[**MariaDB 5.5.68**](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/mariadb-5568-release-notes.md) [Download Now](https://downloads.mariadb.org/mariadb/5.5.68/)
 
-[Download](https://downloads.askmonty.org/mariadb/5.5.22) |[Release Notes](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/mariadb-5522-release-notes.md) |**Changelog** |[Overview of 5.5](broken-reference/)
+[Download](https://downloads.askmonty.org/mariadb/5.5.22) |[Release Notes](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/mariadb-5522-release-notes.md) |**Changelog** |[Overview of 5.5](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/changelogs/changelogs-mariadb-55-series/broken-reference/README.md)
 
 **Release date:** 29 Mar 2012
 
@@ -107,7 +107,7 @@ modified in that revision.
   * Merge [MariaDB 5.3](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3.md) into latest [MariaDB 5.5](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md)
   * [Revision #3342.1.1](https://bazaar.launchpad.net/~maria-captains/maria/5.5-release/revision/3342.1.1) \[merge]\
     Sat 2012-03-24 18:21:22 +0100
-    * Merge [mariadb 5.3](broken-reference/)->[mariadb 5.5](broken-reference/)
+    * Merge [mariadb 5.3](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/changelogs/changelogs-mariadb-55-series/broken-reference/README.md)->[mariadb 5.5](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/changelogs/changelogs-mariadb-55-series/broken-reference/README.md)
   * [Revision #2502.546.11](https://bazaar.launchpad.net/~maria-captains/maria/5.5-release/revision/2502.546.11)\
     Sat 2012-03-24 17:08:59 +0100
     * Improve filesort performance for small sorts: Don't write pointers to records that we will never use.

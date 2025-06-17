@@ -12,7 +12,7 @@ Returns a count of the number of different non-NULL values.
 
 COUNT(DISTINCT) returns 0 if there were no matching rows.
 
-Although, from [MariaDB 10.2.0](broken-reference), [COUNT](count.md) can be used as a [window function](../special-functions/window-functions/), COUNT DISTINCT cannot be.
+Although, from [MariaDB 10.2.0](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-functions/aggregate-functions/broken-reference/README.md), [COUNT](count.md) can be used as a [window function](../special-functions/window-functions/), COUNT DISTINCT cannot be.
 
 ## Examples
 
@@ -45,6 +45,6 @@ SELECT COUNT(DISTINCT (name)) FROM student;
 * [SELECT](../../sql-statements/data-manipulation/selecting-data/select.md)
 * [COUNT](count.md)
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

@@ -1,8 +1,8 @@
 # MariaDB 10.4.14 Changelog
 
-The most recent release of [MariaDB 10.4](broken-reference) is:[**MariaDB 10.4.34**](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-10-4-34-release-notes.md) Stable (GA) [Download Now](https://downloads.mariadb.org/mariadb/10.4.34/)
+The most recent release of [MariaDB 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/changelogs/changelogs-mariadb-10-4-series/broken-reference/README.md) is:[**MariaDB 10.4.34**](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-10-4-34-release-notes.md) Stable (GA) [Download Now](https://downloads.mariadb.org/mariadb/10.4.34/)
 
-[Download](https://downloads.mariadb.org/mariadb/10.4.14/)[Release Notes](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-10414-release-notes.md)[Changelog](mariadb-10414-changelog.md)[Overview of 10.4](broken-reference)
+[Download](https://downloads.mariadb.org/mariadb/10.4.14/)[Release Notes](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-10414-release-notes.md)[Changelog](mariadb-10414-changelog.md)[Overview of 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/changelogs/changelogs-mariadb-10-4-series/broken-reference/README.md)
 
 **Release date:** 10 Aug 2020
 
@@ -50,7 +50,7 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-23351](https://jira.mariadb.org/browse/MDEV-23351) Rounding functions return wrong data types for DATE input
 * [Revision #a773d93267](https://github.com/MariaDB/server/commit/a773d93267)\
   2020-07-31 11:10:41 +0200
-  * [MDEV-19603](https://jira.mariadb.org/browse/MDEV-19603) [MariaDB 10.4](broken-reference) does not build on OpenBSD due to the use of libdl
+  * [MDEV-19603](https://jira.mariadb.org/browse/MDEV-19603) [MariaDB 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/changelogs/changelogs-mariadb-10-4-series/broken-reference/README.md) does not build on OpenBSD due to the use of libdl
 * [Revision #153cd6a27f](https://github.com/MariaDB/server/commit/153cd6a27f)\
   2020-07-23 18:57:40 +0200
   * [MDEV-23237](https://jira.mariadb.org/browse/MDEV-23237) mariadb.sys has too many privileges

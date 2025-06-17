@@ -1,6 +1,6 @@
 ---
-description: Discuss with Max
 hidden: true
+noIndex: true
 icon: question
 ---
 

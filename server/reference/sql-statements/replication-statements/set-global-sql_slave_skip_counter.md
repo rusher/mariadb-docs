@@ -9,7 +9,7 @@ SET GLOBAL sql_slave_skip_counter = N
 ## Description
 
 This statement skips the next `N` events from the primary. This is useful\
-for recovering from [replication](broken-reference/) stops caused by a statement.
+for recovering from [replication](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/replication-statements/broken-reference/README.md) stops caused by a statement.
 
 If multi-source replication is used, this statement applies to the default connection. It could be necessary to change the value of the [default\_master\_connection](../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) system variable.
 
@@ -54,6 +54,6 @@ In order to skip transactions in cases like this, you will have to manually chan
 
 * [Selectively Skipping Replication of Binlog Events](../../../ha-and-performance/standard-replication/selectively-skipping-replication-of-binlog-events.md)
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

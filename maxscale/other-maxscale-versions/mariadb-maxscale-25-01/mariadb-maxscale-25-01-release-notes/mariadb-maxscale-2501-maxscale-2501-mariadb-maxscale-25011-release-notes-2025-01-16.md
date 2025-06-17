@@ -1,5 +1,7 @@
 # MariaDB MaxScale 25.01.1 Release Notes -- 2025-01-16
 
+{% include "https://app.gitbook.com/s/GxVnu02ec8KJuFSxmB93/~/reusable/DobjxO0sqF3MWCEIIL8Z/" %}
+
 Release 25.01.1 is a GA release.
 
 This document describes the changes in release 25.01, when compared to\
@@ -156,7 +158,7 @@ maintenance release.
 ### Known Issues and Limitations
 
 There are some limitations and known issues within this version of MaxScale.\
-For more information, please refer to the [Limitations](../../../../en/maxscale-25-01-limitations-and-known-issues-within-mariadb-maxscale/) document.
+For more information, please refer to the [Limitations](https://github.com/mariadb-corporation/docs-server/blob/test/en/maxscale-25-01-limitations-and-known-issues-within-mariadb-maxscale/README.md) document.
 
 ### Packaging
 

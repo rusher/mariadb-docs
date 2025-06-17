@@ -10,7 +10,7 @@ Enhanced Capabilities
 
 * MARIADB\_CLIENT\_CACHE\_METADATA: Enables clients to cache metadata and avoid repeated network transmissions. (since [MariaDB 10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/mariadb-1060-release-notes))
 * MARIADB\_CLIENT\_EXTENDED\_METADATA : Provides more detailed column metadata information for specific data types. (since [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1052-release-notes))
-* MARIADB\_CLIENT\_STMT\_BULK\_OPERATIONS: Introduces a dedicated command, [COM\_STMT\_BULK\_EXECUTE](3-binary-protocol-prepared-statements/com_stmt_bulk_execute.md), for efficient batch execution of statements. (since [MariaDB 10.2.0](broken-reference))
+* MARIADB\_CLIENT\_STMT\_BULK\_OPERATIONS: Introduces a dedicated command, [COM\_STMT\_BULK\_EXECUTE](3-binary-protocol-prepared-statements/com_stmt_bulk_execute.md), for efficient batch execution of statements. (since [MariaDB 10.2.0](https://github.com/mariadb-corporation/docs-server/blob/test/server/clients-and-utilities/server-client-software/client-libraries/clientserver-protocol/broken-reference/README.md))
 * MARIADB\_CLIENT\_BULK\_UNIT\_RESULTS: Allows for individual result sets for each bulk operation. (since [MariaDB 11.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-5-rolling-releases/mariadb-11-5-1-release-notes))
 
 See [Connection Capabilities](1-connecting/connection.md#capabilities).
@@ -121,7 +121,7 @@ When the MARIADB\_CLIENT\_EXTENDED\_METADATA capability is set, [column definiti
 
 ### Bulk
 
-_since_ [_MariaDB 10.2.0_](broken-reference) _-_ [_MariaDB 11.5.1_](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-5-rolling-releases/mariadb-11-5-1-release-notes) _for unit results_
+_since_ [_MariaDB 10.2.0_](https://github.com/mariadb-corporation/docs-server/blob/test/server/clients-and-utilities/server-client-software/client-libraries/clientserver-protocol/broken-reference/README.md) _-_ [_MariaDB 11.5.1_](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-5-rolling-releases/mariadb-11-5-1-release-notes) _for unit results_
 
 The MARIADB\_CLIENT\_STMT\_BULK\_OPERATIONS capability enables the [COM\_STMT\_BULK\_EXECUTE](3-binary-protocol-prepared-statements/com_stmt_bulk_execute.md) command for efficient batch processing. However, note that only one result (OK or ERROR) is returned per batch, containing the total affected rows and the first auto-generated ID. For individual results, the MARIADB\_CLIENT\_BULK\_UNIT\_RESULTS capability can be set. The server will then return a resultset containing for each unitary results (containing auto generated ids and affected rows)
 
@@ -332,7 +332,7 @@ This description has been done for [COM\_STMT\_EXECUTE](3-binary-protocol-prepar
 
 #### Query Timeout
 
-_Since_ [_MariaDB 10.1.2_](broken-reference)
+_Since_ [_MariaDB 10.1.2_](https://github.com/mariadb-corporation/docs-server/blob/test/server/clients-and-utilities/server-client-software/client-libraries/clientserver-protocol/broken-reference/README.md)
 
 Setting a timeout for all commands can be set using `SET max_statement_time=XXX` with XXX in seconds.
 

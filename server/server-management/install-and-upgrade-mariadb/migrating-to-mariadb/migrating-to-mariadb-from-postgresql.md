@@ -1,5 +1,7 @@
 # Migrating to MariaDB from PostgreSQL
 
+{% include "https://app.gitbook.com/s/GxVnu02ec8KJuFSxmB93/~/reusable/DIKbJcrzYIyfEVdDst6b/" %}
+
 There are many different ways to migrate from [PostgreSQL](https://www.postgresql.org/) to MariaDB. This article will discuss some of those options.
 
 ## MariaDB's CONNECT Storage Engine

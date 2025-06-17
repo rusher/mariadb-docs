@@ -21,12 +21,12 @@ where
 
 First, we run a regular inner join between the `City` and `Country` tables:
 
-![duplicate-weedout-inner-join](../../../../.gitbook/assets/duplicateweedout-strategy/+image/duplicate-weedout-inner-join.png)
+![duplicate-weedout-inner-join](../../../../.gitbook/assets/duplicate-weedout-inner-join.png)
 
 The Inner join produces duplicates. We have Germany three times, because it has three big cities.\
 Now, lets put `DuplicateWeedout` into the picture:
 
-![duplicate-weedout-diagram](../../../../.gitbook/assets/duplicateweedout-strategy/+image/duplicate-weedout-diagram.png)
+![duplicate-weedout-diagram](../../../../.gitbook/assets/duplicate-weedout-diagram.png)
 
 Here one can see that a temporary table with a primary key was used to avoid producing multiple records with 'Germany'.
 
@@ -108,7 +108,7 @@ This plan will read `(239 + 239*18) = 4541` rows, which is much slower.
 
 ## See Also
 
-* [What is MariaDB 5.3](broken-reference)
+* [What is MariaDB 5.3](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/optimization-and-tuning/query-optimizations/optimization-strategies/broken-reference/README.md)
 * [Subquery Optimizations Map](../subquery-optimizations/subquery-optimizations-map.md)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>

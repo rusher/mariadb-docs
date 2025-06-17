@@ -30,13 +30,13 @@ When the PrimProc process on a node receives work, it executes the job step on a
 
 ## Extent Elimination
 
-![ECStore-QueryExecutionExtentElimination](../.gitbook/assets/mariadb-enterprise-columnstore-query-evaluation/+image/ecstore-queryexecutionextentelimination.png)
+![ECStore-QueryExecutionExtentElimination](<../.gitbook/assets/ecstore-queryexecutionextentelimination (1).png>)
 
 MariaDB Enterprise ColumnStore uses extent elimination to scale query evaluation as table size increases.
 
 Most databases are row-based databases that use manually-created indexes to achieve high performance on large tables. This works well for transactional workloads. However, analytical queries tend to have very low selectivity, so traditional indexes are not typically effective for analytical queries.
 
-Enterprise ColumnStore uses extent elimination to achieve high performance, without requiring manually created indexes. Enterprise ColumnStore automatically partitions all data into [extents](../columnstore-architecture/mariadb-enterprise-columnstore-storage-architecture/#extents). Enterprise ColumnStore stores the minimum and maximum values for each extent in the [extent map](../columnstore-architecture/mariadb-enterprise-columnstore-storage-architecture/#extent-map). Enterprise ColumnStore uses the minimum and maximum values in the extent map to perform extent elimination.
+Enterprise ColumnStore uses extent elimination to achieve high performance, without requiring manually created indexes. Enterprise ColumnStore automatically partitions all data into [extents](https://github.com/mariadb-corporation/docs-server/blob/test/columnstore/columnstore-architecture/mariadb-enterprise-columnstore-storage-architecture/README.md#extents). Enterprise ColumnStore stores the minimum and maximum values for each extent in the [extent map](https://github.com/mariadb-corporation/docs-server/blob/test/columnstore/columnstore-architecture/mariadb-enterprise-columnstore-storage-architecture/README.md#extent-map). Enterprise ColumnStore uses the minimum and maximum values in the extent map to perform extent elimination.
 
 When Enterprise ColumnStore performs extent elimination, it compares the query's join conditions and filter conditions (i.e., WHERE clause) to the minimum and maximum values for each extent in the extent map. If the extent's minimum and maximum values fall outside the bounds of the query's conditions, Enterprise ColumnStore skips that extent for the query.
 
@@ -177,7 +177,7 @@ ExeMgr performs multiple tasks:
 
 ## Query Evaluation Process
 
-![ECStore-QueryExecutionwith-S3-FlowChart](../.gitbook/assets/mariadb-enterprise-columnstore-query-evaluation/+image/ecstore-queryexecutionwith-s3-flowchart.png)
+![ECStore-QueryExecutionwith-S3-FlowChart](<../.gitbook/assets/ecstore-queryexecutionwith-s3-flowchart (1).png>)
 
 When Enterprise ColumnStore executes a query, it goes through the following process:
 

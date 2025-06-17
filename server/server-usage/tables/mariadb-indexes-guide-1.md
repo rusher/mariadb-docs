@@ -10,7 +10,7 @@ The terms 'KEY' and 'INDEX' are generally used interchangeably, and statements s
 
 A primary key is unique and can never be null. It will always identify only one record, and each record must be represented. Each table can only have one primary key.
 
-In [InnoDB](../../reference/storage-engines/innodb/) tables, all indexes contain the primary key as a suffix. Thus, when using this storage engine, keeping the primary key as small as possible is particularly important. If a primary key does not exist and there are no UNIQUE indexes, InnoDB creates a 6-bytes clustered index which is invisible to the user.
+In [InnoDB](../storage-engines/innodb/) tables, all indexes contain the primary key as a suffix. Thus, when using this storage engine, keeping the primary key as small as possible is particularly important. If a primary key does not exist and there are no UNIQUE indexes, InnoDB creates a 6-bytes clustered index which is invisible to the user.
 
 Many tables use a numeric ID field as a primary key. The [AUTO\_INCREMENT](../../reference/data-types/auto_increment.md) attribute can be used to generate a unique identity for new rows, and is commonly-used with primary keys.
 
@@ -55,7 +55,7 @@ WHERE t.TABLE_SCHEMA != 'information_schema'
 
 A Unique Index must be unique, but it can have columns that may be NULL. So each key value identifies only one record, but not each record needs to be represented.
 
-**MariaDB starting with** [**10.5**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-5-series/what-is-mariadb-105)
+**MariaDB starting with** [**10.5**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105)
 
 Unique, if index type is not specified, is normally a BTREE index that can also be used by the optimizer to find rows. If the key is longer than the max key length for the used storage engine and the storage engine supports long unique index, a HASH key will be created. This enables MariaDB to enforce uniqueness for any type or number of columns.
 
@@ -167,7 +167,7 @@ uniqueness constraint, and another user may get the same name.
 
 If a unique index consists of a column where trailing pad characters are stripped or ignored, inserts into that column where values differ only by the number of trailing pad characters will result in a duplicate-key error.
 
-**MariaDB starting with** [**10.5**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-5-series/what-is-mariadb-105)
+**MariaDB starting with** [**10.5**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105)
 
 For some engines, like InnoDB, `UNIQUE` can be used with any type of columns or any number of columns.
 
@@ -276,8 +276,6 @@ _The initial version of this article was copied, with permission, from_ [_Proper
 ## See Also
 
 * [AUTO\_INCREMENT](../../reference/data-types/auto_increment.md)
-* [The Essentials of an Index](broken-reference/)
+* [The Essentials of an Index](https://github.com/mariadb-corporation/docs-server/blob/test/server/mariadb-quickstart-guides/broken-reference/README.md)
 
-<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
-
-{% @marketo/form formId="4316" %}
+CC BY-SA / Gnu FDL

@@ -20,7 +20,7 @@ If a response is received the clientReply function is called and response is sim
 
 After the session ends the closeSession is called where the session is set to a closed state after which the freeSession is called where the final freeing of memory is done. After this point the router's session has gone through all the stages of its lifecycle.
 
-![](../../../.gitbook/assets/mariadb-corporation/MaxScale/1.4.5/Documentation/Design-Documents/schemarouter-lifecycle.png.png)
+![](../../../.gitbook/assets/schemarouter-lifecycle.png.png)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

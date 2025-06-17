@@ -28,7 +28,7 @@ For clients that use the [MariaDB Connector/C](https://app.gitbook.com/s/CjGYMsT
 * `sha256_password`
 * `caching_sha256_password`
 
-When connecting with a [client or utility](../../../../kb/en/clients-utilities/) to a server as a user account that authenticates with the `sha256_password` or `caching_sha256_password` authentication plugin, you may need to tell the client where to find the relevant client authentication plugin by specifying the `--plugin-dir` option. For example:
+When connecting with a [client or utility](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/clients-utilities/README.md) to a server as a user account that authenticates with the `sha256_password` or `caching_sha256_password` authentication plugin, you may need to tell the client where to find the relevant client authentication plugin by specifying the `--plugin-dir` option. For example:
 
 ```
 mysql --plugin-dir=/usr/local/mysql/lib64/mysql/plugin --user=alice
@@ -56,19 +56,19 @@ It has supported the `caching_sha256_password` client authentication plugin sinc
 
 ### Using Plugins with MariaDB Connector/ODBC
 
-[MariaDB Connector/ODBC](../../../../kb/en/about-mariadb-connector-odbc/) supports `sha256_password` and `caching_sha2_password` authentication using the [client authentication plugins](client-authentication-plugins/) mentioned in the previous section.
+[MariaDB Connector/ODBC](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/about-mariadb-connector-odbc/README.md) supports `sha256_password` and `caching_sha2_password` authentication using the [client authentication plugins](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/plugins/authentication-plugins/client-authentication-plugins/README.md) mentioned in the previous section.
 
 It has supported `sha256_password` and `caching_sha2_password` authentication since MariaDB Connector/ODBC 3.1.4. See [ODBC-241](https://jira.mariadb.org/browse/ODBC-241) for more information.
 
 ### Using Plugins with MariaDB Connector/J
 
-[MariaDB Connector/J](../../../../kb/en/about-mariadb-connector-j/) supports `sha256_password` and `caching_sha2_password` authentication since MariaDB Connector/J 2.5.0. See [CONJ-327](https://jira.mariadb.org/browse/CONJ-327) and [CONJ-663](https://jira.mariadb.org/browse/CONJ-663) for more information.
+[MariaDB Connector/J](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/about-mariadb-connector-j/README.md) supports `sha256_password` and `caching_sha2_password` authentication since MariaDB Connector/J 2.5.0. See [CONJ-327](https://jira.mariadb.org/browse/CONJ-327) and [CONJ-663](https://jira.mariadb.org/browse/CONJ-663) for more information.
 
 note: The version 3.x being a rewrite of the connector, only caching\_sha2\_password is implemented, since sha256\_password is only implemented on EOL version.
 
 ### Using Plugins with MariaDB Connector/Node.js
 
-[MariaDB Connector/Node.js](../../../../kb/en/nodejs-connector/) supports `sha256_password` and `caching_sha2_password` authentication since MariaDB Connector/Node.js 2.5.0. See [CONJS-76](https://jira.mariadb.org/browse/CONJS-76) and [CONJS-77](https://jira.mariadb.org/browse/CONJS-77) for more information.
+[MariaDB Connector/Node.js](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/nodejs-connector/README.md) supports `sha256_password` and `caching_sha2_password` authentication since MariaDB Connector/Node.js 2.5.0. See [CONJS-76](https://jira.mariadb.org/browse/CONJS-76) and [CONJS-77](https://jira.mariadb.org/browse/CONJS-77) for more information.
 
 ## See Also
 

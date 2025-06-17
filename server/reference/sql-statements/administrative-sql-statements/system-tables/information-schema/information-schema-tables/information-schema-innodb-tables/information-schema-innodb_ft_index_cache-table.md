@@ -94,7 +94,7 @@ SELECT * FROM INNODB_FT_INDEX_CACHE;
 13 rows in set (0.00 sec)
 ```
 
-The `OPTIMIZE TABLE` statement has no effect, because the [innodb\_optimize\_fulltext\_only](../../../../../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/innodb-server-system-variables/#innodb_optimize_fulltext_only) variable wasn't set:
+The `OPTIMIZE TABLE` statement has no effect, because the [innodb\_optimize\_fulltext\_only](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/innodb-server-system-variables/README.md#innodb_optimize_fulltext_only) variable wasn't set:
 
 ```
 SHOW VARIABLES LIKE 'innodb_optimize_fulltext_only';

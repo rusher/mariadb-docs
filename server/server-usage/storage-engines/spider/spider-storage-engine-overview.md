@@ -2,7 +2,7 @@
 
 ## About
 
-![spider\_overview](../../../.gitbook/assets/spider-storage-engine-overview/+image/spider_overview.png)
+![spider\_overview](../../../.gitbook/assets/spider_overview.png)
 
 The Spider storage engine is a [storage engine](../) with built-in sharding features. It supports partitioning and [xa transactions](../../../reference/sql-statements/transactions/xa-transactions.md), and allows tables of different MariaDB instances to be handled as if they were on the same instance. It refers to one possible implementation of ISO/IEC 9075-9:2008 SQL/MED.
 
@@ -25,7 +25,7 @@ The Spider documentation on the MariaDB Knowledge Base is currently incomplete. 
 | Spider 3.2.18  | [MariaDB 10.0.17](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-10017-release-notes)                                                                                                                                                                                      | Gamma    |
 | Spider 3.2.11  | [MariaDB 10.0.14](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-10014-release-notes)                                                                                                                                                                                      | Gamma    |
 | Spider 3.2.4   | [MariaDB 10.0.12](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-10012-release-notes)                                                                                                                                                                                      | Gamma    |
-| Spider 3.2     | [MariaDB 10.0.11](../../../reference/storage-engines/spider/broken-reference/)                                                                                                                                                                                                                                                                                           | Gamma    |
+| Spider 3.2     | [MariaDB 10.0.11](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/spider/broken-reference/README.md)                                                                                                                                                                                                                       | Gamma    |
 | Spider 3.0     | [MariaDB 10.0.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-1004-release-notes)                                                                                                                                                                                        | Beta     |
 
 ## Usage
@@ -181,7 +181,7 @@ EOF
 
 #### Federation Setup
 
-![Spider7](../../../.gitbook/assets/spider-storage-engine-overview/+image/Spider7.png)
+![Spider7](../../../.gitbook/assets/Spider7.png)
 
 ```sql
 spider1 << EOF
@@ -208,13 +208,13 @@ SELECT * FROM test.sbtest LIMIT 10;
 EOF
 ```
 
-![spbench10](../../../.gitbook/assets/spider-storage-engine-overview/+image/spbench10.png)
+![spbench10](../../../.gitbook/assets/spbench10.png)
 
 Without connection pool or MariaDB thread pool, HaProxy and Spider have been protecting the tcp socket overflow without specific TCP tuning. In reality with a well tuned TCP stack or thread pool the curve should not decrease so abruptly to 0. Refer to the [MariaDB Thread Pool](../../../ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-in-mariadb.md) to explore this feature.
 
 #### Sharding Setup
 
-![spider8](../../../.gitbook/assets/spider-storage-engine-overview/+image/Spider8.png)
+![spider8](../../../.gitbook/assets/Spider8.png)
 
 Create the spider table on the Spider Node
 
@@ -315,7 +315,7 @@ This is expected because the query latency is increased from multiple network ro
 
 We need to increase the concurrency to get better throughput.
 
-![spbench11](../../../.gitbook/assets/spider-storage-engine-overview/+image/spbench11.png)
+![spbench11](../../../.gitbook/assets/spbench11.png)
 
 #### Background Setup
 
@@ -487,15 +487,15 @@ mysql> select sum(k) from sbtest;
 1 row in set (12,56 sec)
 ```
 
-![spbench8](../../../.gitbook/assets/spider-storage-engine-overview/+image/spbench8.png)
+![spbench8](../../../.gitbook/assets/spbench8.png)
 
 #### High Availability Setup
 
-**MariaDB starting with** [**10.7.5**](../../../reference/storage-engines/spider/broken-reference/)
+**MariaDB starting with** [**10.7.5**](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/spider/broken-reference/README.md)
 
-Spider's high availability feature has been deprecated ([MDEV-28479](https://jira.mariadb.org/browse/MDEV-28479)), and will be deleted. Please use other high availability solutions like [replication](../../../reference/storage-engines/spider/broken-reference/) or [galera-cluster](../../../../kb/en/galera-cluster/).
+Spider's high availability feature has been deprecated ([MDEV-28479](https://jira.mariadb.org/browse/MDEV-28479)), and will be deleted. Please use other high availability solutions like [replication](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/spider/broken-reference/README.md) or [galera-cluster](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/galera-cluster/README.md).
 
-![spider9](../../../.gitbook/assets/spider-storage-engine-overview/+image/spider9.png)
+![spider9](../../../.gitbook/assets/spider9.png)
 
 ```sql
 #backend1 -e "CREATE DATABASE backend_rpl"
@@ -621,7 +621,7 @@ Checking the state of the nodes:
 +---------+--------------+----------+
 ```
 
-![spiderha](../../../.gitbook/assets/spider-storage-engine-overview/+image/spiderha.png)
+![spiderha](../../../.gitbook/assets/spiderha.png)
 
 No change has been made to cluster, so let's create a divergence:
 

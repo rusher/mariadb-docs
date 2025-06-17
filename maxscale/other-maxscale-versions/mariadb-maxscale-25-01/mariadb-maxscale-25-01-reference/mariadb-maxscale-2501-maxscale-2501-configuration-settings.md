@@ -1731,7 +1731,7 @@
 
 ### Authenticators
 
-#### [Authentication-Modules](../../../../en/maxscale-25-01-authentication-modules/)
+#### [Authentication-Modules](https://github.com/mariadb-corporation/docs-server/blob/test/en/maxscale-25-01-authentication-modules/README.md)
 
 **Settings**
 

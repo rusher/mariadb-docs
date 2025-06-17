@@ -34,7 +34,7 @@ The `mysql.proc` table contains the following fields:
 
 ## See Also
 
-* [Stored Procedure Internals](broken-reference/)
+* [Stored Procedure Internals](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/broken-reference/README.md)
 * [MySQL to MariaDB migration: handling privilege table differences when using mysqldump](https://mariadb.com/blog/mysql-mariadb-migration-handling-privilege-table-differences-when-using-mysqldump)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>

@@ -171,7 +171,7 @@ S3-compatible object storage is:
 
 Many S3-compatible object storage services exist. MariaDB Corporation cannot make guarantees about all S3-compatible object storage services, because different services provide different functionality.
 
-If you have any questions about using specific S3-compatible object storage with MariaDB ColumnStore, [contact us](broken-reference/).
+If you have any questions about using specific S3-compatible object storage with MariaDB ColumnStore, [contact us](https://github.com/mariadb-corporation/docs-server/blob/test/server/architecture/topologies/single-node-topologies/broken-reference/README.md).
 
 ### Create an S3 Bucket
 

@@ -24,7 +24,7 @@ The forms that use _`FROM`_ are standard SQL syntax.
 
 It is also possible to use a negative value for _`pos`_. In this case, the beginning of the substring is _`pos`_ characters from the end of the string, rather than the beginning. A negative value may be used for _`pos`_ in any of the forms of this function.
 
-By default, the position of the first character in the string from which the substring is to be extracted is reckoned as 1. For [Oracle-compatibility](broken-reference), from [MariaDB 10.3.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-1033-release-notes), when sql\_mode is set to 'oracle', position zero is treated as position 1 (although the first character is still reckoned as 1).
+By default, the position of the first character in the string from which the substring is to be extracted is reckoned as 1. For [Oracle-compatibility](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-functions/string-functions/broken-reference/README.md), from [MariaDB 10.3.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-1033-release-notes), when sql\_mode is set to 'oracle', position zero is treated as position 1 (although the first character is still reckoned as 1).
 
 If any argument is `NULL`, returns `NULL`.
 
@@ -76,7 +76,7 @@ SELECT SUBSTRING('Knowledgebase' FROM -8 FOR 4);
 +------------------------------------------+
 ```
 
-[Oracle mode from MariaDB 10.3.3](broken-reference):
+[Oracle mode from MariaDB 10.3.3](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-functions/string-functions/broken-reference/README.md):
 
 ```
 SELECT SUBSTR('abc',0,3);
@@ -116,6 +116,6 @@ SELECT SUBSTR('abc',1,2);
 * [LOCATE()](locate.md) - Returns the position of a string within a string
 * [SUBSTRING\_INDEX()](substring_index.md) - Returns a string based on substring
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

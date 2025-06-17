@@ -1,6 +1,5 @@
 ---
 description: Quickstart guide for Connector/Ruby
-icon: rabbit
 ---
 
 # Connector/Ruby Guide

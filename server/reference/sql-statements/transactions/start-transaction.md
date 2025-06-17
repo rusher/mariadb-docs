@@ -19,7 +19,7 @@ transaction_property:
 The `START TRANSACTION` or `BEGIN` statement\
 begins a new transaction. [COMMIT](commit.md) commits the current\
 transaction, making its changes permanent. [ROLLBACK](rollback.md) rolls\
-back the current transaction, canceling its changes. The [SET](../../../server-usage/programmatic-compound-statements/set-variable.md)[autocommit](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#autocommit) statement disables or enables the default autocommit mode for the current session.
+back the current transaction, canceling its changes. The [SET](../programmatic-compound-statements/set-variable.md)[autocommit](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#autocommit) statement disables or enables the default autocommit mode for the current session.
 
 START TRANSACTION and SET autocommit = 1 implicitly commit the current transaction, if any.
 
@@ -85,6 +85,6 @@ COMMIT;
 * [Enhancements for START TRANSACTION WITH CONSISTENT SNAPSHOT](../../../ha-and-performance/standard-replication/enhancements-for-start-transaction-with-consistent-snapshot.md)
 * [MyRocks and START TRANSACTION WITH CONSISTENT SNAPSHOT](../../../server-usage/storage-engines/myrocks/myrocks-and-start-transaction-with-consistent-snapshot.md)
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

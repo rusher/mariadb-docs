@@ -6,7 +6,7 @@ If you specify a filename with an extension (for example `.log`), the extension 
 
 If you don't provide a name (which can, optionally, include an absolute path), the default will be `datadir/log-basename-bin`, `datadir/mysql-bin` or `datadir/mariadb-bin` (the latter two if [--log-basename](../../starting-and-stopping-mariadb/mariadbd-options.md) is not specified, and dependent on server version). Datadir is determined by the value of the [datadir](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#datadir) system variable.
 
-We strongly recommend you use either [--log-basename](../../starting-and-stopping-mariadb/mariadbd-options.md) or specify a filename to ensure that [replication](broken-reference) doesn't stop if the hostname of the computer changes.
+We strongly recommend you use either [--log-basename](../../starting-and-stopping-mariadb/mariadbd-options.md) or specify a filename to ensure that [replication](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-management/server-monitoring-logs/binary-log/broken-reference/README.md) doesn't stop if the hostname of the computer changes.
 
 The directory storing the binary logs will contain a binary log index, as well as the individual binary log files.
 

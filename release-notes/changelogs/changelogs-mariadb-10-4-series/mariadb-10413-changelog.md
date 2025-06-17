@@ -1,8 +1,8 @@
 # MariaDB 10.4.13 Changelog
 
-The most recent release of [MariaDB 10.4](broken-reference) is:[**MariaDB 10.4.34**](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-10-4-34-release-notes.md) Stable (GA) [Download Now](https://downloads.mariadb.org/mariadb/10.4.34/)
+The most recent release of [MariaDB 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/changelogs/changelogs-mariadb-10-4-series/broken-reference/README.md) is:[**MariaDB 10.4.34**](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-10-4-34-release-notes.md) Stable (GA) [Download Now](https://downloads.mariadb.org/mariadb/10.4.34/)
 
-[Download](https://downloads.mariadb.org/mariadb/10.4.13/)[Release Notes](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-10413-release-notes.md)[Changelog](mariadb-10413-changelog.md)[Overview of 10.4](broken-reference)
+[Download](https://downloads.mariadb.org/mariadb/10.4.13/)[Release Notes](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-10413-release-notes.md)[Changelog](mariadb-10413-changelog.md)[Overview of 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/changelogs/changelogs-mariadb-10-4-series/broken-reference/README.md)
 
 **Release date:** 12 May 2020
 
@@ -27,7 +27,7 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-21794](https://jira.mariadb.org/browse/MDEV-21794): Optimizer flag rowid\_filter leads to long query
 * [Revision #0253ea7f22](https://github.com/MariaDB/server/commit/0253ea7f22)\
   2020-02-19 17:50:30 +0100
-  * [MDEV-19650](https://jira.mariadb.org/browse/MDEV-19650): Privilege bug on [MariaDB 10.4](broken-reference)
+  * [MDEV-19650](https://jira.mariadb.org/browse/MDEV-19650): Privilege bug on [MariaDB 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/changelogs/changelogs-mariadb-10-4-series/broken-reference/README.md)
 * Merge [Revision #2c3c851d2c](https://github.com/MariaDB/server/commit/2c3c851d2c) 2020-05-05 20:33:10 +0300 - Merge 10.3 into 10.4
 * [Revision #474290540a](https://github.com/MariaDB/server/commit/474290540a)\
   2020-05-05 14:20:47 +0300

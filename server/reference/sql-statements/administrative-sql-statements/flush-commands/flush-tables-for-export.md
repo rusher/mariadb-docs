@@ -8,11 +8,11 @@ FLUSH TABLE[S] table_name [, table_name] FOR EXPORT
 
 ## Description
 
-`FLUSH TABLES ... FOR EXPORT` flushes changes to the specified tables to disk so that binary copies can be made while the server is still running. This works for [Archive](../../../../server-usage/storage-engines/archive/), [Aria](../../../../server-usage/storage-engines/aria/), [CSV](../../../../server-usage/storage-engines/csv/), [InnoDB](../../../../server-usage/storage-engines/innodb/), [MyISAM](../../../../server-usage/storage-engines/myisam-storage-engine/) and [MERGE](../../../../server-usage/storage-engines/merge.md) tables.
+`FLUSH TABLES ... FOR EXPORT` flushes changes to the specified tables to disk so that binary copies can be made while the server is still running. This works for [Archive](../../../../server-usage/storage-engines/archive.md), [Aria](../../../../server-usage/storage-engines/aria/), [CSV](../../../../server-usage/storage-engines/csv/), [InnoDB](../../../../server-usage/storage-engines/innodb/), [MyISAM](../../../../server-usage/storage-engines/myisam-storage-engine/) and [MERGE](../../../../server-usage/storage-engines/merge.md) tables.
 
 The table is read locked until one has issued [UNLOCK TABLES](../../transactions/transactions-unlock-tables.md).
 
-If a storage engine does not support `FLUSH TABLES FOR EXPORT`, a 1031 error ([SQLSTATE](../../../../server-usage/programmatic-compound-statements/programmatic-compound-statements-diagnostics/sqlstate.md) 'HY000') is produced.
+If a storage engine does not support `FLUSH TABLES FOR EXPORT`, a 1031 error ([SQLSTATE](../../programmatic-compound-statements/programmatic-compound-statements-diagnostics/sqlstate.md) 'HY000') is produced.
 
 If `FLUSH TABLES ... FOR EXPORT` is in effect in the session, the following statements will produce an error if attempted:
 

@@ -2,7 +2,7 @@
 
 The most recent release in the [MariaDB 5.1 series](changes-improvements-in-mariadb-5-1.md) is:[**MariaDB 5.1.67**](mariadb-5167-release-notes.md)
 
-[Download](https://downloads.askmonty.org/mariadb/5.1.66) |**Release Notes** |[Changelog](broken-reference) |[Overview of 5.1](changes-improvements-in-mariadb-5-1.md)
+[Download](https://downloads.askmonty.org/mariadb/5.1.66) |**Release Notes** |[Changelog](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-1-series/broken-reference/README.md) |[Overview of 5.1](changes-improvements-in-mariadb-5-1.md)
 
 **Release date:** 29 Nov 2012
 
@@ -10,7 +10,7 @@ The most recent release in the [MariaDB 5.1 series](changes-improvements-in-mari
 
 **For a description of** [**MariaDB 5.1**](changes-improvements-in-mariadb-5-1.md) **see the**[**What is MariaDB 5.1**](changes-improvements-in-mariadb-5-1.md) **page.**
 
-For a list of changes made in [MariaDB 5.1.66](mariadb-5166-release-notes.md), with links to detailed information on each push, see the [MariaDB 5.1.66 Changelog](broken-reference).
+For a list of changes made in [MariaDB 5.1.66](mariadb-5166-release-notes.md), with links to detailed information on each push, see the [MariaDB 5.1.66 Changelog](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-1-series/broken-reference/README.md).
 
 In most respects [MariaDB](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/mariadb/README.md) will work exactly as MySQL: all commands, interfaces, libraries and APIs that exist in MySQL also exist in MariaDB.
 
@@ -45,7 +45,7 @@ This version of MariaDB includes MySQL 5.1.66. See [Changes in MySQL 5.1.66](htt
 Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
 
 MariaDB may already be included in your favorite OS distribution. More\
-information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/readme-1)\
+information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-including-mariadb)\
 page.
 
 {% @marketo/form formid="4316" formId="4316" %}

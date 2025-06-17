@@ -9,16 +9,16 @@ MariaDB ColumnStore 1.1.3 is a [_**GA**_](../../mariadb-release-criteria.md) rel
 For an overview of [MariaDB ColumnStore](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/mariadb-columnstore/README.md) see [MariaDB ColumnStore Architectural Overview](https://app.gitbook.com/s/rBEU9juWLfTDcdwF3Q14/architecture/columnstore-architectural-overview)
 
 Please provide feedback in [JIRA](https://jira.mariadb.org/browse/MCOL) for anything that is not working as expected so that we can fix it before we make the release available for the larger community.\
-For general "how to questions" ask questions [here](https://mariadb.com/kb/en/mariadb/mariadb-columnstore/) or subscribe to mariadb-columnstore@googlegroups.com
+For general "how to questions" ask questions [here](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/rBEU9juWLfTDcdwF3Q14/) or subscribe to mariadb-columnstore@googlegroups.com
 
 ## Notable changes
 
-* [Beta](../../mariadb-release-criteria.md) release of [Apache Spark Adapter](broken-reference) for integration of MariaDB ColumnStore utilizing the Spark SQL feature.
+* [Beta](../../mariadb-release-criteria.md) release of [Apache Spark Adapter](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/columnstore/columnstore-1-1/broken-reference/README.md) for integration of MariaDB ColumnStore utilizing the Spark SQL feature.
 * [GA](../../mariadb-release-criteria.md) release of [MaxScale CDC Adapter](https://app.gitbook.com/s/rBEU9juWLfTDcdwF3Q14/clients-and-tools/data-ingestion/columnstore-streaming-data-adapters)
 * [GA](../../mariadb-release-criteria.md) release of [Aache Kafka Data Adapter](https://app.gitbook.com/s/rBEU9juWLfTDcdwF3Q14/clients-and-tools/data-ingestion/columnstore-streaming-data-adapters)
 * [MCOL-1121](https://jira.mariadb.org/browse/MCOL-1121) - The Kafka adapter has been made to work with more generic streams
 * [MCOL-1214](https://jira.mariadb.org/browse/MCOL-1214) - The base MariaDB server version is now [10.2.13](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-10213-release-notes.md) which include several maintenance and security fixes.
-* Package repositories for [MariaDB AX and MariaDB ColumnStore](broken-reference) now available
+* Package repositories for [MariaDB AX and MariaDB ColumnStore](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/columnstore/columnstore-1-1/broken-reference/README.md) now available
 
 ## Bugs and issues fixed
 
@@ -108,7 +108,7 @@ In addition, all bugs fixed in MariaDB ColumnStore 1.1.2 and earlier are implici
 
 The following procedure outlines upgrading a 1.1.2 ColumnStore install to 1.1.3:
 
-* [1.1.2 GA to 1.1.3 GA upgrade procedure](broken-reference)
+* [1.1.2 GA to 1.1.3 GA upgrade procedure](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/columnstore/columnstore-1-1/broken-reference/README.md)
 
 Multi version upgrades generally will work using the same procedure however we can't test every possible permutation so you should test your specific scenario outside of production first if you wish to try this (and this is good practice regardless).
 
@@ -146,8 +146,8 @@ There are a number bugs and known limitations within this version of MariaDB Col
 RPM, Debian, and binary packages are provided for the Linux distributions supported by MariaDB ColumnStore 1.1.3 GA version.
 
 * The supported OS for the GA version are CentOS 6, CentOS 7, Debian 8, Debian 9, RedHat 6, RedHat 7, SUSE 12, and Ubuntu 16.0.4.
-* Packages can be downloaded [here](https://mariadb.com/downloads/mariadb-ax) or can be installed from the [repositories](broken-reference).
-* An Amazon AWS AMI Image is available for this release, please search for AMI name "MariaDB-ColumnStore-1.1.3". AMI specific installation instructions can be found [here](broken-reference).
+* Packages can be downloaded [here](https://mariadb.com/downloads/mariadb-ax) or can be installed from the [repositories](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/columnstore/columnstore-1-1/broken-reference/README.md).
+* An Amazon AWS AMI Image is available for this release, please search for AMI name "MariaDB-ColumnStore-1.1.3". AMI specific installation instructions can be found [here](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/columnstore/columnstore-1-1/broken-reference/README.md).
 * Certified to run in Google Cloud Environment in the GA OSs.
 
 ## Source code

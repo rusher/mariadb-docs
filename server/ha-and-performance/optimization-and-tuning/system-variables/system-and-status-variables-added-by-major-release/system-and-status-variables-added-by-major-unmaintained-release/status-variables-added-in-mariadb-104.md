@@ -1,6 +1,6 @@
 # Status Variables Added in MariaDB 10.4
 
-This is a list of [status variables](../../server-status-variables.md) that were added in the [MariaDB 10.4](broken-reference) series.
+This is a list of [status variables](../../server-status-variables.md) that were added in the [MariaDB 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/optimization-and-tuning/system-variables/system-and-status-variables-added-by-major-release/system-and-status-variables-added-by-major-unmaintained-release/broken-reference/README.md) series.
 
 | Variable                                                                                                                                                   | Added                                                                                                                                                                             |
 | ---------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

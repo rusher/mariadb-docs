@@ -1,6 +1,5 @@
 ---
 description: Quickstart guide for MariaDB Connector/Python
-icon: rabbit
 ---
 
 # Connector/Python Guide

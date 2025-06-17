@@ -10,7 +10,7 @@ These records can then consumed by the avrorouter directly from the binlog cache
 of the Binlog Server. This allows MariaDB MaxScale to automatically transform\
 binlog events on the master to local Avro format files.
 
-![](../../../.gitbook/assets/mariadb-corporation/MaxScale/2.5.29/Documentation/Routers/images/Binlog-Avro.png.png)
+![](<../../../.gitbook/assets/Binlog-Avro.png (7).png>)
 
 The avrorouter can also consume binary logs straight from the master. This will\
 remove the need to configure the Binlog Server but it will increase the disk space\

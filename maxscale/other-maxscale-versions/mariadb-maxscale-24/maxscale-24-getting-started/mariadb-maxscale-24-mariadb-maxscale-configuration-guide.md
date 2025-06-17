@@ -241,7 +241,7 @@ referred to from _services_.
 A router module is capable of routing requests to backend servers according to\
 the characteristics of a request and/or the algorithm the router\
 implements. Examples of routers are `readconnroute` that provides _connection_\
-&#xNAN;_&#x72;outing_, that is, the server is chosen according to specified rules when the\
+\&#xNAN;_routing_, that is, the server is chosen according to specified rules when the\
 session is created and all requests are subsequently routed to that server,\
 and `readwritesplit` that provides _statement routing_, that is, each\
 individual request is routed to the most appropriate server.
@@ -1012,7 +1012,7 @@ some_parameter=$SOME_VALUE
 
 is encountered, then `$SOME_VALUE` will be replaced with the actual value\
 of the environment variable `SOME_VALUE`. Note:_Variable substitution will be made only if '$' is the first character_\
-&#xNAN;_&#x6F;f the value._ _Everything_ following '$' is interpreted as the name of the environment\
+\&#xNAN;_of the value._ _Everything_ following '$' is interpreted as the name of the environment\
 variable.
 
 * Referring to a non-existing environment variable is a fatal error.
@@ -1572,8 +1572,8 @@ the percentages in this table.
 | serverD | 20         | 36%           |
 
 _Note: If the value of the weighting parameter of an individual server is_\
-&#xNAN;_&#x7A;ero or the relative weight rounds down to zero, no queries will be routed to_\
-&#xNAN;_&#x74;hat server as long as a server with a positive weight is available._
+\&#xNAN;_zero or the relative weight rounds down to zero, no queries will be routed to_\
+\&#xNAN;_that server as long as a server with a positive weight is available._
 
 Here is an excerpt from an example configuration with the `serv_weight`\
 parameter used as the weighting parameter.
@@ -2305,7 +2305,7 @@ API. **Only do this if you know what you are doing.**
 
 ### Filter Modules
 
-![](../../../.gitbook/assets/mariadb-corporation/MaxScale/2.4.19/Documentation/Getting-Started/images/image_10.png.png)
+![](<../../../.gitbook/assets/image_10.png (1).png>)
 
 Filters provide a means to manipulate or process requests as they pass through\
 MariaDB MaxScale between the client side protocol and the query router. A full\

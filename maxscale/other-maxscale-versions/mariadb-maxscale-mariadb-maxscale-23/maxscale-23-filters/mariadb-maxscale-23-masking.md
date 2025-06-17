@@ -566,7 +566,7 @@ string should be a MariaDB account string, that is, `%` is a wildcard.
 
 ### Module commands
 
-Read [Module Commands](broken-reference) documentation for details\
+Read [Module Commands](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/other-maxscale-versions/mariadb-maxscale-mariadb-maxscale-23/maxscale-23-filters/broken-reference/README.md) documentation for details\
 about module commands.
 
 The masking filter supports the following module commands.

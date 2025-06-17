@@ -22,7 +22,7 @@ layout:
 New to MariaDB? Start here to set up your environment, connect to your first database and run basic commands.
 
 * [Installation Guides](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/mariadb-quickstart-guides/installing-mariadb-server-guide)
-* [Basic Concepts](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/mariadb-quickstart-guides/mariadb-advanced-usage-guide)
+* [Basic Concepts](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/mariadb-quickstart-guides/basics-guide)
 * [Connecting to MariaDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/connecting/mariadb-connecting-guide-1)
 * [First SQL Queries](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/mariadb-quickstart-guides/mariadb-advanced-sql-guide)
 

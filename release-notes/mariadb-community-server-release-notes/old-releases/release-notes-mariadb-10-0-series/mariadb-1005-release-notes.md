@@ -24,7 +24,7 @@ release. This is still a beta however, not a final, production-ready, release.
 For a list of changes made in [MariaDB 10.0.5](mariadb-1005-release-notes.md), with links to detailed\
 information on each push, see the [changelog](../../../changelogs/changelogs-mariadb-100-series/mariadb-1005-changelog.md).
 
-## Based on [MariaDB 5.5](../release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md)&#x20;
+## Based on [MariaDB 5.5](../release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md)
 
 The [MariaDB 10.0](changes-improvements-in-mariadb-10-0.md) series builds off of the [MariaDB 5.5 series.](../release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) It includes\
 completely new features and features imported and backported from MySQL 5.6.
@@ -79,7 +79,7 @@ Thanks, and enjoy MariaDB!
 Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
 
 MariaDB may already be included in your favorite OS distribution. More\
-information can be found on the [Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/readme-1)\
+information can be found on the [Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-including-mariadb)\
 page.
 
 {% @marketo/form formid="4316" formId="4316" %}

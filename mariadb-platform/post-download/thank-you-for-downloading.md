@@ -19,4 +19,6 @@ Thank you for downloading. Create your MariaDB account to receive download relea
 
 {% @marketo/form formId="4279" %}
 
+<sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
+
 {% @marketo/form formId="4316" %}

@@ -1,5 +1,7 @@
 # SQL Server and MariaDB Types Comparison
 
+{% include "https://app.gitbook.com/s/GxVnu02ec8KJuFSxmB93/~/reusable/UQS8KgfG8jtpHBvT83fL/" %}
+
 This page helps to map each SQL Server type to the matching MariaDB type.
 
 ## Numbers

@@ -34,7 +34,7 @@ Before proceeding with an upgrade, perform a full and complete backup. Confirm s
 
 Business requirements may require you to retain backups made to support upgrade and downgrade operations.
 
-Additional information regarding backing up and restoring MariaDB database products can be found in "[Recovery](../../../../kb/en/mariadb-enterprise-server/)".
+Additional information regarding backing up and restoring MariaDB database products can be found in "[Recovery](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/mariadb-enterprise-server/README.md)".
 
 ### Best Practices - Change Management
 
@@ -83,7 +83,7 @@ Details assessed during Pre-Production validation can include:
 
 MariaDB Product Notifications allow you to keep aware of new releases, including security fixes. Customers can manage MariaDB Product Notifications through the [MariaDB Customer Portal](https://customers.mariadb.com/?_ga=2.24188474.1431602578.1740983101-1710706710.1737441288).
 
-Additionally, MariaDB Enterprise Server follows an enterprise lifecycle, that provides a [predictable release schedule](broken-reference).
+Additionally, MariaDB Enterprise Server follows an enterprise lifecycle, that provides a [predictable release schedule](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-management/install-and-upgrade-mariadb/deployment-general-installing-and-upgrading-instructions/broken-reference/README.md).
 
 ## Obtaining Support
 

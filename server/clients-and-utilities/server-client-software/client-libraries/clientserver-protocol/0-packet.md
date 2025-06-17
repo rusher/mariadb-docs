@@ -31,7 +31,7 @@ As mentioned, the packet length is 3 bytes making a maximum size of (2^24 -1) by
 The principle is to split data by chunks of 16MBytes. When the server receives a packet with 0xffffff length, it will continue to read the next packet. In case of a length of exactly 16MBytes, an empty packet must terminate the sequence.
 
 Example max\_allowed\_packet is set to a value > to 40 Mbytes\
-Sending a 40M bytes packet body :![standard\_packet](../../../../.gitbook/assets/0-packet/+image/standard_packet.png)\
+Sending a 40M bytes packet body :![standard\_packet](../../../../.gitbook/assets/standard_packet.png)\
 First packet will be :
 
 ```
@@ -89,7 +89,7 @@ The server will then return an [OK\_Packet](4-server-response-packets/ok_packet.
 The server will uncompress data and then must have the same packet than if there was no compression.\
 If data size needs splitting, it's better to separate compress packet.
 
-![compress\_packet](../../../../.gitbook/assets/0-packet/+image/compress_packet.png)
+![compress\_packet](../../../../.gitbook/assets/compress_packet.png)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

@@ -8,7 +8,7 @@ MultiLineString(ls1,ls2,...)
 
 ## Description
 
-Constructs a WKB MultiLineString value using [WKB](../../../sql-structure/geometry/wkb/) [LineString](linestring.md) arguments. If any argument is not a WKB LineString, the return value is`NULL`.
+Constructs a WKB MultiLineString value using [WKB](../wkb/) [LineString](linestring.md) arguments. If any argument is not a WKB LineString, the return value is`NULL`.
 
 ## Example
 
@@ -65,6 +65,6 @@ SELECT ST_AsWKT(m) FROM mlstr_example;
 +-------------------------------------------------------------------------------------------+
 ```
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

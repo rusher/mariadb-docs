@@ -1,6 +1,6 @@
 # Creating User-Defined Functions
 
-[User-defined functions](./) allow MariaDB to be extended with a new function that works like a native (built-in) MariaDB function such as [ABS()](../../reference/sql-functions/numeric-functions/abs.md) or [CONCAT()](../../reference/sql-functions/string-functions/concat.md). It was introduced in 1998 and is generally limited to supporting features that existed at that time. There are alternative ways to add a new function: a native function, which requires modifying and compiling the server source code; a [function plugin](broken-reference); or a [stored function](../stored-routines/stored-functions/).
+[User-defined functions](./) allow MariaDB to be extended with a new function that works like a native (built-in) MariaDB function such as [ABS()](../../reference/sql-functions/numeric-functions/abs.md) or [CONCAT()](../../reference/sql-functions/string-functions/concat.md). It was introduced in 1998 and is generally limited to supporting features that existed at that time. There are alternative ways to add a new function: a native function, which requires modifying and compiling the server source code; a [function plugin](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-usage/user-defined-functions/broken-reference/README.md); or a [stored function](../stored-routines/stored-functions/).
 
 Statements making use of user-defined functions are not [safe for replication](../../ha-and-performance/standard-replication/unsafe-statements-for-statement-based-replication.md).
 
@@ -63,7 +63,7 @@ Used to add the argument to the current aggregate.
 
 ### x\_remove()
 
-Starting from [MariaDB 10.4](broken-reference), improves the support of [window functions](../../reference/sql-functions/special-functions/window-functions/) (so it is not obligatory to add it) and should remove the argument from the current aggregate.
+Starting from [MariaDB 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-usage/user-defined-functions/broken-reference/README.md), improves the support of [window functions](../../reference/sql-functions/special-functions/window-functions/) (so it is not obligatory to add it) and should remove the argument from the current aggregate.
 
 ### Description
 

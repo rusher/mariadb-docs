@@ -2,7 +2,7 @@
 
 The most recent release in the [MariaDB 5.5](changes-improvements-in-mariadb-5-5.md) series is:[**MariaDB 5.5.68**](mariadb-5568-release-notes.md) [Download Now](https://downloads.mariadb.org/mariadb/5.5.68/)
 
-[Download](https://downloads.mariadb.org/mariadb/5.5.43)[Release Notes](mariadb-5543-release-notes.md)[Changelog](../../../changelogs/changelogs-mariadb-55-series/mariadb-5543-changelog.md)[Overview of 5.5](broken-reference/)
+[Download](https://downloads.mariadb.org/mariadb/5.5.43)[Release Notes](mariadb-5543-release-notes.md)[Changelog](../../../changelogs/changelogs-mariadb-55-series/mariadb-5543-changelog.md)[Overview of 5.5](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/broken-reference/README.md)
 
 **Release date:** 1 May 2015
 
@@ -12,7 +12,7 @@ requests, that no bugs were fixed since last release that caused notable code\
 changes, and that we believe the code is ready for general usage (based on bug\
 inflow).
 
-**For a description of** [**MariaDB 5.5**](broken-reference/) **see the**[**What is MariaDB 5.5?**](broken-reference/) **page.**
+**For a description of** [**MariaDB 5.5**](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/broken-reference/README.md) **see the**[**What is MariaDB 5.5?**](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/broken-reference/README.md) **page.**
 
 For a list of changes made in this release, with links to detailed\
 information on each push, see the[MariaDB 5.5.43 Changelog](../../../changelogs/changelogs-mariadb-55-series/mariadb-5543-changelog.md).
@@ -25,7 +25,7 @@ interfaces, libraries and APIs that exist in MySQL also exist in MariaDB.
 As per the [MariaDB Deprecation Policy](../../../mariadb-platform-deprecation-policy.md), this will\
 be the final release of [MariaDB 5.5](changes-improvements-in-mariadb-5-5.md) for Fedora 19 "Schrödinger's Cat", Ubuntu\
 10.04 LTS "Lucid", and Mint 9 LTS "Isadora". When the next version of [MariaDB\
-5.5](broken-reference/) is released, repositories for these distributions will go away.
+5.5](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/broken-reference/README.md) is released, repositories for these distributions will go away.
 
 ### Updates & Bug Fixes
 
@@ -49,7 +49,7 @@ Thanks, and enjoy MariaDB!
 Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
 
 MariaDB may already be included in your favorite OS distribution. More\
-information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/readme-1)\
+information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-including-mariadb)\
 page.
 
 {% @marketo/form formid="4316" formId="4316" %}

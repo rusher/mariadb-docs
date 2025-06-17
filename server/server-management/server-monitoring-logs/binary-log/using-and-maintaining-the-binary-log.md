@@ -2,7 +2,7 @@
 
 See [Overview of the Binary Log](overview-of-the-binary-log.md) for a general overview of what the binary log is, and [Activating the Binary Log](activating-the-binary-log.md) for how to make sure it's running on your system.
 
-For details on using the binary log for replication, see the [Replication](broken-reference) section.
+For details on using the binary log for replication, see the [Replication](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-management/server-monitoring-logs/binary-log/broken-reference/README.md) section.
 
 ## Purging Log Files
 

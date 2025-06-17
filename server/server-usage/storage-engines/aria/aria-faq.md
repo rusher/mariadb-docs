@@ -2,7 +2,7 @@
 
 This FAQ provides information on the [Aria](./) storage engine.
 
-The _**Aria**_ storage engine was previously known as _**Maria**_, (see, the [Aria Name](the-aria-name.md)). In current releases of [MariaDB](../../../../kb/en/mariadb/), you can refer to the engine as Maria or Aria. As this will change in future releases, please update references in your scripts and automation to use the correct name.
+The _**Aria**_ storage engine was previously known as _**Maria**_, (see, the [Aria Name](the-aria-name.md)). In current releases of [MariaDB](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/mariadb/README.md), you can refer to the engine as Maria or Aria. As this will change in future releases, please update references in your scripts and automation to use the correct name.
 
 ### What is Aria?
 
@@ -95,7 +95,7 @@ All except Guilhem Bichot are working for [MariaDB Corporation Ab](https://maria
 
 ### What is the release policy/schedule of Aria?
 
-Aria follows the same [release criteria](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-release-criteria) as for [MariaDB](../../../../kb/en/mariadb/). Some clarifications, unique for the Aria storage engine:
+Aria follows the same [release criteria](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-release-criteria) as for [MariaDB](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/mariadb/README.md). Some clarifications, unique for the Aria storage engine:
 
 * Aria index and data file formats should be backwards and forwards compatible to ensure easy upgrades and downgrades.
 * The [log file](aria-storage-engine.md#aria-log-files) format should also be compatible, but we don't make any guarantees yet. In some cases when upgrading, you must remove the old `aria_log.%` and `maria_log.%` files before restarting MariaDB. (So far, this has only occurred in the upgrade from [MariaDB 5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-1-series/changes-improvements-in-mariadb-5-1) and [MariaDB 5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-2-series/changes-improvements-in-mariadb-5-2)).
@@ -152,7 +152,7 @@ Aria supports all aspects of MyISAM, except as noted below. This includes extern
 See:
 
 * [Aria storage engine](aria-storage-engine.md)
-* [MariaDB versus MySQL](../../../reference/storage-engines/aria/broken-reference/)
+* [MariaDB versus MySQL](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/aria/broken-reference/README.md)
 
 ### Why do you use the `TRANSACTIONAL` keyword now when Aria is not yet transactional?
 
@@ -176,7 +176,7 @@ Alternatively,
 
 ### What is going to change in later Aria main releases?
 
-The `LOCK TABLES` statement will not start a crash-safe segment. You should use [begin](../../../reference/storage-engines/aria/begin/) and [COMMIT](../../../reference/sql-statements/transactions/commit.md) instead.
+The `LOCK TABLES` statement will not start a crash-safe segment. You should use [begin](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/aria/begin/README.md) and [COMMIT](../../../reference/sql-statements/transactions/commit.md) instead.
 
 To make things future safe, you could do this:
 

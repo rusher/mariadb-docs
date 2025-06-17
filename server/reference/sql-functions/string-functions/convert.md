@@ -24,7 +24,7 @@ The type can be one of the following values:
 * SIGNED \[INTEGER]
 * UNSIGNED \[INTEGER]
 * [TIME](../../data-types/date-and-time-data-types/time.md)
-* [VARCHAR](../../data-types/string-data-types/varchar.md) (in [Oracle mode](broken-reference), from [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103))
+* [VARCHAR](../../data-types/string-data-types/varchar.md) (in [Oracle mode](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-functions/string-functions/broken-reference/README.md), from [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103))
 
 Note that in MariaDB, `INT` and `INTEGER` are the same thing.
 
@@ -69,6 +69,6 @@ SELECT LOWER(@x), LOWER(CONVERT (@x USING latin1));
 
 * [Character Sets and Collations](../../data-types/string-data-types/character-sets/)
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

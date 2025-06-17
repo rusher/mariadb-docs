@@ -14,7 +14,7 @@ CASE WHEN [condition] THEN result [WHEN [condition] THEN result ...]
 
 The first version returns the result for the first `value=compare_value` comparison that is true. The second version returns the result for the first condition that is true. If there was no matching result value, the result after ELSE is returned, or NULL if there is no ELSE part.
 
-There is also a [CASE statement](../../../server-usage/programmatic-compound-statements/case-statement.md), which differs from the CASE operator described here.
+There is also a [CASE statement](../../sql-statements/programmatic-compound-statements/case-statement.md), which differs from the CASE operator described here.
 
 ## Examples
 
@@ -61,10 +61,10 @@ SELECT
 
 ## See Also
 
-* The [CASE statement](../../../server-usage/programmatic-compound-statements/case-statement.md), which differs from the CASE operator described above.
+* The [CASE statement](../../sql-statements/programmatic-compound-statements/case-statement.md), which differs from the CASE operator described above.
 * The [IF() function](if-function.md).
 * [Operator Precedence](../../sql-structure/operators/operator-precedence.md)
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

@@ -123,7 +123,7 @@ SELECT LASTVAL(s);
 * [SETVAL()](setval.md). Set next value for the sequence.
 * [AUTO\_INCREMENT](../../../data-types/auto_increment.md)
 * [Information Schema SEQUENCES Table](../../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-sequences-table.md)
-* [Error 4084: Sequence has run out](broken-reference)
+* [Error 4084: Sequence has run out](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-structure/sequences/sequence-functions/broken-reference/README.md)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
