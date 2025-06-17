@@ -6,7 +6,7 @@ If you find issues in the documentation, please report them:
 
 1. Report only **one issue per request**. If you find multiple issues, report them one by one.\
    Only report documentation issues, not software issues or software help requests.
-2. Provide the **URL of the page** that has an issue, for example [https://mariadb.net/docs/general-resources/community/company-and-community/bug-tracking/reporting-documentation-bugs](https://mariadb.net/docs/general-resources/community/company-and-community/bug-tracking/reporting-documentation-bugs).\
+2. Provide the **URL of the page** that has an issue, for example [https://mariadb.com/docs/general-resources/about/readme/reporting-documentation-bugs](https://mariadb.com/docs/general-resources/about/readme/reporting-documentation-bugs).\
    :information\_source: When **reporting via the rating system**, the URL of the page you're on will be automatically be included in your response, so there's **no need to include the URL**.
 3. Indicate the **nature of the issue**:
    1. **Typo**, for example "known bucks should be known bugs".
