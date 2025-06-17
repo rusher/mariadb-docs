@@ -21,10 +21,6 @@ Below are links to additional documentation on the MariaDB Audit Plugin. They ex
 
 #### Tutorials
 
-Below are links to some tutorials on MariaDB's site and other sites. They may help you to get more out of the MariaDB Audit Plugin.
-
-* [Introducing the MariaDB Audit Plugin](https://mariadb.com/kb/en/resources/blog/introducing-mariadb-audit-plugin)\
-  by Anatoliy Dimitrov, September 2, 2014
 * [Activating MariaDB Audit Log](https://tunnelix.com/activating-mariadb-audit-log/)\
   by Jaykishan Mutkawoa, May 30, 2016
 * [Installing MariaDB Audit Plugin on Amazon RDS](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Appendix.MySQL.Options.AuditPlugin.html)\
@@ -32,14 +28,6 @@ Below are links to some tutorials on MariaDB's site and other sites. They may he
 
 #### Blog Articles
 
-Below are links to web log articles on the MariaDB Audit Plugin. You may find them useful in understanding better how to use the Audit Plugin. Since some of these articles are older, they won't include changes and improvements in newer versions. You can rely on the documentation pages listed above for the most current information.
-
-* [Activating Auditing for MariaDB in 5 Minutes](https://mariadb.com/kb/en/resources/blog/activating-auditing-mariadb-and-mysql-5-minutes)\
-  by Ralf Gebhardt, September 29, 2013
-* [Query and Password Filtering with the MariaDB Audit Plugin](https://mariadb.com/kb/en/resources/blog/query-and-password-filtering-mariadb-audit-plugin)\
-  by Ralf Gebhardt, May 4, 2015
-* [Set Up a Remote Log File using rsyslog](https://mariadb.com/kb/en/resources/blog/mariadb-audit-plugin-set-remote-log-file-using-rsyslog)\
-  by Ralf Gebhardt, December 16, 2013
 * [MySQL Auditing with MariaDB Auditing Plugin](https://planet.mysql.com/entry/?id=5994184)\
   by Peter Zeitsev, February 15, 2016
 
