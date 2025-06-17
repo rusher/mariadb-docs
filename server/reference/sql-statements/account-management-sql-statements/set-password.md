@@ -28,7 +28,7 @@ The argument to [PASSWORD()](../sql-functions/secondary-functions/encryption-has
 
 ## Authentication Plugin Support
 
-`SET PASSWORD` (with or without `PASSWORD()`) works for accounts authenticated via any [authentication plugin](../../plugins/authentication-plugins/) that supports passwords stored in the `[mysql.global_priv](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-global_priv-table.md)` table.
+`SET PASSWORD` (with or without `PASSWORD()`) works for accounts authenticated via any [authentication plugin](../../plugins/authentication-plugins/) that supports passwords stored in the [mysql.global_priv](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-global_priv-table.md) table.
 
 The [ed25519](../../../plugins/authentication-plugins/authentication-plugin-ed25519.md), [mysql_native_password](../../../plugins/authentication-plugins/authentication-plugin-mysql_native_password.md), and [mysql_old_password](../../../plugins/authentication-plugins/authentication-plugin-mysql_old_password.md) authentication plugins store passwords in the [mysql.global_priv](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-global_priv-table.md) table.
 
