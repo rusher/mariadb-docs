@@ -36,7 +36,7 @@ MariaDB Enterprise Server 10.3.24-8 was released on 2020-09-08.
 * Deadlock involving parallel workers, [STOP SLAVE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/replication-statements/stop-replica), and [FLUSH TABLES WITH READ LOCK](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/flush-commands/flush) ([MDEV-23089](https://jira.mariadb.org/browse/MDEV-23089))
 * Crashes when running a SQL query containing a specific subquery pattern. ([MDEV-23221](https://jira.mariadb.org/browse/MDEV-23221))
 * Dropping the adaptive hash index may cause DDL to lock up InnoDB. ([MDEV-22456](https://jira.mariadb.org/browse/MDEV-22456))
-* [RESET MASTER](https://mariadb.com/kb/en/RESET_MASTER) TO could result in a crash, when the value exceeds the max allowed 2147483647 ([MDEV-22451](https://jira.mariadb.org/browse/MDEV-22451))
+* [RESET MASTER](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/replication-statements/reset-master) TO could result in a crash, when the value exceeds the max allowed 2147483647 ([MDEV-22451](https://jira.mariadb.org/browse/MDEV-22451))
 * Crash on `WITH RECURSIVE` large query. ([MDEV-22748](https://jira.mariadb.org/browse/MDEV-22748))
 * Crash with Prepared Statement with a ? parameter inside a re-used CTE. ([MDEV-22779](https://jira.mariadb.org/browse/MDEV-22779))
 * MariaDB could crash after changing the `query_cache` size. ([MDEV-5924](https://jira.mariadb.org/browse/MDEV-5924))
@@ -65,16 +65,16 @@ MariaDB Enterprise Server 10.3.24-8 was released on 2020-09-08.
 
 * [mariabackup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup) [--tls-version](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/enterprise-server/10-3/broken-reference/README.md) command-line option added
 * [max\_sort\_length](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#max_sort_length) system variable minimum value changed from 4 to 8
-* [mysql\_upgrade --tls-version](https://mariadb.com/kb/en/mariadb_upgrade) command-line option added
+* [mysql\_upgrade --tls-version](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/deployment-tools/mariadb-upgrade) command-line option added
 * [mysql --tls-version](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/mariadb/README.md) command-line option added
-* [mysqladmin --tls-version](https://mariadb.com/kb/en/mariadbadmin) command-line option added
-* [mysqlbinlog --tls-version](https://mariadb.com/kb/en/mariadbbinlog) command-line option added
-* [mysqlcheck --tls-version](https://mariadb.com/kb/en/mariadbcheck) command-line option added
+* [mysqladmin --tls-version](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/administrative-tools/mariadb-admin#mariadb-admin) command-line option added
+* [mysqlbinlog --tls-version](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/logging-tools/mariadb-binlog) command-line option added
+* [mysqlcheck --tls-version](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/table-tools/mariadb-check) command-line option added
 * [mysqld --tls-version](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/starting-and-stopping-mariadb/mariadbd) command-line option added
-* [mysqldump --tls-version](https://mariadb.com/kb/en/mariadbdump) command-line option added
-* [mysqlimport --tls-version](https://mariadb.com/kb/en/mariadbimport) command-line option added
-* [mysqlshow --tls-version](https://mariadb.com/kb/en/mariadbshow) command-line option added
-* [mysqlslap --tls-version](https://mariadb.com/kb/en/mariadbslap) command-line option added
+* [mysqldump --tls-version](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/backup-restore-and-import-clients/mariadb-dump) command-line option added
+* [mysqlimport --tls-version](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/backup-restore-and-import-clients/mariadb-import) command-line option added
+* [mysqlshow --tls-version](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/administrative-tools/mariadb-show) command-line option added
+* [mysqlslap --tls-version](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/testing-tools/mariadb-slap) command-line option added
 * [tls-version](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/ssltls-system-variables#tls_version) system variable added
 
 ## \* Platforms
