@@ -2,7 +2,7 @@
 
 The most recent [_**Stable**_](../../../mariadb-release-criteria.md) _**(GA)**_ release of MariaDB Connector/C is:[**MariaDB Connector/C 3.4.5**](../mariadb-connector-c-3-4-release-notes/mariadb-connector-c-3-4-5-release-notes.md)
 
-[Download](https://downloads.mariadb.org/connector-c/2.0.0)[Release Notes](../mariadb-client-library-for-c-200-release-notes.md)[Changelog](mariadb-client-library-for-c-200-changelog.md)[About MariaDB Connector/C](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/about-mariadb-connector-c/README.md)
+[Download](https://downloads.mariadb.org/connector-c/2.0.0)[Release Notes](../mariadb-client-library-for-c-200-release-notes.md)[Changelog](mariadb-client-library-for-c-200-changelog.md)[About MariaDB Connector/C](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/connectors-quickstart-guides/mariadb-connector-c-guide)
 
 **Release date:** 2 Apr 2014
 
