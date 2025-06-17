@@ -39,7 +39,7 @@ Attachments in JIRA are also public.
 
 Access to a comment can be restricted to a certain group (e.g. Developers only), but the existing groups are rather wide, so you should not rely on it either.
 
-If you have private information -- SQL fragments, logs, database dumps, etc. -- that you are willing to share with MariaDB team, but not with the entire world, put it into a file, compress if necessary, upload to the [mariadb-ftp-server](https://mariadb.com/kb/en/mariadb-ftp-server/), and just mention it in the JIRA description. This way only the MariaDB team will have access to it.
+If you have private information -- SQL fragments, logs, database dumps, etc. -- that you are willing to share with MariaDB team, but not with the entire world, put it into a file, compress if necessary, upload to the [mariadb-ftp-server](../../contributing-participating/mariadb-public-ftp-server.md), and just mention it in the JIRA description. This way only the MariaDB team will have access to it.
 
 ### Reporting Security Vulnerabilities
 
@@ -57,7 +57,7 @@ A good bug report consists of:
 4. The content of your my.cnf file or alternatively the output from `mariadbd --print-defaults` or `SHOW VARIABLES`.
 5. Any background information you can provide ([stack trace](https://mariadb.com/kb/en/how-to-produce-a-full-stack-trace-for-mariadbd-the-mariadb-server), tables, table definitions (`[show-create-table SHOW CREATE TABLE {tablename}](https://mariadb.com/kb/en/show-create-table_SHOW_CREATE_TABLE_%7Btablename%7D)`), data dumps, query logs).
 6. If the bug is about server producing wrong query results: the actual result (what you are getting), the expected result (what you think should be produced instead), and, unless it is obvious, the reason why you think the current result is wrong.
-7. If the bug about a performance problem, e.g. a certain query is slower on one version than on another, output of `EXPLAIN EXTENDED <query>` on both servers. If its a `SELECT` query use [analyze-format-json ANALYZE FORMAT=JSON](https://mariadb.com/kb/en/analyze-format-json_ANALYZE_FORMAT%3DJSON).
+7. If the bug about a performance problem, e.g. a certain query is slower on one version than on another, output of `EXPLAIN EXTENDED <query>` on both servers. If its a `SELECT` query use [analyze-format-json ANALYZE FORMAT=JSON](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/analyze-and-explain-statements/analyze-format-json).
 8. A test case or some other way to repeat the bug. This should preferably be in plain SQL or in mysqltest format. See mysqltest/README for information about this.
 9. If it's impossible to do a test case, then providing us with a [backtrace information](../../../development-articles/debugging-mariadb/how-to-produce-a-full-stack-trace-for-mariadbd.md) would be of great help.
 
