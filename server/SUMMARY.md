@@ -548,7 +548,7 @@
         * [Migrating to MariaDB from MySQL - Obsolete Articles](server-management/install-and-upgrade-mariadb/migrating-to-mariadb/moving-from-mysql/migrating-to-mariadb-from-mysql-obsolete-articles/README.md)
           * [Screencast for Upgrading MySQL to MariaDB (Obsolete)](server-management/install-and-upgrade-mariadb/migrating-to-mariadb/moving-from-mysql/migrating-to-mariadb-from-mysql-obsolete-articles/screencast-for-upgrading-mysql-to-mariadb-obsolete.md)
           * [Upgrading from MySQL 5.7 to MariaDB 10.2](server-management/install-and-upgrade-mariadb/migrating-to-mariadb/moving-from-mysql/migrating-to-mariadb-from-mysql-obsolete-articles/upgrading-from-mysql-57-to-mariadb-102.md)
-          * [upgrading-to-mariadb-from-mysql-50-or-older](server-management/install-and-upgrade-mariadb/migrating-to-mariadb/moving-from-mysql/migrating-to-mariadb-from-mysql-obsolete-articles/upgrading-to-mariadb-from-mysql-50-or-older.md)
+          * [Upgrading to MariaDB From MySQL 5.0 or Older](server-management/install-and-upgrade-mariadb/migrating-to-mariadb/moving-from-mysql/migrating-to-mariadb-from-mysql-obsolete-articles/upgrading-to-mariadb-from-mysql-50-or-older.md)
       * [Migrating to MariaDB from PostgreSQL](server-management/install-and-upgrade-mariadb/migrating-to-mariadb/migrating-to-mariadb-from-postgresql.md)
       * [Migrating to MariaDB from Oracle](server-management/install-and-upgrade-mariadb/migrating-to-mariadb/migrating-to-mariadb-from-oracle/README.md)
         * [Oracle XE 11.2. and MariaDB 10.1 integration on Ubuntu 14.04 and Debian systems](server-management/install-and-upgrade-mariadb/migrating-to-mariadb/migrating-to-mariadb-from-oracle/oracle-xe-112-and-mariadb-101-integration-on-ubuntu-1404-and-debian-systems.md)

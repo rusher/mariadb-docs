@@ -1,6 +1,4 @@
-# upgrading-to-mariadb-from-mysql-50-or-older
-
-## Upgrading to MariaDB From MySQL 5.0 or Older
+# Upgrading to MariaDB From MySQL 5.0 or Older
 
 If you upgrade to [MariaDB 5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-1-series/changes-improvements-in-mariadb-5-1) from MySQL 5.1 you [don't have to do anything](../upgrading-from-mysql-to-mariadb.md) with your data or MySQL clients. Things should "just work".
 
