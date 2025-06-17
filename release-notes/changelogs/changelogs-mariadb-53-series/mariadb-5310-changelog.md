@@ -59,7 +59,7 @@ modified in that revision.
     * Merge [MariaDB 5.1.66](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-1-series/mariadb-5166-release-notes.md) -> 5.2.12
     * [Revision #2643.153.22](https://bazaar.launchpad.net/~maria-captains/maria/5.3/revision/2643.153.22) \[merge]\
       Tue 2012-11-06 11:52:55 +0200
-      * Merge MySQL 5.1.66 -> [MariaDB 5.1.65](https://mariadb.com/kb/en/mariadb-5165-release-notes/)
+      * Merge MySQL 5.1.66 -> MariaDB 5.1.65
     * [Revision #2643.153.21](https://bazaar.launchpad.net/~maria-captains/maria/5.3/revision/2643.153.21) \[merge]\
       Thu 2012-11-01 16:20:09 +0100
       * Merge XtraDB from Percona-Server 5.1.66-rel14.1 into [MariaDB 5.1](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-1-series/changes-improvements-in-mariadb-5-1.md).
