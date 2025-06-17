@@ -24,7 +24,7 @@ With no `FOR` clause, this statement sets the password for the current user. Any
 
 With a `FOR` clause, this statement sets the password for a specific account on the current server host. Only clients that have the `UPDATE` privilege for the `mysql` database can do this. The user value should be given in `user_name@host_name` format, where `user_name` and `host_name` are exactly as they are listed in the User and Host columns of the [mysql.user](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md) table (or view in current versions) entry.
 
-The argument to [PASSWORD()](../sql-functions/secondary-functions/encryption-hashing-and-compression-functions/password.md) and the password given to MariaDB clients can be of arbitrary length.
+The argument to [PASSWORD()](../../sql-functions/secondary-functions/encryption-hashing-and-compression-functions/password.md) and the password given to MariaDB clients can be of arbitrary length.
 
 ## Authentication Plugin Support
 
