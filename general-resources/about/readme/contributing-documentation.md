@@ -14,7 +14,7 @@ While the documentation is mainly maintained by the documentation team at MariaD
 
 Contributing is as simple as this:
 
-* Access [this repository](#user-content-fn-1)[^1], log in with your GitHub account.
+* Access [this repository](https://github.com/mariadb-corporation/mariadb-docs), log in with your GitHub account.
 * Find the page in the documentation that you want to edit, correct, or amend.
 * Make a pull request, edit, and submit.
 
@@ -25,7 +25,5 @@ Before you start making larger contributions, make yourself familiar with [the b
 The source format of pages is Markdown. How to format text is [on this GitBook page](https://gitbook.com/docs/creating-content/formatting/markdown). A Markdown cheat sheet with a 10-minute tutorial and a Markdown "playground" [can be found here](https://commonmark.org/help/).
 
 Read our [style guide](documentation-style-guide.md), too. (It's short!)
-
-[^1]: Provide GitHub link
 
 {% @marketo/form formId="4316" %}
