@@ -14,7 +14,7 @@ layout:
 
 # MariaDB ColumnStore Release Notes
 
-Release notes and other documentation for ColumnStore is also available in the Enterprise docs section of the MariaDB website. For example:
+Release notes and other documentation for ColumnStore.
 
 * [ColumnStore 23.10 Release Notes](mariadb-columnstore-23-10-release-notes/)
 * [ColumnStore 23.02 Release Notes](columnstore-23-02/)
