@@ -36,7 +36,7 @@ If you run `SET PASSWORD` on an account that authenticates with one of these aut
 
 The [unix_socket](../../../plugins/authentication-plugins/authentication-plugin-unix-socket.md), [named_pipe](../../../plugins/authentication-plugins/authentication-plugin-named-pipe.md), [gssapi](../../../plugins/authentication-plugins/authentication-plugin-gssapi.md), and [pam](../../../plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam.md) authentication plugins do **not** store passwords in the [mysql.global_priv](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-global_priv-table.md) table. These authentication plugins rely on other methods to authenticate the user.
 
-If you attempt to run `SET PASSWORD` on an account that authenticates with one of these authentication plugins that doesn't store a password in the `[mysql.global_priv](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-global_priv-table.md)` table, then MariaDB Server will issue an error like the following:
+If you attempt to run `SET PASSWORD` on an account that authenticates with one of these authentication plugins that doesn't store a password in the [mysql.global_priv](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-global_priv-table.md) table, then MariaDB Server will issue an error like the following:
 
 ```sql
 SET PASSWORD is ignored for users authenticating via unix_socket plugin
