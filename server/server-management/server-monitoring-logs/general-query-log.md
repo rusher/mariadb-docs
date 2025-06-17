@@ -61,11 +61,11 @@ log-basename=mariadb
 general_log
 ```
 
-The [log-basename](../server-management/starting-and-stopping-mariadb/mariadbd-options.md) cannot be an absolute path. The log file name is relative to the [datadir](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#datadir) directory.
+The [log-basename](../../server-management/starting-and-stopping-mariadb/mariadbd-options.md#log-basename) cannot be an absolute path. The log file name is relative to the [datadir](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#datadir) directory.
 
 ## Choosing the General Query Log Output Destination
 
-The general query log can either be written to a file on disk, or it can be written to the [general_log](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlgeneral_log-table.md) table in the [mysql](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/README.md) database. To choose the general query log output destination, set the [log_output](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#log_output) system variable.
+The general query log can either be written to a file on disk, or it can be written to the [general_log](../../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlgeneral_log-table.md) table in the [mysql](../../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/README.md) database. To choose the general query log output destination, set the [log_output](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#log_output) system variable.
 
 ### Writing the General Query Log to a File
 
@@ -87,7 +87,7 @@ general_log_file=queries.log
 
 ### Writing the General Query Log to a Table
 
-The general query log can either be written to the [general_log](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlgeneral_log-table.md) table in the [mysql](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/README.md) database by setting the [log_output](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#log_output) system variable to `TABLE`. It can be changed dynamically with [SET GLOBAL](../../reference/sql-statements/administrative-sql-statements/set-commands/set.md#global-session). For example:
+The general query log can either be written to the [general_log](../../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlgeneral_log-table.md) table in the [mysql](../../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/README.md) database by setting the [log_output](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#log_output) system variable to `TABLE`. It can be changed dynamically with [SET GLOBAL](../../reference/sql-statements/administrative-sql-statements/set-commands/set.md#global-session). For example:
 
 ```
 SET GLOBAL log_output='TABLE';
