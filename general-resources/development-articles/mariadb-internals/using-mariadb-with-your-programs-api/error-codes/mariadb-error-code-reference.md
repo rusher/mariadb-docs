@@ -132,105 +132,103 @@ New error codes are being continually being added as new features are added. For
 | [1101](mariadb-error-codes-1100-to-1199/e1101.md) |          | ER\_UNUSED\_17         | You should never see it                                                                                                           |
 | [1102](mariadb-error-codes-1100-to-1199/e1102.md) | 42000    | ER\_WRONG\_DB\_NAME    | Incorrect database name '%s'                                                                                                      |
 | [1103](mariadb-error-codes-1100-to-1199/e1103.md) | 42000    | ER\_WRONG\_TABLE\_NAME | Incorrect table name '%s'                                                                                                         |
-| [1104](mariadb-error-codes-1100-to-1199/e1104.md) | 42000    | ER\_TOO\_BIG\_SELECT   | The SELECT would examine more than MAX\_JOIN\_SIZE rows; check your WHERE and use SET SQL\_BIG\_SELECTS=1 or SET MAX\_JOIN\_SIZE= |
+| [1104](mariadb-error-codes-1100-to-1199/e1104.md) | 42000    | ER\_TOO\_BIG\_SELECT   | The SELECT would examine more than MAX\_JOIN\_SIZE rows; check your WHERE and use SET SQL\_BIG\_SELECTS=1 or SET MAX\_JOIN\_SIZE= ## if the SELECT is okay |
 
-## if the SELECT is okay |
-
-\| [1105](mariadb-error-codes-1100-to-1199/e1105.md) | HY000 | ER\_UNKNOWN\_ERROR | Unknown error |\
-\| [1106](mariadb-error-codes-1100-to-1199/e1106.md) | 42000 | ER\_UNKNOWN\_PROCEDURE | Unknown procedure '%s' |\
-\| [1107](mariadb-error-codes-1100-to-1199/e1107.md) | 42000 | ER\_WRONG\_PARAMCOUNT\_TO\_PROCEDURE | Incorrect parameter count to procedure '%s' |\
-\| [1108](mariadb-error-codes-1100-to-1199/e1108.md) | HY000 | ER\_WRONG\_PARAMETERS\_TO\_PROCEDURE | Incorrect parameters to procedure '%s' |\
-\| [1109](mariadb-error-codes-1100-to-1199/e1109.md) | 42S02 | ER\_UNKNOWN\_TABLE | Unknown table '%s' in %s |\
-\| [1110](mariadb-error-codes-1100-to-1199/e1110.md) | 42000 | ER\_FIELD\_SPECIFIED\_TWICE | Column '%s' specified twice |\
-\| [1111](mariadb-error-codes-1100-to-1199/e1111.md) | HY000 | ER\_INVALID\_GROUP\_FUNC\_USE | Invalid use of group function |\
-\| [1112](mariadb-error-codes-1100-to-1199/e1112.md) | 42000 | ER\_UNSUPPORTED\_EXTENSION | Table '%s' uses an extension that doesn't exist in this MariaDB version |\
-\| [1113](mariadb-error-codes-1100-to-1199/e1113.md) | 42000 | ER\_TABLE\_MUST\_HAVE\_COLUMNS | A table must have at least 1 column |\
-\| [1114](mariadb-error-codes-1100-to-1199/e1114.md) | HY000 | ER\_RECORD\_FILE\_FULL | The table '%s' is full |\
-\| [1115](mariadb-error-codes-1100-to-1199/e1115.md) | 42000 | ER\_UNKNOWN\_CHARACTER\_SET | Unknown character set: '%s' |\
-\| [1116](mariadb-error-codes-1100-to-1199/e1116.md) | HY000 | ER\_TOO\_MANY\_TABLES | Too many tables; MariaDB can only use %d tables in a join |\
-\| [1117](mariadb-error-codes-1100-to-1199/e1117.md) | HY000 | ER\_TOO\_MANY\_FIELDS | Too many columns |\
-\| [1118](mariadb-error-codes-1100-to-1199/e1118.md) | 42000 | ER\_TOO\_BIG\_ROWSIZE | Row size too large. The maximum row size for the used table type, not counting BLOBs, is %ld. You have to change some columns to TEXT or BLOBs |\
-\| [1119](mariadb-error-codes-1100-to-1199/e1119.md) | HY000 | ER\_STACK\_OVERRUN | Thread stack overrun: Used: %ld of a %ld stack. Use 'mysqld --thread\_stack=#' to specify a bigger stack if needed |\
-\| [1120](mariadb-error-codes-1100-to-1199/e1120.md) | 42000 | ER\_WRONG\_OUTER\_JOIN | Cross dependency found in OUTER JOIN; examine your ON conditions |\
-\| [1121](mariadb-error-codes-1100-to-1199/e1121.md) | 42000 | ER\_NULL\_COLUMN\_IN\_INDEX | Table handler doesn't support NULL in given index. Please change column '%s' to be NOT NULL or use another handler |\
-\| [1122](mariadb-error-codes-1100-to-1199/e1122.md) | HY000 | ER\_CANT\_FIND\_UDF | Can't load function '%s' |\
-\| [1123](mariadb-error-codes-1100-to-1199/e1123.md) | HY000 | ER\_CANT\_INITIALIZE\_UDF | Can't initialize function '%s'; %s |\
-\| [1124](mariadb-error-codes-1100-to-1199/e1124.md) | HY000 | ER\_UDF\_NO\_PATHS | No paths allowed for shared library |\
-\| [1125](mariadb-error-codes-1100-to-1199/e1125.md) | HY000 | ER\_UDF\_EXISTS | Function '%s' already exists |\
-\| [1126](mariadb-error-codes-1100-to-1199/e1126.md) | HY000 | ER\_CANT\_OPEN\_LIBRARY | Can't open shared library '%s' (Errno: %d %s) |\
-\| [1127](mariadb-error-codes-1100-to-1199/e1127.md) | HY000 | ER\_CANT\_FIND\_DL\_ENTRY | Can't find symbol '%s' in library |\
-\| [1128](mariadb-error-codes-1100-to-1199/e1128.md) | HY000 | ER\_FUNCTION\_NOT\_DEFINED | Function '%s' is not defined |\
-\| [1129](mariadb-error-codes-1100-to-1199/e1129.md) | HY000 | ER\_HOST\_IS\_BLOCKED | Host '%s' is blocked because of many connection errors; unblock with 'mysqladmin flush-hosts' |\
-\| [1130](mariadb-error-codes-1100-to-1199/e1130.md) | HY000 | ER\_HOST\_NOT\_PRIVILEGED | Host '%s' is not allowed to connect to this MariaDB server |\
-\| [1131](mariadb-error-codes-1100-to-1199/e1131.md) | 42000 | ER\_PASSWORD\_ANONYMOUS\_USER | You are using MariaDB as an anonymous user and anonymous users are not allowed to change passwords |\
-\| [1132](mariadb-error-codes-1100-to-1199/e1132.md) | 42000 | ER\_PASSWORD\_NOT\_ALLOWED | You must have privileges to update tables in the mysql database to be able to change passwords for others |\
-\| [1133](mariadb-error-codes-1100-to-1199/e1133.md) | 42000 | ER\_PASSWORD\_NO\_MATCH | Can't find any matching row in the user table |\
-\| [1134](mariadb-error-codes-1100-to-1199/e1134.md) | HY000 | ER\_UPDATE\_INF | Rows matched: %ld Changed: %ld Warnings: %ld |\
-\| [1135](mariadb-error-codes-1100-to-1199/e1135.md) | HY000 | ER\_CANT\_CREATE\_THREAD | Can't create a new thread (Errno %d); if you are not out of available memory, you can consult the manual for a possible OS-dependent bug |\
-\| [1136](mariadb-error-codes-1100-to-1199/e1136.md) | 21S01 | ER\_WRONG\_VALUE\_COUNT\_ON\_ROW | Column count doesn't match value count at row %ld |\
-\| [1137](mariadb-error-codes-1100-to-1199/e1137.md) | HY000 | ER\_CANT\_REOPEN\_TABLE | Can't reopen table: '%s' |\
-\| [1138](mariadb-error-codes-1100-to-1199/e1138.md) | 22004 | ER\_INVALID\_USE\_OF\_NULL | Invalid use of NULL value |\
-\| [1139](mariadb-error-codes-1100-to-1199/e1139.md) | 42000 | ER\_REGEXP\_ERROR | Got error '%s' from regexp |\
-\| [1140](mariadb-error-codes-1100-to-1199/e1140.md) | 42000 | ER\_MIX\_OF\_GROUP\_FUNC\_AND\_FIELDS | Mixing of GROUP columns (MIN(),MAX(),COUNT(),...) with no GROUP columns is illegal if there is no GROUP BY clause |\
-\| [1141](mariadb-error-codes-1100-to-1199/e1141.md) | 42000 | ER\_NONEXISTING\_GRANT | There is no such grant defined for user '%s' on host '%s' |\
-\| [1142](mariadb-error-codes-1100-to-1199/e1142.md) | 42000 | ER\_TABLEACCESS\_DENIED\_ERROR | %s command denied to user '%s'@'%s' for table '%s' |\
-\| [1143](mariadb-error-codes-1100-to-1199/e1143.md) | 42000 | ER\_COLUMNACCESS\_DENIED\_ERROR | %s command denied to user '%s'@'%s' for column '%s' in table '%s' |\
-\| [1144](mariadb-error-codes-1100-to-1199/e1144.md) | 42000 | ER\_ILLEGAL\_GRANT\_FOR\_TABLE | Illegal GRANT/REVOKE command; please consult the manual to see which privileges can be used |\
-\| [1145](mariadb-error-codes-1100-to-1199/e1145.md) | 42000 | ER\_GRANT\_WRONG\_HOST\_OR\_USER | The host or user argument to GRANT is too long |\
-\| [1146](mariadb-error-codes-1100-to-1199/e1146.md) | 42S02 | ER\_NO\_SUCH\_TABLE | Table '%s.%s' doesn't exist |\
-\| [1147](mariadb-error-codes-1100-to-1199/e1147.md) | 42000 | ER\_NONEXISTING\_TABLE\_GRANT | There is no such grant defined for user '%s' on host '%s' on table '%s' |\
-\| [1148](mariadb-error-codes-1100-to-1199/e1148.md) | 42000 | ER\_NOT\_ALLOWED\_COMMAND | The used command is not allowed with this MariaDB version |\
-\| [1149](mariadb-error-codes-1100-to-1199/e1149.md) | 42000 | ER\_SYNTAX\_ERROR | You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use |\
-\| [1150](mariadb-error-codes-1100-to-1199/e1150.md) | HY000 | ER\_DELAYED\_CANT\_CHANGE\_LOCK | Delayed insert thread couldn't get requested lock for table %s |\
-\| [1151](mariadb-error-codes-1100-to-1199/e1151.md) | HY000 | ER\_TOO\_MANY\_DELAYED\_THREADS | Too many delayed threads in use |\
-\| [1152](mariadb-error-codes-1100-to-1199/e1152.md) | 08S01 | ER\_ABORTING\_CONNECTION | Aborted connection %ld to db: '%s' user: '%s' (%s) |\
-\| [1153](mariadb-error-codes-1100-to-1199/e1153.md) | 08S01 | ER\_NET\_PACKET\_TOO\_LARGE | Got a packet bigger than 'max\_allowed\_packet' bytes |\
-\| [1154](mariadb-error-codes-1100-to-1199/e1154.md) | 08S01 | ER\_NET\_READ\_ERROR\_FROM\_PIPE | Got a read error from the connection pipe |\
-\| [1155](mariadb-error-codes-1100-to-1199/e1155.md) | 08S01 | ER\_NET\_FCNTL\_ERROR | Got an error from fcntl() |\
-\| [1156](mariadb-error-codes-1100-to-1199/e1156.md) | 08S01 | ER\_NET\_PACKETS\_OUT\_OF\_ORDER | Got packets out of order |\
-\| [1157](mariadb-error-codes-1100-to-1199/e1157.md) | 08S01 | ER\_NET\_UNCOMPRESS\_ERROR | Couldn't uncompress communication packet |\
-\| [1158](mariadb-error-codes-1100-to-1199/e1158.md) | 08S01 | ER\_NET\_READ\_ERROR | Got an error reading communication packets |\
-\| [1159](mariadb-error-codes-1100-to-1199/e1159.md) | 08S01 | ER\_NET\_READ\_INTERRUPTED | Got timeout reading communication packets |\
-\| [1160](mariadb-error-codes-1100-to-1199/e1160.md) | 08S01 | ER\_NET\_ERROR\_ON\_WRITE | Got an error writing communication packets |\
-\| [1161](mariadb-error-codes-1100-to-1199/e1161.md) | 08S01 | ER\_NET\_WRITE\_INTERRUPTED | Got timeout writing communication packets |\
-\| [1162](mariadb-error-codes-1100-to-1199/e1162.md) | 42000 | ER\_TOO\_LONG\_STRING | Result string is longer than 'max\_allowed\_packet' bytes |\
-\| [1163](mariadb-error-codes-1100-to-1199/e1163.md) | 42000 | ER\_TABLE\_CANT\_HANDLE\_BLOB | The used table type doesn't support BLOB/TEXT columns |\
-\| [1164](mariadb-error-codes-1100-to-1199/e1164.md) | 42000 | ER\_TABLE\_CANT\_HANDLE\_AUTO\_INCREMENT | The used table type doesn't support AUTO\_INCREMENT columns |\
-\| [1165](mariadb-error-codes-1100-to-1199/e1165.md) | HY000 | ER\_DELAYED\_INSERT\_TABLE\_LOCKED | INSERT DELAYED can't be used with table '%s' because it is locked with LOCK TABLES |\
-\| [1166](mariadb-error-codes-1100-to-1199/e1166.md) | 42000 | ER\_WRONG\_COLUMN\_NAME | Incorrect column name '%s' |\
-\| [1167](mariadb-error-codes-1100-to-1199/e1167.md) | 42000 | ER\_WRONG\_KEY\_COLUMN | The used storage engine can't index column '%s' |\
-\| [1168](mariadb-error-codes-1100-to-1199/e1168.md) | HY000 | ER\_WRONG\_MRG\_TABLE | Unable to open underlying table which is differently defined or of non-MyISAM type or doesn't exist |\
-\| [1169](mariadb-error-codes-1100-to-1199/e1169.md) | 23000 | ER\_DUP\_UNIQUE | Can't write, because of unique constraint, to table '%s' |\
-\| [1170](mariadb-error-codes-1100-to-1199/e1170.md) | 42000 | ER\_BLOB\_KEY\_WITHOUT\_LENGTH | BLOB/TEXT column '%s' used in key specification without a key length |\
-\| [1171](mariadb-error-codes-1100-to-1199/e1171.md) | 42000 | ER\_PRIMARY\_CANT\_HAVE\_NULL | All parts of a PRIMARY KEY must be NOT NULL; if you need NULL in a key, use UNIQUE instead |\
-\| [1172](mariadb-error-codes-1100-to-1199/e1172.md) | 42000 | ER\_TOO\_MANY\_ROWS | Result consisted of more than one row |\
-\| [1173](mariadb-error-codes-1100-to-1199/e1173.md) | 42000 | ER\_REQUIRES\_PRIMARY\_KEY | This table type requires a primary key |\
-\| [1174](mariadb-error-codes-1100-to-1199/e1174.md) | HY000 | ER\_NO\_RAID\_COMPILED | This version of MariaDB is not compiled with RAID support |\
-\| [1175](mariadb-error-codes-1100-to-1199/e1175.md) | HY000 | ER\_UPDATE\_WITHOUT\_KEY\_IN\_SAFE\_MODE | You are using safe update mode and you tried to update a table without a WHERE that uses a KEY column |\
-\| [1176](mariadb-error-codes-1100-to-1199/e1176.md) | 42000 | ER\_KEY\_DOES\_NOT\_EXITS | Key '%s' doesn't exist in table '%s' |\
-\| [1177](mariadb-error-codes-1100-to-1199/e1177.md) | 42000 | ER\_CHECK\_NO\_SUCH\_TABLE | Can't open table |\
-\| [1178](mariadb-error-codes-1100-to-1199/e1178.md) | 42000 | ER\_CHECK\_NOT\_IMPLEMENTED | The storage engine for the table doesn't support %s |\
-\| [1179](mariadb-error-codes-1100-to-1199/e1179.md) | 25000 | ER\_CANT\_DO\_THIS\_DURING\_AN\_TRANSACTION | You are not allowed to execute this command in a transaction |\
-\| [1180](mariadb-error-codes-1100-to-1199/e1180.md) | HY000 | ER\_ERROR\_DURING\_COMMIT | Got error %d during COMMIT |\
-\| [1181](mariadb-error-codes-1100-to-1199/e1181.md) | HY000 | ER\_ERROR\_DURING\_ROLLBACK | Got error %d during ROLLBACK |\
-\| [1182](mariadb-error-codes-1100-to-1199/e1182.md) | HY000 | ER\_ERROR\_DURING\_FLUSH\_LOGS | Got error %d during FLUSH\_LOGS |\
-\| [1183](mariadb-error-codes-1100-to-1199/e1183.md) | HY000 | ER\_ERROR\_DURING\_CHECKPOINT | Got error %d during CHECKPOINT |\
-\| [1184](mariadb-error-codes-1100-to-1199/e1184.md) | 08S01 | ER\_NEW\_ABORTING\_CONNECTION | Aborted connection %ld to db: '%s' user: '%s' host: '%s' (%s) |\
-\| [1185](mariadb-error-codes-1100-to-1199/e1185.md) | | ER\_UNUSED\_10 | You should never see it |\
-\| [1186](mariadb-error-codes-1100-to-1199/e1186.md) | HY000 | ER\_FLUSH\_MASTER\_BINLOG\_CLOSED | Binlog closed, cannot RESET MASTER |\
-\| [1187](mariadb-error-codes-1100-to-1199/e1187.md) | HY000 | ER\_INDEX\_REBUILD | Failed rebuilding the index of dumped table '%s' |\
-\| [1188](mariadb-error-codes-1100-to-1199/e1188.md) | HY000 | ER\_MASTER | Error from master: '%s' |\
-\| [1189](mariadb-error-codes-1100-to-1199/e1189.md) | 08S01 | ER\_MASTER\_NET\_READ | Net error reading from master |\
-\| [1190](mariadb-error-codes-1100-to-1199/e1190.md) | 08S01 | ER\_MASTER\_NET\_WRITE | Net error writing to master |\
-\| [1191](mariadb-error-codes-1100-to-1199/e1191.md) | HY000 | ER\_FT\_MATCHING\_KEY\_NOT\_FOUND | Can't find FULLTEXT index matching the column list |\
-\| [1192](mariadb-error-codes-1100-to-1199/e1192.md) | HY000 | ER\_LOCK\_OR\_ACTIVE\_TRANSACTION | Can't execute the given command because you have active locked tables or an active transaction |\
-\| [1193](mariadb-error-codes-1100-to-1199/e1193.md) | HY000 | ER\_UNKNOWN\_SYSTEM\_VARIABLE | Unknown system variable '%s' |\
-\| [1194](mariadb-error-codes-1100-to-1199/e1194.md) | HY000 | ER\_CRASHED\_ON\_USAGE | Table '%s' is marked as crashed and should be repaired |\
-\| [1195](mariadb-error-codes-1100-to-1199/e1195.md) | HY000 | ER\_CRASHED\_ON\_REPAIR | Table '%s' is marked as crashed and last (automatic?) repair failed |\
-\| [1196](mariadb-error-codes-1100-to-1199/e1196.md) | HY000 | ER\_WARNING\_NOT\_COMPLETE\_ROLLBACK | Some non-transactional changed tables couldn't be rolled back |\
-\| [1197](mariadb-error-codes-1100-to-1199/e1197.md) | HY000 | ER\_TRANS\_CACHE\_FULL | Multi-statement transaction required more than 'max\_binlog\_cache\_size' bytes of storage; increase this mysqld variable and try again |\
-\| [1198](mariadb-error-codes-1100-to-1199/e1198.md) | HY000 | ER\_SLAVE\_MUST\_STOP | This operation cannot be performed with a running slave; run STOP SLAVE first |\
-\| [1199](mariadb-error-codes-1100-to-1199/e1199.md) | HY000 | ER\_SLAVE\_NOT\_RUNNING | This operation requires a running slave; configure slave and do START SLAVE |
+| [1105](mariadb-error-codes-1100-to-1199/e1105.md) | HY000 | ER\_UNKNOWN\_ERROR | Unknown error |
+| [1106](mariadb-error-codes-1100-to-1199/e1106.md) | 42000 | ER\_UNKNOWN\_PROCEDURE | Unknown procedure '%s' |
+| [1107](mariadb-error-codes-1100-to-1199/e1107.md) | 42000 | ER\_WRONG\_PARAMCOUNT\_TO\_PROCEDURE | Incorrect parameter count to procedure '%s' |
+| [1108](mariadb-error-codes-1100-to-1199/e1108.md) | HY000 | ER\_WRONG\_PARAMETERS\_TO\_PROCEDURE | Incorrect parameters to procedure '%s' |
+| [1109](mariadb-error-codes-1100-to-1199/e1109.md) | 42S02 | ER\_UNKNOWN\_TABLE | Unknown table '%s' in %s |
+| [1110](mariadb-error-codes-1100-to-1199/e1110.md) | 42000 | ER\_FIELD\_SPECIFIED\_TWICE | Column '%s' specified twice |
+| [1111](mariadb-error-codes-1100-to-1199/e1111.md) | HY000 | ER\_INVALID\_GROUP\_FUNC\_USE | Invalid use of group function |
+| [1112](mariadb-error-codes-1100-to-1199/e1112.md) | 42000 | ER\_UNSUPPORTED\_EXTENSION | Table '%s' uses an extension that doesn't exist in this MariaDB version |
+| [1113](mariadb-error-codes-1100-to-1199/e1113.md) | 42000 | ER\_TABLE\_MUST\_HAVE\_COLUMNS | A table must have at least 1 column |
+| [1114](mariadb-error-codes-1100-to-1199/e1114.md) | HY000 | ER\_RECORD\_FILE\_FULL | The table '%s' is full |
+| [1115](mariadb-error-codes-1100-to-1199/e1115.md) | 42000 | ER\_UNKNOWN\_CHARACTER\_SET | Unknown character set: '%s' |
+| [1116](mariadb-error-codes-1100-to-1199/e1116.md) | HY000 | ER\_TOO\_MANY\_TABLES | Too many tables; MariaDB can only use %d tables in a join |
+| [1117](mariadb-error-codes-1100-to-1199/e1117.md) | HY000 | ER\_TOO\_MANY\_FIELDS | Too many columns |
+| [1118](mariadb-error-codes-1100-to-1199/e1118.md) | 42000 | ER\_TOO\_BIG\_ROWSIZE | Row size too large. The maximum row size for the used table type, not counting BLOBs, is %ld. You have to change some columns to TEXT or BLOBs |
+| [1119](mariadb-error-codes-1100-to-1199/e1119.md) | HY000 | ER\_STACK\_OVERRUN | Thread stack overrun: Used: %ld of a %ld stack. Use 'mysqld --thread\_stack=#' to specify a bigger stack if needed |
+| [1120](mariadb-error-codes-1100-to-1199/e1120.md) | 42000 | ER\_WRONG\_OUTER\_JOIN | Cross dependency found in OUTER JOIN; examine your ON conditions |
+| [1121](mariadb-error-codes-1100-to-1199/e1121.md) | 42000 | ER\_NULL\_COLUMN\_IN\_INDEX | Table handler doesn't support NULL in given index. Please change column '%s' to be NOT NULL or use another handler |
+| [1122](mariadb-error-codes-1100-to-1199/e1122.md) | HY000 | ER\_CANT\_FIND\_UDF | Can't load function '%s' |
+| [1123](mariadb-error-codes-1100-to-1199/e1123.md) | HY000 | ER\_CANT\_INITIALIZE\_UDF | Can't initialize function '%s'; %s |
+| [1124](mariadb-error-codes-1100-to-1199/e1124.md) | HY000 | ER\_UDF\_NO\_PATHS | No paths allowed for shared library |
+| [1125](mariadb-error-codes-1100-to-1199/e1125.md) | HY000 | ER\_UDF\_EXISTS | Function '%s' already exists |
+| [1126](mariadb-error-codes-1100-to-1199/e1126.md) | HY000 | ER\_CANT\_OPEN\_LIBRARY | Can't open shared library '%s' (Errno: %d %s) |
+| [1127](mariadb-error-codes-1100-to-1199/e1127.md) | HY000 | ER\_CANT\_FIND\_DL\_ENTRY | Can't find symbol '%s' in library |
+| [1128](mariadb-error-codes-1100-to-1199/e1128.md) | HY000 | ER\_FUNCTION\_NOT\_DEFINED | Function '%s' is not defined |
+| [1129](mariadb-error-codes-1100-to-1199/e1129.md) | HY000 | ER\_HOST\_IS\_BLOCKED | Host '%s' is blocked because of many connection errors; unblock with 'mysqladmin flush-hosts' |
+| [1130](mariadb-error-codes-1100-to-1199/e1130.md) | HY000 | ER\_HOST\_NOT\_PRIVILEGED | Host '%s' is not allowed to connect to this MariaDB server |
+| [1131](mariadb-error-codes-1100-to-1199/e1131.md) | 42000 | ER\_PASSWORD\_ANONYMOUS\_USER | You are using MariaDB as an anonymous user and anonymous users are not allowed to change passwords |
+| [1132](mariadb-error-codes-1100-to-1199/e1132.md) | 42000 | ER\_PASSWORD\_NOT\_ALLOWED | You must have privileges to update tables in the mysql database to be able to change passwords for others |
+| [1133](mariadb-error-codes-1100-to-1199/e1133.md) | 42000 | ER\_PASSWORD\_NO\_MATCH | Can't find any matching row in the user table |
+| [1134](mariadb-error-codes-1100-to-1199/e1134.md) | HY000 | ER\_UPDATE\_INF | Rows matched: %ld Changed: %ld Warnings: %ld |
+| [1135](mariadb-error-codes-1100-to-1199/e1135.md) | HY000 | ER\_CANT\_CREATE\_THREAD | Can't create a new thread (Errno %d); if you are not out of available memory, you can consult the manual for a possible OS-dependent bug |
+| [1136](mariadb-error-codes-1100-to-1199/e1136.md) | 21S01 | ER\_WRONG\_VALUE\_COUNT\_ON\_ROW | Column count doesn't match value count at row %ld |
+| [1137](mariadb-error-codes-1100-to-1199/e1137.md) | HY000 | ER\_CANT\_REOPEN\_TABLE | Can't reopen table: '%s' |
+| [1138](mariadb-error-codes-1100-to-1199/e1138.md) | 22004 | ER\_INVALID\_USE\_OF\_NULL | Invalid use of NULL value |
+| [1139](mariadb-error-codes-1100-to-1199/e1139.md) | 42000 | ER\_REGEXP\_ERROR | Got error '%s' from regexp |
+| [1140](mariadb-error-codes-1100-to-1199/e1140.md) | 42000 | ER\_MIX\_OF\_GROUP\_FUNC\_AND\_FIELDS | Mixing of GROUP columns (MIN(),MAX(),COUNT(),...) with no GROUP columns is illegal if there is no GROUP BY clause |
+| [1141](mariadb-error-codes-1100-to-1199/e1141.md) | 42000 | ER\_NONEXISTING\_GRANT | There is no such grant defined for user '%s' on host '%s' |
+| [1142](mariadb-error-codes-1100-to-1199/e1142.md) | 42000 | ER\_TABLEACCESS\_DENIED\_ERROR | %s command denied to user '%s'@'%s' for table '%s' |
+| [1143](mariadb-error-codes-1100-to-1199/e1143.md) | 42000 | ER\_COLUMNACCESS\_DENIED\_ERROR | %s command denied to user '%s'@'%s' for column '%s' in table '%s' |
+| [1144](mariadb-error-codes-1100-to-1199/e1144.md) | 42000 | ER\_ILLEGAL\_GRANT\_FOR\_TABLE | Illegal GRANT/REVOKE command; please consult the manual to see which privileges can be used |
+| [1145](mariadb-error-codes-1100-to-1199/e1145.md) | 42000 | ER\_GRANT\_WRONG\_HOST\_OR\_USER | The host or user argument to GRANT is too long |
+| [1146](mariadb-error-codes-1100-to-1199/e1146.md) | 42S02 | ER\_NO\_SUCH\_TABLE | Table '%s.%s' doesn't exist |
+| [1147](mariadb-error-codes-1100-to-1199/e1147.md) | 42000 | ER\_NONEXISTING\_TABLE\_GRANT | There is no such grant defined for user '%s' on host '%s' on table '%s' |
+| [1148](mariadb-error-codes-1100-to-1199/e1148.md) | 42000 | ER\_NOT\_ALLOWED\_COMMAND | The used command is not allowed with this MariaDB version |
+| [1149](mariadb-error-codes-1100-to-1199/e1149.md) | 42000 | ER\_SYNTAX\_ERROR | You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use |
+| [1150](mariadb-error-codes-1100-to-1199/e1150.md) | HY000 | ER\_DELAYED\_CANT\_CHANGE\_LOCK | Delayed insert thread couldn't get requested lock for table %s |
+| [1151](mariadb-error-codes-1100-to-1199/e1151.md) | HY000 | ER\_TOO\_MANY\_DELAYED\_THREADS | Too many delayed threads in use |
+| [1152](mariadb-error-codes-1100-to-1199/e1152.md) | 08S01 | ER\_ABORTING\_CONNECTION | Aborted connection %ld to db: '%s' user: '%s' (%s) |
+| [1153](mariadb-error-codes-1100-to-1199/e1153.md) | 08S01 | ER\_NET\_PACKET\_TOO\_LARGE | Got a packet bigger than 'max\_allowed\_packet' bytes |
+| [1154](mariadb-error-codes-1100-to-1199/e1154.md) | 08S01 | ER\_NET\_READ\_ERROR\_FROM\_PIPE | Got a read error from the connection pipe |
+| [1155](mariadb-error-codes-1100-to-1199/e1155.md) | 08S01 | ER\_NET\_FCNTL\_ERROR | Got an error from fcntl() |
+| [1156](mariadb-error-codes-1100-to-1199/e1156.md) | 08S01 | ER\_NET\_PACKETS\_OUT\_OF\_ORDER | Got packets out of order |
+| [1157](mariadb-error-codes-1100-to-1199/e1157.md) | 08S01 | ER\_NET\_UNCOMPRESS\_ERROR | Couldn't uncompress communication packet |
+| [1158](mariadb-error-codes-1100-to-1199/e1158.md) | 08S01 | ER\_NET\_READ\_ERROR | Got an error reading communication packets |
+| [1159](mariadb-error-codes-1100-to-1199/e1159.md) | 08S01 | ER\_NET\_READ\_INTERRUPTED | Got timeout reading communication packets |
+| [1160](mariadb-error-codes-1100-to-1199/e1160.md) | 08S01 | ER\_NET\_ERROR\_ON\_WRITE | Got an error writing communication packets |
+| [1161](mariadb-error-codes-1100-to-1199/e1161.md) | 08S01 | ER\_NET\_WRITE\_INTERRUPTED | Got timeout writing communication packets |
+| [1162](mariadb-error-codes-1100-to-1199/e1162.md) | 42000 | ER\_TOO\_LONG\_STRING | Result string is longer than 'max\_allowed\_packet' bytes |
+| [1163](mariadb-error-codes-1100-to-1199/e1163.md) | 42000 | ER\_TABLE\_CANT\_HANDLE\_BLOB | The used table type doesn't support BLOB/TEXT columns |
+| [1164](mariadb-error-codes-1100-to-1199/e1164.md) | 42000 | ER\_TABLE\_CANT\_HANDLE\_AUTO\_INCREMENT | The used table type doesn't support AUTO\_INCREMENT columns |
+| [1165](mariadb-error-codes-1100-to-1199/e1165.md) | HY000 | ER\_DELAYED\_INSERT\_TABLE\_LOCKED | INSERT DELAYED can't be used with table '%s' because it is locked with LOCK TABLES |
+| [1166](mariadb-error-codes-1100-to-1199/e1166.md) | 42000 | ER\_WRONG\_COLUMN\_NAME | Incorrect column name '%s' |
+| [1167](mariadb-error-codes-1100-to-1199/e1167.md) | 42000 | ER\_WRONG\_KEY\_COLUMN | The used storage engine can't index column '%s' |
+| [1168](mariadb-error-codes-1100-to-1199/e1168.md) | HY000 | ER\_WRONG\_MRG\_TABLE | Unable to open underlying table which is differently defined or of non-MyISAM type or doesn't exist |
+| [1169](mariadb-error-codes-1100-to-1199/e1169.md) | 23000 | ER\_DUP\_UNIQUE | Can't write, because of unique constraint, to table '%s' |
+| [1170](mariadb-error-codes-1100-to-1199/e1170.md) | 42000 | ER\_BLOB\_KEY\_WITHOUT\_LENGTH | BLOB/TEXT column '%s' used in key specification without a key length |
+| [1171](mariadb-error-codes-1100-to-1199/e1171.md) | 42000 | ER\_PRIMARY\_CANT\_HAVE\_NULL | All parts of a PRIMARY KEY must be NOT NULL; if you need NULL in a key, use UNIQUE instead |
+| [1172](mariadb-error-codes-1100-to-1199/e1172.md) | 42000 | ER\_TOO\_MANY\_ROWS | Result consisted of more than one row |
+| [1173](mariadb-error-codes-1100-to-1199/e1173.md) | 42000 | ER\_REQUIRES\_PRIMARY\_KEY | This table type requires a primary key |
+| [1174](mariadb-error-codes-1100-to-1199/e1174.md) | HY000 | ER\_NO\_RAID\_COMPILED | This version of MariaDB is not compiled with RAID support |
+| [1175](mariadb-error-codes-1100-to-1199/e1175.md) | HY000 | ER\_UPDATE\_WITHOUT\_KEY\_IN\_SAFE\_MODE | You are using safe update mode and you tried to update a table without a WHERE that uses a KEY column |
+| [1176](mariadb-error-codes-1100-to-1199/e1176.md) | 42000 | ER\_KEY\_DOES\_NOT\_EXITS | Key '%s' doesn't exist in table '%s' |
+| [1177](mariadb-error-codes-1100-to-1199/e1177.md) | 42000 | ER\_CHECK\_NO\_SUCH\_TABLE | Can't open table |
+| [1178](mariadb-error-codes-1100-to-1199/e1178.md) | 42000 | ER\_CHECK\_NOT\_IMPLEMENTED | The storage engine for the table doesn't support %s |
+| [1179](mariadb-error-codes-1100-to-1199/e1179.md) | 25000 | ER\_CANT\_DO\_THIS\_DURING\_AN\_TRANSACTION | You are not allowed to execute this command in a transaction |
+| [1180](mariadb-error-codes-1100-to-1199/e1180.md) | HY000 | ER\_ERROR\_DURING\_COMMIT | Got error %d during COMMIT |
+| [1181](mariadb-error-codes-1100-to-1199/e1181.md) | HY000 | ER\_ERROR\_DURING\_ROLLBACK | Got error %d during ROLLBACK |
+| [1182](mariadb-error-codes-1100-to-1199/e1182.md) | HY000 | ER\_ERROR\_DURING\_FLUSH\_LOGS | Got error %d during FLUSH\_LOGS |
+| [1183](mariadb-error-codes-1100-to-1199/e1183.md) | HY000 | ER\_ERROR\_DURING\_CHECKPOINT | Got error %d during CHECKPOINT |
+| [1184](mariadb-error-codes-1100-to-1199/e1184.md) | 08S01 | ER\_NEW\_ABORTING\_CONNECTION | Aborted connection %ld to db: '%s' user: '%s' host: '%s' (%s) |
+| [1185](mariadb-error-codes-1100-to-1199/e1185.md) | | ER\_UNUSED\_10 | You should never see it |
+| [1186](mariadb-error-codes-1100-to-1199/e1186.md) | HY000 | ER\_FLUSH\_MASTER\_BINLOG\_CLOSED | Binlog closed, cannot RESET MASTER |
+| [1187](mariadb-error-codes-1100-to-1199/e1187.md) | HY000 | ER\_INDEX\_REBUILD | Failed rebuilding the index of dumped table '%s' |
+| [1188](mariadb-error-codes-1100-to-1199/e1188.md) | HY000 | ER\_MASTER | Error from master: '%s' |
+| [1189](mariadb-error-codes-1100-to-1199/e1189.md) | 08S01 | ER\_MASTER\_NET\_READ | Net error reading from master |
+| [1190](mariadb-error-codes-1100-to-1199/e1190.md) | 08S01 | ER\_MASTER\_NET\_WRITE | Net error writing to master |
+| [1191](mariadb-error-codes-1100-to-1199/e1191.md) | HY000 | ER\_FT\_MATCHING\_KEY\_NOT\_FOUND | Can't find FULLTEXT index matching the column list |
+| [1192](mariadb-error-codes-1100-to-1199/e1192.md) | HY000 | ER\_LOCK\_OR\_ACTIVE\_TRANSACTION | Can't execute the given command because you have active locked tables or an active transaction |
+| [1193](mariadb-error-codes-1100-to-1199/e1193.md) | HY000 | ER\_UNKNOWN\_SYSTEM\_VARIABLE | Unknown system variable '%s' |
+| [1194](mariadb-error-codes-1100-to-1199/e1194.md) | HY000 | ER\_CRASHED\_ON\_USAGE | Table '%s' is marked as crashed and should be repaired |
+| [1195](mariadb-error-codes-1100-to-1199/e1195.md) | HY000 | ER\_CRASHED\_ON\_REPAIR | Table '%s' is marked as crashed and last (automatic?) repair failed |
+| [1196](mariadb-error-codes-1100-to-1199/e1196.md) | HY000 | ER\_WARNING\_NOT\_COMPLETE\_ROLLBACK | Some non-transactional changed tables couldn't be rolled back |
+| [1197](mariadb-error-codes-1100-to-1199/e1197.md) | HY000 | ER\_TRANS\_CACHE\_FULL | Multi-statement transaction required more than 'max\_binlog\_cache\_size' bytes of storage; increase this mysqld variable and try again |
+| [1198](mariadb-error-codes-1100-to-1199/e1198.md) | HY000 | ER\_SLAVE\_MUST\_STOP | This operation cannot be performed with a running slave; run STOP SLAVE first |
+| [1199](mariadb-error-codes-1100-to-1199/e1199.md) | HY000 | ER\_SLAVE\_NOT\_RUNNING | This operation requires a running slave; configure slave and do START SLAVE |
 
 | Error Code                                        | SQLSTATE | Error                                      | Description                                                                                                                                                                              |
 | ------------------------------------------------- | -------- | ------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
