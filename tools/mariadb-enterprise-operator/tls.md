@@ -2,32 +2,6 @@
 
 ,MariaDB Enterprise Operator supports issuing, configuring and rotating TLS certificates for both your `MariaDB` and `MaxScale` resources. It aims to be secure by default; for this reason, TLS certificates are issued and configured by the operator as a default behaviour.
 
-## Table of contents
-
-* [MariaDB configuration](tls.md#mariadb-configuration)
-* [MaxScale configuration](tls.md#maxscale-configuration)
-* [MariaDB certificate specification](tls.md#mariadb-certificate-specification)
-* [MaxScale certificate specification](tls.md#maxscale-certificate-specification)
-* [CA bundle](tls.md#ca-bundle)
-* [Issue certificates to the operator](tls.md#issue-certificates-with-the-operator)
-* [Issue certificates with cert-manager](tls.md#issue-certificates-with-cert-manager)
-* [Provide your own certificates](tls.md#provide-your-own-certificates)
-* [Bring your own CA](tls.md#bring-your-own-ca)
-* [Intermediate CAs](tls.md#intermediate-cas)
-* [Custom trust](tls.md#custom-trust)
-* [Distributing trust](tls.md#distributing-trust)
-* [TLS version configuration](tls.md#tls-version-configuration)
-* [Certificate lifetime configuration](tls.md#certificate-lifetime-configuration)
-* [Private key configuration](tls.md#private-key-configuration)
-* [CA renewal](tls.md#ca-renewal)
-* [Certificate renewal](tls.md#certificate-renewal)
-* [Certificate status](tls.md#certificate-status)
-* [TLS requirements for Users](tls.md#tls-requirements-for-users)
-* [Galera Enterprise SSL modes](tls.md#galera-enterprise-ssl-modes)
-* [Secure application connections with TLS](tls.md#secure-application-connections-with-tls)
-* [Test TLS certificates with Connections](tls.md#test-tls-certificates-with-connections)
-* [Limitations](tls.md#limitations)
-
 ## `MariaDB` configuration
 
 **IMPORTANT**\
@@ -527,7 +501,7 @@ spec:
       - TLSv1.0
 ```
 
-If not specified, the MariaDB's default TLS versions will be used. See [MariaDB docs](https://github.com/mariadb-corporation/docs-server/blob/test/security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/ssltls-system-variables.md#tls_version.).
+If not specified, the MariaDB's default TLS versions will be used. See [MariaDB docs](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/ssltls-system-variables).
 
 Regarding `MaxScale`, you can also configure the supported TLS versions, both for the Admin REST API and MariaDB servers:
 
@@ -853,7 +827,7 @@ spec:
 
 When any of these TLS requirements are not met, the user will not be able to connect to the instance.
 
-See [MariaDB docs](https://github.com/mariadb-corporation/docs-server/blob/test/security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/securing-connections-for-client-and-server.md#requiring-tls) and the [API reference](api-reference.md) for further detail.
+See [MariaDB docs](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/securing-connections-for-client-and-server#requiring-tls) and the [API reference](api-reference.md) for further detail.
 
 ## Galera Enterprise SSL modes
 

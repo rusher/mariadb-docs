@@ -12,25 +12,6 @@ MaxScale is a sophisticated database proxy, router, and load balancer designed s
 
 To better understand what MaxScale is capable of you may check the [product page](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/0pSbu5DcMSW4KwAkUcmX/) and the [documentation](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/0pSbu5DcMSW4KwAkUcmX/).
 
-## Table of contents
-
-* [MaxScale resources](maxscale-database-proxy.md#maxscale-resources)
-* [MaxScale CR](maxscale-database-proxy.md#maxscale-cr)
-* [MariaDB CR](maxscale-database-proxy.md#mariadb-cr)
-* [MaxScale embedded in MariaDB](maxscale-database-proxy.md#maxscale-embedded-in-mariadb)
-* [Defaults](maxscale-database-proxy.md#defaults)
-* [Server configuration](maxscale-database-proxy.md#server-configuration)
-* [Server maintenance](maxscale-database-proxy.md#server-maintenance)
-* [Configuration](maxscale-database-proxy.md#configuration)
-* [Authentication](maxscale-database-proxy.md#authentication)
-* [Kubernetes Services](maxscale-database-proxy.md#kubernetes-services)
-* [Connection](maxscale-database-proxy.md#connection)
-* [High availability](maxscale-database-proxy.md#high-availability)
-* [Suspend resources](maxscale-database-proxy.md#suspend-resources)
-* [MaxScale GUI](maxscale-database-proxy.md#maxscale-gui)
-* [MaxScale API](maxscale-database-proxy.md#maxscale-api)
-* [Troubleshooting](maxscale-database-proxy.md#troubleshooting)
-
 ## MaxScale resources
 
 Prior to configuring MaxScale within Kubernetes, it's essential to have a basic understanding of the resources managed through its API.

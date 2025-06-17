@@ -2,11 +2,6 @@
 
 {% include "https://app.gitbook.com/s/GxVnu02ec8KJuFSxmB93/~/reusable/b36uzH0IlkzSr1zA7hGa/" %}
 
-## Table of contents
-
-* [Certified images](docker-images.md#certified-images)
-* [List of compatible images](docker-images.md#list-of-compatible-images)
-
 ## Certified images
 
 All the Docker images used by this operator are based on [Red Hat UBI](https://catalog.redhat.com/software/base-images) and have been [certified by Red Hat](https://connect.redhat.com/en/partner-with-us/red-hat-openshift-certification). The advantages of using UBI based images are:

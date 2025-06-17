@@ -2,19 +2,6 @@
 
 Helm is the preferred way to install MariaDB Enterprise Operator in Kubernetes clusters. This documentation aims to provide guidance on how to manage the installation and upgrades of both the CRDs and the operator via Helm charts.
 
-## Table of contents
-
-* [Prerequisites](helm.md#prerequisites)
-* [Charts](helm.md#charts)
-* [Control-plane](helm.md#control-plane)
-* [Installing CRDs](helm.md#installing-crds)
-* [Installing the operator](helm.md#installing-the-operator)
-* [Deployment modes](helm.md#deployment-modes)
-* [Updates](helm.md#updates)
-* [Operator high availability](helm.md#operator-high-availability)
-* [Uninstalling](helm.md#uninstalling)
-* [Operator helm values](helm.md#operator-helm-values)
-
 ## Prerequisites
 
 Configure your [customer credentials as described in the documentation](../customer-access-to-docker-mariadb-com.md#customer-credentials) to be able to pull images.

@@ -2,20 +2,6 @@
 
 MariaDB Enterprise Operator allows you to declaratively take backups by defining `Backup` resources and later on restore them by using their `Restore` counterpart. These resources get reconciled into `Job`/`CronJob` resources that automatically perform the backup/restore operations, so you don't need to manually script them.
 
-## Table of contents
-
-* [Storage types](backup-and-restore.md#storage-types)
-* [Backup CR](backup-and-restore.md#backup-cr)
-* [Restore CR](backup-and-restore.md#restore-cr)
-* [Bootstrap new MariaDB instances](backup-and-restore.md#bootstrap-new-mariadb-instances)
-* [Backup and restore specific databases](backup-and-restore.md#backup-and-restore-specific-databases)
-* [Extra options](backup-and-restore.md#extra-options)
-* [Staging area](backup-and-restore.md#staging-area)
-* [Data mobility between instances](backup-and-restore.md#data-mobility-between-instances)
-* [Important considerations and limitations](backup-and-restore.md#important-considerations-and-limitations)
-* [Reference](backup-and-restore.md#reference)
-* [Troubleshooting](backup-and-restore.md#troubleshooting)
-
 ## Storage types
 
 Currently, the following storage types are supported:
@@ -321,7 +307,7 @@ spec:
 There are a couple of points to consider here:
 
 * The referred database (`db1` in the example) must previously exist for the `Restore` to succeed.
-* The `mariadb` CLI invoked by the operator under the hood only supports selecting a single database to restore via the [--one-database](https://github.com/mariadb-corporation/docs-server/blob/test/tools/mariadb-client/mariadb-command-line-client.md#-o-one-database) option, restoration of multiple specific databases is not supported.
+* The `mariadb` CLI invoked by the operator under the hood only supports selecting a single database to restore via the [--one-database](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/mariadb-client/mariadb-command-line-client#options-debug-options) option, restoration of multiple specific databases is not supported.
 
 ## Extra options
 
@@ -539,15 +525,15 @@ Also, to avoid situations where `mysql.global_priv` is unreplicated, all the ent
 
 Galera is not compatible with the `LOCK TABLES` statement:
 
-* [lock-tables.md#limitations](https://github.com/mariadb-corporation/docs-server/blob/test/reference/sql-statements-and-structure/sql-statements/transactions/lock-tables.md#limitations)
+* [LOCK TABLES Limitations](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/transactions/lock-tables#limitations)
 
 For this reason, the operator automatically adds the `--skip-add-locks` option to the `Backup` to overcome this limitation.
 
 ## Reference
 
 * [API reference](api-reference.md)
-* [mariadb-dump options](https://github.com/mariadb-corporation/docs-server/blob/test/tools/backup-restore-and-import-clients/mariadb-dump.md#options)
-* [mariadb options](https://github.com/mariadb-corporation/docs-server/blob/test/tools/mariadb-client/mariadb-command-line-client.md#options)
+* [mariadb-dump options](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/backup-restore-and-import-clients/mariadb-dump#options)
+* [mariadb options](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/mariadb-client/mariadb-command-line-client#options)
 
 ## Troubleshooting
 

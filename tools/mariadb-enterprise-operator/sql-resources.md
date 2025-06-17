@@ -4,19 +4,9 @@ MariaDB Operator Enterprise enables you to manage SQL resources declaratively th
 
 The key advantage of this approach is that, unlike executing SQL statements manually, which is a one-time operation, declaring a SQL resource via a CR ensures that the resource is periodically reconciled by the operator. This provides a guarantee that the resource will be recreated if it gets manually deleted. Additionally, it prevents state drifts, as the operator will regularly update the resource according to the CR specification.
 
-## Table of contents
-
-* [User CR](sql-resources.md#user-cr)
-* [Grant CR](sql-resources.md#grant-cr)
-* [Database CR](sql-resources.md#database-cr)
-* [Initial User, Grant and Database](sql-resources.md#initial-user-grant-and-database)
-* [Authentication plugins](sql-resources.md#authentication-plugins)
-* [Configure reconciliation](sql-resources.md#configure-reconciliation)
-* [Cleanup policy](sql-resources.md#cleanup-policy)
-
 ## `User` CR
 
-By creating this resource, you are declaring an intent to create an user in the referred `MariaDB` instance, just like a [CREATE USER](https://github.com/mariadb-corporation/docs-server/blob/test/reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/create-user.md) statement would do:
+By creating this resource, you are declaring an intent to create an user in the referred `MariaDB` instance, just like a [CREATE USER](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/create-user) statement would do:
 
 ```
 apiVersion: enterprise.mariadb.com/v1alpha1
@@ -53,7 +43,7 @@ spec:
 
 ## `Grant` CR
 
-By creating this resource, you are declaring an intent to grant permissions to a given user in the referred `MariaDB` instance, just like a [GRANT](https://github.com/mariadb-corporation/docs-server/blob/test/reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md) statement would do.
+By creating this resource, you are declaring an intent to grant permissions to a given user in the referred `MariaDB` instance, just like a [GRANT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant) statement would do.
 
 ```
 apiVersion: enterprise.mariadb.com/v1alpha1
@@ -74,13 +64,13 @@ spec:
   host: "%"
 ```
 
-You may provide any set of [privileges supported by MariaDB](https://github.com/mariadb-corporation/docs-server/blob/test/reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#privilege-levels).
+You may provide any set of [privileges supported by MariaDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#privilege-levels).
 
 Refer to the [API reference](api-reference.md) for more detailed information about every field.
 
 ## `Database` CR
 
-By creating this resource, you are declaring an intent to create a logical database in the referred `MariaDB` instance, just like a [CREATE DATABASE](https://github.com/mariadb-corporation/docs-server/blob/test/reference/sql-statements-and-structure/sql-statements/data-definition/create/create-database.md) statement would do:
+By creating this resource, you are declaring an intent to create a logical database in the referred `MariaDB` instance, just like a [CREATE DATABASE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/create/create-database) statement would do:
 
 ```
 apiVersion: enterprise.mariadb.com/v1alpha1
@@ -135,11 +125,11 @@ This feature requires the `skip-strict-password-validation` option to be set. Se
 
 Passwords can be supplied using the `passwordSecretKeyRef` field in the `User` CR. This is a reference to a `Secret` that contains a password in plain text.
 
-Alternatively, you can use [MariaDB authentication plugins](https://github.com/mariadb-corporation/docs-server/blob/test/reference/plugins/authentication-plugins/README.md) to avoid passing passwords in plain text and provide the password in a hashed format instead. This doesn't affect the end user experience, as they will still need to provide the password in plain text to authenticate.
+Alternatively, you can use [MariaDB authentication plugins](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/authentication-plugins) to avoid passing passwords in plain text and provide the password in a hashed format instead. This doesn't affect the end user experience, as they will still need to provide the password in plain text to authenticate.
 
 #### Password hash
 
-Provide the password hashed using the [MariaDB PASSWORD](https://github.com/mariadb-corporation/docs-server/blob/test/reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/encryption-hashing-and-compression-functions/password.md)function:
+Provide the password hashed using the [MariaDB PASSWORD](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/secondary-functions/encryption-hashing-and-compression-functions/password) function:
 
 ```
 apiVersion: v1
@@ -166,7 +156,7 @@ The password hash can be obtained by executing `SELECT PASSWORD('<password>');` 
 
 #### Password plugin
 
-Provide the password hashed using any of the available [MariaDB authentication plugins](https://github.com/mariadb-corporation/docs-server/blob/test/reference/plugins/authentication-plugins/README.md), for example `mysql_native_password`:
+Provide the password hashed using any of the available [MariaDB authentication plugins](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/authentication-plugins), for example `mysql_native_password`:
 
 ```
 apiVersion: v1
@@ -194,7 +184,7 @@ spec:
   host: "%"
 ```
 
-The plugin name should be available in a `Secret` referenced by `pluginNameSecretKeyRef` and the argument passed to it in `pluginArgSecretKeyRef`. The argument is the hashed password in most cases, refer to the [MariaDB docs](https://github.com/mariadb-corporation/docs-server/blob/test/reference/plugins/authentication-plugins/README.md) for further detail.
+The plugin name should be available in a `Secret` referenced by `pluginNameSecretKeyRef` and the argument passed to it in `pluginArgSecretKeyRef`. The argument is the hashed password in most cases, refer to the [MariaDB docs](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/authentication-plugins) for further detail.
 
 ## Configure reconciliation
 

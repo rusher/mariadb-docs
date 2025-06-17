@@ -13,14 +13,6 @@ Our recommended HA setup for production is:
 
 Refer to the following sections for further detail.
 
-## Table of contents
-
-* [Kubernetes Services](high-availability.md#kubernetes-services)
-* [MaxScale](high-availability.md#maxscale)
-* [Pod Anti-Affinity](high-availability.md#pod-anti-affinity)
-* [Dedicated Nodes](high-availability.md#dedicated-nodes)
-* [Pod Disruption Budgets](high-availability.md#pod-disruption-budgets)
-
 ## Kubernetes Services
 
 In order to address nodes, MariaDB Enterprise Operator provides you with the following Kubernetes `Services`:

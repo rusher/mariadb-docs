@@ -4,18 +4,6 @@ This documentation provides guidance on installing the MariaDB Enterprise Operat
 
 Operators are deployed into OpenShift with the [Operator Lifecycle Manager (OLM)](https://olm.operatorframework.io/), which facilitates the installation, updates, and overall management of their lifecycle.
 
-## Table of contents
-
-* [Prerequisites](openshift.md#prerequisites)
-* [PackageManifest](openshift.md#packagemanifest)
-* [SecurityContextConstraints](openshift.md#securitycontextconstraints)
-* [Installation in all namespaces](openshift.md#installation-in-all-namespaces)
-* [Installation in specific namespaces](openshift.md#installation-in-specific-namespaces)
-* [Release channels](openshift.md#release-channels)
-* [Updates](openshift.md#updates)
-* [Uninstalling](openshift.md#uninstalling)
-* [OpenShift console](openshift.md#openshift-console)
-
 ## Prerequisites
 
 Configure your [customer credentials as described in the documentation](../customer-access-to-docker-mariadb-com.md#openshift) to be able to pull images.

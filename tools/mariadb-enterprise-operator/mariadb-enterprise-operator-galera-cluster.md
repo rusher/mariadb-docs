@@ -6,20 +6,6 @@ In certain circumstances, it could be the case that all the nodes of your cluste
 
 To accomplish this, after the MariaDB cluster has been provisioned, the operator will regularly monitor the cluster's status to make sure it is healthy. If any issues are detected, the operator will initiate the [recovery process](mariadb-enterprise-operator-galera-cluster.md#galera-cluster-recovery) to restore the cluster to a healthy state. During this process, the operator will set status conditions in the `MariaDB` and emit `Events` so you have a better understanding of the recovery progress and the underlying activities being performed. For example, you may want to know which `Pods` were out of sync to further investigate infrastructure-related issues (i.e. networking, storage...) on the nodes where these `Pods` were scheduled.
 
-## Table of contents
-
-* [Data-plane](mariadb-enterprise-operator-galera-cluster.md#data-plane)
-* [MariaDB configuration](mariadb-enterprise-operator-galera-cluster.md#mariadb-configuration)
-* [Storage](mariadb-enterprise-operator-galera-cluster.md#storage)
-* [Wsrep provider](mariadb-enterprise-operator-galera-cluster.md#wsrep-provider)
-* [IPv6 support](mariadb-enterprise-operator-galera-cluster.md#ipv6-support)
-* [Agent auth methods](mariadb-enterprise-operator-galera-cluster.md#agent-auth-methods)
-* [Backup and restore](mariadb-enterprise-operator-galera-cluster.md#backup-and-restore)
-* [Galera cluster recovery](mariadb-enterprise-operator-galera-cluster.md#galera-cluster-recovery)
-* [Bootstrap Galera cluster from existing PVCs](mariadb-enterprise-operator-galera-cluster.md#bootstrap-galera-cluster-from-existing-pvcs)
-* [Quickstart](mariadb-enterprise-operator-galera-cluster.md#quickstart)
-* [Troubleshooting](mariadb-enterprise-operator-galera-cluster.md#troubleshooting)
-
 ## Data-plane
 
 To be able to effectively provision and recover MariaDB Galera clusters, the following data-plane components run alongside MariaDB and co-operate with MariaDB Enterprise Operator:

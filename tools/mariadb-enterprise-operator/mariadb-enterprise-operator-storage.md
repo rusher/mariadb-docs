@@ -2,12 +2,6 @@
 
 This operator gives you flexibility to define the storage that will back the `/var/lib/mysql` data directory mounted by `MariaDB`.
 
-## Table of contents
-
-* [Configuration](mariadb-enterprise-operator-storage.md#configuration)
-* [Volume resize](mariadb-enterprise-operator-storage.md#volume-resize)
-* [Ephemeral storage](mariadb-enterprise-operator-storage.md#ephemeral-storage)
-
 ## Configuration
 
 The simplest way to configure storage for your `MariaDB` is:
