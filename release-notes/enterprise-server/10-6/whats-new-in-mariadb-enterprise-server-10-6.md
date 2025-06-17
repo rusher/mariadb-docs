@@ -118,7 +118,7 @@ Expanded compatibility with Oracle through [sql\_mode=ORACLE](https://app.gitboo
 
 ## Enhanced Compatibility with Sybase SQL Anywhere
 
-Enhanced compatibility with Sybase SQL Anywhere through [sql\_mode=EXTENDED\_ALIASES](https://mariadb.com/kb/en/sql_mode%3DEXTENDED_ALIASES):
+Enhanced compatibility with Sybase SQL Anywhere through [sql\_mode=EXTENDED\_ALIASES]
 
 * With `sql_mode=EXTENDED_ALIASES`, alias resolution and use of column aliases in the SQL [SELECT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/selecting-data/select) list and `WHERE` clause.
 * With `sql_mode=EXTENDED_ALIASES`, support use of an alias in the [SELECT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/selecting-data/select) list before the alias is defined.

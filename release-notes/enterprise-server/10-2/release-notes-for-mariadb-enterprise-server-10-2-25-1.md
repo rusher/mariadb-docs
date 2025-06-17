@@ -30,7 +30,7 @@ MariaDB Enterprise Server 10.2.25-1 was released on 2019-07-08.
 ## Notable Changes
 
 * [DISKS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/other-plugins/disks-plugin) plugin, used by MariaDB MaxScale, is now of maturity stable
-* Access to data provided by [DISKS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/other-plugins/disks-plugin) plugin via the information schema requires [FILE](https://mariadb.com/kb/en/*_grant/#file) privilege
+* Access to data provided by [DISKS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/other-plugins/disks-plugin) plugin via the information schema requires [FILE](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#file) privilege
 * Unsupported Community plugins are not loaded by default
 * Embedded Server removed
 * HeidiSQL is not included in Windows installations
