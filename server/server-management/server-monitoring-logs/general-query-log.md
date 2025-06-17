@@ -52,7 +52,7 @@ general_log
 general_log_file=/var/log/mysql/mariadb.log
 ```
 
-Another way to configure the general query log filename is to set the [log-basename](../server-management/starting-and-stopping-mariadb/mariadbd-options.md#log-basename) option, which configures MariaDB to use a common prefix for all log files (e.g. general query log, [slow query log](slow-query-log/), [error log](error-log.md), [binary logs](binary-log/), etc.). The general query log filename will be built by adding a `.log` extension to this prefix. This option cannot be set dynamically. It can be set in a server [option group](../install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
+Another way to configure the general query log filename is to set the [log-basename](../../server-management/starting-and-stopping-mariadb/mariadbd-options.md#log-basename) option, which configures MariaDB to use a common prefix for all log files (e.g. general query log, [slow query log](slow-query-log/), [error log](error-log.md), [binary logs](binary-log/), etc.). The general query log filename will be built by adding a `.log` extension to this prefix. This option cannot be set dynamically. It can be set in a server [option group](../install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
 
 ```
 [mariadb]
