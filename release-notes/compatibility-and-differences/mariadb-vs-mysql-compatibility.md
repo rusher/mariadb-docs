@@ -100,7 +100,7 @@ For unmaintained versions, see:
 * [MariaDB 10.1](../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1.md) does not support MySQL 5.7's online undo tablespace truncation. However, this feature was added to [MariaDB 10.2](../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102.md).
 * MySQL 5.7 features a new implementation of the `performance_schema` and a `sys` schema wrapper. These are not yet supported in MariaDB.
 * MySQL 5.7 adds multi-source replication and replication channels. [Multi-source replication](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/multi-source-replication) was added to MariaDB previously, in [MariaDB 10.0](../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md), and uses a different syntax.
-* MySQL 5.7 adds group replication. This feature is incompatible with MariaDB's [galera-cluster](https://mariadb.com/kb/en/Galera_Cluster) replication.
+* MySQL 5.7 adds group replication. This feature is incompatible with MariaDB's [galera-cluster](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/3VYeeVGUV4AMqrA3zwy7/) replication.
 * [MariaDB 10.1](../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1.md) does not support MySQL 5.7's, `ACCOUNT LOCK/UNLOCK` synax for `CREATE USER` and `ALTER USER` statements.
 * [MariaDB 10.1](../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1.md) does not support MySQL 5.7's `ALTER TABLE...RENAME INDEX` statements.
 * [MariaDB 10.1](../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1.md) does not support MySQL 5.7's `STACKED` operation for `[GET DIAGNOSTICS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/programming-customizing-mariadb/programmatic-compound-statements/programmatic-compound-statements-diagnostics/get-diagnostics)` statements.
@@ -241,7 +241,7 @@ mv -vi /etc/my.cnf.rpmsave /etc/my.cnf
 
 A MySQL client API is able to connect to MariaDB using MySQL-Proxy but a MariaDB client API will receive progress reporting informations that MySQL-Proxy does not implement, to get full compatibility in all case just disable progress reporting on the client or server side.
 
-Another option is to use the [MariaDB MaxScale proxy](https://mariadb.com/kb/en/maxscale/), that works with both MySQL and MariaDB.
+Another option is to use the [MariaDB MaxScale proxy](https://app.gitbook.com/s/JqgUabdZsoY5EiaJmqgn/mariadb-faqs/database-proxies-and-routers), that works with both MySQL and MariaDB.
 
 ## Related Links
 
