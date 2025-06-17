@@ -11,7 +11,7 @@ MariaDB ColumnStore 1.0.5 is a [_**Release Candidate**_](../../mariadb-release-c
 For an overview of [MariaDB ColumnStore](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/mariadb-columnstore/README.md) see [MariaDB ColumnStore Architectural Overview](https://app.gitbook.com/s/rBEU9juWLfTDcdwF3Q14/architecture/columnstore-architectural-overview)
 
 Please provide feedback in [JIRA](https://jira.mariadb.org/browse/MCOL) for anything that is not working as expected so that we can fix it before we make the release available for the larger community.\
-For general "how to questions" ask questions [here](https://mariadb.com/kb/en/mariadb/mariadb-columnstore/) or subscribe to mariadb-columnstore@googlegroups.com
+For general "how to questions" ask questions [here](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/rBEU9juWLfTDcdwF3Q14/) or subscribe to mariadb-columnstore@googlegroups.com
 
 ## Notable Changes
 
@@ -90,7 +90,7 @@ The source code of MariaDB ColumnStore is tagged at GitHub with a tag, which is 
 
 The source code is available at these locations
 
-* Storage Engine - [Source code for engine specific processes on UM and PM node](https://github.com/mariadb-corporation/mariadb-columnstore-engine)
+* Storage Engine—[Source code for engine specific processes on UM and PM node](https://github.com/mariadb-corporation/mariadb-columnstore-engine)
 * MariaDB Server - [Source code based on MariaDB Server 10.1.19 modified to support the ColumnStore storage engine](https://github.com/mariadb-corporation/mariadb-columnstore-server)
 
 {% @marketo/form formid="4316" formId="4316" %}
