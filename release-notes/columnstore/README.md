@@ -21,4 +21,3 @@ Release notes and other documentation for ColumnStore.
 * [ColumnStore 22.08 Release Notes](columnstore-22-08/)
 * [ColumnStore 6 Release Notes](mariadb-columnstore-6-release-notes/)
 * [ColumnStore 5.6 Release Notes](mariadb-columnstore-5-6-release-notes/)
-* [Deployment Instructions](../../columnstore/management/README.md)
