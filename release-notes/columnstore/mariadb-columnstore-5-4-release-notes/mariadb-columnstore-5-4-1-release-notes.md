@@ -10,7 +10,7 @@ This release of MariaDB Enterprise ColumnStore is included with MariaDB Enterpri
 
 This release is of General Availability (GA) maturity.
 
-[MariaDB Enterprise ColumnStore](https://mariadb.com/kb/en/MariaDB_Enterprise_ColumnStore) 5.4.1 was released on 2020-10-20.
+[MariaDB Enterprise ColumnStore](https://app.gitbook.com/s/rBEU9juWLfTDcdwF3Q14/architecture/columnstore-architectural-overview#mariadb-enterprise-columnstore) 5.4.1 was released on 2020-10-20.
 
 * Documentation
 
