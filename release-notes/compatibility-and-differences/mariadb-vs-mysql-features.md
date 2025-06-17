@@ -2,7 +2,7 @@
 
 MariaDB Corporation has a [**MariaDB vs MySQL**](https://mariadb.com/resources/guides-whitepapers/MariaDB-vs-MySQL) white paper available for download.
 
-See also [**MariaDB vs MySQL - Compatibility**](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/compatibility-and-differences/broken-reference/README.md)
+See also [**MariaDB vs MySQL - Compatibility**](mariadb-vs-mysql-compatibility.md)
 
 #### Differences Per Release
 
