@@ -8,7 +8,7 @@ The most recent release of [MariaDB 10.3](../../mariadb-community-server-release
 
 For the highlights of this release, see the[release notes](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/changelogs/changelogs-mariadb-10-3-series/broken-reference/README.md).
 
-The revision number links will take you to the revision's page on GitHub. On[GitHub](https://github.com/MariaDB/server/tree/10.3) you can view more\
+The revision number links will take you to the revision's page on GitHub. On [GitHub](https://github.com/MariaDB/server/tree/10.3) you can view more\
 details of the revision and view diffs of the code modified in that revision.
 
 * Includes all fixes from [MariaDB 10.2.44](../changelogs-mariadb-102-series/mariadb-10244-changelog.md)
@@ -443,9 +443,9 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #37ea077873](https://github.com/MariaDB/server/commit/37ea077873)\
   2022-06-07 15:49:41 +0200
   * main.help: flush help tables after modifying them
-* [Revision #7c4efab903](https://github.com/MariaDB/server/commit/7c4efab903)\
+* [Revision #7c4efab903](https://github.com/MariaDB/server/commit/7c4efab903)\`\
   2022-05-19 13:58:31 +0200
-  * typo fixed: [space](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/string-functions/space) -> [:space:](https://mariadb.com/kb/en/space%3A)
+  * typo fixed: [space](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/string-functions/space) -> [:](https://mariadb.com/kb/en/space%3A)[space](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/string-functions/space)[:](https://mariadb.com/kb/en/space%3A)
 * [Revision #19c721631e](https://github.com/MariaDB/server/commit/19c721631e)\
   2022-06-06 22:21:22 +0300
   * [MDEV-28749](https://jira.mariadb.org/browse/MDEV-28749): restore\_prev\_nj\_state() doesn't update cur\_sj\_inner\_tables correctly
