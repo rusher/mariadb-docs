@@ -13,7 +13,7 @@ _The success of MariaDB relies heavily on community involvement. You can contrib
 
 _Explore more ways to get involved on the_ [_MariaDB Foundation page_](https://mariadb.org/get-involved/)_._
 
-The success of [MariaDB](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/mariadb/README.md) depends on the participation of the[community](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/community/README.md). MariaDB would not be as good as it is today without the participation of the entire [MariaDB community](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/community/README.md).
+The success of MariaDB  depends on the participation of the community. MariaDB would not be as good as it is today without the participation of the entire MariaDB community.
 
 ## Getting Started
 
@@ -23,7 +23,6 @@ strong C/C++ skills. Areas for non-developers include:
 * [Reporting Bugs](../community/bug-tracking/reporting-bugs.md)
   * To report a bug you'll need to sign up for an account by clicking on the Create an account link below the login fields
 * [Suggesting Features](../../development-articles/general-info/tools/jira.md)
-* [Answering questions](https://mariadb.com/kb/en/+questions/) in the Knowledge Base
 * Helping other people answering problems or even fixing their bugs on [IRC](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/irc/README.md) in the #maria channel on [Libera.Chat](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/irc/README.md) or on MariaDB's Zulip instance at [mariadb.zulipchat.com](https://mariadb.zulipchat.com).
 * Testing and Benchmarking
   * Bug tests can be uploaded to the 'private' directory of our [FTP](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/ftp/README.md) server.
