@@ -8,7 +8,7 @@ However, if you only want a record of queries that change data, it might be bett
 
 The general query log is disabled by default.
 
-To enable the general query log, set the [general_log](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#general_log) system variable to `1`. It can be changed dynamically with [SET GLOBAL](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/set-commands/set.md#global-session). For example:
+To enable the general query log, set the [general_log](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#general_log) system variable to `1`. It can be changed dynamically with [SET GLOBAL](../../reference/sql-statements/administrative-sql-statements/set-commands/set.md#global-session). For example:
 
 ```
 SET GLOBAL general_log=1;
@@ -24,9 +24,9 @@ general_log
 
 ## Configuring the General Query Log Filename
 
-By default, the general query log is written to `${hostname}.log` in the [datadir](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir) directory. However, this can be changed.
+By default, the general query log is written to `${hostname}.log` in the [datadir](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#datadir) directory. However, this can be changed.
 
-One way to configure the general query log filename is to set the [general_log_file](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#general_log_file) system variable. It can be changed dynamically with [SET GLOBAL](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/set-commands/set.md#global-session). For example:
+One way to configure the general query log filename is to set the [general_log_file](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#general_log_file) system variable. It can be changed dynamically with [SET GLOBAL](../../reference/sql-statements/administrative-sql-statements/set-commands/set.md#global-session). For example:
 
 ```
 SET GLOBAL general_log_file='mariadb.log';
@@ -61,15 +61,15 @@ log-basename=mariadb
 general_log
 ```
 
-The [log-basename](../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) cannot be an absolute path. The log file name is relative to the [datadir](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir) directory.
+The [log-basename](../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) cannot be an absolute path. The log file name is relative to the [datadir](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#datadir) directory.
 
 ## Choosing the General Query Log Output Destination
 
-The general query log can either be written to a file on disk, or it can be written to the [general_log](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlgeneral_log-table.md) table in the [mysql](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/README.md) database. To choose the general query log output destination, set the [log_output](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#log_output) system variable.
+The general query log can either be written to a file on disk, or it can be written to the [general_log](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlgeneral_log-table.md) table in the [mysql](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/README.md) database. To choose the general query log output destination, set the [log_output](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#log_output) system variable.
 
 ### Writing the General Query Log to a File
 
-The general query log is output to a file by default. However, it can be explicitly chosen by setting the [log_output](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#log_output) system variable to `FILE`. It can be changed dynamically with [SET GLOBAL](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/set-commands/set.md#global-session). For example:
+The general query log is output to a file by default. However, it can be explicitly chosen by setting the [log_output](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#log_output) system variable to `FILE`. It can be changed dynamically with [SET GLOBAL](../../reference/sql-statements/administrative-sql-statements/set-commands/set.md#global-session). For example:
 
 ```
 SET GLOBAL log_output='FILE';
@@ -87,7 +87,7 @@ general_log_file=queries.log
 
 ### Writing the General Query Log to a Table
 
-The general query log can either be written to the [general_log](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlgeneral_log-table.md) table in the [mysql](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/README.md) database by setting the [log_output](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#log_output) system variable to `TABLE`. It can be changed dynamically with [SET GLOBAL](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/set-commands/set.md#global-session). For example:
+The general query log can either be written to the [general_log](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlgeneral_log-table.md) table in the [mysql](../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/README.md) database by setting the [log_output](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#log_output) system variable to `TABLE`. It can be changed dynamically with [SET GLOBAL](../../reference/sql-statements/administrative-sql-statements/set-commands/set.md#global-session). For example:
 
 ```
 SET GLOBAL log_output='TABLE';
@@ -135,7 +135,7 @@ SET SESSION SQL_LOG_OFF=1;
 
 ## Disabling the General Query Log for Specific Statements
 
-In [MariaDB 10.3.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-1031-release-notes) and later, it is possible to disable logging to the general query log for specific types of statements by setting the [log_disabled_statements](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#log_disabled_statements) system variable. This option cannot be set dynamically. It can be set in a server [option group](../install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
+In [MariaDB 10.3.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-1031-release-notes) and later, it is possible to disable logging to the general query log for specific types of statements by setting the [log_disabled_statements](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#log_disabled_statements) system variable. This option cannot be set dynamically. It can be set in a server [option group](../install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
 
 ```
 [mariadb]
