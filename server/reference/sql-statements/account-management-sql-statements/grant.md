@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 GRANT
     priv_type [(column_list)]
       [, priv_type [(column_list)]] ...
@@ -91,8 +91,8 @@ If the account does not yet exist, then `GRANT` can implicitly create it. To imp
 
 If the `NO_AUTO_CREATE_USER` [SQL\_MODE](../../../server-management/variables-and-modes/sql-mode.md) is set, then accounts can only be created if authentication information is specified, or with a [CREATE USER](create-user.md) statement. If no authentication information is provided, `GRANT` will produce an error when the specified account does not exist, for example:
 
-```
-show variables like '%sql_mode%' ;
+```sql
+SHOW VARIABLES LIKE '%sql_mode%' ;
 +---------------+--------------------------------------------+
 | Variable_name | Value                                      |
 +---------------+--------------------------------------------+
@@ -412,7 +412,7 @@ names after the privilege type. For example, the following statement would allow
 the user to read the names and positions of employees, but not other information\
 from the same table, such as salaries.
 
-```
+```sql
 GRANT SELECT (name, position) on Employee to 'jeffrey'@'localhost';
 ```
 
@@ -431,7 +431,7 @@ GRANT SELECT (name, position) on Employee to 'jeffrey'@'localhost';
 | EXECUTE       | Execute a [stored procedure](../../../server-usage/stored-routines/stored-procedures/) using the [CALL](../stored-routine-statements/call.md) statement. The privilege to call a procedure may allow you to perform actions you wouldn't otherwise be able to do, such as insert rows into a table. |
 | GRANT OPTION  | Grant procedure privileges. You can only grant privileges that you have.                                                                                                                                                                                                                            |
 
-```
+```sql
 GRANT EXECUTE ON PROCEDURE mysql.create_db TO maintainer;
 ```
 
@@ -450,7 +450,7 @@ The [pam](../../plugins/authentication-plugins/authentication-with-pluggable-aut
 
 For example, to grant the `PROXY` privilege to an [anonymous account](create-user.md#anonymous-accounts) that authenticates with the [pam](../../plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam.md) authentication plugin, you could execute the following:
 
-```
+```sql
 CREATE USER 'dba'@'%' IDENTIFIED BY 'strongpassword';
 GRANT ALL PRIVILEGES ON *.* TO 'dba'@'%' ;
 
@@ -460,7 +460,7 @@ GRANT PROXY ON 'dba'@'%' TO ''@'%';
 
 A user account can only grant the `PROXY` privilege for a specific user account if the granter also has the `PROXY` privilege for that specific user account, and if that privilege is defined `WITH GRANT OPTION`. For example, the following example fails because the granter does not have the `PROXY` privilege for that specific user account at all:
 
-```
+```sql
 SELECT USER(), CURRENT_USER();
 +-----------------+-----------------+
 | USER()          | CURRENT_USER()  |
@@ -481,7 +481,7 @@ ERROR 1698 (28000): Access denied for user 'alice'@'localhost'
 
 And the following example fails because the granter does have the `PROXY` privilege for that specific user account, but it is not defined `WITH GRANT OPTION`:
 
-```
+```sql
 SELECT USER(), CURRENT_USER();
 +-----------------+-----------------+
 | USER()          | CURRENT_USER()  |
@@ -503,7 +503,7 @@ ERROR 1698 (28000): Access denied for user 'alice'@'localhost'
 
 But the following example succeeds because the granter does have the `PROXY` privilege for that specific user account, and it is defined `WITH GRANT OPTION`:
 
-```
+```sql
 SELECT USER(), CURRENT_USER();
 +-----------------+-----------------+
 | USER()          | CURRENT_USER()  |
@@ -530,7 +530,7 @@ GRANT PROXY ON ''@'%' TO 'dba'@'localhost' WITH GRANT OPTION;
 
 For example, the following example succeeds because the user can grant the `PROXY` privilege for any other user account:
 
-```
+```sql
 SELECT USER(), CURRENT_USER();
 +-----------------+-----------------+
 | USER()          | CURRENT_USER()  |
@@ -555,7 +555,7 @@ Query OK, 0 rows affected (0.004 sec)
 
 The default `root` user accounts created by [mariadb-install-db](../../../clients-and-utilities/deployment-tools/mariadb-install-db.md) have this privilege. For example:
 
-```
+```sql
 GRANT ALL PRIVILEGES ON *.* TO 'root'@'localhost' WITH GRANT OPTION;
 GRANT PROXY ON ''@'%' TO 'root'@'localhost' WITH GRANT OPTION;
 ```
@@ -572,7 +572,7 @@ The optional `IDENTIFIED BY` clause can be used to provide an account with a pas
 
 For example, if our password is `mariadb`, then we can create the user with:
 
-```
+```sql
 GRANT USAGE ON *.* TO foo2@test IDENTIFIED BY 'mariadb';
 ```
 
@@ -592,7 +592,7 @@ The optional `IDENTIFIED BY PASSWORD` clause can be used to provide an account w
 
 For example, if our password is `mariadb`, then we can find the hash with:
 
-```
+```sql
 SELECT PASSWORD('mariadb');
 +-------------------------------------------+
 | PASSWORD('mariadb')                       |
@@ -604,7 +604,7 @@ SELECT PASSWORD('mariadb');
 
 And then we can create a user with the hash:
 
-```
+```sql
 GRANT USAGE ON *.* TO foo2@test IDENTIFIED BY 
   PASSWORD '*54958E764CE10E50764C2EECBB71D01F08549980';
 ```
@@ -625,13 +625,13 @@ The optional `IDENTIFIED VIA authentication_plugin` allows you to specify that t
 
 For example, this could be used with the [PAM authentication plugin](../../plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam.md):
 
-```
+```sql
 GRANT USAGE ON *.* TO foo2@test IDENTIFIED VIA pam;
 ```
 
 Some authentication plugins allow additional arguments to be specified after a `USING` or `AS` keyword. For example, the [PAM authentication plugin](../../plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam.md) accepts a [service name](../../plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam.md#configuring-the-pam-service):
 
-```
+```sql
 GRANT USAGE ON *.* TO foo2@test IDENTIFIED VIA pam USING 'mariadb';
 ```
 
@@ -639,14 +639,14 @@ The exact meaning of the additional argument would depend on the specific authen
 
 The `USING` or `AS` keyword can also be used to provide a plain-text password to a plugin if it's provided as an argument to the [PASSWORD()](../../sql-functions/secondary-functions/encryption-hashing-and-compression-functions/password.md) function. This is only valid for [authentication plugins](../../plugins/authentication-plugins/) that have implemented a hook for the [PASSWORD()](../../sql-functions/secondary-functions/encryption-hashing-and-compression-functions/password.md) function. For example, the [ed25519](../../plugins/authentication-plugins/authentication-plugin-ed25519.md) authentication plugin supports this:
 
-```
+```sql
 CREATE USER safe@'%' IDENTIFIED VIA ed25519 
   USING PASSWORD('secret');
 ```
 
 One can specify many authentication plugins, they all work as alternative ways of authenticating a user:
 
-```
+```sql
 CREATE USER safe@'%' IDENTIFIED VIA ed25519 
   USING PASSWORD('secret') OR unix_socket;
 ```
@@ -672,7 +672,7 @@ To set resource limits for an account, if you do not want to change that account
 
 Here is an example showing how to set resource limits:
 
-```
+```sql
 GRANT USAGE ON *.* TO 'someone'@'localhost' WITH
     MAX_USER_CONNECTIONS 0
     MAX_QUERIES_PER_HOUR 200;
@@ -717,7 +717,7 @@ See [Securing Connections for Client and Server](../../../security/securing-mari
 
 ### Syntax
 
-```
+```sql
 GRANT role TO grantee [, grantee ... ]
 [ WITH ADMIN OPTION ]
 
@@ -732,7 +732,7 @@ Specifying the `WITH ADMIN OPTION` permits the grantee to in turn grant the role
 
 For example, the following commands show how to grant the same role to a couple different users.
 
-```
+```sql
 GRANT journalist TO hulda;
 
 GRANT journalist TO berengar WITH ADMIN OPTION;
@@ -748,7 +748,7 @@ If a user has been granted a role, they do not automatically obtain all permissi
 
 ### Syntax
 
-```
+```sql
 GRANT <privilege> ON <database>.<object> TO PUBLIC;
 REVOKE <privilege> ON <database>.<object> FROM PUBLIC;
 ```
@@ -762,7 +762,7 @@ When running [SHOW GRANTS](../administrative-sql-statements/show/show-grants.md)
 
 You can create a user that has privileges similar to the default `root` accounts by executing the following:
 
-```
+```sql
 CREATE USER 'alexander'@'localhost';
 GRANT ALL PRIVILEGES ON  *.* to 'alexander'@'localhost' WITH GRANT OPTION;
 ```

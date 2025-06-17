@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 ALTER USER [IF EXISTS] 
  user_specification [,user_specification] ...
   [REQUIRE {NONE | tls_option [[AND] tls_option] ...}]
@@ -66,7 +66,7 @@ For `ALTER USER` statements, account names are specified as the `username` argum
 
 [CURRENT\_USER](../../sql-functions/secondary-functions/information-functions/current_user.md) or `CURRENT_USER()` can also be used to alter the account logged into the current session. For example, to change the current user's password to `mariadb`:
 
-```
+```sql
 ALTER USER CURRENT_USER() IDENTIFIED BY 'mariadb';
 ```
 
@@ -78,7 +78,7 @@ When running `ALTER USER`, not specifying an authentication option in the IDENTI
 
 For example, a user is created with the ability to authenticate via both a password and unix\_socket:
 
-```
+```sql
 CREATE USER 'bob'@'localhost' 
   IDENTIFIED VIA mysql_native_password USING PASSWORD('pwd') 
   OR unix_socket;
@@ -93,7 +93,7 @@ CREATE USER for bob@localhost: CREATE USER `bob`@`localhost`
 
 If the user's password is updated, but unix\_socket authentication is not specified in the `IDENTIFIED VIA` clause, unix\_socket authentication will no longer be permitted.
 
-```
+```sql
 ALTER USER 'bob'@'localhost' IDENTIFIED VIA mysql_native_password 
   USING PASSWORD('pwd2');
 
@@ -109,7 +109,7 @@ The optional `IDENTIFIED BY` clause can be used to provide an account with a pas
 
 For example, if our password is `mariadb`, then we can set the account's password with:
 
-```
+```sql
 ALTER USER foo2@test IDENTIFIED BY 'mariadb';
 ```
 
@@ -126,7 +126,7 @@ The optional `IDENTIFIED BY PASSWORD` clause can be used to provide an account w
 
 For example, if our password is `mariadb`, then we can find the hash with:
 
-```
+```sql
 SELECT PASSWORD('mariadb');
 +-------------------------------------------+
 | PASSWORD('mariadb')                       |
@@ -137,7 +137,7 @@ SELECT PASSWORD('mariadb');
 
 And then we can set an account's password with the hash:
 
-```
+```sql
 ALTER USER foo2@test 
   IDENTIFIED BY PASSWORD '*54958E764CE10E50764C2EECBB71D01F08549980';
 ```
@@ -155,13 +155,13 @@ The optional `IDENTIFIED VIA authentication_plugin` allows you to specify that t
 
 For example, this could be used with the [PAM authentication plugin](../../plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam.md):
 
-```
+```sql
 ALTER USER foo2@test IDENTIFIED VIA pam;
 ```
 
 Some authentication plugins allow additional arguments to be specified after a `USING` or `AS` keyword. For example, the [PAM authentication plugin](../../plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam.md) accepts a [service name](../../plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam.md#configuring-the-pam-service):
 
-```
+```sql
 ALTER USER foo2@test IDENTIFIED VIA pam USING 'mariadb';
 ```
 
@@ -169,7 +169,7 @@ The exact meaning of the additional argument would depend on the specific authen
 
 From [MariaDB 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/account-management-sql-statements/broken-reference/README.md), the `USING` or `AS` keyword can also be used to provide a plain-text password to a plugin if it's provided as an argument to the [PASSWORD()](../../sql-functions/secondary-functions/encryption-hashing-and-compression-functions/password.md) function. This is only valid for [authentication plugins](../../plugins/authentication-plugins/) that have implemented a hook for the [PASSWORD()](../../sql-functions/secondary-functions/encryption-hashing-and-compression-functions/password.md) function. For example, the [ed25519](../../plugins/authentication-plugins/authentication-plugin-ed25519.md) authentication plugin supports this:
 
-```
+```sql
 ALTER USER safe@'%' IDENTIFIED VIA ed25519 USING PASSWORD('secret');
 ```
 
@@ -197,7 +197,7 @@ The `REQUIRE` keyword must be used only once for all specified options, and the 
 
 For example, you can alter a user account to require these TLS options with the following:
 
-```
+```sql
 ALTER USER 'alice'@'%'
  REQUIRE SUBJECT '/CN=alice/O=My Dom, Inc./C=US/ST=Oregon/L=Portland' AND
  ISSUER '/C=FI/ST=Somewhere/L=City/ O=Some Company/CN=Peter Parker/emailAddress=p.parker@marvel.com'
@@ -225,7 +225,7 @@ If any of these limits are set to `0`, then there is no limit for that resource 
 
 Here is an example showing how to set an account's resource limits:
 
-```
+```sql
 ALTER USER 'someone'@'localhost' WITH
     MAX_USER_CONNECTIONS 10
     MAX_QUERIES_PER_HOUR 200;
@@ -241,7 +241,7 @@ Per account resource limits are stored in the [user](../administrative-sql-state
 
 Besides automatic password expiry, as determined by [default\_password\_lifetime](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#default_password_lifetime), password expiry times can be set on an individual user basis, overriding the global setting, for example:
 
-```
+```sql
 ALTER USER 'monty'@'localhost' PASSWORD EXPIRE INTERVAL 120 DAY;
 ALTER USER 'monty'@'localhost' PASSWORD EXPIRE NEVER;
 ALTER USER 'monty'@'localhost' PASSWORD EXPIRE DEFAULT;
@@ -253,7 +253,7 @@ See [User Password Expiry](../../../security/user-account-management/user-passwo
 
 Account locking permits privileged administrators to lock/unlock user accounts. No new client connections will be permitted if an account is locked (existing connections are not affected). For example:
 
-```
+```sql
 ALTER USER 'marijn'@'localhost' ACCOUNT LOCK;
 ```
 

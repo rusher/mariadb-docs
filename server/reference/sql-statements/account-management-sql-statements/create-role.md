@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 CREATE [OR REPLACE] ROLE [IF NOT EXISTS] role 
   [WITH ADMIN 
     {CURRENT_USER | CURRENT_ROLE | user | role}]
@@ -22,7 +22,7 @@ in an error. The maximum length for a role is 128 characters. Role names can be\
 quoted, as explained in the [Identifier names](../../sql-structure/sql-language-structure/identifier-names.md) page. Only\
 one error is produced for all roles which have not been created:
 
-```
+```sql
 ERROR 1396 (HY000): Operation CREATE ROLE failed for 'a','b','c'
 ```
 
@@ -45,7 +45,7 @@ users.
 
 If the optional `OR REPLACE` clause is used, it acts as a shortcut for:
 
-```
+```sql
 DROP ROLE IF EXISTS name;
 CREATE ROLE name ...;
 ```
@@ -56,7 +56,7 @@ When the `IF NOT EXISTS` clause is used, MariaDB will return a warning instead o
 
 ## Examples
 
-```
+```sql
 CREATE ROLE journalist;
 
 CREATE ROLE developer WITH ADMIN lorinda@localhost;
@@ -64,7 +64,7 @@ CREATE ROLE developer WITH ADMIN lorinda@localhost;
 
 Granting the role to another user. Only user `lorinda@localhost` has permission to grant the `developer` role:
 
-```
+```sql
 SELECT USER();
 +-------------------+
 | USER()            |
@@ -87,7 +87,7 @@ GRANT m_role TO ian@localhost;
 
 The `OR REPLACE` and `IF NOT EXISTS` clauses. The `journalist` role already exists:
 
-```
+```sql
 CREATE ROLE journalist;
 ERROR 1396 (HY000): Operation CREATE ROLE failed for 'journalist'
 
@@ -98,7 +98,7 @@ CREATE ROLE IF NOT EXISTS journalist;
 Query OK, 0 rows affected, 1 warning (0.00 sec)
 ```
 
-```
+```sql
 SHOW WARNINGS;
 +-------+------+---------------------------------------------------+
 | Level | Code | Message                                           |

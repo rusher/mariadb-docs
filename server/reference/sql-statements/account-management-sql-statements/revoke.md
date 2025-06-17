@@ -4,7 +4,7 @@
 
 ### Syntax
 
-```
+```sql
 REVOKE 
     priv_type [(column_list)]
       [, priv_type [(column_list)]] ...
@@ -32,7 +32,7 @@ To revoke all privileges, use the second syntax, which drops all\
 global, database, table, column, and routine privileges for the named\
 user or users:
 
-```
+```sql
 REVOKE ALL PRIVILEGES, GRANT OPTION FROM user [, user] ...
 ```
 
@@ -40,7 +40,7 @@ To use this `REVOKE` syntax, you must have the global[CREATE USER](create-user.m
 
 ### Examples
 
-```
+```sql
 REVOKE SUPER ON *.* FROM 'alexander'@'localhost';
 ```
 
@@ -48,7 +48,7 @@ REVOKE SUPER ON *.* FROM 'alexander'@'localhost';
 
 ### Syntax
 
-```
+```sql
 REVOKE role  [, role ...]
     FROM grantee [, grantee2 ... ]
 
@@ -63,7 +63,7 @@ Before [MariaDB 10.1.13](https://github.com/mariadb-corporation/docs-server/blob
 
 ### Example
 
-```
+```sql
 REVOKE journalist FROM hulda
 ```
 

@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 SET DEFAULT ROLE { role | NONE } [ FOR user@host ]
 ```
 
@@ -20,19 +20,19 @@ The default role is stored in the `default_role` column in the [mysql.user](../a
 
 Setting a default role for the current user:
 
-```
+```sql
 SET DEFAULT ROLE journalist;
 ```
 
 Removing a default role from the current user:
 
-```
+```sql
 SET DEFAULT ROLE NONE;
 ```
 
 Setting a default role for another user. The role has to have been granted to the user before it can be set as default:
 
-```
+```sql
 CREATE ROLE journalist;
 CREATE USER taniel;
 
@@ -45,8 +45,8 @@ SET DEFAULT ROLE journalist FOR taniel;
 
 Viewing mysql.user:
 
-```
-select * from mysql.user where user='taniel'\G
+```sql
+SELECT * FROM mysql.user WHERE user='taniel'\G
 *************************** 1. row ***************************
                   Host: %
                   User: taniel
@@ -58,7 +58,7 @@ select * from mysql.user where user='taniel'\G
 
 Removing a default role for another user
 
-```
+```sql
 SET DEFAULT ROLE NONE FOR taniel;
 ```
 

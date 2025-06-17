@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 CREATE [OR REPLACE] USER [IF NOT EXISTS] 
  user_specification [,user_specification ...] 
   [REQUIRE {NONE | tls_option [[AND] tls_option ...] }]
@@ -54,7 +54,7 @@ The `CREATE USER` statement creates new MariaDB accounts. To use it, you must ha
 
 If any of the specified accounts, or any permissions for the specified accounts, already exist, then the server returns `ERROR 1396 (HY000)`. If an error occurs, `CREATE USER` will still create the accounts that do not result in an error. Only one error is produced for all users which have not been created:
 
-```
+```sql
 ERROR 1396 (HY000): 
   Operation CREATE USER failed for 'u1'@'%','u2'@'%'
 ```
@@ -69,14 +69,14 @@ One can also create users with [GRANT](grant.md) if [SQL\_MODE](../../../server-
 
 If the optional `OR REPLACE` clause is used, it is basically a shortcut for:
 
-```
+```sql
 DROP USER IF EXISTS name;
 CREATE USER name ...;
 ```
 
 For example:
 
-```
+```sql
 CREATE USER foo2@test IDENTIFIED BY 'password';
 ERROR 1396 (HY000): Operation CREATE USER failed for 'foo2'@'test'
 
@@ -90,7 +90,7 @@ When the `IF NOT EXISTS` clause is used, MariaDB will return a warning instead o
 
 For example:
 
-```
+```sql
 CREATE USER foo2@test IDENTIFIED BY 'password';
 ERROR 1396 (HY000): Operation CREATE USER failed for 'foo2'@'test'
 
@@ -115,7 +115,7 @@ The optional `IDENTIFIED BY` clause can be used to provide an account with a pas
 
 For example, if our password is `mariadb`, then we can create the user with:
 
-```
+```sql
 CREATE USER foo2@test IDENTIFIED BY 'mariadb';
 ```
 
@@ -132,7 +132,7 @@ The optional `IDENTIFIED BY PASSWORD` clause can be used to provide an account w
 
 For example, if our password is `mariadb`, then we can find the hash with:
 
-```
+```sql
 SELECT PASSWORD('mariadb');
 +-------------------------------------------+
 | PASSWORD('mariadb')                       |
@@ -144,7 +144,7 @@ SELECT PASSWORD('mariadb');
 
 And then we can create a user with the hash:
 
-```
+```sql
 CREATE USER foo2@test IDENTIFIED BY PASSWORD '*54958E764CE10E50764C2EECBB71D01F08549980';
 ```
 
@@ -163,13 +163,13 @@ The optional `IDENTIFIED VIA authentication_plugin` allows you to specify that t
 
 For example, this could be used with the [PAM authentication plugin](../../plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam.md):
 
-```
+```sql
 CREATE USER foo2@test IDENTIFIED VIA pam;
 ```
 
 Some authentication plugins allow additional arguments to be specified after a `USING` or `AS` keyword. For example, the [PAM authentication plugin](../../plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam.md) accepts a [service name](../../plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam.md#configuring-the-pam-service):
 
-```
+```sql
 CREATE USER foo2@test IDENTIFIED VIA pam USING 'mariadb';
 ```
 
@@ -177,13 +177,13 @@ The exact meaning of the additional argument would depend on the specific authen
 
 The `USING` or `AS` keyword can also be used to provide a plain-text password to a plugin if it's provided as an argument to the [PASSWORD()](../../sql-functions/secondary-functions/encryption-hashing-and-compression-functions/password.md) function. This is only valid for [authentication plugins](../../plugins/authentication-plugins/) that have implemented a hook for the [PASSWORD()](../../sql-functions/secondary-functions/encryption-hashing-and-compression-functions/password.md) function. For example, the [ed25519](../../plugins/authentication-plugins/authentication-plugin-ed25519.md) authentication plugin supports this:
 
-```
+```sql
 CREATE USER safe@'%' IDENTIFIED VIA ed25519 USING PASSWORD('secret');
 ```
 
 One can specify many authentication plugins, they all work as alternatives ways of authenticating a user:
 
-```
+```sql
 CREATE USER safe@'%' IDENTIFIED VIA ed25519 USING PASSWORD('secret') OR unix_socket;
 ```
 
@@ -213,7 +213,7 @@ The `REQUIRE` keyword must be used only once for all specified options, and the 
 
 For example, you can create a user account that requires these TLS options with the following:
 
-```
+```sql
 CREATE USER 'alice'@'%'
  REQUIRE SUBJECT '/CN=alice/O=My Dom, Inc./C=US/ST=Oregon/L=Portland'
  AND ISSUER '/C=FI/ST=Somewhere/L=City/ O=Some Company/CN=Peter Parker/emailAddress=p.parker@marvel.com'
@@ -241,7 +241,7 @@ If any of these limits are set to `0`, then there is no limit for that resource 
 
 Here is an example showing how to create a user with resource limits:
 
-```
+```sql
 CREATE USER 'someone'@'localhost' WITH
     MAX_USER_CONNECTIONS 10
     MAX_QUERIES_PER_HOUR 200;
@@ -278,13 +278,13 @@ You can use a netmask to match a range of IP addresses using `'base_ip/netmask'`
 host name. A user with an IP address _ip\_addr_ will be allowed to connect if the following\
 condition is true:
 
-```
+```bash
 ip_addr & netmask = base_ip
 ```
 
 For example, given a user:
 
-```
+```sql
 CREATE USER 'maria'@'247.150.130.0/255.255.255.0';
 ```
 
@@ -330,7 +330,7 @@ Once connected, you only have the privileges granted to the account that matched
 not all accounts that could have matched. For example, consider the following\
 commands:
 
-```
+```sql
 CREATE USER 'joffrey'@'192.168.0.3';
 CREATE USER 'joffrey'@'%';
 GRANT SELECT ON test.t1 to 'joffrey'@'192.168.0.3';
@@ -349,7 +349,7 @@ Anonymous accounts are accounts where the user name portion of the account name 
 
 For example, here are some anonymous accounts:
 
-```
+```sql
 CREATE USER ''@'localhost';
 CREATE USER ''@'192.168.0.3';
 ```
@@ -360,14 +360,14 @@ On some systems, the [mysql.db](../administrative-sql-statements/system-tables/t
 
 This situation means that you will run into errors if you try to create a `''@'%'` account. For example:
 
-```
+```sql
 CREATE USER ''@'%';
 ERROR 1396 (HY000): Operation CREATE USER failed for ''@'%'
 ```
 
 The fix is to [DELETE](../data-manipulation/changing-deleting-data/delete.md) the row in the [mysql.db](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-db-table.md) table and then execute [FLUSH PRIVILEGES](../administrative-sql-statements/flush-commands/flush.md):
 
-```
+```sql
 DELETE FROM mysql.db WHERE User='' AND Host='%';
 FLUSH PRIVILEGES;
 ```
@@ -376,7 +376,7 @@ Note that `FLUSH PRIVILEGES` is only needed if one modifies the `mysql` tables d
 
 And then the account can be created:
 
-```
+```sql
 CREATE USER ''@'%';
 Query OK, 0 rows affected (0.01 sec)
 ```
@@ -387,7 +387,7 @@ See [MDEV-13486](https://jira.mariadb.org/browse/MDEV-13486) for more informatio
 
 Besides automatic password expiry, as determined by [default\_password\_lifetime](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#default_password_lifetime), password expiry times can be set on an individual user basis, overriding the global setting, for example:
 
-```
+```sql
 CREATE USER 'monty'@'localhost' PASSWORD EXPIRE INTERVAL 120 DAY;
 ```
 
@@ -395,11 +395,13 @@ See [User Password Expiry](../../../security/user-account-management/user-passwo
 
 ## Account Locking
 
-Account locking permits privileged administrators to lock/unlock user accounts. No new client connections will be permitted if an account is locked (existing connections are not affected). For example:`<<sql>>`\
-CREATE USER 'marijn'@'localhost' ACCOUNT LOCK;
+Account locking permits privileged administrators to lock/unlock user accounts. No new client connections will be permitted if an account is locked (existing connections are not affected). For example:
 
-See [Account Locking](../../../security/user-account-management/account-locking.md) for more details.\
-<>
+```sql
+CREATE USER 'marijn'@'localhost' ACCOUNT LOCK;
+```
+
+See [Account Locking](../../../security/user-account-management/account-locking.md) for more details.
 
 From [MariaDB 10.4.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-1047-release-notes) and [MariaDB 10.5.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1058-release-notes), the _lock\_option_ and _password\_option_ clauses can occur in either order.
 

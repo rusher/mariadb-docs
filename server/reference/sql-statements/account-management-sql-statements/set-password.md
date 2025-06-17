@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 SET PASSWORD [FOR user] =
     {
         PASSWORD('some password')
@@ -47,7 +47,7 @@ The `[unix_socket](../../../plugins/authentication-plugins/authentication-plugin
 
 If you attempt to run `SET PASSWORD` on an account that authenticates with one of these authentication plugins that doesn't store a password in the `[mysql.global_priv](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-global_priv-table.md)` table, then MariaDB Server will issue an error like the following:
 
-```
+```sql
 SET PASSWORD is ignored for users authenticating via unix_socket plugin
 ```
 
@@ -74,13 +74,13 @@ Host column values of '`bob`' and\
 '`%.loc.gov`', you would write the\
 statement like this:
 
-```
+```sql
 SET PASSWORD FOR 'bob'@'%.loc.gov' = PASSWORD('newpass');
 ```
 
 If you want to delete a password for a user, you would do:
 
-```
+```sql
 SET PASSWORD FOR 'bob'@localhost = PASSWORD("");
 ```
 
@@ -89,6 +89,6 @@ SET PASSWORD FOR 'bob'@localhost = PASSWORD("");
 * [Password Validation Plugins](../../plugins/password-validation-plugins/) - permits the setting of basic criteria for passwords
 * [ALTER USER](alter-user.md)
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}
