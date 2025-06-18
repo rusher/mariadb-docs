@@ -4,6 +4,8 @@ A partitioning type determines how a partitioned table's rows are distributed ac
 
 The size of individual partitions depends on the partitioning type. Read and write performance are affected by the partitioning expression. Therefore, these choices should be made carefully.
 
+## Partitioning Types
+
 MariaDB supports the following partitioning types:
 
 * [RANGE](range-partitioning-type.md)
@@ -15,7 +17,9 @@ MariaDB supports the following partitioning types:
 * [LINEAR KEY](linear-key-partitioning-type.md)
 * [SYSTEM\_TIME](../../../reference/sql-structure/temporal-tables/system-versioned-tables.md)
 
+## See Also
 
+* [Partitioning Overview](../partitioning-overview.md)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
