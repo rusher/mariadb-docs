@@ -30,11 +30,11 @@ For example:
 mariadb-bin.000096 568 0-1-2
 ```
 
-The values in this file are only guaranteed to be consistent with the backup if the `[--no-lock](mariabackup-options.md#-no-lock)` option was **not** provided when the backup was taken.
+The values in this file are only guaranteed to be consistent with the backup if the [`--no-lock`](mariabackup-options.md#no-lock) option was **not** provided when the backup was taken.
 
 ## `xtrabackup_binlog_pos_innodb`
 
-This file is created by mariabackup to provide the binary log file name and position when the [--no-lock](mariabackup-options.md#-no-lock) option is used. It can be used instead of the file "xtrabackup\_binlog\_info" to obtain transactionally consistent binlog coordinates from the backup of a master server with the --no-lock option to minimize the impact on a running server.
+This file is created by mariabackup to provide the binary log file name and position when the [--no-lock](mariabackup-options.md#no-lock) option is used. It can be used instead of the file "xtrabackup\_binlog\_info" to obtain transactionally consistent binlog coordinates from the backup of a master server with the --no-lock option to minimize the impact on a running server.
 
 Whenever a transaction is committed inside InnoDB when the binary log is enabled, the corresponding binlog coordinates are written to the InnoDB redo log along with the transaction commit. This allows one to restore the binlog coordinates corresponding to the last commit done by InnoDB along with a backup.
 
@@ -134,7 +134,7 @@ This field stores the [binary log](../../../server-management/server-monitoring-
 
 This field also stores the value of the `[gtid_current_pos](../../../server-usage/replication-cluster-multi-master/standard-replication/gtid.md#gtid_current_pos)` system variable that correspond to the backup.
 
-The values in this field are only guaranteed to be consistent with the backup if the `[--no-lock](mariabackup-options.md#-no-lock)` option was **not** provided when the backup was taken.
+The values in this field are only guaranteed to be consistent with the backup if the [`--no-lock`](mariabackup-options.md#no-lock) option was **not** provided when the backup was taken.
 
 ### `innodb_from_lsn`
 
