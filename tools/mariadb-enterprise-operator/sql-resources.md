@@ -121,7 +121,7 @@ Behind the scenes, the operator will be creating an `User` resource with `ALL PR
 ## Authentication plugins
 
 {% hint style="warning" %}
-This feature requires the `skip-strict-password-validation` option to be set. See: [strict-password-validation](sql-resources.md#password-plugin).
+This feature requires the `skip-strict-password-validation` option to be set. See: [strict-password-validation](https://mariadb.com/docs/server/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#strict_password_validation).
 {% endhint %}
 
 Passwords can be supplied using the `passwordSecretKeyRef` field in the `User` CR. This is a reference to a `Secret` that contains a password in plain text.
