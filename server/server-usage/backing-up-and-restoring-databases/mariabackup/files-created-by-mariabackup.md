@@ -8,7 +8,7 @@ During the backup, any server options relevant to Mariabackup are written to the
 
 ## `ib_logfile0`
 
-In [MariaDB 10.2.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-10210-release-notes) and later, Mariabackup creates an empty [InnoDB redo log](../../storage-engines/innodb/innodb-redo-log.md) file called `ib_logfile0` as part of the `[--prepare](mariabackup-options.md#-prepare)` stage. This file has 3 roles:
+In [MariaDB 10.2.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-10210-release-notes) and later, Mariabackup creates an empty [InnoDB redo log](../../storage-engines/innodb/innodb-redo-log.md) file called `ib_logfile0` as part of the [prepare](mariabackup-options.md#prepare) stage. This file has 3 roles:
 
 1. In the source server, `ib_logfile0` is the first (and possibly the only) [InnoDB redo log](../../storage-engines/innodb/innodb-redo-log.md) file.
 2. In the non-prepared backup, `ib_logfile0` contains all of the [InnoDB redo log](../../storage-engines/innodb/innodb-redo-log.md) copied during the backup. Previous versions of Mariabackup would use a file called `[xtrabackup_logfile](#xtrabackup_logfile)` for this.
