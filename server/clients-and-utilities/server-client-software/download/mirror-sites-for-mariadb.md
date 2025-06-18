@@ -100,7 +100,7 @@ space in total.
 
 
 See the
-[rsync documentation](https://www.samba.org/ftp/rsync/rsync.html) for details
+[rsync documentation](https://rsync.samba.org/documentation.html) for details
 on what each of the arguments in the command above does.
 
 
