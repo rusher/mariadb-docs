@@ -3,7 +3,6 @@
 A MariaDB ID is a free account that provides:
 
 * Customer access to MariaDB database product downloads
-* Enhanced experience on MariaDB Documentation including member access, questions, and comments
 
 ### Create A MariaDB ID
 
