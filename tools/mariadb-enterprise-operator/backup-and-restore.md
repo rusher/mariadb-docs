@@ -343,8 +343,9 @@ Refer to the `mariadb-dump` and `mariadb` CLI options in the [reference](backup-
 
 ## Staging area
 
-**NOTE**\
+{% hint style="info" %}
 S3 is the only storage type that supports a staging area.
+{% endhint %}
 
 When using S3 storage for backups, a staging area is used for keeping the external backups while they are being processed. By default, this staging area is an `emptyDir` volume, which means that the backups are temporarily stored in the node's local storage where the `Backup`/`Restore` `Job` is scheduled. In production environments, large backups may lead to issues if the node doesn't have sufficient space, potentially causing the backup/restore process to fail.
 

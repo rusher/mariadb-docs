@@ -35,8 +35,9 @@ securityContext:
   runAsUser: 1000650000
 ```
 
-**IMPORTANT**\
+{% hint style="warning" %}
 OpenShift does not assign `SecurityContexts` in the `default` and `kube-system` namespaces. Please refrain from deploying operands on them, as it will result in permission errors when trying to write to the filesystem.
+{% endhint %}
 
 You can read more about [SecurityContextConstraints in the OpenShift documentation](https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/authentication_and_authorization/managing-pod-security-policies).
 

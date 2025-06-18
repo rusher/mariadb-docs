@@ -96,8 +96,9 @@ helm install mariadb-enterprise-operator \
 
 ## Updates
 
-**IMPORTANT**\
+{% hint style="info" %}
 Make sure you read and understand the [updates documentation](../updates.md) before proceeding to update the operator.
+{% endhint %}
 
 The first step is upgrading the CRDs that the operator depends on:
 
@@ -158,8 +159,9 @@ You may similarly configure the `webhook` and `cert-controller` components to ru
 
 ## Uninstalling
 
-**CAUTION**\
+{% hint style="danger" %}
 Uninstalling the `mariadb-enterprise-operator-crds` Helm chart will remove the CRDs and their associated resources, resulting in downtime.
+{% endhint %}
 
 First, uninstall the `mariadb-enterprise-operator` Helm chart. This action will not delete your CRDs, so your operands (i.e. `MariaDB` and `MaxScale`) will continue to run without the operator's reconciliation.
 

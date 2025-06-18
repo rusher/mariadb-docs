@@ -138,6 +138,10 @@ MariaDB [(none)]> SHOW DATABASES;
 2 rows in set (0.001 sec)
 ```
 
+{% hint style="success" %}
+You have successfully deployed a MariaDB Enterprise Cluster with MaxScale in Kubernetes using the MariaDB Enterprise Operator!
+{% endhint %}
+
 Refer to the [documentation](README.md), the [API reference](api-reference.md)and the [examples catalog](examples-catalog.md) for further detail.
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
