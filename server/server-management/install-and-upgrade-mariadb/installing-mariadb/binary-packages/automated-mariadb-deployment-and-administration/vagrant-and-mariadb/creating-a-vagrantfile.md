@@ -180,9 +180,9 @@ It is often desirable for a machine to be able to communicate with "the outside"
 * Public networks;
 * Exposing ports to the host.
 
-Remembers that Vagrant doesn't create machines, but it asks a provisioner to create machines. Some provisioners support all of these communication methods, others may support some of them, or even none of them. When you create a Vagrantfile that starts machines using one of these features, it is implicit that this can only happen if the provisioner you are using supports the features you need. Check your provisioner documentation to find out which features it supports.
+Remember that Vagrant doesn't create machines itself; instead, it asks a provider to create and manage them. Some providers support all of these communication methods, while others may only support some of them, or even none at all. When you create a Vagrantfile that uses one of these networking features, it is implicit that this can only happen if the provider you are using supports them. Check your provider's documentation to find out which features it supports.
 
-The default provisioner, VirtualBox, supports all these communication methods, including multiple networks.
+The default provider, VirtualBox, supports all of these communication methods, including multiple networks.
 
 ### Private Networks
 
