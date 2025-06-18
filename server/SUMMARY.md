@@ -377,6 +377,7 @@
     * [General Deployment Instructions](server-management/install-and-upgrade-mariadb/deployment-general-installing-and-upgrading-instructions/README.md)
       * [Best Practices](server-management/install-and-upgrade-mariadb/deployment-general-installing-and-upgrading-instructions/best-practices.md)
       * [Deployment Methods](server-management/install-and-upgrade-mariadb/deployment-general-installing-and-upgrading-instructions/deployment-methods.md)
+      * [MariaDB ID Sign Up](server-management/install-and-upgrade-mariadb/deployment-general-installing-and-upgrading-instructions/mariadb-id-sign-up.md)
       * [Customer Download Token](server-management/install-and-upgrade-mariadb/deployment-general-installing-and-upgrading-instructions/token.md)
     * [Installing MariaDB](server-management/install-and-upgrade-mariadb/installing-mariadb/README.md)
       * [Compiling MariaDB From Source](server-management/install-and-upgrade-mariadb/installing-mariadb/compiling-mariadb-from-source/README.md)
