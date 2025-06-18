@@ -249,7 +249,7 @@ where idbPm(fact.key) = idbLocalPm();
 
 The infinidb\_local\_query is set to 0 to allow query across all PMs.
 
-The query is structured so that the UM process on the PM node gets the fact table data locally from the PM node (as indicated by the use of the [idbLocalPm()](../sql-commands/columnstore-information-functions.md) function), while the dimension table data is extracted from all the PM nodes.
+The query is structured so that the UM process on the PM node gets the fact table data locally from the PM node (as indicated by the use of the [idbLocalPm()](../reference/columnstore-information-functions.md) function), while the dimension table data is extracted from all the PM nodes.
 
 Then you can execute the script to pipe it directly into cpimport:
 
