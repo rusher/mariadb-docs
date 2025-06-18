@@ -27,14 +27,14 @@ Features were ported from the Enterprise Server to [MariaDB 10.11.8](https://app
 [MariaDB Backup](./) supports some additional features, such as:
 
 * Minimizes locks during the backup to permit more concurrency and to enable faster backups.
-  * This relies on the usage of `[BACKUP STAGE](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/backup-commands/backup-stage.md)` commands and DDL logging.
-  * This includes no locking during the copy phase of `[ALTER TABLE](../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md)` statements, which tends to be the longest phase of these statements.
+  * This relies on the usage of [BACKUP STAGE](../../../reference/sql-statements/administrative-sql-statements/backup-commands/backup-stage.md) commands and DDL logging.
+  * This includes no locking during the copy phase of [`ALTER TABLE`](../../../reference/sql-statements/data-definition/alter/alter-table.md) statements, which tends to be the longest phase of these statements.
 * Provides optimal backup support for all storage engines that store things on local disk.
 
 ### Differences Compared to Percona XtraBackup
 
 * Percona XtraBackup requires more locks to run than MariaDB. In addition, any running ALTER TABLE will block Percona XtraBackup until it completes.
-* Percona XtraBackup copies its [InnoDB redo log](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-redo-log.md) files to the file `xtrabackup_logfile`, while Mariabackup uses the file `[ib_logfile0](files-created-by-mariabackup.md#ib_logfile0)`.
+* Percona XtraBackup copies its [InnoDB redo log](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-redo-log.md) files to the file `xtrabackup_logfile`, while Mariabackup uses the file  [ib\_logfile0](files-created-by-mariabackup.md#ib_logfile0).
 * Percona XtraBackup's [libgcrypt-based encryption of backups](https://www.percona.com/doc/percona-xtrabackup/2.3/backup_scenarios/encrypted_backup.html) is not supported by Mariabackup.
 * There is no symbolic link from `mariabackup` to `[innobackupex](https://www.percona.com/doc/percona-xtrabackup/2.3/innobackupex/innobackupex_option_reference.html)`, as there is for `[xtrabackup](https://www.percona.com/doc/percona-xtrabackup/2.3/xtrabackup_bin/xbk_option_reference.html)`. Instead, `mariabackup` has the `[--innobackupex](mariabackup-options.md#-innobackupex)` command-line option to enable innobackupex-compatible options.
 * The `[--compact](https://www.percona.com/doc/percona-xtrabackup/2.3/xtrabackup_bin/xbk_option_reference.html#cmdoption-xtrabackup-compact)` and `[--rebuild_indexes](https://www.percona.com/doc/percona-xtrabackup/2.3/xtrabackup_bin/xbk_option_reference.html#cmdoption-xtrabackup-rebuild-indexes)` options are not supported.
