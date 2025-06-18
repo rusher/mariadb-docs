@@ -12,7 +12,7 @@ of the comment and extend to the end of the current line.
 
 ### Configuration
 
-Read the [REST API](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)\
+Read the [REST API](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)\
 section of the configuration guide for more details on how to configure the REST API.
 
 ### Authentication
@@ -23,12 +23,12 @@ user is `admin:mariadb`.
 
 It is highly recommended to enable HTTPS on the MaxScale REST API to make the\
 communication between the client and MaxScale secure. Without it, the passwords\
-can be intercepted from the network traffic. Refer to the[Configuration Guide](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md) for more\
+can be intercepted from the network traffic. Refer to the[Configuration Guide](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md) for more\
 details on how to enable HTTPS for the MaxScale REST API.
 
 For more details on how administrative interface users are created and managed,\
-refer to the [MaxCtrl](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-reference/mariadb-maxscale-2501-maxscale-2501-maxctrl.md) documentation as well as the\
-documentation of the [users](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-rest-api/mariadb-maxscale-2501-maxscale-2501-admin-user-resource.md) resource.
+refer to the [MaxCtrl](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-reference/mariadb-maxscale-2501-maxscale-2501-maxctrl.md) documentation as well as the\
+documentation of the [users](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-rest-api/mariadb-maxscale-2501-maxscale-2501-admin-user-resource.md) resource.
 
 #### JSON Web Tokens
 
@@ -114,15 +114,15 @@ given in the HTTP query string.
 The MaxScale REST API provides the following resources. All resources conform to\
 the [JSON API](https://jsonapi.org/format/) specification.
 
-* [maxscale](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-rest-api/mariadb-maxscale-2501-maxscale-2501-maxscale-resource.md)
-* [services](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-rest-api/mariadb-maxscale-2501-maxscale-2501-service-resource.md)
-* [servers](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-rest-api/mariadb-maxscale-2501-maxscale-2501-server-resource.md)
-* [listeners](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-rest-api/mariadb-maxscale-2501-maxscale-2501-listener-resource.md)
-* [filters](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-rest-api/mariadb-maxscale-2501-maxscale-2501-filter-resource.md)
-* [monitors](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-rest-api/mariadb-maxscale-2501-maxscale-2501-monitor-resource.md)
-* [sessions](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-rest-api/mariadb-maxscale-2501-maxscale-2501-session-resource.md)
-* [users](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-rest-api/mariadb-maxscale-2501-maxscale-2501-admin-user-resource.md)
-* [sql](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-rest-api/mariadb-maxscale-2501-maxscale-2501-sql-resource.md)
+* [maxscale](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-rest-api/mariadb-maxscale-2501-maxscale-2501-maxscale-resource.md)
+* [services](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-rest-api/mariadb-maxscale-2501-maxscale-2501-service-resource.md)
+* [servers](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-rest-api/mariadb-maxscale-2501-maxscale-2501-server-resource.md)
+* [listeners](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-rest-api/mariadb-maxscale-2501-maxscale-2501-listener-resource.md)
+* [filters](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-rest-api/mariadb-maxscale-2501-maxscale-2501-filter-resource.md)
+* [monitors](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-rest-api/mariadb-maxscale-2501-maxscale-2501-monitor-resource.md)
+* [sessions](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-rest-api/mariadb-maxscale-2501-maxscale-2501-session-resource.md)
+* [users](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-rest-api/mariadb-maxscale-2501-maxscale-2501-admin-user-resource.md)
+* [sql](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-rest-api/mariadb-maxscale-2501-maxscale-2501-sql-resource.md)
 
 In addition to the named resources, the REST API will respond with a HTTP 200 OK\
 response to GET requests on the root resource (`/`) as well as the namespace\
@@ -194,7 +194,7 @@ the resource documentation.
 
 ### Common Request Parameters
 
-All parameters that use boolean values use the same rules that are used for the[boolean values](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md) in the\
+All parameters that use boolean values use the same rules that are used for the[boolean values](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md) in the\
 MaxScale configuration. For example, both `pretty=off` and `pretty=false`\
 disable the `pretty` option.
 

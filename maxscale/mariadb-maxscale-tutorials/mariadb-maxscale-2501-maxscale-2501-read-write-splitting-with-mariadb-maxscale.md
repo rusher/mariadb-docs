@@ -6,7 +6,7 @@ to the primary server and read statements are balanced across the replica server
 
 ### Setting up MariaDB MaxScale
 
-This tutorial is a part of [MariaDB MaxScale Tutorial](../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-tutorials/mariadb-maxscale-2501-maxscale-2501-setting-up-mariadb-maxscale.md).\
+This tutorial is a part of [MariaDB MaxScale Tutorial](../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-tutorials/mariadb-maxscale-2501-maxscale-2501-setting-up-mariadb-maxscale.md).\
 Please read it and follow the instructions. Return here once basic setup is complete.
 
 ### Configuring the service
@@ -29,9 +29,9 @@ match the names of server sections in the configuration file and not the hostnam
 addresses of the servers.
 
 The _user_ and _password_ parameters define the credentials the service uses to populate\
-user authentication data. These users were created at the start of the [MaxScale Tutorial](../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-tutorials/mariadb-maxscale-2501-maxscale-2501-setting-up-mariadb-maxscale.md).
+user authentication data. These users were created at the start of the [MaxScale Tutorial](../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-tutorials/mariadb-maxscale-2501-maxscale-2501-setting-up-mariadb-maxscale.md).
 
-For increased security, see [password encryption](../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-tutorials/mariadb-maxscale-2501-maxscale-2501-encrypting-passwords.md).
+For increased security, see [password encryption](../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-tutorials/mariadb-maxscale-2501-maxscale-2501-encrypting-passwords.md).
 
 ### Configuring the Listener
 
@@ -52,7 +52,7 @@ The optional _address_-parameter defines the local address the listener should b
 
 ### Starting MariaDB MaxScale
 
-For the last steps, please return to [MaxScale Tutorial](../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-tutorials/mariadb-maxscale-2501-maxscale-2501-setting-up-mariadb-maxscale.md).
+For the last steps, please return to [MaxScale Tutorial](../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-tutorials/mariadb-maxscale-2501-maxscale-2501-setting-up-mariadb-maxscale.md).
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

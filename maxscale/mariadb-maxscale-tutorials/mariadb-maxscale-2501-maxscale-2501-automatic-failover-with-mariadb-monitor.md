@@ -1,6 +1,6 @@
 # Automatic Failover With MariaDB Monitor
 
-The [MariaDB Monitor](../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-2501-maxscale-25-01-monitors/mariadb-maxscale-2501-maxscale-2501-mariadb-monitor.md) is not only capable of monitoring the state of a MariaDB primary-replica cluster but is also capable of performing _failover_ and _switchover_. In addition, in some circumstances it is capable of _rejoining_ a primary that has gone down and later reappears.
+The [MariaDB Monitor](../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-2501-maxscale-25-01-monitors/mariadb-maxscale-2501-maxscale-2501-mariadb-monitor.md) is not only capable of monitoring the state of a MariaDB primary-replica cluster but is also capable of performing _failover_ and _switchover_. In addition, in some circumstances it is capable of _rejoining_ a primary that has gone down and later reappears.
 
 Note that the failover (and switchover and rejoin) functionality is only supported in conjunction with GTID-based replication and initially only for simple topologies, that is, 1 primary and several replicas.
 

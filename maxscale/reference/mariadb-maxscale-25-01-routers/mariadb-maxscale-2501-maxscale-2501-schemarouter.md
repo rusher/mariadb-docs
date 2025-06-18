@@ -169,7 +169,7 @@ MaxScale's hostname.
 
 #### `allow_duplicates`
 
-* Type: [boolean](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [boolean](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
 * Default: false
@@ -194,12 +194,12 @@ This parameter was once called `ignore_databases`.
 
 #### `ignore_tables_regex`
 
-* Type: [regex](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [regex](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: No
 * Default: `""`
 
-A [PCRE2 regular expression](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)\
+A [PCRE2 regular expression](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)\
 that is matched against database names when checking for duplicate databases.\
 By default no tables are ignored.
 
@@ -220,17 +220,17 @@ This parameter was once called `ignore_databases_regex`.
 
 #### `max_sescmd_history`
 
-This parameter has been moved to[the MaxScale core](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)\
+This parameter has been moved to[the MaxScale core](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)\
 in MaxScale 6.0.
 
 #### `disable_sescmd_history`
 
-This parameter has been moved to[the MaxScale core](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)\
+This parameter has been moved to[the MaxScale core](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)\
 in MaxScale 6.0.
 
 #### `refresh_databases`
 
-* Type: [boolean](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [boolean](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: No
 * Default: `false`
@@ -244,7 +244,7 @@ to retain the same behavior as in older releases.
 
 #### `refresh_interval`
 
-* Type: [duration](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [duration](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `300s`
@@ -252,7 +252,7 @@ to retain the same behavior as in older releases.
 The minimum interval between database map refreshes in seconds. The default\
 value is 300 seconds.
 
-The interval is specified as documented[here](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md). If no explicit unit\
+The interval is specified as documented[here](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md). If no explicit unit\
 is provided, the value is interpreted as seconds in MaxScale 2.4. In subsequent\
 versions a value without a unit may be rejected. Note that since the granularity\
 of the intervaltimeout is seconds, a timeout specified in milliseconds will be rejected,\
@@ -260,7 +260,7 @@ even if the duration is longer than a second.
 
 #### `max_staleness`
 
-* Type: [duration](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [duration](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
 * Default: 150s
@@ -307,7 +307,7 @@ In MaxScale 24.02, the `queries` `sescmd_percentage`, `longest_sescmd_chain`,`ti
 
 ### Module commands
 
-Read [Module Commands](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-reference/mariadb-maxscale-2501-maxscale-2501-module-commands.md) documentation for\
+Read [Module Commands](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-reference/mariadb-maxscale-2501-maxscale-2501-module-commands.md) documentation for\
 details about module commands.
 
 The schemarouter supports the following module commands.
@@ -372,7 +372,7 @@ cache clearing.
 
 ### Examples
 
-[Here](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-tutorials/mariadb-maxscale-2501-maxscale-2501-schemarouter-simple-sharding-with-two-servers.md) is a small tutorial on how\
+[Here](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-tutorials/mariadb-maxscale-2501-maxscale-2501-schemarouter-simple-sharding-with-two-servers.md) is a small tutorial on how\
 to set up a sharded database.
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>

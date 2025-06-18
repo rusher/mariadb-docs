@@ -352,7 +352,7 @@ Start capture when maxscale starts.
 
 #### `capture_duration`
 
-* Type: [duration](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [duration](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Default: 0s
 * Maximum: Unlimited in MaxScale, 5min in MaxScale Lite.
 * Mandatory: No
@@ -362,7 +362,7 @@ Limit capture to this duration. If set to zero there is no limit.
 
 #### `capture_size`
 
-* Type: [size](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [size](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Default: 0
 * Maximum: Unlimited in MaxScale, 10MB in MaxScale Lite.
 * Mandatory: No

@@ -788,9 +788,9 @@ least the following fields.
 * `data.attributes.router`
 * The router module to use
 * `data.attributes.parameters.user`
-* The [user](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md) to use
+* The [user](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md) to use
 * `data.attributes.parameters.password`
-* The [password](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md) to use
+* The [password](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md) to use
 
 The `data.attributes.parameters` object is used to define router and service\
 parameters. All configuration parameters that can be defined in the\
@@ -804,10 +804,10 @@ relationships: `servers` and `filters` relationships.
 
 If the request body defines a valid `relationships` object, the service is\
 linked to those resources. For servers, this is equivalent to adding the list of\
-server names into the[servers](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md) parameter. For\
-filters, this is equivalent to adding the filters in the`data.relationships.filters.data` array to the[filters](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md) parameter in the\
+server names into the[servers](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md) parameter. For\
+filters, this is equivalent to adding the filters in the`data.relationships.filters.data` array to the[filters](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md) parameter in the\
 order they appear. For other services, this is equivalent to adding the list of\
-server names into the[targets](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md) parameter.
+server names into the[targets](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md) parameter.
 
 The following example defines a new service with both a server and a filter\
 relationship.
@@ -868,7 +868,7 @@ they are allowed to gracefully close before the service is destroyed. This means
 that the destruction of a service can be acknowledged via the REST API before\
 the destruction process has fully completed.
 
-To find out whether a service is still in use after it has been destroyed, the[sessions](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-rest-api/mariadb-maxscale-2501-maxscale-2501-session-resource.md) resource should be used. If a session for\
+To find out whether a service is still in use after it has been destroyed, the[sessions](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-rest-api/mariadb-maxscale-2501-maxscale-2501-session-resource.md) resource should be used. If a session for\
 the service is still open, it has not yet been destroyed.
 
 This endpoint also supports the `force=yes` parameter that will unconditionally\
@@ -890,7 +890,7 @@ PATCH /v1/services/:name
 The request body must be a JSON object which represents a set of new definitions\
 for the service.
 
-All standard service parameters can be modified. Refer to the[service](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md) documentation on\
+All standard service parameters can be modified. Refer to the[service](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md) documentation on\
 the details of these parameters.
 
 In addition to the standard service parameters, router parameters can be updated\
@@ -935,7 +935,7 @@ existing relationships of this type for the service.
 _Note:_ The order of the values in the `filters` relationship will define the\
 order the filters are set up in. The order in which the filters appear in the\
 array will be the order in which the filters are applied to each query. Refer\
-to the [filters](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md) parameter\
+to the [filters](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md) parameter\
 for more details.
 
 The following is an example request and request body that defines a single\
@@ -1027,7 +1027,7 @@ Users are reloaded:
 GET /v1/services/:name/listeners
 ```
 
-This endpoint is deprecated, use the[this](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-rest-api/mariadb-maxscale-2501-maxscale-2501-listener-resource.md) listeners endpoint instead.
+This endpoint is deprecated, use the[this](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-rest-api/mariadb-maxscale-2501-maxscale-2501-listener-resource.md) listeners endpoint instead.
 
 #### Get a single service listener
 
@@ -1035,7 +1035,7 @@ This endpoint is deprecated, use the[this](../../maxscale-versions/mariadb-maxsc
 GET /v1/services/:name/listeners/:listener
 ```
 
-This endpoint is deprecated, use the [this](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-rest-api/mariadb-maxscale-2501-maxscale-2501-listener-resource.md)\
+This endpoint is deprecated, use the [this](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-rest-api/mariadb-maxscale-2501-maxscale-2501-listener-resource.md)\
 listeners endpoint instead.
 
 #### Create a new listener
@@ -1044,7 +1044,7 @@ listeners endpoint instead.
 POST /v1/services/:name/listeners
 ```
 
-This endpoint is deprecated, use the[this](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-rest-api/mariadb-maxscale-2501-maxscale-2501-listener-resource.md) listeners endpoint instead.
+This endpoint is deprecated, use the[this](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-rest-api/mariadb-maxscale-2501-maxscale-2501-listener-resource.md) listeners endpoint instead.
 
 #### Destroy a listener
 
@@ -1052,7 +1052,7 @@ This endpoint is deprecated, use the[this](../../maxscale-versions/mariadb-maxsc
 DELETE /v1/services/:service/listeners/:name
 ```
 
-This endpoint is deprecated, use the[this](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-rest-api/mariadb-maxscale-2501-maxscale-2501-listener-resource.md) listeners endpoint instead.
+This endpoint is deprecated, use the[this](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-rest-api/mariadb-maxscale-2501-maxscale-2501-listener-resource.md) listeners endpoint instead.
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

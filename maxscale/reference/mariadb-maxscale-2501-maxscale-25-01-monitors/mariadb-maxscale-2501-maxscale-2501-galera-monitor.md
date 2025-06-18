@@ -75,7 +75,7 @@ password=mypwd
 
 ### Common Monitor Settings
 
-For a list of optional parameters that all monitors support, read the[Monitor Common](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-2501-maxscale-25-01-monitors/mariadb-maxscale-2501-maxscale-2501-common-monitor-parameters.md) document.
+For a list of optional parameters that all monitors support, read the[Monitor Common](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-2501-maxscale-25-01-monitors/mariadb-maxscale-2501-maxscale-2501-common-monitor-parameters.md) document.
 
 ### Settings
 

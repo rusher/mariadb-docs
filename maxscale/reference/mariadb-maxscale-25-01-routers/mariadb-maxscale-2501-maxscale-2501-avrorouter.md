@@ -3,13 +3,13 @@
 ## Avrorouter
 
 The Avrorouter was deprecated in MaxScale 25.01 and will be removed\
-in the next major release. [KafkaCDC](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-kafkacdc.md) can be used instead.
+in the next major release. [KafkaCDC](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-kafkacdc.md) can be used instead.
 
 The avrorouter is a MariaDB 10.0 binary log to Avro file converter. It consumes\
 binary logs from a local directory and transforms them into a set of Avro files.\
 These files can then be queried by clients for various purposes.
 
-This router is intended to be used in tandem with the[Binlog Server](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-binlogrouter.md).\
+This router is intended to be used in tandem with the[Binlog Server](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-binlogrouter.md).\
 The Binlog Server can connect to a primary server and request binlog records.\
 These records can then consumed by the avrorouter directly from the binlog cache\
 of the Binlog Server. This allows MariaDB MaxScale to automatically transform\
@@ -110,7 +110,7 @@ tables is not contained in the binlogs.
 
 ### Configuration
 
-For information about common service parameters, refer to the[Configuration Guide](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md).
+For information about common service parameters, refer to the[Configuration Guide](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md).
 
 ### Settings
 
@@ -153,7 +153,7 @@ used when replicating from the primary in direct replication mode.
 
 #### `codec`
 
-* Type: [enum](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [enum](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: No
 * Values: `null`, `deflate`
@@ -167,12 +167,12 @@ refer to the [Avro specification](https://avro.apache.org/docs/current/spec.html
 
 #### `match`
 
-* Type: [regex](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [regex](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: No
 * Default: `""`
 
-This and `exclude` are [regular expression settings](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)\
+This and `exclude` are [regular expression settings](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)\
 that filter events for processing depending on table names. Avrorouter does\
 not support the _options_-parameter for regular expressions.
 
@@ -184,7 +184,7 @@ them: `match=(^test[.]t1$)|(^test[.]t2$)`.
 
 #### `exclude`
 
-* Type: [regex](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [regex](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: No
 * Default: `""`
@@ -256,7 +256,7 @@ beginning of the binary log file.
 
 #### `cooperative_replication`
 
-* Type: [boolean](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [boolean](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: No
 * Default: `false`
@@ -318,7 +318,7 @@ data block.
 
 #### `block_size`
 
-* Type: [size](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [size](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `16KiB`
@@ -326,12 +326,12 @@ data block.
 The Avro data block size in bytes. The default is 16 kilobytes. Increase this\
 value if individual events in the binary logs are very large. The value is a\
 size type parameter which means that it can also be defined with an SI suffix.\
-Refer to the [Configuration Guide](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)\
+Refer to the [Configuration Guide](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)\
 for more details about size type parameters and how to use them.
 
 #### `max_file_size`
 
-* Type: [size](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [size](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: No
 * Default: 0
@@ -351,7 +351,7 @@ replication mode does not support this.
 
 #### `max_data_age`
 
-* Type: [duration](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [duration](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: No
 * Default: 0s
@@ -389,7 +389,7 @@ avrodir=/var/lib/maxscale
 
 ### Module commands
 
-Read [Module Commands](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-reference/mariadb-maxscale-2501-maxscale-2501-module-commands.md) documentation for\
+Read [Module Commands](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-reference/mariadb-maxscale-2501-maxscale-2501-module-commands.md) documentation for\
 details about module commands.
 
 The avrorouter supports the following module commands.
@@ -447,8 +447,8 @@ avrorouter.
 
 Before using this client, you will need to install the Python 3 interpreter and\
 add users to the service with the _cdc\_users.py_ script. Fore more details about\
-the user creation, please refer to the [CDC Protocol](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-protocols/mariadb-maxscale-2501-maxscale-2501-change-data-capture-cdc-protocol.md)\
-and [CDC Users](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-protocols/mariadb-maxscale-2501-maxscale-2501-change-data-capture-cdc-users.md) documentation.
+the user creation, please refer to the [CDC Protocol](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-protocols/mariadb-maxscale-2501-maxscale-2501-change-data-capture-cdc-protocol.md)\
+and [CDC Users](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-protocols/mariadb-maxscale-2501-maxscale-2501-change-data-capture-cdc-users.md) documentation.
 
 Read the output of `cdc.py --help` for a full list of supported options\
 and a short usage description of the client program.
@@ -539,7 +539,7 @@ to run the program.
 
 ### Examples
 
-The [Avrorouter Tutorial](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-tutorials/mariadb-maxscale-2501-maxscale-2501-avrorouter-tutorial.md) shows you how\
+The [Avrorouter Tutorial](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-tutorials/mariadb-maxscale-2501-maxscale-2501-avrorouter-tutorial.md) shows you how\
 the Avrorouter works with the Binlog Server to convert binlogs from a primary server\
 into easy to process Avro data.
 
@@ -594,7 +594,7 @@ configuring the Avro C library.
 -DCMAKE_C_FLAGS=-fPIC -DCMAKE_CXX_FLAGS=-fPIC
 ```
 
-For more details about building MaxScale from source, please refer to the[Building MaxScale from Source Code](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-building-mariadb-maxscale-from-source-code.md)\
+For more details about building MaxScale from source, please refer to the[Building MaxScale from Source Code](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-building-mariadb-maxscale-from-source-code.md)\
 document.
 
 ### Router Diagnostics
