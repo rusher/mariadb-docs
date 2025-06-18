@@ -9,10 +9,10 @@ In this guide, we will be migrating from the [MariaDB Community Operator](https:
 
 **1.** Install the Enterprise CRDs as described in the [Helm documentation](../mariadb-enterprise-operator-installation/helm.md#installing-crds).
 
-**2.** Get the [migration script](https://mariadb-corporation.github.io/mariadb-enterprise-operator/scripts/migrate_enterprise.sh) and grant execute permissions:
+**2.** Get the [migration script](https://operator.mariadb.com/scripts/migrate_enterprise.sh) and grant execute permissions:
 
 ```sh
-curl -sLO https://mariadb-corporation.github.io/mariadb-enterprise-operator/scripts/migrate_enterprise.sh
+curl -sLO https://operator.mariadb.com/scripts/migrate_enterprise.sh
 chmod +x migrate_enterprise.sh
 ```
 
