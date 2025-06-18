@@ -7,7 +7,7 @@ volunteer to become a mirror, thank you! Getting you set up is easy.
 
 
 {% hint style="success" %}
-The state of MariaDB mirrors is monitored at [](https://mirmon.mariadb.org/)
+The state of MariaDB mirrors is monitored at [https://mirmon.mariadb.org/](https://mirmon.mariadb.org/)
 {% endhint %}
 
 
@@ -95,7 +95,7 @@ job by adding the `-v --dry-run` flags to the command temporarily so you can
 see what it will do (without actually doing anything).
 
 
-As of February 2024, running the above command will use around 900GB of disk
+As of June 2025, running the above command will use around 750GB of disk
 space in total.
 
 
@@ -156,9 +156,9 @@ Thank you for volunteering to mirror MariaDB!
 ## Credits
 
 
-The primary MariaDB mirrors have been generously provided by the
-[Oregon State University Open Source Lab](https://osuosl.org) (at
-rsync.osuosl.org) and NetCologne (at mirror.netcologne.de)
+The primary MariaDB mirrors have been generously provided by the [Oregon State
+University Open Source Lab](https://osuosl.org) (at rsync.osuosl.org) and
+[NetCologne](https://www.netcologne.de) (at mirror.netcologne.de)
 
 
 Other mirrors (list not necessarily complete) are listed below and can be selected on the [mariadb.org/download/](https://mariadb.org/download/) site:
@@ -492,7 +492,7 @@ Other mirrors (list not necessarily complete) are listed below and can be select
 
 
 The distributed mirrors above only hold the most recent 3-4 releases of each
-MariaDB series (10.5, 10.4, etc...). If you need to access older MariaDB
+MariaDB series (10.6, 10.11, etc...). If you need to access older MariaDB
 releases, there is an archive server that contains every MariaDB release. This
 server is available via the web at [archive.mariadb.org](https://archive.mariadb.org) and via rsync at:
 
@@ -521,7 +521,7 @@ rsync -avP archive.mariadb.org::mariadb/ /path/to/local/dir/
 rsync -avP archive.mariadb.org::mariadb/mariadb-10.4.13/ /path/to/local/dir/
 ```
 
-**Warning**, as of January 2023, the entire archive will use around 10 TB of disk space in
+**Warning**, as of June 2025, the entire archive will use around 14 TB of disk space in
 total, and if you want to keep your mirror up to date (via cron routine for instance), please **first compare** the STATUS file **before** doing the rsync. This file will be updated anytime a new content is added in the archive tree.
 
 
