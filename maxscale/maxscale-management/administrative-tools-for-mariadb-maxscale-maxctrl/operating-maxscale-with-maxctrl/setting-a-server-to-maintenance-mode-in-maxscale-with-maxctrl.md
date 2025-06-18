@@ -1,6 +1,4 @@
-# setting-a-server-to-maintenance-mode-in-maxscale-with-maxctrl
-
-## Setting a Server to Maintenance Mode in MaxScale with MaxCtrl
+# Setting a Server to Maintenance Mode in MaxScale with MaxCtrl
 
 ## Overview
 
@@ -12,7 +10,7 @@ MaxScale allows users to set servers to "maintenance mode", which prevents MaxSc
 
 ## Setting a Server to Maintenance Mode
 
-1. [Configure the REST API](../../administrative-tools-for-mariadb-maxscale-rest-api/) if the default configuration is not sufficient.
+1. [Configure the REST API](broken-reference) if the default configuration is not sufficient.
 2. Use [MaxCtrl](../) to execute the [set server](../../../maxscale-versions/mariadb-maxscale-23-02/mariadb-maxscale-23-02-reference/mariadb-maxscale-2302-maxctrl.md#set-server) command with the maintenance option:
 
 ```

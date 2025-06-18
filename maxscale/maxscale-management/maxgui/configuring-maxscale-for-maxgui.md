@@ -8,7 +8,7 @@
 
 ## Enabling MaxGUI
 
-1. If you want to use MaxGUI remotely, [configure the REST API](../administrative-tools-for-mariadb-maxscale-rest-api/configuring-maxscales-rest-api.md#configuring-maxscales-rest-api-for-remote-connections) for remote connections.\
+1. If you want to use MaxGUI remotely, [configure the REST API](../configuring-maxscales-rest-api.md#configuring-maxscales-rest-api-for-remote-connections) for remote connections.\
    Several global parameters must be configured in maxscale.cnf.
 
 | Parameter                                                                                                                                                                     | Description                                                                                                 |

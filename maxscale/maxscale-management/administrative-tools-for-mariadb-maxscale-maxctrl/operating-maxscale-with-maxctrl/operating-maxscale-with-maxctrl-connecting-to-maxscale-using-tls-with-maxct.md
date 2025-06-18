@@ -1,6 +1,4 @@
-# operating-maxscale-with-maxctrl-connecting-to-maxscale-using-tls-with-maxct
-
-## Connecting to MaxScale using TLS with MaxCtrl
+# Connecting to MaxScale using TLS with MaxCtrl
 
 ## Overview
 
@@ -36,7 +34,7 @@ admin_host            = 0.0.0.0
 admin_port            = 8443
 ```
 
-3. Enable TLS for MaxScale's [Configure the REST API](../../administrative-tools-for-mariadb-maxscale-rest-api/).\
+3. Enable TLS for MaxScale's [Configure the REST API](broken-reference).\
    Several global parameters must be configured in maxscale.cnf.
 
 | Parameter                                                                                                                                                                                        | Description                                                                         |
