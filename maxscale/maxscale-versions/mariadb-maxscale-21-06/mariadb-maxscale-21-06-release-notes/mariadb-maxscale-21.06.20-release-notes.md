@@ -28,7 +28,7 @@ For any problems you encounter, please consider submitting a bug report on [our 
 
 ### Known Issues and Limitations <a href="#known-issues-and-limitations" id="known-issues-and-limitations"></a>
 
-There are some limitations and known issues within this version of MaxScale. For more information, please refer to the [Limitations](../../mariadb-maxscale-24-08-beta/mariadb-maxscale-24-08-beta-about/mariadb-maxscale-2408-maxscale-2408-beta-limitations-and-known-issues-within-mariadb-maxscale.md) document.
+There are some limitations and known issues within this version of MaxScale. For more information, please refer to the [Limitations](broken-reference) document.
 
 ### Packaging <a href="#packaging" id="packaging"></a>
 
