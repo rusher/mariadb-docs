@@ -1,6 +1,6 @@
 # TLS
 
-,MariaDB Enterprise Operator supports issuing, configuring and rotating TLS certificates for both your `MariaDB` and `MaxScale` resources. It aims to be secure by default; for this reason, TLS certificates are issued and configured by the operator as a default behaviour.
+MariaDB Enterprise Operator supports issuing, configuring and rotating TLS certificates for both your `MariaDB` and `MaxScale` resources. It aims to be secure by default; for this reason, TLS certificates are issued and configured by the operator as a default behaviour.
 
 ## `MariaDB` configuration
 
