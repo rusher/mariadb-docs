@@ -197,8 +197,9 @@ data:
 
 Kubernetes probes serve as an inversion of control mechanism, enabling the application to communicate its health status to Kubernetes. This enables Kubernetes to take appropriate actions when the application is unhealthy, such as restarting or stop sending traffic to `Pods`.
 
-**IMPORTANT**\
+{% hint style="info" %}
 Make sure you check the [Kubernetes documentation](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/) if you are unfamiliar with Kubernetes probes.
+{% endhint %}
 
 Fine tunning of probes for databases running in Kubernetes is critical, you may do so by tweaking the following fields:
 

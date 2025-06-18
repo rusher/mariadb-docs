@@ -31,8 +31,9 @@ While Kubernetes `Services` can be utilized to dynamically address primary and s
 
 ## Pod Anti-Affinity
 
-**WARNING**\
+{% hint style="warning" %}
 Bear in mind that, when enabling this, you need to have at least as many `Nodes` available as the replicas specified. Otherwise your `Pods` will be unscheduled and the cluster won't bootstrap.
+{% endhint %}
 
 To achieve real high availability, we need to run each `MariaDB` `Pod` in different Kubernetes `Nodes`. This practice, known as anti-affinity, helps reducing the blast radius of `Nodes` being unavailable.
 
@@ -136,13 +137,15 @@ spec:
 
 If you want to avoid noisy neighbours running in the same Kubernetes `Nodes` as your `MariaDB`, you may consider using dedicated `Nodes`. For achieving this, you will need:
 
-* Taint your `Nodes` and add the counterpart toleration in your `Pods`.\
-  IMPORTANT\
+* Taint your `Nodes` and add the counterpart toleration in your `Pods`.
+  {% hint style="info" %}
   Tainting your `Nodes` is not covered by this operator, it is something you need to do by yourself beforehand. You may take a look at the [Kubernetes documentation](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/) to understand how to achieve this.
+  {% endhint %}
 * Select the `Nodes` where `Pods` will be scheduled in via a `nodeSelector`.
 
-NOTE\
+{% hint style="info" %}
 Although you can use the default `Node` labels, you may consider adding more significative labels to your `Nodes`, as you will have to set to them in your `Pod` `nodeSelector`. Refer to the [Kubernetes documentation](https://kubernetes.io/docs/tasks/configure-pod-container/assign-pods-nodes/#add-a-label-to-a-node).
+{% endhint %}
 
 * Add `podAntiAffinity` to your `Pods` as described in the [Pod Anti-Affinity](high-availability.md#pod-anti-affinity) section.
 
@@ -167,8 +170,9 @@ spec:
 
 ## Pod Disruption Budgets
 
-**IMPORTANT**\
+{% hint style="info" %}
 Take a look at the [Kubernetes documentation](https://kubernetes.io/docs/tasks/run-application/configure-pdb/) if you are unfamiliar to `PodDisruptionBudgets`
+{% endhint %}
 
 By defining a `PodDisruptionBudget`, you are telling Kubernetes how many `Pods` your database tolerates to be down. This quite important for planned maintenance operations such as `Node` upgrades.
 

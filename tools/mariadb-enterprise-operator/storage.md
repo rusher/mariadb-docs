@@ -54,8 +54,9 @@ spec:
 
 ## Volume resize
 
-**WARNING**\
+{% hint style="warning" %}
 The `StorageClass` used for volume resizing must define `allowVolumeExpansion = true`.
+{% endhint %}
 
 It is possible to resize your storage after having provisioned a `MariaDB`. We need to distinguish between:
 

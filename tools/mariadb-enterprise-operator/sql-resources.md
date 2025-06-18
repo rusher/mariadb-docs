@@ -120,8 +120,9 @@ Behind the scenes, the operator will be creating an `User` resource with `ALL PR
 
 ## Authentication plugins
 
-**IMPORTANT**\
+{% hint style="warning" %}
 This feature requires the `skip-strict-password-validation` option to be set. See: [strict-password-validation](sql-resources.md#password-plugin).
+{% endhint %}
 
 Passwords can be supplied using the `passwordSecretKeyRef` field in the `User` CR. This is a reference to a `Secret` that contains a password in plain text.
 

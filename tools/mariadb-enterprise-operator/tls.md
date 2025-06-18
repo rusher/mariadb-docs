@@ -4,8 +4,9 @@ MariaDB Enterprise Operator supports issuing, configuring and rotating TLS certi
 
 ## `MariaDB` configuration
 
-**IMPORTANT**\
+{% hint style="info" %}
 This section covers TLS configuration in new instances. If you are looking to migrate an existing instance to use TLS, please refer to [Enabling TLS in existing instances](mariadb-enterprise-operator-migrations/enabling-tls-in-existing-instances.md) instead.
+{% endhint %}
 
 TLS can be configured in `MariaDB` resources by setting `tls.enabled=true`:
 
@@ -57,8 +58,9 @@ Refer to further sections for a more advanced TLS configuration.
 
 ## `MaxScale` configuration
 
-**IMPORTANT**\
+{% hint style="info" %}
 This section covers TLS configuration in new instances. If you are looking to migrate an existing instance to use TLS, please refer to [Enabling TLS in existing instances](mariadb-enterprise-operator-migrations/enabling-tls-in-existing-instances.md) instead.
+{% endhint %}
 
 TLS will be automatically enabled in `MaxScale` when the referred `MariaDB` (via `mariaDbRef`) has TLS enabled and enforced. Alternatively, you can explicitly enable TLS by setting `tls.enabled=true`:
 
@@ -197,7 +199,9 @@ The advantage of this approach is that the operator fully manages the `Secrets` 
 
 ## Issue certificates with cert-manager
 
-**IMPORTANT**[cert-manager](https://cert-manager.io/) must be previously installed in the cluster in order to use this feature.
+{% hint style="warning" %}
+[cert-manager](https://cert-manager.io/) must be previously installed in the cluster in order to use this feature.
+{% endhint %}
 
 cert-manager is the de-facto standard for managing certificates in Kubernetes. It is a Kubernetes native certificate management controller that allows you to automatically provision, manage and renew certificates. It supports multiple [certificate backends](https://cert-manager.io/docs/configuration/issuers/) (in-cluster, Hashicorp Vault...) which are configured as `Issuer` or `ClusterIssuer` resources.
 
