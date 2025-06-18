@@ -111,21 +111,34 @@ We also have several secondary rsync mirrors you can pull from. In many instance
 
 
 
-| Canada | China | Denmark | Kenya | Netherlands | Poland | Russia |  | Taiwan | Thailand | USA | Uruguay |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Canada | mariadb.mirror.globo.tech::mariadb |
-| China | mirrors.tuna.tsinghua.edu.cn::mariadb |
-| Denmark | mirror.group.one::mariadb |
-| Kenya | mariadb.mirror.liquidtelecom.com::MariaDB |
-| Netherlands | ftp.nluug.nl::mariadb |
-| Poland | ftp.icm.edu.pl::pub/unix/database/mariadb/ |
-| Russia | mirror.mephi.ru::mariadb |
-|  | mirror.truenetwork.ru::MariaDB |
-| Taiwan | ftp.ubuntu-tw.org::mariadb |
-| Thailand | mirror.kku.ac.th::mariadb |
-| USA | mirror.nodesdirect.com::mariadb |
-| Uruguay | espejito.fder.edu.uy::mariadb |
-
+| Country | Rsync URL |
+| --- | --- |
+| Australia | rsync://mirror.aarnet.edu.au/pub/MariaDB/ |
+| Bulgaria | rsync://mirrors.neterra.net/MariaDB/ |
+| Canada | rsync://mariadb.mirror.globo.tech/mariadb/ |
+| China | rsync://mirrors.tuna.tsinghua.edu.cn/mariadb/ |
+| Denmark | rsync://mirror.one.com/mariadb/ |
+| Estonia | rsync://mirrors.xtom.ee/mariadb/ |
+| Germany | rsync://archive.mariadb.org/mariadb/ |
+| Germany | rsync://mirror.netcologne.de/mariadb/ |
+| Kenya | rsync://mariadb.mirror.liquidtelecom.com/MariaDB/ |
+| Morocco | rsync://mirror.marwan.ma/mariadb/ |
+| Netherlands | rsync://ftp.nluug.nl/mariadb/ |
+| Netherlands | rsync://mirror.nl.mirhosting.net/mariadb/ |
+| Norway | rsync://rsync.fjordos.com/mariadb/ |
+| Poland | rsync://ftp.icm.edu.pl/pub/unix/database/mariadb/ |
+| Portugal | rsync://mirrors.ptisp.pt/mariadb/ |
+| Romania | rsync://mirrors.nxthost.com/mariadb/ |
+| Russia | rsync://mirror.mephi.ru/mariadb/ |
+| Russia | rsync://mirror.truenetwork.ru/MariaDB/ |
+| Spain | rsync://mirror.raiolanetworks.com/pub/mariadb/ |
+| Taiwan | rsync://ftp.ubuntu-tw.org/mariadb/ |
+| Thailand | rsync://mirror.kku.ac.th/mariadb/ |
+| United Kingdom | rsync://mariadb.gb.ssimn.org/mariadb/ |
+| United States | rsync://mirror.nodesdirect.com/mariadb/ |
+| United States | rsync://mirror.us.mirhosting.net/mariadb/ |
+| United States | rsync://rsync.osuosl.org/mariadb/ |
+| Uruguay | rsync://espejito.fder.edu.uy/mariadb/ |
 
 
 ## Getting Added to the Mirror List
