@@ -1,4 +1,4 @@
-# MaxScale 25.01 NoSQL Protocol Module
+# MaxScale NoSQL Protocol Module
 
 ## NoSQL Protocol Module
 
@@ -12,99 +12,6 @@ either directly or indirectly via the client library, they are transparently\
 converted into the equivalent SQL and executed against the MariaDB backend.\
 The MariaDB responses are then in turn converted into the format expected by\
 the MongoDB® client library and application.
-
-* [NoSQL Protocol Module](mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md#nosql-protocol-module)
-  * [Configuring](mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md#configuring)
-  * [Authentication](mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md#authentication)
-    * [NoSQL and MariaDB Users](mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md#nosql-and-mariadb-users)
-      * [The mariadb database](mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md#the-mariadb-database)
-    * [Roles and Privileges](mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md#roles-and-privileges)
-    * [Client Authentication](mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md#client-authentication)
-      * [Anonymously](mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md#anonymously)
-      * [Shared Credentials](mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md#shared-credentials)
-      * [Unique Credentials](mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md#unique-credentials)
-      * [Enforce Authentication](mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md#enforce-authentication)
-    * [Authorization](mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md#authorization)
-    * [Bootstrapping the Authentication/Authorization](mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md#bootstrapping-the-authenticationauthorization)
-      * [Explicit bootstrapping](mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md#explicit-bootstrapping)
-      * [Implicit bootstrapping](mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md#implicit-bootstrapping)
-        * [Grants](mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md#grants)
-        * [Examples](mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md#examples)
-          * [Admin User](mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md#admin-user)
-          * [Test User](mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md#test-user)
-      * [TLS/SSL](mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md#tlsssl)
-    * [NoSQL Account Database](mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md#nosql-account-database)
-      * [Private](mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md#private)
-      * [Shared](mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md#shared)
-  * [Wire Protocol](mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md#wire-protocol)
-  * [Client Library](mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md#client-library)
-  * [Settings](mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md#settings)
-    * [user](mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md#user)
-    * [password](mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md#password)
-    * [authentication\_required](mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md#authentication_required)
-    * [authentication\_shared](mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md#authentication_shared)
-    * [authentication\_db](mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md#authentication_db)
-    * [authentication\_key\_id](mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md#authentication_key_id)
-    * [authentication\_user](mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md#authentication_user)
-    * [authentication\_password](mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md#authentication_password)
-    * [authorization\_enabled](mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md#authorization_enabled)
-    * [host](mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md#host)
-    * [on\_unknown\_command](mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md#on_unknown_command)
-    * [log\_unknown\_command](mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md#log_unknown_command)
-    * [auto\_create\_databases](mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md#auto_create_databases)
-    * [auto\_create\_tables](mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md#auto_create_tables)
-    * [id\_length](mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md#id_length)
-    * [ordered\_insert\_behavior](mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md#ordered_insert_behavior)
-    * [cursor\_timeout](mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md#cursor_timeout)
-    * [debug](mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md#debug)
-    * [internal\_cache](mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md#internal_cache)
-  * [Databases and Tables](mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md#databases-and-tables)
-  * [Operators](mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md#operators)
-    * [Query and Projection Operators](mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md#query-and-projection-operators)
-      * [Comparison Query Operators](mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md#comparison-query-operators)
-      * [Logical Query Operators](mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md#logical-query-operators)
-      * [Element Query Operators](mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md#element-query-operators)
-        * [$type](mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md#type)
-      * [Evaluation Query Operators](mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md#evaluation-query-operators)
-      * [Array Query Operators](mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md#array-query-operators)
-        * [$elemMatch](mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md#elemmatch)
-    * [Update Operators](mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md#update-operators)
-      * [Field Update Operators](mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md#field-update-operators)
-    * [Aggregation Pipeline Stages](mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md#aggregation-pipeline-stages)
-    * [Aggregation Pipeline Operators](mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md#aggregation-pipeline-operators)
-      * [Accumulators ($group)](mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md#accumulators-group)
-  * [Database Commands](mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md#database-commands)
-    * [Aggregation Commands](mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md#aggregation-commands)
-      * [aggregate](mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md#aggregate)
-      * [count](mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md#count)
-      * [distinct](mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md#distinct)
-    * [Query and Write Operation Commands](mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md#query-and-write-operation-commands)
-      * [delete](mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md#delete)
-      * [find](mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md#find)
-        * [Projection](mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md#projection)
-          * [Embedded Field Specification](mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md#embedded-field-specification)
-          * [\_id Field Projection](mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md#_id-field-projection)
-        * [Inclusion or Exclusion](mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md#inclusion-or-exclusion)
-        * [Filtering by \_id](mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md#filtering-by-_id)
-      * [findAndModify](mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md#findandmodify)
-      * [getLastError](mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md#getlasterror)
-      * [getMore](mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md#getmore)
-      * [insert](mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md#insert)
-        * [ordered](mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md#ordered)
-          * [default](mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md#default)
-          * [atomic](mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md#atomic)
-        * [Performance](mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md#performance)
-      * [resetError](mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md#reseterror)
-      * [update](mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md#update)
-        * [Update Statements](mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md#update-statements)
-          * [Behavior](mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md#behavior)
-          * \[
-
-## Update with an Update Operator Expressions document]\(#update-with-an-update-operator-expressions-document)
-
-```
-      * [
-```
 
 ## Update with a Replacement Document]\(#update-with-a-replacement-document)
 
@@ -1140,7 +1047,7 @@ used for all unauthenticated MongoDB® clients connecting to the same listener p
 
 #### `authentication_required`
 
-* Type: [boolean](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [boolean](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Default: `false`
 
@@ -1156,7 +1063,7 @@ MariaDB server.
 
 #### `authentication_shared`
 
-* Type: [boolean](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [boolean](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Default: `false`
 
@@ -1206,7 +1113,7 @@ Specifies the _password_ of `authentication_user`.
 
 #### `authorization_enabled`
 
-* Type: [boolean](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [boolean](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Default: `false`
 
@@ -1234,7 +1141,7 @@ MaxScale.
 
 #### `on_unknown_command`
 
-* Type: [enum](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [enum](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Values: `return_error`, `return_empty`
 * Default: `return_error`
@@ -1248,7 +1155,7 @@ Enumeration values:
 
 #### `log_unknown_command`
 
-* Type: [boolean](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [boolean](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Default: `false`
 
@@ -1258,7 +1165,7 @@ currently is not supported.
 
 #### `auto_create_databases`
 
-* Type: [boolean](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [boolean](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Default: `true`
 
@@ -1268,7 +1175,7 @@ Note that setting this parameter to `true`, without also setting`auto_create_tab
 
 #### `auto_create_tables`
 
-* Type: [boolean](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [boolean](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Default: `true`
 
@@ -1289,7 +1196,7 @@ Specifies the length of the id column in tables that are automatically created.
 
 #### `ordered_insert_behavior`
 
-* Type: [enum](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [enum](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Values: `atomic`, `default`
 * Default: `default`
@@ -1310,7 +1217,7 @@ document) is used, has an impact on the performance. Please see the discussion a
 
 #### `cursor_timeout`
 
-* Type: [duration](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [duration](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Default: `60s`
 
@@ -1319,7 +1226,7 @@ automatically closed.
 
 #### `debug`
 
-* Type: [enum\_mask](../mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [enum\_mask](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Values: `none`, `in`, `out`, `back`
 * Default: `none`
@@ -1349,7 +1256,7 @@ and the resulting response sent to the client logged.
 * Default: ''
 
 Specifies what internal cache to use if any. Currently, the only\
-permissible value is `cache`, which refers to the[cache filter](../mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-cache.md).
+permissible value is `cache`, which refers to the[cache filter](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-cache.md).
 
 Please see [caching](mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md#caching) for more information.
 
@@ -2880,7 +2787,7 @@ The conversion of the BSON used in the communication between the client and\
 MaxScale, to the SQL used in the communication between MaxScale and the server\
 carries a not insignificant cost, as does the conversion of result sets\
 returned by the server to the BSON returned by MaxScale to the client. The\
-regular [cache filter](../mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-cache.md) provides no remedy for this, as\
+regular [cache filter](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-cache.md) provides no remedy for this, as\
 it is located after the protocol and uses SQL as the key and stores result\
 sets as values.
 
@@ -2894,7 +2801,7 @@ enabled by adding the following line to the NoSQL listener.
 nosqlprotocol.internal_cache=cache
 ```
 
-This effectively causes the [cache filter](../mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-cache.md) to be used\
+This effectively causes the [cache filter](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-cache.md) to be used\
 inside the NoSQL protocol module. The internal cache can be configured just\
 like the cache filter is, by using the following nested configuration syntax.
 
@@ -2949,7 +2856,7 @@ test-suite pass.
 
 The following is a minimal setup for getting _nosqlprotocol_ up and\
 running. It is assumed the reader knows how to configure MaxScale for\
-normal use. If not, please start with the[MaxScale tutorial](../mariadb-maxscale-25-01-tutorials/mariadb-maxscale-2501-maxscale-2501-setting-up-mariadb-maxscale.md).\
+normal use. If not, please start with the[MaxScale tutorial](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-tutorials/mariadb-maxscale-2501-maxscale-2501-setting-up-mariadb-maxscale.md).\
 Note that as _nosqlprotocol_ is the first component in the MaxScale\
 routing chain, it can be used with all routers and filters.
 

@@ -3,7 +3,7 @@
 ## Change Data Capture (CDC) Protocol
 
 The CDC protocol was deprecated in MaxScale 24.08 and will be removed\
-in the next major release. [KafkaCDC](../mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-kafkacdc.md) can be\
+in the next major release. [KafkaCDC](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-kafkacdc.md) can be\
 used instead.
 
 CDC is a new protocol that allows compatible clients to authenticate and\
@@ -29,7 +29,7 @@ password=maxpwd
 
 If the `cdcusers` file cannot be found, the service user (_maxuser:maxpwd_ in the example) can be used to connect through the CDC protocol.
 
-For more details, refer to the [CDC users documentation](../mariadb-maxscale-25-01-protocols/mariadb-maxscale-2501-maxscale-2501-change-data-capture-cdc-users.md).
+For more details, refer to the [CDC users documentation](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-protocols/mariadb-maxscale-2501-maxscale-2501-change-data-capture-cdc-users.md).
 
 ### Protocol Phases
 
