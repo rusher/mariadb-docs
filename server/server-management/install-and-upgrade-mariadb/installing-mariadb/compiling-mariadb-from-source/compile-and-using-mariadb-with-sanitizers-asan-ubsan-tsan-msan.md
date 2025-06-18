@@ -77,16 +77,29 @@ podman run -v $PWD:/source:z \
    quay.io/mariadb-foundation/bb-worker:debian12-msan-clang-20
 ```
 
+The `/build` options for docker are slighly different as they default to `noexec` and a `root` ownership by default.
+
+```
+docker run -v $PWD:/source:z \
+  --rm \
+  -ti \
+  --entrypoint bash \
+  --tmpfs /build:size=10G,exec,uid=1000 \
+  --workdir /build \
+  quay.io/mariadb-foundation/bb-worker:debian12-msan-clang-20
+```
+
 The purposes of these, and other options include:
 
 | Command Component                            | Purpose                                                                           | Notes                                                                                   |
 | -------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
 | Command Component                            | Purpose                                                                           | Notes                                                                                   |
-| podman run                                   | run a container                                                                   | other implementations use docker syntax (or at at least close)                          |
+| podman run / docker run                      | run a container                                                                   | other implementations use docker syntax (or at at least close)                          |
 | --rm                                         | remove container on termination                                                   |                                                                                         |
 | -ti                                          | a tty and a stdin are connected                                                   | for interactive container use                                                           |
 | -v "$PWD":/source:z                          | mount current directory as /source inside the container - :z - read selinux label |                                                                                         |
-| --mount=type=tmpfs,tmpfs-size=10G,dst=/build | a 10G build directory and mtr                                                     | keeps as transient, big enough for some mtr tests                                       |
+| --mount=type=tmpfs,tmpfs-size=10G,dst=/build | a 10G build directory and mtr under podman                                        | keeps as transient, big enough for some mtr tests                                       |
+| --tmpfs /build:size=10G,exec,uid=1000        | a 10G build directory and mtr for docker                                          | keeps as transient, big enough for some mtr tests, exec and uid needed by build/tests   |
 | --workdir /build                             | default directory                                                                 |                                                                                         |
 | --entrypoint bash                            | Ensure the cmd of buildbot start isn't executed                                   |                                                                                         |
 | --cap-add=SYS\_PTRACE                        | capability for tracing used by gdb                                                | for debugging                                                                           |
@@ -163,7 +176,6 @@ MSAN is a clang only compile options and other compilers will not work.
 | PLUGIN\_OQGRAPH (and PLUGIN\_COLUMNSTORE)                 | Dependency on boost libraries are instrumented                                                                                                     |
 | WITH\_EMBEDDED\_SERVER=OFF                                | reduce build time                                                                                                                                  |
 | WITH\_DBUG\_TRACE=OFF                                     | reduce runtime overhead if CMAKE\_BUILD\_TYPE=Debug chosen                                                                                         |
-| CMAKE\_CXX\_FLAGS=-O2                                     | Required with CMAKE\_BUILD\_TYPE=Debug to avoid [MDEV-36316](https://jira.mariadb.org/browse/MDEV-36316). Plan to incorporate into the basic build |
 
 Run the build stage:
 
