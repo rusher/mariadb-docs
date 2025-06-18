@@ -1,5 +1,7 @@
 # Changes and Improvements in MariaDB 11.8
 
+{% include "../../../.gitbook/includes/the-most-recent-release-of-... (4).md" %}
+
 The most recent release of [MariaDB 11.8](what-is-mariadb-118.md) is:[**MariaDB 11.8.1**](mariadb-11-8-1-release-notes.md) RC [Download Now](https://mariadb.com/downloads)[_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/11.8.1)
 
 [MariaDB 11.8](what-is-mariadb-118.md) will be a long-term release, and is currently in development.
