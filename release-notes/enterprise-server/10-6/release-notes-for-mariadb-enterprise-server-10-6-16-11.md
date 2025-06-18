@@ -6,9 +6,9 @@ MariaDB Enterprise Server 10.6.16-11 was released on 2023-12-12.
 
 ## Fixed Security Vulnerabilities
 
-| CVE (with [cve.org](https://mariadb.com/kb/en/cve.org) link)                    | CVSS base score |
+| CVE  link)                    | CVSS base score |
 | ------------------------------------------------------------------------------- | --------------- |
-| CVE (with [cve.org](https://mariadb.com/kb/en/cve.org) link)                    | CVSS base score |
+| CVE  link)                    | CVSS base score |
 | [CVE-2023-22084](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-22084) | 4.9             |
 
 ## Changes in Storage Engines

@@ -76,7 +76,7 @@ MariaDB Enterprise Server enables a predictable development and operations exper
 * When a stored procedure executes a query that results in a mergeable derived table, the server can crash with a segmentation fault when the stored procedure is called twice in the same session. ([MDEV-27212](https://jira.mariadb.org/browse/MDEV-27212))
   * Querying views can result in mergeable derived tables.
   * Using subqueries with outer references can result mergeable derived tables.
-* When [ANALYZE FORMAT=JSON](https://mariadb.com/kb/en/ANALYZE) is executed with a query that contains a subquery, the server can crash. ([MDEV-28268](https://jira.mariadb.org/browse/MDEV-28268))
+* When [ANALYZE FORMAT=JSON](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/analyze-and-explain-statements/analyze-format-json) is executed with a query that contains a subquery, the server can crash. ([MDEV-28268](https://jira.mariadb.org/browse/MDEV-28268))
 * When a query using a window function with an `OVER (PARTITION BY ..)` or `OVER (ORDER BY ..)` clause is executed, the server can crash with a segmentation fault. ([MDEV-19398](https://jira.mariadb.org/browse/MDEV-19398))
   * If the query also uses `WITH ROLLUP`, this crash is more likely.
   * `If the query's`OVER (PARTITION BY ..)`or`OVER (ORDER BY ..)`clause uses an aggregate function, this crash is more likely.`

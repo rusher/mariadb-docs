@@ -76,7 +76,7 @@ Unknown character set: '224'
 ```
 
 * Starting with this release, the server writes the [character\_set\_client](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#character_set_client) value to the binary log as a string instead of as a numeric ID. This change allows MariaDB Community Server 10.9 and later to connect as replica servers.
-* When a [UNIQUE](https://mariadb.com/kb/en/UNIQUE) index includes a `PERIOD` in its definition, a duplicate key error can be incorrectly raised when the table uses the [utf8mb4\_unicode\_nopad\_ci collation](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-collation). ([MDEV-30415](https://jira.mariadb.org/browse/MDEV-30415))
+* When a [UNIQUE](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/create/create-table#unique) index includes a `PERIOD` in its definition, a duplicate key error can be incorrectly raised when the table uses the [utf8mb4\_unicode\_nopad\_ci collation](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-collation). ([MDEV-30415](https://jira.mariadb.org/browse/MDEV-30415))
 * With Galera, when a value is retrieved from an InnoDB sequence using the [NEXTVAL() function](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/sequences/sequence-functions/nextval), the server can crash due to metadata lock conflicts between WSREP threads. ([MDEV-30413](https://jira.mariadb.org/browse/MDEV-30413))
   * In previous releases, the following log message would be reported in the log prior to the crash:
 
@@ -286,7 +286,7 @@ ERROR 1406 (22001): Data too long for column 'COLUMN_NAME' at row 1
 * When InnoDB writes data from the doublewrite buffer to the redo log file, the [Innodb\_data\_written status variable](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables#innodb_data_written) is not properly incremented. ([MDEV-31124](https://jira.mariadb.org/browse/MDEV-31124))
 * Parallel replication breaks if `XA PREPARE` fails updating replica GTID State ([MDEV-31038](https://jira.mariadb.org/browse/MDEV-31038))
 * When InnoDB has opened more data files than [innodb\_open\_files](https://github.com/mariadb-corporation/docs-release-notes/blob/test/mariadb-enterprise-server-release-notes/mariadb-enterprise-server-10-6/innodbsystem-variables/README.md#innodb_open_files), opening additional data files takes longer than expected due to a performance regression. ([MDEV-30775](https://jira.mariadb.org/browse/MDEV-30775))
-* When the [JSON\_OBJECTAGG function](https://mariadb.com/kb/en/SON_OBJECTAGG) is called with a key value that includes a double quote, the double quote character is not escaped. ([MDEV-30412](https://jira.mariadb.org/browse/MDEV-30412))
+* When the [JSON\_OBJECTAGG function](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/special-functions/json-functions/json_objectagg) is called with a key value that includes a double quote, the double quote character is not escaped. ([MDEV-30412](https://jira.mariadb.org/browse/MDEV-30412))
 * With optimizer\_switch='not\_null\_range\_scan=on', when a LEFT JOIN is executed on an empty table, the results can be incorrect. ([MDEV-30333](https://jira.mariadb.org/browse/MDEV-30333))
 * When a query contains a GROUP BY clause and the query calls an aggregate function on a table's primary key, the results can be incorrect if the GROUP BY clause is evaluated using an index. ([MDEV-30605](https://jira.mariadb.org/browse/MDEV-30605))
 * With Galera, when a cluster node has the query cache enabled and the node has regular MariaDB replication configured, query cache entries are not properly invalidated when tables are changed due to replication. ([MDEV-28641](https://jira.mariadb.org/browse/MDEV-28641))
@@ -324,7 +324,7 @@ Skip copying 4 aria log file due to error
 
 ## Interface Changes
 
-* [aria\_log\_dir\_path](https://mariadb.com/kb/en/aria_log_dir_path) system variable added.
+* [aria\_log\_dir\_path](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/aria/aria-system-variables#aria_log_dir_path) system variable added.
 * [core\_file](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#core_file) system variable default value changed from `None` to `OFF`
 * [innodb\_buffer\_pool\_filename](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/innodb/innodb-system-variables#innodb_buffer_pool_filename) system variable dynamic changed from `Yes` to `No`
 * [Innodb\_buffer\_pool\_pages\_split](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables#innodb_buffer_pool_pages_data) status variable added.
