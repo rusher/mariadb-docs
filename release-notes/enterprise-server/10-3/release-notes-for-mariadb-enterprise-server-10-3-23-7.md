@@ -51,7 +51,7 @@ MariaDB CVEs are assigned a word rating instead of a CVSS base score. See the [M
 * Changing the `Server-Id` could lead to events being disabled for replicas, even if a single node configuration without a replica was used. ([MDEV-21758](https://jira.mariadb.org/browse/MDEV-21758))
 * [SHOW PRIVILEGES](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-privileges) incorrectly shows the privilege `Delete versioning rows` instead of `Delete history` ([MDEV-20382](https://jira.mariadb.org/browse/MDEV-20382))
 * Wrong query results have been returned with [optimizer\_switch="split\_materialized=on"](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#optimizer_switch) ([MDEV-21614](https://jira.mariadb.org/browse/MDEV-21614))
-* [SHOW-GRANTS](https://mariadb.com/kb/en/SHOW_GRANTS) does not quote role names properly for a user granted to this role. ([MDEV-20076](https://jira.mariadb.org/browse/MDEV-20076))
+* [SHOW-GRANTS](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-grants) does not quote role names properly for a user granted to this role. ([MDEV-20076](https://jira.mariadb.org/browse/MDEV-20076))
 * Partitioning could choose a wrong partition for RANGE partitioning by [DECIMAL](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/numeric-data-types/decimal) column. ([MDEV-21195](https://jira.mariadb.org/browse/MDEV-21195))
 
 ### Related to installation or upgrade
