@@ -10,7 +10,7 @@ Before starting MaxScale, the database users needed by MaxScale must be created.
 
 #### Database Users used by MaxScale <a href="#database-users-used-by-maxscale" id="database-users-used-by-maxscale"></a>
 
-MaxScale needs two database users for its own use; one user used by a MaxScale [service](../other-maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md#service) for fetching user account information and another user used by the MaxScale [monitor](../other-maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md#monitor) for monitoring the health of the MariaDB server and for performing operations on it. The same user can be used for both purposes, provided the user has all the grants needed by services and monitors.
+MaxScale needs two database users for its own use; one user used by a MaxScale [service](../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md#service) for fetching user account information and another user used by the MaxScale [monitor](../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md#monitor) for monitoring the health of the MariaDB server and for performing operations on it. The same user can be used for both purposes, provided the user has all the grants needed by services and monitors.
 
 In the following, the host is specified using '%', which means that MaxScale can access the server from anywhere. In a non-trial context, it is advisable to use the specific IP where MaxScale is running.
 
@@ -130,9 +130,9 @@ If the limit is exceeded at runtime using MaxGUI, the operation will fail with t
 
 If the connection limit is exceeded, the connection attempt will fail, and note that no error message will be displayed.
 
-An attempt to explicitly raise [max\_connections](../other-maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md#max_connections) beyond the maximum of 15, will prevent MaxScale from running at startup and at runtime fail with a runtime error.
+An attempt to explicitly raise [max\_connections](../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md#max_connections) beyond the maximum of 15, will prevent MaxScale from running at startup and at runtime fail with a runtime error.
 
-If the configured capture [size](../other-maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-workload-capture-and-replay.md#capture_size) or [duration](../other-maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-workload-capture-and-replay.md#capture_duration) exceeds the maximum limit of MaxScale Trial, the value will be adjusted down to the allowed maximum value and an error will be logged.
+If the configured capture [size](../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-workload-capture-and-replay.md#capture_size) or [duration](../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-workload-capture-and-replay.md#capture_duration) exceeds the maximum limit of MaxScale Trial, the value will be adjusted down to the allowed maximum value and an error will be logged.
 
 ### Upgrading to MaxScale <a href="#upgrading-to-maxscale" id="upgrading-to-maxscale"></a>
 

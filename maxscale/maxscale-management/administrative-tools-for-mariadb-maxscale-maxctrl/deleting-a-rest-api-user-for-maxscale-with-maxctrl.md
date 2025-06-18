@@ -9,7 +9,7 @@ MaxScale has a [REST API](../administrative-tools-for-mariadb-maxscale-rest-api/
 ## Deleting a User
 
 1. [Configure the REST API](../administrative-tools-for-mariadb-maxscale-rest-api/) if the default configuration is not sufficient.
-2. Use [MaxCtrl](./) to execute the [destroy user](../../other-maxscale-versions/mariadb-maxscale-23-02/mariadb-maxscale-23-02-reference/mariadb-maxscale-2302-maxctrl.md#destroy-user) command:
+2. Use [MaxCtrl](./) to execute the [destroy user](../../maxscale-versions/mariadb-maxscale-23-02/mariadb-maxscale-23-02-reference/mariadb-maxscale-2302-maxctrl.md#destroy-user) command:
 
 ```
 $ maxctrl --secure \
