@@ -4,7 +4,7 @@ In this guide, we will be migrating existing `MariaDB` Galera and `MaxScale` ins
 
 **1.** Ensure that `MariaDB` has TLS enabled and not enforced. Set the following options if needed:
 
-```diff
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: MariaDB
 metadata:
@@ -37,7 +37,7 @@ It is very important that you wait until your old `MaxScale` instance is fully t
 
 **5.** For enhanced security, it is recommended to enforce TLS in all `MariaDB` connections by setting the following options. This will trigger a rolling upgrade, make sure it finishes successfully before proceeding with the next step:
 
-```diff
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: MariaDB
 metadata:
@@ -65,7 +65,7 @@ chmod +x migrate_galera_ssl.sh
 
 * Set the following option to enable TLS for Galera SSTs:
 
-```diff
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: MariaDB
 metadata:
@@ -80,7 +80,7 @@ This will trigger a rolling upgrade, make sure it finishes successfully before p
 
 **7.** As mentioned in step 4, recreate your `MaxScale` instance with `tls.enabled=true` if needed:
 
-```diff
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: MaxScale
 metadata:
