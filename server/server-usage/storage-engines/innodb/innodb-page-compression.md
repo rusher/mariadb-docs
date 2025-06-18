@@ -70,14 +70,14 @@ The [zlib](https://www.zlib.net/) compression algorithm is always supported. Fro
 
 A MariaDB build's support for other InnoDB page compression algorithms can be checked by querying the following status variables with [SHOW GLOBAL STATUS](../../../reference/sql-statements/administrative-sql-statements/show/show-status.md):
 
-| Status Variable                                                                                                         | Description                                                                                         |
-| ----------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
-| Status Variable                                                                                                         | Description                                                                                         |
-| [Innodb\_have\_lz4](../../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md)    | Whether InnoDB supports the [lz4](https://code.google.com/p/lz4/) compression algorithm.            |
-| [Innodb\_have\_lzo](../../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md)    | Whether InnoDB supports the [lzo](https://www.oberhumer.com/opensource/lzo/) compression algorithm. |
-| [Innodb\_have\_lzma](../../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md)   | Whether InnoDB supports the [lzma](https://tukaani.org/xz/) compression algorithm.                  |
-| [Innodb\_have\_bzip2](../../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md)  | Whether InnoDB supports the [bzip2](https://www.bzip.org/) compression algorithm.                   |
-| [Innodb\_have\_snappy](../../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md) | Whether InnoDB supports the [snappy](https://google.github.io/snappy/) compression algorithm.       |
+| Status Variable                                                                                                                            | Description                                                                                         |
+| ------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------- |
+| Status Variable                                                                                                                            | Description                                                                                         |
+| [Innodb\_have\_lz4](../../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_have_lz4)       | Whether InnoDB supports the [lz4](https://code.google.com/p/lz4/) compression algorithm.            |
+| [Innodb\_have\_lzo](../../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_have_lzo)       | Whether InnoDB supports the [lzo](https://www.oberhumer.com/opensource/lzo/) compression algorithm. |
+| [Innodb\_have\_lzma](../../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_have_lzma)     | Whether InnoDB supports the [lzma](https://tukaani.org/xz/) compression algorithm.                  |
+| [Innodb\_have\_bzip2](../../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_have_bzip2)   | Whether InnoDB supports the [bzip2](https://www.bzip.org/) compression algorithm.                   |
+| [Innodb\_have\_snappy](../../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_have_snappy) | Whether InnoDB supports the [snappy](https://google.github.io/snappy/) compression algorithm.       |
 
 For example:
 
