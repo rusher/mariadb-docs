@@ -221,7 +221,7 @@ This should only be used in exceptional circumstances:
 
 You can verify this with the following command:
 
-```json
+```sh
 kubectl get mariadb mariadb-galera -o jsonpath="{.status.galeraRecovery}" | jq
 {
   "recovered": {
@@ -296,7 +296,7 @@ spec:
 
 Next, check the `MariaDB` status and the resources created by the operator:
 
-```json
+```sh
 kubectl get mariadbs
 NAME             READY   STATUS    PRIMARY POD          AGE
 mariadb-galera   True    Running   mariadb-galera-0     48m
@@ -337,7 +337,7 @@ mariadb-galera-2                            2/2     Running   0          58m   1
 
 Let's now proceed with simulating a Galera cluster failure by deleting all the `Pods` at the same time:
 
-```
+```sh
 kubectl delete pods -l app.kubernetes.io/instance=mariadb-galera
 pod "mariadb-galera-0" deleted
 pod "mariadb-galera-1" deleted
@@ -346,7 +346,7 @@ pod "mariadb-galera-2" deleted
 
 After some time, we will see the `MariaDB` entering a non `Ready` state:
 
-```json
+```sh
 kubectl get mariadb mariadb-galera
 NAME             READY   STATUS             PRIMARY POD             AGE
 mariadb-galera   False   Galera not ready   mariadb-galera-0        67m
@@ -368,7 +368,7 @@ kubectl get mariadb mariadb-galera -o jsonpath="{.status.conditions[?(@.type=='G
 
 Eventually, the operator will kick in and recover the Galera cluster:
 
-```json
+```sh
 kubectl get events --field-selector involvedObject.name=mariadb-galera --sort-by='.lastTimestamp'
 LAST SEEN   TYPE      REASON                    OBJECT                       MESSAGE
 ...
@@ -427,7 +427,7 @@ kubectl get mariadb mariadb-galera -o jsonpath="{.status.galeraRecovery}" | jq
 
 Finally, the `MariaDB` resource will become `Ready` and your Galera cluster will be operational again:
 
-```json
+```sh
 kubectl get mariadb mariadb-galera -o jsonpath="{.status.conditions[?(@.type=='GaleraReady')]}" | jq
 {
   "lastTransitionTime": "2023-07-13T19:27:51Z",
@@ -448,7 +448,7 @@ The aim of this section is showing you how to diagnose your Galera cluster when 
 
 * Inspect `MariaDB` status conditions.
 
-```json
+```sh
 kubectl get mariadb mariadb-galera -o jsonpath="{.status.conditions}" | jq
 [
   {
@@ -526,7 +526,7 @@ subsets:
 
 * Check the events associated with the `MariaDB` object, as they provide significant insights for diagnosis, particularly within the context of cluster recovery.
 
-```
+```sh
 kubectl get events --field-selector involvedObject.name=mariadb-galera --sort-by='.lastTimestamp'
 LAST SEEN   TYPE      REASON                    OBJECT                       MESSAGE
 ...
@@ -543,7 +543,7 @@ LAST SEEN   TYPE      REASON                    OBJECT                       MES
 
 * Enable `debug` logs in `mariadb-enterprise-operator`.
 
-```json
+```sh
 helm upgrade --install mariadb-enterprise-operator mariadb-enterprise-operator/mariadb-enterprise-operator --set logLevel=debug
 kubectl logs mariadb-enterprise-operator-546c78f4f5-gq44k
 {"level":"info","ts":1691090524.4911606,"logger":"galera.health","msg":"Checking Galera cluster health","controller":"statefulset","controllerGroup":"apps","controllerKind":"StatefulSet","statefulSet":{"name":"mariadb-galera","namespace":"default"},"namespace":"default","name":"mariadb-galera","reconcileID":"098620db-4486-45cc-966a-9f3fec0d165e"}
@@ -552,7 +552,7 @@ kubectl logs mariadb-enterprise-operator-546c78f4f5-gq44k
 
 * Get the logs of all the `MariaDB` `Pod` containers, not only of the main `mariadb` container but also the `agent` and `init` ones.
 
-```json
+```sh
 kubectl logs mariadb-galera-0 -c init
 {"level":"info","ts":1691090778.5239124,"msg":"Starting init"}
 {"level":"info","ts":1691090778.5305626,"msg":"Configuring Galera"}
@@ -610,7 +610,7 @@ As a last resource, you can always delete the PVCs and bootstrap a new `MariaDB`
 
 This error occurs when the user that runs the container does not have enough privileges to write in `/etc/mysql/mariadb.conf.d`:
 
-```
+```sh
 Error writing Galera config: open /etc/mysql/mariadb.conf.d/0-galera.cnf: permission denied
 ```
 
@@ -633,7 +633,7 @@ This enables the `CSIDriver` and the kubelet to recursively set the ownership of
 
 #### Unauthorized error disabling bootstrap
 
-```
+```sh
 Error reconciling Galera: error disabling bootstrap in Pod 0: unauthorized
 ```
 
@@ -671,7 +671,7 @@ Bear in mind that `ClusterRoleBindings` are cluster-wide resources that are not 
 
 #### Timeout waiting for Pod to be Synced
 
-```
+```sh
 Timeout waiting for Pod 'mariadb-galera-2' to be Synced
 ```
 
@@ -681,7 +681,7 @@ Increase this timeout if you consider that your `Pod` may take longer to recover
 
 #### Galera cluster bootstrap timed out
 
-```
+```sh
 Galera cluster bootstrap timed out. Resetting recovery status
 ```
 

@@ -46,7 +46,7 @@ A listener specifies a port where MaxScale listens for incoming connections. It 
 
 The minimal spec you need to provision a MaxScale instance is just a reference to a `MariaDB` resource:
 
-```
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: MaxScale
 metadata:
@@ -60,7 +60,7 @@ This will provision a new `StatefulSet` for running MaxScale and configure the s
 
 The rest of the configuration uses reasonable [defaults](maxscale-database-proxy.md#defaults) set automatically by the operator. If you need a more fine grained configuration, you can provide this values yourself:
 
-```
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: MaxScale
 metadata:
@@ -101,7 +101,7 @@ Refer to the [API reference](api-reference.md) for further detail.
 
 You can set a `spec.maxScaleRef` in your `MariaDB` resource to make it `MaxScale`-aware. By doing so, the primary server reported by `MaxScale` will be used in `MariaDB` and the high availability tasks such the primary failover will be delegated to `MaxScale`:
 
-```
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: MariaDB
 metadata:
@@ -121,7 +121,7 @@ Refer to the [API reference](api-reference.md) for further detail.
 
 To streamline the setup outlined in the [MaxScale CR](maxscale-database-proxy.md#mariadb-cr) and [MariaDB CR](maxscale-database-proxy.md#mariadb-cr) sections, you can provision a `MaxScale` to be used with `MariaDB` in just one resource:
 
-```
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: MariaDB
 metadata:
@@ -160,7 +160,7 @@ MariaDB Enterprise Operator aims to provide highly configurable CRs, but at the 
 
 As an alternative to provide a reference to a `MariaDB` via `spec.mariaDbRef`, you can also specify the servers manually:
 
-```
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: MaxScale
 metadata:
@@ -178,7 +178,7 @@ spec:
 
 As you could see, you can refer to in-cluser MariaDB servers by providing the DNS names of the `MariaDB` `Pods` as server addresses. In addition, you can also refer to external MariaDB instances running outside of the Kubernetes cluster where the operator was deployed:
 
-```
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: MaxScale
 metadata:
@@ -236,7 +236,7 @@ Pointing to external MariaDBs has a some limitations: Since the operator doesn't
 
 You can put servers in maintenance mode by setting `maintenance = true`:
 
-```
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: MaxScale
 metadata:
@@ -257,7 +257,7 @@ Maintenance mode prevents MaxScale from routing traffic to the server and also e
 
 Similar to MariaDB, MaxScale allows you to provide global configuration parameters in a `maxscale.conf` file. You don't need to provide this config file directly, but instead you can use the `spec.config.params` to instruct the operator to create the `maxscale.conf`:
 
-```
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: MaxScale
 metadata:
@@ -291,7 +291,7 @@ MaxScale requires authentication with differents levels of permissions for the f
 
 By default, the operator generates this credentials when `spec.mariaDbRef` is set and `spec.auth.generate = true`, but you are still able to provide your own:
 
-```
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: MaxScale
 metadata:
@@ -333,7 +333,7 @@ As you could see, you are also able to limit the number of connections for each 
 
 To enable your applications to communicate with MaxScale, a Kubernetes `Service` is provisioned with all the ports specified in the MaxScale listeners. You have the flexibility to provide a template to customize this `Service`:
 
-```
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: MaxScale
 metadata:
@@ -349,7 +349,7 @@ spec:
 
 This results in the reconciliation of the following `Service`:
 
-```
+```yaml
 apiVersion: v1
 kind: Service
 metadata:
@@ -377,7 +377,7 @@ There is also another Kubernetes `Service` to access the GUI, please refer to th
 
 You can leverage the `Connection` resource to automatically configure connection strings as `Secret` resources that your applications can mount:
 
-```
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: Connection
 metadata:
@@ -395,7 +395,7 @@ spec:
 
 Alternatively, you can also provide a connection template to your `MaxScale` resource:
 
-```
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: MaxScale
 metadata:
@@ -415,7 +415,7 @@ To synchronize the configuration state across multiple replicas, MaxScale stores
 
 Another crucial aspect to consider regarding HA is that only one monitor can be running at any given time to avoid conflicts. This can be achieved via cooperative locking, which can be configured by the user. Refer to [MaxScale docs](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/other-maxscale-versions/mariadb-maxscale-21-06/mariadb-maxscale-2106-maxscale-21-06-monitors/maxscale-mariadb-monitor-usage/maxscale-mariadb-monitor-usage-mariadb-monitor/using-cooperative-locking-for-ha-with-maxscales-mariadb-monitor#using-cooperative-locking-for-ha-with-maxscales-mariadb-monitor) for more information.
 
-```
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: MaxScale
 metadata:
@@ -443,7 +443,7 @@ spec:
 
 Multiple `MaxScale` replicas can be specified by providing the `spec.replicas` field. Note that, `MaxScale` exposes the [scale subresource](https://kubernetes.io/docs/tasks/extend-kubernetes/custom-resources/custom-resource-definitions/#scale-subresource), so you can scale/downscale it by running the following command:
 
-```
+```sh
 kubectl scale maxscale maxscale-galera --replicas 3
 ```
 
@@ -451,13 +451,13 @@ kubectl scale maxscale maxscale-galera --replicas 3
 
 In order to enable this feature, you must set the `--feature-maxscale-suspend` feature flag:
 
-```
+```sh
 helm upgrade --install mariadb-enterprise-operator mariadb-enterprise-operator/mariadb-enterprise-operator --set extraArgs={--feature-maxscale-suspend}
 ```
 
 Then you will be able to suspend any [MaxScale resources](maxscale-database-proxy.md#maxscale-resources), for instance, you can suspend a monitor:
 
-```
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: MaxScale
 metadata:
@@ -480,7 +480,7 @@ spec:
 
 MaxScale offers a great user interface that provides very useful information about the [MaxScale resources](maxscale-database-proxy.md#maxscale-resources). You can enable it by providing the following configuration:
 
-```
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: MaxScale
 metadata:
@@ -510,7 +510,7 @@ MariaDB Enterprise Operator interacts with the [MaxScale REST API](https://app.g
 
 The operator tracks both the `MaxScale` status in regards to Kubernetes resources as well as the status of the [MaxScale API](maxscale-database-proxy.md#maxscale-api) resources. This information is available on the status field of the `MaxScale` resource, it may be very useful for debugging purposes:
 
-```
+```yaml
 status:
   conditions:
   - lastTransitionTime: "2024-02-08T17:29:01Z"
@@ -543,7 +543,7 @@ status:
 
 Kubernetes events emitted by `mariadb-enterprise-operator` may also be very relevant for debugging. For instance, an event is emitted whenever the primary server changes:
 
-```
+```sh
 kubectl get events --field-selector involvedObject.name=mariadb-repl-maxscale --sort-by='.lastTimestamp'
 
 LAST SEEN   TYPE      REASON                         OBJECT                           MESSAGE
@@ -552,7 +552,7 @@ LAST SEEN   TYPE      REASON                         OBJECT                     
 
 The operator logs can also be a good source of information for troubleshooting. You can increase its verbosity and enable [MaxScale API](maxscale-database-proxy.md#maxscale-api) request logs by running:
 
-```
+```sh
 helm upgrade --install mariadb-enterprise-operator mariadb-enterprise-operator/mariadb-enterprise-operator --set logLevel=debug --set extraArgs={--log-maxscale}
 ```
 
@@ -562,13 +562,13 @@ helm upgrade --install mariadb-enterprise-operator mariadb-enterprise-operator/m
 
 This error occurs when the user that runs the container does not have enough privileges to write in `/var/lib/maxscale`:
 
-```
+```sh
 Failed to create directory '/var/lib/maxscale/maxscale.cnf.d': 13, Permission denied
 ```
 
 To mitigate this, by default, the operator sets the following `securityContext` in the `MaxScale`'s `StatefulSet`:
 
-```
+```yaml
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:

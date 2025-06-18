@@ -2,19 +2,11 @@
 
 This documentation shows how to configure metadata in the MariaDB Enterprise Operator CRs.
 
-## Table of contents
-
-* [Children object metadata](metadata.md#children-object-metadata)
-* [Pod metadata](metadata.md#pod-metadata)
-* [Service metadata](metadata.md#service-metadata)
-* [PVC metadata](metadata.md#pvc-metadata)
-* [Use cases](metadata.md#use-cases)
-
 ## Children object metadata
 
 `MariaDB` and `MaxScale` resources allow you to propagate metadata to all the children objects by specifying the `inheritMetadata` field:
 
-```
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: MariaDB
 metadata:
@@ -29,7 +21,7 @@ spec:
 
 This means that all the reconciled objects will inherit these labels and annotations. For instance, see the `Services` and `Pods`:
 
-```
+```yaml
 apiVersion: v1
 kind: Service
 metadata:
@@ -40,7 +32,7 @@ metadata:
   name: mariadb-galera-primary
 ```
 
-```
+```yaml
 apiVersion: v1
 kind: Pod
 metadata:
@@ -55,7 +47,7 @@ metadata:
 
 You have the ability to provide dedicated metadata for `Pods` by specifying the `podMetadata` field in any CR that reconciles a `Pod`, for instance: `MariaDB`, `MaxScale`, `Backup`, `Restore` and `SqlJobs`:
 
-```
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: Backup
 metadata:
@@ -77,7 +69,7 @@ It is important to note that the `podMetadata` field supersedes the `inheritMeta
 
 Provision dedicated metadata for `Services` in the `MariaDB` resources can be done via the `service`, `primaryService` and `secondaryService` fields:
 
-```
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: MariaDB
 metadata:
@@ -110,7 +102,7 @@ Refer to the [High Availability documentation](https://app.gitbook.com/s/3VYeeVG
 
 Both `MariaDB` and `MaxScale` allow you to define a `volumeClaimTemplate` to be used by the underlying `StatefulSet`. You may also define metadata for it:
 
-```
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: MariaDB
 metadata:
@@ -139,7 +131,7 @@ Being able to provide metadata allows you to integrate with other CNCF landscape
 
 If you run on bare metal and you use [Metallb](https://metallb.universe.tf/) for managing the `LoadBalancer` objects, you can declare its IPs via annotations:
 
-```
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: MariaDB
 metadata:
@@ -156,7 +148,7 @@ spec:
 
 [Istio](https://istio.io/) injects the data-plane container to all `Pods`, but you might want to opt-out of this feature in some cases:
 
-```
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: Backup
 metadata:
