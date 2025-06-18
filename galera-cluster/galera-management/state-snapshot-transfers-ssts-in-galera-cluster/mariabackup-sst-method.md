@@ -1,6 +1,6 @@
 # Mariabackup SST Method
 
-The `mariabackup` SST method uses the [Mariabackup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariabackup) utility for performing SSTs. It is one of the methods that does not block the donor node. [Mariabackup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariabackup) was originally forked from [Percona XtraBackup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/legacy-clients-and-utilities/backing-up-and-restoring-databases-percona-xtrabackup), and similarly, the `mariabackup` SST method was originally forked from the `[xtrabackup-v2]` SST method.
+The `mariabackup` SST method uses the [Mariabackup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup) utility for performing SSTs. It is one of the methods that does not block the donor node. [Mariabackup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup) was originally forked from [Percona XtraBackup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/legacy-clients-and-utilities/backing-up-and-restoring-databases-percona-xtrabackup), and similarly, the `mariabackup` SST method was originally forked from the `[xtrabackup-v2]` SST method.
 
 Note that if you use the `mariabackup` SST method, then you also need to have `[socat](#socat-dependency)` installed on the server. This is needed to stream the backup from the donor node to the joiner node. This is a limitation that was inherited from the `[xtrabackup-v2]` SST method.
 
@@ -12,7 +12,7 @@ To use the `mariabackup` SST method, you must set the `[wsrep_sst_method=mariaba
 SET GLOBAL wsrep_sst_method='mariabackup';
 ```
 
-It can be set in a server [option group](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files#option-groups) in an [option file](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files) prior to starting up a node:
+It can be set in a server [option group](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files#option-groups) in an [option file](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files) prior to starting up a node:
 
 ```
 [mariadb]
@@ -24,19 +24,19 @@ For an SST to work properly, the donor and joiner node must use the same SST met
 
 ## Major version upgrades
 
-The InnoDB redo log format has been changed in [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-5-series/what-is-mariadb-105) and [MariaDB 10.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-8-series/what-is-mariadb-108) in a way that will not allow the crash recovery or the preparation of a backup from an older major version. Because of this, the `mariabackup` SST method cannot be used for some major version upgrades, unless you temporarily edit the `wsrep_sst_mariabackup` script so that the `--prepare` step on the newer-major-version joiner will be executed using the older-major-version `mariabackup` tool.
+The InnoDB redo log format has been changed in [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105) and [MariaDB 10.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-8-series/what-is-mariadb-108) in a way that will not allow the crash recovery or the preparation of a backup from an older major version. Because of this, the `mariabackup` SST method cannot be used for some major version upgrades, unless you temporarily edit the `wsrep_sst_mariabackup` script so that the `--prepare` step on the newer-major-version joiner will be executed using the older-major-version `mariabackup` tool.
 
 The default method `wsrep_sst_method=rsync` will work for major version upgrades; see [MDEV-27437](https://jira.mariadb.org/browse/MDEV-27437).
 
 ## Authentication and Privileges
 
-To use the `mariabackup` SST method, [Mariabackup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariabackup) needs to be able to authenticate locally on the donor node, so that it can create a backup to stream to the joiner. You can tell the donor node what username and password to use by setting the `[wsrep_sst_auth](../../reference/galera-cluster-system-variables.md#wsrep_sst_auth)` system variable. It can be changed dynamically with `[SET GLOBAL](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/set-commands/set#global-session)` on the node that you intend to be a SST donor. For example:
+To use the `mariabackup` SST method, [Mariabackup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup) needs to be able to authenticate locally on the donor node, so that it can create a backup to stream to the joiner. You can tell the donor node what username and password to use by setting the `[wsrep_sst_auth](../../reference/galera-cluster-system-variables.md#wsrep_sst_auth)` system variable. It can be changed dynamically with `[SET GLOBAL](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/set-commands/set#global-session)` on the node that you intend to be a SST donor. For example:
 
 ```
 SET GLOBAL wsrep_sst_auth = 'mariabackup:mypassword';
 ```
 
-It can also be set in a server [option group](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files#option-groups) in an [option file](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files) prior to starting up a node:
+It can also be set in a server [option group](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files#option-groups) in an [option file](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files) prior to starting up a node:
 
 ```
 [mariadb]
@@ -52,7 +52,7 @@ Some [authentication plugins](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ref
 wsrep_sst_auth = mariabackup:
 ```
 
-The user account that performs the backup for the SST needs to have [the same privileges as Mariabackup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariabackup/mariabackup-overview#authentication-and-privileges), which are the `RELOAD` , `PROCESS`, `LOCK TABLES` and `BINLOG MONITOR`, `REPLICA MONITOR` [global privileges](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#global-privileges). To be safe, you should ensure that these privileges are set on each node in your cluster. [Mariabackup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariabackup) connects locally on the donor node to perform the backup, so the following user should be sufficient:
+The user account that performs the backup for the SST needs to have [the same privileges as Mariabackup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup/mariabackup-overview#authentication-and-privileges), which are the `RELOAD` , `PROCESS`, `LOCK TABLES` and `BINLOG MONITOR`, `REPLICA MONITOR` [global privileges](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#global-privileges). To be safe, you should ensure that these privileges are set on each node in your cluster. [Mariabackup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup) connects locally on the donor node to perform the backup, so the following user should be sufficient:
 
 ```
 CREATE USER 'mariabackup'@'localhost' IDENTIFIED BY 'mypassword';
@@ -72,7 +72,7 @@ CREATE USER 'mysql'@'localhost' IDENTIFIED VIA unix_socket;
 GRANT RELOAD, PROCESS, LOCK TABLES, REPLICATION CLIENT ON *.* TO 'mysql'@'localhost';
 ```
 
-And then to configure `[wsrep_sst_auth](../../reference/galera-cluster-system-variables.md#wsrep_sst_auth)`, you could set the following in a server [option group](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files#option-groups) in an [option file](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files) prior to starting up a node:
+And then to configure `[wsrep_sst_auth](../../reference/galera-cluster-system-variables.md#wsrep_sst_auth)`, you could set the following in a server [option group](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files#option-groups) in an [option file](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files)  prior to starting up a node:
 
 ```
 [mariadb]
@@ -100,7 +100,7 @@ CREATE USER 'mariabackup'@'localhost' IDENTIFIED VIA gssapi;
 GRANT RELOAD, PROCESS, LOCK TABLES, BINLOG MONITOR ON *.* TO 'mariabackup'@'localhost';
 ```
 
-And then to configure `[wsrep_sst_auth](../../reference/galera-cluster-system-variables.md#wsrep_sst_auth)`, you could set the following in a server [option group](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files#option-groups) in an [option file](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files) prior to starting up a node:
+And then to configure `[wsrep_sst_auth](../../reference/galera-cluster-system-variables.md#wsrep_sst_auth)`, you could set the following in a server [option group](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files#option-groups) in an [option file](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files)  prior to starting up a node:
 
 ```
 [mariadb]
@@ -114,7 +114,7 @@ When Mariabackup is used to create the backup for the SST on the donor node, Mar
 
 If a specific node in your cluster is acting as the _primary_ node by receiving all of the application's write traffic, then this node should not usually be used as the donor node, because the system-wide lock could interfere with the application. In this case, you can define one or more preferred donor nodes by setting the `[wsrep_sst_donor](../../reference/galera-cluster-system-variables.md#wsrep_sst_donor)` system variable.
 
-For example, let's say that we have a 5-node cluster with the nodes `node1`, `node2`, `node3`, `node4`, and `node5`, and let's say that `node1` is acting as the _primary_ node. The preferred donor nodes for `node2` could be configured by setting the following in a server [option group](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files#option-groups) in an [option file](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files) prior to starting up a node:
+For example, let's say that we have a 5-node cluster with the nodes `node1`, `node2`, `node3`, `node4`, and `node5`, and let's say that `node1` is acting as the _primary_ node. The preferred donor nodes for `node2` could be configured by setting the following in a server [option group](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files#option-groups) in an [option file](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files) prior to starting up a node:
 
 ```
 [mariadb]
@@ -231,7 +231,7 @@ By default, on the donor node, it logs to `mariabackup.backup.log`. This log fil
 
 By default, on the joiner node, it logs to `mariabackup.prepare.log` and `mariabackup.move.log` These log files are also located in the `[datadir](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables#datadir)`.
 
-By default, before a new SST is started, existing `mariabackup` SST log files are compressed and moved to `/tmp/sst_log_archive`. This behavior can be disabled by setting `sst-log-archive=0` in the `[sst]` [option group](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files#option-groups) in an [option file](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files). Similarly, the archive directory can be changed by setting `sst-log-archive-dir`. For example:
+By default, before a new SST is started, existing `mariabackup` SST log files are compressed and moved to `/tmp/sst_log_archive`. This behavior can be disabled by setting `sst-log-archive=0` in the `[sst]`  [option group](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files#option-groups) in an [option file](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files).  Similarly, the archive directory can be changed by setting `sst-log-archive-dir`. For example:
 
 ```
 [sst]
@@ -244,14 +244,14 @@ See [MDEV-17973](https://jira.mariadb.org/browse/MDEV-17973) for more informatio
 
 ### Logging to Syslog
 
-You can redirect the SST logs to the syslog instead by setting the following in the `[sst]` [option group](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files#option-groups) in an [option file](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files):
+You can redirect the SST logs to the syslog instead by setting the following in the `[sst]`  [option group](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files#option-groups) in an [option file](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files):
 
 ```
 [sst]
 sst-syslog=1
 ```
 
-You can also redirect the SST logs to the syslog by setting the following in the `[mysqld_safe]` [option group](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files#option-groups) in an [option file](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files):
+You can also redirect the SST logs to the syslog by setting the following in the `[mysqld_safe]`  [option group](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files#option-groups) in an [option file](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files) :
 
 ```
 [mysqld_safe]
@@ -260,7 +260,7 @@ syslog
 
 ## Performing SSTs with IPv6 Addresses
 
-If you are performing Mariabackup SSTs with IPv6 addresses, then the `socat` utility needs to be passed the `pf=ip6` option. This can be done by setting the `sockopt` option in the `[sst]` [option group](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files#option-groups) in an [option file](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files). For example:
+If you are performing Mariabackup SSTs with IPv6 addresses, then the `socat` utility needs to be passed the `pf=ip6` option. This can be done by setting the `sockopt` option in the `[sst]`  [option group](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files#option-groups) in an [option file](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files). For example:
 
 ```
 [sst]
