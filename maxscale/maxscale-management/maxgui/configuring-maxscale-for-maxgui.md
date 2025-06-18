@@ -11,11 +11,11 @@
 1. If you want to use MaxGUI remotely, [configure the REST API](../administrative-tools-for-mariadb-maxscale-rest-api/configuring-maxscales-rest-api.md#configuring-maxscales-rest-api-for-remote-connections) for remote connections.\
    Several global parameters must be configured in maxscale.cnf.
 
-| Parameter                                                                                                                                                                           | Description                                                                                                 |
-| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
-| Parameter                                                                                                                                                                           | Description                                                                                                 |
-| [admin\_host](../../other-maxscale-versions/mariadb-maxscale-23-02/mariadb-maxscale-23-02-getting-started/mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#admin_host) | • This parameter defines the network address that the REST API listens on.• The default value is 127.0.0.1. |
-| [admin\_port](../../other-maxscale-versions/mariadb-maxscale-23-02/mariadb-maxscale-23-02-getting-started/mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#admin_port) | • This parameter defines the network port that the REST API listens on.• The default value is 8989.         |
+| Parameter                                                                                                                                                                     | Description                                                                                                 |
+| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| Parameter                                                                                                                                                                     | Description                                                                                                 |
+| [admin\_host](../../maxscale-versions/mariadb-maxscale-23-02/mariadb-maxscale-23-02-getting-started/mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#admin_host) | • This parameter defines the network address that the REST API listens on.• The default value is 127.0.0.1. |
+| [admin\_port](../../maxscale-versions/mariadb-maxscale-23-02/mariadb-maxscale-23-02-getting-started/mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#admin_port) | • This parameter defines the network port that the REST API listens on.• The default value is 8989.         |
 
 For example:
 
@@ -29,12 +29,12 @@ admin_port            = 8443
 2. MaxGUI requires TLS, so you must [enable TLS for MaxScale's REST API](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/data-in-transit-encryption-enabling-tls-on-mariadb-server).\
    Several global parameters must be configured in maxscale.cnf.
 
-| Parameter                                                                                                                                                                                           | Description                                                                         |
-| --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
-| Parameter                                                                                                                                                                                           | Description                                                                         |
-| [admin\_ssl\_key](../../other-maxscale-versions/mariadb-maxscale-23-02/mariadb-maxscale-23-02-getting-started/mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#admin_ssl_key)          | \* This parameter defines the private key used by the REST API.                     |
-| [admin\_ssl\_cert](../../other-maxscale-versions/mariadb-maxscale-23-02/mariadb-maxscale-23-02-getting-started/mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#admin_ssl_cert)        | \* This parameter defines the certificate used by the REST API.                     |
-| [admin\_ssl\_ca\_cert](../../other-maxscale-versions/mariadb-maxscale-23-02/mariadb-maxscale-23-02-getting-started/mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#admin_ssl_ca_cert) | \*This parameter defines the CA certificate that signed the REST API's certificate. |
+| Parameter                                                                                                                                                                                     | Description                                                                         |
+| --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| Parameter                                                                                                                                                                                     | Description                                                                         |
+| [admin\_ssl\_key](../../maxscale-versions/mariadb-maxscale-23-02/mariadb-maxscale-23-02-getting-started/mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#admin_ssl_key)          | \* This parameter defines the private key used by the REST API.                     |
+| [admin\_ssl\_cert](../../maxscale-versions/mariadb-maxscale-23-02/mariadb-maxscale-23-02-getting-started/mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#admin_ssl_cert)        | \* This parameter defines the certificate used by the REST API.                     |
+| [admin\_ssl\_ca\_cert](../../maxscale-versions/mariadb-maxscale-23-02/mariadb-maxscale-23-02-getting-started/mariadb-maxscale-2302-mariadb-maxscale-configuration-guide.md#admin_ssl_ca_cert) | \*This parameter defines the CA certificate that signed the REST API's certificate. |
 
 For example:
 

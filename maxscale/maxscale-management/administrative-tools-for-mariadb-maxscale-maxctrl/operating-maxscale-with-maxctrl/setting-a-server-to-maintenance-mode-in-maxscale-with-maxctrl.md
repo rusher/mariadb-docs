@@ -13,7 +13,7 @@ MaxScale allows users to set servers to "maintenance mode", which prevents MaxSc
 ## Setting a Server to Maintenance Mode
 
 1. [Configure the REST API](../../administrative-tools-for-mariadb-maxscale-rest-api/) if the default configuration is not sufficient.
-2. Use [MaxCtrl](../) to execute the [set server](../../../other-maxscale-versions/mariadb-maxscale-23-02/mariadb-maxscale-23-02-reference/mariadb-maxscale-2302-maxctrl.md#set-server) command with the maintenance option:
+2. Use [MaxCtrl](../) to execute the [set server](../../../maxscale-versions/mariadb-maxscale-23-02/mariadb-maxscale-23-02-reference/mariadb-maxscale-2302-maxctrl.md#set-server) command with the maintenance option:
 
 ```
 $ maxctrl --secure \
@@ -32,7 +32,7 @@ If the specified server is a primary server, then MaxScale will allow open trans
 
 ## Forcing a Server to Maintenance Mode
 
-1. Use [MaxCtrl](../) to execute the [set server](../../../other-maxscale-versions/mariadb-maxscale-23-02/mariadb-maxscale-23-02-reference/mariadb-maxscale-2302-maxctrl.md#set-server) command with the maintenance --force option:
+1. Use [MaxCtrl](../) to execute the [set server](../../../maxscale-versions/mariadb-maxscale-23-02/mariadb-maxscale-23-02-reference/mariadb-maxscale-2302-maxctrl.md#set-server) command with the maintenance --force option:
 
 ```
 $ maxctrl --secure \
