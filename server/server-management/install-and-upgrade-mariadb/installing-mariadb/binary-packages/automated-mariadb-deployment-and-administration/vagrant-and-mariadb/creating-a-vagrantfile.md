@@ -180,17 +180,17 @@ It is often desirable for a machine to be able to communicate with "the outside"
 * Public networks;
 * Exposing ports to the host.
 
-Remembers that Vagrant doesn't create machines, but it asks a provisioner to create machines. Some provisioners support all of these communication methods, others may support some of them, or even none of them. When you create a Vagrantfile that starts machines using one of these features, it is implicit that this can only happen if the provisioner you are using supports the features you need. Check your provisioner documentation to find out which features it supports.
+Remember that Vagrant doesn't create machines itself; instead, it asks a provider to create and manage them. Some providers support all of these communication methods, while others may only support some of them, or even none at all. When you create a Vagrantfile that uses one of these networking features, it is implicit that this can only happen if the provider you are using supports them. Check your provider's documentation to find out which features it supports.
 
-The default provisioner, VirtualBox, supports all these communication methods, including multiple networks.
+The default provider, VirtualBox, supports all of these communication methods, including multiple networks.
 
 ### Private Networks
 
-A private network is a networks that can only be accesses by machines that run on the same host. Usually this also means that the machines must run on the same provisioner (for example, they all must be VirtualBox virtual machines).
+A private network is a networks that can only be accesses by machines that run on the same host. Usually this also means that the machines must run on the same provider (for example, they all must be VirtualBox virtual machines).
 
-Some provisioners support multiple private networks. This means that every network has a different name and can be accessed by different machines.
+Some providers support multiple private networks. This means that every network has a different name and can be accessed by different machines.
 
-The following line shows how to create or join a private network called "example", where this machine's IP is assigned by the provisioner via DHCP:
+The following line shows how to create or join a private network called "example", where this machine's IP is assigned by the provider via DHCP:
 
 ```
 config.vm.network 'private_network', name: 'example', type: 'dhcp'
@@ -209,7 +209,7 @@ As explained above, public networks are networks that can be accessed by machine
 To let a machine join a public network:
 
 ```
-# use provisioner DHCP:
+# use provider DHCP:
 config.vm.network "public_network", use_dhcp_assigned_default_route: true
 
 # assign ip manually:
@@ -247,9 +247,9 @@ config.vm.network 'forwarded_port', guest: 3306, host: 3306
 
 Suppose you run MariaDB and an application server in two separate Vagrant machines. It's usually best to let them communicate via a private network, because this greatly increases your security. The application server will still need to expose ports to the host, so the application can be tested with a web browser.
 
-Suppose you have multiple environments of the same type, like the one described above. They run different applications that don't communicate with each other. In this case, if your provisioner supports this, you will run multiple private networks. You will need to expose the applications servers ports, mapping them to different host ports.
+Suppose you have multiple environments of the same type, like the one described above. They run different applications that don't communicate with each other. In this case, if your provider supports this, you will run multiple private networks. You will need to expose the applications servers ports, mapping them to different host ports.
 
-You may even want to implement different private networks to create an environment that reflects production complexity. Maybe in production you have [a cluster](../../../../../../architecture/topologies/galera-cluster/) of three MariaDB servers, and the application servers communicate with them via a proxy layer (ProxySQL, HAProxy, or [MaxScale](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/0pSbu5DcMSW4KwAkUcmX/)). So the applications can communicate with the proxies, but have no way to reach MariaDB directly. So there is a private network called "database" that can be accessed by the MariaDB servers and the proxy servers, and another private network called "application" that can be accessed by the proxy servers and the application servers. This requires that your provisioner supports multiple private networks.
+You may even want to implement different private networks to create an environment that reflects production complexity. Maybe in production you have [a cluster](../../../../../../architecture/topologies/galera-cluster/) of three MariaDB servers, and the application servers communicate with them via a proxy layer (ProxySQL, HAProxy, or [MaxScale](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/0pSbu5DcMSW4KwAkUcmX/)). So the applications can communicate with the proxies, but have no way to reach MariaDB directly. So there is a private network called "database" that can be accessed by the MariaDB servers and the proxy servers, and another private network called "application" that can be accessed by the proxy servers and the application servers. This requires that your provider supports multiple private networks.
 
 Using public networks instead of private one will allow VMs that run on different hosts to be part of your topology. In general this is considered as an insecure practice, so you should probably ask yourself if you really need to do this.
 
