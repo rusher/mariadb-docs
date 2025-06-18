@@ -16,7 +16,7 @@ Our recommendation is to store the backups externally in a S3 compatible storage
 
 You can take a one-time backup of your `MariaDB` instance by declaring the following resource:
 
-```
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: Backup
 metadata:
@@ -35,7 +35,7 @@ spec:
 
 This will use the default `StorageClass` to provision a PVC that would hold the backup files, but ideally you should use a S3 compatible storage:
 
-```
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: Backup
 metadata:
@@ -66,7 +66,7 @@ By providing the authentication details and the TLS configuration via references
 
 Alternatively you can use dynamic credentials from an [EKS Service Account using IRSA](https://repost.aws/knowledge-center/eks-restrict-s3-bucket):
 
-```
+```yaml
 apiVersion: v1
 kind: ServiceAccount
 metadata:
@@ -75,7 +75,7 @@ metadata:
     eks.amazonaws.com/role-arn: arn:aws:iam::<<account_id>>:role/my-role-irsa
 ```
 
-```
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: Backup
 metadata:
@@ -100,7 +100,7 @@ By leaving out `accessKeyIdSecretKeyRef` and `secretAccessKeySecretKeyRef` the c
 
 To minimize the Recovery Point Objective (RPO) and mitigate the risk of data loss, it is recommended to perform backups regularly. You can do so by providing a `spec.schedule` in your `Backup` resource:
 
-```
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: Backup
 metadata:
@@ -121,7 +121,7 @@ It is important to note that regularly scheduled `Backups` complement very well 
 
 Given that the backups can consume a substantial amount of storage, it is crucial to define your retention policy by providing the `spec.maxRetention` field in your `Backup` resource:
 
-```
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: Backup
 metadata:
@@ -136,7 +136,7 @@ spec:
 
 You are able to compress backups by providing the compression algorithm you want to use in the `spec.compression` field:
 
-```
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: Backup
 metadata:
@@ -159,7 +159,7 @@ Currently the following compression algorithms are supported:
 
 You can easily restore a `Backup` in your `MariaDB` instance by creating the following resource:
 
-```
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: Restore
 metadata:
@@ -175,7 +175,7 @@ This will trigger a `Job` that will mount the same storage as the `Backup` and a
 
 Nevertheless, the `Restore` resource doesn't necessarily need to specify a `spec.backupRef`, you can point to other storage source that contains backup files, for example a S3 bucket:
 
-```
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: Restore
 metadata:
@@ -205,7 +205,7 @@ spec:
 
 If you have multiple backups available, specially after configuring a [scheduled Backup](backup-and-restore.md#scheduling), the operator is able to infer which backup to restore based on the `spec.targetRecoveryTime` field.
 
-```
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: Restore
 metadata:
@@ -226,7 +226,7 @@ By default, `spec.targetRecoveryTime` will be set to the current time, which mea
 
 To minimize your Recovery Time Objective (RTO) and to switfly spin up new clusters from existing `Backups`, you can provide a `Restore` source directly in the `MariaDB` object via the `spec.bootstrapFrom` field:
 
-```
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: MariaDB
 metadata:
@@ -242,7 +242,7 @@ spec:
 
 As in the `Restore` resource, you don't strictly need to specify a reference to a `Backup`, you can provide other storage types that contain backup files:
 
-```
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: MariaDB
 metadata:
@@ -275,7 +275,7 @@ Under the hood, the operator creates a `Restore` object just after the `MariaDB`
 
 By default, all the logical databases are backed up when a `Backup` is created, but you may also select specific databases by providing the `databases` field:
 
-```
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: Backup
 metadata:
@@ -291,7 +291,7 @@ spec:
 
 When it comes to restore, all the databases available in the backup will be restored, but you may also choose a single database to be restored via the `database` field available in the `Restore` resource:
 
-```
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: Restore
 metadata:
@@ -313,7 +313,7 @@ There are a couple of points to consider here:
 
 Not all the flags supported by `mariadb-dump` and `mariadb` have their counterpart field in the `Backup` and `Restore` CRs respectively, but you may pass extra options by using the `args` field. For example, setting the `--verbose` flag can be helpful to track the progress of backup and restore operations:
 
-```
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: Backup
 metadata:
@@ -325,7 +325,7 @@ spec:
     - --verbose
 ```
 
-```
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: Restore
 metadata:
@@ -350,7 +350,7 @@ When using S3 storage for backups, a staging area is used for keeping the extern
 
 To overcome this limitation, you are able to define your own staging area by setting the `stagingStorage` field to both the `Backup` and `Restore` CRs:
 
-```
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: Backup
 metadata:
@@ -368,7 +368,7 @@ spec:
         - ReadWriteOnce
 ```
 
-```
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: Restore
 metadata:
@@ -389,7 +389,7 @@ In the examples above, a PVC with the default `StorageClass` will be used as sta
 
 Similarly, you may also use a custom staging area when [bootstrapping from backup](backup-and-restore.md#bootstrap-new-mariadb-instances):
 
-```
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: MariaDB
 metadata:
@@ -419,7 +419,7 @@ Galera has specific limitations regarding backups. Before proceeding, please rev
 
 To address these limitations, the `Backup` from the standalone instance must be taken with `spec.ignoreGlobalPriv=true`. The following example demonstrates how to back up a standalone `MariaDB` (single instance):
 
-```
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: Backup
 metadata:
@@ -432,7 +432,7 @@ spec:
 
 Once the previous `Backup` is completed, we will be able bootstrap a new Galera instance from it:
 
-```
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: MariaDB
 metadata:
@@ -458,7 +458,7 @@ When restoring a backup, the root credentials specified through the `spec.rootPa
 
 Restoring large backups can consume significant compute resources and may cause `Restore` `Jobs` to become stuck due to insufficient resources. To prevent this, you can define the compute resources allocated to the `Job`:
 
-```
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: MariaDB
 metadata:
@@ -482,9 +482,7 @@ spec:
 
 #### `mysql.global_priv`
 
-Galera only replicates the tables with InnoDB engine:
-
-* [user-changes.html](https://galeracluster.com/library/kb/user-changes.html)
+Galera only replicates the tables with InnoDB engine, see the [Galera docs](https://galeracluster.com/library/kb/user-changes.html).
 
 Something that does not include `mysql.global_priv`, the table used to store users and grants, which uses the MyISAM engine. This basically means that a Galera instance with `mysql.global_priv` populated will not replicate this data to an empty Galera instance. However, DDL statements (`CREATE USER`, `ALTER USER` ...) will be replicated.
 
@@ -505,7 +503,7 @@ After the backup is fully restored, the liveness and readiness probes will kick 
 
 To address this issue, when backing up `MariaDB` instances with Galera enabled, the `mysql.global_priv` table will be excluded from backups by using the `--ignore-table` option with `mariadb-dump`. This prevents the replication of the `DROP TABLE` statement for the `mysql.global_priv` table. You can opt-out from this feature by setting `spec.ignoreGlobalPriv=false` in the `Backup` resource.
 
-```
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: Backup
 metadata:
