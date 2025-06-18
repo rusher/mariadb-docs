@@ -29,7 +29,7 @@ In general, InnoDB page compression is superior to the [COMPRESSED](innodb-row-f
 
 There is not currently a table option to set different InnoDB page compression algorithms for individual tables.
 
-However, the server-wide InnoDB page compression algorithm can be configured by setting the[innodb\_compression\_algorithm](innodb-system-variables.md#innodb_compression_algorithm) system variable.
+However, the server-wide InnoDB page compression algorithm can be configured by setting the [innodb\_compression\_algorithm](innodb-system-variables.md#innodb_compression_algorithm) system variable.
 
 When this system variable is changed, the InnoDB page compression algorithm does not change for existing pages that were already compressed with a different InnoDB page compression algorithm. InnoDB is able to handle this situation without issues, because every page in an InnoDB tablespace contains metadata about the InnoDB page compression algorithm in the page header. This means that InnoDB supports having uncompressed pages and pages compressed with different InnoDB page compression algorithms in the same InnoDB tablespace at the same time.
 

@@ -17,7 +17,7 @@ In order to provide you with flexibility for updating `MariaDB` reliably, this o
 
 The update strategy can be configured in the `updateStrategy` field of the `MariaDB` resource:
 
-```
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: MariaDB
 metadata:
@@ -33,7 +33,7 @@ It defaults to `ReplicasFirstPrimaryLast` if not provided.
 
 Updates are not limited to updating the `image` field in the `MariaDB` resource, an update will be triggered whenever any field of the `Pod` template is changed. This translates into making changes to `MariaDB` fields that map directly or indirectly to the `Pod` template, for instance, the CPU and memory resources:
 
-```
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: MariaDB
 metadata:
@@ -67,7 +67,7 @@ This strategy leverages the rolling update strategy from the [StatefulSet resour
 
 You are able to pass extra parameters to this strategy via the `rollingUpdate` object:
 
-```
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: MariaDB
 metadata:
@@ -86,7 +86,7 @@ This strategy aims to provide a method to update `MariaDB` resources manually by
 
 Whenever an [update is triggered](updates.md#trigger-updates), the `MariaDB` will be marked as pending to update:
 
-```
+```sh
 kubectl get mariadbs
 NAME             READY   STATUS           PRIMARY            UPDATES    AGE
 mariadb-galera   True    Pending update   mariadb-galera-0   OnDelete   5m17s
@@ -94,7 +94,7 @@ mariadb-galera   True    Pending update   mariadb-galera-0   OnDelete   5m17s
 
 From this point, you are able to delete the `Pods` to trigger the update, which will result the `MariaDB` marked as updating:
 
-```
+```sh
 kubectl get mariadbs
 NAME             READY   STATUS         PRIMARY            UPDATES    AGE
 mariadb-galera   True    Updating       mariadb-galera-0   OnDelete   9m50s
@@ -102,7 +102,7 @@ mariadb-galera   True    Updating       mariadb-galera-0   OnDelete   9m50s
 
 Once all the `Pods` have been rolled out, the `MariaDB` resource will be back to a ready state:
 
-```
+```sh
 NAME             READY   STATUS         PRIMARY            UPDATES    AGE
 mariadb-galera   True    Running        mariadb-galera-0   OnDelete   12m
 ```
@@ -118,7 +118,7 @@ The operator will not perform updates on the `StatefulSet` whenever this update 
 
 Galera relies on [data-plane containers](mariadb-enterprise-operator-galera-cluster.md#data-plane) that run alongside MariaDB to implement provisioning and high availability operations on the cluster. These containers use the `mariadb-enterprise-operator` image, which can be automatically updated by the operator based on its image version:
 
-```
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: MariaDB
 metadata:

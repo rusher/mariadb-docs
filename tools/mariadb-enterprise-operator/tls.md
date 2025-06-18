@@ -9,7 +9,7 @@ This section covers TLS configuration in new instances. If you are looking to mi
 
 TLS can be configured in `MariaDB` resources by setting `tls.enabled=true`:
 
-```
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: MariaDB
 metadata:
@@ -24,7 +24,7 @@ As a result, the operator will generate a Certificate Authority (CA) and use it 
 
 If you want to enforce TLS connections, you can set `tls.required=true`:
 
-```
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: MariaDB
 metadata:
@@ -40,7 +40,7 @@ This approach ensures that any unencrypted connection will fail, effectively enf
 
 If you want to fully opt-out from TLS, you can set `tls.enabled=false`:
 
-```
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: MariaDB
 metadata:
@@ -62,7 +62,7 @@ This section covers TLS configuration in new instances. If you are looking to mi
 
 TLS will be automatically enabled in `MaxScale` when the referred `MariaDB` (via `mariaDbRef`) has TLS enabled and enforced. Alternatively, you can explicitly enable TLS by setting `tls.enabled=true`:
 
-```
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: MaxScale
 metadata:
@@ -79,7 +79,7 @@ As a result, the operator will generate a Certificate Authority (CA) and use it 
 
 If you want to fully opt-out from TLS, you can set `tls.enabled=false`. This should only be done when `MariaDB` TLS is not enforced or disabled:
 
-```
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: MaxScale
 metadata:
@@ -169,7 +169,7 @@ These trust bundles contain non expired CAs needed to connect to the instances. 
 
 By setting `tls.enabled=true`, the operator will generate a root CA for each instance, which will be used to issue the certificates described in the [MariaDB cert spec](tls.md#mariadb-certificate-specification) and [MaxScale cert spec](tls.md#maxscale-certificate-specification) sections:
 
-```
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: MariaDB
 metadata:
@@ -180,7 +180,7 @@ spec:
     enabled: true
 ```
 
-```
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: MaxScale
 metadata:
@@ -203,7 +203,7 @@ cert-manager is the de-facto standard for managing certificates in Kubernetes. I
 
 As an example, we are going to setup an in-cluster root CA `ClusterIssuer`:
 
-```
+```yaml
 apiVersion: cert-manager.io/v1
 kind: ClusterIssuer
 metadata:
@@ -248,7 +248,7 @@ spec:
 
 Then, you can reference the `ClusterIssuer` in the `MariaDB` and `MaxScale` resources:
 
-```
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: MariaDB
 metadata:
@@ -265,7 +265,7 @@ spec:
       kind: ClusterIssuer
 ```
 
-```
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: MaxScale
 metadata:
@@ -294,7 +294,7 @@ Providing your own certificates is as simple as creating the `Secrets` with the 
 
 The CA certificate must be provided as a `Secret` with the following structure:
 
-```
+```yaml
 apiVersion: v1
 kind: Secret
 type: Opaque
@@ -319,7 +319,7 @@ The `enterprise.mariadb.com/watch` label is required only if you want the operat
 
 The leaf certificate must match the previous CA's public key, and it should provided as a [TLS Secret](https://kubernetes.io/docs/concepts/configuration/secret/#tls-secrets) with the following structure:
 
-```
+```yaml
 apiVersion: v1
 kind: Secret
 type: kubernetes.io/tls  
@@ -342,7 +342,7 @@ The `enterprise.mariadb.com/watch` label is required only if you want the operat
 
 Once the certificate `Secrets` are available in the cluster, you can create the `MariaDB` and `MaxScale` resources referencing them:
 
-```
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: MariaDB
 metadata:
@@ -361,7 +361,7 @@ spec:
       name: mariadb-galera-client-tls
 ```
 
-```
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: MaxScale
 metadata:
@@ -388,7 +388,7 @@ spec:
 
 If you already have a CA setup outside of Kubernetes, you can use it with the operator by providing the CA certificate as a `Secret` with the following structure:
 
-```
+```yaml
 apiVersion: v1
 kind: Secret
 type: Opaque
@@ -409,7 +409,7 @@ data:
 
 Just by providing a reference to this `Secret`, the operator will use it to issue leaf certificates instead of generating a new CA:
 
-```
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: MariaDB
 metadata:
@@ -434,7 +434,7 @@ Many applications support this `Leaf certificate -> Intermediate CA` structure a
 
 You are able to provide a set of CA public keys to be added to the [CA bundle](tls.md#ca-bundle) by creating a `Secret` with the following structure:
 
-```
+```yaml
 apiVersion: v1
 kind: Secret
 type: Opaque
@@ -454,7 +454,7 @@ data:
 
 And referencing it in the `MariaDB` and `MaxScale` resources, for instance:
 
-```
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: MaxScale
 metadata:
@@ -487,7 +487,7 @@ If your application is in a different namespace, you can copy the CA bundle to t
 
 You may configure the supported TLS versions in `MariaDB` by setting:
 
-```
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: MariaDB
 metadata:
@@ -505,7 +505,7 @@ If not specified, the MariaDB's default TLS versions will be used. See [MariaDB 
 
 Regarding `MaxScale`, you can also configure the supported TLS versions, both for the Admin REST API and MariaDB servers:
 
-```
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: MaxScale
 metadata:
@@ -534,7 +534,7 @@ If not specified, the MaxScale's default TLS versions will be used. See MaxScale
 
 By default, CA certificates are valid for 3 years, while leaf certificates have a validity of 3 months. This lifetime can be customized in both `MariaDB` and `MaxScale` resources through the certificate configuration fields. For example:
 
-```
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: MariaDB
 metadata:
@@ -551,7 +551,7 @@ spec:
       certLifetime: 720h # 1 month
 ```
 
-```
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: MaxScale
 metadata:
@@ -569,7 +569,7 @@ spec:
 
 When issuing certificates with cert-manager, you can specify the certificate configuration field alongside the issuer reference:
 
-```
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: MariaDB
 metadata:
@@ -592,7 +592,7 @@ spec:
       certLifetime: 720h # 1 month
 ```
 
-```
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: MaxScale
 metadata:
@@ -618,7 +618,7 @@ spec:
 
 By default, private keys are generated with the `ECDSA` algorithm and a size of `256`. You can customize the private key configuration in both `MariaDB` and `MaxScale` resources through the certificate configuration fields. For example:
 
-```
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: MariaDB
 metadata:
@@ -635,7 +635,7 @@ spec:
       privateKeySize: 2048
 ```
 
-```
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: MaxScale
 metadata:
@@ -653,7 +653,7 @@ spec:
 
 When issuing certificates with cert-manager, you can specify the private key configuration field alongside the issuer reference:
 
-```
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: MariaDB
 metadata:
@@ -676,7 +676,7 @@ spec:
       privateKeySize: 256
 ```
 
-```
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: MaxScale
 metadata:
@@ -730,7 +730,7 @@ You may choose any of the available [update strategies](updates.md) to control t
 
 To have a high level picture of the certificates status, you can check the `status.tls` field of the `MariaDB` and `MaxScale` resources:
 
-```
+```sh
 kubectl get mariadb mariadb-galera -o jsonpath="{.status.tls}" | jq
 {
   "caBundle": [
@@ -756,7 +756,7 @@ kubectl get mariadb mariadb-galera -o jsonpath="{.status.tls}" | jq
 }
 ```
 
-```
+```sh
 kubectl get maxscale maxscale-galera -o jsonpath="{.status.tls}" | jq
 {
   "adminCert": {
@@ -800,7 +800,7 @@ You are able to declaratively manage access to your `MariaDB` instances by creat
 
 For instance, if you want to require a valid x509 certificate for the user to be able o connect:
 
-```
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: User
 metadata:
@@ -813,7 +813,7 @@ spec:
 
 In order to restrict which subject the user certificate should have and/or require a particular issuer, you may set:
 
-```
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: User
 metadata:
@@ -833,7 +833,7 @@ See [MariaDB docs](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/secur
 
 MariaDB Enterprise Cluster (Galera) supports multiple SSL modes to secure the communication between the nodes. For configuring the SSL enforcement level on the server i.e. WSREP, you can set:
 
-```
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: MariaDB
 metadata:
@@ -848,7 +848,7 @@ The following values are supported: `SERVER_X509`, `SERVER` and `PROVIDER`. Refe
 
 You may also configure the SSL enforcement level used during Snapshot State Transfers(SST) by setting:
 
-```
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: MariaDB
 metadata:
@@ -868,7 +868,7 @@ If you are willing to increase the enforcement level in an existing instance, ma
 
 In this guide, we will configure TLS for an application running in the `app` namespace to connect with `MariaDB` and `MaxScale` instances deployed in the `default` namespace. We assume that the following resources are already present in the `default` namespace:
 
-```
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: MariaDB
 metadata:
@@ -900,7 +900,7 @@ spec:
 
 The first step is to create a `User` resource and grant the necessary permissions:
 
-```
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: User
 metadata:
@@ -946,7 +946,7 @@ In this example, we assume that the following `Secrets` are available in the `ap
 
 With these `Secrets` in place, we can proceed to define our application:
 
-```
+```yaml
 apiVersion: batch/v1
 kind: CronJob
 metadata:
@@ -997,7 +997,7 @@ The application will connect to the `MariaDB` instance using the `app` user, and
 
 If the connection is successful, the output should be:
 
-```
+```sh
 +---------------------------------+
 | Status                          |
 +---------------------------------+
@@ -1007,7 +1007,7 @@ If the connection is successful, the output should be:
 
 You can also point the application to the `MaxScale` instance by updating the host to `maxscale-galera.default.svc.cluster.local`:
 
-```
+```yaml
 apiVersion: batch/v1
 kind: CronJob
 metadata:
@@ -1056,7 +1056,7 @@ spec:
 
 If successful, the expected output is:
 
-```
+```sh
 +---------------------------------+
 | Status                          |
 +---------------------------------+
@@ -1068,7 +1068,7 @@ If successful, the expected output is:
 
 In order to validate your TLS setup, and to ensure that you TLS certificates are correctly issued and configured, you can use the `Connection` resource to test the connection to both your `MariaDB` and `MaxScale` instances:
 
-```
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: Connection
 metadata:
@@ -1087,7 +1087,7 @@ spec:
     interval: 30s
 ```
 
-```
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: Connection
 metadata:
@@ -1108,7 +1108,7 @@ spec:
 
 If successful, the `Connection` resource will be in a `Ready` state, which means that your TLS setup is correctly configured:
 
-```
+```sh
 kubectl get connections
 NAME                         READY   STATUS    SECRET                AGE
 connection                   True    Healthy   connection            2m8s

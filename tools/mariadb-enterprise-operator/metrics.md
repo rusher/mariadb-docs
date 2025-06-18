@@ -3,54 +3,30 @@
 
 MariaDB Enterprise Operator is able to configure [Prometheus operator](https://prometheus-operator.dev/) resources to scrape metrics from MariaDB and MaxScale instances. These metrics can be used later on to build [Grafana dashboards](#grafana-dashboards) or trigger [Alertmanager](https://prometheus.io/docs/alerting/latest/alertmanager/) alerts.
 
-
-## Table of contents
-
-
-* [Operator metrics](#operator-metrics)
-* [Exporters](#exporters)
-* [ServiceMonitor](#servicemonitor)
-* [Configuration](#configuration)
-* [Grafana dashboards](#grafana-dashboards)
-* [MariaDB metrics](#mariadb-metrics)
-* [MaxScale metrics](#maxscale-metrics)
-
-
 ## Operator metrics
 
-
 In order to expose the operator internal metrics, you can install the operator Helm chart passing the `metrics.enabled = true` value. Refer to the [Helm documentation](mariadb-enterprise-operator-installation/helm.md) for further detail.
-
 
 ## Exporters
 
 
 The operator configures exporters to query MariaDB and MaxScale, exposing metrics in Prometheus format through an HTTP endpoint.
 
-
 It is important to note that these exporters run as standalone `Deployments` rather than as sidecars for each data-plane replica. Since they can communicate with all replicas of MariaDB and MaxScale, there is no need to run a separate exporter for each replica.
-
 
 As a result, the lifecycle of MariaDB and MaxScale remains independent from the exporters, allowing for upgrades without impacting the availability of either component.
 
-
 ## `ServiceMonitor`
-
 
 Once the exporter `Deployment` is ready, the operator creates a [ServiceMonitor](https://prometheus-operator.dev/docs/api-reference/api/#monitoring.coreos.com/v1.ServiceMonitor) object that will be eventually reconciled by the [Prometheus operator](https://github.com/prometheus-operator/prometheus-operator), resulting in the Prometheus instance being configured to scrape the exporter endpoint.
 
-
 As you scale MariaDB and MaxScale by adjusting the number of replicas, the operator will reconcile the `ServiceMonitor` to dynamically add or remove targets corresponding to the updated instances.
-
 
 ## Configuration
 
-
 The easiest way to setup metrics in your MariaDB and MaxScale instances is just by setting `spec.metrics.enabled = true`:
 
-
-
-```
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: MariaDB
 metadata:
@@ -61,10 +37,7 @@ spec:
     enabled: true
 ```
 
-
-
-
-```
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: MaxScale
 metadata:
@@ -75,13 +48,9 @@ spec:
     enabled: true
 ```
 
-
-
 The rest of the fields are defaulted by the operator. If you need a more fine grained configuration, refer to the [API reference](api-reference.md) and the following examples:
 
-
-
-```
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: MariaDB
 metadata:
@@ -111,10 +80,7 @@ spec:
       key: password
 ```
 
-
-
-
-```
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: MaxScale
 metadata:

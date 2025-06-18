@@ -8,7 +8,7 @@ The key advantage of this approach is that, unlike executing SQL statements manu
 
 By creating this resource, you are declaring an intent to create an user in the referred `MariaDB` instance, just like a [CREATE USER](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/create-user) statement would do:
 
-```
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: User
 metadata:
@@ -32,7 +32,7 @@ Refer to the [API reference](api-reference.md) for more detailed information abo
 
 By default, the CR name is used to create the user in the database, but you can specify a different one providing the `name` field under spec:
 
-```
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: User
 metadata:
@@ -45,7 +45,7 @@ spec:
 
 By creating this resource, you are declaring an intent to grant permissions to a given user in the referred `MariaDB` instance, just like a [GRANT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant) statement would do.
 
-```
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: Grant
 metadata:
@@ -72,7 +72,7 @@ Refer to the [API reference](api-reference.md) for more detailed information abo
 
 By creating this resource, you are declaring an intent to create a logical database in the referred `MariaDB` instance, just like a [CREATE DATABASE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/create/create-database) statement would do:
 
-```
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: Database
 metadata:
@@ -90,7 +90,7 @@ Refer to the [API reference](api-reference.md) for more detailed information abo
 
 By default, the CR name is used to create the user in the database, but you can specify a different one providing the `name` field under spec:
 
-```
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: Database
 metadata:
@@ -103,7 +103,7 @@ spec:
 
 If you only need one user to interact with a single logical database, you can use of the `MariaDB` resource to configure it, instead of creating the `User`, `Grant` and `Database` resources separately:
 
-```
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: MariaDB
 metadata:
@@ -131,7 +131,7 @@ Alternatively, you can use [MariaDB authentication plugins](https://app.gitbook.
 
 Provide the password hashed using the [MariaDB PASSWORD](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/secondary-functions/encryption-hashing-and-compression-functions/password) function:
 
-```
+```yaml
 apiVersion: v1
 kind: Secret
 metadata:
@@ -158,7 +158,7 @@ The password hash can be obtained by executing `SELECT PASSWORD('<password>');` 
 
 Provide the password hashed using any of the available [MariaDB authentication plugins](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/authentication-plugins), for example `mysql_native_password`:
 
-```
+```yaml
 apiVersion: v1
 kind: Secret
 metadata:
@@ -190,7 +190,7 @@ The plugin name should be available in a `Secret` referenced by `pluginNameSecre
 
 As we previously mentioned, SQL resources are periodically reconciled by the operator into SQL statements. You are able to configure the reconciliation interval using the following fields:
 
-```
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: User
 metadata:
@@ -206,7 +206,7 @@ If the SQL statement executed by the operator is successful, it will schedule th
 
 Whenever you delete a SQL resource, the operator will also delete the associated resource in the database. This is the default behaviour, that can also be achieved by setting `cleanupPolicy=Delete`:
 
-```
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: User
 metadata:

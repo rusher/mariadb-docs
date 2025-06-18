@@ -27,7 +27,7 @@ Helm has certain [limitations when it comes to manage CRDs](https://helm.sh/docs
 
 CRDs can be installed in your cluster by running the following commands
 
-```
+```sh
 helm repo add mariadb-enterprise-operator https://operator.mariadb.com
 helm install mariadb-enterprise-operator-crds mariadb-enterprise-operator/mariadb-enterprise-operator-crds
 ```
@@ -36,7 +36,7 @@ helm install mariadb-enterprise-operator-crds mariadb-enterprise-operator/mariad
 
 The first step is to prepare a `values.yaml` file to specify your previously configured [customer credentials](../customer-access-to-docker-mariadb-com.md#customer-credentials):
 
-```
+```yaml
 imagePullSecrets:
   - name: mariadb-enterprise
 
@@ -51,7 +51,7 @@ certController:
 
 Then, you can proceed to install the operator:
 
-```
+```sh
 helm repo add mariadb-enterprise-operator https://operator.mariadb.com
 helm install mariadb-enterprise-operator mariadb-enterprise-operator/mariadb-enterprise-operator \
   -f values.yaml
@@ -59,7 +59,7 @@ helm install mariadb-enterprise-operator mariadb-enterprise-operator/mariadb-ent
 
 If you have the [prometheus operator](https://prometheus-operator.dev/) and [cert-manager](https://cert-manager.io/docs/installation/) already installed in your cluster, it is recommended to leverage them to scrape the operator metrics and provision the webhook certificate respectively:
 
-```
+```sh
 helm repo add mariadb-enterprise-operator https://operator.mariadb.com
 helm install mariadb-enterprise-operator mariadb-enterprise-operator/mariadb-enterprise-operator \
   -f values.yaml \
@@ -76,7 +76,7 @@ The following deployment modes are supported:
 
 The operator watches CRDs in all namespaces and requires cluster-wide RBAC permissions to operate. This is the default deployment mode, enabled through the default configuration values:
 
-```
+```sh
 helm repo add mariadb-enterprise-operator https://operator.mariadb.com
 helm install mariadb-enterprise-operator mariadb-enterprise-operator/mariadb-enterprise-operator
 ```
@@ -85,7 +85,7 @@ helm install mariadb-enterprise-operator mariadb-enterprise-operator/mariadb-ent
 
 By setting `currentNamespaceOnly=true`, the operator will only watch CRDs within the namespace it is deployed in, and the RBAC permissions will be restricted to that namespace as well:
 
-```
+```sh
 helm repo add mariadb-enterprise-operator https://operator.mariadb.com
 helm install mariadb-enterprise-operator \
   -n databases --create-namespace \
@@ -101,7 +101,7 @@ Make sure you read and understand the [updates documentation](../updates.md) bef
 
 The first step is upgrading the CRDs that the operator depends on:
 
-```
+```sh
 helm repo update mariadb-enterprise-operator
 helm upgrade --install mariadb-enterprise-operator-crds \
   --version <new-version> \
@@ -110,7 +110,7 @@ helm upgrade --install mariadb-enterprise-operator-crds \
 
 Once updated, you may proceed to upgrade the operator:
 
-```
+```sh
 helm repo update mariadb-enterprise-operator
 helm upgrade --install mariadb-enterprise-operator \
   --version <new-version> \
@@ -129,7 +129,7 @@ The operator can run in high availability mode to prevent downtime during update
 
 You can achieve this by providing the following values to the helm chart:
 
-```
+```yaml
 ha:
   enabled: true
   replicas: 3
@@ -163,13 +163,13 @@ Uninstalling the `mariadb-enterprise-operator-crds` Helm chart will remove the C
 
 First, uninstall the `mariadb-enterprise-operator` Helm chart. This action will not delete your CRDs, so your operands (i.e. `MariaDB` and `MaxScale`) will continue to run without the operator's reconciliation.
 
-```
+```sh
 helm uninstall mariadb-enterprise-operator
 ```
 
 At this point, if you also want to delete CRDs and the operands running in your cluster, you may proceed to uninstall the `mariadb-enterprise-operator-crds` Helm chart:
 
-```
+```sh
 helm uninstall mariadb-enterprise-operator-crds
 ```
 

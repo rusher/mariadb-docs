@@ -14,7 +14,7 @@ The recommended way to configure credentials is to use the [global pull secret](
 
 You can install the certified operator in OpenShift clusters that have the `mariadb-enterprise-operator` `packagemanifest` available. In order to check this, run the following command:
 
-```
+```sh
 oc get packagemanifests -n openshift-marketplace mariadb-enterprise-operator
 
 NAME                          CATALOG                 AGE
@@ -25,7 +25,7 @@ mariadb-enterprise-operator   Certified Operators     21h
 
 Both the operator and the operand `Pods` run with the `restricted-v2` `SecurityContextConstraint`, the most restrictive SCC in OpenShift in terms of container permissions. This implies that OpenShift automatically assigns a `SecurityContext` for the `Pods` with minimum permissions, for example:
 
-```
+```yaml
 securityContext:
   allowPrivilegeEscalation: false
   capabilities:
@@ -44,7 +44,7 @@ You can read more about [SecurityContextConstraints in the OpenShift documentati
 
 To install the operator watching resources on all namespaces, you need to to create a `Subscription` object for `mariadb-enterprise-operator` using the `stable` channel in the `openshift-operators` namespace:
 
-```
+```yaml
 apiVersion: operators.coreos.com/v1alpha1
 kind: Subscription
 metadata:
@@ -67,7 +67,7 @@ You can read more about [OperatorGroups in the OpenShift documentation](https://
 
 In order to define which namespaces the operator will be watching, you need to create an `OperatorGroup` in the namespace where the operator will be installed:
 
-```
+```yaml
 apiVersion: operators.coreos.com/v1
 kind: OperatorGroup
 metadata:
@@ -85,7 +85,7 @@ This `OperatorGroup` will watch the namespaces defined in the `targetNamespaces`
 
 Then, the operator can be installed by creating a `Subscription` object in the same namespace as the `OperatorGroup`:
 
-```
+```yaml
 apiVersion: operators.coreos.com/v1alpha1
 kind: Subscription
 metadata:
@@ -112,13 +112,13 @@ Updates are fully managed by OLM and controlled by the `installPlanApproval` fie
 
 The first step for uninstalling the operator is to delete the `Subscription` object. This will not remove the operator, but it will stop OLM from managing the operator:
 
-```
+```sh
 oc delete subscription mariadb-enterprise-operator
 ```
 
 After that, you can uninstall the `ClusterServiceVersion` (CSV) object that was created by OLM. This will remove the operator from the cluster:
 
-```
+```sh
 oc delete clusterserviceversion mariadb-enterprise-operator.v1.0.0
 ```
 
