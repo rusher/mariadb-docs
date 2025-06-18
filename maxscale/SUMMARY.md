@@ -388,7 +388,7 @@
     * [Limitations and Known Issues within MariaDB MaxScale](other-maxscale-versions/mariadb-maxscale-23-02/mariadb-maxscale-23-02-about/mariadb-maxscale-2302-limitations-and-known-issues-within-mariadb-maxscale.md)
   * [MaxScale 23.02 Authenticators](other-maxscale-versions/mariadb-maxscale-23-02/mariadb-maxscale-23-02-authenticators/README.md)
     * [MaxScale 23.02 Authentication Modules](other-maxscale-versions/mariadb-maxscale-23-02/mariadb-maxscale-23-02-authenticators/mariadb-maxscale-2302-authentication-modules.md)
-    * [Ed25519 Authenticato](other-maxscale-versions/mariadb-maxscale-23-02/mariadb-maxscale-23-02-authenticators/mariadb-maxscale-2302-ed25519-authenticator.md)
+    * [Ed25519 Authenticator](other-maxscale-versions/mariadb-maxscale-23-02/mariadb-maxscale-23-02-authenticators/mariadb-maxscale-2302-ed25519-authenticator.md)
     * [GSSAPI Client Authenticator](other-maxscale-versions/mariadb-maxscale-23-02/mariadb-maxscale-23-02-authenticators/mariadb-maxscale-2302-gssapi-client-authenticator.md)
     * [MariaDB/MySQL Authenticator](other-maxscale-versions/mariadb-maxscale-23-02/mariadb-maxscale-23-02-authenticators/mariadb-maxscale-2302-mysql-authenticator.md)
     * [PAM Authenticator](other-maxscale-versions/mariadb-maxscale-23-02/mariadb-maxscale-23-02-authenticators/mariadb-maxscale-2302-pam-authenticator.md)
