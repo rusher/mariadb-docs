@@ -1,10 +1,4 @@
----
-hidden: true
----
 # ColumnStore Redistribute Data
-
-1. [Introduction "Introduction"](columnstore-redistribute-data.md#introduction)
-2. [Usage "Usage"](columnstore-redistribute-data.md#usage)
 
 ## Introduction
 
