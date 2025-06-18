@@ -27,6 +27,16 @@ CHANGE MASTER TO master_delay=3600;
 
 A zero delay disables delayed replication. The replica must be stopped when changing the delay value.
 
+{% hint style="success" %}
+New Variables to Measure Replication Lag
+
+MariaDB 10.6 ES and 11.6 introduced new variables to measure replication lag. The variables are recommended to monitor the time difference between the master and slave.
+
+* `Master_last_event_time`: The timestamp of the last event read from the master by the IO thread.
+* `Slave_last_event_time`: The timestamp of the last event committed on the slave (from the master's perspective).
+* `Master_Slave_time_diff`: The difference in seconds between `Master_last_event_time` and `Slave_last_event_time`.
+{% endhint %}
+
 ## Fields in [SHOW SLAVE STATUS](../../reference/sql-statements/administrative-sql-statements/show/show-replica-status.md) are associated with delayed replication
 
 1. `SQL_Delay`: This is the value specified by MASTER\_DELAY in CHANGE MASTER\
