@@ -194,7 +194,7 @@ For example, if you're using a service mesh like Istio, it's important to add th
 
 {% hint style="danger" %}
 Use this option only in exceptional circumstances. Not selecting the `Pod` with the highest sequence number may result in data loss.
-{% hint style="danger" %}
+{% endhint %}
 
 {% hint style="warning" %}
 Ensure you unset `forceClusterBootstrapInPod` after completing the bootstrap to allow the operator to choose the appropriate `Pod` to bootstrap from in an event of cluster recovery.
