@@ -138,7 +138,7 @@ default of 0 on all servers.
 ## Using Global Transaction IDs
 
 Global transaction ID is enabled automatically. Each event\
-group logged to the binlog receives a GTID event, as can be seen with[mariadb-binlog](../../clients-and-utilities/logging-tools/mariadb-binlog/) or [SHOW BINLOG EVENTS](../../reference/sql-statements/administrative-sql-statements/show/show-binlog-events.md).
+group logged to the binlog receives a GTID event, as can be seen with [mariadb-binlog](../../clients-and-utilities/logging-tools/mariadb-binlog/) or [SHOW BINLOG EVENTS](../../reference/sql-statements/administrative-sql-statements/show/show-binlog-events.md).
 
 The replica automatically keeps track of the GTID of the last applied event\
 group, as can be seen from the [gtid\_slave\_pos](gtid.md#gtid_slave_pos) variable:
@@ -214,13 +214,13 @@ Using_Gtid: Slave_pos
 
 The replica server internally uses the [mysql.gtid\_slave\_pos table](../../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlgtid_slave_pos-table.md) to store the\
 GTID position (and so preserve the value of `@@GLOBAL.gtid_slave_pos` across\
-server restarts). After upgrading a server to 10.0, it is necessary to run[mysql\_upgrade](../../clients-and-utilities/legacy-clients-and-utilities/mysql_upgrade.md) (as always) to get the table created.
+server restarts). After upgrading a server to 10.0, it is necessary to run [mysql\_upgrade](../../clients-and-utilities/legacy-clients-and-utilities/mysql_upgrade.md) (as always) to get the table created.
 
 In order to be crash-safe, this table must use a transactional storage engine\
 such as InnoDB. When MariaDB is first installed (or upgraded to 10.0.2+) the\
 table is created using the default storage engine - which itself defaults to\
 InnoDB. If there is a need to change the storage engine for this table (to\
-make it transactional on a system configured with [MyISAM](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/myisam-storage-engine/README.md) as the default\
+make it transactional on a system configured with [MyISAM](../../server-usage/storage-engines/myisam-storage-engine/) as the default\
 storage engine, for example), use [ALTER TABLE](../../reference/sql-statements/data-definition/alter/alter-table.md):
 
 `ALTER TABLE mysql.gtid_slave_pos ENGINE = InnoDB`
