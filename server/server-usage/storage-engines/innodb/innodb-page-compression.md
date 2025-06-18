@@ -72,7 +72,6 @@ A MariaDB build's support for other InnoDB page compression algorithms can be ch
 
 | Status Variable                                                                                                                            | Description                                                                                         |
 | ------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------- |
-| Status Variable                                                                                                                            | Description                                                                                         |
 | [Innodb\_have\_lz4](../../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_have_lz4)       | Whether InnoDB supports the [lz4](https://code.google.com/p/lz4/) compression algorithm.            |
 | [Innodb\_have\_lzo](../../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_have_lzo)       | Whether InnoDB supports the [lzo](https://www.oberhumer.com/opensource/lzo/) compression algorithm. |
 | [Innodb\_have\_lzma](../../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_have_lzma)     | Whether InnoDB supports the [lzma](https://tukaani.org/xz/) compression algorithm.                  |
@@ -239,7 +238,7 @@ If an InnoDB page compression algorithm does not support compression levels, the
 
 ### Configuring the Default Compression Level
 
-The default compression level can be configured by setting the[innodb\_compression\_level](innodb-system-variables.md#innodb_compression_level) system variable.
+The default compression level can be configured by setting the [innodb\_compression\_level](innodb-system-variables.md#innodb_compression_level) system variable.
 
 This system variable's default value is `6`.
 
@@ -416,7 +415,6 @@ InnoDB page compression can be monitored by querying the following status variab
 
 | Status Variable                                                                                                                                   | Description                     |
 | ------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------- |
-| Status Variable                                                                                                                                   | Description                     |
 | [Innodb\_page\_compression\_saved](../../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md)               | Bytes saved by compression      |
 | [Innodb\_page\_compression\_trim\_sect512](../../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md)       | Number of 512 sectors trimmed   |
 | [Innodb\_page\_compression\_trim\_sect1024](../../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md)      | Number of 1024 sectors trimmed  |
