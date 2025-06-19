@@ -168,7 +168,7 @@ See [Getting Data from MariaDB](../../../../server-usage/data-handling/mariadb-s
 
 ## See Also
 
-* [Getting Data from MariaDB](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/getting-data-from-mariadb/README.md) (Beginner tutorial)
+* [Getting Data from MariaDB](../../../../server-usage/data-handling/mariadb-selecting-data-guide-1.md) (Beginner tutorial)
 * [Joins and Subqueries](joins-subqueries/)
 * [LIMIT](limit.md)
 * [ORDER BY](order-by.md)
