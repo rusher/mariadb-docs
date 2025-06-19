@@ -48,8 +48,6 @@ If [SQL\_MODE](../../../server-management/variables-and-modes/sql-mode.md) does 
 GRANT SELECT ON db.* TO username@hostname IDENTIFIED VIA ed25519 USING PASSWORD('secret');
 ```
 
-<>
-
 The [PASSWORD()](../../sql-functions/secondary-functions/encryption-hashing-and-compression-functions/password.md) function and [SET PASSWORD](../../sql-statements/account-management-sql-statements/set-password.md) statement did not work with the `ed25519` authentication plugin. Instead, you would have to use the [UDF](../../../server-usage/user-defined-functions/) that comes with the authentication plugin to calculate the password hash. For example:
 
 ```
