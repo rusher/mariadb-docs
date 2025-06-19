@@ -121,41 +121,20 @@ Privileges can be set globally, for an entire database, for a table or routine, 
 
 Global privileges do not take effect immediately and are only applied to connections created after the `GRANT` statement was executed.
 
-* [Global privileges priv\_type](grant.md#global-privileges) are granted using `*.*` for\
-  priv\_level. Global privileges include privileges to administer the database\
-  and manage user accounts, as well as privileges for all tables, functions, and\
-  procedures. Global privileges are stored in [mysql.global\_priv table](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-global_priv-table.md).
-* [Database privileges priv\_type](grant.md#database-privileges) are granted using `db_name.*`\
-  for priv\_level, or using just `*` to use default database. Database\
-  privileges include privileges to create tables and functions, as well as\
-  privileges for all tables, functions, and procedures in the database. Database privileges are stored in the [mysql.db table](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-db-table.md).
-* [Table privileges priv\_type](grant.md#table-privileges) are granted using `db_name.tbl_name`\
-  for priv\_level, or using just `tbl_name` to specify a table in the default\
-  database. The `TABLE` keyword is optional. Table privileges include the\
-  ability to select and change data in the table. Certain table privileges can\
-  be granted for individual columns.
-* [Column privileges priv\_type](grant.md#column-privileges) are granted by specifying a table for\
-  priv\_level and providing a column list after the privilege type. They allow\
-  you to control exactly which columns in a table users can select and change.
-* [Function privileges priv\_type](grant.md#function-privileges) are granted using `FUNCTION db_name.routine_name`\
-  for priv\_level, or using just `FUNCTION routine_name` to specify a function\
-  in the default database.
-* [Procedure privileges priv\_type](grant.md#procedure-privileges) are granted using `PROCEDURE db_name.routine_name`\
-  for priv\_level, or using just `PROCEDURE routine_name` to specify a procedure\
-  in the default database.
+* [Global privileges priv\_type](grant.md#global-privileges) are granted using `*.*` for priv\_level. Global privileges include privileges to administer the database and manage user accounts, as well as privileges for all tables, functions, and procedures. Global privileges are stored in [mysql.global\_priv table](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-global_priv-table.md).
+* [Database privileges priv\_type](grant.md#database-privileges) are granted using `db_name.*` for priv\_level, or using just `*` to use default database. Database privileges include privileges to create tables and functions, as well as privileges for all tables, functions, and procedures in the database. Database privileges are stored in the [mysql.db table](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-db-table.md).
+* [Table privileges priv\_type](grant.md#table-privileges) are granted using `db_name.tbl_name` for priv\_level, or using just `tbl_name` to specify a table in the default database. The `TABLE` keyword is optional. Table privileges include the ability to select and change data in the table. Certain table privileges can be granted for individual columns.
+* [Column privileges priv\_type](grant.md#column-privileges) are granted by specifying a table for priv\_level and providing a column list after the privilege type. They allow you to control exactly which columns in a table users can select and change.
+* [Function privileges priv\_type](grant.md#function-privileges) are granted using `FUNCTION db_name.routine_name` for priv\_level, or using just `FUNCTION routine_name` to specify a function in the default database.
+* [Procedure privileges priv\_type](grant.md#procedure-privileges) are granted using `PROCEDURE db_name.routine_name` for priv\_level, or using just `PROCEDURE routine_name` to specify a procedure in the default database.
 
 #### The `USAGE` Privilege
 
-The `USAGE` privilege grants no real privileges. The [SHOW GRANTS](../administrative-sql-statements/show/show-grants.md)\
-statement will show a global `USAGE` privilege for a newly-created user. You\
-can use `USAGE` with the `GRANT` statement to change options like `GRANT OPTION`\
-and `MAX_USER_CONNECTIONS` without changing any account privileges.
+The `USAGE` privilege grants no real privileges. The [SHOW GRANTS](../administrative-sql-statements/show/show-grants.md) statement will show a global `USAGE` privilege for a newly-created user. You can use `USAGE` with the `GRANT` statement to change options like `GRANT OPTION` and `MAX_USER_CONNECTIONS` without changing any account privileges.
 
 #### The `ALL PRIVILEGES` Privilege
 
-The `ALL PRIVILEGES` privilege grants all available privileges. Granting all\
-privileges only affects the given privilege level. For example, granting all\
-privileges on a table does not grant any privileges on the database or globally.
+The `ALL PRIVILEGES` privilege grants all available privileges. Granting allprivileges only affects the given privilege level. For example, granting allprivileges on a table does not grant any privileges on the database or globally.
 
 Using `ALL PRIVILEGES` does not grant the special `GRANT OPTION` privilege.
 
@@ -163,24 +142,15 @@ You can use `ALL` instead of `ALL PRIVILEGES`.
 
 #### The `GRANT OPTION` Privilege
 
-Use the `WITH GRANT OPTION` clause to give users the ability to grant privileges\
-to other users at the given privilege level. Users with the `GRANT OPTION` privilege can\
-only grant privileges they have. They cannot grant privileges at a higher privilege level than\
-they have the `GRANT OPTION` privilege.
+Use the `WITH GRANT OPTION` clause to give users the ability to grant privilegesto other users at the given privilege level. Users with the `GRANT OPTION` privilege canonly grant privileges they have. They cannot grant privileges at a higher privilege level than they have the `GRANT OPTION` privilege.
 
-The `GRANT OPTION` privilege cannot be set for individual columns.\
-If you use `WITH GRANT OPTION` when specifying [column privileges](grant.md#column-privileges),\
-the `GRANT OPTION` privilege will be granted for the entire table.
+The `GRANT OPTION` privilege cannot be set for individual columns. If you use `WITH GRANT OPTION` when specifying [column privileges](grant.md#column-privileges), the `GRANT OPTION` privilege will be granted for the entire table.
 
-Using the `WITH GRANT OPTION` clause is equivalent to listing `GRANT OPTION`\
-as a privilege.
+Using the `WITH GRANT OPTION` clause is equivalent to listing `GRANT OPTION` as a privilege.
 
 ### Global Privileges
 
-The following table lists the privileges that can be granted globally. You can\
-also grant all database, table, and function privileges globally. When granted\
-globally, these privileges apply to all databases, tables, or functions,\
-including those created later.
+The following table lists the privileges that can be granted globally. You can also grant all database, table, and function privileges globally. When granted globally, these privileges apply to all databases, tables, or functions, including those created later.
 
 To set a global privilege, use `*.*` for _priv\_level_.
 
@@ -388,13 +358,9 @@ From [MariaDB 10.11.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-co
 
 ### Database Privileges
 
-The following table lists the privileges that can be granted at the database\
-level. You can also grant all table and function privileges at the database\
-level. Table and function privileges on a database apply to all tables or\
-functions in that database, including those created later.
+The following table lists the privileges that can be granted at the database level. You can also grant all table and function privileges at the database level. Table and function privileges on a database apply to all tables or functions in that database, including those created later.
 
-To set a privilege for a database, specify the database using`db_name.*` for _priv\_level_, or just use `*`\
-to specify the default database.
+To set a privilege for a database, specify the database using`db_name.*` for _priv\_level_, or just use `*` to specify the default database.
 
 <table><thead><tr><th width="236.5184326171875">Privilege</th><th>Description</th></tr></thead><tbody><tr><td>CREATE</td><td>Create a database using the <a href="../data-definition/create/create-database.md">CREATE DATABASE</a> statement, when the privilege is granted for a database. You can grant the CREATE privilege on databases that do not yet exist. This also grants the CREATE privilege on all tables in the database.</td></tr><tr><td>CREATE ROUTINE</td><td>Create Stored Programs using the <a href="../../../server-usage/stored-routines/stored-procedures/create-procedure.md">CREATE PROCEDURE</a> and <a href="../data-definition/create/create-function.md">CREATE FUNCTION</a> statements.</td></tr><tr><td>CREATE TEMPORARY TABLES</td><td>Create temporary tables with the <a href="../data-definition/create/create-table.md">CREATE TEMPORARY TABLE</a> statement. This privilege enable writing and dropping those temporary tables</td></tr><tr><td>DROP</td><td>Drop a database using the <a href="../data-definition/drop/drop-database.md">DROP DATABASE</a> statement, when the privilege is granted for a database. This also grants the DROP privilege on all tables in the database.</td></tr><tr><td>EVENT</td><td>Create, drop and alter EVENTs.</td></tr><tr><td>GRANT OPTION</td><td>Grant database privileges. You can only grant privileges that you have.</td></tr><tr><td>LOCK TABLES</td><td>Acquire explicit locks using the <a href="../transactions/lock-tables.md">LOCK TABLES</a> statement; you also need to have the SELECT privilege on a table, in order to lock it.</td></tr><tr><td>SHOW CREATE ROUTINE</td><td>Permit viewing the SHOW CREATE definition statement of a routine, for example <a href="../administrative-sql-statements/show/show-create-function.md">SHOW CREATE FUNCTION</a>, even if not the routine owner. From <a href="https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-3-rolling-releases/mariadb-11-3-0-release-notes">MariaDB 11.3.0</a>.</td></tr></tbody></table>
 
@@ -404,11 +370,7 @@ to specify the default database.
 
 ### Column Privileges
 
-Some table privileges can be set for individual columns of a table. To use\
-column privileges, specify the table explicitly and provide a list of column\
-names after the privilege type. For example, the following statement would allow\
-the user to read the names and positions of employees, but not other information\
-from the same table, such as salaries.
+Some table privileges can be set for individual columns of a table. To use column privileges, specify the table explicitly and provide a list of column names after the privilege type. For example, the following statement would allow the user to read the names and positions of employees, but not other information from the same table, such as salaries.
 
 ```sql
 GRANT SELECT (name, position) on Employee to 'jeffrey'@'localhost';
@@ -574,13 +536,9 @@ For example, if our password is `mariadb`, then we can create the user with:
 GRANT USAGE ON *.* TO foo2@test IDENTIFIED BY 'mariadb';
 ```
 
-If you do not specify a password with the `IDENTIFIED BY` clause, the user\
-will be able to connect without a password. A blank password is not a wildcard\
-to match any password. The user must connect without providing a password if no\
-password is set.
+If you do not specify a password with the `IDENTIFIED BY` clause, the user will be able to connect without a password. A blank password is not a wildcard to match any password. The user must connect without providing a password if no password is set.
 
-If the user account already exists and if you provide the `IDENTIFIED BY` clause, then the user's password will be changed. You must have the privileges needed for the [SET PASSWORD](set-password.md)\
-statement to change a user's password with `GRANT`.
+If the user account already exists and if you provide the `IDENTIFIED BY` clause, then the user's password will be changed. You must have the privileges needed for the [SET PASSWORD](set-password.md) statement to change a user's password with `GRANT`.
 
 The only [authentication plugins](../../plugins/authentication-plugins/) that this clause supports are [mysql\_native\_password](../../plugins/authentication-plugins/authentication-plugin-mysql_native_password.md) and [mysql\_old\_password](../../plugins/authentication-plugins/authentication-plugin-mysql_old_password.md).
 
@@ -607,13 +565,9 @@ GRANT USAGE ON *.* TO foo2@test IDENTIFIED BY
   PASSWORD '*54958E764CE10E50764C2EECBB71D01F08549980';
 ```
 
-If you do not specify a password with the `IDENTIFIED BY` clause, the user\
-will be able to connect without a password. A blank password is not a wildcard\
-to match any password. The user must connect without providing a password if no\
-password is set.
+If you do not specify a password with the `IDENTIFIED BY` clause, the user will be able to connect without a password. A blank password is not a wildcard to match any password. The user must connect without providing a password if no password is set.
 
-If the user account already exists and if you provide the `IDENTIFIED BY` clause, then the user's password will be changed. You must have the privileges needed for the [SET PASSWORD](set-password.md)\
-statement to change a user's password with `GRANT`.
+If the user account already exists and if you provide the `IDENTIFIED BY` clause, then the user's password will be changed. You must have the privileges needed for the [SET PASSWORD](set-password.md) statement to change a user's password with `GRANT`.
 
 The only [authentication plugins](../../plugins/authentication-plugins/) that this clause supports are [mysql\_native\_password](../../plugins/authentication-plugins/authentication-plugin-mysql_native_password.md) and [mysql\_old\_password](../../plugins/authentication-plugins/authentication-plugin-mysql_old_password.md).
 
@@ -751,8 +705,7 @@ GRANT <privilege> ON <database>.<object> TO PUBLIC;
 REVOKE <privilege> ON <database>.<object> FROM PUBLIC;
 ```
 
-GRANT ... TO PUBLIC grants privileges to all users with access to the server. The privileges also apply to users created after the privileges are granted. This can be useful when one only wants to state once that all users need to have a certain set of privileges.\
-When running [SHOW GRANTS](../administrative-sql-statements/show/show-grants.md), a user will also see all privileges inherited from PUBLIC. [SHOW GRANTS FOR PUBLIC](../administrative-sql-statements/show/show-grants.md#for-public) will only show TO PUBLIC grants.
+GRANT ... TO PUBLIC grants privileges to all users with access to the server. The privileges also apply to users created after the privileges are granted. This can be useful when one only wants to state once that all users need to have a certain set of privileges. When running [SHOW GRANTS](../administrative-sql-statements/show/show-grants.md), a user will also see all privileges inherited from PUBLIC. [SHOW GRANTS FOR PUBLIC](../administrative-sql-statements/show/show-grants.md#for-public) will only show TO PUBLIC grants.
 
 ## Grant Examples
 
