@@ -78,7 +78,7 @@ For a list of all new variables, see [System Variables Added in MariaDB 10.4](ht
 
 ### Galera 4
 
-In [MariaDB 10.4.2](mariadb-1042-release-notes.md) and later, [Galera](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/galera-cluster/README.md) has been upgraded from [Galera](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/galera-cluster/README.md) 3 to [Galera](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/galera-cluster/README.md) 4.
+In [MariaDB 10.4.2](mariadb-1042-release-notes.md) and later, [Galera](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/3VYeeVGUV4AMqrA3zwy7/) has been upgraded from Galera 3 to Galera 4.
 
 #### Galera 4 Versions
 
