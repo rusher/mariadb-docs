@@ -1,6 +1,6 @@
 # Upgrade MariaDB Enterprise Server from 10.4.X to 10.4.Y
 
-These instructions detail a **minor release upgrade** with **MariaDB Enterprise Server 10.4** on a range of [supported Operating Systems](https://mariadb.com/docs/server/deploy/compatibility/).
+These instructions detail a **minor release upgrade** with **MariaDB Enterprise Server 10.4** on a range of Supported Operating Systems.
 
 A minor release upgrade is a change from an earlier release of MariaDB Enterprise Server 10.4 to a later release in the same release series.
 
