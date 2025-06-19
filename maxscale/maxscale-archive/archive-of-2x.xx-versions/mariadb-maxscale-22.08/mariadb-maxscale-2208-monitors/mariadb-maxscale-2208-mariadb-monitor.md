@@ -1279,12 +1279,12 @@ on the target server is lost. This is useful when a slave server has diverged\
 from the master server, or when adding a new server to the cluster. The\
 MariaDB Server configuration files are not affected.
 
-MariaDB-Monitor can perform this operation by running[Mariabackup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariabackup/) on both the source and\
+MariaDB-Monitor can perform this operation by running[mariadb-backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariabackup/) on both the source and\
 target servers. To do this, MaxScale needs to have ssh-access on the machines.\
 Also, the following tools need to be installed on the source and target\
 machines:
 
-1. Mariabackup. Backups and restores MariaDB Server contents. Installed e.g.\
+1. mariadb-backup. Backups and restores MariaDB Server contents. Installed e.g.\
    with `yum install MariaDB-backup`.
 2. pigz. Compresses and decompresses the backup stream. Installed e.g. with`yum install pigz`.
 3. socat. Streams data from one machine to another. Is likely already\
@@ -1292,9 +1292,9 @@ machines:
 
 The _ssh\_user_ and _ssh\_keyfile_-settings define the SSH credentials MaxScale\
 uses to access the servers. MaxScale must be able to run commands with _sudo_ on\
-both the source and target servers. Mariabackup, on the other hand, needs to\
+both the source and target servers. mariadb-backup, on the other hand, needs to\
 authenticate to the MariaDB Server being copied from. For this, MaxScale uses\
-the monitor user. The monitor user may thus require additional privileges. See[Mariabackup documentation](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariabackup/mariabackup-overview#authentication-and-privileges)\
+the monitor user. The monitor user may thus require additional privileges. See[mariadb-backup documentation](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariabackup/mariabackup-overview#authentication-and-privileges)\
 for more details.
 
 When launched, the rebuild operation proceeds as below. If any step fails, the\
@@ -1307,7 +1307,7 @@ operation is stopped and the target server will be left in an unspecified state.
    kill.
 3. Test the connection by streaming a short message from the source host to the\
    target.
-4. Launch Mariabackup on the source machine, compress the stream and listen\
+4. Launch mariadb-backup on the source machine, compress the stream and listen\
    for an incoming connection. This is performed with a command like`mariabackup --backup --safe-slave-backup --stream=xbstream | pigz -c | socat - TCP-LISTEN:<port>`.
 5. Stop MariaDB-server on the target machine and delete all contents of the data\
    directory /var/lib/mysql.

@@ -11,7 +11,7 @@ MariaDB Connector/J 3.5.3 is a [_**Stable**_](../../../mariadb-release-criteria.
 ## Notable Changes
 
 * Resolved timestamp string representation incompatibility between versions 2.7 and 3.x ([CONJ-1232](https://jira.mariadb.org/browse/CONJ-1232))
-  * Added new option `[oldModeNoPrecisionTimestamp](https://mariadb.com/kb/en/about-mariadb-connector-j/#oldmodenoprecisiontimestamp)`
+  * Added new option `[oldModeNoPrecisionTimestamp](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-j/about-mariadb-connector-j#oldmodenoprecisiontimestamp)`
 * Modified redirection option to enable by default only when SSL is enabled ([CONJ-1235](https://jira.mariadb.org/browse/CONJ-1235))
 
 ## Bugs Fixed

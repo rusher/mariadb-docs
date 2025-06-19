@@ -131,7 +131,7 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #4c0d391c92](https://github.com/MariaDB/server/commit/4c0d391c92)\
   2018-09-08 16:18:42 +0100
   * Windows : fix broken build with OpenSSL
-* Merge [Revision #5a1868b58d](https://github.com/MariaDB/server/commit/5a1868b58d) 2018-09-07 22:15:06 +0300 - [MDEV-13564](https://jira.mariadb.org/browse/MDEV-13564) Mariabackup does not work with TRUNCATE
+* Merge [Revision #5a1868b58d](https://github.com/MariaDB/server/commit/5a1868b58d) 2018-09-07 22:15:06 +0300 - [MDEV-13564](https://jira.mariadb.org/browse/MDEV-13564) mariadb-backup does not work with TRUNCATE
 * [Revision #980d1bf1a9](https://github.com/MariaDB/server/commit/980d1bf1a9)\
   2018-09-07 17:24:31 +0300
   * [MDEV-14717](https://jira.mariadb.org/browse/MDEV-14717): Prevent crash-downgrade to earlier [MariaDB 10.2](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102.md)
@@ -152,7 +152,7 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-17049](https://jira.mariadb.org/browse/MDEV-17049) Enable innodb\_undo tests on buildbot
 * [Revision #055a3334ad](https://github.com/MariaDB/server/commit/055a3334ad)\
   2018-08-28 13:43:06 +0300
-  * [MDEV-13564](https://jira.mariadb.org/browse/MDEV-13564) Mariabackup does not work with TRUNCATE
+  * [MDEV-13564](https://jira.mariadb.org/browse/MDEV-13564) mariadb-backup does not work with TRUNCATE
 * Merge [Revision #4901f31c13](https://github.com/MariaDB/server/commit/4901f31c13) 2018-09-07 22:09:28 +0300 - Merge 10.2 into 10.3
 * [Revision #c3a80175b1](https://github.com/MariaDB/server/commit/c3a80175b1)\
   2018-09-07 07:26:11 +0300

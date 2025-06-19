@@ -44,7 +44,7 @@ running [mysql\_upgrade](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-
 ## Changelog
 
 For a complete list of changes made in [MariaDB 10.3.38](mariadb-10-3-38-release-notes.md), with links to detailed\
-information on each push, see the [changelog](https://mariadb.com/kb/en/mariadb-10338-changelog).
+information on each push, see the [changelog](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/aEnK0ZXmUbJzqQrTjFyb/changelogs/changelogs-mariadb-10-3-series/mariadb-10-3-38-changelog).
 
 ## Contributors
 

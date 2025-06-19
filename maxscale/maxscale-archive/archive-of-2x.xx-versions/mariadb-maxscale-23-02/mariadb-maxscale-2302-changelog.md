@@ -69,7 +69,7 @@ For more details, please refer to:
 
 * Sessions can now be restarted so that added server are taken into use.
 * Sessions can now be killed using maxctrl.
-* MariaDBMonitor can use Mariabackup to clone the contents of a server.
+* MariaDBMonitor can use mariadb-backup to clone the contents of a server.
 * MariaDBMonitor can issue ColumnStore commands similar to CSMon
 * MariaDBMonitor settings `ignore_external_masters`, `detect_replication_lagdetect_standalone_master`, `detect_stale_master` and `detect_stale_slave`\
   have been removed. The first two were ineffective, the latter three are\

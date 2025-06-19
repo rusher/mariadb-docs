@@ -1,12 +1,12 @@
 # MariaDB Java Client 1.1.0 Changelog
 
-The most recent [_**Stable**_](../../../../mariadb-release-criteria.md) _**(GA)**_ release of [MariaDB Connector/J](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/about-mariadb-connector-j/README.md) is:[**MariaDB Connector/J 3.5.3**](../../mariadb-connector-j-3-5-release-notes/mariadb-connector-j-3-5-3-release-notes.md)
+The most recent [_**Stable**_](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-release-criteria) _**(GA)**_ release of [MariaDB Connector/J](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/about-mariadb-connector-j/README.md) is:[**MariaDB Connector/J 3.5.3**](../../mariadb-connector-j-3-5-release-notes/mariadb-connector-j-3-5-3-release-notes.md)
 
-[Download](https://downloads.mariadb.org/client-java/1.1.0/) | [Release Notes](../../mariadb-connector-j-11-release-notes/mariadb-java-client-110-release-notes.md) | **Changelog**
+[Download](https://downloads.mariadb.org/client-java/1.1.0/) | [Release Notes](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/aEnK0ZXmUbJzqQrTjFyb/connectors/java/mariadb-connector-j-11-release-notes/mariadb-java-client-110-release-notes) | **Changelog**
 
 **Release date:** 15 Jan 2013
 
-For the highlights of this release, see the [release notes](https://mariadb.com/kb/en/\[mariadb-java-client-110-release-notes).
+For the highlights of this release, see the [release notes](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/aEnK0ZXmUbJzqQrTjFyb/connectors/java/mariadb-connector-j-11-release-notes/mariadb-java-client-110-release-notes).
 
 The revision number links will take you to the revision's page on Launchpad. On Launchpad you can view more details of the revision and view diffs of the code modified in that revision.
 

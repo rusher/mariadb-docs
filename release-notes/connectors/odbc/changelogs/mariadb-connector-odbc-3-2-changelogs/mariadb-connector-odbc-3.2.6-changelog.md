@@ -4,7 +4,7 @@
 
 **Release date:** ?
 
-For the highlights of this release, see the [release notes](https://mariadb.com/kb/en/mariadb-connector-odbc-3-2-6-release-notes/).
+For the highlights of this release, see the [release notes](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/aEnK0ZXmUbJzqQrTjFyb/connectors/odbc/mariadb-connector-odbc-3-2-release-notes/mariadb-connectorodbc-3-2-6-release-notes/).
 
 The revision number links will take you to the revision's page on GitHub. On [GitHub](https://github.com/MariaDB/mariadb-connector-odbc) you can view more details of the revision and view diffs of the code modified in that revision.
 

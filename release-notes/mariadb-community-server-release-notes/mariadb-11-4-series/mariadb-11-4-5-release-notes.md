@@ -8,7 +8,7 @@
 
 [MariaDB 11.4](what-is-mariadb-114.md) is the current long-term series of MariaDB and will be maintained until May 2029. It is an evolution of [MariaDB 11.3](../old-releases/release-notes-mariadb-11-3-rolling-releases/what-is-mariadb-113.md) with several entirely new features.
 
-[MariaDB 11.4.5](mariadb-11-4-5-release-notes.md) is a [_**Stable (GA)**_](../../mariadb-release-criteria.md) release.
+[MariaDB 11.4.5](mariadb-11-4-5-release-notes.md) is a [_**Stable (GA)**_](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-release-criteria) release.
 
 **For an overview of** [**MariaDB 11.4**](what-is-mariadb-114.md) **see the**[**What is MariaDB 11.4?**](what-is-mariadb-114.md) **page.**
 

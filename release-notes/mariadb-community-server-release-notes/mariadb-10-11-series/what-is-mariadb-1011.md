@@ -54,7 +54,7 @@ This list includes features from the short-term releases [MariaDB 10.7](../old-r
 ### JSON
 
 * [JSON\_OVERLAPS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/special-functions/json-functions/json_overlaps) function ([MDEV-27677](https://jira.mariadb.org/browse/MDEV-27677), [MariaDB 10.9](../old-releases/release-notes-mariadb-10-9-series/what-is-mariadb-109.md))
-* Implement range notation for [JSONPath](https://mariadb.com/kb/en/JSONPath_Expressions) ([MDEV-27911](https://jira.mariadb.org/browse/MDEV-27911), [MariaDB 10.9](../old-releases/release-notes-mariadb-10-9-series/what-is-mariadb-109.md))
+* Implement range notation for [JSONPath](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/special-functions/json-functions/jsonpath-expressions) ([MDEV-27911](https://jira.mariadb.org/browse/MDEV-27911), [MariaDB 10.9](../old-releases/release-notes-mariadb-10-9-series/what-is-mariadb-109.md))
 * Support [JSONPath](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/special-functions/json-functions/jsonpath-expressions) negative index ([MDEV-22224](https://jira.mariadb.org/browse/MDEV-22224), [MariaDB 10.9](../old-releases/release-notes-mariadb-10-9-series/what-is-mariadb-109.md))
 * [JSON\_EQUALS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/special-functions/json-functions/json_equals) function to check for equality between JSON objects ([MDEV-23143](https://jira.mariadb.org/browse/MDEV-23143), [MariaDB 10.7](../old-releases/release-notes-mariadb-10-7-series/what-is-mariadb-107.md)).
 * [JSON\_NORMALIZE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/special-functions/json-functions/json_normalize) function, which recursively sorts keys and removes spaces ([MDEV-16375](https://jira.mariadb.org/browse/MDEV-16375), [MariaDB 10.7](../old-releases/release-notes-mariadb-10-7-series/what-is-mariadb-107.md))
@@ -77,7 +77,7 @@ This list includes features from the short-term releases [MariaDB 10.7](../old-r
 
 * [System versioning](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/temporal-tables/system-versioned-tables) setting, [system\_versioning\_insert\_history](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/temporal-tables/system-versioned-tables#system_versioning_insert_history), to allow history modification ([MDEV-16546](https://jira.mariadb.org/browse/MDEV-16546))
 * [mariadb-dump](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/legacy-clients-and-utilities/mysqldump): dump and restore historical data ([MDEV-16029](https://jira.mariadb.org/browse/MDEV-16029))
-* Add option to [dump](https://mariadb.com/kb/en/mariadb-ldump) [system versioned table](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/temporal-tables/system-versioned-tables) as of specified timestamp ([MDEV-16355](https://jira.mariadb.org/browse/MDEV-16355), [MariaDB 10.7](../old-releases/release-notes-mariadb-10-7-series/what-is-mariadb-107.md)).
+* Add option to [dump](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/backup-restore-and-import-clients/mariadb-dump) [system versioned table](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/temporal-tables/system-versioned-tables) as of specified timestamp ([MDEV-16355](https://jira.mariadb.org/browse/MDEV-16355), [MariaDB 10.7](../old-releases/release-notes-mariadb-10-7-series/what-is-mariadb-107.md)).
 
 ### InnoDB
 

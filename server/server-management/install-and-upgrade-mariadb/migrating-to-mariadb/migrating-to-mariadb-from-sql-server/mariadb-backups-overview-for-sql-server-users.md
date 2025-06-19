@@ -5,7 +5,7 @@
 MariaDB has the following types of backups:
 
 * Logical backups (dumps).
-* Hot backups with Mariabackup.
+* Hot backups with mariadb-backup.
 * Snapshots.
 * Incremental backups.
 
@@ -35,7 +35,7 @@ Since is it a 3rd party tool, it could be incompatible with some present or futu
 
 ## Hot Backups (mariabackup)
 
-Mariabackup is a tool for taking a backup of MariaDB files while MariaDB is working. A lock is only held for a small amount of time, so it is suitable to backup a server without causing disruptions. It works by taking corrupted backups and then bringing them to a consistent state by using the [InnoDB undo log](../../../../server-usage/storage-engines/innodb/innodb-undo-log.md). Mariabackup also properly backups [MyRocks](../../../../server-usage/storage-engines/myrocks/) tables and non-transactional storage engines.
+mariadb-backup is a tool for taking a backup of MariaDB files while MariaDB is working. A lock is only held for a small amount of time, so it is suitable to backup a server without causing disruptions. It works by taking corrupted backups and then bringing them to a consistent state by using the [InnoDB undo log](../../../../server-usage/storage-engines/innodb/innodb-undo-log.md). mariadb-backup also properly backups [MyRocks](../../../../server-usage/storage-engines/myrocks/) tables and non-transactional storage engines.
 
 ## Cold Backups and Snapshots
 
@@ -76,9 +76,9 @@ The page also shows how to edit the binary log before replaying it. This allows 
 
 ### Incremental Backups with mariabackup
 
-The simplest way to take an incremental backup is to use Mariabackup. This tool is able to take and restore incremental backups. For the complete procedure to use, see [Incremental Backup and Restore with Mariabackup](../../../../server-usage/backing-up-and-restoring-databases/mariabackup/incremental-backup-and-restore-with-mariabackup.md).
+The simplest way to take an incremental backup is to use mariadb-backup. This tool is able to take and restore incremental backups. For the complete procedure to use, see [Incremental Backup and Restore with mariadb-backup](../../../../server-usage/backing-up-and-restoring-databases/mariabackup/incremental-backup-and-restore-with-mariabackup.md).
 
-Mariabackup can run on both Linux and Windows systems.
+mariadb-backup can run on both Linux and Windows systems.
 
 ### Flashback
 

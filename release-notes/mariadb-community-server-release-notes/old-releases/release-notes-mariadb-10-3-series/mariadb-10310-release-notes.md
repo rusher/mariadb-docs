@@ -23,7 +23,7 @@ Notable changes of this release include:
 * [MDEV-14474](https://jira.mariadb.org/browse/MDEV-14474) - Added the [Information Schema CHECK\_CONSTRAINTS Table](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-check_constraints-table)
 * [MDEV-15511](https://jira.mariadb.org/browse/MDEV-15511) - if available, stunnel can be used during [Galera rsync SST](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/galera-management/getting-started-with-mariadb-galera-cluster#rsync)
 * [MDEV-16934](https://jira.mariadb.org/browse/MDEV-16934) - add new system variable [eq\_range\_index\_dive\_limit](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#eq_range_index_dive_limit) to speed up queries that new long nested `IN` lists. For backward compatibility the default value is `0`, meaning "unlimited".
-* [MDEV-13564](https://jira.mariadb.org/browse/MDEV-13564) - Mariabackup does not work with TRUNCATE
+* [MDEV-13564](https://jira.mariadb.org/browse/MDEV-13564) - mariadb-backup does not work with TRUNCATE
 * [MDEV-15872](https://jira.mariadb.org/browse/MDEV-15872) - Crash in online ALTER TABLE...ADD PRIMARY KEY after instant ADD COLUMN...NULL
 * [MDEV-17003](https://jira.mariadb.org/browse/MDEV-17003) - service\_manager\_extend\_timeout() being called too often
 * [MDEV-17196](https://jira.mariadb.org/browse/MDEV-17196) - Crash during instant ADD COLUMN with long DEFAULT value

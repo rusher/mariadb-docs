@@ -6,7 +6,7 @@
 
 **Release date:** 4 Jun 2025
 
-[MariaDB 11.8.2](mariadb-11-8-2-release-notes.md) is a [_**Stable (GA)**_](../../mariadb-release-criteria.md) release. It is an evolution of [MariaDB 11.7](../old-releases/mariadb-11-7-rolling-releases/what-is-mariadb-117.md) with several entirely new features.
+[MariaDB 11.8.2](mariadb-11-8-2-release-notes.md) is a [_**Stable (GA)**_](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-release-criteria) release. It is an evolution of [MariaDB 11.7](../old-releases/mariadb-11-7-rolling-releases/what-is-mariadb-117.md) with several entirely new features.
 
 [MariaDB 11.8](what-is-mariadb-118.md) is a [long-term release](https://mariadb.org/11-8-is-lts/).
 

@@ -331,9 +331,9 @@ This method is particularly useful when setting up a new replica from a backup o
 If the backup was taken of an existing replica server, then the new replica should already have the\
 correct GTID position stored in the [mysql.gtid\_slave\_pos](../../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlgtid_slave_pos-table.md) table. This is assuming that this table was backed up and that it was backed up in a consistent manner with changes to other tables. In this case, there is no need to explicitly look up the GTID position on the old server and set it on the new replica - it will be already correctly loaded from the [mysql.gtid\_slave\_pos](../../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlgtid_slave_pos-table.md) table. This however does not work if the backup was taken from the primary - because then the current GTID position is contained in the binary log, not in the [mysql.gtid\_slave\_pos](../../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlgtid_slave_pos-table.md) table or any other table.
 
-#### Setting up a New Replica with Mariabackup
+#### Setting up a New Replica with mariadb-backup
 
-A new replica can easily be set up with [Mariabackup](../../server-usage/backing-up-and-restoring-databases/mariabackup/), which is a fork of [Percona XtraBackup](../../clients-and-utilities/legacy-clients-and-utilities/backing-up-and-restoring-databases-percona-xtrabackup/). See [Setting up a Replica with Mariabackup](../../server-usage/backing-up-and-restoring-databases/mariabackup/setting-up-a-replica-with-mariabackup.md) for more information.
+A new replica can easily be set up with [mariadb-backup](../../server-usage/backing-up-and-restoring-databases/mariabackup/), which is a fork of [Percona XtraBackup](../../clients-and-utilities/legacy-clients-and-utilities/backing-up-and-restoring-databases-percona-xtrabackup/). See [Setting up a Replica with mariadb-backup](../../server-usage/backing-up-and-restoring-databases/mariabackup/setting-up-a-replica-with-mariabackup.md) for more information.
 
 #### Setting up a New Replica with mariadb-dump
 

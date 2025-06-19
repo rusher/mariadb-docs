@@ -64,7 +64,7 @@ modified in that revision.
   * Added missing files
 * [Revision #3788](https://bazaar.launchpad.net/~maria-captains/maria/maria-10.0-galera/revision/3788) \[merge]\
   Wed 2013-12-04 10:32:43 +0200
-  * merge with [MariaDB 5.6](https://mariadb.com/kb/en/what-is-mariadb-56/) `bzr merge lp:maria --rtag:mariadb-10.0.6` and a number of fixes to make this buildable.
+  * merge with MariaDB 5.6 `bzr merge lp:maria --rtag:mariadb-10.0.6` and a number of fixes to make this buildable.
   * Run also few short multi-master high conflict rate tests, with no issues
 * [Revision #3787](https://bazaar.launchpad.net/~maria-captains/maria/maria-10.0-galera/revision/3787)\
   Wed 2013-11-27 22:20:32 +0200

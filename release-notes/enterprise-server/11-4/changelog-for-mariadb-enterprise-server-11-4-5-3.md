@@ -193,14 +193,14 @@ MariaDB Enterprise Server 11.4.5-3 was released on 19 Mar 2025.
 * ([MDEV-35663](https://jira.mariadb.org/browse/MDEV-35663)) Sporadic connection failures during FLUSH PRIVILEGES
 * ([MDEV-34733](https://jira.mariadb.org/browse/MDEV-34733)) main.mysqld--help-aria test failure: feedback plugin: failed to retrieve the MAC address
 * ([MDEV-35704](https://jira.mariadb.org/browse/MDEV-35704)) Error message mispelled when altering table engine to MEMORY
-* ([MDEV-35239](https://jira.mariadb.org/browse/MDEV-35239)) Mariabackup incorrectly thinks we are on a multithreaded slave if slave\_parallel\_workers > 0
+* ([MDEV-35239](https://jira.mariadb.org/browse/MDEV-35239)) mariadb-backup incorrectly thinks we are on a multithreaded slave if slave\_parallel\_workers > 0
 * ([MDEV-35659](https://jira.mariadb.org/browse/MDEV-35659)) Internal failure in wsrep-recover test which was observed during work on [MDEV-24035](https://jira.mariadb.org/browse/MDEV-24035)
 * ([MDEV-35438](https://jira.mariadb.org/browse/MDEV-35438)) Annotate InnoDB I/O functions with noexcept
 * ([MDEV-35384](https://jira.mariadb.org/browse/MDEV-35384)) Table performance\_schema.session\_status and other two tables are not shown in information\_schema.tables for normal users
 * ([MDEV-35550](https://jira.mariadb.org/browse/MDEV-35550)) main.log\_slow test failure: expects count(\*) 5 got 4
 * ([MDEV-32919](https://jira.mariadb.org/browse/MDEV-32919)) Cannot select particular field from IS.tables in case table needs upgrade from MySQL 5.7
 * ([MDEV-35598](https://jira.mariadb.org/browse/MDEV-35598)) foreign key error is unnecessary truncated
-* ([MDEV-35808](https://jira.mariadb.org/browse/MDEV-35808)) Test case to handle undo tablespace truncation in Mariabackup
+* ([MDEV-35808](https://jira.mariadb.org/browse/MDEV-35808)) Test case to handle undo tablespace truncation in mariadb-backup
 * ([MDEV-35701](https://jira.mariadb.org/browse/MDEV-35701)) trx\_t::autoinc\_locks causes unnecessary dynamic memory allocation
 * ([MDEV-35840](https://jira.mariadb.org/browse/MDEV-35840)) gcc 12/13: -Warray-bounds when dereferencing value returned from TABLE\_SHARE::db\_type()
 * ([MDEV-35632](https://jira.mariadb.org/browse/MDEV-35632)) HandlerSocket uses deprecated C++98 auto\_ptr

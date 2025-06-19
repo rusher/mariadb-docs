@@ -56,7 +56,7 @@ Thanks, and enjoy MariaDB!
 
 * [MDEV-14784](https://jira.mariadb.org/browse/MDEV-14784) - Slave crashes in show\_status\_array upon running a trigger with select from I\_S
 
-### Mariabackup
+### mariadb-backup
 
 * [MDEV-19060](https://jira.mariadb.org/browse/MDEV-19060) - mariabackup continues, despite failing to open a tablespace
 

@@ -75,7 +75,7 @@ With MariaDB Enterprise Server 10.5 "mysql" command names are replaced with "mar
 ## Changes in Storage Engines
 
 * This release includes Enterprise [ColumnStore 1.5.3](../../columnstore/columnstore-1-5/mariadb-columnstore-1-5-3-release-notes.md) (plugin version 1.5.3.2).
-* This release includes [Enterprise Spider 3.4](https://mariadb.com/kb/en/spider-versions/), including ODBC Wrapper support.
+* This release includes [Enterprise Spider 3.4](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/spider/spider-storage-engine-overview#spider-versions-in-mariadb), including ODBC Wrapper support.
 
 ## Interface Changes
 

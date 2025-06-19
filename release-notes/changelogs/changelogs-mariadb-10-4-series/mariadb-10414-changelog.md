@@ -202,7 +202,7 @@ details of the revision and view diffs of the code modified in that revision.
 * Merge [Revision #f347b3e0e6](https://github.com/MariaDB/server/commit/f347b3e0e6) 2020-07-02 07:39:33 +0300 - Merge 10.3 into 10.4
 * [Revision #b0f836053b](https://github.com/MariaDB/server/commit/b0f836053b)\
   2020-06-23 17:07:03 +0200
-  * [MDEV-22983](https://jira.mariadb.org/browse/MDEV-22983): Mariabackup's --help option disappeared
+  * [MDEV-22983](https://jira.mariadb.org/browse/MDEV-22983): mariadb-backup's --help option disappeared
 * [Revision #cc0dca3663](https://github.com/MariaDB/server/commit/cc0dca3663)\
   2020-06-30 18:11:35 +0530
   * [MDEV-22910](https://jira.mariadb.org/browse/MDEV-22910): SIGSEGV in `Opt_trace_context::is_started` & SIGSEGV in `Json_writer::add_table_name` (on optimized builds)
@@ -252,7 +252,7 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-22665](https://jira.mariadb.org/browse/MDEV-22665): Print ranges in the optimizer trace created for non-indexed columns when optimizer\_use\_condition\_selectivity >2
 * [Revision #205b0ce6ad](https://github.com/MariaDB/server/commit/205b0ce6ad)\
   2020-06-16 12:02:13 +0300
-  * [MDEV-22894](https://jira.mariadb.org/browse/MDEV-22894): Mariabackup should not read \[mariadb-client] option group from configuration files
+  * [MDEV-22894](https://jira.mariadb.org/browse/MDEV-22894): mariadb-backup should not read \[mariadb-client] option group from configuration files
 * [Revision #0121a9e0bb](https://github.com/MariaDB/server/commit/0121a9e0bb)\
   2020-06-16 11:21:28 +0300
   * [MDEV-18215](https://jira.mariadb.org/browse/MDEV-18215): mariabackup does not report unknown command line options

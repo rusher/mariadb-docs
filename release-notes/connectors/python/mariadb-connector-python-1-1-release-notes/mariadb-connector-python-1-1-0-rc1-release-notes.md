@@ -40,7 +40,7 @@ pip3 install --pre mariadb
 ## Changelog
 
 For a list of changes made in this release, with links to detailed information\
-on each push, see the [changelog](https://mariadb.com/kb/en/mariadb-connector-python-110-tc1-changelog).
+on each push, see the [changelog](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/aEnK0ZXmUbJzqQrTjFyb/connectors/python/changelogs/mariadb-connector-python-11-changelogs/mariadb-connector-python-110-rc1-changelog).
 
 ## Links:
 

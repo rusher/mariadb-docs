@@ -90,7 +90,7 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-15633](https://jira.mariadb.org/browse/MDEV-15633) Memory leak after [MDEV-15005](https://jira.mariadb.org/browse/MDEV-15005)
 * [Revision #b6d68c6aa3](https://github.com/MariaDB/server/commit/b6d68c6aa3)\
   2018-03-22 14:19:16 +0530
-  * [MDEV-13561](https://jira.mariadb.org/browse/MDEV-13561) Mariabackup is incompatible with retroactively created innodb\_undo\_tablespaces
+  * [MDEV-13561](https://jira.mariadb.org/browse/MDEV-13561) mariadb-backup is incompatible with retroactively created innodb\_undo\_tablespaces
 * [Revision #4629db0dd6](https://github.com/MariaDB/server/commit/4629db0dd6)\
   2018-03-21 09:38:23 +0200
   * Fix test failure on galera\_var\_reject\_queries.

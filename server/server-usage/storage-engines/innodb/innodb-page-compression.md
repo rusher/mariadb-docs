@@ -481,7 +481,7 @@ SHOW GLOBAL STATUS LIKE 'Innodb_num_pages_page_compressed';
 
 ## Compatibility with Backup Tools
 
-[Mariabackup](../../backing-up-and-restoring-databases/mariabackup/) supports InnoDB page compression.
+[mariadb-backup](../../backing-up-and-restoring-databases/mariabackup/) supports InnoDB page compression.
 
 [Percona XtraBackup](../../../clients-and-utilities/legacy-clients-and-utilities/backing-up-and-restoring-databases-percona-xtrabackup/percona-xtrabackup-overview.md) does not support InnoDB page compression.
 

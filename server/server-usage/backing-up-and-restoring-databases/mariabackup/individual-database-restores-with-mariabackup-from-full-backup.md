@@ -1,6 +1,6 @@
 # Individual Database Restores with MariaBackup from Full Backup
 
-This method is to solve a flaw with Mariabackup; it cannot do single database restores from a full backup easily. There is a [blog post that details a way to do this](https://mariadb.com/resources/blog/how-to-restore-a-single-database-from-mariadb-backup/), but it's a manual process which is fine for a few tables but if you have hundreds or even thousands of tables then it would be impossible to do quickly.
+This method is to solve a flaw with mariadb-backup; it cannot do single database restores from a full backup easily. There is a [blog post that details a way to do this](https://mariadb.com/resources/blog/how-to-restore-a-single-database-from-mariadb-backup/), but it's a manual process which is fine for a few tables but if you have hundreds or even thousands of tables then it would be impossible to do quickly.
 
 We can't just move the data files to the datadir as the tables are not registered in the engines, so the database will error. Currently, the only effective method is to a do full restore in a test database and then dump the database that requires restoring or running a partial backup. **This has only been tested with InnoDB. Also, if you have stored procedures or triggers then these will need to be deleted and recreated.**
 
@@ -29,7 +29,7 @@ vim trimednodata.sql
 I won’t go over the backup process, as this is done earlier in other documents, such as [full-backup-and-restore-with-mariabackup](full-backup-and-restore-with-mariabackup.md). Prepare the backup with any [incremental-backup-and-restores](incremental-backup-and-restore-with-mariabackup.md#backing-up-the-incremental-changes) that you have, and then run the following on the full backup folder using the --export option to generate files with .cfg extensions which InnoDB will look for.
 
 ```bash
-Mariabackup --prepare --export --target-dir=/media/backups/fullbackupfolder
+mariadb-backup --prepare --export --target-dir=/media/backups/fullbackupfolder
 ```
 
 Once we have done these steps, we can then import the table structure. If you have used the [--all-databases](../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md#options) option, then you will need to either use SED or open it in a text editor and export out tables that you require. You will also need to log in to the database and create the database if the dump file doesn't. Run the following command below:
@@ -99,7 +99,7 @@ ALTER TABLE test DISCARD TABLESPACE;
 ...
 ```
 
-Exit out the database and change into the directory of the full backup location. Run the following commands to copy all the .cfg and .ibd files to the datadir such as /var/lib/mysql/testdatabase (Change the datadir location if needed). Learn more about files that Mariabackup generates with [files-created-by-mariabackup](files-created-by-mariabackup.md)
+Exit out the database and change into the directory of the full backup location. Run the following commands to copy all the .cfg and .ibd files to the datadir such as /var/lib/mysql/testdatabase (Change the datadir location if needed). Learn more about files that mariadb-backup generates with [files-created-by-mariabackup](files-created-by-mariabackup.md)
 
 ```bash
 cp *.cfg /var/lib/mysql
@@ -135,7 +135,7 @@ SELECT * from test limit 10;
 
 ## Replica nodes
 
-If you have a primary-replica set up, it would be best to follow the sets above for the primary node and then either take a full mariadb-dump or take a new full mariabackup and restore this to the replica. You can find more information about restoring a replica with mariabackup in [Setting up a Replica with Mariabackup](setting-up-a-replica-with-mariabackup.md#backup-the-database-and-prepare-it)
+If you have a primary-replica set up, it would be best to follow the sets above for the primary node and then either take a full mariadb-dump or take a new full mariabackup and restore this to the replica. You can find more information about restoring a replica with mariabackup in [Setting up a Replica with mariadb-backup](setting-up-a-replica-with-mariabackup.md#backup-the-database-and-prepare-it)
 
 After running the below command, copy to the replica and use the LESS linux command to grab the change master statement. Remember to follow this process: Stop replica > restore data > run CHANGE MASTER statement > start replica again.
 
@@ -143,7 +143,7 @@ After running the below command, copy to the replica and use the LESS linux comm
 mariadb-dump -u user -p --single-transaction --master-data=2 > fullbackup.sql
 ```
 
-Please follow [Setting up a Replica with Mariabackup](setting-up-a-replica-with-mariabackup.md#backup-the-database-and-prepare-it) on restoring a replica with Mariabackup
+Please follow [Setting up a Replica with mariadb-backup](setting-up-a-replica-with-mariabackup.md#backup-the-database-and-prepare-it) on restoring a replica with mariadb-backup
 
 ```bash
 $ mariabackup --backup \
@@ -170,7 +170,7 @@ ALTER TABLE test DISCARD TABLESPACE;
 ...
 ```
 
-Exit out the database and change into the directory of the full backup location. Run the following commands to copy all the .cfg and .ibd files to the datadir such as /var/lib/mysql/testdatabase (Change the datadir location if needed). Learn more about files that Mariabackup generates with [files-created-by-mariabackup](files-created-by-mariabackup.md). This step needs to be done on all nodes. You will need to copy the backup files to each node, we can use the same backup on all nodes.
+Exit out the database and change into the directory of the full backup location. Run the following commands to copy all the .cfg and .ibd files to the datadir such as /var/lib/mysql/testdatabase (Change the datadir location if needed). Learn more about files that mariadb-backup generates with [files-created-by-mariabackup](files-created-by-mariabackup.md). This step needs to be done on all nodes. You will need to copy the backup files to each node, we can use the same backup on all nodes.
 
 ```bash
 cp *.cfg /var/lib/mysql

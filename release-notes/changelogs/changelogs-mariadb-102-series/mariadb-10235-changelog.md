@@ -200,7 +200,7 @@ in that revision.
   * [MDEV-23327](https://jira.mariadb.org/browse/MDEV-23327): followup
 * [Revision #1066312a12](https://github.com/MariaDB/server/commit/1066312a12)\
   2020-10-19 20:36:05 +0300
-  * [MDEV-23982](https://jira.mariadb.org/browse/MDEV-23982): Mariabackup hangs on backup
+  * [MDEV-23982](https://jira.mariadb.org/browse/MDEV-23982): mariadb-backup hangs on backup
 * [Revision #f4f00e7c40](https://github.com/MariaDB/server/commit/f4f00e7c40)\
   2020-10-19 19:37:03 +0530
   * [MDEV-23966](https://jira.mariadb.org/browse/MDEV-23966) btr\_search\_sys->hash\_tables accessed without taking proper ahi latch
@@ -399,7 +399,7 @@ in that revision.
   * [MDEV-21655](https://jira.mariadb.org/browse/MDEV-21655) : galera.galera\_wan\_restart\_ist MTR fails sporadically: WSREP did not transition to state READY
 * [Revision #80075ba011](https://github.com/MariaDB/server/commit/80075ba011)\
   2020-09-07 19:43:23 +0300
-  * [MDEV-19264](https://jira.mariadb.org/browse/MDEV-19264) Better support MariaDB GTID for Mariabackup's --slave-info option
+  * [MDEV-19264](https://jira.mariadb.org/browse/MDEV-19264) Better support MariaDB GTID for mariadb-backup's --slave-info option
 * [Revision #ae8ff3a067](https://github.com/MariaDB/server/commit/ae8ff3a067)\
   2020-09-09 11:41:06 +1000
   * [MDEV-20396](https://jira.mariadb.org/browse/MDEV-20396) Server crashes after DELETE with SEL NULL Foreign key and a virtual column in index

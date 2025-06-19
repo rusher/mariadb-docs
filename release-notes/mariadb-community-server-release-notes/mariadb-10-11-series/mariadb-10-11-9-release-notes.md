@@ -8,7 +8,7 @@ The most recent release of [MariaDB 10.11](what-is-mariadb-1011.md) is:[**MariaD
 
 [MariaDB 10.11](what-is-mariadb-1011.md) is a stable long term series of MariaDB, [maintained until](https://mariadb.org/about/#maintenance-policy) February 2028. It is an evolution of [MariaDB 10.10](../old-releases/release-notes-mariadb-10-10-series/what-is-mariadb-1010.md) with several entirely new features.
 
-[MariaDB 10.11.9](mariadb-10-11-9-release-notes.md) is a [_**Stable (GA)**_](../../mariadb-release-criteria.md) release.
+[MariaDB 10.11.9](mariadb-10-11-9-release-notes.md) is a [_**Stable (GA)**_](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-release-criteria) release.
 
 **For an overview of** [**MariaDB 10.11**](what-is-mariadb-1011.md) **see the**[**What is MariaDB 10.11?**](what-is-mariadb-1011.md) **page.**
 
@@ -102,7 +102,7 @@ Thanks, and enjoy MariaDB!
 
 * As per the [MariaDB Deprecation Policy](../../mariadb-platform-deprecation-policy.md), this will be the last release of [MariaDB 10.11](what-is-mariadb-1011.md) for Debian 10 "Buster", RHEL/CentOS 7, Ubuntu 23.10 "Mantic", and Fedora 38
 * Repositories for Ubuntu 24.04 "Noble" have been added
-* [IMPORT TABLESPACE](https://mariadb.com/kb/en/import-tablespace) no longer unnecessarily traverses tablespaces list ([MDEV-34670](https://jira.mariadb.org/browse/MDEV-34670))
+* [IMPORT TABLESPACE](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/alter/alter-table#import-tablespace) no longer unnecessarily traverses tablespaces list ([MDEV-34670](https://jira.mariadb.org/browse/MDEV-34670))
 * Fix unknown variable `defaults-group-suffix=` with [mariadb-secure-installation](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/deployment-tools/mariadb-secure-installation) ([MDEV-33265](https://jira.mariadb.org/browse/MDEV-33265))
 * [mariadb-install-db](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/deployment-tools/mariadb-install-db) no longer hangs on macOS ([MDEV-34129](https://jira.mariadb.org/browse/MDEV-34129))
 * Fix transaction termination with ER\_LOCK\_TABLE\_FULL when lock memory is growing ([MDEV-34167](https://jira.mariadb.org/browse/MDEV-34167))

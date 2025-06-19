@@ -2,7 +2,7 @@
 
 The most recent [_**Stable**_](../../../mariadb-release-criteria.md) _**(GA)**_ release of MariaDB Connector/Python is:[**MariaDB Connector/Python 1.1.12**](mariadb-connector-python-1-1-12-release-notes.md)
 
-[Download](https://mariadb.com/downloads/#connectors)[Release Notes](mariadb-connector-python-1-1-0-beta2-release-notes.md)[Changelog](../changelogs/mariadb-connector-python-11-changelogs/mariadb-connector-python-110-beta2-changelog.md)[Connector/Python Overview](https://mariadb.com/kb/en/mariadb-connector-python/)
+[Download](https://mariadb.com/downloads/#connectors)[Release Notes](mariadb-connector-python-1-1-0-beta2-release-notes.md)[Changelog](../changelogs/mariadb-connector-python-11-changelogs/mariadb-connector-python-110-beta2-changelog.md)[Connector/Python Overview](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-python/mariadb-connector-python-guide#mariadb-connector-python)
 
 **Release date:** 22 Oct 2021
 

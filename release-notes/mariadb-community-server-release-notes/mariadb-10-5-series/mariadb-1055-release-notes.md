@@ -10,7 +10,7 @@ The most recent release of [MariaDB 10.5](what-is-mariadb-105.md) is:[**MariaDB 
 of [MariaDB 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/mariadb-10-5-series/broken-reference/README.md) with several entirely new features not found anywhere else\
 and with backported and reimplemented features from MySQL.
 
-[MariaDB 10.5.5](mariadb-1055-release-notes.md) is a [_**Stable (GA)**_](../../mariadb-release-criteria.md) release.
+[MariaDB 10.5.5](mariadb-1055-release-notes.md) is a [_**Stable (GA)**_](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-release-criteria) release.
 
 **For an overview of** [**MariaDB 10.5**](what-is-mariadb-105.md) **see the**[**What is MariaDB 10.5?**](what-is-mariadb-105.md) **page.**
 
@@ -76,7 +76,7 @@ Thanks, and enjoy MariaDB!
 * Stop `mariabackup --prepare` on errors during innodb redo log applying ([MDEV-22354](https://jira.mariadb.org/browse/MDEV-22354))
 * Server crashes in `mysql_alter_table` upon adding a non-null date column under `NO_ZERO_DATE` with `ALGORITHM=INPLACE` ([MDEV-18042](https://jira.mariadb.org/browse/MDEV-18042))
 * Can't uninstall plugin if the library file doesn't exist ([MDEV-21258](https://jira.mariadb.org/browse/MDEV-21258))
-* Mariabackup parameter cleanup ([MDEV-18215](https://jira.mariadb.org/browse/MDEV-18215), [MDEV-21298](https://jira.mariadb.org/browse/MDEV-21298), [MDEV-21301](https://jira.mariadb.org/browse/MDEV-21301), [MDEV-22894](https://jira.mariadb.org/browse/MDEV-22894))
+* mariadb-backup parameter cleanup ([MDEV-18215](https://jira.mariadb.org/browse/MDEV-18215), [MDEV-21298](https://jira.mariadb.org/browse/MDEV-21298), [MDEV-21301](https://jira.mariadb.org/browse/MDEV-21301), [MDEV-22894](https://jira.mariadb.org/browse/MDEV-22894))
 * Rounding functions return wrong datatype ([MDEV-23366](https://jira.mariadb.org/browse/MDEV-23366), [MDEV-23367](https://jira.mariadb.org/browse/MDEV-23367), [MDEV-23368](https://jira.mariadb.org/browse/MDEV-23368), [MDEV-23350](https://jira.mariadb.org/browse/MDEV-23350), [MDEV-23351](https://jira.mariadb.org/browse/MDEV-23351), [MDEV-23337](https://jira.mariadb.org/browse/MDEV-23337), [MDEV-23323](https://jira.mariadb.org/browse/MDEV-23323))
 * Create `mariadb.sys` user on each update even is the user is not needed ([MDEV-23102](https://jira.mariadb.org/browse/MDEV-23102))
 * [INFORMATION\_SCHEMA.INNODB\_TABLESPACES\_ENCRYPTION](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_tablespaces_encryption-table) required SUPER instead PROCESS privilege ([MDEV-23003](https://jira.mariadb.org/browse/MDEV-23003))

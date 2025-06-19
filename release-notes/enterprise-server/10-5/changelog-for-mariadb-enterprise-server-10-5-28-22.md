@@ -153,8 +153,8 @@ MariaDB Enterprise Server 10.5.28-22 was released on 19 Mar 2025.
 * ([MDEV-35663](https://jira.mariadb.org/browse/MDEV-35663)) Sporadic connection failures during FLUSH PRIVILEGES
 * ([MDEV-34733](https://jira.mariadb.org/browse/MDEV-34733)) main.mysqld--help-aria test failure: feedback plugin: failed to retrieve the MAC address
 * ([MDEV-35704](https://jira.mariadb.org/browse/MDEV-35704)) Error message mispelled when altering table engine to MEMORY
-* ([MDEV-35239](https://jira.mariadb.org/browse/MDEV-35239)) Mariabackup incorrectly thinks we are on a multithreaded slave if slave\_parallel\_workers > 0
-* ([MDEV-35808](https://jira.mariadb.org/browse/MDEV-35808)) Test case to handle undo tablespace truncation in Mariabackup
+* ([MDEV-35239](https://jira.mariadb.org/browse/MDEV-35239)) mariadb-backup incorrectly thinks we are on a multithreaded slave if slave\_parallel\_workers > 0
+* ([MDEV-35808](https://jira.mariadb.org/browse/MDEV-35808)) Test case to handle undo tablespace truncation in mariadb-backup
 * ([MDEV-35840](https://jira.mariadb.org/browse/MDEV-35840)) gcc 12/13: -Warray-bounds when dereferencing value returned from TABLE\_SHARE::db\_type()
 * ([MDEV-35632](https://jira.mariadb.org/browse/MDEV-35632)) HandlerSocket uses deprecated C++98 auto\_ptr
 * ([MDEV-35723](https://jira.mariadb.org/browse/MDEV-35723)) UBSAN: applying non-zero offset to null pointer in my\_charpos\_mb/my\_uca\_scanner\_next\_utf8mb4, applying zero offset to null pointer in my\_strnncollsp\_simple, my\_uca\_strnncollsp\_onelevel\_utf8mb4/my\_uca\_scanner\_init\_any/my\_uca\_scanner\_next\_utf8mb4 on INSERT

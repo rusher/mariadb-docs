@@ -2,7 +2,7 @@
 
 The most recent [_**Stable**_](../../../mariadb-release-criteria.md) _**(GA)**_ release of [MariaDB Connector/J](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/about-mariadb-connector-j/README.md) is:[**MariaDB Connector/J 3.5.3**](../mariadb-connector-j-3-5-release-notes/mariadb-connector-j-3-5-3-release-notes.md)
 
-[Download](https://mariadb.com/downloads/connectors/connectors-data-access/java8-connector)[Release Notes](mariadb-connector-j-3-4-0-release-notes.md)[Changelog](../changelogs/mariadb-connectorj-changelogs-mariadb-connectorj-3-4-changelogs/mariadb-connector-j-3-4-0-changelog.md)[Connector/J Overview](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/about-mariadb-connector-j/README.md)
+[Download](https://mariadb.com/downloads/connectors/connectors-data-access/java8-connector)[Release Notes](mariadb-connector-j-3-4-0-release-notes.md)[Changelog](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/aEnK0ZXmUbJzqQrTjFyb/connectors/java/changelogs/mariadb-connectorj-changelogs-mariadb-connectorj-3-4-changelogs/mariadb-connector-j-3-4-0-changelog)[Connector/J Overview](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/about-mariadb-connector-j/README.md)
 
 **Release date:** 17 May 2024
 
@@ -37,7 +37,7 @@ There are now 3 options that control timestamps behavior in the java connector:
 * forceConnectionTimeZoneToSession: (true | false) This setting dictates whether the connector enforces the connection time zone for the session.
 * preserveInstants: (true | false) This option controls whether the connector converts Timestamp values to the connection's time zone.
 
-While remaining compatible with previous versions, this permits more flexibility when handling timezone difference scenarios. See [timezone documentation](https://mariadb.com/kb/en/about-mariadb-connector-j/#timezone-consideration) for detailed information.
+While remaining compatible with previous versions, this permits more flexibility when handling timezone difference scenarios. See [timezone documentation](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-j/about-mariadb-connector-j#timezone-consideration) for detailed information.
 
 ### [CONJ-981](https://jira.mariadb.org/browse/CONJ-981) Add support for connection redirection
 

@@ -150,7 +150,7 @@ details of the revision and view diffs of the code modified in that revision.
 * Merge [Revision #c515b1d092](https://github.com/MariaDB/server/commit/c515b1d092) 2020-06-18 13:58:54 +0300 - Merge 10.4 into 10.5
 * [Revision #205b0ce6ad](https://github.com/MariaDB/server/commit/205b0ce6ad)\
   2020-06-16 12:02:13 +0300
-  * [MDEV-22894](https://jira.mariadb.org/browse/MDEV-22894): Mariabackup should not read \[mariadb-client] option group from configuration files
+  * [MDEV-22894](https://jira.mariadb.org/browse/MDEV-22894): mariadb-backup should not read \[mariadb-client] option group from configuration files
 * [Revision #0121a9e0bb](https://github.com/MariaDB/server/commit/0121a9e0bb)\
   2020-06-16 11:21:28 +0300
   * [MDEV-18215](https://jira.mariadb.org/browse/MDEV-18215): mariabackup does not report unknown command line options

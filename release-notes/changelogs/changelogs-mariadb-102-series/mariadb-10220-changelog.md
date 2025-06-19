@@ -115,7 +115,7 @@ in that revision.
   * [MDEV-18025](https://jira.mariadb.org/browse/MDEV-18025): Apply the fix to XtraDB and adjust tests
 * [Revision #171271edf8](https://github.com/MariaDB/server/commit/171271edf8)\
   2018-12-18 18:07:17 +0530
-  * [MDEV-18025](https://jira.mariadb.org/browse/MDEV-18025) Mariabackup fails to detect corrupted page\_compressed=1 tables
+  * [MDEV-18025](https://jira.mariadb.org/browse/MDEV-18025) mariadb-backup fails to detect corrupted page\_compressed=1 tables
 * [Revision #977073e3dc](https://github.com/MariaDB/server/commit/977073e3dc)\
   2018-12-18 12:38:38 +0200
   * After-merge fix

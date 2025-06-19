@@ -1,10 +1,10 @@
-# Mariabackup and BACKUP STAGE Commands
+# mariadb-backup and BACKUP STAGE Commands
 
-The `[BACKUP STAGE](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/backup-commands/backup-stage.md)` commands are a set of commands to make it possible to make an efficient external backup tool. How Mariabackup uses these commands depends on whether you are using the version that is bundled with MariaDB Community Server or the version that is bundled with [MariaDB Enterprise Server](../../../../en/mariadb-enterprise-server/).
+The `[BACKUP STAGE](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/backup-commands/backup-stage.md)` commands are a set of commands to make it possible to make an efficient external backup tool. How mariadb-backup uses these commands depends on whether you are using the version that is bundled with MariaDB Community Server or the version that is bundled with [MariaDB Enterprise Server](../../../../en/mariadb-enterprise-server/).
 
-## Mariabackup and `BACKUP STAGE` Commands in MariaDB Community Server
+## mariadb-backup and `BACKUP STAGE` Commands in MariaDB Community Server
 
-The `[BACKUP STAGE](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/backup-commands/backup-stage.md)` commands are supported. However, the version of Mariabackup that is bundled with MariaDB Community Server does not yet use the `[BACKUP STAGE](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/backup-commands/backup-stage.md)` commands in the most efficient way. Mariabackup simply executes the following `[BACKUP STAGE](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/backup-commands/backup-stage.md)` commands to lock the database:
+The `[BACKUP STAGE](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/backup-commands/backup-stage.md)` commands are supported. However, the version of mariadb-backup that is bundled with MariaDB Community Server does not yet use the `[BACKUP STAGE](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/backup-commands/backup-stage.md)` commands in the most efficient way. mariadb-backup simply executes the following `[BACKUP STAGE](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/backup-commands/backup-stage.md)` commands to lock the database:
 
 ```
 BACKUP STAGE START;
@@ -17,7 +17,7 @@ When the backup is complete, it executes the following `[BACKUP STAGE](../../../
 BACKUP STAGE END;
 ```
 
-If you would like to use a version of Mariabackup that uses the `[BACKUP STAGE](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/backup-commands/backup-stage.md)` commands in the most efficient way, then your best option is to use [MariaDB Backup](./) that is bundled with [MariaDB Enterprise Server](../../../../en/mariadb-enterprise-server/).
+If you would like to use a version of mariadb-backup that uses the `[BACKUP STAGE](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/backup-commands/backup-stage.md)` commands in the most efficient way, then your best option is to use [MariaDB Backup](./) that is bundled with [MariaDB Enterprise Server](../../../../en/mariadb-enterprise-server/).
 
 ### Tasks Performed Prior to `BACKUP STAGE` in MariaDB Community Server
 
@@ -28,19 +28,19 @@ If you would like to use a version of Mariabackup that uses the `[BACKUP STAGE](
 
 ### `BACKUP STAGE START` in MariaDB Community Server
 
-Mariabackup from MariaDB Community Server does not currently perform any tasks in the `START` stage.
+mariadb-backup from MariaDB Community Server does not currently perform any tasks in the `START` stage.
 
 ### `BACKUP STAGE FLUSH` in MariaDB Community Server
 
-Mariabackup from MariaDB Community Server does not currently perform any tasks in the `FLUSH` stage.
+mariadb-backup from MariaDB Community Server does not currently perform any tasks in the `FLUSH` stage.
 
 ### `BACKUP STAGE BLOCK_DDL` in MariaDB Community Server
 
-Mariabackup from MariaDB Community Server does not currently perform any tasks in the `BLOCK_DDL` stage.
+mariadb-backup from MariaDB Community Server does not currently perform any tasks in the `BLOCK_DDL` stage.
 
 ### `BACKUP STAGE BLOCK_COMMIT` in MariaDB Community Server
 
-Mariabackup from MariaDB Community Server performs the following tasks in the `BLOCK_COMMIT` stage:
+mariadb-backup from MariaDB Community Server performs the following tasks in the `BLOCK_COMMIT` stage:
 
 * Copy other files.
   * i.e. file extensions `.frm`, `.isl`, `.TRG`, `.TRN`, `.opt`, `.par`
@@ -59,17 +59,17 @@ Mariabackup from MariaDB Community Server performs the following tasks in the `B
 
 ### `BACKUP STAGE END` in MariaDB Community Server
 
-Mariabackup from MariaDB Community Server performs the following tasks in the `END` stage:
+mariadb-backup from MariaDB Community Server performs the following tasks in the `END` stage:
 
 * Copy the [MyRocks](../../../reference/storage-engines/myrocks/) checkpoint into the backup.
 
-## Mariabackup and `BACKUP STAGE` Commands in MariaDB Enterprise Server
+## mariadb-backup and `BACKUP STAGE` Commands in MariaDB Enterprise Server
 
-The following sections describe how the [MariaDB Backup](./) version of Mariabackup that is bundled with [MariaDB Enterprise Server](../../../../en/mariadb-enterprise-server/) uses each `[BACKUP STAGE](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/backup-commands/backup-stage.md)` command in an efficient way.
+The following sections describe how the [MariaDB Backup](./) version of mariadb-backup that is bundled with [MariaDB Enterprise Server](../../../../en/mariadb-enterprise-server/) uses each `[BACKUP STAGE](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/backup-commands/backup-stage.md)` command in an efficient way.
 
 ### `BACKUP STAGE START` in MariaDB Enterprise Server
 
-Mariabackup from MariaDB Enterprise Server performs the following tasks in the `START` stage:
+mariadb-backup from MariaDB Enterprise Server performs the following tasks in the `START` stage:
 
 * Copy all transactional tables.
   * [InnoDB](../../../reference/storage-engines/innodb/) (i.e. `ibdataN` and file extensions `.ibd` and `.isl`)
@@ -80,7 +80,7 @@ Mariabackup from MariaDB Enterprise Server performs the following tasks in the `
 
 ### `BACKUP STAGE FLUSH` in MariaDB Enterprise Server
 
-Mariabackup from MariaDB Enterprise Server performs the following tasks in the `FLUSH` stage:
+mariadb-backup from MariaDB Enterprise Server performs the following tasks in the `FLUSH` stage:
 
 * Copy all non-transactional tables that are not in use. This list of used tables is found with `[SHOW OPEN TABLES](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-open-tables.md)`.
   * [MyISAM](../../../reference/storage-engines/myisam-storage-engine/) (i.e. file extensions `.MYD` and `.MYI`)
@@ -93,7 +93,7 @@ Mariabackup from MariaDB Enterprise Server performs the following tasks in the `
 
 ### `BACKUP STAGE BLOCK_DDL` in MariaDB Enterprise Server
 
-Mariabackup from MariaDB Enterprise Server performs the following tasks in the `BLOCK_DDL` stage:
+mariadb-backup from MariaDB Enterprise Server performs the following tasks in the `BLOCK_DDL` stage:
 
 * Copy other files.
   * i.e. file extensions `.frm`, `.isl`, `.TRG`, `.TRN`, `.opt`, `.par`
@@ -116,7 +116,7 @@ Mariabackup from MariaDB Enterprise Server performs the following tasks in the `
 
 ### `BACKUP STAGE BLOCK_COMMIT` in MariaDB Enterprise Server
 
-Mariabackup from MariaDB Enterprise Server performs the following tasks in the `BLOCK_COMMIT` stage:
+mariadb-backup from MariaDB Enterprise Server performs the following tasks in the `BLOCK_COMMIT` stage:
 
 * Create a [MyRocks](../../../reference/storage-engines/myrocks/) checkpoint using the `[rocksdb_create_checkpoint](../../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_create_checkpoint)` system variable.
 * Copy changes to system log tables.
@@ -135,7 +135,7 @@ Mariabackup from MariaDB Enterprise Server performs the following tasks in the `
 
 ### `BACKUP STAGE END` in MariaDB Enterprise Server
 
-Mariabackup from MariaDB Enterprise Server performs the following tasks in the `END` stage:
+mariadb-backup from MariaDB Enterprise Server performs the following tasks in the `END` stage:
 
 * Copy the [MyRocks](../../../reference/storage-engines/myrocks/) checkpoint into the backup.
 

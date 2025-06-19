@@ -2845,7 +2845,7 @@ one to see the parameters of a module before the object is created.
                     },
                     {
                         "default_value": 1,
-                        "description": "Mariabackup thread count.",
+                        "description": "mariadb-backup thread count.",
                         "mandatory": false,
                         "modifiable": true,
                         "name": "mariabackup_parallel",
@@ -2853,7 +2853,7 @@ one to see the parameters of a module before the object is created.
                     },
                     {
                         "default_value": "1G",
-                        "description": "Mariabackup buffer pool size.",
+                        "description": "mariadb-backup buffer pool size.",
                         "mandatory": false,
                         "modifiable": true,
                         "name": "mariabackup_use_memory",

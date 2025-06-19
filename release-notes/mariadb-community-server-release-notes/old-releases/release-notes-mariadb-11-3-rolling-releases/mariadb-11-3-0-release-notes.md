@@ -2,7 +2,7 @@
 
 The most recent release of [MariaDB 11.3](what-is-mariadb-113.md) is:[**MariaDB 11.3.2**](mariadb-11-3-2-release-notes.md) Stable (GA) [Download Now](https://downloads.mariadb.org/mariadb/11.3.2/)
 
-[Download](https://downloads.mariadb.org/mariadb/11.3.0)[Release Notes](mariadb-11-3-0-release-notes.md)[Changelog](https://mariadb.com/kb/en/mariadb-11-3-0-changelog)[Overview of 11.3](what-is-mariadb-113.md)
+[Download](https://downloads.mariadb.org/mariadb/11.3.0)[Release Notes](mariadb-11-3-0-release-notes.md)[Changelog](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/aEnK0ZXmUbJzqQrTjFyb/changelogs/changelogs-mariadb-11-3-series)[Overview of 11.3](what-is-mariadb-113.md)
 
 **Release date:** 20 September 2023
 
@@ -81,7 +81,7 @@ Thanks, and enjoy MariaDB!
 
 * Setting a non-default [old\_mode](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/old-mode) value will now always issue a deprecation warning ([MDEV-31811](https://jira.mariadb.org/browse/MDEV-31811))
 
-## Mariabackup
+## mariadb-backup
 
 * [mariabackup --innobackupex](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-3-rolling-releases/broken-reference/README.md) mode has been deprecated ([MDEV-31505](https://jira.mariadb.org/browse/MDEV-31505))
 

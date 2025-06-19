@@ -226,7 +226,7 @@ in that revision.
   * [MDEV-15351](https://jira.mariadb.org/browse/MDEV-15351): wsrep\_sst\_xtrabackup is broken in 10.1.31
 * [Revision #f98496da96](https://github.com/MariaDB/server/commit/f98496da96)\
   2018-05-08 15:08:08 +0100
-  * [MDEV-16105](https://jira.mariadb.org/browse/MDEV-16105): Mariabackup does not support SSL
+  * [MDEV-16105](https://jira.mariadb.org/browse/MDEV-16105): mariadb-backup does not support SSL
 * [Revision #b62224e232](https://github.com/MariaDB/server/commit/b62224e232)\
   2018-05-08 22:39:14 +0300
   * Mroonga cmake failure - LZ4\_LIBS = NOTFOUND

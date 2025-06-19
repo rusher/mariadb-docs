@@ -2782,7 +2782,7 @@ one to see the parameters of a module before the object is created.
                         "attributes": {
                             "arg_max": 4,
                             "arg_min": 2,
-                            "description": "Rebuild a server with Mariabackup. Does not wait for completion.",
+                            "description": "Rebuild a server with mariadb-backup. Does not wait for completion.",
                             "method": "POST",
                             "parameters": [
                                 {
@@ -2817,7 +2817,7 @@ one to see the parameters of a module before the object is created.
                         "attributes": {
                             "arg_max": 3,
                             "arg_min": 3,
-                            "description": "Create a backup with Mariabackup. Does not wait for completion.",
+                            "description": "Create a backup with mariadb-backup. Does not wait for completion.",
                             "method": "POST",
                             "parameters": [
                                 {
@@ -3023,7 +3023,7 @@ one to see the parameters of a module before the object is created.
                     },
                     {
                         "default_value": 1,
-                        "description": "Mariabackup thread count.",
+                        "description": "mariadb-backup thread count.",
                         "mandatory": false,
                         "modifiable": true,
                         "name": "mariabackup_parallel",
@@ -3031,7 +3031,7 @@ one to see the parameters of a module before the object is created.
                     },
                     {
                         "default_value": "1G",
-                        "description": "Mariabackup buffer pool size.",
+                        "description": "mariadb-backup buffer pool size.",
                         "mandatory": false,
                         "modifiable": true,
                         "name": "mariabackup_use_memory",

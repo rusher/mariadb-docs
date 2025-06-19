@@ -104,7 +104,7 @@ in that revision.
   * [MDEV-22181](https://jira.mariadb.org/browse/MDEV-22181) : galera.galera\_sst\_mysqldump\_with\_key MTR failed: INSERT failed: 1146: Table 'test.t1' doesn't exist
 * [Revision #0efe1971c6](https://github.com/MariaDB/server/commit/0efe1971c6)\
   2020-04-20 17:23:43 +0300
-  * [MDEV-19347](https://jira.mariadb.org/browse/MDEV-19347): Mariabackup does not honor ignore\_db\_dirs from server config.
+  * [MDEV-19347](https://jira.mariadb.org/browse/MDEV-19347): mariadb-backup does not honor ignore\_db\_dirs from server config.
 * [Revision #36bddacf6b](https://github.com/MariaDB/server/commit/36bddacf6b)\
   2020-04-18 11:51:21 +0300
   * Fixed multi\_update\_debug.test

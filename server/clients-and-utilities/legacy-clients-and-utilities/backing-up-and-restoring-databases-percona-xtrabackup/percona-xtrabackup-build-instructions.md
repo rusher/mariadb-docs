@@ -1,7 +1,7 @@
 # Percona XtraBackup Build Instructions
 
 {% hint style="danger" %}
-Percona XtraBackup is **not supported** in MariaDB. [Mariabackup](../../../server-usage/backing-up-and-restoring-databases/mariabackup/) is the recommended backup method to use instead of Percona XtraBackup. See [Percona XtraBackup Overview: Compatibility with MariaDB](percona-xtrabackup-overview.md#compatibility-with-mariadb) for more information.
+Percona XtraBackup is **not supported** in MariaDB. [mariadb-backup](../../../server-usage/backing-up-and-restoring-databases/mariabackup/) is the recommended backup method to use instead of Percona XtraBackup. See [Percona XtraBackup Overview: Compatibility with MariaDB](percona-xtrabackup-overview.md#compatibility-with-mariadb) for more information.
 {% endhint %}
 
 Build instructions for [Percona XtraBackup](percona-xtrabackup-overview.md).

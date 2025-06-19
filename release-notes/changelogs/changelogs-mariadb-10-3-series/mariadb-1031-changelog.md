@@ -76,7 +76,7 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-13570](https://jira.mariadb.org/browse/MDEV-13570) Assertion failure !srv\_read\_only\_mode in --innodb-read-only shutdown when buf\_resize\_thread is active
 * [Revision #8a3e2970ad](https://github.com/MariaDB/server/commit/8a3e2970ad)\
   2017-08-18 14:42:18 +0300
-  * [MDEV-13575](https://jira.mariadb.org/browse/MDEV-13575) On failure, Mariabackup --backup --safe-slave-backup may forget to START SLAVE SQL\_THREAD
+  * [MDEV-13575](https://jira.mariadb.org/browse/MDEV-13575) On failure, mariadb-backup --backup --safe-slave-backup may forget to START SLAVE SQL\_THREAD
 * [Revision #72ac85cdda](https://github.com/MariaDB/server/commit/72ac85cdda)\
   2017-08-18 12:51:28 -0400
   * bump the VERSION
@@ -85,7 +85,7 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-13754](https://jira.mariadb.org/browse/MDEV-13754) Memory leak in mariabackup.incremental\_backup
 * [Revision #74ce0cf148](https://github.com/MariaDB/server/commit/74ce0cf148)\
   2017-08-18 10:00:56 +0300
-  * [MDEV-13574](https://jira.mariadb.org/browse/MDEV-13574) related Mariabackup code cleanup (non-functional change)
+  * [MDEV-13574](https://jira.mariadb.org/browse/MDEV-13574) related mariadb-backup code cleanup (non-functional change)
 * [Revision #e9e051d297](https://github.com/MariaDB/server/commit/e9e051d297)\
   2017-08-18 08:52:41 +0300
   * Follow-up fix to [MDEV-12988](https://jira.mariadb.org/browse/MDEV-12988) backup fails if innodb\_undo\_tablespaces>0

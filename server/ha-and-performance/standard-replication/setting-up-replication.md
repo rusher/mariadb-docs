@@ -15,7 +15,7 @@ Getting [replication](https://github.com/mariadb-corporation/docs-server/blob/te
 
 ### Setting up a Replication Replica with MariaDB-Backup
 
-If you would like to use [Mariabackup](../../server-usage/backing-up-and-restoring-databases/mariabackup/) to set up a replication slave, then you might find the information at [Setting up a Replication Replica with MariaDB-Backup](../../server-usage/backing-up-and-restoring-databases/mariabackup/setting-up-a-replica-with-mariabackup.md) helpful.
+If you would like to use [mariadb-backup](../../server-usage/backing-up-and-restoring-databases/mariabackup/) to set up a replication slave, then you might find the information at [Setting up a Replication Replica with MariaDB-Backup](../../server-usage/backing-up-and-restoring-databases/mariabackup/setting-up-a-replica-with-mariabackup.md) helpful.
 
 ### Versions
 

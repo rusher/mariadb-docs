@@ -509,7 +509,7 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #f77071e0e8](https://github.com/MariaDB/server/commit/f77071e0e8)\
   2018-09-26 16:58:42 +0300
   * Remove unused code
-* Merge [Revision #304857764b](https://github.com/MariaDB/server/commit/304857764b) 2018-09-25 17:29:43 +0300 - [MDEV-13564](https://jira.mariadb.org/browse/MDEV-13564) Mariabackup does not work with TRUNCATE
+* Merge [Revision #304857764b](https://github.com/MariaDB/server/commit/304857764b) 2018-09-25 17:29:43 +0300 - [MDEV-13564](https://jira.mariadb.org/browse/MDEV-13564) mariadb-backup does not work with TRUNCATE
 * [Revision #d913f6611c](https://github.com/MariaDB/server/commit/d913f6611c)\
   2018-09-25 10:06:06 -0400
   * bump the VERSION

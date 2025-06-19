@@ -20,7 +20,7 @@ it afterwards.
 
 `async-rebuild-server` and `async-restore-from-backup` now auto-detect server\
 data directory. Alternatively, the data directory can be specified manually when\
-launching the operations from command line. Also, Mariabackup memory use and\
+launching the operations from command line. Also, mariadb-backup memory use and\
 thread count can be customized in monitor settings. See[MariaDB Monitor documentation](../mariadb-maxscale-2501-maxscale-25-01-monitors/mariadb-maxscale-2501-maxscale-2501-mariadb-monitor.md)\
 for more information.
 

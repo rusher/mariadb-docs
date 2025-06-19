@@ -23,7 +23,7 @@ For previous versions of java, this will require adding BouncyCastle as dependen
 
 ### New options `truststore`, `trustStorePassword` and `trustStoreType` - [CONJ-1183](https://jira.mariadb.org/browse/CONJ-1183)
 
-Those options permit the use of a specific truststore that differs from the Java default truststore. This has been added for MariaDB 2.x and MySQL connector compatibility. See [documentation](https://mariadb.com/kb/en/about-mariadb-connector-j/#truststore)
+Those options permit the use of a specific truststore that differs from the Java default truststore. This has been added for MariaDB 2.x and MySQL connector compatibility. See [documentation](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-j/using-tls-ssl-with-mariadb-java-connector#java-default-truststore)
 
 ### New option `connectionCollation` - [CONJ-1199](https://jira.mariadb.org/browse/CONJ-1199)
 

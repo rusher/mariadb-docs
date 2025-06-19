@@ -29,11 +29,11 @@ Thanks, and enjoy MariaDB!
 * Corruption bug fixes:
   * [MDEV-18272](https://jira.mariadb.org/browse/MDEV-18272): InnoDB fails to rollback after exceeding FOREIGN KEY recursion depth
   * [MDEV-9519](https://jira.mariadb.org/browse/MDEV-9519): Data corruption on Galera cluster size change
-* [Mariabackup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup):
+* [mariadb-backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup):
   * [MDEV-18204](https://jira.mariadb.org/browse/MDEV-18204): fix incremental MyRocks backup
   * [MDEV-18611](https://jira.mariadb.org/browse/MDEV-18611): mariabackup terminated while copying InnoDB redo log
   * [MDEV-18669](https://jira.mariadb.org/browse/MDEV-18669): mariabackup writes timestamp in version line
-  * [MDEV-18855](https://jira.mariadb.org/browse/MDEV-18855): Mariabackup should fetch innodb\_compression\_level from running server
+  * [MDEV-18855](https://jira.mariadb.org/browse/MDEV-18855): mariadb-backup should fetch innodb\_compression\_level from running server
 * Debug symbols on CentOS 7, RHEL 7, and SLES 12 distributions have been moved\
   into `debuginfo` packages ([MDEV-18893](https://jira.mariadb.org/browse/MDEV-18893))
 * The [Galera library](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/what-is-mariadb-galera-cluster/README.md) in the repositories has\

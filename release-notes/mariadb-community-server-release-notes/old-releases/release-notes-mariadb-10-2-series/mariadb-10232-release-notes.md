@@ -25,8 +25,8 @@ Thanks, and enjoy MariaDB!
 ### Other
 
 * [HeidiSQL](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/graphical-and-enhanced-clients/heidisql) updated to 11.0 ([MDEV-22032](https://jira.mariadb.org/browse/MDEV-22032))
-* Mariabackup does not honor ignore\_db\_dirs from server config ([MDEV-19347](https://jira.mariadb.org/browse/MDEV-19347))
-* Mariabackup `--ftwrl-wait-timeout` never times out on explicit lock ([MDEV-20230](https://jira.mariadb.org/browse/MDEV-20230))
+* mariadb-backup does not honor ignore\_db\_dirs from server config ([MDEV-19347](https://jira.mariadb.org/browse/MDEV-19347))
+* mariadb-backup `--ftwrl-wait-timeout` never times out on explicit lock ([MDEV-20230](https://jira.mariadb.org/browse/MDEV-20230))
 * FULLTEXT INDEX, Assertion \`\`!table->fts->in\_queue`' failed in` fts\_optimize\_remove\_table\` ([MDEV-21550](https://jira.mariadb.org/browse/MDEV-21550))
 * Wrong estimate of affected BLOB columns in update of PRIMARY KEY ([MDEV-22384](https://jira.mariadb.org/browse/MDEV-22384))
 * Duplicate key value is silently truncated to 64 characters in `print_keydup_error` ([MDEV-20604](https://jira.mariadb.org/browse/MDEV-20604))

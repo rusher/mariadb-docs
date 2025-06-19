@@ -13,7 +13,7 @@
 * Server setting `private_address` added. Used for detecting and setting up\
   replication. See[MariaDB Monitor documentation](maxscale-24-02monitors/mariadb-maxscale-2402-maxscale-2402-mariadb-monitor.md)\
   for more information.
-* MariaDB-Monitor allows customization of some Mariabackup settings. See[mariabackup\_use\_memory](maxscale-24-02monitors/mariadb-maxscale-2402-maxscale-2402-mariadb-monitor.md)\
+* MariaDB-Monitor allows customization of some mariadb-backup settings. See[mariabackup\_use\_memory](maxscale-24-02monitors/mariadb-maxscale-2402-maxscale-2402-mariadb-monitor.md)\
   and [mariabackup\_parallel](maxscale-24-02monitors/mariadb-maxscale-2402-maxscale-2402-mariadb-monitor.md)\
   for more information.
 * MariaDB-Monitor setting `servers_no_promotion` now affects primary\
@@ -205,7 +205,7 @@ For more details, please refer to:
 
 * Sessions can now be restarted so that added server are taken into use.
 * Sessions can now be killed using maxctrl.
-* MariaDBMonitor can use Mariabackup to clone the contents of a server.
+* MariaDBMonitor can use mariadb-backup to clone the contents of a server.
 * MariaDBMonitor can issue ColumnStore commands similar to CSMon
 * MariaDBMonitor settings `ignore_external_masters`, `detect_replication_lagdetect_standalone_master`, `detect_stale_master` and `detect_stale_slave`\
   have been removed. The first two were ineffective, the latter three are\

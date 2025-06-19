@@ -6,7 +6,7 @@
 
 [MariaDB 10.6](what-is-mariadb-106.md) is the current long-term series of MariaDB, [maintained until](https://mariadb.org/about/#maintenance-policy) July 2026. It is an evolution of [MariaDB 10.5](../mariadb-10-5-series/what-is-mariadb-105.md) with several entirely new features.
 
-[MariaDB 10.6.12](mariadb-10-6-12-release-notes.md) is a [_**Stable (GA)**_](../../mariadb-release-criteria.md) release.
+[MariaDB 10.6.12](mariadb-10-6-12-release-notes.md) is a [_**Stable (GA)**_](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-release-criteria) release.
 
 **For an overview of** [**MariaDB 10.6**](what-is-mariadb-106.md) **see the**[**What is MariaDB 10.6?**](what-is-mariadb-106.md) **page.**
 

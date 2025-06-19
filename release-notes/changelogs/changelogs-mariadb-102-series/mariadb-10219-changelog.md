@@ -320,7 +320,7 @@ in that revision.
   * [MDEV-17049](https://jira.mariadb.org/browse/MDEV-17049) Enable innodb\_undo tests on buildbot
 * [Revision #055a3334ad](https://github.com/MariaDB/server/commit/055a3334ad)\
   2018-08-28 13:43:06 +0300
-  * [MDEV-13564](https://jira.mariadb.org/browse/MDEV-13564) Mariabackup does not work with TRUNCATE
+  * [MDEV-13564](https://jira.mariadb.org/browse/MDEV-13564) mariadb-backup does not work with TRUNCATE
 * [Revision #d913f6611c](https://github.com/MariaDB/server/commit/d913f6611c)\
   2018-09-25 10:06:06 -0400
   * bump the VERSION

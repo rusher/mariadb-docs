@@ -1,10 +1,10 @@
-# Partial Backup and Restore with Mariabackup
+# Partial Backup and Restore with mariadb-backup
 
-When using Mariabackup, you have the option of performing partial backups. Partial backups allow you to choose which databases or tables to backup, as long as the table or partition involved is in an [InnoDB file-per-table tablespace](../../../reference/storage-engines/innodb/innodb-tablespaces/innodb-file-per-table-tablespaces.md).This page documents how to perform partial backups.
+When using mariadb-backup, you have the option of performing partial backups. Partial backups allow you to choose which databases or tables to backup, as long as the table or partition involved is in an [InnoDB file-per-table tablespace](../../../reference/storage-engines/innodb/innodb-tablespaces/innodb-file-per-table-tablespaces.md).This page documents how to perform partial backups.
 
 ## Backing up the Database Server
 
-Just like with [full backups](full-backup-and-restore-with-mariabackup.md), in order to back up the database, you need to run Mariabackup with the `[--backup](mariabackup-options.md#-backup)` option to tell it to perform a backup and with the `[--target-dir](mariabackup-options.md#-target-dir)` option to tell it where to place the backup files. The target directory must be empty or not exist.
+Just like with [full backups](full-backup-and-restore-with-mariabackup.md), in order to back up the database, you need to run mariadb-backup with the `[--backup](mariabackup-options.md#-backup)` option to tell it to perform a backup and with the `[--target-dir](mariabackup-options.md#-target-dir)` option to tell it where to place the backup files. The target directory must be empty or not exist.
 
 For a partial backup, there are a few other arguments that you can provide as well:
 
@@ -26,19 +26,19 @@ $ mariabackup --backup \
    --user=mariabackup --password=mypassword
 ```
 
-Mariabackup cannot currently backup a subset of partitions from a partitioned table. Backing up a partitioned table is currently an all-or-nothing selection. See [MDEV-17132](https://jira.mariadb.org/browse/MDEV-17132) about that. If you need to backup a subset of partitions, then one possibility is that instead of using Mariabackup, you can [export the file-per-table tablespaces of the partitions](../../../reference/storage-engines/innodb/innodb-tablespaces/innodb-file-per-table-tablespaces.md#copying-transportable-tablespaces).
+mariadb-backup cannot currently backup a subset of partitions from a partitioned table. Backing up a partitioned table is currently an all-or-nothing selection. See [MDEV-17132](https://jira.mariadb.org/browse/MDEV-17132) about that. If you need to backup a subset of partitions, then one possibility is that instead of using mariadb-backup, you can [export the file-per-table tablespaces of the partitions](../../../reference/storage-engines/innodb/innodb-tablespaces/innodb-file-per-table-tablespaces.md#copying-transportable-tablespaces).
 
 The time the backup takes depends on the size of the databases or tables you're backing up. You can cancel the backup if you need to, as the backup process does not modify the database.
 
-Mariabackup writes the backup files to the target directory. If the target directory doesn't exist, then it creates it. If the target directory exists and contains files, then it raises an error and aborts.
+mariadb-backup writes the backup files to the target directory. If the target directory doesn't exist, then it creates it. If the target directory exists and contains files, then it raises an error and aborts.
 
 ## Preparing the Backup
 
-Just like with [full backups](full-backup-and-restore-with-mariabackup.md), the data files that Mariabackup creates in the target directory are not point-in-time consistent, given that the data files are copied at different times during the backup operation. If you try to restore from these files, InnoDB notices the inconsistencies and crashes to protect you from corruption. In fact, for partial backups, the backup is not even a completely functional MariaDB data directory, so InnoDB would raise more errors than it would for full backups. This point will also be very important to keep in mind during the restore process.
+Just like with [full backups](full-backup-and-restore-with-mariabackup.md), the data files that mariadb-backup creates in the target directory are not point-in-time consistent, given that the data files are copied at different times during the backup operation. If you try to restore from these files, InnoDB notices the inconsistencies and crashes to protect you from corruption. In fact, for partial backups, the backup is not even a completely functional MariaDB data directory, so InnoDB would raise more errors than it would for full backups. This point will also be very important to keep in mind during the restore process.
 
 Before you can restore from a backup, you first need to **prepare** it to make the data files consistent. You can do so with the `[--prepare](mariabackup-options.md#-prepare)` command option.
 
-Partial backups rely on [InnoDB's transportable tablespaces](../../../reference/storage-engines/innodb/innodb-tablespaces/innodb-file-per-table-tablespaces.md#copying-transportable-tablespaces). For MariaDB to import tablespaces like these, [InnoDB](../../../reference/storage-engines/innodb/) looks for a file with a `.cfg` extension. For Mariabackup to create these files, you also need to add the `[--export](mariabackup-options.md#-export)` option during the prepare step.
+Partial backups rely on [InnoDB's transportable tablespaces](../../../reference/storage-engines/innodb/innodb-tablespaces/innodb-file-per-table-tablespaces.md#copying-transportable-tablespaces). For MariaDB to import tablespaces like these, [InnoDB](../../../reference/storage-engines/innodb/) looks for a file with a `.cfg` extension. For mariadb-backup to create these files, you also need to add the `[--export](mariabackup-options.md#-export)` option during the prepare step.
 
 For example, you might execute the following command:
 
@@ -49,7 +49,7 @@ $ mariabackup --prepare --export \
 
 If this operation completes without error, then the backup is ready to be restored.
 
-Mariabackup did not support the `[--export](mariabackup-options.md#-export)` option. See [MDEV-13466](https://jira.mariadb.org/browse/MDEV-13466) about that. This means that Mariabackup could not create `.cfg` files for [InnoDB file-per-table tablespaces](../../../reference/storage-engines/innodb/innodb-tablespaces/innodb-file-per-table-tablespaces.md) during the `--prepare` stage. You can still [import file-per-table tablespaces](../../../reference/storage-engines/innodb/innodb-tablespaces/innodb-file-per-table-tablespaces.md#copying-transportable-tablespaces) without the `.cfg` files in many cases, so it may still be possible in those versions to [restore partial backups](partial-backup-and-restore-with-mariabackup.md) or to [restore individual tables and partitions](restoring-individual-tables-and-partitions-with-mariabackup.md) with just the `.ibd` files. If you have a [full backup](full-backup-and-restore-with-mariabackup.md) and you need to create `.cfg` files for [InnoDB file-per-table tablespaces](../../../reference/storage-engines/innodb/innodb-tablespaces/innodb-file-per-table-tablespaces.md), then you can do so by preparing the backup as usual without the `--export` option, and then restoring the backup, and then starting the server. At that point, you can use the server's built-in features to [copy the transportable tablespaces](../../../reference/storage-engines/innodb/innodb-tablespaces/innodb-file-per-table-tablespaces.md#copying-transportable-tablespaces).
+mariadb-backup did not support the `[--export](mariabackup-options.md#-export)` option. See [MDEV-13466](https://jira.mariadb.org/browse/MDEV-13466) about that. This means that mariadb-backup could not create `.cfg` files for [InnoDB file-per-table tablespaces](../../../reference/storage-engines/innodb/innodb-tablespaces/innodb-file-per-table-tablespaces.md) during the `--prepare` stage. You can still [import file-per-table tablespaces](../../../reference/storage-engines/innodb/innodb-tablespaces/innodb-file-per-table-tablespaces.md#copying-transportable-tablespaces) without the `.cfg` files in many cases, so it may still be possible in those versions to [restore partial backups](partial-backup-and-restore-with-mariabackup.md) or to [restore individual tables and partitions](restoring-individual-tables-and-partitions-with-mariabackup.md) with just the `.ibd` files. If you have a [full backup](full-backup-and-restore-with-mariabackup.md) and you need to create `.cfg` files for [InnoDB file-per-table tablespaces](../../../reference/storage-engines/innodb/innodb-tablespaces/innodb-file-per-table-tablespaces.md), then you can do so by preparing the backup as usual without the `--export` option, and then restoring the backup, and then starting the server. At that point, you can use the server's built-in features to [copy the transportable tablespaces](../../../reference/storage-engines/innodb/innodb-tablespaces/innodb-file-per-table-tablespaces.md#copying-transportable-tablespaces).
 
 ## Restoring the Backup
 
