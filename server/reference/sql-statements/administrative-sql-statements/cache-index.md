@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 CACHE INDEX                      
   tbl_index_list [, tbl_index_list] ...
   IN key_cache_name                    
@@ -25,7 +25,7 @@ The associations between tables indexes and key caches are lost on server restar
 The following statement assigns indexes from the tables t1, t2, and t3\
 to the key cache named hot\_cache:
 
-```
+```sql
 CACHE INDEX t1, t2, t3 IN hot_cache;
 +---------+--------------------+----------+----------+
 | Table   | Op                 | Msg_type | Msg_text |

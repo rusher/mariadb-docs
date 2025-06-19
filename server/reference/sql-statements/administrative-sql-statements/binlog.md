@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 BINLOG 'str'
 ```
 
