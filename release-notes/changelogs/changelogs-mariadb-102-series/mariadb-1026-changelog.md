@@ -337,10 +337,10 @@ The revision number links will take you to the revision's page on GitHub. On[Git
   * SST script for mariabackup.
 * [Revision #ca24f35b67](https://github.com/MariaDB/server/commit/ca24f35b67)\
   2017-04-18 19:52:03 +0000
-  * [MDEV-9566](https://jira.mariadb.org/browse/MDEV-9566) MariaBackup test suite
+  * [MDEV-9566](https://jira.mariadb.org/browse/MDEV-9566) mariadb-backup test suite
 * [Revision #1991411f16](https://github.com/MariaDB/server/commit/1991411f16)\
   2017-04-18 19:35:48 +0000
-  * [MDEV-9566](https://jira.mariadb.org/browse/MDEV-9566) MariaBackup packaging
+  * [MDEV-9566](https://jira.mariadb.org/browse/MDEV-9566) mariadb-backup packaging
 * [Revision #ce4c56db0c](https://github.com/MariaDB/server/commit/ce4c56db0c)\
   2017-04-18 19:05:57 +0000
   * [MDEV-9566](https://jira.mariadb.org/browse/MDEV-9566) Port Percona Xtrabackup to MariaDB as mariabackup

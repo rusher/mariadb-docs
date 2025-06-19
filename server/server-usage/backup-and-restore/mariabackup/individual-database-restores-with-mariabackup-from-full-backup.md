@@ -1,4 +1,4 @@
-# Individual Database Restores with MariaBackup from Full Backup
+# Individual Database Restores with mariadb-backup from Full Backup
 
 This method is to solve a flaw with mariadb-backup; it cannot do single database restores from a full backup easily. There is a [blog post that details a way to do this](https://mariadb.com/resources/blog/how-to-restore-a-single-database-from-mariadb-backup/), but it's a manual process which is fine for a few tables but if you have hundreds or even thousands of tables then it would be impossible to do quickly.
 

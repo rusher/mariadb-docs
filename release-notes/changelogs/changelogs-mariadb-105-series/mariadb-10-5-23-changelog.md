@@ -45,10 +45,10 @@ details of the revision and view diffs of the code modified in that revision.
   * make perfschema.show\_aggregate test more debuggable
 * [Revision #fbd11d5f29](https://github.com/MariaDB/server/commit/fbd11d5f29)\
   2023-10-13 09:12:01 +1100
-  * [MDEV-18200](https://jira.mariadb.org/browse/MDEV-18200) MariaBackup full backup failed with InnoDB: Failing assertion: success
+  * [MDEV-18200](https://jira.mariadb.org/browse/MDEV-18200) mariadb-backup full backup failed with InnoDB: Failing assertion: success
 * [Revision #c79ca7c7ad](https://github.com/MariaDB/server/commit/c79ca7c7ad)\
   2023-09-19 11:33:51 +1000
-  * [MDEV-18200](https://jira.mariadb.org/browse/MDEV-18200) MariaBackup full backup failed with InnoDB: Failing assertion: success
+  * [MDEV-18200](https://jira.mariadb.org/browse/MDEV-18200) mariadb-backup full backup failed with InnoDB: Failing assertion: success
 * [Revision #f9d471e2d5](https://github.com/MariaDB/server/commit/f9d471e2d5)\
   2023-10-12 09:48:54 +0300
   * Cleanup: Remove innobase\_init\_vc\_templ()

@@ -319,7 +319,7 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-29989](https://jira.mariadb.org/browse/MDEV-29989) binlog\_do\_db option breaks versioning table
 * [Revision #ca66a2cbfa](https://github.com/MariaDB/server/commit/ca66a2cbfa)\
   2023-09-19 11:33:51 +1000
-  * [MDEV-18200](https://jira.mariadb.org/browse/MDEV-18200) MariaBackup full backup failed with InnoDB: Failing assertion: success
+  * [MDEV-18200](https://jira.mariadb.org/browse/MDEV-18200) mariadb-backup full backup failed with InnoDB: Failing assertion: success
 * [Revision #275f434392](https://github.com/MariaDB/server/commit/275f434392)\
   2023-09-12 22:17:13 +0300
   * [MDEV-25163](https://jira.mariadb.org/browse/MDEV-25163) Rowid filter does not process storage engine error correctly.

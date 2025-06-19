@@ -97,9 +97,9 @@ Thanks, and enjoy MariaDB!
 * main.mysql\_client\_test\_comp failed in buildbot, error on exec ([MDEV-16641](https://jira.mariadb.org/browse/MDEV-16641))
 * main.order\_by\_pack\_big fails with view-protocol ([MDEV-31460](https://jira.mariadb.org/browse/MDEV-31460))
 
-### MariaBackup
+### mariadb-backup
 
-* MariaBackup full backup failed with InnoDB: Failing assertion: success in storage/innobase/fil/fil0fil.cc line 657 ([MDEV-18200](https://jira.mariadb.org/browse/MDEV-18200))
+* mariadb-backup full backup failed with InnoDB: Failing assertion: success in storage/innobase/fil/fil0fil.cc line 657 ([MDEV-18200](https://jira.mariadb.org/browse/MDEV-18200))
 * mbstream breaks page compression on XFS ([MDEV-25734](https://jira.mariadb.org/browse/MDEV-25734))
 
 ### Character Sets, Data Types, Collations

@@ -55,7 +55,7 @@
       * [Full Backup and Restore with Mariadb-backup](server-usage/backing-up-and-restoring-databases/mariabackup/full-backup-and-restore-with-mariabackup.md)
       * [How mariadb-backup Works](server-usage/backing-up-and-restoring-databases/mariabackup/how-mariabackup-works.md)
       * [Incremental Backup and Restore with mariadb-backup](server-usage/backing-up-and-restoring-databases/mariabackup/incremental-backup-and-restore-with-mariabackup.md)
-      * [Individual Database Restores with MariaBackup from Full Backup](server-usage/backing-up-and-restoring-databases/mariabackup/individual-database-restores-with-mariabackup-from-full-backup.md)
+      * [Individual Database Restores with mariadb-backup from Full Backup](server-usage/backing-up-and-restoring-databases/mariabackup/individual-database-restores-with-mariabackup-from-full-backup.md)
       * [mariadb-backup and BACKUP STAGE Commands](server-usage/backing-up-and-restoring-databases/mariabackup/mariabackup-and-backup-stage-commands.md)
       * [mariadb-backup Options](server-usage/backing-up-and-restoring-databases/mariabackup/mariabackup-options.md)
       * [Partial Backup and Restore with mariadb-backup](server-usage/backing-up-and-restoring-databases/mariabackup/partial-backup-and-restore-with-mariabackup.md)

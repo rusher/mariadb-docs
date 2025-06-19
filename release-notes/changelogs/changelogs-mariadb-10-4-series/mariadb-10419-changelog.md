@@ -220,7 +220,7 @@ details of the revision and view diffs of the code modified in that revision.
   * Remove extra (not needed) error from multi-table-update for killed query
 * [Revision #23833dce05](https://github.com/MariaDB/server/commit/23833dce05)\
   2021-02-12 11:28:42 +0300
-  * [MDEV-24792](https://jira.mariadb.org/browse/MDEV-24792) Assertion \`!newest\_lsn || fil\_page\_get\_type(page)' failed upon MariaBackup prepare in buf\_flush\_init\_for\_writing with innodb\_log\_optimize\_ddl=off
+  * [MDEV-24792](https://jira.mariadb.org/browse/MDEV-24792) Assertion \`!newest\_lsn || fil\_page\_get\_type(page)' failed upon mariadb-backup prepare in buf\_flush\_init\_for\_writing with innodb\_log\_optimize\_ddl=off
 * [Revision #cb4434c44a](https://github.com/MariaDB/server/commit/cb4434c44a)\
   2021-02-13 10:28:10 +0200
   * [MDEV-24856](https://jira.mariadb.org/browse/MDEV-24856) : Server crashes when wsrep\_provider\_options set to NULL
