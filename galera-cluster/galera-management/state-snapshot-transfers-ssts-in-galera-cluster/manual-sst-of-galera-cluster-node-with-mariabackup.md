@@ -1,6 +1,6 @@
 # Manual SST of Galera Cluster Node With Mariabackup
 
-Sometimes it can be helpful to perform a "manual SST" when Galera's [normal SSTs](introduction-to-state-snapshot-transfers-ssts.md) fail. This can be especially useful when the cluster's `[datadir](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables#datadir)` is very large, since a normal SST can take a long time to fail in that case.
+Sometimes it can be helpful to perform a "manual SST" when Galera's [normal SSTs](introduction-to-state-snapshot-transfers-ssts.md) fail. This can be especially useful when the cluster's [datadir](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables#datadir) is very large, since a normal SST can take a long time to fail in that case.
 
 A manual SST essentially consists of taking a backup of the donor, loading the backup on the joiner, and then manually editing the cluster state on the joiner node. This page will show how to perform this process with [Mariabackup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariabackup).
 
@@ -19,7 +19,7 @@ MYSQL_BACKUP_DIR=/mysql_backup
 mkdir $MYSQL_BACKUP_DIR
 ```
 
-* Take a [full backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariabackup/full-backup-and-restore-with-mariabackup) the of the donor node with `mariabackup`. The `[--galera-info](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariabackup/mariabackup-options#-galera-info)` option should also be provided, so that the node's cluster state is also backed up.
+* Take a [full backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariabackup/full-backup-and-restore-with-mariabackup) the of the donor node with `mariabackup`. The [--galera-info](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariabackup/mariabackup-options#-galera-info) option should also be provided, so that the node's cluster state is also backed up.
 
 ```
 DB_USER=sstuser
@@ -69,13 +69,13 @@ cat $MYSQL_DATADIR/grastate.dat | grep version
 
 For example, a very common version number is "2.1".
 
-* Get the node's cluster state from the `[xtrabackup_galera_info](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariabackup/mariabackup-options#-galera-info)` file in the backup that was copied to the joiner node.
+* Get the node's cluster state from the [xtrabackup_galera_info](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariabackup/mariabackup-options#-galera-info) file in the backup that was copied to the joiner node.
 
 ```
 cat $MYSQL_BACKUP_DIR/xtrabackup_galera_info
 ```
 
-The file contains the values of the `[wsrep_local_state_uuid](../../reference/galera-cluster-status-variables.md#wsrep_local_state_uuid)` and `[wsrep_last_committed](../../reference/galera-cluster-status-variables.md#wsrep_last_committed)` status variables.
+The file contains the values of the [wsrep_local_state_uuid](../../reference/galera-cluster-status-variables.md#wsrep_local_state_uuid) and [wsrep_last_committed](../../reference/galera-cluster-status-variables.md#wsrep_last_committed) status variables.
 
 The values are written in the following format:
 
@@ -103,21 +103,21 @@ safe_to_bootstrap: 0
 EOF
 ```
 
-* Remove the existing contents of the `[datadir](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables#datadir)` on the joiner node.
+* Remove the existing contents of the [datadir](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables#datadir) on the joiner node.
 
 ```
 MYSQL_DATADIR=/var/lib/mysql
 rm -Rf $MYSQL_DATADIR/*
 ```
 
-* Copy the contents of the backup directory to the `[datadir](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables#datadir)` the on joiner node.
+* Copy the contents of the backup directory to the [datadir](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables#datadir) the on joiner node.
 
 ```
 mariabackup --copy-back \
    --target-dir=$MYSQL_BACKUP_DIR
 ```
 
-* Make sure the permissions of the `[datadir](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables#datadir)` are correct on the joiner node.
+* Make sure the permissions of the [datadir](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables#datadir) are correct on the joiner node.
 
 ```
 chown -R mysql:mysql $MYSQL_DATADIR/

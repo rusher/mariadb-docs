@@ -21,7 +21,7 @@ First, before you get started:
 5. Next, make sure that the Galera version numbers are compatible.
 6. If you are upgrading from the most recent [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/what-is-mariadb-106) release to [MariaDB 10.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-11-series/what-is-mariadb-1011), then the versions will be compatible.
 7. See [What is MariaDB Galera Cluster?: Galera wsrep provider Versions](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/what-is-mariadb-galera-cluster/README.md#galera-wsrep-provider-versions) for information on which MariaDB releases uses which Galera wsrep provider versions.
-8. You want to have a large enough gcache to avoid a [State Snapshot Transfer (SST)](../state-snapshot-transfers-ssts-in-galera-cluster/introduction-to-state-snapshot-transfers-ssts.md) during the rolling upgrade. The gcache size can be configured by setting `[gcache.size](../../reference/wsrep_provider_options.md#gcachesize)` For example:`wsrep_provider_options="gcache.size=2G"`
+8. You want to have a large enough gcache to avoid a [State Snapshot Transfer (SST)](../state-snapshot-transfers-ssts-in-galera-cluster/introduction-to-state-snapshot-transfers-ssts.md) during the rolling upgrade. The gcache size can be configured by setting [gcache.size](../../reference/wsrep_provider_options.md#gcachesize) For example:`wsrep_provider_options="gcache.size=2G"`
 
 Before you upgrade, it would be best to take a backup of your database. This is always a good idea to do before an upgrade. We would recommend [Mariabackup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariabackup).
 
@@ -50,10 +50,10 @@ Then, for each node, perform the following steps:
 1. Make any desired changes to configuration options in [option files](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files), such as `my.cnf`. This includes removing any system variables or options that are no longer supported.
 2. On Linux distributions that use `systemd` you may need to increase the service startup timeout as the default timeout of 90 seconds may not be sufficient. See [Systemd: Configuring the Systemd Service Timeout](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/systemd#configuring-the-systemd-service-timeout) for more information.
 3. [Start MariaDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/starting-and-stopping-mariadb-automatically).
-4. With wsrep off, run `[mariadb-upgrade](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/mariadb-upgrade)` with the `--skip-write-binlog` option.
+4. With wsrep off, run [mariadb-upgrade](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/mariadb-upgrade) with the `--skip-write-binlog` option.
 
 * `mariadb-upgrade` does two things:
-  1. Ensures that the system tables in the `[mysql](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/)` database are fully compatible with the new version.
+  1. Ensures that the system tables in the [mysql](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/) database are fully compatible with the new version.
   2. Does a very quick check of all tables and marks them as compatible with the new version of MariaDB .
 
 1. Restart the server with wsrep on.

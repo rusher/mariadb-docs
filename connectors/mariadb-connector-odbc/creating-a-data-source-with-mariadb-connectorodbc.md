@@ -48,7 +48,7 @@ You will need to ensure that [UnixODBC has been installed](creating-a-data-sourc
 
 ### Configuring MariaDB Connector/ODBC as a UnixODBC Driver on Linux
 
-The first step is to configure UnixODBC to recognize MariaDB Connector/ODBC as a `Driver`. To configure the `Driver`, you can use the `[odbcinst](https://manpages.debian.org/stretch/odbcinst/odbcinst.1.en.html)` tool, which can add a configuration entry for MariaDB Connector/ODBC to the system's global `/etc/odbcinst.ini` file.
+The first step is to configure UnixODBC to recognize MariaDB Connector/ODBC as a `Driver`. To configure the `Driver`, you can use the [odbcinst](https://manpages.debian.org/stretch/odbcinst/odbcinst.1.en.html) tool, which can add a configuration entry for MariaDB Connector/ODBC to the system's global `/etc/odbcinst.ini` file.
 
 For example, create a template file similar to the following, with a name like `MariaDB_odbc_driver_template.ini`:
 
@@ -70,7 +70,7 @@ See [Parameters](https://github.com/mariadb-corporation/docs-connectors/blob/tes
 
 ### Configuring a DSN with UnixODBC on Linux
 
-The second step is to configure UnixODBC with a Data Source Name (DSN) for your MariaDB Server. A `DSN` allows you to centrally configure all of your server's connection parameters, so that you can easily configure how to connect to your server in your environment. To configure the `DSN`, you can use the `[odbcinst](https://manpages.debian.org/stretch/odbcinst/odbcinst.1.en.html)` tool, which can add a configuration entry for the given data source to the system's global `/etc/odbc.ini` file or your user's local `~/.odbc.ini` file.
+The second step is to configure UnixODBC with a Data Source Name (DSN) for your MariaDB Server. A `DSN` allows you to centrally configure all of your server's connection parameters, so that you can easily configure how to connect to your server in your environment. To configure the `DSN`, you can use the [odbcinst](https://manpages.debian.org/stretch/odbcinst/odbcinst.1.en.html) tool, which can add a configuration entry for the given data source to the system's global `/etc/odbc.ini` file or your user's local `~/.odbc.ini` file.
 
 For example, create a template file similar to the following, with a name like `MariaDB_odbc_data_source_template.ini`:
 
@@ -107,7 +107,7 @@ UnixODBC also provides a GUI to add `DSNs`. However, MariaDB Connector/ODBC does
 
 ### Verifying a DSN Configuration with UnixODBC on Linux
 
-You can verify that a `DSN` is properly configured with UnixODBC on Linux by using the `[isql](https://manpages.debian.org/stretch/unixodbc/isql.1.en.html)` utility.
+You can verify that a `DSN` is properly configured with UnixODBC on Linux by using the [isql](https://manpages.debian.org/stretch/unixodbc/isql.1.en.html) utility.
 
 For example, if the `DSN` is called `MariaDB-server`, then we can verify that it works properly by executing the following:
 
@@ -226,7 +226,7 @@ PORT=<your port>
 
 #### Verifying a DSN Configuration with iODBC on Mac OS X
 
-You can verify that a `DSN` is properly configured with iODBC on Mac OS X by using the `[iodbctest](https://manpages.debian.org/stretch/iodbc/iodbctest.1.en.html)` utility.
+You can verify that a `DSN` is properly configured with iODBC on Mac OS X by using the [iodbctest](https://manpages.debian.org/stretch/iodbc/iodbctest.1.en.html) utility.
 
 For example, if the `DSN` is called `MariaDB-server`, then we can verify that it works properly by executing the following:
 

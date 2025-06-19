@@ -6,7 +6,7 @@ InnoDB pages contain log sequence numbers, or LSN's. Whenever you modify a row o
 
 ## Backing up the Database Server
 
-In order to take an incremental backup, you first need to take a [full backup](full-backup-and-restore-with-mariabackup.md). In order to back up the database, you need to run Mariabackup with the `[--backup](mariabackup-options.md#-backup)` option to tell it to perform a backup and with the `[--target-dir](mariabackup-options.md#-target-dir)` option to tell it where to place the backup files. When taking a full backup, the target directory must be empty or it must not exist.
+In order to take an incremental backup, you first need to take a [full backup](full-backup-and-restore-with-mariabackup.md). In order to back up the database, you need to run Mariabackup with the [--backup](mariabackup-options.md#-backup) option to tell it to perform a backup and with the [--target-dir](mariabackup-options.md#-target-dir) option to tell it where to place the backup files. When taking a full backup, the target directory must be empty or it must not exist.
 
 To take a backup, run the following command:
 
@@ -16,7 +16,7 @@ $ mariabackup --backup \
    --user=mariabackup --password=mypassword
 ```
 
-This backs up all databases into the target directory `/var/mariadb/backup`. If you look in that directory at the `[xtrabackup_checkpoints](files-created-by-mariabackup.md#xtrabackup_checkpoints)` file, you can see the LSN data provided by InnoDB.
+This backs up all databases into the target directory `/var/mariadb/backup`. If you look in that directory at the [xtrabackup_checkpoints](files-created-by-mariabackup.md#xtrabackup_checkpoints) file, you can see the LSN data provided by InnoDB.
 
 For example:
 
@@ -32,7 +32,7 @@ recover_binlog_info = 0
 
 Once you have created a full backup on your system, you can also back up the incremental changes as often as you would like.
 
-In order to perform an incremental backup, you need to run Mariabackup with the `[--backup](mariabackup-options.md#-backup)` option to tell it to perform a backup and with the `[--target-dir](mariabackup-options.md#-target-dir)` option to tell it where to place the incremental changes. The target directory must be empty. You also need to run it with the `[--incremental-basedir](mariabackup-options.md#-incremental-basedir)` option to tell it the path to the full backup taken above. For example:
+In order to perform an incremental backup, you need to run Mariabackup with the [--backup](mariabackup-options.md#-backup) option to tell it to perform a backup and with the [--target-dir](mariabackup-options.md#-target-dir) option to tell it where to place the incremental changes. The target directory must be empty. You also need to run it with the [--incremental-basedir](mariabackup-options.md#-incremental-basedir) option to tell it the path to the full backup taken above. For example:
 
 ```bash
 $ mariabackup --backup \
@@ -41,7 +41,7 @@ $ mariabackup --backup \
    --user=mariabackup --password=mypassword
 ```
 
-This command creates a series of delta files that store the incremental changes in `/var/mariadb/inc1`. You can find a similar `[xtrabackup_checkpoints](files-created-by-mariabackup.md#xtrabackup_checkpoints)` file in this directory, with the updated LSN values.
+This command creates a series of delta files that store the incremental changes in `/var/mariadb/inc1`. You can find a similar [xtrabackup_checkpoints](files-created-by-mariabackup.md#xtrabackup_checkpoints) file in this directory, with the updated LSN values.
 
 For example:
 
@@ -64,9 +64,9 @@ $ mariabackup --backup \
 
 ## Combining with `--stream` output
 
-When using `[--stream](mariabackup-options.md#-stream)`, e.g for [compression or encryption using external tools](using-encryption-and-compression-tools-with-mariabackup.md), the `[xtrabackup_checkpoints](files-created-by-mariabackup.md#xtrabackup_checkpoints)` file containing the information where to continue from on the next incremental backup will also be part of the compressed/encrypted backup file, and so not directly accessible by default.
+When using [--stream](mariabackup-options.md#-stream), e.g for [compression or encryption using external tools](using-encryption-and-compression-tools-with-mariabackup.md), the [xtrabackup_checkpoints](files-created-by-mariabackup.md#xtrabackup_checkpoints) file containing the information where to continue from on the next incremental backup will also be part of the compressed/encrypted backup file, and so not directly accessible by default.
 
-A directory containing an extra copy of the file can be created using the `[--extra-lsndir=...](mariabackup-options.md#-extra-lsndir)` option though, and this directory can then be passed to the next incremental backup `[--incremental-basedir=...](mariabackup-options.md#-incremental-basedir)`, for example:
+A directory containing an extra copy of the file can be created using the [--extra-lsndir=...](mariabackup-options.md#-extra-lsndir) option though, and this directory can then be passed to the next incremental backup [--incremental-basedir=...](mariabackup-options.md#-incremental-basedir), for example:
 
 ```bash
 # initial full backup
@@ -83,7 +83,7 @@ $ mariabackup --backup --stream=mbstream \
 
 ## Preparing the Backup
 
-Following the above steps, you have three backups in `/var/mariadb`: The first is a full backup, the others are increments on this first backup. In order to restore a backup to the database, you first need to apply the incremental backups to the base full backup. This is done using the `[--prepare](mariabackup-options.md#-prepare)` command option. In [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1), you would also have to use the the `[--apply-log-only](mariabackup-options.md#-apply-log-only)` option.
+Following the above steps, you have three backups in `/var/mariadb`: The first is a full backup, the others are increments on this first backup. In order to restore a backup to the database, you first need to apply the incremental backups to the base full backup. This is done using the [--prepare](mariabackup-options.md#-prepare) command option. In [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1), you would also have to use the the [--apply-log-only](mariabackup-options.md#-apply-log-only) option.
 
 In [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102) and later, perform the following process:
 
@@ -110,10 +110,10 @@ For each remaining incremental backup, repeat the last step to bring the base fu
 
 ## Restoring the Backup
 
-Once you've applied all incremental backups to the base, you can restore the backup using either the `[--copy-back](mariabackup-options.md#-copy-back)` or the `[--move-back](mariabackup-options.md#-move-back)` options. The `[--copy-back](mariabackup-options.md#-copy-back)` option allows you to keep the original backup files. The `[--move-back](mariabackup-options.md#-move-back)` option actually moves the backup files to the `[datadir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir)`, so the original backup files are lost.
+Once you've applied all incremental backups to the base, you can restore the backup using either the [--copy-back](mariabackup-options.md#-copy-back) or the [--move-back](mariabackup-options.md#-move-back) options. The [--copy-back](mariabackup-options.md#-copy-back) option allows you to keep the original backup files. The [--move-back](mariabackup-options.md#-move-back) option actually moves the backup files to the [datadir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir), so the original backup files are lost.
 
 * First, stop the MariaDB Server process.
-* Then, ensure that the `[datadir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir)` is empty.
+* Then, ensure that the [datadir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir) is empty.
 * Then, run Mariabackup with one of the options mentioned above:
 
 ```

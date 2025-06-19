@@ -11,7 +11,7 @@ description: >-
 
 ## Verifying Whether SELinux Is Enabled
 
-To verify whether SELinux is enabled, execute the `[getenforce](https://linux.die.net/man/8/getenforce)` command. For example:
+To verify whether SELinux is enabled, execute the [getenforce](https://linux.die.net/man/8/getenforce) command. For example:
 
 ```bash
 getenforce
@@ -19,7 +19,7 @@ getenforce
 
 ### Temporarily Putting mysqld Into Permissive Mode
 
-When you are troubleshooting issues that you think SELinux might be causing, it can help to temporarily put `mysqld_t` into permissive mode. This can be done by executing the `[semanage](https://linux.die.net/man/8/semanage)` command. For example:
+When you are troubleshooting issues that you think SELinux might be causing, it can help to temporarily put `mysqld_t` into permissive mode. This can be done by executing the [semanage](https://linux.die.net/man/8/semanage) command. For example:
 
 ```bash
 sudo semanage permissive -a mysqld_t
@@ -41,9 +41,9 @@ Note that this policy file extends, but not replaces the system policy.
 
 SELinux uses [file contexts](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/selinux_users_and_administrators_guide/sect-security-enhanced_linux-working_with_selinux-selinux_contexts_labeling_files) as a way to determine who should be able to access that file.
 
-File contexts are managed with the `[semanage fcontext](https://linux.die.net/man/8/semanage)` and `[restorecon](https://linux.die.net/man/8/restorecon)` commands.
+File contexts are managed with the [semanage fcontext](https://linux.die.net/man/8/semanage) and [restorecon](https://linux.die.net/man/8/restorecon) commands.
 
-On many systems, the `[semanage](https://linux.die.net/man/8/semanage)` utility is installed by the `policycoreutils-python` package, and the `[restorecon](https://linux.die.net/man/8/restorecon)` utility is installed by the `policycoreutils` package. You can install these with the following command:
+On many systems, the [semanage](https://linux.die.net/man/8/semanage) utility is installed by the `policycoreutils-python` package, and the [restorecon](https://linux.die.net/man/8/restorecon) utility is installed by the `policycoreutils` package. You can install these with the following command:
 
 ```bash
 sudo yum install policycoreutils policycoreutils-python
@@ -53,13 +53,13 @@ A file or directory's current context can be checked by executing `ls` with the 
 
 ### Setting the File Context for the Data Directory
 
-If you use a custom directory for `[datadir](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir)`, then you may need to set the file context for that directory. The SELinux file context for MariaDB data files is `mysqld_db_t`. You can determine if this file context is present on your system and which files or directories it is associated with by executing the following command:
+If you use a custom directory for [datadir](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir), then you may need to set the file context for that directory. The SELinux file context for MariaDB data files is `mysqld_db_t`. You can determine if this file context is present on your system and which files or directories it is associated with by executing the following command:
 
 ```bash
 sudo semanage fcontext --list | grep mysqld_db_t
 ```
 
-If you would like to set the file context for your custom directory for your `[datadir](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir)`, then that can be done by executing the `[semanage fcontext](https://linux.die.net/man/8/semanage)` and `[restorecon](https://linux.die.net/man/8/restorecon)` commands. For example:
+If you would like to set the file context for your custom directory for your [datadir](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir), then that can be done by executing the [semanage fcontext](https://linux.die.net/man/8/semanage) and [restorecon](https://linux.die.net/man/8/restorecon) commands. For example:
 
 ```bash
 sudo semanage fcontext -a -t mysqld_db_t "/mariadb/data(/.*)?"
@@ -80,7 +80,7 @@ If you use a custom directory for [log files](../../server-management/server-mon
 sudo semanage fcontext --list | grep mysqld_log_t
 ```
 
-If you would like to set the file context for your custom directory for [log files](../../server-management/server-monitoring-logs/), then that can be done by executing the `[semanage fcontext](https://linux.die.net/man/8/semanage)` and `[restorecon](https://linux.die.net/man/8/restorecon)` commands. For example:
+If you would like to set the file context for your custom directory for [log files](../../server-management/server-monitoring-logs/), then that can be done by executing the [semanage fcontext](https://linux.die.net/man/8/semanage) and [restorecon](https://linux.die.net/man/8/restorecon) commands. For example:
 
 ```bash
 sudo semanage fcontext -a -t mysqld_log_t "/var/log/mysql(/.*)?"
@@ -101,7 +101,7 @@ If you use a custom directory for [option files](../../server-management/install
 sudo semanage fcontext --list | grep mysqld_etc_t
 ```
 
-If you would like to set the file context for your custom directory for [option files](../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md), then that can be done by executing the `[semanage fcontext](https://linux.die.net/man/8/semanage)` and `[restorecon](https://linux.die.net/man/8/restorecon)` commands. For example:
+If you would like to set the file context for your custom directory for [option files](../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md), then that can be done by executing the [semanage fcontext](https://linux.die.net/man/8/semanage) and [restorecon](https://linux.die.net/man/8/restorecon) commands. For example:
 
 ```bash
 sudo semanage fcontext -a -t mysqld_etc_t "/etc/mariadb(/.*)?"
@@ -126,7 +126,7 @@ A newly created socket with get the right context.
 
 ### Allowing Access to the Tmpfs File Context
 
-If you wanted to mount your `[tmpdir](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#tmpdir)` on a `tmpfs` file system or wanted to use a `tmpfs` file system on `/run/shm`, then you might need to allow `mysqld_t` to have access to a couple tmpfs-related file contexts. For example:
+If you wanted to mount your [tmpdir](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#tmpdir) on a `tmpfs` file system or wanted to use a `tmpfs` file system on `/run/shm`, then you might need to allow `mysqld_t` to have access to a couple tmpfs-related file contexts. For example:
 
 ```bash
 cd /usr/share/mysql/policy/selinux/
@@ -195,9 +195,9 @@ sudo semanage port -a -t mysqld_port_t -p tcp 3307
 
 ### Generating SELinux Policies with audit2allow
 
-In some cases, a MariaDB system might need non-standard policies. It is possible to create these policies from the SELinux audit log using the `[audit2allow](https://linux.die.net/man/1/audit2allow)` utility. The `[semanage](https://linux.die.net/man/8/semanage)` and `[semodule](https://linux.die.net/man/8/semodule)` utilities will also be needed.
+In some cases, a MariaDB system might need non-standard policies. It is possible to create these policies from the SELinux audit log using the [audit2allow](https://linux.die.net/man/1/audit2allow) utility. The [semanage](https://linux.die.net/man/8/semanage) and [semodule](https://linux.die.net/man/8/semodule) utilities will also be needed.
 
-On many systems, the `[audit2allow](https://linux.die.net/man/1/audit2allow)` and `[semanage](https://linux.die.net/man/8/semanage)` utilities are installed by the `policycoreutils-python` package, and the `[semodule](https://linux.die.net/man/8/semodule)` utility is installed by the `policycoreutils` package. You can install these with the following command:
+On many systems, the [audit2allow](https://linux.die.net/man/1/audit2allow) and [semanage](https://linux.die.net/man/8/semanage) utilities are installed by the `policycoreutils-python` package, and the [semodule](https://linux.die.net/man/8/semodule) utility is installed by the `policycoreutils` package. You can install these with the following command:
 
 ```bash
 sudo yum install policycoreutils policycoreutils-python

@@ -1,6 +1,6 @@
 # mysql.server
 
-The [mysql.server](mysql-server.md) startup script is in MariaDB distributions on Linux and Unix. It is a wrapper that works as a standard [sysVinit](sysvinit.md) script. However, it can be used independently of [sysVinit](sysvinit.md) as a regular `sh` script. The script starts the `[mariadbd](mariadbd-options.md)` server process by first changing its current working directory to the MariaDB install directory and then starting `[mariadbd-safe](mariadbd-safe.md)`. The script requires the standard [sysVinit](sysvinit.md) arguments, such as `start`, `stop`, `restart`, and `status`. For example:
+The [mysql.server](mysql-server.md) startup script is in MariaDB distributions on Linux and Unix. It is a wrapper that works as a standard [sysVinit](sysvinit.md) script. However, it can be used independently of [sysVinit](sysvinit.md) as a regular `sh` script. The script starts the [mariadbd](mariadbd-options.md) server process by first changing its current working directory to the MariaDB install directory and then starting [mariadbd-safe](mariadbd-safe.md). The script requires the standard [sysVinit](sysvinit.md) arguments, such as `start`, `stop`, `restart`, and `status`. For example:
 
 ```
 mysql.server start
@@ -11,7 +11,7 @@ mysql.server status
 
 It can be used on systems such as Linux, Solaris, and Mac OS X.
 
-The `mysql.server` script starts `[mariadbd](mariadbd-options.md)` by first changing to the MariaDB install directory and then calling [mariadbd-safe](mariadbd-safe.md).
+The `mysql.server` script starts [mariadbd](mariadbd-options.md) by first changing to the MariaDB install directory and then calling [mariadbd-safe](mariadbd-safe.md).
 
 ## Using mysql.server
 
@@ -96,7 +96,7 @@ If you installed MariaDB on Linux using [RPMs](../install-and-upgrade-mariadb/in
 
 #### Manually Installing with SysVinit
 
-If you install MariaDB from [source](../install-and-upgrade-mariadb/installing-mariadb/compiling-mariadb-from-source/) or from a [binary tarball](../install-and-upgrade-mariadb/installing-mariadb/binary-packages/installing-mariadb-binary-tarballs.md) that does not install `[mysql.server](mysql-server.md)`\
+If you install MariaDB from [source](../install-and-upgrade-mariadb/installing-mariadb/compiling-mariadb-from-source/) or from a [binary tarball](../install-and-upgrade-mariadb/installing-mariadb/binary-packages/installing-mariadb-binary-tarballs.md) that does not install [mysql.server](mysql-server.md)\
 automatically, and if you are on a system that uses [sysVinit](sysvinit.md), then you can manually install `mysql.server` with [sysVinit](sysvinit.md). This is usually done by copying it to `/etc/init.d/` and then creating specially named symlinks in the appropriate `/etc/rcX.d/` directories (where 'X' is a number between 0 and 6).
 
 In the examples below we will follow the historical convention of renaming the`mysql.server` script to '`mysql`' when we copy it to `/etc/init.d/`.

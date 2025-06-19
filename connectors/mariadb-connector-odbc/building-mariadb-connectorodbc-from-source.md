@@ -46,14 +46,14 @@ If you are building from the git repository, then your next step would be to clo
 
 The git repository is available on GitHub: [mariadb-connector-odbc](https://github.com/MariaDB/mariadb-connector-odbc)
 
-You can clone it by executing the `[git clone](https://git-scm.com/docs/git-clone)` command like the following:
+You can clone it by executing the [git clone](https://git-scm.com/docs/git-clone) command like the following:
 
 ```bash
 git clone https://github.com/MariaDB/mariadb-connector-odbc.git
 cd mariadb-connector-odbc
 ```
 
-If you want to build a specific revision or version of MariaDB Connector/ODBC, then you will need to checkout the specific branch or tag by executing the `[git checkout](https://git-scm.com/docs/git-checkout)` command like the following:
+If you want to build a specific revision or version of MariaDB Connector/ODBC, then you will need to checkout the specific branch or tag by executing the [git checkout](https://git-scm.com/docs/git-checkout) command like the following:
 
 ```bash
 git checkout 3.0.8
@@ -63,7 +63,7 @@ This example will put your source tree into the 3.0.8 version state.
 
 ### Building MariaDB Connector/ODBC
 
-You can build MariaDB Connector/ODBC by executing the `[cmake](https://cmake.org/cmake/help/latest/manual/cmake.1.html)` command like the following:
+You can build MariaDB Connector/ODBC by executing the [cmake](https://cmake.org/cmake/help/latest/manual/cmake.1.html) command like the following:
 
 ```bash
 cmake -DCMAKE_BUILD_TYPE=RelWithDebInfo -DCONC_WITH_UNIT_TESTS=Off -DCONC_WITH_MSI=OFF -DCMAKE_INSTALL_PREFIX=/usr/local .

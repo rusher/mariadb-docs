@@ -1,7 +1,7 @@
 
 # Information Schema PROFILING Table
 
-The [Information Schema](../README.md) `PROFILING` table contains information about statement resource usage. Profiling information is only recorded if the `[profiling](../../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#profiling)` session variable is set to 1.
+The [Information Schema](../README.md) `PROFILING` table contains information about statement resource usage. Profiling information is only recorded if the [profiling](../../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#profiling) session variable is set to 1.
 
 
 It contains the following columns:
