@@ -167,7 +167,7 @@ ALTER USER foo2@test IDENTIFIED VIA pam USING 'mariadb';
 
 The exact meaning of the additional argument would depend on the specific authentication plugin.
 
-From [MariaDB 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/account-management-sql-statements/broken-reference/README.md), the `USING` or `AS` keyword can also be used to provide a plain-text password to a plugin if it's provided as an argument to the [PASSWORD()](../../sql-functions/secondary-functions/encryption-hashing-and-compression-functions/password.md) function. This is only valid for [authentication plugins](../../plugins/authentication-plugins/) that have implemented a hook for the [PASSWORD()](../../sql-functions/secondary-functions/encryption-hashing-and-compression-functions/password.md) function. For example, the [ed25519](../../plugins/authentication-plugins/authentication-plugin-ed25519.md) authentication plugin supports this:
+From MariaDB 10.4, the `USING` or `AS` keyword can also be used to provide a plain-text password to a plugin if it's provided as an argument to the [PASSWORD()](../../sql-functions/secondary-functions/encryption-hashing-and-compression-functions/password.md) function. This is only valid for [authentication plugins](../../plugins/authentication-plugins/) that have implemented a hook for the [PASSWORD()](../../sql-functions/secondary-functions/encryption-hashing-and-compression-functions/password.md) function. For example, the [ed25519](../../plugins/authentication-plugins/authentication-plugin-ed25519.md) authentication plugin supports this:
 
 ```sql
 ALTER USER safe@'%' IDENTIFIED VIA ed25519 USING PASSWORD('secret');
