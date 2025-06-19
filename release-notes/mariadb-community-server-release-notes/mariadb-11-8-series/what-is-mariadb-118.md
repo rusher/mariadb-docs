@@ -2,9 +2,7 @@
 
 {% include "../../../.gitbook/includes/the-most-recent-release-of-... (4).md" %}
 
-The most recent release of [MariaDB 11.8](what-is-mariadb-118.md) is:[**MariaDB 11.8.1**](mariadb-11-8-1-release-notes.md) RC [Download Now](https://mariadb.com/downloads)[_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/11.8.1)
-
-[MariaDB 11.8](what-is-mariadb-118.md) will be a long-term release, and is currently in development.
+[MariaDB 11.8](what-is-mariadb-118.md) is a long-term release, maintained until June 2028.
 
 This list includes all features since the previous long-term release, [MariaDB 11.4](../mariadb-11-4-series/what-is-mariadb-114.md) (those introduced in the [MariaDB 11.5](../old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115.md), [MariaDB 11.6](../old-releases/release-notes-mariadb-11-6-rolling-releases/what-is-mariadb-116.md) and [MariaDB 11.7](../old-releases/mariadb-11-7-rolling-releases/what-is-mariadb-117.md) rolling releases).
 
