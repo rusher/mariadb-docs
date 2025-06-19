@@ -115,6 +115,8 @@ This list includes all features since the previous long-term release, [MariaDB 1
 ### Stored Routines
 
 * ROW data type for stored function return values ([MDEV-12252](https://jira.mariadb.org/browse/MDEV-12252), [MariaDB 11.7](../old-releases/mariadb-11-7-rolling-releases/what-is-mariadb-117.md))
+* Stored routines parameters can have default values ([MDEV-10862](https://jira.mariadb.org/browse/MDEV-10862))
+* Update triggers can optionally have a list of columns an update of which executes the trigger. Updating other columns does not execute the trigger ([MDEV-34551](https://jira.mariadb.org/browse/MDEV-34551))
 
 ### Derived Tables
 
