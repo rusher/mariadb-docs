@@ -117,9 +117,7 @@ select host, user from mysql.user where user='user123' ;
 
 ## Privilege Levels
 
-Privileges can be set globally, for an entire database, for a table or routine,\
-or for individual columns in a table. Certain privileges can only be set at\
-certain levels.
+Privileges can be set globally, for an entire database, for a table or routine, or for individual columns in a table. Certain privileges can only be set atcertain levels.
 
 Global privileges do not take effect immediately and are only applied to connections created after the `GRANT` statement was executed.
 
