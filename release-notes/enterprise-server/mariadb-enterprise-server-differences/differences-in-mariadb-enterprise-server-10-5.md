@@ -14,10 +14,10 @@ Enterprise Features:
 * [MariaDB Enterprise Audit](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/mariadb-enterprise-audit)
 * Index limit increased to 128 indexes
 * Slow master shutdown as default
-* [MariaDB Enterprise Cluster](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/3VYeeVGUV4AMqrA3zwy7/galera-cluster-quickstart-guides) (powered by Galera)
+* [MariaDB Enterprise Cluster](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/galera-cluster-quickstart-guides) (powered by Galera)
   * [Enhanced Enterprise Data-at-Rest Encryption](mariadb-enterprise-server-data-at-rest-encryption/)
   * Non-Blocking operation for DDLs
-* [Hashicorp Vault Plugin](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/JqgUabdZsoY5EiaJmqgn/mariadb-faqs/plugins/mariadb-hashicorp-vault-plugin)
+* [Hashicorp Vault Plugin](https://app.gitbook.com/s/JqgUabdZsoY5EiaJmqgn/mariadb-faqs/plugins/mariadb-hashicorp-vault-plugin)
 * Dynamic resize of [InnoDB redo log](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-redo-log)
 * Dynamic change of [InnoDB purge](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-purge) threads
 * Sybase SQL mode for extended aliases

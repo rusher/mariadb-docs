@@ -116,7 +116,7 @@ Problem is using "LOAD DATA LOCAL INFILE" (ie : loading a file from client), may
 * A "man in the middle" proxy server can change the actual file asked from server so client will send a Local file to this proxy.
 * If someone has can execute query from client, he can have access to any file on client (according to the rights of the user running the client process).
 
-See [load-data-infile documentation](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile) for more information.
+See [load-data-infile documentation](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile) for more information.
 
 Interceptors can now filter LOAD DATA LOCAL INFILE query's file location to validate path / file name.\
 Those interceptors:

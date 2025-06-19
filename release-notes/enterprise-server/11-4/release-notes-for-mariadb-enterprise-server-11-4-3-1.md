@@ -255,7 +255,7 @@ SHOW ANALYZE FOR 1;
 ```
 
 * `ANALYZE FORMAT=JSON` now shows the time spent in the query optimizer. ([MDEV-28926](https://jira.mariadb.org/browse/MDEV-28926))
-* With [mariadb-dump](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/backup-restore-and-import-clients/mariadb-dump), the new [--order-by-size command-line option](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/backup-restore-and-import-clients/mariadb-dump#options) allows tables to be dumped in order of size (smallest tables first): ([MDEV-28074](https://jira.mariadb.org/browse/MDEV-28074))
+* With [mariadb-dump](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/backup-restore-and-import-clients/mariadb-dump), the new [--order-by-size command-line option](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/backup-restore-and-import-clients/mariadb-dump#options) allows tables to be dumped in order of size (smallest tables first): ([MDEV-28074](https://jira.mariadb.org/browse/MDEV-28074))
 
 ```bash
 $ mariadb-dump \
@@ -979,7 +979,7 @@ SELECT SCHEMA_NAME,DEFAULT_COLLATION_NAME FROM SCHEMATA WHERE SCHEMA_NAME LIKE "
 * On Microsoft Windows, MariaDB command-line tools now include full Unicode support. ([MDEV-26713](https://jira.mariadb.org/browse/MDEV-26713))
   * Unicode support is available on Microsoft Windows 10 1909 or later, Microsoft Windows 11, and Microsoft Windows Server 2020.
   * The `my.ini` configuration file is now UTF-8 encoded.
-  * The `mariadb.exe` command-line client uses [utf8mb4](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/aEnK0ZXmUbJzqQrTjFyb/enterprise-server/11.8/whats-new-in-mariadb-enterprise-server-11.8#data-types-and-compatibility) as the default character set.
+  * The `mariadb.exe` command-line client uses [utf8mb4](../11.8/whats-new-in-mariadb-enterprise-server-11.8.md#data-types-and-compatibility) as the default character set.
 
 ## Security Features
 

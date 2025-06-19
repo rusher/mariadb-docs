@@ -946,7 +946,7 @@ SELECT SCHEMA_NAME,DEFAULT_COLLATION_NAME FROM SCHEMATA WHERE SCHEMA_NAME LIKE "
 * On Microsoft Windows, MariaDB command-line tools now include full Unicode support. ([MDEV-26713](https://jira.mariadb.org/browse/MDEV-26713))
   * Unicode support is available on Microsoft Windows 10 1909 or later, Microsoft Windows 11, and Microsoft Windows Server 2020.
   * The `my.ini` configuration file is now UTF-8 encoded.
-  * The `mariadb.exe` command-line client uses [utf8mb4](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/aEnK0ZXmUbJzqQrTjFyb/enterprise-server/11.8/whats-new-in-mariadb-enterprise-server-11.8#data-types-and-compatibility) as the default character set.
+  * The `mariadb.exe` command-line client uses [utf8mb4](../11.8/whats-new-in-mariadb-enterprise-server-11.8.md#data-types-and-compatibility) as the default character set.
 
 ## Security Features
 

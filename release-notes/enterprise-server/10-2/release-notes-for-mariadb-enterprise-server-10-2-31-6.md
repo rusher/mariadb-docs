@@ -60,7 +60,7 @@ MariaDB Enterprise Server 10.2.31-6 was released on 2020-03-02.
 
 ## Interface Changes
 
-* [innodb\_spin\_wait\_delay](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables) system variable default value changed from `6` to `4`, matching the default of MariaDB Enterprise Server 10.4 and 10.3.
+* [innodb\_spin\_wait\_delay](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables) system variable default value changed from `6` to `4`, matching the default of MariaDB Enterprise Server 10.4 and 10.3.
 
 ## Platforms
 
