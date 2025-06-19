@@ -36,7 +36,7 @@ Below is a list of all status variables related to the Audit Plugin. These canno
 
 #### `Server_audit_writes_failed`
 
-* Description: The number of log records since last logging-start that weren't properly stored because of errors of any kind. The global value can be flushed by `[FLUSH STATUS](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md)`.
+* Description: The number of log records since last logging-start that weren't properly stored because of errors of any kind. The global value can be flushed by [FLUSH STATUS](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md).
 * Data Type: `numeric`
 * Default Value: `0`
 

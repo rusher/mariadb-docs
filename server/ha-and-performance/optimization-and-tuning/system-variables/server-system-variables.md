@@ -168,9 +168,9 @@ The suffix can be upper or lower-case.
 
 * Description: If this system variable is set to 1, then temporary tables will be saved to disk intead of memory.
   * This system variable's original intention was to allow result sets that were too big for memory-based temporary tables and to avoid the resulting 'table full' errors.
-  * This system variable is no longer needed, because the server can automatically convert large memory-based temporary tables into disk-based temporary tables when they exceed the value of the `[tmp_memory_table_size](#tmp_memory_table_size)` system variable.
-  * To prevent memory-based temporary tables from being used at all, set the `[tmp_memory_table_size](#tmp_memory_table_size)` system variable to `0`.
-  * In [MariaDB 5.5](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/optimization-and-tuning/system-variables/broken-reference/README.md) and earlier, `[sql_big_tables](#sql_big_tables)` is a synonym.
+  * This system variable is no longer needed, because the server can automatically convert large memory-based temporary tables into disk-based temporary tables when they exceed the value of the [tmp_memory_table_size](#tmp_memory_table_size) system variable.
+  * To prevent memory-based temporary tables from being used at all, set the [tmp_memory_table_size](#tmp_memory_table_size) system variable to `0`.
+  * In [MariaDB 5.5](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/optimization-and-tuning/system-variables/broken-reference/README.md) and earlier, [sql_big_tables](#sql_big_tables) is a synonym.
   * In [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105), this system variable is deprecated.
 * Commandline: `--big-tables`
 * Scope: Global, Session
@@ -586,7 +586,7 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 
 #### `encrypt_tmp_disk_tables`
 
-* Description: Enables automatic encryption of all internal on-disk temporary tables that are created during query execution if `[aria_used_for_temp_tables=ON](../../../../reference/storage-engines/aria/aria-system-variables.md#aria_used_for_temp_tables)` is set. See [Data at Rest Encryption](../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/data-at-rest-encryption-overview.md) and [Enabling Encryption for Internal On-disk Temporary Tables](../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/aria-encryption/aria-encryption-overview.md).
+* Description: Enables automatic encryption of all internal on-disk temporary tables that are created during query execution if [aria_used_for_temp_tables=ON](../../../../reference/storage-engines/aria/aria-system-variables.md#aria_used_for_temp_tables) is set. See [Data at Rest Encryption](../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/data-at-rest-encryption-overview.md) and [Enabling Encryption for Internal On-disk Temporary Tables](../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/aria-encryption/aria-encryption-overview.md).
 * Commandline: `--encrypt-tmp-disk-tables[={0|1}]`
 * Scope: Global
 * Dynamic: Yes
@@ -1092,7 +1092,7 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 * Description: This system variable can be specified as a [locale](../../../reference/data-types/string-data-types/character-sets/internationalization-and-localization/server-locale.md) name. The language of the associated [locale](../../../reference/data-types/string-data-types/character-sets/internationalization-and-localization/server-locale.md) will be used for error messages. See [Server Locales](../../../reference/data-types/string-data-types/character-sets/internationalization-and-localization/server-locale.md) for a list of supported locales and their associated languages.
   * This system variable is set to `en_US` by default, which means that error messages are in English by default.
   * If this system variable is set to a valid [locale](../../../reference/data-types/string-data-types/character-sets/internationalization-and-localization/server-locale.md) name, but the server can't find an [error message file](../../../server-management/server-monitoring-logs/error-log.md#error-messages-file) for the language associated with the [locale](../../../reference/data-types/string-data-types/character-sets/internationalization-and-localization/server-locale.md), then the default language will be used instead.
-  * This system variable is used along with the `[lc_messages_dir](#lc_messages_dir)` system variable to construct the path to the [error messages file](../../../server-management/server-monitoring-logs/error-log.md#error-messages-file).
+  * This system variable is used along with the [lc_messages_dir](#lc_messages_dir) system variable to construct the path to the [error messages file](../../../server-management/server-monitoring-logs/error-log.md#error-messages-file).
   * See [Setting the Language for Error Messages](../../../reference/data-types/string-data-types/character-sets/internationalization-and-localization/setting-the-language-for-error-messages.md) for more information.
 * Commandline: `--lc-messages=name`
 * Scope: Global, Session
@@ -1103,7 +1103,7 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 #### `lc_messages_dir`
 
 * Description: This system variable can be specified either as the path to the directory storing the server's [error message files](../../../server-management/server-monitoring-logs/error-log.md#error-messages-file) or as the path to the directory storing the specific language's [error message file](../../../server-management/server-monitoring-logs/error-log.md#error-messages-file). See [Server Locales](../../../reference/data-types/string-data-types/character-sets/internationalization-and-localization/server-locale.md) for a list of available locales and their related languages.
-  * The server initially tries to interpret the value of this system variable as a path to the directory storing the server's [error message files](../../../server-management/server-monitoring-logs/error-log.md#error-messages-file). Therefore, it constructs the path to the language's [error message file](../../../server-management/server-monitoring-logs/error-log.md#error-messages-file) by concatenating the value of this system variable with the language name of the [locale](../../../reference/data-types/string-data-types/character-sets/internationalization-and-localization/server-locale.md) specified by the `[lc_messages](server-system-variables.md#lc_messages)` system variable .
+  * The server initially tries to interpret the value of this system variable as a path to the directory storing the server's [error message files](../../../server-management/server-monitoring-logs/error-log.md#error-messages-file). Therefore, it constructs the path to the language's [error message file](../../../server-management/server-monitoring-logs/error-log.md#error-messages-file) by concatenating the value of this system variable with the language name of the [locale](../../../reference/data-types/string-data-types/character-sets/internationalization-and-localization/server-locale.md) specified by the [lc_messages](server-system-variables.md#lc_messages) system variable .
   * If the server does not find the [error message file](../../../server-management/server-monitoring-logs/error-log.md#error-messages-file) for the language, then it tries to interpret the value of this system variable as a direct path to the directory storing the specific language's [error message file](../../../server-management/server-monitoring-logs/error-log.md#error-messages-file).
   * See [Setting the Language for Error Messages](../../../reference/data-types/string-data-types/character-sets/internationalization-and-localization/setting-the-language-for-error-messages.md) for more information.
 * Commandline: `--lc-messages-dir=path`
@@ -1353,7 +1353,7 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 
 #### `log_tc_size`
 
-* Description: Defines the size in bytes of the memory-mapped file-based transaction coordinator log, which is only used if the [binary log](../../../server-management/server-monitoring-logs/binary-log/) is disabled. If you have two or more XA-capable storage engines enabled, then a transaction coordinator log must be available. This size is defined in multiples of 4096. See [Transaction Coordinator Log](../../../server-management/server-monitoring-logs/transaction-coordinator-log/) for more information. Also see the `[--log-tc](../../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md#-log-tc)` server option and the `[--tc-heuristic-recover](#-tc-heuristic-recover)` option.
+* Description: Defines the size in bytes of the memory-mapped file-based transaction coordinator log, which is only used if the [binary log](../../../server-management/server-monitoring-logs/binary-log/) is disabled. If you have two or more XA-capable storage engines enabled, then a transaction coordinator log must be available. This size is defined in multiples of 4096. See [Transaction Coordinator Log](../../../server-management/server-monitoring-logs/transaction-coordinator-log/) for more information. Also see the [--log-tc](../../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md#-log-tc) server option and the [--tc-heuristic-recover](#-tc-heuristic-recover) option.
 * Commandline: `log-tc-size=#`
 * Scope: Global
 * Dynamic: No
@@ -1385,8 +1385,8 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 * Connections aborted or closed due to errors or timeouts.
 * Table handler errors
 * Messages related to the files used to [persist replication state](../../../reference/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md#option-persistence):
-* Either the default `master.info` file or the file that is configured by the `[master_info_file](../../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md#-master-info-file)` option.
-* Either the default `relay-log.info` file or the file that is configured by the `[relay_log_info_file](../../standard-replication/replication-and-binary-log-system-variables.md#relay_log_info_file)` system variable.
+* Either the default `master.info` file or the file that is configured by the [master_info_file](../../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md#-master-info-file) option.
+* Either the default `relay-log.info` file or the file that is configured by the [relay_log_info_file](../../standard-replication/replication-and-binary-log-system-variables.md#relay_log_info_file) system variable.
 * Information about a master's [binary log dump thread](../../standard-replication/replication-threads.md#binary-log-dump-thread).
 * log\_warnings >= 3
 * All errors and warnings during [MyISAM](../../../server-usage/storage-engines/myisam-storage-engine/) repair and auto recover.
@@ -1395,8 +1395,8 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 * log\_warnings >=4
 * Connections aborted due to "Too many connections" errors.
 * Connections closed normally without authentication.
-* Connections aborted due to `[KILL](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/kill.md)`.
-* Connections closed due to released connections, such as when `[completion_type](#completion_type)` is set to `RELEASE`.
+* Connections aborted due to [KILL](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/kill.md).
+* Connections closed due to released connections, such as when [completion_type](#completion_type) is set to `RELEASE`.
 * Could not read packet: (a lot more information)
 * All read/write errors for a connection are logged to the error log.
 * log\_warnings >=9
@@ -1422,7 +1422,7 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 #### `low_priority_updates`
 
 * Description: If set to 1 (0 is the default), for [storage engines](../../../server-usage/storage-engines/) that use only table-level locking ([Aria](../../../server-usage/storage-engines/aria/), [MyISAM](../../../server-usage/storage-engines/myisam-storage-engine/), [MEMORY](../../../server-usage/storage-engines/memory-storage-engine.md) and [MERGE](../../../server-usage/storage-engines/merge.md)), all INSERTs, UPDATEs, DELETEs and LOCK TABLE WRITEs will wait until there are no more SELECTs or LOCK TABLE READs pending on the relevant tables. Set this to 1 if reads are prioritized over writes.
-  * In [MariaDB 5.5](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/optimization-and-tuning/system-variables/broken-reference/README.md) and earlier, `[sql_low_priority_updates](#sql_low_priority_updates)` is a synonym.
+  * In [MariaDB 5.5](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/optimization-and-tuning/system-variables/broken-reference/README.md) and earlier, [sql_low_priority_updates](#sql_low_priority_updates) is a synonym.
 * Commandline: `--low-priority-updates`
 * Scope: Global, Session
 * Dynamic: Yes
@@ -1657,7 +1657,7 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 #### `max_user_connections`
 
 * Description:\
-  Maximum simultaneous connections permitted for each user account. When set to `0`, there is no per user limit. Setting it to `-1` stops users without the [SUPER](../../../reference/sql-statements/account-management-sql-statements/grant.md#super) privilege or, from [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1052-release-notes), the [CONNECTION ADMIN](../../../reference/sql-statements/account-management-sql-statements/grant.md#connection-admin) privilege, from connecting to the server. The session variable is always read-only and only privileged users can modify user limits. The session variable defaults to the global `max_user_connections` variable, unless the user's specific `[MAX_USER_CONNECTIONS](../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/create-user.md#max_user_connections)` resource option is non-zero. When both global variable and the user resource option are set, the user's [MAX\_USER\_CONNECTIONS](../../../reference/sql-statements/account-management-sql-statements/create-user.md#max_user_connections) is used. Note: This variable does not affect users with the [SUPER](../../../reference/sql-statements/account-management-sql-statements/grant.md#super) privilege or, from [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1052-release-notes), the [CONNECTION ADMIN](../../../reference/sql-statements/account-management-sql-statements/grant.md#connection-admin) privilege.
+  Maximum simultaneous connections permitted for each user account. When set to `0`, there is no per user limit. Setting it to `-1` stops users without the [SUPER](../../../reference/sql-statements/account-management-sql-statements/grant.md#super) privilege or, from [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1052-release-notes), the [CONNECTION ADMIN](../../../reference/sql-statements/account-management-sql-statements/grant.md#connection-admin) privilege, from connecting to the server. The session variable is always read-only and only privileged users can modify user limits. The session variable defaults to the global `max_user_connections` variable, unless the user's specific [MAX_USER_CONNECTIONS](../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/create-user.md#max_user_connections) resource option is non-zero. When both global variable and the user resource option are set, the user's [MAX\_USER\_CONNECTIONS](../../../reference/sql-statements/account-management-sql-statements/create-user.md#max_user_connections) is used. Note: This variable does not affect users with the [SUPER](../../../reference/sql-statements/account-management-sql-statements/grant.md#super) privilege or, from [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1052-release-notes), the [CONNECTION ADMIN](../../../reference/sql-statements/account-management-sql-statements/grant.md#connection-admin) privilege.
 * Commandline: `--max-user-connections=#`
 * Scope: Global, Session
 * Dynamic: Yes, (except when globally set to `0` or `-1`)
@@ -1829,7 +1829,7 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 
 #### `old_passwords`
 
-* Description: If set to `1` (`0` is default), MariaDB reverts to using the `[mysql_old_password](../../../../reference/plugins/authentication-plugins/authentication-plugin-mysql_old_password.md)` authentication plugin by default for newly created users and passwords, instead of the `[mysql_native_password](../../../../reference/plugins/authentication-plugins/authentication-plugin-mysql_native_password.md)` authentication plugin.
+* Description: If set to `1` (`0` is default), MariaDB reverts to using the [mysql_old_password](../../../../reference/plugins/authentication-plugins/authentication-plugin-mysql_old_password.md) authentication plugin by default for newly created users and passwords, instead of the [mysql_native_password](../../../../reference/plugins/authentication-plugins/authentication-plugin-mysql_native_password.md) authentication plugin.
 * Scope: Global, Session
 * Dynamic: Yes
 * Data Type: `boolean`
@@ -1841,11 +1841,11 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 
 MAX([max\_connections](server-system-variables.md#max_connections)\*5, [max\_connections](server-system-variables.md#max_connections) +[table\_open\_cache](server-system-variables.md#table_open_cache)\*2)
 
-MariaDB sets the limit with `[setrlimit](https://linux.die.net/man/2/setrlimit)`. MariaDB cannot set this to exceed the hard limit imposed by the operating system. Therefore, you may also need to change the hard limit. There are a few ways to do so.
+MariaDB sets the limit with [setrlimit](https://linux.die.net/man/2/setrlimit). MariaDB cannot set this to exceed the hard limit imposed by the operating system. Therefore, you may also need to change the hard limit. There are a few ways to do so.
 
-* If you are using `[mariadbd_safe](../../../../clients-and-utilities/legacy-clients-and-utilities/mariadbd_safe.md)` to start `mariadbd`, then see the instructions at [mariadbd\_safe: Configuring the Open Files Limit](../../../server-management/starting-and-stopping-mariadb/mariadbd-safe.md#configuring-the-open-files-limit).
-* If you are using `[systemd](../../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/systemd.md)` to start `mariadbd`, then see the instructions at [systemd: Configuring the Open Files Limit](../../../server-management/starting-and-stopping-mariadb/systemd.md#configuring-the-open-files-limit).
-* Otherwise, you can change the hard limit for the `mysql` user account by modifying `[/etc/security/limits.conf](https://linux.die.net/man/5/limits.conf)`. See [Configuring Linux for MariaDB: Configuring the Open Files Limit](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/mariadb-performance-advanced-configurations/configuring-linux-for-mariadb.md#configuring-the-open-files-limit) for more details.
+* If you are using [mariadbd_safe](../../../../clients-and-utilities/legacy-clients-and-utilities/mariadbd_safe.md) to start `mariadbd`, then see the instructions at [mariadbd\_safe: Configuring the Open Files Limit](../../../server-management/starting-and-stopping-mariadb/mariadbd-safe.md#configuring-the-open-files-limit).
+* If you are using [systemd](../../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/systemd.md) to start `mariadbd`, then see the instructions at [systemd: Configuring the Open Files Limit](../../../server-management/starting-and-stopping-mariadb/systemd.md#configuring-the-open-files-limit).
+* Otherwise, you can change the hard limit for the `mysql` user account by modifying [/etc/security/limits.conf](https://linux.die.net/man/5/limits.conf). See [Configuring Linux for MariaDB: Configuring the Open Files Limit](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/mariadb-performance-advanced-configurations/configuring-linux-for-mariadb.md#configuring-the-open-files-limit) for more details.
 * Commandline: `--open-files-limit=count`
 * Scope: Global
 * Dynamic: No
@@ -2320,7 +2320,7 @@ MariaDB sets the limit with `[setrlimit](https://linux.die.net/man/2/setrlimit)`
 
 #### `secure_auth`
 
-* Description: Connections will be blocked if they use the the `[mysql_old_password](../../../../reference/plugins/authentication-plugins/authentication-plugin-mysql_old_password.md)` authentication plugin. The server will also fail to start if the privilege tables are in the old, pre-MySQL 4.1 format. `secure_auth=0` was deprecated in [MariaDB 10.6.17](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/mariadb-10-6-17-release-notes), [MariaDB 10.11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-11-series/mariadb-10-11-7-release-notes), [MariaDB 11.0.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-0-series/mariadb-11-0-5-release-notes), [MariaDB 11.1.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-1-series/mariadb-11-1-4-release-notes), [MariaDB 11.2.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-3-release-notes).
+* Description: Connections will be blocked if they use the the [mysql_old_password](../../../../reference/plugins/authentication-plugins/authentication-plugin-mysql_old_password.md) authentication plugin. The server will also fail to start if the privilege tables are in the old, pre-MySQL 4.1 format. `secure_auth=0` was deprecated in [MariaDB 10.6.17](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/mariadb-10-6-17-release-notes), [MariaDB 10.11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-11-series/mariadb-10-11-7-release-notes), [MariaDB 11.0.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-0-series/mariadb-11-0-5-release-notes), [MariaDB 11.1.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-1-series/mariadb-11-1-4-release-notes), [MariaDB 11.2.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-3-release-notes).
 * Commandline: `--secure-auth`
 * Scope: Global
 * Dynamic: Yes
@@ -2415,7 +2415,7 @@ MariaDB sets the limit with `[setrlimit](https://linux.die.net/man/2/setrlimit)`
 #### `skip_external_locking`
 
 * Description: If this system variable is set, then some kinds of external table locks will be disabled for some [storage engines](../../../server-usage/storage-engines/).
-  * If this system variable is set, then the [MyISAM](../../../server-usage/storage-engines/myisam-storage-engine/) storage engine will not use file-based locks. Otherwise, it will use the `[fcntl()](https://linux.die.net/man/2/fcntl)` function with the `F_SETLK` option to get file-based locks on Unix, and it will use the `[LockFileEx()](https://docs.microsoft.com/en-us/windows/desktop/api/fileapi/nf-fileapi-lockfileex)` function to get file-based locks on Windows.
+  * If this system variable is set, then the [MyISAM](../../../server-usage/storage-engines/myisam-storage-engine/) storage engine will not use file-based locks. Otherwise, it will use the [fcntl()](https://linux.die.net/man/2/fcntl) function with the `F_SETLK` option to get file-based locks on Unix, and it will use the [LockFileEx()](https://docs.microsoft.com/en-us/windows/desktop/api/fileapi/nf-fileapi-lockfileex) function to get file-based locks on Windows.
   * If this system variable is set, then the [Aria](../../../server-usage/storage-engines/aria/) storage engine will not lock a table when it decrements the table's in-file counter that keeps track of how many connections currently have the table open. See [MDEV-19393](https://jira.mariadb.org/browse/MDEV-19393) for more information.
   * Note that command line option name is the opposite of the variable name, and the value is the opposite too. `--external-locking=1` means `@@skip_external_locking=0`, and vice versa.
 * Commandline: `--external-locking`
@@ -2527,7 +2527,7 @@ MariaDB sets the limit with `[setrlimit](https://linux.die.net/man/2/setrlimit)`
 #### `sql_big_tables`
 
 * Description: Old variable, which if set to 1, allows large result sets by saving all temporary sets to disk, avoiding 'table full' errors. No longer needed, as the server now handles this automatically.
-  * This is a synonym for `[big_tables](#big_tables)`.
+  * This is a synonym for [big_tables](#big_tables).
 * Commandline: `--sql-big-tables`
 * Scope: Global, Session
 * Dynamic: Yes
@@ -2569,7 +2569,7 @@ MariaDB sets the limit with `[setrlimit](https://linux.die.net/man/2/setrlimit)`
 #### `sql_low_priority_updates`
 
 * Description: If set to 1 (0 is the default), for [storage engines](../../../server-usage/storage-engines/) that use only table-level locking ([Aria](../../../server-usage/storage-engines/aria/), [MyISAM](../../../server-usage/storage-engines/myisam-storage-engine/), [MEMORY](../../../server-usage/storage-engines/memory-storage-engine.md) and [MERGE](../../../server-usage/storage-engines/merge.md)), all INSERTs, UPDATEs, DELETEs and LOCK TABLE WRITEs will wait until there are no more SELECTs or LOCK TABLE READs pending on the relevant tables. Set this to 1 if reads are prioritized over writes.
-  * This is a synonym for `[low_priority_updates](#low_priority_updates)`.
+  * This is a synonym for [low_priority_updates](#low_priority_updates).
 * Commandline: `--sql-low-priority-updates`
 * Scope: Global, Session
 * Dynamic: Yes
@@ -2721,7 +2721,7 @@ MariaDB sets the limit with `[setrlimit](https://linux.die.net/man/2/setrlimit)`
 #### `table_open_cache_instances`
 
 * Description: This system variable specifies the maximum number of table cache instances. MariaDB Server initially creates just a single instance. However, whenever it detects contention on the existing instances, it will automatically create a new instance. When the number of instances has been increased due to contention, it does not decrease again. The default value of this system variable is `8`, which is expected to handle up to 100 CPU cores. If your system is larger than this, then you may benefit from increasing the value of this system variable.
-  * Depending on the ratio of actual available file handles, and `[table_open_cache](server-system-variables.md#table_open_cache)` size, the max. instance count may be auto adjusted to a lower value on server startup.
+  * Depending on the ratio of actual available file handles, and [table_open_cache](server-system-variables.md#table_open_cache) size, the max. instance count may be auto adjusted to a lower value on server startup.
   * The implementation and behavior of this feature is different than the same feature in MySQL 5.6.
   * See [Optimizing table\_open\_cache: Automatic Creation of New Table Open Cache Instances](optimizing-table_open_cache.md#automatic-creation-of-new-table-open-cache-instances) for more information.
 * Scope: Global
@@ -2813,7 +2813,7 @@ MariaDB sets the limit with `[setrlimit](https://linux.die.net/man/2/setrlimit)`
 
 #### `time_zone`
 
-* Description: The global value determines the default [time zone](../../../reference/data-types/string-data-types/character-sets/internationalization-and-localization/time-zones.md) for sessions that connect. The session value determines the session's active [time zone](../../../reference/data-types/string-data-types/character-sets/internationalization-and-localization/time-zones.md). When it is set to `SYSTEM`, the session's time zone is determined by the `[system_time_zone](#system_time_zone)` system variable.
+* Description: The global value determines the default [time zone](../../../reference/data-types/string-data-types/character-sets/internationalization-and-localization/time-zones.md) for sessions that connect. The session value determines the session's active [time zone](../../../reference/data-types/string-data-types/character-sets/internationalization-and-localization/time-zones.md). When it is set to `SYSTEM`, the session's time zone is determined by the [system_time_zone](#system_time_zone) system variable.
 * Commandline: `--default-time-zone=string`
 * Scope: Global, Session
 * Dynamic: Yes

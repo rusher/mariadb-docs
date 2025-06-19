@@ -106,7 +106,7 @@ InnoDB's file-per-table tablespaces are transportable, which means that you can 
 
 ## Importing Tables
 
-Tables that use most storage engines are immediately usable when their files are copied to the new `[datadir](../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir)`.
+Tables that use most storage engines are immediately usable when their files are copied to the new [datadir](../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir).
 
 However, this is not true for tables that use [InnoDB](../storage-engines/innodb/). InnoDB tables have to be imported with [ALTER TABLE ... IMPORT TABLESPACE](../../reference/sql-statements/data-definition/alter/alter-table.md#import-tablespace). See [Copying Transportable Tablespaces](../storage-engines/innodb/innodb-tablespaces/innodb-file-per-table-tablespaces.md#copying-transportable-tablespaces) for more information.
 

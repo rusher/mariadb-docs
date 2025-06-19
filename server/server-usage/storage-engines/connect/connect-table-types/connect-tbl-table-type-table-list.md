@@ -78,7 +78,7 @@ value. They would have 0 if the sex column had been created NOT NULL.
 
 ### Sub-tables of not CONNECT engines
 
-Sub-tables are accessed as `[PROXY](connect-proxy-table-type.md)`\
+Sub-tables are accessed as [PROXY](connect-proxy-table-type.md)\
 tables. For not CONNECT sub-tables that are accessed via the MySQL API, it is\
 possible like with `PROXY` to change the MYSQL default options. Of course,\
 this will apply to all not CONNECT tables of the list.

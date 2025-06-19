@@ -96,9 +96,9 @@ Most of the described tools also provide a way to enter a passphrase interactive
 
 ## Writing extra status files
 
-By default files like `[xtrabackup_checkpoints](files-created-by-mariabackup.md#xtrabackup_checkpoints)` are also written to the output stream only, and so would not be available for taking further incremental backups without prior extraction from the compressed or encrypted stream output file.
+By default files like [xtrabackup_checkpoints](files-created-by-mariabackup.md#xtrabackup_checkpoints) are also written to the output stream only, and so would not be available for taking further incremental backups without prior extraction from the compressed or encrypted stream output file.
 
-To avoid this these files can additionally be written to a directory that can then be used as input for further incremental backups using the `[--extra-lsndir=...](mariabackup-options.md#-extra-lsndir)` option.
+To avoid this these files can additionally be written to a directory that can then be used as input for further incremental backups using the [--extra-lsndir=...](mariabackup-options.md#-extra-lsndir) option.
 
 See also e.g: [Combining incremental backups with streaming output](incremental-backup-and-restore-with-mariabackup.md#combining-with-stream-output)
 

@@ -1,6 +1,6 @@
 # Configuring PAM Authentication and User Mapping with Unix Authentication
 
-In this article, we will walk through the configuration of PAM authentication using the `[pam](authentication-plugin-pam.md)` authentication plugin and user and group mapping with the `[pam_user_map](user-and-group-mapping-with-pam.md)` PAM module. The primary authentication will be handled by the `[pam_unix](https://linux.die.net/man/8/pam_unix)` PAM module, which performs standard Unix password authentication.
+In this article, we will walk through the configuration of PAM authentication using the [pam](authentication-plugin-pam.md) authentication plugin and user and group mapping with the [pam_user_map](user-and-group-mapping-with-pam.md) PAM module. The primary authentication will be handled by the [pam_unix](https://linux.die.net/man/8/pam_unix) PAM module, which performs standard Unix password authentication.
 
 ## Hypothetical Requirements
 
@@ -152,7 +152,7 @@ GRANT PROXY ON 'dba'@'%' TO ''@'%';
 
 ## Testing our Configuration
 
-Next, let's test out our configuration by [verifying that mapping is occurring](user-and-group-mapping-with-pam.md#verifying-that-mapping-is-occurring). We can verify this by logging in as each of our users and comparing the return value of `[USER()](../../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/user.md)`, which is the original user name and the return value of `[CURRENT_USER()](../../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/current_user.md)`, which is the authenticated user name.
+Next, let's test out our configuration by [verifying that mapping is occurring](user-and-group-mapping-with-pam.md#verifying-that-mapping-is-occurring). We can verify this by logging in as each of our users and comparing the return value of [USER()](../../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/user.md), which is the original user name and the return value of [CURRENT_USER()](../../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/current_user.md), which is the authenticated user name.
 
 First, let's test out our `foo` user:
 
@@ -176,7 +176,7 @@ MariaDB [(none)]> SELECT USER(), CURRENT_USER();
 1 row in set (0.000 sec)
 ```
 
-We can verify that our `foo` Unix user was properly mapped to the `bar` MariaDB user by looking at the return value of `[CURRENT_USER()](../../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/current_user.md)`.
+We can verify that our `foo` Unix user was properly mapped to the `bar` MariaDB user by looking at the return value of [CURRENT_USER()](../../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/current_user.md).
 
 Then let's test out our `alice` user in the `dba` group:
 
@@ -222,7 +222,7 @@ MariaDB [(none)]> SELECT USER(), CURRENT_USER();
 1 row in set (0.000 sec)
 ```
 
-We can verify that our `alice` and `bob` Unix users in the `dba` Unix group were properly mapped to the `dba` MariaDB user by looking at the return values of `[CURRENT_USER()](../../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/current_user.md)`.
+We can verify that our `alice` and `bob` Unix users in the `dba` Unix group were properly mapped to the `dba` MariaDB user by looking at the return values of [CURRENT_USER()](../../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/current_user.md).
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

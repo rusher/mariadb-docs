@@ -16,12 +16,12 @@ Note that upgrading from earlier versions will leave all users, including root a
 To gain the privileges back on a global user, e.g. `root@localhost`:
 
 1. Start server with [skip-grant-tables](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#skip_grant_tables) as a configuration option
-2. Run `[mariadb client](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/mariadb-client/)`
-3. Execute `[FLUSH PRIVILEGES](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush)`
-4. Execute `[GRANT ALL ON *.* TO root@localhost WITH GRANT OPTION](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant)`
+2. Run [mariadb client](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/mariadb-client/)
+3. Execute [FLUSH PRIVILEGES](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush)
+4. Execute [GRANT ALL ON *.* TO root@localhost WITH GRANT OPTION](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant)
 5. Remove the `skip-grant-tables` option from the configuration file.
 
-To re-gain a database level privileges, using a user with `SHOW CREATE ROUTINE` on `*.*` execute `[GRANT ALL ON db.* TO user] optionally WITH GRANT OPTION](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant)`.
+To re-gain a database level privileges, using a user with `SHOW CREATE ROUTINE` on `*.*` execute [GRANT ALL ON db.* TO user] optionally WITH GRANT OPTION](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant).
 
 [MariaDB 11.3.2](mariadb-11-3-2-release-notes.md) is a previous stable rolling release of MariaDB. It is an evolution of [MariaDB 11.2](../release-notes-mariadb-11-2-series/what-is-mariadb-112.md) with several entirely new features. It is a rolling release — one is expected to upgrade to 11.4.2, there will be no 11.3.3 — see [Adjusting the MariaDB Server release model](https://mariadb.org/adjusting-release-model/).
 

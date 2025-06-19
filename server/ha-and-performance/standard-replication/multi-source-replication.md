@@ -28,17 +28,17 @@ be used as a suffix for relay logs and primary info index files.
 
 The new syntax introduced to handle many connections:
 
-* `[CHANGE MASTER ['connection_name'] TO ...](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md)`. This creates or modifies a connection to a primary.
+* [CHANGE MASTER ['connection_name'] TO ...](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md). This creates or modifies a connection to a primary.
 * `FLUSH RELAY LOGS ['connection_name']`
-* `[MASTER_POS_WAIT(....,['connection_name'])](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/master_pos_wait.md)`
+* [MASTER_POS_WAIT(....,['connection_name'])](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/miscellaneous-functions/master_pos_wait.md)
 * `[RESET SLAVE ['connection_name'] [ALL](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/reset-replica.md)]`. This is used to reset a replica's replication position or to remove a replica permanently.
-* `[SHOW RELAYLOG ['connection_name'] EVENTS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-relaylog-events.md)`
-* `[SHOW SLAVE ['connection_name'] STATUS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-replica-status.md)`
-* `[SHOW ALL SLAVES STATUS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-replica-status.md)`
+* [SHOW RELAYLOG ['connection_name'] EVENTS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-relaylog-events.md)
+* [SHOW SLAVE ['connection_name'] STATUS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-replica-status.md)
+* [SHOW ALL SLAVES STATUS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-replica-status.md)
 * `[START SLAVE ['connection_name'](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/start-replica.md)...]]`
-* `[START ALL SLAVES ...](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/start-replica.md)`
-* `[STOP SLAVE ['connection_name'] ...](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/stop-replica.md)`
-* `[STOP ALL SLAVES ...](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/stop-replica.md)`
+* [START ALL SLAVES ...](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/start-replica.md)
+* [STOP SLAVE ['connection_name'] ...](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/stop-replica.md)
+* [STOP ALL SLAVES ...](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/stop-replica.md)
 
 The original old-style connection is an empty string `''`.\
 You don't have to use this connection if you don't want to.
@@ -105,7 +105,7 @@ New status variables:
 | [Com\_stop\_slave](replication-and-binary-log-status-variables.md)        | Number of executed STOP SLAVE commands. This replaces Com\_slave\_stop.   |
 | [Com\_stop\_all\_slaves](replication-and-binary-log-status-variables.md)  | Number of executed STOP ALL SLAVES commands.                              |
 
-`[SHOW ALL SLAVES STATUS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-replica-status.md)` has the following new columns:
+[SHOW ALL SLAVES STATUS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-replica-status.md) has the following new columns:
 
 | Name                        | Description                                                            |
 | --------------------------- | ---------------------------------------------------------------------- |
@@ -154,7 +154,7 @@ with this as a prefix.
 * All executed commands are stored in the normal binary log (nothing new here).
 * If the server variable `log_warnings` > 1 then you will get some information in the log about how the multi-master-info file is updated (mainly for debugging).
 * The output of [SHOW ALL SLAVES STATUS](../../reference/sql-statements/administrative-sql-statements/show/show-replica-status.md) has one more column than `SHOW SLAVE STATUS`, since it includes the `connection_name` column.
-* `[RESET SLAVE](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/reset-replica.md)` now deletes all relay-log files.
+* [RESET SLAVE](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/reset-replica.md) now deletes all relay-log files.
 
 ## replicate-... Variables
 

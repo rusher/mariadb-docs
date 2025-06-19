@@ -31,40 +31,40 @@ for 64-bit (amd64) systems, and one with both.
 
 1. [MariaDB 5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-2-series/changes-improvements-in-mariadb-5-2) Live iso images (text) for i386, amd64 or multi architectures.
 
-* `[binary-hybrid-squeeze-i386-mariadb52-text.iso](https://rsync.it-infrastrukturen.org/public-mariadb/binary-hybrid-squeeze-i386-mariadb52-text.iso)`
-* `[binary-hybrid-squeeze-amd64-mariadb52-text.iso](https://rsync.it-infrastrukturen.org/public-mariadb/binary-hybrid-squeeze-amd64-mariadb52-text.iso)`
-* `[binary-hybrid-squeeze-i386-amd64-mariadb52-text.iso](https://rsync.it-infrastrukturen.org/public-mariadb/binary-hybrid-squeeze-i386-amd64-mariadb52-text.iso)`
+* [binary-hybrid-squeeze-i386-mariadb52-text.iso](https://rsync.it-infrastrukturen.org/public-mariadb/binary-hybrid-squeeze-i386-mariadb52-text.iso)
+* [binary-hybrid-squeeze-amd64-mariadb52-text.iso](https://rsync.it-infrastrukturen.org/public-mariadb/binary-hybrid-squeeze-amd64-mariadb52-text.iso)
+* [binary-hybrid-squeeze-i386-amd64-mariadb52-text.iso](https://rsync.it-infrastrukturen.org/public-mariadb/binary-hybrid-squeeze-i386-amd64-mariadb52-text.iso)
 
 1. [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3) Live iso images (text) for i386, amd64 or multi architectures.
 
-* `[binary-hybrid-squeeze-i386-mariadb53-text.iso](https://rsync.it-infrastrukturen.org/public-mariadb/binary-hybrid-squeeze-i386-mariadb53-text.iso)`
-* `[binary-hybrid-squeeze-amd64-mariadb53-text.iso](https://rsync.it-infrastrukturen.org/public-mariadb/binary-hybrid-squeeze-amd64-mariadb53-text.iso)`
-* `[binary-hybrid-squeeze-i386-amd64-mariadb53-text.iso](https://rsync.it-infrastrukturen.org/public-mariadb/binary-hybrid-squeeze-i386-amd64-mariadb53-text.iso)`
+* [binary-hybrid-squeeze-i386-mariadb53-text.iso](https://rsync.it-infrastrukturen.org/public-mariadb/binary-hybrid-squeeze-i386-mariadb53-text.iso)
+* [binary-hybrid-squeeze-amd64-mariadb53-text.iso](https://rsync.it-infrastrukturen.org/public-mariadb/binary-hybrid-squeeze-amd64-mariadb53-text.iso)
+* [binary-hybrid-squeeze-i386-amd64-mariadb53-text.iso](https://rsync.it-infrastrukturen.org/public-mariadb/binary-hybrid-squeeze-i386-amd64-mariadb53-text.iso)
 
 1. [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3) Live iso images with LXDE for i386, amd64 or multi architectures.
 
-* `[binary-hybrid-squeeze-i386-mariadb53-lxde.iso](https://rsync.it-infrastrukturen.org/public-mariadb/binary-hybrid-squeeze-i386-mariadb53-lxde.iso)`
-* `[binary-hybrid-squeeze-amd64-mariadb53-lxde.iso](https://rsync.it-infrastrukturen.org/public-mariadb/binary-hybrid-squeeze-amd64-mariadb53-lxde.iso)`
-* `[binary-hybrid-squeeze-i386-amd64-mariadb53-lxde.iso](https://rsync.it-infrastrukturen.org/public-mariadb/binary-hybrid-squeeze-i386-amd64-mariadb53-lxde.iso)`
+* [binary-hybrid-squeeze-i386-mariadb53-lxde.iso](https://rsync.it-infrastrukturen.org/public-mariadb/binary-hybrid-squeeze-i386-mariadb53-lxde.iso)
+* [binary-hybrid-squeeze-amd64-mariadb53-lxde.iso](https://rsync.it-infrastrukturen.org/public-mariadb/binary-hybrid-squeeze-amd64-mariadb53-lxde.iso)
+* [binary-hybrid-squeeze-i386-amd64-mariadb53-lxde.iso](https://rsync.it-infrastrukturen.org/public-mariadb/binary-hybrid-squeeze-i386-amd64-mariadb53-lxde.iso)
 
 1. [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3) Live iso images with Gnome for i386, amd64 or multi architectures.
 
-* `[binary-hybrid-squeeze-i386-mariadb53-gnome.iso](https://rsync.it-infrastrukturen.org/public-mariadb/binary-hybrid-squeeze-i386-mariadb53-gnome.iso)`
-* `[binary-hybrid-squeeze-amd64-mariadb53-gnome.iso](https://rsync.it-infrastrukturen.org/public-mariadb/binary-hybrid-squeeze-amd64-mariadb53-gnome.iso)`
-* `[binary-hybrid-squeeze-i386-amd64-mariadb53-gnome.iso](https://rsync.it-infrastrukturen.org/public-mariadb/binary-hybrid-squeeze-i386-amd64-mariadb53-gnome.iso)`
+* [binary-hybrid-squeeze-i386-mariadb53-gnome.iso](https://rsync.it-infrastrukturen.org/public-mariadb/binary-hybrid-squeeze-i386-mariadb53-gnome.iso)
+* [binary-hybrid-squeeze-amd64-mariadb53-gnome.iso](https://rsync.it-infrastrukturen.org/public-mariadb/binary-hybrid-squeeze-amd64-mariadb53-gnome.iso)
+* [binary-hybrid-squeeze-i386-amd64-mariadb53-gnome.iso](https://rsync.it-infrastrukturen.org/public-mariadb/binary-hybrid-squeeze-i386-amd64-mariadb53-gnome.iso)
 
 1. [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) Live images
 
-* `[binary-hybrid-squeeze-amd64-mariadb55-text-bpo.iso](https://rsync.it-infrastrukturen.org/public-mariadb/binary-hybrid-squeeze-amd64-mariadb55-text-bpo.iso)`
-* `[binary-hybrid-squeeze-amd64-mariadb55-lxde-bpo.iso](https://rsync.it-infrastrukturen.org/public-mariadb/binary-hybrid-squeeze-amd64-mariadb55-lxde-bpo.iso)`
-* `[binary-hybrid-squeeze-amd64-mariadb55-gnome-bpo.iso](https://rsync.it-infrastrukturen.org/public-mariadb/binary-hybrid-squeeze-amd64-mariadb55-gnome-bpo.iso)`
-* `[binary-hybrid-squeeze-amd64-mariadb55-awesome-bpo.iso](https://rsync.it-infrastrukturen.org/public-mariadb/binary-hybrid-squeeze-amd64-mariadb55-awesome-bpo.iso)`
+* [binary-hybrid-squeeze-amd64-mariadb55-text-bpo.iso](https://rsync.it-infrastrukturen.org/public-mariadb/binary-hybrid-squeeze-amd64-mariadb55-text-bpo.iso)
+* [binary-hybrid-squeeze-amd64-mariadb55-lxde-bpo.iso](https://rsync.it-infrastrukturen.org/public-mariadb/binary-hybrid-squeeze-amd64-mariadb55-lxde-bpo.iso)
+* [binary-hybrid-squeeze-amd64-mariadb55-gnome-bpo.iso](https://rsync.it-infrastrukturen.org/public-mariadb/binary-hybrid-squeeze-amd64-mariadb55-gnome-bpo.iso)
+* [binary-hybrid-squeeze-amd64-mariadb55-awesome-bpo.iso](https://rsync.it-infrastrukturen.org/public-mariadb/binary-hybrid-squeeze-amd64-mariadb55-awesome-bpo.iso)
 
 1. [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) Live images demonstration video
 
-* `[README-mariadb-video.txt](https://rsync.it-infrastrukturen.org/public-mariadb/README-mariadb-video.txt)`
-* `[video-mariadb5.5-live-images-on-USB.ogv](https://rsync.it-infrastrukturen.org/public-mariadb/video-mariadb5.5-live-images-on-USB.ogv)`
-* `[video-mariadb5.5-live-images-on-USB.mp4](https://rsync.it-infrastrukturen.org/public-mariadb/video-mariadb5.5-live-images-on-USB.mp4)`
+* [README-mariadb-video.txt](https://rsync.it-infrastrukturen.org/public-mariadb/README-mariadb-video.txt)
+* [video-mariadb5.5-live-images-on-USB.ogv](https://rsync.it-infrastrukturen.org/public-mariadb/video-mariadb5.5-live-images-on-USB.ogv)
+* [video-mariadb5.5-live-images-on-USB.mp4](https://rsync.it-infrastrukturen.org/public-mariadb/video-mariadb5.5-live-images-on-USB.mp4)
 
 The LXDE and Gnome images contain documentation under `/srv/PDF`. Including\
 instructions on how to create your own Debian live images in live mode (you\

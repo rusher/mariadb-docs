@@ -9,7 +9,7 @@ SHOW PACKAGE STATUS
 
 ## Description
 
-The `SHOW PACKAGE STATUS` statement returns characteristics of stored package specifications, such as the database, name, type, creator, creation and modification dates, and character set information. A similar statement, `[SHOW PACKAGE BODY STATUS](show-package-body-status.md)`, displays information about stored package bodies (i.e. implementations).
+The `SHOW PACKAGE STATUS` statement returns characteristics of stored package specifications, such as the database, name, type, creator, creation and modification dates, and character set information. A similar statement, [SHOW PACKAGE BODY STATUS](show-package-body-status.md), displays information about stored package bodies (i.e. implementations).
 
 The `LIKE` clause, if present, indicates which package names to match. The `WHERE` and `LIKE` clauses can be given to select rows using more general conditions, as discussed in [Extended SHOW](extended-show.md).
 

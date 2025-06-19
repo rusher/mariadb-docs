@@ -44,7 +44,7 @@ literally. In practice, this is rarely necessary.
 
 The `WHERE` and `LIKE` clauses can be given to select rows using more general conditions, as discussed in [Extended SHOW](extended-show.md).
 
-See `[SET](../set-commands/set.md)` for information on setting server system variables.
+See [SET](../set-commands/set.md) for information on setting server system variables.
 
 See [Server System Variables](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md) for a list of all the variables that can be set.
 

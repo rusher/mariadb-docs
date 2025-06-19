@@ -13,7 +13,7 @@ It contains the following columns:
 | PRIVILEGE\_TYPE | The granted privilege.                                             |
 | IS\_GRANTABLE   | Whether the privilege can be granted.                              |
 
-The same information in a different format can be found in the `[mysql.db](../../the-mysql-database-tables/mysql-db-table.md)` table.
+The same information in a different format can be found in the [mysql.db](../../the-mysql-database-tables/mysql-db-table.md) table.
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

@@ -11,7 +11,7 @@ SHOW PROCEDURE STATUS
 
 This statement is a MariaDB extension. It returns characteristics of a stored\
 procedure, such as the database, name, type, creator, creation and modification\
-dates, and character set information. A similar statement,`[SHOW FUNCTION STATUS](show-function-status.md)`, displays\
+dates, and character set information. A similar statement,[SHOW FUNCTION STATUS](show-function-status.md), displays\
 information about stored functions.
 
 The `LIKE` clause, if present, indicates which procedure or\

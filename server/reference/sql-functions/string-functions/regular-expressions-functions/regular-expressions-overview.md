@@ -345,7 +345,7 @@ SELECT '-Maria' REGEXP '[-1-10]';
 
 #### Word boundaries
 
-The `[:<:](https://mariadb.com/kb/en/%3C%3A)` and `[:>:](https://mariadb.com/kb/en/%3E%3A)` patterns match the beginning and the end of a word respectively. For example:
+The [:<:](https://mariadb.com/kb/en/%3C%3A) and [:>:](https://mariadb.com/kb/en/%3E%3A) patterns match the beginning and the end of a word respectively. For example:
 
 ```
 SELECT 'How do I upgrade MariaDB?' REGEXP '[[:<:]]MariaDB[[:>:]]';

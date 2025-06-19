@@ -4,25 +4,25 @@ The precedence is the order in which the SQL operators are evaluated.
 
 The following list shows the SQL operator precedence. Operators that appear first in the list have a higher precedence. Operators which are listed together have the same precedence.
 
-* `[INTERVAL](../sql-statements/built-in-functions/date-time-functions/date-and-time-units.md)`
-* `[BINARY](../sql-statements/built-in-functions/string-functions/binary-operator.md)`, `[COLLATE](../../data-types/string-data-types/character-sets/setting-character-sets-and-collations.md#literals)`
-* `[!](logical-operators/not.md)`
-* `[-](arithmetic-operators/subtraction-operator-.md)` (unary minus), [bitwise not](../../sql-functions/secondary-functions/bit-functions-and-operators/bitwise-not.md) () (unary bit inversion)
+* [INTERVAL](../sql-statements/built-in-functions/date-time-functions/date-and-time-units.md)
+* [BINARY](../sql-statements/built-in-functions/string-functions/binary-operator.md), [COLLATE](../../data-types/string-data-types/character-sets/setting-character-sets-and-collations.md#literals)
+* [!](logical-operators/not.md)
+* [-](arithmetic-operators/subtraction-operator-.md) (unary minus), [bitwise not](../../sql-functions/secondary-functions/bit-functions-and-operators/bitwise-not.md) () (unary bit inversion)
 * `||` (string concatenation)
-* `[^](../sql-statements/built-in-functions/secondary-functions/bit-functions-and-operators/bitwise-xor.md)`
-* `[*](../sql-statements/built-in-functions/numeric-functions/multiplication-operator.md)`, `[/](../sql-statements/built-in-functions/numeric-functions/division-operator.md)`, `[DIV](../sql-statements/built-in-functions/numeric-functions/div.md)`, `[%](arithmetic-operators/modulo-operator.md)`, `[MOD](../sql-statements/built-in-functions/numeric-functions/mod.md)`
-* `[-](arithmetic-operators/subtraction-operator-.md)`, `[+](../sql-statements/built-in-functions/numeric-functions/addition-operator.md)`
-* `[<<](../sql-statements/built-in-functions/secondary-functions/bit-functions-and-operators/shift-left.md)`, `[>>](../sql-statements/built-in-functions/secondary-functions/bit-functions-and-operators/shift-right.md)`
-* `[&](../sql-statements/built-in-functions/secondary-functions/bit-functions-and-operators/bitwise_and.md)`
-* `[|](../sql-statements/built-in-functions/secondary-functions/bit-functions-and-operators/bitwise-or.md)`
-* `[LIKE](../sql-statements/built-in-functions/string-functions/like.md)`, `[REGEXP](../sql-statements/built-in-functions/string-functions/regular-expressions-functions/regexp.md)`, `[IN](comparison-operators/in.md)`
-* `[BETWEEN](comparison-operators/between-and.md)`
-* `[=](comparison-operators/equal.md)` (comparison), `[<=>](comparison-operators/null-safe-equal.md)`, `[>=](comparison-operators/greater-than-or-equal.md)`, `[>](comparison-operators/greater-than.md)`, `[<=](comparison-operators/less-than-or-equal.md)`, `[<](comparison-operators/less-than.md)`, `[<>](comparison-operators/not-equal.md)`, `[!=](comparison-operators/not-equal.md)`, `[IS](comparison-operators/is.md)`
-* `[NOT](logical-operators/not.md)`
-* `[&&](logical-operators/and.md)`, `[AND](logical-operators/and.md)`
-* `[XOR](logical-operators/xor.md)`
-* `[||](logical-operators/or.md)` (logical or), `[OR](logical-operators/or.md)`
-* `[=](assignment-operators/assignment-operators-assignment-operator.md)` (assignment), `[:=](assignment-operators/assignment-operator.md)`
+* [^](../sql-statements/built-in-functions/secondary-functions/bit-functions-and-operators/bitwise-xor.md)
+* [*](../sql-statements/built-in-functions/numeric-functions/multiplication-operator.md), [/](../sql-statements/built-in-functions/numeric-functions/division-operator.md), [DIV](../sql-statements/built-in-functions/numeric-functions/div.md), [%](arithmetic-operators/modulo-operator.md), [MOD](../sql-statements/built-in-functions/numeric-functions/mod.md)
+* [-](arithmetic-operators/subtraction-operator-.md), [+](../sql-statements/built-in-functions/numeric-functions/addition-operator.md)
+* [<<](../sql-statements/built-in-functions/secondary-functions/bit-functions-and-operators/shift-left.md), [>>](../sql-statements/built-in-functions/secondary-functions/bit-functions-and-operators/shift-right.md)
+* [&](../sql-statements/built-in-functions/secondary-functions/bit-functions-and-operators/bitwise_and.md)
+* [|](../sql-statements/built-in-functions/secondary-functions/bit-functions-and-operators/bitwise-or.md)
+* [LIKE](../sql-statements/built-in-functions/string-functions/like.md), [REGEXP](../sql-statements/built-in-functions/string-functions/regular-expressions-functions/regexp.md), [IN](comparison-operators/in.md)
+* [BETWEEN](comparison-operators/between-and.md)
+* [=](comparison-operators/equal.md) (comparison), [<=>](comparison-operators/null-safe-equal.md), [>=](comparison-operators/greater-than-or-equal.md), [>](comparison-operators/greater-than.md), [<=](comparison-operators/less-than-or-equal.md), [<](comparison-operators/less-than.md), [<>](comparison-operators/not-equal.md), [!=](comparison-operators/not-equal.md), [IS](comparison-operators/is.md)
+* [NOT](logical-operators/not.md)
+* [&&](logical-operators/and.md), [AND](logical-operators/and.md)
+* [XOR](logical-operators/xor.md)
+* [||](logical-operators/or.md) (logical or), [OR](logical-operators/or.md)
+* [=](assignment-operators/assignment-operators-assignment-operator.md) (assignment), [:=](assignment-operators/assignment-operator.md)
 
 Functions precedence is always higher than operators precedence.
 

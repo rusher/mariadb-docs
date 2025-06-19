@@ -39,9 +39,9 @@ It contains the following columns:
 | COLLATION\_CONNECTION      | The [collation](../../../../../data-types/string-data-types/character-sets/) (and character set) used by the connection that created the routine.                              |
 | DATABASE\_COLLATION        | The default [collation](../../../../../data-types/string-data-types/character-sets/) (and character set) for the database, at the time the routine was created.                |
 
-It provides information similar to, but more complete, than the `[SHOW PROCEDURE STATUS](../../../show/show-procedure-status.md)` and `[SHOW FUNCTION STATUS](../../../show/show-function-status.md)` statements.
+It provides information similar to, but more complete, than the [SHOW PROCEDURE STATUS](../../../show/show-procedure-status.md) and [SHOW FUNCTION STATUS](../../../show/show-function-status.md) statements.
 
-For information about the parameters accepted by the routine, you can query the `[information_schema.PARAMETERS](information-schema-parameters-table.md)` table.
+For information about the parameters accepted by the routine, you can query the [information_schema.PARAMETERS](information-schema-parameters-table.md) table.
 
 ## See also
 

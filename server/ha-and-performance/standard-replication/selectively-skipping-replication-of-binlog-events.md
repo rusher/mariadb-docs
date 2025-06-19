@@ -79,7 +79,7 @@ Note that when events are filtered for a replica, the data in the database will\
 be different on the replica and on the primary. It is the responsibility of the\
 application to replicate the data outside of the built-in replication or\
 otherwise ensure consistency of operation. If this is not done, it is possible\
-for replication to encounter, for example,`[UNIQUE](https://mariadb.com/kb/en/)` contraint violations or\
+for replication to encounter, for example,[UNIQUE](https://mariadb.com/kb/en/) contraint violations or\
 other problems which will cause replication to stop and require manual\
 intervention to fix.
 
@@ -92,7 +92,7 @@ replicated.
 
 ## skip\_replication and sql\_log\_bin
 
-`[@@sql_log_bin](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/set-commands/set-sql_log_bin.md)` and `@@skip_replication` are somewhat\
+[@@sql_log_bin](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/set-commands/set-sql_log_bin.md) and `@@skip_replication` are somewhat\
 related, as they can both be used to prevent a change on the primary from being\
 replicated to the replica. The difference is that with `@@skip_replication`,\
 changes are still written into the binlog, and replication of the events is\

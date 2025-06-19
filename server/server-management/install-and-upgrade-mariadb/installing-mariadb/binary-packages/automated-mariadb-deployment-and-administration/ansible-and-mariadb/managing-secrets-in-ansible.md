@@ -8,9 +8,9 @@ Let's see how we can manage secrets.
 
 Most of the times, Ansible connects to the target hosts via SSH. It is common to use the system username and the SSH keys installed in `/.ssh`, which is the SSH clients default. In this case, nothing has to be done on the clients to be able to allow Ansible to use SSH, as long as they are already able to connect to the target hosts.
 
-It is also possible to specify a different username as `[ANSIBLE_REMOTE_USER](https://docs.ansible.com/ansible/latest/reference_appendices/config.html#envvar-ANSIBLE_REMOTE_USER)` and an SSH configuration file as `[ANSIBLE_NETCONF_SSH_CONFIG](https://docs.ansible.com/ansible/latest/reference_appendices/config.html#envvar-ANSIBLE_NETCONF_SSH_CONFIG)`. These settings can be specified in Ansible configuration file or as environment variables.
+It is also possible to specify a different username as [ANSIBLE_REMOTE_USER](https://docs.ansible.com/ansible/latest/reference_appendices/config.html#envvar-ANSIBLE_REMOTE_USER) and an SSH configuration file as [ANSIBLE_NETCONF_SSH_CONFIG](https://docs.ansible.com/ansible/latest/reference_appendices/config.html#envvar-ANSIBLE_NETCONF_SSH_CONFIG). These settings can be specified in Ansible configuration file or as environment variables.
 
-`[ANSIBLE_ASK_PASS](https://docs.ansible.com/ansible/latest/reference_appendices/config.html#envvar-ANSIBLE_ASK_PASS)` can be specified. If this is the case, Ansible will prompt the user asking to type an SSH password.
+[ANSIBLE_ASK_PASS](https://docs.ansible.com/ansible/latest/reference_appendices/config.html#envvar-ANSIBLE_ASK_PASS) can be specified. If this is the case, Ansible will prompt the user asking to type an SSH password.
 
 ## Avoiding Sharing Secrets
 

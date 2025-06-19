@@ -51,9 +51,9 @@ Create Table: CREATE TABLE `t` (
 
 ## Setting or Changing the Auto\_Increment Value
 
-You can use an `[ALTER TABLE](../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md)` statement to assign a new value to the `auto_increment` table option, or set the [insert\_id](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#insert_id) server system variable to change the next `AUTO_INCREMENT` value inserted by the current session.
+You can use an [ALTER TABLE](../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md) statement to assign a new value to the `auto_increment` table option, or set the [insert\_id](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#insert_id) server system variable to change the next `AUTO_INCREMENT` value inserted by the current session.
 
-`[LAST_INSERT_ID()](../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/last_insert_id.md)` can be used to see the last `AUTO_INCREMENT` value inserted by the current session.
+[LAST_INSERT_ID()](../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/last_insert_id.md) can be used to see the last `AUTO_INCREMENT` value inserted by the current session.
 
 ```
 ALTER TABLE animals AUTO_INCREMENT=8;

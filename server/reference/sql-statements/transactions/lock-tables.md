@@ -42,7 +42,7 @@ updating tables.
 `LOCK TABLES` explicitly acquires table locks for the current client session.\
 Table locks can be acquired for base tables or views. To use `LOCK TABLES`,\
 you must have the `LOCK TABLES` privilege, and the `SELECT` privilege for\
-each object to be locked. See `[GRANT](../account-management-sql-commands/grant.md)`
+each object to be locked. See [GRANT](../account-management-sql-commands/grant.md)
 
 For view locking, `LOCK TABLES` adds all base tables used in the view to the\
 set of tables to be locked and locks them automatically. If you lock a table\

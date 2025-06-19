@@ -2,7 +2,7 @@
 
 The `INNODB_CMP` and `INNODB_CMP_RESET` tables contain status information on compression operations related to [compressed XtraDB/InnoDB tables](../../../../../../../server-usage/storage-engines/innodb/innodb-row-formats/innodb-row-formats-overview.md).
 
-The `[PROCESS](../../../../../account-management-sql-commands/grant.md#global-privileges)` privilege is required to query this table.
+The [PROCESS](../../../../../account-management-sql-commands/grant.md#global-privileges) privilege is required to query this table.
 
 These tables contain the following columns:
 

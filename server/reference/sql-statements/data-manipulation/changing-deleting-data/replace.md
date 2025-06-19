@@ -32,11 +32,11 @@ REPLACE [LOW_PRIORITY | DELAYED]
 
 ## Description
 
-`REPLACE` works exactly like`[INSERT](../inserting-loading-data/insert.md)`, except that if an old row in the table\
+`REPLACE` works exactly like[INSERT](../inserting-loading-data/insert.md), except that if an old row in the table\
 has the same value as a new row for a `PRIMARY KEY` or a`UNIQUE` index, the old row is deleted before the new row is\
 inserted. If the table has more than one `UNIQUE` keys, it is possible that the new row conflicts with more than one row. In this case, all conflicting rows will be deleted.
 
-The table name can be specified in the form `db_name`.`tbl_name` or, if a default database is selected, in the form `tbl_name` (see [Identifier Qualifiers](../../../sql-structure/sql-language-structure/identifier-qualifiers.md)). This allows to use `[REPLACE ... SELECT](../inserting-loading-data/insert-select.md)` to copy rows between different databases.
+The table name can be specified in the form `db_name`.`tbl_name` or, if a default database is selected, in the form `tbl_name` (see [Identifier Qualifiers](../../../sql-structure/sql-language-structure/identifier-qualifiers.md)). This allows to use [REPLACE ... SELECT](../inserting-loading-data/insert-select.md) to copy rows between different databases.
 
 **MariaDB starting with** [**10.5.0**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1050-release-notes)
 
@@ -79,7 +79,7 @@ for the table.
 
 There are some gotchas you should be aware of, before using `REPLACE`:
 
-* If there is an `[AUTO_INCREMENT](../../../../data-types/auto_increment.md)` field, a new value will be generated.
+* If there is an [AUTO_INCREMENT](../../../../data-types/auto_increment.md) field, a new value will be generated.
 * If there are foreign keys, `ON DELETE` action will be activated by `REPLACE`.
 * [Triggers](../../../../server-usage/triggers-events/triggers/) on `DELETE` and `INSERT` will be activated by `REPLACE`.
 

@@ -11,7 +11,7 @@
 ## Description
 
 
-To deallocate a prepared statement produced with `[PREPARE](prepare-statement.md)`, use a
+To deallocate a prepared statement produced with [PREPARE](prepare-statement.md), use a
 `DEALLOCATE PREPARE` statement that refers to the prepared statement
 name.
 

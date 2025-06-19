@@ -12,16 +12,16 @@ MariaDB Connector/J 3.0.6 is a [_**Stable**_](../../../mariadb-release-criteria.
 
 ### Notable Changes
 
-* `[CONJ-984](https://jira.mariadb.org/browse/CONJ-984)` Permit executing initial command with new option `initSql`
-* `[CONJ-976](https://jira.mariadb.org/browse/CONJ-976)` Improve use of pipelining when allowLocalInfile is enabled
+* [CONJ-984](https://jira.mariadb.org/browse/CONJ-984) Permit executing initial command with new option `initSql`
+* [CONJ-976](https://jira.mariadb.org/browse/CONJ-976) Improve use of pipelining when allowLocalInfile is enabled
 
 ### Bugs Fixed
 
-* `[CONJ-985](https://jira.mariadb.org/browse/CONJ-985)` ResultSet.getObject() returns ByteSet instead of Byte\[] for BIT
-* `[CONJ-953](https://jira.mariadb.org/browse/CONJ-953)` PreparedStatement.getGeneratedKeys() returns rows when no keys are generated in insert
-* `[CONJ-975](https://jira.mariadb.org/browse/CONJ-975)` ArrayIndexOutOfBoundsException when attempt to getTime() from ResultSet
-* `[CONJ-979](https://jira.mariadb.org/browse/CONJ-979)` ResultSet.getObject() returns Byte instead of Boolean for tinyint(1)
-* `[CONJ-980](https://jira.mariadb.org/browse/CONJ-980)` Permit setObject with java.util.Date parameter
+* [CONJ-985](https://jira.mariadb.org/browse/CONJ-985) ResultSet.getObject() returns ByteSet instead of Byte\[] for BIT
+* [CONJ-953](https://jira.mariadb.org/browse/CONJ-953) PreparedStatement.getGeneratedKeys() returns rows when no keys are generated in insert
+* [CONJ-975](https://jira.mariadb.org/browse/CONJ-975) ArrayIndexOutOfBoundsException when attempt to getTime() from ResultSet
+* [CONJ-979](https://jira.mariadb.org/browse/CONJ-979) ResultSet.getObject() returns Byte instead of Boolean for tinyint(1)
+* [CONJ-980](https://jira.mariadb.org/browse/CONJ-980) Permit setObject with java.util.Date parameter
 
 ## Changelog
 

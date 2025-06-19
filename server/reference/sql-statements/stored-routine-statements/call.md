@@ -26,7 +26,7 @@ parameters. If no value is assigned to an `OUT` parameter, `NULL` is assigned (a
 
 When the procedure returns, a client program can also obtain the\
 number of rows affected for the final statement executed within the routine: At\
-the SQL level, call the `[ROW_COUNT()](../built-in-functions/secondary-functions/information-functions/row_count.md)` function; from the C\
+the SQL level, call the [ROW_COUNT()](../built-in-functions/secondary-functions/information-functions/row_count.md) function; from the C\
 API, call the `mysql_affected_rows()` function.
 
 If the `CLIENT_MULTI_RESULTS` API flag is set, `CALL` can return any number of resultsets and the called stored procedure can execute prepared statements. If it is not set, at most one resultset can be returned and prepared statements cannot be used within procedures.

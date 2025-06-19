@@ -11,7 +11,7 @@ RENAME USER old_user TO new_user
 
 The RENAME USER statement renames existing MariaDB accounts. To use it,\
 you must have the global [CREATE USER](grant.md#global-privileges) privilege\
-or the `[UPDATE](grant.md#table-privileges)` privilege for the `mysql` database.\
+or the [UPDATE](grant.md#table-privileges) privilege for the `mysql` database.\
 Each account is named using the same format as for the [CREATE USER](create-user.md)\
 statement; for example, `'jeffrey'@'localhost'`.\
 If you specify only the user name part of the account name, a host\

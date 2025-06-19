@@ -660,15 +660,15 @@ There are two status variables that can be used to monitor the effectiveness of 
 
 ## System Variables
 
-#### `[binlog_gtid_index](replication-and-binary-log-system-variables.md#binlog_gtid_index)`
+#### [binlog_gtid_index](replication-and-binary-log-system-variables.md#binlog_gtid_index)
 
 Enables/disables [binlog indexing](gtid.md#binlog-indexing).
 
-#### `[binlog_gtid_index_page_size](replication-and-binary-log-system-variables.md#binlog_gtid_index_page_size)`
+#### [binlog_gtid_index_page_size](replication-and-binary-log-system-variables.md#binlog_gtid_index_page_size)
 
 Adjusts the size of the pages
 
-#### `[binlog_gtid_index_span_min](replication-and-binary-log-system-variables.md#binlog_gtid_index_span_min)`
+#### [binlog_gtid_index_span_min](replication-and-binary-log-system-variables.md#binlog_gtid_index_span_min)
 
 Adjusts the sparseness of the index
 

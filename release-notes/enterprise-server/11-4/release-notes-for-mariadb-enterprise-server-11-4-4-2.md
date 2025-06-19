@@ -129,7 +129,7 @@ orary";
 
 ## Operational Enhancements
 
-* Online Schema Change (OSC) is new server internal functionality which makes all schema changes (`[ALTER TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-table)` commands) non-blocking. ([MDEV-16329](https://jira.mariadb.org/browse/MDEV-16329))
+* Online Schema Change (OSC) is new server internal functionality which makes all schema changes ([ALTER TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-table) commands) non-blocking. ([MDEV-16329](https://jira.mariadb.org/browse/MDEV-16329))
   * OSC targets a problem previously solvable using third-party solutions, in a way which reduces operational impact. Some aspects of the OSC implementation are operationally significant:
     * OSC performs internal Copy-Apply-Replace: First, the altered table gets copied, then the online changes get applied. A short table lock occurs when applying last changes and renaming the tables. The binary log is not used in this process. This is significant because some third-party approaches to this problem depend on client connections which can be subject to connection timeouts and similar factors.
     * OSC is asynchronous: Changes from applications are first stored in an online change buffer. This is significant because some third-party approaches to this problem are synchronous and as result impact the execution of other transactions.

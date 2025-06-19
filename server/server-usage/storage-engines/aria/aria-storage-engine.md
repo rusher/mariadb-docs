@@ -43,7 +43,7 @@ Some other improvements are:
   engines that uses the default way to calculate and MyISAM which does the\
   calculation internally. Note: Old MyISAM tables with internal checksum will\
   return the same checksum as before. To fix them to calculate according to new\
-  rules you have to do an `[ALTER TABLE](../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md)`. You can use the old\
+  rules you have to do an [ALTER TABLE](../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md). You can use the old\
   ways to calculate checksums by using the option `--old` to mariadbdmysqld or set the\
   system variable '`@@old`' to `1` when you\
   do `CHECKSUM TABLE ... EXTENDED;`

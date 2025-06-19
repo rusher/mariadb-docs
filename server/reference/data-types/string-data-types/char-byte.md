@@ -5,7 +5,7 @@
 
 
 The `CHAR BYTE` data type is an alias for the 
-`[BINARY](binary.md)` data type. This is a
+[BINARY](binary.md) data type. This is a
 compatibility feature.
 
 

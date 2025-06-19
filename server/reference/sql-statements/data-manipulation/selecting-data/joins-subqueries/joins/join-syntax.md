@@ -3,8 +3,8 @@
 ## Description
 
 MariaDB supports the following `JOIN` syntaxes for\
-the `table_references` part of `[SELECT](../../select.md)` statements and\
-multiple-table `[DELETE](../../../changing-deleting-data/delete.md)` and `[UPDATE](../../../changing-deleting-data/update.md)` statements:
+the `table_references` part of [SELECT](../../select.md) statements and\
+multiple-table [DELETE](../../../changing-deleting-data/delete.md) and [UPDATE](../../../changing-deleting-data/update.md) statements:
 
 ```
 table_references:

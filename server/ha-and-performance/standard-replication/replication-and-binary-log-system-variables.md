@@ -344,7 +344,7 @@ See also the [Full list of MariaDB options, system and status variables](https:/
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `string`
-* Related variables: `[init_connect](../optimization-and-tuning/system-variables/server-system-variables.md#init_connect)`
+* Related variables: [init_connect](../optimization-and-tuning/system-variables/server-system-variables.md#init_connect)
 
 #### `log_bin`
 
@@ -354,7 +354,7 @@ See also the [Full list of MariaDB options, system and status variables](https:/
 * Dynamic: No
 * Data Type: `boolean`
 * Default Value: `OFF`
-* Related variables: `[sql_log_bin](replication-and-binary-log-system-variables.md#sql_log_bin)`
+* Related variables: [sql_log_bin](replication-and-binary-log-system-variables.md#sql_log_bin)
 
 #### `log_bin_basename`
 
@@ -397,13 +397,13 @@ See also the [Full list of MariaDB options, system and status variables](https:/
 #### `log_bin_trust_function_creators`
 
 * Description: Functions and triggers can be dangerous when used with [replication](./). Certain types of functions and triggers may have unintended consequences when the statements are applied on a replica. For that reason, there are some restrictions on the creation of functions and triggers when the [binary log](../../server-management/server-monitoring-logs/binary-log/) is enabled by default, such as:
-  * When `log_bin_trust_function_creators` is `OFF` and `[log_bin](#log_bin)` is `ON`, `[CREATE FUNCTION](../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-function.md)` and `[ALTER FUNCTION](../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-function.md)` statements will trigger an error if the function is defined with any of the `NOT DETERMINISTIC`, `CONTAINS SQL` or `MODIFIES SQL DATA` characteristics.
-  * This means that when `log_bin_trust_function_creators` is `OFF` and `[log_bin](#log_bin)` is `ON`, `[CREATE FUNCTION](../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-function.md)` and `[ALTER FUNCTION](../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-function.md)` statements will only succeed if the function is defined with any of the `DETERMINISTIC`, `NO SQL`, or `READS SQL DATA` characteristics.
-  * When `log_bin_trust_function_creators` is `OFF` and `[log_bin](#log_bin)` is `ON`, the `[SUPER](../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#global-privileges)` privilege is also required to execute the following statements:
-    * `[CREATE FUNCTION](../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-function.md)`
-    * `[CREATE TRIGGER](../../programming-customizing-mariadb/triggers-events/triggers/create-trigger.md)`
-    * `[DROP TRIGGER](../../../reference/sql-statements-and-structure/sql-statements/data-definition/drop/drop-trigger.md)`
-  * Setting `log_bin_trust_function_creators` to `ON` removes these requirements around functions characteristics and the `[SUPER](../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#global-privileges)` privileges.
+  * When `log_bin_trust_function_creators` is `OFF` and [log_bin](#log_bin) is `ON`, [CREATE FUNCTION](../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-function.md) and [ALTER FUNCTION](../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-function.md) statements will trigger an error if the function is defined with any of the `NOT DETERMINISTIC`, `CONTAINS SQL` or `MODIFIES SQL DATA` characteristics.
+  * This means that when `log_bin_trust_function_creators` is `OFF` and [log_bin](#log_bin) is `ON`, [CREATE FUNCTION](../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-function.md) and [ALTER FUNCTION](../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-function.md) statements will only succeed if the function is defined with any of the `DETERMINISTIC`, `NO SQL`, or `READS SQL DATA` characteristics.
+  * When `log_bin_trust_function_creators` is `OFF` and [log_bin](#log_bin) is `ON`, the [SUPER](../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#global-privileges) privilege is also required to execute the following statements:
+    * [CREATE FUNCTION](../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-function.md)
+    * [CREATE TRIGGER](../../programming-customizing-mariadb/triggers-events/triggers/create-trigger.md)
+    * [DROP TRIGGER](../../../reference/sql-statements-and-structure/sql-statements/data-definition/drop/drop-trigger.md)
+  * Setting `log_bin_trust_function_creators` to `ON` removes these requirements around functions characteristics and the [SUPER](../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#global-privileges) privileges.
   * See [Binary Logging of Stored Routines](../../server-usage/stored-routines/binary-logging-of-stored-routines.md) for more information.
 * Commandline: `--log-bin-trust-function-creators[={0|1}]`
 * Scope: Global
@@ -584,7 +584,7 @@ See also the [Full list of MariaDB options, system and status variables](https:/
 
 * Description: This system variable allows you to configure a [replica](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/standard-replication/broken-reference/README.md) to apply statements and transactions affecting databases that match a specified name.
   * This system variable will not work with cross-database updates with [statement-based logging](../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md#statement-based-logging). See the [Statement-Based Logging](replication-filters.md#statement-based-logging) section for more information.
-  * When setting it dynamically with `[SET GLOBAL](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/set-commands/set.md#global-session)`, the system variable accepts a comma-separated list of filters.
+  * When setting it dynamically with [SET GLOBAL](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/set-commands/set.md#global-session), the system variable accepts a comma-separated list of filters.
   * When setting it on the command-line or in a server [option group](../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md), the system variable does not accept a comma-separated list. If you would like to specify multiple filters, then you need to specify the system variable multiple times.
   * See [Replication Filters](replication-filters.md) for more information.
 * Commandline: `--replicate-do-db=name`
@@ -597,7 +597,7 @@ See also the [Full list of MariaDB options, system and status variables](https:/
 
 * Description: This system variable allows you to configure a [replica](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/standard-replication/broken-reference/README.md) to apply statements and transactions that affect tables that match a specified name. The table name is specified in the format: `dbname.tablename`.
   * This system variable will not work with cross-database updates with [statement-based logging](../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md#statement-based-logging). See the [Statement-Based Logging](replication-filters.md#statement-based-logging) section for more information.
-  * When setting it dynamically with `[SET GLOBAL](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/set-commands/set.md#global-session)`, the system variable accepts a comma-separated list of filters.
+  * When setting it dynamically with [SET GLOBAL](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/set-commands/set.md#global-session), the system variable accepts a comma-separated list of filters.
   * When setting it on the command-line or in a server [option group](../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md), the system variable does not accept a comma-separated list. If you would like to specify multiple filters, then you need to specify the system variable multiple times.
   * See [Replication Filters](replication-filters.md) for more information.
 * Commandline: `--replicate-do-table=name`
@@ -620,7 +620,7 @@ See also the [Full list of MariaDB options, system and status variables](https:/
 
 * Description: This system variable allows you to configure a [replica](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/standard-replication/broken-reference/README.md) to ignore statements and transactions affecting databases that match a specified name.
   * This system variable will not work with cross-database updates with [statement-based logging](../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md#statement-based-logging). See the [Statement-Based Logging](replication-filters.md#statement-based-logging) section for more information.
-  * When setting it dynamically with `[SET GLOBAL](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/set-commands/set.md#global-session)`, the system variable accepts a comma-separated list of filters.
+  * When setting it dynamically with [SET GLOBAL](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/set-commands/set.md#global-session), the system variable accepts a comma-separated list of filters.
   * When setting it on the command-line or in a server [option group](../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md), the system variable does not accept a comma-separated list. If you would like to specify multiple filters, then you need to specify the system variable multiple times.
   * See [Replication Filters](replication-filters.md) for more information.
 * Commandline: `--replicate-ignore-db=name`
@@ -633,7 +633,7 @@ See also the [Full list of MariaDB options, system and status variables](https:/
 
 * Description: This system variable allows you to configure a [replica](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/standard-replication/broken-reference/README.md) to ignore statements and transactions that affect tables that match a specified name. The table name is specified in the format: `dbname.tablename`.
   * This system variable will not work with cross-database updates with [statement-based logging](../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md#statement-based-logging). See the [Statement-Based Logging](replication-filters.md#statement-based-logging) section for more information.
-  * When setting it dynamically with `[SET GLOBAL](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/set-commands/set.md#global-session)`, the system variable accepts a comma-separated list of filters.
+  * When setting it dynamically with [SET GLOBAL](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/set-commands/set.md#global-session), the system variable accepts a comma-separated list of filters.
   * When setting it on the command-line or in a server [option group](../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md), the system variable does not accept a comma-separated list. If you would like to specify multiple filters, then you need to specify the system variable multiple times.
   * See [Replication Filters](replication-filters.md) for more information.
 * Commandline: `--replicate-ignore-table=name`
@@ -644,7 +644,7 @@ See also the [Full list of MariaDB options, system and status variables](https:/
 
 #### `replicate_rewrite_db`
 
-* Description: This option allows you to configure a [replica](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/standard-replication/broken-reference/README.md) to rewrite database names. It uses the format `primary_database->replica_database`. If a replica encounters a [binary log](../../server-management/server-monitoring-logs/binary-log/) event in which the default database (i.e. the one selected by the `[USE](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/use-database.md)` statement) is `primary_database`, then the replica will apply the event in `replica_database` instead.
+* Description: This option allows you to configure a [replica](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/standard-replication/broken-reference/README.md) to rewrite database names. It uses the format `primary_database->replica_database`. If a replica encounters a [binary log](../../server-management/server-monitoring-logs/binary-log/) event in which the default database (i.e. the one selected by the [USE](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/use-database.md) statement) is `primary_database`, then the replica will apply the event in `replica_database` instead.
   * This option will not work with cross-database updates with [statement-based logging](../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md#statement-based-logging). See the [Statement-Based Logging](replication-filters.md#statement-based-logging) section for more information.
   * This option only affects statements that involve tables. This option does not affect statements involving the database itself, such as [CREATE DATABASE](../../reference/sql-statements/data-definition/create/create-database.md), [ALTER DATABASE](../../reference/sql-statements/data-definition/alter/alter-database.md), and [DROP DATABASE](../../reference/sql-statements/data-definition/drop/drop-database.md).
   * When setting it on the command-line or in a server [option group](../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md), the option does not accept a comma-separated list. If you would like to specify multiple filters, then you need to specify the option multiple times.
@@ -659,9 +659,9 @@ See also the [Full list of MariaDB options, system and status variables](https:/
 
 #### `replicate_wild_do_table`
 
-* Description: This system variable allows you to configure a [replica](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/standard-replication/broken-reference/README.md) to apply statements and transactions that affect tables that match a specified wildcard pattern. The wildcard pattern uses the same semantics as the `[LIKE](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/like.md)` operator.
+* Description: This system variable allows you to configure a [replica](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/standard-replication/broken-reference/README.md) to apply statements and transactions that affect tables that match a specified wildcard pattern. The wildcard pattern uses the same semantics as the [LIKE](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/like.md) operator.
   * This system variable will work with cross-database updates with [statement-based logging](../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md#statement-based-logging). See the [Statement-Based Logging](replication-filters.md#statement-based-logging) section for more information.
-  * When setting it dynamically with `[SET GLOBAL](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/set-commands/set.md#global-session)`, the system variable accepts a comma-separated list of filters.
+  * When setting it dynamically with [SET GLOBAL](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/set-commands/set.md#global-session), the system variable accepts a comma-separated list of filters.
   * When setting it on the command-line or in a server [option group](../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md), the system variable does not accept a comma-separated list. If you would like to specify multiple filters, then you need to specify the system variable multiple times.
   * See [Replication Filters](replication-filters.md) for more information.
 * Commandline: `--replicate-wild-do-table=name`
@@ -857,9 +857,9 @@ See also the [Full list of MariaDB options, system and status variables](https:/
 * Description: When [parallel\_replication](parallel-replication.md) is used, the [SQL thread](replication-threads.md#slave-sql-thread) will read ahead in the relay logs, queueing events in memory while looking for opportunities for executing events in parallel. This system variable sets a\
   limit for how much memory it will use for this.
   * The configured value of this system variable is actually allocated for each [worker thread](replication-threads.md#worker-threads), so the total allocation is actually equivalent to the following:
-    * `[slave_parallel_max_queued](replication-and-binary-log-system-variables.md)` \* `[slave_parallel_threads](replication-and-binary-log-system-variables.md)`
+    * [slave_parallel_max_queued](replication-and-binary-log-system-variables.md) \* [slave_parallel_threads](replication-and-binary-log-system-variables.md)
   * This system variable is only meaningful when parallel\
-    replication is configured (i.e. when `[slave_parallel_threads](replication-and-binary-log-system-variables.md)` > `0`).
+    replication is configured (i.e. when [slave_parallel_threads](replication-and-binary-log-system-variables.md) > `0`).
   * See [Parallel Replication: Configuring the Maximum Size of the Parallel Slave Queue](parallel-replication.md#configuring-the-maximum-size-of-the-parallel-slave-queue) for more information.
 * Commandline: `--slave-parallel-max-queued=#`
 * Scope: Global
@@ -889,8 +889,8 @@ See also the [Full list of MariaDB options, system and status variables](https:/
   * If this system variable is set to a value greater than `0`, then its value will determine how many replica [worker threads](replication-threads.md#worker-threads) will be created to apply [binary log](../../server-management/server-monitoring-logs/binary-log/) events in parallel.
   * If this system variable is set to `0` (which is the default value), then no replica [worker threads](replication-threads.md#worker-threads) will be created. Instead, when replication is enabled, [binary log](../../server-management/server-monitoring-logs/binary-log/) events are applied by the replica's [SQL thread](replication-threads.md#slave-sql-thread).
   * The [replica threads](replication-threads.md#threads-on-the-slave) must be [stopped](../../reference/sql-statements/administrative-sql-statements/replication-statements/stop-replica.md) in order to change this option's value dynamically.
-  * Events that were logged with [GTIDs](gtid.md) with different `[gtid_domain_id](gtid.md#gtid_domain_id)` values can be applied in parallel in an [out-of-order](parallel-replication.md#out-of-order-parallel-replication) manner. Each `[gtid_domain_id](gtid.md#gtid_domain_id)` can use the number of threads configured by `[slave_domain_parallel_threads](#slave_domain_parallel_threads)`.
-  * Events that were [group-committed](../../server-management/server-monitoring-logs/binary-log/group-commit-for-the-binary-log.md) on the primary can be applied in parallel in an [in-order](parallel-replication.md#what-can-be-run-in-parallel) manner, and the specific behavior can be configured by setting `[slave_parallel_mode](#slave_parallel_mode)`.
+  * Events that were logged with [GTIDs](gtid.md) with different [gtid_domain_id](gtid.md#gtid_domain_id) values can be applied in parallel in an [out-of-order](parallel-replication.md#out-of-order-parallel-replication) manner. Each [gtid_domain_id](gtid.md#gtid_domain_id) can use the number of threads configured by [slave_domain_parallel_threads](#slave_domain_parallel_threads).
+  * Events that were [group-committed](../../server-management/server-monitoring-logs/binary-log/group-commit-for-the-binary-log.md) on the primary can be applied in parallel in an [in-order](parallel-replication.md#what-can-be-run-in-parallel) manner, and the specific behavior can be configured by setting [slave_parallel_mode](#slave_parallel_mode).
 * Commandline: `--slave-parallel-threads=#`
 * Scope: Global
 * Dynamic: Yes
@@ -982,12 +982,12 @@ See also the [Full list of MariaDB options, system and status variables](https:/
 
 #### `sql_log_bin`
 
-* Description: If set to 0 (1 is the default), no logging to the [binary log](../../server-management/server-monitoring-logs/binary-log/) is done for the client. Only clients with the SUPER privilege can update this variable. Does not affect the replication of events in a Galera cluster. Note that `sql_log_bin` has no effect if `[log_bin](replication-and-binary-log-system-variables.md#log_bin)` is not set.
+* Description: If set to 0 (1 is the default), no logging to the [binary log](../../server-management/server-monitoring-logs/binary-log/) is done for the client. Only clients with the SUPER privilege can update this variable. Does not affect the replication of events in a Galera cluster. Note that `sql_log_bin` has no effect if [log_bin](replication-and-binary-log-system-variables.md#log_bin) is not set.
 * Scope: Session
 * Dynamic: Yes
 * Data Type: `boolean`
 * Default Value: `1`
-* Related variables: `[log_bin](replication-and-binary-log-system-variables.md#log_bin)`
+* Related variables: [log_bin](replication-and-binary-log-system-variables.md#log_bin)
 
 #### `sql_slave_skip_counter`
 
