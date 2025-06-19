@@ -10,24 +10,15 @@ CREATE [OR REPLACE] ROLE [IF NOT EXISTS] role
 
 ## Description
 
-The `CREATE ROLE` statement creates one or more MariaDB [roles](../../../security/user-account-management/roles/). To\
-use it, you must have the global [CREATE USER](grant.md#create-user)\
-privilege or the [INSERT](grant.md#table-privileges) privilege for the mysql\
-database. For each account, `CREATE ROLE` creates a new row in the[mysql.user](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md) table that has no privileges, and with the\
-corresponding `is_role` field set to `Y`. It also creates a record in the[mysql.roles\_mapping](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-roles_mapping-table.md) table.
+The `CREATE ROLE` statement creates one or more MariaDB [roles](../../../security/user-account-management/roles/). To use it, you must have the global [CREATE USER](grant.md#create-user) privilege or the [INSERT](grant.md#table-privileges) privilege for the mysql database. For each account, `CREATE ROLE` creates a new row in the[mysql.user](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md) table that has no privileges, and with the corresponding `is_role` field set to `Y`. It also creates a record in the[mysql.roles\_mapping](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-roles_mapping-table.md) table.
 
-If any of the specified roles already exist, `ERROR 1396 (HY000)` results. If\
-an error occurs, `CREATE ROLE` will still create the roles that do not result\
-in an error. The maximum length for a role is 128 characters. Role names can be\
-quoted, as explained in the [Identifier names](../../sql-structure/sql-language-structure/identifier-names.md) page. Only\
-one error is produced for all roles which have not been created:
+If any of the specified roles already exist, `ERROR 1396 (HY000)` results. If an error occurs, `CREATE ROLE` will still create the roles that do not result in an error. The maximum length for a role is 128 characters. Role names can be quoted, as explained in the [Identifier names](../../sql-structure/sql-language-structure/identifier-names.md) page. Only one error is produced for all roles which have not been created:
 
 ```sql
 ERROR 1396 (HY000): Operation CREATE ROLE failed for 'a','b','c'
 ```
 
-Failed `CREATE` or `DROP` operations, for both users and roles, produce the\
-same error code.
+Failed `CREATE` or `DROP` operations, for both users and roles, produce the same error code.
 
 `PUBLIC` and `NONE` are reserved, and cannot be used as role names. `NONE` is used to [unset a role](set-role.md) and `PUBLIC` has a special use in other systems, such as Oracle, so is reserved for compatibility purposes.
 
@@ -35,11 +26,7 @@ For valid identifiers to use as role names, see [Identifier Names](../../sql-str
 
 #### WITH ADMIN
 
-The optional `WITH ADMIN` clause determines whether the current user, the\
-current role or another user or role has use of the newly created role. If the\
-clause is omitted, `WITH ADMIN CURRENT_USER` is treated as the default, which\
-means that the current user will be able to [GRANT](grant.md#roles) this role to\
-users.
+The optional `WITH ADMIN` clause determines whether the current user, the current role or another user or role has use of the newly created role. If the clause is omitted, `WITH ADMIN CURRENT_USER` is treated as the default, which means that the current user will be able to [GRANT](grant.md#roles) this role to users.
 
 #### OR REPLACE
 

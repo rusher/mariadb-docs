@@ -8,7 +8,7 @@ CHAR(N,... [USING charset_name])
 
 ## Description
 
-`CHAR()` interprets each argument as an `[INT](../../../../data-types/data-types-numeric-data-types/int.md)` and returns a string consisting of the characters given by the code values of those integers. `NULL` values are skipped. By default, `CHAR()` returns a binary string. To produce a string in a given [character set](../../data-types/string-data-types/character-sets/), use the optional `USING` clause:
+`CHAR()` interprets each argument as an [INT](../../../../data-types/data-types-numeric-data-types/int.md) and returns a string consisting of the characters given by the code values of those integers. `NULL` values are skipped. By default, `CHAR()` returns a binary string. To produce a string in a given [character set](../../data-types/string-data-types/character-sets/), use the optional `USING` clause:
 
 ```
 SELECT CHARSET(CHAR(0x65)), CHARSET(CHAR(0x65 USING utf8));

@@ -8,7 +8,7 @@ STDDEV_POP(expr)
 
 ## Description
 
-Returns the population standard deviation of _`expr`_ (the square root of`[VAR_POP()](var_pop.md)`). You can also use `[STD()](std.md)` or`[STDDEV()](stddev.md)`, which are equivalent but not standard SQL.
+Returns the population standard deviation of _`expr`_ (the square root of[VAR_POP()](var_pop.md)). You can also use [STD()](std.md) or[STDDEV()](stddev.md), which are equivalent but not standard SQL.
 
 It is an [aggregate function](./), and so can be used with the [GROUP BY](../../sql-statements/data-manipulation/selecting-data/group-by.md) clause.
 

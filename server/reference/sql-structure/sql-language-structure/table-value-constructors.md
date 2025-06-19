@@ -18,7 +18,7 @@ In Unions, Views, and sub-queries, a Table Value Constructor (TVC) allows you to
 ## Examples
 
 
-Using TVC's with `[UNION](../sql-statements/data-manipulation/selecting-data/joins-subqueries/union.md)` operations:
+Using TVC's with [UNION](../sql-statements/data-manipulation/selecting-data/joins-subqueries/union.md) operations:
 
 
 ```
@@ -40,7 +40,7 @@ VALUES (70, 90), (100, 110);
 +------+------+
 ```
 
-Using TVC's with a `[CREATE VIEW](../../../server-usage/programming-customizing-mariadb/views/create-view.md)` statement:
+Using TVC's with a [CREATE VIEW](../../../server-usage/programming-customizing-mariadb/views/create-view.md) statement:
 
 
 ```
@@ -55,7 +55,7 @@ SELECT * FROM v1;
 +---+----+
 ```
 
-Using TVC with an `[ORDER BY](../sql-statements/data-manipulation/selecting-data/order-by.md)` clause:
+Using TVC with an [ORDER BY](../sql-statements/data-manipulation/selecting-data/order-by.md) clause:
 
 
 ```
@@ -65,7 +65,7 @@ VALUES (10, 20), (30, 40), (50, 60), (70, 80)
 ORDER BY val1 DESC;
 ```
 
-Using TVC with `[LIMIT](../sql-statements/data-manipulation/selecting-data/limit.md)` clause:
+Using TVC with [LIMIT](../sql-statements/data-manipulation/selecting-data/limit.md) clause:
 
 
 ```

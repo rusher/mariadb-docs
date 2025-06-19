@@ -24,7 +24,7 @@ CREATE TABLE customer (
 
 The case of `NULL` is not relevant. (uppercase) is an alias for `NULL`.
 
-The `[IS](../sql-statements-and-structure/operators/comparison-operators/is.md)` operator accepts `UNKNOWN` as an alias for `NULL`, which is meant for [boolean contexts](../sql-structure/sql-language-structure/sql-language-structure-boolean-literals.md).
+The [IS](../sql-statements-and-structure/operators/comparison-operators/is.md) operator accepts `UNKNOWN` as an alias for `NULL`, which is meant for [boolean contexts](../sql-structure/sql-language-structure/sql-language-structure-boolean-literals.md).
 
 ## Comparison Operators
 

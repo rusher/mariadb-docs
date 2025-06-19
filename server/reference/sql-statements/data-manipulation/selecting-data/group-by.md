@@ -4,7 +4,7 @@ Use the `GROUP BY` clause in a [SELECT](select.md) statement to group rows toget
 use a `GROUP BY` clause, you will get a single result row for each group of rows\
 that have the same value for the expression given in `GROUP BY`.
 
-When grouping rows, grouping values are compared as if by the `[=](../../../operators/comparison-operators/equal.md)` operator.\
+When grouping rows, grouping values are compared as if by the [=](../../../operators/comparison-operators/equal.md) operator.\
 For string values, the `=` operator ignores trailing whitespace and may normalize\
 characters and ignore case, depending on the [collation](../../../data-types/string-data-types/character-sets/) in use.
 

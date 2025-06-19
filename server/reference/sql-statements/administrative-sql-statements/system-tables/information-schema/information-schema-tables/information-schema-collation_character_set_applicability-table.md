@@ -13,9 +13,9 @@ It contains the following columns:
 | ID                    | The unique identifier of this character set/collation combination. Added in [MariaDB 10.10.1](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/broken-reference/README.md). |
 | IS\_DEFAULT           | If the collation is the default for this character set. Added in [MariaDB 10.10.1](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/broken-reference/README.md).            |
 
-The `[COLLATIONS](information-schema-collations-table.md)` table is table of the base `COLLATION_NAMES` in the same way that `[CHARACTER_SETS](https://mariadb.com/kb/en/information-schema-character-sets-table)` table is table of the base `CHARACTER_SET_NAMES`. The `COLLATION_CHARACTER_SET_APPLICABILITY` table is the mapping between collations and character sets.
+The [COLLATIONS](information-schema-collations-table.md) table is table of the base `COLLATION_NAMES` in the same way that [CHARACTER_SETS](https://mariadb.com/kb/en/information-schema-character-sets-table) table is table of the base `CHARACTER_SET_NAMES`. The `COLLATION_CHARACTER_SET_APPLICABILITY` table is the mapping between collations and character sets.
 
-When joining the `[information_schema.TABLES](information-schema-tables-table.md)` table with its field `TABLE_COLLATIONS`, this should be joined to `FULL_COLLATION_NAME` in the `COLLATION_CHARACTER_SET_APPLICABILITY` table.
+When joining the [information_schema.TABLES](information-schema-tables-table.md) table with its field `TABLE_COLLATIONS`, this should be joined to `FULL_COLLATION_NAME` in the `COLLATION_CHARACTER_SET_APPLICABILITY` table.
 
 See [Setting Character Sets and Collations](../../../../../data-types/string-data-types/character-sets/setting-character-sets-and-collations.md) for details on specifying the character set at the server, database, table and column levels.
 

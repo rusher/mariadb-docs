@@ -38,7 +38,7 @@ The server parses the whole statement before executing it, so any variables set 
 ## Examples
 
 
-One can limit statement execution time `[max_statement_time](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#max_statement_time)`:
+One can limit statement execution time [max_statement_time](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#max_statement_time):
 
 
 ```

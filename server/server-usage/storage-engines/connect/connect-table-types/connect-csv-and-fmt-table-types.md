@@ -95,7 +95,7 @@ not be recognized as such but will be regarded as string fields.
 
 ### Restrictions on CSV Tables
 
-* If `[secure_file_priv](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#secure_file_priv)` is set to the path of some directory, then CSV tables can only be created with files in that directory.
+* If [secure_file_priv](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#secure_file_priv) is set to the path of some directory, then CSV tables can only be created with files in that directory.
 
 ## FMT Type
 

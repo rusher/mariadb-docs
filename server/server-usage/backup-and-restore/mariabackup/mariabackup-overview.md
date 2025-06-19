@@ -27,13 +27,14 @@ Features were ported from the Enterprise Server to [MariaDB 10.11.8](https://app
 [MariaDB Backup](./) supports some additional features, such as:
 
 * Minimizes locks during the backup to permit more concurrency and to enable faster backups.
-  * This relies on the usage of `[BACKUP STAGE](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/backup-commands/backup-stage.md)` commands and DDL logging.
-  * This includes no locking during the copy phase of `[ALTER TABLE](../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md)` statements, which tends to be the longest phase of these statements.
+  * This relies on the usage of [BACKUP STAGE](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/backup-commands/backup-stage.md) commands and DDL logging.
+  * This includes no locking during the copy phase of [ALTER TABLE](../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md) statements, which tends to be the longest phase of these statements.
 * Provides optimal backup support for all storage engines that store things on local disk.
 
 ### Differences Compared to Percona XtraBackup
 
 * Percona XtraBackup requires more locks to run than MariaDB. In addition, any running ALTER TABLE will block Percona XtraBackup until it completes.
+<<<<<<< HEAD
 * Percona XtraBackup copies its [InnoDB redo log](../../../reference/storage-engines/innodb/innodb-redo-log.md) files to the file `xtrabackup_logfile`, while mariadb-backup uses the file `[ib_logfile0](files-created-by-mariabackup.md#ib_logfile0)`.
 * Percona XtraBackup's [libgcrypt-based encryption of backups](https://www.percona.com/doc/percona-xtrabackup/2.3/backup_scenarios/encrypted_backup.html) is not supported by mariadb-backup.
 * There is no symbolic link from `mariabackup` to `[innobackupex](https://www.percona.com/doc/percona-xtrabackup/2.3/innobackupex/innobackupex_option_reference.html)`, as there is for `[xtrabackup](https://www.percona.com/doc/percona-xtrabackup/2.3/xtrabackup_bin/xbk_option_reference.html)`. Instead, `mariabackup` has the `[--innobackupex](mariabackup-options.md#-innobackupex)` command-line option to enable innobackupex-compatible options.
@@ -41,6 +42,15 @@ Features were ported from the Enterprise Server to [MariaDB 10.11.8](https://app
 * Support for `[--stream=tar](https://www.percona.com/doc/percona-xtrabackup/2.3/howtos/recipes_ibkx_stream.html)` was removed from mariadb-backup in [MariaDB 10.1.24](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10124-release-notes).
 * The `[xbstream](https://www.percona.com/doc/percona-xtrabackup/2.3/xbstream/xbstream.html)` utility has been renamed to `mbstream`. However, to select this output format when creating a backup, mariadb-backup's `[--stream](mariabackup-options.md#-stream)` option still expects the `xbstream` value.
 * mariadb-backup does not support [lockless binlog](https://www.percona.com/doc/percona-xtrabackup/2.3/advanced/lockless_bin-log.html).
+=======
+* Percona XtraBackup copies its [InnoDB redo log](../../../reference/storage-engines/innodb/innodb-redo-log.md) files to the file `xtrabackup_logfile`, while Mariabackup uses the file [ib_logfile0](files-created-by-mariabackup.md#ib_logfile0).
+* Percona XtraBackup's [libgcrypt-based encryption of backups](https://www.percona.com/doc/percona-xtrabackup/2.3/backup_scenarios/encrypted_backup.html) is not supported by Mariabackup.
+* There is no symbolic link from `mariabackup` to [innobackupex](https://www.percona.com/doc/percona-xtrabackup/2.3/innobackupex/innobackupex_option_reference.html), as there is for [xtrabackup](https://www.percona.com/doc/percona-xtrabackup/2.3/xtrabackup_bin/xbk_option_reference.html). Instead, `mariabackup` has the [--innobackupex](mariabackup-options.md#-innobackupex) command-line option to enable innobackupex-compatible options.
+* The [--compact](https://www.percona.com/doc/percona-xtrabackup/2.3/xtrabackup_bin/xbk_option_reference.html#cmdoption-xtrabackup-compact) and [--rebuild_indexes](https://www.percona.com/doc/percona-xtrabackup/2.3/xtrabackup_bin/xbk_option_reference.html#cmdoption-xtrabackup-rebuild-indexes) options are not supported.
+* Support for [--stream=tar](https://www.percona.com/doc/percona-xtrabackup/2.3/howtos/recipes_ibkx_stream.html) was removed from Mariabackup in [MariaDB 10.1.24](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10124-release-notes).
+* The [xbstream](https://www.percona.com/doc/percona-xtrabackup/2.3/xbstream/xbstream.html) utility has been renamed to `mbstream`. However, to select this output format when creating a backup, Mariabackup's [--stream](mariabackup-options.md#-stream) option still expects the `xbstream` value.
+* Mariabackup does not support [lockless binlog](https://www.percona.com/doc/percona-xtrabackup/2.3/advanced/lockless_bin-log.html).
+>>>>>>> 2f4a7af992d60113345320299a7c689ee31815c1
 
 #### Difference in Versioning Schemes
 
@@ -85,7 +95,7 @@ You can also configure your package manager to install it from MariaDB Foundatio
 **Installing with yum/dnf**
 
 On RHEL, CentOS, Fedora, and other similar Linux distributions, it is highly recommended to install the relevant [RPM package](../../../server-management/install-and-upgrade-mariadb/binary-packages/rpm/) from MariaDB's\
-repository using `[yum](../../getting-installing-and-upgrading-mariadb/binary-packages/rpm/yum.md)` or `[dnf](https://en.wikipedia.org/wiki/DNF_(software))`. Starting with RHEL 8 and Fedora 22, `yum` has been replaced by `dnf`, which is the next major version of `yum`. However, `yum` commands still work on many systems that use `dnf`. For example:
+repository using [yum](../../getting-installing-and-upgrading-mariadb/binary-packages/rpm/yum.md) or [dnf](https://en.wikipedia.org/wiki/DNF_(software)). Starting with RHEL 8 and Fedora 22, `yum` has been replaced by `dnf`, which is the next major version of `yum`. However, `yum` commands still work on many systems that use `dnf`. For example:
 
 ```bash
 sudo yum install MariaDB-backup
@@ -94,7 +104,7 @@ sudo yum install MariaDB-backup
 **Installing with apt-get**
 
 On Debian, Ubuntu, and other similar Linux distributions, it is highly recommended to install the relevant [DEB package](../../../server-management/install-and-upgrade-mariadb/binary-packages/installing-mariadb-deb-files.md) from MariaDB's\
-repository using `[apt-get](https://wiki.debian.org/apt-get)`. For example:
+repository using [apt-get](https://wiki.debian.org/apt-get). For example:
 
 ```bash
 sudo apt-get install mariadb-backup
@@ -102,7 +112,7 @@ sudo apt-get install mariadb-backup
 
 **Installing with zypper**
 
-On SLES, OpenSUSE, and other similar Linux distributions, it is highly recommended to install the relevant [RPM package](../../../server-management/install-and-upgrade-mariadb/binary-packages/rpm/) from MariaDB's repository using `[zypper](../../getting-installing-and-upgrading-mariadb/binary-packages/rpm/installing-mariadb-with-zypper.md)`. For example:
+On SLES, OpenSUSE, and other similar Linux distributions, it is highly recommended to install the relevant [RPM package](../../../server-management/install-and-upgrade-mariadb/binary-packages/rpm/) from MariaDB's repository using [zypper](../../getting-installing-and-upgrading-mariadb/binary-packages/rpm/installing-mariadb-with-zypper.md). For example:
 
 ```bash
 sudo zypper install MariaDB-backup
@@ -137,7 +147,7 @@ For in-depth explanations on how to use mariadb-backup, see:
 
 Options supported by mariadb-backup can be found [here](mariabackup-options.md).
 
-`mariabackup` will currently silently ignore unknown command-line options, so be extra careful about accidentally including typos in options or accidentally using options from later `mariabackup` versions. The reason for this is that `mariabackup` currently treats command-line options and options from [option files](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md) equivalently. When it reads from these [option files](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md), it has to read a lot of options from the [server option groups](mariabackup-overview.md#server-option-groups) read by `[mysqld](../../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md)`. However, `mariabackup` does not know about many of the options that it normally reads in these option groups. If `mariabackup` raised an error or warning when it encountered an unknown option, then this process would generate a large amount of log messages under normal use. Therefore, `mariabackup` is designed to silently ignore the unknown options instead. See [MDEV-18215](https://jira.mariadb.org/browse/MDEV-18215) about that.
+`mariabackup` will currently silently ignore unknown command-line options, so be extra careful about accidentally including typos in options or accidentally using options from later `mariabackup` versions. The reason for this is that `mariabackup` currently treats command-line options and options from [option files](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md) equivalently. When it reads from these [option files](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md), it has to read a lot of options from the [server option groups](mariabackup-overview.md#server-option-groups) read by [mysqld](../../getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md). However, `mariabackup` does not know about many of the options that it normally reads in these option groups. If `mariabackup` raised an error or warning when it encountered an unknown option, then this process would generate a large amount of log messages under normal use. Therefore, `mariabackup` is designed to silently ignore the unknown options instead. See [MDEV-18215](https://jira.mariadb.org/browse/MDEV-18215) about that.
 
 ### Option Files
 
@@ -190,7 +200,11 @@ mariadb-backup reads client options from the following [option groups](../../../
 
 ### Authentication and Privileges
 
+<<<<<<< HEAD
 mariadb-backup needs to authenticate with the database server when it performs a backup operation (i.e. when the `[--backup](mariabackup-options.md#-backup)` option is specified). For most use cases, the user account that performs the backup needs to have the following [global privileges](../../../reference/sql-statements/account-management-sql-statements/grant.md#global-privileges) on the database server.
+=======
+Mariabackup needs to authenticate with the database server when it performs a backup operation (i.e. when the [--backup](mariabackup-options.md#-backup) option is specified). For most use cases, the user account that performs the backup needs to have the following [global privileges](../../../reference/sql-statements/account-management-sql-statements/grant.md#global-privileges) on the database server.
+>>>>>>> 2f4a7af992d60113345320299a7c689ee31815c1
 
 In 10.5 and later the required privileges are:
 
@@ -206,19 +220,23 @@ CREATE USER 'mariabackup'@'localhost' IDENTIFIED BY 'mypassword';
 GRANT RELOAD, PROCESS, LOCK TABLES, REPLICATION CLIENT ON *.* TO 'mariabackup'@'localhost';
 ```
 
+<<<<<<< HEAD
 If your database server is also using the [MyRocks](../../../reference/storage-engines/myrocks/) storage engine, then the user account that performs the backup will also need the `SUPER` [global privilege](../../../reference/sql-statements/account-management-sql-statements/grant.md#global-privileges). This is because mariadb-backup creates a checkpoint of this data by setting the `[rocksdb_create_checkpoint](../../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_create_checkpoint)` system variable, which requires this privilege. See [MDEV-20577](https://jira.mariadb.org/browse/MDEV-20577) for more information.
+=======
+If your database server is also using the [MyRocks](../../../reference/storage-engines/myrocks/) storage engine, then the user account that performs the backup will also need the `SUPER` [global privilege](../../../reference/sql-statements/account-management-sql-statements/grant.md#global-privileges). This is because Mariabackup creates a checkpoint of this data by setting the [rocksdb_create_checkpoint](../../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_create_checkpoint) system variable, which requires this privilege. See [MDEV-20577](https://jira.mariadb.org/browse/MDEV-20577) for more information.
+>>>>>>> 2f4a7af992d60113345320299a7c689ee31815c1
 
-`CONNECTION ADMIN` is also required where `[-kill-long-queries-timeout](mariabackup-options.md#-kill-long-queries-timeout)` is greater than 0, and `[--no-lock](mariabackup-options.md#-no-lock)` isn't applied in order to `[KILL](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/kill.md)` queries. Prior to 10.5 a `SUPER` privilege is required instead of `CONNECTION ADMIN`.
+`CONNECTION ADMIN` is also required where [-kill-long-queries-timeout](mariabackup-options.md#-kill-long-queries-timeout) is greater than 0, and [--no-lock](mariabackup-options.md#-no-lock) isn't applied in order to [KILL](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/kill.md) queries. Prior to 10.5 a `SUPER` privilege is required instead of `CONNECTION ADMIN`.
 
-`REPLICA MONITOR` (or alias `SLAVE MONITOR`) is also required where `[--galera-info](mariabackup-options.md#-galera-info)` or `[--slave-info](mariabackup-options.md#-slave-info)` is specified.
+`REPLICA MONITOR` (or alias `SLAVE MONITOR`) is also required where [--galera-info](mariabackup-options.md#-galera-info) or [--slave-info](mariabackup-options.md#-slave-info) is specified.
 
-To use the `[--history](mariabackup-options.md#-history)` option, the backup user also needs to have the following privileges granted:
+To use the [--history](mariabackup-options.md#-history) option, the backup user also needs to have the following privileges granted:
 
 ```sql
 GRANT CREATE, INSERT ON mysql.mariadb_backup_history TO 'mariabackup'@'localhost';
 ```
 
-Prior to [MariaDB 10.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-11-series/what-is-mariadb-1011), the necessary permissions to use `[--history](mariabackup-options.md#-history)` were:
+Prior to [MariaDB 10.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-11-series/what-is-mariadb-1011), the necessary permissions to use [--history](mariabackup-options.md#-history) were:
 
 ```sql
 GRANT CREATE, INSERT ON PERCONA_SCHEMA.* TO 'mariabackup'@'localhost';
@@ -230,7 +248,7 @@ If you're upgrading from an older version and you want to use the new default ta
 RENAME TABLE PERCONA_SCHEMA.xtrabackup_history TO mysql.mariadb_backup_history;
 ```
 
-The user account information can be specified with the `[--user](mariabackup-options.md#-user)` and `[--password](mariabackup-options.md#-p-password)` command-line options. For example:
+The user account information can be specified with the [--user](mariabackup-options.md#-user) and [--password](mariabackup-options.md#-p-password) command-line options. For example:
 
 ```bash
 $ mariabackup --backup \
@@ -313,20 +331,28 @@ See [MDEV-18347](https://jira.mariadb.org/browse/MDEV-18347) for more informatio
 
 ### No Default Datadir
 
+<<<<<<< HEAD
 Prior to [MariaDB 10.1.36](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10136-release-notes), [MariaDB 10.2.18](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-10218-release-notes), and [MariaDB 10.3.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-10310-release-notes), if you were performing a `[--copy-back](mariabackup-options.md#-copy-back)` operation, and if you did not explicitly specify a value for the `[datadir](mariabackup-options.md#datadir)` option either on the command line or one of the supported [server option groups](mariabackup-overview.md#server-option-group) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md), then mariadb-backup would not default to the server's default `datadir`. Instead, mariadb-backup would fail with an error. For example:
+=======
+Prior to [MariaDB 10.1.36](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10136-release-notes), [MariaDB 10.2.18](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-10218-release-notes), and [MariaDB 10.3.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-10310-release-notes), if you were performing a [--copy-back](mariabackup-options.md#-copy-back) operation, and if you did not explicitly specify a value for the [datadir](mariabackup-options.md#datadir) option either on the command line or one of the supported [server option groups](mariabackup-overview.md#server-option-group) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md), then Mariabackup would not default to the server's default `datadir`. Instead, Mariabackup would fail with an error. For example:
+>>>>>>> 2f4a7af992d60113345320299a7c689ee31815c1
 
 ```bash
 Error: datadir must be specified.
 ```
 
-The solution is to explicitly specify a value for the `[datadir](mariabackup-options.md#datadir)` option either on the command line or in one of the supported [server option groups](mariabackup-overview.md#server-option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md). For example:
+The solution is to explicitly specify a value for the [datadir](mariabackup-options.md#datadir) option either on the command line or in one of the supported [server option groups](mariabackup-overview.md#server-option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md). For example:
 
 ```bash
 [mysqld]
 datadir=/var/lib/mysql
 ```
 
+<<<<<<< HEAD
 In [MariaDB 10.1.36](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10136-release-notes), [MariaDB 10.2.18](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-10218-release-notes), and [MariaDB 10.3.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-10310-release-notes) and later, mariadb-backup will default to the server's default `[datadir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir)` value.
+=======
+In [MariaDB 10.1.36](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10136-release-notes), [MariaDB 10.2.18](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-10218-release-notes), and [MariaDB 10.3.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-10310-release-notes) and later, Mariabackup will default to the server's default [datadir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir) value.
+>>>>>>> 2f4a7af992d60113345320299a7c689ee31815c1
 
 See [MDEV-12956](https://jira.mariadb.org/browse/MDEV-12956) for more information.
 
@@ -334,7 +360,7 @@ See [MDEV-12956](https://jira.mariadb.org/browse/MDEV-12956) for more informatio
 
 Prior to [MariaDB 10.2.19](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-10219-release-notes) and [MariaDB 10.3.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-10310-release-notes), if concurrent DDL was executed while the backup was taken, then that could cause various kinds of problems to occur.
 
-One example is that if DDL caused any tablespace IDs to change (such as `[TRUNCATE TABLE](../../../reference/sql-statements-and-structure/sql-statements/table-statements/truncate-table.md)` or `[RENAME TABLE](../../../reference/sql-statements-and-structure/sql-statements/data-definition/rename-table.md)`), then that could cause the effected tables to be inconsistent in the backup. In this scenario, you might see errors about mismatched tablespace IDs when the backup is prepared.
+One example is that if DDL caused any tablespace IDs to change (such as [TRUNCATE TABLE](../../../reference/sql-statements-and-structure/sql-statements/table-statements/truncate-table.md) or [RENAME TABLE](../../../reference/sql-statements-and-structure/sql-statements/data-definition/rename-table.md)), then that could cause the effected tables to be inconsistent in the backup. In this scenario, you might see errors about mismatched tablespace IDs when the backup is prepared.
 
 For example, the errors might look like this:
 
@@ -357,16 +383,20 @@ Or they might look like this:
 
 Some of the problems related to concurrent DDL are described below.
 
+<<<<<<< HEAD
 Problems solved by setting `[--lock-ddl-per-table](mariabackup-options.md#-lock-ddl-per-table)` (mariadb-backup command-line option added in [MariaDB 10.2.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1029-release-notes)):
+=======
+Problems solved by setting [--lock-ddl-per-table](mariabackup-options.md#-lock-ddl-per-table) (Mariabackup command-line option added in [MariaDB 10.2.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1029-release-notes)):
+>>>>>>> 2f4a7af992d60113345320299a7c689ee31815c1
 
 * If a table is dropped during the backup, then it might still exists after the backup is prepared.
 * If a table exists when the backup starts, but it is dropped before the backup copies it, then the tablespace file can't be copied, so the backup would fail.
 
-Problems solved by setting `[innodb_log_optimize_ddl=OFF](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_log_optimize_ddl)` (MariaDB Server system variable added in [MariaDB 10.2.17](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-10217-release-notes) and removed in 10.6.0):
+Problems solved by setting [innodb_log_optimize_ddl=OFF](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_log_optimize_ddl) (MariaDB Server system variable added in [MariaDB 10.2.17](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-10217-release-notes) and removed in 10.6.0):
 
 * If the backup noticed concurrent DDL, then it might fail with "ALTER TABLE or OPTIMIZE TABLE was executed during backup".
 
-Problems solved by `[innodb_safe_truncate=ON](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_safe_truncate)` (MariaDB Server system variable in [MariaDB 10.2.19](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-10219-release-notes) and removed in 10.3.0):
+Problems solved by [innodb_safe_truncate=ON](../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_safe_truncate) (MariaDB Server system variable in [MariaDB 10.2.19](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-10219-release-notes) and removed in 10.3.0):
 
 * If a table is created during the backup, then it might not exist in the backup after prepare.
 * If a table is renamed during the backup after the tablespace file was copied, then the table may not exist after the backup is prepared.
@@ -376,7 +406,11 @@ Note that, with the removal of `innodb_log_optimize_ddl` and `innodb_safe_trunca
 
 Problems solved by other bug fixes:
 
+<<<<<<< HEAD
 * If `[--lock-ddl-per-table](mariabackup-options.md#-lock-ddl-per-table)` is used and if a table is concurrently being dropped or renamed, then mariadb-backup can fail to acquire the MDL lock.
+=======
+* If [--lock-ddl-per-table](mariabackup-options.md#-lock-ddl-per-table) is used and if a table is concurrently being dropped or renamed, then Mariabackup can fail to acquire the MDL lock.
+>>>>>>> 2f4a7af992d60113345320299a7c689ee31815c1
 
 These problems are only fixed in [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102) and later, so it is not recommended to execute concurrent DDL when using mariadb-backup with [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1).
 
@@ -384,11 +418,19 @@ See [MDEV-13563](https://jira.mariadb.org/browse/MDEV-13563), [MDEV-13564](https
 
 ### Manual Restore with Pre-existing InnoDB Redo Log files
 
+<<<<<<< HEAD
 Prior to [MariaDB 10.2.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-10210-release-notes), mariadb-backup users could run into issues if they restored a backup by manually copying the files from the backup into the `[datadir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir)` while the directory still contained pre-existing [InnoDB redo log](../../../reference/storage-engines/innodb/innodb-redo-log.md) files. The backup itself did not contain [InnoDB redo log](../../../reference/storage-engines/innodb/innodb-redo-log.md) files with the traditional `ib_logfileN` file names, so the pre-existing log files would remain in the `[datadir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir)`. If the server were started with these pre-existing log files, then it could perform crash recovery with them, which could cause the database to become inconsistent or corrupt.
 
 In these MariaDB versions, this problem could be avoided by not restoring the backup by manually copying the files and instead restoring the backup by using mariadb-backup and providing the `[--copy-back](mariabackup-options.md#-copy-back)` option, since mariadb-backup deletes pre-existing [InnoDB redo log](../../../reference/storage-engines/innodb/innodb-redo-log.md) files from the `[datadir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir)` during the restore process.
 
 In [MariaDB 10.2.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-10210-release-notes) and later, mariadb-backup prevents this issue by creating an empty [InnoDB redo log](../../../reference/storage-engines/innodb/innodb-redo-log.md) file called `[ib_logfile0](files-created-by-mariabackup.md#ib_logfile0)` as part of the `[--prepare](mariabackup-options.md#-prepare)` stage. That way, if the backup is manually restored, any pre-existing [InnoDB redo log](../../../reference/storage-engines/innodb/innodb-redo-log.md) files would get overwritten by the empty one.
+=======
+Prior to [MariaDB 10.2.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-10210-release-notes), Mariabackup users could run into issues if they restored a backup by manually copying the files from the backup into the [datadir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir) while the directory still contained pre-existing [InnoDB redo log](../../../reference/storage-engines/innodb/innodb-redo-log.md) files. The backup itself did not contain [InnoDB redo log](../../../reference/storage-engines/innodb/innodb-redo-log.md) files with the traditional `ib_logfileN` file names, so the pre-existing log files would remain in the [datadir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir). If the server were started with these pre-existing log files, then it could perform crash recovery with them, which could cause the database to become inconsistent or corrupt.
+
+In these MariaDB versions, this problem could be avoided by not restoring the backup by manually copying the files and instead restoring the backup by using Mariabackup and providing the [--copy-back](mariabackup-options.md#-copy-back) option, since Mariabackup deletes pre-existing [InnoDB redo log](../../../reference/storage-engines/innodb/innodb-redo-log.md) files from the [datadir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir) during the restore process.
+
+In [MariaDB 10.2.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-10210-release-notes) and later, Mariabackup prevents this issue by creating an empty [InnoDB redo log](../../../reference/storage-engines/innodb/innodb-redo-log.md) file called [ib_logfile0](files-created-by-mariabackup.md#ib_logfile0) as part of the [--prepare](mariabackup-options.md#-prepare) stage. That way, if the backup is manually restored, any pre-existing [InnoDB redo log](../../../reference/storage-engines/innodb/innodb-redo-log.md) files would get overwritten by the empty one.
+>>>>>>> 2f4a7af992d60113345320299a7c689ee31815c1
 
 See [MDEV-13311](https://jira.mariadb.org/browse/MDEV-13311) for more information.
 
@@ -417,14 +459,18 @@ InnoDB: and force InnoDB to continue crash recovery here.
 
 Prior to [MariaDB 10.1.39](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10139-release-notes), [MariaDB 10.2.24](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-10224-release-notes), and [MariaDB 10.3.14](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-10314-release-notes), mariadb-backup would actually ignore the error and continue the backup. In some of those cases, mariadb-backup would even report a successful completion of the backup to the user. In later versions, mariadb-backup will properly throw an error and abort when this error is encountered. See [MDEV-19060](https://jira.mariadb.org/browse/MDEV-19060) for more information.
 
-When this error is encountered, one solution is to explicitly specify a value for the `[open-files-limit](mariabackup-options.md#-open-files-limit)` option either on the command line or in one of the supported [server option groups](mariabackup-overview.md#server-option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md). For example:
+When this error is encountered, one solution is to explicitly specify a value for the [open-files-limit](mariabackup-options.md#-open-files-limit) option either on the command line or in one of the supported [server option groups](mariabackup-overview.md#server-option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md). For example:
 
 ```bash
 [mariabackup]
 open_files_limit=65535
 ```
 
+<<<<<<< HEAD
 An alternative solution is to set the soft and hard limits for the user account that runs mariadb-backup by adding new limits to `[/etc/security/limits.conf](https://linux.die.net/man/5/limits.conf)`. For example, if mariadb-backup is run by the `mysql` user, then you could add lines like the following:
+=======
+An alternative solution is to set the soft and hard limits for the user account that runs Mariabackup by adding new limits to [/etc/security/limits.conf](https://linux.die.net/man/5/limits.conf). For example, if Mariabackup is run by the `mysql` user, then you could add lines like the following:
+>>>>>>> 2f4a7af992d60113345320299a7c689ee31815c1
 
 ```bash
 mysql soft nofile 65535

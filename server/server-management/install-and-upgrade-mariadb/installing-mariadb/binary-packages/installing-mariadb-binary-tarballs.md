@@ -20,7 +20,7 @@ Binary tarballs provide multiple benefits:
 ### Installing binary tarballs
 
 To install the [binaries](https://downloads.mariadb.org),\
-unpack the distribution into the directory of your choice and run the `[mariadb-install-db](../installing-system-tables-mariadb-install-db.md)` script.
+unpack the distribution into the directory of your choice and run the [mariadb-install-db](../installing-system-tables-mariadb-install-db.md) script.
 
 In the example below we install MariaDB in the `/usr/local/mysql` directory (this is the default location for MariaDB for many platforms). However any other directory should work too.
 

@@ -169,7 +169,7 @@ The optimization phase can do the following changes to the `WHERE` clause:
 
 The `EXTENDED` keyword adds another column, _filtered_, to the output. This is a percentage estimate of the table rows that will be filtered by the condition.
 
-An `EXPLAIN EXTENDED` will always throw a warning, as it adds extra _Message_ information to a subsequent `[SHOW WARNINGS](../show/show-warnings.md)` statement. This includes what the `SELECT` query would look like after optimizing and rewriting rules are applied and how the optimizer qualifies columns and tables.
+An `EXPLAIN EXTENDED` will always throw a warning, as it adds extra _Message_ information to a subsequent [SHOW WARNINGS](../show/show-warnings.md) statement. This includes what the `SELECT` query would look like after optimizing and rewriting rules are applied and how the optimizer qualifies columns and tables.
 
 ## Examples
 

@@ -28,7 +28,7 @@ interval:
 
 ## Description
 
-This statement creates and schedules a new [event](../../../../server-usage/triggers-events/event-scheduler/events.md). It requires the`[EVENT](../../account-management-sql-commands/grant.md#database-privileges)` privilege for the schema in which the event is to be created.
+This statement creates and schedules a new [event](../../../../server-usage/triggers-events/event-scheduler/events.md). It requires the[EVENT](../../account-management-sql-commands/grant.md#database-privileges) privilege for the schema in which the event is to be created.
 
 The minimum requirements for a valid CREATE EVENT statement are as\
 follows:
@@ -83,7 +83,7 @@ The `ON SCHEDULE` clause can be used to specify when the event must be triggered
 
 #### AT
 
-If you want to execute the event only once (one time event), you can use the `AT` keyword, followed by a timestamp. If you use `[CURRENT_TIMESTAMP](../../built-in-functions/date-time-functions/current_timestamp.md)`, the event acts as soon as it is created. As a convenience, you can add one or more intervals to that timestamp. You can also specify a timestamp in the past, so that the event is stored but not triggered, until you modify it via [ALTER EVENT](../../../../server-usage/triggers-events/event-scheduler/alter-event.md).
+If you want to execute the event only once (one time event), you can use the `AT` keyword, followed by a timestamp. If you use [CURRENT_TIMESTAMP](../../built-in-functions/date-time-functions/current_timestamp.md), the event acts as soon as it is created. As a convenience, you can add one or more intervals to that timestamp. You can also specify a timestamp in the past, so that the event is stored but not triggered, until you modify it via [ALTER EVENT](../../../../server-usage/triggers-events/event-scheduler/alter-event.md).
 
 The following example shows how to create an event that will be triggered tomorrow at a certain time:
 
@@ -119,7 +119,7 @@ In you specify `ON COMPLETION NOT PRESERVE`, and you specify a timestamp in the 
 
 Events are `ENABLE`d by default. If you want to stop MariaDB from executing\
 an event, you may specify `DISABLE`. When it is ready to be activated, you\
-may enable it using `[ALTER EVENT](../../../../../server-usage/programming-customizing-mariadb/triggers-events/event-scheduler/alter-event.md)`. Another option is`DISABLE ON SLAVE`, which indicates that an event was created on a master and has been replicated to the slave, which is prevented from executing the event. If `DISABLE ON SLAVE` is specifically set, the event will be disabled everywhere. It will not be executed on the master or the slaves.
+may enable it using [ALTER EVENT](../../../../../server-usage/programming-customizing-mariadb/triggers-events/event-scheduler/alter-event.md). Another option is`DISABLE ON SLAVE`, which indicates that an event was created on a master and has been replicated to the slave, which is prevented from executing the event. If `DISABLE ON SLAVE` is specifically set, the event will be disabled everywhere. It will not be executed on the master or the slaves.
 
 #### COMMENT
 

@@ -362,7 +362,7 @@ fallocate(file_handle, FALLOC_FL_PUNCH_HOLE | FALLOC_FL_KEEP_SIZE, file_offset, 
 
 Some Linux utilities may require special options in order to work with sparse files efficiently. For example:
 
-* The [ls](https://linux.die.net/man/1/ls) utility will report the non-sparse size of the tablespace file when executed with default behavior, but `[ls -s](https://linux.die.net/man/1/ls)` will report the actual amount of storage allocated for the tablespace file.
+* The [ls](https://linux.die.net/man/1/ls) utility will report the non-sparse size of the tablespace file when executed with default behavior, but [ls -s](https://linux.die.net/man/1/ls) will report the actual amount of storage allocated for the tablespace file.
 * The [cp](https://linux.die.net/man/1/cp) utility is pretty good at auto-detecting sparse files, but it also provides the [cp --sparse=always](https://linux.die.net/man/1/cp) and [cp --sparse=never](https://linux.die.net/man/1/cp) options, if the auto-detection is not desired.
 * The [tar](https://linux.die.net/man/1/tar) utility will archive sparse files with their non-sparse size when executed with default behavior, but [tar --sparse](https://linux.die.net/man/1/tar) will auto-detect sparse files, and archive them with their sparse size.
 

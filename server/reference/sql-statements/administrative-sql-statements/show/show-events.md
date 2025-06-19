@@ -9,7 +9,7 @@ SHOW EVENTS [{FROM | IN} schema_name]
 
 ## Description
 
-Shows information about Event Manager [events](../../../../server-usage/triggers-events/event-scheduler/events.md) (created with `[CREATE EVENT](../../data-definition/create/create-event.md)`). Requires the `[EVENT](../../account-management-sql-commands/grant.md#database-privileges)` privilege. Without any arguments, `SHOW EVENTS` lists all of the events in the current schema:
+Shows information about Event Manager [events](../../../../server-usage/triggers-events/event-scheduler/events.md) (created with [CREATE EVENT](../../data-definition/create/create-event.md)). Requires the [EVENT](../../account-management-sql-commands/grant.md#database-privileges) privilege. Without any arguments, `SHOW EVENTS` lists all of the events in the current schema:
 
 ```
 SELECT CURRENT_USER(), SCHEMA();
@@ -38,7 +38,7 @@ collation_connection: latin1_swedish_ci
   Database Collation: latin1_swedish_ci
 ```
 
-To see the event action, use `[SHOW CREATE EVENT](show-create-event.md)` instead, or look at the `[information_schema.EVENTS](../system-tables/information-schema/information-schema-tables/information-schema-events-table.md)` table.
+To see the event action, use [SHOW CREATE EVENT](show-create-event.md) instead, or look at the [information_schema.EVENTS](../system-tables/information-schema/information-schema-tables/information-schema-events-table.md) table.
 
 To see events for a specific schema, use the `FROM` clause.\
 For example, to see events for the test schema, use the following statement:

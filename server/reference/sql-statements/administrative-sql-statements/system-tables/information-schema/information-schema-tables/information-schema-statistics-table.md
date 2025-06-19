@@ -24,7 +24,7 @@ It contains the following columns:
 | COMMENT        | Index comments from the [CREATE INDEX](../../../../../sql-statements/data-definition/create/create-index.md) statement.                                                                                                                                                                                                                                    |
 | IGNORED        | Whether or not an index will be ignored by the optimizer. See [Ignored Indexes](../../../../../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/ignored-indexes.md). From [MariaDB 10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/mariadb-1060-release-notes).                                 |
 
-The `[SHOW INDEX](../../../show/show-index.md)` statement produces similar output.
+The [SHOW INDEX](../../../show/show-index.md) statement produces similar output.
 
 ## Example
 

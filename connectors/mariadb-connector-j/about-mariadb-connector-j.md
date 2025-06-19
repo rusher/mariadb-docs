@@ -39,7 +39,7 @@ To determine which MariaDB Connector/J release series would be best to use for e
 
 ## Installing MariaDB Connector/J
 
-MariaDB Connector/J can be installed using [Maven](https://maven.apache.org/what-is-maven.html), [Gradle](https://gradle.org/), or by manually putting the `.jar` file in your `[CLASSPATH](https://docs.oracle.com/javase/tutorial/essential/environment/paths.html)`. See [Installing MariaDB Connector/J](installing-mariadb-connectorj.md) for more information.
+MariaDB Connector/J can be installed using [Maven](https://maven.apache.org/what-is-maven.html), [Gradle](https://gradle.org/), or by manually putting the `.jar` file in your [CLASSPATH](https://docs.oracle.com/javase/tutorial/essential/environment/paths.html). See [Installing MariaDB Connector/J](installing-mariadb-connectorj.md) for more information.
 
 MariaDB Connector/J `.jar` files and source code tarballs can be downloaded from the following URL:
 
@@ -65,7 +65,7 @@ There are two standard ways to get a connection:
 
 **Using DriverManager**
 
-The preferred way to get a connection with MariaDB Connector/J is to use the `[DriverManager](https://docs.oracle.com/javase/8/docs/api/java/sql/DriverManager.html)` class.\
+The preferred way to get a connection with MariaDB Connector/J is to use the [DriverManager](https://docs.oracle.com/javase/8/docs/api/java/sql/DriverManager.html) class.\
 When the `DriverManager` class is used to locate and load MariaDB Connector/J, the application needs no further configuration. The `DriverManager` class will automatically load MariaDB Connector/J and allow it to be used in the same way as any other JDBC driver.
 
 For example:

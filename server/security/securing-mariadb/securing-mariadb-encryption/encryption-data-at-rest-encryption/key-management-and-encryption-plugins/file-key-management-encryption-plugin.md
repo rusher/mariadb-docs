@@ -24,7 +24,7 @@ The File Key Management plugin is included in MariaDB packages as the `file_key_
 
 ## Installing the Plugin
 
-Although the plugin's shared library is distributed with MariaDB by default, the plugin is not actually installed by MariaDB by default. The plugin can be installed by providing the `[--plugin-load](../../../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md)` or the `[--plugin-load-add](../../../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md)` options. This can be specified as a command-line argument to `[mysqld](../../../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md)` or it can be specified in a relevant server [option group](../../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md). For example:
+Although the plugin's shared library is distributed with MariaDB by default, the plugin is not actually installed by MariaDB by default. The plugin can be installed by providing the [--plugin-load](../../../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) or the [--plugin-load-add](../../../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) options. This can be specified as a command-line argument to [mysqld](../../../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) or it can be specified in a relevant server [option group](../../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md). For example:
 
 ```
 [mariadb]
@@ -36,13 +36,13 @@ plugin_load_add = file_key_management
 
 Before you uninstall the plugin, you should ensure that [data-at-rest encryption](../data-at-rest-encryption-overview.md) is completely disabled, and that MariaDB no longer needs the plugin to decrypt tables or other files.
 
-You can uninstall the plugin dynamically by executing `[UNINSTALL SONAME](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md)` or `[UNINSTALL PLUGIN](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md)`. For example:
+You can uninstall the plugin dynamically by executing [UNINSTALL SONAME](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md) or [UNINSTALL PLUGIN](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md). For example:
 
 ```sql
 UNINSTALL SONAME 'file_key_management';
 ```
 
-If you installed the plugin by providing the `[--plugin-load](../../../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md)` or the `[--plugin-load-add](../../../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md)` options in a relevant server [option group](../../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md), then those options should be removed to prevent the plugin from being loaded the next time the server is restarted.
+If you installed the plugin by providing the [--plugin-load](../../../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) or the [--plugin-load-add](../../../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) options in a relevant server [option group](../../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md), then those options should be removed to prevent the plugin from being loaded the next time the server is restarted.
 
 ## Creating the Key File
 
@@ -57,7 +57,7 @@ You can also optionally encrypt the key file to make it less accessible from the
 
 The File Key Management plugin uses [Advanced Encryption Standard (AES)](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard) to encrypt data, which supports 128-bit, 192-bit, and 256-bit encryption keys. Therefore, the plugin also supports 128-bit, 192-bit, and 256-bit encryption keys.
 
-You can generate random encryption keys using the `[openssl rand](https://www.openssl.org/docs/man1.1.1/man1/rand.html)` command. For example, to create a random 256-bit (32-byte) encryption key, you would run the following command:
+You can generate random encryption keys using the [openssl rand](https://www.openssl.org/docs/man1.1.1/man1/rand.html) command. For example, to create a random 256-bit (32-byte) encryption key, you would run the following command:
 
 ```
 $ openssl rand -hex 32
@@ -82,13 +82,13 @@ The new key file would look something like the following after this step:
 100;8db1ee74580e7e93ab8cf157f02656d356c2f437d548d5bf16bf2a56932954a3
 ```
 
-The key identifiers give you a way to reference the encryption keys from MariaDB. In the example above, you could reference these encryption keys using the key identifiers `1`, `2` or `100` with the `[ENCRYPTION_KEY_ID](../../../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#encryption_key_id)` table option or with system variables such as `[innodb_default_encryption_key_id](../../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_default_encryption_key_id)`. You do not necessarily need multiple encryption keys--the encryption key with the key identifier `1` is the only mandatory encryption key.
+The key identifiers give you a way to reference the encryption keys from MariaDB. In the example above, you could reference these encryption keys using the key identifiers `1`, `2` or `100` with the [ENCRYPTION_KEY_ID](../../../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#encryption_key_id) table option or with system variables such as [innodb_default_encryption_key_id](../../../../../reference/storage-engines/innodb/innodb-system-variables.md#innodb_default_encryption_key_id). You do not necessarily need multiple encryption keys--the encryption key with the key identifier `1` is the only mandatory encryption key.
 
 ### Configuring the Path to an Unencrypted Key File
 
-If the key file is unencrypted, then the File Key Management plugin only requires the `[file_key_management_filename](#file_key_management_filename)` system variable to be configured.
+If the key file is unencrypted, then the File Key Management plugin only requires the [file_key_management_filename](#file_key_management_filename) system variable to be configured.
 
-This system variable can be specified as command-line arguments to `[mysqld](../../../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md)` or it can be specified in a relevant server [option group](../../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md). For example:
+This system variable can be specified as command-line arguments to [mysqld](../../../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) or it can be specified in a relevant server [option group](../../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md). For example:
 
 ```
 [mariadb]
@@ -96,11 +96,11 @@ This system variable can be specified as command-line arguments to `[mysqld](../
 loose_file_key_management_filename = /etc/mysql/encryption/keyfile
 ```
 
-Note that the `[loose](../../../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md)` option prefix is specified. This option prefix is used in case the plugin hasn't been installed yet.
+Note that the [loose](../../../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) option prefix is specified. This option prefix is used in case the plugin hasn't been installed yet.
 
 ## Encrypting the Key File
 
-By enabling the File Key Management plugin and setting the appropriate path on the `[file_key_management_filename](#file_key_management_filename)` system variable, you can begin using the plugin to manage your encryption keys. But, there is a security risk in doing so, given that the keys are stored in plain text on your system. You can reduce this exposure using file permissions, but it's better to encrypt the whole key file to further restrict access.
+By enabling the File Key Management plugin and setting the appropriate path on the [file_key_management_filename](#file_key_management_filename) system variable, you can begin using the plugin to manage your encryption keys. But, there is a security risk in doing so, given that the keys are stored in plain text on your system. You can reduce this exposure using file permissions, but it's better to encrypt the whole key file to further restrict access.
 
 There are some important details to keep in mind about encrypting the key file, such as:
 
@@ -109,13 +109,13 @@ There are some important details to keep in mind about encrypting the key file, 
 * The encryption key is created from the [SHA-1](https://en.wikipedia.org/wiki/SHA-1) hash of the encryption password.
 * The encryption password has a max length of 256 characters.
 
-You can generate a random encryption password using the `[openssl rand](https://www.openssl.org/docs/man1.1.1/man1/rand.html)` command. For example, to create a random 256 character encryption password, you could execute the following:
+You can generate a random encryption password using the [openssl rand](https://www.openssl.org/docs/man1.1.1/man1/rand.html) command. For example, to create a random 256 character encryption password, you could execute the following:
 
 ```bash
 $ sudo openssl rand -hex 128 > /etc/mysql/encryption/keyfile.key
 ```
 
-You can encrypt the key file using the `[openssl enc](https://www.openssl.org/docs/man1.1.1/man1/enc.html)` command. For example, to encrypt the key file with the encryption password created in the previous step, you could execute the following:
+You can encrypt the key file using the [openssl enc](https://www.openssl.org/docs/man1.1.1/man1/enc.html) command. For example, to encrypt the key file with the encryption password created in the previous step, you could execute the following:
 
 ```bash
 $ sudo openssl enc -aes-256-cbc -md sha1 \
@@ -137,14 +137,14 @@ Running this command reads the unencrypted `keyfile` file created above and crea
 
 ### Configuring the Path to an Encrypted Key File
 
-If the key file is encrypted, then the File Key Management plugin requires both the `[file_key_management_filename](#file_key_management_filename)` and the `[file_key_management_filekey](#file_key_management_filekey)` system variables to be configured.
+If the key file is encrypted, then the File Key Management plugin requires both the [file_key_management_filename](#file_key_management_filename) and the [file_key_management_filekey](#file_key_management_filekey) system variables to be configured.
 
-The `[file_key_management_filekey](#file_key_management_filekey)` system variable can be provided in two forms:
+The [file_key_management_filekey](#file_key_management_filekey) system variable can be provided in two forms:
 
-* It can be the actual plain-text encryption password. This is not recommended, since the plain-text encryption password would be visible in the output of the `[SHOW VARIABLES](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-variables.md)` statement.
+* It can be the actual plain-text encryption password. This is not recommended, since the plain-text encryption password would be visible in the output of the [SHOW VARIABLES](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-variables.md) statement.
 * If it is prefixed with `FILE:`, then it can be a path to a file that contains the plain-text encryption password.
 
-These system variables can be specified as command-line arguments to `[mysqld](../../../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md)` or they can be specified in a relevant server [option group](../../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md). For example:
+These system variables can be specified as command-line arguments to [mysqld](../../../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) or they can be specified in a relevant server [option group](../../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md). For example:
 
 ```
 [mariadb]
@@ -153,7 +153,7 @@ loose_file_key_management_filename = /etc/mysql/encryption/keyfile.enc
 loose_file_key_management_filekey = FILE:/etc/mysql/encryption/keyfile.key
 ```
 
-Note that the `[loose](../../../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md)` option prefix is specified. This option prefix is used in case the plugin hasn't been installed yet.
+Note that the [loose](../../../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) option prefix is specified. This option prefix is used in case the plugin hasn't been installed yet.
 
 ## Choosing an Encryption Algorithm
 
@@ -166,7 +166,7 @@ The recommended algorithm is `AES_CTR`, but this algorithm is only available whe
 
 ### Configuring the Encryption Algorithm
 
-The encryption algorithm can be configured by setting the `[file_key_management_encryption_algorithm](#file_key_management_encryption_algorithm)` system variable.
+The encryption algorithm can be configured by setting the [file_key_management_encryption_algorithm](#file_key_management_encryption_algorithm) system variable.
 
 This system variable can be set to one of the following values:
 
@@ -176,7 +176,7 @@ This system variable can be set to one of the following values:
 | AES\_CBC              | Data is encrypted using AES in the [Cipher Block Chaining (CBC)](https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#Cipher_Block_Chaining_.28CBC.29) mode. This is the default value.                                                                                                                                                                         |
 | AES\_CTR              | Data is encrypted using AES either in the [Counter (CTR)](https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#Counter_.28CTR.29) mode or in the authenticated [Galois/Counter Mode (GCM)](https://en.wikipedia.org/wiki/Galois/Counter_Mode) mode, depending on context. This is only supported in some builds. See the previous section for more information. |
 
-This system variable can be specified as command-line arguments to `[mysqld](../../../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md)` or it can be specified in a relevant server [option group](../../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md). For example:
+This system variable can be specified as command-line arguments to [mysqld](../../../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) or it can be specified in a relevant server [option group](../../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md). For example:
 
 ```
 [mariadb]
@@ -184,7 +184,7 @@ This system variable can be specified as command-line arguments to `[mysqld](../
 loose_file_key_management_encryption_algorithm = AES_CTR
 ```
 
-Note that the `[loose](../../../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md)` option prefix is specified. This option prefix is used in case the plugin hasn't been installed yet.
+Note that the [loose](../../../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) option prefix is specified. This option prefix is used in case the plugin hasn't been installed yet.
 
 Note that this variable does not affect the algorithm that MariaDB uses to decrypt the key file. This variable only affects the encryption algorithm that MariaDB uses to encrypt and decrypt data. The only algorithm that MariaDB currently supports to encrypt the key file is [Cipher Block Chaining (CBC)](https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#CBC) mode of [Advanced Encryption Standard (AES)](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard).
 
@@ -236,7 +236,7 @@ The File Key Management plugin does not currently support [key rotation](encrypt
 
 ### `file_key_management_filekey`
 
-* Description: This system variable is used to determine the encryption password that is used to decrypt the key file defined by `[file_key_management_filename](#file_key_management_filename)`.
+* Description: This system variable is used to determine the encryption password that is used to decrypt the key file defined by [file_key_management_filename](#file_key_management_filename).
   * If this system variable's value is prefixed with `FILE:`, then it is interpreted as a path to a file that contains the plain-text encryption password.
   * If this system variable's value is not prefixed with `FILE:`, then it is interpreted as the plain-text encryption password. However, this is not recommended.
   * The encryption password has a max length of 256 characters.
@@ -249,7 +249,7 @@ The File Key Management plugin does not currently support [key rotation](encrypt
 
 ### `file_key_management_filename`
 
-* Description: This system variable is used to determine the path to the file that contains the encryption keys. If `[file_key_management_filekey](#file_key_management_filekey)` is set, then this file can be encrypted with [Cipher Block Chaining (CBC)](https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#CBC) mode of [Advanced Encryption Standard (AES)](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard).
+* Description: This system variable is used to determine the path to the file that contains the encryption keys. If [file_key_management_filekey](#file_key_management_filekey) is set, then this file can be encrypted with [Cipher Block Chaining (CBC)](https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#CBC) mode of [Advanced Encryption Standard (AES)](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard).
 * Commandline: `--file-key-management-filename=value`
 * Scope: Global
 * Dynamic: No
@@ -262,10 +262,10 @@ The File Key Management plugin does not currently support [key rotation](encrypt
 
 * Description: Controls how the server should treat the plugin when the server starts up.
   * Valid values are:
-    * `OFF` - Disables the plugin without removing it from the `[mysql.plugins](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-plugin-table.md)` table.
+    * `OFF` - Disables the plugin without removing it from the [mysql.plugins](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-plugin-table.md) table.
     * `ON` - Enables the plugin. If the plugin cannot be initialized, then the server will still continue starting up, but the plugin will be disabled.
     * `FORCE` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error.
-    * `FORCE_PLUS_PERMANENT` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error. In addition, the plugin cannot be uninstalled with `[UNINSTALL SONAME](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md)` or `[UNINSTALL PLUGIN](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md)` while the server is running.
+    * `FORCE_PLUS_PERMANENT` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error. In addition, the plugin cannot be uninstalled with [UNINSTALL SONAME](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md) or [UNINSTALL PLUGIN](../../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md) while the server is running.
   * See [Plugin Overview: Configuring Plugin Activation at Server Startup](../../../../../reference/plugins/plugin-overview.md#configuring-plugin-activation-at-server-startup) for more information.
 * Commandline: `--file-key-management=value`
 * Data Type: `enumerated`

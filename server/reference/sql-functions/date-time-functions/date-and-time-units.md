@@ -1,6 +1,6 @@
 # Date and Time Units
 
-The `INTERVAL` keyword can be used to add or subtract a time interval of time to a `[DATETIME](../../../../data-types/date-and-time-data-types/datetime.md)`, `[DATE](../../../../data-types/date-and-time-data-types/date.md)` or `[TIME](../../../../data-types/date-and-time-data-types/time.md)` value.
+The `INTERVAL` keyword can be used to add or subtract a time interval of time to a [DATETIME](../../../../data-types/date-and-time-data-types/datetime.md), [DATE](../../../../data-types/date-and-time-data-types/date.md) or [TIME](../../../../data-types/date-and-time-data-types/time.md) value.
 
 The syntax is:
 
@@ -8,7 +8,7 @@ The syntax is:
 INTERVAL time_quantity time_unit
 ```
 
-For example, the `SECOND` unit is used below by the `[DATE_ADD()](date_add.md)` function:
+For example, the `SECOND` unit is used below by the [DATE_ADD()](date_add.md) function:
 
 ```
 SELECT '2008-12-31 23:59:59' + INTERVAL 1 SECOND;
@@ -57,9 +57,9 @@ INTERVAL '1!30!30' HOUR_SECOND -- same as above
 
 Time units can be used in the following contexts:
 
-* after a `[+](../numeric-functions/addition-operator.md)` or a `[-](../../../operators/arithmetic-operators/subtraction-operator-.md)` operator;
-* with the following `DATE` or `TIME` functions: `[ADDDATE()](adddate.md)`, `[SUBDATE()](subdate.md)`, `[DATE_ADD()](date_add.md)`, `[DATE_SUB()](date_sub.md)`, `[TIMESTAMPADD()](timestampadd.md)`, `[TIMESTAMPDIFF()](timestampdiff.md)`, `[EXTRACT()](extract.md)`;
-* in the `ON SCHEDULE` clause of `[CREATE EVENT](../../data-definition/create/create-event.md)` and `[ALTER EVENT](../../../../../server-usage/programming-customizing-mariadb/triggers-events/event-scheduler/alter-event.md)`.
+* after a [+](../numeric-functions/addition-operator.md) or a [-](../../../operators/arithmetic-operators/subtraction-operator-.md) operator;
+* with the following `DATE` or `TIME` functions: [ADDDATE()](adddate.md), [SUBDATE()](subdate.md), [DATE_ADD()](date_add.md), [DATE_SUB()](date_sub.md), [TIMESTAMPADD()](timestampadd.md), [TIMESTAMPDIFF()](timestampdiff.md), [EXTRACT()](extract.md);
+* in the `ON SCHEDULE` clause of [CREATE EVENT](../../data-definition/create/create-event.md) and [ALTER EVENT](../../../../../server-usage/programming-customizing-mariadb/triggers-events/event-scheduler/alter-event.md).
 * when defining a [partitioning](../../sql-statements/data-definition/create/create-table.md#partitions) `BY SYSTEM_TIME`
 
 ## See Also

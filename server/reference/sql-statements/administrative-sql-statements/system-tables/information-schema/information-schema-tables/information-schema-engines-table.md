@@ -14,7 +14,7 @@ It contains the following columns:
 | XA           | Whether or not the engine supports [XA transactions](../../../../transactions/xa-transactions.md). |
 | SAVEPOINTS   | Whether or not [savepoints](../../../../transactions/savepoint.md) are supported.                  |
 
-It provides identical information to the `[SHOW ENGINES](../../../show/show-engines.md)` statement. Since storage engines are plugins, different information about them is also shown in the `[information_schema.PLUGINS](plugins-table-information-schema.md)` table and by the `[SHOW PLUGINS](../../../show/show-plugins.md)` statement.
+It provides identical information to the [SHOW ENGINES](../../../show/show-engines.md) statement. Since storage engines are plugins, different information about them is also shown in the [information_schema.PLUGINS](plugins-table-information-schema.md) table and by the [SHOW PLUGINS](../../../show/show-plugins.md) statement.
 
 The table is not a standard Information Schema table, and is a MySQL and MariaDB extension.
 

@@ -11,7 +11,7 @@ expr1 SOUNDS LIKE expr2
 ## Description
 
 
-This is the same as `[SOUNDEX](soundex.md)(expr1) = SOUNDEX(expr2)`.
+This is the same as [SOUNDEX](soundex.md)(expr1) = SOUNDEX(expr2).
 
 
 ## Example

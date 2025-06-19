@@ -2,7 +2,7 @@
 
 Most of the tables processed by CONNECT are just plain DOS or UNIX data files,\
 logically regarded as tables thanks to the description given when creating\
-the table. This description comes from the `[CREATE TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md)`\
+the table. This description comes from the [CREATE TABLE](../../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md)\
 statement. Depending on the application, these tables can already exist as data\
 files, used as is by CONNECT, or can have been physically made by CONNECT as\
 the result of a `CREATE TABLE ... SELECT ...` and/or INSERT statement(s).
@@ -57,7 +57,7 @@ enhanced under Windows(TM) and some flavors of UNIX or Linux by using the\
 technique of “file mapping”, in which a file is processed as if it were\
 entirely in memory. Mapping is specified when creating the table by the use of\
 the `MAPPED=YES` option. This does not apply to tables not handled by system\
-I/O functions (`[XML](https://mariadb.com/kb/en/%5B%5Bconnect-xml-table-type)` and`[INI](connect-ini-table-type.md)`).
+I/O functions ([XML](https://mariadb.com/kb/en/%5B%5Bconnect-xml-table-type) and[INI](connect-ini-table-type.md)).
 
 ## Big File Tables
 

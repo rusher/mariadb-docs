@@ -205,7 +205,7 @@ Also see the [Full list of MariaDB options, system and status variables](https:/
 
 #### `innodb_autoinc_lock_mode`
 
-* Description: The lock mode that is used when generating `[AUTO_INCREMENT](../../data-types/auto_increment.md)` values for InnoDB tables.
+* Description: The lock mode that is used when generating [AUTO_INCREMENT](../../data-types/auto_increment.md) values for InnoDB tables.
   * Valid values are:
     * `0` is the traditional lock mode.
     * `1` is the consecutive lock mode.
@@ -587,12 +587,12 @@ Also see the [Full list of MariaDB options, system and status variables](https:/
 
 * Description: Compression algorithm used for [InnoDB page compression](innodb-page-compression.md). The supported values are:
   * `none`: Pages are not compressed.
-  * `zlib`: Pages are compressed using the bundled `[zlib](https://www.zlib.net/)` compression algorithm.
-  * `lz4`: Pages are compressed using the `[lz4](https://code.google.com/p/lz4/)` compression algorithm.
-  * `lzo`: Pages are compressed using the `[lzo](https://www.oberhumer.com/opensource/lzo/)` compression algorithm.
-  * `lzma`: Pages are compressed using the `[lzma](https://tukaani.org/xz/)` compression algorithm.
-  * `bzip2`: Pages are compressed using the `[bzip2](https://www.bzip.org/)` compression algorithm.
-  * `snappy`: Pages are compressed using the `[snappy](https://google.github.io/snappy/)` algorithm.
+  * `zlib`: Pages are compressed using the bundled [zlib](https://www.zlib.net/) compression algorithm.
+  * `lz4`: Pages are compressed using the [lz4](https://code.google.com/p/lz4/) compression algorithm.
+  * `lzo`: Pages are compressed using the [lzo](https://www.oberhumer.com/opensource/lzo/) compression algorithm.
+  * `lzma`: Pages are compressed using the [lzma](https://tukaani.org/xz/) compression algorithm.
+  * `bzip2`: Pages are compressed using the [bzip2](https://www.bzip.org/) compression algorithm.
+  * `snappy`: Pages are compressed using the [snappy](https://google.github.io/snappy/) algorithm.
   * On many distributions, MariaDB may not support all page compression algorithms by default. From [MariaDB 10.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-7-series/what-is-mariadb-107), libraries can be installed as a plugin. See [Compression Plugins](../../../ha-and-performance/optimization-and-tuning/optimization-and-tuning-compression/compression-plugins.md).
   * See [InnoDB Page Compression: Configuring the InnoDB Page Compression Algorithm](innodb-page-compression.md#configuring-the-innodb-page-compression-algorithm) for more information.
 * Commandline: `--innodb-compression-algorithm=value`
@@ -696,7 +696,7 @@ Also see the [Full list of MariaDB options, system and status variables](https:/
 
 #### `innodb_data_file_path`
 
-* Description: Individual [InnoDB](./) data files, paths and sizes. The value of [innodb\_data\_home\_dir](innodb-system-variables.md#innodb_data_home_dir) is joined to each path specified by innodb\_data\_file\_path to get the full directory path. If innodb\_data\_home\_dir is an empty string, absolute paths can be specified here. A file size is specified (with K for kilobytes, M for megabytes and G for gigabytes). Also whether or not to `autoextend` the data file, and whether or not to `[autoshrink](innodb-tablespaces/innodb-system-tablespaces.md#decreasing-the-size)` on startup may also be specified.
+* Description: Individual [InnoDB](./) data files, paths and sizes. The value of [innodb\_data\_home\_dir](innodb-system-variables.md#innodb_data_home_dir) is joined to each path specified by innodb\_data\_file\_path to get the full directory path. If innodb\_data\_home\_dir is an empty string, absolute paths can be specified here. A file size is specified (with K for kilobytes, M for megabytes and G for gigabytes). Also whether or not to `autoextend` the data file, and whether or not to [autoshrink](innodb-tablespaces/innodb-system-tablespaces.md#decreasing-the-size) on startup may also be specified.
 * Commandline: `--innodb-data-file-path=name`
 * Scope: Global
 * Dynamic: No
@@ -939,9 +939,9 @@ Also see the [Full list of MariaDB options, system and status variables](https:/
 #### `innodb_encrypt_tables`
 
 * Description: Enables automatic encryption of all InnoDB tablespaces.
-  * `OFF` - Disables table encryption for all new and existing tables that have the `[ENCRYPTED](../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#encrypted)` table option set to `DEFAULT`.
-  * `ON` - Enables table encryption for all new and existing tables that have the `[ENCRYPTED](../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#encrypted)` table option set to `DEFAULT`, but allows unencrypted tables to be created.
-  * `FORCE` - Enables table encryption for all new and existing tables that have the `[ENCRYPTED](../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#encrypted)` table option set to `DEFAULT`, and doesn't allow unencrypted tables to be created (CREATE TABLE ... ENCRYPTED=NO will fail).
+  * `OFF` - Disables table encryption for all new and existing tables that have the [ENCRYPTED](../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#encrypted) table option set to `DEFAULT`.
+  * `ON` - Enables table encryption for all new and existing tables that have the [ENCRYPTED](../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#encrypted) table option set to `DEFAULT`, but allows unencrypted tables to be created.
+  * `FORCE` - Enables table encryption for all new and existing tables that have the [ENCRYPTED](../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#encrypted) table option set to `DEFAULT`, and doesn't allow unencrypted tables to be created (CREATE TABLE ... ENCRYPTED=NO will fail).
   * See [Data-at-Rest Encryption](../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/data-at-rest-encryption-overview.md) and [Enabling InnoDB Encryption: Enabling Encryption for Automatically Encrypted Tablespaces](../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/innodb-encryption/innodb-enabling-encryption.md#enabling-encryption-for-automatically-encrypted-tablespaces) for more information.
 * Commandline: `--innodb-encrypt-tables={0|1}`
 * Scope: Global
@@ -964,7 +964,7 @@ Also see the [Full list of MariaDB options, system and status variables](https:/
 
 #### `innodb_encryption_rotate_key_age`
 
-* Description: Re-encrypt in background any page having a key older than this number of key versions. When setting up encryption, this variable must be set to a non-zero value. Otherwise, when you enable encryption through `[innodb_encrypt_tables](#innodb_encrypt_tables)` MariaDB won't be able to automatically encrypt any unencrypted tables.
+* Description: Re-encrypt in background any page having a key older than this number of key versions. When setting up encryption, this variable must be set to a non-zero value. Otherwise, when you enable encryption through [innodb_encrypt_tables](#innodb_encrypt_tables) MariaDB won't be able to automatically encrypt any unencrypted tables.
   * See [Data-at-Rest Encryption](../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/data-at-rest-encryption-overview.md) and [InnoDB Encryption Keys: Key Rotation](../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/innodb-encryption/innodb-encryption-keys.md#key-rotation) for more information.
 * Commandline: `--innodb-encryption-rotate-key-age=#`
 * Scope: Global
@@ -1526,7 +1526,7 @@ Also see the [Full list of MariaDB options, system and status variables](https:/
 #### `innodb_large_prefix`
 
 * Description: If set to `1`, tables that use specific [row formats](innodb-row-formats/innodb-row-formats-overview.md) are permitted to have index key prefixes up to 3072 bytes (for 16k pages, [smaller otherwise](innodb-limitations.md#page-sizes)). If not set, the limit is 767 bytes.
-  * This applies to the `[DYNAMIC](innodb-row-formats/innodb-dynamic-row-format.md)` and `[COMPRESSED](innodb-row-formats/innodb-compressed-row-format.md)` row formats.
+  * This applies to the [DYNAMIC](innodb-row-formats/innodb-dynamic-row-format.md) and [COMPRESSED](innodb-row-formats/innodb-compressed-row-format.md) row formats.
   * Removed in 10.3.1 and restored as a deprecated and unused variable in 10.4.3 for compatibility purposes.
 * Commandline: `--innodb-large-prefix`
 * Scope: Global
@@ -1935,7 +1935,7 @@ Also see the [Full list of MariaDB options, system and status variables](https:/
 #### `innodb_mtflush_threads`
 
 * Description: Sets the number of threads to use in Multi-Threaded Flush operations. For more information, see [Fusion-io Multi-threaded Flush](innodb-page-flushing.md).
-  * InnoDB's multi-thread flush feature was deprecated in [MariaDB 10.2.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-1029-release-notes) and removed from [MariaDB 10.3.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-1032-release-notes). In later versions of MariaDB, use `[innodb_page_cleaners](#innodb_page_cleaners)` system variable instead.
+  * InnoDB's multi-thread flush feature was deprecated in [MariaDB 10.2.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-1029-release-notes) and removed from [MariaDB 10.3.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-1032-release-notes). In later versions of MariaDB, use [innodb_page_cleaners](#innodb_page_cleaners) system variable instead.
   * See [InnoDB Page Flushing: Page Flushing with Multi-threaded Flush Threads](innodb-page-flushing.md#page-flushing-with-multi-threaded-flush-threads) for more information.
 * Commandline: `--innodb-mtflush-threads=#`
 * Scope: Global
@@ -2464,9 +2464,9 @@ Also see the [Full list of MariaDB options, system and status variables](https:/
 #### `innodb_stats_transient_sample_pages`
 
 * Description: Gives control over the index distribution statistics by determining the number of index pages to sample. Higher values produce more disk I/O, but, especially for large tables, produce more accurate statistics and therefore make more effective use of the query optimizer. Lower values than the default are not recommended, as the statistics can be quite inaccurate.
-  * If `[innodb_stats_traditional](#innodb_stats_traditional)` is enabled, then the exact number of pages configured by this system variable will be sampled for statistics.
-  * If `[innodb_stats_traditional](#innodb_stats_traditional)` is disabled, then the number of pages to sample for statistics is calculated using a logarithmic algorithm, so the exact number can change depending on the size of the table. This means that more samples may be used for larger tables.
-  * If [persistent statistics](../../../ha-and-performance/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/innodb-persistent-statistics.md) are enabled, then the `[innodb_stats_persistent_sample_pages](#innodb_stats_persistent_sample_pages)` system variable applies instead. [persistent statistics](../../../ha-and-performance/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/innodb-persistent-statistics.md) are enabled with the `[innodb_stats_persistent](#innodb_stats_persistent)` system variable.
+  * If [innodb_stats_traditional](#innodb_stats_traditional) is enabled, then the exact number of pages configured by this system variable will be sampled for statistics.
+  * If [innodb_stats_traditional](#innodb_stats_traditional) is disabled, then the number of pages to sample for statistics is calculated using a logarithmic algorithm, so the exact number can change depending on the size of the table. This means that more samples may be used for larger tables.
+  * If [persistent statistics](../../../ha-and-performance/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/innodb-persistent-statistics.md) are enabled, then the [innodb_stats_persistent_sample_pages](#innodb_stats_persistent_sample_pages) system variable applies instead. [persistent statistics](../../../ha-and-performance/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/innodb-persistent-statistics.md) are enabled with the [innodb_stats_persistent](#innodb_stats_persistent) system variable.
 * Commandline: `--innodb-stats-transient-sample-pages=#`
 * Scope: Global
 * Dynamic: Yes
@@ -2589,7 +2589,7 @@ Also see the [Full list of MariaDB options, system and status variables](https:/
 
 #### `innodb_temp_data_file_path`
 
-* Description: Path where to store data for [InnoDB](./) temporary tables. Argument is `filename:size` followed by options separated by ':' Multiple paths can be given separated by ';' A file size is specified (with K for kilobytes, M for megabytes and G for gigabytes). Also whether or not to `autoextend` the data file, `max` size and whether or not to `[autoshrink](innodb-tablespaces/innodb-system-tablespaces.md#decreasing-the-size)` on startup may also be specified.
+* Description: Path where to store data for [InnoDB](./) temporary tables. Argument is `filename:size` followed by options separated by ':' Multiple paths can be given separated by ';' A file size is specified (with K for kilobytes, M for megabytes and G for gigabytes). Also whether or not to `autoextend` the data file, `max` size and whether or not to [autoshrink](innodb-tablespaces/innodb-system-tablespaces.md#decreasing-the-size) on startup may also be specified.
 * Commandline: `--innodb-temp-data-file-path=path`
 * Scope: Global
 * Dynamic: No
@@ -2714,7 +2714,7 @@ Also see the [Full list of MariaDB options, system and status variables](https:/
 
 * Description: Whether to enable Multi-Threaded Flush operations.\
   For more information, see Fusion.
-  * InnoDB's multi-thread flush feature was deprecated in [MariaDB 10.2.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-1029-release-notes) and removed from [MariaDB 10.3.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-1032-release-notes). In later versions of MariaDB, use `[innodb_page_cleaners](#innodb_page_cleaners)` system variable instead.
+  * InnoDB's multi-thread flush feature was deprecated in [MariaDB 10.2.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-1029-release-notes) and removed from [MariaDB 10.3.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-1032-release-notes). In later versions of MariaDB, use [innodb_page_cleaners](#innodb_page_cleaners) system variable instead.
   * See [InnoDB Page Flushing: Page Flushing with Multi-threaded Flush Threads](innodb-page-flushing.md#page-flushing-with-multi-threaded-flush-threads) for more information.
 * Commandline: `--innodb-use-mtflush={0|1}`
 * Scope: Global

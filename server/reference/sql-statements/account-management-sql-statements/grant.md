@@ -117,47 +117,25 @@ select host, user from mysql.user where user='user123' ;
 
 ## Privilege Levels
 
-Privileges can be set globally, for an entire database, for a table or routine,\
-or for individual columns in a table. Certain privileges can only be set at\
-certain levels.
+Privileges can be set globally, for an entire database, for a table or routine, or for individual columns in a table. Certain privileges can only be set at certain levels.
 
 Global privileges do not take effect immediately and are only applied to connections created after the `GRANT` statement was executed.
 
-* [Global privileges priv\_type](grant.md#global-privileges) are granted using `*.*` for\
-  priv\_level. Global privileges include privileges to administer the database\
-  and manage user accounts, as well as privileges for all tables, functions, and\
-  procedures. Global privileges are stored in [mysql.global\_priv table](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-global_priv-table.md).
-* [Database privileges priv\_type](grant.md#database-privileges) are granted using `db_name.*`\
-  for priv\_level, or using just `*` to use default database. Database\
-  privileges include privileges to create tables and functions, as well as\
+* [Global privileges priv\_type](grant.md#global-privileges) are granted using `*.*` for priv\_level. Global privileges include privileges to administer the database and manage user accounts, as well as privileges for all tables, functions, and procedures. Global privileges are stored in [mysql.global\_priv table](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-global_priv-table.md).
+* [Database privileges priv\_type](grant.md#database-privileges) are granted using `db_name.*` for priv\_level, or using just `*` to use default database. Database privileges include privileges to create tables and functions, as well as\
   privileges for all tables, functions, and procedures in the database. Database privileges are stored in the [mysql.db table](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-db-table.md).
-* [Table privileges priv\_type](grant.md#table-privileges) are granted using `db_name.tbl_name`\
-  for priv\_level, or using just `tbl_name` to specify a table in the default\
-  database. The `TABLE` keyword is optional. Table privileges include the\
-  ability to select and change data in the table. Certain table privileges can\
-  be granted for individual columns.
-* [Column privileges priv\_type](grant.md#column-privileges) are granted by specifying a table for\
-  priv\_level and providing a column list after the privilege type. They allow\
-  you to control exactly which columns in a table users can select and change.
-* [Function privileges priv\_type](grant.md#function-privileges) are granted using `FUNCTION db_name.routine_name`\
-  for priv\_level, or using just `FUNCTION routine_name` to specify a function\
-  in the default database.
-* [Procedure privileges priv\_type](grant.md#procedure-privileges) are granted using `PROCEDURE db_name.routine_name`\
-  for priv\_level, or using just `PROCEDURE routine_name` to specify a procedure\
-  in the default database.
+* [Table privileges priv\_type](grant.md#table-privileges) are granted using `db_name.tbl_name`for priv\_level, or using just `tbl_name` to specify a table in the default database. The `TABLE` keyword is optional. Table privileges include the ability to select and change data in the table. Certain table privileges can be granted for individual columns.
+* [Column privileges priv\_type](grant.md#column-privileges) are granted by specifying a table for priv\_level and providing a column list after the privilege type. They allow you to control exactly which columns in a table users can select and change.
+* [Function privileges priv\_type](grant.md#function-privileges) are granted using `FUNCTION db_name.routine_name` for priv\_level, or using just `FUNCTION routine_name` to specify a function in the default database.
+* [Procedure privileges priv\_type](grant.md#procedure-privileges) are granted using `PROCEDURE db_name.routine_name` for priv\_level, or using just `PROCEDURE routine_name` to specify a procedure in the default database.
 
 #### The `USAGE` Privilege
 
-The `USAGE` privilege grants no real privileges. The [SHOW GRANTS](../administrative-sql-statements/show/show-grants.md)\
-statement will show a global `USAGE` privilege for a newly-created user. You\
-can use `USAGE` with the `GRANT` statement to change options like `GRANT OPTION`\
-and `MAX_USER_CONNECTIONS` without changing any account privileges.
+The `USAGE` privilege grants no real privileges. The [SHOW GRANTS](../administrative-sql-statements/show/show-grants.md) statement will show a global `USAGE` privilege for a newly-created user. You can use `USAGE` with the `GRANT` statement to change options like `GRANT OPTION`and `MAX_USER_CONNECTIONS` without changing any account privileges.
 
 #### The `ALL PRIVILEGES` Privilege
 
-The `ALL PRIVILEGES` privilege grants all available privileges. Granting all\
-privileges only affects the given privilege level. For example, granting all\
-privileges on a table does not grant any privileges on the database or globally.
+The `ALL PRIVILEGES` privilege grants all available privileges. Granting all privileges only affects the given privilege level. For example, granting all privileges on a table does not grant any privileges on the database or globally.
 
 Using `ALL PRIVILEGES` does not grant the special `GRANT OPTION` privilege.
 
@@ -165,28 +143,23 @@ You can use `ALL` instead of `ALL PRIVILEGES`.
 
 #### The `GRANT OPTION` Privilege
 
-Use the `WITH GRANT OPTION` clause to give users the ability to grant privileges\
-to other users at the given privilege level. Users with the `GRANT OPTION` privilege can\
-only grant privileges they have. They cannot grant privileges at a higher privilege level than\
-they have the `GRANT OPTION` privilege.
+Use the `WITH GRANT OPTION` clause to give users the ability to grant privileges to other users at the given privilege level. Users with the `GRANT OPTION` privilege can only grant privileges they have. They cannot grant privileges at a higher privilege level than they have the `GRANT OPTION` privilege.
 
-The `GRANT OPTION` privilege cannot be set for individual columns.\
-If you use `WITH GRANT OPTION` when specifying [column privileges](grant.md#column-privileges),\
-the `GRANT OPTION` privilege will be granted for the entire table.
+The `GRANT OPTION` privilege cannot be set for individual columns. If you use `WITH GRANT OPTION` when specifying [column privileges](grant.md#column-privileges), the `GRANT OPTION` privilege will be granted for the entire table.
 
-Using the `WITH GRANT OPTION` clause is equivalent to listing `GRANT OPTION`\
-as a privilege.
+Using the `WITH GRANT OPTION` clause is equivalent to listing `GRANT OPTION` as a privilege.
 
 ### Global Privileges
 
-The following table lists the privileges that can be granted globally. You can\
-also grant all database, table, and function privileges globally. When granted\
-globally, these privileges apply to all databases, tables, or functions,\
-including those created later.
+The following table lists the privileges that can be granted globally. You can also grant all database, table, and function privileges globally. When granted globally, these privileges apply to all databases, tables, or functions, including those created later.
 
 To set a global privilege, use `*.*` for _priv\_level_.
 
 #### **BINLOG ADMIN**
+
+{% tabs %}
+{% tab title="Current" %}
+
 
 Enables administration of the [binary log](../../../server-management/server-monitoring-logs/binary-log/), including the [PURGE BINARY LOGS](../administrative-sql-statements/purge-binary-logs.md) statement and setting the system variables:
 
@@ -210,27 +183,47 @@ Enables administration of the [binary log](../../../server-management/server-mon
 * [max\_binlog\_stmt\_cache\_size](../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#max_binlog_stmt_cache_size)
 * [sql\_log\_bin](../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#sql_log_bin) and
 * [sync\_binlog](../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#sync_binlog).
+{% endtab %}
 
-Added in [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1052-release-notes).
+{% tab title="< 10.5.2" %}
+BINLOG ADMIN isn't available.
+{% endtab %}
+{% endtabs %}
 
 #### **BINLOG MONITOR**
 
-New name for [REPLICATION CLIENT](grant.md#replication-client) from [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1052-release-notes), (`REPLICATION CLIENT` still supported as an alias for compatibility purposes). Permits running SHOW commands related to the [binary log](../../../server-management/server-monitoring-logs/binary-log/), in particular the [SHOW BINLOG STATUS](../administrative-sql-statements/show/show-binlog-status.md) and [SHOW BINARY LOGS](../administrative-sql-statements/show/show-binary-logs.md) statements. Unlike [REPLICATION CLIENT](grant.md#replication-client) prior to [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105), [SHOW REPLICA STATUS](../administrative-sql-statements/show/show-replica-status.md) isn't included in this privilege, and [REPLICA MONITOR](grant.md#replica-monitor) is required.
+{% tabs %}
+{% tab title="Current" %}
+New name for [REPLICATION CLIENT](grant.md#replication-client). `REPLICATION CLIENT` can still be used, though.
+{% endtab %}
+
+{% tab title="< 10.5.2" %}
+Use [REPLICATION CLIENT](grant.md#replication-client) instead. [SHOW REPLICA STATUS](../administrative-sql-statements/show/show-replica-status.md) isn't included in this privilege, and [REPLICA MONITOR](grant.md#replica-monitor) is required.
+{% endtab %}
+{% endtabs %}
+
+Permits running SHOW commands related to the [binary log](../../../server-management/server-monitoring-logs/binary-log/), in particular the [SHOW BINLOG STATUS](../administrative-sql-statements/show/show-binlog-status.md) and [SHOW BINARY LOGS](../administrative-sql-statements/show/show-binary-logs.md) statements.
 
 #### **BINLOG REPLAY**
 
+{% tabs %}
+{% tab title="Current" %}
 Enables replaying the binary log with the [BINLOG](../administrative-sql-statements/binlog.md) statement (generated by [mariadb-binlog](../../../clients-and-utilities/logging-tools/mariadb-binlog/)), executing [SET timestamp](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#timestamp) when [secure\_timestamp](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#secure_timestamp) is set to `replication`, and setting the session values of system variables usually included in BINLOG output, in particular:
 
 * [gtid\_domain\_id](../../../ha-and-performance/standard-replication/gtid.md#gtid_domain_id)
 * [gtid\_seq\_no](../../../ha-and-performance/standard-replication/gtid.md#gtid_seq_no)
 * [pseudo\_thread\_id](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#pseudo_thread_id)
 * [server\_id](../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#server_id).
+{% endtab %}
 
-Added in [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1052-release-notes)
+{% tab title="< 10.5.2" %}
+BINLOG REPLAY isn't available.
+{% endtab %}
+{% endtabs %}
 
 #### **CONNECTION ADMIN**
 
-Enables administering connection resource limit options. This includes ignoring the limits specified by:[max\_user\_connections](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_user_connections) and [max\_password\_errors](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_password_errors). And allowing one extra connection over [max\_connections](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_connections)
+Enables administering connection resource limit options. This includes ignoring the limits specified by [max\_user\_connections](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_user_connections) and [max\_password\_errors](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_password_errors), and allowing one extra connection over [max\_connections](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_connections)
 
 The statements specified in [init\_connect](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#init_connect) are not executed, [killing connections and queries](../administrative-sql-statements/kill.md) owned by other users is permitted. The following connection-related system variables can be changed:
 
@@ -255,8 +248,6 @@ The statements specified in [init\_connect](../../../ha-and-performance/optimiza
 * [thread\_pool\_size](../../../ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables.md#thread_pool_size), and
 * [thread\_pool\_stall\_limit](../../../ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables.md#thread_pool_stall_limit).
 
-Added in [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1052-release-notes).
-
 #### **CREATE USER**
 
 Create a user using the [CREATE USER](create-user.md) statement, or implicitly create a user with the `GRANT` statement.
@@ -279,9 +270,23 @@ Show information about the active processes, for example via [SHOW PROCESSLIST](
 
 #### **READ\_ONLY ADMIN**
 
-User ignores the [read\_only](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#read_only) system variable, and can perform write operations even when the `read_only` option is active. Added in [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1052-release-notes).
+{% tabs %}
+{% tab title="Current" %}
+User ignores the [read\_only](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#read_only) system variable, and can perform write operations even when the `read_only` option is active.
 
-From [MariaDB 10.11.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-11-series/mariadb-10-11-0-release-notes), the `READ_ONLY ADMIN` privilege has been removed from [SUPER](grant.md#super). The benefit of this is that one can remove the READ\_ONLY ADMIN privilege from all users and ensure that no one can make any changes on any non-temporary tables. This is useful on replicas when one wants to ensure that the replica is kept identical to the primary.
+The `READ_ONLY ADMIN` privilege has been removed from [SUPER](grant.md#super). The benefit of this is that one can remove the READ\_ONLY ADMIN privilege from all users and ensure that no one can make any changes on any non-temporary tables. This is useful on replicas when one wants to ensure that the replica is kept identical to the primary.
+{% endtab %}
+
+{% tab title="< 10.11.0" %}
+User ignores the [read\_only](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#read_only) system variable, and can perform write operations even when the `read_only` option is active.
+
+The `READ_ONLY ADMIN` privilege is included in [SUPER](grant.md#super).
+{% endtab %}
+
+{% tab title="< 10.5.2" %}
+READ\_ONLY ADMIN isn't available.
+{% endtab %}
+{% endtabs %}
 
 #### **RELOAD**
 
@@ -289,15 +294,41 @@ Execute [FLUSH](../administrative-sql-statements/flush-commands/flush.md) statem
 
 #### **REPLICATION CLIENT**
 
+{% tabs %}
+{% tab title="Current" %}
+Execute [SHOW MASTER STATUS](../administrative-sql-statements/show/show-binlog-status.md) and [SHOW BINARY LOGS](../administrative-sql-statements/show/show-binary-logs.md) informative statements. Renamed to [BINLOG MONITOR](grant.md#binlog-monitor), but still supported as an alias for compatibility reasons.
+{% endtab %}
+
+{% tab title="< 10.5.2" %}
 Execute [SHOW MASTER STATUS](../administrative-sql-statements/show/show-binlog-status.md) and [SHOW BINARY LOGS](../administrative-sql-statements/show/show-binary-logs.md) informative statements. Renamed to [BINLOG MONITOR](grant.md#binlog-monitor) in [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1052-release-notes) (but still supported as an alias for compatibility reasons). [SHOW SLAVE STATUS](../administrative-sql-statements/show/show-replica-status.md) was part of [REPLICATION CLIENT](grant.md#replication-client) prior to [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105).
+{% endtab %}
+
+{% tab title="< 10.5" %}
+Execute [SHOW MASTER STATUS](../administrative-sql-statements/show/show-binlog-status.md) and [SHOW BINARY LOGS](../administrative-sql-statements/show/show-binary-logs.md) informative statements. Renamed to [BINLOG MONITOR](grant.md#binlog-monitor) in [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1052-release-notes) (but still supported as an alias for compatibility reasons). [SHOW SLAVE STATUS](../administrative-sql-statements/show/show-replica-status.md) was part of [REPLICATION CLIENT](grant.md#replication-client) prior to [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105).
+{% endtab %}
+{% endtabs %}
 
 #### **REPLICATION MASTER ADMIN**
 
-Permits administration of primary servers, including the [SHOW REPLICA HOSTS](../administrative-sql-statements/show/show-replica-hosts.md) statement, and setting the [gtid\_binlog\_state](../../../ha-and-performance/standard-replication/gtid.md#gtid_binlog_state), [gtid\_domain\_id](../../../ha-and-performance/standard-replication/gtid.md#gtid_domain_id), [master\_verify\_checksum](../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#master_verify_checksum) and [server\_id](../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#server_id) system variables. Added in [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1052-release-notes).
+{% tabs %}
+{% tab title="Current" %}
+Permits administration of primary servers, including the [SHOW REPLICA HOSTS](../administrative-sql-statements/show/show-replica-hosts.md) statement, and setting the [gtid\_binlog\_state](../../../ha-and-performance/standard-replication/gtid.md#gtid_binlog_state), [gtid\_domain\_id](../../../ha-and-performance/standard-replication/gtid.md#gtid_domain_id), [master\_verify\_checksum](../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#master_verify_checksum) and [server\_id](../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#server_id) system variables.
+{% endtab %}
+
+{% tab title="< 10.5.2" %}
+REPLICATION MASTER ADMIN isn't available.
+{% endtab %}
+{% endtabs %}
 
 #### **REPLICA MONITOR**
 
-Permit [SHOW REPLICA STATUS](../administrative-sql-statements/show/show-replica-status.md) and [SHOW RELAYLOG EVENTS](../administrative-sql-statements/show/show-relaylog-events.md). From [MariaDB 10.5.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1059-release-notes).
+{% tabs %}
+{% tab title="Current" %}
+Permit [SHOW REPLICA STATUS](../administrative-sql-statements/show/show-replica-status.md) and [SHOW RELAYLOG EVENTS](../administrative-sql-statements/show/show-relaylog-events.md).&#x20;
+{% endtab %}
+
+{% tab title="< 10.6" %}
+Available from [MariaDB 10.5.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1059-release-notes).
 
 When a user would upgrade from an older major release to a [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105) minor release prior to [MariaDB 10.5.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1059-release-notes), certain user accounts would lose capabilities. For example, a user account that had the REPLICATION CLIENT privilege in older major releases could run [SHOW REPLICA STATUS](../administrative-sql-statements/show/show-replica-status.md), but after upgrading to a [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105) minor release prior to [MariaDB 10.5.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1059-release-notes), they could no longer run [SHOW REPLICA STATUS](../administrative-sql-statements/show/show-replica-status.md), because that statement was changed to require the REPLICATION REPLICA ADMIN privilege.
 
@@ -306,10 +337,20 @@ This issue is fixed in [MariaDB 10.5.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQ
 When a database is upgraded from an older major release to MariaDB Server 10.5.9 or later, any user accounts with the REPLICATION CLIENT or REPLICATION SLAVE privileges will automatically be granted the new REPLICA MONITOR privilege. The privilege fix occurs when the server is started up, not when mariadb-upgrade is performed.
 
 However, when a database is upgraded from an early 10.5 minor release to 10.5.9 and later, the user will have to fix any user account privileges manually.
+{% endtab %}
+{% endtabs %}
 
 #### **REPLICATION REPLICA**
 
-Synonym for [REPLICATION SLAVE](grant.md#replication-slave). From [MariaDB 10.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1051-release-notes).
+{% tabs %}
+{% tab title="Current" %}
+Synonym for [REPLICATION SLAVE](grant.md#replication-slave).
+{% endtab %}
+
+{% tab title="< 10.5.1" %}
+Use [REPLICATION SLAVE](grant.md#replication-slave) instead.
+{% endtab %}
+{% endtabs %}
 
 #### **REPLICATION SLAVE**
 
@@ -357,7 +398,15 @@ Added in [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb
 
 #### **SET USER**
 
-Enables setting the `DEFINER` when creating [triggers](../../../server-usage/triggers-events/triggers/), [views](../../../server-usage/views/), [stored functions](../../../server-usage/stored-routines/stored-functions/) and [stored procedures](../../../server-usage/stored-routines/stored-procedures/). Added in [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1052-release-notes).
+{% tabs %}
+{% tab title="Current" %}
+Enables setting the `DEFINER` when creating [triggers](../../../server-usage/triggers-events/triggers/), [views](../../../server-usage/views/), [stored functions](../../../server-usage/stored-routines/stored-functions/) and [stored procedures](../../../server-usage/stored-routines/stored-procedures/).
+{% endtab %}
+
+{% tab title="< 10.5.2" %}
+SET USER isn't available.
+{% endtab %}
+{% endtabs %}
 
 #### **SHOW DATABASES**
 
@@ -371,7 +420,9 @@ Shut down the server using [SHUTDOWN](../administrative-sql-statements/shutdown.
 
 Execute superuser statements: [CHANGE MASTER TO](../administrative-sql-statements/replication-statements/change-master-to.md), [KILL](../administrative-sql-statements/kill.md) (users who do not have this privilege can only `KILL` their own threads), [PURGE LOGS](../administrative-sql-statements/purge-binary-logs.md), [SET global system variables](../administrative-sql-statements/set-commands/set.md), or the [mariadb-admin debug](../../../clients-and-utilities/administrative-tools/mariadb-admin.md) command. Also, this permission allows the user to write data even if the [read\_only](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#read_only) startup option is set, enable or disable logging, enable or disable replication on replica, specify a `DEFINER` for statements that support that clause, connect once reaching the `MAX_CONNECTIONS`. If a statement has been specified for the [init-connect](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#init_connect) [mariadbd](../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md) option, that command will not be executed when a user with `SUPER` privileges connects to the server.
 
-The SUPER privilege has been split into multiple smaller privileges from [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1052-release-notes) to allow for more fine-grained privileges ([MDEV-21743](https://jira.mariadb.org/browse/MDEV-21743)). The privileges are:
+{% tabs %}
+{% tab title="Current" %}
+The SUPER privilege has been split into multiple smaller privileges to allow for more fine-grained privileges ([MDEV-21743](https://jira.mariadb.org/browse/MDEV-21743)). The privileges are:
 
 * [SET USER](grant.md#set-user)
 * [FEDERATED ADMIN](grant.md#federated-admin)
@@ -384,16 +435,36 @@ The SUPER privilege has been split into multiple smaller privileges from [MariaD
 * [REPLICATION MASTER ADMIN](grant.md#replication-master-admin)
 * [READ\_ONLY ADMIN](grant.md#read_only-admin)
 
-However, the smaller privileges are still a part of the SUPER grant in [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1052-release-notes). From [MariaDB 11.0.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-0-series/mariadb-11-0-1-release-notes) onwards, these grants are no longer a part of SUPER and need to be granted separately ([MDEV-29668](https://jira.mariadb.org/browse/MDEV-29668)).
+These grants are no longer a part of SUPER and need to be granted separately.
 
-From [MariaDB 10.11.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-11-series/mariadb-10-11-0-release-notes), the [READ\_ONLY ADMIN](grant.md#read_only-admin) privilege has been removed from `SUPER`. The benefit of this is that one can remove the READ\_ONLY ADMIN privilege from all users and ensure that no one can make any changes on any non-temporary tables. This is useful on replicas when one wants to ensure that the replica is kept identical to the primary ([MDEV-29596](https://jira.mariadb.org/browse/MDEV-29596)).
+The [READ\_ONLY ADMIN](grant.md#read_only-admin) privilege has been removed from `SUPER`. The benefit of this is that one can remove the READ\_ONLY ADMIN privilege from all users and ensure that no one can make any changes on any non-temporary tables. This is useful on replicas when one wants to ensure that the replica is kept identical to the primary ([MDEV-29596](https://jira.mariadb.org/browse/MDEV-29596)).
+{% endtab %}
+
+{% tab title="< 11.0.1" %}
+The SUPER privilege has been split into multiple smaller privileges to allow for more fine-grained privileges ([MDEV-21743](https://jira.mariadb.org/browse/MDEV-21743)). The privileges are:
+
+* [SET USER](grant.md#set-user)
+* [FEDERATED ADMIN](grant.md#federated-admin)
+* [CONNECTION ADMIN](grant.md#connection-admin)
+* [REPLICATION SLAVE ADMIN](grant.md#replication-slave-admin)
+* [BINLOG ADMIN](grant.md#binlog-admin)
+* [BINLOG REPLAY](grant.md#binlog-replay)
+* [REPLICA MONITOR](grant.md#replica-monitor)
+* [BINLOG MONITOR](grant.md#binlog-monitor)
+* [REPLICATION MASTER ADMIN](grant.md#replication-master-admin)
+* [READ\_ONLY ADMIN](grant.md#read_only-admin)
+
+These grants are part of SUPER and don't need to be granted separately.
+{% endtab %}
+
+{% tab title="< 10.5.2" %}
+Use the SUPER privilege.
+{% endtab %}
+{% endtabs %}
 
 ### Database Privileges
 
-The following table lists the privileges that can be granted at the database\
-level. You can also grant all table and function privileges at the database\
-level. Table and function privileges on a database apply to all tables or\
-functions in that database, including those created later.
+The following table lists the privileges that can be granted at the database level. You can also grant all table and function privileges at the database level. Table and function privileges on a database apply to all tables or functions in that database, including those created later.
 
 To set a privilege for a database, specify the database using`db_name.*` for _priv\_level_, or just use `*`\
 to specify the default database.
@@ -406,10 +477,7 @@ to specify the default database.
 
 ### Column Privileges
 
-Some table privileges can be set for individual columns of a table. To use\
-column privileges, specify the table explicitly and provide a list of column\
-names after the privilege type. For example, the following statement would allow\
-the user to read the names and positions of employees, but not other information\
+Some table privileges can be set for individual columns of a table. To use column privileges, specify the table explicitly and provide a list of column names after the privilege type. For example, the following statement would allow the user to read the names and positions of employees, but not other information\
 from the same table, such as salaries.
 
 ```sql
@@ -576,13 +644,9 @@ For example, if our password is `mariadb`, then we can create the user with:
 GRANT USAGE ON *.* TO foo2@test IDENTIFIED BY 'mariadb';
 ```
 
-If you do not specify a password with the `IDENTIFIED BY` clause, the user\
-will be able to connect without a password. A blank password is not a wildcard\
-to match any password. The user must connect without providing a password if no\
-password is set.
+If you do not specify a password with the `IDENTIFIED BY` clause, the user will be able to connect without a password. A blank password is not a wildcard to match any password. The user must connect without providing a password if no password is set.
 
-If the user account already exists and if you provide the `IDENTIFIED BY` clause, then the user's password will be changed. You must have the privileges needed for the [SET PASSWORD](set-password.md)\
-statement to change a user's password with `GRANT`.
+If the user account already exists and if you provide the `IDENTIFIED BY` clause, then the user's password will be changed. You must have the privileges needed for the [SET PASSWORD](set-password.md) statement to change a user's password with `GRANT`.
 
 The only [authentication plugins](../../plugins/authentication-plugins/) that this clause supports are [mysql\_native\_password](../../plugins/authentication-plugins/authentication-plugin-mysql_native_password.md) and [mysql\_old\_password](../../plugins/authentication-plugins/authentication-plugin-mysql_old_password.md).
 
@@ -609,13 +673,9 @@ GRANT USAGE ON *.* TO foo2@test IDENTIFIED BY
   PASSWORD '*54958E764CE10E50764C2EECBB71D01F08549980';
 ```
 
-If you do not specify a password with the `IDENTIFIED BY` clause, the user\
-will be able to connect without a password. A blank password is not a wildcard\
-to match any password. The user must connect without providing a password if no\
-password is set.
+If you do not specify a password with the `IDENTIFIED BY` clause, the user will be able to connect without a password. A blank password is not a wildcard to match any password. The user must connect without providing a password if no password is set.
 
-If the user account already exists and if you provide the `IDENTIFIED BY` clause, then the user's password will be changed. You must have the privileges needed for the [SET PASSWORD](set-password.md)\
-statement to change a user's password with `GRANT`.
+If the user account already exists and if you provide the `IDENTIFIED BY` clause, then the user's password will be changed. You must have the privileges needed for the [SET PASSWORD](set-password.md) tastatement to change a user's password with `GRANT`.
 
 The only [authentication plugins](../../plugins/authentication-plugins/) that this clause supports are [mysql\_native\_password](../../plugins/authentication-plugins/authentication-plugin-mysql_native_password.md) and [mysql\_old\_password](../../plugins/authentication-plugins/authentication-plugin-mysql_old_password.md).
 
@@ -742,9 +802,15 @@ If a user has been granted a role, they do not automatically obtain all permissi
 
 ## TO PUBLIC
 
-**MariaDB starting with** [**10.11.0**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10110-release-notes)
-
+{% tabs %}
+{% tab title="Current" %}
 [blog post](https://mariadb.org/grant-to-public-in-mariadb/)
+{% endtab %}
+
+{% tab title="< 10.11.0" %}
+TO PUBLIC is unavailable.
+{% endtab %}
+{% endtabs %}
 
 ### Syntax
 

@@ -20,7 +20,7 @@ list.
 
 A note is different to a warning in that it only appears if the [sql\_notes](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#sql_notes) variable is set to 1 (the default), and is not converted to an error if [strict mode](../../../../server-management/variables-and-modes/sql-mode.md) is enabled.
 
-A related statement, `[SHOW ERRORS](show-errors.md)`, shows only the errors.
+A related statement, [SHOW ERRORS](show-errors.md), shows only the errors.
 
 The `SHOW COUNT(*) WARNINGS` statement displays the total\
 number of errors, warnings, and notes. You can also retrieve this number from\
@@ -33,7 +33,7 @@ SELECT @@warning_count;
 
 The value of [warning\_count](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#warning_count) might be greater than the number of messages displayed by `SHOW WARNINGS` if the [max\_error\_count](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_error_count) system variable is set so low that not all messages are stored.
 
-The `LIMIT` clause has the same syntax as for the`[SELECT statement](../../data-manipulation/selecting-data/select.md)`.
+The `LIMIT` clause has the same syntax as for the[SELECT statement](../../data-manipulation/selecting-data/select.md).
 
 `SHOW WARNINGS` can be used after [EXPLAIN EXTENDED](../analyze-and-explain-statements/explain.md) to see how a query is internally rewritten by MariaDB.
 

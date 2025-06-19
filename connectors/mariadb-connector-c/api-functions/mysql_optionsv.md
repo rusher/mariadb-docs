@@ -127,7 +127,7 @@ Returns zero on success, non zero if an error occurred (invalid option or value)
 
 #### Connection Options
 
-Some of these options can also be set as arguments to the `[mysql_real_connect](mysql_real_connect.md)` function.
+Some of these options can also be set as arguments to the [mysql_real_connect](mysql_real_connect.md) function.
 
 *   `MARIADB_OPT_HOST`: Hostname or IP address of the server to connect to.
 
@@ -225,7 +225,7 @@ Some of these options can also be set as arguments to the `[mysql_real_connect](
     ```c
     mysql_optionsv(mysql, MYSQL_OPT_SSL_CA, (void *)"certs/ca-cert.pem");
     ```
-*   `MYSQL_OPT_SSL_CAPATH`: Defines a path to a directory that contains one or more PEM files that should each contain one X509 certificate for a trusted Certificate Authority (CA) to use for [TLS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption). This option requires that you use the absolute path, not a relative path. The directory specified by this option needs to be run through the `[openssl rehash](https://www.openssl.org/docs/man1.1.1/man1/rehash.html)` command. See [Secure Connections Overview: Certificate Authorities (CAs)](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/secure-connections-overview#certificate-authorities-cas) for more information. This option is only supported if the connector was built with OpenSSL. If the connector was built with GnuTLS or Schannel, then this option is not supported. See [TLS and Cryptography Libraries Used by MariaDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/securing-mariadb-encryption/tls-and-cryptography-libraries-used-by-mariadb) for more information about which libraries are used on which platforms.
+*   `MYSQL_OPT_SSL_CAPATH`: Defines a path to a directory that contains one or more PEM files that should each contain one X509 certificate for a trusted Certificate Authority (CA) to use for [TLS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption). This option requires that you use the absolute path, not a relative path. The directory specified by this option needs to be run through the [openssl rehash](https://www.openssl.org/docs/man1.1.1/man1/rehash.html) command. See [Secure Connections Overview: Certificate Authorities (CAs)](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/secure-connections-overview#certificate-authorities-cas) for more information. This option is only supported if the connector was built with OpenSSL. If the connector was built with GnuTLS or Schannel, then this option is not supported. See [TLS and Cryptography Libraries Used by MariaDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/securing-mariadb-encryption/tls-and-cryptography-libraries-used-by-mariadb) for more information about which libraries are used on which platforms.
 
     ```c
     mysql_optionsv(mysql, MYSQL_OPT_SSL_CAPATH, (void *)"certs/ca-cert.pem");
@@ -240,7 +240,7 @@ Some of these options can also be set as arguments to the `[mysql_real_connect](
     ```c
     mysql_optionsv(mysql, MYSQL_OPT_SSL_CAPATH, (void *)"certs/ca-cert.pem");\\\\<<code>>mysql_optionsv(mysql, MYSQL_OPT_SSL_CRL, (void *)"certs/crl.pem");
     ```
-*   `MYSQL_OPT_SSL_CRLPATH`: Defines a path to a directory that contains one or more PEM files that should each contain one revoked X509 certificate to use for [TLS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption). This option requires that you use the absolute path, not a relative path. The directory specified by this option needs to be run through the `[openssl rehash](https://www.openssl.org/docs/man1.1.1/man1/rehash.html)` command. See [Secure Connections Overview: Certificate Revocation Lists (CRLs)](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/secure-connections-overview#certificate-revocation-lists-crls) for more information. This option is only supported if the connector was built with OpenSSL. If the connector was built with GnuTLS or Schannel, then this option is not supported. See [TLS and Cryptography Libraries Used by MariaDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/securing-mariadb-encryption/tls-and-cryptography-libraries-used-by-mariadb) for more information about which libraries are used on which platforms.
+*   `MYSQL_OPT_SSL_CRLPATH`: Defines a path to a directory that contains one or more PEM files that should each contain one revoked X509 certificate to use for [TLS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption). This option requires that you use the absolute path, not a relative path. The directory specified by this option needs to be run through the [openssl rehash](https://www.openssl.org/docs/man1.1.1/man1/rehash.html) command. See [Secure Connections Overview: Certificate Revocation Lists (CRLs)](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/secure-connections-overview#certificate-revocation-lists-crls) for more information. This option is only supported if the connector was built with OpenSSL. If the connector was built with GnuTLS or Schannel, then this option is not supported. See [TLS and Cryptography Libraries Used by MariaDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/securing-mariadb-encryption/tls-and-cryptography-libraries-used-by-mariadb) for more information about which libraries are used on which platforms.
 
     ```c
     mysql_optionsv(mysql, MYSQL_OPT_SSL_CAPATH, (void *)"certs/ca-cert.pem");\\\\<<code>>mysql_optionsv(mysql, MYSQL_OPT_SSL_CRLPATH, (void *)"certs/crls");
@@ -301,7 +301,7 @@ Some of these options can also be set as arguments to the `[mysql_real_connect](
     ```c
     mysql_optionsv(mysql, MYSQL_DEFAULT_AUTH, (void *)"ed25519");
     ```
-*   `MYSQL_ENABLE_CLEARTEXT_PLUGIN`: This option is supported to be compatible with MySQL client libraries. MySQL client libraries use this option to determine whether the `[mysql_clear_password](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam#client-authentication-plugins)` authentication plugin can be used. However, MariaDB clients and client libraries do not need to set any options in order to use this authentication plugin. Therefore, this option does not actually do anything in MariaDB Connector/C.
+*   `MYSQL_ENABLE_CLEARTEXT_PLUGIN`: This option is supported to be compatible with MySQL client libraries. MySQL client libraries use this option to determine whether the [mysql_clear_password](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam#client-authentication-plugins) authentication plugin can be used. However, MariaDB clients and client libraries do not need to set any options in order to use this authentication plugin. Therefore, this option does not actually do anything in MariaDB Connector/C.
 
     ```c
     mysql_optionsv(mysql, MYSQL_ENABLE_CLEARTEXT_PLUGIN, 1);
@@ -327,12 +327,12 @@ Some of these options can also be set as arguments to the `[mysql_real_connect](
     ```c
     mysql_optionsv(mysql, MYSQL_PLUGIN_DIR, (void *)"/opt/mariadb/lib/plugins");
     ```
-*   `MYSQL_SECURE_AUTH`: Refuse to connect to the server if the server uses the `[mysql_old_password](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/authentication-plugins/authentication-plugin-mysql_old_password)` authentication plugin. This mode is off by default, which is a difference in behavior compared to MySQL 5.6 and later, where it is on by default.
+*   `MYSQL_SECURE_AUTH`: Refuse to connect to the server if the server uses the [mysql_old_password](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/authentication-plugins/authentication-plugin-mysql_old_password) authentication plugin. This mode is off by default, which is a difference in behavior compared to MySQL 5.6 and later, where it is on by default.
 
     ```c
     mysql_optionsv(mysql, MYSQL_SECURE_AUTH, 1);
     ```
-*   `MYSQL_SERVER_PUBLIC_KEY`: Specifies the name of the file which contains the RSA public key of the database server. The format of this file must be in PEM format. This option is used by the `[caching_sha2_password](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/authentication-plugins/authentication-plugin-sha-256)` client authentication plugin. It was introduced in Connector/C 3.1.0.
+*   `MYSQL_SERVER_PUBLIC_KEY`: Specifies the name of the file which contains the RSA public key of the database server. The format of this file must be in PEM format. This option is used by the [caching_sha2_password](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/authentication-plugins/authentication-plugin-sha-256) client authentication plugin. It was introduced in Connector/C 3.1.0.
 
     ```c
     mysql_optionsv(mysql, MYSQL_SERVER_PUBLIC_KEY, (void *)(void *)"certs/server-cert.pem);

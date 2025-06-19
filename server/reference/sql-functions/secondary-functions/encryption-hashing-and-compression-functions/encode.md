@@ -15,7 +15,7 @@ ENCODE is not considered cryptographically secure, and should not be used for pa
 
 
 Encrypt `str` using `pass_str` as the password. To decrypt the result, use
-`[DECODE()](decode.md)`.
+[DECODE()](decode.md).
 
 
 The result is a binary string of the same length as `str`.

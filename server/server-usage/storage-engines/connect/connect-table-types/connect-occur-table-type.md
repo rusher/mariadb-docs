@@ -1,6 +1,6 @@
 # CONNECT OCCUR Table Type
 
-Similarly to the `[XCOL](connect-xcol-table-type.md)` table type, `OCCUR` is an extension to the `[PROXY](connect-proxy-table-type.md)` type when\
+Similarly to the [XCOL](connect-xcol-table-type.md) table type, `OCCUR` is an extension to the [PROXY](connect-proxy-table-type.md) type when\
 referring to a table or view having several columns containing the same kind of\
 data. It enables having a different view of the table where the data from\
 these columns are put in a single column, eventually causing several rows to be\

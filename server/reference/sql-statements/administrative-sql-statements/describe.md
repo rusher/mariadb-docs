@@ -9,7 +9,7 @@
 ## Description
 
 `DESCRIBE` provides information about the columns in a table.\
-It is a shortcut for `[SHOW COLUMNS FROM](show/show-columns.md)`.\
+It is a shortcut for [SHOW COLUMNS FROM](show/show-columns.md).\
 These statements also display information for [views](../../../server-usage/views/).
 
 `col_name` can be a column name, or a string containing the\
@@ -31,7 +31,7 @@ DESCRIBE city;
 +------------+----------+------+-----+---------+----------------+
 ```
 
-The description for `[SHOW COLUMNS](show/show-columns.md)` provides\
+The description for [SHOW COLUMNS](show/show-columns.md) provides\
 more information about the output columns.
 
 ## See Also

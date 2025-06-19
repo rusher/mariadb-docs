@@ -6,19 +6,19 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 
 #### `Aria_pagecache_blocks_not_flushed`
 
-* Description: The number of dirty blocks in the Aria page cache. The global value can be flushed by `[FLUSH STATUS](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md)`.
+* Description: The number of dirty blocks in the Aria page cache. The global value can be flushed by [FLUSH STATUS](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md).
 * Scope: Global
 * Data Type: `numeric`
 
 #### `Aria_pagecache_blocks_unused`
 
-* Description: Free blocks in the Aria page cache. The global value can be flushed by `[FLUSH STATUS](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md)`.
+* Description: Free blocks in the Aria page cache. The global value can be flushed by [FLUSH STATUS](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md).
 * Scope: Global
 * Data Type: `numeric`
 
 #### `Aria_pagecache_blocks_used`
 
-* Description: Blocks used in the Aria page cache. The global value can be flushed by `[FLUSH STATUS](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md)`.
+* Description: Blocks used in the Aria page cache. The global value can be flushed by [FLUSH STATUS](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md).
 * Scope: Global
 * Data Type: `numeric`
 
