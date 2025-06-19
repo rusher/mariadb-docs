@@ -722,7 +722,7 @@
         * [MariaDB Galera 5.5.25 Changelog](mariadb-community-server-release-notes/old-releases/mariadb-galera-cluster-releases/mariadb-galera-55-changelogs/mariadb-galera-5525-changelog.md)
         * [MariaDB Galera 5.5.28a Changelog](mariadb-community-server-release-notes/old-releases/mariadb-galera-cluster-releases/mariadb-galera-55-changelogs/mariadb-galera-5528a-changelog.md)
         * [MariaDB Galera 5.5.29 Changelog](mariadb-community-server-release-notes/old-releases/mariadb-galera-cluster-releases/mariadb-galera-55-changelogs/mariadb-galera-5529-changelog.md)
-        * [mariadb-galera-5532-changelog](mariadb-community-server-release-notes/old-releases/mariadb-galera-cluster-releases/mariadb-galera-55-changelogs/mariadb-galera-5532-changelog.md)
+        * [MariaDB Galera 5.5.32 Changelog](mariadb-community-server-release-notes/old-releases/mariadb-galera-cluster-releases/mariadb-galera-55-changelogs/mariadb-galera-5532-changelog.md)
         * [MariaDB Galera 5.5.33a Changelog](mariadb-community-server-release-notes/old-releases/mariadb-galera-cluster-releases/mariadb-galera-55-changelogs/mariadb-galera-5533a-changelog.md)
         * [MariaDB Galera Cluster 5.5.34 Changelog](mariadb-community-server-release-notes/old-releases/mariadb-galera-cluster-releases/mariadb-galera-55-changelogs/mariadb-galera-cluster-5534-changelog.md)
         * [MariaDB Galera Cluster 5.5.35 Changelog](mariadb-community-server-release-notes/old-releases/mariadb-galera-cluster-releases/mariadb-galera-55-changelogs/mariadb-galera-cluster-5535-changelog.md)

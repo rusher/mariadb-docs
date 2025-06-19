@@ -12,13 +12,13 @@ MariaDB Connector/J 3.0.7 is a [_**Stable**_](../../../mariadb-release-criteria.
 
 ### Bugs Fixed
 
-* `[CONJ-993](https://jira.mariadb.org/browse/CONJ-993)` SQLDataException reading DATA\_TYPE on DatabaseMetaData.getTypeInfo() after 3.0.4
-* `[CONJ-986](https://jira.mariadb.org/browse/CONJ-986)` Permit specific Statement.setLocalInfileInputStream for compatibility
-* `[CONJ-987](https://jira.mariadb.org/browse/CONJ-987)` Version 3.0.0 returns String for VARBINARY instead of byte\[] as 2.7.6 did
-* `[CONJ-989](https://jira.mariadb.org/browse/CONJ-989)` Binary column read as String
-* `[CONJ-990](https://jira.mariadb.org/browse/CONJ-990)` Setting timezone=UTC result in SQLSyntaxErrorException
-* `[CONJ-991](https://jira.mariadb.org/browse/CONJ-991)` Regression: binary(16) is returned as String by getObject()
-* `[CONJ-994](https://jira.mariadb.org/browse/CONJ-994)` Version 3.x rejects previously accepted boolean string parameter for BOOLEAN field
+* [CONJ-993](https://jira.mariadb.org/browse/CONJ-993) SQLDataException reading DATA\_TYPE on DatabaseMetaData.getTypeInfo() after 3.0.4
+* [CONJ-986](https://jira.mariadb.org/browse/CONJ-986) Permit specific Statement.setLocalInfileInputStream for compatibility
+* [CONJ-987](https://jira.mariadb.org/browse/CONJ-987) Version 3.0.0 returns String for VARBINARY instead of byte\[] as 2.7.6 did
+* [CONJ-989](https://jira.mariadb.org/browse/CONJ-989) Binary column read as String
+* [CONJ-990](https://jira.mariadb.org/browse/CONJ-990) Setting timezone=UTC result in SQLSyntaxErrorException
+* [CONJ-991](https://jira.mariadb.org/browse/CONJ-991) Regression: binary(16) is returned as String by getObject()
+* [CONJ-994](https://jira.mariadb.org/browse/CONJ-994) Version 3.x rejects previously accepted boolean string parameter for BOOLEAN field
 
 ## Changelog
 

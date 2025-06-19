@@ -109,7 +109,7 @@ The following table lists each version of the [Galera](https://github.com/mariad
 
 #### New Features in Galera 4
 
-The `[mysql](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/)` database contains new tables related to Galera replication:
+The [mysql](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/) database contains new tables related to Galera replication:
 
 * `wsrep_cluster`
 * `wsrep_cluster_members`
@@ -122,13 +122,13 @@ unlimited size. With streaming replication, a cluster is replicating a\
 transaction in small fragments during transaction execution. This transaction\
 fragmenting is controlled by two new configuration variables:
 
-* `[wsrep_trx_fragment_unit](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_trx_fragment_unit) (bytes, rows, statements)` defines the metrics for\
+* [wsrep_trx_fragment_unit](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_trx_fragment_unit) (bytes, rows, statements) defines the metrics for\
   how to measure transaction size limit for fragmenting. Possible values are:
   * `bytes`: transaction’s binlog events buffer size in bytes
   * `rows`: number of rows affected by the transaction
   * `statements`: number of SQL statements executed in the multi-statement\
     transaction
-* `[wsrep_trx_fragment_size](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_trx_fragment_size)` defines the limit for fragmenting. When a\
+* [wsrep_trx_fragment_size](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_trx_fragment_size) defines the limit for fragmenting. When a\
   transaction’s size, in terms of the configured fragment unit, has grown over\
   this limit, a new fragment will be replicated.
 
