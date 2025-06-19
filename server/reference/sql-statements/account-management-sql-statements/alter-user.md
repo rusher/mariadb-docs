@@ -166,11 +166,19 @@ ALTER USER foo2@test IDENTIFIED VIA pam USING 'mariadb';
 
 The exact meaning of the additional argument would depend on the specific authentication plugin.
 
-From MariaDB 10.4, the `USING` or `AS` keyword can also be used to provide a plain-text password to a plugin if it's provided as an argument to the [PASSWORD()](../../sql-functions/secondary-functions/encryption-hashing-and-compression-functions/password.md) function. This is only valid for [authentication plugins](../../plugins/authentication-plugins/) that have implemented a hook for the [PASSWORD()](../../sql-functions/secondary-functions/encryption-hashing-and-compression-functions/password.md) function. For example, the [ed25519](../../plugins/authentication-plugins/authentication-plugin-ed25519.md) authentication plugin supports this:
+{% tabs %}
+{% tab title="Current" %}
+The `USING` or `AS` keyword can also be used to provide a plain-text password to a plugin if it's provided as an argument to the [PASSWORD()](../../sql-functions/secondary-functions/encryption-hashing-and-compression-functions/password.md) function. This is only valid for [authentication plugins](../../plugins/authentication-plugins/) that have implemented a hook for the [PASSWORD()](../../sql-functions/secondary-functions/encryption-hashing-and-compression-functions/password.md) function. For example, the [ed25519](../../plugins/authentication-plugins/authentication-plugin-ed25519.md) authentication plugin supports this:
 
 ```sql
 ALTER USER safe@'%' IDENTIFIED VIA ed25519 USING PASSWORD('secret');
 ```
+{% endtab %}
+
+{% tab title="< 10.4" %}
+The `USING` or `AS` keyword **cannot** be used to provide a plain-text password to a plugin if it's provided as an argument to the [PASSWORD()](../../sql-functions/secondary-functions/encryption-hashing-and-compression-functions/password.md) function.
+{% endtab %}
+{% endtabs %}
 
 ## TLS Options
 
@@ -258,7 +266,19 @@ ALTER USER 'marijn'@'localhost' ACCOUNT LOCK;
 
 See [Account Locking](../../../security/user-account-management/account-locking.md) for more details.
 
-From [MariaDB 10.4.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-1047-release-notes) and [MariaDB 10.5.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1058-release-notes), the _lock\_option_ and _password\_option_ clauses can occur in either order.
+{% tabs %}
+{% tab title="Current" %}
+The _lock\_option_ and _password\_option_ clauses can occur in either order.
+{% endtab %}
+
+{% tab title="< 10.5.8" %}
+The _lock\_option_ and _password\_option_ clauses **cannot** occur in either order.
+{% endtab %}
+
+{% tab title="< 10.4.7" %}
+The _lock\_option_ and _password\_option_ clauses **cannot** occur in either order.
+{% endtab %}
+{% endtabs %}
 
 ## See Also
 

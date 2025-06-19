@@ -50,7 +50,21 @@ lock_option:
 
 ## Description
 
-The `CREATE USER` statement creates new MariaDB accounts. To use it, you must have the global [CREATE USER](grant.md#create-user) privilege or the [INSERT](grant.md#table-privileges) privilege for the [mysql](../administrative-sql-statements/system-tables/the-mysql-database-tables/) database. For each account, `CREATE USER` creates a new row in [mysql.user](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md) (until [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103) this is a table, from [MariaDB 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/account-management-sql-statements/broken-reference/README.md) it's a view) or [mysql.global\_priv\_table](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-global_priv-table.md) (from [MariaDB 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/account-management-sql-statements/broken-reference/README.md)) that has no privileges.
+The `CREATE USER` statement creates new MariaDB accounts. To use it, you must have the global [CREATE USER](grant.md#create-user) privilege or the [INSERT](grant.md#table-privileges) privilege for the [mysql](../administrative-sql-statements/system-tables/the-mysql-database-tables/) database.&#x20;
+
+{% tabs %}
+{% tab title="Current" %}
+For each account, `CREATE USER` creates a new row in [mysql.user](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md) that has no privileges.
+{% endtab %}
+
+{% tab title="< 10.4" %}
+For each account, `CREATE USER` creates a new row in [mysql.user](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md) (a view) that has no privileges.
+{% endtab %}
+
+{% tab title="< 10.3" %}
+For each account, `CREATE USER` creates a new row in [mysql.user](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md) (a table) that has no privileges.
+{% endtab %}
+{% endtabs %}
 
 If any of the specified accounts, or any permissions for the specified accounts, already exist, then the server returns `ERROR 1396 (HY000)`. If an error occurs, `CREATE USER` will still create the accounts that do not result in an error. Only one error is produced for all users which have not been created:
 
@@ -59,7 +73,7 @@ ERROR 1396 (HY000):
   Operation CREATE USER failed for 'u1'@'%','u2'@'%'
 ```
 
-`CREATE USER`, [DROP USER](drop-user.md), [CREATE ROLE](create-role.md), and [DROP ROLE](drop-role.md) all produce the same error code when they fail.
+CREATE USER, [DROP USER](drop-user.md), [CREATE ROLE](create-role.md), and [DROP ROLE](drop-role.md) all produce the same error code when they fail.
 
 See [Account Names](create-user.md#account-names) below for details on how account names are specified.
 
@@ -148,10 +162,7 @@ And then we can create a user with the hash:
 CREATE USER foo2@test IDENTIFIED BY PASSWORD '*54958E764CE10E50764C2EECBB71D01F08549980';
 ```
 
-If you do not specify a password with the `IDENTIFIED BY` clause, the user\
-will be able to connect without a password. A blank password is not a wildcard\
-to match any password. The user must connect without providing a password if no\
-password is set.
+If you do not specify a password with the `IDENTIFIED BY` clause, the user will be able to connect without a password. A blank password is not a wildcard to match any password. The user must connect without providing a password if no password is set.
 
 The only [authentication plugins](../../plugins/authentication-plugins/) that this clause supports are [mysql\_native\_password](../../plugins/authentication-plugins/authentication-plugin-mysql_native_password.md) and [mysql\_old\_password](../../plugins/authentication-plugins/authentication-plugin-mysql_old_password.md).
 
@@ -191,9 +202,15 @@ By default, when you create a user without specifying an authentication plugin, 
 
 ## TLS Options
 
-By default, prior to [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-4-series/what-is-mariadb-114), MariaDB transmits data between the server and clients without encrypting it. This is generally acceptable when the server and client run on the same host or in networks where security is guaranteed through other means. However, in cases where the server and client exist on separate networks or they are in a high-risk network, the lack of encryption does introduce security concerns as a malicious actor could potentially eavesdrop on the traffic as it is sent over the network between them.
+{% tabs %}
+{% tab title="Current" %}
+**MariaDB allows you to encrypt data in transit** between the server and clients using the Transport Layer Security (TLS) protocol. TLS was formerly known as Secure Socket Layer (SSL), but strictly speaking the SSL protocol is a predecessor to TLS and, that version of the protocol is now considered insecure. The documentation still uses the term SSL often and for compatibility reasons TLS-related server system and status variables still use the prefix ssl\_, but internally, MariaDB only supports its secure successors.
+{% endtab %}
 
-To mitigate this concern, MariaDB allows you to encrypt data in transit between the server and clients using the Transport Layer Security (TLS) protocol. TLS was formerly known as Secure Socket Layer (SSL), but strictly speaking the SSL protocol is a predecessor to TLS and, that version of the protocol is now considered insecure. The documentation still uses the term SSL often and for compatibility reasons TLS-related server system and status variables still use the prefix ssl\_, but internally, MariaDB only supports its secure successors.
+{% tab title="< 11.4" %}
+MariaDB transmits data between the server and clients **without encrypting it**. This is generally acceptable when the server and client run on the same host or in networks where security is guaranteed through other means. However, in cases where the server and client exist on separate networks or they are in a high-risk network, the lack of encryption does introduce security concerns as a malicious actor could potentially eavesdrop on the traffic as it is sent over the network between them.
+{% endtab %}
+{% endtabs %}
 
 See [Secure Connections Overview](../../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/secure-connections-overview.md) for more information about how to determine whether your MariaDB server has TLS support.
 

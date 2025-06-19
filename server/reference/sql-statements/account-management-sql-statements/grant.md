@@ -117,47 +117,25 @@ select host, user from mysql.user where user='user123' ;
 
 ## Privilege Levels
 
-Privileges can be set globally, for an entire database, for a table or routine,\
-or for individual columns in a table. Certain privileges can only be set at\
-certain levels.
+Privileges can be set globally, for an entire database, for a table or routine, or for individual columns in a table. Certain privileges can only be set at certain levels.
 
 Global privileges do not take effect immediately and are only applied to connections created after the `GRANT` statement was executed.
 
-* [Global privileges priv\_type](grant.md#global-privileges) are granted using `*.*` for\
-  priv\_level. Global privileges include privileges to administer the database\
-  and manage user accounts, as well as privileges for all tables, functions, and\
-  procedures. Global privileges are stored in [mysql.global\_priv table](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-global_priv-table.md).
-* [Database privileges priv\_type](grant.md#database-privileges) are granted using `db_name.*`\
-  for priv\_level, or using just `*` to use default database. Database\
-  privileges include privileges to create tables and functions, as well as\
+* [Global privileges priv\_type](grant.md#global-privileges) are granted using `*.*` for priv\_level. Global privileges include privileges to administer the database and manage user accounts, as well as privileges for all tables, functions, and procedures. Global privileges are stored in [mysql.global\_priv table](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-global_priv-table.md).
+* [Database privileges priv\_type](grant.md#database-privileges) are granted using `db_name.*` for priv\_level, or using just `*` to use default database. Database privileges include privileges to create tables and functions, as well as\
   privileges for all tables, functions, and procedures in the database. Database privileges are stored in the [mysql.db table](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-db-table.md).
-* [Table privileges priv\_type](grant.md#table-privileges) are granted using `db_name.tbl_name`\
-  for priv\_level, or using just `tbl_name` to specify a table in the default\
-  database. The `TABLE` keyword is optional. Table privileges include the\
-  ability to select and change data in the table. Certain table privileges can\
-  be granted for individual columns.
-* [Column privileges priv\_type](grant.md#column-privileges) are granted by specifying a table for\
-  priv\_level and providing a column list after the privilege type. They allow\
-  you to control exactly which columns in a table users can select and change.
-* [Function privileges priv\_type](grant.md#function-privileges) are granted using `FUNCTION db_name.routine_name`\
-  for priv\_level, or using just `FUNCTION routine_name` to specify a function\
-  in the default database.
-* [Procedure privileges priv\_type](grant.md#procedure-privileges) are granted using `PROCEDURE db_name.routine_name`\
-  for priv\_level, or using just `PROCEDURE routine_name` to specify a procedure\
-  in the default database.
+* [Table privileges priv\_type](grant.md#table-privileges) are granted using `db_name.tbl_name`for priv\_level, or using just `tbl_name` to specify a table in the default database. The `TABLE` keyword is optional. Table privileges include the ability to select and change data in the table. Certain table privileges can be granted for individual columns.
+* [Column privileges priv\_type](grant.md#column-privileges) are granted by specifying a table for priv\_level and providing a column list after the privilege type. They allow you to control exactly which columns in a table users can select and change.
+* [Function privileges priv\_type](grant.md#function-privileges) are granted using `FUNCTION db_name.routine_name` for priv\_level, or using just `FUNCTION routine_name` to specify a function in the default database.
+* [Procedure privileges priv\_type](grant.md#procedure-privileges) are granted using `PROCEDURE db_name.routine_name` for priv\_level, or using just `PROCEDURE routine_name` to specify a procedure in the default database.
 
 #### The `USAGE` Privilege
 
-The `USAGE` privilege grants no real privileges. The [SHOW GRANTS](../administrative-sql-statements/show/show-grants.md)\
-statement will show a global `USAGE` privilege for a newly-created user. You\
-can use `USAGE` with the `GRANT` statement to change options like `GRANT OPTION`\
-and `MAX_USER_CONNECTIONS` without changing any account privileges.
+The `USAGE` privilege grants no real privileges. The [SHOW GRANTS](../administrative-sql-statements/show/show-grants.md) statement will show a global `USAGE` privilege for a newly-created user. You can use `USAGE` with the `GRANT` statement to change options like `GRANT OPTION`and `MAX_USER_CONNECTIONS` without changing any account privileges.
 
 #### The `ALL PRIVILEGES` Privilege
 
-The `ALL PRIVILEGES` privilege grants all available privileges. Granting all\
-privileges only affects the given privilege level. For example, granting all\
-privileges on a table does not grant any privileges on the database or globally.
+The `ALL PRIVILEGES` privilege grants all available privileges. Granting all privileges only affects the given privilege level. For example, granting all privileges on a table does not grant any privileges on the database or globally.
 
 Using `ALL PRIVILEGES` does not grant the special `GRANT OPTION` privilege.
 
@@ -165,24 +143,15 @@ You can use `ALL` instead of `ALL PRIVILEGES`.
 
 #### The `GRANT OPTION` Privilege
 
-Use the `WITH GRANT OPTION` clause to give users the ability to grant privileges\
-to other users at the given privilege level. Users with the `GRANT OPTION` privilege can\
-only grant privileges they have. They cannot grant privileges at a higher privilege level than\
-they have the `GRANT OPTION` privilege.
+Use the `WITH GRANT OPTION` clause to give users the ability to grant privileges to other users at the given privilege level. Users with the `GRANT OPTION` privilege can only grant privileges they have. They cannot grant privileges at a higher privilege level than they have the `GRANT OPTION` privilege.
 
-The `GRANT OPTION` privilege cannot be set for individual columns.\
-If you use `WITH GRANT OPTION` when specifying [column privileges](grant.md#column-privileges),\
-the `GRANT OPTION` privilege will be granted for the entire table.
+The `GRANT OPTION` privilege cannot be set for individual columns. If you use `WITH GRANT OPTION` when specifying [column privileges](grant.md#column-privileges), the `GRANT OPTION` privilege will be granted for the entire table.
 
-Using the `WITH GRANT OPTION` clause is equivalent to listing `GRANT OPTION`\
-as a privilege.
+Using the `WITH GRANT OPTION` clause is equivalent to listing `GRANT OPTION` as a privilege.
 
 ### Global Privileges
 
-The following table lists the privileges that can be granted globally. You can\
-also grant all database, table, and function privileges globally. When granted\
-globally, these privileges apply to all databases, tables, or functions,\
-including those created later.
+The following table lists the privileges that can be granted globally. You can also grant all database, table, and function privileges globally. When granted globally, these privileges apply to all databases, tables, or functions, including those created later.
 
 To set a global privilege, use `*.*` for _priv\_level_.
 
