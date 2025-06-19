@@ -23,7 +23,7 @@ CREATE USER 'donald', 'mickey';
 RENAME USER 'donald' TO 'duck'@'localhost', 'mickey' TO 'mouse'@'localhost';
 ```
 
-Renaming the host component of a user
+Renaming the host component of a user:
 
 ```sql
 RENAME USER 'foo'@'1.2.3.4' TO 'foo'@'10.20.30.40';

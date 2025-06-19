@@ -9,7 +9,7 @@ DROP USER [IF EXISTS] user_name [, user_name] ...
 ## Description
 
 The `DROP USER` statement removes one or more MariaDB accounts. It removes privilege rows for the account from all grant tables. To use this statement, you must have the global [CREATE USER](grant.md#create-user) privilege\
-or the [DELETE](grant.md#table-privileges) privilege for the mysql database. Each account is named using the same format as for the `CREATE USER`statement; for example, `'jeffrey'@'localhost'`. If you specify only the user name part of the account name, a host name part of `'%'` is used. For additional information about specifying account names, see[CREATE USER](create-user.md).
+or the [DELETE](grant.md#table-privileges) privilege for the mysql database. Each account is named using the same format as for the `CREATE USER`statement; for example, `'jeffrey'@'localhost'`. If you specify only the user name part of the account name, a host name part of `'%'` is used. For additional information about specifying account names, see [CREATE USER](create-user.md).
 
 {% hint style="info" %}
 If you specify an account that is currently connected, it will not be deleted until the connection is closed. The connection will not be automatically closed.
