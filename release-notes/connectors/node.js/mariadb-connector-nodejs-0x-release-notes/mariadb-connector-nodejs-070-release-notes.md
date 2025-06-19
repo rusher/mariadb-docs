@@ -9,7 +9,7 @@ The most recent [_**Stable (GA)**_](../../../mariadb-release-criteria.md) releas
 MariaDB Connector/Node.js 0.7.0 is an [_**Alpha**_](../../../mariadb-release-criteria.md)\
 release.
 
-**For an overview of MariaDB Connector/Node.js see the**[**About MariaDB Connector/Node.js**](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/rfK8h3eGTK4lYdomGpGT/readme/mariadb-connectors/mariadb-connector-node.js/about-mariadb-connector-node.js) **page**
+**For an overview of MariaDB Connector/Node.js see the**[**About MariaDB Connector/Node.js**](https://app.gitbook.com/s/rfK8h3eGTK4lYdomGpGT/readme/mariadb-connectors/mariadb-connector-node.js/about-mariadb-connector-node.js) **page**
 
 ## Features
 

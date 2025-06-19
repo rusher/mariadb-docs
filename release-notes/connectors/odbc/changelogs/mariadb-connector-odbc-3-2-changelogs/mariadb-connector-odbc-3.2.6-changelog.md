@@ -1,10 +1,10 @@
 # MariaDB Connector/ODBC 3.2.6 Changelog
 
-<a href="https://mariadb.com/downloads/connectors/connectors-data-access/odbc-connector" class="button primary">Download</a>   <a href="../../mariadb-connector-odbc-3-2-release-notes/mariadb-connectorodbc-3-2-6-release-notes.md" class="button secondary">Release Notes</a>   <a href="mariadb-connector-odbc-3.2.6-changelog.md" class="button secondary">Changelog</a>   <a href="https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-odbc" class="button secondary">About MariaDB Connector/ODBC</a>
+<a href="https://mariadb.com/downloads/connectors/connectors-data-access/odbc-connector" class="button primary">Download</a> <a href="../../mariadb-connector-odbc-3-2-release-notes/mariadb-connectorodbc-3-2-6-release-notes.md" class="button secondary">Release Notes</a> <a href="mariadb-connector-odbc-3.2.6-changelog.md" class="button secondary">Changelog</a> <a href="https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-odbc" class="button secondary">About MariaDB Connector/ODBC</a>
 
 **Release date:** ?
 
-For the highlights of this release, see the [release notes](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/aEnK0ZXmUbJzqQrTjFyb/connectors/odbc/mariadb-connector-odbc-3-2-release-notes/mariadb-connectorodbc-3-2-6-release-notes/).
+For the highlights of this release, see the [release notes](../../mariadb-connector-odbc-3-2-release-notes/mariadb-connectorodbc-3-2-6-release-notes.md).
 
 The revision number links will take you to the revision's page on GitHub. On [GitHub](https://github.com/MariaDB/mariadb-connector-odbc) you can view more details of the revision and view diffs of the code modified in that revision.
 

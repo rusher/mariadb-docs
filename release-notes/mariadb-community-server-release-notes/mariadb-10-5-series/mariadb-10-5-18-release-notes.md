@@ -10,7 +10,7 @@ The most recent release of [MariaDB 10.5](what-is-mariadb-105.md) is:[**MariaDB 
 of [MariaDB 10.4](../old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104.md) with several entirely new features not found anywhere else\
 and with backported and reimplemented features from MySQL.
 
-[MariaDB 10.5.18](mariadb-10-5-18-release-notes.md) is a [_**Stable (GA)**_](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-release-criteria) release.
+[MariaDB 10.5.18](mariadb-10-5-18-release-notes.md) is a [_**Stable (GA)**_](../../mariadb-release-criteria.md) release.
 
 **For an overview of** [**MariaDB 10.5**](what-is-mariadb-105.md) **see the**[**What is MariaDB 10.5?**](what-is-mariadb-105.md) **page.**
 

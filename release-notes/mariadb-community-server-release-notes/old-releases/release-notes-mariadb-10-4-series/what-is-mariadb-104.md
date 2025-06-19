@@ -31,12 +31,12 @@ See the [Differences in MariaDB Enterprise Server 10.4](../../../enterprise-serv
 * Instant collation or charset changes for non-indexed columns ([MDEV-15564](https://jira.mariadb.org/browse/MDEV-15564))
 * Reduced redo log volume for undo tablespace initialization ([MDEV-17138](https://jira.mariadb.org/browse/MDEV-17138))
 * Removed crash-upgrade support for pre-10.2.19 TRUNCATE TABLE ([MDEV-13564](https://jira.mariadb.org/browse/MDEV-13564))
-* Added key rotation for [innodb\_encrypt\_log](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/innodb/innodb-system-variables) ([MDEV-12041](https://jira.mariadb.org/browse/MDEV-12041))
-* Implement [innodb\_checksum\_algorithm=full\_crc32](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/innodb/innodb-system-variables#innodb_checksum_algorithm) ([MDEV-12026](https://jira.mariadb.org/browse/MDEV-12026))
+* Added key rotation for [innodb\_encrypt\_log](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables#innodb_encrypt_log) ([MDEV-12041](https://jira.mariadb.org/browse/MDEV-12041))
+* Implement [innodb\_checksum\_algorithm=full\_crc32](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables#innodb_checksum_algorithm) ([MDEV-12026](https://jira.mariadb.org/browse/MDEV-12026))
 
 ### Optimizer
 
-* Implementation of the [optimizer trace](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/mariadb-internals/mariadb-internals-documentation-query-optimizer/mariadb-internals-documentation-optimizer-trace/optimizer-trace-overview), one can enable the optimizer trace by enabling the system variable [optimizer\_trace](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#optimizer_trace) ([MDEV-6111](https://jira.mariadb.org/browse/MDEV-6111))
+* Implementation of the [optimizer trace](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/development-articles/mariadb-internals/mariadb-internals-documentation-query-optimizer/mariadb-internals-documentation-optimizer-trace/optimizer-trace-overview), one can enable the optimizer trace by enabling the system variable [optimizer\_trace](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#optimizer_trace) ([MDEV-6111](https://jira.mariadb.org/browse/MDEV-6111))
 * [Engine Independent Table Statistics](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/engine-independent-table-statistics) is now enabled by default; new default values are [use\_stat\_tables=PREFERABLY\_FOR\_QUERIES](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#use_stat_tables) and [optimizer\_use\_condition\_selectivity=4](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#optimizer_use_condition_selectivity) ([MDEV-15253](https://jira.mariadb.org/browse/MDEV-15253))
   * Two new values for the variable [use\_stat\_tables](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#use_stat_tables): `COMPLEMENTARY_FOR_QUERIES` and `PREFERABLY_FOR_QUERIES` ([MDEV-17255](https://jira.mariadb.org/browse/MDEV-17255))
   * [Histograms](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/histogram-based-statistics) are now used (but not collected) by default ([MDEV-18608](https://jira.mariadb.org/browse/MDEV-18608)).
@@ -122,13 +122,13 @@ unlimited size. With streaming replication, a cluster is replicating a\
 transaction in small fragments during transaction execution. This transaction\
 fragmenting is controlled by two new configuration variables:
 
-* [wsrep_trx_fragment_unit](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_trx_fragment_unit) (bytes, rows, statements) defines the metrics for\
+* [wsrep\_trx\_fragment\_unit](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_trx_fragment_unit) (bytes, rows, statements) defines the metrics for\
   how to measure transaction size limit for fragmenting. Possible values are:
   * `bytes`: transaction’s binlog events buffer size in bytes
   * `rows`: number of rows affected by the transaction
   * `statements`: number of SQL statements executed in the multi-statement\
     transaction
-* [wsrep_trx_fragment_size](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_trx_fragment_size) defines the limit for fragmenting. When a\
+* [wsrep\_trx\_fragment\_size](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_trx_fragment_size) defines the limit for fragmenting. When a\
   transaction’s size, in terms of the configured fragment unit, has grown over\
   this limit, a new fragment will be replicated.
 

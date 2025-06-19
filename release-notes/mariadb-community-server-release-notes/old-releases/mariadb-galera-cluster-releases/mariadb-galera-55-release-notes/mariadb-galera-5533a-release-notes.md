@@ -6,7 +6,7 @@ The most recent [MariaDB Galera Cluster 5.5](https://github.com/mariadb-corporat
 
 **Release date:** 30 Sep 2013
 
-[MariaDB Galera 5.5.33](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-galera-cluster-releases/mariadb-galera-55-release-notes/mariadb-galera-5533a-release-notes)a is a [_**Stable**_](../../../../mariadb-release-criteria.md) (GA) release.\
+[MariaDB Galera 5.5.33](mariadb-galera-5533a-release-notes.md)a is a [_**Stable**_](../../../../mariadb-release-criteria.md) (GA) release.\
 It is a merge of [MariaDB 5.5.33a](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/mariadb-galera-cluster-releases/mariadb-galera-55-release-notes/broken-reference/README.md) and[Galera Cluster](https://codership.com/content/using-galera-cluster) with\
 additional bug fixes.
 

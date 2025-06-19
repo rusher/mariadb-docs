@@ -64,7 +64,7 @@ The most recent release of [MariaDB 10.7](what-is-mariadb-107.md) is:[**MariaDB 
 
 ### Variables
 
-* For a list of all new variables, see [System Variables Added in MariaDB 10.7](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/system-and-status-variables-added-by-major-release/system-and-status-variables-added-by-major-unmaintained-release) and [Status Variables Added in MariaDB 10.7](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-7-series/what-is-mariadb-107).
+* For a list of all new variables, see [System Variables Added in MariaDB 10.7](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/system-and-status-variables-added-by-major-release/system-and-status-variables-added-by-major-unmaintained-release) and [Status Variables Added in MariaDB 10.7](what-is-mariadb-107.md).
 
 The following deprecated variables have been removed :
 

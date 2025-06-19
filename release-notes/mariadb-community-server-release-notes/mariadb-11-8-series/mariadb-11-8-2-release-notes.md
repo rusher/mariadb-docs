@@ -1,12 +1,12 @@
 # MariaDB 11.8.2 Release Notes
 
-<a href="https://mariadb.com/downloads" class="button primary">Download</a>  <a href="mariadb-11-8-2-release-notes.md" class="button secondary">Release Notes</a>  <a href="../../changelogs/changelogs-mariadb-11-8-series/mariadb-11.8.2-changelog.md" class="button secondary">Changelog</a>  <a href="what-is-mariadb-118.md" class="button secondary">Overview of 11.8</a>
+<a href="https://mariadb.com/downloads" class="button primary">Download</a> <a href="mariadb-11-8-2-release-notes.md" class="button secondary">Release Notes</a> <a href="../../changelogs/changelogs-mariadb-11-8-series/mariadb-11.8.2-changelog.md" class="button secondary">Changelog</a> <a href="what-is-mariadb-118.md" class="button secondary">Overview of 11.8</a>
 
 [<sup>_Alternate download from mariadb.org_</sup>](https://downloads.mariadb.org/mariadb/11.8.2/)
 
 **Release date:** 4 Jun 2025
 
-[MariaDB 11.8.2](mariadb-11-8-2-release-notes.md) is a [_**Stable (GA)**_](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-release-criteria) release. It is an evolution of [MariaDB 11.7](../old-releases/mariadb-11-7-rolling-releases/what-is-mariadb-117.md) with several entirely new features.
+[MariaDB 11.8.2](mariadb-11-8-2-release-notes.md) is a [_**Stable (GA)**_](../../mariadb-release-criteria.md) release. It is an evolution of [MariaDB 11.7](../old-releases/mariadb-11-7-rolling-releases/what-is-mariadb-117.md) with several entirely new features.
 
 [MariaDB 11.8](what-is-mariadb-118.md) is a [long-term release](https://mariadb.org/11-8-is-lts/).
 
@@ -239,7 +239,5 @@ information on each push, see the [changelog](../../changelogs/changelogs-mariad
 For a full list of contributors to [MariaDB 11.8.2](mariadb-11-8-2-release-notes.md), see the [MariaDB Foundation release announcement](https://mariadb.org/mariadb-10-7-1-rc-and-mariadb-10-6-5-10-5-13-10-4-22-10-3-32-and-10-2-41-now-available/).
 
 {% include "../../../.gitbook/includes/announce.md" %}
-
-
 
 {% @marketo/form formid="4316" formId="4316" %}

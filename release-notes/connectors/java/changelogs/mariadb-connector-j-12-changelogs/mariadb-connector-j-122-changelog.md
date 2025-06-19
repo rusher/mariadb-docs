@@ -2,11 +2,11 @@
 
 The most recent [_**Stable**_](../../../../mariadb-release-criteria.md) _**(GA)**_ release of [MariaDB Connector/J](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/about-mariadb-connector-j/README.md) is:[**MariaDB Connector/J 3.5.3**](../../mariadb-connector-j-3-5-release-notes/mariadb-connector-j-3-5-3-release-notes.md)
 
-[Download](https://downloads.mariadb.org/connector-java/1.2.2/)[Release Notes](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/aEnK0ZXmUbJzqQrTjFyb/connectors/java/mariadb-connector-j-12-release-notes/mariadb-connector-j-122-release-notes)[Changelog](mariadb-connector-j-122-changelog.md)[Connector/J Overview](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-j/about-mariadb-connector-j)
+[Download](https://downloads.mariadb.org/connector-java/1.2.2/)[Release Notes](../../mariadb-connector-j-12-release-notes/mariadb-connector-j-122-release-notes.md)[Changelog](mariadb-connector-j-122-changelog.md)[Connector/J Overview](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-j/about-mariadb-connector-j)
 
 **Release date:** 10 Sep 2015
 
-For the highlights of this release, see the[release notes](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/aEnK0ZXmUbJzqQrTjFyb/connectors/java/mariadb-connector-j-12-release-notes/mariadb-connector-j-122-release-notes
+For the highlights of this release, see the\[release notes]\(https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/aEnK0ZXmUbJzqQrTjFyb/connectors/java/mariadb-connector-j-12-release-notes/mariadb-connector-j-122-release-notes
 
 The revision number links will take you to the revision's page on GitHub. On[GitHub](https://github.com/MariaDB/mariadb-connector-j) you can view more details of the revision and view diffs of the code modified in that revision.
 

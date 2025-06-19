@@ -2,7 +2,7 @@
 
 The most recent [_**Stable**_](../../../../mariadb-release-criteria.md) _**(GA)**_ release of MariaDB Connector/ODBC is:[**MariaDB Connector/ODBC 3.2.5**](../../mariadb-connector-odbc-3-2-release-notes/mariadb-connector-odbc-3-2-5-release-notes.md)
 
-[Download](https://downloads.mariadb.org/connector-odbc/1.0.0)[Release Notes](../../mariadb-connector-odbc-10-release-notes/mariadb-connector-odbc-100-release-notes.md)[Changelog](mariadb-connector-odbc-100-changelog.md)[Overview of MariaDB Connector/ODBC](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-odbc/mariadb-connector-odbc-guide)
+[Download](https://downloads.mariadb.org/connector-odbc/1.0.0)[Release Notes](../../mariadb-connector-odbc-10-release-notes/mariadb-connector-odbc-100-release-notes.md)[Changelog](mariadb-connector-odbc-100-changelog.md)[Overview of MariaDB Connector/ODBC](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-odbc/mariadb-connector-odbc-guide)
 
 **Release date:** 29 Jan 2015
 
@@ -49,9 +49,9 @@ modified in that revision.
   Tue 2014-11-11 22:19:50 +0100
   * Change for the [ODBC-16](https://jira.mariadb.org/browse/ODBC-16) patch: If previously prepared query was not a batch of statements, Stmt->stmt is closed only if new query is the batch. Much more optiomal, and fixes regressions caused by original patch.
 * [Revision #43](https://bazaar.launchpad.net/~jplindst/maria/10.0-FusionIO/revision/43)\
-  Mon 2014-11-10 16:27:17 +0100
-  *
-    1. Removed memory leak in MADB\_KeyTypeCount - alocated statement was not properly freed 2) Fixed possible buffer overrun in MADB\_StmtGetData 3) Changed in all testcase assert to IS - using not overloaded assert was a bad idea for automated tests. 4) Changed testing framework output to be more in accordance with TAP specs - for failed tests now printed "not ok" instead of "fail" 5) Extended framework with meand to set/get server variables/status. Helper function setting variables. remembers original value, and that value is restored after end of test
+  Mon 2014-11-10 16:27:17 +0100\
+  \*
+  1. Removed memory leak in MADB\_KeyTypeCount - alocated statement was not properly freed 2) Fixed possible buffer overrun in MADB\_StmtGetData 3) Changed in all testcase assert to IS - using not overloaded assert was a bad idea for automated tests. 4) Changed testing framework output to be more in accordance with TAP specs - for failed tests now printed "not ok" instead of "fail" 5) Extended framework with meand to set/get server variables/status. Helper function setting variables. remembers original value, and that value is restored after end of test
 * [Revision #42](https://bazaar.launchpad.net/~jplindst/maria/10.0-FusionIO/revision/42)\
   Thu 2014-10-23 11:04:44 +0200
   * bump patch version number
@@ -80,9 +80,9 @@ modified in that revision.
   Fri 2014-08-08 21:41:11 +0300
   * Fix for the bug [ODBC-13](https://jira.mariadb.org/browse/ODBC-13) - everything to make prompting work.
 * [Revision #33](https://bazaar.launchpad.net/~jplindst/maria/10.0-FusionIO/revision/33)\
-  Sun 2014-07-13 17:17:53 +0300
-  *
-    1. Made tests to read values from environment as well. Command line parameters override values from the environment variables. Names of variables are: TEST\_DSN TEST\_DRIVER TEST\_SERVER TEST\_UID TEST\_PASSWORD TEST\_SCHEMA TEST\_PORT 2) Added some more name templates to .bzrignore
+  Sun 2014-07-13 17:17:53 +0300\
+  \*
+  1. Made tests to read values from environment as well. Command line parameters override values from the environment variables. Names of variables are: TEST\_DSN TEST\_DRIVER TEST\_SERVER TEST\_UID TEST\_PASSWORD TEST\_SCHEMA TEST\_PORT 2) Added some more name templates to .bzrignore
 * [Revision #32](https://bazaar.launchpad.net/~jplindst/maria/10.0-FusionIO/revision/32)\
   Tue 2014-07-01 01:24:51 +0300
   * Mostly fixes of warnings on Windows. 1) rc files could not be compiled with express version of VS because of "afxres.h" inclusion. That header belongs to MFC that does not come with express version. 2) Big number of changes is making data types casts explicit or changing type of variables(to avoid casts), removing of not referenced variables, changed ++/-- from postfix to prefix form. 3) Changed one helper function(MADB\_SetString) parameter type to eliminate signed/unsigned values comparing warnings. 4) Also there are some fixes of existing casts. Some of them look bad enough to had been able to cause problems. 5) Now fixes in tests. Some macros were duplicated - removed copies. In many places positions of parameters of macros were switched. Renamed IS\_NUM to is\_num because it clashed with other macro in some windows header. 6) Tests did not respect some of command line parameters. Also I added processing of the case when connection to the server could not be established - some tests were crashing. 7) Introduced .bzrignore file
@@ -93,9 +93,9 @@ modified in that revision.
   Thu 2014-06-26 06:15:57 +0200
   * Fix length calculation for SQL\_C\_CHAR
 * [Revision #29](https://bazaar.launchpad.net/~jplindst/maria/10.0-FusionIO/revision/29)\
-  Wed 2014-06-25 14:53:11 +0200
-  *
-    * Fixed length calculation if both OctetLength and IndicatorPtr (== SQL\_NTS) was specified. - Bump patch version ------------- Ths lin and the following will be ignored --------------
+  Wed 2014-06-25 14:53:11 +0200\
+  \*
+  * Fixed length calculation if both OctetLength and IndicatorPtr (== SQL\_NTS) was specified. - Bump patch version ------------- Ths lin and the following will be ignored --------------
 * [Revision #28](https://bazaar.launchpad.net/~jplindst/maria/10.0-FusionIO/revision/28)\
   Tue 2014-06-24 19:15:21 +0200
   * Fix for WCHAR fetch: We need to convert the terminating zero charater too.

@@ -6,7 +6,7 @@ The most recent [MariaDB Galera Cluster 5.5](https://github.com/mariadb-corporat
 
 **Release date:** 21 Dec 2012
 
-[MariaDB Galera 5.5.28](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-galera-cluster-releases/mariadb-galera-55-release-notes/mariadb-galera-5528a-release-notes)a is a [_**Release Candidate**_](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-release-criteria) (RC) release. It is\
+[MariaDB Galera 5.5.28](mariadb-galera-5528a-release-notes.md)a is a [_**Release Candidate**_](../../../../mariadb-release-criteria.md) (RC) release. It is\
 a merge of [MariaDB 5.5.28a](../../release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) and Galera Cluster with some\
 additional bug fixes.
 
@@ -19,9 +19,9 @@ information on each push, see the[MariaDB Galera 5.5.28a Changelog](../mariadb-g
 In most respects [MariaDB](https://mariadb.com/docs) will work exactly as MySQL: all commands,\
 interfaces, libraries and APIs that exist in MySQL also exist in MariaDB.
 
-## Includes [MariaDB 5.5.28](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-galera-cluster-releases/mariadb-galera-55-release-notes/mariadb-galera-5528a-release-notes)a and Galera Cluster
+## Includes [MariaDB 5.5.28](mariadb-galera-5528a-release-notes.md)a and Galera Cluster
 
-[MariaDB Galera 5.5.28](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/mariadb-galera-cluster-5528-release-notes/README.md)a includes [MariaDB 5.5.28](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-galera-cluster-releases/mariadb-galera-55-release-notes)a and[Galera Cluster](https://codership.com/content/using-galera-cluster). See the[MariaDB 5.5.28](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-galera-cluster-releases/mariadb-galera-55-release-notes/mariadb-galera-5528a-release-notes)a [Release Notes](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-galera-cluster-releases/mariadb-galera-55-release-notes/mariadb-galera-5528a-release-notes) and[Changelog](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-galera-cluster-releases/mariadb-galera-55-changelogs/mariadb-galera-5528a-changelog) for more information on the changes in[MariaDB 5.5.28]((https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-galera-cluster-releases/mariadb-galera-55-release-notes/mariadb-galera-5528a-release-notes)a.
+[MariaDB Galera 5.5.28](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/mariadb-galera-cluster-5528-release-notes/README.md)a includes [MariaDB 5.5.28](./)a and[Galera Cluster](https://codership.com/content/using-galera-cluster). See the[MariaDB 5.5.28](mariadb-galera-5528a-release-notes.md)a [Release Notes](mariadb-galera-5528a-release-notes.md) and[Changelog](../mariadb-galera-55-changelogs/mariadb-galera-5528a-changelog.md) for more information on the changes in\[MariaDB 5.5.28]\((https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-galera-cluster-releases/mariadb-galera-55-release-notes/mariadb-galera-5528a-release-notes)a.
 
 ## Packaging Fixes
 
