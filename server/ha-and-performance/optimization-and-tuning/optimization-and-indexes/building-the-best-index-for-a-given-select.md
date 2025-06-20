@@ -528,7 +528,7 @@ The tips in this document apply to MySQL, MariaDB, and Percona.
 This blog is the consolidation of a Percona tutorial I gave in 2013, plus many years of experience in fixing thousands of slow queries on hundreds of systems.\
 I apologize that this does not tell you how create INDEXes for all SELECTs. Some are just too complex.
 
-Rick James graciously allowed us to use this article in the Knowledge Base.
+Rick James graciously allowed us to use this article in the documentation.
 
 [Rick James' site](https://mysql.rjweb.org/) has other useful tips, how-tos,\
 optimizations, and debugging tips.

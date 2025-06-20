@@ -138,7 +138,7 @@ Original writing -- Oct, 2012; Notes on INET6 functions -- May, 2015.
 * [Another approach](https://dba.stackexchange.com/questions/83458/mysql-select-with-between-optimization/83471#83471)
 * [Free IP tables](https://lite.ip2location.com/)
 
-Rick James graciously allowed us to use this article in the Knowledge Base.
+Rick James graciously allowed us to use this article in the documentation.
 
 [Rick James' site](https://mysql.rjweb.org/) has other useful tips, how-tos,\
 optimizations, and debugging tips.

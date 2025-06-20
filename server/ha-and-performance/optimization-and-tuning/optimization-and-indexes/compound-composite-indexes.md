@@ -253,7 +253,7 @@ Refreshed -- Oct, 2012; more links -- Nov 2016
 * [Overhead of Composite Indexes](https://stackoverflow.com/questions/32418812/overhead-of-composite-indexes)
 * [Size and other limits on Indexes](https://mysql.rjweb.org/doc.php/limits)
 
-Rick James graciously allowed us to use this article in the Knowledge Base.
+Rick James graciously allowed us to use this article in the documentation.
 
 [Rick James' site](https://mysql.rjweb.org/) has other useful tips, how-tos,\
 optimizations, and debugging tips.

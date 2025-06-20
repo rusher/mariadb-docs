@@ -174,7 +174,7 @@ Written Oct, 2012. Added TokuDB, Jan, 2015.
 * [Percona benchmarks](https://www.percona.com/blog/2014/12/19/store-uuid-optimized-way/)
 * [NHibernate can generate sequential GUIDs](https://nhibernate.info/blog/2009/05/21/using-the-guid-comb-identifier-strategy.html) , but it seems to be backwards.
 
-Rick James graciously allowed us to use this article in the Knowledge Base.
+Rick James graciously allowed us to use this article in the documentation.
 
 [Rick James' site](https://mysql.rjweb.org/) has other useful tips, how-tos,\
 optimizations, and debugging tips.
