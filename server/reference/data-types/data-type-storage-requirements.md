@@ -24,7 +24,6 @@ Note that MEDIUMINT columns will require 4 bytes in memory (for example, in Inno
 
 | Remaining digits | Storage Requirement |
 | ---------------- | ------------------- |
-| Remaining digits | Storage Requirement |
 | 0                | 0 bytes             |
 | 1                | 1 byte              |
 | 2                | 1 byte              |
@@ -41,7 +40,6 @@ In the descriptions below, `M` is the declared column length (in characters or i
 
 | Data Type                                                                                    | Storage Requirement                                                                                        |
 | -------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| Data Type                                                                                    | Storage Requirement                                                                                        |
 | [ENUM](string-data-types/enum.md)                                                            | 1 byte for up to 255 enum values, 2 bytes for 256 to 65,535 enum values                                    |
 | [CHAR(M)](string-data-types/char.md)                                                         | M × w bytes, where w is the number of bytes required for the maximum-length character in the character set |
 | [BINARY(M)](string-data-types/binary.md)                                                     | M bytes                                                                                                    |
@@ -73,7 +71,6 @@ Assuming a single-byte character-set:
 
 | Data Type                                          | Storage Requirement |
 | -------------------------------------------------- | ------------------- |
-| Data Type                                          | Storage Requirement |
 | [DATE](date-and-time-data-types/date.md)           | 3 bytes             |
 | [TIME](date-and-time-data-types/time.md)           | 3 bytes             |
 | [DATETIME](date-and-time-data-types/datetime.md)   | 8 bytes             |
@@ -88,7 +85,6 @@ Assuming a single-byte character-set:
 
 | Precision | Storage Requirement |
 | --------- | ------------------- |
-| Precision | Storage Requirement |
 | 0         | 0 bytes             |
 | 1,2       | 1 byte              |
 | 3,4       | 2 bytes             |
@@ -98,7 +94,6 @@ Assuming a single-byte character-set:
 
 | Precision | Storage Requirement |
 | --------- | ------------------- |
-| Precision | Storage Requirement |
 | 0         | 0 bytes             |
 | 1,2       | 1 byte              |
 | 3,4,5     | 2 bytes             |
