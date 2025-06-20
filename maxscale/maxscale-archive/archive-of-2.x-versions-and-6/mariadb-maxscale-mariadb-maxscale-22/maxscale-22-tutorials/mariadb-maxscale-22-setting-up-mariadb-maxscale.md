@@ -4,7 +4,7 @@ This document is designed as a quick introduction to setting up MariaDB MaxScale
 
 The installation and configuration of the MariaDB Server will not be covered in\
 this document. The [Setting Up Replication](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/setting-up-replication)\
-article on the MariaDB knowledgebase can help you get started with replication clusters\
+article on the MariaDB documentation can help you get started with replication clusters\
 and the[Getting Started With Mariadb Galera Cluster](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/galera-management/getting-started-with-mariadb-galera-cluster)\
 article will help you set up a Galera cluster.
 
