@@ -284,7 +284,7 @@ INSERT INTO t1 VALUES (''); -- inserts NULL
 * [IFNULL function](../sql-functions/control-flow-functions/ifnull.md)
 * [NULLIF function](../sql-functions/control-flow-functions/nullif.md)
 * [CONNECT data types](../../server-usage/storage-engines/connect/connect-data-types.md#null-handling)
-* [Oracle mode from MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle)
+* [Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
