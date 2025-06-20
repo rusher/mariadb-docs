@@ -101,5 +101,5 @@ By following these guidelines, you can effectively manage and operate your Maria
 
 * [MariaDB Galera Cluster Guide](https://mariadb.net/docs/galera-cluster/galera-cluster-quickstart-guides/mariadb-galera-cluster-guide)
 * [Galera Cluster Documentation - Operational Aspects](https://www.google.com/search?q=https://galeracluster.com/documentation/html_docs_galera/operational_aspects.html\&authuser=1)
-* [MariaDB Knowledge Base - Galera Cluster Best Practices](https://www.google.com/search?q=https://mariadb.com/kb/en/galera-cluster-best-practices/\&authuser=1)
-* [MariaDB Knowledge Base - Galera Cluster Monitor](https://www.google.com/search?q=https://mariadb.com/kb/en/galera-cluster-monitor/\&authuser=1)
+* [MariaDB documentation - Galera Cluster Best Practices](https://www.google.com/search?q=https://mariadb.com/kb/en/galera-cluster-best-practices/\&authuser=1)
+* [MariaDB documentation - Galera Cluster Monitor](https://www.google.com/search?q=https://mariadb.com/kb/en/galera-cluster-monitor/\&authuser=1)

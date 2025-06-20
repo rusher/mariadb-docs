@@ -2221,7 +2221,7 @@ The current limitations of MaxScale are listed in the [Limitations](../about-max
 ## Troubleshooting
 
 For a list of common problems and their solutions, read the[MaxScale Troubleshooting](../../../../maxscale-management/maxscale-troubleshooting.md)\
-article on the MariaDB Knowledge Base.
+article on the MariaDB documentation.
 
 ### Authentication
 

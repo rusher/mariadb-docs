@@ -4,7 +4,7 @@
 
 MariaDB architecture is partly different from the architecture of traditional DBMSs, like SQL Server. Here we will examine the main components that a new MariaDB DBA needs to know. We will also discuss a bit of history, because this may help understand MariaDB philosophy and certain design choices.
 
-This section is an overview of the most important components. More information is included in specific sections of this migration guide, or in other pages of the MariaDB Knowledge Base (see the links scattered over the text).
+This section is an overview of the most important components. More information is included in specific sections of this migration guide, or in other pages of the MariaDB documentation (see the links scattered over the text).
 
 ## Storage Engines
 
@@ -211,7 +211,7 @@ See also [MariaDB Replication Overview for SQL Server Users](mariadb-replication
 
 Storage engines are a special type of [plugin](../../../../reference/plugins/). But others exist. For example, plugins can add authentication methods, new features, SQL syntax, functions, informative tables, and more.
 
-A plugin may add some server variables and some status variables. Server variables can be used to configure the plugin, and status variables can be used to monitor its activities and status. These variables generally use the plugin's name as a prefix. For example InnoDB has a server variable called innodb\_buffer\_pool\_size to configure the size of its buffer pool, and a status variable called Innodb\_pages\_read which indicates the number of memory pages read from the buffer pool. The category [system variables](../../../../ha-and-performance/optimization-and-tuning/system-variables/) of the MariaDB Knowledge Base has specific pages for system and status variables associated with various plugins.
+A plugin may add some server variables and some status variables. Server variables can be used to configure the plugin, and status variables can be used to monitor its activities and status. These variables generally use the plugin's name as a prefix. For example InnoDB has a server variable called innodb\_buffer\_pool\_size to configure the size of its buffer pool, and a status variable called Innodb\_pages\_read which indicates the number of memory pages read from the buffer pool. The category [system variables](../../../../ha-and-performance/optimization-and-tuning/system-variables/) of the MariaDB documentation has specific pages for system and status variables associated with various plugins.
 
 Many plugins are installed by default, or available but not installed by default. They can be installed or uninstalled at runtime with SQL statements, like `INSTALL PLUGIN`, `UNINSTALL PLUGIN` and others; see [Plugin SQL Statements](../../../../reference/sql-statements/administrative-sql-statements/plugin-sql-statements/). 3rd party plugins can be made available for installation by simply copying them to the [plugin\_dir](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#plugin_dir).
 

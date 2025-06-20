@@ -5015,7 +5015,7 @@ query_classifier_cache_size=3100000000
 ## Troubleshooting
 
 For a list of common problems and their solutions, read the[MaxScale Troubleshooting](../../../../maxscale-versions/maxscale-troubleshooting.md)\
-article on the MariaDB Knowledge Base.
+article on the MariaDB documentation.
 
 ### Systemd Watchdog
 

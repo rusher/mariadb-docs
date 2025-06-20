@@ -5,7 +5,7 @@
 _The success of MariaDB relies heavily on community involvement. You can contribute in various ways, even if you are not a developer:_
 
 * _**Bug Reporting**: Create an account to report bugs._
-* _**Knowledge Sharing**: Answer questions in the Knowledge Base or on IRC and Zulip._
+* _**Knowledge Sharing**: Answer questions in the documentation or on IRC and Zulip._
 * _**Testing**: Upload bug tests to the FTP server for private testing._
 * _**Documentation**: Write or translate articles and documentation for MariaDB._
 * _**Advocacy**: Promote MariaDB and participate in open source events._

@@ -45,4 +45,4 @@ layout:
 | Binary Logs                                                                                                              | [Encrypting Binary Logs](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/encrypting-binary-logs) |
 | [Galera Cluster](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/galera-cluster/README.md) Gcache | [Encrypting Galera Cluster's Gcache](encrypting-galera-clusters-gcache.md)                                                                                                               |
 
-Additional information is available on the [MariaDB Knowledge Base](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption).
+Additional information is available on the [MariaDB documentation](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption).

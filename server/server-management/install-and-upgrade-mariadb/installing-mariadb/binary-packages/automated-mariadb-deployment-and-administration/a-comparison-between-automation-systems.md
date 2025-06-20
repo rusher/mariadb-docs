@@ -1,7 +1,7 @@
 
 # A Comparison Between Automation Systems
 
-This page compares the automation systems that are covered by this section of the MariaDB Knowledge Base. More information about these systems are presented in the relevant pages, and more systems may be added in the future.
+This page compares the automation systems that are covered by this section of the MariaDB documentation. More information about these systems are presented in the relevant pages, and more systems may be added in the future.
 
 
 
