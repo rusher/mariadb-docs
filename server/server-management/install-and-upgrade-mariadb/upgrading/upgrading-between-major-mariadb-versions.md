@@ -94,7 +94,7 @@ MariaDB server is not designed for downgrading. That said, in most cases, as lon
 * [Upgrading from MariaDB 10.5 to MariaDB 10.6](upgrading-from-to-specific-versions/upgrading-from-mariadb-10-5-to-mariadb-10-6.md)
 * [Upgrading from MariaDB 10.4 to MariaDB 10.5](upgrading-from-to-specific-versions/upgrading-from-mariadb-10-4-to-mariadb-10-5.md)
 * [Galera upgrading instructions](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/galera-management/upgrading-galera-cluster)
-* [innodb\_fast\_shutdown](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_fast_shutdown)
+* [innodb\_fast\_shutdown](../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_fast_shutdown)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
