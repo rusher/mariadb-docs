@@ -6,7 +6,6 @@ The following tables indicate the approximate data storage requirements for each
 
 | Data Type                                    | Storage Requirement                   |
 | -------------------------------------------- | ------------------------------------- |
-| Data Type                                    | Storage Requirement                   |
 | [TINYINT](numeric-data-types/tinyint.md)     | 1 byte                                |
 | [SMALLINT](numeric-data-types/smallint.md)   | 2 bytes                               |
 | [MEDIUMINT](numeric-data-types/mediumint.md) | 3 bytes                               |
@@ -53,7 +52,7 @@ In the descriptions below, `M` is the declared column length (in characters or i
 | [LONGBLOB](string-data-types/longblob.md), [LONGTEXT](string-data-types/longtext.md)         | len + 4 bytes                                                                                              |
 | [SET](string-data-types/set-data-type.md)                                                    | Given M members of the set, (M+7)/8 bytes, rounded up to 1, 2, 3, 4, or 8 bytes                            |
 | [INET6](string-data-types/inet6.md)                                                          | 16 bytes                                                                                                   |
-| [UUID](https://mariadb.com/kb/en/uuid_datatype)                                              | 16 bytes                                                                                                   |
+| [UUID](string-data-types/uuid-data-type.md)                                                  | 16 bytes                                                                                                   |
 
 In some [character sets](string-data-types/character-sets/), not all characters use the same number of bytes. utf8 encodes characters with one to three bytes per character, while utf8mb4 requires one to four bytes per character.
 
