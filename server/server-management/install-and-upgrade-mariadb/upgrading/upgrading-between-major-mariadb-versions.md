@@ -1,7 +1,7 @@
 # Upgrading Between Major MariaDB Versions
 
 MariaDB is designed to allow easy upgrades. You should be able to trivially upgrade from ANY earlier\
-MariaDB version to the latest one (for example [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103).x to [MariaDB 10.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-11-series/what-is-mariadb-1011).x), usually in a few seconds. This is also mainly true for any MySQL version < 8.0 to [MariaDB 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-management/install-and-upgrade-mariadb/upgrading/broken-reference/README.md) and up.
+MariaDB version to the latest one (for example [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103).x to [MariaDB 10.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-11-series/what-is-mariadb-1011).x), usually in a few seconds. This is also mainly true for any MySQL version < 8.0 to [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104) and up.
 
 Upgrades are normally easy because:
 
@@ -11,7 +11,7 @@ Upgrades are normally easy because:
 
 MariaDB Corporation regularly runs tests to check that one can upgrade from [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) to the latest MariaDB version without any trouble. All older versions should work too (as long as the storage engines you were using are still around).
 
-Note that if you are using [MariaDB Galera Cluster](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/galera-cluster/README.md), you have to follow the [Galera upgrading instructions](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/galera-management/upgrading-galera-cluster)!
+Note that if you are using [MariaDB Galera Cluster](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/3VYeeVGUV4AMqrA3zwy7/), you have to follow the [Galera upgrading instructions](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/galera-management/upgrading-galera-cluster)!
 
 ## Requirements for Doing an Upgrade Between Major Versions
 
