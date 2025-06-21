@@ -3,7 +3,7 @@
 The `feedback` plugin is designed to collect and, optionally, upload\
 configuration and usage information to [MariaDB.org](https://mariadb.org/) or to any other configured URL.
 
-See the [MariaDB User Feedback](https://mariadb.org/feedback_plugin/) page on MariaDB.org to see collected MariaDB usage statistics.
+See the [MariaDB User Feedback](https://mariadb.org/feedback-plugin/) page on MariaDB.org to see collected MariaDB usage statistics.
 
 The `feedback` plugin exists in all MariaDB versions.
 
@@ -13,7 +13,7 @@ way, you need to explicitly install and enable it in order for feedback data to 
 
 ## Verifying the Plugin's Status
 
-To verify whether the `feedback` plugin is installed and enabled, execute the[SHOW PLUGINS](../../sql-statements/administrative-sql-statements/show/show-plugins.md) statement or query the [information\_schema.plugins](../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/plugins-table-information-schema.md) table.
+To verify whether the `feedback` plugin is installed and enabled, execute the [SHOW PLUGINS](../../sql-statements/administrative-sql-statements/show/show-plugins.md) statement or query the [information\_schema.plugins](../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/plugins-table-information-schema.md) table.
 
 Usually, the plugin is installed in MariaDB by default:
 
@@ -69,11 +69,11 @@ You can uninstall the plugin dynamically by executing [UNINSTALL SONAME](../../s
 UNINSTALL SONAME 'feedback';
 ```
 
-If you installed the plugin by providing the [--plugin-load](../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) or the [--plugin-load-add](../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) options in a relevant server [option group](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md), then those options should be removed to prevent the plugin from being loaded the next time the server is restarted.
+If you installed the plugin by providing the [`--plugin-load`](../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md) or the [`--plugin-load-add`](../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md) options in a relevant server [option group](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md), then those options should be removed to prevent the plugin from being loaded the next time the server is restarted.
 
 ## Enabling the Plugin
 
-You can enable the plugin by setting the [feedback](#feedback) option to `ON` in a relevant server [option group](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md). For example:
+You can enable the plugin by setting the [`feedback`](#feedback) option to `ON` in a relevant server [option group](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md). For example:
 
 ```
 [mariadb]
@@ -121,7 +121,7 @@ Collations that have not been used will not be included into the result.
 The `feedback` plugin sends the data using a `POST` request to any URL or a list of URLs\
 that you specify by setting the [feedback\_url](feedback-plugin.md#feedback_url) system variable. By default, this is set to the following URL:
 
-* [post](https://mariadb.org/feedback_plugin/post)
+* https://feedback.mariadb.org/rest/v1/post
 
 Both HTTP and HTTPS protocols are supported.
 
@@ -139,12 +139,10 @@ First, generate the report file with the MariaDB command-line [mariadb](../../..
 $ mariadb -e 'select * from information_schema.feedback' > report.txt
 ```
 
-Then you can upload the generated `report.txt` [here](https://mariadb.org/feedback_plugin/post) using your web browser.
-
-Or you can do it from the command line with tools such as [curl](https://curl.haxx.se/docs/manpage.html). For example:
+Then you can upload the generated `report.txt` [here](https://feedback.mariadb.org/rest/v1/post) from the command line with tools such as [curl](https://curl.haxx.se/docs/manpage.html). For example:
 
 ```
-$ curl -F data=@report.txt https://mariadb.org/feedback_plugin/post
+$ curl -F data=@report.txt https://feedback.mariadb.org/rest/v1/post
 ```
 
 Manual uploading allows you to be absolutely sure that we receive only the data shown in the [INFORMATION\_SCHEMA.FEEDBACK](../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-feedback-table.md) table and that no private or sensitive information is being sent.
@@ -201,7 +199,7 @@ Manual uploading allows you to be absolutely sure that we receive only the data 
 * Scope: Global
 * Dynamic: No
 * Data Type: string
-* Default Value: [post](https://mariadb.org/feedback_plugin/post)
+* Default Value: https://feedback.mariadb.org/rest/v1/post
 
 ### `feedback_user_info`
 
