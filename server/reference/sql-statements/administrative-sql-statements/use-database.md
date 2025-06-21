@@ -2,23 +2,21 @@
 
 ## Syntax
 
-```
+```sql
 USE db_name
 ```
 
 From [MariaDB 11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-11-7-rolling-releases/what-is-mariadb-117), one can also use
 
-```
+```sql
 USE DATABASE db_name;
 ```
 
 ## Description
 
-The `'USE db_name'` statement tells MariaDB to use the`db_name` database as the default (current) database for\
-subsequent statements. The database remains the default until the end of the\
-session or another `USE` statement is issued:
+The `'USE db_name'` statement tells MariaDB to use the`db_name` database as the default (current) database forsubsequent statements. The database remains the default until the end of thesession or another `USE` statement is issued:
 
-```
+```sql
 USE db1;
 SELECT COUNT(*) FROM mytable;   # selects from db1.mytable
 USE db2;
@@ -29,8 +27,7 @@ The [DATABASE()](../../sql-functions/secondary-functions/information-functions/d
 
 Another way to set the default database is specifying its name at [mariadb](../../../clients-and-utilities/mariadb-client/mariadb-command-line-client.md) command line client startup.
 
-One cannot use `USE DATABASE` to a database one has no privileges to. The reason is that\
-a user with no privileges to a database should not be able to know if a database exists or not.
+One cannot use `USE DATABASE` to a database one has no privileges to. The reason is thata user with no privileges to a database should not be able to know if a database exists or not.
 
 ## See Also
 

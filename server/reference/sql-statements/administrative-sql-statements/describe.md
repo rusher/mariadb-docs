@@ -2,23 +2,17 @@
 
 ## Syntax
 
-```
+```sql
 {DESCRIBE | DESC} tbl_name [col_name | wild]
 ```
 
 ## Description
 
-`DESCRIBE` provides information about the columns in a table.\
-It is a shortcut for [SHOW COLUMNS FROM](show/show-columns.md).\
-These statements also display information for [views](../../../server-usage/views/).
+`DESCRIBE` provides information about the columns in a table.It is a shortcut for [SHOW COLUMNS FROM](show/show-columns.md).These statements also display information for [views](../../../server-usage/views/).
 
-`col_name` can be a column name, or a string containing the\
-SQL "`%`" and "`_`" wildcard characters to\
-obtain output only for the columns with names matching the string. There is no\
-need to enclose the string within quotes unless it contains spaces or other\
-special characters.
+`col_name` can be a column name, or a string containing theSQL "`%`" and "`_`" wildcard characters toobtain output only for the columns with names matching the string. There is noneed to enclose the string within quotes unless it contains spaces or otherspecial characters.
 
-```
+```sql
 DESCRIBE city;
 +------------+----------+------+-----+---------+----------------+
 | Field      | Type     | Null | Key | Default | Extra          |
@@ -31,8 +25,7 @@ DESCRIBE city;
 +------------+----------+------+-----+---------+----------------+
 ```
 
-The description for [SHOW COLUMNS](show/show-columns.md) provides\
-more information about the output columns.
+The description for [SHOW COLUMNS](show/show-columns.md) providesmore information about the output columns.
 
 ## See Also
 

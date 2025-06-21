@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 SHUTDOWN [WAIT FOR ALL { SLAVES | REPLICAS } ]
 ```
 
@@ -12,13 +12,13 @@ The `SHUTDOWN` command shuts the server down.
 
 ## WAIT FOR ALL REPLICAS / SLAVES
 
-The `WAIT FOR ALL SLAVES` option was first added in [MariaDB 10.4.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-1044-release-notes). `WAIT FOR ALL REPLICAS` has been a synonym since [MariaDB 10.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1051-release-notes).
+The `WAIT FOR ALL SLAVES` option was first added in [MariaDB 10.4.4](../../../release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-1044-release-notes). `WAIT FOR ALL REPLICAS` has been a synonym since [MariaDB 10.5.1](../../../release-notes/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1051-release-notes).
 
 When a primary server is shutdown and it goes through the normal shutdown process, the primary kills client threads in random order. By default, the primary also considers its binary log dump threads to be regular client threads. As a consequence, the binary log dump threads can be killed while client threads still exist, and this means that data can be written on the primary during a normal shutdown that won't be replicated. This is true even if [semi-synchronous replication](../../../ha-and-performance/standard-replication/semisynchronous-replication.md) is being used.
 
 This problem can be solved by shutting down the server with the [SHUTDOWN](shutdown.md) command and by providing the `WAIT FOR ALL REPLICAS`/`WAIT FOR ALL SLAVES` option to the command. For example:
 
-```
+```sql
 SHUTDOWN WAIT FOR ALL REPLICAS;
 ```
 
@@ -38,7 +38,7 @@ If you are doing a shutdown to [migrate to another major version of MariaDB](../
 
 The following example shows how to create an [event](../../../server-usage/triggers-events/event-scheduler/) which turns off the server at a certain time:
 
-```
+```sql
 CREATE EVENT `test`.`shutd`
     ON SCHEDULE
         EVERY 1 DAY
@@ -55,7 +55,7 @@ You can use the [mariadb-admin shutdown](../../../clients-and-utilities/administ
 
 You can also use the system kill command on Unix with signal SIGTERM (15)
 
-```
+```bash
 kill -SIGTERM pid-of-mariadbd-process
 ```
 
@@ -65,7 +65,7 @@ The above is identical to `mariadb-admin shutdown`.
 
 On windows you should use:
 
-```
+```bash
 NET STOP MariaDB
 ```
 

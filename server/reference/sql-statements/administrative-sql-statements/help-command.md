@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 HELP search_string
 ```
 
@@ -14,7 +14,7 @@ If you provide an argument to the `HELP` command, the [mariadb](../../../clients
 
 If there is no match for the search string, the search fails. Use `HELP contents` to see a list of the help categories:
 
-```
+```sql
 HELP contents
 You asked for help about help category: "Contents"
 For more information, type 'help <item>', where <item> is one of the following
@@ -41,7 +41,7 @@ categories:
 
 If a search string matches multiple items, MariaDB shows a list of matching topics:
 
-```
+```sql
 HELP drop
 Many help items for your request exist.
 To make a more specific request, please type 'help <item>',
