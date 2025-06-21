@@ -1,2 +1,0 @@
-# MariaDB Software Questions
-
