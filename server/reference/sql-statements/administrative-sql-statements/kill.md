@@ -1,4 +1,4 @@
-# KILL \[CONNECTION | QUERY]
+# KILL
 
 ## Syntax
 
@@ -10,17 +10,27 @@ KILL [HARD | SOFT] { {CONNECTION|QUERY} thread_id | QUERY ID query_id | USER use
 
 Each connection to mariadbd runs in a separate thread. You can see which threadsare running with the `SHOW PROCESSLIST` statement and kill athread with the `KILL thread_id` statement.`KILL` allows the optional `CONNECTION` or`QUERY` modifier:
 
-* `KILL CONNECTION` is the same as `KILL` with no  modifier: It terminates the connection associated with the given thread or query id.
-* `KILL QUERY` terminates the statement that the connection thread\_id is  currently executing, but leaves the connection itself intact.
+* `KILL CONNECTION` is the same as `KILL` with no modifier: It terminates the connection associated with the given thread or query id.
+* `KILL QUERY` terminates the statement that the connection thread\_id is currently executing, but leaves the connection itself intact.
 * `KILL QUERY ID` terminates the query by query\_id, leaving the connection intact.
 
 If a connection is terminated that has an active transaction, the transaction will be rolled back. If only a query is killed, the current transaction will stay active. See also [idle\_transaction\_timeout](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#idle_transaction_timeout).
 
-If you have the [PROCESS](../account-management-sql-statements/grant.md#process) privilege, you can see all threads. Ifyou have the [SUPER](../account-management-sql-statements/grant.md#super) privilege, or, from [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1052-release-notes), the [CONNECTION ADMIN](../account-management-sql-statements/grant.md#connection-admin) privilege, you can kill all threads andstatements. Otherwise, you can see and kill only your own threads andstatements.
+If you have the [PROCESS](../account-management-sql-statements/grant.md#process) privilege, you can see all threads.
+
+{% tabs %}
+{% tab title="Current" %}
+If you have the [CONNECTION ADMIN](../account-management-sql-statements/grant.md#connection-admin) privilege, you can kill all threads and statements. Otherwise, you can see and kill only your own threads and statements.
+{% endtab %}
+
+{% tab title="< 10.5.2" %}
+If you have the [SUPER](../account-management-sql-statements/grant.md#super) privilege, the [CONNECTION ADMIN](../account-management-sql-statements/grant.md#connection-admin) privilege, you can kill all threads and statements. Otherwise, you can see and kill only your own threads and statements.
+{% endtab %}
+{% endtabs %}
 
 Killing queries that repair or create indexes on MyISAM and Aria tables may result in corrupted tables. Use the `SOFT` option to avoid this!
 
-The `HARD` option (default) kills a command as soon as possible. If you use`SOFT`, then critical operations that may leave a table in aninconsistent state will not be interrupted. Such operations include `REPAIR` and `INDEX` creation for [MyISAM](../../../server-usage/storage-engines/myisam-storage-engine/) and [Aria](../../../server-usage/storage-engines/aria/) tables ([REPAIR TABLE](../table-statements/repair-table.md), [OPTIMIZE TABLE](../../../ha-and-performance/optimization-and-tuning/optimizing-tables/optimize-table.md)).
+The `HARD` option (default) kills a command as soon as possible. If you use`SOFT`, then critical operations that may leave a table in an inconsistent state will not be interrupted. Such operations include `REPAIR` and `INDEX` creation for [MyISAM](../../../server-usage/storage-engines/myisam-storage-engine/) and [Aria](../../../server-usage/storage-engines/aria/) tables ([REPAIR TABLE](../table-statements/repair-table.md), [OPTIMIZE TABLE](../../../ha-and-performance/optimization-and-tuning/optimizing-tables/optimize-table.md)).
 
 `KILL ... USER username` will kill all connections/queries for agiven user. `USER` can be specified one of the following ways:
 
@@ -62,6 +72,6 @@ To obtain a list of existing sessions, use the [SHOW PROCESSLIST](show/show-proc
 * [Aborting statements that exceed a certain time to execute](../../../ha-and-performance/optimization-and-tuning/query-optimizations/aborting-statements.md)
 * [idle\_transaction\_timeout](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#idle_transaction_timeout)
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

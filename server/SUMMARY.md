@@ -1303,7 +1303,7 @@
       * [CACHE INDEX](reference/sql-statements/administrative-sql-statements/cache-index.md)
       * [DESCRIBE](reference/sql-statements/administrative-sql-statements/describe.md)
       * [HELP Command](reference/sql-statements/administrative-sql-statements/help-command.md)
-      * [KILL \[CONNECTION | QUERY\]](reference/sql-statements/administrative-sql-statements/kill.md)
+      * [KILL](reference/sql-statements/administrative-sql-statements/kill.md)
       * [PURGE BINARY LOGS](reference/sql-statements/administrative-sql-statements/purge-binary-logs.md)
       * [RESET](reference/sql-statements/administrative-sql-statements/reset.md)
       * [SHUTDOWN](reference/sql-statements/administrative-sql-statements/shutdown.md)
