@@ -52,11 +52,10 @@ extends `ANALYZE [FORMAT=JSON] <select>` to allow one to analyze a query current
 ## Data About Individual Query Plan Nodes
 
 * `filesort` node reports whether sorting was done with `LIMIT n` parameter, and how many rows were in the sort result.
-* `block-nl-join` node has `r_loops` field, which allows to tell whether `Using join buffer` was efficient
+* `block-nl-join` node has `r_loops` field, which allows to tell whether `Using join buffer` was efficient.
 * `range-checked-for-each-record` reports counters that show the result of the check.
 * `expression-cache` is used for subqueries, and it reports how many times the cache was used, and what cache hit ratio was.
-* `union_result` node has `r_rows` so one can see how many rows were produced after UNION operation
-* and so forth
+* `union_result` node has `r_rows` so one can see how many rows were produced after UNION operation and so forth.
 
 ## Use Cases
 
