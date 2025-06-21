@@ -12,7 +12,7 @@ Index-based access method may employ some or all of the following:
 
 Consider a table access which does all three:
 
-```
+```json
 "table": {
     "table_name": "t1",
     "access_type": "range",
@@ -72,7 +72,7 @@ The selectivity counters are:
 
 in ANALYZE FORMAT=JSON output these members are placed as follows:
 
-```
+```json
 "table": {
     "table_name": ...,
 
@@ -86,7 +86,7 @@ If `r_index_rows` is not shown, `r_rows` shows the number of records enumerated.
 
 Then, filtering members:
 
-```
+```json
 ...
     "filtered": 8.476269722,
     "r_total_filtered": 9.742120344,
@@ -94,7 +94,7 @@ Then, filtering members:
 
 `filtered` is comparable with `r_total_filtered`: both show total amount of filtering.
 
-```
+```json
 ...
     "index_condition": "lineitem.l_quantity > 47",
     "r_icp_filtered": 100,
@@ -102,7 +102,7 @@ Then, filtering members:
 
 ICP and its observed filtering. The optimizer doesn't compute an estimate for this currently.
 
-```
+```json
 ...
     "attached_condition": "lineitem.l_shipDATE between '1997-01-01' and '1997-06-30'",
     "r_filtered": 100

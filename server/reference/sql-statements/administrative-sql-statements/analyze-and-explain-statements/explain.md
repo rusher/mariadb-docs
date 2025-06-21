@@ -24,11 +24,7 @@ EXPLAIN [FORMAT=JSON] FOR CONNECTION <connection_id>
 The `EXPLAIN` statement can be used either as a synonym for[DESCRIBE](../describe.md) or as a way to obtain information about how MariaDB executes a `SELECT`, `UPDATE` or `DELETE` statement:
 
 * `'EXPLAIN tbl_name'` is synonymous with`'[DESCRIBE](../describe.md) tbl_name'` or`'[SHOW COLUMNS](../show/show-columns.md) FROM tbl_name'`.
-* When you precede a `SELECT`, `UPDATE` or a `DELETE` statement with the keyword`EXPLAIN`, MariaDB displays information from the optimizer\
-  about the query execution plan. That is, MariaDB explains how it would\
-  process the `SELECT`, `UPDATE` or `DELETE`, including information about how tables\
-  are joined and in which order. `EXPLAIN EXTENDED` can be\
-  used to provide additional information.
+* When you precede a `SELECT`, `UPDATE` or a `DELETE` statement with the keyword`EXPLAIN`, MariaDB displays information from the optimizer about the query execution plan. That is, MariaDB explains how it would process the `SELECT`, `UPDATE` or `DELETE`, including information about how tables are joined and in which order. `EXPLAIN EXTENDED` can be used to provide additional information.
 * `EXPLAIN PARTITIONS` is useful only when examining queries involving partitioned tables. For details, see [Partition pruning and selection](../../../../server-usage/partitioning-tables/partition-pruning-and-selection.md).
 * [ANALYZE statement](analyze-statement.md) performs the query as well as producing EXPLAIN output, and provides actual as well as estimated statistics.
 * `EXPLAIN` output can be printed in the [slow query log](../../../../server-management/server-monitoring-logs/slow-query-log/). See [EXPLAIN in the Slow Query Log](../../../../server-management/server-monitoring-logs/slow-query-log/explain-in-the-slow-query-log.md) for details.
@@ -109,27 +105,14 @@ _Note that some of these values are detected after the optimization phase._
 
 The optimization phase can do the following changes to the `WHERE` clause:
 
-* Add the expressions from the `ON` and `USING` clauses to the `WHERE`\
-  clause.
-* Constant propagation: If there is `column=constant`, replace all column\
-  instances with this constant.
+* Add the expressions from the `ON` and `USING` clauses to the `WHERE` clause.
+* Constant propagation: If there is `column=constant`, replace all column instances with this constant.
 * Replace all columns from '`const`' tables with their values.
-* Remove the used key columns from the `WHERE` (as this will be tested as\
-  part of the key lookup).
-* Remove impossible constant sub expressions.\
-  For example `WHERE '(a=1 and a=2) OR b=1'` becomes `'b=1'`.
-* Replace columns with other columns that has identical values:\
-  Example: `WHERE` `a=b` and `a=c` may be treated\
-  as `'WHERE a=b and a=c and b=c'`.
-* Add extra conditions to detect impossible row conditions earlier. This\
-  happens mainly with `OUTER JOIN` where we in some cases add detection\
-  of `NULL` values in the `WHERE` (Part of '`Not exists`' optimization).\
-  This can cause an unexpected '`Using where`' in the Extra column.
-* For each table level we remove expressions that have already been tested when\
-  we read the previous row. Example: When joining tables `t1` with `t2`\
-  using the following `WHERE 't1.a=1 and t1.a=t2.b'`, we don't have to\
-  test `'t1.a=1'` when checking rows in `t2` as we already know that this\
-  expression is true.
+* Remove the used key columns from the `WHERE` (as this will be tested as part of the key lookup).
+* Remove impossible constant sub expressions. For example `WHERE '(a=1 and a=2) OR b=1'` becomes `'b=1'`.
+* Replace columns with other columns that has identical values: Example: `WHERE` `a=b` and `a=c` may be treated as `'WHERE a=b and a=c and b=c'`.
+* Add extra conditions to detect impossible row conditions earlier. This happens mainly with `OUTER JOIN` where we in some cases add detection of `NULL` values in the `WHERE` (Part of '`Not exists`' optimization). This can cause an unexpected '`Using where`' in the Extra column.
+* For each table level we remove expressions that have already been tested when we read the previous row. Example: When joining tables `t1` with `t2` using the following `WHERE 't1.a=1 and t1.a=t2.b'`, we don't have to test `'t1.a=1'` when checking rows in `t2` as we already know that this expression is true.
 
 | Value                                                | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 | ---------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -175,7 +158,7 @@ An `EXPLAIN EXTENDED` will always throw a warning, as it adds extra _Message_ in
 
 As synonym for `DESCRIBE` or `SHOW COLUMNS FROM`:
 
-```
+```sql
 DESCRIBE city;
 +------------+----------+------+-----+---------+----------------+
 | Field      | Type     | Null | Key | Default | Extra          |
@@ -190,7 +173,7 @@ DESCRIBE city;
 
 A simple set of examples to see how `EXPLAIN` can identify poor index usage:
 
-```
+```sql
 CREATE TABLE IF NOT EXISTS `employees_example` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `first_name` varchar(30) NOT NULL,
@@ -226,7 +209,7 @@ SHOW INDEXES FROM employees_example;
 
 `SELECT` on a primary key:
 
-```
+```sql
 EXPLAIN SELECT * FROM employees_example WHERE id=1;
 +------+-------------+-------------------+-------+---------------+---------+---------+-------+------+-------+
 | id   | select_type | table             | type  | possible_keys | key     | key_len | ref   | rows | Extra |
@@ -238,7 +221,7 @@ EXPLAIN SELECT * FROM employees_example WHERE id=1;
 The type is _const_, which means that only one possible result could be returned.\
 Now, returning the same record but searching by their phone number:
 
-```
+```sql
 EXPLAIN SELECT * FROM employees_example WHERE home_phone='326-555-3492';
 +------+-------------+-------------------+------+---------------+------+---------+------+------+-------------+
 | id   | select_type | table             | type | possible_keys | key  | key_len | ref  | rows | Extra       |
@@ -251,7 +234,7 @@ Here, the type is _All_, which means no index could be used. Looking at the rows
 
 [SHOW EXPLAIN](../show/show-explain.md) example:
 
-```
+```sql
 SHOW EXPLAIN FOR 1;
 +------+-------------+-------+-------+---------------+------+---------+------+---------+-------------+
 | id   | select_type | table | type  | possible_keys | key  | key_len | ref  | rows    | Extra       |

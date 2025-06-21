@@ -4,7 +4,7 @@
 This article explains the [UPDATE](../../data-manipulation/changing-deleting-data/update.md) statement's *Using Buffer* algorithm.
 
 
-Take the following table and query:
+Consider the following table and query:
 
 
 
@@ -17,7 +17,7 @@ Take the following table and query:
 
 
 
-```
+```sql
 UPDATE employees SET salary = salary+100 WHERE salary < 2000;
 ```
 

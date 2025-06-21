@@ -8,7 +8,7 @@ This lets one check how close the optimizer's estimates about the query plan are
 
 The syntax is
 
-```
+```sql
 ANALYZE explainable_statement;
 ```
 
@@ -18,7 +18,7 @@ where the statement is any statement for which one can run [EXPLAIN](explain.md)
 
 Consider an example:
 
-```
+```sql
 ANALYZE SELECT * FROM tbl1 
 WHERE key1 
   BETWEEN 10 AND 200 AND 
@@ -53,7 +53,7 @@ Compared to `EXPLAIN`, `ANALYZE` produces two extra columns:
 
 Let's consider a more complicated example.
 
-```
+```sql
 ANALYZE SELECT *
 FROM orders, customer 
 WHERE
@@ -82,7 +82,7 @@ Here, one can see that
 
 Let's modify the previous example slightly
 
-```
+```sql
 ANALYZE SELECT * 
 FROM orders, customer 
 WHERE
@@ -101,8 +101,7 @@ WHERE
 +----+-------------+----------+------+---------------+-------------+---------+--------------------+--------+--------+----------+------------+-------------+
 ```
 
-Here, one can see that **orders.r\_rows=NULL** and **orders.r\_filtered=NULL**. This means that table orders was not scanned even once.\
-Indeed, we can also see customer.r\_filtered=0.00. This shows that a part of WHERE attached to table `customer` was never satisfied (or, satisfied in less than 0.01% of cases).
+The output of **orders.r\_rows=NULL** and **orders.r\_filtered=NULL** shows that the table `orders` was never scanned. Indeed, we can also see customer.r\_filtered=0.00. This shows that a part of WHERE attached to table `customer` was never satisfied (or, satisfied in less than 0.01% of cases).
 
 ## ANALYZE FORMAT=JSON
 

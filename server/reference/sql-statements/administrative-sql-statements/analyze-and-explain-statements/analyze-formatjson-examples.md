@@ -7,7 +7,7 @@
 Customers who have ordered more than 1M goods.
 
 
-```
+```sql
 ANALYZE FORMAT=JSON
 SELECT COUNT(*)
 FROM customer
@@ -15,10 +15,10 @@ WHERE
   (SELECT SUM(o_totalprice) FROM orders WHERE o_custkey=c_custkey) > 1000*1000;
 ```
 
-The query takes 40 seconds over cold cache
+The query takes 40 seconds over cold cache.
 
 
-```
+```json
 EXPLAIN: {
   "query_block": {
     "select_id": 1,
@@ -67,7 +67,7 @@ EXPLAIN: {
 }
 ```
 
-`ANALYZE` shows that 39.2 seconds were spent in the subquery, which was executed 150K times (for every row of outer table).
+`ANALYZE` shows that 39.208 seconds were spent in the subquery, which was executed 150K times (for every row of outer table).
 
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
