@@ -11,17 +11,17 @@ description: >-
 The terms _master_ and _slave_ have historically been used in replication, and MariaDB has begun the process of adding _primary_ and _replica_ synonyms. The old terms will continue to be used to maintain backward compatibility - see [MDEV-18777](https://jira.mariadb.org/browse/MDEV-18777) to follow progress on this effort.
 {% endhint %}
 
-This page lists system variables that are related to [binary logging](../../server-management/server-monitoring-logs/binary-log/) and [replication](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/standard-replication/broken-reference/README.md).
+This page lists system variables that are related to [binary logging](../../server-management/server-monitoring-logs/binary-log/) and [replication](../../server-usage/storage-engines/myrocks/myrocks-and-replication.md).
 
 See [Server System Variables](../optimization-and-tuning/system-variables/server-system-variables.md) for a complete list of system variables and instructions on setting them, as well as [System variables for global transaction ID](gtid.md#system-variables-for-global-transaction-id).
 
 Also see [mariadbd replication options](../../server-management/starting-and-stopping-mariadb/mariadbd-options.md#replication-and-binary-logging-options) for related options that are not system variables (such as [binlog\_do\_db](../../server-management/starting-and-stopping-mariadb/mariadbd-options.md#-binlog-do-db) and [binlog\_ignore\_db](../../server-management/starting-and-stopping-mariadb/mariadbd-options.md#-binlog-ignore-db)).
 
-See also the [Full list of MariaDB options, system and status variables](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-management/variables-and-modes/full-list-of-mariadb-options-system-and-status-variables.md).
+See also the [Full list of MariaDB options, system and status variables](../../reference/full-list-of-mariadb-options-system-and-status-variables.md).
 
 #### `auto_increment_increment`
 
-* Description: The increment for all [AUTO\_INCREMENT](../../reference/data-types/auto_increment.md) values on the server, by default `1`. Intended for use in primary-to-primary [replication](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/standard-replication/broken-reference/README.md).
+* Description: The increment for all [AUTO\_INCREMENT](../../reference/data-types/auto_increment.md) values on the server, by default `1`. Intended for use in primary-to-primary [replication](../../server-usage/storage-engines/myrocks/myrocks-and-replication.md).
 * Commandline: `--auto-increment-increment[=#]`
 * Scope: Global, Session
 * Dynamic: Yes
@@ -31,7 +31,7 @@ See also the [Full list of MariaDB options, system and status variables](https:/
 
 #### `auto_increment_offset`
 
-* Description: The offset for all [AUTO\_INCREMENT](../../reference/data-types/auto_increment.md) values on the server, by default `1`. Intended for use in primary-to-primary [replication](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/standard-replication/broken-reference/README.md). Should be not be larger than [auto\_increment\_increment](replication-and-binary-log-system-variables.md#auto_increment_increment). See [AUTO\_INCREMENT#Replication](../../reference/data-types/auto_increment.md#replication).
+* Description: The offset for all [AUTO\_INCREMENT](../../reference/data-types/auto_increment.md) values on the server, by default `1`. Intended for use in primary-to-primary [replication](../../server-usage/storage-engines/myrocks/myrocks-and-replication.md). Should be not be larger than [auto\_increment\_increment](replication-and-binary-log-system-variables.md#auto_increment_increment). See [AUTO\_INCREMENT#Replication](../../reference/data-types/auto_increment.md#replication).
 * Commandline: `--auto-increment-offset[=#]`
 * Scope: Global, Session
 * Dynamic: Yes
@@ -94,7 +94,7 @@ See also the [Full list of MariaDB options, system and status variables](https:/
   The default value of 0 means that no delay is introduced.\
   Setting this value can reduce I/O on the binary log and give an increased opportunity for parallel apply on the replica when [conservative mode of in-order parallel replication](parallel-replication.md#conservative-mode-of-in-order-parallel-replication) is enabled, but too high a value will decrease the transaction throughput. By monitoring the status variable [binlog\_group\_commit\_trigger\_count](replication-and-binary-log-status-variables.md#binlog_group_commit_trigger_count) (>=[MariaDB 10.1.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-5-release-notes)) it is possible to see how often this is occurring.
 * Starting with [MariaDB 10.0.18](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-10018-release-notes) and [MariaDB 10.1.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-4-release-notes):\
-  If the server detects that one of the committing transactions T1 holds an[InnoDB](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/README.md) row lock that another transaction T2 is waiting for, then the\
+  If the server detects that one of the committing transactions T1 holds an [InnoDB](../../server-usage/storage-engines/innodb/) row lock that another transaction T2 is waiting for, then the\
   commit will complete immediately without further delay. This helps avoid\
   losing throughput when many transactions need conflicting locks. This often\
   makes it safe to use this option without losing\
@@ -119,7 +119,7 @@ See also the [Full list of MariaDB options, system and status variables](https:/
 
 #### `binlog_direct_non_transactional_updates`
 
-* Description: [Replication](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/standard-replication/broken-reference/README.md) inconsistencies can occur due when a transaction updates both transactional and non-transactional tables and the updates to the non-transactional tables are visible before being written to the binary log. This is because, to preserve causality, the non-transactional statements are written to the transaction cache, which is only flushed on commit. Setting binlog\_direct\_non\_transactional\_updates to 1 (0 is default) will cause non-transactional tables to be written straight to the binary log, rather than the transaction cache. This setting has no effect when row-based binary logging is used, as it requires statement-based logging. See [binlog\_format](replication-and-binary-log-system-variables.md#binlog_format). Use with care, and only in situations where no dependencies exist between the non-transactional and transactional tables, for example INSERTing into a non-transactional table based upon the results of a SELECT from a transactional table.
+* Description: [Replication](../../server-usage/storage-engines/myrocks/myrocks-and-replication.md) inconsistencies can occur due when a transaction updates both transactional and non-transactional tables and the updates to the non-transactional tables are visible before being written to the binary log. This is because, to preserve causality, the non-transactional statements are written to the transaction cache, which is only flushed on commit. Setting binlog\_direct\_non\_transactional\_updates to 1 (0 is default) will cause non-transactional tables to be written straight to the binary log, rather than the transaction cache. This setting has no effect when row-based binary logging is used, as it requires statement-based logging. See [binlog\_format](replication-and-binary-log-system-variables.md#binlog_format). Use with care, and only in situations where no dependencies exist between the non-transactional and transactional tables, for example INSERTing into a non-transactional table based upon the results of a SELECT from a transactional table.
 * Commandline: `--binlog-direct-non-transactional-updates[=value]`
 * Scope: Global, Session
 * Dynamic: Yes
@@ -128,7 +128,7 @@ See also the [Full list of MariaDB options, system and status variables](https:/
 
 #### `binlog_do_db`
 
-* Description: This option allows you to configure a [replication primary](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/standard-replication/broken-reference/README.md) to write statements and transactions affecting databases that match a specified name into its [binary log](../../server-management/server-monitoring-logs/binary-log/). Since the filtered statements or transactions will not be present in the [binary log](../../server-management/server-monitoring-logs/binary-log/), its replicas will not be able to replicate them.
+* Description: This option allows you to configure a [replication primary](../../server-usage/storage-engines/myrocks/myrocks-and-replication.md) to write statements and transactions affecting databases that match a specified name into its [binary log](../../server-management/server-monitoring-logs/binary-log/). Since the filtered statements or transactions will not be present in the [binary log](../../server-management/server-monitoring-logs/binary-log/), its replicas will not be able to replicate them.
   * This option will not work with cross-database updates with [statement-based logging](../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md#statement-based-logging). See the [Statement-Based Logging](replication-filters.md#statement-based-logging) section for more information.
   * Until [MariaDB 11.2.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-0-release-notes), only available as an option, not a system variable. This option can not be set dynamically.
   * When setting it on the command-line or in a server [option group](../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md), the option does not accept a comma-separated list. If you would like to specify multiple filters, then you need to specify the option multiple times.
@@ -164,7 +164,7 @@ See also the [Full list of MariaDB options, system and status variables](https:/
 
 #### `binlog_format`
 
-* Description: Determines whether [replication](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/standard-replication/broken-reference/README.md) is row-based, statement-based or mixed. Statement-based was the default until [MariaDB 10.2.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-1023-release-notes). Be careful of changing the binary log format when a replication environment is already running. See [Binary Log Formats](../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md). Starting from [MariaDB 10.0.22](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-10022-release-notes) a replica will apply any events it gets from the primary, regardless of the binary log format. `binlog_format` only applies to normal (not replicated) updates.
+* Description: Determines whether [replication](../../server-usage/storage-engines/myrocks/myrocks-and-replication.md) is row-based, statement-based or mixed. Statement-based was the default until [MariaDB 10.2.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-1023-release-notes). Be careful of changing the binary log format when a replication environment is already running. See [Binary Log Formats](../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md). Starting from [MariaDB 10.0.22](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-10022-release-notes) a replica will apply any events it gets from the primary, regardless of the binary log format. `binlog_format` only applies to normal (not replicated) updates.
 * Commandline: `--binlog-format=format`
 * Scope: Global, Session
 * Dynamic: Yes
@@ -208,7 +208,7 @@ See also the [Full list of MariaDB options, system and status variables](https:/
 
 #### `binlog_ignore_db`
 
-* Description: This option allows you to configure a [replication primary](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/standard-replication/broken-reference/README.md) to not write statements and transactions affecting databases that match a specified name into its [binary log](../../server-management/server-monitoring-logs/binary-log/). Since the filtered statements or transactions will not be present in the [binary log](../../server-management/server-monitoring-logs/binary-log/), its replicas will not be able to replicate them.
+* Description: This option allows you to configure a [replication primary](../../server-usage/storage-engines/myrocks/myrocks-and-replication.md) to not write statements and transactions affecting databases that match a specified name into its [binary log](../../server-management/server-monitoring-logs/binary-log/). Since the filtered statements or transactions will not be present in the [binary log](../../server-management/server-monitoring-logs/binary-log/), its replicas will not be able to replicate them.
   * This option will not work with cross-database updates with [statement-based logging](../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md#statement-based-logging). See the [Statement-Based Logging](replication-filters.md#statement-based-logging) section for more information.
   * Until [MariaDB 11.2.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-0-release-notes), only available as an option, not a system variable. This option can not be set dynamically.
   * When setting it on the command-line or in a server [option group](../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md), the option does not accept a comma-separated list. If you would like to specify multiple filters, then you need to specify the option multiple times.
@@ -265,7 +265,7 @@ See also the [Full list of MariaDB options, system and status variables](https:/
 
 #### `binlog_row_image`
 
-* Description: Controls the logging format in [row-based](../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md#row-based) [replication](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/standard-replication/broken-reference/README.md). In row-based replication (the variable has no effect with [statement-based replication](../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md#statement-based)), each row change event contains an image for matching against when choosing the row to be updated, and another image containing the changes. Before the introduction of this variable, all columns were logged for both of these images. In certain circumstances, this is not necessary, and memory, disk and network resources can be saved by partial logging. Note that to safely change this setting from the default, the table being replicated to must contain identical primary key definitions, and columns must be present, in the same order, and use the same data types as the original table. If these conditions are not met, matches may not be correctly determined and updates and deletes may diverge on the replica, with no warnings or errors returned.
+* Description: Controls the logging format in [row-based](../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md) [replication](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/standard-replication/broken-reference/README.md). In row-based replication (the variable has no effect with [statement-based replication](../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md#statement-based)), each row change event contains an image for matching against when choosing the row to be updated, and another image containing the changes. Before the introduction of this variable, all columns were logged for both of these images. In certain circumstances, this is not necessary, and memory, disk and network resources can be saved by partial logging. Note that to safely change this setting from the default, the table being replicated to must contain identical primary key definitions, and columns must be present, in the same order, and use the same data types as the original table. If these conditions are not met, matches may not be correctly determined and updates and deletes may diverge on the replica, with no warnings or errors returned.
   * `FULL`: All columns in the before and after image are logged. This is the default, and the only behavior in earlier versions.
   * `NOBLOB`: mariadbd avoids logging blob and text columns whenever possible (eg, blob column was not changed or is not part of primary key).
   * `MINIMAL`: A PK equivalent (PK columns or full row if there is no PK in the table) is logged in the before image, and only changed columns are logged in the after image.
@@ -277,7 +277,7 @@ See also the [Full list of MariaDB options, system and status variables](https:/
 * Default Value: `FULL`
 * Valid Values:
   * <= [MariaDB 11.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-3-rolling-releases/what-is-mariadb-113): `FULL`, `NOBLOB` or `MINIMAL`
-  * > \= [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-4-series/what-is-mariadb-114): `FULL`, `NOBLOB`, `MINIMAL` or `FULL_NODUP`
+  * \>=[MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-4-series/what-is-mariadb-114): `FULL`, `NOBLOB`, `MINIMAL` or `FULL_NODUP`
 
 #### `binlog_row_metadata`
 
@@ -344,7 +344,7 @@ See also the [Full list of MariaDB options, system and status variables](https:/
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `string`
-* Related variables: [init_connect](../optimization-and-tuning/system-variables/server-system-variables.md#init_connect)
+* Related variables: [init\_connect](../optimization-and-tuning/system-variables/server-system-variables.md#init_connect)
 
 #### `log_bin`
 
@@ -354,7 +354,7 @@ See also the [Full list of MariaDB options, system and status variables](https:/
 * Dynamic: No
 * Data Type: `boolean`
 * Default Value: `OFF`
-* Related variables: [sql_log_bin](replication-and-binary-log-system-variables.md#sql_log_bin)
+* Related variables: [sql\_log\_bin](replication-and-binary-log-system-variables.md#sql_log_bin)
 
 #### `log_bin_basename`
 
@@ -397,9 +397,9 @@ See also the [Full list of MariaDB options, system and status variables](https:/
 #### `log_bin_trust_function_creators`
 
 * Description: Functions and triggers can be dangerous when used with [replication](./). Certain types of functions and triggers may have unintended consequences when the statements are applied on a replica. For that reason, there are some restrictions on the creation of functions and triggers when the [binary log](../../server-management/server-monitoring-logs/binary-log/) is enabled by default, such as:
-  * When `log_bin_trust_function_creators` is `OFF` and [log_bin](#log_bin) is `ON`, [CREATE FUNCTION](../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-function.md) and [ALTER FUNCTION](../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-function.md) statements will trigger an error if the function is defined with any of the `NOT DETERMINISTIC`, `CONTAINS SQL` or `MODIFIES SQL DATA` characteristics.
-  * This means that when `log_bin_trust_function_creators` is `OFF` and [log_bin](#log_bin) is `ON`, [CREATE FUNCTION](../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-function.md) and [ALTER FUNCTION](../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-function.md) statements will only succeed if the function is defined with any of the `DETERMINISTIC`, `NO SQL`, or `READS SQL DATA` characteristics.
-  * When `log_bin_trust_function_creators` is `OFF` and [log_bin](#log_bin) is `ON`, the [SUPER](../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#global-privileges) privilege is also required to execute the following statements:
+  * When `log_bin_trust_function_creators` is `OFF` and [log\_bin](replication-and-binary-log-system-variables.md#log_bin) is `ON`, [CREATE FUNCTION](../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-function.md) and [ALTER FUNCTION](../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-function.md) statements will trigger an error if the function is defined with any of the `NOT DETERMINISTIC`, `CONTAINS SQL` or `MODIFIES SQL DATA` characteristics.
+  * This means that when `log_bin_trust_function_creators` is `OFF` and [log\_bin](replication-and-binary-log-system-variables.md#log_bin) is `ON`, [CREATE FUNCTION](../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-function.md) and [ALTER FUNCTION](../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-function.md) statements will only succeed if the function is defined with any of the `DETERMINISTIC`, `NO SQL`, or `READS SQL DATA` characteristics.
+  * When `log_bin_trust_function_creators` is `OFF` and [log\_bin](replication-and-binary-log-system-variables.md#log_bin) is `ON`, the [SUPER](../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#global-privileges) privilege is also required to execute the following statements:
     * [CREATE FUNCTION](../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-function.md)
     * [CREATE TRIGGER](../../programming-customizing-mariadb/triggers-events/triggers/create-trigger.md)
     * [DROP TRIGGER](../../../reference/sql-statements-and-structure/sql-statements/data-definition/drop/drop-trigger.md)
@@ -857,9 +857,9 @@ See also the [Full list of MariaDB options, system and status variables](https:/
 * Description: When [parallel\_replication](parallel-replication.md) is used, the [SQL thread](replication-threads.md#slave-sql-thread) will read ahead in the relay logs, queueing events in memory while looking for opportunities for executing events in parallel. This system variable sets a\
   limit for how much memory it will use for this.
   * The configured value of this system variable is actually allocated for each [worker thread](replication-threads.md#worker-threads), so the total allocation is actually equivalent to the following:
-    * [slave_parallel_max_queued](replication-and-binary-log-system-variables.md) \* [slave_parallel_threads](replication-and-binary-log-system-variables.md)
+    * [slave\_parallel\_max\_queued](replication-and-binary-log-system-variables.md) \* [slave\_parallel\_threads](replication-and-binary-log-system-variables.md)
   * This system variable is only meaningful when parallel\
-    replication is configured (i.e. when [slave_parallel_threads](replication-and-binary-log-system-variables.md) > `0`).
+    replication is configured (i.e. when [slave\_parallel\_threads](replication-and-binary-log-system-variables.md) > `0`).
   * See [Parallel Replication: Configuring the Maximum Size of the Parallel Slave Queue](parallel-replication.md#configuring-the-maximum-size-of-the-parallel-slave-queue) for more information.
 * Commandline: `--slave-parallel-max-queued=#`
 * Scope: Global
@@ -889,8 +889,8 @@ See also the [Full list of MariaDB options, system and status variables](https:/
   * If this system variable is set to a value greater than `0`, then its value will determine how many replica [worker threads](replication-threads.md#worker-threads) will be created to apply [binary log](../../server-management/server-monitoring-logs/binary-log/) events in parallel.
   * If this system variable is set to `0` (which is the default value), then no replica [worker threads](replication-threads.md#worker-threads) will be created. Instead, when replication is enabled, [binary log](../../server-management/server-monitoring-logs/binary-log/) events are applied by the replica's [SQL thread](replication-threads.md#slave-sql-thread).
   * The [replica threads](replication-threads.md#threads-on-the-slave) must be [stopped](../../reference/sql-statements/administrative-sql-statements/replication-statements/stop-replica.md) in order to change this option's value dynamically.
-  * Events that were logged with [GTIDs](gtid.md) with different [gtid_domain_id](gtid.md#gtid_domain_id) values can be applied in parallel in an [out-of-order](parallel-replication.md#out-of-order-parallel-replication) manner. Each [gtid_domain_id](gtid.md#gtid_domain_id) can use the number of threads configured by [slave_domain_parallel_threads](#slave_domain_parallel_threads).
-  * Events that were [group-committed](../../server-management/server-monitoring-logs/binary-log/group-commit-for-the-binary-log.md) on the primary can be applied in parallel in an [in-order](parallel-replication.md#what-can-be-run-in-parallel) manner, and the specific behavior can be configured by setting [slave_parallel_mode](#slave_parallel_mode).
+  * Events that were logged with [GTIDs](gtid.md) with different [gtid\_domain\_id](gtid.md#gtid_domain_id) values can be applied in parallel in an [out-of-order](parallel-replication.md#out-of-order-parallel-replication) manner. Each [gtid\_domain\_id](gtid.md#gtid_domain_id) can use the number of threads configured by [slave\_domain\_parallel\_threads](replication-and-binary-log-system-variables.md#slave_domain_parallel_threads).
+  * Events that were [group-committed](../../server-management/server-monitoring-logs/binary-log/group-commit-for-the-binary-log.md) on the primary can be applied in parallel in an [in-order](parallel-replication.md#what-can-be-run-in-parallel) manner, and the specific behavior can be configured by setting [slave\_parallel\_mode](replication-and-binary-log-system-variables.md#slave_parallel_mode).
 * Commandline: `--slave-parallel-threads=#`
 * Scope: Global
 * Dynamic: Yes
@@ -982,12 +982,12 @@ See also the [Full list of MariaDB options, system and status variables](https:/
 
 #### `sql_log_bin`
 
-* Description: If set to 0 (1 is the default), no logging to the [binary log](../../server-management/server-monitoring-logs/binary-log/) is done for the client. Only clients with the SUPER privilege can update this variable. Does not affect the replication of events in a Galera cluster. Note that `sql_log_bin` has no effect if [log_bin](replication-and-binary-log-system-variables.md#log_bin) is not set.
+* Description: If set to 0 (1 is the default), no logging to the [binary log](../../server-management/server-monitoring-logs/binary-log/) is done for the client. Only clients with the SUPER privilege can update this variable. Does not affect the replication of events in a Galera cluster. Note that `sql_log_bin` has no effect if [log\_bin](replication-and-binary-log-system-variables.md#log_bin) is not set.
 * Scope: Session
 * Dynamic: Yes
 * Data Type: `boolean`
 * Default Value: `1`
-* Related variables: [log_bin](replication-and-binary-log-system-variables.md#log_bin)
+* Related variables: [log\_bin](replication-and-binary-log-system-variables.md#log_bin)
 
 #### `sql_slave_skip_counter`
 
