@@ -12,6 +12,7 @@ Let's see how instant that is.
 # Playground
 ## Heading 2
 ### Heading 3
+#### Heading 4
 |heading|other column|
 |-|-|
 |Text|more text|
