@@ -4,11 +4,11 @@ The `BACKUP STAGE` commands are a set of commands to make it possible to make an
 
 ## Syntax
 
-```
+```sql
 BACKUP STAGE [START | FLUSH | BLOCK_DDL | BLOCK_COMMIT | END ]
 ```
 
-In the following text, a transactional table means InnoDB or "InnoDB-like engine with redo log that can lock redo purges and can be copied without locks by an outside process".
+In the following text, a transactional table means InnoDB, or specifically an InnoDB-like engine with redo log that can lock redo purges and can be copied without locks by an outside process.
 
 ## Goals with BACKUP STAGE Commands
 

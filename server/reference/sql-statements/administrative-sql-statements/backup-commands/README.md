@@ -2,5 +2,5 @@
 description: Commands used by backup tools
 ---
 
-# BACKUP Commands
+# BACKUP Statements
 
