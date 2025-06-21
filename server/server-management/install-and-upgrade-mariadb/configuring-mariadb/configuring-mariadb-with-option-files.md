@@ -372,7 +372,7 @@ If an option is not explicitly set, then the server or client will simply use th
 
 MariaDB Server options can be set in [server option groups](configuring-mariadb-with-option-files.md#server-option-groups).
 
-For a list of options that can be set for MariaDB Server, see the list of options available for [mariadbd](starting-and-stopping-mariadb/mariadbd-options.md).
+For a list of options that can be set for MariaDB Server, see the list of options available for [mariadbd](../../starting-and-stopping-mariadb/mariadbd-options.md).
 
 Most of the [server system variables](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md) can also be set in MariaDB's option file.
 
