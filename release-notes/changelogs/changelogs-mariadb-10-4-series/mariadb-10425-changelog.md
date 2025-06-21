@@ -257,7 +257,7 @@ details of the revision and view diffs of the code modified in that revision.
   * WSREP: Fix GCC 12.0.1 -Wuninitialized
 * [Revision #b5fe7ab841](https://github.com/MariaDB/server/commit/b5fe7ab841)\
   2022-02-13 19:09:03 +0100
-  * [MDEV-27826](https://jira.mariadb.org/browse/MDEV-27826) Mariabackup is linked against libsql\_builtins.so dynamically
+  * [MDEV-27826](https://jira.mariadb.org/browse/MDEV-27826) mariadb-backup is linked against libsql\_builtins.so dynamically
 * Merge [Revision #f6f055a191](https://github.com/MariaDB/server/commit/f6f055a191) 2022-02-21 14:10:27 +0300 - Merge 10.3 into 10.4
 * [Revision #fa557986ac](https://github.com/MariaDB/server/commit/fa557986ac)\
   2022-02-17 22:55:08 +0100

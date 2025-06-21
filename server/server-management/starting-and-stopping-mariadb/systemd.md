@@ -439,7 +439,7 @@ Changes to the default `mariadb.socket` can be made in the same way as services,
 
 ### Extra Port
 
-A systemd socket can be configured as an `[extra_port](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables.md#extra_port), by using the[FileDescriptorName=extra](https://www.freedesktop.org/software/systemd/man/systemd.socket.html#FileDescriptorName=)in the`.socket`file.`
+A systemd socket can be configured as an [extra_port](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-system-status-variables.md#extra_port), by using the`[FileDescriptorName=extra](https://www.freedesktop.org/software/systemd/man/systemd.socket.html#FileDescriptorName=)in the`.socket`file.`
 
 The `mariadb-extra.socket` is already packaged and ready for use.
 

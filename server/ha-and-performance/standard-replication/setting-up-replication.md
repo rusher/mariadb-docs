@@ -15,7 +15,7 @@ Getting [replication](https://github.com/mariadb-corporation/docs-server/blob/te
 
 ### Setting up a Replication Replica with MariaDB-Backup
 
-If you would like to use [Mariabackup](../../server-usage/backing-up-and-restoring-databases/mariabackup/) to set up a replication slave, then you might find the information at [Setting up a Replication Replica with MariaDB-Backup](../../server-usage/backing-up-and-restoring-databases/mariabackup/setting-up-a-replica-with-mariabackup.md) helpful.
+If you would like to use [mariadb-backup](../../server-usage/backing-up-and-restoring-databases/mariabackup/) to set up a replication slave, then you might find the information at [Setting up a Replication Replica with MariaDB-Backup](../../server-usage/backing-up-and-restoring-databases/mariabackup/setting-up-a-replica-with-mariabackup.md) helpful.
 
 ### Versions
 
@@ -59,7 +59,7 @@ log-bin
 server_id=1
 ```
 
-For replication from MySQL 8.0 to MariaDB [requires slight more configurations](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/standard-replication/broken-reference/README.md).
+For replication from MySQL 8.0 to MariaDB [requires slight more configurations](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/mariadb-vs-mysql-compatibility).
 
 ### Settings to Check
 
@@ -77,7 +77,7 @@ There are a number of options that may impact or break replication. Check the fo
 Now you need prevent any changes to the data while you view the binary log position. You'll use this to tell the slave at exactly which point it should start replicating from.
 
 * On the master, flush and lock all tables by running `FLUSH TABLES WITH READ LOCK`. Keep this session running - exiting it will release the lock.
-* Get the current position in the binary log by running `[SHOW MASTER STATUS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-binlog-status.md)`:
+* Get the current position in the binary log by running [SHOW MASTER STATUS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-binlog-status.md):
 
 ```sql
 SHOW MASTER STATUS;
@@ -149,9 +149,7 @@ Slave_SQL_Running: Yes
 * Replicating from MySQL 5.5 to MariaDB should just work. When using a MariaDB as a replica, it may be necessary to set [binlog\_checksum](replication-and-binary-log-system-variables.md) to NONE.
 * Replicating from MySQL 5.6 without GTID to MariaDB 10+ should work.
 * Replication from MySQL 5.6 with GTID, binlog\_rows\_query\_log\_events and ignorable events works. In this case MariaDB will remove the MySQL GTIDs and other unneeded events and instead adds its own GTIDs.
-* \[Replication from MySQL 8.
-
-## to MariaDB]\(https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/mariadb-vs-mysql-compatibility#mysql-80) requires [MariaDB 11.4.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-4-series/mariadb-11-4-5-release-notes) or newer.
+* [Replication from MySQL 8 to MariaDB](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/mariadb-vs-mysql-compatibility) requires [MariaDB 11.4.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-4-series/mariadb-11-4-5-release-notes) or newer.
 
 ### See Also
 

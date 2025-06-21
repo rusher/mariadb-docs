@@ -6,7 +6,6 @@ The following tables indicate the approximate data storage requirements for each
 
 | Data Type                                    | Storage Requirement                   |
 | -------------------------------------------- | ------------------------------------- |
-| Data Type                                    | Storage Requirement                   |
 | [TINYINT](numeric-data-types/tinyint.md)     | 1 byte                                |
 | [SMALLINT](numeric-data-types/smallint.md)   | 2 bytes                               |
 | [MEDIUMINT](numeric-data-types/mediumint.md) | 3 bytes                               |
@@ -25,7 +24,6 @@ Note that MEDIUMINT columns will require 4 bytes in memory (for example, in Inno
 
 | Remaining digits | Storage Requirement |
 | ---------------- | ------------------- |
-| Remaining digits | Storage Requirement |
 | 0                | 0 bytes             |
 | 1                | 1 byte              |
 | 2                | 1 byte              |
@@ -42,7 +40,6 @@ In the descriptions below, `M` is the declared column length (in characters or i
 
 | Data Type                                                                                    | Storage Requirement                                                                                        |
 | -------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| Data Type                                                                                    | Storage Requirement                                                                                        |
 | [ENUM](string-data-types/enum.md)                                                            | 1 byte for up to 255 enum values, 2 bytes for 256 to 65,535 enum values                                    |
 | [CHAR(M)](string-data-types/char.md)                                                         | M × w bytes, where w is the number of bytes required for the maximum-length character in the character set |
 | [BINARY(M)](string-data-types/binary.md)                                                     | M bytes                                                                                                    |
@@ -53,7 +50,7 @@ In the descriptions below, `M` is the declared column length (in characters or i
 | [LONGBLOB](string-data-types/longblob.md), [LONGTEXT](string-data-types/longtext.md)         | len + 4 bytes                                                                                              |
 | [SET](string-data-types/set-data-type.md)                                                    | Given M members of the set, (M+7)/8 bytes, rounded up to 1, 2, 3, 4, or 8 bytes                            |
 | [INET6](string-data-types/inet6.md)                                                          | 16 bytes                                                                                                   |
-| [UUID](https://mariadb.com/kb/en/uuid_datatype)                                              | 16 bytes                                                                                                   |
+| [UUID](string-data-types/uuid-data-type.md)                                                  | 16 bytes                                                                                                   |
 
 In some [character sets](string-data-types/character-sets/), not all characters use the same number of bytes. utf8 encodes characters with one to three bytes per character, while utf8mb4 requires one to four bytes per character.
 
@@ -74,7 +71,6 @@ Assuming a single-byte character-set:
 
 | Data Type                                          | Storage Requirement |
 | -------------------------------------------------- | ------------------- |
-| Data Type                                          | Storage Requirement |
 | [DATE](date-and-time-data-types/date.md)           | 3 bytes             |
 | [TIME](date-and-time-data-types/time.md)           | 3 bytes             |
 | [DATETIME](date-and-time-data-types/datetime.md)   | 8 bytes             |
@@ -89,7 +85,6 @@ Assuming a single-byte character-set:
 
 | Precision | Storage Requirement |
 | --------- | ------------------- |
-| Precision | Storage Requirement |
 | 0         | 0 bytes             |
 | 1,2       | 1 byte              |
 | 3,4       | 2 bytes             |
@@ -99,7 +94,6 @@ Assuming a single-byte character-set:
 
 | Precision | Storage Requirement |
 | --------- | ------------------- |
-| Precision | Storage Requirement |
 | 0         | 0 bytes             |
 | 1,2       | 1 byte              |
 | 3,4,5     | 2 bytes             |

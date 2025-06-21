@@ -27,7 +27,7 @@ Thanks, and enjoy MariaDB!
   ds, when it should
 * As per the [MariaDB Deprecation Policy](../../../mariadb-platform-deprecation-policy.md), this will be the last release of [MariaDB 10.3](what-is-mariadb-103.md) for Ubuntu 19.04 Disco
 
-### Mariabackup
+### mariadb-backup
 
 * [MDEV-21255](https://jira.mariadb.org/browse/MDEV-21255): Deadlock of parallel slave and mariabackup (with failed log copy thread)
 
@@ -64,7 +64,7 @@ Thanks, and enjoy MariaDB!
   * [CVE-2020-2574](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-2574)
 
 When upgrading from [MariaDB 10.3.8](mariadb-1038-release-notes.md) or earlier to [MariaDB 10.3.9](mariadb-1039-release-notes.md) or higher,\
-running `[mysql_upgrade](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/legacy-clients-and-utilities/mysql_upgrade)` is **required** due to changes introduced in[MDEV-14637](https://jira.mariadb.org/browse/MDEV-14637).
+running [mysql_upgrade](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/legacy-clients-and-utilities/mysql_upgrade) is **required** due to changes introduced in[MDEV-14637](https://jira.mariadb.org/browse/MDEV-14637).
 
 ## Changelog
 

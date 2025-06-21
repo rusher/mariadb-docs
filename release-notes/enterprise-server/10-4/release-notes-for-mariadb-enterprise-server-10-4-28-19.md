@@ -8,8 +8,8 @@ MariaDB Enterprise Server 10.4.28-19 was released on 2023-03-13.
 
 ### Notable Changes
 
-* Output for the [JSON\_DETAILED()](https://mariadb.com/kb/en/JSON_DETAILED\(\)) function has been optimized to reduce the number of lines needed. ([MDEV-19160](https://jira.mariadb.org/browse/MDEV-19160))
-  * For compatibility, [JSON\_PRETTY()](https://mariadb.com/kb/en/JSON_PRETTY\(\)) has been added as an alias to JSON\_DETAILED(). ([MDEV-19160](https://jira.mariadb.org/browse/MDEV-19160))
+* Output for the [JSON\_DETAILED()](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/special-functions/json-functions/json_detailed) function has been optimized to reduce the number of lines needed. ([MDEV-19160](https://jira.mariadb.org/browse/MDEV-19160))
+  * For compatibility, [JSON\_PRETTY()](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/special-functions/json-functions/json_pretty) has been added as an alias to JSON\_DETAILED(). ([MDEV-19160](https://jira.mariadb.org/browse/MDEV-19160))
 * This release incorporates Galera library version 26.4.14
 
 ### Issues Fixed

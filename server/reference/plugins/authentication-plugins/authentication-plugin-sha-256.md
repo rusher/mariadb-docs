@@ -1,12 +1,12 @@
 # Authentication Plugin - SHA-256
 
-MySQL 5.6 added support for the `[sha256_password](https://dev.mysql.com/doc/refman/5.6/en/sha256-pluggable-authentication.html)` authentication plugin, and MySQL 8.0 also added support for the `[caching_sha2_password](https://dev.mysql.com/doc/refman/8.0/en/caching-sha2-pluggable-authentication.html)` authentication plugin.
+MySQL 5.6 added support for the [sha256_password](https://dev.mysql.com/doc/refman/5.6/en/sha256-pluggable-authentication.html) authentication plugin, and MySQL 8.0 also added support for the [caching_sha2_password](https://dev.mysql.com/doc/refman/8.0/en/caching-sha2-pluggable-authentication.html) authentication plugin.
 
-The `caching_sha2_password` plugin is now the default authentication plugin in MySQL 8.0.4 and above, based on the value of the `[default_authentication_plugin](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_default_authentication_plugin)` system variable.
+The `caching_sha2_password` plugin is now the default authentication plugin in MySQL 8.0.4 and above, based on the value of the [default_authentication_plugin](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_default_authentication_plugin) system variable.
 
 ## Support in MariaDB Server
 
-MariaDB Server does not currently support either the `[sha256_password](https://dev.mysql.com/doc/refman/5.6/en/sha256-pluggable-authentication.html)` or the `[caching_sha2_password](https://dev.mysql.com/doc/refman/8.0/en/caching-sha2-pluggable-authentication.html)` authentication plugins. See [MDEV-9804](https://jira.mariadb.org/browse/MDEV-9804) for more information. The majority of this article is about how to use MariaDB clients and connectors to connect to a MySQL server!
+MariaDB Server does not currently support either the [sha256_password](https://dev.mysql.com/doc/refman/5.6/en/sha256-pluggable-authentication.html) or the [caching_sha2_password](https://dev.mysql.com/doc/refman/8.0/en/caching-sha2-pluggable-authentication.html) authentication plugins. See [MDEV-9804](https://jira.mariadb.org/browse/MDEV-9804) for more information. The majority of this article is about how to use MariaDB clients and connectors to connect to a MySQL server!
 
 MariaDB Server does not support either of these authentication plugins. This is mainly because:
 
@@ -38,13 +38,13 @@ For clients that use MariaDB's `libmysqlclient` library instead of [MariaDB Conn
 
 #### `sha256_password`
 
-The `sha256_password` client authentication plugin is compatible with MySQL's `[sha256_password](https://dev.mysql.com/doc/refman/5.6/en/sha256-pluggable-authentication.html)` authentication plugin, which was added in MySQL 5.6.
+The `sha256_password` client authentication plugin is compatible with MySQL's [sha256_password](https://dev.mysql.com/doc/refman/5.6/en/sha256-pluggable-authentication.html) authentication plugin, which was added in MySQL 5.6.
 
 #### `caching_sha256_password`
 
-The `caching_sha256_password` client authentication plugin is compatible with MySQL's `[caching_sha2_password](https://dev.mysql.com/doc/refman/8.0/en/caching-sha2-pluggable-authentication.html)` authentication plugin, which was added in MySQL 8.0.
+The `caching_sha256_password` client authentication plugin is compatible with MySQL's [caching_sha2_password](https://dev.mysql.com/doc/refman/8.0/en/caching-sha2-pluggable-authentication.html) authentication plugin, which was added in MySQL 8.0.
 
-The `caching_sha2_password` plugin is now the default authentication plugin in MySQL 8.0.4 and above, based on the value of the `[default_authentication_plugin](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_default_authentication_plugin)` system variable.
+The `caching_sha2_password` plugin is now the default authentication plugin in MySQL 8.0.4 and above, based on the value of the [default_authentication_plugin](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_default_authentication_plugin) system variable.
 
 ### Using the Plugin with MariaDB Connector/C
 

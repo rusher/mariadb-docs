@@ -17,7 +17,7 @@ details of the revision and view diffs of the code modified in that revision.
   * Follow-up to [MDEV-14952](https://jira.mariadb.org/browse/MDEV-14952): Remove some more btr\_get\_search\_latch()
 * [Revision #2281fcf38a](https://github.com/MariaDB/server/commit/2281fcf38a)\
   2018-01-16 13:42:33 +0200
-  * Follow-up fix to [MDEV-14952](https://jira.mariadb.org/browse/MDEV-14952) for Mariabackup
+  * Follow-up fix to [MDEV-14952](https://jira.mariadb.org/browse/MDEV-14952) for mariadb-backup
 * [Revision #1d522353c8](https://github.com/MariaDB/server/commit/1d522353c8)\
   2018-01-12 20:32:12 +0000
   * Deb: wrap-and-sort -a the lib\* packages in debian/control

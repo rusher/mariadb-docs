@@ -56,7 +56,7 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-13227](https://jira.mariadb.org/browse/MDEV-13227): Assertion failure len < 16384 in file rem0rec.cc line 1285
 * [Revision #f58142f644](https://github.com/MariaDB/server/commit/f58142f644)\
   2017-07-13 14:49:57 +0000
-  * Mariabackup : don't change argv\[0] to "innobackupex" in innobackupex mode.
+  * mariadb-backup : don't change argv\[0] to "innobackupex" in innobackupex mode.
 * [Revision #9284e8b2c6](https://github.com/MariaDB/server/commit/9284e8b2c6)\
   2017-07-12 19:34:55 +0300
   * [MDEV-11828](https://jira.mariadb.org/browse/MDEV-11828): innodb\_page\_size=64k must reject ROW\_FORMAT=REDUNDANT records longer than 16383 bytes

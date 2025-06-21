@@ -116,9 +116,9 @@ Thanks, and enjoy MariaDB!
 * main.mysql\_client\_test, main.mysql\_client\_test\_comp failed on ASAN build with error: 5888, status: 23, errno: 2 ([MDEV-19369](https://jira.mariadb.org/browse/MDEV-19369))
 * [mariadb-install-db](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/deployment-tools/mariadb-install-db) (mysql\_install\_db) doesn't properly grant [proxy privileges](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#proxy-privileges) to all default root user accounts ([MDEV-21194](https://jira.mariadb.org/browse/MDEV-21194))
 
-### MariaBackup
+### mariadb-backup
 
-* MariaBackup full backup failed with InnoDB: Failing assertion: success in storage/innobase/fil/fil0fil.cc line 657 ([MDEV-18200](https://jira.mariadb.org/browse/MDEV-18200))
+* mariadb-backup full backup failed with InnoDB: Failing assertion: success in storage/innobase/fil/fil0fil.cc line 657 ([MDEV-18200](https://jira.mariadb.org/browse/MDEV-18200))
 * mbstream breaks page compression on XFS ([MDEV-25734](https://jira.mariadb.org/browse/MDEV-25734))
 
 ### Character Sets, Data Types, Collations

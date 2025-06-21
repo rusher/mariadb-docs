@@ -40,7 +40,7 @@ Requires the [REPLICATION MASTER ADMIN](../../account-management-sql-statements/
 
 * [MariaDB replication](../../../../ha-and-performance/standard-replication/)
 * [Replication threads](../../../../ha-and-performance/standard-replication/replication-threads.md)
-* [SHOW PROCESSLIST](show-processlist.md). In `[SHOW PROCESSLIST](show-processlist.md)` output, replica threads are identified by `Binlog Dump`
+* [SHOW PROCESSLIST](show-processlist.md). In [SHOW PROCESSLIST](show-processlist.md) output, replica threads are identified by `Binlog Dump`
 
 <sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 

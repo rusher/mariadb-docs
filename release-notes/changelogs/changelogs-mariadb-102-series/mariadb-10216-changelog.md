@@ -158,7 +158,7 @@ in that revision.
   * [MDEV-15905](https://jira.mariadb.org/browse/MDEV-15905) select json\_value('{"b":true}','$.b')=1 --> false with "Truncated incorrect DOUBLE value: 'true'".
 * [Revision #b8514c94f6](https://github.com/MariaDB/server/commit/b8514c94f6)\
   2018-06-15 14:09:15 +0300
-  * [MDEV-16496](https://jira.mariadb.org/browse/MDEV-16496) Mariabackup: Implement --verbose option to instrument InnoDB log apply
+  * [MDEV-16496](https://jira.mariadb.org/browse/MDEV-16496) mariadb-backup: Implement --verbose option to instrument InnoDB log apply
 * [Revision #ff317fe08e](https://github.com/MariaDB/server/commit/ff317fe08e)\
   2018-06-15 13:31:43 +0300
   * Follow-up to [MDEV-16367](https://jira.mariadb.org/browse/MDEV-16367) mariabackup: error: failed to copy enough redo log
@@ -215,7 +215,7 @@ in that revision.
   * [MDEV-16367](https://jira.mariadb.org/browse/MDEV-16367) mariabackup: error: failed to copy enough redo log
 * [Revision #619c277a6c](https://github.com/MariaDB/server/commit/619c277a6c)\
   2018-06-07 14:11:55 +0300
-  * Mariabackup: Make some globals static
+  * mariadb-backup: Make some globals static
 * Merge [Revision #df42830b28](https://github.com/MariaDB/server/commit/df42830b28) 2018-06-06 11:25:33 +0300 - Merge 10.1 into 10.2
 * [Revision #738c5c8424](https://github.com/MariaDB/server/commit/738c5c8424)\
   2018-01-12 13:06:14 +0000

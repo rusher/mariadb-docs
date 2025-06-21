@@ -29,7 +29,7 @@ In general, InnoDB page compression is superior to the [COMPRESSED](innodb-row-f
 
 There is not currently a table option to set different InnoDB page compression algorithms for individual tables.
 
-However, the server-wide InnoDB page compression algorithm can be configured by setting the[innodb\_compression\_algorithm](innodb-system-variables.md#innodb_compression_algorithm) system variable.
+However, the server-wide InnoDB page compression algorithm can be configured by setting the [innodb\_compression\_algorithm](innodb-system-variables.md#innodb_compression_algorithm) system variable.
 
 When this system variable is changed, the InnoDB page compression algorithm does not change for existing pages that were already compressed with a different InnoDB page compression algorithm. InnoDB is able to handle this situation without issues, because every page in an InnoDB tablespace contains metadata about the InnoDB page compression algorithm in the page header. This means that InnoDB supports having uncompressed pages and pages compressed with different InnoDB page compression algorithms in the same InnoDB tablespace at the same time.
 
@@ -70,14 +70,13 @@ The [zlib](https://www.zlib.net/) compression algorithm is always supported. Fro
 
 A MariaDB build's support for other InnoDB page compression algorithms can be checked by querying the following status variables with [SHOW GLOBAL STATUS](../../../reference/sql-statements/administrative-sql-statements/show/show-status.md):
 
-| Status Variable                                                                                                         | Description                                                                                         |
-| ----------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
-| Status Variable                                                                                                         | Description                                                                                         |
-| [Innodb\_have\_lz4](../../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md)    | Whether InnoDB supports the [lz4](https://code.google.com/p/lz4/) compression algorithm.            |
-| [Innodb\_have\_lzo](../../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md)    | Whether InnoDB supports the [lzo](https://www.oberhumer.com/opensource/lzo/) compression algorithm. |
-| [Innodb\_have\_lzma](../../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md)   | Whether InnoDB supports the [lzma](https://tukaani.org/xz/) compression algorithm.                  |
-| [Innodb\_have\_bzip2](../../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md)  | Whether InnoDB supports the [bzip2](https://www.bzip.org/) compression algorithm.                   |
-| [Innodb\_have\_snappy](../../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md) | Whether InnoDB supports the [snappy](https://google.github.io/snappy/) compression algorithm.       |
+| Status Variable                                                                                                                            | Description                                                                                         |
+| ------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------- |
+| [Innodb\_have\_lz4](../../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_have_lz4)       | Whether InnoDB supports the [lz4](https://code.google.com/p/lz4/) compression algorithm.            |
+| [Innodb\_have\_lzo](../../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_have_lzo)       | Whether InnoDB supports the [lzo](https://www.oberhumer.com/opensource/lzo/) compression algorithm. |
+| [Innodb\_have\_lzma](../../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_have_lzma)     | Whether InnoDB supports the [lzma](https://tukaani.org/xz/) compression algorithm.                  |
+| [Innodb\_have\_bzip2](../../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_have_bzip2)   | Whether InnoDB supports the [bzip2](https://www.bzip.org/) compression algorithm.                   |
+| [Innodb\_have\_snappy](../../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_have_snappy) | Whether InnoDB supports the [snappy](https://google.github.io/snappy/) compression algorithm.       |
 
 For example:
 
@@ -239,7 +238,7 @@ If an InnoDB page compression algorithm does not support compression levels, the
 
 ### Configuring the Default Compression Level
 
-The default compression level can be configured by setting the[innodb\_compression\_level](innodb-system-variables.md#innodb_compression_level) system variable.
+The default compression level can be configured by setting the [innodb\_compression\_level](innodb-system-variables.md#innodb_compression_level) system variable.
 
 This system variable's default value is `6`.
 
@@ -363,7 +362,7 @@ fallocate(file_handle, FALLOC_FL_PUNCH_HOLE | FALLOC_FL_KEEP_SIZE, file_offset, 
 
 Some Linux utilities may require special options in order to work with sparse files efficiently. For example:
 
-* The [ls](https://linux.die.net/man/1/ls) utility will report the non-sparse size of the tablespace file when executed with default behavior, but `[ls -s](https://linux.die.net/man/1/ls)` will report the actual amount of storage allocated for the tablespace file.
+* The [ls](https://linux.die.net/man/1/ls) utility will report the non-sparse size of the tablespace file when executed with default behavior, but [ls -s](https://linux.die.net/man/1/ls) will report the actual amount of storage allocated for the tablespace file.
 * The [cp](https://linux.die.net/man/1/cp) utility is pretty good at auto-detecting sparse files, but it also provides the [cp --sparse=always](https://linux.die.net/man/1/cp) and [cp --sparse=never](https://linux.die.net/man/1/cp) options, if the auto-detection is not desired.
 * The [tar](https://linux.die.net/man/1/tar) utility will archive sparse files with their non-sparse size when executed with default behavior, but [tar --sparse](https://linux.die.net/man/1/tar) will auto-detect sparse files, and archive them with their sparse size.
 
@@ -414,22 +413,21 @@ With InnoDB page compression, pages are compressed when they are flushed to disk
 
 InnoDB page compression can be monitored by querying the following status variables with [SHOW GLOBAL STATUS](../../../reference/sql-statements/administrative-sql-statements/show/show-status.md):
 
-| Status Variable                                                                                                                                   | Description                     |
-| ------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------- |
-| Status Variable                                                                                                                                   | Description                     |
-| [Innodb\_page\_compression\_saved](../../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md)               | Bytes saved by compression      |
-| [Innodb\_page\_compression\_trim\_sect512](../../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md)       | Number of 512 sectors trimmed   |
-| [Innodb\_page\_compression\_trim\_sect1024](../../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md)      | Number of 1024 sectors trimmed  |
-| [Innodb\_page\_compression\_trim\_sect2048](../../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md)      | Number of 2048 sectors trimmed  |
-| [Innodb\_page\_compression\_trim\_sect4096](../../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md)      | Number of 4096 sectors trimmed  |
-| [Innodb\_page\_compression\_trim\_sect8192](../../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md)      | Number of 8192 sectors trimmed  |
-| [Innodb\_page\_compression\_trim\_sect16384](../../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md)     | Number of 16384 sectors trimmed |
-| [Innodb\_page\_compression\_trim\_sect32768](../../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md)     | Number of 32768 sectors trimmed |
-| [Innodb\_num\_pages\_page\_compressed](../../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md)           | Number of pages compressed      |
-| [Innodb\_num\_page\_compressed\_trim\_op](../../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md)        | Number of trim operations       |
-| [Innodb\_num\_page\_compressed\_trim\_op\_saved](../../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md) | Number of trim operations saved |
-| [Innodb\_num\_pages\_page\_decompressed](../../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md)         | Number of pages decompressed    |
-| [Innodb\_num\_pages\_page\_compression\_error](../../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md)   | Number of compression errors    |
+| Status Variable                                                                                                                                                                            | Description                     |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------- |
+| [Innodb\_page\_compression\_saved](../../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_page_compression_saved)                          | Bytes saved by compression      |
+| [Innodb\_page\_compression\_trim\_sect512](../../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_page_compression_trim_sect512)           | Number of 512 sectors trimmed   |
+| [Innodb\_page\_compression\_trim\_sect1024](../../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_page_compression_trim_sect1024)         | Number of 1024 sectors trimmed  |
+| [Innodb\_page\_compression\_trim\_sect2048](../../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_page_compression_trim_sect2048)         | Number of 2048 sectors trimmed  |
+| [Innodb\_page\_compression\_trim\_sect4096](../../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_page_compression_trim_sect4096)         | Number of 4096 sectors trimmed  |
+| [Innodb\_page\_compression\_trim\_sect8192](../../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_page_compression_trim_sect8192)         | Number of 8192 sectors trimmed  |
+| [Innodb\_page\_compression\_trim\_sect16384](../../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_page_compression_trim_sect16384)       | Number of 16384 sectors trimmed |
+| [Innodb\_page\_compression\_trim\_sect32768](../../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_page_compression_trim_sect32768)       | Number of 32768 sectors trimmed |
+| [Innodb\_num\_pages\_page\_compressed](../../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_num_pages_page_compressed)                   | Number of pages compressed      |
+| [Innodb\_num\_page\_compressed\_trim\_op](../../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_num_page_compressed_trim_op)              | Number of trim operations       |
+| [Innodb\_num\_page\_compressed\_trim\_op\_saved](../../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_num_page_compressed_trim_op_saved) | Number of trim operations saved |
+| [Innodb\_num\_pages\_page\_decompressed](../../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_num_pages_page_decompressed)               | Number of pages decompressed    |
+| [Innodb\_num\_pages\_page\_compression\_error](../../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_num_pages_page_compression_error)    | Number of compression errors    |
 
 With InnoDB page compression, a page is only compressed when it is flushed to disk. This means that if you are monitoring InnoDB page compression via these status variables, then the status variables values will only get incremented when the dirty pages are flushed to disk, which does not necessarily happen immediately. For example:
 
@@ -483,7 +481,7 @@ SHOW GLOBAL STATUS LIKE 'Innodb_num_pages_page_compressed';
 
 ## Compatibility with Backup Tools
 
-[Mariabackup](../../backing-up-and-restoring-databases/mariabackup/) supports InnoDB page compression.
+[mariadb-backup](../../backing-up-and-restoring-databases/mariabackup/) supports InnoDB page compression.
 
 [Percona XtraBackup](../../../clients-and-utilities/legacy-clients-and-utilities/backing-up-and-restoring-databases-percona-xtrabackup/percona-xtrabackup-overview.md) does not support InnoDB page compression.
 

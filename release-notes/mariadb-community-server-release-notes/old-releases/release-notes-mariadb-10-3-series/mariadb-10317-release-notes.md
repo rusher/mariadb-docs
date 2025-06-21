@@ -31,7 +31,7 @@ Thanks, and enjoy MariaDB!
 * FULLTEXT INDEX: [MDEV-14154](https://jira.mariadb.org/browse/MDEV-14154)
 * Encryption: [MDEV-17228](https://jira.mariadb.org/browse/MDEV-17228), [MDEV-19914](https://jira.mariadb.org/browse/MDEV-19914)
 * Galera + FOREIGN KEY: [MDEV-19660](https://jira.mariadb.org/browse/MDEV-19660)
-* Recovery & Mariabackup: [MDEV-19978](https://jira.mariadb.org/browse/MDEV-19978)
+* Recovery & mariadb-backup: [MDEV-19978](https://jira.mariadb.org/browse/MDEV-19978)
 * [MDEV-19871](https://jira.mariadb.org/browse/MDEV-19871): Add page id matching check in innochecksum tool
 * [MDEV-20091](https://jira.mariadb.org/browse/MDEV-20091): DROP TEMPORARY table is logged despite no CREATE was logged
 * [MDEV-19427](https://jira.mariadb.org/browse/MDEV-19427): mysql\_upgrade\_service throws exception upgrading from 10.0 to 10.3
@@ -48,7 +48,7 @@ Thanks, and enjoy MariaDB!
   * [CVE-2021-2007](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-2007)
 
 When upgrading from [MariaDB 10.3.8](mariadb-1038-release-notes.md) or earlier to [MariaDB 10.3.9](mariadb-1039-release-notes.md) or higher,\
-running `[mysql_upgrade](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/legacy-clients-and-utilities/mysql_upgrade)` is **required** due to changes introduced in[MDEV-14637](https://jira.mariadb.org/browse/MDEV-14637).
+running [mysql_upgrade](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/legacy-clients-and-utilities/mysql_upgrade) is **required** due to changes introduced in[MDEV-14637](https://jira.mariadb.org/browse/MDEV-14637).
 
 ## Changelog
 

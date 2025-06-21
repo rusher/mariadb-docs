@@ -1,12 +1,12 @@
 # MariaDB 11.8.1 Release Notes
 
-[Download](https://mariadb.com/downloads)[Release Notes](mariadb-11-8-1-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-11-8-series/mariadb-11-8-1-changelog.md)[Overview of 11.8](what-is-mariadb-118.md)
+<a href="https://mariadb.com/downloads" class="button primary">Download</a>  <a href="mariadb-11-8-1-release-notes.md" class="button secondary">Release Notes</a>  <a href="../../changelogs/changelogs-mariadb-11-8-series/mariadb-11-8-1-changelog.md" class="button secondary">Changelog</a>  <a href="what-is-mariadb-118.md" class="button secondary">Overview of 11.8</a>
 
-[_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/11.8.1/)
+[<sup>_Alternate download from mariadb.org_</sup>](https://downloads.mariadb.org/mariadb/11.8.1/)
 
 **Release date:** 13 Feb 2025
 
-**Do not use non-stable (non-GA) releases in production!**
+{% include "../../.gitbook/includes/non-stable.md" %}
 
 [MariaDB 11.8](what-is-mariadb-118.md) is a current long-term development series of MariaDB. It is an evolution of [MariaDB 11.7](../old-releases/mariadb-11-7-rolling-releases/what-is-mariadb-117.md) with several entirely new features.
 

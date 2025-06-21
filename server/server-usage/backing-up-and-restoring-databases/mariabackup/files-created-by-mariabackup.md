@@ -1,10 +1,10 @@
-# Files Created by Mariabackup
+# Files Created by mariadb-backup
 
-Mariabackup creates the following files:
+mariadb-backup creates the following files:
 
 ## `backup-my.cnf`
 
-During the backup, any server options relevant to Mariabackup are written to the `backup-my.cnf` [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md), so that they can be re-read later during the `--prepare` stage.
+During the backup, any server options relevant to mariadb-backup are written to the `backup-my.cnf` [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md), so that they can be re-read later during the `--prepare` stage.
 
 ## `ib_logfile0`
 
@@ -13,6 +13,14 @@ In [MariaDB 10.2.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-comm
 1. In the source server, `ib_logfile0` is the first (and possibly the only) [InnoDB redo log](../../storage-engines/innodb/innodb-redo-log.md) file.
 2. In the non-prepared backup, `ib_logfile0` contains all of the [InnoDB redo log](../../storage-engines/innodb/innodb-redo-log.md) copied during the backup. Previous versions of Mariabackup would use a file called [xtrabackup_logfile](#xtrabackup_logfile) for this.
 3. During the [--prepare](mariabackup-options.md#-prepare) stage, `ib_logfile0` would previously be deleted. Now during the `--prepare` stage, `ib_logfile0` is initialized as an empty [InnoDB redo log](../../storage-engines/innodb/innodb-redo-log.md) file. That way, if the backup is manually restored, any pre-existing [InnoDB redo log](../../storage-engines/innodb/innodb-redo-log.md) files would get overwritten by the empty one. This helps to prevent certain kinds of known issues. For example, see [Mariabackup Overview: Manual Restore with Pre-existing InnoDB Redo Log files](mariabackup-overview.md#manual-restore-with-pre-existing-innodb-redo-log-files).
+
+## `xtrabackup_logfile`
+
+In [MariaDB 10.2.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-10210-release-notes) and later, mariadb-backup creates an empty [InnoDB redo log](../../storage-engines/innodb/innodb-redo-log.md) file called `ib_logfile0` as part of the [prepare](mariabackup-options.md#prepare) stage. This file has 3 roles:
+
+1. In the source server, `ib_logfile0` is the first (and possibly the only) [InnoDB redo log](../../storage-engines/innodb/innodb-redo-log.md) file.
+2. In the non-prepared backup, `ib_logfile0` contains all of the [InnoDB redo log](../../storage-engines/innodb/innodb-redo-log.md) copied during the backup. Previous versions of mariadb-backup would use a file called `[xtrabackup_logfile](#xtrabackup_logfile)` for this.
+3. During the [prepare](mariabackup-options.md#prepare) stage, `ib_logfile0` would previously be deleted. Now during the `--prepare` stage, `ib_logfile0` is initialized as an empty [InnoDB redo log](../../storage-engines/innodb/innodb-redo-log.md) file. That way, if the backup is manually restored, any pre-existing [InnoDB redo log](../../storage-engines/innodb/innodb-redo-log.md) files would get overwritten by the empty one. This helps to prevent certain kinds of known issues. For example, see [mariadb-backup Overview: Manual Restore with Pre-existing InnoDB Redo Log files](mariabackup-overview.md#manual-restore-with-pre-existing-innodb-redo-log-files).
 
 ## `xtrabackup_logfile`
 
@@ -30,11 +38,11 @@ For example:
 mariadb-bin.000096 568 0-1-2
 ```
 
-The values in this file are only guaranteed to be consistent with the backup if the [--no-lock](mariabackup-options.md#-no-lock) option was **not** provided when the backup was taken.
+The values in this file are only guaranteed to be consistent with the backup if the [`--no-lock`](mariabackup-options.md#no-lock) option was **not** provided when the backup was taken.
 
 ## `xtrabackup_binlog_pos_innodb`
 
-This file is created by mariabackup to provide the binary log file name and position when the [--no-lock](mariabackup-options.md#-no-lock) option is used. It can be used instead of the file "xtrabackup\_binlog\_info" to obtain transactionally consistent binlog coordinates from the backup of a master server with the --no-lock option to minimize the impact on a running server.
+This file is created by mariabackup to provide the binary log file name and position when the [--no-lock](mariabackup-options.md#no-lock) option is used. It can be used instead of the file "xtrabackup\_binlog\_info" to obtain transactionally consistent binlog coordinates from the backup of a master server with the --no-lock option to minimize the impact on a running server.
 
 Whenever a transaction is committed inside InnoDB when the binary log is enabled, the corresponding binlog coordinates are written to the InnoDB redo log along with the transaction commit. This allows one to restore the binlog coordinates corresponding to the last commit done by InnoDB along with a backup.
 
@@ -70,17 +78,17 @@ If the backup has already been prepared, then `backup_type` is set to `log-appli
 
 If `backup_type` is `full-backuped`, then `from_lsn` has the value of `0`.
 
-If `backup_type` is `incremental`, then `from_lsn` has the value of the [log sequence number (LSN)](../../storage-engines/innodb/innodb-redo-log.md#log-sequence-number-lsn) at which the backup started reading from the [InnoDB redo log](../../storage-engines/innodb/innodb-redo-log.md). This is internally used by Mariabackup when preparing incremental backups.
+If `backup_type` is `incremental`, then `from_lsn` has the value of the [log sequence number (LSN)](../../storage-engines/innodb/innodb-redo-log.md#log-sequence-number-lsn) at which the backup started reading from the [InnoDB redo log](../../storage-engines/innodb/innodb-redo-log.md). This is internally used by mariadb-backup when preparing incremental backups.
 
 This value can be manually set during an [incremental backup](incremental-backup-and-restore-with-mariabackup.md) with the [--incremental-lsn](mariabackup-options.md#-incremental-lsn) option. However, it is generally better to let Mariabackup figure out the `from_lsn` automatically by specifying a parent backup with the [--incremental-basedir](mariabackup-options.md#-incremental-basedir) option.
 
 ### `to_lsn`
 
-`to_lsn` has the value of the [log sequence number (LSN)](../../storage-engines/innodb/innodb-redo-log.md#log-sequence-number-lsn) of the last checkpoint in the [InnoDB redo log](../../storage-engines/innodb/innodb-redo-log.md). This is internally used by Mariabackup when preparing incremental backups.
+`to_lsn` has the value of the [log sequence number (LSN)](../../storage-engines/innodb/innodb-redo-log.md#log-sequence-number-lsn) of the last checkpoint in the [InnoDB redo log](../../storage-engines/innodb/innodb-redo-log.md). This is internally used by mariadb-backup when preparing incremental backups.
 
 ### `last_lsn`
 
-`last_lsn` has the value of the last [log sequence number (LSN)](../../storage-engines/innodb/innodb-redo-log.md#log-sequence-number-lsn) read from the [InnoDB redo log](../../storage-engines/innodb/innodb-redo-log.md). This is internally used by Mariabackup when preparing incremental backups.
+`last_lsn` has the value of the last [log sequence number (LSN)](../../storage-engines/innodb/innodb-redo-log.md#log-sequence-number-lsn) read from the [InnoDB redo log](../../storage-engines/innodb/innodb-redo-log.md). This is internally used by mariadb-backup when preparing incremental backups.
 
 ## `xtrabackup_info`
 
@@ -98,19 +106,19 @@ If a name was provided by the [--history](mariabackup-options.md#-history) or th
 
 ### `tool_name`
 
-The name of the Mariabackup executable that performed the backup. This is generally `mariabackup`.
+The name of the mariadb-backup executable that performed the backup. This is generally `mariabackup`.
 
 ### `tool_command`
 
-The arguments that were provided to Mariabackup when it performed the backup.
+The arguments that were provided to mariadb-backup when it performed the backup.
 
 ### `tool_version`
 
-The version of Mariabackup that performed the backup.
+The version of mariadb-backup that performed the backup.
 
 ### `ibbackup_version`
 
-The version of Mariabackup that performed the backup.
+The version of mariadb-backup that performed the backup.
 
 ### `server_version`
 
@@ -126,7 +134,7 @@ The time that the backup ended.
 
 ### `lock_time`
 
-The amount of time that Mariabackup held its locks.
+The amount of time that mariadb-backup held its locks.
 
 ### `binlog_pos`
 
@@ -134,7 +142,7 @@ This field stores the [binary log](../../../server-management/server-monitoring-
 
 This field also stores the value of the [gtid_current_pos](../../../server-usage/replication-cluster-multi-master/standard-replication/gtid.md#gtid_current_pos) system variable that correspond to the backup.
 
-The values in this field are only guaranteed to be consistent with the backup if the [--no-lock](mariabackup-options.md#-no-lock) option was **not** provided when the backup was taken.
+The values in this field are only guaranteed to be consistent with the backup if the [`--no-lock`](mariabackup-options.md#no-lock) option was **not** provided when the backup was taken.
 
 ### `innodb_from_lsn`
 
@@ -185,6 +193,11 @@ Mariabackup does **not** check if [GTIDs](../../../ha-and-performance/standard-r
 ## `xtrabackup_galera_info`
 
 If the [--galera-info](mariabackup-options.md#-galera-info) option is provided, then this file contains information about a [Galera Cluster](https://github.com/mariadb-corporation/docs-server/blob/test/en/galera/README.md) node's state.
+Mariabackup does **not** check if [GTIDs](../../../ha-and-performance/standard-replication/gtid.md) are being used in replication. It takes a shortcut and assumes that if the [gtid_slave_pos](../../../server-usage/replication-cluster-multi-master/standard-replication/gtid.md#gtid_slave_pos) system variable is non-empty, then it writes the [CHANGE MASTER](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) command with the [MASTER_USE_GTID](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md#master_use_gtid) option set to `slave_pos`. Otherwise, it writes the [CHANGE MASTER](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) command with the [MASTER_LOG_FILE](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md#master_log_file) and [MASTER_LOG_POS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md#master_log_pos) options using the master's [binary log](../../../server-management/server-monitoring-logs/binary-log/) file and position. See [MDEV-19264](https://jira.mariadb.org/browse/MDEV-19264) for more information.
+
+## `xtrabackup_galera_info`
+
+If the [--galera-info](mariabackup-options.md#-galera-info) option is provided, then this file contains information about a [Galera Cluster](https://mariadb.com/docs/galera-cluster) node's state.
 
 The file contains the values of the [wsrep_local_state_uuid](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-status-variables#wsrep_local_state_uuid) and [wsrep_last_committed](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-status-variables#wsrep_last_committed) status variables.
 

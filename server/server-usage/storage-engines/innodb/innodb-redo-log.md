@@ -67,11 +67,11 @@ The redo log group capacity is the total combined size of all InnoDB redo logs. 
 
 The redo log group capacity is determined by the following calculation:
 
-`innodb_log_group_capacity` = `[innodb_log_file_size](innodb-system-variables.md#innodb_log_file_size)` \* `[innodb_log_files_in_group](innodb-system-variables.md#innodb_log_files_in_group)`
+`innodb_log_group_capacity` = [innodb_log_file_size](innodb-system-variables.md#innodb_log_file_size) \* [innodb_log_files_in_group](innodb-system-variables.md#innodb_log_files_in_group)
 
 For example, if [innodb\_log\_file\_size](innodb-system-variables.md#innodb_log_file_size) is set to `2G` and [innodb\_log\_files\_in\_group](innodb-system-variables.md#innodb_log_files_in_group) is set to `2`, then we would have the following:
 
-* `innodb_log_group_capacity` = `[innodb_log_file_size](innodb-system-variables.md#innodb_log_file_size)` \* `[innodb_log_files_in_group](innodb-system-variables.md#innodb_log_files_in_group)`
+* `innodb_log_group_capacity` = [innodb_log_file_size](innodb-system-variables.md#innodb_log_file_size) \* [innodb_log_files_in_group](innodb-system-variables.md#innodb_log_files_in_group)
 * \= `2G` \* `2`
 * \= `4G`
 
@@ -144,11 +144,11 @@ In the example above, that would be:
 
 The redo log occupancy is the percentage of the InnoDB redo log capacity that is taken up by dirty pages that have not yet been flushed to the physical InnoDB tablespace files in a checkpoint. Therefore, it's determined by the following calculation:
 
-`innodb_log_occupancy` = `[innodb_checkpoint_age](#determining-the-checkpoint-age)` / `[innodb_log_group_capacity](#redo-log-group-capacity)`
+`innodb_log_occupancy` = [innodb_checkpoint_age](#determining-the-checkpoint-age) / [innodb_log_group_capacity](#redo-log-group-capacity)
 
-For example, if `[innodb_checkpoint_age](#determining-the-checkpoint-age)` is `1.5G` and `[innodb_log_group_capacity](#redo-log-group-capacity)` is `4G`, then we would have the following:
+For example, if [innodb_checkpoint_age](#determining-the-checkpoint-age) is `1.5G` and [innodb_log_group_capacity](#redo-log-group-capacity) is `4G`, then we would have the following:
 
-* `innodb_log_occupancy` = `[innodb_checkpoint_age](#determining-the-checkpoint-age)` / `[innodb_log_group_capacity](#redo-log-group-capacity)`
+* `innodb_log_occupancy` = [innodb_checkpoint_age](#determining-the-checkpoint-age) / [innodb_log_group_capacity](#redo-log-group-capacity)
 * \= `1.5G` / `4G`
 * \= `0.375`
 

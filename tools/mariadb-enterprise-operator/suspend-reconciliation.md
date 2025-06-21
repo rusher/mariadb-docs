@@ -15,7 +15,7 @@ More specifically, the reconciliation loop of the operator is omitted, anything 
 
 Currently, only `MariaDB` and `MaxScale` resources support suspension. You can enable it by setting `suspend=true`:
 
-```
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: MariaDB
 metadata:
@@ -26,7 +26,7 @@ spec:
 
 This results in the reconciliation loop being disabled and the status being marked as `Suspended`:
 
-```
+```sh
 kubectl get mariadbs
 NAME             READY   STATUS      PRIMARY           UPDATES                   AGE
 mariadb-galera   True    Suspended   mariadb-galera-0  ReplicasFirstPrimaryLast  12m

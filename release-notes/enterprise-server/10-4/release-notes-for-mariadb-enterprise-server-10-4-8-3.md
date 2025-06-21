@@ -25,7 +25,7 @@ MariaDB Enterprise Server 10.4.8-3 was released on 2019-09-30.
 
 ### Can result in unexpected behavior
 
-* After setting [foreign\_key\_checks=0](https://mariadb.com/kb/en/SET_server-system-variables/#foreign_key_checks) it is possible to drop indexes from referenced (parent) tables, which could cause [InnoDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb) to behave as if table `doesn't exist in engine` ([MDEV-17187](https://jira.mariadb.org/browse/MDEV-17187))
+* After setting [foreign\_key\_checks=0](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#foreign_key_checks) it is possible to drop indexes from referenced (parent) tables, which could cause [InnoDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb) to behave as if table `doesn't exist in engine` ([MDEV-17187](https://jira.mariadb.org/browse/MDEV-17187))
 * Fix for corner case where [MariaDB Enterprise Backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup) could fail because encrypted data files could not be copied if created shortly before the backup was started. ([MDEV-18128](https://jira.mariadb.org/browse/MDEV-18128))
 * [MariaDB Enterprise Backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup) could fail in the prepare face if the redo log is bigger than 512GB. ([MDEV-20060](https://jira.mariadb.org/browse/MDEV-20060))
 * If user enables encryption for temporary table and uses full\_crc32 format then temp table read may give error. ([MDEV-20340](https://jira.mariadb.org/browse/MDEV-20340))
@@ -37,8 +37,8 @@ MariaDB Enterprise Server 10.4.8-3 was released on 2019-09-30.
 
 ## Interface Changes
 
-* [in\_predicate\_conversion\_threshold](https://mariadb.com/kb/en/in_predicate_conversion_threshold) system variable added
-* [mysqld](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/starting-and-stopping-mariadb/mariadbd) [--in-predicate-conversion-threshold](https://mariadb.com/kb/en/--in-predicate-conversion-threshold) command-line option added
+* [in\_predicate\_conversion\_threshold](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#in_predicate_conversion_threshold) system variable added
+* [mysqld](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/starting-and-stopping-mariadb/mariadbd) [--in-predicate-conversion-threshold](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#in_predicate_conversion_threshold) command-line option added
 
 ## Platforms
 

@@ -13,7 +13,7 @@ WEEKOFYEAR(date)
 
 Returns the calendar week of the date as a number in the range from 1
 to 53. `WEEKOFYEAR()` is a compatibility function that is equivalent to
-`[WEEK(date,3)](week.md)`.
+[WEEK(date,3)](week.md).
 
 
 ## Examples

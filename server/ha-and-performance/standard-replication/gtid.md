@@ -138,7 +138,7 @@ default of 0 on all servers.
 ## Using Global Transaction IDs
 
 Global transaction ID is enabled automatically. Each event\
-group logged to the binlog receives a GTID event, as can be seen with[mariadb-binlog](../../clients-and-utilities/logging-tools/mariadb-binlog/) or [SHOW BINLOG EVENTS](../../reference/sql-statements/administrative-sql-statements/show/show-binlog-events.md).
+group logged to the binlog receives a GTID event, as can be seen with [mariadb-binlog](../../clients-and-utilities/logging-tools/mariadb-binlog/) or [SHOW BINLOG EVENTS](../../reference/sql-statements/administrative-sql-statements/show/show-binlog-events.md).
 
 The replica automatically keeps track of the GTID of the last applied event\
 group, as can be seen from the [gtid\_slave\_pos](gtid.md#gtid_slave_pos) variable:
@@ -214,13 +214,13 @@ Using_Gtid: Slave_pos
 
 The replica server internally uses the [mysql.gtid\_slave\_pos table](../../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlgtid_slave_pos-table.md) to store the\
 GTID position (and so preserve the value of `@@GLOBAL.gtid_slave_pos` across\
-server restarts). After upgrading a server to 10.0, it is necessary to run[mysql\_upgrade](../../clients-and-utilities/legacy-clients-and-utilities/mysql_upgrade.md) (as always) to get the table created.
+server restarts). After upgrading a server to 10.0, it is necessary to run [mysql\_upgrade](../../clients-and-utilities/legacy-clients-and-utilities/mysql_upgrade.md) (as always) to get the table created.
 
 In order to be crash-safe, this table must use a transactional storage engine\
 such as InnoDB. When MariaDB is first installed (or upgraded to 10.0.2+) the\
 table is created using the default storage engine - which itself defaults to\
 InnoDB. If there is a need to change the storage engine for this table (to\
-make it transactional on a system configured with [MyISAM](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/myisam-storage-engine/README.md) as the default\
+make it transactional on a system configured with [MyISAM](../../server-usage/storage-engines/myisam-storage-engine/) as the default\
 storage engine, for example), use [ALTER TABLE](../../reference/sql-statements/data-definition/alter/alter-table.md):
 
 `ALTER TABLE mysql.gtid_slave_pos ENGINE = InnoDB`
@@ -331,9 +331,9 @@ This method is particularly useful when setting up a new replica from a backup o
 If the backup was taken of an existing replica server, then the new replica should already have the\
 correct GTID position stored in the [mysql.gtid\_slave\_pos](../../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlgtid_slave_pos-table.md) table. This is assuming that this table was backed up and that it was backed up in a consistent manner with changes to other tables. In this case, there is no need to explicitly look up the GTID position on the old server and set it on the new replica - it will be already correctly loaded from the [mysql.gtid\_slave\_pos](../../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlgtid_slave_pos-table.md) table. This however does not work if the backup was taken from the primary - because then the current GTID position is contained in the binary log, not in the [mysql.gtid\_slave\_pos](../../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysqlgtid_slave_pos-table.md) table or any other table.
 
-#### Setting up a New Replica with Mariabackup
+#### Setting up a New Replica with mariadb-backup
 
-A new replica can easily be set up with [Mariabackup](../../server-usage/backing-up-and-restoring-databases/mariabackup/), which is a fork of [Percona XtraBackup](../../clients-and-utilities/legacy-clients-and-utilities/backing-up-and-restoring-databases-percona-xtrabackup/). See [Setting up a Replica with Mariabackup](../../server-usage/backing-up-and-restoring-databases/mariabackup/setting-up-a-replica-with-mariabackup.md) for more information.
+A new replica can easily be set up with [mariadb-backup](../../server-usage/backing-up-and-restoring-databases/mariabackup/), which is a fork of [Percona XtraBackup](../../clients-and-utilities/legacy-clients-and-utilities/backing-up-and-restoring-databases-percona-xtrabackup/). See [Setting up a Replica with mariadb-backup](../../server-usage/backing-up-and-restoring-databases/mariabackup/setting-up-a-replica-with-mariabackup.md) for more information.
 
 #### Setting up a New Replica with mariadb-dump
 
@@ -660,15 +660,15 @@ There are two status variables that can be used to monitor the effectiveness of 
 
 ## System Variables
 
-#### `[binlog_gtid_index](replication-and-binary-log-system-variables.md#binlog_gtid_index)`
+#### [binlog_gtid_index](replication-and-binary-log-system-variables.md#binlog_gtid_index)
 
 Enables/disables [binlog indexing](gtid.md#binlog-indexing).
 
-#### `[binlog_gtid_index_page_size](replication-and-binary-log-system-variables.md#binlog_gtid_index_page_size)`
+#### [binlog_gtid_index_page_size](replication-and-binary-log-system-variables.md#binlog_gtid_index_page_size)
 
 Adjusts the size of the pages
 
-#### `[binlog_gtid_index_span_min](replication-and-binary-log-system-variables.md#binlog_gtid_index_span_min)`
+#### [binlog_gtid_index_span_min](replication-and-binary-log-system-variables.md#binlog_gtid_index_span_min)
 
 Adjusts the sparseness of the index
 

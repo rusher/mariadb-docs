@@ -38,7 +38,7 @@ Notable changes of this release include:
 * [MDEV-18564](https://jira.mariadb.org/browse/MDEV-18564): [wsrep\_load\_data\_splitting](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_load_data_splitting) is deprecated and now set to `OFF` by default
 * [analyze\_sample\_percentage](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#analyze_sample_percentage) system variable
 * InnoDB ALTER TABLE fixes: [MDEV-18222](https://jira.mariadb.org/browse/MDEV-18222), [MDEV-18256](https://jira.mariadb.org/browse/MDEV-18256), [MDEV-18016](https://jira.mariadb.org/browse/MDEV-18016), [MDEV-18295](https://jira.mariadb.org/browse/MDEV-18295), [MDEV-16849](https://jira.mariadb.org/browse/MDEV-16849), [MDEV-18219](https://jira.mariadb.org/browse/MDEV-18219)
-* Mariabackup fixes: [MDEV-18194](https://jira.mariadb.org/browse/MDEV-18194), [MDEV-18415](https://jira.mariadb.org/browse/MDEV-18415), [MDEV-18611](https://jira.mariadb.org/browse/MDEV-18611)
+* mariadb-backup fixes: [MDEV-18194](https://jira.mariadb.org/browse/MDEV-18194), [MDEV-18415](https://jira.mariadb.org/browse/MDEV-18415), [MDEV-18611](https://jira.mariadb.org/browse/MDEV-18611)
 * New InnoDB features:
   * [MDEV-12026](https://jira.mariadb.org/browse/MDEV-12026): Implement [innodb\_checksum\_algorithm=full\_crc32](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables#innodb_checksum_algorithm)
   * [MDEV-15563](https://jira.mariadb.org/browse/MDEV-15563): More Instant VARCHAR extension

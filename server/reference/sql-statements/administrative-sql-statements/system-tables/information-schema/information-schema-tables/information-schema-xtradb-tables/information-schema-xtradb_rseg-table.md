@@ -16,7 +16,7 @@ It has the following columns:
 | max\_size  | Maximum size in pages.                                              |
 | curr\_size | Current size in pages.                                              |
 
-The number of records will match the value set in the `[innodb_undo_logs](../../../../../../../storage-engines/innodb/innodb-system-variables.md)` variable (by default 128).
+The number of records will match the value set in the [innodb_undo_logs](../../../../../../../storage-engines/innodb/innodb-system-variables.md) variable (by default 128).
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

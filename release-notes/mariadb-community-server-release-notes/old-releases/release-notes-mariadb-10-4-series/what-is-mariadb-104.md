@@ -31,12 +31,12 @@ See the [Differences in MariaDB Enterprise Server 10.4](../../../enterprise-serv
 * Instant collation or charset changes for non-indexed columns ([MDEV-15564](https://jira.mariadb.org/browse/MDEV-15564))
 * Reduced redo log volume for undo tablespace initialization ([MDEV-17138](https://jira.mariadb.org/browse/MDEV-17138))
 * Removed crash-upgrade support for pre-10.2.19 TRUNCATE TABLE ([MDEV-13564](https://jira.mariadb.org/browse/MDEV-13564))
-* Added key rotation for [innodb\_encrypt\_log](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/innodb/innodb-system-variables) ([MDEV-12041](https://jira.mariadb.org/browse/MDEV-12041))
-* Implement [innodb\_checksum\_algorithm=full\_crc32](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/innodb/innodb-system-variables#innodb_checksum_algorithm) ([MDEV-12026](https://jira.mariadb.org/browse/MDEV-12026))
+* Added key rotation for [innodb\_encrypt\_log](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables#innodb_encrypt_log) ([MDEV-12041](https://jira.mariadb.org/browse/MDEV-12041))
+* Implement [innodb\_checksum\_algorithm=full\_crc32](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables#innodb_checksum_algorithm) ([MDEV-12026](https://jira.mariadb.org/browse/MDEV-12026))
 
 ### Optimizer
 
-* Implementation of the [optimizer trace](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/mariadb-internals/mariadb-internals-documentation-query-optimizer/mariadb-internals-documentation-optimizer-trace/optimizer-trace-overview), one can enable the optimizer trace by enabling the system variable [optimizer\_trace](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#optimizer_trace) ([MDEV-6111](https://jira.mariadb.org/browse/MDEV-6111))
+* Implementation of the [optimizer trace](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/development-articles/mariadb-internals/mariadb-internals-documentation-query-optimizer/mariadb-internals-documentation-optimizer-trace/optimizer-trace-overview), one can enable the optimizer trace by enabling the system variable [optimizer\_trace](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#optimizer_trace) ([MDEV-6111](https://jira.mariadb.org/browse/MDEV-6111))
 * [Engine Independent Table Statistics](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/engine-independent-table-statistics) is now enabled by default; new default values are [use\_stat\_tables=PREFERABLY\_FOR\_QUERIES](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#use_stat_tables) and [optimizer\_use\_condition\_selectivity=4](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#optimizer_use_condition_selectivity) ([MDEV-15253](https://jira.mariadb.org/browse/MDEV-15253))
   * Two new values for the variable [use\_stat\_tables](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#use_stat_tables): `COMPLEMENTARY_FOR_QUERIES` and `PREFERABLY_FOR_QUERIES` ([MDEV-17255](https://jira.mariadb.org/browse/MDEV-17255))
   * [Histograms](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/histogram-based-statistics) are now used (but not collected) by default ([MDEV-18608](https://jira.mariadb.org/browse/MDEV-18608)).
@@ -78,11 +78,11 @@ For a list of all new variables, see [System Variables Added in MariaDB 10.4](ht
 
 ### Galera 4
 
-In [MariaDB 10.4.2](mariadb-1042-release-notes.md) and later, [Galera](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/galera-cluster/README.md) has been upgraded from [Galera](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/galera-cluster/README.md) 3 to [Galera](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/galera-cluster/README.md) 4.
+In [MariaDB 10.4.2](mariadb-1042-release-notes.md) and later, [Galera](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/3VYeeVGUV4AMqrA3zwy7/) has been upgraded from Galera 3 to Galera 4.
 
 #### Galera 4 Versions
 
-The following table lists each version of the [Galera](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/galera/README.md) 4 wsrep provider, and it lists which version of MariaDB each one was first released in. If you would like to install [Galera](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/galera/README.md) 4 using [yum](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/rpm/yum), [apt](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/installing-mariadb-deb-files#installing-mariadb-with-apt), or [zypper](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/rpm/installing-mariadb-with-zypper), then the package is called `galera-4`.
+The following table lists each version of the [Galera](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/3VYeeVGUV4AMqrA3zwy7/) 4 wsrep provider, and it lists which version of MariaDB each one was first released in. If you would like to install [Galera](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/3VYeeVGUV4AMqrA3zwy7/) 4 using [yum](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/rpm/yum), [apt](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/installing-mariadb-deb-files#installing-mariadb-with-apt), or [zypper](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/rpm/installing-mariadb-with-zypper), then the package is called `galera-4`.
 
 | Galera Version | Released in MariaDB Version                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 | -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -122,13 +122,13 @@ unlimited size. With streaming replication, a cluster is replicating a\
 transaction in small fragments during transaction execution. This transaction\
 fragmenting is controlled by two new configuration variables:
 
-* `[wsrep_trx_fragment_unit](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_trx_fragment_unit) (bytes, rows, statements)` defines the metrics for\
+* [wsrep\_trx\_fragment\_unit](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_trx_fragment_unit) (bytes, rows, statements) defines the metrics for\
   how to measure transaction size limit for fragmenting. Possible values are:
   * `bytes`: transaction’s binlog events buffer size in bytes
   * `rows`: number of rows affected by the transaction
   * `statements`: number of SQL statements executed in the multi-statement\
     transaction
-* [wsrep_trx_fragment_size](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_trx_fragment_size) defines the limit for fragmenting. When a\
+* [wsrep\_trx\_fragment\_size](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_trx_fragment_size) defines the limit for fragmenting. When a\
   transaction’s size, in terms of the configured fragment unit, has grown over\
   this limit, a new fragment will be replicated.
 
@@ -140,7 +140,7 @@ throughput, especially when binary logging is enabled in the cluster.
 
 **Rolling Upgrades from Galera 3 to Galera 4**
 
-Rolling upgrades from [MariaDB 10.3](../release-notes-mariadb-10-3-series/what-is-mariadb-103.md) (or earlier) to [MariaDB 10.4](what-is-mariadb-104.md) also require an upgrade from [Galera](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/galera-cluster/README.md) 3 to [Galera](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/galera-cluster/README.md) 4. Galera 4 has a lot of changes and improvements that were not present in Galera 3.
+Rolling upgrades from [MariaDB 10.3](../release-notes-mariadb-10-3-series/what-is-mariadb-103.md) (or earlier) to [MariaDB 10.4](what-is-mariadb-104.md) also require an upgrade from [Galera](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/3VYeeVGUV4AMqrA3zwy7/) 3 to [Galera](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/3VYeeVGUV4AMqrA3zwy7/) 4. Galera 4 has a lot of changes and improvements that were not present in Galera 3.
 
 Prior to the General Availability (GA) releases of [MariaDB 10.4](what-is-mariadb-104.md) and Galera 4, earlier versions of [MariaDB 10.4](what-is-mariadb-104.md) and Galera 4 had bugs that could lead to problems if Galera 4 nodes were in a cluster with Galera 3 nodes during a rolling upgrade. In these versions, rolling upgrades were not supported. This meant that, in order to upgrade a cluster, the cluster had to be completely stopped, and the nodes could only be restarted after the entire cluster had been upgraded to [MariaDB 10.4](what-is-mariadb-104.md) and Galera 4.
 
@@ -150,7 +150,7 @@ For more detailed information on how to upgrade, see [Upgrading from MariaDB 10.
 
 ### General
 
-* Crash safe [Aria](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/aria)-based [system tables](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables) ([MDEV-16421](https://jira.mariadb.org/browse/MDEV-16421))
+* Crash safe [Aria](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/aria)-based [system tables](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables) ([MDEV-16421](https://jira.mariadb.org/browse/MDEV-16421))
 * Added Linux abstract socket support ([MDEV-15655](https://jira.mariadb.org/browse/MDEV-15655))
 * Enabled C++11 ([MDEV-16410](https://jira.mariadb.org/browse/MDEV-16410))
 * Performance improvements in [Unicode](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/string-data-types/character-sets/unicode) collations ([MDEV-17534](https://jira.mariadb.org/browse/MDEV-17534), [MDEV-17511](https://jira.mariadb.org/browse/MDEV-17511), [MDEV-17502](https://jira.mariadb.org/browse/MDEV-17502), [MDEV-17474](https://jira.mariadb.org/browse/MDEV-17474))

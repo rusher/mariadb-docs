@@ -1,10 +1,10 @@
-# Files Created by Mariabackup
+# Files Created by mariadb-backup
 
-Mariabackup creates the following files:
+mariadb-backup creates the following files:
 
 ## `backup-my.cnf`
 
-During the backup, any server options relevant to Mariabackup are written to the `backup-my.cnf` [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md), so that they can be re-read later during the `--prepare` stage.
+During the backup, any server options relevant to mariadb-backup are written to the `backup-my.cnf` [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md), so that they can be re-read later during the `--prepare` stage.
 
 ## `ib_logfile0`
 
@@ -70,17 +70,17 @@ If the backup has already been prepared, then `backup_type` is set to `log-appli
 
 If `backup_type` is `full-backuped`, then `from_lsn` has the value of `0`.
 
-If `backup_type` is `incremental`, then `from_lsn` has the value of the [log sequence number (LSN)](../../../reference/storage-engines/innodb/innodb-redo-log.md#log-sequence-number-lsn) at which the backup started reading from the [InnoDB redo log](../../../reference/storage-engines/innodb/innodb-redo-log.md). This is internally used by Mariabackup when preparing incremental backups.
+If `backup_type` is `incremental`, then `from_lsn` has the value of the [log sequence number (LSN)](../../../reference/storage-engines/innodb/innodb-redo-log.md#log-sequence-number-lsn) at which the backup started reading from the [InnoDB redo log](../../../reference/storage-engines/innodb/innodb-redo-log.md). This is internally used by mariadb-backup when preparing incremental backups.
 
 This value can be manually set during an [incremental backup](incremental-backup-and-restore-with-mariabackup.md) with the [--incremental-lsn](mariabackup-options.md#-incremental-lsn) option. However, it is generally better to let Mariabackup figure out the `from_lsn` automatically by specifying a parent backup with the [--incremental-basedir](mariabackup-options.md#-incremental-basedir) option.
 
 ### `to_lsn`
 
-`to_lsn` has the value of the [log sequence number (LSN)](../../../reference/storage-engines/innodb/innodb-redo-log.md#log-sequence-number-lsn) of the last checkpoint in the [InnoDB redo log](../../../reference/storage-engines/innodb/innodb-redo-log.md). This is internally used by Mariabackup when preparing incremental backups.
+`to_lsn` has the value of the [log sequence number (LSN)](../../../reference/storage-engines/innodb/innodb-redo-log.md#log-sequence-number-lsn) of the last checkpoint in the [InnoDB redo log](../../../reference/storage-engines/innodb/innodb-redo-log.md). This is internally used by mariadb-backup when preparing incremental backups.
 
 ### `last_lsn`
 
-`last_lsn` has the value of the last [log sequence number (LSN)](../../../reference/storage-engines/innodb/innodb-redo-log.md#log-sequence-number-lsn) read from the [InnoDB redo log](../../../reference/storage-engines/innodb/innodb-redo-log.md). This is internally used by Mariabackup when preparing incremental backups.
+`last_lsn` has the value of the last [log sequence number (LSN)](../../../reference/storage-engines/innodb/innodb-redo-log.md#log-sequence-number-lsn) read from the [InnoDB redo log](../../../reference/storage-engines/innodb/innodb-redo-log.md). This is internally used by mariadb-backup when preparing incremental backups.
 
 ## `xtrabackup_info`
 
@@ -98,19 +98,19 @@ If a name was provided by the [--history](mariabackup-options.md#-history) or th
 
 ### `tool_name`
 
-The name of the Mariabackup executable that performed the backup. This is generally `mariabackup`.
+The name of the mariadb-backup executable that performed the backup. This is generally `mariabackup`.
 
 ### `tool_command`
 
-The arguments that were provided to Mariabackup when it performed the backup.
+The arguments that were provided to mariadb-backup when it performed the backup.
 
 ### `tool_version`
 
-The version of Mariabackup that performed the backup.
+The version of mariadb-backup that performed the backup.
 
 ### `ibbackup_version`
 
-The version of Mariabackup that performed the backup.
+The version of mariadb-backup that performed the backup.
 
 ### `server_version`
 
@@ -126,7 +126,7 @@ The time that the backup ended.
 
 ### `lock_time`
 
-The amount of time that Mariabackup held its locks.
+The amount of time that mariadb-backup held its locks.
 
 ### `binlog_pos`
 

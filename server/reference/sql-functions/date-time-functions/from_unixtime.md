@@ -9,7 +9,7 @@ FROM_UNIXTIME(unix_timestamp,format)
 
 ## Description
 
-Converts the number of seconds from the epoch (1970-01-01 00:00:00 UTC) to a`TIMESTAMP` value, the opposite of what `[UNIX_TIMESTAMP()](unix_timestamp.md)` is doing. Returns NULL if the result would be outside of the valid range of `TIMESTAMP` values.
+Converts the number of seconds from the epoch (1970-01-01 00:00:00 UTC) to a`TIMESTAMP` value, the opposite of what [UNIX_TIMESTAMP()](unix_timestamp.md) is doing. Returns NULL if the result would be outside of the valid range of `TIMESTAMP` values.
 
 If format is given, the result is exactly equivalent to
 

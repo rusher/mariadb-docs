@@ -6,7 +6,7 @@ monitoring should be enabled for new client connection threads.
 
 
 The default size is 100 rows, which can be changed by modifying the
-`[performance_schema_setup_actors_size](../performance-schema-system-variables.md#performance_schema_setup_actors_size)`
+[performance_schema_setup_actors_size](../performance-schema-system-variables.md#performance_schema_setup_actors_size)
 system variable at server startup.
 
 

@@ -10,7 +10,7 @@ BINARY(M)
 
 ## Description
 
-The `BINARY` type is similar to the `[CHAR](char.md)` type, but stores binary\
+The `BINARY` type is similar to the [CHAR](char.md) type, but stores binary\
 byte strings rather than non-binary character strings. `M` represents the\
 column length in bytes.
 

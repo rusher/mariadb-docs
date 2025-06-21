@@ -9,7 +9,7 @@ EXECUTE stmt_name
 
 ## Description
 
-After preparing a statement with `[PREPARE](prepare-statement.md)`, you execute it with an`EXECUTE` statement that refers to the prepared statement name. If the\
+After preparing a statement with [PREPARE](prepare-statement.md), you execute it with an`EXECUTE` statement that refers to the prepared statement name. If the\
 prepared statement contains any parameter markers, you must supply a`USING` clause that lists user variables containing the values to be\
 bound to the parameters. Parameter values can be supplied only by user\
 variables, and the `USING` clause must name exactly as many variables as\

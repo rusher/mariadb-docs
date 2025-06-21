@@ -87,12 +87,12 @@ MariaDB CVEs are assigned a word rating instead of a CVSS base score. See the Ma
 * S3, same-backend replication: Dropping a table on primary causes error on replica. ([MDEV-24351](https://jira.mariadb.org/browse/MDEV-24351))
 * [BINLOG REPLAY](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#binlog-replay) privilege is missing from [SHOW PRIVILEGES](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-privileges) ([MDEV-24344](https://jira.mariadb.org/browse/MDEV-24344))
 * Flushing starts only when 90% (`srv_max_buf_pool_modified_pct`) pages are modified. ([MDEV-24917](https://jira.mariadb.org/browse/MDEV-24917))
-* Quick memory exhaustion with `extended_keys=on` on queries having multiple [IN](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/operators/comparison-operators/in) or [NOT IN](https://mariadb.com/kb/en/NOT_IN) using InnoDB. ([MDEV-9750](https://jira.mariadb.org/browse/MDEV-9750))
+* Quick memory exhaustion with `extended_keys=on` on queries having multiple [IN](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/operators/comparison-operators/in) or [NOT IN](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/operators/comparison-operators/not-in) using InnoDB. ([MDEV-9750](https://jira.mariadb.org/browse/MDEV-9750))
 
 ### Related to install and upgrade
 
 * [mariadb-upgrade](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/deployment-tools/mariadb-upgrade) fails with error messages `ALGORITHM=INSTANT is not supported for this operation` ([MDEV-16735](https://jira.mariadb.org/browse/MDEV-16735))
-* [mariadb-upgrade](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/deployment-tools/mariadb-upgrade) hangs when executing [ALTER TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/alter/alter-table) on the [mysql.event](https://mariadb.com/kb/en/mysql) system table, if the table is not empty ([MDEV-24452](https://jira.mariadb.org/browse/MDEV-24452))
+* [mariadb-upgrade](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/deployment-tools/mariadb-upgrade) hangs when executing [ALTER TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/alter/alter-table) on the [mysql.event](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-event-table) system table, if the table is not empty ([MDEV-24452](https://jira.mariadb.org/browse/MDEV-24452))
 * Enterprise upgrade from 10.4 to 10.5 fails with option `disable-s3` in the 10.4 configuration file. (MENT-1068)
 
 ## Changes in Storage Engines

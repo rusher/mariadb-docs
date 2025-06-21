@@ -38,7 +38,7 @@ MariaDB Galera Cluster comes with the following built-in SST methods:
 
 ### mariabackup
 
-This SST method uses the [Mariabackup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariabackup) utility for performing SSTs. It is one of the two non-locking methods. This is the recommended SST method if you require the ability to run queries on the donor node during the SST. Note that if you use the `mariabackup` SST method, then you also need to have `socat` installed on the server. This is needed to stream the backup from the donor to the joiner. This is a limitation inherited from the `xtrabackup-v2` SST method.
+This SST method uses the [mariadb-backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariabackup) utility for performing SSTs. It is one of the two non-locking methods. This is the recommended SST method if you require the ability to run queries on the donor node during the SST. Note that if you use the `mariabackup` SST method, then you also need to have `socat` installed on the server. This is needed to stream the backup from the donor to the joiner. This is a limitation inherited from the `xtrabackup-v2` SST method.
 
 This SST method supports [GTID](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid).
 
@@ -86,7 +86,7 @@ This SST method supports [Data at Rest Encryption](https://app.gitbook.com/s/Ssm
 
 ### xtrabackup-v2
 
-Percona XtraBackup is **not supported** in MariaDB. [Mariabackup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariabackup) is the recommended backup method to use instead of Percona XtraBackup. See [Percona XtraBackup Overview: Compatibility with MariaDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/legacy-clients-and-utilities/backing-up-and-restoring-databases-percona-xtrabackup/percona-xtrabackup-overview#compatibility-with-mariadb) for more information.
+Percona XtraBackup is **not supported** in MariaDB. [mariadb-backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariabackup) is the recommended backup method to use instead of Percona XtraBackup. See [Percona XtraBackup Overview: Compatibility with MariaDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/legacy-clients-and-utilities/backing-up-and-restoring-databases-percona-xtrabackup/percona-xtrabackup-overview#compatibility-with-mariadb) for more information.
 
 This SST method uses the [Percona XtraBackup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/legacy-clients-and-utilities/backing-up-and-restoring-databases-percona-xtrabackup) utility for performing SSTs. It is one of the two non-blocking methods. Note that if you use the `xtrabackup-v2` SST method, you also need to have `socat` installed on the server. Since Percona XtraBackup is a third party product, this SST method requires an additional installation some additional configuration. Please refer to [Percona's xtrabackup SST documentation](https://www.percona.com/doc/percona-xtradb-cluster/5.7/manual/xtrabackup_sst.html) for information from the vendor.
 
@@ -100,7 +100,7 @@ See xtrabackup-v2 SST method for more information.
 
 ### xtrabackup
 
-Percona XtraBackup is **not supported** in MariaDB. [Mariabackup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariabackup) is the recommended backup method to use instead of Percona XtraBackup. See [Percona XtraBackup Overview: Compatibility with MariaDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/legacy-clients-and-utilities/backing-up-and-restoring-databases-percona-xtrabackup/percona-xtrabackup-overview#compatibility-with-mariadb) for more information.
+Percona XtraBackup is **not supported** in MariaDB. [mariadb-backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariabackup) is the recommended backup method to use instead of Percona XtraBackup. See [Percona XtraBackup Overview: Compatibility with MariaDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/legacy-clients-and-utilities/backing-up-and-restoring-databases-percona-xtrabackup/percona-xtrabackup-overview#compatibility-with-mariadb) for more information.
 
 This SST method is an older SST method that uses the [Percona XtraBackup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/legacy-clients-and-utilities/backing-up-and-restoring-databases-percona-xtrabackup) utility for performing SSTs. The `xtrabackup-v2` SST method should be used instead of the `xtrabackup` SST method starting from [MariaDB 5.5.33](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/mariadb-5533-release-notes).
 
@@ -186,14 +186,14 @@ When using an SST method that blocks the donor, there is yet another reason to r
 
 In some cases, if Galera Cluster's automatic SSTs repeatedly fail, then it can be helpful to perform a "manual SST". See the following pages on how to do that:
 
-* [Manual SST of Galera Cluster node with Mariabackup](manual-sst-of-galera-cluster-node-with-mariabackup.md)
+* [Manual SST of Galera Cluster node with mariadb-backup](manual-sst-of-galera-cluster-node-with-mariabackup.md)
 * [Manual SST of Galera Cluster node with Percona XtraBackup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/legacy-clients-and-utilities/backing-up-and-restoring-databases-percona-xtrabackup/percona-xtrabackup-overview)
 
 ## Known Issues
 
 ### mysqld\_multi
 
-SST scripts can't currently read the `[mysqldN]` [option groups](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files#option-groups) in [option files](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files) that are read by instances managed by [mysqld_multi](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/legacy-clients-and-utilities/mysqld_multi).
+SST scripts can't currently read the [mysqldN]` [option groups](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files#option-groups) in [option files](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files) that are read by instances managed by `[mysqld_multi](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/legacy-clients-and-utilities/mysqld_multi).
 
 See [MDEV-18863](https://jira.mariadb.org/browse/MDEV-18863) for more information.
 

@@ -255,7 +255,7 @@ SHOW ANALYZE FOR 1;
 ```
 
 * `ANALYZE FORMAT=JSON` now shows the time spent in the query optimizer. ([MDEV-28926](https://jira.mariadb.org/browse/MDEV-28926))
-* With [mariadb-dump](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/backup-restore-and-import-clients/mariadb-dump), the new [--order-by-size command-line option](https://mariadb.com/kb/en/maria-dump/#options) allows tables to be dumped in order of size (smallest tables first): ([MDEV-28074](https://jira.mariadb.org/browse/MDEV-28074))
+* With [mariadb-dump](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/backup-restore-and-import-clients/mariadb-dump), the new [--order-by-size command-line option](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/backup-restore-and-import-clients/mariadb-dump#options) allows tables to be dumped in order of size (smallest tables first): ([MDEV-28074](https://jira.mariadb.org/browse/MDEV-28074))
 
 ```bash
 $ mariadb-dump \
@@ -979,7 +979,7 @@ SELECT SCHEMA_NAME,DEFAULT_COLLATION_NAME FROM SCHEMATA WHERE SCHEMA_NAME LIKE "
 * On Microsoft Windows, MariaDB command-line tools now include full Unicode support. ([MDEV-26713](https://jira.mariadb.org/browse/MDEV-26713))
   * Unicode support is available on Microsoft Windows 10 1909 or later, Microsoft Windows 11, and Microsoft Windows Server 2020.
   * The `my.ini` configuration file is now UTF-8 encoded.
-  * The `mariadb.exe` command-line client uses [utf8mb4](https://mariadb.com/kb/en/) as the default character set.
+  * The `mariadb.exe` command-line client uses [utf8mb4](../11.8/whats-new-in-mariadb-enterprise-server-11.8.md#data-types-and-compatibility) as the default character set.
 
 ## Security Features
 
@@ -1195,7 +1195,7 @@ Variable_name LIKE 'binlog_row_event_max_size';
   * Two events are written to the binary log on the primary server: a `START ALTER` event when the operation starts, and either a `COMMIT ALTER` event or a `ROLLBACK ALTER` event when the operation finishes depending on whether it succeeds or fails.
 * By default, replication uses Global Transaction IDs (GTID), which makes replicas crash-safe. ([MDEV-19801](https://jira.mariadb.org/browse/MDEV-19801))
   * This change impacts backward compatibility.
-  * In previous releases, when [CHANGE MASTER](https://mariadb.com/kb/en/change-master) TO was executed without explicitly specifying `MASTER_USE_GTID`, it would default to `MASTER_USE_GTID=no`.
+  * In previous releases, when [CHANGE MASTER](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid#change-master) TO was executed without explicitly specifying `MASTER_USE_GTID`, it would default to `MASTER_USE_GTID=no`.
   * Starting with this release, when [CHANGE MASTER TO](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to) is executed without explicitly specifying MASTER\_USE\_GTID, it defaults to `MASTER_USE_GTID=slave_pos`. With `MASTER_USE_GTID=slave_pos`, the replica server uses the [gtid\_slave\_pos system variable](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/standard-replication/gtid) as the GTID position.
   * This change can cause new behavior to occur when performing the following operations:
     * Setting up a new replica with [CHANGE MASTER TO](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to) without specifying `MASTER_USE_GTID`

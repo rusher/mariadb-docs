@@ -12,7 +12,7 @@ MariaDB Corporation requires customers to authenticate when logging in to the Ma
 
 Then, configure a Kubernetes [kubernetes.io/dockerconfigjson Secret](https://kubernetes.io/docs/concepts/configuration/secret/#docker-config-secrets) to authenticate:
 
-```
+```sh
 kubectl create secret docker-registry mariadb-enterprise \
    --docker-server=docker.mariadb.com \
    --docker-username=<email> \
@@ -27,13 +27,13 @@ To configure the global pull secret, you can use the following commands:
 
 * Extract your [Openshift global pull secret](https://docs.redhat.com/en/documentation/openshift_container_platform/4.18/html/images/managing-images#images-update-global-pull-secret_using-image-pull-secrets):
 
-```
+```sh
 oc extract secret/pull-secret -n openshift-config --confirm
 ```
 
 * Login in the MariaDB registry providing the customer download token as password:
 
-```
+```sh
 oc registry login \
   --registry="docker.mariadb.com" \
   --auth-basic="<email>:<customer-download-token>" \
@@ -42,13 +42,13 @@ oc registry login \
 
 * Update the global pull secret:
 
-```
+```sh
 oc set data secret/pull-secret -n openshift-config --from-file=.dockerconfigjson
 ```
 
 Alternatively, you can also create a dedicated `Secret` for authenticating:
 
-```
+```sh
 oc create secret docker-registry mariadb-enterprise \
    --docker-server=docker.mariadb.com \
    --docker-username=<email> \
@@ -59,7 +59,7 @@ oc create secret docker-registry mariadb-enterprise \
 
 In order to configure access to `docker.mariadb.com` in your `MariaDB` resources, you can use the `imagePullSecrets` field to specify your [customer credentials](customer-access-to-docker-mariadb-com.md#customer-credentials):
 
-```
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: MariaDB
 metadata:
@@ -78,7 +78,7 @@ As a result, the `Pods` created as part of the reconciliation process will have 
 
 Similarly to `MariaDB`, you are able to configure access to `docker.mariadb.com` in your `MaxScale` resources:
 
-```
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: MaxScale
 metadata:
@@ -95,7 +95,7 @@ spec:
 
 The batch `Job` resources will inherit the `imagePullSecrets` from the referred `MariaDB`, as they also make use of its `image`. However, you are also able to provide dedicated `imagePullSecrets` for these resources:
 
-```
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: MariaDB
 metadata:
@@ -108,7 +108,7 @@ spec:
     - name: mariadb-enterprise
 ```
 
-```
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: Backup
 metadata:

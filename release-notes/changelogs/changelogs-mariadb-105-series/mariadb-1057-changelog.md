@@ -110,7 +110,7 @@ details of the revision and view diffs of the code modified in that revision.
   * Cleanup: Speed up mariabackup --prepare
 * [Revision #5999d5120e](https://github.com/MariaDB/server/commit/5999d5120e)\
   2020-10-26 15:04:24 +0200
-  * [MDEV-23399](https://jira.mariadb.org/browse/MDEV-23399) fixup: Avoid crash on Mariabackup shutdown
+  * [MDEV-23399](https://jira.mariadb.org/browse/MDEV-23399) fixup: Avoid crash on mariadb-backup shutdown
 * [Revision #d8515c8d35](https://github.com/MariaDB/server/commit/d8515c8d35)\
   2020-08-27 18:59:09 +0200
   * S3 plugin fails to load depending on loaded storage engines

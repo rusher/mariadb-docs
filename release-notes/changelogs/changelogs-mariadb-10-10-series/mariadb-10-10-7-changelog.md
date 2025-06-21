@@ -54,7 +54,7 @@ details of the revision and view diffs of the code modified in that revision.
 * Merge [Revision #d5e15424d8](https://github.com/MariaDB/server/commit/d5e15424d8) 2023-10-13 15:14:37 +0300 - Merge 10.6 into 10.10
 * [Revision #3b38c2f358](https://github.com/MariaDB/server/commit/3b38c2f358)\
   2023-09-19 11:33:51 +1000
-  * [MDEV-18200](https://jira.mariadb.org/browse/MDEV-18200) MariaBackup full backup failed with InnoDB: Failing assertion: success
+  * [MDEV-18200](https://jira.mariadb.org/browse/MDEV-18200) mariadb-backup full backup failed with InnoDB: Failing assertion: success
 * [Revision #c72ddeea4f](https://github.com/MariaDB/server/commit/c72ddeea4f)\
   2023-10-11 12:22:33 +0300
   * [MDEV-32364](https://jira.mariadb.org/browse/MDEV-32364) Server crashes when starting server with high innodb\_log\_buffer\_size

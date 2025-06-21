@@ -1,8 +1,8 @@
-# Incremental Backup and Restore with Mariabackup
+# Incremental Backup and Restore with mariadb-backup
 
-When using Mariabackup, you have the option of performing a full or incremental backup. Full backups create a complete copy in an empty directory while incremental backups update a previous backup with new data. This page documents incremental backups.
+When using mariadb-backup, you have the option of performing a full or incremental backup. Full backups create a complete copy in an empty directory while incremental backups update a previous backup with new data. This page documents incremental backups.
 
-InnoDB pages contain log sequence numbers, or LSN's. Whenever you modify a row on any InnoDB table on the database, the storage engine increments this number. When performing an incremental backup, Mariabackup checks the most recent LSN for the backup against the LSN's contained in the database. It then updates any of the backup files that have fallen behind.
+InnoDB pages contain log sequence numbers, or LSN's. Whenever you modify a row on any InnoDB table on the database, the storage engine increments this number. When performing an incremental backup, mariadb-backup checks the most recent LSN for the backup against the LSN's contained in the database. It then updates any of the backup files that have fallen behind.
 
 ## Backing up the Database Server
 
@@ -113,6 +113,8 @@ For each remaining incremental backup, repeat the last step to bring the base fu
 Once you've applied all incremental backups to the base, you can restore the backup using either the [--copy-back](mariabackup-options.md#-copy-back) or the [--move-back](mariabackup-options.md#-move-back) options. The [--copy-back](mariabackup-options.md#-copy-back) option allows you to keep the original backup files. The [--move-back](mariabackup-options.md#-move-back) option actually moves the backup files to the [datadir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir), so the original backup files are lost.
 
 * First, stop the MariaDB Server process.
+* Then, ensure that the `[datadir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir)` is empty.
+* Then, run mariadb-backup with one of the options mentioned above:
 * Then, ensure that the [datadir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir) is empty.
 * Then, run Mariabackup with one of the options mentioned above:
 
@@ -123,7 +125,7 @@ $ mariabackup --copy-back \
 
 * Then, you may need to fix the file permissions.
 
-When Mariabackup restores a database, it preserves the file and directory privileges of the backup. However, it writes the files to disk as the user and group restoring the database. As such, after restoring a backup, you may need to adjust the owner of the data directory to match the user and group for the MariaDB Server, typically `mysql` for both. For example, to recursively change ownership of the files to the `mysql` user and group, you could execute:
+When mariadb-backup restores a database, it preserves the file and directory privileges of the backup. However, it writes the files to disk as the user and group restoring the database. As such, after restoring a backup, you may need to adjust the owner of the data directory to match the user and group for the MariaDB Server, typically `mysql` for both. For example, to recursively change ownership of the files to the `mysql` user and group, you could execute:
 
 ```bash
 $ chown -R mysql:mysql /var/lib/mysql/

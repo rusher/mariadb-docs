@@ -9,7 +9,7 @@ STD(expr)
 ## Description
 
 Returns the population standard deviation of _`expr`_. This is an extension\
-to standard SQL. The standard SQL function `[STDDEV_POP()](stddev_pop.md)` can\
+to standard SQL. The standard SQL function [STDDEV_POP()](stddev_pop.md) can\
 be used instead.
 
 It is an [aggregate function](./), and so can be used with the [GROUP BY](../../sql-statements/data-manipulation/selecting-data/group-by.md) clause.

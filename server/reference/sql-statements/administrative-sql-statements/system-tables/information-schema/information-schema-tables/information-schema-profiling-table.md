@@ -32,7 +32,7 @@ It contains the following columns:
 
 
 
-It contains similar information to the `[SHOW PROFILE](../../../show/show-profile.md) and [SHOW PROFILES](../../../show/show-profiles.md)` statements.
+It contains similar information to the [SHOW PROFILE](../../../show/show-profile.md) and [SHOW PROFILES](../../../show/show-profiles.md) statements.
 
 
 Profiling is enabled per session. When a session ends, its profiling information is lost.

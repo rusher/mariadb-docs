@@ -11,7 +11,7 @@ It is a merge of [MariaDB 10.0.7](../../release-notes-mariadb-10-0-series/change
 additional bug fixes.
 
 Various articles about MariaDB Galera Cluster, including[known limitations](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/galera-management/mariadb-galera-cluster-known-limitations) and[how to get started](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/galera-management/getting-started-with-mariadb-galera-cluster) are\
-available in the [**Galera**](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/galera/README.md) section of the Knowledge Base.
+available in the [**Galera**](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/galera/README.md) section of the documentation.
 
 For a list of changes made in MariaDB Galera Cluster 10.0.7, with links to\
 detailed information on each push, see the[MariaDB Galera Cluster 10.0.7 Changelog](../mariadb-galera-100-changelogs/mariadb-galera-cluster-1007-changelog.md).

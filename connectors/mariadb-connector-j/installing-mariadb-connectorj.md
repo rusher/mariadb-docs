@@ -38,7 +38,7 @@ Be sure to replace `$VERSION` with a valid MariaDB Connector/J version number. S
 
 ## Installing MariaDB Connector/J Manually with the JAR File
 
-It is not generally the recommended method, but MariaDB Connector/J can also be installed by manually installing the `.jar` file to a directory in your `[CLASSPATH](https://docs.oracle.com/javase/tutorial/essential/environment/paths.html)`.
+It is not generally the recommended method, but MariaDB Connector/J can also be installed by manually installing the `.jar` file to a directory in your [CLASSPATH](https://docs.oracle.com/javase/tutorial/essential/environment/paths.html).
 
 MariaDB Connector/J `.jar` files can be downloaded from the following URL:
 

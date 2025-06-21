@@ -10,7 +10,7 @@ DES_DECRYPT(crypt_str[,key_str])
 
 ## Description
 
-Decrypts a string encrypted with `[DES_ENCRYPT()](des_encrypt.md)`. If an error occurs,\
+Decrypts a string encrypted with [DES_ENCRYPT()](des_encrypt.md). If an error occurs,\
 this function returns `NULL`.
 
 This function works only if MariaDB has been configured with [TLS\

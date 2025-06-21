@@ -23,7 +23,7 @@ Thanks, and enjoy MariaDB!
 ## Notable Changes
 
 * [MDEV-20864](https://jira.mariadb.org/browse/MDEV-20864): Debug-only option [innodb\_change\_buffer\_dump](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables#innodb_change_buffer_dump) for dumping the contents of the InnoDB change buffer to the server error log at startup.
-* MariaBackup:
+* mariadb-backup:
   * [MDEV-18438](https://jira.mariadb.org/browse/MDEV-18438): mbstream recreates xtrabackup\_info on same directory as backup file
   * [MDEV-20703](https://jira.mariadb.org/browse/MDEV-20703): mariabackup creates binlog files in server binlog directory on --prepare --export step
 * FULLTEXT INDEX:

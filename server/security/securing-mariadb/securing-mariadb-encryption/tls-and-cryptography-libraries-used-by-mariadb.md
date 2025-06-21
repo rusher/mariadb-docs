@@ -143,7 +143,7 @@ When the MariaDB Server or clients and utilities are dynamically linked to the s
 
 ### Updating Dynamically Linked OpenSSL Libraries with yum/dnf
 
-On RHEL, CentOS, Fedora, and other similar Linux distributions, it is highly recommended to update the libraries using [yum](../../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/rpm/yum.md) or `[dnf](https://en.wikipedia.org/wiki/DNF_(software))`. Starting with RHEL 8 and Fedora 22, `yum` has been replaced by `dnf`, which is the next major version of `yum`. However, `yum` commands still work on many systems that use `dnf`. For example:
+On RHEL, CentOS, Fedora, and other similar Linux distributions, it is highly recommended to update the libraries using [yum](../../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/rpm/yum.md) or [dnf](https://en.wikipedia.org/wiki/DNF_(software)). Starting with RHEL 8 and Fedora 22, `yum` has been replaced by `dnf`, which is the next major version of `yum`. However, `yum` commands still work on many systems that use `dnf`. For example:
 
 Update the package by executing the following command:
 

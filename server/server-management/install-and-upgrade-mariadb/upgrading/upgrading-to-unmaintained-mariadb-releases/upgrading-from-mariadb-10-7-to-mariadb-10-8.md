@@ -4,7 +4,7 @@
 
 For Windows, see [Upgrading MariaDB on Windows](../upgrading-mariadb-on-windows.md).
 
-Before you upgrade, it would be best to take a backup of your database. This is always a good idea to do before an upgrade. We would recommend [Mariabackup](../../../../server-usage/backing-up-and-restoring-databases/mariabackup/).
+Before you upgrade, it would be best to take a backup of your database. This is always a good idea to do before an upgrade. We would recommend [mariadb-backup](../../../../server-usage/backing-up-and-restoring-databases/mariabackup/).
 
 The suggested upgrade procedure is:
 

@@ -6,7 +6,7 @@ This documentation aims to provide guidance on various configuration aspects sha
 
 An inline [configuration file (my.cnf)](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files) can be provisioned in the `MariaDB` resource via the `myCnf` field:
 
-```
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: MariaDB
 metadata:
@@ -27,7 +27,7 @@ In this field, you may provide any [configuration option](https://app.gitbook.co
 
 Under the hood, the operator automatically creates a `ConfigMap` with the contents of the `myCnf` field, which will be mounted in the `MariaDB` instance. Alternatively, you can manage your own configuration using a pre-existing `ConfigMap` by linking it via `myCnfConfigMapKeyRef`. It is important to note that the key in this `ConfigMap` i.e. the config file name, must have a `.cnf` extension in order to be detected by MariaDB:
 
-```
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: MariaDB
 metadata:
@@ -45,7 +45,7 @@ To ensure your configuration changes take effect, the operator triggers a `Maria
 
 CPU and memory resouces can be configured via the `resources` field in both the `MariaDB` and `MaxScale` CRs:
 
-```
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: MariaDB
 metadata:
@@ -62,7 +62,7 @@ spec:
 
 In the case of `MariaDB`, it is recommended to set the `innodb_buffer_pool_size` system variable to a value that is 70-80% of the available memory. This can be done via the [myCnf field](configuration.md#mycnf):
 
-```
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: MariaDB
 metadata:
@@ -80,7 +80,7 @@ By default, MariaDB does not load timezone data on startup for performance reaso
 
 You can explicitly configure a timezone in your `MariaDB` instance by setting the `timeZone` field:
 
-```
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: MariaDB
 metadata:
@@ -93,7 +93,7 @@ This setting is immutable and implies loading the timezone data on startup.
 
 In regards to `Backup` and `SqlJob` resources, which get reconciled into `CronJobs`, you can also define a `timeZone` associated with their cron expression:
 
-```
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: Backup
 metadata:
@@ -113,7 +113,7 @@ If `timeZone` is not provided, the local timezone will be used, as described in 
 
 Some CRs require passwords provided as `Secret` references to function properly. For instance, the root password for a `MariaDB` resource:
 
-```
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: MariaDB
 metadata:
@@ -126,7 +126,7 @@ spec:
 
 By default, fields like `rootPasswordSecretKeyRef` are optional and defaulted by the operator, resulting in random password generation if not provided:
 
-```
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: MariaDB
 metadata:
@@ -140,7 +140,7 @@ spec:
 
 You may choose to explicitly provide a `Secret` reference via `rootPasswordSecretKeyRef` and opt-out from random password generation by either not providing the `generate` field or setting it to `false`:
 
-```
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: MariaDB
 metadata:
@@ -161,7 +161,7 @@ This way, we are telling the operator that we are expecting a `Secret` to be ava
 
 Many CRs have a references to external resources (i.e. `ConfigMap`, `Secret`) not managed by the operator.
 
-```
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: MariaDB
 metadata:
@@ -175,7 +175,7 @@ spec:
 
 These external resources should be labeled with `enterprise.mariadb.com/watch` so the operator can watch them and perform reconciliations based on their changes. For example, see the `my.cnf` `ConfigMap`:
 
-```
+```yaml
 apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -197,12 +197,13 @@ data:
 
 Kubernetes probes serve as an inversion of control mechanism, enabling the application to communicate its health status to Kubernetes. This enables Kubernetes to take appropriate actions when the application is unhealthy, such as restarting or stop sending traffic to `Pods`.
 
-**IMPORTANT**\
+{% hint style="info" %}
 Make sure you check the [Kubernetes documentation](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/) if you are unfamiliar with Kubernetes probes.
+{% endhint %}
 
 Fine tunning of probes for databases running in Kubernetes is critical, you may do so by tweaking the following fields:
 
-```
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: MariaDB
 metadata:

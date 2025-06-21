@@ -11,7 +11,7 @@ END WHILE [end_label]
 ## Description
 
 The statement list within a `WHILE` statement is repeated as long as the`search_condition` is true. statement\_list consists of one or more\
-statements. If the loop must be executed at least once, `[REPEAT ... LOOP](repeat-loop.md)` can be used instead.
+statements. If the loop must be executed at least once, [REPEAT ... LOOP](repeat-loop.md) can be used instead.
 
 A `WHILE` statement can be [labeled](labels.md). end\_label cannot be given unless\
 begin\_label also is present. If both are present, they must be the\

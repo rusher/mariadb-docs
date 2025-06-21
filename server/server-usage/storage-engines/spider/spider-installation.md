@@ -147,7 +147,7 @@ With the data node or data nodes configured, you can set up the Spider node to u
 
 ### Configure the Server
 
-In order to connect the Spider node to the data nodes, you may issue a `[CREATE SERVER](../../sql-statements-and-structure/sql-statements/data-definition/create/create-server.md)` statement for each data node. You can then use the server definition in creating the Spider table.
+In order to connect the Spider node to the data nodes, you may issue a [CREATE SERVER](../../sql-statements-and-structure/sql-statements/data-definition/create/create-server.md) statement for each data node. You can then use the server definition in creating the Spider table.
 
 ```sql
 CREATE SERVER dataNode1 FOREIGN DATA WRAPPER mysql
@@ -159,7 +159,7 @@ OPTIONS (
    PORT 3306);
 ```
 
-In the event that you need to modify or replace this server after setting up the Spider table, remember to issue a `[FLUSH](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md)` statement to update the server definition.
+In the event that you need to modify or replace this server after setting up the Spider table, remember to issue a [FLUSH](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md) statement to update the server definition.
 
 ```
 FLUSH TABLES;

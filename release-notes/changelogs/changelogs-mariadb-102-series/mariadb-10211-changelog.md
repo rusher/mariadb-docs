@@ -41,7 +41,7 @@ The revision number links will take you to the revision's page on GitHub. On[Git
   * [MDEV-14283](https://jira.mariadb.org/browse/MDEV-14283) : Fix compilation of mariabackup for gcc3.x
 * [Revision #6979d20426](https://github.com/MariaDB/server/commit/6979d20426)\
   2017-11-24 17:10:29 +0200
-  * [MDEV-14499](https://jira.mariadb.org/browse/MDEV-14499) Mariabackup 10.2 fails to back up a multi-file InnoDB system tablespace
+  * [MDEV-14499](https://jira.mariadb.org/browse/MDEV-14499) mariadb-backup 10.2 fails to back up a multi-file InnoDB system tablespace
 * [Revision #59150361c3](https://github.com/MariaDB/server/commit/59150361c3)\
   2017-11-24 14:39:38 +0100
   * Update C/C to fix unit tests with clang

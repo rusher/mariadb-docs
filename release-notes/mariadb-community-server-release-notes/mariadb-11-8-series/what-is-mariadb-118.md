@@ -1,8 +1,8 @@
 # Changes and Improvements in MariaDB 11.8
 
-The most recent release of [MariaDB 11.8](what-is-mariadb-118.md) is:[**MariaDB 11.8.1**](mariadb-11-8-1-release-notes.md) RC [Download Now](https://mariadb.com/downloads)[_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/11.8.1)
+{% include "../../../.gitbook/includes/the-most-recent-release-of-... (4).md" %}
 
-[MariaDB 11.8](what-is-mariadb-118.md) will be a long-term release, and is currently in development.
+[MariaDB 11.8](what-is-mariadb-118.md) is a long-term release, maintained until June 2028.
 
 This list includes all features since the previous long-term release, [MariaDB 11.4](../mariadb-11-4-series/what-is-mariadb-114.md) (those introduced in the [MariaDB 11.5](../old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115.md), [MariaDB 11.6](../old-releases/release-notes-mariadb-11-6-rolling-releases/what-is-mariadb-116.md) and [MariaDB 11.7](../old-releases/mariadb-11-7-rolling-releases/what-is-mariadb-117.md) rolling releases).
 
@@ -77,20 +77,6 @@ This list includes all features since the previous long-term release, [MariaDB 1
 * New function for generating version 4 UUIDs [UUID\_v4](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/secondary-functions/miscellaneous-functions/uuid_v4) ([MDEV-11339](https://jira.mariadb.org/browse/MDEV-11339), [MariaDB 11.7](../old-releases/mariadb-11-7-rolling-releases/what-is-mariadb-117.md))
 * New function for generating version 7 UUIDs [UUID\_v7](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/secondary-functions/miscellaneous-functions/uuid_v7) ([MDEV-32637](https://jira.mariadb.org/browse/MDEV-32637), [MariaDB 11.7](../old-releases/mariadb-11-7-rolling-releases/what-is-mariadb-117.md))
 
-### GIS
-
-New GIS functions. These functions improve compatibility with MySQL 8.
-
-* [ST\_Validate](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/geometry-constructors/miscellaneous-gis-functions/st_validate) ([MDEV-34137](https://jira.mariadb.org/browse/MDEV-34137))
-* [MBRCoveredBy](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/geometry-constructors/mbr-minimum-bounding-rectangle/mbrcoveredby) ([MDEV-34138](https://jira.mariadb.org/browse/MDEV-34138))
-* [ST\_Simplify](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/geometry-constructors/miscellaneous-gis-functions/st_simplify) ([MDEV-34141](https://jira.mariadb.org/browse/MDEV-34141))
-* [ST\_GeoHash](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/geometry-constructors/miscellaneous-gis-functions/st_geohash) ([MDEV-34158](https://jira.mariadb.org/browse/MDEV-34158))
-* [ST\_LatFromGeoHash](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/geometry-constructors/miscellaneous-gis-functions/st_latfromgeohash) ([MDEV-34159](https://jira.mariadb.org/browse/MDEV-34159))
-* [ST\_LongFromGeoHash](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/geometry-constructors/miscellaneous-gis-functions/st_longfromgeohash) ([MDEV-34160](https://jira.mariadb.org/browse/MDEV-34160))
-* [ST\_PointFromGeoHash](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/geometry-constructors/miscellaneous-gis-functions/st_pointfromgeohash) ([MDEV-34277](https://jira.mariadb.org/browse/MDEV-34277))
-* [ST\_IsValid](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/geometry-constructors/miscellaneous-gis-functions/st_isvalid) ([MDEV-34276](https://jira.mariadb.org/browse/MDEV-34276))
-* [ST\_Collect](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/geometry-constructors/miscellaneous-gis-functions/st_collect) ([MDEV-34278](https://jira.mariadb.org/browse/MDEV-34278))
-
 ### Other Functions
 
 * New [FORMAT\_BYTES](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/secondary-functions/miscellaneous-functions/miscellaneous-functions-format_bytes) function. Given a byte count, returns a string consisting of a value and the units in a human-readable format ([MDEV-31736](https://jira.mariadb.org/browse/MDEV-31736))
@@ -129,6 +115,8 @@ New GIS functions. These functions improve compatibility with MySQL 8.
 ### Stored Routines
 
 * ROW data type for stored function return values ([MDEV-12252](https://jira.mariadb.org/browse/MDEV-12252), [MariaDB 11.7](../old-releases/mariadb-11-7-rolling-releases/what-is-mariadb-117.md))
+* Stored routines parameters can have default values ([MDEV-10862](https://jira.mariadb.org/browse/MDEV-10862))
+* Update triggers can optionally have a list of columns an update of which executes the trigger. Updating other columns does not execute the trigger ([MDEV-34551](https://jira.mariadb.org/browse/MDEV-34551))
 
 ### Derived Tables
 

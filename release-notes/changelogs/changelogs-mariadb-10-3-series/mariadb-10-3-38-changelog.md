@@ -59,7 +59,7 @@ details of the revision and view diffs of the code modified in that revision.
   * Add my\_afree after my\_alloca in early return case
 * [Revision #0ddbec40fb](https://github.com/MariaDB/server/commit/0ddbec40fb)\
   2022-11-09 16:41:19 +0400
-  * [MDEV-23335](https://jira.mariadb.org/browse/MDEV-23335) MariaBackup Incremental Does Not Reflect Dropped/Created Databases
+  * [MDEV-23335](https://jira.mariadb.org/browse/MDEV-23335) mariadb-backup Incremental Does Not Reflect Dropped/Created Databases
 * [Revision #489b556947](https://github.com/MariaDB/server/commit/489b556947)\
   2023-01-17 17:52:16 +0200
   * [MDEV-30422](https://jira.mariadb.org/browse/MDEV-30422) Merge new release of InnoDB 5.7.41 to 10.3

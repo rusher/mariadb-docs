@@ -202,7 +202,7 @@ ERROR 1253 (42000): COLLATION ' …' is not valid for CHARACTER SET 'latin1'
 * `mariadbd` --hashicorp-key-management-cache-timeout command-line option added
 * `mariadbd` --hashicorp-key-management-cache-version-timeout command-line option added
 * `mariadbd` --rocksdb-ignore-datadic-errors command-line option added
-* [brocksdb\_ignore\_datadic\_errors](https://mariadb.com/kb/en/rocksd-system-variables) system variable added
+* [brocksdb\_ignore\_datadic\_errors](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup/files-backed-up-by-mariabackup#myrocks-data-files) system variable added
 
 ## Platforms
 

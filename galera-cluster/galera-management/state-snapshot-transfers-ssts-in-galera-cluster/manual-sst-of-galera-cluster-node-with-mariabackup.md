@@ -1,12 +1,12 @@
-# Manual SST of Galera Cluster Node With Mariabackup
+# Manual SST of Galera Cluster Node With mariadb-backup
 
 Sometimes it can be helpful to perform a "manual SST" when Galera's [normal SSTs](introduction-to-state-snapshot-transfers-ssts.md) fail. This can be especially useful when the cluster's [datadir](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables#datadir) is very large, since a normal SST can take a long time to fail in that case.
 
-A manual SST essentially consists of taking a backup of the donor, loading the backup on the joiner, and then manually editing the cluster state on the joiner node. This page will show how to perform this process with [Mariabackup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariabackup).
+A manual SST essentially consists of taking a backup of the donor, loading the backup on the joiner, and then manually editing the cluster state on the joiner node. This page will show how to perform this process with [mariadb-backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariabackup).
 
 ## Process
 
-* Check that the donor and joiner nodes have the same Mariabackup version.
+* Check that the donor and joiner nodes have the same mariadb-backup version.
 
 ```
 mariabackup --version

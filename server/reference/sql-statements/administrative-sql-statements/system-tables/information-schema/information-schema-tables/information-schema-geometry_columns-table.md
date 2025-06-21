@@ -76,7 +76,7 @@ G_GEOMETRY_COLUMN: g
 ## See also
 
 
-* The `[SPATIAL_REF_SYS](information-schema-spatial_ref_sys-table.md)` table.
+* The [SPATIAL_REF_SYS](information-schema-spatial_ref_sys-table.md) table.
 
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>

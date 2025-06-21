@@ -127,7 +127,7 @@ It is an enum. Valid values are:`0: NONE`: Off (default)`1: SERVER`: MariaDB ser
 
 #### `wsrep_desync`
 
-* Description: When a node receives more write-sets than it can apply, the transactions are placed in a received queue. If the node's received queue has too many write-sets waiting to be applied (as defined by the `[gcs.fc_limit](wsrep_provider_options.md#gcsfc_limit)` WSREP provider option), then the node would usually engage Flow Control. However, when this option is set to `ON`, Flow Control will be disabled for the desynced node. The desynced node works through the received queue until it reaches a more manageable size. The desynced node continues to receive write-sets from the other nodes in the cluster. The other nodes in the cluster do not wait for the desynced node to catch up, so the desynced node can fall even further behind the other nodes in the cluster. You can check if a node is desynced by checking if the `[wsrep_local_state_comment](galera-cluster-status-variables.md#wsrep_local_state_comment)` status variable is equal to `Donor/Desynced`.
+* Description: When a node receives more write-sets than it can apply, the transactions are placed in a received queue. If the node's received queue has too many write-sets waiting to be applied (as defined by the [gcs.fc_limit](wsrep_provider_options.md#gcsfc_limit) WSREP provider option), then the node would usually engage Flow Control. However, when this option is set to `ON`, Flow Control will be disabled for the desynced node. The desynced node works through the received queue until it reaches a more manageable size. The desynced node continues to receive write-sets from the other nodes in the cluster. The other nodes in the cluster do not wait for the desynced node to catch up, so the desynced node can fall even further behind the other nodes in the cluster. You can check if a node is desynced by checking if the [wsrep_local_state_comment](galera-cluster-status-variables.md#wsrep_local_state_comment) status variable is equal to `Donor/Desynced`.
 * Commandline: `--wsrep-desync[={0|1}]`
 * Scope: Global
 * Dynamic: Yes
@@ -166,8 +166,8 @@ It is an enum. Valid values are:`0: NONE`: Off (default)`1: SERVER`: MariaDB ser
 #### `wsrep_gtid_domain_id`
 
 * Description: This system variable defines the [GTID](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid) domain ID that is used for [wsrep GTID mode](../high-availability/using-mariadb-replication-with-mariadb-galera-cluster/using-mariadb-gtids-with-mariadb-galera-cluster.md#wsrep-gtid-mode).
-  * When `[wsrep_gtid_mode](#wsrep_gtid_mode)` is set to `ON`, `wsrep_gtid_domain_id` is used in place of `[gtid_domain_id](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/standard-replication/gtid#gtid_domain_id)` for all Galera Cluster write sets.
-  * When `[wsrep_gtid_mode](#wsrep_gtid_mode)` is set to `OFF`, `wsrep_gtid_domain_id` is simply ignored to allow for backward compatibility.
+  * When [wsrep_gtid_mode](#wsrep_gtid_mode) is set to `ON`, `wsrep_gtid_domain_id` is used in place of [gtid_domain_id](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/standard-replication/gtid#gtid_domain_id) for all Galera Cluster write sets.
+  * When [wsrep_gtid_mode](#wsrep_gtid_mode) is set to `OFF`, `wsrep_gtid_domain_id` is simply ignored to allow for backward compatibility.
   * There are some additional requirements that need to be met in order for this mode to generate consistent [GTIDs](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid). For more information, see [Using MariaDB GTIDs with MariaDB Galera Cluster](../high-availability/using-mariadb-replication-with-mariadb-galera-cluster/using-mariadb-gtids-with-mariadb-galera-cluster.md).
 * Commandline: `--wsrep-gtid-domain-id=#`
 * Scope: Global
@@ -179,8 +179,8 @@ It is an enum. Valid values are:`0: NONE`: Off (default)`1: SERVER`: MariaDB ser
 #### `wsrep_gtid_mode`
 
 * Description: [Wsrep GTID mode](../high-availability/using-mariadb-replication-with-mariadb-galera-cluster/using-mariadb-gtids-with-mariadb-galera-cluster.md#wsrep-gtid-mode) attempts to keep [GTIDs](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid) consistent for Galera Cluster write sets on all cluster nodes. [GTID](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid) state is initially copied to a joiner node during an [SST](../galera-management/state-snapshot-transfers-ssts-in-galera-cluster/introduction-to-state-snapshot-transfers-ssts.md). If you are planning to use Galera Cluster with [MariaDB replication](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication), then wsrep GTID mode can be helpful.
-  * When `wsrep_gtid_mode` is set to `ON`, `[wsrep_gtid_domain_id](#wsrep_gtid_domain_id)` is used in place of `[gtid_domain_id](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/standard-replication/gtid#gtid_domain_id)` for all Galera Cluster write sets.
-  * When `wsrep_gtid_mode` is set to `OFF`, `[wsrep_gtid_domain_id](#wsrep_gtid_domain_id)` is simply ignored to allow for backward compatibility.
+  * When `wsrep_gtid_mode` is set to `ON`, [wsrep_gtid_domain_id](#wsrep_gtid_domain_id) is used in place of [gtid_domain_id](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/standard-replication/gtid#gtid_domain_id) for all Galera Cluster write sets.
+  * When `wsrep_gtid_mode` is set to `OFF`, [wsrep_gtid_domain_id](#wsrep_gtid_domain_id) is simply ignored to allow for backward compatibility.
   * There are some additional requirements that need to be met in order for this mode to generate consistent [GTIDs](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid). For more information, see [Using MariaDB GTIDs with MariaDB Galera Cluster](../high-availability/using-mariadb-replication-with-mariadb-galera-cluster/using-mariadb-gtids-with-mariadb-galera-cluster.md).
 * Commandline: `--wsrep-gtid-mode[={0|1}]`
 * Scope: Global
@@ -382,7 +382,7 @@ It is an enum. Valid values are:`0: NONE`: Off (default)`1: SERVER`: MariaDB ser
 
 #### `wsrep_recover`
 
-* Description: If set to `ON` when the server starts, the server will recover the sequence number of the most recent write set applied by Galera, and it will be output to `stderr`, which is usually redirected to the [error log](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/server-monitoring-logs/error-log). At that point, the server will exit. This sequence number can be provided to the `[wsrep_start_position](#wsrep_start_position)` system variable.
+* Description: If set to `ON` when the server starts, the server will recover the sequence number of the most recent write set applied by Galera, and it will be output to `stderr`, which is usually redirected to the [error log](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/server-monitoring-logs/error-log). At that point, the server will exit. This sequence number can be provided to the [wsrep_start_position](#wsrep_start_position) system variable.
 * Commandline: `--wsrep-recover[={0|1}]`
 * Scope: Global
 * Dynamic: No
@@ -522,7 +522,7 @@ It is an enum. Valid values are:`0: NONE`: Off (default)`1: SERVER`: MariaDB ser
 
 #### `wsrep_start_position`
 
-* Description: The start position that the node should use in the format: `UUID:seq_no`. The proper value to use for this position can be recovered with `[wsrep_recover](#wsrep_recover)`.
+* Description: The start position that the node should use in the format: `UUID:seq_no`. The proper value to use for this position can be recovered with [wsrep_recover](#wsrep_recover).
 * Commandline: `--wsrep-start-position=value`
 * Scope: Global
 * Dynamic: Yes

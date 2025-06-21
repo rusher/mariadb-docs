@@ -31,13 +31,13 @@ Thanks, and enjoy MariaDB!
   * [MDEV-12112](https://jira.mariadb.org/browse/MDEV-12112): corruption in encrypted table may be overlooked
   * [MDEV-17958](https://jira.mariadb.org/browse/MDEV-17958): On little-endian systems, remove bug-compatible variant of innodb\_checksum\_algorithm=crc32
   * [MDEV-17957](https://jira.mariadb.org/browse/MDEV-17957): Make innodb\_checksum\_algorithm stricter for strict\_\* values
-  * [MDEV-18025](https://jira.mariadb.org/browse/MDEV-18025): Mariabackup fails to detect corrupted page\_compressed=1 tables
+  * [MDEV-18025](https://jira.mariadb.org/browse/MDEV-18025): mariadb-backup fails to detect corrupted page\_compressed=1 tables
 * The [Galera library](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/what-is-mariadb-galera-cluster/README.md) in the repositories has been updated to version 25.3.25
 * Fixes for the following [security vulnerabilities](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/security):
   * CVE-\`-\`\`\`
 
 When upgrading from [MariaDB 10.2.16](mariadb-10216-release-notes.md) or earlier to [MariaDB 10.2.17](mariadb-10217-release-notes.md) or higher,\
-running `[mysql_upgrade](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/legacy-clients-and-utilities/mysql_upgrade)` is **required** due to changes introduced in[MDEV-14637](https://jira.mariadb.org/browse/MDEV-14637).
+running [mysql_upgrade](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/legacy-clients-and-utilities/mysql_upgrade) is **required** due to changes introduced in[MDEV-14637](https://jira.mariadb.org/browse/MDEV-14637).
 
 ## Changelog
 

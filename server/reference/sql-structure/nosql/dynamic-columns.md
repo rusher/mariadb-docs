@@ -153,7 +153,7 @@ UPDATE t1 SET dyncol_blob=COLUMN_ADD(dyncol_blob, "column_name", "value")
   WHERE id=1;
 ```
 
-Note: `COLUMN_ADD()` is a regular function (just like`[CONCAT()](../sql-statements/built-in-functions/string-functions/concat.md)`), hence, in order to update the value in the table\
+Note: `COLUMN_ADD()` is a regular function (just like[CONCAT()](../sql-statements/built-in-functions/string-functions/concat.md)), hence, in order to update the value in the table\
 you have to use the `UPDATE ... SET dynamic_col=COLUMN_ADD(dynamic_col, ....)` pattern.
 
 #### COLUMN\_GET
@@ -307,7 +307,7 @@ do not provide any way to declare a type in advance ("whenever there is a\
 column 'weight', it should be integer" is not possible). However, each\
 particular dynamic column value is stored together with its datatype.
 
-The set of possible datatypes is mostly the same as that used by the SQL`[CAST](../sql-statements/built-in-functions/string-functions/cast.md)` and `[CONVERT](../sql-statements/built-in-functions/string-functions/convert.md)` functions. However, note that there are currently some differences - see [MDEV-597](https://jira.mariadb.org/browse/MDEV-597).
+The set of possible datatypes is mostly the same as that used by the SQL[CAST](../sql-statements/built-in-functions/string-functions/cast.md) and [CONVERT](../sql-statements/built-in-functions/string-functions/convert.md) functions. However, note that there are currently some differences - see [MDEV-597](https://jira.mariadb.org/browse/MDEV-597).
 
 | type                | dynamic column internal type | description                                                                                                                 |
 | ------------------- | ---------------------------- | --------------------------------------------------------------------------------------------------------------------------- |

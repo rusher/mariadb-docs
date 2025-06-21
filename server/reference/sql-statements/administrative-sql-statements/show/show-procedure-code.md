@@ -10,10 +10,10 @@ SHOW PROCEDURE CODE proc_name
 
 This statement is a MariaDB extension that is available only for servers that\
 have been built with debugging support. It displays a representation of the\
-internal implementation of the named [stored procedure](../../../../server-usage/stored-routines/stored-procedures/). A similar statement,`[SHOW FUNCTION CODE](show-function-code.md)`, displays\
+internal implementation of the named [stored procedure](../../../../server-usage/stored-routines/stored-procedures/). A similar statement,[SHOW FUNCTION CODE](show-function-code.md), displays\
 information about [stored functions](../../../../server-usage/stored-routines/stored-functions/).
 
-Both statements require that you be the owner of the routine or have`[SELECT](../../account-management-sql-commands/grant.md)` access to the `[mysql.proc](../system-tables/the-mysql-database-tables/mysql-proc-table.md)` table.
+Both statements require that you be the owner of the routine or have[SELECT](../../account-management-sql-commands/grant.md) access to the [mysql.proc](../system-tables/the-mysql-database-tables/mysql-proc-table.md) table.
 
 If the named routine is available, each statement produces a result\
 set. Each row in the result set corresponds to one "instruction" in\

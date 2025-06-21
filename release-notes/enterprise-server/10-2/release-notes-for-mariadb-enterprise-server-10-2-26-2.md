@@ -45,7 +45,7 @@ MariaDB Enterprise Server 10.2.26-2 was released on 2019-08-19.
 * Add page-id matching check in [innochecksum](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/administrative-tools/innochecksum) tool ([MDEV-19871](https://jira.mariadb.org/browse/MDEV-19871))
 * `DROP TEMPORARY` table is logged despite no `CREATE` was logged in binary log ([MDEV-20091](https://jira.mariadb.org/browse/MDEV-20091))
 * `mysql_upgrade_service` throws exception upgrading from 10.0 to 10.3 ([MDEV-19427](https://jira.mariadb.org/browse/MDEV-19427))
-* Loading the [audit](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/mariadb-audit-plugin) plugin causes performance regression ([MDEV-18661](https://jira.mariadb.org/browse/MDEV-18661))
+* Loading the [audit](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/mariadb-audit-plugin) plugin causes performance regression ([MDEV-18661](https://jira.mariadb.org/browse/MDEV-18661))
 * [REPLACE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/changing-deleting-data/replace) on table with virtual\_field can cause crash ([MDEV-19771](https://jira.mariadb.org/browse/MDEV-19771))
 * Fix [Aria ER\_CRASHED\_ON\_USAGE](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/enterprise-server/10-2/broken-reference/README.md) and Assertion ([MDEV-19595](https://jira.mariadb.org/browse/MDEV-19595))
 

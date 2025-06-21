@@ -6,39 +6,27 @@ The [examples catalog](https://operator.mariadb.com/examples/manifests.tar.gz) c
 
 * Download the [examples catalog](https://operator.mariadb.com/examples/manifests.tar.gz):
 
-
-
-```
+```sh
 curl -sLO https://operator.mariadb.com/examples/manifests.tar.gz
 mkdir -p examples
 tar -xzf manifests.tar.gz -C examples
 ```
 
-
-
 * Install the configuration shared by all the examples:
 
-
-
-```
+```sh
 kubectl apply -f examples/config
 ```
 
-
-
 * Start deploying examples:
 
-
-
-```
+```sh
 kubectl apply -f examples/mariadb.yaml
 ```
 
 
 
 Some examples rely on external dependencies for specific tasks, make sure to install them when it applies:
-
-
 * [prometheus-operator](https://github.com/prometheus-community/helm-charts/tree/main/charts/kube-prometheus-stack) for metrics
 * [cert-manager](https://cert-manager.io/docs/installation/helm/) for TLS certificates
 * [minio](https://github.com/minio/minio/tree/master/helm/minio) for S3 object storage

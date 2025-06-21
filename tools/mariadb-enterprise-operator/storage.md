@@ -6,7 +6,7 @@ This operator gives you flexibility to define the storage that will back the `/v
 
 The simplest way to configure storage for your `MariaDB` is:
 
-```
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: MariaDB
 metadata:
@@ -19,7 +19,7 @@ spec:
 
 This will make use of the default `StorageClass` available in your cluster, but you can also provide a different one:
 
-```
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: MariaDB
 metadata:
@@ -33,7 +33,7 @@ spec:
 
 Under the scenes, the operator is configuring the `StatefulSet`'s `volumeClaimTemplate` property, which you are also able to provide yourself:
 
-```
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: MariaDB
 metadata:
@@ -54,8 +54,9 @@ spec:
 
 ## Volume resize
 
-**WARNING**\
+{% hint style="warning" %}
 The `StorageClass` used for volume resizing must define `allowVolumeExpansion = true`.
+{% endhint %}
 
 It is possible to resize your storage after having provisioned a `MariaDB`. We need to distinguish between:
 
@@ -64,7 +65,7 @@ It is possible to resize your storage after having provisioned a `MariaDB`. We n
 
 It is important to note that, for the first case, your `StorageClass` must support volume expansion by declaring the `allowVolumeExpansion = true`. In such case, it will be safe to expand the storage by increasing the `size` and setting `resizeInUseVolumes = true`:
 
-```
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: MariaDB
 metadata:
@@ -83,7 +84,7 @@ Depending on your storage provider, this operation might take a while, and you c
 
 Provisioning standalone `MariaDB` instances with ephemeral storage can be done by setting `ephemeral = true`:
 
-```
+```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
 kind: MariaDB
 metadata:

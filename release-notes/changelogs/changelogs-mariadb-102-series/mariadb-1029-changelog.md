@@ -332,7 +332,7 @@ The revision number links will take you to the revision's page on GitHub. On[Git
   * [MDEV-13318](https://jira.mariadb.org/browse/MDEV-13318) Crash recovery failure after the server is killed during innodb\_encrypt\_log startup
 * [Revision #8ee4b414ae](https://github.com/MariaDB/server/commit/8ee4b414ae)\
   2017-09-12 09:22:11 +0300
-  * Relax a too strict debug assertion for Mariabackup --prepare
+  * Relax a too strict debug assertion for mariadb-backup --prepare
 * [Revision #ea876b39f3](https://github.com/MariaDB/server/commit/ea876b39f3)\
   2017-09-12 11:58:49 +0400
   * [MDEV-13716](https://jira.mariadb.org/browse/MDEV-13716) point\_big test fails in 10.2.
@@ -371,7 +371,7 @@ The revision number links will take you to the revision's page on GitHub. On[Git
   * Fix nondeterministic failure of innodb.table\_flags
 * [Revision #b429e8cada](https://github.com/MariaDB/server/commit/b429e8cada)\
   2017-09-06 16:29:58 +0300
-  * Mariabackup: Detach the threads at exit
+  * mariadb-backup: Detach the threads at exit
 * [Revision #2b387855df](https://github.com/MariaDB/server/commit/2b387855df)\
   2017-09-06 17:20:31 +0200
   * [MDEV-13523](https://jira.mariadb.org/browse/MDEV-13523): Group By in a View, called within a Stored Routine causes Error Code 1356 when a non-root user runs the routine for a second time
@@ -490,7 +490,7 @@ The revision number links will take you to the revision's page on GitHub. On[Git
   * [MDEV-13570](https://jira.mariadb.org/browse/MDEV-13570) Assertion failure !srv\_read\_only\_mode in --innodb-read-only shutdown when buf\_resize\_thread is active
 * [Revision #8a3e2970ad](https://github.com/MariaDB/server/commit/8a3e2970ad)\
   2017-08-18 14:42:18 +0300
-  * [MDEV-13575](https://jira.mariadb.org/browse/MDEV-13575) On failure, Mariabackup --backup --safe-slave-backup may forget to START SLAVE SQL\_THREAD
+  * [MDEV-13575](https://jira.mariadb.org/browse/MDEV-13575) On failure, mariadb-backup --backup --safe-slave-backup may forget to START SLAVE SQL\_THREAD
 * [Revision #72ac85cdda](https://github.com/MariaDB/server/commit/72ac85cdda)\
   2017-08-18 12:51:28 -0400
   * bump the VERSION
@@ -499,7 +499,7 @@ The revision number links will take you to the revision's page on GitHub. On[Git
   * [MDEV-13754](https://jira.mariadb.org/browse/MDEV-13754) Memory leak in mariabackup.incremental\_backup
 * [Revision #74ce0cf148](https://github.com/MariaDB/server/commit/74ce0cf148)\
   2017-08-18 10:00:56 +0300
-  * [MDEV-13574](https://jira.mariadb.org/browse/MDEV-13574) related Mariabackup code cleanup (non-functional change)
+  * [MDEV-13574](https://jira.mariadb.org/browse/MDEV-13574) related mariadb-backup code cleanup (non-functional change)
 * [Revision #e9e051d297](https://github.com/MariaDB/server/commit/e9e051d297)\
   2017-08-18 08:52:41 +0300
   * Follow-up fix to [MDEV-12988](https://jira.mariadb.org/browse/MDEV-12988) backup fails if innodb\_undo\_tablespaces>0

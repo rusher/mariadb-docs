@@ -1,8 +1,8 @@
-# How Mariabackup Works
+# How mariadb-backup Works
 
-This is a description of the different stages in Mariabackup, what they do and why they are needed.
+This is a description of the different stages in mariadb-backup, what they do and why they are needed.
 
-Note that a few items are marked with `TODO`; these are things we are working on and will be in next version of Mariabackup.
+Note that a few items are marked with `TODO`; these are things we are working on and will be in next version of mariadb-backup.
 
 ## Execution Stages
 
@@ -20,11 +20,11 @@ For each affected table
 SELECT 1 from <table> LIMIT 0
 ```
 
-* If lock-ddl-per-table is not done, then Mariabackup would have to know all tables that were created or altered during the backup. See [MDEV-16791](https://jira.mariadb.org/browse/MDEV-16791).
+* If lock-ddl-per-table is not done, then mariadb-backup would have to know all tables that were created or altered during the backup. See [MDEV-16791](https://jira.mariadb.org/browse/MDEV-16791).
 
 ### Redo Log Handling
 
-Start a dedicated thread in Mariabackup to copy InnoDB redo log (`ib_logfile*`).
+Start a dedicated thread in mariadb-backup to copy InnoDB redo log (`ib_logfile*`).
 
 * This is needed to record all changes done while the backup is running. (The redo log logically is a single circular file, split into [innodb\_log\_files\_in\_group](../../storage-engines/innodb/innodb-system-variables.md) files.)
 * The log is also used to see detect if any truncate or online alter tables are used.
@@ -32,7 +32,7 @@ Start a dedicated thread in Mariabackup to copy InnoDB redo log (`ib_logfile*`).
 
 ### Copy-phase for InnoDB Tablespaces
 
-* Copy all selected tablespaces, file by file, in dedicated threads in Mariabackup without involving the mysqld server.
+* Copy all selected tablespaces, file by file, in dedicated threads in mariadb-backup without involving the mysqld server.
 * This is special “careful” copy, it looks for page-level consistency by checking the checksum.
 * The files are not point-in-time consistent as data may change during copy.
 * The idea is that InnoDB recovery would make it point-in-time consistent.

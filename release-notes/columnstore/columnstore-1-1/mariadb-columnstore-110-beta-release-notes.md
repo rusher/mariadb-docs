@@ -16,7 +16,7 @@ For an overview of [MariaDB ColumnStore](https://github.com/mariadb-corporation/
 2. The Window functions have been re-implemented with MariaDB Server 10.2.8 code.
 3. [MariaDB ColumnStore Data API to programmatically load data into PM nodes](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/columnstore/columnstore-1-1/broken-reference/README.md).
 4. Text and Blob Data Types.
-5. [User defined distributed aggregate and window functions.](https://app.gitbook.com/s/rBEU9juWLfTDcdwF3Q14/sql-commands/columnstore-user-defined-aggregate-and-window-functions)
+5. [User defined distributed aggregate and window functions.](https://app.gitbook.com/s/rBEU9juWLfTDcdwF3Q14/reference/columnstore-user-defined-aggregate-and-window-functions)
 6. [ColumnStore Backup/Restore Tool](https://app.gitbook.com/s/rBEU9juWLfTDcdwF3Q14/management/columnstore-system/mariadb-columnstore-backup-and-restore/backup-and-restore-for-mariadb-columnstore-110-onwards).
 7. MariaDB Server [Audit Plugin Integration](https://app.gitbook.com/s/rBEU9juWLfTDcdwF3Q14/management/columnstore-system/columnstore-audit-plugin).
 8. Built-in data redundancy using GlusterFS integration for installations that use local disks for data storage on PMs. Please refer to [Preparing ColumnStore Installation](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/columnstore/columnstore-1-1/broken-reference/README.md) for using GlusterFS with MariaDB ColumnStore.

@@ -108,7 +108,7 @@ Aria follows the same [release criteria](https://app.gitbook.com/s/aEnK0ZXmUbJzq
 
 Aria 1.0 was basically a crash-safe non-transactional version of MyISAM. Aria 1.5 added more concurrency (multiple inserter) and some optimizations.
 
-Aria supports all aspects of MyISAM, except as noted below. This includes external and internal check/repair/compressing of rows, different row formats, different index compress formats, `[aria_chk](../../../clients-and-utilities/aria-clients-and-utilities/aria_chk.md)` etc. After a normal shutdown you can copy Aria files between servers.
+Aria supports all aspects of MyISAM, except as noted below. This includes external and internal check/repair/compressing of rows, different row formats, different index compress formats, [aria_chk](../../../clients-and-utilities/aria-clients-and-utilities/aria_chk.md) etc. After a normal shutdown you can copy Aria files between servers.
 
 ### Advantages of Aria compared to MyISAM
 

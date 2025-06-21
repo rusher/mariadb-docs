@@ -18,7 +18,7 @@ Before this change, a non-minus-one system variable value would override the tab
   * `0` Normal Mode. Uses a counter that Spider gets from the remote backend server with an exclusive lock for the auto-increment value. This mode is slow. Use Quick Mode (`2`), if you use Spider tables with the table partitioning feature and the auto-increment column is the first column of the index.
   * `1` Quick Mode. Uses an internal Spider counter for the auto-increment value. This mode is fast, but it is possible for duplicates to occur when updating the same table from multiple Spider proxies.
   * `2` Set Zero Mode. The auto-increment value is given by the remote backend. Sets the column to `0`, even if you set the value to the auto-increment column in your statement. If you use the table with the table partitioning feature, it sets to zero after choosing an inserted partition.
-  * `3` When the auto-increment column is set to `NULL`, the value is given by the remote backend server. If you set the auto-increment column to `0`,the value is given by the local server. Set [spider\_reset\_auto\_incremnet](spider-system-variables.md#spider_reset_auto_increment) to `2` or `3` if you want to use an auto-increment column on the remote server.
+  * `3` When the auto-increment column is set to `NULL`, the value is given by the remote backend server. If you set the auto-increment column to `0`,the value is given by the local server. Set [spider\_reset\_auto\_increment](spider-system-variables.md#spider_reset_auto_increment) to `2` or `3` if you want to use an auto-increment column on the remote server.
 * Scope: Global, Session
 * Dynamic: Yes
 * Data Type: `numeric`
@@ -554,7 +554,7 @@ Before this change, a non-minus-one system variable value would override the tab
 
 #### `spider_internal_optimize_local`
 
-* Description: Whether to transmit to remote servers when [OPTIMIZE TABLE](https://mariadb.com/kb/en/optimize_table) statements are executed on the local server.
+* Description: Whether to transmit to remote servers when [OPTIMIZE TABLE](../../../ha-and-performance/optimization-and-tuning/optimizing-tables/optimize-table.md) statements are executed on the local server.
   * `-1` Falls back to the default value, if the [table parameter](spider-table-parameters.md) is not set.
   * `0` Not transmitted.
   * `1` Transmitted.

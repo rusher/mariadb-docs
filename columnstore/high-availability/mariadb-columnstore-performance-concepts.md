@@ -50,7 +50,7 @@ For string types an important threshold is char(9) and varchar(8) or greater. Ea
 
 In a row based system adding redundant columns adds to the overall query cost but in a columnar system a cost is only occurred if the column is referenced. Therefore additional columns should be created to support different access paths. For instance store a leading portion of a field in one column to allow for faster lookups but additionally store the long form value as another column. Scans on a shorter code or leading portion column will be faster.
 
-ColumnStore will distribute function application across PM nodes for greater performance but this requires a distributed implementation of the function in addition to the MariaDB server implementation. See [Distributed Functions](../sql-commands/columnstore-distributed-functions.md) for the full list.
+ColumnStore will distribute function application across PM nodes for greater performance but this requires a distributed implementation of the function in addition to the MariaDB server implementation. See [Distributed Functions](../reference/columnstore-distributed-functions.md) for the full list.
 
 ### Joins
 

@@ -21,7 +21,7 @@ details of the revision and view diffs of the code modified in that revision.
   * Disable valgrind for rpl\_start\_alter\_restart\_master
 * [Revision #e00d77c60c](https://github.com/MariaDB/server/commit/e00d77c60c)\
   2022-10-17 17:05:26 +0300
-  * [MDEV-28772](https://jira.mariadb.org/browse/MDEV-28772) Mariabackup locks database for minutes since 10.8.3
+  * [MDEV-28772](https://jira.mariadb.org/browse/MDEV-28772) mariadb-backup locks database for minutes since 10.8.3
 * Merge [Revision #f3fddc1b4a](https://github.com/MariaDB/server/commit/f3fddc1b4a) 2022-10-17 08:44:12 +0200 - Merge branch '10.7' into 10.8
 * Merge [Revision #851b31bcc4](https://github.com/MariaDB/server/commit/851b31bcc4) 2022-10-17 08:43:55 +0200 - Merge branch 'bb-10.8-vp-[MDEV-27691](https://jira.mariadb.org/browse/MDEV-27691)' into 10.8
 * [Revision #a4234f0410](https://github.com/MariaDB/server/commit/a4234f0410)\
