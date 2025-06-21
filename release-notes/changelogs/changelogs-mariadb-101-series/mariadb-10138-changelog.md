@@ -166,7 +166,7 @@ details of the revision and view diffs of the code modified in that revision.
 * Merge [Revision #aeefd26ecb](https://github.com/MariaDB/server/commit/aeefd26ecb) 2018-12-29 23:44:45 +0100 - Merge branch '10.0' into 10.1
 * [Revision #50c9469be8](https://github.com/MariaDB/server/commit/50c9469be8)\
   2018-12-29 22:59:20 +0200
-  * [MDEV-18105](https://jira.mariadb.org/browse/MDEV-18105) Mariabackup fails to copy encrypted InnoDB system tablespace if LSN>4G
+  * [MDEV-18105](https://jira.mariadb.org/browse/MDEV-18105) mariadb-backup fails to copy encrypted InnoDB system tablespace if LSN>4G
 * [Revision #68143c8905](https://github.com/MariaDB/server/commit/68143c8905)\
   2018-12-29 10:57:26 +0200
   * [MDEV-17470](https://jira.mariadb.org/browse/MDEV-17470): Fix the test for --embedded
@@ -199,7 +199,7 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-18025](https://jira.mariadb.org/browse/MDEV-18025): Apply the fix to XtraDB and adjust tests
 * [Revision #171271edf8](https://github.com/MariaDB/server/commit/171271edf8)\
   2018-12-18 18:07:17 +0530
-  * [MDEV-18025](https://jira.mariadb.org/browse/MDEV-18025) Mariabackup fails to detect corrupted page\_compressed=1 tables
+  * [MDEV-18025](https://jira.mariadb.org/browse/MDEV-18025) mariadb-backup fails to detect corrupted page\_compressed=1 tables
 * [Revision #84f119f25c](https://github.com/MariaDB/server/commit/84f119f25c)\
   2018-12-18 09:52:28 +0200
   * [MDEV-12112](https://jira.mariadb.org/browse/MDEV-12112)/[MDEV-12114](https://jira.mariadb.org/browse/MDEV-12114): Relax strict\_innodb, strict\_none

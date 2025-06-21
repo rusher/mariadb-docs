@@ -51,6 +51,6 @@ layout:
 [tutorials.md](tutorials.md)
 {% endcontent-ref %}
 
-{% content-ref url="sql-commands/" %}
-[sql-commands](sql-commands/)
+{% content-ref url="reference/" %}
+[reference](reference/)
 {% endcontent-ref %}

@@ -63,7 +63,7 @@ I hope to publish the pre-8.0 code soon; 8.0 code later.
 ## See also
 
 
-Rick James graciously allowed us to use this article in the Knowledge Base.
+Rick James graciously allowed us to use this article in the documentation.
 
 
 [Rick James' site](https://mysql.rjweb.org/) has other useful tips, how-tos,

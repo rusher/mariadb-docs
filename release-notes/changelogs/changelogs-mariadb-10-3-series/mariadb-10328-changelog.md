@@ -185,7 +185,7 @@ details of the revision and view diffs of the code modified in that revision.
   * Fixing compile failure on kvm full-text
 * [Revision #e30a05f454](https://github.com/MariaDB/server/commit/e30a05f454)\
   2020-12-01 18:15:53 +0300
-  * [MDEV-22929](https://jira.mariadb.org/browse/MDEV-22929) MariaBackup option to report and/or continue when corruption is encountered
+  * [MDEV-22929](https://jira.mariadb.org/browse/MDEV-22929) mariadb-backup option to report and/or continue when corruption is encountered
 * [Revision #7edfed6305](https://github.com/MariaDB/server/commit/7edfed6305)\
   2020-12-01 16:23:28 +0200
   * After merge fixes

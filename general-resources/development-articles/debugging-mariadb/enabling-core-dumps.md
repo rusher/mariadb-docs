@@ -4,7 +4,7 @@
 
 Core dumps are enabled by default on **Windows**, so **this step can be skipped on Windows** in those versions. See [MDEV-18439](https://jira.mariadb.org/browse/MDEV-18439) for more information.
 
-In order to enable core dumps, you need to set the `[core_file](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables#core_file)` system variable either on the command-line or in a relevant server [option group](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files#option-groups) in an [option file](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files). For example:
+In order to enable core dumps, you need to set the [core_file](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables#core_file) system variable either on the command-line or in a relevant server [option group](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files#option-groups) in an [option file](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files). For example:
 
 ```
 [mariadb]
@@ -48,7 +48,7 @@ The resource limits for the `mariadbd` process are printed to the [error log](ht
 
 #### Running mariadbd Using mysqld\_safe
 
-If you are starting MariaDB by running `[mysqld_safe](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/legacy-clients-and-utilities/mariadbd_safe)`, then configuring the following in the `[mysqld_safe]` option group in an option file should allow for unlimited sized core files:
+If you are starting MariaDB by running [mysqld_safe](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/legacy-clients-and-utilities/mariadbd_safe), then configuring the following in the `[mysqld_safe]` option group in an option file should allow for unlimited sized core files:
 
 ```
 [mysqld_safe]
@@ -64,7 +64,7 @@ my_print_defaults mysqld_safe
 
 See [mysqld\_safe: Configuring the Core File Size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/legacy-clients-and-utilities/mariadbd_safe) for more details.
 
-**Note:** If you are using `[mysqld_safe](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/legacy-clients-and-utilities/mariadbd_safe)` and running `mariadbd` as the `root` user, then no\
+**Note:** If you are using [mysqld_safe](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/legacy-clients-and-utilities/mariadbd_safe) and running `mariadbd` as the `root` user, then no\
 core file is created on some systems. The solution is to run `mariadbd` as another user.
 
 #### Running mariadbd Manually
@@ -77,7 +77,7 @@ ulimit -c unlimited
 
 #### Running mariadbd Using systemd
 
-If you are starting `mariadbd` using `[systemd](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/systemd)`, then you may need to customize the MariaDB service to allow for unlimited size core files. For example, you could execute the following:
+If you are starting `mariadbd` using [systemd](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/systemd), then you may need to customize the MariaDB service to allow for unlimited size core files. For example, you could execute the following:
 
 Using `sudo systemctl edit mariadb.service` add the contents:
 
@@ -97,7 +97,7 @@ Also see [Container with Debug Symbols](how-to-produce-a-full-stack-trace-for-ma
 
 #### Changing the System-Wide Limit
 
-If you want to change the system-wide limit to allow for unlimited size core files for for the `mysql` user account, then you can do so by adding the following lines to a file in `[/etc/security/limits.d/](https://linux.die.net/man/5/limits.conf)`. For example:
+If you want to change the system-wide limit to allow for unlimited size core files for for the `mysql` user account, then you can do so by adding the following lines to a file in [/etc/security/limits.d/](https://linux.die.net/man/5/limits.conf). For example:
 
 ```
 sudo tee /etc/security/limits.d/mariadb_core.conf <<EOF
@@ -127,7 +127,7 @@ sudo sysctl kernel.core_pattern=core.%p kernel.core_uses_pid=0
 ```
 
 If you are using a production system, you probably want to have the core files in a specific directory,\
-not in the data directory. They place to store cores can be temporarily altered using the `[sysctl](https://linux.die.net/man/8/sysctl)` utility, but it is often more common to alter them via the `[/proc](https://linux.die.net/man/5/proc)` file system. See the following example:
+not in the data directory. They place to store cores can be temporarily altered using the [sysctl](https://linux.die.net/man/8/sysctl) utility, but it is often more common to alter them via the [/proc](https://linux.die.net/man/5/proc) file system. See the following example:
 
 ```
 sudo mkdir /tmp/corefiles
@@ -138,7 +138,7 @@ sudo sysctl kernel.core_uses_pid=1
 
 The above commands will tell the system to put core files in `/tmp/corefiles`, and it also tells the system to put the process ID in the file name.
 
-If you want to make these changes permanent, then you can add the following to a file in `[/etc/sysctl.conf.d/](https://linux.die.net/man/5/sysctl.conf)`. For example:
+If you want to make these changes permanent, then you can add the following to a file in [/etc/sysctl.conf.d/](https://linux.die.net/man/5/sysctl.conf). For example:
 
 ```
 sudo tee /etc/sysctl.d/mariadb_core.conf <<EOF
@@ -147,7 +147,7 @@ kernel.core_uses_pid=1
 EOF
 ```
 
-Note: if you are using containers, the pid is always going to be 1, so this may not be a useful setting. Appending an identifier like %t to the `[kernel.core_pattern](https://www.kernel.org/doc/html/latest/admin-guide/sysctl/kernel.html#core-pattern)` will generate more unique files.
+Note: if you are using containers, the pid is always going to be 1, so this may not be a useful setting. Appending an identifier like %t to the [kernel.core_pattern](https://www.kernel.org/doc/html/latest/admin-guide/sysctl/kernel.html#core-pattern) will generate more unique files.
 
 The value of `kernel.core_pattern` is printed to the [error log](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/server-monitoring-logs/error-log) when the `mariadbd` process crashes. That way, users can determine where the process may have dumped a core file. See [MDEV-15051](https://jira.mariadb.org/browse/MDEV-15051) for more information.
 
@@ -155,7 +155,7 @@ The value of `kernel.core_pattern` is printed to the [error log](https://app.git
 
 #### Extracting Linux core dumps with systemd-coredump
 
-Core dump management can be automated using `[systemd](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/systemd)`, which then centrally manages all core dump files and provides information about detected core dumps and access to collected core files using the `[coredumpctl](https://www.freedesktop.org/software/systemd/man/coredumpctl.html)` utility.
+Core dump management can be automated using [systemd](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/systemd), which then centrally manages all core dump files and provides information about detected core dumps and access to collected core files using the [coredumpctl](https://www.freedesktop.org/software/systemd/man/coredumpctl.html) utility.
 
 This is enabled per default on Red Hat Enterprise Linux 8 and CentOS 8, and maybe other contemporary Linux distribution releases by now, too. It can be easily checked for by looking at the `kernel.core_pattern setting`. If it looks like this systemd-coredump is enabled:
 
@@ -200,25 +200,25 @@ So far none of the long term support Linux distribution releases have a new enou
 
 ### Core Dumps and setuid on Linux
 
-Since `mariadbd` executes `[setuid](https://linux.die.net/man/2/setuid)`, you may have to set `fs.suid_dumpable=2` to allow core dumps on Linux. You can check the current `fs.suid_dumpable` value by using the `[sysctl](https://linux.die.net/man/8/sysctl)` utility. For example:
+Since `mariadbd` executes [setuid](https://linux.die.net/man/2/setuid), you may have to set `fs.suid_dumpable=2` to allow core dumps on Linux. You can check the current `fs.suid_dumpable` value by using the [sysctl](https://linux.die.net/man/8/sysctl) utility. For example:
 
 ```
 sysctl fs.suid_dumpable
 ```
 
-You can temporarily set it to `2` by using the `[sysctl](https://linux.die.net/man/8/sysctl)` utility. For example:
+You can temporarily set it to `2` by using the [sysctl](https://linux.die.net/man/8/sysctl) utility. For example:
 
 ```
 sudo sysctl -w fs.suid_dumpable=2
 ```
 
-Or you can temporarily set it to `2` by writing to the `[/proc](https://linux.die.net/man/5/proc)` file system. For example:
+Or you can temporarily set it to `2` by writing to the [/proc](https://linux.die.net/man/5/proc) file system. For example:
 
 ```
 sudo echo 2 > /proc/sys/fs/suid_dumpable
 ```
 
-If you want to permanently set it to `2` then you can add the following to a file in `[/etc/sysctl.conf.d/](https://linux.die.net/man/5/sysctl.conf)`:
+If you want to permanently set it to `2` then you can add the following to a file in [/etc/sysctl.conf.d/](https://linux.die.net/man/5/sysctl.conf):
 
 ```
 sudo tee /etc/sysctl.d/mariadb_fs_suid_dumpable.conf <<EOF
@@ -226,7 +226,7 @@ fs.suid_dumpable=2
 EOF
 ```
 
-**Note:** If you don't want to change `fs.suid_dumpable`, then another solution is to start `mariadbd` directly as the `mysql` user, so that the `[setuid](https://linux.die.net/man/2/setuid)` call is not needed.
+**Note:** If you don't want to change `fs.suid_dumpable`, then another solution is to start `mariadbd` directly as the `mysql` user, so that the [setuid](https://linux.die.net/man/2/setuid) call is not needed.
 
 ### Forcing a Core File on Linux
 
@@ -240,13 +240,13 @@ This will store a core dump in `filename.pid` where pid is the process ID of `ma
 
 Another method is to force a core file for `mariadbd` by sending the process the `sigabrt` signal, which has the signal code `6`. This is very useful to get the state of the unresponsive `mariadbd` process. However, this will cause `mariadbd` to crash, and crash recovery will be run on restart.
 
-You can send the signal with the `[kill](https://linux.die.net/man/1/kill)` command. For example:
+You can send the signal with the [kill](https://linux.die.net/man/1/kill) command. For example:
 
 ```
 sudo kill -6 $(pidof mariadbd)
 ```
 
-As an alternative to `$(pidof mariadbd)`, you can find the process ID either by using the `[ps](https://linux.die.net/man/1/ps)` utility or by checking the file defined by the `[pid_file](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables#pid_file)` system variable.
+As an alternative to `$(pidof mariadbd)`, you can find the process ID either by using the [ps](https://linux.die.net/man/1/ps) utility or by checking the file defined by the [pid_file](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables#pid_file) system variable.
 
 ## Core Files on Windows
 

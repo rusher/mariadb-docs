@@ -1,6 +1,6 @@
 # Information Schema REFERENTIAL\_CONSTRAINTS Table
 
-The [Information Schema](../) `REFERENTIAL_CONSTRAINTS` table contains information about [foreign keys](../../../../../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/foreign-keys.md). The single columns are listed in the `[KEY_COLUMN_USAGE](information-schema-key_column_usage-table.md)` table.
+The [Information Schema](../) `REFERENTIAL_CONSTRAINTS` table contains information about [foreign keys](../../../../../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/foreign-keys.md). The single columns are listed in the [KEY_COLUMN_USAGE](information-schema-key_column_usage-table.md) table.
 
 It has the following columns:
 

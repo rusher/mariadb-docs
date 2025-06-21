@@ -29,8 +29,8 @@ By default, with row-based replication, triggers run on the master, and the effe
 
 If the following criteria are met, then there are some limitations on whether stored routines can be created:
 
-* The [binary log](../../server-management/server-monitoring-logs/binary-log/) is enabled, and the `[binlog_format](../../replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md#binlog_format)` system variable is set to `STATEMENT`. See [Binary Log Formats](../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md) for more information.
-* The `[log_bin_trust_function_creators](../../replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md#log_bin_trust_function_creators)` is set to `OFF`, which is the default value.
+* The [binary log](../../server-management/server-monitoring-logs/binary-log/) is enabled, and the [binlog_format](../../replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md#binlog_format) system variable is set to `STATEMENT`. See [Binary Log Formats](../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md) for more information.
+* The [log_bin_trust_function_creators](../../replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md#log_bin_trust_function_creators) is set to `OFF`, which is the default value.
 
 If the above criteria are met, then the following limitations apply:
 

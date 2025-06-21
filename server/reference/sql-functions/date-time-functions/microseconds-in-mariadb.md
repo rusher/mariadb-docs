@@ -40,7 +40,7 @@ SELECT STR_TO_DATE('20200809 020917076','%Y%m%d %H%i%s%f');
 
 ## Additional Information
 
-* when comparing anything to a temporal value (`DATETIME`, `TIME`, `[DATE](../../../../data-types/date-and-time-data-types/date.md)`, or `TIMESTAMP`), both values are compared as temporal values, not as strings.
+* when comparing anything to a temporal value (`DATETIME`, `TIME`, [DATE](../../../../data-types/date-and-time-data-types/date.md), or `TIMESTAMP`), both values are compared as temporal values, not as strings.
 * The [INFORMATION\_SCHEMA.COLUMNS table](../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-columns-table.md) has a new column `DATETIME_PRECISION`
 * [NOW()](now.md), [CURTIME()](curtime.md), [UTC\_TIMESTAMP()](utc_timestamp.md), [UTC\_TIME()](utc_time.md), [CURRENT\_TIME()](current_time.md), [CURRENT\_TIMESTAMP()](current_timestamp.md), [LOCALTIME()](localtime.md) and [LOCALTIMESTAMP()](localtimestamp.md) now accept datetime precision as an optional argument. For example:
 
@@ -76,7 +76,7 @@ SELECT TIME('10:10:10') + INTERVAL 100 MICROSECOND;
   2003-04-03).
 * when a `DATETIME` value is compared to a `TIME` value, the latter is treated as a full datetime with a zero date part, similar to comparing `DATE` to a `DATETIME`, or to comparing `DECIMAL` numbers.\
   Earlier versions of MariaDB used to compare only the time part of both operands in such a case.
-* In MariaDB, an extra column `[TIME_MS](../../administrative-sql-statements/system-tables/information-schema/time_ms-column-in-information_schemaprocesslist.md)` has been added to the `[INFORMATION_SCHEMA.PROCESSLIST](../../administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-processlist-table.md)` table, as well as to the output of `[SHOW FULL PROCESSLIST](../../administrative-sql-statements/show/show-processlist.md)`.
+* In MariaDB, an extra column [TIME_MS](../../administrative-sql-statements/system-tables/information-schema/time_ms-column-in-information_schemaprocesslist.md) has been added to the [INFORMATION_SCHEMA.PROCESSLIST](../../administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-processlist-table.md) table, as well as to the output of [SHOW FULL PROCESSLIST](../../administrative-sql-statements/show/show-processlist.md).
 
 **Note:** When you convert a temporal value to a value with a smaller\
 precision, it will be truncated, not rounded. This is done to guarantee that the date part is not\

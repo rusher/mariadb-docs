@@ -759,7 +759,7 @@ details of the revision and view diffs of the code modified in that revision.
   * Follow-up fix to [MDEV-15132](https://jira.mariadb.org/browse/MDEV-15132) Avoid accessing the TRX\_SYS page
 * [Revision #7eb084fe2c](https://github.com/MariaDB/server/commit/7eb084fe2c)\
   2018-01-30 13:48:45 +1100
-  * MariaBackup: gcc7 - snprintf output overflow warning
+  * mariadb-backup: gcc7 - snprintf output overflow warning
 * [Revision #464ba0e97f](https://github.com/MariaDB/server/commit/464ba0e97f)\
   2018-01-30 13:40:52 +1100
   * versioning: add explict fallthough to prevent gcc warning

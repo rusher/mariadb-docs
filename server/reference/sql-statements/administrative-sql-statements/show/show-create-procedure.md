@@ -25,7 +25,7 @@ When none of the above statements are true, the statements display `NULL` for th
 
 ## Examples
 
-Here's a comparison of the `SHOW CREATE PROCEDURE` and `[SHOW CREATE FUNCTION](show-create-function.md)` statements.
+Here's a comparison of the `SHOW CREATE PROCEDURE` and [SHOW CREATE FUNCTION](show-create-function.md) statements.
 
 ```
 SHOW CREATE PROCEDURE test.simpleproc\G
@@ -52,7 +52,7 @@ collation_connection: latin1_swedish_ci
   Database Collation: latin1_swedish_ci
 ```
 
-When the user issuing the statement does not have privileges on the routine, attempting to `[CALL](../../stored-routine-statements/call.md)` the procedure raises Error 1370.
+When the user issuing the statement does not have privileges on the routine, attempting to [CALL](../../stored-routine-statements/call.md) the procedure raises Error 1370.
 
 ```
 CALL test.prc1();

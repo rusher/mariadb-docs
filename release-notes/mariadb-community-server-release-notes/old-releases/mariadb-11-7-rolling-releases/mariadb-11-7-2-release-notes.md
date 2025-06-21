@@ -149,7 +149,7 @@ information on each push, see the [changelog](../../../changelogs/changelogs-mar
 
 ## Contributors
 
-For a full list of contributors to [MariaDB 11.7.2](mariadb-11-7-2-release-notes.md), see the [MariaDB Foundation release announcement](https://mariadb.com/kb/en/For_a_full_list_of_contributors_to_MariaDB_11.8.1%2C_see_the_\[\[https%3A/mariadb.org/mariadb-11-7-2-and-mariadb-11-8-1-now-available/).|MariaDB Foundation release announcement]].
+For a full list of contributors to [MariaDB 11.7.2](mariadb-11-7-2-release-notes.md), see the [MariaDB Foundation release announcement](https://mariadb.org/mariadb-11-7-2-and-mariadb-11-8-1-now-available/).
 
 Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
 

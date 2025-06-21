@@ -35,7 +35,7 @@ Thanks, and enjoy MariaDB!
 
 * Error messages now use "MariaDB" instead of "MySQL" ([MDEV-22189](https://jira.mariadb.org/browse/MDEV-22189))
 * Implement `FLUSH TABLES tbl_name [, tbl_name] ... WITH READ LOCK` for views ([MDEV-15888](https://jira.mariadb.org/browse/MDEV-15888))
-* All statements can be prepared, except `[PREPARE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/prepared-statements/prepare-statement)`, `[EXECUTE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/prepared-statements/execute-statement)`, and `[DEALLOCATE / DROP PREPARE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/prepared-statements/deallocate-drop-prepare)` ([MDEV-16708](https://jira.mariadb.org/browse/MDEV-16708))
+* All statements can be prepared, except [PREPARE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/prepared-statements/prepare-statement), [EXECUTE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/prepared-statements/execute-statement), and [DEALLOCATE / DROP PREPARE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/prepared-statements/deallocate-drop-prepare) ([MDEV-16708](https://jira.mariadb.org/browse/MDEV-16708))
 
 ## Changelog
 

@@ -36,7 +36,7 @@ SHOW VARIABLES LIKE 'mysql56_temporal_format';
 ALTER TABLE example_table MODIFY ts_col TIME;
 ```
 
-When MariaDB executes the `[ALTER TABLE](../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md)` statement, it converts the data from the older temporal format to the newer one.
+When MariaDB executes the [ALTER TABLE](../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md) statement, it converts the data from the older temporal format to the newer one.
 
 In the event that you have several tables and columns using temporal data types that you want to switch over to the new format, make sure the system variable is enabled, then perform a dump and restore using `mariadb-dump`. The columns using relevant temporal data types are restored using the new temporal format.
 

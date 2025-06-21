@@ -27,7 +27,7 @@ Connector/C, formerly known as MariaDB Client Library for C.
 ## Changelog
 
 For a list of changes made in this release, with links to detailed information\
-on each push, see the [changelog](https://mariadb.com/kb/en/mariadb-connector-c-341-changelog).
+on each push, see the [changelog](../changelogs/mariadb-connectorc-3-4-changelogs/mariadb-connector-c-3-4-1-changelog.md).
 
 Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
 

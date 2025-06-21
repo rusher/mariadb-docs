@@ -487,33 +487,33 @@ Note that before Galera 3, the `repl` tag was named `replicator`.
 
 #### `socket.ssl_ca`
 
-* Description: Path to Certificate Authority (CA) file. Implicitly enables the `[socket.ssl](#socket.ssl)` option.
+* Description: Path to Certificate Authority (CA) file. Implicitly enables the [socket.ssl](#socket.ssl) option.
 * Dynamic: No
 
 #### `socket.ssl_cert`
 
-* Description: Path to TLS certificate. Implicitly enables the `[socket.ssl](#socket.ssl)` option.
+* Description: Path to TLS certificate. Implicitly enables the [socket.ssl](#socket.ssl) option.
 * Dynamic: No
 
 #### `socket.ssl_cipher`
 
-* Description: TLS cipher to use. Implicitly enables the `[socket.ssl](#socket.ssl)` option. Since [MariaDB 10.2.18](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-10218-release-notes) defaults to the value of the `[ssl_cipher](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/ssltls-system-variables#ssl_cipher)` system variable.
+* Description: TLS cipher to use. Implicitly enables the [socket.ssl](#socket.ssl) option. Since [MariaDB 10.2.18](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-10218-release-notes) defaults to the value of the [ssl_cipher](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/ssltls-system-variables#ssl_cipher) system variable.
 * Dynamic: No
 * Default: system default, before [MariaDB 10.2.18](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-10218-release-notes) defaults to `AES128-SHA`.
 
 #### `socket.ssl_compression`
 
-* Description: Compression to use on TLS connections. Implicitly enables the `[socket.ssl](#socket.ssl)` option.
+* Description: Compression to use on TLS connections. Implicitly enables the [socket.ssl](#socket.ssl) option.
 * Dynamic: No
 
 #### `socket.ssl_key`
 
-* Description: Path to TLS key file. Implicitly enables the `[socket.ssl](#socket.ssl)` option.
+* Description: Path to TLS key file. Implicitly enables the [socket.ssl](#socket.ssl) option.
 * Dynamic: No
 
 #### `socket.ssl_password_file`
 
-* Description: Path to password file to use in TLS connections. Implicitly enables the `[socket.ssl](#socket.ssl)` option.
+* Description: Path to password file to use in TLS connections. Implicitly enables the [socket.ssl](#socket.ssl) option.
 * Dynamic: No
 
 ## See Also

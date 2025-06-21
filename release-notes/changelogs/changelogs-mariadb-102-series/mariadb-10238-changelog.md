@@ -197,7 +197,7 @@ in that revision.
   * [MDEV-25456](https://jira.mariadb.org/browse/MDEV-25456) - fix predicate in ib::error\_or\_warn
 * [Revision #78bb9533f4](https://github.com/MariaDB/server/commit/78bb9533f4)\
   2021-04-22 15:49:00 +0200
-  * [MDEV-25456](https://jira.mariadb.org/browse/MDEV-25456) MariaBackup logs "\[ERROR]" on Invalid log block checksum
+  * [MDEV-25456](https://jira.mariadb.org/browse/MDEV-25456) mariadb-backup logs "\[ERROR]" on Invalid log block checksum
 * [Revision #f6542a7af8](https://github.com/MariaDB/server/commit/f6542a7af8)\
   2021-04-01 23:01:19 +0200
   * Update timezone data on Windows

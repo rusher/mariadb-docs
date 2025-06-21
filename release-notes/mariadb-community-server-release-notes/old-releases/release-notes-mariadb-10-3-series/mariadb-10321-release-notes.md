@@ -24,7 +24,7 @@ Thanks, and enjoy MariaDB!
 
 * [MDEV-13492](https://jira.mariadb.org/browse/MDEV-13492): SEC\_E\_INVALID\_TOKEN when server sends large message during SSL handshake
 
-### Mariabackup
+### mariadb-backup
 
 * [MDEV-18310](https://jira.mariadb.org/browse/MDEV-18310): Aria engine: Undo phase failed from incremental backup
 
@@ -63,7 +63,7 @@ Thanks, and enjoy MariaDB!
   * CVE-\`-\`\`\`
 
 When upgrading from [MariaDB 10.3.8](mariadb-1038-release-notes.md) or earlier to [MariaDB 10.3.9](mariadb-1039-release-notes.md) or higher,\
-running `[mysql_upgrade](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/legacy-clients-and-utilities/mysql_upgrade)` is **required** due to changes introduced in[MDEV-14637](https://jira.mariadb.org/browse/MDEV-14637).
+running [mysql_upgrade](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/legacy-clients-and-utilities/mysql_upgrade) is **required** due to changes introduced in[MDEV-14637](https://jira.mariadb.org/browse/MDEV-14637).
 
 ## Changelog
 

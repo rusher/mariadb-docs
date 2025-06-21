@@ -126,7 +126,7 @@ bytes are in the record, the rest is in some other block. So, it may (or may\
 not) be worth putting the tables back together. Caution: An InnoDB row is\
 limited to 8KB, and the 767 counts against that.
 
-_Fact._ FULLTEXT (prior to [MariaDB 10.0.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-1005-release-notes)) and SPATIAL indexes are not available in InnoDB. Note that MyISAM and InnoDB [FULLTEXT indexes](../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/full-text-indexes/) use different [stopword](https://mariadb.com/kb/en/stopword) lists and different system variables.
+_Fact._ FULLTEXT (prior to [MariaDB 10.0.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-1005-release-notes)) and SPATIAL indexes are not available in InnoDB. Note that MyISAM and InnoDB [FULLTEXT indexes](../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/full-text-indexes/) use different [stopword](../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/full-text-indexes/full-text-index-stopwords.md) lists and different system variables.
 
 _Recommendation._ Search for such indexes. Keep such tables in MyISAM.\
 Better yet, do Vertical Partitioning (see above) to split out the minimum\
@@ -270,7 +270,7 @@ PARTITINOs, when it is the first field of the PRIMARY KEY, but not otherwise.
 
 ## See Also
 
-Rick James graciously allowed us to use this article in the Knowledge Base.
+Rick James graciously allowed us to use this article in the documentation.
 
 [Rick James' site](https://mysql.rjweb.org/) has other useful tips, how-tos,\
 optimizations, and debugging tips.

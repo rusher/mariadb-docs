@@ -17,14 +17,14 @@ Patterns may use the following wildcard characters:
 * `_` matches any single character.
 
 Use `NOT LIKE` to test if a string does not match a pattern. This is equivalent to using\
-the `[NOT](../../../operators/logical-operators/not.md)` operator on the entire `LIKE` expression.
+the [NOT](../../../operators/logical-operators/not.md) operator on the entire `LIKE` expression.
 
 If either the expression or the pattern is `NULL`, the result is `NULL`.
 
 `LIKE` performs case-insensitive substring matches if the collation for the\
 expression and pattern is case-insensitive. For case-sensitive matches, declare either argument\
-to use a binary collation using `[collate](https://mariadb.com/kb/en/collate)`, or coerce either of them to a `[BINARY](../../../../data-types/string-data-types/binary.md)`\
-string using `[CAST](cast.md)`. Use `[SHOW COLLATION](../../administrative-sql-statements/show/show-collation.md)` to get a list of\
+to use a binary collation using [collate](https://mariadb.com/kb/en/collate), or coerce either of them to a [BINARY](../../../../data-types/string-data-types/binary.md)\
+string using [CAST](cast.md). Use [SHOW COLLATION](../../administrative-sql-statements/show/show-collation.md) to get a list of\
 available collations. Collations ending in `_bin` are case-sensitive.
 
 Numeric arguments are coerced to binary strings.
@@ -32,7 +32,7 @@ Numeric arguments are coerced to binary strings.
 The `_` wildcard matches a single character, not byte. It will only match a multi-byte character\
 if it is valid in the expression's character set. For example, `_` will match `_utf8"€"`, but it\
 will not match `_latin1"€"` because the Euro sign is not a valid latin1 character. If necessary,\
-use `[CONVERT](convert.md)` to use the expression in a different character set.
+use [CONVERT](convert.md) to use the expression in a different character set.
 
 If you need to match the characters `_` or `%`, you must escape them. By default,\
 you can prefix the wildcard characters the backslash character `\` to escape them.\
@@ -115,7 +115,7 @@ SELECT * FROM t1 where d like "t%";
 +----------+
 ```
 
-Use `[collate](collate)` to specify a binary collation, forcing\
+Use [collate](collate) to specify a binary collation, forcing\
 case-sensitive matches:
 
 ```

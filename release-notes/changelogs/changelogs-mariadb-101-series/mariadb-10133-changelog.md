@@ -115,7 +115,7 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-15779](https://jira.mariadb.org/browse/MDEV-15779) - mariabackup incremental prepare fails on CIFS mount.
 * [Revision #15071226a0](https://github.com/MariaDB/server/commit/15071226a0)\
   2018-04-11 23:07:23 +0100
-  * [MDEV-15780](https://jira.mariadb.org/browse/MDEV-15780) : Mariabackup with absolute paths in innodb\_data\_file\_path
+  * [MDEV-15780](https://jira.mariadb.org/browse/MDEV-15780) : mariadb-backup with absolute paths in innodb\_data\_file\_path
 * [Revision #0ae13b51d7](https://github.com/MariaDB/server/commit/0ae13b51d7)\
   2018-04-12 11:00:48 +0300
   * [MDEV-12632](https://jira.mariadb.org/browse/MDEV-12632): Source and destination overlap in memcpy, encryption.innodb-discard-import-change fails in buildbot with valgrind
@@ -150,7 +150,7 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-15713](https://jira.mariadb.org/browse/MDEV-15713) mariabackup: throw warning, if --stream is used without --backup
 * [Revision #37f24806fc](https://github.com/MariaDB/server/commit/37f24806fc)\
   2018-04-09 16:22:15 +0100
-  * [MDEV-15825](https://jira.mariadb.org/browse/MDEV-15825) Mariabackup help mentions Percona and PXC but not MariaDB
+  * [MDEV-15825](https://jira.mariadb.org/browse/MDEV-15825) mariadb-backup help mentions Percona and PXC but not MariaDB
 * [Revision #8ff897265a](https://github.com/MariaDB/server/commit/8ff897265a)\
   2018-04-09 16:49:41 +0300
   * Update test cases post [MDEV-10286](https://jira.mariadb.org/browse/MDEV-10286)

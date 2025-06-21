@@ -48,7 +48,7 @@ in that revision.
 * Merge [Revision #cf9070a8f7](https://github.com/MariaDB/server/commit/cf9070a8f7) 2018-12-29 23:12:25 +0200 - Merge 10.1 into 10.2
 * [Revision #50c9469be8](https://github.com/MariaDB/server/commit/50c9469be8)\
   2018-12-29 22:59:20 +0200
-  * [MDEV-18105](https://jira.mariadb.org/browse/MDEV-18105) Mariabackup fails to copy encrypted InnoDB system tablespace if LSN>4G
+  * [MDEV-18105](https://jira.mariadb.org/browse/MDEV-18105) mariadb-backup fails to copy encrypted InnoDB system tablespace if LSN>4G
 * Merge [Revision #0b73b96f9d](https://github.com/MariaDB/server/commit/0b73b96f9d) 2018-12-29 11:05:26 +0200 - Merge 10.1 into 10.2
 * [Revision #68143c8905](https://github.com/MariaDB/server/commit/68143c8905)\
   2018-12-29 10:57:26 +0200

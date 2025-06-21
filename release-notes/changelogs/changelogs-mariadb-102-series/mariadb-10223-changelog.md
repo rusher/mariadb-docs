@@ -74,7 +74,7 @@ in that revision.
   * Silence bogus -Wmaybe-uninitialized
 * [Revision #3d1b6f68f1](https://github.com/MariaDB/server/commit/3d1b6f68f1)\
   2019-03-21 08:54:35 +0200
-  * Mariabackup: Ensure NUL termination in strncpy()
+  * mariadb-backup: Ensure NUL termination in strncpy()
 * [Revision #630199e724](https://github.com/MariaDB/server/commit/630199e724)\
   2019-03-20 18:34:49 +0200
   * [MDEV-18981](https://jira.mariadb.org/browse/MDEV-18981) Possible corruption when using FOREIGN KEY with virtual columns
@@ -114,7 +114,7 @@ in that revision.
   * [MDEV-18936](https://jira.mariadb.org/browse/MDEV-18936) Purge thread fails to exit on shutdown
 * [Revision #396cf60ac0](https://github.com/MariaDB/server/commit/396cf60ac0)\
   2019-03-14 16:59:27 +0100
-  * [MDEV-18917](https://jira.mariadb.org/browse/MDEV-18917) Don't create xtrabackup\_binlog\_pos\_innodb with Mariabackup
+  * [MDEV-18917](https://jira.mariadb.org/browse/MDEV-18917) Don't create xtrabackup\_binlog\_pos\_innodb with mariadb-backup
 * [Revision #7ad355dde7](https://github.com/MariaDB/server/commit/7ad355dde7)\
   2019-03-15 09:44:53 +0200
   * [MDEV-18934](https://jira.mariadb.org/browse/MDEV-18934): Document missing mysqldumpslow sort options
@@ -271,7 +271,7 @@ in that revision.
   * Disable regularly failing Galera tests
 * [Revision #d038806dfe](https://github.com/MariaDB/server/commit/d038806dfe)\
   2019-03-08 16:00:08 +0530
-  * [MDEV-18855](https://jira.mariadb.org/browse/MDEV-18855) Mariabackup should fetch innodb\_compression\_level from running server
+  * [MDEV-18855](https://jira.mariadb.org/browse/MDEV-18855) mariadb-backup should fetch innodb\_compression\_level from running server
 * [Revision #bf71d26362](https://github.com/MariaDB/server/commit/bf71d26362)\
   2019-03-08 00:16:40 +0200
   * [MDEV-13818](https://jira.mariadb.org/browse/MDEV-13818) after-merge fix: Extend the test case

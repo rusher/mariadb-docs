@@ -218,7 +218,7 @@ MariaDB Enterprise Server 10.6.18-14 was released on 2024-06-11.
 * ([MDEV-33274](https://jira.mariadb.org/browse/MDEV-33274)) The test encryption.innodb-redo-nokeys often fails
 * ([MDEV-33464](https://jira.mariadb.org/browse/MDEV-33464)) Crash when innodb\_max\_undo\_log\_size is set to innodb\_page\_size\*4294967296
 * ([MDEV-33209](https://jira.mariadb.org/browse/MDEV-33209)) Stack overflow in main.json\_debug\_nonembedded due to incorrect debug injection
-* ([MDEV-18985](https://jira.mariadb.org/browse/MDEV-18985)) Remove support for XtraDB's changed page bitmap from Mariabackup in 10.2+
+* ([MDEV-18985](https://jira.mariadb.org/browse/MDEV-18985)) Remove support for XtraDB's changed page bitmap from mariadb-backup in 10.2+
 * ([MDEV-33251](https://jira.mariadb.org/browse/MDEV-33251)) Redundant check on prebuilt::n\_rows\_fetched overflow
 * ([MDEV-33341](https://jira.mariadb.org/browse/MDEV-33341)) innodb.undo\_space\_dblwr test case fails with Unknown Storage Engine InnoDB
 * ([MDEV-14193](https://jira.mariadb.org/browse/MDEV-14193)) innodb.log\_file\_name failed in buildbot with exception

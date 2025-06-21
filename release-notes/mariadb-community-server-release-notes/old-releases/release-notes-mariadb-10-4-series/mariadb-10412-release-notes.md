@@ -28,7 +28,7 @@ Thanks, and enjoy MariaDB!
 * wolfssl updated to v4.3.0-stable
 * As per the [MariaDB Deprecation Policy](../../../mariadb-platform-deprecation-policy.md), this will be the last release of [MariaDB 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/broken-reference/README.md) for Ubuntu 19.04 Disco
 
-### Mariabackup
+### mariadb-backup
 
 * [MDEV-21255](https://jira.mariadb.org/browse/MDEV-21255): Deadlock of parallel slave and mariabackup (with failed log copy thread)
 

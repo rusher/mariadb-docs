@@ -1,6 +1,6 @@
 # GSSAPI Authentication with MariaDB Connector/J
 
-MariaDB has supported GSSAPI authentication since [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1) when the `[gssapi](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/authentication-plugins/authentication-plugin-gssapi)` authentication plugin was added.
+MariaDB has supported GSSAPI authentication since [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1) when the [gssapi](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/authentication-plugins/authentication-plugin-gssapi) authentication plugin was added.
 
 The following subsections show how to implement GSSAPI Authentication with MariaDB Connector/J.
 
@@ -11,7 +11,7 @@ Support history:
 
 ## General configuration
 
-The `[gssapi](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/authentication-plugins/authentication-plugin-gssapi)` authentication plugin must be installed on the database server. The relevant user account must also be configured to use the plug-in for authentication. For example:
+The [gssapi](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/authentication-plugins/authentication-plugin-gssapi) authentication plugin must be installed on the database server. The relevant user account must also be configured to use the plug-in for authentication. For example:
 
 ```sql
 CREATE USER one IDENTIFIED VIA gssapi AS 'userOne@EXAMPLE.COM';
@@ -23,9 +23,9 @@ And then this user account could be used to connect to the database server with 
 DriverManager.getConnection("jdbc:mariadb://db.example.com:3306/db?user=one");
 ```
 
-Since the user account is configured to use the `[gssapi](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/authentication-plugins/authentication-plugin-gssapi)` authentication plugin on the server, the Java connector will use GSSAPI authentication when connecting.
+Since the user account is configured to use the [gssapi](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/authentication-plugins/authentication-plugin-gssapi) authentication plugin on the server, the Java connector will use GSSAPI authentication when connecting.
 
-The service principal name must be the one defined for the user account on the database server unless a different one is specified with the `[servicePrincipalName](https://mariadb.com/kb/en/about-mariadb-connector-j/#infrequently-used)` parameter in the connection URL.
+The service principal name must be the one defined for the user account on the database server unless a different one is specified with the [servicePrincipalName](https://mariadb.com/kb/en/about-mariadb-connector-j/#infrequently-used) parameter in the connection URL.
 
 Database server will wait for a ticket associated for the principal defined in user ('userOne@EXAMPLE').\
 That mean on client, user must have obtained a TGT beforehand.

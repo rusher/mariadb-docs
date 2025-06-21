@@ -12,7 +12,7 @@ SUBDATE(date,INTERVAL expr unit), SUBDATE(expr,days)
 
 
 When invoked with the `INTERVAL` form of the second argument, `SUBDATE()`
-is a synonym for `[DATE_SUB()](date_sub.md)`. See [Date and Time Units](date-and-time-units.md) for a complete list of permitted units.
+is a synonym for [DATE_SUB()](date_sub.md). See [Date and Time Units](date-and-time-units.md) for a complete list of permitted units.
 
 
 The second form allows the use of an integer value for days. In such

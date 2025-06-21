@@ -24,7 +24,7 @@ It contains the following columns:
 | DTD\_IDENTIFIER            | Description of the data type.                                                                                                                                                  |
 | ROUTINE\_TYPE              | PROCEDURE or FUNCTION.                                                                                                                                                         |
 
-Information from this table is similar to that found in the `param_list` column in the [mysql.proc](../../the-mysql-database-tables/mysql-proc-table.md) table, and the output of the `[SHOW CREATE PROCEDURE](../../../show/show-create-procedure.md)` and `[SHOW CREATE FUNCTION](../../../show/show-create-function.md)` statements.
+Information from this table is similar to that found in the `param_list` column in the [mysql.proc](../../the-mysql-database-tables/mysql-proc-table.md) table, and the output of the [SHOW CREATE PROCEDURE](../../../show/show-create-procedure.md) and [SHOW CREATE FUNCTION](../../../show/show-create-function.md) statements.
 
 To obtain information about the routine itself, you can query the [Information Schema ROUTINES table](information-schema-routines-table.md).
 

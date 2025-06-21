@@ -245,7 +245,7 @@ Always check the installed version of MariaDB, and read the section of the manua
 relevant for that version. The manual usually indicates exactly when particular\
 syntax became available for use.
 
-_The initial version of this article was copied, with permission, from_ [_Basic\_Debugging_](https://hashmysql.org/wiki/Basic_Debugging) _on 2012-10-05._
+<sub>_The initial version of this article was copied, with permission, from_</sub> [<sub>_Basic\_Debugging_</sub>](https://hashmysql.org/wiki/Basic_Debugging) <sub>_on 2012-10-05._</sub>
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

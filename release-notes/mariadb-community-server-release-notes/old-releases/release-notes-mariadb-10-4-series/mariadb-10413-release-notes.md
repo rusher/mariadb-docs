@@ -64,10 +64,10 @@ Thanks, and enjoy MariaDB!
 * SHOW GRANTS does not quote role names properly ([MDEV-20076](https://jira.mariadb.org/browse/MDEV-20076))
 * Paritioning INSERT chooses wrong partition for RANGE partitioning by DECIMAL column ([MDEV-21195](https://jira.mariadb.org/browse/MDEV-21195))
 
-### Mariabackup
+### mariadb-backup
 
-* Mariabackup does not honor ignore\_db\_dirs from server config ([MDEV-19347](https://jira.mariadb.org/browse/MDEV-19347))
-* Mariabackup `--ftwrl-wait-timeout` never times out on explicit lock ([MDEV-20230](https://jira.mariadb.org/browse/MDEV-20230))
+* mariadb-backup does not honor ignore\_db\_dirs from server config ([MDEV-19347](https://jira.mariadb.org/browse/MDEV-19347))
+* mariadb-backup `--ftwrl-wait-timeout` never times out on explicit lock ([MDEV-20230](https://jira.mariadb.org/browse/MDEV-20230))
 
 ### Crash Recovery
 

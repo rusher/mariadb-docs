@@ -23,7 +23,7 @@ Thanks, and enjoy MariaDB!
 ## Notable Changes
 
 * [MDEV-20864](https://jira.mariadb.org/browse/MDEV-20864): Debug-only option [innodb\_change\_buffer\_dump](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables#innodb_change_buffer_dump) for dumping the contents of the InnoDB change buffer to the server error log at startup.
-* MariaBackup:
+* mariadb-backup:
   * [MDEV-18438](https://jira.mariadb.org/browse/MDEV-18438): mbstream recreates xtrabackup\_info on same directory as backup file
   * [MDEV-20703](https://jira.mariadb.org/browse/MDEV-20703): mariabackup creates binlog files in server binlog directory on --prepare --export step
 * Read-only replicas
@@ -52,7 +52,7 @@ Thanks, and enjoy MariaDB!
   * [CVE-2021-2144](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-2144)
 
 When upgrading from [MariaDB 10.3.8](mariadb-1038-release-notes.md) or earlier to [MariaDB 10.3.9](mariadb-1039-release-notes.md) or higher,\
-running `[mysql_upgrade](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/legacy-clients-and-utilities/mysql_upgrade)` is **required** due to changes introduced in[MDEV-14637](https://jira.mariadb.org/browse/MDEV-14637).
+running [mysql_upgrade](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/legacy-clients-and-utilities/mysql_upgrade) is **required** due to changes introduced in[MDEV-14637](https://jira.mariadb.org/browse/MDEV-14637).
 
 ## Changelog
 

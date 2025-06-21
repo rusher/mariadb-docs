@@ -34,7 +34,7 @@ collation_connection: utf8_general_ci
 ## See Also
 
 * [Stored Functions](../../../../server-usage/stored-routines/stored-functions/)
-* `[CREATE FUNCTION](../../data-definition/create/create-function.md)`
+* [CREATE FUNCTION](../../data-definition/create/create-function.md)
 
 <sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
 

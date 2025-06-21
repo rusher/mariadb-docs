@@ -350,7 +350,7 @@ I did not include the technique(s) using GROUP\_CONCAT. They are useful in some 
 * [row\_number(), rank(), dense\_rank()](https://kennethxu.blogspot.com/2016/04/analytical-function-in-mysql-rownumber.html)
 * \[http://rpbouman.blogspot.de/2008/07/calculating-nth-percentile-in-mysql.html][Perentile blog](https://rpbouman.blogspot.de/2008/07/calculating-nth-percentile-in-mysql.html]\[Perentile_blog)
 
-Rick James graciously allowed us to use this article in the Knowledge Base.
+Rick James graciously allowed us to use this article in the documentation.
 
 [Rick James' site](https://mysql.rjweb.org/) has other useful tips, how-tos,\
 optimizations, and debugging tips.

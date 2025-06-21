@@ -17,7 +17,7 @@ For general "how to questions" ask questions [here](https://app.gitbook.com/o/di
 
 * [MCOL-385](https://jira.mariadb.org/browse/MCOL-385) - 10.1.19 Merge : ColumnStore is now based off the MariaDB Server release 10.1.19.
 * [MCOL-404](https://jira.mariadb.org/browse/MCOL-404) - non-root install fails on centos7 : Non root installs now work.
-* [MCOL-309](https://jira.mariadb.org/browse/MCOL-309) - Support method to report on data set size : Information schema tables are created to support reporting on table and column sizes. This is an initial implementation with some further improvements planned for the GA release. See [documentation](https://app.gitbook.com/s/rBEU9juWLfTDcdwF3Q14/sql-commands/columnstore-information-schema-tables) for further details.
+* [MCOL-309](https://jira.mariadb.org/browse/MCOL-309) - Support method to report on data set size : Information schema tables are created to support reporting on table and column sizes. This is an initial implementation with some further improvements planned for the GA release. See [documentation](https://app.gitbook.com/s/rBEU9juWLfTDcdwF3Q14/reference/columnstore-information-schema-tables) for further details.
 * An install for Debian 8.6 is now available.
 
 ## Bugs and Issues Fixed

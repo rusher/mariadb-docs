@@ -34,7 +34,7 @@ column(s) or function(s) or definer/invoker of view lack rights to use them
 
 This problem is reported in the output of [CHECK TABLE](../../reference/sql-statements/table-statements/check-table.md).
 
-Note that it is not necessary to use `DROP VIEW` to replace an existing view, because `[CREATE VIEW](create-view.md)` has an `OR REPLACE` clause.
+Note that it is not necessary to use `DROP VIEW` to replace an existing view, because [CREATE VIEW](create-view.md) has an `OR REPLACE` clause.
 
 ### Atomic DDL
 

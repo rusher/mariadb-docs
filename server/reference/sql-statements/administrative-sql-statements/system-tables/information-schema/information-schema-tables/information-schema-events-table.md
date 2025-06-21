@@ -32,7 +32,7 @@ It contains the following columns:
 | COLLATION\_CONNECTION  | [collation\_connection](../../../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#collation_connection) system variable session value at the time the event was created.  |
 | DATABASE\_COLLATION    | Database [collation](../../../../../data-types/string-data-types/character-sets/) with which the event is linked.                                                                                                        |
 
-The `[SHOW EVENTS](../../../show/show-events.md)` and `[SHOW CREATE EVENT](../../../show/show-create-event.md)` statements provide similar information.
+The [SHOW EVENTS](../../../show/show-events.md) and [SHOW CREATE EVENT](../../../show/show-create-event.md) statements provide similar information.
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

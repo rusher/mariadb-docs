@@ -4,7 +4,7 @@
 ## Description
 
 
-`SUBSTR()` is a synonym for `[SUBSTRING](substring.md)()`.
+`SUBSTR()` is a synonym for [SUBSTRING](substring.md)().
 
 
 <sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>

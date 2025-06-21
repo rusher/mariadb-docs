@@ -26,7 +26,7 @@ Thanks, and enjoy MariaDB!
 * [MDEV-21343](https://jira.mariadb.org/browse/MDEV-21343): Threadpool/Unix- wait\_begin() function does not wake/create threa\
   ds, when it should
 
-### Mariabackup
+### mariadb-backup
 
 * [MDEV-21255](https://jira.mariadb.org/browse/MDEV-21255): Deadlock of parallel slave and mariabackup (with failed log copy thread)
 

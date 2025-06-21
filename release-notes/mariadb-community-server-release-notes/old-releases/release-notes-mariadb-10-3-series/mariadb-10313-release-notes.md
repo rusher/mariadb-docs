@@ -20,7 +20,7 @@ Thanks, and enjoy MariaDB!
 
 * [MDEV-18254](https://jira.mariadb.org/browse/MDEV-18254): [HeidiSQL](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/graphical-and-enhanced-clients/heidisql) updated to 9.5
 * [MDEV-17475](https://jira.mariadb.org/browse/MDEV-17475): Maximum value of [table\_definition\_cache](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#table_definition_cache) is now `2097152`.
-* Mariabackup fixes: [MDEV-18185](https://jira.mariadb.org/browse/MDEV-18185), [MDEV-18201](https://jira.mariadb.org/browse/MDEV-18201), [MDEV-18194](https://jira.mariadb.org/browse/MDEV-18194), [MDEV-18415](https://jira.mariadb.org/browse/MDEV-18415), [MDEV-18611](https://jira.mariadb.org/browse/MDEV-18611)
+* mariadb-backup fixes: [MDEV-18185](https://jira.mariadb.org/browse/MDEV-18185), [MDEV-18201](https://jira.mariadb.org/browse/MDEV-18201), [MDEV-18194](https://jira.mariadb.org/browse/MDEV-18194), [MDEV-18415](https://jira.mariadb.org/browse/MDEV-18415), [MDEV-18611](https://jira.mariadb.org/browse/MDEV-18611)
 * InnoDB ALTER TABLE fixes: [MDEV-17441](https://jira.mariadb.org/browse/MDEV-17441), [MDEV-18237](https://jira.mariadb.org/browse/MDEV-18237), [MDEV-17823](https://jira.mariadb.org/browse/MDEV-17823), [MDEV-18152](https://jira.mariadb.org/browse/MDEV-18152), [MDEV-17821](https://jira.mariadb.org/browse/MDEV-17821), [MDEV-18222](https://jira.mariadb.org/browse/MDEV-18222), [MDEV-18256](https://jira.mariadb.org/browse/MDEV-18256), [MDEV-18016](https://jira.mariadb.org/browse/MDEV-18016), [MDEV-18295](https://jira.mariadb.org/browse/MDEV-18295)
 * InnoDB crash recovery fixes: [MDEV-18183](https://jira.mariadb.org/browse/MDEV-18183), [MDEV-18279](https://jira.mariadb.org/browse/MDEV-18279), [MDEV-18349](https://jira.mariadb.org/browse/MDEV-18349)
 * Galera crash recovery fixes: [MDEV-15740](https://jira.mariadb.org/browse/MDEV-15740)
@@ -33,7 +33,7 @@ Thanks, and enjoy MariaDB!
   * [CVE-2019-2537](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-2537)
 
 When upgrading from [MariaDB 10.3.8](mariadb-1038-release-notes.md) or earlier to [MariaDB 10.3.9](mariadb-1039-release-notes.md) or higher,\
-running `[mysql_upgrade](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/legacy-clients-and-utilities/mysql_upgrade)` is **required** due to changes introduced in[MDEV-14637](https://jira.mariadb.org/browse/MDEV-14637).
+running [mysql_upgrade](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/legacy-clients-and-utilities/mysql_upgrade) is **required** due to changes introduced in[MDEV-14637](https://jira.mariadb.org/browse/MDEV-14637).
 
 ## Changelog
 

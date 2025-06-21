@@ -49,7 +49,7 @@ MariaDB Enterprise Server 10.4.26-17 was released on 2022-09-12.
 * When an `EXISTS` predicate or an `IN`, `ALL`, or `ANY` predicand is used in an eliminated GROUP BY clause, the server can crash. (MENT-1606, [MDEV-29350](https://jira.mariadb.org/browse/MDEV-29350))
 * When an `IN` subquery is used outside the context of a regular query (such as in a stored procedure), the server can crash. ([MDEV-22001](https://jira.mariadb.org/browse/MDEV-22001))
 * When MariaDB Enterprise Cluster is used and the Galera replication TCP port receives non-Galera network traffic, the server can crash. ([MDEV-25068](https://jira.mariadb.org/browse/MDEV-25068))
-  * In previous releases, when the crash occurred, the following messages would appear in the [MariaDB error log](https://mariadb.com/kb/en/error/):
+  * In previous releases, when the crash occurred, the following messages would appear in the [MariaDB error log](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/server-monitoring-logs/error-log):
 
 ```
 terminate called after throwing an instance of 'boost::exception_detail::clone_impl<boost::exception_detail::error_info_injector<std::system_error> >'

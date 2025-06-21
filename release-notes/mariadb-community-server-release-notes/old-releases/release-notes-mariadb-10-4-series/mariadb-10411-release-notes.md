@@ -24,7 +24,7 @@ Thanks, and enjoy MariaDB!
 
 * [MDEV-13492](https://jira.mariadb.org/browse/MDEV-13492): SEC\_E\_INVALID\_TOKEN when server sends large message during SSL handshake
 
-### Mariabackup
+### mariadb-backup
 
 * [MDEV-18310](https://jira.mariadb.org/browse/MDEV-18310): Aria engine: Undo phase failed from incremental backup
 

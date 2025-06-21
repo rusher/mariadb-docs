@@ -100,7 +100,7 @@ AND TABLE_NAME='invoices';
 * [Configure the Undo Log](mariadb-enterprise-server-innodb-operations/configure-the-innodb-undo-log.md)
 * [Schema Changes](mariadb-enterprise-server-innodb-operations/schema-changes/)
 
-## MariaDB Knowledge Base
+## MariaDB documentation
 
 * [InnoDB](./)
 

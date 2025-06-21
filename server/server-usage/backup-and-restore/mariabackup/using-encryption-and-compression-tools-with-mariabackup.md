@@ -1,6 +1,6 @@
-# Using Encryption and Compression Tools With Mariabackup
+# Using Encryption and Compression Tools With mariadb-backup
 
-[Mariabackup](./) supports streaming to stdout with the `--stream=xbstream` option. This option allows easy integration with popular encryption and compression tools. Below are several examples.
+[mariadb-backup](./) supports streaming to stdout with the `--stream=xbstream` option. This option allows easy integration with popular encryption and compression tools. Below are several examples.
 
 ## Encrypting and Decrypting Backup With openssl
 
@@ -46,7 +46,7 @@ openssl  enc -d -aes-256-cbc -k mypass -in backup.xb.gz.enc |gzip -d| mbstream -
 
 ## Compressing and Encrypting with 7Zip
 
-7zip archiver is a popular utility (especially on Windows) that supports reading from standard output, with the -`-si` option, and writing to stdout with the `-so` option, and can thus be used together with Mariabackup.
+7zip archiver is a popular utility (especially on Windows) that supports reading from standard output, with the -`-si` option, and writing to stdout with the `-so` option, and can thus be used together with mariadb-backup.
 
 Compressing backup with the 7z command line utility works as follows:
 
@@ -96,9 +96,9 @@ Most of the described tools also provide a way to enter a passphrase interactive
 
 ## Writing extra status files
 
-By default files like `[xtrabackup_checkpoints](files-created-by-mariabackup.md#xtrabackup_checkpoints)` are also written to the output stream only, and so would not be available for taking further incremental backups without prior extraction from the compressed or encrypted stream output file.
+By default files like [xtrabackup_checkpoints](files-created-by-mariabackup.md#xtrabackup_checkpoints) are also written to the output stream only, and so would not be available for taking further incremental backups without prior extraction from the compressed or encrypted stream output file.
 
-To avoid this these files can additionally be written to a directory that can then be used as input for further incremental backups using the `[--extra-lsndir=...](mariabackup-options.md#-extra-lsndir)` option.
+To avoid this these files can additionally be written to a directory that can then be used as input for further incremental backups using the [--extra-lsndir=...](mariabackup-options.md#-extra-lsndir) option.
 
 See also e.g: [Combining incremental backups with streaming output](incremental-backup-and-restore-with-mariabackup.md#combining-with-stream-output)
 

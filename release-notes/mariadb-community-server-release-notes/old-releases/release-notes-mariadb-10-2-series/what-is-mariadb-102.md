@@ -14,7 +14,7 @@ The following lists the major new features in [MariaDB 10.2](what-is-mariadb-102
 
 ### InnoDB as Default
 
-* [InnoDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb) is now the default storage engine. Until [MariaDB 10.1](../release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1.md), MariaDB used the XtraDB storage engine as default. XtraDB in 10.2 is not up to date with the latest features of InnoDB and cannot be used. As the InnoDB on disk format is identical to XtraDB's this will not cause any problems when upgrading to [MariaDB 10.2](what-is-mariadb-102.md). See [Why does MariaDB 10.2 use InnoDB instead of XtraDB?](https://mariadb.com/kb/en/why-does-mariadb-102-use-innodb-instead-of-xtradb/)
+* [InnoDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb) is now the default storage engine. Until [MariaDB 10.1](../release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1.md), MariaDB used the XtraDB storage engine as default. XtraDB in 10.2 is not up to date with the latest features of InnoDB and cannot be used. As the InnoDB on disk format is identical to XtraDB's this will not cause any problems when upgrading to [MariaDB 10.2](what-is-mariadb-102.md). See [Why does MariaDB 10.2 use InnoDB instead of XtraDB?](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/upgrading/upgrading-to-unmaintained-mariadb-releases/upgrading-from-mariadb-101-to-mariadb-102#innodb-instead-of-xtradb)
 
 ### Syntax / General Features
 

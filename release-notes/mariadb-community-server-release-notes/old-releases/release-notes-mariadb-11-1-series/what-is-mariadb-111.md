@@ -29,9 +29,9 @@ The most recent release of [MariaDB 11.1](what-is-mariadb-111.md) is:[**MariaDB 
 
 * Remove [innodb\_defragment](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables#innodb_defragment) and related parameters ([MDEV-30545](https://jira.mariadb.org/browse/MDEV-30545))
 
-### Mariabackup
+### mariadb-backup
 
-* Rename [Mariabackup’s](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup) xtrabackup\_\* files to mariadb\_backup\_\* ([MDEV-18931](https://jira.mariadb.org/browse/MDEV-18931))
+* Rename [mariadb-backup’s](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup) xtrabackup\_\* files to mariadb\_backup\_\* ([MDEV-18931](https://jira.mariadb.org/browse/MDEV-18931))
 
 ### Variables
 

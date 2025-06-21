@@ -24,7 +24,7 @@ If the [Sphinx Storage Engine](../../../../server-usage/storage-engines/sphinx-s
 SHOW ENGINE SPHINX STATUS
 ```
 
-See `[SHOW ENGINE SPHINX STATUS](../../../../storage-engines/sphinx-storage-engine/about-sphinxse.md#show-engine-sphinx-status)`.
+See [SHOW ENGINE SPHINX STATUS](../../../../storage-engines/sphinx-storage-engine/about-sphinxse.md#show-engine-sphinx-status).
 
 Older (and now removed) synonyms were `SHOW INNODB STATUS`\
 for `SHOW ENGINE INNODB STATUS` and`SHOW MUTEX STATUS` for`SHOW ENGINE INNODB MUTEX`.
@@ -33,7 +33,7 @@ for `SHOW ENGINE INNODB STATUS` and`SHOW MUTEX STATUS` for`SHOW ENGINE INNODB MU
 
 `SHOW ENGINE INNODB STATUS` displays extensive information\
 from the standard InnoDB Monitor about the state of the InnoDB storage engine.\
-See `[SHOW ENGINE INNODB STATUS](show-engine-innodb-status.md)` for more.
+See [SHOW ENGINE INNODB STATUS](show-engine-innodb-status.md) for more.
 
 ### SHOW ENGINE INNODB MUTEX
 
@@ -67,11 +67,11 @@ Information from this statement can be used to diagnose system problems. For\
 example, large values of spin\_waits and spin\_rounds may indicate scalability\
 problems.
 
-The `[information_schema](../system-tables/information-schema/README.md).[INNODB_MUTEXES](../system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_mutexes-table.md)` table provides similar information.
+The [information_schema](../system-tables/information-schema/README.md).[INNODB_MUTEXES](../system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_mutexes-table.md) table provides similar information.
 
 ### SHOW ENGINE PERFORMANCE\_SCHEMA STATUS
 
-This statement shows how much memory is used for `[performance_schema](../system-tables/performance-schema/README.md)` tables and internal buffers.
+This statement shows how much memory is used for [performance_schema](../system-tables/performance-schema/README.md) tables and internal buffers.
 
 The output contains the following fields:
 

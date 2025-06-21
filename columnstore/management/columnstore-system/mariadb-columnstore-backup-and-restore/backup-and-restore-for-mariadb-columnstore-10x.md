@@ -1,4 +1,3 @@
-
 # Backup and Restore for MariaDB ColumnStore 1.0.x
 
  

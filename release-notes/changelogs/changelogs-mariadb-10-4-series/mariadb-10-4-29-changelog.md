@@ -311,7 +311,7 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-30567](https://jira.mariadb.org/browse/MDEV-30567) rec\_get\_offsets() is not optimal
 * [Revision #99ee200b8b](https://github.com/MariaDB/server/commit/99ee200b8b)\
   2023-03-02 23:37:17 +0530
-  * [MDEV-24005](https://jira.mariadb.org/browse/MDEV-24005) Updated the --use-memory option usage message in Mariabackup help command
+  * [MDEV-24005](https://jira.mariadb.org/browse/MDEV-24005) Updated the --use-memory option usage message in mariadb-backup help command
 * [Revision #ccec9b1de9](https://github.com/MariaDB/server/commit/ccec9b1de9)\
   2023-03-01 22:49:27 -0800
   * [MDEV-30706](https://jira.mariadb.org/browse/MDEV-30706) Different results of selects from view and CTE with same definition [MDEV-30668](https://jira.mariadb.org/browse/MDEV-30668) Set function aggregated in outer select used in view definition

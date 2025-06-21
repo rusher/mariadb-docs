@@ -47,8 +47,8 @@ END;
 
 The [FOUND\_ROWS()](../../sql-functions/secondary-functions/information-functions/found_rows.md) and [ROW\_COUNT()](../../sql-functions/secondary-functions/information-functions/row_count.md) functions, if called immediatly after EXECUTE, return the number of rows read or affected by the prepared statements; however, if they are called after DEALLOCATE PREPARE, they provide information about this statement. If the prepared statement produces errors or warnings, [GET DIAGNOSTICS](../programmatic-compound-statements/programmatic-compound-statements-diagnostics/get-diagnostics.md) return information about them. DEALLOCATE PREPARE shouldn't clear the [diagnostics area](../programmatic-compound-statements/programmatic-compound-statements-diagnostics/diagnostics-area.md), unless it produces an error.
 
-A prepared statement is executed with `[EXECUTE](execute-statement.md)` and released\
-with `[DEALLOCATE PREPARE](deallocate-drop-prepare.md)`.
+A prepared statement is executed with [EXECUTE](execute-statement.md) and released\
+with [DEALLOCATE PREPARE](deallocate-drop-prepare.md).
 
 The [max\_prepared\_stmt\_count](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_prepared_stmt_count) server system variable determines the number of allowed prepared statements that can be prepared on the server. If it is set to 0, prepared statements are not allowed. If the limit is reached, an error similar to the following will be produced:
 

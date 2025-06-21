@@ -17,7 +17,7 @@ For general "how to questions" ask questions [here](https://app.gitbook.com/o/di
 * [MCOL-307](https://jira.mariadb.org/browse/MCOL-307) - implement redistribution logic : An mcsadmin utility command is provided to support redistribution of partitions. For more details see the [columnstore-redistribute-data](https://app.gitbook.com/s/rBEU9juWLfTDcdwF3Q14/management/columnstore-system/columnstore-redistribute-data) article.
 * [MCOL-311](https://jira.mariadb.org/browse/MCOL-311) - utility for finding objects file : An mcsadmin utility command is provided to support locating files by table or column. For more details run 'help findObjectFile'\
   in the mcsadmin utility.
-* [MCOL-406](https://jira.mariadb.org/browse/MCOL-406) - Stored procedures required for I\_S tables : Convenience stored procedures are now provided for common tasks in querying the ColumnStore information schema tables. For more details see the [columnstore-information-schema-tables](https://app.gitbook.com/s/rBEU9juWLfTDcdwF3Q14/sql-commands/columnstore-information-schema-tables) article.
+* [MCOL-406](https://jira.mariadb.org/browse/MCOL-406) - Stored procedures required for I\_S tables : Convenience stored procedures are now provided for common tasks in querying the ColumnStore information schema tables. For more details see the [columnstore-information-schema-tables](https://app.gitbook.com/s/rBEU9juWLfTDcdwF3Q14/reference/columnstore-information-schema-tables) article.
 
 ## Bugs and Issues Fixed
 

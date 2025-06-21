@@ -22,7 +22,7 @@ independent queries in parallel at the same time, to speed up operation\
 compared to running them sequentially one after the other. This could be\
 multiple queries against a single server (to better utilize multiple CPU cores\
 and/or a high-capacity I/O system on the server), or it could be queries\
-against multiple servers (e.g. `[SHOW STATUS](../../../sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-status.md)` against all\
+against multiple servers (e.g. [SHOW STATUS](../../../sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-status.md) against all\
 running servers for monitoring, or a map/reduce-like operation against a big\
 sharded database).
 

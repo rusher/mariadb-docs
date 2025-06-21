@@ -14,7 +14,7 @@ in that revision.
 
 * [Revision #00f0c039d2](https://github.com/MariaDB/server/commit/00f0c039d2)\
   2018-02-12 16:40:05 +0200
-  * [MDEV-15270](https://jira.mariadb.org/browse/MDEV-15270) Mariabackup should not try to use doublewrite buffer
+  * [MDEV-15270](https://jira.mariadb.org/browse/MDEV-15270) mariadb-backup should not try to use doublewrite buffer
 * [Revision #33f70c4d9c](https://github.com/MariaDB/server/commit/33f70c4d9c)\
   2018-02-12 13:35:07 +0200
   * [MDEV-13869](https://jira.mariadb.org/browse/MDEV-13869) MariaDB slow start
@@ -363,7 +363,7 @@ in that revision.
   * Moving a change\_list related methods from THD to Item\_change\_list
 * [Revision #be85c2dc88](https://github.com/MariaDB/server/commit/be85c2dc88)\
   2018-01-16 13:57:30 +0200
-  * Mariabackup --prepare: Do not access transactions or data dictionary
+  * mariadb-backup --prepare: Do not access transactions or data dictionary
 * [Revision #33ecf8345d](https://github.com/MariaDB/server/commit/33ecf8345d)\
   2018-01-16 13:55:45 +0200
   * Follow-up fix to [MDEV-14441](https://jira.mariadb.org/browse/MDEV-14441): Fix a potential race condition

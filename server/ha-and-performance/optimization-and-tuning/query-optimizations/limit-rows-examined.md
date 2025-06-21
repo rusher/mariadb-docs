@@ -14,19 +14,19 @@ prepared statement parameter, or a stored program parameter.
 ## Description
 
 The purpose of this optimization is to provide the means to terminate the\
-execution of `[SELECT](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select.md)` statements which examine too many rows, and\
-thus use too many resources. This is achieved through an extension of the`[LIMIT](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select.md#limit)` clause —`LIMIT ROWS EXAMINED number_of_rows`. Whenever possible the\
+execution of [SELECT](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select.md) statements which examine too many rows, and\
+thus use too many resources. This is achieved through an extension of the[LIMIT](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select.md#limit) clause —`LIMIT ROWS EXAMINED number_of_rows`. Whenever possible the\
 semantics of `LIMIT ROWS EXAMINED` is the same as that of normal `LIMIT`\
 (for instance for aggregate functions).
 
 The `LIMIT ROWS EXAMINED` clause is taken into account by the query engine\
 only during query execution. Thus the clause is ignored in the following cases:
 
-* If a query is `[EXPLAIN](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/analyze-and-explain-statements/explain.md)`-ed.
+* If a query is [EXPLAIN](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/analyze-and-explain-statements/explain.md)-ed.
 * During query optimization.
 * During auxiliary operations such as writing to system tables (e.g. logs).
 
-The clause is not applicable to `[DELETE](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/delete.md)` or `[UPDATE](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/update.md)`\
+The clause is not applicable to [DELETE](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/delete.md) or [UPDATE](../../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/update.md)\
 statements, and if used in those statements produces a syntax error.
 
 The effects of this clause are as follows:

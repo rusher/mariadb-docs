@@ -25,7 +25,7 @@ Thanks, and enjoy MariaDB!
 * FULLTEXT INDEX: [MDEV-14154](https://jira.mariadb.org/browse/MDEV-14154), [MDEV-18220](https://jira.mariadb.org/browse/MDEV-18220), [MDEV-19441](https://jira.mariadb.org/browse/MDEV-19441), [MDEV-19445](https://jira.mariadb.org/browse/MDEV-19445)
 * Encryption: [MDEV-13983](https://jira.mariadb.org/browse/MDEV-13983), [MDEV-16866](https://jira.mariadb.org/browse/MDEV-16866)
 * Galera + FOREIGN KEY: [MDEV-19660](https://jira.mariadb.org/browse/MDEV-19660)
-* Recovery & Mariabackup: [MDEV-19978](https://jira.mariadb.org/browse/MDEV-19978)
+* Recovery & mariadb-backup: [MDEV-19978](https://jira.mariadb.org/browse/MDEV-19978)
 * Other: [MDEV-19614](https://jira.mariadb.org/browse/MDEV-19614), [MDEV-20102](https://jira.mariadb.org/browse/MDEV-20102)
 * [MDEV-20091](https://jira.mariadb.org/browse/MDEV-20091): DROP TEMPORARY table is logged despite no CREATE was logged
 * [MDEV-19491](https://jira.mariadb.org/browse/MDEV-19491): update query stopped working after mariadb upgrade

@@ -6,7 +6,7 @@ The most recent [_**Stable**_](../../../../mariadb-release-criteria.md) _**(GA)*
 
 **Release date:** 15 Jan 2013
 
-For the highlights of this release, see the [release notes](https://mariadb.com/kb/en/\[mariadb-java-client-110-release-notes).
+For the highlights of this release, see the [release notes](../../mariadb-connector-j-11-release-notes/mariadb-java-client-110-release-notes.md).
 
 The revision number links will take you to the revision's page on Launchpad. On Launchpad you can view more details of the revision and view diffs of the code modified in that revision.
 

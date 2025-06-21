@@ -207,7 +207,7 @@ ERROR 1111 (HY000): Invalid use of group function
 ```
 
 * When a view's definition contains a table-value constructor (TVC) as a single-value subquery, selecting from the view can fail with an error. ([MDEV-28603](https://jira.mariadb.org/browse/MDEV-28603))
-  * In previous releases, queries could raise an error with the [ER\_VIEW\_INVALID error code](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/WCInJQ9cmGjq1lsTG91E/development-articles/mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-codes-1300-to-1399/e1356) and the following error message:
+  * In previous releases, queries could raise an error with the [ER\_VIEW\_INVALID error code](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/development-articles/mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-codes-1300-to-1399/e1356) and the following error message:
 
 ```
 View 'test.v1' references invalid table(s) or column(s) or function(s) or definer/invoker of view lack rights to use them
@@ -221,7 +221,7 @@ View 'test.v1' references invalid table(s) or column(s) or function(s) or define
 ERROR 1111 (HY000): Invalid use of group function
 ```
 
-* When an InnoDB tablespace has been discarded, selecting from [information\_schema.INNODB\_SYS\_INDEXES](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_sys_indexes-table) fails with an error. ([MDEV-30615](https://jira.mariadb.org/browse/MDEV-30615))
+* When an InnoDB tablespace has been discarded, selecting from [information\_schema.INNODB\_SYS\_INDEXES](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_sys_indexes-table) fails with an error. ([MDEV-30615](https://jira.mariadb.org/browse/MDEV-30615))
   * In previous releases, an error with the [ER\_UNKNOWN\_ERROR error code](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-codes-1100-to-1199/e1105) is raised:
 
 ```

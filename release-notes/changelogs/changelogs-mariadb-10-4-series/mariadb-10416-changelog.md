@@ -155,7 +155,7 @@ details of the revision and view diffs of the code modified in that revision.
   * Fix for timeout in rpl.rpl\_parallel\_retry
 * [Revision #16ea692ed4](https://github.com/MariaDB/server/commit/16ea692ed4)\
   2020-09-07 10:38:12 +0300
-  * [MDEV-23586](https://jira.mariadb.org/browse/MDEV-23586) Mariabackup: GTID saved for replication in 10.4.14 is wrong
+  * [MDEV-23586](https://jira.mariadb.org/browse/MDEV-23586) mariadb-backup: GTID saved for replication in 10.4.14 is wrong
 * [Revision #3cdbaa04bd](https://github.com/MariaDB/server/commit/3cdbaa04bd)\
   2020-09-14 21:22:32 +0300
   * Fixed BUILD script to make plugin-file\_key\_management DYNAMIC

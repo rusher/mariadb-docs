@@ -26,7 +26,7 @@ The type can be one of the following values:
 * [TIME](../../data-types/date-and-time-data-types/time.md)
 * [VARCHAR](../../data-types/string-data-types/varchar.md) (in [Oracle mode](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-functions/string-functions/broken-reference/README.md), from [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103))
 
-The main difference between `CAST` and [CONVERT()](convert.md) is that `[CONVERT(expr,type)](convert.md)` is ODBC syntax while `CAST(expr as type)` and `[CONVERT(... USING ...)](convert.md)` are SQL92 syntax.
+The main difference between `CAST` and [CONVERT()](convert.md) is that [CONVERT(expr,type)](convert.md) is ODBC syntax while `CAST(expr as type)` and [CONVERT(... USING ...)](convert.md) are SQL92 syntax.
 
 In [MariaDB 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-functions/string-functions/broken-reference/README.md) and later, you can use the `CAST()` function with the `INTERVAL` keyword.
 
@@ -74,7 +74,7 @@ SELECT COLLATION(CAST(123 AS CHAR CHARACTER SET utf8)
 +-------------------------------------------------------------------------+
 ```
 
-Using `CAST()` to order an `[ENUM](../../../../data-types/string-data-types/enum.md)` field as a `[CHAR](../../../../data-types/string-data-types/char.md)` rather than the internal numerical value:
+Using `CAST()` to order an [ENUM](../../../../data-types/string-data-types/enum.md) field as a [CHAR](../../../../data-types/string-data-types/char.md) rather than the internal numerical value:
 
 ```
 CREATE TABLE enum_list (enum_field enum('c','a','b'));

@@ -15,7 +15,7 @@ In [Oracle mode](https://github.com/mariadb-corporation/docs-server/blob/test/se
 ## Description
 
 `ROWNUM()` returns the current number of accepted rows in the\
-current context. It main purpose is to emulate the `ROWNUM`[pseudo column in Oracle](https://docs.oracle.com/en/database/oracle/oracle-database/19/sqlrf/ROWNUM-Pseudocolumn.html#GUID-2E40EC12-3FCF-4A4F-B5F2-6BC669021726). For MariaDB native applications, we recommend the usage of [LIMIT](../../../sql-statements/data-manipulation/selecting-data/limit.md), as it is easier to use and gives more predictable results than the usage of `ROWNUM()`.
+current context. It main purpose is to emulate the `ROWNUM[pseudo column in Oracle](https://docs.oracle.com/en/database/oracle/oracle-database/19/sqlrf/ROWNUM-Pseudocolumn.html#GUID-2E40EC12-3FCF-4A4F-B5F2-6BC669021726). For MariaDB native applications, we recommend the usage of [LIMIT](../../../sql-statements/data-manipulation/selecting-data/limit.md), as it is easier to use and gives more predictable results than the usage of `ROWNUM().
 
 The main difference between using `LIMIT` and`ROWNUM()` to limit the rows in the result is that`LIMIT` works on the result set while `ROWNUM`\
 works on the number of accepted rows (before any `ORDER` or`GROUP BY` clauses).

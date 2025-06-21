@@ -51,9 +51,9 @@ Create Table: CREATE TABLE `t` (
 
 ## Setting or Changing the Auto\_Increment Value
 
-You can use an `[ALTER TABLE](../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md)` statement to assign a new value to the `auto_increment` table option, or set the [insert\_id](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#insert_id) server system variable to change the next `AUTO_INCREMENT` value inserted by the current session.
+You can use an [ALTER TABLE](../sql-statements/data-definition/alter/alter-table.md) statement to assign a new value to the `auto_increment` table option, or set the [insert\_id](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#insert_id) server system variable to change the next `AUTO_INCREMENT` value inserted by the current session.
 
-`[LAST_INSERT_ID()](../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/last_insert_id.md)` can be used to see the last `AUTO_INCREMENT` value inserted by the current session.
+[LAST\_INSERT\_ID()](../sql-functions/secondary-functions/information-functions/last_insert_id.md) can be used to see the last `AUTO_INCREMENT` value inserted by the current session.
 
 ```
 ALTER TABLE animals AUTO_INCREMENT=8;
@@ -149,7 +149,7 @@ Thus AUTO\_INCREMENT values can be used to sort results in a chronological order
 
 ## Replication
 
-To make master-master or Galera safe to use `AUTO_INCREMENT` one should use the system variables[auto\_increment\_increment](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) and [auto\_increment\_offset](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) to generate unique values for each server.
+To make master-master or Galera safe to use `AUTO_INCREMENT` one should use the system variables [auto\_increment\_increment](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) and [auto\_increment\_offset](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) to generate unique values for each server.
 
 ```
 SET @@auto_increment_increment=3;

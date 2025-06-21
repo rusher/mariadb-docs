@@ -93,7 +93,7 @@ Currently, `debuginfo` packages may not allow the server to print a nice stack t
 
 #### Installing Debug Info Packages with yum/dnf
 
-The MariaDB `yum` repository contains `[debuginfo](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Developer_Guide/intro.debuginfo.html)` packages.
+The MariaDB `yum` repository contains [debuginfo](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Developer_Guide/intro.debuginfo.html) packages.
 
 On RHEL, CentOS, Fedora, and other similar Linux distributions, it is highly recommended to install the relevant [RPM package](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/rpm) from MariaDB's repository using [yum](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/rpm/yum) or [dnf](https://en.wikipedia.org/wiki/DNF_\(software\)). Starting with RHEL 8 and Fedora 22, `yum` has been replaced by `dnf`, which is the next major version of `yum`. However, `yum` commands still work on many systems that use `dnf`. For example:
 
@@ -105,7 +105,7 @@ See [Installing MariaDB with yum/dnf: Installing Debug Info Packages with YUM](h
 
 #### Installing Debug Info Packages with zypper
 
-The MariaDB `zypper` repository contains `[debuginfo](https://en.opensuse.org/openSUSE:Packaging_guidelines#Debuginfo)` packages.
+The MariaDB `zypper` repository contains [debuginfo](https://en.opensuse.org/openSUSE:Packaging_guidelines#Debuginfo) packages.
 
 On SLES, OpenSUSE, and other similar Linux distributions, it is highly recommended to install the relevant [RPM package](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/rpm) from MariaDB's repository using [zypper](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/rpm/installing-mariadb-with-zypper). For example:
 
@@ -247,7 +247,7 @@ See also: [extracting core dumps with systemd-coredump](enabling-core-dumps.md#e
 
 A core pattern of `|/usr/libexec/abrt-hook-ccpp` indicates `abrt` system is used.
 
-`[abrt-cli](https://abrt.readthedocs.io/en/latest/usage.html)` is a command line user interface for access the core file.
+[abrt-cli](https://abrt.readthedocs.io/en/latest/usage.html) is a command line user interface for access the core file.
 
 ### Extract a core file from apport
 
@@ -255,13 +255,13 @@ A core pattern of `[|/usr/share/apport/apport` indicates `apport`.
 
 For more information see [Apport Project Wiki](https://wiki.ubuntu.com/Apport).
 
-`[apport-retrace](https://wiki.ubuntu.com/DebuggingProgramCrash#Using_apport-retrace)` allows you to "Examine Locally" and run a `gdb` session. One you have gdb started instructions in the [next section](how-to-produce-a-full-stack-trace-for-mariadbd.md#getting-backtraces-with-gdb-on-linux) can be used for extracting information.
+[apport-retrace](https://wiki.ubuntu.com/DebuggingProgramCrash#Using_apport-retrace) allows you to "Examine Locally" and run a `gdb` session. One you have gdb started instructions in the [next section](how-to-produce-a-full-stack-trace-for-mariadbd.md#getting-backtraces-with-gdb-on-linux) can be used for extracting information.
 
 ## Analyzing a Core File with `gdb` on Linux
 
-To analyze the core file on Linux, you can use `[gdb](https://www.gnu.org/software/gdb/documentation)`.
+To analyze the core file on Linux, you can use [gdb](https://www.gnu.org/software/gdb/documentation).
 
-For example, to open a core file with `[gdb](https://www.gnu.org/software/gdb/documentation)`, you could execute the following:
+For example, to open a core file with [gdb](https://www.gnu.org/software/gdb/documentation), you could execute the following:
 
 ```
 sudo gdb /usr/sbin/mariadbd  /var/lib/mysql/core.932
@@ -269,7 +269,7 @@ sudo gdb /usr/sbin/mariadbd  /var/lib/mysql/core.932
 
 Be sure to replace `/usr/sbin/mariadbd` with the path to your `mariadbd` binary (might be `mysqld` on [MariaDB 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/general-resources/development-articles/debugging-mariadb/broken-reference/README.md) and earlier) and to also replace `/var/lib/mysql/core.932` with the path to your core file.
 
-Once `[gdb](https://www.gnu.org/software/gdb/documentation)` has opened the core file, if you want to [log all output to a file](https://sourceware.org/gdb/current/onlinedocs/gdb/Logging-Output.html#Logging-Output), then you could execute the following commands:
+Once [gdb](https://www.gnu.org/software/gdb/documentation) has opened the core file, if you want to [log all output to a file](https://sourceware.org/gdb/current/onlinedocs/gdb/Logging-Output.html#Logging-Output), then you could execute the following commands:
 
 ```
 set logging file /tmp/gdb_output.log
@@ -280,11 +280,11 @@ If you do not execute `set logging file`, then the `set logging on` command crea
 
 Do any commands that you would like to do. For example, you could [get the backtraces](how-to-produce-a-full-stack-trace-for-mariadbd.md#getting-backtraces-with-gdb-on-linux).
 
-Once you are done, you can exit `[gdb](https://www.gnu.org/software/gdb/documentation)` by executing the `[quit](https://sourceware.org/gdb/current/onlinedocs/gdb/Quitting-GDB.html#Quitting-GDB)` command.
+Once you are done, you can exit [gdb](https://www.gnu.org/software/gdb/documentation) by executing the [quit](https://sourceware.org/gdb/current/onlinedocs/gdb/Quitting-GDB.html#Quitting-GDB) command.
 
 ## Getting Backtraces with `gdb` on Linux
 
-On Linux, once you have debugging symbols for your `mariadbd` binary, you can use the `[gdb](https://www.gnu.org/software/gdb/documentation)` utility to get [backtraces](https://sourceware.org/gdb/current/onlinedocs/gdb/Backtrace.html#Backtrace), which are what `gdb` calls stack traces. Backtraces can be obtained from a core file or from a running `mariadbd` process.
+On Linux, once you have debugging symbols for your `mariadbd` binary, you can use the [gdb](https://www.gnu.org/software/gdb/documentation) utility to get [backtraces](https://sourceware.org/gdb/current/onlinedocs/gdb/Backtrace.html#Backtrace), which are what `gdb` calls stack traces. Backtraces can be obtained from a core file or from a running `mariadbd` process.
 
 Full [backtraces](https://sourceware.org/gdb/current/onlinedocs/gdb/Backtrace.html#Backtrace) are preferred and will contain function arguments, which can contain useful information such as query strings, so it can make the information easier to analyze.
 
@@ -409,7 +409,7 @@ Just start mariadbd with the options`--datadir=/copy-of-original-data-directory 
 
 ## Disabling Stack Traces in the Error Log
 
-In order to disable stack traces in the [error log](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/server-monitoring-logs/error-log), you can configure the `[skip_stack_trace](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options#-stack-trace)` option either on the command-line or in a relevant server [option group](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files#option-groups) in an [option file](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files). For example:
+In order to disable stack traces in the [error log](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/server-monitoring-logs/error-log), you can configure the [skip_stack_trace](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options#-stack-trace) option either on the command-line or in a relevant server [option group](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files#option-groups) in an [option file](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files). For example:
 
 ```
 [mariadb]

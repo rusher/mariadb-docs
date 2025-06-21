@@ -26,7 +26,7 @@ ERROR 1168 (HY000): Unable to open underlying table which is differently defined
   or of non-MyISAM type or doesn't exist
 ```
 
-A `[CHECK TABLE](../sql-statements-and-structure/sql-statements/table-statements/check-table.md)` will show more information about the problem.
+A [CHECK TABLE](../sql-statements-and-structure/sql-statements/table-statements/check-table.md) will show more information about the problem.
 
 The error is also produced if the table is properly define, but an underlying table's definition changes at some point in time.
 

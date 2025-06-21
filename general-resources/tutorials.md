@@ -35,7 +35,7 @@ To enhance your understanding of MariaDB and MySQL, explore these tutorials. For
 
 ## See Also
 
-* [MariaDB Knowledge Base Training and Tutorials](https://mariadb.com/kb/en/training-tutorials/)
+* [MariaDB documentation Training and Tutorials](https://mariadb.com/kb/en/training-tutorials/)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

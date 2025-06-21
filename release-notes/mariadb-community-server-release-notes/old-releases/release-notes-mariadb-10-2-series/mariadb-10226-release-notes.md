@@ -30,7 +30,7 @@ Thanks, and enjoy MariaDB!
 * FULLTEXT INDEX: [MDEV-14154](https://jira.mariadb.org/browse/MDEV-14154)
 * Encryption: [MDEV-17228](https://jira.mariadb.org/browse/MDEV-17228), [MDEV-19914](https://jira.mariadb.org/browse/MDEV-19914)
 * Galera + FOREIGN KEY: [MDEV-19660](https://jira.mariadb.org/browse/MDEV-19660)
-* Recovery & Mariabackup: [MDEV-19978](https://jira.mariadb.org/browse/MDEV-19978)
+* Recovery & mariadb-backup: [MDEV-19978](https://jira.mariadb.org/browse/MDEV-19978)
 * [MDEV-19871](https://jira.mariadb.org/browse/MDEV-19871): Add page id matching check in innochecksum tool
 * [MDEV-20091](https://jira.mariadb.org/browse/MDEV-20091): DROP TEMPORARY table is logged despite no CREATE was logged
 * [MDEV-19421](https://jira.mariadb.org/browse/MDEV-19421): Basic 3-way join queries are not parsed - parsing problem of joins fixed

@@ -33,8 +33,8 @@ SELECT LOWER('QUADRATICALLY');
 +------------------------+
 ```
 
-`LOWER()` (and `[UPPER](upper.md)()`) are ineffective when applied to binary
-strings (`[BINARY](../../../../data-types/string-data-types/binary.md)`, `[VARBINARY](../../../../data-types/string-data-types/varbinary.md)`, `[BLOB](../../../../data-types/string-data-types/blob.md)`). 
+`LOWER()` (and [UPPER](upper.md)()) are ineffective when applied to binary
+strings ([BINARY](../../../../data-types/string-data-types/binary.md), [VARBINARY](../../../../data-types/string-data-types/varbinary.md), [BLOB](../../../../data-types/string-data-types/blob.md)). 
 To perform lettercase conversion, [CONVERT](convert.md) the string to a non-binary string:
 
 

@@ -48,10 +48,10 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-11646](https://jira.mariadb.org/browse/MDEV-11646) main.myisam, maria.maria, main.mix2\_myisam, main.myisampack, main.mrr\_icp\_extra fail in buildbot with valgrind (Syscall param pwrite64(buf) points to uninitialised byte(s))
 * [Revision #a1e51e7f47](https://github.com/MariaDB/server/commit/a1e51e7f47)\
   2017-06-30 11:28:52 +0300
-  * Mariabackup: Test file cleanup
+  * mariadb-backup: Test file cleanup
 * [Revision #4fe89773d8](https://github.com/MariaDB/server/commit/4fe89773d8)\
   2017-06-22 12:21:54 +0300
-  * Mariabackup: Clean up xtrabackup options
+  * mariadb-backup: Clean up xtrabackup options
 * [Revision #273e0f663e](https://github.com/MariaDB/server/commit/273e0f663e)\
   2017-06-30 10:28:01 +0200
   * [MDEV-13179](https://jira.mariadb.org/browse/MDEV-13179) main.errors fails in buildbot and outside with wrong errno 1290
@@ -153,16 +153,16 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-12975](https://jira.mariadb.org/browse/MDEV-12975) InnoDB redo log minimum size check uses detected file size instead of requested innodb\_log\_file\_size
 * [Revision #9a646c91dd](https://github.com/MariaDB/server/commit/9a646c91dd)\
   2017-05-29 14:24:18 +0300
-  * Mariabackup: Remove the --stats option
+  * mariadb-backup: Remove the --stats option
 * [Revision #cede2b6f0f](https://github.com/MariaDB/server/commit/cede2b6f0f)\
   2017-05-26 12:13:48 +0300
-  * Mariabackup: Remove support for .xbcrypt files
+  * mariadb-backup: Remove support for .xbcrypt files
 * [Revision #7e22050e66](https://github.com/MariaDB/server/commit/7e22050e66)\
   2017-05-26 12:38:32 +0300
-  * Mariabackup: Remove the options --compact --rebuild-indexes --rebuild-threads
+  * mariadb-backup: Remove the options --compact --rebuild-indexes --rebuild-threads
 * [Revision #fa70d077f7](https://github.com/MariaDB/server/commit/fa70d077f7)\
   2017-05-26 12:51:11 +0300
-  * Mariabackup: Remove the options --to-archived-lsn --innodb-log-arch-dir
+  * mariadb-backup: Remove the options --to-archived-lsn --innodb-log-arch-dir
 * [Revision #056bab0880](https://github.com/MariaDB/server/commit/056bab0880)\
   2017-06-16 15:47:46 +0400
   * [MDEV-12620](https://jira.mariadb.org/browse/MDEV-12620) - set lock\_wait\_timeout = 1;flush tables with read lock; lock not released after timeout

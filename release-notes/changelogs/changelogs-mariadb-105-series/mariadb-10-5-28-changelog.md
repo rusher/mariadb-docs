@@ -269,7 +269,7 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-34924](https://jira.mariadb.org/browse/MDEV-34924) : gtid\_slave\_pos table neven been deleted on non replica nodes (wsrep\_gtid\_mode = 1)
 * [Revision #fe2f237768](https://github.com/MariaDB/server/commit/fe2f237768)\
   2025-01-13 17:43:58 +0200
-  * [MDEV-35808](https://jira.mariadb.org/browse/MDEV-35808) Test case to handle undo tablespace truncation in Mariabackup
+  * [MDEV-35808](https://jira.mariadb.org/browse/MDEV-35808) Test case to handle undo tablespace truncation in mariadb-backup
 * [Revision #1327f40f96](https://github.com/MariaDB/server/commit/1327f40f96)\
   2025-01-13 17:51:51 +0400
   * [MDEV-35596](https://jira.mariadb.org/browse/MDEV-35596) Assertion \`type\_handler()->result\_type() == value.type\_handler()->result\_type()' failed in virtual bool Item\_param::get\_date(THD\*, MYSQL\_TIME\*, date\_mode\_t)
@@ -332,7 +332,7 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-35651](https://jira.mariadb.org/browse/MDEV-35651) NO\_UNSIGNED\_SUBTRACTION does not work for multiple unsigned integers
 * [Revision #680d461b5d](https://github.com/MariaDB/server/commit/680d461b5d)\
   2024-10-25 13:41:28 +0200
-  * [MDEV-35239](https://jira.mariadb.org/browse/MDEV-35239) Mariabackup incorrectly thinks we are on a multithreaded slave if slave\_parallel\_workers > 0
+  * [MDEV-35239](https://jira.mariadb.org/browse/MDEV-35239) mariadb-backup incorrectly thinks we are on a multithreaded slave if slave\_parallel\_workers > 0
 * [Revision #4e9c7031a5](https://github.com/MariaDB/server/commit/4e9c7031a5)\
   2024-12-27 13:07:04 +0100
   * [MDEV-35575](https://jira.mariadb.org/browse/MDEV-35575) Fix memory leak, when installing auth\_gssapi plugin fails.

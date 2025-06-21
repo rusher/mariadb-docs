@@ -24,7 +24,7 @@ check the manual that corresponds to your MariaDB server version
  for the right syntax to use near '' at line 3
 ```
 
-The solution is to specify a distinct delimiter for the duration of the process, using the DELIMITER command. The delimiter can be any set of characters you choose, but it needs to be a distinctive set of characters that won't cause further confusion. `//` is a common choice, and used throughout the Knowledge Base.
+The solution is to specify a distinct delimiter for the duration of the process, using the DELIMITER command. The delimiter can be any set of characters you choose, but it needs to be a distinctive set of characters that won't cause further confusion. `//` is a common choice, and used throughout the documentation.
 
 Here's how the function could be successfully entered from the mariadb client with the new delimiter.
 

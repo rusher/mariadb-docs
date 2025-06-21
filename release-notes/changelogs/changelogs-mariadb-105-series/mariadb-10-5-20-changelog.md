@@ -161,7 +161,7 @@ details of the revision and view diffs of the code modified in that revision.
   * bump the VERSION
 * [Revision #4a04c18af9](https://github.com/MariaDB/server/commit/4a04c18af9)\
   2022-11-14 16:43:33 +0400
-  * [MDEV-25765](https://jira.mariadb.org/browse/MDEV-25765) Mariabackup reduced verbosity option for log output
+  * [MDEV-25765](https://jira.mariadb.org/browse/MDEV-25765) mariadb-backup reduced verbosity option for log output
 * [Revision #50b69641ef](https://github.com/MariaDB/server/commit/50b69641ef)\
   2022-11-14 16:17:03 +0400
   * [MDEV-29244](https://jira.mariadb.org/browse/MDEV-29244) mariabackup --help output still referst to innobackupex

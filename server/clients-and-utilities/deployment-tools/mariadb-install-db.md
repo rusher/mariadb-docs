@@ -164,7 +164,7 @@ CREATE USER 'mysql'@'localhost' IDENTIFIED VIA unix_socket
 GRANT ALL PRIVILEGES ON *.* TO 'mysql'@'localhost' WITH GRANT OPTION;
 ```
 
-An invalid password is initially set for both of these user accounts. This means that before a password can be used to authenticate as either of these user accounts, the accounts must first be given a valid password by executing the `[SET PASSWORD](../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/set-password.md)` statement.
+An invalid password is initially set for both of these user accounts. This means that before a password can be used to authenticate as either of these user accounts, the accounts must first be given a valid password by executing the [SET PASSWORD](../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/set-password.md) statement.
 
 For example, here is an example of setting the password for the `root@localhost` user account immediately after installation:
 
@@ -426,7 +426,7 @@ SELECT user,host FROM mysql.user;
 
 * [Configure MariaDB with catalog support](https://github.com/mariadb-corporation/docs-server/blob/test/server/clients-and-utilities/security/user-account-management/catalogs/starting-with-catalogs.md)
 * [Installing system tables (mariadb-install-db)](https://github.com/mariadb-corporation/docs-server/blob/test/server/clients-and-utilities/server-management/install-and-upgrade-mariadb/installing-mariadb/installing-system-tables-mariadb-install-db/README.md)
-* The Windows version of `mariadb-install-db`: `[mysql_install_db.exe](../server-management/getting-installing-and-upgrading-mariadb/mariadb-install-db-exe.md)`
+* The Windows version of `mariadb-install-db`: [mysql_install_db.exe](../server-management/getting-installing-and-upgrading-mariadb/mariadb-install-db-exe.md)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

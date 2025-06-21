@@ -170,7 +170,7 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-30545](https://jira.mariadb.org/browse/MDEV-30545) Remove innodb\_defragment and related parameters
 * [Revision #b314f7b642](https://github.com/MariaDB/server/commit/b314f7b642)\
   2023-02-03 07:42:59 +0400
-  * [MDEV-18931](https://jira.mariadb.org/browse/MDEV-18931) Rename Mariabackup's xtrabackup\_\* files to mariadb\_backup\_\*
+  * [MDEV-18931](https://jira.mariadb.org/browse/MDEV-18931) Rename mariadb-backup's xtrabackup\_\* files to mariadb\_backup\_\*
 * [Revision #4ae97333f0](https://github.com/MariaDB/server/commit/4ae97333f0)\
   2023-03-08 19:50:40 +0100
   * 11.1 branch

@@ -1,25 +1,29 @@
-# Files Backed Up By Mariabackup
+# Files Backed Up By mariadb-backup
 
 ## Files Included in Backup
 
-Mariabackup backs up the files listed below.
+mariadb-backup backs up the files listed below.
 
 ### InnoDB Data Files
 
-Mariabackup backs up the following InnoDB data files:
+mariadb-backup backs up the following InnoDB data files:
 
 * [InnoDB system tablespace](../../../reference/storage-engines/innodb/innodb-tablespaces/innodb-system-tablespaces.md)
 * [InnoDB file-per-table tablespaces](../../../reference/storage-engines/innodb/innodb-tablespaces/innodb-file-per-table-tablespaces.md)
 
 ### MyRocks Data Files
 
-Starting with [MariaDB 10.2.16](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-10216-release-notes) and [MariaDB 10.3.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1038-release-notes), Mariabackup will back up tables that use the [MyRocks](../../../reference/storage-engines/myrocks/) storage engine. This data data is located in the directory defined by the `[rocksdb_datadir](../../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_datadir)` system variable. Mariabackup backs this data up by performing a checkpoint using the `[rocksdb_create_checkpoint](../../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_create_checkpoint)` system variable.
+<<<<<<< HEAD
+Starting with [MariaDB 10.2.16](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-10216-release-notes) and [MariaDB 10.3.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1038-release-notes), mariadb-backup will back up tables that use the [MyRocks](../../../reference/storage-engines/myrocks/) storage engine. This data data is located in the directory defined by the `[rocksdb_datadir](../../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_datadir)` system variable. mariadb-backup backs this data up by performing a checkpoint using the `[rocksdb_create_checkpoint](../../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_create_checkpoint)` system variable.
+=======
+Starting with [MariaDB 10.2.16](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-10216-release-notes) and [MariaDB 10.3.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-3-series/mariadb-1038-release-notes), Mariabackup will back up tables that use the [MyRocks](../../../reference/storage-engines/myrocks/) storage engine. This data data is located in the directory defined by the [rocksdb_datadir](../../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_datadir) system variable. Mariabackup backs this data up by performing a checkpoint using the [rocksdb_create_checkpoint](../../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_create_checkpoint) system variable.
+>>>>>>> 2f4a7af992d60113345320299a7c689ee31815c1
 
-Mariabackup does not currently support [partial backups](broken-reference) for MyRocks.
+mariadb-backup does not currently support [partial backups](broken-reference) for MyRocks.
 
 ### Other Data Files
 
-Mariabackup also backs up files with the following extensions:
+mariadb-backup also backs up files with the following extensions:
 
 * `frm`
 * `isl`
@@ -39,7 +43,7 @@ Mariabackup also backs up files with the following extensions:
 
 ## Files Excluded From Backup
 
-Mariabackup does **not** back up the files listed below.
+mariadb-backup does **not** back up the files listed below.
 
 * [InnoDB Temporary Tablespaces](../../../reference/storage-engines/innodb/innodb-tablespaces/innodb-temporary-tablespaces.md)
 * [Binary logs](../../../server-management/server-monitoring-logs/binary-log/)

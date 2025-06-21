@@ -9,7 +9,7 @@ CURRENT_TIMESTAMP([precision])
 
 ## Description
 
-`CURRENT_TIMESTAMP` and `CURRENT_TIMESTAMP()` are synonyms for `[NOW()](now.md)`.
+`CURRENT_TIMESTAMP` and `CURRENT_TIMESTAMP()` are synonyms for [NOW()](now.md).
 
 ## See Also
 
