@@ -8,17 +8,6 @@ During the backup, any server options relevant to mariadb-backup are written to 
 
 ## `ib_logfile0`
 
-<<<<<<< HEAD
-In [MariaDB 10.2.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-10210-release-notes) and later, mariadb-backup creates an empty [InnoDB redo log](../../../reference/storage-engines/innodb/innodb-redo-log.md) file called `ib_logfile0` as part of the `[--prepare](mariabackup-options.md#-prepare)` stage. This file has 3 roles:
-
-1. In the source server, `ib_logfile0` is the first (and possibly the only) [InnoDB redo log](../../../reference/storage-engines/innodb/innodb-redo-log.md) file.
-2. In the non-prepared backup, `ib_logfile0` contains all of the [InnoDB redo log](../../../reference/storage-engines/innodb/innodb-redo-log.md) copied during the backup. Previous versions of mariadb-backup would use a file called `[xtrabackup_logfile](#xtrabackup_logfile)` for this.
-3. During the `[--prepare](mariabackup-options.md#-prepare)` stage, `ib_logfile0` would previously be deleted. Now during the `--prepare` stage, `ib_logfile0` is initialized as an empty [InnoDB redo log](../../../reference/storage-engines/innodb/innodb-redo-log.md) file. That way, if the backup is manually restored, any pre-existing [InnoDB redo log](../../../reference/storage-engines/innodb/innodb-redo-log.md) files would get overwritten by the empty one. This helps to prevent certain kinds of known issues. For example, see [mariadb-backup Overview: Manual Restore with Pre-existing InnoDB Redo Log files](mariabackup-overview.md#manual-restore-with-pre-existing-innodb-redo-log-files).
-
-## `xtrabackup_logfile`
-
-In [MariaDB 10.2.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1029-release-notes) and before, mariadb-backup creates `xtrabackup_logfile` to store the [InnoDB redo log](../../../reference/storage-engines/innodb/innodb-redo-log.md), In later versions, `[ib_logfile0](#ib_logfile0)` is created instead.
-=======
 In [MariaDB 10.2.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-10210-release-notes) and later, Mariabackup creates an empty [InnoDB redo log](../../../reference/storage-engines/innodb/innodb-redo-log.md) file called `ib_logfile0` as part of the [--prepare](mariabackup-options.md#-prepare) stage. This file has 3 roles:
 
 1. In the source server, `ib_logfile0` is the first (and possibly the only) [InnoDB redo log](../../../reference/storage-engines/innodb/innodb-redo-log.md) file.
@@ -28,7 +17,6 @@ In [MariaDB 10.2.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-se
 ## `xtrabackup_logfile`
 
 In [MariaDB 10.2.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1029-release-notes) and before, Mariabackup creates `xtrabackup_logfile` to store the [InnoDB redo log](../../../reference/storage-engines/innodb/innodb-redo-log.md), In later versions, [ib_logfile0](#ib_logfile0) is created instead.
->>>>>>> 2f4a7af992d60113345320299a7c689ee31815c1
 
 ## `xtrabackup_binlog_info`
 
@@ -84,11 +72,7 @@ If `backup_type` is `full-backuped`, then `from_lsn` has the value of `0`.
 
 If `backup_type` is `incremental`, then `from_lsn` has the value of the [log sequence number (LSN)](../../../reference/storage-engines/innodb/innodb-redo-log.md#log-sequence-number-lsn) at which the backup started reading from the [InnoDB redo log](../../../reference/storage-engines/innodb/innodb-redo-log.md). This is internally used by mariadb-backup when preparing incremental backups.
 
-<<<<<<< HEAD
-This value can be manually set during an [incremental backup](incremental-backup-and-restore-with-mariabackup.md) with the `[--incremental-lsn](mariabackup-options.md#-incremental-lsn)` option. However, it is generally better to let mariadb-backup figure out the `from_lsn` automatically by specifying a parent backup with the `[--incremental-basedir](mariabackup-options.md#-incremental-basedir)` option.
-=======
 This value can be manually set during an [incremental backup](incremental-backup-and-restore-with-mariabackup.md) with the [--incremental-lsn](mariabackup-options.md#-incremental-lsn) option. However, it is generally better to let Mariabackup figure out the `from_lsn` automatically by specifying a parent backup with the [--incremental-basedir](mariabackup-options.md#-incremental-basedir) option.
->>>>>>> 2f4a7af992d60113345320299a7c689ee31815c1
 
 ### `to_lsn`
 
@@ -196,11 +180,7 @@ Otherwise, this value will be `N`.
 
 If the [--slave-info](mariabackup-options.md#-slave-info) option is provided, then this file contains the [CHANGE MASTER](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) command that can be used to set up a new server as a slave of the original server's master after the backup has been restored.
 
-<<<<<<< HEAD
-mariadb-backup does **not** check if [GTIDs](../../../ha-and-performance/standard-replication/gtid.md) are being used in replication. It takes a shortcut and assumes that if the `[gtid_slave_pos](../../../server-usage/replication-cluster-multi-master/standard-replication/gtid.md#gtid_slave_pos)` system variable is non-empty, then it writes the `[CHANGE MASTER](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md)` command with the `[MASTER_USE_GTID](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md#master_use_gtid)` option set to `slave_pos`. Otherwise, it writes the `[CHANGE MASTER](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md)` command with the `[MASTER_LOG_FILE](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md#master_log_file)` and `[MASTER_LOG_POS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md#master_log_pos)` options using the master's [binary log](../../../server-management/server-monitoring-logs/binary-log/) file and position. See [MDEV-19264](https://jira.mariadb.org/browse/MDEV-19264) for more information.
-=======
 Mariabackup does **not** check if [GTIDs](../../../ha-and-performance/standard-replication/gtid.md) are being used in replication. It takes a shortcut and assumes that if the [gtid_slave_pos](../../../server-usage/replication-cluster-multi-master/standard-replication/gtid.md#gtid_slave_pos) system variable is non-empty, then it writes the [CHANGE MASTER](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) command with the [MASTER_USE_GTID](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md#master_use_gtid) option set to `slave_pos`. Otherwise, it writes the [CHANGE MASTER](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) command with the [MASTER_LOG_FILE](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md#master_log_file) and [MASTER_LOG_POS](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md#master_log_pos) options using the master's [binary log](../../../server-management/server-monitoring-logs/binary-log/) file and position. See [MDEV-19264](https://jira.mariadb.org/browse/MDEV-19264) for more information.
->>>>>>> 2f4a7af992d60113345320299a7c689ee31815c1
 
 ## `xtrabackup_galera_info`
 
