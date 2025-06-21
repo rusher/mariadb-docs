@@ -1,6 +1,6 @@
 # CONNECT XCOL Table Type
 
-`XCOL` tables are based on another table or view, like `[PROXY](connect-proxy-table-type.md)` tables. This type can be\
+`XCOL` tables are based on another table or view, like [PROXY](connect-proxy-table-type.md) tables. This type can be\
 used when the object table has a column that contains a list of values.
 
 Suppose we have a _'children'_ table that can be displayed as:

@@ -42,10 +42,10 @@ MariaDB Enterprise Server 10.4.6-1 was released on 2019-07-08.
 * Accounts of type anonymous-user removed
 * Database "test" has no default grants
 * [simple\_password\_check](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/password-validation-plugins/simple-password-check-plugin) plugin is activated by default with settings:
-  * [simple\_password\_check\_minimal\_length = 8](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/password-validation-plugins/simple-password-check-plugin#simple_password_check_minimal_length)
-  * [simple\_password\_check\_digits = 1](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/password-validation-plugins/simple-password-check-plugin#simple_password_check_digits)
-  * [simple\_password\_check\_letters\_same\_case = 1](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/password-validation-plugins/simple-password-check-plugin#simple_password_check_letters_same_case)
-  * [simple\_password\_check\_other\_characters = 1](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/password-validation-plugins/simple-password-check-plugin#simple_password_check_other_characters)
+  * [simple\_password\_check\_minimal\_length = 8](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/password-validation-plugins/simple-password-check-plugin#simple_password_check_minimal_length)
+  * [simple\_password\_check\_digits = 1](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/password-validation-plugins/simple-password-check-plugin#simple_password_check_digits)
+  * [simple\_password\_check\_letters\_same\_case = 1](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/password-validation-plugins/simple-password-check-plugin#simple_password_check_letters_same_case)
+  * [simple\_password\_check\_other\_characters = 1](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/password-validation-plugins/simple-password-check-plugin#simple_password_check_other_characters)
 * `Audit` plugin is loaded by default, but is not activated
 * [DISKS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/other-plugins/disks-plugin) plugin is loaded by default on Linux systems
 * Engine independent table statistics enabled by default

@@ -11,7 +11,7 @@ In order for multiple `mariadbd` processes to work on the same host, these proce
 * Use different Unix socket files for local connections.
 * Use different TCP/IP ports for network connections.
 * Use different data directories.
-* Use different process ID files (specified by the `--pid-file` option) if using `[mariadbd-safe](mariadbd-safe.md)` to start `mariadbd`.
+* Use different process ID files (specified by the `--pid-file` option) if using [mariadbd-safe](mariadbd-safe.md) to start `mariadbd`.
 
 `mariadbd-multi` can start or stop servers, or report their current status.
 

@@ -16,16 +16,16 @@ For general "how to questions" ask questions [here](https://app.gitbook.com/o/di
 ## Notable changes
 
 * [MCOL-1385](https://jira.mariadb.org/browse/MCOL-1385) - The base MariaDB server version is now [10.3.9](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-1039-release-notes.md) which include several maintenance and security fixes.
-* [MCOL-392](https://jira.mariadb.org/browse/MCOL-392) - TIME data type is [now supported](https://app.gitbook.com/s/rBEU9juWLfTDcdwF3Q14/sql-commands/columnstore-data-types)
-* [MCOL-320](https://jira.mariadb.org/browse/MCOL-320) - TIME and DATETIME data types [now support microseconds](https://app.gitbook.com/s/rBEU9juWLfTDcdwF3Q14/sql-commands/columnstore-data-types)
+* [MCOL-392](https://jira.mariadb.org/browse/MCOL-392) - TIME data type is [now supported](https://app.gitbook.com/s/rBEU9juWLfTDcdwF3Q14/reference/columnstore-data-types)
+* [MCOL-320](https://jira.mariadb.org/browse/MCOL-320) - TIME and DATETIME data types [now support microseconds](https://app.gitbook.com/s/rBEU9juWLfTDcdwF3Q14/reference/columnstore-data-types)
 * [MCOL-497](https://jira.mariadb.org/browse/MCOL-497) - Cross Engine Joins now support SSL connections
 * Improved DDL syntax support
-  * [MCOL-497](https://jira.mariadb.org/browse/MCOL-497) - BOOL / BOOLEAN alias for TINYINT [now supported](https://app.gitbook.com/s/rBEU9juWLfTDcdwF3Q14/sql-commands/columnstore-data-types) - with thanks to community contributor "tntnatbry"
+  * [MCOL-497](https://jira.mariadb.org/browse/MCOL-497) - BOOL / BOOLEAN alias for TINYINT [now supported](https://app.gitbook.com/s/rBEU9juWLfTDcdwF3Q14/reference/columnstore-data-types) - with thanks to community contributor "tntnatbry"
   * [MCOL-573](https://jira.mariadb.org/browse/MCOL-573) - Backticks & reserved words now supported
   * [MCOL-716](https://jira.mariadb.org/browse/MCOL-716) - Non-alphanumeric table/column names now supported
 * [MCOL-1201](https://jira.mariadb.org/browse/MCOL-1201) - User Defined Aggregate / Window Functions now support multiple parameters.
-* [MCOL-521](https://jira.mariadb.org/browse/MCOL-521) - [Regression aggregate](https://app.gitbook.com/s/rBEU9juWLfTDcdwF3Q14/sql-commands/columnstore-distributed-aggregate-functions) and [windows functions](https://app.gitbook.com/s/rBEU9juWLfTDcdwF3Q14/sql-commands/columnstore-window-functions) are now supported.
-* [MCOL-1577](https://jira.mariadb.org/browse/MCOL-1577) - CREATE TABLE...LIKE [now supported](https://app.gitbook.com/s/rBEU9juWLfTDcdwF3Q14/sql-commands/data-definition-statements/columnstore-create-table)
+* [MCOL-521](https://jira.mariadb.org/browse/MCOL-521) - [Regression aggregate](https://app.gitbook.com/s/rBEU9juWLfTDcdwF3Q14/reference/columnstore-distributed-aggregate-functions) and [windows functions](https://app.gitbook.com/s/rBEU9juWLfTDcdwF3Q14/reference/columnstore-window-functions) are now supported.
+* [MCOL-1577](https://jira.mariadb.org/browse/MCOL-1577) - CREATE TABLE...LIKE [now supported](https://app.gitbook.com/s/rBEU9juWLfTDcdwF3Q14/reference/data-definition-statements/columnstore-create-table)
 * [MCOL-1242](https://jira.mariadb.org/browse/MCOL-1242) - A [remote bulk data import tool](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/columnstore/columnstore-1-2/broken-reference/README.md) is now available which allows loading data directly from any server. This tool is included in the MariaDB ColumnStore Tools package
 * [MCOL-1281](https://jira.mariadb.org/browse/MCOL-1281) - [Microsoft Windows 10](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/columnstore/columnstore-1-2/broken-reference/README.md) support for bulk write SDK
 * Pentaho data adapter is now also available for Windows 10

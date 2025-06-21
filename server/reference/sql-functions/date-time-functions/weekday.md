@@ -15,7 +15,7 @@ Returns the weekday index for `date`
 (`0` = Monday, `1` = Tuesday, ... `6` = Sunday).
 
 
-This contrasts with `[DAYOFWEEK()](dayofweek.md)` which follows the ODBC standard
+This contrasts with [DAYOFWEEK()](dayofweek.md) which follows the ODBC standard
 (`1` = Sunday, `2` = Monday, ..., `7` = Saturday).
 
 

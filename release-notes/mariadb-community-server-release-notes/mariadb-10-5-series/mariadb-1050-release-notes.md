@@ -81,7 +81,7 @@ Notable changes of this release include:
 ### Query Optimizer
 
 * [ANALYZE for statements](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/analyze-and-explain-statements/analyze-statement) is improved, now it also shows the time spent checking the WHERE clause and doing other auxiliary operations ([MDEV-20854](https://jira.mariadb.org/browse/MDEV-20854))
-* [Inferred IS NOT NULL predicates can be used by the range optimizer](https://mariadb.com/kb/en/not_null_range_scan_optimization) ([MDEV-15777](https://jira.mariadb.org/browse/MDEV-15777))
+* [Inferred IS NOT NULL predicates can be used by the range optimizer](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/query-optimizations/not_null_range_scan-optimization) ([MDEV-15777](https://jira.mariadb.org/browse/MDEV-15777))
 
 ### Galera
 

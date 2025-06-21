@@ -180,7 +180,7 @@ This statement will delete all rows from the table books for the author\_id give
 
 #### Conclusion
 
-This is a very basic primer for using MariaDB. Hopefully, it gives you the idea of how to get started with MariaDB. Each of the SQL statements mentioned here have several more options and clauses each. We will cover these statements and others in greater detail in other articles. For now, though, you can learn more about them from experimenting and by further reading of the Knowledge Base online documentation. A downloadable PDF of much of the documentation is [available here](https://downloads.mariadb.org).
+This is a very basic primer for using MariaDB. Hopefully, it gives you the idea of how to get started with MariaDB. Each of the SQL statements mentioned here have several more options and clauses each. We will cover these statements and others in greater detail in other articles. For now, though, you can learn more about them from experimenting and by further reading of the documentation online documentation. A downloadable PDF of much of the documentation is [available here](https://downloads.mariadb.org).
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

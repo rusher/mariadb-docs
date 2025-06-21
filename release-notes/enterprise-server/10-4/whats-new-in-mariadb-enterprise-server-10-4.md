@@ -20,7 +20,7 @@ MariaDB Enterprise Server uses an [enterprise lifecycle](https://app.gitbook.com
 
 ## Enterprise Audit Plugin
 
-[MariaDB Enterprise Audit](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/mariadb-enterprise-audit) provides support for auditing resource access to MariaDB Enterprise Server.
+[MariaDB Enterprise Audit](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/mariadb-enterprise-audit) provides support for auditing resource access to MariaDB Enterprise Server.
 
 ## Enterprise Backup
 

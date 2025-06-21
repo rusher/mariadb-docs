@@ -32,7 +32,7 @@ You can also configure your package manager to install it from MariaDB Foundatio
 **Installing with yum/dnf**
 
 On RHEL, CentOS, Fedora, and other similar Linux distributions, it is highly recommended to install the relevant [RPM package](../../../server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/rpm/) from MariaDB's\
-repository using `[yum](../../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/rpm/yum.md)` or `[dnf](https://en.wikipedia.org/wiki/DNF_(software))`. Starting with RHEL 8 and Fedora 22, `yum` has been replaced by `dnf`, which is the next major version of `yum`. However, `yum` commands still work on many systems that use `dnf`. For example:
+repository using [yum](../../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/rpm/yum.md) or [dnf](https://en.wikipedia.org/wiki/DNF_(software)). Starting with RHEL 8 and Fedora 22, `yum` has been replaced by `dnf`, which is the next major version of `yum`. However, `yum` commands still work on many systems that use `dnf`. For example:
 
 ```
 sudo yum install MariaDB-gssapi-server
@@ -41,7 +41,7 @@ sudo yum install MariaDB-gssapi-server
 **Installing with apt-get**
 
 On Debian, Ubuntu, and other similar Linux distributions, it is highly recommended to install the relevant [DEB package](../../../server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/installing-mariadb-deb-files.md) from MariaDB's\
-repository using `[apt-get](https://wiki.debian.org/apt-get)`. For example:
+repository using [apt-get](https://wiki.debian.org/apt-get). For example:
 
 ```
 sudo apt-get install mariadb-plugin-gssapi-server
@@ -49,7 +49,7 @@ sudo apt-get install mariadb-plugin-gssapi-server
 
 **Installing with zypper**
 
-On SLES, OpenSUSE, and other similar Linux distributions, it is highly recommended to install the relevant [RPM package](../../../server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/rpm/) from MariaDB's repository using `[zypper](../../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/rpm/installing-mariadb-with-zypper.md)`. For example:
+On SLES, OpenSUSE, and other similar Linux distributions, it is highly recommended to install the relevant [RPM package](../../../server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/rpm/) from MariaDB's repository using [zypper](../../../server-management/getting-installing-and-upgrading-mariadb/binary-packages/rpm/installing-mariadb-with-zypper.md). For example:
 
 ```
 sudo zypper install MariaDB-gssapi-server
@@ -67,7 +67,7 @@ Since [MariaDB 10.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-com
 
 Before [MariaDB 10.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-11-series/what-is-mariadb-1011) on Windows, and on other operating systems, although the plugin's shared library is distributed with MariaDB by default, the plugin is not actually installed by MariaDB by default. There are two methods that can be used to install the plugin with MariaDB.
 
-The first method can be used to install the plugin without restarting the server. You can install the plugin dynamically by executing `[INSTALL SONAME](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-soname.md)` or `[INSTALL PLUGIN](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin.md)`. For example:
+The first method can be used to install the plugin without restarting the server. You can install the plugin dynamically by executing [INSTALL SONAME](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-soname.md) or [INSTALL PLUGIN](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin.md). For example:
 
 ```
 INSTALL SONAME 'auth_gssapi';
@@ -89,7 +89,7 @@ You can uninstall the plugin dynamically by executing [UNINSTALL SONAME](../../s
 UNINSTALL SONAME 'auth_gssapi';
 ```
 
-If you installed the plugin by providing the `[--plugin-load](../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md)` or the `[--plugin-load-add](../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md)` options in a relevant server [option group](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md), then those options should be removed to prevent the plugin from being loaded the next time the server is restarted.
+If you installed the plugin by providing the [--plugin-load](../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) or the [--plugin-load-add](../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) options in a relevant server [option group](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md), then those options should be removed to prevent the plugin from being loaded the next time the server is restarted.
 
 ## Configuring the Plugin
 
@@ -108,7 +108,7 @@ How this keytab file is generated depends on whether the KDC server is [**Micros
 
 #### Creating a Keytab File with Microsoft Active Directory
 
-If you are using [**Microsoft Active Directory KDC**](https://docs.microsoft.com/en-us/windows-server/identity/ad-ds/get-started/virtual-dc/active-directory-domain-services-overview), then you may need to create a keytab using the `[ktpass.exe](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/ktpass)` utility on a Windows host. The service principal will need to be mapped to an existing domain user. To do so, follow the steps listed below.
+If you are using [**Microsoft Active Directory KDC**](https://docs.microsoft.com/en-us/windows-server/identity/ad-ds/get-started/virtual-dc/active-directory-domain-services-overview), then you may need to create a keytab using the [ktpass.exe](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/ktpass) utility on a Windows host. The service principal will need to be mapped to an existing domain user. To do so, follow the steps listed below.
 
 Be sure to replace the following items in the step below:
 
@@ -125,17 +125,17 @@ ktpass.exe /princ mariadb/${HOST}@${DOMAIN} /mapuser ${AD_USER} /pass ${PASSWORD
 
 #### Creating a Keytab File with MIT Kerberos
 
-If you are using [**MIT Kerberos KDC**](https://web.mit.edu/Kerberos/krb5-1.12/doc/index.html), then you can create a [keytab](https://web.mit.edu/Kerberos/krb5-1.12/doc/admin/install_appl_srv.html#the-keytab-file) file using the `[kadmin](https://web.mit.edu/kerberos/krb5-1.12/doc/admin/admin_commands/kadmin_local.html)` utility. To do so, follow the steps listed below.
+If you are using [**MIT Kerberos KDC**](https://web.mit.edu/Kerberos/krb5-1.12/doc/index.html), then you can create a [keytab](https://web.mit.edu/Kerberos/krb5-1.12/doc/admin/install_appl_srv.html#the-keytab-file) file using the [kadmin](https://web.mit.edu/kerberos/krb5-1.12/doc/admin/admin_commands/kadmin_local.html) utility. To do so, follow the steps listed below.
 
 In the following steps, be sure to replace `${HOST}` with the fully qualified DNS name for the MariaDB server host.
 
-First, create the service principal using the `[kadmin](https://web.mit.edu/kerberos/krb5-1.12/doc/admin/admin_commands/kadmin_local.html)` utility. For example:
+First, create the service principal using the [kadmin](https://web.mit.edu/kerberos/krb5-1.12/doc/admin/admin_commands/kadmin_local.html) utility. For example:
 
 ```
 kadmin -q "addprinc -randkey mariadb/${HOST}"
 ```
 
-Then, export the newly created user to the keytab file using the `[kadmin](https://web.mit.edu/kerberos/krb5-1.12/doc/admin/admin_commands/kadmin_local.html)` utility. For example:
+Then, export the newly created user to the keytab file using the [kadmin](https://web.mit.edu/kerberos/krb5-1.12/doc/admin/admin_commands/kadmin_local.html) utility. For example:
 
 ```
 kadmin -q "ktadd -k /path/to/mariadb.keytab mariadb/${HOST}"
@@ -148,7 +148,7 @@ More details can be found at the following links:
 
 ### Configuring the Path to the Keytab File on Unix
 
-If the MariaDB server is running on Unix, then the path to the keytab file that was previously created can be set by configuring the `[gssapi_keytab_path](#gssapi_keytab_path)` system variable. This can be specified as a command-line argument to `[mysqld](../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md)` or it can be specified in a relevant server [option group](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md). For example:
+If the MariaDB server is running on Unix, then the path to the keytab file that was previously created can be set by configuring the [gssapi_keytab_path](#gssapi_keytab_path) system variable. This can be specified as a command-line argument to [mysqld](../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) or it can be specified in a relevant server [option group](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md). For example:
 
 ```
 [mariadb]
@@ -158,7 +158,7 @@ gssapi_keytab_path=/path/to/mariadb.keytab
 
 ### Configuring the Service Principal Name
 
-The service principal name can be set by configuring the `[gssapi_principal_name](#gssapi_principal_name)` system variable. This can be specified as a command-line argument to `[mysqld](../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md)` or it can be specified in a relevant server [option group](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md). For example:
+The service principal name can be set by configuring the [gssapi_principal_name](#gssapi_principal_name) system variable. This can be specified as a command-line argument to [mysqld](../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) or it can be specified in a relevant server [option group](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md). For example:
 
 ```
 [mariadb]
@@ -170,7 +170,7 @@ If a service principal name is not provided, then the plugin will try to use `ma
 
 If the MariaDB server is running on Unix, then the plugin needs a service principal name in order to function.
 
-If the MariaDB server is running on Windows, then the plugin does not usually need a service principal in order to function. However, if you want to use one anyway, then one can be created with the `[setspn](https://social.technet.microsoft.com/wiki/contents/articles/717.service-principal-names-spns-setspn-syntax-setspn-exe.aspx)` utility.
+If the MariaDB server is running on Windows, then the plugin does not usually need a service principal in order to function. However, if you want to use one anyway, then one can be created with the [setspn](https://social.technet.microsoft.com/wiki/contents/articles/717.service-principal-names-spns-setspn-syntax-setspn-exe.aspx) utility.
 
 Different KDC implementations may use different canonical forms to identify principals. See [RFC2744: Section 3.10](https://tools.ietf.org/html/rfc2744.html#section-3.10) to learn what the standard says about principal names.
 
@@ -182,13 +182,13 @@ More details can be found at the following links:
 
 ## Creating Users
 
-To create a user account via `[CREATE USER](../../sql-statements-and-structure/sql-statements/account-management-sql-commands/create-user.md)`, specify the name of the plugin in the `[IDENTIFIED VIA](../../sql-statements-and-structure/sql-statements/account-management-sql-commands/create-user.md#identified-viawith-authentication_plugin)` clause. For example:
+To create a user account via [CREATE USER](../../sql-statements-and-structure/sql-statements/account-management-sql-commands/create-user.md), specify the name of the plugin in the [IDENTIFIED VIA](../../sql-statements-and-structure/sql-statements/account-management-sql-commands/create-user.md#identified-viawith-authentication_plugin) clause. For example:
 
 ```
 CREATE USER username@hostname IDENTIFIED VIA gssapi;
 ```
 
-If `[SQL_MODE](../../../server-management/variables-and-modes/sql-mode.md)` does not have `NO_AUTO_CREATE_USER` set, then you can also create the user account via `[GRANT](../../sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md)`. For example:
+If [SQL_MODE](../../../server-management/variables-and-modes/sql-mode.md) does not have `NO_AUTO_CREATE_USER` set, then you can also create the user account via [GRANT](../../sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md). For example:
 
 ```
 GRANT SELECT ON db.* TO username@hostname IDENTIFIED VIA gssapi;
@@ -250,7 +250,7 @@ mysql --plugin-dir=/usr/local/mysql/lib64/mysql/plugin --user=alice
 
 ### `auth_gssapi_client`
 
-The `auth_gssapi_client` client authentication plugin receives the principal name from the server, and then uses either the `[gss_init_sec_context](https://web.mit.edu/kerberos/krb5-devel/doc/appdev/gssapi.html#initiator-credentials)` function (on Unix) or the `[InitializeSecurityContext](https://docs.microsoft.com/en-us/windows/desktop/api/sspi/nf-sspi-initializesecuritycontexta)` function (on Windows) to establish a security context on the client.
+The `auth_gssapi_client` client authentication plugin receives the principal name from the server, and then uses either the [gss_init_sec_context](https://web.mit.edu/kerberos/krb5-devel/doc/appdev/gssapi.html#initiator-credentials) function (on Unix) or the [InitializeSecurityContext](https://docs.microsoft.com/en-us/windows/desktop/api/sspi/nf-sspi-initializesecuritycontexta) function (on Windows) to establish a security context on the client.
 
 ## Support in Client Libraries
 
@@ -276,16 +276,16 @@ The `auth_gssapi_client` client authentication plugin receives the principal nam
 
 The support is transparent. Normally, the connector only needs to be provided the correct user name, and no other parameters are required.
 
-However, this connector also supports the `[ServerSPN](https://mysql-net.github.io/MySqlConnector/connection-options)` connection string parameter, which can be used for mutual authentication.
+However, this connector also supports the [ServerSPN](https://mysql-net.github.io/MySqlConnector/connection-options) connection string parameter, which can be used for mutual authentication.
 
 #### .NET specific problems/workarounds
 
 When connecting from Unix client to Windows server with ADO.NET, in an Active Directory domain environment, be aware that .NET Core on Unix does not support principal names in UPN(User Principal Name) form, which is default on Windows (e.g machine$@domain.com) . Thus, upon encountering an authentication exception with "server not found in Kerberos database", use one of workarounds below
 
 * Force host-based SPN on server side.
-  * For example, this can be done by setting the `[gssapi_principal_name](#gssapi_principal_name)` system variable to `HOST/machine` in a server [option group](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md).
+  * For example, this can be done by setting the [gssapi_principal_name](#gssapi_principal_name) system variable to `HOST/machine` in a server [option group](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md).
 * Pass host-based SPN on client side.
-  * For example, this can be done by setting the connector's `[ServerSPN](https://mysql-net.github.io/MySqlConnector/connection-options)` connection string parameter to `HOST/machine`.
+  * For example, this can be done by setting the connector's [ServerSPN](https://mysql-net.github.io/MySqlConnector/connection-options) connection string parameter to `HOST/machine`.
 
 ## Versions
 
@@ -338,10 +338,10 @@ When connecting from Unix client to Windows server with ADO.NET, in an Active Di
 
 * Description: Controls how the server should treat the plugin when the server starts up.
   * Valid values are:
-    * `OFF` - Disables the plugin without removing it from the `[mysql.plugins](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-plugin-table.md)` table.
+    * `OFF` - Disables the plugin without removing it from the [mysql.plugins](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-plugin-table.md) table.
     * `ON` - Enables the plugin. If the plugin cannot be initialized, then the server will still continue starting up, but the plugin will be disabled.
     * `FORCE` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error.
-    * `FORCE_PLUS_PERMANENT` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error. In addition, the plugin cannot be uninstalled with `[UNINSTALL SONAME](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md)` or `[UNINSTALL PLUGIN](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md)` while the server is running.
+    * `FORCE_PLUS_PERMANENT` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error. In addition, the plugin cannot be uninstalled with [UNINSTALL SONAME](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md) or [UNINSTALL PLUGIN](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md) while the server is running.
   * See [Plugin Overview: Configuring Plugin Activation at Server Startup](../plugin-overview.md#configuring-plugin-activation-at-server-startup) for more information.
 * Commandline: `--gssapi=value`
 * Data Type: `enumerated`

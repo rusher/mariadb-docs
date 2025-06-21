@@ -452,7 +452,7 @@ There is a "Haversine" algorithm that is twice as fast as the GCDist function he
 * [Sample](https://dba.stackexchange.com/questions/134028/select-the-minimum-of-a-calculated-distance-value-without-sorting)
 * [Z-ordering](https://en.wikipedia.org/wiki/Geohash)
 
-Rick James graciously allowed us to use this article in the Knowledge Base.
+Rick James graciously allowed us to use this article in the documentation.
 
 [Rick James' site](https://mysql.rjweb.org/) has other useful tips, how-tos,\
 optimizations, and debugging tips.

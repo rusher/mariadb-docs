@@ -11,7 +11,7 @@ LOAD DATA FROM MASTER
 This feature has been removed from recent versions of MariaDB.
 
 Since the current implementation of `LOAD DATA FROM MASTER`\
-and `[LOAD TABLE FROM MASTER](load-table-from-master-removed.md)` is very limited, these statements are deprecated in versions 4.1 of MySQL and above. We will introduce a more\
+and [LOAD TABLE FROM MASTER](load-table-from-master-removed.md) is very limited, these statements are deprecated in versions 4.1 of MySQL and above. We will introduce a more\
 advanced technique (called "online backup") in a future version. That technique\
 will have the additional advantage of working with more storage engines.
 
@@ -44,9 +44,9 @@ from the mysql database. This makes it easy to have different users and\
 privileges on the master and the slave.
 
 To use `LOAD DATA FROM MASTER`, the replication account that\
-is used to connect to the master must have the `RELOAD` and`[SUPER](../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#global-privileges)` privileges on the master and the`SELECT` privilege for all master tables you want to load.\
+is used to connect to the master must have the `RELOAD` and[SUPER](../../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#global-privileges) privileges on the master and the`SELECT` privilege for all master tables you want to load.\
 All master tables for which the user does not have the`SELECT` privilege are ignored by`LOAD DATA FROM MASTER`. This is because the master hides\
-them from the user: `LOAD DATA FROM MASTER` calls`SHOW DATABASES` to know the master databases to load, but`[SHOW DATABASES](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-databases.md)` returns only databases\
+them from the user: `LOAD DATA FROM MASTER` calls`SHOW DATABASES` to know the master databases to load, but[SHOW DATABASES](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-databases.md) returns only databases\
 for which the user has some privilege. On the slave side, the user that\
 issues `LOAD DATA FROM MASTER` must have privileges for\
 dropping and creating the databases and tables that are copied.

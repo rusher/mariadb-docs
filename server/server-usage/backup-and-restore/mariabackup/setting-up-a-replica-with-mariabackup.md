@@ -1,10 +1,10 @@
-# Setting up a Replica with Mariabackup
+# Setting up a Replica with mariadb-backup
 
 {% hint style="info" %}
 The terms _master_ and _slave_ have historically been used in replication, and MariaDB has begun the process of adding _primary_ and _replica_ synonyms. The old terms will continue to be used to maintain backward compatibility - see [MDEV-18777](https://jira.mariadb.org/browse/MDEV-18777) to follow progress on this effort.
 {% endhint %}
 
-Mariabackup makes it very easy to set up a [replica](../../../ha-and-performance/standard-replication/) using a [full backup](full-backup-and-restore-with-mariabackup.md). This page documents how to set up a replica from a backup.
+mariadb-backup makes it very easy to set up a [replica](../../../ha-and-performance/standard-replication/) using a [full backup](full-backup-and-restore-with-mariabackup.md). This page documents how to set up a replica from a backup.
 
 If you are using [MariaDB Galera Cluster](../../../../en/galera/), then you may want to try one of the following pages instead:
 
@@ -81,7 +81,7 @@ At this point, we need to get the replication coordinates of the primary from th
 
 If we took the backup on the primary, then the coordinates will be in the [xtrabackup\_binlog\_info](files-created-by-mariabackup.md#xtrabackup_binlog_info) file. If we took the backup on another replica and if we provided the [--slave-info](mariabackup-options.md#-slave-info) option, then the coordinates will be in the file [xtrabackup\_slave\_info](files-created-by-mariabackup.md#xtrabackup_slave_info) file.
 
-Mariabackup dumps replication coordinates in two forms: [GTID](../../../ha-and-performance/standard-replication/gtid.md) coordinates and [binary log](../../../server-management/server-monitoring-logs/binary-log/) file and position coordinates, like the ones you would normally see from [SHOW MASTER STATUS](../../../reference/sql-statements/administrative-sql-statements/show/show-binlog-status.md) output. We can choose which set of coordinates we would like to use to set up replication.
+mariadb-backup dumps replication coordinates in two forms: [GTID](../../../ha-and-performance/standard-replication/gtid.md) coordinates and [binary log](../../../server-management/server-monitoring-logs/binary-log/) file and position coordinates, like the ones you would normally see from [SHOW MASTER STATUS](../../../reference/sql-statements/administrative-sql-statements/show/show-binlog-status.md) output. We can choose which set of coordinates we would like to use to set up replication.
 
 For example:
 

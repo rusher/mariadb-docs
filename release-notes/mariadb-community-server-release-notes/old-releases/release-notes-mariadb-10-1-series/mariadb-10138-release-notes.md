@@ -22,7 +22,7 @@ Thanks, and enjoy MariaDB!
 * [MDEV-17475](https://jira.mariadb.org/browse/MDEV-17475): Maximum value of [table\_definition\_cache](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#table_definition_cache) is now `2097152`
 * [MDEV-13671](https://jira.mariadb.org/browse/MDEV-13671): InnoDB should use case-insensitive column name comparisons like the rest of the server
 * ALTER TABLE fixes: [MDEV-17230](https://jira.mariadb.org/browse/MDEV-17230), [MDEV-16499](https://jira.mariadb.org/browse/MDEV-16499), [MDEV-17904](https://jira.mariadb.org/browse/MDEV-17904), [MDEV-17833](https://jira.mariadb.org/browse/MDEV-17833),[MDEV-17470](https://jira.mariadb.org/browse/MDEV-17470), [MDEV-18237](https://jira.mariadb.org/browse/MDEV-18237), [MDEV-18016](https://jira.mariadb.org/browse/MDEV-18016)
-* Improvements to InnoDB page checksum, recovery, and Mariabackup: [MDEV-17957](https://jira.mariadb.org/browse/MDEV-17957),[MDEV-12112](https://jira.mariadb.org/browse/MDEV-12112), [MDEV-18025](https://jira.mariadb.org/browse/MDEV-18025), [MDEV-18279](https://jira.mariadb.org/browse/MDEV-18279), [MDEV-18183](https://jira.mariadb.org/browse/MDEV-18183)
+* Improvements to InnoDB page checksum, recovery, and mariadb-backup: [MDEV-17957](https://jira.mariadb.org/browse/MDEV-17957),[MDEV-12112](https://jira.mariadb.org/browse/MDEV-12112), [MDEV-18025](https://jira.mariadb.org/browse/MDEV-18025), [MDEV-18279](https://jira.mariadb.org/browse/MDEV-18279), [MDEV-18183](https://jira.mariadb.org/browse/MDEV-18183)
 * Galera
   * [MDEV-15740](https://jira.mariadb.org/browse/MDEV-15740): Galera durability fix
   * New configuration variable `wsrep_certification_rules`, used for\

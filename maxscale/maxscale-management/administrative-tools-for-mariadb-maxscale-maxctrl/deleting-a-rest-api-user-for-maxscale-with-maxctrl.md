@@ -2,14 +2,14 @@
 
 ## Overview
 
-MaxScale has a [REST API](../administrative-tools-for-mariadb-maxscale-rest-api/), which can be configured to require authentication. When it is first installed, it has a single default admin user (admin) and password (mariadb). However, this user can be deleted, and other users can be created.
+MaxScale has a [REST API](broken-reference), which can be configured to require authentication. When it is first installed, it has a single default admin user (admin) and password (mariadb). However, this user can be deleted, and other users can be created.
 
-[MaxCtrl](./) is a command-line utility that can perform administrative tasks using MaxScale's [REST API](../administrative-tools-for-mariadb-maxscale-rest-api/). It can be used to delete a user for the REST API.
+[MaxCtrl](./) is a command-line utility that can perform administrative tasks using MaxScale's [REST API](broken-reference). It can be used to delete a user for the REST API.
 
 ## Deleting a User
 
-1. [Configure the REST API](../administrative-tools-for-mariadb-maxscale-rest-api/) if the default configuration is not sufficient.
-2. Use [MaxCtrl](./) to execute the [destroy user](../../maxscale-versions/mariadb-maxscale-23-02/mariadb-maxscale-23-02-reference/mariadb-maxscale-2302-maxctrl.md#destroy-user) command:
+1. [Configure the REST API](broken-reference) if the default configuration is not sufficient.
+2. Use [MaxCtrl](./) to execute the [destroy user](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-23-02/mariadb-maxscale-23-02-reference/mariadb-maxscale-2302-maxctrl.md#destroy-user) command:
 
 ```
 $ maxctrl --secure \

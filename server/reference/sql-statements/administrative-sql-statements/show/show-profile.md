@@ -21,7 +21,7 @@ type:
 
 ## Description
 
-The `SHOW PROFILE` and`[SHOW PROFILES](show-profiles.md)` statements display profiling\
+The `SHOW PROFILE` and[SHOW PROFILES](show-profiles.md) statements display profiling\
 information that indicates resource usage for statements executed during the\
 course of the current session.
 
@@ -32,7 +32,7 @@ SET profiling = 1;
 ```
 
 `SHOW PROFILES` displays a list of the most recent statements\
-sent to the master. The size of the list is controlled by the`[profiling_history_size](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#profiling_history_size)` session variable, which has a default value of `15`. The maximum value is `100`. Setting the value to `0` has the practical effect of disabling profiling.
+sent to the master. The size of the list is controlled by the[profiling_history_size](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#profiling_history_size) session variable, which has a default value of `15`. The maximum value is `100`. Setting the value to `0` has the practical effect of disabling profiling.
 
 All statements are profiled except `SHOW PROFILES` and`SHOW PROFILE`, so you will find neither of those statements\
 in the profile list. Malformed statements are profiled. For example,`SHOW PROFILING` is an illegal statement, and a syntax error\

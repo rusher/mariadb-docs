@@ -55,7 +55,7 @@ The options that can be used by DATE\_FORMAT(), as well as its inverse [STR\_TO\
 | %@     | For [str\_to\_date](str_to_date.md)(), skip all alpha characters.                                                                                                                                                                                                                   |
 | %%     | A literal % character.                                                                                                                                                                                                                                                              |
 
-To get a date in one of the standard formats, `[GET_FORMAT()](get_format.md)` can be used.
+To get a date in one of the standard formats, [GET_FORMAT()](get_format.md) can be used.
 
 ## Examples
 

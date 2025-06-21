@@ -2,7 +2,7 @@
 
 ## User and Group Mapping with PAM
 
-Even when using the `[pam](authentication-plugin-pam.md)` authentication plugin, the authenticating PAM user account still needs to exist in MariaDB, and the account needs to have privileges in the database. Creating these MariaDB accounts and making sure the privileges are correct can be a lot of work. To decrease the amount of work involved, some users would like to be able to map a PAM user to a different MariaDB user. For example, let’s say that `alice` and `bob` are both DBAs. It would be nice if each of them could log into MariaDB with their own PAM username and password, while MariaDB sees both of them as the same `dba` user. That way, there is only one MariaDB account to keep track of.
+Even when using the [pam](authentication-plugin-pam.md) authentication plugin, the authenticating PAM user account still needs to exist in MariaDB, and the account needs to have privileges in the database. Creating these MariaDB accounts and making sure the privileges are correct can be a lot of work. To decrease the amount of work involved, some users would like to be able to map a PAM user to a different MariaDB user. For example, let’s say that `alice` and `bob` are both DBAs. It would be nice if each of them could log into MariaDB with their own PAM username and password, while MariaDB sees both of them as the same `dba` user. That way, there is only one MariaDB account to keep track of.
 
 Although most PAM modules usually do not do things like this, PAM supports the ability to change the user name in the process of authentication.The MariaDB `pam` authentication plugin fully supports this feature of PAM.
 
@@ -12,7 +12,7 @@ Rather than building user and group mapping into the `pam` authentication plugin
 
 #### Lack of Support for MySQL/Percona Group Mapping Syntax
 
-Unlike MariaDB, MySQL and Percona implemented group mapping in their PAM authentication plugins. If you've read through [MySQL's PAM authentication documentation on group mapping](https://dev.mysql.com/doc/refman/8.0/en/pam-pluggable-authentication.html#pam-authentication-unix-with-proxy) or [Percona's PAM authentication documentation on group mapping](https://www.percona.com/doc/percona-server/8.0/management/pam_plugin.html#supplementary-groups-support), you've probably seen syntax where the group mappings are provided in the `[CREATE USER](../../../sql-statements-and-structure/sql-statements/account-management-sql-commands/create-user.md)` statement like this:
+Unlike MariaDB, MySQL and Percona implemented group mapping in their PAM authentication plugins. If you've read through [MySQL's PAM authentication documentation on group mapping](https://dev.mysql.com/doc/refman/8.0/en/pam-pluggable-authentication.html#pam-authentication-unix-with-proxy) or [Percona's PAM authentication documentation on group mapping](https://www.percona.com/doc/percona-server/8.0/management/pam_plugin.html#supplementary-groups-support), you've probably seen syntax where the group mappings are provided in the [CREATE USER](../../../sql-statements-and-structure/sql-statements/account-management-sql-commands/create-user.md) statement like this:
 
 ```
 CREATE USER ''@''
@@ -104,7 +104,7 @@ account required pam_unix.so audit
 
 ### Creating Users
 
-With user and group mapping, creating users is done similar to how it is [normally done with the pam authentication plugin](authentication-plugin-pam.md#creating-users). However, one major difference is that you will need to `[GRANT](../../../sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md)` the `[PROXY](../../../sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#proxy-privileges)` privilege on the mapped user to the original user.
+With user and group mapping, creating users is done similar to how it is [normally done with the pam authentication plugin](authentication-plugin-pam.md#creating-users). However, one major difference is that you will need to [GRANT](../../../sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md) the [PROXY](../../../sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#proxy-privileges) privilege on the mapped user to the original user.
 
 For example, if you have the following configured in `/etc/security/user_map.conf`:
 
@@ -133,7 +133,7 @@ Also note that you might not be able to create the `''@'%'` anonymous account by
 
 ### Verifying that Mapping is Occurring
 
-In case any user mapping is performed, the original user name is returned by the SQL function `[USER()](../../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/user.md)`, while the authenticated user name is returned by the SQL function `[CURRENT_USER()](../../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/current_user.md)`. The latter actually defines what privileges are available to a connected user.
+In case any user mapping is performed, the original user name is returned by the SQL function [USER()](../../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/user.md), while the authenticated user name is returned by the SQL function [CURRENT_USER()](../../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/current_user.md). The latter actually defines what privileges are available to a connected user.
 
 For example, if we have the following configured:
 
@@ -163,7 +163,7 @@ MariaDB [(none)]> SELECT USER(), CURRENT_USER();
 1 row in set (0.000 sec)
 ```
 
-We can verify that our `foo` PAM user was properly mapped to the `bar` MariaDB user by looking at the return value of `[CURRENT_USER()](../../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/current_user.md)`.
+We can verify that our `foo` PAM user was properly mapped to the `bar` MariaDB user by looking at the return value of [CURRENT_USER()](../../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/current_user.md).
 
 ### Logging
 
@@ -236,7 +236,7 @@ In the above log snippet, notice that both the `pam_unix` and the `pam_sss` PAM 
 
 This can be fixed by creating a PAM user with the same name as the mapped MariaDB user account, which is `dba` in this case.
 
-You may also be able to work around this problem by essentially disabling PAM's account verification for the service with the `[pam_permit](https://linux.die.net/man/8/pam_permit)` PAM module. For example, in the above case, that would be:
+You may also be able to work around this problem by essentially disabling PAM's account verification for the service with the [pam_permit](https://linux.die.net/man/8/pam_permit) PAM module. For example, in the above case, that would be:
 
 ```
 auth required pam_sss.so

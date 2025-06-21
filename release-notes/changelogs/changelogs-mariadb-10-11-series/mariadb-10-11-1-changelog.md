@@ -226,7 +226,7 @@ details of the revision and view diffs of the code modified in that revision.
 * Merge [Revision #6ebdd3013a](https://github.com/MariaDB/server/commit/6ebdd3013a) 2022-09-13 20:50:32 +0900 - Merge 10.10 into 10.11
 * [Revision #8f9df08f02](https://github.com/MariaDB/server/commit/8f9df08f02)\
   2022-09-09 12:02:16 +0400
-  * [MDEV-19246](https://jira.mariadb.org/browse/MDEV-19246) Change database and table used for Mariabackup's history
+  * [MDEV-19246](https://jira.mariadb.org/browse/MDEV-19246) Change database and table used for mariadb-backup's history
 * [Revision #16c9718758](https://github.com/MariaDB/server/commit/16c9718758)\
   2022-08-12 19:03:12 +1000
   * [MDEV-25341](https://jira.mariadb.org/browse/MDEV-25341): innodb buffer pool soft decommit of memory

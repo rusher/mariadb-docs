@@ -69,7 +69,7 @@ authenticator_options=ed_mode=sha256,
 
 ### Using a mapping file
 
-To enable MaxScale to authenticate to backends,[user mapping](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)\
+To enable MaxScale to authenticate to backends,[user mapping](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)\
 can be used. The mapping and backend passwords are given in a json-file.\
 The client can map to an identical username or to another user, and the backend\
 authentication scheme can be something else than ed25519.

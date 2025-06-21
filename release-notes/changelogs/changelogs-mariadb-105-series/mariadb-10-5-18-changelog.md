@@ -163,7 +163,7 @@ details of the revision and view diffs of the code modified in that revision.
   * mariabackup: remove MySQL wording
 * [Revision #79b58f1ca8](https://github.com/MariaDB/server/commit/79b58f1ca8)\
   2022-07-30 00:11:08 +1000
-  * [MDEV-23607](https://jira.mariadb.org/browse/MDEV-23607) MariaBackup - align required GRANTS to cmd options
+  * [MDEV-23607](https://jira.mariadb.org/browse/MDEV-23607) mariadb-backup - align required GRANTS to cmd options
 * Merge [Revision #9929301ecd](https://github.com/MariaDB/server/commit/9929301ecd) 2022-08-25 15:31:19 +0300 - Merge 10.4 into 10.5
 * [Revision #a3fd9e6b06](https://github.com/MariaDB/server/commit/a3fd9e6b06)\
   2022-08-24 10:09:27 +0200

@@ -24,7 +24,7 @@ It is responsible for the following core functions:
 
 ## Processes
 
-The User Module contains several processes, including `[mysqld](#mariadb-server)`, [ExeMgr](./#execution-manager), and [distribution managers](./#distribution-managers).
+The User Module contains several processes, including [mysqld](#mariadb-server), [ExeMgr](./#execution-manager), and [distribution managers](./#distribution-managers).
 
 ### MariaDB Server
 

@@ -32,7 +32,7 @@ It contains the following columns:
 
 Note that as a difference to MySQL, in MariaDB the `TIME`\
 column (and also the `TIME_MS` column) are not affected by\
-any setting of `[@TIMESTAMP](../../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#timestamp)`. This means that it can be\
+any setting of [@TIMESTAMP](../../../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#timestamp). This means that it can be\
 reliably used also for threads that change `@TIMESTAMP` (such\
 as the [replication](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/broken-reference/README.md) SQL thread). See also [MySQL Bug #22047](https://bugs.mysql.com/bug.php?id=22047).
 

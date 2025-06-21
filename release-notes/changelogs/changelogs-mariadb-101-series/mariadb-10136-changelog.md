@@ -300,7 +300,7 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-16220](https://jira.mariadb.org/browse/MDEV-16220) Do not pass UTF8 to mysql in command line parameters, on Windows
 * [Revision #0496bbc120](https://github.com/MariaDB/server/commit/0496bbc120)\
   2018-08-09 15:05:40 -0300
-  * [MDEV-15869](https://jira.mariadb.org/browse/MDEV-15869) Mariabackup is lacking some dependencies declaration (#771)
+  * [MDEV-15869](https://jira.mariadb.org/browse/MDEV-15869) mariadb-backup is lacking some dependencies declaration (#771)
 * [Revision #757e3b88d2](https://github.com/MariaDB/server/commit/757e3b88d2)\
   2018-08-07 10:43:08 -0400
   * bump the VERSION

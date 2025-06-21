@@ -219,7 +219,7 @@ MariaDB Corporation provides package repositories for YUM (RHEL, AlmaLinux, Cent
 **Install via YUM (RHEL, AlmaLinux, CentOS, Rocky Linux)**
 
 1. Retrieve your Customer Download Token at [https://customers.mariadb.com/downloads/token/](https://customers.mariadb.com/downloads/token/) and substitute for `CUSTOMER_DOWNLOAD_TOKEN` in the following directions.
-2.  Configure the YUM package repository. Installable versions of MariaDB Enterprise Server are `11.4`, `10.6`, `10.5`, `10.4`, and `10.3`. Pass the version to install using the `--mariadb-server-version` flag to [mariadb\_es\_repo\_setup](https://mariadb.com/docs/server/ref/mariadb_es_repo_setup/). The following directions reference `10.6`.
+2.  Configure the YUM package repository. Installable versions of MariaDB Enterprise Server are `11.4`, `10.6`, `10.5`, `10.4`, and `10.3`. Pass the version to install using the `--mariadb-server-version` flag to [mariadb\_es\_repo\_setup](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/mariadb-package-repository-setup-and-usage#mariadb_es_repo_setup). The following directions reference `10.6`.
 
     To configure YUM package repositories:
 
@@ -262,7 +262,7 @@ MariaDB Corporation provides package repositories for YUM (RHEL, AlmaLinux, Cent
 1. Retrieve your Customer Download Token at [https://customers.mariadb.com/downloads/token/](https://customers.mariadb.com/downloads/token/) and substitute for `CUSTOMER_DOWNLOAD_TOKEN` in the following directions.
 2.  Configure the APT package repository.
 
-    Installable versions of MariaDB Enterprise Server are `11.4`, `10.6`, `10.5`, `10.4`, and `10.3`. Pass the version to install using the `--mariadb-server-version` flag to [mariadb\_es\_repo\_setup](https://mariadb.com/docs/server/ref/mariadb_es_repo_setup/). The following directions reference `10.6`.
+    Installable versions of MariaDB Enterprise Server are `11.4`, `10.6`, `10.5`, `10.4`, and `10.3`. Pass the version to install using the `--mariadb-server-version` flag to [mariadb\_es\_repo\_setup](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/mariadb-package-repository-setup-and-usage#mariadb_es_repo_setup). The following directions reference `10.6`.
 
     To configure APT package repositories:
 
@@ -309,7 +309,7 @@ MariaDB Corporation provides package repositories for YUM (RHEL, AlmaLinux, Cent
 1. Retrieve your Customer Download Token at [https://customers.mariadb.com/downloads/token/](https://customers.mariadb.com/downloads/token/) and substitute for `CUSTOMER_DOWNLOAD_TOKEN` in the following directions.
 2.  Configure the ZYpp package repository.
 
-    Installable versions of MariaDB Enterprise Server are `11.4`, `10.6`, `10.5`, `10.4`, and `10.3`. Pass the version to install using the `--mariadb-server-version` flag to [mariadb\_es\_repo\_setup](https://mariadb.com/docs/server/ref/mariadb_es_repo_setup/). The following directions reference `10.6`.
+    Installable versions of MariaDB Enterprise Server are `11.4`, `10.6`, `10.5`, `10.4`, and `10.3`. Pass the version to install using the `--mariadb-server-version` flag to [mariadb\_es\_repo\_setup](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/mariadb-package-repository-setup-and-usage#mariadb_es_repo_setup). The following directions reference `10.6`.
 
     To configure ZYpp package repositories:
 
@@ -422,7 +422,7 @@ When MariaDB Enterprise Server is up and running on your system, you should test
 
     MariaDB [(none)]>
     ```
-2.  You can also verify the server version by checking the value of the [version](https://mariadb.com/docs/server/ref/mdb/system-variables/version/) system variable with the [SHOW GLOBAL STATUS](https://mariadb.com/docs/server/ref/mdb/sql-statements/SHOW_STATUS/) statement:
+2.  You can also verify the server version by checking the value of the [version](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/secondary-functions/information-functions/version) system variable with the [SHOW GLOBAL STATUS](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-status) statement:
 
     ```sql
     SHOW GLOBAL VARIABLES LIKE 'version';

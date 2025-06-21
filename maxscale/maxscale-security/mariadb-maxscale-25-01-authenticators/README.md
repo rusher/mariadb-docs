@@ -16,5 +16,5 @@ layout:
     visible: false
 ---
 
-# MariaDB MaxScale Authenticators
+# MaxScale Authenticators
 

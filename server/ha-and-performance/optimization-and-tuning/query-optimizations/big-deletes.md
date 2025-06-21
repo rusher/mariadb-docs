@@ -275,7 +275,7 @@ The tips in this document apply to MySQL, MariaDB, and Percona.
 
 ## See also
 
-Rick James graciously allowed us to use this article in the Knowledge Base.
+Rick James graciously allowed us to use this article in the documentation.
 
 [Rick James' site](https://mysql.rjweb.org/) has other useful tips, how-tos,\
 optimizations, and debugging tips.

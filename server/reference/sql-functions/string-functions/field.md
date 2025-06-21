@@ -20,7 +20,7 @@ When all arguments given to the `FIELD()` function are strings, they are treated
 If the given pattern occurs more than once, the	`FIELD()` function only returns the index of the first instance. If the given pattern is `NULL`, the function returns `0`, as a `NULL` pattern always fails to match.
 
 
-This function is complementary to the `[ELT()](elt.md)` function.
+This function is complementary to the [ELT()](elt.md) function.
 
 
 ## Examples

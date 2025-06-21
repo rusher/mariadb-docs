@@ -29,7 +29,7 @@ dialogs to control various database properties. Note that you do not\
 necessarily have to create an instance at this stage. For example, if you\
 already have MySQL or MariaDB databases running as services, you can just\
 upgrade them during the installation. Also, you can create additional database\
-instances after the installation, with the `[mysql_install_db.exe](../mariadb-install-db-exe.md)` utility.
+instances after the installation, with the [mysql_install_db.exe](../mariadb-install-db-exe.md) utility.
 
 **NOTE**: By default, if you install a database instance, the data directory\
 will be in the "data" folder under the installation root. To change the data\
@@ -52,7 +52,7 @@ not recommended to change this setting.
 
 * Install as service
 * Defines whether the database should be run as a service. If it should be run as a service, then it also defines the service name. It is recommended to run your database instance as a service as it greatly\
-  simplifies database management. In [MariaDB 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/broken-reference/README.md) and later, the default service name used by the MSI installer is "MariaDB". In 10.3 and before, the default service name used by the MSI installer is "MySQL". Note that the default service name for the `[--install](../starting-and-stopping-mariadb/mariadbd-options.md)` and `[--install-manual](../starting-and-stopping-mariadb/mariadbd-options.md)` options for `mysqld.exe` is "MySQL" in all versions of MariaDB.
+  simplifies database management. In [MariaDB 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/broken-reference/README.md) and later, the default service name used by the MSI installer is "MariaDB". In 10.3 and before, the default service name used by the MSI installer is "MySQL". Note that the default service name for the [--install](../starting-and-stopping-mariadb/mariadbd-options.md) and [--install-manual](../starting-and-stopping-mariadb/mariadbd-options.md) options for `mysqld.exe` is "MySQL" in all versions of MariaDB.
 * Enable Networking
 * Whether to enable TCP/IP (recommended) and which port MariaDB should\
   listen to. If security is a concern, you can change the [bind-address](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#bind_address)\

@@ -1,7 +1,3 @@
----
-hidden: true
----
-
 # ColumnStore Configuration File Update and Distribution
 
 In the case where an entry in the MariaDB ColumnStore's configuration needs to be updated and distributed, this can be done from the command line from Performance Module #1. All changes made to MariaDB ColumnStore's configuration file need to be applied on PM1.

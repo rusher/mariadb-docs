@@ -1,6 +1,6 @@
 # Using CONNECT - Exporting Data From MariaDB
 
-Exporting data from MariaDB is obviously possible with CONNECT in particular for all formats not supported by the `[SELECT INTO OUTFILE](../../../sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select-into-outfile.md)` statement. Let us consider the query:
+Exporting data from MariaDB is obviously possible with CONNECT in particular for all formats not supported by the [SELECT INTO OUTFILE](../../../sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select-into-outfile.md) statement. Let us consider the query:
 
 ```
 select plugin_name handler, plugin_version version, plugin_author

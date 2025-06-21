@@ -79,7 +79,7 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-15713](https://jira.mariadb.org/browse/MDEV-15713) mariabackup: throw warning, if --stream is used without --backup
 * [Revision #37f24806fc](https://github.com/MariaDB/server/commit/37f24806fc)\
   2018-04-09 16:22:15 +0100
-  * [MDEV-15825](https://jira.mariadb.org/browse/MDEV-15825) Mariabackup help mentions Percona and PXC but not MariaDB
+  * [MDEV-15825](https://jira.mariadb.org/browse/MDEV-15825) mariadb-backup help mentions Percona and PXC but not MariaDB
 * [Revision #8ff897265a](https://github.com/MariaDB/server/commit/8ff897265a)\
   2018-04-09 16:49:41 +0300
   * Update test cases post [MDEV-10286](https://jira.mariadb.org/browse/MDEV-10286)

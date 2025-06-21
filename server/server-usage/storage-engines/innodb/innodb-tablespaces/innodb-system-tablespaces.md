@@ -1,8 +1,8 @@
 # InnoDB System Tablespaces
 
-When InnoDB needs to store general information relating to the system as a whole, rather than a specific table, the specific file it writes to is the system tablespace. By default, this is the `ibdata1` file located in the data directory, (as defined by either the `[datadir](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir)` or `[innodb_data_home_dir](../innodb-system-variables.md#innodb_data_home_dir)` system variables). InnoDB uses the system tablespace to store the data dictionary, change buffer, and undo logs.
+When InnoDB needs to store general information relating to the system as a whole, rather than a specific table, the specific file it writes to is the system tablespace. By default, this is the `ibdata1` file located in the data directory, (as defined by either the [datadir](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir) or [innodb_data_home_dir](../innodb-system-variables.md#innodb_data_home_dir) system variables). InnoDB uses the system tablespace to store the data dictionary, change buffer, and undo logs.
 
-You can define the system tablespace filename or filenames, size and other options by setting the `[innodb_data_file_path](../innodb-system-variables.md#innodb_data_file_path)` system variable. This system variable can be specified as a command-line argument to `[mariadbd](../../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md)` or it can be specified in a relevant server [option group](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md). For example:
+You can define the system tablespace filename or filenames, size and other options by setting the [innodb_data_file_path](../innodb-system-variables.md#innodb_data_file_path) system variable. This system variable can be specified as a command-line argument to [mariadbd](../../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options.md) or it can be specified in a relevant server [option group](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md). For example:
 
 ```
 [mariadb]
@@ -18,7 +18,7 @@ InnoDB defaults to allocating 12M to the `ibdata1` file for the system tablespac
 
 ### Increasing the Size
 
-When setting the `[innodb_data_file_path](../innodb-system-variables.md#innodb_data_file_path)` system variable, you can define a size for each file given. In cases where you need a larger system tablespace, add the `autoextend` option to the last value.
+When setting the [innodb_data_file_path](../innodb-system-variables.md#innodb_data_file_path) system variable, you can define a size for each file given. In cases where you need a larger system tablespace, add the `autoextend` option to the last value.
 
 ```
 [mariadb]
@@ -26,13 +26,13 @@ When setting the `[innodb_data_file_path](../innodb-system-variables.md#innodb_d
 innodb_data_file_path=ibdata1:12M;ibdata2:50M:autoextend
 ```
 
-Under this configuration, when the last system tablespace grows beyond the size allocation, InnoDB increases the size of the file by increments. To control the allocation increment, set the `[innodb_autoextend_increment](../innodb-system-variables.md#innodb_autoextend_increment)` system variable.
+Under this configuration, when the last system tablespace grows beyond the size allocation, InnoDB increases the size of the file by increments. To control the allocation increment, set the [innodb_autoextend_increment](../innodb-system-variables.md#innodb_autoextend_increment) system variable.
 
 ### Decreasing the Size
 
 **MariaDB starting with** [**11.2**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-2-series/what-is-mariadb-112)
 
-From [MariaDB 11.2.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-0-release-notes), when MariaDB starts up, unused InnoDB tablespace can be reclaimed, reducing the file size ([MDEV-14795](https://jira.mariadb.org/browse/MDEV-14795)). This is disabled by default and is enabled by adding the `:autoshrink` attribute to the `[innodb_data_file_path](../innodb-system-variables.md#innodb_data_file_path)` system variable, e.g.:
+From [MariaDB 11.2.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-0-release-notes), when MariaDB starts up, unused InnoDB tablespace can be reclaimed, reducing the file size ([MDEV-14795](https://jira.mariadb.org/browse/MDEV-14795)). This is disabled by default and is enabled by adding the `:autoshrink` attribute to the [innodb_data_file_path](../innodb-system-variables.md#innodb_data_file_path) system variable, e.g.:
 
 ```
 [mariadb]
@@ -99,7 +99,7 @@ When you start MariaDB again, it'll read and write InnoDB data to the given disk
 
 ### Raw Disk Partitions on Windows
 
-When defining a raw disk partition for InnoDB on the Windows operating system, use the same procedure as defined above, but when defining the path for the `[innodb_data_file_path](../innodb-system-variables.md#innodb_data_file_path)` system variable, use `./` at the start. For example:
+When defining a raw disk partition for InnoDB on the Windows operating system, use the same procedure as defined above, but when defining the path for the [innodb_data_file_path](../innodb-system-variables.md#innodb_data_file_path) system variable, use `./` at the start. For example:
 
 ```
 [mariadb]

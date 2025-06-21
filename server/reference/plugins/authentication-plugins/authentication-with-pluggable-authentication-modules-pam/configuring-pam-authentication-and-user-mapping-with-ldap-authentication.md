@@ -1,6 +1,6 @@
 # Configuring PAM Authentication and User Mapping with LDAP Authentication
 
-In this article, we will walk through the configuration of PAM authentication using the `[pam](authentication-plugin-pam.md)` authentication plugin and user and group mapping with the `[pam_user_map](user-and-group-mapping-with-pam.md)` PAM module. The primary authentication will be handled by the `[pam_ldap](https://linux.die.net/man/5/pam_ldap)` PAM module, which performs LDAP authentication. We will also set up an OpenLDAP server.
+In this article, we will walk through the configuration of PAM authentication using the [pam](authentication-plugin-pam.md) authentication plugin and user and group mapping with the [pam_user_map](user-and-group-mapping-with-pam.md) PAM module. The primary authentication will be handled by the [pam_ldap](https://linux.die.net/man/5/pam_ldap) PAM module, which performs LDAP authentication. We will also set up an OpenLDAP server.
 
 ## Hypothetical Requirements
 
@@ -46,7 +46,7 @@ I used `3306` because that is the port that is usually used by `mysqld`, so I kn
 
 ### Starting the OpenLDAP Server
 
-Next, let's start the OpenLDAP Server and configure it to start on reboot. On `[systemd](../../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/systemd.md)` systems, that would go like this:
+Next, let's start the OpenLDAP Server and configure it to start on reboot. On [systemd](../../../../server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/systemd.md) systems, that would go like this:
 
 ```
 sudo systemctl start slapd
@@ -55,9 +55,9 @@ sudo systemctl enable slapd
 
 ### Installing the Standard LDAP objectClasses
 
-In order to use LDAP for authentication, we also need to install some standard `objectClasses`, such as `posixAccount` and `posixGroup`. In LDAP, things like `objectClasses` are defined in `[LDIF](https://www.digitalocean.com/community/tutorials/how-to-use-ldif-files-to-make-changes-to-an-openldap-system)` files. In many installations, these specific `objectClasses` are defined in `/etc/openldap/schema/nis.ldif`. `nis.ldif` also depends on `core.ldif` and `cosine.ldif`. However, `core.ldif` is usually installed by default.
+In order to use LDAP for authentication, we also need to install some standard `objectClasses`, such as `posixAccount` and `posixGroup`. In LDAP, things like `objectClasses` are defined in [LDIF](https://www.digitalocean.com/community/tutorials/how-to-use-ldif-files-to-make-changes-to-an-openldap-system) files. In many installations, these specific `objectClasses` are defined in `/etc/openldap/schema/nis.ldif`. `nis.ldif` also depends on `core.ldif` and `cosine.ldif`. However, `core.ldif` is usually installed by default.
 
-We can install them with `[ldapmodify](https://www.openldap.org/software/man.cgi?query=ldapmodify&sektion=1&apropos=0&manpath=OpenLDAP+2.4-Release)`:
+We can install them with [ldapmodify](https://www.openldap.org/software/man.cgi?query=ldapmodify&sektion=1&apropos=0&manpath=OpenLDAP+2.4-Release):
 
 ```
 sudo ldapmodify -a -Y EXTERNAL -H ldapi:/// -f /etc/openldap/schema/cosine.ldif
@@ -66,11 +66,11 @@ sudo ldapmodify -a -Y EXTERNAL -H ldapi:/// -f /etc/openldap/schema/nis.ldif
 
 ### Creating the LDAP Directory Manager User
 
-Next, let’s create a directory manager user. We can do this by using OpenLDAP's [olc](https://www.openldap.org/doc/admin24/slapdconf2.html) configuration system to change the `[olcRootDN](https://www.openldap.org/doc/admin24/slapdconf2.html#olcRootDN:%20%3CDN%3E)` directive to the DN of the directory manager user, which means that the user will be a privileged LDAP user that is not subject to access controls. We will also set the root password for the user by changing the `[olcRootPW](https://www.openldap.org/doc/admin24/slapdconf2.html#olcRootPW:%20%3Cpassword%3E)` directive.
+Next, let’s create a directory manager user. We can do this by using OpenLDAP's [olc](https://www.openldap.org/doc/admin24/slapdconf2.html) configuration system to change the [olcRootDN](https://www.openldap.org/doc/admin24/slapdconf2.html#olcRootDN:%20%3CDN%3E) directive to the DN of the directory manager user, which means that the user will be a privileged LDAP user that is not subject to access controls. We will also set the root password for the user by changing the [olcRootPW](https://www.openldap.org/doc/admin24/slapdconf2.html#olcRootPW:%20%3Cpassword%3E) directive.
 
-We will also set the DN suffix for our backend LDAP database by changing the `[olcSuffix](https://www.openldap.org/doc/admin24/slapdconf2.html#olcSuffix:%20%3Cdn%20suffix%3E)` directive.
+We will also set the DN suffix for our backend LDAP database by changing the [olcSuffix](https://www.openldap.org/doc/admin24/slapdconf2.html#olcSuffix:%20%3Cdn%20suffix%3E) directive.
 
-Let’s use the `[slappasswd](https://www.openldap.org/software/man.cgi?query=slappasswd&apropos=0&sektion=8&manpath=OpenLDAP+2.4-Release&format=html)` utility to generate a password hash from a clear-text password. Simply execute:
+Let’s use the [slappasswd](https://www.openldap.org/software/man.cgi?query=slappasswd&apropos=0&sektion=8&manpath=OpenLDAP+2.4-Release&format=html) utility to generate a password hash from a clear-text password. Simply execute:
 
 ```
 slappasswd
@@ -78,7 +78,7 @@ slappasswd
 
 This utility should provide a password hash that looks kind of like this: `{SSHA}AwT4jrvmokeCkbDrFAnGvzzjCMb7bvEl`
 
-OpenLDAP's [olc](https://www.openldap.org/doc/admin24/slapdconf2.html) configuration system also uses `[LDIF](https://www.digitalocean.com/community/tutorials/how-to-use-ldif-files-to-make-changes-to-an-openldap-system)` files. Now that we have the password hash, let’s create an `LDIF` file to create the directory manager user:
+OpenLDAP's [olc](https://www.openldap.org/doc/admin24/slapdconf2.html) configuration system also uses [LDIF](https://www.digitalocean.com/community/tutorials/how-to-use-ldif-files-to-make-changes-to-an-openldap-system) files. Now that we have the password hash, let’s create an `LDIF` file to create the directory manager user:
 
 ```
 tee ~/setupDirectoryManager.ldif <<EOF
@@ -123,7 +123,7 @@ EOF
 
 Note that I am using the `dc=support,dc=mariadb,dc=com` domain for my directory. You can change this to whatever is relevant to you.
 
-Now let’s run the ldif file with `[ldapmodify](https://www.openldap.org/software/man.cgi?query=ldapmodify&sektion=1&apropos=0&manpath=OpenLDAP+2.4-Release)`:
+Now let’s run the ldif file with [ldapmodify](https://www.openldap.org/software/man.cgi?query=ldapmodify&sektion=1&apropos=0&manpath=OpenLDAP+2.4-Release):
 
 ```
 sudo ldapmodify -Y EXTERNAL -H ldapi:/// -f ~/setupDirectoryManager.ldif
@@ -167,7 +167,7 @@ ou: System Users
 EOF
 ```
 
-Now let’s use our new directory manager user and run the `[LDIF](https://www.digitalocean.com/community/tutorials/how-to-use-ldif-files-to-make-changes-to-an-openldap-system)` file with `[ldapmodify](https://www.openldap.org/software/man.cgi?query=ldapmodify&sektion=1&apropos=0&manpath=OpenLDAP+2.4-Release)`:
+Now let’s use our new directory manager user and run the [LDIF](https://www.digitalocean.com/community/tutorials/how-to-use-ldif-files-to-make-changes-to-an-openldap-system) file with [ldapmodify](https://www.openldap.org/software/man.cgi?query=ldapmodify&sektion=1&apropos=0&manpath=OpenLDAP+2.4-Release):
 
 ```
 ldapmodify -a -x -D cn=Manager,dc=support,dc=mariadb,dc=com -W -f ~/setupDirectoryStructure.ldif
@@ -242,7 +242,7 @@ EOF
 ldapmodify -a -x -D cn=Manager,dc=support,dc=mariadb,dc=com -W -f ~/createDbaUsers.ldif
 ```
 
-Note that each of these users needs a password, so we can set it for each user with `[ldappasswd](https://www.openldap.org/software/man.cgi?query=ldappasswd&apropos=0&sektion=1&manpath=OpenLDAP+2.4-Release&format=html)`:
+Note that each of these users needs a password, so we can set it for each user with [ldappasswd](https://www.openldap.org/software/man.cgi?query=ldappasswd&apropos=0&sektion=1&manpath=OpenLDAP+2.4-Release&format=html):
 
 ```
 ldappasswd -x -D cn=Manager,dc=support,dc=mariadb,dc=com -W -S uid=foo,ou=People,dc=support,dc=mariadb,dc=com
@@ -336,7 +336,7 @@ sudo yum install openldap-clients nss-pam-ldapd pam pam-devel
 
 ### Configuring LDAP
 
-Next, let's configure LDAP on the system. We can use `[authconfig](https://linux.die.net/man/8/authconfig)` for this:
+Next, let's configure LDAP on the system. We can use [authconfig](https://linux.die.net/man/8/authconfig) for this:
 
 ```
 sudo authconfig --enableldap \
@@ -404,7 +404,7 @@ Next, let's [configure the PAM service](authentication-plugin-pam.md#configuring
 
 #### Configuring PAM to Allow Only LDAP Authentication
 
-Since we are only doing LDAP authentication with the `[pam_ldap](https://linux.die.net/man/5/pam_ldap)` PAM module and group mapping with the `pam_user_map` PAM module, our configuration file would look like this:
+Since we are only doing LDAP authentication with the [pam_ldap](https://linux.die.net/man/5/pam_ldap) PAM module and group mapping with the `pam_user_map` PAM module, our configuration file would look like this:
 
 ```
 auth required pam_ldap.so
@@ -414,7 +414,7 @@ account required pam_ldap.so
 
 #### Configuring PAM to Allow LDAP and Local Unix Authentication
 
-If we want to allow authentication from LDAP users **and** from local Unix users through `[pam_unix](https://linux.die.net/man/8/pam_unix)`, while giving priority to the local users, then we could do this instead:
+If we want to allow authentication from LDAP users **and** from local Unix users through [pam_unix](https://linux.die.net/man/8/pam_unix), while giving priority to the local users, then we could do this instead:
 
 ```
 auth [success=1 new_authtok_reqd=1 default=ignore] pam_unix.so audit
@@ -478,7 +478,7 @@ GRANT PROXY ON 'dba'@'%' TO ''@'%';
 
 ## Testing our Configuration
 
-Next, let's test out our configuration by [verifying that mapping is occurring](user-and-group-mapping-with-pam.md#verifying-that-mapping-is-occurring). We can verify this by logging in as each of our users and comparing the return value of `[USER()](../../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/user.md)`, which is the original user name and the return value of `[CURRENT_USER()](../../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/current_user.md)`, which is the authenticated user name.
+Next, let's test out our configuration by [verifying that mapping is occurring](user-and-group-mapping-with-pam.md#verifying-that-mapping-is-occurring). We can verify this by logging in as each of our users and comparing the return value of [USER()](../../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/user.md), which is the original user name and the return value of [CURRENT_USER()](../../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/current_user.md), which is the authenticated user name.
 
 ### Testing LDAP Authentication
 
@@ -504,7 +504,7 @@ MariaDB [(none)]> SELECT USER(), CURRENT_USER();
 1 row in set (0.000 sec)
 ```
 
-We can verify that our `foo` LDAP user was properly mapped to the `bar` MariaDB user by looking at the return value of `[CURRENT_USER()](../../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/current_user.md)`.
+We can verify that our `foo` LDAP user was properly mapped to the `bar` MariaDB user by looking at the return value of [CURRENT_USER()](../../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/current_user.md).
 
 Then let's test out our `gmontee` user in the `dba` group:
 
@@ -550,7 +550,7 @@ MariaDB [(none)]> SELECT USER(), CURRENT_USER();
 1 row in set (0.000 sec)
 ```
 
-We can verify that our `gmontee` and `bstillman` LDAP users in the `dba` LDAP group were properly mapped to the `dba` MariaDB user by looking at the return values of `[CURRENT_USER()](../../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/current_user.md)`.
+We can verify that our `gmontee` and `bstillman` LDAP users in the `dba` LDAP group were properly mapped to the `dba` MariaDB user by looking at the return values of [CURRENT_USER()](../../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/current_user.md).
 
 ### Testing Local Unix Authentication
 
@@ -591,7 +591,7 @@ MariaDB [(none)]> SELECT USER(), CURRENT_USER();
 1 row in set (0.000 sec)
 ```
 
-We can verify that our `alice` Unix user was properly mapped to the `dba` MariaDB user by looking at the return values of `[CURRENT_USER()](../../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/current_user.md)`.
+We can verify that our `alice` Unix user was properly mapped to the `dba` MariaDB user by looking at the return values of [CURRENT_USER()](../../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/current_user.md).
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

@@ -819,7 +819,7 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-15983](https://jira.mariadb.org/browse/MDEV-15983) Reduce fil\_system.mutex contention further
 * [Revision #6c64101bf0](https://github.com/MariaDB/server/commit/6c64101bf0)\
   2018-04-23 13:14:28 +0300
-  * [MDEV-12266](https://jira.mariadb.org/browse/MDEV-12266) follow-up fix to Mariabackup
+  * [MDEV-12266](https://jira.mariadb.org/browse/MDEV-12266) follow-up fix to mariadb-backup
 * Merge [Revision #c6ba758d1d](https://github.com/MariaDB/server/commit/c6ba758d1d) 2018-04-23 09:49:58 +0300 - Merge 10.2 into 10.3
 * [Revision #6426b52ed4](https://github.com/MariaDB/server/commit/6426b52ed4)\
   2018-04-23 09:31:17 +0400

@@ -24,14 +24,14 @@ Thanks, and enjoy MariaDB!
 * [MDEV-16987](https://jira.mariadb.org/browse/MDEV-16987) - [ALTER DATABASE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/alter/alter-database) possible in read-only mode (forbid ALTER DATABASE in read\_only)
 * [MDEV-17720](https://jira.mariadb.org/browse/MDEV-17720) - [slave\_ddl\_exec\_mode=IDEMPOTENT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables#slave_ddl_exec_mode) does not handle [DROP DATABASE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/drop/drop-database)
 * [MDEV-6453](https://jira.mariadb.org/browse/MDEV-6453) - Assertion \`inited==NONE || (inited==RND && scan)' failed in handler::ha\_rnd\_init(bool) with InnoDB, joins, AND/OR conditions
-* [MDEV-18105](https://jira.mariadb.org/browse/MDEV-18105) - [Mariabackup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup) fails to copy encrypted InnoDB system tablespace if LSN>4G
+* [MDEV-18105](https://jira.mariadb.org/browse/MDEV-18105) - [mariadb-backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup) fails to copy encrypted InnoDB system tablespace if LSN>4G
 * [MDEV-18041](https://jira.mariadb.org/browse/MDEV-18041) - Database corruption after renaming a prefix-indexed column
 * [MDEV-17470](https://jira.mariadb.org/browse/MDEV-17470) - Orphan temporary files after interrupted [ALTER](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/alter/alter-table) cause InnoDB: Operating system error number 17 and eventual fatal error 71
 * Fixes for the following [security vulnerabilities](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/security):
   * CVE-\`-\`\`\`
 
 When upgrading from [MariaDB 10.2.16](mariadb-10216-release-notes.md) or earlier to [MariaDB 10.2.17](mariadb-10217-release-notes.md) or higher,\
-running `[mysql_upgrade](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/legacy-clients-and-utilities/mysql_upgrade)` is **required** due to changes introduced in[MDEV-14637](https://jira.mariadb.org/browse/MDEV-14637).
+running [mysql_upgrade](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/legacy-clients-and-utilities/mysql_upgrade) is **required** due to changes introduced in[MDEV-14637](https://jira.mariadb.org/browse/MDEV-14637).
 
 ## Changelog
 

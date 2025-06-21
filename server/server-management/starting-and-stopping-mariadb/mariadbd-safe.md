@@ -2,7 +2,7 @@
 
 The `mariadbd-safe` startup script is in MariaDB distributions on Linux and Unix. It is a wrapper that starts `mariadbd` with some extra safety features. For example, if `mariadbd-safe` notices that `mariadbd` has crashed, then `mariadbd-safe` will automatically restart `mariadbd`.
 
-`mariadbd-safe` is the recommended way to start `mariadbd` on Linux and Unix distributions that do not support `[systemd](systemd.md)`. Additionally, the [mysql.server](mysql-server.md) init script used by [sysVinit](sysvinit.md) starts `mariadbd` with `mariadbd-safe` by default.
+`mariadbd-safe` is the recommended way to start `mariadbd` on Linux and Unix distributions that do not support [systemd](systemd.md). Additionally, the [mysql.server](mysql-server.md) init script used by [sysVinit](sysvinit.md) starts `mariadbd` with `mariadbd-safe` by default.
 
 Prior to [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105), the client used to be called `mysqld_safe`, and can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
 
@@ -17,7 +17,7 @@ mariadbd-safe [ --no-defaults | --defaults-file | --defaults-extra-file | --defa
 ### Options
 
 Many of the options supported by `mariadbd-safe` are identical to\
-options supported by `[mariadbd](mariadbd-options.md)`. If an unknown option is provided to `mariadbd-safe` on the command-line, then it is passed to `mariadbd`.
+options supported by [mariadbd](mariadbd-options.md). If an unknown option is provided to `mariadbd-safe` on the command-line, then it is passed to `mariadbd`.
 
 `mariadbd-safe` supports the following options:
 
@@ -97,7 +97,7 @@ The `[safe_mariadbd]` option group is primarily supported for backward compatibi
 | \[client-server] | Options read by all MariaDB [client programs](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/clients-utilities/README.md) and the MariaDB Server. This is useful for options like socket and port, which is common between the server and the clients. |
 | \[galera]        | Options read by a galera-capable MariaDB Server. Available on systems compiled with Galera support.                                                                                                                                                                        |
 
-For example, if you specify the `[log_error](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#log_error)` option in a server option group in an option file, like this:
+For example, if you specify the [log_error](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#log_error) option in a server option group in an option file, like this:
 
 ```
 [mariadb]
@@ -117,7 +117,7 @@ open_files_limit=4294967295
 
 The option value is passed to `ulimit -n`. Note that you need to start `mariadbd-safe` as root for this to work properly. However, you can't currently set this to `unlimited`. See [MDEV-18410](https://jira.mariadb.org/browse/MDEV-18410) about that.
 
-When `mariadbd-safe` starts `mariadbd`, it also uses this option to set the value of the `[open_files_limit](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#open_files_limit)` system variable for `mariadbd`.
+When `mariadbd-safe` starts `mariadbd`, it also uses this option to set the value of the [open_files_limit](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#open_files_limit) system variable for `mariadbd`.
 
 ### Configuring the Core File Size
 
@@ -155,7 +155,7 @@ By default, it will look for `mariadbd` in the following locations in the follow
 * `$PWD/sbin/mysqld`
 * `@libexecdir@/mysql`
 
-Where `$BASEDIR` is set by the `--basedir` option, `$PWD` is the current working directory where `mariadbd-safe` was invoked, and `@libexecdir@` is set at compile-time by the `INSTALL_BINDIR` option for `[cmake](../compiling-mariadb-from-source/generic-build-instructions.md#using-cmake)`.
+Where `$BASEDIR` is set by the `--basedir` option, `$PWD` is the current working directory where `mariadbd-safe` was invoked, and `@libexecdir@` is set at compile-time by the `INSTALL_BINDIR` option for [cmake](../compiling-mariadb-from-source/generic-build-instructions.md#using-cmake).
 
 You can also specify where the executable is located by providing the `--ledir` option either on the command-line or in an option file.
 
@@ -169,7 +169,7 @@ By default, `mariadbd-safe` will look for the `datadir` in the following locatio
 * `$BASEDIR/var`
 * `@localstatedir@`
 
-Where `$BASEDIR` is set by the `--basedir` option, and `@localstatedir@` is set at compile-time by the `INSTALL_MYSQLDATADIR` option for `[cmake](../compiling-mariadb-from-source/generic-build-instructions.md#using-cmake)`.
+Where `$BASEDIR` is set by the `--basedir` option, and `@localstatedir@` is set at compile-time by the `INSTALL_MYSQLDATADIR` option for [cmake](../compiling-mariadb-from-source/generic-build-instructions.md#using-cmake).
 
 You can also specify where the `datadir` is located by providing the `--datadir` option either on the command-line or in an option file.
 

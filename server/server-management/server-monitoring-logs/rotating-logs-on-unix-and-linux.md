@@ -1,6 +1,6 @@
 # Rotating Logs on Unix and Linux
 
-Unix and Linux distributions offer the `[logrotate](https://linux.die.net/man/8/logrotate)` utility, which makes it very easy to rotate log files. This page will describe how to configure log rotation for the [error log](error-log.md), [general query log](general-query-log.md), and the [slow query log](slow-query-log/).
+Unix and Linux distributions offer the [logrotate](https://linux.die.net/man/8/logrotate) utility, which makes it very easy to rotate log files. This page will describe how to configure log rotation for the [error log](error-log.md), [general query log](general-query-log.md), and the [slow query log](slow-query-log/).
 
 ## Configuring Locations and File Names of Logs
 
@@ -8,14 +8,14 @@ The first step is to configure the locations and file names of logs. To make the
 
 We will need to configure the following:
 
-* The [error log](error-log.md) location and file name is configured with the `[log_error](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#log_error)` system variable.
-* The [general query log](general-query-log.md) location and file name is configured with the `[general_log_file](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#general_log_file)` system variable.
-* The [slow query log](slow-query-log/) location and file name is configured with the `[slow_query_log_file](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#slow_query_log_file)` system variable.
+* The [error log](error-log.md) location and file name is configured with the [log_error](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#log_error) system variable.
+* The [general query log](general-query-log.md) location and file name is configured with the [general_log_file](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#general_log_file) system variable.
+* The [slow query log](slow-query-log/) location and file name is configured with the [slow_query_log_file](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#slow_query_log_file) system variable.
 
 If you want to enable the [general query log](general-query-log.md) and [slow query log](slow-query-log/) immediately, then you will also have to configure the following:
 
-* The [general query log](general-query-log.md) is enabled with the `[general_log](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#general_log)` system variable.
-* The [slow query log](slow-query-log/) is enabled with the `[slow_query_log](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#slow_query_log)` system variable.
+* The [general query log](general-query-log.md) is enabled with the [general_log](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#general_log) system variable.
+* The [slow query log](slow-query-log/) is enabled with the [slow_query_log](../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#slow_query_log) system variable.
 
 These options can be set in a server [option group](../install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example, if we wanted to put our log files in `/var/log/mysql/`, then we could configure the following:
 
@@ -49,9 +49,9 @@ After MariaDB is restarted, it will use the new log locations and file names.
 
 ## Configuring Authentication for Logrotate
 
-The `[logrotate](https://linux.die.net/man/8/logrotate)` utility needs to be able to authenticate with MariaDB in order to flush the log files.
+The [logrotate](https://linux.die.net/man/8/logrotate) utility needs to be able to authenticate with MariaDB in order to flush the log files.
 
-The easiest way to allow the `[logrotate](https://linux.die.net/man/8/logrotate)` utility to authenticate with MariaDB is to configure the `root@localhost` user account.
+The easiest way to allow the [logrotate](https://linux.die.net/man/8/logrotate) utility to authenticate with MariaDB is to configure the `root@localhost` user account.
 
 #### Note
 
@@ -67,17 +67,17 @@ ALTER USER 'root'@'localhost' IDENTIFIED VIA unix_socket;
 
 ## Configuring Logrotate
 
-At this point, we can configure the `[logrotate](https://linux.die.net/man/8/logrotate)` utility to rotate the log files.
+At this point, we can configure the [logrotate](https://linux.die.net/man/8/logrotate) utility to rotate the log files.
 
-On many systems, the primary `[logrotate](https://linux.die.net/man/8/logrotate)` configuration file is located at the following path:
+On many systems, the primary [logrotate](https://linux.die.net/man/8/logrotate) configuration file is located at the following path:
 
 * `/etc/logrotate.conf`
 
-And the `[logrotate](https://linux.die.net/man/8/logrotate)` configuration files for individual services are located in the following directory:
+And the [logrotate](https://linux.die.net/man/8/logrotate) configuration files for individual services are located in the following directory:
 
 * `/etc/logrotate.d/`
 
-We can create a `[logrotate](https://linux.die.net/man/8/logrotate)` configuration file for MariaDB by executing the following command in a shell:
+We can create a [logrotate](https://linux.die.net/man/8/logrotate) configuration file for MariaDB by executing the following command in a shell:
 
 ```bash
 $ sudo tee /etc/logrotate.d/mariadb <<EOF
@@ -110,7 +110,7 @@ $ sudo tee /etc/logrotate.d/mariadb <<EOF
 EOF
 ```
 
-You may have to modify this configuration file to use it on your system, depending on the specific version of the `[logrotate](https://linux.die.net/man/8/logrotate)` utility that is installed. See the description of each configuration directive below to determine which `[logrotate](https://linux.die.net/man/8/logrotate)` versions support that configuration directive.
+You may have to modify this configuration file to use it on your system, depending on the specific version of the [logrotate](https://linux.die.net/man/8/logrotate) utility that is installed. See the description of each configuration directive below to determine which [logrotate](https://linux.die.net/man/8/logrotate) versions support that configuration directive.
 
 Each specific configuration directive does the following:
 
@@ -118,19 +118,19 @@ Each specific configuration directive does the following:
 * `create 660 mysql mysql`: This directive configures it to recreate the log files after log rotation with the specified permissions and owner.
 * `notifempty`: This directive configures it to skip a log file during log rotation if it is empty.
 * `daily`: This directive configures it to rotate each log file once per day.
-* `minsize 1M`: This directive configures it to skip a log file during log rotation if it is smaller than 1 MB. This directive is only available with `[logrotate](https://linux.die.net/man/8/logrotate)` 3.7.4 and later.
-* `maxsize 100M`: This directive configures it to rotate a log file more frequently than daily if it grows larger than 100 MB. This directive is only available with `[logrotate](https://linux.die.net/man/8/logrotate)` 3.8.1 and later.
+* `minsize 1M`: This directive configures it to skip a log file during log rotation if it is smaller than 1 MB. This directive is only available with [logrotate](https://linux.die.net/man/8/logrotate) 3.7.4 and later.
+* `maxsize 100M`: This directive configures it to rotate a log file more frequently than daily if it grows larger than 100 MB. This directive is only available with [logrotate](https://linux.die.net/man/8/logrotate) 3.8.1 and later.
 * `rotate 30`: This directive configures it to keep 30 old copies of each log file.
-* `dateext`: This directive configures it to use the date as an extension, rather than just a number. This directive is only available with `[logrotate](https://linux.die.net/man/8/logrotate)` 3.7.6 and later.
-* `dateformat .%Y-%m-%d-%H-%M-%S`: This directive configures it to use this date format string (as defined by the format specification for `[strftime](https://linux.die.net/man/3/strftime)`) for the date extension configured by the `dateext` directive. This directive is only available with `[logrotate](https://linux.die.net/man/8/logrotate)` 3.7.7 and later. Support for `%H` is only available with `[logrotate](https://linux.die.net/man/8/logrotate)` 3.9.0 and later. Support for `%M` and `%S` is only available with `[logrotate](https://linux.die.net/man/8/logrotate)` 3.9.2 and later.
-* `compress`: This directive configures it to compress the log files with `[gzip](https://linux.die.net/man/1/gzip)`.
+* `dateext`: This directive configures it to use the date as an extension, rather than just a number. This directive is only available with [logrotate](https://linux.die.net/man/8/logrotate) 3.7.6 and later.
+* `dateformat .%Y-%m-%d-%H-%M-%S`: This directive configures it to use this date format string (as defined by the format specification for [strftime](https://linux.die.net/man/3/strftime)) for the date extension configured by the `dateext` directive. This directive is only available with [logrotate](https://linux.die.net/man/8/logrotate) 3.7.7 and later. Support for `%H` is only available with [logrotate](https://linux.die.net/man/8/logrotate) 3.9.0 and later. Support for `%M` and `%S` is only available with [logrotate](https://linux.die.net/man/8/logrotate) 3.9.2 and later.
+* `compress`: This directive configures it to compress the log files with [gzip](https://linux.die.net/man/1/gzip).
 * `delaycompress`: This directive configures it to delay compression of each log file until the next log rotation. If the log file is compressed at the same time that it is rotated, then there may be cases where a log file is being compressed while the MariaDB server is still writing to the log file. Delaying compression of a log file until the next log rotation can prevent race conditions such as these that can happen between the compression operation and the MariaDB server's log flush operation.
 * `olddir archive/`: This directive configures it to archive the rotated log files in `/var/log/mysql/archive/`.
-* `createolddir 770 mysql mysql`: This directive configures it to create the directory specified by the `olddir` directive with the specified permissions and owner, if the directory does not already exist. This directive is only available with `[logrotate](https://linux.die.net/man/8/logrotate)` 3.8.9 and later.
+* `createolddir 770 mysql mysql`: This directive configures it to create the directory specified by the `olddir` directive with the specified permissions and owner, if the directory does not already exist. This directive is only available with [logrotate](https://linux.die.net/man/8/logrotate) 3.8.9 and later.
 * `sharedscripts`: This directive configures it to run the `postrotate` script just once, rather than once for each rotated log file.
 * `postrotate`: This directive configures it to execute a script after log rotation. This particular script executes the [mariadb-admin](../../clients-and-utilities/administrative-tools/mariadb-admin.md) utility, which executes the [FLUSH](../../reference/sql-statements/administrative-sql-statements/flush-commands/flush.md) statement, which tells the MariaDB server to flush its various log files. When MariaDB server flushes a log file, it closes its existing file handle and reopens a new one. This ensure that MariaDB server does not continue writing to a log file after it has been rotated. This is an important component of the log rotation process.
 
-If our system does not have `[logrotate](https://linux.die.net/man/8/logrotate)` 3.8.9 or later, which is needed to support the `createolddir` directive, then we will also need to create the relevant directory specified by the `olddir` directive:
+If our system does not have [logrotate](https://linux.die.net/man/8/logrotate) 3.8.9 or later, which is needed to support the `createolddir` directive, then we will also need to create the relevant directory specified by the `olddir` directive:
 
 ```bash
 sudo mkdir /var/log/mysql/archive/
@@ -140,19 +140,19 @@ sudo chmod 0770 /var/log/mysql/archive/
 
 ## Testing Log Rotation
 
-We can test log rotation by executing the `[logrotate](https://linux.die.net/man/8/logrotate)` utility with the `--force` option. For example:
+We can test log rotation by executing the [logrotate](https://linux.die.net/man/8/logrotate) utility with the `--force` option. For example:
 
 ```bash
 sudo logrotate --force /etc/logrotate.d/mariadb
 ```
 
-Keep in mind that under normal operation, the `[logrotate](https://linux.die.net/man/8/logrotate)` utility may skip a log file during log rotation if the utility does not believe that the log file needs to be rotated yet. For example:
+Keep in mind that under normal operation, the [logrotate](https://linux.die.net/man/8/logrotate) utility may skip a log file during log rotation if the utility does not believe that the log file needs to be rotated yet. For example:
 
 * If you set the `notifempty` directive mentioned above, then it will be configured to skip a log file during log rotation if the log file is empty.
 * If you set the `daily` directive mentioned above, then it will be configured to only rotate each log file once per day.
 * If you set the `minsize 1M` directive mentioned above, then it will be configured to skip a log file during log rotation if the log file size is smaller than 1 MB.
 
-However, when running tests with the `--force` option, the `[logrotate](https://linux.die.net/man/8/logrotate)` utility does not take these options into consideration.
+However, when running tests with the `--force` option, the [logrotate](https://linux.die.net/man/8/logrotate) utility does not take these options into consideration.
 
 After a few tests, we can see that the log rotation is indeed working:
 

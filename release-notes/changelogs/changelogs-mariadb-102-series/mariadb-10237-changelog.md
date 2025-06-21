@@ -590,7 +590,7 @@ in that revision.
   * [MDEV-24318](https://jira.mariadb.org/browse/MDEV-24318) server\_audit doesn't respect filters for PROXY\_CONNECT events.
 * [Revision #e6b3e38d62](https://github.com/MariaDB/server/commit/e6b3e38d62)\
   2020-08-20 16:49:40 +0300
-  * [MDEV-22929](https://jira.mariadb.org/browse/MDEV-22929) MariaBackup option to report and/or continue when corruption is encountered
+  * [MDEV-22929](https://jira.mariadb.org/browse/MDEV-22929) mariadb-backup option to report and/or continue when corruption is encountered
 * [Revision #828471cbf8](https://github.com/MariaDB/server/commit/828471cbf8)\
   2020-11-30 15:29:32 +0200
   * MDEV 15532 Assertion \`!log->same\_pk' failed in row\_log\_table\_apply\_delete

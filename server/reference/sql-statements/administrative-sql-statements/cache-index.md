@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 CACHE INDEX                      
   tbl_index_list [, tbl_index_list] ...
   IN key_cache_name                    
@@ -18,14 +18,14 @@ cache. It is used only for [MyISAM](../../../server-usage/storage-engines/myisam
 
 A default key cache exists and cannot be destroyed. To create more key caches, the [key\_buffer\_size](../../../server-usage/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_buffer_size) server system variable.
 
-The associations between tables indexes and key caches are lost on server restart. To recreate them automatically, it is necessary to configure caches in a [configuration file](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/administrative-sql-statements/broken-reference/README.md) and include some `CACHE INDEX` (and optionally `[LOAD INDEX](../data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-index.md)`) statements in the init file.
+The associations between tables indexes and key caches are lost on server restart. To recreate them automatically, it is necessary to configure caches in a [configuration file](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/administrative-sql-statements/broken-reference/README.md) and include some `CACHE INDEX` (and optionally [LOAD INDEX](../data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-index.md)) statements in the init file.
 
 ## Examples
 
 The following statement assigns indexes from the tables t1, t2, and t3\
 to the key cache named hot\_cache:
 
-```
+```sql
 CACHE INDEX t1, t2, t3 IN hot_cache;
 +---------+--------------------+----------+----------+
 | Table   | Op                 | Msg_type | Msg_text |

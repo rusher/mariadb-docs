@@ -56,7 +56,7 @@ Thanks, and enjoy MariaDB!
 
 * [MDEV-14784](https://jira.mariadb.org/browse/MDEV-14784) - Slave crashes in show\_status\_array upon running a trigger with select from I\_S
 
-### Mariabackup
+### mariadb-backup
 
 * [MDEV-19060](https://jira.mariadb.org/browse/MDEV-19060) - mariabackup continues, despite failing to open a tablespace
 
@@ -79,7 +79,7 @@ Thanks, and enjoy MariaDB!
   * [CVE-2019-2628](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-2628)
 
 When upgrading from [MariaDB 10.3.8](mariadb-1038-release-notes.md) or earlier to [MariaDB 10.3.9](mariadb-1039-release-notes.md) or higher,\
-running `[mysql_upgrade](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/legacy-clients-and-utilities/mysql_upgrade)` is **required** due to changes introduced in[MDEV-14637](https://jira.mariadb.org/browse/MDEV-14637).
+running [mysql_upgrade](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/legacy-clients-and-utilities/mysql_upgrade) is **required** due to changes introduced in[MDEV-14637](https://jira.mariadb.org/browse/MDEV-14637).
 
 ## Changelog
 

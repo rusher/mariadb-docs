@@ -9,7 +9,7 @@ SHOW [FULL] PROCESSLIST
 ## Description
 
 `SHOW PROCESSLIST` shows you which threads are running. You\
-can also get this information from the[information\_schema.PROCESSLIST](../system-tables/information-schema/information-schema-tables/information-schema-processlist-table.md) table or the [mariadb-admin processlist](../../../../clients-and-utilities/administrative-tools/mariadb-admin.md) command. If you have the`[PROCESS privilege](show-privileges.md)`, you can see all threads.\
+can also get this information from the[information\_schema.PROCESSLIST](../system-tables/information-schema/information-schema-tables/information-schema-processlist-table.md) table or the [mariadb-admin processlist](../../../../clients-and-utilities/administrative-tools/mariadb-admin.md) command. If you have the[PROCESS privilege](show-privileges.md), you can see all threads.\
 Otherwise, you can see only your own threads (that is, threads associated with\
 the MariaDB account that you are using). If you do not use the`FULL` keyword, only the first 100 characters of each\
 statement are shown in the Info field.

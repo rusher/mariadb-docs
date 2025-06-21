@@ -8,7 +8,7 @@ INSERT DELAYED ...
 
 ## Description
 
-The `DELAYED` option for the `[INSERT](insert.md)`\
+The `DELAYED` option for the [INSERT](insert.md)\
 statement is a MariaDB/MySQL extension to standard SQL that is very useful if you have\
 clients that cannot or need not wait for the `INSERT` to\
 complete. This is a common situation when you use MariaDB for logging and you\
@@ -33,7 +33,7 @@ This means that if you terminate mariadbd forcibly (for example, with kill -9) o
 if mariadbd dies unexpectedly, any queued rows that have not been written to disk\
 are lost.
 
-The number of concurrent `INSERT DELAYED` threads is limited by the `[max_delayed_threads](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#max_delayed_threads)` server system variables. If it is set to 0, `INSERT DELAYED` is disabled. The session value can be equal to the global value, or 0 to disable this statement for the current session. If this limit has been reached, the `DELAYED` clause will be silently ignore for subsequent statements (no error will be produced).
+The number of concurrent `INSERT DELAYED` threads is limited by the [max_delayed_threads](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#max_delayed_threads) server system variables. If it is set to 0, `INSERT DELAYED` is disabled. The session value can be equal to the global value, or 0 to disable this statement for the current session. If this limit has been reached, the `DELAYED` clause will be silently ignore for subsequent statements (no error will be produced).
 
 ### Limitations
 

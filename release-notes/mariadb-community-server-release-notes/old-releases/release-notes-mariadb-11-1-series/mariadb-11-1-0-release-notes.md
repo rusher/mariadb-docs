@@ -35,9 +35,9 @@ Thanks, and enjoy MariaDB!
 
 * [JSON\_SCHEMA\_VALID](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/special-functions/json-functions/json_schema_valid) function for validating a JSON schema ([MDEV-27128](https://jira.mariadb.org/browse/MDEV-27128))
 
-## Mariabackup
+## mariadb-backup
 
-* Rename [Mariabackup’s](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup) xtrabackup\_\* files to mariadb\_backup\_\* ([MDEV-18931](https://jira.mariadb.org/browse/MDEV-18931))
+* Rename [mariadb-backup’s](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup) xtrabackup\_\* files to mariadb\_backup\_\* ([MDEV-18931](https://jira.mariadb.org/browse/MDEV-18931))
 
 Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
 

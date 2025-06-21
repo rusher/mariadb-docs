@@ -35,7 +35,7 @@ Thanks, and enjoy MariaDB!
 * [MDEV-13534](https://jira.mariadb.org/browse/MDEV-13534): InnoDB STATS\_PERSISTENT fails to ignore garbage delete-mark flag on node pointer pages (caused by [MDEV-12698](https://jira.mariadb.org/browse/MDEV-12698))
 * [MDEV-13606](https://jira.mariadb.org/browse/MDEV-13606): XA PREPARE transactions should survive innodb\_force\_recovery=1 or 2
 * [MDEV-13167](https://jira.mariadb.org/browse/MDEV-13167): InnoDB key rotation is not skipping unused pages
-* [MDEV-12988](https://jira.mariadb.org/browse/MDEV-12988): Mariabackup fails if innodb\_undo\_tablespaces>0
+* [MDEV-12988](https://jira.mariadb.org/browse/MDEV-12988): mariadb-backup fails if innodb\_undo\_tablespaces>0
 * [MDEV-13471](https://jira.mariadb.org/browse/MDEV-13471): Test failure on innodb.log\_file\_size,4k (fixes Galera when using innodb\_page\_size=4k)
 * [MDEV-13684](https://jira.mariadb.org/browse/MDEV-13684): InnoDB race condition between fil\_crypt\_thread and btr\_scrub\_init
 

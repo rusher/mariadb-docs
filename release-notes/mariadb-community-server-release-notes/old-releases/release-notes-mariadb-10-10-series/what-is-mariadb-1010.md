@@ -16,7 +16,7 @@ The most recent release of [MariaDB 10.10](what-is-mariadb-1010.md) is:[**MariaD
 
 * For a list of all new variables, see [System Variables Added in MariaDB 10.10](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/system-and-status-variables-added-by-major-release/system-and-status-variables-added-by-major-unmaintained-release/system-variables-added-in-mariadb-10-10).
 
-and [Status Variables Added in MariaDB 10.10](https://mariadb.com/kb/en/status-variables-added-in-mariadb-1010).
+and [Status Variables Added in MariaDB 10.10](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/system-and-status-variables-added-by-major-release/system-and-status-variables-added-by-major-unmaintained-release/system-variables-added-in-mariadb-10-10).
 
 ### Replication
 

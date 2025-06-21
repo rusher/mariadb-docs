@@ -9,7 +9,7 @@ UNCOMPRESSED_LENGTH(compressed_string)
 ## Description
 
 Returns the length that the compressed string had before being\
-compressed with `[COMPRESS()](compress.md)`.
+compressed with [COMPRESS()](compress.md).
 
 `UNCOMPRESSED_LENGTH()` returns `NULL` or an incorrect result if the string is not compressed.
 

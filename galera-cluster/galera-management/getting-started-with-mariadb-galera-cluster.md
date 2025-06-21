@@ -59,7 +59,7 @@ To use MariaDB Galera Cluster, there are two primary packages that you need to i
 
 As mentioned in the previous section, Galera Cluster support is actually included in the standard MariaDB Server packages. That means that installing MariaDB Galera Cluster package is the same as installing standard MariaDB Server package in those versions. However, you will also have to install an additional package to obtain the Galera wsrep provider library.
 
-Some [SST](state-snapshot-transfers-ssts-in-galera-cluster/introduction-to-state-snapshot-transfers-ssts.md) methods may also require additional packages to be installed. The `[mariabackup](state-snapshot-transfers-ssts-in-galera-cluster/mariabackup-sst-method.md)` SST method is generally the best option for large clusters that expect a lot of load.
+Some [SST](state-snapshot-transfers-ssts-in-galera-cluster/introduction-to-state-snapshot-transfers-ssts.md) methods may also require additional packages to be installed. The [mariabackup](state-snapshot-transfers-ssts-in-galera-cluster/mariabackup-sst-method.md) SST method is generally the best option for large clusters that expect a lot of load.
 
 ### Installing MariaDB Galera Cluster with a Package Manager
 
@@ -72,20 +72,20 @@ You can also configure your package manager to install it from MariaDB Foundatio
 #### Installing MariaDB Galera Cluster with yum/dnf
 
 On RHEL, CentOS, Fedora, and other similar Linux distributions, it is highly recommended to install the relevant [RPM packages](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/binary-packages/rpm) from MariaDB's\
-repository using `[yum](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/binary-packages/rpm/yum)` or `[dnf](https://en.wikipedia.org/wiki/DNF_(software))`. Starting with RHEL 8 and Fedora 22, `yum` has been replaced by `dnf`, which is the next major version of `yum`. However, `yum` commands still work on many systems that use `dnf`.
+repository using [yum](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/binary-packages/rpm/yum) or [dnf](https://en.wikipedia.org/wiki/DNF_(software)). Starting with RHEL 8 and Fedora 22, `yum` has been replaced by `dnf`, which is the next major version of `yum`. However, `yum` commands still work on many systems that use `dnf`.
 
 To install MariaDB Galera Cluster with `yum` or `dnf`, follow the instructions at [Installing MariaDB Galera Cluster with yum](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/binary-packages/rpm/yum).
 
 #### Installing MariaDB Galera Cluster with apt-get
 
 On Debian, Ubuntu, and other similar Linux distributions, it is highly recommended to install the relevant [DEB packages](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/binary-packages/installing-mariadb-deb-files) from MariaDB's\
-repository using `[apt-get](https://wiki.debian.org/apt-get)`.
+repository using [apt-get](https://wiki.debian.org/apt-get).
 
 To install MariaDB Galera Cluster with `apt-get`, follow the instructions at [Installing MariaDB Galera Cluster with apt-get](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/binary-packages/installing-mariadb-deb-files#installing-mariadb-galera-cluster-with-apt).
 
 #### Installing MariaDB Galera Cluster with zypper
 
-On SLES, OpenSUSE, and other similar Linux distributions, it is highly recommended to install the relevant [RPM packages](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/binary-packages/rpm) from MariaDB's repository using `[zypper](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/binary-packages/rpm/installing-mariadb-with-zypper)`.
+On SLES, OpenSUSE, and other similar Linux distributions, it is highly recommended to install the relevant [RPM packages](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/binary-packages/rpm) from MariaDB's repository using [zypper](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/binary-packages/rpm/installing-mariadb-with-zypper).
 
 To install MariaDB Galera Cluster with `zypper`, follow the instructions at [Installing MariaDB Galera Cluster with ZYpp](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/binary-packages/rpm/installing-mariadb-with-zypper#installing-mariadb-galera-cluster-with-zypp).
 
@@ -105,7 +105,7 @@ A number of options need to be set in order for Galera Cluster to work when usin
 
 ## Bootstrapping a New Cluster
 
-To first node of a new cluster needs to be bootstrapped by starting [mariadbd](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options) on that node with the option `[--wsrep-new-cluster](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options#-wsrep-new-cluster)` option. This option tells the node that there is no existing cluster to connect to. The node will create a new UUID to identify the new cluster.
+To first node of a new cluster needs to be bootstrapped by starting [mariadbd](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options) on that node with the option [--wsrep-new-cluster](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options#-wsrep-new-cluster) option. This option tells the node that there is no existing cluster to connect to. The node will create a new UUID to identify the new cluster.
 
 Do not use the [--wsrep-new-cluster](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options#-wsrep-new-cluster) option when connecting to an existing cluster. Restarting the node with this option set will cause the node to create new UUID to identify the cluster again, and the node won't reconnect to the old cluster. See the next section about how to reconnect to an existing cluster.
 
@@ -143,11 +143,11 @@ On operating systems that use [sysVinit](https://app.gitbook.com/s/SsmexDFPv2xG2
 $ service mysql bootstrap
 ```
 
-This runs [mariadbd](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options) with the `[--wsrep-new-cluster](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options#-wsrep-new-cluster)` option.
+This runs [mariadbd](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options) with the [--wsrep-new-cluster](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options#-wsrep-new-cluster) option.
 
 ## Adding Another Node to a Cluster
 
-Once you have a cluster running and you want to add/reconnect another node to it, you must supply an address of one or more of the existing cluster members in the `[wsrep_cluster_address](../reference/galera-cluster-system-variables.md#wsrep_cluster_address)` option. For example, if the first node of the cluster has the address 192.168.0.1, then you could add a second node to the cluster by setting the following option in a server [option group](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files#option-groups) in an [option file](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files):
+Once you have a cluster running and you want to add/reconnect another node to it, you must supply an address of one or more of the existing cluster members in the [wsrep_cluster_address](../reference/galera-cluster-system-variables.md#wsrep_cluster_address) option. For example, if the first node of the cluster has the address 192.168.0.1, then you could add a second node to the cluster by setting the following option in a server [option group](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files#option-groups) in an [option file](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files):
 
 ```
 [mariadb]
@@ -155,7 +155,7 @@ Once you have a cluster running and you want to add/reconnect another node to it
 wsrep_cluster_address=gcomm://192.168.0.1  # DNS names work as well, IP is preferred for performance
 ```
 
-The new node only needs to connect to one of the existing cluster nodes. Once it connects to one of the existing cluster nodes, it will be able to see all of the nodes in the cluster. However, it is generally better to list all nodes of the cluster in `[wsrep_cluster_address](../reference/galera-cluster-system-variables.md#wsrep_cluster_address)`, so that any node can join a cluster by connecting to any of the other cluster nodes, even if one or more of the cluster nodes are down. It is even OK to list a node's own IP address in `[wsrep_cluster_address](../reference/galera-cluster-system-variables.md#wsrep_cluster_address)`, since Galera Cluster is smart enough to ignore it.
+The new node only needs to connect to one of the existing cluster nodes. Once it connects to one of the existing cluster nodes, it will be able to see all of the nodes in the cluster. However, it is generally better to list all nodes of the cluster in [wsrep_cluster_address](../reference/galera-cluster-system-variables.md#wsrep_cluster_address), so that any node can join a cluster by connecting to any of the other cluster nodes, even if one or more of the cluster nodes are down. It is even OK to list a node's own IP address in [wsrep_cluster_address](../reference/galera-cluster-system-variables.md#wsrep_cluster_address), since Galera Cluster is smart enough to ignore it.
 
 Once all members agree on the membership, the cluster's state will be exchanged. If the new node's state is different from that of the cluster, then it will request an IST or [SST](state-snapshot-transfers-ssts-in-galera-cluster/introduction-to-state-snapshot-transfers-ssts.md) to make itself consistent with the other nodes.
 
@@ -163,15 +163,15 @@ Once all members agree on the membership, the cluster's state will be exchanged.
 
 If you shut down all nodes at the same time, then you have effectively terminated the cluster. Of course, the cluster's data still exists, but the running cluster no longer exists. When this happens, you'll need to bootstrap the cluster again.
 
-If the cluster is not bootstrapped and [mariadbd](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options) on the first node is just started normally, then the node willl try to connect to at least one of the nodes listed in the `[wsrep_cluster_address](../reference/galera-cluster-system-variables.md#wsrep_cluster_address)` option. If no nodes are currently running, then this will fail. Bootstrapping the first node solves this problem.
+If the cluster is not bootstrapped and [mariadbd](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options) on the first node is just started normally, then the node willl try to connect to at least one of the nodes listed in the [wsrep_cluster_address](../reference/galera-cluster-system-variables.md#wsrep_cluster_address) option. If no nodes are currently running, then this will fail. Bootstrapping the first node solves this problem.
 
 ### Determining the Most Advanced Node
 
 In some cases Galera will refuse to bootstrap a node if it detects that it might not be the most advanced node in the cluster. Galera makes this determination if the node was not the last one in the cluster to be shut down or if the node crashed. In those cases, manual intervention is needed.
 
-If you know for sure which node is the most advanced you can edit the `grastate.dat` file in the `[datadir](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables#datadir)`. You can set `safe_to_bootstrap=1` on the most advanced node.
+If you know for sure which node is the most advanced you can edit the `grastate.dat` file in the [datadir](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables#datadir). You can set `safe_to_bootstrap=1` on the most advanced node.
 
-You can determine which node is the most advanced by checking `grastate.dat` on each node and looking for the node with the highest `seqno`. If the node crashed and `seqno=-1`, then you can find the most advanced node by recovering the `seqno` on each node with the `[wsrep_recover](../reference/galera-cluster-system-variables.md#wsrep_recover)` option. For example:
+You can determine which node is the most advanced by checking `grastate.dat` on each node and looking for the node with the highest `seqno`. If the node crashed and `seqno=-1`, then you can find the most advanced node by recovering the `seqno` on each node with the [wsrep_recover](../reference/galera-cluster-system-variables.md#wsrep_recover) option. For example:
 
 ```
 $ mariadbd --wsrep_recover
@@ -179,19 +179,19 @@ $ mariadbd --wsrep_recover
 
 #### Systemd and Galera Recovery
 
-On operating systems that use `[systemd](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/systemd)`, the position of a node can be recovered by running the `galera_recovery` script. For example:
+On operating systems that use [systemd](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/systemd), the position of a node can be recovered by running the `galera_recovery` script. For example:
 
 ```
 $ galera_recovery
 ```
 
-If you are using the `[systemd](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/systemd)` service that supports the [systemd service's method for interacting with multiple MariaDB Server processes](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/systemd#interacting-with-multiple-mariadb-server-processes), then you can recover the position of a specific instance by specifying the instance name as a suffix. For example:
+If you are using the [systemd](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/systemd) service that supports the [systemd service's method for interacting with multiple MariaDB Server processes](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/systemd#interacting-with-multiple-mariadb-server-processes), then you can recover the position of a specific instance by specifying the instance name as a suffix. For example:
 
 ```
 $ galera_recovery mariadb@node1
 ```
 
-The `galera_recovery` script recovers the position of a node by running [mariadbd](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options) with the `[wsrep_recover](../reference/galera-cluster-system-variables.md#wsrep_recover)` option.
+The `galera_recovery` script recovers the position of a node by running [mariadbd](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options) with the [wsrep_recover](../reference/galera-cluster-system-variables.md#wsrep_recover) option.
 
 When the `galera_recovery` script runs [mariadbd](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options), it does not write to the [error log](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/server-monitoring-logs/error-log). Instead, it redirects [mariadbd](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options) log output to a file named with the format `/tmp/wsrep_recovery.XXXXXX`, where `XXXXXX` is replaced with random characters.
 
@@ -223,7 +223,7 @@ Some data still cannot be encrypted:
 
 ### Status Variables
 
-[Galera Cluster's status variables](../reference/galera-cluster-status-variables.md) can be queried with the standard `[SHOW STATUS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-status)` command. For example:
+[Galera Cluster's status variables](../reference/galera-cluster-status-variables.md) can be queried with the standard [SHOW STATUS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-status) command. For example:
 
 ```
 SHOW GLOBAL STATUS LIKE 'wsrep_%';
@@ -231,7 +231,7 @@ SHOW GLOBAL STATUS LIKE 'wsrep_%';
 
 ### Cluster Change Notifications
 
-The cluster nodes can be configured to invoke a command when cluster membership or node status changes. This mechanism can also be used to communicate the event to some external monitoring agent. This is configured by setting `[wsrep_notify_cmd](../reference/galera-cluster-system-variables.md#wsrep_notify_cmd)`. See [Galera Cluster documentation: Notification Command](https://galeracluster.com/library/documentation/notification-cmd.html) for more information.
+The cluster nodes can be configured to invoke a command when cluster membership or node status changes. This mechanism can also be used to communicate the event to some external monitoring agent. This is configured by setting [wsrep_notify_cmd](../reference/galera-cluster-system-variables.md#wsrep_notify_cmd). See [Galera Cluster documentation: Notification Command](https://galeracluster.com/library/documentation/notification-cmd.html) for more information.
 
 ## See Also
 

@@ -1,7 +1,3 @@
----
-hidden: true
----
-
 # ColumnStore System Monitoring Configuration
 
 1. [Introduction "Introduction"](columnstore-system-monitoring-configuration.md#introduction)

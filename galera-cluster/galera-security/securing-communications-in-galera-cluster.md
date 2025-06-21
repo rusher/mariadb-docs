@@ -12,10 +12,10 @@ For each cluster node, you also need a certificate, private key, and the Certifi
 
 In order to enable TLS for Galera Cluster's replication traffic, there are a number of [wsrep\_provider\_options](../reference/wsrep_provider_options.md) that you need to set, such as:
 
-* You need to set the path to the server's certificate by setting the `[socket.ssl_cert](../reference/wsrep_provider_options.md#socketssl_cert)` wsrep\_provider\_option.
-* You need to set the path to the server's private key by setting the `[socket.ssl_key](../reference/wsrep_provider_options.md#socketssl_key)` wsrep\_provider\_option.
-* You need to set the path to the certificate authority (CA) chain that can verify the server's certificate by setting the `[socket.ssl_ca](../reference/wsrep_provider_options.md#socketssl_ca)` wsrep\_provider\_option.
-* If you want to restrict the server to certain ciphers, then you also need to set the `[socket.ssl_cipher](../reference/wsrep_provider_options.md#socketssl_cipher)` wsrep\_provider\_option.
+* You need to set the path to the server's certificate by setting the [socket.ssl_cert](../reference/wsrep_provider_options.md#socketssl_cert) wsrep\_provider\_option.
+* You need to set the path to the server's private key by setting the [socket.ssl_key](../reference/wsrep_provider_options.md#socketssl_key) wsrep\_provider\_option.
+* You need to set the path to the certificate authority (CA) chain that can verify the server's certificate by setting the [socket.ssl_ca](../reference/wsrep_provider_options.md#socketssl_ca) wsrep\_provider\_option.
+* If you want to restrict the server to certain ciphers, then you also need to set the [socket.ssl_cipher](../reference/wsrep_provider_options.md#socketssl_cipher) wsrep\_provider\_option.
 
 It is also a good idea to set MariaDB Server's regular TLS-related system variables, so that TLS will be enabled for regular client connections as well. See [Securing Connections for Client and Server](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/securing-connections-for-client-and-server) for information on how to do that.
 
@@ -36,7 +36,7 @@ By setting both MariaDB Server's TLS-related system variables and Galera Cluster
 
 ## Securing State Snapshot Transfers
 
-The method that you would use to enable TLS for [State Snapshot Transfers (SSTs)](../galera-management/state-snapshot-transfers-ssts-in-galera-cluster/introduction-to-state-snapshot-transfers-ssts.md) would depend on the value of `[wsrep_sst_method](../reference/galera-cluster-system-variables.md#wsrep_sst_method)`.
+The method that you would use to enable TLS for [State Snapshot Transfers (SSTs)](../galera-management/state-snapshot-transfers-ssts-in-galera-cluster/introduction-to-state-snapshot-transfers-ssts.md) would depend on the value of [wsrep_sst_method](../reference/galera-cluster-system-variables.md#wsrep_sst_method).
 
 ### mariabackup
 
@@ -52,7 +52,7 @@ This SST method simply uses the [mariadb-dump](https://app.gitbook.com/s/SsmexDF
 
 ### rsync
 
-This SST method supports encryption in transit via `[stunnel](https://www.stunnel.org/)`. See [Introduction to State Snapshot Transfers (SSTs): rsync](../galera-management/state-snapshot-transfers-ssts-in-galera-cluster/introduction-to-state-snapshot-transfers-ssts.md#rsync) for more information.
+This SST method supports encryption in transit via [stunnel](https://www.stunnel.org/). See [Introduction to State Snapshot Transfers (SSTs): rsync](../galera-management/state-snapshot-transfers-ssts-in-galera-cluster/introduction-to-state-snapshot-transfers-ssts.md#rsync) for more information.
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

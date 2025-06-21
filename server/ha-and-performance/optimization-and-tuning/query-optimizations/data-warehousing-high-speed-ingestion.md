@@ -211,7 +211,7 @@ iblog\_file\_size should be larger than the change in the STATUS "Innodb\_os\_lo
 * [a forum thread that prodded me into writing this blog](https://forums.mysql.com/read.php?106,623744)
 * [StackExchange discussion](https://dba.stackexchange.com/a/108726/1876)
 
-Rick James graciously allowed us to use this article in the Knowledge Base.
+Rick James graciously allowed us to use this article in the documentation.
 
 [Rick James' site](https://mysql.rjweb.org/) has other useful tips, how-tos,\
 optimizations, and debugging tips.

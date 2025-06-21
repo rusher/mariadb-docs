@@ -1172,37 +1172,37 @@ Issuing a [FLUSH STATUS](../../../reference/sql-statements/administrative-sql-st
 
 #### `Connection_errors_accept`
 
-* Description: Number of errors that occurred during calls to accept() on the listening port. The global value can be flushed by `[FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md)`.
+* Description: Number of errors that occurred during calls to accept() on the listening port. The global value can be flushed by [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md).
 * Scope: Global
 * Data Type: `numeric`
 
 #### `Connection_errors_internal`
 
-* Description: Number of refused connections due to internal server errors, for example out of memory errors, or failed thread starts. The global value can be flushed by `[FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md)`.
+* Description: Number of refused connections due to internal server errors, for example out of memory errors, or failed thread starts. The global value can be flushed by [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md).
 * Scope: Global
 * Data Type: `numeric`
 
 #### `Connection_errors_max_connections`
 
-* Description: Number of refused connections due to the [max\_connections](server-system-variables.md#max_connections) limit being reached. The global value can be flushed by `[FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md)`.
+* Description: Number of refused connections due to the [max\_connections](server-system-variables.md#max_connections) limit being reached. The global value can be flushed by [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md).
 * Scope: Global
 * Data Type: `numeric`
 
 #### `Connection_errors_peer_address`
 
-* Description: Number of errors while searching for the connecting client IP address. The global value can be flushed by `[FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md)`.
+* Description: Number of errors while searching for the connecting client IP address. The global value can be flushed by [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md).
 * Scope: Global
 * Data Type: `numeric`
 
 #### `Connection_errors_select`
 
-* Description: Number of errors during calls to select() or poll() on the listening port. The client would not necessarily have been rejected in these cases. The global value can be flushed by `[FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md)`.
+* Description: Number of errors during calls to select() or poll() on the listening port. The client would not necessarily have been rejected in these cases. The global value can be flushed by [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md).
 * Scope: Global
 * Data Type: `numeric`
 
 #### `Connection_errors_tcpwrap`
 
-* Description: Number of connections the libwrap library refused. The global value can be flushed by `[FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md)`.
+* Description: Number of connections the libwrap library refused. The global value can be flushed by [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md).
 * Scope: Global
 * Data Type: `numeric`
 
@@ -1226,7 +1226,7 @@ Issuing a [FLUSH STATUS](../../../reference/sql-statements/administrative-sql-st
 
 #### `Created_tmp_files`
 
-* Description: Number of temporary files created. The global value can be flushed by `[FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md)`.
+* Description: Number of temporary files created. The global value can be flushed by [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md).
 * Scope: Global
 * Data Type: `numeric`
 
@@ -1238,7 +1238,7 @@ Issuing a [FLUSH STATUS](../../../reference/sql-statements/administrative-sql-st
 
 #### `Delayed_errors`
 
-* Description: Number of errors which occurred while doing [INSERT DELAYED](../../../reference/sql-statements/data-manipulation/inserting-loading-data/insert-delayed.md). The global value can be flushed by `[FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md)`.
+* Description: Number of errors which occurred while doing [INSERT DELAYED](../../../reference/sql-statements/data-manipulation/inserting-loading-data/insert-delayed.md). The global value can be flushed by [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md).
 * Scope: Global
 * Data Type: `numeric`
 
@@ -1250,7 +1250,7 @@ Issuing a [FLUSH STATUS](../../../reference/sql-statements/administrative-sql-st
 
 #### `Delayed_writes`
 
-* Description: Number of [INSERT DELAYED](../../../reference/sql-statements/data-manipulation/inserting-loading-data/insert-delayed.md) rows written. The global value can be flushed by `[FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md)`.
+* Description: Number of [INSERT DELAYED](../../../reference/sql-statements/data-manipulation/inserting-loading-data/insert-delayed.md) rows written. The global value can be flushed by [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md).
 * Scope: Global
 * Data Type: `numeric`
 
@@ -1286,7 +1286,7 @@ Issuing a [FLUSH STATUS](../../../reference/sql-statements/administrative-sql-st
 
 #### `Feature_check_constraint`
 
-* Description: Number of times [constraints](../../../reference/sql-statements/data-definition/constraint.md) were checked. The global value can be flushed by `[FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md)`.
+* Description: Number of times [constraints](../../../reference/sql-statements/data-definition/constraint.md) were checked. The global value can be flushed by [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md).
 * Scope: Global, Session
 * Data Type: `numeric`
 
@@ -1298,7 +1298,7 @@ Issuing a [FLUSH STATUS](../../../reference/sql-statements/administrative-sql-st
 
 #### `Feature_delay_key_write`
 
-* Description: Number of tables opened that are using [delay\_key\_write](server-system-variables.md#delay_key_write). The global value can be flushed by `[FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md)`.
+* Description: Number of tables opened that are using [delay\_key\_write](server-system-variables.md#delay_key_write). The global value can be flushed by [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md).
 * Scope: Global, Session
 * Data Type: `numeric`
 
@@ -1732,25 +1732,25 @@ Issuing a [FLUSH STATUS](../../../reference/sql-statements/administrative-sql-st
 
 #### `Qcache_hits`
 
-* Description: Number of requests served by the [query cache](../buffers-caches-and-threads/query-cache.md). The global value can be flushed by `[FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md)`.
+* Description: Number of requests served by the [query cache](../buffers-caches-and-threads/query-cache.md). The global value can be flushed by [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md).
 * Scope: Global
 * Data Type: `numeric`
 
 #### `Qcache_inserts`
 
-* Description: Number of queries ever cached in the [query cache](../buffers-caches-and-threads/query-cache.md). The global value can be flushed by `[FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md)`.
+* Description: Number of queries ever cached in the [query cache](../buffers-caches-and-threads/query-cache.md). The global value can be flushed by [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md).
 * Scope: Global
 * Data Type: `numeric`
 
 #### `Qcache_lowmem_prunes`
 
-* Description: Number of pruning operations performed to remove old results to make space for new results in the [query cache](../buffers-caches-and-threads/query-cache.md). The global value can be flushed by `[FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md)`.
+* Description: Number of pruning operations performed to remove old results to make space for new results in the [query cache](../buffers-caches-and-threads/query-cache.md). The global value can be flushed by [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md).
 * Scope: Global
 * Data Type: `numeric`
 
 #### `Qcache_not_cached`
 
-* Description: Number of queries that are uncacheable by the [query cache](../buffers-caches-and-threads/query-cache.md), or use SQL\_NO\_CACHE. The global value can be flushed by `[FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md)`.
+* Description: Number of queries that are uncacheable by the [query cache](../buffers-caches-and-threads/query-cache.md), or use SQL\_NO\_CACHE. The global value can be flushed by [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md).
 * Scope: Global
 * Data Type: `numeric`
 
@@ -1842,7 +1842,7 @@ Issuing a [FLUSH STATUS](../../../reference/sql-statements/administrative-sql-st
 
 #### `Slow_launch_threads`
 
-* Description: Number of threads which took longer than [slow\_launch\_time](server-system-variables.md#slow_launch_time) to create. The global value can be flushed by `[FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md)`.
+* Description: Number of threads which took longer than [slow\_launch\_time](server-system-variables.md#slow_launch_time) to create. The global value can be flushed by [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md).
 * Scope: Global, Session
 * Data Type: `numeric`
 
@@ -1884,13 +1884,13 @@ Issuing a [FLUSH STATUS](../../../reference/sql-statements/administrative-sql-st
 
 #### `Subquery_cache_hit`
 
-* Description: Counter for all [subquery cache](../query-optimizations/subquery-optimizations/subquery-cache.md) hits. The global value can be flushed by `[FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md)`.
+* Description: Counter for all [subquery cache](../query-optimizations/subquery-optimizations/subquery-cache.md) hits. The global value can be flushed by [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md).
 * Scope: Global, Session
 * Data Type: `numeric`
 
 #### `Subquery_cache_miss`
 
-* Description: Counter for all [subquery cache](../query-optimizations/subquery-optimizations/subquery-cache.md) misses. The global value can be flushed by `[FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md)`.
+* Description: Counter for all [subquery cache](../query-optimizations/subquery-optimizations/subquery-cache.md) misses. The global value can be flushed by [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md).
 * Scope: Global, Session
 * Data Type: `numeric`
 
@@ -1903,13 +1903,13 @@ Issuing a [FLUSH STATUS](../../../reference/sql-statements/administrative-sql-st
 
 #### `Table_locks_immediate`
 
-* Description: Number of table locks which were completed immediately. The global value can be flushed by `[FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md)`.
+* Description: Number of table locks which were completed immediately. The global value can be flushed by [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md).
 * Scope: Global
 * Data Type: `numeric`
 
 #### `Table_locks_waited`
 
-* Description: Number of table locks which had to wait. Indicates table lock contention. The global value can be flushed by `[FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md)`.
+* Description: Number of table locks which had to wait. Indicates table lock contention. The global value can be flushed by [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md).
 * Scope: Global
 * Data Type: `numeric`
 
@@ -1939,7 +1939,7 @@ Issuing a [FLUSH STATUS](../../../reference/sql-statements/administrative-sql-st
 
 #### `Tc_log_max_pages_used`
 
-* Description: Max number of pages used by the memory-mapped file-based [transaction coordinator log](../../../server-management/server-monitoring-logs/transaction-coordinator-log/). The global value can be flushed by `[FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md)`.
+* Description: Max number of pages used by the memory-mapped file-based [transaction coordinator log](../../../server-management/server-monitoring-logs/transaction-coordinator-log/). The global value can be flushed by [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md).
 * Scope: Global
 * Data Type: `numeric`
 
@@ -1951,7 +1951,7 @@ Issuing a [FLUSH STATUS](../../../reference/sql-statements/administrative-sql-st
 
 #### `Tc_log_page_waits`
 
-* Description: Number of times a two-phase commit was forced to wait for a free memory-mapped file-based [transaction coordinator log](../../../server-management/server-monitoring-logs/transaction-coordinator-log/) page. The global value can be flushed by `[FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md)`.
+* Description: Number of times a two-phase commit was forced to wait for a free memory-mapped file-based [transaction coordinator log](../../../server-management/server-monitoring-logs/transaction-coordinator-log/) page. The global value can be flushed by [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md).
 * Scope: Global
 * Data Type: `numeric`
 
@@ -1975,9 +1975,9 @@ Issuing a [FLUSH STATUS](../../../reference/sql-statements/administrative-sql-st
 
 #### `Threads_running`
 
-* Description: Number of client connections that are actively running a command, and not just sleeping while waiting to receive the next command to execute. Some internal system threads also count towards this status variable if they would show up in the output of the `[SHOW PROCESSLIST](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-processlist.md)` statement.
+* Description: Number of client connections that are actively running a command, and not just sleeping while waiting to receive the next command to execute. Some internal system threads also count towards this status variable if they would show up in the output of the [SHOW PROCESSLIST](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-processlist.md) statement.
   * In [MariaDB 10.3.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-1032-release-notes) and before, a global counter was updated each time a client connection dispatched a command. In these versions, the global and session status variable are always the same value.
-  * In [MariaDB 10.3.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-1033-release-notes) and later, the global counter has been removed as a performance improvement. Instead, when the global status variable is queried, it is calculated dynamically by essentially adding up all the running client connections as they would appear in `[SHOW PROCESSLIST](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-processlist.md)` output. A client connection is only considered to be running if its thread `[COMMAND](../buffers-caches-and-threads/thread-command-values.md)` value is not equal to `Sleep`. When the session status variable is queried, it always returns `1`.
+  * In [MariaDB 10.3.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-1033-release-notes) and later, the global counter has been removed as a performance improvement. Instead, when the global status variable is queried, it is calculated dynamically by essentially adding up all the running client connections as they would appear in [SHOW PROCESSLIST](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-processlist.md) output. A client connection is only considered to be running if its thread [COMMAND](../buffers-caches-and-threads/thread-command-values.md) value is not equal to `Sleep`. When the session status variable is queried, it always returns `1`.
 * Scope: Global
 * Data Type: `numeric`
 

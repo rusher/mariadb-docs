@@ -41,9 +41,9 @@ is also possible to update the status of a server manually.
 | Auth Error               | The monitor cannot login and query the server due to insufficient privileges.                                                                                                                                                                                                                                              |
 | Maintenance              | The server is under maintenance. Typically this status bit is turned on manually using maxctrl, but it will also be turned on for a server that for some reason is blocking connections from MaxScale. When a server is in maintenance mode, no connections will be created to it and existing connections will be closed. |
 | Slave of External Master | The server is a replica of a primary that is not being monitored.                                                                                                                                                                                                                                                          |
-| Master Stickiness        | The server is monitored by a galeramon with disable\_master\_failback=true. See [disable\_master\_failback](../../maxscale-versions/mariadb-maxscale-21-06/) for more information.                                                                                                                                         |
+| Master Stickiness        | The server is monitored by a galeramon with disable\_master\_failback=true. See [disable\_master\_failback](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-21-06/) for more information.                                                                                                                |
 
-For more information on how to manually set these states via MaxCtrl, read the[Administration Tutorial](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-tutorials/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-administration-tutorial.md).
+For more information on how to manually set these states via MaxCtrl, read the[Administration Tutorial](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-tutorials/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-administration-tutorial.md).
 
 #### Monitor
 
@@ -121,7 +121,7 @@ configuration sections.
 The administration of MaxScale can be divided in two parts:
 
 * Writing the MaxScale configuration file, which is described in the following[section](mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md#configuration).
-* Performing runtime modifications using [MaxCtrl](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-reference/mariadb-maxscale-2501-maxscale-2501-maxctrl.md)
+* Performing runtime modifications using [MaxCtrl](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-reference/mariadb-maxscale-2501-maxscale-2501-maxctrl.md)
 
 For detailed information about _MaxCtrl_ please refer to the specific\
 documentation referred to above. In the following it will only be explained how\
@@ -145,7 +145,7 @@ The REST API calls to MaxScale can be logged\
 by enabling [admin\_audit](mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md#admin_audit).
 
 For more detail see the admin audit configuration values `admin_audit`,`admin_audit_file` and `admin_audit_exclude_methods` below\
-and [Administration Tutorial](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-tutorials/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-administration-tutorial.md).
+and [Administration Tutorial](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-tutorials/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-administration-tutorial.md).
 
 ### Static Configuration Parameters
 
@@ -678,7 +678,7 @@ even if the duration is longer than a second.
 * Dynamic: Yes
 * Default: `false`
 
-Deprecated since MariaDB MaxScale 25.01. Use[cooperative monitoring](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-2501-maxscale-25-01-monitors/mariadb-maxscale-2501-maxscale-2501-mariadb-monitor.md)\
+Deprecated since MariaDB MaxScale 25.01. Use[cooperative monitoring](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-2501-maxscale-25-01-monitors/mariadb-maxscale-2501-maxscale-2501-mariadb-monitor.md)\
 instead.
 
 Controls whether MaxScale is a passive node in a cluster of multiple MaxScale\
@@ -1570,7 +1570,7 @@ Enable REST API authentication using HTTP Basic Access\
 authentication. This is not a secure method of authentication without HTTPS but\
 it does add a small layer of security.
 
-For more information, read the [REST API documentation](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-rest-api/mariadb-maxscale-2501-maxscale-2501-rest-api.md).
+For more information, read the [REST API documentation](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-rest-api/mariadb-maxscale-2501-maxscale-2501-rest-api.md).
 
 #### `admin_ssl_key`
 
@@ -1806,7 +1806,7 @@ The signature algorithm used by the MaxScale REST API when generating JSON Web\
 Tokens.
 
 For more information about the tokens and how they work, refer to [the REST API\
-documentation](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-rest-api/mariadb-maxscale-2501-maxscale-2501-rest-api.md).
+documentation](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-rest-api/mariadb-maxscale-2501-maxscale-2501-rest-api.md).
 
 If a symmetric algorithm is used (i.e. `HS256`, `HS384` or `HS512`), MaxScale\
 will generate a random encryption key on startup and use that to sign the\
@@ -3174,7 +3174,7 @@ on.
 * Default: `""`
 
 Alternative IP-address or hostname for the server. This is currently only used\
-by MariaDB Monitor to detect and set up replication. See[MariaDB Monitor documentation](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-2501-maxscale-25-01-monitors/mariadb-maxscale-2501-maxscale-2501-mariadb-monitor.md)\
+by MariaDB Monitor to detect and set up replication. See[MariaDB Monitor documentation](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-2501-maxscale-25-01-monitors/mariadb-maxscale-2501-maxscale-2501-mariadb-monitor.md)\
 for more information.
 
 #### `monitoruser`
@@ -3425,7 +3425,7 @@ Readconnroute will always use primary servers before secondary servers as long\
 as they match the configured server type.
 
 Readwritesplit will pick servers that have the same rank as the current\
-primary. Read the[readwritesplit documentation on server ranks](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-readwritesplit.md)\
+primary. Read the[readwritesplit documentation on server ranks](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-readwritesplit.md)\
 for a detailed description of the behavior.
 
 The following example server configuration demonstrates how `rank` can be used\
@@ -3464,7 +3464,7 @@ they are available. When they are no longer available, the `DR-site-primary` and
 * Default: 0
 
 Server priority. Currently only used by galeramon to choose the order in which\
-nodes are selected as the current primary server. Refer to the[Server Priorities](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-2501-maxscale-25-01-monitors/mariadb-maxscale-2501-maxscale-2501-galera-monitor.md)\
+nodes are selected as the current primary server. Refer to the[Server Priorities](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-2501-maxscale-25-01-monitors/mariadb-maxscale-2501-maxscale-2501-galera-monitor.md)\
 section of the galeramon documentation for more information on how to use it.
 
 Starting with MaxScale 2.5.21, this parameter also accepts negative values. In\
@@ -3483,7 +3483,7 @@ the source of the replication. That is, if monitor sends a "CHANGE MASTER TO"-\
 command to server A telling it to replicate from server B, the setting value\
 from MaxScale configuration for server A would be used.
 
-See [MariaDB Monitor documentation](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-2501-maxscale-25-01-monitors/mariadb-maxscale-2501-maxscale-2501-mariadb-monitor.md)\
+See [MariaDB Monitor documentation](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-2501-maxscale-25-01-monitors/mariadb-maxscale-2501-maxscale-2501-mariadb-monitor.md)\
 for more information.
 
 ### Monitor
@@ -3491,7 +3491,7 @@ for more information.
 Monitor sections are used to define the monitoring module that watches a set of\
 servers. Each server can only be monitored by one monitor.
 
-Common monitor parameters [can be found here](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-2501-maxscale-25-01-monitors/mariadb-maxscale-2501-maxscale-2501-common-monitor-parameters.md).
+Common monitor parameters [can be found here](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-2501-maxscale-25-01-monitors/mariadb-maxscale-2501-maxscale-2501-common-monitor-parameters.md).
 
 ### Listener
 
@@ -3536,7 +3536,7 @@ Usually this does not need to be defined as the default protocol is the MariaDB\
 network protocol that is used by SQL connections.
 
 For NoSQL client connections, the protocol must be set to`protocol=nosqlprotocol`. For more details on how to configure the NoSQL\
-protocol, refer to the [NoSQL Protocol](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-protocols/mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md) module\
+protocol, refer to the [NoSQL Protocol](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-protocols/mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md) module\
 documentation.
 
 #### `address`
@@ -3677,7 +3677,7 @@ empty, which disables the feature.
 user_mapping_file=/home/root/mapping.json
 ```
 
-Should not be used together with[PAM Authenticator](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-authenticators/mariadb-maxscale-2501-maxscale-2501-pam-authenticator.md)\
+Should not be used together with[PAM Authenticator](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-authenticators/mariadb-maxscale-2501-maxscale-2501-pam-authenticator.md)\
 settings `pam_backend_mapping` or `pam_mapped_pw_file`, as these may overwrite\
 the mapped credentials. Is most powerful when combined with service setting`user_accounts_file`, as then MaxScale can accept users that do not exist on\
 backends and map them to backend users.
@@ -3934,7 +3934,7 @@ MariaDB servers or compatible.
 
 ### `CDC`
 
-See [Change Data Capture Protocol](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-protocols/mariadb-maxscale-2501-maxscale-2501-change-data-capture-cdc-protocol.md) for more information.
+See [Change Data Capture Protocol](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-protocols/mariadb-maxscale-2501-maxscale-2501-change-data-capture-cdc-protocol.md) for more information.
 
 ### `Postgresql` or `Postgresprotocol`
 
@@ -3946,7 +3946,7 @@ backends used by the service should be PostgreSQL servers or compatible.
 ### `nosqlprotocol`
 
 Accepts MongoDB® connections, yet stores and fetches results to/from\
-MariaDB servers. See [NoSQL documentation](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-protocols/mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md)\
+MariaDB servers. See [NoSQL documentation](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-protocols/mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md)\
 for more information.
 
 ## TLS/SSL encryption
@@ -4213,19 +4213,19 @@ range of different needs.
 
 Connection based load balancing:
 
-* [ReadConnRoute](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-readconnroute.md)
+* [ReadConnRoute](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-readconnroute.md)
 
 Read/Write aware statement based router:
 
-* [ReadWriteSplit](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-readwritesplit.md)
+* [ReadWriteSplit](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-readwritesplit.md)
 
 Simple sharding on database level:
 
-* [SchemaRouter](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-schemarouter.md)
+* [SchemaRouter](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-schemarouter.md)
 
 Binary log server:
 
-* [Binlogrouter](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-binlogrouter.md)
+* [Binlogrouter](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-binlogrouter.md)
 
 ### Monitor Modules
 
@@ -4236,8 +4236,8 @@ server is a suitable destination for routing connections for particular query\
 classifications. The monitors are run within separate threads of MariaDB\
 MaxScale and do not affect MariaDB MaxScale's routing performance.
 
-* [MariaDB Monitor](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-2501-maxscale-25-01-monitors/mariadb-maxscale-2501-maxscale-2501-mariadb-monitor.md)
-* [Galera Monitor](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-2501-maxscale-25-01-monitors/mariadb-maxscale-2501-maxscale-2501-galera-monitor.md)
+* [MariaDB Monitor](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-2501-maxscale-25-01-monitors/mariadb-maxscale-2501-maxscale-2501-mariadb-monitor.md)
+* [Galera Monitor](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-2501-maxscale-25-01-monitors/mariadb-maxscale-2501-maxscale-2501-galera-monitor.md)
 
 The use of monitors in MaxScale is not absolutely mandatory: it is possible to\
 run MariaDB MaxScale without a monitor module. In this case an external\
@@ -4252,14 +4252,14 @@ Filters provide a means to manipulate or process requests as they pass through\
 MariaDB MaxScale between the client side protocol and the query router. A full\
 explanation of each filter's functionality can be found in its documentation.
 
-The [Filter Tutorial](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-tutorials/mariadb-maxscale-2501-maxscale-2501-filters.md) document shows how you\
+The [Filter Tutorial](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-tutorials/mariadb-maxscale-2501-maxscale-2501-filters.md) document shows how you\
 can add a filter to a service and combine multiple filters in one service.
 
-* [Query Log All (QLA) Filter](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-query-log-all-filter.md)
-* [Regular Expression Filter](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-regex-filter.md)
-* [Tee Filter](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-tee-filter.md)
-* [Top Filter](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-top-filter.md)
-* [Query Redirection Filter](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-named-server-filter.md)
+* [Query Log All (QLA) Filter](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-query-log-all-filter.md)
+* [Regular Expression Filter](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-regex-filter.md)
+* [Tee Filter](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-tee-filter.md)
+* [Top Filter](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-top-filter.md)
+* [Query Redirection Filter](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-named-server-filter.md)
 
 ## Encrypting Passwords
 
@@ -4312,12 +4312,12 @@ Read the following documents for different methods of altering the MaxScale\
 configuration at runtime.
 
 * MaxCtrl
-* [create](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-reference/mariadb-maxscale-2501-maxscale-2501-maxctrl.md)
-* [destroy](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-reference/mariadb-maxscale-2501-maxscale-2501-maxctrl.md)
-* [add](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-reference/mariadb-maxscale-2501-maxscale-2501-maxctrl.md)
-* [remove](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-reference/mariadb-maxscale-2501-maxscale-2501-maxctrl.md)
-* [alter](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-reference/mariadb-maxscale-2501-maxscale-2501-maxctrl.md)
-* [REST API](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-rest-api/mariadb-maxscale-2501-maxscale-2501-rest-api.md) documentation
+* [create](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-reference/mariadb-maxscale-2501-maxscale-2501-maxctrl.md)
+* [destroy](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-reference/mariadb-maxscale-2501-maxscale-2501-maxctrl.md)
+* [add](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-reference/mariadb-maxscale-2501-maxscale-2501-maxctrl.md)
+* [remove](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-reference/mariadb-maxscale-2501-maxscale-2501-maxctrl.md)
+* [alter](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-reference/mariadb-maxscale-2501-maxscale-2501-maxctrl.md)
+* [REST API](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-rest-api/mariadb-maxscale-2501-maxscale-2501-rest-api.md) documentation
 
 All changes to the configuration done via MaxCtrl are persisted as individual\
 configuration files in `/var/lib/maxscale/maxscale.cnf.d/`. The content of these\
@@ -4969,7 +4969,7 @@ query_classifier_cache_size=3100000000
 ## Troubleshooting
 
 For a list of common problems and their solutions, read the[MaxScale Troubleshooting](../maxscale-troubleshooting.md)\
-article on the MariaDB Knowledge Base.
+article on the MariaDB documentation.
 
 ### Systemd Watchdog
 

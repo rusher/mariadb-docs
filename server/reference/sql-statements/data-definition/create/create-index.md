@@ -51,7 +51,7 @@ Note that KEY\_BLOCK\_SIZE is currently ignored in CREATE INDEX, although it is 
 
 ## Privileges
 
-Executing the `CREATE INDEX` statement requires the `[INDEX](../../account-management-sql-commands/grant.md#table-privileges)` privilege for the table or the database.
+Executing the `CREATE INDEX` statement requires the [INDEX](../../account-management-sql-commands/grant.md#table-privileges) privilege for the table or the database.
 
 ## Online DDL
 

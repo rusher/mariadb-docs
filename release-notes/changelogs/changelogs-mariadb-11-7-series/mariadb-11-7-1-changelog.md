@@ -52,7 +52,7 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-35267](https://jira.mariadb.org/browse/MDEV-35267) Server crashes in \_ma\_reset\_history upon altering on Aria table with vector key under lock
 * [Revision #5d9ebef41e](https://github.com/MariaDB/server/commit/5d9ebef41e)\
   2024-10-26 13:38:45 +0200
-  * [MDEV-35258](https://jira.mariadb.org/browse/MDEV-35258) Mariabackup does not work with MyISAM tables with vector keys
+  * [MDEV-35258](https://jira.mariadb.org/browse/MDEV-35258) mariadb-backup does not work with MyISAM tables with vector keys
 * [Revision #0b9bc6c3cd](https://github.com/MariaDB/server/commit/0b9bc6c3cd)\
   2024-10-25 21:38:08 +0200
   * [MDEV-35246](https://jira.mariadb.org/browse/MDEV-35246) Vector search skips a row in the table

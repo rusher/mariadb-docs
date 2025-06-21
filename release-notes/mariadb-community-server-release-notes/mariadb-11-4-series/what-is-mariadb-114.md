@@ -68,7 +68,7 @@ This list includes all features since the previous long-term release, [MariaDB 1
 
 * New [mariadb-dump](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/backup-restore-and-import-clients/mariadb-dump) option, `-j`, `--parallel=` for increased parallelism, specifies the number of dump table jobs executed in parallel (only for use with the `--tab` option). Also added to [mariadb-import](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/backup-restore-and-import-clients/mariadb-import), with `--use-threads` as a synonym. ([MDEV-32216](https://jira.mariadb.org/browse/MDEV-32216))
 * [mariabackup --innobackupex](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/mariadb-11-4-series/broken-reference/README.md) mode has been deprecated ([MDEV-31505](https://jira.mariadb.org/browse/MDEV-31505), [MariaDB 11.3](../old-releases/release-notes-mariadb-11-3-rolling-releases/what-is-mariadb-113.md))
-* Rename [Mariabackup’s](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup) xtrabackup\_\* files to mariadb\_backup\_\* ([MDEV-18931](https://jira.mariadb.org/browse/MDEV-18931), [MariaDB 11.1](../old-releases/release-notes-mariadb-11-1-series/what-is-mariadb-111.md))
+* Rename [mariadb-backup’s](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup) xtrabackup\_\* files to mariadb\_backup\_\* ([MDEV-18931](https://jira.mariadb.org/browse/MDEV-18931), [MariaDB 11.1](../old-releases/release-notes-mariadb-11-1-series/what-is-mariadb-111.md))
 
 #### Application-Time Periods
 

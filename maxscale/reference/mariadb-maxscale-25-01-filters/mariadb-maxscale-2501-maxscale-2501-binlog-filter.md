@@ -26,7 +26,7 @@ that there are no ambiguities in the event filtering.
 
 #### `match`
 
-* Type: [regex](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [regex](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
 * Default: None
@@ -35,7 +35,7 @@ Include queries that match the regex. See next entry, `exclude`, for more inform
 
 #### `exclude`
 
-* Type: [regex](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [regex](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
 * Default: None
@@ -58,7 +58,7 @@ not replicated.
 
 #### `rewrite_src`
 
-* Type: [regex](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [regex](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
 * Default: None
@@ -67,7 +67,7 @@ See the next entry, `rewrite_dest`, for more information.
 
 #### `rewrite_dest`
 
-* Type: [regex](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [regex](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
 * Default: None
@@ -116,7 +116,7 @@ service=BinlogServer
 port=4000
 ```
 
-For more information about the binlogrouter and how to use it, refer to the[binlogrouter documentation](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-binlogrouter.md).
+For more information about the binlogrouter and how to use it, refer to the[binlogrouter documentation](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-binlogrouter.md).
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

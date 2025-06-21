@@ -81,7 +81,7 @@ release. Both `target` and `service` cannot be defined.
 
 #### `match`
 
-* Type: [regex](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [regex](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
 * Default: None
@@ -94,7 +94,7 @@ match=/insert.*into.*order*/
 
 #### `exclude`
 
-* Type: [regex](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [regex](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
 * Default: None
@@ -107,7 +107,7 @@ exclude=/select.*from.*t1/
 
 #### `options`
 
-* Type: [enum](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [enum](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
 * Values: `ignorecase`, `case`, `extended`
@@ -151,7 +151,7 @@ user=john
 
 #### `sync`
 
-* Type: [boolean](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [boolean](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `false`
@@ -184,7 +184,7 @@ to be closed.
 
 ### Module commands
 
-Read [Module Commands](../../maxscale-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-reference/mariadb-maxscale-2501-maxscale-2501-module-commands.md) documentation for\
+Read [Module Commands](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-reference/mariadb-maxscale-2501-maxscale-2501-module-commands.md) documentation for\
 details about module commands.
 
 The tee filter supports the following module commands.

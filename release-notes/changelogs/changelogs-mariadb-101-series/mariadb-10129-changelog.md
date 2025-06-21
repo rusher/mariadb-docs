@@ -97,7 +97,7 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-14077](https://jira.mariadb.org/browse/MDEV-14077) Incremental backup extremly slow
 * [Revision #d2ffafe00f](https://github.com/MariaDB/server/commit/d2ffafe00f)\
   2017-11-09 14:37:03 +0200
-  * [MDEV-14333](https://jira.mariadb.org/browse/MDEV-14333) Mariabackup --apply-log-only crashes if incomplete transactions with update\_undo logs are present
+  * [MDEV-14333](https://jira.mariadb.org/browse/MDEV-14333) mariadb-backup --apply-log-only crashes if incomplete transactions with update\_undo logs are present
 * Merge [Revision #0fdb0bdf27](https://github.com/MariaDB/server/commit/0fdb0bdf27) 2017-11-09 14:05:53 +0400 - Merge remote-tracking branch 'origin/10.0' into 10.1
 * [Revision #c2c93fc6e4](https://github.com/MariaDB/server/commit/c2c93fc6e4)\
   2017-11-08 15:47:49 +0100

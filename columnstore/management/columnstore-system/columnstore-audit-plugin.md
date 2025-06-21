@@ -1,10 +1,4 @@
----
-hidden: true
----
-
-# columnstore-audit-plugin
-
-## ColumnStore Audit Plugin
+# ColumnStore Audit Plugin
 
 1. [Introduction "Introduction"](columnstore-audit-plugin.md#introduction)
 2. [Installation "Installation"](columnstore-audit-plugin.md#installation)

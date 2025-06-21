@@ -6,7 +6,7 @@ From [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-commu
 
 **MariaDB starting with** [**11.0.1**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-0-series/mariadb-11-0-1-release-notes)
 
-From [MariaDB 11.0.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-0-series/mariadb-11-0-1-release-notes), `mysqldump` (the symlink) is deprecated and removed from the `mariadb` Docker Official Image. Use `[mariadb-dump](../backup-restore-and-import-clients/mariadb-dump.md)` instead.
+From [MariaDB 11.0.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-0-series/mariadb-11-0-1-release-notes), `mysqldump` (the symlink) is deprecated and removed from the `mariadb` Docker Official Image. Use [mariadb-dump](../backup-restore-and-import-clients/mariadb-dump.md) instead.
 
 See [mariadb-dump](../backup-restore-and-import-clients/mariadb-dump.md) for details.
 

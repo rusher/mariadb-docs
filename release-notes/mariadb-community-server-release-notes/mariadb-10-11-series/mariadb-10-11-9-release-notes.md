@@ -102,7 +102,7 @@ Thanks, and enjoy MariaDB!
 
 * As per the [MariaDB Deprecation Policy](../../mariadb-platform-deprecation-policy.md), this will be the last release of [MariaDB 10.11](what-is-mariadb-1011.md) for Debian 10 "Buster", RHEL/CentOS 7, Ubuntu 23.10 "Mantic", and Fedora 38
 * Repositories for Ubuntu 24.04 "Noble" have been added
-* [IMPORT TABLESPACE](https://mariadb.com/kb/en/import-tablespace) no longer unnecessarily traverses tablespaces list ([MDEV-34670](https://jira.mariadb.org/browse/MDEV-34670))
+* [IMPORT TABLESPACE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/alter/alter-table#import-tablespace) no longer unnecessarily traverses tablespaces list ([MDEV-34670](https://jira.mariadb.org/browse/MDEV-34670))
 * Fix unknown variable `defaults-group-suffix=` with [mariadb-secure-installation](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/deployment-tools/mariadb-secure-installation) ([MDEV-33265](https://jira.mariadb.org/browse/MDEV-33265))
 * [mariadb-install-db](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/deployment-tools/mariadb-install-db) no longer hangs on macOS ([MDEV-34129](https://jira.mariadb.org/browse/MDEV-34129))
 * Fix transaction termination with ER\_LOCK\_TABLE\_FULL when lock memory is growing ([MDEV-34167](https://jira.mariadb.org/browse/MDEV-34167))

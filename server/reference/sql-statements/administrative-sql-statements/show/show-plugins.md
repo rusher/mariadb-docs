@@ -10,9 +10,9 @@ SHOW PLUGINS;
 
 `SHOW PLUGINS` displays information about installed [plugins](../../../plugins/). The `Library` column indicates the plugin library - if it is `NULL`, the plugin is built-in and cannot be uninstalled.
 
-The `[PLUGINS](../system-tables/information-schema/information-schema-tables/plugins-table-information-schema.md)` table in the `information_schema` database contains more detailed information.
+The [PLUGINS](../system-tables/information-schema/information-schema-tables/plugins-table-information-schema.md) table in the `information_schema` database contains more detailed information.
 
-For specific information about storage engines (a particular type of plugin), see the `[information_schema.ENGINES](../system-tables/information-schema/information-schema-tables/information-schema-engines-table.md)` table and the `[SHOW ENGINES](show-engines.md)` statement.
+For specific information about storage engines (a particular type of plugin), see the [information_schema.ENGINES](../system-tables/information-schema/information-schema-tables/information-schema-engines-table.md) table and the [SHOW ENGINES](show-engines.md) statement.
 
 ## Examples
 

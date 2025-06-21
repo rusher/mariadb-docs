@@ -316,7 +316,7 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-18936](https://jira.mariadb.org/browse/MDEV-18936) Purge thread fails to exit on shutdown
 * [Revision #396cf60ac0](https://github.com/MariaDB/server/commit/396cf60ac0)\
   2019-03-14 16:59:27 +0100
-  * [MDEV-18917](https://jira.mariadb.org/browse/MDEV-18917) Don't create xtrabackup\_binlog\_pos\_innodb with Mariabackup
+  * [MDEV-18917](https://jira.mariadb.org/browse/MDEV-18917) Don't create xtrabackup\_binlog\_pos\_innodb with mariadb-backup
 * [Revision #7ad355dde7](https://github.com/MariaDB/server/commit/7ad355dde7)\
   2019-03-15 09:44:53 +0200
   * [MDEV-18934](https://jira.mariadb.org/browse/MDEV-18934): Document missing mysqldumpslow sort options
@@ -401,7 +401,7 @@ details of the revision and view diffs of the code modified in that revision.
   * Disable regularly failing Galera tests
 * [Revision #d038806dfe](https://github.com/MariaDB/server/commit/d038806dfe)\
   2019-03-08 16:00:08 +0530
-  * [MDEV-18855](https://jira.mariadb.org/browse/MDEV-18855) Mariabackup should fetch innodb\_compression\_level from running server
+  * [MDEV-18855](https://jira.mariadb.org/browse/MDEV-18855) mariadb-backup should fetch innodb\_compression\_level from running server
 * [Revision #e3adf96aeb](https://github.com/MariaDB/server/commit/e3adf96aeb)\
   2019-03-07 15:35:55 +0200
   * [MDEV-13818](https://jira.mariadb.org/browse/MDEV-13818) CREATE INDEX leaks memory if running out of undo log space

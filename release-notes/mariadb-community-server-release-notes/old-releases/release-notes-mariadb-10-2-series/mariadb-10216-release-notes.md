@@ -32,7 +32,7 @@ Thanks, and enjoy MariaDB!
 * [MDEV-16416](https://jira.mariadb.org/browse/MDEV-16416) - Crash on IMPORT TABLESPACE of a ROW\_FORMAT=COMPRESSED table
 * [MDEV-16456](https://jira.mariadb.org/browse/MDEV-16456) - InnoDB error "returned OS error 71" complains about wrong path
 * [MDEV-13103](https://jira.mariadb.org/browse/MDEV-13103) - Deal with page\_compressed page corruption
-* [MDEV-16496](https://jira.mariadb.org/browse/MDEV-16496) - Mariabackup: Implement --verbose option to instrument InnoDB log apply
+* [MDEV-16496](https://jira.mariadb.org/browse/MDEV-16496) - mariadb-backup: Implement --verbose option to instrument InnoDB log apply
 * [MDEV-16087](https://jira.mariadb.org/browse/MDEV-16087) - Inconsistent SELECT results when query cache is enabled
 * [MDEV-15114](https://jira.mariadb.org/browse/MDEV-15114) - ASAN heap-use-after-free in mem\_heap\_dup or dfield\_data\_is\_binary\_equal (fix for indexed virtual columns)
 * As per the [MariaDB Deprecation Policy](../../../mariadb-platform-deprecation-policy.md), this will be\

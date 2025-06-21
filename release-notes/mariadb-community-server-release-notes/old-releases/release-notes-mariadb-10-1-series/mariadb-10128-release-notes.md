@@ -30,7 +30,7 @@ Thanks, and enjoy MariaDB!
 * [MDEV-13488](https://jira.mariadb.org/browse/MDEV-13488): InnoDB writes CRYPT\_INFO even though encryption is not enabled (fixes upgrades from 5.5 to 10.1)
 * [MDEV-13437](https://jira.mariadb.org/browse/MDEV-13437): InnoDB fails to return error for XA COMMIT or XA ROLLBACK in read-only mode
 * [MDEV-13637](https://jira.mariadb.org/browse/MDEV-13637): InnoDB change buffer housekeeping can cause redo log overrun and possibly deadlocks
-* [MDEV-12988](https://jira.mariadb.org/browse/MDEV-12988): Mariabackup fails if innodb\_undo\_tablespaces>0
+* [MDEV-12988](https://jira.mariadb.org/browse/MDEV-12988): mariadb-backup fails if innodb\_undo\_tablespaces>0
 * [MDEV-13471](https://jira.mariadb.org/browse/MDEV-13471): Test failure on innodb.log\_file\_size,4k (fixes Galera when using innodb\_page\_size=4k)
 * [MDEV-13814](https://jira.mariadb.org/browse/MDEV-13814): Extra logging when innodb\_log\_archive=ON (XtraDB only)
 * [MDEV-13807](https://jira.mariadb.org/browse/MDEV-13807): mariabackup --apply-log-only does generate redo log by performing rollback and possibly other tasks

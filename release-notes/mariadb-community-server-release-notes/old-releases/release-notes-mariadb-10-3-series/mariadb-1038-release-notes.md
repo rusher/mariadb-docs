@@ -33,7 +33,7 @@ Notable changes of this release include:
 * [MDEV-16469](https://jira.mariadb.org/browse/MDEV-16469) - SET GLOBAL innodb\_change\_buffering has no effect
 * [MDEV-13103](https://jira.mariadb.org/browse/MDEV-13103) - Deal with page\_compressed page corruption
 * [MDEV-15611](https://jira.mariadb.org/browse/MDEV-15611) - Due to the failure of foreign key detection, Galera slave node killed himself
-* [MDEV-16496](https://jira.mariadb.org/browse/MDEV-16496) - Mariabackup: Implement --verbose option to instrument InnoDB log apply
+* [MDEV-16496](https://jira.mariadb.org/browse/MDEV-16496) - mariadb-backup: Implement --verbose option to instrument InnoDB log apply
 * [MDEV-16087](https://jira.mariadb.org/browse/MDEV-16087) - Inconsistent SELECT results when query cache is enabled
 * [MDEV-15114](https://jira.mariadb.org/browse/MDEV-15114) - ASAN heap-use-after-free in mem\_heap\_dup or dfield\_data\_is\_binary\_equal
 * [MDEV-16330](https://jira.mariadb.org/browse/MDEV-16330) - Allow instant change of WITH SYSTEM VERSIONING column attribute

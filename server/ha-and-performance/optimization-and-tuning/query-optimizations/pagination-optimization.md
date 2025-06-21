@@ -238,7 +238,7 @@ Designed about 2007; posted 2012.
 * [Luke calls it "seek method" or "keyset pagination"](https://use-the-index-luke.com/no-offset)
 * [More by Luke](https://use-the-index-luke.com/sql/partial-results/fetch-next-page)
 
-Rick James graciously allowed us to use this article in the Knowledge Base.
+Rick James graciously allowed us to use this article in the documentation.
 
 [Rick James' site](https://mysql.rjweb.org/) has other useful tips, how-tos,\
 optimizations, and debugging tips.

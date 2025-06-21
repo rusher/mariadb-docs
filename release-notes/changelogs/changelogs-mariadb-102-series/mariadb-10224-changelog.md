@@ -249,7 +249,7 @@ in that revision.
   * [MDEV-19212](https://jira.mariadb.org/browse/MDEV-19212) 4GB Limit on large\_pages - integer overflow
 * [Revision #caa8c20abe](https://github.com/MariaDB/server/commit/caa8c20abe)\
   2019-04-08 15:08:04 +0300
-  * [MDEV-14192](https://jira.mariadb.org/browse/MDEV-14192) Mariabackup assertion failure: byte\_offset % OS\_FILE\_LOG\_BLOCK\_SIZE == 0
+  * [MDEV-14192](https://jira.mariadb.org/browse/MDEV-14192) mariadb-backup assertion failure: byte\_offset % OS\_FILE\_LOG\_BLOCK\_SIZE == 0
 * [Revision #4b822111ef](https://github.com/MariaDB/server/commit/4b822111ef)\
   2019-04-08 14:41:02 +0300
   * [MDEV-8139](https://jira.mariadb.org/browse/MDEV-8139): Clean up the freeing of B-tree pages

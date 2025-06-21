@@ -9,7 +9,7 @@ HEX(N_or_S)
 ## Description
 
 If `N_or_S` is a number, returns a string representation of the hexadecimal\
-value of `N`, where `N` is a `longlong` (`[BIGINT](../../../../data-types/data-types-numeric-data-types/bigint.md)`) number. This is equivalent to `[CONV](../numeric-functions/conv.md)(N,10,16)`.
+value of `N`, where `N` is a `longlong` ([BIGINT](../../../../data-types/data-types-numeric-data-types/bigint.md)) number. This is equivalent to [CONV](../numeric-functions/conv.md)(N,10,16).
 
 If `N_or_S` is a string, returns a hexadecimal string representation of`N_or_S` where each byte of each character in `N_or_S` is converted to two hexadecimal\
 digits. If `N_or_S` is NULL, returns NULL. The inverse of this operation is performed by the [UNHEX](unhex.md)()\

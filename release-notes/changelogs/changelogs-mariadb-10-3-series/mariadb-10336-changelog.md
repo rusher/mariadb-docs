@@ -171,7 +171,7 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-16605](https://jira.mariadb.org/browse/MDEV-16605) Always include buf\_madvise\_do\_dump in binaries
 * [Revision #7fb1f919d0](https://github.com/MariaDB/server/commit/7fb1f919d0)\
   2022-07-19 13:26:19 +0200
-  * [MDEV-28758](https://jira.mariadb.org/browse/MDEV-28758): Mariabackup copies binary logs to backup directory
+  * [MDEV-28758](https://jira.mariadb.org/browse/MDEV-28758): mariadb-backup copies binary logs to backup directory
 * [Revision #5b4154373a](https://github.com/MariaDB/server/commit/5b4154373a)\
   2022-06-28 09:42:45 +0200
   * only copy buffer pool dump in SST galera mode
@@ -445,7 +445,7 @@ details of the revision and view diffs of the code modified in that revision.
   * main.help: flush help tables after modifying them
 * [Revision #7c4efab903](https://github.com/MariaDB/server/commit/7c4efab903)\`\
   2022-05-19 13:58:31 +0200
-  * typo fixed: [space](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/string-functions/space) -> [:](https://mariadb.com/kb/en/space%3A)[space](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/string-functions/space)[:](https://mariadb.com/kb/en/space%3A)
+  * typo fixed: [space](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/string-functions/space) -> [:](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/string-functions/space)
 * [Revision #19c721631e](https://github.com/MariaDB/server/commit/19c721631e)\
   2022-06-06 22:21:22 +0300
   * [MDEV-28749](https://jira.mariadb.org/browse/MDEV-28749): restore\_prev\_nj\_state() doesn't update cur\_sj\_inner\_tables correctly

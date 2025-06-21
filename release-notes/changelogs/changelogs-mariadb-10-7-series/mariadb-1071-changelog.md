@@ -70,16 +70,16 @@ details of the revision and view diffs of the code modified in that revision.
   * mariabackup: rename encryption\_plugin -> xb\_plugin
 * [Revision #8c806c4152](https://github.com/MariaDB/server/commit/8c806c4152)\
   2021-10-11 14:53:11 +0200
-  * [MDEV-26794](https://jira.mariadb.org/browse/MDEV-26794) MariaBackup does not recognize added providers upon prepare of incremental backup
+  * [MDEV-26794](https://jira.mariadb.org/browse/MDEV-26794) mariadb-backup does not recognize added providers upon prepare of incremental backup
 * [Revision #5a330d4cce](https://github.com/MariaDB/server/commit/5a330d4cce)\
   2021-10-11 13:45:19 +0200
-  * [MDEV-26794](https://jira.mariadb.org/browse/MDEV-26794) MariaBackup does not recognize added providers upon prepare of incremental backup
+  * [MDEV-26794](https://jira.mariadb.org/browse/MDEV-26794) mariadb-backup does not recognize added providers upon prepare of incremental backup
 * [Revision #2be6804650](https://github.com/MariaDB/server/commit/2be6804650)\
   2021-10-09 12:59:04 +0200
-  * [MDEV-26791](https://jira.mariadb.org/browse/MDEV-26791) MariaBackup logs compression provider plugins as encryption plugin
+  * [MDEV-26791](https://jira.mariadb.org/browse/MDEV-26791) mariadb-backup logs compression provider plugins as encryption plugin
 * [Revision #b91acd405a](https://github.com/MariaDB/server/commit/b91acd405a)\
   2021-10-08 09:48:31 +0200
-  * [MDEV-26773](https://jira.mariadb.org/browse/MDEV-26773) MariaBackup backup does not work with compression providers
+  * [MDEV-26773](https://jira.mariadb.org/browse/MDEV-26773) mariadb-backup backup does not work with compression providers
 * [Revision #a010959a56](https://github.com/MariaDB/server/commit/a010959a56)\
   2021-10-09 11:07:47 +0200
   * [MDEV-26774](https://jira.mariadb.org/browse/MDEV-26774) Compression provider unloading at runtime has no effect but doesn't produce a warning

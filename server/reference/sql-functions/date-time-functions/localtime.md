@@ -12,7 +12,7 @@ LOCALTIME([precision])
 ## Description
 
 
-`LOCALTIME` and `LOCALTIME()` are synonyms for `[NOW()](now.md)`.
+`LOCALTIME` and `LOCALTIME()` are synonyms for [NOW()](now.md).
 
 
 ## See Also
