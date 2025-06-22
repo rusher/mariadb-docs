@@ -1,2 +1,2 @@
 
-# SET Commands
+# SET Statements
