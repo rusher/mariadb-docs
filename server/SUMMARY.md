@@ -1321,7 +1321,7 @@
         * [BACKUP LOCK](reference/sql-statements/administrative-sql-statements/backup-commands/backup-lock.md)
         * [BACKUP STAGE](reference/sql-statements/administrative-sql-statements/backup-commands/backup-stage.md)
         * [Storage Snapshots and BACKUP STAGE Statements](reference/sql-statements/administrative-sql-statements/backup-commands/storage-snapshots-and-backup-stage-commands.md)
-      * [FLUSH Commands](reference/sql-statements/administrative-sql-statements/flush-commands/README.md)
+      * [FLUSH Statements](reference/sql-statements/administrative-sql-statements/flush-commands/README.md)
         * [FLUSH QUERY CACHE](reference/sql-statements/administrative-sql-statements/flush-commands/flush-query-cache.md)
         * [FLUSH TABLES FOR EXPORT](reference/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md)
         * [FLUSH](reference/sql-statements/administrative-sql-statements/flush-commands/flush.md)

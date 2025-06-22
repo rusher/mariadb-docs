@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 FLUSH TABLE[S] table_name [, table_name] FOR EXPORT
 ```
 
@@ -10,7 +10,7 @@ FLUSH TABLE[S] table_name [, table_name] FOR EXPORT
 
 `FLUSH TABLES ... FOR EXPORT` flushes changes to the specified tables to disk so that binary copies can be made while the server is still running. This works for [Archive](../../../../server-usage/storage-engines/archive.md), [Aria](../../../../server-usage/storage-engines/aria/), [CSV](../../../../server-usage/storage-engines/csv/), [InnoDB](../../../../server-usage/storage-engines/innodb/), [MyISAM](../../../../server-usage/storage-engines/myisam-storage-engine/) and [MERGE](../../../../server-usage/storage-engines/merge.md) tables.
 
-The table is read locked until one has issued [UNLOCK TABLES](../../transactions/transactions-unlock-tables.md).
+The table is read locked until you issue [UNLOCK TABLES](../../transactions/transactions-unlock-tables.md).
 
 If a storage engine does not support `FLUSH TABLES FOR EXPORT`, a 1031 error ([SQLSTATE](../../programmatic-compound-statements/programmatic-compound-statements-diagnostics/sqlstate.md) 'HY000') is produced.
 
@@ -48,7 +48,7 @@ ERROR 1347 (HY000): 'test.v' is not BASE TABLE
 
 ## Example
 
-```
+```sql
 FLUSH TABLES test.t1 FOR EXPORT;
 #  Copy files related to the table (see below)
 UNLOCK TABLES;
