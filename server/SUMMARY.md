@@ -1325,7 +1325,7 @@
         * [FLUSH QUERY CACHE](reference/sql-statements/administrative-sql-statements/flush-commands/flush-query-cache.md)
         * [FLUSH TABLES FOR EXPORT](reference/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md)
         * [FLUSH](reference/sql-statements/administrative-sql-statements/flush-commands/flush.md)
-      * [Plugin SQL Statements](reference/sql-statements/administrative-sql-statements/plugin-sql-statements/README.md)
+      * [Plugin Statements](reference/sql-statements/administrative-sql-statements/plugin-sql-statements/README.md)
         * [INSTALL PLUGIN](reference/sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin.md)
         * [INSTALL SONAME](reference/sql-statements/administrative-sql-statements/plugin-sql-statements/install-soname.md)
         * [UNINSTALL PLUGIN](reference/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md)

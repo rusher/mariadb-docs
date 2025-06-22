@@ -30,11 +30,29 @@ If there is only one nameless primary, or the default primary (as specified by t
 
 **MariaDB starting with** [**10.7.0**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-7-series/mariadb-1070-release-notes)
 
+{% tabs %}
+{% tab title="Current" %}
+The `FOR CHANNEL` keyword was added for MySQL compatibility. This is identical as using the channel\_name directly after `RESET REPLICA`.
+{% endtab %}
+
+{% tab title="< 10.7.0" %}
+`FOR CHANNEL` is not available.
+{% endtab %}
+{% endtabs %}
+
 The `FOR CHANNEL` keyword was added for MySQL compatibility. This is identical as using the channel\_name directly after `RESET REPLICA`.
 
 **MariaDB starting with** [**11.6.0**](https://mariadb.com/kb/en/mariadb-1160-release-notes/)
 
-From [MariaDB 11.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-6-rolling-releases/what-is-mariadb-116), RESET REPLICA resets the Master/Slave\_last\_event\_time values (see [SHOW REPLICA STATUS](../show/show-replica-status.md)).
+{% tabs %}
+{% tab title="Current" %}
+`RESET REPLICA` resets the Master/Slave\_last\_event\_time values (see [SHOW REPLICA STATUS](../show/show-replica-status.md)).
+{% endtab %}
+
+{% tab title="< 11.6" %}
+`RESET REPLICA` does not reset the Master/Slave\_last\_event\_time values (see [SHOW REPLICA STATUS](../show/show-replica-status.md)).
+{% endtab %}
+{% endtabs %}
 
 ## See Also
 

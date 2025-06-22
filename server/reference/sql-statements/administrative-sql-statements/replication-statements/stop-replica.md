@@ -7,7 +7,8 @@ The terms _master_ and _slave_ have historically been used in replication, and M
 ## Syntax
 
 ```sql
-STOP { SLAVE | REPLICA } ["connection_name"] [thread_type [, thread_type] ... ] [FOR CHANNEL "connection_name"]
+STOP { SLAVE | REPLICA } ["connection_name"] [thread_type [, thread_type] ... ] 
+[FOR CHANNEL "connection_name"]
 
 STOP ALL { SLAVES | REPLICAS } [thread_type [, thread_type]]
 
@@ -40,7 +41,15 @@ If there is only one nameless master, or the default master (as specified by the
 
 **MariaDB starting with** [**10.7.0**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-7-series/mariadb-1070-release-notes)
 
-The `FOR CHANNEL` keyword was added for MySQL compatibility. This is identical as using the channel\_name directly after `STOP REPLICA`.
+{% tabs %}
+{% tab title="Current" %}
+The `FOR CHANNEL` keyword is available for MySQL compatibility. This is identical as using the channel\_name directly after `STOP REPLICA`.
+{% endtab %}
+
+{% tab title="< 10.7.0" %}
+The `FOR CHANNEL` keyword is not available.
+{% endtab %}
+{% endtabs %}
 
 ## See Also
 
@@ -48,6 +57,6 @@ The `FOR CHANNEL` keyword was added for MySQL compatibility. This is identical a
 * [START REPLICA](start-replica.md) is used to start a predefined connection.
 * [RESET REPLICA](reset-replica.md) is used to reset parameters for a connection and also to permanently delete a master connection.
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}
