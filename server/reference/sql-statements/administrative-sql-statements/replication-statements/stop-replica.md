@@ -6,7 +6,7 @@ The terms _master_ and _slave_ have historically been used in replication, and M
 
 ## Syntax
 
-```
+```sql
 STOP { SLAVE | REPLICA } ["connection_name"] [thread_type [, thread_type] ... ] [FOR CHANNEL "connection_name"]
 
 STOP ALL { SLAVES | REPLICAS } [thread_type [, thread_type]]
@@ -24,9 +24,7 @@ Stops the replica threads. `STOP REPLICA` requires the [SUPER](../../account-man
 
 Like [START REPLICA](start-replica.md), this statement may be used with the `IO_THREAD` and`SQL_THREAD` options to name the thread or threads to be stopped. In almost all cases, one never need to use the `thread_type` options.
 
-`STOP REPLICA` waits until any current replication event group affecting\
-one or more non-transactional tables has finished executing (if there\
-is any such replication group), or until the user issues a [KILL QUERY](../kill.md) or [KILL CONNECTION](../kill.md) statement.
+`STOP REPLICA` waits until any current replication event group affecting one or more non-transactional tables has finished executing (if there is any such replication group), or until the user issues a [KILL QUERY](../kill.md) or [KILL CONNECTION](../kill.md) statement.
 
 Note that `STOP REPLICA` doesn't delete the connection permanently. Next time you execute [START REPLICA](start-replica.md) or the MariaDB server restarts, the replica connection is restored with it's [original arguments](change-master-to.md). If you want to delete a connection, you should execute [RESET REPLICA](reset-replica.md).
 
@@ -42,8 +40,7 @@ If there is only one nameless master, or the default master (as specified by the
 
 **MariaDB starting with** [**10.7.0**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-7-series/mariadb-1070-release-notes)
 
-The `FOR CHANNEL` keyword was added for MySQL compatibility. This is identical as\
-using the channel\_name directly after `STOP REPLICA`.
+The `FOR CHANNEL` keyword was added for MySQL compatibility. This is identical as using the channel\_name directly after `STOP REPLICA`.
 
 ## See Also
 

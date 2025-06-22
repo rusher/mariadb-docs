@@ -7,6 +7,15 @@ This file is for snippets ready to copy & paste into Markdown files, handy when 
 
 ## GitBook Extensions
 
+### Admonitions
+
+The most-used types of admonitions in GitBook are `ìnfo` and `warning`.
+```
+{% hint style="info" %}
+Text here
+{% endhint %}
+```
+
 ### Page Headers
 
 This is a template for README.md pages (or folders in GitHub), although you can use it for any kind of page.
@@ -29,13 +38,13 @@ layout:
   pagination:
     visible: false
 ---
-````
+```
 
 ### Tabs
 
 Put version-specific information in tabs. The first tab should have a title of `Current`, while other tabs usually hold information about previous Server versions.
 
-````
+```
 {% tabs %}
 {% tab title="Current" %}
 Text here

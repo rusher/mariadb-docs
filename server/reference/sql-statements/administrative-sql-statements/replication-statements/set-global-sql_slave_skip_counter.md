@@ -2,27 +2,25 @@
 
 ## Syntax
 
-```
+```sql
 SET GLOBAL sql_slave_skip_counter = N
 ```
 
 ## Description
 
-This statement skips the next `N` events from the primary. This is useful\
-for recovering from [replication](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/administrative-sql-statements/replication-statements/broken-reference/README.md) stops caused by a statement.
+This statement skips the next `N` events from the primary. This is useful for recovering from [replication](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/administrative-sql-statements/replication-statements/broken-reference/README.md) stops caused by a statement.
 
 If multi-source replication is used, this statement applies to the default connection. It could be necessary to change the value of the [default\_master\_connection](../../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) system variable.
 
 Note that, if the event is a [transaction](../../transactions/), the whole transaction will be skipped. With non-transactional engines, an event is always a single statement.
 
-This statement is valid only when the replica threads are not running.\
-Otherwise, it produces an error.
+This statement is valid only when the replica threads are not running. Otherwise, it produces an error.
 
 The statement does not automatically restart the replica threads.
 
 ## Example
 
-```
+```sql
 SHOW SLAVE STATUS \G
 ...
 SET GLOBAL sql_slave_skip_counter = 1;
@@ -31,7 +29,7 @@ START SLAVE;
 
 Multi-source replication:
 
-```
+```sql
 SET @@default_master_connection = 'master_01';
 SET GLOBAL SQL_SLAVE_SKIP_COUNTER = 1;
 START SLAVE;

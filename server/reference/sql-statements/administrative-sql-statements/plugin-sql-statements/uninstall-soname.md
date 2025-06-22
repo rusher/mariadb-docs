@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 UNINSTALL SONAME  [IF EXISTS] 'plugin_library'
 ```
 
@@ -10,9 +10,7 @@ UNINSTALL SONAME  [IF EXISTS] 'plugin_library'
 
 This statement is a variant of [UNINSTALL PLUGIN](uninstall-plugin.md) statement, that removes all [plugins](../../../plugins/) belonging to a specified `plugin_library`. See [UNINSTALL PLUGIN](uninstall-plugin.md) for details.
 
-`plugin_library` is the name of the shared library that\
-contains the plugin code. The file name extension (for\
-example, `libmyplugin.so` or `libmyplugin.dll`) can be omitted (which makes the statement look the same on all architectures).
+`plugin_library` is the name of the shared library thatcontains the plugin code. The file name extension (forexample, `libmyplugin.so` or `libmyplugin.dll`) can be omitted (which makes the statement look the same on all architectures).
 
 To use `UNINSTALL SONAME`, you must have the[DELETE privilege](../../account-management-sql-statements/grant.md) for the `mysql.plugin` table.
 
@@ -24,11 +22,11 @@ If the `IF EXISTS` clause is used, MariaDB will return a note instead of an erro
 
 To uninstall the XtraDB plugin and all of its `information_schema` tables with one statement, use
 
-```
+```sql
 UNINSTALL SONAME 'ha_xtradb';
 ```
 
-```
+```sql
 UNINSTALL SONAME IF EXISTS 'ha_example';
 Query OK, 0 rows affected (0.099 sec)
 
