@@ -265,7 +265,7 @@ See also the [Full list of MariaDB options, system and status variables](../../r
 
 #### `binlog_row_image`
 
-* Description: Controls the logging format in [row-based](../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md) [replication](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/standard-replication/broken-reference/README.md). In row-based replication (the variable has no effect with [statement-based replication](../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md#statement-based)), each row change event contains an image for matching against when choosing the row to be updated, and another image containing the changes. Before the introduction of this variable, all columns were logged for both of these images. In certain circumstances, this is not necessary, and memory, disk and network resources can be saved by partial logging. Note that to safely change this setting from the default, the table being replicated to must contain identical primary key definitions, and columns must be present, in the same order, and use the same data types as the original table. If these conditions are not met, matches may not be correctly determined and updates and deletes may diverge on the replica, with no warnings or errors returned.
+* Description: Controls the logging format in [row-based](../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md) [replication](../../server-usage/storage-engines/myrocks/myrocks-and-replication.md). In row-based replication (the variable has no effect with [statement-based replication](../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md#statement-based)), each row change event contains an image for matching against when choosing the row to be updated, and another image containing the changes. Before the introduction of this variable, all columns were logged for both of these images. In certain circumstances, this is not necessary, and memory, disk and network resources can be saved by partial logging. Note that to safely change this setting from the default, the table being replicated to must contain identical primary key definitions, and columns must be present, in the same order, and use the same data types as the original table. If these conditions are not met, matches may not be correctly determined and updates and deletes may diverge on the replica, with no warnings or errors returned.
   * `FULL`: All columns in the before and after image are logged. This is the default, and the only behavior in earlier versions.
   * `NOBLOB`: mariadbd avoids logging blob and text columns whenever possible (eg, blob column was not changed or is not part of primary key).
   * `MINIMAL`: A PK equivalent (PK columns or full row if there is no PK in the table) is logged in the before image, and only changed columns are logged in the after image.
@@ -397,13 +397,13 @@ See also the [Full list of MariaDB options, system and status variables](../../r
 #### `log_bin_trust_function_creators`
 
 * Description: Functions and triggers can be dangerous when used with [replication](./). Certain types of functions and triggers may have unintended consequences when the statements are applied on a replica. For that reason, there are some restrictions on the creation of functions and triggers when the [binary log](../../server-management/server-monitoring-logs/binary-log/) is enabled by default, such as:
-  * When `log_bin_trust_function_creators` is `OFF` and [log\_bin](replication-and-binary-log-system-variables.md#log_bin) is `ON`, [CREATE FUNCTION](../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-function.md) and [ALTER FUNCTION](../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-function.md) statements will trigger an error if the function is defined with any of the `NOT DETERMINISTIC`, `CONTAINS SQL` or `MODIFIES SQL DATA` characteristics.
-  * This means that when `log_bin_trust_function_creators` is `OFF` and [log\_bin](replication-and-binary-log-system-variables.md#log_bin) is `ON`, [CREATE FUNCTION](../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-function.md) and [ALTER FUNCTION](../../../reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-function.md) statements will only succeed if the function is defined with any of the `DETERMINISTIC`, `NO SQL`, or `READS SQL DATA` characteristics.
-  * When `log_bin_trust_function_creators` is `OFF` and [log\_bin](replication-and-binary-log-system-variables.md#log_bin) is `ON`, the [SUPER](../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#global-privileges) privilege is also required to execute the following statements:
-    * [CREATE FUNCTION](../../../reference/sql-statements-and-structure/sql-statements/data-definition/create/create-function.md)
-    * [CREATE TRIGGER](../../programming-customizing-mariadb/triggers-events/triggers/create-trigger.md)
-    * [DROP TRIGGER](../../../reference/sql-statements-and-structure/sql-statements/data-definition/drop/drop-trigger.md)
-  * Setting `log_bin_trust_function_creators` to `ON` removes these requirements around functions characteristics and the [SUPER](../../../reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md#global-privileges) privileges.
+  * When `log_bin_trust_function_creators` is `OFF` and [log\_bin](replication-and-binary-log-system-variables.md#log_bin) is `ON`, [CREATE FUNCTION](../../reference/sql-statements/data-definition/create/create-function.md) and [ALTER FUNCTION](../../reference/sql-statements/data-definition/alter/alter-function.md) statements will trigger an error if the function is defined with any of the `NOT DETERMINISTIC`, `CONTAINS SQL` or `MODIFIES SQL DATA` characteristics.
+  * This means that when `log_bin_trust_function_creators` is `OFF` and [log\_bin](replication-and-binary-log-system-variables.md#log_bin) is `ON`, [CREATE FUNCTION](../../reference/sql-statements/data-definition/create/create-function.md) and [ALTER FUNCTION](../../reference/sql-statements/data-definition/alter/alter-function.md) statements will only succeed if the function is defined with any of the `DETERMINISTIC`, `NO SQL`, or `READS SQL DATA` characteristics.
+  * When `log_bin_trust_function_creators` is `OFF` and [log\_bin](replication-and-binary-log-system-variables.md#log_bin) is `ON`, the [SUPER](../../reference/sql-statements/account-management-sql-statements/grant.md#super) privilege is also required to execute the following statements:
+    * [CREATE FUNCTION](../../reference/sql-statements/data-definition/create/create-function.md)
+    * [CREATE TRIGGER](../../server-usage/triggers-events/triggers/create-trigger.md)
+    * [DROP TRIGGER](../../reference/sql-statements/data-definition/drop/drop-trigger.md)
+  * Setting `log_bin_trust_function_creators` to `ON` removes these requirements around functions characteristics and the [SUPER](../../reference/sql-statements/account-management-sql-statements/grant.md#super) privileges.
   * See [Binary Logging of Stored Routines](../../server-usage/stored-routines/binary-logging-of-stored-routines.md) for more information.
 * Commandline: `--log-bin-trust-function-creators[={0|1}]`
 * Scope: Global
@@ -424,7 +424,7 @@ See also the [Full list of MariaDB options, system and status variables](../../r
 
 #### `log_slave_updates`
 
-* Description: If set to `0`, the default, updates on a replica received from a primary during [replication](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/standard-replication/broken-reference/README.md) are not logged in the replica's binary log. If set to `1`, they are. The replica's binary log needs to be enabled for this to have an effect. Set to `1` if you want to daisy-chain the replicas.
+* Description: If set to `0`, the default, updates on a replica received from a primary during [replication](../../server-usage/storage-engines/myrocks/myrocks-and-replication.md) are not logged in the replica's binary log. If set to `1`, they are. The replica's binary log needs to be enabled for this to have an effect. Set to `1` if you want to daisy-chain the replicas.
 * Commandline: `--log-slave-updates`
 * Scope: Global
 * Dynamic: No
@@ -493,7 +493,7 @@ See also the [Full list of MariaDB options, system and status variables](../../r
 
 #### `read_binlog_speed_limit`
 
-* Description: Used to restrict the speed at which a [replica](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/standard-replication/broken-reference/README.md) can read the binlog from the primary. This can be used to reduce the load on a primary if many replicas need to download large amounts of old binlog files at the same time. The network traffic will be restricted to the specified number of kilobytes per second.
+* Description: Used to restrict the speed at which a [replica](../../server-usage/storage-engines/myrocks/myrocks-and-replication.md) can read the binlog from the primary. This can be used to reduce the load on a primary if many replicas need to download large amounts of old binlog files at the same time. The network traffic will be restricted to the specified number of kilobytes per second.
 * Commandline: `--read-binlog-speed-limit=#`
 * Scope: Global
 * Dynamic: Yes
