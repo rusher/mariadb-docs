@@ -582,9 +582,9 @@ See also the [Full list of MariaDB options, system and status variables](../../r
 
 #### `replicate_do_db`
 
-* Description: This system variable allows you to configure a [replica](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/standard-replication/broken-reference/README.md) to apply statements and transactions affecting databases that match a specified name.
+* Description: This system variable allows you to configure a [replica](../../server-usage/storage-engines/myrocks/myrocks-and-replication.md) to apply statements and transactions affecting databases that match a specified name.
   * This system variable will not work with cross-database updates with [statement-based logging](../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md#statement-based-logging). See the [Statement-Based Logging](replication-filters.md#statement-based-logging) section for more information.
-  * When setting it dynamically with [SET GLOBAL](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/set-commands/set.md#global-session), the system variable accepts a comma-separated list of filters.
+  * When setting it dynamically with [SET GLOBAL](../../reference/sql-statements/administrative-sql-statements/set-commands/set.md), the system variable accepts a comma-separated list of filters.
   * When setting it on the command-line or in a server [option group](../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md), the system variable does not accept a comma-separated list. If you would like to specify multiple filters, then you need to specify the system variable multiple times.
   * See [Replication Filters](replication-filters.md) for more information.
 * Commandline: `--replicate-do-db=name`
@@ -595,9 +595,9 @@ See also the [Full list of MariaDB options, system and status variables](../../r
 
 #### `replicate_do_table`
 
-* Description: This system variable allows you to configure a [replica](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/standard-replication/broken-reference/README.md) to apply statements and transactions that affect tables that match a specified name. The table name is specified in the format: `dbname.tablename`.
+* Description: This system variable allows you to configure a [replica](../../server-usage/storage-engines/myrocks/myrocks-and-replication.md) to apply statements and transactions that affect tables that match a specified name. The table name is specified in the format: `dbname.tablename`.
   * This system variable will not work with cross-database updates with [statement-based logging](../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md#statement-based-logging). See the [Statement-Based Logging](replication-filters.md#statement-based-logging) section for more information.
-  * When setting it dynamically with [SET GLOBAL](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/set-commands/set.md#global-session), the system variable accepts a comma-separated list of filters.
+  * When setting it dynamically with [SET GLOBAL](../../reference/sql-statements/administrative-sql-statements/set-commands/set.md), the system variable accepts a comma-separated list of filters.
   * When setting it on the command-line or in a server [option group](../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md), the system variable does not accept a comma-separated list. If you would like to specify multiple filters, then you need to specify the system variable multiple times.
   * See [Replication Filters](replication-filters.md) for more information.
 * Commandline: `--replicate-do-table=name`
@@ -608,7 +608,7 @@ See also the [Full list of MariaDB options, system and status variables](../../r
 
 #### `replicate_events_marked_for_skip`
 
-* Description: Tells the replica whether to [replicate](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/standard-replication/broken-reference/README.md) events that are marked with the `@@skip_replication` flag. See [Selectively skipping replication of binlog events](selectively-skipping-replication-of-binlog-events.md) for more information.
+* Description: Tells the replica whether to [replicate](../../server-usage/storage-engines/myrocks/myrocks-and-replication.md) events that are marked with the `@@skip_replication` flag. See [Selectively skipping replication of binlog events](selectively-skipping-replication-of-binlog-events.md) for more information.
 * Commandline: `--replicate-events-marked-for-skip`
 * Scope: Global
 * Dynamic: Yes
@@ -618,9 +618,9 @@ See also the [Full list of MariaDB options, system and status variables](../../r
 
 #### `replicate_ignore_db`
 
-* Description: This system variable allows you to configure a [replica](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/standard-replication/broken-reference/README.md) to ignore statements and transactions affecting databases that match a specified name.
+* Description: This system variable allows you to configure a [replica](../../server-usage/storage-engines/myrocks/myrocks-and-replication.md) to ignore statements and transactions affecting databases that match a specified name.
   * This system variable will not work with cross-database updates with [statement-based logging](../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md#statement-based-logging). See the [Statement-Based Logging](replication-filters.md#statement-based-logging) section for more information.
-  * When setting it dynamically with [SET GLOBAL](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/set-commands/set.md#global-session), the system variable accepts a comma-separated list of filters.
+  * When setting it dynamically with [SET GLOBAL](../../reference/sql-statements/administrative-sql-statements/set-commands/set.md), the system variable accepts a comma-separated list of filters.
   * When setting it on the command-line or in a server [option group](../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md), the system variable does not accept a comma-separated list. If you would like to specify multiple filters, then you need to specify the system variable multiple times.
   * See [Replication Filters](replication-filters.md) for more information.
 * Commandline: `--replicate-ignore-db=name`
@@ -631,9 +631,9 @@ See also the [Full list of MariaDB options, system and status variables](../../r
 
 #### `replicate_ignore_table`
 
-* Description: This system variable allows you to configure a [replica](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/standard-replication/broken-reference/README.md) to ignore statements and transactions that affect tables that match a specified name. The table name is specified in the format: `dbname.tablename`.
+* Description: This system variable allows you to configure a [replica](../../server-usage/storage-engines/myrocks/myrocks-and-replication.md) to ignore statements and transactions that affect tables that match a specified name. The table name is specified in the format: `dbname.tablename`.
   * This system variable will not work with cross-database updates with [statement-based logging](../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md#statement-based-logging). See the [Statement-Based Logging](replication-filters.md#statement-based-logging) section for more information.
-  * When setting it dynamically with [SET GLOBAL](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/set-commands/set.md#global-session), the system variable accepts a comma-separated list of filters.
+  * When setting it dynamically with [SET GLOBAL](../../reference/sql-statements/administrative-sql-statements/set-commands/set.md), the system variable accepts a comma-separated list of filters.
   * When setting it on the command-line or in a server [option group](../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md), the system variable does not accept a comma-separated list. If you would like to specify multiple filters, then you need to specify the system variable multiple times.
   * See [Replication Filters](replication-filters.md) for more information.
 * Commandline: `--replicate-ignore-table=name`
@@ -644,7 +644,7 @@ See also the [Full list of MariaDB options, system and status variables](../../r
 
 #### `replicate_rewrite_db`
 
-* Description: This option allows you to configure a [replica](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/standard-replication/broken-reference/README.md) to rewrite database names. It uses the format `primary_database->replica_database`. If a replica encounters a [binary log](../../server-management/server-monitoring-logs/binary-log/) event in which the default database (i.e. the one selected by the [USE](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/use-database.md) statement) is `primary_database`, then the replica will apply the event in `replica_database` instead.
+* Description: This option allows you to configure a [replica](../../server-usage/storage-engines/myrocks/myrocks-and-replication.md) to rewrite database names. It uses the format `primary_database->replica_database`. If a replica encounters a [binary log](../../server-management/server-monitoring-logs/binary-log/) event in which the default database (i.e. the one selected by the [USE](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/use-database.md) statement) is `primary_database`, then the replica will apply the event in `replica_database` instead.
   * This option will not work with cross-database updates with [statement-based logging](../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md#statement-based-logging). See the [Statement-Based Logging](replication-filters.md#statement-based-logging) section for more information.
   * This option only affects statements that involve tables. This option does not affect statements involving the database itself, such as [CREATE DATABASE](../../reference/sql-statements/data-definition/create/create-database.md), [ALTER DATABASE](../../reference/sql-statements/data-definition/alter/alter-database.md), and [DROP DATABASE](../../reference/sql-statements/data-definition/drop/drop-database.md).
   * When setting it on the command-line or in a server [option group](../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md), the option does not accept a comma-separated list. If you would like to specify multiple filters, then you need to specify the option multiple times.
@@ -659,9 +659,9 @@ See also the [Full list of MariaDB options, system and status variables](../../r
 
 #### `replicate_wild_do_table`
 
-* Description: This system variable allows you to configure a [replica](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/standard-replication/broken-reference/README.md) to apply statements and transactions that affect tables that match a specified wildcard pattern. The wildcard pattern uses the same semantics as the [LIKE](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/like.md) operator.
+* Description: This system variable allows you to configure a [replica](../../server-usage/storage-engines/myrocks/myrocks-and-replication.md) to apply statements and transactions that affect tables that match a specified wildcard pattern. The wildcard pattern uses the same semantics as the [LIKE](../../../reference/sql-statements-and-structure/sql-statements/built-in-functions/string-functions/like.md) operator.
   * This system variable will work with cross-database updates with [statement-based logging](../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md#statement-based-logging). See the [Statement-Based Logging](replication-filters.md#statement-based-logging) section for more information.
-  * When setting it dynamically with [SET GLOBAL](../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/set-commands/set.md#global-session), the system variable accepts a comma-separated list of filters.
+  * When setting it dynamically with [SET GLOBAL](../../reference/sql-statements/administrative-sql-statements/set-commands/set.md), the system variable accepts a comma-separated list of filters.
   * When setting it on the command-line or in a server [option group](../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md), the system variable does not accept a comma-separated list. If you would like to specify multiple filters, then you need to specify the system variable multiple times.
   * See [Replication Filters](replication-filters.md) for more information.
 * Commandline: `--replicate-wild-do-table=name`
@@ -672,7 +672,7 @@ See also the [Full list of MariaDB options, system and status variables](../../r
 
 #### `replicate_wild_ignore_table`
 
-* Description: This system variable allows you to configure a [replica](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/standard-replication/broken-reference/README.md) to ignore statements and transactions that affect tables that match a specified wildcard pattern. The wildcard pattern uses the same semantics as the [LIKE](../../reference/sql-functions/string-functions/like.md) operator.
+* Description: This system variable allows you to configure a [replica](../../server-usage/storage-engines/myrocks/myrocks-and-replication.md) to ignore statements and transactions that affect tables that match a specified wildcard pattern. The wildcard pattern uses the same semantics as the [LIKE](../../reference/sql-functions/string-functions/like.md) operator.
   * This system variable will work with cross-database updates with [statement-based logging](../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md#statement-based-logging). See the [Statement-Based Logging](replication-filters.md#statement-based-logging) section for more information.
   * When setting it dynamically with [SET GLOBAL](../../reference/sql-statements/administrative-sql-statements/set-commands/set.md#global-session), the system variable accepts a comma-separated list of filters.
   * When setting it on the command-line or in a server [option group](../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md), the system variable does not accept a comma-separated list. If you would like to specify multiple filters, then you need to specify the system variable multiple times.
@@ -693,7 +693,7 @@ See also the [Full list of MariaDB options, system and status variables](../../r
 
 #### `report_password`
 
-* Description: Replica password reported to the primary when it registers. Reported by [SHOW SLAVE HOSTS](../../reference/sql-statements/administrative-sql-statements/show/show-replica-hosts.md) if `--show-slave-auth-info` is set. This password has no connection with user privileges or with the [replication](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/standard-replication/broken-reference/README.md) user account password.
+* Description: Replica password reported to the primary when it registers. Reported by [SHOW SLAVE HOSTS](../../reference/sql-statements/administrative-sql-statements/show/show-replica-hosts.md) if `--show-slave-auth-info` is set. This password has no connection with user privileges or with the [replication](../../server-usage/storage-engines/myrocks/myrocks-and-replication.md) user account password.
 * Commandline: `--report-password=password`
 * Scope: Global
 * Dynamic: No
@@ -701,7 +701,7 @@ See also the [Full list of MariaDB options, system and status variables](../../r
 
 #### `report_port`
 
-* Description: The commandline option sets the TCP/IP port for connecting to the replica that will be reported to the [replicating](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/standard-replication/broken-reference/README.md) primary during the replica's registration. Viewing the variable will show this value.
+* Description: The commandline option sets the TCP/IP port for connecting to the replica that will be reported to the [replicating](../../server-usage/storage-engines/myrocks/myrocks-and-replication.md) primary during the replica's registration. Viewing the variable will show this value.
 * Commandline: `--report-port=#`
 * Scope: Global
 * Dynamic: No
@@ -711,7 +711,7 @@ See also the [Full list of MariaDB options, system and status variables](../../r
 
 #### `report_user`
 
-* Description: Replica's account user name reported to the primary when it registers. Reported by [SHOW SLAVE HOSTS](../../reference/sql-statements/administrative-sql-statements/show/show-replica-hosts.md) if `--show-slave-auth-info` is set. This username has no connection with user privileges or with the [replication](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/standard-replication/broken-reference/README.md) user account.
+* Description: Replica's account user name reported to the primary when it registers. Reported by [SHOW SLAVE HOSTS](../../reference/sql-statements/administrative-sql-statements/show/show-replica-hosts.md) if `--show-slave-auth-info` is set. This username has no connection with user privileges or with the [replication](../../server-usage/storage-engines/myrocks/myrocks-and-replication.md) user account.
 * Commandline: `--report-user=name`
 * Scope: Global
 * Dynamic: No
@@ -719,9 +719,9 @@ See also the [Full list of MariaDB options, system and status variables](../../r
 
 #### `server_id`
 
-* Description: This system variable is used with [MariaDB replication](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/standard-replication/broken-reference/README.md) to identify unique primary and replica servers in a topology. This system variable is also used with the [binary log](../../server-management/server-monitoring-logs/binary-log/) to determine which server a specific transaction originated on.
+* Description: This system variable is used with [MariaDB replication](../../server-usage/storage-engines/myrocks/myrocks-and-replication.md) to identify unique primary and replica servers in a topology. This system variable is also used with the [binary log](../../server-management/server-monitoring-logs/binary-log/) to determine which server a specific transaction originated on.
   * When [MariaDB replication](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/standard-replication/broken-reference/README.md) is used with standalone MariaDB Server, each server in the replication topology must have a unique `server_id` value.
-  * When [MariaDB replication](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/standard-replication/broken-reference/README.md) is used with [MariaDB Galera Cluster](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/galera/README.md), see [Using MariaDB Replication with MariaDB Galera Cluster: Setting server\_id on Cluster Nodes](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/high-availability/using-mariadb-replication-with-mariadb-galera-cluster/using-mariadb-replication-with-mariadb-galera-cluster-using-mariadb-replica#setting-server_id-on-cluster-nodes) for more information on how to set the `server_id` values.
+  * When [MariaDB replication](../../server-usage/storage-engines/myrocks/myrocks-and-replication.md) is used with [MariaDB Galera Cluster](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/3VYeeVGUV4AMqrA3zwy7/), see [Using MariaDB Replication with MariaDB Galera Cluster: Setting server\_id on Cluster Nodes](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/high-availability/using-mariadb-replication-with-mariadb-galera-cluster/using-mariadb-replication-with-mariadb-galera-cluster-using-mariadb-replica#setting-server_id-on-cluster-nodes) for more information on how to set the `server_id` values.
   * In [MariaDB 10.2.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-1021-release-notes) and below, the default `server_id` value is `0`. If a replica's `server_id` value is `0`, then all primary's will refuse its connection attempts. If a primary's `server_id` value is `0`, then it will refuse all replica connection attempts.
 * Commandline: `--server-id =#`
 * Scope: Global, Session
@@ -741,7 +741,7 @@ See also the [Full list of MariaDB options, system and status variables](../../r
 
 #### `skip_replication`
 
-* Description: Changes are logged into the [binary log](../../server-management/server-monitoring-logs/binary-log/) with the @@skip\_replication flag set. Such events will not be [replicated](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/standard-replication/broken-reference/README.md) by replica that run with `--replicate-events-marked-for-skip` set different from its default of `REPLICATE`. See [Selectively skipping replication of binlog events](selectively-skipping-replication-of-binlog-events.md) for more information.
+* Description: Changes are logged into the [binary log](../../server-management/server-monitoring-logs/binary-log/) with the @@skip\_replication flag set. Such events will not be [replicated](../../server-usage/storage-engines/myrocks/myrocks-and-replication.md) by replica that run with `--replicate-events-marked-for-skip` set different from its default of `REPLICATE`. See [Selectively skipping replication of binlog events](selectively-skipping-replication-of-binlog-events.md) for more information.
 * Commandline: None
 * Scope: Session
 * Dynamic: Yes
@@ -783,7 +783,7 @@ See also the [Full list of MariaDB options, system and status variables](../../r
 
 #### `slave_ddl_exec_mode`
 
-* Description: Modes for how [replication](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/standard-replication/broken-reference/README.md) of DDL events should be executed. Legal values are `STRICT` and `IDEMPOTENT` (default). In `IDEMPOTENT` mode, the replica will not stop for failed DDL operations that would not cause a difference between the primary and the replica. In particular [CREATE TABLE](../../reference/sql-statements/data-definition/create/create-table.md) is treated as [CREATE OR REPLACE TABLE](../../reference/sql-statements/data-definition/create/create-table.md#create-or-replace) and [DROP TABLE](../../reference/sql-statements/data-definition/drop/drop-table.md) is treated as `DROP TABLE IF EXISTS`.
+* Description: Modes for how [replication](../../server-usage/storage-engines/myrocks/myrocks-and-replication.md) of DDL events should be executed. Legal values are `STRICT` and `IDEMPOTENT` (default). In `IDEMPOTENT` mode, the replica will not stop for failed DDL operations that would not cause a difference between the primary and the replica. In particular [CREATE TABLE](../../reference/sql-statements/data-definition/create/create-table.md) is treated as [CREATE OR REPLACE TABLE](../../reference/sql-statements/data-definition/create/create-table.md#create-or-replace) and [DROP TABLE](../../reference/sql-statements/data-definition/drop/drop-table.md) is treated as `DROP TABLE IF EXISTS`.
 * Commandline: `--slave-ddl-exec-mode=name`
 * Scope: Global
 * Dynamic: Yes
@@ -793,7 +793,7 @@ See also the [Full list of MariaDB options, system and status variables](../../r
 
 #### `slave_domain_parallel_threads`
 
-* Description: When set to a non-zero value, each [replication](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/standard-replication/broken-reference/README.md) domain in one primary connection can reserve at most that many worker threads at any one time, leaving the rest (up to the value of[slave\_parallel\_threads](replication-and-binary-log-system-variables.md#slave_parallel_threads)) free for other primary connections\
+* Description: When set to a non-zero value, each [replication](../../server-usage/storage-engines/myrocks/myrocks-and-replication.md) domain in one primary connection can reserve at most that many worker threads at any one time, leaving the rest (up to the value of[slave\_parallel\_threads](replication-and-binary-log-system-variables.md#slave_parallel_threads)) free for other primary connections\
   or replication domains to use in parallel. See [Parallel Replication](parallel-replication.md#configuration-variable-slave_domain_parallel_threads) for details.
 * Commandline: `--slave-domain-parallel-threads=#`
 * Scope: Global
@@ -804,7 +804,7 @@ See also the [Full list of MariaDB options, system and status variables](../../r
 
 #### `slave_exec_mode`
 
-* Description: Determines the mode used for [replication](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/standard-replication/broken-reference/README.md) error checking and conflict resolution. STRICT mode is the default, and catches all errors and conflicts. IDEMPOTENT mode suppresses duplicate key or no key errors, which can be useful in certain replication scenarios, such as when there are multiple primaries, or circular replication.
+* Description: Determines the mode used for [replication](../../server-usage/storage-engines/myrocks/myrocks-and-replication.md) error checking and conflict resolution. STRICT mode is the default, and catches all errors and conflicts. IDEMPOTENT mode suppresses duplicate key or no key errors, which can be useful in certain replication scenarios, such as when there are multiple primaries, or circular replication.
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `enumeration`
@@ -813,7 +813,7 @@ See also the [Full list of MariaDB options, system and status variables](../../r
 
 #### `slave_load_tmpdir`
 
-* Description: Directory where the replica stores temporary files for [replicating](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/standard-replication/broken-reference/README.md) [LOAD DATA INFILE](../../reference/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile.md) statements. If not set, the replica will use [tmpdir](../optimization-and-tuning/system-variables/server-system-variables.md#tmpdir). Should be set to a disk-based directory that will survive restarts, or else replication may fail.
+* Description: Directory where the replica stores temporary files for [replicating](../../server-usage/storage-engines/myrocks/myrocks-and-replication.md) [LOAD DATA INFILE](../../reference/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile.md) statements. If not set, the replica will use [tmpdir](../optimization-and-tuning/system-variables/server-system-variables.md#tmpdir). Should be set to a disk-based directory that will survive restarts, or else replication may fail.
 * Commandline: `--slave-load-tmpdir=path`
 * Scope: Global
 * Dynamic: No
@@ -822,7 +822,7 @@ See also the [Full list of MariaDB options, system and status variables](../../r
 
 #### `slave_max_allowed_packet`
 
-* Description: Maximum packet size in bytes for replica SQL and I/O threads. This value overrides [max\_allowed\_packet](replication-and-binary-log-system-variables.md#max_allowed_packet) for [replication](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/standard-replication/broken-reference/README.md) purposes. Set in multiples of 1024 (the minimum) up to 1GB
+* Description: Maximum packet size in bytes for replica SQL and I/O threads. This value overrides [max\_allowed\_packet](replication-and-binary-log-system-variables.md#max_allowed_packet) for [replication](../../server-usage/storage-engines/myrocks/myrocks-and-replication.md) purposes. Set in multiples of 1024 (the minimum) up to 1GB
 * Commandline: `--slave-max-allowed-packet=#`
 * Scope: Global
 * Dynamic: Yes
@@ -915,7 +915,7 @@ See also the [Full list of MariaDB options, system and status variables](../../r
 
 #### `slave_skip_errors`
 
-* Description: When an error occurs on the replica, [replication](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/standard-replication/broken-reference/README.md) usually halts. This option permits a list of [error codes](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/standard-replication/broken-reference/README.md) to ignore, and for which replication will continue. This option should never be needed in normal use, and careless use could lead to replica that are out of sync with primary's. Error codes are in the format of the number from the replica error log. Using `all` as an option permits the replica the keep replicating no matter what error it encounters, an option you would never normally need in production and which could rapidly lead to data inconsistencies. A count of these is kept in [slave\_skipped\_errors](replication-and-binary-log-status-variables.md#slave_skipped_errors).
+* Description: When an error occurs on the replica, [replication](../../server-usage/storage-engines/myrocks/myrocks-and-replication.md) usually halts. This option permits a list of [error codes](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/development-articles/mariadb-internals/using-mariadb-with-your-programs-api/error-codes) to ignore, and for which replication will continue. This option should never be needed in normal use, and careless use could lead to replica that are out of sync with primary's. Error codes are in the format of the number from the replica error log. Using `all` as an option permits the replica the keep replicating no matter what error it encounters, an option you would never normally need in production and which could rapidly lead to data inconsistencies. A count of these is kept in [slave\_skipped\_errors](replication-and-binary-log-status-variables.md#slave_skipped_errors).
 * Commandline: `--slave-skip-errors=[error_code1,error_code2,...|all|ddl_exist_errors]`
 * Scope: Global
 * Dynamic: No
@@ -934,7 +934,7 @@ See also the [Full list of MariaDB options, system and status variables](../../r
 
 #### `slave_transaction_retries`
 
-* Description: Number of times a [replication](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/standard-replication/broken-reference/README.md) replica retries to execute an SQL thread after it fails due to InnDB deadlock or by exceeding the transaction execution time limit. If after this number of tries the SQL thread has still failed to execute, the replica will stop with an error. See also the [innodb\_lock\_wait\_timeout](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md) system variable.
+* Description: Number of times a [replication](../../server-usage/storage-engines/myrocks/myrocks-and-replication.md) replica retries to execute an SQL thread after it fails due to InnDB deadlock or by exceeding the transaction execution time limit. If after this number of tries the SQL thread has still failed to execute, the replica will stop with an error. See also the [innodb\_lock\_wait\_timeout](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_lock_wait_timeout) system variable.
 * Commandline: `--slave-transaction-retries=#`
 * Scope: Global
 * Dynamic: Yes
@@ -945,7 +945,7 @@ See also the [Full list of MariaDB options, system and status variables](../../r
 
 #### `slave_transaction_retry_errors`
 
-* Description: When an error occurs during a transaction on the replica, [replication](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/standard-replication/broken-reference/README.md) usually halts. By default, transactions that caused a deadlock or elapsed lock wait timeout will be retried. One can add other errors to the the list of errors that should be retried by adding a comma-separated list of [error numbers](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/standard-replication/broken-reference/README.md) to this variable. This is particularly useful in some [Spider](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/spider/README.md) setups. Some recommended errors to retry for Spider are 1020, 1158, 1159, 1160, 1161, 1429, 2013, 12701 (these are in the default value in recent versions).
+* Description: When an error occurs during a transaction on the replica, [replication](../../server-usage/storage-engines/myrocks/myrocks-and-replication.md) usually halts. By default, transactions that caused a deadlock or elapsed lock wait timeout will be retried. One can add other errors to the the list of errors that should be retried by adding a comma-separated list of [error numbers](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/standard-replication/broken-reference/README.md) to this variable. This is particularly useful in some [Spider](../../server-usage/storage-engines/spider/) setups. Some recommended errors to retry for Spider are 1020, 1158, 1159, 1160, 1161, 1429, 2013, 12701 (these are in the default value in recent versions).
 * Commandline: `--slave-transaction_retry-errors=[error_code1,error_code2,...]`
 * Scope: Global
 * Dynamic: No
