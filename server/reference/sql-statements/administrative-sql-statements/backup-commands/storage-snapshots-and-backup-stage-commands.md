@@ -1,8 +1,8 @@
 
-# Storage Snapshots and BACKUP STAGE Commands
+# Storage Snapshots and BACKUP STAGE Statements
 
 
-The [BACKUP STAGE](backup-stage.md) commands are a set of commands to make it possible to make an efficient external backup tool. These commands could even be used by tools that perform backups by taking a snapshot of a file system, SAN, or some other kind of storage device.
+The [BACKUP STAGE](backup-stage.md) statements are a set of statements to make it possible to make an efficient external backup tool. These commands could even be used by tools that perform backups by taking a snapshot of a file system, SAN, or some other kind of storage device.
 
 
 ## Generic Backup Process with Storage Snapshots
