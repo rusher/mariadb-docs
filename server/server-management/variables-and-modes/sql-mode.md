@@ -23,7 +23,7 @@ SELECT @@SQL_MODE, @@GLOBAL.SQL_MODE;
 | [MariaDB 10.1.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-7-release-notes)    | NO\_ENGINE\_SUBSTITUTION, NO\_AUTO\_CREATE\_USER                                                         |
 | <= [MariaDB 10.1.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-6-release-notes) | No value                                                                                                 |
 
-You can set the `SQL_MODE` either from the[command line](../starting-and-stopping-mariadb/mariadbd-options.md) (the `--sql-mode` option) or by setting the [sql\_mode](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#sql_mode) system variable.
+You can set the `SQL_MODE` either from the [command line](../starting-and-stopping-mariadb/mariadbd-options.md) (the `--sql-mode` option) or by setting the [sql\_mode](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#sql_mode) system variable.
 
 ```sql
 SET sql_mode = 'modes';
@@ -92,7 +92,7 @@ If set, [SHOW CREATE TABLE](../../reference/sql-statements/administrative-sql-st
 
 Additionally implies the following: [PIPES\_AS\_CONCAT](sql-mode.md#pipes_as_concat), [ANSI\_QUOTES](sql-mode.md#ansi_quotes), [IGNORE\_SPACE](sql-mode.md#ignore_space), [NO\_KEY\_OPTIONS](sql-mode.md#no_key_options), [NO\_TABLE\_OPTIONS](sql-mode.md#no_table_options), [NO\_FIELD\_OPTIONS](sql-mode.md#no_field_options).
 
-Additionally from [MariaDB 10.4.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-1045-release-notes), implements a limited subset of Microsoft SQL Server's language. See [SQL\_MODE=MSSQL](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-management/variables-and-modes/broken-reference/README.md) for more.
+Additionally from [MariaDB 10.4.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-1045-release-notes), implements a limited subset of Microsoft SQL Server's language. See [SQL\_MODE=MSSQL](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modemssql) for more.
 
 If set, [SHOW CREATE TABLE](../../reference/sql-statements/administrative-sql-statements/show/show-create-table.md) output will not display MariaDB-specific table attributes.
 
