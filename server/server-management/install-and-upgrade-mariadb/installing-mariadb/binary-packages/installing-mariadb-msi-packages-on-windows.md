@@ -143,7 +143,6 @@ MariaDB installation supports the following properties:
 
 | Property name         | Default value             | Description                                                                                   |
 | --------------------- | ------------------------- | --------------------------------------------------------------------------------------------- |
-| Property name         | Default value             | Description                                                                                   |
 | INSTALLDIR            | %ProgramFiles%\MariaDB \\ | Installation root                                                                             |
 | PORT                  | 3306                      | --port parameter for the server                                                               |
 | ALLOWREMOTEROOTACCESS |                           | Allow remote access for root user                                                             |
@@ -170,7 +169,6 @@ Features in the MariaDB installer:
 
 | Feature id      | Installed by default? | Description                                     |
 | --------------- | --------------------- | ----------------------------------------------- |
-| Feature id      | Installed by default? | Description                                     |
 | DBInstance      | yes                   | Install database instance                       |
 | Client          | yes                   | Command line client programs                    |
 | MYSQLSERVER     | yes                   | Install server                                  |
