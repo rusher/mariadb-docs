@@ -45,7 +45,6 @@ On most servers upgrading from 10.3 should be painless. However, there are some 
 
 | Option                                                                                                                                                                 | Old default value | New default value                             |
 | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------- | --------------------------------------------- |
-| Option                                                                                                                                                                 | Old default value | New default value                             |
 | [slave\_transaction\_retry\_errors](../../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#slave_transaction_retry_errors) | 1213,1205         | 1158,1159,1160,1161,1205,1213,1429,2013,12701 |
 | [wsrep\_debug](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_debug)                                                   | OFF               | NONE                                          |
 | [wsrep\_load\_data\_splitting](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_load_data_splitting)                     | ON                | OFF                                           |
@@ -56,7 +55,7 @@ The following options should be removed or renamed if you use them in your [opti
 
 | Option | Reason |
 | ------ | ------ |
-| Option | Reason |
+|        |        |
 
 #### Authentication and TLS
 
