@@ -538,6 +538,24 @@ The [RELAY\_LOG\_FILE](change-master-to.md#relay_log_file) and [RELAY\_LOG\_POS]
 
 #### MASTER\_USE\_GTID
 
+{% tabs %}
+{% tab title="Current" %}
+The `MASTER_USE_GTID` option for `CHANGE MASTER` can be used to configure the replica to use the [global transaction ID (GTID)](../../../../ha-and-performance/standard-replication/gtid.md) when connecting to a primary. The possible values are:
+
+* `current_pos` - Replicate in [GTID](../../../../ha-and-performance/standard-replication/gtid.md) mode and use [gtid\_current\_pos](../../../../ha-and-performance/standard-replication/gtid.md#gtid_current_pos) as the position to start downloading transactions from the primary. Using to transition to primary can break the replication state if the replica executes local transactions due to actively updating gtid\_current\_pos with gtid\_binlog\_pos and gtid\_slave\_pos. Use the new, safe, [MASTER\_DEMOTE\_TO\_SLAVE=](change-master-to.md#master_demote_to_slave) option instead.
+* `replica_pos` - Replicate in [GTID](../../../../ha-and-performance/standard-replication/gtid.md) mode and use [gtid\_slave\_pos](../../../../ha-and-performance/standard-replication/gtid.md#gtid_slave_pos) as the position to start downloading transactions from the primary.
+* `no` - Don't replicate in [GTID](../../../../ha-and-performance/standard-replication/gtid.md) mode.
+{% endtab %}
+
+{% tab title="< 10.5.1" %}
+The `MASTER_USE_GTID` option for `CHANGE MASTER` can be used to configure the replica to use the [global transaction ID (GTID)](../../../../ha-and-performance/standard-replication/gtid.md) when connecting to a primary. The possible values are:
+
+* `current_pos` - Replicate in [GTID](../../../../ha-and-performance/standard-replication/gtid.md) mode and use [gtid\_current\_pos](../../../../ha-and-performance/standard-replication/gtid.md#gtid_current_pos) as the position to start downloading transactions from the primary. Using to transition to primary can break the replication state if the replica executes local transactions due to actively updating gtid\_current\_pos with gtid\_binlog\_pos and gtid\_slave\_pos. Use the new, safe, [MASTER\_DEMOTE\_TO\_SLAVE=](change-master-to.md#master_demote_to_slave) option instead.
+* `slave_pos` - Replicate in [GTID](../../../../ha-and-performance/standard-replication/gtid.md) mode and use [gtid\_slave\_pos](../../../../ha-and-performance/standard-replication/gtid.md#gtid_slave_pos) as the position to start downloading transactions from the primary.
+* `no` - Don't replicate in [GTID](../../../../ha-and-performance/standard-replication/gtid.md) mode.
+{% endtab %}
+{% endtabs %}
+
 The `MASTER_USE_GTID` option for `CHANGE MASTER` can be used to configure the replica to use the [global transaction ID (GTID)](../../../../ha-and-performance/standard-replication/gtid.md) when connecting to a primary. The possible values are:
 
 * `current_pos` - Replicate in [GTID](../../../../ha-and-performance/standard-replication/gtid.md) mode and use [gtid\_current\_pos](../../../../ha-and-performance/standard-replication/gtid.md#gtid_current_pos) as the position to start downloading transactions from the primary. Using to transition to primary can break the replication state if the replica executes local transactions due to actively updating gtid\_current\_pos with gtid\_binlog\_pos and gtid\_slave\_pos. Use the new, safe, [MASTER\_DEMOTE\_TO\_SLAVE=](change-master-to.md#master_demote_to_slave) option instead.
