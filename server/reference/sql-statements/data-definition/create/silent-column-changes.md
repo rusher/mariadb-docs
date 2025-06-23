@@ -14,7 +14,6 @@ To ease imports from other RDBMSs, MariaDB will also silently map the following 
 
 | Other Vendor Type    | MariaDB Type                                                      |
 | -------------------- | ----------------------------------------------------------------- |
-| Other Vendor Type    | MariaDB Type                                                      |
 | BOOL                 | [TINYINT](../../../data-types/numeric-data-types/tinyint.md)      |
 | BOOLEAN              | [TINYINT](../../../data-types/numeric-data-types/tinyint.md)      |
 | CHARACTER VARYING(M) | [VARCHAR](../../../data-types/string-data-types/varchar.md)(M)    |
