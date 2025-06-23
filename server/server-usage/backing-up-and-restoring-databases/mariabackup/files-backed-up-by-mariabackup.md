@@ -1,7 +1,5 @@
 # Files Backed Up By mariadb-backup
 
-## Files Backed Up By mariadb-backup
-
 ### Files Included in Backup
 
 mariadb-backup backs up the files listed below.
