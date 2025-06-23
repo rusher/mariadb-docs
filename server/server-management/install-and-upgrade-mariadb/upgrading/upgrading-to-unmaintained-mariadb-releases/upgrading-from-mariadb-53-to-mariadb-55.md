@@ -47,13 +47,13 @@ Percona, the provider of [XtraDB](../../../../server-usage/storage-engines/innod
 * [innodb\_blocking\_lru\_restore](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md); Use[innodb\_blocking\_buffer\_pool\_restore](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_blocking_buffer_pool_restore) instead.
 * [innodb\_enable\_unsafe\_group\_commit](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_enable_unsafe_group_commit)
 * [innodb\_expand\_import](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md); Use [innodb\_import\_table\_from\_xtrabackup](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_import_table_from_xtrabackup) instead.
-* [innodb\_extra\_rsegments](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md); Use [innodb\_rollback\_segments](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md) instead.
-* [innodb\_extra\_undoslots](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md)
+* [innodb\_extra\_rsegments](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_extra_rsegments); Use [innodb\_rollback\_segments](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_rollback_segments) instead.
+* [innodb\_extra\_undoslots](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_extra_undoslots)
 * [innodb\_fast\_recovery](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md)
 * [innodb\_flush\_log\_at\_trx\_commit\_session](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md)
 * [innodb\_overwrite\_relay\_log\_info](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md)
-* [innodb\_pass\_corrupt\_table](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md); Use[innodb\_corrupt\_table\_action](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md) instead.
-* [innodb\_use\_purge\_thread](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md)
+* [innodb\_pass\_corrupt\_table](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_pass_corrupt_table); Use [innodb\_corrupt\_table\_action](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_corrupt_table_action) instead.
+* [innodb\_use\_purge\_thread](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_use_purge_thread)
 * [xtradb\_enhancements](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md)
 
 ## Notes
