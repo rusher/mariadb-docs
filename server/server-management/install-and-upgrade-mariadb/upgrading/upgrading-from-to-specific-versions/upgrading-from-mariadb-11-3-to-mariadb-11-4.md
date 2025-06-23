@@ -55,8 +55,8 @@ The following options should be removed if you use them in your [option files](.
 * [Features in MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-4-series/what-is-mariadb-114)
 * [Features in MariaDB 11.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-3-rolling-releases/what-is-mariadb-113)
 * [Upgrading from MariaDB 10.6 to MariaDB 10.7 with Galera Cluster](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-management/getting-installing-and-upgrading-mariadb/upgrading/upgrading-from-mariadb-106-to-mariadb-107-with-galera-cluster/README.md)
-* [Upgrading from MariaDB 11.2 to MariaDB 11.3](../upgrading-to-unmaintained-mariadb-releases/upgrading-from-mariadb-11-2-to-mariadb-11-3.md)
-* [Upgrading from MariaDB 11.1 to MariaDB 11.2](../upgrading-to-unmaintained-mariadb-releases/upgrading-from-mariadb-11-1-to-mariadb-11-2.md)
+* [Upgrading from MariaDB 11.2 to MariaDB 11.3](upgrading-from-mariadb-11-2-to-mariadb-11-3.md)
+* [Upgrading from MariaDB 11.1 to MariaDB 11.2](upgrading-from-mariadb-11-1-to-mariadb-11-2.md)
 * [Upgrading from MariaDB 10.11 to MariaDB 11.4](upgrading-from-mariadb-10-11-to-mariadb-11-4.md)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
