@@ -1349,7 +1349,7 @@
         * [SET STATEMENT](reference/sql-statements/administrative-sql-statements/set-commands/set-statement.md)
       * [SHOW Statements](reference/sql-statements/administrative-sql-statements/show/README.md)
         * [About SHOW](reference/sql-statements/administrative-sql-statements/show/about-show.md)
-        * [Extended Show](reference/sql-statements/administrative-sql-statements/show/extended-show.md)
+        * [Extended SHOW](reference/sql-statements/administrative-sql-statements/show/extended-show.md)
         * [SHOW ANALYZE](reference/sql-statements/administrative-sql-statements/show/show-analyze.md)
         * [SHOW AUTHORS](reference/sql-statements/administrative-sql-statements/show/show-authors.md)
         * [SHOW BINARY LOGS](reference/sql-statements/administrative-sql-statements/show/show-binary-logs.md)
