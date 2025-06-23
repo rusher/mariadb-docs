@@ -1,19 +1,17 @@
 # Files Backed Up By mariadb-backup
 
-## Files Backed Up By mariadb-backup
-
-### Files Included in Backup
+## Files Included in Backup
 
 mariadb-backup backs up the files listed below.
 
-#### InnoDB Data Files
+### InnoDB Data Files
 
 mariadb-backup backs up the following InnoDB data files:
 
 * [InnoDB system tablespace](../../storage-engines/innodb/innodb-tablespaces/innodb-system-tablespaces.md)
 * [InnoDB file-per-table tablespaces](../../storage-engines/innodb/innodb-tablespaces/innodb-file-per-table-tablespaces.md)
 
-#### MyRocks Data Files
+### MyRocks Data Files
 
 {% tabs %}
 {% tab title="Current" %}
@@ -24,8 +22,6 @@ This data data is located in the directory defined by the [rocksdb\_datadir](../
 mariadb-backup does not back up tables that use the [MyRocks](../../storage-engines/myrocks/) storage engine.&#x20;
 {% endtab %}
 {% endtabs %}
-
-
 
 {% tabs %}
 {% tab title="Current" %}
@@ -39,7 +35,7 @@ mariadb-backup does not back up tables that use the [MyRocks](../../storage-engi
 
 mariadb-backup does not currently support [partial backups](partial-backup-and-restore-with-mariabackup.md) for MyRocks.
 
-#### Other Data Files
+### Other Data Files
 
 mariadb-backup also backs up files with the following extensions:
 
