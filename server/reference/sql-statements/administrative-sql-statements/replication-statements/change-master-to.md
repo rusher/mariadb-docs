@@ -103,7 +103,7 @@ The maximum length of the `MASTER_USER` string is 96 characters until [MariaDB 1
 
 #### MASTER_PASSWORD
 
-The `MASTER_PASSWORD` option for `CHANGE MASTER` defines the password that the [replica](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/administrative-sql-statements/replication-statements/broken-reference/README.md) will use to connect to the [primary](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/administrative-sql-statements/replication-statements/broken-reference/README.md) as the user account defined by the [MASTER_USER](change-master-to.md#master_user) option.
+The `MASTER_PASSWORD` option for `CHANGE MASTER` defines the password that the [replica](../../../../ha-and-performance/standard-replication/setting-up-replication.md) will use to connect to the [primary](../../../../ha-and-performance/standard-replication/setting-up-replication.md) as the user account defined by the [MASTER_USER](change-master-to.md#master_user) option.
 
 For example:
 
