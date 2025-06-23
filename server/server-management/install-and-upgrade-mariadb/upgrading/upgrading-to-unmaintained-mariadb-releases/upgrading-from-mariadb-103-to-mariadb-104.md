@@ -34,7 +34,7 @@ The suggested upgrade procedure is:
 3. Run [mysql\_upgrade](../../../../clients-and-utilities/legacy-clients-and-utilities/mysql_upgrade.md).
 
 * `mysql_upgrade` does two things:
-  1. Ensures that the system tables in the `[mysq](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/README.md)l` database are fully compatible with the new version.
+  1. Ensures that the system tables in the [mysql database](../../../../reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/) are fully compatible with the new version.
   2. Does a very quick check of all tables and marks them as compatible with the new version of MariaDB .
 
 ### Incompatible Changes Between 10.3 and 10.4
@@ -67,7 +67,7 @@ The following options should be removed or renamed if you use them in your [opti
 
 You might consider using the following major new features in [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104):
 
-* [Galera](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/galera-cluster/README.md) has been upgraded from [Galera](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/galera-cluster/README.md) 3 to [Galera](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/galera-cluster/README.md) 4.
+* [Galera](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/galera-cluster/README.md) has been upgraded from [Galera](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/3VYeeVGUV4AMqrA3zwy7/) 3 to [Galera](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/3VYeeVGUV4AMqrA3zwy7/) 4.
 * [System-versioning](../../../../reference/sql-structure/temporal-tables/system-versioned-tables.md) extended with support for [application-time periods](../../../../reference/sql-structure/temporal-tables/system-versioned-tables.md).
 * [User password expiry](../../../../security/user-account-management/user-password-expiry.md)
 * [Account Locking](../../../../security/user-account-management/account-locking.md)
