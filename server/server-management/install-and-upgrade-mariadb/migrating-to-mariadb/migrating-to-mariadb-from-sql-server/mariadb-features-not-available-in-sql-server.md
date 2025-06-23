@@ -57,7 +57,7 @@ For compatibility with some other database systems, MariaDB supports the [JSON](
   * Tables can be partitioned based on [multiple columns](../../../../server-usage/partitioning-tables/partitioning-types/range-columns-and-list-columns-partitioning-types.md).
   * Several [partitioning types](../../../../server-usage/partitioning-tables/partitioning-overview.md#partitioning-types) are available.
   * Subpartitions.
-* [Progress reporting](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-management/install-and-upgrade-mariadb/migrating-to-mariadb/migrating-to-mariadb-from-sql-server/broken-reference/README.md) for some typically expensive statements.
+* [Progress reporting](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/development-articles/mariadb-internals/using-mariadb-with-your-programs-api/progress-reporting) for some typically expensive statements.
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
