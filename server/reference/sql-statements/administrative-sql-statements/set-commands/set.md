@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 SET variable_assignment [, variable_assignment] ...
 
 variable_assignment:
@@ -19,12 +19,17 @@ user_var_name:= expr
 
 ## Description
 
-The `SET` statement assigns values to different types of\
-variables that affect the operation of the server or your client. Older\
-versions of MySQL employed `SET OPTION`, but this syntax was\
-deprecated in favor of `SET` without `OPTION`, and was removed in [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0).
+{% tabs %}
+{% tab title="Current" %}
+The `SET` statement assigns values to different types of variables that affect the operation of the server or your client.
+{% endtab %}
 
-Changing a system variable by using the SET statement does not make the change permanently. To do so, the change must be made in a [configuration file](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/administrative-sql-statements/set-commands/broken-reference/README.md).
+{% tab title="< 10.0" %}
+The `SET` statement assigns values to different types of variables that affect the operation of the server or your client. Older versions of MySQL employed `SET OPTION`, but this syntax was deprecated in favor of `SET` without `OPTION`.
+{% endtab %}
+{% endtabs %}
+
+Changing a system variable by using the SET statement does not make the change permanently. To do so, the change must be made in a [configuration file](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md).
 
 For setting variables on a per-query basis, see [SET STATEMENT](set-statement.md).
 
@@ -52,7 +57,7 @@ Setting a global variable to DEFAULT will restore it to the server default, and 
 * [skip\_parallel\_replication](../../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) is a session variable.
 * [max\_error\_count](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_error_count) is both global and session.
 
-```
+```sql
 SELECT VARIABLE_NAME, SESSION_VALUE, GLOBAL_VALUE FROM
  INFORMATION_SCHEMA.SYSTEM_VARIABLES WHERE 
   VARIABLE_NAME IN ('max_error_count', 'skip_parallel_replication', 'innodb_sync_spin_loops');
@@ -67,7 +72,7 @@ SELECT VARIABLE_NAME, SESSION_VALUE, GLOBAL_VALUE FROM
 
 Setting the session values:
 
-```
+```sql
 SET max_error_count=128;Query OK, 0 rows affected (0.000 sec)
 
 SET skip_parallel_replication=ON;Query OK, 0 rows affected (0.000 sec)
@@ -90,7 +95,7 @@ SELECT VARIABLE_NAME, SESSION_VALUE, GLOBAL_VALUE FROM
 
 Setting the global values:
 
-```
+```sql
 SET GLOBAL max_error_count=256;
 
 SET GLOBAL skip_parallel_replication=ON;
@@ -113,7 +118,7 @@ SELECT VARIABLE_NAME, SESSION_VALUE, GLOBAL_VALUE FROM
 
 [SHOW VARIABLES](../show/show-variables.md) will by default return the session value unless the variable is global only.
 
-```
+```sql
 SHOW VARIABLES LIKE 'max_error_count';
 +-----------------+-------+
 | Variable_name   | Value |
@@ -138,7 +143,7 @@ SHOW VARIABLES LIKE 'innodb_sync_spin_loops';
 
 Using the inplace syntax:
 
-```
+```sql
 SELECT (@a:=1);
 +---------+
 | (@a:=1) |
