@@ -129,7 +129,7 @@ For additional information, see "[Starting and Stopping MariaDB](../../../server
 
 MariaDB Enterprise Server produces log data that can be helpful in problem diagnosis.
 
-Log filenames and locations may be overridden in the server configuration. The default location of logs is the data directory. The data directory is specified by the https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/SsmexDFPv2xG2OTyO5yV/~/changes/381/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#datadir system variable.
+Log filenames and locations may be overridden in the server configuration. The default location of logs is the data directory. The data directory is specified by the https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/SsmexDFPv2xG2OTyO5yV/\~/changes/381/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#datadir system variable.
 
 | Log                                                                                         | System Variable/Option                                                                                                                                    | Default Filename      |
 | ------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------- |
@@ -141,7 +141,7 @@ Log filenames and locations may be overridden in the server configuration. The d
 
 ### MaxScale Configuration Management
 
-MaxScale can be configured using several methods. These methods make use of MaxScale's [REST API](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/0pSbu5DcMSW4KwAkUcmX/maxscale-archive/archive-of-2.x-versions-and-6/mariadb-maxscale-mariadb-maxscale-22/maxscale-22-rest-api/mariadb-maxscale-22-rest-api-design-document).
+MaxScale can be configured using several methods. These methods make use of MaxScale's [REST API](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/maxscale-archive/archive-of-2.x-versions-and-6/mariadb-maxscale-mariadb-maxscale-22/maxscale-22-rest-api/mariadb-maxscale-22-rest-api-design-document).
 
 <table><thead><tr><th width="197.4073486328125">Method</th><th>Benefits</th></tr></thead><tbody><tr><td><a href="https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/administrative-tools-for-mariadb-maxscale/administrative-tools-for-mariadb-maxscale-maxctrl/">MaxCtrl</a></td><td>Command-line utility to perform administrative tasks through the REST API. See MaxCtrl Commands.</td></tr><tr><td><a href="https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/administrative-tools-for-mariadb-maxscale/maxgui/">MaxGUI</a></td><td>MaxGUI is a graphical utility that can perform administrative tasks through the REST API.</td></tr><tr><td><a href="https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/administrative-tools-for-mariadb-maxscale/administrative-tools-for-mariadb-maxscale-rest-api/">REST API</a></td><td>The REST API can be used directly. For example, the <code>curl</code> utility could be used to make REST API calls from the command-line. Many programming languages also have libraries to interact with REST APIs.</td></tr></tbody></table>
 
@@ -157,8 +157,8 @@ For additional information, see "[Starting and Stopping MariaDB](../../../server
 
 ### Next Step
 
-Navigation in the procedure ["Deploy Primary/Replica Topology"](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/primary-replica):
+Navigation in the procedure ["Deploy Primary/Replica Topology"](./):
 
-* Next: [Step 1: Install MariaDB Enterprise Server](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/primary-replica/step-1-install-mariadb-enterprise-server)
+* Next: [Step 1: Install MariaDB Enterprise Server](step-1-install-mariadb-enterprise-server.md)
 
-<sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>\
+<sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>\\
