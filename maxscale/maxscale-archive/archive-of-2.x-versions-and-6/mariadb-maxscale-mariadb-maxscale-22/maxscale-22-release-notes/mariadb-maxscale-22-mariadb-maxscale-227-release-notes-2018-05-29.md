@@ -1,6 +1,4 @@
-# mariadb-maxscale-22-mariadb-maxscale-227-release-notes-2018-05-29
-
-Release 2.2.7 is a GA release.
+# MariaDB MaxScale 2.2.7 Release Notes -- 2018-05-29
 
 This document describes the changes in release 2.2.7, when compared to\
 release 2.2.6.
