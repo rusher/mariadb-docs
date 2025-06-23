@@ -1,9 +1,5 @@
 # MariaDB MaxScale 2.1.17 Release Notes -- 2018-05-16
 
-##
-
-## MariaDB MaxScale 2.1.17 Release Notes -- 2018-05-16
-
 Release 2.1.17 is a GA release.
 
 This document describes the changes in release 2.1.17, when compared\
