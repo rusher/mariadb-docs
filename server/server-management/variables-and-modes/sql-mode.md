@@ -118,7 +118,7 @@ Disables using the backslash character `\` as an escape character within strings
 
 #### NO\_DIR\_IN\_CREATE
 
-Ignore all INDEX DIRECTORY and DATA DIRECTORY directives when creating a table. Can be useful on slave [replication](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-management/variables-and-modes/broken-reference/README.md) servers.
+Ignore all INDEX DIRECTORY and DATA DIRECTORY directives when creating a table. Can be useful on [replica](../../server-usage/storage-engines/myrocks/myrocks-and-replication.md) servers.
 
 #### NO\_ENGINE\_SUBSTITUTION
 
