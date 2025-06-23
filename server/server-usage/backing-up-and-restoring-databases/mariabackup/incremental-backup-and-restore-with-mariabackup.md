@@ -6,7 +6,7 @@ InnoDB pages contain log sequence numbers, or LSN's. Whenever you modify a row o
 
 ## Backing up the Database Server
 
-In order to take an incremental backup, you first need to take a [full backup](full-backup-and-restore-with-mariabackup.md). In order to back up the database, you need to run Mariabackup with the [--backup](mariabackup-options.md#-backup) option to tell it to perform a backup and with the [--target-dir](mariabackup-options.md#-target-dir) option to tell it where to place the backup files. When taking a full backup, the target directory must be empty or it must not exist.
+In order to take an incremental backup, you first need to take a [full backup](full-backup-and-restore-with-mariabackup.md). In order to back up the database, you need to run mariadb-backup with the [--backup](mariabackup-options.md#-backup) option to tell it to perform a backup and with the [--target-dir](mariabackup-options.md#-target-dir) option to tell it where to place the backup files. When taking a full backup, the target directory must be empty or it must not exist.
 
 To take a backup, run the following command:
 
@@ -32,7 +32,7 @@ recover_binlog_info = 0
 
 Once you have created a full backup on your system, you can also back up the incremental changes as often as you would like.
 
-In order to perform an incremental backup, you need to run Mariabackup with the [--backup](mariabackup-options.md#-backup) option to tell it to perform a backup and with the [--target-dir](mariabackup-options.md#-target-dir) option to tell it where to place the incremental changes. The target directory must be empty. You also need to run it with the [--incremental-basedir](mariabackup-options.md#-incremental-basedir) option to tell it the path to the full backup taken above. For example:
+In order to perform an incremental backup, you need to run mariadb-backup with the [--backup](mariabackup-options.md#-backup) option to tell it to perform a backup and with the [--target-dir](mariabackup-options.md#-target-dir) option to tell it where to place the incremental changes. The target directory must be empty. You also need to run it with the [--incremental-basedir](mariabackup-options.md#-incremental-basedir) option to tell it the path to the full backup taken above. For example:
 
 ```bash
 $ mariabackup --backup \
@@ -116,7 +116,7 @@ Once you've applied all incremental backups to the base, you can restore the bac
 * Then, ensure that the `[datadir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir)` is empty.
 * Then, run mariadb-backup with one of the options mentioned above:
 * Then, ensure that the [datadir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir) is empty.
-* Then, run Mariabackup with one of the options mentioned above:
+* Then, run mariadb-backup with one of the options mentioned above:
 
 ```
 $ mariabackup --copy-back \
