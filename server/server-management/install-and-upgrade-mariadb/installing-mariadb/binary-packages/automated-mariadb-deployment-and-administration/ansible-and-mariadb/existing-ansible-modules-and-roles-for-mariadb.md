@@ -49,7 +49,7 @@ The main disadvantage with these modules is that they are not idempotent, becaus
 * To run queries, because mysql\_query is also not idempotent.
 * In cases when other modules do not allow us to use the exact arguments we need to use, we can achieve our goals by writing shell commands ourselves.
 * To run custom scripts that implement non-trivial logic. Implementing complex logic in Ansible tasks is possible, but it can be tricky and inefficient.
-* To call [command-line tools](https://github.com/mariadb-corporation/docs-server/blob/test/en/clients-utilities/README.md). There may be specific roles for some of the most common tools, but most of the times using them is an unnecessary complication.
+* To call [command-line tools](../../../../../../clients-and-utilities/). There may be specific roles for some of the most common tools, but most of the times using them is an unnecessary complication.
 
 #### copy and template
 
