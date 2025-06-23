@@ -1,8 +1,8 @@
 # MariaDB 11.4.3 Release Notes
 
-The most recent release of [MariaDB 11.4](what-is-mariadb-114.md) is:[**MariaDB 11.4.5**](mariadb-11-4-5-release-notes.md) Stable (GA) [Download Now](https://mariadb.com/downloads/)[_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/11.4.5/)
+The most recent release of [MariaDB 11.4](what-is-mariadb-114.md) is: [**MariaDB 11.4.5**](mariadb-11-4-5-release-notes.md) Stable (GA) [Download Now](https://mariadb.com/downloads/) [_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/11.4.5/)
 
-[Download 11.4.3](https://downloads.mariadb.org/mariadb/11.4.3/)[Release Notes](mariadb-11-4-3-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-11-4-series/mariadb-11-4-3-changelog.md)[Overview of 11.4](what-is-mariadb-114.md)
+[Download 11.4.3](https://downloads.mariadb.org/mariadb/11.4.3/) [Release Notes](mariadb-11-4-3-release-notes.md) [Changelog](../../changelogs/changelogs-mariadb-11-4-series/mariadb-11-4-3-changelog.md) [Overview of 11.4](what-is-mariadb-114.md)
 
 **Release date:** 8 Aug 2024
 
@@ -110,11 +110,6 @@ Thanks, and enjoy MariaDB!
 * [Triggers](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/triggers-events/triggers) now work correctly with bulk insert ([MDEV-24411](https://jira.mariadb.org/browse/MDEV-24411))
 * Fix assertion \`\`table->field\[0]->ptr >= table->record\[0] && table->field\[0]->ptr <= table->record\[0] + table->s->reclength'`failed in`void handler::assert\_icp\_limitations(uchar\*)\` ([MDEV-34632](https://jira.mariadb.org/browse/MDEV-34632))
 * [sandbox mode](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/mariadb-client/mariadb-command-line-client#-sandbox) - now compatible with [--binary-mode](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/mariadb-client/mariadb-command-line-client#-binary-mode) ([MDEV-34203](https://jira.mariadb.org/browse/MDEV-34203))
-
-### Security
-
-* Fixes for the following [security vulnerabilities](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/security):
-  * CVE-\`-\`\`\`
 
 ## Changelog
 
