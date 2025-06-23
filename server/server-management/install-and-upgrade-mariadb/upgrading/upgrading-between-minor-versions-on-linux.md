@@ -20,7 +20,7 @@ To upgrade between minor versions of MariaDB on Linux/Unix (for example from [Ma
 To upgrade between major versions, see the following:
 
 * [Upgrading Between Major MariaDB Versions](upgrading-between-major-mariadb-versions.md)
-* [Upgrading from MariaDB 11.1 to MariaDB 11.2](upgrading-from-to-specific-versions/upgrading-from-mariadb-11-1-to-mariadb-11-2.md)
+* [Upgrading from MariaDB 11.1 to MariaDB 11.2](upgrading-to-unmaintained-mariadb-releases/upgrading-from-mariadb-11-1-to-mariadb-11-2.md)
 * [Upgrading from MariaDB 11.0 to MariaDB 11.1](upgrading-to-unmaintained-mariadb-releases/upgrading-from-mariadb-11-0-to-mariadb-11-1.md)
 * [Upgrading from MariaDB 10.11 to MariaDB 11.0](upgrading-to-unmaintained-mariadb-releases/upgrading-from-mariadb-10-11-to-mariadb-11-0.md)
 * [Upgrading from MariaDB 10.6 to MariaDB 10.11](upgrading-from-to-specific-versions/upgrading-from-mariadb-10-6-to-mariadb-10-11.md)
