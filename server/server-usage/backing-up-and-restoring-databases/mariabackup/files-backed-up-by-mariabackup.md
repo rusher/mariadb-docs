@@ -21,7 +21,7 @@ This data data is located in the directory defined by the [rocksdb\_datadir](../
 {% endtab %}
 
 {% tab title="< 10.3.8 / 10.2.16" %}
-mariadb-backup will back up tables that use the [MyRocks](../../storage-engines/myrocks/) storage engine.&#x20;
+mariadb-backup does not back up tables that use the [MyRocks](../../storage-engines/myrocks/) storage engine.&#x20;
 {% endtab %}
 {% endtabs %}
 
@@ -29,7 +29,7 @@ mariadb-backup will back up tables that use the [MyRocks](../../storage-engines/
 
 {% tabs %}
 {% tab title="Current" %}
-mariadb-backup will not back up tables that use the [MyRocks](../../storage-engines/myrocks/) storage engine. This data data is located in the directory defined by the [rocksdb\_datadir](../../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_datadir) system variable. mariadb-backup backs this data up by performing a checkpoint using the [rocksdb\_create\_checkpoint](../../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_create_checkpoint) system variable.
+mariadb-backup backs up tables that use the [MyRocks](../../storage-engines/myrocks/) storage engine. This data data is located in the directory defined by the [rocksdb\_datadir](../../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_datadir) system variable. mariadb-backup backs this data up by performing a checkpoint using the [rocksdb\_create\_checkpoint](../../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_create_checkpoint) system variable.
 {% endtab %}
 
 {% tab title="< 10.3.8 / 10.2.16" %}
