@@ -3,7 +3,7 @@
 ## What you need to know
 
 There are no changes in table or index formats between [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3) and [MariaDB\
-5.5](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-management/install-and-upgrade-mariadb/upgrading/upgrading-to-unmaintained-mariadb-releases/broken-reference/README.md), so on most servers the upgrade should be painless.
+5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3), so on most servers the upgrade should be painless.
 
 ### How to upgrade
 
@@ -33,10 +33,10 @@ However, there are some things that have changed which could affect an upgrade:
 
 #### XtraDB options that have changed default values
 
-| Option                                                                                                                                                            | Old value | New value |
-| ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- | --------- |
-| [innodb\_change\_buffering](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md)      | inserts   | all       |
-| [innodb\_flush\_neighbor\_pages](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md) | 1         | area      |
+| Option                                                                                                                                   | Old value | New value |
+| ---------------------------------------------------------------------------------------------------------------------------------------- | --------- | --------- |
+| [innodb\_change\_buffering](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_change_buffering)          | inserts   | all       |
+| [innodb\_flush\_neighbor\_pages](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_flush_neighbor_pages) | 1         | area      |
 
 #### Options that have been removed or renamed
 
@@ -96,7 +96,7 @@ yum update
 
 ## See also
 
-* [The features in MariaDB 5.5](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-management/install-and-upgrade-mariadb/upgrading/upgrading-to-unmaintained-mariadb-releases/broken-reference/README.md)
+* [The features in MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5)
 * [Perconas guide of how to upgrade to 5.5](https://www.percona.com/doc/percona-server/5.5/upgrading_guide_51_55.html)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
