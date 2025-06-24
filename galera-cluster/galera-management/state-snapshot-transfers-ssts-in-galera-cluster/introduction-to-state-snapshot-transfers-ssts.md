@@ -12,7 +12,7 @@ The only SST method of this type is the `mysqldump` SST method, which actually u
 
 1. Physical
 
-SST methods of this type physically copy the data files from the donor node to the joiner node. This requires that the joiner node is initialized after the transfer. The [mariabackup](mariabackup-sst-method.md) SST method and a few other SST methods fall into this category. These SST methods are much faster than the `mysqldump` SST method, but they have certain limitations. For example, they can be used only on server startup and the joiner node must be configured very similarly to the donor node (e.g. [innodb\_file\_per\_table](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/innodb/innodb-system-variables#innodb_file_per_table) should be the same and so on). Some of the SST methods in this category are non-blocking on the donor node, meaning that the donor node is still able to process queries while donating the SST (e.g. the [mariabackup](mariabackup-sst-method.md) SST method is non-blocking).
+SST methods of this type physically copy the data files from the donor node to the joiner node. This requires that the joiner node is initialized after the transfer. The [mariadb-backup](mariadb-backup-sst-method.md) SST method and a few other SST methods fall into this category. These SST methods are much faster than the `mysqldump` SST method, but they have certain limitations. For example, they can be used only on server startup and the joiner node must be configured very similarly to the donor node (e.g. [innodb\_file\_per\_table](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/innodb/innodb-system-variables#innodb_file_per_table) should be the same and so on). Some of the SST methods in this category are non-blocking on the donor node, meaning that the donor node is still able to process queries while donating the SST (e.g. the [mariadb-backup](mariadb-backup-sst-method.md) SST method is non-blocking).
 
 ## SST Methods
 
@@ -21,7 +21,7 @@ SST methods are supported via a scriptable interface. New SST methods could pote
 You can choose your SST method by setting the [wsrep_sst_method](../../reference/galera-cluster-system-variables.md#wsrep_sst_method) system variable. It can be changed dynamically with [SET GLOBAL](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/set-commands/set#global-session) on the node that you intend to be a SST donor. For example:
 
 ```
-SET GLOBAL wsrep_sst_method='mariabackup';
+SET GLOBAL wsrep_sst_method='mariadb-backup';
 ```
 
 It can also be set in a server [option group](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files#option-groups) in an [option file](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files) prior to starting up a node:
@@ -29,16 +29,16 @@ It can also be set in a server [option group](https://app.gitbook.com/s/SsmexDFP
 ```
 [mariadb]
 ...
-wsrep_sst_method = mariabackup
+wsrep_sst_method = mariadb-backup
 ```
 
 For an SST to work properly, the donor and joiner node must use the same SST method. Therefore, it is recommended to set [wsrep_sst_method](../../reference/galera-cluster-system-variables.md#wsrep_sst_method) to the same value on all nodes, since any node will usually be a donor or joiner node at some point.
 
 MariaDB Galera Cluster comes with the following built-in SST methods:
 
-### mariabackup
+### mariadb-backup
 
-This SST method uses the [mariadb-backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariabackup) utility for performing SSTs. It is one of the two non-locking methods. This is the recommended SST method if you require the ability to run queries on the donor node during the SST. Note that if you use the `mariabackup` SST method, then you also need to have `socat` installed on the server. This is needed to stream the backup from the donor to the joiner. This is a limitation inherited from the `xtrabackup-v2` SST method.
+This SST method uses the [mariadb-backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariadb-backup) utility for performing SSTs. It is one of the two non-locking methods. This is the recommended SST method if you require the ability to run queries on the donor node during the SST. Note that if you use the `mariadb-backup` SST method, then you also need to have `socat` installed on the server. This is needed to stream the backup from the donor to the joiner. This is a limitation inherited from the `xtrabackup-v2` SST method.
 
 This SST method supports [GTID](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid).
 
@@ -48,7 +48,7 @@ This SST method is available from [MariaDB 10.1.26](https://app.gitbook.com/s/aE
 
 With this SST method, it is impossible to upgrade the cluster between some major versions; see [MDEV-27437](https://jira.mariadb.org/browse/MDEV-27437).
 
-See [mariabackup SST method](mariabackup-sst-method.md) for more information.
+See [mariadb-backup SST method](mariadb-backup-sst-method.md) for more information.
 
 ### rsync / rsync\_wan
 
@@ -60,7 +60,7 @@ This SST method supports [GTID](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/h
 
 This SST method supports [Data at Rest Encryption](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/data-at-rest-encryption-overview).
 
-The rsync SST method does not support tables created with the [DATA DIRECTORY or INDEX DIRECTORY](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-definition/create/create-table#data-directoryindex-directory) clause. Use the [mariabackup](mariabackup-sst-method.md) SST method as an alternative to support this feature.
+The rsync SST method does not support tables created with the [DATA DIRECTORY or INDEX DIRECTORY](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-definition/create/create-table#data-directoryindex-directory) clause. Use the [mariadb-backup](mariadb-backup-sst-method.md) SST method as an alternative to support this feature.
 
 Use of this SST method **could result in data corruption** when using[innodb\_use\_native\_aio](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/innodb/innodb-system-variables#innodb_use_native_aio) (the default) if the donor is older than [MariaDB 10.3.35](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-10335-release-notes), [MariaDB 10.4.25](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-10425-release-notes), [MariaDB 10.5.16](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-10516-release-notes), [MariaDB 10.6.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/mariadb-1068-release-notes), or [MariaDB 10.7.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-7-series/mariadb-1074-release-notes); see [MDEV-25975](https://jira.mariadb.org/browse/MDEV-25975). Starting with those donor versions, `wsrep_sst_method=rsync` is a reliable way to upgrade the cluster to a newer major version.
 
@@ -86,7 +86,7 @@ This SST method supports [Data at Rest Encryption](https://app.gitbook.com/s/Ssm
 
 ### xtrabackup-v2
 
-Percona XtraBackup is **not supported** in MariaDB. [mariadb-backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariabackup) is the recommended backup method to use instead of Percona XtraBackup. See [Percona XtraBackup Overview: Compatibility with MariaDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/legacy-clients-and-utilities/backing-up-and-restoring-databases-percona-xtrabackup/percona-xtrabackup-overview#compatibility-with-mariadb) for more information.
+Percona XtraBackup is **not supported** in MariaDB. [mariadb-backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariadb-backup) is the recommended backup method to use instead of Percona XtraBackup. See [Percona XtraBackup Overview: Compatibility with MariaDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/legacy-clients-and-utilities/backing-up-and-restoring-databases-percona-xtrabackup/percona-xtrabackup-overview#compatibility-with-mariadb) for more information.
 
 This SST method uses the [Percona XtraBackup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/legacy-clients-and-utilities/backing-up-and-restoring-databases-percona-xtrabackup) utility for performing SSTs. It is one of the two non-blocking methods. Note that if you use the `xtrabackup-v2` SST method, you also need to have `socat` installed on the server. Since Percona XtraBackup is a third party product, this SST method requires an additional installation some additional configuration. Please refer to [Percona's xtrabackup SST documentation](https://www.percona.com/doc/percona-xtradb-cluster/5.7/manual/xtrabackup_sst.html) for information from the vendor.
 
@@ -100,7 +100,7 @@ See xtrabackup-v2 SST method for more information.
 
 ### xtrabackup
 
-Percona XtraBackup is **not supported** in MariaDB. [mariadb-backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariabackup) is the recommended backup method to use instead of Percona XtraBackup. See [Percona XtraBackup Overview: Compatibility with MariaDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/legacy-clients-and-utilities/backing-up-and-restoring-databases-percona-xtrabackup/percona-xtrabackup-overview#compatibility-with-mariadb) for more information.
+Percona XtraBackup is **not supported** in MariaDB. [mariadb-backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariadb-backup) is the recommended backup method to use instead of Percona XtraBackup. See [Percona XtraBackup Overview: Compatibility with MariaDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/legacy-clients-and-utilities/backing-up-and-restoring-databases-percona-xtrabackup/percona-xtrabackup-overview#compatibility-with-mariadb) for more information.
 
 This SST method is an older SST method that uses the [Percona XtraBackup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/legacy-clients-and-utilities/backing-up-and-restoring-databases-percona-xtrabackup) utility for performing SSTs. The `xtrabackup-v2` SST method should be used instead of the `xtrabackup` SST method starting from [MariaDB 5.5.33](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/mariadb-5533-release-notes).
 
@@ -113,7 +113,7 @@ This SST method does **not** support [Data at Rest Encryption](https://app.gitbo
 All SST methods except `rsync` require authentication via username and password. You can tell the client what username and password to use by setting the [wsrep_sst_auth](../../reference/galera-cluster-system-variables.md#wsrep_sst_auth) system variable. It can be changed dynamically with [SET GLOBAL](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/set-commands/set#global-session) on the node that you intend to be a SST donor. For example:
 
 ```
-SET GLOBAL wsrep_sst_auth = 'mariabackup:password';
+SET GLOBAL wsrep_sst_auth = 'mariadb-backup:password';
 ```
 
 It can also be set in a server [option group](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files#option-groups) in an [option file](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/configuring-mariadb-with-option-files) prior to starting up a node:
@@ -121,7 +121,7 @@ It can also be set in a server [option group](https://app.gitbook.com/s/SsmexDFP
 ```
 [mariadb]
 ...
-wsrep_sst_auth = mariabackup:password
+wsrep_sst_auth = mariadb-backup:password
 ```
 
 Some [authentication plugins](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/authentication-plugins) do not require a password. For example, the [unix_socket](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/authentication-plugins/authentication-plugin-unix-socket) and [gssapi](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/authentication-plugins/authentication-plugin-gssapi) authentication plugins do not require a password. If you are using a user account that does not require a password in order to log in, then you can just leave the password component of [wsrep_sst_auth](../../reference/galera-cluster-system-variables.md#wsrep_sst_auth) empty. For example:
@@ -129,7 +129,7 @@ Some [authentication plugins](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ref
 ```
 [mariadb]
 ...
-wsrep_sst_auth = mariabackup:
+wsrep_sst_auth = mariadb-backup:
 ```
 
 See the relevant description or page for each SST method to find out what privileges need to be [granted](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant) to the user and whether the privileges are needed on the donor node or joiner node for that method.
@@ -186,7 +186,7 @@ When using an SST method that blocks the donor, there is yet another reason to r
 
 In some cases, if Galera Cluster's automatic SSTs repeatedly fail, then it can be helpful to perform a "manual SST". See the following pages on how to do that:
 
-* [Manual SST of Galera Cluster node with mariadb-backup](manual-sst-of-galera-cluster-node-with-mariabackup.md)
+* [Manual SST of Galera Cluster node with mariadb-backup](manual-sst-of-galera-cluster-node-with-mariadb-backup.md)
 * [Manual SST of Galera Cluster node with Percona XtraBackup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/legacy-clients-and-utilities/backing-up-and-restoring-databases-percona-xtrabackup/percona-xtrabackup-overview)
 
 ## Known Issues

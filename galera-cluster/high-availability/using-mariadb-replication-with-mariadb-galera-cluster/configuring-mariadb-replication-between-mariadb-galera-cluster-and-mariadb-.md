@@ -32,7 +32,7 @@ Before we set up replication, we also need to ensure that the MariaDB Server rep
 
 ## Setting up Replication
 
-Our process to set up replication is going to be similar to the process described at [Setting up a Replication Slave with mariadb-backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariabackup/setting-up-a-replica-with-mariabackup), but it will be modified a bit to work in this context.
+Our process to set up replication is going to be similar to the process described at [Setting up a Replication Slave with mariadb-backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariadb-backup/setting-up-a-replica-with-mariadb-backup), but it will be modified a bit to work in this context.
 
 ### Start the Cluster
 
@@ -42,18 +42,18 @@ Once the nodes are started, you need to pick a specific node that will act as th
 
 ### Backup the Database on the Cluster's Primary Node and Prepare It
 
-The first step is to simply take and prepare a fresh [full backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariabackup/full-backup-and-restore-with-mariabackup) of the node that you have chosen to be the replication primary. For example:
+The first step is to simply take and prepare a fresh [full backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariadb-backup/full-backup-and-restore-with-mariadb-backup) of the node that you have chosen to be the replication primary. For example:
 
 ```
-$ mariabackup --backup \
+$ mariadb-backup --backup \
    --target-dir=/var/mariadb/backup/ \
-   --user=mariabackup --password=mypassword
+   --user=mariadb-backup --password=mypassword
 ```
 
 And then you would prepare the backup as you normally would. For example:
 
 ```
-$ mariabackup --prepare \
+$ mariadb-backup --prepare \
    --target-dir=/var/mariadb/backup/
 ```
 
@@ -70,7 +70,7 @@ $ rsync -avrP /var/mariadb/backup dc2-dbserver1:/var/mariadb/backup
 At this point, you can restore the backup to the [datadir](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#datadir), as you normally would. For example:
 
 ```
-$ mariabackup --copy-back \
+$ mariadb-backup --copy-back \
    --target-dir=/var/mariadb/backup/
 ```
 
@@ -97,7 +97,7 @@ GRANT REPLICATION SLAVE ON *.*  TO 'repl'@'dc2-dbserver1';
 
 At this point, you need to get the replication coordinates of the primary from the original backup.
 
-The coordinates will be in the [xtrabackup\_binlog\_info](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariabackup/files-created-by-mariabackup#xtrabackup_binlog_info) file.
+The coordinates will be in the [xtrabackup\_binlog\_info](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariadb-backup/files-created-by-mariadb-backup#xtrabackup_binlog_info) file.
 
 mariadb-backup dumps replication coordinates in two forms: [GTID strings](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid) and [binary log](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/server-monitoring-logs/binary-log) file and position coordinates, like the ones you would normally see from [SHOW MASTER STATUS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-binlog-status) output. In this case, it is probably better to use the [GTID](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid) coordinates.
 
@@ -111,7 +111,7 @@ Regardless of the coordinates you use, you will have to set up the primary conne
 
 #### GTIDs
 
-If you want to use GTIDs, then you will have to first set [gtid\_slave\_pos](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid#gtid_slave_pos) to the [GTID](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid) coordinates that we pulled from the [xtrabackup\_binlog\_info](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariabackup/files-created-by-mariabackup#xtrabackup_binlog_info) file, and we would set `MASTER_USE_GTID=slave_pos` in the [CHANGE MASTER TO](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to) command. For example:
+If you want to use GTIDs, then you will have to first set [gtid\_slave\_pos](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid#gtid_slave_pos) to the [GTID](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid) coordinates that we pulled from the [xtrabackup\_binlog\_info](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariadb-backup/files-created-by-mariadb-backup#xtrabackup_binlog_info) file, and we would set `MASTER_USE_GTID=slave_pos` in the [CHANGE MASTER TO](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to) command. For example:
 
 ```
 SET GLOBAL gtid_slave_pos = "0-1-2";
@@ -126,7 +126,7 @@ START SLAVE;
 
 #### File and Position
 
-If you want to use the [binary log](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/server-monitoring-logs/binary-log) file and position coordinates, then you would set `MASTER_LOG_FILE` and `MASTER_LOG_POS` in the [CHANGE MASTER TO](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to) command to the file and position coordinates that we pulled the [xtrabackup\_binlog\_info](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariabackup/files-created-by-mariabackup#xtrabackup_binlog_info) file. For example:
+If you want to use the [binary log](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/server-monitoring-logs/binary-log) file and position coordinates, then you would set `MASTER_LOG_FILE` and `MASTER_LOG_POS` in the [CHANGE MASTER TO](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to) command to the file and position coordinates that we pulled the [xtrabackup\_binlog\_info](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariadb-backup/files-created-by-mariadb-backup#xtrabackup_binlog_info) file. For example:
 
 ```
 CHANGE MASTER TO 

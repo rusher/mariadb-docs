@@ -509,7 +509,7 @@ It is an enum. Valid values are:`0: NONE`: Off (default)`1: SERVER`: MariaDB ser
 * Dynamic: Yes
 * Data Type: String
 * Default Value: `rsync`
-* Valid Values: `rsync`, `mysqldump`, `xtrabackup`, `xtrabackup-v2`, `mariabackup`
+* Valid Values: `rsync`, `mysqldump`, `xtrabackup`, `xtrabackup-v2`, `mariadb-backup`
 
 #### `wsrep_sst_receive_address`
 

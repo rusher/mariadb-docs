@@ -17,7 +17,7 @@ First, before you get started:
 7. See [What is MariaDB Galera Cluster?: Galera wsrep provider Versions](../../readme/mariadb-galera-cluster-guide.md) for information on which MariaDB releases uses which Galera wsrep provider versions.
 8. You want to have a large enough gcache to avoid a [State Snapshot Transfer (SST)](../state-snapshot-transfers-ssts-in-galera-cluster/introduction-to-state-snapshot-transfers-ssts.md) during the rolling upgrade. The gcache size can be configured by setting [gcache.size](../../reference/wsrep_provider_options.md#gcachesize) For example:`wsrep_provider_options="gcache.size=2G"`
 
-Before you upgrade, it would be best to take a backup of your database. This is always a good idea to do before an upgrade. We would recommend [mariadb-backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariabackup).
+Before you upgrade, it would be best to take a backup of your database. This is always a good idea to do before an upgrade. We would recommend [mariadb-backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariadb-backup).
 
 Then, for each node, perform the following steps:
 

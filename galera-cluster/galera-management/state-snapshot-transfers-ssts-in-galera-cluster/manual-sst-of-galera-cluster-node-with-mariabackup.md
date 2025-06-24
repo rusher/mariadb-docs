@@ -2,14 +2,14 @@
 
 Sometimes it can be helpful to perform a "manual SST" when Galera's [normal SSTs](introduction-to-state-snapshot-transfers-ssts.md) fail. This can be especially useful when the cluster's [datadir](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables#datadir) is very large, since a normal SST can take a long time to fail in that case.
 
-A manual SST essentially consists of taking a backup of the donor, loading the backup on the joiner, and then manually editing the cluster state on the joiner node. This page will show how to perform this process with [mariadb-backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariabackup).
+A manual SST essentially consists of taking a backup of the donor, loading the backup on the joiner, and then manually editing the cluster state on the joiner node. This page will show how to perform this process with [mariadb-backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariadb-backup).
 
 ## Process
 
 * Check that the donor and joiner nodes have the same mariadb-backup version.
 
 ```
-mariabackup --version
+mariadb-backup --version
 ```
 
 * Create backup directory on donor.
@@ -19,12 +19,12 @@ MYSQL_BACKUP_DIR=/mysql_backup
 mkdir $MYSQL_BACKUP_DIR
 ```
 
-* Take a [full backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariabackup/full-backup-and-restore-with-mariabackup) the of the donor node with `mariabackup`. The [--galera-info](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariabackup/mariabackup-options#-galera-info) option should also be provided, so that the node's cluster state is also backed up.
+* Take a [full backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariadb-backup/full-backup-and-restore-with-mariadb-backup) the of the donor node with `mariadb-backup`. The [--galera-info](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariadb-backup/mariadb-backup-options#-galera-info) option should also be provided, so that the node's cluster state is also backed up.
 
 ```
 DB_USER=sstuser
 DB_USER_PASS=password
-mariabackup --backup  --galera-info \
+mariadb-backup --backup  --galera-info \
    --target-dir=$MYSQL_BACKUP_DIR \
    --user=$DB_USER \
    --password=$DB_USER_PASS
@@ -53,10 +53,10 @@ JOINER_HOST=dbserver2.mariadb.com
 rsync -av $MYSQL_BACKUP_DIR/* ${OS_USER}@${JOINER_HOST}:${MYSQL_BACKUP_DIR}
 ```
 
-* [Prepare the backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariabackup/full-backup-and-restore-with-mariabackup#preparing-the-backup) on the joiner node.
+* [Prepare the backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariadb-backup/full-backup-and-restore-with-mariadb-backup#preparing-the-backup) on the joiner node.
 
 ```
-mariabackup --prepare \
+mariadb-backup --prepare \
    --target-dir=$MYSQL_BACKUP_DIR
 ```
 
@@ -69,7 +69,7 @@ cat $MYSQL_DATADIR/grastate.dat | grep version
 
 For example, a very common version number is "2.1".
 
-* Get the node's cluster state from the [xtrabackup_galera_info](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariabackup/mariabackup-options#-galera-info) file in the backup that was copied to the joiner node.
+* Get the node's cluster state from the [xtrabackup_galera_info](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariadb-backup/mariadb-backup-options#-galera-info) file in the backup that was copied to the joiner node.
 
 ```
 cat $MYSQL_BACKUP_DIR/xtrabackup_galera_info
@@ -113,7 +113,7 @@ rm -Rf $MYSQL_DATADIR/*
 * Copy the contents of the backup directory to the [datadir](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables#datadir) the on joiner node.
 
 ```
-mariabackup --copy-back \
+mariadb-backup --copy-back \
    --target-dir=$MYSQL_BACKUP_DIR
 ```
 

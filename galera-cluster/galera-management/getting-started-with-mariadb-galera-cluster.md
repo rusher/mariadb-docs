@@ -59,7 +59,7 @@ To use MariaDB Galera Cluster, there are two primary packages that you need to i
 
 As mentioned in the previous section, Galera Cluster support is actually included in the standard MariaDB Server packages. That means that installing MariaDB Galera Cluster package is the same as installing standard MariaDB Server package in those versions. However, you will also have to install an additional package to obtain the Galera wsrep provider library.
 
-Some [SST](state-snapshot-transfers-ssts-in-galera-cluster/introduction-to-state-snapshot-transfers-ssts.md) methods may also require additional packages to be installed. The [mariabackup](state-snapshot-transfers-ssts-in-galera-cluster/mariabackup-sst-method.md) SST method is generally the best option for large clusters that expect a lot of load.
+Some [SST](state-snapshot-transfers-ssts-in-galera-cluster/introduction-to-state-snapshot-transfers-ssts.md) methods may also require additional packages to be installed. The [mariadb-backup](state-snapshot-transfers-ssts-in-galera-cluster/mariadb-backup-sst-method.md) SST method is generally the best option for large clusters that expect a lot of load.
 
 ### Installing MariaDB Galera Cluster with a Package Manager
 

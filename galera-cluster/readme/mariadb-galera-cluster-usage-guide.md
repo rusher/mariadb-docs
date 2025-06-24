@@ -240,7 +240,7 @@ MaxScale takes nodes out of the distribution that initiate a blocking SST operat
 
 ### Backups
 
-With MariaDB Enterprise Cluster, each node contains a replica of all the data in the cluster. As such, you run [MariaDB Enterprise Backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariabackup) on any node to backup the available data. The process for backing-up a node is the same as for a single MariaDB Enterprise Server.
+With MariaDB Enterprise Cluster, each node contains a replica of all the data in the cluster. As such, you run [MariaDB Enterprise Backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariadb-backup) on any node to backup the available data. The process for backing-up a node is the same as for a single MariaDB Enterprise Server.
 
 ### Encryption
 

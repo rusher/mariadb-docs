@@ -38,9 +38,9 @@ By setting both MariaDB Server's TLS-related system variables and Galera Cluster
 
 The method that you would use to enable TLS for [State Snapshot Transfers (SSTs)](../galera-management/state-snapshot-transfers-ssts-in-galera-cluster/introduction-to-state-snapshot-transfers-ssts.md) would depend on the value of [wsrep_sst_method](../reference/galera-cluster-system-variables.md#wsrep_sst_method).
 
-### mariabackup
+### mariadb-backup
 
-See [mariabackup SST Method: TLS](../galera-management/state-snapshot-transfers-ssts-in-galera-cluster/mariabackup-sst-method.md#tls) for more information.
+See [mariadb-backup SST Method: TLS](../galera-management/state-snapshot-transfers-ssts-in-galera-cluster/mariadb-backup-sst-method.md#tls) for more information.
 
 ### xtrabackup-v2
 
