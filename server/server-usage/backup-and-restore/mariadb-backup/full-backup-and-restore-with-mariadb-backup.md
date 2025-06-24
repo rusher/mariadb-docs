@@ -1,7 +1,5 @@
 # Full Backup and Restore with Mariadb-backup
 
-## Full Backup and Restore with Mariadb-backup
-
 When using mariadb-backup, you have the option of performing a full or an incremental backup. Full backups create a complete backup of the database server in an empty directory while incremental backups update a previous backup with whatever changes to the data have occurred since the backup. This page documents how to perform full backups.
 
 ### Backing up the Database Server

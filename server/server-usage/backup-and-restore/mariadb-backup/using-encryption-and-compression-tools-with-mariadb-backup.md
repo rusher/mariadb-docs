@@ -1,7 +1,5 @@
 # Using Encryption and Compression Tools With mariadb-backup
 
-## Using Encryption and Compression Tools With mariadb-backup
-
 mariadb-backup supports streaming to stdout with the `--stream=xbstream` option. This option allows easy integration with popular encryption and compression tools. Below are several examples.
 
 ### Encrypting and Decrypting Backup With openssl

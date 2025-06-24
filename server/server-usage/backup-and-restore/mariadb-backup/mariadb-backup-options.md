@@ -1,36 +1,34 @@
 # mariadb-backup Options
 
-There are a number of options available in `mariadb-backup`.
-
-## List of mariadb-backup Options
+## List of `mariadb-backup` Options
 
 ### `--apply-log`
 
-Prepares an existing backup to restore to the MariaDB Server. This is only valid in `innobackupex` mode, which can be enabled with the --innobackupex option.
+Prepares an existing backup to restore to the MariaDB Server. This is only valid in `innobackupex` mode, which can be enabled with the [--innobackupex](mariadb-backup-options.md#innobackupex) option.
 
-Files that mariadb-backup generates during --backup operations in the target directory are not ready for use on the Server. Before you can restore the data to MariaDB, you first need to prepare the backup.
+Files that `mariadb-backup` generates during [--backup](mariadb-backup-options.md#backup) operations in the target directory are not ready for use on the Server. Before you can restore the data to MariaDB, you first need to prepare the backup.
 
-In the case of full backups, the files are not point in time consistent, since they were taken at different times. If you try to restore the database without first preparing the data, InnoDB rejects the new data as corrupt. Running mariadb-backup with the `--prepare` command readies the data so you can restore it to MariaDB Server. When working with incremental backups, you need to use the `--prepare` command and the --incremental-dir option to update the base backup with the deltas from an incremental backup.
+In the case of full backups, the files are not point in time consistent, since they were taken at different times. If you try to restore the database without first preparing the data, InnoDB rejects the new data as corrupt. Running `mariadb-backup` with the [--prepare](mariadb-backup-options.md#prepare) command readies the data so you can restore it to MariaDB Server. When working with incremental backups, you need to use the `--prepare` command and the [--incremental-dir](mariadb-backup-options.md#incremental-dir) option to update the base backup with the deltas from an incremental backup.
 
 ```bash
 mariadb-backup --innobackupex --apply-log
 ```
 
-Once the backup is ready, you can use the --copy-back or the --move-back commands to restore the backup to the server.
+Once the backup is ready, you can use the [--copy-back](mariadb-backup-options.md#copy-back) or the [--move-back](mariadb-backup-options.md#move-back) commands to restore the backup to the server.
 
 ### `--apply-log-only`
 
 If this option is used when preparing a backup, then only the redo log apply stage will be performed, and other stages of crash recovery will be ignored. This option is used with incremental backups.
 
-**Note**
-
-This option is not needed or supported anymore.
+{% hint style="danger" %}
+**Note:** This option is not needed or supported anymore.
+{% endhint %}
 
 ### `--backup`
 
 Backs up your databases.
 
-Using this command option, mariadb-backup performs a backup operation on your database or databases. The backups are written to the target directory, as set by the --target-dir option.
+Using this command option, `mariadb-backup` performs a backup operation on your database or databases. The backups are written to the target directory, as set by the [--target-dir](mariadb-backup-options.md#target-dir) option.
 
 ```bash
 mariadb-backup --backup 
@@ -38,45 +36,44 @@ mariadb-backup --backup
       --user user_name --password user_passwd
 ```
 
-mariadb-backup can perform full and incremental backups. A full backup creates a snapshot of the database in the target directory. An incremental backup checks the database against a previously taken full backup, (defined by the --incremental-basedir option) and creates delta files for these changes.
+`mariadb-backup` can perform full and incremental backups. A full backup creates a snapshot of the database in the target directory. An incremental backup checks the database against a previously taken full backup, (defined by the [--incremental-basedir](mariadb-backup-options.md#incremental-basedir) option) and creates delta files for these changes.
 
-In order to restore from a backup, you first need to run mariadb-backup with the --prepare command option, to make a full backup point-in-time consistent or to apply incremental backup deltas to base. Then you can run mariadb-backup again with either the --copy-back or --move-back commands to restore the database.
+In order to restore from a backup, you first need to run `mariadb-backup` with the --prepare command option, to make a full backup point-in-time consistent or to apply incremental backup deltas to base. Then you can run `mariadb-backup` again with either the [--copy-back](mariadb-backup-options.md#copy-back) or [--move-back](mariadb-backup-options.md#move-back) commands to restore the database.
 
-For more information, see Full Backup and Restore and Incremental Backup and Restore.
+For more information, see [Full Backup and Restore](full-backup-and-restore-with-mariadb-backup.md) and [Incremental Backup and Restore](incremental-backup-and-restore-with-mariadb-backup.md).
 
 ### `--binlog-info`
 
-Defines how mariadb-backup retrieves the binary log coordinates from the server.
+Defines how `mariadb-backup` retrieves the binary log coordinates from the server.
 
-```
+```bash
 --binlog-info[=OFF | ON | LOCKLESS | AUTO]
 ```
 
 The `--binlog-info` option supports the following retrieval methods. When no retrieval method is provided, it defaults to `AUTO`.
 
-| Option   | Description                                                                                             |
-| -------- | ------------------------------------------------------------------------------------------------------- |
-| Option   | Description                                                                                             |
-| OFF      | Disables the retrieval of binary log information                                                        |
-| ON       | Enables the retrieval of binary log information, performs locking where available to ensure consistency |
-| LOCKLESS | Unsupported option                                                                                      |
-| AUTO     | Enables the retrieval of binary log information using ON or LOCKLESS where supported                    |
+| Option     | Description                                                                                             |
+| ---------- | ------------------------------------------------------------------------------------------------------- |
+| `OFF`      | Disables the retrieval of binary log information                                                        |
+| `ON`       | Enables the retrieval of binary log information, performs locking where available to ensure consistency |
+| `LOCKLESS` | Unsupported option                                                                                      |
+| `AUTO`     | Enables the retrieval of binary log information using `ON` or `LOCKLESS` where supported                |
 
-Using this option, you can control how mariadb-backup retrieves the server's binary log coordinates corresponding to the backup.
+Using this option, you can control how `mariadb-backup` retrieves the server's binary log coordinates corresponding to the backup.
 
-When enabled, whether using `ON` or `AUTO`, mariadb-backup retrieves information from the binlog during the backup process. When disabled with `OFF`, mariadb-backup runs without attempting to retrieve binary log information. You may find this useful when you need to copy data without metadata like the binlog or replication coordinates.
+When enabled, whether using `ON` or `AUTO`, `mariadb-backup` retrieves information from the binlog during the backup process. When disabled with `OFF`, `mariadb-backup` runs without attempting to retrieve binary log information. You may find this useful when you need to copy data without metadata like the binlog or replication coordinates.
 
 ```bash
 mariadb-backup --binlog-info --backup
 ```
 
-Currently, the `LOCKLESS` option depends on features unsupported by MariaDB Server. See the description of the xtrabackup\_binlog\_pos\_innodb file for more information. If you attempt to run mariadb-backup with this option, then it causes the utility to exit with an error.
+Currently, the `LOCKLESS` option depends on features unsupported by MariaDB Server. See the description of the [xtrabackup\_binlog\_pos\_innodb](files-created-by-mariadb-backup.md#xtrabackup_binlog_pos_innodb) file for more information. If you attempt to run `mariadb-backup` with this option, then it causes the utility to exit with an error.
 
 ### `--close-files`
 
 Defines whether you want to close file handles.
 
-Using this option, you can tell mariadb-backup that you want to close file handles. Without this option, mariadb-backup keeps files open in order to manage DDL operations. When working with particularly large tablespaces, closing the file can make the backup more manageable. However, it can also lead to inconsistent backups. Use at your own risk.
+Using this option, you can tell `mariadb-backup` that you want to close file handles. Without this option, `mariadb-backup` keeps files open in order to manage DDL operations. When working with particularly large tablespaces, closing the file can make the backup more manageable. However, it can also lead to inconsistent backups. Use at your own risk.
 
 ```bash
 mariadb-backup --close-files --prepare
@@ -84,7 +81,9 @@ mariadb-backup --close-files --prepare
 
 ### `--compress`
 
-This option was deprecated as it relies on the no longer maintained [QuickLZ](https://github.com/RT-Thread-packages/quicklz/) library. It will be removed in a future release - versions supporting this function will not be affected. It is recommended to instead backup to a stream (stdout), and use a 3rd party compression library to compress the stream, as described inUsing Encryption and Compression Tools With mariadb-backup.
+{% hint style="warning" %}
+This option was deprecated as it relies on the no longer maintained [QuickLZ](https://github.com/RT-Thread-packages/quicklz/) library. It will be removed in a future release - versions supporting this function will not be affected. It is recommended to instead backup to a stream (stdout), and use a 3rd party compression library to compress the stream, as described in [Using Encryption and Compression Tools With mariadb-backup](using-encryption-and-compression-tools-with-mariadb-backup.md).
+{% endhint %}
 
 Defines the compression algorithm for backup files.
 
@@ -94,20 +93,21 @@ Defines the compression algorithm for backup files.
 
 The `--compress` option only supports the now deprecated `quicklz` algorithm.
 
-| Option  | Description                            |
-| ------- | -------------------------------------- |
-| Option  | Description                            |
-| quicklz | Uses the QuickLZ compression algorithm |
+| Option    | Description                            |
+| --------- | -------------------------------------- |
+| `quicklz` | Uses the QuickLZ compression algorithm |
 
 ```bash
 mariadb-backup --compress --backup
 ```
 
-If a backup is compressed using this option, then mariadb-backup will record that detail in the xtrabackup\_info file.
+If a backup is compressed using this option, then `mariadb-backup` will record that detail in the [xtrabackup\_info](files-created-by-mariadb-backup.md#xtrabackup_info) file.
 
 ### `--compress-chunk-size`
 
-Deprecated, for details see the --compress option.
+{% hint style="warning" %}
+Deprecated, for details see the [--compress](mariadb-backup-options.md#compress) option.
+{% endhint %}
 
 Defines the working buffer size for compression threads.
 
@@ -115,18 +115,20 @@ Defines the working buffer size for compression threads.
 --compress-chunk-size=#
 ```
 
-mariadb-backup can perform compression operations on the backup files before writing them to disk. It can also use multiple threads for parallel data compression during this process. Using this option, you can set the chunk size each thread uses during compression. It defaults to 64K.
+`mariadb-backup` can perform compression operations on the backup files before writing them to disk. It can also use multiple threads for parallel data compression during this process. Using this option, you can set the chunk size each thread uses during compression. It defaults to `64K`.
 
 ```bash
 mariadb-backup --backup --compress \
      --compress-threads=12 --compress-chunk-size=5M
 ```
 
-To further configure backup compression, see the --compress and --compress-threads options.
+To further configure backup compression, see the [--compress](mariadb-backup-options.md#compress) and [--compress-threads](mariadb-backup-options.md#compress-threads) options.
 
 ### `--compress-threads`
 
-Deprecated, for details see the --compress option.
+{% hint style="warning" %}
+Deprecated, for details see the [--compress](mariadb-backup-options.md#compress) option.
+{% endhint %}
 
 Defines the number of threads to use in compression.
 
@@ -134,19 +136,19 @@ Defines the number of threads to use in compression.
 --compress-threads=#
 ```
 
-mariadb-backup can perform compression operations on the backup files before writing them to disk. Using this option, you can define the number of threads you want to use for this operation. You may find this useful in speeding up the compression of particularly large databases. It defaults to single-threaded.
+`mariadb-backup` can perform compression operations on the backup files before writing them to disk. Using this option, you can define the number of threads you want to use for this operation. You may find this useful in speeding up the compression of particularly large databases. It defaults to single-threaded.
 
 ```
 mariadb-backup --compress --compress-threads=12 --backup
 ```
 
-To further configure backup compression, see the --compress and --compress-chunk-size options.
+To further configure backup compression, see the [--compress](mariadb-backup-options.md#compress) and [--compress-chunk-size](mariadb-backup-options.md#compress-chunk-size) options.
 
 ### `--copy-back`
 
 Restores the backup to the data directory.
 
-Using this command, mariadb-backup copies the backup from the target directory to the data directory, as defined by the --datadir option. You must stop the MariaDB Server before running this command. The data directory must be empty. If you want to overwrite the data directory with the backup, use the --force-non-empty-directories option.
+Using this command, `mariadb-backup` copies the backup from the target directory to the data directory, as defined by the --datadir option. You must stop the MariaDB Server before running this command. The data directory must be empty. If you want to overwrite the data directory with the backup, use the --force-non-empty-directories option.
 
 Bear in mind, before you can restore a backup, you first need to run mariadb-backup with the --prepare option. In the case of full backups, this makes the files point-in-time consistent. With incremental backups, this applies the deltas to the base backup. Once the backup is prepared, you can run `--copy-back` to apply it to MariaDB Server.
 

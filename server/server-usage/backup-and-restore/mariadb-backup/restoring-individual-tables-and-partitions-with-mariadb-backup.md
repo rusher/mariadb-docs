@@ -1,7 +1,5 @@
 # Restoring Individual Tables and Partitions with mariadb-backup
 
-## Restoring Individual Tables and Partitions with mariadb-backup
-
 When using mariadb-backup, you don't necessarily need to restore every table and/or partition that was backed up. Even if you're starting from a full backup, it is certainly possible to restore only certain tables and/or partitions from the backup, as long as the table or partition involved is in an InnoDB file-per-table tablespace. This page documents how to restore individual tables and partitions.
 
 ### Preparing the Backup

@@ -1,7 +1,5 @@
 # How mariadb-backup Works
 
-## How mariadb-backup Works
-
 This is a description of the different stages in mariadb-backup, what they do and why they are needed.
 
 Note that a few items are marked with `TODO`; these are things we are working on and will be in next version of mariadb-backup.

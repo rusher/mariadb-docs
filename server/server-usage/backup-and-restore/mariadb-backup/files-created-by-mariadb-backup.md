@@ -1,12 +1,10 @@
 # Files Created by mariadb-backup
 
-## Files Created by mariadb-backup
-
-mariadb-backup creates the following files:
+`mariadb-backup` creates the following files:
 
 ### `backup-my.cnf`
 
-During the backup, any server options relevant to mariadb-backup are written to the `backup-my.cnf` option file, so that they can be re-read later during the `--prepare` stage.
+During the backup, any server options relevant to `mariadb-backup` are written to the `backup-my.cnf` option file, so that they can be re-read later during the `--prepare` stage.
 
 ### `ib_logfile0`
 

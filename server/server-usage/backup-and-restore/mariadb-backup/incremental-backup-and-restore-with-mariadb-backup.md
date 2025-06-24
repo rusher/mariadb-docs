@@ -1,7 +1,5 @@
 # Incremental Backup and Restore with mariadb-backup
 
-## Incremental Backup and Restore with mariadb-backup
-
 When using mariadb-backup, you have the option of performing a full or incremental backup. Full backups create a complete copy in an empty directory while incremental backups update a previous backup with new data. This page documents incremental backups.
 
 InnoDB pages contain log sequence numbers, or LSN's. Whenever you modify a row on any InnoDB table on the database, the storage engine increments this number. When performing an incremental backup, mariadb-backup checks the most recent LSN for the backup against the LSN's contained in the database. It then updates any of the backup files that have fallen behind.
