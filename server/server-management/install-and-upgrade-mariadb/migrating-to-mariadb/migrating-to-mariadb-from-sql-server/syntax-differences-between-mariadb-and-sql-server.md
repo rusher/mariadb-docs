@@ -12,7 +12,7 @@ Some features are meant to improve syntax and semantics compatibility between Ma
 
 SQL semantics and syntax, in MariaDB, are affected by the [sql\_mode](../../../variables-and-modes/sql-mode.md) variable. Its value is a comma-separated list of flags, and each of them, if specified, affects a different aspect of SQL syntax and semantics.
 
-A particularly important flag for users familiar with SQL Server is [MSSQL](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-management/install-and-upgrade-mariadb/migrating-to-mariadb/migrating-to-mariadb-from-sql-server/broken-reference/README.md).
+A particularly important flag for users familiar with SQL Server is [MSSQL](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modemssql).
 
 sql\_mode can be changed locally, in which case it only affects the current session; or globally, in which case it will affect all new connections (but not the connections already established). sql\_mode must be assigned a comma-separated list of flags.
 
@@ -125,7 +125,7 @@ SQL Server also allows to use double quotes (`"`) to quote strings. This works b
 
 The default semantics of [NULL](../../../../reference/data-types/null-values.md) in SQL Server and MariaDB is the same, by default.
 
-However, SQL Server allows one to change it globally with [SET ANSI\_NULLS OFF](https://docs.microsoft.com/en-us/sql/t-sql/statements/set-ansi-nulls-transact-sql), or at database level with [ALTER DATABASE](https://docs.microsoft.com/en-us/sql/t-sql/statements/alter-database-transact-sql).
+However, SQL Server allows one to change it globally with [SET ANSI\_NULLS OFF](https://docs.microsoft.com/en-us/sql/t-sql/statements/set-ansi-nulls-transact-sql), or at database level with [ALTER DATABASE](../../../../reference/sql-statements/data-definition/alter/alter-database.md).
 
 There is no way to achieve exactly the same result in MariaDB. To perform NULL-safe comparisons in MariaDB, one should replace the [=](../../../../reference/sql-structure/operators/comparison-operators/equal.md) operator with the [<=>](../../../../reference/sql-structure/operators/comparison-operators/null-safe-equal.md) operator.
 
@@ -274,7 +274,7 @@ See also [How to Quickly Insert Data Into MariaDB](../../../../ha-and-performanc
 
 * [SQL Server and MariaDB Types Comparison](sql-server-and-mariadb-types-comparison.md)
 * [MariaDB Transactions and Isolation Levels for SQL Server Users](mariadb-transactions-and-isolation-levels-for-sql-server-users.md)
-* [SQL\_MODE=MSSQL](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-management/install-and-upgrade-mariadb/migrating-to-mariadb/migrating-to-mariadb-from-sql-server/broken-reference/README.md)
+* [SQL\_MODE=MSSQL](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modemssql)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
