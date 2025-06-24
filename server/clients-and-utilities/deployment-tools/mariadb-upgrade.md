@@ -161,7 +161,7 @@ The main reason to run `mariadb-upgrade` on all your tables is to allow it to ch
 * There has not been any change in table formats between versions.
 * This has not happened since [MariaDB 5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-1-series/changes-improvements-in-mariadb-5-1).
 * If some of the tables are using an index for which we have changed sort order.
-* This has not happened since [MariaDB 5.5](https://github.com/mariadb-corporation/docs-server/blob/test/server/clients-and-utilities/broken-reference/README.md).
+* This has not happened since [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5).
 
 If you are 100% sure this applies to you, you can just run `mariadb-upgrade` with the `---upgrade-system-tables` option.
 
