@@ -1254,7 +1254,7 @@ storage=storage_memcached
   for capping `max_resultset_size`, that is, unless memcached is configured to\
   allow larger values that 1M and `max_value_size` has been set accordingly,\
   only resultsets up to 1MB in size will be cached. The value can be specified\
-  as documented [here](https://mariadb.com/kb/Getting-Started/Configuration-Guide/#sizes).
+  as documented [here](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/0pSbu5DcMSW4KwAkUcmX/maxscale-archive/archive-of-2.x-versions-and-6/mariadb-maxscale-25/maxscale-25-getting-started/mariadb-maxscale-25-mariadb-maxscale-configuration-guide#sizes).
 
 Example:
 

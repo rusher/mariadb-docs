@@ -45,7 +45,7 @@ These tutorials are for specific use cases and module combinations.
 * [MySQL Cluster Setup](../../archive-of-2x.xx-versions/mariadb-maxscale-21-06/)
 * [Replication Proxy with the Binlog Router Tutorial](../../archive-of-2x.xx-versions/mariadb-maxscale-21-06/)
 * [RabbitMQ Setup and MariaDB MaxScale Integration Tutorial](../../archive-of-2x.xx-versions/mariadb-maxscale-21-06/)
-* [RabbitMQ and Tee Filter Data Archiving Tutorial](https://mariadb.com/kb/en/5988/)
+* [RabbitMQ and Tee Filter Data Archiving Tutorial](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/0pSbu5DcMSW4KwAkUcmX/maxscale-archive/archive-of-2.x-versions-and-6/mariadb-maxscale-14/maxscale-14-tutorials/data-archiving-with-mqfilter-and-tee-filters)
 * [Simple Schema Sharding Tutorial](../../archive-of-2x.xx-versions/mariadb-maxscale-21-06/)
 
 Here are tutorials on monitoring and managing MariaDB MaxScale in cluster environments.

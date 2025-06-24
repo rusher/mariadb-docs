@@ -1043,7 +1043,7 @@ lost. This time ultimately depends on TCP keepalive settings on the machines\
 running MariaDB-server.
 
 On MariaDB-server 10.3.3 and later, the TCP keepalive settings can be configured\
-for just the server process. See[Server System Variables](mariadb-maxscale-25-mariadb-monitor.md#https://mariadb.com/kb/en/server-system-variables/)\
+for just the server process. See[Server System Variables](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables)\
 for information on settings _tcp\_keepalive\_interval_, _tcp\_keepalive\_probes_ an&#x64;_&#x74;cp\_keepalive\_time_. These settings can also be set on the operating system\
 level, as described[here](https://www.tldp.org/HOWTO/TCP-Keepalive-HOWTO/usingkeepalive.html).
 

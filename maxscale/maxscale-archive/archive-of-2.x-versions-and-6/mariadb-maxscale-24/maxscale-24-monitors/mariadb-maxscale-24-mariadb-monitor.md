@@ -262,7 +262,7 @@ This feature is enabled by default. If a running server that is not the master\
 or a relay master is out of disk space the server is set to maintenance mode.\
 Such servers are not used for router sessions and are ignored when performing a\
 failover or other cluster modification operation. See the general monitor\
-parameters [disk\_space\_threshold](https://mariadb.com/kb/en/node:mariadb-maxscale-24-common-monitor-parameters#disk_space_threshold) and[disk\_space\_check\_interval](https://mariadb.com/kb/en/node:mariadb-maxscale-24-common-monitor-parameters#disk_space_check_interval)\
+parameters [disk\_space\_threshold](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/0pSbu5DcMSW4KwAkUcmX/maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-24-02/maxscale-24-02monitors/mariadb-maxscale-2402-maxscale-2402-common-monitor-parameters#disk_space_threshold) and[disk\_space\_check\_interval](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/0pSbu5DcMSW4KwAkUcmX/maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-24-02/maxscale-24-02monitors/mariadb-maxscale-2402-maxscale-2402-common-monitor-parameters#disk_space_check_interval)\
 on how to enable disk space monitoring.
 
 Once a server has been put to maintenance mode, the disk space situation\

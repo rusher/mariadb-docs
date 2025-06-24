@@ -720,7 +720,7 @@ hints when you are sure that they can cause no harm.
 
 ### Examples
 
-Examples of the readwritesplit router in use can be found in the[Tutorials](https://mariadb.com/kb/Tutorials) folder.
+Examples of the readwritesplit router in use can be found in the[Tutorials](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/0pSbu5DcMSW4KwAkUcmX/mariadb-maxscale-tutorials) folder.
 
 ### Readwritesplit routing decisions
 

@@ -222,7 +222,7 @@ This allows the Monitor to perform failover, and more importantly, switchover.\
 It also allows the user to manually redirect the Binlogrouter. The current\
 master is "sticky", meaning that the same master will be chosen on reboot.
 
-**NOTE:** Do not use the `mariadbmon` parameter[auto\_rejoin](https://mariadb.com/kb/Monitor/MariaDB-Monitor#auto_rejoin) if the monitor is\
+**NOTE:** Do not use the `mariadbmon` parameter[auto\_rejoin](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/0pSbu5DcMSW4KwAkUcmX/maxscale-archive/archive-of-2.x-versions-and-6/mariadb-maxscale-mariadb-maxscale-22/maxscale-22-monitors/mariadb-maxscale-22-mariadb-monitor#failover-switchover-and-auto-rejoin) if the monitor is\
 monitoring a binlogrouter. The binlogrouter does not support all the SQL\
 commands that the monitor will send and the rejoin will fail. This restriction\
 will be lifted in a future version.
@@ -348,7 +348,7 @@ SHOW SLAVE STATUS \G
 ### Galera cluster
 
 When replicating from a Galera cluster, [select\_master](mariadb-maxscale-25-binlogrouter.md#select_master) must be\
-set to true, and the servers must be monitored by the[Galera Monitor](https://mariadb.com/kb/en/mariadb-maxscale-25-monitor/).\
+set to true, and the servers must be monitored by the[Galera Monitor](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/0pSbu5DcMSW4KwAkUcmX/maxscale-archive/archive-of-2.x-versions-and-6/mariadb-maxscale-mariadb-maxscale-20/maxscale-20-monitors/mariadb-maxscale-20-galera-monitor).\
 Configuring binlogrouter is the same as described above.
 
 The Galera cluster must be configured to use [Wsrep GTID Mode](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/high-availability/using-mariadb-replication-with-mariadb-galera-cluster/using-mariadb-gtids-with-mariadb-galera-cluster).

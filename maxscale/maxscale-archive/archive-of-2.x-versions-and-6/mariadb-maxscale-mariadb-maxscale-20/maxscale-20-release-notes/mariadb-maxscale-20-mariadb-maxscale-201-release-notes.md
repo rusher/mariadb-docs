@@ -5,7 +5,7 @@ Release 2.0.1 is a GA release.
 This document describes the changes in release 2.0.1, when compared to[release 2.0.0](../../../archive-of-2x.xx-versions/mariadb-maxscale-21-06/).
 
 If you are upgrading from 1.4.3, please also read the release notes\
-of [2.0.0](https://mariadb.com/kb/en/node:5959).
+of [MariaDB MaxScale 2.0.0 Release Notes](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/0pSbu5DcMSW4KwAkUcmX/maxscale-archive/archive-of-2.x-versions-and-6/mariadb-maxscale-mariadb-maxscale-20/maxscale-20-release-notes/mariadb-maxscale-20-mariadb-maxscale-200-release-notes).
 
 For any problems you encounter, please consider submitting a bug\
 report at [Jira](https://jira.mariadb.org).
@@ -76,7 +76,7 @@ would be routed to the slave.
 
 **WARNING**: This change can alter the way some statements are routed and could\
 possibly cause data loss, corruption or inconsisteny. Please consult the [Hint\
-Syntax](https://mariadb.com/kb/Reference/Hint-Syntax) and[ReadWriteSplit](../maxscale-20-routers/mariadb-maxscale-20-readwritesplit.md) documentation before using\
+Syntax](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/0pSbu5DcMSW4KwAkUcmX/maxscale-archive/archive-of-2.x-versions-and-6/mariadb-maxscale-mariadb-maxscale-20/maxscale-20-reference/mariadb-maxscale-20-hint-syntax) and[ReadWriteSplit](../maxscale-20-routers/mariadb-maxscale-20-readwritesplit.md) documentation before using\
 routing hints.
 
 #### MaxAdmin Usage

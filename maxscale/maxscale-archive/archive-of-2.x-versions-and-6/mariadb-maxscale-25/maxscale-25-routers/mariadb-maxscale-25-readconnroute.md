@@ -94,7 +94,7 @@ type. With this configuration, the queries are load balanced across the\
 slave servers.
 
 For more complex examples of the readconnroute router, take a look at the\
-examples in the [Tutorials](https://mariadb.com/kb/Tutorials) folder.
+examples in the [Tutorials](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/0pSbu5DcMSW4KwAkUcmX/mariadb-maxscale-tutorials) folder.
 
 ### Router Diagnostics
 

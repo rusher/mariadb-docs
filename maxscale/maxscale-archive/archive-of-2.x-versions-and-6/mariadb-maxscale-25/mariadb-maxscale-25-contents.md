@@ -124,8 +124,7 @@ document.
 
 ### Design Documents
 
-* [Plugin development guide](https://mariadb.com/kb/en/mariadb-maxscale-25-mariadb-maxscale-plugin-development-guide/)
-
+* [Plugin development guide](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/0pSbu5DcMSW4KwAkUcmX/maxscale-archive/archive-of-2.x-versions-and-6/mariadb-maxscale-mariadb-maxscale-21/maxscale-21-design-documents/mariadb-maxscale-21-mariadb-maxscale-plugin-development-guide)
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

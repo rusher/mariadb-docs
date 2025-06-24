@@ -421,7 +421,7 @@ worksheet after clicking the `Create` button in the dialog.
 MaxScale uses ODBC for extracting and loading from the data source to a server\
 in MaxScale. Before starting a migration, ensure that you have set up the\
 necessary configurations on the MaxScale server. Instruction can be found [here](../mariadb-maxscale-25-01-rest-api/mariadb-maxscale-2501-maxscale-2501-sql-resource.md)\
-and limitations [here](https://mariadb.com/kb/en/maxscale-25-01-limitations-and-known-issues-within-mariadb-maxscale/#etl-limitations).
+and limitations [here](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/0pSbu5DcMSW4KwAkUcmX/maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-23.08/mariadb-maxscale-23-08-about/mariadb-maxscale-2308-limitations-and-known-issues-within-mariadb-maxscale#etl-limitations).
 
 **Connections**
 

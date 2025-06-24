@@ -37,7 +37,7 @@ Now you can configure MaxScale monitor module to automatically launch a script w
 
 #### Lsyncd configuration guide
 
-A new tutorial has been added which helps you keep MaxScale's configuration files in sync across multiple hosts. This allows for easier HA setups with MaxScale and guarantees up-to-date configuration files on all nodes. The tutorial can be found [here](https://mariadb.com/kb/en/).
+A new tutorial has been added which helps you keep MaxScale's configuration files in sync across multiple hosts. This allows for easier HA setups with MaxScale and guarantees up-to-date configuration files on all nodes. The tutorial can be found [here](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/0pSbu5DcMSW4KwAkUcmX/maxscale-archive/archive-of-2.x-versions-and-6/mariadb-maxscale-14/maxscale-14-release-notes/mariadb-maxscale-12-release-notes#lsyncd-configuration-guide).
 
 ### Bug fixes
 

@@ -18,7 +18,7 @@ add `address=0.0.0.0` to the listener definition.
 
 ### Persisted Configuration Files
 
-Starting with MaxScale 2.1, any changes made with the newly added[runtime configuration change](https://mariadb.com/kb/Reference/MaxAdmin#runtime-configuration-changes)\
+Starting with MaxScale 2.1, any changes made with the newly added[runtime configuration change](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/0pSbu5DcMSW4KwAkUcmX/maxscale-archive/archive-of-2.x-versions-and-6/mariadb-maxscale-mariadb-maxscale-23/maxscale-23-reference/mariadb-maxscale-23-maxadmin-admin-interface#runtime-configuration-changes)\
 will be persisted in a configuration file. These files are located in `/var/lib/maxscale/maxscale.cnf.d/`.
 
 ### MaxScale Log Files
