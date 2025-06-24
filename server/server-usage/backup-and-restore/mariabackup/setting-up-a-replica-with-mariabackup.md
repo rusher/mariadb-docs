@@ -4,7 +4,7 @@
 The terms _master_ and _slave_ have historically been used in replication, and MariaDB has begun the process of adding _primary_ and _replica_ synonyms. The old terms will continue to be used to maintain backward compatibility - see [MDEV-18777](https://jira.mariadb.org/browse/MDEV-18777) to follow progress on this effort.
 {% endhint %}
 
-mariadb-backup makes it very easy to set up a [replica](../../../ha-and-performance/standard-replication/) using a [full backup](full-backup-and-restore-with-mariabackup.md). This page documents how to set up a replica from a backup.
+mariadb-backup makes it very easy to set up a [replica](../../../ha-and-performance/standard-replication/) using a [full backup](full-backup-and-restore-with-mariadb-backup.md). This page documents how to set up a replica from a backup.
 
 If you are using [MariaDB Galera Cluster](../../../../en/galera/), then you may want to try one of the following pages instead:
 
@@ -13,27 +13,27 @@ If you are using [MariaDB Galera Cluster](../../../../en/galera/), then you may 
 
 ## Backup the Database and Prepare It
 
-The first step is to simply take and prepare a fresh [full backup](full-backup-and-restore-with-mariabackup.md) of a database server in the [replication topology](../../../ha-and-performance/standard-replication/replication-overview.md#common-replication-setups). If the source database server is the desired replication primary, then we do not need to add any additional options when taking the full backup. For example:
+The first step is to simply take and prepare a fresh [full backup](full-backup-and-restore-with-mariadb-backup.md) of a database server in the [replication topology](../../../ha-and-performance/standard-replication/replication-overview.md#common-replication-setups). If the source database server is the desired replication primary, then we do not need to add any additional options when taking the full backup. For example:
 
 ```bash
-$ mariabackup --backup \
+$ mariadb-backup --backup \
    --target-dir=/var/mariadb/backup/ \
-   --user=mariabackup --password=mypassword
+   --user=mariadb-backup --password=mypassword
 ```
 
-If the source database server is a [replica](../../../ha-and-performance/standard-replication/) of the desired primary, then we should add the [--slave-info](mariabackup-options.md#-slave-info) option, and possibly the [--safe-slave-backup](mariabackup-options.md#-safe-slave-backup) option. For example:
+If the source database server is a [replica](../../../ha-and-performance/standard-replication/) of the desired primary, then we should add the [--slave-info](mariadb-backup-options.md#-slave-info) option, and possibly the [--safe-slave-backup](mariadb-backup-options.md#-safe-slave-backup) option. For example:
 
 ```bash
-$ mariabackup --backup \
+$ mariadb-backup --backup \
    --slave-info --safe-slave-backup \
    --target-dir=/var/mariadb/backup/ \
-   --user=mariabackup --password=mypassword
+   --user=mariadb-backup --password=mypassword
 ```
 
 And then we would prepare the backup as you normally would. For example:
 
 ```bash
-$ mariabackup --prepare \
+$ mariadb-backup --prepare \
    --target-dir=/var/mariadb/backup/
 ```
 
@@ -50,7 +50,7 @@ $ rsync -avP /var/mariadb/backup dbserver2:/var/mariadb/backup
 At this point, we can restore the backup to the [datadir](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#datadir), as you normally would. For example:
 
 ```bash
-$ mariabackup --copy-back \
+$ mariadb-backup --copy-back \
    --target-dir=/var/mariadb/backup/
 ```
 
@@ -79,7 +79,7 @@ Once configuration is done, we can [start the MariaDB Server process](https://ma
 
 At this point, we need to get the replication coordinates of the primary from the original backup directory.
 
-If we took the backup on the primary, then the coordinates will be in the [xtrabackup\_binlog\_info](files-created-by-mariabackup.md#xtrabackup_binlog_info) file. If we took the backup on another replica and if we provided the [--slave-info](mariabackup-options.md#-slave-info) option, then the coordinates will be in the file [xtrabackup\_slave\_info](files-created-by-mariabackup.md#xtrabackup_slave_info) file.
+If we took the backup on the primary, then the coordinates will be in the [xtrabackup\_binlog\_info](files-created-by-mariadb-backup.md#xtrabackup_binlog_info) file. If we took the backup on another replica and if we provided the [--slave-info](mariadb-backup-options.md#-slave-info) option, then the coordinates will be in the file [xtrabackup\_slave\_info](files-created-by-mariadb-backup.md#xtrabackup_slave_info) file.
 
 mariadb-backup dumps replication coordinates in two forms: [GTID](../../../ha-and-performance/standard-replication/gtid.md) coordinates and [binary log](../../../server-management/server-monitoring-logs/binary-log/) file and position coordinates, like the ones you would normally see from [SHOW MASTER STATUS](../../../reference/sql-statements/administrative-sql-statements/show/show-binlog-status.md) output. We can choose which set of coordinates we would like to use to set up replication.
 
@@ -93,7 +93,7 @@ Regardless of the coordinates we use, we will have to set up the primary connect
 
 ### GTIDs
 
-If we want to use GTIDs, then we will have to first set [gtid\_slave\_pos](../../../ha-and-performance/standard-replication/gtid.md#gtid_slave_pos) to the [GTID](../../../ha-and-performance/standard-replication/gtid.md) coordinates that we pulled from either the [xtrabackup\_binlog\_info](files-created-by-mariabackup.md#xtrabackup_binlog_info) file or the [xtrabackup\_slave\_info](files-created-by-mariabackup.md#xtrabackup_slave_info) file in the backup directory. For example:
+If we want to use GTIDs, then we will have to first set [gtid\_slave\_pos](../../../ha-and-performance/standard-replication/gtid.md#gtid_slave_pos) to the [GTID](../../../ha-and-performance/standard-replication/gtid.md) coordinates that we pulled from either the [xtrabackup\_binlog\_info](files-created-by-mariadb-backup.md#xtrabackup_binlog_info) file or the [xtrabackup\_slave\_info](files-created-by-mariadb-backup.md#xtrabackup_slave_info) file in the backup directory. For example:
 
 ```bash
 $ cat xtrabackup_binlog_info
@@ -115,7 +115,7 @@ START SLAVE;
 
 ### File and Position
 
-If we want to use the [binary log](../../../server-management/server-monitoring-logs/binary-log/) file and position coordinates, then we would set `MASTER_LOG_FILE` and `MASTER_LOG_POS` in the [CHANGE MASTER TO](../../../reference/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) command to the file and position coordinates that we pulled; either the [xtrabackup\_binlog\_info](files-created-by-mariabackup.md#xtrabackup_binlog_info) file or the [xtrabackup\_slave\_info](files-created-by-mariabackup.md#xtrabackup_slave_info) file in the backup directory, depending on whether the backup was taken from the primary or from a replica of the primary. For example:
+If we want to use the [binary log](../../../server-management/server-monitoring-logs/binary-log/) file and position coordinates, then we would set `MASTER_LOG_FILE` and `MASTER_LOG_POS` in the [CHANGE MASTER TO](../../../reference/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) command to the file and position coordinates that we pulled; either the [xtrabackup\_binlog\_info](files-created-by-mariadb-backup.md#xtrabackup_binlog_info) file or the [xtrabackup\_slave\_info](files-created-by-mariadb-backup.md#xtrabackup_slave_info) file in the backup directory, depending on whether the backup was taken from the primary or from a replica of the primary. For example:
 
 ```sql
 CHANGE MASTER TO 

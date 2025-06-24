@@ -26,7 +26,7 @@ sed -n '/Current Database: `DATABASENAME`/, /Current Database:/p' nodata.sql > t
 vim trimednodata.sql
 ```
 
-I won’t go over the backup process, as this is done earlier in other documents, such as [full-backup-and-restore-with-mariabackup](full-backup-and-restore-with-mariabackup.md). Prepare the backup with any [incremental-backup-and-restores](incremental-backup-and-restore-with-mariabackup.md#backing-up-the-incremental-changes) that you have, and then run the following on the full backup folder using the --export option to generate files with .cfg extensions which InnoDB will look for.
+I won’t go over the backup process, as this is done earlier in other documents, such as [full-backup-and-restore-with-mariadb-backup](full-backup-and-restore-with-mariadb-backup.md). Prepare the backup with any [incremental-backup-and-restores](incremental-backup-and-restore-with-mariadb-backup.md#backing-up-the-incremental-changes) that you have, and then run the following on the full backup folder using the --export option to generate files with .cfg extensions which InnoDB will look for.
 
 ```bash
 mariadb-backup --prepare --export --target-dir=/media/backups/fullbackupfolder
@@ -99,7 +99,7 @@ ALTER TABLE test DISCARD TABLESPACE;
 ...
 ```
 
-Exit out the database and change into the directory of the full backup location. Run the following commands to copy all the .cfg and .ibd files to the datadir such as /var/lib/mysql/testdatabase (Change the datadir location if needed). Learn more about files that mariadb-backup generates with [files-created-by-mariabackup](files-created-by-mariabackup.md)
+Exit out the database and change into the directory of the full backup location. Run the following commands to copy all the .cfg and .ibd files to the datadir such as /var/lib/mysql/testdatabase (Change the datadir location if needed). Learn more about files that mariadb-backup generates with [files-created-by-mariadb-backup](files-created-by-mariadb-backup.md)
 
 ```bash
 cp *.cfg /var/lib/mysql
@@ -135,7 +135,7 @@ SELECT * from test limit 10;
 
 ## Replica nodes
 
-If you have a primary-replica set up, it would be best to follow the sets above for the primary node and then either take a full mariadb-dump or take a new full mariabackup and restore this to the replica. You can find more information about restoring a replica with mariabackup in [Setting up a Replica with mariadb-backup](setting-up-a-replica-with-mariabackup.md#backup-the-database-and-prepare-it)
+If you have a primary-replica set up, it would be best to follow the sets above for the primary node and then either take a full mariadb-dump or take a new full mariadb-backup and restore this to the replica. You can find more information about restoring a replica with mariadb-backup in [Setting up a Replica with mariadb-backup](setting-up-a-replica-with-mariadb-backup.md#backup-the-database-and-prepare-it)
 
 After running the below command, copy to the replica and use the LESS linux command to grab the change master statement. Remember to follow this process: Stop replica > restore data > run CHANGE MASTER statement > start replica again.
 
@@ -143,13 +143,13 @@ After running the below command, copy to the replica and use the LESS linux comm
 mariadb-dump -u user -p --single-transaction --master-data=2 > fullbackup.sql
 ```
 
-Please follow [Setting up a Replica with mariadb-backup](setting-up-a-replica-with-mariabackup.md#backup-the-database-and-prepare-it) on restoring a replica with mariadb-backup
+Please follow [Setting up a Replica with mariadb-backup](setting-up-a-replica-with-mariadb-backup.md#backup-the-database-and-prepare-it) on restoring a replica with mariadb-backup
 
 ```bash
-$ mariabackup --backup \
+$ mariadb-backup --backup \
    --slave-info --safe-slave-backup \
    --target-dir=/var/mariadb/backup/ \
-   --user=mariabackup --password=mypassword
+   --user=mariadb-backup --password=mypassword
 ```
 
 ## Galera cluster
@@ -170,7 +170,7 @@ ALTER TABLE test DISCARD TABLESPACE;
 ...
 ```
 
-Exit out the database and change into the directory of the full backup location. Run the following commands to copy all the .cfg and .ibd files to the datadir such as /var/lib/mysql/testdatabase (Change the datadir location if needed). Learn more about files that mariadb-backup generates with [files-created-by-mariabackup](files-created-by-mariabackup.md). This step needs to be done on all nodes. You will need to copy the backup files to each node, we can use the same backup on all nodes.
+Exit out the database and change into the directory of the full backup location. Run the following commands to copy all the .cfg and .ibd files to the datadir such as /var/lib/mysql/testdatabase (Change the datadir location if needed). Learn more about files that mariadb-backup generates with [files-created-by-mariadb-backup](files-created-by-mariadb-backup.md). This step needs to be done on all nodes. You will need to copy the backup files to each node, we can use the same backup on all nodes.
 
 ```bash
 cp *.cfg /var/lib/mysql

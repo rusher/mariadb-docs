@@ -1076,10 +1076,10 @@ column of the `INFORMATION_SCHEMA.ROCKSDB_DBSTATS` table.
 * Default Value: `0`
 * Range: `0` to `2147483647`
 
-#### `rocksdb_remove_mariabackup_checkpoint`
+#### `rocksdb_remove_mariadb-backup_checkpoint`
 
-* Description: Remove [mariabackup](../../backing-up-and-restoring-databases/mariabackup/) checkpoint.
-* Commandline: `--rocksdb-remove-mariabackup-checkpoint={0|1}`
+* Description: Remove [mariadb-backup](../../backing-up-and-restoring-databases/mariadb-backup/) checkpoint.
+* Commandline: `--rocksdb-remove-mariadb-backup-checkpoint={0|1}`
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `boolean`

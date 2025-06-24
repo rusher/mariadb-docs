@@ -23,7 +23,7 @@ mariadb-backup does not back up tables that use the [MyRocks](../../storage-engi
 {% endtab %}
 {% endtabs %}
 
-mariadb-backup does not currently support [partial backups](partial-backup-and-restore-with-mariabackup.md) for MyRocks.
+mariadb-backup does not currently support [partial backups](partial-backup-and-restore-with-mariadb-backup.md) for MyRocks.
 
 ### Other Data Files
 

@@ -4,7 +4,7 @@ When using mariadb-backup, you have the option of performing a full or an increm
 
 ## Backing up the Database Server
 
-In order to back up the database, you need to run mariadb-backup with the [--backup](mariabackup-options.md#-backup) option to tell it to perform a backup and with the [--target-dir](mariabackup-options.md#-target-dir) option to tell it where to place the backup files. When taking a full backup, the target directory must be empty or it must not exist.
+In order to back up the database, you need to run mariadb-backup with the [--backup](mariadb-backup-options.md#-backup) option to tell it to perform a backup and with the [--target-dir](mariadb-backup-options.md#-target-dir) option to tell it where to place the backup files. When taking a full backup, the target directory must be empty or it must not exist.
 
 To take a backup, run the following command:
 
@@ -33,7 +33,7 @@ ibdata1           xtrabackup_binlog_info
 
 The data files that mariadb-backup creates in the target directory are not point-in-time consistent, given that the data files are copied at different times during the backup operation. If you try to restore from these files, InnoDB notices the inconsistencies and crashes to protect you from corruption
 
-Before you can restore from a backup, you first need to **prepare** it to make the data files consistent. You can do so with the [--prepare](mariabackup-options.md#-prepare) option.
+Before you can restore from a backup, you first need to **prepare** it to make the data files consistent. You can do so with the [--prepare](mariadb-backup-options.md#-prepare) option.
 
 ```bash
 $ mariadb-backup --prepare \
@@ -42,12 +42,12 @@ $ mariadb-backup --prepare \
 
 ### Backup Preparation Steps
 
-1. Run mariadb-backup --backup. You must use a version of mariadb-backup that is compatible with the server version you are planning to upgrade from. For instance, when upgrading from [MariaDB 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-usage/backing-up-and-restoring-databases/mariabackup/broken-reference/README.md) to 10.5, you must use the 10.4 version of mariadb-backup, Another example: When upgrading from [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/what-is-mariadb-106) to 10.11, you must use the 10.6 version of mariadb-backup.
+1. Run mariadb-backup --backup. You must use a version of mariadb-backup that is compatible with the server version you are planning to upgrade from. For instance, when upgrading from [MariaDB 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-usage/backing-up-and-restoring-databases/mariadb-backup/broken-reference/README.md) to 10.5, you must use the 10.4 version of mariadb-backup, Another example: When upgrading from [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/what-is-mariadb-106) to 10.11, you must use the 10.6 version of mariadb-backup.
 2. Run mariadb-backup --prepare, again using a compatible version of mariadb-backup, as described in the previous step.
 
 ## Restoring the Backup
 
-Once the backup is complete and you have prepared the backup for restoration (previous step), you can restore the backup using either the [--copy-back](mariabackup-options.md#-copy-back) or the [--move-back](mariabackup-options.md#-move-back) options. The [--copy-back](mariabackup-options.md#-copy-back) option allows you to keep the original backup files. The [--move-back](mariabackup-options.md#-move-back) option actually moves the backup files to the [datadir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir), so the original backup files are lost.
+Once the backup is complete and you have prepared the backup for restoration (previous step), you can restore the backup using either the [--copy-back](mariadb-backup-options.md#-copy-back) or the [--move-back](mariadb-backup-options.md#-move-back) options. The [--copy-back](mariadb-backup-options.md#-copy-back) option allows you to keep the original backup files. The [--move-back](mariadb-backup-options.md#-move-back) option actually moves the backup files to the [datadir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir), so the original backup files are lost.
 
 * First, [stop the MariaDB Server process](../../../server-management/starting-and-stopping-mariadb/).
 * Then, ensure that the [datadir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir) is empty.

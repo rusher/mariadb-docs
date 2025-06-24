@@ -13,14 +13,14 @@ Files that mariadb-backup generates during [--backup](#-backup) operations in th
 In the case of full backups, the files are not point in time consistent, since they were taken at different times. If you try to restore the database without first preparing the data, InnoDB rejects the new data as corrupt. Running mariadb-backup with the `--prepare` command readies the data so you can restore it to MariaDB Server. When working with incremental backups, you need to use the `--prepare` command and the [--incremental-dir](#-incremental-dir) option to update the base backup with the deltas from an incremental backup.
 
 ```bash
-$ mariabackup --innobackupex --apply-log
+$ mariadb-backup --innobackupex --apply-log
 ```
 
 Once the backup is ready, you can use the [--copy-back](#-copy-back) or the [--move-back](#-move-back) commands to restore the backup to the server.
 
 ### `--apply-log-only`
 
-If this option is used when preparing a backup, then only the redo log apply stage will be performed, and other stages of crash recovery will be ignored. This option is used with [incremental backups](incremental-backup-and-restore-with-mariabackup.md).
+If this option is used when preparing a backup, then only the redo log apply stage will be performed, and other stages of crash recovery will be ignored. This option is used with [incremental backups](incremental-backup-and-restore-with-mariadb-backup.md).
 
 #### Note
 
@@ -33,7 +33,7 @@ Backs up your databases.
 Using this command option, mariadb-backup performs a backup operation on your database or databases. The backups are written to the target directory, as set by the [--target-dir](#-target-dir) option.
 
 ```bash
-$ mariabackup --backup 
+$ mariadb-backup --backup 
       --target-dir /path/to/backup \
       --user user_name --password user_passwd
 ```
@@ -42,7 +42,7 @@ mariadb-backup can perform full and incremental backups. A full backup creates a
 
 In order to restore from a backup, you first need to run mariadb-backup with the [--prepare](#-prepare) command option, to make a full backup point-in-time consistent or to apply incremental backup deltas to base. Then you can run mariadb-backup again with either the [--copy-back](#-copy-back) or [--move-back](#-move-back) commands to restore the database.
 
-For more information, see [Full Backup and Restore](full-backup-and-restore-with-mariabackup.md) and [Incremental Backup and Restore](incremental-backup-and-restore-with-mariabackup.md).
+For more information, see [Full Backup and Restore](full-backup-and-restore-with-mariadb-backup.md) and [Incremental Backup and Restore](incremental-backup-and-restore-with-mariadb-backup.md).
 
 ### `--binlog-info`
 
@@ -67,10 +67,10 @@ Using this option, you can control how mariadb-backup retrieves the server's bin
 When enabled, whether using `ON` or `AUTO`, mariadb-backup retrieves information from the binlog during the backup process. When disabled with `OFF`, mariadb-backup runs without attempting to retrieve binary log information. You may find this useful when you need to copy data without metadata like the binlog or replication coordinates.
 
 ```bash
-$ mariabackup --binlog-info --backup
+$ mariadb-backup --binlog-info --backup
 ```
 
-Currently, the `LOCKLESS` option depends on features unsupported by MariaDB Server. See the description of the [xtrabackup_binlog_pos_innodb](files-created-by-mariabackup.md#xtrabackup_binlog_pos_innodb) file for more information. If you attempt to run mariadb-backup with this option, then it causes the utility to exit with an error.
+Currently, the `LOCKLESS` option depends on features unsupported by MariaDB Server. See the description of the [xtrabackup_binlog_pos_innodb](files-created-by-mariadb-backup.md#xtrabackup_binlog_pos_innodb) file for more information. If you attempt to run mariadb-backup with this option, then it causes the utility to exit with an error.
 
 ### `--close-files`
 
@@ -79,12 +79,12 @@ Defines whether you want to close file handles.
 Using this option, you can tell mariadb-backup that you want to close file handles. Without this option, mariadb-backup keeps files open in order to manage DDL operations. When working with particularly large tablespaces, closing the file can make the backup more manageable. However, it can also lead to inconsistent backups. Use at your own risk.
 
 ```bash
-$ mariabackup --close-files --prepare
+$ mariadb-backup --close-files --prepare
 ```
 
 ### `--compress`
 
-This option was deprecated as it relies on the no longer maintained [QuickLZ](https://github.com/RT-Thread-packages/quicklz/) library. It will be removed in a future release - versions supporting this function will not be affected. It is recommended to instead backup to a stream (stdout), and use a 3rd party compression library to compress the stream, as described in[Using Encryption and Compression Tools With mariadb-backup](using-encryption-and-compression-tools-with-mariabackup.md).
+This option was deprecated as it relies on the no longer maintained [QuickLZ](https://github.com/RT-Thread-packages/quicklz/) library. It will be removed in a future release - versions supporting this function will not be affected. It is recommended to instead backup to a stream (stdout), and use a 3rd party compression library to compress the stream, as described in[Using Encryption and Compression Tools With mariadb-backup](using-encryption-and-compression-tools-with-mariadb-backup.md).
 
 Defines the compression algorithm for backup files.
 
@@ -100,10 +100,10 @@ The `--compress` option only supports the now deprecated `quicklz` algorithm.
 | quicklz | Uses the QuickLZ compression algorithm |
 
 ```bash
-$ mariabackup --compress --backup
+$ mariadb-backup --compress --backup
 ```
 
-If a backup is compressed using this option, then mariadb-backup will record that detail in the [xtrabackup_info](files-created-by-mariabackup.md#xtrabackup_info) file.
+If a backup is compressed using this option, then mariadb-backup will record that detail in the [xtrabackup_info](files-created-by-mariadb-backup.md#xtrabackup_info) file.
 
 ### `--compress-chunk-size`
 
@@ -118,7 +118,7 @@ Defines the working buffer size for compression threads.
 mariadb-backup can perform compression operations on the backup files before writing them to disk. It can also use multiple threads for parallel data compression during this process. Using this option, you can set the chunk size each thread uses during compression. It defaults to 64K.
 
 ```bash
-$ mariabackup --backup --compress \
+$ mariadb-backup --backup --compress \
      --compress-threads=12 --compress-chunk-size=5M
 ```
 
@@ -137,7 +137,7 @@ Defines the number of threads to use in compression.
 mariadb-backup can perform compression operations on the backup files before writing them to disk. Using this option, you can define the number of threads you want to use for this operation. You may find this useful in speeding up the compression of particularly large databases. It defaults to single-threaded.
 
 ```
-$ mariabackup --compress --compress-threads=12 --backup
+$ mariadb-backup --compress --compress-threads=12 --backup
 ```
 
 To further configure backup compression, see the [--compress](#-compress) and [--compress-chunk-size](#-compress-chunk-size) options.
@@ -151,7 +151,7 @@ Using this command, mariadb-backup copies the backup from the target directory t
 Bear in mind, before you can restore a backup, you first need to run mariadb-backup with the [--prepare](#-prepare) option. In the case of full backups, this makes the files point-in-time consistent. With incremental backups, this applies the deltas to the base backup. Once the backup is prepared, you can run `--copy-back` to apply it to MariaDB Server.
 
 ```bash
-$ mariabackup --copy-back --force-non-empty-directories
+$ mariadb-backup --copy-back --force-non-empty-directories
 ```
 
 Running the `--copy-back` command copies the backup files to the data directory. Use this command if you want to save the backup for later. If you don't want to save the backup for later, use the [--move-back](#-move-back) command.
@@ -163,7 +163,7 @@ Defines whether to write a core file.
 Using this option, you can configure mariadb-backup to dump its core to file in the event that it encounters fatal signals. You may find this useful for review and debugging purposes.
 
 ```bash
-$ mariabackup --core-file --backup
+$ mariadb-backup --core-file --backup
 ```
 
 ### `--databases`
@@ -177,13 +177,13 @@ Defines the databases and tables you want to back up.
 Using this option, you can define the specific database or databases you want to back up. In cases where you have a particularly large database or otherwise only want to back up a portion of it, you can optionally also define the tables on the database.
 
 ```bash
-$ mariabackup --backup \
+$ mariadb-backup --backup \
       --databases="example.table1 example.table2"
 ```
 
 In cases where you want to back up most databases on a server or tables on a database, but not all, you can set the specific databases or tables you don't want to back up using the [--databases-exclude](#-databases-exclude) option.
 
-If a backup is a [partial backup](broken-reference), then mariadb-backup will record that detail in the [xtrabackup_info](files-created-by-mariabackup.md#xtrabackup_info) file.
+If a backup is a [partial backup](broken-reference), then mariadb-backup will record that detail in the [xtrabackup_info](files-created-by-mariadb-backup.md#xtrabackup_info) file.
 
 In `innobackupex` mode, which can be enabled with the [--innobackupex](#-innobackupex) option, the `--databases` option can be used as described above, or it can be used to refer to a file, just as the [--databases-file](https://mariadb.com/kb/en/-databases-file) option can in the normal mode.
 
@@ -198,14 +198,14 @@ Defines the databases you don't want to back up.
 Using this option, you can define the specific database or databases you want to exclude from the backup process. You may find it useful when you want to back up most databases on the server or tables on a database, but would like to exclude a few from the process.
 
 ```bash
-$ mariabackup --backup \
+$ mariadb-backup --backup \
       --databases="example" \
       --databases-exclude="example.table1 example.table2"
 ```
 
 To include databases in the backup, see the [--databases](#-databases) option option
 
-If a backup is a [partial backup](broken-reference), then mariadb-backup will record that detail in the [xtrabackup_info](files-created-by-mariabackup.md#xtrabackup_info) file.
+If a backup is a [partial backup](broken-reference), then mariadb-backup will record that detail in the [xtrabackup_info](files-created-by-mariadb-backup.md#xtrabackup_info) file.
 
 ### `--databases-file`
 
@@ -231,10 +231,10 @@ example1
 example2.table1
 example2.table2
 
-$ mariabackup --backup --databases-file=main-backup
+$ mariadb-backup --backup --databases-file=main-backup
 ```
 
-If a backup is a [partial backup](broken-reference), then mariadb-backup will record that detail in the [xtrabackup_info](files-created-by-mariabackup.md#xtrabackup_info) file.
+If a backup is a [partial backup](broken-reference), then mariadb-backup will record that detail in the [xtrabackup_info](files-created-by-mariadb-backup.md#xtrabackup_info) file.
 
 ### `-h, --datadir`
 
@@ -247,7 +247,7 @@ Defines the path to the database root.
 Using this option, you can define the path to the source directory. This is the directory that mariadb-backup reads for the data it backs up. It should be the same as the MariaDB Server [datadir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#datadir) system variable.
 
 ```
-$ mariabackup --backup -h /var/lib64/mysql
+$ mariadb-backup --backup -h /var/lib64/mysql
 ```
 
 ### `--debug-sleep-before-unlock`
@@ -267,13 +267,13 @@ When you run mariadb-backup with the [--compress](#-compress) option, it compres
 For instance, run a backup with compression,
 
 ```bash
-$ mariabackup --compress --backup
+$ mariadb-backup --compress --backup
 ```
 
 Then decompress the backup,
 
 ```bash
-$ mariabackup --decompress
+$ mariadb-backup --decompress
 ```
 
 You can enable the decryption of multiple files at a time using the [--parallel](#-parallel) option. By default, mariadb-backup does not remove the compressed files from the target directory. If you want to delete these files, use the [--remove-original](#-remove-original) option.
@@ -293,7 +293,7 @@ Defines the path to an extra default [option file](../../../server-management/in
 Using this option, you can define an extra default [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md) for mariadb-backup. Unlike [--defaults-file](#-defaults-file), this file is read after the default [option files](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md) are read, allowing you to only overwrite the existing defaults.
 
 ```bash
-$ mariabackup --backup \
+$ mariadb-backup --backup \
       --defaults-file-extra=addition-config.cnf \
       --defaults-file=config.cnf
 ```
@@ -309,7 +309,7 @@ Defines the path to the default [option file](../../../server-management/install
 Using this option, you can define a default [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md) for mariadb-backup. Unlike the [--defaults-extra-file](#-defaults-extra-file) option, when this option is provided, it completely replaces all default [option files](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files.md).
 
 ```bash
-$ mariabackup --backup \
+$ mariadb-backup --backup \
      --defaults-file="config.cnf
 ```
 
@@ -326,7 +326,7 @@ In situations where you find yourself using certain mariadb-backup options consi
 Options you define from the command-line can be set in the configuration file using minor formatting changes. For instance, if you find yourself perform compression operations frequently, you might set [--compress-threads](#-compress-threads) and [--compress-chunk-size](#-compress-chunk-size) options in this way:
 
 ```bash
-[mariabackup]
+[mariadb-backup]
 compress_threads = 12
 compress_chunk_size = 64K
 ```
@@ -334,10 +334,10 @@ compress_chunk_size = 64K
 Now whenever you run a backup with the [--compress](#-compress) option, it always performs the compression using 12 threads and 64K chunks.
 
 ```bash
-$ mariabackup --compress --backup
+$ mariadb-backup --compress --backup
 ```
 
-See [mariadb-backup Overview: Server Option Groups](mariabackup-overview.md#server-option-groups) and [mariadb-backup Overview: Client Option Groups](mariabackup-overview.md#client-option-groups) for a list of the option groups read by mariadb-backup by default.
+See [mariadb-backup Overview: Server Option Groups](mariadb-backup-overview.md#server-option-groups) and [mariadb-backup Overview: Client Option Groups](mariadb-backup-overview.md#client-option-groups) for a list of the option groups read by mariadb-backup by default.
 
 ### `--encrypted-backup`
 
@@ -352,26 +352,26 @@ If this option is provided during the `--prepare` stage, then it tells mariadb-b
 The `--export` option could require rolling back incomplete transactions that had modified the table. This will likely create a "new branch of history" that does not correspond to the server that had been backed up, which makes it impossible to apply another incremental backup on top of such additional changes. The option should only be applied when doing a `--prepare` of the last incremental.
 
 ```
-$ mariabackup --prepare --export
+$ mariadb-backup --prepare --export
 ```
 
-mariadb-backup did not support the [--export](mariabackup-options.md#-export) option. See [MDEV-13466](https://jira.mariadb.org/browse/MDEV-13466) about that. In earlier versions of MariaDB, this means that mariadb-backup could not create `.cfg` files for [InnoDB file-per-table tablespaces](../../../reference/storage-engines/innodb/innodb-tablespaces/innodb-file-per-table-tablespaces.md) during the `--prepare` stage. You can still [import file-per-table tablespaces](../../../reference/storage-engines/innodb/innodb-tablespaces/innodb-file-per-table-tablespaces.md#copying-transportable-tablespaces) without the `.cfg` files in many cases, so it may still be possible in those versions to [restore partial backups](broken-reference) or to [restore individual tables and partitions](broken-reference) with just the `.ibd` files. If you have a [full backup](full-backup-and-restore-with-mariabackup.md) and you need to create `.cfg` files for [InnoDB file-per-table tablespaces](../../../reference/storage-engines/innodb/innodb-tablespaces/innodb-file-per-table-tablespaces.md), then you can do so by preparing the backup as usual without the `--export` option, and then restoring the backup, and then starting the server. At that point, you can use the server's built-in features to [copy the transportable tablespaces](../../../reference/storage-engines/innodb/innodb-tablespaces/innodb-file-per-table-tablespaces.md#copying-transportable-tablespaces).
+mariadb-backup did not support the [--export](mariadb-backup-options.md#-export) option. See [MDEV-13466](https://jira.mariadb.org/browse/MDEV-13466) about that. In earlier versions of MariaDB, this means that mariadb-backup could not create `.cfg` files for [InnoDB file-per-table tablespaces](../../../reference/storage-engines/innodb/innodb-tablespaces/innodb-file-per-table-tablespaces.md) during the `--prepare` stage. You can still [import file-per-table tablespaces](../../../reference/storage-engines/innodb/innodb-tablespaces/innodb-file-per-table-tablespaces.md#copying-transportable-tablespaces) without the `.cfg` files in many cases, so it may still be possible in those versions to [restore partial backups](broken-reference) or to [restore individual tables and partitions](broken-reference) with just the `.ibd` files. If you have a [full backup](full-backup-and-restore-with-mariadb-backup.md) and you need to create `.cfg` files for [InnoDB file-per-table tablespaces](../../../reference/storage-engines/innodb/innodb-tablespaces/innodb-file-per-table-tablespaces.md), then you can do so by preparing the backup as usual without the `--export` option, and then restoring the backup, and then starting the server. At that point, you can use the server's built-in features to [copy the transportable tablespaces](../../../reference/storage-engines/innodb/innodb-tablespaces/innodb-file-per-table-tablespaces.md#copying-transportable-tablespaces).
 
 ### `--extra-lsndir`
 
-Saves an extra copy of the [xtrabackup_checkpoints](files-created-by-mariabackup.md#xtrabackup_checkpoints) and [xtrabackup_info](files-created-by-mariabackup.md#xtrabackup_info) files into the given directory.
+Saves an extra copy of the [xtrabackup_checkpoints](files-created-by-mariadb-backup.md#xtrabackup_checkpoints) and [xtrabackup_info](files-created-by-mariadb-backup.md#xtrabackup_info) files into the given directory.
 
 ```bash
 --extra-lsndir=PATH
 ```
 
-When using the [--backup](#-backup) command option, mariadb-backup produces a number of backup files in the target directory. Using this option, you can have mariadb-backup produce additional copies of the [xtrabackup_checkpoints](files-created-by-mariabackup.md#xtrabackup_checkpoints) and [xtrabackup_info](files-created-by-mariabackup.md#xtrabackup_info) files in the given directory.
+When using the [--backup](#-backup) command option, mariadb-backup produces a number of backup files in the target directory. Using this option, you can have mariadb-backup produce additional copies of the [xtrabackup_checkpoints](files-created-by-mariadb-backup.md#xtrabackup_checkpoints) and [xtrabackup_info](files-created-by-mariadb-backup.md#xtrabackup_info) files in the given directory.
 
 ```bash
-$ mariabackup --extra-lsndir=extras/ --backup
+$ mariadb-backup --extra-lsndir=extras/ --backup
 ```
 
-This is especially usefull when using [--stream](#-stream) for streaming output, e.g. for [compression and/or encryption using external tools](using-encryption-and-compression-tools-with-mariabackup.md) in combination with [incremental backups](incremental-backup-and-restore-with-mariabackup.md), as the [xtrabackup_checkpoints](files-created-by-mariabackup.md#xtrabackup_checkpoints) file necessary to determine the LSN to continue the incremental backup from is still accessible without uncompressing / decrypting the backup file first. Simply pass in the `--extra-lsndir` of the previous backup as[--incremental-basedir](#-incremental-basedir)
+This is especially usefull when using [--stream](#-stream) for streaming output, e.g. for [compression and/or encryption using external tools](using-encryption-and-compression-tools-with-mariadb-backup.md) in combination with [incremental backups](incremental-backup-and-restore-with-mariadb-backup.md), as the [xtrabackup_checkpoints](files-created-by-mariadb-backup.md#xtrabackup_checkpoints) file necessary to determine the LSN to continue the incremental backup from is still accessible without uncompressing / decrypting the backup file first. Simply pass in the `--extra-lsndir` of the previous backup as[--incremental-basedir](#-incremental-basedir)
 
 ### `--force-non-empty-directories`
 
@@ -380,7 +380,7 @@ Allows [--copy-back](#-copy-back) or [--move-back](#-move-back) command options 
 When using mariadb-backup with the [--copy-back](#-copy-back) or [--move-back](#-move-back) command options, they normally require a non-empty target directory to avoid conflicts. Using this option with either of command allows mariadb-backup to use a non-empty directory.
 
 ```bash
-$ mariabackup --force-non-empty-directories --copy-back
+$ mariadb-backup --force-non-empty-directories --copy-back
 ```
 
 Bear in mind that this option does not enable overwrites. When copying or moving files into the target directory, if mariadb-backup finds that the target file already exists, it fails with an error.
@@ -405,7 +405,7 @@ The `--ftwrl-wait-query-type` option supports the following query types. The def
 When mariadb-backup runs, it issues a global lock to prevent data from changing during the backup process. When it encounters a statement in the process of executing, it waits until the statement is finished before issuing the global lock. Using this option, you can modify this default behavior to ensure that it waits only for certain query types, such as for [SELECT](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select.md) and [UPDATE](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/update.md) statements.
 
 ```bash
-$ mariabackup --backup  \
+$ mariadb-backup --backup  \
       --ftwrl-wait-query-type=UPDATE
 ```
 
@@ -421,7 +421,7 @@ When mariadb-backup runs, it issues a global lock to prevent data from changing 
 the [--ftwrl-wait-timeout](#-ftwrl-wait-timeout) expires before setting the global lock and starting the backup.
 
 ```bash
-$ mariabackup --backup \
+$ mariadb-backup --backup \
      --ftwrl-wait-timeout=90 \
      --ftwrl-wait-threshold=30
 ```
@@ -443,7 +443,7 @@ If the `--ftwrl-wait-timeout` is set to a non-zero value, then mariadb-backup wa
 Starting in [MariaDB 10.5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-5-series/mariadb-1053-release-notes), mariadb-backup will exit if it can't acquire the global lock after waiting for the configured number of seconds. In earlier versions, it could wait for the global lock indefinitely, even if `--ftwrl-wait-timeout` was set to a non-zero value.
 
 ```bash
-$ mariabackup --backup \
+$ mariadb-backup --backup \
       --ftwrl-wait-query-type=UPDATE \
       --ftwrl-wait-timeout=5
 ```
@@ -452,14 +452,14 @@ $ mariabackup --backup \
 
 Defines whether you want to back up information about a [Galera Cluster](../../../../kb/en/galera/) node's state.
 
-When this option is used, mariadb-backup creates an additional file called [xtrabackup_galera_info](files-created-by-mariabackup.md#xtrabackup_galera_info), which records information about a [Galera Cluster](../../../../kb/en/galera/) node's state. It records the values of the [wsrep_local_state_uuid](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-status-variables#wsrep_local_state_uuid) and [wsrep_last_committed](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-status-variables#wsrep_last_committed) status variables.
+When this option is used, mariadb-backup creates an additional file called [xtrabackup_galera_info](files-created-by-mariadb-backup.md#xtrabackup_galera_info), which records information about a [Galera Cluster](../../../../kb/en/galera/) node's state. It records the values of the [wsrep_local_state_uuid](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-status-variables#wsrep_local_state_uuid) and [wsrep_last_committed](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-status-variables#wsrep_last_committed) status variables.
 
 You should only use this option when backing up a [Galera Cluster](../../../../kb/en/galera/) node. If the server is not a [Galera Cluster](../../../../kb/en/galera/) node, then this option has no effect.
 
 This option, when enabled and used with [GTID replication](../../../ha-and-performance/standard-replication/gtid.md), will rotate the binary logs at backup time.
 
 ```bash
-$ mariabackup --backup --galera-info
+$ mariadb-backup --backup --galera-info
 ```
 
 ### `--history`
@@ -473,12 +473,12 @@ Defines whether you want to track backup history in the `PERCONA_SCHEMA.xtraback
 When using this option, mariadb-backup records its operation in a table on the MariaDB Server. Passing a name to this option allows you group backups under arbitrary terms for later processing and analysis.
 
 ```bash
-$ mariabackup --backup --history=backup_all
+$ mariadb-backup --backup --history=backup_all
 ```
 
 Currently, the table it uses by default is named `mysql.mariadb_backup_history`. Prior to [MariaDB 10.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-11-series/what-is-mariadb-1011), the default table was `PERCONA_SCHEMA.xtrabackup_history`.
 
-mariadb-backup will also record this in the [xtrabackup_info](files-created-by-mariabackup.md#xtrabackup_info) file.
+mariadb-backup will also record this in the [xtrabackup_info](files-created-by-mariadb-backup.md#xtrabackup_info) file.
 
 ### `-H, --host`
 
@@ -491,7 +491,7 @@ Defines the host for the MariaDB Server you want to backup.
 Using this option, you can define the host to use when connecting to a MariaDB Server over TCP/IP. By default, mariadb-backup attempts to connect to the local host.
 
 ```bash
-$ mariabackup --backup \
+$ mariadb-backup --backup \
       --host="example.com"
 ```
 
@@ -505,18 +505,18 @@ equivalent to the [--tables](#-tables) option. This is only valid in `innobackup
 Defines whether you want to take an increment backup, based on another backup. This is only valid in `innobackupex` mode, which can be enabled with the [--innobackupex](#-innobackupex) option.
 
 ```bash
-mariabackup --innobackupex --incremental
+mariadb-backup --innobackupex --incremental
 ```
 
-Using this option with the [--backup](#-backup) command option makes the operation incremental rather than a complete overwrite. When this option is specified, either the [--incremental-lsn](#-incremental-lsn) or`[--incremental-basedir](mariabackup-options.md#-incremental-basedir)options can also be given. If neither option is given, option[--incremental-basedir](mariabackup-options.md#-incremental-basedir)is used by default, set to the first timestamped backup directory in the backup base directory.`
+Using this option with the [--backup](#-backup) command option makes the operation incremental rather than a complete overwrite. When this option is specified, either the [--incremental-lsn](#-incremental-lsn) or`[--incremental-basedir](mariadb-backup-options.md#-incremental-basedir)options can also be given. If neither option is given, option[--incremental-basedir](mariadb-backup-options.md#-incremental-basedir)is used by default, set to the first timestamped backup directory in the backup base directory.`
 
 ```bash
-$ mariabackup --innobackupex --backup --incremental \
+$ mariadb-backup --innobackupex --backup --incremental \
      --incremental-basedir=/data/backups \
      --target-dir=/data/backups
 ```
 
-If a backup is a [incremental backup](incremental-backup-and-restore-with-mariabackup.md), then mariadb-backup will record that detail in the [xtrabackup_info](files-created-by-mariabackup.md#xtrabackup_info) file.
+If a backup is a [incremental backup](incremental-backup-and-restore-with-mariadb-backup.md), then mariadb-backup will record that detail in the [xtrabackup_info](files-created-by-mariadb-backup.md#xtrabackup_info) file.
 
 ### `--incremental-basedir`
 
@@ -529,12 +529,12 @@ Defines whether you want to take an incremental backup, based on another backup.
 Using this option with the [--backup](#-backup) command option makes the operation incremental rather than a complete overwrite. mariadb-backup will only copy pages from `.ibd` files if they are newer than the backup in the specified directory.
 
 ```bash
-$ mariabackup --backup \
+$ mariadb-backup --backup \
      --incremental-basedir=/data/backups \
      --target-dir=/data/backups
 ```
 
-If a backup is a [incremental backup](incremental-backup-and-restore-with-mariabackup.md), then mariadb-backup will record that detail in the [xtrabackup_info](files-created-by-mariabackup.md#xtrabackup_info) file.
+If a backup is a [incremental backup](incremental-backup-and-restore-with-mariadb-backup.md), then mariadb-backup will record that detail in the [xtrabackup_info](files-created-by-mariadb-backup.md#xtrabackup_info) file.
 
 ### `--incremental-dir`
 
@@ -547,11 +547,11 @@ Defines whether you want to take an incremental backup, based on another backup.
 Using this option with [--prepare](#-prepare) command option makes the operation incremental rather than a complete overwrite. mariadb-backup will apply `.delta` files and log files into the target directory.
 
 ```bash
-$ mariabackup --prepare \
+$ mariadb-backup --prepare \
       --increment-dir=backups/
 ```
 
-If a backup is a [incremental backup](incremental-backup-and-restore-with-mariabackup.md), then mariadb-backup will record that detail in the [xtrabackup_info](files-created-by-mariabackup.md#xtrabackup_info) file.
+If a backup is a [incremental backup](incremental-backup-and-restore-with-mariadb-backup.md), then mariadb-backup will record that detail in the [xtrabackup_info](files-created-by-mariadb-backup.md#xtrabackup_info) file.
 
 ### `--incremental-force-scan`
 
@@ -560,7 +560,7 @@ Defines whether you want to force a full scan for incremental backups.
 When using mariadb-backup to perform an incremental backup, this option forces it to also perform a full scan of the data pages being backed up, even when there's bitmap data on the changes. MariaDB does not support changed page bitmaps, so this option is useless in those versions. See [MDEV-18985](https://jira.mariadb.org/browse/MDEV-18985) for more information.
 
 ```bash
-$ mariabackup --backup \
+$ mariadb-backup --backup \
      --incremental-basedir=/path/to/target \
      --incremental-force-scan
 ```
@@ -576,13 +576,13 @@ Defines a logical name for the backup.
 mariadb-backup can store data about its operations on the MariaDB Server. Using this option, you can define the logical name it uses in identifying the backup.
 
 ```bash
-$ mariabackup --backup \
+$ mariadb-backup --backup \
      --incremental-history-name=morning_backup
 ```
 
 Currently, the table it uses by default is named `mysql.mariadb_backup_history`. Prior to [MariaDB 10.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-11-series/what-is-mariadb-1011), the default table was `PERCONA_SCHEMA.xtrabackup_history`.
 
-mariadb-backup will also record this in the [xtrabackup_info](files-created-by-mariabackup.md#xtrabackup_info) file.
+mariadb-backup will also record this in the [xtrabackup_info](files-created-by-mariadb-backup.md#xtrabackup_info) file.
 
 ### `--incremental-history-uuid`
 
@@ -595,13 +595,13 @@ Defines a UUID for the backup.
 mariadb-backup can store data about its operations on the MariaDB Server. Using this option, you can define the UUID it uses in identifying a previous backup to increment from. It checks [--incremental-history-name](#-incremental-history-name), [--incremental-basedir](#-incremental-basedir), and [--incremental-lsn](#-incremental-lsn). If mariadb-backup fails to find a valid lsn, it generates an error.
 
 ```bash
-$ mariabackup --backup \
+$ mariadb-backup --backup \
       --incremental-history-uuid=main-backup012345678
 ```
 
 Currently, the table it uses is named `PERCONA_SCHEMA.xtrabackup_history`, but expect that name to change in future releases. See [MDEV-19246](https://jira.mariadb.org/browse/MDEV-19246) for more information.
 
-mariadb-backup will also record this in the [xtrabackup_info](files-created-by-mariabackup.md#xtrabackup_info) file.
+mariadb-backup will also record this in the [xtrabackup_info](files-created-by-mariadb-backup.md#xtrabackup_info) file.
 
 ### `--incremental-lsn`
 
@@ -622,13 +622,13 @@ Deprecated
 Enables `innobackupex` mode, which is a compatibility mode.
 
 ```bash
-$ mariabackup --innobackupex
+$ mariadb-backup --innobackupex
 ```
 
 In `innobackupex` mode, mariadb-backup has the following differences:
 
 * To prepare a backup, the [--apply-log](#-apply-log) option is used instead of the [--prepare](#-prepare) option.
-* To create an [incremental backup](incremental-backup-and-restore-with-mariabackup.md), the [--incremental](#-incremental) option is supported.
+* To create an [incremental backup](incremental-backup-and-restore-with-mariadb-backup.md), the [--incremental](#-incremental) option is supported.
 * The [--no-timestamp](#-no-timestamp) option is supported.
 * To create a [partial backup](broken-reference), the [--include](#--include) option is used instead of the [--tables](#-tables) option.
 * To create a [partial backup](broken-reference), the [--databases](#--databases) option can still be used, but it's behavior changes slightly.
@@ -647,7 +647,7 @@ Enables InnoDB Adaptive Hash Index.
 mariadb-backup initializes its own embedded instance of InnoDB using the same configuration as defined in the configuration file. Using this option you can explicitly enable the InnoDB Adaptive Hash Index. This feature is enabled by default for mariadb-backup. If you want to disable it, use [--skip-innodb-adaptive-hash-index](#-skip-innodb-adaptive-hash-index).
 
 ```bash
-$ mariabackup --backup \
+$ mariadb-backup --backup \
       --innodb-adaptive-hash-index
 ```
 
@@ -662,7 +662,7 @@ Defines the increment in megabytes for auto-extending the size of tablespace fil
 mariadb-backup initializes its own embedded instance of InnoDB using the same configuration as defined in the configuration file. Using this option, you can set the increment in megabytes for automatically extending the size of tablespace data file in InnoDB.
 
 ```bash
-$ mariabackup --backup \
+$ mariadb-backup --backup \
      --innodb-autoextend-increment=35
 ```
 
@@ -681,7 +681,7 @@ Defines the memory buffer size InnoDB uses the cache data and indexes of the tab
 mariadb-backup initializes its own embedded instance of InnoDB using the same configuration as defined in the configuration file. Using this option, you can configure the buffer pool for InnoDB operations.
 
 ```bash
-$ mariabackup --backup \
+$ mariadb-backup --backup \
       --innodb-buffer-pool-size=124M
 ```
 
@@ -703,7 +703,7 @@ In earlier versions, it is used to define the checksum algorithm.
 mariadb-backup initializes its own embedded instance of InnoDB using the same configuration as defined in the configuration file. Using this option, you can specify the algorithm mariadb-backup uses when checksumming on InnoDB tables. Currently, MariaDB supports the following algorithms `CRC32`, `STRICT_CRC32`, `INNODB`, `STRICT_INNODB`, `NONE`, `STRICT_NONE`.
 
 ```bash
-$ mariabackup --backup \
+$ mariadb-backup --backup \
       ---innodb-checksum-algorithm=strict_innodb
 ```
 
@@ -718,7 +718,7 @@ Defines the path to individual data files.
 mariadb-backup initializes its own embedded instance of InnoDB using the same configuration as defined in the configuration file. Using this option you can define the path to InnoDB data files. Each path is appended to the [--innodb-data-home-dir](#-innodb-data-home-dir) option.
 
 ```bash
-$ mariabackup --backup \
+$ mariadb-backup --backup \
      --innodb-data-file-path=ibdata1:13M:autoextend \
      --innodb-data-home-dir=/var/dbs/mysql/data
 ```
@@ -734,7 +734,7 @@ Defines the home directory for InnoDB data files.
 mariadb-backup initializes its own embedded instance of InnoDB using the same configuration as defined in the configuration file. Using this option you can define the path to the directory containing InnoDB data files. You can specific the files using the [--innodb-data-file-path](#-innodb-data-file-path) option.
 
 ```bash
-$ mariabackup --backup \
+$ mariadb-backup --backup \
      --innodb-data-file-path=ibdata1:13M:autoextend \
      --innodb-data-home-dir=/var/dbs/mysql/data
 ```
@@ -746,7 +746,7 @@ Enables doublewrites for InnoDB tables.
 mariadb-backup initializes its own embedded instance of InnoDB using the same configuration as defined in the configuration file. When using this option, mariadb-backup improves fault tolerance on InnoDB tables with a doublewrite buffer. By default, this feature is enabled. Use this option to explicitly enable it. To disable doublewrites, use the [--skip-innodb-doublewrite](#-skip-innodb-doublewrite) option.
 
 ```bash
-$ mariabackup --backup \
+$ mariadb-backup --backup \
      --innodb-doublewrite
 ```
 
@@ -767,7 +767,7 @@ Defines the number of file I/O threads in InnoDB.
 mariadb-backup initializes its own embedded instance of InnoDB using the same configuration as defined in the configuration file. Using this option, you can define the number of file I/O threads mariadb-backup uses on InnoDB tables.
 
 ```bash
-$ mariabackup --backup \
+$ mariadb-backup --backup \
      --innodb-file-io-threads=5
 ```
 
@@ -792,7 +792,7 @@ Defines the data flush method. Ignored from [MariaDB 11.0](https://app.gitbook.c
 mariadb-backup initializes its own embedded instance of InnoDB using the same configuration as defined in the configuration file. Using this option, you can define the data flush method mariadb-backup uses with InnoDB tables.
 
 ```bash
-$ mariabackup --backup \
+$ mariadb-backup --backup \
       --innodb-flush-method==_DIRECT_NO_FSYNC
 ```
 
@@ -807,7 +807,7 @@ Defines the number of IOP's the utility can perform.
 mariadb-backup initializes its own embedded instance of InnoDB using the same configuration as defined in the configuration file. Using this option, you can limit the I/O activity for InnoDB background tasks. It should be set around the number of I/O operations per second that the system can handle, based on drive or drives being used.
 
 ```bash
-$ mariabackup --backup \
+$ mariadb-backup --backup \
      --innodb-io-capacity=200
 ```
 
@@ -818,7 +818,7 @@ Defines whether to include checksums in the InnoDB logs.
 mariadb-backup initializes its own embedded instance of InnoDB using the same configuration as defined in the configuration file. Using this option, you can explicitly set mariadb-backup to include checksums in the InnoDB logs. The feature is enabled by default. To disable it, use the [--skip-innodb-log-checksums](#-skip-innodb-log-checksums) option.
 
 ```bash
-$ mariabackup --backup \
+$ mariadb-backup --backup \
       --innodb-log-checksums
 ```
 
@@ -841,7 +841,7 @@ Defines the path to InnoDB log files.
 mariadb-backup initializes its own embedded instance of InnoDB using the same configuration as defined in the configuration file. Using this option, you can define the path to InnoDB log files.
 
 ```bash
-$ mariabackup --backup \
+$ mariadb-backup --backup \
      --innodb-log-group-home-dir=/path/to/logs
 ```
 
@@ -856,7 +856,7 @@ Defines the percentage of dirty pages allowed in the InnoDB buffer pool.
 mariadb-backup initializes its own embedded instance of InnoDB using the same configuration as defined in the configuration file. Using this option, you can define the maximum percentage of dirty, (that is, unwritten) pages that mariadb-backup allows in the InnoDB buffer pool.
 
 ```bash
-$ mariabackup --backup \
+$ mariadb-backup --backup \
      --innodb-max-dirty-pages-pct=80
 ```
 
@@ -871,7 +871,7 @@ Defines the number of files kept open at a time.
 mariadb-backup initializes its own embedded instance of InnoDB using the same configuration as defined in the configuration file. Using this option, you can set the maximum number of files InnoDB keeps open at a given time during backups.
 
 ```bash
-$ mariabackup --backup \
+$ mariadb-backup --backup \
       --innodb-open-files=10
 ```
 
@@ -886,7 +886,7 @@ Defines the universal page size.
 mariadb-backup initializes its own embedded instance of InnoDB using the same configuration as defined in the configuration file. Using this option, you can define the universal page size in bytes for mariadb-backup.
 
 ```bash
-$ mariabackup --backup \
+$ mariadb-backup --backup \
      --innodb-page-size=16k
 ```
 
@@ -901,7 +901,7 @@ Defines the number of background read I/O threads in InnoDB.
 mariadb-backup initializes its own embedded instance of InnoDB using the same configuration as defined in the configuration file. Using this option, you can set the number of I/O threads MariaDB uses when reading from InnoDB.
 
 ```bash
-$ mariabackup --backup \
+$ mariadb-backup --backup \
       --innodb-read-io-threads=4
 ```
 
@@ -916,7 +916,7 @@ Defines the directory for the undo tablespace files.
 mariadb-backup initializes its own embedded instance of InnoDB using the same configuration as defined in the configuration file. Using this option, you can define the path to the directory where you want MariaDB to store the undo tablespace on InnoDB tables. The path can be absolute.
 
 ```bash
-$ mariabackup --backup \
+$ mariadb-backup --backup \
      --innodb-undo-directory=/path/to/innodb_undo
 ```
 
@@ -931,7 +931,7 @@ Defines the number of undo tablespaces to use.
 mariadb-backup initializes its own embedded instance of InnoDB using the same configuration as defined in the configuration file. Using this option, you can define the number of undo tablespaces you want to use during the backup.
 
 ```bash
-$ mariabackup --backup \
+$ mariadb-backup --backup \
       --innodb-undo-tablespaces=10
 ```
 
@@ -942,7 +942,7 @@ Defines whether you want to use native AI/O.
 mariadb-backup initializes its own embedded instance of InnoDB using the same configuration as defined in the configuration file. Using this option, you can enable the use of the native asynchronous I/O subsystem. It is only available on Linux operating systems.
 
 ```bash
-$ mariabackup --backup \
+$ mariadb-backup --backup \
       --innodb-use-native-aio
 ```
 
@@ -957,7 +957,7 @@ Defines the number of background write I/O threads in InnoDB.
 mariadb-backup initializes its own embedded instance of InnoDB using the same configuration as defined in the configuration file. Using this option, you can set the number of background write I/O threads mariadb-backup uses.
 
 ```bash
-$ mariabackup --backup \
+$ mariadb-backup --backup \
      --innodb-write-io-threads=4
 ```
 
@@ -974,7 +974,7 @@ When mariadb-backup runs, it issues a `FLUSH TABLES WITH READ LOCK` statement. I
 The default value is 0, which causes mariadb-backup to not attempt killing any queries.
 
 ```bash
-$ mariabackup --backup \
+$ mariadb-backup --backup \
       --kill-long-queries-timeout=10
 ```
 
@@ -989,7 +989,7 @@ Defines the query type the utility can kill to unblock the global lock.
 When mariadb-backup encounters a query that sets a global lock, it can kill the query in order to free up MariaDB Server for the backup. Using this option, you can choose the types of query it kills: [SELECT](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/selecting-data/select.md), [UPDATE](../../../reference/sql-statements-and-structure/sql-statements/data-manipulation/changing-deleting-data/update.md), or both set with `ALL`. The default is `ALL`.
 
 ```bash
-$ mariabackup --backup \
+$ mariadb-backup --backup \
       --kill-long-query-type=UPDATE
 ```
 
@@ -1023,13 +1023,13 @@ Defines the copy interval between checks done by the log copying thread.
 Using this option, you can define the copy interval mariadb-backup uses between checks done by the log copying thread. The given value is in milliseconds.
 
 ```bash
-$ mariabackup --backup \
+$ mariadb-backup --backup \
       --log-copy-interval=50
 ```
 
 ### `--log-innodb-page-corruption`
 
-Continue backup if InnoDB corrupted pages are found. The pages are logged in `innodb_corrupted_pages` and backup is finished with error. [--prepare](mariabackup-options.md#-prepare) will try to fix corrupted pages. If `innodb_corrupted_pages` exists after [--prepare](mariabackup-options.md#-prepare) in base backup directory, backup still contains corrupted pages and can not be considered as consistent.
+Continue backup if InnoDB corrupted pages are found. The pages are logged in `innodb_corrupted_pages` and backup is finished with error. [--prepare](mariadb-backup-options.md#-prepare) will try to fix corrupted pages. If `innodb_corrupted_pages` exists after [--prepare](mariadb-backup-options.md#-prepare) in base backup directory, backup still contains corrupted pages and can not be considered as consistent.
 
 Added in [MariaDB 10.5.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-5-series/mariadb-1059-release-notes)
 
@@ -1042,7 +1042,7 @@ Using this command, mariadb-backup moves the backup from the target directory to
 Bear in mind, before you can restore a backup, you first need to run mariadb-backup with the [--prepare](#-prepare) option. In the case of full backups, this makes the files point-in-time consistent. With incremental backups, this applies the deltas to the base backup. Once the backup is prepared, you can run `--move-back` to apply it to MariaDB Server.
 
 ```bash
-$ mariabackup --move-back \
+$ mariadb-backup --move-back \
       --datadir=/var/mysql
 ```
 
@@ -1061,7 +1061,7 @@ When backing up Percona Server, mariadb-backup would use backup locks by default
 Deprecated and has no effect from [MariaDB 10.11.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-11-series/mariadb-10-11-8-release-notes), [MariaDB 11.0.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-11-0-series/mariadb-11-0-6-release-notes), [MariaDB 11.1.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-11-1-series/mariadb-11-1-5-release-notes) and [MariaDB 11.2.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-4-release-notes) as MariaDB will now always use backup locks for better performance. See [MDEV-32932](https://jira.mariadb.org/browse/MDEV-32932).
 
 ```bash
-$ mariabackup --backup --no-backup-locks
+$ mariadb-backup --backup --no-backup-locks
 ```
 
 ### `--no-lock`
@@ -1076,10 +1076,10 @@ Using this option causes mariadb-backup to disable table locks with the `FLUSH T
 * All tables you're backing up use the InnoDB storage engine.
 
 ```bash
-$ mariabackup --backup --no-lock
+$ mariadb-backup --backup --no-lock
 ```
 
-If you're considering `--no-lock` due to backups failing to acquire locks, this may be due to incoming replication events preventing the lock. Consider using the [--safe-slave-backup](mariabackup-options.md#-safe-slave-backup) option to momentarily stop the replica thread. This alternative may help the backup to succeed without resorting to `--no-lock`.
+If you're considering `--no-lock` due to backups failing to acquire locks, this may be due to incoming replication events preventing the lock. Consider using the [--safe-slave-backup](mariadb-backup-options.md#-safe-slave-backup) option to momentarily stop the replica thread. This alternative may help the backup to succeed without resorting to `--no-lock`.
 
 The --no-lock option only provides a consistent backup if the user ensures that no DDL or non-transactional table updates occur during the backup. The --no-lock option is not supported by MariaDB plc.
 
@@ -1094,7 +1094,7 @@ Disables version check.
 Using this option, you can disable mariadb-backup version check.
 
 ```bash
-$ mariabackup --backup --no-version-check
+$ mariadb-backup --backup --no-version-check
 ```
 
 ### `--open-files-limit`
@@ -1108,7 +1108,7 @@ Defines the maximum number of file descriptors.
 Using this option, you can define the maximum number of file descriptors mariadb-backup reserves with `setrlimit()`.
 
 ```bash
-$ mariabackup --backup \
+$ mariadb-backup --backup \
       --open-files-limit=
 ```
 
@@ -1133,7 +1133,7 @@ Defines the password to use to connect to MariaDB Server.
 When you run mariadb-backup, it connects to MariaDB Server in order to access and back up the databases and tables. Using this option, you can set the password mariadb-backup uses to access the server. To set the user, use the [--user](#-u-user) option.
 
 ```bash
-$ mariabackup --backup \
+$ mariadb-backup --backup \
       --user=root \
       --password=root_password
 ```
@@ -1149,7 +1149,7 @@ Defines the directory for server plugins.
 Using this option, you can define the path mariadb-backup reads for MariaDB Server plugins. It only uses it during the [--prepare](#-prepare) phase to load the encryption plugin. It defaults to the [plugin_dir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#plugin_dir) server system variable.
 
 ```bash
-$ mariabackup --backup \
+$ mariadb-backup --backup \
       --plugin-dir=/var/mysql/lib/plugin
 ```
 
@@ -1176,7 +1176,7 @@ Defines the server port to connect to.
 When you run mariadb-backup, it connects to MariaDB Server in order to access and back up your databases and tables. Using this option, you can set the port the utility uses to access the server over TCP/IP. To set the host, see the [--host](#-h-host) option. Use `mysql --help` for more details.
 
 ```bash
-$ mariabackup --backup \
+$ mariadb-backup --backup \
       --host=192.168.11.1 \
       --port=3306
 ```
@@ -1190,7 +1190,7 @@ Files that mariadb-backup generates during [--backup](#-backup) operations in th
 In the case of full backups, the files are not point in time consistent, since they were taken at different times. If you try to restore the database without first preparing the data, InnoDB rejects the new data as corrupt. Running mariadb-backup with the `--prepare` command readies the data so you can restore it to MariaDB Server. When working with incremental backups, you need to use the `--prepare` command and the [--incremental-dir](#-incremental-dir) option to update the base backup with the deltas from an incremental backup.
 
 ```bash
-$ mariabackup --prepare
+$ mariadb-backup --prepare
 ```
 
 Once the backup is ready, you can use the [--copy-back](#-copy-back) or the [--move-back](#-move-back) commands to restore the backup to the server.
@@ -1202,7 +1202,7 @@ Prints the utility argument list, then exits.
 Using this argument, MariaDB prints the argument list to stdout and then exits. You may find this useful in debugging to see how the options are set for the utility.
 
 ```bash
-$ mariabackup --print-defaults
+$ mariadb-backup --print-defaults
 ```
 
 ### `--print-param`
@@ -1212,7 +1212,7 @@ Prints the MariaDB Server options needed for copyback.
 Using this option, mariadb-backup prints to stdout the MariaDB Server options that the utility requires to run the [--copy-back](#-copy-back) command option.
 
 ```bash
-$ mariabackup --print-param
+$ mariadb-backup --print-param
 ```
 
 ### `--rollback-xa`
@@ -1232,7 +1232,7 @@ Defines whether to use rsync.
 During normal operation, mariadb-backup transfers local non-InnoDB files using a separate call to `cp` for each file. Using this option, you can optimize this process by performing this transfer with rsync, instead.
 
 ```bash
-$ mariabackup --backup --rsync
+$ mariadb-backup --backup --rsync
 ```
 
 This option is not compatible with the [--stream](#-stream) option.
@@ -1246,12 +1246,12 @@ Stops replica SQL threads for backups.
 When running mariadb-backup on a server that uses replication, you may occasionally encounter locks that block backups. Using this option, it stops replica SQL threads and waits until the `Slave_open_temp_tables` in the `SHOW STATUS` statement is zero. If there are no open temporary tables, the backup runs, otherwise the SQL thread starts and stops until there are no open temporary tables.
 
 ```bash
-$ mariabackup --backup \
+$ mariadb-backup --backup \
       --safe-slave-backup \
       --safe-slave-backup-timeout=500
 ```
 
-The backup fails if the `Slave_open_temp_tables` doesn't reach zero after the timeout period set by the [--safe-slave-backup-timeout](mariabackup-options.md#-safe-slave-backup-timeout) option.
+The backup fails if the `Slave_open_temp_tables` doesn't reach zero after the timeout period set by the [--safe-slave-backup-timeout](mariadb-backup-options.md#-safe-slave-backup-timeout) option.
 
 ### `--safe-slave-backup-timeout`
 
@@ -1261,10 +1261,10 @@ Defines the timeout for replica backups.
 --safe-slave-backup-timeout=#
 ```
 
-When running mariadb-backup on a server that uses replication, you may occasionally encounter locks that block backups. With the [--safe-slave-backup](mariabackup-options.md#-safe-slave-backup) option, it waits until the `Slave_open_temp_tables` in the `SHOW STATUS` statement reaches zero. Using this option, you set how long it waits. It defaults to 300.
+When running mariadb-backup on a server that uses replication, you may occasionally encounter locks that block backups. With the [--safe-slave-backup](mariadb-backup-options.md#-safe-slave-backup) option, it waits until the `Slave_open_temp_tables` in the `SHOW STATUS` statement reaches zero. Using this option, you set how long it waits. It defaults to 300.
 
 ```bash
-$ mariabackup --backup \
+$ mariadb-backup --backup \
       --safe-slave-backup \
       --safe-slave-backup-timeout=500
 ```
@@ -1273,10 +1273,10 @@ $ mariabackup --backup \
 
 Refuses client connections to servers using the older protocol.
 
-Using this option, you can set it explicitly to refuse client connections to the server when using the older protocol, from before 4.1.1. This feature is enabled by default. Use the [--skip-secure-auth](mariabackup-options.md#-skip-secure-auth) option to disable it.
+Using this option, you can set it explicitly to refuse client connections to the server when using the older protocol, from before 4.1.1. This feature is enabled by default. Use the [--skip-secure-auth](mariadb-backup-options.md#-skip-secure-auth) option to disable it.
 
 ```bash
-$ mariabackup --backup --secure-auth
+$ mariadb-backup --backup --secure-auth
 ```
 
 ### `--skip-innodb-adaptive-hash-index`
@@ -1286,7 +1286,7 @@ Disables InnoDB Adaptive Hash Index.
 mariadb-backup initializes its own embedded instance of InnoDB using the same configuration as defined in the configuration file. Using this option you can explicitly disable the InnoDB Adaptive Hash Index. This feature is enabled by default for mariadb-backup. If you want to explicitly enable it, use [--innodb-adaptive-hash-index](#-innodb-adaptive-hash-index).
 
 ```bash
-$ mariabackup --backup \
+$ mariadb-backup --backup \
       --skip-innodb-adaptive-hash-index
 ```
 
@@ -1297,7 +1297,7 @@ Disables doublewrites for InnoDB tables.
 mariadb-backup initializes its own embedded instance of InnoDB using the same configuration as defined in the configuration file. When doublewrites are enabled, InnoDB improves fault tolerance with a doublewrite buffer. By default this feature is turned on. Using this option you can disable it for mariadb-backup. To explicitly enable doublewrites, use the [--innodb-doublewrite](#-innodb-doublewrite) option.
 
 ```bash
-$ mariabackup --backup \
+$ mariadb-backup --backup \
      --skip-innodb-doublewrite
 ```
 
@@ -1314,7 +1314,7 @@ Refuses client connections to servers using the older protocol.
 Using this option, you can set it accept client connections to the server when using the older protocol, from before 4.1.1. By default, it refuses these connections. Use the [--secure-auth](#-secure-auth) option to explicitly enable it.
 
 ```bash
-$ mariabackup --backup --skip-secure-auth
+$ mariadb-backup --backup --skip-secure-auth
 ```
 
 ### `--slave-info`
@@ -1323,12 +1323,12 @@ Prints the binary log position and the name of the primary server.
 
 If the server is a [replica](broken-reference), then this option causes mariadb-backup to print the hostname of the replica's replication primary and the [binary log](../../../server-management/server-monitoring-logs/binary-log/) file and position of the [replica's SQL thread](../../../ha-and-performance/standard-replication/replication-threads.md#replica-sql-thread) to `stdout`.
 
-This option also causes mariadb-backup to record this information as a [CHANGE MASTER](../../../reference/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) command that can be used to set up a new server as a replica of the original server's primary after the backup has been restored. This information will be written to to the [xtrabackup\_slave\_info](files-created-by-mariabackup.md#xtrabackup_slave_info) file.
+This option also causes mariadb-backup to record this information as a [CHANGE MASTER](../../../reference/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) command that can be used to set up a new server as a replica of the original server's primary after the backup has been restored. This information will be written to to the [xtrabackup\_slave\_info](files-created-by-mariadb-backup.md#xtrabackup_slave_info) file.
 
 mariadb-backup does **not** check if [GTIDs](../../../ha-and-performance/standard-replication/gtid.md) are being used in replication. It takes a shortcut and assumes that if the [gtid\_slave\_pos](../../../ha-and-performance/standard-replication/gtid.md#gtid_slave_pos) system variable is non-empty, then it writes the [CHANGE MASTER](../../../reference/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) command with the [MASTER\_USE\_GTID](../../../reference/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md#master_use_gtid) option set to `slave_pos`. Otherwise, it writes the [CHANGE MASTER](../../../reference/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) command with the [MASTER\_LOG\_FILE](../../../reference/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md#master_log_file) and [MASTER\_LOG\_POS](../../../reference/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md#master_log_pos) options using the primary's [binary log](../../../server-management/server-monitoring-logs/binary-log/) file and position. See [MDEV-19264](https://jira.mariadb.org/browse/MDEV-19264) for more information.
 
 ```bash
-$ mariabackup --slave-info
+$ mariadb-backup --slave-info
 ```
 
 ### `-S, --socket`
@@ -1342,7 +1342,7 @@ Defines the socket for connecting to local database.
 Using this option, you can define the UNIX domain socket you want to use when connecting to a local database server. The option accepts a string argument. For more information, see the `mysql --help` command.
 
 ```bash
-$ mariabackup --backup \
+$ mariadb-backup --backup \
       --socket=/var/mysql/mysql.sock
 ```
 
@@ -1369,7 +1369,7 @@ Defines a path to a PEM file that should contain one or more X509 certificates f
 This option is usually used with other TLS options. For example:
 
 ```bash
-$ mariabackup --backup \
+$ mariadb-backup --backup \
    --ssl-cert=/etc/my.cnf.d/certificates/client-cert.pem \
    --ssl-key=/etc/my.cnf.d/certificates/client-key.pem \
    --ssl-ca=/etc/my.cnf.d/certificates/ca.pem
@@ -1377,7 +1377,7 @@ $ mariabackup --backup \
 
 See [Secure Connections Overview: Certificate Authorities (CAs)](../../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/secure-connections-overview.md#certificate-authorities-cas) for more information.
 
-This option implies the [--ssl](mariabackup-options.md#-ssl) option.
+This option implies the [--ssl](mariadb-backup-options.md#-ssl) option.
 
 ### `--ssl-capath`
 
@@ -1390,7 +1390,7 @@ Defines a path to a directory that contains one or more PEM files that should ea
 This option is usually used with other TLS options. For example:
 
 ```bash
-$ mariabackup --backup \
+$ mariadb-backup --backup \
    --ssl-cert=/etc/my.cnf.d/certificates/client-cert.pem \
    --ssl-key=/etc/my.cnf.d/certificates/client-key.pem \
    --ssl-ca=/etc/my.cnf.d/certificates/ca.pem \
@@ -1401,7 +1401,7 @@ The directory specified by this option needs to be run through the [openssl reha
 
 See [Secure Connections Overview: Certificate Authorities (CAs)](../../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/secure-connections-overview.md#certificate-authorities-cas) for more information
 
-This option implies the [--ssl](mariabackup-options.md#-ssl) option.
+This option implies the [--ssl](mariadb-backup-options.md#-ssl) option.
 
 ### `--ssl-cert`
 
@@ -1414,13 +1414,13 @@ Defines a path to the X509 certificate file to use for [TLS](../../../security/s
 This option is usually used with other TLS options. For example:
 
 ```bash
-$ mariabackup --backup \
+$ mariadb-backup --backup \
    --ssl-cert=/etc/my.cnf.d/certificates/client-cert.pem \
    --ssl-key=/etc/my.cnf.d/certificates/client-key.pem \
    --ssl-ca=/etc/my.cnf.d/certificates/ca.pem
 ```
 
-This option implies the [--ssl](mariabackup-options.md#-ssl) option.
+This option implies the [--ssl](mariadb-backup-options.md#-ssl) option.
 
 ### `--ssl-cipher`
 
@@ -1433,7 +1433,7 @@ Defines the list of permitted ciphers or cipher suites to use for [TLS](../../..
 This option is usually used with other TLS options. For example:
 
 ```bash
-$ mariabackup --backup \
+$ mariadb-backup --backup \
    --ssl-cert=/etc/my.cnf.d/certificates/client-cert.pem \
    --ssl-key=/etc/my.cnf.d/certificates/client-key.pem \
    --ssl-ca=/etc/my.cnf.d/certificates/ca.pem
@@ -1442,7 +1442,7 @@ $ mariabackup --backup \
 
 To determine if the server restricts clients to specific ciphers, check the [ssl\_cipher](../../../security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/ssltls-system-variables.md#ssl_cipher) system variable.
 
-This option implies the [--ssl](mariabackup-options.md#-ssl) option.
+This option implies the [--ssl](mariadb-backup-options.md#-ssl) option.
 
 ### `--ssl-crl`
 
@@ -1455,7 +1455,7 @@ Defines a path to a PEM file that should contain one or more revoked X509 certif
 This option is usually used with other TLS options. For example:
 
 ```bash
-$ mariabackup --backup \
+$ mariadb-backup --backup \
    --ssl-cert=/etc/my.cnf.d/certificates/client-cert.pem \
    --ssl-key=/etc/my.cnf.d/certificates/client-key.pem \
    --ssl-ca=/etc/my.cnf.d/certificates/ca.pem \
@@ -1477,7 +1477,7 @@ Defines a path to a directory that contains one or more PEM files that should ea
 This option is usually used with other TLS options. For example:
 
 ```bash
-$ mariabackup --backup \
+$ mariadb-backup --backup \
    --ssl-cert=/etc/my.cnf.d/certificates/client-cert.pem \
    --ssl-key=/etc/my.cnf.d/certificates/client-key.pem \
    --ssl-ca=/etc/my.cnf.d/certificates/ca.pem \
@@ -1501,13 +1501,13 @@ Defines a path to a private key file to use for [TLS](../../../security/securing
 This option is usually used with other TLS options. For example:
 
 ```bash
-$ mariabackup --backup \
+$ mariadb-backup --backup \
    --ssl-cert=/etc/my.cnf.d/certificates/client-cert.pem \
    --ssl-key=/etc/my.cnf.d/certificates/client-key.pem \
    --ssl-ca=/etc/my.cnf.d/certificates/ca.pem
 ```
 
-This option implies the [--ssl](mariabackup-options.md#-ssl) option.
+This option implies the [--ssl](mariadb-backup-options.md#-ssl) option.
 
 ### `--ssl-verify-server-cert`
 
@@ -1516,7 +1516,7 @@ Enables [server certificate verification](../../../security/securing-mariadb/sec
 This option is usually used with other TLS options. For example:
 
 ```bash
-$ mariabackup --backup \
+$ mariadb-backup --backup \
    --ssl-cert=/etc/my.cnf.d/certificates/client-cert.pem \
    --ssl-key=/etc/my.cnf.d/certificates/client-key.pem \
    --ssl-ca=/etc/my.cnf.d/certificates/ca.pem \
@@ -1534,7 +1534,7 @@ Streams backup files to stdout.
 Using this command option, you can set mariadb-backup to stream the backup files to stdout in the given format. Currently, the supported format is `xbstream`.
 
 ```bash
-$ mariabackup --stream=xbstream > backup.xb
+$ mariadb-backup --stream=xbstream > backup.xb
 ```
 
 To extract all files from the xbstream archive into a directory use the `mbstream` utility
@@ -1543,7 +1543,7 @@ To extract all files from the xbstream archive into a directory use the `mbstrea
 $ mbstream  -x < backup.xb
 ```
 
-If a backup is streamed, then mariadb-backup will record the format in the [xtrabackup\_info](files-created-by-mariabackup.md#xtrabackup_info) file.
+If a backup is streamed, then mariadb-backup will record the format in the [xtrabackup\_info](files-created-by-mariadb-backup.md#xtrabackup_info) file.
 
 ### `--tables`
 
@@ -1553,16 +1553,16 @@ Defines the tables you want to include in the backup.
 --tables=REGEX
 ```
 
-Using this option, you can define what tables you want mariadb-backup to back up from the database. The table values are defined using Regular Expressions. To define the tables you want to exclude from the backup, see the [--tables-exclude](mariabackup-options.md#-tables-exclude) option.
+Using this option, you can define what tables you want mariadb-backup to back up from the database. The table values are defined using Regular Expressions. To define the tables you want to exclude from the backup, see the [--tables-exclude](mariadb-backup-options.md#-tables-exclude) option.
 
 ```bash
-$ mariabackup --backup \
+$ mariadb-backup --backup \
      --databases=example
      --tables=nodes_* \
      --tables-exclude=nodes_tmp
 ```
 
-If a backup is a [partial backup](broken-reference), then mariadb-backup will record that detail in the [xtrabackup\_info](files-created-by-mariabackup.md#xtrabackup_info) file.
+If a backup is a [partial backup](broken-reference), then mariadb-backup will record that detail in the [xtrabackup\_info](files-created-by-mariadb-backup.md#xtrabackup_info) file.
 
 ### `--tables-exclude`
 
@@ -1572,16 +1572,16 @@ Defines the tables you want to exclude from the backup.
 --tables-exclude=REGEX
 ```
 
-Using this option, you can define what tables you want mariadb-backup to exclude from the backup. The table values are defined using Regular Expressions. To define the tables you want to include from the backup, see the [--tables](mariabackup-options.md#-tables) option.
+Using this option, you can define what tables you want mariadb-backup to exclude from the backup. The table values are defined using Regular Expressions. To define the tables you want to include from the backup, see the [--tables](mariadb-backup-options.md#-tables) option.
 
 ```bash
-$ mariabackup --backup \
+$ mariadb-backup --backup \
      --databases=example
      --tables=nodes_* \
      --tables-exclude=nodes_tmp
 ```
 
-If a backup is a [partial backup](broken-reference), then mariadb-backup will record that detail in the [xtrabackup\_info](files-created-by-mariabackup.md#xtrabackup_info) file.
+If a backup is a [partial backup](broken-reference), then mariadb-backup will record that detail in the [xtrabackup\_info](files-created-by-mariadb-backup.md#xtrabackup_info) file.
 
 ### `--tables-file`
 
@@ -1594,12 +1594,12 @@ Defines path to file with tables for backups.
 Using this option, you can set a path to a file listing the tables you want to back up. mariadb-backup iterates over each line in the file. The format is `database.table`.
 
 ```bash
-$ mariabackup --backup \
+$ mariadb-backup --backup \
      --databases=example \
      --tables-file=/etc/mysql/backup-file
 ```
 
-If a backup is a [partial backup](broken-reference), then mariadb-backup will record that detail in the [xtrabackup\_info](files-created-by-mariabackup.md#xtrabackup_info) file.
+If a backup is a [partial backup](broken-reference), then mariadb-backup will record that detail in the [xtrabackup\_info](files-created-by-mariadb-backup.md#xtrabackup_info) file.
 
 ### `--target-dir`
 
@@ -1612,7 +1612,7 @@ Defines the destination directory.
 Using this option you can define the destination directory for the backup. mariadb-backup writes all backup files to this directory. mariadb-backup will create the directory, if it does not exist (but it will not create the full path recursively, i.e. at least parent directory if the --target-dir must exist=
 
 ```bash
-$ mariabackup --backup \
+$ mariadb-backup --backup \
        --target-dir=/data/backups
 ```
 
@@ -1624,7 +1624,7 @@ Defines the limit for I/O operations per second in IOS values.
 --throttle=#
 ```
 
-Using this option, you can set a limit on the I/O operations mariadb-backup performs per second in IOS values. It is only used during the [--backup](mariabackup-options.md#-backup) command option.
+Using this option, you can set a limit on the I/O operations mariadb-backup performs per second in IOS values. It is only used during the [--backup](mariadb-backup-options.md#-backup) command option.
 
 ### `--tls-version`
 
@@ -1637,7 +1637,7 @@ This option accepts a comma-separated list of TLS protocol versions. A TLS proto
 This option is usually used with other TLS options. For example:
 
 ```bash
-$ mariabackup --backup \
+$ mariadb-backup --backup \
    --ssl-cert=/etc/my.cnf.d/certificates/client-cert.pem \
    --ssl-key=/etc/my.cnf.d/certificates/client-key.pem \
    --ssl-ca=/etc/my.cnf.d/certificates/ca.pem \
@@ -1657,7 +1657,7 @@ Defines path for temporary files.
 Using this option, you can define the path to a directory mariadb-backup uses in writing temporary files. If you want to use more than one, separate the values by a semicolon (that is, `;`). When passing multiple temporary directories, it cycles through them using round-robin.
 
 ```bash
-$ mariabackup --backup \
+$ mariadb-backup --backup \
      --tmpdir=/data/tmp;/tmp
 ```
 
@@ -1672,7 +1672,7 @@ Defines the buffer pool size that is used during the prepare stage.
 Using this option, you can define the buffer pool size for mariadb-backup. Use it instead of `buffer_pool_size`.
 
 ```bash
-$ mariabackup --prepare \
+$ mariadb-backup --prepare \
       --use-memory=124M
 ```
 
@@ -1688,7 +1688,7 @@ Defines the username for connecting to the MariaDB Server.
 When mariadb-backup runs, it connects to the specified MariaDB Server to get its backups. Using this option, you can define the database user used for authentication. Starting from [MariaDB 10.5.24](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-5-series/mariadb-10-5-24-release-notes), [MariaDB 10.6.17](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-6-series/mariadb-10-6-17-release-notes), [MariaDB 10.11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-10-11-series/mariadb-10-11-7-release-notes), [MariaDB 11.0.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-11-0-series/mariadb-11-0-5-release-notes), [MariaDB 11.1.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-11-1-series/mariadb-11-1-4-release-notes), [MariaDB 11.2.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-3-release-notes), [MariaDB 11.3.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-11-3-rolling-releases/mariadb-11-3-2-release-notes), [MariaDB 11.4.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/mariadb-11-4-series/mariadb-11-4-1-release-notes), if the `--user` option is ommited, the user name is detected from the OS.
 
 ```bash
-$ mariabackup --backup \
+$ mariadb-backup --backup \
       --user=root \
       --password=root_passwd
 ```
@@ -1698,7 +1698,7 @@ $ mariabackup --backup \
 Displays verbose output
 
 ```bash
-$ mariabackup --verbose
+$ mariadb-backup --verbose
 ```
 
 ### `--version`
@@ -1708,7 +1708,7 @@ Prints version information.
 Using this option, you can print the mariadb-backup version information to stdout.
 
 ```bash
-$ mariabackup --version
+$ mariadb-backup --version
 ```
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>

@@ -63,9 +63,9 @@ MariaDB Enterprise Backup copies tablespaces from disk. When data-at-rest encryp
 MariaDB Enterprise Backup supports TLS encryption for communications with MariaDB Enterprise Server. To enable TLS encryption, set TLS options from the command-line or in the configuration file:
 
 ```bash
-# mariabackup --backup \
+# mariadb-backup --backup \
       --target-dir=/data/backups/full \
-      --user=mariabackup \
+      --user=mariadb-backup \
       --password=mbu_passwd \
       --ssl-ca=/etc/my.cnf.d/certs/ca.pem \
       --ssl-cert=/etc/my.cnf.d/certs/client-cert.pem \

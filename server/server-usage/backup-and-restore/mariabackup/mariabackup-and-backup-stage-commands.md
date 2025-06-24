@@ -66,8 +66,8 @@ mariadb-backup from MariaDB Community Server performs the following tasks in the
 * Create a [MyRocks](../../../reference/storage-engines/myrocks/) checkpoint using the [rocksdb_create_checkpoint](../../../reference/storage-engines/myrocks/myrocks-system-variables.md#rocksdb_create_checkpoint) system variable.
 * Copy the tail of some transaction logs.
   * The tail of the [InnoDB redo log](../../../reference/storage-engines/innodb/innodb-redo-log.md) (i.e. `ib_logfileN` files) will be copied for [InnoDB](../../../reference/storage-engines/innodb/) tables.
-* Save the [binary log](../../../server-management/server-monitoring-logs/binary-log/) position to [xtrabackup_binlog_info](files-created-by-mariabackup.md#xtrabackup_binlog_info).
-* Save the [Galera Cluster](../../../../en/galera/) state information to [xtrabackup_galera_info](files-created-by-mariabackup.md#xtrabackup_galera_info).
+* Save the [binary log](../../../server-management/server-monitoring-logs/binary-log/) position to [xtrabackup_binlog_info](files-created-by-mariadb-backup.md#xtrabackup_binlog_info).
+* Save the [Galera Cluster](../../../../en/galera/) state information to [xtrabackup_galera_info](files-created-by-mariadb-backup.md#xtrabackup_galera_info).
 
 ### `BACKUP STAGE END` in MariaDB Community Server
 
@@ -146,8 +146,8 @@ mariadb-backup from MariaDB Enterprise Server performs the following tasks in th
 * Copy the tail of all transaction logs.
   * The tail of the [InnoDB redo log](../../../reference/storage-engines/innodb/innodb-redo-log.md) (i.e. `ib_logfileN` files) will be copied for [InnoDB](../../../reference/storage-engines/innodb/) tables.
   * The tail of the Aria redo log (i.e. `aria_log.N` files) will be copied for [Aria](../../../reference/storage-engines/aria/) tables.
-* Save the [binary log](../../../server-management/server-monitoring-logs/binary-log/) position to [xtrabackup_binlog_info](files-created-by-mariabackup.md#xtrabackup_binlog_info).
-* Save the [Galera Cluster](../../../../en/galera/) state information to [xtrabackup_galera_info](files-created-by-mariabackup.md#xtrabackup_galera_info).
+* Save the [binary log](../../../server-management/server-monitoring-logs/binary-log/) position to [xtrabackup_binlog_info](files-created-by-mariadb-backup.md#xtrabackup_binlog_info).
+* Save the [Galera Cluster](../../../../en/galera/) state information to [xtrabackup_galera_info](files-created-by-mariadb-backup.md#xtrabackup_galera_info).
 
 ### `BACKUP STAGE END` in MariaDB Enterprise Server
 

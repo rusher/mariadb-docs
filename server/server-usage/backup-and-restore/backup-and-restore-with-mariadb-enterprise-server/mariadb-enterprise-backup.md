@@ -2,7 +2,7 @@
 
 ## Overview
 
-Regular and reliable backups are essential to successful recovery of mission critical applications. [MariaDB Enterprise Server](../../../../en/mariadb-enterprise-server/) backup and restore operations are performed using [MariaDB Enterprise Backup](../mariabackup/), an enterprise-build of [MariaDB Backup](https://mariadb.com/kb/en/mariadb-backup-enterprise-docs).
+Regular and reliable backups are essential to successful recovery of mission critical applications. [MariaDB Enterprise Server](../../../../en/mariadb-enterprise-server/) backup and restore operations are performed using [MariaDB Enterprise Backup](../mariadb-backup/), an enterprise-build of [MariaDB Backup](https://mariadb.com/kb/en/mariadb-backup-enterprise-docs).
 
 MariaDB Enterprise Backup is compatible with MariaDB Enterprise Server 10.2, 10.3, 10.4, 10.5, and 10.6.
 
@@ -84,12 +84,12 @@ It is recommended that a dedicated user be created and authorized to perform bac
 MariaDB Backup 10.5 and later requires this user to have the `RELOAD, PROCESS, LOCK TABLES,` and `BINLOG MONITOR` privileges. (The BINLOG MONITOR privilege replaced the REPLICATION CLIENT privilege in MariaDB Enterprise Server 10.5.):
 
 ```sql
-CREATE USER 'mariabackup'@'localhost'
+CREATE USER 'mariadb-backup'@'localhost'
 IDENTIFIED BY 'mbu_passwd';
 
 GRANT RELOAD, PROCESS, LOCK TABLES, BINLOG MONITOR
 ON *.*
-TO 'mariabackup'@'localhost';
+TO 'mariadb-backup'@'localhost';
 ```
 
 In the above example, MariaDB Backup would run on the local system that runs MariaDB Enterprise Server. Where backups may be run against a remote server, the user authentication and authorization should be adjusted.
@@ -101,12 +101,12 @@ While MariaDB Backup requires a user for backup operations, no user is required 
 MariaDB Backup 10.4 and earlier requires this user to have the `RELOAD, PROCESS, LOCK TABLES,` and `REPLICATION CLIENT` privileges. (The BINLOG MONITOR privilege replaced the `REPLICATION CLIENT` privilege in MariaDB Enterprise Server 10.5.):
 
 ```sql
-CREATE USER 'mariabackup'@'localhost'
+CREATE USER 'mariadb-backup'@'localhost'
 IDENTIFIED BY 'mbu_passwd';
 
 GRANT RELOAD, PROCESS, LOCK TABLES, REPLICATION CLIENT
 ON *.*
-TO 'mariabackup'@'localhost';
+TO 'mariadb-backup'@'localhost';
 ```
 
 In the above example, MariaDB Backup would run on the local system that runs MariaDB Enterprise Server. Where backups may be run against a remote server, the user authentication and authorization should be adjusted.
@@ -123,14 +123,14 @@ When performing a full backup, MariaDB Backup makes a file-level copy of the Mar
 
 When you perform a full backup, MariaDB Backup writes the backup to the `--target-dir` path. The directory must be empty or non-existent and the operating system user account must have permission to write to that directory. A database user account is required to perform the backup.
 
-The version of `mariabackup` or `mariadb-backup` should be the same version as the MariaDB Enterprise Server version. When the version does not match the server version, errors can sometimes occur, or the backup can sometimes be unusable.
+The version of `mariadb-backup` or `mariadb-backup` should be the same version as the MariaDB Enterprise Server version. When the version does not match the server version, errors can sometimes occur, or the backup can sometimes be unusable.
 
-To create a backup, execute mariabackup or mariadb-backup with the `--backup` option, and provide the database user account credentials using the `--user` and `--password` options:
+To create a backup, execute mariadb-backup or mariadb-backup with the `--backup` option, and provide the database user account credentials using the `--user` and `--password` options:
 
 ```bash
-$ sudo mariabackup --backup \
+$ sudo mariadb-backup --backup \
       --target-dir=/data/backups/full \
-      --user=mariabackup \
+      --user=mariadb-backup \
       --password=mbu_passwd
 ```
 
@@ -142,10 +142,10 @@ A raw full backup is not [point-in-time consistent](https://mariadb.com/kb/en/ma
 
 The backup should be prepared with the same version of MariaDB Backup that was used to create the backup.
 
-To prepare the backup, execute mariabackup or mariadb-backup with the `--prepare` option:
+To prepare the backup, execute mariadb-backup or mariadb-backup with the `--prepare` option:
 
 ```bash
-$ sudo mariabackup --prepare \
+$ sudo mariadb-backup --prepare \
    --use-memory=34359738368 \
    --target-dir=/data/backups/full
 ```
@@ -163,7 +163,7 @@ To restore from a full backup:
 3. Restore from the "full" directory using the `--copy-back` option:
 
 ```bash
-# mariabackup --copy-back --target-dir=/data/backups/full
+# mariadb-backup --copy-back --target-dir=/data/backups/full
 ```
 
 MariaDB Backup writes to the data directory as the current user, which can be changed using `sudo`. To confirm that restored files are properly owned by the user that runs MariaDB Enterprise Server, run a command like this (adapted for the correct user/group):
@@ -195,10 +195,10 @@ Incremental backup is supported for InnoDB tables. Tables using other storage en
 To increment a full backup, use the `--incremental-basedir` option to indicate the path to the full backup and the `--target-dir` option to indicate where you want to write the incremental backup:
 
 ```bash
-# mariabackup --backup \
+# mariadb-backup --backup \
       --incremental-basedir=/data/backups/full \
       --target-dir=/data/backups/inc1 \
-      --user=mariabackup \
+      --user=mariadb-backup \
       --password=mbu_passwd
 ```
 
@@ -211,13 +211,13 @@ An incremental backup must be applied to a prepared full backup before it can be
 If your full backup directory is not yet prepared, run this to make it consistent:
 
 ```bash
-# mariabackup --prepare --target-dir=/data/backups/full
+# mariadb-backup --prepare --target-dir=/data/backups/full
 ```
 
 Then, using the prepared full backup, apply the first incremental backup's data to the full backup in an incremental preparation step:
 
 ```bash
-# mariabackup --prepare \
+# mariadb-backup --prepare \
       --target-dir=/data/backups/full \
       --incremental-dir=/data/backups/inc1
 ```
@@ -229,7 +229,7 @@ Once the incremental backup has been applied to the full backup, the full backup
 Once you have [prepared](https://mariadb.com/kb/en/mariadb-backup-enterprise-docs/#preparing-a-full-backup-for-recovery) the full backup directory with all the incremental changes you need (as described above), stop the MariaDB Community Server, [Empty](../../../server-management/backing-up-and-restoring-databases/backup-and-restore-with-mariadb-enterprise-server/mariadb-backup-enterprise-docs/#restore-requires-empty-data-directory) its data directory, and restore from the original full backup directory using the --copy-back option:
 
 ```bash
-# mariabackup --copy-back --target-dir=/data/backups/full
+# mariadb-backup --copy-back --target-dir=/data/backups/full
 ```
 
 MariaDB Backup writes files into the data directory using either the current user or root (in the case of a sudo operation), which may be different from the system user that runs the database. Run the following to recursively update the ownership of the restored files and directories:
@@ -261,9 +261,9 @@ Command-line options can be used to narrow the set of databases or tables to be 
 For example, you may wish to produce a partial backup, which excludes a specific database:
 
 ```bash
-# mariabackup --backup \
+# mariadb-backup --backup \
       --target-dir=/data/backups/part \
-      --user=mariabackup \
+      --user=mariadb-backup \
       --password=mbu_passwd \
       --database-exclude=test
 ```
@@ -271,10 +271,10 @@ For example, you may wish to produce a partial backup, which excludes a specific
 Partial backups can also be incremental:
 
 ```bash
-# mariabackup --backup \
+# mariadb-backup --backup \
       --incremental-basedir=/data/backups/part \
       --target-dir=/data/backups/part_inc1 \
-      --user=mariabackup \
+      --user=mariadb-backup \
       --password=mbu_passwd  \
       --database-exclude=test
 ```
@@ -288,13 +288,13 @@ A partial restore can be performed from a full backup or partial backup.
 The preparation step for either partial or full backup restoration requires the use of transportable tablespaces for InnoDB. As such, each prepare operation requires the --export option:
 
 ```bash
-# mariabackup --prepare --export --target-dir=/data/backups/part
+# mariadb-backup --prepare --export --target-dir=/data/backups/part
 ```
 
 When using a partial incremental backup for restore, the incremental data must be applied to its prior partial backup data before its data is complete. If performing partial incremental backups, run the prepare statement again to apply the incremental changes onto the partial backup that served as the base.
 
 ```bash
-# mariabackup --prepare --export \
+# mariadb-backup --prepare --export \
       --target-dir=/data/backups/part \
       --incremental-dir=/data/backups/part_inc1
 ```
@@ -520,7 +520,7 @@ Recovering from a backup restores the data directory at a specific point-in-time
 1. First, prepare the backup as you normally would for a [full](../../../server-management/backing-up-and-restoring-databases/backup-and-restore-with-mariadb-enterprise-server/mariadb-backup-enterprise-docs/#preparing-a-full-backup-for-recovery) or [incremental](https://mariadb.com/kb/en/mariadb-backup-enterprise-docs/#preparing-an-incremental-backup) backup:
 
 ```bash
-# mariabackup --prepare --target-dir=/data/backups/full
+# mariadb-backup --prepare --target-dir=/data/backups/full
 ```
 
 2. When MariaDB Backup runs on a MariaDB Community Server where binary logs is enabled, it stores binary log information in the xtrabackup\_binlog\_info file. Consult this file to find the name of the binary log position to use. In the following example, the log position is 321.
@@ -541,7 +541,7 @@ datadir=/var/lib/mysql_new
 4. Using MariaDB Backup, restore from the backup to the new data directory:
 
 ```bash
-# mariabackup --copy-back --target-dir=/data/backups/full
+# mariadb-backup --copy-back --target-dir=/data/backups/full
 ```
 
 5. Then change the owner to the MariaDB Community Server system user:

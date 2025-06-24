@@ -46,7 +46,7 @@ Start a dedicated thread in mariadb-backup to copy InnoDB redo log (`ib_logfile*
 ### Last Copy Phase
 
 * Copy `.frm`, `MyISAM`, `Aria` and other storage engine files
-* If `MyRocks` is used, create rocksdb checkpoint via "set rocksdb\_create\_checkpoint=$rocksdb\_data\_dir/mariabackup\_rocksdb\_checkpoint " command. The result of it is a directory with hardlinks to MyRocks files. Copy the checkpoint directory to the backup (or create hardlinks in backup directory is on the same partition as data directory). Remove the checkpoint directory.
+* If `MyRocks` is used, create rocksdb checkpoint via "set rocksdb\_create\_checkpoint=$rocksdb\_data\_dir/mariadb-backup\_rocksdb\_checkpoint " command. The result of it is a directory with hardlinks to MyRocks files. Copy the checkpoint directory to the backup (or create hardlinks in backup directory is on the same partition as data directory). Remove the checkpoint directory.
 * Copy tables that were created while the backup was running and do rename files that were changed during backup (since [MDEV-16791](https://jira.mariadb.org/browse/MDEV-16791))
 * Copy the rest of InnoDB redo log, stop redo-log-copy thread
 * Copy changes to Aria log files (They are append only, so this is easy to do) (TODO)
