@@ -85,7 +85,7 @@ The following options relate to how MariaDB command-line tools handles option fi
 | --defaults-extra-file=#   | Read this file after the global files are read.                                     |
 | --defaults-group-suffix=# | In addition to the default option groups, also read option groups with this suffix. |
 
-`mariadb-admin` is linked with [MariaDB Connector/C](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/about-mariadb-connector-c/README.md). However, MariaDB Connector/C does not yet handle the parsing of option files for this client. That is still performed by the server option file parsing code. See [MDEV-19035](https://jira.mariadb.org/browse/MDEV-19035) for more information.
+`mariadb-admin` is linked with [MariaDB Connector/C](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/connectors-quickstart-guides/mariadb-connector-c-guide). However, MariaDB Connector/C does not yet handle the parsing of option files for this client. That is still performed by the server option file parsing code. See [MDEV-19035](https://jira.mariadb.org/browse/MDEV-19035) for more information.
 
 **Option Groups**
 
