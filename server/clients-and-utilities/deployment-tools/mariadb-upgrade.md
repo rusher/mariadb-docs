@@ -6,7 +6,7 @@
 
 Prior to [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105), the client was called `mysql_upgrade`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
 
-You should run `mariadb-upgrade` after upgrading from one major MySQL/MariaDB release to another, such as [from MySQL 5.0 to MariaDB 10.4](../../server-management/install-and-upgrade-mariadb/migrating-to-mariadb/moving-from-mysql/migrating-to-mariadb-from-mysql-obsolete-articles/upgrading-to-mariadb-from-mysql-50-or-older.md) or [MariaDB 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/server/clients-and-utilities/broken-reference/README.md) to [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105). You also have to use `mariadb-upgrade` after a direct "horizontal" migration, for example from MySQL 5.5.40 to [MariaDB 5.5.40](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/mariadb-5540-release-notes). It's also safe to run `mariadb-upgrade` for minor upgrades, as if there are no incompatibilities nothing is changed.
+You should run `mariadb-upgrade` after upgrading from one major MySQL/MariaDB release to another, such as [from MySQL 5.0 to MariaDB 10.4](../../server-management/install-and-upgrade-mariadb/migrating-to-mariadb/moving-from-mysql/migrating-to-mariadb-from-mysql-obsolete-articles/upgrading-to-mariadb-from-mysql-50-or-older.md) or [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104) to [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105). You also have to use `mariadb-upgrade` after a direct "horizontal" migration, for example from MySQL 5.5.40 to [MariaDB 5.5.40](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/mariadb-5540-release-notes). It's also safe to run `mariadb-upgrade` for minor upgrades, as if there are no incompatibilities nothing is changed.
 
 It needs to be run as a user with write access to the data directory.
 
@@ -16,7 +16,7 @@ Starting from `mariadb-upgrade` 2.0, the user running the upgrade tool must have
 
 `mariadb-upgrade` is run after starting the new MariaDB server. Running it before you shut down the old version will not hurt anything and will allow you to make sure it works and figure out authentication for it ahead of time.
 
-It is recommended to make a [backup](https://github.com/mariadb-corporation/docs-server/blob/test/server/clients-and-utilities/broken-reference/README.md) of all the databases before running `mariadb-upgrade`.
+It is recommended to make a [backup](../../server-usage/backing-up-and-restoring-databases/) of all the databases before running `mariadb-upgrade`.
 
 In most cases, `mariadb-upgrade` should just take a few seconds. The main work of `mariadb-upgrade` is to:
 
