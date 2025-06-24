@@ -437,7 +437,7 @@ The shared local storage can be backed up by:
 
 ### Enterprise Server Data Directory
 
-MariaDB Enterprise ColumnStore can leverage the standard [MariaDB Enterprise Backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariabackup) utility to backup the Enterprise Server data directory.
+MariaDB Enterprise ColumnStore can leverage the standard [MariaDB Enterprise Backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariadb-backup) utility to backup the Enterprise Server data directory.
 
 The backup contains:
 

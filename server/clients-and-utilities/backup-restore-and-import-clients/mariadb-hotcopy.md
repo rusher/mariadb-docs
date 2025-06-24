@@ -72,7 +72,7 @@ shell> perldoc mariadb-hotcopy
 ## See Also
 
 * [mariadb-ldump](https://github.com/mariadb-corporation/docs-server/blob/test/server/clients-and-utilities/backup-restore-and-import-clients/mariadb-ldump/README.md)
-* [mariadb-backup](../../server-usage/backing-up-and-restoring-databases/mariabackup/)
+* [mariadb-backup](../../server-usage/backing-up-and-restoring-databases/mariadb-backup/)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

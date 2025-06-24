@@ -494,9 +494,9 @@ stored using the InnoDB storage engine.
 
 ## See Also
 
-* [mariadb-backup](../../server-usage/backing-up-and-restoring-databases/mariabackup/)
+* [mariadb-backup](../../server-usage/backing-up-and-restoring-databases/mariadb-backup/)
 * [MariaDB point-in-time recovery](https://www.youtube.com/watch?v=ezHmnNmmcDo) (video)
-* [MariaDB Enterprise Backup](../../server-usage/backing-up-and-restoring-databases/mariabackup/)
+* [MariaDB Enterprise Backup](../../server-usage/backing-up-and-restoring-databases/mariadb-backup/)
 * [Upgrading to a newer major version of MariaDB](https://www.youtube.com/watch?v=1kLIXN2DoEo) (video)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>

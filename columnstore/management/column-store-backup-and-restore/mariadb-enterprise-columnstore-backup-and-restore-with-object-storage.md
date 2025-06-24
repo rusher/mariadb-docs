@@ -16,7 +16,7 @@ If Enterprise ColumnStore is your [system of record](backup-and-restore-with-mar
 
 If Enterprise ColumnStore uses S3-compatible object storage for data and shared local storage for the [Storage Manager directory](https://github.com/mariadb-corporation/docs-server/blob/test/columnstore/column-store-backup-and-restore/mariadb-enterprise-columnstore-storage-architecture/README.md#storage-manager-directory), the following items must be backed up:
 
-* The MariaDB Data directory is backed up using [mariadb-backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariabackup).
+* The MariaDB Data directory is backed up using [mariadb-backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariadb-backup).
 * The S3 bucket must be backed up using the vendor's snapshot procedure.
 * The [Storage Manager directory](https://github.com/mariadb-corporation/docs-server/blob/test/columnstore/column-store-backup-and-restore/mariadb-enterprise-columnstore-storage-architecture/README.md#storage-manager-directory) must be backed up.
 
@@ -109,17 +109,17 @@ $ sudo mkdir -p /backups/columnstore/202101291600/
 $ sudo rsync -av /var/lib/columnstore/storagemanager /backups/columnstore/202101291600/
 ```
 
-5. Use [MariaDB Backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariabackup) to backup the MariaDB data directory:
+5. Use [MariaDB Backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariadb-backup) to backup the MariaDB data directory:
 
 ```
 $ sudo mkdir -p /backups/mariadb/202101291600/
 $ sudo mariadb-backup --backup \
    --target-dir=/backups/mariadb/202101291600/ \
-   --user=mariabackup \
+   --user=mariadb-backup \
    --password=mbu_passwd
 ```
 
-6. Use [MariaDB Backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariabackup) to prepare the backup:
+6. Use [MariaDB Backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariadb-backup) to prepare the backup:
 
 ```
 $ sudo mariadb-backup --prepare \
@@ -157,7 +157,7 @@ $ sudo rsync -av /backups/columnstore/202101291600/storagemanager/ /var/lib/colu
 $ sudo chown -R mysql:mysql /var/lib/columnstore/storagemanager
 ```
 
-4. Use [MariaDB Backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariabackup) to restore the backup of the MariaDB data directory:
+4. Use [MariaDB Backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariadb-backup) to restore the backup of the MariaDB data directory:
 
 ```
 $ sudo mariadb-backup --copy-back \

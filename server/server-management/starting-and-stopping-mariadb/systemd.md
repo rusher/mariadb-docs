@@ -464,7 +464,7 @@ This provides the following benefits for the user:
 * Each user has their own dedicated instance with the following benefits:
   * The instance is free from the database contention of neighbors on MariaDB shared resources (table cache, connections, etc)
   * The user is free to change their own configuration of MariaDB, within the limits and permissions of the service provider.
-  * Database service level backups, like mariabackup, are now directly available.
+  * Database service level backups, like mariadb-backup, are now directly available.
   * A user can install their own plugins.
   * The user can run a different database version to their neighbors.
   * If a user's neighbor triggers a fault in the server, the uder's instance isn't affected.

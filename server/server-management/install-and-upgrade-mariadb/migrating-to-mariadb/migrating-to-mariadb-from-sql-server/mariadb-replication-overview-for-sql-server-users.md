@@ -65,7 +65,7 @@ However, if there is at least one existing replica, it is better to use it to pr
 * A backup from the existing replica must be restored in the new replica;
 * The backup should include the system tables. In this way it will not be necessary to set the correct coordinates manually.
 
-For more information see [Setting Up Replication](../../../../ha-and-performance/standard-replication/setting-up-replication.md) and [Setting up a Replica with mariadb-backup](../../../../server-usage/backing-up-and-restoring-databases/mariabackup/setting-up-a-replica-with-mariabackup.md).
+For more information see [Setting Up Replication](../../../../ha-and-performance/standard-replication/setting-up-replication.md) and [Setting up a Replica with mariadb-backup](../../../../server-usage/backing-up-and-restoring-databases/mariadb-backup/setting-up-a-replica-with-mariadb-backup.md).
 
 ### Replication and Permissions
 
@@ -248,7 +248,7 @@ If a single transaction is bigger than half of the Galera cache, it needs to be 
 
 When a node is restarted (after a crash or for maintenance reasons), it will need to receive all the changes that were written by other nodes since the moment it was unreachable. A node is therefore chosen as a donor, possibly using the [gcssync\_donor](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/wsrep_provider_options#gcssync_donor) wsrep\_provider\_options flag.
 
-If possible, the donor will send all the recent changes, reading them from the Galera cache and on-demand pages. However, sometimes the Galera cache is not big enough to contain all the needed changes, or the on-demand pages have been overwritten because `gcache.keep_pages_size` is not big enough. In these cases, a [State Snapshot Transfer (SST)](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/galera-management/state-snapshot-transfers-ssts-in-galera-cluster) needs to be sent. This means that the donor will send the whole dataset to the restarted node. Most commonly, this happens using the [mariabackup method](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/galera-management/state-snapshot-transfers-ssts-in-galera-cluster/mariabackup-sst-method).
+If possible, the donor will send all the recent changes, reading them from the Galera cache and on-demand pages. However, sometimes the Galera cache is not big enough to contain all the needed changes, or the on-demand pages have been overwritten because `gcache.keep_pages_size` is not big enough. In these cases, a [State Snapshot Transfer (SST)](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/galera-management/state-snapshot-transfers-ssts-in-galera-cluster) needs to be sent. This means that the donor will send the whole dataset to the restarted node. Most commonly, this happens using the [mariadb-backup method](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/galera-management/state-snapshot-transfers-ssts-in-galera-cluster/mariadb-backup-sst-method).
 
 ### Flow Control
 

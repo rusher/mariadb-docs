@@ -184,7 +184,7 @@ cmake --build .
 ...
 [100%] Built target mariadbd
 [100%] Linking CXX executable mariadb-backup
-Creating mariabackup link
+Creating mariadb-backup link
 [100%] Built target mariadb-backup
 ```
 

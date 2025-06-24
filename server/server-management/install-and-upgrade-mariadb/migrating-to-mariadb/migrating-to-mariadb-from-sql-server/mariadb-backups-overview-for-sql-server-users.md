@@ -33,7 +33,7 @@ MariaDB also supports statements which make easy to write applications to obtain
 
 Since is it a 3rd party tool, it could be incompatible with some present or future MariaDB features.
 
-## Hot Backups (mariabackup)
+## Hot Backups (mariadb-backup)
 
 mariadb-backup is a tool for taking a backup of MariaDB files while MariaDB is working. A lock is only held for a small amount of time, so it is suitable to backup a server without causing disruptions. It works by taking corrupted backups and then bringing them to a consistent state by using the [InnoDB undo log](../../../../server-usage/storage-engines/innodb/innodb-undo-log.md). mariadb-backup also properly backups [MyRocks](../../../../server-usage/storage-engines/myrocks/) tables and non-transactional storage engines.
 
@@ -74,9 +74,9 @@ The page also shows how to edit the binary log before replaying it. This allows 
 * Edit the SQL file, erasing the unwanted statement.
 * Run the SQL file.
 
-### Incremental Backups with mariabackup
+### Incremental Backups with mariadb-backup
 
-The simplest way to take an incremental backup is to use mariadb-backup. This tool is able to take and restore incremental backups. For the complete procedure to use, see [Incremental Backup and Restore with mariadb-backup](../../../../server-usage/backing-up-and-restoring-databases/mariabackup/incremental-backup-and-restore-with-mariabackup.md).
+The simplest way to take an incremental backup is to use mariadb-backup. This tool is able to take and restore incremental backups. For the complete procedure to use, see [Incremental Backup and Restore with mariadb-backup](../../../../server-usage/backing-up-and-restoring-databases/mariadb-backup/incremental-backup-and-restore-with-mariadb-backup.md).
 
 mariadb-backup can run on both Linux and Windows systems.
 

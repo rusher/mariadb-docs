@@ -12,14 +12,14 @@ See [What's New in MariaDB Enterprise Server 11.4](https://app.gitbook.com/s/aEn
 
 Occasionally, issues can be encountered during upgrades. These issues can even potentially corrupt the database's data files, preventing you from easily reverting to the old installation. Therefore, it is generally best to perform a backup before upgrading. If an issue is encountered during the upgrade, you can use the backup to restore your MariaDB Server database to the old version. If the upgrade finishes without issue, then the backup can be deleted.
 
-The instructions below show how to perform a backup using [MariaDB Backup](../../../../server-usage/backing-up-and-restoring-databases/mariabackup/). For more information about backing up and restoring the database, please see the [Recovery Guide](../../../../server-usage/backing-up-and-restoring-databases/backup-and-restore-with-mariadb-enterprise-server/).
+The instructions below show how to perform a backup using [MariaDB Backup](../../../../server-usage/backing-up-and-restoring-databases/mariadb-backup/). For more information about backing up and restoring the database, please see the [Recovery Guide](../../../../server-usage/backing-up-and-restoring-databases/backup-and-restore-with-mariadb-enterprise-server/).
 
 1\. Take a full backup. On MariaDB Enterprise Server 11.4 and later:
 
 ```bash
 sudo mariadb-backup --backup \
-      --user=mariabackup_user \
-      --password=mariabackup_passwd \
+      --user=mariadb-backup_user \
+      --password=mariadb-backup_passwd \
       --target-dir=/data/backup/preupgrade_backup
 ```
 
