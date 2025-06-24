@@ -458,7 +458,7 @@ ulimit -Hn
 | [MariaDB 10.2.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-1027-release-notes)+, [MariaDB 10.1.25](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10125-release-notes)    | Beta     |
 | [MariaDB 10.1.23](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10123-release-notes)                                                                                                                                                                                        | Alpha    |
 
-### See Also
+## See Also
 
 * [mariadb-dump/mysqldump](../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md)
 * [How to backup with MariaDB](https://www.youtube.com/watch?v=xB4ImmmzXqU) (video)
