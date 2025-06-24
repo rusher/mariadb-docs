@@ -15,7 +15,7 @@ displays `DATE` values in '`YYYY-MM-DD`' format, but can be assigned dates in lo
 
 ### Oracle Mode
 
-In [Oracle mode](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/data-types/date-and-time-data-types/broken-reference/README.md), `DATE` with a time portion is a synonym for [DATETIME](datetime.md). See also [mariadb\_schema](../../sql-statements/administrative-sql-statements/system-tables/mariadb_schema.md).
+In [Oracle mode](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/SsmexDFPv2xG2OTyO5yV/server-usage/stored-routines/stored-procedures/create-procedure#oracle-mode), `DATE` with a time portion is a synonym for [DATETIME](datetime.md). See also [mariadb\_schema](../../sql-statements/administrative-sql-statements/system-tables/mariadb_schema.md).
 
 ## Examples
 
