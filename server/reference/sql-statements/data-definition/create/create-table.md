@@ -18,18 +18,11 @@ select_statement:
 
 Use the `CREATE TABLE` statement to create a table with the given name.
 
-In its most basic form, the `CREATE TABLE` statement provides a table name\
-followed by a list of columns, indexes, and constraints. By default, the table\
-is created in the default database. Specify a database with `db_name.tbl_name`.\
-If you quote the table name, you must quote the database name and table name\
-separately as ``db_name`.`tbl_name``. This is particularly useful for [CREATE TABLE ... SELECT](create-table.md#create-table-select), because it allows to create a table into a database, which contains data from other databases. See [Identifier Qualifiers](../../../sql-structure/sql-language-structure/identifier-qualifiers.md).
+In its most basic form, the `CREATE TABLE` statement provides a table name followed by a list of columns, indexes, and constraints. By default, the table is created in the default database. Specify a database with `db_name.tbl_name`. If you quote the table name, you must quote the database name and table name separately as ``db_name`.`tbl_name``. This is particularly useful for [CREATE TABLE ... SELECT](create-table.md#create-table-select), because it allows to create a table into a database, which contains data from other databases. See [Identifier Qualifiers](../../../sql-structure/sql-language-structure/identifier-qualifiers.md).
 
-If a table with the same name exists, error 1050 results. Use [IF NOT EXISTS](create-table.md#create-table-if-not-exists)\
-to suppress this error and issue a note instead. Use [SHOW WARNINGS](../../administrative-sql-statements/show/show-warnings.md)\
-to see notes.
+If a table with the same name exists, error 1050 results. Use [IF NOT EXISTS](create-table.md#create-table-if-not-exists) to suppress this error and issue a note instead. Use [SHOW WARNINGS](../../administrative-sql-statements/show/show-warnings.md) to see notes.
 
-The `CREATE TABLE` statement automatically commits the current transaction,\
-except when using the [TEMPORARY](create-table.md#create-temporary-table) keyword.
+The `CREATE TABLE` statement automatically commits the current transaction, except when using the [TEMPORARY](create-table.md#create-temporary-table) keyword.
 
 For valid identifiers to use as table names, see [Identifier Names](../../../sql-structure/sql-language-structure/identifier-names.md).
 
