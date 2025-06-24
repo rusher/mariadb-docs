@@ -89,13 +89,13 @@ If you installed the plugin by providing the [--plugin-load](../../../server-man
 
 ## Creating Users
 
-To create a user account via [CREATE USER](../../sql-statements-and-structure/sql-statements/account-management-sql-commands/create-user.md), specify the name of the plugin in the [IDENTIFIED VIA](../../sql-statements-and-structure/sql-statements/account-management-sql-commands/create-user.md#identified-viawith-authentication_plugin) clause. For example:
+To create a user account via [CREATE USER](../../sql-statements/account-management-sql-statements/create-user.md), specify the name of the plugin in the [IDENTIFIED VIA](../../sql-statements/account-management-sql-statements/create-user.md#identified-via-or-with-authentication_plugin) clause. For example:
 
 ```
 CREATE USER username@hostname IDENTIFIED VIA unix_socket;
 ```
 
-If [SQL\_MODE](../../../server-management/variables-and-modes/sql-mode.md) does not have `NO_AUTO_CREATE_USER` set, then you can also create the user account via [GRANT](../../sql-statements-and-structure/sql-statements/account-management-sql-commands/grant.md). For example:
+If [SQL\_MODE](../../../server-management/variables-and-modes/sql-mode.md) does not have `NO_AUTO_CREATE_USER` set, then you can also create the user account via [GRANT](../../sql-statements/account-management-sql-statements/grant.md). For example:
 
 ```
 GRANT SELECT ON db.* TO username@hostname IDENTIFIED VIA unix_socket;
@@ -136,7 +136,7 @@ select user(),@@external_user;
 
 ## Switching to Password-based Authentication
 
-Sometimes Unix socket authentication does not meet your needs, so it can be desirable to switch a user account back to password-based authentication. This can easily be done by telling MariaDB to use another [authentication plugin](./) for the account by executing the [ALTER USER](../../sql-statements-and-structure/sql-statements/account-management-sql-commands/alter-user.md) statement. The specific authentication plugin is specified with the [IDENTIFIED VIA](../../sql-statements-and-structure/sql-statements/account-management-sql-commands/alter-user.md#identified-viawith-authentication_plugin) clause. For example, if you wanted to switch to the [mysql\_native\_password](authentication-plugin-mysql_native_password.md) authentication plugin, then you could execute:
+Sometimes Unix socket authentication does not meet your needs, so it can be desirable to switch a user account back to password-based authentication. This can easily be done by telling MariaDB to use another [authentication plugin](./) for the account by executing the [ALTER USER](../../sql-statements/account-management-sql-statements/alter-user.md) statement. The specific authentication plugin is specified with the [IDENTIFIED VIA](../../sql-statements/account-management-sql-statements/alter-user.md#identified-via-or-with-authentication_plugin) clause. For example, if you wanted to switch to the [mysql\_native\_password](authentication-plugin-mysql_native_password.md) authentication plugin, then you could execute:
 
 ```
 ALTER USER root@localhost IDENTIFIED VIA mysql_native_password;
@@ -182,11 +182,10 @@ In this example, a user `serg` is already logged into the operating system and h
 
 ## Versions
 
-| Version | Status | Introduced                                                                                                                                                                     |
-| ------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Version | Status | Introduced                                                                                                                                                                     |
-| 1.0     | Stable | [MariaDB 10.0.11](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/plugins/authentication-plugins/broken-reference/README.md)                     |
-| 1.0     | Beta   | [MariaDB 5.2.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-2-series/mariadb-520-release-notes) |
+| Version | Status | Introduced                                                                                                                                                                          |
+| ------- | ------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1.0     | Stable | [MariaDB 10.0.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-10011-release-notes) |
+| 1.0     | Beta   | [MariaDB 5.2.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-2-series/mariadb-520-release-notes)      |
 
 ## Options
 
@@ -194,10 +193,10 @@ In this example, a user `serg` is already logged into the operating system and h
 
 * Description: Controls how the server should treat the plugin when the server starts up.
   * Valid values are:
-    * `OFF` - Disables the plugin without removing it from the [mysql.plugin](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-plugin-table.md) table.
+    * `OFF` - Disables the plugin without removing it from the [mysql.plugin](../../sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-plugin-table.md) table.
     * `ON` - Enables the plugin. If the plugin cannot be initialized, then the server will still continue starting up, but the plugin will be disabled.
     * `FORCE` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error.
-    * `FORCE_PLUS_PERMANENT` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error. In addition, the plugin cannot be uninstalled with [UNINSTALL SONAME](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md) or [UNINSTALL PLUGIN](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md) while the server is running.
+    * `FORCE_PLUS_PERMANENT` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error. In addition, the plugin cannot be uninstalled with [UNINSTALL SONAME](../../sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md) or [UNINSTALL PLUGIN](../../sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md) while the server is running.
   * See [Plugin Overview: Configuring Plugin Activation at Server Startup](../plugin-overview.md#configuring-plugin-activation-at-server-startup) for more information.
 * Commandline: `--unix-socket=value`
 * Data Type: `enumerated`
