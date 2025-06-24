@@ -1,5 +1,4 @@
 ---
-icon: question
 layout:
   title:
     visible: true
