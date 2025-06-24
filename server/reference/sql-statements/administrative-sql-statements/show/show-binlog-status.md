@@ -2,25 +2,40 @@
 
 ## Syntax
 
+{% tabs %}
+{% tab title="Current" %}
+```sql
+SHOW BINLOG STATUS
+```
+{% endtab %}
+
+{% tab title="< 10.5.2" %}
 ```sql
 SHOW MASTER STATUS
-SHOW BINLOG STATUS -- From MariaDB 10.5.2
 ```
+{% endtab %}
+{% endtabs %}
 
 ## Description
 
 Provides status information about the [binary log](../../../../server-management/server-monitoring-logs/binary-log/) files of the primary.
 
-This statement requires the [SUPER](../../account-management-sql-statements/grant.md#super) privilege, the [REPLICATION\_CLIENT](../../account-management-sql-statements/grant.md#replication-client) privilege, or, from [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1052-release-notes), the [BINLOG MONITOR](../../account-management-sql-statements/grant.md#binlog-monitor) privilege.
+{% tabs %}
+{% tab title="Current" %}
+This statement requires the [BINLOG MONITOR](../../account-management-sql-statements/grant.md#binlog-monitor) privilege.
+{% endtab %}
+
+{% tab title="< 10.5.2" %}
+This statement requires the [SUPER](../../account-management-sql-statements/grant.md#super) privilege and the [REPLICATION\_CLIENT](../../account-management-sql-statements/grant.md#replication-client) privilege.
+{% endtab %}
+{% endtabs %}
 
 To see information about the current [GTIDs](../../../../ha-and-performance/standard-replication/gtid.md) in the binary log, use the[gtid\_binlog\_pos](../../../../ha-and-performance/standard-replication/gtid.md) variable.
-
-`SHOW MASTER STATUS` was renamed to `SHOW BINLOG STATUS` in [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1052-release-notes), but the old name remains an alias for compatibility purposes.
 
 ## Example
 
 ```sql
-SHOW MASTER STATUS;
+SHOW BINLOG STATUS;
 +--------------------+----------+--------------+------------------+
 | File               | Position | Binlog_Do_DB | Binlog_Ignore_DB |
 +--------------------+----------+--------------+------------------+
@@ -40,6 +55,6 @@ SELECT @@global.gtid_binlog_pos;
 * [Using and Maintaining the Binary Log](../../../../server-management/server-monitoring-logs/binary-log/using-and-maintaining-the-binary-log.md)
 * [The gtid\_binlog\_pos variable](../../../../ha-and-performance/standard-replication/gtid.md)
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}
