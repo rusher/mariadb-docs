@@ -78,7 +78,7 @@ New GIS functions. These functions improve compatibility with MySQL 8.
 
 ### Replication <a href="#replication" id="replication"></a>
 
-* Add option to check whether a server was started with skip-slave-start option ([MDEV-27669](https://jira.mariadb.org/browse/MDEV-27669))
+* Server now displays if it was started with [skip-slave-start](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/starting-and-stopping-mariadb/mariadbd-options#skip-slave-start) option ([MDEV-27669](https://jira.mariadb.org/browse/MDEV-27669))
 
 ### Galera <a href="#galera" id="galera"></a>
 
