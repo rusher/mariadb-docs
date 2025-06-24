@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 SHOW CREATE TRIGGER trigger_name
 ```
 
@@ -17,7 +17,7 @@ The [TRIGGER](../../account-management-sql-commands/grant.md#table-privileges) p
 
 ## Examples
 
-```
+```sql
 SHOW CREATE TRIGGER example\G
 *************************** 1. row ***************************
                Trigger: example

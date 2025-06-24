@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 SHOW CREATE PACKAGE  [ db_name . ] package_name
 ```
 
@@ -14,7 +14,7 @@ The `SHOW CREATE PACKAGE` statement can be used when [Oracle SQL\_MODE](https://
 
 ## Examples
 
-```
+```sql
 SHOW CREATE PACKAGE employee_tools\G
 *************************** 1. row ***************************
              Package: employee_tools

@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 SHOW CREATE TABLE tbl_name
 ```
 
@@ -10,8 +10,7 @@ SHOW CREATE TABLE tbl_name
 
 Shows the [CREATE TABLE](../../data-definition/create/create-table.md) statement that creates the given table. The statement requires the [SELECT privilege](../../data-manipulation/selecting-data/select.md) for the table. This statement also works with [views](../../../../server-usage/views/) and [SEQUENCE](../../../sql-structure/sequences/create-sequence.md).
 
-`SHOW CREATE TABLE` quotes table and\
-column names according to the value of the [sql\_quote\_show\_create](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#sql_quote_show_create) server system variable.
+`SHOW CREATE TABLE` quotes table and column names according to the value of the [sql\_quote\_show\_create](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#sql_quote_show_create) server system variable.
 
 Certain [SQL\_MODE](../../../../server-management/variables-and-modes/sql-mode.md) values can result in parts of the original CREATE statement not being included in the output. MariaDB-specific table options, column options, and index options are not included in the output of this statement if the [NO\_TABLE\_OPTIONS](../../../../server-management/variables-and-modes/sql-mode.md#no_table_options), [NO\_FIELD\_OPTIONS](../../../../server-management/variables-and-modes/sql-mode.md#no_field_options) and [NO\_KEY\_OPTIONS](../../../../server-management/variables-and-modes/sql-mode.md#no_key_options) [SQL\_MODE](../../../../server-management/variables-and-modes/sql-mode.md) flags are used. All MariaDB-specific table attributes are also not shown when a non-MariaDB/MySQL emulation mode is used, which includes [ANSI](../../../../server-management/variables-and-modes/sql-mode.md#ansi), [DB2](../../../../server-management/variables-and-modes/sql-mode.md#db2), [POSTGRESQL](../../../../server-management/variables-and-modes/sql-mode.md#postgresql), [MSSQL](../../../../server-management/variables-and-modes/sql-mode.md#mssql), [MAXDB](../../../../server-management/variables-and-modes/sql-mode.md#maxdb) or [ORACLE](../../../../server-management/variables-and-modes/sql-mode.md#oracle).
 
@@ -39,7 +38,7 @@ See sql/sql\_table.cc for details.
 
 ## Examples
 
-```
+```sql
 SHOW CREATE TABLE t\G
 *************************** 1. row ***************************
        Table: t
@@ -52,7 +51,7 @@ Create Table: CREATE TABLE `t` (
 
 With [sql\_quote\_show\_create](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#sql_quote_show_create) off:
 
-```
+```sql
 SHOW CREATE TABLE t\G
 *************************** 1. row ***************************
        Table: t
@@ -65,7 +64,7 @@ Create Table: CREATE TABLE t (
 
 Unquoted numeric DEFAULTs, from [MariaDB 10.2.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-1022-release-notes):
 
-```
+```sql
 CREATE TABLE td (link TINYINT DEFAULT 1);
 
 SHOW CREATE TABLE td\G
@@ -78,7 +77,7 @@ Create Table: CREATE TABLE `td` (
 
 Quoted numeric DEFAULTs, until [MariaDB 10.2.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-1021-release-notes):
 
-```
+```sql
 CREATE TABLE td (link TINYINT DEFAULT 1);
 
 SHOW CREATE TABLE td\G
@@ -91,7 +90,7 @@ Create Table: CREATE TABLE `td` (
 
 [SQL\_MODE](../../../../server-management/variables-and-modes/sql-mode.md) impacting the output:
 
-```
+```sql
 SELECT @@sql_mode;
 +-------------------------------------------------------------------------------------------+
 | @@sql_mode                                                                                |

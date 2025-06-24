@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 SHOW MASTER STATUS
 SHOW BINLOG STATUS -- From MariaDB 10.5.2
 ```
@@ -19,7 +19,7 @@ To see information about the current [GTIDs](../../../../ha-and-performance/stan
 
 ## Example
 
-```
+```sql
 SHOW MASTER STATUS;
 +--------------------+----------+--------------+------------------+
 | File               | Position | Binlog_Do_DB | Binlog_Ignore_DB |

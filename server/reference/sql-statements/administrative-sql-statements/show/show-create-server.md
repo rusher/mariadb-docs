@@ -6,7 +6,7 @@ The SHOW CREATE SERVER statement was introduced in [MariaDB 11.7](https://app.gi
 
 ## Syntax
 
-```
+```sql
 SHOW CREATE SERVER server_name
 ```
 
@@ -16,7 +16,7 @@ Shows the [CREATE SERVER](../../data-definition/create/create-server.md) stateme
 
 ## Example
 
-```
+```sql
 SHOW CREATE SERVER srv1\G
 *************************** 1. row ***************************
        Server: srv1

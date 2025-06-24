@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 SHOW CREATE PACKAGE BODY  [ db_name . ] package_name
 ```
 
@@ -14,7 +14,7 @@ The `SHOW CREATE PACKAGE BODY` statement shows the `CREATE PACKAGE BODY` stateme
 
 ## Examples
 
-```
+```sql
 SHOW CREATE PACKAGE BODY employee_tools\G
 *************************** 1. row ***************************
         Package body: employee_tools

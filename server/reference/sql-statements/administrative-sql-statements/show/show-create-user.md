@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 SHOW CREATE USER [user]
 ```
 
@@ -14,7 +14,7 @@ Shows the [CREATE USER](../../account-management-sql-statements/create-user.md) 
 
 ## Examples
 
-```
+```sql
 CREATE USER foo4@test require cipher 'text' 
   issuer 'foo_issuer' subject 'foo_subject';
 
@@ -28,7 +28,7 @@ CREATE USER 'foo4'@'test'
 
 [User Password Expiry](../../../../security/user-account-management/user-password-expiry.md):
 
-```
+```sql
 CREATE USER 'monty'@'localhost' PASSWORD EXPIRE INTERVAL 120 DAY;
 
 SHOW CREATE USER 'monty'@'localhost';

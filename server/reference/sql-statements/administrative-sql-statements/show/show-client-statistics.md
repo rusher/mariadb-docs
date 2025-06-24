@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 SHOW CLIENT_STATISTICS
 ```
 
@@ -14,7 +14,7 @@ The [userstat](../../../../ha-and-performance/optimization-and-tuning/system-var
 
 ## Example
 
-```
+```sql
 SHOW CLIENT_STATISTICS\G
 *************************** 1. row ***************************
                 Client: localhost

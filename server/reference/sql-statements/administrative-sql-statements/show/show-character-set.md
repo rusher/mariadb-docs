@@ -18,7 +18,7 @@ See [Setting Character Sets and Collations](../../../data-types/string-data-type
 
 ## Examples
 
-```
+```sql
 SHOW CHARACTER SET LIKE 'latin%';
 +---------+-----------------------------+-------------------+--------+
 | Charset | Description                 | Default collation | Maxlen |
@@ -30,7 +30,7 @@ SHOW CHARACTER SET LIKE 'latin%';
 +---------+-----------------------------+-------------------+--------+
 ```
 
-```
+```sql
 SHOW CHARACTER SET WHERE Maxlen LIKE '2';
 +---------+---------------------------+-------------------+--------+
 | Charset | Description               | Default collation | Maxlen |

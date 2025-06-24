@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 SHOW CREATE SEQUENCE sequence_name;
 ```
 
@@ -14,7 +14,7 @@ Shows the [CREATE SEQUENCE](../../../sql-structure/sequences/create-sequence.md)
 
 ## Example
 
-```
+```sql
 CREATE SEQUENCE s1 START WITH 50;
 SHOW CREATE SEQUENCE s1\G;
 *************************** 1. row ***************************
@@ -25,10 +25,9 @@ Create Table: CREATE SEQUENCE `s1` start with 50 minvalue 1 maxvalue 92233720368
 
 ## Notes
 
-If you want to see the underlying table structure used for the `SEQUENCE`\
-you can use [SHOW CREATE TABLE](show-create-table.md) on the `SEQUENCE`. You can also use `SELECT` to read the current recorded state of the `SEQUENCE`:
+If you want to see the underlying table structure used for the `SEQUENCE` you can use [SHOW CREATE TABLE](show-create-table.md) on the `SEQUENCE`. You can also use `SELECT` to read the current recorded state of the `SEQUENCE`:
 
-```
+```sql
 SHOW CREATE TABLE s1\G
 *************************** 1. row ***************************
        Table: s1
@@ -59,7 +58,7 @@ next_not_cached_value: 50
 
 The [Information Schema SEQUENCES Table](../system-tables/information-schema/information-schema-tables/information-schema-sequences-table.md) also provides information about available sequences:
 
-```
+```sql
 SELECT * FROM INFORMATION_SCHEMA.SEQUENCES\G
 *************************** 1. row ***************************
        SEQUENCE_CATALOG: def
