@@ -27,7 +27,7 @@ The `--move-back` option will result in the removal of all data files from the b
 To restore from a backup by moving files, use the `--move-back` option:
 
 ```bash
-# mariadb-backup --move-back --target-dir=/data/backups/full
+mariadb-backup --move-back --target-dir=/data/backups/full
 ```
 
 ## Multi-threading
@@ -39,7 +39,7 @@ To restore from a backup by moving files, use the `--move-back` option:
 MariaDB Enterprise Backup is a multi-threaded application that by default runs on a single thread. In cases where you have a host with multiple cores available, you can specify the number of threads you want it to use for parallel data file transfers using the `--parallel` option:
 
 ```bash
-# mariadb-backup --backup \
+mariadb-backup --backup \
       --target-dir=/data/backups/full \
       --user=mariadb-backup \
       --password=mbu_passwd \
@@ -57,7 +57,7 @@ Under normal operation an incremental backup is taken against an existing full b
 MariaDB Enterprise Backup also supports incrementing from an incremental backup. In this operation, the `--incremental-basedir` option points not to the full backup directory but rather to the previous incremental backup.
 
 ```bash
-# mariadb-backup --backup \
+mariadb-backup --backup \
       --incremental-basedir=/data/backups/inc1 \
       --target-dir=/data/backups/inc2 \
       --user=mariadb-backup \
@@ -67,13 +67,13 @@ MariaDB Enterprise Backup also supports incrementing from an incremental backup.
 In preparing a backup to restore the data directory, apply the chain of incremental backups to the full backup in order. That is, first `inc1/, then inc2/`, and so on:
 
 ```bash
-# mariadb-backup --prepare \
+mariadb-backup --prepare \
       --target-dir=/data/backups/full \
       --incremental-dir=/data/backups/inc1
 ```
 
 ```bash
-# mariadb-backup --prepare \
+mariadb-backup --prepare \
       --target-dir=/data/backups/full \
       --incremental-dir=/data/backups/inc2
 ```
@@ -81,8 +81,8 @@ In preparing a backup to restore the data directory, apply the chain of incremen
 Continue to apply all the incremental changes until you have applied all available to the backup. Then restore as usual:
 
 ```bash
-# mariadb-backup --copy-back --target-dir=/data/backups/full
-# chown -R mysql:mysql /var/lib/mysql
+mariadb-backup --copy-back --target-dir=/data/backups/full
+chown -R mysql:mysql /var/lib/mysql
 ```
 
 Start MariaDB Enterprise Server on the restored data directory.

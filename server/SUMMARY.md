@@ -61,8 +61,6 @@
       * [Restoring Individual Tables and Partitions with mariadb-backup](server-usage/backup-and-restore/mariadb-backup/restoring-individual-tables-and-partitions-with-mariadb-backup.md)
       * [Setting up a Replica with mariadb-backup](server-usage/backup-and-restore/mariadb-backup/setting-up-a-replica-with-mariadb-backup.md)
       * [Using Encryption and Compression Tools With mariadb-backup](server-usage/backup-and-restore/mariadb-backup/using-encryption-and-compression-tools-with-mariadb-backup.md)
-    * [Making Backups](server-usage/backup-and-restore/mariadb-backup-guide.md)
-    * [Restoring Data](server-usage/backup-and-restore/mariadb-restore-guide.md)
     * [Replication as a Backup Solution](server-usage/backup-and-restore/replication-as-a-backup-solution.md)
     * [Backup and Restore via dbForge Studio](server-usage/backup-and-restore/backup-and-restore-via-dbforge-studio.md)
   * [Tables](server-usage/tables/README.md)

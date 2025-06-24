@@ -1,8 +1,10 @@
 # Replication as a Backup Solution
 
-[Replication](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-usage/backing-up-and-restoring-databases/broken-reference/README.md) can be used to support the [backup](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-usage/backing-up-and-restoring-databases/broken-reference/README.md) strategy.
+[Replication](../../ha-and-performance/standard-replication/) can be used to support the [backup](./) strategy.
 
+{% hint style="danger" %}
 Replication alone is _not_ sufficient for backup. It assists in protecting against hardware failure on the primary server, but does not protect against data loss. An accidental or malicious `DROP DATABASE` or `TRUNCATE TABLE` statement will be replicated onto the replica as well. Care needs to be taken to prevent data getting out of sync between the primary and the replica.
+{% endhint %}
 
 {% hint style="info" %}
 The terms _master_ and _slave_ have historically been used in replication, and MariaDB has begun the process of adding _primary_ and _replica_ synonyms. The old terms will continue to be used to maintain backward compatibility - see [MDEV-18777](https://jira.mariadb.org/browse/MDEV-18777) to follow progress on this effort.
@@ -19,9 +21,9 @@ Note that when backing up off a replica server, it is important to ensure that t
 
 ## See Also
 
-* [Replication](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-usage/backing-up-and-restoring-databases/broken-reference/README.md)
-* [Replication Compatibility](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-usage/backing-up-and-restoring-databases/broken-reference/README.md)
-* [Backing Up and Restoring](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-usage/backing-up-and-restoring-databases/broken-reference/README.md)
+* [Replication](../../ha-and-performance/standard-replication/)
+* [Replication Compatibility](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/mariadb-vs-mysql-compatibility#replication-compatibility)
+* [Backup & Restore](./)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
