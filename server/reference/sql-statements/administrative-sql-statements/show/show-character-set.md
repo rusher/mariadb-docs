@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 SHOW CHARACTER SET
     [LIKE 'pattern' | WHERE expr]
 ```
