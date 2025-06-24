@@ -144,7 +144,7 @@ SELECT (3, NULL) = (3, NULL);
 +-----------------------+
 ```
 
-**Conditional Uniqueness with Virtual Columns:** You can enforce uniqueness over a subset of rows using unique indexes on [virtual columns](https://www.google.com/search?q=../reference/sql-statements-and-structure/tables-and-views/virtual-columns.md). This example ensures `user_name` is unique for 'Active' or 'On-Hold' users, but allows duplicate names for 'Deleted' users:
+**Conditional Uniqueness with Virtual Columns:** You can enforce uniqueness over a subset of rows using unique indexes on [virtual columns](../reference/sql-statements/data-definition/create/generated-columns.md). This example ensures `user_name` is unique for 'Active' or 'On-Hold' users, but allows duplicate names for 'Deleted' users:
 
 ```sql
 CREATE TABLE Table_1 (
