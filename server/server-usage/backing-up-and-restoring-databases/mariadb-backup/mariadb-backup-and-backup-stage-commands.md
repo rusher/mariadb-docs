@@ -1,7 +1,5 @@
 # mariadb-backup and BACKUP STAGE Commands
 
-## mariadb-backup and BACKUP STAGE Commands
-
 The [BACKUP STAGE](../../../reference/sql-statements/administrative-sql-statements/backup-commands/backup-stage.md) commands are a set of commands to make it possible to make an efficient external backup tool. How mariadb-backup uses these commands depends on whether you are using the version that is bundled with MariaDB Community Server or the version that is bundled with MariaDB Enterprise Server.
 
 ## mariadb-backup and `BACKUP STAGE` Commands in MariaDB Community Server
