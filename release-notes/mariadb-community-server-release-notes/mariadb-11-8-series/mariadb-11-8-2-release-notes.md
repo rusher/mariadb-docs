@@ -11,7 +11,7 @@
 [MariaDB 11.8](what-is-mariadb-118.md) is a [long-term release](https://mariadb.org/11-8-is-lts/).
 
 {% hint style="success" %}
-**For an overview of** [**MariaDB 11.8**](what-is-mariadb-118.md) **see the** [**What is MariaDB 11.8?**](what-is-mariadb-118.md) **page.**
+**For an overview of** **MariaDB 11.8** **see the** [**What is MariaDB 11.8?**](what-is-mariadb-118.md) **page.**
 {% endhint %}
 
 Thanks, and enjoy MariaDB!
@@ -231,8 +231,7 @@ Thanks, and enjoy MariaDB!
 
 ## Changelog
 
-For a complete list of changes made in [MariaDB 11.8.2](mariadb-11-8-2-release-notes.md), with links to detailed\
-information on each push, see the [changelog](../../changelogs/changelogs-mariadb-11-8-series/mariadb-11.8.2-changelog.md).
+For a complete list of changes made in MariaDB 11.8.2, with links to detailed information on each push, see the [changelog](../../changelogs/changelogs-mariadb-11-8-series/mariadb-11.8.2-changelog.md).
 
 ## Contributors
 
