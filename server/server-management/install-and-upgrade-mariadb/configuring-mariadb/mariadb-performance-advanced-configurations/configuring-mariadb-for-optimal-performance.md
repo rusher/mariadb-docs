@@ -1,8 +1,8 @@
 # Configuring MariaDB for Optimal Performance
 
-This article is to help you configure MariaDB for optimal performance.
+This article will help you configure MariaDB for optimal performance.
 
-Note that by default MariaDB is configured to work on a desktop system and should because of this not take a lot of resources. To get things to work for a dedicated server, you have to do a few minutes of work.
+By default, MariaDB is configured to work on a desktop system and therefore use relatively few resources. To optimize installation for a dedicated server, you have to do a few minutes of work.
 
 For this article we assume that you are going to run MariaDB on a dedicated server.
 
