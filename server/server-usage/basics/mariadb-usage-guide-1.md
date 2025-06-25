@@ -148,6 +148,6 @@ As you can see, using MariaDB isn't very difficult. You just have to understand 
 
 * [MariaDB Basics](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/mariadb-basics/README.md)
 
-<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+{% include "../../.gitbook/includes/license-cc-by-sa-gnu-fdl.md" %}
 
 {% @marketo/form formId="4316" %}
