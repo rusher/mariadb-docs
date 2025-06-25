@@ -2,13 +2,13 @@
 
 The most recent release of [MariaDB 10.11](../../mariadb-10-11-series/what-is-mariadb-1011.md) is:[**MariaDB 10.11.11**](../../mariadb-10-11-series/mariadb-10-11-11-release-notes.md) Stable (GA) [Download Now](https://mariadb.com/downloads/)[_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/10.11.11/)
 
-[Download 10.11.1](https://downloads.mariadb.org/mariadb/10.11.1/)[Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/changelogs/changelogs-mariadb-10-11-series/broken-reference/README.md)[Changelog](mariadb-10-11-1-changelog.md)[Overview of 10.11](../../mariadb-10-11-series/what-is-mariadb-1011.md)
+[Download 10.11.1](https://downloads.mariadb.org/mariadb/10.11.1/)[Release Notes](https://mariadb.com/docs/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-11-series/mariadb-10-11-1-release-notes)[Changelog](mariadb-10-11-1-changelog.md)[Overview of 10.11](../../mariadb-10-11-series/what-is-mariadb-1011.md)
 
 [_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/10.11.1/)
 
 **Release date:** 17 Nov 2022
 
-For the highlights of this release, see the[release notes](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/changelogs/changelogs-mariadb-10-11-series/broken-reference/README.md).
+For the highlights of this release, see the[release notes](https://mariadb.com/docs/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-11-series).
 
 The revision number links will take you to the revision's page on GitHub. On[GitHub](https://github.com/MariaDB/server/tree/10.11) you can view more\
 details of the revision and view diffs of the code modified in that revision.

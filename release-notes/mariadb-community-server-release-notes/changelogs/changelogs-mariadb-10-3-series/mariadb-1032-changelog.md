@@ -1,6 +1,6 @@
 # MariaDB 10.3.2 Changelog
 
-[Download](https://downloads.mariadb.org/mariadb/10.3.2)[Release Notes](../../old-releases/release-notes-mariadb-10-3-series/mariadb-1032-release-notes.md)[Changelog](mariadb-1032-changelog.md)[Overview of 10.3](../../old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103.md)
+[Download](https://downloads.mariadb.org/mariadb/10.3.2)[Release Notes](../../old-releases/release-notes-mariadb-10-3-series/mariadb-1032-release-notes.md)[Changelog](mariadb-1032-changelog.md)[Overview of 10.3](https://mariadb.com/docs/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103)
 
 **Release date:** 9 Oct 2017
 
