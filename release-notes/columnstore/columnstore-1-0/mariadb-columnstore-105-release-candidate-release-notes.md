@@ -93,4 +93,6 @@ The source code is available at these locations
 * Storage Engine—[Source code for engine specific processes on UM and PM node](https://github.com/mariadb-corporation/mariadb-columnstore-engine)
 * MariaDB Server - [Source code based on MariaDB Server 10.1.19 modified to support the ColumnStore storage engine](https://github.com/mariadb-corporation/mariadb-columnstore-server)
 
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
+
 {% @marketo/form formid="4316" formId="4316" %}

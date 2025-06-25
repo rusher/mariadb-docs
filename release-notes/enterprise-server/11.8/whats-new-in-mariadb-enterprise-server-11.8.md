@@ -225,4 +225,6 @@ MariaDB Enterprise Server 11.8 continues to expand its native vector search capa
 * [What's New in MariaDB Enterprise Server 10.3](../10-3/whats-new-in-mariadb-enterprise-server-10-3.md)
 * [What's New in MariaDB Enterprise Server 10.2](../10-2/whats-new-in-mariadb-enterprise-server-10-2.md)
 
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
+
 {% @marketo/form formid="4316" formId="4316" %}

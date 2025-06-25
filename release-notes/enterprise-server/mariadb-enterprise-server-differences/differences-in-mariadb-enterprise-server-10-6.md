@@ -49,4 +49,6 @@ Backported Features:
 * New Information Schema Table For Password Related Data
 * GTID binlog events now include the thread ID
 
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
+
 {% @marketo/form formid="4316" formId="4316" %}

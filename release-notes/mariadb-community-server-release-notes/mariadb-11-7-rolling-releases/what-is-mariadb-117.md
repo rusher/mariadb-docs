@@ -84,4 +84,6 @@ Add listcve macro here - removed for performance reasons
 | 21 Nov 2024 | [MariaDB 11.7.1](mariadb-11-7-1-release-notes.md) | RC     | [Release Notes](mariadb-11-7-1-release-notes.md) | [Changelog](../../changelogs/changelogs-mariadb-11-7-series/mariadb-11-7-1-changelog.md) |
 | 25 Sep 2024 | [MariaDB 11.7.0](mariadb-11-7-0-release-notes.md) | Alpha  | [Release Notes](mariadb-11-7-0-release-notes.md) |                                                                                          |
 
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
+
 {% @marketo/form formid="4316" formId="4316" %}

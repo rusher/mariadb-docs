@@ -63,6 +63,6 @@ MariaDB Enterprise Server features [security](https://app.gitbook.com/s/SsmexDFP
 * Ability to set password expiration dates.
 * Logging of access when passwords are ignored, e.g., for passwordless authentication by UNIX socket.
 
-<sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}
