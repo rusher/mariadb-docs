@@ -14,4 +14,28 @@ layout:
 
 # MariaDB Community Server Release Notes
 
-This section contains release notes for MariaDB Server releases divided into the major MariaDB series. The latest long-term stable series is [MariaDB 11.8](mariadb-11-8-series/) (maintained for three years), and the current development release is MariaDB 12.0
+This section contains release notes for MariaDB Server releases divided into the major MariaDB series. The latest long-term stable series is [MariaDB 11.8](mariadb-11-8-series/) (maintained for three years), and the current development release is [MariaDB 12.0](release-notes-mariadb-12.0-rolling-releases/).
+
+{% content-ref url="release-notes-mariadb-12.0-rolling-releases/" %}
+[release-notes-mariadb-12.0-rolling-releases](release-notes-mariadb-12.0-rolling-releases/)
+{% endcontent-ref %}
+
+{% content-ref url="mariadb-11-8-series/" %}
+[mariadb-11-8-series](mariadb-11-8-series/)
+{% endcontent-ref %}
+
+{% content-ref url="mariadb-11-4-series/" %}
+[mariadb-11-4-series](mariadb-11-4-series/)
+{% endcontent-ref %}
+
+{% content-ref url="mariadb-10-6-series/" %}
+[mariadb-10-6-series](mariadb-10-6-series/)
+{% endcontent-ref %}
+
+{% content-ref url="mariadb-10-5-series/" %}
+[mariadb-10-5-series](mariadb-10-5-series/)
+{% endcontent-ref %}
+
+{% content-ref url="old-releases/" %}
+[old-releases](old-releases/)
+{% endcontent-ref %}
