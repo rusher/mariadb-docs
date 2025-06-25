@@ -198,4 +198,8 @@ modified in that revision.
   2016-08-20 13:42:11 +0200
   * [GAL-401](https://github.com/codership/galera/issues/401): MTR test for the fix.
 
+{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
+
 {% @marketo/form formid="4316" formId="4316" %}

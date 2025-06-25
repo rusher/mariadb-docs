@@ -76,4 +76,8 @@ modified in that revision.
   2017-08-16 13:29:38 +0300
   * Galera test fixes and add remaining test failures as disabled.
 
+{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
+
 {% @marketo/form formid="4316" formId="4316" %}

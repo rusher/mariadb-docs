@@ -637,4 +637,8 @@ modified in that revision.
   2015-07-16 15:59:55 -0700
   * Add parenthesis in macro definitions to prevent order of operation problems.
 
+{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
+
 {% @marketo/form formid="4316" formId="4316" %}

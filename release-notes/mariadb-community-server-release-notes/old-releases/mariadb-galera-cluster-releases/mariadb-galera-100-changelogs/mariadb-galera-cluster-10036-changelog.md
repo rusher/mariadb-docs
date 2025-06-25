@@ -91,4 +91,8 @@ modified in that revision.
   2018-04-19 07:38:57 +1000
   * [MDEV-8743](https://jira.mariadb.org/browse/MDEV-8743): mysqld port/socket - FD\_CLOEXEC if no SOCK\_CLOEXEC
 
+{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
+
 {% @marketo/form formid="4316" formId="4316" %}
