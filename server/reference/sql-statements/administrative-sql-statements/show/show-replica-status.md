@@ -14,17 +14,37 @@ SHOW ALL { REPLICAS | SLAVES } STATUS
 
 ## Description
 
-This statement is to be run on a replica and provides status information on essential parameters of the [replica](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/administrative-sql-statements/show/broken-reference/README.md) threads.
+This statement is to be run on a replica and provides status information on essential parameters of the [replica](../../../../ha-and-performance/standard-replication/replication-overview.md) threads.
 
-This statement requires the [SUPER](../../account-management-sql-statements/grant.md#super) privilege, the [REPLICATION\_CLIENT](../../account-management-sql-statements/grant.md#replication-client) privilege, or, from [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1052-release-notes), the [REPLICATION SLAVE ADMIN](../../account-management-sql-statements/grant.md#binlog-monitor) privilege, or, from [MariaDB 10.5.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1059-release-notes), the [REPLICA MONITOR](../../account-management-sql-statements/grant.md#replica-monitor) privilege.
+{% tabs %}
+{% tab title="Current" %}
+This statement requires the [REPLICA MONITOR](../../account-management-sql-statements/grant.md#replica-monitor) privilege.
+{% endtab %}
+
+{% tab title="< 10.5.9" %}
+This statement requires the [REPLICA MONITOR](../../account-management-sql-statements/grant.md#replica-monitor) privilege.
+{% endtab %}
+
+{% tab title="< 10.5.2" %}
+This statement requires the [REPLICATION SLAVE ADMIN](../../account-management-sql-statements/grant.md#binlog-monitor) privilege.
+{% endtab %}
+{% endtabs %}
 
 ### Multi-Source
 
 The `ALL` and `"connection_name"` options allow you to connect to [many primaries at the same time](../../../../ha-and-performance/standard-replication/multi-source-replication.md).
 
-`ALL SLAVES` (or `ALL REPLICAS` from [MariaDB 10.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1051-release-notes)) gives you a list of all connections to the primary nodes.
+{% tabs %}
+{% tab title="Current" %}
+`ALL REPLICAS` gives you a list of all connections to the primary nodes.
+{% endtab %}
 
-The rows will be sorted according to `Connection_name`.
+{% tab title="< 10.5.1" %}
+`ALL SLAVES` gives you a list of all connections to the primary nodes.
+{% endtab %}
+{% endtabs %}
+
+The rows are sorted according to `Connection_name`.
 
 If you specify a `connection_name`, you only get the information about that connection. If `connection_name` is not used, then the name set by `default_master_connection` is used. If the connection name doesn't exist you will get an error:`There is no master connection for 'xxx'`.
 
@@ -38,7 +58,7 @@ The order in which the columns appear depends on the MariaDB version. This means
 
 **MariaDB starting with** [**11.6.0**](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/mariadb-1160-release-notes/README.md)
 
-These columns can also be viewed/extracted from the [INFORMATION_SCHEMA.SLAVE_STATUS](../system-tables/information-schema/information-schema-tables/information-schema-slave_status-table.md) table
+These columns can also be viewed/extracted from the [INFORMATION\_SCHEMA.SLAVE\_STATUS](../system-tables/information-schema/information-schema-tables/information-schema-slave_status-table.md) table
 
 | Name                              | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 | --------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
