@@ -34,10 +34,10 @@ The **Null** field contains YES if NULL values can be stored in the column, NO i
 
 The **Key** field indicates whether the column is indexed:
 
-* If Key is empty, the column either is not indexed or is indexed only as a   secondary column in a multiple-column, non-unique index.
-* If Key is PRI, the column is a `PRIMARY KEY` or   is one of the columns in a multiple-column `PRIMARY KEY`.
-* If Key is UNI, the column is the first column of a unique-valued   index that cannot contain `NULL` values.
-* If Key is MUL, multiple occurrences of a given value are allowed   within the column. The column is the first column of a non-unique index or a   unique-valued index that can contain `NULL` values.
+* If Key is empty, the column either is not indexed or is indexed only as a secondary column in a multiple-column, non-unique index.
+* If Key is PRI, the column is a `PRIMARY KEY` or is one of the columns in a multiple-column `PRIMARY KEY`.
+* If Key is UNI, the column is the first column of a unique-valued index that cannot contain `NULL` values.
+* If Key is MUL, multiple occurrences of a given value are allowed within the column. The column is the first column of a non-unique index or a unique-valued index that can contain `NULL` values.
 
 If more than one of the **Key** values applies to a given column of a table, **Key** displays the one with the highest priority, in the order PRI, UNI, MUL.
 
@@ -51,8 +51,8 @@ The **Extra** field contains any additional information that is available about 
 | ---------------------------- | ------------------------------------------------------------------------------------ |
 | Value                        | Description                                                                          |
 | AUTO\_INCREMENT              | The column was created with the AUTO\_INCREMENT keyword.                             |
-| PERSISTENT                   | The column was created with the PERSISTENT keyword. (New in 5.3)                     |
-| VIRTUAL                      | The column was created with the VIRTUAL keyword. (New in 5.3)                        |
+| PERSISTENT                   | The column was created with the PERSISTENT keyword.                                  |
+| VIRTUAL                      | The column was created with the VIRTUAL keyword.                                     |
 | on update CURRENT\_TIMESTAMP | The column is a TIMESTAMP column that is automatically updated on INSERT and UPDATE. |
 
 **Privileges** indicates the privileges you have for the column. This value is displayed only if you use the `FULL` keyword.
@@ -112,6 +112,6 @@ SHOW COLUMNS FROM employees WHERE Type LIKE 'Varchar%';
 * [Extended SHOW](extended-show.md)
 * [Silent Column Changes](../../data-definition/create/silent-column-changes.md)
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}
