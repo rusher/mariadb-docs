@@ -104,6 +104,6 @@ See here for [Galera 3 versions](mariadb-galera-cluster-guide.md#galera-versions
 * [Getting Started with MariaDB Galera Cluster](../galera-management/getting-started-with-mariadb-galera-cluster.md)
 * [MariaDB Galera Cluster - Known Limitations](../galera-management/mariadb-galera-cluster-known-limitations.md)
 
-<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
 {% @marketo/form formId="4316" %}
