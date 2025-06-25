@@ -3,7 +3,7 @@
 ## Syntax
 
 ```sql
-SHOW ENGINE engine_name {STATUS | MUTEX}
+SHOW ENGINE [engine-name] {STATUS | MUTEX}
 ```
 
 ## Description

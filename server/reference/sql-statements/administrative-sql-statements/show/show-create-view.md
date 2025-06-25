@@ -3,7 +3,7 @@
 ## Syntax
 
 ```sql
-SHOW CREATE VIEW view_name
+SHOW CREATE VIEW [view-name]
 ```
 
 ## Description

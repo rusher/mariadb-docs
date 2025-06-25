@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 SHOW ERRORS [LIMIT [offset,] row_count]
 SHOW ERRORS [LIMIT row_count OFFSET offset]
 SHOW COUNT(*) ERRORS
@@ -10,15 +10,13 @@ SHOW COUNT(*) ERRORS
 
 ## Description
 
-This statement is similar to [SHOW WARNINGS](show-warnings.md), except that instead of\
-displaying errors, warnings, and notes, it displays only errors.
+This statement is similar to [SHOW WARNINGS](show-warnings.md), except that instead of displaying errors, warnings, and notes, it displays only errors.
 
 The `LIMIT` clause has the same syntax as for the[SELECT](../../data-manipulation/selecting-data/select.md) statement.
 
-The `SHOW COUNT(*) ERRORS` statement displays the number of\
-errors. You can also retrieve this number from the [error\_count](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#error_count) variable.
+The `SHOW COUNT(*) ERRORS` statement displays the number of errors. You can also retrieve this number from the [error\_count](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#error_count) variable.
 
-```
+```sql
 SHOW COUNT(*) ERRORS;
 SELECT @@error_count;
 ```
@@ -29,7 +27,7 @@ For a list of MariaDB error codes, see [MariaDB Error Codes](https://github.com/
 
 ## Examples
 
-```
+```sql
 SELECT f();
 ERROR 1305 (42000): FUNCTION f does not exist
 

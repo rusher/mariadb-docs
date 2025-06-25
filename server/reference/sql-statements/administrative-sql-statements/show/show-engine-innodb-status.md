@@ -1,5 +1,10 @@
 # SHOW ENGINE INNODB STATUS
 
+## Syntax
+
+```sql
+SHOW ENGINE INNODB STATUS
+```
 `SHOW ENGINE INNODB STATUS` is a specific form of the [SHOW ENGINE](show-engine.md) statement that displays the [InnoDB Monitor](../../../../server-usage/storage-engines/innodb/innodb-monitors.md) output, which is extensive InnoDB information which can be useful in diagnosing problems.
 
 The following sections are displayed

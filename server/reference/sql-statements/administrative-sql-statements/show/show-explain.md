@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 SHOW EXPLAIN [FORMAT=JSON] FOR <connection_id>;
 EXPLAIN [FORMAT=JSON] FOR CONNECTION <connection_id>;
 ```
@@ -12,13 +12,13 @@ EXPLAIN [FORMAT=JSON] FOR CONNECTION <connection_id>;
 The `SHOW EXPLAIN` command allows one to get an [EXPLAIN](../analyze-and-explain-statements/explain.md) (that is, a\
 description of a query plan) of a query running in a certain connection.
 
-```
+```sql
 SHOW EXPLAIN FOR <connection_id>;
 ```
 
 will produce an `EXPLAIN` output for the query that connection number `connection_id` is running. The connection id can be obtained with [SHOW PROCESSLIST](show-processlist.md).
 
-```
+```sql
 SHOW EXPLAIN FOR 1;
 +------+-------------+-------+-------+---------------+------+---------+------+---------+-------------+
 | id   | select_type | table | type  | possible_keys | key  | key_len | ref  | rows    | Extra       |
@@ -31,7 +31,7 @@ SHOW EXPLAIN FOR 1;
 The output is always accompanied with a warning which shows the query the\
 target connection is running (this shows what the `EXPLAIN` is for):
 
-```
+```sql
 SHOW WARNINGS;
 +-------+------+------------------------+
 | Level | Code | Message                |
@@ -59,7 +59,7 @@ The output can be only produced if the target connection is _currently_ running 
 query, which has a ready query plan. If this is not the case, the output will\
 be:
 
-```
+```sql
 SHOW EXPLAIN FOR 2;
 ERROR 1932 (HY000): Target is not running an EXPLAINable command
 ```

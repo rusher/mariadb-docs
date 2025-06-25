@@ -27,7 +27,6 @@ Create Server: CREATE SERVER `srv1` FOREIGN DATA WRAPPER mysql
 ## See Also
 
 * [CREATE SERVER](../../data-definition/create/create-server.md)
-* [SHOW](./)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

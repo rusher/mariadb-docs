@@ -3,7 +3,7 @@
 ## Syntax
 
 ```sql
-SHOW CREATE USER [user]
+SHOW CREATE USER [user-name]
 ```
 
 ## Description

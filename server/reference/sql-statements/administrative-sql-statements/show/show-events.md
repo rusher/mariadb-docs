@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 SHOW EVENTS [{FROM | IN} schema_name]
     [LIKE 'pattern' | WHERE expr]
 ```
@@ -11,7 +11,7 @@ SHOW EVENTS [{FROM | IN} schema_name]
 
 Shows information about Event Manager [events](../../../../server-usage/triggers-events/event-scheduler/events.md) (created with [CREATE EVENT](../../data-definition/create/create-event.md)). Requires the [EVENT](../../account-management-sql-commands/grant.md#database-privileges) privilege. Without any arguments, `SHOW EVENTS` lists all of the events in the current schema:
 
-```
+```sql
 SELECT CURRENT_USER(), SCHEMA();
 +----------------+----------+
 | CURRENT_USER() | SCHEMA() |
@@ -43,7 +43,7 @@ To see the event action, use [SHOW CREATE EVENT](show-create-event.md) instead, 
 To see events for a specific schema, use the `FROM` clause.\
 For example, to see events for the test schema, use the following statement:
 
-```
+```sql
 SHOW EVENTS FROM test;
 ```
 
