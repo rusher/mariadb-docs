@@ -28,9 +28,9 @@ Since the [MariaDB 10.0.9 Fusion-io preview](https://blog.mariadb.org/significan
 
 ## Other Changes
 
-For a complete list of changes made in [MariaDB 10.0.15](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-10015-release-notes), with links to detailed information on each push, see the [changelog](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/changelogs/changelogs-mariadb-100-series/mariadb-10015-changelog).
+For a complete list of changes made in MariaDB 10.0.15 Fustion-io, with links to detailed information on each push, see the [changelog](mariadb-10015-fusion-io-changelog.md).
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/v7YUZ4q7zwGc9cCOp2A3/" %}
+{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
 
 {% include "../../../../../.gitbook/includes/license-cc-by-sa-gnu-fdl.md" %}
 
