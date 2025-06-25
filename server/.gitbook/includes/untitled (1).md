@@ -1,22 +1,13 @@
 ---
-title: Untitled
+title: Tabbed Navigation block
 ---
 
 {% tabs %}
 {% tab title="Current" %}
-If the `COMMENT` clause is present, it will be shown in the output, too:
-
-```sql
-SHOW CREATE DATABASE p;
-+----------+--------------------------------------------------------------------------------------+
-| Database | Create Database                                                                      |
-+----------+--------------------------------------------------------------------------------------+
-| p        | CREATE DATABASE `p` /*!40100 DEFAULT CHARACTER SET latin1 */ COMMENT 'presentations' |
-+----------+--------------------------------------------------------------------------------------+
-```
+`SHOW CREATE PROCEDURE` quotes identifiers, according to the value of the [sql\_quote\_show\_create](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#sql_quote_show_create) system variable.
 {% endtab %}
 
-{% tab title="< 10.5" %}
-The `COMMENT` clause is not available, and will thus not appear in the output.
+{% tab title="< 10.6.5 / 10.5.13 / 10.4.22" %}
+`SHOW CREATE PROCEDURE` quotes identifiers according to the value of the [sql\_quote\_show\_create](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#sql_quote_show_create) system variable. However, the output of this statement is unreliably affected by the [sql\_quote\_show\_create](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#sql_quote_show_create) system variable.
 {% endtab %}
 {% endtabs %}

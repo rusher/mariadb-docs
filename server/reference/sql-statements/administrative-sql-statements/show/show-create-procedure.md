@@ -8,20 +8,23 @@ SHOW CREATE PROCEDURE proc_name
 
 ## Description
 
-This statement is a MariaDB extension. It returns the exact string that\
-can be used to re-create the named [stored procedure](../../../../server-usage/stored-routines/stored-procedures/), as well as the [SQL\_MODE](../../../../server-management/variables-and-modes/sql-mode.md) that was used when the trigger has been created and the character set used by the connection.. A similar statement, [SHOW CREATE FUNCTION](show-create-function.md), displays information about [stored functions](../../../../server-usage/stored-routines/stored-functions/).
+This statement is a MariaDB extension. It returns the exact string that can be used to re-create the named [stored procedure](../../../../server-usage/stored-routines/stored-procedures/), as well as the [SQL\_MODE](../../../../server-management/variables-and-modes/sql-mode.md) that was used when the trigger has been created and the character set used by the connection.. A similar statement, [SHOW CREATE FUNCTION](show-create-function.md), displays information about [stored functions](../../../../server-usage/stored-routines/stored-functions/).
 
 Both statements require that:
 
 * you are the owner of the routine;
 * you have the [SHOW CREATE ROUTINE](../../account-management-sql-statements/grant.md#database-privileges) privilege (from [MariaDB 11.3.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-3-rolling-releases/mariadb-11-3-0-release-notes)); or
-* have the [SELECT](../../account-management-sql-statements/grant.md) privilege on the [mysql.proc](../system-tables/the-mysql-database-tables/mysql-proc-table.md) table.
+* you have the [SELECT](../../account-management-sql-statements/grant.md) privilege on the [mysql.proc](../system-tables/the-mysql-database-tables/mysql-proc-table.md) table.
 
 When none of the above statements are true, the statements display `NULL` for the `Create Procedure` or `Create Function` field.
 
-**Warning** Users with `SELECT` privileges on [mysql.proc](../system-tables/the-mysql-database-tables/mysql-proc-table.md) or `USAGE` privileges on `*.*` can view the text of routines, even when they do not have privileges for the function or procedure itself.
+{% hint style="danger" %}
+Users with `SELECT` privileges on [mysql.proc](../system-tables/the-mysql-database-tables/mysql-proc-table.md) or `USAGE` privileges on `*.*` can view the text of routines, even when they do not have privileges for the function or procedure itself.
 
-`SHOW CREATE PROCEDURE` quotes identifiers according to the value of the [sql\_quote\_show\_create](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#sql_quote_show_create) system variable. Prior to [MariaDB 10.6.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/mariadb-1065-release-notes), [MariaDB 10.5.13](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-10513-release-notes) and [MariaDB 10.4.22](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-10422-release-notes), the output of this statement was unreliably affected by the [sql\_quote\_show\_create](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#sql_quote_show_create) system variable.
+
+{% endhint %}
+
+{% include "../../../../.gitbook/includes/untitled (1).md" %}
 
 ## Examples
 
@@ -77,6 +80,6 @@ Error 1305 (42000): PROCEDURE prc1 does not exist
 * [Stored Routine Privileges](../../../../server-usage/stored-routines/stored-functions/stored-routine-privileges.md)
 * [Information Schema ROUTINES Table](../system-tables/information-schema/information-schema-tables/information-schema-routines-table.md)
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}
