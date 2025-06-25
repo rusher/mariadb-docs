@@ -2,7 +2,7 @@
 
 The most recent release of [MariaDB 10.3](what-is-mariadb-103.md) is:[**MariaDB 10.3.39**](mariadb-10-3-39-release-notes.md) Stable (GA) [Download Now](https://downloads.mariadb.org/mariadb/10.3.39/)
 
-[Download 10.3.29](https://downloads.mariadb.org/mariadb/10.3.29/)[Release Notes](mariadb-10329-release-notes.md)[Changelog](../../../changelogs/changelogs-mariadb-10-3-series/mariadb-10329-changelog.md)[Overview of 10.3](what-is-mariadb-103.md)
+[Download 10.3.29](https://downloads.mariadb.org/mariadb/10.3.29/)[Release Notes](mariadb-10329-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-10-3-series/mariadb-10329-changelog.md)[Overview of 10.3](what-is-mariadb-103.md)
 
 **Release date:** 7 May 2021
 
@@ -70,7 +70,7 @@ If you want to use [CONNECT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/serv
 ## Changelog
 
 For a complete list of changes made in [MariaDB 10.3.29](mariadb-10329-release-notes.md), with links to detailed\
-information on each push, see the [changelog](../../../changelogs/changelogs-mariadb-10-3-series/mariadb-10329-changelog.md).
+information on each push, see the [changelog](../../changelogs/changelogs-mariadb-10-3-series/mariadb-10329-changelog.md).
 
 ## Contributors
 

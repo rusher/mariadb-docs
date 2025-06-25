@@ -2,7 +2,7 @@
 
 The most recent release of [MariaDB 10.9](what-is-mariadb-109.md) is:[**MariaDB 10.9.8**](mariadb-10-9-8-release-notes.md) Stable (GA) [Download Now](https://downloads.mariadb.org/mariadb/10.9.8/)
 
-[Download 10.9.1](https://downloads.mariadb.org/mariadb/10.9.1)[Release Notes](mariadb-1091-release-notes.md)[Changelog](../../../changelogs/changelogs-mariadb-109-series/mariadb-1091-changelog.md)[Overview of 10.9](what-is-mariadb-109.md)
+[Download 10.9.1](https://downloads.mariadb.org/mariadb/10.9.1)[Release Notes](mariadb-1091-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-109-series/mariadb-1091-changelog.md)[Overview of 10.9](what-is-mariadb-109.md)
 
 **Release date:** 20 May 2022
 
@@ -51,10 +51,10 @@ Thanks, and enjoy MariaDB!
 
 ### Backup
 
-* Incorrect binlogs after Galera SST using rsync and [mariabackup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup) ([MDEV-27524](https://jira.mariadb.org/browse/MDEV-27524))
-* [mariabackup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup) does not detect multi-source replication slave ([MDEV-21037](https://jira.mariadb.org/browse/MDEV-21037))
+* Incorrect binlogs after Galera SST using rsync and [mariabackup](broken-reference) ([MDEV-27524](https://jira.mariadb.org/browse/MDEV-27524))
+* [mariabackup](broken-reference) does not detect multi-source replication slave ([MDEV-21037](https://jira.mariadb.org/browse/MDEV-21037))
 * Useless warning "InnoDB: Allocated tablespace ID for , old maximum was 0" during backup stage ([MDEV-27343](https://jira.mariadb.org/browse/MDEV-27343))
-* [mariabackup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup) prepare fails for incrementals if a new schema is created after full backup is taken ([MDEV-28446](https://jira.mariadb.org/browse/MDEV-28446))
+* [mariabackup](broken-reference) prepare fails for incrementals if a new schema is created after full backup is taken ([MDEV-28446](https://jira.mariadb.org/browse/MDEV-28446))
 
 ### Optimizer
 
@@ -90,7 +90,7 @@ Thanks, and enjoy MariaDB!
 ## Changelog
 
 For a complete list of changes made in [MariaDB 10.9.1](mariadb-1091-release-notes.md), with links to detailed\
-information on each push, see the [changelog](../../../changelogs/changelogs-mariadb-109-series/mariadb-1091-changelog.md).
+information on each push, see the [changelog](../../changelogs/changelogs-mariadb-109-series/mariadb-1091-changelog.md).
 
 ## Contributors
 

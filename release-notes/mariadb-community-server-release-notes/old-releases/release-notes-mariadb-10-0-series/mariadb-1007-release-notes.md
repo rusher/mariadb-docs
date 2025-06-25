@@ -2,7 +2,7 @@
 
 The most recent release in the [MariaDB 10.0](changes-improvements-in-mariadb-10-0.md) series is:[**MariaDB 10.0.38**](mariadb-10038-release-notes.md) [Download Now](https://downloads.mariadb.org/mariadb/10.0.38)
 
-[Download](https://downloads.mariadb.org/mariadb/10.0.7) |**Release Notes** |[Changelog](../../../changelogs/changelogs-mariadb-100-series/mariadb-1007-changelog.md) |[Overview of 10.0](changes-improvements-in-mariadb-10-0.md)
+[Download](https://downloads.mariadb.org/mariadb/10.0.7) |**Release Notes** |[Changelog](../../changelogs/changelogs-mariadb-100-series/mariadb-1007-changelog.md) |[Overview of 10.0](changes-improvements-in-mariadb-10-0.md)
 
 **Release date:** 27 Dec 2013
 
@@ -32,7 +32,7 @@ Thanks, and enjoy MariaDB!
 * [EXTRACT (HOUR FROM ...)](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/date-time-functions/extract) now adheres to the SQL standard and returns values from 0 to 23. Previously it could return greater values.
 
 For a list of changes made in [MariaDB 10.0.7](mariadb-1007-release-notes.md), with links to detailed\
-information on each push, see the [changelog](../../../changelogs/changelogs-mariadb-100-series/mariadb-1007-changelog.md).
+information on each push, see the [changelog](../../changelogs/changelogs-mariadb-100-series/mariadb-1007-changelog.md).
 
 ## Plugins
 

@@ -2,7 +2,7 @@
 
 The most recent release of [MariaDB 10.2](what-is-mariadb-102.md) is:[**MariaDB 10.2.44**](mariadb-10244-release-notes.md) Stable (GA) [Download Now](https://downloads.mariadb.org/mariadb/10.2.44/)
 
-[Download](https://downloads.mariadb.org/mariadb/10.2.18)[Release Notes](mariadb-10218-release-notes.md)[Changelog](../../../changelogs/changelogs-mariadb-102-series/mariadb-10218-changelog.md)[Overview of 10.2](what-is-mariadb-102.md)
+[Download](https://downloads.mariadb.org/mariadb/10.2.18)[Release Notes](mariadb-10218-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-102-series/mariadb-10218-changelog.md)[Overview of 10.2](what-is-mariadb-102.md)
 
 **Release date:** 25 Sep 2018
 
@@ -22,7 +22,7 @@ Thanks, and enjoy MariaDB!
 
 * [MDEV-15511](https://jira.mariadb.org/browse/MDEV-15511) - if available, stunnel can be used during [Galera rsync SST](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/galera-management/getting-started-with-mariadb-galera-cluster#rsync)
 * [MDEV-15088](https://jira.mariadb.org/browse/MDEV-15088) - Remove debuginfo files from Windows .zip files and put in optional supplemental .zip file
-* [MDEV-16791](https://jira.mariadb.org/browse/MDEV-16791) - [mariabackup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup): Support DDL commands during backup
+* [MDEV-16791](https://jira.mariadb.org/browse/MDEV-16791) - [mariabackup](broken-reference): Support DDL commands during backup
 * [MDEV-13564](https://jira.mariadb.org/browse/MDEV-13564) - Refuse MLOG\_TRUNCATE in mariabackup
 * [MDEV-16934](https://jira.mariadb.org/browse/MDEV-16934) - add new system variable [eq\_range\_index\_dive\_limit](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#eq_range_index_dive_limit) to speed up queries that new long nested `IN` lists. The default value, for backward compatibility, is 0 meaning "unlimited"./25.
 * The [Galera library](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/what-is-mariadb-galera-cluster/README.md) in the repositories has been updated to version 25.3.24.
@@ -46,12 +46,12 @@ Thanks, and enjoy MariaDB!
   * [CVE-2021-2174](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-2174)
 
 When upgrading from [MariaDB 10.2.16](mariadb-10216-release-notes.md) or earlier to [MariaDB 10.2.17](mariadb-10217-release-notes.md) or higher,\
-running [mysql_upgrade](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/legacy-clients-and-utilities/mysql_upgrade) is **required** due to changes introduced in[MDEV-14637](https://jira.mariadb.org/browse/MDEV-14637).
+running [mysql\_upgrade](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/legacy-clients-and-utilities/mysql_upgrade) is **required** due to changes introduced in[MDEV-14637](https://jira.mariadb.org/browse/MDEV-14637).
 
 ## Changelog
 
 For a complete list of changes made in [MariaDB 10.2.18](mariadb-10218-release-notes.md) with links to detailed\
-information on each push, see the [changelog](../../../changelogs/changelogs-mariadb-102-series/mariadb-10218-changelog.md).
+information on each push, see the [changelog](../../changelogs/changelogs-mariadb-102-series/mariadb-10218-changelog.md).
 
 ## Contributors
 

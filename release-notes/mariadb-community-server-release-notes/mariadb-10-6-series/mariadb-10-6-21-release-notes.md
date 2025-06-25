@@ -1,6 +1,6 @@
 # MariaDB 10.6.21 Release Notes
 
-[Download](https://mariadb.com/downloads)[Release Notes](mariadb-10-6-21-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-106-series/mariadb-10-6-21-changelog.md)[Overview of 10.6](what-is-mariadb-106.md)
+[Download](https://mariadb.com/downloads)[Release Notes](mariadb-10-6-21-release-notes.md)[Changelog](../changelogs/changelogs-mariadb-106-series/mariadb-10-6-21-changelog.md)[Overview of 10.6](what-is-mariadb-106.md)
 
 [_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/10.6.21/)
 
@@ -128,7 +128,7 @@ Thanks, and enjoy MariaDB!
 ## Changelog
 
 For a complete list of changes and bugfixes made in [MariaDB 10.6.21](mariadb-10-6-21-release-notes.md), with links to detailed\
-information on each push, see the [changelog](../../changelogs/changelogs-mariadb-106-series/mariadb-10-6-21-changelog.md).
+information on each push, see the [changelog](../changelogs/changelogs-mariadb-106-series/mariadb-10-6-21-changelog.md).
 
 ## Contributors
 

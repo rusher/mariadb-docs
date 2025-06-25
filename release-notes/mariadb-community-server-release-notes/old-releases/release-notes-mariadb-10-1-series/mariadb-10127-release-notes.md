@@ -4,7 +4,7 @@ The most recent release of [MariaDB 10.1](changes-improvements-in-mariadb-10-1.m
 
 A regression was discovered after the release of [MariaDB 10.1.27](mariadb-10127-release-notes.md). It has been pulled from the downloads system, but some mirrors may still have it. **Do not download or install this version.** Stay with [MariaDB 10.1.26](mariadb-10126-release-notes.md) until 10.1.28 is released.
 
-[Download](https://downloads.mariadb.org/mariadb/10.1.27)[Release Notes](mariadb-10127-release-notes.md)[Changelog](../../../changelogs/changelogs-mariadb-101-series/mariadb-10127-changelog.md)[Overview of 10.1](changes-improvements-in-mariadb-10-1.md)
+[Download](https://downloads.mariadb.org/mariadb/10.1.27)[Release Notes](mariadb-10127-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-101-series/mariadb-10127-changelog.md)[Overview of 10.1](changes-improvements-in-mariadb-10-1.md)
 
 **Release date:** 25 Sep 2017
 
@@ -35,7 +35,7 @@ Using [page\_compression](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-
 ## Changelog
 
 For a complete list of changes made in [MariaDB 10.1.27](mariadb-10127-release-notes.md), with links to detailed\
-information on each push, see the [changelog](../../../changelogs/changelogs-mariadb-101-series/mariadb-10127-changelog.md).
+information on each push, see the [changelog](../../changelogs/changelogs-mariadb-101-series/mariadb-10127-changelog.md).
 
 Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
 

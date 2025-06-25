@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 SHOW COLLATION
     [LIKE 'pattern' | WHERE expr]
 ```
@@ -17,7 +17,7 @@ See [Setting Character Sets and Collations](../../../data-types/string-data-type
 
 ## Examples
 
-```
+```sql
 SHOW COLLATION LIKE 'latin1%';
 +-------------------------+---------+------+---------+----------+---------+
 | Collation               | Charset | Id   | Default | Compiled | Sortlen |
@@ -35,7 +35,7 @@ SHOW COLLATION LIKE 'latin1%';
 +-------------------------+---------+------+---------+----------+---------+
 ```
 
-```
+```sql
 SHOW COLLATION WHERE Sortlen LIKE '8' AND Charset LIKE 'utf8mb4';
 +------------------------------+---------+------+---------+----------+---------+
 | Collation                    | Charset | Id   | Default | Compiled | Sortlen |

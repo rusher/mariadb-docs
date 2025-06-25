@@ -24,7 +24,7 @@ This version of MariaDB Galera Cluster supports `wsrep` API v25 which means\
 MariaDB Galera Cluster can be used with either a 25.2.x or 25.3.x Galera`wsrep` provider. A 25.3.x `wsrep` provider is included in the MariaDB\
 repositories and both 25.3.x and 25.2.x wsrep providers are available on the downloads page.
 
-See the [MariaDB 5.5.35 Release Notes](../../release-notes-mariadb-5-5-series/mariadb-5535-release-notes.md) and[Changelog](../../../../changelogs/changelogs-mariadb-55-series/mariadb-5535-changelog.md) for more information on the changes in\
+See the [MariaDB 5.5.35 Release Notes](../../release-notes-mariadb-5-5-series/mariadb-5535-release-notes.md) and[Changelog](../../../changelogs/changelogs-mariadb-55-series/mariadb-5535-changelog.md) for more information on the changes in\
 MariaDB.
 
 Note: If Galera v2 and v3 are both being used in the cluster, MariaDB with Galera v3 must be started with wsrep\_provider\_options='socket.checksum=1' in order to make it backward compatible with Galera v2.

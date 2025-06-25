@@ -54,7 +54,7 @@ If MariaDB is already installed on the server the package manager will\
 uninstall the appropriate packages prior to installing the MariaDB Galera\
 Cluster packages.
 
-See the [MariaDB 5.5.28a Changelog](../../../../changelogs/changelogs-mariadb-55-series/mariadb-5528a-changelog.md) for full details\
+See the [MariaDB 5.5.28a Changelog](../../../changelogs/changelogs-mariadb-55-series/mariadb-5528a-changelog.md) for full details\
 of the many packaging and other fixes.
 
 Thanks, and enjoy MariaDB Galera Cluster!

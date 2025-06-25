@@ -45,8 +45,8 @@ MariaDB Enterprise Server 10.6.8-4 was released on 2022-06-13.
 MariaDB Enterprise Server enables a predictable development and operations experience through an [enterprise lifecycle](../enterprise-server-lifecycle.md). These new features have been backported after reaching maturity in MariaDB Community Server:
 
 * [mariadb-dump option --as-of](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/backup-restore-and-import-clients/mariadb-dump) reads data as of specific timestamp from system-versioned tables. (MENT-1457)
-* Added [JSON_EQUALS() function](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/json-functions/json_equals) to check JSON equality. (MENT-1452)
-* Added [JSON_NORMALIZE() function](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/json-functions/json_normalize) to normalize JSON values. (MENT-1456)
+* Added [JSON\_EQUALS() function](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/json-functions/json_equals) to check JSON equality. (MENT-1452)
+* Added [JSON\_NORMALIZE() function](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/special-functions/json-functions/json_normalize) to normalize JSON values. (MENT-1456)
 * Added [password\_reuse\_check password validation plugin](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/password-validation-plugins/password-reuse-check-plugin). (MENT-1451)
 
 ## Notable Changes
@@ -142,14 +142,14 @@ View being updated does not have complete key of underlying table in it
 * When using [mariadb-binlog](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/logging-tools/mariadb-binlog) with [--raw](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/logging-tools/mariadb-binlog#-raw) and [--stop-never](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/logging-tools/mariadb-binlog#-stop-never), events from the primary server's currently active log file are not written to their respective log file specified by [--result-file](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/logging-tools/mariadb-binlog#-result-file). ([MDEV-14608](https://jira.mariadb.org/browse/MDEV-14608))
 * When a prepared statement is used to execute [EXPLAIN](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/analyze-and-explain-statements/explain), a different query plan can be returned on the second execution. ([MDEV-19631](https://jira.mariadb.org/browse/MDEV-19631))
 * When [slave\_compressed\_protocol](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables) is enabled with semi-synchronous replication, the numbering on packet headers can become out of sync between the primary and replica servers, but the inconsistency does not have any negative impact with release builds of MariaDB Enterprise Server. ([MDEV-25580](https://jira.mariadb.org/browse/MDEV-25580))
-* The server and [MariaDB Enterprise Backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup) can raise unnecessary warnings about tablespace IDs in some scenarios. ([MDEV-27343](https://jira.mariadb.org/browse/MDEV-27343))
+* The server and [MariaDB Enterprise Backup](broken-reference) can raise unnecessary warnings about tablespace IDs in some scenarios. ([MDEV-27343](https://jira.mariadb.org/browse/MDEV-27343))
   * The warning can appear as the following:
 
 ```
 InnoDB: Allocated tablespace ID TABLESPACE_ID for DATABASE_NAME/TABLE_NAME, old maximum was 0
 ```
 
-* This warning can be written to standard output (stdout) when preparing a backup with [MariaDB Enterprise Backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup).
+* This warning can be written to standard output (stdout) when preparing a backup with [MariaDB Enterprise Backup](broken-reference).
 * This warning can be written to the [MariaDB Error Log](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/server-monitoring-logs/error-log) when InnoDB performs crash recovery at startup.
 * With MariaDB Enterprise Cluster, the joiner node fails to complete an SST when [innodb\_log\_group\_home\_dir](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables#innodb_log_group_home_dir) specifies a directory different than [datadir](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#datadir). ([MDEV-27740](https://jira.mariadb.org/browse/MDEV-27740))
 * When a non-partitioned table using the `DATA DIRECTORY` clause is converted to a partitioned table, the `DATA DIRECTORY` clause is silently ignored, and the partitioned table is moved to the default directory. ([MDEV-27065](https://jira.mariadb.org/browse/MDEV-27065))

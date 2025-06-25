@@ -83,16 +83,10 @@ New GIS functions. These functions improve compatibility with MySQL 8.
 
 * Can set an alternative directory path for searching scripts invoked via the source command, with the [--script-dir](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/mariadb-client/mariadb-command-line-client#-script-dir) mariadb client option ([MDEV-23818](https://jira.mariadb.org/browse/MDEV-23818))
 
-## Security Vulnerabilities Fixed in MariaDB 12.0
-
-For a complete list of security vulnerabilities (CVEs) fixed across all\
-versions of MariaDB, see the [Security Vulnerabilities Fixed in MariaDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/security)\
-page.
-
 ## List of All MariaDB 12.0 Releases
 
-| Date       | Release                                           | Status | Release Notes                                    | Changelog                                                                                |
-| ---------- | ------------------------------------------------- | ------ | ------------------------------------------------ | ---------------------------------------------------------------------------------------- |
-| 5 Jun 2025 | [MariaDB 12.0.1](mariadb-12.0.1-release-notes.md) | RC     | [Release Notes](mariadb-12.0.1-release-notes.md) | [Changelog](../../changelogs/changelogs-mariadb-12.0-series/mariadb-12.0.1-changelog.md) |
+| Date       | Release                                           | Status | Release Notes                                    | Changelog                                                                             |
+| ---------- | ------------------------------------------------- | ------ | ------------------------------------------------ | ------------------------------------------------------------------------------------- |
+| 5 Jun 2025 | [MariaDB 12.0.1](mariadb-12.0.1-release-notes.md) | RC     | [Release Notes](mariadb-12.0.1-release-notes.md) | [Changelog](../changelogs/changelogs-mariadb-12.0-series/mariadb-12.0.1-changelog.md) |
 
 {% @marketo/form formid="4316" formId="4316" %}

@@ -37,7 +37,7 @@ information on each push, see the[MariaDB Galera Cluster 5.5.42 Changelog](../ma
   MariaDB Galera Cluster can be used with either a 25.2.x or 25.3.x\
   Galera `wsrep` provider. A 25.3.x `wsrep` provider is included in the\
   MariaDB repositories and is also available from the[downloads](https://downloads.mariadb.org/mariadb-galera/5.5.42) page.
-* See the [MariaDB 5.5.42 Release Notes](../../release-notes-mariadb-5-5-series/mariadb-5542-release-notes.md) and[Changelog](../../../../changelogs/changelogs-mariadb-55-series/mariadb-5542-changelog.md) for more information on the changes in\
+* See the [MariaDB 5.5.42 Release Notes](../../release-notes-mariadb-5-5-series/mariadb-5542-release-notes.md) and[Changelog](../../../changelogs/changelogs-mariadb-55-series/mariadb-5542-changelog.md) for more information on the changes in\
   MariaDB.
 
 Note: If Galera 25.2.x and 25.3.x are both being used in the cluster, MariaDB\

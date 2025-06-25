@@ -6,8 +6,8 @@ MariaDB Enterprise Server 10.4.6-1 was released on 2019-07-08.
 
 ## New Features
 
-* [MariaDB Enterprise Backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup) with support of non-blocking Backups
-* Backup Stages for [non-blocking Backups](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup)
+* [MariaDB Enterprise Backup](broken-reference) with support of non-blocking Backups
+* Backup Stages for [non-blocking Backups](broken-reference)
 * [MariaDB Enterprise Audit Plugin](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/mariadb-audit-plugin)
   * Per user filters using system tables
   * Audit of AUDIT plugin configuration changes

@@ -34,32 +34,30 @@ MariaDB Enterprise Server 11.8 continues to expand its native vector search capa
 * **Default Collation**: `utf8mb4_uca1400_ai_ci` is now the standard for Unicode character sets.
 * **Extended TIMESTAMP Range**: Increased upper bound to 2106 on 64-bit systems.
 * **ROW Type Enhancements**:
-  * ROW types are now usable as stored function return values.\
-    The support for `%ROWTYPE, TYPE OF, and RECORD(...)` declarations for Oracle-like compatibility:
+  *   ROW types are now usable as stored function return values.\
+      The support for `%ROWTYPE, TYPE OF, and RECORD(...)` declarations for Oracle-like compatibility:
 
-```sql
-DECLARE
-  TYPE DeptRecTyp IS RECORD (
-    dept_id    NUMBER(4),
-    dept_name  VARCHAR2(30),
-    mgr_id     NUMBER(6),
-    loc_id     NUMBER(4)
-  );
-```
-
+      ```sql
+      DECLARE
+        TYPE DeptRecTyp IS RECORD (
+          dept_id    NUMBER(4),
+          dept_name  VARCHAR2(30),
+          mgr_id     NUMBER(6),
+          loc_id     NUMBER(4)
+        );
+      ```
 * **Triggers**:
-  * `BEFORE UPDATE OF col1, col2` limits trigger execution to specific column updates:
+  *   `BEFORE UPDATE OF col1, col2` limits trigger execution to specific column updates:
 
-```sql
-CREATE TRIGGER mytrigger BEFORE UPDATE OF col1, col2 ON t1 FOR EACH ROW …
-```
-
+      ```sql
+      CREATE TRIGGER mytrigger BEFORE UPDATE OF col1, col2 ON t1 FOR EACH ROW …
+      ```
 * Use of `SIGNAL SQLSTATE '02TRG'` allows skipping a row operation.
-* Stored Procedures: Now support default parameter values:
+*   Stored Procedures: Now support default parameter values:
 
-```
-CREATE OR REPLACE PROCEDURE p1(param1 INT, param2 INT DEFAULT 1)
-```
+    ```sql
+    CREATE OR REPLACE PROCEDURE p1(param1 INT, param2 INT DEFAULT 1)
+    ```
 
 ### Enhancements to System Versioned Tables <a href="#enhancements-to-system-versioned-tables" id="enhancements-to-system-versioned-tables"></a>
 
@@ -77,10 +75,10 @@ CREATE OR REPLACE PROCEDURE p1(param1 INT, param2 INT DEFAULT 1)
 
     In both cases, invisible fields will be created in the table to track the timestamps and period for which the data is valid. A DBA/DevOps might want these fields to be visible. It is now possible to change such implicit fields to explicit ones by the following types of statements:
 
-```sql
-SET @@system_versioning_alter_history= keep;
-ALTER TABLE contracts ADD COLUMN rs timestamp(6) AS ROW START, ADD COLUMN re timestamp(6) AS ROW END, ADD PERIOD FOR SYSTEM_TIME (rs,re);
-```
+    ```sql
+    SET @@system_versioning_alter_history= keep;
+    ALTER TABLE contracts ADD COLUMN rs timestamp(6) AS ROW START, ADD COLUMN re timestamp(6) AS ROW END, ADD PERIOD FOR SYSTEM_TIME (rs,re);
+    ```
 
 ### Security <a href="#security" id="security"></a>
 
@@ -99,43 +97,45 @@ ALTER TABLE contracts ADD COLUMN rs timestamp(6) AS ROW START, ADD COLUMN re tim
       SHOW GRANTS FOR MariaDBUser@'%';
       ```
 
-```sql
-Grants for MariaDBUser@%
-GRANT USAGE ON *.* TO `MariaDBUser`@`%` IDENTIFIED VIA parsec USING 'P0:lhXyNv1cIxpB8EnTxR7ON7S7:1l3rWRW1/jw45yrvYXB8eh02wzk7lcJcz4CMc
-Ww2b+8'
-```
+      ```
+      Grants for MariaDBUser@%
+      GRANT USAGE ON *.* TO `MariaDBUser`@`%` IDENTIFIED VIA parsec USING 'P0:lhXyNv1cIxpB8EnTxR7ON7S7:1l3rWRW1/jw45yrvYXB8eh02wzk7lcJcz4CMc
+      Ww2b+8'
+      ```
+
+      \
 
 * Unix Socket Enhancements:
   * Now supports explicit OS user mapping via `IDENTIFIED VIA UNIX_SOCKET AS` `'user'`.
-  * It is also possible to specify more than one OS user with the usual OR syntax:
+  *   It is also possible to specify more than one OS user with the usual OR syntax:
 
-```sql
-CREATE USER dba IDENTIFIED VIA UNIX_SOCKET AS 'jack' OR IDENTIFIED VIA UNIX_SOCKET AS 'jill';
-```
+      ```sql
+      CREATE USER dba IDENTIFIED VIA UNIX_SOCKET AS 'jack' OR IDENTIFIED VIA UNIX_SOCKET AS 'jill';
+      ```
 
 ### Replication & Clustering <a href="#replication-clustering" id="replication-clustering"></a>
 
 * Improved Replication Lag Monitoring:
-  * [SHOW REPLICA STATUS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-replica-status) now includes:
+  *   [SHOW REPLICA STATUS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-replica-status) now includes:\
 
-```
-Master_last_event_time
 
-Slave_last_event_time
+      ```
+      Master_last_event_time
 
-Master_Slave_time_diff
-```
+      Slave_last_event_time
 
-* [Information Schema Table](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables) for [Replication Status](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-slave_status-table):
+      Master_Slave_time_diff
+      ```
+*   [Information Schema Table](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables) for [Replication Status](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-slave_status-table):\
 
-```sql
-MariaDB [test]> SELECT Master_last_event_time,Slave_last_event_time,Master_Slave_time_diff FROM information_schema.slave_status\G
-*************************** 1. row ***************************
-Master_last_event_time: 2024-08-13 07:32:38
-Slave_last_event_time: 2024-08-13 07:32:37
-Master_Slave_time_diff: 1
-```
 
+    ```sql
+    MariaDB [test]> SELECT Master_last_event_time,Slave_last_event_time,Master_Slave_time_diff FROM information_schema.slave_status\G
+    *************************** 1. row ***************************
+    Master_last_event_time: 2024-08-13 07:32:38
+    Slave_last_event_time: 2024-08-13 07:32:37
+    Master_Slave_time_diff: 1
+    ```
 * **New Option – `--slave-abort-blocking-timeout`**: Kills blocking non-replication queries after a timeout.
 * **Galera SST Automation**: SST user is now auto-created and managed internally.
 
@@ -151,25 +151,25 @@ Master_Slave_time_diff: 1
 * New [Information Schema](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema) Views:
   * `SLAVE_STATUS` to view replication lag via SQL.
   * [USERS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-users-table) for password state and expiration monitoring.
-  * [SEQUENCES](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-sequences-table) to introspect auto-generated sequences:
+  *   [SEQUENCES](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-sequences-table) to introspect auto-generated sequences:\
 
-```sql
-SELECT * FROM INFORMATION_SCHEMA.SEQUENCES\G
-*************************** 1. row ***************************
-       SEQUENCE_CATALOG: def
-        SEQUENCE_SCHEMA: test
-          SEQUENCE_NAME: s_name
-              DATA_TYPE: tinyint
-      NUMERIC_PRECISION: 8
-NUMERIC_PRECISION_RADIX: 2
-          NUMERIC_SCALE: 0
-            START_VALUE: 100
-          MINIMUM_VALUE: -127
-          MAXIMUM_VALUE: 126
-              INCREMENT: 10
-           CYCLE_OPTION: 0
-```
 
+      ```sql
+      SELECT * FROM INFORMATION_SCHEMA.SEQUENCES\G
+      *************************** 1. row ***************************
+             SEQUENCE_CATALOG: def
+              SEQUENCE_SCHEMA: test
+                SEQUENCE_NAME: s_name
+                    DATA_TYPE: tinyint
+            NUMERIC_PRECISION: 8
+      NUMERIC_PRECISION_RADIX: 2
+                NUMERIC_SCALE: 0
+                  START_VALUE: 100
+                MINIMUM_VALUE: -127
+                MAXIMUM_VALUE: 126
+                    INCREMENT: 10
+                 CYCLE_OPTION: 0
+      ```
 * **Enhanced ANALYZE FORMAT=JSON**:
   * Includes `r_index_rows, r_icp_filtered`.
 * **Thread Naming for Diagnostics**: Thread names are now more descriptive.
@@ -199,18 +199,18 @@ NUMERIC_PRECISION_RADIX: 2
 
 ## Installation Instructions <a href="#installation-instructions" id="installation-instructions"></a>
 
-* Deploy MariaDB Enterprise with Repositories
-* Deploy MariaDB Enterprise with Package Tarballs
-* Deploy MariaDB Enterprise with Docker
-* Enterprise Cluster Topology with MariaDB Enterprise Server
-* Primary/Replica Topology with MariaDB Enterprise Server
-* ColumnStore Object Storage Topology with MariaDB Enterprise Server and MariaDB Enterprise ColumnStore
-* ColumnStore Shared Local Storage Topology with MariaDB Enterprise Server and MariaDB Enterprise ColumnStore
-* HTAP Topology with MariaDB Enterprise Server and MariaDB Enterprise ColumnStore
-* Single-Node Enterprise ColumnStore with MariaDB Enterprise Server and Object Storage
-* Single-Node Enterprise ColumnStore with MariaDB Enterprise Server
-* Enterprise Spider Sharded Topology with MariaDB Enterprise Server
-* Enterprise Spider Federated Topology with MariaDB Enterprise Server
+* [Deploy MariaDB Enterprise with Repositories](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/single-node-topologies/enterprise-server)
+* [Deploy MariaDB Enterprise with Package Tarballs](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/package-tarballs)
+* [Deploy MariaDB Enterprise with Docker](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/automated-mariadb-deployment-and-administration/docker-and-mariadb/deploy-mariadb-enterprise-server-with-docker)
+* [Enterprise Cluster Topology with MariaDB Enterprise Server](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/galera-cluster)
+* [Primary/Replica Topology with MariaDB Enterprise Server](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/primary-replica)
+* [ColumnStore Object Storage Topology with MariaDB Enterprise Server and MariaDB Enterprise ColumnStore](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/columnstore-object-storage)
+* [ColumnStore Shared Local Storage Topology with MariaDB Enterprise Server and MariaDB Enterprise ColumnStore](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/columnstore-shared-local-storage)
+* [HTAP Topology with MariaDB Enterprise Server and MariaDB Enterprise ColumnStore](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/htap)
+* [Single-Node Enterprise ColumnStore with MariaDB Enterprise Server and Object Storage](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/single-node-topologies/enterprise-server-with-columnstore-object-storage)
+* [Single-Node Enterprise ColumnStore with MariaDB Enterprise Server](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/single-node-topologies/enterprise-server-with-columnstore-local-storage)
+* [Enterprise Spider Sharded Topology with MariaDB Enterprise Server](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/spider-sharded)
+* [Enterprise Spider Federated Topology with MariaDB Enterprise Server](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/spider-federated)
 
 ## Upgrade Instructions <a href="#upgrade-instructions" id="upgrade-instructions"></a>
 

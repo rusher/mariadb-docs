@@ -2,14 +2,14 @@
 
 The most recent release in the [MariaDB 5.2 series](changes-improvements-in-mariadb-5-2.md) is:[**MariaDB 5.2.14**](mariadb-5214-release-notes.md)
 
-[Download](https://askmonty.org/wiki/MariaDB:Download:MariaDB_5.2.4) | **Release Notes** | [Changelog](../../../changelogs/changelogs-mariadb-52-series/mariadb-524-changelog.md) |[Overview of 5.2](changes-improvements-in-mariadb-5-2.md)
+[Download](https://askmonty.org/wiki/MariaDB:Download:MariaDB_5.2.4) | **Release Notes** | [Changelog](../../changelogs/changelogs-mariadb-52-series/mariadb-524-changelog.md) |[Overview of 5.2](changes-improvements-in-mariadb-5-2.md)
 
 **Release date:** 6 Dec 2010
 
 This is a [stable release](../../../mariadb-release-criteria.md). In general this means there are\
 no known serious bugs and we believe the code is ready for general usage. For a high-level description of [MariaDB 5.2](changes-improvements-in-mariadb-5-2.md) see the [MariaDB 5.2 overview](changes-improvements-in-mariadb-5-2.md).
 
-See the [Changelog](../../../changelogs/changelogs-mariadb-52-series/mariadb-524-changelog.md) for a list of all changes included in this release.
+See the [Changelog](../../changelogs/changelogs-mariadb-52-series/mariadb-524-changelog.md) for a list of all changes included in this release.
 
 ## Includes [MariaDB 5.1.53](../release-notes-mariadb-5-1-series/mariadb-5153-release-notes.md)
 

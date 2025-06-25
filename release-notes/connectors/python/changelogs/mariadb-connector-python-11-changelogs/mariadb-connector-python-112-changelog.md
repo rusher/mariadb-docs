@@ -66,16 +66,16 @@ details of the revision and view diffs of the code modified in that revision.
   2022-05-10 09:06:56 +0200
   * Build fixes:
 * [Revision #1aa2bbe](https://github.com/mariadb-corporation/mariadb-connector-python/commit/1aa2bbe)\
-  2022-04-11 08:03:20 +0200
-  *
-    * Documentation
+  2022-04-11 08:03:20 +0200\
+  \*
+  * Documentation
 * [Revision #48aea2f](https://github.com/mariadb-corporation/mariadb-connector-python/commit/48aea2f)\
   2022-04-05 16:54:37 +0200
   * Docu fxes
 * [Revision #9ae99cd](https://github.com/mariadb-corporation/mariadb-connector-python/commit/9ae99cd)\
-  2022-04-03 18:38:48 +0200
-  *
-    * Documentation fixes - removed COMMAND constants
+  2022-04-03 18:38:48 +0200\
+  \*
+  * Documentation fixes - removed COMMAND constants
 * [Revision #55ce15a](https://github.com/mariadb-corporation/mariadb-connector-python/commit/55ce15a)\
   2022-04-03 07:03:32 +0200
   * Minor documentation fixes

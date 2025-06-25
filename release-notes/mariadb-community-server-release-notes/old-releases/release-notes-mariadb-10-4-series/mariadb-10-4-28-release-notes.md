@@ -1,6 +1,6 @@
 # MariaDB 10.4.28 Release Notes
 
-[Download](https://downloads.mariadb.org/mariadb/10.4.28/)[Release Notes](mariadb-10-4-28-release-notes.md)[Changelog](../../../changelogs/changelogs-mariadb-10-4-series/mariadb-10-4-28-changelog.md)[Overview of 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/broken-reference/README.md)
+[Download](https://downloads.mariadb.org/mariadb/10.4.28/)[Release Notes](mariadb-10-4-28-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-10-4-series/mariadb-10-4-28-changelog.md)[Overview of 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/broken-reference/README.md)
 
 **Release date:** 6 Feb 2023
 
@@ -51,7 +51,7 @@ Thanks, and enjoy MariaDB!
 ## Changelog
 
 For a complete list of changes made in [MariaDB 10.4.28](mariadb-10-4-28-release-notes.md), with links to detailed\
-information on each push, see the [changelog](../../../changelogs/changelogs-mariadb-10-4-series/mariadb-10-4-28-changelog.md).
+information on each push, see the [changelog](../../changelogs/changelogs-mariadb-10-4-series/mariadb-10-4-28-changelog.md).
 
 ## Contributors
 

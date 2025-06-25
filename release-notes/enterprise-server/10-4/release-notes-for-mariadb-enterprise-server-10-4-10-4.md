@@ -23,13 +23,13 @@ MariaDB Enterprise Server 10.4.10-4 was released on 2019-11-18.
 
 ### Can result in data loss
 
-* [mariabackup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup) [--prepare](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/enterprise-server/10-4/broken-reference/README.md) [--export](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/enterprise-server/10-4/broken-reference/README.md) ... could overwrite binary logs if certain conditions were present. ([MDEV-20703](https://jira.mariadb.org/browse/MDEV-20703))\
+* [mariabackup](broken-reference) [--prepare](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/enterprise-server/10-4/broken-reference/README.md) [--export](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/enterprise-server/10-4/broken-reference/README.md) ... could overwrite binary logs if certain conditions were present. ([MDEV-20703](https://jira.mariadb.org/browse/MDEV-20703))\
   Conditions which must be present to trigger this bug:
-  * [mariabackup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup) is executed on the MariaDB Server host, and
+  * [mariabackup](broken-reference) is executed on the MariaDB Server host, and
   * Configuration files from the master are used, and
   * Configuration files enable binary logging
 
-If unable to upgrade to MariaDB Enterprise Server 10.4.10-4, where this bug is fixed, a workaround is available: use the `--defaults` option to [mariabackup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup) to avoid the bug-triggering conditions by specifying a different configuration file.
+If unable to upgrade to MariaDB Enterprise Server 10.4.10-4, where this bug is fixed, a workaround is available: use the `--defaults` option to [mariabackup](broken-reference) to avoid the bug-triggering conditions by specifying a different configuration file.
 
 ### Can result in a hang or crash
 
@@ -45,7 +45,7 @@ If unable to upgrade to MariaDB Enterprise Server 10.4.10-4, where this bug is f
 
 * Unnecessary logging of warnings to the error log regarding [InnoDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb) maximum row size for DML statements which should be present only for DDL operations. (MENT-454)
 * After server restart, a [SELECT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/selecting-data/select) using a `FULLTEXT` index on [InnoDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb) tables can fail to return some data. ([MDEV-19073](https://jira.mariadb.org/browse/MDEV-19073))
-* [MariaDB Enterprise Backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup) and MariaDB Backup, when using `mbstream`, recreated `xtrabackup_info` in the same directory as the backup file. Repeated extract of the backup could fail. ([MDEV-18438](https://jira.mariadb.org/browse/MDEV-18438))
+* [MariaDB Enterprise Backup](broken-reference) and MariaDB Backup, when using `mbstream`, recreated `xtrabackup_info` in the same directory as the backup file. Repeated extract of the backup could fail. ([MDEV-18438](https://jira.mariadb.org/browse/MDEV-18438))
 * `mysqld_multi.sh` script could not be launched and returned a syntax error. (MENT-433)
 * Though not supported on Microsoft Windows, the [server\_audit\_output\_type](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/mariadb-audit-plugin/mariadb-audit-plugin-options-and-system-variables) system variable for the Audit plugin accepted a `SYSLOG` value. ([MDEV-19851](https://jira.mariadb.org/browse/MDEV-19851))
 * `FOREIGN KEY` constraints have been ignored during [DELETE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/changing-deleting-data/delete) when parent table is [System-Versioned](https://github.com/mariadb-corporation/docs-release-notes/blob/test/mariadb-enterprise-server-release-notes/mariadb-enterprise-server-10-4/system-versioned-table/README.md). ([MDEV-16210](https://jira.mariadb.org/browse/MDEV-16210))

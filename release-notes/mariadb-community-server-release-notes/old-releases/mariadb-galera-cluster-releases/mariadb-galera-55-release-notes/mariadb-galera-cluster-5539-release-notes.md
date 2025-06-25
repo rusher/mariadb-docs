@@ -38,7 +38,7 @@ information on each push, see the[MariaDB Galera Cluster 5.5.39 Changelog](../ma
   galera-specific suites which can be used for general testing of your MariaDB\
   Galera Cluster installation, and for development.
 
-See the [MariaDB 5.5.39 Release Notes](../../release-notes-mariadb-5-5-series/mariadb-5539-release-notes.md) and[Changelog](../../../../changelogs/changelogs-mariadb-55-series/mariadb-5539-changelog.md) for more information on the changes in\
+See the [MariaDB 5.5.39 Release Notes](../../release-notes-mariadb-5-5-series/mariadb-5539-release-notes.md) and[Changelog](../../../changelogs/changelogs-mariadb-55-series/mariadb-5539-changelog.md) for more information on the changes in\
 MariaDB.
 
 Note: If Galera 25.2.x and 25.3.x are both being used in the cluster, MariaDB\

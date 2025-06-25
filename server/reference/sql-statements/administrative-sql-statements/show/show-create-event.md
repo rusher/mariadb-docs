@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 SHOW CREATE EVENT event_name
 ```
 
@@ -16,7 +16,7 @@ The [information\_schema.EVENTS](../system-tables/information-schema/information
 
 ## Examples
 
-```
+```sql
 SHOW CREATE EVENT test.e_daily\G
 *************************** 1. row ***************************
                Event: e_daily

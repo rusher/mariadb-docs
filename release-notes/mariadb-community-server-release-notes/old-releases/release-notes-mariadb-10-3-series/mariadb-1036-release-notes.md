@@ -2,7 +2,7 @@
 
 The most recent release of [MariaDB 10.3](what-is-mariadb-103.md) is:[**MariaDB 10.3.39**](mariadb-10-3-39-release-notes.md) Stable (GA) [Download Now](https://downloads.mariadb.org/mariadb/10.3.39/)
 
-[Download](https://downloads.mariadb.org/mariadb/10.3.6)[Release Notes](mariadb-1036-release-notes.md)[Changelog](../../../changelogs/changelogs-mariadb-10-3-series/mariadb-1036-changelog.md)[Overview of 10.3](what-is-mariadb-103.md)
+[Download](https://downloads.mariadb.org/mariadb/10.3.6)[Release Notes](mariadb-1036-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-10-3-series/mariadb-1036-changelog.md)[Overview of 10.3](what-is-mariadb-103.md)
 
 **Release date:** 16 Apr 2018
 
@@ -38,7 +38,7 @@ Notable changes of this release include:
 **Do not use&#x20;**_**non-GA**_**&#x20;releases on production systems!**
 
 For a complete list of changes made in [MariaDB 10.3.6](mariadb-1036-release-notes.md), with links to detailed\
-information on each push, see the [changelog](../../../changelogs/changelogs-mariadb-10-3-series/mariadb-1036-changelog.md).
+information on each push, see the [changelog](../../changelogs/changelogs-mariadb-10-3-series/mariadb-1036-changelog.md).
 
 ## Contributors
 

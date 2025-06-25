@@ -2,19 +2,17 @@
 
 ## Syntax
 
-```
+```sql
 SHOW CREATE {DATABASE | SCHEMA} db_name
 ```
 
 ## Description
 
-Shows the [CREATE DATABASE](../../data-definition/create/create-database.md) statement that\
-creates the given database. `SHOW CREATE SCHEMA` is a synonym\
-for `SHOW CREATE DATABASE`. `SHOW CREATE DATABASE` quotes database names according to the value of the [sql\_quote\_show\_create](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#sql_quote_show_create) server system variable.
+Shows the [CREATE DATABASE](../../data-definition/create/create-database.md) statement that creates the given database. `SHOW CREATE SCHEMA` is a synonym for `SHOW CREATE DATABASE`. `SHOW CREATE DATABASE` quotes database names according to the value of the [sql\_quote\_show\_create](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#sql_quote_show_create) server system variable.
 
 ## Examples
 
-```
+```sql
 SHOW CREATE DATABASE test;
 +----------+-----------------------------------------------------------------+
 | Database | Create Database                                                 |
@@ -32,7 +30,7 @@ SHOW CREATE SCHEMA test;
 
 With [sql\_quote\_show\_create](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#sql_quote_show_create) off:
 
-```
+```sql
 SHOW CREATE DATABASE test;
 +----------+---------------------------------------------------------------+
 | Database | Create Database                                               |
@@ -43,7 +41,7 @@ SHOW CREATE DATABASE test;
 
 With a comment, from [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105):
 
-```
+```sql
 SHOW CREATE DATABASE p;
 +----------+--------------------------------------------------------------------------------------+
 | Database | Create Database                                                                      |

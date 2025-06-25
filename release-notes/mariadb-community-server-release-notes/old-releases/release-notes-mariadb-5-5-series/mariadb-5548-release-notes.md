@@ -2,7 +2,7 @@
 
 The most recent release in the [MariaDB 5.5](changes-improvements-in-mariadb-5-5.md) series is:[**MariaDB 5.5.68**](mariadb-5568-release-notes.md) [Download Now](https://downloads.mariadb.org/mariadb/5.5.68/)
 
-[Download](https://downloads.mariadb.org/mariadb/5.5.48)[Release Notes](mariadb-5548-release-notes.md)[Changelog](../../../changelogs/changelogs-mariadb-55-series/mariadb-5548-changelog.md)[Overview of 5.5](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/broken-reference/README.md)
+[Download](https://downloads.mariadb.org/mariadb/5.5.48)[Release Notes](mariadb-5548-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-55-series/mariadb-5548-changelog.md)[Overview of 5.5](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/broken-reference/README.md)
 
 **Release date:** 11 Feb 2016
 
@@ -11,7 +11,7 @@ This is a [_**Stable**_](../../../mariadb-release-criteria.md) _**(GA)**_ releas
 **For a description of** [**MariaDB 5.5**](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/broken-reference/README.md) **see the**[**What is MariaDB 5.5?**](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/broken-reference/README.md) **page.**
 
 For a list of changes made in this release, with links to detailed\
-information on each push, see the[MariaDB 5.5.48 Changelog](../../../changelogs/changelogs-mariadb-55-series/mariadb-5548-changelog.md).
+information on each push, see the[MariaDB 5.5.48 Changelog](../../changelogs/changelogs-mariadb-55-series/mariadb-5548-changelog.md).
 
 In most respects [MariaDB](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/mariadb/README.md) will work exactly as MySQL: all commands,\
 interfaces, libraries and APIs that exist in MySQL also exist in MariaDB.
@@ -38,7 +38,7 @@ last release of [MariaDB 5.5](changes-improvements-in-mariadb-5-5.md) for Debian
 
 ## Changelog
 
-A full list of all changes is in the [changelog](../../../changelogs/changelogs-mariadb-55-series/mariadb-5548-changelog.md).
+A full list of all changes is in the [changelog](../../changelogs/changelogs-mariadb-55-series/mariadb-5548-changelog.md).
 
 Thanks, and enjoy MariaDB!
 

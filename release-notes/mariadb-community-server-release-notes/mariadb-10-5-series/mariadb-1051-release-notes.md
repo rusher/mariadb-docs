@@ -2,12 +2,12 @@
 
 The most recent release of [MariaDB 10.5](what-is-mariadb-105.md) is:[**MariaDB 10.5.28**](mariadb-10-5-28-release-notes.md) Stable (GA) [Download Now](https://mariadb.com/downloads/)[_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/10.5.28/)
 
-[Download](https://downloads.mariadb.org/mariadb/10.5.1)[Release Notes](mariadb-1051-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-105-series/mariadb-1051-changelog.md)[Overview of 10.5](what-is-mariadb-105.md)
+[Download](https://downloads.mariadb.org/mariadb/10.5.1)[Release Notes](mariadb-1051-release-notes.md)[Changelog](../changelogs/changelogs-mariadb-105-series/mariadb-1051-changelog.md)[Overview of 10.5](what-is-mariadb-105.md)
 
 **Release date:** 14 Feb 2020
 
 [MariaDB 10.5](what-is-mariadb-105.md) is the current _development_ series of MariaDB. It is an evolution\
-of [MariaDB 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/mariadb-10-5-series/broken-reference/README.md) with several entirely new features not found anywhere else\
+of [MariaDB 10.4](../../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series) with several entirely new features not found anywhere else\
 and with backported and reimplemented features from MySQL.
 
 [MariaDB 10.5.1](mariadb-1051-release-notes.md) is a [_**Beta**_](../../mariadb-release-criteria.md) release.
@@ -67,7 +67,7 @@ Notable changes of this release include:
 ## Changelog
 
 For a complete list of changes made in [MariaDB 10.5.1](mariadb-1051-release-notes.md), with links to detailed\
-information on each push, see the [changelog](../../changelogs/changelogs-mariadb-105-series/mariadb-1051-changelog.md).
+information on each push, see the [changelog](../changelogs/changelogs-mariadb-105-series/mariadb-1051-changelog.md).
 
 ## Contributors
 

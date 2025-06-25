@@ -2,7 +2,7 @@
 
 The most recent release of [MariaDB 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/broken-reference/README.md) is:[**MariaDB 10.4.34**](mariadb-10-4-34-release-notes.md) Stable (GA) [Download Now](https://downloads.mariadb.org/mariadb/10.4.34/)
 
-[Download](https://downloads.mariadb.org/mariadb/10.4.5)[Release Notes](mariadb-1045-release-notes.md)[Changelog](../../../changelogs/changelogs-mariadb-10-4-series/mariadb-1045-changelog.md)[Overview of 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/broken-reference/README.md)
+[Download](https://downloads.mariadb.org/mariadb/10.4.5)[Release Notes](mariadb-1045-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-10-4-series/mariadb-1045-changelog.md)[Overview of 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/broken-reference/README.md)
 
 **Release date:** 21 May 2019
 
@@ -71,7 +71,7 @@ Thanks, and enjoy MariaDB!
 ## Changelog
 
 For a complete list of changes made in [MariaDB 10.4.5](mariadb-1045-release-notes.md), with links to detailed\
-information on each push, see the [changelog](../../../changelogs/changelogs-mariadb-10-4-series/mariadb-1045-changelog.md).
+information on each push, see the [changelog](../../changelogs/changelogs-mariadb-10-4-series/mariadb-1045-changelog.md).
 
 ## Contributors
 

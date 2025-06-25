@@ -2,7 +2,7 @@
 
 The most recent release in the [MariaDB 10.0](changes-improvements-in-mariadb-10-0.md) series is:[**MariaDB 10.0.38**](mariadb-10038-release-notes.md) [Download Now](https://downloads.mariadb.org/mariadb/10.0.38)
 
-[Download](https://downloads.mariadb.org/mariadb/10.0.2) |**Release Notes** |[Changelog](../../../changelogs/changelogs-mariadb-100-series/mariadb-1002-changelog.md) |[Overview of 10.0](changes-improvements-in-mariadb-10-0.md)
+[Download](https://downloads.mariadb.org/mariadb/10.0.2) |**Release Notes** |[Changelog](../../changelogs/changelogs-mariadb-100-series/mariadb-1002-changelog.md) |[Overview of 10.0](changes-improvements-in-mariadb-10-0.md)
 
 **Release date:** 24 Apr 2013
 
@@ -18,7 +18,7 @@ be pushed in future releases.**Do not use alpha releases on production systems.*
 **For an overview of** [**MariaDB 10.0**](changes-improvements-in-mariadb-10-0.md) **see the**[**What is MariaDB 10.0?**](changes-improvements-in-mariadb-10-0.md) **page.**
 
 For a list of changes made in [MariaDB 10.0.2](mariadb-1002-release-notes.md), with links to detailed\
-information on each push, see the [changelog](../../../changelogs/changelogs-mariadb-100-series/mariadb-1002-changelog.md).
+information on each push, see the [changelog](../../changelogs/changelogs-mariadb-100-series/mariadb-1002-changelog.md).
 
 ## Based on [MariaDB 5.5](../release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md)
 
@@ -60,7 +60,7 @@ This release includes fixes for the following security vulnerabilities:
 ### Bug Fixes
 
 As with all MariaDB releases, numerous bugs were fixed in this release. For\
-details, see the [changelog](../../../changelogs/changelogs-mariadb-100-series/mariadb-1002-changelog.md). One particular bug fix we'd like to highlight is:
+details, see the [changelog](../../changelogs/changelogs-mariadb-100-series/mariadb-1002-changelog.md). One particular bug fix we'd like to highlight is:
 
 * [MDEV-4172](https://jira.mariadb.org/browse/MDEV-4172) - Optimizer now can take into account the selectivity of predicates
 

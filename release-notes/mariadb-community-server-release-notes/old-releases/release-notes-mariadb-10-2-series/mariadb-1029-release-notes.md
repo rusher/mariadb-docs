@@ -2,7 +2,7 @@
 
 The most recent release of [MariaDB 10.2](what-is-mariadb-102.md) is:[**MariaDB 10.2.44**](mariadb-10244-release-notes.md) Stable (GA) [Download Now](https://downloads.mariadb.org/mariadb/10.2.44/)
 
-[Download](https://downloads.mariadb.org/mariadb/10.2.9)[Release Notes](mariadb-1029-release-notes.md)[Changelog](../../../changelogs/changelogs-mariadb-102-series/mariadb-1029-changelog.md)[Overview of 10.2](what-is-mariadb-102.md)
+[Download](https://downloads.mariadb.org/mariadb/10.2.9)[Release Notes](mariadb-1029-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-102-series/mariadb-1029-changelog.md)[Overview of 10.2](what-is-mariadb-102.md)
 
 **Release date:** 27 Sep 2017
 
@@ -41,7 +41,7 @@ Thanks, and enjoy MariaDB!
 
 ### Backup
 
-* `--export` option implemented for [MariaDB backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup) ([MDEV-13466](https://jira.mariadb.org/browse/MDEV-13466))
+* `--export` option implemented for [MariaDB backup](broken-reference) ([MDEV-13466](https://jira.mariadb.org/browse/MDEV-13466))
 
 ### Encryption
 
@@ -62,7 +62,7 @@ The following variables have been deprecated, and will be removed in a future re
 ## Notes
 
 For a complete list of changes made in [MariaDB 10.2.9](mariadb-1029-release-notes.md), with links to detailed\
-information on each push, see the [changelog](../../../changelogs/changelogs-mariadb-102-series/mariadb-1029-changelog.md).
+information on each push, see the [changelog](../../changelogs/changelogs-mariadb-102-series/mariadb-1029-changelog.md).
 
 Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
 

@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 SHOW CREATE PROCEDURE proc_name
 ```
 
@@ -27,7 +27,7 @@ When none of the above statements are true, the statements display `NULL` for th
 
 Here's a comparison of the `SHOW CREATE PROCEDURE` and [SHOW CREATE FUNCTION](show-create-function.md) statements.
 
-```
+```sql
 SHOW CREATE PROCEDURE test.simpleproc\G
 *************************** 1. row ***************************
            Procedure: simpleproc
@@ -54,7 +54,7 @@ collation_connection: latin1_swedish_ci
 
 When the user issuing the statement does not have privileges on the routine, attempting to [CALL](../../stored-routine-statements/call.md) the procedure raises Error 1370.
 
-```
+```bash
 CALL test.prc1();
 Error 1370 (42000): execute command denied to 
   user 'test_user'@'localhost' for routine 'test'.'prc1'
@@ -62,7 +62,7 @@ Error 1370 (42000): execute command denied to
 
 If the user neither has privilege to the routine nor the [SELECT](../../account-management-sql-statements/grant.md) privilege on [mysql.proc](../system-tables/the-mysql-database-tables/mysql-proc-table.md) table, it raises Error 1305, informing them that the procedure does not exist.
 
-```
+```sql
 SHOW CREATE TABLES test.prc1\G
 Error 1305 (42000): PROCEDURE prc1 does not exist
 ```

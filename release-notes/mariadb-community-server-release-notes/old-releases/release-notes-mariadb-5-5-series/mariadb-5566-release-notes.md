@@ -2,7 +2,7 @@
 
 The most recent release in the [MariaDB 5.5](changes-improvements-in-mariadb-5-5.md) series is:[**MariaDB 5.5.68**](mariadb-5568-release-notes.md) [Download Now](https://downloads.mariadb.org/mariadb/5.5.68/)
 
-[Download](https://downloads.mariadb.org/mariadb/5.5.66/)[Release Notes](mariadb-5566-release-notes.md)[Changelog](../../../changelogs/changelogs-mariadb-55-series/mariadb-5566-changelog.md)[Overview of 5.5](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/broken-reference/README.md)
+[Download](https://downloads.mariadb.org/mariadb/5.5.66/)[Release Notes](mariadb-5566-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-55-series/mariadb-5566-changelog.md)[Overview of 5.5](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/broken-reference/README.md)
 
 **Release date:** 5 Nov 2019
 
@@ -26,7 +26,7 @@ interfaces, libraries and APIs that exist in MySQL also exist in MariaDB.
 
 ## Changelog
 
-A full list of all changes is in the [changelog](../../../changelogs/changelogs-mariadb-55-series/mariadb-5566-changelog.md).
+A full list of all changes is in the [changelog](../../changelogs/changelogs-mariadb-55-series/mariadb-5566-changelog.md).
 
 ## Contributors
 

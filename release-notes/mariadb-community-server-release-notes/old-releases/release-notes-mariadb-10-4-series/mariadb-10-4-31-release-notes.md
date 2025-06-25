@@ -1,6 +1,6 @@
 # MariaDB 10.4.31 Release Notes
 
-[Download](https://mariadb.com/downloads/)[Release Notes](mariadb-10-4-31-release-notes.md)[Changelog](../../../changelogs/changelogs-mariadb-10-4-series/mariadb-10-4-31-changelog.md)[Overview of 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/broken-reference/README.md)
+[Download](https://mariadb.com/downloads/)[Release Notes](mariadb-10-4-31-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-10-4-series/mariadb-10-4-31-changelog.md)[Overview of 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/broken-reference/README.md)
 
 [_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/10.4.31/)
 
@@ -90,7 +90,7 @@ Thanks, and enjoy MariaDB!
 ## Changelog
 
 For a complete list of changes made in [MariaDB 10.4.31](mariadb-10-4-31-release-notes.md), with links to detailed\
-information on each push, see the [changelog](../../../changelogs/changelogs-mariadb-10-4-series/mariadb-10-4-31-changelog.md).
+information on each push, see the [changelog](../../changelogs/changelogs-mariadb-10-4-series/mariadb-10-4-31-changelog.md).
 
 ## Contributors
 

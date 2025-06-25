@@ -32,9 +32,9 @@ modified in that revision.
   Fri 2014-04-18 19:16:46 -0400
   * Updated WSREP\_PATCH\_REVNO.
 * [Revision #3480](https://bazaar.launchpad.net/~maria-captains/maria/maria-5.5-galera/revision/3480)\
-  Fri 2014-04-18 16:56:44 -0400
-  *
-    * Removed unnecessary duplicate script files. \* Updated failing mtr tests.
+  Fri 2014-04-18 16:56:44 -0400\
+  \*
+  * Removed unnecessary duplicate script files. \* Updated failing mtr tests.
 * [Revision #3479](https://bazaar.launchpad.net/~maria-captains/maria/maria-5.5-galera/revision/3479)\
   Fri 2014-04-18 07:51:52 +0300
   * Merge lp:maria/5.5 up to mariadb-5.5.37 revision 4148.

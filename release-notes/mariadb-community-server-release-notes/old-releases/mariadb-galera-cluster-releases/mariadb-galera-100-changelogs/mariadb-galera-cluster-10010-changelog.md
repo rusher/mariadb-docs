@@ -61,9 +61,9 @@ modified in that revision.
       Wed 2014-03-26 14:13:12 -0400
       * bzr merge -r4062..4065 codership/5.6
     * [Revision #3808.4.6](https://bazaar.launchpad.net/~maria-captains/maria/maria-10.0-galera/revision/3808.4.6)\
-      Wed 2014-03-26 11:12:38 -0400
-      *
-        * bzr merge -r4027..4061 codership/5.6 \* Merged Innodb changes to xtradb
+      Wed 2014-03-26 11:12:38 -0400\
+      \*
+      * bzr merge -r4027..4061 codership/5.6 \* Merged Innodb changes to xtradb
     * [Revision #3808.4.5](https://bazaar.launchpad.net/~maria-captains/maria/maria-10.0-galera/revision/3808.4.5)\
       Tue 2014-03-25 23:13:30 -0400
       * bzr merge -r4021..4026 codership-mysql/5.6.
@@ -89,9 +89,9 @@ modified in that revision.
     Wed 2014-03-26 14:32:51 -0400
     * Merging [MariaDB 10.0.9](../../release-notes-mariadb-10-0-series/mariadb-1009-release-notes.md)
 * [Revision #3811](https://bazaar.launchpad.net/~maria-captains/maria/10.0/revision/3811)\
-  Wed 2014-04-02 22:35:12 -0400
-  *
-    * Merging fix for [Bug #1224775](https://bugs.launchpad.net/bugs/1224775) \* Removing duplicate code
+  Wed 2014-04-02 22:35:12 -0400\
+  \*
+  * Merging fix for [Bug #1224775](https://bugs.launchpad.net/bugs/1224775) \* Removing duplicate code
 * [Revision #3810](https://bazaar.launchpad.net/~maria-captains/maria/10.0/revision/3810)\
   Sat 2014-03-29 13:34:50 +0200
   * References: [Bug #1299430](https://bugs.launchpad.net/bugs/1299430) - initial support for tokudb replication in master-slave model

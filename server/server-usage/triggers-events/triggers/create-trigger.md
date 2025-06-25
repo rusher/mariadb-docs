@@ -16,7 +16,7 @@ trigger time:
 
 trigger_event:
     INSERT
-  | UPDATE
+  | UPDATE [ OF column_name [, colunm_name [, ...]]
   | DELETE
 ```
 
@@ -129,6 +129,6 @@ SHOW WARNINGS;
 * [SHOW CREATE TRIGGER](../../../reference/sql-statements/administrative-sql-statements/show/show-create-trigger.md)
 * [Trigger Limitations](trigger-limitations.md)
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

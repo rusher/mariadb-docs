@@ -2,7 +2,7 @@
 
 The most recent release of [MariaDB 10.2](what-is-mariadb-102.md) is:[**MariaDB 10.2.44**](mariadb-10244-release-notes.md) Stable (GA) [Download Now](https://downloads.mariadb.org/mariadb/10.2.44/)
 
-[Download](https://downloads.mariadb.org/mariadb/10.2.6)[Release Notes](mariadb-1026-release-notes.md)[Changelog](../../../changelogs/changelogs-mariadb-102-series/mariadb-1026-changelog.md)[Overview of 10.2](what-is-mariadb-102.md)
+[Download](https://downloads.mariadb.org/mariadb/10.2.6)[Release Notes](mariadb-1026-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-102-series/mariadb-1026-changelog.md)[Overview of 10.2](what-is-mariadb-102.md)
 
 **Release date:** 23 May 2017
 
@@ -43,7 +43,7 @@ This is the first stable release in the [MariaDB 10.2](what-is-mariadb-102.md) s
 
 ## Notes
 
-* [Percona XtraBackup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/legacy-clients-and-utilities/backing-up-and-restoring-databases-percona-xtrabackup/percona-xtrabackup-overview) (as of 2.4) will not work with [MariaDB 10.2](what-is-mariadb-102.md) (and [MariaDB 10.1](../release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1.md)) compression. However, MariaDB's fork, [MariaDB Backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup), will work with compression. A beta version of mariadb-backup was included in [MariaDB 10.2.7](mariadb-1027-release-notes.md) and declared stable in [MariaDB 10.2.10](mariadb-10210-release-notes.md).
+* [Percona XtraBackup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/legacy-clients-and-utilities/backing-up-and-restoring-databases-percona-xtrabackup/percona-xtrabackup-overview) (as of 2.4) will not work with [MariaDB 10.2](what-is-mariadb-102.md) (and [MariaDB 10.1](../release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1.md)) compression. However, MariaDB's fork, [MariaDB Backup](broken-reference), will work with compression. A beta version of mariadb-backup was included in [MariaDB 10.2.7](mariadb-1027-release-notes.md) and declared stable in [MariaDB 10.2.10](mariadb-10210-release-notes.md).
 
 A file format compatibility bug that was introduced in [MariaDB 10.2.2](mariadb-1022-release-notes.md) was present in this release.\
 Creating tables with the attribute [page\_compressed=yes](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-page-compression) created InnoDB internal data dictionary records that are incompatible with [MariaDB 10.1](../release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1.md). [MariaDB 10.2.7](mariadb-1027-release-notes.md) and later will write the dictionary records in a format that is compatible with [MariaDB 10.1](../release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1.md) and will also support the malformed metadata from affected 10.2 versions.**This bug may prevent a downgrade from later** [**MariaDB 10.2**](what-is-mariadb-102.md) **versions to** [**MariaDB 10.2.6**](mariadb-1026-release-notes.md)**.**[See the commit for details.](https://github.com/MariaDB/server/commit/72378a25830184f91005be7e80cfb28381c79f23)
@@ -51,7 +51,7 @@ Creating tables with the attribute [page\_compressed=yes](https://app.gitbook.co
 ## Changelog
 
 For a complete list of changes made in [MariaDB 10.2.6](mariadb-1026-release-notes.md), with links to detailed\
-information on each push, see the [changelog](../../../changelogs/changelogs-mariadb-102-series/mariadb-1026-changelog.md).
+information on each push, see the [changelog](../../changelogs/changelogs-mariadb-102-series/mariadb-1026-changelog.md).
 
 Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
 

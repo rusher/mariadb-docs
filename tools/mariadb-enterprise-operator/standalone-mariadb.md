@@ -45,7 +45,7 @@ Whilst this can be useful for development and testing, it is not recommended for
 * Upgrades require downtime
 * Only vertical scaling is possible
 
-For achieving high availability, we recommend deploying a Galera cluster. Refer to the [Galera](mariadb-enterprise-operator-galera-cluster.md) and [High Availability](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/high-availability) sections for more information.
+For achieving high availability, we recommend deploying a Galera cluster. Refer to the [Galera](galera-cluster.md) and [High Availability](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/high-availability) sections for more information.
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

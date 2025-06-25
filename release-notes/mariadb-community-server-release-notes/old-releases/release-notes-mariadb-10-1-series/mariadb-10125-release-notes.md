@@ -2,7 +2,7 @@
 
 The most recent release of [MariaDB 10.1](changes-improvements-in-mariadb-10-1.md) is:[**MariaDB 10.1.48**](mariadb-10148-release-notes.md) Stable (GA) [Download Now](https://downloads.mariadb.org/mariadb/10.1.48/)
 
-[Download](https://downloads.mariadb.org/mariadb/10.1.25)[Release Notes](mariadb-10125-release-notes.md)[Changelog](../../../changelogs/changelogs-mariadb-101-series/mariadb-10125-changelog.md)[Overview of 10.1](changes-improvements-in-mariadb-10-1.md)
+[Download](https://downloads.mariadb.org/mariadb/10.1.25)[Release Notes](mariadb-10125-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-101-series/mariadb-10125-changelog.md)[Overview of 10.1](changes-improvements-in-mariadb-10-1.md)
 
 **Release date:** 4 Jul 2017
 
@@ -19,7 +19,7 @@ Thanks, and enjoy MariaDB!
 ## Notable Changes
 
 * MariaDB can no longer be compiled with OpenSSL version 0.9.8 and below. The last 0.9.8 release was in December 2015, it is out of support and is no longer getting security fixes.
-* [MariaDB Backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup) is now beta
+* [MariaDB Backup](broken-reference) is now beta
 * As per the [MariaDB Deprecation Policy](../../../mariadb-platform-deprecation-policy.md), this will be the last release of [MariaDB 10.1](changes-improvements-in-mariadb-10-1.md) for Ubuntu 16.10 "Yakkety"
 * Fixes for the following [security vulnerabilities](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/security):
   * CVE-\`-\`\`\`
@@ -32,7 +32,7 @@ Updating from [MariaDB 10.1.21](mariadb-10121-release-notes.md) to [MariaDB 10.1
 ## Changelog
 
 For a complete list of changes made in [MariaDB 10.1.25](mariadb-10125-release-notes.md), with links to detailed\
-information on each push, see the [changelog](../../../changelogs/changelogs-mariadb-101-series/mariadb-10125-changelog.md).
+information on each push, see the [changelog](../../changelogs/changelogs-mariadb-101-series/mariadb-10125-changelog.md).
 
 Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
 

@@ -2,7 +2,7 @@
 
 The most recent release of [MariaDB 10.5](what-is-mariadb-105.md) is:[**MariaDB 10.5.28**](mariadb-10-5-28-release-notes.md) Stable (GA) [Download Now](https://mariadb.com/downloads/)[_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/10.5.28/)
 
-[Download 10.5.18](https://downloads.mariadb.org/mariadb/10.5.18/)[Release Notes](mariadb-10-5-18-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-105-series/mariadb-10-5-18-changelog.md)[Overview of 10.5](what-is-mariadb-105.md)
+[Download 10.5.18](https://downloads.mariadb.org/mariadb/10.5.18/)[Release Notes](mariadb-10-5-18-release-notes.md)[Changelog](../changelogs/changelogs-mariadb-105-series/mariadb-10-5-18-changelog.md)[Overview of 10.5](what-is-mariadb-105.md)
 
 **Release date:** 7 Nov 2022
 
@@ -72,9 +72,9 @@ sudo rpm --import https://supplychain.mariadb.com/MariaDB-Server-GPG-KEY
 
 The following changes have been made to the `docker.io/library/mariadb` container image.
 
-* The number of gpg packages packages has been removed, leaving enough to `apt-get update`, but `dirmngr` that would fetch keys has been removed. (inspired by [issue #469](https://github.com/MariaDB/mariadb-docker/issues/469))
-* The environment variable `LANG=C.UTF-8` has been added for those that exec into containers and copy paste UTF8 characters (fixes [issue #468](https://github.com/MariaDB/mariadb-docker/issues/468)).
-* Adds OCI labels to image (fixes [issue 436](https://github.com/MariaDB/mariadb-docker/issues/436) and [users need for version](https://github.com/MariaDB/mariadb-docker/commit/942cd5347b86c84cc4d493147b17c3e3b93fbee3))
+* The number of gpg packages packages has been removed, leaving enough to `apt-get update`, but `dirmngr` that would fetch keys has been removed. (inspired by [issue #469](https://github.com/MariaDB/mariadb-docker/issues/469)
+* The environment variable `LANG=C.UTF-8` has been added for those that exec into containers and copy paste UTF8 characters (fixes [issue #468](https://github.com/MariaDB/mariadb-docker/issues/468).
+* Adds OCI labels to image (fixes [issue 436](https://github.com/MariaDB/mariadb-docker/issues/436) and [users need for version](https://github.com/MariaDB/mariadb-docker/commit/942cd5347b86c84cc4d493147b17c3e3b93fbee3)
 * MariaDB config: skip-host-cache and skip-name-resolve moved to `/etc/mysql/mariadb.conf.d/05-skipcache.cnf`
 
 ### Security
@@ -84,7 +84,7 @@ The following changes have been made to the `docker.io/library/mariadb` containe
 ## Changelog
 
 For a complete list of changes made in [MariaDB 10.5.18](mariadb-10-5-18-release-notes.md), with links to detailed\
-information on each push, see the [changelog](../../changelogs/changelogs-mariadb-105-series/mariadb-10-5-18-changelog.md).
+information on each push, see the [changelog](../changelogs/changelogs-mariadb-105-series/mariadb-10-5-18-changelog.md).
 
 ## Contributors
 

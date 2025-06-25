@@ -2,7 +2,7 @@
 
 The most recent release of [MariaDB 10.1](changes-improvements-in-mariadb-10-1.md) is:[**MariaDB 10.1.48**](mariadb-10148-release-notes.md) Stable (GA) [Download Now](https://downloads.mariadb.org/mariadb/10.1.48/)
 
-[Download](https://downloads.mariadb.org/mariadb/10.1.24)[Release Notes](mariadb-10124-release-notes.md)[Changelog](../../../changelogs/changelogs-mariadb-101-series/mariadb-10124-changelog.md)[Overview of 10.1](changes-improvements-in-mariadb-10-1.md)
+[Download](https://downloads.mariadb.org/mariadb/10.1.24)[Release Notes](mariadb-10124-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-101-series/mariadb-10124-changelog.md)[Overview of 10.1](changes-improvements-in-mariadb-10-1.md)
 
 **Release date:** 31 May 2017
 
@@ -26,7 +26,7 @@ Updating from [MariaDB 10.1.21](mariadb-10121-release-notes.md) to [MariaDB 10.1
 * [Performance Schema](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/performance-schema) updated to 5.6.36
 * [MDEV-12674](https://jira.mariadb.org/browse/MDEV-12674): Innodb\_row\_lock\_current\_waits has overflow
 * [MDEV-12188](https://jira.mariadb.org/browse/MDEV-12188): information schema - errors populating fail to free memory, unlock mutexes
-* [MDEV-12832](https://jira.mariadb.org/browse/MDEV-12832): support for streaming in tar format in [MariaDB Backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup) has been removed
+* [MDEV-12832](https://jira.mariadb.org/browse/MDEV-12832): support for streaming in tar format in [MariaDB Backup](broken-reference) has been removed
 * [MDEV-6262](https://jira.mariadb.org/browse/MDEV-6262): Fixes from coverity report on MariaDB
 * [innodb\_empty\_free\_list\_algorithm](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables) default changed from `backoff` to `legacy` to prevent potential deadlock issue in I/O-bound workloads with several small buffer pool instances in combination with small redo log files (see [#1651657](https://bugs.launchpad.net/percona-server/+bug/1651657).)
 * Fixes for the following [security vulnerabilities](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/security):
@@ -38,7 +38,7 @@ Using [page\_compression](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-
 ## Changelog
 
 For a complete list of changes made in [MariaDB 10.1.24](mariadb-10124-release-notes.md), with links to detailed\
-information on each push, see the [changelog](../../../changelogs/changelogs-mariadb-101-series/mariadb-10124-changelog.md).
+information on each push, see the [changelog](../../changelogs/changelogs-mariadb-101-series/mariadb-10124-changelog.md).
 
 Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
 

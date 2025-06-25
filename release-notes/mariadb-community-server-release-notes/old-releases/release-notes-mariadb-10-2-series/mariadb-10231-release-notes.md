@@ -4,7 +4,7 @@ The most recent release of [MariaDB 10.2](what-is-mariadb-102.md) is:[**MariaDB 
 
 Note that this version contains an issue that disabled all events created by a server with a different server\_id. See [MDEV-21758](https://jira.mariadb.org/browse/MDEV-21758) for details.
 
-[Download](https://downloads.mariadb.org/mariadb/10.2.31/)[Release Notes](mariadb-10231-release-notes.md)[Changelog](../../../changelogs/changelogs-mariadb-102-series/mariadb-10231-changelog.md)[Overview of 10.2](what-is-mariadb-102.md)
+[Download](https://downloads.mariadb.org/mariadb/10.2.31/)[Release Notes](mariadb-10231-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-102-series/mariadb-10231-changelog.md)[Overview of 10.2](what-is-mariadb-102.md)
 
 **Release date:** 28 Jan 2020
 
@@ -69,7 +69,7 @@ running [mysql\_upgrade](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-
 ## Changelog
 
 For a complete list of changes made in [MariaDB 10.2.31](mariadb-10231-release-notes.md) with links to detailed\
-information on each push, see the [changelog](../../../changelogs/changelogs-mariadb-102-series/mariadb-10231-changelog.md).
+information on each push, see the [changelog](../../changelogs/changelogs-mariadb-102-series/mariadb-10231-changelog.md).
 
 ## Contributors
 

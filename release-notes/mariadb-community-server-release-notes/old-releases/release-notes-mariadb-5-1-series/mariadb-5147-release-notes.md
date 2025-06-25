@@ -2,11 +2,11 @@
 
 The most recent release in the [MariaDB 5.1 series](changes-improvements-in-mariadb-5-1.md) is:[**MariaDB 5.1.67**](mariadb-5167-release-notes.md)
 
-[Download](https://askmonty.org/wiki/MariaDB:Download:MariaDB_5.1.47) | **Release Notes** | [Changelog](../../../changelogs/changelogs-mariadb-51-series/mariadb-5147-changelog.md) |[Overview of 5.1](changes-improvements-in-mariadb-5-1.md)
+[Download](https://askmonty.org/wiki/MariaDB:Download:MariaDB_5.1.47) | **Release Notes** | [Changelog](../../changelogs/changelogs-mariadb-51-series/mariadb-5147-changelog.md) |[Overview of 5.1](changes-improvements-in-mariadb-5-1.md)
 
 **Release date:** 01 Jun 2010
 
-For a list of every change made in this release, see the[changelog](../../../changelogs/changelogs-mariadb-51-series/mariadb-5147-changelog.md).
+For a list of every change made in this release, see the[changelog](../../changelogs/changelogs-mariadb-51-series/mariadb-5147-changelog.md).
 
 In most respects [MariaDB](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/mariadb/README.md) will work exactly as MySQL: all commands,\
 interfaces, libraries and APIs that exist in MySQL also exist in MariaDB.
@@ -63,7 +63,7 @@ repositories at around the same time a release shows up on the mirrors.
 ## Fewer warnings and bugs
 
 In [MariaDB 5.1.47](mariadb-5147-release-notes.md) we've continued to fix bugs and compiler warnings, including\
-bugs in MySQL 5.1.47. The [changelog](../../../changelogs/changelogs-mariadb-51-series/mariadb-5147-changelog.md) has links to\
+bugs in MySQL 5.1.47. The [changelog](../../changelogs/changelogs-mariadb-51-series/mariadb-5147-changelog.md) has links to\
 several of the bugs that we have fixed.
 
 ## Test Suite improvements

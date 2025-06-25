@@ -10,7 +10,7 @@ In addition to this there are Enterprise Features and some backported features. 
 
 Enterprise Features:
 
-* [MariaDB Enterprise Backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup)
+* [MariaDB Enterprise Backup](broken-reference)
 * [MariaDB Enterprise Audit](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/mariadb-enterprise-audit)
 * Index limit increased to 128 indexes
 * Slow master shutdown as default

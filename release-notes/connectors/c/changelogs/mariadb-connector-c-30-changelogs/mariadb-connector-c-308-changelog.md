@@ -33,9 +33,9 @@ details of the revision and view diffs of the code modified in that revision.
   2018-12-01 13:05:51 +0100
   * Windows build fixes:
 * [Revision #e47b6aa](https://github.com/mariadb-corporation/mariadb-connector-c/commit/e47b6aa)\
-  2018-12-01 11:12:26 +0100
-  *
-    * Added gcc options "-Wno-undef -Wno-unknown-pragmas" - Added LIBZ wo windows system libraries
+  2018-12-01 11:12:26 +0100\
+  \*
+  * Added gcc options "-Wno-undef -Wno-unknown-pragmas" - Added LIBZ wo windows system libraries
 * [Revision #3e6adb2](https://github.com/mariadb-corporation/mariadb-connector-c/commit/3e6adb2)\
   2018-12-01 11:11:46 +0100
   * Fixed build error/warning Added missing errorcodes for mingw

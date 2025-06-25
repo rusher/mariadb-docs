@@ -2,7 +2,7 @@
 
 The most recent release of [MariaDB 10.6](what-is-mariadb-106.md) is:[**MariaDB 10.6.21**](mariadb-10-6-21-release-notes.md) Stable (GA) [Download Now](https://mariadb.com/downloads/)[_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/10.6.21/)
 
-[Download 10.6.4](https://downloads.mariadb.org/mariadb/10.6.4)[Release Notes](mariadb-1064-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-106-series/mariadb-1064-changelog.md)[Overview of 10.6](what-is-mariadb-106.md)
+[Download 10.6.4](https://downloads.mariadb.org/mariadb/10.6.4)[Release Notes](mariadb-1064-release-notes.md)[Changelog](../changelogs/changelogs-mariadb-106-series/mariadb-1064-changelog.md)[Overview of 10.6](what-is-mariadb-106.md)
 
 **Release date:** 6 Aug 2021
 
@@ -62,7 +62,7 @@ Thanks, and enjoy MariaDB!
 ## Changelog
 
 For a complete list of changes and bugfixes made in [MariaDB 10.6.4](mariadb-1064-release-notes.md), with links to detailed\
-information on each push, see the [changelog](../../changelogs/changelogs-mariadb-106-series/mariadb-1064-changelog.md).
+information on each push, see the [changelog](../changelogs/changelogs-mariadb-106-series/mariadb-1064-changelog.md).
 
 ## Contributors
 

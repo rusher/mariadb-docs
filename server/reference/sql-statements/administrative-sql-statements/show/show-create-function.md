@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 SHOW CREATE FUNCTION func_name
 ```
 
@@ -14,7 +14,7 @@ This statement is similar to [SHOW CREATE PROCEDURE](show-create-procedure.md) b
 
 ## Example
 
-```
+```sql
 SHOW CREATE FUNCTION VatCents\G
 *************************** 1. row ***************************
             Function: VatCents

@@ -2,7 +2,7 @@
 
 The most recent release of [MariaDB 11.2](what-is-mariadb-112.md) is:[**MariaDB 11.2.6**](mariadb-11-2-6-release-notes.md) Stable (GA) [Download Now](https://downloads.mariadb.org/mariadb/11.2.6/)[_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/11.2.6/)
 
-[Download 11.2.1](https://downloads.mariadb.org/mariadb/11.2.1/)[Release Notes](mariadb-11-2-1-release-notes.md)[Changelog](../../../changelogs/changelogs-mariadb-11-2-series/mariadb-11-2-1-changelog.md)[Overview of 11.2](what-is-mariadb-112.md)
+[Download 11.2.1](https://downloads.mariadb.org/mariadb/11.2.1/)[Release Notes](mariadb-11-2-1-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-11-2-series/mariadb-11-2-1-changelog.md)[Overview of 11.2](what-is-mariadb-112.md)
 
 **Release date:** 21 Aug 2023
 
@@ -74,7 +74,7 @@ Thanks, and enjoy MariaDB!
 * [innodb\_undo\_log\_truncate=ON](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables#innodb_undo_log_truncate) fails to wait for purge of enough transaction history ([MDEV-31355](https://jira.mariadb.org/browse/MDEV-31355))
 * SET GLOBAL [innodb\_undo\_log\_truncate=ON](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables#innodb_undo_log_truncate) does not free space when no undo logs exist ([MDEV-31382](https://jira.mariadb.org/browse/MDEV-31382))
 * [innodb\_read\_ahead\_threshold](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables#innodb_read_ahead_threshold) (linear read-ahead) does not work ([MDEV-29967](https://jira.mariadb.org/browse/MDEV-29967))
-* InnoDB recovery and [mariadb-backup --prepare](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup) fail to report detailed progress ([MDEV-29911](https://jira.mariadb.org/browse/MDEV-29911))
+* InnoDB recovery and [mariadb-backup --prepare](broken-reference) fail to report detailed progress ([MDEV-29911](https://jira.mariadb.org/browse/MDEV-29911))
 * `fil_ibd_create()` may hijack the file handle of an old file ([MDEV-31347](https://jira.mariadb.org/browse/MDEV-31347))
 * [innodb\_undo\_log\_truncate=ON](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables#innodb_undo_log_truncate) recovery results in a corrupted undo log ([MDEV-31373](https://jira.mariadb.org/browse/MDEV-31373))
 * Server freeze due to [innodb\_change\_buffering](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables#innodb_change_buffering) and [innodb\_file\_per\_table=0](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables#innodb_file_per_table) ([MDEV-31088](https://jira.mariadb.org/browse/MDEV-31088))
@@ -135,7 +135,7 @@ Thanks, and enjoy MariaDB!
 ## Changelog
 
 For a complete list of changes made in [MariaDB 11.2.1](mariadb-11-2-1-release-notes.md), with links to detailed\
-information on each push, see the [changelog](../../../changelogs/changelogs-mariadb-11-2-series/mariadb-11-2-1-changelog.md).
+information on each push, see the [changelog](../../changelogs/changelogs-mariadb-11-2-series/mariadb-11-2-1-changelog.md).
 
 ## Contributors
 

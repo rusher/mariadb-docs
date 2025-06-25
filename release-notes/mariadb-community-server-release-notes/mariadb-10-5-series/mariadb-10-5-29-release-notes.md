@@ -5,9 +5,9 @@ binaries available for download which contain the features. If you want to try o
 need to [get](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/server-client-software/download/getting-the-mariadb-source-code) and [compile](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/compiling-mariadb-from-source) the\
 code yourself.
 
-[Download](https://mariadb.com/downloads/)[Release Notes](mariadb-10-5-29-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-105-series/mariadb-10-5-29-changelog.md)[Overview of 10.5](what-is-mariadb-105.md)[_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/10.5.29/)**Release date:** ?
+[Download](https://mariadb.com/downloads/)[Release Notes](mariadb-10-5-29-release-notes.md)[Changelog](../changelogs/changelogs-mariadb-105-series/mariadb-10-5-29-changelog.md)[Overview of 10.5](what-is-mariadb-105.md)[_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/10.5.29/)**Release date:** ?
 
-[MariaDB 10.5](what-is-mariadb-105.md) is a previous _stable_ series of MariaDB, [maintained until](https://mariadb.org/about/#maintenance-policy) June 2025. It is an evolution of [MariaDB 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/mariadb-10-5-series/broken-reference/README.md) with several entirely new features not found anywhere else and with backported and reimplemented features from MySQL.
+[MariaDB 10.5](what-is-mariadb-105.md) is a previous _stable_ series of MariaDB, [maintained until](https://mariadb.org/about/#maintenance-policy) June 2025. It is an evolution of [MariaDB 10.4](../../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series) with several entirely new features not found anywhere else and with backported and reimplemented features from MySQL.
 
 [MariaDB 10.5.29](mariadb-10-5-29-release-notes.md) is a [_**Stable (GA)**_](../../mariadb-release-criteria.md) release.
 
@@ -93,7 +93,7 @@ Thanks, and enjoy MariaDB!
 ## Changelog
 
 For a complete list of changes made in MariaDB 10.5.29, with links to detailed\
-information on each push, see the [changelog](../../changelogs/changelogs-mariadb-105-series/mariadb-10-5-29-changelog.md).
+information on each push, see the [changelog](../changelogs/changelogs-mariadb-105-series/mariadb-10-5-29-changelog.md).
 
 ## Contributors
 

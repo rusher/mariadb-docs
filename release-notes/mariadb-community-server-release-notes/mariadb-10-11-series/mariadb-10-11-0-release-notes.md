@@ -56,7 +56,7 @@ Thanks, and enjoy MariaDB!
 
 **Do not use&#x20;**_**alpha**_**&#x20;releases on production systems!**\
 For a complete list of changes made in [MariaDB 10.11.0](mariadb-10-11-0-release-notes.md), with links to detailed\
-information on each push, see the [changelog](../../changelogs/changelogs-mariadb-101-series/mariadb-10110-changelog.md).
+information on each push, see the [changelog](../changelogs/changelogs-mariadb-101-series/mariadb-10110-changelog.md).
 
 Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
 

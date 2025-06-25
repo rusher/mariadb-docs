@@ -2,14 +2,14 @@
 
 The most recent release of [MariaDB 10.5](what-is-mariadb-105.md) is:[**MariaDB 10.5.28**](mariadb-10-5-28-release-notes.md) Stable (GA) [Download Now](https://mariadb.com/downloads/)[_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/10.5.28/)
 
-[Download 10.5.14](https://mariadb.org/download/?tab=mariadb\&release=10.5.14\&product=mariadb)[Release Notes](mariadb-10514-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-105-series/mariadb-10514-changelog.md)[Overview of 10.5](what-is-mariadb-105.md)
+[Download 10.5.14](https://mariadb.org/download/?tab=mariadb\&release=10.5.14\&product=mariadb)[Release Notes](mariadb-10514-release-notes.md)[Changelog](../changelogs/changelogs-mariadb-105-series/mariadb-10514-changelog.md)[Overview of 10.5](what-is-mariadb-105.md)
 
 **Release date:** 9 Feb 2022
 
 This release is no longer available for download after a problem was noticed when manually running mariadb-upgrade. See [MDEV-27789](https://jira.mariadb.org/browse/MDEV-27789) for more details.**Please use a later release.**
 
 [MariaDB 10.5](what-is-mariadb-105.md) is a previous _stable_ series of MariaDB. It is an evolution\
-of [MariaDB 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/mariadb-10-5-series/broken-reference/README.md) with several entirely new features not found anywhere else\
+of [MariaDB 10.4](../../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series) with several entirely new features not found anywhere else\
 and with backported and reimplemented features from MySQL.
 
 [MariaDB 10.5.14](mariadb-10514-release-notes.md) is a [_**Stable (GA)**_](../../mariadb-release-criteria.md) release.
@@ -79,7 +79,7 @@ Thanks, and enjoy MariaDB!
 ## Changelog
 
 For a complete list of changes made in [MariaDB 10.5.14](mariadb-10514-release-notes.md), with links to detailed\
-information on each push, see the [changelog](../../changelogs/changelogs-mariadb-105-series/mariadb-10514-changelog.md).
+information on each push, see the [changelog](../changelogs/changelogs-mariadb-105-series/mariadb-10514-changelog.md).
 
 ## Contributors
 
