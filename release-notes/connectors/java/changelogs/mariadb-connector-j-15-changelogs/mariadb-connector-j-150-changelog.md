@@ -171,6 +171,8 @@ MariaDB may already be included in your favorite OS distribution. More\
 information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-including-mariadb)\
 page.
 
-<sub>_This page is licensed: GPLv2_</sub>
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/hqS7LAFLjg1EcU7O0ZDs/" %}
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/PJ4A7eO7pjlC1eNvdVbz/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}
