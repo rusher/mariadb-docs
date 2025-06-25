@@ -2,7 +2,7 @@
 
 The most recent release of [MariaDB 10.5](what-is-mariadb-105.md) is:[**MariaDB 10.5.28**](mariadb-10-5-28-release-notes.md) Stable (GA) [Download Now](https://mariadb.com/downloads/)[_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/10.5.28/)
 
-[Download](https://downloads.mariadb.org/mariadb/10.5.4/)[Release Notes](mariadb-1054-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-105-series/mariadb-1054-changelog.md)[Overview of 10.5](what-is-mariadb-105.md)
+[Download](https://downloads.mariadb.org/mariadb/10.5.4/)[Release Notes](mariadb-1054-release-notes.md)[Changelog](../changelogs/changelogs-mariadb-105-series/mariadb-1054-changelog.md)[Overview of 10.5](what-is-mariadb-105.md)
 
 **Release date:** 24 Jun 2020
 
@@ -25,7 +25,7 @@ This is the first Stable (GA) release in the [MariaDB 10.5](what-is-mariadb-105.
 * New [Gamma](../../mariadb-release-criteria.md) version of the [Spider Storage Engine](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/spider), 3.3.15.
 * [DROP TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/drop/drop-table) now reliably deletes table remnants inside a storage engine even if the .frm file is missing ([MDEV-11412](https://jira.mariadb.org/browse/MDEV-11412))
 * Accelerated `crc32()` function for AMD64, ARMv8, POWER 8 ([MDEV-22669](https://jira.mariadb.org/browse/MDEV-22669))
-* Lots of bug fixes, see the [changelog](../../changelogs/changelogs-mariadb-105-series/mariadb-1054-changelog.md).
+* Lots of bug fixes, see the [changelog](../changelogs/changelogs-mariadb-105-series/mariadb-1054-changelog.md).
 * [Galera wsrep library](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/readme/mariadb-galera-cluster-guide) updated to 26.4.5
 
 ### Variables
@@ -42,7 +42,7 @@ This is the first Stable (GA) release in the [MariaDB 10.5](what-is-mariadb-105.
 ## Changelog
 
 For a complete list of changes made in [MariaDB 10.5.4](mariadb-1054-release-notes.md), with links to detailed\
-information on each push, see the [changelog](../../changelogs/changelogs-mariadb-105-series/mariadb-1054-changelog.md).
+information on each push, see the [changelog](../changelogs/changelogs-mariadb-105-series/mariadb-1054-changelog.md).
 
 ## Contributors
 

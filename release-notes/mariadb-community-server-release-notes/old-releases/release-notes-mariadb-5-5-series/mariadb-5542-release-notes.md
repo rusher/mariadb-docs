@@ -2,7 +2,7 @@
 
 The most recent release in the [MariaDB 5.5](changes-improvements-in-mariadb-5-5.md) series is:[**MariaDB 5.5.68**](mariadb-5568-release-notes.md) [Download Now](https://downloads.mariadb.org/mariadb/5.5.68/)
 
-[Download](https://downloads.mariadb.org/mariadb/5.5.42)[Release Notes](mariadb-5542-release-notes.md)[Changelog](../../../changelogs/changelogs-mariadb-55-series/mariadb-5542-changelog.md)[Overview of 5.5](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/broken-reference/README.md)
+[Download](https://downloads.mariadb.org/mariadb/5.5.42)[Release Notes](mariadb-5542-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-55-series/mariadb-5542-changelog.md)[Overview of 5.5](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/broken-reference/README.md)
 
 **Release date:** 19 Feb 2015
 
@@ -15,7 +15,7 @@ inflow).
 **For a description of** [**MariaDB 5.5**](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/broken-reference/README.md) **see the**[**What is MariaDB 5.5?**](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/broken-reference/README.md) **page.**
 
 For a list of changes made in this release, with links to detailed\
-information on each push, see the[MariaDB 5.5.42 Changelog](../../../changelogs/changelogs-mariadb-55-series/mariadb-5542-changelog.md).
+information on each push, see the[MariaDB 5.5.42 Changelog](../../changelogs/changelogs-mariadb-55-series/mariadb-5542-changelog.md).
 
 In most respects [MariaDB](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/mariadb/README.md) will work exactly as MySQL: all commands,\
 interfaces, libraries and APIs that exist in MySQL also exist in MariaDB.
@@ -60,7 +60,7 @@ updates, including from MySQL 5.5.42. Notable updates include:
   * [CVE-2015-0433](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-0433)
   * [CVE-2015-0441](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-0441)
 
-A full list of all changes is in the [changelog](../../../changelogs/changelogs-mariadb-55-series/mariadb-5542-changelog.md).
+A full list of all changes is in the [changelog](../../changelogs/changelogs-mariadb-55-series/mariadb-5542-changelog.md).
 
 Thanks, and enjoy MariaDB!
 

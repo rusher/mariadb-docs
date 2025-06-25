@@ -4,7 +4,7 @@
 
 [MariaDB 11.8](what-is-mariadb-118.md) is a long-term release, maintained until June 2028.
 
-This list includes all features since the previous long-term release, [MariaDB 11.4](../mariadb-11-4-series/what-is-mariadb-114.md) (those introduced in the [MariaDB 11.5](../old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115.md), [MariaDB 11.6](../old-releases/release-notes-mariadb-11-6-rolling-releases/what-is-mariadb-116.md) and [MariaDB 11.7](../old-releases/mariadb-11-7-rolling-releases/what-is-mariadb-117.md) rolling releases).
+This list includes all features since the previous long-term release, [MariaDB 11.4](../mariadb-11-4-series/what-is-mariadb-114.md) (those introduced in the [MariaDB 11.5](../old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115.md), [MariaDB 11.6](../old-releases/release-notes-mariadb-11-6-rolling-releases/what-is-mariadb-116.md) and [MariaDB 11.7](../old-releases/mariadb-11-7-rolling-releases/what-is-mariadb-117.md) rolling releases, and in MariaDB 11.8).
 
 ## Upgrading
 
@@ -175,10 +175,10 @@ The following deprecated features have been removed:
 
 ## List of All [MariaDB 11.8](what-is-mariadb-118.md) Releases
 
-| Date        | Release                                           | Status      | Release Notes                                    | Changelog                                                                                |
-| ----------- | ------------------------------------------------- | ----------- | ------------------------------------------------ | ---------------------------------------------------------------------------------------- |
-| 4 Jun 2025  | [MariaDB 11.8.2](mariadb-11-8-2-release-notes.md) | Stable (GA) | [Release Notes](mariadb-11-8-2-release-notes.md) | [Changelog](../../changelogs/changelogs-mariadb-11-8-series/mariadb-11.8.2-changelog.md) |
-| 13 Feb 2024 | [MariaDB 11.8.1](mariadb-11-8-1-release-notes.md) | RC          | [Release Notes](mariadb-11-8-1-release-notes.md) | [Changelog](../../changelogs/changelogs-mariadb-11-7-series/mariadb-11-7-1-changelog.md) |
-| 18 Dec 2024 | [MariaDB 11.8.0](mariadb-11-8-0-release-notes.md) | Alpha       | [Release Notes](mariadb-11-8-0-release-notes.md) |                                                                                          |
+| Date        | Release                                           | Status      | Release Notes                                    | Changelog                                                                             |
+| ----------- | ------------------------------------------------- | ----------- | ------------------------------------------------ | ------------------------------------------------------------------------------------- |
+| 4 Jun 2025  | [MariaDB 11.8.2](mariadb-11-8-2-release-notes.md) | Stable (GA) | [Release Notes](mariadb-11-8-2-release-notes.md) | [Changelog](../changelogs/changelogs-mariadb-11-8-series/mariadb-11.8.2-changelog.md) |
+| 13 Feb 2024 | [MariaDB 11.8.1](mariadb-11-8-1-release-notes.md) | RC          | [Release Notes](mariadb-11-8-1-release-notes.md) | [Changelog](../changelogs/changelogs-mariadb-11-7-series/mariadb-11-7-1-changelog.md) |
+| 18 Dec 2024 | [MariaDB 11.8.0](mariadb-11-8-0-release-notes.md) | Alpha       | [Release Notes](mariadb-11-8-0-release-notes.md) |                                                                                       |
 
 {% @marketo/form formid="4316" formId="4316" %}

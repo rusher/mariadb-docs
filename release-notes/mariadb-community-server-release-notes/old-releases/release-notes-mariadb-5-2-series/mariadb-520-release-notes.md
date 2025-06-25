@@ -2,7 +2,7 @@
 
 The most recent release in the [MariaDB 5.2 series](changes-improvements-in-mariadb-5-2.md) is:[**MariaDB 5.2.14**](mariadb-5214-release-notes.md)
 
-[Download](https://askmonty.org/wiki/MariaDB:Download:MariaDB_5.2.0-beta) | **Release Notes** | [Changelog](../../../changelogs/changelogs-mariadb-52-series/mariadb-520-changelog.md) |[Overview of 5.2](changes-improvements-in-mariadb-5-2.md)
+[Download](https://askmonty.org/wiki/MariaDB:Download:MariaDB_5.2.0-beta) | **Release Notes** | [Changelog](../../changelogs/changelogs-mariadb-52-series/mariadb-520-changelog.md) |[Overview of 5.2](changes-improvements-in-mariadb-5-2.md)
 
 **Release date:** 10 Apr 2010
 

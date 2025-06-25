@@ -2,7 +2,7 @@
 
 The most recent release of [MariaDB 11.6](what-is-mariadb-116.md) is:[**MariaDB 11.6.2**](mariadb-11-6-2-release-notes.md) [Download Now](https://downloads.mariadb.org/mariadb/11.6.2/)[_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/11.6.2)
 
-[Download 11.6.1](https://downloads.mariadb.org/mariadb/11.6.1/)[Release Notes](mariadb-11-6-1-release-notes.md)[Changelog](../../../changelogs/changelogs-mariadb-11-6-series/mariadb-11-6-1-changelog.md)[Overview of 11.6](what-is-mariadb-116.md)
+[Download 11.6.1](https://downloads.mariadb.org/mariadb/11.6.1/)[Release Notes](mariadb-11-6-1-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-11-6-series/mariadb-11-6-1-changelog.md)[Overview of 11.6](what-is-mariadb-116.md)
 
 **Release date:** 14 Aug 2024
 
@@ -117,7 +117,7 @@ Thanks, and enjoy MariaDB!
 ## Changelog
 
 For a complete list of changes made in [MariaDB 11.6.1](mariadb-11-6-1-release-notes.md), with links to detailed\
-information on each push, see the [changelog](../../../changelogs/changelogs-mariadb-11-6-series/mariadb-11-6-1-changelog.md).
+information on each push, see the [changelog](../../changelogs/changelogs-mariadb-11-6-series/mariadb-11-6-1-changelog.md).
 
 ## Contributors
 

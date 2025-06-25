@@ -1,6 +1,6 @@
 # MariaDB 11.6.2 Release Notes
 
-[Download](https://downloads.mariadb.org/mariadb/11.6.2/)[Release Notes](mariadb-11-6-2-release-notes.md)[Changelog](../../../changelogs/changelogs-mariadb-11-6-series/mariadb-11-6-2-changelog.md)[Overview of 11.6](what-is-mariadb-116.md)
+[Download](https://downloads.mariadb.org/mariadb/11.6.2/)[Release Notes](mariadb-11-6-2-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-11-6-series/mariadb-11-6-2-changelog.md)[Overview of 11.6](what-is-mariadb-116.md)
 
 [_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/11.6.2/)
 
@@ -94,7 +94,7 @@ Thanks, and enjoy MariaDB!
 ## Changelog
 
 For a complete list of changes made in [MariaDB 11.6.2](mariadb-11-6-2-release-notes.md), with links to detailed\
-information on each push, see the [changelog](../../../changelogs/changelogs-mariadb-11-6-series/mariadb-11-6-2-changelog.md).
+information on each push, see the [changelog](../../changelogs/changelogs-mariadb-11-6-series/mariadb-11-6-2-changelog.md).
 
 ## Contributors
 

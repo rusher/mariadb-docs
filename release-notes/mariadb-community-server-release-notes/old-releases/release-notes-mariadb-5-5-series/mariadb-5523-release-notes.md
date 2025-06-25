@@ -2,7 +2,7 @@
 
 The most recent release in the [MariaDB 5.5](changes-improvements-in-mariadb-5-5.md) series is:[**MariaDB 5.5.68**](mariadb-5568-release-notes.md) [Download Now](https://downloads.mariadb.org/mariadb/5.5.68/)
 
-[Download](https://downloads.askmonty.org/mariadb/5.5.23) |**Release Notes** |[Changelog](../../../changelogs/changelogs-mariadb-55-series/mariadb-5523-changelog.md) |[Overview of 5.5](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/broken-reference/README.md)
+[Download](https://downloads.askmonty.org/mariadb/5.5.23) |**Release Notes** |[Changelog](../../changelogs/changelogs-mariadb-55-series/mariadb-5523-changelog.md) |[Overview of 5.5](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/broken-reference/README.md)
 
 **Release date:** 11 Apr 2012
 
@@ -15,7 +15,7 @@ general usage (based on bug inflow).
 **For a description of** [**MariaDB 5.5**](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/broken-reference/README.md) **see the**[**What is MariaDB 5.5**](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/broken-reference/README.md) **page.**
 
 For a list of changes made in [MariaDB 5.5.23](mariadb-5523-release-notes.md), with links to detailed\
-information on each push, see the[MariaDB 5.5.23 Changelog](../../../changelogs/changelogs-mariadb-55-series/mariadb-5523-changelog.md).
+information on each push, see the[MariaDB 5.5.23 Changelog](../../changelogs/changelogs-mariadb-55-series/mariadb-5523-changelog.md).
 
 In most respects [MariaDB](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/mariadb/README.md) will work exactly as MySQL: all commands,\
 interfaces, libraries and APIs that exist in MySQL also exist in MariaDB.
@@ -34,7 +34,7 @@ This release includes fixes for the following security vulnerabilities:
 [MariaDB 5.5.23](mariadb-5523-release-notes.md) includes [MariaDB 5.3.6](../release-notes-mariadb-5-3-series/mariadb-536-release-notes.md), which, among other things, fixes a bug\
 that under certain rare circumstances allowed a user to connect with an invalid\
 password. **This is a serious security issue.** We recommend upgrading from\
-older versions of [MariaDB 5.5](changes-improvements-in-mariadb-5-5.md) as soon as possible. See the [MariaDB 5.3.6](../release-notes-mariadb-5-3-series/mariadb-536-release-notes.md)[Release Notes](../release-notes-mariadb-5-3-series/mariadb-536-release-notes.md) and[Changelog](../../../changelogs/changelogs-mariadb-53-series/mariadb-536-changelog.md) for more information.
+older versions of [MariaDB 5.5](changes-improvements-in-mariadb-5-5.md) as soon as possible. See the [MariaDB 5.3.6](../release-notes-mariadb-5-3-series/mariadb-536-release-notes.md)[Release Notes](../release-notes-mariadb-5-3-series/mariadb-536-release-notes.md) and[Changelog](../../changelogs/changelogs-mariadb-53-series/mariadb-536-changelog.md) for more information.
 
 ## Includes MySQL 5.5.23
 

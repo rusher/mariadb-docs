@@ -2,7 +2,7 @@
 
 The most recent release of [MariaDB 10.2](what-is-mariadb-102.md) is:[**MariaDB 10.2.44**](mariadb-10244-release-notes.md) Stable (GA) [Download Now](https://downloads.mariadb.org/mariadb/10.2.44/)
 
-[Download](https://downloads.mariadb.org/mariadb/10.2.11)[Release Notes](mariadb-10211-release-notes.md)[Changelog](../../../changelogs/changelogs-mariadb-102-series/mariadb-10211-changelog.md)[Overview of 10.2](what-is-mariadb-102.md)
+[Download](https://downloads.mariadb.org/mariadb/10.2.11)[Release Notes](mariadb-10211-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-102-series/mariadb-10211-changelog.md)[Overview of 10.2](what-is-mariadb-102.md)
 
 **Release date:** 28 Nov 2017
 
@@ -28,7 +28,7 @@ Thanks, and enjoy MariaDB!
 * [MDEV-14244](https://jira.mariadb.org/browse/MDEV-14244) [MariaDB 10.2.10](mariadb-10210-release-notes.md) fails to run on Debian Stretch with ext3 and O\_DIRECT
 * [MDEV-14219](https://jira.mariadb.org/browse/MDEV-14219) Allow online table rebuild when encryption or compression parameters change
 
-### [MariaDB Backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup)
+### [MariaDB Backup](broken-reference)
 
 * [MDEV-14499](https://jira.mariadb.org/browse/MDEV-14499) mariadb-backup 10.2 fails to back up a multi-file InnoDB system tablespace
 * [MDEV-14447](https://jira.mariadb.org/browse/MDEV-14447) mariabackup incremental incorrectly extends system tablespace for multi-file innodb\_data\_file\_path
@@ -48,7 +48,7 @@ Thanks, and enjoy MariaDB!
 ## Notes
 
 For a complete list of changes made in [MariaDB 10.2.11](mariadb-10211-release-notes.md), with links to detailed\
-information on each push, see the [changelog](../../../changelogs/changelogs-mariadb-102-series/mariadb-10211-changelog.md).
+information on each push, see the [changelog](../../changelogs/changelogs-mariadb-102-series/mariadb-10211-changelog.md).
 
 Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
 

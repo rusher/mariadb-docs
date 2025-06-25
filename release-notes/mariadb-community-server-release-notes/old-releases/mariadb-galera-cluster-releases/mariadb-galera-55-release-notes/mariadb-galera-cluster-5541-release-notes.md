@@ -26,7 +26,7 @@ information on each push, see the[MariaDB Galera Cluster 5.5.41 Changelog](../ma
   MariaDB repositories and both 25.3.x and 25.2.x wsrep providers are available\
   on the [downloads](https://downloads.mariadb.org/mariadb-galera/5.5.41) page.
 
-See the [MariaDB 5.5.41 Release Notes](../../release-notes-mariadb-5-5-series/mariadb-5541-release-notes.md) and[Changelog](../../../../changelogs/changelogs-mariadb-55-series/mariadb-5541-changelog.md) for more information on the changes in\
+See the [MariaDB 5.5.41 Release Notes](../../release-notes-mariadb-5-5-series/mariadb-5541-release-notes.md) and[Changelog](../../../changelogs/changelogs-mariadb-55-series/mariadb-5541-changelog.md) for more information on the changes in\
 MariaDB.
 
 Note: If Galera 25.2.x and 25.3.x are both being used in the cluster, MariaDB\

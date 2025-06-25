@@ -24,7 +24,7 @@ MariaDB Enterprise Server uses an [enterprise lifecycle](https://app.gitbook.com
 
 ## Enterprise Backup
 
-[MariaDB Enterprise Backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup) enables non-blocking backups of MariaDB Enterprise Server.
+[MariaDB Enterprise Backup](broken-reference) enables non-blocking backups of MariaDB Enterprise Server.
 
 ## Data-at-Rest Encryption
 

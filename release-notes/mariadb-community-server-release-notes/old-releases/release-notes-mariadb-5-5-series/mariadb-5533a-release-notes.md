@@ -2,7 +2,7 @@
 
 The most recent release in the [MariaDB 5.5](changes-improvements-in-mariadb-5-5.md) series is:[**MariaDB 5.5.68**](mariadb-5568-release-notes.md) [Download Now](https://downloads.mariadb.org/mariadb/5.5.68/)
 
-[Download](https://downloads.mariadb.org/mariadb/5.5.33a) |**Release Notes** |[Changelog](../../../changelogs/changelogs-mariadb-55-series/mariadb-5533a-changelog.md) |[Overview of 5.5](changes-improvements-in-mariadb-5-5.md)
+[Download](https://downloads.mariadb.org/mariadb/5.5.33a) |**Release Notes** |[Changelog](../../changelogs/changelogs-mariadb-55-series/mariadb-5533a-changelog.md) |[Overview of 5.5](changes-improvements-in-mariadb-5-5.md)
 
 **Release date:** 20 Sep 2013
 
@@ -15,7 +15,7 @@ inflow).
 **For a description of** [**MariaDB 5.5**](changes-improvements-in-mariadb-5-5.md) **see the**[**What is MariaDB 5.5?**](changes-improvements-in-mariadb-5-5.md) **page.**
 
 For a list of changes made in this release, with links to detailed\
-information on each push, see the[MariaDB 5.5.33 Changelog](../../../changelogs/changelogs-mariadb-55-series/mariadb-5533-changelog.md).
+information on each push, see the[MariaDB 5.5.33 Changelog](../../changelogs/changelogs-mariadb-55-series/mariadb-5533-changelog.md).
 
 In most respects [MariaDB](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/mariadb/README.md) will work exactly as MySQL: all commands,\
 interfaces, libraries and APIs that exist in MySQL also exist in MariaDB.
@@ -32,7 +32,7 @@ Specific bugs fixed in this release include:
 * [MDEV-5015](https://jira.mariadb.org/browse/MDEV-5015) Wrong result with an aggregate function, index and impossible condition inside OR
 * [MDEV-5029](https://jira.mariadb.org/browse/MDEV-5029) Crash in [MariaDB 5.5.33](mariadb-5533-release-notes.md) with inconsistent .frm from older MariaDB release
 
-Full details on these and other fixes are available in the [changelog](../../../changelogs/changelogs-mariadb-55-series/mariadb-5533a-changelog.md).
+Full details on these and other fixes are available in the [changelog](../../changelogs/changelogs-mariadb-55-series/mariadb-5533a-changelog.md).
 
 ## Debian and Ubuntu packaging fixes
 

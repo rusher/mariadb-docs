@@ -2,7 +2,7 @@
 
 The most recent release of [MariaDB 10.2](what-is-mariadb-102.md) is:[**MariaDB 10.2.44**](mariadb-10244-release-notes.md) Stable (GA) [Download Now](https://downloads.mariadb.org/mariadb/10.2.44/)
 
-[Download](https://downloads.mariadb.org/mariadb/10.2.22/)[Release Notes](mariadb-10222-release-notes.md)[Changelog](../../../changelogs/changelogs-mariadb-102-series/mariadb-10222-changelog.md)[Overview of 10.2](what-is-mariadb-102.md)
+[Download](https://downloads.mariadb.org/mariadb/10.2.22/)[Release Notes](mariadb-10222-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-102-series/mariadb-10222-changelog.md)[Overview of 10.2](what-is-mariadb-102.md)
 
 **Release date:** 11 Feb 2019
 
@@ -32,12 +32,12 @@ Thanks, and enjoy MariaDB!
   * [CVE-2019-2537](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-2537)
 
 When upgrading from [MariaDB 10.2.16](mariadb-10216-release-notes.md) or earlier to [MariaDB 10.2.17](mariadb-10217-release-notes.md) or higher,\
-running [mysql_upgrade](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/legacy-clients-and-utilities/mysql_upgrade) is **required** due to changes introduced in[MDEV-14637](https://jira.mariadb.org/browse/MDEV-14637).
+running [mysql\_upgrade](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/legacy-clients-and-utilities/mysql_upgrade) is **required** due to changes introduced in[MDEV-14637](https://jira.mariadb.org/browse/MDEV-14637).
 
 ## Changelog
 
 For a complete list of changes made in [MariaDB 10.2.22](mariadb-10222-release-notes.md) with links to detailed\
-information on each push, see the [changelog](../../../changelogs/changelogs-mariadb-102-series/mariadb-10222-changelog.md).
+information on each push, see the [changelog](../../changelogs/changelogs-mariadb-102-series/mariadb-10222-changelog.md).
 
 ## Contributors
 

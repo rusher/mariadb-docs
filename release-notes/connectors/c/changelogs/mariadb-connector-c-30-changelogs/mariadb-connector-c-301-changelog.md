@@ -75,9 +75,9 @@ modified in that revision.
   2016-12-13 07:09:06 +0100
   * removed api function mysql\_get\_server\_status (introduced in last commit). Instead of mariadb\_get\_infov now supports additional parameters: \* MARIADB\_CONNECTION\_SERVER\_STATUS \* MARIADB\_CONNECTION\_SERVER\_CAPABILITIES \* MARIADB\_CONNECTION\_EXTENDED\_SERVER\_CAPABILITIES \* MARIADB\_CONNECTION\_CLIENT\_CAPABILITIES
 * [Revision #7a1e3a6](https://github.com/mariadb-corporation/mariadb-connector-c/commit/7a1e3a6)\
-  2016-12-10 14:09:53 +0100
-  *
-    * Fixed crash in prepared statement: Indicator variable should be checked only if we are in bulk operation mode (=stmt->array\_size > 0 and bulk is supported by server - Added new api function mysql\_get\_server\_status, so client applications no longer need to access members of the mysql structure
+  2016-12-10 14:09:53 +0100\
+  \*
+  * Fixed crash in prepared statement: Indicator variable should be checked only if we are in bulk operation mode (=stmt->array\_size > 0 and bulk is supported by server - Added new api function mysql\_get\_server\_status, so client applications no longer need to access members of the mysql structure
 * [Revision #070fb30](https://github.com/mariadb-corporation/mariadb-connector-c/commit/070fb30)\
   2016-12-03 09:21:32 +0100
   * If a kill statement was prepared and executed we need to check return code of net\_stmt\_close in case the connection which belongs to the statement was killed.
@@ -130,9 +130,9 @@ modified in that revision.
   2016-10-23 15:53:24 +0200
   * Smaller fixes for LibreOffice integration: - added type MYSQL\_TYPE\_JSON (=245) - include error numbers (ma\_errmsg.h) via mysql.h - convert MYSQL\_TYPE\_JSON to string (prepared statements) - added error message number 2034 (invalid buffer)
 * [Revision #6306c9f](https://github.com/mariadb-corporation/mariadb-connector-c/commit/6306c9f)\
-  2016-10-20 08:47:51 +0200
-  *
-    * removed COM\_MULTI from options COM\_MULTI is now available for internal use only, e.g. in mariadb\_stmt\_execute\_direct
+  2016-10-20 08:47:51 +0200\
+  \*
+  * removed COM\_MULTI from options COM\_MULTI is now available for internal use only, e.g. in mariadb\_stmt\_execute\_direct
 * [Revision #468cda3](https://github.com/mariadb-corporation/mariadb-connector-c/commit/468cda3)\
   2016-10-18 10:53:31 +0200
   * Fixed compilation errors introduced by 629ec646303..
@@ -146,9 +146,9 @@ modified in that revision.
   2016-10-13 15:17:45 +0000
   * Fix PVIO to return number of bytes read/written as "signed" integer since there is a lot of checks for return code being < 0 or -1.
 * [Revision #c20974b](https://github.com/mariadb-corporation/mariadb-connector-c/commit/c20974b)\
-  2016-10-17 16:02:51 +0200
-  *
-    * removed global context for tls, so code can be used also with no yassl branch in 10.2 - added new gnutls cipher mapping - fixed ssl test case: skip hostname verification if both server and client run on localhost - added server certificates
+  2016-10-17 16:02:51 +0200\
+  \*
+  * removed global context for tls, so code can be used also with no yassl branch in 10.2 - added new gnutls cipher mapping - fixed ssl test case: skip hostname verification if both server and client run on localhost - added server certificates
 * [Revision #7cb8479](https://github.com/mariadb-corporation/mariadb-connector-c/commit/7cb8479)\
   2016-10-12 21:04:55 +0000
   * Fix Win64 warnings. Correctly define my\_socket in ma\_global.h
@@ -366,9 +366,9 @@ modified in that revision.
   2016-08-09 14:15:37 +0200
   * Disable BIO methods for read/write by default
 * [Revision #dd9ebcf](https://github.com/mariadb-corporation/mariadb-connector-c/commit/dd9ebcf)\
-  2016-08-05 07:39:10 +0200
-  *
-    * Fixed license header - More OpenSSL 1.1 fixes
+  2016-08-05 07:39:10 +0200\
+  \*
+  * Fixed license header - More OpenSSL 1.1 fixes
 * [Revision #4f2c9da](https://github.com/mariadb-corporation/mariadb-connector-c/commit/4f2c9da)\
   2016-08-03 12:41:52 +0200
   * Fix for [CONC-194](https://jira.mariadb.org/browse/CONC-194): (merged from connector\_c\_2.3)
@@ -538,9 +538,9 @@ modified in that revision.
   2016-03-29 09:44:03 +0200
   * Moved connection\_handler to mysql->extension
 * [Revision #bea035a](https://github.com/mariadb-corporation/mariadb-connector-c/commit/bea035a)\
-  2016-03-28 10:29:55 +0200
-  *
-    * Unittests: link static library instead of dynamic - TLS/SSL: renamed HAVE\_SSL to HAVE\_TLS to avoid trouble in 10.2-integration - Fixed wrong timeout in non-blocking mode - Fixed valgrind error in prepared statement
+  2016-03-28 10:29:55 +0200\
+  \*
+  * Unittests: link static library instead of dynamic - TLS/SSL: renamed HAVE\_SSL to HAVE\_TLS to avoid trouble in 10.2-integration - Fixed wrong timeout in non-blocking mode - Fixed valgrind error in prepared statement
 * [Revision #2004962](https://github.com/mariadb-corporation/mariadb-connector-c/commit/2004962)\
   2016-03-24 18:10:06 +0100
   * Fix for [CONC-170](https://jira.mariadb.org/browse/CONC-170): missing blank in mariadb\_config --libs output
@@ -569,9 +569,9 @@ modified in that revision.
   2016-03-16 18:20:08 +0100
   * Since we use TLS and not SSL functions and structures were renamed from SSL to TLS
 * [Revision #f68b89b](https://github.com/mariadb-corporation/mariadb-connector-c/commit/f68b89b)\
-  2016-03-15 09:01:02 +0100
-  *
-    * Back off CMake version requirements. - Fix plugin extension on OSX (it is .so, not .dylib) - add SKIP\_TESTS to skip compiling test
+  2016-03-15 09:01:02 +0100\
+  \*
+  * Back off CMake version requirements. - Fix plugin extension on OSX (it is .so, not .dylib) - add SKIP\_TESTS to skip compiling test
 * [Revision #91ad315](https://github.com/mariadb-corporation/mariadb-connector-c/commit/91ad315)\
   2016-03-14 17:13:10 +0100
   * Make sure that on windows we include iconv.h from win-iconv, not a system one
@@ -606,9 +606,9 @@ modified in that revision.
   2016-03-09 18:27:48 +0100
   * Fix error message (hostname max. 100 characters)
 * [Revision #cc0c345](https://github.com/mariadb-corporation/mariadb-connector-c/commit/cc0c345)\
-  2016-03-08 17:08:01 +0100
-  *
-    * Fixes for 10.2-integration - As requested by Wlad we use connect timeout for read/write unless the connection was established. - Added experimental session cache support for OpenSSL. It's currently disabled
+  2016-03-08 17:08:01 +0100\
+  \*
+  * Fixes for 10.2-integration - As requested by Wlad we use connect timeout for read/write unless the connection was established. - Added experimental session cache support for OpenSSL. It's currently disabled
 * [Revision #05eeef7](https://github.com/mariadb-corporation/mariadb-connector-c/commit/05eeef7)\
   2016-03-02 17:30:44 +0100
   * Fix for windows build (hide ma\_send function by #ifndef \_WIN32)
@@ -796,9 +796,9 @@ modified in that revision.
   2016-02-02 12:38:06 +0100
   * fix export symbols
 * [Revision #49a0a89](https://github.com/mariadb-corporation/mariadb-connector-c/commit/49a0a89)\
-  2016-02-02 12:41:53 +0100
-  *
-    1. added missing export function mariadb\_load\_defaults 2) added option WITH\_UNITEST=ON/OFF to disable build of unittests
+  2016-02-02 12:41:53 +0100\
+  \*
+  1. added missing export function mariadb\_load\_defaults 2) added option WITH\_UNITEST=ON/OFF to disable build of unittests
 * [Revision #c5ca735](https://github.com/mariadb-corporation/mariadb-connector-c/commit/c5ca735)\
   2016-02-02 12:12:04 +0100
   * Renamed prefixes for 10.2 integration

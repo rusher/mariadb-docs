@@ -1,6 +1,6 @@
 # MariaDB 10.5.28 Release Notes
 
-[Download](https://mariadb.com/downloads/)[Release Notes](mariadb-10-5-28-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-105-series/mariadb-10-5-28-changelog.md)[Overview of 10.5](what-is-mariadb-105.md)
+[Download](https://mariadb.com/downloads/)[Release Notes](mariadb-10-5-28-release-notes.md)[Changelog](../changelogs/changelogs-mariadb-105-series/mariadb-10-5-28-changelog.md)[Overview of 10.5](what-is-mariadb-105.md)
 
 [_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/10.5.28/)
 
@@ -114,7 +114,7 @@ Thanks, and enjoy MariaDB!
 ## Changelog
 
 For a complete list of changes made in [MariaDB 10.5.28](mariadb-10-5-28-release-notes.md), with links to detailed\
-information on each push, see the [changelog](../../changelogs/changelogs-mariadb-105-series/mariadb-10-5-28-changelog.md).
+information on each push, see the [changelog](../changelogs/changelogs-mariadb-105-series/mariadb-10-5-28-changelog.md).
 
 ## Contributors
 

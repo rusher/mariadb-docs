@@ -2,7 +2,7 @@
 
 The most recent release of [MariaDB 10.7](what-is-mariadb-107.md) is:[**MariaDB 10.7.8**](mariadb-10-7-8-release-notes.md) Stable (GA) [Download Now](https://downloads.mariadb.org/mariadb/10.7.8/)
 
-[Download 10.7.2](https://mariadb.com/downloads)[Release Notes](mariadb-1072-release-notes.md)[Changelog](../../../changelogs/changelogs-mariadb-10-7-series/mariadb-1072-changelog.md)[Overview of 10.7](what-is-mariadb-107.md)
+[Download 10.7.2](https://mariadb.com/downloads)[Release Notes](mariadb-1072-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-10-7-series/mariadb-1072-changelog.md)[Overview of 10.7](what-is-mariadb-107.md)
 
 **Release date:** 9 Feb 2022
 
@@ -25,7 +25,7 @@ Thanks, and enjoy MariaDB!
 * Indexed [CHAR](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/string-data-types/char) columns are broken with NO\_PAD [collations](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/string-data-types/character-sets) ([MDEV-25440](https://jira.mariadb.org/browse/MDEV-25440))
 * insert-intention lock conflicts with waiting ORDINARY lock ([MDEV-27025](https://jira.mariadb.org/browse/MDEV-27025))
 * Crash recovery improvements ([MDEV-26784](https://jira.mariadb.org/browse/MDEV-26784), [MDEV-27022](https://jira.mariadb.org/browse/MDEV-27022), [MDEV-27183](https://jira.mariadb.org/browse/MDEV-27183), [MDEV-27610](https://jira.mariadb.org/browse/MDEV-27610))
-* [mariabackup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup) skips valid .ibd file ([MDEV-26326](https://jira.mariadb.org/browse/MDEV-26326))
+* [mariabackup](broken-reference) skips valid .ibd file ([MDEV-26326](https://jira.mariadb.org/browse/MDEV-26326))
 * Allow seamless upgrade despite [ROW\_FORMAT=COMPRESSED](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-row-formats/innodb-compressed-row-format) ([MDEV-27736](https://jira.mariadb.org/browse/MDEV-27736))
 
 ### Galera
@@ -81,7 +81,7 @@ Thanks, and enjoy MariaDB!
 ## Changelog
 
 For a complete list of changes made in [MariaDB 10.7.2](mariadb-1072-release-notes.md), with links to detailed\
-information on each push, see the [changelog](../../../changelogs/changelogs-mariadb-10-7-series/mariadb-1072-changelog.md).
+information on each push, see the [changelog](../../changelogs/changelogs-mariadb-10-7-series/mariadb-1072-changelog.md).
 
 ## Contributors
 

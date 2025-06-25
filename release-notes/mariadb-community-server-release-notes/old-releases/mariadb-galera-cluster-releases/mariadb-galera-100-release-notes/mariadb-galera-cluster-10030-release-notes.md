@@ -15,7 +15,7 @@ available in the [**Galera**](https://github.com/mariadb-corporation/docs-releas
 
 For a list of changes made in MariaDB Galera Cluster 10.0.30, with links to\
 detailed information on each push, see the[MariaDB Galera Cluster 10.0.30 Changelog](../mariadb-galera-100-changelogs/mariadb-galera-cluster-10030-changelog.md).\
-For changes made in [MariaDB 10.0.30](../../release-notes-mariadb-10-0-series/mariadb-10030-release-notes.md), see the[MariaDB 10.0.30 Changelog](../../../../changelogs/changelogs-mariadb-100-series/mariadb-10030-changelog.md)
+For changes made in [MariaDB 10.0.30](../../release-notes-mariadb-10-0-series/mariadb-10030-release-notes.md), see the[MariaDB 10.0.30 Changelog](../../../changelogs/changelogs-mariadb-100-series/mariadb-10030-changelog.md)
 
 ## Updates and fixes in this version
 
@@ -28,7 +28,7 @@ For changes made in [MariaDB 10.0.30](../../release-notes-mariadb-10-0-series/ma
 * Fixes for the following [security vulnerabilities](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/security):
   * [CVE-2017-3313](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-3313)
   * [CVE-2017-3302](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-3302)
-* See the [MariaDB 10.0.30 Release Notes](../../release-notes-mariadb-10-0-series/mariadb-10030-release-notes.md) and[Changelog](../../../../changelogs/changelogs-mariadb-100-series/mariadb-10030-changelog.md) for more information on the changes in\
+* See the [MariaDB 10.0.30 Release Notes](../../release-notes-mariadb-10-0-series/mariadb-10030-release-notes.md) and[Changelog](../../../changelogs/changelogs-mariadb-100-series/mariadb-10030-changelog.md) for more information on the changes in\
   MariaDB.
 
 ## Notes

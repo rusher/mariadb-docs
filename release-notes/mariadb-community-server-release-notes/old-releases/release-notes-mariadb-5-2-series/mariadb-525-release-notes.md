@@ -2,7 +2,7 @@
 
 The most recent release in the [MariaDB 5.2 series](changes-improvements-in-mariadb-5-2.md) is:[**MariaDB 5.2.14**](mariadb-5214-release-notes.md)
 
-[Download](https://downloads.askmonty.org/mariadb/5.2.5) | **Release Notes** | [Changelog](../../../changelogs/changelogs-mariadb-52-series/mariadb-525-changelog.md) |[Overview of 5.2](changes-improvements-in-mariadb-5-2.md)
+[Download](https://downloads.askmonty.org/mariadb/5.2.5) | **Release Notes** | [Changelog](../../changelogs/changelogs-mariadb-52-series/mariadb-525-changelog.md) |[Overview of 5.2](changes-improvements-in-mariadb-5-2.md)
 
 **Release date:** 3 Mar 2011
 
@@ -15,7 +15,7 @@ MariaDB may already be included in your favorite OS distribution. More\
 information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-including-mariadb)\
 page.
 
-For a list of every change made in [MariaDB 5.2.5](mariadb-525-release-notes.md), see the[MariaDB 5.2.5 Changelog](../../../changelogs/changelogs-mariadb-52-series/mariadb-525-changelog.md). For a high-level description\
+For a list of every change made in [MariaDB 5.2.5](mariadb-525-release-notes.md), see the[MariaDB 5.2.5 Changelog](../../changelogs/changelogs-mariadb-52-series/mariadb-525-changelog.md). For a high-level description\
 of [MariaDB 5.2](changes-improvements-in-mariadb-5-2.md) see the [MariaDB 5.2 Overview](changes-improvements-in-mariadb-5-2.md) page.
 
 In most respects [MariaDB](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/mariadb/README.md) will work exactly as MySQL: all commands,\
@@ -65,6 +65,6 @@ address.
 
 Like [previous releases](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/release-notes/README.md), [MariaDB 5.2.5](mariadb-525-release-notes.md) includes several bug\
 fixes and other improvements. Specific bugs fixed in [MariaDB 5.2.5](mariadb-525-release-notes.md) are listed\
-in the [MariaDB 5.2.5 Changelog](../../../changelogs/changelogs-mariadb-52-series/mariadb-525-changelog.md) and[MariaDB 5.1.55 Changelog](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-2-series/broken-reference/README.md).
+in the [MariaDB 5.2.5 Changelog](../../changelogs/changelogs-mariadb-52-series/mariadb-525-changelog.md) and[MariaDB 5.1.55 Changelog](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-2-series/broken-reference/README.md).
 
 {% @marketo/form formid="4316" formId="4316" %}

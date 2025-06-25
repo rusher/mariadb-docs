@@ -2,7 +2,7 @@
 
 The most recent release in the [MariaDB 5.5](changes-improvements-in-mariadb-5-5.md) series is:[**MariaDB 5.5.68**](mariadb-5568-release-notes.md) [Download Now](https://downloads.mariadb.org/mariadb/5.5.68/)
 
-[Download](https://downloads.mariadb.org/mariadb/5.5.29) | **Release Notes** | [Changelog](../../../changelogs/changelogs-mariadb-55-series/mariadb-5529-changelog.md) |[Overview of 5.5](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/broken-reference/README.md)
+[Download](https://downloads.mariadb.org/mariadb/5.5.29) | **Release Notes** | [Changelog](../../changelogs/changelogs-mariadb-55-series/mariadb-5529-changelog.md) |[Overview of 5.5](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/broken-reference/README.md)
 
 **Release date:** 30 Jan 2013
 
@@ -15,7 +15,7 @@ inflow).
 **For a description of** [**MariaDB 5.5**](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/broken-reference/README.md) **see the**[**What is MariaDB 5.5**](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/broken-reference/README.md) **page.**
 
 For a list of changes made in this release, with links to detailed\
-information on each push, see the[MariaDB 5.5.29 Changelog](../../../changelogs/changelogs-mariadb-55-series/mariadb-5529-changelog.md).
+information on each push, see the[MariaDB 5.5.29 Changelog](../../changelogs/changelogs-mariadb-55-series/mariadb-5529-changelog.md).
 
 In most respects [MariaDB](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/mariadb/README.md) will work exactly as MySQL: all commands,\
 interfaces, libraries and APIs that exist in MySQL also exist in MariaDB.
@@ -29,7 +29,7 @@ This release includes fixes for the following security vulnerabilities:
 * A buffer overflow that can cause a server crash or arbitrary code execution (a variant of [CVE-2012-5611](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-5611))
 * [CVE-2012-5627](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-5627)/[MDEV-3915](https://jira.mariadb.org/browse/MDEV-3915) fast password brute-forcing using the "change user" command
 * [CVE-2012-5615](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-5615)/[MDEV-3909](https://jira.mariadb.org/browse/MDEV-3909) information leakage about existing user accounts via the protocol handshake
-* fixes for DoS attacks - crashes and server lockups (see the [Changelog](../../../changelogs/changelogs-mariadb-55-series/mariadb-5529-changelog.md))
+* fixes for DoS attacks - crashes and server lockups (see the [Changelog](../../changelogs/changelogs-mariadb-55-series/mariadb-5529-changelog.md))
 
 Additionally, it includes all security fixes from MySQL 5.5.29, such as fix for [CVE-2012-5612](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-5612)/[MDEV-3908](https://jira.mariadb.org/browse/MDEV-3908) and others such as:
 

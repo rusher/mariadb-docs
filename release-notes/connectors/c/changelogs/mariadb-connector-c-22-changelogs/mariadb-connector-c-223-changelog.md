@@ -39,9 +39,9 @@ modified in that revision.
   2016-02-20 11:52:17 +0100
   * Fix for [CONC-160](https://jira.mariadb.org/browse/CONC-160): field metadata doesn't show NUM\_FLAG for NEWDECIMAL columns
 * [Revision #f1cde3d](https://github.com/mariadb-corporation/mariadb-connector-c/commit/f1cde3d)\
-  2016-02-11 09:27:41 +0100
-  *
-    * Fix for [CONC-156](https://jira.mariadb.org/browse/CONC-156): CONC 2.2.2 build fails on FreeBSD due to not including necessary header. Thanks to Andie H. Hwang for providing this patch!
+  2016-02-11 09:27:41 +0100\
+  \*
+  * Fix for [CONC-156](https://jira.mariadb.org/browse/CONC-156): CONC 2.2.2 build fails on FreeBSD due to not including necessary header. Thanks to Andie H. Hwang for providing this patch!
 * [Revision #804129c](https://github.com/mariadb-corporation/mariadb-connector-c/commit/804129c)\
   2016-02-09 08:43:16 +0100
   * Fix for CONC155: return trailing zero when fetching from binary columns into string

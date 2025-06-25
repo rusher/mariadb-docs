@@ -38,7 +38,7 @@ detailed information on each push, see the[MariaDB Galera Cluster 10.0.12 Change
   Galera v3 must be started with[wsrep\_provider\_options='socket.checksum=1'](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/wsrep_provider_options#socketchecksum)\
   in order to make it backward compatible with Galera v2.
 * Installation: Galera rpm packages had a file conflicting with Filesystem package, which caused installation to fail. Fixed Galera packages are now available for the following flavors : Fedora 19, Fedora 20 and CentOS 6. ([MDEV-4218](https://jira.mariadb.org/browse/MDEV-4218))
-* See the [MariaDB 10.0.12 Release Notes](../../release-notes-mariadb-10-0-series/mariadb-10012-release-notes.md) and[Changelog](../../../../changelogs/changelogs-mariadb-100-series/mariadb-10012-changelog.md) for more information on the changes in\
+* See the [MariaDB 10.0.12 Release Notes](../../release-notes-mariadb-10-0-series/mariadb-10012-release-notes.md) and[Changelog](../../../changelogs/changelogs-mariadb-100-series/mariadb-10012-changelog.md) for more information on the changes in\
   MariaDB.
 
 Thanks, and enjoy MariaDB Galera Cluster!

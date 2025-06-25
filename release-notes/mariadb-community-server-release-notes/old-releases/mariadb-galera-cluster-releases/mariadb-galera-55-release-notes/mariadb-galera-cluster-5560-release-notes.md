@@ -38,7 +38,7 @@ information on fixes in this version.
 ## Changelog
 
 A full list of all changes is in the[MariaDB Galera Cluster 5.5.60 Changelog](../mariadb-galera-55-changelogs/mariadb-galera-cluster-5560-changelog.md)\
-and the [MariaDB 5.5.60 Changelog](../../../../changelogs/changelogs-mariadb-55-series/mariadb-5560-changelog.md).
+and the [MariaDB 5.5.60 Changelog](../../../changelogs/changelogs-mariadb-55-series/mariadb-5560-changelog.md).
 
 ## Contributors
 

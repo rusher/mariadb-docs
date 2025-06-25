@@ -2,7 +2,7 @@
 
 The most recent release of [MariaDB 10.6](what-is-mariadb-106.md) is:[**MariaDB 10.6.21**](mariadb-10-6-21-release-notes.md) Stable (GA) [Download Now](https://mariadb.com/downloads/)[_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/10.6.21/)
 
-[Download 10.6.11](https://downloads.mariadb.org/mariadb/10.6.11/)[Release Notes](mariadb-10-6-11-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-106-series/mariadb-10-6-11-changelog.md)[Overview of 10.6](what-is-mariadb-106.md)
+[Download 10.6.11](https://downloads.mariadb.org/mariadb/10.6.11/)[Release Notes](mariadb-10-6-11-release-notes.md)[Changelog](../changelogs/changelogs-mariadb-106-series/mariadb-10-6-11-changelog.md)[Overview of 10.6](what-is-mariadb-106.md)
 
 **Release date:** 7 Nov 2022
 
@@ -74,7 +74,7 @@ The following changes have been made to the `docker.io/library/mariadb` containe
 ## Changelog
 
 For a complete list of changes and bugfixes made in [MariaDB 10.6.11](mariadb-10-6-11-release-notes.md), with links to detailed\
-information on each push, see the [changelog](../../changelogs/changelogs-mariadb-106-series/mariadb-10-6-11-changelog.md).
+information on each push, see the [changelog](../changelogs/changelogs-mariadb-106-series/mariadb-10-6-11-changelog.md).
 
 ## Contributors
 

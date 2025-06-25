@@ -2,7 +2,7 @@
 
 The most recent release of [MariaDB 10.4](what-is-mariadb-104.md) is:[**MariaDB 10.4.34**](mariadb-10-4-34-release-notes.md) Stable (GA) [Download Now](https://downloads.mariadb.org/mariadb/10.4.34/)
 
-[Download](https://downloads.mariadb.org/mariadb/10.4.0/)[Release Notes](mariadb-1040-release-notes.md)[Changelog](../../../changelogs/changelogs-mariadb-10-4-series/mariadb-1040-changelog.md)[Overview of 10.4](what-is-mariadb-104.md)
+[Download](https://downloads.mariadb.org/mariadb/10.4.0/)[Release Notes](mariadb-1040-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-10-4-series/mariadb-1040-changelog.md)[Overview of 10.4](what-is-mariadb-104.md)
 
 **Release date:** 9 Nov 2018
 
@@ -83,7 +83,7 @@ SELECT ADDTIME(TIME'-838:59:59.999999', '1677:59:59.999998');
 ## Changelog
 
 For a complete list of changes made in [MariaDB 10.4.0](mariadb-1040-release-notes.md), with links to detailed\
-information on each push, see the [changelog](../../../changelogs/changelogs-mariadb-10-4-series/mariadb-1040-changelog.md).
+information on each push, see the [changelog](../../changelogs/changelogs-mariadb-10-4-series/mariadb-1040-changelog.md).
 
 ## Contributors
 

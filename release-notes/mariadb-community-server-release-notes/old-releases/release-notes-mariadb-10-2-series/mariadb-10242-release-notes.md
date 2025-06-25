@@ -2,7 +2,7 @@
 
 The most recent release of [MariaDB 10.2](what-is-mariadb-102.md) is:[**MariaDB 10.2.44**](mariadb-10244-release-notes.md) Stable (GA) [Download Now](https://downloads.mariadb.org/mariadb/10.2.44/)
 
-[Download 10.2.42](https://mariadb.org/download/?tab=mariadb\&release=10.2.42\&product=mariadb)[Release Notes](mariadb-10242-release-notes.md)[Changelog](../../../changelogs/changelogs-mariadb-102-series/mariadb-10242-changelog.md)[Overview of 10.2](what-is-mariadb-102.md)
+[Download 10.2.42](https://mariadb.org/download/?tab=mariadb\&release=10.2.42\&product=mariadb)[Release Notes](mariadb-10242-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-102-series/mariadb-10242-changelog.md)[Overview of 10.2](what-is-mariadb-102.md)
 
 **Release date:** 9 Feb 2022
 
@@ -75,7 +75,7 @@ running [mysql\_upgrade](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-
 ## Changelog
 
 For a complete list of changes made in [MariaDB 10.2.42](mariadb-10242-release-notes.md) with links to detailed\
-information on each push, see the [changelog](../../../changelogs/changelogs-mariadb-102-series/mariadb-10242-changelog.md).
+information on each push, see the [changelog](../../changelogs/changelogs-mariadb-102-series/mariadb-10242-changelog.md).
 
 ## Contributors
 

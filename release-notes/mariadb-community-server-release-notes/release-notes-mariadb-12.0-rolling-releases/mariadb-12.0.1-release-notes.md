@@ -1,6 +1,6 @@
 # MariaDB 12.0.1 Release Notes
 
-<a href="https://mariadb.com/downloads" class="button primary">Download</a>  <a href="mariadb-12.0.1-release-notes.md" class="button secondary">Release Notes</a>  <a href="../../changelogs/changelogs-mariadb-12.0-series/mariadb-12.0.1-changelog.md" class="button secondary">Changelog</a>  <a href="what-is-mariadb-120.md" class="button secondary">Overview of 12.0</a>
+<a href="https://mariadb.com/downloads" class="button primary">Download</a>  <a href="mariadb-12.0.1-release-notes.md" class="button secondary">Release Notes</a>  <a href="../changelogs/changelogs-mariadb-12.0-series/mariadb-12.0.1-changelog.md" class="button secondary">Changelog</a>  <a href="what-is-mariadb-120.md" class="button secondary">Overview of 12.0</a>
 
 **Release date:** 5 Jun 2025
 

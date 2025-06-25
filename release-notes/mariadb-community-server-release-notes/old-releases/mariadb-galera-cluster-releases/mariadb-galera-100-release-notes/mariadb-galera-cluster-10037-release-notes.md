@@ -15,7 +15,7 @@ available in the [**Galera**](https://github.com/mariadb-corporation/docs-releas
 
 For a list of changes made in MariaDB Galera Cluster 10.0.37, with links to\
 detailed information on each push, see the[MariaDB Galera Cluster 10.0.37 Changelog](../mariadb-galera-100-changelogs/mariadb-galera-cluster-10037-changelog.md).\
-For changes made in [MariaDB 10.0.37](../../release-notes-mariadb-10-0-series/mariadb-10037-release-notes.md), see the[MariaDB 10.0.37 Changelog](../../../../changelogs/changelogs-mariadb-100-series/mariadb-10037-changelog.md)
+For changes made in [MariaDB 10.0.37](../../release-notes-mariadb-10-0-series/mariadb-10037-release-notes.md), see the[MariaDB 10.0.37 Changelog](../../../changelogs/changelogs-mariadb-100-series/mariadb-10037-changelog.md)
 
 ## Updates and fixes in this version
 
@@ -32,7 +32,7 @@ For changes made in [MariaDB 10.0.37](../../release-notes-mariadb-10-0-series/ma
   * [CVE-2018-3156](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-3156)
   * [CVE-2018-3251](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-3251)
   * [CVE-2019-2503](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-2503)
-* See the [MariaDB 10.0.37 Release Notes](../../release-notes-mariadb-10-0-series/mariadb-10037-release-notes.md) and[Changelog](../../../../changelogs/changelogs-mariadb-100-series/mariadb-10037-changelog.md) for more information on the changes in\
+* See the [MariaDB 10.0.37 Release Notes](../../release-notes-mariadb-10-0-series/mariadb-10037-release-notes.md) and[Changelog](../../../changelogs/changelogs-mariadb-100-series/mariadb-10037-changelog.md) for more information on the changes in\
   MariaDB.
 
 ## Notes

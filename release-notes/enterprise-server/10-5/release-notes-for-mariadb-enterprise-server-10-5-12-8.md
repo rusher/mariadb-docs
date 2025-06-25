@@ -51,8 +51,8 @@ ARM64 is now supported for several [#platforms](release-notes-for-mariadb-enterp
 
 * The script `wsrep_sst_mariabackup` checks all server-related configuration groups when processing a configuration file. ([MDEV-25669](https://jira.mariadb.org/browse/MDEV-25669))
   * Prior to this release, only the \[`mysqld`] configuration group was checked when processing a configuration file.
-* MariaDB Enterprise Backup expects [--stream=mbstream](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup#-stream) to stream a backup using the included `mbstream` utility. ([MDEV-15730](https://jira.mariadb.org/browse/MDEV-15730))
-  * Prior to this release, MariaDB Enterprise Backup expected [--stream=xbstream](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup#-stream), even though the `xbstream` utility had been renamed to `mbstream`.
+* MariaDB Enterprise Backup expects [--stream=mbstream](broken-reference) to stream a backup using the included `mbstream` utility. ([MDEV-15730](https://jira.mariadb.org/browse/MDEV-15730))
+  * Prior to this release, MariaDB Enterprise Backup expected [--stream=xbstream](broken-reference), even though the `xbstream` utility had been renamed to `mbstream`.
 
 InnoDB no longer acquires advisory file locks by default. ([MDEV-24393](https://jira.mariadb.org/browse/MDEV-24393))
 
@@ -119,7 +119,7 @@ The [S3](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-eng
 * Server hangs on Windows when [mariadb-upgrade](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/deployment-tools/mariadb-upgrade) is executed and then the server is stopped. (MENT-1300)
 * Server crashes while executing [SET](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/set-commands/set) to set multiple variables at once. ([MDEV-25601](https://jira.mariadb.org/browse/MDEV-25601))
 * Server crashes while calling [SPIDER\_DIRECT\_SQL](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/spider/spider-functions/spider_direct_sql) without creating the required temporary table. (MENT-1318)
-* MariaDB Enterprise Backup crashes when executed with the [--backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup#-backup) and [--databases-exclude](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup#-databases-exclude) options. ([MDEV-25815](https://jira.mariadb.org/browse/MDEV-25815))
+* MariaDB Enterprise Backup crashes when executed with the [--backup](broken-reference) and [--databases-exclude](broken-reference) options. ([MDEV-25815](https://jira.mariadb.org/browse/MDEV-25815))
 
 ### Can result in unexpected behavior
 

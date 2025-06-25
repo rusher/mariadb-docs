@@ -2,7 +2,7 @@
 
 The most recent release in the [MariaDB 10.0](changes-improvements-in-mariadb-10-0.md) series is:[**MariaDB 10.0.38**](mariadb-10038-release-notes.md) [Download Now](https://downloads.mariadb.org/mariadb/10.0.38)
 
-[Download](https://downloads.mariadb.org/mariadb/10.0.24)[Release Notes](mariadb-10024-release-notes.md)[Changelog](../../../changelogs/changelogs-mariadb-100-series/mariadb-10024-changelog.md)[Overview of 10.0](changes-improvements-in-mariadb-10-0.md)
+[Download](https://downloads.mariadb.org/mariadb/10.0.24)[Release Notes](mariadb-10024-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-100-series/mariadb-10024-changelog.md)[Overview of 10.0](changes-improvements-in-mariadb-10-0.md)
 
 **Release date:** 19 Feb 2016
 
@@ -56,7 +56,7 @@ Repositories for previous versions of Ubuntu will continue to use the old key.
 ## Changelog
 
 For a complete list of changes made in [MariaDB 10.0.24](mariadb-10024-release-notes.md), with links to detailed\
-information on each push, see the [changelog](../../../changelogs/changelogs-mariadb-100-series/mariadb-10024-changelog.md).
+information on each push, see the [changelog](../../changelogs/changelogs-mariadb-100-series/mariadb-10024-changelog.md).
 
 Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
 

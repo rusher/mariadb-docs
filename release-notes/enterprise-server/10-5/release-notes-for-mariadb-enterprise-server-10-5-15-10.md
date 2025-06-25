@@ -63,7 +63,7 @@ mariabackup: The option "innodb_force_recovery" should only be used with "--prep
 mariabackup: innodb_init_param(): Error occurred.
 ```
 
-* When [--stream=xbstream](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup#-stream) is set, MariaDB Enterprise Backup can hang on lock acquisitions due to a deadlock. ([MDEV-26558](https://jira.mariadb.org/browse/MDEV-26558))
+* When [--stream=xbstream](broken-reference) is set, MariaDB Enterprise Backup can hang on lock acquisitions due to a deadlock. ([MDEV-26558](https://jira.mariadb.org/browse/MDEV-26558))
 * When a stored procedure is defined with a query that contains a set function, and the set function's only argument is an outer reference to a column of a mergeable view, a derived table, or a CTE, the second execution of the stored procedure can cause the server to crash. ([MDEV-25086](https://jira.mariadb.org/browse/MDEV-25086))
 * When a derived table is created for certain queries that use subqueries over Views or CTEs, the server can crash with a segmentation fault (signal 11). ([MDEV-25631](https://jira.mariadb.org/browse/MDEV-25631))
 * When a stored procedure uses a cursor to run a query that requires an internal temporary table (such as queries containing an ORDER BY clause), the server can crash due to a segmentation fault (signal 11). ([MDEV-24827](https://jira.mariadb.org/browse/MDEV-24827))
@@ -183,7 +183,7 @@ ERROR 1253 (42000): COLLATION ' …' is not valid for CHARACTER SET 'latin1'
 
 ### Related to install and upgrade
 
-* When the `mysql.AddGeometryColumn` and `mysql.DropGeometryColumn` stored procedures use the old default `DEFINER = 'root@localhost',` [mariadb-upgrade](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup) does not alter them to use the new default `DEFINER = 'mariadb.sys@localhost'`. ([MDEV-27124](https://jira.mariadb.org/browse/MDEV-27124))
+* When the `mysql.AddGeometryColumn` and `mysql.DropGeometryColumn` stored procedures use the old default `DEFINER = 'root@localhost',` [mariadb-upgrade](broken-reference) does not alter them to use the new default `DEFINER = 'mariadb.sys@localhost'`. ([MDEV-27124](https://jira.mariadb.org/browse/MDEV-27124))
 * When MariaDB Server is upgraded from 10.2, 10.3, or 10.4, InnoDB upgrades the redo log format in a manner that is not crash-safe. ([MDEV-27190](https://jira.mariadb.org/browse/MDEV-27190))
 
 ## Changes in Storage Engines
@@ -202,7 +202,7 @@ ERROR 1253 (42000): COLLATION ' …' is not valid for CHARACTER SET 'latin1'
 * `mariadbd` --hashicorp-key-management-cache-timeout command-line option added
 * `mariadbd` --hashicorp-key-management-cache-version-timeout command-line option added
 * `mariadbd` --rocksdb-ignore-datadic-errors command-line option added
-* [brocksdb\_ignore\_datadic\_errors](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup/files-backed-up-by-mariabackup#myrocks-data-files) system variable added
+* [brocksdb\_ignore\_datadic\_errors](broken-reference) system variable added
 
 ## Platforms
 

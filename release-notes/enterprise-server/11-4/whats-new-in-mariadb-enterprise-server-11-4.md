@@ -2,109 +2,133 @@
 
 MariaDB Enterprise Server 11.4 introduces new features to MariaDB Enterprise. Enhancements include JSON functions for validation and comparison, SQL functions for natural sorting and custom formatting, and a new UUID data type. Operational improvements include an improved cost-based optimizer, a new feature for non-blocking online schema changes, and faster InnoDB imports. Security is strengthened with default SSL encryption, password reuse prevention, and Galera Cluster security improvements. Replication is enhanced with default GTID, binary log size limits, and optimistic ALTER TABLE. Monitoring benefits from JSON histograms, new thread states, and detailed error reporting. These updates aim to improve developer experience, database administration, and overall performance.
 
-### Developer Experience
+This document includes all major features and changes between 10.6 ES and 11.4 ES.
 
-#### JSON Enhancements
+## Upgrading from MariaDB Enterprise Server 10.6
+
+* Upgrading from 10.6 should use take a few seconds with [mariadb-upgrade](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/deployment-tools/mariadb-upgrade) Please ensure that you do a [clean shutdown](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/upgrading/upgrading-between-major-mariadb-versions#requirements-for-doing-an-upgrade-between-major-versions) of 10.6 before doing the upgrade.
+* The variable [optimizer\_adjust\_secondary\_key\_costs](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/query-optimizations/optimizer_adjust_secondary_key_costs) has no effect in 11.4 as all the features are already in 11. The variable is deprecated and should be remove from existing config files.
+
+## Compatibility
+
+* As long as no new 11.4 features are used (by CREATE TABLE or DML's) and the new variable [binlog\_alter\_two\_phase](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables#binlog_alter_two_phase) is `0` (default) one should be able to use a 10.6 slave of 11.4 master.
+
+## Developer Experience
+
+### JSON Enhancements
 
 * New JSON function `JSON_SCHEMA_VALID` to validate a JSON document against a JSON schema, as documented by the JSON Schema Draft 2020. This function can also be used in a CHECK constraint to verify that only JSON documents are stored in the database which include required items and that the values are within a given range, length, etcetera.
 * New JSON functions `JSON_EQUALS()` and `JSON_NORMALIZE()` for easier comparison of two JSON documents and for normalizing JSON objects to be comparable, for example when a unique key based on JSON data is needed.
-* New function `JSON_OVERLAPS()`, which compares JSON documents to determine if they have any key-value pairs or array elements in common.
+*   New function `JSON_OVERLAPS()`, which compares JSON documents to determine if they have any key-value pairs or array elements in common.\
 
-```sql
-SELECT JSON_OVERLAPS('{"A": 1, "B": {"C":2}}', '{"A": 2, "B": {"C":2}}') AS is_overlap;
-```
 
-```
-+---------------------+
-| is_overlap          |
-+---------------------+
-| 1                   |
-+---------------------+
-```
+    ```sql
+    SELECT JSON_OVERLAPS('{"A": 1, "B": {"C":2}}', '{"A": 2, "B": {"C":2}}') AS is_overlap;
 
+    ```
+
+    ```
+    +---------------------+
+    | is_overlap          |
+    +---------------------+
+    | 1                   |
+    +---------------------+
+    ```
 * New function `JSON_KEY_VALUE(<json_doc>,<json_path>)`, which extracts key/value pairs from a JSON object. The JSON path parameter is used to only return key/value pairs for matching JSON objects.
-  * Example:
+  *   Example:\
 
-```sql
-SELECT JSON_KEY_VALUE('[[1, {"key1":"val1", "key2":"val2"}, 3], 2, 3]', '$[0][1]');
-```
 
-```
-+-----------------------------------------------------------------------------+
-| JSON_KEY_VALUE('[[1, {"key1":"val1", "key2":"val2"}, 3], 2, 3]', '$[0][1]') |
-+-----------------------------------------------------------------------------+
-| [{"key": "key1", "value": "val1"}, {"key": "key2", "value": "val2"}]        |
-+-----------------------------------------------------------------------------+
-```
+      ```sql
+      SELECT JSON_KEY_VALUE('[[1, {"key1":"val1", "key2":"val2"}, 3], 2, 3]', '$[0][1]');
+      ```
 
+      ```
+      +-----------------------------------------------------------------------------+
+      | JSON_KEY_VALUE('[[1, {"key1":"val1", "key2":"val2"}, 3], 2, 3]', '$[0][1]') |
+      +-----------------------------------------------------------------------------+
+      | [{"key": "key1", "value": "val1"}, {"key": "key2", "value": "val2"}]        |
+      +-----------------------------------------------------------------------------+
+      ```
 * The function `JSON_KEY_VALUE()` can be used as an argument to `JSON_TABLE()`, which allows adding the key to a result set.\\
-* Example:
+*   Example:\
 
-```sql
-SELECT jt.* FROM JSON_TABLE(
-JSON_KEY_VALUE('[[1, {"key1":"val1", "key2":"val2"}, 3], 2, 3]', '$[0][1]'),'$[*]'
-COLUMNS (
-k VARCHAR(20) PATH '$.key',
-v VARCHAR(20) PATH '$.value',
-id FOR ORDINALITY )) AS jt;
-```
 
-```
-+------+------+------+
-| k    | v    | id   |
-+------+------+------+
-| key1 | val1 |    1 |
-| key2 | val2 |    2 |
-+------+------+------+
-```
+    ```sql
+    SELECT jt.* FROM JSON_TABLE(
+    JSON_KEY_VALUE('[[1, {"key1":"val1", "key2":"val2"}, 3], 2, 3]', '$[0][1]'),'$[*]'
+    COLUMNS (
+    k VARCHAR(20) PATH '$.key',
+    v VARCHAR(20) PATH '$.value',
+    id FOR ORDINALITY )) AS jt;
+    ```
 
+    ```
+    +------+------+------+
+    | k    | v    | id   |
+    +------+------+------+
+    | key1 | val1 |    1 |
+    | key2 | val2 |    2 |
+    +------+------+------+
+    ```
 * New function `JSON_ARRAY_INTERSECT(<array1>, <array2>)`, used to find the intersection between two JSON arrays.
-  * Example:
+  *   Example:\
 
-```sql
-SET @array1= '[1,2,3]';
-SET @array2= '[1,2,4]';
-SELECT json_array_intersect(@array1, @array2) as result;
-```
 
-```
-+--------+
-| result |
-+--------+
-| [1, 2] |
-+--------+
-```
+      ```sql
+      SET @array1= '[1,2,3]';
+      SET @array2= '[1,2,4]';
+      SELECT json_array_intersect(@array1, @array2) as result;
+      ```
 
-```sql
-SET @json1= '[[1,2,3],[4,5,6],[1,1,1]]';
-SET @json2= '[[1,2,3],[4,5,6],[1,3,2]]';
-SELECT json_array_intersect(@json1, @json2) as result;
-```
+      \
 
-```
-+------------------------+
-| result                 |
-+------------------------+
-| [[1, 2, 3], [4, 5, 6]] |
-+------------------------+
-```
 
+      ```
+      +--------+
+      | result |
+      +--------+
+      | [1, 2] |
+      +--------+
+      ```
+
+      \
+
+
+      ```sql
+      SET @json1= '[[1,2,3],[4,5,6],[1,1,1]]';
+      SET @json2= '[[1,2,3],[4,5,6],[1,3,2]]';
+      SELECT json_array_intersect(@json1, @json2) as result;
+      ```
+
+      \
+
+
+      ```
+      +------------------------+
+      | result                 |
+      +------------------------+
+      | [[1, 2, 3], [4, 5, 6]] |
+      +------------------------+
+      ```
 * The new JSON function `JSON_OBJECT_TO_ARRAY(<json_doc>)` is used to convert all JSON objects found in a JSON document to JSON arrays where each item in the outer array represents a single key-value pair from the object.
-* Example:
+*   Example:\
 
-```sql
-SET @json1= '{ "a" : [1,2,3] , "b": {"key1": "val1", "key2": {"key3": "val3"}} }';
-SELECT JSON_OBJECT_TO_ARRAY(@json1) as result;
-```
 
-```
-+-----------------------------------------------------------------------+
-| result                                                                |
-+-----------------------------------------------------------------------+
-| [["a", [1, 2, 3]], ["b", {"key1": "val1", "key2": {"key3": "val3"}}]] |
-+-----------------------------------------------------------------------+
-```
+    ```sql
+    SET @json1= '{ "a" : [1,2,3] , "b": {"key1": "val1", "key2": {"key3": "val3"}} }';
+    SELECT JSON_OBJECT_TO_ARRAY(@json1) as result;
+    ```
 
+    \
+
+
+    ```
+    +-----------------------------------------------------------------------+
+    | result                                                                |
+    +-----------------------------------------------------------------------+
+    | [["a", [1, 2, 3]], ["b", {"key1": "val1", "key2": {"key3": "val3"}}]] |
+    +-----------------------------------------------------------------------+
+    ```
 * Resulting arrays can be compared using `JSON_ARRAY_INTERSECT()`:
 
 ```sql
@@ -170,7 +194,7 @@ SELECT JSON_REMOVE(@json, '$.A[last]');
 SELECT JSON_REMOVE(@json, '$.A[1 to 3]');
 ```
 
-#### SQL Functions
+### SQL Functions
 
 * New function `NATURAL_SORT_KEY()` which can be used to sort strings naturally.
   * Example: A string "v10" would be sorted after a string "v9"
@@ -330,7 +354,7 @@ SELECT CONV(61,10,62);
 +----------------+
 ```
 
-#### Data Types
+### Data Types
 
 * New data type UUID for more efficient storage of UUIDs
 * New data type INET4 to store IPv4 addresses as 4-byte binary strings. Benefits of storing IPv4 addresses in the INET4 data type are:
@@ -344,23 +368,26 @@ SELECT CONV(61,10,62);
     * A `TIMESTAMP` field does not get the property NOT NULL set anymore if not explicitly set
     * The old behavior can be achieved by setting the properties explicitly or by setting `explicit_defaults_for_timestamp` to `OFF`
 
-#### Stored Routines
+### Stored Routines
 
-* Stored Functions qualifiers for `IN, OUT, INOUT`, and `IN OUT`. The qualifiers are following the syntax already used for stored procedures and take the differences for Oracle into account when using the Oracle compatibility mode (`sql_mode=ORACLE`).
+* Stored Functions qualifiers for `IN`, `OUT`, `INOUT`, and `IN OUT`. The qualifiers are following the syntax already used for stored procedures and take the differences for Oracle into account when using the Oracle compatibility mode (`sql_mode=ORACLE`).
 
-#### Indexes
+### Indexes
 
 MariaDB Enterprise Server now supports descending indexes. Composite indexes can be used with differently ordered columns to get a significant performance boost in the corresponding `ORDER BY` use cases.
 
-### Operational Enhancements
+## Operational Enhancements
 
-#### Schema and Partitioning Management / DDL
+### Schema and Partitioning Management / DDL
 
+{% hint style="success" %}
 * New server internal Online Schema Change (OSC) which makes all schema changes (`ALTER TABLE` commands) non-blocking.
   * For instant `ALTER TABLE` operations (e.g., where `ALGORITHM=INSTANT` is used) OSC is not needed. However, for all other `ALTER` operations OSC provides significant benefits in reducing the locking time to a bare minimum.
   * The OSC feature works by creating a change buffer for storing changes during the copying of data from the old format to the new one. While data is copied from the old table structure to the new one all changes are stored in the change buffer and the table is fully accessible. Once the copying process is complete the change buffer is applied to the new data structure only requiring a very short locking period.
   * Having an internal OSC in the server eliminates the need for using external command line tools in order to reduce table locks. These external tools often need to create complicated structures in the database (like triggers and stored procedures) and certain race conditions can lead to the operations never finishing.
   * In MariaDB Enterprise Server 11.4 a default `ALTER` operation will be an OSC operation if possible. If the operation cannot be performed as an OSC then another algorithm will be used. If the option `LOCK=NONE` is explicitly specified in the `ALTER` statement, then the operation will fail if it cannot be done as an OSC.
+{% endhint %}
+
 * `CONVERT PARTITION` and `CONVERT TABLE` used with `ALTER TABLE` can be used to convert a partition into a table or vise versa
 * Exchange a Partition or Convert a Table Without Validation
   * The process of exchanging a partition with a table or converting a table to a partition can be a very slow operation, especially for larger tables because for each new data row, the partitioning definitions need to be verified to validate that the new row should indeed be in this partition.
@@ -501,7 +528,7 @@ CALL myPkg.p1();
 +------+------+
 ```
 
-#### System-Versioned and Application-time Period Tables
+### System-Versioned and Application-time Period Tables
 
 * System-Versioned Tables can automate the creation of new HISTORY partitions partitioned by INTERVAL/LIMIT using the keyword AUTO when creating a table.
 
@@ -534,7 +561,7 @@ PARTITION BY system_time INTERVAL 1 months AUTO;
   * `IS_SYSTEM_TIME_PERIOD_START`
   * `IS_SYSTEM_TIME_PERIOD_END`
 
-#### Backup / Restore
+### Backup / Restore
 
 * A dump of historical data for system versioned tables is now possible via the new option `--as-of` for mariadb-dump
 * System versioned tables can now be dumped and restored by mariadb-dump
@@ -575,16 +602,19 @@ SELECT SCHEMA_NAME,DEFAULT_COLLATION_NAME FROM SCHEMATA WHERE SCHEMA_NAME LIKE "
 +-------------------+------------------------+
 ```
 
-#### Performance
+### Performance
 
 * Optimizations to information schema system tables
   * The information schema provides tables with metadata about stored procedures and stored routines, which are often used by third party tools, and MariaDB Connectors to retrieve details about existing routines. Previously, a high number of rows in these tables would have resulted in a performance impact. We have made a number of internal improvements to eliminate the performance impact completely for use cases, where metadata had to be queried regularly.
 
-**Optimizer**
+### **Optimizer**
 
+{% hint style="success" %}
 * New optimizer cost model, a change from a more rule-based to a cost-based model. Huge effort went into improving the calculations of the optimizer costs, taking into account state of the art SSD disks. The new implementation also takes the different characteristics of a storage engine into account.
   * If a key lookup cannot be used, the optimizer can now make better choices when to use index scan, table scan, index merges, or other methods to join data.
   * While one model may work well for a specific use case, it may not be the right model for other use cases. With the changes we've made, it's now possible to fine-tune the optimizer by changing costs for different metrics.
+{% endhint %}
+
 * Changes to the optimizer now allow the use of an index for a comparison of a `DATE` function to a constant value.
 
 ```sql
@@ -594,7 +624,7 @@ DATE(datetime_column) = const
 * The optimizer also has been enhanced to allow single-table `UPDATE` and `DELETE` to take advantage of semi-join optimization.
 * Improved optimizer performance in a case of join with many `eq_ref` tables
 
-#### MariaDB Enterprise Cluster (powered by Galera)
+### MariaDB Enterprise Cluster (powered by Galera)
 
 * Automatic SST User Account Management for MariaDB Enterprise Cluster
   * The State Snapshot Transfer (SST) method, needed to provide a full data copy to a new node, requires a dedicated account to access the remote server (donor) during the SST process.
@@ -602,11 +632,11 @@ DATE(datetime_column) = const
 * For MariaDB Galera Cluster, configurations are set using one system variable as a semicolon separated list of options, the system variable wsrep\_provider\_options. MariaDB Community Server system variables are limited to a length of 2048 characters, which is not sufficient for the Galera options in some use cases, and also hard to maintain as a DBA.
   * A new plugin is available, enabled via the plugin-wsrep-provider option. The options are split into separate options, if the plugin is used. The use of the plugin is optional.
 
-### MariaDB Replication
+## MariaDB Replication
 
-* Incompatibility change: Replication is now using Global Transaction Ids (GTID) by default to make replicas crash safe
-  * The default of `CHANGE MASTER TO` for `master_use_gtid` changes from '`no`' to '`slave_pos`',
-  * A fresh slave start, a `RESET SLAVE`, or a `CHANGE MASTER TO` without the defining `master_use_gtid` is replicating in the GTID based mode using '`gtid_slave_pos`' as the position to start downloading transactions from the primary
+* _Incompatibility change:_ Replication is now using Global Transaction IDs (GTID) by default to make replicas crash safe
+  * The default of `CHANGE MASTER TO` for `master_use_gtid` changes from `no` to `slave_pos`&#x20;
+  * A fresh slave start, a `RESET SLAVE`, or a `CHANGE MASTER TO` without the defining `master_use_gtid` is replicating in the GTID based mode using `gtid_slave_pos` as the position to start downloading transactions from the primary
 * Global Limitation of Space Used by Binary Logs
   * The new system variable `max_binlog_total_size` (alias `binlog_space_limit`) enables binary log purging when the total size of all binary logs exceeds the specified threshold. The default for `max_binlog_total_size` is `0`, meaning that there is no limit. The system variable can be changed without restarting the server.
   * The new system variable `--slave-connections-needed-for-purge`, set to `1` by default, assures that binary log purging will not happen until at least that many replicas are connected, and do not need purged binary logs anymore.
@@ -691,22 +721,24 @@ the resulting gtid\_slave\_pos of the replica will be "1-1-2" because the replic
     * `Master_Slave_time_diff`
       * The difference of the above two timestamps
 
-#### Optimistic ALTER TABLE for Replicas
+### Optimistic ALTER TABLE for Replicas
 
-* New optimistic `ALTER TABLE``for replicas. When enabled by``binlog_alter_two_phase = 1``(not default), an``ALTER TABLE``is executed on the primary server and is replicated and "started" on the replica server more or less in parallel to the primary server. Thus, the possibly huge replication lag between a primary and replica server due to a long running``ALTER TABLE``on the primary can be avoided.`
+{% hint style="success" %}
+* New optimistic `ALTER TABLE` for replicas. When enabled by `binlog_alter_two_phase = 1` (not default), an `ALTER TABLE` is executed on the primary server and is replicated and "started" on the replica server more or less in parallel to the primary server. Thus, the possibly huge replication lag between a primary and replica server due to a long running `ALTER TABLE` on the primary can be avoided.
+{% endhint %}
 
-#### MariaDB-binlog
+### MariaDB-binlog
 
 * The command line tool mariadb-binlog now supports the use of global transaction IDs (GTID) for the options start-position and stop-position. mariadb-binlog can now be used to produce results filtered by the defined GTIDs.
 * The command-line tool mariadb-binlog now supports the new options `--do-domain-ids`, `--ignore-domain-ids`, and `--ignore-server-ids`. mariadb-binlog can now be used to produce results filtered by domain ids server ids.
 
-### Security and Access Control
+## Security and Access Control
 
 * Client to Server connection now SSL Encrypted by Default
   * Using SSL/TLS has been simplified with MariaDB Enterprise Server 11.4. Before version 11.4, proper SSL configuration required multiple manual steps for the server, and all the clients connecting to it.
   * Now the client can verify the server self-signed certificate without any configuration whatsoever. The server completely automatically generates the SSL certificate and the client automatically verifies it as needed.
   * This simplification allows the server to now require SSL encrypted connections by default and to refuse unencrypted connections. Additionally, MariaDB Enterprise Server 11.4 allows users to verify SSL certificates using their fingerprints.
-* New Authentication Plugin — `PARSEC` (Password Authentication using Response Signed with Elliptic Curves).
+* New [Authentication Plugin — PARSEC](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/authentication-plugins/authentication-plugin-parsec) (Password Authentication using Response Signed with Elliptic Curves).
   * `PARSEC` improves security over old authentication plugins by introducing salted passwords, time consuming key derivation function, and a client-side scramble to ensure that man-in-the-middle attackers cannot control the client response.
   * Example on how to create a user using the new authentication plugin:
 
@@ -723,9 +755,9 @@ Grants for MariaDBUser@%
 GRANT USAGE ON *.* TO `MariaDBUser`@`%` IDENTIFIED VIA parsec USING 'P0:lhXyNv1cIxpB8EnTxR7ON7S7:1l3rWRW1/jw45yrvYXB8eh02wzk7lcJcz4CMcWw2b+8'
 ```
 
-* The new plugin password\_reuse\_check can be used to validate that a password cannot be reused. The number of days until a password can be reused can be configured via a new parameter password\_reuse\_check\_interval
+* The new plugin `password_reuse_check` can be used to validate that a password cannot be reused. The number of days until a password can be reused can be configured via a new parameter password\_reuse\_check\_interval
 * New allowlist for MariaDB Galera Cluster node to restrict the nodes which can join a cluster to increase security .
-  * A new system variable wsrep\_allowlist can be used to define a list of IP addresses. Only nodes from these IP addresses can join a running
+  * A new system variable `wsrep_allowlist` can be used to define a list of IP addresses. Only nodes from these IP addresses can join a running
 * The new SQL syntax `GRANT .. TO PUBLIC` can now be used to easily grant privileges to databases or tables for any user, who has access to the server.
   * `SHOW GRANTS FOR PUBLIC` is an enhancement to the existing `SHOW GRANTS` syntax to retrieve all privileges granted to public
 * The fine grained privileges have been removed from the `SUPER` privilege.
@@ -839,15 +871,13 @@ SELECT * FROM sys.privileges_by_table_by_level WHERE GRANTEE NOT LIKE "'root'@'%
       * `NULL` for accounts with privilege `CONNECTION ADMIN`
     * `PASSWORD_EXPIRATION_TIME` - The date and time when the password expires or NULL, if the password never expires
 
-### Storage Engines
+## Storage Engines
 
 * Engine-defined attributes can now also be defined per-partition for more flexible configurations.
 
-#### InnoDB
+### InnoDB
 
-* The space occupied by freed pages within the InnoDB system tablespace can be reclaimed by adding an :`#autoshrink`
-
-## attribute to `#innodb_data_file_path`#, like:
+* The space occupied by freed pages within the InnoDB system tablespace can be reclaimed by adding an :`#autoshrink` attribute to `#innodb_data_file_path`#, like:
 
 ```
 [mariadb]
@@ -915,11 +945,11 @@ ALTER TABLE t2 IMPORT TABLESPACE;
 * Changes to the InnoDB redo log format to reduce write amplification, which can result in better performance.
 * The system variables innodb\_write\_io\_threads and innodb\_read\_io\_threads are now dynamic, and their values can be changed without restarting the server
 
-#### Spider
+### Spider
 
 * The `SPIDER` storage engine now allows the use of engine-defined attributes (table options), similar to other storage engines, and more convenient than the current method of providing parameters via `COMMENT` for a table.
 
-### Analyzing, Tracing, and Monitoring
+## Analyzing, Tracing, and Monitoring
 
 * Improved error reporting for INSERT that inserts multiple rows. The property `ROW_NUMBER` in `GET DIAGNOSTICS` allows retrieval of the row number that caused the error or warning.
 * Implementation of JSON histograms with detailed histogram collection, used when `histogram_type=JSON_HB` (not the default) is set. Using JSON histograms results in more precise data statistics over string data types or when columns have highly-uneven data distribution. More precise statistics allow the optimizer to create better query plans resulting in faster queries.
@@ -938,7 +968,11 @@ ALTER TABLE t2 IMPORT TABLESPACE;
     * This JSON file also includes details about a node eviction status to the JSON file to report that a Galera node needs to be restarted to join the cluster.
   * MariaDB Enterprise Cluster now includes progress reporting of MariaDB Enterprise Backup based SST when `wsrep-debug=1` is set and the tool `pv` is installed. The SST progress report is then written into the server log:
 
-2022-03-24 13:10:43 0 \[Note] WSREP: REPORTING SST PROGRESS: '{ "from": 1, "to": 3, "total": 23106759472, "done": 23106759472, "indefinite": -1 }'
+{% code overflow="wrap" %}
+```
+2022-03-24 13:10:43 0 [Note] WSREP: REPORTING SST PROGRESS: '{ "from": 1, "to": 3, "total": 23106759472, "done": 23106759472, "indefinite": -1 }'
+```
+{% endcode %}
 
 * The new value `SENT_ROWS` in the information schema table `PROCESSLIST` includes the number of rows sent by the current statement, shown in the processlist.
   * Selects with functions show the total number of rows sent by the main statement and all functions
@@ -977,38 +1011,40 @@ MAX_MEMORY_USED: 392544
 
 * The SQL Error Log Plugin can be used to log errors sent to clients for later analysis. When option `sql_error_log_with_db_and_thread_info=ON` is set, the log file is now also showing thread id, and the current default schema for the error.
 
-### Available Versions
+## Available Versions
 
 * [MariaDB Enterprise Server 11.4.5-3](release-notes-for-mariadb-enterprise-server-11-4-5-3.md)
 * [MariaDB Enterprise Server 11.4.4-2](release-notes-for-mariadb-enterprise-server-11-4-4-2.md)
-* [MariaDB Enterprise Server 11.4.0-1](release-notes-for-mariadb-enterprise-server-11-4-0-1.md)
 * [MariaDB Enterprise Server 11.4.3-1](release-notes-for-mariadb-enterprise-server-11-4-3-1.md)
+* [MariaDB Enterprise Server 11.4.0-1](release-notes-for-mariadb-enterprise-server-11-4-0-1.md)
 
-### Installation Instructions
+## Installation Instructions
 
-* [MariaDB Enterprise Server ](whats-new-in-mariadb-enterprise-server-11-4.md)[10](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/maxscale-architecture/mariadb-enterprise-spider-topologies/federated-mariadb-enterprise-spider-topology)[.6](whats-new-in-mariadb-enterprise-server-11-4.md)
-* [Enterprise Cluster Topology with MariaDB Enterprise Server ](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/galera-cluster)[10](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/maxscale-architecture/mariadb-enterprise-spider-topologies/federated-mariadb-enterprise-spider-topology)[.6](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/galera-cluster)
-* [Primary/Replica Topology with MariaDB Enterprise Server ](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/primary-replica)[10](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/maxscale-architecture/mariadb-enterprise-spider-topologies/federated-mariadb-enterprise-spider-topology)[.](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/primary-replica)[6](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/galera-cluster)
-* [ColumnStore Object Storage Topology with MariaDB Enterprise Server ](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/columnstore-object-storage)[10](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/maxscale-architecture/mariadb-enterprise-spider-topologies/federated-mariadb-enterprise-spider-topology)[.](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/columnstore-object-storage)[6](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/galera-cluster)[ and MariaDB Enterprise ColumnStore 23.02](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/columnstore-object-storage)
-* [ColumnStore Shared Local Storage Topology with MariaDB Enterprise Server ](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/columnstore-shared-local-storage)[10](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/maxscale-architecture/mariadb-enterprise-spider-topologies/federated-mariadb-enterprise-spider-topology)[.](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/columnstore-shared-local-storage)[6](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/galera-cluster)[ and MariaDB Enterprise ColumnStore 23.02](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/columnstore-shared-local-storage)
-* [HTAP Topology with MariaDB Enterprise Server ](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/htap)[10](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/maxscale-architecture/mariadb-enterprise-spider-topologies/federated-mariadb-enterprise-spider-topology)[.](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/htap)[6](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/galera-cluster)[ and MariaDB Enterprise ColumnStore 23.02](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/htap)
-* [Single-Node Enterprise ColumnStore 23.02 with MariaDB Enterprise Server ](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/single-node-topologies/enterprise-server-with-columnstore-object-storage)[10](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/maxscale-architecture/mariadb-enterprise-spider-topologies/federated-mariadb-enterprise-spider-topology)[.](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/single-node-topologies/enterprise-server-with-columnstore-object-storage)[6](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/galera-cluster)[ and Object Storage](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/single-node-topologies/enterprise-server-with-columnstore-object-storage)
-* [Single-Node Enterprise ColumnStore 23.02 with MariaDB Enterprise Server ](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/single-node-topologies)[10](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/maxscale-architecture/mariadb-enterprise-spider-topologies/federated-mariadb-enterprise-spider-topology)[.](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/single-node-topologies)[6](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/galera-cluster)
-* [Enterprise Spider Sharded Topology with MariaDB Enterprise Server ](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/maxscale-architecture/mariadb-enterprise-spider-topologies/sharded-mariadb-enterprise-spider-topology)[10](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/maxscale-architecture/mariadb-enterprise-spider-topologies/federated-mariadb-enterprise-spider-topology)[.](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/maxscale-architecture/mariadb-enterprise-spider-topologies/sharded-mariadb-enterprise-spider-topology)[6](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/galera-cluster)
-* [Enterprise Spider Federated Topology with MariaDB Enterprise Server 10.](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/maxscale-architecture/mariadb-enterprise-spider-topologies/federated-mariadb-enterprise-spider-topology)[6](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/galera-cluster)
+* [Deploy MariaDB Enterprise with Repositories](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/single-node-topologies/enterprise-server)
+* [Deploy MariaDB Enterprise with Package Tarballs](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/package-tarballs)
+* [Deploy MariaDB Enterprise with Docker](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/automated-mariadb-deployment-and-administration/docker-and-mariadb/deploy-mariadb-enterprise-server-with-docker)
+* [Enterprise Cluster Topology with MariaDB Enterprise Server](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/galera-cluster)
+* [Primary/Replica Topology with MariaDB Enterprise Server](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/primary-replica)
+* [ColumnStore Object Storage Topology with MariaDB Enterprise Server and MariaDB Enterprise ColumnStore](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/columnstore-object-storage)
+* [ColumnStore Shared Local Storage Topology with MariaDB Enterprise Server and MariaDB Enterprise ColumnStore](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/columnstore-shared-local-storage)
+* [HTAP Topology with MariaDB Enterprise Server and MariaDB Enterprise ColumnStore](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/htap)
+* [Single-Node Enterprise ColumnStore with MariaDB Enterprise Server and Object Storage](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/single-node-topologies/enterprise-server-with-columnstore-object-storage)
+* [Single-Node Enterprise ColumnStore with MariaDB Enterprise Server](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/single-node-topologies/enterprise-server-with-columnstore-local-storage)
+* [Enterprise Spider Sharded Topology with MariaDB Enterprise Server](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/spider-sharded)
+* [Enterprise Spider Federated Topology with MariaDB Enterprise Server](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/spider-federated)
 
-### Upgrade Instructions
+## Upgrade Instructions
 
-* [Upgrade to MariaDB Enterprise Server 11.4](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/upgrading/upgrading-from-to-specific-versions/upgrading-from-mariadb-11-3-to-mariadb-11-4)
-* [Upgrade from MariaDB Community Server to MariaDB Enterprise Server 11.4](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/upgrading/upgrading-between-major-mariadb-versions)
+* [Upgrade to MariaDB Enterprise Server 11.4](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/upgrading/upgrades/upgrade-to-mariadb-enterprise-server-11.4)
+* [Upgrade from MariaDB Community Server to MariaDB Enterprise Server 11.4](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/upgrading/upgrading-mariadb-community-server-to-enterprise-server/upgrade-from-mariadb-community-server-to-mariadb-enterprise-server-11.4)
 
-### What's new in older release series?
+## What's new in older release series?
 
-* [What's New in MariaDB Enterprise Server 10.2?](../10-2/whats-new-in-mariadb-enterprise-server-10-2.md)
-* [What's New in MariaDB Enterprise Server 10.3?](../10-3/whats-new-in-mariadb-enterprise-server-10-3.md)
-* [What's New in MariaDB Enterprise Server 10.4?](../10-4/whats-new-in-mariadb-enterprise-server-10-4.md)
-* [What's New in MariaDB Enterprise Server 10.5?](../10-5/whats-new-in-mariadb-enterprise-server-10-5.md)
 * [What's New in MariaDB Enterprise Server 10.6?](../10-6/whats-new-in-mariadb-enterprise-server-10-6.md)
+* [What's New in MariaDB Enterprise Server 10.5?](../10-5/whats-new-in-mariadb-enterprise-server-10-5.md)
+* [What's New in MariaDB Enterprise Server 10.4?](../10-4/whats-new-in-mariadb-enterprise-server-10-4.md)
+* [What's New in MariaDB Enterprise Server 10.3?](../10-3/whats-new-in-mariadb-enterprise-server-10-3.md)
+* [What's New in MariaDB Enterprise Server 10.2?](../10-2/whats-new-in-mariadb-enterprise-server-10-2.md)
 
 <sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
 

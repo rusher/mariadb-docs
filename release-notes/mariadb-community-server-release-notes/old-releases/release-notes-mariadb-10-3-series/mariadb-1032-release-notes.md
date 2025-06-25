@@ -2,7 +2,7 @@
 
 The most recent release of [MariaDB 10.3](what-is-mariadb-103.md) is:[**MariaDB 10.3.39**](mariadb-10-3-39-release-notes.md) Stable (GA) [Download Now](https://downloads.mariadb.org/mariadb/10.3.39/)
 
-[Download](https://downloads.mariadb.org/mariadb/10.3.2)[Release Notes](mariadb-1032-release-notes.md)[Changelog](../../../changelogs/changelogs-mariadb-10-3-series/mariadb-1032-changelog.md)[Overview of 10.3](what-is-mariadb-103.md)
+[Download](https://downloads.mariadb.org/mariadb/10.3.2)[Release Notes](mariadb-1032-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-10-3-series/mariadb-1032-changelog.md)[Overview of 10.3](what-is-mariadb-103.md)
 
 **Release date:** 9 Oct 2017
 
@@ -48,7 +48,7 @@ The following deprecated variables have been removed:
 **Do not use&#x20;**_**alpha**_**&#x20;releases in production!**
 
 For a complete list of changes made in [MariaDB 10.3.2](mariadb-1032-release-notes.md), with links to detailed\
-information on each push, see the [changelog](../../../changelogs/changelogs-mariadb-10-3-series/mariadb-1032-changelog.md).
+information on each push, see the [changelog](../../changelogs/changelogs-mariadb-10-3-series/mariadb-1032-changelog.md).
 
 Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
 

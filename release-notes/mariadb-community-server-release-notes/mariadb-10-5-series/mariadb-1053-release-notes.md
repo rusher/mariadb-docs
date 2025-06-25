@@ -2,7 +2,7 @@
 
 The most recent release of [MariaDB 10.5](what-is-mariadb-105.md) is:[**MariaDB 10.5.28**](mariadb-10-5-28-release-notes.md) Stable (GA) [Download Now](https://mariadb.com/downloads/)[_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/10.5.28/)
 
-[Download](https://downloads.mariadb.org/mariadb/10.5.3)[Release Notes](mariadb-1053-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-105-series/mariadb-1053-changelog.md)[Overview of 10.5](what-is-mariadb-105.md)
+[Download](https://downloads.mariadb.org/mariadb/10.5.3)[Release Notes](mariadb-1053-release-notes.md)[Changelog](../changelogs/changelogs-mariadb-105-series/mariadb-1053-changelog.md)[Overview of 10.5](what-is-mariadb-105.md)
 
 **Release date:** 12 May 2020
 
@@ -73,7 +73,7 @@ Notable changes of this release include:
 
 ### mariadb-backup
 
-* [mariadb-backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup) does not honor ignore\_db\_dirs from server config ([MDEV-19347](https://jira.mariadb.org/browse/MDEV-19347))
+* [mariadb-backup](broken-reference) does not honor ignore\_db\_dirs from server config ([MDEV-19347](https://jira.mariadb.org/browse/MDEV-19347))
 * mariadb-backup `--ftwrl-wait-timeout` never times out on explicit lock ([MDEV-20230](https://jira.mariadb.org/browse/MDEV-20230))
 
 ### Crash Recovery
@@ -108,7 +108,7 @@ Notable changes of this release include:
 ## Changelog
 
 For a complete list of changes made in [MariaDB 10.5.3](mariadb-1053-release-notes.md), with links to detailed\
-information on each push, see the [changelog](../../changelogs/changelogs-mariadb-105-series/mariadb-1053-changelog.md).
+information on each push, see the [changelog](../changelogs/changelogs-mariadb-105-series/mariadb-1053-changelog.md).
 
 ## Contributors
 

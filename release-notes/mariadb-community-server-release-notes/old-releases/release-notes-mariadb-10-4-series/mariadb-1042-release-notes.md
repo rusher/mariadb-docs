@@ -2,7 +2,7 @@
 
 The most recent release of [MariaDB 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/broken-reference/README.md) is:[**MariaDB 10.4.34**](mariadb-10-4-34-release-notes.md) Stable (GA) [Download Now](https://downloads.mariadb.org/mariadb/10.4.34/)
 
-[Download](https://downloads.mariadb.org/mariadb/10.4.2/)[Release Notes](mariadb-1042-release-notes.md)[Changelog](../../../changelogs/changelogs-mariadb-10-4-series/mariadb-1042-changelog.md)[Overview of 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/broken-reference/README.md)
+[Download](https://downloads.mariadb.org/mariadb/10.4.2/)[Release Notes](mariadb-1042-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-10-4-series/mariadb-1042-changelog.md)[Overview of 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/broken-reference/README.md)
 
 **Release date:** 29 Jan 2019
 
@@ -67,13 +67,13 @@ unlimited size. With streaming replication, a cluster is replicating a\
 transaction in small fragments during transaction execution. This transaction\
 fragmenting is controlled by two new configuration variables:
 
-* [wsrep_trx_fragment_unit](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_trx_fragment_unit) (bytes, rows, statements) defines the metrics for\
+* [wsrep\_trx\_fragment\_unit](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_trx_fragment_unit) (bytes, rows, statements) defines the metrics for\
   how to measure transaction size limit for fragmenting. Possible values are:
   * `bytes`: transaction’s binlog events buffer size in bytes
   * `rows`: number of rows affected by the transaction
   * `statements`: number of SQL statements executed in the multi-statement\
     transaction
-* [wsrep_trx_fragment_size](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_trx_fragment_size) defines the limit for fragmenting. When a\
+* [wsrep\_trx\_fragment\_size](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_trx_fragment_size) defines the limit for fragmenting. When a\
   transaction’s size, in terms of the configured fragment unit, has grown over\
   this limit, a new fragment will be replicated.
 
@@ -95,7 +95,7 @@ throughput, especially when binary logging is enabled in the cluster.
 ## Changelog
 
 For a complete list of changes made in [MariaDB 10.4.2](mariadb-1042-release-notes.md), with links to detailed\
-information on each push, see the [changelog](../../../changelogs/changelogs-mariadb-10-4-series/mariadb-1042-changelog.md).
+information on each push, see the [changelog](../../changelogs/changelogs-mariadb-10-4-series/mariadb-1042-changelog.md).
 
 ## Contributors
 

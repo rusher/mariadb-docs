@@ -2,7 +2,7 @@
 
 The most recent release of [MariaDB 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/broken-reference/README.md) is:[**MariaDB 10.4.34**](mariadb-10-4-34-release-notes.md) Stable (GA) [Download Now](https://downloads.mariadb.org/mariadb/10.4.34/)
 
-[Download 10.4.25](https://downloads.mariadb.org/mariadb/10.4.25/)[Release Notes](mariadb-10425-release-notes.md)[Changelog](../../../changelogs/changelogs-mariadb-10-4-series/mariadb-10425-changelog.md)[Overview of 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/broken-reference/README.md)
+[Download 10.4.25](https://downloads.mariadb.org/mariadb/10.4.25/)[Release Notes](mariadb-10425-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-10-4-series/mariadb-10425-changelog.md)[Overview of 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/broken-reference/README.md)
 
 **Release date:** 20 May 2022
 
@@ -38,10 +38,10 @@ Thanks, and enjoy MariaDB!
 
 ### Backup
 
-* Incorrect binlogs after Galera SST using rsync and [mariabackup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup) ([MDEV-27524](https://jira.mariadb.org/browse/MDEV-27524))
-* [mariabackup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup) does not detect multi-source replication slave ([MDEV-21037](https://jira.mariadb.org/browse/MDEV-21037))
+* Incorrect binlogs after Galera SST using rsync and [mariabackup](broken-reference) ([MDEV-27524](https://jira.mariadb.org/browse/MDEV-27524))
+* [mariabackup](broken-reference) does not detect multi-source replication slave ([MDEV-21037](https://jira.mariadb.org/browse/MDEV-21037))
 * Useless warning "InnoDB: Allocated tablespace ID for , old maximum was 0" during backup stage ([MDEV-27343](https://jira.mariadb.org/browse/MDEV-27343))
-* [mariabackup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup) prepare fails for incrementals if a new schema is created after full backup is taken ([MDEV-28446](https://jira.mariadb.org/browse/MDEV-28446))
+* [mariabackup](broken-reference) prepare fails for incrementals if a new schema is created after full backup is taken ([MDEV-28446](https://jira.mariadb.org/browse/MDEV-28446))
 
 ### Optimizer
 
@@ -98,7 +98,7 @@ Thanks, and enjoy MariaDB!
 ## Changelog
 
 For a complete list of changes made in [MariaDB 10.4.25](mariadb-10425-release-notes.md), with links to detailed\
-information on each push, see the [changelog](../../../changelogs/changelogs-mariadb-10-4-series/mariadb-10425-changelog.md).
+information on each push, see the [changelog](../../changelogs/changelogs-mariadb-10-4-series/mariadb-10425-changelog.md).
 
 ## Contributors
 

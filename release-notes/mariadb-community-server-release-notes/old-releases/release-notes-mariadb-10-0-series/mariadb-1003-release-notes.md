@@ -2,7 +2,7 @@
 
 The most recent release in the [MariaDB 10.0](changes-improvements-in-mariadb-10-0.md) series is:[**MariaDB 10.0.38**](mariadb-10038-release-notes.md) [Download Now](https://downloads.mariadb.org/mariadb/10.0.38)
 
-[Download](https://downloads.mariadb.org/mariadb/10.0.3) |**Release Notes** |[Changelog](../../../changelogs/changelogs-mariadb-100-series/mariadb-1003-changelog.md) |[Overview of 10.0](changes-improvements-in-mariadb-10-0.md)
+[Download](https://downloads.mariadb.org/mariadb/10.0.3) |**Release Notes** |[Changelog](../../changelogs/changelogs-mariadb-100-series/mariadb-1003-changelog.md) |[Overview of 10.0](changes-improvements-in-mariadb-10-0.md)
 
 **Release date:** 11 Jun 2013
 
@@ -18,7 +18,7 @@ be pushed in future releases. **Do not use alpha releases on production systems.
 **For an overview of** [**MariaDB 10.0**](changes-improvements-in-mariadb-10-0.md) **see the**[**What is MariaDB 10.0?**](changes-improvements-in-mariadb-10-0.md) **page.**
 
 For a list of changes made in [MariaDB 10.0.3](mariadb-1003-release-notes.md), with links to detailed\
-information on each push, see the [changelog](../../../changelogs/changelogs-mariadb-100-series/mariadb-1003-changelog.md).
+information on each push, see the [changelog](../../changelogs/changelogs-mariadb-100-series/mariadb-1003-changelog.md).
 
 ## Based on [MariaDB 5.5](../release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md)
 
@@ -46,7 +46,7 @@ This release includes fixes for the following security vulnerabilities:
 * [CVE-2013-2391](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-2391)
 * [CVE-2013-1502](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-1502)
 
-Also, several [GTID](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid) bugs were fixed. For details, see the[changelog](../../../changelogs/changelogs-mariadb-100-series/mariadb-1003-changelog.md).
+Also, several [GTID](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid) bugs were fixed. For details, see the[changelog](../../changelogs/changelogs-mariadb-100-series/mariadb-1003-changelog.md).
 
 ## Ubuntu 13.04 "Raring" Repositories
 
