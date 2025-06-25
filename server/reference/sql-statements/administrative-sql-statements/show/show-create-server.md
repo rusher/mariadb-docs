@@ -1,9 +1,7 @@
 # SHOW CREATE SERVER
 
-**MariaDB starting with** [**11.7**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-11-7-rolling-releases/what-is-mariadb-117)
-
-The SHOW CREATE SERVER statement was introduced in [MariaDB 11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-11-7-rolling-releases/what-is-mariadb-117).
-
+{% tabs %}
+{% tab title="Current" %}
 ## Syntax
 
 ```sql
@@ -23,6 +21,12 @@ SHOW CREATE SERVER srv1\G
 Create Server: CREATE SERVER `srv1` FOREIGN DATA WRAPPER mysql 
   OPTIONS (HOST '172.30.0.58', DATABASE 'db1', USER 'maxscale', PASSWORD 'password');
 ```
+{% endtab %}
+
+{% tab title="< 11.7" %}
+The `SHOW CREATE SERVER` statement is not available.
+{% endtab %}
+{% endtabs %}
 
 ## See Also
 

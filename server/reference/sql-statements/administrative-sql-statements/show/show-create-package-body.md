@@ -8,7 +8,15 @@ SHOW CREATE PACKAGE BODY  [ db_name . ] package_name
 
 ## Description
 
-{% include "../../../../.gitbook/includes/untitled (1).md" %}
+{% tabs %}
+{% tab title="Current" %}
+The `SHOW CREATE PACKAGE BODY` statement shows the `CREATE PACKAGE BODY` statement that creates the given package body (that is, the implementation of the package).
+{% endtab %}
+
+{% tab title="< 11.4" %}
+The `SHOW CREATE PACKAGE BODY` statement shows the `CREATE PACKAGE BODY` statement that creates the given package body (that is, the implementation of the package). `CREATE PACKAGE BODY` can be used when [Oracle SQL\_MODE](https://kb-archive.mariadb.net/kb/en/sql_modeoracle-from-mariadb-103/) is set.
+{% endtab %}
+{% endtabs %}
 
 `SHOW CREATE PACKAGE BODY` quotes identifiers according to the value of the [sql\_quote\_show\_create](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#sql_quote_show_create) system variable.
 

@@ -10,7 +10,15 @@ SHOW CREATE FUNCTION func_name
 
 This statement is similar to [SHOW CREATE PROCEDURE](show-create-procedure.md) but for [stored functions](../../../../server-usage/stored-routines/stored-functions/).
 
-{% include "../../../../.gitbook/includes/untitled (1).md" %}
+{% tabs %}
+{% tab title="Current" %}
+`SHOW CREATE FUNCTION` quotes identifiers, according to the value of the [sql\_quote\_show\_create](https://kb-archive.mariadb.net/kb/en/server-system-variables/#sql_quote_show_create) system variable.
+{% endtab %}
+
+{% tab title="< 10.6.5 / 10.5.13 / 10.4.22" %}
+`SHOW CREATE FUNCTION` quotes identifiers, according to the value of the [sql\_quote\_show\_create](https://kb-archive.mariadb.net/kb/en/server-system-variables/#sql_quote_show_create) system variable. However, the output of this statement is unreliably affected by the [sql\_quote\_show\_create](https://kb-archive.mariadb.net/kb/en/server-system-variables/#sql_quote_show_create) system variable.
+{% endtab %}
+{% endtabs %}
 
 ## Example
 
