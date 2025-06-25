@@ -10,8 +10,7 @@ This is a [_**Stable**_](../../../mariadb-release-criteria.md) _**(GA)**_ releas
 
 **For a description of** [**MariaDB 5.5**](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/broken-reference/README.md) **see the**[**What is MariaDB 5.5?**](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/broken-reference/README.md) **page.**
 
-In most respects [MariaDB](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/mariadb/README.md) will work exactly as MySQL: all commands,\
-interfaces, libraries and APIs that exist in MySQL also exist in MariaDB.
+In most respects MariaDB will work exactly as MySQL: all commands,interfaces, libraries and APIs that exist in MySQL also exist in MariaDB.
 
 ## Updates & Bug Fixes
 
