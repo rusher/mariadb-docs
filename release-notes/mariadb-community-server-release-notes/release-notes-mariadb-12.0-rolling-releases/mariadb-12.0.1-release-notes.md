@@ -2,6 +2,8 @@
 
 <a href="https://mariadb.com/downloads" class="button primary">Download</a>  <a href="mariadb-12.0.1-release-notes.md" class="button secondary">Release Notes</a>  <a href="../changelogs/changelogs-mariadb-12.0-series/mariadb-12.0.1-changelog.md" class="button secondary">Changelog</a>  <a href="what-is-mariadb-120.md" class="button secondary">Overview of 12.0</a>
 
+[<sup>_Alternate download from mariadb.org_</sup>](https://downloads.mariadb.org/mariadb/11.8.2/)
+
 **Release date:** 5 Jun 2025
 
 {% include "../../.gitbook/includes/non-stable.md" %}
