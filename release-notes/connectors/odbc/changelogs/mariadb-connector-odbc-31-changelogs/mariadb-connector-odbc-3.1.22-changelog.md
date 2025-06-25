@@ -35,4 +35,6 @@ The revision number links will take you to the revision's page on GitHub. On [Gi
 * [Revision #d0edbc1](https://github.com/mariadb-corporation/mariadb-connector-odbc/commit/d0edbc1) 2025-02-24 14:00:28 -0500
   * bump the VERSION
 
+{% include "../../../../.gitbook/includes/announce.md" %}
+
 {% @marketo/form formid="4316" formId="4316" %}

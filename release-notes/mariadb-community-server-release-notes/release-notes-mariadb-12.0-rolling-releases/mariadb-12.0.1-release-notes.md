@@ -109,4 +109,6 @@ For a full list of contributors to MariaDB 12.0.1, see the [MariaDB Foundation r
 
 ***
 
+{% include "../../.gitbook/includes/announce.md" %}
+
 {% @marketo/form formid="4316" formId="4316" %}

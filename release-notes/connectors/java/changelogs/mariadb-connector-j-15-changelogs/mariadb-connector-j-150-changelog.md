@@ -165,6 +165,8 @@ The revision number links will take you to the revision's page on GitHub. On[Git
 * [Revision #766c6cd](https://github.com/mariadb-corporation/mariadb-connector-j/commit/766c6cd) : [CONJ-249](https://jira.mariadb.org/browse/CONJ-249) - Quick fix to add TLSv1.1 and TLSv1.2 to the list of supported protocols
 * [Revision #6819133](https://github.com/mariadb-corporation/mariadb-connector-j/commit/6819133) : quick fix to supported TLS versions, added 1.1 and 1.2
 
+{% include "../../../../.gitbook/includes/announce.md" %}
+
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/PJ4A7eO7pjlC1eNvdVbz/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

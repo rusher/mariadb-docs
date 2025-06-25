@@ -237,4 +237,6 @@ For a complete list of changes made in MariaDB 11.8.2, with links to detailed in
 
 For a full list of contributors to [MariaDB 11.8.2](mariadb-11-8-2-release-notes.md), see the [MariaDB Foundation release announcement](https://mariadb.org/mariadb-10-7-1-rc-and-mariadb-10-6-5-10-5-13-10-4-22-10-3-32-and-10-2-41-now-available/).
 
+{% include "../../.gitbook/includes/announce.md" %}
+
 {% @marketo/form formid="4316" formId="4316" %}
