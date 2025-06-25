@@ -9,8 +9,7 @@ EXPLAIN [FORMAT=JSON] FOR CONNECTION <connection_id>;
 
 ## Description
 
-The `SHOW EXPLAIN` command allows one to get an [EXPLAIN](../analyze-and-explain-statements/explain.md) (that is, a\
-description of a query plan) of a query running in a certain connection.
+The `SHOW EXPLAIN` command allows one to get an [EXPLAIN](../analyze-and-explain-statements/explain.md) (that is, a description of a query plan) of a query running in a certain connection.
 
 ```sql
 SHOW EXPLAIN FOR <connection_id>;
@@ -28,8 +27,7 @@ SHOW EXPLAIN FOR 1;
 1 row in set, 1 warning (0.00 sec)
 ```
 
-The output is always accompanied with a warning which shows the query the\
-target connection is running (this shows what the `EXPLAIN` is for):
+The output is always accompanied with a warning which shows the query the target connection is running (this shows what the `EXPLAIN` is for):
 
 ```sql
 SHOW WARNINGS;
@@ -55,9 +53,7 @@ The `EXPLAIN FOR CONNECTION` syntax was added for MySQL compatibility.
 
 ### Possible Errors
 
-The output can be only produced if the target connection is _currently_ running a\
-query, which has a ready query plan. If this is not the case, the output will\
-be:
+The output can be only produced if the target connection is _currently_ running a query, which has a ready query plan. If this is not the case, the output will be:
 
 ```sql
 SHOW EXPLAIN FOR 2;
@@ -68,23 +64,15 @@ You will get this error when:
 
 * the target connection is not running a command for which one can run `EXPLAIN`
 * the target connection is running a command for which one can run `EXPLAIN`, but
-  * there is no query plan yet (for example, tables are open and locks are\
-    acquired before the query plan is produced)
+  * there is no query plan yet (for example, tables are open and locks are     acquired before the query plan is produced)
 
 ### Differences Between SHOW EXPLAIN and EXPLAIN Outputs
 
 #### Background
 
-In MySQL, `EXPLAIN` execution takes a slightly different route from the way\
-the real query (typically the `SELECT`) is optimized. This is unfortunate,\
-and has caused a number of bugs in `EXPLAIN`. (For example, see[MDEV-326](https://jira.mariadb.org/browse/MDEV-326), [MDEV-410](https://jira.mariadb.org/browse/MDEV-410), and[lp:1013343](https://bugs.launchpad.net/maria/+bug/1013343).[lp:992942](https://bugs.launchpad.net/maria/+bug/992942) is not directly\
-about `EXPLAIN`, but it also would not have existed if MySQL didn't try to delete\
-parts of a query plan in the middle of the query)
+In MySQL, `EXPLAIN` execution takes a slightly different route from the way the real query (typically the `SELECT`) is optimized. This is unfortunate, and has caused a number of bugs in `EXPLAIN`. (For example, see[MDEV-326](https://jira.mariadb.org/browse/MDEV-326), [MDEV-410](https://jira.mariadb.org/browse/MDEV-410), and[lp:1013343](https://bugs.launchpad.net/maria/+bug/1013343).[lp:992942](https://bugs.launchpad.net/maria/+bug/992942) is not directly about `EXPLAIN`, but it also would not have existed if MySQL didn't try to delete parts of a query plan in the middle of the query)
 
-`SHOW EXPLAIN` examines a running `SELECT`, and hence its output may be\
-slightly different from what `EXPLAIN SELECT` would produce. We did our best\
-to make sure that either the difference is negligible, or `SHOW EXPLAIN`'s\
-output is closer to reality than `EXPLAIN`'s output.
+`SHOW EXPLAIN` examines a running `SELECT`, and hence its output may be slightly different from what `EXPLAIN SELECT` would produce. We did our best to make sure that either the difference is negligible, or `SHOW EXPLAIN`'s output is closer to reality than `EXPLAIN`'s output.
 
 #### List of Recorded Differences
 

@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 SHOW INDEX_STATISTICS
 ```
 
@@ -14,7 +14,7 @@ The [userstat](../../../../ha-and-performance/optimization-and-tuning/system-var
 
 ## Example
 
-```
+```sql
 SHOW INDEX_STATISTICS;
 +--------------+-------------------+------------+-----------+
 | Table_schema | Table_name        | Index_name | Rows_read |

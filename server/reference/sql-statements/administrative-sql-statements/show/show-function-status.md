@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 SHOW FUNCTION STATUS
     [LIKE 'pattern' | WHERE expr]
 ```
@@ -21,7 +21,7 @@ The [information_schema.ROUTINES](../system-tables/information-schema/informatio
 
 Showing all stored functions:
 
-```
+```sql
 SHOW FUNCTION STATUS\G
 *************************** 1. row ***************************
                   Db: test
@@ -39,7 +39,7 @@ collation_connection: utf8_general_ci
 
 Stored functions whose name starts with 'V':
 
-```
+```sql
 SHOW FUNCTION STATUS LIKE 'V%' \G
 *************************** 1. row ***************************
                   Db: test
@@ -57,7 +57,7 @@ collation_connection: utf8_general_ci
 
 Stored functions with a security type of 'DEFINER':
 
-```
+```sql
 SHOW FUNCTION STATUS WHERE Security_type LIKE 'DEFINER' \G
 *************************** 1. row ***************************
                   Db: test

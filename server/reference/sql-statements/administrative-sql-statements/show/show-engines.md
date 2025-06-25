@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 SHOW [STORAGE] ENGINES
 ```
 
@@ -27,7 +27,7 @@ The output consists of the following columns:
 
 ## Examples
 
-```
+```sql
 SHOW ENGINES\G
 *************************** 1. row ***************************
       Engine: InnoDB

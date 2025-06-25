@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 SHOW GRANTS [FOR user|role]
 ```
 
@@ -12,14 +12,9 @@ The `SHOW GRANTS` statement lists privileges granted to a particular user or rol
 
 ### Users
 
-The statement lists the [GRANT](../../account-management-sql-statements/grant.md) statement or\
-statements that must be issued to duplicate the privileges that are granted to\
-a MariaDB user account. The account is named using the same format as for the`GRANT` statement; for example,\
-'`jeffrey'@'localhost`'. If you specify only the user name part\
-of the account name, a host name part of '`%`' is used. For\
-additional information about specifying account names, see[GRANT](../../account-management-sql-statements/grant.md).
+The statement lists the [GRANT](../../account-management-sql-statements/grant.md) statement or statements that must be issued to duplicate the privileges that are granted to a MariaDB user account. The account is named using the same format as for the`GRANT` statement; for example, '`jeffrey'@'localhost`'. If you specify only the user name part of the account name, a host name part of '`%`' is used. For additional information about specifying account names, see[GRANT](../../account-management-sql-statements/grant.md).
 
-```
+```sql
 SHOW GRANTS FOR 'root'@'localhost';
 +---------------------------------------------------------------------+
 | Grants for root@localhost                                           |
@@ -28,19 +23,15 @@ SHOW GRANTS FOR 'root'@'localhost';
 +---------------------------------------------------------------------+
 ```
 
-To list the privileges granted to the account that you are using to\
-connect to the server, you can use any of the following statements:
+To list the privileges granted to the account that you are using to connect to the server, you can use any of the following statements:
 
-```
+```sql
 SHOW GRANTS;
 SHOW GRANTS FOR CURRENT_USER;
 SHOW GRANTS FOR CURRENT_USER();
 ```
 
-If `SHOW GRANTS FOR CURRENT_USER` (or any\
-of the equivalent syntaxes) is used in `DEFINER` context (such\
-as within a stored procedure that is defined with`SQL SECURITY DEFINER`), the grants displayed are those of the\
-definer and not the invoker.
+If `SHOW GRANTS FOR CURRENT_USER` (or any of the equivalent syntaxes) is used in `DEFINER` context (such as within a stored procedure that is defined with`SQL SECURITY DEFINER`), the grants displayed are those of the definer and not the invoker.
 
 ### Roles
 
@@ -48,7 +39,7 @@ definer and not the invoker.
 
 #### Example
 
-```
+```sql
 SHOW GRANTS FOR journalist;
 +------------------------------------------+
 | Grants for journalist                    |
@@ -64,7 +55,7 @@ SHOW GRANTS FOR journalist;
 
 [GRANT ... TO PUBLIC](../../account-management-sql-statements/grant.md#to-public) was introduced in [MariaDB 10.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-11-series/what-is-mariadb-1011) to grant privileges to all users. `SHOW GRANTS FOR PUBLIC` shows all these grants.
 
-```
+```sql
 SHOW GRANTS FOR public;
 +------------------------------------------------+
 | Grants for PUBLIC                              |
