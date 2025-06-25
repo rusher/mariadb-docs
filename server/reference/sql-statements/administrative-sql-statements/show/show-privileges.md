@@ -8,13 +8,23 @@ SHOW PRIVILEGES
 
 ## Description
 
+{% tabs %}
+{% tab title="Current" %}
+`SHOW PRIVILEGES` shows the list of [system privileges](../../account-management-sql-statements/grant.md) that the MariaDB server supports. The exact list of privileges depends on the version of your server.
+{% endtab %}
+
+{% tab title="< 10.5.2 / 10.4.13 / 10.3.23" %}
 `SHOW PRIVILEGES` shows the list of [system privileges](../../account-management-sql-statements/grant.md) that the MariaDB server supports. The exact list of privileges depends on the version of your server.
 
 Note that before [MariaDB 10.3.23](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-10323-release-notes), [MariaDB 10.4.13](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-10413-release-notes) and [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1052-release-notes) , the [Delete history](../../account-management-sql-statements/grant.md#table-privileges) privilege displays as `Delete versioning rows` ([MDEV-20382](https://jira.mariadb.org/browse/MDEV-20382)).
+{% endtab %}
+{% endtabs %}
 
 ## Example
 
-From [MariaDB 10.5.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1059-release-notes)
+{% hint style="info" %}
+The output is for MariaDB version from 10.5.9. In previous versions, it might look differently.
+{% endhint %}
 
 ```sql
 SHOW PRIVILEGES;
@@ -71,6 +81,6 @@ SHOW PRIVILEGES;
 * [SHOW CREATE USER](show-create-user.md) shows how the user was created.
 * [SHOW GRANTS](show-grants.md) shows the `GRANTS/PRIVILEGES` for a user.
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

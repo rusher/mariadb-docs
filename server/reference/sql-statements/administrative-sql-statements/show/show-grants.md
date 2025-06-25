@@ -12,7 +12,7 @@ The `SHOW GRANTS` statement lists privileges granted to a particular user or rol
 
 ### Users
 
-The statement lists the [GRANT](../../account-management-sql-statements/grant.md) statement or statements that must be issued to duplicate the privileges that are granted to a MariaDB user account. The account is named using the same format as for the`GRANT` statement; for example, '`jeffrey'@'localhost`'. If you specify only the user name part of the account name, a host name part of '`%`' is used. For additional information about specifying account names, see[GRANT](../../account-management-sql-statements/grant.md).
+The statement lists the [GRANT](../../account-management-sql-statements/grant.md) statement or statements that must be issued to duplicate the privileges that are granted to a MariaDB user account. The account is named using the same format as for the`GRANT` statement; for example, '`jeffrey'@'localhost`'. If you specify only the user name part of the account name, a host name part of '`%`' is used. For additional information about specifying account names, see [GRANT](../../account-management-sql-statements/grant.md).
 
 ```sql
 SHOW GRANTS FOR 'root'@'localhost';
@@ -49,11 +49,11 @@ SHOW GRANTS FOR journalist;
 +------------------------------------------+
 ```
 
+{% tabs %}
+{% tab title="Current" %}
 ### FOR PUBLIC
 
-**MariaDB starting with** [**10.11**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-11-series/what-is-mariadb-1011)
-
-[GRANT ... TO PUBLIC](../../account-management-sql-statements/grant.md#to-public) was introduced in [MariaDB 10.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-11-series/what-is-mariadb-1011) to grant privileges to all users. `SHOW GRANTS FOR PUBLIC` shows all these grants.
+[GRANT ... TO PUBLIC](../../account-management-sql-statements/grant.md#to-public) grants privileges to all users. `SHOW GRANTS FOR PUBLIC` shows all these grants.
 
 ```sql
 SHOW GRANTS FOR public;
@@ -63,6 +63,12 @@ SHOW GRANTS FOR public;
 | GRANT ALL PRIVILEGES ON `dev_db`.* TO `PUBLIC` |
 +------------------------------------------------+
 ```
+{% endtab %}
+
+{% tab title="< 10.11" %}
+`FOR PUBLIC` is not available.
+{% endtab %}
+{% endtabs %}
 
 ## See Also
 
@@ -71,6 +77,6 @@ SHOW GRANTS FOR public;
 * [SHOW PRIVILEGES](show-privileges.md) shows the privileges supported by MariaDB.
 * [Roles](../../../../security/user-account-management/roles/)
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

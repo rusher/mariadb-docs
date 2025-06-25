@@ -39,17 +39,21 @@ SHOW WARNINGS;
 1 row in set (0.00 sec)
 ```
 
+{% tabs %}
+{% tab title="Current" %}
 ### EXPLAIN FOR CONNECTION
-
-**MariaDB starting with** [**10.9**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-9-series/what-is-mariadb-109)
 
 The `EXPLAIN FOR CONNECTION` syntax was added for MySQL compatibility.
 
 ### FORMAT=JSON
 
-**MariaDB starting with** [**10.9**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-9-series/what-is-mariadb-109)
-
 `SHOW EXPLAIN [FORMAT=JSON] FOR <connection_id>` extends `SHOW EXPLAIN` to return more detailed JSON output.
+{% endtab %}
+
+{% tab title="< 10.9" %}
+`EXPLAIN FOR CONNECTION` and `FORMAT=JSON` are not available.
+{% endtab %}
+{% endtabs %}
 
 ### Possible Errors
 
@@ -69,7 +73,7 @@ You will get this error when:
 
 #### Background
 
-In MySQL, `EXPLAIN` execution takes a slightly different route from the way the real query (typically the `SELECT`) is optimized. This is unfortunate, and has caused a number of bugs in `EXPLAIN`. (For example, see[MDEV-326](https://jira.mariadb.org/browse/MDEV-326), [MDEV-410](https://jira.mariadb.org/browse/MDEV-410), and[lp:1013343](https://bugs.launchpad.net/maria/+bug/1013343).[lp:992942](https://bugs.launchpad.net/maria/+bug/992942) is not directly about `EXPLAIN`, but it also would not have existed if MySQL didn't try to delete parts of a query plan in the middle of the query)
+In MySQL, `EXPLAIN` execution takes a slightly different route from the way the real query (typically the `SELECT`) is optimized. This is unfortunate, and has caused a number of bugs in `EXPLAIN`. (For example, see [MDEV-326](https://jira.mariadb.org/browse/MDEV-326), [MDEV-410](https://jira.mariadb.org/browse/MDEV-410), and [lp:1013343](https://bugs.launchpad.net/maria/+bug/1013343).[lp:992942](https://bugs.launchpad.net/maria/+bug/992942) is not directly about `EXPLAIN`, but it also would not have existed if MySQL didn't try to delete parts of a query plan in the middle of the query)
 
 `SHOW EXPLAIN` examines a running `SELECT`, and hence its output may be slightly different from what `EXPLAIN SELECT` would produce. We did our best to make sure that either the difference is negligible, or `SHOW EXPLAIN`'s output is closer to reality than `EXPLAIN`'s output.
 
