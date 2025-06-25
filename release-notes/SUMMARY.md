@@ -2224,8 +2224,4 @@
 * [MariaDB Platform Deprecation Policy](mariadb-platform-deprecation-policy.md)
 * [MariaDB Maintenance Policy](mariadb-maintenance-policy.md)
 * [MariaDB Feature Deprecation Policy](mariadb-feature-deprecation-policy.md)
-* [.gitbook](.gitbook/README.md)
-  * [includes](.gitbook/includes/README.md)
-    * [The most recent release of ...](.gitbook/includes/latest-10.11.md)
-    * [The most recent release of ...](.gitbook/includes/the-most-recent-release-of-....md)
 * [Test Page](test-page.md)
