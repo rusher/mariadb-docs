@@ -2,7 +2,7 @@
 
 {% include "../../../../../.gitbook/includes/latest-odbc.md" %}
 
-<a href="https://mariadb.com/downloads/connectors/connectors-data-access/odbc-connector" class="button primary">Download</a>   <a href="../../mariadb-connector-odbc-3-1-release-notes/mariadb-connectorodbc-3-1-22-release-notes.md" class="button secondary">Release Notes</a>   <a href="mariadb-connector-odbc-3.1.22-changelog.md" class="button secondary">Changelog</a>   <a href="https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-odbc" class="button secondary">About MariaDB Connector/ODBC</a>
+<a href="https://mariadb.com/downloads/connectors/connectors-data-access/odbc-connector" class="button primary">Download</a> <a href="../../mariadb-connector-odbc-3-1-release-notes/mariadb-connectorodbc-3-1-22-release-notes.md" class="button secondary">Release Notes</a> <a href="mariadb-connector-odbc-3.1.22-changelog.md" class="button secondary">Changelog</a> <a href="https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-odbc" class="button secondary">About MariaDB Connector/ODBC</a>
 
 **Release date:** ?
 
@@ -34,7 +34,5 @@ The revision number links will take you to the revision's page on GitHub. On [Gi
   * [ODBC-457](https://jira.mariadb.org/browse/ODBC-457) New option permitting to skip date/time parameter overflow
 * [Revision #d0edbc1](https://github.com/mariadb-corporation/mariadb-connector-odbc/commit/d0edbc1) 2025-02-24 14:00:28 -0500
   * bump the VERSION
-
-{% include "../../../../../.gitbook/includes/announce.md" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

@@ -2,7 +2,7 @@
 
 {% include "../../../../.gitbook/includes/latest-odbc.md" %}
 
-<a href="https://mariadb.com/downloads/connectors/connectors-data-access/odbc-connector" class="button primary">Download</a>   <a href="mariadb-connectorodbc-3-1-22-release-notes.md" class="button secondary">Release Notes</a>   <a href="../changelogs/mariadb-connector-odbc-31-changelogs/mariadb-connector-odbc-3.1.22-changelog.md" class="button secondary">Changelog</a>   <a href="https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-odbc" class="button secondary">About MariaDB Connector/ODBC</a>
+<a href="https://mariadb.com/downloads/connectors/connectors-data-access/odbc-connector" class="button primary">Download</a> <a href="mariadb-connectorodbc-3-1-22-release-notes.md" class="button secondary">Release Notes</a> <a href="../changelogs/mariadb-connector-odbc-31-changelogs/mariadb-connector-odbc-3.1.22-changelog.md" class="button secondary">Changelog</a> <a href="https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-odbc" class="button secondary">About MariaDB Connector/ODBC</a>
 
 **Release date:**
 
@@ -25,7 +25,5 @@ MariaDB Connector/ODBC 3.1.22 is built on top of[MariaDB Connector/C v.3.3.15](.
 
 For a complete list of every change made in this release, with links to\
 detailed information on each push, see the [changelog](https://github.com/mariadb-corporation/docs-release-notes/blob/test/connectors/odbc/mariadb-connector-odbc-3-1-release-notes/mariadb-connector-odbc-3-1-22-changelog/README.md).
-
-{% include "../../../../.gitbook/includes/announce.md" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

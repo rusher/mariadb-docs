@@ -1,6 +1,6 @@
 # MariaDB Connector/ODBC 3.2.6 Release Notes
 
-<a href="https://mariadb.com/downloads/connectors/connectors-data-access/odbc-connector" class="button primary">Download</a>   <a href="mariadb-connectorodbc-3-2-6-release-notes.md" class="button secondary">Release Notes</a>   <a href="../changelogs/mariadb-connector-odbc-3-2-changelogs/mariadb-connector-odbc-3.2.6-changelog.md" class="button secondary">Changelog</a>   <a href="https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-odbc" class="button secondary">About MariaDB Connector/ODBC</a>
+<a href="https://mariadb.com/downloads/connectors/connectors-data-access/odbc-connector" class="button primary">Download</a> <a href="mariadb-connectorodbc-3-2-6-release-notes.md" class="button secondary">Release Notes</a> <a href="../changelogs/mariadb-connector-odbc-3-2-changelogs/mariadb-connector-odbc-3.2.6-changelog.md" class="button secondary">Changelog</a> <a href="https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-odbc" class="button secondary">About MariaDB Connector/ODBC</a>
 
 **Release date:**
 
@@ -26,7 +26,5 @@ MariaDB Connector/ODBC 3.2.6 is built on top of[MariaDB Connector/C v.3.4.5](../
 ## Changelog
 
 For a complete list of every change made in this release, with links to detailed information on each push, see the [changelog](../changelogs/mariadb-connector-odbc-3-2-changelogs/mariadb-connector-odbc-3.2.6-changelog.md).
-
-{% include "../../../../.gitbook/includes/announce.md" %}
 
 {% @marketo/form formid="4316" formId="4316" %}
