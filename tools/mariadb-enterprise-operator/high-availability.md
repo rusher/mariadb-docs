@@ -2,12 +2,12 @@
 
 {% include "https://app.gitbook.com/s/GxVnu02ec8KJuFSxmB93/~/reusable/6PNX0xBioKkO8lDBFeGN/" %}
 
-This section provide guidance on how to run `MariaDB` and `MaxScale` in high availability mode. If you are looking to run the operator in HA as well, please refer to the [Helm documentation](mariadb-enterprise-operator-installation/helm.md).
+This section provide guidance on how to run `MariaDB` and `MaxScale` in high availability mode. If you are looking to run the operator in HA as well, please refer to the [Helm documentation](installation/helm.md).
 
 Our recommended HA setup for production is:
 
-* [Galera](mariadb-enterprise-operator-galera-cluster.md) with at least 3 nodes. Always an odd number of nodes.
-* [MaxScale](maxscale-database-proxy.md) with at least 2 nodes to load balance requests to the [Galera](mariadb-enterprise-operator-galera-cluster.md) cluster.
+* [Galera](galera-cluster.md) with at least 3 nodes. Always an odd number of nodes.
+* [MaxScale](maxscale-database-proxy.md) with at least 2 nodes to load balance requests to the [Galera](galera-cluster.md) cluster.
 * Use [dedicated nodes](high-availability.md#dedicated-nodes) to avoid noisy neighbours.
 * Define [pod disruption budgets](high-availability.md#pod-disruption-budgets).
 
@@ -138,9 +138,11 @@ spec:
 If you want to avoid noisy neighbours running in the same Kubernetes `Nodes` as your `MariaDB`, you may consider using dedicated `Nodes`. For achieving this, you will need:
 
 * Taint your `Nodes` and add the counterpart toleration in your `Pods`.
-  {% hint style="info" %}
-  Tainting your `Nodes` is not covered by this operator, it is something you need to do by yourself beforehand. You may take a look at the [Kubernetes documentation](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/) to understand how to achieve this.
-  {% endhint %}
+
+{% hint style="info" %}
+Tainting your `Nodes` is not covered by this operator, it is something you need to do by yourself beforehand. You may take a look at the [Kubernetes documentation](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/) to understand how to achieve this.
+{% endhint %}
+
 * Select the `Nodes` where `Pods` will be scheduled in via a `nodeSelector`.
 
 {% hint style="info" %}

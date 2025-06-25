@@ -5,7 +5,7 @@ MariaDB Enterprise Operator supports issuing, configuring and rotating TLS certi
 ## `MariaDB` configuration
 
 {% hint style="info" %}
-This section covers TLS configuration in new instances. If you are looking to migrate an existing instance to use TLS, please refer to [Enabling TLS in existing instances](mariadb-enterprise-operator-migrations/enabling-tls-in-existing-instances.md) instead.
+This section covers TLS configuration in new instances. If you are looking to migrate an existing instance to use TLS, please refer to [Enabling TLS in existing instances](migrations/enabling-tls-in-existing-instances.md) instead.
 {% endhint %}
 
 TLS can be configured in `MariaDB` resources by setting `tls.enabled=true`:
@@ -59,7 +59,7 @@ Refer to further sections for a more advanced TLS configuration.
 ## `MaxScale` configuration
 
 {% hint style="info" %}
-This section covers TLS configuration in new instances. If you are looking to migrate an existing instance to use TLS, please refer to [Enabling TLS in existing instances](mariadb-enterprise-operator-migrations/enabling-tls-in-existing-instances.md) instead.
+This section covers TLS configuration in new instances. If you are looking to migrate an existing instance to use TLS, please refer to [Enabling TLS in existing instances](migrations/enabling-tls-in-existing-instances.md) instead.
 {% endhint %}
 
 TLS will be automatically enabled in `MaxScale` when the referred `MariaDB` (via `mariaDbRef`) has TLS enabled and enforced. Alternatively, you can explicitly enable TLS by setting `tls.enabled=true`:
@@ -531,8 +531,8 @@ spec:
 
 If not specified, the MaxScale's default TLS versions will be used. See MaxScale docs:
 
-* [Admin TLS version](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/mariadb-maxscale-25/maxscale-25-getting-started/mariadb-maxscale-25-mariadb-maxscale-configuration-guide#admin_ssl_version)
-* [Server TLS version](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/mariadb-maxscale-25/maxscale-25-getting-started/mariadb-maxscale-25-mariadb-maxscale-configuration-guide#ssl_version)
+* [Admin TLS version](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/maxscale-management/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide#admin_ssl_version)
+* [Server TLS version](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/maxscale-management/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide#ssl_version)
 
 ## Certificate lifetime configuration
 
@@ -866,7 +866,7 @@ spec:
 
 The following values are supported: `VERIFY_IDENTITY`, `VERIFY`, `REQUIRED` and `DISABLED`. Refer to the [Galera Enterprise docs](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/3VYeeVGUV4AMqrA3zwy7/) for further detail about these modes.
 
-If you are willing to increase the enforcement level in an existing instance, make sure you follow the migration guide provided in the [Enabling TLS in existing instances](mariadb-enterprise-operator-migrations/enabling-tls-in-existing-instances.md) section.
+If you are willing to increase the enforcement level in an existing instance, make sure you follow the migration guide provided in the [Enabling TLS in existing instances](migrations/enabling-tls-in-existing-instances.md) section.
 
 ## Secure application connections with TLS
 

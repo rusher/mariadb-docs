@@ -116,7 +116,7 @@ The operator will not perform updates on the `StatefulSet` whenever this update 
 
 ## Data-plane updates
 
-Galera relies on [data-plane containers](mariadb-enterprise-operator-galera-cluster.md#data-plane) that run alongside MariaDB to implement provisioning and high availability operations on the cluster. These containers use the `mariadb-enterprise-operator` image, which can be automatically updated by the operator based on its image version:
+Galera relies on [data-plane containers](galera-cluster.md#data-plane) that run alongside MariaDB to implement provisioning and high availability operations on the cluster. These containers use the `mariadb-enterprise-operator` image, which can be automatically updated by the operator based on its image version:
 
 ```yaml
 apiVersion: enterprise.mariadb.com/v1alpha1
