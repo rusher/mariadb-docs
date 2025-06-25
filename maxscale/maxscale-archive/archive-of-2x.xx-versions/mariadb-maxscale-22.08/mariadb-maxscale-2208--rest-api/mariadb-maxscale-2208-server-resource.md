@@ -1,72 +1,46 @@
+# MaxScale 22.08 Server Resource
 
-# Server Resource
+## Server Resource
 
-# Server Resource
-
+## Server Resource
 
 A server resource represents a backend database server.
 
+* [Server Resource](mariadb-maxscale-2208-server-resource.md#server-resource)
+  * [Resource Operations](mariadb-maxscale-2208-server-resource.md#resource-operations)
+    * [Get a server](mariadb-maxscale-2208-server-resource.md#get-a-server)
+      * [Response](mariadb-maxscale-2208-server-resource.md#response)
+    * [Get all servers](mariadb-maxscale-2208-server-resource.md#get-all-servers)
+      * [Response](mariadb-maxscale-2208-server-resource.md#response_1)
+    * [Create a server](mariadb-maxscale-2208-server-resource.md#create-a-server)
+      * [Response](mariadb-maxscale-2208-server-resource.md#response_2)
+    * [Update a server](mariadb-maxscale-2208-server-resource.md#update-a-server)
+    * [Modifiable Fields](mariadb-maxscale-2208-server-resource.md#modifiable-fields)
+      * [Response](mariadb-maxscale-2208-server-resource.md#response_3)
+    * [Update server relationships](mariadb-maxscale-2208-server-resource.md#update-server-relationships)
+      * [Response](mariadb-maxscale-2208-server-resource.md#response_4)
+    * [Destroy a server](mariadb-maxscale-2208-server-resource.md#destroy-a-server)
+      * [Response](mariadb-maxscale-2208-server-resource.md#response_5)
+    * [Set server state](mariadb-maxscale-2208-server-resource.md#set-server-state)
+      * [Response](mariadb-maxscale-2208-server-resource.md#response_6)
+    * [Clear server state](mariadb-maxscale-2208-server-resource.md#clear-server-state)
+      * [Response](mariadb-maxscale-2208-server-resource.md#response_7)
 
+### Resource Operations
 
+The _:name_ in all of the URIs must be the name of a server in MaxScale.
 
-* [Server Resource](#server-resource)
-
-  * [Resource Operations](#resource-operations)
-
-    * [Get a server](#get-a-server)
-
-      * [Response](#response)
-    * [Get all servers](#get-all-servers)
-
-      * [Response](#response_1)
-    * [Create a server](#create-a-server)
-
-      * [Response](#response_2)
-    * [Update a server](#update-a-server)
-    * [Modifiable Fields](#modifiable-fields)
-
-      * [Response](#response_3)
-    * [Update server relationships](#update-server-relationships)
-
-      * [Response](#response_4)
-    * [Destroy a server](#destroy-a-server)
-
-      * [Response](#response_5)
-    * [Set server state](#set-server-state)
-
-      * [Response](#response_6)
-    * [Clear server state](#clear-server-state)
-
-      * [Response](#response_7)
-
-
-
-
-## Resource Operations
-
-
-The *:name* in all of the URIs must be the name of a server in MaxScale.
-
-
-### Get a server
-
-
+#### Get a server
 
 ```
 GET /v1/servers/:name
 ```
 
-
-
 Get a single server.
 
-
-#### Response
-
+**Response**
 
 `Status: 200 OK`
-
-
 
 ```
 {
@@ -307,27 +281,17 @@ Get a single server.
 }
 ```
 
-
-
-### Get all servers
-
-
+#### Get all servers
 
 ```
 GET /v1/servers
 ```
 
-
-
-#### Response
-
+**Response**
 
 Response contains a resource collection with all servers.
 
-
 `Status: 200 OK`
-
-
 
 ```
 {
@@ -815,38 +779,27 @@ Response contains a resource collection with all servers.
 }
 ```
 
-
-
-### Create a server
-
-
+#### Create a server
 
 ```
 POST /v1/servers
 ```
 
-
-
-Create a new server by defining the resource. The posted object must define at
+Create a new server by defining the resource. The posted object must define at\
 least the following fields.
-
 
 * `data.id`
 * Name of the server
 * `data.type`
 * Type of the object, must be `servers`
 * `data.attributes.parameters.address` OR `data.attributes.parameters.socket`
-* The [address](https://mariadb.com/kb/en/maxscale-2208-getting-started-mariadb-maxscale-configuration-guide/#address) or
- [socket](https://mariadb.com/kb/en/maxscale-2208-getting-started-mariadb-maxscale-configuration-guide/#socket) to use. Only
- one of the fields can be defined.
+* The [address](https://mariadb.com/kb/en/maxscale-2208-getting-started-mariadb-maxscale-configuration-guide/#address) or[socket](https://mariadb.com/kb/en/maxscale-2208-getting-started-mariadb-maxscale-configuration-guide/#socket) to use. Only\
+  one of the fields can be defined.
 * `data.attributes.parameters.port`
-* The [port](https://mariadb.com/kb/en/maxscale-2208-getting-started-mariadb-maxscale-configuration-guide/#port) to use. Needs
- to be defined if the `address` field is defined.
-
+* The [port](https://mariadb.com/kb/en/maxscale-2208-getting-started-mariadb-maxscale-configuration-guide/#port) to use. Needs\
+  to be defined if the `address` field is defined.
 
 The following is the minimal required JSON object for defining a new server.
-
-
 
 ```
 {
@@ -863,12 +816,8 @@ The following is the minimal required JSON object for defining a new server.
 }
 ```
 
-
-
-The relationships of a server can also be defined at creation time. This allows
+The relationships of a server can also be defined at creation time. This allows\
 new servers to be created and immediately taken into use.
-
-
 
 ```
 {
@@ -907,63 +856,41 @@ new servers to be created and immediately taken into use.
 }
 ```
 
-
-
-Refer to the [Configuration Guide](/en/maxscale-2208-getting-started-mariadb-maxscale-configuration-guide/)
+Refer to the [Configuration Guide](../../../../../en/maxscale-2208-getting-started-mariadb-maxscale-configuration-guide/)\
 for a full list of server parameters.
 
-
-#### Response
-
+**Response**
 
 Server created:
 
-
 `Status: 204 No Content`
-
 
 Invalid JSON body:
 
-
 `Status: 400 Bad Request`
 
-
-### Update a server
-
-
+#### Update a server
 
 ```
 PATCH /v1/servers/:name
 ```
 
-
-
-The request body must be a valid JSON document representing the modified
+The request body must be a valid JSON document representing the modified\
 server.
 
+#### Modifiable Fields
 
-### Modifiable Fields
-
-
-In addition to the server
-[parameters](https://mariadb.com/kb/en/maxscale-2208-getting-started-mariadb-maxscale-configuration-guide/#server-1), the *services*
-and *monitors* fields of the *relationships* object can be modified. Removal,
-addition and modification of the links will change which service and monitors
+In addition to the server[parameters](https://mariadb.com/kb/en/maxscale-2208-getting-started-mariadb-maxscale-configuration-guide/#server-1), the _services_\
+and _monitors_ fields of the _relationships_ object can be modified. Removal,\
+addition and modification of the links will change which service and monitors\
 use this server.
 
+For example, removing the first value in the _services_ list in th&#x65;_&#x72;elationships_ object from the following JSON document will remove th&#x65;_&#x73;erver1_ from the service _RW-Split-Router_.
 
-For example, removing the first value in the *services* list in the
-*relationships* object from the following JSON document will remove the
-*server1* from the service *RW-Split-Router*.
-
-
-Removing a service from a server is analogous to removing the server from the
+Removing a service from a server is analogous to removing the server from the\
 service. Both unlink the two objects from each other.
 
-
 Request for `PATCH /v1/servers/server1` that modifies the address of the server:
-
-
 
 ```
 {
@@ -977,11 +904,7 @@ Request for `PATCH /v1/servers/server1` that modifies the address of the server:
 }
 ```
 
-
-
 Request for `PATCH /v1/servers/server1` that modifies the server relationships:
-
-
 
 ```
 {
@@ -1002,53 +925,37 @@ Request for `PATCH /v1/servers/server1` that modifies the server relationships:
 }
 ```
 
-
-
-If parts of the resource are not defined (e.g. the `attributes` field in the
-above example), those parts of the resource are not modified. All parts that are
-defined are interpreted as the new definition of those part of the resource. In
+If parts of the resource are not defined (e.g. the `attributes` field in the\
+above example), those parts of the resource are not modified. All parts that are\
+defined are interpreted as the new definition of those part of the resource. In\
 the above example, the `relationships` of the resource are completely redefined.
 
-
-#### Response
-
+**Response**
 
 Server modified:
 
-
 `Status: 204 No Content`
-
 
 Invalid JSON body:
 
-
 `Status: 400 Bad Request`
 
-
-### Update server relationships
-
-
+#### Update server relationships
 
 ```
 PATCH /v1/servers/:name/relationships/:type
 ```
 
+The _:type_ in the URI must be either _services_, for service\
+relationships, or _monitors_, for monitor relationships.
 
-
-The *:type* in the URI must be either *services*, for service
-relationships, or *monitors*, for monitor relationships.
-
-
-The request body must be a JSON object that defines only the *data* field. The
-value of the *data* field must be an array of relationship objects that define
-the *id* and *type* fields of the relationship. This object will replace the
+The request body must be a JSON object that defines only the _data_ field. The\
+value of the _data_ field must be an array of relationship objects that define\
+the _id_ and _type_ fields of the relationship. This object will replace the\
 existing relationships of the particular type from the server.
 
-
-The following is an example request and request body that defines a single
+The following is an example request and request body that defines a single\
 service relationship for a server.
-
-
 
 ```
 PATCH /v1/servers/my-db-server/relationships/services
@@ -1060,12 +967,7 @@ PATCH /v1/servers/my-db-server/relationships/services
 }
 ```
 
-
-
-All relationships for a server can be deleted by sending an empty array as the
-*data* field value. The following example removes the server from all services.
-
-
+All relationships for a server can be deleted by sending an empty array as th&#x65;_&#x64;ata_ field value. The following example removes the server from all services.
 
 ```
 PATCH /v1/servers/my-db-server/relationships/services
@@ -1075,154 +977,104 @@ PATCH /v1/servers/my-db-server/relationships/services
 }
 ```
 
-
-
-#### Response
-
+**Response**
 
 Server relationships modified:
 
-
 `Status: 204 No Content`
-
 
 Invalid JSON body:
 
-
 `Status: 400 Bad Request`
 
-
-### Destroy a server
-
-
+#### Destroy a server
 
 ```
 DELETE /v1/servers/:name
 ```
 
-
-
-A server can only be deleted if it is not used by any services or
+A server can only be deleted if it is not used by any services or\
 monitors.
 
-
-This endpoint also supports the `force=yes` parameter that will unconditionally
-delete the server by first unlinking it from all services and monitors that use
+This endpoint also supports the `force=yes` parameter that will unconditionally\
+delete the server by first unlinking it from all services and monitors that use\
 it.
 
-
-#### Response
-
+**Response**
 
 Server is destroyed:
 
-
 `Status: 204 No Content`
-
 
 Server is in use:
 
-
 `Status: 400 Bad Request`
 
-
-### Set server state
-
-
+#### Set server state
 
 ```
 PUT /v1/servers/:name/set
 ```
 
-
-
-This endpoint requires that the `state` parameter is passed with the
+This endpoint requires that the `state` parameter is passed with the\
 request. The value of `state` must be one of the following values.
 
+| Value       | State Description                |
+| ----------- | -------------------------------- |
+| Value       | State Description                |
+| master      | Server is a Master               |
+| slave       | Server is a Slave                |
+| maintenance | Server is put into maintenance   |
+| running     | Server is up and running         |
+| synced      | Server is a Galera node          |
+| drain       | Server is drained of connections |
 
-| Value | State Description |
-| --- | --- |
-| Value | State Description |
-| master | Server is a Master |
-| slave | Server is a Slave |
-| maintenance | Server is put into maintenance |
-| running | Server is up and running |
-| synced | Server is a Galera node |
-| drain | Server is drained of connections |
-
-
-For example, to set the server *db-server-1* into maintenance mode, a request to
+For example, to set the server _db-server-1_ into maintenance mode, a request to\
 the following URL must be made:
-
-
 
 ```
 PUT /v1/servers/db-server-1/set?state=maintenance
 ```
 
-
-
-This endpoint also supports the `force=yes` parameter that will cause all
-connections to the server to be closed if `state=maintenance` is also set. By
-default setting a server into maintenance mode will cause connections to be
+This endpoint also supports the `force=yes` parameter that will cause all\
+connections to the server to be closed if `state=maintenance` is also set. By\
+default setting a server into maintenance mode will cause connections to be\
 closed only after the next request is sent.
 
-
-The following example forcefully closes all connections to server *db-server-1*
+The following example forcefully closes all connections to server _db-server-1_\
 and sets it into maintenance mode:
-
-
 
 ```
 PUT /v1/servers/db-server-1/set?state=maintenance&force=yes
 ```
 
-
-
-#### Response
-
+**Response**
 
 Server state modified:
 
-
 `Status: 204 No Content`
-
 
 Missing or invalid parameter:
 
-
 `Status: 400 Bad Request`
 
-
-### Clear server state
-
-
+#### Clear server state
 
 ```
 PUT /v1/servers/:name/clear
 ```
 
+This endpoint requires that the `state` parameter is passed with the\
+request. The value of `state` must be one of the values defined in th&#x65;_&#x73;et_ endpoint documentation.
 
-
-This endpoint requires that the `state` parameter is passed with the
-request. The value of `state` must be one of the values defined in the
-*set* endpoint documentation.
-
-
-#### Response
-
+**Response**
 
 Server state modified:
 
-
 `Status: 204 No Content`
-
 
 Missing or invalid parameter:
 
-
 `Status: 400 Bad Request`
 
-
 CC BY-SA / Gnu FDL
-

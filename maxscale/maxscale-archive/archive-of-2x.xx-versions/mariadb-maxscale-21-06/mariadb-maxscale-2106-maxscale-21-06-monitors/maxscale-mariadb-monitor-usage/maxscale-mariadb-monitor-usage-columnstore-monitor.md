@@ -9,13 +9,13 @@
 
 ## Designing for MaxScale's ColumnStore Monitor
 
-MaxScale's [ColumnStore Monitor (csmon)](../../../../archive-of-2.x-versions-and-6/mariadb-maxscale-25/maxscale-25-monitors/mariadb-maxscale-25-columnstore-monitor.md) monitors
+MaxScale's [ColumnStore Monitor (csmon)](broken-reference) monitors
 
-Additional information is available [here](../../../../archive-of-2.x-versions-and-6/mariadb-maxscale-25/maxscale-25-monitors/mariadb-maxscale-25-columnstore-monitor.md).
+Additional information is available [here](broken-reference).
 
 ## Understanding MaxScale's ColumnStore Monitor
 
-MaxScale's [ColumnStore Monitor (csmon)](../../../../archive-of-2.x-versions-and-6/mariadb-maxscale-25/maxscale-25-monitors/mariadb-maxscale-25-columnstore-monitor.md) monitors ColumnStore deployments.
+MaxScale's [ColumnStore Monitor (csmon)](broken-reference) monitors ColumnStore deployments.
 
 ## What Does the ColumnStore Monitor Support?
 

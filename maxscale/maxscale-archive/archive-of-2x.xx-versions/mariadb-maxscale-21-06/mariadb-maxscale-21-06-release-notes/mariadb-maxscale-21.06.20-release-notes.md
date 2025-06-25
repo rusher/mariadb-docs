@@ -4,7 +4,7 @@ Release 21.06.20 is a GA release.
 
 This document describes the changes in release 21.06.20, when compared to the previous release in the same series.
 
-If you are upgrading from an older major version of MaxScale, please read the [upgrading document](../../../archive-of-2.x-versions-and-6/mariadb-maxscale-mariadb-maxscale-20/mariadb-maxscale-20-upgrading-maxscale/) for this MaxScale version.
+If you are upgrading from an older major version of MaxScale, please read the [upgrading document](broken-reference) for this MaxScale version.
 
 For any problems you encounter, please consider submitting a bug report on [our Jira](https://jira.mariadb.org/projects/MXS).
 

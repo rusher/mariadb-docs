@@ -1,31 +1,24 @@
+# MaxScale 23.08 Simple Sharding with Two Servers
 
-# Simple Sharding with Two Servers
+## Simple Sharding with Two Servers
 
-# Schemarouter: Simple Sharding With Two Servers
+## Schemarouter: Simple Sharding With Two Servers
 
-
-Sharding is the method of splitting a single logical database server into
-separate physical databases. This tutorial describes a very simple way of
-sharding. Each schema is located on a different database server and MariaDB
-MaxScale's schemarouter module is used to combine them into a single logical
+Sharding is the method of splitting a single logical database server into\
+separate physical databases. This tutorial describes a very simple way of\
+sharding. Each schema is located on a different database server and MariaDB\
+MaxScale's schemarouter module is used to combine them into a single logical\
 database server.
 
+### Environment
 
-## Environment
-
-
-This tutorial was written for Ubuntu 22.04, MaxScale 23.08 and
-[MariaDB 10.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-11-series/what-is-mariadb-1011). In addition to
-the MaxScale server, you'll need two MariaDB servers which will be used for the
+This tutorial was written for Ubuntu 22.04, MaxScale 23.08 and[MariaDB 10.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-11-series/what-is-mariadb-1011). In addition to\
+the MaxScale server, you'll need two MariaDB servers which will be used for the\
 sharding. The installation of MariaDB is not covered by this tutorial.
 
-
-## Installing MaxScale
-
+### Installing MaxScale
 
 The easiest way to install MaxScale is to use the MariaDB repositories.
-
-
 
 ```
 # Install MaxScale
@@ -35,23 +28,16 @@ curl -LsS https://r.mariadb.com/downloads/mariadb_repo_setup | sudo bash
 apt -y install maxscale
 ```
 
+### Creating Users
 
+This tutorial uses a broader set of grants than is required for the sake of\
+brevity and backwards compatibility. For the minimal set of grants, refer to the[MaxScale Configuration Guide](../../../../../en/maxscale-2308-getting-started-mariadb-maxscale-configuration-guide/).
 
-## Creating Users
-
-
-This tutorial uses a broader set of grants than is required for the sake of
-brevity and backwards compatibility. For the minimal set of grants, refer to the
-[MaxScale Configuration Guide](/en/maxscale-2308-getting-started-mariadb-maxscale-configuration-guide/).
-
-
-All MaxScale configurations require at least two accounts: one for reading
-authentication data and another for monitoring the state of the
-database. Services will use the first one and monitors will use the second
-one. In addition to this, we want to have a separate account that our
+All MaxScale configurations require at least two accounts: one for reading\
+authentication data and another for monitoring the state of the\
+database. Services will use the first one and monitors will use the second\
+one. In addition to this, we want to have a separate account that our\
 application will use.
-
-
 
 ```
 -- Create the user for the service
@@ -71,22 +57,15 @@ CREATE USER app_user@'%' IDENTIFIED BY 'secret';
 GRANT SELECT, INSERT, UPDATE, DELETE ON *.* TO app_user@'%';
 ```
 
-
-
 All of the users must be created on both of the MariaDB servers.
 
+### Creating the Schemas and Tables
 
-## Creating the Schemas and Tables
-
-
-Each server will hold one unique schema which contains the data of one specific
-customer. We'll also create a shared schema that is present on all shards that
+Each server will hold one unique schema which contains the data of one specific\
+customer. We'll also create a shared schema that is present on all shards that\
 the shard-local tables can be joined into.
 
-
 Create the tables on the first server:
-
-
 
 ```
 CREATE DATABASE IF NOT EXISTS customer_01;
@@ -99,11 +78,7 @@ CREATE TABLE IF NOT EXISTS shared_info.account_types(account_type INT, type_name
 INSERT INTO shared_info.account_types VALUES (1, 'admin'), (2, 'user');
 ```
 
-
-
 Create the tables on the second server:
-
-
 
 ```
 CREATE DATABASE IF NOT EXISTS customer_02;
@@ -116,19 +91,13 @@ CREATE TABLE IF NOT EXISTS shared_info.account_types(account_type INT, type_name
 INSERT INTO shared_info.account_types VALUES (1, 'admin'), (2, 'user');
 ```
 
-
-
-## Configuring MaxScale
-
+### Configuring MaxScale
 
 The MaxScale configuration is stored in `/etc/maxscale.cnf`.
 
-
-First, we configure two servers we will use to shard our database. The `db-01`
-server has the `customer_01` schema and the `db-02` server has the `customer_02`
+First, we configure two servers we will use to shard our database. The `db-01`\
+server has the `customer_01` schema and the `db-02` server has the `customer_02`\
 schema.
-
-
 
 ```
 [db-01]
@@ -142,16 +111,11 @@ address=192.168.0.103
 port=3306
 ```
 
-
-
-The next step is to configure the service which the users connect to. This
-section defines which router to use, which servers to connect to and the
-credentials to use. For sharding, we use schemarouter router and the
-service_user credentials we defined earlier. By default the schemarouter warns
-if two or more nodes have duplicate schemas so we need to ignore them with
-`ignore_tables_regex=.*`.
-
-
+The next step is to configure the service which the users connect to. This\
+section defines which router to use, which servers to connect to and the\
+credentials to use. For sharding, we use schemarouter router and the\
+service\_user credentials we defined earlier. By default the schemarouter warns\
+if two or more nodes have duplicate schemas so we need to ignore them with`ignore_tables_regex=.*`.
 
 ```
 [Sharded-Service]
@@ -163,12 +127,8 @@ password=secret
 ignore_tables_regex=.*
 ```
 
-
-
-After this we configure a listener for the service. The listener is the actual
+After this we configure a listener for the service. The listener is the actual\
 port that the user connects to. We will use the port 4000.
-
-
 
 ```
 [Sharded-Service-Listener]
@@ -177,16 +137,12 @@ service=Sharded-Service
 port=4000
 ```
 
-
-
-The final step is to configure a monitor which will monitor the state of the
-servers. The monitor will notify MariaDB MaxScale if the servers are down. We
-add the two servers to the monitor and use the `monitor_user` credentials. For
-the sharding use-case, the `galeramon` module is suitable even if we're not
-using a Galera cluster. The `schemarouter` is only interested in whether the
+The final step is to configure a monitor which will monitor the state of the\
+servers. The monitor will notify MariaDB MaxScale if the servers are down. We\
+add the two servers to the monitor and use the `monitor_user` credentials. For\
+the sharding use-case, the `galeramon` module is suitable even if we're not\
+using a Galera cluster. The `schemarouter` is only interested in whether the\
 server is in the `Running` state or in the `Down` state.
-
-
 
 ```
 [Shard-Monitor]
@@ -197,12 +153,7 @@ user=monitor_user
 password=secret
 ```
 
-
-
-After this we have a fully working configuration and the contents of
-`/etc/maxscale.cnf` should look like this.
-
-
+After this we have a fully working configuration and the contents of`/etc/maxscale.cnf` should look like this.
 
 ```
 [db-01]
@@ -237,31 +188,21 @@ user=monitor_user
 password=secret
 ```
 
-
-
 Then you're ready to start MaxScale.
-
-
 
 ```
 systemctl start maxscale.service
 ```
 
+### Testing the Sharding
 
-
-## Testing the Sharding
-
-
-MariaDB MaxScale is now ready to start accepting client connections and routing
-them. Queries are routed to the right servers based on the database they target
-and switching between the shards is seamless since MariaDB MaxScale keeps the
+MariaDB MaxScale is now ready to start accepting client connections and routing\
+them. Queries are routed to the right servers based on the database they target\
+and switching between the shards is seamless since MariaDB MaxScale keeps the\
 session state intact between servers.
 
-
-To test, we query the schema that's located on the local shard and join it to
+To test, we query the schema that's located on the local shard and join it to\
 the shared table.
-
-
 
 ```
 $ mariadb -A -u app_user -psecret -h 127.0.0.1 -P 4000
@@ -296,11 +237,7 @@ MariaDB [customer_02]> SELECT c.account_name, c.account_type, s.type_name FROM a
 1 row in set (0.000 sec)
 ```
 
-
-
 The sharding also works even if no default database is selected.
-
-
 
 ```
 MariaDB [(none)]> SELECT c.account_name, c.account_type, s.type_name FROM customer_01.accounts c
@@ -322,11 +259,7 @@ MariaDB [(none)]> SELECT c.account_name, c.account_type, s.type_name FROM custom
 1 row in set (0.001 sec)
 ```
 
-
-
 One limitation of this sort of simple sharding is that cross-shard joins are not possible.
-
-
 
 ```
 MariaDB [(none)]> SELECT * FROM customer_01.accounts UNION SELECT * FROM customer_02.accounts;
@@ -341,13 +274,8 @@ MariaDB [customer_02]> SELECT * FROM customer_01.accounts UNION SELECT * FROM cu
 ERROR 1146 (42S02): Table 'customer_01.accounts' doesn't exist
 ```
 
-
-
-In most multi-tenant situations, this is an acceptable limitation. If you do
-need cross-shard joins, the
-[Spider](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/spider/spider-storage-engine-overview) storage
+In most multi-tenant situations, this is an acceptable limitation. If you do\
+need cross-shard joins, the[Spider](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/spider/spider-storage-engine-overview) storage\
 engine will provide you this.
 
-
 CC BY-SA / Gnu FDL
-
