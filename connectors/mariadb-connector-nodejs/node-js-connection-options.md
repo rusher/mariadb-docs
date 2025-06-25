@@ -24,7 +24,7 @@
 |     **connectTimeout** | Connection timeout in milliseconds (default changed from 10000 to 1000 in 2.5.6)                                                                                                                                                                                         | *integer* |    1000     |
 |      **socketTimeout** | Socket timeout in milliseconds after the connection is established                                                                                                                                                                                                       | *integer* |      0      |
 |        **rowsAsArray** | Return result-sets as array, rather than a JSON object. This is a faster way to get results.  For more information, see the [Promise](../README.md#querysql-values---promise) and [Callback](callback-api.md#querysql-values-callback---emoitter) query implementations. | *boolean* |    false    |
-|   **maxAllowedPacket** | permit to indicate server global variable [max_allowed_packet](https://mariadb.com/kb/en/library/server-system-variables/#max_allowed_packet) value to ensure efficient batching. default is 4Mb. see [batch documentation](./batch.md)                                  | *integer* |   4196304   |
+|   **maxAllowedPacket** | permit to indicate server global variable [max_allowed_packet](https://mariadb.com/docs/server/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables/#max_allowed_packet) value to ensure efficient batching. default is 4Mb. see [batch documentation](./batch.md)                                  | *integer* |   4196304   |
 |   **insertIdAsNumber** | Whether the query should return last insert id from INSERT/UPDATE command as BigInt or Number. default return BigInt                                                                                                                                                     | *boolean* |    false    |
 |    **decimalAsNumber** | Whether the query should return decimal as Number. If enable, this might return approximate values.                                                                                                                                                                      | *boolean* |    false    |
 |     **bigIntAsNumber** | Whether the query should return BigInt data type as Number. If enable, this might return approximate values.                                                                                                                                                             | *boolean* |    false    |
@@ -89,7 +89,7 @@ QUERY: insert into bigParameterInt8 values(?, ?) - parameters:['0000000...]
 
 **Example:**
 
-```javascript
+```js
 const mariadb = require('mariadb');
 const winston = require('winston');
 
@@ -142,15 +142,14 @@ SHOW VARIABLES LIKE 'have_ssl';
 ```
 
 A value of `NO` indicates that MariaDB was compiled without support for TLS.  `DISABLED` means that it was compiled with TLS support, but it's currently turned off.  In order to use SSL with the Connector, the server must return `YES`, indicating that TLS support is available and turned on.
-For more information, see the [MariaDB Server](https://mariadb.com/kb/en/library/secure-connections/) documentation.
+For more information, see the [MariaDB Server](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption) documentation.
 
 
 ### User Configuration
 
-Enabling the `ssl` system variable on the server, the Connector uses one-way SSL authentication to connect to the server. Additionally, it's recommended that you also configure your users to connect through SSL.  This ensures that their accounts can only be used with an SSL connection.
+Enabling the [ssl option](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/starting-and-stopping-mariadb/mariadbd-options) on the server, the Connector uses one-way SSL authentication to connect to the server. Additionally, it's recommended that you also configure your users to connect through SSL. This ensures that their accounts can only be used with an SSL connection.
 
-For `GRANT` statements, use the `REQUIRE SSL` option for one-way SSL authentication and the `REQUIRE X509` option for two-way SSL authentication.  For more information, see the [`CREATE USER`](https://mariadb.com/kb/en/library/create-user/) documentation.
-
+For [GRANT statements](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant), use the [REQUIRE SSL](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant#per-account-ssltls-options) option for one-way SSL authentication and the [REQUIRE X509](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/grant#per-account-ssltls-options) option for two-way SSL authentication. For more information, see the [CREATE USER](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/account-management-sql-commands/create-user) documentation.
 
 ```sql
 CREATE USER 'johnSmith'@'%' IDENTIFIED BY PASSWORD('passwd');
@@ -198,14 +197,16 @@ When using a certificate signed with a certificate chain from a root CA known to
 
 #### Certificate Chain Validation
 
-A certificate chain is a list of certificates that were issued from the same Certification Authority hierarchy.  In order for any certificate to be validated, all certificates in the chain have to be validated.
+A certificate chain is a list of certificates that were issued from the same Certification Authority hierarchy.
+In order for any certificate to be validated, all certificates in the chain have to be validated.
 
-In cases where intermediate or root certificates are not trusted by the Connector, the Connector rejects the connection and issues an error.
+In cases where the Connector does not trust intermediate or root certificates, the Connector rejects the connection and issues an error.
 
 
 #### Hostname Verification (SNI)
 
-Certificates can provide hostname verification to the driver.  By default this is done against the certificate's `subjectAlternativeName` DNS name field.
+Certificates can provide hostname verification to the driver.
+By default, this is done against the certificate's `subjectAlternativeName` DNS name field.
 
 
 ### One-way SSL Authentication
@@ -215,7 +216,7 @@ When the server certificate is signed using the certificate chain that uses a ro
 
 For example,
 
-```javascript
+```js
 const mariadb = require('mariadb');
 mariadb
  .createConnection({
@@ -232,7 +233,7 @@ Previously to this version or using non-MariaDB server, when the server uses a s
 
 In non-production environments, you can tell the Connector to trust all certificates by setting `rejectUnauthorized` to `false`.  Do **NOT** use this in production.
 
-```javascript
+```js
 //connecting
 mariadb
  .createConnection({
@@ -247,7 +248,7 @@ mariadb
 
 A more secure alternative is to provide the certificate chain to the Connector.
 
-```javascript
+```js
 const fs = require("fs");
 const mariadb = require('mariadb');
 
@@ -272,7 +273,7 @@ In situations where you don't like the default TLS protocol or cipher or where y
 
 For instance, say you want to connect using TLS version 1.2:
 
-```javascript
+```js
 //connecting
 mariadb
  .createConnection({ 
@@ -316,9 +317,10 @@ You can test it by creating a user with `REQUIRE X509` for testing:
 CREATE USER 'X509testUser'@'%';
 GRANT ALL PRIVILEGES ON *.* TO 'X509testUser'@'%' REQUIRE X509;
 ```
+
 Then use its credentials in your application:
 
-```javascript
+```js
 const fs = require("fs");
 const mariadb = require('mariadb');
 
@@ -344,19 +346,19 @@ mariadb
 
 Keystores allow you to store private keys and certificate chains encrypted with a password to file.   For instance, using OpenSSL you can generate a keystore using PKCS12 format:
 
-```
-$ openssl pkcs12 \
+```bash
+openssl pkcs12 \
 	-export \
 	-in "${clientCertFile}" \
 	-inkey "${clientKeyFile}" \
 	-out "${keystoreFile}" \
 	-name "mariadbAlias" \
 	-passout pass:kspass
-```    
+```
 
 You can then use the keystore in your application:
 
-```javascript
+```js
 const fs = require("fs");
 const mariadb = require('mariadb');
 
@@ -395,7 +397,7 @@ mariadb.createConnection({
 | **pipelining** | Sends queries one by one without waiting on the results of the previous entry.  For more information, see [Pipelining](/documentation/pipelining.md)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |   *boolean*    |        true        |
 | **trace** | Adds the stack trace at the time of query creation to the error stack trace, making it easier to identify the  part of the code that issued the query.  Note: This feature is disabled by default due to the performance cost of stack creation.  Only turn it on when you need to debug issues.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |   *boolean*    |       false        |
 | **typeCast** | Allows you to cast result types.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |   *function*   |
-| **connectAttributes** | Sends information, (client name, version, operating system, Node.js version, and so on) to the [Performance Schema](https://mariadb.com/kb/en/library/performance-schema-session_connect_attrs-table/). When enabled, the Connector sends JSON attributes in addition to the defaults.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | *boolean/json* |       false        |
+| **connectAttributes** | Sends information, (client name, version, operating system, Node.js version, and so on) to the [Performance Schema](https://mariadb.com/docs/server/reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables/performance-schema-session_connect_attrs-table). When enabled, the Connector sends JSON attributes in addition to the defaults.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | *boolean/json* |       false        |
 | **metaAsArray** | Compatibility option, causes Promise to return an array object, `[rows, metadata]` rather than the rows as JSON objects with a `meta` property.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |   *boolean*    |       false        |
 | **permitSetMultiParamEntries** | Compatibility option to permit setting multiple value by a JSON object to replace one question mark. key values will replace the question mark with format like `key1`=val,`key2`='val2'. Since it doesn't respect the usual prepared statement format that one value is for one question mark, this can lead to incomprehension, even if badly use to possible injection. this only works using `query` function (not compatible with `batch` and `execute` functions)                                                                                                                                                                                                                                                                                                                         |   *boolean*    |       false        |
 | **sessionVariables** | Permit to set session variables when connecting. Example: sessionVariables:{'idle_transaction_timeout':10000}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |     *json*     |
@@ -407,7 +409,7 @@ mariadb.createConnection({
 | **arrayParenthesis** | Indicate if array are included in parenthesis. This option permit compatibility with version < 2.5                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |   *boolean*    |       false        |
 | **autoJsonMap** | indicate if JSON fields for MariaDB server 10.5.2+ results in JSON format (or String if disabled)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |   *boolean*    |        true        |
 | **jsonStrings** | force JSON fields as string (MySQL JSON field or MariaDB server 10.5.2+ results in JSON format). When set, autoJsonMap is forced to false                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |   *boolean*    |       false        |
-| **keepAliveDelay** | permit to enable socket keep alive, setting delay. 0 means not enabled. Keep in mind that this don't reset server [@@wait_timeout](https://mariadb.com/kb/en/library/server-system-variables/#wait_timeout) (use pool option idleTimeout for that). in ms. For mysql2 compatibility, setting enableKeepAlive and keepAliveInitialDelay alias is permitted. i.e. enableKeepAlive=true&keepAliveInitialDelay=1000 corresponds to setting keepAliveDelay=1000 directly                                                                                                                                                                                                                                                                                                                             |     *int*      |                    |
+| **keepAliveDelay** | permit to enable socket keep alive, setting delay. 0 means not enabled. Keep in mind that this don't reset server [@@wait_timeout](https://mariadb.com/docs/server/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables/#wait_timeout) (use pool option idleTimeout for that). in ms. For mysql2 compatibility, setting enableKeepAlive and keepAliveInitialDelay alias is permitted. i.e. enableKeepAlive=true&keepAliveInitialDelay=1000 corresponds to setting keepAliveDelay=1000 directly                                                                                                                                                                                                                                                                                                                             |     *int*      |                    |
 | **rsaPublicKey** | Indicate path/content to MySQL server RSA public key. use requires Node.js v11.6+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |    *string*    |                    |
 | **cachingRsaPublicKey** | Indicate path/content to MySQL server caching RSA public key. use requires Node.js v11.6+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |    *string*    |                    |
 | **allowPublicKeyRetrieval** | Indicate that if `rsaPublicKey` or `cachingRsaPublicKey` public key are not provided, if client can ask server to send public key.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |   *boolean*    |       false        |
@@ -430,7 +432,7 @@ The option `stream` permit defined a tunnel. stream function has a callback (opt
 
 Example using `tunnel-ssh`:
 
-```
+```js
 const conn = await mariadb.createConnection({
         user: 'myUser',
         password: 'mYpwd',
@@ -477,7 +479,6 @@ The error "1976:error:1425F102:SSL routines:ssl_choose_client_version:unsupporte
 This can be solved by :
 - Server side: update MariaDB to a recent version
 - Client side: permit a lesser version with "tls.DEFAULT_MIN_VERSION = 'TLSv1.1';" or with connection configuration: using option `ssl: { secureProtocol: 'TLSv1_1_method' }'
-
 
 
 {% @marketo/form formId="4316" %}
