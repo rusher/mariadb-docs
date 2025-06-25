@@ -39,11 +39,7 @@ Thanks, and enjoy MariaDB!
 ### Changelog
 
 For a complete list of changes made in MariaDB 11.4.7, with links to detailed\
-information on each push, see the changelog.
-
-### Contributors
-
-For a full list of contributors to MariaDB 11.4.7, see the [MariaDB Foundation release announcement](https://mariadb.org/mariadb-11-4-5-10-11-11-10-6-21-and-10-5-28-now-available/).
+information on each push, see the [changelog](../changelogs/changelogs-mariadb-11-4-series/mariadb-11.4.7-changelog.md).
 
 {% include "../../.gitbook/includes/announce.md" %}
 
