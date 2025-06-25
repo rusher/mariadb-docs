@@ -9,7 +9,15 @@ SHOW [FULL] TABLES [FROM db_name]
 
 ## Description
 
-`SHOW TABLES` lists the tables (until [MariaDB 11.2.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-0-release-notes), only non-`TEMPORARY` tables are shown), [sequences](../../../sql-structure/sequences/) and [views](../../../../server-usage/views/) in a given database.
+{% tabs %}
+{% tab title="Current" %}
+`SHOW TABLES` lists the tables, [sequences](../../../sql-structure/sequences/) and [views](../../../../server-usage/views/) in a given database.
+{% endtab %}
+
+{% tab title="< 11.2.0" %}
+`SHOW TABLES` lists the tables (only non-`TEMPORARY` tables are shown), [sequences](../../../sql-structure/sequences/) and [views](../../../../server-usage/views/) in a given database.
+{% endtab %}
+{% endtabs %}
 
 The `LIKE` clause, if present on its own, indicates which table names to match. The `WHERE` and `LIKE` clauses can be given to select rows using more general conditions, as discussed in [Extended SHOW](extended-show.md). For example, when searching for tables in the `test` database, the column name for use in the `WHERE` and `LIKE` clauses will be `Tables_in_test`
 
@@ -107,6 +115,6 @@ SHOW TABLES;
 * [SHOW TABLE STATUS](show-table-status.md)
 * The [information\_schema.TABLES](../system-tables/information-schema/information-schema-tables/information-schema-tables-table.md) table
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

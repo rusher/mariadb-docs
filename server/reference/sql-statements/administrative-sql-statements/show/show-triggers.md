@@ -9,11 +9,19 @@ SHOW TRIGGERS [FROM db_name]
 
 ## Description
 
-`SHOW TRIGGERS` lists the triggers currently defined for tables in a database (the default database unless a `FROM` clause is given). This statement requires the[TRIGGER](show-privileges.md) privilege (prior to MySQL 5.1.22, it required the `SUPER` privilege).
+{% tabs %}
+{% tab title="Current" %}
+`SHOW TRIGGERS` lists the triggers currently defined for tables in a database (the default database unless a `FROM` clause is given). This statement requires the [TRIGGER](show-privileges.md) privilege.
+{% endtab %}
+
+{% tab title="< 5.1.22" %}
+`SHOW TRIGGERS` lists the triggers currently defined for tables in a database (the default database unless a `FROM` clause is given). This statement requires the `SUPER` privilege.
+{% endtab %}
+{% endtabs %}
 
 The `LIKE` clause, if present on its own, indicates which table names to match and causes the statement to display triggers for those tables. The `WHERE` and `LIKE` clauses can be given to select rows using more general conditions, as discussed in [Extended SHOW](extended-show.md).
 
-Similar information is stored in the [information_schema.TRIGGERS](../system-tables/information-schema/information-schema-tables/information-schema-triggers-table.md) table.
+Similar information is stored in the [information\_schema.TRIGGERS](../system-tables/information-schema/information-schema-tables/information-schema-triggers-table.md) table.
 
 If there are multiple triggers for the same action, then the triggers are shown in action order.
 
@@ -83,13 +91,23 @@ collation_connection: utf8_general_ci
   Database Collation: latin1_swedish_ci
 ```
 
-* `character_set_client` is the session value of the [character_set_client](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#character_set_client) system variable when the trigger was created.
-* `collation_connection` is the session value of the [collation_connection](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#collation_connection) system variable when the trigger was   created.
-* `Database Collation` is the collation of the database   with which the trigger is associated.
+{% tabs %}
+{% tab title="Current" %}
+`character_set_client` is the session value of the [character\_set\_client](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#character_set_client) system variable when the trigger was created.
 
-These columns were added in MariaDB/MySQL 5.1.21.
+`collation_connection` is the session value of the [collation\_connection](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#collation_connection) system variable when the trigger was created.
 
-Old triggers created before MySQL 5.7 and [MariaDB 10.2.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-1023-release-notes) have NULL in the `Created` column.
+`Database Collation` is the collation of the database with which the trigger is associated.
+{% endtab %}
+
+{% tab title="< 5.1.21" %}
+`character_set_client`, `collation_connection`, and`Database Collation` are not available.
+{% endtab %}
+{% endtabs %}
+
+{% hint style="info" %}
+Old triggers created before MySQL 5.7 and MariaDB 10.2.3 have NULL in the `Created` column.
+{% endhint %}
 
 ## See also
 
@@ -100,6 +118,6 @@ Old triggers created before MySQL 5.7 and [MariaDB 10.2.3](https://app.gitbook.c
 * [SHOW CREATE TRIGGER](show-create-trigger.md)
 * [Trigger Limitations](../../../../server-usage/triggers-events/triggers/trigger-limitations.md)
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

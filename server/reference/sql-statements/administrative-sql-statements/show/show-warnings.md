@@ -25,15 +25,13 @@ SELECT @@warning_count;
 
 The value of [warning\_count](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#warning_count) might be greater than the number of messages displayed by `SHOW WARNINGS` if the [max\_error\_count](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_error_count) system variable is set so low that not all messages are stored.
 
-The `LIMIT` clause has the same syntax as for the[SELECT statement](../../data-manipulation/selecting-data/select.md).
+The `LIMIT` clause has the same syntax as for the [SELECT statement](../../data-manipulation/selecting-data/select.md).
 
 `SHOW WARNINGS` can be used after [EXPLAIN EXTENDED](../analyze-and-explain-statements/explain.md) to see how a query is internally rewritten by MariaDB.
 
 If the [sql\_notes](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#sql_notes) server variable is set to 1, Notes are included in the output of `SHOW WARNINGS`; if it is set to 0, this statement will not show (or count) Notes.
 
 The results of `SHOW WARNINGS` and `SHOW COUNT(*) WARNINGS` are directly sent to the client. If you need to access those information in a stored program, you can use the [GET DIAGNOSTICS](../../programmatic-compound-statements/programmatic-compound-statements-diagnostics/get-diagnostics.md) statement instead.
-
-For a list of MariaDB error codes, see [MariaDB Error Codes](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/administrative-sql-statements/show/broken-reference/README.md).
 
 The [mariadb](../../../../clients-and-utilities/mariadb-client/mariadb-command-line-client.md) client also has a number of options related to warnings. The `\W` command will show warnings after every statement, while `\w` will disable this. Starting the client with the `--show-warnings` option will show warnings after every statement.
 
