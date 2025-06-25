@@ -68,7 +68,7 @@ This list includes all features since the previous long-term release, [MariaDB 1
 
 * New [mariadb-dump](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/backup-restore-and-import-clients/mariadb-dump) option, `-j`, `--parallel=` for increased parallelism, specifies the number of dump table jobs executed in parallel (only for use with the `--tab` option). Also added to [mariadb-import](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/backup-restore-and-import-clients/mariadb-import), with `--use-threads` as a synonym. ([MDEV-32216](https://jira.mariadb.org/browse/MDEV-32216))
 * [mariabackup --innobackupex](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/mariadb-11-4-series/broken-reference/README.md) mode has been deprecated ([MDEV-31505](https://jira.mariadb.org/browse/MDEV-31505), [MariaDB 11.3](../old-releases/release-notes-mariadb-11-3-rolling-releases/what-is-mariadb-113.md))
-* Rename [mariadb-backup’s](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup) xtrabackup\_\* files to mariadb\_backup\_\* ([MDEV-18931](https://jira.mariadb.org/browse/MDEV-18931), [MariaDB 11.1](../old-releases/release-notes-mariadb-11-1-series/what-is-mariadb-111.md))
+* Rename [mariadb-backup’s](broken-reference) xtrabackup\_\* files to mariadb\_backup\_\* ([MDEV-18931](https://jira.mariadb.org/browse/MDEV-18931), [MariaDB 11.1](../old-releases/release-notes-mariadb-11-1-series/what-is-mariadb-111.md))
 
 #### Application-Time Periods
 
@@ -160,14 +160,14 @@ page.
 
 ### List of All [MariaDB 11.4](what-is-mariadb-114.md) Releases
 
-| Date        | Release                                           | Status      | Release Notes                                    | Changelog                                                                                |
-| ----------- | ------------------------------------------------- | ----------- | ------------------------------------------------ | ---------------------------------------------------------------------------------------- |
-| Date        | Release                                           | Status      | Release Notes                                    | Changelog                                                                                |
-| 4 Feb 2025  | [MariaDB 11.4.5](mariadb-11-4-5-release-notes.md) | Stable (GA) | [Release Notes](mariadb-11-4-5-release-notes.md) | [Changelog](../../changelogs/changelogs-mariadb-11-4-series/mariadb-11-4-5-changelog.md) |
-| 1 Nov 2024  | [MariaDB 11.4.4](mariadb-11-4-4-release-notes.md) | Stable (GA) | [Release Notes](mariadb-11-4-4-release-notes.md) | [Changelog](../../changelogs/changelogs-mariadb-11-4-series/mariadb-11-4-4-changelog.md) |
-| 8 Aug 2024  | [MariaDB 11.4.3](mariadb-11-4-3-release-notes.md) | Stable (GA) | [Release Notes](mariadb-11-4-3-release-notes.md) | [Changelog](../../changelogs/changelogs-mariadb-11-4-series/mariadb-11-4-3-changelog.md) |
-| 29 May 2024 | [MariaDB 11.4.2](mariadb-11-4-2-release-notes.md) | Stable (GA) | [Release Notes](mariadb-11-4-2-release-notes.md) | [Changelog](../../changelogs/changelogs-mariadb-11-4-series/mariadb-11-4-2-changelog.md) |
-| 16 Feb 2024 | [MariaDB 11.4.1](mariadb-11-4-1-release-notes.md) | RC          | [Release Notes](mariadb-11-4-1-release-notes.md) | [Changelog](../../changelogs/changelogs-mariadb-11-4-series/mariadb-11-4-1-changelog.md) |
-| 24 Dec 2023 | [MariaDB 11.4.0](mariadb-11-4-0-release-notes.md) | Alpha       | [Release Notes](mariadb-11-4-0-release-notes.md) |                                                                                          |
+| Date        | Release                                           | Status      | Release Notes                                    | Changelog                                                                             |
+| ----------- | ------------------------------------------------- | ----------- | ------------------------------------------------ | ------------------------------------------------------------------------------------- |
+| Date        | Release                                           | Status      | Release Notes                                    | Changelog                                                                             |
+| 4 Feb 2025  | [MariaDB 11.4.5](mariadb-11-4-5-release-notes.md) | Stable (GA) | [Release Notes](mariadb-11-4-5-release-notes.md) | [Changelog](../changelogs/changelogs-mariadb-11-4-series/mariadb-11-4-5-changelog.md) |
+| 1 Nov 2024  | [MariaDB 11.4.4](mariadb-11-4-4-release-notes.md) | Stable (GA) | [Release Notes](mariadb-11-4-4-release-notes.md) | [Changelog](../changelogs/changelogs-mariadb-11-4-series/mariadb-11-4-4-changelog.md) |
+| 8 Aug 2024  | [MariaDB 11.4.3](mariadb-11-4-3-release-notes.md) | Stable (GA) | [Release Notes](mariadb-11-4-3-release-notes.md) | [Changelog](../changelogs/changelogs-mariadb-11-4-series/mariadb-11-4-3-changelog.md) |
+| 29 May 2024 | [MariaDB 11.4.2](mariadb-11-4-2-release-notes.md) | Stable (GA) | [Release Notes](mariadb-11-4-2-release-notes.md) | [Changelog](../changelogs/changelogs-mariadb-11-4-series/mariadb-11-4-2-changelog.md) |
+| 16 Feb 2024 | [MariaDB 11.4.1](mariadb-11-4-1-release-notes.md) | RC          | [Release Notes](mariadb-11-4-1-release-notes.md) | [Changelog](../changelogs/changelogs-mariadb-11-4-series/mariadb-11-4-1-changelog.md) |
+| 24 Dec 2023 | [MariaDB 11.4.0](mariadb-11-4-0-release-notes.md) | Alpha       | [Release Notes](mariadb-11-4-0-release-notes.md) |                                                                                       |
 
 {% @marketo/form formid="4316" formId="4316" %}

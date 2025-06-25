@@ -2,7 +2,7 @@
 
 The most recent release of [MariaDB 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/broken-reference/README.md) is:[**MariaDB 10.4.34**](mariadb-10-4-34-release-notes.md) Stable (GA) [Download Now](https://downloads.mariadb.org/mariadb/10.4.34/)
 
-[Download 10.4.16](https://downloads.mariadb.org/mariadb/10.4.16/)[Release Notes](mariadb-10416-release-notes.md)[Changelog](../../../changelogs/changelogs-mariadb-10-4-series/mariadb-10416-changelog.md)[Overview of 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/broken-reference/README.md)
+[Download 10.4.16](https://downloads.mariadb.org/mariadb/10.4.16/)[Release Notes](mariadb-10416-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-10-4-series/mariadb-10416-changelog.md)[Overview of 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/broken-reference/README.md)
 
 **Release date:** 3 Nov 2020
 
@@ -81,7 +81,7 @@ This release introduced an InnoDB data corruption bug ([MDEV-24096](https://jira
 ## Changelog
 
 For a complete list of changes made in [MariaDB 10.4.16](mariadb-10416-release-notes.md), with links to detailed\
-information on each push, see the [changelog](../../../changelogs/changelogs-mariadb-10-4-series/mariadb-10416-changelog.md).
+information on each push, see the [changelog](../../changelogs/changelogs-mariadb-10-4-series/mariadb-10416-changelog.md).
 
 ## Contributors
 

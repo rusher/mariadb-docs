@@ -2,14 +2,14 @@
 
 The most recent release in the [MariaDB 5.1 series](changes-improvements-in-mariadb-5-1.md) is:[**MariaDB 5.1.67**](mariadb-5167-release-notes.md)
 
-[Download](https://askmonty.org/wiki/MariaDB:Download:MariaDB_5.1.41) | **Release Notes** | [Changelog](../../../changelogs/changelogs-mariadb-51-series/mariadb-5141-changelog.md) |[Overview of 5.1](changes-improvements-in-mariadb-5-1.md)
+[Download](https://askmonty.org/wiki/MariaDB:Download:MariaDB_5.1.41) | **Release Notes** | [Changelog](../../changelogs/changelogs-mariadb-51-series/mariadb-5141-changelog.md) |[Overview of 5.1](changes-improvements-in-mariadb-5-1.md)
 
 **Release date:** 13 Jan 2010
 
 See the [MariaDB versus MySQL](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-1-series/broken-reference/README.md) page for a high-level\
 overview of the differences between MariaDB and MySQL.
 
-See the [MariaDB 5.1.41 Changelog](../../../changelogs/changelogs-mariadb-51-series/mariadb-5141-changelog.md) for a more detail\
+See the [MariaDB 5.1.41 Changelog](../../changelogs/changelogs-mariadb-51-series/mariadb-5141-changelog.md) for a more detail\
 list of the changes in this release.
 
 This release is a 'release candidate'. This means that we think it's almost\

@@ -97,9 +97,9 @@ modified in that revision.
   2015-12-13 18:41:17 +0100
   * Merge branch 'ob-10.0' into 10.0
 * [Revision #8286b68](https://github.com/MariaDB/server/commit/8286b68)\
-  2015-12-13 18:39:32 +0100
-  *
-    * Copy error message from G to g when using temporary storage for parsing. modified: storage/connect/tabjson.cpp
+  2015-12-13 18:39:32 +0100\
+  \*
+  * Copy error message from G to g when using temporary storage for parsing. modified: storage/connect/tabjson.cpp
 * [Revision #b418e97](https://github.com/MariaDB/server/commit/b418e97)\
   2015-12-13 17:19:18 +0100
   * Merge branch 'merge/merge-perfschema-5.6' into 10.0
@@ -224,9 +224,9 @@ modified in that revision.
   2015-12-09 00:19:00 +0100
   * Commiting merge from ob-10.0
 * [Revision #8ba013a](https://github.com/MariaDB/server/commit/8ba013a)\
-  2015-12-08 16:39:13 +0100
-  *
-    * Serialize: Protect again eventual longjmp's. Always return NULL on error. Adding also the file length. modified: storage/connect/json.cpp modified: storage/connect/jsonudf.cpp
+  2015-12-08 16:39:13 +0100\
+  \*
+  * Serialize: Protect again eventual longjmp's. Always return NULL on error. Adding also the file length. modified: storage/connect/json.cpp modified: storage/connect/jsonudf.cpp
 * [Revision #dac3149](https://github.com/MariaDB/server/commit/dac3149)\
   2015-12-08 17:20:34 +0400
   * [MDEV-9001](https://jira.mariadb.org/browse/MDEV-9001) - \[PATCH] Fix DB name quoting in mysqldump --routine

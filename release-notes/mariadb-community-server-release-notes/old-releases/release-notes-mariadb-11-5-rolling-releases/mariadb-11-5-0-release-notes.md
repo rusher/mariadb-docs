@@ -2,7 +2,7 @@
 
 The most recent release of [MariaDB 11.5](what-is-mariadb-115.md) is:[**MariaDB 11.5.2**](mariadb-11-5-2-release-notes.md) Stable (GA) [Download Now](https://downloads.mariadb.org/mariadb/11.5.2/)
 
-[Download 11.5.0](https://downloads.mariadb.org/mariadb/11.5.0/)[Release Notes](mariadb-11-5-0-release-notes.md)[Changelog](../../../changelogs/changelogs-mariadb-11-5-series/)[Overview of 11.5](what-is-mariadb-115.md)
+[Download 11.5.0](https://downloads.mariadb.org/mariadb/11.5.0/)[Release Notes](mariadb-11-5-0-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-11-5-series/)[Overview of 11.5](what-is-mariadb-115.md)
 
 **Release date:** 18 March 2024
 

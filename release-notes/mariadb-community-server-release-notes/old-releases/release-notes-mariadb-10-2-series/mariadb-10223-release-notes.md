@@ -2,7 +2,7 @@
 
 The most recent release of [MariaDB 10.2](what-is-mariadb-102.md) is:[**MariaDB 10.2.44**](mariadb-10244-release-notes.md) Stable (GA) [Download Now](https://downloads.mariadb.org/mariadb/10.2.44/)
 
-[Download](https://downloads.mariadb.org/mariadb/10.2.23/)[Release Notes](mariadb-10223-release-notes.md)[Changelog](../../../changelogs/changelogs-mariadb-102-series/mariadb-10223-changelog.md)[Overview of 10.2](what-is-mariadb-102.md)
+[Download](https://downloads.mariadb.org/mariadb/10.2.23/)[Release Notes](mariadb-10223-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-102-series/mariadb-10223-changelog.md)[Overview of 10.2](what-is-mariadb-102.md)
 
 **Release date:** 25 Mar 2019
 
@@ -29,7 +29,7 @@ Thanks, and enjoy MariaDB!
 * Corruption bug fixes:
   * [MDEV-18272](https://jira.mariadb.org/browse/MDEV-18272): InnoDB fails to rollback after exceeding FOREIGN KEY recursion depth
   * [MDEV-9519](https://jira.mariadb.org/browse/MDEV-9519): Data corruption on Galera cluster size change
-* [mariadb-backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup):
+* [mariadb-backup](broken-reference):
   * [MDEV-18204](https://jira.mariadb.org/browse/MDEV-18204): fix incremental MyRocks backup
   * [MDEV-18611](https://jira.mariadb.org/browse/MDEV-18611): mariabackup terminated while copying InnoDB redo log
   * [MDEV-18669](https://jira.mariadb.org/browse/MDEV-18669): mariabackup writes timestamp in version line
@@ -47,12 +47,12 @@ Thanks, and enjoy MariaDB!
   * CVE-\`-\`\`\`
 
 When upgrading from [MariaDB 10.2.16](mariadb-10216-release-notes.md) or earlier to [MariaDB 10.2.17](mariadb-10217-release-notes.md) or higher,\
-running [mysql_upgrade](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/legacy-clients-and-utilities/mysql_upgrade) is **required** due to changes introduced in[MDEV-14637](https://jira.mariadb.org/browse/MDEV-14637).
+running [mysql\_upgrade](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/legacy-clients-and-utilities/mysql_upgrade) is **required** due to changes introduced in[MDEV-14637](https://jira.mariadb.org/browse/MDEV-14637).
 
 ## Changelog
 
 For a complete list of changes made in [MariaDB 10.2.23](mariadb-10223-release-notes.md) with links to detailed\
-information on each push, see the [changelog](../../../changelogs/changelogs-mariadb-102-series/mariadb-10223-changelog.md).
+information on each push, see the [changelog](../../changelogs/changelogs-mariadb-102-series/mariadb-10223-changelog.md).
 
 ## Contributors
 

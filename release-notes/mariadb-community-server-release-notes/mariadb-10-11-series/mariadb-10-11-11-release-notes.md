@@ -1,6 +1,6 @@
 # MariaDB 10.11.11 Release Notes
 
-[Download](https://mariadb.com/downloads)[Release Notes](mariadb-10-11-11-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-10-11-series/mariadb-10-11-11-changelog.md)[Overview of 10.11](what-is-mariadb-1011.md)
+[Download](https://mariadb.com/downloads)[Release Notes](mariadb-10-11-11-release-notes.md)[Changelog](../changelogs/changelogs-mariadb-10-11-series/mariadb-10-11-11-changelog.md)[Overview of 10.11](what-is-mariadb-1011.md)
 
 [_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/10.11.11/)
 
@@ -131,7 +131,7 @@ Thanks, and enjoy MariaDB!
 ## Changelog
 
 For a complete list of changes and bugfixes made in [MariaDB 10.11.11](mariadb-10-11-11-release-notes.md), with links to detailed\
-information on each push, see the [changelog](../../changelogs/changelogs-mariadb-10-11-series/mariadb-10-11-11-changelog.md).
+information on each push, see the [changelog](../changelogs/changelogs-mariadb-10-11-series/mariadb-10-11-11-changelog.md).
 
 ## Contributors
 

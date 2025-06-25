@@ -2,7 +2,7 @@
 
 The most recent release in the [MariaDB 5.2 series](changes-improvements-in-mariadb-5-2.md) is:[**MariaDB 5.2.14**](mariadb-5214-release-notes.md)
 
-[Download](https://downloads.askmonty.org/mariadb/5.2.6) |**Release Notes** |[Changelog](../../../changelogs/changelogs-mariadb-52-series/mariadb-526-changelog.md) |[Overview of 5.2](changes-improvements-in-mariadb-5-2.md)
+[Download](https://downloads.askmonty.org/mariadb/5.2.6) |**Release Notes** |[Changelog](../../changelogs/changelogs-mariadb-52-series/mariadb-526-changelog.md) |[Overview of 5.2](changes-improvements-in-mariadb-5-2.md)
 
 **Release date:** 12 May 2011
 
@@ -11,7 +11,7 @@ The most recent release in the [MariaDB 5.2 series](changes-improvements-in-mari
 For a high-level description of [MariaDB 5.2.6](mariadb-526-release-notes.md) see the [What is MariaDB 5.2](changes-improvements-in-mariadb-5-2.md) page.
 
 For a list of every change made in [MariaDB 5.2.6](mariadb-526-release-notes.md), including the various bugs\
-that were fixed and links to detailed information on each push, see the[MariaDB 5.2.6 Changelog](../../../changelogs/changelogs-mariadb-52-series/mariadb-526-changelog.md). For a high-level description\
+that were fixed and links to detailed information on each push, see the[MariaDB 5.2.6 Changelog](../../changelogs/changelogs-mariadb-52-series/mariadb-526-changelog.md). For a high-level description\
 of [MariaDB 5.2](changes-improvements-in-mariadb-5-2.md) see the [MariaDB 5.2 Overview](changes-improvements-in-mariadb-5-2.md) page.
 
 In most respects [MariaDB](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/mariadb/README.md) will work exactly as MySQL: all commands,\

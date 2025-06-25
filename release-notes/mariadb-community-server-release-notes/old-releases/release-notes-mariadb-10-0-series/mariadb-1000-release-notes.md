@@ -2,7 +2,7 @@
 
 The most recent release in the [MariaDB 10.0](changes-improvements-in-mariadb-10-0.md) series is:[**MariaDB 10.0.38**](mariadb-10038-release-notes.md) [Download Now](https://downloads.mariadb.org/mariadb/10.0.38)
 
-[Download](https://downloads.mariadb.org/mariadb/10.0.0) |**Release Notes** |[Changelog](../../../changelogs/changelogs-mariadb-100-series/mariadb-1000-changelog.md) |[Overview of 10.0](changes-improvements-in-mariadb-10-0.md)
+[Download](https://downloads.mariadb.org/mariadb/10.0.0) |**Release Notes** |[Changelog](../../changelogs/changelogs-mariadb-100-series/mariadb-1000-changelog.md) |[Overview of 10.0](changes-improvements-in-mariadb-10-0.md)
 
 **Release date:** 12 Nov 2012
 
@@ -18,7 +18,7 @@ be pushed in future releases.**Do not use alpha releases on production systems.*
 **For an overview of** [**MariaDB 10.0**](changes-improvements-in-mariadb-10-0.md) **see the**[**What is MariaDB 10.0?**](changes-improvements-in-mariadb-10-0.md) **page.**
 
 For a list of changes made in [MariaDB 10.0.0](mariadb-1000-release-notes.md), with links to detailed\
-information on each push, see the[MariaDB 10.0.0 Changelog](../../../changelogs/changelogs-mariadb-100-series/mariadb-1000-changelog.md).
+information on each push, see the[MariaDB 10.0.0 Changelog](../../changelogs/changelogs-mariadb-100-series/mariadb-1000-changelog.md).
 
 ## Based on [MariaDB 5.5](../release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md),
 

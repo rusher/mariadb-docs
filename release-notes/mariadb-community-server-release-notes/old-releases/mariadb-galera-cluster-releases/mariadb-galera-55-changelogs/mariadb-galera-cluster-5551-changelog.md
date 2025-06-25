@@ -7,7 +7,7 @@ The most recent [MariaDB Galera Cluster 5.5](https://github.com/mariadb-corporat
 **Release date:** 15 Aug 2016
 
 For the highlights of this release, see the[release notes](../mariadb-galera-55-release-notes/mariadb-galera-cluster-5551-release-notes.md). For changes in\
-MariaDB, see the [MariaDB 5.5.51 Changelog](../../../../changelogs/changelogs-mariadb-55-series/mariadb-5551-changelog.md).
+MariaDB, see the [MariaDB 5.5.51 Changelog](../../../changelogs/changelogs-mariadb-55-series/mariadb-5551-changelog.md).
 
 The revision number links will take you to the revision's page on Github. On\
 Github you can view more details of the revision and view diffs of the code\
@@ -27,7 +27,7 @@ modified in that revision.
   * MW-292 Reset timestamp after transaction replay
 * [Revision #38a0def](https://github.com/MariaDB/server/commit/38a0def)\
   2016-08-10 10:34:54 -0400
-  * Merge tag '[mariadb-5.5.51](../../../../changelogs/changelogs-mariadb-55-series/mariadb-5551-changelog.md)' into 5.5-galera
+  * Merge tag '[mariadb-5.5.51](../../../changelogs/changelogs-mariadb-55-series/mariadb-5551-changelog.md)' into 5.5-galera
 * [Revision #44e3046](https://github.com/MariaDB/server/commit/44e3046)\
   2016-08-03 22:15:57 -0400
   * [MDEV-10487](https://jira.mariadb.org/browse/MDEV-10487): Galera SST using rsync does not filter out lost+found

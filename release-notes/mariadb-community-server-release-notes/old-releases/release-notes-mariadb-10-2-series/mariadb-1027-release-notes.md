@@ -2,7 +2,7 @@
 
 The most recent release of [MariaDB 10.2](what-is-mariadb-102.md) is:[**MariaDB 10.2.44**](mariadb-10244-release-notes.md) Stable (GA) [Download Now](https://downloads.mariadb.org/mariadb/10.2.44/)
 
-[Download](https://downloads.mariadb.org/mariadb/10.2.7)[Release Notes](mariadb-1027-release-notes.md)[Changelog](../../../changelogs/changelogs-mariadb-102-series/mariadb-1027-changelog.md)[Overview of 10.2](what-is-mariadb-102.md)
+[Download](https://downloads.mariadb.org/mariadb/10.2.7)[Release Notes](mariadb-1027-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-102-series/mariadb-1027-changelog.md)[Overview of 10.2](what-is-mariadb-102.md)
 
 **Release date:** 12 Jul 2017
 
@@ -23,7 +23,7 @@ A file format compatibility bug that was introduced in [MariaDB 10.2.2](mariadb-
 * The [JSON data type](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/string-data-types/json) (an alias for LONGTEXT) was introduced.
 * [InnoDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-versions) updated to 5.7.18
 * [TokuDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/tokudb) updated to 5.6.36-82.0
-* [MariaDB Backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup) beta now included for Red Hat, CentOS, and Fedora packages. See [MDEV-13311](https://jira.mariadb.org/browse/MDEV-13311) for an important note about restoring with this version.
+* [MariaDB Backup](broken-reference) beta now included for Red Hat, CentOS, and Fedora packages. See [MDEV-13311](https://jira.mariadb.org/browse/MDEV-13311) for an important note about restoring with this version.
 * [MDEV-13125](https://jira.mariadb.org/browse/MDEV-13125): Core dumps can now be enabled dynamically
 * [MDEV-13132](https://jira.mariadb.org/browse/MDEV-13132): Literals in the `COLUMN_DEFAULT` column in the [Information Schema COLUMNS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-columns-table) table are now quoted to distinguish them from expressions.
 * New variables:
@@ -36,7 +36,7 @@ A file format compatibility bug that was introduced in [MariaDB 10.2.2](mariadb-
 ## Notes
 
 For a complete list of changes made in [MariaDB 10.2.7](mariadb-1027-release-notes.md), with links to detailed\
-information on each push, see the [changelog](../../../changelogs/changelogs-mariadb-102-series/mariadb-1027-changelog.md).
+information on each push, see the [changelog](../../changelogs/changelogs-mariadb-102-series/mariadb-1027-changelog.md).
 
 Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
 

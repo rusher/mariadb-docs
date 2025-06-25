@@ -2,7 +2,7 @@
 
 The most recent release of [MariaDB 10.2](what-is-mariadb-102.md) is:[**MariaDB 10.2.44**](mariadb-10244-release-notes.md) Stable (GA) [Download Now](https://downloads.mariadb.org/mariadb/10.2.44/)
 
-[Download](https://downloads.mariadb.org/mariadb/10.2.14)[Release Notes](mariadb-10214-release-notes.md)[Changelog](../../../changelogs/changelogs-mariadb-102-series/mariadb-10214-changelog.md)[Overview of 10.2](what-is-mariadb-102.md)
+[Download](https://downloads.mariadb.org/mariadb/10.2.14)[Release Notes](mariadb-10214-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-102-series/mariadb-10214-changelog.md)[Overview of 10.2](what-is-mariadb-102.md)
 
 **Release date:** 27 Mar 2018
 
@@ -32,14 +32,14 @@ Thanks, and enjoy MariaDB!
 * [MDEV-14773](https://jira.mariadb.org/browse/MDEV-14773) - [DROP TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/drop/drop-table) hangs for InnoDB table with [FULLTEXT index](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/optimization-and-indexes/full-text-indexes) (fixing a recent regression from upstream)
 * [MDEV-15529](https://jira.mariadb.org/browse/MDEV-15529) - IMPORT TABLESPACE unnecessarily uses the doublewrite buffer
 * [MDEV-15554](https://jira.mariadb.org/browse/MDEV-15554) - InnoDB page\_cleaner shutdown sometimes hangs
-* [MDEV-14545](https://jira.mariadb.org/browse/MDEV-14545) - [mariadb-backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup) - Backup fails due to MLOG\_INDEX\_LOAD record
+* [MDEV-14545](https://jira.mariadb.org/browse/MDEV-14545) - [mariadb-backup](broken-reference) - Backup fails due to MLOG\_INDEX\_LOAD record
 * Fixes for the following [security vulnerabilities](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/security):
   * CVE-\`-\`\`\`
 
 ## Notes
 
 For a complete list of changes made in [MariaDB 10.2.14](mariadb-10214-release-notes.md) with links to detailed\
-information on each push, see the [changelog](../../../changelogs/changelogs-mariadb-102-series/mariadb-10214-changelog.md).
+information on each push, see the [changelog](../../changelogs/changelogs-mariadb-102-series/mariadb-10214-changelog.md).
 
 ## Contributors
 

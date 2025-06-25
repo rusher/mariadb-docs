@@ -5,7 +5,7 @@ binaries available for download which contain the features. If you want to try o
 need to [get](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/server-client-software/download/getting-the-mariadb-source-code) and [compile](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/compiling-mariadb-from-source) the\
 code yourself.
 
-[Download](https://mariadb.com/downloads)[Release Notes](mariadb-10-6-22-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-106-series/mariadb-10-6-22-changelog.md)[Overview of 10.6](what-is-mariadb-106.md)[_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/10.6.22/)**Release date:** ?
+[Download](https://mariadb.com/downloads)[Release Notes](mariadb-10-6-22-release-notes.md)[Changelog](../changelogs/changelogs-mariadb-106-series/mariadb-10-6-22-changelog.md)[Overview of 10.6](what-is-mariadb-106.md)[_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/10.6.22/)**Release date:** ?
 
 [MariaDB 10.6](what-is-mariadb-106.md) is a current long-term series of MariaDB, [maintained until](https://mariadb.org/about/#maintenance-policy) July 2026. It is an evolution of [MariaDB 10.5](../mariadb-10-5-series/what-is-mariadb-105.md) with several entirely new features.
 
@@ -106,7 +106,7 @@ Thanks, and enjoy MariaDB!
 ## Changelog
 
 For a complete list of changes and bugfixes made in [MariaDB 10.6.22](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/mariadb-10622-release-notes/README.md), with links to detailed\
-information on each push, see the [changelog](../../changelogs/changelogs-mariadb-106-series/mariadb-10-6-22-changelog.md).
+information on each push, see the [changelog](../changelogs/changelogs-mariadb-106-series/mariadb-10-6-22-changelog.md).
 
 ## Contributors
 

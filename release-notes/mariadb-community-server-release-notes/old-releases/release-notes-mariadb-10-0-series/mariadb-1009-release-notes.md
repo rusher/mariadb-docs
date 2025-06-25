@@ -2,7 +2,7 @@
 
 The most recent release in the [MariaDB 10.0](changes-improvements-in-mariadb-10-0.md) series is:[**MariaDB 10.0.38**](mariadb-10038-release-notes.md) [Download Now](https://downloads.mariadb.org/mariadb/10.0.38)
 
-[Download](https://downloads.mariadb.org/mariadb/10.0.9) |**Release Notes** |[Changelog](../../../changelogs/changelogs-mariadb-100-series/mariadb-1009-changelog.md) |[Overview of 10.0](changes-improvements-in-mariadb-10-0.md)
+[Download](https://downloads.mariadb.org/mariadb/10.0.9) |**Release Notes** |[Changelog](../../changelogs/changelogs-mariadb-100-series/mariadb-1009-changelog.md) |[Overview of 10.0](changes-improvements-in-mariadb-10-0.md)
 
 **Release date:** 10 Mar 2014
 
@@ -41,7 +41,7 @@ Notable changes of this release include:
 * Builds for Debian Sid and Ubuntu Trusty are being made available for the first time in the MariaDB [repositories](https://downloads.mariadb.org/mariadb/repositories/). For this release the Trusty packages are considered as alpha releases. The Sid packages will likely always be considered as such. Both were made as part of normal MariaDB development, and we're making them available for those that want to test or try them out.
 
 For a complete list of changes made in [MariaDB 10.0.9](mariadb-1009-release-notes.md), with links to detailed\
-information on each push, see the [changelog](../../../changelogs/changelogs-mariadb-100-series/mariadb-1009-changelog.md).
+information on each push, see the [changelog](../../changelogs/changelogs-mariadb-100-series/mariadb-1009-changelog.md).
 
 Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
 

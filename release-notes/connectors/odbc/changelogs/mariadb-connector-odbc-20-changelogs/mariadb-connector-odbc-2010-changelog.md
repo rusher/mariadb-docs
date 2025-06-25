@@ -14,9 +14,9 @@ The revision number links will take you to the revision's page on GitHub. On[Git
   2016-04-06 01:01:31 +0200
   * Changed version quality in the cmake config file
 * [Revision #ab99611](https://github.com/mariadb-corporation/mariadb-connector-odbc/commit/ab99611)\
-  2016-04-06 00:38:40 +0200
-  *
-    1. Fixed build on windows - removed some dependencies from maodbcs project, introduced file(ma\_common.c) where I moved all stuff required by both libraries. 2) Fixed bug [ODBC-32](https://jira.mariadb.org/browse/ODBC-32)(and around it), and added testcase for it 3) Corrected couple of testcases, added one for the issue#3 on github 4) Fixed some more merge errors
+  2016-04-06 00:38:40 +0200\
+  \*
+  1. Fixed build on windows - removed some dependencies from maodbcs project, introduced file(ma\_common.c) where I moved all stuff required by both libraries. 2) Fixed bug [ODBC-32](https://jira.mariadb.org/browse/ODBC-32)(and around it), and added testcase for it 3) Corrected couple of testcases, added one for the issue#3 on github 4) Fixed some more merge errors
 * [Revision #a076fdb](https://github.com/mariadb-corporation/mariadb-connector-odbc/commit/a076fdb)\
   2016-04-04 01:44:21 +0300
   * Resolved problem with SQLBindParam under UnixODBC. Fixed earlier introduced regression in SQLGetData by chunks offset calculation. Dirty hacked fix for some unicode tests - test strings could not be converted properly from utf32le Fixed couple of tests in result1 and unicode

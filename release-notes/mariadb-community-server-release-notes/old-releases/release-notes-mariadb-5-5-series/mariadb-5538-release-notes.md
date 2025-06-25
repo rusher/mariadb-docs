@@ -2,7 +2,7 @@
 
 The most recent release in the [MariaDB 5.5](changes-improvements-in-mariadb-5-5.md) series is:[**MariaDB 5.5.68**](mariadb-5568-release-notes.md) [Download Now](https://downloads.mariadb.org/mariadb/5.5.68/)
 
-[Download](https://downloads.mariadb.org/mariadb/5.5.38)[Release Notes](mariadb-5538-release-notes.md)[Changelog](../../../changelogs/changelogs-mariadb-55-series/mariadb-5538-changelog.md)[Overview of 5.5](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/broken-reference/README.md)
+[Download](https://downloads.mariadb.org/mariadb/5.5.38)[Release Notes](mariadb-5538-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-55-series/mariadb-5538-changelog.md)[Overview of 5.5](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/broken-reference/README.md)
 
 **Release date:** 9 Jun 2014
 
@@ -15,7 +15,7 @@ inflow).
 **For a description of** [**MariaDB 5.5**](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/broken-reference/README.md) **see the**[**What is MariaDB 5.5?**](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/broken-reference/README.md) **page.**
 
 For a list of changes made in this release, with links to detailed\
-information on each push, see the[MariaDB 5.5.38 Changelog](../../../changelogs/changelogs-mariadb-55-series/mariadb-5538-changelog.md).
+information on each push, see the[MariaDB 5.5.38 Changelog](../../changelogs/changelogs-mariadb-55-series/mariadb-5538-changelog.md).
 
 In most respects [MariaDB](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/mariadb/README.md) will work exactly as MySQL: all commands,\
 interfaces, libraries and APIs that exist in MySQL also exist in MariaDB.
@@ -33,7 +33,7 @@ from MySQL 5.5.38. Notable updates include:
 * [XtraDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb) updated to the version from [Percona Server 5.5.37-35.0](https://www.percona.com/doc/percona-server/5.5/release-notes/Percona-Server-5.5.37-35.0.html)
 * [TokuDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/tokudb) updated to [version 7.1.6](https://www.tokutek.com/wp-content/uploads/2014/05/mariadb-5.5.37-tokudb-7.1.6-users-guide.pdf)
 
-A full list of all changes is in the [changelog](../../../changelogs/changelogs-mariadb-55-series/mariadb-5538-changelog.md).
+A full list of all changes is in the [changelog](../../changelogs/changelogs-mariadb-55-series/mariadb-5538-changelog.md).
 
 ### MariaDB on Power
 

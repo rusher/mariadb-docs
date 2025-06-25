@@ -12,9 +12,9 @@ The revision number links will take you to the revision's page on GitHub. On[Git
 details of the revision and view diffs of the code modified in that revision.
 
 * [Revision #840de12](https://github.com/mariadb-corporation/mariadb-connector-python/commit/840de12)\
-  2020-02-18 16:11:29 +0100
-  *
-    * minor Documentatiion fixes - fixed test cases using removed character set option
+  2020-02-18 16:11:29 +0100\
+  \*
+  * minor Documentatiion fixes - fixed test cases using removed character set option
 * [Revision #e1b7be4](https://github.com/mariadb-corporation/mariadb-connector-python/commit/e1b7be4)\
   2020-02-18 16:05:58 +0100
   * Added license.rst

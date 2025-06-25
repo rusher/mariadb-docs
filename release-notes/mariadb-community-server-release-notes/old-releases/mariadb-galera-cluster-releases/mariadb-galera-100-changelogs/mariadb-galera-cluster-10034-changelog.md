@@ -7,14 +7,14 @@ The most recent [MariaDB Galera Cluster 10.0](https://github.com/mariadb-corpora
 **Release date:** 6 Feb 2018
 
 For the highlights of this release, see the[release notes](../mariadb-galera-100-release-notes/mariadb-galera-cluster-10034-release-notes.md).\
-For changes made in MariaDB, see the [MariaDB 10.0.34 Changelog](../../../../changelogs/changelogs-mariadb-100-series/mariadb-10034-changelog.md).
+For changes made in MariaDB, see the [MariaDB 10.0.34 Changelog](../../../changelogs/changelogs-mariadb-100-series/mariadb-10034-changelog.md).
 
 The revision number links will take you to the revision's page on Github. On\
 Github you can view more details of the revision and view diffs of the code\
 modified in that revision.
 
 * Merge [Revision #c7e5feb259](https://github.com/MariaDB/server/commit/c7e5feb259) 2018-02-01 14:09:48 +0200 - Merge tag 'mariadb-10.0.34' into 10.0-galera
-  * [MariaDB 10.0.34 Changelog](../../../../changelogs/changelogs-mariadb-100-series/mariadb-10034-changelog.md)
+  * [MariaDB 10.0.34 Changelog](../../../changelogs/changelogs-mariadb-100-series/mariadb-10034-changelog.md)
 * Merge [Revision #08b2c516da](https://github.com/MariaDB/server/commit/08b2c516da) 2018-01-24 10:29:52 +0200 - Merge pull request #549 from grooverdan/10.0-galera-sst-default-options
 * [Revision #c4b7074e72](https://github.com/MariaDB/server/commit/c4b7074e72)\
   2018-01-16 14:44:27 +1100

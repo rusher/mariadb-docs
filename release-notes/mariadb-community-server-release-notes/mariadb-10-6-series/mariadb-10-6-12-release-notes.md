@@ -1,6 +1,6 @@
 # MariaDB 10.6.12 Release Notes
 
-[Download](https://downloads.mariadb.org/mariadb/10.6.12)[Release Notes](mariadb-10-6-12-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-106-series/mariadb-10-6-12-changelog.md)[Overview of 10.6](what-is-mariadb-106.md)
+[Download](https://downloads.mariadb.org/mariadb/10.6.12)[Release Notes](mariadb-10-6-12-release-notes.md)[Changelog](../changelogs/changelogs-mariadb-106-series/mariadb-10-6-12-changelog.md)[Overview of 10.6](what-is-mariadb-106.md)
 
 **Release date:** 6 Feb 2023
 
@@ -63,7 +63,7 @@ Thanks, and enjoy MariaDB!
 ## Changelog
 
 For a complete list of changes and bugfixes made in [MariaDB 10.6.12](mariadb-10-6-12-release-notes.md), with links to detailed\
-information on each push, see the [changelog](../../changelogs/changelogs-mariadb-106-series/mariadb-10-6-12-changelog.md).
+information on each push, see the [changelog](../changelogs/changelogs-mariadb-106-series/mariadb-10-6-12-changelog.md).
 
 ## Contributors
 

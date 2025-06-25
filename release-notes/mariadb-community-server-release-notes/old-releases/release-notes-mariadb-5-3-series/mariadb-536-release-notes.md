@@ -2,7 +2,7 @@
 
 The most recent release in the [MariaDB 5.3 series](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/broken-reference/README.md) is:[**MariaDB 5.3.12**](mariadb-5312-release-notes.md)
 
-[Download](https://downloads.askmonty.org/mariadb/5.3.6) |**Release Notes** |[Changelog](../../../changelogs/changelogs-mariadb-53-series/mariadb-536-changelog.md) |[Overview of 5.3](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/broken-reference/README.md)
+[Download](https://downloads.askmonty.org/mariadb/5.3.6) |**Release Notes** |[Changelog](../../changelogs/changelogs-mariadb-53-series/mariadb-536-changelog.md) |[Overview of 5.3](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/broken-reference/README.md)
 
 **Release date:** 9 Apr 2012
 
@@ -15,7 +15,7 @@ general usage (based on bug inflow).
 **For a description of** [**MariaDB 5.3**](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/broken-reference/README.md) **see the**[**What is MariaDB 5.3**](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/broken-reference/README.md) **page.**
 
 For a list of changes made in [MariaDB 5.3.6](mariadb-536-release-notes.md), with links to detailed\
-information on each push, see the[MariaDB 5.3.6 Changelog](../../../changelogs/changelogs-mariadb-53-series/mariadb-536-changelog.md).
+information on each push, see the[MariaDB 5.3.6 Changelog](../../changelogs/changelogs-mariadb-53-series/mariadb-536-changelog.md).
 
 In most respects [MariaDB](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/mariadb/README.md) will work exactly as MySQL: all commands,\
 interfaces, libraries and APIs that exist in MySQL also exist in MariaDB.
@@ -46,7 +46,7 @@ for what changed between this and previous MySQL versions.
 * a fix for [Bug #970528](https://bugs.launchpad.net/bugs/970528) "Server crashes in my\_strnncollsp\_simple on LEFT JOIN with CSV table, TEXT field"
 * and many more...
 
-See the [MariaDB 5.3.6 Changelog](../../../changelogs/changelogs-mariadb-53-series/mariadb-536-changelog.md) for a list of every change\
+See the [MariaDB 5.3.6 Changelog](../../changelogs/changelogs-mariadb-53-series/mariadb-536-changelog.md) for a list of every change\
 made in [MariaDB 5.3.6](mariadb-536-release-notes.md), with links to detailed information on each push.
 
 Be notified of new releases automatically by adding the[releases rss feed](https://montyprogram.com/news/feed/mariadb_releases/) to\

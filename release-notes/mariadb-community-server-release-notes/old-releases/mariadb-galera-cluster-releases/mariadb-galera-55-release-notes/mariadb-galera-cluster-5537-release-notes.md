@@ -31,7 +31,7 @@ information on each push, see the[MariaDB Galera Cluster 5.5.37 Changelog](../ma
   option. Its use requires [Percona Xtrabackup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/legacy-clients-and-utilities/backing-up-and-restoring-databases-percona-xtrabackup/percona-xtrabackup-overview) (>= 2.1.6) and other software packages\
   like socat, nc, and tar.
 
-See the [MariaDB 5.5.37 Release Notes](../../release-notes-mariadb-5-5-series/mariadb-5537-release-notes.md) and[Changelog](../../../../changelogs/changelogs-mariadb-55-series/mariadb-5537-changelog.md) for more information on the changes in\
+See the [MariaDB 5.5.37 Release Notes](../../release-notes-mariadb-5-5-series/mariadb-5537-release-notes.md) and[Changelog](../../../changelogs/changelogs-mariadb-55-series/mariadb-5537-changelog.md) for more information on the changes in\
 MariaDB.
 
 Note: If Galera 25.2.x and 25.3.x are both being used in the cluster, MariaDB\

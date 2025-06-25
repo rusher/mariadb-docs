@@ -2,7 +2,7 @@
 
 The most recent release in the [MariaDB 5.3 series](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/broken-reference/README.md) is:[**MariaDB 5.3.12**](mariadb-5312-release-notes.md)
 
-[Download](https://downloads.mariadb.org/mariadb/5.3.11) | **Release Notes** | [Changelog](../../../changelogs/changelogs-mariadb-53-series/mariadb-5311-changelog.md) |[Overview of 5.3](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/broken-reference/README.md)
+[Download](https://downloads.mariadb.org/mariadb/5.3.11) | **Release Notes** | [Changelog](../../changelogs/changelogs-mariadb-53-series/mariadb-5311-changelog.md) |[Overview of 5.3](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/broken-reference/README.md)
 
 **Release date:** 29 Nov 2012
 
@@ -10,7 +10,7 @@ The most recent release in the [MariaDB 5.3 series](https://github.com/mariadb-c
 
 **For a description of** [**MariaDB 5.3**](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/broken-reference/README.md) **see the** [**What is MariaDB 5.3**](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/broken-reference/README.md) **page.**
 
-For a list of changes made in [MariaDB 5.3.11](mariadb-5311-release-notes.md), with links to detailed information on each push, see the [MariaDB 5.3.11 Changelog](../../../changelogs/changelogs-mariadb-53-series/mariadb-5311-changelog.md).
+For a list of changes made in [MariaDB 5.3.11](mariadb-5311-release-notes.md), with links to detailed information on each push, see the [MariaDB 5.3.11 Changelog](../../changelogs/changelogs-mariadb-53-series/mariadb-5311-changelog.md).
 
 In most respects [MariaDB](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/mariadb/README.md) will work exactly as MySQL: all commands, interfaces, libraries and APIs that exist in MySQL also exist in MariaDB.
 

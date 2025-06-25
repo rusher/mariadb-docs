@@ -18,7 +18,7 @@ information on each push, see the[MariaDB Galera 5.5.32 Changelog](../mariadb-ga
 
 ## Includes [MariaDB 5.5.32](../../release-notes-mariadb-5-5-series/mariadb-5532-release-notes.md) and Galera Cluster
 
-[MariaDB Galera 5.5.32](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/mariadb-galera-cluster-5532-release-notes/README.md) includes [MariaDB 5.5.32](../../release-notes-mariadb-5-5-series/mariadb-5532-release-notes.md) and[Galera Cluster](https://codership.com/content/using-galera-cluster). See the[MariaDB 5.5.32](../../release-notes-mariadb-5-5-series/mariadb-5532-release-notes.md) [Release Notes](../../release-notes-mariadb-5-5-series/mariadb-5532-release-notes.md) and[Changelog](../../../../changelogs/changelogs-mariadb-55-series/mariadb-5532-changelog.md) for more information on the changes in[MariaDB 5.5.32](../../release-notes-mariadb-5-5-series/mariadb-5532-release-notes.md).
+[MariaDB Galera 5.5.32](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/mariadb-galera-cluster-5532-release-notes/README.md) includes [MariaDB 5.5.32](../../release-notes-mariadb-5-5-series/mariadb-5532-release-notes.md) and[Galera Cluster](https://codership.com/content/using-galera-cluster). See the[MariaDB 5.5.32](../../release-notes-mariadb-5-5-series/mariadb-5532-release-notes.md) [Release Notes](../../release-notes-mariadb-5-5-series/mariadb-5532-release-notes.md) and[Changelog](../../../changelogs/changelogs-mariadb-55-series/mariadb-5532-changelog.md) for more information on the changes in[MariaDB 5.5.32](../../release-notes-mariadb-5-5-series/mariadb-5532-release-notes.md).
 
 ## Includes Galera wsrep provider version 23.2.6
 

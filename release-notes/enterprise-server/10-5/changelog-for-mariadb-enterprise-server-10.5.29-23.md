@@ -6,7 +6,7 @@ hidden: true
 
 MariaDB Enterprise Server 10.5.29-23 is a maintenance release of [MariaDB Enterprise Server](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/SsmexDFPv2xG2OTyO5yV/) 10.5. For the categorized highlights and other details of this release, see the [release notes](release-notes-for-mariadb-enterprise-server-10.5.29-23.md).
 
-MariaDB Enterprise Server 10.5.29-23 was released on 19 Mar 2025.
+MariaDB Enterprise Server 10.5.29-23 was released on 11 Jun 2025.
 
 ## Changes <a href="#issues-fixed" id="issues-fixed"></a>
 

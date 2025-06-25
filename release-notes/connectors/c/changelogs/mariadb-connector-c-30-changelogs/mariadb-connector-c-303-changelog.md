@@ -153,9 +153,9 @@ details of the revision and view diffs of the code modified in that revision.
   2017-10-15 06:01:59 +0200
   * [MDEV-14027](https://jira.mariadb.org/browse/MDEV-14027): Determine TLS/SSL library version
 * [Revision #5e32110](https://github.com/mariadb-corporation/mariadb-connector-c/commit/5e32110)\
-  2017-10-12 12:15:39 +0200
-  *
-    * Build fix: When building as subproject inside server tree, ZLIB\_FOUND was already set by parent, so we need additionally check if WITH\_EXTERNAL\_ZLIB was specified. - New server status flags Added SERVER\_STATUS\_ANSI\_QUOTES and SERVER\_STATUS\_IN\_TRANS\_READONLY
+  2017-10-12 12:15:39 +0200\
+  \*
+  * Build fix: When building as subproject inside server tree, ZLIB\_FOUND was already set by parent, so we need additionally check if WITH\_EXTERNAL\_ZLIB was specified. - New server status flags Added SERVER\_STATUS\_ANSI\_QUOTES and SERVER\_STATUS\_IN\_TRANS\_READONLY
 * [Revision #6d24e0b](https://github.com/mariadb-corporation/mariadb-connector-c/commit/6d24e0b)\
   2017-10-12 09:56:50 +0200
   * Added missing dependency for zlib (WITH\_EXTERNAL\_ZLIB=ON) Added CC\_SOURCE\_REVISION definition (mariadb\_version.h)

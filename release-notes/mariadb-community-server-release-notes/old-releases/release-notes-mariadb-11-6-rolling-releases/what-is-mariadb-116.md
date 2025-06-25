@@ -28,10 +28,6 @@ The most recent release of [MariaDB 11.6](what-is-mariadb-116.md) is:[**MariaDB 
   * Refactor [mariadb-import](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/backup-restore-and-import-clients/mariadb-import) threading
 * Automatic SST user account management ([MDEV-31809](https://jira.mariadb.org/browse/MDEV-31809))
 
-### Optimizer
-
-* Improve selectivity computations for multi-part keys ([MDEV-33697](https://jira.mariadb.org/browse/MDEV-33697))
-
 ### Syntax
 
 * Single-table [DELETEs](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/changing-deleting-data/delete) now support table aliases ([MDEV-33988](https://jira.mariadb.org/browse/MDEV-33988))
@@ -64,12 +60,12 @@ Add listcve macro here - removed for performance reasons
 
 ## List of All [MariaDB 11.6](what-is-mariadb-116.md) Releases
 
-| Date        | Release                                                  | Status      | Release Notes                                           | Changelog                                                                                   |
-| ----------- | -------------------------------------------------------- | ----------- | ------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
-| Date        | Release                                                  | Status      | Release Notes                                           | Changelog                                                                                   |
-| 21 Nov 2024 | [MariaDB 11.6.2](mariadb-11-6-2-release-notes.md)        | Stable (GA) | [Release Notes](mariadb-11-6-2-release-notes.md)        | [Changelog](../../../changelogs/changelogs-mariadb-11-6-series/mariadb-11-6-2-changelog.md) |
-| 14 Aug 2024 | [MariaDB 11.6.1](mariadb-11-6-1-release-notes.md)        | RC          | [Release Notes](mariadb-11-6-1-release-notes.md)        | [Changelog](../../../changelogs/changelogs-mariadb-11-6-series/mariadb-11-6-1-changelog.md) |
-| 29 Jul 2024 | [MariaDB 11.6.0](mariadb-11-6-0-release-notes.md) Vector | Alpha       | [Release Notes](mariadb-11-6-0-vector-release-notes.md) |                                                                                             |
-| 26 Jun 2024 | [MariaDB 11.6.0](mariadb-11-6-0-release-notes.md)        | Alpha       | [Release Notes](mariadb-11-6-0-release-notes.md)        |                                                                                             |
+| Date        | Release                                                  | Status      | Release Notes                                           | Changelog                                                                                |
+| ----------- | -------------------------------------------------------- | ----------- | ------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| Date        | Release                                                  | Status      | Release Notes                                           | Changelog                                                                                |
+| 21 Nov 2024 | [MariaDB 11.6.2](mariadb-11-6-2-release-notes.md)        | Stable (GA) | [Release Notes](mariadb-11-6-2-release-notes.md)        | [Changelog](../../changelogs/changelogs-mariadb-11-6-series/mariadb-11-6-2-changelog.md) |
+| 14 Aug 2024 | [MariaDB 11.6.1](mariadb-11-6-1-release-notes.md)        | RC          | [Release Notes](mariadb-11-6-1-release-notes.md)        | [Changelog](../../changelogs/changelogs-mariadb-11-6-series/mariadb-11-6-1-changelog.md) |
+| 29 Jul 2024 | [MariaDB 11.6.0](mariadb-11-6-0-release-notes.md) Vector | Alpha       | [Release Notes](mariadb-11-6-0-vector-release-notes.md) |                                                                                          |
+| 26 Jun 2024 | [MariaDB 11.6.0](mariadb-11-6-0-release-notes.md)        | Alpha       | [Release Notes](mariadb-11-6-0-release-notes.md)        |                                                                                          |
 
 {% @marketo/form formid="4316" formId="4316" %}

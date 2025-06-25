@@ -2,11 +2,11 @@
 
 The most recent release in the [MariaDB 5.1 series](changes-improvements-in-mariadb-5-1.md) is:[**MariaDB 5.1.67**](mariadb-5167-release-notes.md)
 
-[Download](https://askmonty.org/wiki/MariaDB:Download:MariaDB_5.1.49) | **Release Notes** | [Changelog](../../../changelogs/changelogs-mariadb-51-series/mariadb-5149-changelog.md) |[Overview of 5.1](changes-improvements-in-mariadb-5-1.md)
+[Download](https://askmonty.org/wiki/MariaDB:Download:MariaDB_5.1.49) | **Release Notes** | [Changelog](../../changelogs/changelogs-mariadb-51-series/mariadb-5149-changelog.md) |[Overview of 5.1](changes-improvements-in-mariadb-5-1.md)
 
 **Release date:** 09 Aug 2010
 
-For a list of every change made in this release, see the[Changelog](../../../changelogs/changelogs-mariadb-51-series/mariadb-5149-changelog.md).
+For a list of every change made in this release, see the[Changelog](../../changelogs/changelogs-mariadb-51-series/mariadb-5149-changelog.md).
 
 In most respects [MariaDB](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/mariadb/README.md) will work exactly as MySQL: all commands,\
 interfaces, libraries and APIs that exist in MySQL also exist in MariaDB.
@@ -30,7 +30,7 @@ version included in [MariaDB 5.1.47](mariadb-5147-release-notes.md)).
 ## Aria Engine Fixes and Enhancements
 
 In this version of MariaDB we have fixed several recovery and other bugs in the\
-Aria engine. See the [changelog](../../../changelogs/changelogs-mariadb-51-series/mariadb-5149-changelog.md) for more details and\
+Aria engine. See the [changelog](../../changelogs/changelogs-mariadb-51-series/mariadb-5149-changelog.md) for more details and\
 links to the individual bug reports.
 
 ## Windows Installer

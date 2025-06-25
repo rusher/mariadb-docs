@@ -63,7 +63,7 @@ MariaDB Enterprise Server 10.3.24-8 was released on 2020-09-08.
 
 ## Interface Changes
 
-* [mariabackup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backing-up-and-restoring-databases/mariabackup) [--tls-version](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/enterprise-server/10-3/broken-reference/README.md) command-line option added
+* [mariabackup](broken-reference) [--tls-version](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/enterprise-server/10-3/broken-reference/README.md) command-line option added
 * [max\_sort\_length](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#max_sort_length) system variable minimum value changed from 4 to 8
 * [mysql\_upgrade --tls-version](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/deployment-tools/mariadb-upgrade) command-line option added
 * [mysql --tls-version](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/mariadb/README.md) command-line option added

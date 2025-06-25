@@ -2,7 +2,7 @@
 
 The most recent release of [MariaDB 10.5](what-is-mariadb-105.md) is:[**MariaDB 10.5.28**](mariadb-10-5-28-release-notes.md) Stable (GA) [Download Now](https://mariadb.com/downloads/)[_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/10.5.28/)
 
-[Download 10.5.9](https://downloads.mariadb.org/mariadb/10.5.9/)[Release Notes](mariadb-1059-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-105-series/mariadb-1059-changelog.md)[Overview of 10.5](what-is-mariadb-105.md)
+[Download 10.5.9](https://downloads.mariadb.org/mariadb/10.5.9/)[Release Notes](mariadb-1059-release-notes.md)[Changelog](../changelogs/changelogs-mariadb-105-series/mariadb-1059-changelog.md)[Overview of 10.5](what-is-mariadb-105.md)
 
 **Release date:** 22 Feb 2021
 
@@ -70,7 +70,7 @@ Thanks, and enjoy MariaDB!
 ## Changelog
 
 For a complete list of changes made in [MariaDB 10.5.9](mariadb-1059-release-notes.md), with links to detailed\
-information on each push, see the [changelog](../../changelogs/changelogs-mariadb-105-series/mariadb-1059-changelog.md).
+information on each push, see the [changelog](../changelogs/changelogs-mariadb-105-series/mariadb-1059-changelog.md).
 
 ## Contributors
 

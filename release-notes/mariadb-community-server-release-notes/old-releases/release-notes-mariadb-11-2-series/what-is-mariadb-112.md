@@ -50,15 +50,15 @@ page.
 
 ## List of All [MariaDB 11.2](what-is-mariadb-112.md) Releases
 
-| Date        | Release                                           | Status      | Release Notes                                    | Changelog                                                                                   |
-| ----------- | ------------------------------------------------- | ----------- | ------------------------------------------------ | ------------------------------------------------------------------------------------------- |
-| Date        | Release                                           | Status      | Release Notes                                    | Changelog                                                                                   |
-| 1 Nov 2024  | [MariaDB 11.2.6](mariadb-11-2-6-release-notes.md) | Stable (GA) | [Release Notes](mariadb-11-2-6-release-notes.md) | [Changelog](../../../changelogs/changelogs-mariadb-11-2-series/mariadb-11-2-6-changelog.md) |
-| 8 Aug 2024  | [MariaDB 11.2.5](mariadb-11-2-5-release-notes.md) | Stable (GA) | [Release Notes](mariadb-11-2-5-release-notes.md) | [Changelog](../../../changelogs/changelogs-mariadb-11-2-series/mariadb-11-2-5-changelog.md) |
-| 16 May 2024 | [MariaDB 11.2.4](mariadb-11-2-4-release-notes.md) | Stable (GA) | [Release Notes](mariadb-11-2-4-release-notes.md) | [Changelog](../../../changelogs/changelogs-mariadb-11-2-series/mariadb-11-2-4-changelog.md) |
-| 7 Feb 2024  | [MariaDB 11.2.3](mariadb-11-2-3-release-notes.md) | Stable (GA) | [Release Notes](mariadb-11-2-3-release-notes.md) | [Changelog](../../../changelogs/changelogs-mariadb-11-2-series/mariadb-11-2-3-changelog.md) |
-| 21 Nov 2023 | [MariaDB 11.2.2](mariadb-11-2-2-release-notes.md) | Stable (GA) | [Release Notes](mariadb-11-2-2-release-notes.md) | [Changelog](../../../changelogs/changelogs-mariadb-11-2-series/mariadb-11-2-2-changelog.md) |
-| 21 Aug 2023 | [MariaDB 11.2.1](mariadb-11-2-1-release-notes.md) | RC          | [Release Notes](mariadb-11-2-1-release-notes.md) | [Changelog](../../../changelogs/changelogs-mariadb-11-2-series/mariadb-11-2-1-changelog.md) |
-| 20 Jun 2023 | [MariaDB 11.2.0](mariadb-11-2-0-release-notes.md) | Alpha       | [Release Notes](mariadb-11-2-0-release-notes.md) |                                                                                             |
+| Date        | Release                                           | Status      | Release Notes                                    | Changelog                                                                                |
+| ----------- | ------------------------------------------------- | ----------- | ------------------------------------------------ | ---------------------------------------------------------------------------------------- |
+| Date        | Release                                           | Status      | Release Notes                                    | Changelog                                                                                |
+| 1 Nov 2024  | [MariaDB 11.2.6](mariadb-11-2-6-release-notes.md) | Stable (GA) | [Release Notes](mariadb-11-2-6-release-notes.md) | [Changelog](../../changelogs/changelogs-mariadb-11-2-series/mariadb-11-2-6-changelog.md) |
+| 8 Aug 2024  | [MariaDB 11.2.5](mariadb-11-2-5-release-notes.md) | Stable (GA) | [Release Notes](mariadb-11-2-5-release-notes.md) | [Changelog](../../changelogs/changelogs-mariadb-11-2-series/mariadb-11-2-5-changelog.md) |
+| 16 May 2024 | [MariaDB 11.2.4](mariadb-11-2-4-release-notes.md) | Stable (GA) | [Release Notes](mariadb-11-2-4-release-notes.md) | [Changelog](../../changelogs/changelogs-mariadb-11-2-series/mariadb-11-2-4-changelog.md) |
+| 7 Feb 2024  | [MariaDB 11.2.3](mariadb-11-2-3-release-notes.md) | Stable (GA) | [Release Notes](mariadb-11-2-3-release-notes.md) | [Changelog](../../changelogs/changelogs-mariadb-11-2-series/mariadb-11-2-3-changelog.md) |
+| 21 Nov 2023 | [MariaDB 11.2.2](mariadb-11-2-2-release-notes.md) | Stable (GA) | [Release Notes](mariadb-11-2-2-release-notes.md) | [Changelog](../../changelogs/changelogs-mariadb-11-2-series/mariadb-11-2-2-changelog.md) |
+| 21 Aug 2023 | [MariaDB 11.2.1](mariadb-11-2-1-release-notes.md) | RC          | [Release Notes](mariadb-11-2-1-release-notes.md) | [Changelog](../../changelogs/changelogs-mariadb-11-2-series/mariadb-11-2-1-changelog.md) |
+| 20 Jun 2023 | [MariaDB 11.2.0](mariadb-11-2-0-release-notes.md) | Alpha       | [Release Notes](mariadb-11-2-0-release-notes.md) |                                                                                          |
 
 {% @marketo/form formid="4316" formId="4316" %}

@@ -2,7 +2,7 @@
 
 The most recent release of [MariaDB 10.7](what-is-mariadb-107.md) is:[**MariaDB 10.7.8**](mariadb-10-7-8-release-notes.md) Stable (GA) [Download Now](https://downloads.mariadb.org/mariadb/10.7.8/)
 
-[Download 10.7.3](https://downloads.mariadb.org/mariadb/10.7.3/)[Release Notes](mariadb-1073-release-notes.md)[Changelog](../../../changelogs/changelogs-mariadb-10-7-series/mariadb-1073-changelog.md)[Overview of 10.7](what-is-mariadb-107.md)
+[Download 10.7.3](https://downloads.mariadb.org/mariadb/10.7.3/)[Release Notes](mariadb-1073-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-10-7-series/mariadb-1073-changelog.md)[Overview of 10.7](what-is-mariadb-107.md)
 
 **Release date:** 12 Feb 2022
 
@@ -36,7 +36,7 @@ Thanks, and enjoy MariaDB!
 ## Changelog
 
 For a complete list of changes made in [MariaDB 10.7.3](mariadb-1073-release-notes.md), with links to detailed\
-information on each push, see the [changelog](../../../changelogs/changelogs-mariadb-10-7-series/mariadb-1073-changelog.md).
+information on each push, see the [changelog](../../changelogs/changelogs-mariadb-10-7-series/mariadb-1073-changelog.md).
 
 ## Contributors
 

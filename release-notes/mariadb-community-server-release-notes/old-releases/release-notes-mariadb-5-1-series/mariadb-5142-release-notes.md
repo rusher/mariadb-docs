@@ -2,14 +2,14 @@
 
 The most recent release in the [MariaDB 5.1 series](changes-improvements-in-mariadb-5-1.md) is:[**MariaDB 5.1.67**](mariadb-5167-release-notes.md)
 
-[Download](https://askmonty.org/wiki/MariaDB:Download:MariaDB_5.1.42) | **Release Notes** | [Changelog](../../../changelogs/changelogs-mariadb-51-series/mariadb-5142-changelog.md) |[Overview of 5.1](changes-improvements-in-mariadb-5-1.md)
+[Download](https://askmonty.org/wiki/MariaDB:Download:MariaDB_5.1.42) | **Release Notes** | [Changelog](../../changelogs/changelogs-mariadb-51-series/mariadb-5142-changelog.md) |[Overview of 5.1](changes-improvements-in-mariadb-5-1.md)
 
 **Release date:** 01 Feb 2010
 
 See the [MariaDB versus MySQL](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-1-series/broken-reference/README.md) page for a high-level\
 overview of the differences between MariaDB and MySQL.
 
-See the [MariaDB 5.1.42 Changelog](../../../changelogs/changelogs-mariadb-51-series/mariadb-5142-changelog.md) for a more detailed\
+See the [MariaDB 5.1.42 Changelog](../../changelogs/changelogs-mariadb-51-series/mariadb-5142-changelog.md) for a more detailed\
 list of the changes in this release.
 
 MariaDB is kept up to date with the latest MySQL release from the same branch.[MariaDB](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/mariadb/README.md) 5.1.42 is based on [MySQL](https://mysql.com) 5.1.42 and[XtraDB](https://www.percona.com/docs/wiki/percona-xtradb:start) 1.0.6-9.

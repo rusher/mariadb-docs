@@ -2,7 +2,7 @@
 
 The most recent release of [MariaDB 10.2](what-is-mariadb-102.md) is:[**MariaDB 10.2.44**](mariadb-10244-release-notes.md) Stable (GA) [Download Now](https://downloads.mariadb.org/mariadb/10.2.44/)
 
-[Download](https://downloads.mariadb.org/mariadb/10.2.13)[Release Notes](mariadb-10213-release-notes.md)[Changelog](../../../changelogs/changelogs-mariadb-102-series/mariadb-10213-changelog.md)[Overview of 10.2](what-is-mariadb-102.md)
+[Download](https://downloads.mariadb.org/mariadb/10.2.13)[Release Notes](mariadb-10213-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-102-series/mariadb-10213-changelog.md)[Overview of 10.2](what-is-mariadb-102.md)
 
 **Release date:** 13 Feb 2018
 
@@ -55,7 +55,7 @@ Thanks, and enjoy MariaDB!
 ## Notes
 
 For a complete list of changes made in [MariaDB 10.2.13](mariadb-10213-release-notes.md) with links to detailed\
-information on each push, see the [changelog](../../../changelogs/changelogs-mariadb-102-series/mariadb-10213-changelog.md).
+information on each push, see the [changelog](../../changelogs/changelogs-mariadb-102-series/mariadb-10213-changelog.md).
 
 Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
 

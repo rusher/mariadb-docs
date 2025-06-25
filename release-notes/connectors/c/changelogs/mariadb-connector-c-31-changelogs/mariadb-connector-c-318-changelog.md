@@ -30,9 +30,9 @@ details of the revision and view diffs of the code modified in that revision.
   2020-04-25 07:18:06 +0200
   * Updatei matrix of DB version numbers
 * [Revision #b4ac056](https://github.com/mariadb-corporation/mariadb-connector-c/commit/b4ac056)\
-  2020-04-25 07:03:38 +0200
-  *
-    * Fixed archive host - Download via curl
+  2020-04-25 07:03:38 +0200\
+  \*
+  * Fixed archive host - Download via curl
 * [Revision #8ff27a4](https://github.com/mariadb-corporation/mariadb-connector-c/commit/8ff27a4)\
   2020-04-25 06:59:33 +0200
   * Revert "Fix host for msi download"

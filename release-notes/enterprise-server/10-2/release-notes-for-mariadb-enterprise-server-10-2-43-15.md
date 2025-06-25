@@ -83,7 +83,7 @@ mariabackup: innodb_init_param(): Error occurred.
 
 ### Related to install and upgrade
 
-* When [wsrep\_sst\_method=mariabackup](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/galera-management/state-snapshot-transfers-ssts-in-galera-cluster/mariabackup-sst-method) is set for MariaDB Enterprise Cluster, but MariaDB Enterprise Backup is not installed on the joiner node, the joiner node fails to start. ([MDEV-15209](https://jira.mariadb.org/browse/MDEV-15209))
+* When [wsrep\_sst\_method=mariabackup](broken-reference) is set for MariaDB Enterprise Cluster, but MariaDB Enterprise Backup is not installed on the joiner node, the joiner node fails to start. ([MDEV-15209](https://jira.mariadb.org/browse/MDEV-15209))
 
 ## Interface Changes
 
