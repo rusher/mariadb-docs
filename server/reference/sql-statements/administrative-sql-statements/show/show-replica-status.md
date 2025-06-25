@@ -2,14 +2,14 @@
 
 ## Syntax
 
-```
-SHOW { SLAVE | REPLICA } ["connection_name"] STATUS [FOR CHANNEL "connection_name"]
+```sql
+SHOW { REPLICA | SLAVE} ["connection_name"] STATUS [FOR CHANNEL "connection_name"]
 ```
 
 or
 
-```
-SHOW ALL { SLAVES | REPLICAS } STATUS
+```sql
+SHOW ALL { REPLICAS | SLAVES } STATUS
 ```
 
 ## Description
@@ -26,13 +26,11 @@ The `ALL` and `"connection_name"` options allow you to connect to [many primarie
 
 The rows will be sorted according to `Connection_name`.
 
-If you specify a `connection_name`, you only get the information about that\
-connection. If `connection_name` is not used, then the name set by `default_master_connection` is used. If the connection name doesn't exist you will get an error:`There is no master connection for 'xxx'`.
+If you specify a `connection_name`, you only get the information about that connection. If `connection_name` is not used, then the name set by `default_master_connection` is used. If the connection name doesn't exist you will get an error:`There is no master connection for 'xxx'`.
 
 **MariaDB starting with** [**10.7.0**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-7-series/mariadb-1070-release-notes)
 
-The `FOR CHANNEL` keyword was added for MySQL compatibility. This is identical to\
-using the channel\_name directly after `SHOW SLAVE`.
+The `FOR CHANNEL` keyword was added for MySQL compatibility. This is identical to using the channel\_name directly after `SHOW SLAVE`.
 
 ### Column Descriptions
 
@@ -117,11 +115,9 @@ These columns can also be viewed/extracted from the [INFORMATION_SCHEMA.SLAVE_ST
 
 ## Examples
 
-If you issue this statement using the [mariadb](../../../../clients-and-utilities/mariadb-client/) client,\
-you can use a `\G` statement terminator rather than a semicolon to\
-obtain a more readable vertical layout.
+If you issue this statement using the [mariadb](../../../../clients-and-utilities/mariadb-client/) client, you can use a `\G` statement terminator rather than a semicolon to obtain a more readable vertical layout.
 
-```
+```sql
 SHOW SLAVE STATUS\G
 *************************** 1. row ***************************
                 Slave_IO_State: Waiting for master to send event
@@ -180,7 +176,7 @@ Slave_Non_Transactional_Groups: 0
           Replicate_Rewrite_DB:
 ```
 
-```
+```sql
 SHOW ALL SLAVES STATUS\G
 *************************** 1. row ***************************
                Connection_name: 
@@ -252,7 +248,7 @@ Slave_Non_Transactional_Groups: 0
 
 You can also access some of the variables directly from status variables:
 
-```
+```sql
 SET @@default_master_connection="test" ;
 show status like "%slave%"
 

@@ -6,7 +6,7 @@ This was introduced as part of the [Information Schema plugin extension](https:/
 
 ## Example
 
-```
+```sql
 SHOW QUERY_RESPONSE_TIME;
 +----------------+-------+----------------+
 | Time           | Count | Total          |

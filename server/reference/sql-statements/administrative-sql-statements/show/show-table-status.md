@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 SHOW TABLE STATUS [{FROM | IN} db_name]
     [LIKE 'pattern' | WHERE expr]
 ```
@@ -11,8 +11,7 @@ SHOW TABLE STATUS [{FROM | IN} db_name]
 
 `SHOW TABLE STATUS` works like [SHOW TABLES](show-tables.md), but provides more extensive information about each table (until [MariaDB 11.2.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-0-release-notes), only non-TEMPORARY tables are shown).
 
-The `LIKE` clause, if present on its own, indicates which table names to\
-match. The `WHERE` and `LIKE` clauses can be given to select rows using more general conditions, as discussed in [Extended SHOW](extended-show.md).
+The `LIKE` clause, if present on its own, indicates which table names to match. The `WHERE` and `LIKE` clauses can be given to select rows using more general conditions, as discussed in [Extended SHOW](extended-show.md).
 
 The following information is returned:
 
@@ -42,7 +41,7 @@ The following information is returned:
 
 Similar information can be found in the [information\_schema.TABLES](../system-tables/information-schema/information-schema-tables/information-schema-tables-table.md) table as well as by using [mariadb-show](../../../../clients-and-utilities/administrative-tools/mariadb-show.md):
 
-```
+```bash
 mariadb-show --status db_name
 ```
 
@@ -52,8 +51,8 @@ For views, all columns in `SHOW TABLE STATUS` are `NULL` except 'Name' and 'Comm
 
 ## Example
 
-```
-show table status\G
+```sql
+SHOW TABLE STATUS\G
 *************************** 1. row ***************************
            Name: bus_routes
          Engine: InnoDB

@@ -2,20 +2,16 @@
 
 ## Syntax
 
-```
+```sql
 SHOW TRIGGERS [FROM db_name]
     [LIKE 'pattern' | WHERE expr]
 ```
 
 ## Description
 
-`SHOW TRIGGERS` lists the triggers currently defined for\
-tables in a database (the default database unless a `FROM`\
-clause is given). This statement requires the[TRIGGER](show-privileges.md) privilege (prior to MySQL\
-5.1.22, it required the `SUPER` privilege).
+`SHOW TRIGGERS` lists the triggers currently defined for tables in a database (the default database unless a `FROM` clause is given). This statement requires the[TRIGGER](show-privileges.md) privilege (prior to MySQL 5.1.22, it required the `SUPER` privilege).
 
-The `LIKE` clause, if present on its own, indicates which table names to\
-match and causes the statement to display triggers for those tables. The `WHERE` and `LIKE` clauses can be given to select rows using more general conditions, as discussed in [Extended SHOW](extended-show.md).
+The `LIKE` clause, if present on its own, indicates which table names to match and causes the statement to display triggers for those tables. The `WHERE` and `LIKE` clauses can be given to select rows using more general conditions, as discussed in [Extended SHOW](extended-show.md).
 
 Similar information is stored in the [information_schema.TRIGGERS](../system-tables/information-schema/information-schema-tables/information-schema-triggers-table.md) table.
 
@@ -25,7 +21,7 @@ If there are multiple triggers for the same action, then the triggers are shown 
 
 For the trigger defined at [Trigger Overview](../../../../server-usage/triggers-events/triggers/trigger-overview.md):
 
-```
+```sql
 SHOW triggers Like 'animals' \G
 *************************** 1. row ***************************
              Trigger: the_mooses_are_loose
@@ -49,7 +45,7 @@ collation_connection: utf8_general_ci
 
 Listing all triggers associated with a certain table:
 
-```
+```sql
 SHOW TRIGGERS FROM test WHERE `Table` = 'user' \G
 *************************** 1. row ***************************
              Trigger: user_ai
@@ -65,7 +61,7 @@ collation_connection: utf8_general_ci
   Database Collation: latin1_swedish_ci
 ```
 
-```
+```sql
 SHOW triggers WHERE Event Like 'Insert' \G
 *************************** 1. row ***************************
              Trigger: the_mooses_are_loose
@@ -88,10 +84,8 @@ collation_connection: utf8_general_ci
 ```
 
 * `character_set_client` is the session value of the [character_set_client](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#character_set_client) system variable when the trigger was created.
-* `collation_connection` is the session value of the [collation_connection](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#collation_connection) system variable when the trigger was\
-  created.
-* `Database Collation` is the collation of the database\
-  with which the trigger is associated.
+* `collation_connection` is the session value of the [collation_connection](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#collation_connection) system variable when the trigger was   created.
+* `Database Collation` is the collation of the database   with which the trigger is associated.
 
 These columns were added in MariaDB/MySQL 5.1.21.
 

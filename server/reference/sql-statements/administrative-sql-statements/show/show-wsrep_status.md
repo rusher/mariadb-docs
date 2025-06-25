@@ -4,7 +4,7 @@
 
 ## Syntax
 
-```
+```sql
 SHOW WSREP_STATUS
 ```
 
@@ -14,7 +14,7 @@ The `SHOW WSREP_STATUS` statement returns [Galera](https://github.com/mariadb-co
 
 ## Examples
 
-```
+```sql
 SHOW WSREP_STATUS;
 +------------+-------------+----------------+--------------+
 | Node_Index | Node_Status | Cluster_Status | Cluster_Size |

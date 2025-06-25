@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 SHOW [FULL] TABLES [FROM db_name]
     [LIKE 'pattern' | WHERE expr]
 ```
@@ -17,7 +17,7 @@ The `FULL` modifier is supported such that `SHOW FULL TABLES` displays a second 
 
 You can also get this information using:
 
-```
+```bash
 mariadb-show db_name
 ```
 
@@ -29,7 +29,7 @@ The [information\_schema.TABLES](../system-tables/information-schema/information
 
 ## Examples
 
-```
+```sql
 SHOW TABLES;
 +----------------------+
 | Tables_in_test       |
@@ -45,7 +45,7 @@ SHOW TABLES;
 
 Showing the tables beginning with _a_ only.
 
-```
+```sql
 SHOW TABLES WHERE Tables_in_test LIKE 'a%';
 +----------------------+
 | Tables_in_test       |
@@ -59,7 +59,7 @@ SHOW TABLES WHERE Tables_in_test LIKE 'a%';
 
 Showing tables and table types:
 
-```
+```sql
 SHOW FULL TABLES;
 +----------------+------------+
 | Tables_in_test | Table_type |
@@ -70,10 +70,9 @@ SHOW FULL TABLES;
 +----------------+------------+
 ```
 
-Showing temporary tables:\
-<= [MariaDB 11.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-1-series/what-is-mariadb-111)
+Showing temporary tables: <= [MariaDB 11.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-1-series/what-is-mariadb-111)
 
-```
+```sql
 CREATE TABLE t (t int(11));
 CREATE TEMPORARY TABLE t (t int(11));
 CREATE TEMPORARY TABLE te (t int(11));
@@ -88,7 +87,7 @@ SHOW TABLES;
 
 From [MariaDB 11.2.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-0-release-notes):
 
-```
+```sql
 CREATE TABLE t (t int(11));
 CREATE TEMPORARY TABLE t (t int(11));
 CREATE TEMPORARY TABLE te (t int(11));

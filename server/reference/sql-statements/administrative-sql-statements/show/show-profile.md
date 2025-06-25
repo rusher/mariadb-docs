@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 SHOW PROFILE [type [, type] ... ]
     [FOR QUERY n]
     [LIMIT row_count [OFFSET offset]]
@@ -21,35 +21,23 @@ type:
 
 ## Description
 
-The `SHOW PROFILE` and[SHOW PROFILES](show-profiles.md) statements display profiling\
-information that indicates resource usage for statements executed during the\
-course of the current session.
+The `SHOW PROFILE` and[SHOW PROFILES](show-profiles.md) statements display profiling information that indicates resource usage for statements executed during the course of the current session.
 
 Profiling is controlled by the [profiling](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#profiling) session variable, which has a default value of `0` (`OFF`). Profiling is enabled by setting profiling to `1` or `ON`:
 
-```
+```sql
 SET profiling = 1;
 ```
 
-`SHOW PROFILES` displays a list of the most recent statements\
-sent to the master. The size of the list is controlled by the[profiling_history_size](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#profiling_history_size) session variable, which has a default value of `15`. The maximum value is `100`. Setting the value to `0` has the practical effect of disabling profiling.
+`SHOW PROFILES` displays a list of the most recent statements sent to the master. The size of the list is controlled by the[profiling_history_size](../../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#profiling_history_size) session variable, which has a default value of `15`. The maximum value is `100`. Setting the value to `0` has the practical effect of disabling profiling.
 
-All statements are profiled except `SHOW PROFILES` and`SHOW PROFILE`, so you will find neither of those statements\
-in the profile list. Malformed statements are profiled. For example,`SHOW PROFILING` is an illegal statement, and a syntax error\
-occurs if you try to execute it, but it will show up in the profiling list.
+All statements are profiled except `SHOW PROFILES` and`SHOW PROFILE`, so you will find neither of those statements in the profile list. Malformed statements are profiled. For example,`SHOW PROFILING` is an illegal statement, and a syntax error occurs if you try to execute it, but it will show up in the profiling list.
 
-`SHOW PROFILE` displays detailed information about a single\
-statement. Without the `FOR QUERY n` clause, the output\
-pertains to the most recently executed statement. If`FOR QUERY n` is included,`SHOW PROFILE` displays information for statement _n_. The\
-values of _n_ correspond to\
-the `Query_ID` values displayed by `SHOW PROFILES`.
+`SHOW PROFILE` displays detailed information about a single statement. Without the `FOR QUERY n` clause, the output pertains to the most recently executed statement. If`FOR QUERY n` is included,`SHOW PROFILE` displays information for statement _n_. The values of _n_ correspond to the `Query_ID` values displayed by `SHOW PROFILES`.
 
-The `LIMIT row_count` clause may be given to limit the\
-output to _row\_count_ rows. If `LIMIT` is given,`OFFSET offset` may be added to begin the output offset\
-rows into the full set of rows.
+The `LIMIT row_count` clause may be given to limit the output to _row\_count_ rows. If `LIMIT` is given,`OFFSET offset` may be added to begin the output offset rows into the full set of rows.
 
-By default, `SHOW PROFILE` displays Status and Duration\
-columns. The Status values are like the State values displayed by [SHOW PROCESSLIST](show-processlist.md) (see [General Thread States](../../../../ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-states/general-thread-states.md)), although there might be some minor differences in interpretation for the two statements for some status values.
+By default, `SHOW PROFILE` displays Status and Duration columns. The Status values are like the State values displayed by [SHOW PROCESSLIST](show-processlist.md) (see [General Thread States](../../../../ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-states/general-thread-states.md)), although there might be some minor differences in interpretation for the two statements for some status values.
 
 Optional type values may be specified to display specific additional types of information:
 
@@ -69,7 +57,7 @@ The `[information_schema.PROFILING](../system-tables/information-schema/informat
 
 ## Examples
 
-```
+```sql
 SELECT @@profiling;
 +-------------+
 | @@profiling |

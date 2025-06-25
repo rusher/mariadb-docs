@@ -6,7 +6,7 @@ The terms _master_ and _slave_ have historically been used in replication, and M
 
 ## Syntax
 
-```
+```sql
 SHOW RELAYLOG ['connection_name'] EVENTS
     [IN 'log_name'] [FROM pos] [LIMIT [offset,] row_count]
     [ FOR CHANNEL 'channel_name']
@@ -32,8 +32,7 @@ If there is only one nameless primary, or the default primary (as specified by t
 
 **MariaDB starting with** [**10.7.0**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-7-series/mariadb-1070-release-notes)
 
-The `FOR CHANNEL` keyword was added for MySQL compatibility. This is identical as\
-using the channel\_name directly after `SHOW RELAYLOG`.
+The `FOR CHANNEL` keyword was added for MySQL compatibility. This is identical as using the channel\_name directly after `SHOW RELAYLOG`.
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

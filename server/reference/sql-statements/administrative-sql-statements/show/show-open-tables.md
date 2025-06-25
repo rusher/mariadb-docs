@@ -2,23 +2,20 @@
 
 ## Syntax
 
-```
+```sql
 SHOW OPEN TABLES [FROM db_name]
     [LIKE 'pattern' | WHERE expr]
 ```
 
 ## Description
 
-`SHOW OPEN TABLES` lists the non-`TEMPORARY`\
-tables that are currently open in the table cache. See[table-cache.html](https://dev.mysql.com/doc/refman/5.1/en/table-cache.html).
+`SHOW OPEN TABLES` lists the non-`TEMPORARY` tables that are currently open in the table cache. See[table-cache.html](https://dev.mysql.com/doc/refman/5.1/en/table-cache.html).
 
 The `FROM` and `LIKE` clauses may be used.
 
-The `FROM`\
-clause, if present, restricts the tables shown to those present in the`db_name` database.
+The `FROM` clause, if present, restricts the tables shown to those present in the`db_name` database.
 
-The `LIKE` clause, if\
-present on its own, indicates which table names to match. The `WHERE` and `LIKE` clauses can be given to select rows using more general conditions, as discussed in [Extended SHOW](extended-show.md).
+The `LIKE` clause, if present on its own, indicates which table names to match. The `WHERE` and `LIKE` clauses can be given to select rows using more general conditions, as discussed in [Extended SHOW](extended-show.md).
 
 The following information is returned:
 
@@ -34,7 +31,7 @@ Before [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-comm
 
 ## Example
 
-```
+```sql
 SHOW OPEN TABLES;
 +----------+---------------------------+--------+-------------+
 | Database | Table                     | In_use | Name_locked |

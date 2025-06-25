@@ -2,16 +2,16 @@
 
 ## Syntax
 
-```
-SHOW { SLAVE | REPLICA } HOSTS
+```sql
+SHOW { REPLICA | SLAVE } HOSTS
 ```
 
 ## Description
 
 This command is run on the primary and displays a list of replicas that are currently registered with it. The output looks like this:
 
-```
-SHOW SLAVE HOSTS;
+```sql
+SHOW REPLICA HOSTS;
 +------------+-----------+------+-----------+
 | Server_id  | Host      | Port | Master_id |
 +------------+-----------+------+-----------+
@@ -25,8 +25,7 @@ SHOW SLAVE HOSTS;
 * `Port`: The port the replica server is listening on.
 * `Master_id`: The unique server ID of the primary server that the replica server is replicating from.
 
-Some MariaDB and MySQL versions report another variable, [rpl\_recovery\_rank](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#rpl_recovery_rank). This\
-variable was never used, and was eventually removed in [MariaDB 10.1.2](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/administrative-sql-statements/show/broken-reference/README.md) .
+Some MariaDB and MySQL versions report another variable, [rpl\_recovery\_rank](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#rpl_recovery_rank). This variable was never used, and was eventually removed in [MariaDB 10.1.2](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/administrative-sql-statements/show/broken-reference/README.md) .
 
 Requires the [REPLICATION MASTER ADMIN](../../account-management-sql-statements/grant.md#replication-master-admin) privilege (>= [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1052-release-notes)) or the [REPLICATION SLAVE](../../account-management-sql-statements/grant.md#replication-slave) privilege (<= [MariaDB 10.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1051-release-notes)).
 

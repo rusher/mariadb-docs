@@ -4,7 +4,7 @@
 
 ## Syntax
 
-```
+```sql
 SHOW WSREP_MEMBERSHIP
 ```
 
@@ -14,7 +14,7 @@ The `SHOW WSREP_MEMBERSHIP` statement returns [Galera](https://github.com/mariad
 
 ## Examples
 
-```
+```sql
 SHOW WSREP_MEMBERSHIP;
 +-------+--------------------------------------+----------+-----------------+
 | Index | Uuid                                 | Name     | Address         |

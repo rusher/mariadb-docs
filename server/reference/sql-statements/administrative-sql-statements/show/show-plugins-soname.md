@@ -4,7 +4,7 @@
 ## Syntax
 
 
-```
+```sql
 SHOW PLUGINS SONAME { library | LIKE 'pattern' | WHERE expr };
 ```
 
@@ -17,7 +17,7 @@ SHOW PLUGINS SONAME { library | LIKE 'pattern' | WHERE expr };
 ## Examples
 
 
-```
+```sql
 SHOW PLUGINS SONAME 'ha_example.so';
 +----------+---------------+----------------+---------------+---------+
 | Name     | Status        | Type           | Library       | License |

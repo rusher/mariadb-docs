@@ -62,9 +62,8 @@ ERROR 1932 (HY000): Target is not running an EXPLAINable command
 
 You will get this error when:
 
-* the target connection is not running a command for which one can run `EXPLAIN`
-* the target connection is running a command for which one can run `EXPLAIN`, but
-  * there is no query plan yet (for example, tables are open and locks are     acquired before the query plan is produced)
+* The target connection is not running a command for which one can run `EXPLAIN`;
+* The target connection is running a command for which one can run `EXPLAIN`, but there is no query plan yet (for example, tables are open and locks are acquired before the query plan is produced).
 
 ### Differences Between SHOW EXPLAIN and EXPLAIN Outputs
 

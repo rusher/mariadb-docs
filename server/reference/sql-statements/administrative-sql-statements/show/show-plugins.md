@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 SHOW PLUGINS;
 ```
 
@@ -16,7 +16,7 @@ For specific information about storage engines (a particular type of plugin), se
 
 ## Examples
 
-```
+```sql
 SHOW PLUGINS;
 +----------------------------+----------+--------------------+-------------+---------+
 | Name                       | Status   | Type               | Library     | License |

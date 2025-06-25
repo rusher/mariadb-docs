@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 SHOW WARNINGS [LIMIT [offset,] row_count]
 SHOW ERRORS [LIMIT row_count OFFSET offset]
 SHOW COUNT(*) WARNINGS
@@ -10,23 +10,15 @@ SHOW COUNT(*) WARNINGS
 
 ## Description
 
-`SHOW WARNINGS` shows the error, warning, and note messages\
-that resulted from the last statement that generated messages in the\
-current session. It shows nothing if the last statement used a table\
-and generated no messages. (That is, a statement that uses a table but\
-generates no messages clears the message list.) Statements that do not\
-use tables and do not generate messages have no effect on the message\
-list.
+`SHOW WARNINGS` shows the error, warning, and note messages that resulted from the last statement that generated messages in the current session. It shows nothing if the last statement used a table and generated no messages. (That is, a statement that uses a table but generates no messages clears the message list.) Statements that do not use tables and do not generate messages have no effect on the message list.
 
 A note is different to a warning in that it only appears if the [sql\_notes](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#sql_notes) variable is set to 1 (the default), and is not converted to an error if [strict mode](../../../../server-management/variables-and-modes/sql-mode.md) is enabled.
 
 A related statement, [SHOW ERRORS](show-errors.md), shows only the errors.
 
-The `SHOW COUNT(*) WARNINGS` statement displays the total\
-number of errors, warnings, and notes. You can also retrieve this number from\
-the [warning\_count](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#warning_count) variable:
+The `SHOW COUNT(*) WARNINGS` statement displays the total number of errors, warnings, and notes. You can also retrieve this number from the [warning\_count](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#warning_count) variable:
 
-```
+```sql
 SHOW COUNT(*) WARNINGS;
 SELECT @@warning_count;
 ```
@@ -49,7 +41,7 @@ MariaDB implements a stored routine error stack trace. `SHOW WARNINGS` can also 
 
 ## Examples
 
-```
+```sql
 SELECT 1/0;
 +------+
 | 1/0  |
@@ -76,7 +68,7 @@ SHOW WARNINGS;
 
 Displaying a stack trace:
 
-```
+```sql
 DELIMITER $$
 CREATE OR REPLACE PROCEDURE p1()
   BEGIN
@@ -106,7 +98,7 @@ SHOW WARNINGS;
 
 `SHOW WARNINGS` displays a stack trace, showing where the error actually happened:
 
-* Line 4 in test.p1 is the OPEN command which actually raised the error
+* Line 4 in test.p1 is the OPEN command which actually raised the error.
 * Line 3 in test.p2 is the CALL statement, calling p1 from p2.
 
 ## See Also

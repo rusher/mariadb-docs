@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 SHOW PRIVILEGES
 ```
 
@@ -16,7 +16,7 @@ Note that before [MariaDB 10.3.23](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFy
 
 From [MariaDB 10.5.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1059-release-notes)
 
-```
+```sql
 SHOW PRIVILEGES;
 +--------------------------+---------------------------------------+--------------------------------------------------------------------+
 | Privilege                | Context                               | Comment                                                            |

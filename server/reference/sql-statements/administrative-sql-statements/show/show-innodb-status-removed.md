@@ -4,7 +4,7 @@
 ## Syntax
 
 
-```
+```sql
 SHOW INNODB STATUS
 ```
 

@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 SHOW TABLE_STATISTICS
 ```
 
@@ -14,7 +14,7 @@ The [userstat](../../../../ha-and-performance/optimization-and-tuning/system-var
 
 ## Example
 
-```
+```sql
 SHOW TABLE_STATISTICS\G
 *************************** 1. row ***************************
            Table_schema: mysql

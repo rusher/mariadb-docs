@@ -8,7 +8,7 @@ While the [information\_schema.LOCALES](../system-tables/information-schema/info
 
 ## Example
 
-```
+```sql
 SHOW LOCALES;
 +-----+-------+-------------------------------------+------------------------+
 | Id  | Name  | Description                         | Error_Message_Language |
