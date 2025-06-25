@@ -413,7 +413,7 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-34169](https://jira.mariadb.org/browse/MDEV-34169) Don't allow innodb\_open\_files to be lesser than number of non-user tablespace.
 * [Revision #238798d978](https://github.com/MariaDB/server/commit/238798d978)\
   2024-06-06 20:24:06 +0200
-  * [MDEV-32158](https://jira.mariadb.org/browse/MDEV-32158): wsrep\_sst\_mariabackup use /tmp dir during SST rather then user defined tmpdir
+  * [MDEV-32158](https://jira.mariadb.org/browse/MDEV-32158): wsrep\_sst\_mariadb-backup use /tmp dir during SST rather then user defined tmpdir
 * [Revision #654f6ecec4](https://github.com/MariaDB/server/commit/654f6ecec4)\
   2024-06-06 19:37:31 +0200
   * galera: wsrep-lib submodule update

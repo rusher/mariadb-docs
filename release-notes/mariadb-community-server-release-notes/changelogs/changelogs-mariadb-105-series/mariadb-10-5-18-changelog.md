@@ -160,7 +160,7 @@ details of the revision and view diffs of the code modified in that revision.
 * Merge [Revision #29fa9bcee0](https://github.com/MariaDB/server/commit/29fa9bcee0) 2022-08-30 12:29:04 +0300 - Merge 10.4 into 10.5
 * [Revision #0324bde846](https://github.com/MariaDB/server/commit/0324bde846)\
   2022-08-26 10:20:26 +1000
-  * mariabackup: remove MySQL wording
+  * mariadb-backup: remove MySQL wording
 * [Revision #79b58f1ca8](https://github.com/MariaDB/server/commit/79b58f1ca8)\
   2022-07-30 00:11:08 +1000
   * [MDEV-23607](https://jira.mariadb.org/browse/MDEV-23607) mariadb-backup - align required GRANTS to cmd options

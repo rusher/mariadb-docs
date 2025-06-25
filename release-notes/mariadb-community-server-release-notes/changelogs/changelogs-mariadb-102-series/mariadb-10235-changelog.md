@@ -172,7 +172,7 @@ in that revision.
   * [MDEV-23926](https://jira.mariadb.org/browse/MDEV-23926): Fix warnings generated during compilation of plugin/auth\_pam/mapper/pam\_user\_map.c on MacOS
 * [Revision #985ede9203](https://github.com/MariaDB/server/commit/985ede9203)\
   2020-10-20 13:05:58 +0300
-  * [MDEV-20755](https://jira.mariadb.org/browse/MDEV-20755) InnoDB: Database page corruption on disk or a failed file read of tablespace upon prepare of mariabackup incremental backup
+  * [MDEV-20755](https://jira.mariadb.org/browse/MDEV-20755) InnoDB: Database page corruption on disk or a failed file read of tablespace upon prepare of mariadb-backup incremental backup
 * [Revision #cc1646dae8](https://github.com/MariaDB/server/commit/cc1646dae8)\
   2020-10-22 14:00:17 +0400
   * [MDEV-19443](https://jira.mariadb.org/browse/MDEV-19443) server\_audit plugin doesn't log proxy users.
@@ -194,7 +194,7 @@ in that revision.
   * Update mtr help
 * [Revision #888010d9dd](https://github.com/MariaDB/server/commit/888010d9dd)\
   2020-03-24 14:55:07 +0100
-  * [MDEV-21951](https://jira.mariadb.org/browse/MDEV-21951): mariabackup SST fail if data-directory have lost+found directory
+  * [MDEV-21951](https://jira.mariadb.org/browse/MDEV-21951): mariadb-backup SST fail if data-directory have lost+found directory
 * [Revision #692a44b309](https://github.com/MariaDB/server/commit/692a44b309)\
   2020-10-20 12:01:37 +0200
   * [MDEV-23327](https://jira.mariadb.org/browse/MDEV-23327): followup
@@ -221,7 +221,7 @@ in that revision.
   * [MDEV-23659](https://jira.mariadb.org/browse/MDEV-23659): Update Galera disabled.def file
 * [Revision #31201dcbaf](https://github.com/MariaDB/server/commit/31201dcbaf)\
   2020-10-13 13:33:47 +0200
-  * [MDEV-21770](https://jira.mariadb.org/browse/MDEV-21770): `galera_3nodes.galera_ipv6_mariabackup` fails
+  * [MDEV-21770](https://jira.mariadb.org/browse/MDEV-21770): `galera_3nodes.galera_ipv6_mariadb-backup` fails
 * [Revision #24c5af6758](https://github.com/MariaDB/server/commit/24c5af6758)\
   2020-10-14 15:55:16 +0200
   * Fix the constants names
@@ -384,13 +384,13 @@ in that revision.
   * [MDEV-18867](https://jira.mariadb.org/browse/MDEV-18867): Remove an orphan function
 * [Revision #0a224edc3e](https://github.com/MariaDB/server/commit/0a224edc3e)\
   2020-09-19 00:08:38 +0300
-  * [MDEV-23711](https://jira.mariadb.org/browse/MDEV-23711) make mariabackup innodb redo log read error message more clear
+  * [MDEV-23711](https://jira.mariadb.org/browse/MDEV-23711) make mariadb-backup innodb redo log read error message more clear
 * [Revision #69d536a22d](https://github.com/MariaDB/server/commit/69d536a22d)\
   2020-09-18 07:32:36 +0300
   * [MDEV-23751](https://jira.mariadb.org/browse/MDEV-23751) : galera\_3nodes test failures on ipv6 sst tests
 * [Revision #f381e019b6](https://github.com/MariaDB/server/commit/f381e019b6)\
   2020-09-17 12:55:06 +0300
-  * [MDEV-23574](https://jira.mariadb.org/browse/MDEV-23574) : galera\_3nodes.galera\_ipv6\_mariabackup\_section MTR failed: Could not open '../galera/include/have\_mariabackup.inc'
+  * [MDEV-23574](https://jira.mariadb.org/browse/MDEV-23574) : galera\_3nodes.galera\_ipv6\_mariadb-backup\_section MTR failed: Could not open '../galera/include/have\_mariadb-backup.inc'
 * [Revision #e3e657373a](https://github.com/MariaDB/server/commit/e3e657373a)\
   2020-09-17 08:25:07 +0300
   * [MDEV-21769](https://jira.mariadb.org/browse/MDEV-21769) : `galera_3nodes.galera_safe_to_bootstrap` fails
@@ -417,7 +417,7 @@ in that revision.
   * [MDEV-18867](https://jira.mariadb.org/browse/MDEV-18867) Long Time to Stop and Start
 * [Revision #5c07ce406b](https://github.com/MariaDB/server/commit/5c07ce406b)\
   2020-09-09 16:03:15 +0300
-  * [MDEV-23706](https://jira.mariadb.org/browse/MDEV-23706) : Galera test failure on galera\_autoinc\_sst\_mariabackup
+  * [MDEV-23706](https://jira.mariadb.org/browse/MDEV-23706) : Galera test failure on galera\_autoinc\_sst\_mariadb-backup
 * [Revision #0eb38243ce](https://github.com/MariaDB/server/commit/0eb38243ce)\
   2020-09-09 13:04:11 +0300
   * [MDEV-23456](https://jira.mariadb.org/browse/MDEV-23456) fixup: Simplify a comparison
@@ -454,7 +454,7 @@ in that revision.
 * Merge [Revision #2a93e632b1](https://github.com/MariaDB/server/commit/2a93e632b1) 2020-09-03 09:10:03 +0300 - Merge 10.1 into 10.2
 * [Revision #9aea50616c](https://github.com/MariaDB/server/commit/9aea50616c)\
   2020-09-02 14:57:48 +0300
-  * Increase mariabackup SST initial timeout to avoid timeouts.
+  * Increase mariadb-backup SST initial timeout to avoid timeouts.
 * [Revision #837bbbafc5](https://github.com/MariaDB/server/commit/837bbbafc5)\
   2020-09-02 16:15:02 +0530
   * [MDEV-23470](https://jira.mariadb.org/browse/MDEV-23470) InnoDB: Failing assertion: cmp < 0 in row\_ins\_check\_foreign\_constraint
@@ -506,10 +506,10 @@ in that revision.
   * [MDEV-23576](https://jira.mariadb.org/browse/MDEV-23576) : galera\_3nodes.galera\_ipv6\_mysqldump MTR failed: WSREP\_SST: \[ERROR] rsync daemon port '16008' has been taken
 * [Revision #97d830565f](https://github.com/MariaDB/server/commit/97d830565f)\
   2020-08-27 14:50:21 +0300
-  * [MDEV-23574](https://jira.mariadb.org/browse/MDEV-23574) : galera\_3nodes.galera\_ipv6\_mariabackup\_section MTR failed: Could not open '../galera/include/have\_mariabackup.inc'
+  * [MDEV-23574](https://jira.mariadb.org/browse/MDEV-23574) : galera\_3nodes.galera\_ipv6\_mariadb-backup\_section MTR failed: Could not open '../galera/include/have\_mariadb-backup.inc'
 * [Revision #f54295f546](https://github.com/MariaDB/server/commit/f54295f546)\
   2020-08-27 14:49:17 +0300
-  * [MDEV-23573](https://jira.mariadb.org/browse/MDEV-23573) : galera\_3nodes.galera\_ipv6\_mariabackup MTR failed: Could not open '../galera/include/have\_mariabackup.inc
+  * [MDEV-23573](https://jira.mariadb.org/browse/MDEV-23573) : galera\_3nodes.galera\_ipv6\_mariadb-backup MTR failed: Could not open '../galera/include/have\_mariadb-backup.inc
 * [Revision #b3e43eeec7](https://github.com/MariaDB/server/commit/b3e43eeec7)\
   2020-08-27 13:52:15 +0300
   * Remove xtrabackup and innobackupex test cases.

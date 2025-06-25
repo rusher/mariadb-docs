@@ -33,7 +33,7 @@ From this version, the [mariadb-dump](https://app.gitbook.com/s/SsmexDFPv2xG2OTy
 * Fix MariaDB segfault on rowid filter query involving generated column ([MDEV-33795](https://jira.mariadb.org/browse/MDEV-33795))
 * Fix discard/import tablespace, restart, index corruption ([MDEV-33512](https://jira.mariadb.org/browse/MDEV-33512))
 * Fix server hang on DROP INDEX or RENAME INDEX ([MDEV-33993](https://jira.mariadb.org/browse/MDEV-33993))
-* Fix mariabackup --backup hang ([MDEV-33669](https://jira.mariadb.org/browse/MDEV-33669))
+* Fix mariadb-backup --backup hang ([MDEV-33669](https://jira.mariadb.org/browse/MDEV-33669))
 * Fix server hang caused by InnoDB change buffer ([MDEV-33543](https://jira.mariadb.org/browse/MDEV-33543))
 * Fix assertion failures upon adding a too long key to table with COMPRESSED row format ([MDEV-31161](https://jira.mariadb.org/browse/MDEV-31161))
 * IMPORT TABLESPACE no longer fails with column count or index count mismatch ([MDEV-30655](https://jira.mariadb.org/browse/MDEV-30655))
@@ -73,12 +73,12 @@ From this version, the [mariadb-dump](https://app.gitbook.com/s/SsmexDFPv2xG2OTy
 
 ### Backup
 
-* Port backup features from Enterprise Server. This adds support for [BACKUP STAGE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/backup-commands/backup-stage) to [mariabackup](broken-reference), and obsoletes the [no-backup-locks](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-1-series/broken-reference/README.md) and [rysnc](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-1-series/broken-reference/README.md) options ([MDEV-32932](https://jira.mariadb.org/browse/MDEV-32932))
+* Port backup features from Enterprise Server. This adds support for [BACKUP STAGE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/backup-commands/backup-stage) to [mariadb-backup](broken-reference), and obsoletes the [no-backup-locks](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-1-series/broken-reference/README.md) and [rysnc](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-1-series/broken-reference/README.md) options ([MDEV-32932](https://jira.mariadb.org/browse/MDEV-32932))
 * [mariadb-backup](broken-reference) now preserves [innodb\_encrypt\_tables](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables#innodb_encrypt_tables) ([MDEV-33334](https://jira.mariadb.org/browse/MDEV-33334))
-* Fix [mariabackup](broken-reference) problem on older mariadb (opendir(NULL)) caused by [MDEV-30968](https://jira.mariadb.org/browse/MDEV-30968) ([MDEV-31251](https://jira.mariadb.org/browse/MDEV-31251))
-* Fix [mariabackup --backup](broken-reference) FATAL ERROR: ... Can't open datafile cool\_down/t3 ([MDEV-33011](https://jira.mariadb.org/browse/MDEV-33011))
+* Fix [mariadb-backup](broken-reference) problem on older mariadb (opendir(NULL)) caused by [MDEV-30968](https://jira.mariadb.org/browse/MDEV-30968) ([MDEV-31251](https://jira.mariadb.org/browse/MDEV-31251))
+* Fix [mariadb-backup --backup](broken-reference) FATAL ERROR: ... Can't open datafile cool\_down/t3 ([MDEV-33011](https://jira.mariadb.org/browse/MDEV-33011))
 * [mariadb-backup --backup](broken-reference) now includes retry logic for undo tablespaces ([MDEV-33980](https://jira.mariadb.org/browse/MDEV-33980))
-* Fix crash recovery in [mariabackup --prepare](broken-reference) due to insufficient [innodb\_log\_file\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables#innodb_log_file_size) ([MDEV-33540](https://jira.mariadb.org/browse/MDEV-33540))
+* Fix crash recovery in [mariadb-backup --prepare](broken-reference) due to insufficient [innodb\_log\_file\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables#innodb_log_file_size) ([MDEV-33540](https://jira.mariadb.org/browse/MDEV-33540))
 * Fix crash in [mariadb-backup --prepare --export](broken-reference) after `--prepare` ([MDEV-33023](https://jira.mariadb.org/browse/MDEV-33023))
 * [mariadb-backup](broken-reference) now considers O/S user when `--user` option is omitted ([MDEV-32893](https://jira.mariadb.org/browse/MDEV-32893))
 

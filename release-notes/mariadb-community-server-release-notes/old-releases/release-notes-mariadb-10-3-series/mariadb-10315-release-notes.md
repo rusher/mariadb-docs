@@ -58,7 +58,7 @@ Thanks, and enjoy MariaDB!
 
 ### mariadb-backup
 
-* [MDEV-19060](https://jira.mariadb.org/browse/MDEV-19060) - mariabackup continues, despite failing to open a tablespace
+* [MDEV-19060](https://jira.mariadb.org/browse/MDEV-19060) - mariadb-backup continues, despite failing to open a tablespace
 
 ### Packaging & Misc
 

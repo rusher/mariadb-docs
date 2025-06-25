@@ -135,7 +135,7 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-34981](https://jira.mariadb.org/browse/MDEV-34981) Functions missing from INFORMATION\_SCHEMA.SQL\_FUNCTIONS
 * [Revision #c34a2feceb](https://github.com/MariaDB/server/commit/c34a2feceb)\
   2024-11-26 20:20:54 +0200
-  * [MDEV-35509](https://jira.mariadb.org/browse/MDEV-35509) mariabackup.alter\_copy\_race crashes with abort in backup\_file\_op\_fail
+  * [MDEV-35509](https://jira.mariadb.org/browse/MDEV-35509) mariadb-backup.alter\_copy\_race crashes with abort in backup\_file\_op\_fail
 * [Revision #e81ed928ff](https://github.com/MariaDB/server/commit/e81ed928ff)\
   2024-11-21 14:48:59 -0700
   * [MDEV-35478](https://jira.mariadb.org/browse/MDEV-35478) part 2: Redo `space_id` format fix

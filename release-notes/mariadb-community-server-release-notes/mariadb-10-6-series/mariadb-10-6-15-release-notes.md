@@ -116,7 +116,7 @@ Thanks, and enjoy MariaDB!
 
 ### Galera
 
-* Node never returns from Donor/Desynced to Synced when `wsrep_mode = BF_ABORT_MARIABACKUP` ([MDEV-31737](https://jira.mariadb.org/browse/MDEV-31737))
+* Node never returns from Donor/Desynced to Synced when `wsrep_mode = BF_ABORT_mariadb-backup` ([MDEV-31737](https://jira.mariadb.org/browse/MDEV-31737))
 * Node has been dropped from the cluster on Startup / Shutdown with async replica ([MDEV-31413](https://jira.mariadb.org/browse/MDEV-31413))
 * KILL QUERY maintains nodes data consistency but breaks GTID sequence ([MDEV-31075](https://jira.mariadb.org/browse/MDEV-31075))
 * Assertion failure `!lock.was_chosen_as_deadlock_victim in trx0trx.h:1065` ([MDEV-30963](https://jira.mariadb.org/browse/MDEV-30963))

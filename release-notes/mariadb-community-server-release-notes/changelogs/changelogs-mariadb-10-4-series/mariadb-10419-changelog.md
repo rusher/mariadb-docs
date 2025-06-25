@@ -149,7 +149,7 @@ details of the revision and view diffs of the code modified in that revision.
   * arguments overflow fix proposal. the list is assumed to be implictly null terminated at usage time.
 * [Revision #e3a597378e](https://github.com/MariaDB/server/commit/e3a597378e)\
   2021-02-03 19:44:34 +0000
-  * mariabackup utility, binary path implementation for Mac.
+  * mariadb-backup utility, binary path implementation for Mac.
 * [Revision #1d762ee8fe](https://github.com/MariaDB/server/commit/1d762ee8fe)\
   2021-03-08 17:51:33 +0200
   * [MDEV-24363](https://jira.mariadb.org/browse/MDEV-24363) (followup fix) mysql.user view should

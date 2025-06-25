@@ -33,7 +33,7 @@ Thanks, and enjoy MariaDB!
 * [MDEV-12988](https://jira.mariadb.org/browse/MDEV-12988): mariadb-backup fails if innodb\_undo\_tablespaces>0
 * [MDEV-13471](https://jira.mariadb.org/browse/MDEV-13471): Test failure on innodb.log\_file\_size,4k (fixes Galera when using innodb\_page\_size=4k)
 * [MDEV-13814](https://jira.mariadb.org/browse/MDEV-13814): Extra logging when innodb\_log\_archive=ON (XtraDB only)
-* [MDEV-13807](https://jira.mariadb.org/browse/MDEV-13807): mariabackup --apply-log-only does generate redo log by performing rollback and possibly other tasks
+* [MDEV-13807](https://jira.mariadb.org/browse/MDEV-13807): mariadb-backup --apply-log-only does generate redo log by performing rollback and possibly other tasks
 * [MDEV-13684](https://jira.mariadb.org/browse/MDEV-13684): InnoDB race condition between fil\_crypt\_thread and btr\_scrub\_init
 
 ### Encryption

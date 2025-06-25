@@ -251,7 +251,7 @@ in that revision.
   * [MDEV-19886](https://jira.mariadb.org/browse/MDEV-19886) InnoDB returns misleading ER\_NO\_SUCH\_TABLE\_IN\_ENGINE
 * [Revision #6d2b236568](https://github.com/MariaDB/server/commit/6d2b236568)\
   2019-06-20 23:37:28 +0300
-  * [MDEV-19865](https://jira.mariadb.org/browse/MDEV-19865): AddressSanitizer error in open\_or\_create\_log\_file() in mariabackup
+  * [MDEV-19865](https://jira.mariadb.org/browse/MDEV-19865): AddressSanitizer error in open\_or\_create\_log\_file() in mariadb-backup
 * [Revision #7a2958f456](https://github.com/MariaDB/server/commit/7a2958f456)\
   2019-06-25 15:59:57 +0300
   * [MDEV-17576](https://jira.mariadb.org/browse/MDEV-17576) Assertion in maria\_extra upon ALTER on table with triggers and locks

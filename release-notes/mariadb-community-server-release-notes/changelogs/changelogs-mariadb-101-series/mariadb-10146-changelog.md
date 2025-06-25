@@ -146,7 +146,7 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-22765](https://jira.mariadb.org/browse/MDEV-22765) i\_s\_fts\_index\_cache\_fill\_one\_index() is not protect by the lock
 * [Revision #e80183dbd5](https://github.com/MariaDB/server/commit/e80183dbd5)\
   2020-07-14 13:22:59 +0530
-  * [MDEV-15662](https://jira.mariadb.org/browse/MDEV-15662) mariabackup.huge\_lsn fails sporadically with "log sequence number is in the future"
+  * [MDEV-15662](https://jira.mariadb.org/browse/MDEV-15662) mariadb-backup.huge\_lsn fails sporadically with "log sequence number is in the future"
 * [Revision #194a720e28](https://github.com/MariaDB/server/commit/194a720e28)\
   2020-07-10 17:50:04 +0530
   * [MDEV-22890](https://jira.mariadb.org/browse/MDEV-22890) DEADLOCK of threads detected: row0sel.cc S-LOCK / btr0cur.cc S-LOCK / row0quiesce.cc X-LOCK

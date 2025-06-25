@@ -70,7 +70,7 @@ Out of range value for column 'COLUMN_NAME' at row ROW_NUM
 
 ## Interface Changes
 
-* mariabackup [--sst-max-binlogs](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/logging-tools/mariadb-binlog/mariadb-binlog-options) command-line option removed
+* mariadb-backup [--sst-max-binlogs](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/logging-tools/mariadb-binlog/mariadb-binlog-options) command-line option removed
 * mysql [--enable-cleartext-plugin](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/authentication-plugin-pam#pam_use_cleartext_plugin) command-line option added
 * mysqldump [--max-statement-time](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/backup-restore-and-import-clients/mariadb-dump#options) command-line option added
 

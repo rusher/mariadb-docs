@@ -218,7 +218,7 @@ in that revision.
   * [MDEV-17354](https://jira.mariadb.org/browse/MDEV-17354) Server crashes in add\_key\_field / .. / Item\_func\_null\_predicate::add\_key\_fields upon INSERT .. SELECT
 * [Revision #81a5b6ccd5](https://github.com/MariaDB/server/commit/81a5b6ccd5)\
   2018-10-11 22:48:19 +0300
-  * [MDEV-17433](https://jira.mariadb.org/browse/MDEV-17433) Allow InnoDB start up with empty ib\_logfile0 from mariabackup --prepare
+  * [MDEV-17433](https://jira.mariadb.org/browse/MDEV-17433) Allow InnoDB start up with empty ib\_logfile0 from mariadb-backup --prepare
 * [Revision #b8944e8972](https://github.com/MariaDB/server/commit/b8944e8972)\
   2018-10-11 22:47:42 +0300
   * Fix a sign mismatch

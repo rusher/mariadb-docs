@@ -61,7 +61,7 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-14784](https://jira.mariadb.org/browse/MDEV-14784): Slave crashes in show\_status\_array upon running a trigger with select from I\_S
 * [Revision #9a8b8ea66b](https://github.com/MariaDB/server/commit/9a8b8ea66b)\
   2019-03-27 14:37:14 +0100
-  * [MDEV-19060](https://jira.mariadb.org/browse/MDEV-19060) : mariabackup continues, despite failing to open a tablespace
+  * [MDEV-19060](https://jira.mariadb.org/browse/MDEV-19060) : mariadb-backup continues, despite failing to open a tablespace
 * [Revision #fc168c3a5e](https://github.com/MariaDB/server/commit/fc168c3a5e)\
   2019-03-29 11:38:45 +0200
   * [MDEV-15587](https://jira.mariadb.org/browse/MDEV-15587) AES test fails, segfaults in EVP\_CipherInit\_ex
@@ -152,7 +152,7 @@ details of the revision and view diffs of the code modified in that revision.
   * Update sql\_parse.cc
 * [Revision #065ba53ccb](https://github.com/MariaDB/server/commit/065ba53ccb)\
   2019-03-26 13:51:15 +0200
-  * [MDEV-12711](https://jira.mariadb.org/browse/MDEV-12711) mariabackup --backup is refused for multi-file system tablespace
+  * [MDEV-12711](https://jira.mariadb.org/browse/MDEV-12711) mariadb-backup --backup is refused for multi-file system tablespace
 * [Revision #6fbbb0853e](https://github.com/MariaDB/server/commit/6fbbb0853e)\
   2019-03-26 11:37:18 +0400
   * [MDEV-18968](https://jira.mariadb.org/browse/MDEV-18968) Both (WHERE 0.1) and (WHERE NOT 0.1) return empty set
@@ -327,6 +327,6 @@ details of the revision and view diffs of the code modified in that revision.
 * Merge [Revision #a40de1bdeb](https://github.com/MariaDB/server/commit/a40de1bdeb) 2019-02-20 17:21:26 +0100 - Merge branch 'bb-10.3-release' into 10.3
 * [Revision #5296aa8b12](https://github.com/MariaDB/server/commit/5296aa8b12)\
   2019-02-20 12:25:57 +0100
-  * [MDEV-18663](https://jira.mariadb.org/browse/MDEV-18663) Tests : use --core-file if mariabackup output is redirected to a file
+  * [MDEV-18663](https://jira.mariadb.org/browse/MDEV-18663) Tests : use --core-file if mariadb-backup output is redirected to a file
 
 {% @marketo/form formid="4316" formId="4316" %}

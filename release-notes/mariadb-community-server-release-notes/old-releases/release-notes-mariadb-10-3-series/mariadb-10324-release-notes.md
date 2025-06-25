@@ -65,7 +65,7 @@ Thanks, and enjoy MariaDB!
 * Errors and SIGSEGV on CREATE TABLE w/ various charsets ([MDEV-22111](https://jira.mariadb.org/browse/MDEV-22111))
 * Crash in `CREATE TABLE AS SELECT` when the precision of returning type = 0 ([MDEV-22502](https://jira.mariadb.org/browse/MDEV-22502))
 * XA: Reject DDL operations between PREPARE and COMMIT ([MDEV-22420](https://jira.mariadb.org/browse/MDEV-22420))
-* Stop `mariabackup --prepare` on errors during innodb redo log applying ([MDEV-22354](https://jira.mariadb.org/browse/MDEV-22354))
+* Stop `mariadb-backup --prepare` on errors during innodb redo log applying ([MDEV-22354](https://jira.mariadb.org/browse/MDEV-22354))
 * Server crashes in `mysql_alter_table` upon adding a non-null date column under `NO_ZERO_DATE` with `ALGORITHM=INPLACE` ([MDEV-18042](https://jira.mariadb.org/browse/MDEV-18042))
 * Can't uninstall plugin if the library file doesn't exist ([MDEV-21258](https://jira.mariadb.org/browse/MDEV-21258))
 * As per the [MariaDB Deprecation Policy](../../../mariadb-platform-deprecation-policy.md), this will be the last release of [MariaDB 10.3](what-is-mariadb-103.md) for Ubuntu 19.10 Eoan and Fedora 30

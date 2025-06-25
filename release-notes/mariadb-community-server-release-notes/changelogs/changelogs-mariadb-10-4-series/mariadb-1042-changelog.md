@@ -167,7 +167,7 @@ details of the revision and view diffs of the code modified in that revision.
 * Merge [Revision #f9cc956065](https://github.com/MariaDB/server/commit/f9cc956065) 2019-01-21 15:06:48 +0200 - Merge pull request #1114 from GeoffMontee/10.1-geoff-[MDEV-17973](https://jira.mariadb.org/browse/MDEV-17973)
 * [Revision #2084cd5422](https://github.com/MariaDB/server/commit/2084cd5422)\
   2019-01-21 05:42:00 -0500
-  * [MDEV-17973](https://jira.mariadb.org/browse/MDEV-17973): Don't overwrite xtrabackup-v2/mariabackup SST logs by default
+  * [MDEV-17973](https://jira.mariadb.org/browse/MDEV-17973): Don't overwrite xtrabackup-v2/mariadb-backup SST logs by default
 * [Revision #d06ebd932d](https://github.com/MariaDB/server/commit/d06ebd932d)\
   2019-01-22 06:51:03 +0200
   * Remove references to removed dict\_sys->size
@@ -307,10 +307,10 @@ details of the revision and view diffs of the code modified in that revision.
   * Backport INFORMATION\_SCHEMA.CHECK\_CONSTRAINTS
 * [Revision #2153aaf66e](https://github.com/MariaDB/server/commit/2153aaf66e)\
   2019-01-15 22:47:54 +0100
-  * mariabackup : use die() macro for fatal exit with error message.
+  * mariadb-backup : use die() macro for fatal exit with error message.
 * [Revision #a8a27e65a8](https://github.com/MariaDB/server/commit/a8a27e65a8)\
   2019-01-14 22:28:23 +0100
-  * [MDEV-18212](https://jira.mariadb.org/browse/MDEV-18212) mariabackup: Make output format uniform whenever possible
+  * [MDEV-18212](https://jira.mariadb.org/browse/MDEV-18212) mariadb-backup: Make output format uniform whenever possible
 * [Revision #61b600079b](https://github.com/MariaDB/server/commit/61b600079b)\
   2019-01-15 09:47:34 +0200
   * [MDEV-16690](https://jira.mariadb.org/browse/MDEV-16690) node hang due to conflicting inserts in FK child table
@@ -372,10 +372,10 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-17753](https://jira.mariadb.org/browse/MDEV-17753) ALTER USER fail to replicate
 * [Revision #7331c661db](https://github.com/MariaDB/server/commit/7331c661db)\
   2019-01-10 19:35:45 +0100
-  * [MDEV-18201](https://jira.mariadb.org/browse/MDEV-18201) : mariabackup- fix processing of rename/create sequence in prepare
+  * [MDEV-18201](https://jira.mariadb.org/browse/MDEV-18201) : mariadb-backup- fix processing of rename/create sequence in prepare
 * [Revision #4a872ae1e7](https://github.com/MariaDB/server/commit/4a872ae1e7)\
   2019-01-09 22:28:31 +0100
-  * [MDEV-18185](https://jira.mariadb.org/browse/MDEV-18185) - mariabackup - fix specific case of table rename handing in prepare.
+  * [MDEV-18185](https://jira.mariadb.org/browse/MDEV-18185) - mariadb-backup - fix specific case of table rename handing in prepare.
 * [Revision #a75dbfd718](https://github.com/MariaDB/server/commit/a75dbfd718)\
   2019-01-14 14:37:34 +0200
   * [MDEV-12266](https://jira.mariadb.org/browse/MDEV-12266): Remove fil\_space\_t::name\_hash
@@ -450,13 +450,13 @@ details of the revision and view diffs of the code modified in that revision.
 * Merge [Revision #3d8011b375](https://github.com/MariaDB/server/commit/3d8011b375) 2019-01-04 14:47:56 +0200 - Merge pull request #929 from angeloudy/fix-broken-thing
 * [Revision #cb85803c45](https://github.com/MariaDB/server/commit/cb85803c45)\
   2019-01-02 15:40:55 +1100
-  * Use absolute path for mariabackup binary
+  * Use absolute path for mariadb-backup binary
 * [Revision #216d5f7899](https://github.com/MariaDB/server/commit/216d5f7899)\
   2018-11-29 12:36:57 +1100
   * use `ps -p` instead of `ps --pid`
 * [Revision #0e794c6a69](https://github.com/MariaDB/server/commit/0e794c6a69)\
   2018-11-15 13:51:09 +1100
-  * Make mariabackup.sh compatible on FreeBSD
+  * Make mariadb-backup.sh compatible on FreeBSD
 * [Revision #d27bea9e9a](https://github.com/MariaDB/server/commit/d27bea9e9a)\
   2019-01-07 07:31:25 -0500
   * bump the VERSION

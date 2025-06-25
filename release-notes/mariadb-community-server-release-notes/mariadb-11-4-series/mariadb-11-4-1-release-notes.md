@@ -51,8 +51,8 @@ Thanks, and enjoy MariaDB!
 
 #### Backup
 
-* mariabackup has wrong or missing plugin-dir default? ([MDEV-29110](https://jira.mariadb.org/browse/MDEV-29110))
-* mariabackup fails when `innodb_max_dirty_pages_pct` contains a fraction (is not an integer) ([MDEV-20286](https://jira.mariadb.org/browse/MDEV-20286))
+* mariadb-backup has wrong or missing plugin-dir default? ([MDEV-29110](https://jira.mariadb.org/browse/MDEV-29110))
+* mariadb-backup fails when `innodb_max_dirty_pages_pct` contains a fraction (is not an integer) ([MDEV-20286](https://jira.mariadb.org/browse/MDEV-20286))
 * Missing required privilege `CONNECTION ADMIN` ([MDEV-33006](https://jira.mariadb.org/browse/MDEV-33006))
 * If tables are frequently created, renamed, dropped, a backup cannot be restored ([MDEV-32939](https://jira.mariadb.org/browse/MDEV-32939))
 * New [mariadb-dump](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/backup-restore-and-import-clients/mariadb-dump) option, `-j`, `--parallel=`

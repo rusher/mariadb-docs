@@ -66,7 +66,7 @@ See the [Differences in MariaDB Enterprise Server 10.5](../../enterprise-server/
 * Replace recv\_sys\_t::addr\_hash with a std::map ([MDEV-19586](https://jira.mariadb.org/browse/MDEV-19586))
 * Obsolete internal parser for FK in InnoDB ([MDEV-20480](https://jira.mariadb.org/browse/MDEV-20480))
 * InnoDB thread pool for background tasks ([MDEV-16264](https://jira.mariadb.org/browse/MDEV-16264))
-* An upgrade will only be possible after a clean shutdown. mariabackup --prepare will not work with backups taken before version 10.5.2.
+* An upgrade will only be possible after a clean shutdown. mariadb-backup --prepare will not work with backups taken before version 10.5.2.
 * Efficient InnoDB redo log record format ([MDEV-12353](https://jira.mariadb.org/browse/MDEV-12353))
 * Improve InnoDB redo log group commit performance ([MDEV-21534](https://jira.mariadb.org/browse/MDEV-21534))
 * Do not acquire InnoDB record locks when covering table locks exist ([MDEV-14479](https://jira.mariadb.org/browse/MDEV-14479))

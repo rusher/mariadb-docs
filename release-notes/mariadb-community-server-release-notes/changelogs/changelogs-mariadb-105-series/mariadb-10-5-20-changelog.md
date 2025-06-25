@@ -69,7 +69,7 @@ details of the revision and view diffs of the code modified in that revision.
 * Merge [Revision #ac5a534a4c](https://github.com/MariaDB/server/commit/ac5a534a4c) 2023-03-31 21:32:41 +0200 - Merge remote-tracking branch '10.4' into 10.5
 * [Revision #e093e5abbe](https://github.com/MariaDB/server/commit/e093e5abbe)\
   2022-12-15 12:38:27 +1100
-  * [MDEV-30276](https://jira.mariadb.org/browse/MDEV-30276) - wsrep\_sst\_mariabackup to use mariadb-backup
+  * [MDEV-30276](https://jira.mariadb.org/browse/MDEV-30276) - wsrep\_sst\_mariadb-backup to use mariadb-backup
 * [Revision #402f36dd65](https://github.com/MariaDB/server/commit/402f36dd65)\
   2023-03-28 15:10:32 +0300
   * [MDEV-30936](https://jira.mariadb.org/browse/MDEV-30936) fixup
@@ -164,7 +164,7 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-25765](https://jira.mariadb.org/browse/MDEV-25765) mariadb-backup reduced verbosity option for log output
 * [Revision #50b69641ef](https://github.com/MariaDB/server/commit/50b69641ef)\
   2022-11-14 16:17:03 +0400
-  * [MDEV-29244](https://jira.mariadb.org/browse/MDEV-29244) mariabackup --help output still referst to innobackupex
+  * [MDEV-29244](https://jira.mariadb.org/browse/MDEV-29244) mariadb-backup --help output still referst to innobackupex
 * [Revision #49ee18eb42](https://github.com/MariaDB/server/commit/49ee18eb42)\
   2023-01-27 10:40:07 +0200
   * [MDEV-30473](https://jira.mariadb.org/browse/MDEV-30473) : Do not allow GET\_LOCK() / RELEASE\_LOCK() in cluster

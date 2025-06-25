@@ -2203,7 +2203,7 @@ one to see the parameters of a module before the object is created.
                         "attributes": {
                             "arg_max": 3,
                             "arg_min": 2,
-                            "description": "Rebuild a server with mariabackup. Does not wait for completion.",
+                            "description": "Rebuild a server with mariadb-backup. Does not wait for completion.",
                             "method": "POST",
                             "parameters": [
                                 {
@@ -2848,7 +2848,7 @@ one to see the parameters of a module before the object is created.
                         "description": "mariadb-backup thread count.",
                         "mandatory": false,
                         "modifiable": true,
-                        "name": "mariabackup_parallel",
+                        "name": "mariadb-backup_parallel",
                         "type": "int"
                     },
                     {
@@ -2856,7 +2856,7 @@ one to see the parameters of a module before the object is created.
                         "description": "mariadb-backup buffer pool size.",
                         "mandatory": false,
                         "modifiable": true,
-                        "name": "mariabackup_use_memory",
+                        "name": "mariadb-backup_use_memory",
                         "type": "string"
                     },
                     {

@@ -40,7 +40,7 @@ Thanks, and enjoy MariaDB!
 * Fixed hangs and error handling in B-tree operations ([MDEV-29603](https://jira.mariadb.org/browse/MDEV-29603), [MDEV-30400](https://jira.mariadb.org/browse/MDEV-30400))
 * InnoDB bulk insert fixes ([MDEV-30047](https://jira.mariadb.org/browse/MDEV-30047), [MDEV-30321](https://jira.mariadb.org/browse/MDEV-30321))
 * InnoDB fails to start on `innodb_undo_tablespaces` mismatch ([MDEV-30158](https://jira.mariadb.org/browse/MDEV-30158))
-* `mariabackup.skip_innodb` crashes when `innodb_undo_tablespaces > 0` ([MDEV-30122](https://jira.mariadb.org/browse/MDEV-30122))
+* `mariadb-backup.skip_innodb` crashes when `innodb_undo_tablespaces > 0` ([MDEV-30122](https://jira.mariadb.org/browse/MDEV-30122))
 
 ### Galera
 

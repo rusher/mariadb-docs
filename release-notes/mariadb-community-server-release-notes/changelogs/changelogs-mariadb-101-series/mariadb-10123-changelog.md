@@ -89,34 +89,34 @@ The revision number links will take you to the revision's page on GitHub. On[Git
   * compiler warnings
 * [Revision #f21dcd9933](https://github.com/MariaDB/server/commit/f21dcd9933)\
   2017-04-20 20:12:16 +0200
-  * .gitignore mariabackup
+  * .gitignore mariadb-backup
 * [Revision #4e07fc0ab5](https://github.com/MariaDB/server/commit/4e07fc0ab5)\
   2017-04-21 00:50:53 +0200
   * test failure
 * [Revision #e8bc838eb9](https://github.com/MariaDB/server/commit/e8bc838eb9)\
   2017-04-20 19:23:07 +0000
-  * mariabackup - do not extend innodb tablespaces in prepare, unless incremental prepare is running.
+  * mariadb-backup - do not extend innodb tablespaces in prepare, unless incremental prepare is running.
 * [Revision #ecb25df21b](https://github.com/MariaDB/server/commit/ecb25df21b)\
   2017-04-19 13:09:03 +0000
   * Xtrabackup 2.3.8
 * [Revision #c8ac0244a8](https://github.com/MariaDB/server/commit/c8ac0244a8)\
   2017-04-19 07:45:24 +0000
-  * add mariabackup to default suites
+  * add mariadb-backup to default suites
 * [Revision #f344d7ec61](https://github.com/MariaDB/server/commit/f344d7ec61)\
   2017-04-18 20:59:33 +0000
   * Make Ninja generator happy with BUILD\_BYPRODUCTS.
 * [Revision #7228b9985f](https://github.com/MariaDB/server/commit/7228b9985f)\
   2017-04-18 20:18:16 +0000
-  * [MDEV-9566](https://jira.mariadb.org/browse/MDEV-9566) build mariabackup with libarchive for release
+  * [MDEV-9566](https://jira.mariadb.org/browse/MDEV-9566) build mariadb-backup with libarchive for release
 * [Revision #d894f7ceed](https://github.com/MariaDB/server/commit/d894f7ceed)\
   2017-04-18 20:01:30 +0000
   * update gitignore with commonly used (by me) out-of-source builddir names
 * [Revision #64b3427b89](https://github.com/MariaDB/server/commit/64b3427b89)\
   2017-04-18 19:58:06 +0000
-  * Run mariabackup test on Windows on buildbot
+  * Run mariadb-backup test on Windows on buildbot
 * [Revision #3d8aacba86](https://github.com/MariaDB/server/commit/3d8aacba86)\
   2017-02-22 15:58:45 -0500
-  * SST script for mariabackup.
+  * SST script for mariadb-backup.
 * [Revision #ca24f35b67](https://github.com/MariaDB/server/commit/ca24f35b67)\
   2017-04-18 19:52:03 +0000
   * [MDEV-9566](https://jira.mariadb.org/browse/MDEV-9566) mariadb-backup test suite
@@ -125,7 +125,7 @@ The revision number links will take you to the revision's page on GitHub. On[Git
   * [MDEV-9566](https://jira.mariadb.org/browse/MDEV-9566) mariadb-backup packaging
 * [Revision #ce4c56db0c](https://github.com/MariaDB/server/commit/ce4c56db0c)\
   2017-04-18 19:05:57 +0000
-  * [MDEV-9566](https://jira.mariadb.org/browse/MDEV-9566) Port Percona Xtrabackup to MariaDB as mariabackup
+  * [MDEV-9566](https://jira.mariadb.org/browse/MDEV-9566) Port Percona Xtrabackup to MariaDB as mariadb-backup
 * [Revision #d7714308e0](https://github.com/MariaDB/server/commit/d7714308e0)\
   2017-04-18 18:43:20 +0000
   * [MDEV-9566](https://jira.mariadb.org/browse/MDEV-9566) Add Percona Xtrabackup 2.3.7
@@ -134,10 +134,10 @@ The revision number links will take you to the revision's page on GitHub. On[Git
   * [MDEV-9566](https://jira.mariadb.org/browse/MDEV-9566) Prepare xtradb for xtrabackup
 * [Revision #f06ab0fc99](https://github.com/MariaDB/server/commit/f06ab0fc99)\
   2017-04-18 17:20:55 +0000
-  * [MDEV-9566](https://jira.mariadb.org/browse/MDEV-9566) Server code changes in preparation for mariabackup
+  * [MDEV-9566](https://jira.mariadb.org/browse/MDEV-9566) Server code changes in preparation for mariadb-backup
 * [Revision #ec68f764f6](https://github.com/MariaDB/server/commit/ec68f764f6)\
   2017-04-18 17:09:28 +0000
-  * [MDEV-9566](https://jira.mariadb.org/browse/MDEV-9566) prepare mysqltest for mariabackup
+  * [MDEV-9566](https://jira.mariadb.org/browse/MDEV-9566) prepare mysqltest for mariadb-backup
 * [Revision #7bf409593e](https://github.com/MariaDB/server/commit/7bf409593e)\
   2017-04-25 15:44:18 +0200
   * [MDEV-11660](https://jira.mariadb.org/browse/MDEV-11660) Make encryption plugins "pure"

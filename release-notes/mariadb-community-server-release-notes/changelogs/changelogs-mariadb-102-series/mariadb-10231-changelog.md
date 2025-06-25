@@ -234,7 +234,7 @@ in that revision.
   * [MDEV-20950](https://jira.mariadb.org/browse/MDEV-20950) Reduce size of record offsets
 * [Revision #beec9c0e19](https://github.com/MariaDB/server/commit/beec9c0e19)\
   2019-10-02 21:11:59 +0300
-  * [MDEV-21255](https://jira.mariadb.org/browse/MDEV-21255): Deadlock of parallel slave and mariabackup (with failed log copy thread)
+  * [MDEV-21255](https://jira.mariadb.org/browse/MDEV-21255): Deadlock of parallel slave and mariadb-backup (with failed log copy thread)
 * [Revision #808036a61d](https://github.com/MariaDB/server/commit/808036a61d)\
   2019-12-12 03:45:34 +0530
   * [MDEV-19380](https://jira.mariadb.org/browse/MDEV-19380): ASAN heap-use-after-free in Protocol::net\_store\_data

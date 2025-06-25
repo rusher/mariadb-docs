@@ -50,7 +50,7 @@ details of the revision and view diffs of the code modified in that revision.
 * Merge [Revision #b81b194393](https://github.com/MariaDB/server/commit/b81b194393) 2022-11-30 12:59:57 +0200 - Merge 10.10 into 10.11
 * [Revision #b18241e059](https://github.com/MariaDB/server/commit/b18241e059)\
   2022-11-29 16:23:46 +0530
-  * [MDEV-30122](https://jira.mariadb.org/browse/MDEV-30122) mariabackup.skip\_innodb crashes when innodb\_undo\_tablespaces > 0
+  * [MDEV-30122](https://jira.mariadb.org/browse/MDEV-30122) mariadb-backup.skip\_innodb crashes when innodb\_undo\_tablespaces > 0
 * Merge [Revision #936436ef43](https://github.com/MariaDB/server/commit/936436ef43) 2022-11-28 13:44:42 +0200 - Merge 10.10 into 10.11
 * Merge [Revision #71dedd0ebc](https://github.com/MariaDB/server/commit/71dedd0ebc) 2022-11-24 08:40:16 +0200 - Merge 10.10 into 10.11
 * Merge [Revision #7933367a27](https://github.com/MariaDB/server/commit/7933367a27) 2022-11-21 10:51:10 +0200 - Merge 10.10 into 10.11

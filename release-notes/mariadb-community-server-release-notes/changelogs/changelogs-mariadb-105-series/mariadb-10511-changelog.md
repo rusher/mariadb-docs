@@ -73,7 +73,7 @@ details of the revision and view diffs of the code modified in that revision.
   * Cleanup: deduplicate code
 * [Revision #5bd517259f](https://github.com/MariaDB/server/commit/5bd517259f)\
   2021-05-29 06:19:46 +0200
-  * [MDEV-25815](https://jira.mariadb.org/browse/MDEV-25815) mariabackup crash or debug assert with --backup --databases-exclude
+  * [MDEV-25815](https://jira.mariadb.org/browse/MDEV-25815) mariadb-backup crash or debug assert with --backup --databases-exclude
 * [Revision #a70a5537e7](https://github.com/MariaDB/server/commit/a70a5537e7)\
   2021-05-23 21:23:18 -0700
   * Deb: Innotop: Add support for [MariaDB 10.5](../../mariadb-10-5-series/what-is-mariadb-105.md)+

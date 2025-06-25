@@ -213,13 +213,13 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-10688](https://jira.mariadb.org/browse/MDEV-10688) rpl.rpl\_row\_log\_innodb failed in buildbot
 * [Revision #bf6d11c4d6](https://github.com/MariaDB/server/commit/bf6d11c4d6)\
   2017-11-29 14:53:12 +0000
-  * [MDEV-14536](https://jira.mariadb.org/browse/MDEV-14536) : In mariabackup, reread redo log blocks , if checksum mismatch is detected.
+  * [MDEV-14536](https://jira.mariadb.org/browse/MDEV-14536) : In mariadb-backup, reread redo log blocks , if checksum mismatch is detected.
 * [Revision #40756c9151](https://github.com/MariaDB/server/commit/40756c9151)\
   2017-11-24 16:55:20 +0000
   * Fix Windows build with -DPLUGIN\_PERFSCHEMA=NO
 * [Revision #316f0d8fe3](https://github.com/MariaDB/server/commit/316f0d8fe3)\
   2017-11-23 21:01:00 +0000
-  * [MDEV-14447](https://jira.mariadb.org/browse/MDEV-14447) mariabackup incremental incorrectly extends system tablespace for multi-file innodb\_data\_file\_path.
+  * [MDEV-14447](https://jira.mariadb.org/browse/MDEV-14447) mariadb-backup incremental incorrectly extends system tablespace for multi-file innodb\_data\_file\_path.
 * [Revision #12840f97cd](https://github.com/MariaDB/server/commit/12840f97cd)\
   2017-11-21 16:20:08 -0500
   * Fix typo, and disable own dtrace proibes on Solaris, really.
@@ -228,10 +228,10 @@ details of the revision and view diffs of the code modified in that revision.
   * Fix compile error.
 * [Revision #b6d72ed44d](https://github.com/MariaDB/server/commit/b6d72ed44d)\
   2017-11-21 21:14:06 +0100
-  * [MDEV-14283](https://jira.mariadb.org/browse/MDEV-14283) : Fix Solaris 10 build. - introduce system check for posix\_memalign (not available on Solaris 10) - Disable dtrace probes, to fix weird link errors in mariabackup
+  * [MDEV-14283](https://jira.mariadb.org/browse/MDEV-14283) : Fix Solaris 10 build. - introduce system check for posix\_memalign (not available on Solaris 10) - Disable dtrace probes, to fix weird link errors in mariadb-backup
 * [Revision #7c4f859384](https://github.com/MariaDB/server/commit/7c4f859384)\
   2017-11-21 17:19:32 +0000
-  * [MDEV-14283](https://jira.mariadb.org/browse/MDEV-14283) : Fix compilation of mariabackup for gcc3.x
+  * [MDEV-14283](https://jira.mariadb.org/browse/MDEV-14283) : Fix compilation of mariadb-backup for gcc3.x
 * [Revision #b54aeeb080](https://github.com/MariaDB/server/commit/b54aeeb080)\
   2017-11-19 14:05:07 +0100
   * never add new error messages to old GA releases!

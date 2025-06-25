@@ -1279,7 +1279,7 @@ on the target server is lost. This is useful when a slave server has diverged\
 from the master server, or when adding a new server to the cluster. The\
 MariaDB Server configuration files are not affected.
 
-MariaDB-Monitor can perform this operation by running[mariadb-backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariabackup/) on both the source and\
+MariaDB-Monitor can perform this operation by running[mariadb-backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariadb-backup/) on both the source and\
 target servers. To do this, MaxScale needs to have ssh-access on the machines.\
 Also, the following tools need to be installed on the source and target\
 machines:
@@ -1294,21 +1294,21 @@ The _ssh\_user_ and _ssh\_keyfile_-settings define the SSH credentials MaxScale\
 uses to access the servers. MaxScale must be able to run commands with _sudo_ on\
 both the source and target servers. mariadb-backup, on the other hand, needs to\
 authenticate to the MariaDB Server being copied from. For this, MaxScale uses\
-the monitor user. The monitor user may thus require additional privileges. See[mariadb-backup documentation](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariabackup/mariabackup-overview#authentication-and-privileges)\
+the monitor user. The monitor user may thus require additional privileges. See[mariadb-backup documentation](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariadb-backup/mariadb-backup-overview#authentication-and-privileges)\
 for more details.
 
 When launched, the rebuild operation proceeds as below. If any step fails, the\
 operation is stopped and the target server will be left in an unspecified state.
 
 1. Log in to both servers with ssh and check that the tools listed above are\
-   present (e.g. `mariabackup -v` should succeed).
+   present (e.g. `mariadb-backup -v` should succeed).
 2. Check that the port used for transferring the backup is free on the source\
    server. If not, kill the process holding it. This requires running lsof and\
    kill.
 3. Test the connection by streaming a short message from the source host to the\
    target.
 4. Launch mariadb-backup on the source machine, compress the stream and listen\
-   for an incoming connection. This is performed with a command like`mariabackup --backup --safe-slave-backup --stream=xbstream | pigz -c | socat - TCP-LISTEN:<port>`.
+   for an incoming connection. This is performed with a command like`mariadb-backup --backup --safe-slave-backup --stream=xbstream | pigz -c | socat - TCP-LISTEN:<port>`.
 5. Stop MariaDB-server on the target machine and delete all contents of the data\
    directory /var/lib/mysql.
 6. On the target machine, connect to the source machine, read the backup stream,\
@@ -1316,7 +1316,7 @@ operation is stopped and the target server will be left in an unspecified state.
    like `socat -u TCP:<host>:<port> STDOUT | pigz -dc | mbstream -x`. This step can\
    take a long time if there is much data to transfer.
 7. Check that the data directory is not empty.
-8. Prepare the backup on the target server with a command like`mariabackup --use-memory=1G --prepare`. This step can also take some time if\
+8. Prepare the backup on the target server with a command like`mariadb-backup --use-memory=1G --prepare`. This step can also take some time if\
    the source server performed writes during data transfer.
 9. On the target server, change ownership of datadir contents to the\
    mysql-user and start MariaDB-server.
@@ -1421,7 +1421,7 @@ johnny ALL= NOPASSWD: /bin/systemctl stop mariadb
 johnny ALL= NOPASSWD: /bin/systemctl start mariadb
 johnny ALL= NOPASSWD: /usr/sbin/lsof
 johnny ALL= NOPASSWD: /bin/kill
-johnny ALL= NOPASSWD: /usr/bin/mariabackup
+johnny ALL= NOPASSWD: /usr/bin/mariadb-backup
 johnny ALL= NOPASSWD: /bin/mbstream
 johnny ALL= NOPASSWD: /bin/du
 johnny ALL= NOPASSWD: /bin/rm -rf /var/lib/mysql/*

@@ -45,7 +45,7 @@ in that revision.
   * Relax a too tight suppression
 * [Revision #9f4a4cb401](https://github.com/MariaDB/server/commit/9f4a4cb401)\
   2018-12-20 14:31:18 +0100
-  * Cleanup recent mariabackup validation patches.
+  * Cleanup recent mariadb-backup validation patches.
 * [Revision #ed36fc353f](https://github.com/MariaDB/server/commit/ed36fc353f)\
   2018-12-20 13:33:09 +0200
   * [MDEV-18025](https://jira.mariadb.org/browse/MDEV-18025): Detect corrupted innodb\_page\_compression=zlib pages
@@ -140,10 +140,10 @@ in that revision.
   * Remove provider defaults check from 'galera\_defaults' MTR test
 * [Revision #ee543beabf](https://github.com/MariaDB/server/commit/ee543beabf)\
   2018-12-17 07:05:27 +0200
-  * [MDEV-18021](https://jira.mariadb.org/browse/MDEV-18021): Galera test galera\_sst\_mariabackup\_table\_options fails if AES\_CTR is not available
+  * [MDEV-18021](https://jira.mariadb.org/browse/MDEV-18021): Galera test galera\_sst\_mariadb-backup\_table\_options fails if AES\_CTR is not available
 * [Revision #8a46b9fe3b](https://github.com/MariaDB/server/commit/8a46b9fe3b)\
   2018-11-27 15:26:18 +0200
-  * [MDEV-17771](https://jira.mariadb.org/browse/MDEV-17771): Add Galera ist and sst tests using mariabackup
+  * [MDEV-17771](https://jira.mariadb.org/browse/MDEV-17771): Add Galera ist and sst tests using mariadb-backup
 * [Revision #10e01b56f7](https://github.com/MariaDB/server/commit/10e01b56f7)\
   2018-12-17 16:33:23 +0200
   * Fix USE\_AFTER\_FREE (CWE-416)
@@ -164,7 +164,7 @@ in that revision.
   * [MDEV-14975](https://jira.mariadb.org/browse/MDEV-14975) : fix last commit's typo.
 * [Revision #5716c71c54](https://github.com/MariaDB/server/commit/5716c71c54)\
   2018-12-14 23:36:21 +0100
-  * [MDEV-14975](https://jira.mariadb.org/browse/MDEV-14975) mariabackup starts with unprivileged user.
+  * [MDEV-14975](https://jira.mariadb.org/browse/MDEV-14975) mariadb-backup starts with unprivileged user.
 * Merge [Revision #94fa02f4d0](https://github.com/MariaDB/server/commit/94fa02f4d0) 2018-12-14 16:11:05 +0200 - Merge 10.1 into 10.2
 * [Revision #fb252f70c1](https://github.com/MariaDB/server/commit/fb252f70c1)\
   2018-12-14 15:44:51 +0200
@@ -266,7 +266,7 @@ in that revision.
   * [MDEV-17734](https://jira.mariadb.org/browse/MDEV-17734): AddressSanitizer: use-after-poison in create\_key\_parts\_for\_pseudo\_indexes
 * [Revision #328d7779bc](https://github.com/MariaDB/server/commit/328d7779bc)\
   2018-11-26 08:58:38 +0200
-  * Fortify galera\_sst\_mariabackup\_table\_options test.
+  * Fortify galera\_sst\_mariadb-backup\_table\_options test.
 * [Revision #1037edcb11](https://github.com/MariaDB/server/commit/1037edcb11)\
   2018-11-22 16:33:20 +0200
   * [MDEV-17804](https://jira.mariadb.org/browse/MDEV-17804): Galera tests cause mysql\_socket.h:738: inline\_mysql\_socket\_send: Assertion \`mysql\_socket.fd != -1' failed.
@@ -347,44 +347,44 @@ in that revision.
   * [MDEV-17801](https://jira.mariadb.org/browse/MDEV-17801): Galera test failure on galera\_var\_reject\_queries
 * [Revision #2b49e15686](https://github.com/MariaDB/server/commit/2b49e15686)\
   2018-11-22 10:22:00 +0200
-  * [MDEV-15522](https://jira.mariadb.org/browse/MDEV-15522): Change galera suite MTR tests to use mariabackup instead of xtrabackup
+  * [MDEV-15522](https://jira.mariadb.org/browse/MDEV-15522): Change galera suite MTR tests to use mariadb-backup instead of xtrabackup
 * [Revision #00c88a7122](https://github.com/MariaDB/server/commit/00c88a7122)\
   2018-11-22 10:17:58 +0200
-  * [MDEV-15522](https://jira.mariadb.org/browse/MDEV-15522): Change galera suite MTR tests to use mariabackup instead of xtrabackup
+  * [MDEV-15522](https://jira.mariadb.org/browse/MDEV-15522): Change galera suite MTR tests to use mariadb-backup instead of xtrabackup
 * [Revision #4b1b4b3920](https://github.com/MariaDB/server/commit/4b1b4b3920)\
   2018-11-22 10:16:58 +0200
-  * [MDEV-17771](https://jira.mariadb.org/browse/MDEV-17771): Add Galera ist and sst tests using mariabackup
+  * [MDEV-17771](https://jira.mariadb.org/browse/MDEV-17771): Add Galera ist and sst tests using mariadb-backup
 * Merge [Revision #06063e8a41](https://github.com/MariaDB/server/commit/06063e8a41) 2018-11-21 16:59:11 +0200 - Merge remote-tracking branch 'origin/10.1' into 10.2
 * [Revision #8324e5e84d](https://github.com/MariaDB/server/commit/8324e5e84d)\
   2018-11-21 09:05:47 +0200
-  * [MDEV-17771](https://jira.mariadb.org/browse/MDEV-17771): Add Galera ist and sst tests using mariabackup
+  * [MDEV-17771](https://jira.mariadb.org/browse/MDEV-17771): Add Galera ist and sst tests using mariadb-backup
 * [Revision #41fa9a5986](https://github.com/MariaDB/server/commit/41fa9a5986)\
   2018-11-20 07:49:46 +0200
   * Add missing .rdiff file to test galera\_sst\_xtrabackup-v2\_data\_dir for debug build.
 * [Revision #6fad15d02a](https://github.com/MariaDB/server/commit/6fad15d02a)\
   2018-11-19 17:34:22 +0200
-  * [MDEV-17771](https://jira.mariadb.org/browse/MDEV-17771): Add Galera ist and sst tests using mariabackup
+  * [MDEV-17771](https://jira.mariadb.org/browse/MDEV-17771): Add Galera ist and sst tests using mariadb-backup
 * [Revision #ea03eac5d7](https://github.com/MariaDB/server/commit/ea03eac5d7)\
   2018-10-03 16:25:24 +0300
-  * fiexed debug build failure of galera\_ist\_mariabackup\_innodb\_flush\_logs
+  * fiexed debug build failure of galera\_ist\_mariadb-backup\_innodb\_flush\_logs
 * [Revision #0529c9e93e](https://github.com/MariaDB/server/commit/0529c9e93e)\
   2018-10-03 14:40:56 +0300
-  * fiexed debug build failure of galera\_ist\_mariabackup test
+  * fiexed debug build failure of galera\_ist\_mariadb-backup test
 * [Revision #c85912c8c6](https://github.com/MariaDB/server/commit/c85912c8c6)\
   2018-10-01 18:21:47 +0300
-  * added galera\_ist\_mariabackup\_innodb\_flush\_logs test
+  * added galera\_ist\_mariadb-backup\_innodb\_flush\_logs test
 * [Revision #2160e075dc](https://github.com/MariaDB/server/commit/2160e075dc)\
   2018-10-01 12:23:26 +0300
-  * fixed the test comments of galera\_sst\_mariabackup\_encrypt\_with\_key test
+  * fixed the test comments of galera\_sst\_mariadb-backup\_encrypt\_with\_key test
 * [Revision #ace0b7215e](https://github.com/MariaDB/server/commit/ace0b7215e)\
   2018-09-28 19:05:01 +0300
-  * added test galera\_sst\_mariabackup\_encrypt\_with\_key; corrected path to galera\_ist\_mariabackup test
+  * added test galera\_sst\_mariadb-backup\_encrypt\_with\_key; corrected path to galera\_ist\_mariadb-backup test
 * [Revision #92e99775e9](https://github.com/MariaDB/server/commit/92e99775e9)\
   2018-09-28 17:35:28 +0300
-  * added test case galera\_ist\_mariabackup
+  * added test case galera\_ist\_mariadb-backup
 * [Revision #bae7c1ebd4](https://github.com/MariaDB/server/commit/bae7c1ebd4)\
   2018-09-28 15:34:57 +0300
-  * added galera\_autoinc\_sst\_mariabackup test
+  * added galera\_autoinc\_sst\_mariadb-backup test
 * [Revision #de0eeb800e](https://github.com/MariaDB/server/commit/de0eeb800e)\
   2018-11-19 11:00:56 +0200
   * [MDEV-16890](https://jira.mariadb.org/browse/MDEV-16890): Galera test failure on galera\_sst\_mysqldump\_with\_key

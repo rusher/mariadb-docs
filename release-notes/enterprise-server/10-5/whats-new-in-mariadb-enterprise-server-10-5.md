@@ -29,7 +29,7 @@ MariaDB Enterprise Server 10.5 uses the "MariaDB" name in more places:
 | ----------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
 | mysql                         | [mariadb](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/mariadb-client)                                          |
 | mysqld                        | [mariadbd](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/starting-and-stopping-mariadb/mariadbd)                     |
-| mariabackup                   | [mariadb-backup](broken-reference)                                                                                                      |
+| mariadb-backup                   | [mariadb-backup](broken-reference)                                                                                                      |
 | mysql\_plugin                 | [mariadb-plugin](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/administrative-tools/mariadb-plugin)              |
 | mysql\_upgrade                | [mariadb-upgrade](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/deployment-tools/mariadb-upgrade)                |
 | mysql\_waitpid                | [mariadb-waitpid](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/administrative-tools/mariadb-waitpid)            |

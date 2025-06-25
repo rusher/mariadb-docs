@@ -126,7 +126,7 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-12301](https://jira.mariadb.org/browse/MDEV-12301): galera\_recovery use @sbindir@ macro for mysqld
 * [Revision #2749d25096](https://github.com/MariaDB/server/commit/2749d25096)\
   2018-01-29 14:21:08 +0200
-  * [MDEV-13499](https://jira.mariadb.org/browse/MDEV-13499): Backing up table that "doesn't exist in engine" cause crash in mariabackup when using encryption
+  * [MDEV-13499](https://jira.mariadb.org/browse/MDEV-13499): Backing up table that "doesn't exist in engine" cause crash in mariadb-backup when using encryption
 * [Revision #f9179b36d3](https://github.com/MariaDB/server/commit/f9179b36d3)\
   2018-01-23 14:11:53 +1100
   * systemd: revert to KillMode=control-group for galera
@@ -146,19 +146,19 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-13789](https://jira.mariadb.org/browse/MDEV-13789): FreeBSD wsrep\_sst\_xtrabackup-v2 - find compatibilty +lsof
 * [Revision #30b1fbda28](https://github.com/MariaDB/server/commit/30b1fbda28)\
   2018-01-22 20:16:19 +0000
-  * [MDEV-14746](https://jira.mariadb.org/browse/MDEV-14746) : read \[mariabackup] section from config file.
+  * [MDEV-14746](https://jira.mariadb.org/browse/MDEV-14746) : read \[mariadb-backup] section from config file.
 * [Revision #054051bb76](https://github.com/MariaDB/server/commit/054051bb76)\
   2018-01-22 20:01:03 +0000
   * [MDEV-14150](https://jira.mariadb.org/browse/MDEV-14150) - backup should fail early if rsync is missing
 * [Revision #e30cdb68e5](https://github.com/MariaDB/server/commit/e30cdb68e5)\
   2018-01-22 15:10:52 +0000
-  * mariabackup : improve help text
+  * mariadb-backup : improve help text
 * [Revision #4794e5b091](https://github.com/MariaDB/server/commit/4794e5b091)\
   2018-01-15 16:19:46 +0200
   * Fix a test that always failed on --embedded
 * [Revision #578ffcc5ef](https://github.com/MariaDB/server/commit/578ffcc5ef)\
   2018-01-11 10:56:13 +0200
-  * Skip mariabackup.huge\_lsn if encryption is not available
+  * Skip mariadb-backup.huge\_lsn if encryption is not available
 * Merge [Revision #c15b3d2d41](https://github.com/MariaDB/server/commit/c15b3d2d41) 2018-01-11 10:44:05 +0200 - Merge 10.0 into 10.1
 * [Revision #07aa985979](https://github.com/MariaDB/server/commit/07aa985979)\
   2018-01-09 12:37:58 +0200

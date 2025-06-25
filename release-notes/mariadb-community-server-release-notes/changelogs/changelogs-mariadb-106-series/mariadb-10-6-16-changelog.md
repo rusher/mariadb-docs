@@ -303,6 +303,6 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-31473](https://jira.mariadb.org/browse/MDEV-31473) Wrong information about innodb\_checksum\_algorithm in information\_schema.SYSTEM\_VARIABLES
 * [Revision #0be4781428](https://github.com/MariaDB/server/commit/0be4781428)\
   2023-07-25 15:25:09 +0300
-  * [MDEV-31737](https://jira.mariadb.org/browse/MDEV-31737) : Node never returns from Donor/Desynced to Synced when wsrep\_mode = BF\_ABORT\_MARIABACKUP
+  * [MDEV-31737](https://jira.mariadb.org/browse/MDEV-31737) : Node never returns from Donor/Desynced to Synced when wsrep\_mode = BF\_ABORT\_mariadb-backup
 
 {% @marketo/form formid="4316" formId="4316" %}

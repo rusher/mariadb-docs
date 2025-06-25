@@ -19,7 +19,7 @@ details of the revision and view diffs of the code modified in that revision.
 * Merge [Revision #fd132be117](https://github.com/MariaDB/server/commit/fd132be117) 2022-05-11 11:25:33 +0200 - Merge branch '10.6' into 10.7
 * [Revision #7b05fc5cdd](https://github.com/MariaDB/server/commit/7b05fc5cdd)\
   2022-04-05 19:56:33 +0200
-  * sporadic mariabackup.compression\_providers\_unloaded failure
+  * sporadic mariadb-backup.compression\_providers\_unloaded failure
 * [Revision #488e56b50c](https://github.com/MariaDB/server/commit/488e56b50c)\
   2022-05-09 21:08:33 -0700
   * [MDEV-27892](https://jira.mariadb.org/browse/MDEV-27892) Improve an error message for foreign server exists

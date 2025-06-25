@@ -209,7 +209,7 @@ details of the revision and view diffs of the code modified in that revision.
 * Merge [Revision #20969aa412](https://github.com/MariaDB/server/commit/20969aa412) 2022-11-09 09:28:39 +0200 - Merge 10.3 into 10.4
 * [Revision #8fb176c3c1](https://github.com/MariaDB/server/commit/8fb176c3c1)\
   2022-11-08 16:59:36 +0200
-  * [MDEV-27121](https://jira.mariadb.org/browse/MDEV-27121) fixup: mariabackup.[MDEV-14447](https://jira.mariadb.org/browse/MDEV-14447),full\_crc32
+  * [MDEV-27121](https://jira.mariadb.org/browse/MDEV-27121) fixup: mariadb-backup.[MDEV-14447](https://jira.mariadb.org/browse/MDEV-14447),full\_crc32
 * [Revision #12f20c154d](https://github.com/MariaDB/server/commit/12f20c154d)\
   2022-11-08 16:04:16 +0200
   * Work around [MDEV-24813](https://jira.mariadb.org/browse/MDEV-24813) in main.rowid\_filter\_innodb\_debug

@@ -236,7 +236,7 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-21587](https://jira.mariadb.org/browse/MDEV-21587): disk.disk{\_notembedded} test result
 * [Revision #6193d0cabb](https://github.com/MariaDB/server/commit/6193d0cabb)\
   2023-06-22 16:52:40 +1000
-  * [MDEV-20286](https://jira.mariadb.org/browse/MDEV-20286) mariabackup fails when innodb\_max\_dirty\_pages\_pct contains a fraction (is not an integer)
+  * [MDEV-20286](https://jira.mariadb.org/browse/MDEV-20286) mariadb-backup fails when innodb\_max\_dirty\_pages\_pct contains a fraction (is not an integer)
 * [Revision #68e7909be9](https://github.com/MariaDB/server/commit/68e7909be9)\
   2023-12-12 14:40:45 +0200
   * [MDEV-31000](https://jira.mariadb.org/browse/MDEV-31000) Assertion failed on ALTER TABLE...page\_compressed=1
@@ -603,7 +603,7 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-32365](https://jira.mariadb.org/browse/MDEV-32365): post-fixes to rpl\_semi\_sync\_slave\_reply\_fail
 * [Revision #62d80652be](https://github.com/MariaDB/server/commit/62d80652be)\
   2023-10-30 12:13:00 +0400
-  * [MDEV-29110](https://jira.mariadb.org/browse/MDEV-29110) mariabackup has wrong or missing plugin-dir default?
+  * [MDEV-29110](https://jira.mariadb.org/browse/MDEV-29110) mariadb-backup has wrong or missing plugin-dir default?
 * [Revision #2b6d241ee4](https://github.com/MariaDB/server/commit/2b6d241ee4)\
   2022-04-04 14:50:21 +0400
   * [MDEV-27744](https://jira.mariadb.org/browse/MDEV-27744) LPAD in vcol created in ORACLE mode makes table corrupted in non-ORACLE
@@ -660,22 +660,22 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-32518](https://jira.mariadb.org/browse/MDEV-32518) Test failure: ./mtr --no-reorder main.log\_slow\_debug main.subselect
 * [Revision #9fa718b1a1](https://github.com/MariaDB/server/commit/9fa718b1a1)\
   2023-09-22 13:10:58 +0200
-  * Fix mariabackup InnoDB recovered binlog position on server upgrade
+  * Fix mariadb-backup InnoDB recovered binlog position on server upgrade
 * [Revision #f8f5ed2280](https://github.com/MariaDB/server/commit/f8f5ed2280)\
   2023-08-15 12:19:34 +0200
   * Revert: [MDEV-22351](https://jira.mariadb.org/browse/MDEV-22351) InnoDB may recover wrong information after RESET MASTER
 * [Revision #e6bd4762fe](https://github.com/MariaDB/server/commit/e6bd4762fe)\
   2023-08-14 20:35:24 +0200
-  * Test case for provisioning a slave with mariabackup --no-lock
+  * Test case for provisioning a slave with mariadb-backup --no-lock
 * [Revision #167fe6646d](https://github.com/MariaDB/server/commit/167fe6646d)\
   2023-08-14 11:45:14 +0200
-  * Restore getting InnoDB position from mariabackup --no-lock
+  * Restore getting InnoDB position from mariadb-backup --no-lock
 * [Revision #e695337448](https://github.com/MariaDB/server/commit/e695337448)\
   2023-11-03 11:49:34 +1200
   * [MDEV-31995](https://jira.mariadb.org/browse/MDEV-31995)-fix short fix for memory leak introduced in [MDEV-31995](https://jira.mariadb.org/browse/MDEV-31995)
 * [Revision #29df46f3a8](https://github.com/MariaDB/server/commit/29df46f3a8)\
   2023-10-30 23:39:47 +0530
-  * [MDEV-29101](https://jira.mariadb.org/browse/MDEV-29101) mariabackup --help output should mention that --compress is deprecated
+  * [MDEV-29101](https://jira.mariadb.org/browse/MDEV-29101) mariadb-backup --help output should mention that --compress is deprecated
 * [Revision #d914d09f58](https://github.com/MariaDB/server/commit/d914d09f58)\
   2023-09-27 13:55:39 +0200
   * [MDEV-25329](https://jira.mariadb.org/browse/MDEV-25329): Assertion \`allocated\_status\_memory != null' failed in void PROF\_MEASUREMENT::set\_label(const char\*, const char\*, const char\*, unsigned int)

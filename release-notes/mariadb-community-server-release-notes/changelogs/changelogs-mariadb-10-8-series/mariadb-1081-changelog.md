@@ -606,7 +606,7 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-27036](https://jira.mariadb.org/browse/MDEV-27036): re-enable my\_json\_writer-t unit test
 * [Revision #6208228b78](https://github.com/MariaDB/server/commit/6208228b78)\
   2021-12-15 15:43:03 +0100
-  * disable galera\_3nodes.galera\_ipv6\_mariabackup
+  * disable galera\_3nodes.galera\_ipv6\_mariadb-backup
 * Merge [Revision #4434fb4a75](https://github.com/MariaDB/server/commit/4434fb4a75) 2021-12-14 14:29:04 +0200 - Merge 10.7 into 10.8
 * [Revision #ea94895369](https://github.com/MariaDB/server/commit/ea94895369)\
   2021-12-09 11:05:14 +0200

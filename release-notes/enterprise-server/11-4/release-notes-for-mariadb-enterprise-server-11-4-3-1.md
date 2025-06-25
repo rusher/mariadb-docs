@@ -1257,14 +1257,14 @@ wsrep_status_file=galera_status.json
 
 ```
 [mariadb]
-wsrep_sst_method=mariabackup
+wsrep_sst_method=mariadb-backup
 wsrep_debug=1
 [sst]
 progress=1
 rlimit=100m
 ```
 
-* Progress reporting is only supported for MariaDB Enterprise Backup-based SST, so [wsrep\_sst\_method=mariabackup](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_sst_method) must be set.
+* Progress reporting is only supported for MariaDB Enterprise Backup-based SST, so [wsrep\_sst\_method=mariadb-backup](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_sst_method) must be set.
 * Progress reporting is only enabled when [wsrep\_debug=1](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_debug) is set.
 * When `progress=1` is set, progress reporting goes to standard error (`stderr`).
 * When `progress` is set to a path, progress reporting is written to the specified file.
@@ -1277,14 +1277,14 @@ rlimit=100m
 
 ```
 [mariadb]
-wsrep_sst_method=mariabackup
+wsrep_sst_method=mariadb-backup
 wsrep_debug=1
 [sst]
 progress=1
 rlimit=100m
 ```
 
-* Progress reporting is only supported for MariaDB Enterprise Backup-based SST, so [wsrep\_sst\_method=mariabackup](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_sst_method) must be set.
+* Progress reporting is only supported for MariaDB Enterprise Backup-based SST, so [wsrep\_sst\_method=mariadb-backup](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_sst_method) must be set.
 * Progress reporting is only enabled [whwsrep\_debug=1](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_debug) is set.
 * When `progress=1` is set, progress reporting goes to standard error (`stderr`).
 * When `progress` is set to a path, progress reporting is written to the specified file.

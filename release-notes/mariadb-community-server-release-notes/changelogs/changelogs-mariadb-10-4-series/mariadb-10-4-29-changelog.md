@@ -158,7 +158,7 @@ details of the revision and view diffs of the code modified in that revision.
   * alloca() fix
 * [Revision #d1a4315f4c](https://github.com/MariaDB/server/commit/d1a4315f4c)\
   2023-04-13 07:49:35 +0200
-  * [MDEV-30402](https://jira.mariadb.org/browse/MDEV-30402): Encrypted mariabackup SST breaks on distributions with newer socat
+  * [MDEV-30402](https://jira.mariadb.org/browse/MDEV-30402): Encrypted mariadb-backup SST breaks on distributions with newer socat
 * [Revision #ef4d09948d](https://github.com/MariaDB/server/commit/ef4d09948d)\
   2023-04-11 21:21:45 -0700
   * [MDEV-20773](https://jira.mariadb.org/browse/MDEV-20773) Error from UPDATE when estimating selectivity of a range
@@ -227,7 +227,7 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-30581](https://jira.mariadb.org/browse/MDEV-30581) Add a testcase for [MDEV-29904](https://jira.mariadb.org/browse/MDEV-29904)
 * [Revision #4c226c1850](https://github.com/MariaDB/server/commit/4c226c1850)\
   2023-03-23 16:26:17 +0300
-  * [MDEV-29050](https://jira.mariadb.org/browse/MDEV-29050) mariabackup issues error messages during InnoDB tablespaces export on partial backup preparing
+  * [MDEV-29050](https://jira.mariadb.org/browse/MDEV-29050) mariadb-backup issues error messages during InnoDB tablespaces export on partial backup preparing
 * [Revision #d575b07c86](https://github.com/MariaDB/server/commit/d575b07c86)\
   2023-03-06 23:02:03 +0530
   * [MDEV-24453](https://jira.mariadb.org/browse/MDEV-24453) Added support for a 5th --verbose parameter in mariadb-upgrade to show mysql results for mysql\_fix\_privilege\_tables
@@ -302,7 +302,7 @@ details of the revision and view diffs of the code modified in that revision.
   * Minimize unsafe C functions usage
 * [Revision #e240e2749e](https://github.com/MariaDB/server/commit/e240e2749e)\
   2023-03-03 17:33:07 -0800
-  * [MDEV-30758](https://jira.mariadb.org/browse/MDEV-30758) mariabackup --help only lists server groups read in configuration
+  * [MDEV-30758](https://jira.mariadb.org/browse/MDEV-30758) mariadb-backup --help only lists server groups read in configuration
 * [Revision #46a7e96339](https://github.com/MariaDB/server/commit/46a7e96339)\
   2023-03-02 14:21:59 +0100
   * move alloca() definition from all \*.h files to one new header file
@@ -431,7 +431,7 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-30554](https://jira.mariadb.org/browse/MDEV-30554) RockDB libatomic linking on riscv64
 * [Revision #ecc93c9824](https://github.com/MariaDB/server/commit/ecc93c9824)\
   2023-02-03 16:00:11 +1100
-  * [MDEV-30492](https://jira.mariadb.org/browse/MDEV-30492) Crash when use mariabackup.exe with config 'innodb\_flush\_method=async\_unbuffered'
+  * [MDEV-30492](https://jira.mariadb.org/browse/MDEV-30492) Crash when use mariadb-backup.exe with config 'innodb\_flush\_method=async\_unbuffered'
 * [Revision #762fe015c1](https://github.com/MariaDB/server/commit/762fe015c1)\
   2023-02-04 16:35:30 +1100
   * [MDEV-30558](https://jira.mariadb.org/browse/MDEV-30558): ER\_KILL\_{,QUERY\_}DENIED\_ERROR - normalize id type

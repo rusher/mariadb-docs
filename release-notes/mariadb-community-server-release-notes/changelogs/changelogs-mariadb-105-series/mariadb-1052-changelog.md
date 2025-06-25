@@ -553,7 +553,7 @@ details of the revision and view diffs of the code modified in that revision.
   * perfschema test formatting. Use --echo #
 * [Revision #57de4def85](https://github.com/MariaDB/server/commit/57de4def85)\
   2020-03-13 14:59:02 +0100
-  * [MDEV-21222](https://jira.mariadb.org/browse/MDEV-21222) mariabackup.incremental\_backup failed with memory allocation failure
+  * [MDEV-21222](https://jira.mariadb.org/browse/MDEV-21222) mariadb-backup.incremental\_backup failed with memory allocation failure
 * [Revision #422ba20591](https://github.com/MariaDB/server/commit/422ba20591)\
   2020-03-12 19:30:58 +0100
   * mtr sets MYSQLTEST\_REAL\_VARDIR when MYSQLTEST\_VARDIR is a symlink
@@ -601,7 +601,7 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-21646](https://jira.mariadb.org/browse/MDEV-21646): Failure to compile my\_addr\_resolve.c with binutils-2.34
 * [Revision #91aae18cc4](https://github.com/MariaDB/server/commit/91aae18cc4)\
   2020-03-06 13:46:19 +0200
-  * Enable galera.galera\_ist\_mariabackup and galera.mysql-wsrep#33.
+  * Enable galera.galera\_ist\_mariadb-backup and galera.mysql-wsrep#33.
 * [Revision #c5c1027c6e](https://github.com/MariaDB/server/commit/c5c1027c6e)\
   2020-02-26 13:46:27 +0200
   * [MDEV-19208](https://jira.mariadb.org/browse/MDEV-19208) mariadb.pc: install into libdir

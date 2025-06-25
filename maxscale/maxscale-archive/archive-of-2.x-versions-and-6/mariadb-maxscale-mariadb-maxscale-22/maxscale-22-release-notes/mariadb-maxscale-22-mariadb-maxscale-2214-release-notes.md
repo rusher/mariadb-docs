@@ -20,7 +20,7 @@ report on [our Jira](https://jira.mariadb.org/projects/MXS).
 * [MXS-2040](https://jira.mariadb.org/browse/MXS-2040) Default monitor timeouts are too short
 * [MXS-2037](https://jira.mariadb.org/browse/MXS-2037) % wildcards not working with source in Named Server Filter
 * [MXS-2036](https://jira.mariadb.org/browse/MXS-2036) A slave with sql thread stopped causes wrong master after failover
-* [MXS-2035](https://jira.mariadb.org/browse/MXS-2035) available\_when\_donor don't working with mariabackup sst method
+* [MXS-2035](https://jira.mariadb.org/browse/MXS-2035) available\_when\_donor don't working with mariadb-backup sst method
 * [MXS-2034](https://jira.mariadb.org/browse/MXS-2034) query\_retry\_timeout was not set
 * [MXS-2033](https://jira.mariadb.org/browse/MXS-2033) MASTER\_SSL\_KEY and MASTER\_SSL\_CERT should not be required
 * [MXS-2027](https://jira.mariadb.org/browse/MXS-2027) LOAD DATA LOCAL INFILE is not ignored by protocol modules

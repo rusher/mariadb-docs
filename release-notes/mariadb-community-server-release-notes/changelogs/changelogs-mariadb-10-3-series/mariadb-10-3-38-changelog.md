@@ -143,7 +143,7 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-19071](https://jira.mariadb.org/browse/MDEV-19071) Wrong results when using STDDEV\_SAMP() and view
 * [Revision #6710fe4b42](https://github.com/MariaDB/server/commit/6710fe4b42)\
   2022-12-26 08:23:16 +0100
-  * [MDEV-30293](https://jira.mariadb.org/browse/MDEV-30293): mariabackup fail with --galera-info option without Galera
+  * [MDEV-30293](https://jira.mariadb.org/browse/MDEV-30293): mariadb-backup fail with --galera-info option without Galera
 * [Revision #72e2d1d220](https://github.com/MariaDB/server/commit/72e2d1d220)\
   2022-12-27 00:02:02 +0300
   * [MDEV-25004](https://jira.mariadb.org/browse/MDEV-25004) Refactorings
@@ -356,14 +356,14 @@ details of the revision and view diffs of the code modified in that revision.
   * Remove an unused file
 * [Revision #eabb3b35d5](https://github.com/MariaDB/server/commit/eabb3b35d5)\
   2022-11-08 08:53:49 +0200
-  * [MDEV-27121](https://jira.mariadb.org/browse/MDEV-27121) fixup: mariabackup.[MDEV-14447](https://jira.mariadb.org/browse/MDEV-14447) fault injection
+  * [MDEV-27121](https://jira.mariadb.org/browse/MDEV-27121) fixup: mariadb-backup.[MDEV-14447](https://jira.mariadb.org/browse/MDEV-14447) fault injection
 * Merge [Revision #01ac7455e2](https://github.com/MariaDB/server/commit/01ac7455e2) 2022-11-07 15:32:35 +0100 - Merge branch '10.3' into bb-10.3-release
 * [Revision #baa6b052a2](https://github.com/MariaDB/server/commit/baa6b052a2)\
   2022-11-07 08:08:55 -0500
   * bump the VERSION
 * [Revision #f7e6198c02](https://github.com/MariaDB/server/commit/f7e6198c02)\
   2022-11-07 17:36:08 +0530
-  * [MDEV-27121](https://jira.mariadb.org/browse/MDEV-27121) mariabackup incompatible with disabled dedicated undo log tablespaces
+  * [MDEV-27121](https://jira.mariadb.org/browse/MDEV-27121) mariadb-backup incompatible with disabled dedicated undo log tablespaces
 * [Revision #92be8d2048](https://github.com/MariaDB/server/commit/92be8d2048)\
   2022-11-05 18:36:43 +0100
   * [MDEV-29951](https://jira.mariadb.org/browse/MDEV-29951) server hang in crash handler

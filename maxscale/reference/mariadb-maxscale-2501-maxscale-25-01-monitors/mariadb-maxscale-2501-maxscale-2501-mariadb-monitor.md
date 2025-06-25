@@ -1503,7 +1503,7 @@ for more information.
 The following tools need to be installed on the backends:
 
 1. mariadb-backup. Backs up and restores MariaDB Server contents. Installed e.g.\
-   with `yum install MariaDB-backup`. See[mariadb-backup documentation](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariabackup) for more\
+   with `yum install MariaDB-backup`. See[mariadb-backup documentation](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariadb-backup) for more\
    information.
 2. pigz. Compresses and decompresses the backup stream. Installed e.g. with`yum install pigz`.
 3. socat. Streams data from one machine to another. Is likely already\
@@ -1511,7 +1511,7 @@ The following tools need to be installed on the backends:
 
 mariadb-backup needs server credentials to log in and authenticate to the\
 MariaDB Server being copied from. For this, MaxScale uses the monitor user.\
-The monitor user may thus require additional privileges. See[mariadb-backup documentation](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariabackup/mariabackup-overview#authentication-and-privileges)\
+The monitor user may thus require additional privileges. See[mariadb-backup documentation](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariadb-backup/mariadb-backup-overview#authentication-and-privileges)\
 for more details.
 
 #### Rebuild server
@@ -1527,14 +1527,14 @@ When launched, the rebuild operation proceeds as below. If any step fails, the\
 operation is stopped and the target server will be left in an unspecified state.
 
 1. Log in to both servers with ssh and check that the tools listed above are\
-   present (e.g. `mariabackup -v` should succeed).
+   present (e.g. `mariadb-backup -v` should succeed).
 2. Check that the port used for transferring the backup is free on the source\
    server. If not, kill the process holding it. This requires running lsof and\
    kill.
 3. Test the connection by streaming a short message from the source host to the\
    target.
 4. Launch mariadb-backup on the source machine, compress the stream and listen\
-   for an incoming connection. This is performed with a command like`mariabackup --backup --safe-slave-backup --stream=xbstream --parallel=1 | pigz -c | socat - TCP-LISTEN:<port>`.
+   for an incoming connection. This is performed with a command like`mariadb-backup --backup --safe-slave-backup --stream=xbstream --parallel=1 | pigz -c | socat - TCP-LISTEN:<port>`.
 5. Ask the target server what its data directory is (`select @@datadir;`). Stop\
    MariaDB Server on the target machine and delete all contents of the data\
    directory.
@@ -1544,7 +1544,7 @@ operation is stopped and the target server will be left in an unspecified state.
    take a long time if there is much data to transfer.
 7. Check that the data directory on the target machine is not empty,\
    i.e. that the transfer at least appears to have succeeded.
-8. Prepare the backup on the target server with a command like`mariabackup --use-memory=1G --prepare`. This step can also take some time if\
+8. Prepare the backup on the target server with a command like`mariadb-backup --use-memory=1G --prepare`. This step can also take some time if\
    the source server performed writes during data transfer.
 9. On the target server, change ownership of datadir contents to the\
    mysql-user and start MariaDB-server.
@@ -1755,24 +1755,24 @@ connection. The port must not be blocked by a firewall or listened on by any\
 other program. If another process is listening on the port when rebuild is\
 starting, MaxScale will attempt to kill the process.
 
-**`mariabackup_use_memory`**
+**`mariadb-backup_use_memory`**
 
-String, default: "1G". Given as is to`mariabackup --prepare --use-memory=<mariabackup_use_memory>`. If set to empty,\
-no `--use-memory` is set and mariadb-backup will use its internal default. See[here](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariabackup/mariabackup-options#-use-memory) for more\
+String, default: "1G". Given as is to`mariadb-backup --prepare --use-memory=<mariadb-backup_use_memory>`. If set to empty,\
+no `--use-memory` is set and mariadb-backup will use its internal default. See[here](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariadb-backup/mariadb-backup-options#-use-memory) for more\
 information.
 
 ```
-mariabackup_use_memory=2G
+mariadb-backup_use_memory=2G
 ```
 
-**`mariabackup_parallel`**
+**`mariadb-backup_parallel`**
 
-Numeric, default: 1. Given as is to`mariabackup --backup --parallel=<val>`.\
-Defines the number of threads used for parallel data file transfer. See[here](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariabackup/mariabackup-options#-parallel) for more\
+Numeric, default: 1. Given as is to`mariadb-backup --backup --parallel=<val>`.\
+Defines the number of threads used for parallel data file transfer. See[here](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariadb-backup/mariadb-backup-options#-parallel) for more\
 information.
 
 ```
-mariabackup_parallel=2
+mariadb-backup_parallel=2
 ```
 
 **`backup_storage_address`**
@@ -1817,7 +1817,7 @@ johnny ALL= NOPASSWD: /bin/systemctl stop mariadb
 johnny ALL= NOPASSWD: /bin/systemctl start mariadb
 johnny ALL= NOPASSWD: /usr/sbin/lsof
 johnny ALL= NOPASSWD: /bin/kill
-johnny ALL= NOPASSWD: /usr/bin/mariabackup
+johnny ALL= NOPASSWD: /usr/bin/mariadb-backup
 johnny ALL= NOPASSWD: /bin/mbstream
 johnny ALL= NOPASSWD: /bin/rm -rf /var/lib/mysql/*
 johnny ALL= NOPASSWD: /bin/chown -R mysql\:mysql /var/lib/mysql

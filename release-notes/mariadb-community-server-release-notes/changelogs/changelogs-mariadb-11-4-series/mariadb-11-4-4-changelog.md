@@ -56,7 +56,7 @@ details of the revision and view diffs of the code modified in that revision.
 * Merge [Revision #eb70e0d6e2](https://github.com/MariaDB/server/commit/eb70e0d6e2) 2024-08-21 09:30:54 +0200 - Merge branch '11.2' into 11.4
 * [Revision #7318fa180d](https://github.com/MariaDB/server/commit/7318fa180d)\
   2024-08-17 12:29:00 +0200
-  * Fix sporadic test failure of mariabackup.slave\_provision\_nolock
+  * Fix sporadic test failure of mariadb-backup.slave\_provision\_nolock
 * [Revision #78fcb9474c](https://github.com/MariaDB/server/commit/78fcb9474c)\
   2024-08-19 20:49:28 +0200
   * Fix sporadic failure in test rpl.rpl\_rotate\_logs

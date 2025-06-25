@@ -23,7 +23,7 @@ Thanks, and enjoy MariaDB!
 
 ### Backup
 
-* [mariabackup --compress](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariabackup/mariabackup-options#-compress) hangs ([MDEV-29043](https://jira.mariadb.org/browse/MDEV-29043))
+* [mariadb-backup --compress](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariadb-backup/mariadb-backup-options#-compress) hangs ([MDEV-29043](https://jira.mariadb.org/browse/MDEV-29043))
 
 ### InnoDB
 

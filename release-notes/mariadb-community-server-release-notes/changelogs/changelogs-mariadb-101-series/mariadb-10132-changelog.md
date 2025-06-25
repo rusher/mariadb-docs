@@ -45,7 +45,7 @@ details of the revision and view diffs of the code modified in that revision.
   * followup for 89b0d5cb6e3, backport 8c422bf48d7
 * [Revision #af86422f08](https://github.com/MariaDB/server/commit/af86422f08)\
   2018-03-21 22:29:00 +0000
-  * [MDEV-13023](https://jira.mariadb.org/browse/MDEV-13023) mariabackup does not preserve holes for page compressed tables.
+  * [MDEV-13023](https://jira.mariadb.org/browse/MDEV-13023) mariadb-backup does not preserve holes for page compressed tables.
 * [Revision #ca291015bc](https://github.com/MariaDB/server/commit/ca291015bc)\
   2018-03-20 17:25:49 +0400
   * [MDEV-10269](https://jira.mariadb.org/browse/MDEV-10269) - Killed queries from I\_S stay in 'Killed' state for long time and don't let server shut down

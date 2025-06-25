@@ -31,7 +31,7 @@ Thanks, and enjoy MariaDB!
 ### [MariaDB Backup](broken-reference)
 
 * [MDEV-14499](https://jira.mariadb.org/browse/MDEV-14499) mariadb-backup 10.2 fails to back up a multi-file InnoDB system tablespace
-* [MDEV-14447](https://jira.mariadb.org/browse/MDEV-14447) mariabackup incremental incorrectly extends system tablespace for multi-file innodb\_data\_file\_path
+* [MDEV-14447](https://jira.mariadb.org/browse/MDEV-14447) mariadb-backup incremental incorrectly extends system tablespace for multi-file innodb\_data\_file\_path
 * [MDEV-13560](https://jira.mariadb.org/browse/MDEV-13560) Copy all innodb undo tablespaces from the backup directory to destination
 
 ### Other

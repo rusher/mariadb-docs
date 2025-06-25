@@ -111,7 +111,7 @@ in that revision.
   * [MDEV-20928](https://jira.mariadb.org/browse/MDEV-20928) mtr test galera.galera\_var\_innodb\_disallow\_writes test failure
 * [Revision #ba23e6d76f](https://github.com/MariaDB/server/commit/ba23e6d76f)\
   2020-07-23 08:59:18 +0300
-  * [MDEV-18177](https://jira.mariadb.org/browse/MDEV-18177) : Galera test failure on galera\_autoinc\_sst\_mariabackup
+  * [MDEV-18177](https://jira.mariadb.org/browse/MDEV-18177) : Galera test failure on galera\_autoinc\_sst\_mariadb-backup
 * [Revision #b3b1c51e4d](https://github.com/MariaDB/server/commit/b3b1c51e4d)\
   2020-07-23 20:43:09 +0530
   * [MDEV-23134](https://jira.mariadb.org/browse/MDEV-23134) SEGV in dict\_load\_table\_one during restart after server crash
@@ -195,7 +195,7 @@ in that revision.
   * [MDEV-20377](https://jira.mariadb.org/browse/MDEV-20377): Make WITH\_MSAN more usable
 * [Revision #5a097c5556](https://github.com/MariaDB/server/commit/5a097c5556)\
   2020-03-13 14:59:02 +0100
-  * [MDEV-21222](https://jira.mariadb.org/browse/MDEV-21222) mariabackup.incremental\_backup failed with memory allocation failure
+  * [MDEV-21222](https://jira.mariadb.org/browse/MDEV-21222) mariadb-backup.incremental\_backup failed with memory allocation failure
 * [Revision #9ed50ece33](https://github.com/MariaDB/server/commit/9ed50ece33)\
   2020-07-01 17:18:47 +0300
   * [MDEV-22779](https://jira.mariadb.org/browse/MDEV-22779): Fix a memory leak in the unit test
@@ -226,7 +226,7 @@ in that revision.
   * [MDEV-21759](https://jira.mariadb.org/browse/MDEV-21759) galera.galera\_parallel\_autoinc\_manytrx sporadic failures.
 * [Revision #3ddb080536](https://github.com/MariaDB/server/commit/3ddb080536)\
   2020-06-14 22:13:45 +0300
-  * Fix include statements in galera\_ipv6\_mariabackup\_section and galera\_ipv6\_mariabackup MTR tests
+  * Fix include statements in galera\_ipv6\_mariadb-backup\_section and galera\_ipv6\_mariadb-backup MTR tests
 * [Revision #5d7e067cce](https://github.com/MariaDB/server/commit/5d7e067cce)\
   2020-06-17 12:58:33 +0300
   * [MDEV-22125](https://jira.mariadb.org/browse/MDEV-22125) : galera.galera\_drop\_multi MTR failed: InnoDB: MySQL is trying to drop database `fts`.\`\` though there are still open handles
@@ -503,7 +503,7 @@ in that revision.
   * [MDEV-22591](https://jira.mariadb.org/browse/MDEV-22591) Debug build crashes on EXECUTE IMMEDIATE '... WHERE ?' USING IGNORE
 * [Revision #0f9bfcc323](https://github.com/MariaDB/server/commit/0f9bfcc323)\
   2020-05-13 14:32:12 +0300
-  * [MDEV-22554](https://jira.mariadb.org/browse/MDEV-22554): "mariabackup --prepare" exits with code 0 even though innodb error is logged
+  * [MDEV-22554](https://jira.mariadb.org/browse/MDEV-22554): "mariadb-backup --prepare" exits with code 0 even though innodb error is logged
 * Merge [Revision #a84060567c](https://github.com/MariaDB/server/commit/a84060567c) 2020-05-19 10:42:59 +0300 - Merge 10.1 into 10.2
 * [Revision #c93f8aca65](https://github.com/MariaDB/server/commit/c93f8aca65)\
   2020-05-19 10:21:16 +0300
@@ -516,7 +516,7 @@ in that revision.
   * [MDEV-22611](https://jira.mariadb.org/browse/MDEV-22611) Assertion btr\_search\_enabled failed during buffer pool resizing
 * [Revision #f9d8571f38](https://github.com/MariaDB/server/commit/f9d8571f38)\
   2020-05-15 18:35:19 +0200
-  * [MDEV-22554](https://jira.mariadb.org/browse/MDEV-22554): galera\_sst\_mariabackup fails with "Failed to start mysqld.2"
+  * [MDEV-22554](https://jira.mariadb.org/browse/MDEV-22554): galera\_sst\_mariadb-backup fails with "Failed to start mysqld.2"
 * Merge [Revision #d0e3b0eea6](https://github.com/MariaDB/server/commit/d0e3b0eea6) 2020-05-18 09:43:58 +0300 - Merge 10.1 into 10.2
 * [Revision #c995090a53](https://github.com/MariaDB/server/commit/c995090a53)\
   2020-05-17 15:52:35 +0300
@@ -575,7 +575,7 @@ in that revision.
 * Merge [Revision #6bc4444d7c](https://github.com/MariaDB/server/commit/6bc4444d7c) 2020-05-13 11:12:31 +0300 - Merge 10.1 into 10.2
 * [Revision #218d20ffe3](https://github.com/MariaDB/server/commit/218d20ffe3)\
   2020-05-12 13:57:09 +0300
-  * [MDEV-22398](https://jira.mariadb.org/browse/MDEV-22398): mariabackup.innodb\_xa\_rollback fails on repeat
+  * [MDEV-22398](https://jira.mariadb.org/browse/MDEV-22398): mariadb-backup.innodb\_xa\_rollback fails on repeat
 * [Revision #0e6a5786d4](https://github.com/MariaDB/server/commit/0e6a5786d4)\
   2020-05-12 10:13:16 +0300
   * Cleanup: Remove InnoDB wrappers of thd\_charset(), thd\_query\_safe()
@@ -612,7 +612,7 @@ in that revision.
   * [MDEV-21515](https://jira.mariadb.org/browse/MDEV-21515) : Galera test sporadic failure on galera.galera\_wsrep\_new\_cluster: Result content mismatch
 * [Revision #2907ff2c2d](https://github.com/MariaDB/server/commit/2907ff2c2d)\
   2020-04-29 17:19:54 +0300
-  * [MDEV-19741](https://jira.mariadb.org/browse/MDEV-19741) : Galera test failure on galera.galera\_sst\_mariabackup\_table\_options
+  * [MDEV-19741](https://jira.mariadb.org/browse/MDEV-19741) : Galera test failure on galera.galera\_sst\_mariadb-backup\_table\_options
 * [Revision #06b245f768](https://github.com/MariaDB/server/commit/06b245f768)\
   2020-05-05 15:35:58 +0530
   * [MDEV-13266](https://jira.mariadb.org/browse/MDEV-13266): Race condition in ANALYZE TABLE / statistics collection

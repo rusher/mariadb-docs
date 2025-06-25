@@ -417,7 +417,7 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-13013](https://jira.mariadb.org/browse/MDEV-13013) fixup: Adjust a test
 * [Revision #a1055ab35d](https://github.com/MariaDB/server/commit/a1055ab35d)\
   2022-08-19 09:18:24 +0300
-  * [MDEV-29043](https://jira.mariadb.org/browse/MDEV-29043) mariabackup --compress hangs
+  * [MDEV-29043](https://jira.mariadb.org/browse/MDEV-29043) mariadb-backup --compress hangs
 * [Revision #32167225c7](https://github.com/MariaDB/server/commit/32167225c7)\
   2022-08-16 17:34:38 +0530
   * [MDEV-13013](https://jira.mariadb.org/browse/MDEV-13013) InnoDB unnecessarily extends data files

@@ -153,7 +153,7 @@ in that revision.
   * fix clang warning
 * [Revision #edda2fd149](https://github.com/MariaDB/server/commit/edda2fd149)\
   2019-10-01 03:23:33 +0300
-  * [MDEV-20703](https://jira.mariadb.org/browse/MDEV-20703): mariabackup creates binlog files in server binlog directory on --prepare --export step
+  * [MDEV-20703](https://jira.mariadb.org/browse/MDEV-20703): mariadb-backup creates binlog files in server binlog directory on --prepare --export step
 * Merge [Revision #f203245e9e](https://github.com/MariaDB/server/commit/f203245e9e) 2019-10-01 06:10:19 +0400 - Merge remote-tracking branch 'origin/10.1' into 10.2
 * [Revision #576a5f091e](https://github.com/MariaDB/server/commit/576a5f091e)\
   2019-09-24 16:20:59 +0300

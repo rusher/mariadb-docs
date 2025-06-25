@@ -147,7 +147,7 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-13106](https://jira.mariadb.org/browse/MDEV-13106) : Fix check for empty directory in MSI installer
 * [Revision #b9a326b6e1](https://github.com/MariaDB/server/commit/b9a326b6e1)\
   2017-06-19 17:00:09 +0000
-  * [MDEV-12709](https://jira.mariadb.org/browse/MDEV-12709) : mariabackup - during backup phase read some innodb parameter using "show variables", rather than take the value from my.cnf.
+  * [MDEV-12709](https://jira.mariadb.org/browse/MDEV-12709) : mariadb-backup - during backup phase read some innodb parameter using "show variables", rather than take the value from my.cnf.
 * [Revision #d1e182d603](https://github.com/MariaDB/server/commit/d1e182d603)\
   2017-06-19 15:59:19 +0300
   * [MDEV-12975](https://jira.mariadb.org/browse/MDEV-12975) InnoDB redo log minimum size check uses detected file size instead of requested innodb\_log\_file\_size

@@ -94,7 +94,7 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-30373](https://jira.mariadb.org/browse/MDEV-30373) Wrong result with range access
 * [Revision #17858e03a7](https://github.com/MariaDB/server/commit/17858e03a7)\
   2023-01-02 13:13:59 +0530
-  * [MDEV-30179](https://jira.mariadb.org/browse/MDEV-30179) mariabackup --backup fails with FATAL ERROR: ... failed to copy datafile
+  * [MDEV-30179](https://jira.mariadb.org/browse/MDEV-30179) mariadb-backup --backup fails with FATAL ERROR: ... failed to copy datafile
 * [Revision #cad33ded19](https://github.com/MariaDB/server/commit/cad33ded19)\
   2023-01-06 09:08:43 +1100
   * [MDEV-30344](https://jira.mariadb.org/browse/MDEV-30344): Without wsrep needs wsrep{,\_on}.h headers

@@ -36,6 +36,6 @@ details of the revision and view diffs of the code modified in that revision.
   * bump the VERSION
 * [Revision #593fdee397](https://github.com/MariaDB/server/commit/593fdee397)\
   2022-09-16 14:10:45 +0300
-  * [MDEV-29555](https://jira.mariadb.org/browse/MDEV-29555) ASAN heap-buffer-overflow in mariabackup.huge\_lsn,strict\_full\_crc32
+  * [MDEV-29555](https://jira.mariadb.org/browse/MDEV-29555) ASAN heap-buffer-overflow in mariadb-backup.huge\_lsn,strict\_full\_crc32
 
 {% @marketo/form formid="4316" formId="4316" %}

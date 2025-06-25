@@ -128,7 +128,7 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-20411](https://jira.mariadb.org/browse/MDEV-20411) Procedure containing CTE incorrectly stored in mysql.proc
 * [Revision #4ad148b148](https://github.com/MariaDB/server/commit/4ad148b148)\
   2021-06-25 06:48:17 +0200
-  * [MDEV-26019](https://jira.mariadb.org/browse/MDEV-26019): Upgrading MariaDB breaks TLS mariabackup SST
+  * [MDEV-26019](https://jira.mariadb.org/browse/MDEV-26019): Upgrading MariaDB breaks TLS mariadb-backup SST
 * [Revision #9258cfa4b4](https://github.com/MariaDB/server/commit/9258cfa4b4)\
   2021-06-22 15:44:44 +0300
   * [MDEV-25978](https://jira.mariadb.org/browse/MDEV-25978) : rsync SST does not work with custom binlog name
@@ -143,7 +143,7 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-25960](https://jira.mariadb.org/browse/MDEV-25960) yum update overwrites customized logrotation config (/etc/logrotate.d/mysql)
 * [Revision #29098083f7](https://github.com/MariaDB/server/commit/29098083f7)\
   2021-06-25 06:48:17 +0200
-  * [MDEV-26019](https://jira.mariadb.org/browse/MDEV-26019): Upgrading MariaDB breaks TLS mariabackup SST
+  * [MDEV-26019](https://jira.mariadb.org/browse/MDEV-26019): Upgrading MariaDB breaks TLS mariadb-backup SST
 * [Revision #05a4996c5c](https://github.com/MariaDB/server/commit/05a4996c5c)\
   2021-06-22 15:44:44 +0300
   * [MDEV-25978](https://jira.mariadb.org/browse/MDEV-25978) : rsync SST does not work with custom binlog name
@@ -155,7 +155,7 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-25978](https://jira.mariadb.org/browse/MDEV-25978) post-merge: updated mtr result files
 * [Revision #58700a426a](https://github.com/MariaDB/server/commit/58700a426a)\
   2021-06-29 12:42:14 +0200
-  * [MDEV-26019](https://jira.mariadb.org/browse/MDEV-26019): Upgrading MariaDB breaks TLS mariabackup SST
+  * [MDEV-26019](https://jira.mariadb.org/browse/MDEV-26019): Upgrading MariaDB breaks TLS mariadb-backup SST
 * [Revision #1c03e7a667](https://github.com/MariaDB/server/commit/1c03e7a667)\
   2021-06-22 15:44:44 +0300
   * [MDEV-25978](https://jira.mariadb.org/browse/MDEV-25978) : rsync SST does not work with custom binlog name

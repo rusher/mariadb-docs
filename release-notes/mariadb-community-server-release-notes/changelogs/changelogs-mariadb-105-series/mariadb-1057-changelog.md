@@ -107,7 +107,7 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-23399](https://jira.mariadb.org/browse/MDEV-23399) fixup: Assertion bpage->in\_file() failed
 * [Revision #59a0236da4](https://github.com/MariaDB/server/commit/59a0236da4)\
   2020-10-16 14:38:07 +0300
-  * Cleanup: Speed up mariabackup --prepare
+  * Cleanup: Speed up mariadb-backup --prepare
 * [Revision #5999d5120e](https://github.com/MariaDB/server/commit/5999d5120e)\
   2020-10-26 15:04:24 +0200
   * [MDEV-23399](https://jira.mariadb.org/browse/MDEV-23399) fixup: Avoid crash on mariadb-backup shutdown

@@ -76,7 +76,7 @@ details of the revision and view diffs of the code modified in that revision.
 * Merge [Revision #312de43f40](https://github.com/MariaDB/server/commit/312de43f40) 2018-07-18 10:25:35 +0300 - Merge pull request #786 from codership/10.1-[MDEV-14612](https://jira.mariadb.org/browse/MDEV-14612)
 * [Revision #15c6d6a94a](https://github.com/MariaDB/server/commit/15c6d6a94a)\
   2018-06-07 17:12:38 +0300
-  * [MDEV-14612](https://jira.mariadb.org/browse/MDEV-14612) wsrep\_sst\_mariabackup unnecessarily converts address to host name
+  * [MDEV-14612](https://jira.mariadb.org/browse/MDEV-14612) wsrep\_sst\_mariadb-backup unnecessarily converts address to host name
 * Merge [Revision #e08ddccc35](https://github.com/MariaDB/server/commit/e08ddccc35) 2018-07-16 12:22:36 +0300 - Merge pull request #793 from codership/10.1-[MDEV-15442](https://jira.mariadb.org/browse/MDEV-15442)
 * [Revision #7a7a61998c](https://github.com/MariaDB/server/commit/7a7a61998c)\
   2018-06-20 13:16:34 +0200

@@ -213,7 +213,7 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-14448](https://jira.mariadb.org/browse/MDEV-14448) fixup: clang -Wunused-function
 * [Revision #648d2da8f2](https://github.com/MariaDB/server/commit/648d2da8f2)\
   2024-03-07 15:24:43 +0100
-  * [MDEV-33540](https://jira.mariadb.org/browse/MDEV-33540) Avoid writes to TRX\_SYS page during mariabackup operations
+  * [MDEV-33540](https://jira.mariadb.org/browse/MDEV-33540) Avoid writes to TRX\_SYS page during mariadb-backup operations
 * [Revision #738da4918d](https://github.com/MariaDB/server/commit/738da4918d)\
   2024-03-05 21:32:30 +0530
   * [MDEV-32346](https://jira.mariadb.org/browse/MDEV-32346) Assertion failure sym\_node->table != NULL in pars\_retrieve\_table\_def on UPDATE

@@ -26,7 +26,7 @@ The revision number links will take you to the revision's page on GitHub. On[Git
 * Merge [Revision #f1cc6e3874](https://github.com/MariaDB/server/commit/f1cc6e3874) 2017-11-24 17:17:16 +0200 - Merge 10.1 into 10.2
 * [Revision #316f0d8fe3](https://github.com/MariaDB/server/commit/316f0d8fe3)\
   2017-11-23 21:01:00 +0000
-  * [MDEV-14447](https://jira.mariadb.org/browse/MDEV-14447) mariabackup incremental incorrectly extends system tablespace for multi-file innodb\_data\_file\_path.
+  * [MDEV-14447](https://jira.mariadb.org/browse/MDEV-14447) mariadb-backup incremental incorrectly extends system tablespace for multi-file innodb\_data\_file\_path.
 * [Revision #12840f97cd](https://github.com/MariaDB/server/commit/12840f97cd)\
   2017-11-21 16:20:08 -0500
   * Fix typo, and disable own dtrace proibes on Solaris, really.
@@ -35,10 +35,10 @@ The revision number links will take you to the revision's page on GitHub. On[Git
   * Fix compile error.
 * [Revision #b6d72ed44d](https://github.com/MariaDB/server/commit/b6d72ed44d)\
   2017-11-21 21:14:06 +0100
-  * [MDEV-14283](https://jira.mariadb.org/browse/MDEV-14283) : Fix Solaris 10 build. - introduce system check for posix\_memalign (not available on Solaris 10) - Disable dtrace probes, to fix weird link errors in mariabackup
+  * [MDEV-14283](https://jira.mariadb.org/browse/MDEV-14283) : Fix Solaris 10 build. - introduce system check for posix\_memalign (not available on Solaris 10) - Disable dtrace probes, to fix weird link errors in mariadb-backup
 * [Revision #7c4f859384](https://github.com/MariaDB/server/commit/7c4f859384)\
   2017-11-21 17:19:32 +0000
-  * [MDEV-14283](https://jira.mariadb.org/browse/MDEV-14283) : Fix compilation of mariabackup for gcc3.x
+  * [MDEV-14283](https://jira.mariadb.org/browse/MDEV-14283) : Fix compilation of mariadb-backup for gcc3.x
 * [Revision #6979d20426](https://github.com/MariaDB/server/commit/6979d20426)\
   2017-11-24 17:10:29 +0200
   * [MDEV-14499](https://jira.mariadb.org/browse/MDEV-14499) mariadb-backup 10.2 fails to back up a multi-file InnoDB system tablespace

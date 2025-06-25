@@ -189,7 +189,7 @@ id FOR ORDINALITY )) AS jt;
     * Command-line option 'defaults-group-suffix=' cannot be used with the script mariadb-secure-installation ([MDEV-33265](https://jira.mariadb.org/browse/MDEV-33265))
     * Grouping operators referring to column aliases in unions inside derived tables can cause name resolution problems with prepared statements. ([MDEV-34506](https://jira.mariadb.org/browse/MDEV-34506))
     * Table mysql.gtid\_slave\_pos is replicated between two MariaDB Enterprise Cluster although wsrep\_gtid\_mode=OFF is set. ([MDEV-34170](https://jira.mariadb.org/browse/MDEV-34170))
-    * wsrep\_sst\_mariabackup is using /tmp dir during SST instead of an user defined tmpdir ([MDEV-32158](https://jira.mariadb.org/browse/MDEV-32158))
+    * wsrep\_sst\_mariadb-backup is using /tmp dir during SST instead of an user defined tmpdir ([MDEV-32158](https://jira.mariadb.org/browse/MDEV-32158))
     * The following misleading error message is shown with MariaDB Enterprise Cluster. Galera can mark user threads as high priority and so they can't be killed: ([MDEV-12008](https://jira.mariadb.org/browse/MDEV-12008))
 
     ```

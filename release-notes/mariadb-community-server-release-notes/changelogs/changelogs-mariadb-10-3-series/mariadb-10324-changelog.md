@@ -228,7 +228,7 @@ details of the revision and view diffs of the code modified in that revision.
 * Merge [Revision #f0be95b5b0](https://github.com/MariaDB/server/commit/f0be95b5b0) 2020-05-18 14:09:34 +0300 - Merge 10.2 into 10.3
 * [Revision #e0ddb077d9](https://github.com/MariaDB/server/commit/e0ddb077d9)\
   2020-05-15 18:35:19 +0200
-  * [MDEV-22554](https://jira.mariadb.org/browse/MDEV-22554): galera\_sst\_mariabackup fails with "Failed to start mysqld.2"
+  * [MDEV-22554](https://jira.mariadb.org/browse/MDEV-22554): galera\_sst\_mariadb-backup fails with "Failed to start mysqld.2"
 * Merge [Revision #03aaa7f7a1](https://github.com/MariaDB/server/commit/03aaa7f7a1) 2020-05-18 10:47:11 +0300 - Merge 10.2 into 10.3
 * [Revision #4f26aea51b](https://github.com/MariaDB/server/commit/4f26aea51b)\
   2020-05-17 11:42:50 +0530

@@ -52,7 +52,7 @@ in that revision.
   * Do not declare an unused variable
 * [Revision #7b145fae13](https://github.com/MariaDB/server/commit/7b145fae13)\
   2018-08-03 11:24:05 +0300
-  * mariabackup: Use snprintf() instead of sprintf()
+  * mariadb-backup: Use snprintf() instead of sprintf()
 * [Revision #391e60b2db](https://github.com/MariaDB/server/commit/391e60b2db)\
   2018-08-03 13:06:03 +0300
   * Fix -Wclass-memaccess warnings in InnoDB
@@ -158,7 +158,7 @@ in that revision.
   * [MDEV-15855](https://jira.mariadb.org/browse/MDEV-15855) Deadlock between purge thread and DDL statement
 * [Revision #e3207b6c13](https://github.com/MariaDB/server/commit/e3207b6c13)\
   2018-07-06 09:01:24 +0300
-  * [MDEV-14188](https://jira.mariadb.org/browse/MDEV-14188) mariabackup.incremental\_encrypted wrong result
+  * [MDEV-14188](https://jira.mariadb.org/browse/MDEV-14188) mariadb-backup.incremental\_encrypted wrong result
 * [Revision #e9b78a1055](https://github.com/MariaDB/server/commit/e9b78a1055)\
   2018-07-05 15:10:47 -0700
   * Removed the test case for [MDEV-15151](https://jira.mariadb.org/browse/MDEV-15151) for the following reasons:

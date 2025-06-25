@@ -168,7 +168,7 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-25734](https://jira.mariadb.org/browse/MDEV-25734) mbstream breaks page compression on XFS
 * [Revision #073a088f31](https://github.com/MariaDB/server/commit/073a088f31)\
   2023-10-17 03:27:11 +0200
-  * [MDEV-31467](https://jira.mariadb.org/browse/MDEV-31467): wsrep\_sst\_mariabackup not working on FreeBSD
+  * [MDEV-31467](https://jira.mariadb.org/browse/MDEV-31467): wsrep\_sst\_mariadb-backup not working on FreeBSD
 * [Revision #eb19638418](https://github.com/MariaDB/server/commit/eb19638418)\
   2023-10-17 12:46:31 +0400
   * [MDEV-32244](https://jira.mariadb.org/browse/MDEV-32244) Wrong bit encoding using COALESCE

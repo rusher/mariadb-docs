@@ -8,7 +8,7 @@ This tool provides a production-quality, nearly non-blocking method for performi
 
 MariaDB 10.1 introduced features that are exclusive to MariaDB, such as [InnoDB Page Compression](../../storage-engines/innodb/innodb-page-compression.md) and [Data-at-Rest Encryption](../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/). These exclusive features have been very popular with MariaDB users. However, existing backup solutions from the MySQL ecosystem, such as [Percona XtraBackup](../../../clients-and-utilities/legacy-clients-and-utilities/backing-up-and-restoring-databases-percona-xtrabackup/), did not support full backup capability for these features.
 
-To address the needs of our users, we decided to develop a backup solution that would fully support these popular MariaDB-exclusive features. We did this by creating `mariadb-backup` (previously called mariabackup), which is based on the well-known and commonly used backup tool called Percona XtraBackup. `mariadb-backup` was originally extended from version 2.3.8.
+To address the needs of our users, we decided to develop a backup solution that would fully support these popular MariaDB-exclusive features. We did this by creating `mariadb-backup` (previously called mariadb-backup), which is based on the well-known and commonly used backup tool called Percona XtraBackup. `mariadb-backup` was originally extended from version 2.3.8.
 
 #### Supported Features
 

@@ -23,13 +23,13 @@ MariaDB Enterprise Server 10.4.10-4 was released on 2019-11-18.
 
 ### Can result in data loss
 
-* [mariabackup](broken-reference) [--prepare](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/enterprise-server/10-4/broken-reference/README.md) [--export](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/enterprise-server/10-4/broken-reference/README.md) ... could overwrite binary logs if certain conditions were present. ([MDEV-20703](https://jira.mariadb.org/browse/MDEV-20703))\
+* [mariadb-backup](broken-reference) [--prepare](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/enterprise-server/10-4/broken-reference/README.md) [--export](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/enterprise-server/10-4/broken-reference/README.md) ... could overwrite binary logs if certain conditions were present. ([MDEV-20703](https://jira.mariadb.org/browse/MDEV-20703))\
   Conditions which must be present to trigger this bug:
-  * [mariabackup](broken-reference) is executed on the MariaDB Server host, and
+  * [mariadb-backup](broken-reference) is executed on the MariaDB Server host, and
   * Configuration files from the master are used, and
   * Configuration files enable binary logging
 
-If unable to upgrade to MariaDB Enterprise Server 10.4.10-4, where this bug is fixed, a workaround is available: use the `--defaults` option to [mariabackup](broken-reference) to avoid the bug-triggering conditions by specifying a different configuration file.
+If unable to upgrade to MariaDB Enterprise Server 10.4.10-4, where this bug is fixed, a workaround is available: use the `--defaults` option to [mariadb-backup](broken-reference) to avoid the bug-triggering conditions by specifying a different configuration file.
 
 ### Can result in a hang or crash
 

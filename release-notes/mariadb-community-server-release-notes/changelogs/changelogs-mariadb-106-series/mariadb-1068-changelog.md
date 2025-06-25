@@ -34,7 +34,7 @@ details of the revision and view diffs of the code modified in that revision.
 * Merge [Revision #daa2680c78](https://github.com/MariaDB/server/commit/daa2680c78) 2022-05-12 08:11:57 +0300 - Merge 10.5 into 10.6
 * [Revision #7da0f30ccc](https://github.com/MariaDB/server/commit/7da0f30ccc)\
   2022-05-11 14:48:51 +0400
-  * [MDEV-28446](https://jira.mariadb.org/browse/MDEV-28446) mariabackup prepare fails for incrementals if a new schema is created after full backup is taken
+  * [MDEV-28446](https://jira.mariadb.org/browse/MDEV-28446) mariadb-backup prepare fails for incrementals if a new schema is created after full backup is taken
 * [Revision #a917be3e7f](https://github.com/MariaDB/server/commit/a917be3e7f)\
   2022-05-10 20:24:42 +0200
   * fix galera.[MDEV-26575](https://jira.mariadb.org/browse/MDEV-26575) failures
@@ -122,7 +122,7 @@ details of the revision and view diffs of the code modified in that revision.
 * Merge [Revision #fae0ccad6e](https://github.com/MariaDB/server/commit/fae0ccad6e) 2022-04-21 17:46:40 +0300 - Merge 10.5 into 10.6
 * [Revision #1b558dd462](https://github.com/MariaDB/server/commit/1b558dd462)\
   2022-04-15 18:21:54 +0300
-  * [MDEV-27919](https://jira.mariadb.org/browse/MDEV-27919) mariabackup --log-copy-interval is measured in millisecondss in 10.5 and in microseconds in 10.6
+  * [MDEV-27919](https://jira.mariadb.org/browse/MDEV-27919) mariadb-backup --log-copy-interval is measured in millisecondss in 10.5 and in microseconds in 10.6
 * [Revision #f0c52bfe3b](https://github.com/MariaDB/server/commit/f0c52bfe3b)\
   2022-04-21 17:18:41 +1000
   * [MDEV-28263](https://jira.mariadb.org/browse/MDEV-28263): mariadb-tzinfo-to-sql (postfix)

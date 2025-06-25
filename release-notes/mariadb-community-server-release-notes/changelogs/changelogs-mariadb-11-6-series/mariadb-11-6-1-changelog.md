@@ -41,7 +41,7 @@ details of the revision and view diffs of the code modified in that revision.
   * sql\_acl: send client plugin name in the server handshake packet
 * [Revision #8386a529cc](https://github.com/MariaDB/server/commit/8386a529cc)\
   2024-04-29 22:41:07 +0200
-  * [MDEV-19949](https://jira.mariadb.org/browse/MDEV-19949) mariabackup option of '--password' or '-p' without specifying password in commandline
+  * [MDEV-19949](https://jira.mariadb.org/browse/MDEV-19949) mariadb-backup option of '--password' or '-p' without specifying password in commandline
 * Merge [Revision #ba15ea117c](https://github.com/MariaDB/server/commit/ba15ea117c) 2024-08-09 11:34:31 +0200 - Merge branch '11.6' into 11.6
 * Merge [Revision #523ef2a12c](https://github.com/MariaDB/server/commit/523ef2a12c) 2024-08-05 14:45:45 +0200 - Merge 11.5 into 11.6
 * [Revision #c175f4988a](https://github.com/MariaDB/server/commit/c175f4988a)\
@@ -133,7 +133,7 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-31809](https://jira.mariadb.org/browse/MDEV-31809) Make SST script interface read-write
 * [Revision #203d337a55](https://github.com/MariaDB/server/commit/203d337a55)\
   2023-07-29 14:27:48 +0300
-  * [MDEV-25321](https://jira.mariadb.org/browse/MDEV-25321) mariabackup ignores MYSQL\_PWD variable
+  * [MDEV-25321](https://jira.mariadb.org/browse/MDEV-25321) mariadb-backup ignores MYSQL\_PWD variable
 * Merge [Revision #3d4bdf76d3](https://github.com/MariaDB/server/commit/3d4bdf76d3) 2024-05-31 17:22:37 +0200 - Merge 11.5 into 11.6
 * [Revision #aeffec60f6](https://github.com/MariaDB/server/commit/aeffec60f6)\
   2023-08-09 02:18:36 +0200

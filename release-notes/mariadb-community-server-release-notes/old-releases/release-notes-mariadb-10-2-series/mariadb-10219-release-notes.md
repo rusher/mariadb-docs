@@ -31,7 +31,7 @@ Thanks, and enjoy MariaDB!
 * [MDEV-17491](https://jira.mariadb.org/browse/MDEV-17491): micro optimize page\_id\_t
 * [MDEV-13671](https://jira.mariadb.org/browse/MDEV-13671): InnoDB should use case-insensitive column name comparisons like the rest of the server
 * Fixes for indexed virtual columns: [MDEV-17215](https://jira.mariadb.org/browse/MDEV-17215), [MDEV-16980](https://jira.mariadb.org/browse/MDEV-16980)
-* [MDEV-17433](https://jira.mariadb.org/browse/MDEV-17433): Allow InnoDB start up with empty ib\_logfile0 from `mariabackup --prepare`
+* [MDEV-17433](https://jira.mariadb.org/browse/MDEV-17433): Allow InnoDB start up with empty ib\_logfile0 from `mariadb-backup --prepare`
 * [MDEV-12547](https://jira.mariadb.org/browse/MDEV-12547): InnoDB FULLTEXT index has too strict innodb\_ft\_result\_cache\_limit max limit
 * [MDEV-17541](https://jira.mariadb.org/browse/MDEV-17541): KILL QUERY during lock wait in FOREIGN KEY check causes hang
 * [MDEV-17531](https://jira.mariadb.org/browse/MDEV-17531): Crash in RENAME TABLE with FOREIGN KEY and FULLTEXT INDEX

@@ -24,7 +24,7 @@ Thanks, and enjoy MariaDB!
 * `DELETE HISTORY` may delete current data on system-versioned table ([MDEV-25468](https://jira.mariadb.org/browse/MDEV-25468))
 * Crashes with nested table value constructors ([MDEV-22786](https://jira.mariadb.org/browse/MDEV-22786))
 
-### mariabackup
+### mariadb-backup
 
 * RENAME TABLE causes "Ignoring data file" messages ([MDEV-25568](https://jira.mariadb.org/browse/MDEV-25568))
 

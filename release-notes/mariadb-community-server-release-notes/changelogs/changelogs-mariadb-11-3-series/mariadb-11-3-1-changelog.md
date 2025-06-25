@@ -137,7 +137,7 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-32081](https://jira.mariadb.org/browse/MDEV-32081) Remove my\_casedn\_str() from get\_canonical\_filename()
 * [Revision #5de23b1d6f](https://github.com/MariaDB/server/commit/5de23b1d6f)\
   2023-08-31 06:51:53 +0400
-  * [MDEV-31505](https://jira.mariadb.org/browse/MDEV-31505) Deprecate mariabackup --innobackupex mode
+  * [MDEV-31505](https://jira.mariadb.org/browse/MDEV-31505) Deprecate mariadb-backup --innobackupex mode
 * [Revision #7ba9c7fb84](https://github.com/MariaDB/server/commit/7ba9c7fb84)\
   2023-05-12 16:30:55 +0200
   * [MDEV-31231](https://jira.mariadb.org/browse/MDEV-31231): Remove JavaWrappers.jar from mariadb-test-data and create new mariadb-plugin-connect-jdbc package

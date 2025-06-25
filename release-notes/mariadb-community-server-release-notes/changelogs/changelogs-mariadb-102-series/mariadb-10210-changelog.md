@@ -61,7 +61,7 @@ The revision number links will take you to the revision's page on GitHub. On[Git
   * Disable rocksdb.col\_opt\_zerofill due to [MDEV-14165](https://jira.mariadb.org/browse/MDEV-14165).
 * [Revision #b94a62b5df](https://github.com/MariaDB/server/commit/b94a62b5df)\
   2017-10-27 11:16:32 +0300
-  * [MDEV-13890](https://jira.mariadb.org/browse/MDEV-13890) mariabackup.xb\_compressed\_encrypted failed in buildbot, InnoDB: assertion failure
+  * [MDEV-13890](https://jira.mariadb.org/browse/MDEV-13890) mariadb-backup.xb\_compressed\_encrypted failed in buildbot, InnoDB: assertion failure
 * [Revision #f29cfa1d7e](https://github.com/MariaDB/server/commit/f29cfa1d7e)\
   2017-10-27 10:43:06 +0300
   * Remove dead code for MLOG\_UNDO\_HDR\_DISCARD
@@ -137,7 +137,7 @@ The revision number links will take you to the revision's page on GitHub. On[Git
 * Merge [Revision #cbd0da66e4](https://github.com/MariaDB/server/commit/cbd0da66e4) 2017-10-25 17:17:21 +0300 - Merge 10.1 into 10.2
 * [Revision #909cdafd35](https://github.com/MariaDB/server/commit/909cdafd35)\
   2017-10-25 09:06:45 +0300
-  * [MDEV-13496](https://jira.mariadb.org/browse/MDEV-13496) Use "mariabackup" rather than "xtrabackup" in console output
+  * [MDEV-13496](https://jira.mariadb.org/browse/MDEV-13496) Use "mariadb-backup" rather than "xtrabackup" in console output
 * Merge [Revision #db203d7471](https://github.com/MariaDB/server/commit/db203d7471) 2017-10-24 19:26:24 +0300 - Merge 10.0 into 10.1
 * Merge [Revision #44ed243522](https://github.com/MariaDB/server/commit/44ed243522) 2017-10-24 19:25:19 +0300 - Merge 5.5 into 10.0
 * [Revision #439a7c994a](https://github.com/MariaDB/server/commit/439a7c994a)\
@@ -157,10 +157,10 @@ The revision number links will take you to the revision's page on GitHub. On[Git
   * Do not use File::Which, it is not always available.
 * [Revision #72407e544e](https://github.com/MariaDB/server/commit/72407e544e)\
   2017-10-23 10:37:28 +0000
-  * [MDEV-13496](https://jira.mariadb.org/browse/MDEV-13496) Use "mariabackup" rather than "xtrabackup" in console output
+  * [MDEV-13496](https://jira.mariadb.org/browse/MDEV-13496) Use "mariadb-backup" rather than "xtrabackup" in console output
 * [Revision #125ce6f82f](https://github.com/MariaDB/server/commit/125ce6f82f)\
   2017-10-23 10:30:17 +0000
-  * [MDEV-14102](https://jira.mariadb.org/browse/MDEV-14102) restore --remove-original options for mariabackup
+  * [MDEV-14102](https://jira.mariadb.org/browse/MDEV-14102) restore --remove-original options for mariadb-backup
 * [Revision #a02551b0ba](https://github.com/MariaDB/server/commit/a02551b0ba)\
   2017-10-25 10:10:18 +0000
   * Windows- "my\_safe\_kill dump" will now also dump child processes
@@ -370,7 +370,7 @@ The revision number links will take you to the revision's page on GitHub. On[Git
   * Fix mtr to create a process dump on Window for hanging or looping processes
 * [Revision #9ee840cd0a](https://github.com/MariaDB/server/commit/9ee840cd0a)\
   2017-10-13 22:22:03 +0300
-  * mariabackup: Properly call os\_thread\_exit() with detach=true
+  * mariadb-backup: Properly call os\_thread\_exit() with detach=true
 * [Revision #d577b1a9c2](https://github.com/MariaDB/server/commit/d577b1a9c2)\
   2017-10-23 09:45:47 +0000
   * [MDEV-11934](https://jira.mariadb.org/browse/MDEV-11934): MariaRocks: Group Commit with binlog
@@ -453,7 +453,7 @@ The revision number links will take you to the revision's page on GitHub. On[Git
   * [MDEV-13941](https://jira.mariadb.org/browse/MDEV-13941) followup.
 * [Revision #fe18e6b064](https://github.com/MariaDB/server/commit/fe18e6b064)\
   2017-10-08 22:05:54 +0000
-  * [MDEV-13822](https://jira.mariadb.org/browse/MDEV-13822) mariabackup incremental prepare incorrectly sets file size. [MDEV-13310](https://jira.mariadb.org/browse/MDEV-13310) Preparing an incremental backup twice can corrupt data
+  * [MDEV-13822](https://jira.mariadb.org/browse/MDEV-13822) mariadb-backup incremental prepare incorrectly sets file size. [MDEV-13310](https://jira.mariadb.org/browse/MDEV-13310) Preparing an incremental backup twice can corrupt data
 * [Revision #b731a5bcf2](https://github.com/MariaDB/server/commit/b731a5bcf2)\
   2017-10-08 00:13:05 +0000
   * Innodb : Refactor os\_file\_set\_size() to be compatible 10.1
@@ -482,7 +482,7 @@ The revision number links will take you to the revision's page on GitHub. On[Git
   * [MDEV-13798](https://jira.mariadb.org/browse/MDEV-13798) - fix incorrect alignment of the buffer in incremental backup
 * [Revision #0f8295d7d5](https://github.com/MariaDB/server/commit/0f8295d7d5)\
   2017-10-06 22:34:51 +0000
-  * [MDEV-13822](https://jira.mariadb.org/browse/MDEV-13822) mariabackup incremental prepare incorrectly sets file size.
+  * [MDEV-13822](https://jira.mariadb.org/browse/MDEV-13822) mariadb-backup incremental prepare incorrectly sets file size.
 * [Revision #420798a81a](https://github.com/MariaDB/server/commit/420798a81a)\
   2017-10-06 16:36:40 +0000
   * Refactor os\_file\_set\_size to extend already existing files.

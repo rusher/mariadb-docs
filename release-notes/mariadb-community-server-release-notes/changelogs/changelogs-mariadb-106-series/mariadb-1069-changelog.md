@@ -28,7 +28,7 @@ details of the revision and view diffs of the code modified in that revision.
 * Merge [Revision #ee620a7416](https://github.com/MariaDB/server/commit/ee620a7416) 2022-08-04 16:58:42 +0200 - Merge branch '10.5' into 10.6
 * [Revision #558f1eff64](https://github.com/MariaDB/server/commit/558f1eff64)\
   2022-08-04 09:30:53 +0300
-  * [MDEV-29115](https://jira.mariadb.org/browse/MDEV-29115) mariabackup.[MDEV-14447](https://jira.mariadb.org/browse/MDEV-14447) started failing in a new way
+  * [MDEV-29115](https://jira.mariadb.org/browse/MDEV-29115) mariadb-backup.[MDEV-14447](https://jira.mariadb.org/browse/MDEV-14447) started failing in a new way
 * [Revision #c1ea55ddb0](https://github.com/MariaDB/server/commit/c1ea55ddb0)\
   2022-08-03 13:32:06 +0200
   * New CC
@@ -71,7 +71,7 @@ details of the revision and view diffs of the code modified in that revision.
 * Merge [Revision #b9eb63618e](https://github.com/MariaDB/server/commit/b9eb63618e) 2022-07-26 11:37:36 +0300 - Merge 10.5 into 10.6
 * [Revision #1d3629875e](https://github.com/MariaDB/server/commit/1d3629875e)\
   2022-07-26 11:33:52 +0530
-  * [MDEV-29137](https://jira.mariadb.org/browse/MDEV-29137) mariabackup excessive logging of ddl tracking
+  * [MDEV-29137](https://jira.mariadb.org/browse/MDEV-29137) mariadb-backup excessive logging of ddl tracking
 * [Revision #e94902c062](https://github.com/MariaDB/server/commit/e94902c062)\
   2022-06-22 14:37:52 +0530
   * [MDEV-28762](https://jira.mariadb.org/browse/MDEV-28762): recursive call of some json functions without stack control
@@ -80,7 +80,7 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-21136](https://jira.mariadb.org/browse/MDEV-21136) InnoDB's records\_in\_range estimates can be way off
 * [Revision #6156a2be30](https://github.com/MariaDB/server/commit/6156a2be30)\
   2022-07-25 17:00:51 +0530
-  * [MDEV-29137](https://jira.mariadb.org/browse/MDEV-29137) mariabackup excessive logging of ddl tracking
+  * [MDEV-29137](https://jira.mariadb.org/browse/MDEV-29137) mariadb-backup excessive logging of ddl tracking
 * [Revision #654236c06d](https://github.com/MariaDB/server/commit/654236c06d)\
   2022-07-20 14:13:07 +0200
   * [MDEV-26456](https://jira.mariadb.org/browse/MDEV-26456): SIGSEGV in flush\_tables\_with\_read\_lock on FLUSH TABLE
@@ -116,7 +116,7 @@ details of the revision and view diffs of the code modified in that revision.
   * C/C 3.3
 * [Revision #c1e3fc0e0d](https://github.com/MariaDB/server/commit/c1e3fc0e0d)\
   2022-06-29 15:48:44 +0300
-  * [MDEV-28977](https://jira.mariadb.org/browse/MDEV-28977): mariabackup.huge\_lsn,strict\_full\_crc32 fails in 10.8
+  * [MDEV-28977](https://jira.mariadb.org/browse/MDEV-28977): mariadb-backup.huge\_lsn,strict\_full\_crc32 fails in 10.8
 * [Revision #2fa3ada072](https://github.com/MariaDB/server/commit/2fa3ada072)\
   2022-06-28 20:58:45 +0300
   * Fix a sporadic failure of main.backup\_locks

@@ -30,7 +30,7 @@ Thanks, and enjoy MariaDB!
 
 ### mariadb-backup
 
-* [MDEV-21255](https://jira.mariadb.org/browse/MDEV-21255): Deadlock of parallel slave and mariabackup (with failed log copy thread)
+* [MDEV-21255](https://jira.mariadb.org/browse/MDEV-21255): Deadlock of parallel slave and mariadb-backup (with failed log copy thread)
 
 ### InnoDB
 

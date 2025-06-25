@@ -605,7 +605,7 @@ details of the revision and view diffs of the code modified in that revision.
   * Fix sporadic failure of test case rpl.rpl\_start\_stop\_slave
 * [Revision #25e0224814](https://github.com/MariaDB/server/commit/25e0224814)\
   2024-08-19 20:58:09 +0200
-  * Skip mariabackup.slave\_provision\_nolock in --valgrind, it uses a lot of CPU
+  * Skip mariadb-backup.slave\_provision\_nolock in --valgrind, it uses a lot of CPU
 * [Revision #214e6c5b3d](https://github.com/MariaDB/server/commit/214e6c5b3d)\
   2024-08-19 20:37:34 +0200
   * Fix sporadic failure of test case rpl.rpl\_old\_master

@@ -318,7 +318,7 @@ in that revision.
   * [MDEV-14603](https://jira.mariadb.org/browse/MDEV-14603) signal 11 with short stacktrace
 * [Revision #87db5eb813](https://github.com/MariaDB/server/commit/87db5eb813)\
   2018-01-23 09:12:25 +0000
-  * [MDEV-13825](https://jira.mariadb.org/browse/MDEV-13825) mariabackup --lock-ddl-per-table does not properly lock FULLTEXT auxiliary tables
+  * [MDEV-13825](https://jira.mariadb.org/browse/MDEV-13825) mariadb-backup --lock-ddl-per-table does not properly lock FULLTEXT auxiliary tables
 * [Revision #29eeb527fd](https://github.com/MariaDB/server/commit/29eeb527fd)\
   2018-01-22 16:53:33 +0200
   * [MDEV-12173](https://jira.mariadb.org/browse/MDEV-12173) "\[Warning] Trying to access missing tablespace"

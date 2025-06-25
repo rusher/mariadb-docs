@@ -223,7 +223,7 @@ details of the revision and view diffs of the code modified in that revision.
   * Fix compile error.
 * [Revision #a686c10e87](https://github.com/MariaDB/server/commit/a686c10e87)\
   2022-02-17 17:19:07 +0200
-  * [MDEV-26971](https://jira.mariadb.org/browse/MDEV-26971): Implement progress reporting by mariabackup SST script
+  * [MDEV-26971](https://jira.mariadb.org/browse/MDEV-26971): Implement progress reporting by mariadb-backup SST script
 * [Revision #eceb9e2478](https://github.com/MariaDB/server/commit/eceb9e2478)\
   2022-02-17 17:14:04 +0200
   * [MDEV-26971](https://jira.mariadb.org/browse/MDEV-26971): JSON file interface to wsrep node state.
@@ -232,7 +232,7 @@ details of the revision and view diffs of the code modified in that revision.
   * Small fixes Add new requirement for pv tool for debian and rpm Fix one test result difference. Set message about missing progress reporting tool pv as info.
 * [Revision #73d80c8672](https://github.com/MariaDB/server/commit/73d80c8672)\
   2021-12-18 18:30:24 +0200
-  * [MDEV-26971](https://jira.mariadb.org/browse/MDEV-26971): Implement progress reporting by mariabackup SST script
+  * [MDEV-26971](https://jira.mariadb.org/browse/MDEV-26971): Implement progress reporting by mariadb-backup SST script
 * [Revision #98355a0789](https://github.com/MariaDB/server/commit/98355a0789)\
   2021-12-16 13:46:37 +0200
   * [MDEV-26971](https://jira.mariadb.org/browse/MDEV-26971): Support for progress reporting from SST scripts.

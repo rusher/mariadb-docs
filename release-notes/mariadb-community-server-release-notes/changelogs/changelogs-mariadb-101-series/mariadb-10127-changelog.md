@@ -165,7 +165,7 @@ details of the revision and view diffs of the code modified in that revision.
   * Silence a -Wimplicit-fallthrough warning
 * [Revision #d1253e19a1](https://github.com/MariaDB/server/commit/d1253e19a1)\
   2017-09-16 22:19:16 +0200
-  * Fix compilation in mariabackup
+  * Fix compilation in mariadb-backup
 * [Revision #836d4e74d9](https://github.com/MariaDB/server/commit/836d4e74d9)\
   2017-09-16 16:55:16 +0300
   * Write proper tests for [MDEV-12634](https://jira.mariadb.org/browse/MDEV-12634): Uninitialised ROW\_MERGE\_RESERVE\_SIZE bytes
@@ -180,13 +180,13 @@ details of the revision and view diffs of the code modified in that revision.
   * Innodb : do not call fflush() in os\_get\_last\_error\_low(), if no error message was written.
 * [Revision #ad17e8e518](https://github.com/MariaDB/server/commit/ad17e8e518)\
   2017-09-16 09:36:21 +0000
-  * [MDEV-13821](https://jira.mariadb.org/browse/MDEV-13821) : mariabackup sometimes could lose ib\_logf(FATAL) messages,
+  * [MDEV-13821](https://jira.mariadb.org/browse/MDEV-13821) : mariadb-backup sometimes could lose ib\_logf(FATAL) messages,
 * [Revision #93087d5fe7](https://github.com/MariaDB/server/commit/93087d5fe7)\
   2017-09-15 15:10:36 +0000
   * Fix some warnings
 * [Revision #8c4df595b8](https://github.com/MariaDB/server/commit/8c4df595b8)\
   2017-09-16 09:53:29 +0300
-  * [MDEV-13807](https://jira.mariadb.org/browse/MDEV-13807) mariabackup --apply-log-only does generate redo log by performing rollback and possibly other tasks
+  * [MDEV-13807](https://jira.mariadb.org/browse/MDEV-13807) mariadb-backup --apply-log-only does generate redo log by performing rollback and possibly other tasks
 * [Revision #65d26d1f31](https://github.com/MariaDB/server/commit/65d26d1f31)\
   2017-09-15 20:59:04 +0400
   * [MDEV-10191](https://jira.mariadb.org/browse/MDEV-10191) non convertible chars convert() resulted in Null instead "?" on Windows

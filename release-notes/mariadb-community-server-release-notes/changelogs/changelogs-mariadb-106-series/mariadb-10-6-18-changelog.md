@@ -43,7 +43,7 @@ details of the revision and view diffs of the code modified in that revision.
 * Merge [Revision #c1f3eff53f](https://github.com/MariaDB/server/commit/c1f3eff53f) 2024-04-29 10:08:58 +0200 - Merge branch '10.5' into 10.6
 * [Revision #52f6df99ed](https://github.com/MariaDB/server/commit/52f6df99ed)\
   2024-04-24 19:53:13 +0530
-  * [MDEV-33669](https://jira.mariadb.org/browse/MDEV-33669) mariabackup --backup hangs
+  * [MDEV-33669](https://jira.mariadb.org/browse/MDEV-33669) mariadb-backup --backup hangs
 * [Revision #ef7a2344af](https://github.com/MariaDB/server/commit/ef7a2344af)\
   2024-04-25 15:21:16 +0200
   * Fixup 0ccdf54b644352f42e1768bc660be7ab50c1e9d
@@ -138,7 +138,7 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-33672](https://jira.mariadb.org/browse/MDEV-33672): Gtid\_log\_event Construction from File Should Ensure Event Length When Using Extra Flags
 * [Revision #11986ec654](https://github.com/MariaDB/server/commit/11986ec654)\
   2024-04-08 14:56:31 +0400
-  * [MDEV-31251](https://jira.mariadb.org/browse/MDEV-31251) [MDEV-30968](https://jira.mariadb.org/browse/MDEV-30968) breaks running mariabackup on older mariadb (opendir(NULL))
+  * [MDEV-31251](https://jira.mariadb.org/browse/MDEV-31251) [MDEV-30968](https://jira.mariadb.org/browse/MDEV-30968) breaks running mariadb-backup on older mariadb (opendir(NULL))
 * [Revision #73291de74e](https://github.com/MariaDB/server/commit/73291de74e)\
   2024-04-08 11:48:46 +0300
   * [MDEV-33819](https://jira.mariadb.org/browse/MDEV-33819) The purge of committed history is mis-parsing some log

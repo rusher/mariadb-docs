@@ -22,9 +22,9 @@ Thanks, and enjoy MariaDB!
 
 * [MDEV-14333](https://jira.mariadb.org/browse/MDEV-14333) mariadb-backup --apply-log-only crashes if incomplete transactions with update\_undo logs are present
 * [MDEV-12108](https://jira.mariadb.org/browse/MDEV-12108) Fix backup for Innodb tables with DATA DIRECTORY
-* [MDEV-13560](https://jira.mariadb.org/browse/MDEV-13560) mariabackup --copy-back: Copy all undo tablespace files
-* [MDEV-14102](https://jira.mariadb.org/browse/MDEV-14102) Restore --remove-original option for mariabackup
-* [MDEV-13822](https://jira.mariadb.org/browse/MDEV-13822) mariabackup --incremental --prepare incorrectly sets file size
+* [MDEV-13560](https://jira.mariadb.org/browse/MDEV-13560) mariadb-backup --copy-back: Copy all undo tablespace files
+* [MDEV-14102](https://jira.mariadb.org/browse/MDEV-14102) Restore --remove-original option for mariadb-backup
+* [MDEV-13822](https://jira.mariadb.org/browse/MDEV-13822) mariadb-backup --incremental --prepare incorrectly sets file size
 
 ### InnoDB/XtraDB
 

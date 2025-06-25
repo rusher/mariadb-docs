@@ -68,7 +68,7 @@ MariaDB Enterprise Server 10.5.29-23 was released on 11 Jun 2025.
 * ([MDEV-36452](https://jira.mariadb.org/browse/MDEV-36452)) Column name output in --view-protocol spider tests with udf and CASE
 * ([MDEV-35620](https://jira.mariadb.org/browse/MDEV-35620)) UBSAN: runtime error: applying zero offset to null pointer in \_ma\_unique\_hash, skip\_trailing\_space, my\_hash\_sort\_mb\_nopad\_bin and my\_strnncollsp\_utf8mb4\_bin
 * ([MDEV-36208](https://jira.mariadb.org/browse/MDEV-36208)) dbug\_print\_table\_row is broken: prints empty rows in debugger
-* ([MDEV-36270](https://jira.mariadb.org/browse/MDEV-36270)) mariabackup.incremental\_compressed fails in 10.11+
+* ([MDEV-36270](https://jira.mariadb.org/browse/MDEV-36270)) mariadb-backup.incremental\_compressed fails in 10.11+
 * ([MDEV-35117](https://jira.mariadb.org/browse/MDEV-35117)) Error message "ERROR 1815 (HY000): Internal error: st\_distance\_sphere' could be improved
 * ([MDEV-36229](https://jira.mariadb.org/browse/MDEV-36229)) MariaDB effectively running as root CAP\_DAC\_OVERRIDE
 * ([MDEV-27126](https://jira.mariadb.org/browse/MDEV-27126)) my\_getopt compares option names case sensitively

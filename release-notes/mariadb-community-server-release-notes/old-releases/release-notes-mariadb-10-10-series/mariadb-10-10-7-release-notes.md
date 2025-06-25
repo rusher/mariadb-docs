@@ -93,7 +93,7 @@ Thanks, and enjoy MariaDB!
 * [Galera](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/galera-cluster/README.md) updated to 26.4.16
 * Assertion \`state() == s\_executing || state() == s\_prepared || state() == s\_committing || state() == s\_must\_abort || state() == s\_replaying' failed. ([MDEV-24912](https://jira.mariadb.org/browse/MDEV-24912))
 * Assertion \`state() == s\_executing || state() == s\_preparing || state() == s\_prepared || state() == s\_must\_abort || state() == s\_aborting || state() == s\_cert\_failed || state() == s\_must\_replay' failed ([MDEV-31285](https://jira.mariadb.org/browse/MDEV-31285))
-* wsrep\_sst\_mariabackup not working on FreeBSD ([MDEV-31467](https://jira.mariadb.org/browse/MDEV-31467))
+* wsrep\_sst\_mariadb-backup not working on FreeBSD ([MDEV-31467](https://jira.mariadb.org/browse/MDEV-31467))
 * Galera library 26.4.16 fails with every server version ([MDEV-32024](https://jira.mariadb.org/browse/MDEV-32024))
 * Galera node remains paused after interleaving FTWRLs ([MDEV-32282](https://jira.mariadb.org/browse/MDEV-32282))
 * Failed to insert streaming client ([MDEV-32051](https://jira.mariadb.org/browse/MDEV-32051))

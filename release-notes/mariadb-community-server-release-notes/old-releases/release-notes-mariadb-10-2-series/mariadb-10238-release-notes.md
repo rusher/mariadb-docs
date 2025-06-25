@@ -23,7 +23,7 @@ Thanks, and enjoy MariaDB!
 * Incorrect name resolution for subqueries in ON expressions ([MDEV-25362](https://jira.mariadb.org/browse/MDEV-25362))
 * Complex query in Store procedure corrupts results ([MDEV-25182](https://jira.mariadb.org/browse/MDEV-25182))
 
-### mariabackup
+### mariadb-backup
 
 * RENAME TABLE causes "Ignoring data file" messages ([MDEV-25568](https://jira.mariadb.org/browse/MDEV-25568))
 

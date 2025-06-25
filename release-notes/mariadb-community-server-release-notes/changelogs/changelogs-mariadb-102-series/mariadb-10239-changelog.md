@@ -41,7 +41,7 @@ in that revision.
   * [MDEV-25818](https://jira.mariadb.org/browse/MDEV-25818): RSYNC SST failed due to busy port
 * [Revision #d3c77e08ae](https://github.com/MariaDB/server/commit/d3c77e08ae)\
   2021-05-31 12:27:47 +0200
-  * [MDEV-20556](https://jira.mariadb.org/browse/MDEV-20556) Remove references to "xtrabackup" and "innobackupex" in mariabackup --help
+  * [MDEV-20556](https://jira.mariadb.org/browse/MDEV-20556) Remove references to "xtrabackup" and "innobackupex" in mariadb-backup --help
 * [Revision #91bde0fb67](https://github.com/MariaDB/server/commit/91bde0fb67)\
   2021-05-30 17:31:55 +0700
   * [MDEV-25576](https://jira.mariadb.org/browse/MDEV-25576): The statement EXPLAIN running as regular statement and as prepared statement produces different results for UPDATE with subquery
@@ -201,7 +201,7 @@ in that revision.
 * Merge [Revision #c225eee219](https://github.com/MariaDB/server/commit/c225eee219) 2021-05-07 11:18:55 +0200 - Merge branch 'bb-10.2-release' into 10.2
 * [Revision #54d7ba9609](https://github.com/MariaDB/server/commit/54d7ba9609)\
   2021-05-06 04:03:07 +0200
-  * [MDEV-25418](https://jira.mariadb.org/browse/MDEV-25418): Improve mariabackup SST script compliance with native MariaDB SSL practices and configuration.
+  * [MDEV-25418](https://jira.mariadb.org/browse/MDEV-25418): Improve mariadb-backup SST script compliance with native MariaDB SSL practices and configuration.
 * [Revision #cf67ca48d6](https://github.com/MariaDB/server/commit/cf67ca48d6)\
   2021-04-25 18:06:53 +0300
   * [MDEV-25418](https://jira.mariadb.org/browse/MDEV-25418) rsync SST does not work with stunnel encryption
@@ -210,7 +210,7 @@ in that revision.
   * [MDEV-24962](https://jira.mariadb.org/browse/MDEV-24962) addendum: improved handling of paths with spaces
 * [Revision #6895c9eaa0](https://github.com/MariaDB/server/commit/6895c9eaa0)\
   2021-05-05 03:17:51 +0200
-  * [MDEV-24962](https://jira.mariadb.org/browse/MDEV-24962) addendum: mariabackup does not understand --log-bin-index and --log-basename options
+  * [MDEV-24962](https://jira.mariadb.org/browse/MDEV-24962) addendum: mariadb-backup does not understand --log-bin-index and --log-basename options
 * [Revision #5ad7f52558](https://github.com/MariaDB/server/commit/5ad7f52558)\
   2021-05-03 23:26:30 +0200
   * [MDEV-21603](https://jira.mariadb.org/browse/MDEV-21603) Crashing SHOW TABLES with derived table in WHERE condition

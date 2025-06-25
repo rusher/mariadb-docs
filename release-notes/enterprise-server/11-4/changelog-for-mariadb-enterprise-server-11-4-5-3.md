@@ -80,7 +80,7 @@ MariaDB Enterprise Server 11.4.5-3 was released on 19 Mar 2025.
 * ([MDEV-35869](https://jira.mariadb.org/browse/MDEV-35869)) Fix possibly wrong result using a degenerated subquery (SELECT ) with window function
 * ([MDEV-20281](https://jira.mariadb.org/browse/MDEV-20281)) The "Failed to write to mysql.slow\_log" error no longer shown without a detailed reason for the error
 * ([MDEV-35907](https://jira.mariadb.org/browse/MDEV-35907)) Fix debian-start script failure when using non-standard socket path
-* ([MDEV-35749](https://jira.mariadb.org/browse/MDEV-35749)) wsrep\_sst\_mariabackup.sh no longer uses --use-memory default (100MB) resulting in prepare stage which could take hours
+* ([MDEV-35749](https://jira.mariadb.org/browse/MDEV-35749)) wsrep\_sst\_mariadb-backup.sh no longer uses --use-memory default (100MB) resulting in prepare stage which could take hours
 * (MENT-2238) Replicate\_\* fields in Show-Slave-Status may be truncated, impacting replication monitoring.
 * (MENT-2243) Cherry-Pick [MDEV-35813](https://jira.mariadb.org/browse/MDEV-35813) - Performance regression in INSERT...SELECT due to unnecessarily making InnoDB log durable
 * (MENT-2245) Galera SSL errors after wolfSSL upgrade
@@ -184,7 +184,7 @@ MariaDB Enterprise Server 11.4.5-3 was released on 19 Mar 2025.
 * ([MDEV-31366](https://jira.mariadb.org/browse/MDEV-31366)) Assertion \`thd->start\_time' failed in bool LOGGER::slow\_log\_print(THD\*, const char\*, size\_t, ulonglong)
 * ([MDEV-35181](https://jira.mariadb.org/browse/MDEV-35181)) Assertion 'state < buf\_page\_t::READ\_FIX' in buf\_page\_create\_low()
 * ([MDEV-35626](https://jira.mariadb.org/browse/MDEV-35626)) Race condition between buf\_page\_create\_low() and read completion
-* ([MDEV-34820](https://jira.mariadb.org/browse/MDEV-34820)) wsrep\_sst\_mariabackup SST script could incorrectly calculate the actual file size on ZFS under FreeBSD, which could lead to progress reporting errors
+* ([MDEV-34820](https://jira.mariadb.org/browse/MDEV-34820)) wsrep\_sst\_mariadb-backup SST script could incorrectly calculate the actual file size on ZFS under FreeBSD, which could lead to progress reporting errors
 * ([MDEV-35578](https://jira.mariadb.org/browse/MDEV-35578)) innodb\_gis.rtree\_debug fails on mac
 * ([MDEV-35657](https://jira.mariadb.org/browse/MDEV-35657)) MSAN errors in os\_file\_readdir\_next\_file (xtrabackup)
 * ([MDEV-35680](https://jira.mariadb.org/browse/MDEV-35680)) Table number > MAX\_TABLES causes overflow of table\_map at main.join test
@@ -228,7 +228,7 @@ MariaDB Enterprise Server 11.4.5-3 was released on 19 Mar 2025.
 * ([MDEV-35394](https://jira.mariadb.org/browse/MDEV-35394)) New parameter --skip-freed-pages for Innochecksum. Use this parameter to not get freed undo logs reported as existing undo log pages.
 * ([MDEV-35505](https://jira.mariadb.org/browse/MDEV-35505)) Galera protocol versions are now shown by show status - change available with installation of galera library 26.4.21+
 * ([MDEV-35643](https://jira.mariadb.org/browse/MDEV-35643)) MariaDB now supports MySQL 8.0 binlog events, including PARTIAL\_UPDATE\_ROWS\_EVENT, TRANSACTION\_PAYLOAD\_EVENT, and HEARTBEAT\_LOG\_EVENT\_V2.
-* ([MDEV-35526](https://jira.mariadb.org/browse/MDEV-35526)) Fix possible crash in wsrep\_sst\_mariabackup script when upgrading node in cluster from 10.11.9 to 10.11.10.
+* ([MDEV-35526](https://jira.mariadb.org/browse/MDEV-35526)) Fix possible crash in wsrep\_sst\_mariadb-backup script when upgrading node in cluster from 10.11.9 to 10.11.10.
 * ([MDEV-35910](https://jira.mariadb.org/browse/MDEV-35910)) Conditions with SP local variables are now pushed into derived table. Previous behaviour caused slow performance and table scans instead of using the pushed down condition
 * ([MDEV-34665](https://jira.mariadb.org/browse/MDEV-34665)) NULL-aware materialization with IN predicate and single column no longer skips building sorted Ordered\_key structures
 * ([MDEV-35363](https://jira.mariadb.org/browse/MDEV-35363)) Cloning of table statistics while saving the InnoDB table stats is now avoided

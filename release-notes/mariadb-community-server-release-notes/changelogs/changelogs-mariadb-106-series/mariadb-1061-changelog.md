@@ -553,7 +553,7 @@ details of the revision and view diffs of the code modified in that revision.
 * Merge [Revision #c225eee219](https://github.com/MariaDB/server/commit/c225eee219) 2021-05-07 11:18:55 +0200 - Merge branch 'bb-10.2-release' into 10.2
 * [Revision #54d7ba9609](https://github.com/MariaDB/server/commit/54d7ba9609)\
   2021-05-06 04:03:07 +0200
-  * [MDEV-25418](https://jira.mariadb.org/browse/MDEV-25418): Improve mariabackup SST script compliance with native MariaDB SSL practices and configuration.
+  * [MDEV-25418](https://jira.mariadb.org/browse/MDEV-25418): Improve mariadb-backup SST script compliance with native MariaDB SSL practices and configuration.
 * [Revision #cf67ca48d6](https://github.com/MariaDB/server/commit/cf67ca48d6)\
   2021-04-25 18:06:53 +0300
   * [MDEV-25418](https://jira.mariadb.org/browse/MDEV-25418) rsync SST does not work with stunnel encryption
@@ -562,7 +562,7 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-24962](https://jira.mariadb.org/browse/MDEV-24962) addendum: improved handling of paths with spaces
 * [Revision #6895c9eaa0](https://github.com/MariaDB/server/commit/6895c9eaa0)\
   2021-05-05 03:17:51 +0200
-  * [MDEV-24962](https://jira.mariadb.org/browse/MDEV-24962) addendum: mariabackup does not understand --log-bin-index and --log-basename options
+  * [MDEV-24962](https://jira.mariadb.org/browse/MDEV-24962) addendum: mariadb-backup does not understand --log-bin-index and --log-basename options
 * [Revision #5ad7f52558](https://github.com/MariaDB/server/commit/5ad7f52558)\
   2021-05-03 23:26:30 +0200
   * [MDEV-21603](https://jira.mariadb.org/browse/MDEV-21603) Crashing SHOW TABLES with derived table in WHERE condition

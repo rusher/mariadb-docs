@@ -27,7 +27,7 @@ Thanks, and enjoy MariaDB!
 * Indexed [CHAR](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/string-data-types/char) columns are broken with NO\_PAD [collations](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/string-data-types/character-sets) ([MDEV-25440](https://jira.mariadb.org/browse/MDEV-25440))
 * insert-intention lock conflicts with waiting ORDINARY lock ([MDEV-27025](https://jira.mariadb.org/browse/MDEV-27025))
 * Crash recovery improvements ([MDEV-26784](https://jira.mariadb.org/browse/MDEV-26784), [MDEV-27022](https://jira.mariadb.org/browse/MDEV-27022), [MDEV-27183](https://jira.mariadb.org/browse/MDEV-27183), [MDEV-27610](https://jira.mariadb.org/browse/MDEV-27610))
-* [mariabackup](broken-reference) skips valid .ibd file ([MDEV-26326](https://jira.mariadb.org/browse/MDEV-26326))
+* [mariadb-backup](broken-reference) skips valid .ibd file ([MDEV-26326](https://jira.mariadb.org/browse/MDEV-26326))
 * Allow seamless upgrade despite [ROW\_FORMAT=COMPRESSED](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-row-formats/innodb-compressed-row-format) ([MDEV-27736](https://jira.mariadb.org/browse/MDEV-27736))
 * Change the [InnoDB redo log](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-redo-log) format to reduce write amplification ([MDEV-14425](https://jira.mariadb.org/browse/MDEV-14425))
 * Remove FIL\_PAGE\_FILE\_FLUSH\_LSN from the [InnoDB redo log](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-redo-log) ([MDEV-27199](https://jira.mariadb.org/browse/MDEV-27199)).

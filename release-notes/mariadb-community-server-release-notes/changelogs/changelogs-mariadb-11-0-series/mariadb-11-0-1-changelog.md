@@ -141,7 +141,7 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-30554](https://jira.mariadb.org/browse/MDEV-30554) RockDB libatomic linking on riscv64
 * [Revision #ecc93c9824](https://github.com/MariaDB/server/commit/ecc93c9824)\
   2023-02-03 16:00:11 +1100
-  * [MDEV-30492](https://jira.mariadb.org/browse/MDEV-30492) Crash when use mariabackup.exe with config 'innodb\_flush\_method=async\_unbuffered'
+  * [MDEV-30492](https://jira.mariadb.org/browse/MDEV-30492) Crash when use mariadb-backup.exe with config 'innodb\_flush\_method=async\_unbuffered'
 * [Revision #762fe015c1](https://github.com/MariaDB/server/commit/762fe015c1)\
   2023-02-04 16:35:30 +1100
   * [MDEV-30558](https://jira.mariadb.org/browse/MDEV-30558): ER\_KILL\_{,QUERY\_}DENIED\_ERROR - normalize id type
@@ -179,7 +179,7 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-25765](https://jira.mariadb.org/browse/MDEV-25765) mariadb-backup reduced verbosity option for log output
 * [Revision #50b69641ef](https://github.com/MariaDB/server/commit/50b69641ef)\
   2022-11-14 16:17:03 +0400
-  * [MDEV-29244](https://jira.mariadb.org/browse/MDEV-29244) mariabackup --help output still referst to innobackupex
+  * [MDEV-29244](https://jira.mariadb.org/browse/MDEV-29244) mariadb-backup --help output still referst to innobackupex
 * [Revision #49ee18eb42](https://github.com/MariaDB/server/commit/49ee18eb42)\
   2023-01-27 10:40:07 +0200
   * [MDEV-30473](https://jira.mariadb.org/browse/MDEV-30473) : Do not allow GET\_LOCK() / RELEASE\_LOCK() in cluster

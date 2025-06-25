@@ -166,7 +166,7 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-28253](https://jira.mariadb.org/browse/MDEV-28253) Mysqldump - INVISIBLE column error
 * [Revision #7a03128faf](https://github.com/MariaDB/server/commit/7a03128faf)\
   2022-04-05 14:02:52 +0200
-  * [MDEV-28205](https://jira.mariadb.org/browse/MDEV-28205): SST via mariabackup stops on failure while archiving logs
+  * [MDEV-28205](https://jira.mariadb.org/browse/MDEV-28205): SST via mariadb-backup stops on failure while archiving logs
 * [Revision #3c99a48db3](https://github.com/MariaDB/server/commit/3c99a48db3)\
   2022-04-06 15:54:59 +0300
   * [MDEV-28247](https://jira.mariadb.org/browse/MDEV-28247) : Disable background ibuf merge during Galera SST

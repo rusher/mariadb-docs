@@ -29,7 +29,7 @@ MariaDB Enterprise Server enables a predictable development and operations exper
 WSREP: Shifting SYNCED -> DONOR/DESYNCED
 ```
 
-* Starting with this release, the mariabackup execution can be aborted if DDL statements happen during backup execution. This abortable backup execution is the optional feature which can be enabled/disabled by `wsrep_mode: BF_ABORT_MARIABACKUP`
+* Starting with this release, the mariadb-backup execution can be aborted if DDL statements happen during backup execution. This abortable backup execution is the optional feature which can be enabled/disabled by `wsrep_mode: BF_ABORT_mariadb-backup`
 
 ### Issues Fixed
 

@@ -177,7 +177,7 @@ details of the revision and view diffs of the code modified in that revision.
   * only copy buffer pool dump in SST galera mode
 * [Revision #5197519f4f](https://github.com/MariaDB/server/commit/5197519f4f)\
   2022-06-28 09:16:31 +0200
-  * revert mariabackup part of [MDEV-27524](https://jira.mariadb.org/browse/MDEV-27524), fix the test
+  * revert mariadb-backup part of [MDEV-27524](https://jira.mariadb.org/browse/MDEV-27524), fix the test
 * [Revision #6a3fbfdb2d](https://github.com/MariaDB/server/commit/6a3fbfdb2d)\
   2022-08-01 15:15:06 +0300
   * [MDEV-14804](https://jira.mariadb.org/browse/MDEV-14804) innodb.update\_time occasionally fails
@@ -391,7 +391,7 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-22590](https://jira.mariadb.org/browse/MDEV-22590) SIGSEGV in flush\_all\_key\_blocks when changing key\_buffer\_size / ASAN: heap-use-after-free in flush\_all\_key\_blocks
 * [Revision #3e09c6199d](https://github.com/MariaDB/server/commit/3e09c6199d)\
   2022-06-21 13:29:45 +0200
-  * [MDEV-26562](https://jira.mariadb.org/browse/MDEV-26562): galera-sst-mariabackup is failing due to missing xtrabackup\_checkpoints
+  * [MDEV-26562](https://jira.mariadb.org/browse/MDEV-26562): galera-sst-mariadb-backup is failing due to missing xtrabackup\_checkpoints
 * [Revision #d4539426bc](https://github.com/MariaDB/server/commit/d4539426bc)\
   2022-06-18 17:42:29 +0300
   * [MDEV-28884](https://jira.mariadb.org/browse/MDEV-28884): include kernel information in crashing signal handler

@@ -93,7 +93,7 @@ wsrep::transaction::before_rollback(): Assertion state() == s_executing || state
 * `wsrep_provider_options` can be truncated on deep and long directory paths with diagnostics like: "Warning 1265 Data truncated for column 'VARIABLE\_VALUE' at row 1" in the server log ([MDEV-32634](https://jira.mariadb.org/browse/MDEV-32634))
 * Mariadb-dump option `--delete-master-logs` is ignored ([MDEV-32953](https://jira.mariadb.org/browse/MDEV-32953))
 * multi source replication filters breaking GTID semantic ([MDEV-26632](https://jira.mariadb.org/browse/MDEV-26632))
-* If `wsrep_gtid_mode=ON` is used and `wsrep_gtid_domain`\_id is non-zero, after SST using mariabackup GTIDs will become inconsistent both at the domain level, and at the seq\_no level ([MDEV-31905](https://jira.mariadb.org/browse/MDEV-31905))
+* If `wsrep_gtid_mode=ON` is used and `wsrep_gtid_domain`\_id is non-zero, after SST using mariadb-backup GTIDs will become inconsistent both at the domain level, and at the seq\_no level ([MDEV-31905](https://jira.mariadb.org/browse/MDEV-31905))
 * `wsrep_gtid_domain_id` is ignored on any node other than bootstrapped node when the wsrep\_gtid\_mode is set to ON ([MDEV-32740](https://jira.mariadb.org/browse/MDEV-32740))
 * `LONG UNIQUE ... USING HASH` can result in an error when used with REPLACE ([MDEV-32839](https://jira.mariadb.org/browse/MDEV-32839))
 * `JSON_ARRAYAGG()` doesn't evaluate correct charset which can lead to an unexpected result ([MDEV-24784](https://jira.mariadb.org/browse/MDEV-24784))

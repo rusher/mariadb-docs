@@ -222,7 +222,7 @@ The vector search feature requires some [new system variables](https://app.gitbo
 * Fix possibly wrong result using a degenerated subquery `(SELECT <expr>)` with window function ([MDEV-35869](https://jira.mariadb.org/browse/MDEV-35869))
 * The "`Failed to write to mysql.slow_log`" error no longer shown without a detailed reason for the error ([MDEV-20281](https://jira.mariadb.org/browse/MDEV-20281))
 * Fix `debian-start` script failure when using non-standard socket path ([MDEV-35907](https://jira.mariadb.org/browse/MDEV-35907))
-* `wsrep_sst_mariabackup.sh` no longer uses `--use-memory default (100MB)` resulting in prepare stage which could take hours ([MDEV-35749](https://jira.mariadb.org/browse/MDEV-35749))
+* `wsrep_sst_mariadb-backup.sh` no longer uses `--use-memory default (100MB)` resulting in prepare stage which could take hours ([MDEV-35749](https://jira.mariadb.org/browse/MDEV-35749))
 * `Replicate_*` fields in `Show-Slave-Status` may be truncated, impacting replication monitoring. (MENT-2238)
 
 ### Related to performance

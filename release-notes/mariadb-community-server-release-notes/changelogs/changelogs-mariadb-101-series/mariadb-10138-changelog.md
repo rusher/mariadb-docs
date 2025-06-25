@@ -83,7 +83,7 @@ details of the revision and view diffs of the code modified in that revision.
   * Remove incorrect install command.
 * [Revision #6e2af7d084](https://github.com/MariaDB/server/commit/6e2af7d084)\
   2019-01-30 09:31:32 +0100
-  * mariabackup : Remove unused parameter innodb\_buffer\_pool\_size
+  * mariadb-backup : Remove unused parameter innodb\_buffer\_pool\_size
 * Merge [Revision #27f1de5cb3](https://github.com/MariaDB/server/commit/27f1de5cb3) 2019-01-28 09:06:56 +0200 - Merge pull request #1139 from tempesta-tech/sysprg/10.1-[MDEV-18379](https://jira.mariadb.org/browse/MDEV-18379)
 * [Revision #4aea6b3e3f](https://github.com/MariaDB/server/commit/4aea6b3e3f)\
   2019-01-26 01:11:45 +0100
@@ -102,7 +102,7 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-18195](https://jira.mariadb.org/browse/MDEV-18195) ASAN use-after-poison in my\_strcasecmp\_utf8 / Item::eq upon prepared statement with ORDER BY NAME\_CONST
 * [Revision #f17c284c57](https://github.com/MariaDB/server/commit/f17c284c57)\
   2019-01-23 21:59:16 -0500
-  * [MDEV-18347](https://jira.mariadb.org/browse/MDEV-18347): mariabackup doesn't read all server option groups from configuration files
+  * [MDEV-18347](https://jira.mariadb.org/browse/MDEV-18347): mariadb-backup doesn't read all server option groups from configuration files
 * Merge [Revision #65350042a4](https://github.com/MariaDB/server/commit/65350042a4) 2019-01-24 13:24:13 +0200 - Merge 10.0 into 10.1
 * [Revision #ba1ce3aeae](https://github.com/MariaDB/server/commit/ba1ce3aeae)\
   2019-01-24 12:01:43 +0200
@@ -130,7 +130,7 @@ details of the revision and view diffs of the code modified in that revision.
 * Merge [Revision #f9cc956065](https://github.com/MariaDB/server/commit/f9cc956065) 2019-01-21 15:06:48 +0200 - Merge pull request #1114 from GeoffMontee/10.1-geoff-[MDEV-17973](https://jira.mariadb.org/browse/MDEV-17973)
 * [Revision #2084cd5422](https://github.com/MariaDB/server/commit/2084cd5422)\
   2019-01-21 05:42:00 -0500
-  * [MDEV-17973](https://jira.mariadb.org/browse/MDEV-17973): Don't overwrite xtrabackup-v2/mariabackup SST logs by default
+  * [MDEV-17973](https://jira.mariadb.org/browse/MDEV-17973): Don't overwrite xtrabackup-v2/mariadb-backup SST logs by default
 * [Revision #1d72db45a8](https://github.com/MariaDB/server/commit/1d72db45a8)\
   2019-01-18 06:46:39 +0200
   * [MDEV-18237](https://jira.mariadb.org/browse/MDEV-18237) InnoDB: Unable to drop FTS index aux table and further errors (possibly bogus)
@@ -161,7 +161,7 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-15740](https://jira.mariadb.org/browse/MDEV-15740): InnoDB does not flush redo log when it shoul
 * [Revision #7158edcba3](https://github.com/MariaDB/server/commit/7158edcba3)\
   2019-01-03 16:24:22 +0200
-  * [MDEV-18129](https://jira.mariadb.org/browse/MDEV-18129) Backup fails for encrypted tables: mariabackup: Database page corruption detected at page 1
+  * [MDEV-18129](https://jira.mariadb.org/browse/MDEV-18129) Backup fails for encrypted tables: mariadb-backup: Database page corruption detected at page 1
 * Merge [Revision #3ba3f81ae0](https://github.com/MariaDB/server/commit/3ba3f81ae0) 2019-01-03 09:56:24 +0100 - Merge branch '10.0' into 10.1
 * Merge [Revision #aeefd26ecb](https://github.com/MariaDB/server/commit/aeefd26ecb) 2018-12-29 23:44:45 +0100 - Merge branch '10.0' into 10.1
 * [Revision #50c9469be8](https://github.com/MariaDB/server/commit/50c9469be8)\
@@ -172,7 +172,7 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-17470](https://jira.mariadb.org/browse/MDEV-17470): Fix the test for --embedded
 * [Revision #ed66acb291](https://github.com/MariaDB/server/commit/ed66acb291)\
   2018-12-29 02:06:19 +0100
-  * Silence LeakSanitizer by default in mariabackup, so that phanthom "leaks" would not hide more interesting information, like invalid memory accesses.
+  * Silence LeakSanitizer by default in mariadb-backup, so that phanthom "leaks" would not hide more interesting information, like invalid memory accesses.
 * [Revision #c5a5eaa9a9](https://github.com/MariaDB/server/commit/c5a5eaa9a9)\
   2018-12-14 01:28:55 +0300
   * [MDEV-17470](https://jira.mariadb.org/browse/MDEV-17470) Orphan temporary files after interrupted ALTER cause InnoDB: Operating system error number 17 and eventual fatal error 71
@@ -184,7 +184,7 @@ details of the revision and view diffs of the code modified in that revision.
   * Relax a too tight suppression
 * [Revision #9f4a4cb401](https://github.com/MariaDB/server/commit/9f4a4cb401)\
   2018-12-20 14:31:18 +0100
-  * Cleanup recent mariabackup validation patches.
+  * Cleanup recent mariadb-backup validation patches.
 * [Revision #ed36fc353f](https://github.com/MariaDB/server/commit/ed36fc353f)\
   2018-12-20 13:33:09 +0200
   * [MDEV-18025](https://jira.mariadb.org/browse/MDEV-18025): Detect corrupted innodb\_page\_compression=zlib pages
@@ -215,10 +215,10 @@ details of the revision and view diffs of the code modified in that revision.
   * Remove provider defaults check from 'galera\_defaults' MTR test
 * [Revision #ee543beabf](https://github.com/MariaDB/server/commit/ee543beabf)\
   2018-12-17 07:05:27 +0200
-  * [MDEV-18021](https://jira.mariadb.org/browse/MDEV-18021): Galera test galera\_sst\_mariabackup\_table\_options fails if AES\_CTR is not available
+  * [MDEV-18021](https://jira.mariadb.org/browse/MDEV-18021): Galera test galera\_sst\_mariadb-backup\_table\_options fails if AES\_CTR is not available
 * [Revision #8a46b9fe3b](https://github.com/MariaDB/server/commit/8a46b9fe3b)\
   2018-11-27 15:26:18 +0200
-  * [MDEV-17771](https://jira.mariadb.org/browse/MDEV-17771): Add Galera ist and sst tests using mariabackup
+  * [MDEV-17771](https://jira.mariadb.org/browse/MDEV-17771): Add Galera ist and sst tests using mariadb-backup
 * [Revision #fb252f70c1](https://github.com/MariaDB/server/commit/fb252f70c1)\
   2018-12-14 15:44:51 +0200
   * [MDEV-12112](https://jira.mariadb.org/browse/MDEV-12112) corruption in encrypted table may be overlooked
@@ -234,7 +234,7 @@ details of the revision and view diffs of the code modified in that revision.
 * Merge [Revision #6491c591b2](https://github.com/MariaDB/server/commit/6491c591b2) 2018-12-06 15:08:42 +0100 - Merge branch '10.0' into 10.1
 * [Revision #328d7779bc](https://github.com/MariaDB/server/commit/328d7779bc)\
   2018-11-26 08:58:38 +0200
-  * Fortify galera\_sst\_mariabackup\_table\_options test.
+  * Fortify galera\_sst\_mariadb-backup\_table\_options test.
 * [Revision #1037edcb11](https://github.com/MariaDB/server/commit/1037edcb11)\
   2018-11-22 16:33:20 +0200
   * [MDEV-17804](https://jira.mariadb.org/browse/MDEV-17804): Galera tests cause mysql\_socket.h:738: inline\_mysql\_socket\_send: Assertion \`mysql\_socket.fd != -1' failed.
@@ -243,34 +243,34 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-17801](https://jira.mariadb.org/browse/MDEV-17801): Galera test failure on galera\_var\_reject\_queries
 * [Revision #8324e5e84d](https://github.com/MariaDB/server/commit/8324e5e84d)\
   2018-11-21 09:05:47 +0200
-  * [MDEV-17771](https://jira.mariadb.org/browse/MDEV-17771): Add Galera ist and sst tests using mariabackup
+  * [MDEV-17771](https://jira.mariadb.org/browse/MDEV-17771): Add Galera ist and sst tests using mariadb-backup
 * [Revision #41fa9a5986](https://github.com/MariaDB/server/commit/41fa9a5986)\
   2018-11-20 07:49:46 +0200
   * Add missing .rdiff file to test galera\_sst\_xtrabackup-v2\_data\_dir for debug build.
 * [Revision #6fad15d02a](https://github.com/MariaDB/server/commit/6fad15d02a)\
   2018-11-19 17:34:22 +0200
-  * [MDEV-17771](https://jira.mariadb.org/browse/MDEV-17771): Add Galera ist and sst tests using mariabackup
+  * [MDEV-17771](https://jira.mariadb.org/browse/MDEV-17771): Add Galera ist and sst tests using mariadb-backup
 * [Revision #ea03eac5d7](https://github.com/MariaDB/server/commit/ea03eac5d7)\
   2018-10-03 16:25:24 +0300
-  * fiexed debug build failure of galera\_ist\_mariabackup\_innodb\_flush\_logs
+  * fiexed debug build failure of galera\_ist\_mariadb-backup\_innodb\_flush\_logs
 * [Revision #0529c9e93e](https://github.com/MariaDB/server/commit/0529c9e93e)\
   2018-10-03 14:40:56 +0300
-  * fiexed debug build failure of galera\_ist\_mariabackup test
+  * fiexed debug build failure of galera\_ist\_mariadb-backup test
 * [Revision #c85912c8c6](https://github.com/MariaDB/server/commit/c85912c8c6)\
   2018-10-01 18:21:47 +0300
-  * added galera\_ist\_mariabackup\_innodb\_flush\_logs test
+  * added galera\_ist\_mariadb-backup\_innodb\_flush\_logs test
 * [Revision #2160e075dc](https://github.com/MariaDB/server/commit/2160e075dc)\
   2018-10-01 12:23:26 +0300
-  * fixed the test comments of galera\_sst\_mariabackup\_encrypt\_with\_key test
+  * fixed the test comments of galera\_sst\_mariadb-backup\_encrypt\_with\_key test
 * [Revision #ace0b7215e](https://github.com/MariaDB/server/commit/ace0b7215e)\
   2018-09-28 19:05:01 +0300
-  * added test galera\_sst\_mariabackup\_encrypt\_with\_key; corrected path to galera\_ist\_mariabackup test
+  * added test galera\_sst\_mariadb-backup\_encrypt\_with\_key; corrected path to galera\_ist\_mariadb-backup test
 * [Revision #92e99775e9](https://github.com/MariaDB/server/commit/92e99775e9)\
   2018-09-28 17:35:28 +0300
-  * added test case galera\_ist\_mariabackup
+  * added test case galera\_ist\_mariadb-backup
 * [Revision #bae7c1ebd4](https://github.com/MariaDB/server/commit/bae7c1ebd4)\
   2018-09-28 15:34:57 +0300
-  * added galera\_autoinc\_sst\_mariabackup test
+  * added galera\_autoinc\_sst\_mariadb-backup test
 * [Revision #de0eeb800e](https://github.com/MariaDB/server/commit/de0eeb800e)\
   2018-11-19 11:00:56 +0200
   * [MDEV-16890](https://jira.mariadb.org/browse/MDEV-16890): Galera test failure on galera\_sst\_mysqldump\_with\_key

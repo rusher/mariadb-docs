@@ -421,7 +421,7 @@ in that revision.
   * [MDEV-17942](https://jira.mariadb.org/browse/MDEV-17942) fixup : protect rebuild\_check\_host() / rebuild\_role\_grants() with acl\_cache->lock mutex
 * [Revision #39a2984dc0](https://github.com/MariaDB/server/commit/39a2984dc0)\
   2019-02-20 17:22:44 +0100
-  * Revert "[MDEV-18575](https://jira.mariadb.org/browse/MDEV-18575) Cleanup : remove innodb-encrypt-log parameter from mariabackup"
+  * Revert "[MDEV-18575](https://jira.mariadb.org/browse/MDEV-18575) Cleanup : remove innodb-encrypt-log parameter from mariadb-backup"
 * [Revision #a2f82b649d](https://github.com/MariaDB/server/commit/a2f82b649d)\
   2019-02-20 16:23:10 +0100
   * [MDEV-17942](https://jira.mariadb.org/browse/MDEV-17942) Assertion \`found' failed in remove\_ptr\_from\_dynarray after failed CREATE OR REPLACE
@@ -429,7 +429,7 @@ in that revision.
 * Merge [Revision #16bc94820e](https://github.com/MariaDB/server/commit/16bc94820e) 2019-02-19 16:09:04 +0100 - Merge branch '10.1' of [server](https://github.com/mariadb/server) into 10.1
 * [Revision #3262967008](https://github.com/MariaDB/server/commit/3262967008)\
   2019-02-14 11:11:16 +0100
-  * [MDEV-18575](https://jira.mariadb.org/browse/MDEV-18575) Cleanup : remove innodb-encrypt-log parameter from mariabackup
+  * [MDEV-18575](https://jira.mariadb.org/browse/MDEV-18575) Cleanup : remove innodb-encrypt-log parameter from mariadb-backup
 * [Revision #cac14b9225](https://github.com/MariaDB/server/commit/cac14b9225)\
   2019-02-26 15:41:27 +0400
   * [MDEV-17725](https://jira.mariadb.org/browse/MDEV-17725) Assertion \`!is\_set() || (m\_status == DA\_OK\_BULK && is\_bulk\_op())' failed in Diagnostics\_area::set\_ok\_status upon ALTER failing due to error from engine
@@ -453,7 +453,7 @@ in that revision.
   * [MDEV-10813](https://jira.mariadb.org/browse/MDEV-10813): Update buf\_page\_t::buf\_fix\_count outside mutex
 * [Revision #945c748adc](https://github.com/MariaDB/server/commit/945c748adc)\
   2019-02-21 00:06:08 +0100
-  * [MDEV-18669](https://jira.mariadb.org/browse/MDEV-18669) mariabackup writes timestamp in version line
+  * [MDEV-18669](https://jira.mariadb.org/browse/MDEV-18669) mariadb-backup writes timestamp in version line
 * Merge [Revision #91d506cf2d](https://github.com/MariaDB/server/commit/91d506cf2d) 2019-02-19 16:47:45 +0100 - Merge branch '10.1' into 10.2
 * [Revision #431da59f1c](https://github.com/MariaDB/server/commit/431da59f1c)\
   2019-02-19 16:09:46 +0100\
@@ -471,7 +471,7 @@ in that revision.
   * Fixed bug in macro \_ma\_mark\_page\_with\_transid()
 * [Revision #ca76fc4a3a](https://github.com/MariaDB/server/commit/ca76fc4a3a)\
   2019-02-19 11:14:03 +0200
-  * [MDEV-18611](https://jira.mariadb.org/browse/MDEV-18611): mariabackup silently ended during xtrabackup\_copy\_logfile()
+  * [MDEV-18611](https://jira.mariadb.org/browse/MDEV-18611): mariadb-backup silently ended during xtrabackup\_copy\_logfile()
 * [Revision #d2fc9d09da](https://github.com/MariaDB/server/commit/d2fc9d09da)\
   2019-02-19 07:31:25 +0100
   * [MDEV-18204](https://jira.mariadb.org/browse/MDEV-18204) - fixup
@@ -484,7 +484,7 @@ in that revision.
   * [MDEV-18204](https://jira.mariadb.org/browse/MDEV-18204) Fix rocksdb incremental backup
 * [Revision #40b4f9c907](https://github.com/MariaDB/server/commit/40b4f9c907)\
   2019-02-14 11:54:34 +0100
-  * [MDEV-18575](https://jira.mariadb.org/browse/MDEV-18575) remove innodb-encrypt-log parameter from mariabackup
+  * [MDEV-18575](https://jira.mariadb.org/browse/MDEV-18575) remove innodb-encrypt-log parameter from mariadb-backup
 * Merge [Revision #10cc8bbdbb](https://github.com/MariaDB/server/commit/10cc8bbdbb) 2019-02-13 09:26:37 +0200 - Merge pull request #1181 from grooverdan/10.2-submodule-update
 * [Revision #43a7409bb8](https://github.com/MariaDB/server/commit/43a7409bb8)\
   2019-02-13 17:48:12 +1100

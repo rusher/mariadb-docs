@@ -40,7 +40,7 @@ details of the revision and view diffs of the code modified in that revision.
 * Merge [Revision #f1b4d36cc3](https://github.com/MariaDB/server/commit/f1b4d36cc3) 2024-09-24 05:23:37 +0200 - Merge branch '10.11' into '11.2'
 * [Revision #68e968bc98](https://github.com/MariaDB/server/commit/68e968bc98)\
   2024-09-19 11:15:38 +0200
-  * [MDEV-30822](https://jira.mariadb.org/browse/MDEV-30822): Adjust wsrep\_sst\_mariabackup.sh to understand both pre-[MDEV-18931](https://jira.mariadb.org/browse/MDEV-18931) and post-[MDEV-18931](https://jira.mariadb.org/browse/MDEV-18931) file naming
+  * [MDEV-30822](https://jira.mariadb.org/browse/MDEV-30822): Adjust wsrep\_sst\_mariadb-backup.sh to understand both pre-[MDEV-18931](https://jira.mariadb.org/browse/MDEV-18931) and post-[MDEV-18931](https://jira.mariadb.org/browse/MDEV-18931) file naming
 * Merge [Revision #e782e416ac](https://github.com/MariaDB/server/commit/e782e416ac) 2024-09-18 07:38:49 +0300 - Merge 10.11 into 11.2
 * [Revision #64b75865d5](https://github.com/MariaDB/server/commit/64b75865d5)\
   2024-09-18 07:06:35 +0300

@@ -44,7 +44,7 @@ MariaDB Enterprise Server enables a predictable development and operations exper
 * Galera updated to 25.3.37
 * Spider storage engine refuses attempts to create a temporary table since the engine cannot itself store data and cannot create temporary tables on a remote server. ([MDEV-28225](https://jira.mariadb.org/browse/MDEV-28225))
 * Status variables Innodb\_encryption\_key\_rotation\_list\_length, Innodb\_num\_index\_pages\_written and Innodb\_num\_non\_index\_pages\_written were unused and have been removed. ([MDEV-28541](https://jira.mariadb.org/browse/MDEV-28541), [MDEV-28537](https://jira.mariadb.org/browse/MDEV-28537))
-* Starting with this release, when [wsrep\_sst\_method|](release-notes-for-mariadb-enterprise-server-10-3-35-16.md#galera-cluster-system-variables/) is set to `rsync` or `mariabackup`, the `sst_max_binlogs` SST option can be specified in the \[`sst`] option group in configuration files. This parameter specifies the number of binary log files to be sent to the joiner node during SST. ([MDEV-27524](https://jira.mariadb.org/browse/MDEV-27524))
+* Starting with this release, when [wsrep\_sst\_method|](release-notes-for-mariadb-enterprise-server-10-3-35-16.md#galera-cluster-system-variables/) is set to `rsync` or `mariadb-backup`, the `sst_max_binlogs` SST option can be specified in the \[`sst`] option group in configuration files. This parameter specifies the number of binary log files to be sent to the joiner node during SST. ([MDEV-27524](https://jira.mariadb.org/browse/MDEV-27524))
   * The default value is `0`:
     * If a binlog exists, it will be transferred.
     * If a binlog does not exist, no binlog will be transferred.
@@ -62,7 +62,7 @@ MariaDB Enterprise Server enables a predictable development and operations exper
 
 ### Can result in a hang or crash
 
-* With MariaDB Enterprise Cluster, powered by Galera, when [wsrep\_sst\_method](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_sst_method) is set to `rsync` or `mariabackup`, the donor node does not transfer the correct binary logs to the joiner node with some configurations. ([MDEV-27524](https://jira.mariadb.org/browse/MDEV-27524))
+* With MariaDB Enterprise Cluster, powered by Galera, when [wsrep\_sst\_method](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_sst_method) is set to `rsync` or `mariadb-backup`, the donor node does not transfer the correct binary logs to the joiner node with some configurations. ([MDEV-27524](https://jira.mariadb.org/browse/MDEV-27524))
 * When a window function is used in the global ORDER BY clause of a [SELECT statement](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/selecting-data/select) with a `UNION`, the statement should be rejected, but the server executes the statement and crashes with a segmentation fault. ([MDEV-15208](https://jira.mariadb.org/browse/MDEV-15208))
 * When a stored procedure queries a view and uses a for loop, the server can crash with a segmentation fault when the stored procedure is called twice in the same session. ([MDEV-26009](https://jira.mariadb.org/browse/MDEV-26009))
 * Server can crash when a procedure that queries a view is called twice. ([MDEV-26009](https://jira.mariadb.org/browse/MDEV-26009))
@@ -139,12 +139,12 @@ InnoDB: Allocated tablespace ID TABLESPACE_ID for DATABASE_NAME/TABLE_NAME, old 
 * With MariaDB Enterprise Cluster, State Snapshot Transfers (SSTs) can fail on the donor node when binary logs are enabled. ([MDEV-26201](https://jira.mariadb.org/browse/MDEV-26201))
 * With MariaDB Enterprise Cluster, when [wsrep\_node\_address](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_node_address) contains an IPv6 address and [wsrep\_sst\_receive\_address](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_sst_receive_address) is set to the default value of `AUTO`, State Snapshot Transfers (SST) can fail. ([MDEV-26171](https://jira.mariadb.org/browse/MDEV-26171))
 * With [temporal tables](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/temporal-tables), replication can break if a system versioned table has been created on the replica via mariadb-dump, if the original table was altered before. ([MDEV-28254](https://jira.mariadb.org/browse/MDEV-28254))
-* `mariabackup` does not detect multi-source replication primary. ([MDEV-21037](https://jira.mariadb.org/browse/MDEV-21037))
+* `mariadb-backup` does not detect multi-source replication primary. ([MDEV-21037](https://jira.mariadb.org/browse/MDEV-21037))
 * `Master_SSL_Crl` shows `Master_SSL_CA` value in `SHOW SLAVE STATUS` output. ([MDEV-28428](https://jira.mariadb.org/browse/MDEV-28428))
 * MariaDB Audit plugin produces corrupted log entries for `CONNECT` events. (MENT-1438)
 * `mariadb-dump` does not create a dump where the `sql_mode` is set correctly for SQL/PL packages. ([MDEV-27816](https://jira.mariadb.org/browse/MDEV-27816))
 * Missing binlog data for `INSERT .. ON DUPLICATE KEY UPDATE` ([MDEV-28310](https://jira.mariadb.org/browse/MDEV-28310))
-* `mariabackup prepare` fails for incremental backups if a new schema is created after full backup. ([MDEV-28446](https://jira.mariadb.org/browse/MDEV-28446))
+* `mariadb-backup prepare` fails for incremental backups if a new schema is created after full backup. ([MDEV-28446](https://jira.mariadb.org/browse/MDEV-28446))
 * Optimizer uses all partitions during an `UPDATE` and ignores partitioning filters. ([MDEV-28246](https://jira.mariadb.org/browse/MDEV-28246))
 * When [INSERT .. ON DUPLICATE KEY UPDATE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/inserting-loading-data/insert) is executed and [binlog\_format](https://github.com/mariadb-corporation/docs-release-notes/blob/test/mariadb-enterprise-server-release-notes/mariadb-enterprise-server-10-3/binlog_format/README.md) is set to `MIXED`, the server raises an \[e1592|\[`ER_BINLOG_UNSAFE_STATEMENT` warning]] even though the statement is written to the binary log in row-based format. ([MDEV-21810](https://jira.mariadb.org/browse/MDEV-21810))
   * The warning can appear in the MariaDB Error Log as the following:`<<sql inline=false>>` \[Warning] Unsafe statement written to the binary log using statement format since BINLOG\_FORMAT = STATEMENT. INSERT... ON DUPLICATE KEY UPDATE on a table with more than one UNIQUE KEY is unsafe Statement: INSERT INTO TABLE\_NAME VALUES (..) ON DUPLICATE KEY UPDATE KEY\_NAME = KEY\_VALUE `<<sql>>`
@@ -164,7 +164,7 @@ InnoDB: Allocated tablespace ID TABLESPACE_ID for DATABASE_NAME/TABLE_NAME, old 
 * [Innodb\_encryption\_key\_rotation\_list\_length](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables#Innodb_encryption_key_rotation_list_length) status variable removed
 * [Innodb\_num\_index\_pages\_written](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables#Innodb_num_index_pages_written) status variable removed
 * [Innodb\_num\_non\_index\_pages\_written](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables#Innodb_num_non_index_pages_written) status variable removed
-* `mariabackup` [--sst-max-binlogs](https://github.com/mariadb-corporation/docs-release-notes/blob/test/mariadb-enterprise-server-release-notes/mariadb-enterprise-server-10-3/mariadb-binlogs/README.md) command-line option added
+* `mariadb-backup` [--sst-max-binlogs](https://github.com/mariadb-corporation/docs-release-notes/blob/test/mariadb-enterprise-server-release-notes/mariadb-enterprise-server-10-3/mariadb-binlogs/README.md) command-line option added
 * `mysqldump` [--as-of](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/backup-restore-and-import-clients/mariadb-dump#options) command-line option added
 
 ## Platforms

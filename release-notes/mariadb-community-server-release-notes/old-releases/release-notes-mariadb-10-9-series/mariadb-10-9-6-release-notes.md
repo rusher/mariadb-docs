@@ -38,7 +38,7 @@ Thanks, and enjoy MariaDB!
 ## Backup
 
 * mariadb-backup doesn't utilise innodb-undo-log-directory (if specified as a relative path) during copy-back operation ([MDEV-28187](https://jira.mariadb.org/browse/MDEV-28187))
-* mariabackup issues error messages during InnoDB tablespaces export on partial backup preparing ([MDEV-29050](https://jira.mariadb.org/browse/MDEV-29050))
+* mariadb-backup issues error messages during InnoDB tablespaces export on partial backup preparing ([MDEV-29050](https://jira.mariadb.org/browse/MDEV-29050))
 * mariadb-backup does not copy Aria logs if aria\_log\_dir\_path is used ([MDEV-30968](https://jira.mariadb.org/browse/MDEV-30968))
 * Race condition between buffer pool flush and log file deletion in mariadb-backup --prepare ([MDEV-30860](https://jira.mariadb.org/browse/MDEV-30860))
 

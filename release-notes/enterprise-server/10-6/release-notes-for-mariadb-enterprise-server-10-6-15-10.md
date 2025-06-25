@@ -33,7 +33,7 @@ SELECT JSON_OVERLAPS('{"A": 1, "B": {"C":2}}', '{"A": 2, "B": {"C":2}}') AS is_o
 ## Notable Changes
 
 * The package for the `cracklib_password_check` plugin includes an SELinux policy, allowing the plugin to work with SELinux. ([MDEV-18374](https://jira.mariadb.org/browse/MDEV-18374))
-* MariaDB Enterprise Backup reports detailed recovery progress during `mariabackup --prepare`. ([MDEV-29911](https://jira.mariadb.org/browse/MDEV-29911))
+* MariaDB Enterprise Backup reports detailed recovery progress during `mariadb-backup --prepare`. ([MDEV-29911](https://jira.mariadb.org/browse/MDEV-29911))
 * With Optimizer Trace, a `sel_arg_alloc_limit_hit` record is written when `MAX_SEL_ARGS` is reached. ([MDEV-30964](https://jira.mariadb.org/browse/MDEV-30964))
   * `MAX_SEL_ARGS` is one of the limits in the optimizer that triggers short-cut of time-intensive or memory-intensive analysis for complex `WHERE` clauses.
   * For example:

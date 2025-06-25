@@ -506,7 +506,7 @@ in that revision.
   * [MDEV-23406](https://jira.mariadb.org/browse/MDEV-23406) Signal 8 in maria\_create after recursive cte query
 * [Revision #719da2c4cc](https://github.com/MariaDB/server/commit/719da2c4cc)\
   2020-12-15 16:46:58 +0300
-  * [MDEV-22810](https://jira.mariadb.org/browse/MDEV-22810) mariabackup does not honor open\_files\_limit from option during backup prepare
+  * [MDEV-22810](https://jira.mariadb.org/browse/MDEV-22810) mariadb-backup does not honor open\_files\_limit from option during backup prepare
 * [Revision #aebb111269](https://github.com/MariaDB/server/commit/aebb111269)\
   2020-12-16 10:26:29 +1100
   * [MDEV-21958](https://jira.mariadb.org/browse/MDEV-21958): postfix - result of range\_mrr\_icp

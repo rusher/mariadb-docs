@@ -219,7 +219,7 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-26915](https://jira.mariadb.org/browse/MDEV-26915): SST scripts do not take log\_bin\_index setting into account
 * [Revision #f21a36d5e1](https://github.com/MariaDB/server/commit/f21a36d5e1)\
   2021-11-23 02:35:46 +0100
-  * [MDEV-26064](https://jira.mariadb.org/browse/MDEV-26064): mariabackup SST fails when starting with --innodb-force-recovery
+  * [MDEV-26064](https://jira.mariadb.org/browse/MDEV-26064): mariadb-backup SST fails when starting with --innodb-force-recovery
 * [Revision #d4d71153db](https://github.com/MariaDB/server/commit/d4d71153db)\
   2021-11-15 00:42:26 +0200
   * Json\_writer\_object add integers

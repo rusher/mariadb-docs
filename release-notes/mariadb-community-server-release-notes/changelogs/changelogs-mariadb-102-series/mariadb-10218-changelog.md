@@ -141,7 +141,7 @@ in that revision.
   * [MDEV-15845](https://jira.mariadb.org/browse/MDEV-15845) Test failure on galera.galera\_concurrent\_ctas
 * [Revision #e46b2a3e94](https://github.com/MariaDB/server/commit/e46b2a3e94)\
   2018-09-11 20:59:35 +0100
-  * [MDEV-12956](https://jira.mariadb.org/browse/MDEV-12956) provide default datadir for mariabackup --copy-back
+  * [MDEV-12956](https://jira.mariadb.org/browse/MDEV-12956) provide default datadir for mariadb-backup --copy-back
 * [Revision #21829bd743](https://github.com/MariaDB/server/commit/21829bd743)\
   2018-09-11 08:19:16 +0300
   * [MDEV-17106](https://jira.mariadb.org/browse/MDEV-17106): Test failure on galera.galera\_binlog\_stmt\_autoinc
@@ -177,7 +177,7 @@ in that revision.
   * RPM: generate per-plugin.cnf files where git will ignore them
 * [Revision #8b6b2c3ea1](https://github.com/MariaDB/server/commit/8b6b2c3ea1)\
   2018-09-21 11:18:59 +0300
-  * Fix mariabackup leaks (except my\_load\_defaults)
+  * Fix mariadb-backup leaks (except my\_load\_defaults)
 * [Revision #82675100d1](https://github.com/MariaDB/server/commit/82675100d1)\
   2018-09-21 10:24:15 +0300
   * Remove an unused variable
@@ -189,7 +189,7 @@ in that revision.
   * Amend fix for [MDEV-17236](https://jira.mariadb.org/browse/MDEV-17236)
 * [Revision #7e4bbd3aa6](https://github.com/MariaDB/server/commit/7e4bbd3aa6)\
   2018-09-20 17:13:12 +0530
-  * [MDEV-17236](https://jira.mariadb.org/browse/MDEV-17236) mariabackup incorrectly tries to open ibdata1 if custom undo tablespace is defined
+  * [MDEV-17236](https://jira.mariadb.org/browse/MDEV-17236) mariadb-backup incorrectly tries to open ibdata1 if custom undo tablespace is defined
 * [Revision #654b587999](https://github.com/MariaDB/server/commit/654b587999)\
   2018-09-19 11:33:22 +0300
   * [MDEV-17208](https://jira.mariadb.org/browse/MDEV-17208): Test failure on galera.MW-286
@@ -205,7 +205,7 @@ in that revision.
   * [MDEV-17201](https://jira.mariadb.org/browse/MDEV-17201) dropped anchor rows with non-null recursion query
 * [Revision #65474d92f5](https://github.com/MariaDB/server/commit/65474d92f5)\
   2018-09-17 09:53:49 +0300
-  * Follow-up to "Fixed wrong printf in mariabackup"
+  * Follow-up to "Fixed wrong printf in mariadb-backup"
 * [Revision #4fa9eaf454](https://github.com/MariaDB/server/commit/4fa9eaf454)\
   2018-09-17 08:49:02 +0300
   * Remove unused ha\_innobase::lock
@@ -214,7 +214,7 @@ in that revision.
   * [MDEV-17065](https://jira.mariadb.org/browse/MDEV-17065) Crash on SHOW CREATE TABLE with CHECK CONSTRAINT
 * [Revision #4dc20ff687](https://github.com/MariaDB/server/commit/4dc20ff687)\
   2018-09-16 11:20:07 +0300
-  * Fixed wrong printf in mariabackup
+  * Fixed wrong printf in mariadb-backup
 * [Revision #e89b611dc9](https://github.com/MariaDB/server/commit/e89b611dc9)\
   2018-09-16 10:22:32 +0400
   * [MDEV-16050](https://jira.mariadb.org/browse/MDEV-16050) cte + geometry functions lead to crash.
@@ -269,7 +269,7 @@ in that revision.
   * [MDEV-17018](https://jira.mariadb.org/browse/MDEV-17018) JSON\_SEARCH and User-Defined Variables.
 * [Revision #c3124174c3](https://github.com/MariaDB/server/commit/c3124174c3)\
   2018-09-11 15:23:58 +0100
-  * [MDEV-17168](https://jira.mariadb.org/browse/MDEV-17168) mariabackup reports "failed to open bitmap directory"
+  * [MDEV-17168](https://jira.mariadb.org/browse/MDEV-17168) mariadb-backup reports "failed to open bitmap directory"
 * [Revision #c8bb43a938](https://github.com/MariaDB/server/commit/c8bb43a938)\
   2018-09-11 14:37:45 +0400
   * [MDEV-17121](https://jira.mariadb.org/browse/MDEV-17121) JSON\_ARRAY\_APPEND.
@@ -299,11 +299,11 @@ in that revision.
   * innobase\_init(): Remove an unnecessary condition
 * [Revision #58389c71c2](https://github.com/MariaDB/server/commit/58389c71c2)\
   2018-09-07 18:18:14 +0100
-  * [MDEV-16671](https://jira.mariadb.org/browse/MDEV-16671) - crash in mariabackup with my.cnf with plugin-load=ha\_rocksdb
+  * [MDEV-16671](https://jira.mariadb.org/browse/MDEV-16671) - crash in mariadb-backup with my.cnf with plugin-load=ha\_rocksdb
 * Merge [Revision #727324c1e9](https://github.com/MariaDB/server/commit/727324c1e9) 2018-09-07 01:14:19 +0200 - Merge tag 'mariadb-10.2.17' into 10.2
 * [Revision #a0631e7221](https://github.com/MariaDB/server/commit/a0631e7221)\
   2018-09-06 15:31:29 +0100
-  * [MDEV-17149](https://jira.mariadb.org/browse/MDEV-17149) mariabackup hangs if innodb is not started
+  * [MDEV-17149](https://jira.mariadb.org/browse/MDEV-17149) mariadb-backup hangs if innodb is not started
 * [Revision #67b87e1d76](https://github.com/MariaDB/server/commit/67b87e1d76)\
   2018-09-05 19:32:31 +0100
   * Rocksdb, Windows - better fix for broken WIN32\_LEAN\_AND\_MEAN
@@ -421,13 +421,13 @@ in that revision.
   * [MDEV-16934](https://jira.mariadb.org/browse/MDEV-16934) Query with very large IN clause lists runs slowly
 * [Revision #d6f7fd6016](https://github.com/MariaDB/server/commit/d6f7fd6016)\
   2018-08-16 16:10:18 +0300
-  * [MDEV-13564](https://jira.mariadb.org/browse/MDEV-13564): Refuse MLOG\_TRUNCATE in mariabackup
+  * [MDEV-13564](https://jira.mariadb.org/browse/MDEV-13564): Refuse MLOG\_TRUNCATE in mariadb-backup
 * [Revision #1b49c89429](https://github.com/MariaDB/server/commit/1b49c89429)\
   2018-08-16 15:29:40 +0300
-  * Re-enable the test mariabackup.unsupported\_redo
+  * Re-enable the test mariadb-backup.unsupported\_redo
 * [Revision #f926c5f4fa](https://github.com/MariaDB/server/commit/f926c5f4fa)\
   2018-08-16 08:37:54 +0100
-  * [MDEV-16996](https://jira.mariadb.org/browse/MDEV-16996) mariabackup --prepare does not use native AIO on Linux by default
+  * [MDEV-16996](https://jira.mariadb.org/browse/MDEV-16996) mariadb-backup --prepare does not use native AIO on Linux by default
 * [Revision #05153a670d](https://github.com/MariaDB/server/commit/05153a670d)\
   2018-08-16 06:35:28 +0300
   * Report all redo log corruption
@@ -451,7 +451,7 @@ in that revision.
   * bump the VERSION
 * [Revision #922e7badfc](https://github.com/MariaDB/server/commit/922e7badfc)\
   2018-08-09 15:06:52 +0100
-  * [MDEV-16791](https://jira.mariadb.org/browse/MDEV-16791) mariabackup : Support DDL commands during backup
+  * [MDEV-16791](https://jira.mariadb.org/browse/MDEV-16791) mariadb-backup : Support DDL commands during backup
 * [Revision #9a4998a35a](https://github.com/MariaDB/server/commit/9a4998a35a)\
   2018-08-13 23:42:20 +0100
   * adjust result file

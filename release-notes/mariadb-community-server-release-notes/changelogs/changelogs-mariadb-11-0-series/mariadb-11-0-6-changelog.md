@@ -14,7 +14,7 @@ details of the revision and view diffs of the code modified in that revision.
 * Includes all fixes from [MariaDB 10.11.8](../changelogs-mariadb-10-11-series/mariadb-10-11-8-changelog.md)
 * [Revision #466ae1cf81](https://github.com/MariaDB/server/commit/466ae1cf81)\
   2024-05-12 11:25:32 +0200
-  * sporadic failures of galera.galera\_sst\_mariabackup
+  * sporadic failures of galera.galera\_sst\_mariadb-backup
 * Merge [Revision #f9807aadef](https://github.com/MariaDB/server/commit/f9807aadef) 2024-05-11 13:23:27 +0200 - Merge branch '10.11' into 11.0
 * [Revision #fc670b46bd](https://github.com/MariaDB/server/commit/fc670b46bd)\
   2024-05-04 11:00:23 +0200

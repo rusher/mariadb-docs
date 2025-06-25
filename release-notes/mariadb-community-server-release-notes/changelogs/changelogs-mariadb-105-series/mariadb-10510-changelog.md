@@ -182,7 +182,7 @@ details of the revision and view diffs of the code modified in that revision.
 * Merge [Revision #8570a6a093](https://github.com/MariaDB/server/commit/8570a6a093) 2021-03-20 13:34:38 +0200 - Merge 10.4 into 10.5
 * [Revision #1bacab8ab9](https://github.com/MariaDB/server/commit/1bacab8ab9)\
   2021-03-19 09:31:27 +0000
-  * mariabackup little FreeBSD update support.
+  * mariadb-backup little FreeBSD update support.
 * [Revision #8bdffb3750](https://github.com/MariaDB/server/commit/8bdffb3750)\
   2021-03-19 15:44:07 +0100
   * fix for tests from engines/funcs

@@ -200,7 +200,7 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-15845](https://jira.mariadb.org/browse/MDEV-15845) Test failure on galera.galera\_concurrent\_ctas
 * [Revision #e46b2a3e94](https://github.com/MariaDB/server/commit/e46b2a3e94)\
   2018-09-11 20:59:35 +0100
-  * [MDEV-12956](https://jira.mariadb.org/browse/MDEV-12956) provide default datadir for mariabackup --copy-back
+  * [MDEV-12956](https://jira.mariadb.org/browse/MDEV-12956) provide default datadir for mariadb-backup --copy-back
 * [Revision #21829bd743](https://github.com/MariaDB/server/commit/21829bd743)\
   2018-09-11 08:19:16 +0300
   * [MDEV-17106](https://jira.mariadb.org/browse/MDEV-17106): Test failure on galera.galera\_binlog\_stmt\_autoinc

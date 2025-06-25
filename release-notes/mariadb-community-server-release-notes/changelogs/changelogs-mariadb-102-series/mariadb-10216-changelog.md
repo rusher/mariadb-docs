@@ -46,10 +46,10 @@ in that revision.
   * fix mtr warnings after 5f0510225aa
 * [Revision #95ef8de891](https://github.com/MariaDB/server/commit/95ef8de891)\
   2018-06-22 23:30:26 +0100
-  * mariabackup - rename backup-rocksdb option to rocksdb-backup
+  * mariadb-backup - rename backup-rocksdb option to rocksdb-backup
 * [Revision #ecc4682672](https://github.com/MariaDB/server/commit/ecc4682672)\
   2018-06-22 15:24:09 +0100
-  * [MDEV-16519](https://jira.mariadb.org/browse/MDEV-16519) : mariabackup should fail if MDL could not be acquired with lock-ddl-per-table
+  * [MDEV-16519](https://jira.mariadb.org/browse/MDEV-16519) : mariadb-backup should fail if MDL could not be acquired with lock-ddl-per-table
 * [Revision #0d745343fc](https://github.com/MariaDB/server/commit/0d745343fc)\
   2018-06-22 09:52:21 +0200
   * fix plugins.processlist
@@ -161,7 +161,7 @@ in that revision.
   * [MDEV-16496](https://jira.mariadb.org/browse/MDEV-16496) mariadb-backup: Implement --verbose option to instrument InnoDB log apply
 * [Revision #ff317fe08e](https://github.com/MariaDB/server/commit/ff317fe08e)\
   2018-06-15 13:31:43 +0300
-  * Follow-up to [MDEV-16367](https://jira.mariadb.org/browse/MDEV-16367) mariabackup: error: failed to copy enough redo log
+  * Follow-up to [MDEV-16367](https://jira.mariadb.org/browse/MDEV-16367) mariadb-backup: error: failed to copy enough redo log
 * [Revision #6b8802e8dd](https://github.com/MariaDB/server/commit/6b8802e8dd)\
   2018-05-08 15:26:26 +0200
   * [MDEV-11071](https://jira.mariadb.org/browse/MDEV-11071): Assertion \`thd->transaction.stmt.is\_empty()' failed in Locked\_tables\_list::unlock\_locked\_table
@@ -173,7 +173,7 @@ in that revision.
   * [MDEV-16386](https://jira.mariadb.org/browse/MDEV-16386): Wrong result when pushdown into the HAVING clause of the materialized derived table/view that uses aliases is done
 * [Revision #a79b033b35](https://github.com/MariaDB/server/commit/a79b033b35)\
   2018-06-14 14:23:20 +0300
-  * [MDEV-16457](https://jira.mariadb.org/browse/MDEV-16457) mariabackup 10.2+ should default to innodb\_checksum\_algorithm=crc32
+  * [MDEV-16457](https://jira.mariadb.org/browse/MDEV-16457) mariadb-backup 10.2+ should default to innodb\_checksum\_algorithm=crc32
 * [Revision #2ca904f0ca](https://github.com/MariaDB/server/commit/2ca904f0ca)\
   2018-06-13 16:15:21 +0300
   * [MDEV-13103](https://jira.mariadb.org/browse/MDEV-13103) Deal with page\_compressed page corruption
@@ -206,13 +206,13 @@ in that revision.
   * Add missed change from 7ffa82b03c8da12062223d5e332e972d6f828d44
 * [Revision #aba2d7301f](https://github.com/MariaDB/server/commit/aba2d7301f)\
   2018-06-07 15:13:54 +0100
-  * [MDEV-13122](https://jira.mariadb.org/browse/MDEV-13122) Backup myrocksdb with mariabackup.
+  * [MDEV-13122](https://jira.mariadb.org/browse/MDEV-13122) Backup myrocksdb with mariadb-backup.
 * [Revision #ea70586282](https://github.com/MariaDB/server/commit/ea70586282)\
   2018-06-07 15:12:26 +0100
-  * [MDEV-16300](https://jira.mariadb.org/browse/MDEV-16300) : remove rocksdb checkpoint created by mariabackup.
+  * [MDEV-16300](https://jira.mariadb.org/browse/MDEV-16300) : remove rocksdb checkpoint created by mariadb-backup.
 * [Revision #dc9c555415](https://github.com/MariaDB/server/commit/dc9c555415)\
   2018-06-07 14:29:35 +0300
-  * [MDEV-16367](https://jira.mariadb.org/browse/MDEV-16367) mariabackup: error: failed to copy enough redo log
+  * [MDEV-16367](https://jira.mariadb.org/browse/MDEV-16367) mariadb-backup: error: failed to copy enough redo log
 * [Revision #619c277a6c](https://github.com/MariaDB/server/commit/619c277a6c)\
   2018-06-07 14:11:55 +0300
   * mariadb-backup: Make some globals static
@@ -303,7 +303,7 @@ in that revision.
   * [MDEV-16153](https://jira.mariadb.org/browse/MDEV-16153) Server crashes in Apc\_target::disable, ASAN heap-use-after-free in Explain\_query::Explain\_query upon/after EXECUTE IMMEDIATE
 * [Revision #207e5ba316](https://github.com/MariaDB/server/commit/207e5ba316)\
   2018-05-19 17:04:47 +0000
-  * mariabackup : Fix race condition when killing query waiting for MDL
+  * mariadb-backup : Fix race condition when killing query waiting for MDL
 * [Revision #dd51082eca](https://github.com/MariaDB/server/commit/dd51082eca)\
   2018-05-19 00:26:35 +0300
   * [MDEV-12465](https://jira.mariadb.org/browse/MDEV-12465): Server crashes in my\_scan\_weight\_utf8\_bin upon collecting stats for RocksDB table

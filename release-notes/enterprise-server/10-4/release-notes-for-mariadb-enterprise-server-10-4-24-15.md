@@ -52,12 +52,12 @@ Error 'Invalid default value for 'TABLE_NAME'' on query. Default database: 'test
 
 * When a `FULLTEXT` index is added to an InnoDB table with `ALGORITHM=INPLAC`E and the indexed column uses the `tis620` character set, the server can crash with a segmentation fault (signal 11). ([MDEV-24901](https://jira.mariadb.org/browse/MDEV-24901))
 * When MariaDB Server is used on the ARM architecture, which uses a weak memory model, an internal hash table implementation can cause the server to crash with a segmentation fault (signal 11). ([MDEV-27088](https://jira.mariadb.org/browse/MDEV-27088))
-* When [wsrep\_sst\_method=mariabackup](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_sst_method) and [innodb\_force\_recovery=1](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables#innodb_force_recovery) are set with MariaDB Enterprise Cluster, powered by Galera, the joiner node fails to perform an SST. ([MDEV-26064](https://jira.mariadb.org/browse/MDEV-26064))
+* When [wsrep\_sst\_method=mariadb-backup](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_sst_method) and [innodb\_force\_recovery=1](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables#innodb_force_recovery) are set with MariaDB Enterprise Cluster, powered by Galera, the joiner node fails to perform an SST. ([MDEV-26064](https://jira.mariadb.org/browse/MDEV-26064))
   * The SST log contains the following message related to the failure:
 
 ```
-mariabackup: The option "innodb_force_recovery" should only be used with "--prepare".
-mariabackup: innodb_init_param(): Error occurred.
+mariadb-backup: The option "innodb_force_recovery" should only be used with "--prepare".
+mariadb-backup: innodb_init_param(): Error occurred.
 ```
 
 * When [--stream=xbstream](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/enterprise-server/10-4/broken-reference/README.md) is set, MariaDB Enterprise Backup can hang on lock acquisitions due to a deadlock. ([MDEV-26558](https://jira.mariadb.org/browse/MDEV-26558))
@@ -165,7 +165,7 @@ void trx_rseg_update_wsrep_checkpoint(trx_rsegf_t*, const XID*, mtr_t*): Asserti
 
 ### Related to install and upgrade
 
-* When [wsrep\_sst\_method=mariabackup](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_sst_method) is set, SSTs for MariaDB Enterprise Cluster could fail after upgrading to MariaDB Enterprise Server 10.4 if MariaDB Enterprise Backup is not manually upgraded. ([MDEV-19815](https://jira.mariadb.org/browse/MDEV-19815))
+* When [wsrep\_sst\_method=mariadb-backup](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_sst_method) is set, SSTs for MariaDB Enterprise Cluster could fail after upgrading to MariaDB Enterprise Server 10.4 if MariaDB Enterprise Backup is not manually upgraded. ([MDEV-19815](https://jira.mariadb.org/browse/MDEV-19815))
 * When the `mysql.AddGeometryColumn` and `mysql.DropGeometryColumn` stored procedures use the old default `DEFINER = 'root@localhost', [mariadb-upgrade##](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/mariadb-upgrade) does not alter them to use the new default`DEFINER = 'mariadb.sys@localhost'`. ([MDEV-27124](https://jira.mariadb.org/browse/MDEV-27124))`
 
 ## Changes in Storage Engines

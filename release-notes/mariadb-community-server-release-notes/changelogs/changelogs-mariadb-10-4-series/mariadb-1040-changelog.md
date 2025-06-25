@@ -387,7 +387,7 @@ details of the revision and view diffs of the code modified in that revision.
 * Merge [Revision #7e869a2767](https://github.com/MariaDB/server/commit/7e869a2767) 2018-10-11 23:09:10 +0300 - Merge 10.2 into 10.3
 * [Revision #81a5b6ccd5](https://github.com/MariaDB/server/commit/81a5b6ccd5)\
   2018-10-11 22:48:19 +0300
-  * [MDEV-17433](https://jira.mariadb.org/browse/MDEV-17433) Allow InnoDB start up with empty ib\_logfile0 from mariabackup --prepare
+  * [MDEV-17433](https://jira.mariadb.org/browse/MDEV-17433) Allow InnoDB start up with empty ib\_logfile0 from mariadb-backup --prepare
 * [Revision #b8944e8972](https://github.com/MariaDB/server/commit/b8944e8972)\
   2018-10-11 22:47:42 +0300
   * Fix a sign mismatch

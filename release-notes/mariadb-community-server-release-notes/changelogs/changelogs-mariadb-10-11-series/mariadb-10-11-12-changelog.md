@@ -160,7 +160,7 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-28908](https://jira.mariadb.org/browse/MDEV-28908) Confusing documentation and help output for --ssl-verify-server-cert
 * [Revision #7d17ee97c2](https://github.com/MariaDB/server/commit/7d17ee97c2)\
   2025-03-30 12:43:35 +0200
-  * [MDEV-36437](https://jira.mariadb.org/browse/MDEV-36437) mariabackup - confusing error message when running out of file handles with partitioned MyISAM
+  * [MDEV-36437](https://jira.mariadb.org/browse/MDEV-36437) mariadb-backup - confusing error message when running out of file handles with partitioned MyISAM
 * [Revision #8363d05f4d](https://github.com/MariaDB/server/commit/8363d05f4d)\
   2025-03-25 18:49:03 +0100
   * Fix Windows build to use dynamic DLL runtime (MD) by default
@@ -182,7 +182,7 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-29445](https://jira.mariadb.org/browse/MDEV-29445) fixup: Make Valgrind fair again
 * [Revision #9a6540cb84](https://github.com/MariaDB/server/commit/9a6540cb84)\
   2025-03-27 08:54:00 +0200
-  * [MDEV-29445](https://jira.mariadb.org/browse/MDEV-29445) fixup: galera\_sst\_mariabackup\_use\_memory
+  * [MDEV-29445](https://jira.mariadb.org/browse/MDEV-29445) fixup: galera\_sst\_mariadb-backup\_use\_memory
 * [Revision #d68f5ea9f0](https://github.com/MariaDB/server/commit/d68f5ea9f0)\
   2025-03-27 08:19:40 +0200
   * [MDEV-35000](https://jira.mariadb.org/browse/MDEV-35000) fixup: galera.[MDEV-33136](https://jira.mariadb.org/browse/MDEV-33136)

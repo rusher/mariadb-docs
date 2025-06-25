@@ -118,7 +118,7 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-25978](https://jira.mariadb.org/browse/MDEV-25978) post-merge: updated mtr result files
 * [Revision #58700a426a](https://github.com/MariaDB/server/commit/58700a426a)\
   2021-06-29 12:42:14 +0200
-  * [MDEV-26019](https://jira.mariadb.org/browse/MDEV-26019): Upgrading MariaDB breaks TLS mariabackup SST
+  * [MDEV-26019](https://jira.mariadb.org/browse/MDEV-26019): Upgrading MariaDB breaks TLS mariadb-backup SST
 * [Revision #1c03e7a667](https://github.com/MariaDB/server/commit/1c03e7a667)\
   2021-06-22 15:44:44 +0300
   * [MDEV-25978](https://jira.mariadb.org/browse/MDEV-25978) : rsync SST does not work with custom binlog name

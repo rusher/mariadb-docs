@@ -344,7 +344,7 @@ details of the revision and view diffs of the code modified in that revision.
   * Disable mmap usage in Aria and MyISAM when compiling with valgrind
 * [Revision #fd9a11d8a5](https://github.com/MariaDB/server/commit/fd9a11d8a5)\
   2025-01-06 01:43:42 +0100
-  * [MDEV-35749](https://jira.mariadb.org/browse/MDEV-35749): Add support for --use-memory option for SST with mariabackup
+  * [MDEV-35749](https://jira.mariadb.org/browse/MDEV-35749): Add support for --use-memory option for SST with mariadb-backup
 * [Revision #24e5d56400](https://github.com/MariaDB/server/commit/24e5d56400)\
   2024-12-20 14:58:33 +0700
   * [MDEV-35680](https://jira.mariadb.org/browse/MDEV-35680) Table number > MAX\_TABLES causes overflow of table\_map at main.join test
@@ -419,7 +419,7 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-35571](https://jira.mariadb.org/browse/MDEV-35571) Check for LIMIT ROWS EXAMINED exceeded in UNION ALL
 * [Revision #3e34e4c161](https://github.com/MariaDB/server/commit/3e34e4c161)\
   2024-12-12 10:56:36 +0100
-  * [MDEV-34820](https://jira.mariadb.org/browse/MDEV-34820): wsrep\_sst\_mariabackup get\_footprint() portability and accuracy fix
+  * [MDEV-34820](https://jira.mariadb.org/browse/MDEV-34820): wsrep\_sst\_mariadb-backup get\_footprint() portability and accuracy fix
 * [Revision #b52f88edf8](https://github.com/MariaDB/server/commit/b52f88edf8)\
   2024-12-12 10:15:26 +0100
   * [MDEV-35387](https://jira.mariadb.org/browse/MDEV-35387): wsrep\_sst\_rsync crash if aria\_log\_dir\_path is defined

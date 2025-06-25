@@ -229,7 +229,7 @@ The revision number links will take you to the revision's page on GitHub. On[Git
   * [MDEV-12469](https://jira.mariadb.org/browse/MDEV-12469) : Update AWS SDK version to avoid gcc7 compile errors.
 * [Revision #5a43c8bae7](https://github.com/MariaDB/server/commit/5a43c8bae7)\
   2017-08-11 16:42:27 +0300
-  * [MDEV-13416](https://jira.mariadb.org/browse/MDEV-13416) mariabackup --backup fails to copy log if LSN is above 4294967295
+  * [MDEV-13416](https://jira.mariadb.org/browse/MDEV-13416) mariadb-backup --backup fails to copy log if LSN is above 4294967295
 * [Revision #79d2853354](https://github.com/MariaDB/server/commit/79d2853354)\
   2017-08-11 00:50:29 +0400
   * [MDEV-12604](https://jira.mariadb.org/browse/MDEV-12604) Comparison of JSON\_EXTRACT result differs with Mysql.
@@ -442,7 +442,7 @@ The revision number links will take you to the revision's page on GitHub. On[Git
   * update .gitignore
 * [Revision #013595f56f](https://github.com/MariaDB/server/commit/013595f56f)\
   2017-07-17 17:04:18 +0000
-  * [MDEV-13332](https://jira.mariadb.org/browse/MDEV-13332) mariabackup from 10.2.x crashes with --ftwrl-\* options
+  * [MDEV-13332](https://jira.mariadb.org/browse/MDEV-13332) mariadb-backup from 10.2.x crashes with --ftwrl-\* options
 * [Revision #1b3cf18e4e](https://github.com/MariaDB/server/commit/1b3cf18e4e)\
   2017-07-15 19:35:06 +0200
   * CONNECT: accessed p\[i] outside of the loop

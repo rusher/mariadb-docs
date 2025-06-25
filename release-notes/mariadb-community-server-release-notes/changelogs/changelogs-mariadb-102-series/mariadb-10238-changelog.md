@@ -279,7 +279,7 @@ in that revision.
   * [MDEV-25108](https://jira.mariadb.org/browse/MDEV-25108): Running of the EXPLAIN EXTENDED statement produces extra warning in case it is executed in PS (prepared statement) mode
 * [Revision #e95cdc451a](https://github.com/MariaDB/server/commit/e95cdc451a)\
   2021-04-12 04:11:28 +0200
-  * [MDEV-21484](https://jira.mariadb.org/browse/MDEV-21484): galera\_sst\_mariabackup\_encrypt\_with\_key test failed
+  * [MDEV-21484](https://jira.mariadb.org/browse/MDEV-21484): galera\_sst\_mariadb-backup\_encrypt\_with\_key test failed
 * [Revision #cf2c6b7f8d](https://github.com/MariaDB/server/commit/cf2c6b7f8d)\
   2021-04-09 21:30:43 +0530
   * [MDEV-24971](https://jira.mariadb.org/browse/MDEV-24971) InnoDB access freed virtual column after rollback of secondary index
@@ -297,7 +297,7 @@ in that revision.
   * [MDEV-25307](https://jira.mariadb.org/browse/MDEV-25307): The value of the auto-increment variables changes during the test
 * [Revision #3eecb8db22](https://github.com/MariaDB/server/commit/3eecb8db22)\
   2021-04-11 17:07:36 +0200
-  * [MDEV-25356](https://jira.mariadb.org/browse/MDEV-25356): SST scripts should use the new mariabackup interface
+  * [MDEV-25356](https://jira.mariadb.org/browse/MDEV-25356): SST scripts should use the new mariadb-backup interface
 * [Revision #bf1e09e0c4](https://github.com/MariaDB/server/commit/bf1e09e0c4)\
   2021-04-07 16:53:23 +0200
   * Removed extra spaces in generated command lines (minor "cosmetic" change after [MDEV-24197](https://jira.mariadb.org/browse/MDEV-24197))
@@ -306,7 +306,7 @@ in that revision.
   * Clarified abbreviated option names in some tests, to avoid problems with ambiguous options in the future.
 * [Revision #8ff0ac45dc](https://github.com/MariaDB/server/commit/8ff0ac45dc)\
   2021-04-07 16:44:30 +0200
-  * [MDEV-25328](https://jira.mariadb.org/browse/MDEV-25328): --innodb command line option causes mariabackup to fail
+  * [MDEV-25328](https://jira.mariadb.org/browse/MDEV-25328): --innodb command line option causes mariadb-backup to fail
 * [Revision #1ac4d0c168](https://github.com/MariaDB/server/commit/1ac4d0c168)\
   2021-04-09 17:38:21 +0530
   * BtrBulk::table\_name(): Return the table name while displaying table name for fts diagnostics
@@ -330,10 +330,10 @@ in that revision.
   * [MDEV-25242](https://jira.mariadb.org/browse/MDEV-25242) Server crashes in check\_grant upon invoking function with userstat enabled
 * [Revision #fb9d151934](https://github.com/MariaDB/server/commit/fb9d151934)\
   2021-04-01 21:47:30 +0200
-  * [MDEV-25321](https://jira.mariadb.org/browse/MDEV-25321): mariabackup failed if password is passed via environment variable
+  * [MDEV-25321](https://jira.mariadb.org/browse/MDEV-25321): mariadb-backup failed if password is passed via environment variable
 * [Revision #5bc5ecce08](https://github.com/MariaDB/server/commit/5bc5ecce08)\
   2021-04-01 15:03:59 +0530
-  * [MDEV-24197](https://jira.mariadb.org/browse/MDEV-24197): Add "innodb\_force\_recovery" for "mariabackup --prepare"
+  * [MDEV-24197](https://jira.mariadb.org/browse/MDEV-24197): Add "innodb\_force\_recovery" for "mariadb-backup --prepare"
 * [Revision #f93e087d74](https://github.com/MariaDB/server/commit/f93e087d74)\
   2021-03-31 11:29:51 +0200
   * [MDEV-25047](https://jira.mariadb.org/browse/MDEV-25047): SIGSEGV in mach\_read\_from\_n\_little\_endian
@@ -342,7 +342,7 @@ in that revision.
   * CMake - when searching bison, look also for win\_bison
 * [Revision #08cb5d8483](https://github.com/MariaDB/server/commit/08cb5d8483)\
   2021-03-31 14:23:56 +0200
-  * [MDEV-25221](https://jira.mariadb.org/browse/MDEV-25221) Do not remove source file, if copy\_file() fails in mariabackup --move-back
+  * [MDEV-25221](https://jira.mariadb.org/browse/MDEV-25221) Do not remove source file, if copy\_file() fails in mariadb-backup --move-back
 * [Revision #35ee4aa4e3](https://github.com/MariaDB/server/commit/35ee4aa4e3)\
   2021-03-31 09:06:44 +0300
   * [MDEV-13103](https://jira.mariadb.org/browse/MDEV-13103) fixup: Actually fix a crash during IMPORT TABLESPACE
@@ -450,7 +450,7 @@ in that revision.
   * [MDEV-8708](https://jira.mariadb.org/browse/MDEV-8708) fixup: Remove dead code
 * [Revision #a74fa579b9](https://github.com/MariaDB/server/commit/a74fa579b9)\
   2021-03-19 03:24:55 +0100
-  * [MDEV-24903](https://jira.mariadb.org/browse/MDEV-24903): mariabackup SST fails while adding --log-bin in startup command
+  * [MDEV-24903](https://jira.mariadb.org/browse/MDEV-24903): mariadb-backup SST fails while adding --log-bin in startup command
 * [Revision #4e825b0e8a](https://github.com/MariaDB/server/commit/4e825b0e8a)\
   2021-03-19 11:46:07 +0100
   * update libmariadb

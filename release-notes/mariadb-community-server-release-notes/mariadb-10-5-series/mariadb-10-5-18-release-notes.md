@@ -24,7 +24,7 @@ Thanks, and enjoy MariaDB!
 
 ### Backup
 
-* [mariabackup --compress](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariabackup/mariabackup-options#-compress) hangs ([MDEV-29043](https://jira.mariadb.org/browse/MDEV-29043))
+* [mariadb-backup --compress](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariadb-backup/mariadb-backup-options#-compress) hangs ([MDEV-29043](https://jira.mariadb.org/browse/MDEV-29043))
 * Assertion on info.page\_size failed in xb\_delta\_open\_matching\_space ([MDEV-18589](https://jira.mariadb.org/browse/MDEV-18589))
 
 ### InnoDB

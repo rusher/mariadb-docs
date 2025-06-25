@@ -46,7 +46,7 @@ MariaDB Enterprise Server 10.2.31-6 was released on 2020-03-02.
 * `ALTER USER IF EXISTS` generated a SQL syntax error. (MENT-643)
 * A query using `GROUP BY` with an expression containing a field of a view could return wrong results. ([MDEV-20922](https://jira.mariadb.org/browse/MDEV-20922))
 * Running the script `mysql_tzinfo_to_sql` for MariaDB Enterprise Cluster could result in inconsistent timezone information across different nodes. ([MDEV-21209](https://jira.mariadb.org/browse/MDEV-21209))
-* Using the --use-memory option with [mariabackup](broken-reference) would cause it to run out of memory. ([MDEV-20679](https://jira.mariadb.org/browse/MDEV-20679))
+* Using the --use-memory option with [mariadb-backup](broken-reference) would cause it to run out of memory. ([MDEV-20679](https://jira.mariadb.org/browse/MDEV-20679))
 * For [MariaDB Enterprise Cluster](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/galera-cluster/README.md) (Galera Library 25.3.29):
   * GCS delivered a JOIN message even if the node was in a DONOR state.
   * GCache could contain mixed histories from different clusters.

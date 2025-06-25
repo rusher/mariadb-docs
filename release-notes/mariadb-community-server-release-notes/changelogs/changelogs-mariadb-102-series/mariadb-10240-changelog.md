@@ -306,7 +306,7 @@ in that revision.
   * [MDEV-20411](https://jira.mariadb.org/browse/MDEV-20411) Procedure containing CTE incorrectly stored in mysql.proc
 * [Revision #4ad148b148](https://github.com/MariaDB/server/commit/4ad148b148)\
   2021-06-25 06:48:17 +0200
-  * [MDEV-26019](https://jira.mariadb.org/browse/MDEV-26019): Upgrading MariaDB breaks TLS mariabackup SST
+  * [MDEV-26019](https://jira.mariadb.org/browse/MDEV-26019): Upgrading MariaDB breaks TLS mariadb-backup SST
 * [Revision #9258cfa4b4](https://github.com/MariaDB/server/commit/9258cfa4b4)\
   2021-06-22 15:44:44 +0300
   * [MDEV-25978](https://jira.mariadb.org/browse/MDEV-25978) : rsync SST does not work with custom binlog name

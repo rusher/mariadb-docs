@@ -71,7 +71,7 @@ details of the revision and view diffs of the code modified in that revision.
 * Merge [Revision #7783161f30](https://github.com/MariaDB/server/commit/7783161f30) 2021-07-22 13:02:26 +0300 - Merge 10.5 into 10.6
 * [Revision #5f4314f0e6](https://github.com/MariaDB/server/commit/5f4314f0e6)\
   2021-07-22 11:17:44 +0300
-  * [MDEV-26210](https://jira.mariadb.org/browse/MDEV-26210): Disable mariabackup.log\_page\_corruption
+  * [MDEV-26210](https://jira.mariadb.org/browse/MDEV-26210): Disable mariadb-backup.log\_page\_corruption
 * [Revision #a4dc926579](https://github.com/MariaDB/server/commit/a4dc926579)\
   2021-07-21 15:44:32 +0300
   * [MDEV-26193](https://jira.mariadb.org/browse/MDEV-26193): Wake up purge less often

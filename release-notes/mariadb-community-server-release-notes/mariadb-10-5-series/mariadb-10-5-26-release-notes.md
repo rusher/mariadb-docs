@@ -82,7 +82,7 @@ Thanks, and enjoy MariaDB!
 * table `gtid_slave_pos` entries never been deleted with `wsrep_gtid_mode = 0` ([MDEV-34170](https://jira.mariadb.org/browse/MDEV-34170))
 * Change error code for Galera unkillable threads ([MDEV-12008](https://jira.mariadb.org/browse/MDEV-12008))
 * 10.11.8 cluster becomes inconsistent when using composite primary key and partitioning ([MDEV-34269](https://jira.mariadb.org/browse/MDEV-34269))
-* `wsrep_sst_mariabackup` use `/tmp` dir during SST rather then user defined `tmpdir` ([MDEV-32158](https://jira.mariadb.org/browse/MDEV-32158))
+* `wsrep_sst_mariadb-backup` use `/tmp` dir during SST rather then user defined `tmpdir` ([MDEV-32158](https://jira.mariadb.org/browse/MDEV-32158))
 
 ### Error Log
 

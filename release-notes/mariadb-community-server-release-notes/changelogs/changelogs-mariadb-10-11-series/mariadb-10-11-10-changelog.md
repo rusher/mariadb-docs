@@ -84,7 +84,7 @@ details of the revision and view diffs of the code modified in that revision.
 * Merge [Revision #b168859d1e](https://github.com/MariaDB/server/commit/b168859d1e) 2024-09-11 16:10:53 +1000 - Merge branch '10.6' into 10.11
 * [Revision #2496779d69](https://github.com/MariaDB/server/commit/2496779d69)\
   2024-07-23 13:30:17 +1000
-  * [MDEV-34617](https://jira.mariadb.org/browse/MDEV-34617) galera.galera\_ist\_mariabackup\_verify\_ca fails on FreeBSD
+  * [MDEV-34617](https://jira.mariadb.org/browse/MDEV-34617) galera.galera\_ist\_mariadb-backup\_verify\_ca fails on FreeBSD
 * [Revision #24d67aaf9c](https://github.com/MariaDB/server/commit/24d67aaf9c)\
   2024-09-09 14:13:38 +1000
   * [MDEV-34825](https://jira.mariadb.org/browse/MDEV-34825) FreeBSD fails to build under clang natively (postfix)

@@ -108,7 +108,7 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-28858](https://jira.mariadb.org/browse/MDEV-28858) Wrong result with table elimination combined with not\_null\_range\_scan
 * [Revision #27309fc6b0](https://github.com/MariaDB/server/commit/27309fc6b0)\
   2022-06-14 11:31:11 +0300
-  * [MDEV-28832](https://jira.mariadb.org/browse/MDEV-28832) infinite loop in mariabackup if log LOG\_HEADER\_FORMAT field is 0
+  * [MDEV-28832](https://jira.mariadb.org/browse/MDEV-28832) infinite loop in mariadb-backup if log LOG\_HEADER\_FORMAT field is 0
 * [Revision #4849d94fe6](https://github.com/MariaDB/server/commit/4849d94fe6)\
   2022-06-14 09:14:24 +0300
   * [MDEV-28828](https://jira.mariadb.org/browse/MDEV-28828) SIGSEGV in buf\_flush\_LRU\_list\_batch

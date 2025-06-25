@@ -55,7 +55,7 @@ in that revision.
   * [MDEV-17470](https://jira.mariadb.org/browse/MDEV-17470): Fix the test for --embedded
 * [Revision #ed66acb291](https://github.com/MariaDB/server/commit/ed66acb291)\
   2018-12-29 02:06:19 +0100
-  * Silence LeakSanitizer by default in mariabackup, so that phanthom "leaks" would not hide more interesting information, like invalid memory accesses.
+  * Silence LeakSanitizer by default in mariadb-backup, so that phanthom "leaks" would not hide more interesting information, like invalid memory accesses.
 * Merge [Revision #33caaba5c8](https://github.com/MariaDB/server/commit/33caaba5c8) 2018-12-28 17:40:38 +0200 - Merge 10.1 into 10.2
 * [Revision #c5a5eaa9a9](https://github.com/MariaDB/server/commit/c5a5eaa9a9)\
   2018-12-14 01:28:55 +0300

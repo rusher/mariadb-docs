@@ -82,7 +82,7 @@ details of the revision and view diffs of the code modified in that revision.
   * bump the VERSION
 * [Revision #605b835220](https://github.com/MariaDB/server/commit/605b835220)\
   2017-08-18 10:07:11 +0300
-  * [MDEV-13754](https://jira.mariadb.org/browse/MDEV-13754) Memory leak in mariabackup.incremental\_backup
+  * [MDEV-13754](https://jira.mariadb.org/browse/MDEV-13754) Memory leak in mariadb-backup.incremental\_backup
 * [Revision #74ce0cf148](https://github.com/MariaDB/server/commit/74ce0cf148)\
   2017-08-18 10:00:56 +0300
   * [MDEV-13574](https://jira.mariadb.org/browse/MDEV-13574) related mariadb-backup code cleanup (non-functional change)
@@ -199,7 +199,7 @@ details of the revision and view diffs of the code modified in that revision.
   * Cleaned up output from thr\_print\_locks
 * [Revision #4040a17ea2](https://github.com/MariaDB/server/commit/4040a17ea2)\
   2017-08-23 16:27:24 +0200
-  * Compile mariabackup with its own copy of net\_serv.cc
+  * Compile mariadb-backup with its own copy of net\_serv.cc
 * [Revision #7a5eb00322](https://github.com/MariaDB/server/commit/7a5eb00322)\
   2017-08-23 15:20:38 +0200
   * fix 64-bit tests too
@@ -420,7 +420,7 @@ details of the revision and view diffs of the code modified in that revision.
   * Fix debian control file syntax.
 * [Revision #2312556bba](https://github.com/MariaDB/server/commit/2312556bba)\
   2017-07-08 21:57:54 +0000
-  * Attempt to fix mariabackup debian packaging in 10.3
+  * Attempt to fix mariadb-backup debian packaging in 10.3
 * Merge [Revision #0496430ffa](https://github.com/MariaDB/server/commit/0496430ffa) 2017-07-07 21:27:26 +0400 - Merge remote-tracking branch 'origin/bb-10.2-ext' into 10.3
 * Merge [Revision #30fee6150a](https://github.com/MariaDB/server/commit/30fee6150a) 2017-07-07 19:48:35 +0400 - Merge remote-tracking branch 'origin/10.2' into bb-10.2-ext
 * [Revision #c1885d22df](https://github.com/MariaDB/server/commit/c1885d22df)\

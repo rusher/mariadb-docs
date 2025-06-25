@@ -28,7 +28,7 @@ details of the revision and view diffs of the code modified in that revision.
 * Merge [Revision #b7392d142a](https://github.com/MariaDB/server/commit/b7392d142a) 2019-01-03 16:58:05 +0200 - Merge 10.1 into 10.2
 * [Revision #7158edcba3](https://github.com/MariaDB/server/commit/7158edcba3)\
   2019-01-03 16:24:22 +0200
-  * [MDEV-18129](https://jira.mariadb.org/browse/MDEV-18129) Backup fails for encrypted tables: mariabackup: Database page corruption detected at page 1
+  * [MDEV-18129](https://jira.mariadb.org/browse/MDEV-18129) Backup fails for encrypted tables: mariadb-backup: Database page corruption detected at page 1
 * [Revision #8cbb0bfaf7](https://github.com/MariaDB/server/commit/8cbb0bfaf7)\
   2018-12-31 00:25:27 +0100
   * "fix" sequence.temporary test
@@ -87,7 +87,7 @@ details of the revision and view diffs of the code modified in that revision.
 * Merge [Revision #af9731071d](https://github.com/MariaDB/server/commit/af9731071d) 2018-12-18 09:44:49 +0200 - Merge pull request #1031 from tempesta-tech/sysprg/[MDEV-17786](https://jira.mariadb.org/browse/MDEV-17786)
 * [Revision #dcef75df9f](https://github.com/MariaDB/server/commit/dcef75df9f)\
   2018-12-12 13:49:45 +0100
-  * DEV-17786: Add mariabackup test case for galera\_sst\_xtrabackup-v2\_data\_dir
+  * DEV-17786: Add mariadb-backup test case for galera\_sst\_xtrabackup-v2\_data\_dir
 * Merge [Revision #45531949ae](https://github.com/MariaDB/server/commit/45531949ae) 2018-12-18 09:15:41 +0200 - Merge 10.2 into 10.3
 * Merge [Revision #36b7f8f4b0](https://github.com/MariaDB/server/commit/36b7f8f4b0) 2018-12-17 18:37:56 +0200 - Merge pull request #1030 from tempesta-tech/sysprg/[MDEV-17848](https://jira.mariadb.org/browse/MDEV-17848)
 * [Revision #d48ac8b414](https://github.com/MariaDB/server/commit/d48ac8b414)\
@@ -105,7 +105,7 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-17967](https://jira.mariadb.org/browse/MDEV-17967) Add a solution of the 8 queens problem to the regression test for CTE
 * [Revision #ac31ff6275](https://github.com/MariaDB/server/commit/ac31ff6275)\
   2018-12-10 23:31:54 +0100
-  * [MDEV-15760](https://jira.mariadb.org/browse/MDEV-15760) - don't build mariabackup with -DPLUGIN\_INNOBASE=DYNAMIC
+  * [MDEV-15760](https://jira.mariadb.org/browse/MDEV-15760) - don't build mariadb-backup with -DPLUGIN\_INNOBASE=DYNAMIC
 * [Revision #8aef7f2bb9](https://github.com/MariaDB/server/commit/8aef7f2bb9)\
   2018-12-10 00:34:41 +0530
   * [MDEV-17778](https://jira.mariadb.org/browse/MDEV-17778): Alter table leads to a truncation warning with ANALYZE command
@@ -135,7 +135,7 @@ details of the revision and view diffs of the code modified in that revision.
 * Merge [Revision #babb000a36](https://github.com/MariaDB/server/commit/babb000a36) 2018-11-28 01:02:46 +0200 - Merge 10.2 into 10.3
 * [Revision #4b88d5ee51](https://github.com/MariaDB/server/commit/4b88d5ee51)\
   2018-11-27 15:26:18 +0200
-  * [MDEV-17771](https://jira.mariadb.org/browse/MDEV-17771): Add Galera ist and sst tests using mariabackup
+  * [MDEV-17771](https://jira.mariadb.org/browse/MDEV-17771): Add Galera ist and sst tests using mariadb-backup
 * Merge [Revision #36359157cf](https://github.com/MariaDB/server/commit/36359157cf) 2018-11-26 16:44:11 +0200 - Merge 10.2 into 10.3
 * Merge [Revision #1afed20774](https://github.com/MariaDB/server/commit/1afed20774) 2018-11-26 14:05:15 +0200 - Merge 10.2 into 10.3
 * [Revision #06972b2fbc](https://github.com/MariaDB/server/commit/06972b2fbc)\

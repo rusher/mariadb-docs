@@ -210,7 +210,7 @@ details of the revision and view diffs of the code modified in that revision.
   * MENT-1019.
 * [Revision #582cf12f94](https://github.com/MariaDB/server/commit/582cf12f94)\
   2021-08-11 11:40:42 +0200
-  * mariabackup - fix string format in error message
+  * mariadb-backup - fix string format in error message
 * [Revision #74cb160992](https://github.com/MariaDB/server/commit/74cb160992)\
   2021-08-06 10:08:20 +0300
   * Fix test failure on galera\_as\_slave\_replay by adding wait\_conditions

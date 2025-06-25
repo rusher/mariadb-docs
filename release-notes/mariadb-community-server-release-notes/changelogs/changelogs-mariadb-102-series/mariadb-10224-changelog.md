@@ -112,7 +112,7 @@ in that revision.
   * [MDEV-17008](https://jira.mariadb.org/browse/MDEV-17008) prepare with datadir, on Windows, does not set ACL on tablespace files
 * [Revision #4b0f010b88](https://github.com/MariaDB/server/commit/4b0f010b88)\
   2019-05-02 14:25:24 +0100
-  * [MDEV-18544](https://jira.mariadb.org/browse/MDEV-18544) "missing required privilege PROCESS on _._" using mariabackup for SST
+  * [MDEV-18544](https://jira.mariadb.org/browse/MDEV-18544) "missing required privilege PROCESS on _._" using mariadb-backup for SST
 * [Revision #ada1074bb1](https://github.com/MariaDB/server/commit/ada1074bb1)\
   2019-05-01 17:24:58 +0530
   * [MDEV-14398](https://jira.mariadb.org/browse/MDEV-14398) innodb\_encryption\_rotate\_key\_age=0 causes innodb\_encrypt\_tables to be ignored

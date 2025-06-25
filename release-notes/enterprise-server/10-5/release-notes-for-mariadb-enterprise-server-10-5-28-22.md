@@ -79,7 +79,7 @@ MariaDB Enterprise Server 10.5.28-22 was released on 19 Mar 2025.
 * Fix possibly wrong result using a degenerated subquery `(SELECT <expr>)` with window function ([MDEV-35869](https://jira.mariadb.org/browse/MDEV-35869))
 * The "`Failed to write to mysql.slow_log`" error no longer shown without a detailed reason for the error ([MDEV-20281](https://jira.mariadb.org/browse/MDEV-20281))
 * Fix `debian-start` script failure when using non-standard socket path ([MDEV-35907](https://jira.mariadb.org/browse/MDEV-35907))
-* `wsrep_sst_mariabackup.sh` no longer uses `--use-memory default (100MB)` resulting in prepare stage which could take hours ([MDEV-35749](https://jira.mariadb.org/browse/MDEV-35749))
+* `wsrep_sst_mariadb-backup.sh` no longer uses `--use-memory default (100MB)` resulting in prepare stage which could take hours ([MDEV-35749](https://jira.mariadb.org/browse/MDEV-35749))
 * For a `SPIDER` engine based table a `SELECT` from the spider table and `INSERT` into a local table fails with '`Out of Range Value for Column XX_YY`' Causes ERROR 1264 (22003) (MENT-2204)
 
 ### Related to performance

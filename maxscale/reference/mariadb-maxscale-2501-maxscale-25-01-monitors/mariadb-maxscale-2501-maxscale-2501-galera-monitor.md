@@ -101,7 +101,7 @@ original node for as long as the new primary node is running. In this case the`M
 
 This option allows Galera nodes to be used normally when they are donors in an\
 SST operation when the SST method is non-blocking\
-(e.g. `wsrep_sst_method=mariabackup`).
+(e.g. `wsrep_sst_method=mariadb-backup`).
 
 Normally when an SST is performed, both participating nodes lose their `Synced`,`Master` or `Slave` statuses. When this option is enabled, the donor is treated as\
 if it was a normal member of the cluster (i.e. `wsrep_local_state = 4`). This is\
@@ -109,7 +109,7 @@ especially useful if the cluster drops down to one node and an SST is required\
 to increase the cluster size.
 
 The current list of non-blocking SST\
-methods are `xtrabackup`, `xtrabackup-v2` and `mariabackup`. Read the[wsrep\_sst\_method](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables)\
+methods are `xtrabackup`, `xtrabackup-v2` and `mariadb-backup`. Read the[wsrep\_sst\_method](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables)\
 documentation for more details.
 
 #### `disable_master_role_setting`

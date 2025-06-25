@@ -188,17 +188,17 @@ details of the revision and view diffs of the code modified in that revision.
 * Merge [Revision #38e12db478](https://github.com/MariaDB/server/commit/38e12db478) 2017-10-26 13:36:38 +0300 - Merge 10.0 into 10.1
 * [Revision #909cdafd35](https://github.com/MariaDB/server/commit/909cdafd35)\
   2017-10-25 09:06:45 +0300
-  * [MDEV-13496](https://jira.mariadb.org/browse/MDEV-13496) Use "mariabackup" rather than "xtrabackup" in console output
+  * [MDEV-13496](https://jira.mariadb.org/browse/MDEV-13496) Use "mariadb-backup" rather than "xtrabackup" in console output
 * Merge [Revision #db203d7471](https://github.com/MariaDB/server/commit/db203d7471) 2017-10-24 19:26:24 +0300 - Merge 10.0 into 10.1
 * [Revision #4330505629](https://github.com/MariaDB/server/commit/4330505629)\
   2017-10-23 14:17:50 +0000
   * Do not use File::Which, it is not always available.
 * [Revision #72407e544e](https://github.com/MariaDB/server/commit/72407e544e)\
   2017-10-23 10:37:28 +0000
-  * [MDEV-13496](https://jira.mariadb.org/browse/MDEV-13496) Use "mariabackup" rather than "xtrabackup" in console output
+  * [MDEV-13496](https://jira.mariadb.org/browse/MDEV-13496) Use "mariadb-backup" rather than "xtrabackup" in console output
 * [Revision #125ce6f82f](https://github.com/MariaDB/server/commit/125ce6f82f)\
   2017-10-23 10:30:17 +0000
-  * [MDEV-14102](https://jira.mariadb.org/browse/MDEV-14102) restore --remove-original options for mariabackup
+  * [MDEV-14102](https://jira.mariadb.org/browse/MDEV-14102) restore --remove-original options for mariadb-backup
 * [Revision #2aa51f528f](https://github.com/MariaDB/server/commit/2aa51f528f)\
   2017-10-22 13:18:38 +0200
   * Various compier warnings
@@ -236,7 +236,7 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-13798](https://jira.mariadb.org/browse/MDEV-13798) - fix incorrect alignment of the buffer in incremental backup
 * [Revision #0f8295d7d5](https://github.com/MariaDB/server/commit/0f8295d7d5)\
   2017-10-06 22:34:51 +0000
-  * [MDEV-13822](https://jira.mariadb.org/browse/MDEV-13822) mariabackup incremental prepare incorrectly sets file size.
+  * [MDEV-13822](https://jira.mariadb.org/browse/MDEV-13822) mariadb-backup incremental prepare incorrectly sets file size.
 * [Revision #420798a81a](https://github.com/MariaDB/server/commit/420798a81a)\
   2017-10-06 16:36:40 +0000
   * Refactor os\_file\_set\_size to extend already existing files.

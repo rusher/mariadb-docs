@@ -74,7 +74,7 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-16153](https://jira.mariadb.org/browse/MDEV-16153) Server crashes in Apc\_target::disable, ASAN heap-use-after-free in Explain\_query::Explain\_query upon/after EXECUTE IMMEDIATE
 * [Revision #207e5ba316](https://github.com/MariaDB/server/commit/207e5ba316)\
   2018-05-19 17:04:47 +0000
-  * mariabackup : Fix race condition when killing query waiting for MDL
+  * mariadb-backup : Fix race condition when killing query waiting for MDL
 * [Revision #dd51082eca](https://github.com/MariaDB/server/commit/dd51082eca)\
   2018-05-19 00:26:35 +0300
   * [MDEV-12465](https://jira.mariadb.org/browse/MDEV-12465): Server crashes in my\_scan\_weight\_utf8\_bin upon collecting stats for RocksDB table
@@ -652,7 +652,7 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-12645](https://jira.mariadb.org/browse/MDEV-12645) - mysql\_install\_db: no install test db option
 * [Revision #8bbcc0d505](https://github.com/MariaDB/server/commit/8bbcc0d505)\
   2018-04-30 18:12:14 +0300
-  * [MDEV-12218](https://jira.mariadb.org/browse/MDEV-12218): Put back mariabackup --innodb-flush-method
+  * [MDEV-12218](https://jira.mariadb.org/browse/MDEV-12218): Put back mariadb-backup --innodb-flush-method
 * [Revision #9801715cb0](https://github.com/MariaDB/server/commit/9801715cb0)\
   2018-04-30 15:46:09 +0300
   * Use compile\_time\_assert() in InnoDB

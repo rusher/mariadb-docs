@@ -162,7 +162,7 @@ details of the revision and view diffs of the code modified in that revision.
   * galera: synchronization changes to stop random test failures
 * [Revision #10b2187a94](https://github.com/MariaDB/server/commit/10b2187a94)\
   2025-03-31 23:03:13 +0200
-  * Fix random mariabackup crashes with latest pcre2.
+  * Fix random mariadb-backup crashes with latest pcre2.
 * [Revision #c1492f3d07](https://github.com/MariaDB/server/commit/c1492f3d07)\
   2025-03-30 18:54:23 +0300
   * [MDEV-36115](https://jira.mariadb.org/browse/MDEV-36115) InnoDB: assertion: node->pcur->rel\_pos == BTR\_PCUR\_ON in row\_update\_for\_mysql
@@ -201,7 +201,7 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-36229](https://jira.mariadb.org/browse/MDEV-36229): Remove CAP\_DAC\_OVERRIDE CAP\_AUDIT\_WRITE from AmbientCapabilities
 * [Revision #2469963f05](https://github.com/MariaDB/server/commit/2469963f05)\
   2025-03-14 11:32:27 +0530
-  * [MDEV-36270](https://jira.mariadb.org/browse/MDEV-36270) mariabackup.incremental\_compressed fails in 10.11+
+  * [MDEV-36270](https://jira.mariadb.org/browse/MDEV-36270) mariadb-backup.incremental\_compressed fails in 10.11+
 * [Revision #1277f9b451](https://github.com/MariaDB/server/commit/1277f9b451)\
   2025-03-24 12:00:30 +0200
   * [MDEV-36372](https://jira.mariadb.org/browse/MDEV-36372): Compilation is broken with the PLUGIN\_PARTITION=NO

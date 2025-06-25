@@ -330,7 +330,7 @@ in that revision.
   * [MDEV-15071](https://jira.mariadb.org/browse/MDEV-15071) backup does not store xtrabackup\_info in the --extra-lsndir directory
 * [Revision #a08121c978](https://github.com/MariaDB/server/commit/a08121c978)\
   2018-02-15 17:40:14 +0000
-  * [MDEV-14997](https://jira.mariadb.org/browse/MDEV-14997) mariabackup crashes with invalid --innodb-flush-method
+  * [MDEV-14997](https://jira.mariadb.org/browse/MDEV-14997) mariadb-backup crashes with invalid --innodb-flush-method
 * Merge [Revision #970ce270c9](https://github.com/MariaDB/server/commit/970ce270c9) 2018-02-17 14:54:12 +0200 - Merge 10.1 into 10.2
 * [Revision #8bf2c08d54](https://github.com/MariaDB/server/commit/8bf2c08d54)\
   2018-02-16 21:02:35 +0200

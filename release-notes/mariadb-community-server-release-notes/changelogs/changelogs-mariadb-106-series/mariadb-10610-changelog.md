@@ -141,7 +141,7 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-18873](https://jira.mariadb.org/browse/MDEV-18873) Server crashes in Compare\_identifiers::operator or in my\_strcasecmp\_utf8 upon ADD PERIOD IF NOT EXISTS with empty name
 * [Revision #0324bde846](https://github.com/MariaDB/server/commit/0324bde846)\
   2022-08-26 10:20:26 +1000
-  * mariabackup: remove MySQL wording
+  * mariadb-backup: remove MySQL wording
 * [Revision #79b58f1ca8](https://github.com/MariaDB/server/commit/79b58f1ca8)\
   2022-07-30 00:11:08 +1000
   * [MDEV-23607](https://jira.mariadb.org/browse/MDEV-23607) mariadb-backup - align required GRANTS to cmd options
@@ -218,7 +218,7 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-13013](https://jira.mariadb.org/browse/MDEV-13013) fixup: Adjust a test
 * [Revision #a1055ab35d](https://github.com/MariaDB/server/commit/a1055ab35d)\
   2022-08-19 09:18:24 +0300
-  * [MDEV-29043](https://jira.mariadb.org/browse/MDEV-29043) mariabackup --compress hangs
+  * [MDEV-29043](https://jira.mariadb.org/browse/MDEV-29043) mariadb-backup --compress hangs
 * [Revision #32167225c7](https://github.com/MariaDB/server/commit/32167225c7)\
   2022-08-16 17:34:38 +0530
   * [MDEV-13013](https://jira.mariadb.org/browse/MDEV-13013) InnoDB unnecessarily extends data files
@@ -245,7 +245,7 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-29250](https://jira.mariadb.org/browse/MDEV-29250) InnoDB: Failing assertion: table->get\_ref\_count() == 0
 * [Revision #75c416d362](https://github.com/MariaDB/server/commit/75c416d362)\
   2022-08-19 09:26:13 +0300
-  * [MDEV-24626](https://jira.mariadb.org/browse/MDEV-24626) fixup: mariabackup.compress\_qpress
+  * [MDEV-24626](https://jira.mariadb.org/browse/MDEV-24626) fixup: mariadb-backup.compress\_qpress
 * [Revision #c2df3d30c0](https://github.com/MariaDB/server/commit/c2df3d30c0)\
   2022-08-18 17:12:00 +0300
   * [MDEV-21452](https://jira.mariadb.org/browse/MDEV-21452) fixup: Avoid an unnecessary mutex operation

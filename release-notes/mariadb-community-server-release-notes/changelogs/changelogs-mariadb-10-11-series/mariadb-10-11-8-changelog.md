@@ -200,7 +200,7 @@ details of the revision and view diffs of the code modified in that revision.
   * Fixed mtr random bug in lock\_sync.test
 * [Revision #ee27bf749b](https://github.com/MariaDB/server/commit/ee27bf749b)\
   2024-03-01 12:44:32 +0200
-  * Disable mariabackup.aria\_backup with msan because of timeouts
+  * Disable mariadb-backup.aria\_backup with msan because of timeouts
 * [Revision #8d70ec59f1](https://github.com/MariaDB/server/commit/8d70ec59f1)\
   2024-03-01 10:42:44 +0200
   * Removed printing error output in bootstrap.test

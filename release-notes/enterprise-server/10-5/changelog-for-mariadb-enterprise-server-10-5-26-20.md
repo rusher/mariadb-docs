@@ -55,7 +55,7 @@ MariaDB Enterprise Server 10.5.26-20 was released on 2024-09-09.
 * ([MDEV-34506](https://jira.mariadb.org/browse/MDEV-34506)) 2nd execution name resolution problem with pushdown into unions
 * (MENT-2122) Backport [MDEV-33465](https://jira.mariadb.org/browse/MDEV-33465) to 10.5 ES
 * ([MDEV-34170](https://jira.mariadb.org/browse/MDEV-34170)) table gtid\_slave\_pos entries never been deleted with wsrep\_gtid\_mode = 0
-* ([MDEV-32158](https://jira.mariadb.org/browse/MDEV-32158)) wsrep\_sst\_mariabackup use /tmp dir during SST rather then user defined tmpdir
+* ([MDEV-32158](https://jira.mariadb.org/browse/MDEV-32158)) wsrep\_sst\_mariadb-backup use /tmp dir during SST rather then user defined tmpdir
 * ([MDEV-12008](https://jira.mariadb.org/browse/MDEV-12008)) Change error code for Galera unkillable threads
 * ([MDEV-24411](https://jira.mariadb.org/browse/MDEV-24411)) Trigger doesn't work correctly with bulk insert
 * ([MDEV-32633](https://jira.mariadb.org/browse/MDEV-32633)) galera\_gtid\_2\_cluster: Assertion `'thd->wsrep_next_trx_id() != (0x7fffffffffffffffLL * 2ULL + 1)'`

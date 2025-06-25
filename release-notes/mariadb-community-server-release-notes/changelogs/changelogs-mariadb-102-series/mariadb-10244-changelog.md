@@ -17,7 +17,7 @@ in that revision.
   * [MDEV-28606](https://jira.mariadb.org/browse/MDEV-28606) Server crashes in st\_select\_lex::add\_table\_to\_list instead of error 1066: Not unique table/alias
 * [Revision #84984b79f2](https://github.com/MariaDB/server/commit/84984b79f2)\
   2022-05-17 11:36:09 +0200
-  * Revert "[MDEV-27524](https://jira.mariadb.org/browse/MDEV-27524): Incorrect binlogs after Galera SST using rsync and mariabackup"
+  * Revert "[MDEV-27524](https://jira.mariadb.org/browse/MDEV-27524): Incorrect binlogs after Galera SST using rsync and mariadb-backup"
 * [Revision #2d26f712df](https://github.com/MariaDB/server/commit/2d26f712df)\
   2022-05-12 14:57:01 -0600
   * [MDEV-28550](https://jira.mariadb.org/browse/MDEV-28550): improper handling of replication event group that contains Gtid\_log\_list\_event
@@ -53,7 +53,7 @@ in that revision.
   * New CC 3.1
 * [Revision #680ca15269](https://github.com/MariaDB/server/commit/680ca15269)\
   2022-04-30 08:49:13 +0400
-  * [MDEV-28446](https://jira.mariadb.org/browse/MDEV-28446) mariabackup prepare fails for incrementals if a new schema is created after full backup is taken
+  * [MDEV-28446](https://jira.mariadb.org/browse/MDEV-28446) mariadb-backup prepare fails for incrementals if a new schema is created after full backup is taken
 * [Revision #f354e457e1](https://github.com/MariaDB/server/commit/f354e457e1)\
   2022-04-27 18:48:06 +0200
   * Bug#33578113: DROP privilege on performance\_schema.\* can't be revoked
@@ -114,7 +114,7 @@ in that revision.
   * [MDEV-27697](https://jira.mariadb.org/browse/MDEV-27697) slave must recognize incomplete replication event group
 * [Revision #907e4c62ce](https://github.com/MariaDB/server/commit/907e4c62ce)\
   2022-04-18 19:43:25 +0400
-  * [MDEV-21037](https://jira.mariadb.org/browse/MDEV-21037) mariabackup does not detect multi-source replication slave
+  * [MDEV-21037](https://jira.mariadb.org/browse/MDEV-21037) mariadb-backup does not detect multi-source replication slave
 * [Revision #3fec38d91d](https://github.com/MariaDB/server/commit/3fec38d91d)\
   2022-04-25 09:08:09 +0400
   * [MDEV-28405](https://jira.mariadb.org/browse/MDEV-28405) main.information\_schema\_tables fails sporadically with ER\_NEED\_REPREPARE or extra warning
@@ -288,13 +288,13 @@ in that revision.
   * [MDEV-27777](https://jira.mariadb.org/browse/MDEV-27777): Some Galera tests fail on FreeBSD
 * [Revision #17e0f5224c](https://github.com/MariaDB/server/commit/17e0f5224c)\
   2022-02-22 10:45:06 +0100
-  * [MDEV-27524](https://jira.mariadb.org/browse/MDEV-27524): Incorrect binlogs after Galera SST using rsync and mariabackup
+  * [MDEV-27524](https://jira.mariadb.org/browse/MDEV-27524): Incorrect binlogs after Galera SST using rsync and mariadb-backup
 * [Revision #571eb9d775](https://github.com/MariaDB/server/commit/571eb9d775)\
   2022-01-18 19:07:01 +0100
-  * mariabackup: cosmetic changes (whitespaces and indentation)
+  * mariadb-backup: cosmetic changes (whitespaces and indentation)
 * [Revision #c753b3f6f8](https://github.com/MariaDB/server/commit/c753b3f6f8)\
   2022-01-18 13:00:31 +0100
-  * [MDEV-27534](https://jira.mariadb.org/browse/MDEV-27534): mariabackup: missing line in the compress\_qpress.result
+  * [MDEV-27534](https://jira.mariadb.org/browse/MDEV-27534): mariadb-backup: missing line in the compress\_qpress.result
 * [Revision #647e952315](https://github.com/MariaDB/server/commit/647e952315)\
   2020-12-14 14:34:14 +0530
   * [MDEV-15208](https://jira.mariadb.org/browse/MDEV-15208): server crashed, when using ORDER BY with window function and UNION

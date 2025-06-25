@@ -75,7 +75,7 @@ in that revision.
   * [MDEV-21913](https://jira.mariadb.org/browse/MDEV-21913) Add pam\_user\_map.so file to binary tarball package
 * [Revision #d0150dc14e](https://github.com/MariaDB/server/commit/d0150dc14e)\
   2020-04-27 21:46:05 +0300
-  * [MDEV-20230](https://jira.mariadb.org/browse/MDEV-20230): mariabackup --ftwrl-wait-timeout never times out on explicit lock
+  * [MDEV-20230](https://jira.mariadb.org/browse/MDEV-20230): mariadb-backup --ftwrl-wait-timeout never times out on explicit lock
 * [Revision #581df0df89](https://github.com/MariaDB/server/commit/581df0df89)\
   2020-04-27 15:32:02 +0300
   * [MDEV-7962](https://jira.mariadb.org/browse/MDEV-7962): Follow-up fix for 10.2
@@ -321,7 +321,7 @@ in that revision.
 * Merge [Revision #75d286c2cc](https://github.com/MariaDB/server/commit/75d286c2cc) 2020-03-06 15:42:45 +0100 - Merge branch '10.1' into 10.2
 * [Revision #91aae18cc4](https://github.com/MariaDB/server/commit/91aae18cc4)\
   2020-03-06 13:46:19 +0200
-  * Enable galera.galera\_ist\_mariabackup and galera.mysql-wsrep#33.
+  * Enable galera.galera\_ist\_mariadb-backup and galera.mysql-wsrep#33.
 * [Revision #c5c1027c6e](https://github.com/MariaDB/server/commit/c5c1027c6e)\
   2020-02-26 13:46:27 +0200
   * [MDEV-19208](https://jira.mariadb.org/browse/MDEV-19208) mariadb.pc: install into libdir

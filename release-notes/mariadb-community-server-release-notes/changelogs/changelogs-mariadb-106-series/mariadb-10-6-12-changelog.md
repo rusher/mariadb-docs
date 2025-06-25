@@ -72,7 +72,7 @@ details of the revision and view diffs of the code modified in that revision.
 * Merge [Revision #a8c5635cf1](https://github.com/MariaDB/server/commit/a8c5635cf1) 2023-01-17 20:02:29 +0200 - Merge 10.5 into 10.6
 * [Revision #95de5248c7](https://github.com/MariaDB/server/commit/95de5248c7)\
   2022-06-17 15:16:23 +0300
-  * [MDEV-26391](https://jira.mariadb.org/browse/MDEV-26391) BF abortable mariabackup execution
+  * [MDEV-26391](https://jira.mariadb.org/browse/MDEV-26391) BF abortable mariadb-backup execution
 * Merge [Revision #3386b30975](https://github.com/MariaDB/server/commit/3386b30975) 2023-01-13 10:45:41 +0200 - Merge 10.5 into 10.6
 * [Revision #5aa58a0d39](https://github.com/MariaDB/server/commit/5aa58a0d39)\
   2023-01-12 15:14:37 +0100
@@ -211,7 +211,7 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-29978](https://jira.mariadb.org/browse/MDEV-29978) Corruption errors upon CHECK on temporary InnoDB table
 * [Revision #704c74cd99](https://github.com/MariaDB/server/commit/704c74cd99)\
   2022-11-14 16:08:13 +0530
-  * [MDEV-29987](https://jira.mariadb.org/browse/MDEV-29987) Bogus errors about file size in the test mariabackup.defer\_space
+  * [MDEV-29987](https://jira.mariadb.org/browse/MDEV-29987) Bogus errors about file size in the test mariadb-backup.defer\_space
 * [Revision #505da21e33](https://github.com/MariaDB/server/commit/505da21e33)\
   2022-11-11 12:28:44 +0400
   * [MDEV-27214](https://jira.mariadb.org/browse/MDEV-27214) Import with disabled keys corrupts meta-data like rows, indexes, ...

@@ -90,7 +90,7 @@ Thanks, and enjoy MariaDB!
 * Deadlock found when trying to get lock during applying ([MDEV-31658](https://jira.mariadb.org/browse/MDEV-31658))
 * Change error code for Galera unkillable threads ([MDEV-12008](https://jira.mariadb.org/browse/MDEV-12008))
 * 10.11.8 cluster becomes inconsistent when using composite primary key and partitioning ([MDEV-34269](https://jira.mariadb.org/browse/MDEV-34269))
-* `wsrep_sst_mariabackup` use `/tmp` dir during SST rather then user defined `tmpdir` ([MDEV-32158](https://jira.mariadb.org/browse/MDEV-32158))
+* `wsrep_sst_mariadb-backup` use `/tmp` dir during SST rather then user defined `tmpdir` ([MDEV-32158](https://jira.mariadb.org/browse/MDEV-32158))
 
 ### Error Log
 

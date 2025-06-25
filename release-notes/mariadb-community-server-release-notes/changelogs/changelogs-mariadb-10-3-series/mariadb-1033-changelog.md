@@ -116,7 +116,7 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-14293](https://jira.mariadb.org/browse/MDEV-14293): MyRocks lacks basic functionality
 * [Revision #a9a4089175](https://github.com/MariaDB/server/commit/a9a4089175)\
   2017-12-14 13:47:38 +0200
-  * Plug a small memory leak in mariabackup --backup
+  * Plug a small memory leak in mariadb-backup --backup
 * [Revision #8ed78cf7f9](https://github.com/MariaDB/server/commit/8ed78cf7f9)\
   2017-12-18 12:24:02 +0400
   * xa.test fixed to be thread-stable.
@@ -632,7 +632,7 @@ details of the revision and view diffs of the code modified in that revision.
 * Merge [Revision #3fe261bd2b](https://github.com/MariaDB/server/commit/3fe261bd2b) 2017-11-29 15:08:04 +0000 - Merge remote-tracking branch 'origin/10.1' into 10.2
 * [Revision #bf6d11c4d6](https://github.com/MariaDB/server/commit/bf6d11c4d6)\
   2017-11-29 14:53:12 +0000
-  * [MDEV-14536](https://jira.mariadb.org/browse/MDEV-14536) : In mariabackup, reread redo log blocks , if checksum mismatch is detected.
+  * [MDEV-14536](https://jira.mariadb.org/browse/MDEV-14536) : In mariadb-backup, reread redo log blocks , if checksum mismatch is detected.
 * [Revision #8cee2f136d](https://github.com/MariaDB/server/commit/8cee2f136d)\
   2017-11-23 18:42:28 +0200
   * [MDEV-13384](https://jira.mariadb.org/browse/MDEV-13384): "window" seems like a reserved column name but it's not listed as one

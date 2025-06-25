@@ -47,7 +47,7 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-19949](https://jira.mariadb.org/browse/MDEV-19949) `mariadb-backup --password` test
 * [Revision #421eeb18b8](https://github.com/MariaDB/server/commit/421eeb18b8)\
   2024-05-07 09:39:02 +0200
-  * Revert "[MDEV-19949](https://jira.mariadb.org/browse/MDEV-19949) mariabackup option of '--password' or '-p' without specifying password in commandline"
+  * Revert "[MDEV-19949](https://jira.mariadb.org/browse/MDEV-19949) mariadb-backup option of '--password' or '-p' without specifying password in commandline"
 * [Revision #33e4fbf045](https://github.com/MariaDB/server/commit/33e4fbf045)\
   2024-04-12 15:40:11 +0300
   * [MDEV-33898](https://jira.mariadb.org/browse/MDEV-33898) : Galera test failure on galera.MW-369
@@ -112,7 +112,7 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-29345](https://jira.mariadb.org/browse/MDEV-29345) update case insensitive (large) unique key with insensitive change of value - duplicate key
 * [Revision #91fb8b7fd3](https://github.com/MariaDB/server/commit/91fb8b7fd3)\
   2024-04-29 22:41:07 +0200
-  * [MDEV-19949](https://jira.mariadb.org/browse/MDEV-19949) mariabackup option of '--password' or '-p' without specifying password in commandline
+  * [MDEV-19949](https://jira.mariadb.org/browse/MDEV-19949) mariadb-backup option of '--password' or '-p' without specifying password in commandline
 * [Revision #cd0356a764](https://github.com/MariaDB/server/commit/cd0356a764)\
   2024-04-27 13:35:48 +0300
   * [MDEV-34077](https://jira.mariadb.org/browse/MDEV-34077) scripts/mariadb-install-db: Error in my\_thread\_global\_end(): 1 threads didn't exit
@@ -232,7 +232,7 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-20157](https://jira.mariadb.org/browse/MDEV-20157) perfschema.stage\_mdl\_function failed in buildbot with wrong result
 * [Revision #259394aed7](https://github.com/MariaDB/server/commit/259394aed7)\
   2024-04-23 15:11:52 +0200
-  * disable mariabackup.incremental\_encrypted,64k on 32bit
+  * disable mariadb-backup.incremental\_encrypted,64k on 32bit
 * [Revision #e2f95ebbcb](https://github.com/MariaDB/server/commit/e2f95ebbcb)\
   2024-04-23 14:45:23 +0200
   * fix galera\_3nodes.galera\_gtid\_consistency to work with nc
@@ -594,7 +594,7 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-26923](https://jira.mariadb.org/browse/MDEV-26923) Check all invalid config options
 * [Revision #969669767b](https://github.com/MariaDB/server/commit/969669767b)\
   2024-02-27 17:59:20 +0530
-  * [MDEV-33011](https://jira.mariadb.org/browse/MDEV-33011) mariabackup --backup: FATAL ERROR: ... Can't open datafile cool\_down/t3
+  * [MDEV-33011](https://jira.mariadb.org/browse/MDEV-33011) mariadb-backup --backup: FATAL ERROR: ... Can't open datafile cool\_down/t3
 * [Revision #8778a83eee](https://github.com/MariaDB/server/commit/8778a83eee)\
   2024-02-22 22:58:52 -0800
   * [MDEV-31276](https://jira.mariadb.org/browse/MDEV-31276) Wrong warnings on 2-nd execution of PS for query with GROUP\_CONCAT
@@ -655,7 +655,7 @@ details of the revision and view diffs of the code modified in that revision.
   * Fix a case of `unused-but-set-variable`
 * [Revision #44f5fa2db9](https://github.com/MariaDB/server/commit/44f5fa2db9)\
   2023-12-30 16:30:22 -0500
-  * Fix timeout(1) usage in wsrep\_sst\_mariabackup on \*BSD
+  * Fix timeout(1) usage in wsrep\_sst\_mariadb-backup on \*BSD
 * [Revision #81f3e97bc8](https://github.com/MariaDB/server/commit/81f3e97bc8)\
   2024-02-12 17:01:45 +0200
   * [MDEV-33383](https://jira.mariadb.org/browse/MDEV-33383): Corrupted red-black tree due to incorrect comparison

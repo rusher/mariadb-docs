@@ -57,7 +57,7 @@ details of the revision and view diffs of the code modified in that revision.
   * Fix perfschema.hostcache\_ipv4\_max\_con
 * [Revision #4c7a1a1b9e](https://github.com/MariaDB/server/commit/4c7a1a1b9e)\
   2018-04-11 23:22:33 +0100
-  * [MDEV-15780](https://jira.mariadb.org/browse/MDEV-15780) : mariabackup does not handle absolute names in for system tablespaces
+  * [MDEV-15780](https://jira.mariadb.org/browse/MDEV-15780) : mariadb-backup does not handle absolute names in for system tablespaces
 * [Revision #740fc2ae08](https://github.com/MariaDB/server/commit/740fc2ae08)\
   2018-04-10 18:07:29 -0700
   * Fixed [MDEV-15765](https://jira.mariadb.org/browse/MDEV-15765) BETWEEN not working in certain cases
@@ -76,7 +76,7 @@ details of the revision and view diffs of the code modified in that revision.
   * Revert "[MDEV-14705](https://jira.mariadb.org/browse/MDEV-14705): Do not rollback on InnoDB shutdown"
 * [Revision #ecf6675cfc](https://github.com/MariaDB/server/commit/ecf6675cfc)\
   2018-04-09 19:16:50 +0100
-  * [MDEV-15713](https://jira.mariadb.org/browse/MDEV-15713) mariabackup: throw warning, if --stream is used without --backup
+  * [MDEV-15713](https://jira.mariadb.org/browse/MDEV-15713) mariadb-backup: throw warning, if --stream is used without --backup
 * [Revision #37f24806fc](https://github.com/MariaDB/server/commit/37f24806fc)\
   2018-04-09 16:22:15 +0100
   * [MDEV-15825](https://jira.mariadb.org/browse/MDEV-15825) mariadb-backup help mentions Percona and PXC but not MariaDB
@@ -443,13 +443,13 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-15764](https://jira.mariadb.org/browse/MDEV-15764) InnoDB may write uninitialized garbage to redo log
 * [Revision #d9c5a46678](https://github.com/MariaDB/server/commit/d9c5a46678)\
   2018-04-03 16:43:36 +0530
-  * [MDEV-15737](https://jira.mariadb.org/browse/MDEV-15737) assertion in mariabackup.exe!recv\_calc\_lsn\_on\_data\_add()
+  * [MDEV-15737](https://jira.mariadb.org/browse/MDEV-15737) assertion in mariadb-backup.exe!recv\_calc\_lsn\_on\_data\_add()
 * [Revision #6223f1dd98](https://github.com/MariaDB/server/commit/6223f1dd98)\
   2018-03-25 22:12:38 +0200
   * [MDEV-15579](https://jira.mariadb.org/browse/MDEV-15579) Crash in Item\_field::used\_tables() called by Item::derived\_field\_transformer\_for\_having
 * [Revision #27c24808f7](https://github.com/MariaDB/server/commit/27c24808f7)\
   2018-03-29 22:13:01 +0000
-  * [MDEV-15636](https://jira.mariadb.org/browse/MDEV-15636) mariabackup --lock-ddl-per-table hangs if ALTER table is running concurrently.
+  * [MDEV-15636](https://jira.mariadb.org/browse/MDEV-15636) mariadb-backup --lock-ddl-per-table hangs if ALTER table is running concurrently.
 * [Revision #a1d68faa38](https://github.com/MariaDB/server/commit/a1d68faa38)\
   2018-03-29 21:41:05 +0000
   * CMake : Move INNODB\_DISALLOW\_WRITES from top-level CMakeLists.txt to innodb
@@ -601,7 +601,7 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-15472](https://jira.mariadb.org/browse/MDEV-15472): Assertion \`!is\_set() || (m\_status == DA\_OK\_BULK && is\_bulk\_op())' failure
 * [Revision #adaee46a90](https://github.com/MariaDB/server/commit/adaee46a90)\
   2018-03-29 13:22:59 +0300
-  * [MDEV-15682](https://jira.mariadb.org/browse/MDEV-15682) mariabackup.unsupported\_redo fails in buildbot with wrong result code
+  * [MDEV-15682](https://jira.mariadb.org/browse/MDEV-15682) mariadb-backup.unsupported\_redo fails in buildbot with wrong result code
 * [Revision #6cccef21a6](https://github.com/MariaDB/server/commit/6cccef21a6)\
   2018-03-29 13:22:16 +0300
   * [MDEV-15720](https://jira.mariadb.org/browse/MDEV-15720) ib\_buffer\_pool unnecessarily includes the temporary tablespace

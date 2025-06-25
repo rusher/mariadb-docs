@@ -153,10 +153,10 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-22894](https://jira.mariadb.org/browse/MDEV-22894): mariadb-backup should not read \[mariadb-client] option group from configuration files
 * [Revision #0121a9e0bb](https://github.com/MariaDB/server/commit/0121a9e0bb)\
   2020-06-16 11:21:28 +0300
-  * [MDEV-18215](https://jira.mariadb.org/browse/MDEV-18215): mariabackup does not report unknown command line options
+  * [MDEV-18215](https://jira.mariadb.org/browse/MDEV-18215): mariadb-backup does not report unknown command line options
 * [Revision #01ed614027](https://github.com/MariaDB/server/commit/01ed614027)\
   2020-06-18 12:13:31 +0300
-  * Fix the test mariabackup.[MDEV-14447](https://jira.mariadb.org/browse/MDEV-14447)
+  * Fix the test mariadb-backup.[MDEV-14447](https://jira.mariadb.org/browse/MDEV-14447)
 * [Revision #d33c9ca1b0](https://github.com/MariaDB/server/commit/d33c9ca1b0)\
   2020-06-17 22:03:27 +0530
   * [MDEV-22902](https://jira.mariadb.org/browse/MDEV-22902) Assertion \`!page\_has\_siblings(block->frame)' failed in btr\_pcur\_store\_position
@@ -177,10 +177,10 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-21759](https://jira.mariadb.org/browse/MDEV-21759) galera.galera\_parallel\_autoinc\_manytrx sporadic failures.
 * [Revision #49ac606a75](https://github.com/MariaDB/server/commit/49ac606a75)\
   2020-06-14 22:13:45 +0300
-  * Fix include statements in galera\_ipv6\_mariabackup\_section and galera\_ipv6\_mariabackup MTR tests
+  * Fix include statements in galera\_ipv6\_mariadb-backup\_section and galera\_ipv6\_mariadb-backup MTR tests
 * [Revision #9bdf35e90f](https://github.com/MariaDB/server/commit/9bdf35e90f)\
   2020-06-08 11:45:56 +0300
-  * [MDEV-18215](https://jira.mariadb.org/browse/MDEV-18215): mariabackup does not report unknown command line options [MDEV-21298](https://jira.mariadb.org/browse/MDEV-21298): mariabackup doesn't read from the \[mariadbd] and \[mariadbd-X.Y] server option groups from configuration files [MDEV-21301](https://jira.mariadb.org/browse/MDEV-21301): mariabackup doesn't read \[mariadb-backup] option group in configuration file
+  * [MDEV-18215](https://jira.mariadb.org/browse/MDEV-18215): mariadb-backup does not report unknown command line options [MDEV-21298](https://jira.mariadb.org/browse/MDEV-21298): mariadb-backup doesn't read from the \[mariadbd] and \[mariadbd-X.Y] server option groups from configuration files [MDEV-21301](https://jira.mariadb.org/browse/MDEV-21301): mariadb-backup doesn't read \[mariadb-backup] option group in configuration file
 * Merge [Revision #ceaa8b647a](https://github.com/MariaDB/server/commit/ceaa8b647a) 2020-06-14 10:32:09 +0300 - Merge commit 10.3 into 10.4
 * Merge [Revision #32b34cb95e](https://github.com/MariaDB/server/commit/32b34cb95e) 2020-06-14 10:30:20 +0300 - Merge 10.2 into 10.3
 * [Revision #2cd6afb083](https://github.com/MariaDB/server/commit/2cd6afb083)\
@@ -206,7 +206,7 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-22904](https://jira.mariadb.org/browse/MDEV-22904) Compressed row format table tries to access freed blob
 * [Revision #471d7a9762](https://github.com/MariaDB/server/commit/471d7a9762)\
   2020-06-14 22:13:45 +0300
-  * Fix include statements in galera\_ipv6\_mariabackup\_section and galera\_ipv6\_mariabackup MTR tests
+  * Fix include statements in galera\_ipv6\_mariadb-backup\_section and galera\_ipv6\_mariadb-backup MTR tests
 * [Revision #beb1918354](https://github.com/MariaDB/server/commit/beb1918354)\
   2020-06-15 16:39:41 +0300
   * [MDEV-21759](https://jira.mariadb.org/browse/MDEV-21759) galera.galera\_parallel\_autoinc\_manytrx sporadic failures.
@@ -1316,7 +1316,7 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-22591](https://jira.mariadb.org/browse/MDEV-22591) Debug build crashes on EXECUTE IMMEDIATE '... WHERE ?' USING IGNORE
 * [Revision #0f9bfcc323](https://github.com/MariaDB/server/commit/0f9bfcc323)\
   2020-05-13 14:32:12 +0300
-  * [MDEV-22554](https://jira.mariadb.org/browse/MDEV-22554): "mariabackup --prepare" exits with code 0 even though innodb error is logged
+  * [MDEV-22554](https://jira.mariadb.org/browse/MDEV-22554): "mariadb-backup --prepare" exits with code 0 even though innodb error is logged
 * Merge [Revision #a84060567c](https://github.com/MariaDB/server/commit/a84060567c) 2020-05-19 10:42:59 +0300 - Merge 10.1 into 10.2
 * [Revision #44c8d84908](https://github.com/MariaDB/server/commit/44c8d84908)\
   2020-05-15 21:49:57 +0300
@@ -1366,10 +1366,10 @@ details of the revision and view diffs of the code modified in that revision.
 * Merge [Revision #f0be95b5b0](https://github.com/MariaDB/server/commit/f0be95b5b0) 2020-05-18 14:09:34 +0300 - Merge 10.2 into 10.3
 * [Revision #f9d8571f38](https://github.com/MariaDB/server/commit/f9d8571f38)\
   2020-05-15 18:35:19 +0200
-  * [MDEV-22554](https://jira.mariadb.org/browse/MDEV-22554): galera\_sst\_mariabackup fails with "Failed to start mysqld.2"
+  * [MDEV-22554](https://jira.mariadb.org/browse/MDEV-22554): galera\_sst\_mariadb-backup fails with "Failed to start mysqld.2"
 * [Revision #e0ddb077d9](https://github.com/MariaDB/server/commit/e0ddb077d9)\
   2020-05-15 18:35:19 +0200
-  * [MDEV-22554](https://jira.mariadb.org/browse/MDEV-22554): galera\_sst\_mariabackup fails with "Failed to start mysqld.2"
+  * [MDEV-22554](https://jira.mariadb.org/browse/MDEV-22554): galera\_sst\_mariadb-backup fails with "Failed to start mysqld.2"
 * Merge [Revision #03aaa7f7a1](https://github.com/MariaDB/server/commit/03aaa7f7a1) 2020-05-18 10:47:11 +0300 - Merge 10.2 into 10.3
 * Merge [Revision #d0e3b0eea6](https://github.com/MariaDB/server/commit/d0e3b0eea6) 2020-05-18 09:43:58 +0300 - Merge 10.1 into 10.2
 * [Revision #7baa40dffa](https://github.com/MariaDB/server/commit/7baa40dffa)\
@@ -1400,7 +1400,7 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-21483](https://jira.mariadb.org/browse/MDEV-21483) : Galera MTR tests failed: galera.MW-328A galera.MW-328B
 * [Revision #ea912d1605](https://github.com/MariaDB/server/commit/ea912d1605)\
   2020-05-15 18:35:19 +0200
-  * [MDEV-22554](https://jira.mariadb.org/browse/MDEV-22554): galera\_sst\_mariabackup fails with "Failed to start mysqld.2"
+  * [MDEV-22554](https://jira.mariadb.org/browse/MDEV-22554): galera\_sst\_mariadb-backup fails with "Failed to start mysqld.2"
 * [Revision #0a5668f512](https://github.com/MariaDB/server/commit/0a5668f512)\
   2020-05-15 02:37:16 +0530
   * [MDEV-22556](https://jira.mariadb.org/browse/MDEV-22556): Incorrect result for window function when using encrypt-tmp-files=ON
@@ -1500,7 +1500,7 @@ details of the revision and view diffs of the code modified in that revision.
   * Fix clang-cl warning
 * [Revision #9f294644c4](https://github.com/MariaDB/server/commit/9f294644c4)\
   2020-05-15 18:35:19 +0200
-  * [MDEV-22554](https://jira.mariadb.org/browse/MDEV-22554): galera\_sst\_mariabackup fails with "Failed to start mysqld.2"
+  * [MDEV-22554](https://jira.mariadb.org/browse/MDEV-22554): galera\_sst\_mariadb-backup fails with "Failed to start mysqld.2"
 * [Revision #5d85bc08c6](https://github.com/MariaDB/server/commit/5d85bc08c6)\
   2020-05-16 11:48:26 +0300
   * [MDEV-21976](https://jira.mariadb.org/browse/MDEV-21976): Re-disable main.udf, reverts mistake in merge b30a01314217
@@ -1566,7 +1566,7 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-22270](https://jira.mariadb.org/browse/MDEV-22270) JUnit patch: test name contains classname
 * [Revision #218d20ffe3](https://github.com/MariaDB/server/commit/218d20ffe3)\
   2020-05-12 13:57:09 +0300
-  * [MDEV-22398](https://jira.mariadb.org/browse/MDEV-22398): mariabackup.innodb\_xa\_rollback fails on repeat
+  * [MDEV-22398](https://jira.mariadb.org/browse/MDEV-22398): mariadb-backup.innodb\_xa\_rollback fails on repeat
 * [Revision #0e6a5786d4](https://github.com/MariaDB/server/commit/0e6a5786d4)\
   2020-05-12 10:13:16 +0300
   * Cleanup: Remove InnoDB wrappers of thd\_charset(), thd\_query\_safe()
@@ -1603,7 +1603,7 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-21515](https://jira.mariadb.org/browse/MDEV-21515) : Galera test sporadic failure on galera.galera\_wsrep\_new\_cluster: Result content mismatch
 * [Revision #2907ff2c2d](https://github.com/MariaDB/server/commit/2907ff2c2d)\
   2020-04-29 17:19:54 +0300
-  * [MDEV-19741](https://jira.mariadb.org/browse/MDEV-19741) : Galera test failure on galera.galera\_sst\_mariabackup\_table\_options
+  * [MDEV-19741](https://jira.mariadb.org/browse/MDEV-19741) : Galera test failure on galera.galera\_sst\_mariadb-backup\_table\_options
 * [Revision #06b245f768](https://github.com/MariaDB/server/commit/06b245f768)\
   2020-05-05 15:35:58 +0530
   * [MDEV-13266](https://jira.mariadb.org/browse/MDEV-13266): Race condition in ANALYZE TABLE / statistics collection

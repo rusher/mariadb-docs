@@ -243,7 +243,7 @@ in that revision.
   * RocksDB: use crc32c optimised version for POWER
 * [Revision #bff9b8026b](https://github.com/MariaDB/server/commit/bff9b8026b)\
   2019-05-16 11:04:39 +0300
-  * [MDEV-14192](https://jira.mariadb.org/browse/MDEV-14192): mariabackup.incremental\_backup failed in buildbot with Failing assertion: byte\_offset % OS\_FILE\_LOG\_BLOCK\_SIZE == 0
+  * [MDEV-14192](https://jira.mariadb.org/browse/MDEV-14192): mariadb-backup.incremental\_backup failed in buildbot with Failing assertion: byte\_offset % OS\_FILE\_LOG\_BLOCK\_SIZE == 0
 * [Revision #c874040729](https://github.com/MariaDB/server/commit/c874040729)\
   2019-05-24 10:22:34 +0300
   * Declare INFORMATION\_SCHEMA.INNODB\_SYS\_VIRTUAL stable

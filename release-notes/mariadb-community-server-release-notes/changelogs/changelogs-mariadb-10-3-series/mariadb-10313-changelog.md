@@ -18,7 +18,7 @@ details of the revision and view diffs of the code modified in that revision.
   * remove aws-key management plugin
 * [Revision #5296aa8b12](https://github.com/MariaDB/server/commit/5296aa8b12)\
   2019-02-20 12:25:57 +0100
-  * [MDEV-18663](https://jira.mariadb.org/browse/MDEV-18663) Tests : use --core-file if mariabackup output is redirected to a file
+  * [MDEV-18663](https://jira.mariadb.org/browse/MDEV-18663) Tests : use --core-file if mariadb-backup output is redirected to a file
 * [Revision #1005376e58](https://github.com/MariaDB/server/commit/1005376e58)\
   2019-02-20 04:14:23 +0200
   * Updated list of unstable tests for 10.3.13 release
@@ -45,7 +45,7 @@ details of the revision and view diffs of the code modified in that revision.
   * Fixed bug in macro \_ma\_mark\_page\_with\_transid()
 * [Revision #ca76fc4a3a](https://github.com/MariaDB/server/commit/ca76fc4a3a)\
   2019-02-19 11:14:03 +0200
-  * [MDEV-18611](https://jira.mariadb.org/browse/MDEV-18611): mariabackup silently ended during xtrabackup\_copy\_logfile()
+  * [MDEV-18611](https://jira.mariadb.org/browse/MDEV-18611): mariadb-backup silently ended during xtrabackup\_copy\_logfile()
 * [Revision #d2fc9d09da](https://github.com/MariaDB/server/commit/d2fc9d09da)\
   2019-02-19 07:31:25 +0100
   * [MDEV-18204](https://jira.mariadb.org/browse/MDEV-18204) - fixup
@@ -58,7 +58,7 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-18204](https://jira.mariadb.org/browse/MDEV-18204) Fix rocksdb incremental backup
 * [Revision #40b4f9c907](https://github.com/MariaDB/server/commit/40b4f9c907)\
   2019-02-14 11:54:34 +0100
-  * [MDEV-18575](https://jira.mariadb.org/browse/MDEV-18575) remove innodb-encrypt-log parameter from mariabackup
+  * [MDEV-18575](https://jira.mariadb.org/browse/MDEV-18575) remove innodb-encrypt-log parameter from mariadb-backup
 * Merge [Revision #10cc8bbdbb](https://github.com/MariaDB/server/commit/10cc8bbdbb) 2019-02-13 09:26:37 +0200 - Merge pull request #1181 from grooverdan/10.2-submodule-update
 * [Revision #43a7409bb8](https://github.com/MariaDB/server/commit/43a7409bb8)\
   2019-02-13 17:48:12 +1100

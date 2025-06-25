@@ -28,7 +28,7 @@ details of the revision and view diffs of the code modified in that revision.
 * Merge [Revision #f5c5f8e41e](https://github.com/MariaDB/server/commit/f5c5f8e41e) 2022-02-03 17:01:31 +0100 - Merge branch '10.5' into 10.6
 * [Revision #8d742fe4ac](https://github.com/MariaDB/server/commit/8d742fe4ac)\
   2022-01-29 18:10:25 +0530
-  * [MDEV-26326](https://jira.mariadb.org/browse/MDEV-26326) mariabackup skip valid ibd file
+  * [MDEV-26326](https://jira.mariadb.org/browse/MDEV-26326) mariadb-backup skip valid ibd file
 * [Revision #62ba2f230a](https://github.com/MariaDB/server/commit/62ba2f230a)\
   2022-01-31 21:50:57 +0100
   * [MDEV-27535](https://jira.mariadb.org/browse/MDEV-27535) remove debug output

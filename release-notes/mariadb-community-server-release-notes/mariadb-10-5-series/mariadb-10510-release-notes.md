@@ -27,7 +27,7 @@ Thanks, and enjoy MariaDB!
 * Server crashes in `thd_clear_errors()` ([MDEV-23542](https://jira.mariadb.org/browse/MDEV-23542))
 * The statement set `password=password('')` executed in PS mode fails in case it is run by a user with expired password ([MDEV-25197](https://jira.mariadb.org/browse/MDEV-25197))
 
-### mariabackup
+### mariadb-backup
 
 * RENAME TABLE causes "Ignoring data file" messages ([MDEV-25568](https://jira.mariadb.org/browse/MDEV-25568))
 

@@ -75,7 +75,7 @@ MariaDB Enterprise Server 10.5.28-22 was released on 19 Mar 2025.
 * ([MDEV-35869](https://jira.mariadb.org/browse/MDEV-35869)) Fix possibly wrong result using a degenerated subquery (SELECT ) with window function
 * ([MDEV-20281](https://jira.mariadb.org/browse/MDEV-20281)) The "Failed to write to mysql.slow\_log" error no longer shown without a detailed reason for the error
 * ([MDEV-35907](https://jira.mariadb.org/browse/MDEV-35907)) Fix debian-start script failure when using non-standard socket path
-* ([MDEV-35749](https://jira.mariadb.org/browse/MDEV-35749)) wsrep\_sst\_mariabackup.sh no longer uses --use-memory default (100MB) resulting in prepare stage which could take hours
+* ([MDEV-35749](https://jira.mariadb.org/browse/MDEV-35749)) wsrep\_sst\_mariadb-backup.sh no longer uses --use-memory default (100MB) resulting in prepare stage which could take hours
 * (MENT-2204) For a SPIDER engine based table a SELECT from the spider table and INSERT into a local table fails with 'Out of Range Value for Column XX\_YY' Causes ERROR 1264 (22003)
 * (MENT-2226) Cherry-pick [MDEV-36026](https://jira.mariadb.org/browse/MDEV-36026) - Problem with INSERT SELECT on NOT NULL columns while having BEFORE UPDATE trigger
 * ([MDEV-35098](https://jira.mariadb.org/browse/MDEV-35098)) rpl.rpl\_mysqldump\_gtid\_slave\_pos fails in buildbot
@@ -145,7 +145,7 @@ MariaDB Enterprise Server 10.5.28-22 was released on 19 Mar 2025.
 * ([MDEV-35583](https://jira.mariadb.org/browse/MDEV-35583)) explicitly initialize THR\_KEY\_mysys calling MY\_INIT and my\_end
 * ([MDEV-35514](https://jira.mariadb.org/browse/MDEV-35514)) Too much mtr output from analyze: sync\_with\_master
 * ([MDEV-31366](https://jira.mariadb.org/browse/MDEV-31366)) Assertion \`thd->start\_time' failed in bool LOGGER::slow\_log\_print(THD\*, const char\*, size\_t, ulonglong)
-* ([MDEV-34820](https://jira.mariadb.org/browse/MDEV-34820)) wsrep\_sst\_mariabackup SST script could incorrectly calculate the actual file size on ZFS under FreeBSD, which could lead to progress reporting errors
+* ([MDEV-34820](https://jira.mariadb.org/browse/MDEV-34820)) wsrep\_sst\_mariadb-backup SST script could incorrectly calculate the actual file size on ZFS under FreeBSD, which could lead to progress reporting errors
 * ([MDEV-35578](https://jira.mariadb.org/browse/MDEV-35578)) innodb\_gis.rtree\_debug fails on mac
 * ([MDEV-35657](https://jira.mariadb.org/browse/MDEV-35657)) MSAN errors in os\_file\_readdir\_next\_file (xtrabackup)
 * ([MDEV-35680](https://jira.mariadb.org/browse/MDEV-35680)) Table number > MAX\_TABLES causes overflow of table\_map at main.join test
@@ -168,7 +168,7 @@ MariaDB Enterprise Server 10.5.28-22 was released on 19 Mar 2025.
 * ([MDEV-34218](https://jira.mariadb.org/browse/MDEV-34218)) Mariadb Galera cluster fails when replicating from Mysql 5.7 on use of DDL
 * ([MDEV-33978](https://jira.mariadb.org/browse/MDEV-33978)) P\_S.THREADS is not showing all server threads
 * ([MDEV-35505](https://jira.mariadb.org/browse/MDEV-35505)) Galera protocol versions are now shown by show status - change available with installation of galera library 26.4.21+
-* ([MDEV-35526](https://jira.mariadb.org/browse/MDEV-35526)) Fix possible crash in wsrep\_sst\_mariabackup script when upgrading node in cluster from 10.11.9 to 10.11.10.
+* ([MDEV-35526](https://jira.mariadb.org/browse/MDEV-35526)) Fix possible crash in wsrep\_sst\_mariadb-backup script when upgrading node in cluster from 10.11.9 to 10.11.10.
 * ([MDEV-35910](https://jira.mariadb.org/browse/MDEV-35910)) Conditions with SP local variables are now pushed into derived table. Previous behaviour caused slow performance and table scans instead of using the pushed down condition
 * ([MDEV-34665](https://jira.mariadb.org/browse/MDEV-34665)) NULL-aware materialization with IN predicate and single column no longer skips building sorted Ordered\_key structures
 * ([MDEV-35443](https://jira.mariadb.org/browse/MDEV-35443)) During an online table rebuild of an InnoDB statistics table, opt\_search\_plan\_for\_table() no longer sometimes degrades to full table scan

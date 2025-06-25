@@ -83,7 +83,7 @@ details of the revision and view diffs of the code modified in that revision.
 * Merge [Revision #9c34a4124d](https://github.com/MariaDB/server/commit/9c34a4124d) 2018-04-24 09:26:40 +0300 - Merge 10.0 into 10.1
 * [Revision #5b79303b40](https://github.com/MariaDB/server/commit/5b79303b40)\
   2018-04-23 18:14:15 +0300
-  * [MDEV-15988](https://jira.mariadb.org/browse/MDEV-15988) Crash in ./mtr mariabackup.undo\_space\_id
+  * [MDEV-15988](https://jira.mariadb.org/browse/MDEV-15988) Crash in ./mtr mariadb-backup.undo\_space\_id
 * Merge [Revision #82d4f08186](https://github.com/MariaDB/server/commit/82d4f08186) 2018-04-23 14:25:34 +0300 - Merge pull request #713 from codership/[MDEV-15948](https://jira.mariadb.org/browse/MDEV-15948)
 * [Revision #63e5307afd](https://github.com/MariaDB/server/commit/63e5307afd)\
   2018-04-23 12:00:49 +0200
@@ -112,7 +112,7 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-15580](https://jira.mariadb.org/browse/MDEV-15580): Assertion \`!lex->explain' failed in lex\_start(THD\*):
 * [Revision #c2dc72c0c3](https://github.com/MariaDB/server/commit/c2dc72c0c3)\
   2018-04-12 12:09:32 +0100
-  * [MDEV-15779](https://jira.mariadb.org/browse/MDEV-15779) - mariabackup incremental prepare fails on CIFS mount.
+  * [MDEV-15779](https://jira.mariadb.org/browse/MDEV-15779) - mariadb-backup incremental prepare fails on CIFS mount.
 * [Revision #15071226a0](https://github.com/MariaDB/server/commit/15071226a0)\
   2018-04-11 23:07:23 +0100
   * [MDEV-15780](https://jira.mariadb.org/browse/MDEV-15780) : mariadb-backup with absolute paths in innodb\_data\_file\_path
@@ -147,7 +147,7 @@ details of the revision and view diffs of the code modified in that revision.
   * Revert "[MDEV-14705](https://jira.mariadb.org/browse/MDEV-14705): Do not rollback on InnoDB shutdown"
 * [Revision #ecf6675cfc](https://github.com/MariaDB/server/commit/ecf6675cfc)\
   2018-04-09 19:16:50 +0100
-  * [MDEV-15713](https://jira.mariadb.org/browse/MDEV-15713) mariabackup: throw warning, if --stream is used without --backup
+  * [MDEV-15713](https://jira.mariadb.org/browse/MDEV-15713) mariadb-backup: throw warning, if --stream is used without --backup
 * [Revision #37f24806fc](https://github.com/MariaDB/server/commit/37f24806fc)\
   2018-04-09 16:22:15 +0100
   * [MDEV-15825](https://jira.mariadb.org/browse/MDEV-15825) mariadb-backup help mentions Percona and PXC but not MariaDB

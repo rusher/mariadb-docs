@@ -246,7 +246,7 @@ details of the revision and view diffs of the code modified in that revision.
 * Merge [Revision #70df2bef7a](https://github.com/MariaDB/server/commit/70df2bef7a) 2017-05-22 13:49:37 +0000 - Merge branch 'bb-10.1-wlad' into 10.1
 * [Revision #ee4eda40b9](https://github.com/MariaDB/server/commit/ee4eda40b9)\
   2017-05-21 22:19:06 +0000
-  * [MDEV-12832](https://jira.mariadb.org/browse/MDEV-12832) : remove libarchive support from mariabackup, due to different packaging issues.
+  * [MDEV-12832](https://jira.mariadb.org/browse/MDEV-12832) : remove libarchive support from mariadb-backup, due to different packaging issues.
 * [Revision #2c69c428a7](https://github.com/MariaDB/server/commit/2c69c428a7)\
   2017-05-22 13:33:37 +0300
   * Changing maturity to stable
@@ -462,7 +462,7 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-12810](https://jira.mariadb.org/browse/MDEV-12810) - force static build of crc library
 * [Revision #40c7778e05](https://github.com/MariaDB/server/commit/40c7778e05)\
   2017-05-16 17:11:25 +0000
-  * [MDEV-12814](https://jira.mariadb.org/browse/MDEV-12814) mariabackup : don't try io throttling in copy-back
+  * [MDEV-12814](https://jira.mariadb.org/browse/MDEV-12814) mariadb-backup : don't try io throttling in copy-back
 * [Revision #f302a3cf9d](https://github.com/MariaDB/server/commit/f302a3cf9d)\
   2017-04-28 10:07:03 +0300
   * [MDEV-12593](https://jira.mariadb.org/browse/MDEV-12593): InnoDB page compression should use lz4\_compress\_default if

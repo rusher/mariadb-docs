@@ -98,7 +98,7 @@ ERROR 1845 (0A000): ALGORITHM=NOCOPY is not supported for this operation. Try AL
 
 ## Interface Changes
 
-* `mariabackup` [--sst-max-binlogs](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/enterprise-server/10-4/broken-reference/README.md) command-line option removed
+* `mariadb-backup` [--sst-max-binlogs](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/enterprise-server/10-4/broken-reference/README.md) command-line option removed
 * `mysql` [--enable-cleartext-plugin](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/full-list-of-mariadb-options-system-and-status-variables) command-line option added
 * `mysqld` [--spider-direct-aggregate](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/spider-status-variables) command-line option added
 * `mysqldump` [--max-statement-time](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/backup-restore-and-import-clients/mariadb-dump#options) command-line option added

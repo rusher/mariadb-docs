@@ -212,7 +212,7 @@ details of the revision and view diffs of the code modified in that revision.
   * bump the VERSION
 * [Revision #c4a844ca51](https://github.com/MariaDB/server/commit/c4a844ca51)\
   2019-11-08 08:03:49 +0100
-  * [MDEV-20981](https://jira.mariadb.org/browse/MDEV-20981) wsrep\_sst\_mariabackup fails silently when mariabackup is not installed (#1406)
+  * [MDEV-20981](https://jira.mariadb.org/browse/MDEV-20981) wsrep\_sst\_mariadb-backup fails silently when mariadb-backup is not installed (#1406)
 * [Revision #b1ab2ba583](https://github.com/MariaDB/server/commit/b1ab2ba583)\
   2019-11-07 15:24:21 +0530
   * [MDEV-20519](https://jira.mariadb.org/browse/MDEV-20519): Query plan regression with optimizer\_use\_condition\_selectivity > 1

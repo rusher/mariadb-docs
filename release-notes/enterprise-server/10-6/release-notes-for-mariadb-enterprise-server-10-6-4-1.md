@@ -307,7 +307,7 @@ MariaDB Enterprise Cluster is powered by Galera. New in this release:
 * [wsrep\_mode=REPLICATE\_MYISAM](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_mode) replaces deprecated system variable [wsrep\_replicate\_myisam](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_replicate_myisam) ([MDEV-24946](https://jira.mariadb.org/browse/MDEV-24946))
 * When [wsrep\_debug=SERVER](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_debug) and `wsrep_OSU_method=TOI`, information about DDL queries from remote hosts is logged in the local error log, not just locally-initiated DDL queries. ([MDEV-9609](https://jira.mariadb.org/browse/MDEV-9609))
   * The default of [wsrep\_debug=NONE](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_debug) disables debug logging.
-* The script `wsrep_sst_mariabackup` checks all server-related configuration groups when processing a configuration file. ([MDEV-25669](https://jira.mariadb.org/browse/MDEV-25669))
+* The script `wsrep_sst_mariadb-backup` checks all server-related configuration groups when processing a configuration file. ([MDEV-25669](https://jira.mariadb.org/browse/MDEV-25669))
   * Prior to this release, only the \[`mysqld`] configuration group was checked when processing a configuration file.
 * Performance Schema for Enterprise Cluster
   * Performance Schema table [galera\_group\_members](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-tables) logs information about the configuration of the cluster. ([MDEV-286](https://jira.mariadb.org/browse/MDEV-286))
@@ -394,9 +394,9 @@ The following changes are as compared to MariaDB Enterprise Server 10.5.10-7, th
 * [JSON\_TABLE()](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/special-functions/json-functions/json_table) function added
 * [KEYWORDS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-keywords-table) information schema table added
 * [latest\_file\_io](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/sys-schema/sys-schema-views/latest_file_io-and-xlatest_file_io-sys-schema-views) sys table added
-* `mariadb-backup` [--debug-sleep-before-unlock](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariabackup/mariabackup-options#-debug-sleep-before-unlock) command-line option removed
-* `mariadb-backup` [--debug-sync](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariabackup/mariabackup-options#-debug-sync) command-line option removed
-* `mariadb-backup` [--innodb-log-files-in-group](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariabackup/mariabackup-options#-innodb-log-files-in-group) command-line option removed
+* `mariadb-backup` [--debug-sleep-before-unlock](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariadb-backup/mariadb-backup-options#-debug-sleep-before-unlock) command-line option removed
+* `mariadb-backup` [--debug-sync](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariadb-backup/mariadb-backup-options#-debug-sync) command-line option removed
+* `mariadb-backup` [--innodb-log-files-in-group](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariadb-backup/mariadb-backup-options#-innodb-log-files-in-group) command-line option removed
 * `mariadbd` [--binlog-expire-logs-seconds](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables) command-line option added
 * `mariadbd` --columnstore-cache-use-import command-line option added
 * `mariadbd` --columnstore-decimal-overflow-check command-line option added

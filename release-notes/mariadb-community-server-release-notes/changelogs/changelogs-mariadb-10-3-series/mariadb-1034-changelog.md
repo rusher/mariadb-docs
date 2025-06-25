@@ -178,7 +178,7 @@ details of the revision and view diffs of the code modified in that revision.
 * Merge [Revision #e9842de20c](https://github.com/MariaDB/server/commit/e9842de20c) 2018-01-11 12:03:23 +0200 - Merge 10.1 into 10.2
 * [Revision #578ffcc5ef](https://github.com/MariaDB/server/commit/578ffcc5ef)\
   2018-01-11 10:56:13 +0200
-  * Skip mariabackup.huge\_lsn if encryption is not available
+  * Skip mariadb-backup.huge\_lsn if encryption is not available
 * Merge [Revision #c15b3d2d41](https://github.com/MariaDB/server/commit/c15b3d2d41) 2018-01-11 10:44:05 +0200 - Merge 10.0 into 10.1
 * Merge [Revision #4c1479545d](https://github.com/MariaDB/server/commit/4c1479545d) 2018-01-11 10:16:38 +0200 - Merge 5.5 into 10.0
 * [Revision #bdcd7f79e4](https://github.com/MariaDB/server/commit/bdcd7f79e4)\
@@ -554,7 +554,7 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-14786](https://jira.mariadb.org/browse/MDEV-14786) Server crashes in Item\_cond::transform on 2nd execution of SP querying from a view \[fixes #436]
 * [Revision #19f0b512a9](https://github.com/MariaDB/server/commit/19f0b512a9)\
   2017-12-28 10:42:42 +0300
-  * Tests: record mariabackup.system\_versioning \[#387]
+  * Tests: record mariadb-backup.system\_versioning \[#387]
 * [Revision #2a3c66a636](https://github.com/MariaDB/server/commit/2a3c66a636)\
   2017-12-28 10:40:00 +0300
   * IB: move methods to proper place
@@ -611,7 +611,7 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-14740](https://jira.mariadb.org/browse/MDEV-14740) Locking assertion for system\_time partitioning
 * [Revision #d6b68b0e8d](https://github.com/MariaDB/server/commit/d6b68b0e8d)\
   2017-12-21 21:15:20 +0300
-  * Tests: mariabackup.system\_versioning \[#387]
+  * Tests: mariadb-backup.system\_versioning \[#387]
 * [Revision #e6c5eb5c58](https://github.com/MariaDB/server/commit/e6c5eb5c58)\
   2017-12-21 18:24:58 +0300
   * [MDEV-14730](https://jira.mariadb.org/browse/MDEV-14730) Assertion \`m\_lock\_type == 2' failed in handler::ha\_close
@@ -1040,7 +1040,7 @@ details of the revision and view diffs of the code modified in that revision.
   * Tests: TRT-related results \[#305]
 * [Revision #4f386579f8](https://github.com/MariaDB/server/commit/4f386579f8)\
   2017-11-17 10:07:09 +0300
-  * Tests: renamed to mariabackup.system\_versioning \[#307]
+  * Tests: renamed to mariadb-backup.system\_versioning \[#307]
 * [Revision #75cf92fac9](https://github.com/MariaDB/server/commit/75cf92fac9)\
   2017-11-16 16:19:10 +0300
   * Tests: regenerate embedded \[#302]
@@ -1160,7 +1160,7 @@ details of the revision and view diffs of the code modified in that revision.
   * Misc: original README.md
 * [Revision #e707502a13](https://github.com/MariaDB/server/commit/e707502a13)\
   2017-10-31 12:32:24 +0300
-  * Tests: mariabackup simple case \[closes #282]
+  * Tests: mariadb-backup simple case \[closes #282]
 * [Revision #f5ba28404b](https://github.com/MariaDB/server/commit/f5ba28404b)\
   2017-10-31 11:36:38 +0300
   * Tests: innodb.row\_format\_redundant

@@ -21,7 +21,7 @@ Thanks, and enjoy MariaDB!
 ## Notable Changes
 
 * [MyRocks](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/myrocks) is now [Stable (GA)](../../../mariadb-release-criteria.md)
-* [MDEV-13122](https://jira.mariadb.org/browse/MDEV-13122): [mariabackup](broken-reference) now supports MyRocks
+* [MDEV-13122](https://jira.mariadb.org/browse/MDEV-13122): [mariadb-backup](broken-reference) now supports MyRocks
 * [MDEV-13779](https://jira.mariadb.org/browse/MDEV-13779) - InnoDB fails to shut down purge workers, causing hang
 * [MDEV-16267](https://jira.mariadb.org/browse/MDEV-16267) - Wrong INFORMATION\_SCHEMA.INNODB\_BUFFER\_PAGE.TABLE\_NAME
 * [MDEV-13834](https://jira.mariadb.org/browse/MDEV-13834) - Upgrade failure from 10.1 innodb\_encrypt\_log

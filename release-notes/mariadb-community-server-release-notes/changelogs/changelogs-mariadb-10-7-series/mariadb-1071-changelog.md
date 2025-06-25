@@ -67,7 +67,7 @@ details of the revision and view diffs of the code modified in that revision.
   * InnoDB: send "corrupted" error to the user, not only to the log
 * [Revision #db20c77782](https://github.com/MariaDB/server/commit/db20c77782)\
   2021-10-22 10:14:57 +0200
-  * mariabackup: rename encryption\_plugin -> xb\_plugin
+  * mariadb-backup: rename encryption\_plugin -> xb\_plugin
 * [Revision #8c806c4152](https://github.com/MariaDB/server/commit/8c806c4152)\
   2021-10-11 14:53:11 +0200
   * [MDEV-26794](https://jira.mariadb.org/browse/MDEV-26794) mariadb-backup does not recognize added providers upon prepare of incremental backup
@@ -435,7 +435,7 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-26195](https://jira.mariadb.org/browse/MDEV-26195) fixup: Inconsistent types for template instantiation
 * [Revision #a880ef57ef](https://github.com/MariaDB/server/commit/a880ef57ef)\
   2021-07-24 21:42:03 +0300
-  * [MDEV-26195](https://jira.mariadb.org/browse/MDEV-26195) fixup: Format mismatch in mariabackup
+  * [MDEV-26195](https://jira.mariadb.org/browse/MDEV-26195) fixup: Format mismatch in mariadb-backup
 * [Revision #fea8375893](https://github.com/MariaDB/server/commit/fea8375893)\
   2021-07-23 10:10:08 +0300
   * [MDEV-26195](https://jira.mariadb.org/browse/MDEV-26195) fixup: Fix format mismatch

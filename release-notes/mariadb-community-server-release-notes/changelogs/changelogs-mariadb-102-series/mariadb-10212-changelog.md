@@ -191,7 +191,7 @@ in that revision.
   * [MDEV-14293](https://jira.mariadb.org/browse/MDEV-14293): MyRocks lacks basic functionality
 * [Revision #a9a4089175](https://github.com/MariaDB/server/commit/a9a4089175)\
   2017-12-14 13:47:38 +0200
-  * Plug a small memory leak in mariabackup --backup
+  * Plug a small memory leak in mariadb-backup --backup
 * [Revision #8063804943](https://github.com/MariaDB/server/commit/8063804943)\
   2017-12-13 23:14:54 +0200
   * Re-remove the file kill\_and\_restart\_mysqld.inc

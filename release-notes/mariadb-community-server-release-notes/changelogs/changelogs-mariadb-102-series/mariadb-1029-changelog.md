@@ -251,10 +251,10 @@ The revision number links will take you to the revision's page on GitHub. On[Git
   * Remove the redundant function row\_table\_got\_default\_clust\_index()
 * [Revision #74f677fcc2](https://github.com/MariaDB/server/commit/74f677fcc2)\
   2017-09-14 16:42:09 +0000
-  * [MDEV-13802](https://jira.mariadb.org/browse/MDEV-13802) mariabackup --lock-ddl-per-table fails when table names contain backticks
+  * [MDEV-13802](https://jira.mariadb.org/browse/MDEV-13802) mariadb-backup --lock-ddl-per-table fails when table names contain backticks
 * [Revision #bb7ab40521](https://github.com/MariaDB/server/commit/bb7ab40521)\
   2017-09-13 12:10:48 +0000
-  * mariabackup : Fix enumerate\_ibd\_files() to include .isl
+  * mariadb-backup : Fix enumerate\_ibd\_files() to include .isl
 * [Revision #a8b3c603c6](https://github.com/MariaDB/server/commit/a8b3c603c6)\
   2017-07-27 11:43:33 +0300
   * MW-394
@@ -275,7 +275,7 @@ The revision number links will take you to the revision's page on GitHub. On[Git
   * Compiler warning avoided.
 * [Revision #3f17f51132](https://github.com/MariaDB/server/commit/3f17f51132)\
   2017-09-14 08:58:31 +0300
-  * Follow-up to [MDEV-13563](https://jira.mariadb.org/browse/MDEV-13563) mariabackup --lock-ddl-per-table
+  * Follow-up to [MDEV-13563](https://jira.mariadb.org/browse/MDEV-13563) mariadb-backup --lock-ddl-per-table
 * [Revision #cfd51c01e1](https://github.com/MariaDB/server/commit/cfd51c01e1)\
   2017-09-14 08:06:40 +0300
   * Fix one more warning for page\_header\_get\_field()
@@ -341,7 +341,7 @@ The revision number links will take you to the revision's page on GitHub. On[Git
   * [MDEV-12982](https://jira.mariadb.org/browse/MDEV-12982) JSON\_EXTRACT returns data for invalid JSON.
 * [Revision #31774f0ede](https://github.com/MariaDB/server/commit/31774f0ede)\
   2017-09-11 16:45:36 +0000
-  * [MDEV-13563](https://jira.mariadb.org/browse/MDEV-13563) lock DDL for mariabackup in 10.2
+  * [MDEV-13563](https://jira.mariadb.org/browse/MDEV-13563) lock DDL for mariadb-backup in 10.2
 * [Revision #6b5c0effe4](https://github.com/MariaDB/server/commit/6b5c0effe4)\
   2017-09-07 11:13:08 +0200
   * [MDEV-13436](https://jira.mariadb.org/browse/MDEV-13436) PREPARE doesn't work as expected & throws errors but MySQL is working fine
@@ -496,7 +496,7 @@ The revision number links will take you to the revision's page on GitHub. On[Git
   * bump the VERSION
 * [Revision #605b835220](https://github.com/MariaDB/server/commit/605b835220)\
   2017-08-18 10:07:11 +0300
-  * [MDEV-13754](https://jira.mariadb.org/browse/MDEV-13754) Memory leak in mariabackup.incremental\_backup
+  * [MDEV-13754](https://jira.mariadb.org/browse/MDEV-13754) Memory leak in mariadb-backup.incremental\_backup
 * [Revision #74ce0cf148](https://github.com/MariaDB/server/commit/74ce0cf148)\
   2017-08-18 10:00:56 +0300
   * [MDEV-13574](https://jira.mariadb.org/browse/MDEV-13574) related mariadb-backup code cleanup (non-functional change)

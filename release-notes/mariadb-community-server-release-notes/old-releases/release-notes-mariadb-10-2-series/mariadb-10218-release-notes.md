@@ -22,8 +22,8 @@ Thanks, and enjoy MariaDB!
 
 * [MDEV-15511](https://jira.mariadb.org/browse/MDEV-15511) - if available, stunnel can be used during [Galera rsync SST](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/galera-management/getting-started-with-mariadb-galera-cluster#rsync)
 * [MDEV-15088](https://jira.mariadb.org/browse/MDEV-15088) - Remove debuginfo files from Windows .zip files and put in optional supplemental .zip file
-* [MDEV-16791](https://jira.mariadb.org/browse/MDEV-16791) - [mariabackup](broken-reference): Support DDL commands during backup
-* [MDEV-13564](https://jira.mariadb.org/browse/MDEV-13564) - Refuse MLOG\_TRUNCATE in mariabackup
+* [MDEV-16791](https://jira.mariadb.org/browse/MDEV-16791) - [mariadb-backup](broken-reference): Support DDL commands during backup
+* [MDEV-13564](https://jira.mariadb.org/browse/MDEV-13564) - Refuse MLOG\_TRUNCATE in mariadb-backup
 * [MDEV-16934](https://jira.mariadb.org/browse/MDEV-16934) - add new system variable [eq\_range\_index\_dive\_limit](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#eq_range_index_dive_limit) to speed up queries that new long nested `IN` lists. The default value, for backward compatibility, is 0 meaning "unlimited"./25.
 * The [Galera library](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/what-is-mariadb-galera-cluster/README.md) in the repositories has been updated to version 25.3.24.
 

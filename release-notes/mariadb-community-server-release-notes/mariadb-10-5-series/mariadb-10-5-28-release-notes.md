@@ -74,8 +74,8 @@ Thanks, and enjoy MariaDB!
 * Fix issue where DROP TABLE on child and UPDATE of parent table can cause a metadata lock BF-BF\
   conflict when applied concurrently. ([MDEV-35018](https://jira.mariadb.org/browse/MDEV-35018))
 * Galera protocol versions are now shown by show status - change available with installation of galera library 26.4.21+ ([MDEV-35505](https://jira.mariadb.org/browse/MDEV-35505))
-* Fix possible crash in wsrep\_sst\_mariabackup script when upgrading node in cluster from 10.11.9 to 10.11.10. ([MDEV-35526](https://jira.mariadb.org/browse/MDEV-35526))
-* wsrep\_sst\_mariabackup.sh no longer uses --use-memory default (100MB) resulting in prepare stage which could take hours ([MDEV-35749](https://jira.mariadb.org/browse/MDEV-35749))
+* Fix possible crash in wsrep\_sst\_mariadb-backup script when upgrading node in cluster from 10.11.9 to 10.11.10. ([MDEV-35526](https://jira.mariadb.org/browse/MDEV-35526))
+* wsrep\_sst\_mariadb-backup.sh no longer uses --use-memory default (100MB) resulting in prepare stage which could take hours ([MDEV-35749](https://jira.mariadb.org/browse/MDEV-35749))
 
 ### [Audit Plugin](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/mariadb-audit-plugin)
 

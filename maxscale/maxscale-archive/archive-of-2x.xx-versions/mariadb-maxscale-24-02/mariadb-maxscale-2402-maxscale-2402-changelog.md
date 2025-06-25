@@ -13,8 +13,8 @@
 * Server setting `private_address` added. Used for detecting and setting up\
   replication. See[MariaDB Monitor documentation](maxscale-24-02monitors/mariadb-maxscale-2402-maxscale-2402-mariadb-monitor.md)\
   for more information.
-* MariaDB-Monitor allows customization of some mariadb-backup settings. See[mariabackup\_use\_memory](maxscale-24-02monitors/mariadb-maxscale-2402-maxscale-2402-mariadb-monitor.md)\
-  and [mariabackup\_parallel](maxscale-24-02monitors/mariadb-maxscale-2402-maxscale-2402-mariadb-monitor.md)\
+* MariaDB-Monitor allows customization of some mariadb-backup settings. See[mariadb-backup\_use\_memory](maxscale-24-02monitors/mariadb-maxscale-2402-maxscale-2402-mariadb-monitor.md)\
+  and [mariadb-backup\_parallel](maxscale-24-02monitors/mariadb-maxscale-2402-maxscale-2402-mariadb-monitor.md)\
   for more information.
 * MariaDB-Monitor setting `servers_no_promotion` now affects primary\
   server selection during MaxScale startup or due to replication topology\

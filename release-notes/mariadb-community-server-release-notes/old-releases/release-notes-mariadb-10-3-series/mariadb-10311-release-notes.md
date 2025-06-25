@@ -31,7 +31,7 @@ Notable changes of this release include:
 * [Virtual column](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/create/generated-columns) fixes: [MDEV-17215](https://jira.mariadb.org/browse/MDEV-17215), [MDEV-17548](https://jira.mariadb.org/browse/MDEV-17548)
 * [mariadb-backup](broken-reference) fixes:
   * [MDEV-13564](https://jira.mariadb.org/browse/MDEV-13564) - [TRUNCATE TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/table-statements/truncate-table) now works with [mariadb-backup](broken-reference)
-  * [MDEV-17433](https://jira.mariadb.org/browse/MDEV-17433) - Allow InnoDB start up with empty ib\_logfile0 from mariabackup --prepare
+  * [MDEV-17433](https://jira.mariadb.org/browse/MDEV-17433) - Allow InnoDB start up with empty ib\_logfile0 from mariadb-backup --prepare
 * Packages for Fedora 29 and Ubuntu 18.10 Cosmic have been added in this release
 * As per the [MariaDB Deprecation Policy](../../../mariadb-platform-deprecation-policy.md), this will be\
   the last release of [MariaDB 10.3](what-is-mariadb-103.md) for Fedora 27

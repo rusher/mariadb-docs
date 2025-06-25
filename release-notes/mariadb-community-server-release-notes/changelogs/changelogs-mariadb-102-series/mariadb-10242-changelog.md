@@ -324,7 +324,7 @@ in that revision.
   * [MDEV-26915](https://jira.mariadb.org/browse/MDEV-26915): SST scripts do not take log\_bin\_index setting into account
 * [Revision #b952599786](https://github.com/MariaDB/server/commit/b952599786)\
   2021-11-16 05:21:18 +0100
-  * [MDEV-26064](https://jira.mariadb.org/browse/MDEV-26064): mariabackup SST fails when starting with --innodb-force-recovery
+  * [MDEV-26064](https://jira.mariadb.org/browse/MDEV-26064): mariadb-backup SST fails when starting with --innodb-force-recovery
 * [Revision #114e18b8b6](https://github.com/MariaDB/server/commit/114e18b8b6)\
   2021-11-20 21:35:54 -0800
   * [MDEV-26470](https://jira.mariadb.org/browse/MDEV-26470) "No database" selected when using CTE in a subquery of DELETE statement
@@ -367,7 +367,7 @@ in that revision.
 * Merge [Revision #75f0c595d9](https://github.com/MariaDB/server/commit/75f0c595d9) 2021-11-09 08:07:58 +0200 - Merge mariadb-10.2.41 into 10.2
 * [Revision #7c30bc38a5](https://github.com/MariaDB/server/commit/7c30bc38a5)\
   2021-10-27 09:42:45 +1100
-  * [MDEV-26561](https://jira.mariadb.org/browse/MDEV-26561) mariabackup release locks
+  * [MDEV-26561](https://jira.mariadb.org/browse/MDEV-26561) mariadb-backup release locks
 * [Revision #e1eb39a446](https://github.com/MariaDB/server/commit/e1eb39a446)\
   2021-10-26 18:48:44 +0800
   * [MDEV-26561](https://jira.mariadb.org/browse/MDEV-26561) Fix a bug due to unreleased lock

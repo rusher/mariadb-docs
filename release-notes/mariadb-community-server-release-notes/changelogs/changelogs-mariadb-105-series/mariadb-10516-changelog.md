@@ -115,7 +115,7 @@ details of the revision and view diffs of the code modified in that revision.
   * Change MDBF mirror URL
 * [Revision #6a3545dd1e](https://github.com/MariaDB/server/commit/6a3545dd1e)\
   2022-04-01 15:58:31 +0300
-  * [MDEV-26322](https://jira.mariadb.org/browse/MDEV-26322) Last binlog file and position are "empty" in mariabackup --prepare output
+  * [MDEV-26322](https://jira.mariadb.org/browse/MDEV-26322) Last binlog file and position are "empty" in mariadb-backup --prepare output
 * [Revision #7f5a3cd253](https://github.com/MariaDB/server/commit/7f5a3cd253)\
   2022-04-04 17:13:33 +1000
   * [MDEV-28231](https://jira.mariadb.org/browse/MDEV-28231): innodb: format string warning on aix UINT64PFx (ib\_id\_t)

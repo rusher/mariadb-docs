@@ -27,7 +27,7 @@ details of the revision and view diffs of the code modified in that revision.
   * Deb autobake: ready with noble (Ubuntu 24.04)
 * [Revision #1acf6a0f84](https://github.com/MariaDB/server/commit/1acf6a0f84)\
   2024-01-22 12:42:37 +0200
-  * [MDEV-14425](https://jira.mariadb.org/browse/MDEV-14425) fixup: mariabackup.huge\_lsn,strict\_crc32 rdiff
+  * [MDEV-14425](https://jira.mariadb.org/browse/MDEV-14425) fixup: mariadb-backup.huge\_lsn,strict\_crc32 rdiff
 * [Revision #0335629eb3](https://github.com/MariaDB/server/commit/0335629eb3)\
   2024-01-22 11:31:22 +0200
   * [MDEV-32242](https://jira.mariadb.org/browse/MDEV-32242) fixup: innodb.doublewrite test may be skipped again

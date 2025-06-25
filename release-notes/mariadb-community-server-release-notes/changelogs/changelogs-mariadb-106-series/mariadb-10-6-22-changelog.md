@@ -22,7 +22,7 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-36639](https://jira.mariadb.org/browse/MDEV-36639) innodb\_snapshot\_isolation=1 gives error for not committed row changes
 * [Revision #4bedb222a8](https://github.com/MariaDB/server/commit/4bedb222a8)\
   2025-04-22 17:11:56 +0530
-  * [MDEV-36304](https://jira.mariadb.org/browse/MDEV-36304) InnoDB: Missing FILE\_CREATE, FILE\_DELETE or FILE\_MODIFY error during mariabackup --prepare
+  * [MDEV-36304](https://jira.mariadb.org/browse/MDEV-36304) InnoDB: Missing FILE\_CREATE, FILE\_DELETE or FILE\_MODIFY error during mariadb-backup --prepare
 * [Revision #dac3d702f7](https://github.com/MariaDB/server/commit/dac3d702f7)\
   2025-04-21 13:45:38 +0530
   * [MDEV-36649](https://jira.mariadb.org/browse/MDEV-36649) dict\_acquire\_mdl\_shared() aborts when table mode is DICT\_TABLE\_OP\_OPEN\_ONLY\_IF\_CACHED

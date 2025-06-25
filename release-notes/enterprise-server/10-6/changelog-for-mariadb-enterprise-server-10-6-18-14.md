@@ -18,7 +18,7 @@ MariaDB Enterprise Server 10.6.18-14 was released on 2024-06-11.
 * ([MDEV-34088](https://jira.mariadb.org/browse/MDEV-34088)) The TIMESTAMP value of '1970-01-01 00:00:00' can be indirectly inserted in strict mode
 * ([MDEV-18590](https://jira.mariadb.org/browse/MDEV-18590)) galera.versioning\_trx\_id: Test failure: mysqltest: Result content mismatch
 * ([MDEV-30046](https://jira.mariadb.org/browse/MDEV-30046)) wrong row targeted with "insert ... on duplicate" and "replace", leading to data corruption
-* ([MDEV-31251](https://jira.mariadb.org/browse/MDEV-31251)) [MDEV-30968](https://jira.mariadb.org/browse/MDEV-30968) breaks running mariabackup on older mariadb (opendir(NULL))
+* ([MDEV-31251](https://jira.mariadb.org/browse/MDEV-31251)) [MDEV-30968](https://jira.mariadb.org/browse/MDEV-30968) breaks running mariadb-backup on older mariadb (opendir(NULL))
 * ([MDEV-33332](https://jira.mariadb.org/browse/MDEV-33332)) SIGSEGV in buf\_read\_ahead\_linear() when bpage is in buf\_pool.watch
 * ([MDEV-33383](https://jira.mariadb.org/browse/MDEV-33383)) fts query crashes in fts\_query\_calculate\_ranking()
 * ([MDEV-32899](https://jira.mariadb.org/browse/MDEV-32899)) InnoDB is holding shared dict\_sys.latch while waiting for FOREIGN KEY child table lock on DDL
@@ -28,7 +28,7 @@ MariaDB Enterprise Server 10.6.18-14 was released on 2024-06-11.
 * ([MDEV-33731](https://jira.mariadb.org/browse/MDEV-33731)) Server crashes when deleting partitions from a table with spider engine
 * ([MDEV-33813](https://jira.mariadb.org/browse/MDEV-33813)) ERROR 1021 (HY000): Disk full (./org/test1.MAI); waiting for someone to free some space... (errno: 28 "No space left on device")
 * ([MDEV-31779](https://jira.mariadb.org/browse/MDEV-31779)) Server crash in Rows\_log\_event::update\_sequence upon replaying binary log
-* ([MDEV-33540](https://jira.mariadb.org/browse/MDEV-33540)) mariabackup --prepare: \[ERROR] InnoDB: Crash recovery is broken due to insufficient innodb\_log\_file\_size
+* ([MDEV-33540](https://jira.mariadb.org/browse/MDEV-33540)) mariadb-backup --prepare: \[ERROR] InnoDB: Crash recovery is broken due to insufficient innodb\_log\_file\_size
 * ([MDEV-33278](https://jira.mariadb.org/browse/MDEV-33278)) Assertion failure in thd\_get\_thread\_id at lock\_wait\_wsrep
 * ([MDEV-33509](https://jira.mariadb.org/browse/MDEV-33509)) Failed to apply write set with flags = (rollback | pa\_unsafe)
 * ([MDEV-32787](https://jira.mariadb.org/browse/MDEV-32787)) Assertion `!wsrep_has_changes(thd) || (thd->lex->sql_command == SQLCOM_CREATE_TABLE && !thd->is_current_stmt_binlog_format_row()) || thd->wsrep_cs().transaction().state() == wsrep::transaction::s_aborted` failed in void wsrep\_commit\_empty(THD\*, bool)
@@ -81,7 +81,7 @@ MariaDB Enterprise Server 10.6.18-14 was released on 2024-06-11.
 * ([MDEV-30260](https://jira.mariadb.org/browse/MDEV-30260)) Slave crashed:reload\_acl\_and\_cache during shutdown
 * ([MDEV-19415](https://jira.mariadb.org/browse/MDEV-19415)) multi\_source.[MDEV-9544](https://jira.mariadb.org/browse/MDEV-9544) , multi\_source.info\_logs failed in buildbot with AddressSanitizer: heap-use-after-free in strend / get\_one\_variable
 * ([MDEV-33993](https://jira.mariadb.org/browse/MDEV-33993)) Possible server hang on DROP INDEX or RENAME INDEX
-* ([MDEV-33669](https://jira.mariadb.org/browse/MDEV-33669)) mariabackup --backup hangs
+* ([MDEV-33669](https://jira.mariadb.org/browse/MDEV-33669)) mariadb-backup --backup hangs
 * ([MDEV-22855](https://jira.mariadb.org/browse/MDEV-22855)) Assertion `!field->prefix_len || field->fixed_len == field->prefix_len` failed in btr\_node\_ptr\_max\_size and in dict\_index\_node\_ptr\_max\_size
 * ([MDEV-30727](https://jira.mariadb.org/browse/MDEV-30727)) SIGSEGV's in spider\_direct\_sql\_init\_body, spider\_direct\_sql\_body, my\_hash\_insert, thd\_ha\_data, thd\_get\_ha\_data, and safe\_mutex\_lock, heap-use-after-free in spider\_direct\_sql\_body
 * ([MDEV-31161](https://jira.mariadb.org/browse/MDEV-31161)) Assertion failures upon adding a too long key to table with COMPRESSED row format
@@ -96,7 +96,7 @@ MariaDB Enterprise Server 10.6.18-14 was released on 2024-06-11.
 * (MENT-2042) Assertion `bf_aborted()` failed in void wsrep::transaction::xa\_replay\_common(wsrep::unique\_lock[wsrep::mutex](wsrep::mutex)&)
 * ([MDEV-33769](https://jira.mariadb.org/browse/MDEV-33769)) Memory leak found in the test main.rownum run with --ps-protocol against a server built with the option -DWITH\_PROTECT\_STATEMENT\_MEMROOT
 * ([MDEV-33546](https://jira.mariadb.org/browse/MDEV-33546)) Rpl\_semi\_sync\_slave\_status is ON When Replication Is Not Configured
-* ([MDEV-33011](https://jira.mariadb.org/browse/MDEV-33011)) mariabackup --backup: FATAL ERROR: ... Can't open datafile cool\_down/t3
+* ([MDEV-33011](https://jira.mariadb.org/browse/MDEV-33011)) mariadb-backup --backup: FATAL ERROR: ... Can't open datafile cool\_down/t3
 * ([MDEV-18288](https://jira.mariadb.org/browse/MDEV-18288)) Transportable Tablespaces leave AUTO\_INCREMENT in mismatched state, causing INSERT errors in newly imported tables when .cfg is not used.
 * ([MDEV-19044](https://jira.mariadb.org/browse/MDEV-19044)) Alter table corrupts while applying the modification log
 * ([MDEV-33434](https://jira.mariadb.org/browse/MDEV-33434)) UBSAN null pointer passed as argument 2, which is declared to never be null in spider\_udf\_direct\_sql\_create\_conn

@@ -274,7 +274,7 @@ The revision number links will take you to the revision's page on GitHub. On[Git
   * [MDEV-13106](https://jira.mariadb.org/browse/MDEV-13106) : Fix check for empty directory in MSI installer
 * [Revision #b9a326b6e1](https://github.com/MariaDB/server/commit/b9a326b6e1)\
   2017-06-19 17:00:09 +0000
-  * [MDEV-12709](https://jira.mariadb.org/browse/MDEV-12709) : mariabackup - during backup phase read some innodb parameter using "show variables", rather than take the value from my.cnf.
+  * [MDEV-12709](https://jira.mariadb.org/browse/MDEV-12709) : mariadb-backup - during backup phase read some innodb parameter using "show variables", rather than take the value from my.cnf.
 * [Revision #fc5932a1b7](https://github.com/MariaDB/server/commit/fc5932a1b7)\
   2017-06-24 10:16:48 +0200
   * update libmariadb
@@ -367,10 +367,10 @@ The revision number links will take you to the revision's page on GitHub. On[Git
   * [MDEV-13105](https://jira.mariadb.org/browse/MDEV-13105) InnoDB fails to load a table with PAGE\_COMPRESSION\_LEVEL after upgrade from 10.1.20
 * [Revision #f2931b1e3a](https://github.com/MariaDB/server/commit/f2931b1e3a)\
   2017-07-05 11:33:04 +0000
-  * mariabackup : run tests on buildbot on Windows
+  * mariadb-backup : run tests on buildbot on Windows
 * [Revision #c5a525bda2](https://github.com/MariaDB/server/commit/c5a525bda2)\
   2017-07-05 10:55:36 +0000
-  * mariabackup : debian packaging
+  * mariadb-backup : debian packaging
 * [Revision #e417af2cb8](https://github.com/MariaDB/server/commit/e417af2cb8)\
   2017-07-05 12:45:15 +0300
   * [MDEV-13143](https://jira.mariadb.org/browse/MDEV-13143) Server crashes in srv\_init\_abort\_low() when started with inaccessible tmpdir
@@ -1039,7 +1039,7 @@ The revision number links will take you to the revision's page on GitHub. On[Git
 * Merge [Revision #70df2bef7a](https://github.com/MariaDB/server/commit/70df2bef7a) 2017-05-22 13:49:37 +0000 - Merge branch 'bb-10.1-wlad' into 10.1
 * [Revision #ee4eda40b9](https://github.com/MariaDB/server/commit/ee4eda40b9)\
   2017-05-21 22:19:06 +0000
-  * [MDEV-12832](https://jira.mariadb.org/browse/MDEV-12832) : remove libarchive support from mariabackup, due to different packaging issues.
+  * [MDEV-12832](https://jira.mariadb.org/browse/MDEV-12832) : remove libarchive support from mariadb-backup, due to different packaging issues.
 * [Revision #2c69c428a7](https://github.com/MariaDB/server/commit/2c69c428a7)\
   2017-05-22 13:33:37 +0300
   * Changing maturity to stable
@@ -1259,7 +1259,7 @@ The revision number links will take you to the revision's page on GitHub. On[Git
   * [MDEV-12810](https://jira.mariadb.org/browse/MDEV-12810) - force static build of crc library
 * [Revision #40c7778e05](https://github.com/MariaDB/server/commit/40c7778e05)\
   2017-05-16 17:11:25 +0000
-  * [MDEV-12814](https://jira.mariadb.org/browse/MDEV-12814) mariabackup : don't try io throttling in copy-back
+  * [MDEV-12814](https://jira.mariadb.org/browse/MDEV-12814) mariadb-backup : don't try io throttling in copy-back
 * [Revision #f302a3cf9d](https://github.com/MariaDB/server/commit/f302a3cf9d)\
   2017-04-28 10:07:03 +0300
   * [MDEV-12593](https://jira.mariadb.org/browse/MDEV-12593): InnoDB page compression should use lz4\_compress\_default if

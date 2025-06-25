@@ -245,7 +245,7 @@ details of the revision and view diffs of the code modified in that revision.
 * Merge [Revision #1a4746e128](https://github.com/MariaDB/server/commit/1a4746e128) 2019-03-27 19:35:03 +0100 - Merge branch '5.5' into 10.1
 * [Revision #9a8b8ea66b](https://github.com/MariaDB/server/commit/9a8b8ea66b)\
   2019-03-27 14:37:14 +0100
-  * [MDEV-19060](https://jira.mariadb.org/browse/MDEV-19060) : mariabackup continues, despite failing to open a tablespace
+  * [MDEV-19060](https://jira.mariadb.org/browse/MDEV-19060) : mariadb-backup continues, despite failing to open a tablespace
 * Merge [Revision #a6585d5ce9](https://github.com/MariaDB/server/commit/a6585d5ce9) 2019-03-27 11:56:08 +0200 - Merge 10.0 into 10.1
 * [Revision #828cc2ba7c](https://github.com/MariaDB/server/commit/828cc2ba7c)\
   2019-03-27 11:34:53 +0200
@@ -266,7 +266,7 @@ details of the revision and view diffs of the code modified in that revision.
   * Update sql\_parse.cc
 * [Revision #065ba53ccb](https://github.com/MariaDB/server/commit/065ba53ccb)\
   2019-03-26 13:51:15 +0200
-  * [MDEV-12711](https://jira.mariadb.org/browse/MDEV-12711) mariabackup --backup is refused for multi-file system tablespace
+  * [MDEV-12711](https://jira.mariadb.org/browse/MDEV-12711) mariadb-backup --backup is refused for multi-file system tablespace
 * [Revision #6fbbb0853e](https://github.com/MariaDB/server/commit/6fbbb0853e)\
   2019-03-26 11:37:18 +0400
   * [MDEV-18968](https://jira.mariadb.org/browse/MDEV-18968) Both (WHERE 0.1) and (WHERE NOT 0.1) return empty set
@@ -465,7 +465,7 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-17942](https://jira.mariadb.org/browse/MDEV-17942) fixup : protect rebuild\_check\_host() / rebuild\_role\_grants() with acl\_cache->lock mutex
 * [Revision #39a2984dc0](https://github.com/MariaDB/server/commit/39a2984dc0)\
   2019-02-20 17:22:44 +0100
-  * Revert "[MDEV-18575](https://jira.mariadb.org/browse/MDEV-18575) Cleanup : remove innodb-encrypt-log parameter from mariabackup"
+  * Revert "[MDEV-18575](https://jira.mariadb.org/browse/MDEV-18575) Cleanup : remove innodb-encrypt-log parameter from mariadb-backup"
 * [Revision #a2f82b649d](https://github.com/MariaDB/server/commit/a2f82b649d)\
   2019-02-20 16:23:10 +0100
   * [MDEV-17942](https://jira.mariadb.org/browse/MDEV-17942) Assertion \`found' failed in remove\_ptr\_from\_dynarray after failed CREATE OR REPLACE
@@ -486,7 +486,7 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-18630](https://jira.mariadb.org/browse/MDEV-18630) Uninitialised value in FOREIGN KEY error message
 * [Revision #3262967008](https://github.com/MariaDB/server/commit/3262967008)\
   2019-02-14 11:11:16 +0100
-  * [MDEV-18575](https://jira.mariadb.org/browse/MDEV-18575) Cleanup : remove innodb-encrypt-log parameter from mariabackup
+  * [MDEV-18575](https://jira.mariadb.org/browse/MDEV-18575) Cleanup : remove innodb-encrypt-log parameter from mariadb-backup
 * [Revision #5b82751111](https://github.com/MariaDB/server/commit/5b82751111)\
   2019-02-06 16:44:36 +0100
   * [MDEV-18426](https://jira.mariadb.org/browse/MDEV-18426): Most of the mtr tests in the galera\_3nodes suite fail

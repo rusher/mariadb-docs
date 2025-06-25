@@ -114,7 +114,7 @@ details of the revision and view diffs of the code modified in that revision.
 * Merge [Revision #a40de1bdeb](https://github.com/MariaDB/server/commit/a40de1bdeb) 2019-02-20 17:21:26 +0100 - Merge branch 'bb-10.3-release' into 10.3
 * [Revision #5296aa8b12](https://github.com/MariaDB/server/commit/5296aa8b12)\
   2019-02-20 12:25:57 +0100
-  * [MDEV-18663](https://jira.mariadb.org/browse/MDEV-18663) Tests : use --core-file if mariabackup output is redirected to a file
+  * [MDEV-18663](https://jira.mariadb.org/browse/MDEV-18663) Tests : use --core-file if mariadb-backup output is redirected to a file
 * [Revision #4932aba921](https://github.com/MariaDB/server/commit/4932aba921)\
   2019-02-20 11:40:16 +0200
   * [MDEV-18649](https://jira.mariadb.org/browse/MDEV-18649) Assertion supremum\[7] == index.n\_core\_null\_bytes failed
@@ -270,7 +270,7 @@ details of the revision and view diffs of the code modified in that revision.
 * Merge [Revision #98d55b1366](https://github.com/MariaDB/server/commit/98d55b1366) 2019-02-14 22:07:33 -0800 - Merge branch '10.4' into bb-10.4-mdev16188
 * [Revision #282ba973e7](https://github.com/MariaDB/server/commit/282ba973e7)\
   2019-02-14 20:18:34 +0100
-  * [MDEV-18549](https://jira.mariadb.org/browse/MDEV-18549) Failing assertion: opt\_no\_lock during mariabackup --backup
+  * [MDEV-18549](https://jira.mariadb.org/browse/MDEV-18549) Failing assertion: opt\_no\_lock during mariadb-backup --backup
 * [Revision #ea0be9e2d6](https://github.com/MariaDB/server/commit/ea0be9e2d6)\
   2019-02-14 20:17:14 +0200
   * [MDEV-15564](https://jira.mariadb.org/browse/MDEV-15564) Avoid table rebuild in ALTER TABLE on collation or charset changes
@@ -381,7 +381,7 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-18178](https://jira.mariadb.org/browse/MDEV-18178) Galera test failure on galera\_sst\_rsync2
 * [Revision #26dcf102e3](https://github.com/MariaDB/server/commit/26dcf102e3)\
   2019-02-05 19:37:20 +0100
-  * Extend mariabackup archive timestamp in SST script
+  * Extend mariadb-backup archive timestamp in SST script
 * Merge [Revision #c4f3998365](https://github.com/MariaDB/server/commit/c4f3998365) 2019-02-11 10:43:55 +0200 - Merge pull request #1175 from codership/10.4-fix-wsrep-toi-end
 * [Revision #f0513de525](https://github.com/MariaDB/server/commit/f0513de525)\
   2019-02-11 10:10:55 +0200
