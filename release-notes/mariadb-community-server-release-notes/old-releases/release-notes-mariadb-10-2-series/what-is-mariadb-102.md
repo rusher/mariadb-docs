@@ -348,4 +348,8 @@ page.
 * [Plans for 10.x](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/broken-reference/README.md) for features under consideration
 * [10.2 Features/fixes by vote (JIRA)](https://jira.mariadb.org/issues/?jql=project%20%3D%20MDEV%20AND%20fixVersion%20%3D%2010.2%20ORDER%20BY%20votes%20DESC)
 
+{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
+
 {% @marketo/form formid="4316" formId="4316" %}

@@ -217,4 +217,8 @@ details of the revision and view diffs of the code modified in that revision.
   2019-11-07 15:24:21 +0530
   * [MDEV-20519](https://jira.mariadb.org/browse/MDEV-20519): Query plan regression with optimizer\_use\_condition\_selectivity > 1
 
+{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
+
 {% @marketo/form formid="4316" formId="4316" %}

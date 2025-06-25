@@ -347,4 +347,8 @@ details of the revision and view diffs of the code modified in that revision.
   2025-01-29 00:43:40 +0400
   * [MDEV-32619](https://jira.mariadb.org/browse/MDEV-32619) Fix setting SRID with ST\_\*FromWKB().
 
+{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
+
 {% @marketo/form formid="4316" formId="4316" %}

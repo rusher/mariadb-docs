@@ -583,4 +583,8 @@ The revision number links will take you to the revision's page on Launchpad. On 
   Fri 2012-04-06 13:31:33 +0500
   * [MDEV-80](https://jira.mariadb.org/browse/MDEV-80) Memory engine table full at much less than max\_heap\_table\_size with btree index. RB-tree index in the MEMORY table fails if it grews over 4G. That happened because the old\_allocated variable in hp\_rb\_write\_key() had the uint type. Changed with the 'size\_t' type to be same as the 'rb\_tree.allocated'.
 
+{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
+
 {% @marketo/form formid="4316" formId="4316" %}

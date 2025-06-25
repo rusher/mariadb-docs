@@ -29,4 +29,8 @@ modified in that revision.
     * The main problem was a bug in CSV where it provided wrong statistics (it claimed the table was empty when it wasn't)
     * I also fixed wrong freeing of blob's in the CSV handler. (Any call to handler::read\_first\_row() on a CSV table with blobs would fail)
 
+{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
+
 {% @marketo/form formid="4316" formId="4316" %}

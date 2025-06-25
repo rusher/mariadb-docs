@@ -165,4 +165,8 @@ details of the revision and view diffs of the code modified in that revision.
   2021-06-09 12:34:23 +0200
   * Remove WolfSSL workaround for old version. We're already on 4.4.6
 
+{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
+
 {% @marketo/form formid="4316" formId="4316" %}

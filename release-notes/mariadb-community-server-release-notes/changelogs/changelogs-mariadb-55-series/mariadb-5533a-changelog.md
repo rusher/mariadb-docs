@@ -89,4 +89,8 @@ modified in that revision.
     Sun 2013-09-15 12:38:22 -0700
     * Fixed bug [MDEV-5015](https://jira.mariadb.org/browse/MDEV-5015). Wrong result with an aggregate function, index and impossible condition inside OR
 
+{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
+
 {% @marketo/form formid="4316" formId="4316" %}

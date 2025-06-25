@@ -926,4 +926,8 @@ and --plugin-load-add are mentioned in it.
   * Currently JOIN\_TAB::records\_read is of type ha\_rows. This is an integer type, which prevents proper selectivity and rows estimates.
 ```
 
+{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
+
 {% @marketo/form formid="4316" formId="4316" %}

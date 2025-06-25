@@ -224,4 +224,8 @@ details of the revision and view diffs of the code modified in that revision.
   2019-05-20 18:50:12 +0300
   * [MDEV-19524](https://jira.mariadb.org/browse/MDEV-19524) Server crashes in Bitmap<64u>::is\_clear\_all / Field\_longstr::csinfo\_change\_allows\_instant\_alter
 
+{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
+
 {% @marketo/form formid="4316" formId="4316" %}

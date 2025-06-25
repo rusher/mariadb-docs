@@ -448,4 +448,8 @@ The revision number links will take you to the revision's page on GitHub. On[Git
   2016-03-30 14:59:25 +0300
   * [MDEV-9678](https://jira.mariadb.org/browse/MDEV-9678): Data Directory bug [MDEV-9833](https://jira.mariadb.org/browse/MDEV-9833): Log files are opened using O\_DIRECT causing problems if block size != 512
 
+{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
+
 {% @marketo/form formid="4316" formId="4316" %}

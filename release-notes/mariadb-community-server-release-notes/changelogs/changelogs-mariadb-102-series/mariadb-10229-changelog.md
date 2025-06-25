@@ -31,4 +31,8 @@ in that revision.
   * cleanup: get rid of dict\_index\_add\_to\_cache\_w\_vcol()
 * Also see the [MariaDB 10.2.28 Changelog](mariadb-10228-changelog.md)
 
+{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
+
 {% @marketo/form formid="4316" formId="4316" %}

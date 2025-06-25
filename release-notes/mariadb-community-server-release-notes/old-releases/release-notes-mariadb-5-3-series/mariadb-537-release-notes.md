@@ -30,13 +30,8 @@ for what changed between this and previous MySQL versions.
 See the [MariaDB 5.3.7 Changelog](../../changelogs/changelogs-mariadb-53-series/mariadb-537-changelog.md) for a list of every change\
 made in [MariaDB 5.3.7](mariadb-537-release-notes.md), with links to detailed information on each push.
 
-Be notified of new releases automatically by adding the[releases rss feed](https://montyprogram.com/news/feed/mariadb_releases/) to\
-your favorite feed reader or by [subscribing](https://mariadb.org) to the\
-announce 'at' mariadb.org announcement list (this is a low traffic,\
-announce-only list).
+{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
 
-MariaDB may already be included in your favorite OS distribution. More\
-information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-including-mariadb)\
-page.
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

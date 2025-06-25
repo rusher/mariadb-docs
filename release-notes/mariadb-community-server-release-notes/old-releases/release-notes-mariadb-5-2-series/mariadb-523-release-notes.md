@@ -26,6 +26,8 @@ interfaces, libraries and APIs that exist in MySQL also exist in MariaDB.
 In addition to the differences noted in previous[release notes](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/release-notes/README.md) and [changelogs](../../../connectors/odbc/changelogs/), the main focus of this\
 release was on fixing bugs. No new features were added to this release of[MariaDB 5.2](changes-improvements-in-mariadb-5-2.md). The [changelog](../../changelogs/changelogs-mariadb-52-series/mariadb-522-changelog.md) has details on the specific bugs which were fixed.
 
-<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

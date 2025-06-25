@@ -64,4 +64,8 @@ details of the revision and view diffs of the code modified in that revision.
   2023-09-25 20:20:47 +0530
   * [MDEV-32007](https://jira.mariadb.org/browse/MDEV-32007): JSON\_VALUE and JSON\_EXTRACT doesn't handle dash (-) as first character in key
 
+{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
+
 {% @marketo/form formid="4316" formId="4316" %}

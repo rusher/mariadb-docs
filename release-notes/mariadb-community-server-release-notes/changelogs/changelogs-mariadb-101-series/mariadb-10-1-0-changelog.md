@@ -464,4 +464,8 @@ The revision number links will take you to the revision's page on GitHub. On[Git
   2013-12-05 16:54:50 +0400
   * Fixing an MSVC warning about double "const" data type qualifier in the code merged from MySQL-5.6:
 
+{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
+
 {% @marketo/form formid="4316" formId="4316" %}

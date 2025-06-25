@@ -579,4 +579,8 @@ in that revision.
   2018-03-26 21:22:40 +0300
   * [MDEV-14843](https://jira.mariadb.org/browse/MDEV-14843): Assertion \`s\_tx\_list.size() == 0' failed in myrocks::Rdb\_transaction::term\_mutex
 
+{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
+
 {% @marketo/form formid="4316" formId="4316" %}

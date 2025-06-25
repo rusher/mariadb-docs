@@ -431,4 +431,8 @@ modified in that revision.
   Wed 2013-03-06 13:30:40 +0100
   * [MDEV-4249](https://jira.mariadb.org/browse/MDEV-4249) : when autodetecting default client charset on Windows, fallback to GetACP() whenever GetConsoleCP() returns 0 (i.e appkication does not have a console , which is the case for GUI apps, Windows services etc)
 
+{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
+
 {% @marketo/form formid="4316" formId="4316" %}

@@ -43,13 +43,8 @@ built with the same toolchain (and on the same builder) as previous releases.\
 The alternative binaries have a "(GLIBC\_2.14)" label to distinguish them from\
 the others.
 
-Be notified of new releases automatically by adding the[releases rss feed](https://montyprogram.com/news/feed/mariadb_releases/) to\
-your favorite feed reader or by [subscribing](https://mariadb.org) to the\
-announce 'at' mariadb.org announcement list (this is a low traffic,\
-announce-only list).
+{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
 
-MariaDB may already be included in your favorite OS distribution. More\
-information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-including-mariadb)\
-page.
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

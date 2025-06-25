@@ -370,4 +370,8 @@ The revision number links will take you to the revision's page on GitHub. On[Git
   2014-10-17 14:18:10 +0400
   * [MDEV-6400](https://jira.mariadb.org/browse/MDEV-6400): "ANALYZE SELECT ... INTO @var" doesn't set @var
 
+{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
+
 {% @marketo/form formid="4316" formId="4316" %}

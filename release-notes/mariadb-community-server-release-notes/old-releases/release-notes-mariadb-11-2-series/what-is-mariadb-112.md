@@ -61,4 +61,8 @@ page.
 | 21 Aug 2023 | [MariaDB 11.2.1](mariadb-11-2-1-release-notes.md) | RC          | [Release Notes](mariadb-11-2-1-release-notes.md) | [Changelog](../../changelogs/changelogs-mariadb-11-2-series/mariadb-11-2-1-changelog.md) |
 | 20 Jun 2023 | [MariaDB 11.2.0](mariadb-11-2-0-release-notes.md) | Alpha       | [Release Notes](mariadb-11-2-0-release-notes.md) |                                                                                          |
 
+{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
+
 {% @marketo/form formid="4316" formId="4316" %}

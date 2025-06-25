@@ -942,4 +942,8 @@ modified in that revision.
   Fri 2013-09-20 14:37:30 +0200
   * Update feedback plugin to recognize Windows 8.1 / Windows Server 2012 R2.
 
+{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
+
 {% @marketo/form formid="4316" formId="4316" %}

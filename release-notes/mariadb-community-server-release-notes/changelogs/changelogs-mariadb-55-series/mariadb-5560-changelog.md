@@ -204,4 +204,8 @@ of the revision and view diffs of the code modified in that revision.
   2018-01-18 09:20:55 -0800
   * Fixed [MDEV-14960](https://jira.mariadb.org/browse/MDEV-14960) \[ERROR] mysqld got signal 11 with join\_buffer and join\_cache
 
+{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
+
 {% @marketo/form formid="4316" formId="4316" %}

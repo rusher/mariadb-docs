@@ -461,4 +461,8 @@ The revision number links will take you to the revision's page on GitHub. On[Git
     2016-04-17 13:25:05 -0700\
     MDEV-7885, MDEV-8857: Add testcases
 
+{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
+
 {% @marketo/form formid="4316" formId="4316" %}

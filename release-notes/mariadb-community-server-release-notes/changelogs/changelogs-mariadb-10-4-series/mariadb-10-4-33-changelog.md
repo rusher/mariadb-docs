@@ -725,4 +725,8 @@ details of the revision and view diffs of the code modified in that revision.
   2023-09-25 12:56:30 +1100
   * [MDEV-31995](https://jira.mariadb.org/browse/MDEV-31995) Bogus error executing PS for query using CTE with renaming of columns
 
+{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
+
 {% @marketo/form formid="4316" formId="4316" %}
