@@ -28,6 +28,10 @@ Release dates for all upcoming MariaDB Server releases can be found [on Jira](ht
 [columnstore](columnstore/)
 {% endcontent-ref %}
 
+{% content-ref url="maxscale/" %}
+[maxscale](maxscale/)
+{% endcontent-ref %}
+
 {% content-ref url="connectors/" %}
 [connectors](connectors/)
 {% endcontent-ref %}
