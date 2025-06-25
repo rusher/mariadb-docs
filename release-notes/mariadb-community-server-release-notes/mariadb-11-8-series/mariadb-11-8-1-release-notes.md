@@ -1,6 +1,6 @@
 # MariaDB 11.8.1 Release Notes
 
-<a href="https://mariadb.com/downloads" class="button primary">Download</a>  <a href="mariadb-11-8-1-release-notes.md" class="button secondary">Release Notes</a>  <a href="../changelogs/changelogs-mariadb-11-8-series/mariadb-11-8-1-changelog.md" class="button secondary">Changelog</a>  <a href="what-is-mariadb-118.md" class="button secondary">Overview of 11.8</a>
+<a href="https://mariadb.com/downloads" class="button primary">Download</a> <a href="mariadb-11-8-1-release-notes.md" class="button secondary">Release Notes</a> <a href="../changelogs/changelogs-mariadb-11-8-series/mariadb-11-8-1-changelog.md" class="button secondary">Changelog</a> <a href="what-is-mariadb-118.md" class="button secondary">Overview of 11.8</a>
 
 [<sup>_Alternate download from mariadb.org_</sup>](https://downloads.mariadb.org/mariadb/11.8.1/)
 
@@ -77,7 +77,7 @@ information on each push, see the [changelog](../changelogs/changelogs-mariadb-1
 
 For a full list of contributors to [MariaDB 11.8.1](mariadb-11-8-1-release-notes.md), see the [MariaDB Foundation release announcement](https://mariadb.org/mariadb-11-7-2-and-mariadb-11-8-1-now-available/).
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

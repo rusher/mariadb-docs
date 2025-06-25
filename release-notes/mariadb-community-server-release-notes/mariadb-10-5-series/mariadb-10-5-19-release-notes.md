@@ -5,7 +5,7 @@
 **Release date:** 6 Feb 2023
 
 [MariaDB 10.5](what-is-mariadb-105.md) is a previous _stable_ series of MariaDB, maintained until June 2025. It is an evolution\
-of [MariaDB 10.4](../../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series) with several entirely new features not found anywhere else\
+of [MariaDB 10.4](../../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/) with several entirely new features not found anywhere else\
 and with backported and reimplemented features from MySQL.
 
 [MariaDB 10.5.19](mariadb-10-5-19-release-notes.md) is a [_**Stable (GA)**_](../../mariadb-release-criteria.md) release.
@@ -65,7 +65,7 @@ information on each push, see the [changelog](../changelogs/changelogs-mariadb-1
 
 For a full list of contributors to [MariaDB 10.5.19](mariadb-10-5-19-release-notes.md), see the [MariaDB Foundation release announcement](https://mariadb.org/mariadb-10-10-3-10-9-5-10-8-7-10-7-8-10-6-12-10-5-19-10-4-28-and-10-3-38-now-available/).
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

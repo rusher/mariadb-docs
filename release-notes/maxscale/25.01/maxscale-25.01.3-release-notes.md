@@ -1,20 +1,14 @@
-# MariaDB MaxScale 25.01.3 Release Notes
+# MaxScale 25.01.3 Release Notes
 
-Release 25.01.3 is a GA release.
+Release 25.01.3 is a GA release. It was released on 2025-06-25.
 
-NOTE: The MaxScale package has been renamed from maxscale-enterprise back
-      to maxscale, which may, when repositories are used, require 25.01.1 and
-      25.01.2 to be removed before installing 25.01.3.
+NOTE: The MaxScale package has been renamed from maxscale-enterprise back to maxscale, which may, when repositories are used, require 25.01.1 and 25.01.2 to be removed before installing 25.01.3.
 
-This document describes the changes in release 25.01.3, when compared to the
-previous release in the same series.
+This document describes the changes in release 25.01.3, when compared to the previous release in the same series.
 
-If you are upgrading from an older major version of MaxScale, please read the
-[upgrading document](../Upgrading/Upgrading-To-MaxScale-25.01.md) for
-this MaxScale version.
+If you are upgrading from an older major version of MaxScale, please read the [upgrading document](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/maxscale-management/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-upgrading-mariadb-maxscale) for this MaxScale version.
 
-For any problems you encounter, please consider submitting a bug
-report on [our Jira](https://jira.mariadb.org/projects/MXS).
+For any problems you encounter, please consider submitting a bug report on [our Jira](https://jira.mariadb.org/projects/MXS).
 
 ## Bug fixes
 
@@ -24,7 +18,7 @@ report on [our Jira](https://jira.mariadb.org/projects/MXS).
 * [MXS-5613](https://jira.mariadb.org/browse/MXS-5613) The logout screen is shown when accessing the MaxGUI login view.
 * [MXS-5599](https://jira.mariadb.org/browse/MXS-5599) Processing of conditional headers is incorrect
 * [MXS-5598](https://jira.mariadb.org/browse/MXS-5598) MaxCtrl fails to read large inputs from stdin
-* [MXS-5597](https://jira.mariadb.org/browse/MXS-5597) admin_oidc_url is documented to not be dynamic when in fact it is
+* [MXS-5597](https://jira.mariadb.org/browse/MXS-5597) admin\_oidc\_url is documented to not be dynamic when in fact it is
 * [MXS-5590](https://jira.mariadb.org/browse/MXS-5590) REST-API always sends a Connection: close header
 * [MXS-5588](https://jira.mariadb.org/browse/MXS-5588) Signal 11 crash when enabling causal reads with Galera
 * [MXS-5584](https://jira.mariadb.org/browse/MXS-5584) Diff-router does not decrypt password before stopping replication
@@ -44,8 +38,7 @@ report on [our Jira](https://jira.mariadb.org/projects/MXS).
 
 ## Known Issues and Limitations
 
-There are some limitations and known issues within this version of MaxScale.
-For more information, please refer to the [Limitations](../About/Limitations.md) document.
+There are some limitations and known issues within this version of MaxScale. For more information, please refer to the [Limitations](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/maxscale-quickstart-guides/mariadb-maxscale-limitations-guide) document.
 
 ## Packaging
 

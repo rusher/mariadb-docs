@@ -1,16 +1,12 @@
-# MariaDB MaxScale 25.01.2 Release Notes
+# MaxScale 25.01.2 Release Notes
 
 Release 25.01.2 is a GA release.
 
-This document describes the changes in release 25.01.2, when compared to the
-previous release in the same series.
+This document describes the changes in release 25.01.2, when compared to the previous release in the same series.
 
-If you are upgrading from an older major version of MaxScale, please read the
-[upgrading document](../Upgrading/Upgrading-To-MaxScale-25.01.md) for
-this MaxScale version.
+If you are upgrading from an older major version of MaxScale, please read the [upgrading document](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/maxscale-management/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-upgrading-mariadb-maxscale) for this MaxScale version.
 
-For any problems you encounter, please consider submitting a bug
-report on [our Jira](https://jira.mariadb.org/projects/MXS).
+For any problems you encounter, please consider submitting a bug report on [our Jira](https://jira.mariadb.org/projects/MXS).
 
 ## External CVEs resolved.
 
@@ -22,34 +18,34 @@ report on [our Jira](https://jira.mariadb.org/projects/MXS).
 * [MXS-5541](https://jira.mariadb.org/browse/MXS-5541) Logs Archive page doesn't show useful API error
 * [MXS-5535](https://jira.mariadb.org/browse/MXS-5535) Not all parameters are shown when creating a new object in the GUI
 * [MXS-5534](https://jira.mariadb.org/browse/MXS-5534) maxpostprocess and maxvisualize do not work when used from a binary tarball
-* [MXS-5533](https://jira.mariadb.org/browse/MXS-5533) Remove session_trace parameter from services section
+* [MXS-5533](https://jira.mariadb.org/browse/MXS-5533) Remove session\_trace parameter from services section
 * [MXS-5532](https://jira.mariadb.org/browse/MXS-5532) Diff does not detect anomalous configuration
 * [MXS-5531](https://jira.mariadb.org/browse/MXS-5531) Binary tarballs include experimental modules
-* [MXS-5530](https://jira.mariadb.org/browse/MXS-5530) Default value of wait_timeout should be the same as in MariaDB
-* [MXS-5529](https://jira.mariadb.org/browse/MXS-5529) Session commands with max_slave_connections=0 after switchover do not discard stale connections
+* [MXS-5530](https://jira.mariadb.org/browse/MXS-5530) Default value of wait\_timeout should be the same as in MariaDB
+* [MXS-5529](https://jira.mariadb.org/browse/MXS-5529) Session commands with max\_slave\_connections=0 after switchover do not discard stale connections
 * [MXS-5528](https://jira.mariadb.org/browse/MXS-5528) Diff router is not compatible with config-sync
-* [MXS-5527](https://jira.mariadb.org/browse/MXS-5527) The "INSERT INTO...RETURNING" syntax breaks causal_reads
+* [MXS-5527](https://jira.mariadb.org/browse/MXS-5527) The "INSERT INTO...RETURNING" syntax breaks causal\_reads
 * [MXS-5522](https://jira.mariadb.org/browse/MXS-5522) config sync does not ignore port for listeners
 * [MXS-5521](https://jira.mariadb.org/browse/MXS-5521) Crash in diff router
-* [MXS-5520](https://jira.mariadb.org/browse/MXS-5520) config_sync_password infinitely doubles after maxscale restart & alter command
-* [MXS-5519](https://jira.mariadb.org/browse/MXS-5519) Documentation regarding mixing of cooperative_monitoring_locks and passive is unclear
+* [MXS-5520](https://jira.mariadb.org/browse/MXS-5520) config\_sync\_password infinitely doubles after maxscale restart & alter command
+* [MXS-5519](https://jira.mariadb.org/browse/MXS-5519) Documentation regarding mixing of cooperative\_monitoring\_locks and passive is unclear
 * [MXS-5518](https://jira.mariadb.org/browse/MXS-5518) Documentation of switchover-force lacks warnings
 * [MXS-5513](https://jira.mariadb.org/browse/MXS-5513) Config Wizard page is accessible by `basic` user
 * [MXS-5511](https://jira.mariadb.org/browse/MXS-5511) The Contact view in the GUI has outdated information
 * [MXS-5510](https://jira.mariadb.org/browse/MXS-5510) Upgrading to 25.01.1 causes systemd service files to be removed
 * [MXS-5509](https://jira.mariadb.org/browse/MXS-5509) WCAR visualization is not included in the package
 * [MXS-5508](https://jira.mariadb.org/browse/MXS-5508) Relationship selections auto-cleared when creating a new monitor object
-* [MXS-5507](https://jira.mariadb.org/browse/MXS-5507) readwritesplit enables multi-statements regardless of the state of causal_reads
+* [MXS-5507](https://jira.mariadb.org/browse/MXS-5507) readwritesplit enables multi-statements regardless of the state of causal\_reads
 * [MXS-5505](https://jira.mariadb.org/browse/MXS-5505) Revert 60400ee256 MXS-4685: Seek GTIDs incrementally
 * [MXS-5493](https://jira.mariadb.org/browse/MXS-5493) Cluster tree is not visualized accurately
-* [MXS-5492](https://jira.mariadb.org/browse/MXS-5492) idle_session_pool_time=0s does not fairly share connections
+* [MXS-5492](https://jira.mariadb.org/browse/MXS-5492) idle\_session\_pool\_time=0s does not fairly share connections
 * [MXS-5490](https://jira.mariadb.org/browse/MXS-5490) Address field unexpectedly auto-truncates on the GUI dashboard
 * [MXS-5488](https://jira.mariadb.org/browse/MXS-5488) Need Documentation updates for Maxscale install recommendation
 * [MXS-5485](https://jira.mariadb.org/browse/MXS-5485) Reads are not retried if connection creation fails due to sub-service failure
 * [MXS-5484](https://jira.mariadb.org/browse/MXS-5484) Binlogrouter multidomain support broken in 24.02
 * [MXS-5481](https://jira.mariadb.org/browse/MXS-5481) Galera Monitor does not log an error if "SHOW SLAVE STATUS" fails
-* [MXS-5480](https://jira.mariadb.org/browse/MXS-5480) disable_sescmd_history=true causes a use-after-free
-* [MXS-5476](https://jira.mariadb.org/browse/MXS-5476) "maxctrl alter monitor MyMonitor auto_failover=true" fails
+* [MXS-5480](https://jira.mariadb.org/browse/MXS-5480) disable\_sescmd\_history=true causes a use-after-free
+* [MXS-5476](https://jira.mariadb.org/browse/MXS-5476) "maxctrl alter monitor MyMonitor auto\_failover=true" fails
 * [MXS-5471](https://jira.mariadb.org/browse/MXS-5471) GUI reference doc links are broken
 * [MXS-5468](https://jira.mariadb.org/browse/MXS-5468) use-after-free when stopping capture
 * [MXS-5467](https://jira.mariadb.org/browse/MXS-5467) Parallel query execution fails when multiple query tabs are open
@@ -65,13 +61,12 @@ report on [our Jira](https://jira.mariadb.org/projects/MXS).
 * [MXS-5441](https://jira.mariadb.org/browse/MXS-5441) Dropdown inputs in Query Editor table editor are not focusable
 * [MXS-5437](https://jira.mariadb.org/browse/MXS-5437) Failed authentication warnings do not mention lack of client-side SSL as the reason of the failure
 * [MXS-5404](https://jira.mariadb.org/browse/MXS-5404) The monitor journal file is not discarded aggressively enough.
-* [MXS-5340](https://jira.mariadb.org/browse/MXS-5340) ed25519 socket droped when no user_mapping_file
+* [MXS-5340](https://jira.mariadb.org/browse/MXS-5340) ed25519 socket droped when no user\_mapping\_file
 * [MXS-5314](https://jira.mariadb.org/browse/MXS-5314) Resultset table not fully expanded for inactive query tab
 
 ## Known Issues and Limitations
 
-There are some limitations and known issues within this version of MaxScale.
-For more information, please refer to the [Limitations](../About/Limitations.md) document.
+There are some limitations and known issues within this version of MaxScale. For more information, please refer to the [Limitations](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/maxscale-quickstart-guides/mariadb-maxscale-limitations-guide) document.
 
 ## Packaging
 

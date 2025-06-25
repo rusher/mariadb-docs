@@ -6,7 +6,7 @@ The most recent release of [MariaDB 10.5](what-is-mariadb-105.md) is:[**MariaDB 
 
 **Release date:** 13 Nov 2023
 
-[MariaDB 10.5](what-is-mariadb-105.md) is a previous _stable_ series of MariaDB, [maintained until](https://mariadb.org/about/#maintenance-policy) June 2025. It is an evolution of [MariaDB 10.4](../../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series) with several entirely new features not found anywhere else and with backported and reimplemented features from MySQL.
+[MariaDB 10.5](what-is-mariadb-105.md) is a previous _stable_ series of MariaDB, [maintained until](https://mariadb.org/about/#maintenance-policy) June 2025. It is an evolution of [MariaDB 10.4](../../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/) with several entirely new features not found anywhere else and with backported and reimplemented features from MySQL.
 
 [MariaDB 10.5.23](mariadb-10-5-23-release-notes.md) is a [_**Stable (GA)**_](../../mariadb-release-criteria.md) release.
 
@@ -160,7 +160,7 @@ Thanks, and enjoy MariaDB!
 
 * Invert single and double quotes for sql command definitions in [healthcheck.sh](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/automated-mariadb-deployment-and-administration/docker-and-mariadb/using-healthcheck-sh) due to failure under [sql\_mode=ANSI\_QUOTES](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/sql-mode#ansi_quotes) - contribution by Dominik Häckel
 * [healthcheck.sh](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/automated-mariadb-deployment-and-administration/docker-and-mariadb/using-healthcheck-sh) --no-defaults behaviour was corrected - reported by Dominik Häckel
-* Added /docker-entrypoint-init.d for tar{,compression} from [mariadb-backup](broken-reference) - [instructions](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/automated-mariadb-deployment-and-administration/docker-and-mariadb/docker-official-image-frequently-asked-questions#how-do-i-create-a-mariadb-backup-of-the-data)
+* Added /docker-entrypoint-init.d for tar{,compression} from [mariadb-backup](broken-reference/) - [instructions](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/automated-mariadb-deployment-and-administration/docker-and-mariadb/docker-official-image-frequently-asked-questions#how-do-i-create-a-mariadb-backup-of-the-data)
 * Refactor `docker_mariadb_init` in the entrypoint for extending the MariaDB image
 * CIS failure due to world-writable directory /var/run/mysqld, added sticky bit - reported by @ollie1
 * Add [PROXY privileges](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/grant#proxy-privileges) for root@MARIADB\_ROOT\_HOST - reported by Matthieu Gusmini
@@ -180,7 +180,7 @@ information on each push, see the [changelog](../changelogs/changelogs-mariadb-1
 
 For a full list of contributors to [MariaDB 10.5.23](mariadb-10-5-23-release-notes.md), see the [MariaDB Foundation release announcement](https://mariadb.org/mariadb-11-1-3-11-0-4-10-11-6-10-10-7-10-6-16-10-5-23-10-4-32-now-available/).
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

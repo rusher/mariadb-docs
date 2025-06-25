@@ -7,7 +7,7 @@ The most recent release of [MariaDB 10.5](what-is-mariadb-105.md) is:[**MariaDB 
 **Release date:** 12 May 2020
 
 [MariaDB 10.5](what-is-mariadb-105.md) is the current _development_ series of MariaDB. It is an evolution\
-of [MariaDB 10.4](../../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series) with several entirely new features not found anywhere else\
+of [MariaDB 10.4](../../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/) with several entirely new features not found anywhere else\
 and with backported and reimplemented features from MySQL.
 
 [MariaDB 10.5.3](mariadb-1053-release-notes.md) is a [_**Release Candidate**_](../../mariadb-release-criteria.md) (RC) release.
@@ -73,7 +73,7 @@ Notable changes of this release include:
 
 ### mariadb-backup
 
-* [mariadb-backup](broken-reference) does not honor ignore\_db\_dirs from server config ([MDEV-19347](https://jira.mariadb.org/browse/MDEV-19347))
+* [mariadb-backup](broken-reference/) does not honor ignore\_db\_dirs from server config ([MDEV-19347](https://jira.mariadb.org/browse/MDEV-19347))
 * mariadb-backup `--ftwrl-wait-timeout` never times out on explicit lock ([MDEV-20230](https://jira.mariadb.org/browse/MDEV-20230))
 
 ### Crash Recovery
@@ -116,7 +116,7 @@ For a full list of contributors to [MariaDB 10.5.3](mariadb-1053-release-notes.m
 
 **Do not use non-stable (non-GA) releases in production!**
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
