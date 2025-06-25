@@ -24,7 +24,15 @@ Users with `SELECT` privileges on [mysql.proc](../system-tables/the-mysql-databa
 
 {% endhint %}
 
-{% include "../../../../.gitbook/includes/untitled (1).md" %}
+{% tabs %}
+{% tab title="Current" %}
+`SHOW CREATE PROCEDURE` quotes identifiers, according to the value of the [sql\_quote\_show\_create](https://kb-archive.mariadb.net/kb/en/server-system-variables/#sql_quote_show_create) system variable.
+{% endtab %}
+
+{% tab title="< 10.6.5 / 10.5.13 / 10.4.22" %}
+`SHOW CREATE PROCEDURE` quotes identifiers, according to the value of the [sql\_quote\_show\_create](https://kb-archive.mariadb.net/kb/en/server-system-variables/#sql_quote_show_create) system variable. The output of this statement is unreliably affected by the [sql\_quote\_show\_create](https://kb-archive.mariadb.net/kb/en/server-system-variables/#sql_quote_show_create) system variable.
+{% endtab %}
+{% endtabs %}
 
 ## Examples
 

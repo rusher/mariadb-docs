@@ -20,7 +20,15 @@ Note that `SHOW CREATE TABLE` is not meant to provide metadata about a table. It
 
 MariaDB permits [TEXT](../../../data-types/string-data-types/text.md) and [BLOB](../../../data-types/string-data-types/blob.md) data types to be assigned a [DEFAULT](../../data-definition/create/create-table.md#default) value. As a result, `SHOW CREATE TABLE` will append a `DEFAULT NULL` to nullable TEXT or BLOB fields if no specific default is provided.
 
-Numbers are no longer quoted in the `DEFAULT` clause in `SHOW CREATE` statement. Prior to [MariaDB 10.2.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-1022-release-notes), MariaDB quoted numbers.
+{% tabs %}
+{% tab title="Current" %}
+Numbers are quoted in the `DEFAULT` clause in `SHOW CREATE` statement.&#x20;
+{% endtab %}
+
+{% tab title="< 10.2.2" %}
+Numbers are not quoted in the `DEFAULT` clause in `SHOW CREATE` statement.
+{% endtab %}
+{% endtabs %}
 
 ### Index Order
 
@@ -59,32 +67,6 @@ Create Table: CREATE TABLE t (
   id int(11) NOT NULL AUTO_INCREMENT,
   s char(60) DEFAULT NULL,
   PRIMARY KEY (id)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1
-```
-
-Unquoted numeric DEFAULTs, from [MariaDB 10.2.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-1022-release-notes):
-
-```sql
-CREATE TABLE td (link TINYINT DEFAULT 1);
-
-SHOW CREATE TABLE td\G
-*************************** 1. row ***************************
-       Table: td
-Create Table: CREATE TABLE `td` (
-  `link` tinyint(4) DEFAULT 1
-) ENGINE=InnoDB DEFAULT CHARSET=latin1
-```
-
-Quoted numeric DEFAULTs, until [MariaDB 10.2.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-1021-release-notes):
-
-```sql
-CREATE TABLE td (link TINYINT DEFAULT 1);
-
-SHOW CREATE TABLE td\G
-*************************** 1. row ***************************
-       Table: td
-Create Table: CREATE TABLE `td` (
-  `link` tinyint(4) DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1
 ```
 
@@ -130,6 +112,6 @@ Create Table: CREATE TABLE "t1" (
 * [SHOW CREATE SEQUENCE](show-create-sequence.md)
 * [SHOW CREATE VIEW](show-create-view.md)
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}
