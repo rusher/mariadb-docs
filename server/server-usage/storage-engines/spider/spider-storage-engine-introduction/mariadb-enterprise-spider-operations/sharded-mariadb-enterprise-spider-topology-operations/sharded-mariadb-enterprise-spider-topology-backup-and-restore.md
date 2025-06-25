@@ -2,7 +2,7 @@
 
 ## Overview
 
-When using Spider in the Sharded MariaDB Enterprise Spider topology, backup and restore operations can be performed using [MariaDB Backup](../../../../../backing-up-and-restoring-databases/mariabackup/) or [MariaDB Dump](../../../../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md). These operations must be performed on the Spider Node as well as on each Data Node.
+When using Spider in the Sharded MariaDB Enterprise Spider topology, backup and restore operations can be performed using [MariaDB Backup](../../../../../backing-up-and-restoring-databases/mariadb-backup/) or [MariaDB Dump](../../../../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md). These operations must be performed on the Spider Node as well as on each Data Node.
 
 ## MariaDB Backup
 
@@ -10,7 +10,7 @@ MariaDB Backup can be used to perform backup operations on Spider deployments.
 
 ### Backup Spider with MariaDB Backup
 
-[MariaDB Backup](../../../../../backing-up-and-restoring-databases/mariabackup/) can be used to create a physical backup of a Sharded MariaDB Enterprise Spider topology. MariaDB Backup must be used to backup the Spider Node and all Data Nodes. The Spider Node and Data Nodes must be locked to guarantee that the backups of the Spider Node and Data Nodes are consistent.
+[MariaDB Backup](../../../../../backing-up-and-restoring-databases/mariadb-backup/) can be used to create a physical backup of a Sharded MariaDB Enterprise Spider topology. MariaDB Backup must be used to backup the Spider Node and all Data Nodes. The Spider Node and Data Nodes must be locked to guarantee that the backups of the Spider Node and Data Nodes are consistent.
 
 The backup of the Spider Node contains:
 
@@ -69,7 +69,7 @@ Keep this session open during the rest of the procedure.
 
 The read lock will propagate to the Data Tables on each Data Node as well. The read locks will prevent the Data Tables from changing during the backup, so the backups on the Spider Node and Data Nodes are consistent.
 
-4. On each Data Node, perform the backup using [MariaDB Backup](../../../../../backing-up-and-restoring-databases/mariabackup/) .
+4. On each Data Node, perform the backup using [MariaDB Backup](../../../../../backing-up-and-restoring-databases/mariadb-backup/) .
 
 With MariaDB Backup 10.5 and later, use the mariadb-backup command:
 
@@ -80,7 +80,7 @@ $ sudo mariadb-backup --backup \
    --password='mb_passwd'
 ```
 
-5. On the Spider Node, after backing up each Data Node, perform a backup with [MariaDB Backup](../../../../../backing-up-and-restoring-databases/mariabackup/) .
+5. On the Spider Node, after backing up each Data Node, perform a backup with [MariaDB Backup](../../../../../backing-up-and-restoring-databases/mariadb-backup/) .
 
 With MariaDB Backup 10.5 and later, use the mariadb-backup command:
 
@@ -110,7 +110,7 @@ The Spider Node and Data Nodes now each have a complete backup of the data direc
 
 ## Restore Spider with MariaDB Backup
 
-[MariaDB Backup](../../../../../backing-up-and-restoring-databases/mariabackup/) can restore a Sharded MariaDB Enterprise Spider topology from a backup taken with MariaDB Backup.
+[MariaDB Backup](../../../../../backing-up-and-restoring-databases/mariadb-backup/) can restore a Sharded MariaDB Enterprise Spider topology from a backup taken with MariaDB Backup.
 
 1. On the Spider Node and on each Data Node, stop the MariaDB Server process:
 
