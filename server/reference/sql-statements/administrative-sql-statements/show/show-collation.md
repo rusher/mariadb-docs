@@ -11,7 +11,15 @@ SHOW COLLATION
 
 The output from `SHOW COLLATION` includes all available[collations](../../../data-types/string-data-types/character-sets/). The `LIKE` clause, if present on its own, indicates which collation names to match. The `WHERE` and `LIKE` clauses can be given to select rows using more general conditions, as discussed in [Extended SHOW](extended-show.md).
 
-Similar information, including some extra information (such as, from [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-4-series/what-is-mariadb-114),.5, which collation an alias refers to), can be queried from the [Information Schema COLLATIONS](../system-tables/information-schema/information-schema-tables/information-schema-collations-table.md) table.
+{% tabs %}
+{% tab title="Current" %}
+Similar information, including some extra information, can be queried from the [Information Schema COLLATIONS](../system-tables/information-schema/information-schema-tables/information-schema-collations-table.md) table.
+{% endtab %}
+
+{% tab title="< 11.4.5" %}
+No similar information or extra information can be queried from the [Information Schema COLLATIONS](../system-tables/information-schema/information-schema-tables/information-schema-collations-table.md) table.
+{% endtab %}
+{% endtabs %}
 
 See [Setting Character Sets and Collations](../../../data-types/string-data-types/character-sets/setting-character-sets-and-collations.md) for details on specifying the collation at the server, database, table and column levels.
 
@@ -77,6 +85,6 @@ SHOW COLLATION WHERE Sortlen LIKE '8' AND Charset LIKE 'utf8mb4';
 * [Setting Character Sets and Collations](../../../data-types/string-data-types/character-sets/setting-character-sets-and-collations.md)
 * [Information Schema COLLATIONS](../system-tables/information-schema/information-schema-tables/information-schema-collations-table.md)
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

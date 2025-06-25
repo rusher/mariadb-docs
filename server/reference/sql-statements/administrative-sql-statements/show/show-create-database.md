@@ -28,7 +28,7 @@ SHOW CREATE SCHEMA test;
 +----------+-----------------------------------------------------------------+
 ```
 
-With [sql\_quote\_show\_create](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#sql_quote_show_create) off:
+With [sql\_quote\_show\_create](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#sql_quote_show_create) turned off, the output looks slightly differently:
 
 ```sql
 SHOW CREATE DATABASE test;
@@ -39,16 +39,7 @@ SHOW CREATE DATABASE test;
 +----------+---------------------------------------------------------------+
 ```
 
-With a comment, from [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105):
-
-```sql
-SHOW CREATE DATABASE p;
-+----------+--------------------------------------------------------------------------------------+
-| Database | Create Database                                                                      |
-+----------+--------------------------------------------------------------------------------------+
-| p        | CREATE DATABASE `p` /*!40100 DEFAULT CHARACTER SET latin1 */ COMMENT 'presentations' |
-+----------+--------------------------------------------------------------------------------------+
-```
+{% include "../../../../.gitbook/includes/untitled (1).md" %}
 
 ## See Also
 
@@ -56,6 +47,6 @@ SHOW CREATE DATABASE p;
 * [ALTER DATABASE](../../data-definition/alter/alter-database.md)
 * [Character Sets and Collations](../../../data-types/string-data-types/character-sets/supported-character-sets-and-collations.md)
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}
