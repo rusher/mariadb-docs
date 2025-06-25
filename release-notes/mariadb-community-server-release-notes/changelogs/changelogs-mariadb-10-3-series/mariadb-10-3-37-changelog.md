@@ -2,11 +2,11 @@
 
 The most recent release of [MariaDB 10.3](../../old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103.md) is:[**MariaDB 10.3.39**](../../old-releases/release-notes-mariadb-10-3-series/mariadb-10-3-39-release-notes.md) Stable (GA) [Download Now](https://downloads.mariadb.org/mariadb/10.3.39/)
 
-[Download 10.3.37](https://downloads.mariadb.org/mariadb/10.3.37/)[Release Notes](../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series)[Changelog](mariadb-10-3-37-changelog.md)[Overview of 10.3](../../old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103.md)
+[Download 10.3.37](https://downloads.mariadb.org/mariadb/10.3.37/)[Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/changelogs/changelogs-mariadb-10-3-series/broken-reference/README.md)[Changelog](mariadb-10-3-37-changelog.md)[Overview of 10.3](../../old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103.md)
 
 **Release date:** 7 Nov 2022
 
-For the highlights of this release, see the[release notes](../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series).
+For the highlights of this release, see the[release notes](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/changelogs/changelogs-mariadb-10-3-series/broken-reference/README.md).
 
 The revision number links will take you to the revision's page on GitHub. On[GitHub](https://github.com/MariaDB/server/tree/10.3) you can view more\
 details of the revision and view diffs of the code modified in that revision.
@@ -128,7 +128,7 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-29750](https://jira.mariadb.org/browse/MDEV-29750) triggers can modify history
 * [Revision #78030b67b9](https://github.com/MariaDB/server/commit/78030b67b9)\
   2022-10-14 11:54:05 +0300
-  * Do not use C++11 before [MariaDB 10.4](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series)
+  * Do not use C++11 before [MariaDB 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/changelogs/changelogs-mariadb-10-3-series/broken-reference/README.md)
 * [Revision #3d9b350a9c](https://github.com/MariaDB/server/commit/3d9b350a9c)\
   2022-10-14 11:00:34 +0300
   * Fix clang -Wunused-but-set-variable

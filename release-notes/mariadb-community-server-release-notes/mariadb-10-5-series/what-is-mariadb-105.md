@@ -29,7 +29,7 @@ See the [Differences in MariaDB Enterprise Server 10.5](../../enterprise-server/
 ### Amazon S3
 
 * The [S3 storage engine](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/s3-storage-engine) allows one to archive MariaDB tables in Amazon S3, or any third-party public or private cloud that implements S3 API ( [MDEV-22606](https://jira.mariadb.org/browse/MDEV-22606))
-* Both S3 tables and [partitioned](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/SsmexDFPv2xG2OTyO5yV/server-usage/partitioning-tables) S3 tables are discoverable. This means that if you create a partitioned S3 table, both the partitioned table and its partitions can be directly used by another server that has access to the S3 storage. ([MDEV-22088](https://jira.mariadb.org/browse/MDEV-22088))
+* Both S3 tables and [partitioned](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/partitioning-tables) S3 tables are discoverable. This means that if you create a partitioned S3 table, both the partitioned table and its partitions can be directly used by another server that has access to the S3 storage. ([MDEV-22088](https://jira.mariadb.org/browse/MDEV-22088))
 
 ### Privileges Made More Granular
 
