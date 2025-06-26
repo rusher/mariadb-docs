@@ -111,9 +111,7 @@ When an index is created, the storage engine may use a configurable buffer in th
 
 ## Privileges
 
-Executing the `ALTER TABLE` statement generally requires at least the [ALTER](../../account-management-sql-statements/grant.md#table-privileges) privilege for the table or the database..
-
-If you are renaming a table, then it also requires the [DROP](../../account-management-sql-statements/grant.md#table-privileges), [CREATE](../../account-management-sql-statements/grant.md#table-privileges) and [INSERT](../../account-management-sql-statements/grant.md#table-privileges) privileges for the table or the database as well.
+Executing the `ALTER TABLE` statement generally requires at least the [ALTER](../../account-management-sql-statements/grant.md#table-privileges) privilege for the table or the database. If you are renaming a table, this also requires the [DROP](../../account-management-sql-statements/grant.md#table-privileges), [CREATE](../../account-management-sql-statements/grant.md#table-privileges) and [INSERT](../../account-management-sql-statements/grant.md#table-privileges) privileges for the table or the database.
 
 ## Online DDL
 
