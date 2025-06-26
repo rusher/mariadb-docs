@@ -4,7 +4,7 @@ MariaDB applied to participate in the 2020 Google Season of Docs, but was unsucc
 
 ## Where to Start
 
-Please join us on [Zulip](https://mariadb.com/kb/en/irc-chat-servers-and-zulip-instance/) to mingle with the community. You can also subscribe to [maria-docs@lists.launchpad.net](https://launchpad.net/~maria-docs), the documentation mailing list.
+Please join us on Zulip to mingle with the community. You can also subscribe to [maria-docs@lists.launchpad.net](https://launchpad.net/~maria-docs), the documentation mailing list.
 
 ## List of Tasks
 
@@ -31,7 +31,7 @@ A detailed tutorial and user guide, including examples of the various Mroonga [u
 
 ### Translation
 
-You will choose a major language and ensure that a substantial subsection of the documentation is translated into that language. See [translations](https://mariadb.com/kb/en/translations/).
+You will choose a major language and ensure that a substantial subsection of the documentation is translated into that language. See [translations](google-season-of-docs-2020.md#translation).
 
 _Loaded from the_ [_MariaDB issue tracker_](https://jira.mariadb.org/issues/?jql=labels=gsdocs19)\
 Loading Issues from \[Jira]\(https://jira.mariadb.org/issues/?jql=labels=gsdocs19 and project=mdev order by key)

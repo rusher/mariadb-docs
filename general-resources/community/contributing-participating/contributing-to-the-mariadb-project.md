@@ -13,7 +13,7 @@ _The success of MariaDB relies heavily on community involvement. You can contrib
 
 _Explore more ways to get involved on the_ [_MariaDB Foundation page_](https://mariadb.org/get-involved/)_._
 
-The success of MariaDB  depends on the participation of the community. MariaDB would not be as good as it is today without the participation of the entire MariaDB community.
+The success of MariaDB depends on the participation of the community. MariaDB would not be as good as it is today without the participation of the entire MariaDB community.
 
 ## Getting Started
 
@@ -26,7 +26,7 @@ strong C/C++ skills. Areas for non-developers include:
 * Helping other people answering problems or even fixing their bugs on [IRC](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/irc/README.md) in the #maria channel on [Libera.Chat](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/irc/README.md) or on MariaDB's Zulip instance at [mariadb.zulipchat.com](https://mariadb.zulipchat.com).
 * Testing and Benchmarking
   * Bug tests can be uploaded to the 'private' directory of our [FTP](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/ftp/README.md) server.
-* Creating [documentation and KB articles](https://mariadb.com/kb/en/meta/writing-and-editing-knowledge-base-articles) for MariaDB, or [translating existing documentation](https://mariadb.com/kb/en/translation-howto/).
+* Creating documentation for MariaDB, or [translating existing documentation](https://mariadb.com/kb/en/translation-howto/).
 * Advocating MariaDB in your area.
 * Participate in [open source events](https://mariadb.org/events/) and talk about MariaDB.
 * Running a [BuildBot](../../development-articles/general-info/tools/buildbot/) on a platform which is not currently [builders](https://buildbot.mariadb.org/#/builders).
