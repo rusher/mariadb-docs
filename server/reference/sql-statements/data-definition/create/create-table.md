@@ -136,18 +136,18 @@ To insert rows from a query into an existing table, [INSERT ... SELECT](../../da
 
 ## Column Definitions
 
-<pre><code>create_definition:
-  { col_name column_definition | <a data-footnote-ref href="#user-content-fn-4">index_definition</a> | <a data-footnote-ref href="#user-content-fn-5">period_definition</a> | CHECK (expr) }
+<pre class="language-sql"><code class="lang-sql">create_definition:
+  { col_name column_definition | <a data-footnote-ref href="#user-content-fn-1">index_definition</a> | <a data-footnote-ref href="#user-content-fn-2">period_definition</a> | CHECK (expr) }
 
 column_definition:
-  <a data-footnote-ref href="#user-content-fn-6">data_type</a>
+  <a data-footnote-ref href="#user-content-fn-3">data_type</a>
     [NOT NULL | NULL] [DEFAULT default_value | (expression)]
     [ON UPDATE [NOW | CURRENT_TIMESTAMP] [(precision)]]
     [AUTO_INCREMENT] [ZEROFILL] [UNIQUE [KEY] | [PRIMARY] KEY]
     [INVISIBLE] [{WITH|WITHOUT} SYSTEM VERSIONING]
     [COMMENT 'string'] [REF_SYSTEM_ID = value]
-    [<a data-footnote-ref href="#user-content-fn-4">reference_definition</a>]
-  | <a data-footnote-ref href="#user-content-fn-6">data_type</a> [GENERATED ALWAYS] 
+    [<a data-footnote-ref href="#user-content-fn-1">reference_definition</a>]
+  | <a data-footnote-ref href="#user-content-fn-3">data_type</a> [GENERATED ALWAYS] 
   AS [ ROW {START|END} [NOT NULL ENABLE] [[PRIMARY] KEY]
         | (expression) [VIRTUAL | PERSISTENT | STORED] ]
       [INVISIBLE] [UNIQUE [KEY]] [COMMENT 'string']
@@ -208,17 +208,8 @@ You can also use DEFAULT ([NEXT VALUE FOR sequence](../../../sql-structure/seque
 
 ### AUTO\_INCREMENT Column Option
 
-Use [AUTO\_INCREMENT](../../../data-types/auto_increment.md) to create a column whose value can\
-can be set automatically from a simple counter. You can only use `AUTO_INCREMENT`\
-on a column with an integer type. The column must be a key, and there can only be\
-one `AUTO_INCREMENT` column in a table. If you insert a row without specifying\
-a value for that column (or if you specify `0`, `NULL`, or [DEFAULT](../../../sql-functions/secondary-functions/information-functions/default.md)\
-as the value), the actual value will be taken from the counter, with each insertion\
-incrementing the counter by one. You can still insert a value explicitly. If you\
-insert a value that is greater than the current counter value, the counter is\
-set based on the new value. An `AUTO_INCREMENT` column is implicitly `NOT NULL`.\
-Use [LAST\_INSERT\_ID](../../../sql-functions/secondary-functions/information-functions/last_insert_id.md) to get the [AUTO\_INCREMENT](../../../data-types/auto_increment.md) value\
-most recently used by an [INSERT](../../data-manipulation/inserting-loading-data/insert.md) statement.
+Use [AUTO\_INCREMENT](../../../data-types/auto_increment.md) to create a column whose value can can be set automatically from a simple counter. You can only use `AUTO_INCREMENT` on a column with an integer type. The column must be a key, and there can only be one `AUTO_INCREMENT` column in a table. If you insert a row without specifying a value for that column (or if you specify `0`, `NULL`, or [DEFAULT](../../../sql-functions/secondary-functions/information-functions/default.md) as the value), the actual value will be taken from the counter, with each insertion incrementing the counter by one. You can still insert a value explicitly. If you insert a value that is greater than the current counter value, the counter is\
+set based on the new value. An `AUTO_INCREMENT` column is implicitly `NOT NULL`. Use [LAST\_INSERT\_ID](../../../sql-functions/secondary-functions/information-functions/last_insert_id.md) to get the [AUTO\_INCREMENT](../../../data-types/auto_increment.md) value most recently used by an [INSERT](../../data-manipulation/inserting-loading-data/insert.md) statement.
 
 ### ZEROFILL Column Option
 
@@ -232,9 +223,7 @@ Specifying a column as a unique key creates a unique index on that column. See t
 
 ### UNIQUE KEY Column Option
 
-Use `UNIQUE KEY` (or just `UNIQUE`) to specify that all values in the column\
-must be distinct from each other. Unless the column is `NOT NULL`, there may be\
-multiple rows with `NULL` in the column.
+Use `UNIQUE KEY` (or just `UNIQUE`) to specify that all values in the column must be distinct from each other. Unless the column is `NOT NULL`, there may be multiple rows with `NULL` in the column.
 
 Specifying a column as a unique key creates a unique index on that column.
 
@@ -242,8 +231,7 @@ See the [Index Definitions](create-table.md#index-definitions) section below for
 
 ### COMMENT Column Option
 
-You can provide a comment for each column using the `COMMENT` clause. The maximum length is 1024 characters. Use\
-the [SHOW FULL COLUMNS](../../administrative-sql-statements/show/show-columns.md) statement to see column comments.
+You can provide a comment for each column using the `COMMENT` clause. The maximum length is 1024 characters. Use the [SHOW FULL COLUMNS](../../administrative-sql-statements/show/show-columns.md) statement to see column comments.
 
 ### REF\_SYSTEM\_ID
 
@@ -845,18 +833,8 @@ CREATE TABLE t1(
 
 {% @marketo/form formId="4316" %}
 
-[^1]: [#column-definitions](create-table.md#column-definitions "mention")
+[^1]: [#index-definitions](create-table.md#index-definitions "mention")
 
-[^2]: [#table-options](create-table.md#table-options "mention")
+[^2]: [#periods](create-table.md#periods "mention")
 
-[^3]: [#partitions](create-table.md#partitions "mention")
-
-[^4]: [#index-definitions](create-table.md#index-definitions "mention")
-
-[^5]: [#periods](create-table.md#periods "mention")
-
-[^6]: [data-types](../../../data-types/ "mention")
-
-[^7]: [character-sets](../../../data-types/string-data-types/character-sets/ "mention")
-
-[^8]: [date-and-time-units.md](../../../sql-functions/date-time-functions/date-and-time-units.md "mention")
+[^3]: [data-types](../../../data-types/ "mention")
