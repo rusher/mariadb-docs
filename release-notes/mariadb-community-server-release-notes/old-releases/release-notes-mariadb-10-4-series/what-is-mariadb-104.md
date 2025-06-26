@@ -333,7 +333,7 @@ page.
 | 20 Dec 2018 | [MariaDB 10.4.1](mariadb-1041-release-notes.md)     | Beta        | [Release Notes](mariadb-1041-release-notes.md)    | [Changelog](../../changelogs/changelogs-mariadb-10-4-series/mariadb-1041-changelog.md)    |
 | 9 Nov 2018  | [MariaDB 10.4.0](mariadb-1040-release-notes.md)     | Alpha       | [Release Notes](mariadb-1040-release-notes.md)    | [Changelog](../../changelogs/changelogs-mariadb-10-4-series/mariadb-1040-changelog.md)    |
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

@@ -215,7 +215,7 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-17298](https://jira.mariadb.org/browse/MDEV-17298) ASAN unknown-crash / READ of size 1 in my\_strntoul\_8bit upon INSERT .. SELECT
 * Merge [Revision #09e97299ba](https://github.com/MariaDB/server/commit/09e97299ba) 2018-10-31 00:25:26 +0100 - Merge branch '5.5' into 10.0
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

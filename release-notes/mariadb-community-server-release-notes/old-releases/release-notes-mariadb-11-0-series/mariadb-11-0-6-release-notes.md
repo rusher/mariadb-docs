@@ -81,7 +81,7 @@ From this version, the [mariadb-dump](https://app.gitbook.com/s/SsmexDFPv2xG2OTy
 * Fix [mariadb-backup --backup](https://mariadb.com/docs/server/server-usage/backup-and-restore/mariadb-backup/mariadb-backup-options#backup) FATAL ERROR: ... Can't open datafile cool\_down/t3 ([MDEV-33011](https://jira.mariadb.org/browse/MDEV-33011))
 * [mariadb-backup --backup](https://mariadb.com/docs/server/server-usage/backup-and-restore/mariadb-backup/mariadb-backup-options#backup) now includes retry logic for undo tablespaces ([MDEV-33980](https://jira.mariadb.org/browse/MDEV-33980))
 * Fix crash recovery in mariadb-backup --prepare due to insufficient [innodb\_log\_file\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables#innodb_log_file_size) ([MDEV-33540](https://jira.mariadb.org/browse/MDEV-33540))
-* Fix crash in [mariadb-backup --prepare --export](broken-reference) after `--prepare` ([MDEV-33023](https://jira.mariadb.org/browse/MDEV-33023))
+* Fix crash in [mariadb-backup --prepare --export](broken-reference/) after `--prepare` ([MDEV-33023](https://jira.mariadb.org/browse/MDEV-33023))
 * [MariaDB Backup](https://mariadb.com/docs/server/server-usage/backup-and-restore/mariadb-backup/) now considers O/S user when `--user` option is omitted ([MDEV-32893](https://jira.mariadb.org/browse/MDEV-32893))
 
 ### [Character Sets](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/string-data-types/character-sets), [Data Types](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types)
@@ -193,7 +193,7 @@ information on each push, see the [changelog](../../changelogs/changelogs-mariad
 
 For a full list of contributors to [MariaDB 11.0.6](mariadb-11-0-6-release-notes.md), see the [MariaDB Foundation release announcement](https://mariadb.org/mariadb-11-2-4-11-1-5-11-0-6-10-11-8-10-6-18-10-5-25-10-4-34-now-available/).
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

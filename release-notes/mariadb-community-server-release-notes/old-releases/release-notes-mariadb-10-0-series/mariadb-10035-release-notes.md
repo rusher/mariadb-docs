@@ -55,7 +55,7 @@ information on each push, see the [changelog](../../changelogs/changelogs-mariad
 
 For a full list of contributors to [MariaDB 10.0.35](mariadb-10035-release-notes.md), see the [MariaDB Foundation release announcement](https://mariadb.org/mariadb-10-0-35-mariadb-galera-cluster-5-5-60-and-mariadb-connector-c-3-0-4-now-available/).
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

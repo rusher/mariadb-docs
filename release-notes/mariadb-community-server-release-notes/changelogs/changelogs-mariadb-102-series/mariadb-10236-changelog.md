@@ -28,7 +28,7 @@ in that revision.
   2020-11-05 17:37:55 +0100
   * [MDEV-19838](https://jira.mariadb.org/browse/MDEV-19838): followup to make happy following protocol implementations: - mysqlnd from PHP < 7.3 - mysql-connector-python any version - mysql-connector-java any version
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

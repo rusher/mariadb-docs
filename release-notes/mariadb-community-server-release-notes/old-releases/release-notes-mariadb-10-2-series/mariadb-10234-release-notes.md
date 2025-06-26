@@ -36,7 +36,7 @@ information on each push, see the [changelog](../../changelogs/changelogs-mariad
 
 For a full list of contributors to [MariaDB 10.2.34](mariadb-10234-release-notes.md), see the [MariaDB Foundation release announcement](https://mariadb.org/mariadb-10-5-6-10-4-15-10-3-25-10-2-34-and-10-1-47-now-available/).
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

@@ -11,7 +11,7 @@
 See the [MariaDB 5.1.44 Changelog](mariadb-5144-changelog.md) for a list of the\
 changes between [MariaDB 5.1.42](../../old-releases/release-notes-mariadb-5-1-series/mariadb-5142-release-notes.md) and [MariaDB 5.1.44](../../old-releases/release-notes-mariadb-5-1-series/mariadb-5144-release-notes.md).
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

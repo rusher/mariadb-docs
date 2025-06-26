@@ -24,7 +24,7 @@ In most respects [MariaDB](https://github.com/mariadb-corporation/docs-release-n
 This version of MariaDB includes [MariaDB 5.1.66](../release-notes-mariadb-5-1-series/mariadb-5166-release-notes.md), and by extension, MySQL 5.1.66. See the [MariaDB 5.1.66 Release Notes](../release-notes-mariadb-5-1-series/mariadb-5166-release-notes.md) for the changes made in [MariaDB 5.1.66](../release-notes-mariadb-5-1-series/mariadb-5166-release-notes.md) and see [Changes in MySQL 5.1.66](https://dev.mysql.com/doc/refman/5.1/en/news-5-1-66.html)\
 for what changed between this and previous MySQL versions.
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

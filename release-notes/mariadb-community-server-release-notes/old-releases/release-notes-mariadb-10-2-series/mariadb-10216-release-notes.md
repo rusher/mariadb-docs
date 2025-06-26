@@ -16,7 +16,7 @@ and with backported and reimplemented features from MySQL 5.6 and 5.7.
 
 Upgrading from earlier 10.2.x versions is **highly recommended** for all **Galera** users due to bug [MDEV-12837](https://jira.mariadb.org/browse/MDEV-12837) which caused serious stability issues with earlier versions. See the bug issue page for more information.
 
-Thanks, and enjoy MariaDB! 
+Thanks, and enjoy MariaDB!
 
 ## Notable Changes
 
@@ -49,7 +49,7 @@ information on each push, see the [changelog](../../changelogs/changelogs-mariad
 
 For a full list of contributors to [MariaDB 10.2.16](mariadb-10216-release-notes.md), see the [MariaDB Foundation release announcement](https://mariadb.org/mariadb-10-2-16-now-available/).
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

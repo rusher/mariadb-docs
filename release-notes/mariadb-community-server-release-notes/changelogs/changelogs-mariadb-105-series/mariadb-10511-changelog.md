@@ -183,7 +183,7 @@ details of the revision and view diffs of the code modified in that revision.
   * [MCOL-4535](https://jira.mariadb.org/browse/MCOL-4535): Clean up libreadline as ColumnStore no longer needs it
 * Merge [Revision #e0d61cb41c](https://github.com/MariaDB/server/commit/e0d61cb41c) 2021-05-04 12:12:15 +0300 - Merge remote-tracking branch 10.4 into 10.5
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

@@ -168,7 +168,7 @@ details of the revision and view diffs of the code modified in that revision.
   2021-08-05 11:21:59 +0800
   * [MDEV-24523](https://jira.mariadb.org/browse/MDEV-24523) Execution of JSON\_REPLACE failed on Spider
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

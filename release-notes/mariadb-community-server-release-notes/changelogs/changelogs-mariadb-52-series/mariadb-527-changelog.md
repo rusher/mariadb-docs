@@ -6,8 +6,7 @@
 
 For the highlights of this release, see the [release notes](../../old-releases/release-notes-mariadb-5-2-series/mariadb-527-release-notes.md).
 
-The revision number links will take you to the revision's page on Launchpad. On Launchpad you can view more details of the revision and view diffs of the code
-modified in that revision.
+The revision number links will take you to the revision's page on Launchpad. On Launchpad you can view more details of the revision and view diffs of the code modified in that revision.
 
 * [Revision #2993](https://bazaar.launchpad.net/~maria-captains/maria/5.2/revision/2993)\
   Mon 2011-06-13 12:46:11 +0300
@@ -224,7 +223,7 @@ modified in that revision.
       Wed 2011-05-11 14:09:48 +0300
       * Bugfix: New table creation/renaming block added if old encoded table present.
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

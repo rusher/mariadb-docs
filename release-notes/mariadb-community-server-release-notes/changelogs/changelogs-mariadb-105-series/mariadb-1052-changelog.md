@@ -1280,7 +1280,7 @@ details of the revision and view diffs of the code modified in that revision.
   2020-02-07 13:33:51 +0200
   * [MDEV-12353](https://jira.mariadb.org/browse/MDEV-12353): Remove MTR\_LOG\_SHORT\_INSERTS
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

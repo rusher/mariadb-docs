@@ -426,7 +426,7 @@ in that revision.
   2019-04-24 12:47:40 +0300
   * [MDEV-19139](https://jira.mariadb.org/browse/MDEV-19139): pushdown condition with Item\_func\_set\_user\_var
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

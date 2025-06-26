@@ -124,7 +124,7 @@ details of the revision and view diffs of the code modified in that revision.
   2021-07-06 00:06:20 +0200
   * [MDEV-22709](https://jira.mariadb.org/browse/MDEV-22709) Assertion \`store.length() <= (256&#x4C;_&#x32;56&#x4C;_&#x32;56L-1)' failed in net\_send\_ok
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

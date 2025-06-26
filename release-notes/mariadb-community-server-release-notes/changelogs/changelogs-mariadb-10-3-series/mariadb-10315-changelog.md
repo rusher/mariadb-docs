@@ -224,7 +224,7 @@ details of the revision and view diffs of the code modified in that revision.
 * Merge [Revision #8f01a17292](https://github.com/MariaDB/server/commit/8f01a17292) 2019-04-01 14:25:41 +0300 - Merge 10.2 into 10.3
 * Merge [Revision #0ffea01da5](https://github.com/MariaDB/server/commit/0ffea01da5) 2019-04-01 09:22:19 +0300 - Merge 10.2 into 10.3
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

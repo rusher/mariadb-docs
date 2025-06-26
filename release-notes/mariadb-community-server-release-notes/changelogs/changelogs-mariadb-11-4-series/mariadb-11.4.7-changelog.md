@@ -23,7 +23,7 @@ details of the revision and view diffs of the code modified in that revision.
   2025-04-19 18:02:51 -0400
   * [MDEV-21510](https://jira.mariadb.org/browse/MDEV-21510): In Optimizer Trace, print index name in chosen\_access\_method
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

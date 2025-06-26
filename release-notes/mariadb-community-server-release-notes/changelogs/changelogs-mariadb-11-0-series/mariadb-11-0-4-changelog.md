@@ -49,7 +49,7 @@ details of the revision and view diffs of the code modified in that revision.
   2023-08-08 17:17:01 +0300
   * [MDEV-31864](https://jira.mariadb.org/browse/MDEV-31864) Assertion \`d >= 0' failed in COST\_ADD with join\_cache\_level > 2 and partitions
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

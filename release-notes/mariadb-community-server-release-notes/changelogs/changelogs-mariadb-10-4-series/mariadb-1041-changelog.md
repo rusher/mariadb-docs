@@ -1,6 +1,6 @@
 # MariaDB 10.4.0 Changelog
 
-The most recent release of [MariaDB 10.4](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series) is:[**MariaDB 10.4.34**](../../old-releases/release-notes-mariadb-10-4-series/mariadb-10-4-34-release-notes.md) Stable (GA) [Download Now](https://downloads.mariadb.org/mariadb/10.4.34/)
+The most recent release of [MariaDB 10.4](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/) is:[**MariaDB 10.4.34**](../../old-releases/release-notes-mariadb-10-4-series/mariadb-10-4-34-release-notes.md) Stable (GA) [Download Now](https://downloads.mariadb.org/mariadb/10.4.34/)
 
 [Download](https://downloads.mariadb.org/mariadb/10.4.1/)[Release Notes](../../old-releases/release-notes-mariadb-10-4-series/mariadb-1041-release-notes.md)[Changelog](mariadb-1041-changelog.md)[Overview of 10.4](https://mariadb.com/docs/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104)
 
@@ -385,7 +385,7 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-17255](https://jira.mariadb.org/browse/MDEV-17255): New optimizer defaults and ANALYZE TABLE
 * [Revision #93c360e3a5](https://github.com/MariaDB/server/commit/93c360e3a5)\
   2018-05-31 15:51:59 +0530
-  * [MDEV-15253](https://jira.mariadb.org/browse/MDEV-15253): Default optimizer setting changes for [MariaDB 10.4](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series)
+  * [MDEV-15253](https://jira.mariadb.org/browse/MDEV-15253): Default optimizer setting changes for [MariaDB 10.4](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/)
 * [Revision #a25ce5ab4b](https://github.com/MariaDB/server/commit/a25ce5ab4b)\
   2018-12-08 16:10:44 +0400
   * [MDEV-17928](https://jira.mariadb.org/browse/MDEV-17928) Conversion from TIMESTAMP to VARCHAR SP variables does not work well on fractional digits
@@ -823,7 +823,7 @@ details of the revision and view diffs of the code modified in that revision.
   2018-11-09 09:53:56 -0500
   * bump the VERSION
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

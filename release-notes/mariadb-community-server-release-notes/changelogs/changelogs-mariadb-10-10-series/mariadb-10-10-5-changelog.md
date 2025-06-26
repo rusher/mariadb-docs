@@ -14,7 +14,7 @@ details of the revision and view diffs of the code modified in that revision.
 * Includes all fixes from [MariaDB 10.9.7](../changelogs-mariadb-109-series/mariadb-10-9-7-changelog.md)
 * Merge [Revision #30bba8e275](https://github.com/MariaDB/server/commit/30bba8e275) 2023-06-05 18:58:11 +0200 - Merge branch 'github/bb-10.9-release' into bb-10.10-release
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

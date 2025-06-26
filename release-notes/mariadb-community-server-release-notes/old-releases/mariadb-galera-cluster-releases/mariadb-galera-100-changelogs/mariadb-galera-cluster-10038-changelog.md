@@ -34,7 +34,7 @@ modified in that revision.
 * Merge [Revision #d6feda205a](https://github.com/MariaDB/server/commit/d6feda205a) 2019-02-01 11:02:03 +0200 - Merge tag 'mariadb-10.0.38' into 10.0-galera
 * Merge [Revision #c2caca02ac](https://github.com/MariaDB/server/commit/c2caca02ac) 2018-11-02 08:46:04 +0200 - Merge remote-tracking branch 'origin/10.0' into 10.0-galera
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

@@ -80,7 +80,7 @@ as source code packages are available from the[MariaDB download page](https://do
 * fixed output for plugin directory in mariadb\_config
 * added sigpipe handler for OpenSSL
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

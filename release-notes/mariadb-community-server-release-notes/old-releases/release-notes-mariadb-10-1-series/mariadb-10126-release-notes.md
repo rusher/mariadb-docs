@@ -43,7 +43,7 @@ Using [page\_compression](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-
 For a complete list of changes made in [MariaDB 10.1.26](mariadb-10126-release-notes.md), with links to detailed\
 information on each push, see the [changelog](../../changelogs/changelogs-mariadb-101-series/mariadb-10126-changelog.md).
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

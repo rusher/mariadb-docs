@@ -51,7 +51,7 @@ be the final release of [MariaDB 10.0](changes-improvements-in-mariadb-10-0.md) 
 "Raring", and Mint 15 "Olivia". When the next version of [MariaDB 10.0](changes-improvements-in-mariadb-10-0.md) is\
 released, repositories for these distributions will go away.
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

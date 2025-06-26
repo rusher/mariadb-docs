@@ -279,7 +279,7 @@ details of the revision and view diffs of the code modified in that revision.
   2023-03-29 12:28:51 +0300
   * [MDEV-30952](https://jira.mariadb.org/browse/MDEV-30952): Reformat Debian post and pre scripts
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

@@ -44,7 +44,7 @@ in that revision.
   2022-02-02 20:02:20 +0200
   * [MDEV-27721](https://jira.mariadb.org/browse/MDEV-27721) rpl.rpl\_relay\_max\_extension test is not FreeBSD-compatible
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

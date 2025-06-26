@@ -302,7 +302,7 @@ details of the revision and view diffs of the code modified in that revision.
   2025-01-30 16:30:56 +0200
   * [MDEV-35955](https://jira.mariadb.org/browse/MDEV-35955) Wrong result for UPDATE ... ORDER BY LIMIT which uses tmp.table
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

@@ -2,7 +2,7 @@
 
 The most recent release in the [MariaDB 5.5](../../old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) series is:[**MariaDB 5.5.68**](../../old-releases/release-notes-mariadb-5-5-series/mariadb-5568-release-notes.md) [Download Now](https://downloads.mariadb.org/mariadb/5.5.68/)
 
-[Download](https://downloads.askmonty.org/mariadb/5.5.22) |[Release Notes](../../old-releases/release-notes-mariadb-5-5-series/mariadb-5522-release-notes.md) |**Changelog** |[[Overview of 5.5](https://mariadb.com/docs/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5)
+[Download](https://downloads.askmonty.org/mariadb/5.5.22) |[Release Notes](../../old-releases/release-notes-mariadb-5-5-series/mariadb-5522-release-notes.md) |**Changelog** |\[[Overview of 5.5](https://mariadb.com/docs/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5)
 
 **Release date:** 29 Mar 2012
 
@@ -402,7 +402,7 @@ modified in that revision.
         for the rotating log files.
       * the example record from the log:`2012-03-09 15:07:29 root[root] @ localhost [] ERROR 1146: Table 'test.xyz' doesn't exist : select * from test.xyz`
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

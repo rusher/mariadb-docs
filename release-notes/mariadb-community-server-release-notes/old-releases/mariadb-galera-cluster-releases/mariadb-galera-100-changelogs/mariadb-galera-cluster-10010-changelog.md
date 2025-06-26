@@ -114,7 +114,7 @@ modified in that revision.
   Thu 2014-02-27 17:56:28 -0500
   * [MDEV-5759](https://jira.mariadb.org/browse/MDEV-5759) Init script contains syntax error
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

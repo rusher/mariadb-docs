@@ -42,7 +42,7 @@ Remember, these features are in separate _preview packages_. The subsection head
 * JSON file interface to wsrep node state / SST progress logging ([MDEV-26971](https://jira.mariadb.org/browse/MDEV-26971))
 * Allow [innodb\_log\_file\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables#innodb_log_file_size) to change without server restart ([MDEV-27812](https://jira.mariadb.org/browse/MDEV-27812))
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

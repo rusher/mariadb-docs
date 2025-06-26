@@ -100,7 +100,7 @@ The following deprecated features and system variables have been removed ([MDEV-
 * [wsrep\_causal\_reads](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_causal_reads) (deprecated since [MariaDB 10.1.3](../release-notes-mariadb-10-1-series/mariadb-10-1-3-release-notes.md))
 * "parser" in [mroonga](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/mroonga) table comment (deprecated since [MariaDB 10.2.11](../release-notes-mariadb-10-2-series/mariadb-10211-release-notes.md))
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

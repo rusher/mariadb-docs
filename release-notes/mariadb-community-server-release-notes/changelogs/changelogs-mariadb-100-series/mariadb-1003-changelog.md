@@ -601,7 +601,7 @@ modified in that revision.
       Thu 2013-04-18 22:22:04 +0300
       * [MDEV-4345](https://jira.mariadb.org/browse/MDEV-4345)
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

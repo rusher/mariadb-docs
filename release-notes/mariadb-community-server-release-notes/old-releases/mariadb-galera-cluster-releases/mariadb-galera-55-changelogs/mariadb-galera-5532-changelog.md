@@ -2912,7 +2912,7 @@ Tue 2013-03-05 12:19:07 +0100
   Tue 2013-03-26 16:40:02 +0200
   * References: [MDEV-4328](https://jira.mariadb.org/browse/MDEV-4328) - avoiding race condition for wsrep\_format\_desc access
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

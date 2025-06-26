@@ -49,7 +49,7 @@ for what changed between this and previous MySQL versions.
 See the [MariaDB 5.3.6 Changelog](../../changelogs/changelogs-mariadb-53-series/mariadb-536-changelog.md) for a list of every change\
 made in [MariaDB 5.3.6](mariadb-536-release-notes.md), with links to detailed information on each push.
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

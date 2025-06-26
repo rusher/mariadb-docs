@@ -15,7 +15,7 @@ as [MariaDB 5.1.44](mariadb-5144-release-notes.md).
 See the [MariaDB 5.1.44 Release Notes](mariadb-5144-release-notes.md)\
 for a summary of the differences between [MariaDB 5.1.42](mariadb-5142-release-notes.md) and [MariaDB 5.1.44](mariadb-5144-release-notes.md).
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

@@ -50,7 +50,7 @@ The following deprecated variables have been removed:
 For a complete list of changes made in [MariaDB 10.3.2](mariadb-1032-release-notes.md), with links to detailed\
 information on each push, see the [changelog](../../changelogs/changelogs-mariadb-10-3-series/mariadb-1032-changelog.md).
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

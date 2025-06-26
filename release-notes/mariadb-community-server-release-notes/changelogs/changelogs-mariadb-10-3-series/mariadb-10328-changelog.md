@@ -236,7 +236,7 @@ details of the revision and view diffs of the code modified in that revision.
 * Merge [Revision #e6290a8270](https://github.com/MariaDB/server/commit/e6290a8270) 2020-11-02 16:02:16 +0200 - Merge 10.2 into 10.3
 * Merge [Revision #c7f322c91f](https://github.com/MariaDB/server/commit/c7f322c91f) 2020-11-02 15:48:47 +0200 - Merge 10.2 into 10.3
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

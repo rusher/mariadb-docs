@@ -34,7 +34,7 @@ Updating from [MariaDB 10.1.21](mariadb-10121-release-notes.md) to [MariaDB 10.1
 For a complete list of changes made in [MariaDB 10.1.25](mariadb-10125-release-notes.md), with links to detailed\
 information on each push, see the [changelog](../../changelogs/changelogs-mariadb-101-series/mariadb-10125-changelog.md).
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

@@ -34,7 +34,7 @@ MariaDB Connector/C 3.4.2 was not released separately but is included in [MariaD
 For a list of changes made in this release, with links to detailed information\
 on each push, see the [changelog](../changelogs/mariadb-connectorc-3-4-changelogs/mariadb-connector-c-3-4-3-changelog.md).
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

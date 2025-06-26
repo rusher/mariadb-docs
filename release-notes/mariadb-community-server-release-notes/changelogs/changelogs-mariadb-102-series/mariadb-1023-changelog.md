@@ -1214,7 +1214,7 @@ The revision number links will take you to the revision's page on GitHub. On[Git
   2016-09-26 10:40:44 -0700
   * Fixed bug [MDEV-10889](https://jira.mariadb.org/browse/MDEV-10889) The bug was in the code of the recursive method With\_element::check\_unrestricted\_recursive. For recursive calls of this method sel->get\_with\_element()->owner != owner.
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

@@ -122,7 +122,7 @@ details of the revision and view diffs of the code modified in that revision.
   2022-05-17 16:02:48 +0300
   * [MDEV-27328](https://jira.mariadb.org/browse/MDEV-27328) MSAN failure fix
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

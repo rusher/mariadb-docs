@@ -544,7 +544,7 @@ details of the revision and view diffs of the code modified in that revision.
   2020-08-05 18:28:53 +0400
   * [MDEV-22278](https://jira.mariadb.org/browse/MDEV-22278) change temp-pool to be 0 by default
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

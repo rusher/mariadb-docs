@@ -231,7 +231,7 @@ details of the revision and view diffs of the code modified in that revision.
   2022-10-26 14:48:03 +0400
   * [MDEV-29495](https://jira.mariadb.org/browse/MDEV-29495) Generalize can\_convert\_xxx() hook engine API to cover any arbitrary data type
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

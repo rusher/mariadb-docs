@@ -291,7 +291,7 @@ modified in that revision.
     * lp:maria/5.5, #3334: [3334](https://bazaar.launchpad.net/~maria-captains/maria/5.5/revision/3334)
     * lp:codership-mysql/5.5, #3725: [3725](https://bazaar.launchpad.net/~codership/codership-mysql/wsrep-5.5/revision/3725)
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

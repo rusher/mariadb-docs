@@ -421,7 +421,7 @@ The revision number links will take you to the revision's page on GitHub. On[Git
   \*
   * Fix [MDEV-9279](https://jira.mariadb.org/browse/MDEV-9279). Replacing exit(1) in yy\_fatal\_error by a longjmp.
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

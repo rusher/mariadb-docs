@@ -188,7 +188,7 @@ modified in that revision.
   Tue 2014-05-13 11:53:30 +0200
   * [MDEV-6153](https://jira.mariadb.org/browse/MDEV-6153) Trivial Lintian errors in MariaDB sources: spelling errors and wrong executable bits
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

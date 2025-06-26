@@ -21,7 +21,7 @@ modified in that revision.
   2016-09-21 10:51:37 +0200
   * [MDEV-10853](https://jira.mariadb.org/browse/MDEV-10853) netcat help output in error log when running xtrabackup SST
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

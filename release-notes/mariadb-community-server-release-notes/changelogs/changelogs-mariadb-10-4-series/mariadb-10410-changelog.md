@@ -19,7 +19,7 @@ details of the revision and view diffs of the code modified in that revision.
   * bump the VERSION
 * See also the [MariaDB 10.4.9 Changelog](mariadb-1049-changelog.md)
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

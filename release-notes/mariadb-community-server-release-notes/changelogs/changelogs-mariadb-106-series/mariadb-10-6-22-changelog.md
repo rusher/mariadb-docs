@@ -246,7 +246,7 @@ details of the revision and view diffs of the code modified in that revision.
   2024-07-09 08:59:59 -0600
   * [MDEV-26652](https://jira.mariadb.org/browse/MDEV-26652): xa transactions binlogged in wrong order
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

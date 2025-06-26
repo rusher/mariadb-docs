@@ -24,7 +24,7 @@ MariaDB Connector/C 3.2 is the current major development version. MariaDB Connec
 * Character set utf8 will be mapped to utf8mb3
 * Added support for MSVC asan
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

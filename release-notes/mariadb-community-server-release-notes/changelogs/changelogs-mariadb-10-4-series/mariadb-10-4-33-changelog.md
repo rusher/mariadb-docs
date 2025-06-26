@@ -1,6 +1,6 @@
 # MariaDB 10.4.33 Changelog
 
-The most recent release of [MariaDB 10.4](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series) is:[**MariaDB 10.4.34**](../../old-releases/release-notes-mariadb-10-4-series/mariadb-10-4-34-release-notes.md) Stable (GA) [Download Now](https://downloads.mariadb.org/mariadb/10.4.34/)
+The most recent release of [MariaDB 10.4](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/) is:[**MariaDB 10.4.34**](../../old-releases/release-notes-mariadb-10-4-series/mariadb-10-4-34-release-notes.md) Stable (GA) [Download Now](https://downloads.mariadb.org/mariadb/10.4.34/)
 
 [Download 10.4.33](https://downloads.mariadb.org/mariadb/10.4.33/)[Release Notes](../../old-releases/release-notes-mariadb-10-4-series/mariadb-10-4-33-release-notes.md)[Changelog](mariadb-10-4-33-changelog.md)[Overview of 10.4](https://mariadb.com/docs/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104)
 
@@ -725,7 +725,7 @@ details of the revision and view diffs of the code modified in that revision.
   2023-09-25 12:56:30 +1100
   * [MDEV-31995](https://jira.mariadb.org/browse/MDEV-31995) Bogus error executing PS for query using CTE with renaming of columns
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

@@ -408,7 +408,7 @@ in that revision.
   2021-10-27 17:50:12 +0200
   * rpl\_get\_master\_version\_and\_clock and rpl\_row\_big\_table\_id tests are slow, so let's not run them under valgrind
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

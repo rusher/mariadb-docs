@@ -95,7 +95,7 @@ The revision number links will take you to the revision's page on Launchpad. On 
   * [MDEV-712](https://jira.mariadb.org/browse/MDEV-712) - [Bug #1024239](https://bugs.launchpad.net/bugs/1024239) - Mysqlclient exports the same symbols as openssl
   * Compile yassl and taocrypt using -fvisibility=hidden, when possible. This prevent symbols from being exported.
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

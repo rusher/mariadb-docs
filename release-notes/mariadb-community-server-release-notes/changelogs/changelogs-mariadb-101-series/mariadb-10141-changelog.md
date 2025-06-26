@@ -796,7 +796,7 @@ details of the revision and view diffs of the code modified in that revision.
   2019-05-01 01:19:30 +0530
   * Adjusting sql\_command to align with higher version, this is an adjustment to the patch for [MDEV-17605](https://jira.mariadb.org/browse/MDEV-17605)
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

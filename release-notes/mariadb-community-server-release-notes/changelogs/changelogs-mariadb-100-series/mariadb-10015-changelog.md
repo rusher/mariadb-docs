@@ -923,7 +923,7 @@ modified in that revision.
   Thu 2014-09-25 18:16:29 +0400
   * [MDEV-6788](https://jira.mariadb.org/browse/MDEV-6788): The variable 'role' is being used without being initialized at sql\_acl.cc:8840
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

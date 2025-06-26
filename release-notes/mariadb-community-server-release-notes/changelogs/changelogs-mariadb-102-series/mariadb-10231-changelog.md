@@ -287,7 +287,7 @@ in that revision.
   2019-12-08 18:14:42 +0100
   * [CONC-447](https://jira.mariadb.org/browse/CONC-447) ERROR 2026 (HY000): SSL connection error: Certificate signature check failed
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

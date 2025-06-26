@@ -78,7 +78,7 @@ details of the revision and view diffs of the code modified in that revision.
   2023-04-23 10:59:32 +0200
   * [MDEV-31140](https://jira.mariadb.org/browse/MDEV-31140): FLUSH BINARY LOGS DELETE\_DOMAIN\_ID=(D) can errorneously delete active domains
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

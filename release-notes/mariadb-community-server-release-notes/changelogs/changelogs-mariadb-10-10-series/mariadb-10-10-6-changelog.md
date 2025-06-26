@@ -40,7 +40,7 @@ details of the revision and view diffs of the code modified in that revision.
   * bump the VERSION
 * Merge [Revision #b0723f6c24](https://github.com/MariaDB/server/commit/b0723f6c24) 2023-05-24 09:49:19 +0200 - Merge branch '10.9' into 10.10
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

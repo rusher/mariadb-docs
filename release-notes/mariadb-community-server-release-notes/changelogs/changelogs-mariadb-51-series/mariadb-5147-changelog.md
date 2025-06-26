@@ -69,7 +69,7 @@ modified in that revision.
 * [Revision #2859](https://bazaar.launchpad.net/~maria-captains/maria/5.1/revision/2859): Fix short version number
 * [Revision #2860](https://bazaar.launchpad.net/~maria-captains/maria/5.1/revision/2860): Automerge [MariaDB 5.1.47](../../old-releases/release-notes-mariadb-5-1-series/mariadb-5147-release-notes.md) release into main (revisions 2849.1.1 - 2849.1.24).
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

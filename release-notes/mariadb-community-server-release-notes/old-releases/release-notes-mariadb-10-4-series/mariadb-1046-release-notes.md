@@ -43,7 +43,7 @@ information on each push, see the [changelog](../../changelogs/changelogs-mariad
 
 For a full list of contributors to [MariaDB 10.4.6](mariadb-1046-release-notes.md), see the [MariaDB Foundation release announcement](https://mariadb.org/mariadb-10-4-6-first-stable-10-4-release-and-mariadb-connector-j-2-4-2-now-available/).
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

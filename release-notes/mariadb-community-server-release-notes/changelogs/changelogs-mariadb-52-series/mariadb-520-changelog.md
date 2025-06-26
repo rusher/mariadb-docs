@@ -67,7 +67,7 @@ The revision number links will take you to the revision's page on Launchpad. On 
 * [Revision #2727](https://bazaar.launchpad.net/~maria-captains/maria/5.2/revision/2727): Fixed version number
 * [Revision #2726](https://bazaar.launchpad.net/~maria-captains/maria/5.2/revision/2726): userstatv2 patch from Percona and OurDelta.
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

@@ -222,7 +222,7 @@ FETCH NEXT 10 ROWS ONLY;
 }
 ```
 
-* The [gssapi](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/maxscale-archive/archive-of-2.x-versions-and-6/mariadb-maxscale-mariadb-maxscale-22/maxscale-22-authenticators/mariadb-maxscale-22-gssapi-client-authenticator) authentication plugin can now authenticate a user account by checking if the user belongs to an Active Directory group. ([MDEV-23959](https://jira.mariadb.org/browse/MDEV-23959))
+* The [gssapi](broken-reference) authentication plugin can now authenticate a user account by checking if the user belongs to an Active Directory group. ([MDEV-23959](https://jira.mariadb.org/browse/MDEV-23959))
   * The group is specified in the authentication string using the [CREATE USER](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/create-user) statement. The group can be specified using the group name or the SID.
   * Example syntax using a group name without specifying the domain:
 

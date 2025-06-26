@@ -2,7 +2,7 @@
 
 The most recent release of [MariaDB 10.8](../../old-releases/release-notes-mariadb-10-8-series/what-is-mariadb-108.md) is:[**MariaDB 10.8.8**](../../old-releases/release-notes-mariadb-10-8-series/mariadb-10-8-8-release-notes.md) Stable (GA) [Download Now](https://downloads.mariadb.org/mariadb/10.8.8/)
 
-[Download 10.8.6](https://downloads.mariadb.org/mariadb/10.8.6/)[Release Notes]([Release Notes](https://mariadb.com/docs/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-8-series/mariadb-10-8-8-release-notes)[Overview of 10.8](../../old-releases/release-notes-mariadb-10-8-series/what-is-mariadb-108.md)
+[Download 10.8.6](https://downloads.mariadb.org/mariadb/10.8.6/)\[Release Notes]\([Release Notes](https://mariadb.com/docs/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-8-series/mariadb-10-8-8-release-notes)[Overview of 10.8](../../old-releases/release-notes-mariadb-10-8-series/what-is-mariadb-108.md)
 
 **Release date:** 7 Nov 2022
 
@@ -38,7 +38,7 @@ details of the revision and view diffs of the code modified in that revision.
   2022-09-16 14:10:45 +0300
   * [MDEV-29555](https://jira.mariadb.org/browse/MDEV-29555) ASAN heap-buffer-overflow in mariadb-backup.huge\_lsn,strict\_full\_crc32
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

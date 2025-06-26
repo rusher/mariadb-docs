@@ -30,7 +30,7 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-34830](https://jira.mariadb.org/browse/MDEV-34830): LSN in the future is not being treated as serious corruption
 * [Revision #3b58c6b93f](https://github.com/MariaDB/server/commit/3b58c6b93f)\
   2024-10-04 18:40:34 +0200
-  * [MDEV-35079](https://jira.mariadb.org/browse/MDEV-35079) Migrate MySQL5.7 to [MariaDB 10.4](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series), then to [MariaDB 10.11](../../mariadb-10-11-series/what-is-mariadb-1011.md) Failed
+  * [MDEV-35079](https://jira.mariadb.org/browse/MDEV-35079) Migrate MySQL5.7 to [MariaDB 10.4](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/), then to [MariaDB 10.11](../../mariadb-10-11-series/what-is-mariadb-1011.md) Failed
 * [Revision #7842cab8c0](https://github.com/MariaDB/server/commit/7842cab8c0)\
   2024-09-14 08:01:31 +0200
   * [MDEV-34318](https://jira.mariadb.org/browse/MDEV-34318) post-merge fix
@@ -128,7 +128,7 @@ details of the revision and view diffs of the code modified in that revision.
   2024-08-03 13:11:35 +0530
   * [MDEV-34689](https://jira.mariadb.org/browse/MDEV-34689) Redo log corruption at high load
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

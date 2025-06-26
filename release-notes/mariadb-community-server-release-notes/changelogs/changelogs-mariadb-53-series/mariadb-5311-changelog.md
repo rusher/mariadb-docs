@@ -54,7 +54,7 @@ The revision number links will take you to the revision's page on Launchpad. On 
   Mon 2012-11-19 15:38:27 +0200
   * [MDEV-3801](https://jira.mariadb.org/browse/MDEV-3801) Reproducible sub select join crash on 5.3.8 and 5.3.9
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

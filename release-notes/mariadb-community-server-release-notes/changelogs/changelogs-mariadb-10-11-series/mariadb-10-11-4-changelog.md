@@ -14,7 +14,7 @@ details of the revision and view diffs of the code modified in that revision.
 * Includes all fixes from [MariaDB 10.10.5](../changelogs-mariadb-10-10-series/mariadb-10-10-5-changelog.md)
 * Merge [Revision #4e2b93dffe](https://github.com/MariaDB/server/commit/4e2b93dffe) 2023-06-05 19:04:58 +0200 - Merge branch 'bb-10.10-release' into bb-10.11-release
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

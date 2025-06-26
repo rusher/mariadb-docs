@@ -51,7 +51,7 @@ entries to use a different mirror.
 If you ever notice the mirror you are using is not responding, check the[http://downloads.askmonty.org/mariadb/repositories/sources.list generator](https://downloads.askmonty.org/mariadb/repositories/sources.list_generator)\
 for the current list of mirrors.
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

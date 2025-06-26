@@ -67,7 +67,7 @@ Like [previous releases](https://github.com/mariadb-corporation/docs-release-not
 fixes and other improvements. Specific bugs fixed in [MariaDB 5.2.5](mariadb-525-release-notes.md) are listed\
 in the [MariaDB 5.2.5 Changelog](../../changelogs/changelogs-mariadb-52-series/mariadb-525-changelog.md) and[MariaDB 5.1.55 Changelog](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-2-series/broken-reference/README.md).
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

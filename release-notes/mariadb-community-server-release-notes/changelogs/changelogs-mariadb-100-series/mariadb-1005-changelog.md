@@ -2450,7 +2450,7 @@ modified in that revision.
   Fri 2013-08-16 11:24:13 +0400
   * A post-fix for [MDEV-4871](https://jira.mariadb.org/browse/MDEV-4871): Fixing a failire in "`mtr --ps`"
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

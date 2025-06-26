@@ -833,7 +833,7 @@ The revision number links will take you to the revision's page on GitHub. On[Git
   2016-07-03 19:12:20 +0400
   * Removing duplicate code in double-to-longlong conversion.
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

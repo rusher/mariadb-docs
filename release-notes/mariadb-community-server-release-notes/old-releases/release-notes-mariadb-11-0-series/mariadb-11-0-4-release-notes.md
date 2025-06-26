@@ -201,7 +201,8 @@ Thanks, and enjoy MariaDB!
 
 ### Variables
 
-* Added the [note\_verbosity](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#note_verbosity) system variable to manage [notes when an index cannot be used](https://mariadb.com/docs/general-resources/development-articles/mariadb-internals/mariadb-internals-documentation-query-optimizer/notes-when-an-index-cannot-be-used
+* Added the [note\_verbosity](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#note_verbosity) system variable to manage \[notes when an index cannot be used]\(https://mariadb.com/docs/general-resources/development-articles/mariadb-internals/mariadb-internals-documentation-query-optimizer/notes-when-an-index-cannot-be-used
+
 ### Security
 
 * Fixes for the following [security vulnerabilities](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/security):
@@ -216,7 +217,7 @@ information on each push, see the [changelog](../../changelogs/changelogs-mariad
 
 For a full list of contributors to [MariaDB 11.0.4](mariadb-11-0-4-release-notes.md), see the [MariaDB Foundation release announcement](https://mariadb.org/mariadb-11-1-3-11-0-4-10-11-6-10-10-7-10-6-16-10-5-23-10-4-32-now-available/).
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

@@ -22,7 +22,7 @@ interfaces, libraries and APIs that exist in MySQL also exist in MariaDB.
 
 This version of MariaDB includes MySQL 5.5.20. See [Changes in MySQL 5.5.20](https://dev.mysql.com/doc/refman/5.5/en/news-5-5-20.html) for what changed between this and previous MySQL versions.
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

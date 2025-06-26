@@ -2,7 +2,7 @@
 
 The most recent release in the [MariaDB 5.5](../../old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) series is:[**MariaDB 5.5.68**](../../old-releases/release-notes-mariadb-5-5-series/mariadb-5568-release-notes.md) [Download Now](https://downloads.mariadb.org/mariadb/5.5.68/)
 
-[Download](https://downloads.mariadb.org/mariadb/5.5.30) | [Release Notes](../../old-releases/release-notes-mariadb-5-5-series/mariadb-5530-release-notes.md) | **Changelog** |[[Overview of 5.5](https://mariadb.com/docs/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5)
+[Download](https://downloads.mariadb.org/mariadb/5.5.30) | [Release Notes](../../old-releases/release-notes-mariadb-5-5-series/mariadb-5530-release-notes.md) | **Changelog** |\[[Overview of 5.5](https://mariadb.com/docs/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5)
 
 **Release date:** 12 Mar 2013
 
@@ -244,7 +244,7 @@ The revision number links will take you to the revision's page on Launchpad. On 
   * Assertion happens in replication thread during THD destruction, when thread calls my\_sync(), which in turn calls thd\_wait\_begin() callback. Connection count can be 0, because the counter was decremented before THD destructor. This assertion currently reproducible only in Percona server and not in MariaDB, due to differences in replication code.
   * Fixed by moving code to decrement connection counter after the THD destructor.
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

@@ -62,7 +62,7 @@ last release of [MariaDB 10.0](changes-improvements-in-mariadb-10-0.md) for Fedo
 For a complete list of changes made in [MariaDB 10.0.23](mariadb-10023-release-notes.md), with links to detailed\
 information on each push, see the [changelog](../../changelogs/changelogs-mariadb-100-series/mariadb-10023-changelog.md).
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

@@ -922,7 +922,7 @@ details of the revision and view diffs of the code modified in that revision.
   2018-04-15 10:21:15 +0300
   * [MDEV-13697](https://jira.mariadb.org/browse/MDEV-13697) DB\_TRX\_ID is not always reset
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

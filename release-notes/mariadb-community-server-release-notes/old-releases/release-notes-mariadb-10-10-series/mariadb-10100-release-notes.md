@@ -67,7 +67,7 @@ Available as container: quay.io/mariadb-foundation/mariadb-devel:10.10-misc
 For a complete list of changes made in [MariaDB 10.10.0](mariadb-10100-release-notes.md), with links to detailed\
 information on each push, see the [changelog](https://github.com/mariadb-corporation/docs-release-notes/blob/test/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-10-series/mariadb-10100-changelog/README.md).
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

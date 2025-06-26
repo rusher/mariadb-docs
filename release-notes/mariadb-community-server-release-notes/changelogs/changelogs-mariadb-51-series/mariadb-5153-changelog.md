@@ -129,7 +129,7 @@ modified in that revision.
     * [Revision #2891.3.59](https://bazaar.launchpad.net/~maria-captains/maria/5.1-release/revision/2891.3.59)
       * Fix test failure with OpenSSL due to different error message than in YaSSL.
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

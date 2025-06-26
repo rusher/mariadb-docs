@@ -500,7 +500,7 @@ in that revision.
   * Do not misspell "fall through"
 * Merge [Revision #fcde91114d](https://github.com/MariaDB/server/commit/fcde91114d) 2018-01-03 20:42:09 +0200 - Merge 10.1 into 10.2
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

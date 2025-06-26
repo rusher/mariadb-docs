@@ -63,7 +63,7 @@ page.
 | 22 Feb 2023 | [MariaDB 11.0.1](mariadb-11-0-1-release-notes.md) | RC (Release Candidate) | [Release Notes](mariadb-11-0-1-release-notes.md) | [Changelog](../../changelogs/changelogs-mariadb-11-0-series/mariadb-11-0-1-changelog.md) |
 | 27 Dec 2022 | [MariaDB 11.0.0](mariadb-11-0-0-release-notes.md) | Alpha                  | [Release Notes](mariadb-11-0-0-release-notes.md) |                                                                                          |
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

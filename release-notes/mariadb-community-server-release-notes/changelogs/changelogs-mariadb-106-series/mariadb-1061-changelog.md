@@ -696,7 +696,7 @@ details of the revision and view diffs of the code modified in that revision.
   2021-04-25 12:58:16 +0300
   * [MDEV-25512](https://jira.mariadb.org/browse/MDEV-25512) Deadlock between sux\_lock::u\_x\_upgrade() and sux\_lock::u\_lock()
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

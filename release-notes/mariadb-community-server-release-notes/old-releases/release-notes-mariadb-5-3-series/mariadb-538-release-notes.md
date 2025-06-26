@@ -39,7 +39,7 @@ made in [MariaDB 5.3.8](mariadb-538-release-notes.md), with links to detailed in
 
 In this version of MariaDB we are starting to provide alternative Linux binaries built on a different build machine. Binaries created on this box require at least GLIBC\_2.14. For continuity, we are still providing binaries built with the same toolchain as previous releases. The alternative binaries have a "(GLIBC\_2.14)" label to distinguish them from the others.
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

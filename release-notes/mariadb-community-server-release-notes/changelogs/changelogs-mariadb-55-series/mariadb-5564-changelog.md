@@ -2,7 +2,7 @@
 
 The most recent release in the [MariaDB 5.5](../../old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) series is:[**MariaDB 5.5.68**](../../old-releases/release-notes-mariadb-5-5-series/mariadb-5568-release-notes.md) [Download Now](https://downloads.mariadb.org/mariadb/5.5.68/)
 
-[Download](https://mariadb.com/downloads/?showall=1\&tab=mariadbtx\&group=mariadb_server\&version=5.5.64)[Release Notes](../../old-releases/release-notes-mariadb-5-5-series/mariadb-5564-release-notes.md)[Changelog](mariadb-5564-changelog.md)[[Overview of 5.5](https://mariadb.com/docs/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5)
+[Download](https://mariadb.com/downloads/?showall=1\&tab=mariadbtx\&group=mariadb_server\&version=5.5.64)[Release Notes](../../old-releases/release-notes-mariadb-5-5-series/mariadb-5564-release-notes.md)[Changelog](mariadb-5564-changelog.md)\[[Overview of 5.5](https://mariadb.com/docs/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5)
 
 **Release date:** 29 Apr 2019
 
@@ -111,7 +111,7 @@ of the revision and view diffs of the code modified in that revision.
   2019-01-28 11:51:12 +0100
   * disable an old test
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

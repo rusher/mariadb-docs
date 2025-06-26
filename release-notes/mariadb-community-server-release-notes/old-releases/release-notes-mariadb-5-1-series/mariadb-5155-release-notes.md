@@ -78,7 +78,7 @@ fixes and other improvements. Specific bugs fixed in [MariaDB 5.1.55](mariadb-51
 * [Bug #677407](https://bugs.launchpad.net/bugs/677407) / [MySQL Bug #48883](https://bugs.mysql.com/bug.php?id=48883) Stale data in INFORMATION\_SCHEMA.INNODB\_LOCKS
 * and others...
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

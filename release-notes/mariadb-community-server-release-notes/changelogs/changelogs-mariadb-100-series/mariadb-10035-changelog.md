@@ -180,7 +180,7 @@ details of the revision and view diffs of the code modified in that revision.
   2018-01-29 11:01:02 +0200
   * Revert "[MDEV-6928](https://jira.mariadb.org/browse/MDEV-6928): Add trx pointer to struct mtr\_t"
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

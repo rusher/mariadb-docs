@@ -25,7 +25,6 @@ Thanks, and enjoy MariaDB!
   on RENAME, CREATE, DROP ([MDEV-14717](https://jira.mariadb.org/browse/MDEV-14717), [MDEV-14585](https://jira.mariadb.org/browse/MDEV-14585), [MDEV-13564](https://jira.mariadb.org/browse/MDEV-13564))
   * Default value for this variable is `ON`
   * If you absolutely must use [XtraBackup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/legacy-clients-and-utilities/backing-up-and-restoring-databases-percona-xtrabackup/percona-xtrabackup-overview) instead of [mariadb-backup](https://mariadb.com/docs/server/server-usage/backup-and-restore/mariadb-backup), you can set it to `OFF` and restart the server.
-  
 * [MDEV-17289](https://jira.mariadb.org/browse/MDEV-17289): Multi-pass recovery fails to apply some redo log records
 * [MDEV-17073](https://jira.mariadb.org/browse/MDEV-17073): INSERT…ON DUPLICATE KEY UPDATE became more deadlock-prone
 * [MDEV-17491](https://jira.mariadb.org/browse/MDEV-17491): micro optimize page\_id\_t
@@ -70,7 +69,7 @@ information on each push, see the [changelog](../../changelogs/changelogs-mariad
 
 For a full list of contributors to [MariaDB 10.2.19](mariadb-10219-release-notes.md), see the [MariaDB Foundation release announcement](https://mariadb.org/mariadb-10-2-19-now-available).
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

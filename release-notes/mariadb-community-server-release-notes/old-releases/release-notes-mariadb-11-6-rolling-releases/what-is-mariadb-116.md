@@ -68,7 +68,7 @@ Add listcve macro here - removed for performance reasons
 | 29 Jul 2024 | [MariaDB 11.6.0](mariadb-11-6-0-release-notes.md) Vector | Alpha       | [Release Notes](mariadb-11-6-0-vector-release-notes.md) |                                                                                          |
 | 26 Jun 2024 | [MariaDB 11.6.0](mariadb-11-6-0-release-notes.md)        | Alpha       | [Release Notes](mariadb-11-6-0-release-notes.md)        |                                                                                          |
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

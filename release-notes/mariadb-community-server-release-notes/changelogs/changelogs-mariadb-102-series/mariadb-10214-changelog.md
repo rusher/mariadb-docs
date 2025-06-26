@@ -359,7 +359,7 @@ in that revision.
   * bump the VERSION
 * Merge [Revision #d9955b22e9](https://github.com/MariaDB/server/commit/d9955b22e9) 2018-02-13 14:49:47 +0200 - Merge 10.1 into 10.2
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

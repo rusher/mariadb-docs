@@ -307,7 +307,7 @@ The revision number links will take you to the revision's page on GitHub. On[Git
   2015-12-22 14:58:02 -0500
   * [MDEV-9290](https://jira.mariadb.org/browse/MDEV-9290) : InnoDB: Assertion failure in file trx0sys.cc line 353
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

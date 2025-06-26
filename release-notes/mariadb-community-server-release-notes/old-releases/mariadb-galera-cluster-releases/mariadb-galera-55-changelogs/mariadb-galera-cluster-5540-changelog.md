@@ -69,7 +69,7 @@ modified in that revision.
   Mon 2014-08-25 17:03:17 -0400
   * [MDEV-6636](https://jira.mariadb.org/browse/MDEV-6636) : Merged fixes for [Bug #1167368](https://bugs.launchpad.net/bugs/1167368) and [Bug #1250805](https://bugs.launchpad.net/bugs/1250805).
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

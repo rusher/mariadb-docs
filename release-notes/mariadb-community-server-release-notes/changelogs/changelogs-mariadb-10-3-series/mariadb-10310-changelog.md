@@ -262,7 +262,7 @@ details of the revision and view diffs of the code modified in that revision.
   2018-08-09 00:04:09 -0700
   * [MDEV-16398](https://jira.mariadb.org/browse/MDEV-16398): Spider Creates Query With Non-Existent Function
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

@@ -23,7 +23,7 @@ Thanks, and enjoy MariaDB!
 Notable changes of this release include:
 
 * Added the [DISKS plugin](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-disks-table), for monitoring the disk space situation.
-* [TRIM](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/string-functions/trim), [LTRIM](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/string-functions/ltrim), [RTRIM](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/string-functions/rtrim), [LPAD](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/string-functions/lpad) and [RPAD](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/string-functions/rpad) now return NULL if returning an empty result when [SQL_MODE=Oracle](https://mariadb.com/docs/release-notes/compatibility-and-differences/sql_modeoracle) - [MDEV-15739](https://jira.mariadb.org/browse/MDEV-15739), [MDEV-15664](https://jira.mariadb.org/browse/MDEV-15664).
+* [TRIM](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/string-functions/trim), [LTRIM](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/string-functions/ltrim), [RTRIM](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/string-functions/rtrim), [LPAD](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/string-functions/lpad) and [RPAD](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/string-functions/rpad) now return NULL if returning an empty result when [SQL\_MODE=Oracle](https://mariadb.com/docs/release-notes/compatibility-and-differences/sql_modeoracle) - [MDEV-15739](https://jira.mariadb.org/browse/MDEV-15739), [MDEV-15664](https://jira.mariadb.org/browse/MDEV-15664).
 * [innodb\_fast\_shutdown](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables) now has a new mode, `3`, which skips the rollback of connected transactions - [MDEV-15832](https://jira.mariadb.org/browse/MDEV-15832)
 * The max value of the [max\_prepared\_stmt\_count](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#max_prepared_stmt_count) system variable has been increased from 1048576 to 4294967295
 * The [proxy\_protocol\_networks](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#proxy_protocol_networks) variable can now be modified without restarting the server - [MDEV-15501](https://jira.mariadb.org/browse/MDEV-15501)
@@ -44,7 +44,7 @@ information on each push, see the [changelog](../../changelogs/changelogs-mariad
 
 For a full list of contributors to [MariaDB 10.3.6](mariadb-1036-release-notes.md), see the [MariaDB Foundation release announcement](https://mariadb.org/mariadb-10-3-6-now-available/).
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

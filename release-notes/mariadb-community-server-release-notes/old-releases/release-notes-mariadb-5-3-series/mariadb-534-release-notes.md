@@ -27,7 +27,7 @@ interfaces, libraries and APIs that exist in MySQL also exist in MariaDB.
 
 The Windows version of [MariaDB 5.3.4](mariadb-534-release-notes.md)-rc comes with [HeidiSQL](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/graphical-and-enhanced-clients/heidisql) 7.0, which was released just a few days ago.
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

@@ -39,7 +39,7 @@ and the [MariaDB 5.5.56 Changelog](../../../changelogs/changelogs-mariadb-55-ser
 * This version of MariaDB Galera Cluster supports `wsrep` API v25 which means\
   MariaDB Galera Cluster can be used with either a 25.2.x or 25.3.x
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

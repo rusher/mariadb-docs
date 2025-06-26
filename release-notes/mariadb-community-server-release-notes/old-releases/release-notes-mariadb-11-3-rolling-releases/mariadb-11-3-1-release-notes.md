@@ -197,7 +197,7 @@ For a full list of contributors to [MariaDB 11.3.1](mariadb-11-3-1-release-notes
 
 **Do not use non-stable (non-GA) releases in production!**
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

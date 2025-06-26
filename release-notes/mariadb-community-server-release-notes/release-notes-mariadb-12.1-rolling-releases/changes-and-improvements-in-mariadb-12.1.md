@@ -1,0 +1,39 @@
+# Changes and Improvements in MariaDB 12.1
+
+MariaDB 12.1 is a [rolling release](../../mariadb-release-model.md). It is an evolution of [MariaDB 12.0](../release-notes-mariadb-12.0-rolling-releases/what-is-mariadb-120.md) with several entirely new features.
+
+## New Features
+
+### Performance improvements <a href="#performance-improvements" id="performance-improvements"></a>
+
+* Segmented key cache for Aria ([MDEV-24](https://jira.mariadb.org/browse/MDEV-24))
+* MDL scalability improvements ([MDEV-19749](https://jira.mariadb.org/browse/MDEV-19749))
+* Parallel replication for galera replicas ([MDEV-20065](https://jira.mariadb.org/browse/MDEV-20065))
+* Buffered logging for audit plugin ([MDEV-34680](https://jira.mariadb.org/browse/MDEV-34680))
+* Faster vector distance calculations via extrapolation ([MDEV-36205](https://jira.mariadb.org/browse/MDEV-36205))
+
+### Compatibility features <a href="#compatibility-features" id="compatibility-features"></a>
+
+* caching\_sha2\_password plugin ([MDEV-9804](https://jira.mariadb.org/browse/MDEV-9804))
+* ( + ) for outer join syntax ([MDEV-13817](https://jira.mariadb.org/browse/MDEV-13817))
+* rpl\_semi\_sync\_master\_wait\_for\_slave\_count ([MDEV-18983](https://jira.mariadb.org/browse/MDEV-18983))
+* Associative arrays: DECLARE TYPE .. TABLE OF .. INDEX BY ([MDEV-34319](https://jira.mariadb.org/browse/MDEV-34319))
+* DROP USER fails if the user has active session ([MDEV-35617](https://jira.mariadb.org/browse/MDEV-35617))
+* Optimizer hints: \[NO\_]JOIN\_INDEX, \[NO\_]GROUP\_INDEX, \[NO\_]ORDER\_INDEX, \[NO\_]INDEX ([MDEV-35856](https://jira.mariadb.org/browse/MDEV-35856))
+* Optimizer hints: \[NO\_]SPLIT\_MATERIALIZED ([MDEV-36092](https://jira.mariadb.org/browse/MDEV-36092))
+* Optimizer hints: \[NO\_]DERIVED\_CONDITION\_PUSHDOWN, \[NO\_]MERGE ([MDEV-36106](https://jira.mariadb.org/browse/MDEV-36106))
+
+### Miscellaneous <a href="#miscellaneous" id="miscellaneous"></a>
+
+* Retry applying of write sets on galera nodes ([MDEV-36077](https://jira.mariadb.org/browse/MDEV-36077))
+* Wildcard support in mariadb-dump ([MDEV-21376](https://jira.mariadb.org/browse/MDEV-21376))
+* Per-table unique FOREIGN KEY constraint names ([MDEV-28933](https://jira.mariadb.org/browse/MDEV-28933))
+* Remove depth limit from JSON functions ([MDEV-32854](https://jira.mariadb.org/browse/MDEV-32854))
+* Support for functional indexes in GROUP/ORDER BY ([MDEV-36132](https://jira.mariadb.org/browse/MDEV-36132))
+* Include definitions of tables and views in the optimizer trace ([MDEV-36483](https://jira.mariadb.org/browse/MDEV-36483))
+
+
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
+
+{% @marketo/form formid="4316" formId="4316" %}

@@ -2,11 +2,11 @@
 
 The most recent release of [MariaDB 10.3](../../old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103.md) is:[**MariaDB 10.3.39**](../../old-releases/release-notes-mariadb-10-3-series/mariadb-10-3-39-release-notes.md) Stable (GA) [Download Now](https://downloads.mariadb.org/mariadb/10.3.39/)
 
-[Download 10.3.36](https://downloads.mariadb.org/mariadb/10.3.36/)[Release Notes](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-10336-release-notes)[Changelog](mariadb-10336-changelog.md)[Overview of 10.3](https://mariadb.com/docs/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103)
+[Download 10.3.36](https://downloads.mariadb.org/mariadb/10.3.36/)[Release Notes](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-10336-release-notes/)[Changelog](mariadb-10336-changelog.md)[Overview of 10.3](https://mariadb.com/docs/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103)
 
 **Release date:** 15 Aug 2022
 
-For the highlights of this release, see the[release notes](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series).
+For the highlights of this release, see the[release notes](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/).
 
 The revision number links will take you to the revision's page on GitHub. On [GitHub](https://github.com/MariaDB/server/tree/10.3) you can view more\
 details of the revision and view diffs of the code modified in that revision.
@@ -499,7 +499,7 @@ details of the revision and view diffs of the code modified in that revision.
   2022-05-18 23:38:56 +0900
   * [MDEV-14642](https://jira.mariadb.org/browse/MDEV-14642) Assertion 'table->s->db\_create\_options == part\_table->s->db\_create\_options' failed in compare\_table\_with\_partition
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

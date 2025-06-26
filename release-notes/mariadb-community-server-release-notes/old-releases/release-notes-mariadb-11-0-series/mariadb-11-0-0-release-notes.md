@@ -21,6 +21,7 @@ Thanks, and enjoy MariaDB!
 ## New optimizer cost model
 
 This is the main change that practically defines this release. Read about new optimizer cost model on its own page
+
 ## Galera
 
 * [MDEV-22570](https://jira.mariadb.org/browse/MDEV-22570) Implement wsrep\_provider\_options as plugin
@@ -43,7 +44,7 @@ This is the main change that practically defines this release. Read about new op
 * [MDEV-30153](https://jira.mariadb.org/browse/MDEV-30153) ad hoc client versions are confusing
 * [MDEV-29986](https://jira.mariadb.org/browse/MDEV-29986) Set [innodb\_undo\_tablespaces=3](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables#innodb_undo_tablespaces) by default
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

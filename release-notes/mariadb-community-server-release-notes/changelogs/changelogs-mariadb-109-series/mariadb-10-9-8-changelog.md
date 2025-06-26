@@ -132,7 +132,7 @@ details of the revision and view diffs of the code modified in that revision.
   * bump the VERSION
 * Merge [Revision #be19f81ad5](https://github.com/MariaDB/server/commit/be19f81ad5) 2023-05-24 09:46:27 +0200 - Merge branch '10.6' into 10.9
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

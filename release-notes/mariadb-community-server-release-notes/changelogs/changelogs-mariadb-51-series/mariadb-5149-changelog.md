@@ -111,7 +111,7 @@ The revision number links will take you to the revision's page on Launchpad. On 
 * [Revision #2860](https://bazaar.launchpad.net/~maria-captains/maria/5.1/revision/2860) \[merge]\
   Automerge [MariaDB 5.1.47](../../old-releases/release-notes-mariadb-5-1-series/mariadb-5147-release-notes.md) release into main.
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

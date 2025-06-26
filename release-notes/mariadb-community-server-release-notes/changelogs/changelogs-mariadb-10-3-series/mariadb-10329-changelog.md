@@ -203,7 +203,7 @@ details of the revision and view diffs of the code modified in that revision.
   2021-02-10 23:38:52 -0800
   * [MDEV-24840](https://jira.mariadb.org/browse/MDEV-24840) Crash caused by query with IN subquery containing union of two table value costructors
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

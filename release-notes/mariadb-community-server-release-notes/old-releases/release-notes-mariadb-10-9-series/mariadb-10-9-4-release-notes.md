@@ -82,7 +82,7 @@ information on each push, see the [changelog](../../changelogs/changelogs-mariad
 
 For a full list of contributors to [MariaDB 10.9.4](mariadb-10-9-4-release-notes.md), see the [MariaDB Foundation release announcement](https://mariadb.org/mariadb-10-9-4-10-8-6-10-7-7-10-6-11-10-5-18-10-4-27-and-10-3-37-now-available/).
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

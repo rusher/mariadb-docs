@@ -166,7 +166,7 @@ The revision number links will take you to the revision's page on Launchpad. On 
   * [MDEV-3914](https://jira.mariadb.org/browse/MDEV-3914) fix.
   * Fixed algorithm of detecting of first real table in view/subquery-in-the-FROM-clase.
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

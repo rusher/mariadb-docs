@@ -648,7 +648,7 @@ modified in that revision.
   * [Bug #994275](https://bugs.launchpad.net/bugs/994275) fix.
   * In 5.3 we substitute constants in ref access values it can't be null so we do not need add NOT NULL for early NULL filtering.
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

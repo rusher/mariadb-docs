@@ -231,7 +231,7 @@ modified in that revision.
       * Fixed [Bug #613418](https://bugs.launchpad.net/bugs/613418) (M)aria recovery failure: ma\_key\_recover.c:981:\
         \_ma\_apply\_redo\_index: Assertion \`check\_page\_length == page\_length' failed
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

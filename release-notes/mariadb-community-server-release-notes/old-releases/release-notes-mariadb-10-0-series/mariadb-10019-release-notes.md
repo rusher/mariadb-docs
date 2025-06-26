@@ -24,7 +24,7 @@ information on each push, see the [changelog](../../changelogs/changelogs-mariad
 
 For those upgrading to 10.0.19 from versions prior to 10.0.18, the [MariaDB 10.0.18 Release Notes](mariadb-10018-release-notes.md) contains a comprehensive list of changes.
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

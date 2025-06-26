@@ -1,6 +1,6 @@
 # MariaDB 12.0.1 Changelog
 
-<a href="https://mariadb.com/downloads" class="button primary">Download</a>  <a href="../../release-notes-mariadb-12.0-rolling-releases/mariadb-12.0.1-release-notes.md" class="button secondary">Release Notes</a>  <a href="mariadb-12.0.1-changelog.md" class="button secondary">Changelog</a>  <a href="../../release-notes-mariadb-12.0-rolling-releases/what-is-mariadb-120.md" class="button secondary">Overview of 12.0</a>
+<a href="https://mariadb.com/downloads" class="button primary">Download</a> <a href="../../release-notes-mariadb-12.0-rolling-releases/mariadb-12.0.1-release-notes.md" class="button secondary">Release Notes</a> <a href="mariadb-12.0.1-changelog.md" class="button secondary">Changelog</a> <a href="../../release-notes-mariadb-12.0-rolling-releases/what-is-mariadb-120.md" class="button secondary">Overview of 12.0</a>
 
 [<sup>_Alternate download from mariadb.org_</sup>](https://downloads.mariadb.org/mariadb/12.0.1/)
 
@@ -293,7 +293,7 @@ The revision number links will take you to the revision's page on GitHub. On [Gi
 * [Revision #c92add291e](https://github.com/MariaDB/server/commit/c92add291e) 2025-02-12 11:16:50 +0100
   * 12.0 branch
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

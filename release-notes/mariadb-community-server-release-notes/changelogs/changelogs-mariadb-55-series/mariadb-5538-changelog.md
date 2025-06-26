@@ -2,7 +2,7 @@
 
 The most recent release in the [MariaDB 5.5](../../old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) series is:[**MariaDB 5.5.68**](../../old-releases/release-notes-mariadb-5-5-series/mariadb-5568-release-notes.md) [Download Now](https://downloads.mariadb.org/mariadb/5.5.68/)
 
-[Download](https://downloads.mariadb.org/mariadb/5.5.38)[Release Notes](../../old-releases/release-notes-mariadb-5-5-series/mariadb-5538-release-notes.md)[Changelog](mariadb-5538-changelog.md)[[Overview of 5.5](https://mariadb.com/docs/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5)
+[Download](https://downloads.mariadb.org/mariadb/5.5.38)[Release Notes](../../old-releases/release-notes-mariadb-5-5-series/mariadb-5538-release-notes.md)[Changelog](mariadb-5538-changelog.md)\[[Overview of 5.5](https://mariadb.com/docs/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5)
 
 **Release date:** 9 Jun 2014
 
@@ -256,7 +256,7 @@ modified in that revision.
   Tue 2014-04-15 18:08:33 +0500
   * [MDEV-5138](https://jira.mariadb.org/browse/MDEV-5138) Numerous test failures in "mtr --ps --embedded". The function Protocol::net\_store\_data(a, b, CHARSET\_A, CHARSET\_B) should be adapted to be working in the embedded server as it's done with the Protocol::net\_store\_data(a, b). That new function renamed as net\_store\_data\_cs, so we can make it virtual.
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

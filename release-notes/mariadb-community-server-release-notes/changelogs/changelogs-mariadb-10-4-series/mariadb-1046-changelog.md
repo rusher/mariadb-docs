@@ -1,6 +1,6 @@
 # MariaDB 10.4.6 Changelog
 
-The most recent release of [MariaDB 10.4](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series) is:[**MariaDB 10.4.34**](../../old-releases/release-notes-mariadb-10-4-series/mariadb-10-4-34-release-notes.md) Stable (GA) [Download Now](https://downloads.mariadb.org/mariadb/10.4.34/)
+The most recent release of [MariaDB 10.4](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/) is:[**MariaDB 10.4.34**](../../old-releases/release-notes-mariadb-10-4-series/mariadb-10-4-34-release-notes.md) Stable (GA) [Download Now](https://downloads.mariadb.org/mariadb/10.4.34/)
 
 [Download](https://downloads.mariadb.org/mariadb/10.4.6/)[Release Notes](../../old-releases/release-notes-mariadb-10-4-series/mariadb-1046-release-notes.md)[Changelog](mariadb-1046-changelog.md)[Overview of 10.4](https://mariadb.com/docs/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104)
 
@@ -133,7 +133,7 @@ details of the revision and view diffs of the code modified in that revision.
   * Deb: Purge unused debconf translations
 * [Revision #973b281e59](https://github.com/MariaDB/server/commit/973b281e59)\
   2019-06-06 17:10:57 +0200
-  * [MDEV-18788](https://jira.mariadb.org/browse/MDEV-18788) Live upgrade from MySQL 5.6/5.7 to [MariaDB 10.4](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series) fails with "Event Scheduler: An error occurred when initializing system tables"
+  * [MDEV-18788](https://jira.mariadb.org/browse/MDEV-18788) Live upgrade from MySQL 5.6/5.7 to [MariaDB 10.4](../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/) fails with "Event Scheduler: An error occurred when initializing system tables"
 * [Revision #06291c3f36](https://github.com/MariaDB/server/commit/06291c3f36)\
   2019-06-06 17:06:41 +0200
   * small cleanup
@@ -224,7 +224,7 @@ details of the revision and view diffs of the code modified in that revision.
   2019-05-20 18:50:12 +0300
   * [MDEV-19524](https://jira.mariadb.org/browse/MDEV-19524) Server crashes in Bitmap<64u>::is\_clear\_all / Field\_longstr::csinfo\_change\_allows\_instant\_alter
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

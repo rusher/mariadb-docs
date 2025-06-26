@@ -33,7 +33,7 @@ A full list of all changes is in the [changelog](../../changelogs/changelogs-mar
 For a full list of contributors to [MariaDB 5.5.66](mariadb-5566-release-notes.md), see the [MariaDB Foundation release announcement](https://mariadb.org/mariadb-10-4-9-10-3-19-and-10-2-28-10-1-42-and-5-5-66-now-available/).\
 Thanks, and enjoy MariaDB!
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

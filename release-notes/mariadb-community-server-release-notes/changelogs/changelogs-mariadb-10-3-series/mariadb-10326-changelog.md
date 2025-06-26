@@ -158,7 +158,7 @@ details of the revision and view diffs of the code modified in that revision.
   2020-08-03 13:23:38 +0200
   * [MDEV-23348](https://jira.mariadb.org/browse/MDEV-23348) vio\_shutdown does not prevent later ReadFile on named pipe
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

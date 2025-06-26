@@ -50,7 +50,7 @@ For MariaDB Connector/C before 3.4 to establish an TLS/SSL encrypted connection,
 For a list of changes made in this release, with links to detailed information\
 on each push, see the [changelog](../changelogs/mariadb-connector-c-33-changelogs/mariadb-connector-c-331-changelog.md).
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

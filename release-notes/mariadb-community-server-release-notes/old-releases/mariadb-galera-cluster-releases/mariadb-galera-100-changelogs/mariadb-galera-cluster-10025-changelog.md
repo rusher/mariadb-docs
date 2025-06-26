@@ -27,7 +27,7 @@ modified in that revision.
   2016-03-18 11:27:32 -0400
   * [MDEV-9401](https://jira.mariadb.org/browse/MDEV-9401): wsrep\_forced\_binlog\_format with binlog causes crash
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
