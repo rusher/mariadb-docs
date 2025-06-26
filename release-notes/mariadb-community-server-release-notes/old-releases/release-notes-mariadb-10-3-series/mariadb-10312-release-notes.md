@@ -22,7 +22,7 @@ Thanks, and enjoy MariaDB!
 * [MDEV-16987](https://jira.mariadb.org/browse/MDEV-16987) - [ALTER DATABASE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/alter/alter-database) possible in read-only mode (forbid ALTER DATABASE in read\_only)
 * [MDEV-17720](https://jira.mariadb.org/browse/MDEV-17720) - [slave\_ddl\_exec\_mode=IDEMPOTENT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables#slave_ddl_exec_mode) does not handle [DROP DATABASE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/drop/drop-database)
 * [MDEV-6453](https://jira.mariadb.org/browse/MDEV-6453) - Assertion \`inited==NONE || (inited==RND && scan)' failed in handler::ha\_rnd\_init(bool) with InnoDB, joins, AND/OR conditions
-* [MDEV-18105](https://jira.mariadb.org/browse/MDEV-18105) - [mariadb-backup](broken-reference) fails to copy encrypted InnoDB system tablespace if LSN>4G
+* [MDEV-18105](https://jira.mariadb.org/browse/MDEV-18105) - [MariaDB Backup](https://mariadb.com/docs/server/server-usage/backup-and-restore/mariadb-backup/) fails to copy encrypted InnoDB system tablespace if LSN>4G
 * [MDEV-17470](https://jira.mariadb.org/browse/MDEV-17470) - Orphan temporary files after interrupted [ALTER](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/alter/alter-table) cause InnoDB: Operating system error number 17 and eventual fatal error 71
 * [MDEV-17765](https://jira.mariadb.org/browse/MDEV-17765): Locking bug fix for SPATIAL INDEX
 * ALTER TABLE Fixes for FULLTEXT INDEX: [MDEV-17923](https://jira.mariadb.org/browse/MDEV-17923), [MDEV-17904](https://jira.mariadb.org/browse/MDEV-17904), [MDEV-17938](https://jira.mariadb.org/browse/MDEV-17938)
@@ -33,7 +33,7 @@ Thanks, and enjoy MariaDB!
   * [MDEV-17957](https://jira.mariadb.org/browse/MDEV-17957): Make [innodb\_checksum\_algorithm](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables#innodb_checksum_algorithm) stricter for strict\_\* values
   * [MDEV-17958](https://jira.mariadb.org/browse/MDEV-17958): On little-endian systems, remove bug-compatible variant of [innodb\_checksum\_algorithm=crc32](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables#innodb_checksum_algorithm)
   * [MDEV-12112](https://jira.mariadb.org/browse/MDEV-12112): corruption in encrypted table may be overlooked
-  * [MDEV-18025](https://jira.mariadb.org/browse/MDEV-18025): [mariadb-backup](broken-reference) fails to detect corrupted page\_compressed=1 tables
+  * [MDEV-18025](https://jira.mariadb.org/browse/MDEV-18025): [MariaDB Backup](https://mariadb.com/docs/server/server-usage/backup-and-restore/mariadb-backup/) fails to detect corrupted page\_compressed=1 tables
 * Virtual columns: [MDEV-17199](https://jira.mariadb.org/browse/MDEV-17199) Assertion \`pos < table->n\_v\_def' failed after upgrade from before 10.2
 * [MDEV-17881](https://jira.mariadb.org/browse/MDEV-17881): Assertion failure in cmp\_dtuple\_rec\_with\_match\_bytes after instant ADD COLUMN
 * The [Galera library](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/what-is-mariadb-galera-cluster/README.md) in the repositories has been updated to version 25.3.25

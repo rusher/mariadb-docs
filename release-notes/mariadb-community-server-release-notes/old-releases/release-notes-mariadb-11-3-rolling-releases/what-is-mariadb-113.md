@@ -28,7 +28,7 @@ The most recent release of [MariaDB 11.3](what-is-mariadb-113.md) is:[**MariaDB 
 
 ### Data Types
 
-* It is now possible to create [partitions](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-3-rolling-releases/broken-reference/README.md) on tables that contain [GEOMETRY types](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/geometry/geometry-types) ([MDEV-19177](https://jira.mariadb.org/browse/MDEV-19177))
+* It is now possible to create [partitions](https://mariadb.com/docs/server/reference/sql-statements/data-definition/alter/alter-table#partitions) on tables that contain [GEOMETRY types](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/geometry/geometry-types) ([MDEV-19177](https://jira.mariadb.org/browse/MDEV-19177))
 * [INET4](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/string-data-types/inet4) data types can now be cast into [INET6](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/string-data-types/inet6) types ([MDEV-31626](https://jira.mariadb.org/browse/MDEV-31626))
 * This means INET4 values can be compared with INET6 values and can be inserted into INET6 columns;\
   the server can automatically convert INET4 value into INET6 as needed.
@@ -60,7 +60,7 @@ The most recent release of [MariaDB 11.3](what-is-mariadb-113.md) is:[**MariaDB 
 
 ### mariadb-backup
 
-* [mariadb-backup --innobackupex](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-3-rolling-releases/broken-reference/README.md) mode has been deprecated ([MDEV-31505](https://jira.mariadb.org/browse/MDEV-31505))
+* [mariadb-backup --innobackupex](https://mariadb.com/docs/server/server-usage/backup-and-restore/mariadb-backup/mariadb-backup-options#innobackupex) mode has been deprecated ([MDEV-31505](https://jira.mariadb.org/browse/MDEV-31505))
 
 ### Spider
 

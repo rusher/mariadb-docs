@@ -31,7 +31,7 @@ The most recent release of [MariaDB 11.1](what-is-mariadb-111.md) is:[**MariaDB 
 
 ### mariadb-backup
 
-* Rename [mariadb-backup’s](broken-reference) xtrabackup\_\* files to mariadb\_backup\_\* ([MDEV-18931](https://jira.mariadb.org/browse/MDEV-18931))
+* Rename [mariadb-backup’s](https://mariadb.com/docs/server/server-usage/backup-and-restore/mariadb-backup) xtrabackup\_\* files to mariadb\_backup\_\* ([MDEV-18931](https://jira.mariadb.org/browse/MDEV-18931))
 
 ### Variables
 

@@ -8,7 +8,7 @@ The most recent release in the [MariaDB 5.2 series](changes-improvements-in-mari
 
 ### Release Notes
 
-See the [MariaDB versus MySQL](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-2-series/broken-reference/README.md) page for a high-level overview of the differences between MariaDB and MySQL.
+See the [MariaDB versus MySQL](https://mariadb.com/docs/release-notes/compatibility-and-differences/mariadb-vs-mysql-compatibility) page for a high-level overview of the differences between MariaDB and MySQL.
 
 The [Changelog](../../changelogs/changelogs-mariadb-52-series/mariadb-521-changelog.md) has a detailed list of the changes inluded in this release. For a description of this release see the [MariaDB 5.1 overview](../release-notes-mariadb-5-1-series/changes-improvements-in-mariadb-5-1.md).
 

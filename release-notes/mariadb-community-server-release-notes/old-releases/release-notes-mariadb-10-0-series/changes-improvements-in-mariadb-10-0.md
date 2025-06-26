@@ -156,7 +156,7 @@ See [System Variable Differences Between MariaDB 10.0 and MySQL 5.6](../../../co
 ## See Also
 
 * [Getting, Installing, and Upgrading MariaDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb)
-* [Plans for 10.x](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/broken-reference/README.md)
+* Plans for 10.x
 
 {% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
 

@@ -26,7 +26,7 @@ Updating from [MariaDB 10.1.21](mariadb-10121-release-notes.md) to [MariaDB 10.1
 * [Performance Schema](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/performance-schema) updated to 5.6.36
 * [MDEV-12674](https://jira.mariadb.org/browse/MDEV-12674): Innodb\_row\_lock\_current\_waits has overflow
 * [MDEV-12188](https://jira.mariadb.org/browse/MDEV-12188): information schema - errors populating fail to free memory, unlock mutexes
-* [MDEV-12832](https://jira.mariadb.org/browse/MDEV-12832): support for streaming in tar format in [MariaDB Backup](broken-reference) has been removed
+* [MDEV-12832](https://jira.mariadb.org/browse/MDEV-12832): support for streaming in tar format in [MariaDB Backup](https://mariadb.com/docs/server/server-usage/backup-and-restore/mariadb-backup/) has been removed
 * [MDEV-6262](https://jira.mariadb.org/browse/MDEV-6262): Fixes from coverity report on MariaDB
 * [innodb\_empty\_free\_list\_algorithm](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables) default changed from `backoff` to `legacy` to prevent potential deadlock issue in I/O-bound workloads with several small buffer pool instances in combination with small redo log files (see [#1651657](https://bugs.launchpad.net/percona-server/+bug/1651657).)
 * Fixes for the following [security vulnerabilities](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/security):

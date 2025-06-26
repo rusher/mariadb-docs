@@ -19,7 +19,7 @@ Thanks, and enjoy MariaDB!
 Updating from [MariaDB 10.1.21](mariadb-10121-release-notes.md) to [MariaDB 10.1.22](mariadb-10122-release-notes.md) or higher is **highly recommended** due to two high-priority regression fixes. See [MDEV-11842](https://jira.mariadb.org/browse/MDEV-11842) and [MDEV-12075](https://jira.mariadb.org/browse/MDEV-12075) for details.
 
 * [MDEV-12602](https://jira.mariadb.org/browse/MDEV-12602): Fixed some race conditions in InnoDB encryption
-* [MariaDB Backup](broken-reference) alpha introduced, see [this blog post](https://mariadb.com/resources/blog/mariadb-backup-released-mariadb-server-10123) for more information
+* [MariaDB Backup](https://mariadb.com/docs/server/server-usage/backup-and-restore/mariadb-backup/) alpha introduced, see [this blog post](https://mariadb.com/resources/blog/mariadb-backup-released-mariadb-server-10123) for more information
 * [Galera wsrep library](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/what-is-mariadb-galera-cluster/README.md) updated to 25.3.20
 * Packages for Ubuntu 17.04 "zesty" [added](https://downloads.mariadb.org/mariadb/repositories/)
 * As per the [MariaDB Deprecation Policy](../../../mariadb-platform-deprecation-policy.md), this will be the last release of [MariaDB 10.1](changes-improvements-in-mariadb-10-1.md) for Ubuntu 12.04 LTS "Precise" and Mint 13 LTS "Maya"

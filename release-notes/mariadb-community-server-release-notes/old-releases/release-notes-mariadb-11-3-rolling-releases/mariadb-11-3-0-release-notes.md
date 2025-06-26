@@ -83,7 +83,7 @@ Thanks, and enjoy MariaDB!
 
 ## mariadb-backup
 
-* [mariadb-backup --innobackupex](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-3-rolling-releases/broken-reference/README.md) mode has been deprecated ([MDEV-31505](https://jira.mariadb.org/browse/MDEV-31505))
+* [mariadb-backup --innobackupex](https://mariadb.com/docs/server/server-usage/backup-and-restore/mariadb-backup/mariadb-backup-options#innobackupex) mode has been deprecated ([MDEV-31505](https://jira.mariadb.org/browse/MDEV-31505))
 
 ## Spider
 

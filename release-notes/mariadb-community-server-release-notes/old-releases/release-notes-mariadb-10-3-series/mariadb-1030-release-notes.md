@@ -40,7 +40,7 @@ Connections with idle transactions can be automatically killed after a specified
 
 ### Compatibility
 
-When running with [sql\_mode=ORACLE](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/broken-reference/README.md), the server now understands a subset of Oracle's PL/SQL language instead of the traditional MariaDB syntax for stored routines. This work is in progress. See [MDEV-10142](https://jira.mariadb.org/browse/MDEV-10142) and [MDEV-10764](https://jira.mariadb.org/browse/MDEV-10764)\
+When running with [sql\_mode=ORACLE](https://mariadb.com/docs/release-notes/compatibility-and-differences/sql_modeoracle), the server now understands a subset of Oracle's PL/SQL language instead of the traditional MariaDB syntax for stored routines. This work is in progress. See [MDEV-10142](https://jira.mariadb.org/browse/MDEV-10142) and [MDEV-10764](https://jira.mariadb.org/browse/MDEV-10764)\
 for the current status and subtasks. The 10.3.0 release includes:
 
 * Providing compatibility for basic PL/SQL constructs - [MDEV-10411](https://jira.mariadb.org/browse/MDEV-10411)

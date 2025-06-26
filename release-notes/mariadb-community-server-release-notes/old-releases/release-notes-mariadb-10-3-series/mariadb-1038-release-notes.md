@@ -39,7 +39,7 @@ Notable changes of this release include:
 * [MDEV-16330](https://jira.mariadb.org/browse/MDEV-16330) - Allow instant change of WITH SYSTEM VERSIONING column attribute
 * [MDEV-16365](https://jira.mariadb.org/browse/MDEV-16365) - Setting a column NOT NULL fails to return error for NULL values when there is no DEFAULT
 * [MDEV-15953](https://jira.mariadb.org/browse/MDEV-15953) - Alter InnoDB Partitioned Table Moves Files (which were originally not in the datadir) to the datadir
-* [MDEV-13122](https://jira.mariadb.org/browse/MDEV-13122): [mariadb-backup](broken-reference) now supports [MyRocks storage engine](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/myrocks)
+* [MDEV-13122](https://jira.mariadb.org/browse/MDEV-13122): [MariaDB Backup](https://mariadb.com/docs/server/server-usage/backup-and-restore/mariadb-backup/) now supports [MyRocks storage engine](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/myrocks)
 * As per the [MariaDB Deprecation Policy](../../../mariadb-platform-deprecation-policy.md), this will be the last release of [MariaDB 10.3](what-is-mariadb-103.md) for Ubuntu 17.10 Artful
 
 ## Changelog

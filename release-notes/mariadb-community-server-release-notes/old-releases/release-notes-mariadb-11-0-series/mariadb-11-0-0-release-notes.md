@@ -20,9 +20,7 @@ Thanks, and enjoy MariaDB!
 
 ## New optimizer cost model
 
-This is the main change that practically defines this release. Read about new optimizer cost model\
-on [its own page](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-0-series/broken-reference/README.md).
-
+This is the main change that practically defines this release. Read about new optimizer cost model on its own page
 ## Galera
 
 * [MDEV-22570](https://jira.mariadb.org/browse/MDEV-22570) Implement wsrep\_provider\_options as plugin

@@ -29,8 +29,8 @@ Notable changes of this release include:
 * [MDEV-17531](https://jira.mariadb.org/browse/MDEV-17531) - Fix crash in [RENAME TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/rename-table) with [FOREIGN KEY](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/optimization-and-indexes/foreign-keys) and [FULLTEXT INDEX](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/optimization-and-indexes/full-text-indexes)
 * [Spatial index](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/geometry/spatial-index) fixes: [MDEV-17545](https://jira.mariadb.org/browse/MDEV-17545), [MDEV-17546](https://jira.mariadb.org/browse/MDEV-17546)
 * [Virtual column](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/create/generated-columns) fixes: [MDEV-17215](https://jira.mariadb.org/browse/MDEV-17215), [MDEV-17548](https://jira.mariadb.org/browse/MDEV-17548)
-* [mariadb-backup](broken-reference) fixes:
-  * [MDEV-13564](https://jira.mariadb.org/browse/MDEV-13564) - [TRUNCATE TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/table-statements/truncate-table) now works with [mariadb-backup](broken-reference)
+* [MariaDB Backup](https://mariadb.com/docs/server/server-usage/backup-and-restore/mariadb-backup/) fixes:
+  * [MDEV-13564](https://jira.mariadb.org/browse/MDEV-13564) - [TRUNCATE TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/table-statements/truncate-table) now works with [MariaDB Backup](https://mariadb.com/docs/server/server-usage/backup-and-restore/mariadb-backup/)
   * [MDEV-17433](https://jira.mariadb.org/browse/MDEV-17433) - Allow InnoDB start up with empty ib\_logfile0 from mariadb-backup --prepare
 * Packages for Fedora 29 and Ubuntu 18.10 Cosmic have been added in this release
 * As per the [MariaDB Deprecation Policy](../../../mariadb-platform-deprecation-policy.md), this will be\

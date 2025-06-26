@@ -1,12 +1,12 @@
 # MariaDB 10.4.5 Release Notes
 
-The most recent release of [MariaDB 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/broken-reference/README.md) is:[**MariaDB 10.4.34**](mariadb-10-4-34-release-notes.md) Stable (GA) [Download Now](https://downloads.mariadb.org/mariadb/10.4.34/)
+The most recent release of [MariaDB 10.4](https://mariadb.com/docs/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series) is:[**MariaDB 10.4.34**](mariadb-10-4-34-release-notes.md) Stable (GA) [Download Now](https://downloads.mariadb.org/mariadb/10.4.34/)
 
-[Download](https://downloads.mariadb.org/mariadb/10.4.5)[Release Notes](mariadb-1045-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-10-4-series/mariadb-1045-changelog.md)[Overview of 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/broken-reference/README.md)
+[Download](https://downloads.mariadb.org/mariadb/10.4.5)[Release Notes](mariadb-1045-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-10-4-series/mariadb-1045-changelog.md)[Overview of 10.4](https://mariadb.com/docs/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104)
 
 **Release date:** 21 May 2019
 
-[MariaDB 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/broken-reference/README.md) is the current _development_ series of MariaDB. It is an evolution\
+[MariaDB 10.4](https://mariadb.com/docs/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series) is the current _development_ series of MariaDB. It is an evolution\
 of [MariaDB 10.3](../release-notes-mariadb-10-3-series/what-is-mariadb-103.md) with several entirely new features not found anywhere else\
 and with backported and reimplemented features from MySQL.
 
@@ -14,7 +14,7 @@ and with backported and reimplemented features from MySQL.
 
 **Do not use non-stable (non-GA) releases in production!**
 
-**For an overview of** [**MariaDB 10.4**](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/broken-reference/README.md) **see the**[**What is MariaDB 10.4?**](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/broken-reference/README.md) **page.**
+**For an overview of** [**MariaDB 10.4**](https://mariadb.com/docs/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series) **see the**[**What is MariaDB 10.4?**](https://mariadb.com/docs/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104) **page.**
 
 Thanks, and enjoy MariaDB!
 
@@ -23,7 +23,7 @@ Thanks, and enjoy MariaDB!
 ### General Server
 
 * New [mysqlimport](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/legacy-clients-and-utilities/mysqlimport) option, `--ignore-foreign-keys` ([MDEV-788](https://jira.mariadb.org/browse/MDEV-788)).
-* Setting [sql\_mode](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/sql-mode) to `MSSQL` implements a limited subset of Microsoft SQL Server's language. See [SQL\_MODE=MSSQL](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/broken-reference/README.md) ([MDEV-19142](https://jira.mariadb.org/browse/MDEV-19142)).
+* Setting [sql\_mode](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/variables-and-modes/sql-mode) to `MSSQL` implements a limited subset of Microsoft SQL Server's language. See [SQL\_MODE=MSSQL](https://mariadb.com/docs/release-notes/compatibility-and-differences/sql_modemssql) ([MDEV-19142](https://jira.mariadb.org/browse/MDEV-19142)).
 * Add [CAST(expr AS FLOAT)](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-functions/string-functions/cast) ([MDEV-16872](https://jira.mariadb.org/browse/MDEV-16872)).
 * List of slave transaction errors that will result in a retry rather than a halt ([slave\_transaction\_retry\_errors](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables#slave_transaction_retry_errors)) have been increased by default, assisting [Spider](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/spider) setups to be more robust ([MDEV-16543](https://jira.mariadb.org/browse/MDEV-16543)).
 * [MDEV-15458](https://jira.mariadb.org/browse/MDEV-15458) - Segfault in heap\_scan() upon UPDATE after ADD SYSTEM VERSIONING
@@ -58,7 +58,7 @@ Thanks, and enjoy MariaDB!
 
 ### Packaging
 
-* As per the [MariaDB Deprecation Policy](../../../mariadb-platform-deprecation-policy.md), this is the last release of [MariaDB 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/broken-reference/README.md) for Fedora 28
+* As per the [MariaDB Deprecation Policy](../../../mariadb-platform-deprecation-policy.md), this is the last release of [MariaDB 10.4](https://mariadb.com/docs/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series) for Fedora 28
 * Packages and a repository for Fedora 30 and Ubuntu 19.04 "disco" have been added with this release, visit the [Repository Configuration Tool](https://downloads.mariadb.org/mariadb/repositories/) for instructions on adding the repository
 
 ### Security

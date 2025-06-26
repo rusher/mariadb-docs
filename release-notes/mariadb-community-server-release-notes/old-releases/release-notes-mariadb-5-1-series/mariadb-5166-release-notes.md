@@ -2,8 +2,7 @@
 
 The most recent release in the [MariaDB 5.1 series](changes-improvements-in-mariadb-5-1.md) is:[**MariaDB 5.1.67**](mariadb-5167-release-notes.md)
 
-[Download](https://downloads.askmonty.org/mariadb/5.1.66) |**Release Notes** |[Changelog](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-1-series/broken-reference/README.md) |[Overview of 5.1](changes-improvements-in-mariadb-5-1.md)
-
+[Download](https://downloads.askmonty.org/mariadb/5.1.66) |**Release Notes** |[Changelog](https://mariadb.com/docs/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-1-series/changes-improvements-in-mariadb-5-1)
 **Release date:** 29 Nov 2012
 
 [MariaDB 5.1.66](mariadb-5166-release-notes.md) is a [_**Stable**_](../../../mariadb-release-criteria.md) _**(GA)**_ release. In general this means that there are no known serious bugs, except for those marked as feature requests, that no bugs were fixed since last release that caused a notable code changes, and that we believe the code is ready for general usage (based on bug inflow).
@@ -12,7 +11,7 @@ The most recent release in the [MariaDB 5.1 series](changes-improvements-in-mari
 
 For a list of changes made in [MariaDB 5.1.66](mariadb-5166-release-notes.md), with links to detailed information on each push, see the [MariaDB 5.1.66 Changelog](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-1-series/broken-reference/README.md).
 
-In most respects [MariaDB](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/mariadb/README.md) will work exactly as MySQL: all commands, interfaces, libraries and APIs that exist in MySQL also exist in MariaDB.
+In most respects [MariaDB](https://mariadb.com/docs/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-1-series) will work exactly as MySQL: all commands, interfaces, libraries and APIs that exist in MySQL also exist in MariaDB.
 
 ## Important Security Fixes
 

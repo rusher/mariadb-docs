@@ -19,7 +19,7 @@ Thanks, and enjoy MariaDB!
 ## Notable Changes
 
 * MariaDB can no longer be compiled with OpenSSL version 0.9.8 and below. The last 0.9.8 release was in December 2015, it is out of support and is no longer getting security fixes.
-* [MariaDB Backup](broken-reference) is now beta
+* [MariaDB Backup](https://mariadb.com/docs/server/server-usage/backup-and-restore/mariadb-backup/) is now beta
 * As per the [MariaDB Deprecation Policy](../../../mariadb-platform-deprecation-policy.md), this will be the last release of [MariaDB 10.1](changes-improvements-in-mariadb-10-1.md) for Ubuntu 16.10 "Yakkety"
 * Fixes for the following [security vulnerabilities](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/security):
   * CVE-\`-\`\`\`

@@ -6,32 +6,24 @@ The most recent release in the [MariaDB 5.1 series](changes-improvements-in-mari
 
 **Release date:** 13 Jan 2010
 
-See the [MariaDB versus MySQL](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-1-series/broken-reference/README.md) page for a high-level\
-overview of the differences between MariaDB and MySQL.
+See the [MariaDB versus MySQL](https://mariadb.com/docs/release-notes/compatibility-and-differences/mariadb-vs-mysql-compatibility) page for a high-level overview of the differences between MariaDB and MySQL.
 
-See the [MariaDB 5.1.41 Changelog](../../changelogs/changelogs-mariadb-51-series/mariadb-5141-changelog.md) for a more detail\
-list of the changes in this release.
+See the [MariaDB 5.1.41 Changelog](../../changelogs/changelogs-mariadb-51-series/mariadb-5141-changelog.md) for a more detail list of the changes in this release.
 
-This release is a 'release candidate'. This means that we think it's almost\
-ready for a final release but we don't want to call it a final release until\
-more people have had a chance to test it. This release should be followed by a\
-final release in a few weeks.
+This release is a 'release candidate'. This means that we think it's almost ready for a final release but we don't want to call it a final release until\
+more people have had a chance to test it. This release should be followed by a final release in a few weeks.
 
 [MariaDB](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/mariadb/README.md) 5.1.41 RC is based on [MySQL](https://mysql.com) 5.1.41 and[XtraDB](https://www.percona.com/docs/wiki/percona-xtradb:start) 1.0.4-8.
 
 MariaDB is kept up to date with the latest MySQL release from the same branch.
 
-In most respects MariaDB will work exactly as MySQL; all commands, interfaces,\
-libraries and APIs that exist in MySQL also exist in MariaDB.
+In most respects MariaDB will work exactly as MySQL; all commands, interfaces, libraries and APIs that exist in MySQL also exist in MariaDB.
 
-In addition to the differences noted in the MariaDB[5.1.38](mariadb-5138-release-notes.md) and [5.1.39](mariadb-5139-release-notes.md)\
-release notes, the main differences between MariaDB and MySQL are:
+In addition to the differences noted in the MariaDB[5.1.38](mariadb-5138-release-notes.md) and [5.1.39](mariadb-5139-release-notes.md) release notes, the main differences between MariaDB and MySQL are:
 
 ## Includes MySQL 5.1.41
 
-For [MariaDB 5.1.41](mariadb-5141-release-notes.md) we have merged in all of the upstream changes from MySQL\
-5.1.41. The[MySQL 5.1.41 release notes](https://dev.mysql.com/doc/refman/5.1/en/news-5-1-41.html)\
-have details of what changes were made upstream by MySQL since 5.1.39
+For [MariaDB 5.1.41](mariadb-5141-release-notes.md) we have merged in all of the upstream changes from MySQL 5.1.41. The[MySQL 5.1.41 release notes](https://dev.mysql.com/doc/refman/5.1/en/news-5-1-41.html) have details of what changes were made upstream by MySQL since 5.1.39
 
 ## Includes [XtraDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb) 1.0.4-8
 

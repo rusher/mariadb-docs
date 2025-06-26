@@ -43,8 +43,8 @@ Available as container: quay.io/mariadb-foundation/mariadb-devel:10.10-uca14
 
 ### DDL
 
-* [ALTER ONLINE TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/alter/alter-table#alter-online-table) ([MDEV-16329](https://jira.mariadb.org/browse/MDEV-16329)) (not included in [MariaDB 10.10.1](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-10-series/broken-reference/README.md))
-* Atomic CREATE OR REPLACE TABLE ([MDEV-25292](https://jira.mariadb.org/browse/MDEV-25292)) (not included in [MariaDB 10.10.1](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-10-series/broken-reference/README.md))
+* [ALTER ONLINE TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/alter/alter-table#alter-online-table) ([MDEV-16329](https://jira.mariadb.org/browse/MDEV-16329) not included in [MariaDB 10.10.1](https://mariadb.com/docs/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-10-series/mariadb-10101-release-notes)
+* Atomic CREATE OR REPLACE TABLE ([MDEV-25292](https://jira.mariadb.org/browse/MDEV-25292)) (not included in [MariaDB 10.10.1](https://mariadb.com/docs/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-10-series/mariadb-10101-release-notes))
 
 Available as container: quay.io/mariadb-foundation/mariadb-devel:10.10-ddl
 

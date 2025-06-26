@@ -24,8 +24,8 @@ Thanks, and enjoy MariaDB!
   system variable for a backup-safe TRUNCATE TABLE implementation that is based\
   on RENAME, CREATE, DROP ([MDEV-14717](https://jira.mariadb.org/browse/MDEV-14717), [MDEV-14585](https://jira.mariadb.org/browse/MDEV-14585), [MDEV-13564](https://jira.mariadb.org/browse/MDEV-13564))
   * Default value for this variable is `ON`
-  * If you absolutely must use [XtraBackup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/legacy-clients-and-utilities/backing-up-and-restoring-databases-percona-xtrabackup/percona-xtrabackup-overview) instead of [mariadb-backup](https://mariadb.com/docs/server/server-usage/backup-and-restore/mariadb-backup), you can set it to `OFF` and restart\
-    the server
+  * If you absolutely must use [XtraBackup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/legacy-clients-and-utilities/backing-up-and-restoring-databases-percona-xtrabackup/percona-xtrabackup-overview) instead of [mariadb-backup](https://mariadb.com/docs/server/server-usage/backup-and-restore/mariadb-backup), you can set it to `OFF` and restart the server.
+  
 * [MDEV-17289](https://jira.mariadb.org/browse/MDEV-17289): Multi-pass recovery fails to apply some redo log records
 * [MDEV-17073](https://jira.mariadb.org/browse/MDEV-17073): INSERT…ON DUPLICATE KEY UPDATE became more deadlock-prone
 * [MDEV-17491](https://jira.mariadb.org/browse/MDEV-17491): micro optimize page\_id\_t

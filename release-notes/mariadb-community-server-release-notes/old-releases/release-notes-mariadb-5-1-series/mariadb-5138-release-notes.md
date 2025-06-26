@@ -6,17 +6,13 @@ The most recent release in the [MariaDB 5.1 series](changes-improvements-in-mari
 
 **Release date:** 29 Oct 2009
 
-See the [MariaDB versus MySQL](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-1-series/broken-reference/README.md) page for a high-level\
-overview of the differences between MariaDB and MySQL.
+See the [MariaDB versus MySQL](https://mariadb.com/docs/release-notes/compatibility-and-differences/mariadb-vs-mysql-compatibility) page for a high-level overview of the differences between MariaDB and MySQL.
 
-[MariaDB](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/mariadb/README.md) 5.1.38 Beta is based on [MySQL](https://mysql.com) 5.1.38\
-and XtraDB 1.0.3-6.
+[MariaDB](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/mariadb/README.md) 5.1.38 Beta is based on [MySQL](https://mysql.com) 5.1.38 and XtraDB 1.0.3-6.
 
-MariaDB will be kept up to date with the latest MySQL release from the same\
-branch.
+MariaDB will be kept up to date with the latest MySQL release from the same branch.
 
-In most respects MariaDB will work exactly as MySQL; all commands, interfaces,\
-libraries and APIs that exist in MySQL also exist in MariaDB.
+In most respects MariaDB will work exactly as MySQL; all commands, interfaces,libraries and APIs that exist in MySQL also exist in MariaDB.
 
 For 5.1.38, the main differences between MariaDB and MySQL are:
 

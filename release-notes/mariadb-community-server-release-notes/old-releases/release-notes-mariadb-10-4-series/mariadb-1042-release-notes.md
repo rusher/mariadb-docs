@@ -1,12 +1,12 @@
 # MariaDB 10.4.2 Release Notes
 
-The most recent release of [MariaDB 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/broken-reference/README.md) is:[**MariaDB 10.4.34**](mariadb-10-4-34-release-notes.md) Stable (GA) [Download Now](https://downloads.mariadb.org/mariadb/10.4.34/)
+The most recent release of [MariaDB 10.4](https://mariadb.com/docs/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series) is:[**MariaDB 10.4.34**](mariadb-10-4-34-release-notes.md) Stable (GA) [Download Now](https://downloads.mariadb.org/mariadb/10.4.34/)
 
-[Download](https://downloads.mariadb.org/mariadb/10.4.2/)[Release Notes](mariadb-1042-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-10-4-series/mariadb-1042-changelog.md)[Overview of 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/broken-reference/README.md)
+[Download](https://downloads.mariadb.org/mariadb/10.4.2/)[Release Notes](mariadb-1042-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-10-4-series/mariadb-1042-changelog.md)[Overview of 10.4](https://mariadb.com/docs/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104)
 
 **Release date:** 29 Jan 2019
 
-[MariaDB 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/broken-reference/README.md) is the current _development_ series of MariaDB. It is an evolution\
+[MariaDB 10.4](https://mariadb.com/docs/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series) is the current _development_ series of MariaDB. It is an evolution\
 of [MariaDB 10.3](../release-notes-mariadb-10-3-series/what-is-mariadb-103.md) with several entirely new features not found anywhere else\
 and with backported and reimplemented features from MySQL.
 
@@ -14,7 +14,7 @@ and with backported and reimplemented features from MySQL.
 
 **Do not use&#x20;**_**beta**_**&#x20;releases in production!**
 
-**For an overview of** [**MariaDB 10.4**](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/broken-reference/README.md) **see the**[**What is MariaDB 10.4?**](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/broken-reference/README.md) **page.**
+**For an overview of** [**MariaDB 10.4**](https://mariadb.com/docs/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series) **see the**[**What is MariaDB 10.4?**](https://mariadb.com/docs/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104) **page.**
 
 Thanks, and enjoy MariaDB!
 
@@ -32,25 +32,16 @@ Notable changes of this release include:
 
 ### Upgrading to Galera 4 version 26.4.0
 
-Rolling upgrades from earlier 10.3 (or older) MariaDB releases are not supported\
-in this release. For upgrading a 10.3-based cluster, any applications accessing\
-the cluster should be stopped and the cluster shut down. Then for each cluster\
-node the following procedure should be carried out:
+Rolling upgrades from earlier 10.3 (or older) MariaDB releases are not supported in this release. For upgrading a 10.3-based cluster, any applications accessing the cluster should be stopped and the cluster shut down. Then for each cluster node the following procedure should be carried out:
 
 * Install [MariaDB 10.4.2](mariadb-1042-release-notes.md) and Galera 4 version 26.4.0
-* Start MariaDB server, but make sure it is not trying to connect to the\
-  cluster by configuring `wsrep_provider=none`
+* Start MariaDB server, but make sure it is not trying to connect to the cluster by configuring `wsrep_provider=none`
 * While MariaDB server is running, run `mysql_upgrade` for the server
 * Stop MariaDB server
 
-After that, you can bootstrap the cluster. If there was ongoing application\
-load on the cluster during the initial cluster shutdown phase, you should make\
-sure to bootstrap the cluster with the node which was shutdown last.
+After that, you can bootstrap the cluster. If there was ongoing application load on the cluster during the initial cluster shutdown phase, you should make sure to bootstrap the cluster with the node which was shutdown last.
 
-We are working on rolling upgrade support for the final GA version of [MariaDB\
-10.4](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/broken-reference/README.md). With a rolling upgrade, a live cluster can be upgraded node by node, and\
-the cluster is able to process application load when having a hybrid setup of\
-10.3 and 10.4 nodes.
+We are working on rolling upgrade support for the final GA version of [MariaDB 10.4](https://mariadb.com/docs/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series). With a rolling upgrade, a live cluster can be upgraded node by node, and the cluster is able to process application load when having a hybrid setup of 10.3 and 10.4 nodes.
 
 ### New Features in Galera 26.4.0
 

@@ -41,7 +41,7 @@ Thanks, and enjoy MariaDB!
 
 ### Backup
 
-* `--export` option implemented for [MariaDB backup](broken-reference) ([MDEV-13466](https://jira.mariadb.org/browse/MDEV-13466))
+* `--export` option implemented for [MariaDB backup](https://mariadb.com/docs/server/server-usage/backup-and-restore/mariadb-backup) ([MDEV-13466](https://jira.mariadb.org/browse/MDEV-13466))
 
 ### Encryption
 

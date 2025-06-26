@@ -25,7 +25,7 @@ Thanks, and enjoy MariaDB!
 * Indexed [CHAR](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/string-data-types/char) columns are broken with NO\_PAD [collations](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/string-data-types/character-sets) ([MDEV-25440](https://jira.mariadb.org/browse/MDEV-25440))
 * insert-intention lock conflicts with waiting ORDINARY lock ([MDEV-27025](https://jira.mariadb.org/browse/MDEV-27025))
 * Crash recovery improvements ([MDEV-26784](https://jira.mariadb.org/browse/MDEV-26784), [MDEV-27022](https://jira.mariadb.org/browse/MDEV-27022), [MDEV-27183](https://jira.mariadb.org/browse/MDEV-27183), [MDEV-27610](https://jira.mariadb.org/browse/MDEV-27610))
-* [mariadb-backup](broken-reference) skips valid .ibd file ([MDEV-26326](https://jira.mariadb.org/browse/MDEV-26326))
+* [MariaDB Backup](https://mariadb.com/docs/server/server-usage/backup-and-restore/mariadb-backup/) skips valid .ibd file ([MDEV-26326](https://jira.mariadb.org/browse/MDEV-26326))
 * Allow seamless upgrade despite [ROW\_FORMAT=COMPRESSED](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-row-formats/innodb-compressed-row-format) ([MDEV-27736](https://jira.mariadb.org/browse/MDEV-27736))
 
 ### Galera
@@ -46,7 +46,7 @@ Thanks, and enjoy MariaDB!
 ### Packaging & Misc
 
 * prohibition running two upgrades in parallel ([MDEV-27068](https://jira.mariadb.org/browse/MDEV-27068), [MDEV-27107](https://jira.mariadb.org/browse/MDEV-27107), [MDEV-27279](https://jira.mariadb.org/browse/MDEV-27279))
-* As per the [MariaDB Deprecation Policy](../../../mariadb-platform-deprecation-policy.md), this will be the last release of [MariaDB 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-7-series/broken-reference/README.md) for Ubuntu 21.04 Hirsute, CentOS 8, and Fedora 33
+* As per the [MariaDB Deprecation Policy](../../../mariadb-platform-deprecation-policy.md), this will be the last release of [MariaDB 10.4](https://mariadb.com/docs/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series) for Ubuntu 21.04 Hirsute, CentOS 8, and Fedora 33
 * [mariadb\_repo\_setup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/mariadb-package-repository-setup-and-usage) script updated to version 2022-02-08, with the following fixes and enhancements:
   * Default location of the script has been moved to: [mariadb\_repo\_setup](https://r.mariadb.com/downloads/mariadb_repo_setup) (old location is deprecated, but still works)
   * The GPG keyring file, used with Debian and Ubuntu repositories, has moved to: [mariadb-keyring-2019.gpg](https://supplychain.mariadb.com/mariadb-keyring-2019.gpg) and the checksum for the file can be found at: [mariadb-keyring-2019.gpg.sha256](https://supplychain.mariadb.com/mariadb-keyring-2019.gpg.sha256)

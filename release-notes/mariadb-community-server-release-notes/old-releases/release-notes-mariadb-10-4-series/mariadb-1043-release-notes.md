@@ -1,12 +1,12 @@
 # MariaDB 10.4.3 Release Notes
 
-The most recent release of [MariaDB 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/broken-reference/README.md) is:[**MariaDB 10.4.34**](mariadb-10-4-34-release-notes.md) Stable (GA) [Download Now](https://downloads.mariadb.org/mariadb/10.4.34/)
+The most recent release of [MariaDB 10.4](https://mariadb.com/docs/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series) is:[**MariaDB 10.4.34**](mariadb-10-4-34-release-notes.md) Stable (GA) [Download Now](https://downloads.mariadb.org/mariadb/10.4.34/)
 
-[Download](https://downloads.mariadb.org/mariadb/10.4.3)[Release Notes](mariadb-1043-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-10-4-series/mariadb-1043-changelog.md)[Overview of 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/broken-reference/README.md)
+[Download](https://downloads.mariadb.org/mariadb/10.4.3)[Release Notes](mariadb-1043-release-notes.md)[Changelog](../../changelogs/changelogs-mariadb-10-4-series/mariadb-1043-changelog.md)[Overview of 10.4](https://mariadb.com/docs/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104)
 
 **Release date:** 25 Feb 2019
 
-[MariaDB 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/broken-reference/README.md) is the current _development_ series of MariaDB. It is an evolution\
+[MariaDB 10.4](https://mariadb.com/docs/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series) is the current _development_ series of MariaDB. It is an evolution\
 of [MariaDB 10.3](../release-notes-mariadb-10-3-series/what-is-mariadb-103.md) with several entirely new features not found anywhere else\
 and with backported and reimplemented features from MySQL.
 
@@ -14,7 +14,7 @@ and with backported and reimplemented features from MySQL.
 
 **Do not use non-stable (non-GA) releases in production!**
 
-**For an overview of** [**MariaDB 10.4**](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/broken-reference/README.md) **see the**[**What is MariaDB 10.4?**](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/broken-reference/README.md) **page.**
+**For an overview of** [**MariaDB 10.4**](https://mariadb.com/docs/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series) **see the**[**What is MariaDB 10.4?**](https://mariadb.com/docs/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104) **page.**
 
 Thanks, and enjoy MariaDB!
 
@@ -25,7 +25,7 @@ Notable changes of this release include:
 * [MDEV-12484](https://jira.mariadb.org/browse/MDEV-12484): The [unix\_socket authentication plugin](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/authentication-plugins/authentication-plugin-unix-socket) is now default on Unix-like systems, which is a major change to authentication in MariaDB
 * [MDEV-11340](https://jira.mariadb.org/browse/MDEV-11340): Allow multiple alternative authentication methods for the same user
 * [MDEV-7597](https://jira.mariadb.org/browse/MDEV-7597): [User password expiry](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/user-account-management/user-password-expiry)
-* [MDEV-6111](https://jira.mariadb.org/browse/MDEV-6111): Implementation of the [optimizer trace](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/broken-reference/README.md), one can enable the optimizer trace by enabling the system variable [optimizer\_trace](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#optimizer_trace)
+* [MDEV-6111](https://jira.mariadb.org/browse/MDEV-6111): Implementation of the [optimizer trace](https://mariadb.com/docs/general-resources/development-articles/mariadb-internals/mariadb-internals-documentation-query-optimizer/mariadb-internals-documentation-optimizer-trace), one can enable the optimizer trace by enabling the system variable [optimizer\_trace](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#optimizer_trace)
 * [Temporal tables](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/temporal-tables) extended with support for [application-time periods](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/temporal-tables/application-time-periods) ([MDEV-16973](https://jira.mariadb.org/browse/MDEV-16973), [MDEV-16974](https://jira.mariadb.org/browse/MDEV-16974), [MDEV-16975](https://jira.mariadb.org/browse/MDEV-16975), [MDEV-17082](https://jira.mariadb.org/browse/MDEV-17082))
 * [MDEV-18551](https://jira.mariadb.org/browse/MDEV-18551): The default for [eq\_range\_index\_dive\_limit](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#eq_range_index_dive_limit) is now `200` (previously `0`)
 * [MDEV-17903](https://jira.mariadb.org/browse/MDEV-17903): The [optimizer switch](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/query-optimizations/optimizer-switch) flag `optimize_join_buffer_size` now defaults to `on`
@@ -45,7 +45,7 @@ Notable changes of this release include:
   * [MDEV-15564](https://jira.mariadb.org/browse/MDEV-15564): Instant collation or charset changes for non-indexed columns
   * [MDEV-16188](https://jira.mariadb.org/browse/MDEV-16188): Use in-memory PK filters built from range index scans
 * Debian has stopped supporting the ppc64el architecture for Debian 8\
-  Jessie and so this is the last release of [MariaDB 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/broken-reference/README.md) on Jessie for that\
+  Jessie and so this is the last release of [MariaDB 10.4](https://mariadb.com/docs/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series) on Jessie for that\
   architecture
 * Fixes for the following [security vulnerabilities](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/security):
   * CVE-\`-\`\`\`
