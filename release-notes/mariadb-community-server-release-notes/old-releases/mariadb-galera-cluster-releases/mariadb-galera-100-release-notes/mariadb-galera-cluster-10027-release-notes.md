@@ -36,18 +36,10 @@ For changes made in [MariaDB 10.0.27](../../release-notes-mariadb-10-0-series/ma
   MariaDB Galera Cluster can be used with either a 25.2.x or 25.3.x\
   Galera `wsrep` provider. A 25.3.x `wsrep` provider is included in the\
   MariaDB repositories and is also available from the[downloads](https://downloads.mariadb.org/mariadb-galera/10.0) page.
-* See the [MariaDB 10.0.25 Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/mariadb-galera-cluster-releases/mariadb-galera-100-release-notes/broken-reference/README.md) and[Changelog](../../../changelogs/changelogs-mariadb-100-series/mariadb-10025-changelog.md) for more information on the changes in\
-  MariaDB.
-* On Ubuntu and Debian, the Galera Arbitrator daemon (garbd) and the galera\
-  library are in two separate packages. The packages are named galera-3\
-  and galera-arbitrator-3. When installing MariaDB Galera Cluster on Ubuntu and\
-  Debian (the mariadb-galera-server package), the galera-3 package will be\
-  automatically installed. You can then install the arbitrator package on a\
-  separate node (recommended) or on one of the nodes running\
-  mariadb-galera-server (not recommended).
+* See the [MariaDB 10.0.25 Release Notes](https://mariadb.com/docs/release-notes/mariadb-community-server-release-notes/old-releases/mariadb-galera-cluster-releases/mariadb-galera-100-release-notes/mariadb-galera-cluster-10025-release-notes) and[Changelog](../../../changelogs/changelogs-mariadb-100-series/mariadb-10025-changelog.md) for more information on the changes in MariaDB.
+* On Ubuntu and Debian, the Galera Arbitrator daemon (garbd) and the galera library are in two separate packages. The packages are named galera-3 and galera-arbitrator-3. When installing MariaDB Galera Cluster on Ubuntu and Debian (the mariadb-galera-server package), the galera-3 package will be automatically installed. You can then install the arbitrator package on a separate node (recommended) or on one of the nodes running mariadb-galera-server (not recommended).
 
-Note: If Galera 25.2.x and 25.3.x are both being used in the cluster, MariaDB\
-with Galera 25.3.x must be started with[wsrep\_provider\_options='socket.checksum=1'](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/wsrep_provider_options#socketchecksum) in order to make it backward\
+Note: If Galera 25.2.x and 25.3.x are both being used in the cluster, MariaDB with Galera 25.3.x must be started with[wsrep\_provider\_options='socket.checksum=1'](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/wsrep_provider_options#socketchecksum) in order to make it backward\
 compatible with Galera v2. Galera wsrep providers other than 25.3.x or 25.2.x\
 are not supported.
 

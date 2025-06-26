@@ -32,7 +32,7 @@ Thanks, and enjoy MariaDB!
 * [MDEV-14714](https://jira.mariadb.org/browse/MDEV-14714) / [MDEV-14488](https://jira.mariadb.org/browse/MDEV-14488) / [MDEV-14644](https://jira.mariadb.org/browse/MDEV-14644) - data corruption caused by error log messages ending up in database files or binary logs
 * [MDEV-14511](https://jira.mariadb.org/browse/MDEV-14511) - Use fewer transactions for updating InnoDB persistent statistics
 * [MDEV-13670](https://jira.mariadb.org/browse/MDEV-13670) / [MDEV-14550](https://jira.mariadb.org/browse/MDEV-14550) - Error log flood : "InnoDB: page\_cleaner: 1000ms intended loop took N ms. The settings might not be optimal."
-* [mariadb-backup](broken-reference): [MDEV-14536](https://jira.mariadb.org/browse/MDEV-14536) - during backup, retry read of log blocks, if there is (possibly intermittent) checksum mismatch
+* [mariadb-backup](https://mariadb.com/docs/server/server-usage/backup-and-restore/mariadb-backup): [MDEV-14536](https://jira.mariadb.org/browse/MDEV-14536) - during backup, retry read of log blocks, if there is (possibly intermittent) checksum mismatch
 * As per the [MariaDB Deprecation Policy](../../../mariadb-platform-deprecation-policy.md), this will be the last release of [MariaDB 10.2](what-is-mariadb-102.md) for Ubuntu 17.04 "Zesty".
 
 ### Updates

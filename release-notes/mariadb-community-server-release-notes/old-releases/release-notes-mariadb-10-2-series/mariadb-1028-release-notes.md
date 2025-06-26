@@ -26,7 +26,7 @@ Thanks, and enjoy MariaDB!
 * Fix [ST\_AsGeoJSON](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/geometry-constructors/geometry-constructors/geojson-st_asgeojson) ([MDEV-12180](https://jira.mariadb.org/browse/MDEV-12180))
 * Fixed bug that permitted columns being dropped which would would result in an additional constraint being added to the table. See the example in [ALTER TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/alter/alter-table#drop-column-if-exists-col_name-cascaderestrict) ([MDEV-11114](https://jira.mariadb.org/browse/MDEV-11114)).
 * Nonsensical combinations of SIGNED, UNSIGNED and ZEROFILL are no longer permitted - see [Numeric Data Type Overview](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/data-types/numeric-data-types/numeric-data-type-overview) ([MDEV-8659](https://jira.mariadb.org/browse/MDEV-8659)).
-* [MariaDB Backup](broken-reference) now included for Debian and Ubuntu (in [MariaDB 10.2.7](mariadb-1027-release-notes.md) it was released only for Red Hat, CentOS, and Fedora)
+* [mariadb-backup](https://mariadb.com/docs/server/server-usage/backup-and-restore/mariadb-backup) now included for Debian and Ubuntu (in [MariaDB 10.2.7](mariadb-1027-release-notes.md) it was released only for Red Hat, CentOS, and Fedora)
 * Fedora 26 repositories have been added in this release.
 * As per the [MariaDB Deprecation Policy](../../../mariadb-platform-deprecation-policy.md), this will be the last release of [MariaDB 10.2](what-is-mariadb-102.md) for Fedora 24.
 * Fixes for the following [security vulnerabilities](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/security):
