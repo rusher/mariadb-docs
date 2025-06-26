@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 SHOW {INDEX | INDEXES | KEYS} 
  FROM tbl_name [FROM db_name]
  [WHERE expr]
@@ -10,13 +10,11 @@ SHOW {INDEX | INDEXES | KEYS}
 
 ## Description
 
-`SHOW INDEX` returns table index information. The format\
-resembles that of the SQLStatistics call in ODBC.
+`SHOW INDEX` returns table index information. The format resembles that of the SQLStatistics call in ODBC.
 
-You can use `db_name.tbl_name` as an alternative to the`tbl_name FROM db_name` syntax. These two statements are\
-equivalent:
+You can use `db_name.tbl_name` as an alternative to the`tbl_name FROM db_name` syntax. These two statements are equivalent:
 
-```
+```sql
 SHOW INDEX FROM mytable FROM mydb;
 SHOW INDEX FROM mydb.mytable;
 ```
@@ -25,7 +23,7 @@ SHOW INDEX FROM mydb.mytable;
 
 You can also list a table's indexes with the [mariadb-show](../../../../clients-and-utilities/administrative-tools/mariadb-show.md) command:
 
-```
+```sql
 mariadb-show -k db_name tbl_name
 ```
 
@@ -55,7 +53,7 @@ The `WHERE` and `LIKE` clauses can be given to select rows using more general co
 
 ## Examples
 
-```
+```sql
 CREATE TABLE IF NOT EXISTS `employees_example` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `first_name` varchar(30) NOT NULL,
@@ -79,7 +77,7 @@ INSERT INTO `employees_example` (`first_name`, `last_name`, `position`, `home_ad
   ('Helmholtz', 'Watson', 'Janitor', '944 Soma Court', '329-555-2478', 'HW1');
 ```
 
-```
+```sql
 SHOW INDEXES FROM employees_example\G
 *************************** 1. row ***************************
         Table: employees_example

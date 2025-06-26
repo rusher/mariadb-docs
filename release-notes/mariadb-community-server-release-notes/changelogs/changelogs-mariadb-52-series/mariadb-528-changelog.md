@@ -226,4 +226,8 @@ modified in that revision.
     Define `USE_MARIA_FOR_TMP_TABLES` preprocessor constant by default if Aria engine is compiled in.\
     Use CMake variable `WITH_ARIA_TMP_TABLES` to control the temp table engine setting.
 
+{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
+
 {% @marketo/form formid="4316" formId="4316" %}

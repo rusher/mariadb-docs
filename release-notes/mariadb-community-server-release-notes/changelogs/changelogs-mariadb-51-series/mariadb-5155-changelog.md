@@ -379,4 +379,8 @@ modified in that revision.
         * Silence warnings coming from generated code (flex/bison) in xtradb/innodb\_plugin.
         * Be nice to people without cygwin (me) and add win/configure-mariadb.bat with options suitable for quick compilation, e.g no embedded
 
+{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
+
 {% @marketo/form formid="4316" formId="4316" %}

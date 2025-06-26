@@ -499,4 +499,8 @@ details of the revision and view diffs of the code modified in that revision.
   2022-05-18 23:38:56 +0900
   * [MDEV-14642](https://jira.mariadb.org/browse/MDEV-14642) Assertion 'table->s->db\_create\_options == part\_table->s->db\_create\_options' failed in compare\_table\_with\_partition
 
+{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
+
 {% @marketo/form formid="4316" formId="4316" %}

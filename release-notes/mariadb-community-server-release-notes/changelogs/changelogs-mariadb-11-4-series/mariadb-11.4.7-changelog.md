@@ -1,6 +1,6 @@
 # MariaDB 11.4.7 Changelog
 
-[Download](https://mariadb.com/downloads/)Release NotesChangelogOverview of 11.4
+<a href="https://mariadb.com/downloads/community" class="button primary">Download</a> <a href="mariadb-11.4.7-release-notes.md" class="button secondary">Release Notes</a> <a href="../changelogs/changelogs-mariadb-11-4-series/mariadb-11.4.7-changelog.md" class="button secondary">Changelog</a> <a href="what-is-mariadb-114.md" class="button secondary">Overview of 11.4</a>
 
 [_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/11.4.7/)
 
@@ -22,5 +22,9 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #c94133a71d](https://github.com/MariaDB/server/commit/c94133a71d)\
   2025-04-19 18:02:51 -0400
   * [MDEV-21510](https://jira.mariadb.org/browse/MDEV-21510): In Optimizer Trace, print index name in chosen\_access\_method
+
+{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

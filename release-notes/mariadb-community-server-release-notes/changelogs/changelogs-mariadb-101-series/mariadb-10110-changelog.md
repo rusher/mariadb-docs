@@ -596,4 +596,8 @@ The revision number links will take you to the revision's page on GitHub. On[Git
   2015-10-13 14:42:36 -0400
   * Merge tag 'mariadb-5.5.46' into 5.5-galera
 
+{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
+
 {% @marketo/form formid="4316" formId="4316" %}

@@ -340,4 +340,8 @@ modified in that revision.
   Wed 2013-11-06 17:55:22 +0400
   * Recording correct test results: mysql-test/suite/engines/funcs/r/db\_alter\_collate\_ascii.result mysql-test/suite/engines/funcs/r/db\_alter\_collate\_utf8.result
 
+{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
+
 {% @marketo/form formid="4316" formId="4316" %}

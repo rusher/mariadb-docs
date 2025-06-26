@@ -181,4 +181,8 @@ details of the revision and view diffs of the code modified in that revision.
   2018-05-29 10:26:01 +0300
   * [MDEV-16213](https://jira.mariadb.org/browse/MDEV-16213): Improvements and adjustments to Travis config
 
+{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
+
 {% @marketo/form formid="4316" formId="4316" %}

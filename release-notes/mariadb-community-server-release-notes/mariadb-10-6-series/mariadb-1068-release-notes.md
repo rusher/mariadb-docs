@@ -48,10 +48,10 @@ Note that [MariaDB 10.6.8](mariadb-1068-release-notes.md) is not yet available f
 
 ### Backup
 
-* Incorrect binlogs after Galera SST using rsync and [mariadb-backup](broken-reference) ([MDEV-27524](https://jira.mariadb.org/browse/MDEV-27524))
-* [mariadb-backup](broken-reference) does not detect multi-source replication slave ([MDEV-21037](https://jira.mariadb.org/browse/MDEV-21037))
+* Incorrect binlogs after Galera SST using rsync and [mariadb-backup](broken-reference/) ([MDEV-27524](https://jira.mariadb.org/browse/MDEV-27524))
+* [mariadb-backup](broken-reference/) does not detect multi-source replication slave ([MDEV-21037](https://jira.mariadb.org/browse/MDEV-21037))
 * Useless warning "InnoDB: Allocated tablespace ID for , old maximum was 0" during backup stage ([MDEV-27343](https://jira.mariadb.org/browse/MDEV-27343))
-* [mariadb-backup](broken-reference) prepare fails for incrementals if a new schema is created after full backup is taken ([MDEV-28446](https://jira.mariadb.org/browse/MDEV-28446))\
+* [mariadb-backup](broken-reference/) prepare fails for incrementals if a new schema is created after full backup is taken ([MDEV-28446](https://jira.mariadb.org/browse/MDEV-28446))\
   )
 
 ### Optimizer
@@ -116,7 +116,7 @@ information on each push, see the [changelog](../changelogs/changelogs-mariadb-1
 
 For a full list of contributors to [MariaDB 10.6.8](mariadb-1068-release-notes.md), see the [MariaDB Foundation release announcement](https://mariadb.org/mariadb-10-9-1-10-8-3-10-7-4-10-6-8-10-5-16-10-4-25-10-3-35-and-10-2-44-now-available/).
 
-{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+{% include "../../.gitbook/includes/announce.md" %}
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 

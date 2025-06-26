@@ -24,10 +24,6 @@ release.
 * \[[CONJ-609](https://jira.mariadb.org/browse/CONJ-609)] Using getDate with function DATE\_ADD() with parameter using string format where return wrong result using the binary protocol
 * \[[CONJ-610](https://jira.mariadb.org/browse/CONJ-610)] Option "allowMasterDownConnection" improvement on connection validation and Exceptions on master down
 
-Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
-
-MariaDB may already be included in your favorite OS distribution. More\
-information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-including-mariadb)\
-page.
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

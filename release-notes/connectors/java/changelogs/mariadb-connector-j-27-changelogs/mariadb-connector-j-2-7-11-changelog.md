@@ -21,4 +21,6 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #75a21dea](https://github.com/mariadb-corporation/mariadb-connector-j/commit/75a21dea) - \[misc] test stability improvement
 * [Revision #ecf8b24f](https://github.com/mariadb-corporation/mariadb-connector-j/commit/ecf8b24f) - \[misc] update server versions test
 
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
+
 {% @marketo/form formid="4316" formId="4316" %}

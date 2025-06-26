@@ -2,15 +2,13 @@
 
 ## Syntax
 
-```
+```sql
 SHOW [STORAGE] ENGINES
 ```
 
 ## Description
 
-`SHOW ENGINES` displays status information about the server's\
-storage engines. This is particularly useful for checking whether a storage\
-engine is supported, or to see what the default engine is.`SHOW TABLE TYPES` is a deprecated synonym.
+`SHOW ENGINES` displays status information about the server's storage engines. This is particularly useful for checking whether a storage engine is supported, or to see what the default engine is.`SHOW TABLE TYPES` is a deprecated synonym.
 
 The [information_schema.ENGINES](../system-tables/information-schema/information-schema-tables/information-schema-engines-table.md) table provides the same information.
 
@@ -27,7 +25,7 @@ The output consists of the following columns:
 
 ## Examples
 
-```
+```sql
 SHOW ENGINES\G
 *************************** 1. row ***************************
       Engine: InnoDB

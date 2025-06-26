@@ -17,4 +17,6 @@ MariaDB Connector/Node.js 3.3.2 is a [_**Stable**_](../../../mariadb-release-cri
 * [CONJS-297](https://jira.mariadb.org/browse/CONJS-297) Typescript connection option timeout in place of queryTimeout
 * [CONJS-298](https://jira.mariadb.org/browse/CONJS-298) Typescript wrong named longlong in place of bigint
 
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
+
 {% @marketo/form formid="4316" formId="4316" %}

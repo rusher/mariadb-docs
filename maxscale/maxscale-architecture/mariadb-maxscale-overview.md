@@ -35,8 +35,8 @@ MariaDB MaxScale follows the MariaDB Enterprise release schedule, which can be f
 | 23.02          | 2024-12-09          | [MariaDB MaxScale 23.02.12](../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-23-02/mariadb-maxscale-23-02-release-notes/mariadb-maxscale-2302-maxscale-2302-mariadb-maxscale-23029-release-notes-2024-03-11.md) |
 | 22.08          | 2024-12-09          | MariaDB MaxScale 22.08.15                                                                                                                                                                                                     |
 | 6              | 2024-03-11          | [MariaDB MaxScale 6.4.15](../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-21-06/)                                                                                                                              |
-| 2.5            | 2023-10-25          | [MariaDB MaxScale 2.5.29](../maxscale-archive/archive-of-2.x-versions-and-6/mariadb-maxscale-25/maxscale-25-release-notes/mariadb-maxscale-25-mariadb-maxscale-2529-release-notes-2023-10-25.md)                              |
-| 2.4            | 2022-01-10          | [MariaDB MaxScale 2.4.19](../maxscale-archive/archive-of-2.x-versions-and-6/mariadb-maxscale-24/maxscale-24-release-notes/mariadb-maxscale-24-mariadb-maxscale-2419-release-notes-2022-01-10.md)                              |
+| 2.5            | 2023-10-25          | [MariaDB MaxScale 2.5.29](broken-reference)                                                                                                                                                                                   |
+| 2.4            | 2022-01-10          | [MariaDB MaxScale 2.4.19](broken-reference)                                                                                                                                                                                   |
 
 ## Available Documentation
 

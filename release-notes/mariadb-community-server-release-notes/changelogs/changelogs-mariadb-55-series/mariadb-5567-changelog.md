@@ -60,4 +60,8 @@ of the revision and view diffs of the code modified in that revision.
   2019-11-04 18:30:48 +0100
   * [MDEV-20971](https://jira.mariadb.org/browse/MDEV-20971) ASAN heap-use-after-free in list\_delete / heap\_close
 
+{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
+
 {% @marketo/form formid="4316" formId="4316" %}

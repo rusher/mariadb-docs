@@ -131,6 +131,8 @@ systems (linked against libc 2.9), for 5.1.39 and 5.1.41 they were built on\
 Ubuntu 8.04 systems (so older libc works). They should hopefully work on most\
 x86-based Linux systems.
 
-<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

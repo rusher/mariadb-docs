@@ -50,4 +50,6 @@ The revision number links will take you to the revision's page on GitHub. On[Git
 * MISC : Change scope of dbcp to test - [Revision #9b60ba7](https://github.com/mariadb-corporation/mariadb-connector-j/commit/9b60ba7) 2015-08-07
 * MISC : adding automatic release deployement script - [Revision #73bd695](https://github.com/mariadb-corporation/mariadb-connector-j/commit/73bd695) 2015-09-02
 
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
+
 {% @marketo/form formid="4316" formId="4316" %}

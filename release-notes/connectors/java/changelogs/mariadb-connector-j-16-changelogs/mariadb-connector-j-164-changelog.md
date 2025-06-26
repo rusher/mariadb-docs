@@ -30,10 +30,6 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #6d854f47](https://github.com/mariadb-corporation/mariadb-connector-j/commit/6d854f47) - \[misc] improve error message on setting erroneous parameter
 * [Revision #ca1cae5a](https://github.com/mariadb-corporation/mariadb-connector-j/commit/ca1cae5a) - \[misc] delete inaccurate list of developers in pom
 
-Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
-
-MariaDB may already be included in your favorite OS distribution. More\
-information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-including-mariadb)\
-page.
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

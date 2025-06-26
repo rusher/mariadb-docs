@@ -21,4 +21,6 @@ MariaDB Connector/Node.js 3.2.1 is a [_**Stable**_](../../../mariadb-release-cri
 * [CONJS-261](https://jira.mariadb.org/browse/CONJS-261) TypeScript missing logParam connection option
 * [CONJS-263](https://jira.mariadb.org/browse/CONJS-263) ensure respecting server collation
 
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
+
 {% @marketo/form formid="4316" formId="4316" %}

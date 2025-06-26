@@ -21,4 +21,6 @@ in a critical, commercial or production environment. Implementation of beta\
 software should be limited to experienced users only in a staging or test\
 environment.
 
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
+
 {% @marketo/form formid="4316" formId="4316" %}

@@ -96,4 +96,6 @@ const conn = await mariadb.createConnection({
 For a complete list of changes made in this release, with links to detailed information\
 on each push, see the [changelog](../changelogs/mariadb-connector-nodejs-3x-changelogs/mariadb-connector-nodejs-300-rc-changelog.md).
 
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
+
 {% @marketo/form formid="4316" formId="4316" %}

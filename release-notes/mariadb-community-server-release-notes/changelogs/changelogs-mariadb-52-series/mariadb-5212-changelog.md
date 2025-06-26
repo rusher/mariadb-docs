@@ -41,4 +41,8 @@ modified in that revision.
   Mon 2012-04-02 11:29:28 +0200
   * [MDEV-209](https://jira.mariadb.org/browse/MDEV-209) SET PASSWORD in 5.2 does not update user's auth plugin
 
+{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
+
 {% @marketo/form formid="4316" formId="4316" %}

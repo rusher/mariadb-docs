@@ -4,11 +4,11 @@
 
 ## Overview
 
-MaxScale's [Aurora Monitor (auroramon)](../../../../../archive-of-2.x-versions-and-6/mariadb-maxscale-25/maxscale-25-monitors/mariadb-maxscale-25-aurora-monitor.md) monitors the status of Aurora cluster replicas.
+MaxScale's [Aurora Monitor (auroramon)](broken-reference) monitors the status of Aurora cluster replicas.
 
 ## EXTERNAL REFERENCES
 
-Additional information is available [here](../../../../../archive-of-2.x-versions-and-6/mariadb-maxscale-25/maxscale-25-monitors/mariadb-maxscale-25-aurora-monitor.md).
+Additional information is available [here](broken-reference).
 
 <sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
 

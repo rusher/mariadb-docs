@@ -14,10 +14,6 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #143c763](https://github.com/mariadb-corporation/mariadb-connector-j/commit/143c763) \[misc] correcting non publication of typescript definition on npm adding last 2.0.4 missing pool options to typescript definition.
 * [Revision #7a61dcc](https://github.com/mariadb-corporation/mariadb-connector-j/commit/7a61dcc) \[misc] improving test reliability
 
-Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
-
-MariaDB may already be included in your favorite OS distribution. More\
-information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-including-mariadb)\
-page.
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

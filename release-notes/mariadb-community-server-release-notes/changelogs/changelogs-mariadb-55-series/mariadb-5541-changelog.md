@@ -266,4 +266,8 @@ modified in that revision.
     * [Revision #4295](https://bazaar.launchpad.net/~maria-captains/maria/10.0/revision/4295)
       * gis-precise test fixed to pass on Power8
 
+{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
+
 {% @marketo/form formid="4316" formId="4316" %}

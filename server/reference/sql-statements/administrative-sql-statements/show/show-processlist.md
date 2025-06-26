@@ -2,17 +2,13 @@
 
 ## Syntax
 
-```
+```sql
 SHOW [FULL] PROCESSLIST
 ```
 
 ## Description
 
-`SHOW PROCESSLIST` shows you which threads are running. You\
-can also get this information from the[information\_schema.PROCESSLIST](../system-tables/information-schema/information-schema-tables/information-schema-processlist-table.md) table or the [mariadb-admin processlist](../../../../clients-and-utilities/administrative-tools/mariadb-admin.md) command. If you have the[PROCESS privilege](show-privileges.md), you can see all threads.\
-Otherwise, you can see only your own threads (that is, threads associated with\
-the MariaDB account that you are using). If you do not use the`FULL` keyword, only the first 100 characters of each\
-statement are shown in the Info field.
+`SHOW PROCESSLIST` shows you which threads are running. You can also get this information from the [information\_schema.PROCESSLIST](../system-tables/information-schema/information-schema-tables/information-schema-processlist-table.md) table or the [mariadb-admin processlist](../../../../clients-and-utilities/administrative-tools/mariadb-admin.md) command. If you have the [PROCESS privilege](show-privileges.md), you can see all threads. Otherwise, you can see only your own threads (that is, threads associated with the MariaDB account that you are using). If you do not use the`FULL` keyword, only the first 100 characters of each statement are shown in the Info field.
 
 The columns shown in `SHOW PROCESSLIST` are:
 
@@ -27,7 +23,7 @@ The columns shown in `SHOW PROCESSLIST` are:
 | TIME     | The amount of time, in seconds, the process has been in its current state. For a replica SQL thread before [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1), this is the time in seconds between the last replicated event's timestamp and the replica machine's real time. |
 | STATE    | See [Thread States](../../../../ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-states/).                                                                                                                                                                                                                                                                                               |
 | INFO     | The statement being executed.                                                                                                                                                                                                                                                                                                                                                                                        |
-| PROGRESS | The total progress of the process (0-100%) (see [Progress Reporting](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/administrative-sql-statements/show/broken-reference/README.md)).                                                                                                                                                                                   |
+| PROGRESS | The total progress of the process (0-100%) (see [Progress Reporting](show-processlist.md)).                                                                                                                                                                                                                                                                                                                          |
 
 The [information\_schema.PROCESSLIST](../system-tables/information-schema/information-schema-tables/information-schema-processlist-table.md) table contains a number of additional columns. See `TIME_MS` column in [information\_schema.PROCESSLIST](../system-tables/information-schema/time_ms-column-in-information_schemaprocesslist.md) for differences in the `TIME` column between MariaDB and MySQL.
 
@@ -39,7 +35,7 @@ Since queries on this table are locking, if the [performance\_schema](../system-
 
 ## Examples
 
-```
+```sql
 SHOW PROCESSLIST;
 +----+-----------------+-----------+------+---------+------+------------------------+------------------+----------+
 | Id | User            | Host      | db   | Command | Time | State                  | Info             | Progress |

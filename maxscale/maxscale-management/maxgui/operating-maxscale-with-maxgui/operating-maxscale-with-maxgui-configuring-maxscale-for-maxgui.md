@@ -1,6 +1,6 @@
 # Configuring MaxScale for MaxGUI
 
-MaxGUI is a graphical utility that can perform administrative tasks using MaxScale's [MaxScale's REST API](../../administrative-tools-for-mariadb-maxscale-maxctrl/operating-maxscale-with-maxctrl/). It is available starting in [MaxScale 2.5](../../../maxscale-archive/archive-of-2.x-versions-and-6/mariadb-maxscale-25/). It supports many different operations.
+MaxGUI is a graphical utility that can perform administrative tasks using MaxScale's [MaxScale's REST API](../../administrative-tools-for-mariadb-maxscale-maxctrl/operating-maxscale-with-maxctrl/). It is available starting in [MaxScale 2.5](broken-reference). It supports many different operations.
 
 MaxGUI is not available out-of-the box. MaxScale requires some configuration before MaxGUI can be used.
 

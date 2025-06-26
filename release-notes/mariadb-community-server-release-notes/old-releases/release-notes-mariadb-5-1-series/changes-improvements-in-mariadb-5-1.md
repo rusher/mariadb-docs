@@ -122,6 +122,8 @@ The following CVEs are also fixed in [MariaDB 5.1](changes-improvements-in-maria
 * [CVE-2012-0492](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-0492)
 * [CVE-2012-0075](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-0075)
 
-<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

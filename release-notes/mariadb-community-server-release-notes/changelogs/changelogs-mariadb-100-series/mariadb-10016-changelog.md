@@ -471,4 +471,8 @@ modified in that revision.
   Mon 2014-11-24 02:53:45 +0400
   * [MDEV-7157](https://jira.mariadb.org/browse/MDEV-7157) plugins.server\_audit fails sporadically in buildbot. Records can get to the different place in the log when multiple thread are logged. So the delay added to let the record be saved on the same place.
 
+{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
+
 {% @marketo/form formid="4316" formId="4316" %}

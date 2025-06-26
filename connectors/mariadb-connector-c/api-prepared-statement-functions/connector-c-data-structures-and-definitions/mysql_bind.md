@@ -58,10 +58,13 @@ unsigned int row_size= sizeof(struct my_data);
 mysql_stmt_attr_set(stmt, STMT_ATTR_ROW_SIZE, &row_size);
 ```
 
-Connector/C can now calculate the address of the data for a particular row and column as`address= bind_address + row_nr * row_size`\
+Connector/C can now calculate the address of the data for a particular row and column as`address= bind_address + row_nr * row_size`
 where rows are numbered from 0 to size of rowset - 1.
 
-If `row_size` is zero, column wise binding will be used instead.![row\_wise\_binding](../../../.gitbook/assets/row_wise_binding.png)\
+If `row_size` is zero, column wise binding will be used instead.
+
+![row\_wise\_binding](../../../.gitbook/assets/row_wise_binding.png)
+
 An example for row wise binding can be found [here](../prepared-statement-examples/bulk-insert-row-wise-binding.md).
 
 

@@ -195,6 +195,7 @@
   * [Other .NET Connectors](mariadb-connector-net/other-net-connectors.md)
 * [Node.js Connector](mariadb-connector-nodejs/README.md)
   * [About MariaDB Connector/Node.js](mariadb-connector-nodejs/mariadb-connector-node-js-guide.md)
+  * [Connector/Node.js Batch API](mariadb-connector-nodejs/connector-nodejs-batch-api.md)
   * [Connector/Node.js Callback API](mariadb-connector-nodejs/connector-nodejs-callback-api.md)
   * [Connector/Node.js Pipelining](mariadb-connector-nodejs/connector-nodejs-pipelining.md)
   * [Connector/Node.js Promise API](mariadb-connector-nodejs/connector-nodejs-promise-api.md)

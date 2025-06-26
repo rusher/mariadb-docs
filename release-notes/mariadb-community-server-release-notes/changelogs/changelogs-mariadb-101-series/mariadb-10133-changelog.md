@@ -289,4 +289,8 @@ details of the revision and view diffs of the code modified in that revision.
   2018-03-22 20:03:54 +0200
   * Adjust table\_open\_cache to avoid getting error 24 (too many open files)
 
+{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
+
 {% @marketo/form formid="4316" formId="4316" %}

@@ -31,10 +31,6 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #496da260](https://github.com/mariadb-corporation/mariadb-connector-j/commit/496da260) - \[misc] ensure stability if option "enablePacketDebug" is set and IOException occur in when establishing socket
 * [Revision #64ca2365](https://github.com/mariadb-corporation/mariadb-connector-j/commit/64ca2365) - \[misc] permit having debug trace when option "enablePacketDebug" for for authentication packet IOException
 
-Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
-
-MariaDB may already be included in your favorite OS distribution. More\
-information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-including-mariadb)\
-page.
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

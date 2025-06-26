@@ -142,4 +142,8 @@ page.
 | 8 Nov 2021  | [MariaDB 10.7.1](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-7-series/broken-reference/README.md) | RC          | [Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-7-series/broken-reference/README.md) | [Changelog](../../changelogs/changelogs-mariadb-10-7-series/mariadb-1071-changelog.md)   |
 | 17 Sep 2021 | [MariaDB 10.7.0](mariadb-1070-release-notes.md)                                                                                                                                                               | Alpha       | [Release Notes](mariadb-1070-release-notes.md)                                                                                                                                                               |                                                                                          |
 
+{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
+
 {% @marketo/form formid="4316" formId="4316" %}

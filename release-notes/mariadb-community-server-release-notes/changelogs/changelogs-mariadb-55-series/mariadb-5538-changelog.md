@@ -256,4 +256,8 @@ modified in that revision.
   Tue 2014-04-15 18:08:33 +0500
   * [MDEV-5138](https://jira.mariadb.org/browse/MDEV-5138) Numerous test failures in "mtr --ps --embedded". The function Protocol::net\_store\_data(a, b, CHARSET\_A, CHARSET\_B) should be adapted to be working in the embedded server as it's done with the Protocol::net\_store\_data(a, b). That new function renamed as net\_store\_data\_cs, so we can make it virtual.
 
+{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
+
 {% @marketo/form formid="4316" formId="4316" %}

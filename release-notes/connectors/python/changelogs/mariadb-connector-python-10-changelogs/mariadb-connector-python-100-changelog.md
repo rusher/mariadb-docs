@@ -273,4 +273,6 @@ details of the revision and view diffs of the code modified in that revision.
   2020-05-27 10:40:35 +0200
   * Fix for [CONPY-67](https://jira.mariadb.org/browse/CONPY-67): If no rows were fetched from an unbuffered cursor (resultset) rowcount now returns -1 instead of 0.
 
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
+
 {% @marketo/form formid="4316" formId="4316" %}

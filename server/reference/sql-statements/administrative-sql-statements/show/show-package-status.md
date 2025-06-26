@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 SHOW PACKAGE STATUS
     [LIKE 'pattern' | WHERE expr]
 ```
@@ -17,7 +17,7 @@ The [ROUTINES table](../system-tables/information-schema/information-schema-tabl
 
 ## Examples
 
-```
+```sql
 SHOW PACKAGE STATUS LIKE 'pkg1'\G
 *************************** 1. row ***************************
                   Db: test
@@ -39,7 +39,7 @@ collation_connection: utf8_general_ci
 * [SHOW CREATE PACKAGE](show-create-package.md)
 * [CREATE PACKAGE](../../data-definition/create/create-package.md)
 * [DROP PACKAGE](../../data-definition/drop/drop-package.md)
-* [Oracle SQL\_MODE](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/administrative-sql-statements/show/broken-reference/README.md)
+* [Oracle SQL\_MODE](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

@@ -18,4 +18,6 @@ Correction have been done with 1.7.6 version, that is the 1.7.4 version + correc
 binaries available for download which contain the features.\
 The source code is available on [GitHub](https://github.com/MariaDB/mariadb-connector-j).
 
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
+
 {% @marketo/form formid="4316" formId="4316" %}

@@ -210,4 +210,8 @@ details of the revision and view diffs of the code modified in that revision.
   2018-06-22 23:26:43 +1000
   * [MDEV-16490](https://jira.mariadb.org/browse/MDEV-16490): It's possible to make a system versioned table without any versioning field
 
+{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
+
 {% @marketo/form formid="4316" formId="4316" %}

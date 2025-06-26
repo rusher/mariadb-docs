@@ -1,76 +1,55 @@
+# MaxScale 22.08 SmartRouter
 
-# SmartRouter
+## SmartRouter
 
-# SmartRouter
+## SmartRouter
 
+* [SmartRouter](mariadb-maxscale-2208-smartrouter.md#smartrouter)
+  * [Overview](mariadb-maxscale-2208-smartrouter.md#overview)
+  * [Configuration](mariadb-maxscale-2208-smartrouter.md#configuration)
+    * [master](mariadb-maxscale-2208-smartrouter.md#master)
+      * [Example](mariadb-maxscale-2208-smartrouter.md#example)
+  * [Cluster selection - how queries are routed](mariadb-maxscale-2208-smartrouter.md#cluster-selection-how-queries-are-routed)
+  * [Limitations](mariadb-maxscale-2208-smartrouter.md#limitations)
+  * [Complete configuration example](mariadb-maxscale-2208-smartrouter.md#complete-configuration-example)
 
+### Overview
 
-
-* [SmartRouter](#smartrouter)
-
-  * [Overview](#overview)
-  * [Configuration](#configuration)
-
-    * [master](#master)
-
-      * [Example](#example)
-  * [Cluster selection - how queries are routed](#cluster-selection-how-queries-are-routed)
-  * [Limitations](#limitations)
-  * [Complete configuration example](#complete-configuration-example)
-
-
-
-
-## Overview
-
-
-SmartRouter is the query router of the SmartQuery framework. Based on the type
-of the query, each query is routed to the server or cluster that can best
+SmartRouter is the query router of the SmartQuery framework. Based on the type\
+of the query, each query is routed to the server or cluster that can best\
 handle it.
 
-
-For workloads where both transactional and analytical queries are needed,
-SmartRouter unites the Transactional (OLTP) and Analytical (OLAP) workloads into
-a single entry point in MaxScale. This allows a MaxScale client to freely mix
-transactional and analytical queries using the same connection. This is known
+For workloads where both transactional and analytical queries are needed,\
+SmartRouter unites the Transactional (OLTP) and Analytical (OLAP) workloads into\
+a single entry point in MaxScale. This allows a MaxScale client to freely mix\
+transactional and analytical queries using the same connection. This is known\
 as Hybrid Transactional and Analytical Processing, HTAP.
 
+### Configuration
 
-## Configuration
-
-
-SmartRouter is configured as a service that either routes to other MaxScale
-routers or plain servers. Although one can configure SmartRouter to use a plain
+SmartRouter is configured as a service that either routes to other MaxScale\
+routers or plain servers. Although one can configure SmartRouter to use a plain\
 server directly, we refer to the configured "servers" as clusters.
 
+For details about the standard service parameters, refer to the[Configuration Guide](../../../../../en/maxscale-2208-getting-started-mariadb-maxscale-configuration-guide/).
 
-For details about the standard service parameters, refer to the
-[Configuration Guide](/en/maxscale-2208-getting-started-mariadb-maxscale-configuration-guide/).
-
-
-### `master`
-
+#### `master`
 
 * Type: target
 * Mandatory: Yes
 * Dynamic: No
 
-
-One of the clusters must be designated as the **`master`**. All writes go to the
-master cluster, which for all practical purposes should be a master-slave
-ReadWriteSplit. This document does not go into details about setting up
-master-slave clusters, but suffice to say, that when setting up the ColumnStore
-servers they should be configured to be slaves of a MariaDB server running an
-InnoDB engine.
+One of the clusters must be designated as the **`master`**. All writes go to the\
+master cluster, which for all practical purposes should be a master-slave\
+ReadWriteSplit. This document does not go into details about setting up\
+master-slave clusters, but suffice to say, that when setting up the ColumnStore\
+servers they should be configured to be slaves of a MariaDB server running an\
+InnoDB engine.\
 The ReadWriteSplit [documentation](mariadb-maxscale-2208-readwritesplit.md) has more on master-slave setup.
 
-
-#### Example
-
+**Example**
 
 Suppose we have a Transactional service like
-
-
 
 ```
 [RWS-Row]
@@ -79,11 +58,7 @@ router=readwritesplit
 servers = row_server_1, row_server_2, ...
 ```
 
-
-
 for which we have defined the listener
-
-
 
 ```
 [RWS-Row-Listener]
@@ -92,14 +67,9 @@ service=RWS-Row
 socket=/tmp/rws-row.sock
 ```
 
-
-
 That is, that service can be accessed using the socket `/tmp/rws-row.sock`.
 
-
 The Analytical service could look like this
-
-
 
 ```
 [RWS-Column]
@@ -113,11 +83,7 @@ service = RWS-Column
 socket = /tmp/rws-col.sock
 ```
 
-
-
 Then we can define the SmartQuery service as follows
-
-
 
 ```
 [SmartQuery]
@@ -132,55 +98,43 @@ service = SmartQuery
 port = <port>
 ```
 
-
-
-Note that the SmartQuery listener listens on a port, while the Row and Column
-service listeners listen on Unix domain sockets. The reason is that there is a
-significant performance benefit when SmartRouter accesses the services over a
+Note that the SmartQuery listener listens on a port, while the Row and Column\
+service listeners listen on Unix domain sockets. The reason is that there is a\
+significant performance benefit when SmartRouter accesses the services over a\
 Unix domain socket compared to accessing them over a TCP/IP socket.
-
 
 A complete configuration example can be found at the end of this document.
 
+### Cluster selection - how queries are routed
 
-## Cluster selection - how queries are routed
-
-
-SmartRouter keeps track of the performance, or the execution time, of queries to
-the clusters. Measurements are stored with the canonical of a query as the key.
-The canonical of a query is the sql with all user-defined constants replaced with
-question marks. When SmartRouter sees a read-query whose canonical has not been
-seen before, it will send the query to all clusters. The first response from a
-cluster will designate that cluster as the best one for that canonical. Also,
-when the first response is received, the other queries are cancelled. The
-response is sent to the client once all clusters have responded to the query
+SmartRouter keeps track of the performance, or the execution time, of queries to\
+the clusters. Measurements are stored with the canonical of a query as the key.\
+The canonical of a query is the sql with all user-defined constants replaced with\
+question marks. When SmartRouter sees a read-query whose canonical has not been\
+seen before, it will send the query to all clusters. The first response from a\
+cluster will designate that cluster as the best one for that canonical. Also,\
+when the first response is received, the other queries are cancelled. The\
+response is sent to the client once all clusters have responded to the query\
 or the cancel.
 
-
-There is obviously overhead when a new canonical is seen. This means that
-queries after a MaxScale start will be slightly slower than normal. The
-execution time of a query depends on the database engine, and on the contents
-of the tables being queried. As a result, MaxScale will periodically re-measure
+There is obviously overhead when a new canonical is seen. This means that\
+queries after a MaxScale start will be slightly slower than normal. The\
+execution time of a query depends on the database engine, and on the contents\
+of the tables being queried. As a result, MaxScale will periodically re-measure\
 queries.
 
-
-The performance behavior of queries under dynamic conditions, and their effect
-on different storage engines is being studied at MariaDB. As we learn more, we
-will be able to better categorize queries and move that knowledge into
+The performance behavior of queries under dynamic conditions, and their effect\
+on different storage engines is being studied at MariaDB. As we learn more, we\
+will be able to better categorize queries and move that knowledge into\
 SmartRouter.
 
-
-## Limitations
-
+### Limitations
 
 * `LOAD DATA LOCAL INFILE` is not supported.
-* The performance data is not persisted. The measurements will be performed
-anew after each startup.
+* The performance data is not persisted. The measurements will be performed\
+  anew after each startup.
 
-
-## Complete configuration example
-
-
+### Complete configuration example
 
 ```
 [maxscale]
@@ -257,7 +211,4 @@ service = SmartQuery
 port = <port>
 ```
 
-
-
 CC BY-SA / Gnu FDL
-

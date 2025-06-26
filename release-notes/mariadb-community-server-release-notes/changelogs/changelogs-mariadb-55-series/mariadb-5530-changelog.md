@@ -244,4 +244,8 @@ The revision number links will take you to the revision's page on Launchpad. On 
   * Assertion happens in replication thread during THD destruction, when thread calls my\_sync(), which in turn calls thd\_wait\_begin() callback. Connection count can be 0, because the counter was decremented before THD destructor. This assertion currently reproducible only in Percona server and not in MariaDB, due to differences in replication code.
   * Fixed by moving code to decrement connection counter after the THD destructor.
 
+{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
+
 {% @marketo/form formid="4316" formId="4316" %}

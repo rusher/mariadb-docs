@@ -421,4 +421,8 @@ details of the revision and view diffs of the code modified in that revision.
   2023-03-16 17:24:12 +0200
   * [MDEV-26258](https://jira.mariadb.org/browse/MDEV-26258) Various crashes/asserts/corruptions when Aria encryption is enabled/used, but the encryption plugin is not loaded
 
+{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
+
 {% @marketo/form formid="4316" formId="4316" %}

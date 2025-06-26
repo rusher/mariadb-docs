@@ -334,4 +334,8 @@ When WL#6061 is implemented this change should be re-evaluated.
   Thu 2012-02-16 08:49:10 +0200
   * Counters for Index Condition Pushdown added ([MDEV-130](https://jira.mariadb.org/browse/MDEV-130)).
 
+{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
+
 {% @marketo/form formid="4316" formId="4316" %}

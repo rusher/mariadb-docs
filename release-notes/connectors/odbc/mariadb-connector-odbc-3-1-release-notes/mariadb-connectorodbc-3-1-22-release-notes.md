@@ -26,6 +26,6 @@ MariaDB Connector/ODBC 3.1.22 is built on top of[MariaDB Connector/C v.3.3.15](.
 For a complete list of every change made in this release, with links to\
 detailed information on each push, see the [changelog](https://github.com/mariadb-corporation/docs-release-notes/blob/test/connectors/odbc/mariadb-connector-odbc-3-1-release-notes/mariadb-connector-odbc-3-1-22-changelog/README.md).
 
-{% include "../../../.gitbook/includes/announce.md" %}
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

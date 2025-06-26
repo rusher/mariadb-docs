@@ -348,4 +348,8 @@ modified in that revision.
   Mon 2014-08-11 05:45:45 +0400
   * [MDEV-6274](https://jira.mariadb.org/browse/MDEV-6274) Collation usage statistics Adding collation usage statistics into the feedback plugin I\_S table.
 
+{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
+
 {% @marketo/form formid="4316" formId="4316" %}

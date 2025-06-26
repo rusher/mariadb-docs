@@ -32,4 +32,8 @@ modified in that revision.
   2016-06-12 19:28:56 -0400
   * [MDEV-9083](https://jira.mariadb.org/browse/MDEV-9083): Slave IO thread does not handle autoreconnect to restarting Galera Cluster node
 
+{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
+
 {% @marketo/form formid="4316" formId="4316" %}

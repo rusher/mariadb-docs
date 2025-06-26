@@ -94,4 +94,8 @@ modified in that revision.
   : Mon 2011-08-29 20:38:21 +0300
   * Added logging of all messages (also system warnings) one gets during a MyISAM recovery or auto-recovery.
 
+{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
+
 {% @marketo/form formid="4316" formId="4316" %}

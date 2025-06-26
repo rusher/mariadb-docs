@@ -289,4 +289,6 @@ modified in that revision.
   Thu 2014-05-22 11:10:58 +0200
   * Fix for [CONJ-93](https://jira.mariadb.org/browse/CONJ-93): Connection fails if there are special chars (like '-') in the url This patch also removes extra call for setting the default database, instead default database will be selected during handshake.
 
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
+
 {% @marketo/form formid="4316" formId="4316" %}

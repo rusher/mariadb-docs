@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 SHOW PACKAGE BODY STATUS
     [LIKE 'pattern' | WHERE expr]
 ```
@@ -17,7 +17,7 @@ The [ROUTINES table](../system-tables/information-schema/information-schema-tabl
 
 ## Examples
 
-```
+```sql
 SHOW PACKAGE BODY STATUS LIKE 'pkg1'\G
 *************************** 1. row ***************************
                   Db: test

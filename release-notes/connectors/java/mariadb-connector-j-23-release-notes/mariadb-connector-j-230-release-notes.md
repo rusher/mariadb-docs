@@ -47,10 +47,6 @@ This option still makes sense, since for big batch is way more faster, but will 
 * \[[CONJ-616](https://jira.mariadb.org/browse/CONJ-616)] correction on possible NPE on getConnection when using failover configuration and master is down, not throwing a proper exception
 * \[[CONJ-636](https://jira.mariadb.org/browse/CONJ-636)] Error in batch might throw a NPE and not the proper Exception
 
-Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
-
-MariaDB may already be included in your favorite OS distribution. More\
-information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-including-mariadb)\
-page.
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

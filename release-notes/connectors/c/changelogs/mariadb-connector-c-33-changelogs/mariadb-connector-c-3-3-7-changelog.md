@@ -87,4 +87,6 @@ details of the revision and view diffs of the code modified in that revision.
   2023-05-24 20:40:44 +0200
   * Bump version (new version 3.3.6)
 
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
+
 {% @marketo/form formid="4316" formId="4316" %}

@@ -1,0 +1,2 @@
+# MariaDB MaxScale Release Notes
+

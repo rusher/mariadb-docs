@@ -41,4 +41,6 @@ information on each push, see the[changelog](../changelogs/mariadb-connector-j-1
   * Now a SQLException is thrown early on, in the first() call, since streaming results sets are not scrollable.
 * Connection.close() hangs if there is an open streaming result set, and next() was not called on this result set ([CONJ-25](https://jira.mariadb.org/browse/CONJ-25))
 
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
+
 {% @marketo/form formid="4316" formId="4316" %}

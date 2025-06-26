@@ -40,4 +40,6 @@ details of the revision and view diffs of the code modified in that revision.
   2025-01-28 16:16:29 +0100
   * [CONPY-303](https://jira.mariadb.org/browse/CONPY-303): Documentation fix for cursor constructor
 
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
+
 {% @marketo/form formid="4316" formId="4316" %}

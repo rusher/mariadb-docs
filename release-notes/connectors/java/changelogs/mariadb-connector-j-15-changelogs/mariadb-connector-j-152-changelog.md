@@ -28,10 +28,6 @@ The revision number links will take you to the revision's page on GitHub. On[Git
 * [Revision #2d50b01](https://github.com/mariadb-corporation/mariadb-connector-j/commit/2d50b01) - \[misc] correction to permit running Aurora CI
 * [Revision #9fe880c](https://github.com/mariadb-corporation/mariadb-connector-j/commit/9fe880c) - \[[CONJ-333](https://jira.mariadb.org/browse/CONJ-333)] ResultSet.getString() on a time column return NULL when value=00:00:00 when option useServerPrepStmts is set to true
 
-Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
-
-MariaDB may already be included in your favorite OS distribution. More\
-information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-including-mariadb)\
-page.
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

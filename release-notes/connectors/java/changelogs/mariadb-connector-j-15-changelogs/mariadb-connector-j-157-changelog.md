@@ -20,10 +20,6 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #1e72d73](https://github.com/mariadb-corporation/mariadb-connector-j/commit/1e72d73) - \[[CONJ-407](https://jira.mariadb.org/browse/CONJ-407)] handling failover when packet > max\_allowed\_packet reset the connection state.
 * [Revision #b5e211e](https://github.com/mariadb-corporation/mariadb-connector-j/commit/b5e211e) - \[[CONJ-405](https://jira.mariadb.org/browse/CONJ-405)] Clear Calendar instance before using it
 
-Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
-
-MariaDB may already be included in your favorite OS distribution. More\
-information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-including-mariadb)\
-page.
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

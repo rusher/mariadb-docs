@@ -31,4 +31,6 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #c8fe9ad](https://github.com/mariadb-corporation/mariadb-connector-nodejs/commit/c8fe9ad) fix the typing of `timeout` to `queryTimeout` in interface QueryConfig
 * [Revision #765b984](https://github.com/mariadb-corporation/mariadb-connector-nodejs/commit/765b984) Add missing BIGINT Type enum
 
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
+
 {% @marketo/form formid="4316" formId="4316" %}

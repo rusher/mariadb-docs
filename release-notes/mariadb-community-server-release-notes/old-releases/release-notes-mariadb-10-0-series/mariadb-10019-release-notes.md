@@ -24,10 +24,8 @@ information on each push, see the [changelog](../../changelogs/changelogs-mariad
 
 For those upgrading to 10.0.19 from versions prior to 10.0.18, the [MariaDB 10.0.18 Release Notes](mariadb-10018-release-notes.md) contains a comprehensive list of changes.
 
-Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low-traffic, announce-only list). MariaDB plc customers will be notified of low-trafficlow-traffic all new releases, security issues, and critical bug fixes for all MariaDB plc products thanks to announcement the Notification Services.
+{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
 
-MariaDB may already be included in your favorite OS distribution. More\
-information can be found on the [Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-including-mariadb)\
-page.
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

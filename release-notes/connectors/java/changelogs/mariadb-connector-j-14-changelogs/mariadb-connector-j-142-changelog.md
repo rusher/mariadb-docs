@@ -15,4 +15,6 @@ The revision number links will take you to the revision's page on GitHub. On[Git
 * [Revision #20f840c](https://github.com/mariadb-corporation/mariadb-connector-j/commit/20f840c)
   * \[[CONJ-275](https://jira.mariadb.org/browse/CONJ-275)] Streaming result without result throw "Current position is before the first row"
 
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
+
 {% @marketo/form formid="4316" formId="4316" %}

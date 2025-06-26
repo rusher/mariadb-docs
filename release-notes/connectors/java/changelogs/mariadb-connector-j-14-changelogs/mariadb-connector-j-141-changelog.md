@@ -25,4 +25,6 @@ The revision number links will take you to the revision's page on GitHub. On[Git
 * [Revision #2d1d4e3](https://github.com/mariadb-corporation/mariadb-connector-j/commit/2d1d4e3)
   * \[CON-274] connection to permit connection to mysql 5.1 db using password
 
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
+
 {% @marketo/form formid="4316" formId="4316" %}

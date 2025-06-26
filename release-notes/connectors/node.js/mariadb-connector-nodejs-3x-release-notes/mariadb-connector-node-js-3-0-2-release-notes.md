@@ -47,4 +47,6 @@ prepare.close();
 * [CONJS-216](https://jira.mariadb.org/browse/CONJS-216) remove please-upgrade-node dependency
 * [CONJS-224](https://jira.mariadb.org/browse/CONJS-224) missing typescript checkNumberRange option definition
 
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
+
 {% @marketo/form formid="4316" formId="4316" %}

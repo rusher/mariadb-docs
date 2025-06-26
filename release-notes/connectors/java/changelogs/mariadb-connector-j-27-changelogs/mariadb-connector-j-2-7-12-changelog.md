@@ -23,4 +23,6 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #f0fde6df](https://github.com/mariadb-corporation/mariadb-connector-j/commit/f0fde6df) - rest of the subheader should be regenerated
 * [Revision #d6778d49](https://github.com/mariadb-corporation/mariadb-connector-j/commit/d6778d49) - Avoid increasing the sequence of sub header twice during flushing the compressed packet
 
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
+
 {% @marketo/form formid="4316" formId="4316" %}

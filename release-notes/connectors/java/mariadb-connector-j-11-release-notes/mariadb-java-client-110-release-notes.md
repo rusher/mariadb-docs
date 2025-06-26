@@ -56,4 +56,6 @@ Here is a list of the important changes in this release
 * Fixed ArrayOutOfBounds exception when parsing JDBC ([CONJ-4](https://jira.mariadb.org/browse/CONJ-4))
 * Fixed exception in Connection.getWarnings(), which was throws is connection was closed
 
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
+
 {% @marketo/form formid="4316" formId="4316" %}

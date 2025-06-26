@@ -26,4 +26,6 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #3795538](https://github.com/mariadb-corporation/mariadb-connector-j/commit/3795538) \[misc] xpand 6.1 testing
 * [Revision #3488c84](https://github.com/mariadb-corporation/mariadb-connector-j/commit/3488c84) Merge tag '3.1.0' into develop
 
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
+
 {% @marketo/form formid="4316" formId="4316" %}

@@ -20,6 +20,6 @@ MariaDB Connector/R2DBC 1.0.3 was released on 2021-09-27. This release is of Gen
 * [Report Issues](https://jira.mariadb.org/browse/R2DBC)
 * [Source code](https://github.com/mariadb-corporation/mariadb-connector-r2dbc/)
 
-<sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

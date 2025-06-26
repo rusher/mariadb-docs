@@ -467,4 +467,8 @@ The revision number links will take you to the revision's page on Launchpad. On 
   * [MDEV-3901](https://jira.mariadb.org/browse/MDEV-3901): Wrong SSL error messages
   * Fixed typo (missing comma)
 
+{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
+
 {% @marketo/form formid="4316" formId="4316" %}

@@ -93,4 +93,8 @@ page.
 | 09 Feb 2022 | [MariaDB 10.8.1](mariadb-1081-release-notes.md)                                                                                                                                                               | RC          | [Release Notes](mariadb-1081-release-notes.md)                                                                                                                                                               | [Changelog](../../changelogs/changelogs-mariadb-10-8-series/mariadb-1081-changelog.md)   |
 | 21 Dec 2021 | [MariaDB 10.8.0](mariadb-10-8-0-release-notes.md)                                                                                                                                                             | Alpha       | [Release Notes](mariadb-10-8-0-release-notes.md)                                                                                                                                                             |                                                                                          |
 
+{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
+
 {% @marketo/form formid="4316" formId="4316" %}

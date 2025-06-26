@@ -308,7 +308,7 @@ referred to from _services_.
 A router module is capable of routing requests to backend servers according to\
 the characteristics of a request and/or the algorithm the router\
 implements. Examples of routers are `readconnroute` that provides _connection_\
-_routing_, that is, the server is chosen according to specified rules when the\
+&#xNAN;_&#x72;outing_, that is, the server is chosen according to specified rules when the\
 session is created and all requests are subsequently routed to that server,\
 and `readwritesplit` that provides _statement routing_, that is, each\
 individual request is routed to the most appropriate server.
@@ -1369,7 +1369,7 @@ some_parameter=$SOME_VALUE
 
 is encountered, then `$SOME_VALUE` will be replaced with the actual value\
 of the environment variable `SOME_VALUE`. Note:_Variable substitution will be made only if '$' is the first character_\
-_of the value._ _Everything_ following '$' is interpreted as the name of the environment\
+&#xNAN;_&#x6F;f the value._ _Everything_ following '$' is interpreted as the name of the environment\
 variable.
 
 * Referring to a non-existing environment variable is a fatal error.
