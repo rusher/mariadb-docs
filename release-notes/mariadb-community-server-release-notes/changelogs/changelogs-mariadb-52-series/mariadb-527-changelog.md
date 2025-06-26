@@ -4,17 +4,15 @@
 
 **Release date:** 14 Jun 2011
 
-For the highlights of this release, see the[release notes](../../old-releases/release-notes-mariadb-5-2-series/mariadb-527-release-notes.md).
+For the highlights of this release, see the [release notes](../../old-releases/release-notes-mariadb-5-2-series/mariadb-527-release-notes.md).
 
-The revision number links will take you to the revision's page on Launchpad. On\
-Launchpad you can view more details of the revision and view diffs of the code\
+The revision number links will take you to the revision's page on Launchpad. On Launchpad you can view more details of the revision and view diffs of the code
 modified in that revision.
 
 * [Revision #2993](https://bazaar.launchpad.net/~maria-captains/maria/5.2/revision/2993)\
   Mon 2011-06-13 12:46:11 +0300
   * Fixed portability problem with partiton\_error.test
-  * Added option to aria\_read\_log to crash recovery at certain points in the\
-    recovery process.
+  * Added option to aria\_read\_log to crash recovery at certain points in the\ recovery process.
   * Fixed bug that caused future recovery attempts to fail if we got a crash/got\
     killed during closing of tables at end of recovery process.
 * [Revision #2992](https://bazaar.launchpad.net/~maria-captains/maria/5.2/revision/2992)\

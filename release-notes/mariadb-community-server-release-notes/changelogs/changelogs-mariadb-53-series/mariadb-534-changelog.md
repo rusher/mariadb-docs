@@ -1,6 +1,6 @@
 # MariaDB 5.3.4 Changelog
 
-[Download](https://downloads.askmonty.org/mariadb/5.3.4) |[Release Notes](../../old-releases/release-notes-mariadb-5-3-series/mariadb-534-release-notes.md) |**Changelog** |[Overview of 5.3](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/changelogs/changelogs-mariadb-53-series/broken-reference/README.md)
+[Download](https://downloads.askmonty.org/mariadb/5.3.4) |[Release Notes](../../old-releases/release-notes-mariadb-5-3-series/mariadb-534-release-notes.md) |**Changelog** |[Overview of 5.3](https://mariadb.com/docs/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3)
 
 **Release date:** 15 Feb 2012
 
