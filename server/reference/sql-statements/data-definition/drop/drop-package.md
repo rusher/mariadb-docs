@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 DROP PACKAGE [IF EXISTS]  [ db_name . ] package_name
 ```
 

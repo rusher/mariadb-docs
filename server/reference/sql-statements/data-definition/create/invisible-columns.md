@@ -19,7 +19,7 @@ It is not possible for all columns in a table to be invisible.
 ## Examples
 
 
-```
+```sql
 CREATE TABLE t (x INT INVISIBLE);
 ERROR 1113 (42000): A table must have at least 1 column
 
@@ -74,7 +74,7 @@ DESC t;
 Creating a view from a table with hidden columns:
 
 
-```
+```sql
 CREATE VIEW v1 AS SELECT * FROM t;
 
 DESC v1;
@@ -100,18 +100,18 @@ DESC v2;
 Adding a Surrogate Primary Key:
 
 
-```
-create table t1 (x bigint unsigned not null, y varchar(16), z text);
+```sql
+CREATE TABLE t1 (x BIGINT unsigned NOT NULL, y VARCHAR(16), z TEXT);
 
-insert into t1 values (123, 'qq11', 'ipsum');
+INSERT INTO t1 VALUES (123, 'qq11', 'ipsum');
 
-insert into t1 values (123, 'qq22', 'lorem');
+INSERT INTO t1 VALUES (123, 'qq22', 'lorem');
 
-alter table t1 add pkid serial primary key invisible first;
+ALTER TABLE t1 ADD pkid SERIAL PRIMARY KEY invisible FIRST;
 
-insert into t1 values (123, 'qq33', 'amet');
+INSERT INTO t1 VALUES (123, 'qq33', 'amet');
 
-select * from t1;
+SELECT * FROM t1;
 +-----+------+-------+
 | x   | y    | z     |
 +-----+------+-------+
@@ -120,7 +120,7 @@ select * from t1;
 | 123 | qq33 | amet  |
 +-----+------+-------+
 
-select pkid, z from t1;
+SELECT pkid, z FROM t1;
 +------+-------+
 | pkid | z     |
 +------+-------+

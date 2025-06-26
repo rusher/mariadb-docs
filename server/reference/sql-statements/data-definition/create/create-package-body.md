@@ -6,7 +6,7 @@ In Oracle mode, the PL/SQL dialect is used, while in non-Oracle mode, SQL/PSM is
 
 ## Syntax (Oracle mode)
 
-```
+```sql
 CREATE [ OR REPLACE ]
     [DEFINER = { user | CURRENT_USER | role | CURRENT_ROLE }]
     PACKAGE BODY
@@ -108,7 +108,7 @@ A package body provides implementations of the package public routines and can o
 
 Oracle mode:
 
-```
+```sql
 SET sql_mode=ORACLE;
 DELIMITER $$
 CREATE OR REPLACE PACKAGE employee_tools AS
@@ -169,7 +169,7 @@ DELIMITER ;
 
 Non-Oracle mode, from [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-4-series/what-is-mariadb-114):
 
-```
+```sql
 DELIMITER $$
 
 CREATE OR REPLACE PACKAGE pkg

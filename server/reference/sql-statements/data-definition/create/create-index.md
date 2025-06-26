@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 CREATE [OR REPLACE] [UNIQUE|FULLTEXT|SPATIAL] INDEX 
   [IF NOT EXISTS] index_name
     [index_type]
@@ -36,8 +36,7 @@ lock_option:
 
 The _CREATE INDEX_ statement is used to add indexes to a table. Indexes can be created at the same as the table, with the [CREATE TABLE](https://github.com/mariadb-corporation/docs-server/blob/test/server/sql-statements/data-definition/create/create-table.md) statement. In some cases, such as for InnoDB primary keys, doing so during creation is preferable, as adding a primary key will involve rebuilding the table.
 
-The statement is mapped to an ALTER TABLE statement to create [indexes](https://github.com/mariadb-corporation/docs-server/blob/test/ha-and-performance/optimization-and-tuning/optimization-and-indexes/README.md).\
-See [ALTER TABLE](https://github.com/mariadb-corporation/docs-server/blob/test/server/sql-statements/data-definition/alter/alter-table.md). CREATE INDEX cannot be used to create a[PRIMARY KEY](../../../../mariadb-quickstart-guides/mariadb-indexes-guide.md#primary-key); use ALTER TABLE instead.
+The statement is mapped to an ALTER TABLE statement to create [indexes](https://github.com/mariadb-corporation/docs-server/blob/test/ha-and-performance/optimization-and-tuning/optimization-and-indexes/README.md). See [ALTER TABLE](https://github.com/mariadb-corporation/docs-server/blob/test/server/sql-statements/data-definition/alter/alter-table.md). CREATE INDEX cannot be used to create a[PRIMARY KEY](../../../../mariadb-quickstart-guides/mariadb-indexes-guide.md#primary-key); use ALTER TABLE instead.
 
 If another connection is using the table, a [metadata lock](https://github.com/mariadb-corporation/docs-server/blob/test/server/sql-statements/transactions/metadata-locking.md) is active, and this statement will wait until the lock is released. This is also true for non-transactional tables.
 
@@ -88,7 +87,7 @@ See [ALTER TABLE: LOCK](https://github.com/mariadb-corporation/docs-server/blob/
 MariaDB provides progress reporting for `CREATE INDEX` statement for clients\
 that support the new progress reporting protocol. For example, if you were using the [mariadb](https://github.com/mariadb-corporation/docs-server/blob/test/clients-and-utilities/mariadb-client/mariadb-command-line-client.md) client, then the progress report might look like this::
 
-```
+```sql
 CREATE INDEX i ON tab (num);
 Stage: 1 of 2 'copy to tmp table'    46% of stage
 ```
@@ -107,13 +106,13 @@ The [WITHOUT OVERLAPS](https://github.com/mariadb-corporation/docs-server/blob/t
 
 Creating a unique index:
 
-```
+```sql
 CREATE UNIQUE INDEX HomePhone ON Employees(Home_Phone);
 ```
 
 OR REPLACE and IF NOT EXISTS:
 
-```
+```sql
 CREATE INDEX xi ON xx5 (x);
 Query OK, 0 rows affected (0.03 sec)
 
@@ -136,7 +135,7 @@ SHOW WARNINGS;
 
 From [MariaDB 10.5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1053-release-notes), creating a unique index for an [application-time period table](https://github.com/mariadb-corporation/docs-server/blob/test/server/sql-structure/temporal-tables/application-time-periods.md) with a [WITHOUT OVERLAPS](https://github.com/mariadb-corporation/docs-server/blob/test/server/sql-structure/temporal-tables/application-time-periods.md#without-overlaps) constraint:
 
-```
+```sql
 CREATE UNIQUE INDEX u ON rooms (room_number, p WITHOUT OVERLAPS);
 ```
 

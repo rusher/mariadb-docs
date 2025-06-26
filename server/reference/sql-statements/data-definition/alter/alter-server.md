@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 ALTER SERVER server_name
     OPTIONS (option [, option] ...)
 ```
@@ -17,7 +17,7 @@ the [binary log format](../../../../server-management/server-monitoring-logs/bin
 
 ## Examples
 
-```
+```sql
 ALTER SERVER s OPTIONS (USER 'sally');
 ```
 

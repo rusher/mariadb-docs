@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 CREATE [OR REPLACE] SERVER [IF NOT EXISTS] server_name
     FOREIGN DATA WRAPPER wrapper_name
     OPTIONS (option [, option] ...)
@@ -74,7 +74,7 @@ From [MariaDB 11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-commu
 
 If the optional `OR REPLACE` clause is used, it acts as a shortcut for:
 
-```
+```sql
 DROP SERVER IF EXISTS name;
 CREATE SERVER server_name ...;
 ```
@@ -85,7 +85,7 @@ If the IF NOT EXISTS clause is used, MariaDB will return a warning instead of an
 
 ## Examples
 
-```
+```sql
 CREATE SERVER s
 FOREIGN DATA WRAPPER mariadb
 OPTIONS (USER 'Remote', HOST '192.168.1.106', DATABASE 'test');
@@ -93,7 +93,7 @@ OPTIONS (USER 'Remote', HOST '192.168.1.106', DATABASE 'test');
 
 OR REPLACE and IF NOT EXISTS:
 
-```
+```sql
 CREATE SERVER s 
 FOREIGN DATA WRAPPER mariadb 
 OPTIONS (USER 'Remote', HOST '192.168.1.106', DATABASE 'test');

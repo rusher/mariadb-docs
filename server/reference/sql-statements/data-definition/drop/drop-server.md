@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 DROP SERVER [ IF EXISTS ] server_name
 ```
 
@@ -22,13 +22,13 @@ If the IF EXISTS clause is used, MariaDB will not return an error if the server 
 
 ## Examples
 
-```
+```sql
 DROP SERVER s;
 ```
 
 IF EXISTS:
 
-```
+```sql
 DROP SERVER s;
 ERROR 1477 (HY000): The foreign server name you are trying to reference 
   does not exist. Data source error:  s

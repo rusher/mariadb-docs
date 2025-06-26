@@ -6,7 +6,7 @@ description: Modifies a database, changing its overall characteristics.
 
 ## Syntax
 
-```
+```sql
 ALTER {DATABASE | SCHEMA} [db_name]
     alter_specification ...
 ALTER {DATABASE | SCHEMA} db_name
@@ -51,7 +51,7 @@ For example,if a database in MySQL 5.0 has a name of a-b-c, the name contains in
 
 When a MySQL installation is upgraded to MySQL 5.1 or later from an older version,the server displays a name such as a-b-c (which is in the old format) as `#mysql50#a-b-c`, and you must refer to the name using the `#mysql50#` prefix. Use `UPGRADE DATA DIRECTORY NAME` in this case to explicitly tell the server to re-encode the database directory name to the current encoding format:
 
-```
+```sql
 ALTER DATABASE `#mysql50#a-b-c` UPGRADE DATA DIRECTORY NAME;
 ```
 

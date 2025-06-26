@@ -2,7 +2,8 @@
 
 ## Syntax
 
-<pre><code>CREATE [OR REPLACE] [TEMPORARY] TABLE [IF NOT EXISTS] tbl_name
+```sql
+CREATE [OR REPLACE] [TEMPORARY] TABLE [IF NOT EXISTS] tbl_name
     (<a data-footnote-ref href="#user-content-fn-1">create_definition</a>,...) [<a data-footnote-ref href="#user-content-fn-2">table_options</a>    ]... [<a data-footnote-ref href="#user-content-fn-3">partition_options</a>]
 CREATE [OR REPLACE] [TEMPORARY] TABLE [IF NOT EXISTS] tbl_name
     [(<a data-footnote-ref href="#user-content-fn-1">create_definition</a>,...)] [<a data-footnote-ref href="#user-content-fn-2">table_options</a>   ]... [<a data-footnote-ref href="#user-content-fn-3">partition_options</a>]
@@ -12,7 +13,7 @@ CREATE [OR REPLACE] [TEMPORARY] TABLE [IF NOT EXISTS] tbl_name
 
 select_statement:
     [IGNORE | REPLACE] [AS] SELECT ...   (Some legal select statement)
-</code></pre>
+```
 
 ## Description
 
@@ -125,7 +126,7 @@ If the columns in the new table are more than the rows returned by the query, th
 
 If the table already exists, an error similar to the following will be returned:
 
-```
+```sql
 ERROR 1050 (42S01): Table 't' already exists
 ```
 
@@ -283,7 +284,7 @@ Columns may be explicitly marked as excluded from system versioning. See [System
 
 ## Index Definitions
 
-```
+```sql
 index_definition:
     {INDEX|KEY} [index_name] [index_type] (index_col_name,...) [index_option] ...
   {{{|}}} {FULLTEXT|SPATIAL} [INDEX|KEY] [index_name] (index_col_name,...) [index_option] ...
@@ -436,7 +437,7 @@ From [MariaDB 10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-com
 
 ## Periods
 
-```
+```sql
 period_definition:
     PERIOD FOR [time_period_name | SYSTEM_TIME] (start_column_name, end_column_name)
 ```
@@ -454,7 +455,7 @@ Before a row is inserted or updated, all constraints are evaluated in the order 
 One can use most deterministic functions in a constraint, including [UDFs](../../../../server-usage/user-defined-functions/).
 
 ```sql
-create table t1 (a int check(a>0) ,b int check (b> 0), constraint abc check (a>b));
+CREATE TABLE t1 (a INT CHECK(a>0) ,b INT CHECK (b> 0), CONSTRAINT abc CHECK (a>b));
 ```
 
 If you use the second format and you don't give a name to the constraint, then the constraint will get a auto generated name. This is done so that you can later delete the constraint with [ALTER TABLE DROP constraint\_name](../alter/alter-table.md).
@@ -467,7 +468,7 @@ See [CONSTRAINT](../constraint.md) for more information.
 
 For each individual table you create (or alter), you can set some table options. The general syntax for setting options is:
 
-```
+```sql
 <OPTION_NAME> = <option_value>, [<OPTION_NAME> = <option_value> ...]
 ```
 
@@ -477,7 +478,8 @@ Some options are supported by the server and can be used for all tables, no matt
 
 If the `IGNORE_BAD_TABLE_OPTIONS` [SQL\_MODE](../../../../server-management/variables-and-modes/sql-mode.md) is enabled, wrong table options generate a warning; otherwise, they generate an error.
 
-<pre><code>table_option:    
+```sql
+table_option:    
     [STORAGE] ENGINE [=] engine_name
   | AUTO_INCREMENT [=] number
   | AVG_ROW_LENGTH [=] number
@@ -510,7 +512,7 @@ If the `IGNORE_BAD_TABLE_OPTIONS` [SQL\_MODE](../../../../server-management/vari
   | TRANSACTIONAL [=]  {0 | 1}
   | UNION [=] (tbl_name[,tbl_name]...)
   | WITH SYSTEM VERSIONING
-</code></pre>
+```
 
 ### \[STORAGE] ENGINE
 
@@ -690,7 +692,8 @@ If set to `1`, statistics will be recalculated when more than 10% of the data ha
 
 ## Partitions
 
-<pre><code>partition_options:
+```sql
+partition_options:
     PARTITION BY
         { [LINEAR] HASH(expr)
         | [LINEAR] KEY(column_list)
@@ -730,7 +733,7 @@ subpartition_definition:
         [MIN_ROWS [=] min_number_of_rows]
         [TABLESPACE [=] tablespace_name]
         [NODEGROUP [=] node_group_id]
-</code></pre>
+```
 
 If the `PARTITION BY` clause is used, the table will be [partitioned](../../../../server-usage/partitioning-tables/). A partition method must be explicitly indicated for partitions and subpartitions. Partition methods are:
 
@@ -762,8 +765,8 @@ Also see [Partitioning Types Overview](../../../../server-usage/partitioning-tab
 From [MariaDB 10.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-7-series/what-is-mariadb-107), the PARTITION keyword is now optional as part of the partition definition, for example, instead of:
 
 ```sql
-create or replace table t1 (x int)
-  partition by range(x) (
+CREATE OR REPLACE TABLE t1 (x INT)
+  PARTITION BY RANGE(x) (
     partition p1 values less than (10),
     partition p2 values less than (20),
     partition p3 values less than (30),
@@ -775,8 +778,8 @@ create or replace table t1 (x int)
 the following can also be used:
 
 ```sql
-create or replace table t1 (x int)
-  partition by range(x) (
+CREATE OR REPLACE TABLE t1 (x INT)
+  PARTITION BY RANGE(x) (
     p1 values less than (10),
     p2 values less than (20),
     p3 values less than (30),
@@ -801,10 +804,10 @@ create or replace table t1 (x int)
 ## Examples
 
 ```sql
-create table if not exists test (
-a bigint auto_increment primary key,
-name varchar(128) charset utf8,
-key name (name(32))
+CREATE TABLE IF NOT EXISTS test (
+a BIGINT auto_increment PRIMARY KEY,
+name VARCHAR(128) charset utf8,
+KEY name (name(32))
 ) engine=InnoDB default charset latin1;
 ```
 

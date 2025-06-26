@@ -4,7 +4,7 @@
 ## Syntax
 
 
-```
+```sql
 ALTER LOGFILE GROUP logfile_group
     ADD UNDOFILE 'file_name'
     [INITIAL_SIZE [=] size]

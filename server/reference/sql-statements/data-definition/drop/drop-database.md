@@ -2,14 +2,13 @@
 
 ## Syntax
 
-```
+```sql
 DROP {DATABASE | SCHEMA} [IF EXISTS] db_name
 ```
 
 ## Description
 
-`DROP DATABASE` drops all tables in the database and deletes the database. Be very careful with this statement! To use DROP DATABASE,\
-you need the [DROP privilege](../../account-management-sql-statements/grant.md#table-privileges) on the database. `DROP SCHEMA` is a synonym for `DROP DATABASE`.
+`DROP DATABASE` drops all tables in the database and deletes the database. Be very careful with this statement! To use DROP DATABASE, you need the [DROP privilege](../../account-management-sql-statements/grant.md#table-privileges) on the database. `DROP SCHEMA` is a synonym for `DROP DATABASE`.
 
 **Important:** When a database is dropped, user privileges on the database are not automatically dropped. See [GRANT](../../account-management-sql-statements/grant.md).
 
@@ -23,7 +22,7 @@ Use `IF EXISTS` to prevent an error from occurring for databases that do not exi
 
 [MariaDB 10.6.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/mariadb-1061-release-notes) supports [Atomic DDL](../atomic-ddl.md).`DROP DATABASE` is implemented as
 
-```
+```sql
 loop over all tables
   DROP TABLE table
 ```
@@ -32,7 +31,7 @@ Each individual [DROP TABLE](drop-table.md) is atomic while `DROP DATABASE` as a
 
 ## Examples
 
-```
+```sql
 DROP DATABASE bufg;
 Query OK, 0 rows affected (0.39 sec)
 

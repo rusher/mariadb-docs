@@ -2,19 +2,15 @@
 
 ## Syntax
 
-```
+```sql
 DROP TRIGGER [IF EXISTS] [schema_name.]trigger_name
 ```
 
 ## Description
 
-This statement drops a [trigger](../../../../server-usage/triggers-events/triggers/). The schema (database) name is optional. If the\
-schema is omitted, the trigger is dropped from the default schema.\
-Its use requires the `TRIGGER` privilege for the table associated with the trigger.
+This statement drops a [trigger](../../../../server-usage/triggers-events/triggers/). The schema (database) name is optional. If the schema is omitted, the trigger is dropped from the default schema. Its use requires the `TRIGGER` privilege for the table associated with the trigger.
 
-Use `IF EXISTS` to prevent an error from occurring for a\
-trigger that does not exist. A `NOTE` is generated for a non-existent trigger\
-when using `IF EXISTS`. See [SHOW WARNINGS](../../administrative-sql-statements/show/show-warnings.md).
+Use `IF EXISTS` to prevent an error from occurring for a trigger that does not exist. A `NOTE` is generated for a non-existent trigger when using `IF EXISTS`. See [SHOW WARNINGS](../../administrative-sql-statements/show/show-warnings.md).
 
 **Note:** Triggers for a table are also dropped if you drop the table.
 
@@ -26,13 +22,13 @@ when using `IF EXISTS`. See [SHOW WARNINGS](../../administrative-sql-statements/
 
 ## Examples
 
-```
+```sql
 DROP TRIGGER test.example_trigger;
 ```
 
 Using the IF EXISTS clause:
 
-```
+```sql
 DROP TRIGGER IF EXISTS test.example_trigger;
 Query OK, 0 rows affected, 1 warning (0.01 sec)
 

@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 DROP EVENT [IF EXISTS] event_name
 ```
 
@@ -20,13 +20,13 @@ by its definer, or by a user having the [SUPER](../../account-management-sql-com
 
 ## Examples
 
-```
+```sql
 DROP EVENT myevent3;
 ```
 
 Using the IF EXISTS clause:
 
-```
+```sql
 DROP EVENT IF EXISTS myevent3;
 Query OK, 0 rows affected, 1 warning (0.01 sec)
 

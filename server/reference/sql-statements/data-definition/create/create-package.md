@@ -6,7 +6,7 @@ In Oracle mode, the PL/SQL dialect is used, while if Oracle mode is not set (the
 
 ## Syntax (Oracle mode)
 
-```
+```sql
 CREATE
     [ OR REPLACE]
     [DEFINER = { user | CURRENT_USER | role | CURRENT_ROLE }]
@@ -56,7 +56,7 @@ package_routine_characteristic:
 
 ## Syntax (non-Oracle mode)
 
-```
+```sql
 CREATE
     [ OR REPLACE]
     [DEFINER = { user | CURRENT_USER | role | CURRENT_ROLE }]
@@ -123,7 +123,7 @@ The function parameter quantifiers for `IN`, `OUT`, `INOUT`, and `IN OUT` where 
 
 Oracle mode:
 
-```
+```sql
 SET sql_mode=ORACLE;
 DELIMITER $$
 CREATE OR REPLACE PACKAGE employee_tools AS
@@ -138,7 +138,7 @@ DELIMITER ;
 
 From [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-4-series/what-is-mariadb-114), non-Oracle mode:
 
-```
+```sql
 SET sql_mode='';
 
 DELIMITER $$

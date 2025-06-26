@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 CREATE [OR REPLACE] {DATABASE | SCHEMA} [IF NOT EXISTS] db_name
     [create_specification] ...
 
@@ -22,7 +22,7 @@ For valid identifiers to use as database names, see [Identifier Names](../../../
 
 If the optional `OR REPLACE` clause is used, it acts as a shortcut for:
 
-```
+```sql
 DROP DATABASE IF EXISTS db_name;
 CREATE DATABASE db_name ...;
 ```
@@ -39,7 +39,7 @@ From [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-com
 
 ## Examples
 
-```
+```sql
 CREATE DATABASE db1;
 Query OK, 1 row affected (0.18 sec)
 
@@ -62,7 +62,7 @@ SHOW WARNINGS;
 
 Setting the [character sets and collation](../../../data-types/string-data-types/character-sets/). See [Setting Character Sets and Collations](../../../data-types/string-data-types/character-sets/setting-character-sets-and-collations.md) for more details.
 
-```
+```sql
 CREATE DATABASE czech_slovak_names 
   CHARACTER SET = 'keybcs2'
   COLLATE = 'keybcs2_bin';
@@ -70,7 +70,7 @@ CREATE DATABASE czech_slovak_names
 
 Comments, from [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1050-release-notes):
 
-```
+```sql
 CREATE DATABASE presentations COMMENT 'Presentations for conferences';
 ```
 

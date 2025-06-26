@@ -8,39 +8,20 @@
 
 ## Description
 
-Use the `CREATE FUNCTION` statement to create a new [stored function](../../../../server-usage/stored-routines/stored-functions/). You must have\
-the [CREATE ROUTINE](../../account-management-sql-statements/grant.md#database-privileges) database privilege to use `CREATE FUNCTION`.\
-A function takes any number of arguments and returns a value from the function body. The\
-function body can be any valid SQL expression as you would use, for example, in any select\
-expression. If you have the appropriate privileges, you can call the function exactly as you\
-would any built-in function. See [Security](create-function.md#security) below for details on privileges.
+Use the `CREATE FUNCTION` statement to create a new [stored function](../../../../server-usage/stored-routines/stored-functions/). You must have the [CREATE ROUTINE](../../account-management-sql-statements/grant.md#database-privileges) database privilege to use `CREATE FUNCTION`. A function takes any number of arguments and returns a value from the function body. The function body can be any valid SQL expression as you would use, for example, in any select expression. If you have the appropriate privileges, you can call the function exactly as you would any built-in function. See [Security](create-function.md#security) below for details on privileges.
 
-You can also use a variant of the `CREATE FUNCTION` statement to install a user-defined\
-function (UDF) defined by a plugin. See [CREATE FUNCTION (UDF)](../../../../server-usage/user-defined-functions/create-function-udf.md)\
-for details.
+You can also use a variant of the `CREATE FUNCTION` statement to install a user-defined function (UDF) defined by a plugin. See [CREATE FUNCTION (UDF)](../../../../server-usage/user-defined-functions/create-function-udf.md) for details.
 
-You can use a [SELECT](../../data-manipulation/selecting-data/select.md) statement for the function body by enclosing it in\
-parentheses, exactly as you would to use a subselect for any other expression. The `SELECT`\
-statement must return a single value. If more than one column is returned when the function is called,\
-error 1241 results. If more than one row is returned when the function is called, error 1242\
-results. Use a `LIMIT` clause to ensure only one row is returned.
+You can use a [SELECT](../../data-manipulation/selecting-data/select.md) statement for the function body by enclosing it in parentheses, exactly as you would to use a subselect for any other expression. The `SELECT` statement must return a single value. If more than one column is returned when the function is called, error 1241 results. If more than one row is returned when the function is called, error 1242 results. Use a `LIMIT` clause to ensure only one row is returned.
 
-You can also replace the `RETURN` clause with a [BEGIN...END](../../programmatic-compound-statements/begin-end.md) compound\
-statement. The compound statement must contain a `RETURN` statement. When the function is\
-called, the `RETURN` statement immediately returns its result, and any statements after `RETURN`\
-are effectively ignored.
+You can also replace the `RETURN` clause with a [BEGIN...END](../../programmatic-compound-statements/begin-end.md) compound statement. The compound statement must contain a `RETURN` statement. When the function is called, the `RETURN` statement immediately returns its result, and any statements after `RETURN` are effectively ignored.
 
-By default, a function is associated with the current database. To associate the function explicitly\
-with a given database, specify the fully-qualified name as `db_name.func_name`\
-when you create it. If the function name is the same as the name of a built-in function, you must\
-use the fully qualified name when you call it.
+By default, a function is associated with the current database. To associate the function explicitly with a given database, specify the fully-qualified name as `db_name.func_name`\
+when you create it. If the function name is the same as the name of a built-in function, you must use the fully qualified name when you call it.
 
-The parameter list enclosed within parentheses must always be present.\
-If there are no parameters, an empty parameter list of () should be\
-used. Parameter names are not case sensitive.
+The parameter list enclosed within parentheses must always be present. If there are no parameters, an empty parameter list of () should be used. Parameter names are not case sensitive.
 
-Each parameter can be declared to use any valid data type, except that\
-the COLLATE attribute cannot be used.
+Each parameter can be declared to use any valid data type, except that the COLLATE attribute cannot be used.
 
 For valid identifiers to use as function names, see [Identifier Names](../../../sql-structure/sql-language-structure/identifier-names.md).
 
@@ -52,7 +33,7 @@ The function parameter qualifiers for `IN`, `OUT`, `INOUT`, and `IN OUT` were ad
 
 `OUT`, `INOUT` and its equivalent `IN OUT`, are only valid if called from `SET` and not `SELECT`. These quantifiers are especially useful for creating functions with more than one return value. This allows functions to be more complex and nested.
 
-```
+```sql
 DELIMITER $$
 CREATE FUNCTION add_func3(IN a INT, IN b INT, OUT c INT) RETURNS INT
 BEGIN
@@ -126,7 +107,7 @@ If you declare a non-deterministic function as `DETERMINISTIC`, you may get inco
 
 If the optional `OR REPLACE` clause is used, it acts as a shortcut for:
 
-```
+```sql
 DROP FUNCTION IF EXISTS function_name;
 CREATE FUNCTION function_name ...;
 ```
@@ -183,7 +164,7 @@ This allows you to create functions that grant limited access to certain data. F
 you have a table that stores some employee information, and that you've granted `SELECT`\
 privileges [only on certain columns](../../account-management-sql-statements/grant.md#column-privileges) to the user account `roger`.
 
-```
+```sql
 CREATE TABLE employees (name TINYTEXT, dept TINYTEXT, salary INT);
 GRANT SELECT (name, dept) ON employees TO roger;
 ```
@@ -191,7 +172,7 @@ GRANT SELECT (name, dept) ON employees TO roger;
 To allow the user the get the maximum salary for a department, define a function and grant\
 the `EXECUTE` privilege:
 
-```
+```sql
 CREATE FUNCTION max_salary (dept TINYTEXT) RETURNS INT RETURN
   (SELECT MAX(salary) FROM employees WHERE employees.dept = dept);
 GRANT EXECUTE ON FUNCTION max_salary TO roger;
@@ -213,7 +194,7 @@ If the character set and collation are not specifically set in the statement, th
 The following example function takes a parameter, performs an operation using\
 an SQL function, and returns the result.
 
-```
+```sql
 CREATE FUNCTION hello (s CHAR(20))
     RETURNS CHAR(50) DETERMINISTIC
     RETURN CONCAT('Hello, ',s,'!');
@@ -233,7 +214,7 @@ contains statements terminated with semicolons, you have to first change the sta
 delimiter with the `DELIMITER` statement to allow the semicolon to be used in the\
 function body. See [Delimiters in the mariadb client](../../../../clients-and-utilities/mariadb-client/delimiters.md) for more.
 
-```
+```sql
 CREATE TEMPORARY TABLE counter (c INT);
 INSERT INTO counter VALUES (0);
 DELIMITER //
@@ -247,7 +228,7 @@ DELIMITER ;
 
 Character set and collation:
 
-```
+```sql
 CREATE FUNCTION hello2 (s CHAR(20))
   RETURNS CHAR(50) CHARACTER SET 'utf8' COLLATE 'utf8_bin' DETERMINISTIC
   RETURN CONCAT('Hello, ',s,'!');

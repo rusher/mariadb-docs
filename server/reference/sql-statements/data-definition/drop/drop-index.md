@@ -2,16 +2,14 @@
 
 ## Syntax
 
-```
+```sql
 DROP INDEX [IF EXISTS] index_name ON tbl_name 
     [WAIT n |NOWAIT]
 ```
 
 ## Description
 
-`DROP INDEX` drops the [index](../../../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/) named `index_name` from the table `tbl_name`.\
-This statement is mapped to an `ALTER TABLE` statement to drop the\
-index.
+`DROP INDEX` drops the [index](../../../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/) named `index_name` from the table `tbl_name`. This statement is mapped to an `ALTER TABLE` statement to drop the index.
 
 If another connection is using the table, a [metadata lock](../../transactions/metadata-locking.md) is active, and this statement will wait until the lock is released. This is also true for non-transactional tables.
 

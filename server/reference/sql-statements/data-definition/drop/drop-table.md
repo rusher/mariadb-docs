@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 DROP [TEMPORARY] TABLE [IF EXISTS] [/*COMMENT TO SAVE*/]
     tbl_name [, tbl_name] ...
     [WAIT n|NOWAIT]
@@ -11,15 +11,10 @@ DROP [TEMPORARY] TABLE [IF EXISTS] [/*COMMENT TO SAVE*/]
 
 ## Description
 
-`DROP TABLE` removes one or more tables. You must have the `DROP` privilege\
-for each table. All table data and the table definition are removed, as well as [triggers](../../../../server-usage/triggers-events/triggers/) associated to the table, so be\
-careful with this statement! If any of the tables named in the argument list do\
-not exist, MariaDB returns an error indicating by name which non-existing tables\
-it was unable to drop, but it also drops all of the tables in the list that do\
+`DROP TABLE` removes one or more tables. You must have the `DROP` privilege for each table. All table data and the table definition are removed, as well as [triggers](../../../../server-usage/triggers-events/triggers/) associated to the table, so be careful with this statement! If any of the tables named in the argument list do not exist, MariaDB returns an error indicating by name which non-existing tables it was unable to drop, but it also drops all of the tables in the list that do\
 exist.
 
-**Important**: When a table is dropped, user privileges on the table are not\
-automatically dropped. See [GRANT](../../account-management-sql-statements/grant.md).
+**Important**: When a table is dropped, user privileges on the table are not automatically dropped. See [GRANT](../../account-management-sql-statements/grant.md).
 
 If another thread is using the table in an explicit transaction or an autocommit transaction, then the thread acquires a [metadata lock (MDL)](../../transactions/metadata-locking.md) on the table. The `DROP TABLE` statement will wait in the "Waiting for table metadata lock" [thread state](../../../../ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-states/) until the MDL is released. MDLs are released in the following cases:
 
@@ -27,10 +22,7 @@ If another thread is using the table in an explicit transaction or an autocommit
 * If an MDL is acquired in an autocommit transaction, then the MDL will be released when the statement ends.
 * Transactional and non-transactional tables are handled the same.
 
-Note that for a partitioned table, `DROP TABLE` permanently removes the table\
-definition, all of its partitions, and all of the data which was stored in\
-those partitions. It also removes the partitioning definition (.par) file\
-associated with the dropped table.
+Note that for a partitioned table, `DROP TABLE` permanently removes the table definition, all of its partitions, and all of the data which was stored in those partitions. It also removes the partitioning definition (.par) file associated with the dropped table.
 
 For each referenced table, `DROP TABLE` drops a temporary table with that name, if it exists. If it does not exist, and the `TEMPORARY` keyword is not used, it drops a non-temporary table with the same name, if it exists. The `TEMPORARY` keyword ensures that a non-temporary table will not accidentally be dropped.
 
@@ -47,8 +39,7 @@ It is possible to specify table names as `db_name`.`tab_name`. This is useful to
 
 The [DROP privilege](../../account-management-sql-statements/grant.md#table-privileges) is required to use `DROP TABLE` on non-temporary tables. For temporary tables, no privilege is required, because such tables are only visible for the current session.
 
-**Note:** `DROP TABLE` automatically commits the current active transaction,\
-unless you use the `TEMPORARY` keyword.
+**Note:** `DROP TABLE` automatically commits the current active transaction, unless you use the `TEMPORARY` keyword.
 
 **MariaDB starting with** [**10.5.4**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1054-release-notes)
 
@@ -104,18 +95,11 @@ WHERE TABLE_SCHEMA = 'mydb';
 
 **MariaDB starting with** [**10.6.1**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/mariadb-1061-release-notes)
 
-From [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/what-is-mariadb-106), `DROP TABLE` for a single table is atomic ([MDEV-25180](https://jira.mariadb.org/browse/MDEV-25180)) for most engines, including InnoDB, MyRocks, MyISAM and Aria.\
-This means that if there is a crash (server down or power outage) during `DROP TABLE`, all tables\
-that have been processed so far will be completely dropped, including related trigger files and status entries, and the [binary log](../../../../server-management/server-monitoring-logs/binary-log/) will include a `DROP TABLE` statement for the dropped tables.\
-Tables for which the drop had not started will be left intact.\
-In older MariaDB versions, there was a small chance that, during a server crash happening in the middle of `DROP TABLE`, some storage engines that were using multiple storage files, like [MyISAM](../../../../server-usage/storage-engines/myisam-storage-engine/), could have only a part of its internal files dropped.\
-In [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105), `DROP TABLE` was extended to be able to delete a table that was only partly dropped ([MDEV-11412](https://jira.mariadb.org/browse/MDEV-11412)) as explained above. Atomic `DROP TABLE` is the final piece to make `DROP TABLE` fully reliable.\
-Dropping multiple tables is crash-safe.\
-See [Atomic DDL](../atomic-ddl.md) for more information.
+From [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/what-is-mariadb-106), `DROP TABLE` for a single table is atomic ([MDEV-25180](https://jira.mariadb.org/browse/MDEV-25180)) for most engines, including InnoDB, MyRocks, MyISAM and Aria. This means that if there is a crash (server down or power outage) during `DROP TABLE`, all tables that have been processed so far will be completely dropped, including related trigger files and status entries, and the [binary log](../../../../server-management/server-monitoring-logs/binary-log/) will include a `DROP TABLE` statement for the dropped tables. Tables for which the drop had not started will be left intact. In older MariaDB versions, there was a small chance that, during a server crash happening in the middle of `DROP TABLE`, some storage engines that were using multiple storage files, like [MyISAM](../../../../server-usage/storage-engines/myisam-storage-engine/), could have only a part of its internal files dropped. In [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105), `DROP TABLE` was extended to be able to delete a table that was only partly dropped ([MDEV-11412](https://jira.mariadb.org/browse/MDEV-11412)) as explained above. Atomic `DROP TABLE` is the final piece to make `DROP TABLE` fully reliable. Dropping multiple tables is crash-safe. See [Atomic DDL](../atomic-ddl.md) for more information.
 
 ## Examples
 
-```
+```sql
 DROP TABLE Employees, Customers;
 ```
 

@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 CREATE [OR REPLACE]
     [DEFINER = { user | CURRENT_USER | role | CURRENT_ROLE }]
     EVENT 
@@ -44,7 +44,7 @@ follows:
 
 Here is an example of a minimal `CREATE EVENT` statement:
 
-```
+```sql
 CREATE EVENT myevent
     ON SCHEDULE AT CURRENT_TIMESTAMP + INTERVAL 1 HOUR
     DO
@@ -87,7 +87,7 @@ If you want to execute the event only once (one time event), you can use the `AT
 
 The following example shows how to create an event that will be triggered tomorrow at a certain time:
 
-```
+```sql
 CREATE EVENT example
 ON SCHEDULE AT CURRENT_TIMESTAMP + INTERVAL 1 DAY + INTERVAL 3 HOUR
 DO something;
@@ -99,7 +99,7 @@ If an event is recurring, you can specify when the first execution must happen v
 
 In the following example, next month a recurring event will be triggered hourly for a week:
 
-```
+```sql
 CREATE EVENT example
 ON SCHEDULE EVERY 1 HOUR
 STARTS CURRENT_TIMESTAMP + INTERVAL 1 MONTH
@@ -131,7 +131,7 @@ quoted. To see events comments, you can query the [INFORMATION\_SCHEMA.EVENTS ta
 
 Minimal `CREATE EVENT` statement:
 
-```
+```sql
 CREATE EVENT myevent
     ON SCHEDULE AT CURRENT_TIMESTAMP + INTERVAL 1 HOUR
     DO
@@ -140,7 +140,7 @@ CREATE EVENT myevent
 
 An event that will be triggered tomorrow at a certain time:
 
-```
+```sql
 CREATE EVENT example
 ON SCHEDULE AT CURRENT_TIMESTAMP + INTERVAL 1 DAY + INTERVAL 3 HOUR
 DO something;
@@ -148,7 +148,7 @@ DO something;
 
 Next month a recurring event will be triggered hourly for a week:
 
-```
+```sql
 CREATE EVENT example
 ON SCHEDULE EVERY 1 HOUR
 STARTS CURRENT_TIMESTAMP + INTERVAL 1 MONTH
@@ -158,7 +158,7 @@ DO some_task;
 
 OR REPLACE and IF NOT EXISTS:
 
-```
+```sql
 CREATE EVENT myevent
     ON SCHEDULE AT CURRENT_TIMESTAMP + INTERVAL 1 HOUR
     DO

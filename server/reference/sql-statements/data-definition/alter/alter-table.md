@@ -2,7 +2,8 @@
 
 ## Syntax
 
-<pre><code>ALTER [ONLINE] [IGNORE] TABLE [IF EXISTS] tbl_name
+```sql
+ALTER [ONLINE] [IGNORE] TABLE [IF EXISTS] tbl_name
     [WAIT n | NOWAIT]
     alter_specification [, alter_specification] ...
 
@@ -129,13 +130,13 @@ ALTER ONLINE TABLE also works for partitioned tables.
 
 Online `ALTER TABLE` is available by executing the following:
 
-```
+```sql
 ALTER ONLINE TABLE ...;
 ```
 
 This statement is equivalent to the following:
 
-```
+```sql
 ALTER TABLE ... LOCK=NONE;
 ```
 
@@ -149,7 +150,7 @@ Set the lock wait timeout. See [WAIT and NOWAIT](../../transactions/wait-and-now
 
 The `IF EXISTS` and `IF NOT EXISTS` clauses are available for the following:
 
-```
+```sql
 ADD COLUMN       [IF NOT EXISTS]
 ADD INDEX        [IF NOT EXISTS]
 ADD FOREIGN KEY  [IF NOT EXISTS]
@@ -185,7 +186,7 @@ The [CREATE INDEX](../create/create-index.md) and [DROP INDEX](../drop/drop-inde
 
 ## Character Sets and Collations
 
-```
+```sql
 CONVERT TO CHARACTER SET charset_name [COLLATE collation_name]
 [DEFAULT] CHARACTER SET [=] charset_name
 [DEFAULT] COLLATE [=] collation_name
@@ -201,7 +202,7 @@ See [CREATE TABLE: Table Options](../create/create-table.md#table-options) for i
 
 ### ADD COLUMN
 
-```
+```sql
 ... ADD COLUMN [IF NOT EXISTS]  (col_name [column_definition](../create/create-table.md#column-definitions),...)
 ```
 
@@ -214,7 +215,7 @@ See also [Instant ADD COLUMN for InnoDB](../../../../server-usage/storage-engine
 
 ### DROP COLUMN
 
-```
+```sql
 ... DROP COLUMN [IF EXISTS] col_name [CASCADE|RESTRICT]
 ```
 
@@ -224,7 +225,7 @@ If the column is part of any index, the column will be dropped from them, except
 If the column was used in a view or trigger, you will get an error next time the view or trigger is accessed.\
 Dropping a column that is part of a multi-column `UNIQUE` constraint is not permitted. For example:
 
-```
+```sql
 CREATE TABLE a (
   a int,
   b int,
@@ -245,7 +246,7 @@ MariaDB supports instant DROP COLUMN. DROP COLUMN of an indexed column would imp
 
 Allows you to modify the type of a column. The column will be at the same place as the original column and all indexes on the column will be kept. Note that when modifying column, you should specify all attributes for the new column.
 
-```
+```sql
 CREATE TABLE t1 (a INT UNSIGNED AUTO_INCREMENT, PRIMARY KEY((a));
 ALTER TABLE t1 MODIFY a BIGINT UNSIGNED AUTO_INCREMENT;
 ```
@@ -254,7 +255,7 @@ ALTER TABLE t1 MODIFY a BIGINT UNSIGNED AUTO_INCREMENT;
 
 Works like `MODIFY COLUMN` except that you can also change the name of the column. The column will be at the same place as the original column and all index on the column will be kept.
 
-```
+```sql
 CREATE TABLE t1 (a INT UNSIGNED AUTO_INCREMENT, PRIMARY KEY(a));
 ALTER TABLE t1 CHANGE a b BIGINT UNSIGNED AUTO_INCREMENT;
 ```
@@ -263,7 +264,7 @@ ALTER TABLE t1 CHANGE a b BIGINT UNSIGNED AUTO_INCREMENT;
 
 This lets you change column options.
 
-```
+```sql
 CREATE TABLE t1 (a INT UNSIGNED AUTO_INCREMENT, b varchar(50), PRIMARY KEY(a));
 ALTER TABLE t1 ALTER b SET DEFAULT 'hello';
 ```
@@ -274,7 +275,7 @@ ALTER TABLE t1 ALTER b SET DEFAULT 'hello';
 
 From [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1052-release-notes), it is possible to rename an index using the `RENAME INDEX` (or `RENAME KEY`) syntax, for example:
 
-```
+```sql
 ALTER TABLE t1 RENAME INDEX i_old TO i_new;
 ```
 
@@ -284,7 +285,7 @@ ALTER TABLE t1 RENAME INDEX i_old TO i_new;
 
 From [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1052-release-notes), it is possible to rename a column using the `RENAME COLUMN` syntax, for example:
 
-```
+```sql
 ALTER TABLE t1 RENAME COLUMN c_old TO c_new;
 ```
 
@@ -404,14 +405,14 @@ Renames the table. See also [RENAME TABLE](../rename-table.md).
 
 Modifies the table adding a [constraint](../constraint.md) on a particular column or columns.
 
-```
+```sql
 ALTER TABLE table_name 
 ADD CONSTRAINT [constraint_name] CHECK(expression);
 ```
 
 Before a row is inserted or updated, all constraints are evaluated in the order they are defined. If any constraint fails, then the row will not be updated. One can use most deterministic functions in a constraint, including [UDF's](../../../../server-usage/user-defined-functions/).
 
-```
+```sql
 CREATE TABLE account_ledger (
 	id INT PRIMARY KEY AUTO_INCREMENT,
 	transaction_name VARCHAR(100),
@@ -431,7 +432,7 @@ You can disable all constraint expression checks by setting the variable [check\
 
 To view constraints on a table, query [information\_schema.TABLE\_CONSTRAINTS](../../administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-table_constraints-table.md):
 
-```
+```sql
 SELECT CONSTRAINT_NAME, TABLE_NAME, CONSTRAINT_TYPE 
 FROM information_schema.TABLE_CONSTRAINTS
 WHERE TABLE_NAME = 'account_ledger';
@@ -450,14 +451,14 @@ and `DROP CONSTRAINT` for `CHECK` constraints were introduced in an earlier vers
 
 Modifies the table, removing the given constraint.
 
-```
+```sql
 ALTER TABLE table_name
 DROP CONSTRAINT constraint_name;
 ```
 
 When you add a constraint to a table, whether through a [CREATE TABLE](../create/create-table.md#constraint-expressions) or [ALTER TABLE...ADD CONSTRAINT](alter-table.md#add-constraint) statement, you can either set a `constraint_name` yourself, or allow MariaDB to auto-generate one for you. To view constraints on a table, query [information\_schema.TABLE\_CONSTRAINTS](../../administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-table_constraints-table.md). For instance,
 
-```
+```sql
 CREATE TABLE t (
    a INT,
    b INT,
@@ -479,7 +480,7 @@ WHERE TABLE_NAME = 't';
 
 To remove a constraint from the table, issue an `ALTER TABLE...DROP CONSTRAINT` statement. For example,
 
-```
+```sql
 ALTER TABLE t DROP CONSTRAINT is_unique;
 ```
 
@@ -501,13 +502,13 @@ See [System-versioned tables](../../../sql-structure/temporal-tables/system-vers
 
 In [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) and before, this could only be done by setting the [ENGINE](../create/create-table.md#storage-engine) table option to its old value. For example, for an InnoDB table, one could execute the following:
 
-```
+```sql
 ALTER TABLE tab_name ENGINE = InnoDB;
 ```
 
 The `FORCE` option can be used instead. For example, :
 
-```
+```sql
 ALTER TABLE tab_name FORCE;
 ```
 
@@ -515,7 +516,7 @@ With InnoDB, the table rebuild will only reclaim unused space (i.e. the space pr
 
 The rebuild may fail if conditions are violated due to a change in the [sql\_mode](../../../../server-management/variables-and-modes/sql-mode.md). For example:
 
-```
+```sql
 CREATE OR REPLACE TABLE x (d DATE DEFAULT '0000-00-00');
 
 SET SQL_MODE='NO_ZERO_DATE';
@@ -731,7 +732,7 @@ See [CREATE TABLE](../create/create-table.md#index-options) page for meaning of 
 MariaDB provides progress reporting for `ALTER TABLE` statement for clients\
 that support the new progress reporting protocol. For example, if you were using the [mariadb](../../../../clients-and-utilities/mariadb-client/mariadb-command-line-client.md) client, then the progress report might look like this::
 
-```
+```sql
 ALTER TABLE test ENGINE=Aria;
 Stage: 1 of 2 'copy to tmp table'    46% of stage
 ```
@@ -822,19 +823,19 @@ ALTER TABLE rooms ADD UNIQUE INDEX u(room_number);
 
 From [MariaDB 10.5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1053-release-notes), adding a primary key for an [application-time period table](../../../sql-structure/temporal-tables/application-time-periods.md) with a [WITHOUT OVERLAPS](../../../sql-structure/temporal-tables/application-time-periods.md#without-overlaps) constraint:
 
-```
+```sql
 ALTER TABLE rooms ADD PRIMARY KEY(room_number, p WITHOUT OVERLAPS);
 ```
 
 From [MariaDB 10.8.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-8-series/mariadb-1081-release-notes), ALTER query can be replicated faster with the setting of
 
-```
+```sql
 SET @@SESSION.binlog_alter_two_phase = true;
 ```
 
 prior the ALTER query. Binlog would contain two event groups
 
-```
+```sql
 | master-bin.000001 | 495 | Gtid              |         1 |         537 | GTID 0-1-2 START ALTER                                        |
 | master-bin.000001 | 537 | Query             |         1 |         655 | use `test`; alter table t add column b int, algorithm=inplace |
 | master-bin.000001 | 655 | Gtid              |         1 |         700 | GTID 0-1-3 COMMIT ALTER id=2                                  |

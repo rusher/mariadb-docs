@@ -39,7 +39,7 @@ For type mapping between Cassandra and MariaDB, see [Cassandra storage engine](.
 
 Silent changes in action:
 
-```
+```sql
 CREATE TABLE SilenceIsGolden
    (
     f1 TEXT CHARACTER SET binary,

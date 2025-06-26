@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 ALTER FUNCTION func_name [characteristic ...]
 
 characteristic:
@@ -26,7 +26,7 @@ the `SUPER` privilege, as described in [Binary Logging of Stored Routines](../..
 
 ## Example
 
-```
+```sql
 ALTER FUNCTION hello SQL SECURITY INVOKER;
 ```
 
