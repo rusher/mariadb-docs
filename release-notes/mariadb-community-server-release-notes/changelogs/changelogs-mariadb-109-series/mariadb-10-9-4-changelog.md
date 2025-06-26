@@ -2,11 +2,11 @@
 
 The most recent release of [MariaDB 10.9](../../old-releases/release-notes-mariadb-10-9-series/what-is-mariadb-109.md) is:[**MariaDB 10.9.8**](../../old-releases/release-notes-mariadb-10-9-series/mariadb-10-9-8-release-notes.md) Stable (GA) [Download Now](https://downloads.mariadb.org/mariadb/10.9.8/)
 
-[Download 10.9.4](https://downloads.mariadb.org/mariadb/10.9.4/)[Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/changelogs/changelogs-mariadb-109-series/broken-reference/README.md)[Changelog](mariadb-10-9-4-changelog.md)[Overview of 10.9](../../old-releases/release-notes-mariadb-10-9-series/what-is-mariadb-109.md)
+[Download 10.9.4](https://downloads.mariadb.org/mariadb/10.9.4/)[Release Notes](https://mariadb.com/docs/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-9-series/mariadb-10-9-4-release-notes)[Changelog](mariadb-10-9-4-changelog.md)[Overview of 10.9](../../old-releases/release-notes-mariadb-10-9-series/what-is-mariadb-109.md)
 
 **Release date:** 7 Nov 2022
 
-For the highlights of this release, see the[release notes](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/changelogs/changelogs-mariadb-109-series/broken-reference/README.md).
+For the highlights of this release, see the[release notes](http://mariadb.com/docs/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-9-series).
 
 The revision number links will take you to the revision's page on GitHub. On[GitHub](https://github.com/MariaDB/server/tree/10.9) you can view more\
 details of the revision and view diffs of the code modified in that revision.
