@@ -1,8 +1,8 @@
 # Information Schema CATALOG Table
 
-**MariaDB starting with** [**12.0**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-12.0-rolling-releases/what-is-mariadb-120)
-
-Catalog support is planned for 12.0.
+{% hint style="info" %}
+This table is available as of MariaDB [12.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-12.0-rolling-releases/what-is-mariadb-120).
+{% endhint %}
 
 The [Information Schema](../) `CATALOG` table stores information about [catalogs](../../../../../../security/user-account-management/catalogs/) on the server.
 

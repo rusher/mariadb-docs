@@ -1,14 +1,24 @@
 # Information Schema DISKS Table
 
+{% hint style="warning" %}
+The plugin only works on Linux.
+{% endhint %}
+
 ## Description
 
 The `DISKS` table is created when the [DISKS](../../../../../plugins/other-plugins/disks-plugin.md) plugin is enabled, and shows metadata about disks on the system.
 
-Before [MariaDB 10.4.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-1047-release-notes), [MariaDB 10.3.17](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-10317-release-notes), [MariaDB 10.2.26](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-10226-release-notes) and [MariaDB 10.1.41](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10141-release-notes), this plugin did **not** check [user privileges](../../../../account-management-sql-statements/grant.md). When it is enabled, **any** user can query the `INFORMATION_SCHEMA.DISKS` table and see all the information it provides.
+{% tabs %}
+{% tab title="Current" %}
+This plugin requires the [FILE privilege](../../../../account-management-sql-statements/grant.md).
+{% endtab %}
 
-Since [MariaDB 10.4.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-1047-release-notes), [MariaDB 10.3.17](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-10317-release-notes), [MariaDB 10.2.26](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-10226-release-notes) and [MariaDB 10.1.41](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10141-release-notes), it requires the [FILE privilege](../../../../account-management-sql-statements/grant.md).
-
-The plugin only works on Linux.
+{% tab title="< 10.4.7 / 10.3.17 / 10.2.26 / 10.1.41" %}
+{% hint style="danger" %}
+This plugin does **not** check [user privileges](../../../../account-management-sql-statements/grant.md). When it is enabled, **any** user can query the `INFORMATION_SCHEMA.DISKS` table and see all the information it provides.
+{% endhint %}
+{% endtab %}
+{% endtabs %}
 
 The table contains the following columns:
 

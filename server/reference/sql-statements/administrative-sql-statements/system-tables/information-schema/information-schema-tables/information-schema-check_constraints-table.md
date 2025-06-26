@@ -4,15 +4,15 @@ The [Information Schema](../) `CHECK_CONSTRAINTS` table stores metadata about th
 
 It contains the following columns:
 
-| Column              | Description                                                                                                                                                                                                 |
-| ------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Column              | Description                                                                                                                                                                                                 |
-| CONSTRAINT\_CATALOG | Always contains the string 'def'.                                                                                                                                                                           |
-| CONSTRAINT\_SCHEMA  | Database name.                                                                                                                                                                                              |
-| CONSTRAINT\_NAME    | Constraint name.                                                                                                                                                                                            |
-| TABLE\_NAME         | Table name.                                                                                                                                                                                                 |
-| LEVEL               | Type of the constraint ('Column' or 'Table'). From [MariaDB 10.5.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-10510-release-notes) |
-| CHECK\_CLAUSE       | Constraint clause.                                                                                                                                                                                          |
+| Column              | Description                                                                                                                                                                                                  |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Column              | Description                                                                                                                                                                                                  |
+| CONSTRAINT\_CATALOG | Always contains the string 'def'.                                                                                                                                                                            |
+| CONSTRAINT\_SCHEMA  | Database name.                                                                                                                                                                                               |
+| CONSTRAINT\_NAME    | Constraint name.                                                                                                                                                                                             |
+| TABLE\_NAME         | Table name.                                                                                                                                                                                                  |
+| LEVEL               | Type of the constraint ('Column' or 'Table'). From [MariaDB 10.5.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-10510-release-notes). |
+| CHECK\_CLAUSE       | Constraint clause.                                                                                                                                                                                           |
 
 ## Example
 

@@ -1,3 +1,20 @@
+---
+description: >-
+  Explore tables in the mysql database in MariaDB Server. These system tables
+  store essential information for server operation, including user privileges,
+  security settings, and global configuration.
+layout:
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: false
+---
+
 # The mysql Database Tables
 
-MariaDB comes pre-installed with a system database called `mysql` containing many important tables storing, in particular, [grant and privilege](../../../account-management-sql-statements/grant.md) information. Before MariaDB 10.4, system tables used the [MyISAM](../../../../../server-usage/storage-engines/myisam-storage-engine/) storage engine. From MariaDB 10.4, they use [Aria](../../../../../server-usage/storage-engines/aria/).
