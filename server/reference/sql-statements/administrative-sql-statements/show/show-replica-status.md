@@ -250,6 +250,21 @@ Additional behavior to be aware of:
 {% endtab %}
 {% endtabs %}
 
+{% tabs %}
+{% tab title="Current" %}
+**Connects\_Tried:** The number of attempts done to connect to the primary. It starts from 0 with [*START* REPLICA](../replication-statements/start-replica.md) (but not [STOP REPLICA](../replication-statements/stop-replica.md)), [RESET REPLICA](../replication-statements/reset-replica.md) or [`CHANGE MASTER TO MASTER_RETRY_COUNT`][], and increments after each connection attempt until one succeeds or, after this reaches `Master_Retry_Count`, aborts the connection.
+
+**Master\_Retry\_Count:** The limit to `Connects_Tried` as configured by [`CHANGE MASTER TO MASTER_RETRY_COUNT`][].
+
+[`CHANGE MASTER TO MASTER_RETRY_COUNT`]: ../replication-statements/change-master-to.md#master_retry_count
+{% endtab %}
+
+{% tab title="< 12.0" %}
+**Connects\_Tried:** and **Master\_Retry\_Count:** are not available.
+If the Performance Schema is enabled, [`replication\_connection\_configuration`](../system-tables/performance-schema/performance-schema-tables/performance-schema-replication_connection_configuration-table.md) has `CONNECTION_RETRY_COUNT` available as an older alternative to `Master_Retry_Count`.
+{% endtab %}
+{% endtabs %}
+
 ## Examples
 
 If you issue this statement using the [mariadb](../../../../clients-and-utilities/mariadb-client/) client, you can use a `\G` statement terminator rather than a semicolon to obtain a more readable vertical layout.
