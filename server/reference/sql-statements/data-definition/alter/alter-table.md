@@ -2,7 +2,8 @@
 
 ## Syntax
 
-<pre class="language-sql"><code class="lang-sql">ALTER [ONLINE] [IGNORE] TABLE [IF EXISTS] tbl_name
+```sql
+ALTER [ONLINE] [IGNORE] TABLE [IF EXISTS] tbl_name
     [WAIT n | NOWAIT]
     alter_specification [, alter_specification] ...
 
@@ -89,15 +90,11 @@ index_type:
   | COMMENT 'string'
   | CLUSTERING={YES| NO} ]
   [ IGNORED | NOT IGNORED ]
+```
 
+## Description
 
-<strong>## Description
-</strong>
-`ALTER TABLE` enables you to change the structure of an existing table.\
-For example, you can add or delete columns, create or destroy indexes,\
-change the type of existing columns, or rename columns or the table\
-itself. You can also change the comment for the table and the storage engine of the\
-table.
+`ALTER TABLE` enables you to change the structure of an existing table. For example, you can add or delete columns, create or destroy indexes, change the type of existing columns, or rename columns or the table itself. You can also change the comment for the table and the storage engine of the table.
 
 If another connection is using the table, a [metadata lock](../../transactions/metadata-locking.md) is active, and this statement will wait until the lock is released. This is also true for non-transactional tables.
 
