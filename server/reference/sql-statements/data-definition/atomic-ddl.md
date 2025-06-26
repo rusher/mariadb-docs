@@ -1,6 +1,14 @@
 # Atomic DDL
 
-From [MariaDB 10.6.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/mariadb-1061-release-notes), we have improved readability for DDL (Data Definition Language) operations to make most of them atomic, and the rest crash-safe, even if the server crashes in the middle of an operation.
+{% tabs %}
+{% tab title="Current" %}
+We improved readability for DDL (Data Definition Language) operations to make most of them atomic, and the rest crash-safe, even if the server crashes in the middle of an operation.
+{% endtab %}
+
+{% tab title="Background" %}
+These improvements were made in [MariaDB 10.6.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/mariadb-1061-release-notes).
+{% endtab %}
+{% endtabs %}
 
 The design of Atomic/Crash-safe DDL ([MDEV-17567](https://jira.mariadb.org/browse/MDEV-17567)) allows it to work with all storage engines.
 
@@ -42,7 +50,7 @@ Before 10.6, in case of a crash, there was a small possibility that one of the f
 
 [CREATE OR REPLACE TABLE foo](create/create-table.md) is implemented as:
 
-```
+```sql
 DROP TABLE IF EXISTS foo;
 CREATE TABLE foo ...
 ```
@@ -54,38 +62,31 @@ If the table was not re-created, the binary log will contain the`DROP TABLE`.
 
 [DROP DATABASE](drop/drop-database.md) is implemented as:
 
-```
+```sql
 loop over all tables
   DROP TABLE table
 ```
 
-Each [DROP TABLE](drop/drop-table.md) is atomic, but in case of a crash, things will\
-work the same way as [DROP TABLE](drop/drop-table.md) with multiple tables.
+Each [DROP TABLE](drop/drop-table.md) is atomic, but in case of a crash, things will work the same way as [DROP TABLE](drop/drop-table.md) with multiple tables.
 
 ### Atomic with Different Storage Engines
 
 Atomic/Crash-safe DDL works with all storage engines that either have atomic DDLs internally or are able to re-execute `DROP` or `RENAME` in case of failure.
 
-This should be true for most storage engines. The ones that still need some\
-work are:
+This should be true for most storage engines. The ones that still need some work are:
 
 * The [S3 storage engine](../../../server-usage/storage-engines/s3-storage-engine/).
 * The [partitioning engine](../../../server-usage/partitioning-tables/). Partitioning should be atomic for most cases, but there are still some known issues that need to be tested and fixed.
 
 ### The DDL Log Recovery File
 
-The new startup option [--log-ddl-recovery=path](../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md) (`ddl_recovery.log` by default) can be used to specify the place for\
-the DDL log file. This is mainly useful in the case when one has a\
-filesystem on persistent memory, as there is a lot of sync on this\
-file during DDL operations.
+The new startup option [--log-ddl-recovery=path](../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md) (`ddl_recovery.log` by default) can be used to specify the place for the DDL log file. This is mainly useful in the case when one has a filesystem on persistent memory, as there is a lot of sync on this file during DDL operations.
 
 This file contains all DDL operations that are in progress.
 
-At MariaDB server startup, the DDL log file is copied to a file with the same base name but with a `-backup.log` suffix. This is mainly done to be able to find out what went wrong if recovery fails.
+At MariaDB server startup, the DDL log file is copied to a file with the same base name but with a `backup.log` suffix. This is mainly done to be able to find out what went wrong if recovery fails.
 
-If the server crashes during recovery (unlikely but possible), the\
-recovery will continue where it was before. The recovery will retry each entry up\
-to 3 times before giving up and proceeding with the next entry.
+If the server crashes during recovery (unlikely but possible), the recovery will continue where it was before. The recovery will retry each entry up to 3 times before giving up and proceeding with the next entry.
 
 ### Conclusions
 
@@ -93,7 +94,7 @@ to 3 times before giving up and proceeding with the next entry.
 * In our InnoDB implementation, no file format changes were needed on top of the RENAME undo log that was introduced in [MariaDB 10.2.19](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-10219-release-notes) for a backup-safe TRUNCATE re-implementation. Correct use of sound design principles (write-ahead logging and transactions; also file creation now follows the ARIES protocol) is sufficient. We removed the hacks (at most one CREATE or DROP per transaction) and correctly implemented `rollback` and `purge` triggers for the InnoDB SYS\_INDEXES table.
 * Numerous DDL recovery bugs in InnoDB were found and fixed quickly thanks to [rr-project.org](https://rr-project.org). We are still working on one: data files must not be deleted before the DDL transaction is committed.
 
-Thanks to Atomic/Crash-safe DDL, the MariaDB server is now much more stable and reliable in unstable environments. There is still ongoing work to fix the few remaining issues mentioned above to make all DDL operations Atomic. The target for these is [MariaDB 10.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-7-series/what-is-mariadb-107).
+Thanks to Atomic/Crash-safe DDL, the MariaDB server is now much more stable and reliable in unstable environments. There is still ongoing work to fix the few remaining issues mentioned above to make all DDL operations Atomic.
 
 ### See Also
 

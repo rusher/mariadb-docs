@@ -2,16 +2,15 @@
 
 ## Syntax
 
-```sql
-ALTER [ONLINE] [IGNORE] TABLE [IF EXISTS] tbl_name
+<pre class="language-sql"><code class="lang-sql">ALTER [ONLINE] [IGNORE] TABLE [IF EXISTS] tbl_name
     [WAIT n | NOWAIT]
     alter_specification [, alter_specification] ...
 
 alter_specification:
-    <a data-footnote-ref href="#user-content-fn-1">table_option</a> ...
-  | ADD [COLUMN] [IF NOT EXISTS] col_name <a data-footnote-ref href="#user-content-fn-2">column_definition</a>
+    &#x3C;a data-footnote-ref href="#user-content-fn-1">table_option&#x3C;/a> ...
+  | ADD [COLUMN] [IF NOT EXISTS] col_name &#x3C;a data-footnote-ref href="#user-content-fn-2">column_definition&#x3C;/a>
         [FIRST | AFTER col_name ]
-  | ADD [COLUMN] [IF NOT EXISTS] (col_name <a data-footnote-ref href="#user-content-fn-2">column_definition</a>,...)
+  | ADD [COLUMN] [IF NOT EXISTS] (col_name &#x3C;a data-footnote-ref href="#user-content-fn-2">column_definition&#x3C;/a>,...)
   | ADD {INDEX|KEY} [IF NOT EXISTS] [index_name]
         [index_type] (index_col_name,...) [index_option] ...
   | ADD [CONSTRAINT [symbol]] PRIMARY KEY [IF NOT EXISTS]
@@ -55,7 +54,7 @@ alter_specification:
   | ALGORITHM [=] {DEFAULT|INPLACE|COPY|NOCOPY|INSTANT}
   | LOCK [=] {DEFAULT|NONE|SHARED|EXCLUSIVE}
   | FORCE
-  | <a data-footnote-ref href="#user-content-fn-3">partition_options</a>
+  | &#x3C;a data-footnote-ref href="#user-content-fn-3">partition_options&#x3C;/a>
   | CONVERT TABLE normal_table TO partition_definition [{WITH | WITHOUT} VALIDATION]
   | CONVERT PARTITION partition_name TO TABLE tbl_name
   | ADD PARTITION [IF NOT EXISTS] (partition_definition)
@@ -82,7 +81,7 @@ index_type:
     USING {BTREE | HASH | RTREE}
 
 
-<a data-footnote-ref href="#user-content-fn-4">index_option</a>:
+&#x3C;a data-footnote-ref href="#user-content-fn-4">index_option&#x3C;/a>:
     [ KEY_BLOCK_SIZE [=] value
   | index_type
   | WITH PARSER parser_name
@@ -92,12 +91,8 @@ index_type:
   [ IGNORED | NOT IGNORED ]
 
 
-<a data-footnote-ref href="#user-content-fn-5">table_options</a>:
-    table_option [[,] table_option] ...
-</code></pre>
-
-## Description
-
+<strong>## Description
+</strong>
 `ALTER TABLE` enables you to change the structure of an existing table.\
 For example, you can add or delete columns, create or destroy indexes,\
 change the type of existing columns, or rename columns or the table\
@@ -132,7 +127,7 @@ Online `ALTER TABLE` is available by executing the following:
 
 ```sql
 ALTER ONLINE TABLE ...;
-```
+</code></pre>
 
 This statement is equivalent to the following:
 
@@ -165,12 +160,7 @@ MODIFY COLUMN    [IF EXISTS]
 DROP INDEX       [IF EXISTS]
 ```
 
-When `IF EXISTS` and `IF NOT EXISTS` are used in clauses, queries will not\
-report errors when the condition is triggered for that clause. A warning with\
-the same message text will be issued and the ALTER will move on to the next\
-clause in the statement (or end if finished).
-
-**MariaDB starting with** [**10.5.2**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1052-release-notes)
+When `IF EXISTS` and `IF NOT EXISTS` are used in clauses, queries will not report errors when the condition is triggered for that clause. A warning with the same message text will be issued and the ALTER will move on to the next clause in the statement (or end if finished).
 
 If this is directive is used after `ALTER ... TABLE`, one will not get an error if the table doesn't exist.
 
@@ -206,8 +196,7 @@ See [CREATE TABLE: Table Options](../create/create-table.md#table-options) for i
 ... ADD COLUMN [IF NOT EXISTS]  (col_name [column_definition](../create/create-table.md#column-definitions),...)
 ```
 
-Adds a column to the table. The syntax is the same as in [CREATE TABLE](../create/create-table.md).\
-If you are using `IF NOT_EXISTS` the column will not be added if it was not there already. This is very useful when doing scripts to modify tables.
+Adds a column to the table. The syntax is the same as in [CREATE TABLE](../create/create-table.md). If you are using `IF NOT_EXISTS` the column will not be added if it was not there already. This is very useful when doing scripts to modify tables.
 
 The `FIRST` and `AFTER` clauses affect the physical order of columns in the datafile. Use `FIRST` to add a column in the first (leftmost) position, or `AFTER` followed by a column name to add the new column in any other position. Note that, nowadays, the physical position of a column is usually irrelevant.
 
@@ -219,11 +208,7 @@ See also [Instant ADD COLUMN for InnoDB](../../../../server-usage/storage-engine
 ... DROP COLUMN [IF EXISTS] col_name [CASCADE|RESTRICT]
 ```
 
-Drops the column from the table.\
-If you are using `IF EXISTS` you will not get an error if the column didn't exist.\
-If the column is part of any index, the column will be dropped from them, except if you add a new column with identical name at the same time. The index will be dropped if all columns from the index were dropped.\
-If the column was used in a view or trigger, you will get an error next time the view or trigger is accessed.\
-Dropping a column that is part of a multi-column `UNIQUE` constraint is not permitted. For example:
+Drops the column from the table. If you are using `IF EXISTS` you will not get an error if the column didn't exist. If the column is part of any index, the column will be dropped from them, except if you add a new column with identical name at the same time. The index will be dropped if all columns from the index were dropped. If the column was used in a view or trigger, you will get an error next time the view or trigger is accessed. Dropping a column that is part of a multi-column `UNIQUE` constraint is not permitted. For example:
 
 ```sql
 CREATE TABLE a (
@@ -271,47 +256,47 @@ ALTER TABLE t1 ALTER b SET DEFAULT 'hello';
 
 ### RENAME INDEX/KEY
 
-**MariaDB starting with** [**10.5.2**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1052-release-notes)
-
-From [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1052-release-notes), it is possible to rename an index using the `RENAME INDEX` (or `RENAME KEY`) syntax, for example:
+{% tabs %}
+{% tab title="Current" %}
+You can rename an index using the `RENAME INDEX` (or `RENAME KEY`) syntax, for example:
 
 ```sql
 ALTER TABLE t1 RENAME INDEX i_old TO i_new;
 ```
+{% endtab %}
+
+{% tab title="< 10.5.3" %}
+`RENAME INDEX/KEY` is not available.
+{% endtab %}
+{% endtabs %}
 
 ### RENAME COLUMN
 
-**MariaDB starting with** [**10.5.2**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1052-release-notes)
-
-From [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1052-release-notes), it is possible to rename a column using the `RENAME COLUMN` syntax, for example:
+{% tabs %}
+{% tab title="Current" %}
+You can rename a column using the `RENAME COLUMN` syntax, for example:
 
 ```sql
 ALTER TABLE t1 RENAME COLUMN c_old TO c_new;
 ```
+{% endtab %}
+
+{% tab title="< 10.5.3" %}
+`RENAME COLUMN` is not available.
+{% endtab %}
+{% endtabs %}
 
 ### ADD PRIMARY KEY
 
-Add a primary key.
-
-For `PRIMARY KEY` indexes, you can specify a name for the index, but it is silently ignored, and the name of the index is always `PRIMARY`.
-
-See [Getting Started with Indexes: Primary Key](../../../../mariadb-quickstart-guides/mariadb-indexes-guide.md#primary-key) for more information.
+Adds a primary key. For `PRIMARY KEY` indexes, you can specify a name for the index, but it is silently ignored, and the name of the index is always `PRIMARY`. See [Getting Started with Indexes: Primary Key](../../../../mariadb-quickstart-guides/mariadb-indexes-guide.md#primary-key) for more information.
 
 ### DROP PRIMARY KEY
 
-Drop a primary key.
-
-For `PRIMARY KEY` indexes, you can specify a name for the index, but it is silently ignored, and the name of the index is always `PRIMARY`.
-
-See [Getting Started with Indexes: Primary Key](../../../../mariadb-quickstart-guides/mariadb-indexes-guide.md#primary-key) for more information.
+Drops a primary key. For `PRIMARY KEY` indexes, you can specify a name for the index, but it is silently ignored, and the name of the index is always `PRIMARY`. See [Getting Started with Indexes: Primary Key](../../../../mariadb-quickstart-guides/mariadb-indexes-guide.md#primary-key) for more information.
 
 ### ADD FOREIGN KEY
 
-Add a foreign key.
-
-For `FOREIGN KEY` indexes, a reference definition must be provided.
-
-For `FOREIGN KEY` indexes, you can specify a name for the constraint, using the `CONSTRAINT` keyword. That name will be used in error messages.
+Adds a foreign key. For `FOREIGN KEY` indexes, a reference definition must be provided. For `FOREIGN KEY` indexes, you can specify a name for the constraint, using the `CONSTRAINT` keyword. That name will be used in error messages.
 
 First, you have to specify the name of the target (parent) table and a column or a column list which must be indexed and whose values must match to the foreign key's values. The `MATCH` clause is accepted to improve the compatibility with other DBMS's, but has no meaning in MariaDB. The `ON DELETE` and `ON UPDATE` clauses specify what must be done when a `DELETE` (or a `REPLACE`) statements attempts to delete a referenced row from the parent table, and when an `UPDATE` statement attempts to modify the referenced foreign key columns in a parent table row, respectively. The following options are allowed:
 
@@ -327,79 +312,47 @@ See [Foreign Keys](../../../../ha-and-performance/optimization-and-tuning/optimi
 
 ### DROP FOREIGN KEY
 
-Drop a foreign key.
-
-See [Foreign Keys](../../../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/foreign-keys.md) for more information.
+Drops a foreign key. See [Foreign Keys](../../../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/foreign-keys.md) for more information.
 
 ### ADD INDEX
 
-Add a plain index.
-
-Plain indexes are regular indexes that are not unique, and are not acting as a primary key or a foreign key. They are also not the "specialized" `FULLTEXT` or `SPATIAL` indexes. For limits on InnoDB indexes, see [InnoDB Limitations](../../../../server-usage/storage-engines/innodb/innodb-limitations.md).
-
-See [Getting Started with Indexes: Plain Indexes](../../../../mariadb-quickstart-guides/mariadb-indexes-guide.md#plain-indexes) for more information.
+Adds a plain index. Plain indexes are regular indexes that are not unique, and are not acting as a primary key or a foreign key. They are also not the "specialized" `FULLTEXT` or `SPATIAL` indexes. For limits on InnoDB indexes, see [InnoDB Limitations](../../../../server-usage/storage-engines/innodb/innodb-limitations.md). See [Getting Started with Indexes: Plain Indexes](../../../../mariadb-quickstart-guides/mariadb-indexes-guide.md#plain-indexes) for more information.
 
 ### DROP INDEX
 
-Drop a plain index.
-
-Plain indexes are regular indexes that are not unique, and are not acting as a primary key or a foreign key. They are also not the "specialized" `FULLTEXT` or `SPATIAL` indexes.
-
-See [Getting Started with Indexes: Plain Indexes](../../../../mariadb-quickstart-guides/mariadb-indexes-guide.md#plain-indexes) for more information.
+Drops a plain index. Plain indexes are regular indexes that are not unique, and are not acting as a primary key or a foreign key. They are also not the "specialized" `FULLTEXT` or `SPATIAL` indexes. See [Getting Started with Indexes: Plain Indexes](../../../../mariadb-quickstart-guides/mariadb-indexes-guide.md#plain-indexes) for more information.
 
 ### ADD UNIQUE INDEX
 
-Add a unique index.
-
-The `UNIQUE` keyword means that the index will not accept duplicated values, except for NULLs. An error will raise if you try to insert duplicate values in a UNIQUE index.
-
-For `UNIQUE` indexes, you can specify a name for the constraint, using the `CONSTRAINT` keyword. That name will be used in error messages.
-
-See [Getting Started with Indexes: Unique Index](../../../../mariadb-quickstart-guides/mariadb-indexes-guide.md#unique-index) for more information.
+Adds a unique index. The `UNIQUE` keyword means that the index will not accept duplicated values, except for NULLs. An error will raise if you try to insert duplicate values in a UNIQUE index. For `UNIQUE` indexes, you can specify a name for the constraint, using the `CONSTRAINT` keyword. That name will be used in error messages. See [Getting Started with Indexes: Unique Index](../../../../mariadb-quickstart-guides/mariadb-indexes-guide.md#unique-index) for more information.
 
 ### DROP UNIQUE INDEX
 
-Drop a unique index.
-
-The `UNIQUE` keyword means that the index will not accept duplicated values, except for NULLs. An error will raise if you try to insert duplicate values in a UNIQUE index.
-
-For `UNIQUE` indexes, you can specify a name for the constraint, using the `CONSTRAINT` keyword. That name will be used in error messages.
-
-See [Getting Started with Indexes: Unique Index](../../../../mariadb-quickstart-guides/mariadb-indexes-guide.md#unique-index) for more information.
+Drops a unique index. The `UNIQUE` keyword means that the index will not accept duplicated values, except for NULLs. An error will raise if you try to insert duplicate values in a UNIQUE index. For `UNIQUE` indexes, you can specify a name for the constraint, using the `CONSTRAINT` keyword. That name will be used in error messages. See [Getting Started with Indexes: Unique Index](../../../../mariadb-quickstart-guides/mariadb-indexes-guide.md#unique-index) for more information.
 
 ### ADD FULLTEXT INDEX
 
-Add a `FULLTEXT` index.
-
-See [Full-Text Indexes](../../../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/full-text-indexes/) for more information.
+Adds a `FULLTEXT` index. See [Full-Text Indexes](../../../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/full-text-indexes/) for more information.
 
 ### DROP FULLTEXT INDEX
 
-Drop a `FULLTEXT` index.
-
-See [Full-Text Indexes](../../../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/full-text-indexes/) for more information.
+Drops a `FULLTEXT` index. See [Full-Text Indexes](../../../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/full-text-indexes/) for more information.
 
 ### ADD SPATIAL INDEX
 
-Add a SPATIAL index.
-
-See [SPATIAL INDEX](../../../sql-structure/geometry/spatial-index.md) for more information.
+Adds a SPATIAL index. See [SPATIAL INDEX](../../../sql-structure/geometry/spatial-index.md) for more information.
 
 ### DROP SPATIAL INDEX
 
-Drop a SPATIAL index.
-
-See [SPATIAL INDEX](../../../sql-structure/geometry/spatial-index.md) for more information.
+Drops a SPATIAL index. See [SPATIAL INDEX](../../../sql-structure/geometry/spatial-index.md) for more information.
 
 ### ENABLE/ DISABLE KEYS
 
-`DISABLE KEYS` will disable all non unique keys for the table for storage engines that support this (at least MyISAM and Aria). This can be used to [speed up inserts](../../../../ha-and-performance/optimization-and-tuning/query-optimizations/how-to-quickly-insert-data-into-mariadb.md) into empty tables.
-
-`ENABLE KEYS` will enable all disabled keys.
+`DISABLE KEYS`  disables all non unique keys for the table for storage engines that support this (at least MyISAM and Aria). This can be used to [speed up inserts](../../../../ha-and-performance/optimization-and-tuning/query-optimizations/how-to-quickly-insert-data-into-mariadb.md) into empty tables. `ENABLE KEYS`  enables all disabled keys.
 
 ### RENAME TO
 
-Renames the table. See also [RENAME TABLE](../rename-table.md).
+Renames a table. See also [RENAME TABLE](../rename-table.md).
 
 ### ADD CONSTRAINT
 
@@ -447,7 +400,7 @@ WHERE TABLE_NAME = 'account_ledger';
 ### DROP CONSTRAINT
 
 `DROP CONSTRAINT` for `UNIQUE` and `FOREIGN KEY` [constraints](../constraint.md)\
-and `DROP CONSTRAINT` for `CHECK` constraints were introduced in an earlier version of MariaD
+and `DROP CONSTRAINT` for `CHECK` constraints were introduced in an earlier version of MariaDB.
 
 Modifies the table, removing the given constraint.
 
@@ -478,7 +431,7 @@ WHERE TABLE_NAME = 't';
 +-----------------+----------------+-----------------+
 ```
 
-To remove a constraint from the table, issue an `ALTER TABLE...DROP CONSTRAINT` statement. For example,
+To remove a constraint from the table, issue an `ALTER TABLE...DROP CONSTRAINT` statement. For example:
 
 ```sql
 ALTER TABLE t DROP CONSTRAINT is_unique;
@@ -486,11 +439,11 @@ ALTER TABLE t DROP CONSTRAINT is_unique;
 
 ### ADD SYSTEM VERSIONING
 
-Add system versioning. See [System-versioned tables](../../../sql-structure/temporal-tables/system-versioned-tables.md).
+Adds system versioning. See [System-versioned tables](../../../sql-structure/temporal-tables/system-versioned-tables.md).
 
 ### DROP SYSTEM VERSIONING
 
-Drop system versioning. See [System-versioned tables](../../../sql-structure/temporal-tables/system-versioned-tables.md).
+Drops system versioning. See [System-versioned tables](../../../sql-structure/temporal-tables/system-versioned-tables.md).
 
 ### ADD PERIOD FOR
 
@@ -498,21 +451,13 @@ See [System-versioned tables](../../../sql-structure/temporal-tables/system-vers
 
 ### FORCE
 
-`ALTER TABLE ... FORCE` can force MariaDB to re-build the table.
-
-In [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) and before, this could only be done by setting the [ENGINE](../create/create-table.md#storage-engine) table option to its old value. For example, for an InnoDB table, one could execute the following:
-
-```sql
-ALTER TABLE tab_name ENGINE = InnoDB;
-```
-
-The `FORCE` option can be used instead. For example, :
+`ALTER TABLE ... FORCE`  forces MariaDB to rebuild the table.
 
 ```sql
 ALTER TABLE tab_name FORCE;
 ```
 
-With InnoDB, the table rebuild will only reclaim unused space (i.e. the space previously used for deleted rows) if the [innodb\_file\_per\_table](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_file_per_table) system variable is set to `ON` (the default). If the system variable is `OFF`, then the space will not be reclaimed, but it will be-re-used for new data that's later added.
+With InnoDB, the table rebuild only reclaims unused space (i.e. the space previously used for deleted rows) if the [innodb\_file\_per\_table](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_file_per_table) system variable is set to `ON` (the default). If the system variable is `OFF`,  the space will not be reclaimed, but it will be re-used for new data that's later added.
 
 The rebuild may fail if conditions are violated due to a change in the [sql\_mode](../../../../server-management/variables-and-modes/sql-mode.md). For example:
 
@@ -545,8 +490,8 @@ Reduces the number of HASH or KEY partitions in a table. See [Partitioning Overv
 
 #### CONVERT PARTITION / TABLE
 
-`CONVERT PARTITION` and `CONVERT TABLE` were introduced in [MariaDB 10.7.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-7-series/mariadb-1071-release-notes).
-
+{% tabs %}
+{% tab title="Current" %}
 `CONVERT PARTITION` can be used to remove a partition from a table and make this an ordinary table. For example:
 
 ```sql
@@ -560,11 +505,34 @@ ALTER TABLE partitioned_table CONVERT TABLE normal_table
   TO PARTITION part1 VALUES LESS THAN (12345);
 ```
 
-From [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-4-series/what-is-mariadb-114), the optional `[{WITH | WITHOUT} VALIDATION]` is permitted.
+The optional `[{WITH | WITHOUT} VALIDATION]` is permitted.
 
 See [Partitioning Overview: Converting Partitions to/from Tables](../../../../server-usage/partitioning-tables/partitioning-overview.md#converting-partitions-tofrom-tables) for more details.
+{% endtab %}
 
-See also [10.7 preview feature: CONVERT PARTITION](https://mariadb.org/10-7-preview-feature-convert-partition/) (mariadb.org blog post)
+{% tab title="< 11.4" %}
+`CONVERT PARTITION` can be used to remove a partition from a table and make this an ordinary table. For example:
+
+```sql
+ALTER TABLE partitioned_table CONVERT PARTITION part1 TO TABLE normal_table;
+```
+
+`CONVERT TABLE` will take an existing table and move this to another table as its own partition with a specified [partition definition](../create/create-table.md#partitions). For example the following moves `normal_table` to a partition of `partitioned_table` with a definition that its values, based on the `PARTITION BY` of the `partitioned_table`, are less than 12345.
+
+```sql
+ALTER TABLE partitioned_table CONVERT TABLE normal_table 
+  TO PARTITION part1 VALUES LESS THAN (12345);
+```
+
+The optional clause `[{WITH | WITHOUT} VALIDATION]` is not available.
+
+See [Partitioning Overview: Converting Partitions to/from Tables](../../../../server-usage/partitioning-tables/partitioning-overview.md#converting-partitions-tofrom-tables) for more details.
+{% endtab %}
+
+{% tab title="< 10.7.1" %}
+`CONVERT PARTITION` and `CONVERT TABLE` are not available.
+{% endtab %}
+{% endtabs %}
 
 #### DROP PARTITION
 
@@ -572,13 +540,27 @@ Used to drop specific partitions (and discard all data within the specified part
 
 #### EXCHANGE PARTITION
 
-This is used to exchange the contents of a partition with another table. This is performed by swapping the tablespaces of the partition with the other table.
+{% tabs %}
+{% tab title="Current" %}
+This clause is used to exchange the contents of a partition with another table. This is performed by swapping the tablespaces of the partition with the other table.
 
-From [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-4-series/what-is-mariadb-114), the optional `[{WITH | WITHOUT} VALIDATION]` is permitted.
+The optional `[{WITH | WITHOUT} VALIDATION]` is permitted.
 
 See [Partitioning Overview: Exchanging Partitions](../../../../server-usage/partitioning-tables/partitioning-overview.md#exchanging-partitions) for more details.
 
 See also [copying InnoDB's transportable tablespaces](../../../../server-usage/storage-engines/innodb/innodb-tablespaces/innodb-file-per-table-tablespaces.md#copying-transportable-tablespaces).
+{% endtab %}
+
+{% tab title="< 11.4" %}
+This clause is used to exchange the contents of a partition with another table. This is performed by swapping the tablespaces of the partition with the other table.
+
+The optional `[{WITH | WITHOUT} VALIDATION]` is not permitted.
+
+See [Partitioning Overview: Exchanging Partitions](../../../../server-usage/partitioning-tables/partitioning-overview.md#exchanging-partitions) for more details.
+
+See also [copying InnoDB's transportable tablespaces](../../../../server-usage/storage-engines/innodb/innodb-tablespaces/innodb-file-per-table-tablespaces.md#copying-transportable-tablespaces).
+{% endtab %}
+{% endtabs %}
 
 #### OPTIMIZE PARTITION
 
@@ -661,7 +643,15 @@ This algorithm is very inefficient, but it is generic, so it works for all stora
 
 If `ALGORITHM=COPY` is specified, then the copy algorithm will be used even if it is not necessary. This can result in a lengthy table copy. If multiple [ALTER TABLE](alter-table.md) operations are required that each require the table to be rebuilt, then it is best to specify all operations in a single [ALTER TABLE](alter-table.md) statement, so that the table is only rebuilt once.
 
-From [MariaDB 11.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-2-series/what-is-mariadb-112), ALTER TABLE can now do most operations with ALGORITHM=COPY, LOCK=NONE. See [LOCK=NONE](alter-table.md#none).
+{% tabs %}
+{% tab title="Current" %}
+`ALTER TABLE` can perform most operations with `ALGORITHM=COPY`, `LOCK=NONE`. See [LOCK=NONE](alter-table.md#none).
+{% endtab %}
+
+{% tab title="< 11.2" %}
+`ALTER TABLE` cannot perform operations with `ALGORITHM=COPY`, `LOCK=NONE`.&#x20;
+{% endtab %}
+{% endtabs %}
 
 #### ALGORITHM=INPLACE
 
@@ -729,8 +719,7 @@ See [CREATE TABLE](../create/create-table.md#index-options) page for meaning of 
 
 ## Progress Reporting
 
-MariaDB provides progress reporting for `ALTER TABLE` statement for clients\
-that support the new progress reporting protocol. For example, if you were using the [mariadb](../../../../clients-and-utilities/mariadb-client/mariadb-command-line-client.md) client, then the progress report might look like this::
+MariaDB provides progress reporting for `ALTER TABLE` statement for clients that support the new progress reporting protocol. For example, if you were using the [mariadb](../../../../clients-and-utilities/mariadb-client/mariadb-command-line-client.md) client, then the progress report might look like this::
 
 ```sql
 ALTER TABLE test ENGINE=Aria;
@@ -749,19 +738,29 @@ Aborting `ALTER TABLE ... ALGORITHM=COPY` was made faster by removing excessive 
 
 ## Atomic ALTER TABLE
 
-**MariaDB starting with** [**10.6.1**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/mariadb-1061-release-notes)
+{% tabs %}
+{% tab title="Current" %}
+`ALTER TABLE` is atomic for most engines, including InnoDB, MyRocks, MyISAM and Aria ([MDEV-25180](https://jira.mariadb.org/browse/MDEV-25180)). This means that if there is a crash (server down or power outage) during an `ALTER TABLE` operation, after recovery, either the old table and associated triggers and status will be intact, or the new table will be active. In older MariaDB versions one could get leftover #sql-alter..', '#sql-backup..' or 'table\_name.frm˝' files if the system crashed during the `ALTER TABLE` operation.
 
-From [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/what-is-mariadb-106), `ALTER TABLE` is atomic for most engines, including InnoDB, MyRocks, MyISAM and Aria ([MDEV-25180](https://jira.mariadb.org/browse/MDEV-25180)).\
-This means that if there is a crash (server down or power outage) during an `ALTER TABLE` operation, after\
-recovery, either the old table and associated triggers and status will be intact, or the new table will be active.\
-In older MariaDB versions one could get leftover #sql-alter..', '#sql-backup..' or 'table\_name.frm˝' files if the system crashed during the `ALTER TABLE` operation.\
 See [Atomic DDL](../atomic-ddl.md) for more information.
+{% endtab %}
+
+{% tab title="< 10.6.1" %}
+Atomic `ALTER TABLE` is not available.
+{% endtab %}
+{% endtabs %}
 
 ## Replication
 
-**MariaDB starting with** [**10.8.1**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-8-series/mariadb-1081-release-notes)
+{% tabs %}
+{% tab title="Current" %}
+ALTER TABLE got fully executed on the primary first, and only then was it replicated and started executing on replicas. [An option](../../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#binlog_alter_two_phase) was added to replicate sooner and begin executing on replicas, directly when it _starts_ executing on the primary, not when it _finishes_. This way the replication lag caused by a heavy ALTER TABLE can be completely eliminated ([MDEV-11675](https://jira.mariadb.org/browse/MDEV-11675)).
+{% endtab %}
 
-Before [MariaDB 10.8.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-8-series/mariadb-1081-release-notes), ALTER TABLE got fully executed on the primary first, and only then was it replicated and started executing on replicas. From [MariaDB 10.8.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-8-series/mariadb-1081-release-notes), ALTER TABLE gains [an option](../../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#binlog_alter_two_phase) to replicate sooner and begin executing on replicas when it merely _starts_ executing on the primary, not when it _finishes_. This way the replication lag caused by a heavy ALTER TABLE can be completely eliminated ([MDEV-11675](https://jira.mariadb.org/browse/MDEV-11675)).
+{% tab title="< 10.8.1" %}
+The [binlog\_alter\_two\_phase](../../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#binlog_alter_two_phase) option is not available.
+{% endtab %}
+{% endtabs %}
 
 ## Examples
 
@@ -821,28 +820,38 @@ Adding a unique index:
 ALTER TABLE rooms ADD UNIQUE INDEX u(room_number);
 ```
 
-From [MariaDB 10.5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1053-release-notes), adding a primary key for an [application-time period table](../../../sql-structure/temporal-tables/application-time-periods.md) with a [WITHOUT OVERLAPS](../../../sql-structure/temporal-tables/application-time-periods.md#without-overlaps) constraint:
+Adding a primary key for an [application-time period table](../../../sql-structure/temporal-tables/application-time-periods.md) with a [WITHOUT OVERLAPS](../../../sql-structure/temporal-tables/application-time-periods.md#without-overlaps) constraint:
 
 ```sql
 ALTER TABLE rooms ADD PRIMARY KEY(room_number, p WITHOUT OVERLAPS);
 ```
 
-From [MariaDB 10.8.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-8-series/mariadb-1081-release-notes), ALTER query can be replicated faster with the setting of
+{% tabs %}
+{% tab title="Current" %}
+An `ALTER` query can be replicated faster with this statement, which must be run before the `ALTER` statement:
 
 ```sql
 SET @@SESSION.binlog_alter_two_phase = true;
 ```
 
-prior the ALTER query. Binlog would contain two event groups
+Binlog would contain two event groups, of which the first one gets delivered to replicas before ALTER is taken to actual execution on the primary:
 
 ```sql
 | master-bin.000001 | 495 | Gtid              |         1 |         537 | GTID 0-1-2 START ALTER                                        |
 | master-bin.000001 | 537 | Query             |         1 |         655 | use `test`; alter table t add column b int, algorithm=inplace |
 | master-bin.000001 | 655 | Gtid              |         1 |         700 | GTID 0-1-3 COMMIT ALTER id=2                                  |
-| master-bin.000001 | 700 | Query             |         1 |         835 | use `test`; alter table t add column b int, algorithm=inplace |
+| master-bin.000001 | 700 | Query             |         1 |         835 | use `test`; alte
 ```
+{% endtab %}
 
-of which the first one gets delivered to replicas before ALTER is taken to actual execution on the primary.
+{% tab title="< 10.8.1" %}
+This statement is not available:
+
+```sql
+SET @@SESSION.binlog_alter_two_phase = true;
+```
+{% endtab %}
+{% endtabs %}
 
 ## See Also
 
@@ -855,13 +864,3 @@ of which the first one gets delivered to replicas before ALTER is taken to actua
 <sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}
-
-[^1]: [table o](../create/create-table.md#table-options)[ptions](../create/create-table.md#table-options)
-
-[^2]: [column definitions](../create/create-table.md#column-definitions)
-
-[^3]: [partition options](../create/create-table.md#partitions)
-
-[^4]: [index options](../create/create-table.md#index-options)
-
-[^5]: [table options](../create/create-table.md#table-options)

@@ -55,7 +55,7 @@ The [Information Schema TABLE\_CONSTRAINTS Table](../administrative-sql-statemen
 [InnoDB](../../../server-usage/storage-engines/innodb/) supports [foreign key](../../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/foreign-keys.md) constraints. The syntax for a foreign key\
 constraint definition in InnoDB looks like this:
 
-```
+```sql
 [CONSTRAINT [symbol]] FOREIGN KEY
     [index_name] (index_col_name, ...)
     REFERENCES tbl_name (index_col_name,...)
@@ -80,7 +80,7 @@ You can define constraints in 2 different ways:
 Before a row is inserted or updated, all constraints are evaluated in the order they are defined. If any constraint expression returns false, then the row will not be inserted or updated.\
 One can use most deterministic functions in a constraint, including [UDFs](../../../server-usage/user-defined-functions/).
 
-```
+```sql
 CREATE TABLE t1 (a INT CHECK (a>2), b INT CHECK (b>2), CONSTRAINT a_greater CHECK (a>b));
 ```
 
@@ -98,7 +98,7 @@ In [row-based](../../../server-management/server-monitoring-logs/binary-log/bina
 
 ## Examples
 
-```
+```sql
 CREATE TABLE product (category INT NOT NULL, id INT NOT NULL,
                       price DECIMAL,
                       PRIMARY KEY(category, id)) ENGINE=INNODB;
@@ -122,7 +122,7 @@ The following examples will work from [MariaDB 10.2.1](https://app.gitbook.com/s
 
 Numeric constraints and comparisons:
 
-```
+```sql
 CREATE TABLE t1 (a INT CHECK (a>2), b INT CHECK (b>2), CONSTRAINT a_greater CHECK (a>b));
 
 INSERT INTO t1(a) VALUES (1);
@@ -137,19 +137,19 @@ Query OK, 1 row affected (0.04 sec)
 
 Dropping a constraint:
 
-```
+```sql
 ALTER TABLE t1 DROP CONSTRAINT a_greater;
 ```
 
 Adding a constraint:
 
-```
+```sql
 ALTER TABLE t1 ADD CONSTRAINT a_greater CHECK (a>b);
 ```
 
 Date comparisons and character length:
 
-```
+```sql
 CREATE TABLE t2 (name VARCHAR(30) CHECK (CHAR_LENGTH(name)>2), start_date DATE, 
   end_date DATE CHECK (start_date IS NULL OR end_date IS NULL OR start_date<end_date));
 
@@ -168,7 +168,7 @@ ERROR 4022 (23000): CONSTRAINT `end_date` failed for `test`.`t2`
 
 A misplaced parenthesis:
 
-```
+```sql
 CREATE TABLE t3 (name VARCHAR(30) CHECK (CHAR_LENGTH(name>2)), start_date DATE, 
   end_date DATE CHECK (start_date IS NULL OR end_date IS NULL OR start_date<end_date));
 Query OK, 0 rows affected (0.32 sec)
