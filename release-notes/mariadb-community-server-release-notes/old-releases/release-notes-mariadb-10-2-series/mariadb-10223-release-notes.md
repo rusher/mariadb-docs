@@ -29,7 +29,7 @@ Thanks, and enjoy MariaDB!
 * Corruption bug fixes:
   * [MDEV-18272](https://jira.mariadb.org/browse/MDEV-18272): InnoDB fails to rollback after exceeding FOREIGN KEY recursion depth
   * [MDEV-9519](https://jira.mariadb.org/browse/MDEV-9519): Data corruption on Galera cluster size change
-* [mariadb-backup](broken-reference):
+* [mariadb-backup](https://mariadb.com/docs/server/server-usage/backup-and-restore/mariadb-backup):
   * [MDEV-18204](https://jira.mariadb.org/browse/MDEV-18204): fix incremental MyRocks backup
   * [MDEV-18611](https://jira.mariadb.org/browse/MDEV-18611): mariadb-backup terminated while copying InnoDB redo log
   * [MDEV-18669](https://jira.mariadb.org/browse/MDEV-18669): mariadb-backup writes timestamp in version line

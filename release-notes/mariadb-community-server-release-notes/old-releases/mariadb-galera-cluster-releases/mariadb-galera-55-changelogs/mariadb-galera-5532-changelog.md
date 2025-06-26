@@ -29,7 +29,7 @@ modified in that revision.
   * References [MDEV-4404](https://jira.mariadb.org/browse/MDEV-4404) - Added log message to catch information of log event corruption
 * [Revision #3412](https://bazaar.launchpad.net/~maria-captains/maria/maria-5.5-galera/revision/3412) \[merge]\
   Wed 2013-08-21 16:34:31 +0300
-  * Merge with [mariadb 5.5](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/mariadb-galera-cluster-releases/mariadb-galera-55-changelogs/broken-reference/README.md): `bzr merge lp:maria/5.5 --rtag:mariadb-5.5.32`
+  * Merge with [mariadb 5.5](https://mariadb.com/docs/release-notes/mariadb-community-server-release-notes/old-releases/mariadb-galera-cluster-releases/mariadb-galera-55-release-notes): `bzr merge lp:maria/5.5 --rtag:mariadb-5.5.32`
   * [Revision #3334.1.504](https://bazaar.launchpad.net/~maria-captains/maria/maria-5.5-galera/revision/3334.1.504)\
     Wed 2013-07-17 17:03:59 +0300
     * Revert of marko.makela@oracle.com-20130430103950-j353faze84zzk9xf for xtradb (fix of [bug.php?id=69623](https://bugs.mysql.com/bug.php?id=69623))

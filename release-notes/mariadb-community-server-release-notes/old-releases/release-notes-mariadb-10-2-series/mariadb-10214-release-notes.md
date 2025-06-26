@@ -32,7 +32,7 @@ Thanks, and enjoy MariaDB!
 * [MDEV-14773](https://jira.mariadb.org/browse/MDEV-14773) - [DROP TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/drop/drop-table) hangs for InnoDB table with [FULLTEXT index](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/optimization-and-indexes/full-text-indexes) (fixing a recent regression from upstream)
 * [MDEV-15529](https://jira.mariadb.org/browse/MDEV-15529) - IMPORT TABLESPACE unnecessarily uses the doublewrite buffer
 * [MDEV-15554](https://jira.mariadb.org/browse/MDEV-15554) - InnoDB page\_cleaner shutdown sometimes hangs
-* [MDEV-14545](https://jira.mariadb.org/browse/MDEV-14545) - [mariadb-backup](broken-reference) - Backup fails due to MLOG\_INDEX\_LOAD record
+* [MDEV-14545](https://jira.mariadb.org/browse/MDEV-14545) - [mariadb-backup](https://mariadb.com/docs/server/server-usage/backup-and-restore/mariadb-backup) - Backup fails due to MLOG\_INDEX\_LOAD record
 * Fixes for the following [security vulnerabilities](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/security):
   * CVE-\`-\`\`\`
 

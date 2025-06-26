@@ -28,7 +28,7 @@ Thanks, and enjoy MariaDB!
 * [MDEV-14244](https://jira.mariadb.org/browse/MDEV-14244) [MariaDB 10.2.10](mariadb-10210-release-notes.md) fails to run on Debian Stretch with ext3 and O\_DIRECT
 * [MDEV-14219](https://jira.mariadb.org/browse/MDEV-14219) Allow online table rebuild when encryption or compression parameters change
 
-### [MariaDB Backup](broken-reference)
+### [mariadb-backup](https://mariadb.com/docs/server/server-usage/backup-and-restore/mariadb-backup)
 
 * [MDEV-14499](https://jira.mariadb.org/browse/MDEV-14499) mariadb-backup 10.2 fails to back up a multi-file InnoDB system tablespace
 * [MDEV-14447](https://jira.mariadb.org/browse/MDEV-14447) mariadb-backup incremental incorrectly extends system tablespace for multi-file innodb\_data\_file\_path

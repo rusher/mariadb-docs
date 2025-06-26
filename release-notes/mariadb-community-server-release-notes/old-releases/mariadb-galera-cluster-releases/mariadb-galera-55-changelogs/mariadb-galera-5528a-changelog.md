@@ -2,36 +2,28 @@
 
 The most recent [MariaDB Galera Cluster 5.5](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/galera/README.md) release is:[**MariaDB Galera Cluster 5.5.63**](../mariadb-galera-55-release-notes/mariadb-galera-cluster-5563-release-notes.md) [Download Now](https://downloads.mariadb.org/mariadb-galera/5.5.63)
 
-[Download](https://downloads.mariadb.org/mariadb-galera/5.5.28a) |[Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/mariadb-galera-cluster-releases/mariadb-galera-55-changelogs/broken-reference/README.md) |**Changelog** |[Overview of Galera](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/what-is-mariadb-galera-cluster/README.md)
+[Download](https://downloads.mariadb.org/mariadb-galera/5.5.28a) |[Release Notes](https://mariadb.com/docs/release-notes/mariadb-community-server-release-notes/old-releases/mariadb-galera-cluster-releases/mariadb-galera-55-changelogs/mariadb-galera-5528a-changelog) |**Changelog** |[Overview of Galera](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/what-is-mariadb-galera-cluster/README.md)
 
 **Release date:** 21 Dec 2012
 
-For the highlights of this release, see the[release notes](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/mariadb-community-server-release-notes/old-releases/mariadb-galera-cluster-releases/mariadb-galera-55-changelogs/broken-reference/README.md).
+For the highlights of this release, see the[release notes](https://mariadb.com/docs/release-notes/mariadb-community-server-release-notes/old-releases/mariadb-galera-cluster-releases/mariadb-galera-55-release-notes).
 
-The revision number links will take you to the revision's page on Launchpad. On\
-Launchpad you can view more details of the revision and view diffs of the code\
-modified in that revision.
+The revision number links will take you to the revision's page on Launchpad. On Launchpad you can view more details of the revision and view diffs of the code modified in that revision.
 
-* [Revision #3365](https://bazaar.launchpad.net/~maria-captains/maria/maria-5.5-galera/revision/3365)\
-  Thu 2012-12-20 12:34:37 +0100
+* [Revision #3365](https://bazaar.launchpad.net/~maria-captains/maria/maria-5.5-galera/revision/3365)\ Thu 2012-12-20 12:34:37 +0100
   * update test cases and results
-* [Revision #3364](https://bazaar.launchpad.net/~maria-captains/maria/maria-5.5-galera/revision/3364) \[merge]\
-  Thu 2012-12-13 18:01:50 +0400
+* [Revision #3364](https://bazaar.launchpad.net/~maria-captains/maria/maria-5.5-galera/revision/3364) \[merge]\ Thu 2012-12-13 18:01:50 +0400
   * merging.
-  * [Revision #3356.1.2](https://bazaar.launchpad.net/~maria-captains/maria/maria-5.5-galera/revision/3356.1.2) \[merge]\
-    Fri 2012-11-30 13:36:29 +0200
+  * [Revision #3356.1.2](https://bazaar.launchpad.net/~maria-captains/maria/maria-5.5-galera/revision/3356.1.2) \[merge]\ Fri 2012-11-30 13:36:29 +0200
     * References: [Bug #1066784](https://bugs.launchpad.net/bugs/1066784) - Merged with [MariaDB 5.5.28](../../release-notes-mariadb-5-5-series/mariadb-5528-release-notes.md)a bzr merge -r tag:mariadb-5.5.28a lp:maria/5.5 ...no conflicts
     * This merges in [MariaDB 5.5.28](../../release-notes-mariadb-5-5-series/mariadb-5528-release-notes.md)a:
       * [MariaDB 5.5.28a Release Notes](../../release-notes-mariadb-5-5-series/mariadb-5528a-release-notes.md)
       * [MariaDB 5.5.28a Changelog](../../../changelogs/changelogs-mariadb-55-series/mariadb-5528a-changelog.md)
-  * [Revision #3356.1.1](https://bazaar.launchpad.net/~maria-captains/maria/maria-5.5-galera/revision/3356.1.1)\
-    Wed 2012-11-28 17:38:32 +0200
+  * [Revision #3356.1.1](https://bazaar.launchpad.net/~maria-captains/maria/maria-5.5-galera/revision/3356.1.1)\ Wed 2012-11-28 17:38:32 +0200
     * References: [Bug #1066784](https://bugs.launchpad.net/bugs/1066784) - Merged revisions 3810-3827 from lp:codership-mysql
-* [Revision #3363](https://bazaar.launchpad.net/~maria-captains/maria/maria-5.5-galera/revision/3363)\
-  Thu 2012-12-13 17:48:46 +0400
+* [Revision #3363](https://bazaar.launchpad.net/~maria-captains/maria/maria-5.5-galera/revision/3363)\ Thu 2012-12-13 17:48:46 +0400
   * [MDEV-507](https://jira.mariadb.org/browse/MDEV-507) Galera Deb/RPM packages. Add new wsrep-related files to the DEB packages.
-* [Revision #3362](https://bazaar.launchpad.net/~maria-captains/maria/maria-5.5-galera/revision/3362)\
-  Thu 2012-11-29 14:50:52 +0400
+* [Revision #3362](https://bazaar.launchpad.net/~maria-captains/maria/maria-5.5-galera/revision/3362)\ Thu 2012-11-29 14:50:52 +0400
   * [MDEV-3893](https://jira.mariadb.org/browse/MDEV-3893) mariadb-galera-server deb package cannot be installed on a mysql-free machine. Fixed templates for messages.
 * [Revision #3361](https://bazaar.launchpad.net/~maria-captains/maria/maria-5.5-galera/revision/3361)\
   Wed 2012-11-28 17:15:46 +0400
