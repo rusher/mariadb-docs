@@ -73,7 +73,6 @@ alter_specification:
   | ADD SYSTEM VERSIONING
   | DROP SYSTEM VERSIONING
 
-
 index_col_name:
     col_name [(length)] [ASC | DESC]
 
@@ -81,15 +80,17 @@ index_col_name:
 index_type:
     USING {BTREE | HASH | RTREE}
 
-
-&#x3C;a data-footnote-ref href="#user-content-fn-4">index_option&#x3C;/a>:
-    [ KEY_BLOCK_SIZE [=] value
+index_option:
+  [ KEY_BLOCK_SIZE [=] value
   | index_type
   | WITH PARSER parser_name
   | VISIBLE
   | COMMENT 'string'
   | CLUSTERING={YES| NO} ]
   [ IGNORED | NOT IGNORED ]
+
+  table_options: same as for CREATE TABLE; see below
+
 ```
 
 ## Description
