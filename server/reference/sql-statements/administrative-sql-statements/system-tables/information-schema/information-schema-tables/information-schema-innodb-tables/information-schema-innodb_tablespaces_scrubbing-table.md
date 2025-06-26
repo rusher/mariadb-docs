@@ -1,6 +1,8 @@
 # Information Schema INNODB\_TABLESPACES\_SCRUBBING Table
 
-The table was removed in [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1052-release-notes) - see [MDEV-15528](https://jira.mariadb.org/browse/MDEV-15528).
+{% hint style="info" %}
+This table was removed in [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1052-release-notes) - see [MDEV-15528](https://jira.mariadb.org/browse/MDEV-15528).
+{% endhint %}
 
 The [Information Schema](../../) `INNODB_TABLESPACES_SCRUBBING` table contains [data scrubbing](../../../../../../../server-usage/storage-engines/innodb/innodb-data-scrubbing.md) information.
 

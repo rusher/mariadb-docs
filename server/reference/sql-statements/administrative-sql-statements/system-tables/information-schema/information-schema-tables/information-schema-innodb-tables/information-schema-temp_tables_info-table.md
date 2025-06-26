@@ -1,6 +1,8 @@
 # Information Schema TEMP\_TABLES\_INFO Table
 
-The `TEMP_TABLES_INFO` table was removed and is no longer a part of MariaDB. See [MDEV-12459](https://jira.mariadb.org/browse/MDEV-12459) progress on an alternative.
+{% hint style="info" %}
+This table was removed and is no longer a part of MariaDB. See [MDEV-12459](https://jira.mariadb.org/browse/MDEV-12459) for an alternative.
+{% endhint %}
 
 The [Information Schema](../../) `TEMP_TABLES_INFO` table contains information about active InnoDB temporary tables. All user and system-created temporary tables are reported when querying this table, with the exception of optimized internal temporary tables. The data is stored in memory.
 

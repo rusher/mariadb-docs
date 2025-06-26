@@ -2,7 +2,7 @@
 
 The `INNODB_CMPMEM` and `INNODB_CMPMEM_RESET` tables contain status information on compressed pages in the [buffer pool](../../../../../../../server-usage/storage-engines/innodb/innodb-buffer-pool.md) (see InnoDB [COMPRESSED](../../../../../../../server-usage/storage-engines/innodb/innodb-row-formats/innodb-row-formats-overview.md) format).
 
-The [PROCESS](../../../../../account-management-sql-statements/grant.md#global-privileges) privilege is required to query this table.
+The [PROCESS](../../../../../account-management-sql-statements/grant.md#process) privilege is required to query this table.
 
 These tables contain the following columns:
 

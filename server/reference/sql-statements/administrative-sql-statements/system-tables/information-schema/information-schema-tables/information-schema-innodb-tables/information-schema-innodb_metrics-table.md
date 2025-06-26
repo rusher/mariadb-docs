@@ -27,7 +27,7 @@ It has the following columns:
 | TYPE              | Item type; one of counter, value, status\_counter, set\_owner, set\_member.                                                                                                                                                                                                                                                                                                                                      |
 | COMMENT           | Counter description.                                                                                                                                                                                                                                                                                                                                                                                             |
 
-Note: In [MariaDB 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/broken-reference/README.md) and earlier the `ENABLED` column was called `STATUS`.
+Note: In MariaDB 10.4 and earlier the `ENABLED` column was called `STATUS`.
 
 ## Enabling and Disabling Counters
 
@@ -98,7 +98,7 @@ Counters can also be reset. Resetting sets all the `*_COUNT_RESET` values to zer
 
 **MariaDB starting with** [**10.6**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/what-is-mariadb-106)
 
-From [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/what-is-mariadb-106), the interface was simplified by removing the following:
+From MariaDB 10.6, the interface was simplified by removing the following:
 
 * buffer\_LRU\_batches\_flush
 * buffer\_LRU\_batch\_flush\_pages
@@ -113,8 +113,6 @@ and by making the following reflect the status variables:
 The intention is to eventually remove the interface entirely (see [MDEV-15706](https://jira.mariadb.org/browse/MDEV-15706)).
 
 ## Examples
-
-[MariaDB 10.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-8-series/what-is-mariadb-108):
 
 ```sql
 SELECT name,subsystem,type,comment FROM INFORMATION_SCHEMA.INNODB_METRICS\G

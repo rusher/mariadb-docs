@@ -25,8 +25,6 @@ It has the following columns:
 
 ## Examples
 
-[MariaDB 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/broken-reference/README.md):
-
 ```sql
 DESC information_schema.innodb_sys_tablespaces;
 +----------------+---------------------+------+-----+---------+-------+
@@ -44,8 +42,6 @@ DESC information_schema.innodb_sys_tablespaces;
 | ALLOCATED_SIZE | bigint(21) unsigned | NO   |     | 0       |       |
 +----------------+---------------------+------+-----+---------+-------+
 ```
-
-From [MariaDB 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/broken-reference/README.md):
 
 ```sql
 SELECT * FROM information_schema.INNODB_SYS_TABLESPACES LIMIT 2\G
