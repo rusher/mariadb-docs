@@ -1,8 +1,6 @@
-
 # ATAN2
 
 ## Syntax
-
 
 ```
 ATAN(Y,X), ATAN2(Y,X)
@@ -10,14 +8,11 @@ ATAN(Y,X), ATAN2(Y,X)
 
 ## Description
 
-
-Returns the arc tangent of the two variables X and Y. It is similar to
-calculating the arc tangent of Y / X, except that the signs of both
+Returns the arc tangent of the two variables X and Y. It is similar to\
+calculating the arc tangent of Y / X, except that the signs of both\
 arguments are used to determine the quadrant of the result.
 
-
 ## Examples
-
 
 ```
 SELECT ATAN(-2,2);
@@ -35,8 +30,6 @@ SELECT ATAN2(PI(),0);
 +--------------------+
 ```
 
-
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
-
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

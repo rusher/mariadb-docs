@@ -1,8 +1,6 @@
-
-# INET_ATON
+# INET\_ATON
 
 ## Syntax
-
 
 ```
 INET_ATON(expr)
@@ -10,17 +8,13 @@ INET_ATON(expr)
 
 ## Description
 
-
-Given the dotted-quad representation of an IPv4 network address as a string,
-returns an integer that represents the numeric value of the address.
+Given the dotted-quad representation of an IPv4 network address as a string,\
+returns an integer that represents the numeric value of the address.\
 Addresses may be 4- or 8-byte addresses.
-
 
 Returns NULL if the argument is not understood.
 
-
 ## Examples
-
 
 ```
 SELECT INET_ATON('192.168.1.1');
@@ -33,15 +27,11 @@ SELECT INET_ATON('192.168.1.1');
 
 This is calculated as follows: 192 x 2563 + 168 x 256 2 + 1 x 256 + 1
 
-
 ## See Also
 
+* [INET6\_ATON()](inet6_aton.md)
+* [INET\_NTOA()](inet_ntoa.md)
 
-* [INET6_ATON()](inet6_aton.md)
-* [INET_NTOA()](inet_ntoa.md)
-
-
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
-
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

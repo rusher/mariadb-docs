@@ -1,8 +1,6 @@
-
 # MAKEDATE
 
 ## Syntax
-
 
 ```
 MAKEDATE(year,dayofyear)
@@ -10,13 +8,10 @@ MAKEDATE(year,dayofyear)
 
 ## Description
 
-
-Returns a date, given `year` and `day-of-year values`. `dayofyear` must be
+Returns a date, given `year` and `day-of-year values`. `dayofyear` must be\
 greater than 0 or the result is NULL.
 
-
 ## Examples
-
 
 ```
 SELECT MAKEDATE(2011,31), MAKEDATE(2011,32);
@@ -28,6 +23,7 @@ SELECT MAKEDATE(2011,31), MAKEDATE(2011,32);
 ```
 
 2012 is a leap year:
+
 ```
 SELECT MAKEDATE(2011,365), MAKEDATE(2012,365);
 +--------------------+--------------------+
@@ -51,8 +47,6 @@ SELECT MAKEDATE(2011,0);
 +------------------+
 ```
 
-
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
-
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

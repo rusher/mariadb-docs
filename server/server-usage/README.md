@@ -33,8 +33,8 @@ layout:
 [data-handling](data-handling/)
 {% endcontent-ref %}
 
-{% content-ref url="backing-up-and-restoring-databases/" %}
-[backing-up-and-restoring-databases](backing-up-and-restoring-databases/)
+{% content-ref url="backup-and-restore/" %}
+[backup-and-restore](backup-and-restore/)
 {% endcontent-ref %}
 
 {% content-ref url="tables/" %}

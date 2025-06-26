@@ -1,8 +1,6 @@
-
 # CURDATE
 
 ## Syntax
-
 
 ```
 CURDATE()
@@ -12,17 +10,13 @@ CURRENT_DATE()
 
 ## Description
 
-
-`CURDATE` returns the current date as a value in 'YYYY-MM-DD' or YYYYMMDD
-format, depending on whether the function is used in a string or
+`CURDATE` returns the current date as a value in 'YYYY-MM-DD' or YYYYMMDD\
+format, depending on whether the function is used in a string or\
 numeric context.
-
 
 `CURRENT_DATE` and `CURRENT_DATE()` are synonyms.
 
-
 ## Examples
-
 
 ```
 SELECT CURDATE();
@@ -35,7 +29,6 @@ SELECT CURDATE();
 
 In a numeric context (note this is not performing date calculations):
 
-
 ```
 SELECT CURDATE() +0;
 +--------------+
@@ -47,7 +40,6 @@ SELECT CURDATE() +0;
 
 Data calculation:
 
-
 ```
 SELECT CURDATE() - INTERVAL 5 DAY;
 +----------------------------+
@@ -57,8 +49,6 @@ SELECT CURDATE() - INTERVAL 5 DAY;
 +----------------------------+
 ```
 
-
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
-
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

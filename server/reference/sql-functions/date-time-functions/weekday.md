@@ -1,8 +1,6 @@
-
 # WEEKDAY
 
 ## Syntax
-
 
 ```
 WEEKDAY(date)
@@ -10,17 +8,13 @@ WEEKDAY(date)
 
 ## Description
 
-
-Returns the weekday index for `date` 
+Returns the weekday index for `date`\
 (`0` = Monday, `1` = Tuesday, ... `6` = Sunday).
 
-
-This contrasts with [DAYOFWEEK()](dayofweek.md) which follows the ODBC standard
+This contrasts with [DAYOFWEEK()](dayofweek.md) which follows the ODBC standard\
 (`1` = Sunday, `2` = Monday, ..., `7` = Saturday).
 
-
 ## Examples
-
 
 ```
 SELECT WEEKDAY('2008-02-03 22:23:00');
@@ -59,8 +53,6 @@ SELECT d FROM t1 where WEEKDAY(d) = 6;
 +---------------------+
 ```
 
-
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
-
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

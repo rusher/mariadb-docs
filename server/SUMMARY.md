@@ -2464,7 +2464,6 @@
       * [SMALLINT](reference/data-types/numeric-data-types/smallint.md)
       * [TINYINT](reference/data-types/numeric-data-types/tinyint.md)
       * [VECTOR](reference/data-types/numeric-data-types/vector.md)
-    * [Data Types Overview](reference/data-types/data-types-overview.md)
     * [Date and Time Data Types](reference/data-types/date-and-time-data-types/README.md)
       * [DATE](reference/data-types/date-and-time-data-types/date.md)
       * [DATETIME](reference/data-types/date-and-time-data-types/datetime.md)

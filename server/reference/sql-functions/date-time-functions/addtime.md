@@ -1,8 +1,6 @@
-
 # ADDTIME
 
 ## Syntax
-
 
 ```
 ADDTIME(expr1,expr2)
@@ -10,13 +8,10 @@ ADDTIME(expr1,expr2)
 
 ## Description
 
-
-`ADDTIME()` adds *expr2* to *expr1* and returns the result. *expr1* is a time
-or datetime expression, and *expr2* is a time expression.
-
+`ADDTIME()` adds _expr2_ to _expr1_ and returns the result. _expr1_ is a time\
+or datetime expression, and _expr2_ is a time expression.
 
 ## Examples
-
 
 ```
 SELECT ADDTIME('2007-12-31 23:59:59.999999', '1 1:1:1.000002');
@@ -34,8 +29,6 @@ SELECT ADDTIME('01:00:00.999999', '02:00:00.999998');
 +-----------------------------------------------+
 ```
 
-
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
-
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

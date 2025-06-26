@@ -1,20 +1,15 @@
-
 # Oracle XE 11.2. and MariaDB 10.1 integration on Ubuntu 14.04 and Debian systems
 
-1) Sign up for Oracle downloads and download Oracle Express at:
-
+1. Sign up for Oracle downloads and download Oracle Express at:
 
 [index.html](https://www.oracle.com/technetwork/database/database-technologies/express-edition/downloads/index.html)
 
+* Sign up (unless already) and log in.
+* Accept the license agreement.
+* Download Oracle Database Express Edition 11g Release 2 for Linux x64\
+  (oracle-xe-11.2.0-1.0.x86\_64.rpm.zip, version numbers may change over time)
 
-- Sign up (unless already) and log in.
-- Accept the license agreement.
-- Download Oracle Database Express Edition 11g Release 2 for Linux x64
-(oracle-xe-11.2.0-1.0.x86_64.rpm.zip, version numbers may change over time)
-
-
-2) Prepare apt-get on your system
-
+2. Prepare apt-get on your system
 
 ```
 sudo add-apt-repository ppa:webupd8team/java
@@ -23,19 +18,16 @@ sudo apt-get update
 sudo apt-get install oracle-java8-installer
 ```
 
-3) After Java installation, verify the version
-
+3. After Java installation, verify the version
 
 ```
 java -version
 java version "1.8.0_121"
 ```
 
-4) Edit /etc/bash.bashrc
-
+4. Edit /etc/bash.bashrc
 
 Scroll to the bottom of the file and add the following lines.
-
 
 ```
 export JAVA_HOME=/usr/lib/jvm/java-8-oracle
@@ -44,22 +36,19 @@ export PATH=$JAVA_HOME/bin:$PATH
 
 Save and check:
 
-
 ```
 source /etc/bash.bashrc
 echo $JAVA_HOME
 /usr/lib/jvm/java-8-oracle
 ```
 
-5) Additional packages are required, unless installed already. Run the command:
-
+5. Additional packages are required, unless installed already. Run the command:
 
 ```
 sudo apt-get install alien libaio1 unixodbc
 ```
 
-6)
-
+6.
 
 ```
 unzip oracle-xe-11.2.0-1.0.x86_64.rpm.zip
@@ -67,15 +56,12 @@ cd Disk1/
 sudo alien --scripts -d oracle-xe-11.2.0-1.0.x86_64.rpm
 ```
 
-This step might take some time. You may proceed steps 7)-11)
+This step might take some time. You may proceed steps 7)-11)\
 in the meanwhile in another terminal window.
 
-
-7)
-
+7.
 
 Create a new file /sbin/chkconfig and add the following contents
-
 
 ```
 #!/bin/bash
@@ -96,23 +82,19 @@ update-rc.d oracle-xe defaults 80 01
 #EOF
 ```
 
-8)
-
+8.
 
 ```
 sudo chmod 755 /sbin/chkconfig
 ```
 
-9)
-
+9.
 
 Create a new file /etc/sysctl.d/60-oracle.conf
 
-
-Copy and paste the following into the file. Kernel.shmmax is the
-maximum possible value of physical RAM in bytes. 536870912 / 1024
+Copy and paste the following into the file. Kernel.shmmax is the\
+maximum possible value of physical RAM in bytes. 536870912 / 1024\
 /1024 = 512 MB.
-
 
 ```
 #Oracle 11g XE kernel parameters  
@@ -122,20 +104,16 @@ kernel.sem=250 32000 100 128
 kernel.shmmax=536870912
 ```
 
-10)
-
+10.
 
 ```
 sudo service procps start
 sudo sysctl -q fs.file-max
 ```
 
-1. This method should return the following:
-fs.file-max = 6815744
-
-
-11) Some additional steps required
-
+1. This method should return the following:\
+   fs.file-max = 6815744
+2. Some additional steps required
 
 ```
 sudo ln -s /usr/bin/awk /bin/awk
@@ -143,20 +121,17 @@ mkdir /var/lock/subsys
 touch /var/lock/subsys/listener
 ```
 
-12) Install Oracle XE (should have been converted from .rpm to .deb by now)
-
+12. Install Oracle XE (should have been converted from .rpm to .deb by now)
 
 ```
 sudo dpkg --install oracle-xe_11.2.0-2_amd64.deb
 ```
 
-13)
+13.
 
-
-Execute the following to avoid getting a ORA-00845: MEMORY_TARGET
-error. Note: replace "size=4096m" with the size of your (virtual)
+Execute the following to avoid getting a ORA-00845: MEMORY\_TARGET\
+error. Note: replace "size=4096m" with the size of your (virtual)\
 machine RAM in MBs.
-
 
 ```
 sudo rm -rf /dev/shm
@@ -164,12 +139,10 @@ sudo mkdir /dev/shm
 sudo mount -t tmpfs shmfs -o size=4096m /dev/shm
 ```
 
-14) Create the file /etc/rc2.d/S01shm_load
+14. Create the file /etc/rc2.d/S01shm\_load
 
-
-NOTE: replace "size=4096m"
+NOTE: replace "size=4096m"\
 with the size of your machine RAM in MBS.
-
 
 ```
 #!/bin/sh
@@ -188,30 +161,24 @@ esac
 sudo chmod 755 /etc/rc2.d/S01shm_load
 ```
 
-15) Configure Oracle 11g R2 Express Edition. Default answers are probably OK.
-
+15. Configure Oracle 11g R2 Express Edition. Default answers are probably OK.
 
 ```
 sudo /etc/init.d/oracle-xe configure
 ```
 
-Specify the HTTP port that will be used for Oracle Application Express [8080]:
+Specify the HTTP port that will be used for Oracle Application Express \[8080]:
 
+Specify a port that will be used for the database listener \[1521]:
 
-Specify a port that will be used for the database listener [1521]:
-
-
-Specify a password to be used for database accounts. Note that the same
-password will be used for SYS and SYSTEM. Oracle recommends the use of 
-different passwords for each database account. This can be done after 
+Specify a password to be used for database accounts. Note that the same\
+password will be used for SYS and SYSTEM. Oracle recommends the use of\
+different passwords for each database account. This can be done after\
 initial configuration:
 
+Do you want Oracle Database 11g Express Edition to be started on boot (y/n) \[y]:
 
-Do you want Oracle Database 11g Express Edition to be started on boot (y/n) [y]:
-
-
-16) Edit /etc/bash.bashrc. Add to the end of the file:
-
+16. Edit /etc/bash.bashrc. Add to the end of the file:
 
 ```
 export ORACLE_HOME=/u01/app/oracle/product/11.2.0/xe
@@ -224,9 +191,7 @@ export PATH=$ORACLE_HOME/bin:$PATH
 
 Save.
 
-
-17) Run source command and check that the output makes sense
-
+17. Run source command and check that the output makes sense
 
 ```
 source /etc/bash.bashrc
@@ -234,27 +199,21 @@ echo $ORACLE_HOME
 /u01/app/oracle/product/11.2.0/xe
 ```
 
-18) Apply desktop icon changes and start Oracle:
-
+18. Apply desktop icon changes and start Oracle:
 
 ```
 sudo chmod a+x ~/Desktop/oraclexe-gettingstarted.desktop
 sudo service oracle-xe start
 ```
 
-19) Download SQL Developer package
+19. Download SQL Developer package
 
-
-Download Oracle SQL Developer from the Oracle site. Select the Linux
-RPM package:
-[index.html](https://www.oracle.com/technetwork/developer-tools/sql-developer/downloads/index.html)
-
+Download Oracle SQL Developer from the Oracle site. Select the Linux\
+RPM package:[index.html](https://www.oracle.com/technetwork/developer-tools/sql-developer/downloads/index.html)
 
 Choose the Linux RPM package.
 
-
-20) Install SQL Developer
-
+20. Install SQL Developer
 
 ```
 sudo alien --scripts -d sqldeveloper-4.1.5.21.78-1.noarch.rpm
@@ -262,8 +221,7 @@ sudo dpkg --install sqldeveloper_4.1.5.21.78-2_all.deb
 mkdir ~/.sqldeveloper
 ```
 
-21) Run sqldeveloper:
-
+21. Run sqldeveloper:
 
 ```
 sudo /opt/sqldeveloper/sqldeveloper.sh
@@ -271,9 +229,7 @@ sudo /opt/sqldeveloper/sqldeveloper.sh
 
 1. Tell sqldeveloper the correct Java path, if it asks for it:
 
-
 /usr/lib/jvm/java-8-oracle
-
 
 ```
 - Click connections
@@ -290,20 +246,16 @@ sudo /opt/sqldeveloper/sqldeveloper.sh
 
 ## MariaDB
 
+22. Install MariaDB
 
-22) Install MariaDB
-
-
-[](https://downloads.mariadb.org/mariadb/repositories/)
 Instructions are for Ubuntu, but choose the one that is appropriate:
-- Ubuntu
-- 14.04 LTS "trusty"
-- 10.1 [Stable]
-- choose a mirror
 
+* Ubuntu
+* 14.04 LTS "trusty"
+* 10.1 \[Stable]
+* choose a mirror
 
 Run the commands given for you. For example (DO NOT COPY PASTE BELOW, CHECK WHAT THE MariaDB PAGE TELLS YOU TO DO):
-
 
 ```
 sudo apt-get install software-properties-common
@@ -314,22 +266,14 @@ sudo apt-get update
 
 1. Install mariadb-server:
 
-
 ```
 sudo apt-get install mariadb-server
 ```
 
-23) Install ODBC driver
+23. Install ODBC driver
+24. MariaDB Connector/ODBC 2.0.13 Stable for Linux
 
-
-[](https://downloads.mariadb.org/connector-odbc/)
-
-
-1. MariaDB Connector/ODBC 2.0.13 Stable for Linux
-
-
-Download: mariadb-connector-[ODBC-2](https://jira.mariadb.org/browse/ODBC-2).0.13-ga-linux-x86_64.tar.gz
-
+Download: mariadb-connector-[ODBC-2](https://jira.mariadb.org/browse/ODBC-2).0.13-ga-linux-x86\_64.tar.gz
 
 ```
 tar xfz mariadb-connector-odbc-2.0.13-ga-linux-x86_64.tar.gz
@@ -337,8 +281,7 @@ sudo cp -p mariadb-connector-odbc-2.0.13-ga-linux-x86_64/lib/libmaodbc.so /lib
 sudo ldconfig
 ```
 
-24) Install unixodbc and mariadb-connect engine
-
+24. Install unixodbc and mariadb-connect engine
 
 ```
 apt-get install unixodbc-dev
@@ -348,11 +291,9 @@ apt-get install libodbc1
 apt-get install mariadb-connect-engine-10.1
 ```
 
-25) Edit /etc/odbcinst.ini
-
+25. Edit /etc/odbcinst.ini
 
 Add:
-
 
 ```
 [Oracle ODBC driver for Oracle 11.2]
@@ -360,11 +301,9 @@ Description     = Oracle 11.2 ODBC driver
 Driver          = /u01/app/oracle/product/11.2.0/xe/lib/libsqora.so.11.1
 ```
 
-26) Edit /etc/odbc.ini
-
+26. Edit /etc/odbc.ini
 
 Add (check your password):
-
 
 ```
 [XE]
@@ -375,8 +314,7 @@ UserName        = SYSTEM
 Password        = <your-password>
 ```
 
-27) Test ODBC connection and add a table
-
+27. Test ODBC connection and add a table
 
 ```
 isql -v XE SYSTEM <your-password>
@@ -389,16 +327,13 @@ insert into t1 (i) values (8);
 select i from t1;
 ```
 
-And you should see the rows. You can test the
-same with sqldeveloper, open XE connection and run
+And you should see the rows. You can test the\
+same with sqldeveloper, open XE connection and run\
 select i from t1; in Worksheet.
 
-
-28) Edit /etc/init.d/mysql
-
+28. Edit /etc/init.d/mysql
 
 Add:
-
 
 ```
 export JAVA_HOME=/usr/lib/jvm/java-8-oracle 
@@ -414,16 +349,13 @@ export PATH=$ORACLE_HOME/bin:$PATH
 
 Right after END INIT INFO. Otherwise mysqld will not find the Oracle ODBC driver.
 
-
-28) Restart MariaDB
-
+28. Restart MariaDB
 
 ```
 sudo /etc/init.d/mysql restart
 ```
 
-29)
-
+29.
 
 ```
 mysql -uroot -p
@@ -436,28 +368,21 @@ CREATE TABLE t1 ENGINE=CONNECT TABLE_TYPE=ODBC tabname='T1' CONNECTION='DSN=XE;U
 select I from t1;
 ```
 
-You should see the previously inserted values 1,3,5 and 8.
-Using isql or sqldeveloper, add another rows with values 9 and 11.
-Remember to commit, if you are using Oracle sqldeveloper. You should now see
+You should see the previously inserted values 1,3,5 and 8.\
+Using isql or sqldeveloper, add another rows with values 9 and 11.\
+Remember to commit, if you are using Oracle sqldeveloper. You should now see\
 the added values via MariaDB client (mysql-client) connection.
 
-
-To be examined: inserting values to the t1 table from mariadb connection
+To be examined: inserting values to the t1 table from mariadb connection\
 does not work. It gives a precision error from Oracle side.
-
 
 ## Connect to MariaDB via JDBC
 
-
-Download MySQL Connector from
-[5.0.html](https://dev.mysql.com/downloads/connector/j/5.0.html)
-
+Download MySQL Connector from[5.0.html](https://dev.mysql.com/downloads/connector/j/5.0.html)
 
 Select Version (for example 5.0.8)
 
-
 Platform independent. Download mysql-connector-java-5.0.8.tar.gz
-
 
 ```
 tar xvfz mysql-connector-java-5.0.8.tar.gz
@@ -469,27 +394,19 @@ sudo /opt/sqldeveloper/sqldeveloper.sh
 
 In SQL Developer choose Tools -> Preferences
 
-
 Expand the "Database" option in the left hand tree
-
 
 Click on "Third Party JDBC Drivers"
 
-
 Click on "Add Entry..."
-
 
 Navigate to your third-party driver jar file and choose OK
 
-
 /usr/lib/jvm/java-8-oracle/lib/mariadb/mysql-connector-java-5.0.8-bin.jar
-
 
 Click Connections -> New connection.
 
-
 Add values. The following are examples:
-
 
 ```
 Connection Name: MariaDB via MySQL Conn
@@ -507,20 +424,15 @@ Click Save.
 Click Connect.
 ```
 
-You are connected. You may run commands in the Worksheet.
+You are connected. You may run commands in the Worksheet.\
 For example:
-
 
 use mdb;
 
-
 show tables;
-
 
 You should see the tables.
 
-
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
-
 
 {% @marketo/form formId="4316" %}

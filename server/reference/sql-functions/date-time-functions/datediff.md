@@ -1,8 +1,6 @@
-
 # DATEDIFF
 
 ## Syntax
-
 
 ```
 DATEDIFF(expr1,expr2)
@@ -10,15 +8,12 @@ DATEDIFF(expr1,expr2)
 
 ## Description
 
-
-`DATEDIFF()` returns (*expr1* – *expr2*) expressed
-as a value in days from one date to the other. *expr1* and *expr2* are date
-or date-and-time expressions. Only the date parts of the values are used in the
+`DATEDIFF()` returns (_expr1_ – _expr2_) expressed\
+as a value in days from one date to the other. _expr1_ and _expr2_ are date\
+or date-and-time expressions. Only the date parts of the values are used in the\
 calculation.
 
-
 ## Examples
-
 
 ```
 SELECT DATEDIFF('2007-12-31 23:59:59','2007-12-30');
@@ -68,8 +63,6 @@ SELECT d, DATEDIFF(NOW(),d) FROM t1;
 +---------------------+-------------------+
 ```
 
-
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
-
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

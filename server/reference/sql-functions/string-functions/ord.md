@@ -1,8 +1,6 @@
-
 # ORD
 
 ## Syntax
-
 
 ```
 ORD(str)
@@ -10,11 +8,9 @@ ORD(str)
 
 ## Description
 
-
-If the leftmost character of the string `str` is a multi-byte character,
-returns the code for that character, calculated from the numeric
+If the leftmost character of the string `str` is a multi-byte character,\
+returns the code for that character, calculated from the numeric\
 values of its constituent bytes using this formula:
-
 
 ```
 (1st byte code)
@@ -22,12 +18,10 @@ values of its constituent bytes using this formula:
 + (3rd byte code x 256 x 256) ...
 ```
 
-If the leftmost character is not a multi-byte character, ORD() returns
+If the leftmost character is not a multi-byte character, ORD() returns\
 the same value as the [ASCII()](ascii.md) function.
 
-
 ## Examples
-
 
 ```
 SELECT ORD('2');
@@ -40,12 +34,9 @@ SELECT ORD('2');
 
 ## See Also
 
-
 * [ASCII()](ascii.md) - Return ASCII value of first character
 * [CHAR()](char-function.md) - Create a character from an integer value
 
-
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
-
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

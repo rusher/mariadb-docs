@@ -1,8 +1,6 @@
-
 # DAYOFMONTH
 
 ## Syntax
-
 
 ```
 DAYOFMONTH(date)
@@ -10,17 +8,13 @@ DAYOFMONTH(date)
 
 ## Description
 
-
-Returns the day of the month for date, in the range `1` to `31`, or `0`
-for dates such as `'0000-00-00'` or `'2008-00-00'` which have a zero day
+Returns the day of the month for date, in the range `1` to `31`, or `0`\
+for dates such as `'0000-00-00'` or `'2008-00-00'` which have a zero day\
 part.
-
 
 DAY() is a synonym.
 
-
 ## Examples
-
 
 ```
 SELECT DAYOFMONTH('2007-02-03');
@@ -53,8 +47,6 @@ SELECT d FROM t1 where DAYOFMONTH(d) = 30;
 +---------------------+
 ```
 
-
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
-
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

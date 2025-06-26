@@ -1,8 +1,6 @@
-
 # GREATEST
 
 ## Syntax
-
 
 ```
 GREATEST(value1,value2,...)
@@ -10,14 +8,10 @@ GREATEST(value1,value2,...)
 
 ## Description
 
-
-With two or more arguments, returns the largest (maximum-valued)
-argument. The arguments are compared using the same rules as for
-[LEAST()](least.md).
-
+With two or more arguments, returns the largest (maximum-valued)\
+argument. The arguments are compared using the same rules as for[LEAST()](least.md).
 
 ## Examples
-
 
 ```
 SELECT GREATEST(2,0);
@@ -46,8 +40,6 @@ SELECT GREATEST('B','A','C');
 +-----------------------+
 ```
 
-
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
-
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

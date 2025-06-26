@@ -1,8 +1,6 @@
-
 # RADIANS
 
 ## Syntax
-
 
 ```
 RADIANS(X)
@@ -10,16 +8,12 @@ RADIANS(X)
 
 ## Description
 
-
-Returns the argument *`X`*, converted from degrees to radians. Note that
+Returns the argument _`X`_, converted from degrees to radians. Note that\
 π radians equals 180 degrees.
-
 
 This is the converse of the [DEGREES()](degrees.md) function.
 
-
 ## Examples
-
 
 ```
 SELECT RADIANS(45);
@@ -51,8 +45,6 @@ SELECT RADIANS(180);
 +------------------+
 ```
 
-
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
-
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

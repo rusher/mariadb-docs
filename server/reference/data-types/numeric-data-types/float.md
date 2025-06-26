@@ -1,57 +1,42 @@
-
 # FLOAT
 
 ## Syntax
-
 
 ```
 FLOAT[(M,D)] [SIGNED | UNSIGNED | ZEROFILL]
 ```
 
-
 ## Description
 
-
 A small (single-precision) floating-point number (see [DOUBLE](double.md) for a regular-size floating point number). Allowable values are:
-
 
 * -3.402823466E+38 to -1.175494351E-38
 * 0
 * 1.175494351E-38 to 3.402823466E+38.
 
-
-These are the theoretical limits, based on the IEEE 
-standard. The actual range might be slightly smaller depending on your
+These are the theoretical limits, based on the IEEE\
+standard. The actual range might be slightly smaller depending on your\
 hardware or operating system.
 
-
-M is the total number of digits and D is the number of digits
-following the decimal point. If M and D are omitted, values are stored
-to the limits allowed by the hardware. A single-precision
+M is the total number of digits and D is the number of digits\
+following the decimal point. If M and D are omitted, values are stored\
+to the limits allowed by the hardware. A single-precision\
 floating-point number is accurate to approximately 7 decimal places.
-
 
 UNSIGNED, if specified, disallows negative values.
 
-
-Using FLOAT might give you some unexpected problems because all
+Using FLOAT might give you some unexpected problems because all\
 calculations in MariaDB are done with double precision. See [Floating Point Accuracy](floating-point-accuracy.md).
-
 
 For more details on the attributes, see [Numeric Data Type Overview](numeric-data-type-overview.md).
 
-
 ## EXAMPLES
-
 
 ### SIGNED and UNSIGNED
 
-
 The FLOAT data type may be SIGNED (allowing negative values) or UNSIGNED (not allowing negative values).
 
-
 Example of FLOAT SIGNED (SIGNED is the default):
-
 
 ```
 CREATE TABLE float_signed_example (
@@ -87,7 +72,6 @@ SELECT * FROM float_signed_example;
 
 Example of FLOAT UNSIGNED:
 
-
 ```
 CREATE TABLE float_unsigned_example (
   description VARCHAR(20),
@@ -122,12 +106,9 @@ SELECT * FROM float_unsigned_example;
 
 ### Out-of-Range
 
-
-A value is considered "out-of-range" when it is too small or too large to be stored in a data type. The size specified when creating the column is the limit for what values can be represented. The limits can also vary based on your hardware and operating system. When SQL_MODE is strict (the default) an out-of-range value generates an error and the operation fails. If strict mode is not in effect, the value is rounded to the nearest valid value and a warning is generated (which might be hidden, depending on your warning settings).
-
+A value is considered "out-of-range" when it is too small or too large to be stored in a data type. The size specified when creating the column is the limit for what values can be represented. The limits can also vary based on your hardware and operating system. When SQL\_MODE is strict (the default) an out-of-range value generates an error and the operation fails. If strict mode is not in effect, the value is rounded to the nearest valid value and a warning is generated (which might be hidden, depending on your warning settings).
 
 A value whose significant digits must be rounded to fit only generates a warning note about data truncation, since it is only an out-of-range value if the rounding causes the value to overflow. A somewhat strange exception happens when the decimal places are 16 digits or larger: at that point the value can round up to be one digit larger than you would expect to be accepted, but only for the next larger power of 10. For instance, a FLOAT(17,16) should max out at 9.9999999999999999, but that value rounds up to being equivalent to 10 (and 11 overflows).
-
 
 ```
 TRUNCATE float_signed_example;
@@ -221,12 +202,9 @@ SELECT * FROM float_unsigned_example;
 
 ### FLOAT ZEROFILL
 
-
 A special type of FLOAT UNSIGNED is FLOAT ZEROFILL, which pads out the values with leading zeros in SELECT results. The number of leading zeros are just enough to pad the field out to the length of the type's field size (counting the decimal point), but the zeros are not included in an expression result or in a UNION SELECT column.
 
-
 Using FLOAT ZEROFILL works the same way as FLOAT UNSIGNED for most operations except a simple SELECT. For example, with the following test table setup:
-
 
 ```
 CREATE TABLE float_zerofill_example (
@@ -260,8 +238,6 @@ SELECT * FROM float_zerofill_example;
 +-------------+--------------+---------+------------------------+
 ```
 
-
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
-
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

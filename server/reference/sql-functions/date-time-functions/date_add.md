@@ -1,26 +1,20 @@
-
-# DATE_ADD
+# DATE\_ADD
 
 ## Syntax
-
 
 ```
 DATE_ADD(date,INTERVAL expr unit)
 ```
 
-
 ## Description
 
-
-Performs date arithmetic. The *date* argument specifies the
-starting date or datetime value. *expr* is an expression specifying the
-interval value to be added to the starting date. *expr* is a
-string; it may start with a "`-`" for negative intervals. *unit* is a
+Performs date arithmetic. The _date_ argument specifies the\
+starting date or datetime value. _expr_ is an expression specifying the\
+interval value to be added to the starting date. _expr_ is a\
+string; it may start with a "`-`" for negative intervals. _unit_ is a\
 keyword indicating the units in which the expression should be interpreted. See [Date and Time Units](date-and-time-units.md) for a complete list of permitted units.
 
-
 The result type of `DATE_ADD()` is determined as follows:
-
 
 * if the first argument is of the type `DATETIME`, the function returns `DATETIME`
 * if the first argument is `DATE` and the interval uses `HOUR` or smaller units, the function returns `DATETIME`
@@ -28,9 +22,7 @@ The result type of `DATE_ADD()` is determined as follows:
 * similarly, if the first argument is `TIME` and the interval uses `DAY` or smaller units the function returns `TIME`, if the interval uses anything larger, the function returns `DATETIME`
 * if the first argument isn't a temporal type, the function returns a string
 
-
 ## Examples
-
 
 ```
 SELECT '2008-12-31 23:59:59' + INTERVAL 1 SECOND;
@@ -106,12 +98,9 @@ SELECT DATE_ADD('1992-12-31 23:59:59.000002', INTERVAL '1.999999' SECOND_MICROSE
 
 ## See Also
 
+* [DATE\_SUB](date_sub.md)
+* [ADD\_MONTHS](add_months.md)
 
-* [DATE_SUB](date_sub.md)
-* [ADD_MONTHS](add_months.md)
-
-
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
-
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

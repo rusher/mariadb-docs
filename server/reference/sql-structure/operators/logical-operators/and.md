@@ -1,26 +1,19 @@
-
 # &&
 
 ## Syntax
-
 
 ```
 AND, &&
 ```
 
-
 ## Description
 
-
-Logical AND. Evaluates to 1 if all operands are non-zero and not NULL,
+Logical AND. Evaluates to 1 if all operands are non-zero and not NULL,\
 to 0 if one or more operands are 0, otherwise NULL is returned.
-
 
 For this operator, [short-circuit evaluation](../operator-precedence.md#short-circuit-evaluation) can be used.
 
-
 ## Examples
-
 
 ```
 SELECT 1 && 1;
@@ -61,11 +54,8 @@ SELECT NULL && 0;
 
 ## See Also
 
-
 * [Operator Precedence](../operator-precedence.md)
 
-
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
-
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}
