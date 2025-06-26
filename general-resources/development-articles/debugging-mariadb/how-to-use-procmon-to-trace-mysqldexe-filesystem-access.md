@@ -4,7 +4,7 @@ This article provides a walkthrough on using the Process Monitor on Windows, tra
 
 ## Download
 
-Process Monitor is an advanced monitoring tool for Windows that shows real-time file system, registry and process/thread activity. It is a part of sysinternals suite developed by Mark Russinovich and Bryce Cogswell. Process Monitor can be directly downloaded from [ProcessMonitor.zip](https://download.sysinternals.com/files/ProcessMonitor.zip) . More description can be found at [https:technet.microsoft.com/en-us/library/bb896645.aspx](https://mariadb.com/kb/en/Procmon's_Microsoft_Tecnet_page)
+Process Monitor is an advanced monitoring tool for Windows that shows real-time file system, registry and process/thread activity. It is a part of sysinternals suite developed by Mark Russinovich and Bryce Cogswell. Process Monitor can be directly downloaded from [ProcessMonitor.zip](https://download.sysinternals.com/files/ProcessMonitor.zip) . More description can be found at [https://learn.microsoft.com/en-us/sysinternals/downloads/procmon](https://learn.microsoft.com/en-us/sysinternals/downloads/procmon)
 
 ## Installation
 
