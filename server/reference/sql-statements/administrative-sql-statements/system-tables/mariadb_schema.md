@@ -6,13 +6,13 @@
 
 For example, in [SQL\_MODE=ORACLE](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/administrative-sql-statements/system-tables/broken-reference/README.md), if one creates a table with the [DATE](../../../data-types/date-and-time-data-types/date.md) type, it will actually create a [DATETIME](../../../data-types/date-and-time-data-types/datetime.md#oracle-mode) column to match what an Oracle user is expecting. To be able to create a MariaDB DATE in Oracle mode one would have to use `mariadb_schema`:
 
-```
+```sql
 CREATE TABLE t1 (d mariadb_schema.DATE);
 ```
 
 `mariadb_schema` is also shown if one creates a table with `DATE` in MariaDB native mode and then does a [SHOW CREATE TABLE](../show/show-create-table.md) in `ORACLE` mode:
 
-```
+```sql
 SET sql_mode=DEFAULT;
 CREATE OR REPLACE TABLE t1 (
   d DATE
@@ -34,7 +34,7 @@ The `mariadb_schema` prefix is displayed only when the data type name would be a
 
 Note, the `mariadb_schema` prefix can be used with any data type, including non-ambiguous ones:
 
-```
+```sql
 CREATE OR REPLACE TABLE t1 (a mariadb_schema.INT);
 SHOW CREATE TABLE t1;
 +-------+--------------------------------------------------+
@@ -54,7 +54,7 @@ Currently the `mariadb_schema` prefix is only used in the following case:
 
 When running with [SQL\_MODE=ORACLE](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/administrative-sql-statements/system-tables/broken-reference/README.md), MariaDB server translates the data type `DATE` to `DATETIME`, for better Oracle compatibility:
 
-```
+```sql
 SET SQL_mode=ORACLE;
 CREATE OR REPLACE TABLE t1 (
   d DATE
@@ -73,7 +73,7 @@ Notice, `DATE` was translated to `DATETIME`.
 
 This translation may cause some ambiguity. Suppose a user creates a table with a column of the traditional MariaDB `DATE` data type using the default sql\_mode, but then switches to [SQL\_MODE=ORACLE](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/administrative-sql-statements/system-tables/broken-reference/README.md) and runs a [SHOW CREATE TABLE](../show/show-create-table.md) statement:
 
-```
+```sql
 SET sql_mode=DEFAULT;
 CREATE OR REPLACE TABLE t1 (
   d DATE
@@ -84,7 +84,7 @@ SHOW CREATE TABLE t1;
 
 Before `mariadb_schema` was introduced, the above script displayed:
 
-```
+```sql
 CREATE TABLE "t1" (
   "d" date DEFAULT NULL
 );
@@ -97,7 +97,7 @@ which had two problems:
 
 To address this problem, starting from the mentioned versions, MariaDB uses the idea of qualified data types:
 
-```
+```sql
 SET sql_mode=DEFAULT;
 CREATE OR REPLACE TABLE t1 (
   d DATE
