@@ -1,6 +1,17 @@
 ---
-description:  Functions and procedures in MariaDB
+description: Functions and procedures in MariaDB
+layout:
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: false
 ---
 
-# Built-in Functions
+# SQL Functions
 

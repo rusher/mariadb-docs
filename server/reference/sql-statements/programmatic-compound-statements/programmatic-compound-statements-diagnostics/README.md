@@ -1,5 +1,19 @@
 ---
-description: The diagnostics area contains information about the error conditions which were produced by an SQL statement, as well as some information about the statement which generated them
+description: >-
+  Learn about diagnostics in programmatic compound statements. This section
+  covers error handling and information retrieval within stored procedures and
+  functions for effective debugging.
+layout:
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: false
 ---
 
 # Diagnostics
