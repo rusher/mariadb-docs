@@ -77,4 +77,6 @@ The revision number links will take you to the revision's page on GitHub. On[Git
 * [Revision #959dcd1](https://github.com/mariadb-corporation/mariadb-connector-j/commit/959dcd1)
   * Test correction on Date '0000-00-00' incompatible with mysql 5.7
 
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
+
 {% @marketo/form formid="4316" formId="4316" %}

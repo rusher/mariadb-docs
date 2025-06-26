@@ -22,4 +22,6 @@ modified in that revision.
   * The regression is caused by erroneously set `CLIENT_PLUGIN` flag in the\
     client authentication packet.
 
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
+
 {% @marketo/form formid="4316" formId="4316" %}

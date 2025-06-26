@@ -99,10 +99,6 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #5a8e22a233a8513da32d6d434e34655be99e95c9](https://github.com/mariadb-corporation/mariadb-connector-j/commit/5a8e22a233a8513da32d6d434e34655be99e95c9) \[[CONJ-618](https://jira.mariadb.org/browse/CONJ-618)] Client preparestatement parsing error on escaped ' / " in query (not parameters)
 * [Revision #f0ca4dd0c4f95f3d67a6b3887e9fbccd435497d8](https://github.com/mariadb-corporation/mariadb-connector-j/commit/f0ca4dd0c4f95f3d67a6b3887e9fbccd435497d8) \[misc] removing one test for aurora
 
-Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
-
-MariaDB may already be included in your favorite OS distribution. More\
-information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-including-mariadb)\
-page.
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

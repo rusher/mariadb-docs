@@ -12,4 +12,6 @@ MariaDB Connector/Node.js 3.4.2 is a [_**Stable**_](../../../mariadb-release-cri
 
 * [CONJS-318](https://jira.mariadb.org/browse/CONJS-318): Repeated named placeholders causes "Placeholder is not defined"
 
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
+
 {% @marketo/form formid="4316" formId="4316" %}

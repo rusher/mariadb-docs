@@ -32,4 +32,6 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #1b7bb019](https://github.com/mariadb-corporation/mariadb-connector-j/commit/1b7bb019) bump 2.7.4-SNAPSHOT version
 * [Revision #7d72599b](https://github.com/mariadb-corporation/mariadb-connector-j/commit/7d72599b) Avoid creating new strings when switching auto-commit.
 
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
+
 {% @marketo/form formid="4316" formId="4316" %}

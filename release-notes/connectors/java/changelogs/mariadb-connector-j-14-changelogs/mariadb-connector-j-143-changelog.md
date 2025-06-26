@@ -17,10 +17,6 @@ The revision number links will take you to the revision's page on GitHub. On[Git
 * [Revision #d46dedc](https://github.com/mariadb-corporation/mariadb-connector-j/commit/d46dedc) \[[CONJ-278](https://jira.mariadb.org/browse/CONJ-278)] Improve prepared statement on failover
 * [Revision #3385a01](https://github.com/mariadb-corporation/mariadb-connector-j/commit/3385a01) \[misc] use keyserver port 80 to correct Travis testing with [MariaDB 5.5](../../../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md)
 
-Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
-
-MariaDB may already be included in your favorite OS distribution. More\
-information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-including-mariadb)\
-page.
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

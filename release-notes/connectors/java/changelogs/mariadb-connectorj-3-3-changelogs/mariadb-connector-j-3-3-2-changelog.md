@@ -38,4 +38,6 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #7fa524e5](https://github.com/mariadb-corporation/mariadb-connector-j/commit/7fa524e5) - \[misc] remove EOL server
 * [Revision #4acb834a](https://github.com/mariadb-corporation/mariadb-connector-j/commit/4acb834a) - \[misc] set connection to autocommit if not the case and not explicitly set to false.
 
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
+
 {% @marketo/form formid="4316" formId="4316" %}

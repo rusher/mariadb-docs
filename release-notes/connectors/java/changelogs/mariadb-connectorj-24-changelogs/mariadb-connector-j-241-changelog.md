@@ -25,10 +25,6 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #bc985a83](https://github.com/mariadb-corporation/mariadb-connector-j/commit/bc985a83) - \[misc] added error code 1213 to a list for running INNODB STATUS query - 1213 ER\_LOCK\_DEADLOCK was not considered to run 'SHOW ENGINE INNODB STATUS'
 * [Revision #74e7f96d](https://github.com/mariadb-corporation/mariadb-connector-j/commit/74e7f96d) - Update README.md
 
-Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
-
-MariaDB may already be included in your favorite OS distribution. More\
-information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-including-mariadb)\
-page.
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

@@ -51,4 +51,8 @@ We will cover new functionality in detail with a couple of blog entries during\
 the next days. The first one "What's new in Connector/C 3.0: Part I SSL" can be\
 found [here](https://mariadb.org/whats-new-in-mariadb-connectorc-3-0-part-i-ssl/)
 
+{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/vX1KAy0t1XuYJaGsK28T/" %}
+
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
+
 {% @marketo/form formid="4316" formId="4316" %}

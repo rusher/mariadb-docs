@@ -55,4 +55,6 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #6cf6d1bd](https://github.com/mariadb-corporation/mariadb-connector-j/commit/6cf6d1bd) - \[misc] fast path for unsigned long decoding
 * [Revision #c2160bfa](https://github.com/mariadb-corporation/mariadb-connector-j/commit/c2160bfa) - Merge tag '3.0.8' into develop
 
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
+
 {% @marketo/form formid="4316" formId="4316" %}

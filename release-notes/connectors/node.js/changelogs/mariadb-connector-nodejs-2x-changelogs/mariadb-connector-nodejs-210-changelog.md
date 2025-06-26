@@ -64,10 +64,6 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #4b7bbf5](https://github.com/mariadb-corporation/mariadb-connector-j/commit/4b7bbf5) - \[[CONJS-74](https://jira.mariadb.org/browse/CONJS-74)] correction of Typecast FieldInfo.type datatype
 * [Revision #9fc5d23](https://github.com/mariadb-corporation/mariadb-connector-j/commit/9fc5d23) - \[[CONJS-73](https://jira.mariadb.org/browse/CONJS-73)] Setting the time zone on the current IANA might cause an automatic recovery of the server.
 
-Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
-
-MariaDB may already be included in your favorite OS distribution. More\
-information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-including-mariadb)\
-page.
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

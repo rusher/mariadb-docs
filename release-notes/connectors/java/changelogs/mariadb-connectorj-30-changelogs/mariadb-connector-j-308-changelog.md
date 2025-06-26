@@ -46,4 +46,6 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #2a1f7d51](https://github.com/mariadb-corporation/mariadb-connector-j/commit/2a1f7d51) - \[[CONJ-997](https://jira.mariadb.org/browse/CONJ-997)] test suite correction to support galera
 * [Revision #5c697f4c](https://github.com/mariadb-corporation/mariadb-connector-j/commit/5c697f4c) - \[[CONJ-997](https://jira.mariadb.org/browse/CONJ-997)] correcting use of galeraAllowedState
 
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
+
 {% @marketo/form formid="4316" formId="4316" %}

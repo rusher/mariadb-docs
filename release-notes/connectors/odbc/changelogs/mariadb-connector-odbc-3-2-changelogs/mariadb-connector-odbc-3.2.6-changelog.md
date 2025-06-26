@@ -87,6 +87,6 @@ The revision number links will take you to the revision's page on GitHub. On [Gi
 * [Revision #659e385](https://github.com/mariadb-corporation/mariadb-connector-odbc/commit/659e385) 2025-02-24 14:03:23 -0500
   * bump the VERSION
 
-{% include "../../../../.gitbook/includes/announce.md" %}
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

@@ -33,4 +33,6 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #e8075440](https://github.com/mariadb-corporation/mariadb-connector-j/commit/e8075440) BinaryRowProtocol: Redundant objects creation while reading data from BIGINT column
 * [Revision #d2795170](https://github.com/mariadb-corporation/mariadb-connector-j/commit/d2795170) msic - appveyor url fix
 
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
+
 {% @marketo/form formid="4316" formId="4316" %}

@@ -18,10 +18,6 @@ The revision number links will take you to the revision's page on GitHub. On[Git
 * [Revision #2f9b528](https://github.com/mariadb-corporation/mariadb-connector-j/commit/2f9b528) \[misc] update tracker (JIRA) link to the new one
 * [Revision #f80002a](https://github.com/mariadb-corporation/mariadb-connector-j/commit/f80002a) \[misc] README : correction link to mariadb.org
 
-Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
-
-MariaDB may already be included in your favorite OS distribution. More\
-information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-including-mariadb)\
-page.
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

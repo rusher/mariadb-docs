@@ -22,4 +22,6 @@ This is the last release of the 3.1 release series as the release series 3.2 is 
 For a complete list of changes made in MariaDB Connector/J 3.1.4, with links to detailed\
 information on each push, see the [changelog](../changelogs/mariadb-connector-j-3-1-changelogs/mariadb-connector-j-3-1-4-changelog.md).
 
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
+
 {% @marketo/form formid="4316" formId="4316" %}

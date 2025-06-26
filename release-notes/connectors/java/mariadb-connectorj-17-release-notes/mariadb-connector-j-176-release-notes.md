@@ -20,4 +20,6 @@ Reporting correction/contribution to java 7 supported version
 * [CONJ-750](https://jira.mariadb.org/browse/CONJ-750) : protocol error when not setting database, indicating null authentication plugin
 * [CONJ-639](https://jira.mariadb.org/browse/CONJ-639) : enabledSslProtocolSuites does not include TLSv1.2 by default
 
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
+
 {% @marketo/form formid="4316" formId="4316" %}

@@ -20,10 +20,6 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #192e02c](https://github.com/mariadb-corporation/mariadb-connector-j/commit/192e02c) - \[misc] update license expression in package.json
 * [Revision #8b54d08](https://github.com/mariadb-corporation/mariadb-connector-j/commit/8b54d08) - \[misc] change github links to mariadb-corporation
 
-Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
-
-MariaDB may already be included in your favorite OS distribution. More\
-information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-including-mariadb)\
-page.
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

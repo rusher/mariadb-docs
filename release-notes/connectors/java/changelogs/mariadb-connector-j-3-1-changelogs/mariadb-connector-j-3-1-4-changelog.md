@@ -21,4 +21,6 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #14483163](https://github.com/mariadb-corporation/mariadb-connector-j/commit/14483163) - \[[CONJ-1067](https://jira.mariadb.org/browse/CONJ-1067)] ResultSetMetaData.getColumnTypeName() does not return UNSIGNED for DECIMAL, DOUBLE and FLOAT columns
 * [Revision #753ac15f](https://github.com/mariadb-corporation/mariadb-connector-j/commit/753ac15f) - bump 3.1.4-SNAPSHOT
 
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
+
 {% @marketo/form formid="4316" formId="4316" %}

@@ -27,4 +27,6 @@ details of the revision and view diffs of the code modified in that revision.
   2020-02-04 18:14:01 +0100
   * [ODBC-271](https://jira.mariadb.org/browse/ODBC-271) Prevent msi installation on Win7. ->3.1.7
 
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
+
 {% @marketo/form formid="4316" formId="4316" %}

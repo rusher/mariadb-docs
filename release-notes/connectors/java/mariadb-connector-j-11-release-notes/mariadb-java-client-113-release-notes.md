@@ -40,4 +40,6 @@ Some of the bugs fixed include the following:
 * Fix bug in prepared statement parsing code (skipping next character after backslash '')([CONJ-44](https://jira.mariadb.org/browse/CONJ-44))
 * Fix `Statement.executeBatch()` methods to throw `BatchUpdateException`, as in JDBC spec ([CONJ-47](https://jira.mariadb.org/browse/CONJ-47))
 
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
+
 {% @marketo/form formid="4316" formId="4316" %}

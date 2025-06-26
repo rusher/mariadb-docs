@@ -24,4 +24,6 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #de7ca6fa](https://github.com/mariadb-corporation/mariadb-connector-j/commit/de7ca6fa) - Merge branch 'master' into develop
 * [Revision #47d20367](https://github.com/mariadb-corporation/mariadb-connector-j/commit/47d20367) - Merge tag '3.0.5' into develop
 
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
+
 {% @marketo/form formid="4316" formId="4316" %}

@@ -58,4 +58,6 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #9e1e987c](https://github.com/mariadb-corporation/mariadb-connector-j/commit/9e1e987c) bump snapshot version
 * [Revision #cde99245](https://github.com/mariadb-corporation/mariadb-connector-j/commit/cde99245) Fixing flaky configuration tests
 
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
+
 {% @marketo/form formid="4316" formId="4316" %}

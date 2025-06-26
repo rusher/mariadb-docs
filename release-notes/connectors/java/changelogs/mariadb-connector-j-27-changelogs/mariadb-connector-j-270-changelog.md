@@ -49,4 +49,6 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #6f101ce3](https://github.com/mariadb-corporation/mariadb-connector-j/commit/6f101ce3) - Merge tag '2.6.2' into develop
 * [Revision #c290bfef](https://github.com/mariadb-corporation/mariadb-connector-j/commit/c290bfef) - Reproduce issue with polish chars and set maxFieldSize
 
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
+
 {% @marketo/form formid="4316" formId="4316" %}

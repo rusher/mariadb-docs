@@ -40,4 +40,6 @@ await conn.importFile({
 * [CONJS-258](https://jira.mariadb.org/browse/CONJS-258) All eventEmitters methods are not available on connections
 * [CONJS-259](https://jira.mariadb.org/browse/CONJS-259) SqlError sqlMessage property alias for text addition
 
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
+
 {% @marketo/form formid="4316" formId="4316" %}

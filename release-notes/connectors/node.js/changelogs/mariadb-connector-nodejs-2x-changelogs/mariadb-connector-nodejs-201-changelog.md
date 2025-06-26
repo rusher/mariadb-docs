@@ -80,10 +80,6 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #dbdbd4a](https://github.com/mariadb-corporation/mariadb-connector-nodejs/commit/dbdbd4a) - \[[CONJS-39](https://jira.mariadb.org/browse/CONJS-39)] correcting MySQL geometry test ( ST\_\* commands not existing before 5.7)
 * [Revision #7c2bdcb](https://github.com/mariadb-corporation/mariadb-connector-nodejs/commit/7c2bdcb) - \[[CONJS-39](https://jira.mariadb.org/browse/CONJS-39)] support geometry type : correction for MariaDB < 10.1.4 and MySQL < 8.0.0 geometry support report information isMariaDB() / hasMinVersion() to information level to permit use on internal function
 
-Be notified of new MariaDB Server releases automatically by [subscribing](https://lists.mariadb.org/postorius/lists/announce.lists.mariadb.org/) to the MariaDB Foundation community announce 'at' lists.mariadb.org announcement list (this is a low traffic, announce-only list). MariaDB plc customers will be notified for all new releases, security issues and critical bug fixes for all MariaDB plc products thanks to the Notification Services.
-
-MariaDB may already be included in your favorite OS distribution. More\
-information can be found on the[Distributions which Include MariaDB](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/distributions-including-mariadb)\
-page.
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}
