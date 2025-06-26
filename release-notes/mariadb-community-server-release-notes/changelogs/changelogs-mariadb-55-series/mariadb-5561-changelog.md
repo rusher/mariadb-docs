@@ -1,8 +1,8 @@
 # MariaDB 5.5.61 Changelog
 
-The most recent release in the [MariaDB 5.5](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/changelogs/changelogs-mariadb-55-series/broken-reference/README.md) series is:[**MariaDB 5.5.68**](../../old-releases/release-notes-mariadb-5-5-series/mariadb-5568-release-notes.md) [Download Now](https://downloads.mariadb.org/mariadb/5.5.68/)
+The most recent release in the [MariaDB 5.5](https://mariadb.com/docs/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/) series is:[**MariaDB 5.5.68**](../../old-releases/release-notes-mariadb-5-5-series/mariadb-5568-release-notes.md) [Download Now](https://downloads.mariadb.org/mariadb/5.5.68/)
 
-[Download](https://downloads.mariadb.org/mariadb/5.5.61)[Release Notes](../../old-releases/release-notes-mariadb-5-5-series/mariadb-5561-release-notes.md)[Changelog](mariadb-5561-changelog.md)[Overview of 5.5](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/changelogs/changelogs-mariadb-55-series/broken-reference/README.md)
+[Download](https://downloads.mariadb.org/mariadb/5.5.61)[Release Notes](../../old-releases/release-notes-mariadb-5-5-series/mariadb-5561-release-notes.md)[Changelog](mariadb-5561-changelog.md)[[Overview of 5.5](https://mariadb.com/docs/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5)
 
 **Release date:** 31 Jul 2018
 

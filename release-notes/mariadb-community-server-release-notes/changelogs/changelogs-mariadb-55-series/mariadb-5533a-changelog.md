@@ -2,14 +2,13 @@
 
 The most recent release in the [MariaDB 5.5](../../old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5.md) series is:[**MariaDB 5.5.68**](../../old-releases/release-notes-mariadb-5-5-series/mariadb-5568-release-notes.md) [Download Now](https://downloads.mariadb.org/mariadb/5.5.68/)
 
-[Download](https://downloads.mariadb.org/mariadb/5.5.33a) |[Release Notes](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/changelogs/changelogs-mariadb-55-series/broken-reference/README.md) |**Changelog** |[Overview of 5.5](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/changelogs/changelogs-mariadb-55-series/broken-reference/README.md)
+[Download](https://downloads.mariadb.org/mariadb/5.5.33a) |[Release Notes](https://mariadb.com/docs/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series) |**Changelog** |[[Overview of 5.5](https://mariadb.com/docs/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5)
 
 **Release date:** 20 Sep 2013
 
-For the highlights of this release, see the[release notes](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/changelogs/changelogs-mariadb-55-series/broken-reference/README.md).
+For the highlights of this release, see the[release notes](https://mariadb.com/docs/release-notes/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-seriess).
 
-The revision number links will take you to the revision's page on Launchpad. On\
-Launchpad you can view more details of the revision and view diffs of the code\
+The revision number links will take you to the revision's page on Launchpad. On Launchpad you can view more details of the revision and view diffs of the code\
 modified in that revision.
 
 * [Revision #3913](https://bazaar.launchpad.net/~maria-captains/maria/5.5-release/revision/3913)\
