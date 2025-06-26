@@ -6,7 +6,7 @@ The `WSREP_STATUS` table is part of the [WSREP\_INFO plugin](../../../../../plug
 
 ## Example
 
-```
+```sql
 SELECT * FROM information_schema.WSREP_STATUS\G
 *************************** 1. row ***************************
          NODE_INDEX: 0

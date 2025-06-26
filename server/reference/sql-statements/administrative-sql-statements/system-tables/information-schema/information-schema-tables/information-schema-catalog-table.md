@@ -18,7 +18,7 @@ It contains the following columns:
 
 ## Example
 
-```
+```sql
 MariaDB [def.test]> SELECT * FROM INFORMATION_SCHEMA.CATALOGS\G
 *************************** 1. row ***************************
               CATALOG_NAME: c1

@@ -19,7 +19,7 @@ The table is not a standard Information Schema table, and is a MariaDB extension
 
 ## Example
 
-```
+```sql
 SELECT * FROM INFORMATION_SCHEMA.SQL_FUNCTIONS;
 +---------------------------+
 | FUNCTION                  |

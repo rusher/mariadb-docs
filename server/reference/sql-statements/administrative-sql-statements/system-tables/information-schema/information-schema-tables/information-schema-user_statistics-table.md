@@ -39,7 +39,7 @@ It contains the following columns:
 
 ## Example
 
-```
+```sql
 SELECT * FROM information_schema.USER_STATISTICS\G
 *************************** 1. row ***************************
                   USER: root

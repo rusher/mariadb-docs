@@ -30,7 +30,7 @@ To obtain information about the routine itself, you can query the [Information S
 
 ## Example
 
-```
+```sql
 SELECT * FROM information_schema.PARAMETERS
 LIMIT 1 \G
 ********************** 1. row **********************

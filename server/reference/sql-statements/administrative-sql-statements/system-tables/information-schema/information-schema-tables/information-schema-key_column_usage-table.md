@@ -22,7 +22,7 @@ It contains the following columns:
 
 ## Example
 
-```
+```sql
 SELECT * FROM information_schema.KEY_COLUMN_USAGE LIMIT 1 \G
 ********************** 1. row **********************
            CONSTRAINT_CATALOG: def

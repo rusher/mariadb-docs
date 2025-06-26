@@ -39,7 +39,7 @@ Although the table is standard in the Information Schema, all but `TABLE_CATALOG
 
 From [MariaDB 10.3.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-1035-release-notes):
 
-```
+```sql
 SELECT * FROM information_schema.tables WHERE table_schema='test'\G
 *************************** 1. row ***************************
    TABLE_CATALOG: def
@@ -94,7 +94,7 @@ MAX_INDEX_LENGTH: 17179868160
 
 Example with temporary = 'y', from [MariaDB 10.3.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-1035-release-notes):
 
-```
+```sql
 SELECT * FROM information_schema.tables WHERE temporary='y'\G
  *************************** 1. row ***************************
    TABLE_CATALOG: def
@@ -127,7 +127,7 @@ MAX_INDEX_LENGTH: 0
 
 Returns a list of all tables in the database, ordered by size:
 
-```
+```sql
 SELECT table_schema as `DB`, table_name AS `Table`, 
   ROUND(((data_length + index_length) / 1024 / 1024), 2) `Size (MB)` 
   FROM information_schema.TABLES 
@@ -147,7 +147,7 @@ SELECT table_schema as `DB`, table_name AS `Table`,
 
 From [MariaDB 11.2.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-0-release-notes)
 
-```
+```sql
 CREATE TEMPORARY TABLE foo.t1 (a int);
 
 SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='foo' AND TEMPORARY='y'\G

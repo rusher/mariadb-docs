@@ -37,7 +37,7 @@ It contains the following columns:
 
 #### Example
 
-```
+```sql
 SELECT * FROM information_schema.CLIENT_STATISTICS\G
 *************************** 1. row ***************************
                 CLIENT: localhost

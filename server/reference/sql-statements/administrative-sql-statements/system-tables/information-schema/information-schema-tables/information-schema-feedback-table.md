@@ -12,7 +12,7 @@ It contains two columns:
 
 It is possible to disable automatic collection, by setting the [feedback_url](../../../../../../plugins/other-plugins/feedback-plugin.md#feedback_url) variable to an empty string, and to submit the contents manually, as follows:
 
-```
+```sql
 $ mysql -e 'SELECT * FROM information_schema.FEEDBACK' > report.txt
 ```
 
@@ -20,7 +20,7 @@ Then you can send it by opening [post](https://mariadb.org/feedback_plugin/post)
 browser, and uploading your generated `report.txt`. Or you can do it from the\
 command line with (for example):
 
-```
+```sql
 $ curl -F data=@report.txt https://mariadb.org/feedback_plugin/post
 ```
 
@@ -30,7 +30,7 @@ table and that no private or sensitive information is being sent.
 
 ## Example
 
-```
+```sql
 SELECT * FROM information_schema.FEEDBACK\G
 ...
 *************************** 906. row ***************************

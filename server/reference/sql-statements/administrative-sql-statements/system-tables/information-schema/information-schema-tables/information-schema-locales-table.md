@@ -24,7 +24,7 @@ The [SHOW LOCALES](../../../show/show-locales.md) statement returns a subset of 
 
 ## Example
 
-```
+```sql
 SELECT * FROM information_schema.LOCALES;
 +-----+-------+-------------------------------------+-----------------------+---------------------+---------------+--------------+------------------------+
 | ID  | NAME  | DESCRIPTION                         | MAX_MONTH_NAME_LENGTH | MAX_DAY_NAME_LENGTH | DECIMAL_POINT | THOUSAND_SEP | ERROR_MESSAGE_LANGUAGE |

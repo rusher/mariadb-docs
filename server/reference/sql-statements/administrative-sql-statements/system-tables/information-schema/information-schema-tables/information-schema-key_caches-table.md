@@ -22,7 +22,7 @@ It contains the following columns:
 
 ## Example
 
-```
+```sql
 SELECT * FROM information_schema.KEY_CACHES \G
 ********************** 1. row **********************
 KEY_CACHE_NAME: default

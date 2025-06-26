@@ -24,7 +24,7 @@ It contains the following columns. See [CREATE SEQUENCE](../../../../../sql-stru
 
 ## Example
 
-```
+```sql
 CREATE SEQUENCE s START WITH 100 INCREMENT BY 10;
 
 SELECT * FROM INFORMATION_SCHEMA.SEQUENCES\G

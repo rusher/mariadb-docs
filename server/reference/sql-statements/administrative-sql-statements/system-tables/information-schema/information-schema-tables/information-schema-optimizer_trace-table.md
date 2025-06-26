@@ -16,7 +16,7 @@ It contains the following columns:
 
 Structure:
 
-```
+```sql
 SHOW CREATE TABLE INFORMATION_SCHEMA.OPTIMIZER_TRACE \G
 *************************** 1. row ***************************
        Table: OPTIMIZER_TRACE

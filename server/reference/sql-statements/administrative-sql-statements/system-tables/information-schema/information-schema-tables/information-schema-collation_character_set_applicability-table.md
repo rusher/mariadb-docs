@@ -21,7 +21,7 @@ See [Setting Character Sets and Collations](../../../../../data-types/string-dat
 
 ## Example
 
-```
+```sql
 SELECT * FROM information_schema.COLLATION_CHARACTER_SET_APPLICABILITY  WHERE
   CHARACTER_SET_NAME='utf32' ORDER BY IS_DEFAULT DESC, ID LIMIT 10;
 +--------------------+--------------------+---------------------+-----+------------+

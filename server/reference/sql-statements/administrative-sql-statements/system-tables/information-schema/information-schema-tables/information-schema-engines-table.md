@@ -22,7 +22,7 @@ Note that both MySQL's InnoDB and Percona's XtraDB replacement are labeled as `I
 
 ## Example
 
-```
+```sql
 SELECT * FROM information_schema.ENGINES\G;
 *************************** 1. row ***************************
       ENGINE: InnoDB
@@ -99,14 +99,14 @@ TRANSACTIONS: NO
 
 Check if a given storage engine is available:
 
-```
+```sql
 SELECT SUPPORT FROM information_schema.ENGINES WHERE ENGINE LIKE 'tokudb';
 Empty set
 ```
 
 Check which storage engine supports XA transactions:
 
-```
+```sql
 SELECT ENGINE FROM information_schema.ENGINES WHERE XA = 'YES';
 +--------+
 | ENGINE |

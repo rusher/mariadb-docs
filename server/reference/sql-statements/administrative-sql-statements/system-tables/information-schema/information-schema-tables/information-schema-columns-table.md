@@ -36,7 +36,7 @@ It provides information similar to, but more complete, than [SHOW COLUMNS](../..
 
 ## Examples
 
-```
+```sql
 SELECT * FROM information_schema.COLUMNS\G
 ...
 *************************** 9. row ***************************
@@ -65,7 +65,7 @@ CHARACTER_MAXIMUM_LENGTH: 4294967295
 ...
 ```
 
-```
+```sql
 CREATE TABLE t (
   s1 VARCHAR(20) DEFAULT 'ABC',
   s2 VARCHAR(20) DEFAULT (concat('A','B')),
@@ -104,7 +104,7 @@ In the results above, the two single quotes in `concat(''A'',''B'')` indicate an
 
 From [MariaDB 11.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-3-rolling-releases/what-is-mariadb-113):
 
-```
+```sql
 CREATE TABLE t(
      x INT,
      start_timestamp TIMESTAMP(6) GENERATED ALWAYS AS ROW START,

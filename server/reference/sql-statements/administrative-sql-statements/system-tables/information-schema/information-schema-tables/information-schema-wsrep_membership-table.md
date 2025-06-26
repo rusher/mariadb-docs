@@ -6,7 +6,7 @@ The `WSREP_MEMBERSHIP` table is part of the [WSREP\_INFO plugin](../../../../../
 
 ## Example
 
-```
+```sql
 SELECT * FROM information_schema.WSREP_MEMBERSHIP;
 +-------+--------------------------------------+-------+-----------------+
 | INDEX | UUID                                 | NAME  | ADDRESS         |

@@ -25,7 +25,7 @@ It contains the following columns:
 
 ## Example
 
-```
+```sql
 SELECT * FROM information_schema.SYSTEM_VARIABLES 
   WHERE VARIABLE_NAME='JOIN_BUFFER_SIZE'\G
 *************************** 1. row *****************************

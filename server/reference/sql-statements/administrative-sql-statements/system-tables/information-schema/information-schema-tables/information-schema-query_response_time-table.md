@@ -21,7 +21,7 @@ The table is not a standard Information Schema table, and is a MariaDB extension
 
 ## Example
 
-```
+```sql
 SELECT * FROM information_schema.QUERY_RESPONSE_TIME;
 +----------------+-------+----------------+
 | TIME           | COUNT | TOTAL          |

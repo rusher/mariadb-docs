@@ -17,7 +17,7 @@ See also [CURRENT\_ROLE()](../../../../../sql-functions/secondary-functions/info
 
 ## Examples
 
-```
+```sql
 SELECT * FROM information_schema.ENABLED_ROLES;
 +-----------+
 | ROLE_NAME |

@@ -17,7 +17,7 @@ It contains the following columns:
 
 ## Example
 
-```
+```sql
 SELECT * FROM information_schema.INDEX_STATISTICS 
 WHERE TABLE_NAME = "author";
 +--------------+------------+------------+-----------+

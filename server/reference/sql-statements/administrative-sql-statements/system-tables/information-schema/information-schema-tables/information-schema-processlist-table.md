@@ -41,14 +41,14 @@ if a slave is lagging behind. For this, use instead the`Seconds_Behind_Master` c
 
 Note that the `PROGRESS` field from the information schema, and the `PROGRESS` field from `SHOW PROCESSLIST` display different results. `SHOW PROCESSLIST` shows the total progress, while the information schema shows the progress for the current stage only.. To retrieve a similar "total" Progress value from `information_schema.PROCESSLIST` as the one from `SHOW PROCESSLIST`, use
 
-```
+```sql
 SELECT CASE WHEN Max_Stage < 2 THEN Progress ELSE (Stage-1)/Max_Stage*100+Progress/Max_Stage END 
   AS Progress FROM INFORMATION_SCHEMA.PROCESSLIST;
 ```
 
 ## Example
 
-```
+```sql
 SELECT * FROM INFORMATION_SCHEMA.PROCESSLIST\G
 *************************** 1. row ***************************
            ID: 9

@@ -12,7 +12,7 @@ They contain the following columns:
 
 ## Example
 
-```
+```sql
 SELECT * FROM information_schema.GLOBAL_STATUS;
 +-----------------------------------------------+--------------------+
 | VARIABLE_NAME                                 | VARIABLE_VALUE     |

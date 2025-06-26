@@ -12,7 +12,7 @@ It contains the following columns:
 
 ## Example
 
-```
+```sql
 SELECT * FROM information_schema.GLOBAL_VARIABLES ORDER BY VARIABLE_NAME\G
 *************************** 1. row *****************************
  VARIABLE_NAME: ARIA_BLOCK_SIZE

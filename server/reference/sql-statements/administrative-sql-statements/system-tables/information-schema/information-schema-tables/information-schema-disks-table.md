@@ -27,7 +27,7 @@ All paths to which a particular disk has been mounted are reported. The rational
 
 ## Example
 
-```
+```sql
 SELECT * FROM information_schema.DISKS;
 
 +-----------+-------+----------+---------+-----------+

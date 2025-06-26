@@ -5,7 +5,7 @@ The [Information Schema](../) `APPLICABLE_ROLES` table shows the [role authoriza
 It contains the following columns:
 
 | Column        | Description                                        | Added                                                                                                                                                                               |
-| ------------- | -------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| - | -  | -  |
 | Column        | Description                                        | Added                                                                                                                                                                               |
 | GRANTEE       | Account that the role was granted to.              |                                                                                                                                                                                     |
 | ROLE\_NAME    | Name of the role.                                  |                                                                                                                                                                                     |
@@ -16,7 +16,7 @@ The current role is in the [ENABLED\_ROLES](information-schema-enabled_roles-tab
 
 ## Example
 
-```
+```sql
 SELECT * FROM information_schema.APPLICABLE_ROLES;
 +----------------+-------------+--------------+------------+
 | GRANTEE        | ROLE_NAME   | IS_GRANTABLE | IS_DEFAULT |

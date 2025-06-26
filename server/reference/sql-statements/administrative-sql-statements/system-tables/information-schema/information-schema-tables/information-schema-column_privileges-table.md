@@ -25,7 +25,7 @@ For a description of the privileges that are shown in this table, see [column pr
 
 In the following example, no column-level privilege has been explicitly assigned:
 
-```
+```sql
 SELECT * FROM information_schema.COLUMN_PRIVILEGES;
 Empty set
 ```

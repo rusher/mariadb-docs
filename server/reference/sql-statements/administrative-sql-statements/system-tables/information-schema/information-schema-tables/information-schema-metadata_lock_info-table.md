@@ -36,13 +36,13 @@ The `LOCK_MODE` column can have the following values:
 
 First, install the `metadata _lock_info` plugin, if it is not already installed:
 
-```
+```bash
 install plugin if not exists METADATA_LOCK_INFO soname "metadata_lock_info.so";
 ```
 
 User lock:
 
-```
+```sql
 SELECT GET_LOCK('abc',1000);
 +----------------------+
 | GET_LOCK('abc',1000) |
@@ -60,7 +60,7 @@ SELECT * FROM information_schema.METADATA_LOCK_INFO;
 
 Table metadata lock:
 
-```
+```sql
 START TRANSACTION;
 
 INSERT INTO t VALUES (1,2);
@@ -75,7 +75,7 @@ LOCK_DURATION: MDL_TRANSACTION
    TABLE_NAME: t
 ```
 
-```
+```sql
 SELECT * FROM information_schema.METADATA_LOCK_INFO;
 +-----------+--------------------------+---------------+----------------------+-----------------+-------------+
 | THREAD_ID | LOCK_MODE | LOCK_DURATION | LOCK_TYPE | TABLE_SCHEMA | TABLE_NAME |

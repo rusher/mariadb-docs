@@ -19,13 +19,13 @@ The [SHOW COLLATION](../../../show/show-collation.md) statement returns the same
 
 For example, in [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/what-is-mariadb-106), the following two statements return the same results:
 
-```
+```sql
 SHOW COLLATION WHERE Charset LIKE 'utf8mb3';
 ```
 
 and
 
-```
+```sql
 SELECT * FROM information_schema.COLLATIONS 
 WHERE CHARACTER_SET_NAME LIKE 'utf8mb3';
 ```
@@ -36,7 +36,7 @@ In [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-communi
 
 `NO PAD` collations regard trailing spaces as normal characters. You can get a list of all `NO PAD` collations as follows:
 
-```
+```sql
 SELECT collation_name FROM information_schema.COLLATIONS
 WHERE collation_name LIKE "%nopad%";  
 +------------------------------+
@@ -49,7 +49,7 @@ WHERE collation_name LIKE "%nopad%";
 
 ## Example
 
-```
+```sql
 SELECT * FROM information_schema.COLLATIONS;
 +------------------------------+--------------------+------+------------+-------------+---------+
 | COLLATION_NAME               | CHARACTER_SET_NAME | ID   | IS_DEFAULT | IS_COMPILED | SORTLEN |

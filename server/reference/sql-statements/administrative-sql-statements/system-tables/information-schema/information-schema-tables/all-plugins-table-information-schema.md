@@ -29,7 +29,7 @@ The table is not a standard Information Schema table, and is a MariaDB extension
 
 ## Example
 
-```
+```sql
 SELECT * FROM information_schema.all_plugins\G
 *************************** 1. row ***************************
            PLUGIN_NAME: binlog

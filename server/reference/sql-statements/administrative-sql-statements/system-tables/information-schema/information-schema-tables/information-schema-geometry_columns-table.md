@@ -53,7 +53,7 @@ The integers in the `storage_type` field match the geometry types as follows:
 ## Example
 
 
-```
+```sql
 CREATE TABLE g1(g GEOMETRY(9,4) REF_SYSTEM_ID=101);
 
 SELECT * FROM information_schema.GEOMETRY_COLUMNS\G

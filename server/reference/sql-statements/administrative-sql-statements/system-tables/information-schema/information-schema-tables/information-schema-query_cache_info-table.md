@@ -38,7 +38,7 @@ It contains the following columns:
 
 For example:
 
-```
+```sql
 SELECT * FROM information_schema.QUERY_CACHE_INFO;
 +------------------+-----------------+---------------------+--------------------+-------------------------+
 | STATEMENT_SCHEMA | STATEMENT_TEXT  | RESULT_BLOCKS_COUNT | RESULT_BLOCKS_SIZE | RESULT_BLOCKS_SIZE_USED |

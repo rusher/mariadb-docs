@@ -18,17 +18,17 @@ It contains the following columns:
 
 A table with a numeric table check constraint and with a default check constraint name:
 
-```
+```sql
 CREATE TABLE t ( a int, CHECK (a>10));
 ```
 
 To see check constraint call `check_constraints` table from [information schema](../).
 
-```
+```sql
 SELECT * from INFORMATION_SCHEMA.CHECK_CONSTRAINTS\G
 ```
 
-```
+```sql
 *************************** 1. row ***************************
 CONSTRAINT_CATALOG: def
  CONSTRAINT_SCHEMA: test
@@ -39,15 +39,15 @@ CONSTRAINT_CATALOG: def
 
 A new table check constraint called `a_upper`:
 
-```
+```sql
 ALTER TABLE t ADD CONSTRAINT a_upper CHECK (a<100);
 ```
 
-```
+```sql
 SELECT * from INFORMATION_SCHEMA.CHECK_CONSTRAINTS\G
 ```
 
-```
+```sql
 *************************** 1. row ***************************
 CONSTRAINT_CATALOG: def
  CONSTRAINT_SCHEMA: test
@@ -64,7 +64,7 @@ CONSTRAINT_CATALOG: def
 
 A new table `tt` with a field check constraint called `b` , as well as a table check constraint called `b_upper`:
 
-```
+```sql
 CREATE TABLE tt(b int CHECK(b>0),CONSTRAINT b_upper CHECK(b<50));
 
 SELECT * from INFORMATION_SCHEMA.CHECK_CONSTRAINTS;
@@ -82,7 +82,7 @@ _Note:_ The name of the field constraint is the same as the field name.
 
 After dropping the default table constraint called `CONSTRAINT_1`:
 
-```
+```sql
 ALTER TABLE t DROP CONSTRAINT CONSTRAINT_1;
 
 SELECT * from INFORMATION_SCHEMA.CHECK_CONSTRAINTS;
@@ -97,7 +97,7 @@ SELECT * from INFORMATION_SCHEMA.CHECK_CONSTRAINTS;
 
 Trying to insert invalid arguments into table `t` and `tt` generates an error.
 
-```
+```sql
 INSERT INTO t VALUES (10),(20),(100);
 ERROR 4025 (23000): CONSTRAINT `a_upper` failed for `test`.`t`
 
@@ -110,12 +110,12 @@ ERROR 4025 (23000): CONSTRAINT `b_upper` failed for `test`.`tt`
 
 From [MariaDB 10.5.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-10510-release-notes):
 
-```
-create table majra(check(x>0), x int, y int check(y < 0), z int,
+```sql
+CREATE TABLE majra(check(x>0), x int, y int check(y < 0), z int,
                               constraint z check(z>0), constraint xyz check(x<10 and y<10 and z<10));
 Query OK, 0 rows affected (0.036 sec)
 
-show create table majra;
+SHOW CREATE TABLE majra;
 +-------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Table | Create Table                                                                                                                                                                                                                                                                                                   |
 +-------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -131,7 +131,7 @@ show create table majra;
 1 row in set (0.000 sec)
 
 
-select * from information_schema.check_constraints where table_name='majra';
+SELECT * FROM information_schema.check_constraints WHERE table_name='majra';
 +--------------------+-------------------+------------+-----------------+--------+------------------------------------+
 | CONSTRAINT_CATALOG | CONSTRAINT_SCHEMA | TABLE_NAME | CONSTRAINT_NAME | LEVEL  | CHECK_CLAUSE                       |
 +--------------------+-------------------+------------+-----------------+--------+------------------------------------+

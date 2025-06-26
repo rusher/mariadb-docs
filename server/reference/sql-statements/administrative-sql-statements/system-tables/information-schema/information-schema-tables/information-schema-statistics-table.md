@@ -28,7 +28,7 @@ The [SHOW INDEX](../../../show/show-index.md) statement produces similar output.
 
 ## Example
 
-```
+```sql
 SELECT * FROM INFORMATION_SCHEMA.STATISTICS\G
 ...
 *************************** 85. row ***************************

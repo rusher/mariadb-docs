@@ -18,7 +18,7 @@ It contains the following columns:
 
 ## Example
 
-```
+```sql
 CREATE OR REPLACE TABLE t1(
  name VARCHAR(50), 
  date_1 DATE, 

@@ -16,7 +16,7 @@ It contains the following columns:
 
 ## Example
 
-```
+```sql
 SELECT * FROM INFORMATION_SCHEMA.SCHEMATA\G
 *************************** 1. row ***************************
               CATALOG_NAME: def
@@ -47,7 +47,7 @@ DEFAULT_CHARACTER_SET_NAME: latin1
 
 From [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1050-release-notes):
 
-```
+```sql
 SELECT * FROM INFORMATION_SCHEMA.SCHEMATA\G
 ...
 *************************** 2. row ***************************

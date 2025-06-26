@@ -31,7 +31,7 @@ The table is not a standard Information Schema table, and is a MariaDB extension
 
 The easiest way to get basic information on plugins is with[SHOW PLUGINS](../../../show/show-plugins.md):
 
-```
+```sql
 SHOW PLUGINS;
 
 +----------------------------+----------+--------------------+-------------+---------+
@@ -82,7 +82,7 @@ SHOW PLUGINS;
 +----------------------------+----------+--------------------+-------------+---------+
 ```
 
-```
+```sql
 SELECT LOAD_OPTION 
 FROM INFORMATION_SCHEMA.PLUGINS 
 WHERE PLUGIN_NAME LIKE 'tokudb';
@@ -91,7 +91,7 @@ Empty set
 
 The equivalent [SELECT](../../../../data-manipulation/selecting-data/select.md) query would be:
 
-```
+```sql
 SELECT PLUGIN_NAME, PLUGIN_STATUS, 
 PLUGIN_TYPE, PLUGIN_LIBRARY, PLUGIN_LICENSE
 FROM INFORMATION_SCHEMA.PLUGINS;
@@ -99,7 +99,7 @@ FROM INFORMATION_SCHEMA.PLUGINS;
 
 Other [SELECT](../../../../data-manipulation/selecting-data/select.md) queries can be used to see additional information. For example:
 
-```
+```sql
 SELECT PLUGIN_NAME, PLUGIN_DESCRIPTION, 
 PLUGIN_MATURITY, PLUGIN_AUTH_VERSION
 FROM INFORMATION_SCHEMA.PLUGINS
@@ -170,7 +170,7 @@ PLUGIN_AUTH_VERSION: 1.0
 
 Check if a given plugin is available:
 
-```
+```sql
 SELECT LOAD_OPTION 
 FROM INFORMATION_SCHEMA.PLUGINS 
 WHERE PLUGIN_NAME LIKE 'tokudb';
@@ -179,7 +179,7 @@ Empty set
 
 Show authentication plugins:
 
-```
+```sql
 SELECT PLUGIN_NAME, LOAD_OPTION 
 FROM INFORMATION_SCHEMA.PLUGINS 
 WHERE PLUGIN_TYPE LIKE 'authentication' \G

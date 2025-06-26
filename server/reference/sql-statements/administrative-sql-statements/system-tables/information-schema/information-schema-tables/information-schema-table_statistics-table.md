@@ -22,7 +22,7 @@ It contains the following columns:
 
 #### Example
 
-```
+```sql
 SELECT * FROM INFORMATION_SCHEMA.TABLE_STATISTICS WHERE TABLE_NAME='user';
 +--------------+------------+-----------+--------------+------------------------+
 | TABLE_SCHEMA | TABLE_NAME | ROWS_READ | ROWS_CHANGED | ROWS_CHANGED_X_INDEXES |
