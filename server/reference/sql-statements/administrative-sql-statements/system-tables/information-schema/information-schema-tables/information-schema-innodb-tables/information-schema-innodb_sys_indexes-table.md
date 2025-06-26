@@ -20,7 +20,7 @@ It has the following columns:
 
 ## Example
 
-```
+```sql
 SELECT * FROM information_schema.INNODB_SYS_INDEXES LIMIT 3\G
 *************************** 1. row ***************************
        INDEX_ID: 11

@@ -34,7 +34,7 @@ The related [INFORMATION\_SCHEMA.INNODB\_BUFFER\_PAGE](information-schema-innodb
 
 ## Example
 
-```
+```sql
 DESC information_schema.innodb_buffer_page_lru;
 +---------------------+---------------------+------+-----+---------+-------+
 | Field               | Type                | Null | Key | Default | Extra |
@@ -62,7 +62,7 @@ DESC information_schema.innodb_buffer_page_lru;
 +---------------------+---------------------+------+-----+---------+-------+
 ```
 
-```
+```sql
 SELECT * FROM INFORMATION_SCHEMA.INNODB_BUFFER_PAGE_LRU\G
 ...
 *************************** 6. row ***************************

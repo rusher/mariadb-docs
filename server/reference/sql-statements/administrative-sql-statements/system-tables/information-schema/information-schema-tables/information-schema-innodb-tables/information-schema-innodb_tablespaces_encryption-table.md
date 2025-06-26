@@ -24,7 +24,7 @@ When the [InnoDB system tablespace](../../../../../../../server-usage/storage-en
 
 ## Example
 
-```
+```sql
 SELECT * FROM information_schema.INNODB_TABLESPACES_ENCRYPTION 
 WHERE NAME LIKE 'db_encrypt%';
 +-------+----------------------------------------------+-------------------+--------------------+-----------------+---------------------+--------------------------+------------------------------+

@@ -19,7 +19,7 @@ The [SHOW ENGINE INNODB STATUS](../../../../show/show-engine.md#show-engine-inno
 
 ## Examples
 
-```
+```sql
 SELECT * FROM INNODB_MUTEXES;
 +------------------------------+---------------------+-------------+----------+
 | NAME                         | CREATE_FILE         | CREATE_LINE | OS_WAITS |

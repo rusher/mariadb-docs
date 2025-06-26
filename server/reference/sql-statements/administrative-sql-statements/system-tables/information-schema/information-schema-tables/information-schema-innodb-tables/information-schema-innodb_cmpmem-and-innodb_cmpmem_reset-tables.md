@@ -22,7 +22,7 @@ These tables can be used to measure the effectiveness of InnoDB table compressio
 
 ## Example
 
-```
+```sql
 SELECT * FROM information_schema.INNODB_CMPMEM\G
 ********************** 1. row **********************
             page_size: 1024

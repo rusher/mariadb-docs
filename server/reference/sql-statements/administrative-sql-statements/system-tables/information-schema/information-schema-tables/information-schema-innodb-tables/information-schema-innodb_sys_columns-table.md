@@ -37,7 +37,7 @@ The column `MTYPE` uses a numeric column type identifier, which has the followin
 
 ## Example
 
-```
+```sql
 SELECT * FROM information_schema.INNODB_SYS_COLUMNS LIMIT 3\G
 *************************** 1. row ***************************
 TABLE_ID: 11

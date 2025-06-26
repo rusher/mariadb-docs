@@ -44,7 +44,7 @@ It has the following columns:
 
 ## Examples
 
-```
+```sql
 DESC information_schema.innodb_buffer_pool_stats;
 +----------------------------------+---------------------+------+-----+---------+-------+
 | Field                            | Type                | Null | Key | Default | Extra |

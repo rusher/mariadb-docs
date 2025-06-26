@@ -29,7 +29,7 @@ The `TYPE` column provides a bit flag with information about the foreign key. Th
 
 ## Example
 
-```
+```sql
 SELECT * FROM INNODB_SYS_FOREIGN\G
 *************************** 1. row ***************************
       ID: mysql/innodb_index_stats_ibfk_1

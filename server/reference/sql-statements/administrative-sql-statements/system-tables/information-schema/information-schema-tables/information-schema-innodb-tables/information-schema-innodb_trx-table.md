@@ -38,7 +38,7 @@ The table is often used in conjunction with the [INNODB\_LOCKS](information-sche
 
 ## Example
 
-```
+```sql
 -- session 1
 START TRANSACTION;
 UPDATE t SET id = 15 WHERE id = 10;

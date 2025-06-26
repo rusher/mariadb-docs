@@ -22,7 +22,7 @@ The `PROCESS` [privilege](../../../../../account-management-sql-statements/grant
 
 ## Examples
 
-```
+```sql
 CREATE TEMPORARY TABLE t (i INT) ENGINE=INNODB;
 
 SELECT * FROM INFORMATION_SCHEMA.INNODB_TEMP_TABLE_INFO;
@@ -35,7 +35,7 @@ SELECT * FROM INFORMATION_SCHEMA.INNODB_TEMP_TABLE_INFO;
 
 Adding a compressed table:
 
-```
+```sql
 SET GLOBAL innodb_file_format="Barracuda";
 
 CREATE TEMPORARY TABLE t2 (i INT) ROW_FORMAT=COMPRESSED ENGINE=INNODB;

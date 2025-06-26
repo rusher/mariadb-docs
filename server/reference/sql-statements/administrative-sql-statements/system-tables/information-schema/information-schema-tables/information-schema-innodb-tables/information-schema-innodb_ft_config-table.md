@@ -14,7 +14,7 @@ It has the following columns:
 
 ## Example
 
-```
+```sql
 SELECT * FROM INNODB_FT_CONFIG;
 +---------------------------+-------+
 | KEY                       | VALUE |

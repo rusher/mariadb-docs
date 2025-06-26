@@ -13,7 +13,7 @@ It has the following column:
 
 ## Example
 
-```
+```sql
 SELECT * FROM information_schema.INNODB_FT_DEFAULT_STOPWORD\G
 *************************** 1. row ***************************
 value: a

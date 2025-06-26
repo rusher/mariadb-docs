@@ -20,7 +20,7 @@ Note that for `OPTIMIZE TABLE` to process InnoDB fulltext index data, the [innod
 
 ## Examples
 
-```
+```sql
 SELECT * FROM INNODB_FT_INDEX_TABLE;
 Empty set (0.00 sec)
 

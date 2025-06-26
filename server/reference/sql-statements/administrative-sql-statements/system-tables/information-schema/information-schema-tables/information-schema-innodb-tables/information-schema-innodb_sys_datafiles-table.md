@@ -16,7 +16,7 @@ It contains the following columns:
 
 ## Example
 
-```
+```sql
 SELECT * FROM INNODB_SYS_DATAFILES;
 +-------+--------------------------------+
 | SPACE | PATH                           |

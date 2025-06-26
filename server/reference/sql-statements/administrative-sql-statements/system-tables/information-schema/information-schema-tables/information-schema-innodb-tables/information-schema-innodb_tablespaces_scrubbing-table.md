@@ -23,7 +23,7 @@ It has the following columns:
 
 ## Example
 
-```
+```sql
 SELECT * FROM information_schema.INNODB_TABLESPACES_SCRUBBING LIMIT 1\G
 *************************** 1. row ***************************
                         SPACE: 1

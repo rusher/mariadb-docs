@@ -27,7 +27,7 @@ It has the following columns:
 
 [MariaDB 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/broken-reference/README.md):
 
-```
+```sql
 DESC information_schema.innodb_sys_tablespaces;
 +----------------+---------------------+------+-----+---------+-------+
 | Field          | Type                | Null | Key | Default | Extra |
@@ -47,7 +47,7 @@ DESC information_schema.innodb_sys_tablespaces;
 
 From [MariaDB 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/broken-reference/README.md):
 
-```
+```sql
 SELECT * FROM information_schema.INNODB_SYS_TABLESPACES LIMIT 2\G
 *************************** 1. row ***************************
          SPACE: 2

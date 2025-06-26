@@ -22,7 +22,7 @@ These tables can be used to measure the effectiveness of XtraDB/InnoDB table com
 
 ## Examples
 
-```
+```sql
 SELECT * FROM information_schema.INNODB_CMP\G
 **************************** 1. row *****************************
       page_size: 1024

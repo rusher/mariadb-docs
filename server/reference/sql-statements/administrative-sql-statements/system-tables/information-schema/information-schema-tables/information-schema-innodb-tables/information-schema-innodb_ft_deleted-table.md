@@ -15,7 +15,7 @@ It has the following column:
 
 ## Example
 
-```
+```sql
 SELECT * FROM INFORMATION_SCHEMA.INNODB_FT_DELETED;
 +--------+
 | DOC_ID |

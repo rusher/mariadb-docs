@@ -38,7 +38,7 @@ Note that the table flags returned here are not the same as tablespace flags (FS
 
 ## Example
 
-```
+```sql
 SELECT * FROM information_schema.INNODB_SYS_TABLES LIMIT 2\G
 *************************** 1. row ***************************
      TABLE_ID: 14
