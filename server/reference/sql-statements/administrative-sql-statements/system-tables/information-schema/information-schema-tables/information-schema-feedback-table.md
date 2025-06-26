@@ -10,23 +10,19 @@ It contains two columns:
 | VARIABLE\_NAME  | Name of the item of information being collected.     |
 | VARIABLE\_VALUE | Contents of the item of information being collected. |
 
-It is possible to disable automatic collection, by setting the [feedback_url](../../../../../../plugins/other-plugins/feedback-plugin.md#feedback_url) variable to an empty string, and to submit the contents manually, as follows:
+It is possible to disable automatic collection, by setting the [feedback\_url](../../../../../../plugins/other-plugins/feedback-plugin.md#feedback_url) variable to an empty string, and to submit the contents manually, as follows:
 
 ```sql
 $ mysql -e 'SELECT * FROM information_schema.FEEDBACK' > report.txt
 ```
 
-Then you can send it by opening [post](https://mariadb.org/feedback_plugin/post) in your\
-browser, and uploading your generated `report.txt`. Or you can do it from the\
-command line with (for example):
+Then you can send it by opening [post](https://mariadb.org/feedback_plugin/post) in your browser, and uploading your generated `report.txt`. Or you can do it from the command line with (for example):
 
 ```sql
 $ curl -F data=@report.txt https://mariadb.org/feedback_plugin/post
 ```
 
-Manual uploading allows you to be absolutely\
-sure that we receive only the data shown in the `information_schema.FEEDBACK`\
-table and that no private or sensitive information is being sent.
+Manual uploading allows you to be absolutely sure that we receive only the data shown in the `information_schema.FEEDBACK` table and that no private or sensitive information is being sent.
 
 ## Example
 
