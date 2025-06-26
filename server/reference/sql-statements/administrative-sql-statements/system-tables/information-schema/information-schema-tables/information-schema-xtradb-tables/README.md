@@ -1,3 +1,20 @@
+---
+description: >-
+  These system tables provide metadata about XtraDB tables, including their
+  storage, statistics, and other properties for advanced analysis and
+  management.
+layout:
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: false
+---
+
 # Information Schema XtraDB Tables
 
-List of Information Schema tables specifically related to [XtraDB](../../../../../../../server-usage/storage-engines/innodb/). Tables that XtraDB shares with InnoDB are listed in [Information Schema InnoDB Tables](../information-schema-innodb-tables/).

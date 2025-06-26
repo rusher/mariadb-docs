@@ -1,6 +1,14 @@
 # Information Schema TABLES Table
 
-The [Information Schema](../) table shows information about the various tables (until [MariaDB 11.2.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-0-release-notes), only non-`TEMPORARY` tables, except for tables from the `Information Schema` database) and [views](../../../../../../server-usage/views/) on the server.
+{% tabs %}
+{% tab title="Current" %}
+The [Information Schema](../) table shows information about the various tables and [views](../../../../../../server-usage/views/) on the server.
+{% endtab %}
+
+{% tab title="< 11.2.0" %}
+The [Information Schema](../) table shows information about the various tables, excluding`TEMPORARY` tables, except for tables from the `Information Schema` database) and [views](../../../../../../server-usage/views/) on the server.
+{% endtab %}
+{% endtabs %}
 
 It contains the following columns:
 
@@ -36,8 +44,6 @@ Although the table is standard in the Information Schema, all but `TABLE_CATALOG
 [SHOW TABLES](../../../show/show-tables.md) lists all tables in a database.
 
 ## Examples
-
-From [MariaDB 10.3.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-1035-release-notes):
 
 ```sql
 SELECT * FROM information_schema.tables WHERE table_schema='test'\G
@@ -92,7 +98,7 @@ MAX_INDEX_LENGTH: 17179868160
 ...
 ```
 
-Example with temporary = 'y', from [MariaDB 10.3.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-1035-release-notes):
+Example with temporary = 'y':
 
 ```sql
 SELECT * FROM information_schema.tables WHERE temporary='y'\G
@@ -145,7 +151,7 @@ SELECT table_schema as `DB`, table_name AS `Table`,
 ...
 ```
 
-From [MariaDB 11.2.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-0-release-notes)
+Returns information about a temporary table:
 
 ```sql
 CREATE TEMPORARY TABLE foo.t1 (a int);

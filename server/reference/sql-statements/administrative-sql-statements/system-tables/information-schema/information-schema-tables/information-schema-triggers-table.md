@@ -35,7 +35,7 @@ Queries to the `TRIGGERS` table will return information only for databases and t
 ## See also
 
 * [Trigger Overview](../../../../../../server-usage/triggers-events/triggers/trigger-overview.md)
-* [CREATE TRIGGER](../../../../../../../server-usage/programming-customizing-mariadb/triggers-events/triggers/create-trigger.md)
+* [CREATE TRIGGER](../../../../../../server-usage/triggers-events/triggers/create-trigger.md)
 * [DROP TRIGGER](../../../../data-definition/drop/drop-trigger.md)
 * [SHOW TRIGGERS](../../../show/show-triggers.md)
 * [SHOW CREATE TRIGGER](../../../show/show-create-trigger.md)

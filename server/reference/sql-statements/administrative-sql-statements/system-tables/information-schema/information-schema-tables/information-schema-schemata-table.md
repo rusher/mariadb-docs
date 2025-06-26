@@ -16,6 +16,23 @@ It contains the following columns:
 
 ## Example
 
+{% tabs %}
+{% tab title="Current" %}
+```sql
+SELECT * FROM INFORMATION_SCHEMA.SCHEMATA\G
+...
+*************************** 2. row ***************************
+              CATALOG_NAME: def
+               SCHEMA_NAME: presentations
+DEFAULT_CHARACTER_SET_NAME: latin1
+    DEFAULT_COLLATION_NAME: latin1_swedish_ci
+                  SQL_PATH: NULL
+            SCHEMA_COMMENT: Presentations for conferences
+...
+```
+{% endtab %}
+
+{% tab title="< 10.5.0" %}
 ```sql
 SELECT * FROM INFORMATION_SCHEMA.SCHEMATA\G
 *************************** 1. row ***************************
@@ -45,20 +62,9 @@ DEFAULT_CHARACTER_SET_NAME: latin1
 ...
 ```
 
-From MariaDB 10.5.0:
 
-```sql
-SELECT * FROM INFORMATION_SCHEMA.SCHEMATA\G
-...
-*************************** 2. row ***************************
-              CATALOG_NAME: def
-               SCHEMA_NAME: presentations
-DEFAULT_CHARACTER_SET_NAME: latin1
-    DEFAULT_COLLATION_NAME: latin1_swedish_ci
-                  SQL_PATH: NULL
-            SCHEMA_COMMENT: Presentations for conferences
-...
-```
+{% endtab %}
+{% endtabs %}
 
 ## See Also
 

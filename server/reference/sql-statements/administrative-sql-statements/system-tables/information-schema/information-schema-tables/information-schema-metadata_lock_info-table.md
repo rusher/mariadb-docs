@@ -2,6 +2,8 @@
 
 The [Information Schema](../) `METADATA_LOCK_INFO` table is created by the [metadata\_lock\_info](../../../../../plugins/other-plugins/metadata-lock-info-plugin.md) plugin. It shows active [metadata locks](../../../../transactions/metadata-locking.md) and user locks (the locks acquired with [GET\_LOCK](../../../../../sql-functions/secondary-functions/miscellaneous-functions/get_lock.md)).
 
+## Description
+
 It has the following columns:
 
 | Column         | Description                                                                                                                                                                                                                              |
@@ -14,7 +16,7 @@ It has the following columns:
 | TABLE\_SCHEMA  |                                                                                                                                                                                                                                          |
 | TABLE\_NAME    |                                                                                                                                                                                                                                          |
 
-#### "LOCK\_MODE" Descriptions
+### LOCK\_MODE Descriptions
 
 The `LOCK_MODE` column can have the following values:
 

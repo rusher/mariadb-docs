@@ -1,6 +1,6 @@
 # Information Schema KEY\_CACHES Table
 
-The [Information Schema](../) `KEY_CACHES` table shows statistics about the [segmented key cache](../../../../../../ha-and-performance/optimization-and-tuning/system-variables/segmented-key-cache.md),.
+The [Information Schema](../) `KEY_CACHES` table shows statistics about the [segmented key cache](../../../../../../ha-and-performance/optimization-and-tuning/system-variables/segmented-key-cache.md).
 
 It contains the following columns:
 

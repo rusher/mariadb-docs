@@ -29,7 +29,7 @@ The table is not a standard Information Schema table, and is a MariaDB extension
 
 #### Examples
 
-The easiest way to get basic information on plugins is with[SHOW PLUGINS](../../../show/show-plugins.md):
+The easiest way to get basic information on plugins is with [SHOW PLUGINS](../../../show/show-plugins.md):
 
 ```sql
 SHOW PLUGINS;
