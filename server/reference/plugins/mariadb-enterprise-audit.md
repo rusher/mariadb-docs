@@ -72,7 +72,7 @@ WHERE PLUGIN_NAME='SERVER_AUDIT'\G
 ```
 *************************** 1. row ***************************
      PLUGIN_STATUS: ACTIVE
-    PLUGIN_LIBRARY: server_audit2.so
+    PLUGIN_LIBRARY: server_audit.so
 PLUGIN_DESCRIPTION: Audit the server activity
 ```
 
@@ -95,7 +95,7 @@ WHERE name = 'SERVER_AUDIT'\G
 ```
 *************************** 1. row ***************************
 name: SERVER_AUDIT
-  dl: server_audit2.so
+  dl: server_audit.so
 ```
 
 If you see the output shown above, then the MariaDB Audit plugin can be uninstalled with [UNINSTALL SONAME](mariadb-enterprise-audit.md#uninstall-with-uninstall-soname).
@@ -117,7 +117,7 @@ WHERE PLUGIN_NAME='SERVER_AUDIT'\G
 ```
 *************************** 1. row ***************************
      PLUGIN_STATUS: ACTIVE
-    PLUGIN_LIBRARY: server_audit2.so
+    PLUGIN_LIBRARY: server_audit.so
 PLUGIN_DESCRIPTION: Audit the server activity
        LOAD_OPTION: FORCE_PLUS_PERMANENT
 ```
@@ -214,11 +214,11 @@ SHOW GLOBAL VARIABLES
 2. Confirm that your server's plugin directory contains server\_audit2.so, which is the shared library for MariaDB Enterprise Audit:
 
 ```
-$ ls -l /usr/lib64/mysql/plugin/server_audit2.so
+$ ls -l /usr/lib64/mysql/plugin/server_audit.so
 ```
 
 ```
--rwxr-xr-x. 1 root root 70432 Jul 15 19:03 /usr/lib64/mysql/plugin/server_audit2.so
+-rwxr-xr-x. 1 root root 70432 Jul 15 19:03 /usr/lib64/mysql/plugin/server_audit.so
 ```
 
 MariaDB Enterprise Audit is included in all distributions (binary tarball, DEB/RPM package tarball, DEB/RPM packages) for MariaDB Enterprise Server. If the server\_audit2.so file is not present, confirm that MariaDB Enterprise Server is properly installed. For additional information, see "Deploy".
@@ -231,7 +231,7 @@ The mariadb-enterprise.cnf configuration file loads MariaDB Enterprise Audit by 
 
 ```
 # -- Auditing - pre-load Plugin
-plugin-load-add=server_audit2
+plugin-load-add=server_audit
 server_audit=FORCE_PLUS_PERMANENT
 ```
 
@@ -250,7 +250,7 @@ WHERE PLUGIN_NAME='SERVER_AUDIT'\G
 ```
 *************************** 1. row ***************************
      PLUGIN_STATUS: ACTIVE
-    PLUGIN_LIBRARY: server_audit2.so
+    PLUGIN_LIBRARY: server_audit.so
 PLUGIN_DESCRIPTION: MariaDB Enterprise Audit
        LOAD_OPTION: FORCE_PLUS_PERMANENT
 ```
