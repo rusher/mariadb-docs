@@ -108,8 +108,4 @@ MariaDB Connector/C client library for client server communication.
   * [General:](faq.md#general)
   * [Transactions](faq.md#transactions)
 
-## Indices and tables
-
-* [Index](genindex.md)
-* [Module Index](py-modindex.md)
-* [Search Page](search.md)
+{% @marketo/form formId="4316" %}

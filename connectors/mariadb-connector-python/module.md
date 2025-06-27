@@ -1,6 +1,6 @@
-<a id="module"></a>
-
 # The MariaDB Connector/Python module
+
+<a id="module"></a>
 
 MariaDB Connector/Python module enables python programs to access MariaDB and
 MySQL databases, using an API which is compliant with the Python DB API 2.0
@@ -331,3 +331,5 @@ This type object is used to describe date/time columns in a database.
 
 This type object is not supported in MariaDB Connector/Python and represents
 an empty set.
+
+{% @marketo/form formId="4316" %}

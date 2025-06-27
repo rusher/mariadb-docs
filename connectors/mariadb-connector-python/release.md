@@ -305,3 +305,5 @@ Release date: June 24th 2020
 - [CONPY-80](https://jira.mariadb.org/browse/CONPY-80): Parameters in set_config() method of ConnectionPool class have to be checked against the list of DSN keywords
 - [CONPY-81](https://jira.mariadb.org/browse/CONPY-81): Fixed crash when switching between text and binary protocol with same cursor
 - Fixed bug when inserting negative integer values with cursor.execute() method
+
+{% @marketo/form formId="4316" %}
