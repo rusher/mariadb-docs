@@ -2,8 +2,29 @@
 
 ## Syntax
 
-```
-|
+```sql
+CREATE [OR REPLACE]
+    [DEFINER = {user | CURRENT_USER | role | CURRENT_ROLE }]
+    [AGGREGATE] FUNCTION [IF NOT EXISTS] func_name ([func_parameter[,...]])
+    RETURNS type
+    [characteristic ...]
+    RETURN func_body
+
+func_parameter:
+    [ IN | OUT | INOUT | IN OUT ]  param_name type
+
+type:
+    Any valid MariaDB data type
+
+characteristic:
+    LANGUAGE SQL
+  | [NOT] DETERMINISTIC
+  | { CONTAINS SQL | NO SQL | READS SQL DATA | MODIFIES SQL DATA }
+  | SQL SECURITY { DEFINER | INVOKER }
+  | COMMENT 'string'
+
+func_body:
+    Valid SQL procedure statement
 ```
 
 ## Description
@@ -16,8 +37,7 @@ You can use a [SELECT](../../data-manipulation/selecting-data/select.md) stateme
 
 You can also replace the `RETURN` clause with a [BEGIN...END](../../programmatic-compound-statements/begin-end.md) compound statement. The compound statement must contain a `RETURN` statement. When the function is called, the `RETURN` statement immediately returns its result, and any statements after `RETURN` are effectively ignored.
 
-By default, a function is associated with the current database. To associate the function explicitly with a given database, specify the fully-qualified name as `db_name.func_name`\
-when you create it. If the function name is the same as the name of a built-in function, you must use the fully qualified name when you call it.
+By default, a function is associated with the current database. To associate the function explicitly with a given database, specify the fully-qualified name as `db_name.func_name` when you create it. If the function name is the same as the name of a built-in function, you must use the fully qualified name when you call it.
 
 The parameter list enclosed within parentheses must always be present. If there are no parameters, an empty parameter list of () should be used. Parameter names are not case sensitive.
 
@@ -27,10 +47,8 @@ For valid identifiers to use as function names, see [Identifier Names](../../../
 
 #### IN | OUT | INOUT | IN OUT
 
-**MariaDB starting with** [**10.8.0**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-8-series/mariadb-10-8-0-release-notes)
-
-The function parameter qualifiers for `IN`, `OUT`, `INOUT`, and `IN OUT` were added in a 10.8.0 preview release. Prior to 10.8.0 quantifiers were supported only in procedures.
-
+{% tabs %}
+{% tab title="Current" %}
 `OUT`, `INOUT` and its equivalent `IN OUT`, are only valid if called from `SET` and not `SELECT`. These quantifiers are especially useful for creating functions with more than one return value. This allows functions to be more complex and nested.
 
 ```sql
@@ -73,6 +91,12 @@ SELECT add_func4(1,2,3);
 |                3 |
 +------------------+
 ```
+{% endtab %}
+
+{% tab title="< 10.8.0" %}
+Quantifiers are not available.
+{% endtab %}
+{% endtabs %}
 
 #### AGGREGATE
 
@@ -86,20 +110,15 @@ What happens if the `RETURN` clause returns a value of a different type? It depe
 
 If the SQL\_MODE is strict (STRICT\_ALL\_TABLES or STRICT\_TRANS\_TABLES flags are specified), a 1366 error will be produced.
 
-Otherwise, the value is coerced to the proper type. For example, if a function\
-specifies an `ENUM` or `SET` value in the `RETURNS` clause, but the `RETURN`\
-clause returns an integer, the value returned from the function is the string for the corresponding `ENUM`\
-member of set of `SET` members.
+Otherwise, the value is coerced to the proper type. For example, if a function specifies an `ENUM` or `SET` value in the `RETURNS` clause, but the `RETURN` clause returns an integer, the value returned from the function is the string for the corresponding `ENUM` member of set of `SET` members.
 
-MariaDB stores the SQL\_MODE system variable setting that is in effect at the\
-time a routine is created, and always executes the routine with this setting in\
-force, regardless of the server SQL mode in effect when the routine is invoked.
+MariaDB stores the SQL\_MODE system variable setting that is in effect at the time a routine is created, and always executes the routine with this setting in force, regardless of the server SQL mode in effect when the routine is invoked.
 
 #### LANGUAGE SQL
 
 `LANGUAGE SQL` is a standard SQL clause, and it can be used in MariaDB for portability. However that clause has no meaning, because SQL is the only supported language for stored functions.
 
-A function is deterministic if it can produce only one result for a given list of parameters. If the result may be affected by stored data, server variables, random numbers or any value that is not explicitly passed, then the function is not deterministic. Also, a function is non-deterministic if it uses non-deterministic functions like [NOW()](../../../sql-functions/date-time-functions/now.md) or [CURRENT\_TIMESTAMP()](../../../sql-functions/date-time-functions/current_timestamp.md). The optimizer may choose a faster execution plan if it known that the function is deterministic. In such cases, you should declare the routine using the `DETERMINISTIC` keyword. If you want to explicitly state that the function is not deterministic (which is the default) you can use the `NOT DETERMINISTIC` keywords.
+A function is deterministic if it can produce only one result for a given list of parameters. If the result may be affected by stored data, server variables, random numbers or any value that is not explicitly passed, then the function is not deterministic. Also, a function is non-deterministic if it uses nondeterministic functions like [NOW()](../../../sql-functions/date-time-functions/now.md) or [CURRENT\_TIMESTAMP()](../../../sql-functions/date-time-functions/current_timestamp.md). The optimizer may choose a faster execution plan if it known that the function is deterministic. In such cases, you should declare the routine using the `DETERMINISTIC` keyword. If you want to explicitly state that the function is not deterministic (which is the default) you can use the `NOT DETERMINISTIC` keywords.
 
 If you declare a non-deterministic function as `DETERMINISTIC`, you may get incorrect results. If you declare a deterministic function as `NOT DETERMINISTIC`, in some cases the queries will be slower.
 
@@ -146,31 +165,22 @@ A subset of Oracle's PL/SQL language is supported in addition to the traditional
 
 ## Security
 
-You must have the [EXECUTE](../../account-management-sql-statements/grant.md#function-privileges) privilege on a function to call it.\
-MariaDB automatically grants the `EXECUTE` and `ALTER ROUTINE` privileges to the\
-account that called `CREATE FUNCTION`, even if the `DEFINER` clause was used.
+You must have the [EXECUTE](../../account-management-sql-statements/grant.md#function-privileges) privilege on a function to call it. MariaDB automatically grants the `EXECUTE` and `ALTER ROUTINE` privileges to the account that called `CREATE FUNCTION`, even if the `DEFINER` clause was used.
 
 Each function has an account associated as the definer. By default, the definer is the account\
 that created the function. Use the `DEFINER` clause to specify a different account as the\
-definer. You must have the [SUPER](../../account-management-sql-statements/grant.md#super) privilege, or, from [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1052-release-notes), the [SET USER](../../account-management-sql-statements/grant.md#set-user) privilege, to use the `DEFINER`\
-clause. See [Account Names](../../account-management-sql-statements/create-user.md#account-names) for details on specifying accounts.
+definer. You must have the [SUPER](../../account-management-sql-statements/grant.md#super) privilege, or, from [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1052-release-notes), the [SET USER](../../account-management-sql-statements/grant.md#set-user) privilege, to use the `DEFINER` clause. See [Account Names](../../account-management-sql-statements/create-user.md#account-names) for details on specifying accounts.
 
-The `SQL SECURITY` clause specifies what privileges are used when a function is called.\
-If `SQL SECURITY` is `INVOKER`, the function body will be evaluated using the privileges\
-of the user calling the function. If `SQL SECURITY` is `DEFINER`, the function body is\
-always evaluated using the privileges of the definer account. `DEFINER` is the default.
+The `SQL SECURITY` clause specifies what privileges are used when a function is called. If `SQL SECURITY` is `INVOKER`, the function body will be evaluated using the privileges of the user calling the function. If `SQL SECURITY` is `DEFINER`, the function body is always evaluated using the privileges of the definer account. `DEFINER` is the default.
 
-This allows you to create functions that grant limited access to certain data. For example, say\
-you have a table that stores some employee information, and that you've granted `SELECT`\
-privileges [only on certain columns](../../account-management-sql-statements/grant.md#column-privileges) to the user account `roger`.
+This allows you to create functions that grant limited access to certain data. For example, say you have a table that stores some employee information, and that you've granted `SELECT` privileges [only on certain columns](../../account-management-sql-statements/grant.md#column-privileges) to the user account `roger`.
 
 ```sql
 CREATE TABLE employees (name TINYTEXT, dept TINYTEXT, salary INT);
 GRANT SELECT (name, dept) ON employees TO roger;
 ```
 
-To allow the user the get the maximum salary for a department, define a function and grant\
-the `EXECUTE` privilege:
+To allow the user the get the maximum salary for a department, define a function and grant the `EXECUTE` privilege:
 
 ```sql
 CREATE FUNCTION max_salary (dept TINYTEXT) RETURNS INT RETURN
@@ -178,10 +188,7 @@ CREATE FUNCTION max_salary (dept TINYTEXT) RETURNS INT RETURN
 GRANT EXECUTE ON FUNCTION max_salary TO roger;
 ```
 
-Since `SQL SECURITY` defaults to `DEFINER`, whenever the user `roger` calls\
-this function, the subselect will execute with your privileges. As long as you have privileges to\
-select the salary of each employee, the caller of the function will be able to get the maximum\
-salary for each department without being able to see individual salaries.
+Since `SQL SECURITY` defaults to `DEFINER`, whenever the user `roger` calls this function, the subselect will execute with your privileges. As long as you have privileges to select the salary of each employee, the caller of the function will be able to get the maximum salary for each department without being able to see individual salaries.
 
 ## Character sets and collations
 
@@ -207,12 +214,7 @@ SELECT hello('world');
 +----------------+
 ```
 
-You can use a compound statement in a function to manipulate data with statements\
-like `INSERT` and `UPDATE`. The following example creates a counter function\
-that uses a temporary table to store the current value. Because the compound statement\
-contains statements terminated with semicolons, you have to first change the statement\
-delimiter with the `DELIMITER` statement to allow the semicolon to be used in the\
-function body. See [Delimiters in the mariadb client](../../../../clients-and-utilities/mariadb-client/delimiters.md) for more.
+You can use a compound statement in a function to manipulate data with statements like `INSERT` and `UPDATE`. The following example creates a counter function that uses a temporary table to store the current value. Because the compound statement contains statements terminated with semicolons, you have to first change the statement delimiter with the `DELIMITER` statement to allow the semicolon to be used in the function body. See [Delimiters in the mariadb client](../../../../clients-and-utilities/mariadb-client/delimiters.md) for more.
 
 ```sql
 CREATE TEMPORARY TABLE counter (c INT);

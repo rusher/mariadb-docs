@@ -14,7 +14,7 @@ create_specification:
 
 ## Description
 
-`CREATE DATABASE` creates a database with the given name. To use this statement, you need the [CREATE privilege](../../account-management-sql-statements/grant.md) for the database. `CREATE SCHEMA` is a synonym for `CREATE DATABASE`.
+`CREATE DATABASE` creates a database with the given name. To use this statement, you need the [CREATE privilege](../../account-management-sql-statements/grant.md#database-privileges) for the database. `CREATE SCHEMA` is a synonym for `CREATE DATABASE`.
 
 For valid identifiers to use as database names, see [Identifier Names](../../../sql-structure/sql-language-structure/identifier-names.md).
 
@@ -33,9 +33,15 @@ When the `IF NOT EXISTS` clause is used, MariaDB will return a warning instead o
 
 #### COMMENT
 
-**MariaDB starting with** [**10.5.0**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1050-release-notes)
+{% tabs %}
+{% tab title="Current" %}
+The maximum length of a comment is 1024 bytes. If the comment length exceeds this length, an error/warning code 4144 is thrown. The database comment is also added to the `db.opt` file, as well as to the [information\_schema.schemata table](../../administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-schemata-table.md).
+{% endtab %}
 
-From [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1050-release-notes), it is possible to add a comment of a maximum of 1024 bytes. If the comment length exceeds this length, a error/warning code 4144 is thrown. The database comment is also added to the db.opt file, as well as to the [information\_schema.schemata table](../../administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-schemata-table.md).
+{% tab title="< 10.5.0" %}
+Comments added for databases do not exist.
+{% endtab %}
+{% endtabs %}
 
 ## Examples
 
@@ -68,8 +74,6 @@ CREATE DATABASE czech_slovak_names
   COLLATE = 'keybcs2_bin';
 ```
 
-Comments, from [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1050-release-notes):
-
 ```sql
 CREATE DATABASE presentations COMMENT 'Presentations for conferences';
 ```
@@ -84,6 +88,6 @@ CREATE DATABASE presentations COMMENT 'Presentations for conferences';
 * [Character Sets and Collations](../../../data-types/string-data-types/character-sets/supported-character-sets-and-collations.md)
 * [Information Schema SCHEMATA Table](../../administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-schemata-table.md)
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}
