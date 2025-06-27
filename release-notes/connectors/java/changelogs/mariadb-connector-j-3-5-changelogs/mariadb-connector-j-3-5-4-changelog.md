@@ -1,6 +1,10 @@
+---
+hidden: true
+---
+
 # MariaDB Connector/J 3.5.4 Changelog
 
-[Download](https://mariadb.com/downloads/connectors/connectors-data-access/java8-connector)[Release Notes](../../mariadb-connector-j-3-5-release-notes/mariadb-connector-j-3-5-4-release-notes.md)[Changelog](mariadb-connector-j-3-5-4-changelog.md)[Connector/J Overview](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/about-mariadb-connector-j/README.md)
+<a href="https://mariadb.com/downloads/connectors/connectors-data-access/java8-connector" class="button primary">Download</a>  <a href="../../mariadb-connector-j-3-5-release-notes/mariadb-connector-j-3-5-4-release-notes.md" class="button secondary">Release Notes</a>  <a href="mariadb-connector-j-3-5-4-changelog.md" class="button secondary">Changelog</a>  <a href="https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-j/about-mariadb-connector-j" class="button secondary">Connector/J Overview</a>
 
 **Release date:** ?? Jun 2025
 

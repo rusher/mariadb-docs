@@ -1712,6 +1712,7 @@
         * [MariaDB Connector/J 3.5.1 Changelog](connectors/java/changelogs/mariadb-connector-j-3-5-changelogs/mariadb-connector-j-3-5-1-changelog.md)
         * [MariaDB Connector/J 3.5.2 Changelog](connectors/java/changelogs/mariadb-connector-j-3-5-changelogs/mariadb-connector-j-3-5-2-changelog.md)
         * [MariaDB Connector/J 3.5.3 Changelog](connectors/java/changelogs/mariadb-connector-j-3-5-changelogs/mariadb-connector-j-3-5-3-changelog.md)
+        * [MariaDB Connector/J 3.5.4 Changelog](connectors/java/changelogs/mariadb-connector-j-3-5-changelogs/mariadb-connector-j-3-5-4-changelog.md)
       * [MariaDB Connector/J 3.4 Changelogs](connectors/java/changelogs/mariadb-connectorj-changelogs-mariadb-connectorj-3-4-changelogs/README.md)
         * [MariaDB Connector/J 3.4.0 Changelog](connectors/java/changelogs/mariadb-connectorj-changelogs-mariadb-connectorj-3-4-changelogs/mariadb-connector-j-3-4-0-changelog.md)
         * [MariaDB Connector/J 3.4.1 Changelog](connectors/java/changelogs/mariadb-connectorj-changelogs-mariadb-connectorj-3-4-changelogs/mariadb-connector-j-3-4-1-changelog.md)
