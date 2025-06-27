@@ -21,7 +21,8 @@ column_definition:
       [NOT NULL | NULL]
       [DEFAULT default_value]
       [COMMENT '[compression=0|1]
-      [COMMENT='schema sync only'];
+      [COMMENT='schema sync only']
+      [COMMENT 'autoincrement column_name'];
 ```
 
 images here
@@ -39,7 +40,7 @@ images here
   * MAX\_ROWS
   * AUTO\_INCREMENT
 
-All of these are ignored by ColumnStore.The following statement creates a table called orders with two columns: _orderkey_ with datatype integer and _customer_ with datatype varchar:
+All of these are ignored by ColumnStore. The following statement creates a table called "orders" with two columns: "orderkey" with datatype integer and "customer" with datatype varchar:
 
 ```
 CREATE TABLE orders (
