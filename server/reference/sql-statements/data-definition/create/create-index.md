@@ -40,7 +40,7 @@ The statement is mapped to an `ALTER TABLE` statement to create [indexes](../../
 
 If another connection is using the table, a [metadata lock](../../transactions/metadata-locking.md) is active, and this statement will wait until the lock is released. This is also true for non-transactional tables.
 
-Another shortcut, [DROP INDEX](https://github.com/mariadb-corporation/docs-server/blob/test/server/sql-statements/data-definition/drop/drop-index.md), allows the removal of an index.
+Another shortcut, [DROP INDEX](../drop/drop-index.md), allows the removal of an index.
 
 For valid identifiers to use as index names, see [Identifier Names](../../../sql-structure/sql-language-structure/identifier-names.md).
 
@@ -99,7 +99,7 @@ See [Progress Reporting](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/developm
 
 {% tabs %}
 {% tab title="Current" %}
-The [WITHOUT OVERLAPS](https://github.com/mariadb-corporation/docs-server/blob/test/server/sql-structure/temporal-tables/application-time-periods.md#without-overlaps) clause allows you to constrain a primary or unique index such that [application-time periods](../../../sql-structure/temporal-tables/application-time-periods.md) cannot overlap. It can be used like this:
+The `WITHOUT OVERLAPS` clause allows you to constrain a primary or unique index such that [application-time periods](../../../sql-structure/temporal-tables/application-time-periods.md) cannot overlap. It can be used like this:
 
 ```sql
 CREATE UNIQUE INDEX u ON rooms (room_number, p WITHOUT OVERLAPS);
