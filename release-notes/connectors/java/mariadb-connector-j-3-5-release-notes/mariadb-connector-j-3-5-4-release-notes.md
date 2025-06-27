@@ -1,17 +1,23 @@
+---
+hidden: true
+---
+
 # MariaDB Connector/J 3.5.4 Release Notes
 
-[Download](https://mariadb.com/downloads/connectors/connectors-data-access/java8-connector)[Release Notes](mariadb-connector-j-3-5-4-release-notes.md)[Changelog](../changelogs/mariadb-connector-j-3-5-changelogs/mariadb-connector-j-3-5-4-changelog.md)[Connector/J Overview](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/about-mariadb-connector-j/README.md)
+<a href="https://mariadb.com/downloads/connectors/connectors-data-access/java8-connector" class="button primary">Download</a>  <a href="mariadb-connector-j-3-5-4-release-notes.md" class="button secondary">Release Notes</a>  <a href="../changelogs/mariadb-connector-j-3-5-changelogs/mariadb-connector-j-3-5-4-changelog.md" class="button secondary">Changelog</a>  <a href="https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-j/about-mariadb-connector-j" class="button secondary">Connector/J Overview</a>
 
 **Release date:** ?? Jun 2025
 
 MariaDB Connector/J 3.5.4 is a [_**Stable**_](../../../mariadb-release-criteria.md) _**(GA)**_ release.
 
-**For an overview of MariaDB Connector/J see the**[**About MariaDB Connector/J**](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/about-mariadb-connector-j/README.md) **page**
+{% hint style="info" %}
+**For an overview of MariaDB Connector/J see the** [**About MariaDB Connector/J**](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-j/about-mariadb-connector-j) **page**
+{% endhint %}
 
 ## Notable Changes
 
 * Added caching option for loadCodecs results to improve performance ([CONJ-1261](https://jira.mariadb.org/browse/CONJ-1261))
-  * Added new option `[cachedCodecs](https://mariadb.com/kb/en/about-mariadb-connector-j/#cachedCodecs)`
+  * Added new option [`cachedCodecs`](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-j/about-mariadb-connector-j#cachedCodecs)
 
 ## Bugs Fixed
 
@@ -24,7 +30,7 @@ MariaDB Connector/J 3.5.4 is a [_**Stable**_](../../../mariadb-release-criteria.
 * Fixed getString method on BIT(1) fields to properly honor transformedBitIsBoolean configuration ([CONJ-1255](https://jira.mariadb.org/browse/CONJ-1255))
 * Enhanced metadata compatibility with MariaDB version 12.0 ([CONJ-1259](https://jira.mariadb.org/browse/CONJ-1259))
 * Improved performance of DatabaseMetaData.getExportedKeys method ([CONJ-1260](https://jira.mariadb.org/browse/CONJ-1260))
-  * Added new option `[metaExportedKeys](https://mariadb.com/kb/en/about-mariadb-connector-j/#metaExportedKeys)`
+  * Added new option [`metaExportedKeys`](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-j/about-mariadb-connector-j#metaExportedKeys)`
 * Fixed issue to ensure correct catalog name is returned ([CONJ-1256](https://jira.mariadb.org/browse/CONJ-1256))
 
 ## Changelog

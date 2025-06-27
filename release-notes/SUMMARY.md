@@ -1563,6 +1563,7 @@
       * [MariaDB Connector/J 3.5.1 Release Notes](connectors/java/mariadb-connector-j-3-5-release-notes/mariadb-connector-j-3-5-1-release-notes.md)
       * [MariaDB Connector/J 3.5.2 Release Notes](connectors/java/mariadb-connector-j-3-5-release-notes/mariadb-connector-j-3-5-2-release-notes.md)
       * [MariaDB Connector/J 3.5.3 Release Notes](connectors/java/mariadb-connector-j-3-5-release-notes/mariadb-connector-j-3-5-3-release-notes.md)
+      * [MariaDB Connector/J 3.5.4 Release Notes](connectors/java/mariadb-connector-j-3-5-release-notes/mariadb-connector-j-3-5-4-release-notes.md)
     * [MariaDB Connector/J 3.4 Release Notes](connectors/java/mariadb-connector-j-3-4-release-notes/README.md)
       * [MariaDB Connector/J 3.4.0 Release Notes](connectors/java/mariadb-connector-j-3-4-release-notes/mariadb-connector-j-3-4-0-release-notes.md)
       * [MariaDB Connector/J 3.4.1 Release Notes](connectors/java/mariadb-connector-j-3-4-release-notes/mariadb-connector-j-3-4-1-release-notes.md)
