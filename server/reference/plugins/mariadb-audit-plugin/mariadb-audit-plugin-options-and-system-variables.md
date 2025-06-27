@@ -208,12 +208,12 @@ Below is a list of all system variables related to the Audit Plugin. See [Server
 
 * Description: Controls how the server should treat the plugin when the server starts up.
   * Valid values are:
-    * `OFF` - Disables the plugin without removing it from the [mysql.plugins](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-plugin-table.md) table.
+    * `OFF` - Disables the plugin without removing it from the [mysql.plugins](../../sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-plugin-table.md) table.
     * `ON` - Enables the plugin. If the plugin cannot be initialized, then the server will still continue starting up, but the plugin will be disabled.
     * `FORCE` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error.
-    * `FORCE_PLUS_PERMANENT` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error. In addition, the plugin cannot be uninstalled with [UNINSTALL SONAME](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md) or [UNINSTALL PLUGIN](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md) while the server is running.
+    * `FORCE_PLUS_PERMANENT` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error. In addition, the plugin cannot be uninstalled with [UNINSTALL SONAME](https://mariadb.com/docs/server/reference/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname) or [UNINSTALL PLUGIN ](https://mariadb.com/docs/server/reference/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin)while the server is running.
   * See [MariaDB Audit Plugin - Installation: Prohibiting Uninstallation](mariadb-audit-plugin-installation.md#prohibiting-uninstallation) for more information on one use case.
-  * See [Plugin Overview: Configuring Plugin Activation at Server Startup](../plugin-overview.md#configuring-plugin-activation-at-server-startup) for more information.
+  * See [Plugin Overview: Configuring Plugin Activation at Server Startup](https://mariadb.com/docs/server/reference/plugins/plugin-overview#configuring-plugin-activation-at-server-startup) for more information.
 * Commandline: `--server-audit=val`
 * Data Type: `enumerated`
 * Default Value: `ON`
