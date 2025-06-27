@@ -1,6 +1,14 @@
 # CREATE PACKAGE BODY
 
-The `CREATE PACKAGE BODY` statement can be used when [Oracle SQL\_MODE](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/data-definition/create/broken-reference/README.md) is set, or in any mode from [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-4-series/what-is-mariadb-114).
+{% tabs %}
+{% tab title="Current" %}
+The `CREATE PACKAGE BODY` statement can be used in any mode.
+{% endtab %}
+
+{% tab title="< 11.4" %}
+The `CREATE PACKAGE BODY` statement can be used in [Oracle SQL\_MODE](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle).
+{% endtab %}
+{% endtabs %}
 
 In Oracle mode, the PL/SQL dialect is used, while in non-Oracle mode, SQL/PSM is used.
 
@@ -93,8 +101,6 @@ condition_value:
 
 ## Description
 
-The `CREATE PACKAGE BODY` statement can be used when [Oracle SQL\_MODE](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/data-definition/create/broken-reference/README.md) is set, or in any mode from [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-4-series/what-is-mariadb-114).
-
 The `CREATE PACKAGE BODY` statement creates the package body for a stored package. The package specification must be previously created using the [CREATE PACKAGE](create-package.md) statement.
 
 A package body provides implementations of the package public routines and can optionally have:
@@ -106,10 +112,8 @@ A package body provides implementations of the package public routines and can o
 
 ## Examples
 
-Oracle mode:
-
 ```sql
-SET sql_mode=ORACLE;
+SET sql_mode=ORACLE; # unnecessary from MariaDB 11.4
 DELIMITER $$
 CREATE OR REPLACE PACKAGE employee_tools AS
   FUNCTION getSalary(eid INT) RETURN DECIMAL(10,2);
@@ -167,53 +171,12 @@ $$
 DELIMITER ;
 ```
 
-Non-Oracle mode, from [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-4-series/what-is-mariadb-114):
-
-```sql
-DELIMITER $$
-
-CREATE OR REPLACE PACKAGE pkg
-  PROCEDURE p1();
-  FUNCTION f1() RETURNS INT;
-END;
-
-$$
-
-DELIMITER ;
-
-DELIMITER $$
-
-CREATE OR REPLACE PACKAGE BODY pkg
-
-  -- variable declarations
-  DECLARE a INT DEFAULT 11;
-  DECLARE b INT DEFAULT 10;
-
-  -- routine declarations
-  PROCEDURE p1()
-  BEGIN
-    SELECT CURRENT_USER;
-  END;
-
-  FUNCTION f1() RETURNS INT
-  BEGIN
-    RETURN a;
-  END;
-
-  -- package initialization section
-  SET a=a-b;
-END;
-$$
-
-DELIMITER ;
-```
-
 ## See Also
 
 * [CREATE PACKAGE](create-package.md)
 * [SHOW CREATE PACKAGE BODY](../../administrative-sql-statements/show/show-create-package-body.md)
 * [DROP PACKAGE BODY](../drop/drop-package-body.md)
-* [Oracle SQL\_MODE](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/data-definition/create/broken-reference/README.md)
+* [Oracle SQL\_MODE](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

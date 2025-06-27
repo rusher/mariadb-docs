@@ -1,8 +1,18 @@
 # CREATE PACKAGE
 
-The `CREATE PACKAGE` statement can be used when [Oracle SQL\_MODE](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/data-definition/create/broken-reference/README.md) is set, or in any mode from [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-4-series/what-is-mariadb-114).
 
-In Oracle mode, the PL/SQL dialect is used, while if Oracle mode is not set (the default), SQL/PSM is used.
+
+{% tabs %}
+{% tab title="Current" %}
+The `CREATE PACKAGE` statement can be used in any mode.
+{% endtab %}
+
+{% tab title="< 11.4" %}
+The `CREATE PACKAGE` statement can be used when [Oracle SQL\_MODE](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle) is set.
+{% endtab %}
+{% endtabs %}
+
+In [Oracle SQL mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle), the PL/SQL dialect is used, while if Oracle mode is not set (the default), SQL/PSM is used.
 
 ## Syntax (Oracle mode)
 
@@ -105,8 +115,6 @@ package_routine_characteristic:
 
 ## Description
 
-The `CREATE PACKAGE` statement can be used when [Oracle SQL\_MODE](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/data-definition/create/broken-reference/README.md) is set, or in any mode from [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-4-series/what-is-mariadb-114).
-
 `CREATE PACKAGE` creates the specification for a stored package (a collection of logically related stored objects). A stored package specification declares public routines (procedures and functions) of the package, but does not implement these routines.
 
 A package whose specification was created by the `CREATE PACKAGE` statement, should later be implemented using the [CREATE PACKAGE BODY](create-package-body.md) statement.
@@ -115,16 +123,22 @@ A package whose specification was created by the `CREATE PACKAGE` statement, sho
 
 **MariaDB starting with** [**10.8.0**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-8-series/mariadb-10-8-0-release-notes)
 
-The function parameter quantifiers for `IN`, `OUT`, `INOUT`, and `IN OUT` where added in a 10.8.0 preview release. Prior to 10.8.0 quantifiers were supported only in procedures.
+{% tabs %}
+{% tab title="Current" %}
+The function parameter quantifiers for `IN`, `OUT`, `INOUT`, and `IN OUT` are supported anywhere.
+{% endtab %}
+
+{% tab title="< 10.8.0" %}
+The function parameter quantifiers for `IN`, `OUT`, `INOUT`, and `IN OUT` are supported only in procedures.
+{% endtab %}
+{% endtabs %}
 
 `OUT`, `INOUT` and its equivalent `IN OUT`, are only valid if called from `SET` and not `SELECT`. These quantifiers are especially useful for creating functions and procedures with more than one return value. This allows functions and procedures to be more complex and nested.
 
 ## Examples
 
-Oracle mode:
-
 ```sql
-SET sql_mode=ORACLE;
+SET sql_mode=ORACLE; # unnecessary from MariaDB 11.4
 DELIMITER $$
 CREATE OR REPLACE PACKAGE employee_tools AS
   FUNCTION getSalary(eid INT) RETURN DECIMAL(10,2);
@@ -136,28 +150,12 @@ $$
 DELIMITER ;
 ```
 
-From [MariaDB 11.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-4-series/what-is-mariadb-114), non-Oracle mode:
-
-```sql
-SET sql_mode='';
-
-DELIMITER $$
-
-CREATE OR REPLACE PACKAGE pkg
-  PROCEDURE p1();
-  FUNCTION f1() RETURNS INT;
-END;
-$$
-
-DELIMITER ;
-```
-
 ## See Also
 
 * [CREATE PACKAGE BODY](create-package-body.md)
 * [SHOW CREATE PACKAGE](../../administrative-sql-statements/show/show-create-package.md)
 * [DROP PACKAGE](../drop/drop-package.md)
-* [Oracle SQL\_MODE](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/data-definition/create/broken-reference/README.md)
+* [Oracle SQL\_MODE](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
