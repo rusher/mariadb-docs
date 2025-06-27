@@ -36,15 +36,15 @@ lock_option:
 
 The `CREATE INDEX` statement is used to add indexes to a table. Indexes can be created at the same as the table, with the [CREATE TABLE](create-table.md) statement. In some cases, such as for InnoDB primary keys, doing so during creation is preferable, as adding a primary key will involve rebuilding the table.
 
-The statement is mapped to an `ALTER TABLE` statement to create [indexes](https://github.com/mariadb-corporation/docs-server/blob/test/ha-and-performance/optimization-and-tuning/optimization-and-indexes/README.md). See [ALTER TABLE](../alter/alter-table.md). `CREATE INDEX` cannot be used to create a [PRIMARY KEY](../../../../mariadb-quickstart-guides/mariadb-indexes-guide.md#primary-key); use `ALTER TABLE` instead.
+The statement is mapped to an `ALTER TABLE` statement to create [indexes](../../../../server-usage/tables/mariadb-indexes-guide-1.md). See [ALTER TABLE](../alter/alter-table.md). `CREATE INDEX` cannot be used to create a [PRIMARY KEY](../../../../mariadb-quickstart-guides/mariadb-indexes-guide.md#primary-key); use `ALTER TABLE` instead.
 
-If another connection is using the table, a [metadata lock](https://github.com/mariadb-corporation/docs-server/blob/test/server/sql-statements/transactions/metadata-locking.md) is active, and this statement will wait until the lock is released. This is also true for non-transactional tables.
+If another connection is using the table, a [metadata lock](../../transactions/metadata-locking.md) is active, and this statement will wait until the lock is released. This is also true for non-transactional tables.
 
 Another shortcut, [DROP INDEX](https://github.com/mariadb-corporation/docs-server/blob/test/server/sql-statements/data-definition/drop/drop-index.md), allows the removal of an index.
 
-For valid identifiers to use as index names, see [Identifier Names](https://github.com/mariadb-corporation/docs-server/blob/test/server/sql-structure/sql-language-structure/identifier-names.md).
+For valid identifiers to use as index names, see [Identifier Names](../../../sql-structure/sql-language-structure/identifier-names.md).
 
-For limits on InnoDB indexes, see [InnoDB Limitations](https://github.com/mariadb-corporation/docs-server/blob/test/server/storage-engines/innodb/innodb-limitations.md).
+For limits on InnoDB indexes, see [InnoDB Limitations](../../../../server-usage/storage-engines/innodb/innodb-limitations.md).
 
 Note that `KEY_BLOCK_SIZE` is currently ignored in `CREATE INDEX`, although it is included in the output of [SHOW CREATE TABLE](../../administrative-sql-statements/show/show-create-table.md).
 
@@ -97,11 +97,9 @@ See [Progress Reporting](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/developm
 
 ## WITHOUT OVERLAPS
 
-**MariaDB starting with** [**10.5.3**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1053-release-notes)
-
 {% tabs %}
 {% tab title="Current" %}
-The [WITHOUT OVERLAPS](https://github.com/mariadb-corporation/docs-server/blob/test/server/sql-structure/temporal-tables/application-time-periods.md#without-overlaps) clause allows you to constrain a primary or unique index such that [application-time periods](https://github.com/mariadb-corporation/docs-server/blob/test/server/sql-structure/temporal-tables/application-time-periods.md) cannot overlap. It can be used like this:
+The [WITHOUT OVERLAPS](https://github.com/mariadb-corporation/docs-server/blob/test/server/sql-structure/temporal-tables/application-time-periods.md#without-overlaps) clause allows you to constrain a primary or unique index such that [application-time periods](../../../sql-structure/temporal-tables/application-time-periods.md) cannot overlap. It can be used like this:
 
 ```sql
 CREATE UNIQUE INDEX u ON rooms (room_number, p WITHOUT OVERLAPS);
