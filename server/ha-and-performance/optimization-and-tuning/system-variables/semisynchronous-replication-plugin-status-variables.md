@@ -31,12 +31,12 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 
 #### `Rpl_semi_sync_master_no_times`
 
-* Description: Number of times the master turned off semisynchronous replication. The global value can be flushed by [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md).
+* Description: Number of times the master turned off semisynchronous replication. The global value can be flushed by [FLUSH STATUS](../../../reference/sql-statements/administrative-sql-statements/flush-commands/flush.md).
 * Data Type: `numeric`
 
 #### `Rpl_semi_sync_master_no_tx`
 
-* Description: Number of commits that have not been successfully acknowledged by a slave. The global value can be flushed by [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md).
+* Description: Number of commits that have not been successfully acknowledged by a slave. The global value can be flushed by [FLUSH STATUS](../../../reference/sql-statements/administrative-sql-statements/flush-commands/flush.md).
 * Data Type: `numeric`
 
 #### `Rpl_semi_sync_master_request_ack`
@@ -51,7 +51,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 
 #### `Rpl_semi_sync_master_timefunc_failures`
 
-* Description: Number of times the master failed when calling a time function, such as gettimeofday(). The global value can be flushed by [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md).
+* Description: Number of times the master failed when calling a time function, such as gettimeofday(). The global value can be flushed by [FLUSH STATUS](../../../reference/sql-statements/administrative-sql-statements/flush-commands/flush.md).
 * Data Type: `numeric`
 
 #### `Rpl_semi_sync_master_tx_avg_wait_time`
@@ -71,7 +71,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 
 #### `Rpl_semi_sync_master_wait_pos_backtraverse`
 
-* Description: Total number of times the master waited for an event that had binary coordinates lower than previous events waited for. Occurs if the order in which transactions start waiting for a reply is different from the order in which their binary log events were written. The global value can be flushed by [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md).
+* Description: Total number of times the master waited for an event that had binary coordinates lower than previous events waited for. Occurs if the order in which transactions start waiting for a reply is different from the order in which their binary log events were written. The global value can be flushed by [FLUSH STATUS](../../../reference/sql-statements/administrative-sql-statements/flush-commands/flush.md).
 * Data Type: `numeric`
 
 #### `Rpl_semi_sync_master_wait_sessions`
@@ -81,7 +81,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
 
 #### `Rpl_semi_sync_master_yes_tx`
 
-* Description: Number of commits that have been successfully acknowledged by a slave. The global value can be flushed by [FLUSH STATUS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md).
+* Description: Number of commits that have been successfully acknowledged by a slave. The global value can be flushed by [FLUSH STATUS](../../../reference/sql-statements/administrative-sql-statements/flush-commands/flush.md).
 * Data Type: `numeric`
 
 #### `Rpl_semi_sync_slave_status`
