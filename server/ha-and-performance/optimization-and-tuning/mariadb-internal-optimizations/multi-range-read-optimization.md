@@ -200,7 +200,7 @@ Multi Range Read is used for scans that do full record reads (i.e., they are not
 
 1. an index record, to get a rowid of the table record
 2. a table record\
-   Both actions will be done by making one call to the storage engine, so the effect of the call will be that the relevan `Handler_read_XXX` counter will be incremented BY ONE, and [Innodb\_rows\_read](../../../server-usage/storage-engines/innodb/innodb-status-variables.md) will be incremented BY ONE.
+   Both actions will be done by making one call to the storage engine, so the effect of the call will be that the relevan `Handler_read_XXX` counter will be incremented BY ONE, and [Innodb\_rows\_read](../system-variables/innodb-status-variables.md) will be incremented BY ONE.
 
 Multi Range Read will make separate calls for steps #1 and #2, causing TWO increments to `Handler_read_XXX` counters and TWO increments to `Innodb_rows_read` counter. To the uninformed, this looks as if Multi Range Read was making things worse. Actually, it doesn't - the query will still read the same index/table records, and actually Multi Range Read may give speedups because it reads data in disk order.
 

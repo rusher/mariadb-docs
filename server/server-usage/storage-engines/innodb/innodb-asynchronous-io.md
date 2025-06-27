@@ -41,21 +41,21 @@ The number of completion tasks (EXECUTING\_COMPLETION\_TASK stage) that can run 
 
 From [MariaDB 11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115), a number of status variables were added to give insight into the above operations:
 
-* [innodb\_async\_reads\_pending](innodb-status-variables.md#innodb_async_reads_pending) – Number of read IO operations currently in progress (from SUBMITTED to COMPLETED).
-* [innodb\_async\_reads\_tasks\_running](innodb-status-variables.md#innodb_async_reads_tasks_running) – Number of read IO operations currently in the EXECUTING\_COMPLETION\_TASK state.
-* [innodb\_async\_reads\_total\_count](innodb-status-variables.md#innodb_async_reads_total_count) – Total number of read completion tasks that have finished execution.
-* [innodb\_async\_reads\_queue\_size](innodb-status-variables.md#innodb_async_reads_queue_size) – Current size of the queue (see [Queuing Mechanism](innodb-asynchronous-io.md#queuing-mechanism)).
-* [innodb\_async\_reads\_wait\_slot\_sec](innodb-status-variables.md#innodb_async_reads_wait_slot_sec) – Total wait time for a free IO slot (see Waiting for IO Slots).
-* [innodb\_async\_reads\_total\_enqueues](innodb-status-variables.md#innodb_async_reads_total_enqueues) – Total number of read operations that were queued (see [Queuing Mechanism](innodb-asynchronous-io.md#queuing-mechanism)). Includes those still waiting and making up `innodb_async_reads_queue_size`.
+* [innodb\_async\_reads\_pending](../../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_async_reads_pending) – Number of read IO operations currently in progress (from SUBMITTED to COMPLETED).
+* [innodb\_async\_reads\_tasks\_running](../../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_async_reads_tasks_running) – Number of read IO operations currently in the EXECUTING\_COMPLETION\_TASK state.
+* [innodb\_async\_reads\_total\_count](../../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_async_reads_total_count) – Total number of read completion tasks that have finished execution.
+* [innodb\_async\_reads\_queue\_size](../../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_async_reads_queue_size) – Current size of the queue (see [Queuing Mechanism](innodb-asynchronous-io.md#queuing-mechanism)).
+* [innodb\_async\_reads\_wait\_slot\_sec](../../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_async_reads_wait_slot_sec) – Total wait time for a free IO slot (see Waiting for IO Slots).
+* [innodb\_async\_reads\_total\_enqueues](../../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_async_reads_total_enqueues) – Total number of read operations that were queued (see [Queuing Mechanism](innodb-asynchronous-io.md#queuing-mechanism)). Includes those still waiting and making up `innodb_async_reads_queue_size`.
 
 Similar variables exist for write operations:
 
-* [innodb\_async\_writes\_pending](innodb-status-variables.md#innodb_async_writes_pending)
-* [innodb\_async\_writes\_tasks\_running](innodb-status-variables.md#innodb_async_writes_tasks_running)
-* [innodb\_async\_reads\_total\_count](innodb-status-variables.md#innodb_async_writes_total_count)
-* [innodb\_async\_writes\_queue\_size](innodb-status-variables.md#innodb_async_writes_queue_size)
-* [innodb\_async\_writes\_wait\_slot\_sec](innodb-status-variables.md#innodb_async_writes_wait_slot_sec)
-* [innodb\_async\_writes\_total\_enqueues](innodb-status-variables.md#innodb_async_writes_total_enqueues)
+* [innodb\_async\_writes\_pending](../../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_async_writes_pending)
+* [innodb\_async\_writes\_tasks\_running](../../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_async_writes_tasks_running)
+* [innodb\_async\_reads\_total\_count](../../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_async_writes_total_count)
+* [innodb\_async\_writes\_queue\_size](../../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_async_writes_queue_size)
+* [innodb\_async\_writes\_wait\_slot\_sec](../../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_async_writes_wait_slot_sec)
+* [innodb\_async\_writes\_total\_enqueues](../../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_async_writes_total_enqueues)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

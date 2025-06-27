@@ -158,7 +158,7 @@
         * [Configure the InnoDB Undo Log](server-usage/storage-engines/innodb/mariadb-enterprise-server-innodb-operations/configure-the-innodb-undo-log.md)
         * [Schema Changes](server-usage/storage-engines/innodb/mariadb-enterprise-server-innodb-operations/schema-changes/README.md)
           * [InnoDB Schema Changes](server-usage/storage-engines/innodb/mariadb-enterprise-server-innodb-operations/schema-changes/schema-changes-innodb-schema-changes.md)
-      * [InnoDB Server Status Variables](server-usage/storage-engines/innodb/innodb-status-variables.md)
+      * [InnoDB Server Status Variables](ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md)
     * [BLACKHOLE](server-usage/storage-engines/blackhole.md)
     * [MEMORY](server-usage/storage-engines/memory-storage-engine.md)
     * [MERGE](server-usage/storage-engines/merge.md)

@@ -6,7 +6,7 @@ Most status variables are described on this page, but some are described elsewhe
 
 * [Aria Status Variables](../../../server-usage/storage-engines/aria/aria-status-variables.md)
 * [Galera Status Variables](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-status-variables)
-* [InnoDB Status Variables](../../../server-usage/storage-engines/innodb/innodb-status-variables.md)
+* [InnoDB Status Variables](innodb-status-variables.md)
 * [Mroonga Status Variables](../../../server-usage/storage-engines/mroonga/mroonga-status-variables.md)
 * [MyRocks Status Variables](../../../server-usage/storage-engines/myrocks/myrocks-status-variables.md)
 * [Performance Scheme Status Variables](../../../reference/sql-statements/administrative-sql-statements/system-tables/performance-schema/performance-schema-status-variables.md)

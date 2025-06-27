@@ -10,7 +10,7 @@ The new buffer pool size must be a multiple of [innodb\_buffer\_pool\_chunk\_siz
 
 The number of chunks as calculated by [innodb\_buffer\_pool\_size](../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_size) / [innodb\_buffer\_pool\_chunk\_size](../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_chunk_size) should not exceed 1000 in order to avoid performance issues.
 
-A background thread performs the resizing operation. The [Innodb\_buffer\_pool\_resize\_status](../../../server-usage/storage-engines/innodb/innodb-status-variables.md#innodb_buffer_pool_resize_status) status variable shows the progress of the resizing operation, for example:
+A background thread performs the resizing operation. The [Innodb\_buffer\_pool\_resize\_status](innodb-status-variables.md#innodb_buffer_pool_resize_status) status variable shows the progress of the resizing operation, for example:
 
 ```sql
 SHOW STATUS LIKE 'Innodb_buffer_pool_resize_status';

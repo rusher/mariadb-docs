@@ -19,13 +19,13 @@ The Compressed row format supports the following block sizes:
 | 8 KB       | 8                      |
 | 16 KB      | 16                     |
 
-If the `KEY_BLOCK_SIZE` table option is not specified, the block size defaults to half of [innodb\_page\_size](../innodb-status-variables.md#innodb_page_size). With the default 16 KB page size, the block size defaults to 8 KB.
+If the `KEY_BLOCK_SIZE` table option is not specified, the block size defaults to half of [innodb\_page\_size](../../../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_page_size). With the default 16 KB page size, the block size defaults to 8 KB.
 
-For compression to be effective, the chosen block size should be smaller than the servers value of the [innodb\_page\_size](../innodb-status-variables.md#innodb_page_size) system variable.
+For compression to be effective, the chosen block size should be smaller than the servers value of the [innodb\_page\_size](../../../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_page_size) system variable.
 
 ## Supported Index Prefix Limits
 
-The limit for indexing column values depends on the [innodb\_page\_size](../innodb-status-variables.md#innodb_page_size) value:
+The limit for indexing column values depends on the [innodb\_page\_size](../../../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_page_size) value:
 
 | Page Size | Index Prefix Limit |
 | --------- | ------------------ |
@@ -87,7 +87,7 @@ CREATE TABLE tab (
 
 ### Create an InnoDB Table with the Compressed Row Format using ROW\_FORMAT
 
-The default block size for tables that use the Compressed row format is half of [innodb\_page\_size](../innodb-status-variables.md#innodb_page_size). With the default 16 KB page size, the block size defaults to 8 KB. A compressed table with the default block size can be created by setting the ROW\_FORMAT table option to COMPRESSED:
+The default block size for tables that use the Compressed row format is half of [innodb\_page\_size](../../../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_page_size). With the default 16 KB page size, the block size defaults to 8 KB. A compressed table with the default block size can be created by setting the ROW\_FORMAT table option to COMPRESSED:
 
 ```sql
 CREATE TABLE hq_sales.invoices (
@@ -156,7 +156,7 @@ WHERE NAME='hq_sales/invoices';
 
 ### Create an InnoDB Table with the Compressed Row Format using KEY\_BLOCK\_SIZE
 
-The default block size for tables that use the Compressed row format is half of [innodb\_page\_size](../innodb-status-variables.md#innodb_page_size). With the default 16 KB page size, the block size defaults to 8 KB. A compressed table with a non-default block size can be created by setting the `KEY_BLOCK_SIZE` table option to the desired block size.
+The default block size for tables that use the Compressed row format is half of [innodb\_page\_size](../../../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_page_size). With the default 16 KB page size, the block size defaults to 8 KB. A compressed table with a non-default block size can be created by setting the `KEY_BLOCK_SIZE` table option to the desired block size.
 
 ```sql
 CREATE TABLE hq_sales.invoices (

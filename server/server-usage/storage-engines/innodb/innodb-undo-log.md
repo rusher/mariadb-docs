@@ -60,7 +60,7 @@ Before [MariaDB 11.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-com
 
 Each insert or update portion of the undo log is known as a rollback segment. The [innodb\_undo\_logs](innodb-system-variables.md#innodb_undo_logs) system variable allowed to reduce the number of rollback segments from the usual 128, to limit the number of concurrently active write transactions. [innodb\_undo\_logs](innodb-system-variables.md#innodb_undo_logs) was deprecated and ignored in [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105) and removed in [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/what-is-mariadb-106), as it always makes sense to use the maximum number of rollback segments.
 
-The related [innodb\_available\_undo\_logs](innodb-status-variables.md#innodb_available_undo_logs) status variable stores the total number of available InnoDB undo logs.
+The related [innodb\_available\_undo\_logs](../../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_available_undo_logs) status variable stores the total number of available InnoDB undo logs.
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

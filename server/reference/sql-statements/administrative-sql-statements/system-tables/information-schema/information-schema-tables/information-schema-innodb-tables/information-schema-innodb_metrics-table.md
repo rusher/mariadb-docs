@@ -107,8 +107,8 @@ From MariaDB 10.6, the interface was simplified by removing the following:
 
 and by making the following reflect the status variables:
 
-* buffer\_LRU\_batch\_flush\_total\_pages: [innodb\_buffer\_pool\_pages\_LRU\_flushed](../../../../../../../server-usage/storage-engines/innodb/innodb-status-variables.md#innodb_buffer_pool_pages_lru_flushed)
-* buffer\_LRU\_batch\_evict\_total\_pages: [innodb\_buffer\_pool\_pages\_LRU\_freed](../../../../../../../server-usage/storage-engines/innodb/innodb-status-variables.md#innodb_buffer_pool_pages_lru_freed)
+* buffer\_LRU\_batch\_flush\_total\_pages: [innodb\_buffer\_pool\_pages\_LRU\_flushed](../../../../../../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_buffer_pool_pages_lru_flushed)
+* buffer\_LRU\_batch\_evict\_total\_pages: [innodb\_buffer\_pool\_pages\_LRU\_freed](../../../../../../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_buffer_pool_pages_lru_freed)
 
 The intention is to eventually remove the interface entirely (see [MDEV-15706](https://jira.mariadb.org/browse/MDEV-15706)).
 
