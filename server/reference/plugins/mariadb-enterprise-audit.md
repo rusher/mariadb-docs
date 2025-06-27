@@ -211,7 +211,7 @@ SHOW GLOBAL VARIABLES
 +---------------+--------------------------+
 ```
 
-2. Confirm that your server's plugin directory contains server\_audit2.so, which is the shared library for MariaDB Enterprise Audit:
+2. Confirm that your server's plugin directory contains server\_audit.so, which is the shared library for MariaDB Enterprise Audit:
 
 ```
 $ ls -l /usr/lib64/mysql/plugin/server_audit.so
