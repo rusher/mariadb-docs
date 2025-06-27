@@ -72,7 +72,7 @@ WHERE PLUGIN_NAME='SERVER_AUDIT'\G
 ```
 *************************** 1. row ***************************
      PLUGIN_STATUS: ACTIVE
-    PLUGIN_LIBRARY: server_audit.so
+    PLUGIN_LIBRARY: server_audit2.so
 PLUGIN_DESCRIPTION: Audit the server activity
 ```
 
@@ -95,7 +95,7 @@ WHERE name = 'SERVER_AUDIT'\G
 ```
 *************************** 1. row ***************************
 name: SERVER_AUDIT
-  dl: server_audit.so
+  dl: server_audit2.so
 ```
 
 If you see the output shown above, then the MariaDB Audit plugin can be uninstalled with [UNINSTALL SONAME](mariadb-enterprise-audit.md#uninstall-with-uninstall-soname).
@@ -117,7 +117,7 @@ WHERE PLUGIN_NAME='SERVER_AUDIT'\G
 ```
 *************************** 1. row ***************************
      PLUGIN_STATUS: ACTIVE
-    PLUGIN_LIBRARY: server_audit.so
+    PLUGIN_LIBRARY: server_audit2.so
 PLUGIN_DESCRIPTION: Audit the server activity
        LOAD_OPTION: FORCE_PLUS_PERMANENT
 ```
