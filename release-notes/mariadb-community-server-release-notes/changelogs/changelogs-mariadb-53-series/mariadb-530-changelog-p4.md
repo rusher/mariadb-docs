@@ -328,7 +328,7 @@
 * [Revision #2905](https://bazaar.launchpad.net/~maria-captains/maria/5.3/revision/2905)\
   Sat 2011-02-12 17:17:19 +0100
   * Fix [MySQL Bug #60057](https://bugs.mysql.com/bug.php?id=60057) : sel\_arg\_range\_seq\_next loops in optimized compilation/VS2010
-    * When [mariadb 5.3](https://github.com/mariadb-corporation/docs-server/blob/test/release-notes/changelogs/changelogs-mariadb-53-series/broken-reference/README.md) is compiler with VS2010, several tests would enter infinite loop in\
+    * When [mariadb 5.3](https://mariadb.com/docs/release-notes/mariadb-community-server-release-notes/changelogs/changelogs-mariadb-53-series) is compiler with VS2010, several tests would enter infinite loop in\
       sel\_arg\_range\_seq\_next(). The reason is compiler backend bug. This bug is not\
       present in either VS2008 or VS2010 SP1 RC.
     * Workaround is to compile this function without most aggresive optimization flag\
