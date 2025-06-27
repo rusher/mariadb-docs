@@ -1,6 +1,6 @@
 # InnoDB Server Status Variables
 
-See [Server Status Variables](server-status-variables.md) for a complete list of status variables that can be viewed with [SHOW STATUS](../../../reference/sql-statements/administrative-sql-statements/show/show-status.md).
+See [Server Status Variables](../../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md) for a complete list of status variables that can be viewed with [SHOW STATUS](../../../reference/sql-statements/administrative-sql-statements/show/show-status.md).
 
 Much of the [InnoDB](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/README.md) information here can also be seen with a [SHOW ENGINE INNODB STATUS](../../../reference/sql-statements/administrative-sql-statements/show/show-engine-innodb-status.md) statement.
 
@@ -292,7 +292,7 @@ See also the [Full list of MariaDB options, system and status variables](https:/
 
 #### `Innodb_buffer_pool_resize_status`
 
-* Description: Progress of the dynamic [InnoDB buffer pool](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-buffer-pool.md) resizing operation. See [Setting Innodb Buffer Pool Size Dynamically](setting-innodb-buffer-pool-size-dynamically.md).
+* Description: Progress of the dynamic [InnoDB buffer pool](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-buffer-pool.md) resizing operation. See [Setting Innodb Buffer Pool Size Dynamically](../../../ha-and-performance/optimization-and-tuning/system-variables/setting-innodb-buffer-pool-size-dynamically.md).
 * Scope: Global
 * Data Type: `numeric`
 * Introduced: [MariaDB 10.2.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-1022-release-notes)
@@ -430,28 +430,28 @@ See also the [Full list of MariaDB options, system and status variables](https:/
 
 #### `Innodb_defragment_compression_failures`
 
-* Description: Number of defragment re-compression failures. See [Defragmenting InnoDB Tablespaces](../optimizing-tables/defragmenting-innodb-tablespaces.md).
+* Description: Number of defragment re-compression failures. See [Defragmenting InnoDB Tablespaces](../../../ha-and-performance/optimization-and-tuning/optimizing-tables/defragmenting-innodb-tablespaces.md).
 * Scope: Global
 * Data Type: `numeric`
 * Introduced: [MariaDB 10.1.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-1-release-notes)
 
 #### `Innodb_defragment_count`
 
-* Description: Number of defragment operations. See [Defragmenting InnoDB Tablespaces](../optimizing-tables/defragmenting-innodb-tablespaces.md).
+* Description: Number of defragment operations. See [Defragmenting InnoDB Tablespaces](../../../ha-and-performance/optimization-and-tuning/optimizing-tables/defragmenting-innodb-tablespaces.md).
 * Scope: Global
 * Data Type: `numeric`
 * Introduced: [MariaDB 10.1.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-1-release-notes)
 
 #### `Innodb_defragment_failures`
 
-* Description: Number of defragment failures. See [Defragmenting InnoDB Tablespaces](../optimizing-tables/defragmenting-innodb-tablespaces.md).
+* Description: Number of defragment failures. See [Defragmenting InnoDB Tablespaces](../../../ha-and-performance/optimization-and-tuning/optimizing-tables/defragmenting-innodb-tablespaces.md).
 * Scope: Global
 * Data Type: `numeric`
 * Introduced: [MariaDB 10.1.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-1-release-notes)
 
 #### `Innodb_dict_tables`
 
-* Description: Number of entries in the XtraDB data dictionary cache. This Percona XtraDB variable was removed in MariaDB 10/XtraDB 5.6 as it was replaced with MySQL 5.6's [table\_definition\_cache](server-system-variables.md#table_definition_cache) implementation.
+* Description: Number of entries in the XtraDB data dictionary cache. This Percona XtraDB variable was removed in MariaDB 10/XtraDB 5.6 as it was replaced with MySQL 5.6's [table\_definition\_cache](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#table_definition_cache) implementation.
 * Scope: Global
 * Data Type: `numeric`
 * Introduced: XtraDB 5.0.77-b13
@@ -815,7 +815,7 @@ See also the [Full list of MariaDB options, system and status variables](https:/
 
 * Description: As shown in the BACKGROUND THREAD section of the [SHOW ENGINE INNODB STATUS](../../../reference/sql-statements/administrative-sql-statements/show/show-engine.md) output. XtraDB only.
   * In [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5), this status variable is present in XtraDB.
-  * In [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1), [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102), [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103), and [MariaDB 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/optimization-and-tuning/system-variables/broken-reference/README.md), this status variable is not present. Use the `innodb_master_thread_sleeps` counter in the [information_schema.INNODB_METRICS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_metrics-table.md) table instead.
+  * In [MariaDB 10.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/changes-improvements-in-mariadb-10-1), [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102), [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103), and [MariaDB 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/optimization-and-tuning/system-variables/broken-reference/README.md), this status variable is not present. Use the `innodb_master_thread_sleeps` counter in the [information\_schema.INNODB\_METRICS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_metrics-table.md) table instead.
   * In [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105), this status variable was reintroduced.
 * Scope: Global
 * Data Type: `numeric`
@@ -1177,28 +1177,28 @@ See also the [Full list of MariaDB options, system and status variables](https:/
 
 #### `Innodb_rows_deleted`
 
-* Description: Number of rows deleted from InnoDB tables that where not system tables. Almost equivalent to [Handler\_delete](server-status-variables.md#handler_delete) which does include system tables.
+* Description: Number of rows deleted from InnoDB tables that where not system tables. Almost equivalent to [Handler\_delete](../../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#handler_delete) which does include system tables.
 * Scope: Global
 * Data Type: `numeric`
 * Removed: [MariaDB 10.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-10-series/what-is-mariadb-1010)
 
 #### `Innodb_rows_inserted`
 
-* Description: Number of rows inserted into InnoDB tables that where not system tables. No direct equivalent in [Handler](server-status-variables.md#handler_commit) status variables.
+* Description: Number of rows inserted into InnoDB tables that where not system tables. No direct equivalent in [Handler](../../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#handler_commit) status variables.
 * Scope: Global
 * Data Type: `numeric`
 * Removed: [MariaDB 10.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-10-series/what-is-mariadb-1010)
 
 #### `Innodb_rows_read`
 
-* Description: Number of rows read from InnoDB tables that where not system tables. Almost equivalent to the sum of [Handler\_read\*](server-status-variables.md#handler_read_first) status variables which do include system tables.
+* Description: Number of rows read from InnoDB tables that where not system tables. Almost equivalent to the sum of [Handler\_read\*](../../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#handler_read_first) status variables which do include system tables.
 * Scope: Global
 * Data Type: `numeric`
 * Removed: [MariaDB 10.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-10-series/what-is-mariadb-1010)
 
 #### `Innodb_rows_updated`
 
-* Description: Number of rows updated in InnoDB tables that where not system tables. Almost equivalent to [Handler\_update](server-status-variables.md#handler_update) which does include system tables.
+* Description: Number of rows updated in InnoDB tables that where not system tables. Almost equivalent to [Handler\_update](../../../ha-and-performance/optimization-and-tuning/system-variables/server-status-variables.md#handler_update) which does include system tables.
 * Scope: Global
 * Data Type: `numeric`
 * Removed: [MariaDB 10.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-10-series/what-is-mariadb-1010)

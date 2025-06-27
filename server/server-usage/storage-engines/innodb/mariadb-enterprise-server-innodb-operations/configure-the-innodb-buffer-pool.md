@@ -6,7 +6,7 @@ In MariaDB Enterprise Server, the InnoDB storage engine uses the Buffer Pool as 
 
 The contents of the Buffer Pool can be reloaded at startup, so that InnoDB does not have to function with a "cold" cache after a restart. To support this, the page numbers of all pages in the Buffer Pool can be dumped at shutdown. During startup, the page numbers are read from the dump, and InnoDB uses the page numbers to reload each page from its corresponding data file.
 
-The size of each page in the Buffer Pool depends on the value of the [innodb\_page\_size](../../../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_page_size) system variable.
+The size of each page in the Buffer Pool depends on the value of the [innodb\_page\_size](../innodb-status-variables.md#innodb_page_size) system variable.
 
 Starting with ES 10.5 and CS 10.5, the [Buffer Pool](../innodb-system-variables.md#innodb_buffer_pool_instances) always has a single instance.
 
@@ -59,7 +59,7 @@ For example, to set the size to 2 GB:
 SET GLOBAL innodb_buffer_pool_size=(2 * 1024 * 1024 * 1024);
 ```
 
-3. Confirm that the resize operation has been completed by querying the [Innodb\_buffer\_pool\_resize\_status](../../../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_buffer_pool_resize_status) status variable using the [SHOW GLOBAL STATUS](../../../../reference/sql-statements/administrative-sql-statements/show/show-status.md) statement:
+3. Confirm that the resize operation has been completed by querying the [Innodb\_buffer\_pool\_resize\_status](../innodb-status-variables.md#innodb_buffer_pool_resize_status) status variable using the [SHOW GLOBAL STATUS](../../../../reference/sql-statements/administrative-sql-statements/show/show-status.md) statement:
 
 ```sql
 SHOW GLOBAL STATUS

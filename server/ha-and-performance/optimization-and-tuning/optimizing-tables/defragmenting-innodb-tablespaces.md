@@ -44,9 +44,9 @@ A number of new system and status variables for controlling and monitoring the f
 
 ### Status Variables
 
-* [Innodb\_defragment\_compression\_failures](../system-variables/innodb-status-variables.md#innodb_defragment_compression_failures): Number of defragment re-compression failures
-* [Innodb\_defragment\_failures](../system-variables/innodb-status-variables.md#innodb_defragment_failures): Number of defragment failures.
-* [Innodb\_defragment\_count](../system-variables/innodb-status-variables.md#innodb_defragment_count): Number of defragment operations.
+* [Innodb\_defragment\_compression\_failures](../../../server-usage/storage-engines/innodb/innodb-status-variables.md#innodb_defragment_compression_failures): Number of defragment re-compression failures
+* [Innodb\_defragment\_failures](../../../server-usage/storage-engines/innodb/innodb-status-variables.md#innodb_defragment_failures): Number of defragment failures.
+* [Innodb\_defragment\_count](../../../server-usage/storage-engines/innodb/innodb-status-variables.md#innodb_defragment_count): Number of defragment operations.
 
 ## Example
 

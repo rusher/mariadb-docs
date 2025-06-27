@@ -67,11 +67,11 @@ The redo log group capacity is the total combined size of all InnoDB redo logs. 
 
 The redo log group capacity is determined by the following calculation:
 
-`innodb_log_group_capacity` = [innodb_log_file_size](innodb-system-variables.md#innodb_log_file_size) \* [innodb_log_files_in_group](innodb-system-variables.md#innodb_log_files_in_group)
+`innodb_log_group_capacity` = [innodb\_log\_file\_size](innodb-system-variables.md#innodb_log_file_size) \* [innodb\_log\_files\_in\_group](innodb-system-variables.md#innodb_log_files_in_group)
 
 For example, if [innodb\_log\_file\_size](innodb-system-variables.md#innodb_log_file_size) is set to `2G` and [innodb\_log\_files\_in\_group](innodb-system-variables.md#innodb_log_files_in_group) is set to `2`, then we would have the following:
 
-* `innodb_log_group_capacity` = [innodb_log_file_size](innodb-system-variables.md#innodb_log_file_size) \* [innodb_log_files_in_group](innodb-system-variables.md#innodb_log_files_in_group)
+* `innodb_log_group_capacity` = [innodb\_log\_file\_size](innodb-system-variables.md#innodb_log_file_size) \* [innodb\_log\_files\_in\_group](innodb-system-variables.md#innodb_log_files_in_group)
 * \= `2G` \* `2`
 * \= `4G`
 
@@ -107,7 +107,7 @@ The checkpoint age is the amount of data written to the InnoDB redo log since th
 
 **MariaDB starting with** [**10.5**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105)
 
-[MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105) reintroduced the [Innodb\_checkpoint\_age](../../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_checkpoint_age) status variable for determining the checkpoint age.
+[MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105) reintroduced the [Innodb\_checkpoint\_age](innodb-status-variables.md#innodb_checkpoint_age) status variable for determining the checkpoint age.
 
 The checkpoint age can also be determined by the process shown below.
 
@@ -144,11 +144,11 @@ In the example above, that would be:
 
 The redo log occupancy is the percentage of the InnoDB redo log capacity that is taken up by dirty pages that have not yet been flushed to the physical InnoDB tablespace files in a checkpoint. Therefore, it's determined by the following calculation:
 
-`innodb_log_occupancy` = [innodb_checkpoint_age](#determining-the-checkpoint-age) / [innodb_log_group_capacity](#redo-log-group-capacity)
+`innodb_log_occupancy` = [innodb\_checkpoint\_age](innodb-redo-log.md#determining-the-checkpoint-age) / [innodb\_log\_group\_capacity](innodb-redo-log.md#redo-log-group-capacity)
 
-For example, if [innodb_checkpoint_age](#determining-the-checkpoint-age) is `1.5G` and [innodb_log_group_capacity](#redo-log-group-capacity) is `4G`, then we would have the following:
+For example, if [innodb\_checkpoint\_age](innodb-redo-log.md#determining-the-checkpoint-age) is `1.5G` and [innodb\_log\_group\_capacity](innodb-redo-log.md#redo-log-group-capacity) is `4G`, then we would have the following:
 
-* `innodb_log_occupancy` = [innodb_checkpoint_age](#determining-the-checkpoint-age) / [innodb_log_group_capacity](#redo-log-group-capacity)
+* `innodb_log_occupancy` = [innodb\_checkpoint\_age](innodb-redo-log.md#determining-the-checkpoint-age) / [innodb\_log\_group\_capacity](innodb-redo-log.md#redo-log-group-capacity)
 * \= `1.5G` / `4G`
 * \= `0.375`
 
