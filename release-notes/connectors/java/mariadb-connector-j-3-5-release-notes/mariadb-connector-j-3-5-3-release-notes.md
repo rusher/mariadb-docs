@@ -1,23 +1,19 @@
 # MariaDB Connector/J 3.5.3 Release Notes
 
-[Download](https://mariadb.com/downloads/connectors/connectors-data-access/java8-connector)[Release Notes](mariadb-connector-j-3-5-3-release-notes.md)[Changelog](../changelogs/mariadb-connector-j-3-5-changelogs/mariadb-connector-j-3-5-3-changelog.md)[Connector/J Overview](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/about-mariadb-connector-j/README.md)
+<a href="https://mariadb.com/downloads/" class="button primary">Download</a>  <a href="mariadb-connector-j-3-5-3-release-notes.md" class="button secondary">Release Notes</a>  <a href="../changelogs/mariadb-connector-j-3-5-changelogs/mariadb-connector-j-3-5-3-changelog.md" class="button secondary">Changelog</a>  <a href="https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-j/about-mariadb-connector-j" class="button secondary">Connector/J Overview</a>
 
 **Release date:** 27 Mar 2025
 
 MariaDB Connector/J 3.5.3 is a [_**Stable**_](../../../mariadb-release-criteria.md) _**(GA)**_ release.
 
-**For an overview of MariaDB Connector/J see the**[**About MariaDB Connector/J**](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/about-mariadb-connector-j/README.md) **page**
+{% hint style="info" %}
+**For an overview of MariaDB Connector/J see the** [**About MariaDB Connector/J**](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-j/about-mariadb-connector-j) **page**
+{% endhint %}
 
 ## Notable Changes
 
 * Resolved timestamp string representation incompatibility between versions 2.7 and 3.x ([CONJ-1232](https://jira.mariadb.org/browse/CONJ-1232))\
-  <<<<<<< HEAD
-  * Added new option `[oldModeNoPrecisionTimestamp](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-j/about-mariadb-connector-j#oldmodenoprecisiontimestamp)`\
-    \=======
-  * Added new option [oldModeNoPrecisionTimestamp](https://mariadb.com/kb/en/about-mariadb-connector-j/#oldmodenoprecisiontimestamp)
-
-> > > > > > > 2f4a7af992d60113345320299a7c689ee31815c1
-
+  Added new option [oldModeNoPrecisionTimestamp](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-j/about-mariadb-connector-j#oldmodenoprecisiontimestamp)
 * Modified redirection option to enable by default only when SSL is enabled ([CONJ-1235](https://jira.mariadb.org/browse/CONJ-1235))
 
 ## Bugs Fixed
