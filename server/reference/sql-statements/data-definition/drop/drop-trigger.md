@@ -21,7 +21,7 @@ Use `IF EXISTS` to prevent an error from occurring for a trigger that does not e
 `DROP TRIGGER` is [atomic](../atomic-ddl.md).
 {% endtab %}
 
-{% tab title="< " %}
+{% tab title="< 10.6.1" %}
 `DROP TRIGGER` is **not** [atomic](../atomic-ddl.md).
 {% endtab %}
 {% endtabs %}
@@ -55,6 +55,6 @@ SHOW WARNINGS;
 * [SHOW CREATE TRIGGER](../../administrative-sql-statements/show/show-create-trigger.md)
 * [Trigger Limitations](../../../../server-usage/triggers-events/triggers/trigger-limitations.md)
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}
