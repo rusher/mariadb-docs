@@ -1,5 +1,5 @@
 # DROP PACKAGE BODY
-
+_FIX_
 ## Syntax
 
 ```sql
@@ -10,7 +10,7 @@ DROP PACKAGE BODY [IF EXISTS]  [ db_name . ] package_name
 
 The `DROP PACKAGE BODY` statement can be used when [Oracle SQL\_MODE](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/data-definition/drop/broken-reference/README.md) is set.
 
-The `DROP PACKAGE BODY` statement drops the package body (i.e the implementation), previously created using the [CREATE PACKAGE BODY](../create/create-package-body.md) statement.
+The `DROP PACKAGE BODY` statement drops the package body (that is, the implementation) which was  created using the [CREATE PACKAGE BODY](../create/create-package-body.md) statement.
 
 Note, `DROP PACKAGE BODY` drops only the package implementation, but does not drop the package specification. Use [DROP PACKAGE](drop-package.md) to drop the package entirely (i.e. both implementation and specification).
 

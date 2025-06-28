@@ -1,5 +1,5 @@
 # DROP TABLE
-
+_FIX_
 ## Syntax
 
 ```sql
@@ -43,7 +43,15 @@ The [DROP privilege](../../account-management-sql-statements/grant.md#table-priv
 
 **MariaDB starting with** [**10.5.4**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1054-release-notes)
 
-From [MariaDB 10.5.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1054-release-notes), `DROP TABLE` reliably deletes table remnants inside a storage engine even if the `.frm` file is missing. Before then, a missing `.frm` file would result in the statement failing.
+{% tabs %}
+{% tab title="Current" %}
+`DROP TABLE` reliably deletes table remnants inside a storage engine even if the `.frm` file is missing.
+{% endtab %}
+
+{% tab title="< 10.5.4" %}
+`DROP TABLE` does **not** reliably delete table remnants inside a storage engine even if the `.frm` file is missing. A missing `.frm` file will result in the statement failing.
+{% endtab %}
+{% endtabs %}
 
 ### WAIT/NOWAIT
 
@@ -65,7 +73,13 @@ Set the lock wait timeout. See [WAIT and NOWAIT](../../transactions/wait-and-now
 
 ## Dropping an Internal #sql-... Table
 
-From [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/what-is-mariadb-106), [DROP TABLE is atomic](drop-table.md#atomic-drop-table) and the following does not apply. Until [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105), if the [mariadbd process](../../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md) is killed during an [ALTER TABLE](../alter/alter-table.md) you may find a table named #sql-... in your data directory. These temporary tables will always be deleted automatically.
+{% tabs %}
+{% tab title="Current" %}
+[DROP TABLE is atomic.](drop-table.md#atomic-drop-table)
+{% endtab %}
+
+{% tab title="< 10.6" %}
+if the [mariadbd process](../../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md) is killed during an [ALTER TABLE](../alter/alter-table.md) you may find a table named #sql-... in your data directory. These temporary tables will always be deleted automatically.
 
 If you want to delete one of these tables explicitly you can do so by using the following syntax:
 
@@ -78,6 +92,8 @@ When running an `ALTER TABLE…ALGORITHM=INPLACE` that rebuilds the table, InnoD
 The same name as the .frm file is used for the intermediate copy of the table. The #sql-ib names are used by TRUNCATE and delayed DROP.
 
 The #sql-ib tables will be deleted automatically.
+{% endtab %}
+{% endtabs %}
 
 ## Dropping All Tables in a Database
 

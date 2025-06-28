@@ -8,15 +8,12 @@ DROP EVENT [IF EXISTS] event_name
 
 ## Description
 
-This statement drops the [event](../../../../server-usage/triggers-events/event-scheduler/events.md) named `event_name`. The event immediately\
-ceases being active, and is deleted completely from the server.
+This statement drops the [event](../../../../server-usage/triggers-events/event-scheduler/events.md) named `event_name`. The event immediately ceases being active, and is deleted completely from the server.
 
-If the event does not exist, the error`ERROR 1517 (HY000): Unknown event 'event_name'`\
-results. You can override this and cause the\
-statement to generate a `NOTE` for non-existent events instead by using`IF EXISTS`. See [SHOW WARNINGS](../../administrative-sql-statements/show/show-warnings.md).
+If the event does not exist, the error`ERROR 1517 (HY000): Unknown event 'event_name'`
+results. You can override this and cause the statement to generate a `NOTE` for non-existent events instead by using`IF EXISTS`. See [SHOW WARNINGS](../../administrative-sql-statements/show/show-warnings.md).
 
-This statement requires the [EVENT](../../account-management-sql-commands/grant.md#database-privileges) privilege. In MySQL 5.1.11 and earlier, an event could be dropped only\
-by its definer, or by a user having the [SUPER](../../account-management-sql-commands/grant.md#global-privileges) privilege.
+This statement requires the [EVENT](../../account-management-sql-commands/grant.md#database-privileges) privilege.
 
 ## Examples
 

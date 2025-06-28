@@ -16,9 +16,15 @@ Use `IF EXISTS` to prevent an error from occurring for a trigger that does not e
 
 ### Atomic DDL
 
-**MariaDB starting with** [**10.6.1**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/mariadb-1061-release-notes)
+{% tabs %}
+{% tab title="Current" %}
+`DROP TRIGGER` is [atomic](../atomic-ddl.md).
+{% endtab %}
 
-[MariaDB 10.6.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/mariadb-1061-release-notes) supports [Atomic DDL](../atomic-ddl.md) and `DROP TRIGGER` is atomic.
+{% tab title="< " %}
+`DROP TRIGGER` is **not** [atomic](../atomic-ddl.md).
+{% endtab %}
+{% endtabs %}
 
 ## Examples
 

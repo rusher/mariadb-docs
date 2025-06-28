@@ -1,5 +1,5 @@
 # DROP PACKAGE
-
+_FIX_
 ## Syntax
 
 ```sql
