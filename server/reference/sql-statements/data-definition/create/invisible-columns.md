@@ -1,23 +1,18 @@
-
 # Invisible Columns
 
 Invisible columns (sometimes also called hidden columns) are hidden in certain contexts.
 
-
-Columns can be given an `INVISIBLE` attribute in a [CREATE TABLE](create-table.md) or [ALTER TABLE](../alter/alter-table.md) statement. These columns will then not be listed in the results of a [SELECT *](../../data-manipulation/selecting-data/select.md) statement, nor do they need to be assigned a value in an [INSERT](../../data-manipulation/inserting-loading-data/insert.md) statement, unless INSERT explicitly mentions them by name.
-
+Columns can be given an `INVISIBLE` attribute in a [CREATE TABLE](create-table.md) or [ALTER TABLE](../alter/alter-table.md) statement. These columns will then not be listed in the results of a [SELECT \*](../../data-manipulation/selecting-data/select.md) statement, nor do they need to be assigned a value in an [INSERT](../../data-manipulation/inserting-loading-data/insert.md) statement, unless INSERT explicitly mentions them by name.
 
 Since `SELECT *` does not return the invisible columns, new tables or views created in this manner will have no trace of the invisible columns. If specifically referenced in the SELECT statement, the columns will be brought into the view/new table, but the INVISIBLE attribute will not.
 
-
 Invisible columns can be declared as `NOT NULL`, but then require a `DEFAULT` value.
 
-
+{% hint style="info" %}
 It is not possible for all columns in a table to be invisible.
-
+{% endhint %}
 
 ## Examples
-
 
 ```sql
 CREATE TABLE t (x INT INVISIBLE);
@@ -73,7 +68,6 @@ DESC t;
 
 Creating a view from a table with hidden columns:
 
-
 ```sql
 CREATE VIEW v1 AS SELECT * FROM t;
 
@@ -98,7 +92,6 @@ DESC v2;
 ```
 
 Adding a Surrogate Primary Key:
-
 
 ```sql
 CREATE TABLE t1 (x BIGINT unsigned NOT NULL, y VARCHAR(16), z TEXT);
@@ -130,8 +123,6 @@ SELECT pkid, z FROM t1;
 +------+-------+
 ```
 
-
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
-
 
 {% @marketo/form formId="4316" %}

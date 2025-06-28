@@ -1,4 +1,8 @@
-# Generated (Virtual and Persistent/Stored) Columns
+---
+description: Generated columns can be virtual or persistent (stored).
+---
+
+# Generated Columns
 
 ## Syntax
 
@@ -7,7 +11,15 @@
 [VIRTUAL | PERSISTENT | STORED]  [UNIQUE] [UNIQUE KEY] [COMMENT <text>]
 ```
 
-MariaDB's generated columns syntax is designed to be similar to the syntax for [Microsoft SQL Server's computed columns](https://docs.microsoft.com/en-us/sql/relational-databases/tables/specify-computed-columns-in-a-table?view=sql-server-2017) and [Oracle Database's virtual columns](https://oracle-base.com/articles/11g/virtual-columns-11gr1). In [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102) and later, the syntax is also compatible with the syntax for [MySQL's generated columns](https://dev.mysql.com/doc/refman/5.7/en/create-table-generated-columns.html).
+{% tabs %}
+{% tab title="Current" %}
+MariaDB's generated columns syntax is designed to be similar to the syntax for [Microsoft SQL Server's computed columns](https://docs.microsoft.com/en-us/sql/relational-databases/tables/specify-computed-columns-in-a-table?view=sql-server-2017) and [Oracle Database's virtual columns](https://oracle-base.com/articles/11g/virtual-columns-11gr1). The syntax is also compatible with the syntax for [MySQL's generated columns](https://dev.mysql.com/doc/refman/5.7/en/create-table-generated-columns.html).
+{% endtab %}
+
+{% tab title="< 10.2" %}
+MariaDB's generated columns syntax is designed to be similar to the syntax for [Microsoft SQL Server's computed columns](https://docs.microsoft.com/en-us/sql/relational-databases/tables/specify-computed-columns-in-a-table?view=sql-server-2017) and [Oracle Database's virtual columns](https://oracle-base.com/articles/11g/virtual-columns-11gr1). The syntax is **not** compatible with the syntax for [MySQL's generated columns](https://dev.mysql.com/doc/refman/5.7/en/create-table-generated-columns.html).
+{% endtab %}
+{% endtabs %}
 
 ## Description
 
@@ -36,55 +48,92 @@ ERROR 1910 (HY000): TokuDB storage engine does not support computed columns
 
 ### Data Type Support
 
-* All data types are supported when defining generated columns.
-* Using the [ZEROFILL](create-table.md#zerofill-column-option) column option is supported when defining generated columns.
-* Using the [AUTO\_INCREMENT](../../../data-types/auto_increment.md) column option is not supported when defining generated columns. Until [MariaDB 10.2.25](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-10225-release-notes), it was supported, but this support was removed, because it would not work correctly. See [MDEV-11117](https://jira.mariadb.org/browse/MDEV-11117).
+All data types are supported when defining generated columns.
+
+Using the [ZEROFILL](create-table.md#zerofill-column-option) column option is supported when defining generated columns.
+
+{% tabs %}
+{% tab title="Tab 1" %}
+Using the [AUTO\_INCREMENT](../../../data-types/auto_increment.md) column option is not supported when defining generated columns.
+{% endtab %}
+
+{% tab title="< 10.2.25" %}
+Using the [AUTO\_INCREMENT](../../../data-types/auto_increment.md) column option is supported when defining generated columns.&#x20;
+
+{% hint style="warning" %}
+It does not work correctly, though. See [MDEV-11117](https://jira.mariadb.org/browse/MDEV-11117).
+{% endhint %}
+{% endtab %}
+{% endtabs %}
 
 ### Index Support
 
-* Using a generated column as a table's primary key is not supported. See [MDEV-5590](https://jira.mariadb.org/browse/MDEV-5590) for more information. If you try to use one as a primary key, then you will see an error similar to the following:
+Using a generated column as a table's primary key is not supported. See [MDEV-5590](https://jira.mariadb.org/browse/MDEV-5590) for more information. If you try to use one as a primary key, then you will see an error similar to the following:
 
 ```sql
 ERROR 1903 (HY000): Primary key cannot be defined upon a computed column
 ```
 
-* Using `PERSISTENT` generated columns as part of a [foreign key](../../../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/foreign-keys.md) is supported.
-* Referencing `PERSISTENT` generated columns as part of a [foreign key](../../../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/foreign-keys.md) is also supported.
-  * However, using the `ON UPDATE CASCADE`, `ON UPDATE SET NULL`, or `ON DELETE SET NULL` clauses is not supported. If you try to use an unsupported clause, then you will see an error similar to the following:
+Using `PERSISTENT` generated columns as part of a [foreign key](../../../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/foreign-keys.md) is supported.
+
+Referencing `PERSISTENT` generated columns as part of a [foreign key](../../../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/foreign-keys.md) is also supported.
+
+However, using the `ON UPDATE CASCADE`, `ON UPDATE SET NULL`, or `ON DELETE SET NULL` clauses is not supported. If you try to use an unsupported clause, then you will see an error similar to the following:
 
 ```sql
 ERROR 1905 (HY000): Cannot define foreign key with ON UPDATE SET NULL clause on a computed column
 ```
 
-* Defining indexes on both `VIRTUAL` and `PERSISTENT` generated columns is supported.
-  * If an index is defined on a generated column, then the optimizer considers using it in the same way as indexes based on "real" columns.
-* From [MariaDB 11.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-8-series/what-is-mariadb-118), the optimizer can recognize use of indexed virtual column expressions in the WHERE clause and use them to construct range and ref(const) accesses. See [Virtual Column Support in the Optimizer](../../../../ha-and-performance/optimization-and-tuning/query-optimizations/virtual-column-support-in-the-optimizer.md).
+Defining indexes on both `VIRTUAL` and `PERSISTENT` generated columns is supported.
+
+If an index is defined on a generated column, then the optimizer considers using it in the same way as indexes based on "real" columns.
+
+{% tabs %}
+{% tab title="Tab 1" %}
+The optimizer can recognize use of indexed virtual column expressions in the `WHERE` clause and use them to construct range and ref(const) accesses. See [Virtual Column Support in the Optimizer](../../../../ha-and-performance/optimization-and-tuning/query-optimizations/virtual-column-support-in-the-optimizer.md).
+{% endtab %}
+
+{% tab title="< 11.8" %}
+The optimizer **cannot** recognize use of indexed virtual column expressions in the `WHERE` clause and use them to construct range and ref(const) accesses. See [Virtual Column Support in the Optimizer](../../../../ha-and-performance/optimization-and-tuning/query-optimizations/virtual-column-support-in-the-optimizer.md).
+{% endtab %}
+{% endtabs %}
 
 ### Statement Support
 
-* Generated columns are used in [DML queries](../../data-manipulation/) just as if they were "real" columns.
-  * However, `VIRTUAL` and `PERSISTENT` generated columns differ in how their data is stored.
-    * Values for `PERSISTENT` generated columns are generated whenever a [DML queries](../../data-manipulation/) inserts or updates the row with the special `DEFAULT` value. This generates the columns value, and it is stored in the table like the other "real" columns. This value can be read by other [DML queries](../../data-manipulation/) just like the other "real" columns.
-    * Values for `VIRTUAL` generated columns are not stored in the table. Instead, the value is generated dynamically whenever the column is queried. If other columns in a row are queried, but the `VIRTUAL` generated column is not one of the queried columns, then the column's value is not generated.
-* The [SELECT](../../data-manipulation/selecting-data/select.md) statement supports generated columns.
-* Generated columns can be referenced in the [INSERT](../../data-manipulation/inserting-loading-data/insert.md), [UPDATE](../../data-manipulation/changing-deleting-data/update.md), and [DELETE](../../data-manipulation/changing-deleting-data/delete.md) statements.
-  * However, `VIRTUAL` or `PERSISTENT` generated columns cannot be explicitly set to any other values than `NULL` or [DEFAULT](../../../sql-functions/secondary-functions/information-functions/default.md). If a generated column is explicitly set to any other value, then the outcome depends on whether [strict mode](../../../../server-management/variables-and-modes/sql-mode.md#strict-mode) is enabled in [sql\_mode](../../../../server-management/variables-and-modes/sql-mode.md). If it is not enabled, then a warning will be raised and the default generated value will be used instead. If it is enabled, then an error will be raised instead.
-* The [CREATE TABLE](create-table.md) statement has limited support for generated columns.
-  * It supports defining generated columns in a new table.
-  * It supports using generated columns to [partition tables](../../../../server-usage/partitioning-tables/).
-  * It does not support using the [versioning clauses](../../../sql-structure/temporal-tables/system-versioned-tables.md) with generated columns.
-* The [ALTER TABLE](../alter/alter-table.md) statement has limited support for generated columns.
-  * It supports the `MODIFY` and `CHANGE` clauses for `PERSISTENT` generated columns.
-  * It does not support the `MODIFY` clause for `VIRTUAL` generated columns if [ALGORITHM](../alter/alter-table.md#algorithm) is not set to `COPY`. See [MDEV-15476](https://jira.mariadb.org/browse/MDEV-15476) for more information.
-  * It does not support the `CHANGE` clause for `VIRTUAL` generated columns if [ALGORITHM](../alter/alter-table.md#algorithm) is not set to `COPY`. See [MDEV-17035](https://jira.mariadb.org/browse/MDEV-17035) for more information.
-  * It does not support altering a table if [ALGORITHM](../alter/alter-table.md#algorithm) is not set to `COPY` if the table has a `VIRTUAL` generated column that is indexed. See [MDEV-14046](https://jira.mariadb.org/browse/MDEV-14046) for more information.
-  * It does not support adding a `VIRTUAL` generated column with the `ADD` clause if the same statement is also adding other columns if [ALGORITHM](../alter/alter-table.md#algorithm) is not set to `COPY`. See [MDEV-17468](https://jira.mariadb.org/browse/MDEV-17468) for more information.
-  * It also does not support altering an existing column into a `VIRTUAL` generated column.
-  * It supports using generated columns to [partition tables](../../../../server-usage/partitioning-tables/).
-  * It does not support using the [versioning clauses](../../../sql-structure/temporal-tables/system-versioned-tables.md) with generated columns.
-* The [SHOW CREATE TABLE](../../administrative-sql-statements/show/show-create-table.md) statement supports generated columns.
-* The [DESCRIBE](../../administrative-sql-statements/describe.md) statement can be used to check whether a table has generated columns.
-  * You can tell which columns are generated by looking for the ones where the `Extra` column is set to either `VIRTUAL` or `PERSISTENT`. For example:
+Generated columns are used in [DML queries](../../data-manipulation/) just as if they were "real" columns.
+
+* However, `VIRTUAL` and `PERSISTENT` generated columns differ in how their data is stored.
+  * Values for `PERSISTENT` generated columns are generated whenever a [DML queries](../../data-manipulation/) inserts or updates the row with the special `DEFAULT` value. This generates the columns value, and it is stored in the table like the other "real" columns. This value can be read by other [DML queries](../../data-manipulation/) just like the other "real" columns.
+  * Values for `VIRTUAL` generated columns are not stored in the table. Instead, the value is generated dynamically whenever the column is queried. If other columns in a row are queried, but the `VIRTUAL` generated column is not one of the queried columns, then the column's value is not generated.
+
+The [SELECT](../../data-manipulation/selecting-data/select.md) statement supports generated columns.
+
+Generated columns can be referenced in the [INSERT](../../data-manipulation/inserting-loading-data/insert.md), [UPDATE](../../data-manipulation/changing-deleting-data/update.md), and [DELETE](../../data-manipulation/changing-deleting-data/delete.md) statements.
+
+* However, `VIRTUAL` or `PERSISTENT` generated columns cannot be explicitly set to any other values than `NULL` or [DEFAULT](../../../sql-functions/secondary-functions/information-functions/default.md). If a generated column is explicitly set to any other value, then the outcome depends on whether [strict mode](../../../../server-management/variables-and-modes/sql-mode.md#strict-mode) is enabled in [sql\_mode](../../../../server-management/variables-and-modes/sql-mode.md). If it is not enabled, then a warning will be raised and the default generated value will be used instead. If it is enabled, then an error will be raised instead.
+
+The [CREATE TABLE](create-table.md) statement has limited support for generated columns.
+
+* It supports defining generated columns in a new table.
+* It supports using generated columns to [partition tables](../../../../server-usage/partitioning-tables/).
+* It does not support using the [versioning clauses](../../../sql-structure/temporal-tables/system-versioned-tables.md) with generated columns.
+
+The [ALTER TABLE](../alter/alter-table.md) statement has limited support for generated columns.
+
+* It supports the `MODIFY` and `CHANGE` clauses for `PERSISTENT` generated columns.
+* It does not support the `MODIFY` clause for `VIRTUAL` generated columns if [ALGORITHM](../alter/alter-table.md#algorithm) is not set to `COPY`. See [MDEV-15476](https://jira.mariadb.org/browse/MDEV-15476) for more information.
+* It does not support the `CHANGE` clause for `VIRTUAL` generated columns if [ALGORITHM](../alter/alter-table.md#algorithm) is not set to `COPY`. See [MDEV-17035](https://jira.mariadb.org/browse/MDEV-17035) for more information.
+* It does not support altering a table if [ALGORITHM](../alter/alter-table.md#algorithm) is not set to `COPY` if the table has a `VIRTUAL` generated column that is indexed. See [MDEV-14046](https://jira.mariadb.org/browse/MDEV-14046) for more information.
+* It does not support adding a `VIRTUAL` generated column with the `ADD` clause if the same statement is also adding other columns if [ALGORITHM](../alter/alter-table.md#algorithm) is not set to `COPY`. See [MDEV-17468](https://jira.mariadb.org/browse/MDEV-17468) for more information.
+* It also does not support altering an existing column into a `VIRTUAL` generated column.
+* It supports using generated columns to [partition tables](../../../../server-usage/partitioning-tables/).
+* It does not support using the [versioning clauses](../../../sql-structure/temporal-tables/system-versioned-tables.md) with generated columns.
+
+The [SHOW CREATE TABLE](../../administrative-sql-statements/show/show-create-table.md) statement supports generated columns.
+
+The [DESCRIBE](../../administrative-sql-statements/describe.md) statement can be used to check whether a table has generated columns.
+
+* You can tell which columns are generated by looking for the ones where the `Extra` column is set to either `VIRTUAL` or `PERSISTENT`. For example:
 
 ```sql
 DESCRIBE table1;
@@ -98,36 +147,49 @@ DESCRIBE table1;
 +-------+-------------+------+-----+---------+------------+
 ```
 
-* Generated columns can be properly referenced in the `NEW` and `OLD` rows in [triggers](../../../../server-usage/triggers-events/triggers/).
-* [Stored procedures](../../../../server-usage/stored-routines/stored-procedures/) support generated columns.
-* The [HANDLER](../../../sql-structure/nosql/handler/handler-commands.md) statement supports generated columns.
+Generated columns can be properly referenced in the `NEW` and `OLD` rows in [triggers](../../../../server-usage/triggers-events/triggers/).
+
+[Stored procedures](../../../../server-usage/stored-routines/stored-procedures/) support generated columns.
+
+The [HANDLER](../../../sql-structure/nosql/handler/handler-commands.md) statement supports generated columns.
 
 ### Expression Support
 
-* Most legal, deterministic expressions which can be calculated are supported in expressions for generated columns.
-* Most [built-in functions](../../../sql-functions/) are supported in expressions for generated columns.
-  * However, some [built-in functions](../../../sql-functions/) can't be supported for technical reasons. For example, If you try to use an unsupported function in an expression, an error is generated similar to the following:
+Most legal, deterministic expressions which can be calculated are supported in expressions for generated columns.
+
+Most [built-in functions](../../../sql-functions/) are supported in expressions for generated columns.
+
+* However, some [built-in functions](../../../sql-functions/) can't be supported for technical reasons. For example, If you try to use an unsupported function in an expression, an error is generated similar to the following:
 
 ```sql
 ERROR 1901 (HY000): Function or expression 'dayname()' cannot be used in the GENERATED ALWAYS AS clause of `v`
 ```
 
-* [Subqueries](../../data-manipulation/selecting-data/joins-subqueries/subqueries/) are not supported in expressions for generated columns because the underlying data can change.
-* Using anything that depends on data outside the row is not supported in expressions for generated columns.
-* [Stored functions](../../../../server-usage/stored-routines/stored-functions/) are not supported in expressions for generated columns. See [MDEV-17587](https://jira.mariadb.org/browse/MDEV-17587) for more information.
-* Non-deterministic [built-in functions](../../../sql-functions/) are supported in expressions for not indexed `VIRTUAL` generated columns.
-* Non-deterministic [built-in functions](../../../sql-functions/) are not supported in expressions for `PERSISTENT` or indexed `VIRTUAL` generated columns.
-* [User-defined functions (UDFs)](../../../../server-usage/user-defined-functions/) are supported in expressions for generated columns.
-  * However, MariaDB can't check whether a UDF is deterministic, so it is up to the user to be sure that they do not use non-deterministic UDFs with `VIRTUAL` generated columns.
-* Defining a generated column based on other generated columns defined before it in the table definition is supported. For example:
+[Subqueries](../../data-manipulation/selecting-data/joins-subqueries/subqueries/) are not supported in expressions for generated columns because the underlying data can change.
+
+Using anything that depends on data outside the row is not supported in expressions for generated columns.
+
+[Stored functions](../../../../server-usage/stored-routines/stored-functions/) are not supported in expressions for generated columns. See [MDEV-17587](https://jira.mariadb.org/browse/MDEV-17587) for more information.
+
+Non-deterministic [built-in functions](../../../sql-functions/) are supported in expressions for not indexed `VIRTUAL` generated columns.
+
+Non-deterministic [built-in functions](../../../sql-functions/) are not supported in expressions for `PERSISTENT` or indexed `VIRTUAL` generated columns.
+
+[User-defined functions (UDFs)](../../../../server-usage/user-defined-functions/) are supported in expressions for generated columns.
+
+* However, MariaDB can't check whether a UDF is deterministic, so it is up to the user to be sure that they do not use non-deterministic UDFs with `VIRTUAL` generated columns.
+
+Defining a generated column based on other generated columns defined before it in the table definition is supported. For example:
 
 ```sql
 CREATE TABLE t1 (a int as (1), b int as (a));
 ```
 
-* However, defining a generated column based on other generated columns defined after in the table definition is not supported in expressions for generation columns because generated columns are calculated in the order they are defined.
-* Using an expression that exceeds 255 characters in length is supported in expressions for generated columns. The new limit for the entire table definition, including all expressions for generated columns, is 65,535 bytes.
-* Using constant expressions is supported in expressions for generated columns. For example:
+However, defining a generated column based on other generated columns defined after in the table definition is not supported in expressions for generation columns because generated columns are calculated in the order they are defined.
+
+Using an expression that exceeds 255 characters in length is supported in expressions for generated columns. The new limit for the entire table definition, including all expressions for generated columns, is 65,535 bytes.
+
+Using constant expressions is supported in expressions for generated columns. For example:
 
 ```sql
 CREATE TABLE t1 (a int as (1));
@@ -142,13 +204,29 @@ There are currently two affected classes of inconsistencies: character padding a
 * For a `VARCHAR` or `TEXT` generated column the length of the value returned can vary depending on the PAD\_CHAR\_TO\_FULL\_LENGTH [sql\_mode](../../../../server-management/variables-and-modes/sql-mode.md) flag. To make the value consistent, create the generated column using an RTRIM() or RPAD() function. Alternately, create the generated column as a `CHAR` column so that its data is always fully padded.
 * If a `SIGNED` generated column is based on the subtraction of an `UNSIGNED` value, the resulting value can vary depending on how large the value is and the NO\_UNSIGNED\_SUBTRACTION [sql\_mode](../../../../server-management/variables-and-modes/sql-mode.md) flag. To make the value consistent, use [CAST()](../../../sql-functions/string-functions/cast.md) to ensure that each `UNSIGNED` operand is `SIGNED` before the subtraction.
 
-**MariaDB starting with** [**10.5**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105)
+{% tabs %}
+{% tab title="Current" %}
+A fatal error is generated when trying to create a generated column whose value can change depending on the [SQL Mode](../../../../server-management/variables-and-modes/sql-mode.md) when its data is `PERSISTENT` or indexed. For an existing generated column that has a potentially inconsistent value, a warning about a bad expression is generated the first time it is used (if warnings are enabled).
+{% endtab %}
 
-Beginning in [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105), there is a fatal error generated when trying to create a generated column whose value can change depending on the [SQL Mode](../../../../server-management/variables-and-modes/sql-mode.md) when its data is `PERSISTENT` or indexed.\
-For an existing generated column that has a potentially inconsistent value, a warning about a bad expression is generated the first time it is used (if warnings are enabled).\
-Beginning in [MariaDB 10.4.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-1048-release-notes), [MariaDB 10.3.18](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-10318-release-notes), and [MariaDB 10.2.27](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-10227-release-notes) a potentially inconsistent generated column outputs a warning when created or first used (without restricting their creation).
+{% tab title="< 10.5" %}
+For an existing generated column that has a potentially inconsistent value, a warning about a bad expression is generated the first time it is used (if warnings are enabled).
+{% endtab %}
+{% endtabs %}
 
-Here is an example of two tables that would be rejected in [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105) and warned about in the other listed versions:
+{% tabs %}
+{% tab title="Current" %}
+A potentially inconsistent generated column outputs a warning when created or first used (without restricting the creation).
+{% endtab %}
+
+{% tab title="< 10.4.8 / 10.3.18 / 10.2.27" %}
+A potentially inconsistent generated column does not output a warning when created or first used.
+{% endtab %}
+{% endtabs %}
+
+{% tabs %}
+{% tab title="Current" %}
+Here is an example of two tables that are warned about:
 
 ```sql
 CREATE TABLE bad_pad (
@@ -166,7 +244,7 @@ CREATE TABLE bad_sub (
 );
 ```
 
-The warnings for the above tables look like this:
+The warnings look like this:
 
 ```sql
 Warning (Code 1901): Function or expression '`txt`' cannot be used in the GENERATED ALWAYS AS clause of `vtxt`
@@ -197,6 +275,28 @@ CREATE TABLE good_sub (
   KEY(vnum)
 );
 ```
+{% endtab %}
+
+{% tab title="< 10.6" %}
+Here is an example of two tables whose creation is rejected:
+
+```sql
+CREATE TABLE bad_pad (
+  txt CHAR(5),
+  -- CHAR -> VARCHAR or CHAR -> TEXT can't be persistent or indexed:
+  vtxt VARCHAR(5) AS (txt) PERSISTENT
+);
+
+CREATE TABLE bad_sub (
+  num1 BIGINT UNSIGNED,
+  num2 BIGINT UNSIGNED,
+  -- The resulting value can vary for some large values
+  vnum BIGINT AS (num1 - num2) VIRTUAL,
+  KEY(vnum)
+);
+```
+{% endtab %}
+{% endtabs %}
 
 ### MySQL Compatibility Support
 
@@ -225,14 +325,13 @@ Microsoft SQL Server enforces the above restrictions by doing one of the followi
 * Refusing to allow updates to a table containing them.
 * Refusing to use an index over such a column if it can not be guaranteed that the expression is fully deterministic.
 
-In MariaDB, as long as the [sql\_mode](../../../../server-management/variables-and-modes/sql-mode.md), language, and other settings that were in effect during the CREATE TABLE remain unchanged, the generated column expression will always be evaluated the same. If any of these things change, then please be aware that the generated column expression might not be\
-evaluated the same way as it previously was.
+In MariaDB, as long as the [sql\_mode](../../../../server-management/variables-and-modes/sql-mode.md), language, and other settings that were in effect during the CREATE TABLE remain unchanged, the generated column expression will always be evaluated the same. If any of these things change, then please be aware that the generated column expression might not be evaluated the same way as it previously was.
 
 If you try to update a virtual column, you will get an error if the default [strict mode](../../../../server-management/variables-and-modes/sql-mode.md#strict-mode) is enabled in [sql\_mode](../../../../server-management/variables-and-modes/sql-mode.md), or a warning otherwise.
 
 ## Development History
 
-Generated columns was originally developed by Andrey Zhakov. It was then modified by Sanja Byelkin and Igor Babaev at Monty Program for inclusion in MariaDB. Monty did the work on [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102) to lift a some of the old limitations.
+Generated columns was originally developed by Andrey Zhakov. It was then modified by Sanja Byelkin and Igor Babaev at Monty Program for inclusion in MariaDB. Monty did the work on [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102) to lift some of the limitations.
 
 ## Examples
 
@@ -248,8 +347,7 @@ CREATE TABLE table1 (
      d VARCHAR(5) AS (left(b,5)) PERSISTENT);
 ```
 
-If you describe the table, you can easily see which columns are virtual by\
-looking in the "Extra" column:
+If you describe the table, you can easily see which columns are virtual by looking in the "Extra" column:
 
 ```sql
 DESCRIBE table1;
@@ -276,9 +374,7 @@ SHOW CREATE TABLE table1;
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 |
 ```
 
-If you try to insert non-default values into a virtual column, you will receive\
-a warning and what you tried to insert will be ignored and the derived value\
-inserted instead:
+If you try to insert non-default values into a virtual column, you will receive a warning and what you tried to insert will be ignored and the derived value inserted instead:
 
 ```sql
 WARNINGS;

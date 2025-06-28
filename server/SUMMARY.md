@@ -1744,7 +1744,7 @@
         * [CREATE SERVER](reference/sql-statements/data-definition/create/create-server.md)
         * [CREATE TABLE](reference/sql-statements/data-definition/create/create-table.md)
         * [CREATE TABLESPACE](reference/sql-statements/data-definition/create/create-tablespace.md)
-        * [Generated (Virtual and Persistent/Stored) Columns](reference/sql-statements/data-definition/create/generated-columns.md)
+        * [Generated Columns](reference/sql-statements/data-definition/create/generated-columns.md)
         * [Invisible Columns](reference/sql-statements/data-definition/create/invisible-columns.md)
         * [Silent Column Changes](reference/sql-statements/data-definition/create/silent-column-changes.md)
       * [DROP](reference/sql-statements/data-definition/drop/README.md)
