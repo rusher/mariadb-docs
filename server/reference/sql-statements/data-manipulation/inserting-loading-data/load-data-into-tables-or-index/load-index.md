@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 LOAD INDEX INTO CACHE
   tbl_index_list [, tbl_index_list] ...
 
@@ -14,13 +14,10 @@ tbl_index_list:
 
 ## Description
 
-The `LOAD INDEX INTO CACHE` statement preloads a table index into the key\
-cache to which it has been assigned by an explicit [CACHE INDEX](../../../administrative-sql-statements/cache-index.md)\
-statement, or into the default key cache otherwise.`LOAD INDEX INTO CACHE` is used only for [MyISAM](../../../../../server-usage/storage-engines/myisam-storage-engine/) or [Aria](../../../../../server-usage/storage-engines/aria/) tables.
+The `LOAD INDEX INTO CACHE` statement preloads a table index into the key cache to which it has been assigned by an explicit [CACHE INDEX](../../../administrative-sql-statements/cache-index.md) statement, or into the default key cache otherwise.`LOAD INDEX INTO CACHE` is used only for [MyISAM](../../../../../server-usage/storage-engines/myisam-storage-engine/) or [Aria](../../../../../server-usage/storage-engines/aria/) tables.
 
-The `IGNORE LEAVES` modifier causes only blocks for the nonleaf nodes of\
-the index to be preloaded.
+The `IGNORE LEAVES` modifier causes only blocks for the nonleaf nodes of the index to be preloaded.
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

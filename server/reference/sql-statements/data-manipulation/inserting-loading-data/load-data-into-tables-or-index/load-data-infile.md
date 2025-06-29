@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 LOAD DATA [LOW_PRIORITY | CONCURRENT] [LOCAL] INFILE 'file_name'
     [REPLACE | IGNORE]
     INTO TABLE tbl_name
@@ -37,14 +37,14 @@ If the [secure\_file\_priv](../../../../../ha-and-performance/optimization-and-t
 
 Note that MariaDB's [systemd](../../../../../server-management/starting-and-stopping-mariadb/systemd.md) unit file restricts access to `/home`, `/root`, and `/run/user` by default. See [Configuring access to home directories](../../../../../server-management/starting-and-stopping-mariadb/systemd.md#configuring-access-to-home-directories).
 
-### `LOAD DATA LOCAL INFILE`
+### LOAD DATA LOCAL INFILE
 
 When you execute the `LOAD DATA INFILE` statement, MariaDB Server attempts to read the input file from its own file system. By contrast, when you execute the `LOAD DATA LOCAL INFILE` statement, the client attempts to read the input file from its file system, and it sends the contents of the input file to the MariaDB Server. This allows you to load files from the client's local file system into the database.
 
 If you don't want to permit this operation (perhaps for security reasons), you can disable the `LOAD DATA LOCAL INFILE` statement on either the server or the client.
 
 * The `LOAD DATA LOCAL INFILE` statement can be disabled on the server by setting the [local\_infile](../../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#local_infile) system variable to `0`.
-* The `LOAD DATA LOCAL INFILE` statement can be disabled on the client. If you are using [MariaDB Connector/C](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/about-mariadb-connector-c/README.md), this can be done by unsetting the `CLIENT_LOCAL_FILES` capability flag with the [mysql\_real\_connect](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/api-functions/mysql_real_connect) function or by unsetting the `MYSQL_OPT_LOCAL_INFILE` option with [mysql\_optionsv](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/api-functions/mysql_optionsv) function. If you are using a different client or client library, then see the documentation for your specific client or client library to determine how it handles the `LOAD DATA LOCAL INFILE` statement.
+* The `LOAD DATA LOCAL INFILE` statement can be disabled on the client. If you are using [MariaDB Connector/C](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c), this can be done by unsetting the `CLIENT_LOCAL_FILES` capability flag with the [mysql\_real\_connect](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/api-functions/mysql_real_connect) function or by unsetting the `MYSQL_OPT_LOCAL_INFILE` option with [mysql\_optionsv](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/api-functions/mysql_optionsv) function. If you are using a different client or client library, then see the documentation for your specific client or client library to determine how it handles the `LOAD DATA LOCAL INFILE` statement.
 * The `LOAD DATA LOCAL INFILE` strict modes like `STRICT_TRANS_TABLES` are disabled with keyword "local". ([MDEV-11235](https://jira.mariadb.org/browse/MDEV-11235))
 
 If the `LOAD DATA LOCAL INFILE` statement is disabled by either the server or the client and if the user attempts to execute it, then the server will cause the statement to fail with the following error message:
@@ -62,7 +62,7 @@ The used command is not allowed because the MariaDB server or client
   has disabled the local infile capability
 ```
 
-### `REPLACE` and `IGNORE`
+### REPLACE and IGNORE
 
 If you load data from a file into a table that already contains data and has a [primary key](../../../../../mariadb-quickstart-guides/mariadb-indexes-guide.md#primary-key), you may encounter issues where the statement attempts to insert a row with a primary key that already exists. When this happens, the statement fails with Error 1064, protecting the data already on the table. If you want MariaDB to overwrite duplicates, use the `REPLACE` keyword.
 
@@ -76,7 +76,7 @@ Use the `IGNORE` keyword when you want to skip any rows that contain a conflicti
 
 The `IGNORE number LINES` syntax can be used to ignore a number of rows from the beginning of the file. Most often this is needed when the file starts with one row that includes the column headings.
 
-### Character-sets
+### Character Sets
 
 When the statement opens the file, it attempts to read the contents using the default character-set, as defined by the [character\_set\_database](../../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#character_set_database) system variable.
 
@@ -101,11 +101,19 @@ The `LOW_PRIORITY` and `CONCURRENT` keywords are mutually exclusive. They cannot
 
 ### Progress Reporting
 
-The `LOAD DATA INFILE` statement supports [progress reporting](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/broken-reference/README.md). You may find this useful when dealing with long-running operations. Using another client you can issue a [SHOW PROCESSLIST](../../../administrative-sql-statements/show/show-processlist.md) query to check the progress of the data load.
+The `LOAD DATA INFILE` statement supports [progress reporting](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/development-articles/mariadb-internals/using-mariadb-with-your-programs-api/progress-reporting). You may find this useful when dealing with long-running operations. Using another client you can issue a [SHOW PROCESSLIST](../../../administrative-sql-statements/show/show-processlist.md) query to check the progress of the data load.
 
 ### Using mariadb-import
 
-MariaDB ships with a separate utility for loading data from files: [mariadb-import](../../../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-import.md) (or `mysqlimport` before [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105)). It operates by sending `LOAD DATA INFILE` statements to the server.
+{% tabs %}
+{% tab title="Current" %}
+MariaDB ships with a separate utility for loading data from files: [mariadb-import](../../../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-import.md). It operates by sending `LOAD DATA INFILE` statements to the server.
+{% endtab %}
+
+{% tab title="< 10.5" %}
+MariaDB ships with a separate utility for loading data from files: `mysqlimport` . It operates by sending `LOAD DATA INFILE` statements to the server.
+{% endtab %}
+{% endtabs %}
 
 Using [mariadb-import](../../../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-import.md) you can compress the file using the `--compress` option, to get better performance over slow networks, providing both the client and server support the compressed protocol. Use the `--local` option to load from the local file system.
 
@@ -125,7 +133,7 @@ You have a file with this content (note the the separator is ',', not tab, which
 6,8
 ```
 
-```
+```sql
 CREATE TABLE t1 (a int, b int, c int, d int, PRIMARY KEY (a));
 LOAD DATA LOCAL INFILE 
  '/tmp/loaddata7.dat' INTO TABLE t1 FIELDS TERMINATED BY ',' (a,b) SET c=a+b;
@@ -150,7 +158,7 @@ Another example, given the following data (the separator is a tab):
 
 The value of the first column is doubled before loading:
 
-```
+```sql
 LOAD DATA INFILE 'ld.txt' INTO TABLE ld (@i,v) SET i=@i*2;
 
 SELECT * FROM ld;
