@@ -16,7 +16,7 @@ MariaDB 12.1 is a [rolling release](../../mariadb-release-model.md). It is an ev
 
 * caching\_sha2\_password plugin ([MDEV-9804](https://jira.mariadb.org/browse/MDEV-9804))
 * ( + ) for outer join syntax ([MDEV-13817](https://jira.mariadb.org/browse/MDEV-13817))
-* Add [semisynchronous replication](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/semisynchronous-replication) variable, [rpl\_semi\_sync\_master\_wait\_for\_slave\_count](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/semisynchronous-replication#rpl_semi_sync_master_wait_for_slave_count) ([MDEV-18983](https://jira.mariadb.org/browse/MDEV-18983))
+* Add [semisynchronous replication](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/semisynchronous-replication) variable, [rpl\_semi\_sync\_master\_wait\_for\_slave\_count](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/semisynchronous-replication#rpl_semi_sync_master_wait_slave_sync) ([MDEV-18983](https://jira.mariadb.org/browse/MDEV-18983))
 * Associative arrays: DECLARE TYPE .. TABLE OF .. INDEX BY ([MDEV-34319](https://jira.mariadb.org/browse/MDEV-34319))
 * DROP USER fails if the user has active session ([MDEV-35617](https://jira.mariadb.org/browse/MDEV-35617))
 * Optimizer hints: \[NO\_]JOIN\_INDEX, \[NO\_]GROUP\_INDEX, \[NO\_]ORDER\_INDEX, \[NO\_]INDEX ([MDEV-35856](https://jira.mariadb.org/browse/MDEV-35856))
@@ -31,8 +31,6 @@ MariaDB 12.1 is a [rolling release](../../mariadb-release-model.md). It is an ev
 * Remove depth limit from JSON functions ([MDEV-32854](https://jira.mariadb.org/browse/MDEV-32854))
 * Support for functional indexes in GROUP/ORDER BY ([MDEV-36132](https://jira.mariadb.org/browse/MDEV-36132))
 * Include definitions of tables and views in the optimizer trace ([MDEV-36483](https://jira.mariadb.org/browse/MDEV-36483))
-
-
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/7hzG0V6AUK8DqF4oiVaW/" %}
 
