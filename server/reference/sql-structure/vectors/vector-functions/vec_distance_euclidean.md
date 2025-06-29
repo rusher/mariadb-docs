@@ -16,6 +16,8 @@ VEC_DISTANCE_EUCLIDEAN(v, s)
 
 `VEC_Distance_Euclidean` is an SQL function that calculates a Euclidean (L2) distance between two points.
 
+Vectors must be of the same length, a distance between two vectors of different lengths is not defined and `VEC_Distance_Euclidean` will return `NULL` in such a case.
+
 If the vector index was not built for the euclidean function (see [CREATE TABLE with Vectors](../create-table-with-vectors.md)), the index will not be used, and a full table scan performed instead. The [VEC\_DISTANCE](vector-functions-vec_distance.md) function is a generic function that behaves either as VEC\_DISTANCE\_EUCLIDEAN or [VEC\_DISTANCE\_COSINE](vec_distance_cosine.md), depending on the underlying index type.
 
 ## Example
