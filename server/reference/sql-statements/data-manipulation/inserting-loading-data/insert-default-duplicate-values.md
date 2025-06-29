@@ -2,7 +2,7 @@
 
 ## Default Values
 
-If the [SQL_MODE](../../../../../server-management/variables-and-modes/sql-mode.md) contains `STRICT_TRANS_TABLES` and you are [inserting](insert.md) into a transactional table (like InnoDB), or if the SQL\_MODE contains `STRICT_ALL_TABLES`, all `NOT NULL` columns which do not have a `DEFAULT` value (and are not [AUTO\_INCREMENT](../../../data-types/auto_increment.md)) must be explicitly referenced in `INSERT` statements. If not, an error like this is produced:
+If the [SQL\_MODE](../../../../server-management/variables-and-modes/sql-mode.md) contains `STRICT_TRANS_TABLES` and you are [inserting](insert.md) into a transactional table (like InnoDB), or if the SQL\_MODE contains `STRICT_ALL_TABLES`, all `NOT NULL` columns which do not have a `DEFAULT` value (and are not [AUTO\_INCREMENT](../../../data-types/auto_increment.md)) must be explicitly referenced in `INSERT` statements. If not, an error like this is produced:
 
 ```
 ERROR 1364 (HY000): Field 'col' doesn't have a default value
@@ -12,7 +12,7 @@ In all other cases, if a `NOT NULL` column without a `DEFAULT` value is not refe
 
 If a `NOT NULL` column having a `DEFAULT` value is not referenced, `NULL` will be inserted.
 
-If a `NULL` column having a `DEFAULT` value is not referenced, its default value will be inserted. It is also possible to explicitly assign the default value using the `DEFAULT` keyword or the [DEFAULT()](../../built-in-functions/secondary-functions/information-functions/default.md) function.
+If a `NULL` column having a `DEFAULT` value is not referenced, its default value will be inserted. It is also possible to explicitly assign the default value using the `DEFAULT` keyword or the [DEFAULT()](../../../sql-functions/secondary-functions/information-functions/default.md) function.
 
 If the `DEFAULT` keyword is used but the column does not have a `DEFAULT` value, an error like this is produced:
 

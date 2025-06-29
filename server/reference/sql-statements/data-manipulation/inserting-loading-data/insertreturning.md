@@ -1,12 +1,14 @@
 # INSERT...RETURNING
 
-**MariaDB starting with** [**10.5.0**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1050-release-notes)
 
-INSERT ... RETURNING was added in [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1050-release-notes), and returns a resultset of the [inserted](insert.md) rows.
+
+{% hint style="info" %}
+INSERT ... RETURNING was added in [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1050-release-notes), and returns a result set of the [inserted](insert.md) rows.
+{% endhint %}
 
 ## Syntax
 
-```
+```sql
 INSERT [LOW_PRIORITY | DELAYED | HIGH_PRIORITY] [IGNORE]
  [INTO] tbl_name [PARTITION (partition_list)] [(col,...)]
  {VALUES | VALUE} ({expr | DEFAULT},...),(...),...
@@ -18,7 +20,7 @@ INSERT [LOW_PRIORITY | DELAYED | HIGH_PRIORITY] [IGNORE]
 
 Or:
 
-```
+```sql
 INSERT [LOW_PRIORITY | DELAYED | HIGH_PRIORITY] [IGNORE]
     [INTO] tbl_name [PARTITION (partition_list)]
     SET col={expr | DEFAULT}, ...
@@ -30,7 +32,7 @@ INSERT [LOW_PRIORITY | DELAYED | HIGH_PRIORITY] [IGNORE]
 
 Or:
 
-```
+```sql
 INSERT [LOW_PRIORITY | HIGH_PRIORITY] [IGNORE]
     [INTO] tbl_name [PARTITION (partition_list)] [(col,...)]
     SELECT ...
@@ -42,14 +44,15 @@ INSERT [LOW_PRIORITY | HIGH_PRIORITY] [IGNORE]
 
 ## Description
 
-`INSERT ... RETURNING` returns a resultset of the [inserted](insert.md) rows.\
-This returns the listed columns for all the rows that are inserted, or alternatively, the specified SELECT expression. Any SQL expressions which can be calculated can be used in the select expression for the RETURNING clause, including virtual columns and aliases, expressions which use various operators such as bitwise, logical and arithmetic operators, string functions, date-time functions, numeric functions, control flow functions, secondary functions and stored functions. Along with this, statements which have subqueries and prepared statements can also be used.
+`INSERT ... RETURNING` returns a resultset of the [inserted](insert.md) rows.
+
+It returns the listed columns for all the rows that are inserted, or alternatively, the specified `SELECT` expression. Any SQL expressions which can be calculated can be used in the select expression for the `RETURNING` clause, including virtual columns and aliases, expressions which use various operators such as bitwise, logical and arithmetic operators, string functions, date-time functions, numeric functions, control flow functions, secondary functions and stored functions. Along with this, statements which have subqueries and prepared statements can also be used.
 
 ## Examples
 
 Simple INSERT statements:
 
-```
+```sql
 CREATE OR REPLACE TABLE t2 (id INT, animal VARCHAR(20), t TIMESTAMP);
 
 INSERT INTO t2 (id) VALUES (2),(3) RETURNING id,t;
@@ -61,7 +64,7 @@ INSERT INTO t2 (id) VALUES (2),(3) RETURNING id,t;
 +------+---------------------+
 ```
 
-```
+```sql
 INSERT INTO t2(id,animal) VALUES (1,'Dog'),(2,'Lion'),(3,'Tiger'),(4,'Leopard')  
   RETURNING id,id+id,id&id,id||id;
 +------+-------+-------+--------+
@@ -74,9 +77,9 @@ INSERT INTO t2(id,animal) VALUES (1,'Dog'),(2,'Lion'),(3,'Tiger'),(4,'Leopard')
 +------+-------+-------+--------+
 ```
 
-Using stored functions in RETURNING
+Using stored functions in `RETURNING`:
 
-```
+```sql
 DELIMITER |
 CREATE FUNCTION f(arg INT) RETURNS INT
     BEGIN
@@ -95,9 +98,9 @@ EXECUTE stmt;
 +---------+----------------+
 ```
 
-Subqueries in the RETURNING clause that return more than one row or column cannot be used.
+Subqueries in the `RETURNING` clause that return more than one row or column cannot be used.
 
-Aggregate functions cannot be used in the RETURNING clause. Since aggregate functions work on a set of values, and if the purpose is to get the row count, ROW\_COUNT() with SELECT can be used or it can be used in INSERT...SELECT...RETURNING if the table in the RETURNING clause is not the same as the INSERT table.
+Aggregate functions cannot be used in the `RETURNING` clause. Since aggregate functions work on a set of values, and if the purpose is to get the row count, `ROW_COUNT()`with `SELECT` can be used or it can be used in `INSERT...SELECT...RETURNING` if the table in the `RETURNING` clause is not the same as the `INSERT` table.
 
 ## See Also
 

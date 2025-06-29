@@ -16,11 +16,8 @@ The logic used:
 
 * Variables out of ranges are replaced with the maximum/minimum value.
 * [SQL\_MODEs](../../../../server-management/variables-and-modes/sql-mode.md) `STRICT_TRANS_TABLES`, `STRICT_ALL_TABLES`, `NO_ZERO_IN_DATE`, `NO_ZERO_DATE` are ignored.
-* Inserting `NULL` in a `NOT NULL` field will insert 0 ( in a numerical\
-  field), 0000-00-00 ( in a date field) or an empty string ( in a character\
-  field).
-* Rows that cause a duplicate key error or break a foreign key constraint are\
-  not inserted, updated, or deleted.
+* Inserting `NULL` in a `NOT NULL` field will insert 0 ( in a numerical field), 0000-00-00 ( in a date field) or an empty string ( in a character field).
+* Rows that cause a duplicate key error or break a foreign key constraint are not inserted, updated, or deleted.
 
 The following errors are ignored:
 

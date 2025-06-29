@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 INSERT [LOW_PRIORITY | DELAYED | HIGH_PRIORITY] [IGNORE]
   [INTO] tbl_name [PARTITION (partition_list)] [(col,...)]
   {VALUES | VALUE} ({expr | DEFAULT},...),(...),...
@@ -13,7 +13,7 @@ INSERT [LOW_PRIORITY | DELAYED | HIGH_PRIORITY] [IGNORE]
 
 Or:
 
-```
+```sql
 INSERT [LOW_PRIORITY | DELAYED | HIGH_PRIORITY] [IGNORE]
     [INTO] tbl_name [PARTITION (partition_list)]
     SET col={expr | DEFAULT}, ...
@@ -24,7 +24,7 @@ INSERT [LOW_PRIORITY | DELAYED | HIGH_PRIORITY] [IGNORE]
 
 Or:
 
-```
+```sql
 INSERT [LOW_PRIORITY | HIGH_PRIORITY] [IGNORE]
     [INTO] tbl_name [PARTITION (partition_list)] [(col,...)]
     SELECT ...
@@ -55,20 +55,20 @@ See also a similar statement, [REPLACE](../changing-deleting-data/replace.md).
 
 ## Examples
 
-```
+```sql
 CREATE TABLE ins_duplicate (id INT PRIMARY KEY, animal VARCHAR(30));
 INSERT INTO ins_duplicate VALUES (1,'Aardvark'), (2,'Cheetah'), (3,'Zebra');
 ```
 
 If there is no existing key, the statement runs as a regular INSERT:
 
-```
+```sql
 INSERT INTO ins_duplicate VALUES (4,'Gorilla') 
   ON DUPLICATE KEY UPDATE animal='Gorilla';
 Query OK, 1 row affected (0.07 sec)
 ```
 
-```
+```sql
 SELECT * FROM ins_duplicate;
 +----+----------+
 | id | animal   |
@@ -82,14 +82,14 @@ SELECT * FROM ins_duplicate;
 
 A regular INSERT with a primary key value of 1 will fail, due to the existing key:
 
-```
+```sql
 INSERT INTO ins_duplicate VALUES (1,'Antelope');
 ERROR 1062 (23000): Duplicate entry '1' for key 'PRIMARY'
 ```
 
 However, we can use an INSERT ON DUPLICATE KEY UPDATE instead:
 
-```
+```sql
 INSERT INTO ins_duplicate VALUES (1,'Antelope') 
   ON DUPLICATE KEY UPDATE animal='Antelope';
 Query OK, 2 rows affected (0.09 sec)
@@ -97,7 +97,7 @@ Query OK, 2 rows affected (0.09 sec)
 
 Note that there are two rows reported as affected, but this refers only to the UPDATE.
 
-```
+```sql
 SELECT * FROM ins_duplicate;
 +----+----------+
 | id | animal   |
@@ -111,7 +111,7 @@ SELECT * FROM ins_duplicate;
 
 Adding a second unique column:
 
-```
+```sql
 ALTER TABLE ins_duplicate ADD id2 INT;
 UPDATE ins_duplicate SET id2=id+10;
 ALTER TABLE ins_duplicate ADD UNIQUE KEY(id2);
@@ -119,7 +119,7 @@ ALTER TABLE ins_duplicate ADD UNIQUE KEY(id2);
 
 Where two rows match the unique keys match, only the first is updated. This can be unsafe and is not recommended unless you are certain what you are doing.
 
-```
+```sql
 INSERT INTO ins_duplicate VALUES (2,'Lion',13) 
   ON DUPLICATE KEY UPDATE animal='Lion';
 Query OK, 2 rows affected (0.004 sec)
@@ -139,7 +139,7 @@ Although the third row with an id of 3 has an id2 of 13, which also matched, it 
 
 Changing id to an auto\_increment field. If a new row is added, the auto\_increment is moved forward. If the row is updated, it remains the same.
 
-```
+```sql
 ALTER TABLE `ins_duplicate` CHANGE `id` `id` INT( 11 ) NOT NULL AUTO_INCREMENT;
 ALTER TABLE ins_duplicate DROP id2;
 SELECT Auto_increment FROM INFORMATION_SCHEMA.TABLES 
@@ -188,7 +188,7 @@ SELECT Auto_increment FROM INFORMATION_SCHEMA.TABLES
 
 Refering to column values from the INSERT portion of the statement:
 
-```
+```sql
 INSERT INTO table (a,b,c) VALUES (1,2,3),(4,5,6)
     ON DUPLICATE KEY UPDATE c=VALUES(a)+VALUES(b);
 ```
