@@ -6,11 +6,11 @@ MariaDB 12.1 is a [rolling release](../../mariadb-release-model.md). It is an ev
 
 ### Performance improvements <a href="#performance-improvements" id="performance-improvements"></a>
 
-* Segmented key cache for Aria ([MDEV-24](https://jira.mariadb.org/browse/MDEV-24))
+* Segmented key cache for [Aria storage engine](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/aria) ([MDEV-24](https://jira.mariadb.org/browse/MDEV-24))
 * MDL scalability improvements ([MDEV-19749](https://jira.mariadb.org/browse/MDEV-19749))
-* Parallel replication for galera replicas ([MDEV-20065](https://jira.mariadb.org/browse/MDEV-20065))
-* Buffered logging for audit plugin ([MDEV-34680](https://jira.mariadb.org/browse/MDEV-34680))
-* Faster vector distance calculations via extrapolation ([MDEV-36205](https://jira.mariadb.org/browse/MDEV-36205))
+* Parallel replication for [Galera](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/3VYeeVGUV4AMqrA3zwy7/) replicas ([MDEV-20065](https://jira.mariadb.org/browse/MDEV-20065))
+* Buffered logging for [audit plugin](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/mariadb-audit-plugin) ([MDEV-34680](https://jira.mariadb.org/browse/MDEV-34680))
+* Faster [vector](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-structure/vectors) distance calculations via extrapolation ([MDEV-36205](https://jira.mariadb.org/browse/MDEV-36205))
 
 ### Compatibility features <a href="#compatibility-features" id="compatibility-features"></a>
 
