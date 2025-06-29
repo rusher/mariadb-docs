@@ -243,6 +243,16 @@ The effects of the `AFTER_COMMIT` wait point are:
 * Default Value: `AFTER_COMMIT`
 * Valid Values: `AFTER_SYNC`, `AFTER_COMMIT`
 
+#### `rpl_semi_sync_master_wait_slave_sync`
+
+* Description: The number of replicas that need to acknowledge that they have received a transaction before the transaction can complete on the primary.
+* Commandline: `--rpl-semi-sync-master-wait-slave-sync=#`
+* Scope: Global
+* Dynamic: Yes
+* Data Type: `numeric`
+* Range: `0` to `65535`
+* Introduced: MariaDB 12.1
+
 #### `rpl_semi_sync_slave_delay_master`
 
 * Description: Only write primary info file when ack is needed.
