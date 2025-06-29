@@ -250,6 +250,7 @@ The effects of the `AFTER_COMMIT` wait point are:
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `numeric`
+* Default Value: `1`
 * Range: `0` to `65535`
 * Introduced: MariaDB 12.1
 
