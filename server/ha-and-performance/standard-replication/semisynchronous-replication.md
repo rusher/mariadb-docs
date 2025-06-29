@@ -243,10 +243,10 @@ The effects of the `AFTER_COMMIT` wait point are:
 * Default Value: `AFTER_COMMIT`
 * Valid Values: `AFTER_SYNC`, `AFTER_COMMIT`
 
-#### `rpl_semi_sync_master_wait_slave_sync`
+#### `rpl_semi_sync_master_wait_for_slave_count`
 
 * Description: The number of replicas that need to acknowledge that they have received a transaction before the transaction can complete on the primary.
-* Commandline: `--rpl-semi-sync-master-wait-slave-sync=#`
+* Commandline: `--rpl-semi-sync-master-wait-for-slave-count=#`
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `numeric`
