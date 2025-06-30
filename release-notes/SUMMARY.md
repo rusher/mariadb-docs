@@ -641,7 +641,7 @@
       * [MariaDB 5.2.1 Release Notes](mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-2-series/mariadb-521-release-notes.md)
       * [MariaDB 5.2.0 Release Notes](mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-2-series/mariadb-520-release-notes.md)
     * [Release Notes - MariaDB 5.1 Series](mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-1-series/README.md)
-      * [Changes & Improvements in MariaDB 5.1](mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-1-series/changes-improvements-in-mariadb-5-1.md)
+      * [Changes and Improvements in MariaDB 5.1](mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-1-series/changes-improvements-in-mariadb-5-1.md)
       * [MariaDB 5.1.38 Release Notes](mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-1-series/mariadb-5138-release-notes.md)
       * [MariaDB 5.1.39 Release Notes](mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-1-series/mariadb-5139-release-notes.md)
       * [MariaDB 5.1.41 Release Notes](mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-1-series/mariadb-5141-release-notes.md)
