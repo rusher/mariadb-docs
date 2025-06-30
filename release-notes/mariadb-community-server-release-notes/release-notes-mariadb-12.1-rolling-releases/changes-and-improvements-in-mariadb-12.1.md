@@ -1,4 +1,4 @@
-# Changes and Improvements in MariaDB 12.1
+# Changes and Improvements in MariaDB 12
 
 MariaDB 12.1 is a [rolling release](../../mariadb-release-model.md). It is an evolution of [MariaDB 12.0](../release-notes-mariadb-12.0-rolling-releases/what-is-mariadb-120.md) with several entirely new features.
 
@@ -16,12 +16,14 @@ MariaDB 12.1 is a [rolling release](../../mariadb-release-model.md). It is an ev
 
 * caching\_sha2\_password plugin ([MDEV-9804](https://jira.mariadb.org/browse/MDEV-9804))
 * ( + ) for outer join syntax ([MDEV-13817](https://jira.mariadb.org/browse/MDEV-13817))
-* Add [semisynchronous replication](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/semisynchronous-replication) variable, [rpl\_semi\_sync\_master\_wait\_for\_slave\_count](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/semisynchronous-replication#rpl_semi_sync_master_wait_for_slave_count) ([MDEV-18983](https://jira.mariadb.org/browse/MDEV-18983))
+* Add semisynchronous replication variable, rpl\_semi\_sync\_master\_wait\_for\_slave\_count ([MDEV-18983](https://jira.mariadb.org/browse/MDEV-18983))
 * Associative arrays: DECLARE TYPE .. TABLE OF .. INDEX BY ([MDEV-34319](https://jira.mariadb.org/browse/MDEV-34319))
 * DROP USER fails if the user has active session ([MDEV-35617](https://jira.mariadb.org/browse/MDEV-35617))
 * Optimizer hints: \[NO\_]JOIN\_INDEX, \[NO\_]GROUP\_INDEX, \[NO\_]ORDER\_INDEX, \[NO\_]INDEX ([MDEV-35856](https://jira.mariadb.org/browse/MDEV-35856))
 * Optimizer hints: \[NO\_]SPLIT\_MATERIALIZED ([MDEV-36092](https://jira.mariadb.org/browse/MDEV-36092))
 * Optimizer hints: \[NO\_]DERIVED\_CONDITION\_PUSHDOWN, \[NO\_]MERGE ([MDEV-36106](https://jira.mariadb.org/browse/MDEV-36106))
+
+
 
 ### Miscellaneous <a href="#miscellaneous" id="miscellaneous"></a>
 
