@@ -154,7 +154,7 @@
     * [Release Notes for MariaDB Enterprise Server 10.2.25-1](enterprise-server/10-2/release-notes-for-mariadb-enterprise-server-10-2-25-1.md)
 * [MariaDB Community Server Release Notes](mariadb-community-server-release-notes/README.md)
   * [Release Notes - MariaDB 12.1 Rolling Releases](mariadb-community-server-release-notes/release-notes-mariadb-12.1-rolling-releases/README.md)
-    * [Changes and Improvements in MariaDB 12.1](mariadb-community-server-release-notes/release-notes-mariadb-12.1-rolling-releases/changes-and-improvements-in-mariadb-12.1.md)
+    * [Changes and Improvements in MariaDB 12](mariadb-community-server-release-notes/release-notes-mariadb-12.1-rolling-releases/changes-and-improvements-in-mariadb-12.1.md)
   * [Release Notes - MariaDB 12.0 Rolling Releases](mariadb-community-server-release-notes/release-notes-mariadb-12.0-rolling-releases/README.md)
     * [Changes and Improvements in MariaDB 12.0](mariadb-community-server-release-notes/release-notes-mariadb-12.0-rolling-releases/what-is-mariadb-120.md)
     * [MariaDB 12.0.1 Release Notes](mariadb-community-server-release-notes/release-notes-mariadb-12.0-rolling-releases/mariadb-12.0.1-release-notes.md)
