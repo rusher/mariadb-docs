@@ -1,17 +1,10 @@
 # GROUP BY
 
-Use the `GROUP BY` clause in a [SELECT](select.md) statement to group rows together that have the same value in one or more column, or the same computed value using expressions with any[functions and operators](../../../sql-functions/) except[grouping functions](../../../sql-functions/aggregate-functions/). When you\
-use a `GROUP BY` clause, you will get a single result row for each group of rows\
-that have the same value for the expression given in `GROUP BY`.
+Use the `GROUP BY` clause in a [SELECT](select.md) statement to group rows together that have the same value in one or more column, or the same computed value using expressions with any [functions and operators](../../../sql-functions/) except[grouping functions](../../../sql-functions/aggregate-functions/). When you use a `GROUP BY` clause, you will get a single result row for each group of rows that have the same value for the expression given in `GROUP BY`.
 
-When grouping rows, grouping values are compared as if by the [=](../../../operators/comparison-operators/equal.md) operator.\
-For string values, the `=` operator ignores trailing whitespace and may normalize\
-characters and ignore case, depending on the [collation](../../../data-types/string-data-types/character-sets/) in use.
+When grouping rows, grouping values are compared as if by the [=](../../../sql-structure/operators/comparison-operators/) operator. For string values, the `=` operator ignores trailing whitespace and may normalize characters and ignore case, depending on the [collation](../../../data-types/string-data-types/character-sets/) in use.
 
-You can use any of the grouping functions in your select expression. Their values will\
-be calculated based on all the rows that have been grouped together for each result\
-row. If you select a non-grouped column or a value computed from a non-grouped\
-column, it is undefined which row the returned value is taken from. This is not permitted if the `ONLY_FULL_GROUP_BY` [SQL\_MODE](../../../../server-management/variables-and-modes/sql-mode.md) is used.
+You can use any of the grouping functions in your select expression. Their values will be calculated based on all the rows that have been grouped together for each result row. If you select a non-grouped column or a value computed from a non-grouped column, it is undefined which row the returned value is taken from. This is not permitted if the `ONLY_FULL_GROUP_BY` [SQL\_MODE](../../../../server-management/variables-and-modes/sql-mode.md) is used.
 
 You can use multiple expressions in the `GROUP BY` clause, separated by commas.\
 Rows are grouped together if they match on each of the expressions.
@@ -32,13 +25,13 @@ If you want the rows to be sorted by another field, you can add an explicit [ORD
 
 ### WITH ROLLUP
 
-The `WITH ROLLUP` modifer adds extra rows to the resultset that represent super-aggregate summaries. For a full description with examples, see [SELECT WITH ROLLUP](select-with-rollup.md).
+The `WITH ROLLUP` modifier adds extra rows to the result set that represent super-aggregate summaries. For a full description with examples, see [SELECT WITH ROLLUP](select-with-rollup.md).
 
 ### GROUP BY Examples
 
 Consider the following table that records how many times each user has played and won a game:
 
-```
+```sql
 CREATE TABLE plays (name VARCHAR(16), plays INT, wins INT);
 INSERT INTO plays VALUES 
   ("John", 20, 5), 
@@ -49,7 +42,7 @@ INSERT INTO plays VALUES
 
 Get a list of win counts along with a count:
 
-```
+```sql
 SELECT wins, COUNT(*) FROM plays GROUP BY wins;
 +------+----------+
 | wins | COUNT(*) |
@@ -61,10 +54,10 @@ SELECT wins, COUNT(*) FROM plays GROUP BY wins;
 3 rows in set (0.00 sec)
 ```
 
-The `GROUP BY` expression can be a computed value, and can refer back to an identifer\
+The `GROUP BY` expression can be a computed value, and can refer back to an identifier\
 specified with `AS`. Get a list of win averages along with a count:
 
-```
+```sql
 SELECT (wins / plays) AS winavg, COUNT(*) FROM plays GROUP BY winavg;
 +--------+----------+
 | winavg | COUNT(*) |
@@ -76,11 +69,9 @@ SELECT (wins / plays) AS winavg, COUNT(*) FROM plays GROUP BY winavg;
 3 rows in set (0.00 sec)
 ```
 
-You can use any [grouping function](../../../sql-functions/aggregate-functions/)\
-in the select expression. For each win average as above, get a list of the average play\
-count taken to get that average:
+You can use any [grouping function](../../../sql-functions/aggregate-functions/) in the select expression. For each win average as above, get a list of the average play count taken to get that average:
 
-```
+```sql
 SELECT (wins / plays) AS winavg, AVG(plays) FROM plays 
   GROUP BY winavg;
 +--------+------------+
@@ -93,12 +84,9 @@ SELECT (wins / plays) AS winavg, AVG(plays) FROM plays
 3 rows in set (0.00 sec)
 ```
 
-You can filter on aggregate information using the `HAVING` clause. The `HAVING`\
-clause is applied after `GROUP BY` and allows you to filter on aggregate data that is\
-not available to the `WHERE` clause. Restrict the above example to results that involve\
-an average number of plays over 20:
+You can filter on aggregate information using the `HAVING` clause. The `HAVING` clause is applied after `GROUP BY` and allows you to filter on aggregate data that is not available to the `WHERE` clause. Restrict the above example to results that involve an average number of plays over 20:
 
-```
+```sql
 SELECT (wins / plays) AS winavg, AVG(plays) FROM plays 
   GROUP BY winavg HAVING AVG(plays) > 20;
 +--------+------------+

@@ -10,7 +10,7 @@ If the isolation level is set to [SERIALIZABLE](../../transactions/set-transacti
 
 ## Example
 
-```
+```sql
 SELECT * FROM trans WHERE period=2001 FOR UPDATE;
 ```
 
