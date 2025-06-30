@@ -1,13 +1,10 @@
-
 # Row Subqueries
 
-A row subquery is a [subquery](README.md) returning a single row, as opposed to a [scalar subquery](subqueries-scalar-subqueries.md), which returns a single column from a row, or a literal.
-
+A row subquery is a [subquery](./) returning a single row, as opposed to a [scalar subquery](subqueries-scalar-subqueries.md), which returns a single column from a row, or a literal.
 
 ## Examples
 
-
-```
+```sql
 CREATE TABLE staff (name VARCHAR(10), age TINYINT);
 
 CREATE TABLE customer (name VARCHAR(10), age TINYINT);
@@ -24,10 +21,9 @@ SELECT * FROM staff WHERE (name,age) = (SELECT name,age FROM customer WHERE name
 +----------+------+
 ```
 
-Finding all rows in one table also in another:
+Finding all rows in one table and also in another:
 
-
-```
+```sql
 SELECT name,age FROM staff WHERE (name,age) IN (SELECT name,age FROM customer);
 +----------+------+
 | name     | age  |
@@ -36,8 +32,6 @@ SELECT name,age FROM staff WHERE (name,age) IN (SELECT name,age FROM customer);
 +----------+------+
 ```
 
-
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
-
 
 {% @marketo/form formId="4316" %}
