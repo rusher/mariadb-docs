@@ -50,7 +50,7 @@ lock_option:
 
 ## Description
 
-The `CREATE USER` statement creates new MariaDB accounts. To use it, you must have the global [CREATE USER](grant.md#create-user) privilege or the [INSERT](grant.md#table-privileges) privilege for the [mysql](../administrative-sql-statements/system-tables/the-mysql-database-tables/) database.&#x20;
+The `CREATE USER` statement creates new MariaDB accounts. To use it, you must have the global [CREATE USER](grant.md#create-user) privilege or the [INSERT](grant.md#table-privileges) privilege for the [mysql](../administrative-sql-statements/system-tables/the-mysql-database-tables/) database.
 
 {% tabs %}
 {% tab title="Current" %}
@@ -218,7 +218,6 @@ You can set certain TLS-related restrictions for specific user accounts. For ins
 
 | Option                    | Description                                                                                                                                                                                                                                                                                         |
 | ------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Option                    | Description                                                                                                                                                                                                                                                                                         |
 | REQUIRE NONE              | TLS is not required for this account, but can still be used.                                                                                                                                                                                                                                        |
 | REQUIRE SSL               | The account must use TLS, but no valid X509 certificate is required. This option cannot be combined with other TLS options.                                                                                                                                                                         |
 | REQUIRE X509              | The account must use TLS and must have a valid X509 certificate. This option implies REQUIRE SSL. This option cannot be combined with other TLS options.                                                                                                                                            |
