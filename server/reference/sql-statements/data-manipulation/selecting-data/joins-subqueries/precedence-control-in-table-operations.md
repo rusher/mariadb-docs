@@ -4,7 +4,7 @@ You can control the ordering of execution on table operations using parentheses.
 
 ## Syntax
 
-```
+```sql
 (  expression )
 [ORDER BY [column[, column...]]]
 [LIMIT {[offset,] row_count | row_count OFFSET offset}]
@@ -18,7 +18,7 @@ Using parentheses in your SQL allows you to control the order of execution for [
 
 ## Example
 
-```
+```sql
 CREATE TABLE test.t1 (num INT);
 
 INSERT INTO test.t1 VALUES (1),(2),(3);
