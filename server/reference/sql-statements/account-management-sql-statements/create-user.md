@@ -54,15 +54,11 @@ The `CREATE USER` statement creates new MariaDB accounts. To use it, you must ha
 
 {% tabs %}
 {% tab title="Current" %}
-For each account, `CREATE USER` creates a new row in [mysql.user](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md) that has no privileges.
+For each account, `CREATE USER` creates a new row in [mysql.user](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md) view (and the underlying [mysql.global\_priv](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-global_priv-table.md) table) that has no privileges.
 {% endtab %}
 
 {% tab title="< 10.4" %}
-For each account, `CREATE USER` creates a new row in [mysql.user](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md) (a view) that has no privileges.
-{% endtab %}
-
-{% tab title="< 10.3" %}
-For each account, `CREATE USER` creates a new row in [mysql.user](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md) (a table) that has no privileges.
+For each account, `CREATE USER` creates a new row in [mysql.user](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md) table that has no privileges.
 {% endtab %}
 {% endtabs %}
 
