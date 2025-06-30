@@ -429,7 +429,7 @@ From [MariaDB 10.4.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-com
 * [CREATE ROLE](create-role.md)
 * [SET PASSWORD](set-password.md)
 * [SHOW CREATE USER](../administrative-sql-statements/show/show-create-user.md)
-* [Troubleshooting Connection Issues](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/troubleshooting-connection-issues/README.md)
+* [Troubleshooting Connection Issues](../../../mariadb-quickstart-guides/mariadb-connection-troubleshooting-guide.md)
 * [Authentication from MariaDB 10.4](../../../security/user-account-management/authentication-from-mariadb-10-4.md)
 * [Identifier Names](../../sql-structure/sql-language-structure/identifier-names.md)
 * [mysql.user table](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md)
