@@ -82,7 +82,7 @@ From the above, one can see that:
   with:
 
 ```sql
-set @@optimizer_switch='derived_merge=OFF'
+SET @@optimizer_switch='derived_merge=OFF'
 ```
 
 * Versions of MySQL and MariaDB which do not have support for this optimization\

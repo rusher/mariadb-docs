@@ -47,7 +47,7 @@ CREATE TABLE myVectorSearch (
 Example:
 
 ```sql
-select hex(vec_fromtext('[1,2,3]'));
+SELECT hex(vec_fromtext('[1,2,3]'));
 ```
 
 ```

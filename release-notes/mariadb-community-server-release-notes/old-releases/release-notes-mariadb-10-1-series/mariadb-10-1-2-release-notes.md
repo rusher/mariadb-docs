@@ -27,7 +27,7 @@ Notable changes of this release include:
 * Support for Spatial Reference systems for the GIS data ([MDEV-60](https://jira.mariadb.org/browse/MDEV-60)), new `REF_SYSTEM_ID` column attribute can be used to specify Spatial Reference System ID for columns of spatial data types:
 
 ```sql
-create table t1(g GEOMETRY(9,4) REF_SYSTEM_ID=101);
+CREATE TABLE t1(g GEOMETRY(9,4) REF_SYSTEM_ID=101);
 ```
 
 It can be queried via the [INFORMATION\_SCHEMA.GEOMETRY\_COLUMNS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-geometry_columns-table) table.

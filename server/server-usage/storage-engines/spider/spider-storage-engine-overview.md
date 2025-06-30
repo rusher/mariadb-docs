@@ -157,10 +157,10 @@ Create the empty tables to hold the data and repeat for all available backend no
 backend1 << EOF 
 CREATE DATABASE backend;
 CREATE TABLE backend.sbtest (
-  id int(10) unsigned NOT NULL AUTO_INCREMENT,
-  k int(10) unsigned NOT NULL DEFAULT '0',
-  c char(120) NOT NULL DEFAULT '',
-  pad char(60) NOT NULL DEFAULT '',
+  id INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  k INT(10) UNSIGNED NOT NULL DEFAULT '0',
+  c CHAR(120) NOT NULL DEFAULT '',
+  pad CHAR(60) NOT NULL DEFAULT '',
   PRIMARY KEY (id),
   KEY k (k)
 ) ENGINE=InnoDB;
@@ -169,10 +169,10 @@ EOF
 backend2 << EOF 
 CREATE DATABASE backend;
 CREATE TABLE backend.sbtest (
-  id int(10) unsigned NOT NULL AUTO_INCREMENT,
-  k int(10) unsigned NOT NULL DEFAULT '0',
-  c char(120) NOT NULL DEFAULT '',
-  pad char(60) NOT NULL DEFAULT '',
+  id INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  k INT(10) UNSIGNED NOT NULL DEFAULT '0',
+  c CHAR(120) NOT NULL DEFAULT '',
+  pad CHAR(60) NOT NULL DEFAULT '',
   PRIMARY KEY (id),
   KEY k (k)
 ) ENGINE=InnoDB;
@@ -197,10 +197,10 @@ OPTIONS(
 
 CREATE  TABLE test.sbtest
 (
-  id int(10) unsigned NOT NULL AUTO_INCREMENT,
-  k int(10) unsigned NOT NULL DEFAULT '0',
-  c char(120) NOT NULL DEFAULT '',
-  pad char(60) NOT NULL DEFAULT '',
+  id INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  k INT(10) UNSIGNED NOT NULL DEFAULT '0',
+  c CHAR(120) NOT NULL DEFAULT '',
+  pad CHAR(60) NOT NULL DEFAULT '',
   PRIMARY KEY (id),
   KEY k (k)
 ) ENGINE=spider COMMENT='wrapper "mysql",srv "backend"';
@@ -241,13 +241,13 @@ OPTIONS(
 CREATE DATABASE IF NOT EXISTS backend;
 CREATE  TABLE backend.sbtest
 (
-  id int(10) unsigned NOT NULL AUTO_INCREMENT,
-  k int(10) unsigned NOT NULL DEFAULT '0',
-  c char(120) NOT NULL DEFAULT '',
-  pad char(60) NOT NULL DEFAULT '',
+  id INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  k INT(10) UNSIGNED NOT NULL DEFAULT '0',
+  c CHAR(120) NOT NULL DEFAULT '',
+  pad CHAR(60) NOT NULL DEFAULT '',
   PRIMARY KEY (id),
   KEY k (k)
-) ENGINE=spider COMMENT='wrapper "mysql", table "sbtest"'
+) ENGINE=spider COMMENT='wrapper "mysql", TABLE "sbtest"'
  PARTITION BY KEY (id) 
 (
  PARTITION pt1 COMMENT = 'srv "backend1"',
@@ -261,13 +261,13 @@ Copy the data from the original sysbench table to the spider table
 ```sql
 #/usr/local/skysql/mariadb/bin/mysqldump  --user=skysql --password=skyvodka --host=192.168.0.202 --port=5054 --no-create-info test sbtest | spider1 backend 
 
-#backend2 -e"select count(*) from backend.sbtest;"
+#backend2 -e"SELECT count(*) FROM backend.sbtest;"
 +----------+
 | count(*) |
 +----------+
 |  3793316 |
 +----------+
-#backend1 -e"select count(*) from backend.sbtest;"
+#backend1 -e"SELECT count(*) FROM backend.sbtest;"
 +----------+
 | count(*) |
 +----------+
@@ -332,34 +332,34 @@ CREATE DATABASE bsbackend2;
 CREATE DATABASE bsbackend3;
 CREATE DATABASE bsbackend4;
 CREATE TABLE bsbackend1.sbtest (
-  id int(10) unsigned NOT NULL AUTO_INCREMENT,
-  k int(10) unsigned NOT NULL DEFAULT '0',
-  c char(120) NOT NULL DEFAULT '',
-  pad char(60) NOT NULL DEFAULT '',
+  id INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  k INT(10) UNSIGNED NOT NULL DEFAULT '0',
+  c CHAR(120) NOT NULL DEFAULT '',
+  pad CHAR(60) NOT NULL DEFAULT '',
   PRIMARY KEY (id),
   KEY k (k)
 ) ENGINE=InnoDB;
 CREATE TABLE bsbackend2.sbtest (
-  id int(10) unsigned NOT NULL AUTO_INCREMENT,
-  k int(10) unsigned NOT NULL DEFAULT '0',
-  c char(120) NOT NULL DEFAULT '',
-  pad char(60) NOT NULL DEFAULT '',
+  id INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  k INT(10) UNSIGNED NOT NULL DEFAULT '0',
+  c CHAR(120) NOT NULL DEFAULT '',
+  pad CHAR(60) NOT NULL DEFAULT '',
   PRIMARY KEY (id),
   KEY k (k)
 ) ENGINE=InnoDB;
 CREATE TABLE bsbackend3.sbtest (
-  id int(10) unsigned NOT NULL AUTO_INCREMENT,
-  k int(10) unsigned NOT NULL DEFAULT '0',
-  c char(120) NOT NULL DEFAULT '',
-  pad char(60) NOT NULL DEFAULT '',
+  id INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  k INT(10) UNSIGNED NOT NULL DEFAULT '0',
+  c CHAR(120) NOT NULL DEFAULT '',
+  pad CHAR(60) NOT NULL DEFAULT '',
   PRIMARY KEY (id),
   KEY k (k)
 ) ENGINE=InnoDB;
 CREATE TABLE bsbackend4.sbtest (
-  id int(10) unsigned NOT NULL AUTO_INCREMENT,
-  k int(10) unsigned NOT NULL DEFAULT '0',
-  c char(120) NOT NULL DEFAULT '',
-  pad char(60) NOT NULL DEFAULT '',
+  id INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  k INT(10) UNSIGNED NOT NULL DEFAULT '0',
+  c CHAR(120) NOT NULL DEFAULT '',
+  pad CHAR(60) NOT NULL DEFAULT '',
   PRIMARY KEY (id),
   KEY k (k)
 ) ENGINE=InnoDB;
@@ -375,34 +375,34 @@ CREATE DATABASE bsbackend6;
 CREATE DATABASE bsbackend7;
 CREATE DATABASE bsbackend8;
 CREATE TABLE bsbackend5.sbtest (
-  id int(10) unsigned NOT NULL AUTO_INCREMENT,
-  k int(10) unsigned NOT NULL DEFAULT '0',
-  c char(120) NOT NULL DEFAULT '',
-  pad char(60) NOT NULL DEFAULT '',
+  id INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  k INT(10) UNSIGNED NOT NULL DEFAULT '0',
+  c CHAR(120) NOT NULL DEFAULT '',
+  pad CHAR(60) NOT NULL DEFAULT '',
   PRIMARY KEY (id),
   KEY k (k)
 ) ENGINE=InnoDB;
 CREATE TABLE bsbackend6.sbtest (
-  id int(10) unsigned NOT NULL AUTO_INCREMENT,
-  k int(10) unsigned NOT NULL DEFAULT '0',
-  c char(120) NOT NULL DEFAULT '',
-  pad char(60) NOT NULL DEFAULT '',
+  id INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  k INT(10) UNSIGNED NOT NULL DEFAULT '0',
+  c CHAR(120) NOT NULL DEFAULT '',
+  pad CHAR(60) NOT NULL DEFAULT '',
   PRIMARY KEY (id),
   KEY k (k)
 ) ENGINE=InnoDB;
 CREATE TABLE bsbackend7.sbtest (
-  id int(10) unsigned NOT NULL AUTO_INCREMENT,
-  k int(10) unsigned NOT NULL DEFAULT '0',
-  c char(120) NOT NULL DEFAULT '',
-  pad char(60) NOT NULL DEFAULT '',
+  id INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  k INT(10) UNSIGNED NOT NULL DEFAULT '0',
+  c CHAR(120) NOT NULL DEFAULT '',
+  pad CHAR(60) NOT NULL DEFAULT '',
   PRIMARY KEY (id),
   KEY k (k)
 ) ENGINE=InnoDB;
 CREATE TABLE bsbackend8.sbtest (
-  id int(10) unsigned NOT NULL AUTO_INCREMENT,
-  k int(10) unsigned NOT NULL DEFAULT '0',
-  c char(120) NOT NULL DEFAULT '',
-  pad char(60) NOT NULL DEFAULT '',
+  id INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  k INT(10) UNSIGNED NOT NULL DEFAULT '0',
+  c CHAR(120) NOT NULL DEFAULT '',
+  pad CHAR(60) NOT NULL DEFAULT '',
   PRIMARY KEY (id),
   KEY k (k)
 ) ENGINE=InnoDB;
@@ -425,13 +425,13 @@ CREATE SERVER bsbackend8 FOREIGN DATA WRAPPER mysql OPTIONS( HOST '192.168.0.203
 CREATE DATABASE IF NOT EXISTS bsbackend;
 CREATE  TABLE bsbackend.sbtest
 (
-  id int(10) unsigned NOT NULL AUTO_INCREMENT,
-  k int(10) unsigned NOT NULL DEFAULT '0',
-  c char(120) NOT NULL DEFAULT '',
-  pad char(60) NOT NULL DEFAULT '',
+  id INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  k INT(10) UNSIGNED NOT NULL DEFAULT '0',
+  c CHAR(120) NOT NULL DEFAULT '',
+  pad CHAR(60) NOT NULL DEFAULT '',
   PRIMARY KEY (id),
   KEY k (k)
-) ENGINE=spider COMMENT='wrapper "mysql", table "sbtest"'
+) ENGINE=spider COMMENT='wrapper "mysql", TABLE "sbtest"'
  PARTITION BY KEY (id) 
 (
  PARTITION pt1 COMMENT = 'srv "bsbackend1"',
@@ -450,41 +450,41 @@ INSERT INTO  bsbackend.sbtest SELECT * FROM backend.sbtest;
 Now test the following query :
 
 ```sql
-select count(*) from sbtest;
+SELECT count(*) FROM sbtest;
 +----------+
 | count(*) |
 +----------+
 | 10000001 |
 +----------+
-1 row in set (8,38 sec)
+1 row IN SET (8,38 sec)
 
-set spider_casual_read=1;
-set spider_bgs_mode=2;
+SET spider_casual_read=1;
+SET spider_bgs_mode=2;
 
-select count(*) from sbtest;
+SELECT count(*) FROM sbtest;
 +----------+
 | count(*) |
 +----------+
 | 10000001 |
 +----------+
-1 row in set (4,25 sec)
+1 row IN SET (4,25 sec)
 
-mysql> select sum(k) from sbtest;
+mysql> SELECT sum(k) FROM sbtest;
 +--------+
 | sum(k) |
 +--------+
 |      0 |
 +--------+
-1 row in set (5,67 sec)
+1 row IN SET (5,67 sec)
 
-mysql> set spider_casual_read=0;
-mysql> select sum(k) from sbtest;
+mysql> SET spider_casual_read=0;
+mysql> SELECT sum(k) FROM sbtest;
 +--------+
 | sum(k) |
 +--------+
 |      0 |
 +--------+
-1 row in set (12,56 sec)
+1 row IN SET (12,56 sec)
 ```
 
 ![spbench8](../../../.gitbook/assets/spbench8.png)
@@ -526,19 +526,19 @@ OPTIONS(
 );
 CREATE  TABLE backend.sbtest
 (
-  id int(10) unsigned NOT NULL AUTO_INCREMENT,
-  k int(10) unsigned NOT NULL DEFAULT '0',
-  c char(120) NOT NULL DEFAULT '',
-  pad char(60) NOT NULL DEFAULT '',
+  id INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  k INT(10) UNSIGNED NOT NULL DEFAULT '0',
+  c CHAR(120) NOT NULL DEFAULT '',
+  pad CHAR(60) NOT NULL DEFAULT '',
   PRIMARY KEY (id),
   KEY k (k)
-) ENGINE=spider COMMENT='wrapper "mysql", table "sbtest"'
+) ENGINE=spider COMMENT='wrapper "mysql", TABLE "sbtest"'
  PARTITION BY KEY (id) 
 (
  PARTITION pt1 COMMENT = 'srv "backend1 backend2_rpl"',
  PARTITION pt2 COMMENT = 'srv "backend2 backend1_rpl"' 
 ) ;
-INSERT INTO backend.sbtest select 10000001, 0, '' ,'replicas test';
+INSERT INTO backend.sbtest SELECT 10000001, 0, '' ,'replicas test';
 EOF
 #backend1 -e "SELECT * FROM backend.sbtest WHERE id=10000001";
 +----------+---+---+---------------+
@@ -546,8 +546,8 @@ EOF
 +----------+---+---+---------------+
 | 10000001 | 0 |   | replicas test |
 +----------+---+---+---------------+
-# backend2 -e "SELECT * FROM backend.sbtest where id=10000001";
-# backend2 -e "SELECT * FROM backend_rpl.sbtest where id=10000001";
+# backend2 -e "SELECT * FROM backend.sbtest WHERE id=10000001";
+# backend2 -e "SELECT * FROM backend_rpl.sbtest WHERE id=10000001";
 +----------+---+---+---------------+
 | id       | k | c | pad           |
 +----------+---+---+---------------+
@@ -558,7 +558,7 @@ EOF
 What is happening if we stop one backend?
 
 ```sql
-#spider1 -e "SELECT * FROM backend.sbtest where id=10000001";
+#spider1 -e "SELECT * FROM backend.sbtest WHERE id=10000001";
 ERROR 1429 (HY000) at line 1: Unable to connect to foreign data source: backend1
 ```
 
@@ -569,13 +569,13 @@ Let's fix this with spider monitoring. Note that msi is the list of spider nodes
 DROP  TABLE backend.sbtest;
 CREATE  TABLE backend.sbtest
 (
-  id int(10) unsigned NOT NULL AUTO_INCREMENT,
-  k int(10) unsigned NOT NULL DEFAULT '0',
-  c char(120) NOT NULL DEFAULT '',
-  pad char(60) NOT NULL DEFAULT '',
+  id INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  k INT(10) UNSIGNED NOT NULL DEFAULT '0',
+  c CHAR(120) NOT NULL DEFAULT '',
+  pad CHAR(60) NOT NULL DEFAULT '',
   PRIMARY KEY (id),
   KEY k (k)
-) ENGINE=spider COMMENT='wrapper "mysql", table "sbtest"'
+) ENGINE=spider COMMENT='wrapper "mysql", TABLE "sbtest"'
  PARTITION BY KEY (id) 
 (
  PARTITION pt1 COMMENT = 'srv "backend1 backend2_rpl",  mbk "2", mkd "2", msi "5054", link_status "0 0"',
@@ -626,7 +626,7 @@ Checking the state of the nodes:
 No change has been made to cluster, so let's create a divergence:
 
 ```sql
-# spider1 -e "INSERT INTO backend.sbtest select 10000003, 0, '' ,'replicas test';"
+# spider1 -e "INSERT INTO backend.sbtest SELECT 10000003, 0, '' ,'replicas test';"
 # backend1 -e "SELECT * FROM backend.sbtest WHERE id=10000003"
 # backend2 -e "SELECT * FROM backend_rpl.sbtest WHERE id=10000003"
 +----------+---+---+---------------+
@@ -641,16 +641,16 @@ Reintroducing the failed backend1 in the cluster:
 ```sql
 #spider1 << EOF
 ALTER TABLE backend.sbtest 
-ENGINE=spider COMMENT='wrapper "mysql", table "sbtest"'
+ENGINE=spider COMMENT='wrapper "mysql", TABLE "sbtest"'
  PARTITION BY KEY (id) 
 (
  PARTITION pt1 COMMENT = 'srv "backend1 backend2_rpl"  mbk "2", mkd "2", msi "5054", link_status "2 0"',
  PARTITION pt2 COMMENT = 'srv "backend2 backend1_rpl"  mbk "2", mkd "2", msi "5054", link_status "0 2" ' 
 ) ;
-select spider_copy_tables('backend.sbtest#P#pt1','0','1');
-select spider_copy_tables('backend.sbtest#P#pt2','1','0');
+SELECT spider_copy_tables('backend.sbtest#P#pt1','0','1');
+SELECT spider_copy_tables('backend.sbtest#P#pt2','1','0');
 ALTER TABLE backend.sbtest 
-ENGINE=spider COMMENT='wrapper "mysql", table "sbtest"'
+ENGINE=spider COMMENT='wrapper "mysql", TABLE "sbtest"'
  PARTITION BY KEY (id) 
 (
  PARTITION pt1 COMMENT = 'srv "backend1 backend2_rpl"  mbk "2", mkd "2", msi "5054", link_status "1 0"',

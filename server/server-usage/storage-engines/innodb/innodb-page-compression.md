@@ -186,9 +186,9 @@ SET GLOBAL innodb_compression_algorithm='lzma';
 SET SESSION  innodb_compression_default=ON;
 
 CREATE TABLE users (
-   user_id int not null, 
-   b varchar(200), 
-   primary key(user_id)
+   user_id INT NOT NULL, 
+   b VARCHAR(200), 
+   PRIMARY KEY(user_id)
 ) 
    ENGINE=InnoDB;
 ```
@@ -215,9 +215,9 @@ SET GLOBAL innodb_default_row_format='dynamic';
 SET GLOBAL innodb_compression_algorithm='lzma';
 
 CREATE TABLE users (
-   user_id int not null, 
-   b varchar(200), 
-   primary key(user_id)
+   user_id INT NOT NULL, 
+   b VARCHAR(200), 
+   PRIMARY KEY(user_id)
 ) 
    ENGINE=InnoDB
    PAGE_COMPRESSED=1;
@@ -270,9 +270,9 @@ SET GLOBAL innodb_default_row_format='dynamic';
 SET GLOBAL innodb_compression_algorithm='lzma';
 
 CREATE TABLE users (
-   user_id int not null, 
-   b varchar(200), 
-   primary key(user_id)
+   user_id INT NOT NULL, 
+   b VARCHAR(200), 
+   PRIMARY KEY(user_id)
 ) 
    ENGINE=InnoDB
    PAGE_COMPRESSED=1

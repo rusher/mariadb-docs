@@ -14,7 +14,7 @@ Example:
 ```sql
 SET @array1= '[1,2,3]';
 SET @array2= '[1,2,4]';
-SELECT json_array_intersect(@array1, @array2) as result;
+SELECT json_array_intersect(@array1, @array2) AS result;
 ```
 
 ```
@@ -28,7 +28,7 @@ SELECT json_array_intersect(@array1, @array2) as result;
 ```sql
 SET @json1= '[[1,2,3],[4,5,6],[1,1,1]]';
 SET @json2= '[[1,2,3],[4,5,6],[1,3,2]]';
-SELECT json_array_intersect(@json1, @json2) as result;
+SELECT json_array_intersect(@json1, @json2) AS result;
 ```
 
 ```
@@ -43,7 +43,7 @@ SELECT json_array_intersect(@json1, @json2) as result;
 
 ```sql
 SET @json1= '{ "a" : [1,2,3] , "b": {"key1": "val1", "key2": {"key3": "val3"}} }';
-SELECT JSON_OBJECT_TO_ARRAY(@json1) as result;
+SELECT JSON_OBJECT_TO_ARRAY(@json1) AS result;
 ```
 
 ```
@@ -59,9 +59,9 @@ Resulting arrays can be compared using JSON\_ARRAY\_INTERSECT():
 ```sql
 SET @json1='{"a":[1,2,3],"b":{"key1":"val1","key2":{"key3":"val3"}}}';
 SET @json2='{"a":[1,2,3]}';
-SELECT JSON_OBJECT_TO_ARRAY(@json1) into @array1;
-SELECT JSON_OBJECT_TO_ARRAY(@json2) into @array2;
-SELECT JSON_ARRAY_INTERSECT(@array1,@array2) as result;
+SELECT JSON_OBJECT_TO_ARRAY(@json1) INTO @array1;
+SELECT JSON_OBJECT_TO_ARRAY(@json2) INTO @array2;
+SELECT JSON_ARRAY_INTERSECT(@array1,@array2) AS result;
 ```
 
 ```
@@ -77,7 +77,7 @@ SELECT JSON_ARRAY_INTERSECT(@array1,@array2) as result;
 
 ```sql
 SET @json1= '{ "a": 1, "b": 2, "c": 3}';
-SELECT JSON_OBJECT_FILTER_KEYS (@json1, ' ["b", "c"] ') as result;
+SELECT JSON_OBJECT_FILTER_KEYS (@json1, ' ["b", "c"] ') AS result;
 ```
 
 ```
@@ -94,7 +94,7 @@ Example (only show key/value pairs of json1 where the key exists in json2):
 ```sql
 SET @json1= '{ "a": 1, "b": 2, "c": 3}';
 SET @json2= '{"b" : 10, "c": 20, "d": 30}';
-SELECT JSON_OBJECT_FILTER_KEYS (@json1, json_array_intersect(json_keys(@json1), json_keys(@json2))) as result;
+SELECT JSON_OBJECT_FILTER_KEYS (@json1, json_array_intersect(json_keys(@json1), json_keys(@json2))) AS result;
 ```
 
 ```
@@ -128,7 +128,7 @@ Example:
 SELECT jt.* FROM JSON_TABLE(
 JSON_KEY_VALUE('[[1, {"key1":"val1", "key2":"val2"}, 3], 2, 3]', '$[0][1]'),'$[*]'
 COLUMNS (
-k VARCHAR(20) PATH '$.key',
+k VARCHAR(20) PATH '$.KEY',
 v VARCHAR(20) PATH '$.value',
 id FOR ORDINALITY )) AS jt;
 ```

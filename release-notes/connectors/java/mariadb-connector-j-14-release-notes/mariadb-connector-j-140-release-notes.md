@@ -53,7 +53,7 @@ For example when connecting with the following connection string `"jdbc:mysql://
 if performance\_schema is activated, information about this connection will be available during the time this connection is active :
 
 ```sql
-select * from performance_schema.session_connect_attrs where processList_id = 5
+SELECT * FROM performance_schema.session_connect_attrs WHERE processList_id = 5
 ```
 
 ```

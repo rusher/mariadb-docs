@@ -26,7 +26,7 @@ inserting data.
 ```sql
 ALTER TABLE table_name DISABLE KEYS;
 BEGIN;
-... inserting data with INSERT or LOAD DATA ....
+... inserting data WITH INSERT OR LOAD DATA ....
 COMMIT;
 ALTER TABLE table_name ENABLE KEYS;
 ```
@@ -133,7 +133,7 @@ just one is that the former will use up less transaction log space.
 You can insert many rows at once with multi-value row inserts:
 
 ```sql
-INSERT INTO table_name values(1,"row 1"),(2, "row 2"),...;
+INSERT INTO table_name VALUES(1,"row 1"),(2, "row 2"),...;
 ```
 
 The limit for how much data you can have in one statement is controlled by the[max\_allowed\_packet](../system-variables/server-system-variables.md#max_allowed_packet) server variable.
@@ -145,7 +145,7 @@ is to enable multi-row statements and send many inserts to the server at once:
 
 ```sql
 INSERT INTO table_name_1 (auto_increment_key, data) VALUES (NULL,"row 1");
-INSERT INTO table_name_2 (auto_increment, reference, data) values (NULL, LAST_INSERT_ID(), "row 2");
+INSERT INTO table_name_2 (auto_increment, reference, data) VALUES (NULL, LAST_INSERT_ID(), "row 2");
 ```
 
 [LAST\_INSERT\_ID()](../../../reference/sql-functions/secondary-functions/information-functions/last_insert_id.md) is a function that returns the last`auto_increment` value inserted.
@@ -157,7 +157,7 @@ To test this in the `mariadb` client you have to do:
 
 ```sql
 delimiter ;;
-select 1; select 2;;
+SELECT 1; SELECT 2;;
 delimiter ;
 ```
 

@@ -167,7 +167,7 @@ Sequence tables can also be useful in date calculations. For example, to find th
 
 ```sql
 SELECT DAYNAME('1980-12-05' + INTERVAL (seq) YEAR) day,
-    '1980-12-05' + INTERVAL (seq) YEAR date FROM seq_0_to_40;
+    '1980-12-05' + INTERVAL (seq) YEAR DATE FROM seq_0_to_40;
 +-----------+------------+
 | day       | date       |
 +-----------+------------+

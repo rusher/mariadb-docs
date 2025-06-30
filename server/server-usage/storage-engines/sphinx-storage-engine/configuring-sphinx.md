@@ -13,7 +13,7 @@ The sample configuration file documents the available options. You will need to 
 ```sql
 CREATE USER 'sphinx'@localhost 
   IDENTIFIED BY 'sphinx_password';
-GRANT SELECT on test.* to 'sphinx'@localhost;
+GRANT SELECT ON test.* TO 'sphinx'@localhost;
 ```
 
 Add these details to the `mysql` section of the config file:

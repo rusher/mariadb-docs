@@ -9,11 +9,11 @@ It is very similar to how `IN/EXISTS` subqueries were executed in MySQL 5.x.
 Let's take the usual example of a search for countries with big cities:
 
 ```sql
-select * from Country 
-where Country.code IN (select City.Country 
-                       from City 
-                       where City.Population > 1*1000*1000)
-      and Country.continent='Europe'
+SELECT * FROM Country 
+WHERE Country.code IN (SELECT City.Country 
+                       FROM City 
+                       WHERE City.Population > 1*1000*1000)
+      AND Country.continent='Europe'
 ```
 
 Suppose, our execution plan is to find countries in Europe, and then, for each found country, check if it has any big cities. Regular inner join execution will look as follows:
@@ -31,9 +31,9 @@ Note that the short-cutting has to take place after "Using where" has been appli
 The `EXPLAIN` for the above query will look as follows:
 
 ```sql
-MariaDB [world]> explain select * from Country where Country.code IN 
+MariaDB [world]> EXPLAIN SELECT * FROM Country WHERE Country.code IN 
   (select City.Country from City where City.Population > 1*1000*1000)
-    and Country.continent='Europe';
+    AND Country.continent='Europe';
 +----+-------------+---------+------+--------------------+-----------+---------+--------------------+------+----------------------------------+
 | id | select_type | table   | type | possible_keys      | key       | key_len | ref                | rows | Extra                            |
 +----+-------------+---------+------+--------------------+-----------+---------+--------------------+------+----------------------------------+
@@ -48,9 +48,9 @@ MariaDB [world]> explain select * from Country where Country.code IN
 `FirstMatch`'s query plan is very similar to one you would get in MySQL:
 
 ```sql
-MySQL [world]> explain select * from Country  where Country.code IN 
+MySQL [world]> EXPLAIN SELECT * FROM Country  WHERE Country.code IN 
   (select City.Country from City where City.Population > 1*1000*1000) 
-   and Country.continent='Europe';
+   AND Country.continent='Europe';
 +----+--------------------+---------+----------------+--------------------+-----------+---------+-------+------+------------------------------------+
 | id | select_type        | table   | type           | possible_keys      | key       | key_len | ref   | rows | Extra                              |
 +----+--------------------+---------+----------------+--------------------+-----------+---------+-------+------+------------------------------------+

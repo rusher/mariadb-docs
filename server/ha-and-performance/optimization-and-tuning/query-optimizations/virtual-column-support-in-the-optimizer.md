@@ -9,17 +9,17 @@ Starting from [MariaDB 11.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mari
 Suppose one has a table with data in JSON:
 
 ```sql
-create table t1 (json_data JSON);
-insert into t1 values('{"column1": 1234}'); 
-insert into t1 ...
+CREATE TABLE t1 (json_data JSON);
+INSERT INTO t1 VALUES('{"column1": 1234}'); 
+INSERT INTO t1 ...
 ```
 
 In order to do efficient queries over data in JSON, one can add a virtual column and an index on it:
 
 ```sql
-alter table t1
-  add column vcol1 int as (cast(json_value(json_data, '$.column1') as integer)),
-  add index(vcol1);
+ALTER TABLE t1
+  ADD COLUMN vcol1 INT AS (cast(json_value(json_data, '$.column1') AS INTEGER)),
+  ADD INDEX(vcol1);
 ```
 
 Before [MariaDB 11.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-8-series/what-is-mariadb-118), one had to use `vcol1` in the WHERE clause. Now, one can use the\
@@ -27,10 +27,10 @@ virtual column expression, too:
 
 ```sql
 -- This will use the index before 11.8:
-explain select * from t1 where vcol1=100;
+EXPLAIN SELECT * FROM t1 WHERE vcol1=100;
 -- Starting from 11.8, this will use the index, too:
-explain select * from t1 
-where cast(json_value(json_data, '$.column1') as integer)=100;
+EXPLAIN SELECT * FROM t1 
+WHERE cast(json_value(json_data, '$.column1') AS INTEGER)=100;
 ```
 
 ```
@@ -62,12 +62,12 @@ where cast(json_value(json_data, '$.column1') as integer)=100;
 SQL is strongly-typed language while JSON is weakly-typed. This means one must specify the desired datatype when accessing JSON data from SQL. In the above example, we declared `vcol1` as `INT` and then used `(CAST ... AS INTEGER)` (both in the ALTER TABLE and in the `WHERE` clause in SELECT query:):
 
 ```sql
-alter table t1
-  add column vcol1 INT as (CAST(json_value(json_data, '$.column1') AS INTEGER)) ...
+ALTER TABLE t1
+  ADD COLUMN vcol1 INT AS (CAST(json_value(json_data, '$.column1') AS INTEGER)) ...
 ```
 
 ```sql
-select ...  where ... CAST(json_value(json_data, '$.column1') AS INTEGER) ...;
+SELECT ...  WHERE ... CAST(json_value(json_data, '$.column1') AS INTEGER) ...;
 ```
 
 ### Specify collation for strings
@@ -77,7 +77,7 @@ When extracting string values, `CAST` is not necessary, as `JSON_VALUE` returns 
 However, one must take into account collations. If one declares the column as `JSON`:
 
 ```sql
-create table t1 ( 
+CREATE TABLE t1 ( 
   json_data JSON 
   ...
 ```
@@ -87,14 +87,14 @@ the collation of `json_data` will be `utf8mb4_bin`. The collation of`JSON_VALUE(
 Most use cases require a more commonly-used collation. It is possible to achieve that using the `COLLATE` clause:
 
 ```sql
-alter table t1
-  add col1 varchar(100) collate utf8mb4_uca1400_ai_ci as
+ALTER TABLE t1
+  ADD col1 VARCHAR(100) COLLATE utf8mb4_uca1400_ai_ci AS
   (json_value(js1, '$.string_column') collate utf8mb4_uca1400_ai_ci),
-  add index(col1);
+  ADD INDEX(col1);
 ...
-select  ... 
-where
-  json_value(js1, '$.string_column') collate utf8mb4_uca1400_ai_ci='string-value';
+SELECT  ... 
+WHERE
+  json_value(js1, '$.string_column') COLLATE utf8mb4_uca1400_ai_ci='string-value';
 ```
 
 ## References

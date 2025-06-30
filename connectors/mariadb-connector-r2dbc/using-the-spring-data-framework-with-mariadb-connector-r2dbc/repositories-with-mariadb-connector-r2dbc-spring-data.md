@@ -332,7 +332,7 @@ Contact [id=1, first_name=John, last_name=Smith, email=johnsmith@example.com]
 Run a SQL query to verify the test.contact table data we started with got deleted and three new contacts are added:
 
 ```sql
-SELECT * from test.contact;
+SELECT * FROM test.contact;
 ```
 
 ```

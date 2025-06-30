@@ -22,8 +22,8 @@ For example:
 SET SESSION innodb_strict_mode=ON;
 
 CREATE TABLE tab (
-   id int,
-   str varchar(50)
+   id INT,
+   str VARCHAR(50)
 ) ENGINE=InnoDB ROW_FORMAT=REDUNDANT;
 ```
 

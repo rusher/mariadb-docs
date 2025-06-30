@@ -13,10 +13,10 @@ Creating a custom aggregate function is done using the [CREATE FUNCTION](../../.
 ```sql
 CREATE AGGREGATE FUNCTION function_name (parameters) RETURNS return_type
 BEGIN
-      All types of declarations
+      ALL types of declarations
       DECLARE CONTINUE HANDLER FOR NOT FOUND RETURN return_val;
       LOOP
-           FETCH GROUP NEXT ROW; // fetches next row from table
+           FETCH GROUP NEXT ROW; // fetches next row FROM TABLE
            other instructions
       END LOOP;
 END

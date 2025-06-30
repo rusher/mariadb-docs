@@ -9,13 +9,13 @@ same extent.
 To compare the two, we will look at the following query:
 
 ```sql
-select
+SELECT
  A.colA
-from
+FROM
  tableA A
-left outer join
+LEFT OUTER JOIN
  tableB B
-on
+ON
  B.id = A.id;
 ```
 
@@ -46,21 +46,21 @@ in the case described above. Let us look at a more advanced query,\
 where Oracle fails.
 
 ```sql
-select
+SELECT
  A.colA
-from
+FROM
  tableA A
-left outer join
+LEFT OUTER JOIN
  tableB B
-on
+ON
  B.id = A.id
-and
+AND
  B.fromDate = (
-   select
+   SELECT
      max(sub.fromDate)
-   from
+   FROM
      tableB sub
-   where
+   WHERE
      sub.id = A.id
  );
 ```

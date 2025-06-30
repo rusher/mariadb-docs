@@ -91,13 +91,13 @@ If you are unable to connect to a server, for example because you have lost the 
 You may have created a user with something like:
 
 ```sql
-CREATE USER melisa identified by 'password';
+CREATE USER melisa identified BY 'password';
 ```
 
 This creates a user with the '%' wildcard host.
 
 ```sql
-SELECT user,host from mysql.user where user='melisa';
+SELECT user,host FROM mysql.user WHERE user='melisa';
 +--------+------+
 | user   | host |
 +--------+------+
@@ -108,7 +108,7 @@ SELECT user,host from mysql.user where user='melisa';
 However, you may still be failing to login from localhost. Some setups create anonymous users, including localhost. So the following records exist in the user table:
 
 ```sql
-SELECT user,host from mysql.user where user='melisa' or user='';
+SELECT user,host FROM mysql.user WHERE user='melisa' OR user='';
 +--------+-----------+
 | user   | host      |
 +--------+-----------+

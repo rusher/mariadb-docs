@@ -13,25 +13,25 @@ The optimization's use case is
 An example of this: consider a VIEW that computes totals for each customer in October:
 
 ```sql
-create view OCT_TOTALS as
-select
+CREATE view OCT_TOTALS AS
+SELECT
   customer_id,
-  SUM(amount) as TOTAL_AMT
-from orders
-where
-  order_date BETWEEN '2017-10-01' and '2017-10-31'
-group by
+  SUM(amount) AS TOTAL_AMT
+FROM orders
+WHERE
+  order_date BETWEEN '2017-10-01' AND '2017-10-31'
+GROUP BY
   customer_id;
 ```
 
 And a query that does a join with the customer table to get October totals for "Customer#1" and Customer#2:
 
 ```sql
-select *
-from
+SELECT *
+FROM
   customer, OCT_TOTALS
-where
-  customer.customer_id=OCT_TOTALS.customer_id and
+WHERE
+  customer.customer_id=OCT_TOTALS.customer_id AND
   customer.customer_name IN ('Customer#1', 'Customer#2')
 ```
 
@@ -97,7 +97,7 @@ Lateral Derived is enabled by default, the optimizer will make a cost-based deci
 If you need to disable the optimization, it has an [optimizer\_switch](../optimizer-switch.md) flag. It can be disabled like so:
 
 ```sql
-set optimizer_switch='split_materialized=off'
+SET optimizer_switch='split_materialized=off'
 ```
 
 ## References

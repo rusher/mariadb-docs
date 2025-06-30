@@ -160,7 +160,7 @@ ERROR 1451 (23000): Cannot delete or update a parent row: a foreign key constrai
 Until [MariaDB 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/optimization-and-tuning/optimization-and-indexes/broken-reference/README.md)
 
 ```sql
-CREATE TABLE a(a_key INT primary key, not_key INT);
+CREATE TABLE a(a_key INT PRIMARY KEY, not_key INT);
 
 CREATE TABLE b(for_key INT REFERENCES a(not_key));
 
@@ -194,7 +194,7 @@ SELECT * FROM b;
 From [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105)
 
 ```sql
-CREATE TABLE a(a_key INT primary key, not_key INT);
+CREATE TABLE a(a_key INT PRIMARY KEY, not_key INT);
 
 CREATE TABLE b(for_key INT REFERENCES a(not_key));
 ERROR 1005 (HY000): Can't create table `test`.`b` 

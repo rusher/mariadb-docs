@@ -31,7 +31,7 @@ SHOW CREATE TABLE t1;
 | Table | Create Table                                                 |
 +-------+--------------------------------------------------------------+
 | t1    | CREATE TABLE "t1" (
-  "d" mariadb_schema.date DEFAULT NULL
+  "d" mariadb_schema.DATE DEFAULT NULL
 ) |
 +-------+--------------------------------------------------------------+
 ```
@@ -49,7 +49,7 @@ SHOW CREATE TABLE t1;
 | Table | Create Table                                     |
 +-------+--------------------------------------------------+
 | t1    | CREATE TABLE "t1" (
-  "a" int(11) DEFAULT NULL
+  "a" INT(11) DEFAULT NULL
 ) |
 +-------+--------------------------------------------------+
 ```
@@ -94,7 +94,7 @@ Before `mariadb_schema` was introduced, the above script displayed:
 
 ```sql
 CREATE TABLE "t1" (
-  "d" date DEFAULT NULL
+  "d" DATE DEFAULT NULL
 );
 ```
 
@@ -116,7 +116,7 @@ SHOW CREATE TABLE t1;
 | Table | Create Table                                                 |
 +-------+--------------------------------------------------------------+
 | t1    | CREATE TABLE "t1" (
-  "d" mariadb_schema.date DEFAULT NULL
+  "d" mariadb_schema.DATE DEFAULT NULL
 ) |
 +-------+--------------------------------------------------------------+
 ```

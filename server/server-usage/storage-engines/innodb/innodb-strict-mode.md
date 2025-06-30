@@ -48,8 +48,8 @@ For example, the error is raised in the following cases:
 SET SESSION innodb_strict_mode=ON;
 
 CREATE OR REPLACE TABLE tab (
-   id int PRIMARY KEY,
-   str varchar(50)
+   id INT PRIMARY KEY,
+   str VARCHAR(50)
 )
 KEY_BLOCK_SIZE=4
 ROW_FORMAT=DYNAMIC;
@@ -72,8 +72,8 @@ SHOW WARNINGS;
 SET SESSION innodb_strict_mode=ON;
 
 CREATE OR REPLACE TABLE tab (
-   id int PRIMARY KEY,
-   str varchar(50)
+   id INT PRIMARY KEY,
+   str VARCHAR(50)
 )
 KEY_BLOCK_SIZE=16;
 ERROR 1005 (HY000): Can't create table `db1`.`tab` (errno: 140 "Wrong create options")
@@ -96,8 +96,8 @@ SET GLOBAL innodb_file_per_table=OFF;
 SET SESSION innodb_strict_mode=ON;
 
 CREATE OR REPLACE TABLE tab (
-   id int PRIMARY KEY,
-   str varchar(50)
+   id INT PRIMARY KEY,
+   str VARCHAR(50)
 )
 KEY_BLOCK_SIZE=4;
 ERROR 1005 (HY000): Can't create table `db1`.`tab` (errno: 140 "Wrong create options")
@@ -119,8 +119,8 @@ SHOW WARNINGS;
 SET SESSION innodb_strict_mode=ON;
 
 CREATE OR REPLACE TABLE tab (
-   id int PRIMARY KEY,
-   str varchar(50)
+   id INT PRIMARY KEY,
+   str VARCHAR(50)
 )
 KEY_BLOCK_SIZE=5;
 ERROR 1005 (HY000): Can't create table `db1`.`tab` (errno: 140 "Wrong create options")
@@ -143,8 +143,8 @@ SET GLOBAL innodb_file_per_table=OFF;
 SET SESSION innodb_strict_mode=ON;
 
 CREATE OR REPLACE TABLE tab (
-   id int PRIMARY KEY,
-   str varchar(50)
+   id INT PRIMARY KEY,
+   str VARCHAR(50)
 )
 ROW_FORMAT=COMPRESSED;
 ERROR 1005 (HY000): Can't create table `db1`.`tab` (errno: 140 "Wrong create options")
@@ -166,8 +166,8 @@ SHOW WARNINGS;
 SET SESSION innodb_strict_mode=ON;
 
 CREATE OR REPLACE TABLE tab (
-   id int PRIMARY KEY,
-   str varchar(50)
+   id INT PRIMARY KEY,
+   str VARCHAR(50)
 )
 ROW_FORMAT=PAGE;
 ERROR 1005 (HY000): Can't create table `db1`.`tab` (errno: 140 "Wrong create options")
@@ -189,8 +189,8 @@ SHOW WARNINGS;
 SET SESSION innodb_strict_mode=ON;
 
 CREATE OR REPLACE TABLE tab (
-   id int PRIMARY KEY,
-   str varchar(50)
+   id INT PRIMARY KEY,
+   str VARCHAR(50)
 )
 ROW_FORMAT=COMPRESSED;
 ERROR 1005 (HY000): Can't create table `db1`.`tab` (errno: 140 "Wrong create options")
@@ -213,8 +213,8 @@ SET GLOBAL innodb_file_per_table=OFF;
 SET SESSION innodb_strict_mode=ON;
 
 CREATE OR REPLACE TABLE tab (
-   id int PRIMARY KEY,
-   str varchar(50)
+   id INT PRIMARY KEY,
+   str VARCHAR(50)
 )
 DATA DIRECTORY='/mariadb';
 ERROR 1005 (HY000): Can't create table `db1`.`tab` (errno: 140 "Wrong create options")
@@ -236,8 +236,8 @@ SHOW WARNINGS;
 SET SESSION innodb_strict_mode=ON;
 
 CREATE OR REPLACE TEMPORARY TABLE tab (
-   id int PRIMARY KEY,
-   str varchar(50)
+   id INT PRIMARY KEY,
+   str VARCHAR(50)
 )
 DATA DIRECTORY='/mariadb';
 ERROR 1005 (HY000): Can't create table `db1`.`tab` (errno: 140 "Wrong create options")
@@ -259,8 +259,8 @@ SHOW WARNINGS;
 SET SESSION innodb_strict_mode=ON;
 
 CREATE OR REPLACE TABLE tab (
-   id int PRIMARY KEY,
-   str varchar(50)
+   id INT PRIMARY KEY,
+   str VARCHAR(50)
 )
 INDEX DIRECTORY='/mariadb';
 ERROR 1005 (HY000): Can't create table `db1`.`tab` (errno: 140 "Wrong create options")
@@ -282,8 +282,8 @@ SHOW WARNINGS;
 SET SESSION innodb_strict_mode=ON;
 
 CREATE OR REPLACE TABLE tab (
-   id int PRIMARY KEY,
-   str varchar(50)
+   id INT PRIMARY KEY,
+   str VARCHAR(50)
 )
 PAGE_COMPRESSED=1
 ROW_FORMAT=COMPRESSED;
@@ -307,8 +307,8 @@ SET GLOBAL innodb_file_per_table=OFF;
 SET SESSION innodb_strict_mode=ON;
 
 CREATE OR REPLACE TABLE tab (
-   id int PRIMARY KEY,
-   str varchar(50)
+   id INT PRIMARY KEY,
+   str VARCHAR(50)
 )
 PAGE_COMPRESSED=1;
 ERROR 1005 (HY000): Can't create table `db1`.`tab` (errno: 140 "Wrong create options")
@@ -330,8 +330,8 @@ SHOW WARNINGS;
 SET SESSION innodb_strict_mode=ON;
 
 CREATE OR REPLACE TABLE tab (
-   id int PRIMARY KEY,
-   str varchar(50)
+   id INT PRIMARY KEY,
+   str VARCHAR(50)
 )
 PAGE_COMPRESSED=1
 KEY_BLOCK_SIZE=4;
@@ -355,8 +355,8 @@ SHOW WARNINGS;
 SET SESSION innodb_strict_mode=ON;
 
 CREATE OR REPLACE TABLE tab (
-   id int PRIMARY KEY,
-   str varchar(50)
+   id INT PRIMARY KEY,
+   str VARCHAR(50)
 )
 PAGE_COMPRESSED=0
 PAGE_COMPRESSION_LEVEL=9;
@@ -383,7 +383,7 @@ If InnoDB strict mode is enabled, and if a table exceeds its row format's [maxim
 
 ```sql
 ERROR 1118 (42000): Row size too large (> 8126). Changing some columns to 
-TEXT or BLOB may help. In current row format, BLOB prefix of 0 bytes is stored inline.
+TEXT OR BLOB may help. IN current row format, BLOB prefix of 0 bytes IS stored inline.
 ```
 
 See [Troubleshooting Row Size Too Large Errors with InnoDB](innodb-row-formats/troubleshooting-row-size-too-large-errors-with-innodb.md) for more information.

@@ -106,7 +106,7 @@ GRANT USAGE ON *.* TO 'user123'@'%'
   IDENTIFIED VIA PAM using 'mariadb' require ssl ;
 Query OK, 0 rows affected (0.00 sec)
  
-select host, user from mysql.user where user='user123' ;
+SELECT host, user FROM mysql.user WHERE user='user123' ;
 
 +------+----------+
 | host | user     |
@@ -501,7 +501,7 @@ To set a privilege for a database, specify the database using`db_name.*` for _pr
 Some table privileges can be set for individual columns of a table. To use column privileges, specify the table explicitly and provide a list of column names after the privilege type. For example, the following statement would allow the user to read the names and positions of employees, but not other information from the same table, such as salaries.
 
 ```sql
-GRANT SELECT (name, position) on Employee to 'jeffrey'@'localhost';
+GRANT SELECT (name, position) ON Employee TO 'jeffrey'@'localhost';
 ```
 
 <table><thead><tr><th width="249.5555419921875">Privilege</th><th>Description</th></tr></thead><tbody><tr><td>INSERT (column_list)</td><td>Add rows specifying values in columns using the <a href="../data-manipulation/inserting-loading-data/insert.md">INSERT</a> statement. If you only have column-level INSERT privileges, you must specify the columns you are setting in the INSERT statement. All other columns will be set to their default values, or NULL.</td></tr><tr><td>REFERENCES (column_list)</td><td>Unused.</td></tr><tr><td>SELECT (column_list)</td><td>Read values in columns using the <a href="../data-manipulation/selecting-data/select.md">SELECT</a> statement. You cannot access or query any columns for which you do not have SELECT privileges, including in WHERE, ON, GROUP BY, and ORDER BY clauses.</td></tr><tr><td>UPDATE (column_list)</td><td>Update values in columns of existing rows using the <a href="../data-manipulation/changing-deleting-data/update.md">UPDATE</a> statement. UPDATE statements usually include a WHERE clause to update only certain rows. You must have SELECT privileges on the table or the appropriate columns for the WHERE clause.</td></tr></tbody></table>
@@ -843,8 +843,8 @@ TO PUBLIC is unavailable.
 ### Syntax
 
 ```sql
-GRANT <privilege> ON <database>.<object> TO PUBLIC;
-REVOKE <privilege> ON <database>.<object> FROM PUBLIC;
+GRANT <privilege> ON <DATABASE>.<object> TO PUBLIC;
+REVOKE <privilege> ON <DATABASE>.<object> FROM PUBLIC;
 ```
 
 GRANT ... TO PUBLIC grants privileges to all users with access to the server. The privileges also apply to users created after the privileges are granted. This can be useful when one only wants to state once that all users need to have a certain set of privileges.\
@@ -858,7 +858,7 @@ You can create a user that has privileges similar to the default `root` accounts
 
 ```sql
 CREATE USER 'alexander'@'localhost';
-GRANT ALL PRIVILEGES ON  *.* to 'alexander'@'localhost' WITH GRANT OPTION;
+GRANT ALL PRIVILEGES ON  *.* TO 'alexander'@'localhost' WITH GRANT OPTION;
 ```
 
 ## See Also

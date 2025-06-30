@@ -192,7 +192,7 @@ SELECT TABLE_SCHEMA, TABLE_NAME, ENGINE
 ```
 
 ```sql
-SELECT * from contact_copy;
+SELECT * FROM contact_copy;
 ```
 
 ```

@@ -32,7 +32,7 @@ Example:
 
 ```sql
 SELECT Name FROM Country
-WHERE (Code IN (select Country from City where City.Population > 100000) OR
+WHERE (Code IN (SELECT Country FROM City WHERE City.Population > 100000) OR
        Name LIKE 'L%') AND
       surfacearea > 1000000;
 ```
@@ -71,7 +71,7 @@ SELECT ...  WHERE ... HAVING (SELECT ...);
 Example:
 
 ```sql
-SELECT Name, City.id in (select capital from Country where capital is not null) as is_capital
+SELECT Name, City.id IN (SELECT capital FROM Country WHERE capital IS NOT NULL) AS is_capital
 FROM City
 WHERE City.population > 10000000;
 ```
@@ -90,7 +90,7 @@ Query pattern:
 Example:
 
 ```sql
-SELECT * from City where (Name, 91) IN
+SELECT * FROM City WHERE (Name, 91) IN
 (SELECT Name, round(Population/1000) FROM City WHERE Country = "IND" AND Population > 2500000
 UNION
  SELECT Name, round(Population/1000) FROM City WHERE Country = "IND" AND Population < 100000);
@@ -141,8 +141,8 @@ of the NULL semantics in the ANSI SQL standard.
 Suppose an IN predicate is evaluated as
 
 ```sql
-NULL IN (select
-not_null_col from t1)
+NULL IN (SELECT
+not_null_col FROM t1)
 ```
 
 , that is, the left operand of IN is a NULL value,\
@@ -226,7 +226,7 @@ Find customers with top balance in their nations:
 SELECT * FROM part
 WHERE p_partkey IN
       (SELECT l_partkey FROM lineitem
-       WHERE l_shipdate between '1997-01-01' and '1997-02-01')
+       WHERE l_shipdate BETWEEN '1997-01-01' AND '1997-02-01')
 ORDER BY p_retailprice DESC LIMIT 10;
 ```
 
@@ -283,12 +283,12 @@ FROM customer
 WHERE (c_custkey, c_pref_nationkey_05, c_pref_brand_05) NOT IN
   (SELECT o_custkey, s_nationkey, p_brand
    FROM orders, supplier, part, lineitem
-   WHERE l_orderkey = o_orderkey and
-         l_suppkey = s_suppkey and
-         l_partkey = p_partkey and
-         p_retailprice < 1200 and
-         l_shipdate >= '1996-04-01' and l_shipdate < '1996-04-05' and
-         o_orderdate >= '1996-04-01' and o_orderdate < '1996-04-05');
+   WHERE l_orderkey = o_orderkey AND
+         l_suppkey = s_suppkey AND
+         l_partkey = p_partkey AND
+         p_retailprice < 1200 AND
+         l_shipdate >= '1996-04-01' AND l_shipdate < '1996-04-05' AND
+         o_orderdate >= '1996-04-01' AND o_orderdate < '1996-04-05');
 ```
 
 * Execution time in [MariaDB 5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-2-series/changes-improvements-in-mariadb-5-2)/MySQL 5.x (any MySQL): 40 sec

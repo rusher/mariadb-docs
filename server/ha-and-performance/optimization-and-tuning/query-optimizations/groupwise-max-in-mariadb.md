@@ -302,7 +302,7 @@ Main Handler values:
 | British Columbia          |   3 | Abbotsford       |     151685 |
 | Manitoba                  |  ...
 
-SELECT for CREATE:
+SELECT FOR CREATE:
 +----+-------------+--------+------+---------------+------+---------+------+------+----------------+
 | id | select_type | table  | type | possible_keys | key  | key_len | ref  | rows | Extra          |
 +----+-------------+--------+------+---------------+------+---------+------+------+----------------+

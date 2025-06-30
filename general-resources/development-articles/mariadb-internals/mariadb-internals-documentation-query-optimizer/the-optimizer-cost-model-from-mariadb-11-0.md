@@ -43,9 +43,9 @@ For example:
 The "default" cost for an engine can be found with:
 
 ```sql
-select * from information_schema.optimizer_costs where engine="default"\G
+SELECT * FROM information_schema.optimizer_costs WHERE engine="DEFAULT"\G
 *************************** 1. row ***************************
-                         ENGINE: default
+                         ENGINE: DEFAULT
        OPTIMIZER_DISK_READ_COST: 10.240000
 OPTIMIZER_INDEX_BLOCK_COPY_COST: 0.035600
      OPTIMIZER_KEY_COMPARE_COST: 0.011361
@@ -66,7 +66,7 @@ An engine can tune some or all of the above cost in the storage engine interface
 Here follows the cost for the [InnoDB storage engine](https://github.com/mariadb-corporation/docs-server/blob/test/general-resources/community/storage-engines/innodb/README.md).
 
 ```sql
-select * from information_schema.optimizer_costs where engine="innodb"\G
+SELECT * FROM information_schema.optimizer_costs WHERE engine="innodb"\G
 *************************** 1. row ***************************
                          ENGINE: InnoDB
        OPTIMIZER_DISK_READ_COST: 10.240000
@@ -94,7 +94,7 @@ why some of the cost numbers for these engines are 0.
 There are also some SQL level costs that are independent of the storage engine:
 
 ```sql
-select * from information_schema.global_variables where variable_name like "%where%cost%" or variable_name like "%scan%cost%";
+SELECT * FROM information_schema.global_variables WHERE variable_name LIKE "%WHERE%cost%" OR variable_name LIKE "%scan%cost%";
 +---------------------------+----------------+
 | VARIABLE_NAME             | VARIABLE_VALUE |
 +---------------------------+----------------+
@@ -191,7 +191,7 @@ OPTIMIZER_DISK_READ_COST=10.240000
 ### From SQL
 
 ```sql
-# Tell optimizer to find a plan with as few accepted rows as possible
+# Tell optimizer TO find a plan WITH AS few accepted ROWS AS possible
 SET SESSION OPTIMIZER_WHERE_COST=1.0;
 # Inform the optimizer that InnoDB buffer pool has a 80% hit rate
 SET GLOBAL innodb.OPTIMIZER_DISK_READ_RATIO=0.20;

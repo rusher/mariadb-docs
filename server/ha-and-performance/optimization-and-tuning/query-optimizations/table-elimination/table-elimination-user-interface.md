@@ -5,7 +5,7 @@ output of `EXPLAIN [EXTENDED]` and not finding there the\
 tables that were eliminated:
 
 ```sql
-explain select ACRAT_rating from actors where ACNAM_name=’Gary Oldman’;
+EXPLAIN SELECT ACRAT_rating FROM actors WHERE ACNAM_name=’Gary Oldman’;
 +----+--------------------+-----------+--------+---------------+---------+---------+----------------------+------+-------------+
 | id | select_type        | table     | type   | possible_keys | key     | key_len | ref                  | rows | Extra       |
 +----+--------------------+-----------+--------+---------------+---------+---------+----------------------+------+-------------+
@@ -20,7 +20,7 @@ Note that `ac_dob` table is not in the output. Now let's try\
 getting birthdate instead:
 
 ```sql
-explain select ACDOB_birthdate from actors where ACNAM_name=’Gary Oldman’;
+EXPLAIN SELECT ACDOB_birthdate FROM actors WHERE ACNAM_name=’Gary Oldman’;
 +----+-------------+-----------+--------+---------------+---------+---------+----------------------+------+-------------+
 | id | select_type | table     | type   | possible_keys | key     | key_len | ref                  | rows | Extra       |
 +----+-------------+-----------+--------+---------------+---------+---------+----------------------+------+-------------+
@@ -35,7 +35,7 @@ The `ac_dob` table is there while `ac_rating`\
 and the subquery are gone. Now, if we just want to check the name of the actor:
 
 ```sql
-explain select count(*) from actors where ACNAM_name=’Gary Oldman’;
+EXPLAIN SELECT count(*) FROM actors WHERE ACNAM_name=’Gary Oldman’;
 +----+-------------+-----------+--------+---------------+---------+---------+----------------------+------+-------------+
 | id | select_type | table     | type   | possible_keys | key     | key_len | ref                  | rows | Extra       |
 +----+-------------+-----------+--------+---------------+---------+---------+----------------------+------+-------------+

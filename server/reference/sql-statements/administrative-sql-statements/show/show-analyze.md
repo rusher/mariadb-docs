@@ -53,7 +53,7 @@ The output of this query looks like this:
 We run the SELECT, and it has been running for 30 seconds. Let's try `SHOW ANALYZE`:
 
 ```sql
-SHOW ANALYZE format=json for 3;
+SHOW ANALYZE format=json FOR 3;
 | {
   "r_query_time_in_progress_ms": 32138,
 ```

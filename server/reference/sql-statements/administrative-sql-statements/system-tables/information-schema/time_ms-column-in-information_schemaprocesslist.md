@@ -7,8 +7,8 @@ For details about microseconds support in MariaDB, see [microseconds in MariaDB]
 The value displayed in the `TIME` and`TIME_MS` columns is the period of time that the given thread has been in its current state. Thus it can be used to check for example how long a thread has been executing the current query, or for how long it has been idle.
 
 ```sql
-select id, time, time_ms, command, state from
-   information_schema.processlist, (select sleep(2)) t;
+SELECT id, TIME, time_ms, command, state FROM
+   information_schema.processlist, (SELECT sleep(2)) t;
 +----+------+----------+---------+-----------+
 | id | time | time_ms  | command | state     |
 +----+------+----------+---------+-----------+

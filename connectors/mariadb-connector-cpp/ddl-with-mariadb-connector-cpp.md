@@ -172,7 +172,7 @@ int main(int argc, char **argv)
 The following query confirms that the [TRUNCATE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/built-in-functions/numeric-functions/truncate) statement deleted all rows from the [example table](setup-for-connector-cpp-examples.md):
 
 ```sql
-SELECT * from test.contacts;
+SELECT * FROM test.contacts;
 ```
 
 ```

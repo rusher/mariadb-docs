@@ -27,8 +27,8 @@ SET GLOBAL innodb_encrypt_tables=ON;
 SET SESSION innodb_default_encryption_key_id=100;
 
 CREATE TABLE tab1 (
-   id int PRIMARY KEY,
-   str varchar(50)
+   id INT PRIMARY KEY,
+   str VARCHAR(50)
 );
 
 SELECT NAME, ENCRYPTION_SCHEME, CURRENT_KEY_ID
@@ -51,8 +51,8 @@ SET GLOBAL innodb_encrypt_tables=ON;
 SET SESSION innodb_default_encryption_key_id=100;
 
 CREATE TABLE tab1 (
-   id int PRIMARY KEY,
-   str varchar(50)
+   id INT PRIMARY KEY,
+   str VARCHAR(50)
 ) ENCRYPTED=NO;
 
 SELECT NAME, ENCRYPTION_SCHEME, CURRENT_KEY_ID
@@ -75,8 +75,8 @@ SET GLOBAL innodb_encrypt_tables='FORCE';
 SET SESSION innodb_default_encryption_key_id=100;
 
 CREATE TABLE tab1 (
-   id int PRIMARY KEY,
-   str varchar(50)
+   id INT PRIMARY KEY,
+   str VARCHAR(50)
 ) ENCRYPTED=NO;
 ERROR 1005 (HY000): Can't create table `db1`.`tab1` (errno: 140 "Wrong create options")
 
@@ -112,8 +112,8 @@ You can also manually specify a [encryption key](innodb-encryption-overview.md) 
 
 ```sql
 CREATE TABLE tab1 (
-   id int PRIMARY KEY,
-   str varchar(50)
+   id INT PRIMARY KEY,
+   str VARCHAR(50)
 ) ENCRYPTED=YES ENCRYPTION_KEY_ID=100;
 
 SELECT NAME, ENCRYPTION_SCHEME, CURRENT_KEY_ID
@@ -132,8 +132,8 @@ If the [ENCRYPTION\_KEY\_ID](../../../../../reference/sql-statements/data-defini
 SET SESSION innodb_default_encryption_key_id=100;
 
 CREATE TABLE tab1 (
-   id int PRIMARY KEY,
-   str varchar(50)
+   id INT PRIMARY KEY,
+   str VARCHAR(50)
 ) ENCRYPTED=YES;
 
 SELECT NAME, ENCRYPTION_SCHEME, CURRENT_KEY_ID
@@ -150,8 +150,8 @@ In the event that you have an existing table and you want to manually enable enc
 
 ```sql
 CREATE TABLE tab1 (
-   id int PRIMARY KEY,
-   str varchar(50)
+   id INT PRIMARY KEY,
+   str VARCHAR(50)
 ) ENCRYPTED=NO;
 
 SELECT NAME, ENCRYPTION_SCHEME, CURRENT_KEY_ID

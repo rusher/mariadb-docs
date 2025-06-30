@@ -15,14 +15,14 @@ By default, the MariaDB optimizer picks a join order without considering the ORD
 For example, consider a query looking at latest 10 orders together with customers who made them:
 
 ```sql
-select *
-from
-  customer,order
-where
-  customer.name=order.customer_name
-order by
-  order.date desc
-limit 10
+SELECT *
+FROM
+  customer,ORDER
+WHERE
+  customer.name=ORDER.customer_name
+ORDER BY
+  ORDER.DATE DESC
+LIMIT 10
 ```
 
 The two possible plans are:`customer->orders`:
@@ -56,15 +56,15 @@ However, in contrast, the `orders->customers` plan uses an index to read rows in
 It is fundamentally difficult to produce a reliable estimate for ORDER BY ... LIMIT shortcuts. Let's take an example from the previous section to see why. This query searches for last 10 orders that were shipped by air:
 
 ```sql
-select *
-from
-  customer,order
-where
-  customer.name=order.customer_name 
-  and order.shipping_method='Airplane'
-order by
-  order.date desc
-limit 10
+SELECT *
+FROM
+  customer,ORDER
+WHERE
+  customer.name=ORDER.customer_name 
+  AND ORDER.shipping_method='Airplane'
+ORDER BY
+  ORDER.DATE DESC
+LIMIT 10
 ```
 
 Suppose we know beforehand that 50% of orders are shipped by air.\

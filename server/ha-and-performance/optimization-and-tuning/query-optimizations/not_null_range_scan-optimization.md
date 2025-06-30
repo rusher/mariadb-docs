@@ -10,18 +10,18 @@ A basic (but slightly artificial) example:
 
 ```sql
 CREATE TABLE items (
-  price  decimal(8,2),
-  weight decimal(8,2),
+  price  DECIMAL(8,2),
+  weight DECIMAL(8,2),
   ...
-  index(weight)
+  INDEX(weight)
 );
 ```
 
 ```sql
 -- Find items that cost more than 1000 $currency_units per kg:
-set optimizer_switch='not_null_range_scan=on';
-explain
-SELECT * from items where items.price > items.weight / 1000;
+SET optimizer_switch='not_null_range_scan=ON';
+EXPLAIN
+SELECT * FROM items WHERE items.price > items.weight / 1000;
 ```
 
 The WHERE condition in this form cannot be used for range scans. However, one can infer that it will reject rows that NULL for `weight`. That is, infer an additional condition that
@@ -56,7 +56,7 @@ Here, the optimizer can infer the condition "return\_id IS NOT NULL". If most of
 The optimization is not enabled by default. One can enable it like so
 
 ```sql
-SET optimizer_switch='not_null_range_scan=on';
+SET optimizer_switch='not_null_range_scan=ON';
 ```
 
 ## Optimizer Trace

@@ -27,8 +27,8 @@ SET SESSION innodb_strict_mode=ON;
 SET GLOBAL innodb_default_row_format='dynamic';
 
 CREATE TABLE tab (
-   id int,
-   str varchar(50)
+   id INT,
+   str VARCHAR(50)
 ) ENGINE=InnoDB;
 ```
 
@@ -44,8 +44,8 @@ SET GLOBAL innodb_file_per_table=ON;
 SET GLOBAL innodb_file_format='Barracuda';
 
 CREATE TABLE tab (
-   id int,
-   str varchar(50)
+   id INT,
+   str VARCHAR(50)
 ) ENGINE=InnoDB ROW_FORMAT=DYNAMIC;
 ```
 

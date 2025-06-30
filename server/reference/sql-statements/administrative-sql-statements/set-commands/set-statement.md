@@ -54,7 +54,7 @@ Note that it makes no sense to try to set a session variable inside a `SET STATE
 
 ```sql
 #USELESS STATEMENT
-SET STATEMENT sort_buffer_size = 100000 for SET SESSION sort_buffer_size = 200000;
+SET STATEMENT sort_buffer_size = 100000 FOR SET SESSION sort_buffer_size = 200000;
 ```
 
 For the above, after setting sort\_buffer\_size to 200000 it will be reset to its original state (the state before the `SET STATEMENT` started) after the statement execution.

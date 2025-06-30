@@ -23,12 +23,12 @@ For example:
 
 ```sql
 CREATE OR REPLACE TABLE tab (
-   a int PRIMARY KEY,
-   b varchar(50)
+   a INT PRIMARY KEY,
+   b VARCHAR(50)
 );
 
 SET SESSION alter_algorithm='INPLACE';
-ALTER TABLE tab ADD COLUMN c varchar(50);
+ALTER TABLE tab ADD COLUMN c VARCHAR(50);
 Query OK, 0 rows affected (0.006 sec)
 ```
 
@@ -46,9 +46,9 @@ For example:
 
 ```sql
 CREATE OR REPLACE TABLE tab (
-   a int PRIMARY KEY,
-   b varchar(50),
-   c varchar(50)
+   a INT PRIMARY KEY,
+   b VARCHAR(50),
+   c VARCHAR(50)
 );
 
 SET SESSION alter_algorithm='INPLACE';
@@ -74,13 +74,13 @@ For example:
 
 ```sql
 CREATE OR REPLACE TABLE tab (
-   a int PRIMARY KEY,
-   b varchar(50),
-   c varchar(50)
+   a INT PRIMARY KEY,
+   b VARCHAR(50),
+   c VARCHAR(50)
 );
 
 SET SESSION alter_algorithm='INPLACE';
-ALTER TABLE tab MODIFY COLUMN c varchar(50) AFTER a;
+ALTER TABLE tab MODIFY COLUMN c VARCHAR(50) AFTER a;
 Query OK, 0 rows affected (0.022 sec)
 ```
 
@@ -97,13 +97,13 @@ For example, this fails:
 
 ```sql
 CREATE OR REPLACE TABLE tab (
-   a int PRIMARY KEY,
-   b varchar(50),
-   c varchar(50)
+   a INT PRIMARY KEY,
+   b VARCHAR(50),
+   c VARCHAR(50)
 );
 
 SET SESSION alter_algorithm='INPLACE';
-ALTER TABLE tab MODIFY COLUMN c int;
+ALTER TABLE tab MODIFY COLUMN c INT;
 ERROR 1846 (0A000): ALGORITHM=INPLACE is not supported. Reason: Cannot change column type INPLACE. Try ALGORITHM=COPY
 ```
 
@@ -111,13 +111,13 @@ But this succeeds in [MariaDB 10.2.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrT
 
 ```sql
 CREATE OR REPLACE TABLE tab (
-   a int PRIMARY KEY,
-   b varchar(50),
-   c varchar(50)
+   a INT PRIMARY KEY,
+   b VARCHAR(50),
+   c VARCHAR(50)
 ) CHARACTER SET=latin1;
 
 SET SESSION alter_algorithm='INPLACE';
-ALTER TABLE tab MODIFY COLUMN c varchar(100);
+ALTER TABLE tab MODIFY COLUMN c VARCHAR(100);
 Query OK, 0 rows affected (0.005 sec)
 ```
 
@@ -125,13 +125,13 @@ But this fails in [MariaDB 10.2.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFy
 
 ```sql
 CREATE OR REPLACE TABLE tab (
-   a int PRIMARY KEY,
-   b varchar(50),
-   c varchar(255)
+   a INT PRIMARY KEY,
+   b VARCHAR(50),
+   c VARCHAR(255)
 ) CHARACTER SET=latin1;
 
 SET SESSION alter_algorithm='INPLACE';
-ALTER TABLE tab MODIFY COLUMN c varchar(256);
+ALTER TABLE tab MODIFY COLUMN c VARCHAR(256);
 ERROR 1846 (0A000): ALGORITHM=INPLACE is not supported. Reason: Cannot change column type INPLACE. Try ALGORITHM=COPY
 ```
 
@@ -147,13 +147,13 @@ For example:
 
 ```sql
 CREATE OR REPLACE TABLE tab (
-   a int PRIMARY KEY,
-   b varchar(50),
-   c varchar(50) NOT NULL
+   a INT PRIMARY KEY,
+   b VARCHAR(50),
+   c VARCHAR(50) NOT NULL
 );
 
 SET SESSION alter_algorithm='INPLACE';
-ALTER TABLE tab MODIFY COLUMN c varchar(50) NULL;
+ALTER TABLE tab MODIFY COLUMN c VARCHAR(50) NULL;
 Query OK, 0 rows affected (0.021 sec)
 ```
 
@@ -169,13 +169,13 @@ For example:
 
 ```sql
 CREATE OR REPLACE TABLE tab (
-   a int PRIMARY KEY,
-   b varchar(50),
-   c varchar(50)
+   a INT PRIMARY KEY,
+   b VARCHAR(50),
+   c VARCHAR(50)
 );
 
 SET SESSION alter_algorithm='INPLACE';
-ALTER TABLE tab MODIFY COLUMN c varchar(50) NOT NULL;
+ALTER TABLE tab MODIFY COLUMN c VARCHAR(50) NOT NULL;
 Query OK, 0 rows affected (0.021 sec)
 ```
 
@@ -194,8 +194,8 @@ For example, this succeeds:
 
 ```sql
 CREATE OR REPLACE TABLE tab (
-   a int PRIMARY KEY,
-   b varchar(50),
+   a INT PRIMARY KEY,
+   b VARCHAR(50),
    c ENUM('red', 'green')
 );
 
@@ -208,8 +208,8 @@ But this fails:
 
 ```sql
 CREATE OR REPLACE TABLE tab (
-   a int PRIMARY KEY,
-   b varchar(50),
+   a INT PRIMARY KEY,
+   b VARCHAR(50),
    c ENUM('red', 'green')
 );
 
@@ -233,8 +233,8 @@ For example, this succeeds:
 
 ```sql
 CREATE OR REPLACE TABLE tab (
-   a int PRIMARY KEY,
-   b varchar(50),
+   a INT PRIMARY KEY,
+   b VARCHAR(50),
    c SET('red', 'green')
 );
 
@@ -247,8 +247,8 @@ But this fails:
 
 ```sql
 CREATE OR REPLACE TABLE tab (
-   a int PRIMARY KEY,
-   b varchar(50),
+   a INT PRIMARY KEY,
+   b VARCHAR(50),
    c SET('red', 'green')
 );
 
@@ -267,14 +267,14 @@ For example:
 
 ```sql
 CREATE OR REPLACE TABLE tab (
-   a int PRIMARY KEY,
-   b varchar(50),
-   c varchar(50) WITH SYSTEM VERSIONING
+   a INT PRIMARY KEY,
+   b VARCHAR(50),
+   c VARCHAR(50) WITH SYSTEM VERSIONING
 );
 
 SET SESSION system_versioning_alter_history='KEEP';
 SET SESSION alter_algorithm='INPLACE';
-ALTER TABLE tab MODIFY COLUMN c varchar(50) WITHOUT SYSTEM VERSIONING;
+ALTER TABLE tab MODIFY COLUMN c VARCHAR(50) WITHOUT SYSTEM VERSIONING;
 Query OK, 0 rows affected (0.005 sec)
 ```
 
@@ -293,13 +293,13 @@ For example:
 
 ```sql
 CREATE OR REPLACE TABLE tab (
-   a int PRIMARY KEY,
-   b varchar(50),
-   c varchar(50)
+   a INT PRIMARY KEY,
+   b VARCHAR(50),
+   c VARCHAR(50)
 );
 
 SET SESSION alter_algorithm='INPLACE';
-ALTER TABLE tab ALTER COLUMN c SET DEFAULT 'No value explicitly provided.';
+ALTER TABLE tab ALTER COLUMN c SET DEFAULT 'NO value explicitly provided.';
 Query OK, 0 rows affected (0.005 sec)
 ```
 
@@ -315,9 +315,9 @@ For example:
 
 ```sql
 CREATE OR REPLACE TABLE tab (
-   a int PRIMARY KEY,
-   b varchar(50),
-   c varchar(50) DEFAULT 'No value explicitly provided.'
+   a INT PRIMARY KEY,
+   b VARCHAR(50),
+   c VARCHAR(50) DEFAULT 'NO value explicitly provided.'
 );
 
 SET SESSION alter_algorithm='INPLACE';
@@ -337,13 +337,13 @@ For example, this succeeds:
 
 ```sql
 CREATE OR REPLACE TABLE tab (
-   a int PRIMARY KEY,
-   b varchar(50),
-   c varchar(50)
+   a INT PRIMARY KEY,
+   b VARCHAR(50),
+   c VARCHAR(50)
 );
 
 SET SESSION alter_algorithm='INPLACE';
-ALTER TABLE tab CHANGE COLUMN c str varchar(50);
+ALTER TABLE tab CHANGE COLUMN c str VARCHAR(50);
 Query OK, 0 rows affected (0.006 sec)
 ```
 
@@ -351,13 +351,13 @@ But this fails:
 
 ```sql
 CREATE OR REPLACE TABLE tab (
-   a int PRIMARY KEY,
-   b varchar(50),
-   c varchar(50)
+   a INT PRIMARY KEY,
+   b VARCHAR(50),
+   c VARCHAR(50)
 );
 
 SET SESSION alter_algorithm='INPLACE';
-ALTER TABLE tab CHANGE COLUMN c num int;
+ALTER TABLE tab CHANGE COLUMN c num INT;
 ERROR 1846 (0A000): ALGORITHM=INPLACE is not supported. Reason: Cannot change column type INPLACE. Try ALGORITHM=COPY
 ```
 
@@ -379,9 +379,9 @@ For example, this succeeds:
 
 ```sql
 CREATE OR REPLACE TABLE tab (
-   a int,
-   b varchar(50),
-   c varchar(50)
+   a INT,
+   b VARCHAR(50),
+   c VARCHAR(50)
 );
 
 SET SESSION sql_mode='STRICT_TRANS_TABLES';
@@ -394,9 +394,9 @@ But this fails:
 
 ```sql
 CREATE OR REPLACE TABLE tab (
-   a int,
-   b varchar(50),
-   c varchar(50)
+   a INT,
+   b VARCHAR(50),
+   c VARCHAR(50)
 );
 
 INSERT INTO tab VALUES (NULL, NULL, NULL);
@@ -411,9 +411,9 @@ And this fails:
 
 ```sql
 CREATE OR REPLACE TABLE tab (
-   a int,
-   b varchar(50),
-   c varchar(50)
+   a INT,
+   b VARCHAR(50),
+   c VARCHAR(50)
 );
 
 INSERT INTO tab VALUES (1, NULL, NULL);
@@ -439,9 +439,9 @@ For example, this fails:
 
 ```sql
 CREATE OR REPLACE TABLE tab (
-   a int PRIMARY KEY,
-   b varchar(50),
-   c varchar(50)
+   a INT PRIMARY KEY,
+   b VARCHAR(50),
+   c VARCHAR(50)
 );
 
 SET SESSION alter_algorithm='INPLACE';
@@ -453,9 +453,9 @@ But this succeeds:
 
 ```sql
 CREATE OR REPLACE TABLE tab (
-   a int PRIMARY KEY,
-   b varchar(50),
-   c varchar(50)
+   a INT PRIMARY KEY,
+   b VARCHAR(50),
+   c VARCHAR(50)
 );
 
 SET SESSION sql_mode='STRICT_TRANS_TABLES';
@@ -480,9 +480,9 @@ For example, this succeeds:
 
 ```sql
 CREATE OR REPLACE TABLE tab (
-   a int PRIMARY KEY,
-   b varchar(50),
-   c varchar(50)
+   a INT PRIMARY KEY,
+   b VARCHAR(50),
+   c VARCHAR(50)
 );
 
 SET SESSION alter_algorithm='INPLACE';
@@ -494,9 +494,9 @@ And this succeeds:
 
 ```sql
 CREATE OR REPLACE TABLE tab (
-   a int PRIMARY KEY,
-   b varchar(50),
-   c varchar(50)
+   a INT PRIMARY KEY,
+   b VARCHAR(50),
+   c VARCHAR(50)
 );
 
 SET SESSION alter_algorithm='INPLACE';
@@ -521,9 +521,9 @@ For example, this succeeds, but requires the table to be rebuilt, so that the hi
 
 ```sql
 CREATE OR REPLACE TABLE tab (
-   a int PRIMARY KEY,
-   b varchar(50),
-   c varchar(50)
+   a INT PRIMARY KEY,
+   b VARCHAR(50),
+   c VARCHAR(50)
 );
 
 SET SESSION alter_algorithm='INPLACE';
@@ -535,9 +535,9 @@ And this succeeds in the same way as above:
 
 ```sql
 CREATE OR REPLACE TABLE tab (
-   a int PRIMARY KEY,
-   b varchar(50),
-   c varchar(50)
+   a INT PRIMARY KEY,
+   b VARCHAR(50),
+   c VARCHAR(50)
 );
 
 SET SESSION alter_algorithm='INPLACE';
@@ -549,9 +549,9 @@ And this succeeds, and the second command does not require the table to be rebui
 
 ```sql
 CREATE OR REPLACE TABLE tab (
-   a int PRIMARY KEY,
-   b varchar(50),
-   c varchar(50)
+   a INT PRIMARY KEY,
+   b VARCHAR(50),
+   c VARCHAR(50)
 );
 
 SET SESSION alter_algorithm='INPLACE';
@@ -566,10 +566,10 @@ But this second command fails, because only one [FULLTEXT](../../../../ha-and-pe
 
 ```sql
 CREATE OR REPLACE TABLE tab (
-   a int PRIMARY KEY,
-   b varchar(50),
-   c varchar(50),
-   d varchar(50)
+   a INT PRIMARY KEY,
+   b VARCHAR(50),
+   c VARCHAR(50),
+   d VARCHAR(50)
 );
 
 SET SESSION alter_algorithm='INPLACE';
@@ -584,9 +584,9 @@ And this third command fails, because a table cannot be rebuilt when it has more
 
 ```sql
 CREATE OR REPLACE TABLE tab (
-   a int PRIMARY KEY,
-   b varchar(50),
-   c varchar(50)
+   a INT PRIMARY KEY,
+   b VARCHAR(50),
+   c VARCHAR(50)
 );
 
 SET SESSION alter_algorithm='INPLACE';
@@ -614,8 +614,8 @@ For example, this succeeds:
 
 ```sql
 CREATE OR REPLACE TABLE tab (
-   a int PRIMARY KEY,
-   b varchar(50),
+   a INT PRIMARY KEY,
+   b VARCHAR(50),
    c GEOMETRY NOT NULL
 );
 
@@ -628,8 +628,8 @@ And this succeeds in the same way as above:
 
 ```sql
 CREATE OR REPLACE TABLE tab (
-   a int PRIMARY KEY,
-   b varchar(50),
+   a INT PRIMARY KEY,
+   b VARCHAR(50),
    c GEOMETRY NOT NULL
 );
 
@@ -650,9 +650,9 @@ For example, this succeeds:
 
 ```sql
 CREATE OR REPLACE TABLE tab (
-   a int PRIMARY KEY,
-   b varchar(50),
-   c varchar(50),
+   a INT PRIMARY KEY,
+   b VARCHAR(50),
+   c VARCHAR(50),
    INDEX b_index (b)
 );
 
@@ -664,9 +664,9 @@ And this succeeds:
 
 ```sql
 CREATE OR REPLACE TABLE tab (
-   a int PRIMARY KEY,
-   b varchar(50),
-   c varchar(50),
+   a INT PRIMARY KEY,
+   b VARCHAR(50),
+   c VARCHAR(50),
    INDEX b_index (b)
 );
 
@@ -688,15 +688,15 @@ For example, this fails:
 
 ```sql
 CREATE OR REPLACE TABLE tab1 (
-   a int PRIMARY KEY,
-   b varchar(50),
-   c varchar(50),
-   d int
+   a INT PRIMARY KEY,
+   b VARCHAR(50),
+   c VARCHAR(50),
+   d INT
 );
 
 CREATE OR REPLACE TABLE tab2 (
-   a int PRIMARY KEY,
-   b varchar(50)
+   a INT PRIMARY KEY,
+   b VARCHAR(50)
 );
 
 SET SESSION alter_algorithm='INPLACE';
@@ -708,15 +708,15 @@ But this succeeds:
 
 ```sql
 CREATE OR REPLACE TABLE tab1 (
-   a int PRIMARY KEY,
-   b varchar(50),
-   c varchar(50),
-   d int
+   a INT PRIMARY KEY,
+   b VARCHAR(50),
+   c VARCHAR(50),
+   d INT
 );
 
 CREATE OR REPLACE TABLE tab2 (
-   a int PRIMARY KEY,
-   b varchar(50)
+   a INT PRIMARY KEY,
+   b VARCHAR(50)
 );
 
 SET SESSION foreign_key_checks=OFF;
@@ -739,15 +739,15 @@ For example:
 
 ```sql
 CREATE OR REPLACE TABLE tab2 (
-   a int PRIMARY KEY,
-   b varchar(50)
+   a INT PRIMARY KEY,
+   b VARCHAR(50)
 );
 
 CREATE OR REPLACE TABLE tab1 (
-   a int PRIMARY KEY,
-   b varchar(50),
-   c varchar(50),
-   d int,
+   a INT PRIMARY KEY,
+   b VARCHAR(50),
+   c VARCHAR(50),
+   d INT,
    FOREIGN KEY tab2_fk (d) REFERENCES tab2 (a)
 );
 
@@ -770,9 +770,9 @@ For example:
 
 ```sql
 CREATE OR REPLACE TABLE tab (
-   a int PRIMARY KEY,
-   b varchar(50),
-   c varchar(50)
+   a INT PRIMARY KEY,
+   b VARCHAR(50),
+   c VARCHAR(50)
 );
 
 SET SESSION alter_algorithm='INPLACE';
@@ -794,9 +794,9 @@ For example:
 
 ```sql
 CREATE OR REPLACE TABLE tab (
-   a int PRIMARY KEY,
-   b varchar(50),
-   c varchar(50)
+   a INT PRIMARY KEY,
+   b VARCHAR(50),
+   c VARCHAR(50)
 ) ROW_FORMAT=DYNAMIC;
 
 SET SESSION alter_algorithm='INPLACE';
@@ -818,9 +818,9 @@ For example:
 
 ```sql
 CREATE OR REPLACE TABLE tab (
-   a int PRIMARY KEY,
-   b varchar(50),
-   c varchar(50)
+   a INT PRIMARY KEY,
+   b VARCHAR(50),
+   c VARCHAR(50)
 ) ROW_FORMAT=COMPRESSED
   KEY_BLOCK_SIZE=4;
 
@@ -845,9 +845,9 @@ For example, this succeeds:
 
 ```sql
 CREATE OR REPLACE TABLE tab (
-   a int PRIMARY KEY,
-   b varchar(50),
-   c varchar(50)
+   a INT PRIMARY KEY,
+   b VARCHAR(50),
+   c VARCHAR(50)
 );
 
 SET SESSION alter_algorithm='INPLACE';
@@ -859,9 +859,9 @@ And this succeeds:
 
 ```sql
 CREATE OR REPLACE TABLE tab (
-   a int PRIMARY KEY,
-   b varchar(50),
-   c varchar(50)
+   a INT PRIMARY KEY,
+   b VARCHAR(50),
+   c VARCHAR(50)
 ) PAGE_COMPRESSED=1;
 
 SET SESSION alter_algorithm='INPLACE';
@@ -873,9 +873,9 @@ And this succeeds:
 
 ```sql
 CREATE OR REPLACE TABLE tab (
-   a int PRIMARY KEY,
-   b varchar(50),
-   c varchar(50)
+   a INT PRIMARY KEY,
+   b VARCHAR(50),
+   c VARCHAR(50)
 ) PAGE_COMPRESSED=1
   PAGE_COMPRESSION_LEVEL=5;
 
@@ -896,9 +896,9 @@ For example:
 
 ```sql
 CREATE OR REPLACE TABLE tab (
-   a int PRIMARY KEY,
-   b varchar(50),
-   c varchar(50)
+   a INT PRIMARY KEY,
+   b VARCHAR(50),
+   c VARCHAR(50)
 ) WITH SYSTEM VERSIONING;
 
 SET SESSION alter_algorithm='INPLACE';
@@ -917,9 +917,9 @@ For example:
 
 ```sql
 CREATE OR REPLACE TABLE tab (
-   a int PRIMARY KEY,
-   b varchar(50),
-   c varchar(50),
+   a INT PRIMARY KEY,
+   b VARCHAR(50),
+   c VARCHAR(50),
    CONSTRAINT b_not_empty CHECK (b != '')
 );
 
@@ -942,9 +942,9 @@ For example:
 
 ```sql
 CREATE OR REPLACE TABLE tab (
-   a int PRIMARY KEY,
-   b varchar(50),
-   c varchar(50)
+   a INT PRIMARY KEY,
+   b VARCHAR(50),
+   c VARCHAR(50)
 );
 
 SET SESSION alter_algorithm='INPLACE';
@@ -966,9 +966,9 @@ For example:
 
 ```sql
 CREATE OR REPLACE TABLE tab (
-   a int PRIMARY KEY,
-   b varchar(50),
-   c varchar(50)
+   a INT PRIMARY KEY,
+   b VARCHAR(50),
+   c VARCHAR(50)
 );
 
 SET SESSION alter_algorithm='INPLACE';
@@ -992,9 +992,9 @@ For example, this succeeds:
 
 ```sql
 CREATE OR REPLACE TABLE tab (
-   a int PRIMARY KEY,
-   b varchar(50),
-   c varchar(50)
+   a INT PRIMARY KEY,
+   b VARCHAR(50),
+   c VARCHAR(50)
 );
 
 SHOW GLOBAL VARIABLES WHERE Variable_name IN('innodb_defragment', 'innodb_optimize_fulltext_only');
@@ -1020,9 +1020,9 @@ And this succeeds, but the table is not rebuilt:
 
 ```sql
 CREATE OR REPLACE TABLE tab (
-   a int PRIMARY KEY,
-   b varchar(50),
-   c varchar(50)
+   a INT PRIMARY KEY,
+   b VARCHAR(50),
+   c VARCHAR(50)
 );
 
 SET GLOBAL innodb_defragment=ON;
@@ -1058,9 +1058,9 @@ For example, this succeeds:
 
 ```sql
 CREATE OR REPLACE TABLE tab (
-   a int PRIMARY KEY,
-   b varchar(50),
-   c varchar(50)
+   a INT PRIMARY KEY,
+   b VARCHAR(50),
+   c VARCHAR(50)
 );
 
 SET SESSION alter_algorithm='INPLACE';
@@ -1072,9 +1072,9 @@ And this succeeds:
 
 ```sql
 CREATE OR REPLACE TABLE tab (
-   a int PRIMARY KEY,
-   b varchar(50),
-   c varchar(50)
+   a INT PRIMARY KEY,
+   b VARCHAR(50),
+   c VARCHAR(50)
 );
 
 SET SESSION alter_algorithm='INPLACE';

@@ -4,16 +4,16 @@ The first thing the MariaDB optimizer does is to merge the `VIEW`\
 definition into the query to obtain:
 
 ```sql
-select ACRAT_rating
-from
+SELECT ACRAT_rating
+FROM
   ac_anchor
-  left join ac_name on ac_anchor.AC_ID=ac_name.AC_ID
-  left join ac_dob on ac_anchor.AC_ID=ac_dob.AC_ID
-  left join ac_rating on (ac_anchor.AC_ID=ac_rating.AC_ID and
+  LEFT JOIN ac_name ON ac_anchor.AC_ID=ac_name.AC_ID
+  LEFT JOIN ac_dob ON ac_anchor.AC_ID=ac_dob.AC_ID
+  LEFT JOIN ac_rating ON (ac_anchor.AC_ID=ac_rating.AC_ID AND
                           ac_rating.ACRAT_fromdate = 
                             (select max(sub.ACRAT_fromdate)
-                             from ac_rating sub where sub.AC_ID = ac_rating.AC_ID))
-where
+                             FROM ac_rating sub WHERE sub.AC_ID = ac_rating.AC_ID))
+WHERE
  ACNAM_name='Gary Oldman'
 ```
 

@@ -45,11 +45,11 @@ For example, if a user wanted to add a column to a table, but only if the operat
 
 ```sql
 CREATE OR REPLACE TABLE tab (
-   a int PRIMARY KEY,
-   b varchar(50)
+   a INT PRIMARY KEY,
+   b VARCHAR(50)
 );
 
-ALTER TABLE tab ADD COLUMN c varchar(50), ALGORITHM=INPLACE;
+ALTER TABLE tab ADD COLUMN c VARCHAR(50), ALGORITHM=INPLACE;
 ```
 
 The above operation should use the `INSTANT` algorithm, because the `ADD COLUMN` operation supports the `INSTANT` algorithm, and the `INSTANT` algorithm is more efficient than the `INPLACE` algorithm.
@@ -62,12 +62,12 @@ For example, if a user wanted to add a column to a table, but only if the operat
 
 ```sql
 CREATE OR REPLACE TABLE tab (
-   a int PRIMARY KEY,
-   b varchar(50)
+   a INT PRIMARY KEY,
+   b VARCHAR(50)
 );
 
 SET SESSION alter_algorithm='INPLACE';
-ALTER TABLE tab ADD COLUMN c varchar(50);
+ALTER TABLE tab ADD COLUMN c VARCHAR(50);
 ```
 
 The above operation would actually use the `INSTANT` algorithm, because the `ADD COLUMN` operation supports the `INSTANT` algorithm, and the `INSTANT` algorithm is more efficient than the `INPLACE` algorithm.\
@@ -136,7 +136,7 @@ If the `INPLACE` algorithm is specified with the [ALGORITHM](../../../../referen
 ```sql
 SET SESSION alter_algorithm='INPLACE';
 
-ALTER TABLE tab MODIFY COLUMN c int;
+ALTER TABLE tab MODIFY COLUMN c INT;
 ERROR 1846 (0A000): ALGORITHM=INPLACE is not supported. Reason: Cannot change column type INPLACE. Try ALGORITHM=COPY
 ```
 
@@ -174,7 +174,7 @@ If the `NOCOPY` algorithm is specified with the [ALGORITHM](../../../../referenc
 ```sql
 SET SESSION alter_algorithm='NOCOPY';
 
-ALTER TABLE tab MODIFY COLUMN c int;
+ALTER TABLE tab MODIFY COLUMN c INT;
 ERROR 1846 (0A000): ALGORITHM=NOCOPY is not supported. Reason: Cannot change column type INPLACE. Try ALGORITHM=COPY
 ```
 
@@ -197,7 +197,7 @@ If the `INSTANT` algorithm is specified with the [ALGORITHM](../../../../referen
 ```sql
 SET SESSION alter_algorithm='INSTANT';
 
-ALTER TABLE tab MODIFY COLUMN c int;
+ALTER TABLE tab MODIFY COLUMN c INT;
 ERROR 1846 (0A000): ALGORITHM=INSTANT is not supported. Reason: Cannot change column type INPLACE. Try ALGORITHM=COPY
 ```
 
@@ -232,11 +232,11 @@ For example, if a user wanted to add a column to a table, but only if the operat
 
 ```sql
 CREATE OR REPLACE TABLE tab (
-   a int PRIMARY KEY,
-   b varchar(50)
+   a INT PRIMARY KEY,
+   b VARCHAR(50)
 );
 
-ALTER TABLE tab ADD COLUMN c varchar(50), ALGORITHM=INPLACE, LOCK=NONE;
+ALTER TABLE tab ADD COLUMN c VARCHAR(50), ALGORITHM=INPLACE, LOCK=NONE;
 ```
 
 If the [LOCK](../../../../reference/sql-statements/data-definition/alter/alter-table.md#lock) clause is not explicitly set, then the operation uses `LOCK=DEFAULT`.

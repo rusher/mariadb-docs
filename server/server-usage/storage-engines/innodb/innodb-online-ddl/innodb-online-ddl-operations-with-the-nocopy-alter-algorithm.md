@@ -56,13 +56,13 @@ For example:
 
 ```sql
 CREATE OR REPLACE TABLE tab (
-   a int PRIMARY KEY,
-   b varchar(50),
-   c varchar(50)
+   a INT PRIMARY KEY,
+   b VARCHAR(50),
+   c VARCHAR(50)
 ) ROW_FORMAT=REDUNDANT;
 
 SET SESSION alter_algorithm='NOCOPY';
-ALTER TABLE tab MODIFY COLUMN c varchar(50) NOT NULL;
+ALTER TABLE tab MODIFY COLUMN c VARCHAR(50) NOT NULL;
 ERROR 1845 (0A000): ALGORITHM=NOCOPY is not supported for this operation. Try ALGORITHM=INPLACE
 ```
 
@@ -118,9 +118,9 @@ For example:
 
 ```sql
 CREATE OR REPLACE TABLE tab (
-   a int,
-   b varchar(50),
-   c varchar(50)
+   a INT,
+   b VARCHAR(50),
+   c VARCHAR(50)
 );
 
 SET SESSION sql_mode='STRICT_TRANS_TABLES';
@@ -139,9 +139,9 @@ For example:
 
 ```sql
 CREATE OR REPLACE TABLE tab (
-   a int PRIMARY KEY,
-   b varchar(50),
-   c varchar(50)
+   a INT PRIMARY KEY,
+   b VARCHAR(50),
+   c VARCHAR(50)
 );
 
 SET SESSION alter_algorithm='NOCOPY';
@@ -165,9 +165,9 @@ For example, this succeeds:
 
 ```sql
 CREATE OR REPLACE TABLE tab (
-   a int PRIMARY KEY,
-   b varchar(50),
-   c varchar(50)
+   a INT PRIMARY KEY,
+   b VARCHAR(50),
+   c VARCHAR(50)
 );
 
 SET SESSION alter_algorithm='NOCOPY';
@@ -179,9 +179,9 @@ And this succeeds:
 
 ```sql
 CREATE OR REPLACE TABLE tab (
-   a int PRIMARY KEY,
-   b varchar(50),
-   c varchar(50)
+   a INT PRIMARY KEY,
+   b VARCHAR(50),
+   c VARCHAR(50)
 );
 
 SET SESSION alter_algorithm='NOCOPY';
@@ -204,9 +204,9 @@ For example, this succeeds, but the first operation requires the table to be reb
 
 ```sql
 CREATE OR REPLACE TABLE tab (
-   a int PRIMARY KEY,
-   b varchar(50),
-   c varchar(50)
+   a INT PRIMARY KEY,
+   b VARCHAR(50),
+   c VARCHAR(50)
 );
 
 SET SESSION alter_algorithm='INPLACE';
@@ -222,9 +222,9 @@ And this succeeds in the same way as above:
 
 ```sql
 CREATE OR REPLACE TABLE tab (
-   a int PRIMARY KEY,
-   b varchar(50),
-   c varchar(50)
+   a INT PRIMARY KEY,
+   b VARCHAR(50),
+   c VARCHAR(50)
 );
 
 SET SESSION alter_algorithm='INPLACE';
@@ -240,10 +240,10 @@ But this second command fails, because only one [FULLTEXT](../../../../ha-and-pe
 
 ```sql
 CREATE OR REPLACE TABLE tab (
-   a int PRIMARY KEY,
-   b varchar(50),
-   c varchar(50),
-   d varchar(50)
+   a INT PRIMARY KEY,
+   b VARCHAR(50),
+   c VARCHAR(50),
+   d VARCHAR(50)
 );
 
 SET SESSION alter_algorithm='INPLACE';
@@ -265,8 +265,8 @@ For example, this succeeds:
 
 ```sql
 CREATE OR REPLACE TABLE tab (
-   a int PRIMARY KEY,
-   b varchar(50),
+   a INT PRIMARY KEY,
+   b VARCHAR(50),
    c GEOMETRY NOT NULL
 );
 
@@ -279,8 +279,8 @@ And this succeeds in the same way as above:
 
 ```sql
 CREATE OR REPLACE TABLE tab (
-   a int PRIMARY KEY,
-   b varchar(50),
+   a INT PRIMARY KEY,
+   b VARCHAR(50),
    c GEOMETRY NOT NULL
 );
 
@@ -307,15 +307,15 @@ For example, this fails:
 
 ```sql
 CREATE OR REPLACE TABLE tab1 (
-   a int PRIMARY KEY,
-   b varchar(50),
-   c varchar(50),
-   d int
+   a INT PRIMARY KEY,
+   b VARCHAR(50),
+   c VARCHAR(50),
+   d INT
 );
 
 CREATE OR REPLACE TABLE tab2 (
-   a int PRIMARY KEY,
-   b varchar(50)
+   a INT PRIMARY KEY,
+   b VARCHAR(50)
 );
 
 SET SESSION alter_algorithm='NOCOPY';
@@ -327,15 +327,15 @@ But this succeeds:
 
 ```sql
 CREATE OR REPLACE TABLE tab1 (
-   a int PRIMARY KEY,
-   b varchar(50),
-   c varchar(50),
-   d int
+   a INT PRIMARY KEY,
+   b VARCHAR(50),
+   c VARCHAR(50),
+   d INT
 );
 
 CREATE OR REPLACE TABLE tab2 (
-   a int PRIMARY KEY,
-   b varchar(50)
+   a INT PRIMARY KEY,
+   b VARCHAR(50)
 );
 
 SET SESSION foreign_key_checks=OFF;
@@ -372,9 +372,9 @@ For example:
 
 ```sql
 CREATE OR REPLACE TABLE tab (
-   a int PRIMARY KEY,
-   b varchar(50),
-   c varchar(50)
+   a INT PRIMARY KEY,
+   b VARCHAR(50),
+   c VARCHAR(50)
 ) ROW_FORMAT=DYNAMIC;
 
 SET SESSION alter_algorithm='NOCOPY';
@@ -392,9 +392,9 @@ For example:
 
 ```sql
 CREATE OR REPLACE TABLE tab (
-   a int PRIMARY KEY,
-   b varchar(50),
-   c varchar(50)
+   a INT PRIMARY KEY,
+   b VARCHAR(50),
+   c VARCHAR(50)
 ) ROW_FORMAT=COMPRESSED
   KEY_BLOCK_SIZE=4;
 
@@ -425,9 +425,9 @@ For example:
 
 ```sql
 CREATE OR REPLACE TABLE tab (
-   a int PRIMARY KEY,
-   b varchar(50),
-   c varchar(50)
+   a INT PRIMARY KEY,
+   b VARCHAR(50),
+   c VARCHAR(50)
 ) WITH SYSTEM VERSIONING;
 
 SET SESSION alter_algorithm='NOCOPY';
@@ -453,9 +453,9 @@ For example:
 
 ```sql
 CREATE OR REPLACE TABLE tab (
-   a int PRIMARY KEY,
-   b varchar(50),
-   c varchar(50)
+   a INT PRIMARY KEY,
+   b VARCHAR(50),
+   c VARCHAR(50)
 );
 
 SET SESSION alter_algorithm='NOCOPY';
@@ -473,9 +473,9 @@ For example:
 
 ```sql
 CREATE OR REPLACE TABLE tab (
-   a int PRIMARY KEY,
-   b varchar(50),
-   c varchar(50)
+   a INT PRIMARY KEY,
+   b VARCHAR(50),
+   c VARCHAR(50)
 );
 
 SET SESSION alter_algorithm='NOCOPY';
@@ -493,9 +493,9 @@ For example:
 
 ```sql
 CREATE OR REPLACE TABLE tab (
-   a int PRIMARY KEY,
-   b varchar(50),
-   c varchar(50)
+   a INT PRIMARY KEY,
+   b VARCHAR(50),
+   c VARCHAR(50)
 );
 
 SHOW GLOBAL VARIABLES WHERE Variable_name IN('innodb_defragment', 'innodb_optimize_fulltext_only');

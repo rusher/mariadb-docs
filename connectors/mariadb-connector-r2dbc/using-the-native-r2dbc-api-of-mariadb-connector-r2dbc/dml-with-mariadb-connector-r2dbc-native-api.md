@@ -106,7 +106,7 @@ Result instances must be fully consumed to ensure full execution of the the corr
 Confirm the data was properly inserted by using MariaDB Client to execute a SELECT statement:
 
 ```sql
-SELECT * from test.contact;
+SELECT * FROM test.contact;
 ```
 
 ```

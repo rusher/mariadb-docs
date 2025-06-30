@@ -48,23 +48,23 @@ PRIMARY KEY(city, datetime),
    Aggregations: ct, sum_price
    
    # Core of INSERT..SELECT:
-   DATE(datetime) AS date, city, COUNT(*) AS ct, SUM(price) AS sum_price
+   DATE(datetime) AS DATE, city, COUNT(*) AS ct, SUM(price) AS sum_price
    
-   # Reporting average price for last month, broken down by city:
+   # Reporting average price FOR last month, broken down BY city:
    SELECT city,
           SUM(sum_price) / SUM(ct) AS 'AveragePrice'
       FROM SalesSummary
       WHERE datetime BETWEEN ...
       GROUP BY city;
    
-   # Monthly sales, nationwide, from same summary table:
+   # Monthly sales, nationwide, FROM same summary TABLE:
    SELECT MONTH(datetime) AS 'Month',
           SUM(ct)         AS 'TotalSalesCount'
           SUM(sum_price)  AS 'TotalDollars'
       FROM SalesSummary
       WHERE datetime BETWEEN ...
       GROUP BY MONTH(datetime);
-   # This might benefit from a secondary INDEX(datetime)
+   # This might benefit FROM a secondary INDEX(datetime)
 ```
 
 ## When to augment the summary table(s)?
@@ -118,7 +118,7 @@ Then perform bulk summarization using
 
 ```sql
 FROM Fact
-   WHERE id BETWEEN min_id and max_id
+   WHERE id BETWEEN min_id AND max_id
 ```
 
 ## Summarizing when using a staging table
@@ -238,7 +238,7 @@ The flipping step uses a fast, atomic, RENAME.
 Here is a sketch of the code:
 
 ```sql
-# Prep for flip:
+# Prep FOR flip:
     CREATE TABLE new LIKE Staging;
 
     # Swap (flip) Staging tables:
@@ -248,18 +248,18 @@ Here is a sketch of the code:
     # (autocommit = 1)
     INSERT IGNORE INTO Foos SELECT fpp FROM old LEFT JOIN Foos ...
 
-    # Prep for possible deadlocks, etc
-    while...
+    # Prep FOR possible deadlocks, etc
+    WHILE...
     START TRANSACTION;
 
-    # Add to Fact:
+    # ADD TO Fact:
     INSERT INTO Fact ... FROM old JOIN Foos ...
 
     # Summarize:
     INSERT INTO Summary ... FROM old ... GROUP BY ...
 
     COMMIT;
-    end-while
+    end-WHILE
 
     # Cleanup:
     DROP TABLE old;

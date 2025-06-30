@@ -9,15 +9,15 @@ In that case, the Condition Pushdown optimization is applicable.
 Consider an example
 
 ```sql
-create view OCT_TOTALS as
-select
+CREATE view OCT_TOTALS AS
+SELECT
   customer_id,
-  SUM(amount) as TOTAL_AMT
-from orders
-where  order_date BETWEEN '2017-10-01' and '2017-10-31'
-group by customer_id;
+  SUM(amount) AS TOTAL_AMT
+FROM orders
+WHERE  order_date BETWEEN '2017-10-01' AND '2017-10-31'
+GROUP BY customer_id;
 
-select * from OCT_TOTALS where customer_id=1
+SELECT * FROM OCT_TOTALS WHERE customer_id=1
 ```
 
 The naive way to execute the above is to

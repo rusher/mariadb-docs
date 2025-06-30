@@ -526,7 +526,7 @@ The old domains will still appear in [gtid\_io\_pos](../../reference/sql-stateme
 stop the replica and execute on the replica:
 
 ```sql
-SET gtid_slave_pos="<position with domains removed>"
+SET gtid_slave_pos="<position WITH domains removed>"
 ```
 
 ## Additional Syntax For Global Transaction ID

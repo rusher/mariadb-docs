@@ -5,7 +5,7 @@
 ```sql
 SELECT ... FROM ... WHERE ...
 [group_clause] [order_clause]
-LIMIT [[offset,] row_count] ROWS EXAMINED rows_limit;
+LIMIT [[OFFSET,] row_count] ROWS EXAMINED rows_limit;
 ```
 
 Similar to the parameters of `LIMIT`, _`rows_limit`_ can be both a\
@@ -65,7 +65,7 @@ account.
 A simple example of the clause is:
 
 ```sql
-SELECT * from t1, t2 LIMIT 10 ROWS EXAMINED 10000;
+SELECT * FROM t1, t2 LIMIT 10 ROWS EXAMINED 10000;
 ```
 
 The `LIMIT ROWS EXAMINED` clause is global for the whole statement.

@@ -8,10 +8,10 @@ Direct SQL is a way to map reduced execution on remote backends and store the re
 spider1 backend << EOF 
 CREATE TEMPORARY TABLE res
 (
-  id int(10) unsigned NOT NULL,
-  k int(10) unsigned NOT NULL DEFAULT '0',
-  c char(120) NOT NULL DEFAULT '',
-  pad char(60) NOT NULL DEFAULT ''
+  id INT(10) UNSIGNED NOT NULL,
+  k INT(10) UNSIGNED NOT NULL DEFAULT '0',
+  c CHAR(120) NOT NULL DEFAULT '',
+  pad CHAR(60) NOT NULL DEFAULT ''
 ) ENGINE=MEMORY;
  
 SELECT spider_direct_sql(
@@ -22,7 +22,7 @@ SELECT spider_direct_sql(
 FROM 
   mysql.spider_tables 
 WHERE 
-  db_name = 'backend' and table_name like 'sbtest#P#pt%';
+  db_name = 'backend' AND table_name LIKE 'sbtest#P#pt%';
 
 SELECT * FROM res; 
 EOF
@@ -37,7 +37,7 @@ SELECT spider_direct_sql(
   concat('server "', server, '"')
 ) a
   FROM mysql.spider_tables
-  WHERE db_name = 'backend' and table_name like 'sbtest#P#pt%' ;
+  WHERE db_name = 'backend' AND table_name LIKE 'sbtest#P#pt%' ;
 ```
 
 The default for [spider\_bg\_direct\_sql](spider-functions/spider_bg_direct_sql.md) is to access concurrently all backends. If you have multiple partitions store inside a single backend, you still can increase parallelism affecting different channels to each partitions.
@@ -45,12 +45,12 @@ The default for [spider\_bg\_direct\_sql](spider-functions/spider_bg_direct_sql.
 ```sql
 CREATE TEMPORARY TABLE res
 (
-  id int(10) unsigned NOT NULL , 
-  col_microsec DATETIME(6) default NOW(8),
-  db varchar(20)
+  id INT(10) UNSIGNED NOT NULL , 
+  col_microsec DATETIME(6) DEFAULT NOW(8),
+  db VARCHAR(20)
 ) ENGINE=MEMORY;
 
-SELECT spider_bg_direct_sql( 'SELECT count(*) ,min(NOW(6)),min(DATABASE())) FROM sbtest',   'res',  concat('srv "', server,'" cch ',@rn:=@rn+1  ) ) a  FROM    mysql.spider_tables,(SELECT @rn:=1) t2  WHERE    db_name = 'bsbackend' and table_name like 'sbtest#P#pt%';
+SELECT spider_bg_direct_sql( 'SELECT count(*) ,min(NOW(6)),min(DATABASE())) FROM sbtest',   'res',  concat('srv "', server,'" cch ',@rn:=@rn+1  ) ) a  FROM    mysql.spider_tables,(SELECT @rn:=1) t2  WHERE    db_name = 'bsbackend' AND table_name LIKE 'sbtest#P#pt%';
 ```
 
 ## Direct Handler Socket
@@ -89,10 +89,10 @@ Check that [Handler Socket](../../../reference/sql-structure/nosql/handlersocket
 spider1 backend << EOF 
 CREATE TEMPORARY TABLE res
 (
-  id int(10) unsigned NOT NULL,
-  k int(10) unsigned NOT NULL DEFAULT '0',
-  c char(120) NOT NULL DEFAULT '',
-  pad char(60) NOT NULL DEFAULT ''
+  id INT(10) UNSIGNED NOT NULL,
+  k INT(10) UNSIGNED NOT NULL DEFAULT '0',
+  c CHAR(120) NOT NULL DEFAULT '',
+  pad CHAR(60) NOT NULL DEFAULT ''
 ) ENGINE=MEMORY;
  
 SELECT spider_direct_sql('1\t=\t1\t2\t100000\t0','res', 'host "192.168.0.202", table "sbtest", database "test", port "20500", access_mode "1"');

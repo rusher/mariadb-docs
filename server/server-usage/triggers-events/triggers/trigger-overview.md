@@ -38,12 +38,12 @@ If a warning is issued with the SIGNAL or RESIGNAL statement (that is, an error 
 Here's a simple example to demonstrate a trigger in action. Using these two tables as an example:
 
 ```sql
-CREATE TABLE animals (id mediumint(9) 
+CREATE TABLE animals (id MEDIUMINT(9) 
 NOT NULL AUTO_INCREMENT, 
-name char(30) NOT NULL, 
+name CHAR(30) NOT NULL, 
 PRIMARY KEY (`id`));
 
-CREATE TABLE animal_count (animals int);
+CREATE TABLE animal_count (animals INT);
 
 INSERT INTO animal_count (animals) VALUES(0);
 ```
@@ -117,8 +117,8 @@ DROP TABLE animals;
 
 UPDATE animal_count SET animals=0;
 
-CREATE TABLE animals (id mediumint(9) NOT NULL AUTO_INCREMENT, 
-name char(30) NOT NULL, 
+CREATE TABLE animals (id MEDIUMINT(9) NOT NULL AUTO_INCREMENT, 
+name CHAR(30) NOT NULL, 
 PRIMARY KEY (`id`)) 
 ENGINE=InnoDB;
 
@@ -164,8 +164,8 @@ Here, we'll drop the above examples, and then recreate the trigger with an error
 ```sql
 DROP TABLE animals;
 
-CREATE TABLE animals (id mediumint(9) NOT NULL AUTO_INCREMENT, 
-name char(30) NOT NULL, 
+CREATE TABLE animals (id MEDIUMINT(9) NOT NULL AUTO_INCREMENT, 
+name CHAR(30) NOT NULL, 
 PRIMARY KEY (`id`)) 
 ENGINE=InnoDB;
 
@@ -186,8 +186,8 @@ And now the identical procedure, but with a MyISAM table.
 ```sql
 DROP TABLE animals;
 
-CREATE TABLE animals (id mediumint(9) NOT NULL AUTO_INCREMENT, 
-name char(30) NOT NULL, 
+CREATE TABLE animals (id MEDIUMINT(9) NOT NULL AUTO_INCREMENT, 
+name CHAR(30) NOT NULL, 
 PRIMARY KEY (`id`)) 
 ENGINE=MyISAM;
 
@@ -224,7 +224,7 @@ CREATE TRIGGER bi_user
   FOR EACH ROW
 BEGIN
   IF NEW.email NOT LIKE '_%@_%.__%' THEN
-    SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'Email field is not valid';
+    SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'Email field IS NOT valid';
   END IF;
 END; //
 DELIMITER ;

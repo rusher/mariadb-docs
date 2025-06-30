@@ -63,7 +63,7 @@ For information on how to configure the plugin, see Eperi's documentation at the
 Once the Eperi Key Management Plugin is enabled, you can use it by creating an encrypted table:
 
 ```sql
-CREATE TABLE t (i int) ENGINE=InnoDB ENCRYPTED=YES
+CREATE TABLE t (i INT) ENGINE=InnoDB ENCRYPTED=YES
 ```
 
 Now, table `t` will be encrypted using the encryption key from the key server.

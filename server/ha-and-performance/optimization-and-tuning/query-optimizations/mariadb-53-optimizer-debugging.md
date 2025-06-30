@@ -34,7 +34,7 @@ As a result, you can more-or-less control the join order. For example, let's\
 take this query:
 
 ```sql
-MariaDB [test]> EXPLAIN SELECT * from ten A, ten B, ten C;
+MariaDB [test]> EXPLAIN SELECT * FROM ten A, ten B, ten C;
 +----+-------------+-------+------+---------------+------+---------+------+------+------------------------------------+
 | id | select_type | table | type | possible_keys | key  | key_len | ref  | rows | Extra                              |
 +----+-------------+-------+------+---------------+------+---------+------+------+------------------------------------+
@@ -51,7 +51,7 @@ and request a join order of C,A,B:
 MariaDB [test]> SET debug_optimizer_prefer_join_prefix='C,A,B';
 Query OK, 0 rows affected (0.00 sec)
 
-MariaDB [test]> explain select * from ten A, ten B, ten C;
+MariaDB [test]> EXPLAIN SELECT * FROM ten A, ten B, ten C;
 +----+-------------+-------+------+---------------+------+---------+------+------+------------------------------------+
 | id | select_type | table | type | possible_keys | key  | key_len | ref  | rows | Extra                              |
 +----+-------------+-------+------+---------------+------+---------+------+------+------------------------------------+
@@ -82,7 +82,7 @@ a different strategy to be used:
 MariaDB [test]> SET debug_optimizer_prefer_join_prefix=NULL;
 Query OK, 0 rows affected (0.00 sec)
 
-MariaDB [test]> explain select * from ten A where a in (select B.a from ten B, ten C where C.a + A.a < 4);
+MariaDB [test]> EXPLAIN SELECT * FROM ten A WHERE a IN (SELECT B.a FROM ten B, ten C WHERE C.a + A.a < 4);
 +----+-------------+-------+------+---------------+------+---------+------+------+----------------------------+
 | id | select_type | table | type | possible_keys | key  | key_len | ref  | rows | Extra                      |
 +----+-------------+-------+------+---------------+------+---------+------+------+----------------------------+
@@ -92,10 +92,10 @@ MariaDB [test]> explain select * from ten A where a in (select B.a from ten B, t
 +----+-------------+-------+------+---------------+------+---------+------+------+----------------------------+
 3 rows in set (0.00 sec)
 
-MariaDB [test]> set debug_optimizer_prefer_join_prefix='C,A,B';
+MariaDB [test]> SET debug_optimizer_prefer_join_prefix='C,A,B';
 Query OK, 0 rows affected (0.00 sec)
 
-MariaDB [test]> explain select * from ten A where a in (select B.a from ten B, ten C where C.a + A.a < 4);
+MariaDB [test]> EXPLAIN SELECT * FROM ten A WHERE a IN (SELECT B.a FROM ten B, ten C WHERE C.a + A.a < 4);
 +----+-------------+-------+------+---------------+------+---------+------+------+-------------------------------------------------+
 | id | select_type | table | type | possible_keys | key  | key_len | ref  | rows | Extra                                           |
 +----+-------------+-------+------+---------------+------+---------+------+------+-------------------------------------------------+
@@ -119,7 +119,7 @@ not exactly what you see in the EXPLAIN output. For semi-join materialization:
 MariaDB [test]> SET debug_optimizer_prefer_join_prefix='A,C,B,AA';
 Query OK, 0 rows affected (0.00 sec)
 
-MariaDB [test]> explain select * from ten A, ten AA where A.a in (select B.a from ten B, ten C);
+MariaDB [test]> EXPLAIN SELECT * FROM ten A, ten AA WHERE A.a IN (SELECT B.a FROM ten B, ten C);
 +----+-------------+-------------+--------+---------------+--------------+---------+------+------+------------------------------------+
 | id | select_type | table       | type   | possible_keys | key          | key_len | ref  | rows | Extra                              |
 +----+-------------+-------------+--------+---------------+--------------+---------+------+------+------------------------------------+

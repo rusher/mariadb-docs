@@ -66,10 +66,10 @@ Example:
 
 ```sql
 START TRANSACTION;
-select next_val(hibernate_sequence);
-INSERT INTO myCar(id, name) VALUE (?, ?) //with parameters: 1, 'car1'
-INSERT INTO myCarDetail(id, carId, name) VALUE (?, ?, ?) //with parameters: 2, 1, 'detail1'
-INSERT INTO myCarDetail(id, carId, name) VALUE (?, ?, ?) //with parameters: 3, 2, 'detail2'
+SELECT next_val(hibernate_sequence);
+INSERT INTO myCar(id, name) VALUE (?, ?) //WITH parameters: 1, 'car1'
+INSERT INTO myCarDetail(id, carId, name) VALUE (?, ?, ?) //WITH parameters: 2, 1, 'detail1'
+INSERT INTO myCarDetail(id, carId, name) VALUE (?, ?, ?) //WITH parameters: 3, 2, 'detail2'
 COMMIT;
 ```
 

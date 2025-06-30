@@ -12,9 +12,9 @@ Create the example database and table:
 CREATE DATABASE IF NOT EXISTS todo;
 
 CREATE TABLE todo.tasks (
-   id int AUTO_INCREMENT PRIMARY KEY,
-   description varchar(200),
-   completed boolean DEFAULT false);
+   id INT AUTO_INCREMENT PRIMARY KEY,
+   description VARCHAR(200),
+   completed boolean DEFAULT FALSE);
 ```
 
 Create a user `db_user` with privileges to execute the tasks sample application:

@@ -27,7 +27,7 @@ In the following example, no column-level privilege has been explicitly assigned
 
 ```sql
 SELECT * FROM information_schema.COLUMN_PRIVILEGES;
-Empty set
+Empty SET
 ```
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>

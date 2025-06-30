@@ -50,7 +50,7 @@ SELECT * FROM t
 Is different from :
 
 ```sql
-SELECT * from t
+SELECT * FROM t
 ```
 
 Comments are also considered and can make the queries differ, so :
@@ -276,7 +276,7 @@ Queries that change rows ([INSERT](../../../reference/sql-statements/data-manipu
 Examples:
 
 ```sql
-SELECT * FROM T1 <first insert to query cache, using FLAGS_IN_TRANS=0>
+SELECT * FROM T1 <first INSERT TO query cache, USING FLAGS_IN_TRANS=0>
 +---+
 | a |
 +---+
@@ -286,7 +286,7 @@ SELECT * FROM T1 <first insert to query cache, using FLAGS_IN_TRANS=0>
 
 ```sql
 BEGIN;
-SELECT * FROM T1 <first insert to query cache, using FLAGS_IN_TRANS=1>
+SELECT * FROM T1 <first INSERT TO query cache, USING FLAGS_IN_TRANS=1>
 +---+
 | a |
 +---+
@@ -295,7 +295,7 @@ SELECT * FROM T1 <first insert to query cache, using FLAGS_IN_TRANS=1>
 ```
 
 ```sql
-SELECT * FROM T1 <result from query cache, using FLAGS_IN_TRANS=1>
+SELECT * FROM T1 <result FROM query cache, USING FLAGS_IN_TRANS=1>
 +---+
 | a |
 +---+
@@ -304,21 +304,11 @@ SELECT * FROM T1 <result from query cache, using FLAGS_IN_TRANS=1>
 ```
 
 ```sql
-INSERT INTO T1 VALUES(2);  <invalidate queries from table T1 and disable query cache to table T1>
+INSERT INTO T1 VALUES(2);  <invalidate queries FROM TABLE T1 AND disable query cache TO TABLE T1>
 ```
 
 ```sql
-SELECT * FROM T1 <don't use query cache, a normal query from innodb table>
-+---+
-| a |
-+---+
-| 1 |
-| 2 |
-+---+
-```
-
-```sql
-SELECT * FROM T1 <don't use query cache, a normal query from innodb table>
+SELECT * FROM T1 <don't USE query cache, a normal query FROM innodb TABLE>
 +---+
 | a |
 +---+
@@ -328,11 +318,21 @@ SELECT * FROM T1 <don't use query cache, a normal query from innodb table>
 ```
 
 ```sql
-COMMIT;  <query cache is now turned on to T1 table>
+SELECT * FROM T1 <don't USE query cache, a normal query FROM innodb TABLE>
++---+
+| a |
++---+
+| 1 |
+| 2 |
++---+
 ```
 
 ```sql
-SELECT * FROM T1 <first insert to query cache, using FLAGS_IN_TRANS=0>
+COMMIT;  <query cache IS now turned ON TO T1 TABLE>
+```
+
+```sql
+SELECT * FROM T1 <first INSERT TO query cache, USING FLAGS_IN_TRANS=0>
 +---+
 | a |
 +---+
@@ -341,7 +341,7 @@ SELECT * FROM T1 <first insert to query cache, using FLAGS_IN_TRANS=0>
 ```
 
 ```sql
-SELECT * FROM T1 <result from query cache, using FLAGS_IN_TRANS=0>
+SELECT * FROM T1 <result FROM query cache, USING FLAGS_IN_TRANS=0>
 +---+
 | a |
 +---+

@@ -44,7 +44,7 @@ Simple `REPLACE` statement:
 
 ```sql
 REPLACE INTO t2 VALUES (1,'Leopard'),(2,'Dog') RETURNING id2, id2+id2 
-as Total ,id2|id2, id2&&id2;
+AS Total ,id2|id2, id2&&id2;
 +-----+-------+---------+----------+
 | id2 | Total | id2|id2 | id2&&id2 |
 +-----+-------+---------+----------+

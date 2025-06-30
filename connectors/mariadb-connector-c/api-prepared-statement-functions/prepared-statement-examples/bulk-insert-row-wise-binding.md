@@ -101,7 +101,7 @@ int main(int argc, char *argv[])
 Now we can check the content of table bulk\_example2:
 
 ```sql
-MariaDB [example_db]> select id,forename,surname from bulk_example2;
+MariaDB [example_db]> SELECT id,forename,surname FROM bulk_example2;
 +----+----------+----------+
 | id | forename | surname  |
 +----+----------+----------+

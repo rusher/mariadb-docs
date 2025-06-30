@@ -78,14 +78,14 @@ decimals for all types of tables.
 The DECIMAL data type corresponds to what MariaDB or ODBC data sources call NUMBER, NUMERIC, or [DECIMAL](../../../reference/data-types/numeric-data-types/decimal.md): a numeric value with a maximum number of digits (the precision) some of them eventually being decimal digits (the scale). The internal coding in CONNECT is a character representation of the number. For instance:
 
 ```sql
-colname decimal(14,6)
+colname DECIMAL(14,6)
 ```
 
 This defines a column _colname_ as a number having a _precision_ of 14 and\
 a _scale_ of 6. Supposing it is populated by:
 
 ```sql
-insert into xxx values (-2658.74);
+INSERT INTO xxx VALUES (-2658.74);
 ```
 
 The internal representation of it will be the character string`-2658.740000`. The way it is stored in a file table depends on the table\
@@ -133,15 +133,15 @@ When creating a table, the format is associated to a date column using the\
 DATE\_FORMAT option in the column definition, for instance:
 
 ```sql
-create table birthday (
-  Name varchar(17),
-  Bday date field_length=10 date_format='MM/DD/YYYY',
-  Btime time field_length=8 date_format='hh:mm tt')
+CREATE TABLE birthday (
+  Name VARCHAR(17),
+  Bday DATE field_length=10 date_format='MM/DD/YYYY',
+  Btime TIME field_length=8 date_format='hh:mm tt')
 engine=CONNECT table_type=CSV;
 
-insert into birthday values ('Charlie','2012-11-12','15:30:00');
+INSERT INTO birthday VALUES ('Charlie','2012-11-12','15:30:00');
 
-select * from birthday;
+SELECT * FROM birthday;
 ```
 
 The SELECT query returns:
@@ -227,9 +227,9 @@ columns declared as nullable.
 For instance:
 
 ```sql
-create table t1 (a int, b char(10)) engine=connect;
-insert into t1 values (0,'zero'),(1,'one'),(2,'two'),(null,'???');
-select * from t1 where a is null;
+CREATE TABLE t1 (a INT, b CHAR(10)) engine=connect;
+INSERT INTO t1 VALUES (0,'zero'),(1,'one'),(2,'two'),(NULL,'???');
+SELECT * FROM t1 WHERE a IS NULL;
 ```
 
 The select query replies:
@@ -244,7 +244,7 @@ Sure enough, the value 0 entered on the first row is regarded as NULL for a\
 nullable column. However, if we execute the query:
 
 ```sql
-select * from t1 where a = 0;
+SELECT * FROM t1 WHERE a = 0;
 ```
 
 This will return no line because a NULL is not equal to 0 in an SQL where clause.
@@ -252,8 +252,8 @@ This will return no line because a NULL is not equal to 0 in an SQL where clause
 Now let us see what happens with not null columns:
 
 ```sql
-create table t1 (a int not null, b char(10) not null) engine=connect;
-insert into t1 values (0,'zero'),(1,'one'),(2,'two'),(null,'???');
+CREATE TABLE t1 (a INT NOT NULL, b CHAR(10) NOT NULL) engine=connect;
+INSERT INTO t1 VALUES (0,'zero'),(1,'one'),(2,'two'),(NULL,'???');
 ```
 
 The insert statement will produce a warning saying:

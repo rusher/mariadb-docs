@@ -38,14 +38,14 @@ MariaDB Enterprise Server 10.6.20-16 was released on 2024-12-10.
     Example:
 
 ```sql
-select *
- from
+SELECT *
+ FROM
 json_table('{"a": "123"}',
- '$' columns(col1 INT path '$.a' default 1 on empty)) as T;
-select *
- from
+ '$' columns(col1 INT path '$.a' DEFAULT 1 ON empty)) AS T;
+SELECT *
+ FROM
 json_table('{"a": "123"}',
- '$' columns(col1 date path '$.date' default date '2020-01-01' on empty)) as T;
+ '$' columns(col1 DATE path '$.DATE' DEFAULT DATE '2020-01-01' ON empty)) AS T;
 ```
 
 * A new option `--skip-freed-pages` has been added to the innochecksum tool (MENT-2183)

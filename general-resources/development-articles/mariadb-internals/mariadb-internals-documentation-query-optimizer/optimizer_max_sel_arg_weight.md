@@ -16,23 +16,23 @@ Let's reuse the example from the [Range Optimizer](range-optimizer.md) page.
 
 ```sql
 CREATE TABLE t2 (
-  keypart1 int,
-  keypart2 varchar(100),
-  keypart3 int,
-  index idx(keypart1, keypart2, keypart3)
+  keypart1 INT,
+  keypart2 VARCHAR(100),
+  keypart3 INT,
+  INDEX idx(keypart1, keypart2, keypart3)
 );
 ```
 
 ```sql
-select * from t2 
-where
-  keypart1 in (1,2,3,4,5,6,7,8,9,10) and keypart2 in ('a','b', 'c') and keypart3 in (1,2,3,4);
+SELECT * FROM t2 
+WHERE
+  keypart1 IN (1,2,3,4,5,6,7,8,9,10) AND keypart2 IN ('a','b', 'c') AND keypart3 IN (1,2,3,4);
 ```
 
 Range optimizer will produce 10 \* 3 \* 4 = 120 ranges.
 
 ```sql
-select * from information_schema.optimizer_trace\G
+SELECT * FROM information_schema.optimizer_trace\G
 ```
 
 ```
@@ -96,9 +96,9 @@ Continuing with our example:
 
 ```sql
 -- This is very low, don't use in production:
-set @@optimizer_max_sel_arg_weight=50;
-select * from t2 where keypart1 in (1,2,3,4,5,6,7,8,9,10) and keypart2 in ('a','b', 'c') and keypart3 in (1,2,3,4);
-select * from information_schema.optimizer_trace\G
+SET @@optimizer_max_sel_arg_weight=50;
+SELECT * FROM t2 WHERE keypart1 IN (1,2,3,4,5,6,7,8,9,10) AND keypart2 IN ('a','b', 'c') AND keypart3 IN (1,2,3,4);
+SELECT * FROM information_schema.optimizer_trace\G
 ```
 
 shows

@@ -30,7 +30,7 @@ Note that no users are created.
 CREATE catalog cat1;
 USE catalog cat1;
 CREATE USER root@localhost;
-GRANT all privileges on *.* to root@localhost;
+GRANT ALL privileges ON *.* TO root@localhost;
 CREATE DATABASE test;
 ```
 

@@ -16,8 +16,8 @@ Note that a few items are marked with `TODO`; these are things we are working on
 
 ```sql
 BEGIN
-For each affected table
-SELECT 1 from <table> LIMIT 0
+FOR EACH affected TABLE
+SELECT 1 FROM <TABLE> LIMIT 0
 ```
 
 * If lock-ddl-per-table is not done, then mariadb-backup would have to know all tables that were created or altered during the backup. See [MDEV-16791](https://jira.mariadb.org/browse/MDEV-16791).

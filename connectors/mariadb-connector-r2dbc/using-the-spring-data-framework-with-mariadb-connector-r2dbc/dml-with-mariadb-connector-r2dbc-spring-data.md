@@ -100,7 +100,7 @@ Confirm the data was properly inserted by using MariaDB Client to execute a SELE
 Example output:
 
 ```sql
-SELECT * from test.contact;
+SELECT * FROM test.contact;
 ```
 
 ```

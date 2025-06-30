@@ -112,8 +112,8 @@ For instance, after the following sequence of commands, MaxScale will still\
 think _autocommit_ is on:
 
 ```sql
-set autocommit=1
-PREPARE hide_autocommit FROM "set autocommit=0"
+SET autocommit=1
+PREPARE hide_autocommit FROM "SET autocommit=0"
 EXECUTE hide_autocommit
 ```
 

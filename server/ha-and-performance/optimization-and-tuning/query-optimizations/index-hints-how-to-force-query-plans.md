@@ -145,7 +145,7 @@ it can avoid the overhead of using the index).
 ```sql
 CREATE INDEX Name ON City (Name);
 EXPLAIN SELECT Name,CountryCode FROM City FORCE INDEX (Name)
-WHERE name>="A" and CountryCode >="A";
+WHERE name>="A" AND CountryCode >="A";
 ```
 
 This produces:

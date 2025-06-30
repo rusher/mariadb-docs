@@ -193,7 +193,7 @@ Note that this variable does not affect the algorithm that MariaDB uses to decry
 Once the File Key Management Plugin is enabled, you can use it by creating an encrypted table:
 
 ```sql
-CREATE TABLE t (i int) ENGINE=InnoDB ENCRYPTED=YES
+CREATE TABLE t (i INT) ENGINE=InnoDB ENCRYPTED=YES
 ```
 
 Now, table `t` will be encrypted using the encryption key from the key file.

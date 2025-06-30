@@ -5,7 +5,7 @@
 With InnoDB tables using encryption, there are several cases where a [CREATE TABLE](../../../../../reference/sql-statements/data-definition/create/create-table.md) or [ALTER TABLE](../../../../../reference/sql-statements/data-definition/alter/alter-table.md) statement can throw Error 1005, due to the InnoDB error 140, `Wrong create options`. For instance,
 
 ```sql
-CREATE TABLE `test`.`table1` ( `id` int(4) primary key , `name` varchar(50));
+CREATE TABLE `test`.`table1` ( `id` INT(4) PRIMARY KEY , `name` VARCHAR(50));
 ERROR 1005 (HY000): Can't create table `test`.`table1` (errno: 140 "Wrong create options")
 ```
 

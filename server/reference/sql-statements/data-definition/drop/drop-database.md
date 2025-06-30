@@ -23,7 +23,7 @@ Use `IF EXISTS` to prevent an error from occurring for databases that do not exi
 [MariaDB 10.6.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/mariadb-1061-release-notes) supports [Atomic DDL](../atomic-ddl.md).`DROP DATABASE` is implemented as
 
 ```sql
-loop over all tables
+LOOP OVER ALL tables
   DROP TABLE tbl
 ```
 
@@ -45,11 +45,11 @@ DROP DATABASE bufg;
 ERROR 1008 (HY000): Can't drop database 'bufg'; database doesn't exist
 
  \W
-Show warnings enabled.
+SHOW warnings enabled.
 
 DROP DATABASE IF EXISTS bufg;
 Query OK, 0 rows affected, 1 warning (0.00 sec)
-Note (Code 1008): Can't drop database 'bufg'; database doesn't exist
+Note (Code 1008): Can't DROP DATABASE 'bufg'; DATABASE doesn't exist
 ```
 
 ## See Also

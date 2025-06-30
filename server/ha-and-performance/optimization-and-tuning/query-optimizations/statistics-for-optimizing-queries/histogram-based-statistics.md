@@ -9,7 +9,7 @@ Histograms are used by default from [MariaDB 10.4.3](https://app.gitbook.com/s/a
 Consider this example, using the following query:
 
 ```sql
-SELECT * FROM t1,t2 WHERE t1.a=t2.a and t2.b BETWEEN 1 AND 3;
+SELECT * FROM t1,t2 WHERE t1.a=t2.a AND t2.b BETWEEN 1 AND 3;
 ```
 
 Let's assume that
@@ -68,27 +68,27 @@ From [MariaDB 10.4.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-com
 Here is an example of the dramatic impact histogram-based statistics can make. The query is based on [DBT3 Benchmark Q20](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/optimization-and-tuning/query-optimizations/statistics-for-optimizing-queries/broken-reference/README.md) with 60 millions records in the `lineitem` table.
 
 ```sql
-select sql_calc_found_rows s_name, s_address from 
-supplier, nation where 
-  s_suppkey in
+SELECT SQL_CALC_FOUND_ROWS s_name, s_address FROM 
+supplier, nation WHERE 
+  s_suppkey IN
     (select ps_suppkey from partsupp where
-      ps_partkey in (select p_partkey from part where 
-         p_name like 'forest%') and 
+      ps_partkey IN (SELECT p_partkey FROM part WHERE 
+         p_name LIKE 'forest%') AND 
     ps_availqty > 
       (select 0.5 * sum(l_quantity) from lineitem where
-        l_partkey = ps_partkey and l_suppkey = ps_suppkey and
-        l_shipdate >= date('1994-01-01') and
-        l_shipdate < date('1994-01-01') + interval '1' year ))
-  and s_nationkey = n_nationkey
-  and n_name = 'CANADA'
-  order by s_name
-  limit 10;
+        l_partkey = ps_partkey AND l_suppkey = ps_suppkey AND
+        l_shipdate >= DATE('1994-01-01') AND
+        l_shipdate < DATE('1994-01-01') + INTERVAL '1' year ))
+  AND s_nationkey = n_nationkey
+  AND n_name = 'CANADA'
+  ORDER BY s_name
+  LIMIT 10;
 ```
 
 First,
 
 ```sql
-set optimizer_switch='materialization=off,semijoin=off';
+SET optimizer_switch='materialization=off,semijoin=off';
 ```
 
 ```sql
@@ -102,7 +102,7 @@ set optimizer_switch='materialization=off,semijoin=off';
 | 3 | DEP SUBQ| part     | unqsb |...| 1    |100.00 | Using where
 +---+-------- +----------+-------+...+------+----------+------------
 
-10 rows in set
+10 ROWS IN SET
 (51.78 sec)
 ```
 
@@ -119,14 +119,14 @@ Next, a really bad plan, yet one sometimes chosen:
 | 3 | DEP SUBQ| part     | unqsb |...| 1    |100.00 | Using where
 +---+-------- +----------+-------+...+------+----------+------------
 
-10 rows in set
+10 ROWS IN SET
 (7 min 33.42 sec)
 ```
 
 [Persistent statistics](engine-independent-table-statistics.md) don't improve matters:
 
 ```sql
-set use_stat_tables='preferably';
+SET use_stat_tables='preferably';
 +---+-------- +----------+-------+...+------+----------+------------
 | id| sel_type| table    | type  |...| rows | filt | Extra
 +---+-------- +----------+-------+...+------+----------+------------
@@ -137,14 +137,14 @@ set use_stat_tables='preferably';
 | 3 | DEP SUBQ| part     | unqsb |...| 1    |100.00 | Using where
 +---+-------- +----------+-------+...+------+----------+------------
 
-10 rows in set
+10 ROWS IN SET
 (7 min 40.44 sec)
 ```
 
 The default flags for [optimizer\_switch](../../system-variables/server-system-variables.md#optimizer_switch) do not help much:
 
 ```sql
-set optimizer_switch='materialization=default,semijoin=default';
+SET optimizer_switch='materialization=DEFAULT,semijoin=DEFAULT';
 +---+-------- +----------+-------+...+------+----------+------------
 | id| sel_type| table    | type  |...| rows  | filt  | Extra
 +---+-------- +----------+-------+...+------+----------+------------
@@ -156,15 +156,15 @@ set optimizer_switch='materialization=default,semijoin=default';
 | 4 | DEP SUBQ| lineitem | ref   |...| 7     |100.00 | Using where
 +---+-------- +----------+-------+...+------+----------+------------
 
-10 rows in set
+10 ROWS IN SET
 (5 min 21.44 sec)
 ```
 
 Using statistics doesn't help either:
 
 ```sql
-set optimizer_switch='materialization=default,semijoin=default';
-set optimizer_use_condition_selectivity=4;
+SET optimizer_switch='materialization=DEFAULT,semijoin=DEFAULT';
+SET optimizer_use_condition_selectivity=4;
 
 +---+-------- +----------+-------+...+------+----------+------------
 | id| sel_type| table    | type  |...| rows  | filt  | Extra
@@ -177,16 +177,16 @@ set optimizer_use_condition_selectivity=4;
 | 4 | DEP SUBQ| lineitem | ref   |...| 7     | 30.72 | Using where
 +---+-------- +----------+-------+...+------+----------+------------
 
-10 rows in set
+10 ROWS IN SET
 (5 min 22.41 sec)
 ```
 
 Now, taking into account the cost of the dependent subquery:
 
 ```sql
-set optimizer_switch='materialization=default,semijoin=default';
-set optimizer_use_condition_selectivity=4;
-set optimizer_switch='expensive_pred_static_pushdown=on';
+SET optimizer_switch='materialization=DEFAULT,semijoin=DEFAULT';
+SET optimizer_use_condition_selectivity=4;
+SET optimizer_switch='expensive_pred_static_pushdown=ON';
 +---+-------- +----------+-------+...+------+----------+------------
 | id| sel_type| table    | type  |...| rows | filt  | Extra
 +---+-------- +----------+-------+...+------+----------+------------
@@ -197,21 +197,21 @@ set optimizer_switch='expensive_pred_static_pushdown=on';
 | 4 | DEP SUBQ| lineitem | ref   |...| 7    | 30.72 | Using where
 +---+-------- +----------+-------+...+------+----------+------------
 
-10 rows in set
+10 ROWS IN SET
 (49.89 sec)
 ```
 
 Finally, using [join\_buffer](../../system-variables/server-system-variables.md#join_buffer_size) as well:
 
 ```sql
-set optimizer_switch= 'materialization=default,semijoin=default';
-set optimizer_use_condition_selectivity=4;
-set optimizer_switch='expensive_pred_static_pushdown=on';
-set join_cache_level=6;
-set optimizer_switch='mrr=on';
-set optimizer_switch='mrr_sort_keys=on';
-set join_buffer_size=1024*1024*16;
-set join_buffer_space_limit=1024*1024*32;
+SET optimizer_switch= 'materialization=DEFAULT,semijoin=DEFAULT';
+SET optimizer_use_condition_selectivity=4;
+SET optimizer_switch='expensive_pred_static_pushdown=ON';
+SET join_cache_level=6;
+SET optimizer_switch='mrr=ON';
+SET optimizer_switch='mrr_sort_keys=ON';
+SET join_buffer_size=1024*1024*16;
+SET join_buffer_space_limit=1024*1024*32;
 +---+-------- +----------+-------+...+------+----------+------------
 | id| sel_type| table    | type  |...| rows | filt |  Extra
 +---+-------- +----------+-------+...+------+----------+------------
@@ -222,7 +222,7 @@ set join_buffer_space_limit=1024*1024*32;
 | 4 | DEP SUBQ| lineitem | ref   |...| 7    | 30.72 | Using where
 +---+-------- +----------+-------+...+------+----------+------------
 
-10 rows in set
+10 ROWS IN SET
 (35.71 sec)
 ```
 

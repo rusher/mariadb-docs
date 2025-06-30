@@ -9,8 +9,8 @@ LOAD DATA [LOW_PRIORITY | CONCURRENT] [LOCAL] INFILE 'file_name'
     [CHARACTER SET charset_name]
     [{FIELDS | COLUMNS}
         [TERMINATED BY 'string']
-        [[OPTIONALLY] ENCLOSED BY 'char']
-        [ESCAPED BY 'char']
+        [[OPTIONALLY] ENCLOSED BY 'CHAR']
+        [ESCAPED BY 'CHAR']
     ]
     [LINES
         [STARTING BY 'string']
@@ -134,7 +134,7 @@ You have a file with this content (note the the separator is ',', not tab, which
 ```
 
 ```sql
-CREATE TABLE t1 (a int, b int, c int, d int, PRIMARY KEY (a));
+CREATE TABLE t1 (a INT, b INT, c INT, d INT, PRIMARY KEY (a));
 LOAD DATA LOCAL INFILE 
  '/tmp/loaddata7.dat' INTO TABLE t1 FIELDS TERMINATED BY ',' (a,b) SET c=a+b;
 SELECT * FROM t1;

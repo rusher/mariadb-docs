@@ -16,12 +16,12 @@ For example, this succeeds:
 
 ```sql
 CREATE OR REPLACE TABLE tab (
-   a int PRIMARY KEY,
-   b varchar(50)
+   a INT PRIMARY KEY,
+   b VARCHAR(50)
 );
 
 SET SESSION alter_algorithm='INSTANT';
-ALTER TABLE tab ADD COLUMN c varchar(50);
+ALTER TABLE tab ADD COLUMN c VARCHAR(50);
 Query OK, 0 rows affected (0.004 sec)
 ```
 
@@ -29,12 +29,12 @@ And this succeeds in [MariaDB 10.4](https://github.com/mariadb-corporation/docs-
 
 ```sql
 CREATE OR REPLACE TABLE tab (
-   a int PRIMARY KEY,
-   b varchar(50)
+   a INT PRIMARY KEY,
+   b VARCHAR(50)
 );
 
 SET SESSION alter_algorithm='INSTANT';
-ALTER TABLE tab ADD COLUMN c varchar(50) AFTER a;
+ALTER TABLE tab ADD COLUMN c VARCHAR(50) AFTER a;
 Query OK, 0 rows affected (0.004 sec)
 ```
 
@@ -54,9 +54,9 @@ For example:
 
 ```sql
 CREATE OR REPLACE TABLE tab (
-   a int PRIMARY KEY,
-   b varchar(50),
-   c varchar(50)
+   a INT PRIMARY KEY,
+   b VARCHAR(50),
+   c VARCHAR(50)
 );
 
 SET SESSION alter_algorithm='INSTANT';
@@ -82,13 +82,13 @@ For example:
 
 ```sql
 CREATE OR REPLACE TABLE tab (
-   a int PRIMARY KEY,
-   b varchar(50),
-   c varchar(50)
+   a INT PRIMARY KEY,
+   b VARCHAR(50),
+   c VARCHAR(50)
 );
 
 SET SESSION alter_algorithm='INSTANT';
-ALTER TABLE tab MODIFY COLUMN c varchar(50) AFTER a;
+ALTER TABLE tab MODIFY COLUMN c VARCHAR(50) AFTER a;
 Query OK, 0 rows affected (0.004 sec)
 ```
 
@@ -111,13 +111,13 @@ For example, this fails:
 
 ```sql
 CREATE OR REPLACE TABLE tab (
-   a int PRIMARY KEY,
-   b varchar(50),
-   c varchar(50)
+   a INT PRIMARY KEY,
+   b VARCHAR(50),
+   c VARCHAR(50)
 );
 
 SET SESSION alter_algorithm='INSTANT';
-ALTER TABLE tab MODIFY COLUMN c int;
+ALTER TABLE tab MODIFY COLUMN c INT;
 ERROR 1846 (0A000): ALGORITHM=INSTANT is not supported. Reason: Cannot change column type INPLACE. Try ALGORITHM=COPY
 ```
 
@@ -125,13 +125,13 @@ But this succeeds because the original length of the column is less than 256 byt
 
 ```sql
 CREATE OR REPLACE TABLE tab (
-   a int PRIMARY KEY,
-   b varchar(50),
-   c varchar(50)
+   a INT PRIMARY KEY,
+   b VARCHAR(50),
+   c VARCHAR(50)
 ) CHARACTER SET=latin1;
 
 SET SESSION alter_algorithm='INSTANT';
-ALTER TABLE tab MODIFY COLUMN c varchar(100);
+ALTER TABLE tab MODIFY COLUMN c VARCHAR(100);
 Query OK, 0 rows affected (0.005 sec)
 ```
 
@@ -139,13 +139,13 @@ But this fails because the original length of the column is between 128 bytes an
 
 ```sql
 CREATE OR REPLACE TABLE tab (
-   a int PRIMARY KEY,
-   b varchar(50),
-   c varchar(255)
+   a INT PRIMARY KEY,
+   b VARCHAR(50),
+   c VARCHAR(255)
 ) CHARACTER SET=latin1;
 
 SET SESSION alter_algorithm='INSTANT';
-ALTER TABLE tab MODIFY COLUMN c varchar(256);
+ALTER TABLE tab MODIFY COLUMN c VARCHAR(256);
 ERROR 1846 (0A000): ALGORITHM=INSTANT is not supported. Reason: Cannot change column type INPLACE. Try ALGORITHM=COPY
 ```
 
@@ -153,13 +153,13 @@ But this succeeds in [MariaDB 10.4.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrT
 
 ```sql
 CREATE OR REPLACE TABLE tab (
-   a int PRIMARY KEY,
-   b varchar(50),
-   c varchar(200)
+   a INT PRIMARY KEY,
+   b VARCHAR(50),
+   c VARCHAR(200)
 ) ROW_FORMAT=REDUNDANT;
 
 SET SESSION alter_algorithm='INSTANT';
-ALTER TABLE tab MODIFY COLUMN c varchar(300);
+ALTER TABLE tab MODIFY COLUMN c VARCHAR(300);
 Query OK, 0 rows affected (0.004 sec)
 ```
 
@@ -167,14 +167,14 @@ And this succeeds in [MariaDB 10.4.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrT
 
 ```sql
 CREATE OR REPLACE TABLE tab (
-   a int PRIMARY KEY,
-   b varchar(50),
-   c varchar(127)
+   a INT PRIMARY KEY,
+   b VARCHAR(50),
+   c VARCHAR(127)
 ) ROW_FORMAT=DYNAMIC
   CHARACTER SET=latin1;
 
 SET SESSION alter_algorithm='INSTANT';
-ALTER TABLE tab MODIFY COLUMN c varchar(300);
+ALTER TABLE tab MODIFY COLUMN c VARCHAR(300);
 Query OK, 0 rows affected (0.003 sec)
 ```
 
@@ -182,14 +182,14 @@ And this succeeds in [MariaDB 10.4.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrT
 
 ```sql
 CREATE OR REPLACE TABLE tab (
-   a int PRIMARY KEY,
-   b varchar(50),
-   c varchar(127)
+   a INT PRIMARY KEY,
+   b VARCHAR(50),
+   c VARCHAR(127)
 ) ROW_FORMAT=COMPRESSED
   CHARACTER SET=latin1;
 
 SET SESSION alter_algorithm='INSTANT';
-ALTER TABLE tab MODIFY COLUMN c varchar(300);
+ALTER TABLE tab MODIFY COLUMN c VARCHAR(300);
 Query OK, 0 rows affected (0.003 sec)
 ```
 
@@ -197,14 +197,14 @@ But this fails even in [MariaDB 10.4.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQ
 
 ```sql
 CREATE OR REPLACE TABLE tab (
-   a int PRIMARY KEY,
-   b varchar(50),
-   c varchar(128)
+   a INT PRIMARY KEY,
+   b VARCHAR(50),
+   c VARCHAR(128)
 ) ROW_FORMAT=DYNAMIC
   CHARACTER SET=latin1;
 
 SET SESSION alter_algorithm='INSTANT';
-ALTER TABLE tab MODIFY COLUMN c varchar(300);
+ALTER TABLE tab MODIFY COLUMN c VARCHAR(300);
 ERROR 1846 (0A000): ALGORITHM=INSTANT is not supported. Reason: Cannot change column type INPLACE. Try ALGORITHM=COPY
 ```
 
@@ -218,13 +218,13 @@ For example:
 
 ```sql
 CREATE OR REPLACE TABLE tab (
-   a int PRIMARY KEY,
-   b varchar(50),
-   c varchar(50) NOT NULL
+   a INT PRIMARY KEY,
+   b VARCHAR(50),
+   c VARCHAR(50) NOT NULL
 ) ROW_FORMAT=REDUNDANT;
 
 SET SESSION alter_algorithm='INSTANT';
-ALTER TABLE tab MODIFY COLUMN c varchar(50) NULL;
+ALTER TABLE tab MODIFY COLUMN c VARCHAR(50) NULL;
 Query OK, 0 rows affected (0.004 sec)
 ```
 
@@ -236,13 +236,13 @@ For example:
 
 ```sql
 CREATE OR REPLACE TABLE tab (
-   a int PRIMARY KEY,
-   b varchar(50),
-   c varchar(50)
+   a INT PRIMARY KEY,
+   b VARCHAR(50),
+   c VARCHAR(50)
 ) ROW_FORMAT=REDUNDANT;
 
 SET SESSION alter_algorithm='INSTANT';
-ALTER TABLE tab MODIFY COLUMN c varchar(50) NOT NULL;
+ALTER TABLE tab MODIFY COLUMN c VARCHAR(50) NOT NULL;
 ERROR 1845 (0A000): ALGORITHM=INSTANT is not supported for this operation. Try ALGORITHM=INPLACE
 ```
 
@@ -259,8 +259,8 @@ For example, this succeeds:
 
 ```sql
 CREATE OR REPLACE TABLE tab (
-   a int PRIMARY KEY,
-   b varchar(50),
+   a INT PRIMARY KEY,
+   b VARCHAR(50),
    c ENUM('red', 'green')
 );
 
@@ -273,8 +273,8 @@ But this fails:
 
 ```sql
 CREATE OR REPLACE TABLE tab (
-   a int PRIMARY KEY,
-   b varchar(50),
+   a INT PRIMARY KEY,
+   b VARCHAR(50),
    c ENUM('red', 'green')
 );
 
@@ -296,8 +296,8 @@ For example, this succeeds:
 
 ```sql
 CREATE OR REPLACE TABLE tab (
-   a int PRIMARY KEY,
-   b varchar(50),
+   a INT PRIMARY KEY,
+   b VARCHAR(50),
    c SET('red', 'green')
 );
 
@@ -310,8 +310,8 @@ But this fails:
 
 ```sql
 CREATE OR REPLACE TABLE tab (
-   a int PRIMARY KEY,
-   b varchar(50),
+   a INT PRIMARY KEY,
+   b VARCHAR(50),
    c SET('red', 'green')
 );
 
@@ -330,14 +330,14 @@ For example:
 
 ```sql
 CREATE OR REPLACE TABLE tab (
-   a int PRIMARY KEY,
-   b varchar(50),
-   c varchar(50) WITH SYSTEM VERSIONING
+   a INT PRIMARY KEY,
+   b VARCHAR(50),
+   c VARCHAR(50) WITH SYSTEM VERSIONING
 );
 
 SET SESSION system_versioning_alter_history='KEEP';
 SET SESSION alter_algorithm='INSTANT';
-ALTER TABLE tab MODIFY COLUMN c varchar(50) WITHOUT SYSTEM VERSIONING;
+ALTER TABLE tab MODIFY COLUMN c VARCHAR(50) WITHOUT SYSTEM VERSIONING;
 Query OK, 0 rows affected (0.004 sec)
 ```
 
@@ -355,13 +355,13 @@ For example:
 
 ```sql
 CREATE OR REPLACE TABLE tab (
-   a int PRIMARY KEY,
-   b varchar(50),
-   c varchar(50)
+   a INT PRIMARY KEY,
+   b VARCHAR(50),
+   c VARCHAR(50)
 );
 
 SET SESSION alter_algorithm='INSTANT';
-ALTER TABLE tab ALTER COLUMN c SET DEFAULT 'No value explicitly provided.';
+ALTER TABLE tab ALTER COLUMN c SET DEFAULT 'NO value explicitly provided.';
 Query OK, 0 rows affected (0.003 sec)
 ```
 
@@ -373,9 +373,9 @@ This operation supports the non-locking strategy. This strategy can be explicitl
 
 ```sql
 CREATE OR REPLACE TABLE tab (
-   a int PRIMARY KEY,
-   b varchar(50),
-   c varchar(50) DEFAULT 'No value explicitly provided.'
+   a INT PRIMARY KEY,
+   b VARCHAR(50),
+   c VARCHAR(50) DEFAULT 'NO value explicitly provided.'
 );
 
 SET SESSION alter_algorithm='INSTANT';
@@ -393,13 +393,13 @@ For example, this succeeds:
 
 ```sql
 CREATE OR REPLACE TABLE tab (
-   a int PRIMARY KEY,
-   b varchar(50),
-   c varchar(50)
+   a INT PRIMARY KEY,
+   b VARCHAR(50),
+   c VARCHAR(50)
 );
 
 SET SESSION alter_algorithm='INSTANT';
-ALTER TABLE tab CHANGE COLUMN c str varchar(50);
+ALTER TABLE tab CHANGE COLUMN c str VARCHAR(50);
 Query OK, 0 rows affected (0.004 sec)
 ```
 
@@ -407,13 +407,13 @@ But this fails:
 
 ```sql
 CREATE OR REPLACE TABLE tab (
-   a int PRIMARY KEY,
-   b varchar(50),
-   c varchar(50)
+   a INT PRIMARY KEY,
+   b VARCHAR(50),
+   c VARCHAR(50)
 );
 
 SET SESSION alter_algorithm='INSTANT';
-ALTER TABLE tab CHANGE COLUMN c num int;
+ALTER TABLE tab CHANGE COLUMN c num INT;
 ERROR 1846 (0A000): ALGORITHM=INSTANT is not supported. Reason: Cannot change column type INPLACE. Try ALGORITHM=COPY
 ```
 
@@ -429,9 +429,9 @@ For example:
 
 ```sql
 CREATE OR REPLACE TABLE tab (
-   a int,
-   b varchar(50),
-   c varchar(50)
+   a INT,
+   b VARCHAR(50),
+   c VARCHAR(50)
 );
 
 SET SESSION sql_mode='STRICT_TRANS_TABLES';
@@ -450,9 +450,9 @@ For example:
 
 ```sql
 CREATE OR REPLACE TABLE tab (
-   a int PRIMARY KEY,
-   b varchar(50),
-   c varchar(50)
+   a INT PRIMARY KEY,
+   b VARCHAR(50),
+   c VARCHAR(50)
 );
 
 SET SESSION alter_algorithm='INSTANT';
@@ -474,9 +474,9 @@ For example, this fails:
 
 ```sql
 CREATE OR REPLACE TABLE tab (
-   a int PRIMARY KEY,
-   b varchar(50),
-   c varchar(50)
+   a INT PRIMARY KEY,
+   b VARCHAR(50),
+   c VARCHAR(50)
 );
 
 SET SESSION alter_algorithm='INSTANT';
@@ -488,9 +488,9 @@ And this fails:
 
 ```sql
 CREATE OR REPLACE TABLE tab (
-   a int PRIMARY KEY,
-   b varchar(50),
-   c varchar(50)
+   a INT PRIMARY KEY,
+   b VARCHAR(50),
+   c VARCHAR(50)
 );
 
 SET SESSION alter_algorithm='INSTANT';
@@ -506,9 +506,9 @@ For example, this fails:
 
 ```sql
 CREATE OR REPLACE TABLE tab (
-   a int PRIMARY KEY,
-   b varchar(50),
-   c varchar(50)
+   a INT PRIMARY KEY,
+   b VARCHAR(50),
+   c VARCHAR(50)
 );
 
 SET SESSION alter_algorithm='INPLACE';
@@ -524,9 +524,9 @@ And this fails:
 
 ```sql
 CREATE OR REPLACE TABLE tab (
-   a int PRIMARY KEY,
-   b varchar(50),
-   c varchar(50)
+   a INT PRIMARY KEY,
+   b VARCHAR(50),
+   c VARCHAR(50)
 );
 
 SET SESSION alter_algorithm='INPLACE';
@@ -546,8 +546,8 @@ For example, this fails:
 
 ```sql
 CREATE OR REPLACE TABLE tab (
-   a int PRIMARY KEY,
-   b varchar(50),
+   a INT PRIMARY KEY,
+   b VARCHAR(50),
    c GEOMETRY NOT NULL
 );
 
@@ -560,8 +560,8 @@ And this fails:
 
 ```sql
 CREATE OR REPLACE TABLE tab (
-   a int PRIMARY KEY,
-   b varchar(50),
+   a INT PRIMARY KEY,
+   b VARCHAR(50),
    c GEOMETRY NOT NULL
 );
 
@@ -578,15 +578,15 @@ For example:
 
 ```sql
 CREATE OR REPLACE TABLE tab1 (
-   a int PRIMARY KEY,
-   b varchar(50),
-   c varchar(50),
-   d int
+   a INT PRIMARY KEY,
+   b VARCHAR(50),
+   c VARCHAR(50),
+   d INT
 );
 
 CREATE OR REPLACE TABLE tab2 (
-   a int PRIMARY KEY,
-   b varchar(50)
+   a INT PRIMARY KEY,
+   b VARCHAR(50)
 );
 
 SET SESSION foreign_key_checks=OFF;
@@ -607,15 +607,15 @@ For example:
 
 ```sql
 CREATE OR REPLACE TABLE tab2 (
-   a int PRIMARY KEY,
-   b varchar(50)
+   a INT PRIMARY KEY,
+   b VARCHAR(50)
 );
 
 CREATE OR REPLACE TABLE tab1 (
-   a int PRIMARY KEY,
-   b varchar(50),
-   c varchar(50),
-   d int,
+   a INT PRIMARY KEY,
+   b VARCHAR(50),
+   c VARCHAR(50),
+   d INT,
    FOREIGN KEY tab2_fk (d) REFERENCES tab2 (a)
 );
 
@@ -638,9 +638,9 @@ For example:
 
 ```sql
 CREATE OR REPLACE TABLE tab (
-   a int PRIMARY KEY,
-   b varchar(50),
-   c varchar(50)
+   a INT PRIMARY KEY,
+   b VARCHAR(50),
+   c VARCHAR(50)
 );
 
 SET SESSION alter_algorithm='INSTANT';
@@ -658,9 +658,9 @@ For example:
 
 ```sql
 CREATE OR REPLACE TABLE tab (
-   a int PRIMARY KEY,
-   b varchar(50),
-   c varchar(50)
+   a INT PRIMARY KEY,
+   b VARCHAR(50),
+   c VARCHAR(50)
 ) ROW_FORMAT=DYNAMIC;
 
 SET SESSION alter_algorithm='INSTANT';
@@ -678,9 +678,9 @@ For example:
 
 ```sql
 CREATE OR REPLACE TABLE tab (
-   a int PRIMARY KEY,
-   b varchar(50),
-   c varchar(50)
+   a INT PRIMARY KEY,
+   b VARCHAR(50),
+   c VARCHAR(50)
 ) ROW_FORMAT=COMPRESSED
   KEY_BLOCK_SIZE=4;
 
@@ -705,9 +705,9 @@ For example, this succeeds:
 
 ```sql
 CREATE OR REPLACE TABLE tab (
-   a int PRIMARY KEY,
-   b varchar(50),
-   c varchar(50)
+   a INT PRIMARY KEY,
+   b VARCHAR(50),
+   c VARCHAR(50)
 );
 
 SET SESSION alter_algorithm='INSTANT';
@@ -719,9 +719,9 @@ And this succeeds:
 
 ```sql
 CREATE OR REPLACE TABLE tab (
-   a int PRIMARY KEY,
-   b varchar(50),
-   c varchar(50)
+   a INT PRIMARY KEY,
+   b VARCHAR(50),
+   c VARCHAR(50)
 ) PAGE_COMPRESSED=1
   PAGE_COMPRESSION_LEVEL=5;
 
@@ -734,9 +734,9 @@ But this fails:
 
 ```sql
 CREATE OR REPLACE TABLE tab (
-   a int PRIMARY KEY,
-   b varchar(50),
-   c varchar(50)
+   a INT PRIMARY KEY,
+   b VARCHAR(50),
+   c VARCHAR(50)
 ) PAGE_COMPRESSED=1;
 
 SET SESSION alter_algorithm='INSTANT';
@@ -754,9 +754,9 @@ For example:
 
 ```sql
 CREATE OR REPLACE TABLE tab (
-   a int PRIMARY KEY,
-   b varchar(50),
-   c varchar(50)
+   a INT PRIMARY KEY,
+   b VARCHAR(50),
+   c VARCHAR(50)
 ) WITH SYSTEM VERSIONING;
 
 SET SESSION alter_algorithm='INSTANT';
@@ -776,9 +776,9 @@ For example:
 
 ```sql
 CREATE OR REPLACE TABLE tab (
-   a int PRIMARY KEY,
-   b varchar(50),
-   c varchar(50),
+   a INT PRIMARY KEY,
+   b VARCHAR(50),
+   c VARCHAR(50),
    CONSTRAINT b_not_empty CHECK (b != '')
 );
 
@@ -797,9 +797,9 @@ For example:
 
 ```sql
 CREATE OR REPLACE TABLE tab (
-   a int PRIMARY KEY,
-   b varchar(50),
-   c varchar(50)
+   a INT PRIMARY KEY,
+   b VARCHAR(50),
+   c VARCHAR(50)
 );
 
 SET SESSION alter_algorithm='INSTANT';
@@ -817,9 +817,9 @@ For example:
 
 ```sql
 CREATE OR REPLACE TABLE tab (
-   a int PRIMARY KEY,
-   b varchar(50),
-   c varchar(50)
+   a INT PRIMARY KEY,
+   b VARCHAR(50),
+   c VARCHAR(50)
 );
 
 SET SESSION alter_algorithm='INSTANT';
@@ -837,9 +837,9 @@ For example:
 
 ```sql
 CREATE OR REPLACE TABLE tab (
-   a int PRIMARY KEY,
-   b varchar(50),
-   c varchar(50)
+   a INT PRIMARY KEY,
+   b VARCHAR(50),
+   c VARCHAR(50)
 );
 
 SHOW GLOBAL VARIABLES WHERE Variable_name IN('innodb_defragment', 'innodb_optimize_fulltext_only');
@@ -875,9 +875,9 @@ For example, this succeeds:
 
 ```sql
 CREATE OR REPLACE TABLE tab (
-   a int PRIMARY KEY,
-   b varchar(50),
-   c varchar(50)
+   a INT PRIMARY KEY,
+   b VARCHAR(50),
+   c VARCHAR(50)
 );
 
 SET SESSION alter_algorithm='INSTANT';
@@ -889,9 +889,9 @@ And this succeeds:
 
 ```sql
 CREATE OR REPLACE TABLE tab (
-   a int PRIMARY KEY,
-   b varchar(50),
-   c varchar(50)
+   a INT PRIMARY KEY,
+   b VARCHAR(50),
+   c VARCHAR(50)
 );
 
 SET SESSION alter_algorithm='INSTANT';
@@ -951,7 +951,7 @@ If you are concerned about these bugs, and you want to perform an operation that
 
 ```sql
 SET SESSION alter_algorithm='INPLACE';
-ALTER TABLE tab ADD COLUMN c varchar(50), FORCE;
+ALTER TABLE tab ADD COLUMN c VARCHAR(50), FORCE;
 ```
 
 #### Closed Bugs

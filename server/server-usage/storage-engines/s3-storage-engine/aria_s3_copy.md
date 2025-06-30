@@ -13,7 +13,7 @@ For `aria_s3_copy` to work reliably, the table should not be changed by the Mari
 Example of properly created Aria table:
 
 ```sql
-create table test1 (a int) transactional=0 row_format=PAGE engine=aria;
+CREATE TABLE test1 (a INT) transactional=0 row_format=PAGE engine=aria;
 ```
 
 Note that [ALTER TABLE table\_name ENGINE=S3](using-the-s3-storage-engine.md) will work for any kind of table. This internally converts the table to an Aria table and then moves it to S3 storage.

@@ -65,8 +65,8 @@ SET GLOBAL innodb_file_per_table=ON;
 SET GLOBAL innodb_file_format='Barracuda';
 
 CREATE TABLE tab (
-   id int,
-   str varchar(50)
+   id INT,
+   str VARCHAR(50)
 ) ENGINE=InnoDB KEY_BLOCK_SIZE=4;
 ```
 
@@ -80,8 +80,8 @@ SET GLOBAL innodb_file_per_table=ON;
 SET GLOBAL innodb_file_format='Barracuda';
 
 CREATE TABLE tab (
-   id int,
-   str varchar(50)
+   id INT,
+   str VARCHAR(50)
 ) ENGINE=InnoDB ROW_FORMAT=COMPRESSED;
 ```
 

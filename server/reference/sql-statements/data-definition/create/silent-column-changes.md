@@ -42,10 +42,10 @@ Silent changes in action:
 ```sql
 CREATE TABLE SilenceIsGolden
    (
-    f1 TEXT CHARACTER SET binary,
-    f2 VARCHAR(15) CHARACTER SET binary,
-    f3 CHAR CHARACTER SET binary,
-    f4 ENUM('x','y','z') CHARACTER SET binary,
+    f1 TEXT CHARACTER SET BINARY,
+    f2 VARCHAR(15) CHARACTER SET BINARY,
+    f3 CHAR CHARACTER SET BINARY,
+    f4 ENUM('x','y','z') CHARACTER SET BINARY,
     f5 VARCHAR (65536),
     f6 VARBINARY (65536),
     f7 INT1

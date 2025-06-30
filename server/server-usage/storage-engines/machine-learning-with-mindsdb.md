@@ -17,14 +17,14 @@ For example, if MindsDB is installed locally, one can create a user called `mind
 
 ```sql
 CREATE USER mindsdb@localhost;
-SET PASSWORD for mindsdb@localhost=PASSWORD("password");
+SET PASSWORD FOR mindsdb@localhost=PASSWORD("password");
 ```
 
 The user must be granted the global [FILE](../../reference/sql-statements/account-management-sql-statements/grant.md#file) privilege and all privileges on the `mindsdb` database.
 
 ```sql
-GRANT FILE on *.* to mindsdb@localhost;
-GRANT ALL on mindsdb.* to mindsdb@localhost;
+GRANT FILE ON *.* TO mindsdb@localhost;
+GRANT ALL ON mindsdb.* TO mindsdb@localhost;
 ```
 
 Assuming MindsDB is in the python path one can start up MindsDB with the following parameters:

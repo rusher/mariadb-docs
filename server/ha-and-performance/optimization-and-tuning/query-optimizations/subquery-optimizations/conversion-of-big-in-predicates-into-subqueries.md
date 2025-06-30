@@ -5,7 +5,7 @@ Starting from [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mari
 That is, an IN predicate in the form
 
 ```sql
-column [NOT] IN (const1, const2, .... )
+COLUMN [NOT] IN (const1, const2, .... )
 ```
 
 is converted into an equivalent IN-subquery:
@@ -30,7 +30,7 @@ The conversion happens if the following conditions are met:
 If `column` is a key-prefix, MariaDB optimizer will process the condition
 
 ```sql
-column [NOT] IN (const1, const2, .... )
+COLUMN [NOT] IN (const1, const2, .... )
 ```
 
 by trying to construct a range access. If the list is large, the analysis may take a lot of memory and CPU time. The problem gets worse when `column` is a part of a multi-column index and the query has conditions on other parts of the index.

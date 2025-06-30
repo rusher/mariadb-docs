@@ -106,7 +106,7 @@ connection=mysql://username:password@hostname:port/database/tablename
 Or, using a Federated server, first a server is created:
 
 ```sql
-create server 'server_one' foreign data wrapper 'mysql' options
+CREATE server 'server_one' FOREIGN data wrapper 'mysql' options
   (HOST '127.0.0.1',
   DATABASE 'db1',
   USER 'root',
@@ -233,9 +233,9 @@ First, on the foreign database you create a table, for example:
 
 ```sql
 CREATE TABLE federated.test_table (
-  id     int(20) NOT NULL auto_increment,
-  name   varchar(32) NOT NULL default '',
-  other  int(20) NOT NULL default '0',
+  id     INT(20) NOT NULL auto_increment,
+  name   VARCHAR(32) NOT NULL DEFAULT '',
+  other  INT(20) NOT NULL DEFAULT '0',
   PRIMARY KEY  (id),
   KEY name (name),
   KEY other_key (other))
@@ -262,9 +262,9 @@ Alternatively (or if you're using MariaDB before version 10.0.2) you specify the
 
 ```sql
 CREATE TABLE federated_test_table (
-  id     int(20) NOT NULL auto_increment,
-  name   varchar(32) NOT NULL default '',
-  other  int(20) NOT NULL default '0',
+  id     INT(20) NOT NULL auto_increment,
+  name   VARCHAR(32) NOT NULL DEFAULT '',
+  other  INT(20) NOT NULL DEFAULT '0',
   PRIMARY KEY  (id),
   KEY name (name),
   KEY other_key (other))
@@ -322,7 +322,7 @@ Another thing to look for is 'show variables' to show you that you have\
 support for FederatedX handler support:
 
 ```sql
-SHOW variables like '%federat%'
+SHOW variables LIKE '%federat%'
 ```
 
 and:
@@ -347,7 +347,7 @@ CREATE TABLE federated_test_table ENGINE=FEDERATED
 You could instead create this with a server:
 
 ```sql
-CREATE SERVER 'server_one' foreign data wrapper 'mysql' options
+CREATE SERVER 'server_one' FOREIGN data wrapper 'mysql' options
   (HOST '192.168.1.123',		
   DATABASE 'first_db',		
   USER 'patg',

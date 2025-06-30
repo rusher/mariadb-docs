@@ -47,16 +47,16 @@ spider> mysql -u spider -p -h 172.21.21.4 test
 The table definition should be created in the test database on both backend1 and backend2 servers:
 
 ```sql
-create table opportunities (
-id int,
-accountName varchar(20),
-name varchar(128),
-owner varchar(7),
-amount decimal(10,2),
-closeDate date,
-stageName varchar(11),
-primary key (id),
-key (accountName)
+CREATE TABLE opportunities (
+id INT,
+accountName VARCHAR(20),
+name VARCHAR(128),
+owner VARCHAR(7),
+amount DECIMAL(10,2),
+closeDate DATE,
+stageName VARCHAR(11),
+PRIMARY KEY (id),
+KEY (accountName)
 ) engine=InnoDB;
 ```
 
@@ -65,9 +65,9 @@ key (accountName)
 While the connection information can also be specified inline in the comment or (from [MariaDB 10.8.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-8-series/mariadb-1081-release-notes)) as table options, it is cleaner to define a server object representing each remote backend server connection:
 
 ```sql
-create server backend1 foreign data wrapper mysql options 
+CREATE server backend1 FOREIGN data wrapper mysql options 
 (host '172.21.21.3', database 'test', user 'spider', password 'spider', port 3306);
-create server backend2 foreign data wrapper mysql options 
+CREATE server backend2 FOREIGN data wrapper mysql options 
 (host '172.21.21.4', database 'test', user 'spider', password 'spider', port 3306);
 ```
 
@@ -90,17 +90,17 @@ FLUSH TABLES;
 In this case, a spider table is created to allow remote access to the opportunities table hosted on backend1. This then allows for queries and remote dml into the backend1 server from the spider server:
 
 ```sql
-create table opportunities (
-id int,
-accountName varchar(20),
-name varchar(128),
-owner varchar(7),
-amount decimal(10,2),
-closeDate date,
-stageName varchar(11),
-primary key (id),
-key (accountName)
-) engine=spider comment='wrapper "mysql", srv "backend1" , table "opportunities"';
+CREATE TABLE opportunities (
+id INT,
+accountName VARCHAR(20),
+name VARCHAR(128),
+owner VARCHAR(7),
+amount DECIMAL(10,2),
+closeDate DATE,
+stageName VARCHAR(11),
+PRIMARY KEY (id),
+KEY (accountName)
+) engine=spider comment='wrapper "mysql", srv "backend1" , TABLE "opportunities"';
 ```
 
 ## Use case 2: sharding by hash
@@ -110,17 +110,17 @@ See also [hash-partitioning-type](../../../server-management/partitioning-tables
 In this case a spider table is created to distribute data across backend1 and backend2 by hashing the id column. Since the id column is an incrementing numeric value the hashing will ensure even distribution across the 2 nodes.
 
 ```sql
-create table opportunities (
-id int,
-accountName varchar(20),
-name varchar(128),
-owner varchar(7),
-amount decimal(10,2),
-closeDate date,
-stageName varchar(11),
-primary key (id),
-key (accountName)
-) engine=spider COMMENT='wrapper "mysql", table "opportunities"'
+CREATE TABLE opportunities (
+id INT,
+accountName VARCHAR(20),
+name VARCHAR(128),
+owner VARCHAR(7),
+amount DECIMAL(10,2),
+closeDate DATE,
+stageName VARCHAR(11),
+PRIMARY KEY (id),
+KEY (accountName)
+) engine=spider COMMENT='wrapper "mysql", TABLE "opportunities"'
  PARTITION BY HASH (id)
 (
  PARTITION pt1 COMMENT = 'srv "backend1"',
@@ -135,21 +135,21 @@ See also [range-partitioning-type](../../../server-management/partitioning-table
 In this case a spider table is created to distribute data across backend1 and backend2 based on the first letter of the accountName field. All accountNames that start with the letter L and prior will be stored in backend1 and all other values stored in backend2. Note that the accountName column must be added to the primary key which is a requirement of MariaDB partitioning:
 
 ```sql
-create table opportunities (
-id int,
-accountName varchar(20),
-name varchar(128),
-owner varchar(7),
-amount decimal(10,2),
-closeDate date,
-stageName varchar(11),
-primary key (id, accountName),
-key(accountName)
-) engine=spider COMMENT='wrapper "mysql", table "opportunities"'
- PARTITION BY range columns (accountName)
+CREATE TABLE opportunities (
+id INT,
+accountName VARCHAR(20),
+name VARCHAR(128),
+owner VARCHAR(7),
+amount DECIMAL(10,2),
+closeDate DATE,
+stageName VARCHAR(11),
+PRIMARY KEY (id, accountName),
+KEY(accountName)
+) engine=spider COMMENT='wrapper "mysql", TABLE "opportunities"'
+ PARTITION BY RANGE columns (accountName)
 (
- PARTITION pt1 values less than ('M') COMMENT = 'srv "backend1"',
- PARTITION pt2 values less than (maxvalue) COMMENT = 'srv "backend2"'
+ PARTITION pt1 VALUES less than ('M') COMMENT = 'srv "backend1"',
+ PARTITION pt2 VALUES less than (MAXVALUE) COMMENT = 'srv "backend2"'
 ) ;
 ```
 
@@ -160,21 +160,21 @@ See also [list-partitioning-type](../../../server-management/partitioning-tables
 In this case a spider table is created to distribute data across backend1 and backend2 based on specific values in the owner field. Bill, Bob, and Chris will be stored in backend1 and Maria and Olivier stored in backend2. Note that the owner column must be added to the primary key which is a requirement of MariaDB partitioning:
 
 ```sql
-create table opportunities (
-id int,
-accountName varchar(20),
-name varchar(128),
-owner varchar(7),
-amount decimal(10,2),
-closeDate date,
-stageName varchar(11),
-primary key (id, owner),
-key(accountName)
-) engine=spider COMMENT='wrapper "mysql", table "opportunities"'
+CREATE TABLE opportunities (
+id INT,
+accountName VARCHAR(20),
+name VARCHAR(128),
+owner VARCHAR(7),
+amount DECIMAL(10,2),
+closeDate DATE,
+stageName VARCHAR(11),
+PRIMARY KEY (id, owner),
+KEY(accountName)
+) engine=spider COMMENT='wrapper "mysql", TABLE "opportunities"'
  PARTITION BY list columns (owner)
 (
- PARTITION pt1 values in ('Bill', 'Bob', 'Chris') COMMENT = 'srv "backend1"',
- PARTITION pt2 values in ('Maria', 'Olivier') COMMENT = 'srv "backend2"'
+ PARTITION pt1 VALUES IN ('Bill', 'Bob', 'Chris') COMMENT = 'srv "backend1"',
+ PARTITION pt2 VALUES IN ('Maria', 'Olivier') COMMENT = 'srv "backend2"'
 ) ;
 ```
 

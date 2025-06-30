@@ -19,8 +19,8 @@ Let's see why this is important. Consider a semi-join subquery:
 ```sql
 SELECT * FROM Country 
 WHERE 
-  Continent='Europe' and 
-  Country.Code in (SELECT City.country 
+  Continent='Europe' AND 
+  Country.Code IN (SELECT City.country 
                    FROM City 
                    WHERE City.Population>1*1000*1000);
 ```

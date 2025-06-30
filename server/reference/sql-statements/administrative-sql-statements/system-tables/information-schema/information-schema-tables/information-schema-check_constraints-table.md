@@ -19,13 +19,13 @@ It contains the following columns:
 A table with a numeric table check constraint and with a default check constraint name:
 
 ```sql
-CREATE TABLE t ( a int, CHECK (a>10));
+CREATE TABLE t ( a INT, CHECK (a>10));
 ```
 
 To see check constraint call `check_constraints` table from [information schema](../).
 
 ```sql
-SELECT * from INFORMATION_SCHEMA.CHECK_CONSTRAINTS\G
+SELECT * FROM INFORMATION_SCHEMA.CHECK_CONSTRAINTS\G
 ```
 
 ```sql
@@ -44,7 +44,7 @@ ALTER TABLE t ADD CONSTRAINT a_upper CHECK (a<100);
 ```
 
 ```sql
-SELECT * from INFORMATION_SCHEMA.CHECK_CONSTRAINTS\G
+SELECT * FROM INFORMATION_SCHEMA.CHECK_CONSTRAINTS\G
 ```
 
 ```sql
@@ -65,9 +65,9 @@ CONSTRAINT_CATALOG: def
 A new table `tt` with a field check constraint called `b` , as well as a table check constraint called `b_upper`:
 
 ```sql
-CREATE TABLE tt(b int CHECK(b>0),CONSTRAINT b_upper CHECK(b<50));
+CREATE TABLE tt(b INT CHECK(b>0),CONSTRAINT b_upper CHECK(b<50));
 
-SELECT * from INFORMATION_SCHEMA.CHECK_CONSTRAINTS;
+SELECT * FROM INFORMATION_SCHEMA.CHECK_CONSTRAINTS;
 +--------------------+-------------------+-----------------+------------+--------------+
 | CONSTRAINT_CATALOG | CONSTRAINT_SCHEMA | CONSTRAINT_NAME | TABLE_NAME | CHECK_CLAUSE |
 +--------------------+-------------------+-----------------+------------+--------------+
@@ -85,7 +85,7 @@ After dropping the default table constraint called `CONSTRAINT_1`:
 ```sql
 ALTER TABLE t DROP CONSTRAINT CONSTRAINT_1;
 
-SELECT * from INFORMATION_SCHEMA.CHECK_CONSTRAINTS;
+SELECT * FROM INFORMATION_SCHEMA.CHECK_CONSTRAINTS;
 +--------------------+-------------------+-----------------+------------+--------------+
 | CONSTRAINT_CATALOG | CONSTRAINT_SCHEMA | CONSTRAINT_NAME | TABLE_NAME | CHECK_CLAUSE |
 +--------------------+-------------------+-----------------+------------+--------------+
@@ -111,8 +111,8 @@ ERROR 4025 (23000): CONSTRAINT `b_upper` failed for `test`.`tt`
 From [MariaDB 10.5.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-10510-release-notes):
 
 ```sql
-CREATE TABLE majra(check(x>0), x int, y int check(y < 0), z int,
-                              constraint z check(z>0), constraint xyz check(x<10 and y<10 and z<10));
+CREATE TABLE majra(CHECK(x>0), x INT, y INT CHECK(y < 0), z INT,
+                              CONSTRAINT z CHECK(z>0), CONSTRAINT xyz CHECK(x<10 AND y<10 AND z<10));
 Query OK, 0 rows affected (0.036 sec)
 
 SHOW CREATE TABLE majra;
@@ -125,7 +125,7 @@ SHOW CREATE TABLE majra;
   `z` int(11) DEFAULT NULL,
   CONSTRAINT `CONSTRAINT_1` CHECK (`x` > 0),
   CONSTRAINT `z` CHECK (`z` > 0),
-  CONSTRAINT `xyz` CHECK (`x` < 10 and `y` < 10 and `z` < 10)
+  CONSTRAINT `xyz` CHECK (`x` < 10 AND `y` < 10 AND `z` < 10)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 |
 +-------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 1 row in set (0.000 sec)

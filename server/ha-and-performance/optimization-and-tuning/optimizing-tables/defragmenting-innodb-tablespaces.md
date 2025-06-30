@@ -51,80 +51,80 @@ A number of new system and status variables for controlling and monitoring the f
 ## Example
 
 ```sql
-set @@global.innodb_file_per_table = 1;
-set @@global.innodb_defragment_n_pages = 32;
-set @@global.innodb_defragment_fill_factor = 0.95;
+SET @@global.innodb_file_per_table = 1;
+SET @@global.innodb_defragment_n_pages = 32;
+SET @@global.innodb_defragment_fill_factor = 0.95;
 CREATE TABLE tb_defragment (
-pk1 bigint(20) NOT NULL,
-pk2 bigint(20) NOT NULL,
-fd4 text,
-fd5 varchar(50) DEFAULT NULL,
+pk1 BIGINT(20) NOT NULL,
+pk2 BIGINT(20) NOT NULL,
+fd4 TEXT,
+fd5 VARCHAR(50) DEFAULT NULL,
 PRIMARY KEY (pk1),
 KEY ix1 (pk2)
 ) ENGINE=InnoDB;
  
 delimiter //
-create procedure innodb_insert_proc (repeat_count int)
+CREATE PROCEDURE innodb_insert_proc (repeat_count INT)
 begin
-  declare current_num int;
-  set current_num = 0;
-  while current_num < repeat_count do
+  DECLARE current_num INT;
+  SET current_num = 0;
+  WHILE current_num < repeat_count do
     INSERT INTO tb_defragment VALUES (current_num, 1, REPEAT('Abcdefg', 20), REPEAT('12345',5));
     INSERT INTO tb_defragment VALUES (current_num+1, 2, REPEAT('HIJKLM', 20), REPEAT('67890',5));
     INSERT INTO tb_defragment VALUES (current_num+2, 3, REPEAT('HIJKLM', 20), REPEAT('67890',5));
     INSERT INTO tb_defragment VALUES (current_num+3, 4, REPEAT('HIJKLM', 20), REPEAT('67890',5));
-    set current_num = current_num + 4;
-  end while;
+    SET current_num = current_num + 4;
+  end WHILE;
 end//
 delimiter ;
 commit;
  
-set autocommit=0;
-call innodb_insert_proc(50000);
+SET autocommit=0;
+CALL innodb_insert_proc(50000);
 commit;
-set autocommit=1;
+SET autocommit=1;
 ```
 
 After these CREATE and INSERT operations, the following information can be seen from the INFORMATION SCHEMA:
 
 ```sql
-select count(*) as Value from information_schema.innodb_buffer_page 
-  where table_name like '%tb_defragment%' and index_name = 'PRIMARY';
+SELECT count(*) AS Value FROM information_schema.innodb_buffer_page 
+  WHERE table_name LIKE '%tb_defragment%' AND index_name = 'PRIMARY';
 Value
 313
  
-select count(*) as Value from information_schema.innodb_buffer_page 
-  where table_name like '%tb_defragment%' and index_name = 'ix1';
+SELECT count(*) AS Value FROM information_schema.innodb_buffer_page 
+  WHERE table_name LIKE '%tb_defragment%' AND index_name = 'ix1';
 Value
 72
  
-select count(stat_value) from mysql.innodb_index_stats 
-  where table_name like '%tb_defragment%' and stat_name in ('n_pages_freed');
+SELECT count(stat_value) FROM mysql.innodb_index_stats 
+  WHERE table_name LIKE '%tb_defragment%' AND stat_name IN ('n_pages_freed');
 count(stat_value)
 0
  
-select count(stat_value) from mysql.innodb_index_stats 
-  where table_name like '%tb_defragment%' and stat_name in ('n_page_split');
+SELECT count(stat_value) FROM mysql.innodb_index_stats 
+  WHERE table_name LIKE '%tb_defragment%' AND stat_name IN ('n_page_split');
 count(stat_value)
 0
  
-select count(stat_value) from mysql.innodb_index_stats 
-  where table_name like '%tb_defragment%' and stat_name in ('n_leaf_pages_defrag');
+SELECT count(stat_value) FROM mysql.innodb_index_stats 
+  WHERE table_name LIKE '%tb_defragment%' AND stat_name IN ('n_leaf_pages_defrag');
 count(stat_value)
 0
  
 SELECT table_name, data_free/1024/1024 AS data_free_MB, table_rows FROM information_schema.tables 
-  WHERE engine LIKE 'InnoDB' and table_name like '%tb_defragment%';
+  WHERE engine LIKE 'InnoDB' AND table_name LIKE '%tb_defragment%';
 table_name data_free_MB table_rows
 tb_defragment 4.00000000 50051
  
 SELECT table_name, index_name, sum(number_records), sum(data_size) FROM information_schema.innodb_buffer_page 
-  where table_name like '%tb_defragment%' and index_name like 'PRIMARY';
+  WHERE table_name LIKE '%tb_defragment%' AND index_name LIKE 'PRIMARY';
 table_name index_name sum(number_records) sum(data_size)
 `test`.`tb_defragment` PRIMARY 25873 4739939
  
 SELECT table_name, index_name, sum(number_records), sum(data_size) FROM information_schema.innodb_buffer_page 
-  where table_name like '%tb_defragment%' and index_name like 'ix1';
+  WHERE table_name LIKE '%tb_defragment%' AND index_name LIKE 'ix1';
 table_name index_name sum(number_records) sum(data_size)
 `test`.`tb_defragment` ix1 50071 1051775
 ```
@@ -132,12 +132,12 @@ table_name index_name sum(number_records) sum(data_size)
 Deleting three-quarters of the records, leaving gaps, and then optimizing:
 
 ```sql
-delete from tb_defragment where pk2 between 2 and 4;
+DELETE FROM tb_defragment WHERE pk2 BETWEEN 2 AND 4;
  
-optimize table tb_defragment;
-Table	Op	Msg_type	Msg_text
-test.tb_defragment	optimize	status	OK
-show status like '%innodb_def%';
+OPTIMIZE TABLE tb_defragment;
+TABLE	Op	Msg_type	Msg_text
+test.tb_defragment	OPTIMIZE	status	OK
+SHOW status LIKE '%innodb_def%';
 Variable_name	Value
 Innodb_defragment_compression_failures	0
 Innodb_defragment_failures	1
@@ -147,28 +147,28 @@ Innodb_defragment_count	4
 Now some pages have been freed, and some merged:
 
 ```sql
-select count(*) as Value from information_schema.innodb_buffer_page 
-  where table_name like '%tb_defragment%' and index_name = 'PRIMARY';
+SELECT count(*) AS Value FROM information_schema.innodb_buffer_page 
+  WHERE table_name LIKE '%tb_defragment%' AND index_name = 'PRIMARY';
 Value
 0
  
-select count(*) as Value from information_schema.innodb_buffer_page 
-  where table_name like '%tb_defragment%' and index_name = 'ix1';
+SELECT count(*) AS Value FROM information_schema.innodb_buffer_page 
+  WHERE table_name LIKE '%tb_defragment%' AND index_name = 'ix1';
 Value
 0
  
-select count(stat_value) from mysql.innodb_index_stats 
-  where table_name like '%tb_defragment%' and stat_name in ('n_pages_freed');
+SELECT count(stat_value) FROM mysql.innodb_index_stats 
+  WHERE table_name LIKE '%tb_defragment%' AND stat_name IN ('n_pages_freed');
 count(stat_value)
 2
  
-select count(stat_value) from mysql.innodb_index_stats 
-  where table_name like '%tb_defragment%' and stat_name in ('n_page_split');
+SELECT count(stat_value) FROM mysql.innodb_index_stats 
+  WHERE table_name LIKE '%tb_defragment%' AND stat_name IN ('n_page_split');
 count(stat_value)
 2
  
-select count(stat_value) from mysql.innodb_index_stats 
-  where table_name like '%tb_defragment%' and stat_name in ('n_leaf_pages_defrag');
+SELECT count(stat_value) FROM mysql.innodb_index_stats 
+  WHERE table_name LIKE '%tb_defragment%' AND stat_name IN ('n_leaf_pages_defrag');
 count(stat_value)
 2
  
@@ -180,12 +180,12 @@ innodb_table_stats 0.00000000 0
 tb_defragment 4.00000000 12431
  
 SELECT table_name, index_name, sum(number_records), sum(data_size) FROM information_schema.innodb_buffer_page 
-  where table_name like '%tb_defragment%' and index_name like 'PRIMARY';
+  WHERE table_name LIKE '%tb_defragment%' AND index_name LIKE 'PRIMARY';
 table_name index_name sum(number_records) sum(data_size)
 `test`.`tb_defragment` PRIMARY 690 102145
  
 SELECT table_name, index_name, sum(number_records), sum(data_size) FROM information_schema.innodb_buffer_page 
-  where table_name like '%tb_defragment%' and index_name like 'ix1';
+  WHERE table_name LIKE '%tb_defragment%' AND index_name LIKE 'ix1';
 table_name index_name sum(number_records) sum(data_size)
 `test`.`tb_defragment` ix1 5295 111263
 ```

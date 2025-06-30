@@ -177,7 +177,7 @@ public class App {
 Confirm the table was properly truncated by using MariaDB Client to execute a SELECT statement on the same table:
 
 ```sql
-SELECT * from test.contact;
+SELECT * FROM test.contact;
 ```
 
 ```

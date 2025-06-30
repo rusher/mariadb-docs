@@ -192,7 +192,6 @@ Using an expression that exceeds 255 characters in length is supported in expres
 Using constant expressions is supported in expressions for generated columns. For example:
 
 ```sql
-CREATE TABLE t1 (a int as (1));
 ```
 
 ### Making Stored Values Consistent
@@ -343,8 +342,8 @@ USE TEST;
 CREATE TABLE table1 (
      a INT NOT NULL,
      b VARCHAR(32),
-     c INT AS (a mod 10) VIRTUAL,
-     d VARCHAR(5) AS (left(b,5)) PERSISTENT);
+     c INT AS (a MOD 10) VIRTUAL,
+     d VARCHAR(5) AS (LEFT(b,5)) PERSISTENT);
 ```
 
 If you describe the table, you can easily see which columns are virtual by looking in the "Extra" column:

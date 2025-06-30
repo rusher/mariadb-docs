@@ -29,7 +29,7 @@ r2dbc:mariadb://user:pwd@localhost:3306/db?timezone=+5:00r2dbc:mariadb://user:pw
 * Example for enabling the redirection:
 
 ```sql
-set @@global.redirect_url="mariadb://somehost:3306/"
+SET @@global.redirect_url="mariadb://somehost:3306/"
 ```
 
 * The redirection feature is enabled by default. It can be disabled by setting the new option permitRedirect to FALSE, which will result in ignoring the redirection URL.

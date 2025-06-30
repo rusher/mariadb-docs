@@ -14,7 +14,7 @@ Here are some examples to clarify this.\
 In this case we assume there is an index on columns `(a,b,c)`
 
 ```sql
-SELECT MIN(a),MAX(a) from t1
+SELECT MIN(a),MAX(a) FROM t1
 SELECT MIN(b) FROM t1 WHERE a=const
 SELECT MIN(b),MAX(b) FROM t1 WHERE a=const
 SELECT MAX(c) FROM t1 WHERE a=const AND b=const
@@ -29,13 +29,13 @@ SELECT MAX(b) FROM t1 WHERE a=const AND b BETWEEN const AND const
 The above optimization also works for [subqueries](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/selecting-data/joins-subqueries/subqueries):
 
 ```sql
-SELECT x from t2 where y= (SELECT MIN(b) FROM t1 WHERE a=const)
+SELECT x FROM t2 WHERE y= (SELECT MIN(b) FROM t1 WHERE a=const)
 ```
 
 Cross joins, where there is no join condition for a table, can also be optimized to a few key lookups:
 
 ```sql
-select min(t1.key_part_1), max(t2.key_part_1) from t1, t2
+SELECT min(t1.key_part_1), max(t2.key_part_1) FROM t1, t2
 ```
 
 ## Min/Max optimization with GROUP BY

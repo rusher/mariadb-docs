@@ -198,9 +198,9 @@ invokes a stored function f():
 ```sql
 CREATE VIEW v AS SELECT * FROM t WHERE t.id = f(t.name);
 
-Suppose that f() contains a statement such as this:
+Suppose that f() contains a statement such AS this:
 
-IF name IS NULL then
+IF name IS NULL THEN
   CALL p1();
 ELSE
   CALL p2();

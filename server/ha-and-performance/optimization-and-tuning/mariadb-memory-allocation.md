@@ -122,7 +122,7 @@ SELECT  ENGINE,
         ROUND(SUM(data_length + index_length)/1024/1024, 1) AS "Total MB",
         COUNT(*) "Num Tables"
     FROM  INFORMATION_SCHEMA.TABLES
-    WHERE  table_schema not in (
+    WHERE  table_schema NOT IN (
              "information_schema", 
              "PERFORMANCE_SCHEMA", 
              "SYS_SCHEMA", 

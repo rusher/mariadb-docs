@@ -9,14 +9,14 @@ MariaDB Enterprise Server authentication is performed by database user accounts.
 The password for a [database user account](../user-account-management/) can be changed using the [ALTER TABLE](../../reference/sql-statements/data-definition/alter/alter-table.md), [ALTER USER](../../reference/sql-statements/account-management-sql-statements/alter-user.md), and [SET PASSWORD](../../reference/sql-statements/account-management-sql-statements/set-password.md) statements.
 
 ```sql
-With ALTER USER:
+WITH ALTER USER:
 
 ALTER USER 'USER'@'192.0.2.%'
    IDENTIFIED BY 'PASSWD';
 ```
 
 ```sql
-With SET PASSWORD:
+WITH SET PASSWORD:
 
 SET PASSWORD FOR 'USER'@'192.0.2.%'
    = PASSWORD('PASSWD');

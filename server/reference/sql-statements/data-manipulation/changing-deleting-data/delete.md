@@ -7,7 +7,7 @@ Single-table syntax:
 ```sql
 DELETE [LOW_PRIORITY] [QUICK] [IGNORE] 
   FROM tbl_name [PARTITION (partition_list)]
-  [FOR PORTION OF period FROM expr1 TO expr2]
+  [FOR PORTION OF PERIOD FROM expr1 TO expr2]
   [AS alias]                    -- from MariaDB 11.6
   [WHERE where_condition]
   [ORDER BY ...]
@@ -116,7 +116,7 @@ You can use `DELETE HISTORY` to delete historical information from [System-versi
 How to use the [ORDER BY](../selecting-data/order-by.md) and [LIMIT](../selecting-data/limit.md) clauses:
 
 ```sql
-DELETE FROM page_hit ORDER BY timestamp LIMIT 1000000;
+DELETE FROM page_hit ORDER BY TIMESTAMP LIMIT 1000000;
 ```
 
 How to use the RETURNING clause:
@@ -159,7 +159,7 @@ The statement returns:
 
 ```sql
 ERROR 1093 (HY000): Table 't1' is specified twice, both as a target for 'DELETE' 
-  and as a separate source for
+  AND AS a separate source FOR
 ```
 {% endtab %}
 {% endtabs %}

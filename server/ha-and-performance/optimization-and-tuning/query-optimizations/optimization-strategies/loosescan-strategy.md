@@ -7,9 +7,9 @@ LooseScan is an execution strategy for [Semi-join subqueries](../subquery-optimi
 We will demonstrate the `LooseScan` strategy by example. Suppose, we're looking for countries that have satellites. We can get them using the following query (for the sake of simplicity we ignore satellites that are owned by consortiums of multiple countries):
 
 ```sql
-select * from Country  
-where 
-  Country.code in (select country_code from Satellite)
+SELECT * FROM Country  
+WHERE 
+  Country.code IN (SELECT country_code FROM Satellite)
 ```
 
 Suppose, there is an index on `Satellite.country_code`. If we use that index, we will get satellites in the order of their owner country:
@@ -25,7 +25,7 @@ The `LooseScan` strategy doesn't really need ordering, what it needs is grouping
 The `EXPLAIN` output for the above query looks as follows:
 
 ```sql
-MariaDB [world]> explain select * from Country where Country.code in 
+MariaDB [world]> EXPLAIN SELECT * FROM Country WHERE Country.code IN 
   (select country_code from Satellite);
 +----+-------------+-----------+--------+---------------+--------------+---------+------------------------------+------+-------------------------------------+
 | id | select_type | table     | type   | possible_keys | key          | key_len | ref                          | rows | Extra                               |

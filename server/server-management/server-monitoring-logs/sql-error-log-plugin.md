@@ -90,13 +90,12 @@ With [sql\_error\_log\_with\_db\_and\_thread\_info](../../ha-and-performance/opt
 install plugin SQL_ERROR_LOG soname 'sql_errlog';
 Query OK, 0 rows affected (0.00 sec)
 
-use test;
-Database changed
+USE test;
 
-set sql_mode='STRICT_ALL_TABLES,NO_ENGINE_SUBSTITUTION';
+SET sql_mode='STRICT_ALL_TABLES,NO_ENGINE_SUBSTITUTION';
 Query OK, 0 rows affected (0.00 sec)
 
-CREATE TABLE foo2 (id int) ENGINE=WHOOPSIE;
+CREATE TABLE foo2 (id INT) ENGINE=WHOOPSIE;
 ERROR 1286 (42000): Unknown storage engine 'WHOOPSIE'
 \! cat data/sql_errors.log
 2013-03-19  9:38:40 msandbox[msandbox] @ localhost [] ERROR 1286: Unknown storage engine 'WHOOPSIE' : CREATE TABLE foo2 (id int) ENGINE=WHOOPSIE

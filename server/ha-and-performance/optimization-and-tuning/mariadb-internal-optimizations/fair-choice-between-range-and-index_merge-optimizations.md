@@ -61,21 +61,21 @@ By not discarding potential `index_merge` plans until absolutely necessary,\
 the two queries stay just as efficient as the original:
 
 ```sql
-MariaDB [ontime]> EXPLAIN SELECT * FROM ontime WHERE (Origin='SEA' or Dest='SEA');
+MariaDB [ontime]> EXPLAIN SELECT * FROM ontime WHERE (Origin='SEA' OR Dest='SEA');
 +--+-----------+------+-----------+-------------+-----------+-------+----+-----+-------------------------------------+
 |id|select_type|table |type       |possible_keys|key        |key_len|ref |rows |Extra                                |
 +--+-----------+------+-----------+-------------+-----------+-------+----+-----+-------------------------------------+
 | 1|SIMPLE     |ontime|index_merge|Origin,Dest  |Origin,Dest|6,6    |NULL|92800|Using union(Origin,Dest); Using where|
 +--+-----------+------+-----------+-------------+-----------+-------+----+-----+-------------------------------------+
 
-MariaDB [ontime]> EXPLAIN SELECT * FROM ontime WHERE (Origin='SEA' or Dest='SEA') AND securitydelay=0;
+MariaDB [ontime]> EXPLAIN SELECT * FROM ontime WHERE (Origin='SEA' OR Dest='SEA') AND securitydelay=0;
 +--+-----------+------+-----------+-------------------------+-----------+-------+----+-----+-------------------------------------+
 |id|select_type|table |type       |possible_keys            |key        |key_len|ref |rows |Extra                                |
 +--+-----------+------+-----------+-------------------------+-----------+-------+----+-----+-------------------------------------+
 | 1|SIMPLE     |ontime|index_merge|Origin,Dest,SecurityDelay|Origin,Dest|6,6    |NULL|92800|Using union(Origin,Dest); Using where|
 +--+-----------+------+-----------+-------------------------+-----------+-------+----+-----+-------------------------------------+
 
-MariaDB [ontime]> EXPLAIN SELECT * FROM ontime WHERE (Origin='SEA' or Dest='SEA') AND depdelay < 12*60;
+MariaDB [ontime]> EXPLAIN SELECT * FROM ontime WHERE (Origin='SEA' OR Dest='SEA') AND depdelay < 12*60;
 +--+-----------+------+-----------+--------------------+-----------+-------+----+-----+-------------------------------------+
 |id|select_type|table |type       |possible_keys       |key        |key_len|ref |rows |Extra                                |
 +--+-----------+------+-----------+--------------------+-----------+-------+----+-----+-------------------------------------+

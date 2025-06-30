@@ -44,7 +44,7 @@ Once the structure is in the database, we have now registered the tables to the 
 
 ```sql
 SELECT ...
-into outfile '/tmp/filename.sql'
+INTO OUTFILE '/tmp/filename.SQL'
 FIELDS TERMINATED BY ','
 LINES TERMINATED BY '\n'
 FROM ...
@@ -54,18 +54,18 @@ The following are the statements that we will need later.
 
 ```sql
 USE information_schema;
-select concat("ALTER TABLE ",table_name," DISCARD TABLESPACE;")  AS discard_tablespace
-from information_schema.tables 
-where TABLE_SCHEMA="DATABASENAME";
+SELECT concat("ALTER TABLE ",table_name," DISCARD TABLESPACE;")  AS discard_tablespace
+FROM information_schema.tables 
+WHERE TABLE_SCHEMA="DATABASENAME";
 
-select concat("ALTER TABLE ",table_name," IMPORT TABLESPACE;") AS import_tablespace
-from information_schema.tables 
-where TABLE_SCHEMA="DATABASENAME";
+SELECT concat("ALTER TABLE ",table_name," IMPORT TABLESPACE;") AS import_tablespace
+FROM information_schema.tables 
+WHERE TABLE_SCHEMA="DATABASENAME";
 
 SELECT 
 concat ("ALTER TABLE ", rc.CONSTRAINT_SCHEMA, ".",rc.TABLE_NAME," DROP FOREIGN KEY ", rc.CONSTRAINT_NAME,";") AS drop_keys
 FROM REFERENTIAL_CONSTRAINTS AS rc
-where CONSTRAINT_SCHEMA = 'DATABASENAME';
+WHERE CONSTRAINT_SCHEMA = 'DATABASENAME';
 
 SELECT
 CONCAT ("ALTER TABLE ", 
@@ -131,8 +131,8 @@ ALTER TABLE schmeaname.tablename ADD CONSTRAINT key_name FOREIGN KEY (`column_na
 We have successfully restored a single database. To test that this has worked, we can do a basic check on some tables.
 
 ```sql
-USE database
-SELECT * from test limit 10;
+USE DATABASE
+SELECT * FROM test LIMIT 10;
 ```
 
 ### Replica nodes

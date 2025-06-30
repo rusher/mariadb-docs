@@ -49,7 +49,7 @@ This will add the column `status` to the end with a fixed width of two character
 
 ```sql
 ALTER TABLE clients 
-ADD COLUMN address2 varchar(25) 
+ADD COLUMN address2 VARCHAR(25) 
 AFTER address;
 ```
 
@@ -86,7 +86,7 @@ After looking over the above table display, it's decided that it might be better
 
 ```sql
 ALTER TABLE clients 
-CHANGE status status enum('AC','IA');
+CHANGE status status ENUM('AC','IA');
 ```
 
 Notice that the column name status is specified twice. Although the column name isn't being changed, it still must be respecified. To change the column name (from `status` to `active`), while leaving the enumerated list the same, we specify the new column name in the second position:
@@ -102,19 +102,19 @@ In checking the table structure again, more changes are decided on: The column a
 
 ```sql
 ALTER TABLE clients
-CHANGE address address1 varchar(40),
-MODIFY active enum('yes','no','AC','IA');
+CHANGE address address1 VARCHAR(40),
+MODIFY active ENUM('yes','NO','AC','IA');
 
 UPDATE clients
 SET active = 'yes'
 WHERE active = 'AC';
 
 UPDATE clients
-SET active = 'no'
+SET active = 'NO'
 WHERE active = 'IA';
 
 ALTER TABLE clients
-MODIFY active enum('yes','no');
+MODIFY active ENUM('yes','NO');
 ```
 
 The first SQL statement above changes address and modifies active in preparation for the transition. Notice the use of a `MODIFY` clause. It works the same as `CHANGE`, but it is only used for changing data types and not column names. Therefore, the column name isn't respecified. Notice also that there is a comma after the CHANGE clause. You can string several `CHANGE` and `MODIFY` clauses together with comma separators. We've enumerated both the new choices and the old ones to be able to migrate the data. The two [UPDATE](../../reference/sql-statements/data-manipulation/changing-deleting-data/update.md) statements are designed to adjust the data accordingly and the last [ALTER TABLE](../../reference/sql-statements/data-definition/alter/alter-table.md) statement is to remove the old enumerated choices for the status column.
@@ -164,7 +164,7 @@ If they're typing this column change from memory, they will wear themselves out 
 SHOW INDEX FROM clients\G
 
 *************************** 1. row ***************************
-           Table: clients
+           TABLE: clients
       Non_unique: 0
         Key_name: PRIMARY
     Seq_in_index: 1

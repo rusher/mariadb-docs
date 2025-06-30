@@ -240,7 +240,7 @@ With `innodb-encrypt-tables=ON`, new InnoDB tables will be encrypted by default,
 You can cause the AWS KMS plugin to create new encryption keys at-will by specifying a new ENCRYPTION\_KEY\_ID when creating a table:
 
 ```sql
-MariaDB [test]> create table t1 (id serial, v varchar(32)) ENCRYPTION_KEY_ID=3;
+MariaDB [test]> CREATE TABLE t1 (id serial, v VARCHAR(32)) ENCRYPTION_KEY_ID=3;
 Query OK, 0 rows affected (0.91 sec)
 ```
 

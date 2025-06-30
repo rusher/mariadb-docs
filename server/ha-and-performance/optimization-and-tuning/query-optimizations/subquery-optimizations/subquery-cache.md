@@ -86,12 +86,12 @@ scale 1 data set).
 Dataset from DBT-3 benchmark, a query to find customers with balance near top in their nation:
 
 ```sql
-select count(*) from customer 
-where 
-   c_acctbal > 0.8 * (select max(c_acctbal) 
-                      from customer C 
-                      where C.c_nationkey=customer.c_nationkey
-                      group by c_nationkey);
+SELECT count(*) FROM customer 
+WHERE 
+   c_acctbal > 0.8 * (SELECT max(c_acctbal) 
+                      FROM customer C 
+                      WHERE C.c_nationkey=customer.c_nationkey
+                      GROUP BY c_nationkey);
 ```
 
 ### Example 2
@@ -99,13 +99,13 @@ where
 DBT-3 benchmark, Query #17
 
 ```sql
-select sum(l_extendedprice) / 7.0 as avg_yearly 
-from lineitem, part 
-where 
-  p_partkey = l_partkey and 
-  p_brand = 'Brand#42' and p_container = 'JUMBO BAG' and 
-  l_quantity < (select 0.2 * avg(l_quantity) from lineitem 
-                where l_partkey = p_partkey);
+SELECT sum(l_extendedprice) / 7.0 AS avg_yearly 
+FROM lineitem, part 
+WHERE 
+  p_partkey = l_partkey AND 
+  p_brand = 'Brand#42' AND p_container = 'JUMBO BAG' AND 
+  l_quantity < (SELECT 0.2 * avg(l_quantity) FROM lineitem 
+                WHERE l_partkey = p_partkey);
 ```
 
 ### Example 3
@@ -113,26 +113,26 @@ where
 DBT-3 benchmark, Query #2
 
 ```sql
-select
+SELECT
         s_acctbal, s_name, n_name, p_partkey, p_mfgr, s_address, s_phone, s_comment
-from
+FROM
         part, supplier, partsupp, nation, region
-where
-        p_partkey = ps_partkey and s_suppkey = ps_suppkey and p_size = 33
-        and p_type like '%STEEL' and s_nationkey = n_nationkey
-        and n_regionkey = r_regionkey and r_name = 'MIDDLE EAST'
-        and ps_supplycost = (
-                select
+WHERE
+        p_partkey = ps_partkey AND s_suppkey = ps_suppkey AND p_size = 33
+        AND p_type LIKE '%STEEL' AND s_nationkey = n_nationkey
+        AND n_regionkey = r_regionkey AND r_name = 'MIDDLE EAST'
+        AND ps_supplycost = (
+                SELECT
                         min(ps_supplycost)
-                from
+                FROM
                         partsupp, supplier, nation, region
-                where
-                        p_partkey = ps_partkey and s_suppkey = ps_suppkey
-                        and s_nationkey = n_nationkey and n_regionkey = r_regionkey
-                        and r_name = 'MIDDLE EAST'
+                WHERE
+                        p_partkey = ps_partkey AND s_suppkey = ps_suppkey
+                        AND s_nationkey = n_nationkey AND n_regionkey = r_regionkey
+                        AND r_name = 'MIDDLE EAST'
         )
-order by
-        s_acctbal desc, n_name, s_name, p_partkey;
+ORDER BY
+        s_acctbal DESC, n_name, s_name, p_partkey;
 ```
 
 ### Example 4
@@ -140,33 +140,33 @@ order by
 DBT-3 benchmark, Query #20
 
 ```sql
-select
+SELECT
         s_name, s_address
-from
+FROM
         supplier, nation
-where
-        s_suppkey in (
-                select
-                        distinct (ps_suppkey)
-                from
+WHERE
+        s_suppkey IN (
+                SELECT
+                        DISTINCT (ps_suppkey)
+                FROM
                         partsupp, part
-                where
+                WHERE
                         ps_partkey=p_partkey
-                        and p_name like 'indian%'
-                        and ps_availqty > (
-                                select
+                        AND p_name LIKE 'indian%'
+                        AND ps_availqty > (
+                                SELECT
                                         0.5 * sum(l_quantity)
-                                from
+                                FROM
                                         lineitem
-                                where
+                                WHERE
                                         l_partkey = ps_partkey
-                                        and l_suppkey = ps_suppkey
-                                        and l_shipdate >= '1995-01-01'
-                                        and l_shipdate < date_ADD('1995-01-01',interval 1 year)
+                                        AND l_suppkey = ps_suppkey
+                                        AND l_shipdate >= '1995-01-01'
+                                        AND l_shipdate < date_ADD('1995-01-01',INTERVAL 1 year)
                                 )
         )
-        and s_nationkey = n_nationkey and n_name = 'JAPAN'
-order by
+        AND s_nationkey = n_nationkey AND n_name = 'JAPAN'
+ORDER BY
         s_name;
 ```
 

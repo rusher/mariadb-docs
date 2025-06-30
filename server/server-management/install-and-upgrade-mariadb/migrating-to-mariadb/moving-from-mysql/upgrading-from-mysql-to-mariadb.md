@@ -38,7 +38,7 @@ MariaDB does not support the `caching_sha256_password` authentication protocol (
 You can check which MySQL users are using SHA-256 or `caching_sha256_password` by executing:
 
 ```sql
-SELECT user, plugin FROM mysql.user where plugin like "%sha%";
+SELECT user, plugin FROM mysql.user WHERE plugin LIKE "%sha%";
 ```
 
 You can change the user to use a protocol compatible with both MySQL and MariaDB with:
@@ -81,7 +81,7 @@ Detect compressed tables:
 
 ```sql
 SELECT table_name, create_options FROM information_schema.TABLES WHERE
-create_options like "%comp%";
+create_options LIKE "%comp%";
 ```
 
 ### Config Files

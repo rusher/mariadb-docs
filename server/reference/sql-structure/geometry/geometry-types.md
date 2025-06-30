@@ -142,13 +142,13 @@ INSERT INTO gis_geometrycollection VALUES
 ```sql
 CREATE TABLE gis_geometry (g GEOMETRY);
 SHOW FIELDS FROM gis_geometry;
-INSERT into gis_geometry SELECT * FROM gis_point;
-INSERT into gis_geometry SELECT * FROM gis_line;
-INSERT into gis_geometry SELECT * FROM gis_polygon;
-INSERT into gis_geometry SELECT * FROM gis_multi_point;
-INSERT into gis_geometry SELECT * FROM gis_multi_line;
-INSERT into gis_geometry SELECT * FROM gis_multi_polygon;
-INSERT into gis_geometry SELECT * FROM gis_geometrycollection;
+INSERT INTO gis_geometry SELECT * FROM gis_point;
+INSERT INTO gis_geometry SELECT * FROM gis_line;
+INSERT INTO gis_geometry SELECT * FROM gis_polygon;
+INSERT INTO gis_geometry SELECT * FROM gis_multi_point;
+INSERT INTO gis_geometry SELECT * FROM gis_multi_line;
+INSERT INTO gis_geometry SELECT * FROM gis_multi_polygon;
+INSERT INTO gis_geometry SELECT * FROM gis_geometrycollection;
 ```
 
 <sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)

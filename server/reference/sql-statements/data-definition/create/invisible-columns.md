@@ -94,7 +94,7 @@ DESC v2;
 Adding a Surrogate Primary Key:
 
 ```sql
-CREATE TABLE t1 (x BIGINT unsigned NOT NULL, y VARCHAR(16), z TEXT);
+CREATE TABLE t1 (x BIGINT UNSIGNED NOT NULL, y VARCHAR(16), z TEXT);
 
 INSERT INTO t1 VALUES (123, 'qq11', 'ipsum');
 
