@@ -19,6 +19,7 @@ SELECT ...
 FROM orders JOIN lineitem ON o_orderkey=l_orderkey
 WHERE
   l_shipdate BETWEEN '1997-01-01' AND '1997-01-31' AND
+  o_totalprice between 200000 and 230000;
 ```
 
 Suppose the condition on `l_shipdate` is very restrictive, which means lineitem table should go first in the join order. Then, the optimizer can use `o_orderkey=l_orderkey` equality to do an index lookup to get the order the line item is from. On the other hand `o_totalprice between ...` can also be rather selective.

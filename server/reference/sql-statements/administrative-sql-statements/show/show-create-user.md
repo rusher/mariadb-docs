@@ -15,7 +15,7 @@ Shows the [CREATE USER](../../account-management-sql-statements/create-user.md) 
 ## Examples
 
 ```sql
-CREATE USER foo4@test REQUIRE cipher 'text' 
+CREATE USER foo4@test require cipher 'text' 
   issuer 'foo_issuer' subject 'foo_subject';
 
 SHOW CREATE USER foo4@test\G

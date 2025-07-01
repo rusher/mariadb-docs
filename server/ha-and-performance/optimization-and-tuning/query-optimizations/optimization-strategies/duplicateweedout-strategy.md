@@ -36,6 +36,7 @@ The `Start temporary` and `End temporary` from the last diagram are shown in the
 
 ```sql
 EXPLAIN SELECT * FROM Country WHERE Country.code IN 
+  (select City.Country from City where City.Population > 0.33 * Country.Population 
    AND City.Population > 1*1000*1000)\G
 *************************** 1. row ***************************
            id: 1
@@ -68,6 +69,7 @@ If we run the same query with semi-join optimizations disabled, we'll get:
 
 ```sql
 EXPLAIN SELECT * FROM Country WHERE Country.code IN 
+  (select City.Country from City where City.Population > 0.33 * Country.Population 
     AND City.Population > 1*1000*1000)\G
 *************************** 1. row ***************************
            id: 1

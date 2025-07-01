@@ -89,7 +89,7 @@ Most use cases require a more commonly-used collation. It is possible to achieve
 ```sql
 ALTER TABLE t1
   ADD col1 VARCHAR(100) COLLATE utf8mb4_uca1400_ai_ci AS
-  (json_value(js1, '$.string_column') COLLATE utf8mb4_uca1400_ai_ci),
+  (json_value(js1, '$.string_column') collate utf8mb4_uca1400_ai_ci),
   ADD INDEX(col1);
 ...
 SELECT  ... 
