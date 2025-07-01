@@ -17,7 +17,6 @@ MariaDB Enterprise Operator is compatible with the following Docker images:
 
 | Component                    | Image                                          | Supported Tags                                                                             | CPU Architecture |
 | ---------------------------- | ---------------------------------------------- | ------------------------------------------------------------------------------------------ | ---------------- |
-| Component                    | Image                                          | Supported Tags                                                                             | CPU Architecture |
 | MariaDB Enterprise Operator  | docker.mariadb.com/mariadb-enterprise-operator | 1.0.0                                                                                      | amd64 arm64      |
 | MariaDB Enterprise Server    | docker.mariadb.com/enterprise-server           | 11.4.5-3 11.4.4-2 11.4 10.6.21-17 10.6.20-16.1 10.6.19-15.1 10.6.18-14.2 10.6.17-13.2 10.6 | amd64 arm64      |
 | MaxScale Enterprise          | docker.mariadb.com/maxscale-enterprise         | 25.01.2 25.01.1 25.01                                                                      | amd64 arm64      |
@@ -27,6 +26,6 @@ MariaDB Enterprise Operator is compatible with the following Docker images:
 
 Refer to the registry documentation to [access docker.mariadb.com with your customer credentials](customer-access-to-docker-mariadb-com.md).
 
-<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 
 {% @marketo/form formId="4316" %}

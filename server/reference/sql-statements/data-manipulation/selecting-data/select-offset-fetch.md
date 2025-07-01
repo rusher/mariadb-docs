@@ -1,12 +1,12 @@
 # SELECT ... OFFSET ... FETCH
 
-**MariaDB starting with** [**10.6.0**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/mariadb-1060-release-notes)
-
-`SELECT ... OFFSET ... FETCH` was introduced in [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/what-is-mariadb-106).
+{% hint style="info" %}
+`SELECT ... OFFSET ... FETCH` is available from [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/what-is-mariadb-106).
+{% endhint %}
 
 ## Syntax
 
-```
+```sql
 OFFSET start { ROW | ROWS }
 FETCH { FIRST | NEXT } [ count ] { ROW | ROWS } { ONLY | WITH TIES }
 ```
@@ -17,11 +17,11 @@ The `OFFSET` clause allows one to return only those elements of a resultset that
 
 Either the singular `ROW` or the plural `ROWS` can be used after the `OFFSET` and `FETCH` clauses; the choice has no impact on the results.
 
-`FIRST` and `NEXT` gives the same result.
+`FIRST` and `NEXT` give the same result.
 
-In the case of `WITH TIES`, an [ORDER BY](order-by.md) clause is required, otherwise an ERROR will be returned.
+In the case of `WITH TIES`, an [ORDER BY](order-by.md) clause is required, otherwise an error will be returned.
 
-```
+```sql
 SELECT i FROM t1 FETCH FIRST 2 ROWS WITH TIES;
 ERROR 4180 (HY000): FETCH ... WITH TIES requires ORDER BY clause to be present
 ```
@@ -30,7 +30,7 @@ ERROR 4180 (HY000): FETCH ... WITH TIES requires ORDER BY clause to be present
 
 Given a table with 6 rows:
 
-```
+```sql
 CREATE OR REPLACE TABLE t1 (i INT);
 INSERT INTO t1 VALUES (1),(2),(3),(4), (4), (5);
 SELECT i FROM t1 ORDER BY i ASC;
@@ -46,9 +46,9 @@ SELECT i FROM t1 ORDER BY i ASC;
 +------+
 ```
 
-`OFFSET 2` allows one to skip the first two results.
+`OFFSET 2` allows one to skip the first two results:
 
-```
+```sql
 SELECT i FROM t1 ORDER BY i ASC OFFSET 2 ROWS;
 +------+
 | i    |
@@ -60,9 +60,9 @@ SELECT i FROM t1 ORDER BY i ASC OFFSET 2 ROWS;
 +------+
 ```
 
-`FETCH FIRST 3 ROWS ONLY` limits the results to three rows only
+`FETCH FIRST 3 ROWS ONLY` limits the results to three rows only:
 
-```
+```sql
 SELECT i FROM t1 ORDER BY i ASC OFFSET 1 ROWS FETCH FIRST 3 ROWS ONLY;
 +------+
 | i    |
@@ -75,7 +75,7 @@ SELECT i FROM t1 ORDER BY i ASC OFFSET 1 ROWS FETCH FIRST 3 ROWS ONLY;
 
 The same outcome can also be achieved with the [LIMIT](limit.md) clause:
 
-```
+```sql
 SELECT i FROM t1 ORDER BY i ASC LIMIT 3 OFFSET 1;
 +------+
 | i    |
@@ -86,9 +86,9 @@ SELECT i FROM t1 ORDER BY i ASC LIMIT 3 OFFSET 1;
 +------+
 ```
 
-`WITH TIES` ensures the tied result `4` is also returned.
+`WITH TIES` ensures the tied result `4` is also returned:
 
-```
+```sql
 SELECT i FROM t1 ORDER BY i ASC OFFSET 1 ROWS FETCH FIRST 3 ROWS WITH TIES;
 +------+
 | i    |

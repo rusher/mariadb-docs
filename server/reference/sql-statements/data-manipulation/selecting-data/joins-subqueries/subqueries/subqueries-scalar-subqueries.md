@@ -8,7 +8,7 @@ A subquery cannot be used where only a literal is expected, for example [LOAD DA
 
 ## Examples
 
-```
+```sql
 CREATE TABLE sq1 (num TINYINT);
 
 CREATE TABLE sq2 (num TINYINT);
@@ -27,7 +27,7 @@ SELECT * FROM sq2;
 
 Inserting a second row means the subquery is no longer a scalar, and this particular query is not valid:
 
-```
+```sql
 INSERT INTO sq1 VALUES (2);
 
 INSERT INTO sq2 VALUES (10* (SELECT num FROM sq1));
@@ -36,7 +36,7 @@ ERROR 1242 (21000): Subquery returns more than 1 row
 
 No rows in the subquery, so the scalar is NULL:
 
-```
+```sql
 INSERT INTO sq2 VALUES (10* (SELECT num FROM sq3 WHERE num='3'));
 
 SELECT * FROM sq2;
@@ -48,9 +48,9 @@ SELECT * FROM sq2;
 +------+
 ```
 
-A more traditional scalar subquery, as part of a WHERE clause:
+A more traditional scalar subquery, as part of a `WHERE` clause:
 
-```
+```sql
 SELECT * FROM sq1 WHERE num = (SELECT MAX(num)/10 FROM sq2); 
 +------+
 | num  |
