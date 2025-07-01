@@ -1,5 +1,7 @@
 # MariaDB Connector/J 2.1.1 Changelog
 
+{% include "../../../../.gitbook/includes/latest-java.md" %}
+
 [Download](https://downloads.mariadb.org/connector-java/2.1.1/)[Release Notes](../../2.1/mariadb-connector-j-211-release-notes.md)[Changelog](mariadb-connector-j-211-changelog.md)[Connector/J Overview](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/about-mariadb-connector-j/README.md)
 
 **Release date:** 6 Sep 2017

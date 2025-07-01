@@ -1,6 +1,6 @@
 # MariaDB Connector/J 3.0.4 Changelog
 
-The most recent [_**Stable**_](../../../../mariadb-release-criteria.md) _**(GA)**_ release of [MariaDB Connector/J](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/about-mariadb-connector-j/README.md) is:[**MariaDB Connector/J 3.5.3**](../../3.5/mariadb-connector-j-3-5-3-release-notes.md)
+{% include "../../../../.gitbook/includes/latest-java.md" %}
 
 [Download](https://mariadb.com/downloads/#connectors)[Release Notes](../../3.0/mariadb-connector-j-304-release-notes.md)[Changelog](mariadb-connector-j-304-changelog.md)[Connector/J Overview](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/about-mariadb-connector-j/README.md)
 
