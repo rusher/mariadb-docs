@@ -12,7 +12,6 @@ The `mysql.servers` table contains the following fields:
 
 | Field        | Type     | Null | Key | Default | Description      |
 | ------------ | -------- | ---- | --- | ------- | ---------------- |
-| Field        | Type     | Null | Key | Default | Description      |
 | Server\_name | char(64) | NO   | PRI |         |                  |
 | Host         | char(64) | NO   |     |         |                  |
 | Db           | char(64) | NO   |     |         |                  |
