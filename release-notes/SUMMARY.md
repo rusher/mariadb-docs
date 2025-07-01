@@ -2261,6 +2261,7 @@
     * [Incompatibilities and Feature Differences Between MariaDB 10.2 and MySQL 5.7](compatibility-and-differences/incompatibilities-and-feature-differences-between-mariadb-and-mysql-unmaint/incompatibilities-and-feature-differences-between-mariadb-10-2-and-mysql-5.md)
   * [System Variable Differences between MariaDB and MySQL](compatibility-and-differences/system-variable-differences-between-mariadb-and-mysql/README.md)
     * [System Variable Differences Between MariaDB Rolling and MySQL 8.0](compatibility-and-differences/system-variable-differences-between-mariadb-and-mysql/system-variable-differences-between-mariadb-rolling-and-mysql-8-0.md)
+    * [System Variable Differences Between MariaDB 11.8 and MySQL 8.4 LTS](compatibility-and-differences/system-variable-differences-between-mariadb-and-mysql/system-variable-differences-between-mariadb-11.8-and-mysql-8.4-lts.md)
     * [System Variable Differences Between MariaDB 11.4 and MySQL 8.0](compatibility-and-differences/system-variable-differences-between-mariadb-and-mysql/system-variable-differences-between-mariadb-11-4-and-mysql-8-0.md)
     * [System Variable Differences Between MariaDB 10.11 and MySQL 8.0](compatibility-and-differences/system-variable-differences-between-mariadb-and-mysql/system-variable-differences-between-mariadb-10-11-and-mysql-8-0.md)
     * [System Variable Differences Between MariaDB 10.6 and MySQL 8.0](compatibility-and-differences/system-variable-differences-between-mariadb-and-mysql/system-variable-differences-between-mariadb-10-6-and-mysql-8-0.md)
