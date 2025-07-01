@@ -508,7 +508,6 @@ Before data can be imported into the tables, the schema needs to be created.
 
     ```sql
     CREATE TABLE inventory.products (
-       product_name varchar(11) NOT NULL DEFAULT '',
        supplier varchar(128) NOT NULL DEFAULT '',
        quantity varchar(128) NOT NULL DEFAULT '',
        unit_cost varchar(128) NOT NULL DEFAULT ''

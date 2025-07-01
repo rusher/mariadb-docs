@@ -125,8 +125,8 @@ The following statements creates a federated table, `federated.t1` against the t
 
 ```sql
 CREATE TABLE federated.t1 (
-  `id` int(20) NOT NULL,
-  `name` varchar(64) NOT NULL default ''
+  `id` INT(20) NOT NULL,
+  `name` VARCHAR(64) NOT NULL DEFAULT ''
   )
 ENGINE="FEDERATED" DEFAULT CHARSET=latin1
 CONNECTION='server_one';

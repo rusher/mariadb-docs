@@ -34,8 +34,8 @@ defined on `p_retailprice`:
 ```sql
 SELECT o_orderkey
 FROM  part, lineitem, orders
-WHERE p_retailprice > 2095 and o_orderdate='1992-07-01'
-      and o_orderkey=l_orderkey and p_partkey=l_partkey;
+WHERE p_retailprice > 2095 AND o_orderdate='1992-07-01'
+      AND o_orderkey=l_orderkey AND p_partkey=l_partkey;
 ```
 
 The above query asks for the `orderkeys` of the orders placed on 1992-07-01\
@@ -61,11 +61,11 @@ better performance.
 Here is the explain output for the above query:
 
 ```sql
-MariaDB [dbt3sf10]> explain
-   -> select o_orderkey
-   ->   from part, lineitem, orders
-   ->   where p_retailprice > 2095 and o_orderdate='1992-07-01'
-   ->         and o_orderkey=l_orderkey and p_partkey=l_partkey\G
+MariaDB [dbt3sf10]> EXPLAIN
+   -> SELECT o_orderkey
+   ->   FROM part, lineitem, orders
+   ->   WHERE p_retailprice > 2095 AND o_orderdate='1992-07-01'
+   ->         AND o_orderkey=l_orderkey AND p_partkey=l_partkey\G
 *************************** 1. row ***************************
           id: 1
  select_type: SIMPLE

@@ -433,8 +433,8 @@ With InnoDB page compression, a page is only compressed when it is flushed to di
 
 ```sql
 CREATE TABLE `tab` (
-     `id` int(11) NOT NULL,
-     `str` varchar(50) DEFAULT NULL,
+     `id` INT(11) NOT NULL,
+     `str` VARCHAR(50) DEFAULT NULL,
      PRIMARY KEY (`id`)
    ) ENGINE=InnoDB;
  

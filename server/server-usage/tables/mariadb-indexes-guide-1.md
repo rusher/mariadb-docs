@@ -195,17 +195,17 @@ SHOW CREATE TABLE t1\G
 *************************** 1. row ***************************
        TABLE: t1
 CREATE TABLE: CREATE TABLE `t1` (
-  `a` int(11) NOT NULL,
-  `b` blob DEFAULT NULL,
-  `c1` varchar(1000) DEFAULT NULL,
-  `c2` varchar(1000) DEFAULT NULL,
-  `c3` varchar(1000) DEFAULT NULL,
-  `c4` varchar(1000) DEFAULT NULL,
-  `c5` varchar(1000) DEFAULT NULL,
-  `c6` varchar(1000) DEFAULT NULL,
-  `c7` varchar(1000) DEFAULT NULL,
-  `c8` varchar(1000) DEFAULT NULL,
-  `c9` varchar(1000) DEFAULT NULL,
+  `a` INT(11) NOT NULL,
+  `b` BLOB DEFAULT NULL,
+  `c1` VARCHAR(1000) DEFAULT NULL,
+  `c2` VARCHAR(1000) DEFAULT NULL,
+  `c3` VARCHAR(1000) DEFAULT NULL,
+  `c4` VARCHAR(1000) DEFAULT NULL,
+  `c5` VARCHAR(1000) DEFAULT NULL,
+  `c6` VARCHAR(1000) DEFAULT NULL,
+  `c7` VARCHAR(1000) DEFAULT NULL,
+  `c8` VARCHAR(1000) DEFAULT NULL,
+  `c9` VARCHAR(1000) DEFAULT NULL,
   PRIMARY KEY (`a`),
   UNIQUE KEY `b` (`b`) USING HASH,
   UNIQUE KEY `all_c` (`c1`,`c2`,`c3`,`c4`,`c6`,`c7`,`c8`,`c9`) USING HASH

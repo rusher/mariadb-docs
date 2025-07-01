@@ -77,7 +77,7 @@ This document includes all major features and changes between 10.6 ES and 11.4 E
       ```sql
       SET @array1= '[1,2,3]';
       SET @array2= '[1,2,4]';
-      SELECT json_array_intersect(@array1, @array2) as result;
+      SELECT json_array_intersect(@array1, @array2) AS result;
       ```
 
       \
@@ -97,7 +97,7 @@ This document includes all major features and changes between 10.6 ES and 11.4 E
       ```sql
       SET @json1= '[[1,2,3],[4,5,6],[1,1,1]]';
       SET @json2= '[[1,2,3],[4,5,6],[1,3,2]]';
-      SELECT json_array_intersect(@json1, @json2) as result;
+      SELECT json_array_intersect(@json1, @json2) AS result;
       ```
 
       \
@@ -116,7 +116,7 @@ This document includes all major features and changes between 10.6 ES and 11.4 E
 
     ```sql
     SET @json1= '{ "a" : [1,2,3] , "b": {"key1": "val1", "key2": {"key3": "val3"}} }';
-    SELECT JSON_OBJECT_TO_ARRAY(@json1) as result;
+    SELECT JSON_OBJECT_TO_ARRAY(@json1) AS result;
     ```
 
     \
@@ -152,7 +152,7 @@ SELECT JSON_ARRAY_INTERSECT(@array1,@array2) as result;
 
 ```sql
 SET @json1= '{ "a": 1, "b": 2, "c": 3}';
-SELECT JSON_OBJECT_FILTER_KEYS (@json1, ' ["b", "c"] ') as result;
+SELECT JSON_OBJECT_FILTER_KEYS (@json1, ' ["b", "c"] ') AS result;
 ```
 
 ```
@@ -169,7 +169,7 @@ SELECT JSON_OBJECT_FILTER_KEYS (@json1, ' ["b", "c"] ') as result;
 ```sql
 SET @json1= '{ "a": 1, "b": 2, "c": 3}';
 SET @json2= '{"b" : 10, "c": 20, "d": 30}';
-SELECT JSON_OBJECT_FILTER_KEYS (@json1, json_array_intersect(json_keys(@json1), json_keys(@json2))) as result;
+SELECT JSON_OBJECT_FILTER_KEYS (@json1, json_array_intersect(json_keys(@json1), json_keys(@json2))) AS result;
 ```
 
 ```
@@ -229,7 +229,7 @@ SELECT @@block_encryption_mode;
 ```
 
 ```sql
-SELECT HEX(AES_ENCRYPT('MariaDB','mykey','vector')) as result;
+SELECT HEX(AES_ENCRYPT('MariaDB','mykey','vector')) AS result;
 ```
 
 ```
@@ -241,7 +241,7 @@ SELECT HEX(AES_ENCRYPT('MariaDB','mykey','vector')) as result;
 ```
 
 ```sql
-SELECT AES_DECRYPT(x'CD0352A4B2FB18A592C04FF8CDA6C2F2','mykey','vector') as result;
+SELECT AES_DECRYPT(x'CD0352A4B2FB18A592C04FF8CDA6C2F2','mykey','vector') AS result;
 ```
 
 ```
@@ -255,7 +255,7 @@ SELECT AES_DECRYPT(x'CD0352A4B2FB18A592C04FF8CDA6C2F2','mykey','vector') as resu
 * Example (mode provided as argument):
 
 ```sql
-SELECT HEX(AES_ENCRYPT('MariaDB','mykey','thisismy256vector','aes-256-cbc')) as result;
+SELECT HEX(AES_ENCRYPT('MariaDB','mykey','thisismy256vector','aes-256-cbc')) AS result;
 ```
 
 ```
@@ -267,7 +267,7 @@ SELECT HEX(AES_ENCRYPT('MariaDB','mykey','thisismy256vector','aes-256-cbc')) as 
 ```
 
 ```sql
-SELECT AES_DECRYPT(x'CD6C47183B89A813557BFD639A893CE3','mykey','thisismy256vector','aes-256-cbc') as result;
+SELECT AES_DECRYPT(x'CD6C47183B89A813557BFD639A893CE3','mykey','thisismy256vector','aes-256-cbc') AS result;
 ```
 
 ```
@@ -281,7 +281,7 @@ SELECT AES_DECRYPT(x'CD6C47183B89A813557BFD639A893CE3','mykey','thisismy256vecto
 * The new options `%Z` and `%z` can be used for the format string of the function
 
 ```sql
-DATE_FORMAT(date, format)
+DATE_FORMAT(DATE, format)
 ```
 
 for adding time zone information to the date string.
@@ -315,7 +315,7 @@ KDF(key_str, salt [, {info | iterations} [, kdf_name [, width ]]])
   Example:
 
 ```sql
-select hex(kdf('foo', 'bar', 'info', 'hkdf'));
+SELECT hex(kdf('foo', 'bar', 'info', 'hkdf'));
 ```
 
 ```
@@ -406,10 +406,10 @@ CONVERT TABLE normal_table TO partition_definition [{WITH | WITHOUT} VALIDATION]
   * Example:
 
 ```sql
-create table t1 (id int);
-insert into t1 values (100);
-create procedure p1() SELECT * FROM t1;
-call p1;
+CREATE TABLE t1 (id INT);
+INSERT INTO t1 VALUES (100);
+CREATE PROCEDURE p1() SELECT * FROM t1;
+CALL p1;
 ```
 
 ```
@@ -422,7 +422,7 @@ call p1;
 
 ```sql
 ALTER TABLE t1 ADD COLUMN b INT DEFAULT 0;
-call p1;
+CALL p1;
 ```
 
 ```
@@ -440,8 +440,8 @@ call p1;
 ```sql
 CREATE DATABASE test;
 USE test;
-CREATE TABLE t1 (id int);
-CREATE TEMPORARY TABLE t2_temp (id int);
+CREATE TABLE t1 (id INT);
+CREATE TEMPORARY TABLE t2_temp (id INT);
 SHOW FULL TABLE;
 ```
 
@@ -455,7 +455,7 @@ SHOW FULL TABLE;
 ```
 
 ```sql
-select table_schema, table_name, table_type from information_schema.tables where table_schema='test';
+SELECT table_schema, table_name, table_type FROM information_schema.tables WHERE table_schema='test';
 ```
 
 ```
@@ -533,9 +533,9 @@ CALL myPkg.p1();
 * System-Versioned Tables can automate the creation of new HISTORY partitions partitioned by INTERVAL/LIMIT using the keyword AUTO when creating a table.
 
 ```sql
-CREATE TABLE t1 (x int) WITH SYSTEM VERSIONING
+CREATE TABLE t1 (x INT) WITH SYSTEM VERSIONING
 
-PARTITION BY system_time INTERVAL 1 months AUTO;
+PARTITION BY SYSTEM_TIME INTERVAL 1 months AUTO;
 ```
 
 * In this case a new HISTORY partition will be created on a monthly basis, storing old versions of the table data.
@@ -771,7 +771,7 @@ GRANT USAGE ON *.* TO `MariaDBUser`@`%` IDENTIFIED VIA parsec USING 'P0:lhXyNv1c
   * Example without privilege `SHOW CREATE ROUTINE`:
 
 ```sql
-show grants;
+SHOW grants;
 ```
 
 ```
@@ -784,7 +784,7 @@ show grants;
 ```
 
 ```sql
-show create procedure myProc \G
+SHOW CREATE PROCEDURE myProc \G
 ```
 
 ```
@@ -800,7 +800,7 @@ collation_connection: utf8mb3_general_ci
 * Example with the new privilege `SHOW CREATE ROUTINE`:
 
 ```sql
-show grants;
+SHOW grants;
 ```
 
 ```
@@ -813,7 +813,7 @@ show grants;
 ```
 
 ```sql
-show create procedure myProc \G
+SHOW CREATE PROCEDURE myProc \G
 ```
 
 ```
@@ -837,8 +837,8 @@ collation_connection: utf8mb3_general_ci
 
 ```sql
 CREATE DATABASE test;
-use test;
-CREATE TABLE t1 (id int);
+USE test;
+CREATE TABLE t1 (id INT);
 CREATE USER user1;
 GRANT SELECT, UPDATE ON *.* TO user1;
 CREATE USER user2;
@@ -981,7 +981,7 @@ ALTER TABLE t2 IMPORT TABLESPACE;
   * Example:
 
 ```sql
-select * from processlist\G
+SELECT * FROM processlist\G
 ```
 
 ```
