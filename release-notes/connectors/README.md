@@ -1,8 +1,5 @@
 ---
-description: >-
-  MariaDB's latest Connector/J 3.5.3 and Connector/C 3.4.5 updates boost
-  performance, security, and stability with fixes for timestamps, metadata, HA
-  issues, PARSEC auth, and batch processing.
+description: MariaDB's latest Connector updates boost performance, security, and stability.
 layout:
   title:
     visible: true
@@ -16,5 +13,5 @@ layout:
     visible: false
 ---
 
-# MariaDB Connectors Release Notes
+# Connectors Release Notes
 
