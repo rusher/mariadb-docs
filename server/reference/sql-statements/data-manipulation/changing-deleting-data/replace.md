@@ -44,9 +44,9 @@ Basically it works like this:
 
 ```sql
 BEGIN;
-SELECT 1 FROM t1 WHERE key=# FOR UPDATE;
+SELECT 1 FROM t1 WHERE KEY=# FOR UPDATE;
 IF found-row
-  DELETE FROM t1 WHERE key=# ;
+  DELETE FROM t1 WHERE KEY=# ;
 ENDIF
 INSERT INTO t1 VALUES (...);
 END;
@@ -90,7 +90,7 @@ Simple `REPLACE` statement:
 
 ```sql
 REPLACE INTO t2 VALUES (1,'Leopard'),(2,'Dog') RETURNING id2, id2+id2 
-as Total ,id2|id2, id2&&id2;
+AS Total ,id2|id2, id2&&id2;
 +-----+-------+---------+----------+
 | id2 | Total | id2|id2 | id2&&id2 |
 +-----+-------+---------+----------+
@@ -147,7 +147,7 @@ Simple `REPLACE` statement:
 
 ```sql
 REPLACE INTO t2 VALUES (1,'Leopard'),(2,'Dog') RETURNING id2, id2+id2 
-as Total ,id2|id2, id2&&id2;
+AS Total ,id2|id2, id2&&id2;
 +-----+-------+---------+----------+
 | id2 | Total | id2|id2 | id2&&id2 |
 +-----+-------+---------+----------+

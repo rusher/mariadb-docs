@@ -30,7 +30,7 @@ but if you replace `OriginState ='CA'` with `OriginState IN ('CA', 'GB')`\
 anymore:
 
 ```sql
-MySQL [ontime]> explain select avg(arrdelay) from ontime where depdel15=1 and OriginState IN ('CA', 'GB');
+MySQL [ontime]> EXPLAIN SELECT avg(arrdelay) FROM ontime WHERE depdel15=1 AND OriginState IN ('CA', 'GB');
 +--+-----------+------+----+--------------------+--------+-------+-----+-----+-----------+
 |id|select_type|table |type|possible_keys       |key     |key_len|ref  |rows |Extra      |
 +--+-----------+------+----+--------------------+--------+-------+-----+-----+-----------+
@@ -47,7 +47,7 @@ In [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-communit
 conditions:
 
 ```sql
-MySQL [ontime]> explain select avg(arrdelay) from ontime where depdel15=1 and OriginState IN ('CA', 'GB');
+MySQL [ontime]> EXPLAIN SELECT avg(arrdelay) FROM ontime WHERE depdel15=1 AND OriginState IN ('CA', 'GB');
 +--+-----------+------+-----------+--------------------+--------------------+-------+----+-----+--------------------------------------------------------+
 |id|select_type|table |type       |possible_keys       |key                 |key_len|ref |rows |Extra                                                   |
 +--+-----------+------+-----------+--------------------+--------------------+-------+----+-----+--------------------------------------------------------+

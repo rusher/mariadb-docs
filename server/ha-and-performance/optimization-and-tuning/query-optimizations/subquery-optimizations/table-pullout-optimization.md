@@ -74,7 +74,6 @@ Message: SELECT `world`.`City`.`ID` AS `ID`,`world`.`City`.`Name` AS
    FROM `world`.`City` JOIN `world`.`Country` WHERE 
 
 
-((`world`.`City`.`Country` = `world`.`Country`.`Code`) and (`world`.`Country`.
 `Population` < (100 * 1000)))
 1 row in set (0.00 sec)
 ```

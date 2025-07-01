@@ -26,7 +26,6 @@ The `EXPLAIN` output for the above query looks as follows:
 
 ```sql
 MariaDB [world]> EXPLAIN SELECT * FROM Country WHERE Country.code IN 
-  (select country_code from Satellite);
 +----+-------------+-----------+--------+---------------+--------------+---------+------------------------------+------+-------------------------------------+
 | id | select_type | table     | type   | possible_keys | key          | key_len | ref                          | rows | Extra                               |
 +----+-------------+-----------+--------+---------------+--------------+---------+------------------------------+------+-------------------------------------+

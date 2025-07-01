@@ -195,7 +195,6 @@ SHOW CREATE TABLE t1\G
 *************************** 1. row ***************************
        TABLE: t1
 CREATE TABLE: CREATE TABLE `t1` (
-  `a` int(11) NOT NULL,
   `b` blob DEFAULT NULL,
   `c1` varchar(1000) DEFAULT NULL,
   `c2` varchar(1000) DEFAULT NULL,

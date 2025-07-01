@@ -32,7 +32,6 @@ The `EXPLAIN` for the above query will look as follows:
 
 ```sql
 MariaDB [world]> EXPLAIN SELECT * FROM Country WHERE Country.code IN 
-  (select City.Country from City where City.Population > 1*1000*1000)
     AND Country.continent='Europe';
 +----+-------------+---------+------+--------------------+-----------+---------+--------------------+------+----------------------------------+
 | id | select_type | table   | type | possible_keys      | key       | key_len | ref                | rows | Extra                            |
@@ -49,7 +48,6 @@ MariaDB [world]> EXPLAIN SELECT * FROM Country WHERE Country.code IN
 
 ```sql
 MySQL [world]> EXPLAIN SELECT * FROM Country  WHERE Country.code IN 
-  (select City.Country from City where City.Population > 1*1000*1000) 
    AND Country.continent='Europe';
 +----+--------------------+---------+----------------+--------------------+-----------+---------+-------+------+------------------------------------+
 | id | select_type        | table   | type           | possible_keys      | key       | key_len | ref   | rows | Extra                              |

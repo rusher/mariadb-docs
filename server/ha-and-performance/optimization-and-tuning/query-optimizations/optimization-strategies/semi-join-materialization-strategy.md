@@ -38,7 +38,6 @@ If we chose to look for cities with a population greater than 7 million, the opt
 
 ```sql
 MariaDB [world]> EXPLAIN SELECT * FROM Country WHERE Country.code IN 
-  (select City.Country from City where  City.Population > 7*1000*1000);
 +----+--------------+-------------+--------+--------------------+------------+---------+--------------------+------+-----------------------+
 | id | select_type  | table       | type   | possible_keys      | key        | key_len | ref                | rows | Extra                 |
 +----+--------------+-------------+--------+--------------------+------------+---------+--------------------+------+-----------------------+
@@ -63,7 +62,6 @@ By comparison, if you run the `EXPLAIN` with semi-join optimizations disabled, y
 
 ```sql
 MariaDB [world]> EXPLAIN SELECT * FROM Country WHERE Country.code IN 
-  (select City.Country from City where  City.Population > 7*1000*1000);
 +----+--------------------+---------+-------+--------------------+------------+---------+------+------+------------------------------------+
 | id | select_type        | table   | type  | possible_keys      | key        | key_len | ref  | rows | Extra                              |
 +----+--------------------+---------+-------+--------------------+------------+---------+------+------+------------------------------------+
