@@ -10,7 +10,6 @@ The `mysql.time_zone_name` table contains the following fields:
 
 | Field          | Type             | Null | Key | Default | Description                 |
 | -------------- | ---------------- | ---- | --- | ------- | --------------------------- |
-| Field          | Type             | Null | Key | Default | Description                 |
 | Name           | char(64)         | NO   | PRI | NULL    | Name of the time zone.      |
 | Time\_zone\_id | int(10) unsigned | NO   | PRI | NULL    | ID field, auto\_increments. |
 
