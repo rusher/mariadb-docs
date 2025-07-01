@@ -4,7 +4,7 @@ Extended syntax so that it is possible to set [innodb\_lock\_wait\_timeout](../.
 
 ## Syntax
 
-```
+```sql
 ALTER TABLE tbl_name [WAIT n|NOWAIT] ...
 CREATE ... INDEX ON tbl_name (index_col_name, ...) [WAIT n|NOWAIT] ...
 DROP INDEX ... [WAIT n|NOWAIT]
