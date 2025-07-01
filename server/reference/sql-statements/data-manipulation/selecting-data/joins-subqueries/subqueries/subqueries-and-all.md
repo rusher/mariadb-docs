@@ -4,11 +4,12 @@
 
 ## Syntax
 
-```sql
+```
 scalar_expression comparison_operator ALL <Table subquery>
 ```
 
-* `scalar_expression` may be any expression that evaluates to a single value.
+* `scalar_expression` may be any expression that evaluates to a single\
+  value
 * `comparison_operator` may be any one of: `=`, `>`, `<`, `>=`, `<=`, `<>` or `!=`
 
 `ALL` returns:
@@ -21,7 +22,7 @@ scalar_expression comparison_operator ALL <Table subquery>
 
 ## Examples
 
-```sql
+```
 CREATE TABLE sq1 (num TINYINT);
 
 CREATE TABLE sq2 (num2 TINYINT);
@@ -38,11 +39,11 @@ SELECT * FROM sq1 WHERE num > ALL (SELECT * FROM sq2);
 +------+
 ```
 
-Since `100` > all of `40`,`50` and `60`, the evaluation is true and the row is returned.
+Since `100` > all of `40`,`50` and `60`, the evaluation is true and the row is returned
 
 Adding a second row to sq1, where the evaluation for that record is false:
 
-```sql
+```
 INSERT INTO sq1 VALUES(30);
 
 SELECT * FROM sq1 WHERE num > ALL (SELECT * FROM sq2);
@@ -55,7 +56,7 @@ SELECT * FROM sq1 WHERE num > ALL (SELECT * FROM sq2);
 
 Adding a new row to sq2, causing all evaluations to be false:
 
-```sql
+```
 INSERT INTO sq2 VALUES(120);
 
 SELECT * FROM sq1 WHERE num > ALL (SELECT * FROM sq2);
@@ -64,7 +65,7 @@ Empty set (0.00 sec)
 
 When the subquery returns no results, the evaluation is still true:
 
-```sql
+```
 SELECT * FROM sq1 WHERE num > ALL (SELECT * FROM sq2 WHERE num2 > 300);
 +------+
 | num  |
@@ -76,7 +77,7 @@ SELECT * FROM sq1 WHERE num > ALL (SELECT * FROM sq2 WHERE num2 > 300);
 
 Evaluating against a NULL will cause the result to be unknown, or not true, and therefore return no rows:
 
-```sql
+```
 INSERT INTO sq2 VALUES (NULL);
 
 SELECT * FROM sq1 WHERE num > ALL (SELECT * FROM sq2);

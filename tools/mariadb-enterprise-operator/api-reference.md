@@ -30,6 +30,7 @@ _Appears in:_
 
 | Field                                                               | Description | Default | Validation |
 | ------------------------------------------------------------------- | ----------- | ------- | ---------- |
+| Field                                                               | Description | Default | Validation |
 | podAntiAffinity [PodAntiAffinity](api-reference.md#podantiaffinity) |             |         |            |
 | nodeAffinity [NodeAffinity](api-reference.md#nodeaffinity)          |             |         |            |
 
@@ -52,6 +53,7 @@ _Appears in:_
 
 | Field                                                               | Description                                                                                                                                                                                                       | Default | Validation |
 | ------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | ---------- |
+| Field                                                               | Description                                                                                                                                                                                                       | Default | Validation |
 | podAntiAffinity [PodAntiAffinity](api-reference.md#podantiaffinity) |                                                                                                                                                                                                                   |         |            |
 | nodeAffinity [NodeAffinity](api-reference.md#nodeaffinity)          |                                                                                                                                                                                                                   |         |            |
 | antiAffinityEnabled boolean                                         | AntiAffinityEnabled configures PodAntiAffinity so each Pod is scheduled in a different Node, enabling HA.Make sure you have at least as many Nodes available as the replicas to not end up with unscheduled Pods. |         |            |
@@ -62,6 +64,7 @@ Backup is the Schema for the backups API. It is used to define backup jobs and i
 
 | Field                                                                                                          | Description                                                   | Default | Validation |
 | -------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------- | ------- | ---------- |
+| Field                                                                                                          | Description                                                   | Default | Validation |
 | apiVersion string                                                                                              | enterprise.mariadb.com/v1alpha1                               |         |            |
 | kind string                                                                                                    | Backup                                                        |         |            |
 | metadata [ObjectMeta](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#objectmeta-v1-meta) | Refer to Kubernetes API documentation for fields of metadata. |         |            |
@@ -77,6 +80,7 @@ _Appears in:_
 
 | Field                                                                                                                     | Description                                                                                                                                                                                                                                                                                                                                                          | Default   | Validation                      |
 | ------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- | ------------------------------- |
+| Field                                                                                                                     | Description                                                                                                                                                                                                                                                                                                                                                          | Default   | Validation                      |
 | args string array                                                                                                         | Args to be used in the Container.                                                                                                                                                                                                                                                                                                                                    |           |                                 |
 | resources [ResourceRequirements](api-reference.md#resourcerequirements)                                                   | Resouces describes the compute resource requirements.                                                                                                                                                                                                                                                                                                                |           |                                 |
 | securityContext [SecurityContext](api-reference.md#securitycontext)                                                       | SecurityContext holds security configuration that will be applied to a container.                                                                                                                                                                                                                                                                                    |           |                                 |
@@ -117,6 +121,7 @@ _Appears in:_
 
 | Field                                                                                         | Description                                              | Default | Validation |
 | --------------------------------------------------------------------------------------------- | -------------------------------------------------------- | ------- | ---------- |
+| Field                                                                                         | Description                                              | Default | Validation |
 | persistentVolumeClaim [PersistentVolumeClaimSpec](api-reference.md#persistentvolumeclaimspec) | PersistentVolumeClaim is a Kubernetes PVC specification. |         |            |
 | volume [StorageVolumeSource](api-reference.md#storagevolumesource)                            | Volume is a Kubernetes volume specification.             |         |            |
 
@@ -130,6 +135,7 @@ _Appears in:_
 
 | Field                                                                                         | Description                                                               | Default | Validation |
 | --------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------- | ---------- |
+| Field                                                                                         | Description                                                               | Default | Validation |
 | s3 [S3](api-reference.md#s3)                                                                  | S3 defines the configuration to store backups in a S3 compatible storage. |         |            |
 | persistentVolumeClaim [PersistentVolumeClaimSpec](api-reference.md#persistentvolumeclaimspec) | PersistentVolumeClaim is a Kubernetes PVC specification.                  |         |            |
 | volume [StorageVolumeSource](api-reference.md#storagevolumesource)                            | Volume is a Kubernetes volume specification.                              |         |            |
@@ -144,6 +150,7 @@ _Appears in:_
 
 | Field                                                                                | Description                                              | Default | Validation |
 | ------------------------------------------------------------------------------------ | -------------------------------------------------------- | ------- | ---------- |
+| Field                                                                                | Description                                              | Default | Validation |
 | enabled boolean                                                                      | Enabled is a flag to enable BasicAuth                    |         |            |
 | username string                                                                      | Username to be used for basic authentication             |         |            |
 | passwordSecretKeyRef [GeneratedSecretKeyRef](api-reference.md#generatedsecretkeyref) | PasswordSecretKeyRef to be used for basic authentication |         |            |
@@ -158,6 +165,7 @@ _Appears in:_
 
 | Field                                                                                                        | Description                                                                                                                                                                                                                                                | Default | Validation |
 | ------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | ---------- |
+| Field                                                                                                        | Description                                                                                                                                                                                                                                                | Default | Validation |
 | backupRef [LocalObjectReference](api-reference.md#localobjectreference)                                      | BackupRef is a reference to a Backup object. It has priority over S3 and Volume.                                                                                                                                                                           |         |            |
 | s3 [S3](api-reference.md#s3)                                                                                 | S3 defines the configuration to restore backups from a S3 compatible storage. It has priority over Volume.                                                                                                                                                 |         |            |
 | volume [StorageVolumeSource](api-reference.md#storagevolumesource)                                           | Volume is a Kubernetes Volume object that contains a backup.                                                                                                                                                                                               |         |            |
@@ -177,6 +185,7 @@ _Appears in:_
 
 | Field                                                                              | Description | Default | Validation |
 | ---------------------------------------------------------------------------------- | ----------- | ------- | ---------- |
+| Field                                                                              | Description | Default | Validation |
 | driver string                                                                      |             |         |            |
 | readOnly boolean                                                                   |             |         |            |
 | fsType string                                                                      |             |         |            |
@@ -198,6 +207,7 @@ _Appears in:_
 
 | Field  | Description                                                                                                  |
 | ------ | ------------------------------------------------------------------------------------------------------------ |
+| Field  | Description                                                                                                  |
 | Skip   | CleanupPolicySkip indicates that the resource will NOT be deleted from the database after the CR is deleted. |
 | Delete | CleanupPolicyDelete indicates that the resource will be deleted from the database after the CR is deleted.   |
 
@@ -213,6 +223,7 @@ _Appears in:_
 
 | Field | Description                                                                                             |
 | ----- | ------------------------------------------------------------------------------------------------------- |
+| Field | Description                                                                                             |
 | none  | No compression                                                                                          |
 | bzip2 | Bzip2 compression. Good compression ratio, but slower compression/decompression speed compared to gzip. |
 | gzip  | Gzip compression. Good compression/decompression speed, but worse compression ratio compared to bzip2.  |
@@ -229,6 +240,7 @@ _Appears in:_
 
 | Field       | Description | Default | Validation |
 | ----------- | ----------- | ------- | ---------- |
+| Field       | Description | Default | Validation |
 | name string |             |         |            |
 | key string  |             |         |            |
 
@@ -243,6 +255,7 @@ _Appears in:_
 
 | Field               | Description | Default | Validation |
 | ------------------- | ----------- | ------- | ---------- |
+| Field               | Description | Default | Validation |
 | name string         |             |         |            |
 | defaultMode integer |             |         |            |
 
@@ -252,6 +265,7 @@ Connection is the Schema for the connections API. It is used to configure connec
 
 | Field                                                                                                          | Description                                                   | Default | Validation |
 | -------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------- | ------- | ---------- |
+| Field                                                                                                          | Description                                                   | Default | Validation |
 | apiVersion string                                                                                              | enterprise.mariadb.com/v1alpha1                               |         |            |
 | kind string                                                                                                    | Connection                                                    |         |            |
 | metadata [ObjectMeta](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#objectmeta-v1-meta) | Refer to Kubernetes API documentation for fields of metadata. |         |            |
@@ -267,6 +281,7 @@ _Appears in:_
 
 | Field                                                                                | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | Default | Validation   |
 | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------- | ------------ |
+| Field                                                                                | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | Default | Validation   |
 | secretName string                                                                    | SecretName to be used in the Connection.                                                                                                                                                                                                                                                                                                                                                                                                                                             |         |              |
 | secretTemplate [SecretTemplate](api-reference.md#secrettemplate)                     | SecretTemplate to be used in the Connection.                                                                                                                                                                                                                                                                                                                                                                                                                                         |         |              |
 | healthCheck [HealthCheck](api-reference.md#healthcheck)                              | HealthCheck to be used in the Connection.                                                                                                                                                                                                                                                                                                                                                                                                                                            |         |              |
@@ -294,6 +309,7 @@ _Appears in:_
 
 | Field                                                            | Description                                                                                             | Default | Validation |
 | ---------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------- | ---------- |
+| Field                                                            | Description                                                                                             | Default | Validation |
 | secretName string                                                | SecretName to be used in the Connection.                                                                |         |            |
 | secretTemplate [SecretTemplate](api-reference.md#secrettemplate) | SecretTemplate to be used in the Connection.                                                            |         |            |
 | healthCheck [HealthCheck](api-reference.md#healthcheck)          | HealthCheck to be used in the Connection.                                                               |         |            |
@@ -312,6 +328,7 @@ _Appears in:_
 
 | Field                                                                                                                 | Description                                                                                                                  | Default | Validation                         |
 | --------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | ------- | ---------------------------------- |
+| Field                                                                                                                 | Description                                                                                                                  | Default | Validation                         |
 | name string                                                                                                           | Name to be given to the container.                                                                                           |         |                                    |
 | image string                                                                                                          | Image name to be used by the container. The supported format is :.                                                           |         | Required: {}                       |
 | imagePullPolicy [PullPolicy](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#pullpolicy-v1-core) | ImagePullPolicy is the image pull policy. One of Always, Never or IfNotPresent. If not defined, it defaults to IfNotPresent. |         | Enum: \[Always Never IfNotPresent] |
@@ -334,6 +351,7 @@ _Appears in:_
 
 | Field                                                                   | Description                                                                                                             | Default | Validation |
 | ----------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- | ------- | ---------- |
+| Field                                                                   | Description                                                                                                             | Default | Validation |
 | command string array                                                    | Command to be used in the Container.                                                                                    |         |            |
 | args string array                                                       | Args to be used in the Container.                                                                                       |         |            |
 | env [EnvVar](api-reference.md#envvar) array                             | Env represents the environment variables to be injected in a container.                                                 |         |            |
@@ -358,6 +376,7 @@ _Appears in:_
 
 | Field                 | Description                                                                                                               |
 | --------------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| Field                 | Description                                                                                                               |
 | majority\_of\_all     | CooperativeMonitoringMajorityOfAll requires a lock from the majority of the MariaDB servers, even the ones that are down. |
 | majority\_of\_running | CooperativeMonitoringMajorityOfRunning requires a lock from the majority of the MariaDB servers.                          |
 
@@ -372,6 +391,7 @@ _Appears in:_
 
 | Field                              | Description                                                                               | Default | Validation |
 | ---------------------------------- | ----------------------------------------------------------------------------------------- | ------- | ---------- |
+| Field                              | Description                                                                               | Default | Validation |
 | successfulJobsHistoryLimit integer | SuccessfulJobsHistoryLimit defines the maximum number of successful Jobs to be displayed. |         | Minimum: 0 |
 | failedJobsHistoryLimit integer     | FailedJobsHistoryLimit defines the maximum number of failed Jobs to be displayed.         |         | Minimum: 0 |
 | timeZone string                    | TimeZone defines the timezone associated with the cron expression.                        |         |            |
@@ -382,6 +402,7 @@ Database is the Schema for the databases API. It is used to define a logical dat
 
 | Field                                                                                                          | Description                                                   | Default | Validation |
 | -------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------- | ------- | ---------- |
+| Field                                                                                                          | Description                                                   | Default | Validation |
 | apiVersion string                                                                                              | enterprise.mariadb.com/v1alpha1                               |         |            |
 | kind string                                                                                                    | Database                                                      |         |            |
 | metadata [ObjectMeta](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#objectmeta-v1-meta) | Refer to Kubernetes API documentation for fields of metadata. |         |            |
@@ -397,6 +418,7 @@ _Appears in:_
 
 | Field                                                                                                             | Description                                                         | Default           | Validation           |
 | ----------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------- | ----------------- | -------------------- |
+| Field                                                                                                             | Description                                                         | Default           | Validation           |
 | requeueInterval [Duration](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#duration-v1-meta) | RequeueInterval is used to perform requeue reconciliations.         |                   |                      |
 | retryInterval [Duration](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#duration-v1-meta)   | RetryInterval is the interval used to perform retries.              |                   |                      |
 | cleanupPolicy [CleanupPolicy](api-reference.md#cleanuppolicy)                                                     | CleanupPolicy defines the behavior for cleaning up a SQL resource.  |                   | Enum: \[Skip Delete] |
@@ -417,6 +439,7 @@ _Appears in:_
 
 | Field                                                                                                              | Description | Default | Validation |
 | ------------------------------------------------------------------------------------------------------------------ | ----------- | ------- | ---------- |
+| Field                                                                                                              | Description | Default | Validation |
 | medium [StorageMedium](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#storagemedium-v1-core) |             |         |            |
 | sizeLimit [Quantity](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#quantity-resource-api)   |             |         |            |
 
@@ -434,6 +457,7 @@ _Appears in:_
 
 | Field                                                                      | Description | Default | Validation |
 | -------------------------------------------------------------------------- | ----------- | ------- | ---------- |
+| Field                                                                      | Description | Default | Validation |
 | prefix string                                                              |             |         |            |
 | configMapRef [LocalObjectReference](api-reference.md#localobjectreference) |             |         |            |
 | secretRef [LocalObjectReference](api-reference.md#localobjectreference)    |             |         |            |
@@ -453,6 +477,7 @@ _Appears in:_
 
 | Field                                                   | Description                                                | Default | Validation |
 | ------------------------------------------------------- | ---------------------------------------------------------- | ------- | ---------- |
+| Field                                                   | Description                                                | Default | Validation |
 | name string                                             | Name of the environment variable. Must be a C\_IDENTIFIER. |         |            |
 | value string                                            |                                                            |         |            |
 | valueFrom [EnvVarSource](api-reference.md#envvarsource) |                                                            |         |            |
@@ -467,6 +492,7 @@ _Appears in:_
 
 | Field                                                                         | Description | Default | Validation |
 | ----------------------------------------------------------------------------- | ----------- | ------- | ---------- |
+| Field                                                                         | Description | Default | Validation |
 | fieldRef [ObjectFieldSelector](api-reference.md#objectfieldselector)          |             |         |            |
 | configMapKeyRef [ConfigMapKeySelector](api-reference.md#configmapkeyselector) |             |         |            |
 | secretKeyRef [SecretKeySelector](api-reference.md#secretkeyselector)          |             |         |            |
@@ -482,6 +508,7 @@ _Appears in:_
 
 | Field                | Description | Default | Validation |
 | -------------------- | ----------- | ------- | ---------- |
+| Field                | Description | Default | Validation |
 | command string array |             |         |            |
 
 #### Exporter
@@ -495,6 +522,7 @@ _Appears in:_
 
 | Field                                                                                                                   | Description                                                                                                                  | Default | Validation                         |
 | ----------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | ------- | ---------------------------------- |
+| Field                                                                                                                   | Description                                                                                                                  | Default | Validation                         |
 | image string                                                                                                            | Image name to be used as metrics exporter. The supported format is :.                                                        |         |                                    |
 | imagePullPolicy [PullPolicy](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#pullpolicy-v1-core)   | ImagePullPolicy is the image pull policy. One of Always, Never or IfNotPresent. If not defined, it defaults to IfNotPresent. |         | Enum: \[Always Never IfNotPresent] |
 | imagePullSecrets [LocalObjectReference](api-reference.md#localobjectreference) array                                    | ImagePullSecrets is the list of pull Secrets to be used to pull the image.                                                   |         |                                    |
@@ -519,6 +547,7 @@ _Appears in:_
 
 | Field                                                      | Description                                                                                                                                                                                                                                                                   | Default | Validation                           |
 | ---------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | ------------------------------------ |
+| Field                                                      | Description                                                                                                                                                                                                                                                                   | Default | Validation                           |
 | primary [PrimaryGalera](api-reference.md#primarygalera)    | Primary is the Galera configuration for the primary node.                                                                                                                                                                                                                     |         |                                      |
 | sst [SST](api-reference.md#sst)                            | SST is the Snapshot State Transfer used when new Pods join the cluster.More info: [sst.html](https://galeracluster.com/library/documentation/sst.html).                                                                                                                       |         | Enum: \[rsync mariadb-backup mysqldump] |
 | availableWhenDonor boolean                                 | AvailableWhenDonor indicates whether a donor node should be responding to queries. It defaults to false.                                                                                                                                                                      |         |                                      |
@@ -544,6 +573,7 @@ _Appears in:_
 
 | Field                                                                                                                     | Description                                                                                                                  | Default | Validation                         |
 | ------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | ------- | ---------------------------------- |
+| Field                                                                                                                     | Description                                                                                                                  | Default | Validation                         |
 | command string array                                                                                                      | Command to be used in the Container.                                                                                         |         |                                    |
 | args string array                                                                                                         | Args to be used in the Container.                                                                                            |         |                                    |
 | env [EnvVar](api-reference.md#envvar) array                                                                               | Env represents the environment variables to be injected in a container.                                                      |         |                                    |
@@ -573,6 +603,7 @@ _Appears in:_
 
 | Field                                                                           | Description                                                                                                                                                                                                                              | Default | Validation |
 | ------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | ---------- |
+| Field                                                                           | Description                                                                                                                                                                                                                              | Default | Validation |
 | reuseStorageVolume boolean                                                      | ReuseStorageVolume indicates that storage volume used by MariaDB should be reused to store the Galera configuration files.It defaults to false, which implies that a dedicated volume for the Galera configuration files is provisioned. |         |            |
 | volumeClaimTemplate [VolumeClaimTemplate](api-reference.md#volumeclaimtemplate) | VolumeClaimTemplate is a template for the PVC that will contain the Galera configuration files shared between the InitContainer, Agent and MariaDB.                                                                                      |         |            |
 
@@ -587,6 +618,7 @@ _Appears in:_
 
 | Field                                                                                                                 | Description                                                                                                                  | Default | Validation                         |
 | --------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | ------- | ---------------------------------- |
+| Field                                                                                                                 | Description                                                                                                                  | Default | Validation                         |
 | command string array                                                                                                  | Command to be used in the Container.                                                                                         |         |                                    |
 | args string array                                                                                                     | Args to be used in the Container.                                                                                            |         |                                    |
 | env [EnvVar](api-reference.md#envvar) array                                                                           | Env represents the environment variables to be injected in a container.                                                      |         |                                    |
@@ -611,6 +643,7 @@ _Appears in:_
 
 | Field                                                                   | Description                                                   | Default | Validation |
 | ----------------------------------------------------------------------- | ------------------------------------------------------------- | ------- | ---------- |
+| Field                                                                   | Description                                                   | Default | Validation |
 | metadata [Metadata](api-reference.md#metadata)                          | Refer to Kubernetes API documentation for fields of metadata. |         |            |
 | resources [ResourceRequirements](api-reference.md#resourcerequirements) | Resouces describes the compute resource requirements.         |         |            |
 
@@ -626,6 +659,7 @@ _Appears in:_
 
 | Field                                                                                                                      | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             | Default | Validation |
 | -------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | ---------- |
+| Field                                                                                                                      | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             | Default | Validation |
 | enabled boolean                                                                                                            | Enabled is a flag to enable GaleraRecovery.                                                                                                                                                                                                                                                                                                                                                                                                                                                             |         |            |
 | minClusterSize [IntOrString](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#intorstring-intstr-util) | MinClusterSize is the minimum number of replicas to consider the cluster healthy. It can be either a number of replicas (1) or a percentage (50%).If Galera consistently reports less replicas than this value for the given 'ClusterHealthyTimeout' interval, a cluster recovery is iniated.It defaults to '1' replica, and it is highly recommendeded to keep this value at '1' in most cases.If set to more than one replica, the cluster recovery process may restart the healthy replicas as well. |         |            |
 | clusterMonitorInterval [Duration](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#duration-v1-meta)   | ClusterMonitorInterval represents the interval used to monitor the Galera cluster health.                                                                                                                                                                                                                                                                                                                                                                                                               |         |            |
@@ -648,6 +682,7 @@ _Appears in:_
 
 | Field                                                                   | Description                                                                                                           | Default | Validation |
 | ----------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | ------- | ---------- |
+| Field                                                                   | Description                                                                                                           | Default | Validation |
 | metadata [Metadata](api-reference.md#metadata)                          | Refer to Kubernetes API documentation for fields of metadata.                                                         |         |            |
 | resources [ResourceRequirements](api-reference.md#resourcerequirements) | Resouces describes the compute resource requirements.                                                                 |         |            |
 | podAffinity boolean                                                     | PodAffinity indicates whether the recovery Jobs should run in the same Node as the MariaDB Pods. It defaults to true. |         |            |
@@ -662,6 +697,7 @@ _Appears in:_
 
 | Field                                                      | Description                                                                                                                                                                                                                                                                   | Default | Validation                           |
 | ---------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | ------------------------------------ |
+| Field                                                      | Description                                                                                                                                                                                                                                                                   | Default | Validation                           |
 | primary [PrimaryGalera](api-reference.md#primarygalera)    | Primary is the Galera configuration for the primary node.                                                                                                                                                                                                                     |         |                                      |
 | sst [SST](api-reference.md#sst)                            | SST is the Snapshot State Transfer used when new Pods join the cluster.More info: [sst.html](https://galeracluster.com/library/documentation/sst.html).                                                                                                                       |         | Enum: \[rsync mariadb-backup mysqldump] |
 | availableWhenDonor boolean                                 | AvailableWhenDonor indicates whether a donor node should be responding to queries. It defaults to false.                                                                                                                                                                      |         |                                      |
@@ -688,6 +724,7 @@ _Appears in:_
 
 | Field            | Description                                                                                        | Default | Validation |
 | ---------------- | -------------------------------------------------------------------------------------------------- | ------- | ---------- |
+| Field            | Description                                                                                        | Default | Validation |
 | name string      |                                                                                                    |         |            |
 | key string       |                                                                                                    |         |            |
 | generate boolean | Generate indicates whether the Secret should be generated if the Secret referenced is not present. | false   |            |
@@ -698,6 +735,7 @@ Grant is the Schema for the grants API. It is used to define grants as if you we
 
 | Field                                                                                                          | Description                                                   | Default | Validation |
 | -------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------- | ------- | ---------- |
+| Field                                                                                                          | Description                                                   | Default | Validation |
 | apiVersion string                                                                                              | enterprise.mariadb.com/v1alpha1                               |         |            |
 | kind string                                                                                                    | Grant                                                         |         |            |
 | metadata [ObjectMeta](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#objectmeta-v1-meta) | Refer to Kubernetes API documentation for fields of metadata. |         |            |
@@ -713,6 +751,7 @@ _Appears in:_
 
 | Field                                                                                                             | Description                                                        | Default | Validation               |
 | ----------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------ | ------- | ------------------------ |
+| Field                                                                                                             | Description                                                        | Default | Validation               |
 | requeueInterval [Duration](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#duration-v1-meta) | RequeueInterval is used to perform requeue reconciliations.        |         |                          |
 | retryInterval [Duration](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#duration-v1-meta)   | RetryInterval is the interval used to perform retries.             |         |                          |
 | cleanupPolicy [CleanupPolicy](api-reference.md#cleanuppolicy)                                                     | CleanupPolicy defines the behavior for cleaning up a SQL resource. |         | Enum: \[Skip Delete]     |
@@ -735,6 +774,7 @@ _Appears in:_
 
 | Field                                                                                                            | Description | Default | Validation |
 | ---------------------------------------------------------------------------------------------------------------- | ----------- | ------- | ---------- |
+| Field                                                                                                            | Description | Default | Validation |
 | path string                                                                                                      |             |         |            |
 | port [IntOrString](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#intorstring-intstr-util) |             |         |            |
 | host string                                                                                                      |             |         |            |
@@ -751,6 +791,7 @@ _Appears in:_
 
 | Field                                                                                                           | Description                                                         | Default | Validation |
 | --------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------- | ------- | ---------- |
+| Field                                                                                                           | Description                                                         | Default | Validation |
 | interval [Duration](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#duration-v1-meta)      | Interval used to perform health checks.                             |         |            |
 | retryInterval [Duration](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#duration-v1-meta) | RetryInterval is the interval used to perform health check retries. |         |            |
 
@@ -766,6 +807,7 @@ _Appears in:_
 
 | Field       | Description | Default | Validation |
 | ----------- | ----------- | ------- | ---------- |
+| Field       | Description | Default | Validation |
 | path string |             |         |            |
 | type string |             |         |            |
 
@@ -779,6 +821,7 @@ _Appears in:_
 
 | Field                                                                   | Description                                                   | Default | Validation |
 | ----------------------------------------------------------------------- | ------------------------------------------------------------- | ------- | ---------- |
+| Field                                                                   | Description                                                   | Default | Validation |
 | metadata [Metadata](api-reference.md#metadata)                          | Refer to Kubernetes API documentation for fields of metadata. |         |            |
 | affinity [AffinityConfig](api-reference.md#affinityconfig)              | Affinity to be used in the Pod.                               |         |            |
 | resources [ResourceRequirements](api-reference.md#resourcerequirements) | Resouces describes the compute resource requirements.         |         |            |
@@ -796,6 +839,7 @@ _Appears in:_
 
 | Field                                                                   | Description                                                                       | Default | Validation |
 | ----------------------------------------------------------------------- | --------------------------------------------------------------------------------- | ------- | ---------- |
+| Field                                                                   | Description                                                                       | Default | Validation |
 | args string array                                                       | Args to be used in the Container.                                                 |         |            |
 | resources [ResourceRequirements](api-reference.md#resourcerequirements) | Resouces describes the compute resource requirements.                             |         |            |
 | securityContext [SecurityContext](api-reference.md#securitycontext)     | SecurityContext holds security configuration that will be applied to a container. |         |            |
@@ -812,6 +856,7 @@ _Appears in:_
 
 | Field                                                                                                                   | Description                                                                        | Default | Validation |
 | ----------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ------- | ---------- |
+| Field                                                                                                                   | Description                                                                        | Default | Validation |
 | podMetadata [Metadata](api-reference.md#metadata)                                                                       | PodMetadata defines extra metadata for the Pod.                                    |         |            |
 | imagePullSecrets [LocalObjectReference](api-reference.md#localobjectreference) array                                    | ImagePullSecrets is the list of pull Secrets to be used to pull the image.         |         |            |
 | podSecurityContext [PodSecurityContext](api-reference.md#podsecuritycontext)                                            | SecurityContext holds pod-level security attributes and common container settings. |         |            |
@@ -832,6 +877,7 @@ _Appears in:_
 
 | Field                        | Description                                                                                                                                                                                                                                | Default | Validation |
 | ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------- | ---------- |
+| Field                        | Description                                                                                                                                                                                                                                | Default | Validation |
 | enabled boolean              | Enabled is a flag to enable KubernetesAuth                                                                                                                                                                                                 |         |            |
 | authDelegatorRoleName string | AuthDelegatorRoleName is the name of the ClusterRoleBinding that is associated with the "system:auth-delegator" ClusterRole.It is necessary for creating TokenReview objects in order for the agent to validate the service account token. |         |            |
 
@@ -874,6 +920,7 @@ _Appears in:_
 
 | Field       | Description | Default | Validation |
 | ----------- | ----------- | ------- | ---------- |
+| Field       | Description | Default | Validation |
 | name string |             |         |            |
 
 #### MariaDB
@@ -882,6 +929,7 @@ MariaDB is the Schema for the mariadbs API. It is used to define MariaDB cluster
 
 | Field                                                                                                          | Description                                                   | Default | Validation |
 | -------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------- | ------- | ---------- |
+| Field                                                                                                          | Description                                                   | Default | Validation |
 | apiVersion string                                                                                              | enterprise.mariadb.com/v1alpha1                               |         |            |
 | kind string                                                                                                    | MariaDB                                                       |         |            |
 | metadata [ObjectMeta](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#objectmeta-v1-meta) | Refer to Kubernetes API documentation for fields of metadata. |         |            |
@@ -897,6 +945,7 @@ _Appears in:_
 
 | Field                                                                                                                                              | Description                                                                                                                  | Default | Validation                         |
 | -------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | ------- | ---------------------------------- |
+| Field                                                                                                                                              | Description                                                                                                                  | Default | Validation                         |
 | enabled boolean                                                                                                                                    | Enabled is a flag to enable a MaxScale instance to be used with the current MariaDB.                                         |         |                                    |
 | image string                                                                                                                                       | Image name to be used by the MaxScale instances. The supported format is :.Only MariaDB official images are supported.       |         |                                    |
 | imagePullPolicy [PullPolicy](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#pullpolicy-v1-core)                              | ImagePullPolicy is the image pull policy. One of Always, Never or IfNotPresent. If not defined, it defaults to IfNotPresent. |         | Enum: \[Always Never IfNotPresent] |
@@ -932,6 +981,7 @@ _Appears in:_
 
 | Field             | Description                                                                                          | Default | Validation |
 | ----------------- | ---------------------------------------------------------------------------------------------------- | ------- | ---------- |
+| Field             | Description                                                                                          | Default | Validation |
 | name string       |                                                                                                      |         |            |
 | namespace string  |                                                                                                      |         |            |
 | waitForIt boolean | WaitForIt indicates whether the controller using this reference should wait for MariaDB to be ready. | true    |            |
@@ -946,6 +996,7 @@ _Appears in:_
 
 | Field                                                                                                                   | Description                                                                                                                                                                                                                                                                                                                                          | Default | Validation                         |
 | ----------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | ---------------------------------- |
+| Field                                                                                                                   | Description                                                                                                                                                                                                                                                                                                                                          | Default | Validation                         |
 | command string array                                                                                                    | Command to be used in the Container.                                                                                                                                                                                                                                                                                                                 |         |                                    |
 | args string array                                                                                                       | Args to be used in the Container.                                                                                                                                                                                                                                                                                                                    |         |                                    |
 | env [EnvVar](api-reference.md#envvar) array                                                                             | Env represents the environment variables to be injected in a container.                                                                                                                                                                                                                                                                              |         |                                    |
@@ -1012,6 +1063,7 @@ _Appears in:_
 
 | Field                                                                                | Description                                                                                                                                                                                                                                    | Default | Validation |
 | ------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | ---------- |
+| Field                                                                                | Description                                                                                                                                                                                                                                    | Default | Validation |
 | enabled boolean                                                                      | Enabled is a flag to enable Metrics                                                                                                                                                                                                            |         |            |
 | exporter [Exporter](api-reference.md#exporter)                                       | Exporter defines the metrics exporter container.                                                                                                                                                                                               |         |            |
 | serviceMonitor [ServiceMonitor](api-reference.md#servicemonitor)                     | ServiceMonitor defines the ServiceMonior object.                                                                                                                                                                                               |         |            |
@@ -1024,6 +1076,7 @@ MaxScale is the Schema for the maxscales API. It is used to define MaxScale clus
 
 | Field                                                                                                          | Description                                                   | Default | Validation |
 | -------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------- | ------- | ---------- |
+| Field                                                                                                          | Description                                                   | Default | Validation |
 | apiVersion string                                                                                              | enterprise.mariadb.com/v1alpha1                               |         |            |
 | kind string                                                                                                    | MaxScale                                                      |         |            |
 | metadata [ObjectMeta](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#objectmeta-v1-meta) | Refer to Kubernetes API documentation for fields of metadata. |         |            |
@@ -1040,6 +1093,7 @@ _Appears in:_
 
 | Field              | Description                                                   | Default | Validation |
 | ------------------ | ------------------------------------------------------------- | ------- | ---------- |
+| Field              | Description                                                   | Default | Validation |
 | port integer       | Port where the admin REST API and GUI will be exposed.        |         |            |
 | guiEnabled boolean | GuiEnabled indicates whether the admin GUI should be enabled. |         |            |
 
@@ -1054,6 +1108,7 @@ _Appears in:_
 
 | Field                                                                                       | Description                                                                                                                                                                                                                                                                                               | Default | Validation |
 | ------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | ---------- |
+| Field                                                                                       | Description                                                                                                                                                                                                                                                                                               | Default | Validation |
 | generate boolean                                                                            | Generate defies whether the operator should generate users and grants for MaxScale to work.It only supports MariaDBs specified via spec.mariaDbRef.                                                                                                                                                       |         |            |
 | adminUsername string                                                                        | AdminUsername is an admin username to call the admin REST API. It is defaulted if not provided.                                                                                                                                                                                                           |         |            |
 | adminPasswordSecretKeyRef [GeneratedSecretKeyRef](api-reference.md#generatedsecretkeyref)   | AdminPasswordSecretKeyRef is Secret key reference to the admin password to call the admin REST API. It is defaulted if not provided.                                                                                                                                                                      |         |            |
@@ -1084,6 +1139,7 @@ _Appears in:_
 
 | Field                                                                           | Description                                                                                                                                                                                                                                                                                                                                                                                                                              | Default | Validation |
 | ------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | ---------- |
+| Field                                                                           | Description                                                                                                                                                                                                                                                                                                                                                                                                                              | Default | Validation |
 | params object (keys:string, values:string)                                      | Params is a key value pair of parameters to be used in the MaxScale static configuration file.Any parameter supported by MaxScale may be specified here. See reference:[#global-settings](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/other-maxscale-versions/mariadb-maxscale-24-08-beta/mariadb-maxscale-24-08-beta-getting-started/mariadb-maxscale-2408-maxscale-2408-beta-mariadb-maxscale-configuration-guide#global-settings). |         |            |
 | volumeClaimTemplate [VolumeClaimTemplate](api-reference.md#volumeclaimtemplate) | VolumeClaimTemplate provides a template to define the PVCs for storing MaxScale runtime configuration files. It is defaulted if not provided.                                                                                                                                                                                                                                                                                            |         |            |
 | sync [MaxScaleConfigSync](api-reference.md#maxscaleconfigsync)                  | Sync defines how to replicate configuration across MaxScale replicas. It is defaulted when HA is enabled.                                                                                                                                                                                                                                                                                                                                |         |            |
@@ -1098,6 +1154,7 @@ _Appears in:_
 
 | Field                                                                                                      | Description                                                                                                                                                                              | Default | Validation |
 | ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | ---------- |
+| Field                                                                                                      | Description                                                                                                                                                                              | Default | Validation |
 | database string                                                                                            | Database is the MariaDB logical database where the 'maxscale\_config' table will be created in order to persist and synchronize config changes. If not provided, it defaults to 'mysql'. |         |            |
 | interval [Duration](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#duration-v1-meta) | Interval defines the config synchronization interval. It is defaulted if not provided.                                                                                                   |         |            |
 | timeout [Duration](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#duration-v1-meta)  | Interval defines the config synchronization timeout. It is defaulted if not provided.                                                                                                    |         |            |
@@ -1112,6 +1169,7 @@ _Appears in:_
 
 | Field                                      | Description                                                                                                                                                                                                                                                                                                                                                                             | Default | Validation   |
 | ------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | ------------ |
+| Field                                      | Description                                                                                                                                                                                                                                                                                                                                                                             | Default | Validation   |
 | suspend boolean                            | Suspend indicates whether the current resource should be suspended or not.This can be useful for maintenance, as disabling the reconciliation prevents the operator from interfering with user operations during maintenance activities.                                                                                                                                                | false   |              |
 | name string                                | Name is the identifier of the listener. It is defaulted if not provided                                                                                                                                                                                                                                                                                                                 |         |              |
 | port integer                               | Port is the network port where the MaxScale server will listen.                                                                                                                                                                                                                                                                                                                         |         | Required: {} |
@@ -1129,6 +1187,7 @@ _Appears in:_
 
 | Field                                                            | Description                                      | Default | Validation |
 | ---------------------------------------------------------------- | ------------------------------------------------ | ------- | ---------- |
+| Field                                                            | Description                                      | Default | Validation |
 | enabled boolean                                                  | Enabled is a flag to enable Metrics              |         |            |
 | exporter [Exporter](api-reference.md#exporter)                   | Exporter defines the metrics exporter container. |         |            |
 | serviceMonitor [ServiceMonitor](api-reference.md#servicemonitor) | ServiceMonitor defines the ServiceMonior object. |         |            |
@@ -1144,6 +1203,7 @@ _Appears in:_
 
 | Field                                                                                                      | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               | Default | Validation                                       |
 | ---------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | ------------------------------------------------ |
+| Field                                                                                                      | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               | Default | Validation                                       |
 | suspend boolean                                                                                            | Suspend indicates whether the current resource should be suspended or not.This can be useful for maintenance, as disabling the reconciliation prevents the operator from interfering with user operations during maintenance activities.                                                                                                                                                                                                                                                                                                                                                                  | false   |                                                  |
 | name string                                                                                                | Name is the identifier of the monitor. It is defaulted if not provided.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |         |                                                  |
 | module [MonitorModule](api-reference.md#monitormodule)                                                     | Module is the module to use to monitor MariaDB servers. It is mandatory when no MariaDB reference is provided.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |         |                                                  |
@@ -1161,6 +1221,7 @@ _Appears in:_
 
 | Field                                                                                                                   | Description                                                                        | Default | Validation |
 | ----------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ------- | ---------- |
+| Field                                                                                                                   | Description                                                                        | Default | Validation |
 | podMetadata [Metadata](api-reference.md#metadata)                                                                       | PodMetadata defines extra metadata for the Pod.                                    |         |            |
 | imagePullSecrets [LocalObjectReference](api-reference.md#localobjectreference) array                                    | ImagePullSecrets is the list of pull Secrets to be used to pull the image.         |         |            |
 | podSecurityContext [PodSecurityContext](api-reference.md#podsecuritycontext)                                            | SecurityContext holds pod-level security attributes and common container settings. |         |            |
@@ -1181,6 +1242,7 @@ _Appears in:_
 
 | Field                                      | Description                                                                                                                                                                                                          | Default | Validation   |
 | ------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | ------------ |
+| Field                                      | Description                                                                                                                                                                                                          | Default | Validation   |
 | name string                                | Name is the identifier of the MariaDB server.                                                                                                                                                                        |         | Required: {} |
 | address string                             | Address is the network address of the MariaDB server.                                                                                                                                                                |         | Required: {} |
 | port integer                               | Port is the network port of the MariaDB server. If not provided, it defaults to 3306.                                                                                                                                |         |              |
@@ -1199,6 +1261,7 @@ _Appears in:_
 
 | Field                                                          | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                | Default | Validation                                         |
 | -------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------- | -------------------------------------------------- |
+| Field                                                          | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                | Default | Validation                                         |
 | suspend boolean                                                | Suspend indicates whether the current resource should be suspended or not.This can be useful for maintenance, as disabling the reconciliation prevents the operator from interfering with user operations during maintenance activities.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   | false   |                                                    |
 | name string                                                    | Name is the identifier of the MaxScale service.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |         | Required: {}                                       |
 | router [ServiceRouter](api-reference.md#servicerouter)         | Router is the type of router to use.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |         | Enum: \[readwritesplit readconnroute] Required: {} |
@@ -1215,6 +1278,7 @@ _Appears in:_
 
 | Field                                                                                                                                              | Description                                                                                                                                                                                                                              | Default | Validation                         |
 | -------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | ---------------------------------- |
+| Field                                                                                                                                              | Description                                                                                                                                                                                                                              | Default | Validation                         |
 | command string array                                                                                                                               | Command to be used in the Container.                                                                                                                                                                                                     |         |                                    |
 | args string array                                                                                                                                  | Args to be used in the Container.                                                                                                                                                                                                        |         |                                    |
 | env [EnvVar](api-reference.md#envvar) array                                                                                                        | Env represents the environment variables to be injected in a container.                                                                                                                                                                  |         |                                    |
@@ -1266,6 +1330,7 @@ _Appears in:_
 
 | Field                                                                               | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      | Default | Validation |
 | ----------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------- | ---------- |
+| Field                                                                               | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      | Default | Validation |
 | enabled boolean                                                                     | Enabled indicates whether TLS is enabled, determining if certificates should be issued and mounted to the MaxScale instance.It is enabled by default when the referred MariaDB instance (via mariaDbRef) has TLS enabled and enforced.                                                                                                                                                                                                                                                                                                                                                           |         |            |
 | adminVersions string array                                                          | Versions specifies the supported TLS versions in the MaxScale REST API.By default, the MaxScale's default supported versions are used. See: [MariaDB MaxScale Configuration Guide](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/other-maxscale-versions/mariadb-maxscale-21-06/mariadb-maxscale-21-06-getting-started/mariadb-maxscale-2106-maxscale-2106-mariadb-maxscale-configuration-guide)                                                                                                                                                                                                |         |            |
 | serverVersions string array                                                         | ServerVersions specifies the supported TLS versions in both the servers and listeners managed by this MaxScale instance.By default, the MaxScale's default supported versions are used. See: [MariaDB MaxScale Configuration Guide](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/other-maxscale-versions/mariadb-maxscale-21-06/mariadb-maxscale-21-06-getting-started/mariadb-maxscale-2106-maxscale-2106-mariadb-maxscale-configuration-guide).                                                                                                                                              |         |            |
@@ -1307,6 +1372,7 @@ _Appears in:_
 
 | Field                                           | Description                                    | Default | Validation |
 | ----------------------------------------------- | ---------------------------------------------- | ------- | ---------- |
+| Field                                           | Description                                    | Default | Validation |
 | labels object (keys:string, values:string)      | Labels to be added to children resources.      |         |            |
 | annotations object (keys:string, values:string) | Annotations to be added to children resources. |         |            |
 
@@ -1322,6 +1388,7 @@ _Appears in:_
 
 | Field      | Description                                                        |
 | ---------- | ------------------------------------------------------------------ |
+| Field      | Description                                                        |
 | mariadbmon | MonitorModuleMariadb is a monitor to be used with MariaDB servers. |
 | galeramon  | MonitorModuleGalera is a monitor to be used with Galera servers.   |
 
@@ -1337,6 +1404,7 @@ _Appears in:_
 
 | Field            | Description | Default | Validation |
 | ---------------- | ----------- | ------- | ---------- |
+| Field            | Description | Default | Validation |
 | server string    |             |         |            |
 | path string      |             |         |            |
 | readOnly boolean |             |         |            |
@@ -1352,6 +1420,7 @@ _Appears in:_
 
 | Field                                                                                                                     | Description | Default | Validation |
 | ------------------------------------------------------------------------------------------------------------------------- | ----------- | ------- | ---------- |
+| Field                                                                                                                     | Description | Default | Validation |
 | requiredDuringSchedulingIgnoredDuringExecution [NodeSelector](api-reference.md#nodeselector)                              |             |         |            |
 | preferredDuringSchedulingIgnoredDuringExecution [PreferredSchedulingTerm](api-reference.md#preferredschedulingterm) array |             |         |            |
 
@@ -1365,6 +1434,7 @@ _Appears in:_
 
 | Field                                                                         | Description | Default | Validation |
 | ----------------------------------------------------------------------------- | ----------- | ------- | ---------- |
+| Field                                                                         | Description | Default | Validation |
 | nodeSelectorTerms [NodeSelectorTerm](api-reference.md#nodeselectorterm) array |             |         |            |
 
 #### NodeSelectorTerm
@@ -1388,6 +1458,7 @@ _Appears in:_
 
 | Field             | Description | Default | Validation |
 | ----------------- | ----------- | ------- | ---------- |
+| Field             | Description | Default | Validation |
 | apiVersion string |             |         |            |
 | fieldPath string  |             |         |            |
 
@@ -1403,6 +1474,7 @@ _Appears in:_
 
 | Field            | Description | Default | Validation |
 | ---------------- | ----------- | ------- | ---------- |
+| Field            | Description | Default | Validation |
 | name string      |             |         |            |
 | namespace string |             |         |            |
 
@@ -1417,6 +1489,7 @@ _Appears in:_
 
 | Field                                                                          | Description                                                                                                                                                                                                                                                                          | Default | Validation |
 | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------- | ---------- |
+| Field                                                                          | Description                                                                                                                                                                                                                                                                          | Default | Validation |
 | pluginNameSecretKeyRef [SecretKeySelector](api-reference.md#secretkeyselector) | PluginNameSecretKeyRef is a reference to the authentication plugin to be used by the User.If the referred Secret is labeled with "enterprise.mariadb.com/watch", updates may be performed to the Secret in order to update the authentication plugin.                                |         |            |
 | pluginArgSecretKeyRef [SecretKeySelector](api-reference.md#secretkeyselector)  | PluginArgSecretKeyRef is a reference to the arguments to be provided to the authentication plugin for the User.If the referred Secret is labeled with "enterprise.mariadb.com/watch", updates may be performed to the Secret in order to update the authentication plugin arguments. |         |            |
 
@@ -1432,6 +1505,7 @@ _Appears in:_
 
 | Field                                                                                                                                                   | Description | Default | Validation |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------- | ------- | ---------- |
+| Field                                                                                                                                                   | Description | Default | Validation |
 | accessModes [PersistentVolumeAccessMode](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#persistentvolumeaccessmode-v1-core) array |             |         |            |
 | selector [LabelSelector](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#labelselector-v1-meta)                                    |             |         |            |
 | resources [VolumeResourceRequirements](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#volumeresourcerequirements-v1-core)         |             |         |            |
@@ -1449,6 +1523,7 @@ _Appears in:_
 
 | Field            | Description | Default | Validation |
 | ---------------- | ----------- | ------- | ---------- |
+| Field            | Description | Default | Validation |
 | claimName string |             |         |            |
 | readOnly boolean |             |         |            |
 
@@ -1463,6 +1538,7 @@ _Appears in:_
 
 | Field                                                         | Description | Default | Validation |
 | ------------------------------------------------------------- | ----------- | ------- | ---------- |
+| Field                                                         | Description | Default | Validation |
 | labelSelector [LabelSelector](api-reference.md#labelselector) |             |         |            |
 | topologyKey string                                            |             |         |            |
 
@@ -1477,6 +1553,7 @@ _Appears in:_
 
 | Field                                                                                                                     | Description | Default | Validation |
 | ------------------------------------------------------------------------------------------------------------------------- | ----------- | ------- | ---------- |
+| Field                                                                                                                     | Description | Default | Validation |
 | requiredDuringSchedulingIgnoredDuringExecution [PodAffinityTerm](api-reference.md#podaffinityterm) array                  |             |         |            |
 | preferredDuringSchedulingIgnoredDuringExecution [WeightedPodAffinityTerm](api-reference.md#weightedpodaffinityterm) array |             |         |            |
 
@@ -1492,6 +1569,7 @@ _Appears in:_
 
 | Field                                                                                                                      | Description                                                    | Default | Validation |
 | -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------- | ------- | ---------- |
+| Field                                                                                                                      | Description                                                    | Default | Validation |
 | minAvailable [IntOrString](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#intorstring-intstr-util)   | MinAvailable defines the number of minimum available Pods.     |         |            |
 | maxUnavailable [IntOrString](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#intorstring-intstr-util) | MaxUnavailable defines the number of maximum unavailable Pods. |         |            |
 
@@ -1513,6 +1591,7 @@ _Appears in:_
 
 | Field                                                                                                                                             | Description | Default | Validation |
 | ------------------------------------------------------------------------------------------------------------------------------------------------- | ----------- | ------- | ---------- |
+| Field                                                                                                                                             | Description | Default | Validation |
 | seLinuxOptions [SELinuxOptions](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#selinuxoptions-v1-core)                      |             |         |            |
 | runAsUser integer                                                                                                                                 |             |         |            |
 | runAsGroup integer                                                                                                                                |             |         |            |
@@ -1533,6 +1612,7 @@ _Appears in:_
 
 | Field                                                                                                                   | Description                                                                        | Default | Validation |
 | ----------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ------- | ---------- |
+| Field                                                                                                                   | Description                                                                        | Default | Validation |
 | podMetadata [Metadata](api-reference.md#metadata)                                                                       | PodMetadata defines extra metadata for the Pod.                                    |         |            |
 | imagePullSecrets [LocalObjectReference](api-reference.md#localobjectreference) array                                    | ImagePullSecrets is the list of pull Secrets to be used to pull the image.         |         |            |
 | initContainers [Container](api-reference.md#container) array                                                            | InitContainers to be used in the Pod.                                              |         |            |
@@ -1556,6 +1636,7 @@ _Appears in:_
 
 | Field                                                            | Description | Default | Validation |
 | ---------------------------------------------------------------- | ----------- | ------- | ---------- |
+| Field                                                            | Description | Default | Validation |
 | weight integer                                                   |             |         |            |
 | preference [NodeSelectorTerm](api-reference.md#nodeselectorterm) |             |         |            |
 
@@ -1570,6 +1651,7 @@ _Appears in:_
 
 | Field                     | Description                                                                                                                     | Default | Validation |
 | ------------------------- | ------------------------------------------------------------------------------------------------------------------------------- | ------- | ---------- |
+| Field                     | Description                                                                                                                     | Default | Validation |
 | podIndex integer          | PodIndex is the StatefulSet index of the primary node. The user may change this field to perform a manual switchover.           |         |            |
 | automaticFailover boolean | AutomaticFailover indicates whether the operator should automatically update PodIndex to perform an automatic primary failover. |         |            |
 
@@ -1587,6 +1669,7 @@ _Appears in:_
 
 | Field                                                         | Description | Default | Validation |
 | ------------------------------------------------------------- | ----------- | ------- | ---------- |
+| Field                                                         | Description | Default | Validation |
 | exec [ExecAction](api-reference.md#execaction)                |             |         |            |
 | httpGet [HTTPGetAction](api-reference.md#httpgetaction)       |             |         |            |
 | tcpSocket [TCPSocketAction](api-reference.md#tcpsocketaction) |             |         |            |
@@ -1606,6 +1689,7 @@ _Appears in:_
 
 | Field                                                         | Description | Default | Validation |
 | ------------------------------------------------------------- | ----------- | ------- | ---------- |
+| Field                                                         | Description | Default | Validation |
 | exec [ExecAction](api-reference.md#execaction)                |             |         |            |
 | httpGet [HTTPGetAction](api-reference.md#httpgetaction)       |             |         |            |
 | tcpSocket [TCPSocketAction](api-reference.md#tcpsocketaction) |             |         |            |
@@ -1637,6 +1721,7 @@ Restore is the Schema for the restores API. It is used to define restore jobs an
 
 | Field                                                                                                          | Description                                                   | Default | Validation |
 | -------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------- | ------- | ---------- |
+| Field                                                                                                          | Description                                                   | Default | Validation |
 | apiVersion string                                                                                              | enterprise.mariadb.com/v1alpha1                               |         |            |
 | kind string                                                                                                    | Restore                                                       |         |            |
 | metadata [ObjectMeta](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#objectmeta-v1-meta) | Refer to Kubernetes API documentation for fields of metadata. |         |            |
@@ -1653,6 +1738,7 @@ _Appears in:_
 
 | Field                                                                                                        | Description                                                                                                                                                                                                                                                | Default | Validation |
 | ------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | ---------- |
+| Field                                                                                                        | Description                                                                                                                                                                                                                                                | Default | Validation |
 | backupRef [LocalObjectReference](api-reference.md#localobjectreference)                                      | BackupRef is a reference to a Backup object. It has priority over S3 and Volume.                                                                                                                                                                           |         |            |
 | s3 [S3](api-reference.md#s3)                                                                                 | S3 defines the configuration to restore backups from a S3 compatible storage. It has priority over Volume.                                                                                                                                                 |         |            |
 | volume [StorageVolumeSource](api-reference.md#storagevolumesource)                                           | Volume is a Kubernetes Volume object that contains a backup.                                                                                                                                                                                               |         |            |
@@ -1669,6 +1755,7 @@ _Appears in:_
 
 | Field                                                                                                                     | Description                                                                                                                                                                                                                                                | Default   | Validation                      |
 | ------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- | ------------------------------- |
+| Field                                                                                                                     | Description                                                                                                                                                                                                                                                | Default   | Validation                      |
 | args string array                                                                                                         | Args to be used in the Container.                                                                                                                                                                                                                          |           |                                 |
 | resources [ResourceRequirements](api-reference.md#resourcerequirements)                                                   | Resouces describes the compute resource requirements.                                                                                                                                                                                                      |           |                                 |
 | securityContext [SecurityContext](api-reference.md#securitycontext)                                                       | SecurityContext holds security configuration that will be applied to a container.                                                                                                                                                                          |           |                                 |
@@ -1703,6 +1790,7 @@ _Appears in:_
 
 | Field                                                                               | Description                                                                                                                                 | Default | Validation   |
 | ----------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- | ------- | ------------ |
+| Field                                                                               | Description                                                                                                                                 | Default | Validation   |
 | bucket string                                                                       | Bucket is the name Name of the bucket to store backups.                                                                                     |         | Required: {} |
 | endpoint string                                                                     | Endpoint is the S3 API endpoint without scheme.                                                                                             |         | Required: {} |
 | region string                                                                       | Region is the S3 region name to use.                                                                                                        |         |              |
@@ -1724,6 +1812,7 @@ _Appears in:_
 
 | Field                                                                                                             | Description                                                        | Default | Validation           |
 | ----------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------ | ------- | -------------------- |
+| Field                                                                                                             | Description                                                        | Default | Validation           |
 | requeueInterval [Duration](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#duration-v1-meta) | RequeueInterval is used to perform requeue reconciliations.        |         |                      |
 | retryInterval [Duration](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#duration-v1-meta)   | RetryInterval is the interval used to perform retries.             |         |                      |
 | cleanupPolicy [CleanupPolicy](api-reference.md#cleanuppolicy)                                                     | CleanupPolicy defines the behavior for cleaning up a SQL resource. |         | Enum: \[Skip Delete] |
@@ -1742,6 +1831,7 @@ _Appears in:_
 
 | Field       | Description                                                               |
 | ----------- | ------------------------------------------------------------------------- |
+| Field       | Description                                                               |
 | rsync       | SSTRsync is an SST based on rsync.                                        |
 | mariadb-backup | SSTmariadb-backup is an SST based on mariadb-backup. It is the recommended SST. |
 | mysqldump   | SSTMysqldump is an SST based on mysqldump.                                |
@@ -1757,6 +1847,7 @@ _Appears in:_
 
 | Field           | Description                                            | Default | Validation   |
 | --------------- | ------------------------------------------------------ | ------- | ------------ |
+| Field           | Description                                            | Default | Validation   |
 | cron string     | Cron is a cron expression that defines the schedule.   |         | Required: {} |
 | suspend boolean | Suspend defines whether the schedule is active or not. | false   |              |
 
@@ -1778,6 +1869,7 @@ _Appears in:_
 
 | Field       | Description | Default | Validation |
 | ----------- | ----------- | ------- | ---------- |
+| Field       | Description | Default | Validation |
 | name string |             |         |            |
 | key string  |             |         |            |
 
@@ -1792,6 +1884,7 @@ _Appears in:_
 
 | Field                                          | Description                                                   | Default | Validation |
 | ---------------------------------------------- | ------------------------------------------------------------- | ------- | ---------- |
+| Field                                          | Description                                                   | Default | Validation |
 | metadata [Metadata](api-reference.md#metadata) | Refer to Kubernetes API documentation for fields of metadata. |         |            |
 | key string                                     | Key to be used in the Secret.                                 |         |            |
 | format string                                  | Format to be used in the Secret.                              |         |            |
@@ -1812,6 +1905,7 @@ _Appears in:_
 
 | Field               | Description | Default | Validation |
 | ------------------- | ----------- | ------- | ---------- |
+| Field               | Description | Default | Validation |
 | secretName string   |             |         |            |
 | defaultMode integer |             |         |            |
 
@@ -1834,6 +1928,7 @@ _Appears in:_
 
 | Field                                                                                                                  | Description | Default | Validation |
 | ---------------------------------------------------------------------------------------------------------------------- | ----------- | ------- | ---------- |
+| Field                                                                                                                  | Description | Default | Validation |
 | capabilities [Capabilities](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#capabilities-v1-core) |             |         |            |
 | privileged boolean                                                                                                     |             |         |            |
 | runAsUser integer                                                                                                      |             |         |            |
@@ -1853,6 +1948,7 @@ _Appears in:_
 
 | Field                    | Description                                                                 | Default | Validation |
 | ------------------------ | --------------------------------------------------------------------------- | ------- | ---------- |
+| Field                    | Description                                                                 | Default | Validation |
 | prometheusRelease string | PrometheusRelease is the release label to add to the ServiceMonitor object. |         |            |
 | jobLabel string          | JobLabel to add to the ServiceMonitor object.                               |         |            |
 | interval string          | Interval for scraping metrics.                                              |         |            |
@@ -1868,6 +1964,7 @@ _Appears in:_
 
 | Field        | Description | Default | Validation |
 | ------------ | ----------- | ------- | ---------- |
+| Field        | Description | Default | Validation |
 | name string  |             |         |            |
 | port integer |             |         |            |
 
@@ -1883,6 +1980,7 @@ _Appears in:_
 
 | Field          | Description                                                                                                                               |
 | -------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| Field          | Description                                                                                                                               |
 | readwritesplit | ServiceRouterReadWriteSplit splits the load based on the queries. Write queries are performed on master and read queries on the replicas. |
 | readconnroute  | ServiceRouterReadConnRoute splits the load based on the connections. Each connection is assigned to a server.                             |
 
@@ -1898,6 +1996,7 @@ _Appears in:_
 
 | Field                                                                                                                                                           | Description                                                                                                     | Default   | Validation                               |
 | --------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------- | ---------------------------------------- |
+| Field                                                                                                                                                           | Description                                                                                                     | Default   | Validation                               |
 | type [ServiceType](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#servicetype-v1-core)                                                    | Type is the Service type. One of ClusterIP, NodePort or LoadBalancer. If not defined, it defaults to ClusterIP. | ClusterIP | Enum: \[ClusterIP NodePort LoadBalancer] |
 | metadata [Metadata](api-reference.md#metadata)                                                                                                                  | Refer to Kubernetes API documentation for fields of metadata.                                                   |           |                                          |
 | loadBalancerIP string                                                                                                                                           | LoadBalancerIP Service field.                                                                                   |           |                                          |
@@ -1912,6 +2011,7 @@ SqlJob is the Schema for the sqljobs API. It is used to run sql scripts as jobs.
 
 | Field                                                                                                          | Description                                                   | Default | Validation |
 | -------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------- | ------- | ---------- |
+| Field                                                                                                          | Description                                                   | Default | Validation |
 | apiVersion string                                                                                              | enterprise.mariadb.com/v1alpha1                               |         |            |
 | kind string                                                                                                    | SqlJob                                                        |         |            |
 | metadata [ObjectMeta](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#objectmeta-v1-meta) | Refer to Kubernetes API documentation for fields of metadata. |         |            |
@@ -1927,6 +2027,7 @@ _Appears in:_
 
 | Field                                                                                                                     | Description                                                                                                                                                                                         | Default   | Validation                      |
 | ------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- | ------------------------------- |
+| Field                                                                                                                     | Description                                                                                                                                                                                         | Default   | Validation                      |
 | args string array                                                                                                         | Args to be used in the Container.                                                                                                                                                                   |           |                                 |
 | resources [ResourceRequirements](api-reference.md#resourcerequirements)                                                   | Resouces describes the compute resource requirements.                                                                                                                                               |           |                                 |
 | securityContext [SecurityContext](api-reference.md#securitycontext)                                                       | SecurityContext holds security configuration that will be applied to a container.                                                                                                                   |           |                                 |
@@ -1965,6 +2066,7 @@ _Appears in:_
 
 | Field                                                                                                       | Description                                                                                                                                                                                                                         | Default | Validation |
 | ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | ---------- |
+| Field                                                                                                       | Description                                                                                                                                                                                                                         | Default | Validation |
 | ephemeral boolean                                                                                           | Ephemeral indicates whether to use ephemeral storage in the PVCs. It is only compatible with non HA MariaDBs.                                                                                                                       |         |            |
 | size [Quantity](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#quantity-resource-api) | Size of the PVCs to be mounted by MariaDB. Required if not provided in 'VolumeClaimTemplate'. It supersedes the storage size specified in 'VolumeClaimTemplate'.                                                                    |         |            |
 | storageClassName string                                                                                     | StorageClassName to be used to provision the PVCS. It supersedes the 'StorageClassName' specified in 'VolumeClaimTemplate'.If not provided, the default 'StorageClass' configured in the cluster is used.                           |         |            |
@@ -1988,6 +2090,7 @@ _Appears in:_
 
 | Field                                                                                                         | Description | Default | Validation |
 | ------------------------------------------------------------------------------------------------------------- | ----------- | ------- | ---------- |
+| Field                                                                                                         | Description | Default | Validation |
 | emptyDir [EmptyDirVolumeSource](api-reference.md#emptydirvolumesource)                                        |             |         |            |
 | nfs [NFSVolumeSource](api-reference.md#nfsvolumesource)                                                       |             |         |            |
 | csi [CSIVolumeSource](api-reference.md#csivolumesource)                                                       |             |         |            |
@@ -2008,6 +2111,7 @@ _Appears in:_
 
 | Field           | Description                                                                                                                                                                                                                              | Default | Validation |
 | --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | ---------- |
+| Field           | Description                                                                                                                                                                                                                              | Default | Validation |
 | suspend boolean | Suspend indicates whether the current resource should be suspended or not.This can be useful for maintenance, as disabling the reconciliation prevents the operator from interfering with user operations during maintenance activities. | false   |            |
 
 #### TCPSocketAction
@@ -2021,6 +2125,7 @@ _Appears in:_
 
 | Field                                                                                                            | Description | Default | Validation |
 | ---------------------------------------------------------------------------------------------------------------- | ----------- | ------- | ---------- |
+| Field                                                                                                            | Description | Default | Validation |
 | port [IntOrString](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#intorstring-intstr-util) |             |         |            |
 | host string                                                                                                      |             |         |            |
 
@@ -2034,6 +2139,7 @@ _Appears in:_
 
 | Field                                                                             | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              | Default | Validation                                             |
 | --------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | ------------------------------------------------------ |
+| Field                                                                             | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              | Default | Validation                                             |
 | enabled boolean                                                                   | Enabled indicates whether TLS is enabled, determining if certificates should be issued and mounted to the MariaDB instance.It is enabled by default.                                                                                                                                                                                                                                                                                                                                                                                                     |         |                                                        |
 | required boolean                                                                  | Required specifies whether TLS must be enforced for all connections.User TLS requirements take precedence over this.It disabled by default.                                                                                                                                                                                                                                                                                                                                                                                                              |         |                                                        |
 | versions string array                                                             | Versions specifies the supported TLS versions for this MariaDB instance.By default, the MariaDB's default supported versions are used. See: [tls\_version](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/ssltls-system-variables#tls_version).                                                                                                                                                                                                                         |         |                                                        |
@@ -2060,6 +2166,7 @@ _Appears in:_
 
 | Field                                                                                                          | Description                                                                                                                                               | Default | Validation         |
 | -------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | ------------------ |
+| Field                                                                                                          | Description                                                                                                                                               | Default | Validation         |
 | caLifetime [Duration](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#duration-v1-meta)   | CALifetime defines the CA certificate validity.                                                                                                           |         |                    |
 | certLifetime [Duration](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#duration-v1-meta) | CertLifetime defines the certificate validity.                                                                                                            |         |                    |
 | privateKeyAlgorithm string                                                                                     | PrivateKeyAlgorithm is the algorithm to be used for the CA and leaf certificate private keys.One of: ECDSA or RSA                                         |         | Enum: \[ECDSA RSA] |
@@ -2075,6 +2182,7 @@ _Appears in:_
 
 | Field          | Description                                                                                         | Default | Validation |
 | -------------- | --------------------------------------------------------------------------------------------------- | ------- | ---------- |
+| Field          | Description                                                                                         | Default | Validation |
 | ssl boolean    | SSL indicates that the user must connect via TLS.                                                   |         |            |
 | x509 boolean   | X509 indicates that the user must provide a valid x509 certificate to connect.                      |         |            |
 | issuer string  | Issuer indicates that the TLS certificate provided by the user must be issued by a specific issuer. |         |            |
@@ -2088,6 +2196,7 @@ _Appears in:_
 
 | Field                                                                  | Description                                                                                                                                                                                                                             | Default | Validation |
 | ---------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | ---------- |
+| Field                                                                  | Description                                                                                                                                                                                                                             | Default | Validation |
 | enabled boolean                                                        | Enabled is a flag to enable TLS.                                                                                                                                                                                                        |         |            |
 | caSecretKeyRef [SecretKeySelector](api-reference.md#secretkeyselector) | CASecretKeyRef is a reference to a Secret key containing a CA bundle in PEM format used to establish TLS connections with S3.By default, the system trust chain will be used, but you can use this field to add more CAs to the bundle. |         |            |
 
@@ -2104,6 +2213,7 @@ _Appears in:_
 
 | Field                                                                                                                                                         | Description | Default | Validation |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------- | ------- | ---------- |
+| Field                                                                                                                                                         | Description | Default | Validation |
 | maxSkew integer                                                                                                                                               |             |         |            |
 | topologyKey string                                                                                                                                            |             |         |            |
 | whenUnsatisfiable [UnsatisfiableConstraintAction](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#unsatisfiableconstraintaction-v1-core) |             |         |            |
@@ -2123,6 +2233,7 @@ _Appears in:_
 
 | Field                                                                                                                                                           | Description                                                                                                                                                                                                                                                                                                                                                                            | Default                  | Validation                                                     |
 | --------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------ | -------------------------------------------------------------- |
+| Field                                                                                                                                                           | Description                                                                                                                                                                                                                                                                                                                                                                            | Default                  | Validation                                                     |
 | type [UpdateType](api-reference.md#updatetype)                                                                                                                  | Type defines the type of updates. One of ReplicasFirstPrimaryLast, RollingUpdate or OnDelete. If not defined, it defaults to ReplicasFirstPrimaryLast.                                                                                                                                                                                                                                 | ReplicasFirstPrimaryLast | Enum: \[ReplicasFirstPrimaryLast RollingUpdate OnDelete Never] |
 | rollingUpdate [RollingUpdateStatefulSetStrategy](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#rollingupdatestatefulsetstrategy-v1-apps) | RollingUpdate defines parameters for the RollingUpdate type.                                                                                                                                                                                                                                                                                                                           |                          |                                                                |
 | autoUpdateDataPlane boolean                                                                                                                                     | AutoUpdateDataPlane indicates whether the Galera data-plane version (agent and init containers) should be automatically updated based on the operator version. It defaults to false.Updating the operator will trigger updates on all the MariaDB instances that have this flag set to true. Thus, it is recommended to progressively set this flag after having updated the operator. |                          |                                                                |
@@ -2139,6 +2250,7 @@ _Appears in:_
 
 | Field                    | Description                                                                                                                                                                                                                                                                                          |
 | ------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Field                    | Description                                                                                                                                                                                                                                                                                          |
 | ReplicasFirstPrimaryLast | ReplicasFirstPrimaryLastUpdateType indicates that the update will be applied to all replica Pods first and later on to the primary Pod.The updates are applied one by one waiting until each Pod passes the readiness probei.e. the Pod gets synced and it is ready to receive traffic.              |
 | RollingUpdate            | RollingUpdateUpdateType indicates that the update will be applied by the StatefulSet controller using the RollingUpdate strategy.This strategy is unaware of the roles that the Pod have (primary or replica) and it willperform the update following the StatefulSet ordinal, from higher to lower. |
 | OnDelete                 | OnDeleteUpdateType indicates that the update will be applied by the StatefulSet controller using the OnDelete strategy.The update will be done when the Pods get manually deleted by the user.                                                                                                       |
@@ -2150,6 +2262,7 @@ User is the Schema for the users API. It is used to define grants as if you were
 
 | Field                                                                                                          | Description                                                   | Default | Validation |
 | -------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------- | ------- | ---------- |
+| Field                                                                                                          | Description                                                   | Default | Validation |
 | apiVersion string                                                                                              | enterprise.mariadb.com/v1alpha1                               |         |            |
 | kind string                                                                                                    | User                                                          |         |            |
 | metadata [ObjectMeta](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#objectmeta-v1-meta) | Refer to Kubernetes API documentation for fields of metadata. |         |            |
@@ -2165,6 +2278,7 @@ _Appears in:_
 
 | Field                                                                                                             | Description                                                                                                                                                                                                                                                                                                      | Default | Validation           |
 | ----------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | -------------------- |
+| Field                                                                                                             | Description                                                                                                                                                                                                                                                                                                      | Default | Validation           |
 | requeueInterval [Duration](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#duration-v1-meta) | RequeueInterval is used to perform requeue reconciliations.                                                                                                                                                                                                                                                      |         |                      |
 | retryInterval [Duration](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#duration-v1-meta)   | RetryInterval is the interval used to perform retries.                                                                                                                                                                                                                                                           |         |                      |
 | cleanupPolicy [CleanupPolicy](api-reference.md#cleanuppolicy)                                                     | CleanupPolicy defines the behavior for cleaning up a SQL resource.                                                                                                                                                                                                                                               |         | Enum: \[Skip Delete] |
@@ -2188,6 +2302,7 @@ _Appears in:_
 
 | Field                                                                                                         | Description | Default | Validation |
 | ------------------------------------------------------------------------------------------------------------- | ----------- | ------- | ---------- |
+| Field                                                                                                         | Description | Default | Validation |
 | name string                                                                                                   |             |         |            |
 | emptyDir [EmptyDirVolumeSource](api-reference.md#emptydirvolumesource)                                        |             |         |            |
 | nfs [NFSVolumeSource](api-reference.md#nfsvolumesource)                                                       |             |         |            |
@@ -2209,6 +2324,7 @@ _Appears in:_
 
 | Field                                                                                                                                                   | Description                                                   | Default | Validation |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------- | ------- | ---------- |
+| Field                                                                                                                                                   | Description                                                   | Default | Validation |
 | accessModes [PersistentVolumeAccessMode](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#persistentvolumeaccessmode-v1-core) array |                                                               |         |            |
 | selector [LabelSelector](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#labelselector-v1-meta)                                    |                                                               |         |            |
 | resources [VolumeResourceRequirements](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#volumeresourcerequirements-v1-core)         |                                                               |         |            |
@@ -2230,6 +2346,7 @@ _Appears in:_
 
 | Field            | Description                           | Default | Validation |
 | ---------------- | ------------------------------------- | ------- | ---------- |
+| Field            | Description                           | Default | Validation |
 | name string      | This must match the Name of a Volume. |         |            |
 | readOnly boolean |                                       |         |            |
 | mountPath string |                                       |         |            |
@@ -2245,6 +2362,7 @@ _Appears in:_
 
 | Field                                                                                                         | Description | Default | Validation |
 | ------------------------------------------------------------------------------------------------------------- | ----------- | ------- | ---------- |
+| Field                                                                                                         | Description | Default | Validation |
 | emptyDir [EmptyDirVolumeSource](api-reference.md#emptydirvolumesource)                                        |             |         |            |
 | nfs [NFSVolumeSource](api-reference.md#nfsvolumesource)                                                       |             |         |            |
 | csi [CSIVolumeSource](api-reference.md#csivolumesource)                                                       |             |         |            |
@@ -2263,9 +2381,10 @@ _Appears in:_
 
 | Field                                                               | Description | Default | Validation |
 | ------------------------------------------------------------------- | ----------- | ------- | ---------- |
+| Field                                                               | Description | Default | Validation |
 | weight integer                                                      |             |         |            |
 | podAffinityTerm [PodAffinityTerm](api-reference.md#podaffinityterm) |             |         |            |
 
-{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

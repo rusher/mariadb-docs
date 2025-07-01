@@ -22,70 +22,54 @@ All behavior for naming columns, `ORDER BY` and `LIMIT` is the same as for [UNIO
 
 The result of an intersect is the intersection of right and left `SELECT` results, i.e. only records that are present in both result sets will be included in the result of the operation.
 
-`INTERSECT` has higher precedence than `UNION` and `EXCEPT` (unless running [running in Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle), in which case all three have the same precedence). If possible it will be executed linearly, but if not, it will be translated to a subquery in the `FROM` clause:
+`INTERSECT` has higher precedence than `UNION` and `EXCEPT` (unless running [running in Oracle mode](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/data-manipulation/selecting-data/joins-subqueries/broken-reference/README.md), in which case all three have the same precedence). If possible it will be executed linearly but if not it will be translated to a subquery in the `FROM` clause:
 
-```sql
-(SELECT a,b FROM t1)
-UNION
-(SELECT c,d FROM t2)
-INTERSECT
-(SELECT e,f FROM t3)
-UNION
-(SELECT 4,4);
+```
+(select a,b from t1)
+union
+(select c,d from t2)
+intersect
+(select e,f from t3)
+union
+(select 4,4);
 ```
 
 will be translated to:
 
-```sql
-(SELECT a,b FROM t1)
-UNION
-SELECT c,d FROM
-  ((SELECT c,d FROM t2)
-   INTERSECT
-   (SELECT e,f FROM t3)) dummy_subselect
-UNION
-(SELECT 4,4)
+```
+(select a,b from t1)
+union
+select c,d from
+  ((select c,d from t2)
+   intersect
+   (select e,f from t3)) dummy_subselect
+union
+(select 4,4)
 ```
 
 ### Parentheses
 
-{% tabs %}
-{% tab title="Current" %}
-Parentheses can be used to specify precedence.
-{% endtab %}
-
-{% tab title="< 10.4" %}
-Parentheses **cannot** be used to specify precedence.
-{% endtab %}
-{% endtabs %}
+Parentheses can be used to specify precedence. Prior to [MariaDB 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/data-manipulation/selecting-data/joins-subqueries/broken-reference/README.md), a syntax error would be returned.
 
 **MariaDB starting with** [**10.5.0**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1050-release-notes)
 
 ### ALL/DISTINCT
 
-{% tabs %}
-{% tab title="Current" %}
-`INTERSECT ALL` and `INTERSECT DISTINCT` . The `ALL` operator leaves duplicates intact, while the `DISTINCT` operator removes duplicates. `DISTINCT` is the default behavior if neither operator is supplied.
-{% endtab %}
-
-{% tab title="< 10.5" %}
-`DISTINCT` is the only behavior available.
-{% endtab %}
-{% endtabs %}
+`INTERSECT ALL` and `INTERSECT DISTINCT` were introduced in [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1050-release-notes). The `ALL` operator leaves duplicates intact, while the `DISTINCT` operator removes duplicates. `DISTINCT` is the default behavior if neither operator is supplied, and the only behavior prior to [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105).
 
 ## Examples
 
 Show customers which are employees:
 
-```sql
+```
 (SELECT e_name AS name, email FROM employees)
 INTERSECT
 (SELECT c_name AS name, email FROM customers);
 ```
 
-Difference between [UNION](union.md), [EXCEPT](except.md) and `INTERSECT`:
+Difference between [UNION](union.md), [EXCEPT](except.md) and INTERSECT. `INTERSECT ALL` and `EXCEPT ALL` are available from [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1050-release-notes).
 
-```sql
+```
 CREATE TABLE seqs (i INT);
 INSERT INTO seqs VALUES (1),(2),(2),(3),(3),(4),(5),(6);
 
@@ -152,7 +136,7 @@ SELECT i FROM seqs WHERE i <= 3 INTERSECT ALL SELECT i FROM seqs WHERE i>=3;
 
 Parentheses for specifying precedence:
 
-```sql
+```
 CREATE OR REPLACE TABLE t1 (a INT);
 CREATE OR REPLACE TABLE t2 (b INT);
 CREATE OR REPLACE TABLE t3 (c INT);

@@ -31,7 +31,7 @@
       * [Backup and Restore for MariaDB ColumnStore 1.1.0 onwards](management/columnstore-system/mariadb-columnstore-backup-and-restore/backup-and-restore-for-mariadb-columnstore-110-onwards.md)
   * [Building ColumnStore in MariaDB](management/building-columnstore-in-mariadb.md)
   * [ColumnStore System Variables](management/columnstore-system-variables.md)
-  * [Backup & Restore](management/column-store-backup-and-restore/README.md)
+  * [Backup and Restore](management/column-store-backup-and-restore/README.md)
     * [Backup and Restore Overview](management/column-store-backup-and-restore/backup-and-restore-with-mariadb-enterprise-columnstore.md)
     * [Backup and Restore with Object Storage](management/column-store-backup-and-restore/mariadb-enterprise-columnstore-backup-and-restore-with-object-storage.md)
     * [Backup and Restore with Shared Local Storage](management/column-store-backup-and-restore/mariadb-enterprise-columnstore-backup-and-restore-with-shared-local-storage.md)

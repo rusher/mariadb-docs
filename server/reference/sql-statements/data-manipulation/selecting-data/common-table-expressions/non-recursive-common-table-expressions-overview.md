@@ -4,13 +4,11 @@ Common Table Expressions (CTEs) are a standard SQL feature, and are essentially 
 
 ## Non-Recursive CTEs
 
-The [WITH](with.md) keyword signifies a CTE. It is given a name, followed by a body (the main query):
+The [WITH](with.md) keyword signifies a CTE. It is given a name, followed by a body (the main query) as follows:![cte\_syntax](../../../../../.gitbook/assets/cte_syntax.png)
 
-![cte\_syntax](../../../../../.gitbook/assets/cte_syntax.png)
+CTEs are similar to derived tables. For example
 
-CTEs are similar to derived tables:
-
-```sql
+```
 WITH engineers AS 
    ( SELECT * FROM employees
      WHERE dept = 'Engineering' )
@@ -19,7 +17,7 @@ SELECT * FROM engineers
 WHERE ...
 ```
 
-```sql
+```
 SELECT * FROM
    ( SELECT * FROM employees
      WHERE dept = 'Engineering' ) AS engineers
@@ -27,14 +25,14 @@ WHERE
 ...
 ```
 
-A non-recursive CTE is basically a query-local [VIEW](../../../../../server-usage/views/). There are several advantages and caveats to them. The syntax is more readable than a nested `FROM (SELECT ...)`.\
+A non-recursive CTE is basically a query-local [VIEW](../../../../../server-usage/views/). There are several advantages and caveats to them. The syntax is more readable than nested `FROM (SELECT ...)`.\
 A CTE can refer to another and it can be referenced from multiple places.
 
 ### A CTE referencing Another CTE
 
-Using this format makes for a more readable SQL than a nested `FROM(SELECT ...)` clause:
+Using this format makes for a more readable SQL than a nested `FROM(SELECT ...)` clause. Below is an example of this:
 
-```sql
+```
 WITH engineers AS (
 SELECT * FROM employees
 WHERE dept IN('Development','Support') ),
@@ -48,7 +46,7 @@ FROM eu_engineers;
 
 This can be an 'anti-self join', for example:
 
-```sql
+```
 WITH engineers AS (
 SELECT * FROM employees
 WHERE dept IN('Development','Support') )
@@ -62,7 +60,7 @@ WHERE NOT EXISTS
 
 Or, for year-over-year comparisons, for example:
 
-```sql
+```
 WITH sales_product_year AS (
 SELECT product, YEAR(ship_date) AS year,
 SUM(price) AS total_amt
@@ -79,7 +77,7 @@ AND CUR.total_amt > PREV.total_amt
 
 Another use is to compare individuals against their group. Below is an example of how this might be executed:
 
-```sql
+```
 WITH sales_product_year AS (
 SELECT product,
 YEAR(ship_date) AS year,

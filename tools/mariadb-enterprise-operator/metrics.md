@@ -133,6 +133,7 @@ The following metrics are available for `MaxScale` instances:
 
 | Metric Name                                                   | Description                                                                                        | Type    |
 | ------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- | ------- |
+| Metric Name                                                   | Description                                                                                        | Type    |
 | maxscale\_exporter\_collector\_duration\_seconds              | Collector time duration.                                                                           | GAUGE   |
 | maxscale\_exporter\_last\_scrape\_error                       | Whether the last scrape of metrics from MariaDB resulted in an error (1 for error, 0 for success). | GAUGE   |
 | maxscale\_exporter\_scrapes\_total                            | Total number of times MariaDB was scraped for metrics.                                             | COUNTER |
@@ -186,6 +187,6 @@ The following metrics are available for `MaxScale` instances:
 | maxscale\_uptime\_seconds                                     | Maxscale uptime in seconds                                                                         | GAUGE   |
 | maxscale\_version                                             | Maxscale Version                                                                                   | GAUGE   |
 
-{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}

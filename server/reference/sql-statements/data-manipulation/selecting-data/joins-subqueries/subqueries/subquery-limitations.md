@@ -4,13 +4,13 @@ There are a number of limitations regarding [subqueries](./), which are discusse
 
 The following tables and data will be used in the examples that follow:
 
-```sql
+```
 CREATE TABLE staff(name VARCHAR(10),age TINYINT);
 
 CREATE TABLE customer(name VARCHAR(10),age TINYINT);
 ```
 
-```sql
+```
 INSERT INTO staff VALUES 
 ('Bilhah',37), ('Valerius',61), ('Maia',25);
 
@@ -22,7 +22,7 @@ INSERT INTO customer VALUES
 
 To use [ORDER BY](../../order-by.md) or limit [LIMIT](../../limit.md) in [subqueries](./) both must be used.. For example:
 
-```sql
+```
 SELECT * FROM staff WHERE name IN (SELECT name FROM customer ORDER BY name);
 +----------+------+
 | name     | age  |
@@ -33,7 +33,7 @@ SELECT * FROM staff WHERE name IN (SELECT name FROM customer ORDER BY name);
 
 is valid, but
 
-```sql
+```
 SELECT * FROM staff WHERE name IN (SELECT NAME FROM customer ORDER BY name LIMIT 1);
 ERROR 1235 (42000): This version of MariaDB doesn't 
   yet support 'LIMIT & IN/ALL/ANY/SOME subquery'
@@ -45,7 +45,7 @@ is not.
 
 It's not possible to both modify and select from the same table in a subquery. For example:
 
-```sql
+```
 DELETE FROM staff WHERE name = (SELECT name FROM staff WHERE age=61);
 ERROR 1093 (HY000): Table 'staff' is specified twice, both 
   as a target for 'DELETE' and as a separate source for data
@@ -55,7 +55,7 @@ ERROR 1093 (HY000): Table 'staff' is specified twice, both
 
 There is only partial support for row comparison operations. The expression in
 
-```sql
+```
 expr op {ALL|ANY|SOME} subquery,
 ```
 
@@ -63,7 +63,7 @@ must be scalar and the subquery can only return a single column.
 
 However, because of the way `IN` is implemented (it is rewritten as a sequence of `=` comparisons and `AND`), the expression in
 
-```sql
+```
 expression [NOT] IN subquery
 ```
 
@@ -71,7 +71,7 @@ is permitted to be an n-tuple and the subquery can return rows of n-tuples.
 
 For example:
 
-```sql
+```
 SELECT * FROM staff WHERE (name,age) NOT IN (
   SELECT name,age FROM customer WHERE age >=51]
 );
@@ -85,7 +85,7 @@ SELECT * FROM staff WHERE (name,age) NOT IN (
 
 is permitted, but
 
-```sql
+```
 SELECT * FROM staff WHERE (name,age) = ALL (
   SELECT name,age FROM customer WHERE age >=51
 );
@@ -96,13 +96,13 @@ is not.
 
 ### Correlated Subqueries
 
-Subqueries in the `FROM` clause cannot be correlated subqueries. They cannot be evaluated for each row of the outer query since they are evaluated to produce a result set during when the query is executed.
+Subqueries in the FROM clause cannot be correlated subqueries. They cannot be evaluated for each row of the outer query since they are evaluated to produce a result set during when the query is executed.
 
 ### Stored Functions
 
 A subquery can refer to a [stored function](../../../../../../server-usage/stored-routines/stored-functions/) which modifies data. This is an extension to the SQL standard, but can result in indeterminate outcomes. For example, take:
 
-```sql
+```
 SELECT ... WHERE x IN (SELECT f() ...);
 ```
 

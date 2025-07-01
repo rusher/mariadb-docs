@@ -2,7 +2,7 @@
 
 ### Syntax
 
-```sql
+```
 WITH [RECURSIVE] table_reference [(columns_list)] AS  (
   SELECT ...
 )
@@ -16,8 +16,8 @@ The `WITH` keyword signifies a [Common Table Expression](./) (CTE). It allows yo
 
 There are two kinds of CTEs:
 
-* [Non-Recursive](non-recursive-common-table-expressions-overview.md).
-* [Recursive](recursive-common-table-expressions-overview.md) (signified by the `RECURSIVE` keyword).
+* [Non-Recursive](non-recursive-common-table-expressions-overview.md)
+* [Recursive](recursive-common-table-expressions-overview.md) (signified by the `RECURSIVE` keyword, supported since [MariaDB 10.2.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-1022-release-notes))
 
 You can use `table_reference` as any normal table in the external `SELECT` part. You can also use `WITH` in subqueries, as well as with [EXPLAIN](../../../administrative-sql-statements/analyze-and-explain-statements/explain.md) and [SELECT](../select.md).
 
@@ -25,13 +25,13 @@ Poorly-formed recursive CTEs can in theory cause infinite loops. The [max\_recur
 
 #### CYCLE ... RESTRICT
 
-{% tabs %}
-{% tab title="Current" %}
-The `CYCLE` clause enables CTE cycle detection, avoiding excessive or infinite loops,\
-MariaDB supports a relaxed, non-standard grammar.\
-The SQL Standard permits a `CYCLE` clause, as follows:
+**MariaDB starting with** [**10.5.2**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1052-release-notes)
 
-```sql
+The CYCLE clause enables CTE cycle detection, avoiding excessive or infinite loops,\
+MariaDB supports a relaxed, non-standard grammar.\
+The SQL Standard permits a CYCLE clause, as follows:
+
+```
 WITH RECURSIVE ... (
   ...
 )
@@ -41,9 +41,9 @@ USING <path column>
 ```
 
 where all clauses are mandatory.\
-MariaDB does not support this, but permits a non-standard relaxed grammar, as follows:
+MariaDB does not support this, but from 10.5.2 permits a non-standard relaxed grammar, as follows:
 
-```sql
+```
 WITH RECURSIVE ... (
   ...
 )
@@ -51,25 +51,19 @@ CYCLE <cycle column list> RESTRICT
 ```
 
 With the use of `CYCLE ... RESTRICT` it makes no difference whether the CTE uses `UNION ALL` or `UNION DISTINCT` anymore. `UNION ALL` means "all rows, but without cycles", which is exactly what the `CYCLE` clause enables. And `UNION DISTINCT` means all rows should be different, which, again, is what will happen — as uniqueness is enforced over a subset of columns, complete rows will automatically all be different.
-{% endtab %}
-
-{% tab title="< 10.5.2" %}
-`CYCLE ... RESTRICT` is not available.
-{% endtab %}
-{% endtabs %}
 
 ### Examples
 
 Below is an example with the `WITH` at the top level:
 
-```sql
+```
 WITH t AS (SELECT a FROM t1 WHERE b >= 'c') 
   SELECT * FROM t2, t WHERE t2.c = t.a;
 ```
 
 The example below uses `WITH` in a subquery:
 
-```sql
+```
 SELECT t1.a, t1.b FROM t1, t2
   WHERE t1.a > t2.c 
      AND t2.c IN(WITH t AS (SELECT * FROM t1 WHERE t1.a < 5)
@@ -78,7 +72,7 @@ SELECT t1.a, t1.b FROM t1, t2
 
 Below is an example of a Recursive CTE:
 
-```sql
+```
 WITH RECURSIVE ancestors AS 
  ( SELECT * FROM folks
    WHERE name="Alex"
@@ -89,9 +83,9 @@ WITH RECURSIVE ancestors AS
 SELECT * FROM ancestors;
 ```
 
-Consider the following structure and data:
+Take the following structure, and data,
 
-```sql
+```
 CREATE TABLE t1 (from_ int, to_ int);
 INSERT INTO t1 VALUES (1,2), (1,100), (2,3), (3,4), (4,1);
 SELECT * FROM t1;
@@ -108,7 +102,7 @@ SELECT * FROM t1;
 
 Given the above, the following query would theoretically result in an infinite loop due to the last record in t1 (note that [max\_recursive\_iterations](../../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_recursive_iterations) is set to 10 for the purposes of this example, to avoid the excessive number of cycles):
 
-```sql
+```
 SET max_recursive_iterations=10;
 
 WITH RECURSIVE cte (depth, from_, to_) AS ( 
@@ -136,9 +130,9 @@ SELECT * FROM cte;
 +-------+-------+------+
 ```
 
-However, the `CYCLE ... RESTRICT` clause can overcome this:
+However, the CYCLE ... RESTRICT clause (from [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1052-release-notes)) can overcome this:
 
-```sql
+```
 WITH RECURSIVE cte (depth, from_, to_) AS ( 
   SELECT 0,1,1 UNION SELECT depth+1, t1.from_, t1.to_ 
     FROM t1, cte WHERE t1.from_ = cte.to_ 

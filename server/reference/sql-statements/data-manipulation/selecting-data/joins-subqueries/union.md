@@ -24,61 +24,53 @@ Table names can be specified as `db_name`.`tbl_name`. This permits writing `UNIO
 
 UNION queries cannot be used with [aggregate functions](../../../../sql-functions/aggregate-functions/).
 
-`EXCEPT` and `UNION` have the same operation precedence and `INTERSECT` has a higher precedence, unless [running in Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle), in which case all three have the same precedence.
+`EXCEPT` and `UNION` have the same operation precedence and `INTERSECT` has a higher precedence, unless [running in Oracle mode](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/data-manipulation/selecting-data/joins-subqueries/broken-reference/README.md), in which case all three have the same precedence.
 
 ### ALL/DISTINCT
 
 The `ALL` keyword causes duplicate rows to be preserved. The `DISTINCT` keyword (the default if the keyword is omitted) causes duplicate rows to be removed by the results.
 
-`UNION ALL` and `UNION DISTINCT` can both be present in a query. In this case, `UNION` DISTINCT will override any `UNION ALL` to its left.
+UNION ALL and UNION DISTINCT can both be present in a query. In this case, UNION DISTINCT will override any UNION ALLs to its left.
 
 The server can in most cases execute `UNION ALL` without creating a temporary table (see [MDEV-334](https://jira.mariadb.org/browse/MDEV-334)).
 
 ### ORDER BY and LIMIT
 
-Individual `SELECT` statements can contain their own [ORDER BY](../order-by.md) and [LIMIT](../limit.md) clauses. In this case, the individual queries need to be wrapped between parentheses. However, this does not affect the order of the UNION, so they only are useful to limit the record read by one `SELECT`.
+Individual SELECTs can contain their own [ORDER BY](../order-by.md) and [LIMIT](../limit.md) clauses. In this case, the individual queries need to be wrapped between parentheses. However, this does not affect the order of the UNION, so they only are useful to limit the record read by one SELECT.
 
-The `UNION` can have global [ORDER BY](../order-by.md) and [LIMIT](../limit.md) clauses, which affect the whole result set. If the columns retrieved by individual SELECT statements have an alias (AS), the `ORDER BY` must use that alias, not the real column names.
+The UNION can have global [ORDER BY](../order-by.md) and [LIMIT](../limit.md) clauses, which affect the whole resultset. If the columns retrieved by individual SELECT statements have an alias (AS), the ORDER BY must use that alias, not the real column names.
 
 ### HIGH\_PRIORITY
 
-Specifying a query as [HIGH\_PRIORITY](../select.md#high-priority) does not work inside a `UNION`. If applied to the first `SELECT`, it is ignored. Applying to a later `SELECT` results in a syntax error:
+Specifying a query as [HIGH\_PRIORITY](../select.md#high-priority) will not work inside a UNION. If applied to the first SELECT, it will be ignored. Applying to a later SELECT results in a syntax error:
 
-```sql
+```
 ERROR 1234 (42000): Incorrect usage/placement of 'HIGH_PRIORITY'
 ```
 
 ### SELECT ... INTO ...
 
-Individual `SELECT` statements cannot be written [INTO DUMPFILE](../select-into-dumpfile.md) or [INTO OUTFILE](../select-into-outfile.md). If the last `SELECT` statement specifies `INTO DUMPFILE` or `INTO OUTFILE`, the entire result of the `UNION` will be written. Placing the clause after any other `SELECT` will result in a syntax error.
+Individual SELECTs cannot be written [INTO DUMPFILE](../select-into-dumpfile.md) or [INTO OUTFILE](../select-into-outfile.md). If the last SELECT statement specifies INTO DUMPFILE or INTO OUTFILE, the entire result of the UNION will be written. Placing the clause after any other SELECT will result in a syntax error.
 
 If the result is a single row, [SELECT ... INTO @var\_name](../../../programmatic-compound-statements/selectinto.md) can also be used.
 
 ### Parentheses
 
-{% tabs %}
-{% tab title="Current" %}
-Parentheses can be used to specify precedence.
-{% endtab %}
-
-{% tab title="< 10.4" %}
-Parentheses **cannot** be used to specify precedence.
-{% endtab %}
-{% endtabs %}
+Parentheses can be used to specify precedence. Prior to [MariaDB 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/data-manipulation/selecting-data/joins-subqueries/broken-reference/README.md), a syntax error would be returned.
 
 ## Examples
 
 `UNION` between tables having different column names:
 
-```sql
+```
 (SELECT e_name AS name, email FROM employees)
 UNION
 (SELECT c_name AS name, email FROM customers);
 ```
 
-Specifying the `UNION` global order and limiting total rows:
+Specifying the `UNION`'s global order and limiting total rows:
 
-```sql
+```
 (SELECT name, email FROM employees)
 UNION
 (SELECT name, email FROM customers)
@@ -87,7 +79,7 @@ ORDER BY name LIMIT 10;
 
 Adding a constant row:
 
-```sql
+```
 (SELECT 'John Doe' AS name, 'john.doe@example.net' AS email)
 UNION
 (SELECT name, email FROM customers);
@@ -95,7 +87,7 @@ UNION
 
 Differing types:
 
-```sql
+```
 SELECT CAST('x' AS CHAR(1)) UNION SELECT REPEAT('y',4);
 +----------------------+
 | CAST('x' AS CHAR(1)) |
@@ -105,17 +97,17 @@ SELECT CAST('x' AS CHAR(1)) UNION SELECT REPEAT('y',4);
 +----------------------+
 ```
 
-Returning the results in order of each individual `SELECT` by use of a sort column:
+Returning the results in order of each individual SELECT by use of a sort column:
 
-```sql
+```
 (SELECT 1 AS sort_column, e_name AS name, email FROM employees)
 UNION
 (SELECT 2, c_name AS name, email FROM customers) ORDER BY sort_column;
 ```
 
-Difference between UNION, [EXCEPT](except.md) and [INTERSECT](intersect.md):
+Difference between UNION, [EXCEPT](except.md) and [INTERSECT](intersect.md). `INTERSECT ALL` and `EXCEPT ALL` are available from [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1050-release-notes).
 
-```sql
+```
 CREATE TABLE seqs (i INT);
 INSERT INTO seqs VALUES (1),(2),(2),(3),(3),(4),(5),(6);
 
@@ -180,7 +172,7 @@ SELECT i FROM seqs WHERE i <= 3 INTERSECT ALL SELECT i FROM seqs WHERE i>=3;
 +------+
 ```
 
-```sql
+```
 CREATE OR REPLACE TABLE t1 (a INT);
 CREATE OR REPLACE TABLE t2 (b INT);
 CREATE OR REPLACE TABLE t3 (c INT);

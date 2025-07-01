@@ -8,33 +8,17 @@ If a subquery is used in this way, you must also use an AS clause to name the re
 
 **MariaDB starting with** [**10.6.0**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/mariadb-1060-release-notes)
 
-{% tabs %}
-{% tab title="Current" %}
-[Anonymous subqueries in a FROM clause](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/data-manipulation/selecting-data/joins-subqueries/subqueries/broken-reference/README.md) (no AS clause) are permitted in [ORACLE mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle).
-{% endtab %}
-
-{% tab title="< 10.6" %}
-[Anonymous subqueries in a FROM clause](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/data-manipulation/selecting-data/joins-subqueries/subqueries/broken-reference/README.md) (no `AS` clause) are **not** permitted in [ORACLE mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle).
-{% endtab %}
-{% endtabs %}
+From [MariaDB 10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/mariadb-1060-release-notes), [anonymous subqueries in a FROM clause](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/data-manipulation/selecting-data/joins-subqueries/subqueries/broken-reference/README.md) (no AS clause) are permitted in [ORACLE mode](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/data-manipulation/selecting-data/joins-subqueries/subqueries/broken-reference/README.md).
 
 ## Correlation Column List
 
 **MariaDB starting with** [**11.7.0**](https://mariadb.com/kb/en/mariadb-1170-release-notes/)
 
-{% tabs %}
-{% tab title="Current" %}
-It is possible to assign column names in the derived table name syntax element.
-{% endtab %}
-
-{% tab title="< 11.7" %}
-It is **not** possible to assign column names in the derived table name syntax element.
-{% endtab %}
-{% endtabs %}
+From [MariaDB 11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-11-7-rolling-releases/what-is-mariadb-117), it is possible to assign column names in the derived table name syntax element.
 
 ## Examples
 
-```sql
+```
 CREATE TABLE student (name CHAR(10), test CHAR(10), score TINYINT); 
 
 INSERT INTO student VALUES 
@@ -48,14 +32,14 @@ Assume that, given the data above, you want to return the average total for all 
 
 You cannot do the following:
 
-```sql
+```
 SELECT AVG(SUM(score)) FROM student GROUP BY name;
 ERROR 1111 (HY000): Invalid use of group function
 ```
 
 A subquery in the FROM clause is however permitted:
 
-```sql
+```
 SELECT AVG(sq_sum) FROM (SELECT SUM(score) AS sq_sum FROM student GROUP BY name) AS t;
 +-------------+
 | AVG(sq_sum) |
@@ -64,15 +48,15 @@ SELECT AVG(sq_sum) FROM (SELECT SUM(score) AS sq_sum FROM student GROUP BY name)
 +-------------+
 ```
 
-The following is permitted:
+From [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/what-is-mariadb-106) in [ORACLE mode](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements/data-manipulation/selecting-data/joins-subqueries/subqueries/broken-reference/README.md), the following is permitted:
 
-```sql
+```
 SELECT * FROM (SELECT 1 FROM DUAL), (SELECT 2 FROM DUAL);
 ```
 
-In this example, the second column of the derived table `dt` is used both within (`WHERE` c2 > 0), and outside, (`WHERE` a2 > 10), the specification. Both conditions apply to t1.c2.
+From [MariaDB 11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-11-7-rolling-releases/what-is-mariadb-117). In this example, the second column of the derived table `dt` is used both within (WHERE c2 > 0), and outside, (WHERE a2 > 10), the specification. Both conditions apply to t1.c2.
 
-```sql
+```
 CREATE OR REPLACE TABLE t1(c1 INT, c2 INT, c3 INT);
 
 SELECT a1, a2 FROM (SELECT c1, c2, c3 FROM t1 WHERE c2 > 0) AS dt (a1, a2, a3);

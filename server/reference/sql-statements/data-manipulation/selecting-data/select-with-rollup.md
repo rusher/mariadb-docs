@@ -1,22 +1,32 @@
+
 # SELECT WITH ROLLUP
+
 
 ## Syntax
 
-See [SELECT](select.md).
+
+See [SELECT](select.md) for the full syntax.
+
 
 ## Description
 
-The `WITH ROLLUP` modifier adds extra rows to the result set that represent super-aggregate summaries. The super-aggregated column is represented by a `NULL` value. Multiple aggregates over different columns will be added if there are multiple `GROUP BY` columns.
+
+The `WITH ROLLUP` modifier adds extra rows to the resultset that represent super-aggregate summaries. The super-aggregated column is represented by a `NULL` value. Multiple aggregates over different columns will be added if there are multiple `GROUP BY` columns.
+
 
 The [LIMIT](limit.md) clause can be used at the same time, and is applied after the `WITH ROLLUP` rows have been added.
 
+
 `WITH ROLLUP` cannot be used with [ORDER BY](order-by.md). Some sorting is still possible by using `ASC` or `DESC` clauses with the `GROUP BY` column, although the super-aggregate rows will always be added last.
+
 
 ## Examples
 
+
 These examples use the following sample table
 
-```sql
+
+```
 CREATE TABLE booksales ( 
   country VARCHAR(35), genre ENUM('fiction','non-fiction'), year YEAR, sales INT);
 
@@ -27,9 +37,10 @@ INSERT INTO booksales VALUES
   ('Paraguay','non-fiction',2014,8760), ('Paraguay','non-fiction',2015,9030);
 ```
 
-The `WITH ROLLUP` modifier in this example adds an extra row that aggregates both years:
+The addition of the `WITH ROLLUP` modifier in this example adds an extra row that aggregates both years:
 
-```sql
+
+```
 SELECT year, SUM(sales) FROM booksales GROUP BY year;
 +------+------------+
 | year | SUM(sales) |
@@ -49,9 +60,10 @@ SELECT year, SUM(sales) FROM booksales GROUP BY year WITH ROLLUP;
 +------+------------+
 ```
 
-Each time the genre, the year, or the country change, another super-aggregate row is added:
+In the following example, each time the genre, the year or the country change, another super-aggregate row is added:
 
-```sql
+
+```
 SELECT country, year, genre, SUM(sales) 
   FROM booksales GROUP BY country, year, genre;
 +----------+------+-------------+------------+
@@ -90,9 +102,10 @@ SELECT country, year, genre, SUM(sales)
 +----------+------+-------------+------------+
 ```
 
-The `LIMIT` clause, applied after `WITH ROLLUP`:
+The LIMIT clause, applied after WITH ROLLUP:
 
-```sql
+
+```
 SELECT country, year, genre, SUM(sales) 
   FROM booksales GROUP BY country, year, genre WITH ROLLUP LIMIT 4;
 +----------+------+-------------+------------+
@@ -107,7 +120,8 @@ SELECT country, year, genre, SUM(sales)
 
 Sorting by year descending:
 
-```sql
+
+```
 SELECT country, year, genre, SUM(sales) 
   FROM booksales GROUP BY country, year DESC, genre WITH ROLLUP;
 +----------+------+-------------+------------+
@@ -133,18 +147,21 @@ SELECT country, year, genre, SUM(sales)
 
 ## See Also
 
+
 * [SELECT](select.md)
-* [Joins and Subqueries](joins-subqueries/)
+* [Joins and Subqueries](joins-subqueries/README.md)
 * [LIMIT](limit.md)
 * [ORDER BY](order-by.md)
 * [GROUP BY](group-by.md)
-* [Common Table Expressions](common-table-expressions/)
+* [Common Table Expressions](common-table-expressions/README.md)
 * [SELECT INTO OUTFILE](select-into-outfile.md)
 * [SELECT INTO DUMPFILE](select-into-dumpfile.md)
 * [FOR UPDATE](for-update.md)
 * [LOCK IN SHARE MODE](lock-in-share-mode.md)
 * [Optimizer Hints](optimizer-hints.md)
 
+
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+
 
 {% @marketo/form formId="4316" %}

@@ -105,7 +105,7 @@ CREATE USER for bob@localhost: CREATE USER `bob`@`localhost`
 
 ### IDENTIFIED BY 'password'
 
-The optional `IDENTIFIED BY` clause can be used to provide an account with a password. The password should be specified in plain text. It will be hashed by the [PASSWORD](../../sql-functions/secondary-functions/encryption-hashing-and-compression-functions/password.md) function prior to being stored in the [mysql.user](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md) view.
+The optional `IDENTIFIED BY` clause can be used to provide an account with a password. The password should be specified in plain text. It will be hashed by the [PASSWORD](../../sql-functions/secondary-functions/encryption-hashing-and-compression-functions/password.md) function prior to being stored to the [mysql.user](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md) table.
 
 For example, if our password is `mariadb`, then we can set the account's password with:
 
@@ -122,7 +122,7 @@ The only [authentication plugins](../../plugins/authentication-plugins/) that th
 
 ### IDENTIFIED BY PASSWORD 'password\_hash'
 
-The optional `IDENTIFIED BY PASSWORD` clause can be used to provide an account with a password that has already been hashed. The password should be specified as a hash that was provided by the [PASSWORD](../../sql-functions/secondary-functions/encryption-hashing-and-compression-functions/password.md)#function. It will be stored in the [mysql.user](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md) view as-is.
+The optional `IDENTIFIED BY PASSWORD` clause can be used to provide an account with a password that has already been hashed. The password should be specified as a hash that was provided by the [PASSWORD](../../sql-functions/secondary-functions/encryption-hashing-and-compression-functions/password.md)#function. It will be stored to the [mysql.user](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md) table as-is.
 
 For example, if our password is `mariadb`, then we can find the hash with:
 
@@ -192,6 +192,7 @@ You can set certain TLS-related restrictions for specific user accounts. For ins
 
 | Option                    | Description                                                                                                                                                                                                                                                                                         |
 | ------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Option                    | Description                                                                                                                                                                                                                                                                                         |
 | REQUIRE NONE              | TLS is not required for this account, but can still be used.                                                                                                                                                                                                                                        |
 | REQUIRE SSL               | The account must use TLS, but no valid X509 certificate is required. This option cannot be combined with other TLS options.                                                                                                                                                                         |
 | REQUIRE X509              | The account must use TLS and must have a valid X509 certificate. This option implies REQUIRE SSL. This option cannot be combined with other TLS options.                                                                                                                                            |
@@ -220,6 +221,7 @@ It is possible to set per-account limits for certain server resources. The follo
 
 | Limit Type                  | Description                                                                                                                                                                                                                     |
 | --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Limit Type                  | Description                                                                                                                                                                                                                     |
 | MAX\_QUERIES\_PER\_HOUR     | Number of statements that the account can issue per hour (including updates)                                                                                                                                                    |
 | MAX\_UPDATES\_PER\_HOUR     | Number of updates (not queries) that the account can issue per hour                                                                                                                                                             |
 | MAX\_CONNECTIONS\_PER\_HOUR | Number of connections that the account can start per hour                                                                                                                                                                       |
@@ -286,7 +288,7 @@ The _lock\_option_ and _password\_option_ clauses **cannot** occur in either ord
 * [DROP USER](drop-user.md)
 * [SET PASSWORD](set-password.md)
 * [SHOW CREATE USER](../administrative-sql-statements/show/show-create-user.md)
-* [mysql.user](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md)
+* [mysql.user table](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md)
 * [Password Validation Plugins](../../plugins/password-validation-plugins/) - permits the setting of basic criteria for passwords
 * [Authentication Plugins](../../plugins/authentication-plugins/) - allow various authentication methods to be used, and new ones to be developed.
 

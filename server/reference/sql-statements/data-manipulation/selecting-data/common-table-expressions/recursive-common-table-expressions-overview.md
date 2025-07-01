@@ -4,7 +4,7 @@ Common Table Expressions (CTEs) are a standard SQL feature, and are essentially 
 
 There are two kinds of CTEs:
 
-* [Non-recursive](non-recursive-common-table-expressions-overview.md);
+* [Non-recursive](non-recursive-common-table-expressions-overview.md)
 * Recursive, which this article covers.
 
 SQL is generally poor at recursive structures.
@@ -23,41 +23,35 @@ CTEs permit a query to reference itself. A recursive CTE will repeatedly execute
 
 ### Computation
 
-Given the following structure:
+Given the following structure:![rcte\_computation](../../../../../.gitbook/assets/rcte_computation.png)
 
-![rcte\_computation](../../../../../.gitbook/assets/rcte_computation.png)
+First execute the anchor part of the query:![rcte1](../../../../../.gitbook/assets/rcte1.png)
 
-First execute the anchor part of the query:
+Next, execute the recursive part of the query:![rcte\_computation\_2](../../../../../.gitbook/assets/rcte_computation_2.png)
 
-![rcte1](../../../../../.gitbook/assets/rcte1.png)
+![rcte\_computation\_2b](../../../../../.gitbook/assets/rcte_computation_2b.png)
 
-Next, execute the recursive part of the query:
+![rcte\_computation\_3](../../../../../.gitbook/assets/rcte_computation_3.png)
 
-![rcte\_computation\_2](../../../../../.gitbook/assets/rcte_computation_2.png)
+![rcte\_computation\_3b](../../../../../.gitbook/assets/rcte_computation_3b.png)
 
-![](../../../../../.gitbook/assets/rcte_computation_2b.png)
+![rcte\_computation\_4](../../../../../.gitbook/assets/rcte_computation_4.png)
 
-![](../../../../../.gitbook/assets/rcte_computation_3.png)
+### Summary so far
 
-![](../../../../../.gitbook/assets/rcte_computation_3b.png)
-
-![](../../../../../.gitbook/assets/rcte_computation_4.png)
-
-### Summary
-
-```sql
-WITH recursive R AS (
-  SELECT anchor_data
-  UNION [all]
-  SELECT recursive_part
-  FROM R, ...
+```
+with recursive R as (
+  select anchor_data
+  union [all]
+  select recursive_part
+  from R, ...
 )
-SELECT ...
+select ...
 ```
 
-1. Compute anchor\_data.
-2. Compute recursive\_part to get the new data.
-3. If (new data is non-empty) goto 2.
+1. Compute anchor\_data
+2. Compute recursive\_part to get the new data
+3. if (new data is non-empty) goto 2;
 
 ### CAST to avoid truncating data
 
@@ -71,7 +65,7 @@ Sample data:
 
 ![tc\_1](../../../../../.gitbook/assets/tc_1.png)
 
-```sql
+```
 CREATE TABLE bus_routes (origin varchar(50), dst varchar(50));
 INSERT INTO bus_routes VALUES 
   ('New York', 'Boston'), 
@@ -83,7 +77,7 @@ INSERT INTO bus_routes VALUES
 
 Now, we want to return the bus destinations with New York as the origin:
 
-```sql
+```
 WITH RECURSIVE bus_dst as ( 
     SELECT origin as dst FROM bus_routes WHERE origin='New York' 
   UNION
@@ -104,13 +98,13 @@ The above example is computed as follows:
 
 First, the anchor data is calculated:
 
-* Starting from New York.
-* Boston and Washington are added.
+* Starting from New York
+* Boston and Washington are added
 
 Next, the recursive part:
 
-* Starting from Boston and then Washington.
-* Raleigh is added.
+* Starting from Boston and then Washington
+* Raleigh is added
 * UNION excludes nodes that are already present.
 
 #### Computing paths - determining bus routes
@@ -119,7 +113,7 @@ This time, we are trying to get bus routes such as “New York -> Washington -> 
 
 Using the same sample data as the previous example:
 
-```sql
+```
 WITH RECURSIVE paths (cur_path, cur_dest) AS (
     SELECT origin, origin FROM bus_routes WHERE origin='New York' 
   UNION
@@ -145,7 +139,7 @@ SELECT * FROM paths;
 
 In the following example, data is truncated because the results are not specifically cast to a wide enough type:
 
-```sql
+```
 WITH RECURSIVE tbl AS (
   SELECT NULL AS col
   UNION
@@ -162,7 +156,7 @@ SELECT col FROM tbl
 
 Explicitly use [CAST](../../../../sql-functions/string-functions/cast.md) to overcome this:
 
-```sql
+```
 WITH RECURSIVE tbl AS (
   SELECT CAST(NULL AS CHAR(50)) AS col
   UNION SELECT "THIS NEVER SHOWS UP" AS col FROM tbl

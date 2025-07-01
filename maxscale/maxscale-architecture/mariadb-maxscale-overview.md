@@ -42,7 +42,7 @@ MariaDB MaxScale follows the MariaDB Enterprise release schedule, which can be f
 
 ### Security
 
-* [Authentication with MariaDB MaxScale](../maxscale-security/maxscale-authentication/)
+* [Authentication with MariaDB MaxScale](../maxscale-security/mariadb-maxscale-authentication/)
 * [Data-in-Transit Encryption for MariaDB MaxScale](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption)
 
 ### Architecture

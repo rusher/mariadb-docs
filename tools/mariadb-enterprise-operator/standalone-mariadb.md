@@ -47,6 +47,6 @@ Whilst this can be useful for development and testing, it is not recommended for
 
 For achieving high availability, we recommend deploying a Galera cluster. Refer to the [Galera](galera-cluster.md) and [High Availability](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/high-availability) sections for more information.
 
-{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
+<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
 {% @marketo/form formId="4316" %}
