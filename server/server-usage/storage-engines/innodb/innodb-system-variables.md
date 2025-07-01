@@ -1500,7 +1500,7 @@ Also see the [Full list of MariaDB options, system and status variables](../../.
 * Dynamic: Yes
 * Data Type: `numeric`
 * Default Value: `200`
-* Range: `100` to `18446744073709551615` (264-1)
+* Range: `100` to `18446744073709551615` (2<sup>64</sup>-1)
 
 #### `innodb_io_capacity_max`
 
@@ -1510,7 +1510,7 @@ Also see the [Full list of MariaDB options, system and status variables](../../.
 * Dynamic: Yes
 * Data Type: `numeric`
 * Default Value: `2000` or twice [innodb\_io\_capacity](innodb-system-variables.md#innodb_io_capacity), whichever is higher.
-* Range : `100` to `18446744073709551615` (264-1)
+* Range : `100` to `18446744073709551615` (2<sup>64</sup>-1)
 
 #### `innodb_kill_idle_transaction`
 
@@ -1821,8 +1821,8 @@ Also see the [Full list of MariaDB options, system and status variables](../../.
 * Default Value:
   * `1536` (>= [MariaDB 10.5.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1057-release-notes))
   * `1024` (<= [MariaDB 10.5.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1056-release-notes))
-* Range - 32bit: `100` to `232-1`
-* Range - 64bit: `100` to `264-1`
+* Range - 32bit: `100` to `2^32-1`
+* Range - 64bit: `100` to `2^64-1`
 
 #### `innodb_max_bitmap_file_size`
 
@@ -2006,7 +2006,7 @@ Also see the [Full list of MariaDB options, system and status variables](../../.
 * Dynamic: Yes
 * Data Type: `numeric`
 * Default Value: `1000`
-* Range: `0` to `232-1`
+* Range: `0` to `2^32-1`
 
 #### `innodb_online_alter_log_max_size`
 
@@ -2016,7 +2016,7 @@ Also see the [Full list of MariaDB options, system and status variables](../../.
 * Dynamic: Yes
 * Data Type: `numeric`
 * Default Value: `134217728`
-* Range: `65536` to `264-1`
+* Range: `65536` to `2^64-1`
 
 #### `innodb_open_files`
 
@@ -2445,7 +2445,7 @@ Also see the [Full list of MariaDB options, system and status variables](../../.
 * Dynamic: Yes
 * Data Type: `numeric`
 * Default Value: `8`
-* Range: `1` to `264-1`
+* Range: `1` to `2^64-1`
 * Deprecated: [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0)
 * Removed: [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1050-release-notes)
 
@@ -2472,7 +2472,7 @@ Also see the [Full list of MariaDB options, system and status variables](../../.
 * Dynamic: Yes
 * Data Type: `numeric`
 * Default Value: `8`
-* Range: `1` to `264-1`
+* Range: `1` to `2^64-1`
 
 #### `innodb_stats_update_need_lock`
 
