@@ -230,7 +230,7 @@ xa rollback X'31320d3334093637763738',X'6162630a646566',3;
 
 [MariaDB Galera Cluster](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/3VYeeVGUV4AMqrA3zwy7/) does not support XA transactions.
 
-However, [MariaDB Galera Cluster](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/3VYeeVGUV4AMqrA3zwy7/) builds include a built-in plugin called `wsrep`. Consequently, these [MariaDB Galera Cluster](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/galera-cluster/README.md) builds have multiple XA-capable storage engines by default, even if the only "real" storage engine that supports external [XA transactions](xa-transactions.md) enabled on these builds by default is [InnoDB](../../../server-usage/storage-engines/innodb/). Therefore, when using one these builds MariaDB would be forced to use a [transaction coordinator log](../../../server-management/server-monitoring-logs/transaction-coordinator-log/) by default, which could have performance implications.
+However, [MariaDB Galera Cluster](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/3VYeeVGUV4AMqrA3zwy7/) builds include a built-in plugin called `wsrep`. Consequently, these [MariaDB Galera Cluster](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/3VYeeVGUV4AMqrA3zwy7/) builds have multiple XA-capable storage engines by default, even if the only "real" storage engine that supports external [XA transactions](xa-transactions.md) enabled on these builds by default is [InnoDB](../../../server-usage/storage-engines/innodb/). Therefore, when using one these builds MariaDB would be forced to use a [transaction coordinator log](../../../server-management/server-monitoring-logs/transaction-coordinator-log/) by default, which could have performance implications.
 
 See [Transaction Coordinator Log Overview: MariaDB Galera Cluster](../../../server-management/server-monitoring-logs/transaction-coordinator-log/transaction-coordinator-log-overview.md#mariadb-galera-cluster) for more information.
 
@@ -240,7 +240,7 @@ See [Transaction Coordinator Log Overview: MariaDB Galera Cluster](../../../serv
 From MariaDB 10.5, `XA PREPARE` persists the XA transaction following the XA Specification. If an existing application relies on the previous behavior, upgrading to 10.5 or later can leave XA transactions in the `PREPARE`d state indefinitely after disconnect, causing such applications to no longer function correctly.
 {% endhint %}
 
-As a work-around, the variable[legacy\_xa\_rollback\_at\_disconnect](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#legacy_xa_rollback_at_disconnect) can be set to TRUE to re-enable the old behavior and roll back XA transactions in the `PREPARE`d state at disconnect. This is non-standard\
+As a work-around, the variable [legacy\_xa\_rollback\_at\_disconnect](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#legacy_xa_rollback_at_disconnect) can be set to TRUE to re-enable the old behavior and roll back XA transactions in the `PREPARE`d state at disconnect. This is non-standard\
 behaviour, and is not recommended for new applications. If rollback-at-disconnect is desired, it is better to use a normal (non-XA) transaction.
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
