@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 RESIGNAL [error_condition]
     [SET error_property
     [, error_property] ...]
@@ -31,25 +31,35 @@ error_property_name:
 
 ## Description
 
-The syntax of `RESIGNAL` and its semantics are very similar to [SIGNAL](signal.md). This statement can only be used within an error [HANDLER](declare-handler.md). It produces an error, like [SIGNAL](signal.md). `RESIGNAL` clauses are the same as SIGNAL, except that they all are optional, even [SQLSTATE](programmatic-compound-statements-diagnostics/sqlstate.md). All the properties which are not specified in `RESIGNAL`, will be identical to the properties of the error that was received by the error [HANDLER](../../sql-structure/nosql/handler/). For a description of the clauses, see [diagnostics area](programmatic-compound-statements-diagnostics/diagnostics-area.md).
+The syntax of `RESIGNAL` and its semantics are very similar to [SIGNAL](signal.md). This statement can only be used within an error [HANDLER](declare-handler.md). It produces an error, like [SIGNAL](signal.md). `RESIGNAL` clauses are the same as `SIGNAL`, except that they all are optional, even [SQLSTATE](programmatic-compound-statements-diagnostics/sqlstate.md). All the properties which are not specified in `RESIGNAL`, will be identical to the properties of the error that was received by the error [HANDLER](../../sql-structure/nosql/handler/). For a description of the clauses, see [diagnostics area](programmatic-compound-statements-diagnostics/diagnostics-area.md).
 
-Note that `RESIGNAL` does not empty the diagnostics area: it just appends another error condition.
+{% hint style="info" %}
+`RESIGNAL` does not empty the diagnostics area. It just appends another error condition.
+{% endhint %}
 
 `RESIGNAL`, without any clauses, produces an error which is identical to the error that was received by [HANDLER](../../sql-structure/nosql/handler/).
 
 If used out of a [HANDLER](../../sql-structure/nosql/handler/) construct, RESIGNAL produces the following error:
 
-```
+```sql
 ERROR 1645 (0K000): RESIGNAL when handler not active
 ```
 
-In [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5), if a [HANDLER](../../sql-structure/nosql/handler/) contained a [CALL](../stored-routine-statements/call.md) to another procedure, that procedure could use `RESIGNAL`. Since [MariaDB 10.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0), trying to do this raises the above error.
+{% tabs %}
+{% tab title="Current" %}
+If a [HANDLER](../../sql-structure/nosql/handler/) contains a [CALL](../stored-routine-statements/call.md) to another procedure, that procedure can use `RESIGNAL`, but trying to do this raises the above error.
+{% endtab %}
 
-For a list of `SQLSTATE` values and MariaDB error codes, see [MariaDB Error Codes](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-usage/programmatic-compound-statements/broken-reference/README.md).
+{% tab title="< 5.6" %}
+If a [HANDLER](../../sql-structure/nosql/handler/) contains a [CALL](../stored-routine-statements/call.md) to another procedure, that procedure can use `RESIGNAL`.
+{% endtab %}
+{% endtabs %}
+
+For a list of `SQLSTATE` values and MariaDB error codes, see [MariaDB Error Codes](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/development-articles/mariadb-internals/using-mariadb-with-your-programs-api/error-codes).
 
 The following procedure tries to query two tables which don't exist, producing a 1146 error in both cases. Those errors will trigger the [HANDLER](../../sql-structure/nosql/handler/). The first time the error will be ignored and the client will not receive it, but the second time, the error is re-signaled, so the client will receive it.
 
-```
+```sql
 CREATE PROCEDURE test_error( )
 BEGIN
    DECLARE CONTINUE HANDLER
@@ -86,7 +96,7 @@ ERROR 1146 (42S02): Table 'test.temptab_two' doesn't exist
 
 The following procedure re-signals an error, modifying only the error message to clarify the cause of the problem.
 
-```
+```sql
 CREATE PROCEDURE test_error()
 BEGIN
    DECLARE CONTINUE HANDLER
@@ -102,9 +112,7 @@ CALL test_error( );
 ERROR 1146 (42S02): `temptab` does not exist
 ```
 
-As explained above, this works on [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5), but produces a 1645 error since 10.0.
-
-```
+```sql
 CREATE PROCEDURE handle_error()
 BEGIN
   RESIGNAL;
@@ -122,7 +130,7 @@ END;
 * [SIGNAL](signal.md)
 * [HANDLER](../../sql-structure/nosql/handler/)
 * [Stored Routines](../../../server-usage/stored-routines/)
-* [MariaDB Error Codes](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-usage/programmatic-compound-statements/broken-reference/README.md)
+* [MariaDB Error Codes](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/development-articles/mariadb-internals/using-mariadb-with-your-programs-api/error-codes)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

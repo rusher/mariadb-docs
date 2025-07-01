@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 ITERATE label
 ```
 
@@ -10,13 +10,13 @@ ITERATE label
 
 If you try to use `ITERATE` with a non-existing label, or if the label is associated to a construct which is not a loop, the following error will be produced:
 
-```
+```sql
 ERROR 1308 (42000): ITERATE with no matching label: <label_name>
 ```
 
 Below is an example of how `ITERATE` might be used:
 
-```
+```sql
 CREATE PROCEDURE doiterate(p1 INT)
 BEGIN
   label1: LOOP
@@ -32,6 +32,6 @@ END
 
 * [LEAVE](leave.md) - Exits a loop (or any labeled code block)
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}
