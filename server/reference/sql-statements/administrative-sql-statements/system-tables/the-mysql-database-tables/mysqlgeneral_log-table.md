@@ -6,7 +6,6 @@ It contains the following fields:
 
 | Field         | Type             | Null | Key | Default               | Description                  |
 | ------------- | ---------------- | ---- | --- | --------------------- | ---------------------------- |
-| Field         | Type             | Null | Key | Default               | Description                  |
 | event\_time   | timestamp(6)     | NO   |     | CURRENT\_TIMESTAMP(6) | Time the query was executed. |
 | user\_host    | mediumtext       | NO   |     | NULL                  | User and host combination.   |
 | thread\_id    | int(11)          | NO   |     | NULL                  | Thread id.                   |
