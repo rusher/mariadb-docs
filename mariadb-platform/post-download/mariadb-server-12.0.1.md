@@ -34,7 +34,8 @@ layout:
 
 * The prior release in this series was MariaDB 12.0.0, released on 6 Mar 2025
 * This release (MariaDB 12.0.1) was released on 5 Jun 2025
-* The latest release in this series is MariaDB 12.0.1, released on 5 Jun 2025
+
+{% include "../.gitbook/includes/most-recent-12.0.md" %}
 
 ## Useful Resources
 
