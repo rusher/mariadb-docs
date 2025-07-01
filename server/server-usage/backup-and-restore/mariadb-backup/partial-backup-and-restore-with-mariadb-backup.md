@@ -1,5 +1,7 @@
 # Partial Backup and Restore with mariadb-backup
 
+{% include "../../../.gitbook/includes/mariadb-backup-was-previous....md" %}
+
 When using mariadb-backup, you have the option of performing partial backups. Partial backups allow you to choose which databases or tables to backup, as long as the table or partition involved is in an InnoDB file-per-table tablespace.This page documents how to perform partial backups.
 
 ### Backing up the Database Server

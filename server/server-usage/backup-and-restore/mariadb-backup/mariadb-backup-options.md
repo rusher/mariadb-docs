@@ -1,5 +1,7 @@
 # mariadb-backup Options
 
+{% include "../../../.gitbook/includes/mariadb-backup-was-previous....md" %}
+
 ## List of `mariadb-backup` Options
 
 ### `--apply-log`

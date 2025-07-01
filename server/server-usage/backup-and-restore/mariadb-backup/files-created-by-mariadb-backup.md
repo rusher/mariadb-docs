@@ -1,5 +1,7 @@
 # Files Created by mariadb-backup
 
+{% include "../../../.gitbook/includes/mariadb-backup-was-previous....md" %}
+
 `mariadb-backup` creates the following files:
 
 ### `backup-my.cnf`

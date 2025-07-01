@@ -1,5 +1,7 @@
 # Files Backed Up By mariadb-backup
 
+{% include "../../../.gitbook/includes/mariadb-backup-was-previous....md" %}
+
 ## Files Included in Backup
 
 `mariadb-backup` backs up the files listed below.
