@@ -1,8 +1,7 @@
 ---
 description: >-
-  Learn about stored routine statements in MariaDB Server. This section covers
-  SQL commands for creating, altering, and dropping stored procedures and
-  functions, essential for programmatic database logi
+  This section covers SQL commands for creating, altering, and dropping stored
+  procedures and functions, essential for programmatic database logic.
 layout:
   title:
     visible: true
