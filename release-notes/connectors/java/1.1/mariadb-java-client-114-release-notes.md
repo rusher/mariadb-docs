@@ -1,6 +1,6 @@
 # MariaDB Java Client 1.1.4 Release Notes
 
-[Download](https://downloads.mariadb.org/client-java/1.1.4/) | **Release Notes** | [Changelog](../changelogs/1.1/mariadb-java-client-114-changelog.md) |[Java Client Overview](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/about-the-mariadb-java-client/README.md)
+{% include "../../../.gitbook/includes/latest-java.md" %}
 
 **Release date:** 10 Sept 2013
 

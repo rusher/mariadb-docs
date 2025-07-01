@@ -1,5 +1,7 @@
 # MariaDB Connector/J 3.3.0 Release Notes
 
+{% include "../../../.gitbook/includes/latest-java.md" %}
+
 [Download](https://mariadb.com/downloads/connectors/connectors-data-access/java8-connector)[Release Notes](mariadb-connector-j-3-3-0-release-notes.md)[Changelog](../changelogs/3.3/mariadb-connector-j-3-3-0-changelog.md)[Connector/J Overview](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/about-mariadb-connector-j/README.md)
 
 **Release date:** 08 Nov 2023
