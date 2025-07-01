@@ -32,7 +32,7 @@ INSERT INTO ab (i) VALUES (1), (2)
 If the query cannot be rewritten in `multi-values`, the `rewriteBatchedStatements` connection option will use `multi-queries`. For example:
 
 ```sql
-INSERT INTO ab(col1) VALUES (?) ON DUPLICATE KEY UPDATE col2=? with values [1,2] and [2,3]
+INSERT INTO ab(col1) VALUES (?) ON DUPLICATE KEY UPDATE col2=? WITH VALUES [1,2] AND [2,3]
 ```
 
 will be rewritten as:

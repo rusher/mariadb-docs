@@ -56,10 +56,10 @@ Well, I am fudging a little here. I have a PRIMARY KEY on `seq`, but that has no
 ```sql
 SHOW CREATE TABLE Presidents \G
 CREATE TABLE `presidents` (
-  `seq` tinyint(3) unsigned NOT NULL AUTO_INCREMENT,
-  `last_name` varchar(30) NOT NULL,
-  `first_name` varchar(30) NOT NULL,
-  `term` varchar(9) NOT NULL,
+  `seq` TINYINT(3) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `last_name` VARCHAR(30) NOT NULL,
+  `first_name` VARCHAR(30) NOT NULL,
+  `term` VARCHAR(9) NOT NULL,
   PRIMARY KEY (`seq`)
 ) ENGINE=InnoDB AUTO_INCREMENT=45 DEFAULT CHARSET=utf8
 
@@ -166,7 +166,7 @@ This is called a "compound" or "composite" index since it has more than one colu
 
 ```sql
 ALTER TABLE Presidents
-        (drop old indexes and...)
+        (DROP old indexes AND...)
         ADD INDEX compound(last_name, first_name);
 
            id: 1

@@ -27,7 +27,7 @@ SELECT * FROM information_schema.VIEWS\G
        TABLE_CATALOG: def
         TABLE_SCHEMA: test
           TABLE_NAME: v
-     VIEW_DEFINITION: select `test`.`t`.`qty` AS `qty`,`test`.`t`.`price` AS `price`,(`test`.`t`.`qty` * `test`.`t`.`price`) AS `value` from `test`.`t`
+     VIEW_DEFINITION: SELECT `test`.`t`.`qty` AS `qty`,`test`.`t`.`price` AS `price`,(`test`.`t`.`qty` * `test`.`t`.`price`) AS `value` FROM `test`.`t`
         CHECK_OPTION: NONE
         IS_UPDATABLE: YES
              DEFINER: root@localhost

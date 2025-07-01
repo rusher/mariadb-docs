@@ -207,7 +207,7 @@ SHOW CREATE TABLE c;
 | Table | Create Table                                                                     |
 +-------+----------------------------------------------------------------------------------+
 | c     | CREATE TABLE `c` (
-  `for_key` int(11) DEFAULT NULL,
+  `for_key` INT(11) DEFAULT NULL,
   KEY `for_key` (`for_key`),
   CONSTRAINT `c_ibfk_1` FOREIGN KEY (`for_key`) REFERENCES `a` (`a_key`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 |

@@ -508,9 +508,10 @@ Before data can be imported into the tables, the schema needs to be created.
 
     ```sql
     CREATE TABLE inventory.products (
-       supplier varchar(128) NOT NULL DEFAULT '',
-       quantity varchar(128) NOT NULL DEFAULT '',
-       unit_cost varchar(128) NOT NULL DEFAULT ''
+       product_name VARCHAR(11) NOT NULL DEFAULT '',
+       supplier VARCHAR(128) NOT NULL DEFAULT '',
+       quantity VARCHAR(128) NOT NULL DEFAULT '',
+       unit_cost VARCHAR(128) NOT NULL DEFAULT ''
     ) ENGINE=Columnstore DEFAULT CHARSET=utf8;
     ```
 

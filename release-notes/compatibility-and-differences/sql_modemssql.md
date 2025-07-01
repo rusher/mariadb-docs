@@ -23,7 +23,7 @@ CREATE TABLE [t 1] ([a b] INT);
 SHOW CREATE TABLE [t 1];
 Table  Create Table
 t 1    CREATE TABLE "t 1" (
-  "a b" int(11) DEFAULT NULL
+  "a b" INT(11) DEFAULT NULL
 )
 ```
 
