@@ -132,6 +132,6 @@ By default, `updateStrategy.autoUpdateDataPlane` is `false`, which means that no
 
 It is important to note that this feature is fully compatible with the [Never](updates.md#never) strategy: no upgrades will happen when `updateStrategy.autoUpdateDataPlane=true` and `updateStrategy.type=Never`.
 
-<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 
 {% @marketo/form formId="4316" %}

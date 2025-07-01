@@ -187,6 +187,6 @@ The following metrics are available for `MaxScale` instances:
 | maxscale\_uptime\_seconds                                     | Maxscale uptime in seconds                                                                         | GAUGE   |
 | maxscale\_version                                             | Maxscale Version                                                                                   | GAUGE   |
 
-<sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
+{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 
 {% @marketo/form formId="4316" %}
