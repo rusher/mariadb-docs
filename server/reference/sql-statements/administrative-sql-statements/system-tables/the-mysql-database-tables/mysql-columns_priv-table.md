@@ -12,7 +12,6 @@ The `mysql.columns_priv` table contains the following fields:
 
 | Field        | Type                                            | Null | Key | Default            | Description                                                                                                                     |
 | ------------ | ----------------------------------------------- | ---- | --- | ------------------ | ------------------------------------------------------------------------------------------------------------------------------- |
-| Field        | Type                                            | Null | Key | Default            | Description                                                                                                                     |
 | Host         | char(60)                                        | NO   | PRI |                    | Host (together with User, Db , Table\_name andColumn\_name makes up the unique identifier for this record.                      |
 | Db           | char(64)                                        | NO   | PRI |                    | Database name (together with User, Host , Table\_name andColumn\_name makes up the unique identifier for this record.           |
 | User         | char(80)                                        | NO   | PRI |                    | User (together with Host, Db , Table\_name andColumn\_name makes up the unique identifier for this record.                      |
