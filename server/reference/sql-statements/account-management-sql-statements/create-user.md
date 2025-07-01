@@ -50,19 +50,15 @@ lock_option:
 
 ## Description
 
-The `CREATE USER` statement creates new MariaDB accounts. To use it, you must have the global [CREATE USER](grant.md#create-user) privilege or the [INSERT](grant.md#table-privileges) privilege for the [mysql](../administrative-sql-statements/system-tables/the-mysql-database-tables/) database.&#x20;
+The `CREATE USER` statement creates new MariaDB accounts. To use it, you must have the global [CREATE USER](grant.md#create-user) privilege or the [INSERT](grant.md#table-privileges) privilege for the [mysql](../administrative-sql-statements/system-tables/the-mysql-database-tables/) database.
 
 {% tabs %}
 {% tab title="Current" %}
-For each account, `CREATE USER` creates a new row in [mysql.user](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md) that has no privileges.
+For each account, `CREATE USER` creates a new row in the [mysql.user](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md) view (and the underlying [mysql.global\_priv](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-global_priv-table.md) table) that has no privileges.
 {% endtab %}
 
 {% tab title="< 10.4" %}
-For each account, `CREATE USER` creates a new row in [mysql.user](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md) (a view) that has no privileges.
-{% endtab %}
-
-{% tab title="< 10.3" %}
-For each account, `CREATE USER` creates a new row in [mysql.user](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md) (a table) that has no privileges.
+For each account, `CREATE USER` creates a new row in [mysql.user](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md) table that has no privileges.
 {% endtab %}
 {% endtabs %}
 
@@ -218,7 +214,6 @@ You can set certain TLS-related restrictions for specific user accounts. For ins
 
 | Option                    | Description                                                                                                                                                                                                                                                                                         |
 | ------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Option                    | Description                                                                                                                                                                                                                                                                                         |
 | REQUIRE NONE              | TLS is not required for this account, but can still be used.                                                                                                                                                                                                                                        |
 | REQUIRE SSL               | The account must use TLS, but no valid X509 certificate is required. This option cannot be combined with other TLS options.                                                                                                                                                                         |
 | REQUIRE X509              | The account must use TLS and must have a valid X509 certificate. This option implies REQUIRE SSL. This option cannot be combined with other TLS options.                                                                                                                                            |
@@ -247,7 +242,6 @@ It is possible to set per-account limits for certain server resources. The follo
 
 | Limit Type                  | Decription                                                                                                                                                                                                                      |
 | --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Limit Type                  | Decription                                                                                                                                                                                                                      |
 | MAX\_QUERIES\_PER\_HOUR     | Number of statements that the account can issue per hour (including updates)                                                                                                                                                    |
 | MAX\_UPDATES\_PER\_HOUR     | Number of updates (not queries) that the account can issue per hour                                                                                                                                                             |
 | MAX\_CONNECTIONS\_PER\_HOUR | Number of connections that the account can start per hour                                                                                                                                                                       |
@@ -431,7 +425,7 @@ From [MariaDB 10.4.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-com
 * [CREATE ROLE](create-role.md)
 * [SET PASSWORD](set-password.md)
 * [SHOW CREATE USER](../administrative-sql-statements/show/show-create-user.md)
-* [Troubleshooting Connection Issues](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/troubleshooting-connection-issues/README.md)
+* [Troubleshooting Connection Issues](../../../mariadb-quickstart-guides/mariadb-connection-troubleshooting-guide.md)
 * [Authentication from MariaDB 10.4](../../../security/user-account-management/authentication-from-mariadb-10-4.md)
 * [Identifier Names](../../sql-structure/sql-language-structure/identifier-names.md)
 * [mysql.user table](../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md)

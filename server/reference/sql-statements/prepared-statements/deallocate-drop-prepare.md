@@ -2,27 +2,25 @@
 
 ## Syntax
 
-```
+```sql
 {DEALLOCATE | DROP} PREPARE stmt_name
 ```
 
 ## Description
 
-To deallocate a prepared statement produced with [PREPARE](prepare-statement.md), use a`DEALLOCATE PREPARE` statement that refers to the prepared statement\
-name.
+To deallocate a prepared statement produced with [PREPARE](prepare-statement.md), use a`DEALLOCATE PREPARE` statement that refers to the prepared statement name.
 
 A prepared statement is implicitly deallocated when a new `PREPARE` command is issued. In that case, there is no need to use `DEALLOCATE`.
 
-Attempting to execute a prepared statement after deallocating it\
-results in an error, as if it was not prepared at all:
+Attempting to execute a prepared statement after deallocating it results in an error, as if it was not prepared at all:
 
-```
+```sql
 ERROR 1243 (HY000): Unknown prepared statement handler (stmt_name) given to EXECUTE
 ```
 
 If the specified statement has not been PREPAREd, an error similar to the following will be produced:
 
-```
+```sql
 ERROR 1243 (HY000): Unknown prepared statement handler (stmt_name) given to DEALLOCATE PREPARE
 ```
 
