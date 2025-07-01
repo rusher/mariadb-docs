@@ -1,6 +1,8 @@
 # System Variable Differences Between MariaDB Rolling and MySQL 8.0
 
-The following is a comparison of variables that either appear only in MariaDB Rolling or MySQL 8.0, or have different default settings in MariaDB Rolling, and MySQL 8.0. The releases [MariaDB 11.7.0](../../mariadb-community-server-release-notes/old-releases/mariadb-11-7-rolling-releases/mariadb-11-7-0-release-notes.md) and MySQL 8.0.39, with only default plugins enabled, were used for the comparison. Note that MySQL 8 is an 'evergreen' release, so features may be added or removed in later releases.
+The following is a comparison of variables that either appear only in MariaDB Rolling or MySQL 8.0, or have different default settings in MariaDB Rolling, and MySQL 8.0. The releases [MariaDB 11.7.0](../../mariadb-community-server-release-notes/old-releases/mariadb-11-7-rolling-releases/mariadb-11-7-0-release-notes.md) and MySQL 8.0.39, with only default plugins enabled, were used for the comparison.
+
+{% include "../../.gitbook/includes/mysql-8.0-has-been-a-bugfix....md" %}
 
 For a more complete list of differences, see [Incompatibilities and Feature Differences Between MariaDB Rolling and MySQL 8.0](../incompatibilities-and-feature-differences-between-mariadb-rolling-and-mysql.md) and [Function Differences Between MariaDB Rolling and MySQL 8.0](../function-differences-between-mariadb-and-mysql/function-differences-between-mariadb-rolling-and-mysql-8-0.md)
 

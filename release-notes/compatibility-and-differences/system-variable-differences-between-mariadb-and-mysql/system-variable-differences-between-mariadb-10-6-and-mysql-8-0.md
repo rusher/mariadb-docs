@@ -1,6 +1,8 @@
 # System Variable Differences Between MariaDB 10.6 and MySQL 8.0
 
-The following is a comparison of variables that either appear only in [MariaDB 10.6](../../mariadb-community-server-release-notes/mariadb-10-6-series/what-is-mariadb-106.md) or MySQL 8.0, or have different default settings in [MariaDB 10.6](../../mariadb-community-server-release-notes/mariadb-10-6-series/what-is-mariadb-106.md), and MySQL 8.0. The stable releases [MariaDB 10.6.4](../../mariadb-community-server-release-notes/mariadb-10-6-series/mariadb-1064-release-notes.md) and MySQL 8.0.11, with only default plugins enabled, were used for the comparison. Note that MySQL 8 is an 'evergreen' release, so features may be added or removed in later releases.
+The following is a comparison of variables that either appear only in [MariaDB 10.6](../../mariadb-community-server-release-notes/mariadb-10-6-series/what-is-mariadb-106.md) or MySQL 8.0, or have different default settings in [MariaDB 10.6](../../mariadb-community-server-release-notes/mariadb-10-6-series/what-is-mariadb-106.md), and MySQL 8.0. The stable releases [MariaDB 10.6.4](../../mariadb-community-server-release-notes/mariadb-10-6-series/mariadb-1064-release-notes.md) and MySQL 8.0.11, with only default plugins enabled, were used for the comparison.
+
+{% include "../../.gitbook/includes/mysql-8.0-has-been-a-bugfix....md" %}
 
 For a more complete list of differences, see [Incompatibilities and Feature Differences Between MariaDB 10.6 and MySQL 8.0](../incompatibilities-and-feature-differences-between-mariadb-10-6-and-mysql-8.md) and [Function Differences Between MariaDB 10.6 and MySQL 8.0](../function-differences-between-mariadb-and-mysql/function-differences-between-mariadb-10-6-and-mysql-8-0.md)
 
