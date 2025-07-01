@@ -10,7 +10,6 @@ The `mysql.time_zone_transition` table contains the following fields:
 
 | Field                | Type             | Null | Key | Default | Description |
 | -------------------- | ---------------- | ---- | --- | ------- | ----------- |
-| Field                | Type             | Null | Key | Default | Description |
 | Time\_zone\_id       | int(10) unsigned | NO   | PRI | NULL    |             |
 | Transition\_time     | bigint(20)       | NO   | PRI | NULL    |             |
 | Transition\_type\_id | int(10) unsigned | NO   |     | NULL    |             |
