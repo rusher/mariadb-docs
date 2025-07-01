@@ -88,7 +88,7 @@ Follow the prompts to configure your security settings.
 
 #### Resources:
 
-* [MariaDB `mariadb-secure-installation` documentation](https://www.google.com/search?q=%5Bhttps://mariadb.com/kb/en/mariadb-secure-installation/%5D\(https://mariadb.com/kb/en/mariadb-secure-installation/\)\&authuser=1)
+* [MariaDB `mariadb-secure-installation` documentation](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/deployment-tools/mariadb-secure-installation)
 * [Top 9 Tips to Achieve MySQL and MariaDB Security - SnapShooter Tutorials](https://snapshooter.com/learn/mysql/top-tips-secure-mysql)
 * [How to Secure MySQL and MariaDB Databases in a Linux VPS | DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-secure-mysql-and-mariadb-databases-in-a-linux-vps)
 

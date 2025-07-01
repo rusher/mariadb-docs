@@ -28,7 +28,7 @@ layout:
 
 * This release is part of the MariaDB 12.0 release series
 * MariaDB 12.0 is a rolling release series
-* [What's new in this release series?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/what-is-mariadb-120)
+* [What's new in this release series?](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-12.0-rolling-releases/what-is-mariadb-120)
 
 ## Release History
 
@@ -39,7 +39,7 @@ layout:
 ## Useful Resources
 
 * [MariaDB Server Documentation](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/SsmexDFPv2xG2OTyO5yV/)
-* [MariaDB Connector Documentation](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors)
+* [MariaDB Connector Documentation](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/CjGYMsT2MVP4nd3IyW2L/)
 * [Contact Us](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/about/contact-us)
 * [Learn about the MariaDB Community](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/community)
 
