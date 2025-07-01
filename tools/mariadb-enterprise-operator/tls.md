@@ -706,7 +706,6 @@ The following set of algorithms and sizes are supported:
 
 | Algorithm | Key Sizes        |
 | --------- | ---------------- |
-| Algorithm | Key Sizes        |
 | RSA       | 2048, 3072, 4096 |
 | ECDSA     | 256, 384, 521    |
 
