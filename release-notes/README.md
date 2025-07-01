@@ -36,8 +36,8 @@ Release dates for all upcoming MariaDB Server releases can be found [on Jira](ht
 [connectors](connectors/)
 {% endcontent-ref %}
 
-{% content-ref url="mariadb-enterprise-operator/" %}
-[mariadb-enterprise-operator](mariadb-enterprise-operator/)
+{% content-ref url="enterprise-operator/" %}
+[enterprise-operator](enterprise-operator/)
 {% endcontent-ref %}
 
 {% content-ref url="latest-releases.md" %}
