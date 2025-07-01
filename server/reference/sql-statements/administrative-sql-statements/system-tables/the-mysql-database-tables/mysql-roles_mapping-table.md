@@ -10,7 +10,6 @@ The `mysql.roles_mapping` table contains the following fields:
 
 | Field         | Type          | Null | Key | Default | Description                                                                                                                           |
 | ------------- | ------------- | ---- | --- | ------- | ------------------------------------------------------------------------------------------------------------------------------------- |
-| Field         | Type          | Null | Key | Default | Description                                                                                                                           |
 | Host          | char(60)      | NO   | PRI |         | Host (together with User and Role makes up the unique identifier for this record.                                                     |
 | User          | char(80)      | NO   | PRI |         | User (together with Host and Role makes up the unique identifier for this record.                                                     |
 | Role          | char(80)      | NO   | PRI |         | Role (together with Host and User makes up the unique identifier for this record.                                                     |
