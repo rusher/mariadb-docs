@@ -176,6 +176,17 @@ Also see the [Full list of MariaDB options, system and status variables](https:/
 * Default Value: `512`
 * Range: `128` to `16384`
 
+#### `aria_pagecache_segments`
+
+* Description: The number of segments in the page_cache. Each file is put in their own segments of size pagecache_buffer_size / segments. Having many segments improves parallel performance.
+* Commandline: `--aria-pagecache-segments=#`
+* Scope: Global
+* Dynamic: No
+* Data Type: `numeric`
+* Default Value: `1`
+* Range: `1` to `128`
+* Introduced: MariaDB 12.1
+
 #### `aria_recover`
 
 * Description: `aria_recover` has been renamed to `aria_recover_options` in [MariaDB 10.2.0](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/aria/broken-reference/README.md). See [aria\_recover\_options](aria-system-variables.md#aria_recover_options) for the description.
