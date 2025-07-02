@@ -653,7 +653,6 @@
   * [User Account Management](security/user-account-management/README.md)
     * [Roles](security/user-account-management/roles/README.md)
       * [Roles Overview](security/user-account-management/roles/roles_overview.md)
-      * [SecuRich](security/user-account-management/roles/securich.md)
     * [Account Locking](security/user-account-management/account-locking.md)
     * [Authentication from MariaDB 10.4](security/user-account-management/authentication-from-mariadb-10-4.md)
     * [Incrementing of the access\_denied\_errors status variable](security/user-account-management/incrementing-of-the-access_denied_errors-status-variable.md)
