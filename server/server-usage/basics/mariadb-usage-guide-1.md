@@ -146,7 +146,7 @@ As you can see, using MariaDB isn't very difficult. You just have to understand 
 
 #### See Also
 
-* [MariaDB Basics](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/mariadb-basics/README.md)
+* [MariaDB Basics](./)
 
 {% include "../../.gitbook/includes/license-cc-by-sa-gnu-fdl.md" %}
 

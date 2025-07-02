@@ -2,7 +2,7 @@
 
 {% include "https://app.gitbook.com/s/GxVnu02ec8KJuFSxmB93/~/reusable/G9gr3KMrlccJhmFh3SNT/" %}
 
-This article covers connecting to MariaDB and the basic connection parameters. If you are completely new to MariaDB, take a look at [A MariaDB Primer](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/a-mariadb-primer/README.md) first.
+This article covers connecting to MariaDB and the basic connection parameters. If you are completely new to MariaDB, take a look at [A MariaDB Primer](../basics/mariadb-usage-guide-1.md) first.
 
 In order to connect to the MariaDB server, the client software must provide the correct connection parameters. The client software will most often be the [mariadb client](../../clients-and-utilities/mariadb-client/), used for entering statements from the command line, but the same concepts apply to any client, such as a [graphical client](../../clients-and-utilities/graphical-and-enhanced-clients/), a client to run backups such as [mariadb-dump](../../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md), etc. The rest of this article assumes that the mariadb command line client is used.
 
@@ -196,10 +196,10 @@ It's also possible to use option files (or configuration files) to set these opt
 
 ## See Also
 
-* [A MariaDB Primer](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/a-mariadb-primer/README.md)
+* [A MariaDB Primer](../basics/mariadb-usage-guide-1.md)
 * [mariadb client](../../clients-and-utilities/mariadb-client/)
 * [Clients and Utilities](../../clients-and-utilities/)
-* [Configuring MariaDB for Remote Client Access](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/configuring-mariadb-for-remote-client-access/README.md)
+* [Configuring MariaDB for Remote Client Access](../../mariadb-quickstart-guides/mariadb-remote-connection-guide.md)
 * [--skip-grant-tables](../../server-management/starting-and-stopping-mariadb/mariadbd-options.md) allows you to start MariaDB without `GRANT`. This is useful if you lost your root password.
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
