@@ -1,4 +1,4 @@
-# Changes and Improvements in MariaDB 12
+# Changes and Improvements in MariaDB 12.1
 
 MariaDB 12.1 is a [rolling release](../../mariadb-release-model.md). It is an evolution of [MariaDB 12.0](../release-notes-mariadb-12.0-rolling-releases/what-is-mariadb-120.md) with several entirely new features.
 
@@ -23,12 +23,10 @@ MariaDB 12.1 is a [rolling release](../../mariadb-release-model.md). It is an ev
 * Optimizer hints: \[NO\_]SPLIT\_MATERIALIZED ([MDEV-36092](https://jira.mariadb.org/browse/MDEV-36092))
 * Optimizer hints: \[NO\_]DERIVED\_CONDITION\_PUSHDOWN, \[NO\_]MERGE ([MDEV-36106](https://jira.mariadb.org/browse/MDEV-36106))
 
-
-
 ### Miscellaneous <a href="#miscellaneous" id="miscellaneous"></a>
 
 * Retry applying of write sets on galera nodes ([MDEV-36077](https://jira.mariadb.org/browse/MDEV-36077))
-* Wildcard support in mariadb-dump ([MDEV-21376](https://jira.mariadb.org/browse/MDEV-21376))
+* [mariadb-dump](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/backup-restore-and-import-clients/mariadb-dump) now supports wildcards with the `-L` or `--wildcards` option ([MDEV-21376](https://jira.mariadb.org/browse/MDEV-21376))
 * Per-table unique FOREIGN KEY constraint names ([MDEV-28933](https://jira.mariadb.org/browse/MDEV-28933))
 * Remove depth limit from JSON functions ([MDEV-32854](https://jira.mariadb.org/browse/MDEV-32854))
 * Support for functional indexes in GROUP/ORDER BY ([MDEV-36132](https://jira.mariadb.org/browse/MDEV-36132))
