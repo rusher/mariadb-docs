@@ -210,7 +210,7 @@ Also see the [Full list of MariaDB options, system and status variables](../../.
     * `0` is the traditional lock mode.
     * `1` is the consecutive lock mode.
     * `2` is the interleaved lock mode.
-  * In order to use [Galera Cluster](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/), the lock mode needs to be set to `2`.
+  * In order to use [Galera Cluster](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/3VYeeVGUV4AMqrA3zwy7/), the lock mode needs to be set to `2`.
   * See [AUTO\_INCREMENT Handling in InnoDB: AUTO\_INCREMENT Lock Modes](auto_increment-handling-in-innodb.md) for more information.
 * Commandline: `--innodb-autoinc-lock-mode=#`
 * Scope: Global
@@ -941,7 +941,7 @@ Also see the [Full list of MariaDB options, system and status variables](../../.
 * Description: Enables automatic encryption of all InnoDB tablespaces.
   * `OFF` - Disables table encryption for all new and existing tables that have the [ENCRYPTED](../../../reference/sql-statements/data-definition/create/create-table.md#encrypted) table option set to `DEFAULT`.
   * `ON` - Enables table encryption for all new and existing tables that have the [ENCRYPTED](../../../reference/sql-statements/data-definition/create/create-table.md#encrypted) table option set to `DEFAULT`, but allows unencrypted tables to be created.
-  * `FORCE` - Enables table encryption for all new and existing tables that have the  [ENCRYPTED](../../../reference/sql-statements/data-definition/create/create-table.md#encrypted) table option set to `DEFAULT`, and doesn't allow unencrypted tables to be created (CREATE TABLE ... ENCRYPTED=NO will fail).
+  * `FORCE` - Enables table encryption for all new and existing tables that have the [ENCRYPTED](../../../reference/sql-statements/data-definition/create/create-table.md#encrypted) table option set to `DEFAULT`, and doesn't allow unencrypted tables to be created (CREATE TABLE ... ENCRYPTED=NO will fail).
   * See [Data-at-Rest Encryption](../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/data-at-rest-encryption-overview.md) and [Enabling InnoDB Encryption: Enabling Encryption for Automatically Encrypted Tablespaces](../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/innodb-encryption/innodb-enabling-encryption.md#enabling-encryption-for-automatically-encrypted-tablespaces) for more information.
 * Commandline: `--innodb-encrypt-tables={0|1}`
 * Scope: Global
@@ -1368,7 +1368,7 @@ Also see the [Full list of MariaDB options, system and status variables](../../.
 
 #### `innodb_ft_user_stopword_table`
 
-* Description: Table name containing a list of stopwords to ignore when creating an InnoDB [FULLTEXT index](../../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/full-text-indexes/), in the format db\_name/table\_name. The specified table must exist before this option is set, and must be an InnoDB table with a single column, a [VARCHAR](../../../reference/data-types/string-data-types/varchar.md)  named VALUE. See also [innodb\_ft\_enable\_stopword](innodb-system-variables.md#innodb_ft_enable_stopword).
+* Description: Table name containing a list of stopwords to ignore when creating an InnoDB [FULLTEXT index](../../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/full-text-indexes/), in the format db\_name/table\_name. The specified table must exist before this option is set, and must be an InnoDB table with a single column, a [VARCHAR](../../../reference/data-types/string-data-types/varchar.md) named VALUE. See also [innodb\_ft\_enable\_stopword](innodb-system-variables.md#innodb_ft_enable_stopword).
 * Commandline: `--innodb-ft-user-stopword-table=db_name/table_name`
 * Scope: Session
 * Dynamic: Yes
@@ -1552,7 +1552,7 @@ Also see the [Full list of MariaDB options, system and status variables](../../.
 
 #### `innodb_lock_schedule_algorithm`
 
-* Description: Removed in [MariaDB 10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/mariadb-1060-release-notes) due to problems with the VATS implementation ([MDEV-16664](https://jira.mariadb.org/browse/MDEV-16664)). Specifies the algorithm that InnoDB uses to decide which of the waiting transactions should be granted the lock once it has been released. The possible values are: `FCFS` (First-Come-First-Served) where locks are granted in the order they appear in the lock queue and `VATS` (Variance-Aware-Transaction-Scheduling) where locks are granted based on the Eldest-Transaction-First heuristic. Note that `VATS` should not be used with [Galera](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/), and InnoDB will refuse to start if `VATS` is used with Galera. It is also not recommended to set to `VATS` even in the general case ([MDEV-16664](https://jira.mariadb.org/browse/MDEV-16664)). From [MariaDB 10.2.12](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-10212-release-notes), the value was changed to `FCFS` and a warning produced when using Galera.
+* Description: Removed in [MariaDB 10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/mariadb-1060-release-notes) due to problems with the VATS implementation ([MDEV-16664](https://jira.mariadb.org/browse/MDEV-16664)). Specifies the algorithm that InnoDB uses to decide which of the waiting transactions should be granted the lock once it has been released. The possible values are: `FCFS` (First-Come-First-Served) where locks are granted in the order they appear in the lock queue and `VATS` (Variance-Aware-Transaction-Scheduling) where locks are granted based on the Eldest-Transaction-First heuristic. Note that `VATS` should not be used with [Galera](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/3VYeeVGUV4AMqrA3zwy7/), and InnoDB will refuse to start if `VATS` is used with Galera. It is also not recommended to set to `VATS` even in the general case ([MDEV-16664](https://jira.mariadb.org/browse/MDEV-16664)). From [MariaDB 10.2.12](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-10212-release-notes), the value was changed to `FCFS` and a warning produced when using Galera.
 * Commandline: `--innodb-lock-schedule-algorithm=#`
 * Scope: Global
 * Dynamic: No (>= [MariaDB 10.2.12](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-10212-release-notes), [MariaDB 10.1.30](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10130-release-notes)), Yes (<= [MariaDB 10.2.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-10211-release-notes), [MariaDB 10.1.29](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10129-release-notes))
@@ -1964,7 +1964,7 @@ Also see the [Full list of MariaDB options, system and status variables](../../.
 
 #### `innodb_monitor_reset`
 
-* Description: Resets the count value of the specified counters in the [INFORMATION\_SCHEMA.INNODB\_METRICS](../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_metrics-table.md)  table to zero.
+* Description: Resets the count value of the specified counters in the [INFORMATION\_SCHEMA.INNODB\_METRICS](../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_metrics-table.md) table to zero.
 * Commandline: `--innodb-monitor-reset=string`
 * Scope: Global
 * Dynamic: Yes
@@ -1972,7 +1972,7 @@ Also see the [Full list of MariaDB options, system and status variables](../../.
 
 #### `innodb_monitor_reset_all`
 
-* Description: Resets all values for the specified counters in the [INFORMATION\_SCHEMA.INNODB\_METRICS](../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_metrics-table.md)  table.
+* Description: Resets all values for the specified counters in the [INFORMATION\_SCHEMA.INNODB\_METRICS](../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_metrics-table.md) table.
 * Commandline: `---innodb-monitor-reset-all=string`
 * Scope: Global
 * Dynamic: Yes

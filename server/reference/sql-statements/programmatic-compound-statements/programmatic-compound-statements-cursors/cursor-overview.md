@@ -141,7 +141,7 @@ SELECT * FROM t1;
 * [OPEN cursor\_name](open.md)
 * [FETCH cursor\_name](fetch.md)
 * [CLOSE cursor\_name](close.md)
-* [Cursors in Oracle mode](broken-reference)
+* [Cursors in Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

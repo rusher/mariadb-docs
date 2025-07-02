@@ -20,7 +20,7 @@ See [Cursor Overview](cursor-overview.md) for an example.
 * [DECLARE CURSOR](declare-cursor.md)
 * [OPEN cursor\_name](open.md)
 * [FETCH cursor\_name](fetch.md)
-* [Cursors in Oracle mode](broken-reference)
+* [Cursors in Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle)
 
 <sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 

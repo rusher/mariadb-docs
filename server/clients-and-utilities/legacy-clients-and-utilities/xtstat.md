@@ -1,6 +1,10 @@
 # xtstat
 
-`xtstat` can be used to monitor all internal activity of [PBXT](https://mariadb.com/kb/en/PBXT).
+{% hint style="warning" %}
+This tool is for PBXT, an unsupported storage engine.
+{% endhint %}
+
+`xtstat` can be used to monitor all internal activity of PBXT (a storage engine that is no longer supported).
 
 `xtstat` polls the `INFORMATION_SCHEMA.PBXT_STATISTICS` table. The poll interval can be set using the `--delay` option, and is 1 second by default.
 
@@ -10,13 +14,13 @@ For most statistics, `xtstat` will display the difference in values between the 
 
 Invoke xtstat as follows:
 
-```
+```bash
 $ xtstat [ options ]
 ```
 
 For example, to poll every 10 seconds:
 
-```
+```bash
 xtstat -D10
 ```
 
@@ -24,7 +28,7 @@ Note that statistic counters are never reset, even if a rollback occurs. For exa
 
 If MariaDB shuts down or crashes, `xtstat` will attempt to reconnect. `xtstat` can be terminated any time using the `CTRL-C` key cimbination.
 
-Before [PBXT](https://github.com/mariadb-corporation/docs-server/blob/test/server/clients-and-utilities/PBXT/README.md) has recovered, not all statistics are available. In particular, the statistics relating to PBXT background threads are not available (including the `sweep` and `chkpnt` statistics).
+Before PBXT has recovered, not all statistics are available. In particular, the statistics relating to PBXT background threads are not available (including the `sweep` and `chkpnt` statistics).
 
 ### Command line options
 
