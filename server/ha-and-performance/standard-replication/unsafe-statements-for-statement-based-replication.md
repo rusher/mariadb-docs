@@ -11,8 +11,8 @@ A safe statement is generally deterministic; in other words the statement will a
 
 When an unsafe statement is run, the current binary logging format determines how the server responds.
 
-* If the binary logging format is [statement-based](../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md#statement-based-logging) (the default until [MariaDB 10.2.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-1023-release-notes)), unsafe statements generate a warning and are logged normally.
-* If the binary logging format is [mixed](../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md#mixed-logging) (the default from [MariaDB 10.2.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-1024-release-notes)), unsafe statements are logged using the row-based format, while safe statements use the statement-based format.
+* If the binary logging format is [statement-based](../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md#statement-based-logging), unsafe statements generate a warning and are logged normally.
+* If the binary logging format is [mixed](../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md#mixed-logging), unsafe statements are logged using the row-based format, while safe statements use the statement-based format.
 * If the binary logging format is [row-based](../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md#row-based-logging), all statements are logged normally, and the distinction between safe and unsafe is not made.
 
 MariaDB tries to detect unsafe statements. When an unsafe statement is issued, a warning similar to the following is produced:
