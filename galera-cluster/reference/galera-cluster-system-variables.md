@@ -264,7 +264,7 @@ It is an enum. Valid values are:`0: NONE`: Off (default)`1: SERVER`: MariaDB ser
     * A DML statement writes to a non-InnoDB table.
     * A DML statement writes to an InnoDB table with wsrep\_on=OFF set.
   * REPLICATE\_ARIA: Whether or not DML updates for [Aria](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/aria) tables will be replicated. This functionality is experimental and should not be relied upon in production systems.
-  * REPLICATE\_MYISAM: Whether or not DML updates for [MyISAM](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/myisam-storage-engine) tables will be replicated. This functionality is experimental and should not be relied upon in production systems.
+  * REPLICATE\_MYISAM: Whether or not DML updates for [MyISAM](https://mariadb.com/docs/server/server-usage/storage-engines/myisam-storage-engine) tables will be replicated. This functionality is experimental and should not be relied upon in production systems.
   * REQUIRED\_PRIMARY\_KEY: Table should have PRIMARY KEY defined.
   * STRICT\_REPLICATION: Same as the old [wsrep\_strict\_ddl](galera-cluster-system-variables.md#wsrep_strict_ddl) setting.
 * Commandline: `--wsrep-mode=value`
@@ -405,7 +405,7 @@ It is an enum. Valid values are:`0: NONE`: Off (default)`1: SERVER`: MariaDB ser
 
 #### `wsrep_replicate_myisam`
 
-* Description: Whether or not DML updates for [MyISAM](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/myisam-storage-engine) tables will be replicated. This functionality is still experimental and should not be relied upon in production systems. Deprecated in [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/what-is-mariadb-106), and removed in [MariaDB 10.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-7-series/what-is-mariadb-107), use [wsrep\_mode](galera-cluster-system-variables.md#wsrep_mode) instead.
+* Description: Whether or not DML updates for [MyISAM](https://mariadb.com/docs/server/server-usage/storage-engines/myisam-storage-engine) tables will be replicated. This functionality is still experimental and should not be relied upon in production systems. Deprecated in [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/what-is-mariadb-106), and removed in [MariaDB 10.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-7-series/what-is-mariadb-107), use [wsrep\_mode](galera-cluster-system-variables.md#wsrep_mode) instead.
 * Commandline: `--wsrep-replicate-myisam[={0|1}]`
 * Scope: Global
 * Dynamic: Yes

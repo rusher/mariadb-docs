@@ -32,17 +32,17 @@ Like with [MariaDB replication](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/h
 
 Like with [MariaDB replication](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication), [replication filters](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-filters) can be used to filter write sets from being replicated by [Galera Cluster's certification-based replication](../readme/about-galera-replication.md). However, they should be used with caution because they may not work as you'd expect.
 
-The following replication filters are honored for [InnoDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/innodb) DML, but not DDL:
+The following replication filters are honored for [InnoDB](https://mariadb.com/docs/server/server-usage/storage-engines/innodb) DML, but not DDL:
 
-* [binlog_do_db](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options)
-* [binlog_ignore_db](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options)
-* [replicate_wild_do_table](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables)
-* [replicate_wild_ignore_table](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables)
+* [binlog_do_db](https://mariadb.com/docs/server/ha-and-performance/standard-replication/replication-filters#binlog_do_db)
+* [binlog_ignore_db](https://mariadb.com/docs/server/ha-and-performance/standard-replication/replication-filters#binlog_ignore_db)
+* [replicate_wild_do_table](https://mariadb.com/docs/server/ha-and-performance/standard-replication/replication-filters#replicate_wild_do_table)
+* [replicate_wild_ignore_table](https://mariadb.com/docs/server/ha-and-performance/standard-replication/replication-filters#replicate_wild_ignore_table)
 
-The following replication filters are honored for DML and DDL for tables that use both the [InnoDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/innodb) and [MyISAM](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/myisam-storage-engine) storage engines:
+The following replication filters are honored for DML and DDL for tables that use both the [InnoDB](https://mariadb.com/docs/server/server-usage/storage-engines/innodb) and [MyISAM](https://mariadb.com/docs/server/server-usage/storage-engines/myisam-storage-engine) storage engines:
 
-* [replicate_do_table](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables)
-* [replicate_ignore_table](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables)
+* [replicate_do_table](https://mariadb.com/docs/server/ha-and-performance/standard-replication/replication-filters#replicate_do_table)
+* [replicate_ignore_table](https://mariadb.com/docs/server/ha-and-performance/standard-replication/replication-filters#replicate_ignore_table)
 
 However, it should be kept in mind that if replication filters cause inconsistencies that lead to replication errors, then nodes may abort.
 
@@ -52,7 +52,7 @@ See also [MDEV-421](https://jira.mariadb.org/browse/MDEV-421) and [MDEV-6229](ht
 
 Galera Cluster needs access to the following ports:
 
-* Standard MariaDB Port (default: 3306) - For MySQL client connections and [State Snapshot Transfers](state-snapshot-transfers-ssts-in-galera-cluster/introduction-to-state-snapshot-transfers-ssts.md) that use the `mysqldump` method. This can be changed by setting [port](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables#port).
+* Standard MariaDB Port (default: 3306) - For MySQL client connections and [State Snapshot Transfers](state-snapshot-transfers-ssts-in-galera-cluster/introduction-to-state-snapshot-transfers-ssts.md) that use the `mysqldump` method. This can be changed by setting [port](https://mariadb.com/docs/server/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#port).
 * Galera Replication Port (default: 4567) - For Galera Cluster replication traffic, multicast replication uses both UDP transport and TCP on this port. Can be changed by setting [wsrep_node_address](../reference/galera-cluster-system-variables.md#wsrep_node_address).
 * Galera Replication Listening Interface (default: `0.0.0.0:4567`) needs to be set using [gmcast.listen\_addr](../reference/wsrep_provider_options.md#gmcastlisten_addr), either
   * in [wsrep\_provider\_options](../reference/galera-cluster-system-variables.md#wsrep_provider_options): `wsrep_provider_options='gmcast.listen_addr=tcp://<IP_ADDR>:<PORT>;'`
@@ -62,11 +62,11 @@ Galera Cluster needs access to the following ports:
 
 ## Mutiple Galera Cluster Instances on One Server
 
-If you want to run multiple Galera Cluster instances on one server, then you can do so by starting each instance with [mysqld_multi](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/clients-and-utilities/legacy-clients-and-utilities/mysqld_multi), or if you are using [systemd](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/systemd), then you can use the relevant [systemd method for interacting with multiple MariaDB instances](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/systemd#interacting-with-multiple-mariadb-server-processes).
+If you want to run multiple Galera Cluster instances on one server, then you can do so by starting each instance with [mysqld_multi](https://mariadb.com/docs/server/clients-and-utilities/legacy-clients-and-utilities/mysqld_multi), or if you are using [systemd](https://mariadb.com/docs/server/server-management/starting-and-stopping-mariadb/systemd), then you can use the relevant [systemd method for interacting with multiple MariaDB instances](https://mariadb.com/docs/server/server-management/starting-and-stopping-mariadb/systemd#interacting-with-the-mariadb-server-process).
 
-You need to ensure that each instance is configured with a different [datadir](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables#datadir).
+You need to ensure that each instance is configured with a different [datadir](https://mariadb.com/docs/server/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#datadir).
 
-You also need to ensure that each instance is configured with different [network ports](configuring-mariadb-galera-cluster.md#network-ports).
+You also need to ensure that each instance is configured with different [network ports](https://mariadb.com/docs/galera-cluster/galera-management/configuring-mariadb-galera-cluster#network-ports).
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

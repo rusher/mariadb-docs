@@ -4,8 +4,8 @@ The most recent release of [MariaDB 10.11](https://app.gitbook.com/s/aEnK0ZXmUbJ
 
 The current [versions](../readme/mariadb-galera-cluster-guide.md#galera-versions) of the Galera wsrep provider library are 26.4.21 for [Galera](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/galera/README.md) 4._For convenience, packages containing these libraries are included in the MariaDB_ [_YUM and APT repositories_](https://downloads.mariadb.org/mariadb/repositories/)_._
 
-Currently, MariaDB Galera Cluster only supports the [InnoDB](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/innodb) storage engine (although there is\
-experimental support for [MyISAM](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/myisam-storage-engine) and, from [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/what-is-mariadb-106), [Aria](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/aria)).
+Currently, MariaDB Galera Cluster only supports the [InnoDB](https://mariadb.com/docs/server/server-usage/storage-engines/innodb) storage engine (although there is\
+experimental support for [MyISAM](https://mariadb.com/docs/server/server-usage/storage-engines/myisam-storage-engine) and, from [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/what-is-mariadb-106), [Aria](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/aria)).
 
 A great resource for Galera users is the mailing list run by the developers at Codership. It can be found at [Codership on Google Groups](https://groups.google.com/forum/?fromgroups#!forum/codership-team). If you use Galera, then it is recommended you subscribe.
 
