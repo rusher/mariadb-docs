@@ -44,6 +44,7 @@
 * [aria\_pagecache\_file\_hash\_size](../server-usage/storage-engines/aria/aria-system-variables.md#aria_pagecache_file_hash_size)
 * [aria\_pagecache\_read\_requests](../server-usage/storage-engines/aria/aria-status-variables.md#aria_pagecache_read_requests)
 * [aria\_pagecache\_reads](../server-usage/storage-engines/aria/aria-status-variables.md#aria_pagecache_reads)
+* [aria\_pagecache\_segments](../server-usage/storage-engines/aria/aria-system-variables.md#aria_pagecache_segments)
 * [aria\_pagecache\_write\_requests](../server-usage/storage-engines/aria/aria-status-variables.md#aria_pagecache_write_requests)
 * [aria\_pagecache\_writes](../server-usage/storage-engines/aria/aria-status-variables.md#aria_pagecache_writes)
 * [aria\_recover](../server-usage/storage-engines/aria/aria-system-variables.md#aria_recover)
