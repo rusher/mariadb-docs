@@ -1,6 +1,6 @@
-# Installation
-
 <a id="installation"></a>
+
+# Installation
 
 ## Prerequisites
 
