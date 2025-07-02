@@ -1,12 +1,8 @@
----
-hidden: true
----
-
 # MariaDB Connector/Node.js 3.4.3 Release Notes
 
 <a href="https://mariadb.com/downloads/connectors/connectors-data-access/nodejs-connector" class="button primary">Download</a> <a href="mariadb-connector-node-js-3-4-3-release-notes.md" class="button secondary">Release Notes</a> <a href="../changelogs/mariadb-connector-nodejs-3x-changelogs/mariadb-connector-node-js-3-4-3-changelog.md" class="button secondary">Changelog</a> <a href="https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-nodejs/mariadb-connector-node-js-guide" class="button secondary">Connector/Node.js Overview</a>
 
-**Release date:** ?? Jul 2025
+**Release date:** 2 Jul 2025
 
 MariaDB Connector/Node.js 3.4.3 is a [_**Stable**_](../../../mariadb-release-criteria.md) _**(GA)**_ release.
 
