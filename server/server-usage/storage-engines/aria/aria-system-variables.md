@@ -40,7 +40,7 @@ Also see the [Full list of MariaDB options, system and status variables](https:/
 
 #### `aria_encrypt_tables`
 
-* Description: Enables automatic encryption of all user-created Aria tables that have the [ROW_FORMAT](../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#row_format) table option set to [PAGE](aria-storage-formats.md#page). See [Data at Rest Encryption](../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/data-at-rest-encryption-overview.md) and [Enabling Encryption for User-created Tables](../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/aria-encryption/aria-encryption-overview.md).
+* Description: Enables automatic encryption of all user-created Aria tables that have the [ROW\_FORMAT](../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#row_format) table option set to [PAGE](aria-storage-formats.md#page). See [Data at Rest Encryption](../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/data-at-rest-encryption-overview.md) and [Enabling Encryption for User-created Tables](../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/aria-encryption/aria-encryption-overview.md).
 * Commandline: `aria-encrypt-tables={0|1}`
 * Scope: Global
 * Dynamic: Yes
@@ -178,14 +178,14 @@ Also see the [Full list of MariaDB options, system and status variables](https:/
 
 #### `aria_pagecache_segments`
 
-* Description: The number of segments in the page_cache. Each file is put in their own segments of size pagecache_buffer_size / segments. Having many segments improves parallel performance.
+* Description: The number of segments in the page\_cache. Each file is put in their own segments of size pagecache\_buffer\_size / segments. Having many segments improves parallel performance.
 * Commandline: `--aria-pagecache-segments=#`
 * Scope: Global
 * Dynamic: No
 * Data Type: `numeric`
 * Default Value: `1`
 * Range: `1` to `128`
-* Introduced: MariaDB 12.1
+* Introduced: [MariaDB 12.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-12.1-rolling-releases/changes-and-improvements-in-mariadb-12.1)
 
 #### `aria_recover`
 
