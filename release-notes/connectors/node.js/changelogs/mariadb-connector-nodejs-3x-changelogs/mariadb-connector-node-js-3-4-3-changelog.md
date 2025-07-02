@@ -1,3 +1,7 @@
+---
+hidden: true
+---
+
 # MariaDB Connector/Node.js 3.4.3 Changelog
 
 [Download](https://mariadb.com/downloads/connectors/connectors-data-access/nodejs-connector)[Release Notes](../../mariadb-connector-nodejs-3x-release-notes/mariadb-connector-node-js-3-4-3-release-notes.md)[Changelog](mariadb-connector-node-js-3-4-3-changelog.md)[Connector/Node.js Overview](https://mariadb.com/docs/connectors/mariadb-connector-nodejs)
