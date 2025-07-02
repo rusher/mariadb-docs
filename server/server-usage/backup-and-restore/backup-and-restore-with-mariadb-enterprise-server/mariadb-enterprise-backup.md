@@ -80,10 +80,8 @@ MariaDB Backup establishes this connection based on the user credentials specifi
 It is recommended that a dedicated user be created and authorized to perform backups.
 
 {% tabs %}
-{% tab title="10.5 and Later" %}
-### 10.5 and Later
-
-MariaDB Backup 10.5 and later requires this user to have the `RELOAD, PROCESS, LOCK TABLES,` and `BINLOG MONITOR` privileges. (The BINLOG MONITOR privilege replaced the REPLICATION CLIENT privilege in MariaDB Enterprise Server 10.5.):
+{% tab title="Current" %}
+MariaDB Backup requires this user to have the `RELOAD, PROCESS, LOCK TABLES,` and `REPLICATION CLIENT` privileges.
 
 ```sql
 CREATE USER 'mariadb-backup'@'localhost'
@@ -99,10 +97,8 @@ In the above example, MariaDB Backup would run on the local system that runs Mar
 While MariaDB Backup requires a user for backup operations, no user is required for restore operations since restores occur while MariaDB Enterprise Server is not running.
 {% endtab %}
 
-{% tab title="10.4 and Earlier" %}
-### 10.4 and Earlier
-
-MariaDB Backup 10.4 and earlier requires this user to have the `RELOAD, PROCESS, LOCK TABLES,` and `REPLICATION CLIENT` privileges. (The BINLOG MONITOR privilege replaced the `REPLICATION CLIENT` privilege in MariaDB Enterprise Server 10.5.):
+{% tab title="< 10.5" %}
+MariaDB Backup requires this user to have the `RELOAD, PROCESS, LOCK TABLES,` and `REPLICATION CLIENT` privileges.
 
 ```sql
 CREATE USER 'mariadb-backup'@'localhost'
@@ -524,7 +520,7 @@ Create Table: CREATE TABLE `t1` (
 
 Recovering from a backup restores the data directory at a specific point-in-time, but it does not restore the binary log. In a point-in-time recovery, you begin by restoring the data directory from a full or incremental backup, then use the mysqlbinlog utility to recover the binary log data to a specific point in time.
 
-1. First, prepare the backup as you normally would for a [full](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-management/backing-up-and-restoring-databases/backup-and-restore-with-mariadb-enterprise-server/mariadb-backup-enterprise-docs/README.md#preparing-a-full-backup-for-recovery) or [incremental](../../backing-up-and-restoring-databases/mariadb-backup/incremental-backup-and-restore-with-mariadb-backup.md) backup:
+1. First, prepare the backup as you normally would for a [full](../mariadb-backup/full-backup-and-restore-with-mariadb-backup.md) or [incremental](../mariadb-backup/incremental-backup-and-restore-with-mariadb-backup.md) backup:
 
 ```bash
 mariadb-backup --prepare --target-dir=/data/backups/full

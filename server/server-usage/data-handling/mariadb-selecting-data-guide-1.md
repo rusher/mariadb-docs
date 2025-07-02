@@ -176,7 +176,7 @@ LIMIT 5;
 5 rows in set (0.001 sec)
 ```
 
-Notice that the [ORDER BY](../../reference/sql-statements/data-manipulation/selecting-data/select.md#order-by) clause goes after the `WHERE` clause and before the [LIMIT](../../reference/sql-statements/data-manipulation/selecting-data/select.md#limit) clause. Not only will this statement display the rows in order by book title, but it will retrieve only the first five based on the ordering. That is to say, MariaDB will first retrieve all of the rows based on the `WHERE` clause, order the data based on the [ORDER BY](../../reference/sql-statements/data-manipulation/selecting-data/select.md#order-by) clause, and then display a limited number of rows based on the [LIMIT](../../reference/sql-statements/data-manipulation/selecting-data/select.md#limit) clause. Hence the reason for the order of clauses. You may have noticed that we slipped in the ASC flag. It tells MariaDB to order the rows in ascending order for the column name it follows. It's not necessary, though, since ascending order is the default. However, if we want to display data in descending order, we would replace the flag with `DESC`. To order by more than one column, additional columns may be given in the [ORDER BY](../../reference/sql-statements/data-manipulation/selecting-data/select.md#order-by) clause in a comma separated list, each with the `ASC` or `DESC` flags if preferred.
+Notice that the [ORDER BY](../../reference/sql-statements/data-manipulation/selecting-data/select.md#order-by) clause goes after the `WHERE` clause and before the [LIMIT](../../reference/sql-statements/data-manipulation/selecting-data/select.md#limit) clause. Not only will this statement display the rows in order by book title, but it will retrieve only the first five based on the ordering. That is to say, MariaDB will first retrieve all of the rows based on the `WHERE` clause, order the data based on the `ORDER BY` clause, and then display a limited number of rows based on the [LIMIT](../../reference/sql-statements/data-manipulation/selecting-data/select.md#limit) clause. Hence the reason for the order of clauses. You may have noticed that we slipped in the ASC flag. It tells MariaDB to order the rows in ascending order for the column name it follows. It's not necessary, though, since ascending order is the default. However, if we want to display data in descending order, we would replace the flag with `DESC`. To order by more than one column, additional columns may be given in the `ORDER BY` clause in a comma separated list, each with the `ASC` or `DESC` flags if preferred.
 
 #### Friendlier and More Complicated
 
@@ -205,7 +205,7 @@ LIMIT 5;
 5 rows in set (0.00 sec)
 ```
 
-Our [SELECT](../../reference/sql-statements/data-manipulation/selecting-data/select.md) statement is getting hefty, but it's the same one to which we've been adding. Don't let the clutter fluster you. Looking for the new elements, let's focus on the [JOIN](../../reference/sql-statements/data-manipulation/selecting-data/joins-subqueries/joins/join-syntax.md) clause first. There are a few possible ways to construct a join. This method works if both tables contain a column of the same name and value. Otherwise you'll have to redo the [JOIN](../../reference/sql-statements/data-manipulation/selecting-data/joins-subqueries/joins/join-syntax.md) clause to look something like this:
+Our [SELECT](../../reference/sql-statements/data-manipulation/selecting-data/select.md) statement is getting hefty, but it's the same one to which we've been adding. Don't let the clutter fluster you. Looking for the new elements, let's focus on the [JOIN](../../reference/sql-statements/data-manipulation/selecting-data/joins-subqueries/joins/join-syntax.md) clause first. There are a few possible ways to construct a join. This method works if both tables contain a column of the same name and value. Otherwise you'll have to redo the `JOIN` clause to look something like this:
 
 ```sql
 ...
@@ -213,7 +213,7 @@ JOIN authors ON author_id = row_id
 ...
 ```
 
-This excerpt is based on the assumption that the key field in the authors table is not called author\_id, but row\_id instead. There's much more that can be said about joins, but that would make for a much longer article. If you want to learn more on joins, look at MariaDB's documentation page on [JOIN](../../reference/sql-statements/data-manipulation/selecting-data/joins-subqueries/joins/join-syntax.md) syntax.
+This excerpt is based on the assumption that the key field in the authors table is not called author\_id, but row\_id instead. There's much more that can be said about joins, but that would make for a much longer article. If you want to learn more on joins, look at MariaDB's documentation page on `JOIN` syntax.
 
 Looking again at the last full SQL statement above, you must have spotted the [CONCAT()](../../reference/sql-functions/string-functions/concat.md) function that we added to the on-going example statement. This string function takes the values of the columns and strings given and pastes them together, to give one neat field in the results. We also employed the AS parameter to change the heading of the results set for the field to author. This is much tidier. Since we joined the books and the authors tables together, we were able to search for books based on the author's last name rather than having to look up the author ID first. This is a much friendlier method, albeit more complicated. Incidentally, we can have MariaDB check columns from both tables to narrow our search. We would just add _column = value_ pairs, separated by commas in the WHERE clause. Notice that the string containing the author's name is wrapped in quotes—otherwise, the string would be considered a column name and we'd get an error.
 
@@ -272,7 +272,7 @@ ORDER BY title;
 
 We've thinned out the ongoing SQL statement a bit for clarity. This statement will result in only one row displayed for _Crime & Punishment_ and it will be the first one found.
 
-If we're retrieving data from an extremely busy database, by default any other SQL statements entered simultaneously which are changing or updating data will be executed before a [SELECT](../../reference/sql-statements/data-manipulation/selecting-data/select.md) statement. [SELECT](../../reference/sql-statements/data-manipulation/selecting-data/select.md) statements are considered to be of lower priority. However, if we would like a particular [SELECT](../../reference/sql-statements/data-manipulation/selecting-data/select.md) statement to be given a higher priority, we can add the keyword HIGH\_PRIORITY. Modifying the previous SQL statement for this factor, we would enter it like this:
+If we're retrieving data from an extremely busy database, by default any other SQL statements entered simultaneously which are changing or updating data will be executed before a [SELECT](../../reference/sql-statements/data-manipulation/selecting-data/select.md) statement. `SELECT` statements are considered to be of lower priority. However, if we would like a particular `SELECT` statement to be given a higher priority, we can add the keyword HIGH\_PRIORITY. Modifying the previous SQL statement for this factor, we would enter it like this:
 
 ```sql
 SELECT DISTINCT HIGH_PRIORITY title
@@ -294,7 +294,7 @@ ORDER BY title;
 +------------------------+
 ```
 
-You may have noticed in the one example earlier in which the results are shown, that there's a status line displayed that specifies the number of rows in the results set. This is less than the number of rows that were found in the database that met the statement's criteria. It's less because we used a [LIMIT](../../reference/sql-statements/data-manipulation/selecting-data/select.md#limit) clause. If we add the [SQL\_CALC\_FOUND\_ROWS](../../reference/sql-statements/data-manipulation/selecting-data/optimizer-hints.md#sql_calc_found_rows) flag just before the column list, MariaDB will calculate the number of columns found even if there is a [LIMIT](../../reference/sql-statements/data-manipulation/selecting-data/select.md#limit) clause.
+You may have noticed in the one example earlier in which the results are shown, that there's a status line displayed that specifies the number of rows in the results set. This is less than the number of rows that were found in the database that met the statement's criteria. It's less because we used a [LIMIT](../../reference/sql-statements/data-manipulation/selecting-data/select.md#limit) clause. If we add the [SQL\_CALC\_FOUND\_ROWS](../../reference/sql-statements/data-manipulation/selecting-data/optimizer-hints.md#sql_calc_found_rows) flag just before the column list, MariaDB will calculate the number of columns found even if there is a `LIMIT` clause.
 
 ```sql
 SELECT SQL_CALC_FOUND_ROWS isbn, title
