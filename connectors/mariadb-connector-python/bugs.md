@@ -14,12 +14,15 @@ be reported already by someone else or it was already fixed in a more recent ver
 
 We need to know what you did, what happened and what you wanted to happen. A report stating that method xyz() hangs, will
 not allow us to provide you with an advice or fix, since we just don’t know what the method is doing.
-Beside versions a good bug report contains a short script which reproduces the problem. Sometimes it is also necessary to
+Beside versions, a good bug report contains a short script which reproduces the problem. Sometimes it is also necessary to
 provide the definition (and data) of used tables.
 
 ### Versions of components
 
-MariaDB Connector/Python interacts with two other components: The database server and MariaDB Connector/C. Latter one is responsible for client/server communication. An error does not necessarily have to exist in Connector / Python; it can also be an error in the database server or in Connector/C. In this case we will reclassify the bug (MDEV or CONC).
+MariaDB Connector/Python interacts with two other components: The database server and MariaDB Connector/C.
+The latter one is responsible for client/server communication.
+An error does not necessarily have to exist in Connector / Python; it can also be an error in the database server or in Connector/C.
+In this case, we will reclassify the bug (MDEV or CONC).
 
 ### Avoid screenshots!
 
@@ -31,8 +34,8 @@ read on mobile devices. Typing program code from a screenshot is also an unneces
 Scripts which are longer than 10 lines often contain code which is not relevant to the problem and increases
 the time to figure out the real problem. So try to keep it simple and focus on the real problem.
 
-The sane applies for database related components like tables, views and stored procedures. Avoid table definitions with
-hundred of columns if the problem can be reproduced with only 4 columns,
+The sane applies for database related components like tables, views, and stored procedures. Avoid table definitions with
+hundreds of columns if the problem can be reproduced with only 4 columns.
 
 ### Only report one problem in one bug report
 
@@ -44,4 +47,4 @@ If your application crashes, please also provide if possible a backtrace and out
 
 ### Report bugs in English only!
 
-{% @marketo/form formId="4316" %}
+{% @marketo/form formId=”4316” %}

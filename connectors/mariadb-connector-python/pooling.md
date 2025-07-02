@@ -24,7 +24,7 @@ When creating a connection pool, the following parameters have to be provided:
 
 - pool_name: The name of the pool, if not specified MariaDB Connector/Python will raise an exception.
 - pool_size: The size of the pool, if not specified a default of 5 will be set.
-- pool_reset_session: If set to True, the connection will be resetted before returned to the pool
+- pool_reset_session: If set to True, the connection will be reset before returned to the pool
 
 #### Versionadded
 Added in version 1.1.0.
@@ -48,17 +48,14 @@ conn_params= {
 }
 
 # create new pool
-pool= mariadb.ConnectionPool(pool_name="myfirstpool", pool_size=5, **conn_params)
-print("Pool size of '%s': %s" % (pool.pool_name, pool.pool_size))
+with mariadb.ConnectionPool(pool_name="myfirstpool", pool_size=5, **conn_params) as pool:
+    print("Pool size of '%s': %s" % (pool.pool_name, pool.pool_size))
 
-# get a connection from pool
-conn= pool.get_connection()
+    # get a connection from pool
+    with pool.get_connection() as conn:
 
-# print the default database for connection
-print("Current database: %s" % conn.database)
-
-# close connection and return it to pool
-conn.close()
+        # print the default database for connection
+        print("Current database: %s" % conn.database)
 ```
 
 *Output*:
@@ -68,4 +65,4 @@ Pool size of 'myfirstpool': 5
 Current database: test
 ```
 
-{% @marketo/form formId="4316" %}
+{% @marketo/form formId=”4316” %}

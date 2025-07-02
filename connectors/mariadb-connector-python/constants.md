@@ -2,7 +2,7 @@
 
 > Constants are declared in mariadb.constants module.
 
-> For using constants of various types they have to be imported first:
+> For using constants of various types, they have to be imported first:
 ```python
 from mariadb.constants import *
 ```
@@ -32,12 +32,10 @@ conn_params= {
     "host" : "localhost"
 }
 
-# Establish a connection
-connection= mariadb.connect(**conn_params)
-
-# test if LOAD DATA LOCAL INFILE is supported
-if connection.server_capabilities & CAPABILITY.LOCAL_FILES:
-    print("Server supports LOCAL INFILE")
+with mariadb.connect(**conn_params) as connection:
+    # test if LOAD DATA LOCAL INFILE is supported
+    if connection.server_capabilities & CAPABILITY.LOCAL_FILES:
+        print("Server supports LOCAL INFILE")
 ```
 
 *Output*:
@@ -419,4 +417,4 @@ The session status has been changed.
 
 SQL mode ANSI_QUOTES is active,
 
-{% @marketo/form formId="4316" %}
+{% @marketo/form formId=”4316” %}

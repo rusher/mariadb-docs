@@ -1,19 +1,5 @@
 # MariaDB Connector/Python
 
-<!-- import mariadb
-conn_params= {
-    "host" : "localhost",
-    "database" : "test"
-}
-
-conn=mariadb.connect(**conn_params)
-cursor=conn.cursor()
-cursor.execute("CREATE USER IF NOT EXISTS example_user@localhost identified by 'GHbe_Su3B8'")
-cursor.execute("grant all on test.* to example_user@localhost")
-cursor.execute("DROP TABLE IF EXISTS book")
-cursor.close()
-conn.close() -->
-
 MariaDB Connector/Python enables python programs to access MariaDB and MySQL databases, using an API
 which is compliant with the Python DB API 2.0 ([PEP-249](https://peps.python.org/pep-249)). It is written in C and Python and uses
 MariaDB Connector/C client library for client server communication.
@@ -68,30 +54,6 @@ MariaDB Connector/C client library for client server communication.
 * [License](license.md)
   * [MariaDB Connector/Python](license.md#mariadb-connector-python)
   * [MariaDB Connector/Python documentation](license.md#mariadb-connector-python-documentation)
-* [Release history](release.md)
-  * [MariaDB Connector/Python 1.1.12](release.md#mariadb-connector-python-1-1-12)
-  * [MariaDB Connector/Python 1.1.11](release.md#mariadb-connector-python-1-1-11)
-  * [MariaDB Connector/Python 1.1.10](release.md#mariadb-connector-python-1-1-10)
-  * [MariaDB Connector/Python 1.1.9](release.md#mariadb-connector-python-1-1-9)
-  * [MariaDB Connector/Python 1.1.8](release.md#mariadb-connector-python-1-1-8)
-  * [MariaDB Connector/Python 1.1.7](release.md#mariadb-connector-python-1-1-7)
-  * [MariaDB Connector/Python 1.1.6](release.md#mariadb-connector-python-1-1-6)
-  * [MariaDB Connector/Python 1.1.5](release.md#mariadb-connector-python-1-1-5)
-  * [MariaDB Connector/Python 1.1.4](release.md#mariadb-connector-python-1-1-4)
-  * [MariaDB Connector/Python 1.1.3](release.md#mariadb-connector-python-1-1-3)
-  * [MariaDB Connector/Python 1.1.2](release.md#mariadb-connector-python-1-1-2)
-  * [MariaDB Connector/Python 1.0.11](release.md#mariadb-connector-python-1-0-11)
-  * [MariaDB Connector/Pyhon 1.0.10](release.md#mariadb-connector-pyhon-1-0-10)
-  * [MariaDB Connector/Python 1.0.9](release.md#mariadb-connector-python-1-0-9)
-  * [MariaDB Connector/Python 1.0.8](release.md#mariadb-connector-python-1-0-8)
-  * [MariaDB Connector/Python 1.0.7](release.md#mariadb-connector-python-1-0-7)
-  * [MariaDB Connector/Python 1.0.6](release.md#mariadb-connector-python-1-0-6)
-  * [MariaDB Connector/Python 1.0.5](release.md#mariadb-connector-python-1-0-5)
-  * [MariaDB Connector/Python 1.0.4](release.md#mariadb-connector-python-1-0-4)
-  * [MariaDB Connector/Python 1.0.3](release.md#mariadb-connector-python-1-0-3)
-  * [MariaDB Connector/Python 1.0.2](release.md#mariadb-connector-python-1-0-2)
-  * [MariaDB Connector/Python 1.0.1](release.md#mariadb-connector-python-1-0-1)
-  * [MariaDB Connector/Python 1.0.0](release.md#mariadb-connector-python-1-0-0)
 * [Bug reports](bugs.md)
   * [How to report a bug?](bugs.md#how-to-report-a-bug)
     * [Search first](bugs.md#search-first)
@@ -104,8 +66,23 @@ MariaDB Connector/C client library for client server communication.
     * [Report bugs in English only!](bugs.md#report-bugs-in-english-only)
 * [MariaDB Connector/Python FAQ](faq.md)
   * [Installation](faq.md#installation)
+    * [Error: “Python.h: No such file or directory”](faq.md#error-python-h-no-such-file-or-directory)
+    * [ModuleNotFoundError: No module named ‘packaging’](faq.md#modulenotfounderror-no-module-named-packaging)
+    * [MariaDB Connector/Python requires MariaDB Connector/C >= 3.3.1, found version 3.1.2](faq.md#mariadb-connector-python-requires-mariadb-connector-c-3-3-1-found-version-3-1-2)
+    * [OSError: mariadb_config not found](faq.md#oserror-mariadb-config-not-found)
+    * [Error: struct st_mariadb_methods’ has no member named ‘db_execute_generate_request’](faq.md#error-struct-st-mariadb-methods-has-no-member-named-db-execute-generate-request)
+    * [Q: My distribution doesn’t provide a recent version of MariaDB Connector/C](faq.md#q-my-distribution-doesn-t-provide-a-recent-version-of-mariadb-connector-c)
+    * [Q: Does MariaDB Connector/Python provide pre-releases or snapshot builds which contain recent bug fixes?](faq.md#q-does-mariadb-connector-python-provide-pre-releases-or-snapshot-builds-which-contain-recent-bug-fixes)
+    * [Q: How can I build an actual version from github sources?](faq.md#q-how-can-i-build-an-actual-version-from-github-sources)
   * [Connecting](faq.md#connecting)
-  * [General:](faq.md#general)
+    * [mariadb.OperationalError: Can’t connect to local server through socket ‘/tmp/mysql.sock’](faq.md#mariadb-operationalerror-can-t-connect-to-local-server-through-socket-tmp-mysql-sock)
+    * [Q: Which authentication methods are supported by MariaDB Connector/Python?](faq.md#q-which-authentication-methods-are-supported-by-mariadb-connector-python)
+  * [General](faq.md#general)
+    * [Q: How do I execute multiple statements with cursor.execute()?](faq.md#q-how-do-i-execute-multiple-statements-with-cursor-execute)
+    * [Q: Does MariaDB Connector/Python work with Python 2.x?](faq.md#q-does-mariadb-connector-python-work-with-python-2-x)
+    * [Q: How can I see a transformed statement? Is there a mogrify() method available?](faq.md#q-how-can-i-see-a-transformed-statement-is-there-a-mogrify-method-available)
+    * [Q: Does MariaDB Connector/Python support paramstyle “pyformat”?](faq.md#q-does-mariadb-connector-python-support-paramstyle-pyformat)
   * [Transactions](faq.md#transactions)
+    * [Q: Previously inserted records disappeared after my program finished](faq.md#q-previously-inserted-records-disappeared-after-my-program-finished)
 
-{% @marketo/form formId="4316" %}
+{% @marketo/form formId=”4316” %}
