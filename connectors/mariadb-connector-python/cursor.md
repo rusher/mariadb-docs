@@ -208,9 +208,10 @@ The 8th parameter ‘field_flags’ is an extension to the PEP-249 DB API standa
 In combination with the type element field, it can be determined for example,
 whether a column is a BLOB or TEXT field:
 
-#### Versionadded
-Added in version 1.1.0: The parameter table_name, original_column_name and original_table_name are an
-  extension to the PEP-249 DB API standard.
+*Since version 1.1.0*
+
+The parameter table_name, original_column_name and original_table_name are an
+extension to the PEP-249 DB API standard.
 
 ```python
 if cursor.description[0][1] == FIELD_TYPE.BLOB:
@@ -231,42 +232,10 @@ statement or if the modified table does not have a column with the
 AUTO_INCREMENT attribute and LAST_INSERT_ID was not used, the returned
 value will be None
 
-#### Versionadded
-Added in version 1.1.8.
-
-#### Cursor.metadata
-
-Similar to description property, this property returns a dictionary with complete metadata.
-
-The dictionary contains the following keys:
-
-- catalog:     catalog (always ‘def’)
-- schema:      current schema
-- field:       alias column name or if no alias was specified column name
-- org_field:   original column name
-- table:       alias table name or if no alias was specified table name
-- org_table:   original table name
-- type:        column type
-- charset:     character set (utf8mb4 or binary)
-- length:      The length of the column
-- max length:  The maximum length of the column
-- decimals:    The numer of decimals
-- flags:       Flags (flags are defined in constants.FIELD_FLAG)
-- ext_type:    Extended data type (types are defined in constants.EXT_FIELD_TYPE)
-
 #### Cursor.sp_outparams
 
 Indicates if the current result set contains in out or out parameter
 from a previous executed stored procedure
-
-#### Versionadded
-Added in version 1.1.0.
-
-#### Cursor.paramcount
-
-(read)
-
-Returns the number of parameter markers present in the executed statement.
 
 #### Cursor.rowcount
 
