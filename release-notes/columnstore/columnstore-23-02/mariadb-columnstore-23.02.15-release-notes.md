@@ -1,20 +1,20 @@
-# MariaDB ColumnStore 23.02.14 Release Notes
+# MariaDB ColumnStore 23.02.15 Release Notes
 
 ## Overview
 
-[MariaDB Enterprise ColumnStore](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/mariadb-columnstore/README.md) 23.02.14 is a maintenance release of [MariaDB Enterprise ColumnStore](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/mariadb-columnstore/README.md). MariaDB Enterprise ColumnStore is a columnar storage engine that is included with the [MariaDB Enterprise Server](https://github.com/mariadb-corporation/docs-release-notes/blob/test/columnstore/mariadb-columnstore-23-02-release-notes/MariaDB_Enterprise_Server/README.md).
+[MariaDB Enterprise ColumnStore](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/mariadb-columnstore/README.md) 23.02.15 is a maintenance release of [MariaDB Enterprise ColumnStore](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/mariadb-columnstore/README.md). MariaDB Enterprise ColumnStore is a columnar storage engine that is included with the [MariaDB Enterprise Server](https://github.com/mariadb-corporation/docs-release-notes/blob/test/columnstore/mariadb-columnstore-23-02-release-notes/MariaDB_Enterprise_Server/README.md).
 
-MariaDB Enterprise ColumnStore 23.02.14 was released on 7 May 2025.\
+MariaDB Enterprise ColumnStore 23.02.15 was released on 3 Jul 2025.\
 This release is of General Availability (GA) maturity.\
-MariaDB Enterprise ColumnStore 23.02.14 is a GA release in the 23.02 series.
+MariaDB Enterprise ColumnStore 23.02.15 is a GA release in the 23.02 series.
 
-This release of MariaDB Enterprise ColumnStore is included with MariaDB Enterprise Server 10.6.14-9.
+This release of MariaDB Enterprise ColumnStore is included with MariaDB Enterprise Server 10.6.14-9 and 10.6.15-10.
 
 Users of earlier MariaDB Enterprise ColumnStore releases are encouraged to upgrade.
 
 ## Notable Changes
 
-* Printing of the internal ExtentMap structure to stdout has been removed
+* Backport [~~MCOL-5922~~](https://jira.mariadb.org/browse/MCOL-5922) to 23.02 and release 23.02 using ES 10.6.15-10.
 
 ## Platforms
 
