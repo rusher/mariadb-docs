@@ -177,6 +177,7 @@
       * [MaxScale 25.01 Change Data Capture (CDC) users](maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-protocols/mariadb-maxscale-2501-maxscale-2501-change-data-capture-cdc-users.md)
       * [MaxScale 25.01 MariaDB Protocol Module](maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-protocols/mariadb-maxscale-2501-maxscale-2501-mariadb-protocol-module.md)
       * [MaxScale 25.01 NoSQL Protocol Module](maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-protocols/mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module.md)
+      * [MaxScale NoSQL Protocol Module](maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-protocols/mariadb-maxscale-2501-maxscale-2501-nosql-protocol-module-1.md)
       * [MaxScale 25.01 Getting-Started](maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-protocols/maxscale-25-01-protocols-getting-started.md)
     * [MariaDB MaxScale 25.01 Reference](maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-reference/README.md)
       * [MaxScale 25.01 Configuration Settings](maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-reference/mariadb-maxscale-2501-maxscale-2501-configuration-settings.md)
