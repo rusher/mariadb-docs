@@ -10,7 +10,6 @@ Foreign keys allow for something called _referential integrity_. What this means
 
 | Code | First Name | Surname |
 | ---- | ---------- | ------- |
-| Code | First Name | Surname |
 | 1    | Anne       | Cohen   |
 | 2    | Leonard    | Clark   |
 | 3    | Vusi       | Cave    |
@@ -19,7 +18,6 @@ Foreign keys allow for something called _referential integrity_. What this means
 
 | Course Title                | Lecturer Code |
 | --------------------------- | ------------- |
-| Course Title                | Lecturer Code |
 | Introduction to Programming | 1             |
 | Information Systems         | 2             |
 | Systems Software            | 3             |
@@ -30,7 +28,6 @@ Referential integrity exists here, as all the lecturers in the _course_ table ex
 
 | Code | First Name | Surname |
 | ---- | ---------- | ------- |
-| Code | First Name | Surname |
 | 2    | Leonard    | Clark   |
 | 3    | Vusi       | Cave    |
 
@@ -38,7 +35,6 @@ Referential integrity exists here, as all the lecturers in the _course_ table ex
 
 | Course Title                | Lecturer Code |
 | --------------------------- | ------------- |
-| Course Title                | Lecturer Code |
 | Introduction to Programming | 1             |
 | Information Systems         | 2             |
 | Systems Software            | 3             |
