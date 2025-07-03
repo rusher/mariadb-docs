@@ -1,17 +1,12 @@
-
 # RAW
 
-
-# Overview
-
+## Overview
 
 See [VARBINARY](varbinary.md).
 
+## EXAMPLES
 
-# EXAMPLES
-
-
-```
+```sql
 SET sql_mode='oracle';
 ```
 
@@ -21,11 +16,11 @@ CREATE TABLE raw_example (
 );
 ```
 
-```
+```sql
 SHOW CREATE TABLE raw_example\G
 ```
 
-```
+```sql
 *************************** 1. row ***************************
        Table: raw_example
 Create Table: CREATE TABLE "raw_example" (
@@ -33,8 +28,6 @@ Create Table: CREATE TABLE "raw_example" (
 )
 ```
 
-
 <sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
-
 
 {% @marketo/form formId="4316" %}
