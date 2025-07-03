@@ -2215,7 +2215,7 @@
   * [MariaDB Enterprise Operator 1.0.0](enterprise-operator/mariadb-enterprise-operator-1-0-0.md)
 * [Download Latest Releases](latest-releases.md)
 * [MariaDB Release Criteria](mariadb-release-criteria.md)
-* [MariaDB Release Model](mariadb-release-model.md)
+* [MariaDB Community Server Release Model](mariadb-release-model.md)
 * [Compatibility & Differences](compatibility-and-differences/README.md)
   * [Incompatibilities and Feature Differences Between MariaDB Rolling and MySQL 8.0](compatibility-and-differences/incompatibilities-and-feature-differences-between-mariadb-rolling-and-mysql.md)
   * [Incompatibilities and Feature Differences Between MariaDB 11.4 and MySQL 8.0](compatibility-and-differences/incompatibilities-and-feature-differences-between-mariadb-11-4-and-mysql-8.md)
