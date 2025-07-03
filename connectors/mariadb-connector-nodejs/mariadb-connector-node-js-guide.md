@@ -11,20 +11,20 @@ MariaDB and MySQL databases. The library is LGPL\
 licensed.
 
 | Date        | Release | Status                                                                                 | Min. Node.js Compat. | Release Notes                                                                                                                                                              | Changelog                                                                                                                                                                  |
-| ----------- | ------- | -------------------------------------------------------------------------------------- | -------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 2 Jul 2025 | 3.4.3   | [Stable (GA)](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-release-criteria) | Node 10+             | [Release Notes](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/node.js/mariadb-connector-nodejs-3x-release-notes/mariadb-connector-node-js-3-4-3-release-notes) | [Changelog](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/node.js/changelogs/mariadb-connector-nodejs-3x-changelogs/mariadb-connector-node-js-3-4-3-changelog) |
+|-------------|---------| -------------------------------------------------------------------------------------- | -------------------- |----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 3 Jul 2025  | 3.4.4   | [Stable (GA)](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-release-criteria) | Node 10+             | [Release Notes](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/node.js/mariadb-connector-nodejs-3x-release-notes/mariadb-connector-node-js-3-4-4-release-notes) | [Changelog](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/node.js/changelogs/mariadb-connector-nodejs-3x-changelogs/mariadb-connector-node-js-3-4-4-changelog) |
+| 2 Jul 2025  | 3.4.3   | [Stable (GA)](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-release-criteria) | Node 10+             | [Release Notes](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/node.js/mariadb-connector-nodejs-3x-release-notes/mariadb-connector-node-js-3-4-3-release-notes) | [Changelog](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/node.js/changelogs/mariadb-connector-nodejs-3x-changelogs/mariadb-connector-node-js-3-4-3-changelog) |
 | 25 Apr 2025 | 3.4.2   | [Stable (GA)](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-release-criteria) | Node 10+             | [Release Notes](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/node.js/mariadb-connector-nodejs-3x-release-notes/mariadb-connector-node-js-3-4-2-release-notes) | [Changelog](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/node.js/changelogs/mariadb-connector-nodejs-3x-changelogs/mariadb-connector-node-js-3-4-2-changelog) |
 | 02 Apr 2025 | 3.4.1   | [Stable (GA)](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-release-criteria) | Node 10+             | [Release Notes](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/node.js/mariadb-connector-nodejs-3x-release-notes/mariadb-connector-node-js-3-4-1-release-notes) | [Changelog](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/node.js/changelogs/mariadb-connector-nodejs-3x-changelogs/mariadb-connector-node-js-3-4-1-changelog) |
 | 24 Oct 2024 | 3.4.0   | [Stable (GA)](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-release-criteria) | Node 10+             | [Release Notes](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/node.js/mariadb-connector-nodejs-3x-release-notes/mariadb-connector-node-js-3-4-0-release-notes) | [Changelog](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/node.js/changelogs/mariadb-connector-nodejs-3x-changelogs/mariadb-connector-node-js-3-4-0-changelog) |
 | 18 Sep 2024 | 3.3.2   | [Stable (GA)](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-release-criteria) | Node 10+             | [Release Notes](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/node.js/mariadb-connector-nodejs-3x-release-notes/mariadb-connector-node-js-3-3-2-release-notes) | [Changelog](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/node.js/changelogs/mariadb-connector-nodejs-3x-changelogs/mariadb-connector-node-js-3-3-2-changelog) |
 | 5 Jun 2024  | 3.3.1   | [Stable (GA)](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-release-criteria) | Node 10+             | [Release Notes](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/node.js/mariadb-connector-nodejs-3x-release-notes/mariadb-connector-node-js-3-3-1-release-notes) | [Changelog](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/node.js/changelogs/mariadb-connector-nodejs-3x-changelogs/mariadb-connector-node-js-3-3-1-changelog) |
-| 21 Mar 2024 | 3.3.0   | [Stable (GA)](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-release-criteria) | Node 10+             | [Release Notes](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/node.js/mariadb-connector-nodejs-3x-release-notes/mariadb-connector-node-js-3-3-0-release-notes) | [Changelog](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/node.js/changelogs/mariadb-connector-nodejs-3x-changelogs/mariadb-connector-node-js-3-3-0-changelog) |
 
 [see all Connector/Node.js releases](list-of-mariadb-connector-nodejs-releases.md)
 
 ## About MariaDB Connector/Node.js
 
-MariaDB Connector/Node.js is a native Javascript driver.
+MariaDB Connector/Node.js is a native JavaScript driver.
 
 ### Obtaining the Driver
 
@@ -45,16 +45,16 @@ npm install mariadb
 ### Choosing a Version
 
 Driver versions are compatible with all MariaDB servers and MySQL 5.x (>= 5.5.3).\
-Tested with MariaDB server versions 5.5, 10.0, 10.1, 10.2, 10.3 and 10.4 with Node.js 6 to 12 (see [travis results](https://travis-ci.org/MariaDB/mariadb-connector-nodejs) for unix or [appveyor results](https://ci.appveyor.com/project/rusher/mariadb-connector-nodejs) on windows).
+Tested with all active MariaDB server versions with Node.js 14+ (see [CI tests](https://github.com/mariadb-corporation/mariadb-connector-nodejs/actions) on ubuntu/windows/macOS).
 
 ### Requirements
 
-MariaDB Connector/Node.js requires Node.js 6 or above, since it is based on Promise.
+MariaDB Connector/Node.js requires Node.js 14 or above, since it is based on Promise.
 
 ### License
 
 GNU Lesser General Public License as published by the Free Software Foundation;\
-either version 2.1 of the License, or (at your option) any later version.
+either version 2.1 of the License or (at your option) any later version.
 
 ## Using the Driver
 
