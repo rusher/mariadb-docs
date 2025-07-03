@@ -1,8 +1,6 @@
 # About MariaDB Connector/Node.js
 
-{% hint style="info" %}
-The most recent [_**Stable (GA)**_](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-release-criteria) release of [MariaDB Connector/Node.js](https://github.com/mariadb-corporation/docs-connectors/blob/test/en/about-mariadb-connector-nodejs/README.md) is:[**MariaDB Connector/Node.js 3.4.2**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/node.js/mariadb-connector-nodejs-3x-release-notes/mariadb-connector-node-js-3-4-2-release-notes)
-{% endhint %}
+{% include "https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/~/reusable/ESc0fAzsCO2TP7Nh1kJM/" %}
 
 <p align="center"><a href="https://mariadb.com/downloads/connectors/connectors-data-access/nodejs-connector" class="button primary">Download MariaDB Connector/Node.js</a></p>
 
@@ -11,7 +9,7 @@ MariaDB and MySQL databases. The library is LGPL\
 licensed.
 
 | Date        | Release | Status                                                                                 | Min. Node.js Compat. | Release Notes                                                                                                                                                              | Changelog                                                                                                                                                                  |
-|-------------|---------| -------------------------------------------------------------------------------------- | -------------------- |----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ----------- | ------- | -------------------------------------------------------------------------------------- | -------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | 3 Jul 2025  | 3.4.4   | [Stable (GA)](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-release-criteria) | Node 10+             | [Release Notes](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/node.js/mariadb-connector-nodejs-3x-release-notes/mariadb-connector-node-js-3-4-4-release-notes) | [Changelog](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/node.js/changelogs/mariadb-connector-nodejs-3x-changelogs/mariadb-connector-node-js-3-4-4-changelog) |
 | 2 Jul 2025  | 3.4.3   | [Stable (GA)](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-release-criteria) | Node 10+             | [Release Notes](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/node.js/mariadb-connector-nodejs-3x-release-notes/mariadb-connector-node-js-3-4-3-release-notes) | [Changelog](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/node.js/changelogs/mariadb-connector-nodejs-3x-changelogs/mariadb-connector-node-js-3-4-3-changelog) |
 | 25 Apr 2025 | 3.4.2   | [Stable (GA)](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-release-criteria) | Node 10+             | [Release Notes](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/node.js/mariadb-connector-nodejs-3x-release-notes/mariadb-connector-node-js-3-4-2-release-notes) | [Changelog](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/connectors/node.js/changelogs/mariadb-connector-nodejs-3x-changelogs/mariadb-connector-node-js-3-4-2-changelog) |
@@ -58,7 +56,6 @@ either version 2.1 of the License or (at your option) any later version.
 
 ## Using the Driver
 
-The MariaDB Connector can use different APIs on the back-end: [Promise](../mariadb-connector-nodejs/connector-nodejs-promise-api.md) and [Callback API](../mariadb-connector-nodejs/connector-nodejs-callback-api.md). The default API is Promise. The callback API is provided for compatibility with the mysql and mysql2 APIs.
-
+The MariaDB Connector can use different APIs on the back-end: [Promise](connector-nodejs-promise-api.md) and [Callback API](connector-nodejs-callback-api.md). The default API is Promise. The callback API is provided for compatibility with the mysql and mysql2 APIs.
 
 {% @marketo/form formId="4316" %}
