@@ -2053,7 +2053,7 @@
       * [ROLLBACK](reference/sql-statements/transactions/rollback.md)
       * [SAVEPOINT](reference/sql-statements/transactions/savepoint.md)
       * [SET TRANSACTION](reference/sql-statements/transactions/set-transaction.md)
-      * [SQL statements That Cause an Implicit Commit](reference/sql-statements/transactions/sql-statements-that-cause-an-implicit-commit.md)
+      * [SQL statements Causing an Implicit Commit](reference/sql-statements/transactions/sql-statements-that-cause-an-implicit-commit.md)
       * [START TRANSACTION](reference/sql-statements/transactions/start-transaction.md)
       * [Transaction Timeouts](reference/sql-statements/transactions/transaction-timeouts.md)
       * [READ COMMITTED](reference/sql-statements/transactions/transactions-read-committed.md)

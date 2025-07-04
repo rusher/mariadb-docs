@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 BIT_AND(expr) [over_clause]
 ```
 
@@ -16,7 +16,7 @@ If no rows match, `BIT_AND` will return a value with all bits set to 1. NULL val
 
 ## Examples
 
-```
+```sql
 CREATE TABLE vals (x INT);
 
 INSERT INTO vals VALUES(111),(110),(100);
@@ -31,7 +31,7 @@ SELECT BIT_AND(x), BIT_OR(x), BIT_XOR(x) FROM vals;
 
 As an [aggregate function](./):
 
-```
+```sql
 CREATE TABLE vals2 (category VARCHAR(1), x INT);
 
 INSERT INTO vals2 VALUES
@@ -50,7 +50,7 @@ SELECT category, BIT_AND(x), BIT_OR(x), BIT_XOR(x)
 
 No match:
 
-```
+```sql
 SELECT BIT_AND(NULL);
 +----------------------+
 | BIT_AND(NULL)        |
@@ -64,6 +64,6 @@ SELECT BIT_AND(NULL);
 * [BIT\_OR](bit_or.md)
 * [BIT\_XOR](bit_xor.md)
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}
