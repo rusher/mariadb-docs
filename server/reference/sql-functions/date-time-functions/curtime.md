@@ -2,19 +2,19 @@
 
 ## Syntax
 
-```
+```sql
 CURTIME([precision])
 ```
 
 ## Description
 
-Returns the current time as a value in 'HH:MM:SS' or HHMMSS.uuuuuu format, depending on whether the function is used in a string or numeric context. The value is expressed in the current [time zone](../../data-types/string-data-types/character-sets/internationalization-and-localization/time-zones.md).
+Returns the current time as a value in `HH:MM:SS` or `HHMMSS.uuuuuu` format, depending on whether the function is used in a string or numeric context. The value is expressed in the current [time zone](../../data-types/string-data-types/character-sets/internationalization-and-localization/time-zones.md).
 
 The optional _precision_ determines the microsecond precision. See [Microseconds in MariaDB](microseconds-in-mariadb.md).
 
 ## Examples
 
-```
+```sql
 SELECT CURTIME();
 +-----------+
 | CURTIME() |
@@ -32,7 +32,7 @@ SELECT CURTIME() + 0;
 
 With precision:
 
-```
+```sql
 SELECT CURTIME(2);
 +-------------+
 | CURTIME(2)  |
@@ -45,6 +45,6 @@ SELECT CURTIME(2);
 
 * [Microseconds in MariaDB](microseconds-in-mariadb.md)
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

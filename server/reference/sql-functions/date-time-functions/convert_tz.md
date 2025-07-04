@@ -2,25 +2,25 @@
 
 ## Syntax
 
-```
+```sql
 CONVERT_TZ(dt,from_tz,to_tz)
 ```
 
 ## Description
 
-CONVERT\_TZ() converts a datetime value _dt_ from the [time zone](../../data-types/string-data-types/character-sets/internationalization-and-localization/time-zones.md) given by _from\_tz_ to the time zone given by _to\_tz_ and returns the resulting value.
+`CONVERT_TZ()` converts a datetime value _dt_ from the [time zone](../../data-types/string-data-types/character-sets/internationalization-and-localization/time-zones.md) given by _from\_tz_ to the time zone given by _to\_tz_ and returns the resulting value.
 
 In order to use named time zones, such as GMT, MET or Africa/Johannesburg, the time\_zone tables must be loaded (see [mysql\_tzinfo\_to\_sql](../../../clients-and-utilities/legacy-clients-and-utilities/mysql_tzinfo_to_sql.md)).
 
-No conversion will take place if the value falls outside of the supported TIMESTAMP range ('1970-01-01 00:00:01' to '2038-01-19 05:14:07' UTC) when converted from _from\_tz_ to UTC.
+No conversion will take place if the value falls outside of the supported `TIMESTAMP` range ('1970-01-01 00:00:01' to '2038-01-19 05:14:07' UTC) when converted from _from\_tz_ to UTC.
 
-This function returns NULL if the arguments are invalid (or named time zones have not been loaded).
+This function returns `NULL` if the arguments are invalid (or named time zones have not been loaded).
 
 See [time zones](../../data-types/string-data-types/character-sets/internationalization-and-localization/time-zones.md) for more information.
 
 ## Examples
 
-```
+```sql
 SELECT CONVERT_TZ('2016-01-01 12:00:00','+00:00','+10:00');
 +-----------------------------------------------------+
 | CONVERT_TZ('2016-01-01 12:00:00','+00:00','+10:00') |
@@ -31,7 +31,7 @@ SELECT CONVERT_TZ('2016-01-01 12:00:00','+00:00','+10:00');
 
 Using named time zones (with the time zone tables loaded):
 
-```
+```sql
 SELECT CONVERT_TZ('2016-01-01 12:00:00','GMT','Africa/Johannesburg');
 +---------------------------------------------------------------+
 | CONVERT_TZ('2016-01-01 12:00:00','GMT','Africa/Johannesburg') |
@@ -40,9 +40,9 @@ SELECT CONVERT_TZ('2016-01-01 12:00:00','GMT','Africa/Johannesburg');
 +---------------------------------------------------------------+
 ```
 
-The value is out of the TIMESTAMP range, so no conversion takes place:
+The value is out of the `TIMESTAMP` range, so no conversion takes place:
 
-```
+```sql
 SELECT CONVERT_TZ('1969-12-31 22:00:00','+00:00','+10:00');
 +-----------------------------------------------------+
 | CONVERT_TZ('1969-12-31 22:00:00','+00:00','+10:00') |
@@ -51,6 +51,6 @@ SELECT CONVERT_TZ('1969-12-31 22:00:00','+00:00','+10:00');
 +-----------------------------------------------------+
 ```
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

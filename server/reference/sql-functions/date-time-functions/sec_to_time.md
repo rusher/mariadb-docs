@@ -2,22 +2,19 @@
 
 ## Syntax
 
-```
+```sql
 SEC_TO_TIME(seconds)
 ```
 
 ## Description
 
-Returns the seconds argument, converted to hours, minutes, and\
-seconds, as a TIME value. The range of the result is constrained to\
-that of the [TIME data type](../../data-types/date-and-time-data-types/time.md). A warning occurs if the argument\
-corresponds to a value outside that range.
+Returns the seconds argument, converted to hours, minutes, and seconds, as a TIME value. The range of the result is constrained to that of the [TIME data type](../../data-types/date-and-time-data-types/time.md). A warning occurs if the argument corresponds to a value outside that range.
 
 The time will be returned in the format `hh:mm:ss`, or `hhmmss` if used in a numeric calculation.
 
 ## Examples
 
-```
+```sql
 SELECT SEC_TO_TIME(12414);
 +--------------------+
 | SEC_TO_TIME(12414) |
@@ -48,6 +45,6 @@ SHOW WARNINGS;
 +---------+------+-------------------------------------------+
 ```
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

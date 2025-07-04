@@ -1,12 +1,14 @@
 # ADD\_MONTHS
 
-**MariaDB starting with** [**10.6.1**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/mariadb-1061-release-notes)
+{% hint style="info" %}
+`ADD_MONTHS` is available from [10.6.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/mariadb-1061-release-notes).
+{% endhint %}
 
-The ADD\_MONTHS function was introduced in [MariaDB 10.6.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/mariadb-1061-release-notes) to enhance Oracle compatibility. Similar functionality can be achieved with the [DATE\_ADD](date_add.md) function.
+The `ADD_MONTHS` function was introduced to enhance Oracle compatibility. Similar functionality can be achieved with the [DATE\_ADD](date_add.md) function.
 
 ## Syntax
 
-```
+```sql
 ADD_MONTHS(date, months)
 ```
 
@@ -18,11 +20,11 @@ _months_ can be positive or negative. If months is not a whole number, then it w
 
 The resulting day component will remain the same as that specified in _date_, unless the resulting month has fewer days than the day component of the given date, in which case the day will be the last day of the resulting month.
 
-Returns NULL if given an invalid date, or a NULL argument.
+Returns NULL if given an invalid date, or a `NULL` argument.
 
 ## Examples
 
-```
+```sql
 SELECT ADD_MONTHS('2012-01-31', 2);
 +-----------------------------+
 | ADD_MONTHS('2012-01-31', 2) |
@@ -92,7 +94,7 @@ SELECT ADD_MONTHS('2011-01-15', 2.1);
 
 ## See Also
 
-* [SQL\_MODE=ORACLE](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-functions/date-time-functions/broken-reference/README.md)
+* [SQL\_MODE=ORACLE](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

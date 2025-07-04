@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 TO_SECONDS(expr)
 ```
 
@@ -12,7 +12,7 @@ Returns the number of seconds from year 0 till `expr`, or NULL if `expr` is not 
 
 ## Examples
 
-```
+```sql
 SELECT TO_SECONDS('2013-06-13');
 +--------------------------+
 | TO_SECONDS('2013-06-13') |
