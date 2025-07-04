@@ -1,5 +1,8 @@
 ---
-description: Functions for handling date and time, e.g. TIME, DATE, DAYNAME etc...
+description: >-
+  Learn about date and time functions in MariaDB Server. This section details
+  SQL functions for manipulating, formatting, and calculating with date and time
+  values for various applications.
 ---
 
 # Date & Time Functions

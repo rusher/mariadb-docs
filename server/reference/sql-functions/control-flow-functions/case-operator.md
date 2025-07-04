@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 CASE value WHEN [compare_value] THEN result [WHEN [compare_value] THEN
 result ...] [ELSE result] END
 
@@ -18,7 +18,7 @@ There is also a [CASE statement](../../sql-statements/programmatic-compound-stat
 
 ## Examples
 
-```
+```sql
 SELECT CASE 1 WHEN 1 THEN 'one' WHEN 2 THEN 'two' ELSE 'more' END;
 +------------------------------------------------------------+
 | CASE 1 WHEN 1 THEN 'one' WHEN 2 THEN 'two' ELSE 'more' END |
@@ -44,7 +44,7 @@ SELECT CASE BINARY 'B' WHEN 'a' THEN 1 WHEN 'b' THEN 2 END;
 
 Only the first matching condition is processed:
 
-```
+```sql
 SELECT 
   CASE true 
      WHEN (1=1) THEN '1=1' -- result is returned 
