@@ -9,14 +9,14 @@ description: >-
 
 ### Allocating RAM for MariaDB - The Short Answer
 
-If only using [MyISAM](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/myisam-storage-engine/README.md), set [key\_buffer\_size](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_buffer_size) to 20% of **available** RAM. (Plus [innodb\_buffer\_pool\_size=0](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md))
+If only using [MyISAM](../server-usage/storage-engines/myisam-storage-engine/), set [key\_buffer\_size](../server-usage/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_buffer_size) to 20% of **available** RAM. (Plus [innodb\_buffer\_pool\_size](../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_size) = 0)
 
-If only using InnoDB, set [innodb\_buffer\_pool\_size](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md) to 70% of **available** RAM. (Plus [key\_buffer\_size](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_buffer_size) = 10M, small, but not zero.)
+If only using InnoDB, set  [innodb\_buffer\_pool\_size](../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_size) to 70% of **available** RAM. (Plus  [key\_buffer\_size](../server-usage/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_buffer_size) = 10M, small, but not zero.)
 
 Rule of thumb for tuning:
 
 * Start with released copy of my.cnf / my.ini.
-* Change [key\_buffer\_size](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_buffer_size) and [innodb\_buffer\_pool\_size](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_size) according to engine usage and RAM.
+* Change [key\_buffer\_size](../server-usage/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_buffer_size)  and  [innodb\_buffer\_pool\_size](../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_size) according to engine usage and RAM.
 * Slow queries can usually be 'fixed' via indexes, schema changes, or SELECT changes, not by tuning.
 * Don't get carried away with the [query cache](optimization-and-tuning/buffers-caches-and-threads/query-cache.md) until you understand what it can and cannot do.
 * Don't change anything else unless you run into trouble (eg, max connections).
@@ -33,7 +33,7 @@ If the MariaDB server is crashing because of 'out-of-memory' then it is probably
 There are two kind of buffers in MariaDB:
 
 * Global ones that are only allocated once during the lifetime of the server:
-  * Storage engine buffers ([innodb\_buffer\_pool\_size](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_size), [key\_buffer\_size](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_buffer_size), [aria\_pagecache\_buffer\_size](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/aria/aria-system-variables.md#aria_pagecache_buffer_size), etc)
+  * Storage engine buffers ( [innodb\_buffer\_pool\_size](../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_size), [key\_buffer\_size](../server-usage/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_buffer_size), [aria\_pagecache\_buffer\_size](../server-usage/storage-engines/aria/aria-system-variables.md#aria_pagecache_buffer_size), etc)
   * Query cache [query\_cache\_size](optimization-and-tuning/system-variables/server-system-variables.md#query_cache_size).
 * Global caches onces that grow and shrink dynamically on demand up to max limit:
   * [max\_user\_connections](optimization-and-tuning/system-variables/server-system-variables.md#max_user_connections)
@@ -42,7 +42,7 @@ There are two kind of buffers in MariaDB:
   * [thread\_cache\_size](optimization-and-tuning/system-variables/server-system-variables.md#thread_cache_size)
 * Local buffers that are allocated on demand whenever needed
   * Internal ones used during engine index creation\
-    ([myisam\_sort\_buffer\_size](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/myisam-storage-engine/myisam-system-variables.md#myisam_sort_buffer_size), [aria\_sort\_buffer\_size).](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/aria/aria-system-variables.md#aria_sort_buffer_size)
+    ([myisam\_sort\_buffer\_size](../server-usage/storage-engines/myisam-storage-engine/myisam-system-variables.md#myisam_sort_buffer_size), [aria\_sort\_buffer\_size).](../server-usage/storage-engines/aria/aria-system-variables.md#aria_sort_buffer_size)
   * Internal buffers for storing blobs.
     * Some storage engine will keep a temporary cache to store the largest blob seen so far when scanning a table. This will be freed at end of query. Note that temporary blob storage is not included in the memory information in [information\_schema.processlist](../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-processlist-table.md) but only in the total memory used (`show global status like "memory_used"`).
   * Buffers and caches used during query execution:
@@ -81,7 +81,7 @@ system_variables.default_value <> 0
 
 ### What is the Key Buffer?
 
-[MyISAM](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/myisam-storage-engine/README.md) does two different things for caching.
+[MyISAM](../server-usage/storage-engines/myisam-storage-engine/) does two different things for caching.
 
 * Index blocks (1KB each, BTree structured, from .MYI file) live in the "key buffer".
 * Data block caching (from .MYD file) is left to the OS, so be sure to leave a bunch of free space for this.\
@@ -91,11 +91,11 @@ system_variables.default_value <> 0
 SHOW GLOBAL STATUS LIKE 'Key%';
 ```
 
-then calculate [Key\_read\_requests](optimization-and-tuning/system-variables/server-status-variables.md#key_read_requests) / [Key\_reads](optimization-and-tuning/system-variables/server-status-variables.md#key_reads). If it is high (say, over 10), then the key buffer is big enough, otherwise you should adjust the [key\_buffer\_size](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_buffer_size) value.
+then calculate [Key\_read\_requests](optimization-and-tuning/system-variables/server-status-variables.md#key_read_requests) / [Key\_reads](optimization-and-tuning/system-variables/server-status-variables.md#key_reads). If it is high (say, over 10), then the key buffer is big enough, otherwise you should adjust the [key\_buffer\_size](../server-usage/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_buffer_size) value.
 
 ### What is the Buffer Pool?
 
-InnoDB does all its caching in a the [buffer pool](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-buffer-pool.md), whose size is controlled by [innodb\_buffer\_pool\_size](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_size). By default it contains 16KB data and index blocks from the open tables (see [innodb\_page\_size](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_page_size)), plus some maintenance overhead.
+InnoDB does all its caching in a the [buffer pool](../server-usage/storage-engines/innodb/innodb-buffer-pool.md), whose size is controlled by [innodb\_buffer\_pool\_size](../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_size). By default it contains 16KB data and index blocks from the open tables (see [innodb\_page\_size](../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_page_size)), plus some maintenance overhead.
 
 From [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5), multiple buffer pools are permitted; this can help because there is one mutex per pool, thereby relieving some of the mutex bottleneck.
 
@@ -107,9 +107,9 @@ This will set the main cache settings to the minimum; it could be important to s
 
 Do [SHOW TABLE STATUS](../reference/sql-statements/administrative-sql-statements/show/show-table-status.md) for all the tables in all the databases.
 
-Add up Index\_length for all the MyISAM tables. Set [key\_buffer\_size](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_buffer_size) no larger than that size.
+Add up Index\_length for all the MyISAM tables. Set [key\_buffer\_size](../server-usage/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_buffer_size) no larger than that size.
 
-Add up Data\_length + Index\_length for all the InnoDB tables. Set [innodb\_buffer\_pool\_size](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_size) to no more than 110% of that total.
+Add up Data\_length + Index\_length for all the InnoDB tables. Set [innodb\_buffer\_pool\_size](../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_size) to no more than 110% of that total.
 
 If that leads to swapping, cut both settings back. Suggest cutting them down proportionately.
 
@@ -169,18 +169,18 @@ The OS is not limited by 4GB, but MariaDB is.
 
 If you have at least 4GB of RAM, then maybe these would be good:
 
-* [key\_buffer\_size](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_buffer_size) = 20% of _all_ of RAM, but not more than 3G
-* [innodb\_buffer\_pool\_size](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md) = 3G
+* [key\_buffer\_size](../server-usage/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_buffer_size) = 20% of _all_ of RAM, but not more than 3G
+* [innodb\_buffer\_pool\_size](../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_size) = 3G
 
 You should probably upgrade MariaDB to 64-bit.
 
 ### 64-bit OS and MariaDB
 
-MyISAM only: [key\_buffer\_size](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_buffer_size): Use about 20% of RAM. Set (in my.cnf / my.ini) [innodb\_buffer\_pool\_size=0](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md) = 0.
+MyISAM only: [key\_buffer\_size](../server-usage/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_buffer_size): Use about 20% of RAM. Set (in my.cnf / my.ini) [innodb\_buffer\_pool\_size](../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_size) = 0.
 
-InnoDB only: [innodb\_buffer\_pool\_size=0](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md) = 70% of RAM. If you have lots of RAM and are using 5.5 (or later), then consider having multiple pools. Recommend 1-16 [innodb\_buffer\_pool\_instances](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_instances), such that each one is no smaller than 1GB. (Sorry, no metric on how much this will help; probably not a lot.)
+InnoDB only: [innodb\_buffer\_pool\_size](../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_size) = 70% of RAM. If you have lots of RAM and are using 5.5 (or later), then consider having multiple pools. Recommend 1-16 [innodb\_buffer\_pool\_instances](../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_instances), such that each one is no smaller than 1GB. (Sorry, no metric on how much this will help; probably not a lot.)
 
-Meanwhile, set [key\_buffer\_size](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_buffer_size) = 20M (tiny, but non-zero)
+Meanwhile, set [key\_buffer\_size](../server-usage/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_buffer_size) = 20M (tiny, but non-zero)
 
 If you have a mixture of engines, lower both numbers.
 
@@ -241,7 +241,7 @@ If you decide the QC is right for you, then I recommend
 
 ### thread\_cache\_size
 
-It is not necessary to tune [thread\_cache\_size](optimization-and-tuning/system-variables/server-system-variables.md#thread_cache_size) from [MariaDB 10.2.0](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/optimization-and-tuning/broken-reference/README.md). Previously, it was minor tunable variable. Zero will slow down thread (connection) creation. A small (say, 10), non-zero number is good. The setting has essentially no impact on RAM usage.
+It is not necessary to tune [thread\_cache\_size](optimization-and-tuning/system-variables/server-system-variables.md#thread_cache_size) from [MariaD](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/what-is-mariadb-102)Previously, it was minor tunable variable. Zero will slow down thread (connection) creation. A small (say, 10), non-zero number is good. The setting has essentially no impact on RAM usage.
 
 It is the number of extra processes to hang onto. It does not restrict the number of threads; [max\_connections](optimization-and-tuning/system-variables/server-system-variables.md#max_connections) does.
 
@@ -279,11 +279,9 @@ Now for the problem.
 * The OS needs to allocate something.\
   Ouch -- it is out of room in the one CPU where it is willing to allocate its stuff, so it swaps out some of MariaDB. Bad.
 
-dmesg | grep -i numa
+dmesg | grep -i numa &#x20;
 
-## to see if you have numa
-
-Probable solution: Configure the BIOS to "interleave" the RAM allocations. This should prevent the premature swapping, at the cost of off-CPU RAM accesses half the time. Well, you have the costly accesses anyway, since you really want to use all of RAM. Older MySQL versions: numactl --interleave=all. Or: [innodb\_numa\_interleave](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_numa_interleave)=1
+Probable solution: Configure the BIOS to "interleave" the RAM allocations. This should prevent the premature swapping, at the cost of off-CPU RAM accesses half the time. Well, you have the costly accesses anyway, since you really want to use all of RAM. Older MySQL versions: numactl --interleave=all. Or: [innodb\_numa\_interleave](../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_numa_interleave)=1
 
 Another possible solution: Turn numa off (if the OS has a way of doing that)
 
@@ -305,7 +303,7 @@ For example, 128GB of RAM broken 4KB pages means 32M page-table entries. This is
 
 With the help of both the hardware and the OS, it is possible to have some of RAM in huge pages, of say 4MB (instead of 4KB). This leads to far fewer TLB entries, but it means the unit of paging is 4MB for such parts of RAM. Hence, huge pages tend to be non-pagable.
 
-Now RAM is broken into pagable and non pagable parts; what parts can reasonably be non pagable? In MariaDB, the [Innodb Buffer Pool](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-buffer-pool.md) is a perfect candidate. So, by correctly configuring these, InnoDB can run a little faster:
+Now RAM is broken into pagable and non pagable parts; what parts can reasonably be non pagable? In MariaDB, the [Innodb Buffer Pool](../server-usage/storage-engines/innodb/innodb-buffer-pool.md) is a perfect candidate. So, by correctly configuring these, InnoDB can run a little faster:
 
 * Huge pages enabled
 * Tell the OS to allocate the right amount (namely to match the buffer\_pool)
@@ -320,13 +318,13 @@ Jumbo Pages? Turn off.
 
 ### ENGINE=MEMORY
 
-The [Memory Storage Engine](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/memory-storage-engine.md) is a little-used alternative to [MyISAM](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/myisam-storage-engine/README.md) and [InnoDB](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/README.md). The data is not persistent, so it has limited uses. The size of a MEMORY table is limited to [max\_heap\_table\_size](optimization-and-tuning/system-variables/server-system-variables.md#max_heap_table_size), which defaults to 16MB. I mention it in case you have changed the value to something huge; this would stealing from other possible uses of RAM.
+The [Memory Storage Engine](../server-usage/storage-engines/memory-storage-engine.md) is a little-used alternative to [MyISAM](../server-usage/storage-engines/myisam-storage-engine/) and [InnoDB](../server-usage/storage-engines/innodb/). The data is not persistent, so it has limited uses. The size of a MEMORY table is limited to [max\_heap\_table\_size](optimization-and-tuning/system-variables/server-system-variables.md#max_heap_table_size), which defaults to 16MB. I mention it in case you have changed the value to something huge; this would stealing from other possible uses of RAM.
 
 ### How to Set Variables
 
 In the text file my.cnf (my.ini on Windows), add or modify a line to say something like
 
-[innodb\_buffer\_pool\_size](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_size) = 5G
+[innodb\_buffer\_pool\_size](../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_size) = 5G
 
 That is, VARIABLE name, "=", and a value. Some abbreviations are allowed, such as M for million (1048576), G for billion.
 
