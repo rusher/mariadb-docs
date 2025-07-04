@@ -1,6 +1,8 @@
 # ST\_Collect
 
-ST\_Collect was added in [MariaDB 12.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-12.0-rolling-releases/what-is-mariadb-120).
+{% hint style="info" %}
+ST\_Collect is available from [MariaDB 12.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-12.0-rolling-releases/what-is-mariadb-120).
+{% endhint %}
 
 ## Syntax
 
@@ -21,7 +23,7 @@ The resulting value type is chosen using the following policy:
 * If all arguments are Polygon values, the result is a MultiPolygon value.
 * Otherwise, the result is a GeometryCollection value.
 
-If there are multiple geometry arguments and those arguments are in the same spatial reference system (SRS), the return value is in that SRS. If those arguments are not in the same SRS, an ER\_GIS\_DIFFERENT\_SRIDS\_AGGREGATION error occurs.
+If there are multiple geometry arguments and those arguments are in the same spatial reference system (SRS), the return value is in that SRS. If those arguments are not in the same SRS, an `ER_GIS_DIFFERENT_SRIDS_AGGREGATION` error occurs.
 
 ## Examples
 
