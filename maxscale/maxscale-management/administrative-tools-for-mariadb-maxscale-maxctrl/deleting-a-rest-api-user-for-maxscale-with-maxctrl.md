@@ -9,7 +9,7 @@ MaxScale has a [REST API](broken-reference), which can be configured to require 
 ## Deleting a User
 
 1. [Configure the REST API](broken-reference) if the default configuration is not sufficient.
-2. Use [MaxCtrl](./) to execute the [destroy user](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-23-02/mariadb-maxscale-23-02-reference/mariadb-maxscale-2302-maxctrl.md#destroy-user) command:
+2. Use [MaxCtrl](./) to execute the [destroy user](../../maxscale-archive/archive/mariadb-maxscale-23-02/mariadb-maxscale-23-02-reference/mariadb-maxscale-2302-maxctrl.md#destroy-user) command:
 
 ```
 $ maxctrl --secure \

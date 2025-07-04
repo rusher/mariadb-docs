@@ -25,7 +25,7 @@ parameter might give a different result. Even a comment cannot cause a\
 SELECT-query to trigger the filter. Such a comment is considered an error and\
 ignored.
 
-The comments must follow the [MaxScale hint syntax](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-reference/mariadb-maxscale-2501-maxscale-2501-hint-syntax.md)\
+The comments must follow the [MaxScale hint syntax](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-reference/mariadb-maxscale-2501-maxscale-2501-hint-syntax.md)\
 and the _HintFilter_ needs to be in the filter chain before the CCR-filter. If a\
 query has a MaxScale supported comment line which defines the parameter `ccr`,\
 that comment is caught by the CCR-filter. Parameter values `match` and `ignore`\
@@ -47,13 +47,13 @@ The CCR filter has no mandatory parameters.
 
 #### `time`
 
-* Type: [duration](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [duration](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `60s`
 
 The time window during which queries are routed to the primary. The duration\
-can be specified as documented[here](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)\
+can be specified as documented[here](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)\
 but the value will always be rounded to the nearest second.\
 If no explicit unit has been specified, the value is interpreted as seconds\
 in MaxScale 2.4. In subsequent versions a value without a unit may be rejected.\
@@ -85,12 +85,12 @@ modifying SQL statement is processed, the counter is reset to the value o&#x66;_
 
 #### `match`
 
-* Type: [regex](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [regex](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: No
 * Default: `""`
 
-These [regular expression settings](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)\
+These [regular expression settings](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)\
 control which statements trigger statement re-routing. Only non-SELECT statements are\
 inspected. For CCRFilter, the _exclude_-parameter is instead named _ignore_, yet works\
 similarly.
@@ -103,7 +103,7 @@ options=case,extended
 
 #### `ignore`
 
-* Type: [regex](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [regex](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: No
 * Default: `""`
@@ -112,7 +112,7 @@ See documentation for [match](maxscale-consistent-critical-read-filter.md#match)
 
 #### `options`
 
-* Type: [enum](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [enum](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: No
 * Values: `ignorecase`, `case`, `extended`
@@ -122,7 +122,7 @@ Regular expression options for `match` and `ignore`.
 
 #### `global`
 
-* Type: [boolean](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [boolean](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `false`
