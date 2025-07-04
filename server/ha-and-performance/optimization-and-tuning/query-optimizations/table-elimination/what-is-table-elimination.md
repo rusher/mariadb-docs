@@ -1,19 +1,11 @@
 # What is Table Elimination?
 
-The basic idea behind table elimination is that sometimes it is possible to\
-resolve a query without even accessing some of the tables that the query refers\
-to. One can invent many kinds of such cases, but in Table Elimination we\
-targeted only a certain class of SQL constructs that one ends up writing when\
+The basic idea behind table elimination is that sometimes it is possible to resolve a query without even accessing some of the tables that the query refers to. One can invent many kinds of such cases, but in Table Elimination we targeted only a certain class of SQL constructs that one ends up writing when\
 they are querying [highly-normalized](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/database-theory/database-normalization) data.
 
-The sample queries were drawn from “Anchor Modeling”, a database modeling\
-technique which takes normalization to the extreme. The[slides](https://www.anchormodeling.com/tiedostot/SU_KTH_Course_Presentation.pdf)\
-at the[anchor modeling website](https://www.anchormodeling.com)\
-have an in-depth explanation of Anchor modeling and its merits, but the part\
-that's important for table elimination can be shown with an example.
+The sample queries were drawn from “Anchor Modeling”, a database modeling technique which takes normalization to the extreme. The [slides](https://www.anchormodeling.com/tiedostot/SU_KTH_Course_Presentation.pdf) at the [anchor modeling website](https://www.anchormodeling.com) have an in-depth explanation of Anchor modeling and its merits, but the part that's important for table elimination can be shown with an example.
 
-Suppose the database stores information about actors, together with their\
-names, birthdays, and ratings, where ratings can change over time:
+Suppose the database stores information about actors, together with their names, birthdays, and ratings, where ratings can change over time:
 
 ![actor-attrs](../../../../.gitbook/assets/actor-attrs.png)
 
@@ -49,10 +41,7 @@ CREATE TABLE ac_rating(AC_ID INT,
                        PRIMARY KEY(AC_ID, ACRAT_fromdate));
 ```
 
-With this approach it becomes easy to add/change/remove attributes, but this\
-comes at a cost of added complexity in querying the data: in order to answer\
-the simplest, select-star question of displaying actors and their current\
-ratings one has to write outer joins:
+With this approach it becomes easy to add/change/remove attributes, but this comes at a cost of added complexity in querying the data: in order to answer the simplest, select-star question of displaying actors and their current ratings one has to write outer joins:
 
 Display actors, with their names and current ratings:
 
@@ -69,8 +58,7 @@ FROM
                              FROM ac_rating sub WHERE sub.AC_ID = ac_rating.AC_ID))
 ```
 
-We don't want to write the joins every time we need to access an actor's\
-properties, so we’ll create a view:
+We don't want to write the joins every time we need to access an actor's properties, so we’ll create a view:
 
 ```sql
 CREATE view actors AS

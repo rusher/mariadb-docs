@@ -2,29 +2,22 @@
 
 ## Overview
 
-* Added extra logging to slow log of 'Thread\_id, Schema, Query Cache hit, Rows\
-  sent and Rows examined'
-* Added optional logging to slow log, through log\_slow\_verbosity, of query plan\
-  statistics
-* Added new session variables log\_slow\_rate\_limit, log\_slow\_verbosity,\
-  log\_slow\_filter
-* Added log-slow-file as synonym for 'slow-log-file', as most slow-log\
-  variables starts with 'log-slow'
+* Added extra logging to slow log of 'Thread\_id, Schema, Query Cache hit, Rows sent and Rows examined'
+* Added optional logging to slow log, through log\_slow\_verbosity, of query plan statistics
+* Added new session variables log\_slow\_rate\_limit, log\_slow\_verbosity, log\_slow\_filter
+* Added log-slow-file as synonym for 'slow-log-file', as most slow-log variables starts with 'log-slow'
 * Added log-slow-time as synonym for long-query-time.
 
 ## Session Variables
 
 ### log\_slow\_verbosity
 
-You can set the verbosity of what's logged to the slow query log by setting the\
-the [log\_slow\_verbosity](../../system-variables/server-system-variables.md#log_slow_verbosity) variable to a combination of the following values:
+You can set the verbosity of what's logged to the slow query log by setting the the [log\_slow\_verbosity](../../system-variables/server-system-variables.md#log_slow_verbosity) variable to a combination of the following values:
 
 * `All` (From [MariaDB 10.6.16](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/mariadb-10-6-16-release-notes))
   * Enable all verbosity options.
 * `Query_plan`
-  * For select queries, log information about the query plan. This includes\
-    "Full\_scan", "Full\_join", "Tmp\_table", "Tmp\_table\_on\_disk", "Filesort",\
-    "Filesort\_on\_disk" and number of "Merge\_passes during sorting"
+  * For select queries, log information about the query plan. This includes "Full\_scan", "Full\_join", "Tmp\_table", "Tmp\_table\_on\_disk", "Filesort", "Filesort\_on\_disk" and number of "Merge\_passes during sorting"
 * `explain`
   * EXPLAIN output is logged in the slow query log. See [explain-in-the-slow-query-log](../../../../server-management/server-monitoring-logs/slow-query-log/explain-in-the-slow-query-log.md) for details.
 * `Innodb` (From [MariaDB 10.6.15](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/mariadb-10-6-15-release-notes). Before that this option did nothing)
@@ -41,6 +34,8 @@ the [log\_slow\_verbosity](../../system-variables/server-system-variables.md#log
 | Old\_rows\_read   | Number of retrieval of old versions of rows in the engine (versioning)     | InnoDB |
 | Engine\_time      | Milliseconds spent inside engine calls (read\_row / read\_next\_row etc)   | All    |
 
+
+
 * `Warnings` (From [MariaDB 10.6.16](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/mariadb-10-6-16-release-notes))
   * Print all errors, warnings and notes related to statement, up to `log_slow_max_warnings` lines.
 * `full`.
@@ -48,16 +43,13 @@ the [log\_slow\_verbosity](../../system-variables/server-system-variables.md#log
 
 The default value for `log_slow_verbosity` is ' ', to be compatible with MySQL 5.1.
 
-The possible values for `log_slow_verbosity are`innodb,query\_plan,explain,engine,warnings`. Multiple options are separated by ','.`
-
-log\_slow\_verbosity is not supported when log\_output='TABLE'.
+The possible values for `log_slow_verbosity are`innodb,query\_plan,explain,engine,warnings`. Multiple options are separated by ','.`  log\_slow\_verbosity is not supported when log\_output='TABLE'.
 
 In the future we will add more `engine` statistics and also support for other engines.
 
 ### log\_slow\_filter
 
-You can define which queries to log to the slow query log by setting the\
-variable [log\_slow\_filter](../../system-variables/server-system-variables.md#log_slow_filter) to a combination of the following values:
+You can define which queries to log to the slow query log by setting the variable [log\_slow\_filter](../../system-variables/server-system-variables.md#log_slow_filter) to a combination of the following values:
 
 * `All` (From [MariaDB 10.6.16](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/mariadb-10-6-16-release-notes))
   * Enable all filter options. `log_slow_filter` will be shown as having all options set.
@@ -91,9 +83,7 @@ Multiple options are separated by ','. If you don't specify any options everythi
 
 ### log\_slow\_rate\_limit
 
-The [log\_slow\_rate\_limit](../../system-variables/server-system-variables.md#log_slow_rate_limit) variable limits logging to the slow query log by not logging every query (only one query / log\_slow\_rate\_limit is logged). This\
-is mostly useful when debugging and you get too much information to the slow\
-query log.
+The [log\_slow\_rate\_limit](../../system-variables/server-system-variables.md#log_slow_rate_limit) variable limits logging to the slow query log by not logging every query (only one query / log\_slow\_rate\_limit is logged). This is mostly useful when debugging and you get too much information to the slow query log.
 
 Note that in any case, only queries that takes longer than **log\_slow\_time** or**long\_query\_time**' are logged (as before).
 

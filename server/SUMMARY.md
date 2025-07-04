@@ -1063,7 +1063,7 @@
       * [USE INDEX](ha-and-performance/optimization-and-tuning/query-optimizations/use-index.md)
       * [Virtual Column Support in the Optimizer](ha-and-performance/optimization-and-tuning/query-optimizations/virtual-column-support-in-the-optimizer.md)
       * [Optimization Strategies](ha-and-performance/optimization-and-tuning/query-optimizations/optimization-strategies/README.md)
-        * [DuplicateWeedout Strategy](ha-and-performance/optimization-and-tuning/query-optimizations/optimization-strategies/duplicateweedout-strategy.md)
+        * [Duplicate Weedout Strategy](ha-and-performance/optimization-and-tuning/query-optimizations/optimization-strategies/duplicateweedout-strategy.md)
         * [FirstMatch Strategy](ha-and-performance/optimization-and-tuning/query-optimizations/optimization-strategies/firstmatch-strategy.md)
         * [Improvements to ORDER BY Optimization](ha-and-performance/optimization-and-tuning/query-optimizations/optimization-strategies/improvements-to-order-by.md)
         * [LooseScan Strategy](ha-and-performance/optimization-and-tuning/query-optimizations/optimization-strategies/loosescan-strategy.md)

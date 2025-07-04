@@ -80,7 +80,7 @@ Plan C: "As needed". That is, when someone asks for a report, the code first upd
 Plan D: "Hybrid" of B and C. C, by itself, can led to long delays for the report. By also doing B, those delays can be kept low.
 
 Plan E: (This is not advised.) "Rebuild" the entire summary table from the entire Fact table. The cost of this is prohibitive for large tables. However, Plan E may be needed when you decide to change the columns of a Summary Table, or discover a flaw in the computations.\
-To lessen the impact of an entire build, adapt the chunking techniques in[Deleting in chunks](big-deletes.md#deleting_in_chunks) .
+To lessen the impact of an entire build, adapt the chunking techniques in [Deleting in chunks](big-deletes.md#deleting_in_chunks) .
 
 Plan F: "Staging table". This is primarily for very high speed ingestion. It is mentioned briefly in this blog, and discussed more thoroughly in the companion blog: High Speed Ingestion
 
@@ -274,7 +274,7 @@ How fast should you flip-flop? Probably the best scheme is to
 
 If Staging is 'big', an iteration will take longer, but run more efficiently. Hence, it is self-regulating.
 
-In a [Galera](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/galera/README.md) (or InnoDB Cluster?) environment, each node could be receiving input. If can afford to loose a few rows, have `Staging` be a non-replicated MEMORY table. Otherwise, have one `Staging` per node and be InnoDB; it will be more secure, but slower and not without problems. In particular, if a node dies completely, you somehow need to process its `Staging` table.
+In a [Galera](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/) (or InnoDB Cluster?) environment, each node could be receiving input. If can afford to loose a few rows, have `Staging` be a non-replicated MEMORY table. Otherwise, have one `Staging` per node and be InnoDB; it will be more secure, but slower and not without problems. In particular, if a node dies completely, you somehow need to process its `Staging` table.
 
 ## Multiple summary tables
 
