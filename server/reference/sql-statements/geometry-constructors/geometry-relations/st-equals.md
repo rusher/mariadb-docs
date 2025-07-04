@@ -10,7 +10,7 @@ ST_EQUALS(g1,g2)
 
 Returns `1` or `0` to indicate whether geometry _`g1`_ is spatially equal to geometry _`g2`_.
 
-ST\_EQUALS() uses object shapes, while [EQUALS()](equals.md), based on the original MySQL implementation, uses object bounding rectangles.
+`ST_EQUALS()` uses object shapes, while [EQUALS()](equals.md), based on the original MySQL implementation, uses object bounding rectangles.
 
 ## Examples
 

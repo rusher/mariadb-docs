@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 LineString(pt1,pt2,...)
 ```
 
