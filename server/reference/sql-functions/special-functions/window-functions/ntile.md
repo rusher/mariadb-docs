@@ -1,11 +1,8 @@
-
 # NTILE
-
 
 ## Syntax
 
-
-```
+```sql
 NTILE (expr) OVER ( 
   [ PARTITION BY partition_expression ] 
   [ ORDER BY order_list ]
@@ -14,14 +11,11 @@ NTILE (expr) OVER (
 
 ## Description
 
-
-NTILE() is a [window function](README.md) that returns an integer indicating which group a given row falls into. The number of groups is specified in the argument (*expr*), starting at one. Ordered rows in the partition are divided into the specified number of groups with as equal a size as possible.
-
+`NTILE()` is a [window function](./) that returns an integer indicating which group a given row falls into. The number of groups is specified in the argument (_expr_), starting at one. Ordered rows in the partition are divided into the specified number of groups with as equal a size as possible.
 
 ## Examples
 
-
-```
+```sql
 create table t1 (
     pk int primary key,
     a int,
@@ -77,8 +71,6 @@ select pk, a, b,
 +----+------+------+-----------------------------+
 ```
 
-
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
-
 
 {% @marketo/form formId="4316" %}

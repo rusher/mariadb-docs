@@ -1,11 +1,8 @@
-
-# PERCENT_RANK
-
+# PERCENT\_RANK
 
 ## Syntax
 
-
-```
+```sql
 PERCENT_RANK() OVER (
   [ PARTITION BY partition_expression ] 
   [ ORDER BY order_list ]
@@ -14,18 +11,15 @@ PERCENT_RANK() OVER (
 
 ## Description
 
+`PERCENT_RANK()` is a [window function](./) that returns the relative percent rank of a given row. The following formula is used to calculate the percent rank:
 
-PERCENT_RANK() is a [window function](README.md) that returns the relative percent rank of a given row. The following formula is used to calculate the percent rank:
-
-
-```
+```sql
 (rank - 1) / (number of rows in the window or partition - 1)
 ```
 
 ## Examples
 
-
-```
+```sql
 create table t1 (
   pk int primary key,
   a int,
@@ -106,11 +100,8 @@ from t1;
 
 ## See Also
 
-
-* [CUME_DIST()](cume_dist.md)
-
+* [CUME\_DIST()](cume_dist.md)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
-
 
 {% @marketo/form formId="4316" %}

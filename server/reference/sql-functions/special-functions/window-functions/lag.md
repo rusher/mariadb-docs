@@ -1,11 +1,8 @@
-
 # LAG
-
 
 ## Syntax
 
-
-```
+```sql
 LAG (expr[, offset]) OVER ( 
   [ PARTITION BY partition_expression ] 
   < ORDER BY order_list >
@@ -14,14 +11,11 @@ LAG (expr[, offset]) OVER (
 
 ## Description
 
-
-The *LAG* function accesses data from a previous row according to the ORDER BY clause without the need for a self-join. The specific row is determined by the *offset* (default *1*), which specifies the number of rows behind the current row to use. An offset of *0* is the current row.
-
+The `LAG` function accesses data from a previous row according to the `ORDER BY` clause without the need for a self-join. The specific row is determined by the _offset_ (default _1_), which specifies the number of rows behind the current row to use. An offset of _0_ is the current row.
 
 ## Examples
 
-
-```
+```sql
 CREATE TABLE t1 (pk int primary key, a int, b int, c char(10), d decimal(10, 3), e real);
 
 INSERT INTO t1 VALUES
@@ -63,11 +57,8 @@ FROM t1;
 
 ## See Also
 
-
 * [LEAD](lead.md) - Window function to access a following row
 
-
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
-
 
 {% @marketo/form formId="4316" %}
