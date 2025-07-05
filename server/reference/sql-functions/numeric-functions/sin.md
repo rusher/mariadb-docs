@@ -1,23 +1,18 @@
-
 # SIN
 
 ## Syntax
 
-
-```
+```sql
 SIN(X)
 ```
 
 ## Description
 
-
 Returns the sine of X, where X is given in radians.
-
 
 ## Examples
 
-
-```
+```sql
 SELECT SIN(1.5707963267948966);
 +-------------------------+
 | SIN(1.5707963267948966) |
@@ -40,8 +35,6 @@ SELECT ROUND(SIN(PI()));
 +------------------+
 ```
 
-
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
-
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

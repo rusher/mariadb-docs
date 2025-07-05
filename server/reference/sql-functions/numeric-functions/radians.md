@@ -2,20 +2,19 @@
 
 ## Syntax
 
-```
+```sql
 RADIANS(X)
 ```
 
 ## Description
 
-Returns the argument _`X`_, converted from degrees to radians. Note that\
-π radians equals 180 degrees.
+Returns the argument _`X`_, converted from degrees to radians. Note that π radians equals 180 degrees.
 
 This is the converse of the [DEGREES()](degrees.md) function.
 
 ## Examples
 
-```
+```sql
 SELECT RADIANS(45);
 +-------------------+
 | RADIANS(45)       |
