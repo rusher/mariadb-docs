@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 USER()
 ```
 
@@ -10,15 +10,25 @@ USER()
 
 Returns the current MariaDB user name and host name, given when authenticating to MariaDB, as a string in the utf8 [character set](../../../data-types/string-data-types/character-sets/).
 
-Note that the value of USER() may differ from the value of [CURRENT\_USER()](current_user.md), which is the user used to authenticate the current client. [CURRENT\_ROLE()](current_role.md) returns the current active role.
+{% hint style="warning" %}
+The value of `USER()` may differ from the value of [CURRENT\_USER()](current_user.md), which is the user used to authenticate the current client. [CURRENT\_ROLE()](current_role.md) returns the currently active role.
+{% endhint %}
 
-`SYSTEM_USER()` and, prior to [MariaDB 11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-11-7-rolling-releases/what-is-mariadb-117), [SESSION\_USER](session_user.md), are synonyms for `USER()`.
+{% tabs %}
+{% tab title="Current" %}
+`SYSTEM_USER()` is a synonym for `USER()`.
+{% endtab %}
+
+{% tab title="< 11.7" %}
+`SYSTEM_USER()` and [SESSION\_USER](session_user.md) are synonyms for `USER()`.
+{% endtab %}
+{% endtabs %}
 
 Statements using the `USER()` function or one of its synonyms are not [safe for statement level replication](../../../../ha-and-performance/standard-replication/unsafe-statements-for-statement-based-replication.md).
 
 ## Examples
 
-```
+```sql
 shell> mysql --user="anonymous"
 
 SELECT USER(),CURRENT_USER();
@@ -31,7 +41,7 @@ SELECT USER(),CURRENT_USER();
 
 To select only the IP address, use [SUBSTRING\_INDEX()](../../string-functions/substring_index.md),
 
-```
+```sql
 SELECT SUBSTRING_INDEX(USER(), '@', -1);
 +----------------------------------+
 | SUBSTRING_INDEX(USER(), '@', -1) |
