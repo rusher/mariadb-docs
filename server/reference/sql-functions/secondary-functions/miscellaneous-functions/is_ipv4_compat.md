@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 IS_IPV4_COMPAT(expr)
 ```
 
@@ -10,13 +10,19 @@ IS_IPV4_COMPAT(expr)
 
 Returns 1 if a given numeric binary string IPv6 address, such as returned by [INET6\_ATON()](inet6_aton.md), is IPv4-compatible, otherwise returns 0.
 
-**MariaDB starting with** [**10.5.0**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1050-release-notes)
+{% tabs %}
+{% tab title="Current" %}
+When the argument is not [INET6](../../../data-types/string-data-types/inet6.md), automatic implicit [CAST](../../string-functions/cast.md) to INET6 is applied. As a consequence, `IS_IPV4_COMPAT` now understands arguments in both text representation and binary(16) representation.
+{% endtab %}
 
-From [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1050-release-notes), when the argument is not [INET6](../../../data-types/string-data-types/inet6.md), automatic implicit [CAST](../../string-functions/cast.md) to INET6 is applied. As a consequence, `IS_IPV4_COMPAT` now understands arguments in both text representation and binary(16) representation. Before [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1050-release-notes), the function understood only binary(16) representation.
+{% tab title="< 10.5" %}
+The function understands only binary(16) representation.
+{% endtab %}
+{% endtabs %}
 
 ## Examples
 
-```
+```sql
 SELECT IS_IPV4_COMPAT(INET6_ATON('::10.0.1.1'));
 +------------------------------------------+
 | IS_IPV4_COMPAT(INET6_ATON('::10.0.1.1')) |
