@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 REGEXP_REPLACE(subject, pattern, replace)
 ```
 
@@ -22,7 +22,7 @@ The [default\_regex\_flags](../../../../ha-and-performance/optimization-and-tuni
 
 ## Examples
 
-```
+```sql
 SELECT REGEXP_REPLACE('ab12cd','[0-9]','') AS remove_digits;
 -> abcd
 
@@ -33,14 +33,14 @@ AS strip_html;
 
 Backreferences to the subexpressions in the form , where N is a number from 1 to 9:
 
-```
+```sql
 SELECT REGEXP_REPLACE('James Bond','^(.*) (.*)$','\\2, \\1') AS reorder_name;
 -> Bond, James
 ```
 
 Case insensitive and case sensitive matches:
 
-```
+```sql
 SELECT REGEXP_REPLACE('ABC','b','-') AS case_insensitive;
 -> A-C
 
@@ -53,7 +53,7 @@ SELECT REGEXP_REPLACE(BINARY 'ABC','b','-') AS binary_data;
 
 Overwriting the collation case sensitivity using the (?i) and (?-i) PCRE flags.
 
-```
+```sql
 SELECT REGEXP_REPLACE('ABC','(?-i)b','-') AS force_case_sensitive;
 -> ABC
 

@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 MATCH (col1,col2,...) AGAINST (expr [search_modifier])
 ```
 
@@ -14,7 +14,7 @@ See [Fulltext Index Overview](../../../ha-and-performance/optimization-and-tunin
 
 ## Examples
 
-```
+```sql
 CREATE TABLE ft_myisam(copy TEXT,FULLTEXT(copy)) ENGINE=MyISAM;
 
 INSERT INTO ft_myisam(copy) VALUES ('Once upon a time'), ('There was a wicked witch'), 
@@ -28,7 +28,7 @@ SELECT * FROM ft_myisam WHERE MATCH(copy) AGAINST('wicked');
 +--------------------------+
 ```
 
-```
+```sql
 SELECT id, body, MATCH (title,body) AGAINST
     ('Security implications of running MySQL as root'
     IN NATURAL LANGUAGE MODE) AS score
@@ -43,6 +43,6 @@ SELECT id, body, MATCH (title,body) AGAINST
 +----+-------------------------------------+-----------------+
 ```
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

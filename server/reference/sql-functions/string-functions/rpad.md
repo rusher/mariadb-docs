@@ -2,25 +2,21 @@
 
 ## Syntax
 
-```
+```sql
 RPAD(str, len [, padstr])
 ```
 
 ## Description
 
-Returns the string `str`, right-padded with the string `padstr` to a\
-length of `len` characters. If `str` is longer than `len`, the return value\
-is shortened to `len` characters. If `padstr` is omitted, the RPAD function pads spaces.
+Returns the string `str`, right-padded with the string `padstr` to a length of `len` characters. If `str` is longer than `len`, the return value is shortened to `len` characters. If `padstr` is omitted, the RPAD function pads spaces.
 
-Prior to [MariaDB 10.3.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-1031-release-notes), the `padstr` parameter was mandatory.
-
-Returns NULL if given a NULL argument. If the result is empty (a length of zero), returns either an empty string, or, from [MariaDB 10.3.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-1036-release-notes) with [SQL\_MODE=Oracle](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-functions/string-functions/broken-reference/README.md), NULL.
+Returns `NULL` if given a `NULL` argument. If the result is empty (a length of zero), returns either an empty string, or, with [SQL\_MODE=Oracle](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle), `NULL`.
 
 The Oracle mode version of the function can be accessed outside of Oracle mode by using `RPAD_ORACLE` as the function name.
 
 ## Examples
 
-```
+```sql
 SELECT RPAD('hello',10,'.');
 +----------------------+
 | RPAD('hello',10,'.') |
@@ -36,9 +32,9 @@ SELECT RPAD('hello',2,'.');
 +---------------------+
 ```
 
-From [MariaDB 10.3.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-1031-release-notes), with the pad string defaulting to space.
+With the pad string defaulting to space:
 
-```
+```sql
 SELECT RPAD('hello',30);
 +--------------------------------+
 | RPAD('hello',30)               |
@@ -47,9 +43,9 @@ SELECT RPAD('hello',30);
 +--------------------------------+
 ```
 
-Oracle mode version from [MariaDB 10.3.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-1036-release-notes):
+Oracle mode:
 
-```
+```sql
 SELECT RPAD('',0),RPAD_ORACLE('',0);
 +------------+-------------------+
 | RPAD('',0) | RPAD_ORACLE('',0) |

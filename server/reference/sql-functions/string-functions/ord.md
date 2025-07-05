@@ -2,28 +2,25 @@
 
 ## Syntax
 
-```
+```sql
 ORD(str)
 ```
 
 ## Description
 
-If the leftmost character of the string `str` is a multi-byte character,\
-returns the code for that character, calculated from the numeric\
-values of its constituent bytes using this formula:
+If the leftmost character of the string `str` is a multi-byte character, returns the code for that character, calculated from the numeric values of its constituent bytes using this formula:
 
-```
+```sql
 (1st byte code)
 + (2nd byte code x 256)
 + (3rd byte code x 256 x 256) ...
 ```
 
-If the leftmost character is not a multi-byte character, ORD() returns\
-the same value as the [ASCII()](ascii.md) function.
+If the leftmost character is not a multi-byte character, `ORD()` returns the same value as the [ASCII()](ascii.md) function.
 
 ## Examples
 
-```
+```sql
 SELECT ORD('2');
 +----------+
 | ORD('2') |
