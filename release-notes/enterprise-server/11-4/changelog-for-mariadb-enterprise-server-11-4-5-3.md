@@ -107,7 +107,7 @@ MariaDB Enterprise Server 11.4.5-3 was released on 19 Mar 2025.
 * ([MDEV-24337](https://jira.mariadb.org/browse/MDEV-24337)) Server crash in DTCollation::set\_repertoire\_from\_charset
 * ([MDEV-25593](https://jira.mariadb.org/browse/MDEV-25593)) Assertion \`0' failed in Type\_handler\_temporal\_result::Item\_get\_date on double EXECUTE
 * ([MDEV-35273](https://jira.mariadb.org/browse/MDEV-35273)) thread\_pool\_generic::m\_thread\_data\_cache alignment violation
-* ([MDEV-32755](https://jira.mariadb.org/browse/MDEV-32755)) Stack-Buffer-Overflow at /mariadb-11.3.0/strings/int2str.c:122 @ralf, this issue is not for release notes. It shows up in debug builds only. No any negative effect in release builds.
+* ([MDEV-32755](https://jira.mariadb.org/browse/MDEV-32755)) Stack-Buffer-Overflow at /mariadb-11.3.0/strings/int2str.c:122
 * ([MDEV-21589](https://jira.mariadb.org/browse/MDEV-21589)) AddressSanitizer: memcpy-param-overlap in Static\_binary\_string::q\_append or String::append
 * ([MDEV-25174](https://jira.mariadb.org/browse/MDEV-25174)) DOUBLE columns now accept large hex hybrids when previously these failed in some cases
 * ([MDEV-23687](https://jira.mariadb.org/browse/MDEV-23687)) Assertion \`is\_valid\_value\_slow()' failed in Datetime::Datetime upon EXTRACT under mode ZERO\_DATE\_TIME\_CAST
