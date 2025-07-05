@@ -2,9 +2,9 @@
 
 ## Syntax
 
-```
-COLUMN_DELETE(dyncol_blob, column_nr, column_nr...);
-COLUMN_DELETE(dyncol_blob, column_name, column_name...);
+```sql
+COLUMN_DELETE(dyncol_blob, column_nr, column_nr...)
+COLUMN_DELETE(dyncol_blob, column_name, column_name...)
 ```
 
 ## Description

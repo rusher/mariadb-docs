@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 COLUMN_LIST(dyncol_blob);
 ```
 

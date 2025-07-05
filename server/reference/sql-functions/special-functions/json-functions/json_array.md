@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 JSON_ARRAY([value[, value2] ...])
 ```
 
@@ -12,7 +12,7 @@ Returns a JSON array containing the listed values. The list can be empty.
 
 ## Example
 
-```
+```sql
 SELECT Json_Array(56, 3.1416, 'My name is "Foo"', NULL);
 +--------------------------------------------------+
 | Json_Array(56, 3.1416, 'My name is "Foo"', NULL) |

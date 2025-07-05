@@ -1,12 +1,12 @@
 # JSON\_EQUALS
 
-**MariaDB starting with** [**10.7.0**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-7-series/mariadb-1070-release-notes)
-
-JSON\_EQUALS was added in [MariaDB 10.7.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-7-series/mariadb-1070-release-notes)
+{% hint style="info" %}
+`JSON_EQUALS` is available from MariaDB 10.7.
+{% endhint %}
 
 ## Syntax
 
-```
+```sql
 JSON_EQUALS(json1, json2)
 ```
 
@@ -16,7 +16,7 @@ Checks if there is equality between two json objects. Returns `1` if it there is
 
 ## Examples
 
-```
+```sql
 SELECT JSON_EQUALS('{"a"   :[1, 2, 3],"b":[4]}', '{"b":[4],"a":[1, 2, 3.0]}');
 +------------------------------------------------------------------------+
 | JSON_EQUALS('{"a"   :[1, 2, 3],"b":[4]}', '{"b":[4],"a":[1, 2, 3.0]}') |
