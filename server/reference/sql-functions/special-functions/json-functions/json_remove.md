@@ -1,30 +1,22 @@
-
-# JSON_REMOVE
+# JSON\_REMOVE
 
 ## Syntax
 
-
-```
+```sql
 JSON_REMOVE(json_doc, path[, path] ...)
 ```
 
-
 ## Description
 
+Removes data from a JSON document returning the result, or `NULL` if any of the arguments are null. If the element does not exist in the document, no changes are made.
 
-Removes data from a JSON document returning the result, or NULL if any of the arguments are null. If the element does not exist in the document, no changes are made.
-
-
-The function returns NULL and throws a warning if the JSON document is invalid, the path is invalid, contains a range, or contains a `*` or `**` wildcard.
-
+The function returns `NULL` and throws a warning if the JSON document is invalid, the path is invalid, contains a range, or contains a `*` or `**` wildcard.
 
 Path arguments are evaluated from left to right, with the result from the earlier evaluation being used as the value for the next.
 
-
 ## Examples
 
-
-```
+```sql
 SELECT JSON_REMOVE('{"A": 1, "B": 2, "C": {"D": 3}}', '$.C');
 +-------------------------------------------------------+
 | JSON_REMOVE('{"A": 1, "B": 2, "C": {"D": 3}}', '$.C') |
@@ -42,11 +34,8 @@ SELECT JSON_REMOVE('["A", "B", ["C", "D"], "E"]', '$[1]');
 
 ## See Also
 
-
-* [JSON video tutorial](https://www.youtube.com/watch?v=sLE7jPETp8g) covering JSON_REMOVE.
-
+* [JSON video tutorial](https://www.youtube.com/watch?v=sLE7jPETp8g) covering JSON\_REMOVE.
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
-
 
 {% @marketo/form formId="4316" %}

@@ -6,12 +6,6 @@
 
 This tool provides a production-quality, nearly non-blocking method for performing full backups on running systems. While partial backups with mariadb-backup are technically possible, they require many steps and cannot be restored directly onto existing servers containing other data.
 
-### Backup Support for MariaDB-Exclusive Features
-
-MariaDB 10.1 introduced features that are exclusive to MariaDB, such as [InnoDB Page Compression](../../storage-engines/innodb/innodb-page-compression.md) and [Data-at-Rest Encryption](../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/). These exclusive features have been very popular with MariaDB users. However, existing backup solutions from the MySQL ecosystem, such as [Percona XtraBackup](../../../clients-and-utilities/legacy-clients-and-utilities/backing-up-and-restoring-databases-percona-xtrabackup/), did not support full backup capability for these features.
-
-To address the needs of our users, we decided to develop a backup solution that would fully support these popular MariaDB-exclusive features. We did this by creating `mariadb-backup` (previously called mariadb-backup), which is based on the well-known and commonly used backup tool called Percona XtraBackup. `mariadb-backup` was originally extended from version 2.3.8.
-
 #### Supported Features
 
 `mariadb-backup` supports all of the main features of Percona XtraBackup 2.3.8, plus:
@@ -20,18 +14,24 @@ To address the needs of our users, we decided to develop a backup solution that 
 * Backup/Restore of tables using InnoDB Page Compression.
 * [mariadb-backup SST method](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/galera-management/state-snapshot-transfers-ssts-in-galera-cluster/mariadb-backup-sst-method) with Galera Cluster.
 * Microsoft Windows support.
-* Backup/Restore of tables using the MyRocks storage engine starting with [MariaDB 10.2.16](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-10216-release-notes) and [MariaDB 10.3.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-1038-release-notes). See [Files Backed up by mariadb-backup: MyRocks Data Files](files-backed-up-by-mariadb-backup.md#myrocks-data-files) for more information.
+* Backup/Restore of tables using the MyRocks storage engine. See [Files Backed up by mariadb-backup: MyRocks Data Files](files-backed-up-by-mariadb-backup.md#myrocks-data-files) for more information.
 
 **Supported Features in MariaDB Enterprise Backup**
 
-Features were ported from the Enterprise Server to [MariaDB 10.11.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-11-series/mariadb-10-11-8-release-notes) - prior to that they were not available.
-
+{% tabs %}
+{% tab title="Current" %}
 MariaDB Backup supports some additional features, such as:
 
 * Minimizes locks during the backup to permit more concurrency and to enable faster backups.
-  * This relies on the usage of BACKUP STAGE commands and DDL logging.
-  * This includes no locking during the copy phase of ALTER TABLE statements, which tends to be the longest phase of these statements.
+  * This relies on the usage of `BACKUP STAGE` commands and DDL logging.
+  * This includes no locking during the copy phase of `ALTER TABLE` statements, which tends to be the longest phase of these statements.
 * Provides optimal backup support for all storage engines that store things on local disk.
+{% endtab %}
+
+{% tab title="< 10.11.8" %}
+MariaDB Backup does **not** support some additional features.
+{% endtab %}
+{% endtabs %}
 
 #### Differences Compared to Percona XtraBackup
 
@@ -59,18 +59,6 @@ mariadb-backup based on MariaDB server 10.2.15-MariaDB Linux (x86_64)
 ```
 
 See [Compatibility of mariadb-backup Releases with MariaDB Server Releases](mariadb-backup-overview.md#compatibility-of-mariadb-backup-releases-with-mariadb-server-releases) for more information on mariadb-backup versions.
-
-### Compatibility of mariadb-backup Releases with MariaDB Server Releases
-
-It is not generally possible, or supported, to prepare a backup in a different MariaDB version than the database version at the time when backup was taken. For example, if you backup MariaDB 10.4, you should use `mariadb-backup` version 10.4, rather than e.g. 10.5.
-
-A MariaDB Server version can often be backed up with most other `mariadb-backup` releases in the same release series. For example, [MariaDB 10.2.21](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-10221-release-notes) and [MariaDB 10.2.22](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-10222-release-notes) are both in the MariaDB 10.2 release series, so MariaDB Server from MariaDB 10.2.21 could be backed up by `mariadb-backup` from MariaDB 10.2.22, or vice versa.
-
-However, occasionally, a MariaDB Server or `mariadb-backup` release will include bug fixes that will break compatibility with previous releases. For example, the fix for [MDEV-13564](https://jira.mariadb.org/browse/MDEV-13564) changed the InnoDB redo log format in [MariaDB 10.2.19](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-10219-release-notes) which broke compatibility with previous releases. To be safest, a MariaDB Server release should generally be backed up with the `mariadb-backup` release that has the same version number.
-
-{% hint style="info" %}
-`mariadb-backup` from MariaDB 10.1 releases may also be able to back up MariaDB Server from MariaDB 5.5 and MariaDB 10.0 releases in many cases. However, this is not fully supported. See [MDEV-14936](https://jira.mariadb.org/browse/MDEV-14936) for more information.
-{% endhint %}
 
 ## Installing `mariadb-backup`
 

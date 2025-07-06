@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 DATE(expr)
 ```
 
@@ -12,7 +12,7 @@ Extracts the date part of the [date](../../data-types/date-and-time-data-types/d
 
 ## Examples
 
-```
+```sql
 SELECT DATE('2013-07-18 12:21:32');
 +-----------------------------+
 | DATE('2013-07-18 12:21:32') |
@@ -21,6 +21,6 @@ SELECT DATE('2013-07-18 12:21:32');
 +-----------------------------+
 ```
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

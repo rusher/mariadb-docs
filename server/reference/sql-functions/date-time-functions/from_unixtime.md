@@ -2,33 +2,40 @@
 
 ## Syntax
 
-```
+```sql
 FROM_UNIXTIME(unix_timestamp)
 FROM_UNIXTIME(unix_timestamp,format)
 ```
 
 ## Description
 
-Converts the number of seconds from the epoch (1970-01-01 00:00:00 UTC) to a`TIMESTAMP` value, the opposite of what [UNIX_TIMESTAMP()](unix_timestamp.md) is doing. Returns NULL if the result would be outside of the valid range of `TIMESTAMP` values.
+Converts the number of seconds from the epoch (1970-01-01 00:00:00 UTC) to a`TIMESTAMP` value, the opposite of what [UNIX\_TIMESTAMP()](unix_timestamp.md) is doing. Returns NULL if the result would be outside of the valid range of `TIMESTAMP` values.
 
 If format is given, the result is exactly equivalent to
 
-```
+```sql
 DATE_FORMAT(FROM_UNIXTIME(unix_timestamp), format)
 ```
 
-**MariaDB until** [**11.7**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-11-7-rolling-releases/what-is-mariadb-117)
+{% tabs %}
+{% tab title="Current" %}
+Timestamps in MariaDB have a maximum value of 4294967295, equivalent to `2106-02-07 06:28:15`. This is due to the underlying 32-bit limitation. Using the function on a timestamp beyond this will result in NULL being returned. Use [DATETIME](../../data-types/date-and-time-data-types/datetime.md) as a storage type if you require dates beyond this.
+{% endtab %}
 
-Before [MariaDB 11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-11-7-rolling-releases/what-is-mariadb-117), the one-argument form of `FROM_UNIXTIME()` was returning a`DATETIME`. Meaning, it could return values outside of valid `TIMESTAMP` range,\
-in particular 1970-01-01 00:00:00. And it could return the same result for different values of unix\_timestamp (around DST changes).
+{% tab title="< 11.7" %}
+The one-argument form of `FROM_UNIXTIME()` returns a`DATETIME`. This means that it can return values outside of valid `TIMESTAMP` range, in particular `1970-01-01 00:00:00`. And it can return the same result for different values of unix\_timestamp (around DST changes).
 
-Timestamps in MariaDB have a maximum value of 4294967295, equivalent to 2106-02-07 06:28:15. This is due to the underlying 32-bit limitation. Using the function on a timestamp beyond this will result in NULL being returned. Use [DATETIME](../../data-types/date-and-time-data-types/datetime.md) as a storage type if you require dates beyond this.
+Timestamps in MariaDB have a maximum value of 4294967295, equivalent to `2106-02-07 06:28:15`. This is due to the underlying 32-bit limitation. Using the function on a timestamp beyond this will result in NULL being returned. Use [DATETIME](../../data-types/date-and-time-data-types/datetime.md) as a storage type if you require dates beyond this.
+{% endtab %}
 
-**MariaDB until** [**11.5**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115)
+{% tab title="< 11.5" %}
+The one-argument form of `FROM_UNIXTIME()` returns a`DATETIME`. This means that it can return values outside of valid `TIMESTAMP` range, in particular `1970-01-01 00:00:00`. And it can return the same result for different values of unix\_timestamp (around DST changes).
 
-Before [MariaDB 11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115), the maximum value was 2147483647, equivalent to 2038-01-19 05:14:07.
+The maximum value is 2147483647, equivalent to `2038-01-19 05:14:07`.
+{% endtab %}
+{% endtabs %}
 
-The options that can be used by FROM\_UNIXTIME(), as well as [DATE\_FORMAT()](date_format.md) and [STR\_TO\_DATE()](str_to_date.md), are:
+The following options can be used by `FROM_UNIXTIME()`, as well as [DATE\_FORMAT()](date_format.md) and [STR\_TO\_DATE()](str_to_date.md):
 
 | Option | Description                                                                                                                                                                       |
 | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -77,7 +84,7 @@ Set your time zone to a named time zone to avoid this issue. See [mysql time zon
 
 ## Examples
 
-```
+```sql
 SELECT FROM_UNIXTIME(1196440219);
 +---------------------------+
 | FROM_UNIXTIME(1196440219) |

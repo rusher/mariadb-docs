@@ -1,16 +1,5 @@
 ---
 description: 'Quickstart Guide: Installing MariaDB Server'
-layout:
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
 ---
 
 # Installing MariaDB Server Guide

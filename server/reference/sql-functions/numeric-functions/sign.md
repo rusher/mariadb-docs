@@ -2,18 +2,17 @@
 
 ## Syntax
 
-```
+```sql
 SIGN(X)
 ```
 
 ## Description
 
-Returns the sign of the argument as -1, 0, or 1, depending on whether\
-X is negative, zero, or positive.
+Returns the sign of the argument as -1, 0, or 1, depending on whether X is negative, zero, or positive.
 
 ## Examples
 
-```
+```sql
 SELECT SIGN(-32);
 +-----------+
 | SIGN(-32) |

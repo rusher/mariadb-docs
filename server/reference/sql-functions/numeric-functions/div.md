@@ -2,22 +2,21 @@
 
 ## Syntax
 
-```
+```sql
 DIV
 ```
 
 ## Description
 
-Integer division. Similar to [FLOOR()](floor.md), but is safe with [BIGINT](../../data-types/numeric-data-types/bigint.md) values.\
-Incorrect results may occur for non-integer operands that exceed BIGINT range.
+Integer division. Similar to [FLOOR()](floor.md), but is safe with [BIGINT](../../data-types/numeric-data-types/bigint.md) values. Incorrect results may occur for non-integer operands that exceed the `BIGINT` range.
 
-If the `ERROR_ON_DIVISION_BY_ZERO` [SQL\_MODE](../../../server-management/variables-and-modes/sql-mode.md) is used, a division by zero produces an error. Otherwise, it returns NULL.
+If the `ERROR_ON_DIVISION_BY_ZERO` [SQL\_MODE](../../../server-management/variables-and-modes/sql-mode.md) is used, a division by zero produces an error. Otherwise, it returns `NULL`.
 
 The remainder of a division can be obtained using the [MOD](mod.md) operator.
 
 ## Examples
 
-```
+```sql
 SELECT 300 DIV 7;
 +-----------+
 | 300 DIV 7 |
@@ -38,6 +37,6 @@ SELECT 300 DIV 0;
 * [Division operator](division-operator.md)
 * [Operator Precedence](../../sql-structure/operators/operator-precedence.md)
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

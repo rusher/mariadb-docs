@@ -1,12 +1,12 @@
 # FORMAT\_PICO\_TIME
 
-**MariaDB starting with** [**11.0.2**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-0-series/mariadb-11-0-2-release-notes)
-
-Introduced in [MariaDB 11.0.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-0-series/mariadb-11-0-2-release-notes)
+{% hint style="info" %}
+FORMAT\_PICO\_TIME is available from [MariaDB 11.0.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-0-series/mariadb-11-0-2-release-notes).
+{% endhint %}
 
 ## Syntax
 
-```
+```sql
 FORMAT_PICO_TIME(time_val)
 ```
 
@@ -34,7 +34,7 @@ This function is very similar to the [Sys Schema](../../sql-statements/administr
 
 ## Examples
 
-```
+```sql
 SELECT
     FORMAT_PICO_TIME(43) AS ps,
     FORMAT_PICO_TIME(4321) AS ns, 

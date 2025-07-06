@@ -2,18 +2,17 @@
 
 ## Syntax
 
-```
+```sql
 NULLIF(expr1,expr2)
 ```
 
 ## Description
 
-Returns NULL if expr1 = expr2 is true, otherwise returns expr1. This is\
-the same as [CASE](case-operator.md) WHEN expr1 = expr2 THEN NULL ELSE expr1 END.
+Returns `NULL` if expr1 = expr2 is true, otherwise returns expr1. This is the same as [CASE](case-operator.md) `WHEN` expr1 = expr2 `THEN NULL ELSE` expr1 `END`.
 
 ## Examples
 
-```
+```sql
 SELECT NULLIF(1,1);
 +-------------+
 | NULLIF(1,1) |
@@ -38,6 +37,6 @@ SELECT NULLIF(1,2);
 * [IFNULL function](ifnull.md)
 * [CONNECT data types](../../../server-usage/storage-engines/connect/connect-data-types.md#null-handling)
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

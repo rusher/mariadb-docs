@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 BIT[(M)]
 ```
 
@@ -12,7 +12,7 @@ A bit-field type. `M` indicates the number of bits per value, from `1` to`64`. T
 
 Bit values can be inserted with `b'value'` notation, where `value` is the bit value in 0's and 1's.
 
-Bit fields are automatically zero-padded from the left to the full length of the bit, so for example in a BIT(4) field, '10' is equivalent to '0010'.
+Bit fields are automatically zero-padded from the left to the full length of the bit, so for example in a `BIT(4)` field, '10' is equivalent to '0010'.
 
 Bits are returned as binary, so to display them, either add 0, or use a function such as [HEX](../../sql-functions/string-functions/hex.md), [OCT](../../sql-functions/numeric-functions/oct.md) or [BIN](../../sql-functions/string-functions/bin.md) to convert them.
 
@@ -20,7 +20,7 @@ Bits are returned as binary, so to display them, either add 0, or use a function
 
 Example of BIT:
 
-```
+```sql
 CREATE TABLE bit_example (
   description VARCHAR(20),
   b1 BIT,
@@ -29,7 +29,7 @@ CREATE TABLE bit_example (
 );
 ```
 
-```
+```sql
 INSERT INTO bit_example VALUES
   ('Zero', 0, 0, 0),
   ('One', 1, 1, 1),
@@ -52,11 +52,11 @@ SELECT description, b1+0, LPAD(BIN(b4), 4, 0) AS b4, HEX(b16)
 
 ### With [strict\_mode](../../../server-management/variables-and-modes/sql-mode.md#strict-mode) set
 
-```
+```sql
 CREATE TABLE b ( b1 BIT(8) );
 ```
 
-```
+```sql
 INSERT INTO b VALUES (b'11111111');
 
 INSERT INTO b VALUES (b'01010101');
@@ -73,6 +73,6 @@ SELECT b1+0, HEX(b1), OCT(b1), BIN(b1) FROM b;
 +------+---------+---------+----------+
 ```
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

@@ -2,31 +2,25 @@
 
 ## Syntax
 
-```
+```sql
 DECIMAL[(M[,D])] [SIGNED | UNSIGNED | ZEROFILL]
 ```
 
 ## Description
 
-A packed "exact" fixed-point number. `M` is the total number of digits (the\
-precision) and `D` is the number of digits after the decimal point (the\
-scale).
+A packed "exact" fixed-point number. `M` is the total number of digits (the precision) and `D` is the number of digits after the decimal point (the scale).
 
-* The decimal point and (for negative numbers) the "-" sign are not\
-  counted in `M`.
-* If `D` is `0`, values have no decimal point or fractional\
-  part and on [INSERT](../../sql-statements/data-manipulation/inserting-loading-data/insert.md) the value will be rounded to the nearest `DECIMAL`.
+* The decimal point and (for negative numbers) the "-" sign are not counted in `M`.
+* If `D` is `0`, values have no decimal point or fractional part and on [INSERT](../../sql-statements/data-manipulation/inserting-loading-data/insert.md) the value will be rounded to the nearest `DECIMAL`.
 * The maximum number of digits (`M`) for `DECIMAL` is 65.
 * The maximum number of supported decimals (`D`) is `30` before [MariadB 10.2.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-1021-release-notes) and `38` afterwards.
 * If `D` is omitted, the default is `0`. If `M` is omitted, the default is `10`.
 
 `UNSIGNED`, if specified, disallows negative values.
 
-`ZEROFILL`, if specified, pads the number with zeros, up to the total number\
-of digits specified by `M`.
+`ZEROFILL`, if specified, pads the number with zeros, up to the total number of digits specified by `M`.
 
-All basic calculations (+, -, \*, /) with `DECIMAL` columns are done with\
-a precision of 65 digits.
+All basic calculations (+, -, \*, /) with `DECIMAL` columns are done with a precision of 65 digits.
 
 For more details on the attributes, see [Numeric Data Type Overview](numeric-data-type-overview.md).
 
@@ -34,7 +28,7 @@ For more details on the attributes, see [Numeric Data Type Overview](numeric-dat
 
 ## Examples
 
-```
+```sql
 CREATE TABLE t1 (d DECIMAL UNSIGNED ZEROFILL);
 
 INSERT INTO t1 VALUES (1),(2),(3),(4.0),(5.2),(5.7);
@@ -57,20 +51,20 @@ SELECT * FROM t1;
 +------------+
 ```
 
-### With [strict\_mode](../../../server-management/variables-and-modes/sql-mode.md#strict-mode) set:
+### With [strict\_mode](../../../server-management/variables-and-modes/sql-mode.md#strict-mode) set
 
-```
+```sql
 INSERT INTO t1 VALUES (-7);
 ERROR 1264 (22003): Out of range value for column 'd' at row 1
 ```
 
 ### SIGNED and UNSIGNED
 
-The DECIMAL data type may be SIGNED (allowing negative values) or UNSIGNED (not allowing negative values).
+The `DECIMAL` data type may be `SIGNED` (allowing negative values) or `UNSIGNED` (not allowing negative values).
 
-Example of DECIMAL SIGNED (SIGNED is the default):
+Example of `DECIMAL SIGNED` (`SIGNED` is the default):
 
-```
+```sql
 CREATE TABLE decimal_signed_example (
   description VARCHAR(20),
   sz10_0 DECIMAL,
@@ -79,11 +73,11 @@ CREATE TABLE decimal_signed_example (
 );
 ```
 
-```
+```sql
 SET @pi = 3.1415926535897932384626433832795;
 ```
 
-```
+```sql
 INSERT INTO decimal_signed_example VALUES
   ('Pi', @pi, @pi, @pi),
   ('Series', 1234.567890123, 1234.567890123, 1.234567890123),
@@ -91,7 +85,7 @@ INSERT INTO decimal_signed_example VALUES
   ('Various', 1234567890, 9999.99, 9.9999999999999999999);
 ```
 
-```
+```sql
 SELECT * FROM decimal_signed_example;
 
 +-------------+------------+----------+------------------------+
@@ -104,9 +98,9 @@ SELECT * FROM decimal_signed_example;
 +-------------+------------+----------+------------------------+
 ```
 
-Example of DECIMAL UNSIGNED:
+Example of `DECIMAL UNSIGNED`:
 
-```
+```sql
 CREATE TABLE decimal_unsigned_example (
   description VARCHAR(20),
   sz10_0 DECIMAL UNSIGNED,
@@ -115,18 +109,18 @@ CREATE TABLE decimal_unsigned_example (
 );
 ```
 
-```
+```sql
 SET @pi = 3.1415926535897932384626433832795;
 ```
 
-```
+```sql
 INSERT INTO decimal_unsigned_example VALUES
   ('Pi', @pi, @pi, @pi),
   ('Series', 1234.567890123, 1234.567890123, 1.234567890123),
   ('Various', 1234567890, 9999.99, 9.9999999999999999999);
 ```
 
-```
+```sql
 SELECT * FROM decimal_unsigned_example;
 
 +-------------+------------+---------+-----------------------+
@@ -138,13 +132,13 @@ SELECT * FROM decimal_unsigned_example;
 +-------------+------------+---------+-----------------------+
 ```
 
-### Out-of-Range
+### Out of Range
 
-A value is considered "out-of-range" when it is too small or too large to be stored in a data type. The size specified when creating the column is the strict limit for what values can be represented. When SQL\_MODE is strict (the default), an out-of-range value generates an error and the operation fails. If strict mode is not in effect, the value is rounded to the nearest valid value, and a warning is generated (which might be hidden, depending on your warning settings).
+A value is considered "out of range" when it is too small or too large to be stored in a data type. The size specified when creating the column is the strict limit for what values can be represented. When `SQL_MODE` is strict (the default), an out-of-range value generates an error and the operation fails. If strict mode is not in effect, the value is rounded to the nearest valid value, and a warning is generated (which might be hidden, depending on your warning settings).
 
 A value whose significant digits must be rounded to fit only generates a warning note about data truncation since it is only an out-of-range value if the rounding causes the value to overflow.
 
-```
+```sql
 TRUNCATE decimal_signed_example;
 
 -- Disable strict mode
@@ -171,7 +165,7 @@ INSERT INTO decimal_signed_example VALUES
   ('Underflow', NULL, NULL, -10);
 ```
 
-```
+```sql
 Note (sql 1265): Data truncated for column 'sz10_0' at row 1
 Warning (sql 1264): Out of range value for column 'sz10_0' at row 2
 Warning (sql 1264): Out of range value for column 'sz10_0' at row 3
@@ -192,11 +186,11 @@ Warning (sql 1264): Out of range value for column 'sz20_19' at row 17
 Warning (sql 1264): Out of range value for column 'sz20_19' at row 18
 ```
 
-```
+```sql
 SELECT * FROM decimal_signed_example;
 ```
 
-```
+```sql
 +-------------------+-------------+----------+------------------------+
 | description       | sz10_0      | sz6_2    | sz20_19                |
 +-------------------+-------------+----------+------------------------+
@@ -223,11 +217,11 @@ SELECT * FROM decimal_signed_example;
 
 ### DECIMAL ZEROFILL
 
-A special type of DECIMAL UNSIGNED is DECIMAL ZEROFILL, which pads out the values with leading zeros in SELECT results. The number of leading zeros are just enough to pad the field out to the length of the type's field size (not counting the decimal place), but the zeros are not included in an expression result or in a UNION SELECT column.
+A special type of `DECIMAL UNSIGNED` is `DECIMAL ZEROFILL`, which pads out the values with leading zeros in `SELECT` results. The number of leading zeros are just enough to pad the field out to the length of the type's field size (not counting the decimal place), but the zeros are not included in an expression result or in a `UNION SELECT` column.
 
-Using DECIMAL ZEROFILL works the same way as DECIMAL UNSIGNED for most operations except a simple SELECT. For example, with the following test table setup:
+Using `DECIMAL ZEROFILL` works the same way as `DECIMAL UNSIGNED` for most operations except a simple `SELECT`. For example, with the following test table setup:
 
-```
+```sql
 CREATE TABLE decimal_zerofill_example (
   description VARCHAR(20),
   sz10_0 DECIMAL ZEROFILL,
@@ -236,18 +230,18 @@ CREATE TABLE decimal_zerofill_example (
 );
 ```
 
-```
+```sql
 SET @pi = 3.1415926535897932384626433832795;
 ```
 
-```
+```sql
 INSERT INTO decimal_zerofill_example VALUES
   ('Pi', @pi, @pi, @pi),
   ('Series', 1234.567890123, 1234.567890123, 1.234567890123),
   ('Various', 1234567890, 9999.99, 9.9999999999999999999);
 ```
 
-```
+```sql
 SELECT * FROM decimal_zerofill_example;
 
 +-------------+------------+---------+-----------------------+
@@ -262,7 +256,7 @@ SELECT * FROM decimal_zerofill_example;
 ## See Also
 
 * [Numeric Data Type Overview](numeric-data-type-overview.md)
-* [Oracle mode from MariaDB 10.3](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/data-types/numeric-data-types/broken-reference/README.md)
+* [Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle)
 
 <sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 

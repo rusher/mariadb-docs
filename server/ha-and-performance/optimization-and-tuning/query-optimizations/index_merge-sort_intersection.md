@@ -2,7 +2,7 @@
 
 Prior to [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3), the `index_merge` access method supported `union`,`sort-union`, and `intersection` operations. Starting from [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3), the`sort-intersection` operation is also supported. This allows the use of`index_merge` in a broader number of cases.
 
-This feature is disabled by default. To enable it, turn on the optimizer switch`index_merge_sort_intersection` like so:
+This feature is disabled by default. To enable it, turn on the optimizer switch `index_merge_sort_intersection` like so:
 
 ```sql
 SET optimizer_switch='index_merge_sort_intersection=on'
@@ -10,9 +10,7 @@ SET optimizer_switch='index_merge_sort_intersection=on'
 
 ## Limitations of index\_merge/intersection
 
-Prior to [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3), the `index_merge` access method had one intersection\
-strategy called `intersection`. That strategy can only be used when merged\
-index scans produced rowid-ordered streams. In practice this means that an`intersection` could only be constructed from equality (=) conditions.
+Prior to [MariaDB 5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/changes-improvements-in-mariadb-5-3), the `index_merge` access method had one intersection strategy called `intersection`. That strategy can only be used when merged index scans produced rowid-ordered streams. In practice this means that an`intersection` could only be constructed from equality (=) conditions.
 
 For example, the following query will use `intersection`:
 
@@ -25,9 +23,7 @@ MySQL [ontime]> EXPLAIN SELECT AVG(arrdelay) FROM ontime WHERE depdel15=1 AND Or
 +--+-----------+------+-----------+--------------------+--------------------+-------+----+-----+-------------------------------------------------+
 ```
 
-but if you replace `OriginState ='CA'` with `OriginState IN ('CA', 'GB')`\
-(which matches the same number of records), then `intersection` is not usable\
-anymore:
+but if you replace `OriginState ='CA'` with `OriginState IN ('CA', 'GB')` (which matches the same number of records), then `intersection` is not usable anymore:
 
 ```sql
 MySQL [ontime]> explain select avg(arrdelay) from ontime where depdel15=1 and OriginState IN ('CA', 'GB');
@@ -38,8 +34,7 @@ MySQL [ontime]> explain select avg(arrdelay) from ontime where depdel15=1 and Or
 +--+-----------+------+----+--------------------+--------+-------+-----+-----+-----------+
 ```
 
-The latter query would also run 5.x times slower (from 2.2 to 10.8 seconds) in\
-our experiments.
+The latter query would also run 5.x times slower (from 2.2 to 10.8 seconds) in our experiments.
 
 ## How index\_merge/sort\_intersection improves the situation
 
@@ -55,26 +50,17 @@ MySQL [ontime]> explain select avg(arrdelay) from ontime where depdel15=1 and Or
 +--+-----------+------+-----------+--------------------+--------------------+-------+----+-----+--------------------------------------------------------+
 ```
 
-In our tests, this query ran in 3.2 seconds, which is not as good as the case\
-with two equalities, but still much better than 10.8 seconds we were getting\
-without `sort_intersect`.
+In our tests, this query ran in 3.2 seconds, which is not as good as the case with two equalities, but still much better than 10.8 seconds we were getting without `sort_intersect`.
 
-The `sort_intersect` strategy has higher overhead than `intersect` but is\
-able to handle a broader set of `WHERE` conditions.
+The `sort_intersect` strategy has higher overhead than `intersect` but is able to handle a broader set of `WHERE` conditions.
 
 ![intersect-vs-sort-intersect](../../../.gitbook/assets/intersect-vs-sort-intersect.png)
 
 ## When to Use
 
-`index_merge/sort_intersection` works best on tables with lots of records and\
-where intersections are sufficiently large (but still small enough to make a\
-full table scan overkill).
+`index_merge/sort_intersection` works best on tables with lots of records and where intersections are sufficiently large (but still small enough to make a full table scan overkill).
 
 The benefit is expected to be bigger for io-bound loads.
-
-## See Also
-
-* [What is MariaDB 5.3](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/optimization-and-tuning/query-optimizations/broken-reference/README.md)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

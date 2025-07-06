@@ -2,22 +2,20 @@
 
 ## Syntax
 
-```
+```sql
 UTC_TIMESTAMP
 UTC_TIMESTAMP([precision])
 ```
 
 ## Description
 
-Returns the current [UTC](../../data-types/string-data-types/character-sets/internationalization-and-localization/coordinated-universal-time.md) date and time as a value in 'YYYY-MM-DD\
-HH:MM:SS' or YYYYMMDDHHMMSS.uuuuuu format, depending on whether the\
-function is used in a string or numeric context.
+Returns the current [UTC](../../data-types/string-data-types/character-sets/internationalization-and-localization/coordinated-universal-time.md) date and time as a value in `YYYY-MM-DD HH:MM:SS` or `YYYYMMDDHHMMSS.uuuuuu` format, depending on whether the function is used in a string or numeric context.
 
 The optional _precision_ determines the microsecond precision. See [Microseconds in MariaDB](microseconds-in-mariadb.md).
 
 ## Examples
 
-```
+```sql
 SELECT UTC_TIMESTAMP(), UTC_TIMESTAMP() + 0;
 +---------------------+-----------------------+
 | UTC_TIMESTAMP()     | UTC_TIMESTAMP() + 0   |
@@ -28,7 +26,7 @@ SELECT UTC_TIMESTAMP(), UTC_TIMESTAMP() + 0;
 
 With precision:
 
-```
+```sql
 SELECT UTC_TIMESTAMP(4);
 +--------------------------+
 | UTC_TIMESTAMP(4)         |
@@ -42,6 +40,6 @@ SELECT UTC_TIMESTAMP(4);
 * [Time Zones](../../data-types/string-data-types/character-sets/internationalization-and-localization/time-zones.md)
 * [Microseconds in MariaDB](microseconds-in-mariadb.md)
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

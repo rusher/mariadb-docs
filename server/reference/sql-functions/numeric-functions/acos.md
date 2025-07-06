@@ -2,18 +2,17 @@
 
 ## Syntax
 
-```
+```sql
 ACOS(X)
 ```
 
 ## Description
 
-Returns the arc cosine of `X`, that is, the value whose cosine is `X`.\
-Returns `NULL` if `X` is not in the range `-1` to `1`.
+Returns the arc cosine of `X`, that is, the value whose cosine is `X`. Returns `NULL` if `X` is not in the range `-1` to `1`.
 
 ## Examples
 
-```
+```sql
 SELECT ACOS(1);
 +---------+
 | ACOS(1) |

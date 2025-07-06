@@ -1,17 +1,12 @@
-
 # VARCHAR2
 
-
-# Overview
-
+## Overview
 
 See [VARCHAR](varchar.md).
 
+## EXAMPLES
 
-# EXAMPLES
-
-
-```
+```sql
 SET sql_mode='oracle';
 
 CREATE TABLE varchar2_example (
@@ -19,11 +14,11 @@ CREATE TABLE varchar2_example (
 );
 ```
 
-```
+```sql
 SHOW CREATE TABLE varchar2_example\G
 ```
 
-```
+```sql
 *************************** 1. row ***************************
        Table: varchar2_example
 Create Table: CREATE TABLE "varchar2_example" (
@@ -31,8 +26,6 @@ Create Table: CREATE TABLE "varchar2_example" (
 )
 ```
 
-
 <sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
-
 
 {% @marketo/form formId="4316" %}

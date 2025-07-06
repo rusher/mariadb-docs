@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 CURRENT_ROLE, CURRENT_ROLE()
 ```
 
@@ -11,7 +11,7 @@ CURRENT_ROLE, CURRENT_ROLE()
 Returns the current [role](../../../../security/user-account-management/roles/) name. This determines your access privileges. The return value is a string in the\
 utf8 [character set](../../../data-types/string-data-types/character-sets/).
 
-If there is no current role, NULL is returned.
+If there is no current role, `NULL` is returned.
 
 The output of `SELECT CURRENT_ROLE` is equivalent to the contents of the [ENABLED\_ROLES](../../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-enabled_roles-table.md) Information Schema table.
 
@@ -21,7 +21,7 @@ Statements using the `CURRENT_ROLE` function are not [safe for statement-based r
 
 ## Examples
 
-```
+```sql
 SELECT CURRENT_ROLE;
 +--------------+
 | CURRENT_ROLE |

@@ -3,17 +3,6 @@ description: >-
   Explore the CONNECT storage engine in MariaDB Server. Learn how to access
   various data sources, including files and remote databases, directly from your
   MariaDB instance.
-layout:
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: false
 ---
 
 # CONNECT

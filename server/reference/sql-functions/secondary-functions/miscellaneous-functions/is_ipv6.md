@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 IS_IPV6(expr)
 ```
 
@@ -12,7 +12,7 @@ Returns 1 if the expression is a valid IPv6 address specified as a string, other
 
 ## Examples
 
-```
+```sql
 SELECT IS_IPV6('48f3::d432:1431:ba23:846f');
 +--------------------------------------+
 | IS_IPV6('48f3::d432:1431:ba23:846f') |

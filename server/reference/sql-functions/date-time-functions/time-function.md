@@ -1,19 +1,18 @@
-# TIME Function
+# TIME
 
 ## Syntax
 
-```
+```sql
 TIME(expr)
 ```
 
 ## Description
 
-Extracts the time part of the time or datetime expression `expr` and\
-returns it as a string.
+Extracts the time part of the time or datetime expression `expr` and returns it as a string.
 
 ## Examples
 
-```
+```sql
 SELECT TIME('2003-12-31 01:02:03');
 +-----------------------------+
 | TIME('2003-12-31 01:02:03') |

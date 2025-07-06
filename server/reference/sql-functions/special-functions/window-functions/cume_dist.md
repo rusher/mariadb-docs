@@ -1,11 +1,8 @@
-
-# CUME_DIST
-
+# CUME\_DIST
 
 ## Syntax
 
-
-```
+```sql
 CUME_DIST() OVER ( 
   [ PARTITION BY partition_expression ] 
   [ ORDER BY order_list ]
@@ -14,18 +11,15 @@ CUME_DIST() OVER (
 
 ## Description
 
+`CUME_DIST()` is a [window function](./) that returns the cumulative distribution of a given row. The following formula is used to calculate the value:
 
-CUME_DIST() is a [window function](README.md) that returns the cumulative distribution of a given row. The following formula is used to calculate the value:
-
-
-```
+```sql
 (number of rows <= current row) / (total rows)
 ```
 
 ## Examples
 
-
-```
+```sql
 create table t1 (
   pk int primary key,
   a int,
@@ -106,11 +100,8 @@ from t1;
 
 ## See Also
 
-
-* [PERCENT_RANK()](percent_rank.md)
-
+* [PERCENT\_RANK()](percent_rank.md)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
-
 
 {% @marketo/form formId="4316" %}

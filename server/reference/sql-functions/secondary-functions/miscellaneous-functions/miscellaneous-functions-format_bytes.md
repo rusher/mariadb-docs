@@ -1,12 +1,12 @@
 # FORMAT\_BYTES
 
-**MariaDB starting with** [**11.8**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-8-series/what-is-mariadb-118)
-
-Introduced in [MariaDB 11.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-8-series/what-is-mariadb-118)
+{% hint style="info" %}
+`FORMAT_BYTES` is available from MariaDB [11.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-8-series/what-is-mariadb-118).
+{% endhint %}
 
 ## Syntax
 
-```
+```sql
 FORMAT_BYTES(double)
 ```
 
@@ -20,7 +20,7 @@ This function is similar to the [Sys Schema format\_bytes](../../../sql-statemen
 
 ## Examples
 
-```
+```sql
 SELECT FORMAT_BYTES(1000)FORMAT_BYTES(1024);
 +--------------------+--------------------+
 | FORMAT_BYTES(1000) | FORMAT_BYTES(1024) |

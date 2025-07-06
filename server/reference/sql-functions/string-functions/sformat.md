@@ -1,8 +1,8 @@
 # SFORMAT
 
-**MariaDB starting with** [**10.7.0**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-7-series/mariadb-1070-release-notes)
-
-SFORMAT was added in [MariaDB 10.7.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-7-series/mariadb-1070-release-notes).
+{% hint style="info" %}
+`SFORMAT` is available from MariaDB 10.7.
+{% endhint %}
 
 ## Description
 
@@ -14,12 +14,12 @@ Only fmtlib 7.0.0+ is supported.
 
 There is no native support for temporal and decimal values:
 
-* TIME\_RESULT is handled as STRING\_RESULT
-* DECIMAL\_RESULT as REAL\_RESULT
+* `TIME_RESULT` is handled as `STRING_RESULT`.
+* `DECIMAL_RESULT` is handled as `REAL_RESULT`.
 
 ## Examples
 
-```
+```sql
 SELECT SFORMAT("The answer is {}.", 42);
 +----------------------------------+
 | SFORMAT("The answer is {}.", 42) |

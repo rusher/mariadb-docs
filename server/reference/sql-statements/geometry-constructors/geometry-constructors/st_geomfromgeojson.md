@@ -16,8 +16,6 @@ Given a GeoJSON input _g_, returns a geometry object. The _option_ specifies wha
 | 1      | Return an error (the default)                                                                    |
 | 2 - 4  | The document is accepted, but the coordinates for higher coordinate dimensions are stripped off. |
 
-Note that this function did not work correctly before [MariaDB 10.2.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-1028-release-notes) - see [MDEV-12180](https://jira.mariadb.org/browse/MDEV-12180).
-
 ## Examples
 
 ```sql

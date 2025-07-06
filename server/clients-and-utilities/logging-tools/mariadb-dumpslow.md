@@ -1,6 +1,6 @@
 # mariadb-dumpslow
 
-`mariadb-dumpslow` is a tool to examine the [slow query log](https://github.com/mariadb-corporation/docs-server/blob/test/server/clients-and-utilities/server-management/server-monitoring-logs/slow-query-log/README.md).
+`mariadb-dumpslow` is a tool to examine the [slow query log](../../server-management/server-monitoring-logs/slow-query-log/).
 
 Prior to [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105), the client was called `mysqldumpslow`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
 
@@ -16,7 +16,6 @@ mariadb-dumpslow [ options... ] [ logs... ]
 
 | Option        | Description                                                                                                                                                                                                                                                                        |
 | ------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Option        | Description                                                                                                                                                                                                                                                                        |
 | -a            | Don't abstract all numbers to N and strings to 'S'                                                                                                                                                                                                                                 |
 | -d, --debug   | Debug                                                                                                                                                                                                                                                                              |
 | -g PATTERN    | Grep: only consider statements that include this string                                                                                                                                                                                                                            |

@@ -97,9 +97,7 @@ What about autocommit = 1? wsrep\_retry\_autocommit tells Galera to retry if a s
 
 ## Always have PRIMARY KEY
 
-"Row Based Replication" will be used; this requires a PK on every table.
-
-A non-replicated table (eg, MyISAM) does not have to have a PK.
+"Row Based Replication" will be used; this requires a PK on every table. A non-replicated table (eg, MyISAM) does not have to have a PK.
 
 ## Transaction "size"
 
@@ -119,9 +117,11 @@ XA transactions cannot be supported. (Galera is already doing a form of XA in or
 
 Here is a 'simple' (but not 'free') way to assure that a read-after-write, even from a different connection, will see the updated data.
 
-SET SESSION wsrep\_sync\_wait = 1;\
-SELECT ...\
-SET SESSION wsrep\_sync\_wait = 0;
+```
+SET SESSION wsrep_sync_wait = 1;
+SELECT ...
+SET SESSION wsrep_sync_wait = 0;
+```
 
 For non-SELECTs, use a different bit set for the first select. (TBD: Would 0xffff always work?) (Before Galera 3.6, it was wsrep\_causal\_reads = ON.) Doc for wsrep\_sync\_wait
 
@@ -131,11 +131,9 @@ It may be more practical (for a web app) to simply set wsrep\_sync\_wait right a
 
 ## MyISAM and MEMORY
 
-As said above, use InnoDB only. However, here is more info on the MyISAM (and hence FULLTEXT, SPATIAL, etc) issues.
+As said above, use InnoDB only. However, here is more info on the MyISAM (and hence FULLTEXT, SPATIAL, etc) issues. MyISAM and MEMORY tables are not replicated.
 
-MyISAM and MEMORY tables are not replicated.
-
-Having MyISAM not replicated can be a big benefit -- You can "CREATE TEMPORARY TABLE ... ENGINE=MyISAM" and have it exist on only one node. RBR assures that any data transferred from that temp table into a 'real' table can still be replicated.
+Having MyISAM not replicated can be a big benefit -- You can "CREATE TEMPORARY TABLE ... ENGINE=MyISAM" and have it existed on only one node. RBR assures that any data transferred from that temp table into a 'real' table can still be replicated.
 
 ## Replicating GRANTs
 
@@ -158,7 +156,7 @@ Fast DDL operations can usually be executed in TOI mode:
 * DDL operations that support the `INPLACE` algorithm may be fast or slow, depending on whether the table needs to be rebuilt.
 * DDL operations that only support the `COPY` algorithm are usually very slow.
 
-For a list of which operations support which algorithms, see [InnoDB Online DDL](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/innodb/innodb-online-ddl).
+For a list of which operations support which algorithms, see [InnoDB Online DDL](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-online-ddl).
 
 If you need to use RSU mode, then do the following separately for each node:
 
@@ -186,11 +184,11 @@ You can 'simulate' Master + Slaves by having clients write only to one node.
 ## Variables that may need to be different
 
 * [auto\_increment\_increment](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables) - If you are writing to multiple nodes, and you use AUTO\_INCREMENT, then auto\_increment\_increment will automatically be equal the current number of nodes.
-* [binlog-do](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options)/[ignore-db](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options) - Do not use.
+* [binlog-do](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/starting-and-stopping-mariadb/mariadbd-options#binlog-do-db)/[ignore-db](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/starting-and-stopping-mariadb/mariadbd-options#binlog-ignore-db) - Do not use.
 * [binlog\_format](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables) - ROW is required for Galera.
 * [innodb\_autoinc\_lock\_mode](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/replication-and-binary-log-system-variables) - 2
-* [innodb\_doublewrite](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/innodb/innodb-system-variables) - ON: When an IST occurs, want there to be no torn pages? (With FusionIO or other drives that guarantee atomicity, OFF is better.)
-* [innodb\_flush\_log\_at\_trx\_commit](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/innodb/innodb-system-variables) - 2 or 0. IST or SST will recover from loss if you have 1.
+* [innodb\_doublewrite](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables#innodb_doublewrite) - ON: When an IST occurs, want there to be no torn pages? (With FusionIO or other drives that guarantee atomicity, OFF is better.)
+* [innodb\_flush\_log\_at\_trx\_commit](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/innodb/innodb-system-variables#innodb_flush_log_at_trx_commit) - 2 or 0. IST or SST will recover from loss if you have 1.
 * [query\_cache\_size](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#query_cache_size) - 0
 * [query\_cache\_type](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#query_cache_type) - 0: The Query cache cannot be used in a Galera context.
 * [wsrep\_auto\_increment\_control](../reference/galera-cluster-system-variables.md#wsrep_auto_increment_control) - Normally want ON
@@ -203,7 +201,7 @@ You can 'simulate' Master + Slaves by having clients write only to one node.
 
 Until recently, FOREIGN KEYs were buggy.
 
-LOAD DATA is auto-chunked. That is, it is passed to other nodes piecemeal, not all at once.
+LOAD DATA is auto chunked. That is, it is passed to other nodes piecemeal, not all at once.
 
 [MariaDB's known issues with Galera](mariadb-galera-cluster-known-limitations.md)
 

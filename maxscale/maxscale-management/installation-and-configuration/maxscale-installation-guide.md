@@ -33,12 +33,12 @@ installed with the following commands.
 MaxScale can also be installed using a tarball.\
 That may be required if you are using a Linux distribution for which there\
 exist no installation package or if you want to install many different\
-MaxScale versions side by side. For instructions on how to do that, please refer to[Install MariaDB MaxScale using a Tarball](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-installing-mariadb-maxscale-using-a-tarball.md).
+MaxScale versions side by side. For instructions on how to do that, please refer to[Install MariaDB MaxScale using a Tarball](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-installing-mariadb-maxscale-using-a-tarball.md).
 
 ### Building MariaDB MaxScale From Source Code
 
 Alternatively you may download the MariaDB MaxScale source and build your own binaries.\
-To do this, refer to the separate document[Building MariaDB MaxScale from Source Code](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-building-mariadb-maxscale-from-source-code.md)
+To do this, refer to the separate document[Building MariaDB MaxScale from Source Code](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-building-mariadb-maxscale-from-source-code.md)
 
 ### Assumptions
 
@@ -74,28 +74,28 @@ cat /proc/sys/vm/overcommit_memory
 
 ### Configuring MariaDB MaxScale
 
-[The MaxScale Tutorial](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-tutorials/mariadb-maxscale-2501-maxscale-2501-setting-up-mariadb-maxscale.md) covers the first\
+[The MaxScale Tutorial](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-tutorials/mariadb-maxscale-2501-maxscale-2501-setting-up-mariadb-maxscale.md) covers the first\
 steps in configuring your MariaDB MaxScale installation. Follow this tutorial\
 to learn how to configure and start using MaxScale.
 
-For a detailed list of all configuration parameters, refer to the[Configuration Guide](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md) and the module specific documents\
-listed in the [Documentation Contents](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-2501-maxscale-2501-contents.md).
+For a detailed list of all configuration parameters, refer to the[Configuration Guide](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md) and the module specific documents\
+listed in the [Documentation Contents](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-2501-maxscale-2501-contents.md).
 
 ### Encrypting Passwords
 
-Read the [Encrypting Passwords](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)\
+Read the [Encrypting Passwords](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)\
 section of the configuration guide to set up password encryption for the\
 configuration file.
 
 ### Administration Of MariaDB MaxScale
 
 There are various administration tasks that may be done with MariaDB MaxScale.\
-A command line tools is available, [maxctrl](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-reference/mariadb-maxscale-2501-maxscale-2501-maxctrl.md), that will\
+A command line tools is available, [maxctrl](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-reference/mariadb-maxscale-2501-maxscale-2501-maxctrl.md), that will\
 interact with a running MariaDB MaxScale and allow the status of MariaDB\
 MaxScale to be monitored and give some control of the MariaDB MaxScale\
 functionality.
 
-[The administration tutorial](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-tutorials/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-administration-tutorial.md)\
+[The administration tutorial](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-tutorials/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-administration-tutorial.md)\
 covers the common administration tasks that need to be done with MariaDB MaxScale.
 
 ### Copying or Backing Up MaxScale

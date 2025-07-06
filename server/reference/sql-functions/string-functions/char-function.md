@@ -2,15 +2,15 @@
 
 ## Syntax
 
-```
+```sql
 CHAR(N,... [USING charset_name])
 ```
 
 ## Description
 
-`CHAR()` interprets each argument as an [INT](../../../../data-types/data-types-numeric-data-types/int.md) and returns a string consisting of the characters given by the code values of those integers. `NULL` values are skipped. By default, `CHAR()` returns a binary string. To produce a string in a given [character set](../../data-types/string-data-types/character-sets/), use the optional `USING` clause:
+`CHAR()` interprets each argument as an [INT](../../data-types/numeric-data-types/int.md) and returns a string consisting of the characters given by the code values of those integers. `NULL` values are skipped. By default, `CHAR()` returns a binary string. To produce a string in a given [character set](../../data-types/string-data-types/character-sets/), use the optional `USING` clause:
 
-```
+```sql
 SELECT CHARSET(CHAR(0x65)), CHARSET(CHAR(0x65 USING utf8));
 +---------------------+--------------------------------+
 | CHARSET(CHAR(0x65)) | CHARSET(CHAR(0x65 USING utf8)) |
@@ -23,7 +23,7 @@ If `USING` is given and the result string is illegal for the given character set
 
 ## Examples
 
-```
+```sql
 SELECT CHAR(77,97,114,'105',97,'68',66);
 +----------------------------------+
 | CHAR(77,97,114,'105',97,'68',66) |
@@ -49,6 +49,6 @@ Warning (Code 1292): Truncated incorrect INTEGER value: '77.3'
 * [ORD()](ord.md) - Return value for character in single or multi-byte character sets
 * [CHR](chr.md) - Similar, Oracle-compatible, function
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

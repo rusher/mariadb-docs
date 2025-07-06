@@ -25,7 +25,6 @@ Change the path to reflect the location where _mariadb_ actually is stored on yo
 
 | Option                                | Description                                                                                                                                                 |
 | ------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Option                                | Description                                                                                                                                                 |
 | -?, --help                            | Displayhelp and exit.                                                                                                                                       |
 | -v, --version                         | Display version.                                                                                                                                            |
 | -u username, --user=username          | Username for logging in to the db.                                                                                                                          |

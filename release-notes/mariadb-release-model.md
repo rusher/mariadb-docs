@@ -1,8 +1,8 @@
-# MariaDB Release Model
+# MariaDB Community Server Release Model
 
-## Current MariaDB Release Model (from [MariaDB 11.3](mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-3-rolling-releases/what-is-mariadb-113.md))
+## Current Release Model (from [MariaDB 11.3](mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-3-rolling-releases/what-is-mariadb-113.md))
 
-* [MariaDB Server releases](enterprise-server/) happen four times a year.
+* [MariaDB Community Server releases](mariadb-community-server-release-notes/) happen four times a year.
 * There is a new innovation release with new features every time. It is an RC release.
 * Additionally, all maintained release series get a new patch version maintenance release, a release that was RC last time, becomes GA.
 * There are no patch version releases of an innovation release after GA (except for emergency releases), instead users are supposed to upgrade to the next minor innovation release. In other words, innovation releases are rolling releases, one upgrades 11.3.2→11.4.2→11.5.2→11.6.2→11.7.2
@@ -25,7 +25,7 @@ References:
 * https://mariadb.org/preview-releases/
 * https://mariadb.org/new-innovation-release-model/ 
 
-## Historical MariaDB Release Models
+## Historical Release Models
 
 ### From [MariaDB 10.7](mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-7-series/what-is-mariadb-107.md) to [MariaDB 11.2](mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-2-series/what-is-mariadb-112.md)
 

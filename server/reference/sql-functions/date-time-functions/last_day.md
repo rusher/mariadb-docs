@@ -2,18 +2,17 @@
 
 ## Syntax
 
-```
+```sql
 LAST_DAY(date)
 ```
 
 ## Description
 
-Takes a date or datetime value and returns the corresponding value for\
-the last day of the month. Returns NULL if the argument is invalid.
+Takes a date or datetime value and returns the corresponding value for the last day of the month. Returns `NULL` if the argument is invalid.
 
 ## Examples
 
-```
+```sql
 SELECT LAST_DAY('2003-02-05');
 +------------------------+
 | LAST_DAY('2003-02-05') |

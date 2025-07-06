@@ -1,42 +1,40 @@
 # ROWNUM
 
-**MariaDB starting with** [**10.6.1**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/mariadb-1061-release-notes)
-
-From [MariaDB 10.6.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/mariadb-1061-release-notes), the `ROWNUM()` function is supported.
+{% hint style="info" %}
+`ROWNUM()` is available from [MariaDB 10.6.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/mariadb-1061-release-notes).
+{% endhint %}
 
 ## Syntax
 
-```
+```sql
 ROWNUM()
 ```
 
-In [Oracle mode](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-functions/secondary-functions/information-functions/broken-reference/README.md) one can just use `ROWNUM`, without the parentheses.
+In [Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle) one can just use `ROWNUM`, without the parentheses.
 
 ## Description
 
-`ROWNUM()` returns the current number of accepted rows in the\
-current context. It main purpose is to emulate the `ROWNUM[pseudo column in Oracle](https://docs.oracle.com/en/database/oracle/oracle-database/19/sqlrf/ROWNUM-Pseudocolumn.html#GUID-2E40EC12-3FCF-4A4F-B5F2-6BC669021726). For MariaDB native applications, we recommend the usage of [LIMIT](../../../sql-statements/data-manipulation/selecting-data/limit.md), as it is easier to use and gives more predictable results than the usage of `ROWNUM().
+`ROWNUM()` returns the current number of accepted rows in the current context. It main purpose is to emulate the [ROWNUM pseudo column in Oracle](https://docs.oracle.com/en/database/oracle/oracle-database/19/sqlrf/ROWNUM-Pseudocolumn.html#GUID-2E40EC12-3FCF-4A4F-B5F2-6BC669021726). For MariaDB native applications, we recommend the usage of [LIMIT](../../../sql-statements/data-manipulation/selecting-data/limit.md), as it is easier to use and gives more predictable results than the usage of `ROWNUM()`.
 
-The main difference between using `LIMIT` and`ROWNUM()` to limit the rows in the result is that`LIMIT` works on the result set while `ROWNUM`\
-works on the number of accepted rows (before any `ORDER` or`GROUP BY` clauses).
+The main difference between using `LIMIT` and`ROWNUM()` to limit the rows in the result is that`LIMIT` works on the result set while `ROWNUM` works on the number of accepted rows (before any `ORDER` or`GROUP BY` clauses).
 
 The following queries will return the same results:
 
-```
+```sql
 SELECT * from t1 LIMIT 10;
 SELECT * from t1 WHERE ROWNUM() <= 10;
 ```
 
 While the following may return different results based on in which orders the rows are found:
 
-```
+```sql
 SELECT * from t1 ORDER BY a LIMIT 10;
 SELECT * from t1 ORDER BY a WHERE ROWNUM() <= 10;
 ```
 
 The recommended way to use `ROWNUM` to limit the number of returned rows and get predictable results is to have the query in a subquery and test for `ROWNUM()` in the outer query:
 
-```
+```sql
 SELECT * FROM (select * from t1 ORDER BY a) WHERE ROWNUM() <= 10;
 ```
 
@@ -52,7 +50,7 @@ Used in other contexts, `ROWNUM()` will return 0.
 
 ## Examples
 
-```
+```sql
 INSERT INTO t1 VALUES (1,ROWNUM()),(2,ROWNUM()),(3,ROWNUM());
 
 INSERT INTO t1 VALUES (1),(2) returning a, ROWNUM();
@@ -72,22 +70,22 @@ In many cases where `ROWNUM()` is used, MariaDB will use the same optimizations 
 `LIMIT` optimization is possible when using `ROWNUM` in the following manner:
 
 * When one is in a top level `WHERE` clause comparing `ROWNUM()` with a numerical constant using any of the following expressions:
-  * `ROWNUM()` < number
-  * `ROWNUM()` <= number
+  * `ROWNUM()` < number.
+  * `ROWNUM()` <= number.
   * `ROWNUM()` = 1`ROWNUM()` can be also be the right argument to the comparison function.
 
 In the above cases, `LIMIT` optimization can be done in the\
 following cases:
 
-* For the current sub query when the ROWNUM comparison is done on the top level:
+* For the current subquery when the `ROWNUM` comparison is done on the top level:
 
-```
+```sql
 SELECT * from t1 WHERE ROWNUM() <= 2 AND t1.a > 0
 ```
 
-* For an inner sub query, when the upper level has only a `ROWNUM()` comparison in the `WHERE` clause:
+* For an inner subquery, when the upper level has only a `ROWNUM()` comparison in the `WHERE` clause:
 
-```
+```sql
 SELECT * from (select * from t1) as t WHERE ROWNUM() <= 2
 ```
 
@@ -97,11 +95,11 @@ When `ROWNUM()` is used anywhere in a query, the optimization to ignore `ORDER B
 
 This was done to get the following common Oracle query to work as expected:
 
-```
-select * from (select * from t1 order by a desc) as t where rownum() <= 2;
+```sql
+SELECT * FROM (SELECT * FROM t1 ORDER BY a DESC) AS t WHERE rownum() <= 2;
 ```
 
-By default MariaDB ignores any `ORDER BY` in subqueries both because the SQL standard defines results sets in subqueries to be un-ordered and because of performance reasons (especially when using views in subqueries). See [MDEV-3926](https://jira.mariadb.org/browse/MDEV-3926) "Wrong result with GROUP BY ... WITH ROLLUP" for a discussion of this topic.
+By default, MariaDB ignores any `ORDER BY` in subqueries both because the SQL standard defines results sets in subqueries to be un-ordered and because of performance reasons (especially when using views in subqueries). See [MDEV-3926](https://jira.mariadb.org/browse/MDEV-3926) "Wrong result with `GROUP BY ... WITH ROLLUP`" for a discussion of this topic.
 
 ## Other Considerations
 
@@ -113,7 +111,7 @@ Note that usage of `ROWNUM()` in functions or [stored procedures](../../../../se
 
 ## See Also
 
-* [MDEV-24089](https://jira.mariadb.org/browse/MDEV-24089) support oracle syntax: rownum
+* [MDEV-24089](https://jira.mariadb.org/browse/MDEV-24089) support Oracle syntax: rownum
 * [LIMIT clause](../../../sql-statements/data-manipulation/selecting-data/limit.md)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>

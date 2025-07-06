@@ -1,4 +1,6 @@
-# MariaDB Connector/Node.js 3.4.3 Changelog
+# Connector/Node.js 3.4.3 Changelog
+
+{% include "../../../../.gitbook/includes/latest-nodejs.md" %}
 
 <a href="https://mariadb.com/downloads/connectors/connectors-data-access/nodejs-connector" class="button primary">Download</a> <a href="../../mariadb-connector-nodejs-3x-release-notes/mariadb-connector-node-js-3-4-3-release-notes.md" class="button secondary">Release Notes</a> <a href="mariadb-connector-node-js-3-4-3-changelog.md" class="button secondary">Changelog</a> <a href="https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-nodejs/mariadb-connector-node-js-guide" class="button secondary">Connector/Node.js Overview</a>
 
@@ -41,7 +43,8 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #33dc759](https://github.com/mariadb-corporation/mariadb-connector-nodejs/commit/33dc759) Update connection-options.md
 * [Revision #a9bbd30](https://github.com/mariadb-corporation/mariadb-connector-nodejs/commit/a9bbd30) Passing servername option to identity check
 * [Revision #03e5c2e](https://github.com/mariadb-corporation/mariadb-connector-nodejs/commit/03e5c2e) Fixing createSecureContext
-* 
+*
+
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 
 {% @marketo/form formid="4316" formId="4316" %}

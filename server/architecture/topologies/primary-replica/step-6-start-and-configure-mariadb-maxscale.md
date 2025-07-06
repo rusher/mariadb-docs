@@ -21,7 +21,7 @@ admin_host       = 0.0.0.0
 admin_secure_gui = false
 ```
 
-For additional information, see "[Global Settings](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide#global-settings)".
+For additional information, see "[Global Settings](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide#global-settings)".
 
 ## Restart MaxScale
 

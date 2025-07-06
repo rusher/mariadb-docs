@@ -1,4 +1,4 @@
-# DuplicateWeedout Strategy
+# Duplicate Weedout Strategy
 
 `DuplicateWeedout` is an execution strategy for [Semi-join subqueries](../subquery-optimizations/semi-join-subquery-optimizations.md).
 
@@ -108,7 +108,6 @@ This plan will read `(239 + 239*18) = 4541` rows, which is much slower.
 
 ## See Also
 
-* [What is MariaDB 5.3](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/optimization-and-tuning/query-optimizations/optimization-strategies/broken-reference/README.md)
 * [Subquery Optimizations Map](../subquery-optimizations/subquery-optimizations-map.md)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>

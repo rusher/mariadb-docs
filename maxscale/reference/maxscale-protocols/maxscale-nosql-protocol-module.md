@@ -1047,7 +1047,7 @@ used for all unauthenticated MongoDB® clients connecting to the same listener p
 
 #### `authentication_required`
 
-* Type: [boolean](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [boolean](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Default: `false`
 
@@ -1063,7 +1063,7 @@ MariaDB server.
 
 #### `authentication_shared`
 
-* Type: [boolean](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [boolean](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Default: `false`
 
@@ -1113,7 +1113,7 @@ Specifies the _password_ of `authentication_user`.
 
 #### `authorization_enabled`
 
-* Type: [boolean](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [boolean](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Default: `false`
 
@@ -1141,7 +1141,7 @@ MaxScale.
 
 #### `on_unknown_command`
 
-* Type: [enum](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [enum](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Values: `return_error`, `return_empty`
 * Default: `return_error`
@@ -1155,7 +1155,7 @@ Enumeration values:
 
 #### `log_unknown_command`
 
-* Type: [boolean](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [boolean](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Default: `false`
 
@@ -1165,7 +1165,7 @@ currently is not supported.
 
 #### `auto_create_databases`
 
-* Type: [boolean](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [boolean](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Default: `true`
 
@@ -1175,7 +1175,7 @@ Note that setting this parameter to `true`, without also setting`auto_create_tab
 
 #### `auto_create_tables`
 
-* Type: [boolean](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [boolean](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Default: `true`
 
@@ -1196,7 +1196,7 @@ Specifies the length of the id column in tables that are automatically created.
 
 #### `ordered_insert_behavior`
 
-* Type: [enum](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [enum](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Values: `atomic`, `default`
 * Default: `default`
@@ -1217,7 +1217,7 @@ document) is used, has an impact on the performance. Please see the discussion a
 
 #### `cursor_timeout`
 
-* Type: [duration](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [duration](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Default: `60s`
 
@@ -1226,7 +1226,7 @@ automatically closed.
 
 #### `debug`
 
-* Type: [enum\_mask](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [enum\_mask](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Values: `none`, `in`, `out`, `back`
 * Default: `none`
@@ -1256,7 +1256,7 @@ and the resulting response sent to the client logged.
 * Default: ''
 
 Specifies what internal cache to use if any. Currently, the only\
-permissible value is `cache`, which refers to the[cache filter](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-cache.md).
+permissible value is `cache`, which refers to the[cache filter](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-cache.md).
 
 Please see [caching](maxscale-nosql-protocol-module.md#caching) for more information.
 
@@ -2787,7 +2787,7 @@ The conversion of the BSON used in the communication between the client and\
 MaxScale, to the SQL used in the communication between MaxScale and the server\
 carries a not insignificant cost, as does the conversion of result sets\
 returned by the server to the BSON returned by MaxScale to the client. The\
-regular [cache filter](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-cache.md) provides no remedy for this, as\
+regular [cache filter](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-cache.md) provides no remedy for this, as\
 it is located after the protocol and uses SQL as the key and stores result\
 sets as values.
 
@@ -2801,7 +2801,7 @@ enabled by adding the following line to the NoSQL listener.
 nosqlprotocol.internal_cache=cache
 ```
 
-This effectively causes the [cache filter](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-cache.md) to be used\
+This effectively causes the [cache filter](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-filters/mariadb-maxscale-2501-maxscale-2501-cache.md) to be used\
 inside the NoSQL protocol module. The internal cache can be configured just\
 like the cache filter is, by using the following nested configuration syntax.
 
@@ -2856,7 +2856,7 @@ test-suite pass.
 
 The following is a minimal setup for getting _nosqlprotocol_ up and\
 running. It is assumed the reader knows how to configure MaxScale for\
-normal use. If not, please start with the[MaxScale tutorial](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-tutorials/mariadb-maxscale-2501-maxscale-2501-setting-up-mariadb-maxscale.md).\
+normal use. If not, please start with the[MaxScale tutorial](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-tutorials/mariadb-maxscale-2501-maxscale-2501-setting-up-mariadb-maxscale.md).\
 Note that as _nosqlprotocol_ is the first component in the MaxScale\
 routing chain, it can be used with all routers and filters.
 

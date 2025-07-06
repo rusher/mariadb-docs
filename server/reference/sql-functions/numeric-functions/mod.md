@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 MOD(N,M), N % M, N MOD M
 ```
 
@@ -10,13 +10,13 @@ MOD(N,M), N % M, N MOD M
 
 Modulo operation. Returns the remainder of N divided by M. See also [Modulo Operator](../../sql-structure/operators/arithmetic-operators/modulo-operator.md).
 
-If the `ERROR_ON_DIVISION_BY_ZERO` [SQL\_MODE](../../../server-management/variables-and-modes/sql-mode.md) is used, any number modulus zero produces an error. Otherwise, it returns NULL.
+If the `ERROR_ON_DIVISION_BY_ZERO` [SQL\_MODE](../../../server-management/variables-and-modes/sql-mode.md) is used, any number modulus zero produces an error. Otherwise, it returns `NULL`.
 
 The integer part of a division can be obtained using [DIV](div.md).
 
 ## Examples
 
-```
+```sql
 SELECT 1042 % 50;
 +-----------+
 | 1042 % 50 |
@@ -57,6 +57,6 @@ SELECT 29 MOD 9;
 
 * [Operator Precedence](../../sql-structure/operators/operator-precedence.md)
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

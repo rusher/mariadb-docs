@@ -8,10 +8,9 @@ Within(g1,g2)
 
 ## Description
 
-Returns `1` or `0` to indicate whether `g1` is spatially within `g2`.\
-This tests the opposite relationship as [Contains()](contains.md).
+Returns `1` or `0` to indicate whether `g1` is spatially within `g2`. This tests the opposite relationship as [Contains()](contains.md).
 
-WITHIN() is based on the original MySQL implementation, and uses object bounding rectangles, while [ST\_WITHIN()](st-within.md) uses object shapes.
+`WITHIN()` is based on the original MySQL implementation, and uses object bounding rectangles, while [ST\_WITHIN()](st-within.md) uses object shapes.
 
 ## Examples
 
@@ -35,6 +34,6 @@ SELECT within(@g2,@g3);
 +-----------------+
 ```
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

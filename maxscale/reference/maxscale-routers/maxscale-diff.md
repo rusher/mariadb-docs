@@ -499,7 +499,7 @@ is anything else, Diff will refuse to start.
 * Dynamic: No
 
 The main target from which results are returned to the client. Must be\
-a server and must be one of the servers listed in[targets](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md).
+a server and must be one of the servers listed in[targets](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md).
 
 If the connection to the main target cannot be created or is lost\
 mid-session, the client connection will be closed.
@@ -535,7 +535,7 @@ is EXPLAINed during the period specified by[explain\_period](maxscale-diff.md#ex
 
 #### `explain_period`
 
-* Type: [duration](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [duration](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
 * Default: 15m
@@ -579,7 +579,7 @@ calculating the width and number of bins of the histogram.
 
 #### `qps_window`
 
-* Type: [duration](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [duration](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: No
 * Default: 15m
@@ -601,7 +601,7 @@ should be logged; _always_, when there is a significant difference o&#x72;_&#x6E
 
 #### `reset_replication`
 
-* Type: [boolean](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [boolean](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: Yes
 * Default: `true`
@@ -660,7 +660,7 @@ will be that _other_ receives the same writes twice; once via the\
 replication from the server it is replicating from and once when\
 Diff executes the same writes.
 
-Diff is not compatible with[configuration synchronization](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md).\
+Diff is not compatible with[configuration synchronization](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md).\
 If _configuration synchronization_ is enabled, an attempt to create a\
 Diff router will fail.
 

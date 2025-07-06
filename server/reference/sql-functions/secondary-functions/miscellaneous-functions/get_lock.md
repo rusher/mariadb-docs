@@ -2,13 +2,13 @@
 
 ## Syntax
 
-```
+```sql
 GET_LOCK(str,timeout)
 ```
 
 ## Description
 
-Tries to obtain a lock with a name given by the string `str`, using a timeout of `timeout` seconds. Returns `1` if the lock was obtained successfully, `0` if the attempt timed out (for example, because another client has previously locked the name), or `NULL` if an error occurred (such as running out of memory or the thread was killed with [mariadb-admin kill](https://mariadb.com/kb/en/mariadb-admin_kill)).
+Tries to obtain a lock with a name given by the string `str`, using a timeout of `timeout` seconds. Returns `1` if the lock was obtained successfully, `0` if the attempt timed out (for example, because another client has previously locked the name), or `NULL` if an error occurred (such as running out of memory or the thread was killed with [mariadb-admin kill](../../../../clients-and-utilities/administrative-tools/mariadb-admin.md#mariadb-admin-commands)).
 
 A lock is released with [RELEASE\_LOCK()](release_lock.md), when the connection terminates (either normally or abnormally). A connection can hold multiple locks at the same time, so a lock that is no longer needed needs to be explicitly released.
 
@@ -30,7 +30,7 @@ The patch to permit multiple locks was [contributed by Konstantin "Kostja" Osipo
 
 ## Examples
 
-```
+```sql
 SELECT GET_LOCK('lock1',10);
 +----------------------+
 | GET_LOCK('lock1',10) |
@@ -55,7 +55,7 @@ SELECT IS_FREE_LOCK('lock2'), IS_USED_LOCK('lock2');
 
 Multiple locks can be held:
 
-```
+```sql
 SELECT GET_LOCK('lock2',10);
 +----------------------+
 | GET_LOCK('lock2',10) |
@@ -80,7 +80,7 @@ SELECT RELEASE_LOCK('lock1'), RELEASE_LOCK('lock2');
 
 It is possible to hold the same lock recursively. This example is viewed using the [metadata\_lock\_info](../../../plugins/other-plugins/metadata-lock-info-plugin.md) plugin:
 
-```
+```sql
 SELECT GET_LOCK('lock3',10);
 +----------------------+
 | GET_LOCK('lock3',10) |
@@ -129,7 +129,7 @@ Empty set (0.000 sec)
 
 Timeout example: Connection 1:
 
-```
+```sql
 SELECT GET_LOCK('lock4',10);
 +----------------------+
 | GET_LOCK('lock4',10) |
@@ -140,13 +140,13 @@ SELECT GET_LOCK('lock4',10);
 
 Connection 2:
 
-```
+```sql
 SELECT GET_LOCK('lock4',10);
 ```
 
 After 10 seconds...
 
-```
+```sql
 +----------------------+
 | GET_LOCK('lock4',10) |
 +----------------------+
@@ -156,7 +156,7 @@ After 10 seconds...
 
 Deadlocks are automatically detected and resolved. Connection 1:
 
-```
+```sql
 SELECT GET_LOCK('lock5',10); 
 +----------------------+
 | GET_LOCK('lock5',10) |
@@ -167,7 +167,7 @@ SELECT GET_LOCK('lock5',10);
 
 Connection 2:
 
-```
+```sql
 SELECT GET_LOCK('lock6',10);
 +----------------------+
 | GET_LOCK('lock6',10) |
@@ -178,7 +178,7 @@ SELECT GET_LOCK('lock6',10);
 
 Connection 1:
 
-```
+```sql
 SELECT GET_LOCK('lock6',10); 
 +----------------------+
 | GET_LOCK('lock6',10) |
@@ -189,7 +189,7 @@ SELECT GET_LOCK('lock6',10);
 
 Connection 2:
 
-```
+```sql
 SELECT GET_LOCK('lock5',10);
 ERROR 1213 (40001): Deadlock found when trying to get lock; try restarting transaction
 ```
@@ -201,6 +201,6 @@ ERROR 1213 (40001): Deadlock found when trying to get lock; try restarting trans
 * [IS\_USED\_LOCK](is_used_lock.md)
 * [RELEASE\_ALL\_LOCKS](release_all_locks.md)
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

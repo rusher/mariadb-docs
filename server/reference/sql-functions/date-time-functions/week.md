@@ -2,21 +2,18 @@
 
 ## Syntax
 
-```
+```sql
 WEEK(date[,mode])
 ```
 
 ## Description
 
-This function returns the week number for `date`. The two-argument form of`WEEK()` allows you to specify whether the week starts on Sunday or Monday\
-and whether the return value should be in the range from 0 to 53 or from 1 to\
-53\. If the `mode` argument is omitted, the value of the [default\_week\_format](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#default_week_format) system variable is used.
+This function returns the week number for `date`. The two-argument form of`WEEK()` allows you to specify whether the week starts on Sunday or Monday and whether the return value should be in the range from 0 to 53 or from 1 to 53. If the `mode` argument is omitted, the value of the [default\_week\_format](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#default_week_format) system variable is used.
 
 ### Modes
 
 | Mode | 1st day of week | Range | Week 1 is the 1st week with |
 | ---- | --------------- | ----- | --------------------------- |
-| Mode | 1st day of week | Range | Week 1 is the 1st week with |
 | 0    | Sunday          | 0-53  | a Sunday in this year       |
 | 1    | Monday          | 0-53  | more than 3 days this year  |
 | 2    | Sunday          | 1-53  | a Sunday in this year       |
@@ -30,7 +27,7 @@ With the mode value of 3, which means 'more than 3 days this year', weeks are nu
 
 ## Examples
 
-```
+```sql
 SELECT WEEK('2008-02-20');
 +--------------------+
 | WEEK('2008-02-20') |
@@ -74,7 +71,7 @@ SELECT WEEK('2008-12-31',1);
 +----------------------+
 ```
 
-```
+```sql
 CREATE TABLE t1 (d DATETIME);
 INSERT INTO t1 VALUES
     ("2007-01-30 21:31:07"),
@@ -85,7 +82,7 @@ INSERT INTO t1 VALUES
     ("2004-10-07 11:19:34");
 ```
 
-```
+```sql
 SELECT d, WEEK(d,0), WEEK(d,1) from t1;
 +---------------------+-----------+-----------+
 | d                   | WEEK(d,0) | WEEK(d,1) |
@@ -99,6 +96,6 @@ SELECT d, WEEK(d,0), WEEK(d,1) from t1;
 +---------------------+-----------+-----------+
 ```
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

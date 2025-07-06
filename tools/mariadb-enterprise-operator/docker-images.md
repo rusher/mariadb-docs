@@ -11,6 +11,8 @@ All the Docker images used by this operator are based on [Red Hat UBI](https://c
 * Security and compliance: Regular CVE scanning and vulnerability patching help maintain compliance with industry standards and security best practices.
 * Enterprise-grade support: UBI images are maintained and supported by Red Hat, ensuring timely security updates and long-term stability.
 
+&nbsp;
+
 ## List of compatible images
 
 MariaDB Enterprise Operator is compatible with the following Docker images:
