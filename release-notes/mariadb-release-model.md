@@ -19,6 +19,12 @@ The release schedule looks about the same every year:
 * New major release every year
   * GA is early February (so, RC in November, preview in mid-September)
 
+References:
+
+* https://mariadb.org/challenges-visions/
+* https://mariadb.org/preview-releases/
+* https://mariadb.org/new-innovation-release-model/ 
+
 ## Historical Release Models
 
 ### From [MariaDB 10.7](mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-7-series/what-is-mariadb-107.md) to [MariaDB 11.2](mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-2-series/what-is-mariadb-112.md)
