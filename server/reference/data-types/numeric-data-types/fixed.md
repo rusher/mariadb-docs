@@ -1,23 +1,18 @@
-
 # FIXED
 
-
-# Overview
-
+## Overview
 
 See [DECIMAL](decimal.md).
 
+## EXAMPLES
 
-# EXAMPLES
-
-
-```
+```sql
 CREATE TABLE fixed_example (
   example FIXED
 );
 ```
 
-```
+```sql
 SHOW CREATE TABLE fixed_example\G
 
 *************************** 1. row ***************************
@@ -27,8 +22,6 @@ Create Table: CREATE TABLE `fixed_example` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1
 ```
 
-
 <sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
-
 
 {% @marketo/form formId="4316" %}

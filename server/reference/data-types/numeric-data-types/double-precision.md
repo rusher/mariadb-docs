@@ -2,27 +2,26 @@
 
 ## Syntax
 
-```
+```sql
 DOUBLE PRECISION[(M,D)] [SIGNED | UNSIGNED | ZEROFILL]
 REAL[(M,D)] [SIGNED | UNSIGNED | ZEROFILL]
 ```
 
 ## Description
 
-REAL and DOUBLE PRECISION are synonyms for [DOUBLE](double.md).
+`REAL` and `DOUBLE PRECISION` are synonyms for [DOUBLE](double.md).
 
-Exception: If the REAL\_AS\_FLOAT [SQL mode](../../../server-management/variables-and-modes/sql-mode.md) is enabled,\
-REAL is a synonym for [FLOAT](float.md) rather than[DOUBLE](double.md).
+Exception: If the `REAL_AS_FLOAT` [SQL mode](../../../server-management/variables-and-modes/sql-mode.md) is enabled, `REAL` is a synonym for [FLOAT](float.md) rather than [DOUBLE](double.md).
 
 ## EXAMPLES
 
-```
+```sql
 CREATE TABLE double_precision_example (
   example DOUBLE PRECISION
 );
 ```
 
-```
+```sql
 SHOW CREATE TABLE double_precision_example\G
 <</code>>
 

@@ -1,17 +1,3 @@
----
-layout:
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
----
-
 # Binary Logging of Stored Routines
 
 Binary logging can be row-based, statement-based, or a mix of the two. See [Binary Log Formats](../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md) for more details on the formats. If logging is statement-based, it is possible that a statement will have different effects on the master and on the slave.
@@ -29,8 +15,8 @@ By default, with row-based replication, triggers run on the master, and the effe
 
 If the following criteria are met, then there are some limitations on whether stored routines can be created:
 
-* The [binary log](../../server-management/server-monitoring-logs/binary-log/) is enabled, and the [binlog_format](../../replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md#binlog_format) system variable is set to `STATEMENT`. See [Binary Log Formats](../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md) for more information.
-* The [log_bin_trust_function_creators](../../replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md#log_bin_trust_function_creators) is set to `OFF`, which is the default value.
+* The [binary log](../../server-management/server-monitoring-logs/binary-log/) is enabled, and the [binlog\_format](../../replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md#binlog_format) system variable is set to `STATEMENT`. See [Binary Log Formats](../../server-management/server-monitoring-logs/binary-log/binary-log-formats.md) for more information.
+* The [log\_bin\_trust\_function\_creators](../../replication-cluster-multi-master/standard-replication/replication-and-binary-log-system-variables.md#log_bin_trust_function_creators) is set to `OFF`, which is the default value.
 
 If the above criteria are met, then the following limitations apply:
 
