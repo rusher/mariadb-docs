@@ -307,7 +307,7 @@ SHOW WARNINGS;
 * [Identifier Names](../../reference/sql-structure/sql-language-structure/identifier-names.md)
 * [ALTER VIEW](alter-view.md)
 * [DROP VIEW](drop-view.md)
-* [SHOW CREATE VIEWS](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-usage/programming-customizing-mariadb/views/show-create-views/README.md)
+* [SHOW CREATE VIEWS](../../reference/sql-statements/administrative-sql-statements/show/show-create-view.md)
 * [INFORMATION SCHEMA VIEWS Table](information-schema-views-table.md)
 
 <sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
