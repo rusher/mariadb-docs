@@ -197,7 +197,7 @@ To get the [binary log](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-ma
 SHOW MASTER STATUS
 ```
 
-Then on the node acting as a replica in the cluster, you would set `master_log_file` and `master_log_pos` in the [CHANGE MASTER TO command.](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/replication-statements/change-master-to) For example:
+Then on the node acting as a replica in the cluster, you would set `master_log_file` and `master_log_pos` in the [CHANGE MASTER TO](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/replication-statements/change-master-to) command. For example:
 
 ```
 CHANGE MASTER TO 
