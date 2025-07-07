@@ -133,7 +133,7 @@ START SLAVE;
 
 ### Check the Status of the Second Cluster's Replica
 
-You should be done setting up the replica now, so you should check its status with [SHOW SLAVE STATUS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-replica-status). For example:
+You should be done setting up the replica now, so you should check its status with [SHOW SLAVE STATUS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/replication-statements/legacy-replication-statements/legacy-commands-show-slave-status). For example:
 
 ```
 SHOW SLAVE STATUS\G
@@ -166,13 +166,13 @@ Regardless, you need to ensure that the second cluster is not accepting any writ
 
 #### GTIDs
 
-To get the GTID coordinates on the second cluster, you can check [gtid\_current\_pos](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/standard-replication/gtid#gtid_current_pos) by executing:
+To get the GTID coordinates on the second cluster, you can check [gtid\_current\_pos](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid#gtid_current_pos) by executing:
 
 ```
 SHOW GLOBAL VARIABLES LIKE 'gtid_current_pos';
 ```
 
-Then on the first cluster, you can set up replication by setting [gtid\_slave\_pos](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid#gtid_slave_pos) to the GTID that was returned and then executing [CHANGE MASTER TO](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/replication-statements/change-master-to):
+Then on the first cluster, you can set up replication by setting [gtid\_current\_pos](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid#gtid_current_pos) to the GTID that was returned and then executing [CHANGE MASTER TO](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/replication-statements/change-master-to):
 
 ```
 SET GLOBAL gtid_slave_pos = "0-1-2";
