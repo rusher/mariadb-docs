@@ -16,7 +16,7 @@ There are two time zone settings that can be set within MariaDB--the global serv
 
 The global server time zone can be changed at server startup by setting the `--default-time-zone` option either on the command-line or in a server [option group](../../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md). For example:
 
-```
+```ini
 [mariadb]
 ...
 default_time_zone = 'America/New_York'
@@ -24,13 +24,13 @@ default_time_zone = 'America/New_York'
 
 The global server time zone can also be changed dynamically by setting the [time\_zone](../../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#time_zone) system variable as a user account that has the [SUPER](../../../../sql-statements/account-management-sql-statements/grant.md#super) privilege. For example:
 
-```
+```sql
 SET GLOBAL time_zone = 'America/New_York';
 ```
 
 The current global server time zone can be viewed by looking at the global value of the [time\_zone](../../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#time_zone) system variable. For example:
 
-```
+```sql
 SHOW GLOBAL VARIABLES LIKE 'time_zone';
 +---------------+--------+
 | Variable_name | Value  |
@@ -45,13 +45,13 @@ Each session that connects to the server will also have its own time zone. This 
 
 A session's time zone can be changed dynamically by setting the [time\_zone](../../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#time_zone) system variable. For example:
 
-```
+```sql
 SET time_zone = 'America/New_York';
 ```
 
 The current session time zone can be viewed by looking at the session value of the [time\_zone](../../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#time_zone) system variable. For example:
 
-```
+```sql
 SHOW SESSION VARIABLES LIKE 'time_zone';
 +---------------+--------+
 | Variable_name | Value  |
@@ -66,34 +66,34 @@ The system time zone is determined when the server starts, and it sets the value
 
 * If you are starting the server with [mariadbd-safe](../../../../../server-management/starting-and-stopping-mariadb/mariadbd-safe.md), then you can set the system time zone with the `--timezone` option either on the command-line or in the \[mariadbd-safe] [option group](../../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md). For example:
 
-```
+```ini
 [mariadbd-safe]
 timezone='America/New_York'
 ```
 
 * If you are using a Unix-like operating system, then you can set the system time zone by setting the `TZ` [environment variable](../../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/mariadb-environment-variables.md) in your shell before starting the server. For example:
 
-```
+```bash
 $ export TZ='America/New_York'
 $ service mariadb start
 ```
 
 * On some Linux operating systems, you can change the default time zone for the whole system by making the [/etc/localtime](https://www.freedesktop.org/software/systemd/man/localtime.html) symbolic link point to the desired time zone. For example:
 
-```
+```bash
 $ sudo rm /etc/localtime
 $ sudo ln -s /usr/share/zoneinfo/America/New_York /etc/localtime
 ```
 
 * On some Debian-based Linux operating systems, you can change the default time zone for the whole system by executing the following:
 
-```
+```bash
 sudo dpkg-reconfigure tzdata
 ```
 
 * On Linux operating systems that use [systemd](../../../../../server-management/starting-and-stopping-mariadb/systemd.md), you can change the default time zone for the whole system by using the [timedatectl](https://www.freedesktop.org/software/systemd/man/timedatectl.html) utility. For example:
 
-```
+```bash
 sudo timedatectl set-timezone America/New_York
 ```
 

@@ -1,8 +1,8 @@
 # Character Set and Collation Overview
 
-## What Are Character Sets and Collations
+## What are Character Sets and Collations?
 
-A character set is a set of characters while a collation is the rules for comparing and sorting a particular character set.
+A character set is a set of characters, while a collation comprises the rules for comparing and sorting a particular character set.
 
 For example, a subset of a character set could consist of the letters `A`, `B` and `C`. A default collation could define these as appearing in an ascending order of `A, B, C`.
 
@@ -14,14 +14,23 @@ As an example, by default, the character `y` comes between `x` and `z`, while in
 
 ## Viewing Character Sets and Collations
 
-Prior to [MariaDB 11.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-6-rolling-releases/mariadb-11-6-0-release-notes), the default [character set](./) is `latin1` and the default collation is `latin1_swedish_ci`. In [MariaDB 11.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-6-rolling-releases/what-is-mariadb-116) the default character set is `utf8mb4` and the default collation is `utf8mb4_uca1400_ai_ci`.\
+{% tabs %}
+{% tab title="Current" %}
+The default character set is `utf8mb4` and the default collation is `utf8mb4_uca1400_ai_ci`.\
 This may differ in some distros, see for example [Differences in MariaDB in Debian](../../../../server-management/install-and-upgrade-mariadb/installing-mariadb/troubleshooting-installation-issues/installation-issues-on-debian-and-ubuntu/differences-in-mariadb-in-debian-and-ubuntu.md).
+{% endtab %}
+
+{% tab title="< 11.6" %}
+The default [character set](./) is `latin1` and the default collation is `latin1_swedish_ci`.\
+This may differ in some distros, see for example [Differences in MariaDB in Debian](../../../../server-management/install-and-upgrade-mariadb/installing-mariadb/troubleshooting-installation-issues/installation-issues-on-debian-and-ubuntu/differences-in-mariadb-in-debian-and-ubuntu.md).
+{% endtab %}
+{% endtabs %}
 
 You can view a full list of character sets and collations supported by MariaDB at [Supported Character Sets and Collations](supported-character-sets-and-collations.md), or see what's supported on your server with the [SHOW CHARACTER SET](../../../sql-statements/administrative-sql-statements/show/show-character-set.md) and [SHOW COLLATION](../../../sql-statements/administrative-sql-statements/show/show-collation.md) commands.
 
 By default, `A` comes before `Z`, so the following evaluates to true:
 
-```
+```sql
 SELECT "A" < "Z";
 +-----------+
 | "A" < "Z" |
@@ -32,7 +41,7 @@ SELECT "A" < "Z";
 
 By default, comparisons are case-insensitive:
 
-```
+```sql
 SELECT "A" < "a", "A" = "a";
 +-----------+-----------+
 | "A" < "a" | "A" = "a" |
@@ -47,7 +56,7 @@ Character sets and collations can be set from the server level right down to the
 
 For example, `ue` and `ü` are by default evaluated differently.
 
-```
+```sql
 SELECT 'Mueller' = 'Müller';
 +----------------------+
 | 'Müller' = 'Mueller' |
@@ -58,7 +67,7 @@ SELECT 'Mueller' = 'Müller';
 
 By using the [collation\_connection](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#collation_connection) system variable to change the connection character set to `latin1_german2_ci`, or German phone book, the same two characters will evaluate as equivalent.
 
-```
+```sql
 SET collation_connection = latin1_german2_ci;
 
 SELECT 'Mueller' = 'Müller';
