@@ -2,7 +2,7 @@
 
 ## Overview
 
-See [MEDIUMTEXT](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/data-types/string-data-types/data-types-mediumtext/README.md).
+See [MEDIUMTEXT](mediumtext.md).
 
 ## EXAMPLES
 

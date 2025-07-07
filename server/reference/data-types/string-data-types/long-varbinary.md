@@ -2,7 +2,7 @@
 
 ## Overview
 
-See [MEDIUMBLOB](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/data-types/string-data-types/data-types-mediumblob/README.md).
+See [MEDIUMBLOB](mediumblob.md).
 
 ## EXAMPLES
 
