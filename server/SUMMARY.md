@@ -2577,3 +2577,4 @@
       * [Password Reuse Check Plugin](reference/plugins/password-validation-plugins/password-reuse-check-plugin.md)
       * [password\_reuse\_check\_interval](reference/plugins/password-validation-plugins/password_reuse_check_interval.md)
       * [Simple Password Check Plugin](reference/plugins/password-validation-plugins/simple-password-check-plugin.md)
+* [SET SESSION AUTHORIZATION](set-session-authorization.md)
