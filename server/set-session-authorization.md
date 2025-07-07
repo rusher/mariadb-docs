@@ -8,3 +8,25 @@ From [MariaDB 12.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-commu
 * &#x20;Users are required to have the [SET USER](reference/sql-statements/account-management-sql-statements/grant.md#set-user) privilege
 * Does not work inside [transactions](reference/sql-statements/transactions/), the [Performance Schema](server-usage/storage-engines/performance_schema-storage-engine.md) and [stored procedures](server-usage/stored-routines/stored-procedures/).
 
+### Examples
+
+```
+// select user(), current_user(), database(); 
++--------------------+--------------------+------------+
+| user()             | current_user()     | database() |
++--------------------+--------------------+------------+
+| msandbox@localhost | msandbox@localhost | test       |
++--------------------+--------------------+------------+
+1 row in set (0.000 sec)
+
+set session authorization foo@localhost; 
+
+select user(), current_user(), database(); 
++---------------+----------------+------------+
+| user()        | current_user() | database() |
++---------------+----------------+------------+
+| foo@localhost | foo@%          | NULL       |
++---------------+----------------+------------+
+
+```
+
