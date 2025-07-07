@@ -437,8 +437,7 @@ For very difficult or critical errors, you should consider uploading the followi
 * Your contact information.
 * The associated [JIRA issue identifier](https://jira.mariadb.org) for the bug, if you [reported a bug](../../community/community/bug-tracking/reporting-bugs.md).
 
-This information will allow the MariaDB developers at the MariaDB Corporation to analyze it and try to\
-create a fix.
+This information will allow MariaDB developers to analyze it and try to create a fix.
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
