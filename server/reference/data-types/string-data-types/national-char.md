@@ -4,7 +4,7 @@
 
 Fixed-length string of specific character set with limit up to 255 bytes.
 
-EXAMPLES
+## Examples
 
 ```sql
 CREATE TABLE national_char_example (
@@ -24,7 +24,7 @@ Create Table: CREATE TABLE `national_char_example` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1
 ```
 
-## EXTERNAL REFERENCES
+## External References
 
 Additional information is available [here](varchar.md).
 
