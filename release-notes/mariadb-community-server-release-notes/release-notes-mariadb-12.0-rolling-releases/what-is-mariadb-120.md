@@ -1,4 +1,4 @@
-# Changes and Improvements in MariaDB 12.0
+# MariaDB 12.0 Changes & Improvements
 
 MariaDB 12.0 is a [rolling release](../../mariadb-release-model.md). It is an evolution of [MariaDB 11.8](../mariadb-11-8-series/what-is-mariadb-118.md) with several entirely new features.
 
@@ -7,7 +7,7 @@ MariaDB 12.0 is a [rolling release](../../mariadb-release-model.md). It is an ev
 ### Security <a href="#security" id="security"></a>
 
 * Support for passphrase protected keys ([MDEV-14091](https://jira.mariadb.org/browse/MDEV-14091))
-* New SET SESSION AUTHORIZATION ([MDEV-20299](https://jira.mariadb.org/browse/MDEV-20299))
+* New statement [SET SESSION AUTHORIZATION](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/account-management-sql-statements/set-session-authorization) for performing actions as another user ([MDEV-20299](https://jira.mariadb.org/browse/MDEV-20299))
 * Implement SHA2 support for file\_key\_management.so plugin (TDE) ([MDEV-34712](https://jira.mariadb.org/browse/MDEV-34712))
 
 ### Data types <a href="#data-types" id="data-types"></a>
