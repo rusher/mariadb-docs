@@ -1,12 +1,12 @@
 # NATURAL\_SORT\_KEY
 
-**MariaDB starting with** [**10.7.0**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-7-series/mariadb-1070-release-notes)
-
-NATURAL\_SORT\_KEY was added in [MariaDB 10.7.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-7-series/mariadb-1070-release-notes).
+{% hint style="info" %}
+`NATURAL_SORT_KEY` is available from MariaDB 10.7.
+{% endhint %}
 
 ## Syntax
 
-```
+```sql
 NATURAL_SORT_KEY(str)
 ```
 
@@ -24,7 +24,7 @@ You can use also use `NATURAL_SORT_KEY` with [generated columns](../../sql-state
 
 ### Strings and Numbers
 
-```
+```sql
 CREATE TABLE t1 (c TEXT);
 
 INSERT INTO t1 VALUES ('b1'),('a2'),('a11'),('a1');
@@ -52,7 +52,7 @@ SELECT c FROM t1 ORDER BY c;
 
 Unsorted, regular sort and natural sort:
 
-```
+```sql
 TRUNCATE t1;
 
 INSERT INTO t1 VALUES 
@@ -100,7 +100,7 @@ SELECT c FROM t1 ORDER BY NATURAL_SORT_KEY(c);
 
 Sorting IPs, unsorted, regular sort and natural sort::
 
-```
+```sql
 TRUNCATE t1;
 
 INSERT INTO t1 VALUES 
@@ -151,7 +151,7 @@ SELECT c FROM t1 ORDER BY NATURAL_SORT_KEY(c);
 
 Using with a [generated column](../../sql-statements/data-definition/create/generated-columns.md):
 
-```
+```sql
 CREATE TABLE t(c VARCHAR(3), k VARCHAR(4) AS (NATURAL_SORT_KEY(c)) INVISIBLE);
 
 INSERT INTO t(c) VALUES ('b1'),('a2'),('a11'),('a10');
@@ -169,7 +169,7 @@ SELECT * FROM t ORDER by k;
 
 Note that if the virtual column is not longer, results may not be as expected:
 
-```
+```sql
 CREATE TABLE t2(c VARCHAR(3), k VARCHAR(3) AS (NATURAL_SORT_KEY(c)) INVISIBLE);
 
 INSERT INTO t2(c) VALUES ('b1'),('a2'),('a11'),('a10');
@@ -189,7 +189,7 @@ SELECT * FROM t2 ORDER by k;
 
 Ignoring leading zeroes can lead to undesirable results in certain contexts. For example:
 
-```
+```sql
 CREATE TABLE t3 (a VARCHAR(4));
 
 INSERT INTO t3 VALUES 
@@ -230,9 +230,9 @@ SELECT a FROM t3 ORDER BY NATURAL_SORT_KEY(a);
 +------+
 ```
 
-This may not be what we were hoping for in a 'natural' sort. A workaround is to sort by both NATURAL\_SORT\_KEY and regular sort.
+This may not be what we were hoping for in a 'natural' sort. A workaround is to sort by both `NATURAL_SORT_KEY` and regular sort.
 
-```
+```sql
 SELECT a FROM t3 ORDER BY NATURAL_SORT_KEY(a), a;
 +------+
 | a    |

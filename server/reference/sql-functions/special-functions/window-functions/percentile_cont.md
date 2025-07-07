@@ -1,36 +1,27 @@
-
-# PERCENTILE_CONT
-
+# PERCENTILE\_CONT
 
 ## Syntax
 
-
 ## Description
 
-
-`PERCENTILE_CONT()` (standing for continuous percentile) is a [window function](README.md) which returns a value which corresponds to the given fraction in the sort order. If required, it will interpolate between adjacent input items.
-
+`PERCENTILE_CONT()` (standing for continuous percentile) is a [window function](./) which returns a value which corresponds to the given fraction in the sort order. If required, it will interpolate between adjacent input items.
 
 Essentially, the following process is followed to find the value to return:
 
-
 * Get the number of rows in the partition, denoted by N
-* RN = p*(N-1), where p denotes the argument to the PERCENTILE_CONT function
+* RN = p\*(N-1), where p denotes the argument to the PERCENTILE\_CONT function
 * calculate the FRN(floor row number) and CRN(column row number for the group( FRN= floor(RN) and CRN = ceil(RN))
 * look up rows FRN and CRN
 * If (CRN = FRN = RN) then the result is (value of expression from row at RN)
 * Otherwise the result is
-* (CRN - RN) * (value of expression for row at FRN) +
-* (RN - FRN) * (value of expression for row at CRN)
-
+* (CRN - RN) \* (value of expression for row at FRN) +
+* (RN - FRN) \* (value of expression for row at CRN)
 
 The [MEDIAN function](median.md) is a specific case of `PERCENTILE_CONT`, equivalent to `PERCENTILE_CONT(0.5)`.
 
-
 ## Examples
 
-
-```
+```sql
 CREATE TABLE book_rating (name CHAR(30), star_rating TINYINT);
 
 INSERT INTO book_rating VALUES ('Lord of the Ladybirds', 5);
@@ -94,11 +85,8 @@ SELECT name, PERCENTILE_CONT(0.6) WITHIN GROUP (ORDER BY star_rating)
 
 ## See Also
 
-
 * [MEDIAN()](median.md) - a special case of `PERCENTILE_CONT` equivalent to `PERCENTILE_CONT(0.5)`
 
-
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
-
 
 {% @marketo/form formId="4316" %}

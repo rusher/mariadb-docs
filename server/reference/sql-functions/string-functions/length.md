@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 LENGTH(str)
 ```
 
@@ -10,16 +10,15 @@ LENGTH(str)
 
 Returns the length of the string `str`.
 
-In the default mode, when [Oracle mode from MariaDB 10.3](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-functions/string-functions/broken-reference/README.md) is not set, the length is measured in bytes. In this case, a multi-byte character counts as multiple bytes. This means that for a string\
-containing five two-byte characters, `LENGTH()` returns 10, whereas [CHAR\_LENGTH()](char_length.md) returns 5.
+In the default mode, when [Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle) is not set, the length is measured in bytes. In this case, a multi-byte character counts as multiple bytes. This means that for a string containing five two-byte characters, `LENGTH()` returns 10, whereas [CHAR\_LENGTH()](char_length.md) returns 5.
 
-When running [Oracle mode from MariaDB 10.3](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-functions/string-functions/broken-reference/README.md), the length is measured in characters, and `LENGTH` is a synonym for [CHAR\_LENGTH()](char_length.md).
+When running Oracle mode, the length is measured in characters, and `LENGTH` is a synonym for [CHAR\_LENGTH()](char_length.md).
 
 If `str` is not a string value, it is converted into a string. If `str` is `NULL`, the function returns `NULL`.
 
 ## Examples
 
-```
+```sql
 SELECT LENGTH('MariaDB');
 +-------------------+
 | LENGTH('MariaDB') |
@@ -28,9 +27,9 @@ SELECT LENGTH('MariaDB');
 +-------------------+
 ```
 
-When [Oracle mode](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-functions/string-functions/broken-reference/README.md) from [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103) is not set:
+When Oracle mode is not set:
 
-```
+```sql
 SELECT CHAR_LENGTH('π'), LENGTH('π'), LENGTHB('π'), OCTET_LENGTH('π');
 +-------------------+--------------+---------------+--------------------+
 | CHAR_LENGTH('π')  | LENGTH('π')  | LENGTHB('π')  | OCTET_LENGTH('π')  |
@@ -39,9 +38,9 @@ SELECT CHAR_LENGTH('π'), LENGTH('π'), LENGTHB('π'), OCTET_LENGTH('π');
 +-------------------+--------------+---------------+--------------------+
 ```
 
-In [Oracle mode from MariaDB 10.3](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-functions/string-functions/broken-reference/README.md):
+In Oracle mode:
 
-```
+```sql
 SELECT CHAR_LENGTH('π'), LENGTH('π'), LENGTHB('π'), OCTET_LENGTH('π');
 +-------------------+--------------+---------------+--------------------+
 | CHAR_LENGTH('π')  | LENGTH('π')  | LENGTHB('π')  | OCTET_LENGTH('π')  |
@@ -55,7 +54,7 @@ SELECT CHAR_LENGTH('π'), LENGTH('π'), LENGTHB('π'), OCTET_LENGTH('π');
 * [CHAR\_LENGTH()](char_length.md)
 * [LENGTHB()](lengthb.md)
 * [OCTET\_LENGTH()](octet_length.md)
-* [Oracle mode from MariaDB 10.3](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-functions/string-functions/broken-reference/README.md)
+* [Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle)
 
 <sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 

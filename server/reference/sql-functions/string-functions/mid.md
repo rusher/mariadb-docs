@@ -1,23 +1,18 @@
-
 # MID
 
 ## Syntax
 
-
-```
+```sql
 MID(str,pos,len)
 ```
 
 ## Description
 
-
 MID(str,pos,len) is a synonym for [SUBSTRING(str,pos,len)](substring.md).
-
 
 ## Examples
 
-
-```
+```sql
 SELECT MID('abcd',4,1);
 +-----------------+
 | MID('abcd',4,1) |
@@ -35,8 +30,7 @@ SELECT MID('abcd',2,2);
 
 A negative starting position:
 
-
-```
+```sql
 SELECT MID('abcd',-2,4);
 +------------------+
 | MID('abcd',-2,4) |
@@ -45,8 +39,6 @@ SELECT MID('abcd',-2,4);
 +------------------+
 ```
 
-
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
-
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

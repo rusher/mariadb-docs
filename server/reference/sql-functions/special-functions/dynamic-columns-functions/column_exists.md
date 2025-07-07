@@ -2,9 +2,9 @@
 
 ## Syntax
 
-```
-COLUMN_EXISTS(dyncol_blob, column_nr);
-COLUMN_EXISTS(dyncol_blob, column_name);
+```sql
+COLUMN_EXISTS(dyncol_blob, column_nr)
+COLUMN_EXISTS(dyncol_blob, column_name)
 ```
 
 ## Description

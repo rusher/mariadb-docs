@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 VALUE(col_name)
 ```
 
@@ -18,11 +18,11 @@ The `VALUES()` function can still be used but only in `INSERT ... ON DUPLICATE K
 
 ## Examples
 
-```
+```sql
 INSERT INTO t (a,b,c) VALUES (1,2,3),(4,5,6)
     ON DUPLICATE KEY UPDATE c=VALUE(a)+VALUE(b);
 ```
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

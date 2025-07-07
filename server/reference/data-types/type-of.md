@@ -1,28 +1,23 @@
-
 # TYPE OF
 
-
-# Overview
-
+## Overview
 
 This is special declaration only available inside a stored procedure.
 
+## EXAMPLES
 
-# EXAMPLES
-
-
-```
+```sql
 CREATE TABLE typeof_table(
   descr VARCHAR(20),
   val INT
 );
 ```
 
-```
+```sql
 INSERT INTO typeof_table VALUES ('Life', 42);
 ```
 
-```
+```sql
 DELIMITER $$
 CREATE PROCEDURE typeof_proc()
 BEGIN
@@ -35,7 +30,7 @@ $$
 DELIMITER ;
 ```
 
-```
+```sql
 CALL typeof_proc();
 
 +-------+------+
@@ -45,8 +40,6 @@ CALL typeof_proc();
 +-------+------+
 ```
 
-
 <sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
-
 
 {% @marketo/form formId="4316" %}

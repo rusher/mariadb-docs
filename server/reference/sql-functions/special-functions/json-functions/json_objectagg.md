@@ -1,12 +1,12 @@
 # JSON\_OBJECTAGG
 
-**MariaDB starting with** [**10.5.0**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1050-release-notes)
-
-JSON\_OBJECTAGG was added in [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1050-release-notes).
+{% hint style="info" %}
+`JSON_OBJECTAGG` is available from MariaDB 10.5.
+{% endhint %}
 
 ## Syntax
 
-```
+```sql
 JSON_OBJECTAGG(key, value)
 ```
 
@@ -16,14 +16,14 @@ JSON_OBJECTAGG(key, value)
 
 The maximum returned length in bytes is determined by the [group\_concat\_max\_len](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#group_concat_max_len) server system variable.
 
-Returns NULL in the case of an error, or if the result contains no rows.
+Returns `NULL` in the case of an error, or if the result contains no rows.
 
 `JSON_OBJECTAGG` cannot currently be used as a [window function](../window-functions/).
 
 ## Examples
 
-```
-select * from t1;
+```sql
+SELECT * FROM t1;
 +------+-------+
 | a    | b     |
 +------+-------+

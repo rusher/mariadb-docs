@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 CAST(expr AS type)
 ```
 
@@ -18,19 +18,17 @@ The type can be one of the following values:
 * [DATETIME](../../data-types/date-and-time-data-types/datetime.md)
 * \[DECIMAL[(M\[,D\])](../../data-types/numeric-data-types/decimal.md)]
 * [DOUBLE](../../data-types/numeric-data-types/double.md)
-* [FLOAT](../../data-types/numeric-data-types/float.md) (from [MariaDB 10.4.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-1045-release-notes))
+* [FLOAT](../../data-types/numeric-data-types/float.md)
 * [INTEGER](../../data-types/numeric-data-types/int.md)
   * Short for `SIGNED INTEGER`
 * SIGNED \[INTEGER]
 * UNSIGNED \[INTEGER]
 * [TIME](../../data-types/date-and-time-data-types/time.md)
-* [VARCHAR](../../data-types/string-data-types/varchar.md) (in [Oracle mode](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-functions/string-functions/broken-reference/README.md), from [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103))
+* [VARCHAR](../../data-types/string-data-types/varchar.md) (in [Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle))
 
 The main difference between `CAST` and [CONVERT()](convert.md) is that [CONVERT(expr,type)](convert.md) is ODBC syntax while `CAST(expr as type)` and [CONVERT(... USING ...)](convert.md) are SQL92 syntax.
 
-In [MariaDB 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-functions/string-functions/broken-reference/README.md) and later, you can use the `CAST()` function with the `INTERVAL` keyword.
-
-Until [MariaDB 5.5.31](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/mariadb-5531-release-notes), `X'HHHH'`, the standard SQL syntax for binary string literals, erroneously worked in the same way as `0xHHHH`. In 5.5.31 it was intentionally changed to behave as a string in all contexts (and never as a number).
+You can use the `CAST()` function with the `INTERVAL` keyword.
 
 This introduced an incompatibility with previous versions of MariaDB, and all versions of MySQL (see the example below).
 
@@ -38,15 +36,17 @@ This introduced an incompatibility with previous versions of MariaDB, and all ve
 
 Simple casts:
 
-```
+```sql
 SELECT CAST("abc" AS BINARY);
 SELECT CAST("1" AS UNSIGNED INTEGER);
 SELECT CAST(123 AS CHAR CHARACTER SET utf8)
 ```
 
+{% hint style="warning" %}
 Note that when one casts to [CHAR](../../data-types/string-data-types/char.md) without specifying the character set, the [collation\_connection](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#collation_connection) character set collation will be used. When used with `CHAR CHARACTER SET`, the default collation for that character set will be used.
+{% endhint %}
 
-```
+```sql
 SELECT COLLATION(CAST(123 AS CHAR));
 +------------------------------+
 | COLLATION(CAST(123 AS CHAR)) |
@@ -64,7 +64,7 @@ SELECT COLLATION(CAST(123 AS CHAR CHARACTER SET utf8));
 
 If you also want to change the collation, you have to use the `COLLATE` operator:
 
-```
+```sql
 SELECT COLLATION(CAST(123 AS CHAR CHARACTER SET utf8) 
   COLLATE utf8_unicode_ci);
 +-------------------------------------------------------------------------+
@@ -74,9 +74,9 @@ SELECT COLLATION(CAST(123 AS CHAR CHARACTER SET utf8)
 +-------------------------------------------------------------------------+
 ```
 
-Using `CAST()` to order an [ENUM](../../../../data-types/string-data-types/enum.md) field as a [CHAR](../../../../data-types/string-data-types/char.md) rather than the internal numerical value:
+Using `CAST()` to order an [ENUM](../../data-types/string-data-types/enum.md) field as a [CHAR](../../data-types/string-data-types/char.md) rather than the internal numerical value:
 
-```
+```sql
 CREATE TABLE enum_list (enum_field enum('c','a','b'));
 
 INSERT INTO enum_list (enum_field) 
@@ -105,9 +105,9 @@ ORDER BY CAST(enum_field AS CHAR);
 +------------+
 ```
 
-From [MariaDB 5.5.31](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/mariadb-5531-release-notes), the following will trigger warnings, since `x'aa'` and `'X'aa'` no longer behave as a number. Previously, and in all versions of MySQL, no warnings are triggered since they did erroneously behave as a number:
+The following will trigger warnings, since `x'aa'` and `'X'aa'` doesn't behave as a number. In all versions of MySQL, no warnings are triggered since they did erroneously behave as a number:
 
-```
+```sql
 SELECT CAST(0xAA AS UNSIGNED), CAST(x'aa' AS UNSIGNED), CAST(X'aa' AS UNSIGNED);
 +------------------------+-------------------------+-------------------------+
 | CAST(0xAA AS UNSIGNED) | CAST(x'aa' AS UNSIGNED) | CAST(X'aa' AS UNSIGNED) |
@@ -122,7 +122,7 @@ Warning (Code 1292): Truncated incorrect INTEGER value: '\xAA'
 
 Casting to intervals:
 
-```
+```sql
 SELECT CAST(2019-01-04 AS INTERVAL DAY_SECOND(2)) AS "Cast";
 
 +-------------+

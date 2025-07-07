@@ -1,16 +1,5 @@
 ---
 description: Adding and Modifying Data Guide
-layout:
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: true
 ---
 
 # Adding & Changing Data Guide

@@ -26,7 +26,6 @@ The following variables can be set while passed as commandline options to aria\_
 
 | Option                    | Description                                                                                                                                                                                                        |
 | ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Option                    | Description                                                                                                                                                                                                        |
 | -b, --backup              | Make a backup of the table as table\_name.OLD.                                                                                                                                                                     |
 | --character-sets-dir=name | Directory where character sets are.                                                                                                                                                                                |
 | -h, --datadir             | Path for control file (and logs if --logdir not used). From [MariaDB 10.5.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1053-release-notes) |

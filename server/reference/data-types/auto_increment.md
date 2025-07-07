@@ -2,13 +2,13 @@
 
 ## Description
 
-The `AUTO_INCREMENT` attribute can be used to generate a unique identity for new rows. When you insert a new record to the table (or upon adding an [AUTO\_INCREMENT](auto_increment.md) attribute with the [ALTER TABLE](../sql-statements/data-definition/alter/alter-table.md) statement), and the auto\_increment field is [NULL](null-values.md) or DEFAULT (in the case of an INSERT), the value will automatically be incremented. This also applies to 0, unless the [NO\_AUTO\_VALUE\_ON\_ZERO SQL\_MODE](../../server-management/variables-and-modes/sql-mode.md#no_auto_value_on_zero) is enabled.
+The `AUTO_INCREMENT` attribute can be used to generate a unique identity for new rows. When you insert a new record into the table (or upon adding an [AUTO\_INCREMENT](auto_increment.md) attribute with the [ALTER TABLE](../sql-statements/data-definition/alter/alter-table.md) statement), and the `AUTO_INCREMENT` field is [NULL](null-values.md) or DEFAULT (in the case of an INSERT), automatically be incremented. This also applies to `0`, unless the [NO\_AUTO\_VALUE\_ON\_ZERO SQL\_MODE](../../server-management/variables-and-modes/sql-mode.md#no_auto_value_on_zero) is enabled.
 
-`AUTO_INCREMENT` columns start from 1 by default. The automatically generated value can never be lower than 0.
+`AUTO_INCREMENT` columns start from 1 by default. The automatically generated value can never be lower than `0`.
 
 Each table can have only one `AUTO_INCREMENT` column. It must defined as a key (not necessarily the `PRIMARY KEY` or `UNIQUE` key). In some storage engines (including the default [InnoDB](../../server-usage/storage-engines/innodb/)), if the key consists of multiple columns, the `AUTO_INCREMENT` column must be the first column. Storage engines that permit the column to be placed elsewhere are [Aria](../../server-usage/storage-engines/aria/), [MyISAM](../../server-usage/storage-engines/myisam-storage-engine/), [MERGE](../../server-usage/storage-engines/merge.md), [Spider](../../server-usage/storage-engines/spider/), [TokuDB](../../server-usage/storage-engines/tokudb/), [BLACKHOLE](../../server-usage/storage-engines/blackhole.md), [FederatedX](../../server-usage/storage-engines/federatedx-storage-engine/) and [Federated](../../server-usage/storage-engines/legacy-storage-engines/federated-storage-engine.md).
 
-```
+```sql
 CREATE TABLE animals (
      id MEDIUMINT NOT NULL AUTO_INCREMENT,
      name CHAR(30) NOT NULL,
@@ -20,7 +20,7 @@ INSERT INTO animals (name) VALUES
     ('fox'),('whale'),('ostrich');
 ```
 
-```
+```sql
 SELECT * FROM animals;
 +----+---------+
 | id | name    |
@@ -36,7 +36,7 @@ SELECT * FROM animals;
 
 `SERIAL` is an alias for `BIGINT UNSIGNED NOT NULL AUTO_INCREMENT UNIQUE`.
 
-```
+```sql
 CREATE TABLE t (id SERIAL, c CHAR(1)) ENGINE=InnoDB;
 
 SHOW CREATE TABLE t \G
@@ -55,7 +55,7 @@ You can use an [ALTER TABLE](../sql-statements/data-definition/alter/alter-table
 
 [LAST\_INSERT\_ID()](../sql-functions/secondary-functions/information-functions/last_insert_id.md) can be used to see the last `AUTO_INCREMENT` value inserted by the current session.
 
-```
+```sql
 ALTER TABLE animals AUTO_INCREMENT=8;
 
 INSERT INTO animals (name) VALUES ('aardvark');
@@ -94,7 +94,7 @@ SELECT * FROM animals;
 
 ## InnoDB
 
-AUTO\_INCREMENT is persistent in InnoDB. Prior to [MariaDB 10.2.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-1023-release-notes), InnoDB used an auto-increment counter that was stored in memory. When the server restarted, the counter was re-initialized to the highest value used in the table, which canceled the effects of any AUTO\_INCREMENT = N option in the table statements).
+`AUTO_INCREMENT` is persistent in InnoDB.
 
 See also [AUTO\_INCREMENT Handling in InnoDB](../../server-usage/storage-engines/innodb/auto_increment-handling-in-innodb.md).
 
@@ -106,7 +106,7 @@ If the new value is higher than the current maximum value, the `AUTO_INCREMENT` 
 
 The following example demonstrates these behaviors:
 
-```
+```sql
 CREATE TABLE t (id INTEGER UNSIGNED AUTO_INCREMENT PRIMARY KEY) ENGINE = InnoDB;
 
 INSERT INTO t VALUES (NULL);
@@ -139,19 +139,21 @@ SELECT id FROM t;
 +----+
 ```
 
+{% hint style="warning" %}
 The [ARCHIVE](../../server-usage/storage-engines/archive.md) storage engine does not allow to insert a value that is lower than the current maximum.
+{% endhint %}
 
 ## Missing Values
 
-An AUTO\_INCREMENT column normally has missing values. This happens because if a row is deleted, or an AUTO\_INCREMENT value is explicitly updated, old values are never re-used. The REPLACE statement also deletes a row, and its value is wasted. With InnoDB, values can be reserved by a transaction; but if the transaction fails (for example, because of a ROLLBACK) the reserved value will be lost.
+An `AUTO_INCREMENT` column normally has missing values. This happens because if a row is deleted, or an `AUTO_INCREMENT` value is explicitly updated, old values are never re-used. The `REPLACE` statement also deletes a row, and its value is wasted. With InnoDB, values can be reserved by a transaction; but if the transaction fails (for example, because of a `ROLLBACK`) the reserved value will be lost.
 
-Thus AUTO\_INCREMENT values can be used to sort results in a chronological order, but not to create a numeric sequence.
+Thus `AUTO_INCREMENT` values can be used to sort results in a chronological order, but not to create a numeric sequence.
 
 ## Replication
 
-To make master-master or Galera safe to use `AUTO_INCREMENT` one should use the system variables [auto\_increment\_increment](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) and [auto\_increment\_offset](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) to generate unique values for each server.
+To make master-master or Galera safe to use `AUTO_INCREMENT` , you should use the system variables [auto\_increment\_increment](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) and [auto\_increment\_offset](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md) to generate unique values for each server.
 
-```
+```sql
 SET @@auto_increment_increment=3;
 
 SHOW VARIABLES LIKE 'auto_inc%';
@@ -201,7 +203,7 @@ SELECT * FROM t2;
 
 If `auto_increment_offset` is larger than `auto_increment_increment`, the value of `auto_increment_offset` is ignored, and the offset reverts to the default of 1 instead:
 
-```
+```sql
 SET @@auto_increment_offset=5;
 
 SHOW VARIABLES LIKE 'auto_inc%';
@@ -253,11 +255,11 @@ If `auto_increment_increment` is larger than the current number of masters, then
 
 This has to be done if `auto_increment_increment` is 1. If one has more than one master (`auto_increment_increment` > 1), there is a way to add more masters with only having to restart one of the masters. The 'trick' is to configure one of the masters to not use all the values in its current sequence.&#x20;
 
-The following example should illustrate how to do it. Assume you have two masters, A and B.
+The following example illustrates how to do it. Assume you have two masters, A and B.
 
 In this case you will have auto\_increment\_increment=2 for both masters and A would have `auto_increment_offset=1` and B would have `auto_increment_offset=2`. For A, all `auto_increment` and generated sequence values will be odd.
 
-```
+```sql
 1
 3
 5
@@ -266,7 +268,7 @@ In this case you will have auto\_increment\_increment=2 for both masters and A w
 
 For B, all values will be even:
 
-```
+```sql
 2
 4
 6
@@ -277,7 +279,7 @@ See the [Replication](auto_increment.md#replication) section above.
 
 If we change `auto_increment_increment` from `2` to `4` in A, it will now generate values from this sequence:
 
-```
+```sql
 1
 5
 9
@@ -286,7 +288,7 @@ If we change `auto_increment_increment` from `2` to `4` in A, it will now genera
 
 As you can see, values `3`, `7`, `11` are not going to be used.We can get C to use values from this sequence by configuring `auto_increment_increment=4` and `auto_increment_offset=3`.
 
-```
+```sql
 3
 7
 11
@@ -295,18 +297,18 @@ As you can see, values `3`, `7`, `11` are not going to be used.We can get C to u
 If we would like to add a 4'th master (D), we can do that by changing 'B' to use `auto_increment_increment=4` and then configure D to have `auto_increment_increment=4` and `auto_increment_offset=4`.&#x20;
 
 {% hint style="info" %}
-Note that when changing the `auto_increment_increment` or `auto_increment_offset` on a server, one has to either restart the server or ensure that all current connections are killed. This is needed to force all connections to use the new values.&#x20;
+Note that when changing the `auto_increment_increment` or `auto_increment_offset` on a server, you have to either restart the server or ensure that all current connections are killed. This is needed to force all connections to use the new values.&#x20;
 
-Also ensure that if you want to use the above trick, you always double the value of `auto_increment_increment`.  This is needed to ensure that the sequence used will not conflict with numbers generated by any other master.
+Also ensure that, if you want to use the above trick, you always double the value of `auto_increment_increment`.  This is needed to ensure that the sequence used will not conflict with numbers generated by any other master.
 {% endhint %}
 
 ## CHECK Constraints, DEFAULT Values and Virtual Columns
 
-auto\_increment columns are not permitted in [CHECK constraints](../sql-statements/data-definition/constraint.md), [DEFAULT value expressions](../sql-statements/data-definition/create/create-table.md#default) and [virtual columns](../sql-statements/data-definition/create/generated-columns.md). They were permitted until [MariaDB 10.2.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-1026-release-notes), but did not work correctly. See [MDEV-11117](https://jira.mariadb.org/browse/MDEV-11117).
+`AUTO_INCREMENT` columns are not permitted in [CHECK constraints](../sql-statements/data-definition/constraint.md), [DEFAULT value expressions](../sql-statements/data-definition/create/create-table.md#default) and [virtual columns](../sql-statements/data-definition/create/generated-columns.md).
 
 ## Generating Auto\_Increment Values When Adding the Attribute
 
-```
+```sql
 CREATE OR REPLACE TABLE t1 (a INT);
 INSERT t1 VALUES (0),(0),(0);
 ALTER TABLE t1 MODIFY a INT NOT NULL AUTO_INCREMENT PRIMARY KEY;
@@ -320,7 +322,7 @@ SELECT * FROM t1;
 +---+
 ```
 
-```
+```sql
 CREATE OR REPLACE TABLE t1 (a INT);
 INSERT t1 VALUES (5),(0),(8),(0);
 ALTER TABLE t1 MODIFY a INT NOT NULL AUTO_INCREMENT PRIMARY KEY;
@@ -337,7 +339,7 @@ SELECT * FROM t1;
 
 If the [NO\_AUTO\_VALUE\_ON\_ZERO SQL\_MODE](../../server-management/variables-and-modes/sql-mode.md#no_auto_value_on_zero) is set, zero values will not be automatically incremented:
 
-```
+```sql
 SET SQL_MODE='no_auto_value_on_zero';
 CREATE OR REPLACE TABLE t1 (a INT);
 INSERT t1 VALUES (3), (0);

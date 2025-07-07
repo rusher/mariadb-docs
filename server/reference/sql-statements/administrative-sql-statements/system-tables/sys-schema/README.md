@@ -3,17 +3,6 @@ description: >-
   This schema provides a simplified and user-friendly view of Performance Schema
   and Information Schema data, aiding in database diagnostics and performance
   tuning.
-layout:
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: false
 ---
 
 # Sys Schema

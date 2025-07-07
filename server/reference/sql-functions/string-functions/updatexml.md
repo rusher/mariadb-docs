@@ -2,21 +2,17 @@
 
 ## Syntax
 
-```
+```sql
 UpdateXML(xml_target, xpath_expr, new_xml)
 ```
 
 ## Description
 
-This function replaces a single portion of a given fragment of XML markup`xml_target` with a new XML fragment `new_xml`, and then returns the\
-changed XML. The portion of `xml_target` that is replaced matches an XPath\
-expression `xpath_expr` supplied by the user. If no expression matching`xpath_expr` is found, or if multiple matches are found, the function returns\
-the original `xml_target` XML fragment. All three arguments should be\
-strings.
+This function replaces a single portion of a given fragment of XML markup`xml_target` with a new XML fragment `new_xml`, and then returns the changed XML. The portion of `xml_target` that is replaced matches an XPath expression `xpath_expr` supplied by the user. If no expression matching `xpath_expr` is found, or if multiple matches are found, the function returns the original `xml_target` XML fragment. All three arguments should be strings.
 
 ## Examples
 
-```
+```sql
 SELECT
     UpdateXML('<a><b>ccc</b><d></d></a>', '/a', '<e>fff</e>') AS val1,
     UpdateXML('<a><b>ccc</b><d></d></a>', '/b', '<e>fff</e>') AS val2,

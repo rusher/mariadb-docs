@@ -1,26 +1,20 @@
-
 # DEGREES
 
 ## Syntax
 
-
-```
+```sql
 DEGREES(X)
 ```
 
 ## Description
 
-
-Returns the argument *`X`*, converted from radians to degrees.
-
+Returns the argument _`X`_, converted from radians to degrees.
 
 This is the converse of the [RADIANS()](radians.md) function.
 
-
 ## Examples
 
-
-```
+```sql
 SELECT DEGREES(PI());
 +---------------+
 | DEGREES(PI()) |
@@ -43,8 +37,6 @@ SELECT DEGREES(45);
 +-----------------+
 ```
 
-
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
-
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

@@ -1,28 +1,23 @@
-
 # ROW TYPE OF
 
-
-# Overview
-
+## Overview
 
 This is special declaration only available inside a stored procedure.
 
+## EXAMPLES
 
-# EXAMPLES
-
-
-```
+```sql
 CREATE TABLE rowtypeof_table(
   descr VARCHAR(20),
   val INT
 );
 ```
 
-```
+```sql
 INSERT INTO rowtypeof_table VALUES ('Life', 42);
 ```
 
-```
+```sql
 DELIMITER $$
 CREATE PROCEDURE rowtypeof_proc()
 BEGIN
@@ -34,7 +29,7 @@ $$
 DELIMITER ;
 ```
 
-```
+```sql
 CALL rowtypeof_proc();
 
 +------------+----------+
@@ -44,8 +39,6 @@ CALL rowtypeof_proc();
 +------------+----------+
 ```
 
-
 <sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
-
 
 {% @marketo/form formId="4316" %}

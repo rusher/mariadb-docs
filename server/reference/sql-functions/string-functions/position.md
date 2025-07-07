@@ -1,23 +1,17 @@
-
 # POSITION
 
 ## Syntax
 
-
-```
+```sql
 POSITION(substr IN str)
 ```
 
 ## Description
 
+`POSITION(substr IN str)` is a synonym for [LOCATE(substr,str)](locate.md).
 
-POSITION(substr IN str) is a synonym for [LOCATE(substr,str)](locate.md).
+The function is part of ODBC 3.0.
 
-
-It's part of ODBC 3.0.
-
-
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
-
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}
