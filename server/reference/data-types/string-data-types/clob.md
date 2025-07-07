@@ -2,7 +2,7 @@
 
 ## Overview
 
-See [LONGTEXT](longtext.md).
+This is a synonym for [LONGTEXT](longtext.md).
 
 ## EXAMPLES
 

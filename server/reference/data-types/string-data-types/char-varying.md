@@ -2,7 +2,7 @@
 
 ## Overview
 
-See [VARCHAR](varchar.md).
+This is a synonym for [VARCHAR](varchar.md).
 
 ## EXAMPLES
 

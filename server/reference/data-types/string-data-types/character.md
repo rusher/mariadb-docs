@@ -2,7 +2,7 @@
 
 ## Overview
 
-See [CHAR](char.md).
+This is a synonym for [CHAR](char.md).
 
 ## EXAMPLES
 
