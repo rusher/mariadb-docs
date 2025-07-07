@@ -8,7 +8,7 @@ The Spider storage engine is a [storage engine](../) with built-in sharding feat
 
 When a table is created with the Spider storage engine, the table links to the table on a remote server. The remote table can be of any storage engine. The table link is concretely achieved by the establishment of the connection from a local MariaDB server to a remote MariaDB server. The link is shared for all tables that are part of a the same transaction.
 
-The Spider documentation on the MariaDB documentation is currently incomplete. See the Spider website for more:, as well as the [spider-1.0-doc](https://bazaar.launchpad.net/~kentokushiba/spiderformysql/spider-1.0-doc/files) and [spider-2.0-doc](https://bazaar.launchpad.net/~kentokushiba/spiderformysql/spider-2.0-doc/files) repositories.
+The Spider documentation on the MariaDB documentation is currently incomplete. See the Spider website for more:, as well as the spider-1.0-doc and spider-2.0-doc repositories.
 
 ## Spider Versions in MariaDB
 
@@ -25,7 +25,7 @@ The Spider documentation on the MariaDB documentation is currently incomplete. S
 | Spider 3.2.18  | [MariaDB 10.0.17](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-10017-release-notes)                                                                                                                                                                                      | Gamma    |
 | Spider 3.2.11  | [MariaDB 10.0.14](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-10014-release-notes)                                                                                                                                                                                      | Gamma    |
 | Spider 3.2.4   | [MariaDB 10.0.12](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-10012-release-notes)                                                                                                                                                                                      | Gamma    |
-| Spider 3.2     | [MariaDB 10.0.11](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/spider/broken-reference/README.md)                                                                                                                                                                                                                       | Gamma    |
+| Spider 3.2     | [MariaDB 10.0.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-10011-release-notes)                                                                                                                                                                                      | Gamma    |
 | Spider 3.0     | [MariaDB 10.0.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-1004-release-notes)                                                                                                                                                                                        | Beta     |
 
 ## Usage
@@ -491,9 +491,9 @@ mysql> SELECT sum(k) FROM sbtest;
 
 #### High Availability Setup
 
-**MariaDB starting with** [**10.7.5**](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/spider/broken-reference/README.md)
+**MariaDB starting with** [**10.7.5**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-7-series/mariadb-1075-release-notes)
 
-Spider's high availability feature has been deprecated ([MDEV-28479](https://jira.mariadb.org/browse/MDEV-28479)), and will be deleted. Please use other high availability solutions like [replication](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/spider/broken-reference/README.md) or [galera-cluster](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/galera-cluster/README.md).
+Spider's high availability feature has been deprecated ([MDEV-28479](https://jira.mariadb.org/browse/MDEV-28479)), and will be deleted. Please use other high availability solutions like [replication](../myrocks/myrocks-and-replication.md) or [galera-cluster](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/readme/mariadb-galera-cluster-usage-guide).
 
 ![spider9](../../../.gitbook/assets/spider9.png)
 

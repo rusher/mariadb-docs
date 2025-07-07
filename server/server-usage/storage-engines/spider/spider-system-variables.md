@@ -508,7 +508,7 @@ Before this change, a non-minus-one system variable value would override the tab
 * Default Table Value: `1024`
 * DSN Parameter Name: `isa`
 * Range: `-1` to `2147483647`
-* Deprecated: [MariaDB 10.7.5](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/spider/broken-reference/README.md), [MariaDB 10.8.4](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/spider/broken-reference/README.md), [MariaDB 10.9.2](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/spider/broken-reference/README.md)
+* Deprecated: [MariaDB 10.7.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-7-series/mariadb-1075-release-notes), [MariaDB 10.8.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-8-series/mariadb-1084-release-notes), [MariaDB 10.9.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-9-series/mariadb-1092-release-notes)
 
 #### `spider_internal_limit`
 
@@ -1448,7 +1448,7 @@ Before this change, a non-minus-one system variable value would override the tab
 
 #### `spider_use_flash_logs`
 
-* Description: Whether to push [FLUSH LOGS](https://mariadb.com/kb/en/flush-logs) statements down to remote backend servers.
+* Description: Whether to push [FLUSH LOGS](../../../reference/sql-statements/administrative-sql-statements/flush-commands/) statements down to remote backend servers.
   * `OFF` Doesn't push the statement down.
   * `ON` Pushes the statement down.
 * Scope: Global, Session
@@ -1493,7 +1493,7 @@ Before this change, a non-minus-one system variable value would override the tab
 #### `spider_use_snapshot_with_flush_tables`
 
 * Description:\
-  Whether to encapsulate [FLUSH LOGS](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/spider/flush-logs/README.md) and [UNLOCK TABLES](../../../reference/sql-statements/transactions/lock-tables.md) statements when `START TRANSACTION WITH CONSISTENT` and `FLUSH TABLE WITH READ LOCK` statements are sent to the remote backend servers.
+  Whether to encapsulate [FLUSH LOGS](../../../reference/sql-statements/administrative-sql-statements/flush-commands/) and [UNLOCK TABLES](../../../reference/sql-statements/transactions/lock-tables.md) statements when `START TRANSACTION WITH CONSISTENT` and `FLUSH TABLE WITH READ LOCK` statements are sent to the remote backend servers.
   * `0` : No encapsulation.
   * `1` : Encapsulates, only when the [spider\_use\_all\_conns\_snapshot](spider-system-variables.md#spider_use_all_conns_snapshot) system variable i set to `1`.
   * `2` :\
@@ -1520,11 +1520,11 @@ Before this change, a non-minus-one system variable value would override the tab
 
 #### `spider_version`
 
-* Description: The current Spider version. Removed in [MariaDB 10.9.2](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/spider/broken-reference/README.md) when the Spider version number was matched with the server version.
+* Description: The current Spider version. Removed in [MariaDB 10.9.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-9-series/mariadb-1092-release-notes) when the Spider version number was matched with the server version.
 * Scope: Global
 * Dynamic: No
 * Data Type: `string`
-* Removed: [MariaDB 10.9.2](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/spider/broken-reference/README.md)
+* Removed: [MariaDB 10.9.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-9-series/mariadb-1092-release-notes)
 
 #### `spider_wait_timeout`
 
