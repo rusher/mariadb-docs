@@ -2,19 +2,15 @@
 
 ## Syntax
 
-```
+```sql
 TEXT[(M)] [CHARACTER SET charset_name] [COLLATE collation_name]
 ```
 
 ## Description
 
-A `TEXT` column with a maximum length of `65,535` (`216 - 1`)\
-characters. The effective maximum length is less if the value contains\
-multi-byte characters. Each `TEXT` value is stored using a two-byte length\
-prefix that indicates the number of bytes in the value. If you need a bigger storage, consider using [MEDIUMTEXT](mediumtext.md) instead.
+A `TEXT` column with a maximum length of `65,535` (`216 - 1`) characters. The effective maximum length is less if the value contains multi-byte characters. Each `TEXT` value is stored using a two-byte length prefix that indicates the number of bytes in the value. If you need a bigger storage, consider using [MEDIUMTEXT](mediumtext.md) instead.
 
-An optional length `M` can be given for this type. If this is done, MariaDB\
-creates the column as the smallest `TEXT` type large enough to hold values`M` characters long.
+An optional length `M` can be given for this type. If this is done, MariaDB creates the column as the smallest `TEXT` type large enough to hold values`M` characters long.
 
 `BLOB` and `TEXT` columns can be assigned a [DEFAULT](../../sql-statements/data-definition/create/create-table.md#default) value.
 
@@ -22,7 +18,7 @@ creates the column as the smallest `TEXT` type large enough to hold values`M` ch
 
 ### Trailing spaces:
 
-```
+```sql
 CREATE TABLE strtest (d TEXT(10));
 INSERT INTO strtest VALUES('Maria   ');
 
@@ -41,16 +37,16 @@ SELECT d LIKE 'Maria',d LIKE 'Maria   ' FROM strtest;
 +----------------+-------------------+
 ```
 
-### Example of TEXT:
+### Example of TEXT
 
-```
+```sql
 CREATE TABLE text_example (
    description VARCHAR(20),
    example TEXT
 ) DEFAULT CHARSET=latin1; -- One byte per char makes the examples clearer
 ```
 
-```
+```sql
 INSERT INTO text_example VALUES
    ('Normal foo', 'foo'),
    ('Trailing spaces foo', 'foo      '),
@@ -59,12 +55,12 @@ INSERT INTO text_example VALUES
    ('Maximum', RPAD('', 65535, 'x'));
 ```
 
-```
+```sql
 SELECT description, LENGTH(example) AS length
    FROM text_example;
 ```
 
-```
+```sql
 +---------------------+--------+
 | description         | length |
 +---------------------+--------+
@@ -76,33 +72,33 @@ SELECT description, LENGTH(example) AS length
 +---------------------+--------+
 ```
 
-### Data Too Long
+### Data too Long
 
-When SQL\_MODE is strict (the default) a value is considered "too long" when its length exceeds the size of the data type, and an error is generated.
+When `SQL_MODE` is strict (the default) a value is considered "too long" when its length exceeds the size of the data type, and an error is generated.
 
-Example of data too long behavior for TEXT:
+Example of data too long behavior for `TEXT`:
 
-```
+```sql
 TRUNCATE text_example;
 
 INSERT INTO text_example VALUES
    ('Overflow', RPAD('', 65536, 'x'));
 ```
 
-```
+```sql
 ERROR 1406 (22001): Data too long for column 'example' at row 1
 ```
 
 ## Indexing
 
-A [unique index](../../../mariadb-quickstart-guides/mariadb-indexes-guide.md#unique-index) can be created on a `TEXT` column. This was not possible prior to [MariaDB 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/data-types/string-data-types/broken-reference/README.md)
+A [unique index](../../../mariadb-quickstart-guides/mariadb-indexes-guide.md#unique-index) can be created on a `TEXT` column.
 
 Internally, this uses hash indexing to quickly check the values and if a hash collision is found, the actual stored values are compared in order to retain the uniqueness.
 
-## Difference between [VARCHAR](varchar.md) and TEXT
+## Difference between VARCHAR and TEXT
 
 * [VARCHAR](varchar.md) columns can be fully indexed. `TEXT` columns can only be indexed over a specified length.
-* Using TEXT or [BLOB](blob.md) in a [SELECT](../../sql-statements/data-manipulation/selecting-data/select.md) query that uses temporary tables for storing intermediate results will force the temporary table to be disk based (using the [Aria storage engine](../../../server-usage/storage-engines/aria/aria-storage-engine.md) instead of the [memory storage engine](../../../server-usage/storage-engines/memory-storage-engine.md), which is a bit slower. This is not that bad as the [Aria storage engine](../../../server-usage/storage-engines/aria/aria-storage-engine.md) caches the rows in memory. To get the benefit of this, one should ensure that the [aria\_pagecache\_buffer\_size](../../../server-usage/storage-engines/aria/aria-system-variables.md#aria_pagecache_buffer_size) variable is big enough to hold most of the row and index data for temporary tables.
+* Using `TEXT` or [BLOB](blob.md) in a [SELECT](../../sql-statements/data-manipulation/selecting-data/select.md) query that uses temporary tables for storing intermediate results will force the temporary table to be disk based (using the [Aria storage engine](../../../server-usage/storage-engines/aria/aria-storage-engine.md) instead of the [memory storage engine](../../../server-usage/storage-engines/memory-storage-engine.md), which is a bit slower. This is not that bad as the [Aria storage engine](../../../server-usage/storage-engines/aria/aria-storage-engine.md) caches the rows in memory. To get the benefit of this, one should ensure that the [aria\_pagecache\_buffer\_size](../../../server-usage/storage-engines/aria/aria-system-variables.md#aria_pagecache_buffer_size) variable is big enough to hold most of the row and index data for temporary tables.
 
 ### For Storage Engine Developers
 
