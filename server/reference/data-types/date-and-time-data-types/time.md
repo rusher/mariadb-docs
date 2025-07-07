@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 TIME [(<microsecond precision>)]
 ```
 
@@ -12,7 +12,7 @@ A time. The range is `'-838:59:59.999999'` to `'838:59:59.999999'`. [Microsecond
 
 MariaDB displays `TIME` values in `'HH:MM:SS.ssssss'` format, but allows assignment of times in looser formats, including 'D HH:MM:SS', 'HH:MM:SS', 'HH:MM', 'D HH:MM', 'D HH', 'SS', or 'HHMMSS', as well as permitting dropping of any leading zeros when a delimiter is provided, for example '3:9:10'. For details, see [date and time literals](../../sql-structure/sql-language-structure/date-and-time-literals.md).
 
-The [--mysql56-temporal-format](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#mysql56_temporal_format) option, on by default, allows MariaDB to store TIMEs using the same low-level format MySQL 5.6 uses.
+The [--mysql56-temporal-format](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#mysql56_temporal_format) option, on by default, allows MariaDB to store `TIME` values using the same low-level format MySQL 5.6 uses.
 
 ### Internal Format
 
@@ -24,7 +24,7 @@ In order to update table columns from the older format to the newer format, exec
 
 For instance, if you have a `TIME` column in your table:
 
-```
+```sql
 SHOW VARIABLES LIKE 'mysql56_temporal_format';
 
 +-------------------------+-------+
@@ -36,13 +36,13 @@ SHOW VARIABLES LIKE 'mysql56_temporal_format';
 ALTER TABLE example_table MODIFY ts_col TIME;
 ```
 
-When MariaDB executes the [ALTER TABLE](../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md) statement, it converts the data from the older temporal format to the newer one.
+When MariaDB executes the [ALTER TABLE](../../sql-statements/data-definition/alter/alter-table.md) statement, it converts the data from the older temporal format to the newer one.
 
 In the event that you have several tables and columns using temporal data types that you want to switch over to the new format, make sure the system variable is enabled, then perform a dump and restore using `mariadb-dump`. The columns using relevant temporal data types are restored using the new temporal format.
 
-Starting from [MariaDB 10.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1051-release-notes) columns with old temporal formats are marked with a `/* mariadb-5.3 */` comment in the output of [SHOW CREATE TABLE](../../sql-statements/administrative-sql-statements/show/show-create-table.md), [SHOW COLUMNS](../../sql-statements/administrative-sql-statements/show/show-columns.md), [DESCRIBE](../../sql-statements/administrative-sql-statements/describe.md) statements, as well as in the `COLUMN_TYPE` column of the [INFORMATION\_SCHEMA.COLUMNS Table](../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-columns-table.md).
+Columns with old temporal formats are marked with a `/* mariadb-5.3 */` comment in the output of [SHOW CREATE TABLE](../../sql-statements/administrative-sql-statements/show/show-create-table.md), [SHOW COLUMNS](../../sql-statements/administrative-sql-statements/show/show-columns.md), [DESCRIBE](../../sql-statements/administrative-sql-statements/describe.md) statements, as well as in the `COLUMN_TYPE` column of the [INFORMATION\_SCHEMA.COLUMNS Table](../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-columns-table.md).
 
-```
+```sql
 SHOW CREATE TABLE mariadb5312_time\G
 *************************** 1. row ***************************
        Table: mariadb5312_time
@@ -52,11 +52,13 @@ Create Table: CREATE TABLE `mariadb5312_time` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1
 ```
 
-Note, columns with the current format are not marked with a comment.
+{% hint style="warning" %}
+Columns with the current format are not marked with a comment.
+{% endhint %}
 
 ## Examples
 
-```
+```sql
 INSERT INTO time VALUES ('90:00:00'), ('800:00:00'), (800), (22), (151413), ('9:6:3'), ('12 09');
 
 SELECT * FROM time;
@@ -73,29 +75,29 @@ SELECT * FROM time;
 +-----------+
 ```
 
-Time\_Example:
+Time example:
 
-```
+```sql
 CREATE TABLE time_example (
   description VARCHAR(30),
   example TIME(6)
 );
 ```
 
-```
+```sql
 INSERT INTO time_example VALUES
   ('HH:MM:SS', '12:34:56'),
   ('HHMMSS', '123456'),
   ('SS.microsec', '42.123456');
 ```
 
-The resulting data would look like this:
+The resulting data look like this:
 
-```
+```sql
 SELECT * FROM time_example;
 ```
 
-```
+```sql
 +-------------+-----------------+
 | description | example         |
 +-------------+-----------------+
@@ -109,6 +111,6 @@ SELECT * FROM time_example;
 
 * [Data Type Storage Requirements](../data-type-storage-requirements.md)
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

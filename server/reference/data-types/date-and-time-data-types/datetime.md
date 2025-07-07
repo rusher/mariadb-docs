@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 DATETIME [(microsecond precision)]
 ```
 
@@ -10,13 +10,11 @@ DATETIME [(microsecond precision)]
 
 A date and time combination.
 
-MariaDB displays `DATETIME` values in '`YYYY-MM-DD HH:MM:SS.ffffff`' format, but\
-allows assignment of values to `DATETIME` columns using either strings or\
-numbers. For details, see [date and time literals](../../sql-structure/sql-language-structure/date-and-time-literals.md).
+MariaDB displays `DATETIME` values in '`YYYY-MM-DD HH:MM:SS.ffffff`' format, but allows assignment of values to `DATETIME` columns using either strings or numbers. For details, see [date and time literals](../../sql-structure/sql-language-structure/date-and-time-literals.md).
 
-DATETIME columns also accept [CURRENT\_TIMESTAMP](../../sql-functions/date-time-functions/now.md) as the default value.
+`DATETIME` columns also accept [CURRENT\_TIMESTAMP](../../sql-functions/date-time-functions/now.md) as the default value.
 
-The [--mysql56-temporal-format](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#mysql56_temporal_format) option, on by default, allows MariaDB to store DATETMEs using the same low-level format MySQL 5.6 uses. For more information, see [Internal Format](datetime.md#internal-format), below.
+The [--mysql56-temporal-format](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#mysql56_temporal_format) option, on by default, allows MariaDB to store `DATETME` values using the same low-level format MySQL 5.6 uses. For more information, see [Internal Format](datetime.md#internal-format), below.
 
 For storage requirements, see [Data Type Storage Requirements](../data-type-storage-requirements.md).
 
@@ -30,7 +28,7 @@ MariaDB also supports '`0000-00-00`' as a special _zero-date_ value, unless [NO\
 
 ## Oracle Mode
 
-In [Oracle mode](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/data-types/date-and-time-data-types/broken-reference/README.md), `DATE` with a time portion is a synonym for `DATETIME`. See also [mariadb\_schema](../../sql-statements/administrative-sql-statements/system-tables/mariadb_schema.md).
+In [Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle), `DATE` with a time portion is a synonym for `DATETIME`. See also [mariadb\_schema](../../sql-statements/administrative-sql-statements/system-tables/mariadb_schema.md).
 
 ## Internal Format
 
@@ -42,7 +40,7 @@ In order to update table columns from the older format to the newer format, exec
 
 For instance, if you have a `DATETIME` column in your table:
 
-```
+```sql
 SHOW VARIABLES LIKE 'mysql56_temporal_format';
 
 +-------------------------+-------+
@@ -58,9 +56,9 @@ When MariaDB executes the [ALTER TABLE](../../sql-statements/data-definition/alt
 
 In the event that you have several tables and columns using temporal data types that you want to switch over to the new format, make sure the system variable is enabled, then perform a dump and restore using `mysqldump`. The columns using relevant temporal data types are restored using the new temporal format.
 
-Starting from [MariaDB 10.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1051-release-notes) columns with old temporal formats are marked with a `/* mariadb-5.3 */` comment in the output of [SHOW CREATE TABLE](../../sql-statements/administrative-sql-statements/show/show-create-table.md), [SHOW COLUMNS](../../sql-statements/administrative-sql-statements/show/show-columns.md), [DESCRIBE](../../sql-statements/administrative-sql-statements/describe.md) statements, as well as in the `COLUMN_TYPE` column of the [INFORMATION\_SCHEMA.COLUMNS Table](../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-columns-table.md).
+Columns with old temporal formats are marked with a `/* mariadb-5.3 */` comment in the output of [SHOW CREATE TABLE](../../sql-statements/administrative-sql-statements/show/show-create-table.md), [SHOW COLUMNS](../../sql-statements/administrative-sql-statements/show/show-columns.md), [DESCRIBE](../../sql-statements/administrative-sql-statements/describe.md) statements, as well as in the `COLUMN_TYPE` column of the [INFORMATION\_SCHEMA.COLUMNS Table](../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-columns-table.md).
 
-```
+```sql
 SHOW CREATE TABLE mariadb5312_datetime\G
 *************************** 1. row ***************************
        Table: mariadb5312_datetime
@@ -72,7 +70,7 @@ Create Table: CREATE TABLE `mariadb5312_datetime` (
 
 ## Examples
 
-```
+```sql
 CREATE TABLE t1 (d DATETIME);
 
 INSERT INTO t1 VALUES ("2011-03-11"), ("2012-04-19 13:08:22"),
@@ -88,7 +86,7 @@ SELECT * FROM t1;
 +---------------------+
 ```
 
-```
+```sql
 CREATE TABLE t2 (d DATETIME(6));
 
 INSERT INTO t2 VALUES ("2011-03-11"), ("2012-04-19 13:08:22"),
@@ -106,7 +104,7 @@ SELECT * FROM t2;
 
 Strings used in datetime context are automatically converted to datetime(6). If you want to have a datetime without seconds, you should use [CONVERT(..,datetime)](../../sql-functions/string-functions/convert.md).
 
-```
+```sql
 SELECT CONVERT('2007-11-30 10:30:19',datetime);
 +-----------------------------------------+
 | CONVERT('2007-11-30 10:30:19',datetime) |
@@ -124,14 +122,14 @@ SELECT CONVERT('2007-11-30 10:30:19',datetime(6));
 
 ### DATETIME Format
 
-```
+```sql
 CREATE TABLE datetime_formats_example (
   description VARCHAR(30),
   example DATETIME(6)
 );
 ```
 
-```
+```sql
 -- The time zone has no effect on the values
 SET @@time_zone = '+00:00';
 
@@ -151,11 +149,11 @@ INSERT INTO datetime_formats_example VALUES
 
 The resulting data would look like this:
 
-```
+```sql
 SELECT * FROM datetime_formats_example;
 ```
 
-```
+```sql
 +-------------------------+----------------------------+
 | description             | example                    |
 +-------------------------+----------------------------+
@@ -171,7 +169,7 @@ SELECT * FROM datetime_formats_example;
 
 The default microsecond precision when unspecified is 0, and you can use that in a cast in order to trim off stored microseconds:
 
-```
+```sql
 SELECT description, CONVERT(example, DATETIME) AS example
   FROM datetime_formats_example;
 
@@ -192,7 +190,7 @@ SELECT description, CONVERT(example, DATETIME) AS example
 
 * [Data Type Storage Requirements](../data-type-storage-requirements.md)
 * [CONVERT()](../../sql-functions/string-functions/convert.md)
-* [Oracle mode from MariaDB 10.3](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/data-types/date-and-time-data-types/broken-reference/README.md)
+* [Oracle mode](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/sql_modeoracle)
 * [mariadb\_schema](../../sql-statements/administrative-sql-statements/system-tables/mariadb_schema.md) data type qualifier
 
 <sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)

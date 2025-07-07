@@ -2465,7 +2465,7 @@
     * [Date and Time Data Types](reference/data-types/date-and-time-data-types/README.md)
       * [DATE](reference/data-types/date-and-time-data-types/date.md)
       * [DATETIME](reference/data-types/date-and-time-data-types/datetime.md)
-      * [sql\_tsi\_year](reference/data-types/date-and-time-data-types/sql_tsi_year.md)
+      * [SQL\_TSI\_YEAR](reference/data-types/date-and-time-data-types/sql_tsi_year.md)
       * [TIME](reference/data-types/date-and-time-data-types/time.md)
       * [TIMESTAMP](reference/data-types/date-and-time-data-types/timestamp.md)
       * [YEAR Data Type](reference/data-types/date-and-time-data-types/year-data-type.md)
