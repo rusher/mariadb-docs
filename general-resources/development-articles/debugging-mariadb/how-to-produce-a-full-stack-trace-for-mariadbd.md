@@ -267,7 +267,7 @@ For example, to open a core file with [gdb](https://www.gnu.org/software/gdb/doc
 sudo gdb /usr/sbin/mariadbd  /var/lib/mysql/core.932
 ```
 
-Be sure to replace `/usr/sbin/mariadbd` with the path to your `mariadbd` binary (might be `mysqld` on [MariaDB 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/general-resources/development-articles/debugging-mariadb/broken-reference/README.md) and earlier) and to also replace `/var/lib/mysql/core.932` with the path to your core file.
+Be sure to replace `/usr/sbin/mariadbd` with the path to your `mariadbd` binary (might be `mysqld` on [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104) and earlier) and to also replace `/var/lib/mysql/core.932` with the path to your core file.
 
 Once [gdb](https://www.gnu.org/software/gdb/documentation) has opened the core file, if you want to [log all output to a file](https://sourceware.org/gdb/current/onlinedocs/gdb/Logging-Output.html#Logging-Output), then you could execute the following commands:
 
@@ -423,7 +423,7 @@ If you encounter some problem in MariaDB, then MariaDB's developers would apprec
 
 * Your full stack trace.
 * Your [error log](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/server-monitoring-logs/error-log).
-* Your [option files](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb-with-option-files).
+* Your [option files](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files).
 * How to reproduce the problem.
 * [SHOW ENGINE INNODB STATUS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-engine-innodb-status)
 * [SHOW CREATE TABLE {table](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-create-table) (for each table in query) and [EXPLAIN {query}](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/analyze-and-explain-statements/explain) if a query related crash.
