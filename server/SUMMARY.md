@@ -1294,6 +1294,7 @@
       * [REVOKE](reference/sql-statements/account-management-sql-statements/revoke.md)
       * [SET DEFAULT ROLE](reference/sql-statements/account-management-sql-statements/set-default-role.md)
       * [SET PASSWORD](reference/sql-statements/account-management-sql-statements/set-password.md)
+      * [SET SESSION AUTHORIZATION](reference/sql-statements/account-management-sql-statements/set-session-authorization.md)
       * [SET ROLE](reference/sql-statements/account-management-sql-statements/set-role.md)
     * [Administrative Statements](reference/sql-statements/administrative-sql-statements/README.md)
       * [BINLOG](reference/sql-statements/administrative-sql-statements/binlog.md)
@@ -2577,4 +2578,3 @@
       * [Password Reuse Check Plugin](reference/plugins/password-validation-plugins/password-reuse-check-plugin.md)
       * [password\_reuse\_check\_interval](reference/plugins/password-validation-plugins/password_reuse_check_interval.md)
       * [Simple Password Check Plugin](reference/plugins/password-validation-plugins/simple-password-check-plugin.md)
-* [SET SESSION AUTHORIZATION](set-session-authorization.md)
