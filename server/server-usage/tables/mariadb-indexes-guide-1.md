@@ -1,6 +1,6 @@
 # Indexes
 
-For a basic overview, see [The Essentials of an Index](../../mariadb-quickstart-guides/essentials-of-an-index-guide.md).
+For a basic overview, see [The Essentials of an Index](mariadb-indexes-guide-1.md).
 
 There are four main kinds of indexes; primary keys (unique and not null), unique indexes (unique and can be null), plain indexes (not necessarily unique) and full-text indexes (for full-text searching).
 
