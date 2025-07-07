@@ -9,7 +9,7 @@
 Essentially, the following process is followed to find the value to return:
 
 * Get the number of rows in the partition.
-* Walk through the partition, in order, until finding the the first row with [CUME\_DIST()](cume_dist.md) >= function\_argument.
+* Walk through the partition, in order, until finding the first row with [CUME\_DIST()](cume_dist.md) >= function\_argument.
 
 ## Examples
 
