@@ -26,7 +26,7 @@ This statement sets the transaction isolation level or the transaction access mo
 * With the `SESSION` keyword, the statement sets the default transaction level for all subsequent transactions performed within the current session.
 * Without any `SESSION` or `GLOBAL` keyword, the statement sets the isolation level for only the next (not started) transaction performed within the current session. After that it reverts to using the session value.
 
-A change to the global default isolation level requires the [SUPER](../account-management-sql-commands/grant.md) privilege. Any session is free to change its session isolation level (even in the middle of a transaction), or the isolation level for its next transaction.
+A change to the global default isolation level requires the [SUPER](../account-management-sql-statements/grant.md#super) privilege. Any session is free to change its session isolation level (even in the middle of a transaction), or the isolation level for its next transaction.
 
 ### Isolation Level
 
