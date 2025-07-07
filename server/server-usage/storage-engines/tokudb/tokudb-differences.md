@@ -28,7 +28,7 @@ On this page we list all the known differences between the TokuDB from [Tokutek]
 
 * No `INSERT NOAR` or `UPDATE NOAR` commands.
   * We are working with Tokutek to improve this feature before adding it to MariaDB.
-* No online [OPTIMIZE TABLE](../../../ha-and-performance/optimization-and-tuning/optimizing-tables/optimize-table.md) before [10.0.11](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-usage/storage-engines/tokudb/broken-reference/README.md) ([r4199](https://bazaar.launchpad.net/~maria-captains/maria/10.0/revision/4199))
+* No online [OPTIMIZE TABLE](../../../ha-and-performance/optimization-and-tuning/optimizing-tables/optimize-table.md) before [10.0.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-10011-release-notes) (r4199)
 * No gdb stack trace on sigsegv
 * Before 10.0.10 the compression type did not default to the [tokudb\_row\_format](tokudb-system-variables.md#tokudb_row_format) session variable. If `COMPRESSION=` was not included in `CREATE TABLE` or `ALTER TABLE ENGINE=TokuDB` then the TokuDB table was created uncompressed.
 
