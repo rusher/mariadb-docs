@@ -23,7 +23,7 @@ These were discontinued and redirected to [Percona's MySQL and MariaDB forum](ht
 
 ## IRC
 
-Tokutek has a `#tokutek` [IRC](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/irc/README.md) channel on [Freenode](https://freenode.net).
+Tokutek has a `#tokutek` IRC channel on [Freenode](https://freenode.net).
 
 The following link will take you to the `#tokutek` channel using Freenode's web IRC client:
 
@@ -31,7 +31,7 @@ The following link will take you to the `#tokutek` channel using Freenode's web 
 
 ## See Also
 
-The [Where to find other MariaDB users and developers](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/tokudb/broken-reference/README.md) page has many great MariaDB resources listed.
+The Where to find other MariaDB users and developers page has many great MariaDB resources listed.
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
