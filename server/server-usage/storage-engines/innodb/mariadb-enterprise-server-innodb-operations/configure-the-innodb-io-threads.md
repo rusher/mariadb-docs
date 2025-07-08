@@ -47,7 +47,7 @@ The method to configure the number of I/O threads depends on the server version 
 
 ## Configure InnoDB's Maximum Number of Asynchronous I/O Requests with SET GLOBAL (ES 10.5) and Later
 
-Starting with [MariaDB Enterprise Server 10.5](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/mariadb-server-releases-mariadb-enterprise-server-10-5/README.md), InnoDB's maximum number of asynchronous I/O requests can be changed dynamically by setting the [innodb\_read\_io\_threads](../innodb-system-variables.md#innodb_read_io_threads)[innodb\_write\_io\_threads](../innodb-system-variables.md#innodb_write_io_threads) system variables using the [SET GLOBAL](../../../../reference/sql-statements/administrative-sql-statements/set-commands/set.md) statement. The [SET GLOBAL](../../../../reference/sql-statements/administrative-sql-statements/set-commands/set.md) statement requires the SUPER privilege.
+Starting with [MariaDB Enterprise Server 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/enterprise-server/10-5), InnoDB's maximum number of asynchronous I/O requests can be changed dynamically by setting the [innodb\_read\_io\_threads](../innodb-system-variables.md#innodb_read_io_threads)[innodb\_write\_io\_threads](../innodb-system-variables.md#innodb_write_io_threads) system variables using the [SET GLOBAL](../../../../reference/sql-statements/administrative-sql-statements/set-commands/set.md) statement. The [SET GLOBAL](../../../../reference/sql-statements/administrative-sql-statements/set-commands/set.md) statement requires the SUPER privilege.
 
 The value of each system variable is multiplied by 256 to determine the maximum number of asynchronous I/O requests that can be performed by the Background Thread Pool. For example, if you want to allow a maximum of 1024 concurrent asynchronous write I/O requests, the [innodb\_write\_io\_threads](../innodb-system-variables.md#innodb_write_io_threads) system variable should be set to 4 (since 1024/256=4).
 
@@ -119,7 +119,7 @@ Some example configuration file paths for different distributions are shown in t
 
 2. Set the [innodb\_read\_io\_threads](../innodb-system-variables.md#innodb_read_io_threads) and [innodb\_write\_io\_threads](../innodb-system-variables.md#innodb_write_io_threads) system variables in the configuration file.
 
-It needs to be set in a group that will be read by [MariaDB Server](https://mariadb.com/kb/en/MariaDB_Server), such as `[mariadb]` or `[server]`.
+It needs to be set in a group that will be read by [MariaDB Server](../../../), such as `[mariadb]` or `[server]`.
 
 For example:
 
@@ -136,7 +136,7 @@ innodb_write_io_threads=8
 $ sudo systemctl restart mariadb
 ```
 
-Starting with [MariaDB Enterprise Server 10.5](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/mariadb-server-releases-mariadb-enterprise-server-10-5/README.md), the server can use the configuration change without a restart if you use [SET GLOBAL](../../../../reference/sql-statements/administrative-sql-statements/set-commands/set.md).
+Starting with [MariaDB Enterprise Server 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/enterprise-server/10-5), the server can use the configuration change without a restart if you use [SET GLOBAL](../../../../reference/sql-statements/administrative-sql-statements/set-commands/set.md).
 
 <sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
 
