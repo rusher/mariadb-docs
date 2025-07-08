@@ -16,7 +16,7 @@ The first method can be used to install the plugin without restarting the server
 INSTALL SONAME 'auth_ed25519';
 ```
 
-The second method can be used to tell the server to load the plugin when it starts up. The plugin can be installed this way by providing the [--plugin-load](../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md#-plugin-load) or the [--plugin-load-add](../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md#-plugin-load-add) options. This can be specified as a command-line argument to [mariadbd](../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md) or it can be specified in a relevant server [option group](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md). For example:
+The second method can be used to tell the server to load the plugin when it starts up. The plugin can be installed this way by providing the [--plugin-load](../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md#plugin-load) or the [--plugin-load-add](../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md#plugin-load-add) options. This can be specified as a command-line argument to [mariadbd](../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md) or it can be specified in a relevant server [option group](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md). For example:
 
 ```
 [mariadb]
@@ -26,7 +26,7 @@ plugin_load_add = auth_ed25519
 
 ## Uninstalling the Plugin
 
-You can uninstall the plugin dynamically by executing [UNINSTALL SONAME](../../sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md) or [UNINSTALL PLUGIN](../../sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md). For example:
+You can uninstall the plugin dynamically by executing [UNINSTALL SONAME](../../sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md) or [UNINSTALL PLUGIN](../../sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md). For example:&#x20;
 
 ```
 UNINSTALL SONAME 'auth_ed25519';
@@ -56,7 +56,7 @@ CREATE FUNCTION ed25519_password RETURNS STRING SONAME "auth_ed25519.so";
 
 Now you can calculate a password hash by executing:
 
-```
+```sql
 SELECT ed25519_password("secret");
 +---------------------------------------------+
 | SELECT ed25519_password("secret");          |
@@ -94,13 +94,13 @@ You can change a user account's password by executing the [SET PASSWORD](../../s
 SET PASSWORD =  PASSWORD('new_secret')
 ```
 
-You can also change the user account's password with the [ALTER USER](../../sql-statements/account-management-sql-statements/alter-user.md) statement. You would have to specify the name of the plugin in the [IDENTIFIED VIA](../../sql-statements/account-management-sql-statements/alter-user.md#identified-viawith-authentication_plugin) clause while providing the plain-text password as an argument to the [PASSWORD()](../../sql-functions/secondary-functions/encryption-hashing-and-compression-functions/password.md) function in the `USING` clause. For example:
+You can also change the user account's password with the [ALTER USER](../../sql-statements/account-management-sql-statements/alter-user.md) statement. You would have to specify the name of the plugin in the [IDENTIFIED VIA](../../sql-statements/account-management-sql-statements/alter-user.md#identified-viawith-authentication_plugin) clause while providing the plain-text password as an argument to the `PASSWORD()` function in the `USING` clause. For example:
 
 ```
 ALTER USER username@hostname IDENTIFIED VIA ed25519 USING PASSWORD('new_secret');
 ```
 
-The [PASSWORD()](../../sql-functions/secondary-functions/encryption-hashing-and-compression-functions/password.md) function and [SET PASSWORD](../../sql-statements/account-management-sql-statements/set-password.md) statement did not work with the `ed25519` authentication plugin. Instead, you would have to use the [UDF](../../../server-usage/user-defined-functions/) that comes with the authentication plugin to calculate the password hash. For example:
+The `PASSWORD()` function and [SET PASSWORD](../../sql-statements/account-management-sql-statements/set-password.md) statement did not work with the `ed25519` authentication plugin. Instead, you would have to use the [UDF](../../../server-usage/user-defined-functions/) that comes with the authentication plugin to calculate the password hash. For example:
 
 ```
 CREATE FUNCTION ed25519_password RETURNS STRING SONAME "auth_ed25519.so";
@@ -125,8 +125,6 @@ You can change the user account's password with the [ALTER USER](../../sql-state
 ALTER USER username@hostname IDENTIFIED VIA ed25519 
   USING 'ZIgUREUg5PVgQ6LskhXmO+eZLS0nC8be6HPjYWR4YJY';
 ```
-
-<>
 
 ## Client Authentication Plugins
 
