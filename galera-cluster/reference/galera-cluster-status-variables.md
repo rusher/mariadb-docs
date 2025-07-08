@@ -2,7 +2,7 @@
 
 ## Viewing Galera Cluster Status Variables
 
-Galera status variables can be viewed with the [SHOW STATUS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-status) statement.
+Galera status variables can be viewed with the [SHOW STATUS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-status) statement.
 
 ```
 SHOW STATUS LIKE 'wsrep%';
@@ -16,17 +16,15 @@ MariaDB Galera Cluster has the following status variables:
 
 #### `wsrep_applier_thread_count`
 
-* Description: Stores current number of applier threads to make clear how many slave threads of this type there are.
-
-
+* Description: Stores the current number of applier threads to make clear how many slave threads of this type there are.
 
 #### `wsrep_apply_oooe`
 
-* Description: How often writesets have been applied out of order, an indicators of parallelization efficiency.
+* Description: How often write sets have been applied out of order, an indicator of parallelization efficiency.
 
 #### `wsrep_apply_oool`
 
-* Description: How often writesets with a higher sequence number were applied before ones with a lower sequence number, implying slow writesets.
+* Description: How often write sets with a higher sequence number were applied before ones with a lower sequence number, implying slow write sets.
 
 #### `wsrep_apply_window`
 
@@ -62,11 +60,11 @@ MariaDB Galera Cluster has the following status variables:
 
 #### `wsrep_cluster_status`
 
-* Description: Cluster component status. Possible values are `PRIMARY` (primary group configuration, quorum present), `NON_PRIMARY` (non-primary group configuration, quorum lost) or `DISCONNECTED` (not connected to group, retrying).
+* Description: Cluster component status. Possible values are `PRIMARY` (primary group configuration, quorum present), `NON_PRIMARY` (non-primary group configuration, quorum lost), or `DISCONNECTED` (not connected to group, retrying).
 
 #### `wsrep_cluster_weight`
 
-* Description: The total weight of the current members in the cluster. The value is counted as a sum of pc.weight of the nodes in the current Primary Component.
+* Description: The total weight of the current members in the cluster. The value is counted as a sum of pc.weight of the nodes in the current primary component.
 
 #### `wsrep_commit_oooe`
 
@@ -98,11 +96,11 @@ MariaDB Galera Cluster has the following status variables:
 
 #### `wsrep_evs_repl_latency`
 
-* Description: This status variable provides figures for the replication latency on group communication. It measures latency (in seconds) from the time point when a message is sent out to the time point when a message is received. As replication is a group operation, this essentially gives you the slowest ACK and longest RTT in the cluster. Format is min/avg/​max/stddev
+* Description: This status variable provides figures for the replication latency on group communication. It measures latency (in seconds) from the time point when a message is sent out to the time point when a message is received. As replication is a group operation, this essentially gives you the slowest ACK and longest RTT in the cluster. The format is min/avg/​max/stddev
 
 #### `wsrep_evs_state`
 
-* Description: Shows the internal state of the EVS Protocol.
+* Description: Shows the internal state of the EVS protocol.
 
 #### `wsrep_flow_control_paused`
 
@@ -154,11 +152,11 @@ MariaDB Galera Cluster has the following status variables:
 
 #### `wsrep_local_recv_queue`
 
-* Description: Current length of the receive queue, which is the number of writesets waiting to be applied.
+* Description: Current length of the receive queue, which is the number of write sets waiting to be applied.
 
 #### `wsrep_local_recv_queue_avg`
 
-* Description: Average length of the receive queue since the most recent status query. If this value is noticeably larger than zero, the node is likely to be overloaded, and cannot apply the writesets as quickly as they arrive, resulting in replication throttling.
+* Description: Average length of the receive queue since the most recent status query. If this value is noticeably larger than zero, the node is likely to be overloaded and cannot apply the write sets as quickly as they arrive, resulting in replication throttling.
 
 #### `wsrep_local_recv_queue_max`
 
@@ -174,11 +172,11 @@ MariaDB Galera Cluster has the following status variables:
 
 #### `wsrep_local_send_queue`
 
-* Description: Current length of the send queue, which is the number of writesets waiting to be sent.
+* Description: Current length of the send queue, which is the number of write sets waiting to be sent.
 
 #### `wsrep_local_send_queue_avg`
 
-* Description: Average length of the send queue since the most recent status query. If this value is noticeably larger than zero, there is most likely network throughput or replication throttling issues.
+* Description: Average length of the send queue since the most recent status query. If this value is noticeably larger than zero, there are most likely network throughput or replication throttling issues.
 
 #### `wsrep_local_send_queue_max`
 
@@ -206,7 +204,7 @@ MariaDB Galera Cluster has the following status variables:
 
 #### `wsrep_open_transactions`
 
-* Description: The number of locally running transactions which have been registered inside the wsrep provider. This means transactions which have made operations which have caused write set population to happen. Transactions which are read only are not counted.
+* Description: The number of locally running transactions that have been registered inside the wsrep provider. This means transactions that have made operations that have caused write set population to happen. Transactions that are read-only are not counted.
 
 #### `wsrep_protocol_version`
 
@@ -230,11 +228,11 @@ MariaDB Galera Cluster has the following status variables:
 
 #### `wsrep_received`
 
-* Description: Total number of writesets received from other nodes.
+* Description: Total number of write sets received from other nodes.
 
 #### `wsrep_received_bytes`
 
-* Description: Total size in bytes of all writesets received from other nodes.
+* Description: Total size in bytes of all write sets received from other nodes.
 
 #### `wsrep_repl_data_bytes`
 
@@ -254,15 +252,15 @@ MariaDB Galera Cluster has the following status variables:
 
 #### `wsrep_replicated`
 
-* Description: Total number of writesets replicated to other nodes.
+* Description: Total number of write sets replicated to other nodes.
 
 #### `wsrep_replicated_bytes`
 
-* Description: Total size in bytes of all writesets replicated to other nodes.
+* Description: Total size in bytes of all write sets replicated to other nodes.
 
 #### `wsrep_rollbacker_thread_count`
 
-* Description: Stores current number of rollbacker threads to make clear how many slave threads of this type there are.
+* Description: Stores the current number of rollbacker threads to make clear how many slave threads of this type there are.
 
 #### `wsrep_thread_count`
 
