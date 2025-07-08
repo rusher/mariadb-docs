@@ -5,7 +5,7 @@ This is a list of [system variables](../server-system-variables.md) that have be
 | Variable                                                                                                                    | Added          |
 | --------------------------------------------------------------------------------------------------------------------------- | -------------- |
 | [aria\_pagecache\_segments](../../../../server-usage/storage-engines/aria/aria-system-variables.md#aria_pagecache_segments) | MariaDB 12.1.0 |
-| metadata\_locks\_instances                                                                                                  | MariaDB 12.1.0 |
+| [metadata\_locks\_instances](../server-system-variables.md#metadata_locks_instances)                                        | MariaDB 12.1.0 |
 
 ## See Also
 
