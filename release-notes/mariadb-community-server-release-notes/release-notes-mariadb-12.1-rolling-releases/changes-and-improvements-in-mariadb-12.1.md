@@ -7,6 +7,7 @@ MariaDB 12.1 is a [rolling release](../../mariadb-release-model.md). It is an ev
 ### Performance improvements <a href="#performance-improvements" id="performance-improvements"></a>
 
 * Segmented key cache for [Aria storage engine](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/aria) ([MDEV-24](https://jira.mariadb.org/browse/MDEV-24))
+  * [aria\_pagecache\_segments](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/aria/aria-system-variables#aria_pagecache_segments) system variable
 * MDL scalability improvements ([MDEV-19749](https://jira.mariadb.org/browse/MDEV-19749))
 * Parallel replication for [Galera](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/3VYeeVGUV4AMqrA3zwy7/) replicas ([MDEV-20065](https://jira.mariadb.org/browse/MDEV-20065))
 * Buffered logging for [audit plugin](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/mariadb-audit-plugin) ([MDEV-34680](https://jira.mariadb.org/browse/MDEV-34680))
