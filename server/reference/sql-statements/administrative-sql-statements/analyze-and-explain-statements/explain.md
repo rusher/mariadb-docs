@@ -34,7 +34,7 @@ The `EXPLAIN` statement can be used either as a synonym for[DESCRIBE](../describ
 
 The [ANALYZE statement](analyze-statement.md) runs a statement and returns information about its execution plan. It also shows additional columns, to check how much the optimizer's estimation about filtering and found rows are close to reality.
 
-There is an online [EXPLAIN Analyzer](../../../../clients-and-utilities/legacy-clients-and-utilities/analyzing-tools/explain-analyzer.md) that you can use to share `EXPLAIN` and `EXPLAIN EXTENDED` output with others.
+There is an online [EXPLAIN Analyzer](../../../../clients-and-utilities/analyzing-tools/explain-analyzer.md) that you can use to share `EXPLAIN` and `EXPLAIN EXTENDED` output with others.
 
 `EXPLAIN` can acquire metadata locks in the same way that `SELECT` does, as it needs to know table metadata and, sometimes, data as well.
 
