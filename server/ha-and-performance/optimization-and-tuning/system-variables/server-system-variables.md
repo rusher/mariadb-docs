@@ -171,7 +171,7 @@ The suffix can be upper or lower-case.
   * This system variable is no longer needed, because the server can automatically convert large memory-based temporary tables into disk-based temporary tables when they exceed the value of the [tmp\_memory\_table\_size](server-system-variables.md#tmp_memory_table_size) system variable.
   * To prevent memory-based temporary tables from being used at all, set the [tmp\_memory\_table\_size](server-system-variables.md#tmp_memory_table_size) system variable to `0`.
   * In [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5) and earlier, [sql\_big\_tables](server-system-variables.md#sql_big_tables) is a synonym.
-  * From  [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105), this system variable is deprecated.
+  * From [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105), this system variable is deprecated.
 * Commandline: `--big-tables`
 * Scope: Global, Session
 * Dynamic: Yes
@@ -437,7 +437,7 @@ The suffix can be upper or lower-case.
 
 * Description: Introduced to address remaining incompatibilities between [PCRE](../../../reference/sql-functions/string-functions/regular-expressions-functions/pcre.md) and the old regex library. Accepts a comma-separated list of zero or more of the following values:
 
-<table><thead><tr><th width="160"></th><th width="165"></th><th></th></tr></thead><tbody><tr><td>Value</td><td>Pattern equivalent</td><td>Meaning</td></tr><tr><td>DOTALL</td><td>(?s)</td><td>. matches anything including NL</td></tr><tr><td>DUPNAMES</td><td>(?J)</td><td>Allow duplicate names for subpatterns</td></tr><tr><td>EXTENDED</td><td>(?x)</td><td>Ignore white space and comments</td></tr><tr><td>EXTRA </td><td>(?X)</td><td>extra features (e.g. error on unknown escape character)</td></tr><tr><td>MULTILINE </td><td>(?m)</td><td>^ and $ match newlines within data</td></tr><tr><td>UNGREEDY </td><td>(?U)</td><td>Invert greediness of quantifiers</td></tr></tbody></table>
+<table><thead><tr><th width="160"></th><th width="165"></th><th></th></tr></thead><tbody><tr><td>Value</td><td>Pattern equivalent</td><td>Meaning</td></tr><tr><td>DOTALL</td><td>(?s)</td><td>. matches anything including NL</td></tr><tr><td>DUPNAMES</td><td>(?J)</td><td>Allow duplicate names for subpatterns</td></tr><tr><td>EXTENDED</td><td>(?x)</td><td>Ignore white space and comments</td></tr><tr><td>EXTRA</td><td>(?X)</td><td>extra features (e.g. error on unknown escape character)</td></tr><tr><td>MULTILINE</td><td>(?m)</td><td>^ and $ match newlines within data</td></tr><tr><td>UNGREEDY</td><td>(?U)</td><td>Invert greediness of quantifiers</td></tr></tbody></table>
 
 * Commandline: `--default-regex-flags=value`
 * Scope: Global, Session
@@ -998,7 +998,7 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 
 #### `join_buffer_size`
 
-* Description: Minimum size in bytes of the buffer used for queries that cannot use an index, and instead perform a full table scan. Increase to get faster full joins when adding indexes is not possible, although be aware of memory issues, since joins will always allocate the minimum size. Best left low globally and set high in sessions that require large full joins. In 64-bit platforms, Windows truncates values above 4GB to 4GB with a warning.&#x20;
+* Description: Minimum size in bytes of the buffer used for queries that cannot use an index, and instead perform a full table scan. Increase to get faster full joins when adding indexes is not possible, although be aware of memory issues, since joins will always allocate the minimum size. Best left low globally and set high in sessions that require large full joins. In 64-bit platforms, Windows truncates values above 4GB to 4GB with a warning.
 * Commandline: `--join-buffer-size=#`
 * Scope: Global, Session
 * Dynamic: Yes
@@ -1019,7 +1019,7 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 
 #### `join_cache_level`
 
-* Description: Controls which of the eight block-based algorithms can be used for join operations.&#x20;
+* Description: Controls which of the eight block-based algorithms can be used for join operations.
   * 1 – flat (Block Nested Loop) BNL
   * 2 – incremental BNL
   * 3 – flat Block Nested Loop Hash (BNLH)
@@ -1542,7 +1542,7 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 * Default Value:
   * `16777216` (16M)
 * Range: `1024` to `4294967295`
-* Deprecated: [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5)&#x20;
+* Deprecated: [MariaDB 5.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-5-series/changes-improvements-in-mariadb-5-5)
 * Removed: [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1050-release-notes)
 
 #### `max_password_errors`
@@ -2398,6 +2398,10 @@ MariaDB sets the limit with [setrlimit](https://linux.die.net/man/2/setrlimit). 
 * Dynamic: No
 * Data Type: `string`
 * Default Value: `MYSQL`
+
+#### `shutdown_wait_for_slaves`
+
+* Description: When ON, SHUTDOWN command runs with implicit WAIT FOR ALL SLAVES option. That is, when running SHUTDOWN, before killing the binary log dump threads, the server will first kill all client threads and send all binary log events to all connected replicas.
 
 #### `skip_external_locking`
 
