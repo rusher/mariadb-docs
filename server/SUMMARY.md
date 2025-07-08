@@ -2530,7 +2530,7 @@
           * [Time Zones](reference/data-types/string-data-types/character-sets/internationalization-and-localization/time-zones.md)
   * [Plugins](reference/plugins/README.md)
     * [Plugin Overview](reference/plugins/plugin-overview.md)
-    * [Plugin Maturity](reference/plugins/list-of-plugins.md)
+    * [Plugin Maturity](reference/plugins/information-on-plugins/list-of-plugins.md)
     * [MariaDB Enterprise Audit](reference/plugins/mariadb-enterprise-audit.md)
     * [Authentication Plugins](reference/plugins/authentication-plugins/README.md)
       * [Pluggable Authentication Overview](reference/plugins/authentication-plugins/pluggable-authentication-overview.md)
