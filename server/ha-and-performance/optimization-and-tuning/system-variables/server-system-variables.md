@@ -1691,6 +1691,7 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 * Data Type: `numeric`
 * Default Value: `8`
 * Range: `1` to `256`
+* Introduced: MariaDB 12.1
 
 #### `min_examined_row_limit`
 
