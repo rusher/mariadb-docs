@@ -34,7 +34,7 @@ The `EXPLAIN` statement can be used either as a synonym for[DESCRIBE](../describ
 
 The [ANALYZE statement](analyze-statement.md) runs a statement and returns information about its execution plan. It also shows additional columns, to check how much the optimizer's estimation about filtering and found rows are close to reality.
 
-There is an online [EXPLAIN Analyzer](../../../../clients-and-utilities/analyzing-tools/explain-analyzer.md) that you can use to share `EXPLAIN` and `EXPLAIN EXTENDED` output with others.
+There is an online [EXPLAIN Analyzer](../../../../clients-and-utilities/legacy-clients-and-utilities/analyzing-tools/explain-analyzer.md) that you can use to share `EXPLAIN` and `EXPLAIN EXTENDED` output with others.
 
 `EXPLAIN` can acquire metadata locks in the same way that `SELECT` does, as it needs to know table metadata and, sometimes, data as well.
 
@@ -88,7 +88,7 @@ This column contains information on how the table is accessed.
 | eq\_ref          | A unique index is used to find the rows. This is the best possible plan to find the row.                                                                                                                                         |
 | filter           | A second index is being used with the [Rowid Filtering Optimization](../../../../ha-and-performance/optimization-and-tuning/query-optimizations/rowid-filtering-optimization.md).                                                |
 | fulltext         | A fulltext index is used to access the rows.                                                                                                                                                                                     |
-| index\_merge     | A 'range' access is done for several index and the found rows are merged. The key column shows which keys are used.                                                                                                          |
+| index\_merge     | A 'range' access is done for several index and the found rows are merged. The key column shows which keys are used.                                                                                                              |
 | index\_subquery  | This is similar as ref, but used for sub queries that are transformed to key lookups.                                                                                                                                            |
 | index            | A full scan over the used index. Better than ALL but still bad if index is large and the table is joined against a previous table.                                                                                               |
 | range            | The table will be accessed with a key over one or more value ranges.                                                                                                                                                             |
@@ -258,6 +258,6 @@ SELECT * FROM table_name
 * [SHOW EXPLAIN](../show/show-explain.md)
 * [Ignored Indexes](../../../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/ignored-indexes.md)
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}
