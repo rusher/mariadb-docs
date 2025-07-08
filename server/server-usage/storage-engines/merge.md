@@ -26,7 +26,7 @@ ERROR 1168 (HY000): Unable to open underlying table which is differently defined
   or of non-MyISAM type or doesn't exist
 ```
 
-A [CHECK TABLE](../sql-statements-and-structure/sql-statements/table-statements/check-table.md) will show more information about the problem.
+A [CHECK TABLE](../../reference/sql-statements/table-statements/check-table.md) will show more information about the problem.
 
 The error is also produced if the table is properly define, but an underlying table's definition changes at some point in time.
 
@@ -123,6 +123,6 @@ Msg_text: Corrupt
 
 Now, we know that the problem is in `t3`'s definition.
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

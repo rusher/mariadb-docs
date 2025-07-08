@@ -196,7 +196,7 @@ and there is a local .frm file, the S3 engine will check if it's still\
 relevant, and if not, update or delete the .frm file.
 
 This means that if the table definition changes on S3 and it's in the\
-local cache, one has to execute [FLUSH TABLES](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md) to\
+local cache, one has to execute [FLUSH TABLES](../../../reference/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md) to\
 get MariaDB to notice the change and update the .frm file.
 
 If partitioning S3 tables are used, the partition definitions will also be stored on S3 storage and will be discovered by other servers.
