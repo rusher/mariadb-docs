@@ -1,6 +1,6 @@
 # System Variables Added in MariaDB 12.1
 
-This is a list of [system variables](../server-system-variables.md) that have been added in the [MariaDB 12.](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-12.1-rolling-releases/changes-and-improvements-in-mariadb-12.1)1 series.
+This is a list of [system variables](../server-system-variables.md) that have been added in the [MariaDB 12.1 ](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-12.1-rolling-releases/changes-and-improvements-in-mariadb-12.1)series.
 
 | Variable                                                                                                                    | Added          |
 | --------------------------------------------------------------------------------------------------------------------------- | -------------- |
