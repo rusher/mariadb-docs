@@ -44,8 +44,8 @@ SHOW WARNINGS;
 * [Plugin Overview](../../../plugins/plugin-overview.md)
 * [mysql\_plugin](../../../../clients-and-utilities/legacy-clients-and-utilities/mysql_plugin.md)
 * [INSTALL PLUGIN](install-plugin.md)
-* [List of Plugins](../../../plugins/information-on-plugins/list-of-plugins.md)
+* [List of Plugins](../../../plugins/list-of-plugins.md)
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

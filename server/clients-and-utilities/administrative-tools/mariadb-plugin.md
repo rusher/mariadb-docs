@@ -59,7 +59,7 @@ The following options can be specified on the command line, while some can be sp
 
 ## See Also
 
-* [List of Plugins](../../reference/plugins/information-on-plugins/list-of-plugins.md)
+* [List of Plugins](../../reference/plugins/list-of-plugins.md)
 * [Plugin Overview](../../reference/plugins/plugin-overview.md)
 * [INFORMATION\_SCHEMA.PLUGINS Table](../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/plugins-table-information-schema.md)
 * [INSTALL PLUGIN](../../reference/sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin.md)

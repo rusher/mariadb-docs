@@ -3,6 +3,18 @@ description: >-
   Explore plugins in MariaDB Server. This section details how to extend database
   functionality, security, and performance by leveraging various loadable
   plugins, from authentication to storage engines.
+layout:
+  width: default
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: false
 ---
 
 # Plugins

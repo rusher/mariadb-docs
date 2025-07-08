@@ -194,7 +194,7 @@ LOAD_OPTION: FORCE
 
 ## See Also
 
-* [List of Plugins](../../../../../plugins/information-on-plugins/list-of-plugins.md)
+* [List of Plugins](../../../../../plugins/list-of-plugins.md)
 * [Plugin Overview](../../../../../plugins/plugin-overview.md)
 * [SHOW PLUGINS](../../../show/show-plugins.md)
 * [INSTALL PLUGIN](../../../plugin-sql-statements/install-plugin.md)

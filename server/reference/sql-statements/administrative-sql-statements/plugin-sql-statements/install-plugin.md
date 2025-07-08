@@ -70,7 +70,7 @@ SHOW WARNINGS;
 
 ## See Also
 
-* [List of Plugins](../../../plugins/information-on-plugins/list-of-plugins.md)
+* [List of Plugins](../../../plugins/list-of-plugins.md)
 * [Plugin Overview](../../../plugins/plugin-overview.md)
 * [INFORMATION\_SCHEMA.PLUGINS Table](../system-tables/information-schema/information-schema-tables/plugins-table-information-schema.md)
 * [mariadb-plugin](../../../../clients-and-utilities/administrative-tools/mariadb-plugin.md)
@@ -79,6 +79,6 @@ SHOW WARNINGS;
 * [UNINSTALL PLUGIN](uninstall-plugin.md)
 * [UNINSTALL SONAME](uninstall-soname.md)
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}
