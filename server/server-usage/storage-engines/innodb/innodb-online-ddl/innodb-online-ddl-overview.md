@@ -243,7 +243,7 @@ If the [LOCK](../../../../reference/sql-statements/data-definition/alter/alter-t
 
 ### Specifying an Alter Locking Strategy Using `ALTER ONLINE TABLE`
 
-[ALTER ONLINE TABLE](../../../../reference/sql-statements/data-definition/alter/alter-table.md#alter-online-table) is equivalent to `LOCK=NONE`. Therefore, the [ALTER ONLINE TABLE](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-online-ddl/alter-online-table/README.md) statement can be used to ensure that your [ALTER TABLE](../../../../reference/sql-statements/data-definition/alter/alter-table.md) operation allows all concurrent DML.
+[ALTER ONLINE TABLE](../../../../reference/sql-statements/data-definition/alter/alter-table.md#alter-online-table) is equivalent to `LOCK=NONE`. Therefore, the [ALTER ONLINE TABLE](../../../../reference/sql-statements/data-definition/alter/alter-table.md#alter-online-table) statement can be used to ensure that your [ALTER TABLE](../../../../reference/sql-statements/data-definition/alter/alter-table.md) operation allows all concurrent DML.
 
 ## Supported Alter Locking Strategies
 

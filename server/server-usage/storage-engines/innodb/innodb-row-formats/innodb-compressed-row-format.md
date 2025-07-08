@@ -36,7 +36,7 @@ The limit for indexing column values depends on the [innodb\_page\_size](../../.
 
 ## Using the `COMPRESSED` Row Format
 
-The Compressed row format does not efficiently use the InnoDB buffer pool, so it is not the recommended way to achieve InnoDB table compression. For more information about how to compress InnoDB tables, see [Configure InnoDB Page Compression](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-row-formats/configure-innodb-page-compression/README.md).
+The Compressed row format does not efficiently use the InnoDB buffer pool, so it is not the recommended way to achieve InnoDB table compression. For more information about how to compress InnoDB tables, see [Configure InnoDB Page Compression](../innodb-page-compression.md#configuring-the-innodb-page-compression-algorithm).
 
 An InnoDB table that uses the `COMPRESSED` row format can be created by setting the [ROW\_FORMAT](../../../../reference/sql-statements/data-definition/create/create-table.md#row_format) table option to `COMPRESSED` and by setting the [KEY\_BLOCK\_SIZE](../../../../reference/sql-statements/data-definition/create/create-table.md#key_block_size) table option to one of the following values in a [CREATE TABLE](../../../../reference/sql-statements/data-definition/create/create-table.md) or [ALTER TABLE](../../../../reference/sql-statements/data-definition/alter/alter-table.md) statement, where the units are in `KB`.
 

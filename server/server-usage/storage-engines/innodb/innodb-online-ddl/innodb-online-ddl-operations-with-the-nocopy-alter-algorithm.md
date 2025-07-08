@@ -20,7 +20,7 @@ This applies to [ALTER TABLE ... ADD COLUMN](../../../../reference/sql-statement
 
 ### `ALTER TABLE ... DROP COLUMN`
 
-In [MariaDB 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-online-ddl/broken-reference/README.md) and later, InnoDB supports dropping columns from a table with [ALGORITHM](../../../../reference/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `NOCOPY` in the cases where the operation supports having the [ALGORITHM](../../../../reference/sql-statements/data-definition/alter/alter-table.md#algorithm) clause set to `INSTANT`.
+In [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104) and later, InnoDB supports dropping columns from a table with [ALGORITHM](../../../../reference/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `NOCOPY` in the cases where the operation supports having the [ALGORITHM](../../../../reference/sql-statements/data-definition/alter/alter-table.md#algorithm) clause set to `INSTANT`.
 
 See [InnoDB Online DDL Operations with ALGORITHM=INSTANT: ALTER TABLE ... DROP COLUMN](innodb-online-ddl-operations-with-the-instant-alter-algorithm.md) for more information.
 
@@ -32,7 +32,7 @@ This applies to [ALTER TABLE ... MODIFY COLUMN](../../../../reference/sql-statem
 
 #### Reordering Columns
 
-In [MariaDB 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-online-ddl/broken-reference/README.md) and later, InnoDB supports reordering columns within a table with [ALGORITHM](../../../../reference/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `NOCOPY` in the cases where the operation supports having the [ALGORITHM](../../../../reference/sql-statements/data-definition/alter/alter-table.md#algorithm) clause set to `INSTANT`.
+In [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104) and later, InnoDB supports reordering columns within a table with [ALGORITHM](../../../../reference/sql-statements/data-definition/alter/alter-table.md#algorithm) set to `NOCOPY` in the cases where the operation supports having the [ALGORITHM](../../../../reference/sql-statements/data-definition/alter/alter-table.md#algorithm) clause set to `INSTANT`.
 
 See [InnoDB Online DDL Operations with ALGORITHM=INSTANT: Reordering Columns](innodb-online-ddl-operations-with-the-instant-alter-algorithm.md) for more information.
 
