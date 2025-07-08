@@ -300,7 +300,6 @@ that were defined `WITH COMPACT STORAGE` attribute.
 * [Cassandra Storage Engine - Future Plans](cassandra-storage-engine-future-plans.md)
 * [Cassandra Storage Engine - Use Example](cassandra-storage-engine-use-example.md)
 * [Cassandra Storage Engine - Issues](cassandra-storage-engine-issues.md)
-* [HBase Storage Engine](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/legacy-storage-engines/cassandra/broken-reference/README.md)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
