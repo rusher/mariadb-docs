@@ -6,7 +6,7 @@ MariaDB has many system variables that can be changed to suit your needs.
 
 {% include "../../../.gitbook/includes/for-a-full-list-of-server-v....md" %}
 
-Most of the system variables are described on this page, but some are described elsewhere:
+Many of the general system variables are described on this page, but others are described on elsewhere:
 
 * [Aria System Variables](../../../server-usage/storage-engines/aria/aria-system-variables.md)
 * [CONNECT System Variables](../../../server-usage/storage-engines/connect/connect-system-variables.md)
@@ -78,7 +78,6 @@ Variables that take a numeric size can either be specified in full, or with a su
 
 | Suffix | Description | Value                                                                                                                                                                                          |
 | ------ | ----------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Suffix | Description | Value                                                                                                                                                                                          |
 | K      | kilobytes   | 1024                                                                                                                                                                                           |
 | M      | megabytes   | 10242                                                                                                                                                                                          |
 | G      | gigabytes   | 10243                                                                                                                                                                                          |
