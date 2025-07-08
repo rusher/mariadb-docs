@@ -6,7 +6,7 @@ MariaDB has many system variables that can be changed to suit your needs.
 
 {% include "../../../.gitbook/includes/for-a-full-list-of-server-v....md" %}
 
-Many of the general system variables are described on this page, but others are described on elsewhere:
+Many of the general system variables are described on this page, but others are described elsewhere:
 
 * [Aria System Variables](../../../server-usage/storage-engines/aria/aria-system-variables.md)
 * [CONNECT System Variables](../../../server-usage/storage-engines/connect/connect-system-variables.md)
@@ -1681,6 +1681,16 @@ This is because the intermediate result, `SELECT 55/23244` takes into account `d
 * Data Type: `numeric`
 * Default Value: `8`
 * Range: `1` to `1024`
+
+#### `metadata_locks_instances`
+
+* Description: Number of fast lanes to create for metadata locks. Can be used to improve DML scalability by eliminating MDL_lock::rwlock load. Use 1 to disable MDL fast lanes. Supported MDL namespaces: BACKUP.
+* Commandline: `--metadata-locks-instances=#`
+* Scope: Global
+* Dynamic: No
+* Data Type: `numeric`
+* Default Value: `8`
+* Range: `1` to `256`
 
 #### `min_examined_row_limit`
 
