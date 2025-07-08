@@ -4,7 +4,7 @@
 The `EXPLAIN` Analyzer is no longer active.
 {% endhint %}
 
-The [EXPLAIN Analyzer](https://mariadb.org/explain_analyzer/analyze/) was an online tool for analyzing and optionally sharing the output of both `EXPLAIN` and `EXPLAIN EXTENDED`.
+The EXPLAIN Analyzer was an online tool for analyzing and optionally sharing the output of both `EXPLAIN` and `EXPLAIN EXTENDED`.
 
 ### Using the Analyzer
 
