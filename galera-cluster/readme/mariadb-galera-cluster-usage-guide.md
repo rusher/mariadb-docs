@@ -20,9 +20,9 @@ As a multi-primary replication solution, any MariaDB Enterprise Server can opera
 
 There are a few things to consider when planning the hardware, virtual machines, or containers for MariaDB Enterprise Cluster.
 
-MariaDB Enterprise Cluster architecture involves deploying [MariaDB MaxScale](https://github.com/mariadb-corporation/docs-server/blob/test/en/maxscale/README.md) with multiple instances of MariaDB Enterprise Server. The Servers are configured to use multi-primary replication to maintain consistency between themselves while MariaDB MaxScale routes reads and writes between them.
+MariaDB Enterprise Cluster architecture involves deploying [MariaDB MaxScale](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/0pSbu5DcMSW4KwAkUcmX/) with multiple instances of MariaDB Enterprise Server. The Servers are configured to use multi-primary replication to maintain consistency between themselves while [MariaDB MaxScale](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/0pSbu5DcMSW4KwAkUcmX/) routes reads and writes between them.
 
-The application establishes a client connection to MariaDB MaxScale. MaxScale then routes statements to one of the MariaDB Enterprise Servers in the cluster. Writes made to any node in this cluster replicate to all the other nodes of the cluster.
+The application establishes a client connection to [MariaDB MaxScale](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/0pSbu5DcMSW4KwAkUcmX/). MaxScale then routes statements to one of the MariaDB Enterprise Servers in the cluster. Writes made to any node in this cluster replicate to all the other nodes of the cluster.
 
 When MariaDB Enterprise Servers start in a cluster:
 
@@ -232,15 +232,15 @@ Being a multi-primary replication solution means that any MariaDB Enterprise Ser
 
 ### Failover
 
-MariaDB Enterprise Cluster does not provide failover capabilities on its own. [MariaDB MaxScale](https://github.com/mariadb-corporation/docs-server/blob/test/en/maxscale/README.md) is used to route client connections to MariaDB Enterprise Server.
+MariaDB Enterprise Cluster does not provide failover capabilities on its own. [MariaDB MaxScale](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/0pSbu5DcMSW4KwAkUcmX/) is used to route client connections to MariaDB Enterprise Server.
 
-Unlike a traditional load balancer, MariaDB MaxScale is aware of changes in the node and cluster states.
+Unlike a traditional load balancer, [MariaDB MaxScale](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/0pSbu5DcMSW4KwAkUcmX/) is aware of changes in the node and cluster states.
 
 MaxScale takes nodes out of the distribution that initiate a blocking SST operation or Flow Control or otherwise go down, which allows them to recover or catch up without stopping service to the rest of the cluster.
 
 ### Backups
 
-With MariaDB Enterprise Cluster, each node contains a replica of all the data in the cluster. As such, you run [MariaDB Enterprise Backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/backing-up-and-restoring-databases/mariadb-backup) on any node to backup the available data. The process for backing-up a node is the same as for a single MariaDB Enterprise Server.
+With MariaDB Enterprise Cluster, each node contains a replica of all the data in the cluster. As such, you run [MariaDB Enterprise Backup](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/backup-and-restore/backup-and-restore-with-mariadb-enterprise-server/mariadb-enterprise-backup) on any node to back up the available data. The process for backing up a node is the same as for a single MariaDB Enterprise Server.
 
 ### Encryption
 
