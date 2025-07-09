@@ -128,11 +128,11 @@ orary";
 
 ## Operational Enhancements
 
-* Online Schema Change (OSC) is new server internal functionality which makes all schema changes ([ALTER TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-table) commands) non-blocking. ([MDEV-16329](https://jira.mariadb.org/browse/MDEV-16329))
+* [Online Schema Change (OSC)](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/alter/alter-table/online-schema-change) is new server internal functionality which makes all schema changes ([ALTER TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-table) commands) non-blocking. ([MDEV-16329](https://jira.mariadb.org/browse/MDEV-16329))
   * OSC targets a problem previously solvable using third-party solutions, in a way which reduces operational impact. Some aspects of the OSC implementation are operationally significant:
     * OSC performs internal Copy-Apply-Replace: First, the altered table gets copied, then the online changes get applied. A short table lock occurs when applying last changes and renaming the tables. The binary log is not used in this process. This is significant because some third-party approaches to this problem depend on client connections which can be subject to connection timeouts and similar factors.
     * OSC is asynchronous: Changes from applications are first stored in an online change buffer. This is significant because some third-party approaches to this problem are synchronous and as result impact the execution of other transactions.
-    * OSC is trigger-less: Only server internal handlers for a DML-side check if ALTER TABLE is in progress are used. INSERT, UPDATE, or DELETE triggers based on stored routines are not used. This is significant because some third-party approaches to this problem depend on triggers.
+    * OSC is trigger-less: Only server internal handlers for a DML-side check if `ALTER TABLE` is in progress are used. `INSERT`, `UPDATE`, or `DELETE` triggers based on stored routines are not used. This is significant because some third-party approaches to this problem depend on triggers.
   * By default, when an `ALTER` operation cannot be executed `INSTANT`, OSC will be used. If OSC cannot be used, another algorithm will be used.
   * If the `LOCK=NONE` option is explicitly specified in the `ALTER` statement, or if the equivalent statement `ALTER ONLINE TABLE` is used, the operation will be performed if it can be done as OSC and fails otherwise.
   * As an override to this new behavior, if the `old_mode` system variable is set with `LOCK_ALTER_TABLE_COPY`, the old behavior is preferred when `LOCK=NON`E is not explicitly set. ([MDEV-31812](https://jira.mariadb.org/browse/MDEV-31812))
@@ -231,7 +231,7 @@ SELECT table_schema, table_name, table_type FROM information_schema.TABLES WHERE
 ```
 
 * For [INSERT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/inserting-loading-data/insert) operations that insert multiple rows, error reporting has been improved: ([MDEV-10075](https://jira.mariadb.org/browse/MDEV-10075))
-  * In [GET DIAGNOSTICS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/programmatic-compound-statements/programmatic-compound-statements-diagnostics/get-diagnostics), the ROW\_NUMBER property allows retrieval of the row number that caused the error or warning:
+  * In [GET DIAGNOSTICS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/programmatic-compound-statements/programmatic-compound-statements-diagnostics/get-diagnostics), the `ROW_NUMBER` property allows retrieval of the row number that caused the error or warning:
 
 ```sql
 GET DIAGNOSTICS CONDITION 1 @failed_row=ROW_NUMBER;
@@ -269,8 +269,8 @@ $ mariadb-dump \
 * The [transaction\_isolation system variable](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#transaction_isolation) can now be used to set the transaction isolation: ([MDEV-21921](https://jira.mariadb.org/browse/MDEV-21921))
   * The `tx_isolation` system variable is still available as an alias, but it has been deprecated and will be removed in a later release.
 * The [transaction\_read\_only system variable](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#transaction_read_only) can now be used to set a transaction to read-only. ([MDEV-21921](https://jira.mariadb.org/browse/MDEV-21921))
-* Process list now includes the number of rows sent by the statement. The new value SENT\_ROWS in the information schema table PROCESSLIST includes the number of rows sent by the current statement, shown in the processlist.
-  * SELECTS with functions show the total number of rows sent by the main statement and all functions
+* Process list now includes the number of rows sent by the statement. The new value `SENT_ROWS` in the information schema table `PROCESSLIST` includes the number of rows sent by the current statement, shown in the processlist.
+  * `SELECTS` with functions show the total number of rows sent by the main statement and all functions
   * Stored procedures show the total number of rows sent per stored procedure statement
   * `INSERT RETURNING` and `DELETE RETURNING` show the total number of rows sent for the returning data set
   * Example:
@@ -304,7 +304,7 @@ MAX_MEMORY_USED: 392544
             TID: 100
 ```
 
-* The SQL Error Log Plugin, used to log errors sent to clients for later analysis, has been enhanced. When option `sql_error_log_with_db_and_thread_info=ON` is set, the log file is now also showing thread id and the current default schema for the error.
+* The `SQL Error Log Plugin`, used to log errors sent to clients for later analysis, has been enhanced. When option `sql_error_log_with_db_and_thread_info=ON` is set, the log file is now also showing thread id and the current default schema for the error.
 * When mariadb-dump is used with the option `-T / --tab=` to produce tab-separated text-format data files per table, the new option `--parallel` (synonym `--use-threads`) can be used to use several threads in parallel to dump the table data to their .txt files.
   * Parallelism also works if the option `--single-transaction` is used.
 * The option `--parallel` has been added to mariadb-import as a synonym to `--use-threads`, which has been available before.
@@ -395,7 +395,7 @@ PARTITION BY RANGE(id) (
 
 * Exchanging partition or converting a table is now possible without a validation of the partitioning expression
   * This new feature should be used with care, as it can lead to inconsistencies if the partitioning rules are not met.
-  * The new addition to ALTER TABLE is:
+  * The new addition to `ALTER TABLE` is:
 
 ```sql
 EXCHANGE PARTITION partition_name WITH TABLE tbl_name [{WITH | WITHOUT} VALIDATION]
@@ -439,7 +439,7 @@ CREATE TABLE t1 (x INT) WITH SYSTEM VERSIONING
 ## SQL Level Enhancements
 
 * General Support of Packages for Stored Routines has been added
-  * Before MariaDB Enterprise Server 11.4, the CREATE PACKAGE feature, as well as CREATE PACKAGE BODY, were only supported with sql\_mode = ORACLE. They can now be used with any SQL mode.
+  * Before MariaDB Enterprise Server 11.4, the `CREATE PACKAGE` feature, as well as `CREATE PACKAGE BODY`, were only supported with `sql_mode = ORACLE`. They can now be used with any SQL mode.
   * Example:
 
 ```sql
@@ -568,7 +568,7 @@ SELECT JSON_KEY_VALUE('[[1, {"key1":"val1", "key2":"val2"}, 3], 2, 3]', '$[0][1]
 +-----------------------------------------------------------------------------+
 ```
 
-• JSON\_KEY\_VALUE() can be used as an argument to JSON\_TABLE(), adding the key to a result set. For example:
+• `JSON_KEY_VALUE()` can be used as an argument to `JSON_TABLE(`), adding the key to a result set. For example:
 
 ```sql
 SELECT jt.* FROM JSON_TABLE(
@@ -633,7 +633,7 @@ SELECT JSON_OBJECT_TO_ARRAY(@json1) AS result;
 +-----------------------------------------------------------------------+
 ```
 
-* Resulting arrays can be compared using JSON\_ARRAY\_INTERSECT(). For example:
+* Resulting arrays can be compared using `JSON_ARRAY_INTERSECT()`. For example:
 
 ```sql
 SET @json1='{"a":[1,2,3],"b":{"key1":"val1","key2":{"key3":"val3"}}}';
@@ -651,8 +651,8 @@ SELECT JSON_ARRAY_INTERSECT(@array1,@array2) AS result;
 +--------------------+
 ```
 
-* JSON\_OBJECT\_FILTER\_KEYS() returns key/value pairs from a JSON string for keys in an array. ([MDEV-26182](https://jira.mariadb.org/browse/MDEV-26182))
-* Syntax: JSON\_OBJECT\_FILTER\_KEYS(\<json\_doc>,\<array\_keys>)\\
+* `JSON_OBJECT_FILTER_KEYS()` returns key/value pairs from a JSON string for keys in an array. ([MDEV-26182](https://jira.mariadb.org/browse/MDEV-26182))
+* Syntax: JSON\_OBJECT\_FILTER\_KEYS`(<json_doc>,<array_keys>)\`
 * For example:
 
 ```sql
@@ -742,7 +742,7 @@ Functions like `CAST()`
 
 #### Functions
 
-* New time zone options for function DATE\_FORMAT()
+* New time zone options for function `DATE_FORMAT()`
   * The new options %Z and %z can be used for the format string of the function
 
 ```sql
@@ -768,7 +768,7 @@ SELECT DATE_FORMAT(NOW(), '%W %d %M %Y %H:%i:%s %Z %z');
 ```
 
 * SQL function KDF() for key derivation
-  * A possible use case is to generate encryption keys from a user provided password or a passphrase. It can be used to generate encryption keys for encryption functions such as AES\_ENCRYPT.
+  * A possible use case is to generate encryption keys from a user provided password or a passphrase. It can be used to generate encryption keys for encryption functions such as `AES_ENCRYPT`.
 
 ```sql
 KDF(key_str, salt [, {info | iterations} [, kdf_name [, width ]]])
