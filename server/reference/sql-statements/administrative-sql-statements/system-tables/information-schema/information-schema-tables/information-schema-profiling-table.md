@@ -6,7 +6,6 @@ It contains the following columns:
 
 | Column Name          | Description                                                                 |
 | -------------------- | --------------------------------------------------------------------------- |
-| Column Name          | Description                                                                 |
 | QUERY\_ID            | Query\_ID.                                                                  |
 | SEQ                  | Sequence number showing the display order for rows with the same QUERY\_ID. |
 | STATE                | Profiling state.                                                            |

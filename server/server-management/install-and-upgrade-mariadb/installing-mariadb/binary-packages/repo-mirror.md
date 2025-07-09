@@ -49,7 +49,6 @@ The package manager depends on the operating system:
 
 | Operating System                          | Package Manager |
 | ----------------------------------------- | --------------- |
-| Operating System                          | Package Manager |
 | CentOS 7                                  | YUM             |
 | Debian 9                                  | APT             |
 | Debian 10                                 | APT             |

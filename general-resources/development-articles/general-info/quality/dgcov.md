@@ -23,7 +23,6 @@ It's recommended that a developer [runs dgcov on their new code](code-coverage.m
 
 | Short Option | Long Option | Description                                                               |
 | ------------ | ----------- | ------------------------------------------------------------------------- |
-| Short Option | Long Option | Description                                                               |
 | -h           | --help      | Print help and exit                                                       |
 | -v           | --verbose   | Show commands run.                                                        |
 | -p           | --purge     | Delete all test coverage information, to prepare for a new coverage test. |

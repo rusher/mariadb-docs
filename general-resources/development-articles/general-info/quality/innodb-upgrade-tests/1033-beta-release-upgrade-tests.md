@@ -26,7 +26,6 @@ Crash upgrade from 10.3.2 fails due to an incompatible change (removal of MLOG_U
 
 | type | pagesize | OLD version | file format | encrypted | compressed |  | NEW version | file format | encrypted | compressed | readonly | result | notes |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| type | pagesize | OLD version | file format | encrypted | compressed |  | NEW version | file format | encrypted | compressed | readonly | result | notes |
 | recovery | 16 | 10.3.3 (inbuilt) | Barracuda | on | - | => | 10.3.3 (inbuilt) | Barracuda | on | - | - | OK |  |
 | recovery | 16 | 10.3.3 (inbuilt) | Barracuda | on | zlib | => | 10.3.3 (inbuilt) | Barracuda | on | zlib | - | FAIL | KNOWN_BUGS [MDEV-13103](https://jira.mariadb.org/browse/MDEV-13103)(1) |
 | recovery | 4 | 10.3.3 (inbuilt) | Barracuda | on | - | => | 10.3.3 (inbuilt) | Barracuda | on | - | - | OK |  |

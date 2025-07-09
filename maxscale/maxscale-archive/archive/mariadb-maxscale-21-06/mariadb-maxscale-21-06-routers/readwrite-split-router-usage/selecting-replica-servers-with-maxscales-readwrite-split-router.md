@@ -4,7 +4,6 @@ The [Read/Write Split Router (readwritesplit)](../../../mariadb-maxscale-23-02/m
 
 | Criterion                  | Description                                                  |
 | -------------------------- | ------------------------------------------------------------ |
-| Criterion                  | Description                                                  |
 | ADAPTIVE\_ROUTING          | Selects using average response times                         |
 | LEAST\_BEHIND\_MASTER      | Selects based on replication lag                             |
 | LEAST\_CURRENT\_OPERATIONS | Selects based on number of active operations (the default)   |

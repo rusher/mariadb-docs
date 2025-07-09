@@ -10,7 +10,6 @@ It contains the following fields.
 
 | Field          | Type     | Null | Description                                                           |
 | -------------- | -------- | ---- | --------------------------------------------------------------------- |
-| Field          | Type     | Null | Description                                                           |
 | CHANNEL\_NAME  | char(64) | NO   | Replication channel name.                                             |
 | DESIRED\_DELAY | int(11)  | NO   | Target number of seconds the replica should be delayed to the master. |
 

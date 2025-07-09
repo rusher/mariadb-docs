@@ -8,7 +8,6 @@ It contains the following columns:
 
 | Column          | Description |
 | --------------- | ----------- |
-| Column          | Description |
 | TABLE\_SCHEMA   |             |
 | TABLE\_NAME     |             |
 | PARTITION\_NAME |             |

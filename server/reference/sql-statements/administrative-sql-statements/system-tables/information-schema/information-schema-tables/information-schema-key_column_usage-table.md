@@ -6,7 +6,6 @@ It contains the following columns:
 
 | Column                           | Description                                                                                                                                                       |
 | -------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Column                           | Description                                                                                                                                                       |
 | CONSTRAINT\_CATALOG              | Always def.                                                                                                                                                       |
 | CONSTRAINT\_SCHEMA               | Database name of the constraint.                                                                                                                                  |
 | CONSTRAINT\_NAME                 | Name of the constraint (PRIMARY for the primary key).                                                                                                             |

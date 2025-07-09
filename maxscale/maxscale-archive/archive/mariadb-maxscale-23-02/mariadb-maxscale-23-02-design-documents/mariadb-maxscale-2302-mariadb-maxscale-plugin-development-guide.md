@@ -106,7 +106,6 @@ below.
 
 | Header       | Contents                            |
 | ------------ | ----------------------------------- |
-| Header       | Contents                            |
 | alloc.h      | Malloc, calloc etc. replacements    |
 | buffer.h     | Packet buffer management            |
 | config.h     | Configuration settings              |

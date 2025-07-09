@@ -16,7 +16,6 @@ mariadb-conv [OPTION...] [FILE...]
 
 | Option           | Description                                   |
 | ---------------- | --------------------------------------------- |
-| Option           | Description                                   |
 | -f, --from=name  | Specifies the encoding of the input.          |
 | -t, --to=name    | Specifies the encoding of the output.         |
 | -c, --continue   | Silently ignore conversion errors.            |

@@ -27,7 +27,6 @@ You can set the verbosity of what's logged to the slow query log by setting the 
 
 | Option            | Description                                                                | Engine |
 | ----------------- | -------------------------------------------------------------------------- | ------ |
-| Option            | Description                                                                | Engine |
 | Pages\_accessed   | Number of pages accessed from page buffer (innodb-buffer-pool / key cache) | InnoDB |
 | Pages\_updated    | Number of pages updated in memory                                          | InnoDB |
 | Pages\_read\_time | Milliseconds spend reading pages from storage                              | InnoDB |

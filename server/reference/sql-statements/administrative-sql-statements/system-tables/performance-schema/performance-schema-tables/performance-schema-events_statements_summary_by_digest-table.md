@@ -10,7 +10,6 @@ The [Performance Schema](../README.md) `events_statements_summary_by_digest` tab
 
 | Column | Description |
 | --- | --- |
-| Column | Description |
 | SCHEMA NAME | Database name. Records are summarised together with DIGEST. |
 | DIGEST | [Performance Schema digest](../performance-schema-digests.md). Records are summarised together with SCHEMA NAME. |
 | DIGEST TEXT | The unhashed form of the digest. |

@@ -19,7 +19,6 @@ The [InnoDB storage engine](./) has the following limitations.
 
 | InnoDB Page Size | Maximum Tablespace Size |
 | ---------------- | ----------------------- |
-| InnoDB Page Size | Maximum Tablespace Size |
 | 4KB              | 16TB                    |
 | 8KB              | 32TB                    |
 | 16KB             | 64TB                    |
@@ -35,7 +34,6 @@ Using the [innodb\_page\_size](innodb-system-variables.md#innodb_page_size) syst
 
 | InnoDB Page Size | Index Key Length |
 | ---------------- | ---------------- |
-| InnoDB Page Size | Index Key Length |
 | 4KB              | 768B             |
 | 8KB              | 1536B            |
 | 16KB             | 3072B            |

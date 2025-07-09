@@ -79,13 +79,11 @@ For details on how to use MariaDB Connector/R2DBC, choose a supported framework:
 
 | Parameter                                                                          | Description                                                                                                                |
 | ---------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
-| Parameter                                                                          | Description                                                                                                                |
 | [Native R2DBC](using-the-native-r2dbc-api-of-mariadb-connector-r2dbc/)             | The native implementation of R2DBC can be used to connect using MariaDB Connector/R2DBC from within your Java application. |
 | [Spring Data R2DBC](using-the-spring-data-framework-with-mariadb-connector-r2dbc/) | Spring Data implementation of R2DBC allows you to connect using MariaDB Connector/R2DBC using the Spring Framework.        |
 
 | Feature                             | [Native R2DBC](using-the-native-r2dbc-api-of-mariadb-connector-r2dbc/) | [Spring Data R2DBC](using-the-spring-data-framework-with-mariadb-connector-r2dbc/) |
 | ----------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
-| Feature                             | [Native R2DBC](using-the-native-r2dbc-api-of-mariadb-connector-r2dbc/) | [Spring Data R2DBC](using-the-spring-data-framework-with-mariadb-connector-r2dbc/) |
 | Reactive                            | Yes                                                                    | Yes                                                                                |
 | Scalable                            | Yes                                                                    | Yes                                                                                |
 | Fast                                | Yes                                                                    | Yes                                                                                |

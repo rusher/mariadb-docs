@@ -54,7 +54,6 @@ In alignment with the [enterprise lifecycle](../../enterprise-server/enterprise-
 
 | Note |
 | ---- |
-| Note |
 
 <sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
 

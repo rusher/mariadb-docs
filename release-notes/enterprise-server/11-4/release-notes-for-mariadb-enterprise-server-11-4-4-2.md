@@ -102,7 +102,6 @@ orary";
 
 | New Table Option | Old COMMENT Option | Description                                                                    |
 | ---------------- | ------------------ | ------------------------------------------------------------------------------ |
-| New Table Option | Old COMMENT Option | Description                                                                    |
 | REMOTE\_DATABASE | database           | The remote database that contains the remote table                             |
 | REMOTE\_SERVER   | srv                | The IP address or hostname of the remote server that contains the remote table |
 | REMOTE\_TABLE    | tbl                | The remote table                                                               |
@@ -318,7 +317,6 @@ MAX_MEMORY_USED: 392544
 
 | System Variable                     | Type    | Description                                                                                                                                                                    |
 | ----------------------------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| System Variable                     | Type    | Description                                                                                                                                                                    |
 | optimizer\_disk\_read\_cost         | Engine  | Sets the time in microseconds required to read a 4K block from storage. The default value is tuned for an SSD reading at 400 MB/second.                                        |
 | optimizer\_index\_block\_copy\_cost | Engine  | Sets the cost to lock a block in the global cache and copy it to the local cache. The cost applies to every block accessed, regardless of whether the block is already cached. |
 | optimizer\_key\_compare\_cost       | Engine  | Sets the cost to compare two key values.                                                                                                                                       |
@@ -1198,7 +1196,6 @@ $ mariadb-binlog --do-domain-ids='0,1' \
 
 | Connection State                | Description                                                                                                                                                                                                                                                                                                      |
 | ------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Connection State                | Description                                                                                                                                                                                                                                                                                                      |
 | waiting to execute in isolation | The connection is executing a DDL statement with [wsrep\_osu\_method=TOI](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_osu_method), but the operation requires other concurrent operations to finish first, so the DDL statement can be executed in isolation. |
 | waiting for TOI DDL             | Another connection is executing a DDL statement with [wsrep\_osu\_method=TOI](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_osu_method), so this connection must wait for the DDL statement to finish.                                                          |
 | waiting for flow control        | The connection is committing a transaction, but transactions are currently paused due to flow control, so the connection is waiting for the cluster to catch up and unpause transactions.                                                                                                                        |

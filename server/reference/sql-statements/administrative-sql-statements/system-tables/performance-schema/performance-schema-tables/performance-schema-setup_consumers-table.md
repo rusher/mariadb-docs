@@ -10,7 +10,6 @@ The `setup_consumers` table contains the following columns:
 
 | Column | Description |
 | --- | --- |
-| Column | Description |
 | NAME | Consumer name |
 | ENABLED | YES or NO for whether or not the consumer is enabled. You can modify this column to ensure that event information is added, or is not added. |
 

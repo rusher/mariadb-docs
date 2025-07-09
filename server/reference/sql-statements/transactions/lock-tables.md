@@ -22,7 +22,6 @@ The _lock\_type_ can be one of:
 
 | Option              | Description                                                                                                  |
 | ------------------- | ------------------------------------------------------------------------------------------------------------ |
-| Option              | Description                                                                                                  |
 | READ                | Read lock, no writes allowed                                                                                 |
 | READ LOCAL          | Read lock, but allow [concurrent inserts](../data-manipulation/inserting-loading-data/concurrent-inserts.md) |
 | WRITE               | Exclusive write lock. No other connections can read or write to this table                                   |

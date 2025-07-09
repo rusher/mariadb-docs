@@ -8,7 +8,6 @@ It has the following columns:
 
 | Column | Description         |
 | ------ | ------------------- |
-| Column | Description         |
 | KEY    | Metadata item name. |
 | VALUE  | Associated value.   |
 

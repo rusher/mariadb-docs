@@ -9,7 +9,6 @@ The data types currently supported by CONNECT are:
 
 | Type name    | Description            | Used for                                                                                                                                                                                                                                                                                                                                                                               |
 | ------------ | ---------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Type name    | Description            | Used for                                                                                                                                                                                                                                                                                                                                                                               |
 | TYPE\_STRING | Zero ended string      | [char](../../../reference/data-types/string-data-types/char.md), [varchar](../../../reference/data-types/string-data-types/varchar.md), [text](../../../reference/data-types/string-data-types/text.md)                                                                                                                                                                                |
 | TYPE\_INT    | 4 bytes integer        | [int](../../../reference/data-types/numeric-data-types/int.md), [mediumint](../../../reference/data-types/numeric-data-types/mediumint.md), [integer](../../../reference/data-types/numeric-data-types/integer.md)                                                                                                                                                                     |
 | TYPE\_SHORT  | 2 bytes integer        | [smallint](../../../reference/data-types/numeric-data-types/smallint.md)                                                                                                                                                                                                                                                                                                               |
@@ -148,7 +147,6 @@ The SELECT query returns:
 
 | Name    | Bday       | Btime    |
 | ------- | ---------- | -------- |
-| Name    | Bday       | Btime    |
 | Charlie | 2012-11-12 | 15:30:00 |
 
 The values of the INSERT statement must be specified using the standard MariaDB syntax and these values are displayed as MariaDB temporal values. Sure enough, the column formats apply only to the way these values are represented inside the CSV files. Here, the inserted record will be:
@@ -172,7 +170,6 @@ source string. They are defined by the following groups of characters:
 
 | Element | Description                                                                     |
 | ------- | ------------------------------------------------------------------------------- |
-| Element | Description                                                                     |
 | YY      | The last two digits of the year (that is, 1996 would be coded as "96").         |
 | YYYY    | The full year (that is, 1996 could be entered as "96" but displayed as “1996”). |
 | MM      | The one or two-digit month number.                                              |
@@ -236,7 +233,6 @@ The select query replies:
 
 | a    | b    |
 | ---- | ---- |
-| a    | b    |
 | NULL | zero |
 | NULL | ???  |
 
@@ -260,7 +256,6 @@ The insert statement will produce a warning saying:
 
 | Level   | Code | Message                   |
 | ------- | ---- | ------------------------- |
-| Level   | Code | Message                   |
 | Warning | 1048 | Column 'a' cannot be null |
 
 It is replaced by a pseudo null `0` on the fourth row. Let us see the result:
@@ -274,7 +269,6 @@ The first query returns no rows, 0 are valid values and not NULL. The second que
 
 | a | b    |
 | - | ---- |
-| a | b    |
 | 0 | zero |
 | 0 | ???  |
 
@@ -297,7 +291,6 @@ When converted, MariaDB types are converted as:
 
 | MariaDB Types                                                                                                                                           | CONNECT Type             | Remark                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------ | ------------------------------------------------------------------------------------------------------------------------- |
-| MariaDB Types                                                                                                                                           | CONNECT Type             | Remark                                                                                                                    |
 | [integer](../../../reference/data-types/numeric-data-types/integer.md), [medium integer](../../../reference/data-types/numeric-data-types/mediumint.md) | TYPE\_INT                | 4 byte integer                                                                                                            |
 | [small integer](../../../reference/data-types/numeric-data-types/smallint.md)                                                                           | TYPE\_SHORT              | 2 byte integer                                                                                                            |
 | [tiny integer](../../../reference/data-types/numeric-data-types/tinyint.md)                                                                             | TYPE\_TINY               | 1 byte integer                                                                                                            |
@@ -320,7 +313,6 @@ ODBC SQL types are converted as:
 
 | SQL Types                                        | Connect Type | Remark                                                                                                                                                                                       |
 | ------------------------------------------------ | ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| SQL Types                                        | Connect Type | Remark                                                                                                                                                                                       |
 | SQL\_CHAR, SQL\_VARCHAR                          | TYPE\_STRING |                                                                                                                                                                                              |
 | SQL\_LONGVARCHAR                                 | TYPE\_STRING | len = min(abs(len), connect\_conv\_size) If the column is generated by discovery (columns not specified) its length is [connect\_conv\_size](connect-system-variables.md#connect_conv_size). |
 | SQL\_NUMERIC, SQL\_DECIMAL                       | TYPE\_DECIM  |                                                                                                                                                                                              |
@@ -340,7 +332,6 @@ JDBC SQL types are converted as:
 
 | JDBC Types                    | Connect Type            | Remark                                                                                                                                                                                       |
 | ----------------------------- | ----------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| JDBC Types                    | Connect Type            | Remark                                                                                                                                                                                       |
 | (N)CHAR, (N)VARCHAR           | TYPE\_STRING            |                                                                                                                                                                                              |
 | LONG(N)VARCHAR                | TYPE\_STRING            | len = min(abs(len), connect\_conv\_size) If the column is generated by discovery (columns not specified), its length is [connect\_conv\_size](connect-system-variables.md#connect_conv_size) |
 | NUMERIC, DECIMAL, VARBINARY   | TYPE\_DECIM             |                                                                                                                                                                                              |

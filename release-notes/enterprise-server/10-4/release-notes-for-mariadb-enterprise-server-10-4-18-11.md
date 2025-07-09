@@ -8,7 +8,6 @@ MariaDB Enterprise Server 10.4.18-11 was released on 2021-03-15.
 
 | CVE (with [cve.org](https://github.com/mariadb-corporation/docs-release-notes/blob/test/mariadb-enterprise-server-release-notes/mariadb-enterprise-server-10-4/cve.org) link) | CVSS base score                                                                 |
 | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
-| CVE (with [cve.org](https://github.com/mariadb-corporation/docs-release-notes/blob/test/mariadb-enterprise-server-release-notes/mariadb-enterprise-server-10-4/cve.org) link) | CVSS base score                                                                 |
 | [CVE-2021-27928](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-27928)                                                                                               | N/A (Critical)[#1](release-notes-for-mariadb-enterprise-server-10-4-18-11.md#1) |
 
 1. 1:\

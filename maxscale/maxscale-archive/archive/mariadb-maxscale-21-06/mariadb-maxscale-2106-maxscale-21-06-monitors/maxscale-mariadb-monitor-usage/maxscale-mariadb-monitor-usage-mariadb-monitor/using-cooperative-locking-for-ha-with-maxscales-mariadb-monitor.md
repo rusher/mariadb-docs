@@ -14,7 +14,6 @@ When cooperative locking is enabled for MariaDB Monitor, it tries to acquire loc
 
 | Value                 | Description                                                                         |
 | --------------------- | ----------------------------------------------------------------------------------- |
-| Value                 | Description                                                                         |
 | none                  | Do not use any cooperative locking. This is the default value.                      |
 | majority\_of\_all     | Primary monitor requires locks on a majority of servers, even those which are down. |
 | majority\_of\_running | Primary monitor requires locks on a majority of running servers.                    |

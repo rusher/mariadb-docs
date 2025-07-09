@@ -1005,7 +1005,6 @@ request. The value of `state` must be one of the following values.
 
 | Value       | State Description                |
 | ----------- | -------------------------------- |
-| Value       | State Description                |
 | master      | Server is a Master               |
 | slave       | Server is a Slave                |
 | maintenance | Server is put into maintenance   |

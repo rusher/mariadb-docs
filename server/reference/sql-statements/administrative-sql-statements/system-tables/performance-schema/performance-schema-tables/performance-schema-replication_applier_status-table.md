@@ -10,7 +10,6 @@ It contains the following fields.
 
 | Field                        | Type                | Null | Description                                                                                                                    |
 | ---------------------------- | ------------------- | ---- | ------------------------------------------------------------------------------------------------------------------------------ |
-| Field                        | Type                | Null | Description                                                                                                                    |
 | CHANNEL\_NAME                | char(64)            | NO   | The replication channel name.                                                                                                  |
 | SERVICE\_STATE               | enum('ON','OFF')    | NO   | Shows ON when the replication channel's applier threads are active or idle, OFF means that the applier threads are not active. |
 | REMAINING\_DELAY             | int(10) unsigned    | YES  | Seconds the replica needs to wait to reach the desired delay from master.                                                      |

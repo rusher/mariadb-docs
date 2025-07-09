@@ -8,7 +8,6 @@ MariaDB Enterprise Server 10.5.17-12 was released on 2022-09-12.
 
 | CVE (with cve.org link)                                                         | CVSS base score |
 | ------------------------------------------------------------------------------- | --------------- |
-| CVE (with cve.org link)                                                         | CVSS base score |
 | [CVE-2023-5157](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-5157)   | 7.5             |
 | [CVE-2018-25032](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-25032) | 7.5             |
 | [CVE-2022-32091](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-32091) | 6.5             |

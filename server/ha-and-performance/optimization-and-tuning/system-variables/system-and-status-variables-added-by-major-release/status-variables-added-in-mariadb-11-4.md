@@ -4,7 +4,6 @@ This is a list of [status variables](../server-status-variables.md) that were ad
 
 | Variable                                                                                                                         | Added                                                                                                                                                    |
 | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Variable                                                                                                                         | Added                                                                                                                                                    |
 | [binlog\_gtid\_index\_hit](../../../standard-replication/replication-and-binary-log-status-variables.md#binlog_gtid_index_hit)   | [MariaDB 11.4.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-4-series/mariadb-11-4-0-release-notes) |
 | [binlog\_gtid\_index\_miss](../../../standard-replication/replication-and-binary-log-status-variables.md#binlog_gtid_index_miss) | [MariaDB 11.4.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-4-series/mariadb-11-4-0-release-notes) |
 

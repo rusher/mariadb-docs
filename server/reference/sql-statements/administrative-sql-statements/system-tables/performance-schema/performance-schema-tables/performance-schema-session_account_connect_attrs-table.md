@@ -12,7 +12,6 @@ The C API functions [mysql\_options()](https://app.gitbook.com/s/CjGYMsT2MVP4nd3
 
 | Column            | Description                                                      |
 | ----------------- | ---------------------------------------------------------------- |
-| Column            | Description                                                      |
 | PROCESSLIST\_ID   | Session connection identifier.                                   |
 | ATTR\_NAME        | Attribute name.                                                  |
 | ATTR\_VALUE       | Attribute value.                                                 |

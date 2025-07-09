@@ -7,7 +7,6 @@ The [Performance Schema](../README.md) `events_waits_summary_by_host_by_event_na
 
 | Column | Description |
 | --- | --- |
-| Column | Description |
 | HOST | Host. Used together with EVENT_NAME for grouping events. |
 | EVENT_NAME | Event name. Used together with USER and HOST for grouping events. |
 | COUNT_STAR | Number of summarized events |

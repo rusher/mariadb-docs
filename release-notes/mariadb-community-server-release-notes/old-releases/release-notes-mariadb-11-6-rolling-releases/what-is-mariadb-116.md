@@ -62,7 +62,6 @@ Add listcve macro here - removed for performance reasons
 
 | Date        | Release                                                  | Status      | Release Notes                                           | Changelog                                                                                |
 | ----------- | -------------------------------------------------------- | ----------- | ------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| Date        | Release                                                  | Status      | Release Notes                                           | Changelog                                                                                |
 | 21 Nov 2024 | [MariaDB 11.6.2](mariadb-11-6-2-release-notes.md)        | Stable (GA) | [Release Notes](mariadb-11-6-2-release-notes.md)        | [Changelog](../../changelogs/changelogs-mariadb-11-6-series/mariadb-11-6-2-changelog.md) |
 | 14 Aug 2024 | [MariaDB 11.6.1](mariadb-11-6-1-release-notes.md)        | RC          | [Release Notes](mariadb-11-6-1-release-notes.md)        | [Changelog](../../changelogs/changelogs-mariadb-11-6-series/mariadb-11-6-1-changelog.md) |
 | 29 Jul 2024 | [MariaDB 11.6.0](mariadb-11-6-0-release-notes.md) Vector | Alpha       | [Release Notes](mariadb-11-6-0-vector-release-notes.md) |                                                                                          |

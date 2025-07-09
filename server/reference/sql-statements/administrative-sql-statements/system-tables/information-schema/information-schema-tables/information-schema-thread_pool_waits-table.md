@@ -8,7 +8,6 @@ The table provides wait counters for the [thread pool](../../../../../../ha-and-
 
 | Column | Description                                                     |
 | ------ | --------------------------------------------------------------- |
-| Column | Description                                                     |
 | REASON | name of the reason for waiting, e.g. ROW\_LOCK, DISKIO, NET ... |
 | COUNT  | how often a wait for this specific reason has happened so far   |
 

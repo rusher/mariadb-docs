@@ -10,7 +10,6 @@ It contains the following columns:
 
 | Column                        | Description                                                                                            |
 | ----------------------------- | ------------------------------------------------------------------------------------------------------ |
-| Column                        | Description                                                                                            |
 | CATALOG\_NAME                 | Catalog name.                                                                                          |
 | DEFAULT\_CHARACTER\_SET\_NAME | Default [character set](../../../../../data-types/string-data-types/character-sets/) for the database. |
 | DEFAULT\_COLLATION\_NAME      | Default [collation](../../../../../data-types/string-data-types/character-sets/).                      |

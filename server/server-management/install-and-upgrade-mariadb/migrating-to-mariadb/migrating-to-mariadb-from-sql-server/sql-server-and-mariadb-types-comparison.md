@@ -16,7 +16,6 @@ For more information see [Numeric Data Type Overview](../../../../reference/data
 
 | SQL Server Types | Size (bytes) | MariaDB Types                                                                                                                                 | Size (bytes) | Notes                                        |
 | ---------------- | ------------ | --------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | -------------------------------------------- |
-| SQL Server Types | Size (bytes) | MariaDB Types                                                                                                                                 | Size (bytes) | Notes                                        |
 | tinyint          | 1            | [TINYINT](../../../../reference/data-types/numeric-data-types/tinyint.md)                                                                     | 1            |                                              |
 | smallint         | 2            | [SMALLINT](../../../../reference/data-types/numeric-data-types/smallint.md)                                                                   | 2            |                                              |
 |                  |              | [MEDIUMINT](../../../../reference/data-types/numeric-data-types/mediumint.md)                                                                 | 3            | Takes 3 bytes on disk, but 4 bytes in memory |
@@ -27,7 +26,6 @@ For more information see [Numeric Data Type Overview](../../../../reference/data
 
 | SQL Server Types | Precision | Size | MariaDB Types                                                                | Size |
 | ---------------- | --------- | ---- | ---------------------------------------------------------------------------- | ---- |
-| SQL Server Types | Precision | Size | MariaDB Types                                                                | Size |
 | float(1-24)      | 7 digits  | 4    | [FLOAT(0-23)](../../../../reference/data-types/numeric-data-types/float.md)  | 4    |
 | float(25-53)     | 15 digist | 8    | [FLOAT(24-53)](../../../../reference/data-types/numeric-data-types/float.md) | 8    |
 
@@ -47,7 +45,6 @@ Normally, `REAL` is also a synonym for `FLOAT(24-53)`. However, the [sql\_mode](
 
 | SQL Server Types | Precision | Size (bytes) | MariaDB Types                                                             | Precision | Size (bytes)                                                                            |
 | ---------------- | --------- | ------------ | ------------------------------------------------------------------------- | --------- | --------------------------------------------------------------------------------------- |
-| SQL Server Types | Precision | Size (bytes) | MariaDB Types                                                             | Precision | Size (bytes)                                                                            |
 | decimal          | 0 - 38    | Up to 17     | [DECIMAL](../../../../reference/data-types/numeric-data-types/decimal.md) | 0 - 38    | [See table](../../../../reference/data-types/data-type-storage-requirements.md#decimal) |
 
 MariaDB supports this syntax: `DECIMAL(M, D)`. M and D are both optional. M is the total number of digits (10 by default), and D is the number of digits after the decimal point (0 by default). In SQL Server, defaults are 18 and 0, respectively. The reason for this difference is that SQL standard imposes a default of 0 for D, but it leaves the implementation free to choose any default for M.
@@ -95,7 +92,6 @@ In MariaDB `'True'` and `'False'` are always strings.
 
 | SQL Server Types | Range                   | Precision | Size (bytes)    | MariaDB Types                                                                     | Range                   | Size (bytes) | Precision | Notes                                           |
 | ---------------- | ----------------------- | --------- | --------------- | --------------------------------------------------------------------------------- | ----------------------- | ------------ | --------- | ----------------------------------------------- |
-| SQL Server Types | Range                   | Precision | Size (bytes)    | MariaDB Types                                                                     | Range                   | Size (bytes) | Precision | Notes                                           |
 | date             | 0001-01-01 - 9999-12-31 | 3         | /               | [DATE](../../../../reference/data-types/date-and-time-data-types/date.md)         | 0001-01-01 - 9999-12-31 | 3            | /         | They cover the same range                       |
 | datetime         | 1753-01-01 - 9999-12-31 | 8         | 0 to 3, rounded | [DATETIME](../../../../reference/data-types/date-and-time-data-types/datetime.md) | 001-01-01 - 9999-12-31  | 8            | 0 to 6    | MariaDB values are not approximated, see below. |
 | datetime2        | 001-01-01 - 9999-12-31  | 8         | 6 to 8          | [DATETIME](../../../../reference/data-types/date-and-time-data-types/datetime.md) | 001-01-01 - 9999-12-31  | 8            | 0 to 6    | MariaDB values are not approximated, see below. |
@@ -132,7 +128,6 @@ For temporal types that include a day time, MariaDB allows a precision from 0 to
 
 | SQL Server Types | Size (bytes) | MariaDB Types                                                                                                                                                          | Notes                    |
 | ---------------- | ------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------ |
-| SQL Server Types | Size (bytes) | MariaDB Types                                                                                                                                                          | Notes                    |
 | binary           | 1 to 8000    | [VARBINARY](../../../../reference/data-types/string-data-types/varbinary.md) or [BLOB](../../../../reference/data-types/string-data-types/blob-and-text-data-types.md) | See below for BLOB types |
 | varbinary        | 1 to 8000    | [VARBINARY](../../../../reference/data-types/string-data-types/varbinary.md) or [BLOB](../../../../reference/data-types/string-data-types/blob-and-text-data-types.md) | See below for BLOB types |
 | image            | 2^31-1       | [VARBINARY](../../../../reference/data-types/string-data-types/varbinary.md) or [BLOB](../../../../reference/data-types/string-data-types/blob-and-text-data-types.md) | See below for BLOB types |
@@ -149,7 +144,6 @@ To create a MariaDB table that is identical to a SQL Server table, **it may be n
 
 | SQL Server Types | Size (bytes) | MariaDB Types                                                                          | Size (bytes)        | Character set         |
 | ---------------- | ------------ | -------------------------------------------------------------------------------------- | ------------------- | --------------------- |
-| SQL Server Types | Size (bytes) | MariaDB Types                                                                          | Size (bytes)        | Character set         |
 | char             | 1 to 8000    | [CHAR](../../../../reference/data-types/string-data-types/char.md)                     | 0 to 255            | utf8mb4 (1, 4)        |
 | varchar          | 1 to 8000    | [VARCHAR](../../../../reference/data-types/string-data-types/varchar.md)               | 0 to 65,532 (2)     | utf8mb4 (1)           |
 | text             | 2^31-1       | [TEXT](../../../../reference/data-types/string-data-types/blob-and-text-data-types.md) | 2^31-1              | ucs2                  |

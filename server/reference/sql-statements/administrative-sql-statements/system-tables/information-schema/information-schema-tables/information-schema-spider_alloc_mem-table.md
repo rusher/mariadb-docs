@@ -6,7 +6,6 @@ It contains the following columns:
 
 | Column              | Description |
 | ------------------- | ----------- |
-| Column              | Description |
 | ID                  |             |
 | FUNC\_NAME          |             |
 | FILE\_NAME          |             |

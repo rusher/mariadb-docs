@@ -21,7 +21,6 @@ To use MariaDB Enterprise Audit, the plugin must be configured:
 
 | Audit Filter Type                                                        | Used For                                                                                         |
 | ------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
-| Audit Filter Type                                                        | Used For                                                                                         |
 | [Default Audit Filter](mariadb-enterprise-audit.md#default-audit-filter) | The Default Audit Filter is used for any user account that is not assigned a Named Audit Filter. |
 | [Named Audit Filters](mariadb-enterprise-audit.md#named-audit-filters)   | Named Audit Filters are assigned to specific user accounts.                                      |
 
@@ -29,7 +28,6 @@ Administrators can define Audit Filters to audit log activity using multiple typ
 
 | Filter Type                                                   | Used For                                                                                                                                                                                                                                                                                                     |
 | ------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Filter Type                                                   | Used For                                                                                                                                                                                                                                                                                                     |
 | [Event Filters](mariadb-enterprise-audit.md#event-filters)    | Event Filters are used to enable or disable audit logging for specific types of operations performed by the user accounts assigned to the Audit Filter.                                                                                                                                                      |
 | [Logging Filters](mariadb-enterprise-audit.md#logging-filter) | Logging Filters are used to enable or disable audit logging for the user accounts assigned to the Audit Filter.                                                                                                                                                                                              |
 | [Object Filters](mariadb-enterprise-audit.md#object-filters)  | Object Filters are used to enable or disable audit logging for specific databases or tables accessed by the user accounts assigned to the Audit Filter. Support for Object Filters was added in MariaDB Enterprise Server 10.6. Support for Object Filters was backported to ES 10.4.21-13 and ES 10.5.12-8. |
@@ -265,7 +263,6 @@ Audit logging can be started using the shell or SQL:
 
 | Interface | Method                                                                                      | Benefits                                                                                                |
 | --------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
-| Interface | Method                                                                                      | Benefits                                                                                                |
 | Shell     | [Configuration File](mariadb-enterprise-audit.md#start-audit-logging-in-configuration-file) | SQL access is not required SUPER privilege is not required Configuration file can be version controlled |
 | SQL       | [SET GLOBAL Statement](mariadb-enterprise-audit.md#start-audit-logging-with-set-global)     | Server restart is not required                                                                          |
 
@@ -434,7 +431,6 @@ There are two types of filters:
 
 | Audit Filter Type                                                        | Description                                                                                                                                                                                                                                                                                                                                                              |
 | ------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Audit Filter Type                                                        | Description                                                                                                                                                                                                                                                                                                                                                              |
 | [Default Audit Filter](mariadb-enterprise-audit.md#default-audit-filter) | The Default Audit Filter is used for all user accounts that are not assigned a Named Audit Filter. Only a single Default Audit Filter can be defined in the mysql.server\_audit\_filters system table, and it must be defined with the name default.                                                                                                                     |
 | [Named Audit Filters](mariadb-enterprise-audit.md#named-audit-filters)   | Named Audit Filters must be assigned to specific user accounts. Many Named Audit Filters can be defined in the mysql.server\_audit\_filters system table, and they must be defined with unique names. A Named Audit Filter can be assigned to a user account by inserting the user account details and the filter name into the mysql.server\_audit\_users system table. |
 
@@ -563,7 +559,6 @@ There are two system tables for Audit Filters:
 
 | System Table                 | Description                                                               |
 | ---------------------------- | ------------------------------------------------------------------------- |
-| System Table                 | Description                                                               |
 | mysql.server\_audit\_filters | Audit Filter definitions with MariaDB Enterprise Audit                    |
 | mysql.server\_audit\_users   | Audit Filter assignments for user accounts with MariaDB Enterprise Audit. |
 
@@ -680,7 +675,6 @@ For additional information on how to use the server\_audit\_reload\_filters syst
 
 | Note |
 | ---- |
-| Note |
 
 ## Event Filters
 
@@ -740,7 +734,6 @@ An Event Filter for Connection Events can be added to an Audit Filter with the c
 
 | Value           | Description                                                                                                                                    |
 | --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
-| Value           | Description                                                                                                                                    |
 | CONNECT         | Records when the user connects to MariaDB Enterprise Server                                                                                    |
 | DISCONNECT      | Records when the user disconnects from MariaDB Enterprise Server                                                                               |
 | FAILED\_CONNECT | Records when a user attempts to connect to MariaDB Enterprise Server, but the connection attempt fails due to authentication or similar issues |
@@ -785,7 +778,6 @@ An Event Filter for Query Events can be added to an Audit Filter with the `query
 
 | Value           | Description                                                                                                                                               |
 | --------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Value           | Description                                                                                                                                               |
 | DML             | Records any SQL statements in the Data Manipulation Language subset, including SELECT, INSERT, UPDATE, and DELETE statements.                             |
 | DDL             | Records any SQL statements in the Data Definition Language subset, including CREATE TABLE and ALTER TABLE, as well as DROP TABLE and TRUNCATE operations. |
 | DCL             | Records any SQL statements in the Data Control Language subset, including GRANT and REVOKE.                                                               |
@@ -866,7 +858,6 @@ An Event Filter for Table Events can be added to an Audit Filter with the table\
 
 | Value  | Description                                                                                         |
 | ------ | --------------------------------------------------------------------------------------------------- |
-| Value  | Description                                                                                         |
 | READ   | Records read operations run on table objects, such as from a SELECT statement or an INSERT SELECT   |
 | WRITE  | Records write operations run on table objects, such as INSERT or UPDATE statements                  |
 | CREATE | Records any creation operations run on table objects, such as from a CREATE TABLE or CREATE SERVER. |
@@ -907,7 +898,6 @@ The Logging Filter can be added to an Audit Filter with the logging key, which s
 
 | Value | Description                                  |
 | ----- | -------------------------------------------- |
-| Value | Description                                  |
 | ON    | Enables audit logging for this Audit Filter  |
 | OFF   | Disables audit logging for this Audit Filter |
 
@@ -944,7 +934,6 @@ For Object Filters, the key in the key-value pair refers to the specific type of
 
 | Audit Log? | Object Filter Key | Description                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 | ---------- | ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Audit Log? | Object Filter Key | Description                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 | No         | ignore\_databases | When one or more databases are specified with the ignore\_databases Object Filter key, the specified databases will not be audit logged. The ignore\_databases Object Filter key is an alias for the ignore\_tables Object Filter key, with the table identifier set to the wildcard character (\*). The ignore\_databases Object Filter key cannot be specified in the same Object Filter as the log\_databases and log\_tables Object Filter keys. |
 | No         | ignore\_tables    | When one or more tables are specified with the ignore\_tables Object Filter key, the specified tables will not be audit logged. Table names must be provided in the form database.table. Wildcard characters (\*) are allowed. The ignore\_tables Object Filter key cannot be specified in the same Object Filter as the log\_databases and log\_tables Object Filter keys.                                                                          |
 | Yes        | log\_databases    | When one or more databases are specified with the log\_databases Object Filter key, the specified databases will be audit logged, and all other databases will not be audit logged. The log\_databases Object Filter key is an alias for the log\_tables Object Filter key, with the table identifier set to the wildcard character (\*).                                                                                                            |
@@ -1129,7 +1118,6 @@ The audit log destination is configured with the [dit\_output\_type|server\_audi
 
 | Value                                                             | Description                                                |
 | ----------------------------------------------------------------- | ---------------------------------------------------------- |
-| Value                                                             | Description                                                |
 | [FILE](mariadb-enterprise-audit.md#audit-logging-to-file)         | Audit log messages are written to a dedicated file.        |
 | [SYSLOG](mariadb-enterprise-audit.md#audit-logging-to-system-log) | Audit log messages are written to the system log (syslog). |
 

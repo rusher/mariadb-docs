@@ -94,7 +94,6 @@ RANGE/ROWS:
 
 | Function                          | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 | --------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Function                          | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 | AVG()                             | The average of all input values.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 | COUNT()                           | Number of input rows.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 | CUME\_DIST()                      | Calculates the cumulative distribution, or relative rank, of the current row to other rows in the same partition. Number of peer or preceding rows / number of rows in partition.                                                                                                                                                                                                                                                                                                                                                  |
@@ -150,7 +149,6 @@ Some example values are (thanks to [www.mockaroo.com](https://www.mockaroo.com) 
 
 | id | accountName | name                                               | owner   | amount    | closeDate  | stageName   |
 | -- | ----------- | -------------------------------------------------- | ------- | --------- | ---------- | ----------- |
-| id | accountName | name                                               | owner   | amount    | closeDate  | stageName   |
 | 1  | Browseblab  | Multi-lateral executive function                   | Bob     | 26444.86  | 2016-10-20 | Negotiating |
 | 2  | Mita        | Organic demand-driven benchmark                    | Maria   | 477878.41 | 2016-11-28 | ClosedWon   |
 | 3  | Miboo       | De-engineered hybrid groupware                     | Olivier | 80181.78  | 2017-01-05 | ClosedWon   |
@@ -185,7 +183,6 @@ with example results:
 
 | owner   | accountName  | CloseDate  | amount    | cumeWon    | runningMax |
 | ------- | ------------ | ---------- | --------- | ---------- | ---------- |
-| owner   | accountName  | CloseDate  | amount    | cumeWon    | runningMax |
 | Bill    | Babbleopia   | 2016-10-02 | 437636.47 | 437636.47  | 437636.47  |
 | Bill    | Thoughtworks | 2016-10-04 | 146086.51 | 583722.98  | 437636.47  |
 | Olivier | Devpulse     | 2016-10-05 | 834235.93 | 1417958.91 | 834235.93  |
@@ -215,7 +212,6 @@ with example results:
 
 | owner   | accountName  | CloseDate  | amount    | cumeWon    | runningMax |
 | ------- | ------------ | ---------- | --------- | ---------- | ---------- |
-| owner   | accountName  | CloseDate  | amount    | cumeWon    | runningMax |
 | Bill    | Babbleopia   | 2016-10-02 | 437636.47 | 437636.47  | 437636.47  |
 | Bill    | Thoughtworks | 2016-10-04 | 146086.51 | 583722.98  | 437636.47  |
 | Bill    | Latz         | 2016-10-08 | 857254.87 | 1440977.85 | 857254.87  |
@@ -247,7 +243,6 @@ with example results (note the query is technically incorrect by using closeDate
 
 | owner   | wonCount | rank |
 | ------- | -------- | ---- |
-| owner   | wonCount | rank |
 | Bill    | 19       | 1    |
 | Chris   | 15       | 2    |
 | Maria   | 14       | 3    |
@@ -292,7 +287,6 @@ with example results:
 
 | year | quarter | firstAccountName | firstOwner | firstAmount | lastAccountName | lastOwner | lastAmount |
 | ---- | ------- | ---------------- | ---------- | ----------- | --------------- | --------- | ---------- |
-| year | quarter | firstAccountName | firstOwner | firstAmount | lastAccountName | lastOwner | lastAmount |
 | 2016 | 3       | Skidoo           | Bill       | 523295.07   | Skipstorm       | Bill      | 151420.86  |
 | 2016 | 4       | Skimia           | Chris      | 961513.59   | Avamm           | Maria     | 112493.65  |
 | 2017 | 1       | Yombu            | Bob        | 536875.51   | Skaboo          | Chris     | 270273.08  |
@@ -315,7 +309,6 @@ with example results:
 
 | accountName | closeDate  | currentOppAmount | priorAmount | nextAmount |
 | ----------- | ---------- | ---------------- | ----------- | ---------- |
-| accountName | closeDate  | currentOppAmount | priorAmount | nextAmount |
 | Abata       | 2016-09-10 | 645098.45        | NULL        | 161086.82  |
 | Abata       | 2016-10-14 | 161086.82        | 645098.45   | 350235.75  |
 | Abata       | 2016-12-18 | 350235.75        | 161086.82   | 878595.89  |
@@ -348,7 +341,6 @@ With example results:
 
 | quartile | min       | max       |
 | -------- | --------- | --------- |
-| quartile | min       | max       |
 | 1        | 6337.15   | 287634.01 |
 | 2        | 288796.14 | 539977.45 |
 | 3        | 540070.04 | 748727.51 |
@@ -375,7 +367,6 @@ With example results:
 
 | owner   | accountName  | CloseDate  | amount    | pct\_cont         | pct\_disc |
 | ------- | ------------ | ---------- | --------- | ----------------- | --------- |
-| owner   | accountName  | CloseDate  | amount    | pct\_cont         | pct\_disc |
 | Bill    | Babbleopia   | 2016-10-02 | 437636.47 | 437636.4700000000 | 437636.47 |
 | Bill    | Thoughtworks | 2016-10-04 | 146086.51 | 437636.4700000000 | 437636.47 |
 | Bill    | Latz         | 2016-10-08 | 857254.87 | 437636.4700000000 | 437636.47 |

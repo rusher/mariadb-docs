@@ -8,7 +8,6 @@ It contains the following fields:
 
 | Field        | Type      | Null | Key | Default              | Description |
 | ------------ | --------- | ---- | --- | -------------------- | ----------- |
-| Field        | Type      | Null | Key | Default              | Description |
 | db\_name     | char(64)  | NO   |     |                      |             |
 | table\_name  | char(199) | NO   |     |                      |             |
 | link\_id     | char(64)  | NO   |     |                      |             |

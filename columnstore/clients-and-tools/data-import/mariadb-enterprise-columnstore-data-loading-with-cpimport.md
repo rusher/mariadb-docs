@@ -137,7 +137,6 @@ The `-I1 and -I2` options allow two different binary import modes to be selected
 
 | Option | Description                                                                                  |
 | ------ | -------------------------------------------------------------------------------------------- |
-| Option | Description                                                                                  |
 | -I1    | Numeric fields containing NULL will be treated as NULL unless the column has a default value |
 | -I2    | Numeric fields containing NULL will be saturated                                             |
 
@@ -145,7 +144,6 @@ The binary file should use the following format for data:
 
 | Data Type(s) | Format                                                                                                                                                                                                                                   |
 | ------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Data Type(s) | Format                                                                                                                                                                                                                                   |
 | BIGINT       | Little-endian integer format Signed NULL: 0x8000000000000000ULL Unsigned NULL: 0xFFFFFFFFFFFFFFFEULL                                                                                                                                     |
 | CHAR         | String padded with '0' to match the length of the field NULL: '0' for the full length of the field                                                                                                                                       |
 | DATE         | Use the format represented by the struct Date NULL: 0xFFFFFFFE                                                                                                                                                                           |

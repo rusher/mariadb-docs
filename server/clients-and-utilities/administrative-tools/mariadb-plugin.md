@@ -44,7 +44,6 @@ The following options can be specified on the command line, while some can be sp
 
 | Option                       | Description                                                                                     |
 | ---------------------------- | ----------------------------------------------------------------------------------------------- |
-| Option                       | Description                                                                                     |
 | -b, --basedir=name           | The base directory for the server.                                                              |
 | -d, --datadir=name           | The data directory for the server.                                                              |
 | -?, --help                   | Display help and exit.                                                                          |

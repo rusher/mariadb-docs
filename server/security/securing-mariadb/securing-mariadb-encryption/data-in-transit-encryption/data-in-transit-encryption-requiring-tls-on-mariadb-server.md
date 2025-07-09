@@ -15,7 +15,6 @@ TLS must be manually enabled on the server.
 
 | System Variable/Option                                                                                                                                    | Description                                                                                                                                                |
 | --------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| System Variable/Option                                                                                                                                    | Description                                                                                                                                                |
 | [require\_secure\_transport](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#require_secure_transport) | When this option is enabled, connections attempted using insecure transport will be rejected. Secure transports are SSL/TLS, Unix sockets, or named pipes. |
 | [ssl\_cert](ssltls-system-variables.md#ssl_cert)                                                                                                          | X509 cert in PEM format                                                                                                                                    |
 | [ssl\_key](ssltls-system-variables.md#ssl_key)                                                                                                            | X509 key in PEM format                                                                                                                                     |
@@ -25,7 +24,6 @@ Useful system variables and options for TLS include:
 
 | System Variable/Option                                 | Description                                  |
 | ------------------------------------------------------ | -------------------------------------------- |
-| System Variable/Option                                 | Description                                  |
 | [ssl\_capath](ssltls-system-variables.md#ssl_capath)   | CA directory                                 |
 | [ssl\_cipher](ssltls-system-variables.md#ssl_cipher)   | SSL cipher to use                            |
 | [ssl\_crl](ssltls-system-variables.md#ssl_crl)         | CRL file in PEM format                       |

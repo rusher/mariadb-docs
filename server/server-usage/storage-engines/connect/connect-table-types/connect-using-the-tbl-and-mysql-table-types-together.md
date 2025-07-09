@@ -115,7 +115,6 @@ This reply:
 
 | @@version            |
 | -------------------- |
-| @@version            |
 | 10.0.3-MariaDB-debug |
 | 10.0.2-MariaDB       |
 

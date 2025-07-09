@@ -47,7 +47,6 @@ CONNECT handles only types that are stored as characters.
 
 | Symbol | DBF Type        | CONNECT Type                        | Description                                                                                         |
 | ------ | --------------- | ----------------------------------- | --------------------------------------------------------------------------------------------------- |
-| Symbol | DBF Type        | CONNECT Type                        | Description                                                                                         |
 | B      | Binary (string) | TYPE\_STRING                        | 10 digits representing a .DBT block number.                                                         |
 | C      | Character       | TYPE\_STRING                        | All OEM code page characters - padded with blanks to the width of the field.                        |
 | D      | Date            | TYPE\_DATE                          | 8 bytes - date stored as a string in the format YYYYMMDD.                                           |

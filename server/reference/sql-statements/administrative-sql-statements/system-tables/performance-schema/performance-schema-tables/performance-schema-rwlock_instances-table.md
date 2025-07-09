@@ -13,7 +13,6 @@ The `rwlock_instances` table contains the following columns:
 
 | Column | Description |
 | --- | --- |
-| Column | Description |
 | NAME | Instrument name associated with the read write lock |
 | OBJECT_INSTANCE_BEGIN | Address in memory of the instrumented lock |
 | WRITE_LOCKED_BY_THREAD_ID | THREAD_ID of the locking thread if locked in write (exclusive) mode, otherwise NULL. |

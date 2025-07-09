@@ -55,7 +55,6 @@ The specific connection items are:
 
 | Option   | Default value           | Description                                      |
 | -------- | ----------------------- | ------------------------------------------------ |
-| Option   | Default value           | Description                                      |
 | Table    | The table name          | The name of the table to access.                 |
 | Database | The current DB name     | The database where the table is located.         |
 | Host     | localhost\*             | The host of the server, a name or an IP address. |
@@ -227,7 +226,6 @@ This command returns:
 
 | command                                                | warnings | number | message       |
 | ------------------------------------------------------ | -------- | ------ | ------------- |
-| command                                                | warnings | number | message       |
 | CREATE TABLE people (num integer(4) primary key aut... | 0        | 0      | Affected rows |
 
 ### Sending several commands in one call
@@ -295,7 +293,6 @@ This can return something like this:
 
 | command                                               | warnings | number | message                                  |
 | ----------------------------------------------------- | -------- | ------ | ---------------------------------------- |
-| command                                               | warnings | number | message                                  |
 | drop table if exists try                              | 1        | 0      | Affected rows                            |
 | Note                                                  | 0        | 1051   | Unknown table 'try'                      |
 | create table try (id int key auto\_increment, msg...  | 0        | 0      | Affected rows                            |

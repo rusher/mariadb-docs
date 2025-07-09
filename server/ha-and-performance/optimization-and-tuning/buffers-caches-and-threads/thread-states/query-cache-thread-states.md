@@ -4,7 +4,6 @@ This article documents thread states that are related to the [Query Cache](../qu
 
 | Value                               | Description                                                                     |
 | ----------------------------------- | ------------------------------------------------------------------------------- |
-| Value                               | Description                                                                     |
 | checking privileges on cached query | Checking whether the user has permission to access a result in the query cache. |
 | checking query cache for query      | Checking whether the current query exists in the query cache.                   |
 | invalidating query cache entries    | Marking query cache entries as invalid as the underlying tables have changed.   |

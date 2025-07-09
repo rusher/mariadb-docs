@@ -25,7 +25,6 @@ The `VERSION()` string may have one or more of the following suffixes:
 
 | Suffix    | Description                                                               |
 | --------- | ------------------------------------------------------------------------- |
-| Suffix    | Description                                                               |
 | -embedded | The server is an embedded server (libmariadbd).                           |
 | -log      | General logging, slow logging or binary (replication) logging is enabled. |
 | -debug    | The server is compiled for debugging.                                     |

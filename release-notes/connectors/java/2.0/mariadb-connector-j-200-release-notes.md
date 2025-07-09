@@ -58,7 +58,6 @@ New Options :
 
 | usePipelineAuth |
 | --------------- |
-| usePipelineAuth |
 
 ### Performance improvement storing data in resultset
 

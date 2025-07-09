@@ -26,7 +26,6 @@ query results and has the following fields:
 
 | Key       | Description                                              |
 | --------- | -------------------------------------------------------- |
-| Key       | Description                                              |
 | query     | The executed SQL if an SQL statement was executed        |
 | command   | The SQL command                                          |
 | session   | The connection ID of the session that executed the query |
@@ -38,7 +37,6 @@ the following fields:
 
 | Key      | Description                                |
 | -------- | ------------------------------------------ |
-| Key      | Description                                |
 | target   | The target where the query was executed    |
 | checksum | The CRC32 checksum of the result           |
 | rows     | Number of returned rows                    |

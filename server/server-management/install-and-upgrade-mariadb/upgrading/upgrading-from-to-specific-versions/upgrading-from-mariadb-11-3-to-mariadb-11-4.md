@@ -47,7 +47,6 @@ The following options should be removed if you use them in your [option files](.
 
 | Option                                                                                                                                               | Reason       |
 | ---------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ |
-| Option                                                                                                                                               | Reason       |
 | [debug\_no\_thread\_alarm](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#debug_no_thread_alarm) | Unused code. |
 
 ### See Also

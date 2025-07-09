@@ -19,7 +19,6 @@ The InnoDB storage engine:
 
 | Feature                 | Detail                 | Resources                                                                                                                                                                                |
 | ----------------------- | ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Feature                 | Detail                 | Resources                                                                                                                                                                                |
 | Storage Engine          | InnoDB                 |                                                                                                                                                                                          |
 | Availability            | All ES and CS versions | [MariaDB Enterprise Server](https://app.gitbook.com/s/JqgUabdZsoY5EiaJmqgn/)                                                                                                             |
 | Workload Optimization   | Transactional          |                                                                                                                                                                                          |

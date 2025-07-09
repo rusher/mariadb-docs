@@ -54,7 +54,6 @@ page.
 
 | Date        | Release                                           | Status                 | Release Notes                                    | Changelog                                                                                |
 | ----------- | ------------------------------------------------- | ---------------------- | ------------------------------------------------ | ---------------------------------------------------------------------------------------- |
-| Date        | Release                                           | Status                 | Release Notes                                    | Changelog                                                                                |
 | 16 May 2024 | [MariaDB 11.0.6](mariadb-11-0-6-release-notes.md) | Stable (GA)            | [Release Notes](mariadb-11-0-6-release-notes.md) | [Changelog](../../changelogs/changelogs-mariadb-11-0-series/mariadb-11-0-6-changelog.md) |
 | 7 Feb 2024  | [MariaDB 11.0.5](mariadb-11-0-5-release-notes.md) | Stable (GA)            | [Release Notes](mariadb-11-0-5-release-notes.md) | [Changelog](../../changelogs/changelogs-mariadb-11-0-series/mariadb-11-0-5-changelog.md) |
 | 13 Nov 2023 | [MariaDB 11.0.4](mariadb-11-0-4-release-notes.md) | Stable (GA)            | [Release Notes](mariadb-11-0-4-release-notes.md) | [Changelog](../../changelogs/changelogs-mariadb-11-0-series/mariadb-11-0-4-changelog.md) |

@@ -18,7 +18,6 @@ The table contains the following columns:
 
 | Field                            | Type                | Null | Default | Description                                                                           |
 | -------------------------------- | ------------------- | ---- | ------- | ------------------------------------------------------------------------------------- |
-| Field                            | Type                | Null | Default | Description                                                                           |
 | EVENT\_NAME                      | varchar(128)        | NO   | NULL    | Event name.                                                                           |
 | COUNT\_ALLOC                     | bigint(20) unsigned | NO   | NULL    | Total number of allocations to memory.                                                |
 | COUNT\_FREE                      | bigint(20) unsigned | NO   | NULL    | Total number of attempts to free the allocated memory.                                |

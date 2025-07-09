@@ -8,7 +8,6 @@ It contains the following columns:
 
 | Field                     | Type         | Notes                                                                                                                                                                                   |
 | ------------------------- | ------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Field                     | Type         | Notes                                                                                                                                                                                   |
 | TABLE\_SCHEMA             | varchar(192) | The schema (database) name.                                                                                                                                                             |
 | TABLE\_NAME               | varchar(192) | The table name.                                                                                                                                                                         |
 | ROWS\_READ                | bigint(21)   | The number of rows read from the table.                                                                                                                                                 |
