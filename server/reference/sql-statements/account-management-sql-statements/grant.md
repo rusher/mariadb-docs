@@ -195,7 +195,7 @@ BINLOG ADMIN isn't available.
 New name for [REPLICATION CLIENT](grant.md#replication-client). `REPLICATION CLIENT` can still be used, though.
 {% endtab %}
 
-{% tab title="< 10.5.2" %}
+{% tab title="< 10.5" %}
 Use [REPLICATION CLIENT](grant.md#replication-client) instead. [SHOW REPLICA STATUS](../administrative-sql-statements/show/show-replica-status.md) isn't included in this privilege, and [REPLICA MONITOR](grant.md#replica-monitor) is required.
 {% endtab %}
 {% endtabs %}
@@ -214,8 +214,8 @@ Enables replaying the binary log with the [BINLOG](../administrative-sql-stateme
 * [server\_id](../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#server_id).
 {% endtab %}
 
-{% tab title="< 10.5.2" %}
-BINLOG REPLAY isn't available.
+{% tab title="< 10.5" %}
+`BINLOG REPLAY` isn't available.
 {% endtab %}
 {% endtabs %}
 
@@ -257,7 +257,7 @@ Create a user using the [CREATE USER](create-user.md) statement, or implicitly c
 Execute [CREATE SERVER](../data-definition/create/create-server.md), [ALTER SERVER](../data-definition/alter/alter-server.md), and [DROP SERVER](../data-definition/drop/drop-server.md) statements.
 {% endtab %}
 
-{% tab title="< 10.5.2" %}
+{% tab title="< 10.5" %}
 `FEDERATED ADMIN` is not available.
 {% endtab %}
 {% endtabs %}
@@ -283,14 +283,14 @@ User ignores the [read\_only](../../../ha-and-performance/optimization-and-tunin
 The `READ_ONLY ADMIN` privilege has been removed from [SUPER](grant.md#super). The benefit of this is that one can remove the READ\_ONLY ADMIN privilege from all users and ensure that no one can make any changes on any non-temporary tables. This is useful on replicas when one wants to ensure that the replica is kept identical to the primary.
 {% endtab %}
 
-{% tab title="< 10.11.0" %}
+{% tab title="< 10.11" %}
 User ignores the [read\_only](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#read_only) system variable, and can perform write operations even when the `read_only` option is active.
 
 The `READ_ONLY ADMIN` privilege is included in [SUPER](grant.md#super).
 {% endtab %}
 
-{% tab title="< 10.5.2" %}
-READ\_ONLY ADMIN isn't available.
+{% tab title="< 10.5" %}
+`READ\_ONLY ADMIN` isn't available.
 {% endtab %}
 {% endtabs %}
 
@@ -319,7 +319,7 @@ Execute [SHOW MASTER STATUS](../administrative-sql-statements/show/show-binlog-s
 Permits administration of primary servers, including the [SHOW REPLICA HOSTS](../administrative-sql-statements/show/show-replica-hosts.md) statement, and setting the [gtid\_binlog\_state](../../../ha-and-performance/standard-replication/gtid.md#gtid_binlog_state), [gtid\_domain\_id](../../../ha-and-performance/standard-replication/gtid.md#gtid_domain_id), [master\_verify\_checksum](../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#master_verify_checksum) and [server\_id](../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#server_id) system variables.&#x20;
 {% endtab %}
 
-{% tab title="< 10.5.2" %}
+{% tab title="< 10.5" %}
 #### `REPLICATION MASTER ADMIN` is not available.
 {% endtab %}
 {% endtabs %}
@@ -355,7 +355,7 @@ However, when a database is upgraded from an early 10.5 minor release to 10.5.9 
 Synonym for [REPLICATION SLAVE](grant.md#replication-slave).
 {% endtab %}
 
-{% tab title="< 10.5.1" %}
+{% tab title="< 10.5" %}
 #### `REPLICATION REPLICA` is not available.
 {% endtab %}
 {% endtabs %}
@@ -367,7 +367,7 @@ Synonym for [REPLICATION SLAVE](grant.md#replication-slave).
 Accounts used by replica servers on the primary need this privilege. This is needed to get the updates made on the master. [REPLICATION REPLICA](grant.md#replication-replica) is an alias for `REPLICATION SLAVE`.
 {% endtab %}
 
-{% tab title="< 10.5.1" %}
+{% tab title="< 10.5" %}
 Accounts used by replica servers on the primary need this privilege. This is needed to get the updates made on the master.&#x20;
 {% endtab %}
 {% endtabs %}
@@ -413,7 +413,7 @@ Permits administering replica servers, including [START REPLICA/SLAVE](../admini
 * [sync\_relay\_log\_info](../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#sync_relay_log_info).
 {% endtab %}
 
-{% tab title="< 10.5.2" %}
+{% tab title="< 10.5" %}
 `REPLICATION SLAVE ADMIN` is not available.
 {% endtab %}
 {% endtabs %}
@@ -425,7 +425,7 @@ Permits administering replica servers, including [START REPLICA/SLAVE](../admini
 Enables setting the `DEFINER` when creating [triggers](../../../server-usage/triggers-events/triggers/), [views](../../../server-usage/views/), [stored functions](../../../server-usage/stored-routines/stored-functions/) and [stored procedures](../../../server-usage/stored-routines/stored-procedures/).
 {% endtab %}
 
-{% tab title="< 10.5.2" %}
+{% tab title="< 10.5" %}
 SET USER isn't available.
 {% endtab %}
 {% endtabs %}
@@ -479,7 +479,7 @@ The SUPER privilege has been split into multiple smaller privileges to allow for
 These grants are part of SUPER and don't need to be granted separately.
 {% endtab %}
 
-{% tab title="< 10.5.2" %}
+{% tab title="< 10.5" %}
 Use the SUPER privilege.
 {% endtab %}
 {% endtabs %}
@@ -767,7 +767,7 @@ The count can be reset for all users using [FLUSH USER\_RESOURCES](../administra
 Users with the `CONNECTION ADMIN` privilege or the `SUPER` privilege are not restricted by `max_user_connections` or `max_password_errors` , and they are allowed one additional connection when `max_connections` is reached.
 {% endtab %}
 
-{% tab title="< 10.5.2" %}
+{% tab title="< 10.5" %}
 Users with the `CONNECTION ADMIN` privilege or the `SUPER` privilege are restricted by `max_user_connections` or `max_password_errors` , and they are not allowed one additional connection when `max_connections` is reached.
 {% endtab %}
 {% endtabs %}
