@@ -83,7 +83,7 @@ Other unrecognized options will be passed on to the server.
 
 ### Option Files
 
-In addition to reading options from the command-line, `mariadb-secure-installation` can also read options from [option files](https://github.com/mariadb-corporation/docs-server/blob/test/server/clients-and-utilities/server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md). If an unknown option is provided to `mariadb-secure-installation` in an option file, then it is ignored.
+In addition to reading options from the command-line, `mariadb-secure-installation` can also read options from [option files](https://mariadb.com/docs/server/server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files). If an unknown option is provided to `mariadb-secure-installation` in an option file, then it is ignored.
 
 The following options relate to how MariaDB command-line tools handles option files. They must be given as the first argument on the command-line:
 
@@ -96,7 +96,7 @@ The following options relate to how MariaDB command-line tools handles option fi
 
 #### Option Groups
 
-`mariadb-secure-installation` reads options from the following [option groups](https://github.com/mariadb-corporation/docs-server/blob/test/server/clients-and-utilities/server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) from [option files](https://github.com/mariadb-corporation/docs-server/blob/test/server/clients-and-utilities/server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md):
+`mariadb-secure-installation` reads options from the following [option groups](https://github.com/mariadb-corporation/docs-server/blob/test/server/clients-and-utilities/server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) from [option files](https://mariadb.com/docs/server/server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files):
 
 | Group             | Description                                                                                                                                                                                                                                                                       |
 | ----------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
