@@ -1,4 +1,4 @@
-# mariadbd Options
+# mariadbd Optionskey-cache-age-threshold
 
 This page lists all of the options for `mariadbd` (called mysqld before [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105)), ordered by topic. For a full alphabetical list of all mariadbd options, as well as server and status variables, see [Full list of MariaDB options, system and status variables](../../reference/full-list-of-mariadb-options-system-and-status-variables.md).
 
@@ -87,7 +87,7 @@ other MariaDB and MySQL versions. Options that are also system variables are lis
 
 #### `--safe-mode`
 
-* Description: Disable some potential unsafe optimizations. For 5.2, [INSERT DELAYED](../../reference/sql-statements/data-manipulation/inserting-loading-data/insert-delayed.md) is disabled, [myisam\_recover\_options](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/myisam-storage-engine/myisam-system-variables.md#myisam_recover_options) is set to DEFAULT (automatically recover crashed MyISAM files) and the [query cache](../../ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/query-cache.md) is disabled. For [Aria](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/aria/README.md) tables, disable bulk insert optimization to enable one to use [aria\_read\_log](../../clients-and-utilities/aria-clients-and-utilities/aria_read_log.md) to recover tables even if tables are deleted (good for testing recovery).
+* Description: Disable some potential unsafe optimizations. For 5.2, [INSERT DELAYED](../../reference/sql-statements/data-manipulation/inserting-loading-data/insert-delayed.md) is disabled, [myisam\_recover\_options](../../server-usage/storage-engines/myisam-storage-engine/myisam-system-variables.md#myisam_recover_options) is set to DEFAULT (automatically recover crashed MyISAM files) and the [query cache](../../ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/query-cache.md) is disabled. For [Aria](../../server-usage/storage-engines/aria/) tables, disable bulk insert optimization to enable one to use [aria\_read\_log](../../clients-and-utilities/aria-clients-and-utilities/aria_read_log.md) to recover tables even if tables are deleted (good for testing recovery).
 
 #### `--skip-new`
 
@@ -118,7 +118,7 @@ Options that are also system variables are listed after:
 #### `--language`
 
 * Description: This option can be used to set the server's language for error messages. This option can be specified either as a language name or as the path to the directory storing the language's [error message file](../server-monitoring-logs/error-log.md#error-messages-file). See [Server Locales](../../reference/data-types/string-data-types/character-sets/internationalization-and-localization/server-locale.md) for a list of supported locales and their associated languages.
-  * This option is deprecated. Use the [lc\_messages](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#lc_messages) and [lc\_messages\_dir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#lc_messages_dir) system variables instead.
+  * This option is deprecated. Use the [lc\_messages](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/SsmexDFPv2xG2OTyO5yV/) and [lc\_messages\_dir](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#lc_messages_dir) system variables instead.
   * See [Setting the Language for Error Messages](../../reference/data-types/string-data-types/character-sets/internationalization-and-localization/setting-the-language-for-error-messages.md) for more information.
 
 ### Locale Options and System Variables
@@ -152,14 +152,14 @@ Options that are also system variables are listed after:
 #### `--install`
 
 * Description: Windows-only option that installs the `mariadbd` process as a Windows service.
-  * The Windows service created with this option [auto-starts](https://docs.microsoft.com/en-us/windows/desktop/Services/automatically-starting-services). If you want a service that is [started on demand](https://docs.microsoft.com/en-us/windows/desktop/Services/starting-services-on-demand), then use the [--install-manual](mariadbd-options.md#install-manual) option.
+  * The Windows service created with this option [auto-starts](../install-and-upgrade-mariadb/installing-mariadb/binary-packages/installing-mariadb-binary-tarballs.md#auto-start-of-mariadbd). If you want a service that is started on demand, then use the [--install-manual](mariadbd-options.md#install-manual) option.
   * This option takes a service name as an argument. If this option is provided without a service name, then the service name defaults to "MARIADB".
   * This option is deprecated and may be removed in a future version. See [MDEV-19358](https://jira.mariadb.org/browse/MDEV-19358) for more information.
 
 #### `--install-manual`
 
 * Description: Windows-only option that installs the `mariadbd` process as a Windows service.
-  * The Windows service created with this option is [started on demand](https://docs.microsoft.com/en-us/windows/desktop/Services/starting-services-on-demand). If you want a service that [auto-starts](https://docs.microsoft.com/en-us/windows/desktop/Services/automatically-starting-services), use the [--install](mariadbd-options.md#install) option.
+  * The Windows service created with this option is started on demand. If you want a service that [auto-starts](../install-and-upgrade-mariadb/installing-mariadb/binary-packages/installing-mariadb-binary-tarballs.md#auto-start-of-mariadbd), use the [--install](mariadbd-options.md#install) option.
   * This option takes a service name as an argument. If this option is provided without a service name, then the service name defaults to "MARIADB".
   * This option is deprecated and may be removed in a future version. See [MDEV-19358](https://jira.mariadb.org/browse/MDEV-19358) for more information.
 
@@ -181,11 +181,11 @@ Options that are also system variables are listed after:
 
 The following options and system variables are related to using MariaDB on Windows:
 
-* [--named-pipe](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#named_pipe)
+* [--named-pipe](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/maxscale-archive/archive/mariadb-maxscale-23-02/mariadb-maxscale-23-02-filters/mariadb-maxscale-2302-transaction-performance-monitoring-filter#named_pipe)
 
 ## Replication and Binary Logging Options
 
-The following options are related to [replication](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/broken-reference/README.md) and the [binary log](../server-monitoring-logs/binary-log/). Options that are also system variables are listed after:
+The following options are related to [replication](../../server-usage/storage-engines/myrocks/myrocks-and-replication.md) and the [binary log](../server-monitoring-logs/binary-log/). Options that are also system variables are listed after:
 
 #### `--abort-slave-event-count`
 
@@ -195,7 +195,7 @@ The following options are related to [replication](https://github.com/mariadb-co
 #### `--binlog-do-db`
 
 * Commandline: `--binlog-do-db=name`
-* Description: This option allows you to configure a [replication master](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/broken-reference/README.md) to write statements and transactions affecting databases that match a specified name into its [binary log](../server-monitoring-logs/binary-log/). Since the filtered statements or transactions will not be present in the [binary log](../server-monitoring-logs/binary-log/), its replicas will not be able to replicate them.
+* Description: This option allows you to configure a [replication master](../../ha-and-performance/standard-replication/replication-overview.md) to write statements and transactions affecting databases that match a specified name into its [binary log](../server-monitoring-logs/binary-log/). Since the filtered statements or transactions will not be present in the [binary log](../server-monitoring-logs/binary-log/), its replicas will not be able to replicate them.
   * This option will not work with cross-database updates with [statement-based logging](../server-monitoring-logs/binary-log/binary-log-formats.md#statement-based-logging). See the [Statement-Based Logging](../../ha-and-performance/standard-replication/replication-filters.md#statement-based-logging) section for more information.
   * This option can not be set dynamically. Available as a [system variable](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#binlog_do_db) from [MariaDB 11.2.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-0-release-notes).
   * When setting it on the command-line or in a server [option group](../install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md), the option does not accept a comma-separated list. If you would like to specify multiple filters, then you need to specify the option multiple times.
@@ -204,7 +204,7 @@ The following options are related to [replication](https://github.com/mariadb-co
 #### `--binlog-ignore-db`
 
 * Commandline: `--binlog-ignore-db=name`
-* Description: This option allows you to configure a [replication master](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/broken-reference/README.md) to not write statements and transactions affecting databases that match a specified name into its [binary log](../server-monitoring-logs/binary-log/). Since the filtered statements or transactions will not be present in the [binary log](../server-monitoring-logs/binary-log/), its replicas will not be able to replicate them.
+* Description: This option allows you to configure a [replication master](../../ha-and-performance/standard-replication/replication-overview.md) to not write statements and transactions affecting databases that match a specified name into its [binary log](../server-monitoring-logs/binary-log/). Since the filtered statements or transactions will not be present in the [binary log](../server-monitoring-logs/binary-log/), its replicas will not be able to replicate them.
   * This option will not work with cross-database updates with [statement-based logging](../server-monitoring-logs/binary-log/binary-log-formats.md#statement-based-logging). See the [Statement-Based Logging](../../ha-and-performance/standard-replication/replication-filters.md#statement-based-logging) section for more information.
   * This option can not be set dynamically. Available as a [system variable](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#binlog_ignore_db) from [MariaDB 11.2.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-2-series/mariadb-11-2-0-release-notes).
   * When setting it on the command-line or in a server [option group](../install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md), the option does not accept a comma-separated list. If you would like to specify multiple filters, then you need to specify the option multiple times.
@@ -235,7 +235,7 @@ The following options are related to [replication](https://github.com/mariadb-co
 #### `--log-basename`
 
 * Commandline: `--log-basename=name`
-* Description: Basename for all log files and the .pid file. This sets all log file names at once (in 'datadir') and is normally the only option you need for specifying log files. This is especially recommended to be set if you are using [replication](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/broken-reference/README.md) as it ensures that your log file names are not dependent on your host name. Sets names for the [binary log](../server-monitoring-logs/binary-log/), [relay log](../server-monitoring-logs/binary-log/relay-log.md), [general query log](../server-monitoring-logs/general-query-log.md), [slow query log](../server-monitoring-logs/slow-query-log/) and [error log](../server-monitoring-logs/error-log.md). Note that if you explicity set log file names with any of these other options; [log-bin-index](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md), [relay-log](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md), [relay-log-index](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md), [general-log-file](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#general_log_file), [log\_slow\_query\_file](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#log_slow_query_file) ([slow\_query\_log\_file](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#slow_query_log_file)), [log\_error](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#log_error), and [pid-file](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#pid_file), these should be placed after `--log-basename` in the config files. Later settings override earlier settings, so `log-basename` will override any earlier log file name settings.
+* Description: Basename for all log files and the .pid file. This sets all log file names at once (in 'datadir') and is normally the only option you need for specifying log files. This is especially recommended to be set if you are using [replication](../../server-usage/storage-engines/myrocks/myrocks-and-replication.md) as it ensures that your log file names are not dependent on your host name. Sets names for the [binary log](../server-monitoring-logs/binary-log/), [relay log](../server-monitoring-logs/binary-log/relay-log.md), [general query log](../server-monitoring-logs/general-query-log.md), [slow query log](../server-monitoring-logs/slow-query-log/) and [error log](../server-monitoring-logs/error-log.md). Note that if you explicity set log file names with any of these other options; [log-bin-index](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md), [relay-log](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md), [relay-log-index](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md), [general-log-file](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#general_log_file), [log\_slow\_query\_file](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#log_slow_query_file) ([slow\_query\_log\_file](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#slow_query_log_file)), [log\_error](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#log_error), and [pid-file](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#pid_file), these should be placed after `--log-basename` in the config files. Later settings override earlier settings, so `log-basename` will override any earlier log file name settings.
 
 #### `--log-bin-trust-routine-creators`
 
@@ -324,11 +324,11 @@ The following options are related to [replication](https://github.com/mariadb-co
 #### `--sysdate-is-now`
 
 * Commandline: `--sysdate-is-now`
-* Description: Non-default option to alias [SYSDATE()](../../reference/sql-functions/date-time-functions/sysdate.md) to [NOW()](../../reference/sql-functions/date-time-functions/now.md) to make it safe for [replication](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/broken-reference/README.md). Since 5.0, SYSDATE() has returned a \`dynamic' value different for different invocations, even within the same statement.
+* Description: Non-default option to alias [SYSDATE()](../../reference/sql-functions/date-time-functions/sysdate.md) to [NOW()](../../reference/sql-functions/date-time-functions/now.md) to make it safe for [replication](../../server-usage/storage-engines/myrocks/myrocks-and-replication.md). Since 5.0, SYSDATE() has returned a \`dynamic' value different for different invocations, even within the same statement.
 
 ### Replication and Binary Logging Options and System Variables
 
-The following options and system variables are related to [replication](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-management/install-and-upgrade-mariadb/starting-and-stopping-mariadb/broken-reference/README.md) and the [binary log](../server-monitoring-logs/binary-log/):
+The following options and system variables are related to [replication](../../server-usage/storage-engines/myrocks/myrocks-and-replication.md) and the [binary log](../server-monitoring-logs/binary-log/):
 
 * [auto-increment-increment](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md)
 * [auto-increment-offset](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md)
@@ -434,7 +434,7 @@ Options that are also system variables are listed after:
 
 * Commandline: `--table-open-cache=#`
 * Description: Removed; use [--table-open-cache](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#table_open_cache) instead.
-* Removed: [MariaDB 5.1.3](https://mariadb.com/kb/en/mariadb-513-release-notes/)
+* Removed: [MariaDB 5.3.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-3-series/mariadb-531-release-notes)
 
 ### Optimizer Options and System Variables
 
@@ -491,7 +491,7 @@ Options that are also system variables are listed after:
 
 ### MyISAM Storage Engine Options
 
-The options related to the [MyISAM](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/myisam-storage-engine/README.md) storage engine are described below. Options that are also system variables are listed after:
+The options related to the [MyISAM](../../server-usage/storage-engines/myisam-storage-engine/) storage engine are described below. Options that are also system variables are listed after:
 
 #### `--log-isam`
 
@@ -500,32 +500,32 @@ The options related to the [MyISAM](https://github.com/mariadb-corporation/docs-
 
 #### MyISAM Storage Engine Options and System Variables
 
-Some options and system variables related to the [MyISAM](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/myisam-storage-engine/README.md) storage engine can be found [here](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/myisam-storage-engine/myisam-system-variables.md). Direct links to many of them can be found below.
+Some options and system variables related to the [MyISAM](../../server-usage/storage-engines/myisam-storage-engine/) storage engine can be found [here](../../server-usage/storage-engines/myisam-storage-engine/myisam-storage-formats.md). Direct links to many of them can be found below.
 
 * [concurrent-insert](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#concurrent_insert)
 * [delayed-insert-limit](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#delayed_insert_limit)
 * [delayed-insert-timeout](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#delayed_insert_timeout)
 * [delayed-queue-size](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#delayed_queue_size)
 * [keep-files-on-create](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#keep_files_on_create)
-* [key-buffer-size](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_buffer_size)
-* [key-cache-age-threshold](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_cache_age_threshold)
-* [key-cache-block-size](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_cache_block_size)
-* [key-cache-division-limit](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_cache_division_limit)
-* [key-cache-file-hash-size](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_cache_file_hash_size)
-* [key-cache-segments](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_cache_segments)
-* [myisam-block-size](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/myisam-storage-engine/myisam-system-variables.md)
-* [myisam-data-pointer-size](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/myisam-storage-engine/myisam-system-variables.md)
-* [myisam-max-sort-file-size](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/myisam-storage-engine/myisam-system-variables.md)
-* [myisam-mmap-size](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/myisam-storage-engine/myisam-system-variables.md)
-* [myisam-recover-options](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/myisam-storage-engine/myisam-system-variables.md)
-* [myisam-repair-threads](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/myisam-storage-engine/myisam-system-variables.md)
-* [myisam-sort-buffer-size](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/myisam-storage-engine/myisam-system-variables.md)
-* [myisam-stats-method](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/myisam-storage-engine/myisam-system-variables.md)
-* [myisam-use-mmap](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/myisam-storage-engine/myisam-system-variables.md)
+* [key-buffer-size](../../server-usage/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_buffer_size)
+* [key-cache-age-threshold](../../server-usage/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_cache_age_threshold)
+* [key-cache-block-size](../../server-usage/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_cache_block_size)
+* [key-cache-division-limit](../../server-usage/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_cache_division_limit)
+* [key-cache-file-hash-size](../../server-usage/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_cache_division_limit)
+* [key-cache-segments](../../server-usage/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_cache_segments)
+* [myisam-block-size](../../server-usage/storage-engines/myisam-storage-engine/myisam-system-variables.md#myisam_block_size)
+* [myisam-data-pointer-size](../../server-usage/storage-engines/myisam-storage-engine/myisam-system-variables.md#myisam_data_pointer_size)
+* [myisam-max-sort-file-size](../../server-usage/storage-engines/myisam-storage-engine/myisam-system-variables.md#myisam_max_sort_file_size)
+* [myisam-mmap-size](../../server-usage/storage-engines/myisam-storage-engine/myisam-system-variables.md#myisam_mmap_size)
+* [myisam-recover-options](../../server-usage/storage-engines/myisam-storage-engine/myisam-system-variables.md#myisam_recover_options)
+* [myisam-repair-threads](../../server-usage/storage-engines/myisam-storage-engine/myisam-system-variables.md#myisam_repair_threads)
+* [myisam-sort-buffer-size](../../server-usage/storage-engines/myisam-storage-engine/myisam-system-variables.md#myisam_sort_buffer_size)
+* [myisam-stats-method](../../server-usage/storage-engines/myisam-storage-engine/myisam-system-variables.md#myisam_stats_method)
+* [myisam-use-mmap](../../server-usage/storage-engines/myisam-storage-engine/myisam-system-variables.md#myisam_use_mmap)
 
 ### InnoDB Storage Engine Options
 
-The options related to the [InnoDB](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/README.md) storage engine are described below. Options that are also system variables are listed after:
+The options related to the [InnoDB](../../server-usage/storage-engines/innodb/innodb-storage-engine-introduction.md) storage engine are described below. Options that are also system variables are listed after:
 
 #### `--innodb`
 
@@ -629,23 +629,23 @@ The options related to the [InnoDB](https://github.com/mariadb-corporation/docs-
 
 #### InnoDB Storage Engine Options and System Variables
 
-Some options and system variables related to the [InnoDB](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/README.md) storage engine can be found [here](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md). Direct links to many of them can be found below.
+Some options and system variables related to the [InnoDB](../../server-usage/storage-engines/innodb/innodb-storage-engine-introduction.md) storage engine can be found [here](../../server-usage/storage-engines/innodb/innodb-storage-engine-introduction.md). Direct links to many of them can be found below.
 
-* [ignore-builtin-innodb](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#ignore_builtin_innodb)
-* [innodb-adaptive-checkpoint](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_adaptive_checkpoint)
-* [innodb-adaptive-flushing](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_adaptive_flushing)
-* [innodb-adaptive-flushing-lwm](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_adaptive_flushing_lwm)
-* [innodb-adaptive-flushing-method](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_adaptive_flushing_method)
-* [innodb-adaptive-hash-index](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_adaptive_hash_index)
-* [innodb-adaptive-hash-index-partitions](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_adaptive_hash_index_partitions)
-* [innodb-adaptive-hash-index-parts](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_adaptive_hash_index_parts)
-* [innodb-adaptive-max-sleep-delay](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_adaptive_max_sleep_delay)
-* [innodb-additional-mem-pool-size](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_additional_mem_pool_size)
-* [innodb-alter-copy-bulk](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_alter_copy_bulk)
-* [innodb-api-bk-commit-interval](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_api_bk_commit_interval)
-* [innodb-api-disable-rowlock](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_api_disable_rowlock)
-* [innodb-api-enable-binlog](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_api_enable_binlog)
-* [innodb-api-enable-mdl](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_api_enable_mdl)
+* [ignore-builtin-innodb](../../server-usage/storage-engines/innodb/innodb-system-variables.md#ignore_builtin_innodb)
+* [innodb-adaptive-checkpoint](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_adaptive_checkpoint)
+* [innodb-adaptive-flushing](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_adaptive_flushing)
+* [innodb-adaptive-flushing-lwm](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_adaptive_flushing_lwm)
+* [innodb-adaptive-flushing-method](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_adaptive_flushing_method)
+* [innodb-adaptive-hash-index](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_adaptive_hash_index)
+* [innodb-adaptive-hash-index-partitions](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_adaptive_hash_index_partitions)
+* [innodb-adaptive-hash-index-parts](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_adaptive_hash_index_parts)
+* [innodb-adaptive-max-sleep-delay](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_adaptive_max_sleep_delay)
+* [innodb-additional-mem-pool-size](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_additional_mem_pool_size)
+* [innodb-alter-copy-bulk](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_alter_copy_bulk)
+* [innodb-api-bk-commit-interval](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_api_bk_commit_interval)
+* [innodb-api-disable-rowlock](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_api_disable_rowlock)
+* [innodb-api-enable-binlog](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_api_enable_binlog)
+* [innodb-api-enable-mdl](../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_api_enable_mdl)
 * [innodb-api-trx-level](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_api_trx_level)
 * [innodb-auto-lru-dump](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_auto_lru_dump)
 * [innodb-autoextend-increment](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-system-variables.md#innodb_autoextend_increment)
