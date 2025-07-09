@@ -8,7 +8,6 @@ It has the following columns:
 
 | Column         | Description                                                                                                                       |
 | -------------- | --------------------------------------------------------------------------------------------------------------------------------- |
-| Column         | Description                                                                                                                       |
 | WORD           | Word from the text of a newly added row. Words can appear multiple times in the table, once per DOC\_ID and POSITION combination. |
 | FIRST\_DOC\_ID | First document ID where this word appears in the index.                                                                           |
 | LAST\_DOC\_ID  | Last document ID where this word appears in the index.                                                                            |

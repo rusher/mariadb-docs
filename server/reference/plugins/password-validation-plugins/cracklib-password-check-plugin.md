@@ -149,7 +149,6 @@ See [MDEV-18374](https://jira.mariadb.org/browse/MDEV-18374) for more informatio
 
 | Version | Status | Introduced                                                                                                                                                                          |
 | ------- | ------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Version | Status | Introduced                                                                                                                                                                          |
 | 1.0     | Stable | [MariaDB 10.1.18](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10118-release-notes) |
 | 1.0     | Gamma  | [MariaDB 10.1.13](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/plugins/password-validation-plugins/broken-reference/README.md)                     |
 | 1.0     | Alpha  | [MariaDB 10.1.2](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/plugins/password-validation-plugins/broken-reference/README.md)                      |

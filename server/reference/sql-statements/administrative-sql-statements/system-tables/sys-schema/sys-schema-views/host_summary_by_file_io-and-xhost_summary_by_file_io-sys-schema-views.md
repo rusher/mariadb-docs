@@ -14,7 +14,6 @@ They contain the following columns:
 
 | Column       | Description                                                                                                                                           |
 | ------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Column       | Description                                                                                                                                           |
 | host         | Host that the client connected from, or background for background threads (where the HOST column in the underlying Performance Schema table is NULL). |
 | ios          | Total file I/O events for the host.                                                                                                                   |
 | ios\_latency | Total wait time of timed file I/O events for the host.                                                                                                |

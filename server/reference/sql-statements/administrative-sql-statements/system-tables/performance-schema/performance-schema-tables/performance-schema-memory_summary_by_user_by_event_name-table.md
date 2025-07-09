@@ -18,7 +18,6 @@ The table contains the following columns:
 
 | Field                            | Type                | Null | Default | Description                                                                           |
 | -------------------------------- | ------------------- | ---- | ------- | ------------------------------------------------------------------------------------- |
-| Field                            | Type                | Null | Default | Description                                                                           |
 | USER                             | char(32)            | YES  | NULL    | User portion of the account.                                                          |
 | EVENT\_NAME                      | varchar(128)        | NO   | NULL    | Event name.                                                                           |
 | COUNT\_ALLOC                     | bigint(20) unsigned | NO   | NULL    | Total number of allocations to memory.                                                |

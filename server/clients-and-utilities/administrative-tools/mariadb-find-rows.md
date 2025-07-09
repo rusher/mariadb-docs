@@ -20,7 +20,6 @@ mariadb-find-rows supports the following options:
 
 | Option                | Description                                                                                                                           |
 | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
-| Option                | Description                                                                                                                           |
 | --help, --Information | Display help and exit.                                                                                                                |
 | --regexp=pattern      | Display queries that match the pattern.                                                                                               |
 | --rows=N              | Quit after displaying N queries.                                                                                                      |

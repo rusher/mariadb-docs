@@ -7,7 +7,6 @@ Spider column is for SpiderForMySQL found on the Spider web sIte.
 
 | Feature                                                                                              | Spider | 10.0  |
 | ---------------------------------------------------------------------------------------------------- | ------ | ----- |
-| Feature                                                                                              | Spider | 10.0  |
 | Clustering and High Availability                                                                     |        |       |
 | Commit, Rollback transactions on multiple backend                                                    | Yes    | Yes   |
 | Multiplexing to a number of replicas using xa protocol 2PC                                           | Yes    | Yes   |

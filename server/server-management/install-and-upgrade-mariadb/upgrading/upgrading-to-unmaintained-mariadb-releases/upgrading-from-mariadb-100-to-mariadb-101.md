@@ -63,7 +63,6 @@ Most of the following options have increased in value to give better performance
 
 | Option                                                                                                                                                   | Old default value | New default value                                            |
 | -------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------- | ------------------------------------------------------------ |
-| Option                                                                                                                                                   | Old default value | New default value                                            |
 | [innodb\_log\_compressed\_pages](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md)                                             | ON                | OFF                                                          |
 | [join\_buffer\_size](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#join_buffer_size)                | 128K              | 256K                                                         |
 | [max\_allowed\_packet](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_allowed_packet)            | 1M                | 4M                                                           |
@@ -86,7 +85,6 @@ The following options should be removed or renamed if you use them in your confi
 
 | Option                                                                                                                                      | Reason         |
 | ------------------------------------------------------------------------------------------------------------------------------------------- | -------------- |
-| Option                                                                                                                                      | Reason         |
 | [rpl\_recovery\_rank](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#rpl_recovery_rank) | Unused in 10.0 |
 
 #### Other Issues

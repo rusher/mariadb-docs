@@ -421,7 +421,6 @@ The following table shows how to represent the data in the binary format:
 
 | Datatype                    | Description                                                                                                                                                                                                          |
 | --------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Datatype                    | Description                                                                                                                                                                                                          |
 | INT/TINYINT/SMALLINT/BIGINT | Little-endian format for the numeric data                                                                                                                                                                            |
 | FLOAT/DOUBLE                | IEEE format native to the computer                                                                                                                                                                                   |
 | CHAR/VARCHAR                | Data padded with '\0' for the length of the field. An entry that is all '\0' is treated as NULL                                                                                                                      |
@@ -433,7 +432,6 @@ For NULL values the following table should be used:
 
 | Datatype     | Signed NULL           | Unsigned NULL         |
 | ------------ | --------------------- | --------------------- |
-| Datatype     | Signed NULL           | Unsigned NULL         |
 | BIGINT       | 0x8000000000000000ULL | 0xFFFFFFFFFFFFFFFEULL |
 | INT          | 0x80000000            | 0xFFFFFFFE            |
 | SMALLINT     | 0x8000                | 0xFFFE                |

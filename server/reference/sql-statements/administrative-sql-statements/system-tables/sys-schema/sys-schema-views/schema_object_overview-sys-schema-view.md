@@ -12,7 +12,6 @@ Contains the following columns:
 
 | Column       | Description                    |
 | ------------ | ------------------------------ |
-| Column       | Description                    |
 | db           | Schema name                    |
 | object\_type | Object name                    |
 | count        | Count of the number of objects |

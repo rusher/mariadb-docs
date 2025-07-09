@@ -29,7 +29,6 @@ If an unknown option is provided to `mariadbd-safe` on the command-line, then it
 
 | Option                               | Description                                                                                                                                                                                                                                                                      |
 | ------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Option                               | Description                                                                                                                                                                                                                                                                      |
 | --basedir=path                       | The path to the MariaDB installation directory.                                                                                                                                                                                                                                  |
 | --datadir=path                       | The path to the MariaDB data directory.                                                                                                                                                                                                                                          |
 | --pid-file=file\_name                | The path name of the file in which the server should write its process ID. If not provided, the default, host\_name.pid is used.                                                                                                                                                 |
@@ -46,7 +45,6 @@ The following options relate to how MariaDB command-line tools handles option fi
 
 | Option                  | Description                                      |
 | ----------------------- | ------------------------------------------------ |
-| Option                  | Description                                      |
 | --print-defaults        | Print the program argument list and exit.        |
 | --no-defaults           | Don't read default options from any option file. |
 | --defaults-file=#       | Only read default options from the given file #. |
@@ -58,14 +56,12 @@ The following options relate to how MariaDB command-line tools handles option fi
 
 | Group           | Description                                                                        |
 | --------------- | ---------------------------------------------------------------------------------- |
-| Group           | Description                                                                        |
 | \[mysql.server] | Options read by mysql.server, which includes both MariaDB Server and MySQL Server. |
 
 `mysql.server` also reads options from the following server [option groups](../install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) from [option files](../install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md):
 
 | Group            | Description                                                                                                                                                                                                                                                                |
 | ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Group            | Description                                                                                                                                                                                                                                                                |
 | \[mysqld]        | Options read by mysqld, which includes both MariaDB Server and MySQL Server.                                                                                                                                                                                               |
 | \[server]        | Options read by MariaDB Server.                                                                                                                                                                                                                                            |
 | \[mysqld-X.Y]    | Options read by a specific version of mysqld, which includes both MariaDB Server and MySQL Server. For example, \[mysqld-5.5].                                                                                                                                             |

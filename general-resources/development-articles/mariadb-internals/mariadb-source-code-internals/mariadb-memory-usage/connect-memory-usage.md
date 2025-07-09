@@ -13,7 +13,6 @@ This is part of `select memory_used from information_schema.processlist`.
 
 | Amount allocated | Where allocated                                                                                    | Description                                      |
 | ---------------- | -------------------------------------------------------------------------------------------------- | ------------------------------------------------ |
-| Amount allocated | Where allocated                                                                                    | Description                                      |
 | 26646            | THD::THD                                                                                           | Allocation of THD object                         |
 | 256              | Statement\_map::Statement\_map(), my\_hash\_init(key\_memory\_prepared\_statement\_map, \&st\_hash | Prepared statements                              |
 | 256              | my\_hash\_init(key\_memory\_prepared\_statement\_map, \&names\_hash                                | Names of used prepared statements                |
@@ -30,7 +29,6 @@ This is part of `select memory_used from information_schema.processlist`.
 
 | Amount allocated | Where allocated                                                         | Description                            |
 | ---------------- | ----------------------------------------------------------------------- | -------------------------------------- |
-| Amount allocated | Where allocated                                                         | Description                            |
 | 72               | send\_server\_handshake\_packet, mpvio->cached\_server\_packet.pkt=     |                                        |
 | 64               | parse\_client\_handshake\_packet, thd->copy\_with\_error(...db,db\_len) |                                        |
 | 32               | parse\_client\_handshake\_packet, sctx->user=                           |                                        |

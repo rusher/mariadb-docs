@@ -26,7 +26,6 @@ Choose the procedure for your desired operation and substitute your Customer Dow
 
 | Operation                                                                                             | Use Case                                                                                                                |
 | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
-| Operation                                                                                             | Use Case                                                                                                                |
 | [Configure MariaDB Enterprise Repository](token.md#configure-mariadb-enterprise-repository)           | Install MariaDB database products using package managers on CentOS / RHEL (YUM), Debian / Ubuntu (APT), and SLES (ZYpp) |
 | [Download Binary Files with CLI or Automation](token.md#download-binary-files)                        | Download binary files using command-line tools or automation                                                            |
 | [Log In to MariaDB Enterprise Docker Registry](token.md#log-in-to-mariadb-enterprise-docker-registry) | Deploy using Docker                                                                                                     |

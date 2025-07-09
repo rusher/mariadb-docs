@@ -6,7 +6,6 @@ It has the following columns:
 
 | Column        | Description                                                                                                      |
 | ------------- | ---------------------------------------------------------------------------------------------------------------- |
-| Column        | Description                                                                                                      |
 | INDEX\_ID     | Index name                                                                                                       |
 | SPACE\_ID     | Tablespace ID                                                                                                    |
 | PAGE\_NO      | Page offset within tablespace.                                                                                   |

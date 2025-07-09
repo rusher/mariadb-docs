@@ -16,7 +16,6 @@ If the [server\_audit\_output\_type](mariadb-audit-plugin-options-and-system-var
 
 | Item logged   | Description                                                                                                                                     |
 | ------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
-| Item logged   | Description                                                                                                                                     |
 | timestamp     | Time at which the event occurred. If syslog is used, the format is defined by syslogd.                                                          |
 | syslog\_host  | Host from which the syslog entry was received.                                                                                                  |
 | syslog\_ident | For identifying a system log entry, including the MariaDB server.                                                                               |

@@ -25,7 +25,6 @@ One new (previously unknown) bug [MDEV-15912](https://jira.mariadb.org/browse/MD
 
 | type | pagesize | OLD version | file format | encrypted | compressed |  | NEW version | file format | encrypted | compressed | readonly | result | notes |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| type | pagesize | OLD version | file format | encrypted | compressed |  | NEW version | file format | encrypted | compressed | readonly | result | notes |
 | recovery | 16 | 10.3.6 (inbuilt) | Barracuda | on | - | => | 10.3.6 (inbuilt) | Barracuda | on | - | - | OK |  |
 | recovery | 16 | 10.3.6 (inbuilt) | Barracuda | on | zlib | => | 10.3.6 (inbuilt) | Barracuda | on | zlib | - | FAIL | KNOWN_BUGS [MDEV-13103](https://jira.mariadb.org/browse/MDEV-13103)(1) |
 | recovery | 4 | 10.3.6 (inbuilt) | Barracuda | on | - | => | 10.3.6 (inbuilt) | Barracuda | on | - | - | OK |  |

@@ -19,7 +19,6 @@ New option `defaultFetchSize` to set default fetch size. When set, all statement
 
 | defaultFetchSize |
 | ---------------- |
-| defaultFetchSize |
 
 ### Bugs
 

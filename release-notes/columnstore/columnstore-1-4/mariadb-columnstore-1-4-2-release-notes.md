@@ -35,7 +35,6 @@ cpimport is a high-speed bulk data loading utility for ColumnStore. cpimport now
 
 | Option | Description                                                |
 | ------ | ---------------------------------------------------------- |
-| Option | Description                                                |
 | -y     | S3 Authentication Key                                      |
 | -K     | S3 Secret Key                                              |
 | -t     | S3 Bucket                                                  |
@@ -119,7 +118,6 @@ ColumnStore binaries have moved to `/usr/bin` or `/usr/sbin`, and the libraries 
 
 | Old Filename | New Filename             |
 | ------------ | ------------------------ |
-| Old Filename | New Filename             |
 | post-install | columnstore-post-install |
 | getConfig    | mcsGetConfig             |
 | setConfig    | mcsSetConfig             |

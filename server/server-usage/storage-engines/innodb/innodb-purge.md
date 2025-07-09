@@ -16,7 +16,6 @@ The Purge Threads perform garbage collection of various items:
 
 | Feature        | Detail                                                                                                  | Resources                                                                                                               |
 | -------------- | ------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
-| Feature        | Detail                                                                                                  | Resources                                                                                                               |
 | Thread         | InnoDB Purge Threads                                                                                    |                                                                                                                         |
 | Storage Engine | InnoDB                                                                                                  |                                                                                                                         |
 | Purpose        | Garbage Collection of: • InnoDB Undo Log • Delete-marked secondary index records • Freed overflow pages |                                                                                                                         |

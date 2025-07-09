@@ -8,7 +8,6 @@ The table provides information about [thread pool](../../../../../../ha-and-perf
 
 | Column                       | Description                                                                                                                                                                                                |
 | ---------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Column                       | Description                                                                                                                                                                                                |
 | GROUP\_ID                    | the thread group this row is showing data for                                                                                                                                                              |
 | POSITION                     | position in the groups queue                                                                                                                                                                               |
 | PRIORITY                     | request priority, see [priority scheduling](../../../../../../ha-and-performance/optimization-and-tuning/buffers-caches-and-threads/thread-pool/thread-pool-in-mariadb.md#configuring-priority-scheduling) |

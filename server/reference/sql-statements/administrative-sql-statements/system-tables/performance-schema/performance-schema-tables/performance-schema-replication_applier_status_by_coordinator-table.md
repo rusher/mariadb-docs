@@ -10,7 +10,6 @@ It contains the following fields.
 
 | Column                    | Type                | Null | Description                                                                |
 | ------------------------- | ------------------- | ---- | -------------------------------------------------------------------------- |
-| Column                    | Type                | Null | Description                                                                |
 | CHANNEL\_NAME             | varchar(256)        | NO   | Replication channel name.                                                  |
 | THREAD\_ID                | bigint(20) unsigned | YES  | The SQL/coordinator thread ID.                                             |
 | SERVICE\_STATE            | enum('ON','OFF')    | NO   | ON (thread exists and is active or idle) or OFF (thread no longer exists). |

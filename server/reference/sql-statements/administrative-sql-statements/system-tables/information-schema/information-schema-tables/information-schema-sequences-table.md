@@ -10,7 +10,6 @@ It contains the following columns. See [CREATE SEQUENCE](../../../../../sql-stru
 
 | Column                    | Description                                       |
 | ------------------------- | ------------------------------------------------- |
-| Column                    | Description                                       |
 | SEQUENCE\_CATALOG         | Catalog name                                      |
 | SEQUENCE\_SCHEMA          | Database name                                     |
 | SEQUENCE\_NAME            | Sequence name                                     |

@@ -9,7 +9,6 @@ MariaDB ColumnStore Information Functions are selectable pseudo functions that r
 
 | Function                     | Description                                                                                                            |
 | ---------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| Function                     | Description                                                                                                            |
 | idbBlockId(column)           | The Logical Block Identifier (LBID) for the block containing the physical row                                          |
 | idbDBRoot(column)            | The DBRoot where the physical row resides                                                                              |
 | idbExtentId(column)          | The Logical Block Identifier (LBID) for the first block in the extent containing the physical row                      |

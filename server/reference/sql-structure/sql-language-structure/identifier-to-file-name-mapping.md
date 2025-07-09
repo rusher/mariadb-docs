@@ -10,7 +10,6 @@ The conversion rules are as follows: if the identifier is made up only of basic 
 
 | Code Range | Pattern            | Number     | Used | Unused | Blocks                                |
 | ---------- | ------------------ | ---------- | ---- | ------ | ------------------------------------- |
-| Code Range | Pattern            | Number     | Used | Unused | Blocks                                |
 | 00C0..017F | \[@]\[0..4]\[g..z] | 5\*20= 100 | 97   | 3      | Latin-1 Supplement + Latin Extended-A |
 | 0370..03FF | \[@]\[5..9]\[g..z] | 5\*20= 100 | 88   | 12     | Greek and Coptic                      |
 | 0400..052F | \[@]\[g..z]\[0..6] | 20\*7= 140 | 137  | 3      | Cyrillic + Cyrillic Supplement        |

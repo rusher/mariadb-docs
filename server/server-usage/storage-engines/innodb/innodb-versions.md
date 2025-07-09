@@ -23,7 +23,6 @@ Some examples of divergences between MariaDB's InnoDB and MySQL's InnoDB are:
 
 | InnoDB Version     | Introduced                                                                                                                                                                        |
 | ------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| InnoDB Version     | Introduced                                                                                                                                                                        |
 | No longer reported | [MariaDB 10.3.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-1037-release-notes) |
 | InnoDB 5.7.20      | [MariaDB 10.3.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-1033-release-notes) |
 | InnoDB 5.7.19      | [MariaDB 10.3.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-1031-release-notes) |
@@ -33,7 +32,6 @@ Some examples of divergences between MariaDB's InnoDB and MySQL's InnoDB are:
 
 | InnoDB Version | Introduced                                                                                                                                                                          |
 | -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| InnoDB Version | Introduced                                                                                                                                                                          |
 | InnoDB 5.7.29  | [MariaDB 10.2.33](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-10233-release-notes) |
 | InnoDB 5.7.23  | [MariaDB 10.2.17](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-10217-release-notes) |
 | InnoDB 5.7.22  | [MariaDB 10.2.15](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-10215-release-notes) |
@@ -47,7 +45,6 @@ Some examples of divergences between MariaDB's InnoDB and MySQL's InnoDB are:
 
 | InnoDB Version | Introduced                                                                                                                                                                          |
 | -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| InnoDB Version | Introduced                                                                                                                                                                          |
 | InnoDB 5.6.49  | [MariaDB 10.1.46](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10146-release-notes) |
 | InnoDB 5.6.47  | [MariaDB 10.1.44](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10144-release-notes) |
 | InnoDB 5.6.44  | [MariaDB 10.1.39](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10139-release-notes) |
@@ -66,7 +63,6 @@ Some examples of divergences between MariaDB's InnoDB and MySQL's InnoDB are:
 
 | InnoDB Version | Introduced                                                                                                                                                                          |
 | -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| InnoDB Version | Introduced                                                                                                                                                                          |
 | InnoDB 5.6.43  | [MariaDB 10.0.38](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-10038-release-notes) |
 | InnoDB 5.6.42  | [MariaDB 10.0.37](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-10037-release-notes) |
 | InnoDB 5.6.40  | [MariaDB 10.0.35](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-10035-release-notes) |

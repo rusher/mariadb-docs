@@ -8,7 +8,6 @@ MariaDB Enterprise Server 10.4.32-22 was released on 2023-12-12.
 
 | CVE (with cve.org link)                                                         | CVSS base score |
 | ------------------------------------------------------------------------------- | --------------- |
-| CVE (with cve.org link)                                                         | CVSS base score |
 | [CVE-2023-22084](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-22084) | 4.9             |
 
 ## Notable changes

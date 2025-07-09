@@ -408,7 +408,6 @@ values are:
 
 | Keyword | Matching operations   |
 | ------- | --------------------- |
-| Keyword | Matching operations   |
 | select  | SELECT statements     |
 | insert  | INSERT statements     |
 | update  | UPDATE statements     |

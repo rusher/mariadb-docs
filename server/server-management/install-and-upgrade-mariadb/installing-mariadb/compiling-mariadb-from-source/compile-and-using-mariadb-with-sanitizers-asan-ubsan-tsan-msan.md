@@ -93,7 +93,6 @@ The purposes of these, and other options include:
 
 | Command Component                            | Purpose                                                                           | Notes                                                                                   |
 | -------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
-| Command Component                            | Purpose                                                                           | Notes                                                                                   |
 | podman run / docker run                      | run a container                                                                   | other implementations use docker syntax (or at least close)                          |
 | --rm                                         | remove container on termination                                                   |                                                                                         |
 | -ti                                          | a tty and a stdin are connected                                                   | for interactive container use                                                           |
@@ -163,7 +162,6 @@ MSAN is a clang only compile options and other compilers will not work.
 
 | CMake Options                                             | Why                                                                                                                                                |
 | --------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
-| CMake Options                                             | Why                                                                                                                                                |
 | UPDATE\_SUBMODULES=OFF                                    | The source directory is read-only so cannot be updated from within the container                                                                   |
 | WITH\_MSAN=ON                                             | Enables MSAN build in compile options                                                                                                              |
 | CMAKE\_{EXE,MODULE}\_LINKER\_FLAGS                        | links executables and shared libraries against the instrumented libraries with a rpath so a LD\_LIBRARY\_PATH environment variable isn't required  |
@@ -221,7 +219,6 @@ cmake \
 
 | CMake Options                                   | Why                                                                                                                                                     |
 | ----------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| CMake Options                                   | Why                                                                                                                                                     |
 | UPDATE\_SUBMODULES=OFF                          | The source directory is read-only so cannot be updated from within the container                                                                        |
 | WITH\_ASAN=ON                                   | Enables ASAN build in compile options                                                                                                                   |
 | WITH\_UBSAN=ON                                  | Enables UBSAN build in compile options                                                                                                                  |

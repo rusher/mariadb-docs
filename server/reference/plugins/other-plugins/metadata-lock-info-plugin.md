@@ -78,7 +78,6 @@ SHOW PROCESSLIST;
 
 | Version | Status | Introduced                                                                                                                                                                          |
 | ------- | ------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Version | Status | Introduced                                                                                                                                                                          |
 | 0.1     | Stable | [MariaDB 10.1.13](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/plugins/other-plugins/broken-reference/README.md)                                   |
 | 0.1     | Beta   | [MariaDB 10.0.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-10010-release-notes) |
 | 0.1     | Alpha  | [MariaDB 10.0.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-1007-release-notes)   |

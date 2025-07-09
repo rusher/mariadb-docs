@@ -45,7 +45,6 @@ returns:
 
 | name          | address                                                      |
 | ------------- | ------------------------------------------------------------ |
-| name          | address                                                      |
 | Leanne Graham | Kulas Light Apt. 556 Gwenborough 92998-3874 -37.3159 81.1496 |
 
 Here we see that for some complex elements such as _address_, which is a Json object containing values and objects, CONNECT by default has just listed their texts separated by blanks. But it is possible to ask it to analyze in more depth the json result by adding the DEPTH option. For instance:
@@ -90,7 +89,6 @@ That results in:
 
 | name                           | city               | company           |
 | ------------------------------ | ------------------ | ----------------- |
-| name                           | city               | company           |
 | Leanne Graham                  | Gwenborough        | Romaguera-Crona   |
 | Ervin Howell                   | Wisokyburgh        | Deckow-Crist      |
 | Clementine Bauch McKenziehaven | Romaguera-Jacobson |                   |

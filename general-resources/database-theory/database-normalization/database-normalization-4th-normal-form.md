@@ -26,7 +26,6 @@ Assume that the following is true for the tables below:
 
 | Student | Course | Instructor |
 | --- | --- | --- |
-| Student | Course | Instructor |
 | Conrad Pienaar | Biology | Nkosizana Asmal |
 | Dingaan Fortune | Mathematics | Kader Dlamini |
 | Gerrie Jantjies | Science | Helen Ginwala |
@@ -50,7 +49,6 @@ The only possible key is a combination of all three attributes, as shown below. 
 
 | Student Course Instructor table |
 | --- |
-| Student Course Instructor table |
 | Student |
 | Instructor |
 | Course |
@@ -66,7 +64,6 @@ But this still has some potentially anomalous behavior. The fact that Kader Dlam
 
 | Student Instructor table |
 | --- |
-| Student Instructor table |
 | Student |
 | Instructor |
 
@@ -78,7 +75,6 @@ But this still has some potentially anomalous behavior. The fact that Kader Dlam
 
 | Student Instructor table |
 | --- |
-| Student Instructor table |
 | Student |
 | Course |
 

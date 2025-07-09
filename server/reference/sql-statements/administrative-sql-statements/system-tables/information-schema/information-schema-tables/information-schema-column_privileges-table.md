@@ -6,7 +6,6 @@ It has the following columns:
 
 | Column          | Description                                                                                                                                    |
 | --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
-| Column          | Description                                                                                                                                    |
 | GRANTEE         | In the format user\_name@host\_name.                                                                                                           |
 | TABLE\_CATALOG  | Always def.                                                                                                                                    |
 | TABLE\_SCHEMA   | Database name.                                                                                                                                 |

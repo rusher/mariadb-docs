@@ -6,7 +6,6 @@ It contains the following columns:
 
 | Column                        | Description                                                                                                                                                                    |
 | ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Column                        | Description                                                                                                                                                                    |
 | CATALOG\_NAME                 | Always def.                                                                                                                                                                    |
 | SCHEMA\_NAME                  | Database name.                                                                                                                                                                 |
 | DEFAULT\_CHARACTER\_SET\_NAME | Default [character set](../../../../../data-types/string-data-types/character-sets/) for the database.                                                                         |

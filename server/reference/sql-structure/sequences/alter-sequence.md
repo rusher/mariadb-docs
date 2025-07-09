@@ -27,7 +27,6 @@ The following options may be used:
 
 | Option    | Default value                                                | Description                                                                                                                                                                 |
 | --------- | ------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Option    | Default value                                                | Description                                                                                                                                                                 |
 | INCREMENT | 1                                                            | Increment to use for values. May be negative.                                                                                                                               |
 | MINVALUE  | 1 if INCREMENT > 0 and -9223372036854775807 if INCREMENT < 0 | Minimum value for the sequence.                                                                                                                                             |
 | MAXVALUE  | 9223372036854775806 if INCREMENT > 0 and -1 if INCREMENT < 0 | Max value for sequence.                                                                                                                                                     |

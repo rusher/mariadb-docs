@@ -12,7 +12,6 @@ It contains a single column:
 
 | Column | Description |
 | ------ | ----------- |
-| Column | Description |
 | WORD   | Keyword     |
 
 The table is not a standard Information Schema table, but a MariaDB extension.

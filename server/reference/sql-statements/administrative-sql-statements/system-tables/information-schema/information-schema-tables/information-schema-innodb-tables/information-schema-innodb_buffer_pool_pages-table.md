@@ -6,7 +6,6 @@ It has the following columns:
 
 | Column        | Description                                                                                                                                        |
 | ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Column        | Description                                                                                                                                        |
 | PAGE\_TYPE    | Type of page; one of index, undo\_log, inode, ibuf\_free\_list, allocated, bitmap, sys, trx\_sys, fsp\_hdr, xdes, blob, zblob, zblob2 and unknown. |
 | SPACE\_ID     | Tablespace ID.                                                                                                                                     |
 | PAGE\_NO      | Page offset within tablespace.                                                                                                                     |

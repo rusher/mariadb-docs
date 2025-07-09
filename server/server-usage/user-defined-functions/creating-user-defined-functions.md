@@ -18,7 +18,6 @@ Required for all UDFs; this is where the results are calculated.
 
 | C/C++ type | SQL type                                                            |
 | ---------- | ------------------------------------------------------------------- |
-| C/C++ type | SQL type                                                            |
 | char \*    | [STRING](../../reference/data-types/string-data-types/)             |
 | long long  | [INTEGER](../../reference/data-types/numeric-data-types/integer.md) |
 | double     | [REAL](../../reference/data-types/numeric-data-types/)              |

@@ -49,7 +49,6 @@ There are two kind of buffers in MariaDB:
 
 | Variable                                                                                  | Description                                                                                                                     |
 | ----------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
-| Variable                                                                                  | Description                                                                                                                     |
 | [join\_buffer\_size](system-variables/server-system-variables.md#join_buffer_size)        | Used when no keys can be used to find a row in next table                                                                       |
 | [mrr\_buffer\_size](system-variables/server-system-variables.md#mrr_buffer_size)          | Size of buffer to use when using multi-range read with range access                                                             |
 | [net\_buffer\_length](system-variables/server-system-variables.md#net_buffer_length)      | Max size of network packet                                                                                                      |

@@ -7,7 +7,6 @@ The [Performance Schema](../README.md) `events_statements_summary_global_by_even
 
 | Column | Description |
 | --- | --- |
-| Column | Description |
 | EVENT_NAME | Event name. |
 | COUNT_STAR | Number of summarized events |
 | SUM_TIMER_WAIT | Total wait time of the summarized events that are timed. |

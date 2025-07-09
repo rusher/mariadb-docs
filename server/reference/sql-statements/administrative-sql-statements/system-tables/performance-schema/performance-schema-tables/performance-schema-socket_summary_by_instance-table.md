@@ -7,7 +7,6 @@ It aggregates timer and byte count statistics for all socket I/O operations by s
 
 | Column | Description |
 | --- | --- |
-| Column | Description |
 | EVENT_NAME | Socket instrument. |
 | OBJECT_INSTANCE_BEGIN | Address in memory. |
 | COUNT_STAR | Number of summarized events |

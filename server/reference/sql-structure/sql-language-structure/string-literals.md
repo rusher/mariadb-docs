@@ -73,7 +73,6 @@ There are other escape sequences also. Here is a full list:
 
 | Escape sequence | Character                                           |
 | --------------- | --------------------------------------------------- |
-| Escape sequence | Character                                           |
 | \0              | ASCII NUL (0x00).                                   |
 | '               | Single quote (“'”).                                 |
 | "               | Double quote (“"”).                                 |

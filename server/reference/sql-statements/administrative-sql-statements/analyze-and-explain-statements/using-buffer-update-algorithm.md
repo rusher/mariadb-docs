@@ -10,7 +10,6 @@ Consider the following table and query:
 
 | Name | Salary |
 | --- | --- |
-| Name | Salary |
 | Babatunde | 1000 |
 | Jolana | 1050 |
 | Pankaja | 1300 |

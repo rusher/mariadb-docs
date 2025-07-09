@@ -69,7 +69,6 @@ This statement will display the file in tabular format.
 
 | contact | name     | hired      | city         | tel            |
 | ------- | -------- | ---------- | ------------ | -------------- |
-| contact | name     | hired      | city         | tel            |
 | BER     | Bertrand | 1970-01-01 | Issy-les-Mlx | 09.54.36.29.60 |
 | WEL     | Schmitt  | 1985-02-19 | Berlin       | 03.43.377.360  |
 | UK1     | Smith    | 2003-11-08 | London       | NULL           |
@@ -131,7 +130,6 @@ Will display the following result:
 
 | section | keyname  | value                    |
 | ------- | -------- | ------------------------ |
-| section | keyname  | value                    |
 | BER     | name     | Bertrand                 |
 | BER     | forename | Olivier                  |
 | BER     | address  | 21 rue Ferdinand Buisson |

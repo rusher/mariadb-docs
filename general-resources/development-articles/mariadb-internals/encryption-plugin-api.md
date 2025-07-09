@@ -136,7 +136,6 @@ See the [File Key Management Plugin](https://github.com/mariadb-corporation/docs
 
 | Version | Status | Introduced                                                                                                                                                    |
 | ------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Version | Status | Introduced                                                                                                                                                    |
 | 1.0     | Stable | [MariaDB 10.1.18](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10118-release-notes) |
 | 1.0     | Gamma  | [MariaDB 10.1.13](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10113-release-notes) |
 | 1.0     | Alpha  | [MariaDB 10.1.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-3-release-notes) |
@@ -151,7 +150,6 @@ See the [AWS Key Management Plugin](https://github.com/mariadb-corporation/docs-
 
 | Version | Status       | Introduced                                                                                                                                                                                                                                                                                                                 |
 | ------- | ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Version | Status       | Introduced                                                                                                                                                                                                                                                                                                                 |
 | 1.0     | Stable       | [MariaDB 10.2.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-2-series/mariadb-1026-release-notes), [MariaDB 10.1.24](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10124-release-notes) |
 | 1.0     | Beta         | [MariaDB 10.1.18](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10118-release-notes)                                                                                                                                                              |
 | 1.0     | Experimental | [MariaDB 10.1.13](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10113-release-notes)                                                                                                                                                              |
@@ -164,7 +162,6 @@ Uses random time-based generated keys, ignores key identifiers, supports key ver
 
 | Version | Status       | Introduced                                                                                                                                                    |
 | ------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Version | Status       | Introduced                                                                                                                                                    |
 | 1.0     | Experimental | [MariaDB 10.1.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-3-release-notes) |
 
 ### debug\_key\_management
@@ -175,7 +172,6 @@ Key is generated from the version, user manually controls key rotation. Only sup
 
 | Version | Status       | Introduced                                                                                                                                                    |
 | ------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Version | Status       | Introduced                                                                                                                                                    |
 | 1.0     | Experimental | [MariaDB 10.1.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/community-server/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-3-release-notes) |
 
 ## Encryption Service

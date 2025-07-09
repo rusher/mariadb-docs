@@ -522,7 +522,6 @@ GRANT SELECT (name, position) ON Employee TO 'jeffrey'@'localhost';
 
 | Privilege     | Description                                                                                                                                                                                                                                                                                         |
 | ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Privilege     | Description                                                                                                                                                                                                                                                                                         |
 | ALTER ROUTINE | Change the characteristics of a stored procedure using the [ALTER PROCEDURE](../../../server-usage/stored-routines/stored-procedures/alter-procedure.md) statement.                                                                                                                                 |
 | EXECUTE       | Execute a [stored procedure](../../../server-usage/stored-routines/stored-procedures/) using the [CALL](../stored-routine-statements/call.md) statement. The privilege to call a procedure may allow you to perform actions you wouldn't otherwise be able to do, such as insert rows into a table. |
 | GRANT OPTION  | Grant procedure privileges. You can only grant privileges that you have.                                                                                                                                                                                                                            |
@@ -535,7 +534,6 @@ GRANT EXECUTE ON PROCEDURE mysql.create_db TO maintainer;
 
 | Privilege | Description                                 |
 | --------- | ------------------------------------------- |
-| Privilege | Description                                 |
 | PROXY     | Permits one user to be a proxy for another. |
 
 The `PROXY` privilege allows one user to proxy as another user, which means their privileges change to that of the proxy user, and the [CURRENT\_USER()](../../sql-functions/secondary-functions/information-functions/current_user.md) function returns the user name of the proxy user.
@@ -747,7 +745,6 @@ It is possible to set per-account limits for certain server resources. The follo
 
 | Limit Type                  | Decription                                                                                                                                                                                                                      |
 | --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Limit Type                  | Decription                                                                                                                                                                                                                      |
 | MAX\_QUERIES\_PER\_HOUR     | Number of statements that the account can issue per hour (including updates)                                                                                                                                                    |
 | MAX\_UPDATES\_PER\_HOUR     | Number of updates (not queries) that the account can issue per hour                                                                                                                                                             |
 | MAX\_CONNECTIONS\_PER\_HOUR | Number of connections that the account can start per hour                                                                                                                                                                       |

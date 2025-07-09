@@ -22,7 +22,6 @@ The locations are dependent on whether the `DEFAULT_SYSCONFDIR` [cmake](https://
 
 | Location            |
 | ------------------- |
-| Location            |
 | /etc/my.cnf         |
 | /etc/mysql/my.cnf   |
 | $MYSQL\_HOME/my.cnf |
@@ -32,7 +31,6 @@ The locations are dependent on whether the `DEFAULT_SYSCONFDIR` [cmake](https://
 
 | Location                   |
 | -------------------------- |
-| Location                   |
 | DEFAULT\_SYSCONFDIR/my.cnf |
 | $MYSQL\_HOME/my.cnf        |
 | \~/.my.cnf                 |
@@ -43,7 +41,6 @@ On Windows, the default option file can be called either `my.ini` or `my.cnf`. M
 
 | Location                        |
 | ------------------------------- |
-| Location                        |
 | System Windows Directory\my.ini |
 | System Windows Directory\my.cnf |
 | Windows Directory\my.ini        |
@@ -81,7 +78,6 @@ Many MariaDB clients can be configured to read options from custom options files
 
 | Option                                                                                                                                         | Description                                                        |
 | ---------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------ |
-| Option                                                                                                                                         | Description                                                        |
 | [--defaults-file](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/starting-and-stopping-mariadb/mariadbd-options) =path       | Only read options from the given option file.                      |
 | [--defaults-extra-file](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/starting-and-stopping-mariadb/mariadbd-options) =path | Read this extra option file after all other option files are read. |
 
@@ -112,7 +108,6 @@ MariaDB Connector/C reads client options from the following [option groups](http
 
 | Group             | Description                                                                                                                                                                                                                                                                    |
 | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Group             | Description                                                                                                                                                                                                                                                                    |
 | \[client]         | Options read by all MariaDB and MySQL [client programs](https://github.com/mariadb-corporation/docs-connectors/blob/test/kb/en/clients-utilities/README.md), which includes both MariaDB and MySQL clients. For example, mysqldump.                                            |
 | \[client-server]  | Options read by all MariaDB [client programs](https://github.com/mariadb-corporation/docs-connectors/blob/test/kb/en/clients-utilities/README.md) and the MariaDB Server. This is useful for options like socket and port, which is common between the server and the clients. |
 | \[client-mariadb] | Options read by all MariaDB [client programs](https://github.com/mariadb-corporation/docs-connectors/blob/test/kb/en/clients-utilities/README.md).                                                                                                                             |
@@ -137,7 +132,6 @@ Many MariaDB clients can be configured to read options from option groups with a
 
 | Option                                                                                                                                             | Description                                                                              |
 | -------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| Option                                                                                                                                             | Description                                                                              |
 | [--defaults-group-suffix](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/starting-and-stopping-mariadb/mariadbd-options) =suffix | In addition to the default option groups, also read option groups with the given suffix. |
 
 The [--defaults-group-suffix](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/getting-installing-and-upgrading-mariadb/starting-and-stopping-mariadb/mariadbd-options) command-line option does not yet have an equivalent option in MariaDB Connector/C. See [CONC-404](https://jira.mariadb.org/browse/CONC-404) for more information.
@@ -170,7 +164,6 @@ For many MariaDB clients, you can check which options a given program is going t
 
 | Option                                                                                                                              | Description                                                                         |
 | ----------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
-| Option                                                                                                                              | Description                                                                         |
 | [--print-defaults](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/starting-and-stopping-mariadb/mariadbd-options) | Read options from option files, print all option values, and then exit the program. |
 
 It must be given as the first argument on the command-line. Application developers who use MariaDB Connector/C in their application and rely on option files may also want to consider implementing this command-line argument. For example:

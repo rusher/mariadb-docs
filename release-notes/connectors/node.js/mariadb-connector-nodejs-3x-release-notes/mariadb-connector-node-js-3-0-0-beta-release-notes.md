@@ -60,7 +60,6 @@ For compatibility with the previous versions or mysql/mysql driver, 3 options ha
 
 | Option           | Description                                                                                                          | Type    | default |
 | ---------------- | -------------------------------------------------------------------------------------------------------------------- | ------- | ------- |
-| Option           | Description                                                                                                          | Type    | default |
 | insertIdAsNumber | Whether the query should return last insert id from INSERT/UPDATE command as BigInt or Number. default return BigInt | boolean | false   |
 | decimalAsNumber  | Whether the query should return decimal as Number. If enabled, this might return approximate values.                 | boolean | false   |
 | bigIntAsNumber   | Whether the query should return BigInt data type as Number. If enabled, this might return approximate values.        | boolean | false   |

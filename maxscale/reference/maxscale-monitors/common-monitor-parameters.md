@@ -353,7 +353,6 @@ descriptions.
 
 | Event Name   | Description                                  |
 | ------------ | -------------------------------------------- |
-| Event Name   | Description                                  |
 | master\_down | A Primary server has gone down               |
 | master\_up   | A Primary server has come up                 |
 | slave\_down  | A Replica server has gone down               |

@@ -89,7 +89,6 @@ Loading the plugin also creates a series of new tables in the `mysql` database, 
 
 | table name                             | added version                                                                                                                                                                     |
 | -------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| table name                             | added version                                                                                                                                                                     |
 | spider\_xa                             | [MariaDB 10.0.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-1004-release-notes) |
 | spider\_xa\_member                     | [MariaDB 10.0.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-1004-release-notes) |
 | spider\_xa\_failed\_log                | [MariaDB 10.0.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-1005-release-notes) |
@@ -112,7 +111,6 @@ Running this configuration script also creates a series of new tables in the `my
 
 | table name                             | added version                                                                                                                                                                     |
 | -------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| table name                             | added version                                                                                                                                                                     |
 | spider\_xa                             | [MariaDB 10.0.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-1004-release-notes) |
 | spider\_xa\_member                     | [MariaDB 10.0.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-1004-release-notes) |
 | spider\_xa\_failed\_log                | [MariaDB 10.0.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-1005-release-notes) |

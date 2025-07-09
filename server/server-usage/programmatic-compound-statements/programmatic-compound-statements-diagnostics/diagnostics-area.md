@@ -19,7 +19,6 @@ The following table shows the type and size of all the properties:
 
 | Property name       | Property type     | Notes                                                                                                                                                                                                      |
 | ------------------- | ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Property name       | Property type     | Notes                                                                                                                                                                                                      |
 | RETURNED\_SQLSTATE  | VARCHAR(5)        |                                                                                                                                                                                                            |
 | MYSQL\_ERRNO        | SMALLINT UNSIGNED |                                                                                                                                                                                                            |
 | MESSAGE\_TEXT       | VARCHAR(512)      | Before [MariaDB 10.3.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-1036-release-notes), was VARCHAR(128) |

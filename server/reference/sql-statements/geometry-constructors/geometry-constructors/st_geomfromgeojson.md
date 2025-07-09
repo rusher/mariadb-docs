@@ -12,7 +12,6 @@ Given a GeoJSON input _g_, returns a geometry object. The _option_ specifies wha
 
 | Option | Description                                                                                      |
 | ------ | ------------------------------------------------------------------------------------------------ |
-| Option | Description                                                                                      |
 | 1      | Return an error (the default)                                                                    |
 | 2 - 4  | The document is accepted, but the coordinates for higher coordinate dimensions are stripped off. |
 

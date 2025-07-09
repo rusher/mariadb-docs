@@ -772,7 +772,6 @@ This alternative form of _switchover_ accepts the following arguments:
 
 | argument            | type    | default            | description                      |
 | ------------------- | ------- | ------------------ | -------------------------------- |
-| argument            | type    | default            | description                      |
 | monitor             | monitor | none (mandatory)   | Monitor name                     |
 | new\_primary        | server  | empty (autoselect) | Which server to promote          |
 | old\_primary        | server  | empty (autoselect) | Which server to demote           |

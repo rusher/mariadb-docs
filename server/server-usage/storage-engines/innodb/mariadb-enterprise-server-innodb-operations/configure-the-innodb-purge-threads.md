@@ -24,7 +24,6 @@ The method to configure the number of Purge Threads depends on the server versio
 
 | Product Versions  | Server Restart? | Method                                                                                                                                                                        |
 | ----------------- | --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Product Versions  | Server Restart? | Method                                                                                                                                                                        |
 | ES 10.5 and Later | No              | [Configure maximum number of asynchronous I/O requests with SET GLOBAL](configure-the-innodb-io-threads.md#configure-the-number-of-innodb-io-threads-in-a-configuration-file) |
 | Any ES Any CS     | Yes.            | [Configure number of I/O threads in configuration file](configure-the-innodb-io-threads.md#configure-the-number-of-innodb-io-threads)                                         |
 
@@ -59,7 +58,6 @@ Some example configuration file paths for different distributions are shown in t
 
 | Distributions                | Example configuration file path                |
 | ---------------------------- | ---------------------------------------------- |
-| Distributions                | Example configuration file path                |
 | CentOS RHEL Rocky Linux SLES | /etc/my.cnf.d/z-custom-mariadb.cnf             |
 | Debian Ubuntu                | /etc/mysql/mariadb.conf.d/z-custom-mariadb.cnf |
 
@@ -89,7 +87,6 @@ Some example configuration file paths for different distributions are shown in t
 
 | Distributions                | Example configuration file path                |
 | ---------------------------- | ---------------------------------------------- |
-| Distributions                | Example configuration file path                |
 | CentOS RHEL Rocky Linux SLES | /etc/my.cnf.d/z-custom-mariadb.cnf             |
 | Debian Ubuntu                | /etc/mysql/mariadb.conf.d/z-custom-mariadb.cnf |
 

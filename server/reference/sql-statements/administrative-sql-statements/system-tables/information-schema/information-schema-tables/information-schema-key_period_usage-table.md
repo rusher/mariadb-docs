@@ -10,7 +10,6 @@ It contains the following columns:
 
 | Column              | Description |
 | ------------------- | ----------- |
-| Column              | Description |
 | CONSTRAINT\_CATALOG |             |
 | CONSTRAINT\_SCHEMA  |             |
 | CONSTRAINT\_NAME    |             |

@@ -361,7 +361,6 @@ converted to.
 
 | Role      | Privilege                                     |
 | --------- | --------------------------------------------- |
-| Role      | Privilege                                     |
 | dbAdmin   | ALTER, CREATE, DROP, SHOW DATABASES, SELECT   |
 | read      | SELECT                                        |
 | readWrite | CREATE, DELETE, INDEX, INSERT, SELECT, UPDATE |
@@ -371,7 +370,6 @@ The following roles are shorthands for several other roles.
 
 | Role    | Shorthand for                 |
 | ------- | ----------------------------- |
-| Role    | Shorthand for                 |
 | dbOwner | dbAdmin, readWrite, userAdmin |
 | root    | dbAdmin, readWrite, userAdmin |
 
@@ -464,7 +462,6 @@ require.
 
 | Command                                                                                                 | Role      |
 | ------------------------------------------------------------------------------------------------------- | --------- |
-| Command                                                                                                 | Role      |
 | [createUser](mariadb-maxscale-2106-maxscale-2106-nosql-protocol-module.md#createUser)                   | userAdmin |
 | [dropUser](mariadb-maxscale-2106-maxscale-2106-nosql-protocol-module.md#dropUser)                       | userAdmin |
 | [grantRolesToUser](mariadb-maxscale-2106-maxscale-2106-nosql-protocol-module.md#grantRolesToUser)       | userAdmin |
@@ -913,7 +910,6 @@ of types can be used in `$type` queries:
 
 | Type           | Number | Alias    | MariaDB Type |
 | -------------- | ------ | -------- | ------------ |
-| Type           | Number | Alias    | MariaDB Type |
 | Double         | 1      | "double" | DOUBLE       |
 | String         | 2      | "string" | STRING       |
 | object         | 3      | "object" | OBJECT       |
@@ -970,7 +966,6 @@ The following fields are relevant.
 
 | Field | Type     | Description                                                                  |
 | ----- | -------- | ---------------------------------------------------------------------------- |
-| Field | Type     | Description                                                                  |
 | count | string   | The name of the collection to count.                                         |
 | query | document | Optional. A query that selects which documents to count in the collection    |
 | limit | integer  | Optional. The maximum number of matching documents to return.                |
@@ -982,7 +977,6 @@ The following fields are relevant.
 
 | Field    | Type     | Description                                                               |
 | -------- | -------- | ------------------------------------------------------------------------- |
-| Field    | Type     | Description                                                               |
 | distinct | string   | The name of the collection to query for distinct values.                  |
 | key      | string   | The field for which to return distinct values.                            |
 | query    | document | Optional. A query that selects which documents to count in the collection |
@@ -995,7 +989,6 @@ The following fields are relevant.
 
 | Field   | Type    | Description                                                                                                                                                                                                                              |
 | ------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Field   | Type    | Description                                                                                                                                                                                                                              |
 | delete  | string  | The name of the target table.                                                                                                                                                                                                            |
 | deletes | array   | An array of one or more delete statements to perform in the named collection.                                                                                                                                                            |
 | ordered | boolean | Optional. If true, then when a delete statement fails, return without performing the remaining delete statements. If false, then when a delete statement fails, continue with the remaining delete statements, if any. Defaults to true. |
@@ -1004,7 +997,6 @@ Each element of the deletes array contains the following fields:
 
 | Field | Type     | Description                                                                                                                       |
 | ----- | -------- | --------------------------------------------------------------------------------------------------------------------------------- |
-| Field | Type     | Description                                                                                                                       |
 | q     | document | The query that matches documents to delete.                                                                                       |
 | limit | integer  | The number of matching documents to delete. Specify either a 0 to delete all matching documents or 1 to delete a single document. |
 
@@ -1014,7 +1006,6 @@ The following fields are relevant.
 
 | Field       | Type                 | Description                                                                                                                                                                                        |
 | ----------- | -------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Field       | Type                 | Description                                                                                                                                                                                        |
 | find        | string               | The name of the target table.                                                                                                                                                                      |
 | filter      | document             | Optional. The query predicate. If unspecified, then all documents in the collection will match the predicate.                                                                                      |
 | sort        | document             | Optional. The sort specification for the ordering of the results.                                                                                                                                  |
@@ -1040,7 +1031,6 @@ will be returned.
 
 | Projection     | Description                         |
 | -------------- | ----------------------------------- |
-| Projection     | Description                         |
 | : <1 or true>  | Specifies the inclusion of a field. |
 | : <0 or false> | Specifies the exclusion of a field. |
 
@@ -1104,7 +1094,6 @@ The following fields are relevant.
 
 | Field         | Type     | Description                                                                                                                                               |
 | ------------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Field         | Type     | Description                                                                                                                                               |
 | findAndModify | string   | The name of the target table.                                                                                                                             |
 | query         | document | Optional. The query predicate.                                                                                                                            |
 | sort          | document | Optional. The sort specification used when the document is selected.                                                                                      |
@@ -1122,7 +1111,6 @@ The following fields are relevant.
 
 | Field        | Type | Description |
 | ------------ | ---- | ----------- |
-| Field        | Type | Description |
 | getLastError | any  | Ignored.    |
 
 #### getMore
@@ -1131,7 +1119,6 @@ The following fields are relevant.
 
 | Field      | Type             | Description                                                    |
 | ---------- | ---------------- | -------------------------------------------------------------- |
-| Field      | Type             | Description                                                    |
 | getMore    | long             | The cursor id.                                                 |
 | collection | string           | The name of the collection over which the cursor is operating. |
 | batchSize  | positive integer | Optional. The number of documents to return in the batch.      |
@@ -1147,7 +1134,6 @@ The following fields are relevant.
 
 | Field     | Type    | Description                                                               |
 | --------- | ------- | ------------------------------------------------------------------------- |
-| Field     | Type    | Description                                                               |
 | insert    | string  | The name of the target collection (i.e. table).                           |
 | documents | array   | An array of one or more documents to be inserted to the named collection. |
 | ordered   | boolean | Optional, with default being true. See below for description.             |
@@ -1177,7 +1163,6 @@ impact on the performance.
 
 | ordered\_insert\_behavior | ordered = true                                                                                                                        | ordered = false                                                                                                                        |
 | ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
-| ordered\_insert\_behavior | ordered = true                                                                                                                        | ordered = false                                                                                                                        |
 | default                   | All documents are inserted within a compound statement, in a transaction containing as many INSERT statements as there are documents. | All documents are inserted in a single multi-statement transaction containing as many INSERT IGNORE statements as there are documents. |
 | atomic                    | All documents are inserted using a single INSERT statement.                                                                           | Same as above                                                                                                                          |
 
@@ -1191,7 +1176,6 @@ The following fields are relevant.
 
 | Field      | Type | Description |
 | ---------- | ---- | ----------- |
-| Field      | Type | Description |
 | resetError | any  | Ignored.    |
 
 #### update
@@ -1200,7 +1184,6 @@ The following fields are relevant.
 
 | Field   | Type   | Description                                          |
 | ------- | ------ | ---------------------------------------------------- |
-| Field   | Type   | Description                                          |
 | update  | string | The name of the target table.                        |
 | updates | array  | An array of documents that describe what to updated. |
 
@@ -1213,7 +1196,6 @@ Each document contains the following fields:
 
 | Field | Type     | Description                                                                                                                                                        |
 | ----- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Field | Type     | Description                                                                                                                                                        |
 | q     | document | The query that matches documents to update.                                                                                                                        |
 | u     | document | The modifications to apply. See behavior below for details.                                                                                                        |
 | multi | boolean  | Optional. If true, updates all documents that meet the query criteria. If false limit the update to one document that meets the query criteria. Defaults to false. |
@@ -1278,7 +1260,6 @@ The following fields are relevant.
 
 | Field  | Type | Description |
 | ------ | ---- | ----------- |
-| Field  | Type | Description |
 | logout | any  | Ignored.    |
 
 If you are not logged in and using authentication, `logout` has no effect.
@@ -1303,7 +1284,6 @@ The following fields are relevant.
 
 | Field          | Type     | Description                                                                                                    |
 | -------------- | -------- | -------------------------------------------------------------------------------------------------------------- |
-| Field          | Type     | Description                                                                                                    |
 | createUser     | string   | The name of the user to be added.                                                                              |
 | pwd            | string   | The password in cleartext.                                                                                     |
 | customData     | document | Optional. Any arbitrary information.                                                                           |
@@ -1341,7 +1321,6 @@ The following fields are relevant.
 
 | Field                    | Type | Description |
 | ------------------------ | ---- | ----------- |
-| Field                    | Type | Description |
 | dropAllUsersFromDatabase | any  | Ignored.    |
 
 If _no_ users can be dropped, e.g. due to an authorization error,\
@@ -1355,7 +1334,6 @@ The following fields are relevant.
 
 | Field    | Type   | Description                         |
 | -------- | ------ | ----------------------------------- |
-| Field    | Type   | Description                         |
 | dropUser | string | The name of the user to be dropped. |
 
 The user will first be dropped from the MariaDB server and if\
@@ -1369,7 +1347,6 @@ user.
 
 | Field            | Type   | Description                                    |
 | ---------------- | ------ | ---------------------------------------------- |
-| Field            | Type   | Description                                    |
 | grantRolesToUser | string | The name of the user to give additional roles. |
 | roles            | array  | An array of additional roles.                  |
 
@@ -1384,7 +1361,6 @@ that privileges are revoked from the corresponding MariaDB user.
 
 | Field               | Type   | Description                                |
 | ------------------- | ------ | ------------------------------------------ |
-| Field               | Type   | Description                                |
 | revokeRolesFromUser | string | The name of the user to remove roles from. |
 | roles               | array  | An array of roles to remove.               |
 
@@ -1398,7 +1374,6 @@ This command updates the information about a particular user.
 
 | Field      | Type     | Description                                                                                                                                                                                                                                                        |
 | ---------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Field      | Type     | Description                                                                                                                                                                                                                                                        |
 | updateUser | string   | The user whose information should be updated.                                                                                                                                                                                                                      |
 | pwd        | string   | Optional. The new password in cleartext.                                                                                                                                                                                                                           |
 | customData | document | Optional. Any arbitrary information.                                                                                                                                                                                                                               |
@@ -1417,7 +1392,6 @@ The following fields are relevant.
 
 | Field    | Type | Description |
 | -------- | ---- | ----------- |
-| Field    | Type | Description |
 | isMaster | any  | Ignored.    |
 
 #### replSetGetStatus
@@ -1426,7 +1400,6 @@ The following fields are relevant.
 
 | Field            | Type | Description |
 | ---------------- | ---- | ----------- |
-| Field            | Type | Description |
 | replSetGetStatus | any  | Ignored.    |
 
 All other fields are ignored.
@@ -1450,7 +1423,6 @@ The following fields are relevant.
 
 | Field       | Type  | Description |
 | ----------- | ----- | ----------- |
-| Field       | Type  | Description |
 | endSessions | array | Ignored.    |
 
 The following document will always be returned:
@@ -1467,7 +1439,6 @@ The following fields are relevant.
 
 | Field  | Type    | Description                                                                              |
 | ------ | ------- | ---------------------------------------------------------------------------------------- |
-| Field  | Type    | Description                                                                              |
 | create | string  | The name of the collection to create.                                                    |
 | capped | boolean | Optional. If specified, the value must be false as capped collections are not supported. |
 | viewOn | string  | Optional. If specified, the command will fail as views are not supported.                |
@@ -1482,7 +1453,6 @@ The following fields are relevant.
 
 | Field         | Type   | Description                                 |
 | ------------- | ------ | ------------------------------------------- |
-| Field         | Type   | Description                                 |
 | createIndexes | string | The collection for which to create indexes. |
 
 **NOTE** Currently it is not possible to create indexes, but the command\
@@ -1496,7 +1466,6 @@ The following fields are relevant.
 
 | Field | Type   | Description                         |
 | ----- | ------ | ----------------------------------- |
-| Field | Type   | Description                         |
 | drop  | string | The name of the collection to drop. |
 
 #### dropDatabase
@@ -1505,7 +1474,6 @@ The following fields are relevant.
 
 | Field        | Type | Description |
 | ------------ | ---- | ----------- |
-| Field        | Type | Description |
 | dropDatabase | any  | Ignored.    |
 
 #### dropIndexes
@@ -1514,7 +1482,6 @@ The following fields are relevant.
 
 | Field       | Type | Description |
 | ----------- | ---- | ----------- |
-| Field       | Type | Description |
 | dropIndexes | any  | Ignored.    |
 
 **NOTE** Currently it is not possible to create indexes and thus there\
@@ -1528,7 +1495,6 @@ The following fields are relevant.
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| Field | Type | Description |
 | fsync | any  | Ignored     |
 
 The response will always be
@@ -1548,7 +1514,6 @@ The following fields are relevant.
 
 | Field       | Type   | Description                     |
 | ----------- | ------ | ------------------------------- |
-| Field       | Type   | Description                     |
 | killCursors | string | The name of the collection.     |
 | cursors     | array  | The ids of the cursors to kill. |
 
@@ -1558,7 +1523,6 @@ The following fields are relevant.
 
 | Field           | Type     | Description                                                                                                                                      |
 | --------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Field           | Type     | Description                                                                                                                                      |
 | listCollections | any      | Ignored.                                                                                                                                         |
 | filter          | document | The field name is honored, other fields are not but cause warnings to be logged.                                                                 |
 | nameOnly        | boolean  | Optional. A flag to indicate whether the command should return just the collection names and type or return both the name and other information. |
@@ -1573,7 +1537,6 @@ The following fields are relevant.
 
 | Field         | Type    | Description                                                                                                                                 |
 | ------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
-| Field         | Type    | Description                                                                                                                                 |
 | listDatabases | any     | Ignored.                                                                                                                                    |
 | nameOnly      | boolean | Optional. A flag to indicate whether the command should return just the database names, or return both database names and size information. |
 
@@ -1583,7 +1546,6 @@ The following fields are relevant.
 
 | Field       | Type   | Description                 |
 | ----------- | ------ | --------------------------- |
-| Field       | Type   | Description                 |
 | listIndexes | string | The name of the collection. |
 
 **NOTE** As it currently is not possible to actually create indexes,\
@@ -1597,7 +1559,6 @@ The following fields are relevant.
 
 | Field            | Type    | Description                                                                                                                                                |
 | ---------------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Field            | Type    | Description                                                                                                                                                |
 | renameCollection | string  | The namespace of the collection to rename. The namespace is a combination of the database name and the name of the collection.                             |
 | to               | string  | The new namespace of the collection. Moving a collection/table from one database to another succeeds provided the databases reside in the same filesystem. |
 | dropTarget       | boolean | Optional. If true, the target collection/table will be dropped before the renaming is made. The default value is false.                                    |
@@ -1608,7 +1569,6 @@ The following fields are relevant.
 
 | Field        | Type | Description |
 | ------------ | ---- | ----------- |
-| Field        | Type | Description |
 | setParameter | any  | Ignored.    |
 
 Any kind of parameter is accepted and the response will always be:
@@ -1625,7 +1585,6 @@ The following fields are relevant.
 
 | Field     | Type | Description |
 | --------- | ---- | ----------- |
-| Field     | Type | Description |
 | buildInfo | any  | Ignored.    |
 
 The command returns a document containing the stable fields. In addition, there is a field `maxscale` whose value is the MaxScale version, expressed as a string.
@@ -1636,7 +1595,6 @@ The following fields are relevant.
 
 | Field     | Type     | Description                                                                                                                                      |
 | --------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Field     | Type     | Description                                                                                                                                      |
 | explain   | document | Document specifying the command to be explained. The commands are aggregate, count, delete, distinct, find, findAndModify, mapReduce and update. |
 | verbosity | string   | Either queryPlanner, executionStats or allPlansExecution.                                                                                        |
 
@@ -1648,7 +1606,6 @@ The following fields are relevant.
 
 | Field          | Type | Description |
 | -------------- | ---- | ----------- |
-| Field          | Type | Description |
 | getCmdLineOpts | any  | Ignored.    |
 
 #### getLog
@@ -1657,7 +1614,6 @@ The following fields are relevant.
 
 | Field  | Type   | Description                    |
 | ------ | ------ | ------------------------------ |
-| Field  | Type   | Description                    |
 | getLog | string | \*, global and startupWarnings |
 
 The command returns a document of the correct format, but _no_ actual log data will be returned.
@@ -1668,7 +1624,6 @@ The following fields are relevant.
 
 | Field    | Type | Description |
 | -------- | ---- | ----------- |
-| Field    | Type | Description |
 | hostInfo | any  | Ignored.    |
 
 #### listCommands
@@ -1677,7 +1632,6 @@ The following fields are relevant.
 
 | Field        | Type | Description |
 | ------------ | ---- | ----------- |
-| Field        | Type | Description |
 | listCommands | any  | Ignored.    |
 
 #### ping
@@ -1686,7 +1640,6 @@ The following fields are relevant.
 
 | Field | Type | Description |
 | ----- | ---- | ----------- |
-| Field | Type | Description |
 | ping  | any  | Ignored.    |
 
 #### serverStatus
@@ -1695,7 +1648,6 @@ The following fields are relevant.
 
 | Field        | Type | Description |
 | ------------ | ---- | ----------- |
-| Field        | Type | Description |
 | serverStatus | any  | Ignored.    |
 
 #### validate
@@ -1704,7 +1656,6 @@ The following fields are relevant.
 
 | Field    | Type   | Description                             |
 | -------- | ------ | --------------------------------------- |
-| Field    | Type   | Description                             |
 | validate | string | The name of the collection to validate. |
 
 The command does not actually perform any validation but for checking\
@@ -1717,7 +1668,6 @@ The following fields are relevant.
 
 | Field     | Type | Description |
 | --------- | ---- | ----------- |
-| Field     | Type | Description |
 | whatsmyri | any  | Ignored.    |
 
 This is an internal command, implemented only because the Mongo Shell uses it.
@@ -1730,7 +1680,6 @@ The following fields are relevant.
 
 | Field                   | Type | Description |
 | ----------------------- | ---- | ----------- |
-| Field                   | Type | Description |
 | getFreeMonitoringStatus | any  | Ignored.    |
 
 The following document will always be returned:
@@ -1780,7 +1729,6 @@ The command has the following fields:
 
 | Field          | Type     | Description                                                                                                    |
 | -------------- | -------- | -------------------------------------------------------------------------------------------------------------- |
-| Field          | Type     | Description                                                                                                    |
 | mxsAddUser     | string   | The name of the user to be added.                                                                              |
 | pwd            | string   | The password in cleartext.                                                                                     |
 | customData     | document | Optional. Any arbitrary information.                                                                           |
@@ -1845,7 +1793,6 @@ The command takes the following fields:
 
 | Field             | Type   | Description                             |
 | ----------------- | ------ | --------------------------------------- |
-| Field             | Type   | Description                             |
 | mxsCreateDatabase | string | The name of the database to be created. |
 
 **Returns**
@@ -1897,7 +1844,6 @@ The command takes the following fields:
 
 | Field       | Type     | Description                                  |
 | ----------- | -------- | -------------------------------------------- |
-| Field       | Type     | Description                                  |
 | mxsDiagnose | document | A command as provided to db.runCommand(...). |
 
 **Returns**
@@ -1968,7 +1914,6 @@ The command takes the following fields:
 
 | Field        | Type | Description |
 | ------------ | ---- | ----------- |
-| Field        | Type | Description |
 | mxsGetConfig |      | Ignored.    |
 
 **Returns**
@@ -2017,7 +1962,6 @@ The command has the following fields:
 
 | Field         | Type   | Description                         |
 | ------------- | ------ | ----------------------------------- |
-| Field         | Type   | Description                         |
 | mxsRemoveUser | string | The name of the user to be removed. |
 
 **Returns**
@@ -2071,14 +2015,12 @@ The command takes the following fields:
 
 | Field        | Type     | Description                              |
 | ------------ | -------- | ---------------------------------------- |
-| Field        | Type     | Description                              |
 | mxsSetConfig | document | A document specifying the configuration. |
 
 The document takes the following fields:
 
 | Field                | Type    | Description                                 |
 | -------------------- | ------- | ------------------------------------------- |
-| Field                | Type    | Description                                 |
 | on\_unknown\_command | string  | Either "return\_error" or "return\_empty"   |
 | auto\_create\_tables | boolean | Whether tables should be created as needed. |
 | id\_length           | integer | id column VARCHAR size in created tables.   |
@@ -2151,7 +2093,6 @@ The command has the following fields:
 
 | Field          | Type     | Description                                                                                                                                                              |
 | -------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Field          | Type     | Description                                                                                                                                                              |
 | mxsUpdateUser  | string   | The name of the user to be updated.                                                                                                                                      |
 | pwd            | string   | The password in cleartext.                                                                                                                                               |
 | customData     | document | Optional. Any arbitrary information.                                                                                                                                     |

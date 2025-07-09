@@ -39,7 +39,6 @@ The following options can be used by `FROM_UNIXTIME()`, as well as [DATE\_FORMAT
 
 | Option | Description                                                                                                                                                                       |
 | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Option | Description                                                                                                                                                                       |
 | %a     | Short weekday name in current locale (Variable [lc\_time\_names](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#lc_time_names)). |
 | %b     | Short form month name in current locale. For locale en\_US this is one of: Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov or Dec.                                                    |
 | %c     | Month with 1 or 2 digits.                                                                                                                                                         |

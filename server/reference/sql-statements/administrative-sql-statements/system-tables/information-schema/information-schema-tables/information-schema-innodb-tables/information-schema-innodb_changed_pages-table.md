@@ -10,7 +10,6 @@ It has the following columns:
 
 | Column     | Description                                                           |
 | ---------- | --------------------------------------------------------------------- |
-| Column     | Description                                                           |
 | SPACE\_ID  | Modified page space id                                                |
 | PAGE\_ID   | Modified page id                                                      |
 | START\_LSN | Interval start after which page was changed (equal to checkpoint LSN) |

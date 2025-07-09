@@ -6,7 +6,6 @@ For more information on general types of indexes, such as primary keys, unique i
 
 | Storage Engine                                                                | Permitted Indexes |
 | ----------------------------------------------------------------------------- | ----------------- |
-| Storage Engine                                                                | Permitted Indexes |
 | [Aria](../../../server-usage/storage-engines/aria/)                           | BTREE, RTREE      |
 | [MyISAM](../../../server-usage/storage-engines/myisam-storage-engine/)        | BTREE, RTREE      |
 | [InnoDB](../../../server-usage/storage-engines/innodb/)                       | BTREE             |

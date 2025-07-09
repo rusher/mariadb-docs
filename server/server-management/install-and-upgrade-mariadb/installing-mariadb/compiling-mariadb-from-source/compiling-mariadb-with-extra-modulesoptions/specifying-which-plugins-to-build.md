@@ -6,7 +6,6 @@ Use `PLUGIN_xxx` cmake variables. They can be set on the command line with `-DPL
 
 | Value   | Effect                                                                                                                                              |
 | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Value   | Effect                                                                                                                                              |
 | NO      | the plugin will be not compiled at all                                                                                                              |
 | STATIC  | the plugin will be compiled statically, if supported. Otherwise it will be not compiled.                                                            |
 | DYNAMIC | the plugin will be compiled dynamically, if supported. Otherwise it will be not compiled. This is the default behavior.                             |

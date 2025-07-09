@@ -49,7 +49,6 @@ The output of [EXPLAIN](../../../reference/sql-statements/administrative-sql-sta
 
 | id | select\_type | table   | type | possible\_keys | key  | key\_len | ref  | rows | Extra                                           |
 | -- | ------------ | ------- | ---- | -------------- | ---- | -------- | ---- | ---- | ----------------------------------------------- |
-| id | select\_type | table   | type | possible\_keys | key  | key\_len | ref  | rows | Extra                                           |
 | 1  | SIMPLE       | Country | ALL  | PRIMARY        | NULL | NULL     | NULL | 239  | Using where                                     |
 | 1  | SIMPLE       | City    | ALL  | NULL           | NULL | NULL     | NULL | 4079 | Using where; Using join buffer (flat, BNL join) |
 
@@ -86,7 +85,6 @@ This produces:
 
 | id | select\_type | table | type | possible\_keys | key         | key\_len | ref   | rows | Extra       |
 | -- | ------------ | ----- | ---- | -------------- | ----------- | -------- | ----- | ---- | ----------- |
-| id | select\_type | table | type | possible\_keys | key         | key\_len | ref   | rows | Extra       |
 | 1  | SIMPLE       | City  | ref  | CountryCode    | CountryCode | 3        | const | 14   | Using where |
 
 If we had not used [USE INDEX](use-index.md), the `Name` index would have been in`possible keys`.
@@ -112,7 +110,6 @@ This produces:
 
 | id | select\_type | table | type | possible\_keys | key         | key\_len | ref   | rows | Extra       |
 | -- | ------------ | ----- | ---- | -------------- | ----------- | -------- | ----- | ---- | ----------- |
-| id | select\_type | table | type | possible\_keys | key         | key\_len | ref   | rows | Extra       |
 | 1  | SIMPLE       | City  | ref  | CountryCode    | CountryCode | 3        | const | 14   | Using where |
 
 The benefit of using `IGNORE_INDEX` instead of `USE_INDEX` is that it will not disable a new index which you may add later.
@@ -134,7 +131,6 @@ This produces:
 
 | id | select\_type | table | type  | possible\_keys | key  | key\_len | ref  | rows | Extra       |
 | -- | ------------ | ----- | ----- | -------------- | ---- | -------- | ---- | ---- | ----------- |
-| id | select\_type | table | type  | possible\_keys | key  | key\_len | ref  | rows | Extra       |
 | 1  | SIMPLE       | City  | range | Name           | Name | 35       | NULL | 4079 | Using where |
 
 `FORCE_INDEX` works by only considering the given indexes (like with`USE_INDEX`) but in addition it tells the optimizer to regard a table scan as something very expensive. However if none of the 'forced' indexes can be used, then a table scan will be used anyway.
@@ -169,7 +165,6 @@ This produces:
 
 | id | select\_type | table | type  | possible\_keys | key  | key\_len | ref  | rows | Extra       |
 | -- | ------------ | ----- | ----- | -------------- | ---- | -------- | ---- | ---- | ----------- |
-| id | select\_type | table | type  | possible\_keys | key  | key\_len | ref  | rows | Extra       |
 | 1  | SIMPLE       | City  | index | NULL           | Name | 35       | NULL | 4079 | Using where |
 
 Without the [FORCE INDEX](force-index.md) option we would have '`Using where; Using temporary; Using filesort`' in the 'Extra' column, which means that the optimizer would created a temporary table and sort it.
@@ -212,7 +207,6 @@ produces:
 
 | id | select\_type | table | type | possible\_keys | key  | key\_len | ref  | rows | Extra                           |
 | -- | ------------ | ----- | ---- | -------------- | ---- | -------- | ---- | ---- | ------------------------------- |
-| id | select\_type | table | type | possible\_keys | key  | key\_len | ref  | rows | Extra                           |
 | 1  | SIMPLE       | City  | ALL  | NULL           | NULL | NULL     | NULL | 4079 | Using temporary; Using filesort |
 
 while:
@@ -226,7 +220,6 @@ produces:
 
 | id | select\_type | table | type | possible\_keys | key  | key\_len | ref  | rows | Extra          |
 | -- | ------------ | ----- | ---- | -------------- | ---- | -------- | ---- | ---- | -------------- |
-| id | select\_type | table | type | possible\_keys | key  | key\_len | ref  | rows | Extra          |
 | 1  | SIMPLE       | City  | ALL  | NULL           | NULL | NULL     | NULL | 4079 | Using filesort |
 
 The difference is that with `SQL_SMALL_RESULT` a temporary table is used.
@@ -247,7 +240,6 @@ This produces:
 
 | id | select\_type | table | type  | possible\_keys | key  | key\_len | ref  | rows | Extra                        |
 | -- | ------------ | ----- | ----- | -------------- | ---- | -------- | ---- | ---- | ---------------------------- |
-| id | select\_type | table | type  | possible\_keys | key  | key\_len | ref  | rows | Extra                        |
 | 1  | SIMPLE       | City  | index | NULL           | Name | 35       | NULL | 4079 | Using index; Using temporary |
 
 Without `SQL_BUFFER_RESULT`, the above query would not use a temporary table for the result set.

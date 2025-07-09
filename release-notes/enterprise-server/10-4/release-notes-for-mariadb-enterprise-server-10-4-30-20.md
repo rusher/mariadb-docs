@@ -8,7 +8,6 @@ MariaDB Enterprise Server 10.4.30-20 was released on 2023-06-13.
 
 | CVE (with [cve.org](https://github.com/mariadb-corporation/docs-release-notes/blob/test/mariadb-enterprise-server-release-notes/mariadb-enterprise-server-10-4/cve.org) link) | CVSS base score                                                               |
 | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| CVE (with [cve.org](https://github.com/mariadb-corporation/docs-release-notes/blob/test/mariadb-enterprise-server-release-notes/mariadb-enterprise-server-10-4/cve.org) link) | CVSS base score                                                               |
 | [CVE-2022-47015](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-47015)                                                                                               | N/A (Medium)[#1](release-notes-for-mariadb-enterprise-server-10-4-30-20.md#1) |
 
 `#1`:\

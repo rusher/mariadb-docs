@@ -7,7 +7,6 @@ The [Performance Schema](../README.md) events_statements_summary_by_account_by_e
 
 | Column | Description |
 | --- | --- |
-| Column | Description |
 | USER | User. Used together with HOST and EVENT_NAME for grouping events. |
 | HOST | Host. Used together with USER and EVENT_NAME for grouping events. |
 | EVENT_NAME | Event name. Used together with USER and HOST for grouping events. |

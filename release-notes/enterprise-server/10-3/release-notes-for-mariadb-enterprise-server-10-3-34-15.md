@@ -8,7 +8,6 @@ MariaDB Enterprise Server 10.3.34-15 was released on 2022-03-14.
 
 | CVE (with [cve.org](https://github.com/mariadb-corporation/docs-release-notes/blob/test/mariadb-enterprise-server-release-notes/mariadb-enterprise-server-10-3/cve.org) link) | CVSS base score |
 | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------- |
-| CVE (with [cve.org](https://github.com/mariadb-corporation/docs-release-notes/blob/test/mariadb-enterprise-server-release-notes/mariadb-enterprise-server-10-3/cve.org) link) | CVSS base score |
 | [CVE-2021-46668](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-46668)                                                                                               | 5.5             |
 | [CVE-2021-46665](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-46665)                                                                                               | 5.5             |
 | [CVE-2021-46664](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-46664)                                                                                               | 5.5             |
