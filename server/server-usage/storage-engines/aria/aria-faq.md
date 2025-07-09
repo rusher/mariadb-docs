@@ -2,7 +2,7 @@
 
 This FAQ provides information on the [Aria](./) storage engine.
 
-The _**Aria**_ storage engine was previously known as _**Maria**_, (see, the [Aria Name](the-aria-name.md)). In current releases of [MariaDB](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/mariadb/README.md), you can refer to the engine as Maria or Aria. As this will change in future releases, please update references in your scripts and automation to use the correct name.
+The _**Aria**_ storage engine was previously known as _**Maria**_, (see, the [Aria Name](the-aria-name.md)). In current releases of [MariaDB](aria-storage-engine.md), you can refer to the engine as Maria or Aria. As this will change in future releases, please update references in your scripts and automation to use the correct name.
 
 ### What is Aria?
 
@@ -14,7 +14,7 @@ It has been in development since 2007 and was first announced on Monty's [blog](
 
 Originally, the storage engine was called **Maria**, after Monty's younger daughter. Monty named MySQL after his first child, **My** and his second child **Max** gave his name to MaxDB and the MySQL-Max distributions.
 
-In practice, having both _MariaDB_ the database server and _Maria_ the storage engine with such similar names proved confusing. To mitigate this, the decision was made to change the name. A Rename Maria contest was held during the first half of 2010 and names were submitted from around the world. Monty picked the name _**Aria**_ from a short list of finalist. Chris Tooley, who suggested it, received the prize of a Linux-powered[System 76 Meerkat NetTop](https://www.system76.com/product_info.php?cPath=27\&products_id=91) from Monty Program.
+In practice, having both _MariaDB_ the database server and _Maria_ the storage engine with such similar names proved confusing. To mitigate this, the decision was made to change the name. A Rename Maria contest was held during the first half of 2010 and names were submitted from around the world. Monty picked the name _**Aria**_ from a short list of finalist. Chris Tooley, who suggested it, received the prize of a Linux-powered [System 76 Meerkat NetTop](https://system76.com/desktops/meerkat/?srsltid=AfmBOorT6C336afSiMbJmQO0ak1KUw0n7C5bwpdiCZ_ocl_FEahxopIM) from Monty Program.
 
 For more information, see the [Aria Name](the-aria-name.md).
 
@@ -108,7 +108,7 @@ Aria follows the same [release criteria](https://app.gitbook.com/s/aEnK0ZXmUbJzq
 
 Aria 1.0 was basically a crash-safe non-transactional version of MyISAM. Aria 1.5 added more concurrency (multiple inserter) and some optimizations.
 
-Aria supports all aspects of MyISAM, except as noted below. This includes external and internal check/repair/compressing of rows, different row formats, different index compress formats, [aria_chk](../../../clients-and-utilities/aria-clients-and-utilities/aria_chk.md) etc. After a normal shutdown you can copy Aria files between servers.
+Aria supports all aspects of MyISAM, except as noted below. This includes external and internal check/repair/compressing of rows, different row formats, different index compress formats, [aria\_chk](../../../clients-and-utilities/aria-clients-and-utilities/aria_chk.md) etc. After a normal shutdown you can copy Aria files between servers.
 
 ### Advantages of Aria compared to MyISAM
 
@@ -152,7 +152,7 @@ Aria supports all aspects of MyISAM, except as noted below. This includes extern
 See:
 
 * [Aria storage engine](aria-storage-engine.md)
-* [MariaDB versus MySQL](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/aria/broken-reference/README.md)
+* [MariaDB versus MySQL](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/compatibility-and-differences/mariadb-vs-mysql-compatibility)
 
 ### Why do you use the `TRANSACTIONAL` keyword now when Aria is not yet transactional?
 
@@ -176,7 +176,7 @@ Alternatively,
 
 ### What is going to change in later Aria main releases?
 
-The `LOCK TABLES` statement will not start a crash-safe segment. You should use [begin](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/aria/begin/README.md) and [COMMIT](../../../reference/sql-statements/transactions/commit.md) instead.
+The `LOCK TABLES` statement will not start a crash-safe segment. You should use begin and [COMMIT](../../../reference/sql-statements/transactions/commit.md) instead.
 
 To make things future safe, you could do this:
 

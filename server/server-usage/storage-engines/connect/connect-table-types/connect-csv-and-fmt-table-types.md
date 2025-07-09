@@ -95,7 +95,7 @@ not be recognized as such but will be regarded as string fields.
 
 ### Restrictions on CSV Tables
 
-* If [secure_file_priv](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#secure_file_priv) is set to the path of some directory, then CSV tables can only be created with files in that directory.
+* If [secure\_file\_priv](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#secure_file_priv) is set to the path of some directory, then CSV tables can only be created with files in that directory.
 
 ## FMT Type
 
@@ -196,7 +196,7 @@ Let us suppose for instance that the preceding example file could be:
 ```
 
 This will display an error message such as _“Bad format line x field y of_\
-&#xNAN;_&#x46;MTSAMPLE”._ To avoid this and accept these records, the corresponding fields\
+\&#xNAN;_FMTSAMPLE”._ To avoid this and accept these records, the corresponding fields\
 must be specified as "optional". In the above example, fields 2 and 3 can have\
 null values (in lines 3 and 2 respectively). To specify them as optional, their\
 format must be terminated by `%m` (instead of the second `%n`). A statement\

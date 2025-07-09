@@ -40,7 +40,7 @@ See [Server System Variables](../../../ha-and-performance/optimization-and-tunin
 
 #### `aria_encrypt_tables`
 
-* Description: Enables automatic encryption of all user-created Aria tables that have the [ROW\_FORMAT](../../sql-statements-and-structure/sql-statements/data-definition/create/create-table.md#row_format) table option set to [PAGE](aria-storage-formats.md#page). See [Data at Rest Encryption](../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/data-at-rest-encryption-overview.md) and [Enabling Encryption for User-created Tables](../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/aria-encryption/aria-encryption-overview.md).
+* Description: Enables automatic encryption of all user-created Aria tables that have the [ROW\_FORMAT](../../../reference/sql-statements/data-definition/create/create-table.md#row_format) table option set to [PAGE](aria-storage-formats.md#page). See [Data at Rest Encryption](../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/data-at-rest-encryption-overview.md) and [Enabling Encryption for User-created Tables](../../../security/securing-mariadb/securing-mariadb-encryption/encryption-data-at-rest-encryption/aria-encryption/aria-encryption-overview.md).
 * Commandline: `aria-encrypt-tables={0|1}`
 * Scope: Global
 * Dynamic: Yes
@@ -189,7 +189,7 @@ See [Server System Variables](../../../ha-and-performance/optimization-and-tunin
 
 #### `aria_recover`
 
-* Description: `aria_recover` has been renamed to `aria_recover_options` in [MariaDB 10.2.0](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/aria/broken-reference/README.md). See [aria\_recover\_options](aria-system-variables.md#aria_recover_options) for the description.
+* Description: `aria_recover` has been renamed to `aria_recover_options` in [MariaDB 10.2.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-1020-release-notes). See [aria\_recover\_options](aria-system-variables.md#aria_recover_options) for the description.
 
 #### `aria_recover_options`
 
@@ -207,7 +207,7 @@ See [Server System Variables](../../../ha-and-performance/optimization-and-tunin
   * `BACKUP,QUICK` (>= [MariaDB 10.2.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-1024-release-notes))
   * `NORMAL` (<= [MariaDB 10.2.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-1023-release-notes))
 * Valid Values: `NORMAL`, `BACKUP`, `FORCE`, `QUICK`, `OFF`
-* Introduced: [MariaDB 10.2.0](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/aria/broken-reference/README.md)
+* Introduced: [MariaDB 10.2.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-1020-release-notes)
 
 #### `aria_repair_threads`
 

@@ -2,7 +2,7 @@
 
 The [Aria](./) storage engine is compiled in by default from [MariaDB 5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-1-series/changes-improvements-in-mariadb-5-1) and it is required to be 'in use' when MariaDB is started.
 
-From [MariaDB 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/aria/broken-reference/README.md), all [system tables](../../../reference/sql-statements/administrative-sql-statements/system-tables/) are Aria.
+From [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104), all [system tables](../../../reference/sql-statements/administrative-sql-statements/system-tables/) are Aria.
 
 Additionally, internal on-disk tables are in the Aria table format instead of\
 the [MyISAM](../myisam-storage-engine/) table format. This should speed up some [GROUP BY](../../../reference/sql-statements/data-manipulation/selecting-data/group-by.md)\
@@ -10,7 +10,7 @@ and [DISTINCT](../../../reference/sql-functions/aggregate-functions/count-distin
 MyISAM.
 
 Note: The _**Aria**_ storage engine was previously called _Maria_ (see[The Aria Name](the-aria-name.md) for details on the\
-rename) and in previous versions of [MariaDB](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/mariadb/README.md) the engine was still called\
+rename) and in previous versions of [MariaDB](../storage-engines-storage-engines-overview.md) the engine was still called\
 Maria.
 
 The following table options to Aria tables in [CREATE TABLE](../../../reference/sql-statements/data-definition/create/create-table.md) and [ALTER TABLE](../../../reference/sql-statements/data-definition/alter/alter-table.md):
@@ -43,7 +43,7 @@ Some other improvements are:
   engines that uses the default way to calculate and MyISAM which does the\
   calculation internally. Note: Old MyISAM tables with internal checksum will\
   return the same checksum as before. To fix them to calculate according to new\
-  rules you have to do an [ALTER TABLE](../../sql-statements-and-structure/sql-statements/data-definition/alter/alter-table.md). You can use the old\
+  rules you have to do an [ALTER TABLE](../../../reference/sql-statements/data-definition/alter/alter-table.md). You can use the old\
   ways to calculate checksums by using the option `--old` to mariadbdmysqld or set the\
   system variable '`@@old`' to `1` when you\
   do `CHECKSUM TABLE ... EXTENDED;`
@@ -59,7 +59,7 @@ In normal operations, the only variables you have to consider are:
 * [aria-pagecache-buffer-size](aria-system-variables.md)
   * This is where all index and data pages are cached. The bigger this is, the faster\
     Aria will work.
-* [aria-block-size](https://mariadb.com/kb/en/\[aria-server-system-variables#aria_block_size)
+* [aria-block-size](aria-system-variables.md#aria_block_size)
   * The default value 8192, should be ok for most cases. The only problem with a higher\
     value is that it takes longer to find a packed key in the block as one has to\
     search roughly 8192/2 to find each key. We plan to fix this by adding a\
