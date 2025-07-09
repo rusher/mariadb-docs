@@ -574,7 +574,7 @@
     * [sysVinit](server-management/starting-and-stopping-mariadb/sysvinit.md)
     * [mariadbd-safe](server-management/starting-and-stopping-mariadb/mariadbd-safe.md)
     * [mariadbd-multi](server-management/starting-and-stopping-mariadb/mariadbd-multi.md)
-    * [mariadbd Optionskey-cache-age-threshold](server-management/starting-and-stopping-mariadb/mariadbd-options.md)
+    * [mariadbd Option](server-management/starting-and-stopping-mariadb/mariadbd-options.md)
     * [mariadbd](server-management/starting-and-stopping-mariadb/mariadbd.md)
     * [mysql.server](server-management/starting-and-stopping-mariadb/mysql-server.md)
     * [Running MariaDB from the Build Directory](server-management/starting-and-stopping-mariadb/running-mariadb-from-the-build-directory.md)
