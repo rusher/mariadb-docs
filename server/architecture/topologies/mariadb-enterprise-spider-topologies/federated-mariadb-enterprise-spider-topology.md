@@ -1,15 +1,17 @@
 # Federated MariaDB Enterprise Spider Topology
 
-# Overview
+## Federated MariaDB Enterprise Spider Topology
+
+## Overview
 
 In the Federated MariaDB Enterprise Spider topology, a Spider Node contains one or more "virtual" Spider Tables. A Spider Table does not store data. When a Spider Table is queried, the Enterprise Spider storage engine uses a MariaDB foreign data wrapper to read from and write to a Data Table on a Data Node.
 
-# Benefits
+## Benefits
 
 MariaDB Enterprise Spider:
 
 * Supports a MariaDB foreign data wrapper. The MariaDB foreign data wrapper can be used to replace the older Federated and FederatedX storage engines.
-* Supports an ODBC foreign data wrapper in [MariaDB Enterprise Server 10.5](https://github.com/mariadb-corporation/docs-server/blob/test/en/mariadb-server-releases-mariadb-enterprise-server-10-5/README.md) and later. The ODBC foreign data wrapper is beta maturity. The maturity can be confirmed by querying the [information\_schema.SPIDER\_WRAPPER\_PROTOCOLS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/spider/information-schema-spider_wrapper_protocols-table) table.
+* Supports an ODBC foreign data wrapper in MariaDB Enterprise Server 10.5 and later. The ODBC foreign data wrapper is beta maturity. The maturity can be confirmed by querying the [information\_schema.SPIDER\_WRAPPER\_PROTOCOLS](../../../server-usage/storage-engines/spider/information-schema-spider_wrapper_protocols-table.md) table.
 
 The Spider Federated topology:
 
@@ -17,7 +19,7 @@ The Spider Federated topology:
 * Can be used to join tables located on a different MariaDB Enterprise Server node with tables on the Spider Node using the MariaDB foreign data wrapper.
 * Can be used to migrate tables located on a different MariaDB Enterprise Server node to the Spider Node using the MariaDB foreign data wrapper.
 
-# Federated MariaDB Enterprise Spider Topology
+## Federated MariaDB Enterprise Spider Topology
 
 <figure><img src="../../../.gitbook/assets/spider-federated.png" alt=""><figcaption></figcaption></figure>
 
@@ -31,29 +33,29 @@ The Spider Federated topology consists of:
 The Spider Node:
 
 * Contains one or more Spider Tables
-* Uses the [Enterprise Spider storage engine](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/spider/spider-storage-engine-introduction/) plugin for Spider Tables
+* Uses the [Enterprise Spider storage engine](../../../server-usage/storage-engines/spider/) plugin for Spider Tables
 * Uses a MariaDB foreign data wrapper to query the Data Table on the Data Node
 
 The Data Node:
 
 * Contains a Data Table for each Spider Table
-* Uses a non-Spider storage engine for each Data Table, such as [InnoDB](https://github.com/mariadb-corporation/docs-server/blob/test/en/storage-engines-overview-innodb-storage-engine/README.md) or [ColumnStore](https://github.com/mariadb-corporation/docs-server/blob/test/en/columnstore-storage-engine/README.md)
+* Uses a non-Spider storage engine for each Data Table, such as [InnoDB](../../../server-usage/storage-engines/innodb/) or [ColumnStore](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/rBEU9juWLfTDcdwF3Q14/)
 
-# Term Definitions
+## Term Definitions
 
-| Term                | Definition                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Data Node           | A Data Node is a MariaDB Enterprise Server node that contains one or more Data Tables.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
-| Data Table          | A Data Table stores data for a Spider Table. When a Spider Table is queried, the Enterprise Spider storage engine uses the MariaDB foreign data wrapper to read from and write to the Data Table on a Data Node. The Data Table must be created on the Data Node with the same structure as the Spider Table. The Data Table must use a non-Spider storage engine, such as [InnoDB](https://github.com/mariadb-corporation/docs-server/blob/test/en/storage-engines-overview-innodb-storage-engine/README.md) or [ColumnStore](https://github.com/mariadb-corporation/docs-server/blob/test/en/columnstore-storage-engine/README.md). |
-| ODBC Data Source    | An ODBC Data Source relies on an ODBC Driver and an ODBC Driver Manager to query an external data source.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
-| ODBC Driver         | An ODBC Driver is a library that integrates with a ODBC Driver Manager to query an external data source.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
-| ODBC Driver Manager | An ODBC Driver Manager allows applications to use ODBC Drivers.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-| Spider Node         | A Spider Node is a MariaDB Enterprise Server node that contains one or more Spider Tables.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-| Spider Table        | A Spider Table is a virtual table that does not store data. When a Spider Table is queried, the [Enterprise Spider storage engine](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/spider/spider-storage-engine-introduction/) uses foreign data wrappers to read from and write to Data Tables on Data Nodes or ODBC Data Sources.                                                                                                                                                                                                                                                                          |
+| Term                | Definition                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| ------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Data Node           | A Data Node is a MariaDB Enterprise Server node that contains one or more Data Tables.                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| Data Table          | A Data Table stores data for a Spider Table. When a Spider Table is queried, the Enterprise Spider storage engine uses the MariaDB foreign data wrapper to read from and write to the Data Table on a Data Node. The Data Table must be created on the Data Node with the same structure as the Spider Table. The Data Table must use a non-Spider storage engine, such as [InnoDB](../../../server-usage/storage-engines/innodb/) or [ColumnStore](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/rBEU9juWLfTDcdwF3Q14/). |
+| ODBC Data Source    | An ODBC Data Source relies on an ODBC Driver and an ODBC Driver Manager to query an external data source.                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| ODBC Driver         | An ODBC Driver is a library that integrates with a ODBC Driver Manager to query an external data source.                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| ODBC Driver Manager | An ODBC Driver Manager allows applications to use ODBC Drivers.                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| Spider Node         | A Spider Node is a MariaDB Enterprise Server node that contains one or more Spider Tables.                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| Spider Table        | A Spider Table is a virtual table that does not store data. When a Spider Table is queried, the [Enterprise Spider storage engine](../../../server-usage/storage-engines/spider/) uses foreign data wrappers to read from and write to Data Tables on Data Nodes or ODBC Data Sources.                                                                                                                                                                                                                                       |
 
-# Example Use Cases
+## Example Use Cases
 
-## Query MariaDB Enterprise Server Nodes
+### Query MariaDB Enterprise Server Nodes
 
 The Spider Federated topology can be used to query tables located on another MariaDB Enterprise Server node:
 
@@ -76,7 +78,7 @@ JOIN innodb_tab i
 ON s.id=i.id;
 ```
 
-## Migrate Tables from MariaDB Enterprise Server Nodes
+### Migrate Tables from MariaDB Enterprise Server Nodes
 
 The Spider Federated topology can be used to migrate tables from one MariaDB Enterprise Server node to another MariaDB Enterprise Server node:
 
@@ -91,9 +93,9 @@ INSERT INTO innodb_tab
    SELECT * FROM spider_tab;
 ```
 
-# Examples
+## Examples
 
-## Load Spider with Configuration File (ES 10.4+)
+### Load Spider with Configuration File (ES 10.4+)
 
 ```ini
 [mariadb]
@@ -101,19 +103,19 @@ INSERT INTO innodb_tab
 plugin_load_add = "ha_spider"
 ```
 
-## Load Spider with INSTALL SONAME (ES 10.4+)
+### Load Spider with INSTALL SONAME (ES 10.4+)
 
 ```sql
 INSTALL SONAME "ha_spider";
 ```
 
-## View Foreign Data Wrappers (ES 10.5+)
+### View Foreign Data Wrappers (ES 10.5+)
 
 ```sql
 SELECT * FROM information_schema.SPIDER_WRAPPER_PROTOCOLS;
 ```
 
-## Create Federated Spider Table
+### Create Federated Spider Table
 
 ```sql
 CREATE SERVER hq_server
@@ -140,26 +142,26 @@ CREATE TABLE spider_hq_sales.invoices (
 COMMENT='server "hq_server", table "invoices"';
 ```
 
-# Resources
+## Resources
 
-## Deployment
+### Deployment
 
-* [Deploy MariaDB Enterprise Spider](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-enterprise-server-release-notes/mariadb-enterprise-server-differences/deployment#spider-topologies)
+* [Deploy MariaDB Enterprise Spider](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/enterprise-server/mariadb-enterprise-server-differences/deployment#spider-topologies)
 
-## Operations
+### Operations
 
-* [Operations](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/spider/spider-storage-engine-introduction/mariadb-enterprise-spider-operations/federated-mariadb-enterprise-spider-topology-operations/)
-* [Backup and Restore](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/spider/spider-storage-engine-introduction/mariadb-enterprise-spider-operations/federated-mariadb-enterprise-spider-topology-operations/federated-mariadb-enterprise-spider-topology-backup-and-restore)
-* [Migrate Tables](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/spider/spider-storage-engine-introduction/mariadb-enterprise-spider-operations/federated-mariadb-enterprise-spider-topology-operations/federated-mariadb-enterprise-spider-topology-migrate-tables)
+* [Operations](../../../server-usage/storage-engines/spider/spider-storage-engine-introduction/mariadb-enterprise-spider-operations/federated-mariadb-enterprise-spider-topology-operations/)
+* [Backup and Restore](../../../server-usage/storage-engines/spider/spider-storage-engine-introduction/mariadb-enterprise-spider-operations/federated-mariadb-enterprise-spider-topology-operations/federated-mariadb-enterprise-spider-topology-backup-and-restore.md)
+* [Migrate Tables](../../../server-usage/storage-engines/spider/spider-storage-engine-introduction/mariadb-enterprise-spider-operations/federated-mariadb-enterprise-spider-topology-operations/federated-mariadb-enterprise-spider-topology-migrate-tables.md)
 
-## Schema Design
+### Schema Design
 
-* [Schema Design](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/spider/spider-storage-engine-introduction/mariadb-enterprise-spider-schema-design)
+* [Schema Design](../../../server-usage/storage-engines/spider/spider-storage-engine-introduction/mariadb-enterprise-spider-schema-design.md)
 
-## Storage Engines
+### Storage Engines
 
-* [Enterprise Spider Storage Engine](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/spider/spider-storage-engine-introduction/)
+* [Enterprise Spider Storage Engine](../../../server-usage/storage-engines/spider/)
 
-{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
+{% include "../../../.gitbook/includes/license-copyright-mariadb.md" %}
 
 {% @marketo/form formId="4316" %}
