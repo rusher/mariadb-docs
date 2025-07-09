@@ -27,7 +27,7 @@ Also see the [Full list of MariaDB options, system and status variables](https:/
 
 #### `wsrep_causal_reads`
 
-* Description: If set to `ON` (`OFF` is default), enforces [read-committed](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/transactions/set-transaction#read-committed) characteristics across the cluster. In the case that a primary applies an event more quickly than a replica, the two could briefly be out-of-sync. With this variable set to `ON`, the replica will wait for the event to be applied before processing further queries. Setting to `ON` also results in larger read latencies. Deprecated by [wsrep\_sync\_wait=1](galera-cluster-system-variables.md#wsrep_sync_wait).
+* Description: If set to `ON` (`OFF` is default), enforces [read-committed](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/transactions/transactions-read-committed) characteristics across the cluster. In the case that a primary applies an event more quickly than a replica, the two could briefly be out-of-sync. With this variable set to `ON`, the replica will wait for the event to be applied before processing further queries. Setting to `ON` also results in larger read latencies. Deprecated by [wsrep\_sync\_wait=1](galera-cluster-system-variables.md#wsrep_sync_wait).
 * Commandline: `--wsrep-causal-reads[={0|1}]`
 * Scope: Session
 * Dynamic: Yes
@@ -85,7 +85,7 @@ Also see the [Full list of MariaDB options, system and status variables](https:/
 
 #### `wsrep_convert_LOCK_to_trx`
 
-* Description: Converts [LOCK/UNLOCK TABLES](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/transactions/lock-tables) statements to [BEGIN](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/transactions/start-transaction) and [COMMIT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/transactions/commit). Used mainly for getting older applications to work with a multi-primary setup, use carefully, as can result in extremely large writesets.
+* Description: Converts [LOCK](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/transactions/lock-tables)/[UNLOCK TABLES](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/transactions/transactions-unlock-tables) statements to [BEGIN](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/programmatic-compound-statements/begin-end) and [COMMIT](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/transactions/commit). Used mainly for getting older applications to work with a multi-primary setup, use carefully, as can result in extremely large writesets.
 * Commandline: `--wsrep-convert-LOCK-to-trx[={0|1}]`
 * Scope: Global
 * Dynamic: Yes
@@ -112,7 +112,7 @@ Also see the [Full list of MariaDB options, system and status variables](https:/
 #### `wsrep_debug`
 
 * Description: WSREP debug level logging.
-  * Before [MariaDB 10.6.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/mariadb-1061-release-notes), DDL logging was only logged on the originating node. From [MariaDB 10.6.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/mariadb-1061-release-notes), it is logged on other nodes as well.
+  * Before [MariaDB 10.6.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/mariadb-1061-release-notes), DDL logging was only logged on the originating node. From [MariaDB 10.6.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/mariadb-1061-release-notes), it is logged on other nodes as well.
 
 It is an enum. Valid values are:`0: NONE`: Off (default)`1: SERVER`: MariaDB server code contains WSREP\_DEBUG log writes, and these will be added to server error log`2: TRANSACTION`: Logging from wsrep-lib transaction is added to the error log`3: STREAMING`: Logging from streaming transactions in wsrep-lib is added to the error log`4: CLIENT`: Logging from wsrep-lib client state is added to the error log\
 <>
@@ -127,7 +127,7 @@ It is an enum. Valid values are:`0: NONE`: Off (default)`1: SERVER`: MariaDB ser
 
 #### `wsrep_desync`
 
-* Description: When a node receives more write-sets than it can apply, the transactions are placed in a received queue. If the node's received queue has too many write-sets waiting to be applied (as defined by the [gcs.fc_limit](wsrep_provider_options.md#gcsfc_limit) WSREP provider option), then the node would usually engage Flow Control. However, when this option is set to `ON`, Flow Control will be disabled for the desynced node. The desynced node works through the received queue until it reaches a more manageable size. The desynced node continues to receive write-sets from the other nodes in the cluster. The other nodes in the cluster do not wait for the desynced node to catch up, so the desynced node can fall even further behind the other nodes in the cluster. You can check if a node is desynced by checking if the [wsrep_local_state_comment](galera-cluster-status-variables.md#wsrep_local_state_comment) status variable is equal to `Donor/Desynced`.
+* Description: When a node receives more write-sets than it can apply, the transactions are placed in a received queue. If the node's received queue has too many write-sets waiting to be applied (as defined by the [gcs.fc\_limit](wsrep_provider_options.md#gcsfc_limit) WSREP provider option), then the node would usually engage Flow Control. However, when this option is set to `ON`, Flow Control will be disabled for the desynced node. The desynced node works through the received queue until it reaches a more manageable size. The desynced node continues to receive write-sets from the other nodes in the cluster. The other nodes in the cluster do not wait for the desynced node to catch up, so the desynced node can fall even further behind the other nodes in the cluster. You can check if a node is desynced by checking if the [wsrep\_local\_state\_comment](galera-cluster-status-variables.md#wsrep_local_state_comment) status variable is equal to `Donor/Desynced`.
 * Commandline: `--wsrep-desync[={0|1}]`
 * Scope: Global
 * Dynamic: Yes
@@ -166,8 +166,8 @@ It is an enum. Valid values are:`0: NONE`: Off (default)`1: SERVER`: MariaDB ser
 #### `wsrep_gtid_domain_id`
 
 * Description: This system variable defines the [GTID](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid) domain ID that is used for [wsrep GTID mode](../high-availability/using-mariadb-replication-with-mariadb-galera-cluster/using-mariadb-gtids-with-mariadb-galera-cluster.md#wsrep-gtid-mode).
-  * When [wsrep_gtid_mode](#wsrep_gtid_mode) is set to `ON`, `wsrep_gtid_domain_id` is used in place of [gtid_domain_id](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/standard-replication/gtid#gtid_domain_id) for all Galera Cluster write sets.
-  * When [wsrep_gtid_mode](#wsrep_gtid_mode) is set to `OFF`, `wsrep_gtid_domain_id` is simply ignored to allow for backward compatibility.
+  * When [wsrep\_gtid\_mode](galera-cluster-system-variables.md#wsrep_gtid_mode) is set to `ON`, `wsrep_gtid_domain_id` is used in place of [gtid\_domain\_id](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid#gtid_domain_id) for all Galera Cluster write sets.
+  * When [wsrep\_gtid\_mode](galera-cluster-system-variables.md#wsrep_gtid_mode) is set to `OFF`, `wsrep_gtid_domain_id` is simply ignored to allow for backward compatibility.
   * There are some additional requirements that need to be met in order for this mode to generate consistent [GTIDs](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid). For more information, see [Using MariaDB GTIDs with MariaDB Galera Cluster](../high-availability/using-mariadb-replication-with-mariadb-galera-cluster/using-mariadb-gtids-with-mariadb-galera-cluster.md).
 * Commandline: `--wsrep-gtid-domain-id=#`
 * Scope: Global
@@ -179,8 +179,8 @@ It is an enum. Valid values are:`0: NONE`: Off (default)`1: SERVER`: MariaDB ser
 #### `wsrep_gtid_mode`
 
 * Description: [Wsrep GTID mode](../high-availability/using-mariadb-replication-with-mariadb-galera-cluster/using-mariadb-gtids-with-mariadb-galera-cluster.md#wsrep-gtid-mode) attempts to keep [GTIDs](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid) consistent for Galera Cluster write sets on all cluster nodes. [GTID](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid) state is initially copied to a joiner node during an [SST](../galera-management/state-snapshot-transfers-ssts-in-galera-cluster/introduction-to-state-snapshot-transfers-ssts.md). If you are planning to use Galera Cluster with [MariaDB replication](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication), then wsrep GTID mode can be helpful.
-  * When `wsrep_gtid_mode` is set to `ON`, [wsrep_gtid_domain_id](#wsrep_gtid_domain_id) is used in place of [gtid_domain_id](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/replication-cluster-multi-master/standard-replication/gtid#gtid_domain_id) for all Galera Cluster write sets.
-  * When `wsrep_gtid_mode` is set to `OFF`, [wsrep_gtid_domain_id](#wsrep_gtid_domain_id) is simply ignored to allow for backward compatibility.
+  * When `wsrep_gtid_mode` is set to `ON`, [wsrep\_gtid\_domain\_id](galera-cluster-system-variables.md#wsrep_gtid_domain_id) is used in place of [gtid\_domain\_id](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid#gtid_domain_id) for all Galera Cluster write sets.
+  * When `wsrep_gtid_mode` is set to `OFF`, [wsrep\_gtid\_domain\_id](galera-cluster-system-variables.md#wsrep_gtid_domain_id) is simply ignored to allow for backward compatibility.
   * There are some additional requirements that need to be met in order for this mode to generate consistent [GTIDs](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/standard-replication/gtid). For more information, see [Using MariaDB GTIDs with MariaDB Galera Cluster](../high-availability/using-mariadb-replication-with-mariadb-galera-cluster/using-mariadb-gtids-with-mariadb-galera-cluster.md).
 * Commandline: `--wsrep-gtid-mode[={0|1}]`
 * Scope: Global
@@ -196,7 +196,7 @@ It is an enum. Valid values are:`0: NONE`: Off (default)`1: SERVER`: MariaDB ser
 * Dynamic: Yes
 * Data Type: `numeric`
 * Range: `0` to `18446744073709551615`
-* Introduced: [MariaDB 10.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1051-release-notes)
+* Introduced: [MariaDB 10.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1051-release-notes)
 
 #### `wsrep_ignore_apply_errors`
 
@@ -215,7 +215,7 @@ It is an enum. Valid values are:`0: NONE`: Off (default)`1: SERVER`: MariaDB ser
 
 #### `wsrep_load_data_splitting`
 
-* Description: If set to `ON`, [LOAD DATA INFILE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile) supports big data files by introducing transaction splitting. The setting has been deprecated in Galera 4, and defaults to `OFF`
+* Description: If set to `ON`, [LOAD DATA INFILE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/inserting-loading-data/load-data-into-tables-or-index/load-data-infile) supports big data files by introducing transaction splitting. The setting has been deprecated in Galera 4, and defaults to `OFF`
 * Commandline: `--wsrep-load-data-splitting[={0|1}]`
 * Scope: Global
 * Dynamic: Yes
@@ -246,7 +246,7 @@ It is an enum. Valid values are:`0: NONE`: Off (default)`1: SERVER`: MariaDB ser
 
 #### `wsrep_max_ws_size`
 
-* Description: Maximum permitted size in bytes per writeset. Writesets exceeding 2GB will be rejected.
+* Description: Maximum permitted size in bytes per write set. Writesets exceeding 2GB will be rejected.
 * Commandline: `--wsrep-max-ws-size=#`
 * Scope: Global
 * Dynamic: Yes
@@ -263,8 +263,8 @@ It is an enum. Valid values are:`0: NONE`: Off (default)`1: SERVER`: MariaDB ser
     * A DDL statement is executed with wsrep\_OSU\_method=RSU set.
     * A DML statement writes to a non-InnoDB table.
     * A DML statement writes to an InnoDB table with wsrep\_on=OFF set.
-  * REPLICATE\_ARIA: Whether or not DML updates for [Aria](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/storage-engines/aria) tables will be replicated. This functionality is experimental and should not be relied upon in production systems.
-  * REPLICATE\_MYISAM: Whether or not DML updates for [MyISAM](https://mariadb.com/docs/server/server-usage/storage-engines/myisam-storage-engine) tables will be replicated. This functionality is experimental and should not be relied upon in production systems.
+  * REPLICATE\_ARIA: Whether or not DML updates for [Aria](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/aria) tables will be replicated. This functionality is experimental and should not be relied upon in production systems.
+  * REPLICATE\_MYISAM: Whether or not DML updates for a [MyISAM](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/myisam-storage-engine) tables will be replicated. This functionality is experimental and should not be relied upon in production systems.
   * REQUIRED\_PRIMARY\_KEY: Table should have PRIMARY KEY defined.
   * STRICT\_REPLICATION: Same as the old [wsrep\_strict\_ddl](galera-cluster-system-variables.md#wsrep_strict_ddl) setting.
 * Commandline: `--wsrep-mode=value`
@@ -273,7 +273,7 @@ It is an enum. Valid values are:`0: NONE`: Off (default)`1: SERVER`: MariaDB ser
 * Data Type: Enumeration
 * Default Value: (Empty)
 * Valid Values: `BINLOG_ROW_FORMAT_ONLY`, `DISALLOW_LOCAL_GTID`, `REQUIRED_PRIMARY_KEY`, `REPLICATE_ARIA`, `REPLICATE_MYISAM` and `STRICT_REPLICATION`
-* Introduced: [MariaDB 10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/mariadb-1060-release-notes)
+* Introduced: [MariaDB 10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/mariadb-1060-release-notes)
 
 #### `wsrep_mysql_replication_bundle`
 
@@ -325,8 +325,8 @@ It is an enum. Valid values are:`0: NONE`: Off (default)`1: SERVER`: MariaDB ser
 * Commandline: `--wsrep-notify-command=value`
 * Scope: Global
 * Dynamic:
-  * No (>= [MariaDB 10.5.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1059-release-notes))
-  * Yes (<= [MariaDB 10.5.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1058-release-notes))
+  * No (>= [MariaDB 10.5.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1059-release-notes))
+  * Yes (<= [MariaDB 10.5.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1058-release-notes))
 * Data Type: String
 * Default Value: Empty
 
@@ -366,8 +366,8 @@ It is an enum. Valid values are:`0: NONE`: Off (default)`1: SERVER`: MariaDB ser
 * Description: Location of the wsrep library, usually `/usr/lib/libgalera_smm.so` on Debian and Ubuntu, and `/usr/lib64/libgalera_smm.so` on Red Hat/CentOS.
 * Commandline: `--wsrep-provider=value`
 * Scope: Global
-  * No (>= [MariaDB 10.5.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1059-release-notes))
-  * Yes (<= [MariaDB 10.5.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1058-release-notes))
+  * No (>= [MariaDB 10.5.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1059-release-notes))
+  * Yes (<= [MariaDB 10.5.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1058-release-notes))
 * Data Type: String
 * Default Value: None
 
@@ -382,7 +382,7 @@ It is an enum. Valid values are:`0: NONE`: Off (default)`1: SERVER`: MariaDB ser
 
 #### `wsrep_recover`
 
-* Description: If set to `ON` when the server starts, the server will recover the sequence number of the most recent write set applied by Galera, and it will be output to `stderr`, which is usually redirected to the [error log](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/server-monitoring-logs/error-log). At that point, the server will exit. This sequence number can be provided to the [wsrep_start_position](#wsrep_start_position) system variable.
+* Description: If set to `ON` when the server starts, the server will recover the sequence number of the most recent write set applied by Galera, and it will be output to `stderr`, which is usually redirected to the [error log](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/server-monitoring-logs/error-log). At that point, the server will exit. This sequence number can be provided to the [wsrep\_start\_position](galera-cluster-system-variables.md#wsrep_start_position) system variable.
 * Commandline: `--wsrep-recover[={0|1}]`
 * Scope: Global
 * Dynamic: No
@@ -405,14 +405,14 @@ It is an enum. Valid values are:`0: NONE`: Off (default)`1: SERVER`: MariaDB ser
 
 #### `wsrep_replicate_myisam`
 
-* Description: Whether or not DML updates for [MyISAM](https://mariadb.com/docs/server/server-usage/storage-engines/myisam-storage-engine) tables will be replicated. This functionality is still experimental and should not be relied upon in production systems. Deprecated in [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/what-is-mariadb-106), and removed in [MariaDB 10.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-7-series/what-is-mariadb-107), use [wsrep\_mode](galera-cluster-system-variables.md#wsrep_mode) instead.
+* Description: Whether or not DML updates for [MyISAM](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/storage-engines/myisam-storage-engine) tables will be replicated. This functionality is still experimental and should not be relied upon in production systems. Deprecated in [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series), and removed in [MariaDB 10.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-7-series/what-is-mariadb-107), use [wsrep\_mode](galera-cluster-system-variables.md#wsrep_mode) instead.
 * Commandline: `--wsrep-replicate-myisam[={0|1}]`
 * Scope: Global
 * Dynamic: Yes
 * Default Value: `OFF`
 * Data Type: Boolean
 * Valid Values: `ON`, `OFF`
-* Deprecated: [MariaDB 10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/mariadb-1060-release-notes)
+* Deprecated: [MariaDB 10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/mariadb-1060-release-notes)
 * Removed: [MariaDB 10.7.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-7-series/mariadb-1070-release-notes)
 
 #### `wsrep_restart_slave`
@@ -475,7 +475,7 @@ It is an enum. Valid values are:`0: NONE`: Off (default)`1: SERVER`: MariaDB ser
 
 #### `wsrep_sst_auth`
 
-* Description: Username and password of the user to use for replication. Unused if [wsrep\_sst\_method](galera-cluster-system-variables.md#wsrep_sst_method) is set to `rsync`, while for other methods it should be in the format `<user>:<password>`. The contents are masked in logs and when querying the value with [SHOW VARIABLES](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-variables). See [Introduction to State Snapshot Transfers (SSTs)](../galera-management/state-snapshot-transfers-ssts-in-galera-cluster/introduction-to-state-snapshot-transfers-ssts.md) for more information.
+* Description: Username and password of the user to use for replication. Unused if [wsrep\_sst\_method](galera-cluster-system-variables.md#wsrep_sst_method) is set to `rsync`, while for other methods it should be in the format `<user>:<password>`. The contents are masked in logs and when querying the value with [SHOW VARIABLES](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-variables). See [Introduction to State Snapshot Transfers (SSTs)](../galera-management/state-snapshot-transfers-ssts-in-galera-cluster/introduction-to-state-snapshot-transfers-ssts.md) for more information.
 * Commandline: `--wsrep-sst-auth=value`
 * Scope: Global
 * Dynamic: Yes
@@ -522,7 +522,7 @@ It is an enum. Valid values are:`0: NONE`: Off (default)`1: SERVER`: MariaDB ser
 
 #### `wsrep_start_position`
 
-* Description: The start position that the node should use in the format: `UUID:seq_no`. The proper value to use for this position can be recovered with [wsrep_recover](#wsrep_recover).
+* Description: The start position that the node should use in the format: `UUID:seq_no`. The proper value to use for this position can be recovered with [wsrep\_recover](galera-cluster-system-variables.md#wsrep_recover).
 * Commandline: `--wsrep-start-position=value`
 * Scope: Global
 * Dynamic: Yes
@@ -541,17 +541,17 @@ It is an enum. Valid values are:`0: NONE`: Off (default)`1: SERVER`: MariaDB ser
 
 #### `wsrep_strict_ddl`
 
-* Description: If set, reject DDL statements on affected tables not supporting Galera replication. This is done by checking if the table is InnoDB, which is the only table currently fully supporting Galera replication. MyISAM tables will not trigger the error if the experimental [wsrep\_replicate\_myisam](galera-cluster-system-variables.md#wsrep_replicate_myisam) setting is `ON`. If set, should be set on all tables in the cluster. Affected DDL statements include:[CREATE TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-definition/create/create-table) (e.g. CREATE TABLE t1(a int) engine=Aria)[ALTER TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-definition/alter/alter-table)[TRUNCATE TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/table-statements/truncate-table)[CREATE VIEW](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/views/create-view)[CREATE TRIGGER](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/triggers-events/triggers/create-trigger)[CREATE INDEX](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/create/create-index)[DROP INDEX](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-definition/drop/drop-index)[RENAME TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-definition/rename-table)[DROP TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-definition/drop/drop-table)\
+* Description: If set, reject DDL statements on affected tables not supporting Galera replication. This is done by checking if the table is InnoDB, which is the only table currently fully supporting Galera replication. MyISAM tables will not trigger the error if the experimental [wsrep\_replicate\_myisam](galera-cluster-system-variables.md#wsrep_replicate_myisam) setting is `ON`. If set, should be set on all tables in the cluster. Affected DDL statements include: [CREATE TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/create/create-table) (e.g. CREATE TABLE t1(a int) engine=Aria) [ALTER TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/alter/alter-table) [TRUNCATE TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/table-statements/truncate-table)[CREATE VIEW](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/views/create-view) [CREATE TRIGGER](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/triggers-events/triggers/create-trigger) [CREATE INDEX](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/create/create-index) [DROP INDEX](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements-and-structure/sql-statements/data-definition/drop/drop-index) [RENAME TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/rename-table) [DROP TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-definition/drop/drop-table)\
   Statements in [procedures](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/stored-routines/stored-procedures), [events](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/triggers-events/event-scheduler), and [functions](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-usage/stored-routines/stored-functions) are permitted as the affected\
   tables are only known at execution. Furthermore, the various USER, ROLE, SERVER and\
-  DATABASE statements are also allowed as they do not have an affected table. Deprecated in [MariaDB 10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/mariadb-1060-release-notes) and removed in [MariaDB 10.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-7-series/what-is-mariadb-107). Use [wsrep\_mode=STRICT\_REPLICATION](galera-cluster-system-variables.md#wsrep_mode) instead.
+  DATABASE statements are also allowed as they do not have an affected table. Deprecated in [MariaDB 10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/mariadb-1060-release-notes) and removed in [MariaDB 10.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-7-series/what-is-mariadb-107). Use [wsrep\_mode=STRICT\_REPLICATION](galera-cluster-system-variables.md#wsrep_mode) instead.
 * Commandline: `--wsrep-strict-ddl[={0|1}`
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `boolean`
 * Default Value: `OFF`
 * Introduced: [MariaDB 10.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-5-series/mariadb-1051-release-notes)
-* Deprecated: [MariaDB 10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-10-6-series/mariadb-1060-release-notes)
+* Deprecated: [MariaDB 10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/mariadb-1060-release-notes)
 * Removed: [MariaDB 10.7.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-7-series/mariadb-1070-release-notes)
 
 #### `wsrep_sync_wait`
