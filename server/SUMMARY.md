@@ -50,7 +50,7 @@
     * [mariadb-backup](server-usage/backup-and-restore/mariadb-backup/README.md)
       * [mariadb-backup Overview](server-usage/backup-and-restore/mariadb-backup/mariadb-backup-overview.md)
       * [mariadb-backup Options](server-usage/backup-and-restore/mariadb-backup/mariadb-backup-options.md)
-      * [Full Backup and Restore with Mariadb-backup](server-usage/backup-and-restore/mariadb-backup/full-backup-and-restore-with-mariadb-backup.md)
+      * [Full Backup and Restore with mariadb-backup](server-usage/backup-and-restore/mariadb-backup/full-backup-and-restore-with-mariadb-backup.md)
       * [Incremental Backup and Restore with mariadb-backup](server-usage/backup-and-restore/mariadb-backup/incremental-backup-and-restore-with-mariadb-backup.md)
       * [Partial Backup and Restore with mariadb-backup](server-usage/backup-and-restore/mariadb-backup/partial-backup-and-restore-with-mariadb-backup.md)
       * [Restoring Individual Tables and Partitions with mariadb-backup](server-usage/backup-and-restore/mariadb-backup/restoring-individual-tables-and-partitions-with-mariadb-backup.md)
