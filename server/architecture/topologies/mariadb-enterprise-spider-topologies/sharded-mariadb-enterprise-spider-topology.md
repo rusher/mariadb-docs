@@ -19,7 +19,7 @@ The Spider Sharded topology:
 
 ## Sharded MariaDB Enterprise Spider Topology
 
-![spider-sharded](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/.gitbook/assets/sharded-mariadb-enterprise-spider-topology/+image/spider-sharded.png)
+<figure><img src="../../../.gitbook/assets/spider-sharded.png" alt=""><figcaption></figcaption></figure>
 
 In the Spider Sharded topology, a Spider Node contains one or more "virtual" Spider Tables. A Spider Table does not store data. When a Spider Table is queried in this topology, the Enterprise Spider storage engine uses a MariaDB foreign data wrapper to read from and write to Data Tables on Data Nodes. The data for the Spider Table is partitioned among the Data Nodes using the regular partitioning syntax.
 
@@ -43,7 +43,6 @@ The Data Nodes:
 
 | Term                | Definition                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 | ------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Term                | Definition                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 | Data Node           | A Data Node is a MariaDB Enterprise Server node that contains one or more Data Tables.                                                                                                                                                                                                                                                                                                                                                                                                                    |
 | Data Table          | A Data Table stores data for a Spider Table. When a Spider Table is queried, the Enterprise Spider storage engine uses the MariaDB foreign data wrapper to read from and write to the Data Table on a Data Node. The Data Table must be created on the Data Node with the same structure as the Spider Table. The Data Table must use a non-Spider storage engine, such as InnoDB or [ColumnStore](https://github.com/mariadb-corporation/docs-server/blob/test/en/columnstore-storage-engine/README.md). |
 | ODBC Data Source    | An ODBC Data Source relies on an ODBC Driver and an ODBC Driver Manager to query an external data source.                                                                                                                                                                                                                                                                                                                                                                                                 |
@@ -92,7 +91,7 @@ SELECT * FROM information_schema.SPIDER_WRAPPER_PROTOCOLS;
 
 ### Create Sharded Spider Table
 
-```
+```sql
 CREATE SERVER hq_server
 FOREIGN DATA WRAPPER mariadb
 OPTIONS (
@@ -130,7 +129,7 @@ CREATE TABLE spider_sharded_sales.invoices (
    invoice_id INT NOT NULL,
    customer_id INT,
    invoice_date DATETIME(6),
-   invoice_total DECIMAL(13, 2),
+   invoice_total DECIMAL(13, 2)
    payment_method ENUM('NONE', 'CASH', 'WIRE_TRANSFER', 'CREDIT_CARD', 'GIFT_CARD'),
    PRIMARY KEY(branch_id, invoice_id)
 ) ENGINE=Spider

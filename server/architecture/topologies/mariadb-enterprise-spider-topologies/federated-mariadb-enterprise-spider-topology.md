@@ -19,7 +19,7 @@ The Spider Federated topology:
 
 ## Federated MariaDB Enterprise Spider Topology
 
-![spider-federated](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/.gitbook/assets/federated-mariadb-enterprise-spider-topology/+image/spider-federated.png)
+<figure><img src="../../../.gitbook/assets/spider-federated.png" alt=""><figcaption></figcaption></figure>
 
 In the Spider Federated topology, a Spider Node contains one or more "virtual" Spider Tables. A Spider Table does not store data. When a Spider Table is queried, the Enterprise Spider storage engine uses a MariaDB foreign data wrapper to read from and write to a Data Table on a Data Node.
 
@@ -43,7 +43,6 @@ The Data Node:
 
 | Term                | Definition                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Term                | Definition                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 | Data Node           | A Data Node is a MariaDB Enterprise Server node that contains one or more Data Tables.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 | Data Table          | A Data Table stores data for a Spider Table. When a Spider Table is queried, the Enterprise Spider storage engine uses the MariaDB foreign data wrapper to read from and write to the Data Table on a Data Node. The Data Table must be created on the Data Node with the same structure as the Spider Table. The Data Table must use a non-Spider storage engine, such as [InnoDB](https://github.com/mariadb-corporation/docs-server/blob/test/en/storage-engines-overview-innodb-storage-engine/README.md) or [ColumnStore](https://github.com/mariadb-corporation/docs-server/blob/test/en/columnstore-storage-engine/README.md). |
 | ODBC Data Source    | An ODBC Data Source relies on an ODBC Driver and an ODBC Driver Manager to query an external data source.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
@@ -64,13 +63,13 @@ The Spider Federated topology can be used to query tables located on another Mar
 * A Spider Table is created on the Spider Node that references the Data Table on the Data Node.
 * On the Spider Node, the Data Table is queried by querying the Spider Table like the following:
 
-```
+```sql
 SELECT * FROM spider_tab;
 ```
 
 * Non-Spider tables can also be referenced in queries with the Spider Table:
 
-```
+```sql
 SELECT *
 FROM spider_tab s
 JOIN innodb_tab i
@@ -87,7 +86,7 @@ The Spider Federated topology can be used to migrate tables from one MariaDB Ent
 * A Spider Table is created on the Spider Node that references the Data Table on the Data Node.
 * On the Spider node, the Data Table's data is migrated to the destination table by querying the Spider Table like the following:
 
-```
+```sql
 INSERT INTO innodb_tab
    SELECT * FROM spider_tab;
 ```
@@ -96,7 +95,7 @@ INSERT INTO innodb_tab
 
 ### Load Spider with Configuration File (ES 10.4+)
 
-```
+```ini
 [mariadb]
 ...
 plugin_load_add = "ha_spider"
@@ -104,19 +103,19 @@ plugin_load_add = "ha_spider"
 
 ### Load Spider with INSTALL SONAME (ES 10.4+)
 
-```
+```sql
 INSTALL SONAME "ha_spider";
 ```
 
 ### View Foreign Data Wrappers (ES 10.5+)
 
-```
+```sql
 SELECT * FROM information_schema.SPIDER_WRAPPER_PROTOCOLS;
 ```
 
 ### Create Federated Spider Table
 
-```
+```sql
 CREATE SERVER hq_server
 FOREIGN DATA WRAPPER mariadb
 OPTIONS (

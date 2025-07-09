@@ -19,7 +19,7 @@ The Spider ODBC topology:
 
 ODBC MariaDB Enterprise Spider Topology
 
-![spider-federated-odbc](https://github.com/mariadb-corporation/docs-server/blob/test/maxscale/.gitbook/assets/odbc-mariadb-enterprise-spider-topology/+image/spider-federated-odbc.png)
+<figure><img src="../../../.gitbook/assets/spider-federated-odbc.png" alt=""><figcaption></figcaption></figure>
 
 In the Spider ODBC topology, a Spider Node contains one or more "virtual" Spider Tables. A Spider Table does not store data. When the Spider Table is queried in this topology, the Enterprise Spider storage engine uses an ODBC foreign data wrapper to read from and write to an ODBC Data Source.
 
@@ -47,7 +47,6 @@ The ODBC Data Source:
 
 | Term                | Definition                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Term                | Definition                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 | Data Node           | A Data Node is a MariaDB Enterprise Server node that contains one or more Data Tables.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 | Data Table          | A Data Table stores data for a Spider Table. When a Spider Table is queried, the Enterprise Spider storage engine uses the MariaDB foreign data wrapper to read from and write to the Data Table on a Data Node. The Data Table must be created on the Data Node with the same structure as the Spider Table. The Data Table must use a non-Spider storage engine, such as [InnoDB](https://github.com/mariadb-corporation/docs-server/blob/test/en/storage-engines-overview-innodb-storage-engine/README.md) or [ColumnStore](https://github.com/mariadb-corporation/docs-server/blob/test/en/columnstore-storage-engine/README.md). |
 | ODBC Data Source    | An ODBC Data Source relies on an ODBC Driver and an ODBC Driver Manager to query an external data source.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
@@ -101,7 +100,7 @@ INSERT INTO destination_tab
 
 ### Load Spider with Configuration File (ES 10.4+)
 
-```
+```ini
 [mariadb]
 ...
 plugin_load_add = "ha_spider"
@@ -109,13 +108,13 @@ plugin_load_add = "ha_spider"
 
 ### Load Spider with INSTALL SONAME (ES 10.4+)
 
-```
+```sql
 INSTALL SONAME "ha_spider";
 ```
 
 ### View Foreign Data Wrappers (ES 10.5+)
 
-```
+```sql
 SELECT * FROM information_schema.SPIDER_WRAPPER_PROTOCOLS;
 ```
 
