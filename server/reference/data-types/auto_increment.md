@@ -2,7 +2,7 @@
 
 ## Description
 
-The `AUTO_INCREMENT` attribute can be used to generate a unique identity for new rows. When you insert a new record into the table (or upon adding an [AUTO\_INCREMENT](auto_increment.md) attribute with the [ALTER TABLE](../sql-statements/data-definition/alter/alter-table.md) statement), and the `AUTO_INCREMENT` field is [NULL](null-values.md) or DEFAULT (in the case of an INSERT), automatically be incremented. This also applies to `0`, unless the [NO\_AUTO\_VALUE\_ON\_ZERO SQL\_MODE](../../server-management/variables-and-modes/sql-mode.md#no_auto_value_on_zero) is enabled.
+The `AUTO_INCREMENT` attribute can be used to generate a unique identity for new rows. When you insert a new record into the table (or upon adding an [AUTO\_INCREMENT](auto_increment.md) attribute with the [ALTER TABLE](../sql-statements/data-definition/alter/alter-table/) statement), and the `AUTO_INCREMENT` field is [NULL](null-values.md) or DEFAULT (in the case of an INSERT), automatically be incremented. This also applies to `0`, unless the [NO\_AUTO\_VALUE\_ON\_ZERO SQL\_MODE](../../server-management/variables-and-modes/sql-mode.md#no_auto_value_on_zero) is enabled.
 
 `AUTO_INCREMENT` columns start from 1 by default. The automatically generated value can never be lower than `0`.
 
@@ -51,7 +51,7 @@ Create Table: CREATE TABLE `t` (
 
 ## Setting or Changing the Auto\_Increment Value
 
-You can use an [ALTER TABLE](../sql-statements/data-definition/alter/alter-table.md) statement to assign a new value to the `auto_increment` table option, or set the [insert\_id](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#insert_id) server system variable to change the next `AUTO_INCREMENT` value inserted by the current session.
+You can use an [ALTER TABLE](../sql-statements/data-definition/alter/alter-table/) statement to assign a new value to the `auto_increment` table option, or set the [insert\_id](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#insert_id) server system variable to change the next `AUTO_INCREMENT` value inserted by the current session.
 
 [LAST\_INSERT\_ID()](../sql-functions/secondary-functions/information-functions/last_insert_id.md) can be used to see the last `AUTO_INCREMENT` value inserted by the current session.
 
@@ -248,12 +248,11 @@ SELECT * FROM t4;
 
 ## Changing `auto_increment_increment` and `auto_incremenet_offset` when adding a new master to a multi-master setup
 
-The purpose of [auto\_increment\_increment](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#auto_increment_increment) and [auto\_increment\_offset](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#auto_increment_offset) is to ensure that in a multi-master or multi-source setup, all masters generate unique values for `auto_increment` fields or for sequences with `INCREMENT=0`.&#x20;
+The purpose of [auto\_increment\_increment](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#auto_increment_increment) and [auto\_increment\_offset](../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#auto_increment_offset) is to ensure that in a multi-master or multi-source setup, all masters generate unique values for `auto_increment` fields or for sequences with `INCREMENT=0`.
 
-If `auto_increment_increment` is larger than the current number of masters, then one can configure the new master with the not used `auto_increment_offset`. The easiest way to add a new master is to stop all MariaDB servers, update `auto_increment_increment` and `auto_increment_offset` in the configuration files, and restart.\
+If `auto_increment_increment` is larger than the current number of masters, then one can configure the new master with the not used `auto_increment_offset`. The easiest way to add a new master is to stop all MariaDB servers, update `auto_increment_increment` and `auto_increment_offset` in the configuration files, and restart.\\
 
-
-This has to be done if `auto_increment_increment` is 1. If one has more than one master (`auto_increment_increment` > 1), there is a way to add more masters with only having to restart one of the masters. The 'trick' is to configure one of the masters to not use all the values in its current sequence.&#x20;
+This has to be done if `auto_increment_increment` is 1. If one has more than one master (`auto_increment_increment` > 1), there is a way to add more masters with only having to restart one of the masters. The 'trick' is to configure one of the masters to not use all the values in its current sequence.
 
 The following example illustrates how to do it. Assume you have two masters, A and B.
 
@@ -294,12 +293,12 @@ As you can see, values `3`, `7`, `11` are not going to be used.We can get C to u
 11
 ```
 
-If we would like to add a 4'th master (D), we can do that by changing 'B' to use `auto_increment_increment=4` and then configure D to have `auto_increment_increment=4` and `auto_increment_offset=4`.&#x20;
+If we would like to add a 4'th master (D), we can do that by changing 'B' to use `auto_increment_increment=4` and then configure D to have `auto_increment_increment=4` and `auto_increment_offset=4`.
 
 {% hint style="info" %}
-Note that when changing the `auto_increment_increment` or `auto_increment_offset` on a server, you have to either restart the server or ensure that all current connections are killed. This is needed to force all connections to use the new values.&#x20;
+Note that when changing the `auto_increment_increment` or `auto_increment_offset` on a server, you have to either restart the server or ensure that all current connections are killed. This is needed to force all connections to use the new values.
 
-Also ensure that, if you want to use the above trick, you always double the value of `auto_increment_increment`.  This is needed to ensure that the sequence used will not conflict with numbers generated by any other master.
+Also ensure that, if you want to use the above trick, you always double the value of `auto_increment_increment`. This is needed to ensure that the sequence used will not conflict with numbers generated by any other master.
 {% endhint %}
 
 ## CHECK Constraints, DEFAULT Values and Virtual Columns

@@ -2,7 +2,7 @@
 
 `NULL` represents an unknown value. It is _not_ an empty string (by default), or a zero value. These are all valid values, and are not `NULL` values.
 
-When a table is [created](../sql-statements/data-definition/create/create-table.md) or the format [altered](../sql-statements/data-definition/alter/alter-table.md), columns can be specified as accepting `NULL` values, or not accepting them, with the `NULL` and `NOT NULL` clauses respectively.
+When a table is [created](../sql-statements/data-definition/create/create-table.md) or the format [altered](../sql-statements/data-definition/alter/alter-table/), columns can be specified as accepting `NULL` values, or not accepting them, with the `NULL` and `NOT NULL` clauses respectively.
 
 For example, a customer table could contain dates of birth. For some customers, this information is unknown, so the value could be `NULL`.
 

@@ -1,6 +1,6 @@
 # Metadata Locking
 
-MariaDB supports metadata locking. This means that when a transaction (including [XA transactions](xa-transactions.md)) uses a table, it locks its metadata until the end of transaction. Non-transactional tables are also locked, as well as views and objects which are related to locked tables/views (stored functions, triggers, etc). When a connection tries to use a DDL statement (like an [ALTER TABLE](../data-definition/alter/alter-table.md)) which modifies a table that is locked, that connection is queued, and has to wait until it's unlocked. Using savepoints and performing a partial rollback does not release metadata locks.
+MariaDB supports metadata locking. This means that when a transaction (including [XA transactions](xa-transactions.md)) uses a table, it locks its metadata until the end of transaction. Non-transactional tables are also locked, as well as views and objects which are related to locked tables/views (stored functions, triggers, etc). When a connection tries to use a DDL statement (like an [ALTER TABLE](../data-definition/alter/alter-table/)) which modifies a table that is locked, that connection is queued, and has to wait until it's unlocked. Using savepoints and performing a partial rollback does not release metadata locks.
 
 [LOCK TABLES ... WRITE](lock-tables.md) are also queued. Some wrong statements which produce an error may not need to wait for the lock to be freed.
 

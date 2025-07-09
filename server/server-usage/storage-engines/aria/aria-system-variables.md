@@ -96,7 +96,7 @@ See [Server System Variables](../../../ha-and-performance/optimization-and-tunin
 * Dynamic: No
 * Data Type: `string`
 * Default Value: Same as DATADIR
-* Introduced: [MariaDB 10.5.20](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-10-5-20-release-notes), [MariaDB 10.6.13](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/mariadb-10-6-13-release-notes), [MariaDB 10.11.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-11-series/mariadb-10-11-3-release-notes) (as a system variable, existed as an option only before that)
+* Introduced: [MariaDB 10.5.20](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-10-5-20-release-notes), [MariaDB 10.6.13](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/mariadb-10-6-13-release-notes), [MariaDB 10.11.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-11-series/mariadb-10-11-3-release-notes) (as a system variable, existed as an option only before that)
 
 #### `aria_log_file_size`
 
@@ -220,7 +220,7 @@ See [Server System Variables](../../../ha-and-performance/optimization-and-tunin
 
 #### `aria_sort_buffer_size`
 
-* Description: The buffer that is allocated when sorting the index when doing a [REPAIR](../../../reference/sql-statements/table-statements/repair-table.md) or when creating indexes with [CREATE INDEX](../../../reference/sql-statements/data-definition/create/create-index.md) or [ALTER TABLE](../../../reference/sql-statements/data-definition/alter/alter-table.md).
+* Description: The buffer that is allocated when sorting the index when doing a [REPAIR](../../../reference/sql-statements/table-statements/repair-table.md) or when creating indexes with [CREATE INDEX](../../../reference/sql-statements/data-definition/create/create-index.md) or [ALTER TABLE](../../../reference/sql-statements/data-definition/alter/alter-table/).
 * Commandline: `--aria-sort-buffer-size=#`
 * Scope: Global, Session
 * Dynamic: Yes

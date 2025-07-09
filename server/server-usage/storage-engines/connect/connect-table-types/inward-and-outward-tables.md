@@ -19,7 +19,7 @@ Outward tables can be created on existing files or external tables. When they\
 are dropped, only the local description is dropped, the file or external table\
 is not dropped or erased. Also, [DROP TABLE](../../../../reference/sql-statements/data-definition/drop/drop-table.md) does not erase the indexes.
 
-[ALTER TABLE](../../../../reference/sql-statements/data-definition/alter/alter-table.md) produces the following warning, as a reminder:
+[ALTER TABLE](../../../../reference/sql-statements/data-definition/alter/alter-table/) produces the following warning, as a reminder:
 
 ```
 Warning (Code 1105): This is an outward table, table data were not modified.
@@ -33,7 +33,7 @@ Warning (Code 1105): Open(rb) error 2 on <file_path>: No such file or directory
 
 ### Altering Outward Tables
 
-When an [ALTER TABLE](../../../../reference/sql-statements/data-definition/alter/alter-table.md) is issued, it just modifies the table definition\
+When an [ALTER TABLE](../../../../reference/sql-statements/data-definition/alter/alter-table/) is issued, it just modifies the table definition\
 accordingly without changing the data. [ALTER](../../../../reference/sql-statements/data-definition/alter/) can be used safely to, for\
 instance, modify options such as MAPPED, HUGE or READONLY but with extreme care\
 when modifying column definitions or order options because some column options\
@@ -50,7 +50,7 @@ table is dropped, the table data would be lost). However, it can be done to\
 create a new file-based tables when its file does not exist or is void.
 
 Creating or dropping indexes is accepted because it does not modify the table\
-data. However, it is often unsafe to do it with an [ALTER TABLE](../../../../reference/sql-statements/data-definition/alter/alter-table.md) statement that\
+data. However, it is often unsafe to do it with an [ALTER TABLE](../../../../reference/sql-statements/data-definition/alter/alter-table/) statement that\
 does other modifications.
 
 Of course, all changes are acceptable for empty tables.
@@ -76,7 +76,7 @@ for testing purposes or when the user does not have the [FILE](../../../../refer
 One thing to know, because CONNECT builds indexes in a specific way, is that\
 all index modifications are done using an "in-place" algorithm – meaning not\
 using a temporary table. This is why, when indexing is specified in an [ALTER\
-TABLE](../../../../reference/sql-statements/data-definition/alter/alter-table.md) statement containing other changes that cannot be done "in-place", the\
+TABLE](../../../../reference/sql-statements/data-definition/alter/alter-table/) statement containing other changes that cannot be done "in-place", the\
 statement cannot be executed and raises an error.
 
 Converting an inward table to an outward table, using an ALTER TABLE statement\

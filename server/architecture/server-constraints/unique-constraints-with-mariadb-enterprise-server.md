@@ -211,7 +211,7 @@ CREATE TABLE hq_sales.customers (
 );
 ```
 
-5. Alter the table using the [ALTER TABLE](../../reference/sql-statements/data-definition/alter/alter-table.md) statement and specify the new unique index with the `ADD UNIQUE INDEX()` clause:
+5. Alter the table using the [ALTER TABLE](../../reference/sql-statements/data-definition/alter/alter-table/) statement and specify the new unique index with the `ADD UNIQUE INDEX()` clause:
 
 ```sql
 ALTER TABLE hq_sales.customers ADD UNIQUE INDEX (customer_email);
@@ -243,7 +243,7 @@ ORDER BY isf.INDEX_ID, isf.POS;
 +----------------+----------------+
 ```
 
-2. Alter the table using the [ALTER TABLE](../../reference/sql-statements/data-definition/alter/alter-table.md) statement and specify the `DROP INDEX` clause:
+2. Alter the table using the [ALTER TABLE](../../reference/sql-statements/data-definition/alter/alter-table/) statement and specify the `DROP INDEX` clause:
 
 ```sql
 ALTER TABLE hq_sales.customers DROP INDEX customer_email;
@@ -275,13 +275,13 @@ ORDER BY isf.INDEX_ID, isf.POS;
 +----------------+----------------+
 ```
 
-2. Alter the table using the [ALTER TABLE](../../reference/sql-statements/data-definition/alter/alter-table.md) statement and specify the `DROP INDEX` clause:
+2. Alter the table using the [ALTER TABLE](../../reference/sql-statements/data-definition/alter/alter-table/) statement and specify the `DROP INDEX` clause:
 
 ```
 ALTER TABLE hq_sales.customers DROP INDEX customer_email;
 ```
 
-3. Alter the table using the [ALTER TABLE](../../reference/sql-statements/data-definition/alter/alter-table.md) statement and specify the unique index with the `ADD UNIQUE INDEX()` clause:
+3. Alter the table using the [ALTER TABLE](../../reference/sql-statements/data-definition/alter/alter-table/) statement and specify the unique index with the `ADD UNIQUE INDEX()` clause:
 
 ```
 ALTER TABLE hq_sales.customers ADD UNIQUE INDEX (customer_email);

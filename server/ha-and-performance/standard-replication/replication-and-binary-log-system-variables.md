@@ -291,7 +291,7 @@ See also the [Full list of MariaDB options, system and status variables](../../r
 * Data Type: `enum`
 * Default Value: `NO_LOG`
 * Valid Values: `NO_LOG`, `MINIMAL`, `FULL`
-* Introduced: [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1050-release-notes)
+* Introduced: [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-1050-release-notes)
 
 #### `binlog_space_limit`
 
@@ -880,7 +880,7 @@ See also the [Full list of MariaDB options, system and status variables](../../r
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `enum`
-* Default Value: `optimistic` (>= [MariaDB 10.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1051-release-notes)), `conservative` (<= [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1050-release-notes))
+* Default Value: `optimistic` (>= [MariaDB 10.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-1051-release-notes)), `conservative` (<= [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-1050-release-notes))
 * Valid Values: `conservative`, `optimistic`, `none`, `aggressive` and `minimal`
 
 #### `slave_parallel_threads`
@@ -911,7 +911,7 @@ See also the [Full list of MariaDB options, system and status variables](../../r
 * Dynamic: Yes
 * Data Type: `enum`
 * Default Value: `NO`
-* Valid Values: `NO`, `YES`, `LOGGING`, or `ENFORCE` (>= [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1052-release-notes))
+* Valid Values: `NO`, `YES`, `LOGGING`, or `ENFORCE` (>= [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-1052-release-notes))
 
 #### `slave_skip_errors`
 

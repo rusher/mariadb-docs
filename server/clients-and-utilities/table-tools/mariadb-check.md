@@ -4,7 +4,7 @@
 
 `mariadb-check` is a maintenance tool that allows you to check, repair, analyze and optimize multiple tables from the command line.
 
-Prior to [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105), the client was called `mysqlcheck`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
+Prior to [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/what-is-mariadb-105), the client was called `mysqlcheck`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
 
 It is essentially a commandline interface to the [CHECK TABLE](../../server-usage/storage-engines/myrocks/myrocks-and-check-table.md), [REPAIR TABLE](../../reference/sql-statements/table-statements/repair-table.md), [ANALYZE TABLE](../../reference/sql-statements/table-statements/analyze-table.md) and [OPTIMIZE TABLE](../../ha-and-performance/optimization-and-tuning/optimizing-tables/optimize-table.md) commands, and so, unlike [myisamchk](../myisam-clients-and-utilities/myisamchk.md) and [aria\_chk](../aria-clients-and-utilities/aria_chk.md), requires the server to be running.
 
@@ -161,7 +161,7 @@ Using one `--verbose` option will give you more information about what mariadb-c
 
 Using two `--verbose` options will also give you connection information.
 
-If you use three `--verbose` options you will also get, on stdout, all [ALTER](../../reference/sql-statements/data-definition/alter/alter-table.md), [RENAME](../../reference/sql-statements/data-definition/rename-table.md), and [CHECK](../../server-usage/storage-engines/myrocks/myrocks-and-check-table.md) commands that mariadb-check executes.
+If you use three `--verbose` options you will also get, on stdout, all [ALTER](../../reference/sql-statements/data-definition/alter/alter-table/), [RENAME](../../reference/sql-statements/data-definition/rename-table.md), and [CHECK](../../server-usage/storage-engines/myrocks/myrocks-and-check-table.md) commands that mariadb-check executes.
 
 #### Sequence storage engine
 

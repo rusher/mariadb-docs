@@ -13,7 +13,7 @@ Note: The _**Aria**_ storage engine was previously called _Maria_ (see[The Aria 
 rename) and in previous versions of [MariaDB](../storage-engines-storage-engines-overview.md) the engine was still called\
 Maria.
 
-The following table options to Aria tables in [CREATE TABLE](../../../reference/sql-statements/data-definition/create/create-table.md) and [ALTER TABLE](../../../reference/sql-statements/data-definition/alter/alter-table.md):
+The following table options to Aria tables in [CREATE TABLE](../../../reference/sql-statements/data-definition/create/create-table.md) and [ALTER TABLE](../../../reference/sql-statements/data-definition/alter/alter-table/):
 
 * `TRANSACTIONAL= 0 | 1` : If the `TRANSACTIONAL` table option is set for an Aria table, then the table will be crash-safe. This is implemented by logging any changes to the table to Aria's transaction log, and syncing those writes at the end of the statement. This will marginally slow down writes and updates. However, the benefit is that if the server dies before the statement ends, all non-durable changes will roll back to the state at the beginning of the statement. This also needs up to 6 bytes more for each row and key to store the transaction id (to allow concurrent insert's and selects).
   * `TRANSACTIONAL=1` is not supported for partitioned tables.
@@ -43,7 +43,7 @@ Some other improvements are:
   engines that uses the default way to calculate and MyISAM which does the\
   calculation internally. Note: Old MyISAM tables with internal checksum will\
   return the same checksum as before. To fix them to calculate according to new\
-  rules you have to do an [ALTER TABLE](../../../reference/sql-statements/data-definition/alter/alter-table.md). You can use the old\
+  rules you have to do an [ALTER TABLE](../../../reference/sql-statements/data-definition/alter/alter-table/). You can use the old\
   ways to calculate checksums by using the option `--old` to mariadbdmysqld or set the\
   system variable '`@@old`' to `1` when you\
   do `CHECKSUM TABLE ... EXTENDED;`

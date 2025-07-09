@@ -10,7 +10,7 @@ The Windows version shares the common theme (creating system tables), yet has a 
 
 `mariadb-install-db` initializes the MariaDB data directory and creates the [system tables](https://github.com/mariadb-corporation/docs-server/blob/test/server/clients-and-utilities/reference/sql-statements/administrative-sql-statements/system-tables/README.md) in the [mysql](https://github.com/mariadb-corporation/docs-server/blob/test/server/clients-and-utilities/reference/sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/README.md) database, if they do not exist.
 
-Prior to [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105), the client was called `mysql_install_db`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
+Prior to [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/what-is-mariadb-105), the client was called `mysql_install_db`. It can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
 
 MariaDB uses these tables to manage [privileges](https://github.com/mariadb-corporation/docs-server/blob/test/server/clients-and-utilities/reference/sql-statements/account-management-sql-statements/grant.md#privilege-levels), [roles](https://github.com/mariadb-corporation/docs-server/blob/test/server/clients-and-utilities/security/user-account-management/roles/README.md), and [plugins](https://github.com/mariadb-corporation/docs-server/blob/test/server/clients-and-utilities/reference/plugins/README.md). It also uses them to provide the data for the [help](https://github.com/mariadb-corporation/docs-server/blob/test/server/clients-and-utilities/reference/sql-statements/administrative-sql-statements/help-command.md) command in the [mariadb](https://github.com/mariadb-corporation/docs-server/blob/test/server/clients-and-utilities/deployment-tools/mariadb-client/mariadb-command-line-client.md) client.
 
@@ -426,7 +426,7 @@ SELECT user,host FROM mysql.user;
 
 * [Configure MariaDB with catalog support](https://github.com/mariadb-corporation/docs-server/blob/test/server/clients-and-utilities/security/user-account-management/catalogs/starting-with-catalogs.md)
 * [Installing system tables (mariadb-install-db)](https://github.com/mariadb-corporation/docs-server/blob/test/server/clients-and-utilities/server-management/install-and-upgrade-mariadb/installing-mariadb/installing-system-tables-mariadb-install-db/README.md)
-* The Windows version of `mariadb-install-db`: [mysql_install_db.exe](../server-management/getting-installing-and-upgrading-mariadb/mariadb-install-db-exe.md)
+* The Windows version of `mariadb-install-db`: [mysql\_install\_db.exe](../server-management/getting-installing-and-upgrading-mariadb/mariadb-install-db-exe.md)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

@@ -58,7 +58,7 @@ DESCRIBE books;
 +--------------+-------------+------+-----+---------+-------+
 ```
 
-To change the settings of a table, you can use the [ALTER TABLE](../../reference/sql-statements/data-definition/alter/alter-table.md) statement. I'll cover that statement in another article. To delete a table completely (including its data), you can use the [DROP TABLE](../../reference/sql-statements/data-definition/drop/drop-table.md) statement, followed by the table name. Be careful with this statement since it's not reversible.
+To change the settings of a table, you can use the [ALTER TABLE](../../reference/sql-statements/data-definition/alter/alter-table/) statement. I'll cover that statement in another article. To delete a table completely (including its data), you can use the [DROP TABLE](../../reference/sql-statements/data-definition/drop/drop-table.md) statement, followed by the table name. Be careful with this statement since it's not reversible.
 
 The next table we'll create for our examples is the authors table to hold author information. This table will save us from having to enter the author's name and other related data for each book written by each author. It also helps to ensure consistency of data: there's less chance of inadvertent spelling deviations.
 

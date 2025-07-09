@@ -19,7 +19,7 @@ The Purge Threads perform garbage collection of various items:
 | Thread         | InnoDB Purge Threads                                                                                    |                                                                                                                         |
 | Storage Engine | InnoDB                                                                                                  |                                                                                                                         |
 | Purpose        | Garbage Collection of: • InnoDB Undo Log • Delete-marked secondary index records • Freed overflow pages |                                                                                                                         |
-| Availability   | All ES and CS versions                                                                                  | [MariaDB Enterprise Server](https://app.gitbook.com/s/JqgUabdZsoY5EiaJmqgn/)                                            |
+| Availability   | All ES and CS versions                                                                                  | [MariaDB Enterprise Server](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/JqgUabdZsoY5EiaJmqgn/)                     |
 | Quantity       | Set by [innodb\_purge\_threads](innodb-system-variables.md#innodb_purge_threads)                        | [Configure the InnoDB Purge Threads](mariadb-enterprise-server-innodb-operations/configure-the-innodb-purge-threads.md) |
 
 ### Configuring the Purge Threads

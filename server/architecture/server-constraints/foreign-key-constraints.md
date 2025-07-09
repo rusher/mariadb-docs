@@ -251,7 +251,7 @@ CREATE TABLE hq_sales.invoices (
 );
 ```
 
-6. Alter the child table to add the foreign key constraint using the [ALTER TABLE](../../reference/sql-statements/data-definition/alter/alter-table.md) statement:
+6. Alter the child table to add the foreign key constraint using the [ALTER TABLE](../../reference/sql-statements/data-definition/alter/alter-table/) statement:
 
 ```sql
 ALTER TABLE hq_sales.invoices ADD CONSTRAINT fk_invoices_customers
@@ -339,7 +339,7 @@ AND CONSTRAINT_TYPE = 'FOREIGN KEY';
 +-----------------------+
 ```
 
-3. Drop the foreign key constraint from the child table using the [ALTER TABLE](../../reference/sql-statements/data-definition/alter/alter-table.md) statement:
+3. Drop the foreign key constraint from the child table using the [ALTER TABLE](../../reference/sql-statements/data-definition/alter/alter-table/) statement:
 
 ```sql
 ALTER TABLE hq_sales.invoices DROP FOREIGN KEY fk_invoices_customers;

@@ -102,7 +102,7 @@ Although there are [character\_set\_database](../../../../ha-and-performance/opt
 
 ## Table Level
 
-The [CREATE TABLE](../../../sql-statements/data-definition/create/create-table.md) and [ALTER TABLE](../../../sql-statements/data-definition/alter/alter-table.md) statements support optional character set and collation clauses, a MariaDB and MySQL extension to standard SQL.
+The [CREATE TABLE](../../../sql-statements/data-definition/create/create-table.md) and [ALTER TABLE](../../../sql-statements/data-definition/alter/alter-table/) statements support optional character set and collation clauses, a MariaDB and MySQL extension to standard SQL.
 
 ```sql
 CREATE TABLE english_names (id INT, name VARCHAR(40)) 
@@ -134,7 +134,7 @@ ALTER TABLE table_name MODIFY ascii_varchar_column VARCHAR(M) CHARACTER SET utf8
 
 ## Column Level
 
-Character sets and collations can also be specified for columns that are character types `CHAR`, `TEXT` or `VARCHAR`. The [CREATE TABLE](../../../sql-statements/data-definition/create/create-table.md) and [ALTER TABLE](../../../sql-statements/data-definition/alter/alter-table.md) statements support optional character set and collation clauses for this purpose - unlike those at the table level, the column level definitions are standard SQL.
+Character sets and collations can also be specified for columns that are character types `CHAR`, `TEXT` or `VARCHAR`. The [CREATE TABLE](../../../sql-statements/data-definition/create/create-table.md) and [ALTER TABLE](../../../sql-statements/data-definition/alter/alter-table/) statements support optional character set and collation clauses for this purpose - unlike those at the table level, the column level definitions are standard SQL.
 
 ```sql
 CREATE TABLE european_names (
@@ -144,7 +144,7 @@ CREATE TABLE european_names (
 
 If neither collation nor character set is provided, the table default is used. If only the character set is specified, that character set's default collation is used, while if only the collation is specified, the associated character set is used.
 
-When using [ALTER TABLE](../../../sql-statements/data-definition/alter/alter-table.md) to change a column's character set, you need to ensure the character sets are compatible with your data. MariaDB will map the data as best it can, but it's possible to lose data if care is not taken.
+When using [ALTER TABLE](../../../sql-statements/data-definition/alter/alter-table/) to change a column's character set, you need to ensure the character sets are compatible with your data. MariaDB will map the data as best it can, but it's possible to lose data if care is not taken.
 
 The [SHOW CREATE TABLE](../../../sql-statements/administrative-sql-statements/show/show-create-table.md) statement or `INFORMATION SCHEMA` database can be used to determine column character sets and collations.
 

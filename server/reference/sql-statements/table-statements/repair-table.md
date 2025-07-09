@@ -52,7 +52,7 @@ By default, `REPAIR TABLE` statements are written to the [binary log](../../../s
 {% endtab %}
 {% endtabs %}
 
-When an index is recreated, the storage engine may use a configurable buffer in the process. Incrementing the buffer speeds up the index creation. [Aria](../../../server-usage/storage-engines/aria/) and [MyISAM](../../../server-usage/storage-engines/myisam-storage-engine/) allocate a buffer whose size is defined by [aria\_sort\_buffer\_size](../../../server-usage/storage-engines/aria/aria-system-variables.md) or [myisam\_sort\_buffer\_size](../../../server-usage/storage-engines/myisam-storage-engine/myisam-system-variables.md), also used for [ALTER TABLE](../data-definition/alter/alter-table.md).
+When an index is recreated, the storage engine may use a configurable buffer in the process. Incrementing the buffer speeds up the index creation. [Aria](../../../server-usage/storage-engines/aria/) and [MyISAM](../../../server-usage/storage-engines/myisam-storage-engine/) allocate a buffer whose size is defined by [aria\_sort\_buffer\_size](../../../server-usage/storage-engines/aria/aria-system-variables.md) or [myisam\_sort\_buffer\_size](../../../server-usage/storage-engines/myisam-storage-engine/myisam-system-variables.md), also used for [ALTER TABLE](../data-definition/alter/alter-table/).
 
 ### QUICK
 
@@ -80,7 +80,7 @@ The `FORCE` option is not available.
 
 ### Partitioned Tables
 
-`REPAIR TABLE` is also supported for [partitioned tables](../../../server-usage/partitioning-tables/) with the [ALTER TABLE ... REPAIR PARTITION](../data-definition/alter/alter-table.md) statement. However, the `USE_FRM` option cannot be used with this statement on a partitioned table. See [Repairing Partitions](../../../server-usage/partitioning-tables/partitioning-overview.md#repairing-partitions) for details.
+`REPAIR TABLE` is also supported for [partitioned tables](../../../server-usage/partitioning-tables/) with the [ALTER TABLE ... REPAIR PARTITION](../data-definition/alter/alter-table/) statement. However, the `USE_FRM` option cannot be used with this statement on a partitioned table. See [Repairing Partitions](../../../server-usage/partitioning-tables/partitioning-overview.md#repairing-partitions) for details.
 
 ### Progress Reporting
 

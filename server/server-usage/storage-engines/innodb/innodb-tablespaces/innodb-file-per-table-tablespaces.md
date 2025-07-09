@@ -99,7 +99,7 @@ CREATE TABLE test.t1 (
 ) ENGINE=InnoDB;
 ```
 
-* Then, use [ALTER TABLE ... DISCARD TABLESPACE](../../../../reference/sql-statements/data-definition/alter/alter-table.md#discard-tablespace) to discard the new table's tablespace:
+* Then, use [ALTER TABLE ... DISCARD TABLESPACE](../../../../reference/sql-statements/data-definition/alter/alter-table/#discard-tablespace) to discard the new table's tablespace:
 
 ```sql
 ALTER TABLE test.t1 DISCARD TABLESPACE;
@@ -114,7 +114,7 @@ ALTER TABLE test.t1 DISCARD TABLESPACE;
 
 File-per-table tablespaces can be imported with just the `.ibd` file in many cases. If you do not have the tablespace's `.cfg` file for whatever reason, then it is usually worth trying to import the tablespace with just the `.ibd` file.
 
-* Then, once the files are in the proper directory on the target server, use [ALTER TABLE ... IMPORT TABLESPACE](../../../../reference/sql-statements/data-definition/alter/alter-table.md#import-tablespace) to import the new table's tablespace:
+* Then, once the files are in the proper directory on the target server, use [ALTER TABLE ... IMPORT TABLESPACE](../../../../reference/sql-statements/data-definition/alter/alter-table/#import-tablespace) to import the new table's tablespace:
 
 ```sql
 ALTER TABLE test.t1 IMPORT TABLESPACE;
@@ -226,7 +226,7 @@ This statement will create a new table called `t2_placeholder` that has the same
 
 From this point forward, the rest of our steps need to happen for each individual partition. For each partition, we need to do the following process:
 
-* First, we need to use [ALTER TABLE ... DISCARD TABLESPACE](../../../../reference/sql-statements/data-definition/alter/alter-table.md#discard-tablespace) to discard the placeholder table's tablespace:
+* First, we need to use [ALTER TABLE ... DISCARD TABLESPACE](../../../../reference/sql-statements/data-definition/alter/alter-table/#discard-tablespace) to discard the placeholder table's tablespace:
 
 ```sql
 ALTER TABLE test.t2_placeholder DISCARD TABLESPACE;
@@ -242,7 +242,7 @@ ALTER TABLE test.t2_placeholder DISCARD TABLESPACE;
 
 File-per-table tablespaces can be imported with just the `.ibd` file in many cases. If you do not have the tablepace's `.cfg` file for whatever reason, then it is usually worth trying to import the tablespace with just the `.ibd` file.
 
-* Then, once the files are in the proper directory on the target server, we need to use [ALTER TABLE ... IMPORT TABLESPACE](../../../../reference/sql-statements/data-definition/alter/alter-table.md#import-tablespace) to import the new table's tablespace:
+* Then, once the files are in the proper directory on the target server, we need to use [ALTER TABLE ... IMPORT TABLESPACE](../../../../reference/sql-statements/data-definition/alter/alter-table/#import-tablespace) to import the new table's tablespace:
 
 ```sql
 ALTER TABLE test.t2_placeholder IMPORT TABLESPACE;
@@ -260,7 +260,7 @@ SELECT * FROM test.t2_placeholder;
 +-------------+--------------+
 ```
 
-* Then, it's time to transfer the partition from the placeholder to the target table. This can be done with an [ALTER TABLE... EXCHANGE PARTITION](../../../../reference/sql-statements/data-definition/alter/alter-table.md#exchange-partition) statement:
+* Then, it's time to transfer the partition from the placeholder to the target table. This can be done with an [ALTER TABLE... EXCHANGE PARTITION](../../../../reference/sql-statements/data-definition/alter/alter-table/#exchange-partition) statement:
 
 ```sql
 ALTER TABLE test.t2 EXCHANGE PARTITION p0 WITH TABLE test.t2_placeholder;

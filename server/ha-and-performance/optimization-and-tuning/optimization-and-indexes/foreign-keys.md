@@ -17,9 +17,9 @@ CREATE TABLE b(for_key INT REFERENCES a(not_key));
 ```
 
 MariaDB simply parses it without returning any error or warning, for compatibility with other DBMS's. However, only the syntax described below creates foreign keys.\
-From [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105), MariaDB will attempt to apply the constraint. See the [Examples](foreign-keys.md#references) below.
+From [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/what-is-mariadb-105), MariaDB will attempt to apply the constraint. See the [Examples](foreign-keys.md#references) below.
 
-Foreign keys are created with [CREATE TABLE](../../../reference/sql-statements/data-definition/create/create-table.md) or [ALTER TABLE](../../../reference/sql-statements/data-definition/alter/alter-table.md). The definition must follow this syntax:
+Foreign keys are created with [CREATE TABLE](../../../reference/sql-statements/data-definition/create/create-table.md) or [ALTER TABLE](../../../reference/sql-statements/data-definition/alter/alter-table/). The definition must follow this syntax:
 
 ```sql
 [CONSTRAINT [symbol]] FOREIGN KEY
@@ -191,7 +191,7 @@ SELECT * FROM b;
 +---------+
 ```
 
-From [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105)
+From [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/what-is-mariadb-105)
 
 ```sql
 CREATE TABLE a(a_key INT PRIMARY KEY, not_key INT);

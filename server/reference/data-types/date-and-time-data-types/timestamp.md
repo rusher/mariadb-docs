@@ -75,7 +75,7 @@ A temporal format was introduced from MySQL 5.6 that alters how the `TIME`, `DAT
 
 Tables that include `TIMESTAMP` values that were created on an older version of MariaDB or that were created while the [mysql56\_temporal\_format](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#mysql56_temporal_format) system variable was disabled continue to store data using the older data type format.
 
-In order to update table columns from the older format to the newer format, execute an [ALTER TABLE... MODIFY COLUMN](../../sql-statements/data-definition/alter/alter-table.md#modify-column) statement that changes the column to the _same_ data type. This change may be needed if you want to export the table's tablespace and import it onto a server that has `mysql56_temporal_format=ON` set (see [MDEV-15225](https://jira.mariadb.org/browse/MDEV-15225)).
+In order to update table columns from the older format to the newer format, execute an [ALTER TABLE... MODIFY COLUMN](../../sql-statements/data-definition/alter/alter-table/#modify-column) statement that changes the column to the _same_ data type. This change may be needed if you want to export the table's tablespace and import it onto a server that has `mysql56_temporal_format=ON` set (see [MDEV-15225](https://jira.mariadb.org/browse/MDEV-15225)).
 
 For instance, if you have a `TIMESTAMP` column in your table:
 
@@ -91,7 +91,7 @@ SHOW VARIABLES LIKE 'mysql56_temporal_format';
 ALTER TABLE example_table MODIFY ts_col TIMESTAMP;
 ```
 
-When MariaDB executes the [ALTER TABLE](../../sql-statements/data-definition/alter/alter-table.md) statement, it converts the data from the older temporal format to the newer one.
+When MariaDB executes the [ALTER TABLE](../../sql-statements/data-definition/alter/alter-table/) statement, it converts the data from the older temporal format to the newer one.
 
 In the event that you have several tables and columns using temporal data types that you want to switch over to the new format, make sure the system variable is enabled, then perform a dump and restore using [mariadb-dump](../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md). The columns using relevant temporal data types are restored using the new temporal format.
 

@@ -112,7 +112,7 @@ The MariaDB Foundation archives repositories of old minor releases at the follow
 
 Archives are only of the distros and architectures supported at the time of release. For example, [MariaDB 10.6.21](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/mariadb-10-6-21-release-notes) exists for Ubuntu `bionic, focal, jammy, kinetic,` and #lunar`is obtained looking in [dists](https://archive.mariadb.org/mariadb-10.6.21/repo/ubuntu/dists).`
 
-For example, if you wanted to pin your repository to [MariaDB 10.5.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1059-release-notes) on Ubuntu 20.04 LTS (Focal), then you would have to first remove any existing MariaDB repository source list file from `/etc/apt/sources.list.d/`. And then you could use the following commands to add the MariaDB `apt-get` repository:
+For example, if you wanted to pin your repository to [MariaDB 10.5.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-1059-release-notes) on Ubuntu 20.04 LTS (Focal), then you would have to first remove any existing MariaDB repository source list file from `/etc/apt/sources.list.d/`. And then you could use the following commands to add the MariaDB `apt-get` repository:
 
 ```
 sudo add-apt-repository 'deb [arch=amd64,arm64,ppc64el,s390x] http://archive.mariadb.org/mariadb-10.5.9/repo/ubuntu/ focal main main/debug'
@@ -173,7 +173,7 @@ After that, the repository should refer to [MariaDB 10.6](https://app.gitbook.co
 
 **Updating a Source List File**
 
-If you added the `apt` repository by creating a [source list](https://manpages.ubuntu.com/manpages/bionic/man5/sources.list.5.html) file in `/etc/apt/sources.list.d/`, then you can update the major release that the repository uses by updating the source list file in-place. For example, if you wanted to change the repository from [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105) to [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/what-is-mariadb-106), and if the source list file was at `/etc/apt/sources.list.d/MariaDB.list`, then you could execute the following:
+If you added the `apt` repository by creating a [source list](https://manpages.ubuntu.com/manpages/bionic/man5/sources.list.5.html) file in `/etc/apt/sources.list.d/`, then you can update the major release that the repository uses by updating the source list file in-place. For example, if you wanted to change the repository from [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/what-is-mariadb-105) to [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/what-is-mariadb-106), and if the source list file was at `/etc/apt/sources.list.d/MariaDB.list`, then you could execute the following:
 
 ```
 sudo sed -i 's/10.5/10.6/' /etc/apt/sources.list.d/MariaDB.list
@@ -331,7 +331,7 @@ sudo apt-get install mariadb-backup
 
 Some [plugins](../../../../reference/plugins/) may also need to be installed.
 
-For example, to install the [cracklib_password_check](../../../reference/plugins/password-validation-plugins/cracklib-password-check-plugin.md) password validation plugin, first you would have to update the package cache by executing the following command:
+For example, to install the [cracklib\_password\_check](../../../reference/plugins/password-validation-plugins/cracklib-password-check-plugin.md) password validation plugin, first you would have to update the package cache by executing the following command:
 
 ```
 sudo apt update
@@ -411,7 +411,7 @@ For MariaDB, the following DEBs are available:
 | libmariadb-dev                         | Development headers and static libraries.                                                                                                                                                                                                          |
 | libmariadbclient18                     | Virtual package to satisfy external depends                                                                                                                                                                                                        |
 | libmysqlclient18                       | Virtual package to satisfy external depends                                                                                                                                                                                                        |
-| mariadb-backup                         | [mariadb-backup](../../../../server-usage/backing-up-and-restoring-databases/mariadb-backup/)                                                                                                                                                            |
+| mariadb-backup                         | [mariadb-backup](../../../../server-usage/backing-up-and-restoring-databases/mariadb-backup/)                                                                                                                                                      |
 | mariadb-client                         | Client tools like [mariadb CLI](../../../../clients-and-utilities/mariadb-client/), [mariadb-dump](../../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md), and others.                                               |
 | mariadb-client-core                    | Core client tools                                                                                                                                                                                                                                  |
 | mariadb-common                         | Character set files and /etc/my.cnf                                                                                                                                                                                                                |

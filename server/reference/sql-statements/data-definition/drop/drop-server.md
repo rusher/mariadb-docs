@@ -8,7 +8,7 @@ DROP SERVER [ IF EXISTS ] server_name
 
 ## Description
 
-Drops the server definition for the server named _server\_name_. The corresponding row within the [mysql.servers table](../../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-servers-table.md) will be deleted. This statement requires the [SUPER](../../account-management-sql-statements/grant.md#super) privilege or, from [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1052-release-notes), the [FEDERATED ADMIN](../../account-management-sql-statements/grant.md#federated-admin) privilege.
+Drops the server definition for the server named _server\_name_. The corresponding row within the [mysql.servers table](../../administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-servers-table.md) will be deleted. This statement requires the [SUPER](../../account-management-sql-statements/grant.md#super) privilege or, from [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-1052-release-notes), the [FEDERATED ADMIN](../../account-management-sql-statements/grant.md#federated-admin) privilege.
 
 Dropping a server for a table does not affect any [FederatedX](../../../../server-usage/storage-engines/federatedx-storage-engine/), [FEDERATED](../../../../server-usage/storage-engines/legacy-storage-engines/federated-storage-engine.md), [Connect](../../../../server-usage/storage-engines/connect/) or [Spider](../../../../server-usage/storage-engines/spider/) tables that used this connection information when they were created.
 

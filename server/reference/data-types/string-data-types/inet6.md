@@ -90,7 +90,7 @@ INET6 understands both [text](text.md) and [binary(16)](binary.md) address repre
 {% tab title="Current" %}
 You may have used [BINARY(16)](binary.md) as a storage for IPv6 internet addresses, in combination with [INET6\_ATON](../../sql-functions/secondary-functions/miscellaneous-functions/inet6_aton.md) and [INET6\_NTOA](../../sql-functions/secondary-functions/miscellaneous-functions/inet6_ntoa.md) to respectively insert and retrieve data.
 
-However, you can [ALTER](../../sql-statements/data-definition/alter/alter-table.md) `BINARY(16)` columns storing IPv6 addresses to `INET6`. After such an alter, there is no a need to use `INET6_ATON()` and `INET6_NTOA()`. Addresses can be inserted and retrieved directly.
+However, you can [ALTER](../../sql-statements/data-definition/alter/alter-table/) `BINARY(16)` columns storing IPv6 addresses to `INET6`. After such an alter, there is no a need to use `INET6_ATON()` and `INET6_NTOA()`. Addresses can be inserted and retrieved directly.
 {% endtab %}
 
 {% tab title="< 10.5" %}

@@ -271,7 +271,7 @@ Create a migration tool set / procedure that does the following
 * Execute [FLUSH TABLES FOR EXPORT](../../../reference/sql-statements/administrative-sql-statements/flush-commands/flush-tables-for-export.md) for all tables in a catalog.
 * Take a copy of the catalog directory
 * Copy the data to a new catalog directory to the new server
-* Run [ALTER TABLE ... IMPORT TABLESPACE](../../../reference/sql-statements/data-definition/alter/alter-table.md#import-tablespace) on each InnoDB table
+* Run [ALTER TABLE ... IMPORT TABLESPACE](../../../reference/sql-statements/data-definition/alter/alter-table/#import-tablespace) on each InnoDB table
 
 Note that for partitioned tables the process will be a bit more complex, see above link.
 

@@ -34,7 +34,7 @@ SET GLOBAL general_log = @old_log_state;
 
 [CHECK TABLE](../../reference/sql-statements/table-statements/check-table.md) and [CHECKSUM TABLE](../../reference/sql-statements/table-statements/checksum-table.md) are supported.
 
-[CREATE TABLE](../../reference/sql-statements/data-definition/create/create-table.md) is supported. [ALTER TABLE](../../reference/sql-statements/data-definition/alter/alter-table.md), [RENAME TABLE](../../reference/sql-statements/data-definition/rename-table.md) and [DROP TABLE](../../reference/sql-statements/data-definition/drop/drop-table.md) are supported when logging is disabled, but log tables cannot be partitioned.
+[CREATE TABLE](../../reference/sql-statements/data-definition/create/create-table.md) is supported. [ALTER TABLE](../../reference/sql-statements/data-definition/alter/alter-table/), [RENAME TABLE](../../reference/sql-statements/data-definition/rename-table.md) and [DROP TABLE](../../reference/sql-statements/data-definition/drop/drop-table.md) are supported when logging is disabled, but log tables cannot be partitioned.
 
 Contents of log tables are not logged in the [binary log](binary-log/), thus cannot be replicated.
 

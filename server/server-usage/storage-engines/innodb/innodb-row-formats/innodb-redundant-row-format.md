@@ -10,7 +10,7 @@ The `REDUNDANT` row format was the only available row format before MySQL 5.0.3.
 * Redundant row format does not store large columns as efficiently as the Dynamic row format.
 * Redundant row format limits indexing column values to 767 bytes, which is significant smaller than the Dynamic row format.
 
-The easiest way to create an InnoDB table that uses the `REDUNDANT` row format is by setting the [ROW\_FORMAT](../../../../reference/sql-statements/data-definition/create/create-table.md#row_format) table option to `REDUNDANT` in a [CREATE TABLE](../../../../reference/sql-statements/data-definition/create/create-table.md) or [ALTER TABLE](../../../../reference/sql-statements/data-definition/alter/alter-table.md) statement.
+The easiest way to create an InnoDB table that uses the `REDUNDANT` row format is by setting the [ROW\_FORMAT](../../../../reference/sql-statements/data-definition/create/create-table.md#row_format) table option to `REDUNDANT` in a [CREATE TABLE](../../../../reference/sql-statements/data-definition/create/create-table.md) or [ALTER TABLE](../../../../reference/sql-statements/data-definition/alter/alter-table/) statement.
 
 It is recommended to set the [innodb\_strict\_mode](../innodb-system-variables.md#innodb_strict_mode) system variable to `ON` when using this format.
 

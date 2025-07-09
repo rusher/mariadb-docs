@@ -125,7 +125,7 @@ Aria supports all aspects of MyISAM, except as noted below. This includes extern
 * Supports both crash-safe (soon to be transactional) and not transactional tables. (Non-transactional tables are not logged and rows uses less space): `CREATE TABLE foo (...) TRANSACTIONAL=0|1 ENGINE=Aria`.
 * `PAGE` is the only crash-safe/transactional row format.
 * `PAGE` format should give a notable speed improvement on systems which have bad data caching. (For example Windows).
-* From [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105), max key length is 2000 bytes, compared to 1000 bytes in MyISAM.
+* From [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/what-is-mariadb-105), max key length is 2000 bytes, compared to 1000 bytes in MyISAM.
 
 ### Differences between Aria and MyISAM
 

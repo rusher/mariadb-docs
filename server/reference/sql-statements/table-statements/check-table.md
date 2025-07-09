@@ -18,7 +18,7 @@ For checking [dynamic columns](../../sql-structure/nosql/dynamic-columns.md) int
 
 `CHECK TABLE` can also check views for problems, such as tables that are referenced in the view definition that no longer exist.
 
-`CHECK TABLE` is also supported for partitioned tables. You can use [`ALTER TABLE ... CHECK PARTITION`](../data-definition/alter/alter-table.md#check-partition) to check one or more partitions.
+`CHECK TABLE` is also supported for partitioned tables. You can use [`ALTER TABLE ... CHECK PARTITION`](../data-definition/alter/alter-table/#check-partition) to check one or more partitions.
 
 The meaning of the different options are as follows - note that this can vary a bit between storage engines:
 

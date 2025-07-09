@@ -149,7 +149,7 @@ SHOW SESSION STATUS LIKE 'Ssl_version';
 
 ## Requiring TLS
 
-From [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1052-release-notes), the [require\_secure\_transport](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#require_secure_transport) system variable is available. When set (by default it is off), connections attempted using insecure transport will be rejected. Secure transports are SSL/TLS, Unix sockets or named pipes. Note that requirements set for specific user accounts will take precedence over this setting.
+From [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-1052-release-notes), the [require\_secure\_transport](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#require_secure_transport) system variable is available. When set (by default it is off), connections attempted using insecure transport will be rejected. Secure transports are SSL/TLS, Unix sockets or named pipes. Note that requirements set for specific user accounts will take precedence over this setting.
 
 ### Requiring TLS for Specific User Accounts
 

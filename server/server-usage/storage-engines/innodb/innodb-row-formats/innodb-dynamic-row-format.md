@@ -16,7 +16,7 @@ The limit for indexing column values depends on the [innodb\_page\_size](../inno
 
 ## Using the DYNAMIC Row Format
 
-The default row format is `DYNAMIC`, as long as the [innodb\_default\_row\_format](../innodb-system-variables.md#innodb_default_row_format) system variable has not been modified. Therefore, in these versions, the easiest way to create an InnoDB table that uses the `DYNAMIC` row format is by **not** setting the [ROW\_FORMAT](../../../../reference/sql-statements/data-definition/create/create-table.md#row_format) table option at all in a [CREATE TABLE](../../../../reference/sql-statements/data-definition/create/create-table.md) or [ALTER TABLE](../../../../reference/sql-statements/data-definition/alter/alter-table.md) statement.
+The default row format is `DYNAMIC`, as long as the [innodb\_default\_row\_format](../innodb-system-variables.md#innodb_default_row_format) system variable has not been modified. Therefore, in these versions, the easiest way to create an InnoDB table that uses the `DYNAMIC` row format is by **not** setting the [ROW\_FORMAT](../../../../reference/sql-statements/data-definition/create/create-table.md#row_format) table option at all in a [CREATE TABLE](../../../../reference/sql-statements/data-definition/create/create-table.md) or [ALTER TABLE](../../../../reference/sql-statements/data-definition/alter/alter-table/) statement.
 
 It is recommended to set the [innodb\_strict\_mode](../innodb-system-variables.md#innodb_strict_mode) system variable to `ON` when using this row format.
 
@@ -218,7 +218,7 @@ AND ROW_FORMAT != 'Dynamic';
 +-------------------+------------+
 ```
 
-3. Alter the table using the [ALTER TABLE](../../../../reference/sql-statements/data-definition/alter/alter-table.md) statement, and specify the Dynamic row format using the `ROW_FORMAT` table option:
+3. Alter the table using the [ALTER TABLE](../../../../reference/sql-statements/data-definition/alter/alter-table/) statement, and specify the Dynamic row format using the `ROW_FORMAT` table option:
 
 ```sql
 ALTER TABLE hq_sales.invoices

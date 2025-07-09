@@ -94,30 +94,30 @@ index_option:
 ```
 
 {% hint style="info" %}
-## Table options (table\_options above) are the same options used by [CREATE TABLE](../create/create-table.md#table-options).
+## Table options (table\_options above) are the same options used by [CREATE TABLE](../../create/create-table.md#table-options).
 {% endhint %}
 
 ## Description
 
 `ALTER TABLE` enables you to change the structure of an existing table. For example, you can add or delete columns, create or destroy indexes, change the type of existing columns, or rename columns or the table itself. You can also change the comment for the table and the storage engine of the table.
 
-If another connection is using the table, a [metadata lock](../../transactions/metadata-locking.md) is active, and this statement will wait until the lock is released. This is also true for non-transactional tables.
+If another connection is using the table, a [metadata lock](../../../transactions/metadata-locking.md) is active, and this statement will wait until the lock is released. This is also true for non-transactional tables.
 
-When adding a `UNIQUE` index on a column (or a set of columns) which have duplicated values, an error will be produced and the statement will be stopped. To suppress the error and force the creation of `UNIQUE` indexes, discarding duplicates, the [IGNORE](../../data-manipulation/inserting-loading-data/ignore.md) option can be specified. This can be useful if a column (or a set of columns) should be UNIQUE but it contains duplicate values; however, this technique provides no control on which rows are preserved and which are deleted. Also, note that `IGNORE` is accepted but ignored in `ALTER TABLE ... EXCHANGE PARTITION` statements.
+When adding a `UNIQUE` index on a column (or a set of columns) which have duplicated values, an error will be produced and the statement will be stopped. To suppress the error and force the creation of `UNIQUE` indexes, discarding duplicates, the [IGNORE](../../../data-manipulation/inserting-loading-data/ignore.md) option can be specified. This can be useful if a column (or a set of columns) should be UNIQUE but it contains duplicate values; however, this technique provides no control on which rows are preserved and which are deleted. Also, note that `IGNORE` is accepted but ignored in `ALTER TABLE ... EXCHANGE PARTITION` statements.
 
-This statement can also be used to rename a table. For details see [RENAME TABLE](../rename-table.md).
+This statement can also be used to rename a table. For details see [RENAME TABLE](../../rename-table.md).
 
-When an index is created, the storage engine may use a configurable buffer in the process. Incrementing the buffer speeds up the index creation. [Aria](../../../../server-usage/storage-engines/aria/) and [MyISAM](../../../../server-usage/storage-engines/myisam-storage-engine/) allocate a buffer whose size is defined by [aria\_sort\_buffer\_size](../../../../server-usage/storage-engines/aria/aria-system-variables.md#aria_sort_buffer_size) or [myisam\_sort\_buffer\_size](../../../../server-usage/storage-engines/myisam-storage-engine/myisam-system-variables.md#myisam_sort_buffer_size), also used for [REPAIR TABLE](../../table-statements/repair-table.md). [InnoDB](../../../../server-usage/storage-engines/innodb/) allocates three buffers whose size is defined by [innodb\_sort\_buffer\_size](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_sort_buffer_size).
+When an index is created, the storage engine may use a configurable buffer in the process. Incrementing the buffer speeds up the index creation. [Aria](../../../../../server-usage/storage-engines/aria/) and [MyISAM](../../../../../server-usage/storage-engines/myisam-storage-engine/) allocate a buffer whose size is defined by [aria\_sort\_buffer\_size](../../../../../server-usage/storage-engines/aria/aria-system-variables.md#aria_sort_buffer_size) or [myisam\_sort\_buffer\_size](../../../../../server-usage/storage-engines/myisam-storage-engine/myisam-system-variables.md#myisam_sort_buffer_size), also used for [REPAIR TABLE](../../../table-statements/repair-table.md). [InnoDB](../../../../../server-usage/storage-engines/innodb/) allocates three buffers whose size is defined by [innodb\_sort\_buffer\_size](../../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_sort_buffer_size).
 
 ## Privileges
 
-Executing the `ALTER TABLE` statement generally requires at least the [ALTER](../../account-management-sql-statements/grant.md#table-privileges) privilege for the table or the database. If you are renaming a table, this also requires the [DROP](../../account-management-sql-statements/grant.md#table-privileges), [CREATE](../../account-management-sql-statements/grant.md#table-privileges) and [INSERT](../../account-management-sql-statements/grant.md#table-privileges) privileges for the table or the database.
+Executing the `ALTER TABLE` statement generally requires at least the [ALTER](../../../account-management-sql-statements/grant.md#table-privileges) privilege for the table or the database. If you are renaming a table, this also requires the [DROP](../../../account-management-sql-statements/grant.md#table-privileges), [CREATE](../../../account-management-sql-statements/grant.md#table-privileges) and [INSERT](../../../account-management-sql-statements/grant.md#table-privileges) privileges for the table or the database.
 
 ## Online DDL
 
-Online DDL is supported with the [ALGORITHM](alter-table.md#algorithm) and [LOCK](alter-table.md#lock) clauses.
+Online DDL is supported with the [ALGORITHM](./#algorithm) and [LOCK](./#lock) clauses.
 
-See [InnoDB Online DDL Overview](../../../../server-usage/storage-engines/innodb/innodb-online-ddl/innodb-online-ddl-overview.md) for more information on online DDL with [InnoDB](../../../../server-usage/storage-engines/innodb/).
+See [InnoDB Online DDL Overview](../../../../../server-usage/storage-engines/innodb/innodb-online-ddl/innodb-online-ddl-overview.md) for more information on online DDL with [InnoDB](../../../../../server-usage/storage-engines/innodb/).
 
 ### ALTER ONLINE TABLE
 
@@ -135,11 +135,11 @@ This statement is equivalent to the following:
 ALTER TABLE ... LOCK=NONE;
 ````
 
-See the [LOCK](alter-table.md#lock) alter specification for more information.
+See the [LOCK](./#lock) alter specification for more information.
 
 ## WAIT/NOWAIT
 
-Set the lock wait timeout. See [WAIT and NOWAIT](../../transactions/wait-and-nowait.md).
+Set the lock wait timeout. See [WAIT and NOWAIT](../../../transactions/wait-and-nowait.md).
 
 ## IF EXISTS
 
@@ -166,13 +166,13 @@ If this is directive is used after `ALTER ... TABLE`, one will not get an error 
 
 ## Column Definitions
 
-See [CREATE TABLE: Column Definitions](../create/create-table.md#column-definitions) for information about column definitions.
+See [CREATE TABLE: Column Definitions](../../create/create-table.md#column-definitions) for information about column definitions.
 
 ## Index Definitions
 
-See [CREATE TABLE: Index Definitions](../create/create-table.md#index-definitions) for information about index definitions.
+See [CREATE TABLE: Index Definitions](../../create/create-table.md#index-definitions) for information about index definitions.
 
-The [CREATE INDEX](../create/create-index.md) and [DROP INDEX](../drop/drop-index.md) statements can also be used to add or remove an index.
+The [CREATE INDEX](../../create/create-index.md) and [DROP INDEX](../../drop/drop-index.md) statements can also be used to add or remove an index.
 
 ## Character Sets and Collations
 
@@ -182,13 +182,13 @@ CONVERT TO CHARACTER SET charset_name [COLLATE collation_name]
 [DEFAULT] COLLATE [=] collation_name
 ```
 
-See [Setting Character Sets and Collations](../../../data-types/string-data-types/character-sets/setting-character-sets-and-collations.md) for details on setting the [character sets and collations](../../../data-types/string-data-types/character-sets/).
+See [Setting Character Sets and Collations](../../../../data-types/string-data-types/character-sets/setting-character-sets-and-collations.md) for details on setting the [character sets and collations](../../../../data-types/string-data-types/character-sets/).
 
 ## Alter Specifications
 
 ### Table Options
 
-See [CREATE TABLE: Table Options](../create/create-table.md#table-options) for information about table options.
+See [CREATE TABLE: Table Options](../../create/create-table.md#table-options) for information about table options.
 
 ### ADD COLUMN
 
@@ -196,11 +196,11 @@ See [CREATE TABLE: Table Options](../create/create-table.md#table-options) for i
 ... ADD COLUMN [IF NOT EXISTS]  (col_name [column_definition](../create/create-table.md#column-definitions),...)
 ```
 
-Adds a column to the table. The syntax is the same as in [CREATE TABLE](../create/create-table.md). If you are using `IF NOT_EXISTS` the column will not be added if it was not there already. This is very useful when doing scripts to modify tables.
+Adds a column to the table. The syntax is the same as in [CREATE TABLE](../../create/create-table.md). If you are using `IF NOT_EXISTS` the column will not be added if it was not there already. This is very useful when doing scripts to modify tables.
 
 The `FIRST` and `AFTER` clauses affect the physical order of columns in the datafile. Use `FIRST` to add a column in the first (leftmost) position, or `AFTER` followed by a column name to add the new column in any other position. Note that, nowadays, the physical position of a column is usually irrelevant.
 
-See also [Instant ADD COLUMN for InnoDB](../../../../server-usage/storage-engines/innodb/innodb-online-ddl/instant-add-column-for-innodb.md).
+See also [Instant ADD COLUMN for InnoDB](../../../../../server-usage/storage-engines/innodb/innodb-online-ddl/instant-add-column-for-innodb.md).
 
 ### DROP COLUMN
 
@@ -223,7 +223,7 @@ ALTER TABLE x DROP COLUMN a;
 
 The reason is that dropping column `a` would result in the new constraint that all values in column `b` be unique. In order to drop the column, an explicit `DROP PRIMARY KEY` and `ADD PRIMARY KEY` would be required.
 
-MariaDB supports instant DROP COLUMN. DROP COLUMN of an indexed column would imply [DROP INDEX](../drop/drop-index.md) (and in the case of a non-UNIQUE multi-column index, possibly ADD INDEX). These will not be allowed with [ALGORITHM=INSTANT](alter-table.md#algorithm), but unlike prior versions, they can be allowed with [ALGORITHM=NOCOPY](alter-table.md#algorithm)
+MariaDB supports instant DROP COLUMN. DROP COLUMN of an indexed column would imply [DROP INDEX](../../drop/drop-index.md) (and in the case of a non-UNIQUE multi-column index, possibly ADD INDEX). These will not be allowed with [ALGORITHM=INSTANT](./#algorithm), but unlike prior versions, they can be allowed with [ALGORITHM=NOCOPY](./#algorithm)
 
 `RESTRICT` and `CASCADE` are allowed to make porting from other database systems easier. In MariaDB, they do nothing.
 
@@ -280,11 +280,11 @@ ALTER TABLE t1 RENAME COLUMN c_old TO c_new;
 
 ### ADD PRIMARY KEY
 
-Adds a primary key. For `PRIMARY KEY` indexes, you can specify a name for the index, but it is silently ignored, and the name of the index is always `PRIMARY`. See [Getting Started with Indexes: Primary Key](../../../../mariadb-quickstart-guides/mariadb-indexes-guide.md#primary-key) for more information.
+Adds a primary key. For `PRIMARY KEY` indexes, you can specify a name for the index, but it is silently ignored, and the name of the index is always `PRIMARY`. See [Getting Started with Indexes: Primary Key](../../../../../mariadb-quickstart-guides/mariadb-indexes-guide.md#primary-key) for more information.
 
 ### DROP PRIMARY KEY
 
-Drops a primary key. For `PRIMARY KEY` indexes, you can specify a name for the index, but it is silently ignored, and the name of the index is always `PRIMARY`. See [Getting Started with Indexes: Primary Key](../../../../mariadb-quickstart-guides/mariadb-indexes-guide.md#primary-key) for more information.
+Drops a primary key. For `PRIMARY KEY` indexes, you can specify a name for the index, but it is silently ignored, and the name of the index is always `PRIMARY`. See [Getting Started with Indexes: Primary Key](../../../../../mariadb-quickstart-guides/mariadb-indexes-guide.md#primary-key) for more information.
 
 ### ADD FOREIGN KEY
 
@@ -300,62 +300,62 @@ First, you have to specify the name of the target (parent) table and a column or
 
 If either clause is omitted, the default behavior for the omitted clause is `RESTRICT`.
 
-See [Foreign Keys](../../../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/foreign-keys.md) for more information.
+See [Foreign Keys](../../../../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/foreign-keys.md) for more information.
 
 ### DROP FOREIGN KEY
 
-Drops a foreign key. See [Foreign Keys](../../../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/foreign-keys.md) for more information.
+Drops a foreign key. See [Foreign Keys](../../../../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/foreign-keys.md) for more information.
 
 ### ADD INDEX
 
-Adds a plain index. Plain indexes are regular indexes that are not unique, and are not acting as a primary key or a foreign key. They are also not the "specialized" `FULLTEXT` or `SPATIAL` indexes. For limits on InnoDB indexes, see [InnoDB Limitations](../../../../server-usage/storage-engines/innodb/innodb-limitations.md). See [Getting Started with Indexes: Plain Indexes](../../../../mariadb-quickstart-guides/mariadb-indexes-guide.md#plain-indexes) for more information.
+Adds a plain index. Plain indexes are regular indexes that are not unique, and are not acting as a primary key or a foreign key. They are also not the "specialized" `FULLTEXT` or `SPATIAL` indexes. For limits on InnoDB indexes, see [InnoDB Limitations](../../../../../server-usage/storage-engines/innodb/innodb-limitations.md). See [Getting Started with Indexes: Plain Indexes](../../../../../mariadb-quickstart-guides/mariadb-indexes-guide.md#plain-indexes) for more information.
 
 ### DROP INDEX
 
-Drops a plain index. Plain indexes are regular indexes that are not unique, and are not acting as a primary key or a foreign key. They are also not the "specialized" `FULLTEXT` or `SPATIAL` indexes. See [Getting Started with Indexes: Plain Indexes](../../../../mariadb-quickstart-guides/mariadb-indexes-guide.md#plain-indexes) for more information.
+Drops a plain index. Plain indexes are regular indexes that are not unique, and are not acting as a primary key or a foreign key. They are also not the "specialized" `FULLTEXT` or `SPATIAL` indexes. See [Getting Started with Indexes: Plain Indexes](../../../../../mariadb-quickstart-guides/mariadb-indexes-guide.md#plain-indexes) for more information.
 
 ### ADD UNIQUE INDEX
 
-Adds a unique index. The `UNIQUE` keyword means that the index will not accept duplicated values, except for NULLs. An error will raise if you try to insert duplicate values in a UNIQUE index. For `UNIQUE` indexes, you can specify a name for the constraint, using the `CONSTRAINT` keyword. That name will be used in error messages. See [Getting Started with Indexes: Unique Index](../../../../mariadb-quickstart-guides/mariadb-indexes-guide.md#unique-index) for more information.
+Adds a unique index. The `UNIQUE` keyword means that the index will not accept duplicated values, except for NULLs. An error will raise if you try to insert duplicate values in a UNIQUE index. For `UNIQUE` indexes, you can specify a name for the constraint, using the `CONSTRAINT` keyword. That name will be used in error messages. See [Getting Started with Indexes: Unique Index](../../../../../mariadb-quickstart-guides/mariadb-indexes-guide.md#unique-index) for more information.
 
 ### DROP UNIQUE INDEX
 
-Drops a unique index. The `UNIQUE` keyword means that the index will not accept duplicated values, except for NULLs. An error will raise if you try to insert duplicate values in a UNIQUE index. For `UNIQUE` indexes, you can specify a name for the constraint, using the `CONSTRAINT` keyword. That name will be used in error messages. See [Getting Started with Indexes: Unique Index](../../../../mariadb-quickstart-guides/mariadb-indexes-guide.md#unique-index) for more information.
+Drops a unique index. The `UNIQUE` keyword means that the index will not accept duplicated values, except for NULLs. An error will raise if you try to insert duplicate values in a UNIQUE index. For `UNIQUE` indexes, you can specify a name for the constraint, using the `CONSTRAINT` keyword. That name will be used in error messages. See [Getting Started with Indexes: Unique Index](../../../../../mariadb-quickstart-guides/mariadb-indexes-guide.md#unique-index) for more information.
 
 ### ADD FULLTEXT INDEX
 
-Adds a `FULLTEXT` index. See [Full-Text Indexes](../../../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/full-text-indexes/) for more information.
+Adds a `FULLTEXT` index. See [Full-Text Indexes](../../../../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/full-text-indexes/) for more information.
 
 ### DROP FULLTEXT INDEX
 
-Drops a `FULLTEXT` index. See [Full-Text Indexes](../../../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/full-text-indexes/) for more information.
+Drops a `FULLTEXT` index. See [Full-Text Indexes](../../../../../ha-and-performance/optimization-and-tuning/optimization-and-indexes/full-text-indexes/) for more information.
 
 ### ADD SPATIAL INDEX
 
-Adds a SPATIAL index. See [SPATIAL INDEX](../../../sql-structure/geometry/spatial-index.md) for more information.
+Adds a SPATIAL index. See [SPATIAL INDEX](../../../../sql-structure/geometry/spatial-index.md) for more information.
 
 ### DROP SPATIAL INDEX
 
-Drops a SPATIAL index. See [SPATIAL INDEX](../../../sql-structure/geometry/spatial-index.md) for more information.
+Drops a SPATIAL index. See [SPATIAL INDEX](../../../../sql-structure/geometry/spatial-index.md) for more information.
 
 ### ENABLE/ DISABLE KEYS
 
-`DISABLE KEYS` disables all non unique keys for the table for storage engines that support this (at least MyISAM and Aria). This can be used to [speed up inserts](../../../../ha-and-performance/optimization-and-tuning/query-optimizations/how-to-quickly-insert-data-into-mariadb.md) into empty tables. `ENABLE KEYS` enables all disabled keys.
+`DISABLE KEYS` disables all non unique keys for the table for storage engines that support this (at least MyISAM and Aria). This can be used to [speed up inserts](../../../../../ha-and-performance/optimization-and-tuning/query-optimizations/how-to-quickly-insert-data-into-mariadb.md) into empty tables. `ENABLE KEYS` enables all disabled keys.
 
 ### RENAME TO
 
-Renames a table. See also [RENAME TABLE](../rename-table.md).
+Renames a table. See also [RENAME TABLE](../../rename-table.md).
 
 ### ADD CONSTRAINT
 
-Modifies the table adding a [constraint](../constraint.md) on a particular column or columns.
+Modifies the table adding a [constraint](../../constraint.md) on a particular column or columns.
 
 ```sql
 ALTER TABLE table_name 
 ADD CONSTRAINT [constraint_name] CHECK(expression);
 ```
 
-Before a row is inserted or updated, all constraints are evaluated in the order they are defined. If any constraint fails, then the row will not be updated. One can use most deterministic functions in a constraint, including [UDF's](../../../../server-usage/user-defined-functions/).
+Before a row is inserted or updated, all constraints are evaluated in the order they are defined. If any constraint fails, then the row will not be updated. One can use most deterministic functions in a constraint, including [UDF's](../../../../../server-usage/user-defined-functions/).
 
 ```sql
 CREATE TABLE account_ledger (
@@ -371,11 +371,11 @@ ADD CONSTRAINT is_balanced
     CHECK((debit_amount + credit_amount) = 0);
 ```
 
-The `constraint_name` is optional. If you don't provide one in the `ALTER TABLE` statement, MariaDB auto-generates a name for you. This is done so that you can remove it later using [DROP CONSTRAINT](alter-table.md#drop-constraint) clause.
+The `constraint_name` is optional. If you don't provide one in the `ALTER TABLE` statement, MariaDB auto-generates a name for you. This is done so that you can remove it later using [DROP CONSTRAINT](./#drop-constraint) clause.
 
-You can disable all constraint expression checks by setting the variable [check\_constraint\_checks](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#check_constraint_checks) to `OFF`. You may find this useful when loading a table that violates some constraints that you want to later find and fix in SQL.
+You can disable all constraint expression checks by setting the variable [check\_constraint\_checks](../../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#check_constraint_checks) to `OFF`. You may find this useful when loading a table that violates some constraints that you want to later find and fix in SQL.
 
-To view constraints on a table, query [information\_schema.TABLE\_CONSTRAINTS](../../administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-table_constraints-table.md):
+To view constraints on a table, query [information\_schema.TABLE\_CONSTRAINTS](../../../administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-table_constraints-table.md):
 
 ```sql
 SELECT CONSTRAINT_NAME, TABLE_NAME, CONSTRAINT_TYPE 
@@ -391,7 +391,7 @@ WHERE TABLE_NAME = 'account_ledger';
 
 ### DROP CONSTRAINT
 
-`DROP CONSTRAINT` for `UNIQUE` and `FOREIGN KEY` [constraints](../constraint.md)\
+`DROP CONSTRAINT` for `UNIQUE` and `FOREIGN KEY` [constraints](../../constraint.md)\
 and `DROP CONSTRAINT` for `CHECK` constraints were introduced in an earlier version of MariaDB.
 
 Modifies the table, removing the given constraint.
@@ -401,7 +401,7 @@ ALTER TABLE table_name
 DROP CONSTRAINT constraint_name;
 ```
 
-When you add a constraint to a table, whether through a [CREATE TABLE](../create/create-table.md#constraint-expressions) or [ALTER TABLE...ADD CONSTRAINT](alter-table.md#add-constraint) statement, you can either set a `constraint_name` yourself, or allow MariaDB to auto-generate one for you. To view constraints on a table, query [information\_schema.TABLE\_CONSTRAINTS](../../administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-table_constraints-table.md). For instance,
+When you add a constraint to a table, whether through a [CREATE TABLE](../../create/create-table.md#constraint-expressions) or [ALTER TABLE...ADD CONSTRAINT](./#add-constraint) statement, you can either set a `constraint_name` yourself, or allow MariaDB to auto-generate one for you. To view constraints on a table, query [information\_schema.TABLE\_CONSTRAINTS](../../../administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-table_constraints-table.md). For instance,
 
 ```sql
 CREATE TABLE t (
@@ -431,15 +431,15 @@ ALTER TABLE t DROP CONSTRAINT is_unique;
 
 ### ADD SYSTEM VERSIONING
 
-Adds system versioning. See [System-versioned tables](../../../sql-structure/temporal-tables/system-versioned-tables.md).
+Adds system versioning. See [System-versioned tables](../../../../sql-structure/temporal-tables/system-versioned-tables.md).
 
 ### DROP SYSTEM VERSIONING
 
-Drops system versioning. See [System-versioned tables](../../../sql-structure/temporal-tables/system-versioned-tables.md).
+Drops system versioning. See [System-versioned tables](../../../../sql-structure/temporal-tables/system-versioned-tables.md).
 
 ### ADD PERIOD FOR
 
-See [System-versioned tables](../../../sql-structure/temporal-tables/system-versioned-tables.md), [Application-time-period tables](../../../sql-structure/temporal-tables/application-time-periods.md) or [Bitemporal Tables](../../../sql-structure/temporal-tables/bitemporal-tables.md).
+See [System-versioned tables](../../../../sql-structure/temporal-tables/system-versioned-tables.md), [Application-time-period tables](../../../../sql-structure/temporal-tables/application-time-periods.md) or [Bitemporal Tables](../../../../sql-structure/temporal-tables/bitemporal-tables.md).
 
 ### FORCE
 
@@ -449,9 +449,9 @@ See [System-versioned tables](../../../sql-structure/temporal-tables/system-vers
 ALTER TABLE tab_name FORCE;
 ```
 
-With InnoDB, the table rebuild only reclaims unused space (i.e. the space previously used for deleted rows) if the [innodb\_file\_per\_table](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_file_per_table) system variable is set to `ON` (the default). If the system variable is `OFF`, the space will not be reclaimed, but it will be re-used for new data that's later added.
+With InnoDB, the table rebuild only reclaims unused space (i.e. the space previously used for deleted rows) if the [innodb\_file\_per\_table](../../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_file_per_table) system variable is set to `ON` (the default). If the system variable is `OFF`, the space will not be reclaimed, but it will be re-used for new data that's later added.
 
-The rebuild may fail if conditions are violated due to a change in the [sql\_mode](../../../../server-management/variables-and-modes/sql-mode.md). For example:
+The rebuild may fail if conditions are violated due to a change in the [sql\_mode](../../../../../server-management/variables-and-modes/sql-mode.md). For example:
 
 ```sql
 CREATE OR REPLACE TABLE x (d DATE DEFAULT '0000-00-00');
@@ -466,19 +466,19 @@ ERROR 1067 (42000): Invalid default value for 'd'
 
 #### ADD PARTITION
 
-See [Partitioning Overview: Adding Partitions](../../../../server-usage/partitioning-tables/partitioning-overview.md#adding-partitions) for details.
+See [Partitioning Overview: Adding Partitions](../../../../../server-usage/partitioning-tables/partitioning-overview.md#adding-partitions) for details.
 
 #### ANALYZE PARTITION
 
-See [Partitioning Overview: Analyzing Partitions](../../../../server-usage/partitioning-tables/partitioning-overview.md#analyzing-partitions) for details.
+See [Partitioning Overview: Analyzing Partitions](../../../../../server-usage/partitioning-tables/partitioning-overview.md#analyzing-partitions) for details.
 
 #### CHECK PARTITION
 
-See [Partitioning Overview: Checking Partitions](../../../../server-usage/partitioning-tables/partitioning-overview.md#checking-partitions) for details.
+See [Partitioning Overview: Checking Partitions](../../../../../server-usage/partitioning-tables/partitioning-overview.md#checking-partitions) for details.
 
 #### COALESCE PARTITION
 
-Reduces the number of HASH or KEY partitions in a table. See [Partitioning Overview: Coalescing Partitions](../../../../server-usage/partitioning-tables/partitioning-overview.md#coalescing-partitions).
+Reduces the number of HASH or KEY partitions in a table. See [Partitioning Overview: Coalescing Partitions](../../../../../server-usage/partitioning-tables/partitioning-overview.md#coalescing-partitions).
 
 #### CONVERT PARTITION / TABLE
 
@@ -488,7 +488,7 @@ Reduces the number of HASH or KEY partitions in a table. See [Partitioning Overv
 ALTER TABLE partitioned_table CONVERT PARTITION part1 TO TABLE normal_table;
 ```
 
-`CONVERT TABLE` will take an existing table and move this to another table as its own partition with a specified [partition definition](../create/create-table.md#partitions). For example the following moves `normal_table` to a partition of `partitioned_table` with a definition that its values, based on the `PARTITION BY` of the `partitioned_table`, are less than 12345.
+`CONVERT TABLE` will take an existing table and move this to another table as its own partition with a specified [partition definition](../../create/create-table.md#partitions). For example the following moves `normal_table` to a partition of `partitioned_table` with a definition that its values, based on the `PARTITION BY` of the `partitioned_table`, are less than 12345.
 
 ```sql
 ALTER TABLE partitioned_table CONVERT TABLE normal_table 
@@ -497,7 +497,7 @@ ALTER TABLE partitioned_table CONVERT TABLE normal_table
 
 The optional `[{WITH | WITHOUT} VALIDATION]` is permitted.
 
-See [Partitioning Overview: Converting Partitions to/from Tables](../../../../server-usage/partitioning-tables/partitioning-overview.md#converting-partitions-tofrom-tables) for more details. \{% endtab %\}
+See [Partitioning Overview: Converting Partitions to/from Tables](../../../../../server-usage/partitioning-tables/partitioning-overview.md#converting-partitions-tofrom-tables) for more details. \{% endtab %\}
 
 \{% tab title="< 11.4" %\} `CONVERT PARTITION` can be used to remove a partition from a table and make this an ordinary table. For example:
 
@@ -505,7 +505,7 @@ See [Partitioning Overview: Converting Partitions to/from Tables](../../../../se
 ALTER TABLE partitioned_table CONVERT PARTITION part1 TO TABLE normal_table;
 ```
 
-`CONVERT TABLE` will take an existing table and move this to another table as its own partition with a specified [partition definition](../create/create-table.md#partitions). For example the following moves `normal_table` to a partition of `partitioned_table` with a definition that its values, based on the `PARTITION BY` of the `partitioned_table`, are less than 12345.
+`CONVERT TABLE` will take an existing table and move this to another table as its own partition with a specified [partition definition](../../create/create-table.md#partitions). For example the following moves `normal_table` to a partition of `partitioned_table` with a definition that its values, based on the `PARTITION BY` of the `partitioned_table`, are less than 12345.
 
 ```sql
 ALTER TABLE partitioned_table CONVERT TABLE normal_table 
@@ -514,13 +514,13 @@ ALTER TABLE partitioned_table CONVERT TABLE normal_table
 
 The optional clause `[{WITH | WITHOUT} VALIDATION]` is not available.
 
-See [Partitioning Overview: Converting Partitions to/from Tables](../../../../server-usage/partitioning-tables/partitioning-overview.md#converting-partitions-tofrom-tables) for more details. \{% endtab %\}
+See [Partitioning Overview: Converting Partitions to/from Tables](../../../../../server-usage/partitioning-tables/partitioning-overview.md#converting-partitions-tofrom-tables) for more details. \{% endtab %\}
 
 \{% tab title="< 10.7.1" %\} `CONVERT PARTITION` and `CONVERT TABLE` are not available. \{% endtab %\} \{% endtabs %\}
 
 #### DROP PARTITION
 
-Used to drop specific partitions (and discard all data within the specified partitions) for [RANGE](../../../../server-usage/partitioning-tables/partitioning-types/range-partitioning-type.md) and [LIST](../../../../server-usage/partitioning-tables/partitioning-types/list-partitioning-type.md) partitions. See [Partitioning Overview: Dropping Partitions](../../../../server-usage/partitioning-tables/partitioning-overview.md#dropping-partitions).
+Used to drop specific partitions (and discard all data within the specified partitions) for [RANGE](../../../../../server-usage/partitioning-tables/partitioning-types/range-partitioning-type.md) and [LIST](../../../../../server-usage/partitioning-tables/partitioning-types/list-partitioning-type.md) partitions. See [Partitioning Overview: Dropping Partitions](../../../../../server-usage/partitioning-tables/partitioning-overview.md#dropping-partitions).
 
 #### EXCHANGE PARTITION
 
@@ -528,43 +528,43 @@ Used to drop specific partitions (and discard all data within the specified part
 
 The optional `[{WITH | WITHOUT} VALIDATION]` is permitted.
 
-See [Partitioning Overview: Exchanging Partitions](../../../../server-usage/partitioning-tables/partitioning-overview.md#exchanging-partitions) for more details.
+See [Partitioning Overview: Exchanging Partitions](../../../../../server-usage/partitioning-tables/partitioning-overview.md#exchanging-partitions) for more details.
 
-See also [copying InnoDB's transportable tablespaces](../../../../server-usage/storage-engines/innodb/innodb-tablespaces/innodb-file-per-table-tablespaces.md#copying-transportable-tablespaces). \{% endtab %\}
+See also [copying InnoDB's transportable tablespaces](../../../../../server-usage/storage-engines/innodb/innodb-tablespaces/innodb-file-per-table-tablespaces.md#copying-transportable-tablespaces). \{% endtab %\}
 
 \{% tab title="< 11.4" %\} This clause is used to exchange the contents of a partition with another table. This is performed by swapping the tablespaces of the partition with the other table.
 
 The optional `[{WITH | WITHOUT} VALIDATION]` is not permitted.
 
-See [Partitioning Overview: Exchanging Partitions](../../../../server-usage/partitioning-tables/partitioning-overview.md#exchanging-partitions) for more details.
+See [Partitioning Overview: Exchanging Partitions](../../../../../server-usage/partitioning-tables/partitioning-overview.md#exchanging-partitions) for more details.
 
-See also [copying InnoDB's transportable tablespaces](../../../../server-usage/storage-engines/innodb/innodb-tablespaces/innodb-file-per-table-tablespaces.md#copying-transportable-tablespaces). \{% endtab %\} \{% endtabs %\}
+See also [copying InnoDB's transportable tablespaces](../../../../../server-usage/storage-engines/innodb/innodb-tablespaces/innodb-file-per-table-tablespaces.md#copying-transportable-tablespaces). \{% endtab %\} \{% endtabs %\}
 
 #### OPTIMIZE PARTITION
 
-See [Partitioning Overview: Optimizing Partitions](../../../../server-usage/partitioning-tables/partitioning-overview.md#optimizing-partitions) for details.
+See [Partitioning Overview: Optimizing Partitions](../../../../../server-usage/partitioning-tables/partitioning-overview.md#optimizing-partitions) for details.
 
 #### REMOVE PARTITIONING
 
-See [Partitioning Overview: Removing Partitioning](../../../../server-usage/partitioning-tables/partitioning-overview.md#removing-partitioning).
+See [Partitioning Overview: Removing Partitioning](../../../../../server-usage/partitioning-tables/partitioning-overview.md#removing-partitioning).
 
 #### REORGANIZE PARTITION
 
-See [Partitioning Overview: Reorganizing Partitions](../../../../server-usage/partitioning-tables/partitioning-overview.md#reorganizing-partitions).
+See [Partitioning Overview: Reorganizing Partitions](../../../../../server-usage/partitioning-tables/partitioning-overview.md#reorganizing-partitions).
 
 #### TRUNCATE PARTITION
 
-See [Partitioning Overview: Truncating Partitions](../../../../server-usage/partitioning-tables/partitioning-overview.md#truncating-partitions).
+See [Partitioning Overview: Truncating Partitions](../../../../../server-usage/partitioning-tables/partitioning-overview.md#truncating-partitions).
 
 ### DISCARD TABLESPACE
 
 This is used to discard an InnoDB table's tablespace.
 
-See [copying InnoDB's transportable tablespaces](../../../../server-usage/storage-engines/innodb/innodb-tablespaces/innodb-file-per-table-tablespaces.md#copying-transportable-tablespaces) for more information.
+See [copying InnoDB's transportable tablespaces](../../../../../server-usage/storage-engines/innodb/innodb-tablespaces/innodb-file-per-table-tablespaces.md#copying-transportable-tablespaces) for more information.
 
 ### IMPORT TABLESPACE
 
-This is used to import an InnoDB table's tablespace. The tablespace should have been copied from its original server after executing [FLUSH TABLES FOR EXPORT](../../administrative-sql-statements/flush-commands/flush-tables-for-export.md).
+This is used to import an InnoDB table's tablespace. The tablespace should have been copied from its original server after executing [FLUSH TABLES FOR EXPORT](../../../administrative-sql-statements/flush-commands/flush-tables-for-export.md).
 
 See [copying InnoDB's transportable tablespaces](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-tablespaces/innodb-file-per-table-tablespaces.md#copying-transportable-tablespaces) for more information.
 
@@ -580,13 +580,13 @@ The `ALTER TABLE` statement supports the `ALGORITHM` clause. This clause is one 
 * `ALGORITHM=NOCOPY`
 * `ALGORITHM=INSTANT`
 
-See [InnoDB Online DDL Overview: ALGORITHM](../../../../server-usage/storage-engines/innodb/innodb-online-ddl/innodb-online-ddl-overview.md#alter-algorithms) for information on how the `ALGORITHM` clause affects InnoDB.
+See [InnoDB Online DDL Overview: ALGORITHM](../../../../../server-usage/storage-engines/innodb/innodb-online-ddl/innodb-online-ddl-overview.md#alter-algorithms) for information on how the `ALGORITHM` clause affects InnoDB.
 
 #### ALGORITHM=DEFAULT
 
 The default behavior, which occurs if `ALGORITHM=DEFAULT` is specified, or if `ALGORITHM` is not specified at all, usually only makes a copy if the operation doesn't support being done in-place at all. In this case, the most efficient available algorithm will usually be used.
 
-The [old\_alter\_table](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#old_alter_table) system variable is deprecated. Instead, the [alter\_algorithm](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#alter_algorithm) system variable defines the default algorithm for `ALTER TABLE` operations. This was removed in [MariaDB 11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115) for the following reasons:
+The [old\_alter\_table](../../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#old_alter_table) system variable is deprecated. Instead, the [alter\_algorithm](../../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#alter_algorithm) system variable defines the default algorithm for `ALTER TABLE` operations. This was removed in [MariaDB 11.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-5-rolling-releases/what-is-mariadb-115) for the following reasons:
 
 * alter\_algorithm was introduced as a replacement for the old\_alter\_table that was used to force the usage of the original alter table algorithm (copy) in cases where the new alter algorithm did not work. The new option was added as a way to force the usage of a specific algorithm when it should instead have made it possible to disable algorithms that would not work for some reason.
 * alter\_algorithm introduced some cases where ALTER TABLE would not work without specifying the ALGORITHM=XXX option together with ALTER TABLE.
@@ -596,7 +596,7 @@ The [old\_alter\_table](../../../../ha-and-performance/optimization-and-tuning/s
 
 #### ALGORITHM=COPY
 
-`ALGORITHM=COPY` is the name for the original [ALTER TABLE](alter-table.md) algorithm from early MariaDB versions.
+`ALGORITHM=COPY` is the name for the original [ALTER TABLE](./) algorithm from early MariaDB versions.
 
 When `ALGORITHM=COPY` is set, MariaDB essentially does the following operations:
 
@@ -619,9 +619,9 @@ RENAME TABLE tmp_tab TO original_tab;
 
 This algorithm is very inefficient, but it is generic, so it works for all storage engines.
 
-If `ALGORITHM=COPY` is specified, then the copy algorithm will be used even if it is not necessary. This can result in a lengthy table copy. If multiple [ALTER TABLE](alter-table.md) operations are required that each require the table to be rebuilt, then it is best to specify all operations in a single [ALTER TABLE](alter-table.md) statement, so that the table is only rebuilt once.
+If `ALGORITHM=COPY` is specified, then the copy algorithm will be used even if it is not necessary. This can result in a lengthy table copy. If multiple [ALTER TABLE](./) operations are required that each require the table to be rebuilt, then it is best to specify all operations in a single [ALTER TABLE](./) statement, so that the table is only rebuilt once.
 
-\{% tabs %\} \{% tab title="Current" %\} `ALTER TABLE` can perform most operations with `ALGORITHM=COPY`, `LOCK=NONE`. See [LOCK=NONE](alter-table.md#none). \{% endtab %\}
+\{% tabs %\} \{% tab title="Current" %\} `ALTER TABLE` can perform most operations with `ALGORITHM=COPY`, `LOCK=NONE`. See [LOCK=NONE](./#none). \{% endtab %\}
 
 \{% tab title="< 11.2" %\} `ALTER TABLE` cannot perform operations with `ALGORITHM=COPY`, `LOCK=NONE`. \{% endtab %\} \{% endtabs %\}
 
@@ -633,9 +633,9 @@ When `ALGORITHM=INPLACE` is set, the underlying storage engine uses optimization
 
 A more accurate name would have been `ALGORITHM=ENGINE`, where `ENGINE` refers to an "engine-specific" algorithm.
 
-If an [ALTER TABLE](alter-table.md) operation supports `ALGORITHM=INPLACE`, then it can be performed using optimizations by the underlying storage engine, but it may rebuilt.
+If an [ALTER TABLE](./) operation supports `ALGORITHM=INPLACE`, then it can be performed using optimizations by the underlying storage engine, but it may rebuilt.
 
-See [InnoDB Online DDL Operations with ALGORITHM=INPLACE](../../../../server-usage/storage-engines/innodb/innodb-online-ddl/innodb-online-ddl-operations-with-the-inplace-alter-algorithm.md) for more.
+See [InnoDB Online DDL Operations with ALGORITHM=INPLACE](../../../../../server-usage/storage-engines/innodb/innodb-online-ddl/innodb-online-ddl-operations-with-the-inplace-alter-algorithm.md) for more.
 
 #### ALGORITHM=NOCOPY
 
@@ -645,7 +645,7 @@ If an `ALTER TABLE` operation supports `ALGORITHM=NOCOPY`, then it can be perfor
 
 If `ALGORITHM=NOCOPY` is specified for an `ALTER TABLE` operation that does not support `ALGORITHM=NOCOPY`, then an error will be raised. In this case, raising an error is preferable, if the alternative is for the operation to rebuild the clustered index, and perform unexpectedly slowly.
 
-See [InnoDB Online DDL Operations with ALGORITHM=NOCOPY](../../../../server-usage/storage-engines/innodb/innodb-online-ddl/innodb-online-ddl-operations-with-the-nocopy-alter-algorithm.md) for more.
+See [InnoDB Online DDL Operations with ALGORITHM=NOCOPY](../../../../../server-usage/storage-engines/innodb/innodb-online-ddl/innodb-online-ddl-operations-with-the-nocopy-alter-algorithm.md) for more.
 
 #### ALGORITHM=INSTANT
 
@@ -655,7 +655,7 @@ If an `ALTER TABLE` operation supports `ALGORITHM=INSTANT`, then it can be perfo
 
 If `ALGORITHM=INSTANT` is specified for an `ALTER TABLE` operation that does not support `ALGORITHM=INSTANT`, then an error will be raised. In this case, raising an error is preferable, if the alternative is for the operation to modify data files, and perform unexpectedly slowly.
 
-See [InnoDB Online DDL Operations with ALGORITHM=INSTANT](../../../../server-usage/storage-engines/innodb/innodb-online-ddl/innodb-online-ddl-operations-with-the-instant-alter-algorithm.md) for more.
+See [InnoDB Online DDL Operations with ALGORITHM=INSTANT](../../../../../server-usage/storage-engines/innodb/innodb-online-ddl/innodb-online-ddl-operations-with-the-instant-alter-algorithm.md) for more.
 
 ### LOCK
 
@@ -667,7 +667,7 @@ Acquire the least restrictive lock on the table that is supported for the specif
 
 #### NONE
 
-Acquire no lock on the table. Permit **all** concurrent DML. If this locking strategy is not permitted for an operation, then an error is raised. From [MariaDB 11.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-2-series/what-is-mariadb-112), `ALTER TABLE` can do most operations with `ALGORITHM=COPY, LOCK=NONE`, that is, in most cases, unless the algorithm and lock level are explicitly specified, `ALTER TABLE` will be performed using the `COPY` algorithm while simultaneously allowing concurrent DML statements on the altered table. If this is not desired, one can explicitly specify a different lock level or set old\_mode to [LOCK\_ALTER\_TABLE\_COPY](../../../../server-management/variables-and-modes/old-mode.md#lock_alter_table_copy) that will make `ALGORITHM=COPY` use `LOCK=SHARED` by default (but still allowing `LOCK=NONE` to be specified explicitly).
+Acquire no lock on the table. Permit **all** concurrent DML. If this locking strategy is not permitted for an operation, then an error is raised. From [MariaDB 11.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-2-series/what-is-mariadb-112), `ALTER TABLE` can do most operations with `ALGORITHM=COPY, LOCK=NONE`, that is, in most cases, unless the algorithm and lock level are explicitly specified, `ALTER TABLE` will be performed using the `COPY` algorithm while simultaneously allowing concurrent DML statements on the altered table. If this is not desired, one can explicitly specify a different lock level or set old\_mode to [LOCK\_ALTER\_TABLE\_COPY](../../../../../server-management/variables-and-modes/old-mode.md#lock_alter_table_copy) that will make `ALGORITHM=COPY` use `LOCK=SHARED` by default (but still allowing `LOCK=NONE` to be specified explicitly).
 
 #### SHARED
 
@@ -681,26 +681,26 @@ Different storage engines support different locking strategies for different ope
 
 If the `LOCK` clause is not explicitly set, then the operation uses `LOCK=DEFAULT`.
 
-[ALTER ONLINE TABLE](alter-table.md#alter-online-table) is equivalent to `LOCK=NONE`. Therefore, the [ALTER ONLINE TABLE](alter-table.md#alter-online-table) statement can be used to ensure that your `ALTER TABLE` operation allows all concurrent DML.
+[ALTER ONLINE TABLE](./#alter-online-table) is equivalent to `LOCK=NONE`. Therefore, the [ALTER ONLINE TABLE](./#alter-online-table) statement can be used to ensure that your `ALTER TABLE` operation allows all concurrent DML.
 
-See [InnoDB Online DDL Overview: LOCK](../../../../server-usage/storage-engines/innodb/innodb-online-ddl/innodb-online-ddl-overview.md#supported-alter-locking-strategies) for information on how the `LOCK` clause affects InnoDB.
+See [InnoDB Online DDL Overview: LOCK](../../../../../server-usage/storage-engines/innodb/innodb-online-ddl/innodb-online-ddl-overview.md#supported-alter-locking-strategies) for information on how the `LOCK` clause affects InnoDB.
 
 ### Index Options
 
-See [CREATE TABLE](../create/create-table.md#index-options) page for meaning of the index options.
+See [CREATE TABLE](../../create/create-table.md#index-options) page for meaning of the index options.
 
 ## Progress Reporting
 
-MariaDB provides progress reporting for `ALTER TABLE` statement for clients that support the new progress reporting protocol. For example, if you were using the [mariadb](../../../../clients-and-utilities/mariadb-client/mariadb-command-line-client.md) client, then the progress report might look like this::
+MariaDB provides progress reporting for `ALTER TABLE` statement for clients that support the new progress reporting protocol. For example, if you were using the [mariadb](../../../../../clients-and-utilities/mariadb-client/mariadb-command-line-client.md) client, then the progress report might look like this::
 
 ```sql
 ALTER TABLE test ENGINE=Aria;
 Stage: 1 of 2 'copy to tmp table'    46% of stage
 ```
 
-The progress report is also shown in the output of the [SHOW PROCESSLIST](../../administrative-sql-statements/show/show-processlist.md) statement and in the contents of the [information\_schema.PROCESSLIST](../../administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-processlist-table.md) table.
+The progress report is also shown in the output of the [SHOW PROCESSLIST](../../../administrative-sql-statements/show/show-processlist.md) statement and in the contents of the [information\_schema.PROCESSLIST](../../../administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-processlist-table.md) table.
 
-See [Progress Reporting](alter-table.md#progress-reporting) for more information.
+See [Progress Reporting](./#progress-reporting) for more information.
 
 ## Aborting ALTER TABLE Operations
 
@@ -712,15 +712,15 @@ Aborting `ALTER TABLE ... ALGORITHM=COPY` was made faster by removing excessive 
 
 \{% tabs %\} \{% tab title="Current" %\} `ALTER TABLE` is atomic for most engines, including InnoDB, MyRocks, MyISAM and Aria ([MDEV-25180](https://jira.mariadb.org/browse/MDEV-25180)). This means that if there is a crash (server down or power outage) during an `ALTER TABLE` operation, after recovery, either the old table and associated triggers and status will be intact, or the new table will be active. In older MariaDB versions one could get leftover #sql-alter..', '#sql-backup..' or 'table\_name.frm˝' files if the system crashed during the `ALTER TABLE` operation.
 
-See [Atomic DDL](../atomic-ddl.md) for more information. \{% endtab %\}
+See [Atomic DDL](../../atomic-ddl.md) for more information. \{% endtab %\}
 
 \{% tab title="< 10.6.1" %\} Atomic `ALTER TABLE` is not available. \{% endtab %\} \{% endtabs %\}
 
 ## Replication
 
-\{% tabs %\} \{% tab title="Current" %\} ALTER TABLE got fully executed on the primary first, and only then was it replicated and started executing on replicas. [An option](../../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#binlog_alter_two_phase) was added to replicate sooner and begin executing on replicas, directly when it _starts_ executing on the primary, not when it _finishes_. This way the replication lag caused by a heavy ALTER TABLE can be completely eliminated ([MDEV-11675](https://jira.mariadb.org/browse/MDEV-11675)). \{% endtab %\}
+\{% tabs %\} \{% tab title="Current" %\} ALTER TABLE got fully executed on the primary first, and only then was it replicated and started executing on replicas. [An option](../../../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#binlog_alter_two_phase) was added to replicate sooner and begin executing on replicas, directly when it _starts_ executing on the primary, not when it _finishes_. This way the replication lag caused by a heavy ALTER TABLE can be completely eliminated ([MDEV-11675](https://jira.mariadb.org/browse/MDEV-11675)). \{% endtab %\}
 
-\{% tab title="< 10.8.1" %\} The [binlog\_alter\_two\_phase](../../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#binlog_alter_two_phase) option is not available. \{% endtab %\} \{% endtabs %\}
+\{% tab title="< 10.8.1" %\} The [binlog\_alter\_two\_phase](../../../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#binlog_alter_two_phase) option is not available. \{% endtab %\} \{% endtabs %\}
 
 ## Examples
 
@@ -780,7 +780,7 @@ Adding a unique index:
 ALTER TABLE rooms ADD UNIQUE INDEX u(room_number);
 ```
 
-Adding a primary key for an [application-time period table](../../../sql-structure/temporal-tables/application-time-periods.md) with a [WITHOUT OVERLAPS](../../../sql-structure/temporal-tables/application-time-periods.md#without-overlaps) constraint:
+Adding a primary key for an [application-time period table](../../../../sql-structure/temporal-tables/application-time-periods.md) with a [WITHOUT OVERLAPS](../../../../sql-structure/temporal-tables/application-time-periods.md#without-overlaps) constraint:
 
 ```sql
 ALTER TABLE rooms ADD PRIMARY KEY(room_number, p WITHOUT OVERLAPS);
@@ -813,11 +813,11 @@ SET @@SESSION.binlog_alter_two_phase = true;
 
 ## See Also
 
-* [CREATE TABLE](../create/create-table.md)
-* [DROP TABLE](../drop/drop-table.md)
-* [Character Sets and Collations](../../../data-types/string-data-types/character-sets/supported-character-sets-and-collations.md)
-* [SHOW CREATE TABLE](../../administrative-sql-statements/show/show-create-table.md)
-* [Instant ADD COLUMN for InnoDB](../../../../server-usage/storage-engines/innodb/innodb-online-ddl/instant-add-column-for-innodb.md)
+* [CREATE TABLE](../../create/create-table.md)
+* [DROP TABLE](../../drop/drop-table.md)
+* [Character Sets and Collations](../../../../data-types/string-data-types/character-sets/supported-character-sets-and-collations.md)
+* [SHOW CREATE TABLE](../../../administrative-sql-statements/show/show-create-table.md)
+* [Instant ADD COLUMN for InnoDB](../../../../../server-usage/storage-engines/innodb/innodb-online-ddl/instant-add-column-for-innodb.md)
 
 <sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 

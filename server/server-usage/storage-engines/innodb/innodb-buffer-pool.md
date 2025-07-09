@@ -26,7 +26,7 @@ The buffer pool can be set dynamically. See [Setting Innodb Buffer Pool Size Dyn
 
 ## innodb\_buffer\_pool\_instances
 
-The functionality described below was disabled in [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105), and removed in [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/what-is-mariadb-106), as the original reasons for splitting the buffer pool have mostly gone away.
+The functionality described below was disabled in [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/what-is-mariadb-105), and removed in [MariaDB 10.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/what-is-mariadb-106), as the original reasons for splitting the buffer pool have mostly gone away.
 
 ## innodb\_old\_blocks\_pct and innodb\_old\_blocks\_time
 

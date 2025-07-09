@@ -78,7 +78,7 @@ log_slave_updates
 ### How does Multi-Master Ring Replication work
 
 * The main difference between Multi-Master Ring Replication and normal replication is that a change done by a master will eventually replicate back to it. When this happens, the master will see that the binary log event has the same server\_id as the master has and will ignore the event. This is why it is critical to ensure that all server\_id's are unique and that one does not change the server id.
-* When doing [ALTER TABLE](../../reference/sql-statements/data-definition/alter/alter-table.md) in a Multi-Master Ring replication setup, you should be aware the while you are running an [ALTER TABLE](../../reference/sql-statements/data-definition/alter/alter-table.md) on one master, another master can generate events that uses the old table definition. You should especially take care to not drop columns that could be in use by any application or still available in the upcoming replication stream.
+* When doing [ALTER TABLE](../../reference/sql-statements/data-definition/alter/alter-table/) in a Multi-Master Ring replication setup, you should be aware the while you are running an [ALTER TABLE](../../reference/sql-statements/data-definition/alter/alter-table/) on one master, another master can generate events that uses the old table definition. You should especially take care to not drop columns that could be in use by any application or still available in the upcoming replication stream.
 
 ### How to resolve things if they go wrong in Multi-Master Ring Replication
 

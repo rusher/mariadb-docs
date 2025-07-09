@@ -12,7 +12,7 @@ InnoDB periodically performs **checkpoints**. During a checkpoint operation, Inn
 
 In the event of a server crash, InnoDB utilizes the Redo Log for **crash recovery** during the subsequent server startup. It locates the last checkpoint within the Redo Log and then replays the Redo Log records generated since that checkpoint, effectively flushing these pending changes to the InnoDB tablespace files.
 
-The redo log files are typically named `ib_logfileN`, where `N` is an integer. However, starting with [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105), there is a single redo log file, consistently named `ib_logfile0`. The location of these redo log files is determined by the `innodb_log_group_home_dir` system variable, if configured. If this variable is not set, the redo log files are created in the directory specified by the `datadir` system variable. The redo log plays a crucial role during crash recovery and in the background process of flushing transactions to the tablespaces.
+The redo log files are typically named `ib_logfileN`, where `N` is an integer. However, starting with [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/what-is-mariadb-105), there is a single redo log file, consistently named `ib_logfile0`. The location of these redo log files is determined by the `innodb_log_group_home_dir` system variable, if configured. If this variable is not set, the redo log files are created in the directory specified by the `datadir` system variable. The redo log plays a crucial role during crash recovery and in the background process of flushing transactions to the tablespaces.
 
 ## Feature Summary
 
@@ -21,7 +21,7 @@ The redo log files are typically named `ib_logfileN`, where `N` is an integer. H
 | Transaction Log | InnoDB Redo Log                                                                                                                                                                                                               |                                                                                                               |
 | Storage Engine  | InnoDB                                                                                                                                                                                                                        |                                                                                                               |
 | Purpose         | Crash Safety                                                                                                                                                                                                                  |                                                                                                               |
-| Availability    | All ES and CS versions                                                                                                                                                                                                        | [MariaDB Enterprise Server](https://app.gitbook.com/s/JqgUabdZsoY5EiaJmqgn/)                                  |
+| Availability    | All ES and CS versions                                                                                                                                                                                                        | [MariaDB Enterprise Server](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/JqgUabdZsoY5EiaJmqgn/)           |
 | Location        | Set by [innodb\_log\_group\_home\_dir](innodb-system-variables.md#innodb_log_group_home_dir) (Defaults to [datadir](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#datadir)) |                                                                                                               |
 | Quantity        | 1 (ES 10.5+, CS 10.5+)                                                                                                                                                                                                        | [Configure the InnoDB Redo Log](mariadb-enterprise-server-innodb-operations/configure-the-innodb-redo-log.md) |
 | Size            | Set by [innodb\_log\_file\_size](innodb-system-variables.md#innodb_log_file_size) (default varies)                                                                                                                            | [Configure the InnoDB Redo Log](mariadb-enterprise-server-innodb-operations/configure-the-innodb-redo-log.md) |
@@ -61,8 +61,8 @@ When both [innodb\_flush\_log\_at\_trx\_commit=1](innodb-system-variables.md#inn
 
 The redo log group capacity is the total combined size of all InnoDB redo logs. The relevant factors are:
 
-* From [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105), there is 1 redo log.
-* The size of each redo log file is configured by the [innodb\_log\_file\_size](innodb-system-variables.md#innodb_log_file_size) system variable. This can safely be set to a much higher value from [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105). Before [MariaDB 10.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-9-series/what-is-mariadb-109), resizing required the server to be restarted. From [MariaDB 10.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-9-series/what-is-mariadb-109) the variable can be set dynamically.
+* From [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/what-is-mariadb-105), there is 1 redo log.
+* The size of each redo log file is configured by the [innodb\_log\_file\_size](innodb-system-variables.md#innodb_log_file_size) system variable. This can safely be set to a much higher value from [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/what-is-mariadb-105). Before [MariaDB 10.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-9-series/what-is-mariadb-109), resizing required the server to be restarted. From [MariaDB 10.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-9-series/what-is-mariadb-109) the variable can be set dynamically.
 
 The redo log group capacity is determined by the following calculation:
 
@@ -76,7 +76,7 @@ For example, if [innodb\_log\_file\_size](innodb-system-variables.md#innodb_log_
 
 ### Changing the Redo Log Group Capacity
 
-**MariaDB starting with** [**10.5**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105)
+**MariaDB starting with** [**10.5**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/what-is-mariadb-105)
 
 The number of redo log files is fixed.
 
@@ -104,9 +104,9 @@ The checkpoint age is the amount of data written to the InnoDB redo log since th
 
 #### Determining the Checkpoint Age in InnoDB
 
-**MariaDB starting with** [**10.5**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105)
+**MariaDB starting with** [**10.5**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/what-is-mariadb-105)
 
-[MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105) reintroduced the [Innodb\_checkpoint\_age](../../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_checkpoint_age) status variable for determining the checkpoint age.
+[MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/what-is-mariadb-105) reintroduced the [Innodb\_checkpoint\_age](../../../ha-and-performance/optimization-and-tuning/system-variables/innodb-status-variables.md#innodb_checkpoint_age) status variable for determining the checkpoint age.
 
 The checkpoint age can also be determined by the process shown below.
 

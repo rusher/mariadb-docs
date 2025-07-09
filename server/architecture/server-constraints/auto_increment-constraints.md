@@ -334,7 +334,7 @@ $ sudo systemctl restart mariadb
 
 ## Setting a Table's Next AUTO\_INCREMENT Value
 
-A table's next `AUTO_INCREMENT` value can be set with the [ALTER TABLE](../../reference/sql-statements/data-definition/alter/alter-table.md) statement. The value is set using the `AUTO_INCREMENT` table option.
+A table's next `AUTO_INCREMENT` value can be set with the [ALTER TABLE](../../reference/sql-statements/data-definition/alter/alter-table/) statement. The value is set using the `AUTO_INCREMENT` table option.
 
 Let's alter the `AUTO_INCREMENT` value for the table created in the [Creating an InnoDB Table with an AUTO\_INCREMENT Column](auto_increment-constraints.md#creating-an-innodb-table-with-an-auto_increment-column) section and then insert a row into the table, so we can confirm that it uses the new value:
 
@@ -344,7 +344,7 @@ Let's alter the `AUTO_INCREMENT` value for the table created in the [Creating an
 $ mariadb --user=root
 ```
 
-2. Alter the table's next `AUTO_INCREMENT` value with the [ALTER TABLE](../../reference/sql-statements/data-definition/alter/alter-table.md) statement:
+2. Alter the table's next `AUTO_INCREMENT` value with the [ALTER TABLE](../../reference/sql-statements/data-definition/alter/alter-table/) statement:
 
 ```
 ALTER TABLE hq_sales.invoices

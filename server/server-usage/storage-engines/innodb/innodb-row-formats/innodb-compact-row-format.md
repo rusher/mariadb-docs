@@ -10,7 +10,7 @@ The `COMPACT` row format is similar to the `REDUNDANT` row format, but it stores
 * Compact row format does not store large columns as efficiently as the Dynamic row format.
 * Compact row format limits indexing column values to 767 bytes, which is significant smaller than the Dynamic row format.
 
-The easiest way to create an InnoDB table that uses the `COMPACT` row format is by setting the [ROW\_FORMAT](../../../../reference/sql-statements/data-definition/create/create-table.md#row_format) table option to `COMPACT` in a [CREATE TABLE](../../../../reference/sql-statements/data-definition/create/create-table.md) or [ALTER TABLE](../../../../reference/sql-statements/data-definition/alter/alter-table.md) statement.
+The easiest way to create an InnoDB table that uses the `COMPACT` row format is by setting the [ROW\_FORMAT](../../../../reference/sql-statements/data-definition/create/create-table.md#row_format) table option to `COMPACT` in a [CREATE TABLE](../../../../reference/sql-statements/data-definition/create/create-table.md) or [ALTER TABLE](../../../../reference/sql-statements/data-definition/alter/alter-table/) statement.
 
 It is recommended to set the [innodb\_strict\_mode](../innodb-system-variables.md#innodb_strict_mode) system variable to `ON` when using this row format.
 

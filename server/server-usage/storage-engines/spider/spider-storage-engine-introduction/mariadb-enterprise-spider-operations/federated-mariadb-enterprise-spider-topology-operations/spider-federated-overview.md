@@ -13,7 +13,7 @@ Choose an operation for the Sharded MariaDB Enterprise Spider topology:
 
 ## Update Character Sets and Collations
 
-The character set or collation for the Spider Table can be updated or modified using the [ALTER TABLE](../../../../../../reference/sql-statements/data-definition/alter/alter-table.md) statement.
+The character set or collation for the Spider Table can be updated or modified using the [ALTER TABLE](../../../../../../reference/sql-statements/data-definition/alter/alter-table/) statement.
 
 On the Spider Node, alter the Spider Table's character set and collation:
 
@@ -27,7 +27,7 @@ If the new character set and collation are not compatible with the character set
 
 ## Update Connection Options
 
-In a Federated MariaDB Enterprise Spider topology, the connection options for a Data Node can be updated using the [ALTER TABLE](../../../../../../reference/sql-statements/data-definition/alter/alter-table.md) statement.
+In a Federated MariaDB Enterprise Spider topology, the connection options for a Data Node can be updated using the [ALTER TABLE](../../../../../../reference/sql-statements/data-definition/alter/alter-table/) statement.
 
 * On the Spider Node\*, alter the table's connection details:
 

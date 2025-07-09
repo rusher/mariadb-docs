@@ -19,7 +19,7 @@ In MariaDB, transactions are optionally implemented by [storage engines](../../.
 
 Most of the information in this page refers to generic MariaDB server behaviors or InnoDB. For [MyRocks](../../../../server-usage/storage-engines/myrocks/) and [TokuDB](../../../../server-usage/storage-engines/tokudb/) please check the proper KnowledgeBase sections.
 
-Writing into a non-transactional table in a transaction can still be useful. The reason is that a [metadata lock](../../../../reference/sql-statements/transactions/metadata-locking.md) is acquired on the table for the duration of the transaction, so that [ALTER TABLEs](../../../../reference/sql-statements/data-definition/alter/alter-table.md) are queued.
+Writing into a non-transactional table in a transaction can still be useful. The reason is that a [metadata lock](../../../../reference/sql-statements/transactions/metadata-locking.md) is acquired on the table for the duration of the transaction, so that [ALTER TABLEs](../../../../reference/sql-statements/data-definition/alter/alter-table/) are queued.
 
 It is possible to write into transactional and non-transactional tables within a single transaction. It is important to remember that non-transactional engines will have the following limitations:
 

@@ -31,11 +31,11 @@ By default, ANALYZE TABLE statements are written to the [binary log](../../../se
 {% endtab %}
 
 {% tab title="< 10.6.16" %}
-`ANALYZE TABLE` is blocking and intrusive.&#x20;
+`ANALYZE TABLE` is blocking and intrusive.
 {% endtab %}
 {% endtabs %}
 
-`ANALYZE TABLE` is also supported for partitioned tables. You can use [`ALTER TABLE`](../data-definition/alter/alter-table.md#analyze-partition) `... ANALYZE PARTITION` to analyze one or more partitions.
+`ANALYZE TABLE` is also supported for partitioned tables. You can use [`ALTER TABLE`](../data-definition/alter/alter-table/#analyze-partition) `... ANALYZE PARTITION` to analyze one or more partitions.
 
 The [Aria](../../../server-usage/storage-engines/aria/) storage engine supports [progress reporting](../administrative-sql-statements/show/show-processlist.md) for the `ANALYZE TABLE` statement.
 

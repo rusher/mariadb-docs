@@ -1,8 +1,8 @@
 # mariadb-conv
 
-**MariaDB starting with** [**10.5.1**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1051-release-notes)
+**MariaDB starting with** [**10.5.1**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-1051-release-notes)
 
-`mariadb-conv` is a character set conversion utility for MariaDB and was added in [MariaDB 10.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1051-release-notes).
+`mariadb-conv` is a character set conversion utility for MariaDB and was added in [MariaDB 10.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-1051-release-notes).
 
 ## Usage
 
@@ -105,7 +105,7 @@ Note:
 
 * The `-t` options assume a Western machine.
 * The `-c` option is needed to ignore conversion errors for Cyrillic and CJK characters.
-* `--delimiter=` additionally needs the carriage return character&#x20;
+* `--delimiter=` additionally needs the carriage return character
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

@@ -79,7 +79,7 @@ DESCRIBE books;
 +--------------+-------------+------+-----+---------+-------+
 ```
 
-To modify an existing table, use the `ALTER TABLE` statement (see [ALTER TABLE documentation](../reference/sql-statements/data-definition/alter/alter-table.md)). To delete a table and all its data (irreversibly), use `DROP TABLE table_name;` (see [DROP TABLE documentation](../reference/sql-statements/data-definition/drop/drop-table.md)).
+To modify an existing table, use the `ALTER TABLE` statement (see [ALTER TABLE documentation](../reference/sql-statements/data-definition/alter/alter-table/)). To delete a table and all its data (irreversibly), use `DROP TABLE table_name;` (see [DROP TABLE documentation](../reference/sql-statements/data-definition/drop/drop-table.md)).
 
 Example of another table, `authors`, using `AUTO_INCREMENT` for the primary key:
 
