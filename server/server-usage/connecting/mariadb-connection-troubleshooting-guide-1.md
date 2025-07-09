@@ -55,7 +55,7 @@ The [unix\_socket authentication plugin](../../reference/plugins/authentication-
 
 Authentication is granted to a particular username/host combination. `user1'@'localhost'`, for example, is not the same as `user1'@'166.78.144.191'`. See the [GRANT](../../reference/sql-statements/account-management-sql-statements/grant.md) article for details on granting permissions.
 
-Passwords are hashed with [PASSWORD](../../reference/sql-functions/secondary-functions/encryption-hashing-and-compression-functions/password.md) function. If you have set a password with the [SET PASSWORD](../../reference/sql-statements/account-management-sql-statements/set-password.md) statement, the [PASSWORD](../../reference/sql-functions/secondary-functions/encryption-hashing-and-compression-functions/password.md) function must be used at the same time. For example, `SET PASSWORD FOR 'bob'@'%.loc.gov' = PASSWORD('newpass')` rather than just `SET PASSWORD FOR 'bob'@'%.loc.gov' = 'newpass'`;
+Passwords are hashed with [PASSWORD](../../reference/sql-functions/secondary-functions/encryption-hashing-and-compression-functions/password.md) function. If you have set a password with the [SET PASSWORD](../../reference/sql-statements/account-management-sql-statements/set-password.md) statement, the `PASSWORD` function must be used at the same time. For example, `SET PASSWORD FOR 'bob'@'%.loc.gov' = PASSWORD('newpass')` rather than just `SET PASSWORD FOR 'bob'@'%.loc.gov' = 'newpass'` .
 
 #### Problems Exporting Query Results
 
