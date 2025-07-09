@@ -36,7 +36,7 @@ INSERT INTO books (title, author_id, isbn, year_pub) VALUES
  ('Notes from Underground', 2, '067973452X', '');
 ```
 
-If you are unclear what these statements do, review the [MariaDB Primer](../basics/mariadb-usage-guide-1.md) and [MariaDB Basics](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/mariadb-basics/README.md) tutorials.
+If you are unclear what these statements do, review the [MariaDB Primer](../basics/mariadb-usage-guide-1.md) and [MariaDB Basics](../../mariadb-quickstart-guides/basics-guide.md) tutorials.
 
 #### Basic Elements
 

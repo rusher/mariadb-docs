@@ -26,7 +26,7 @@ INSERT INTO billable_work
 VALUES('1021', '1256', CURRENT_DATE);
 ```
 
-The column _session\_date_ is a `DATE` column. Notice that there are no quotes around the date function. If there were it would be taken as a literal value rather than a function. Incidentally, I've skipped discussing how the table was set up. If you're not familiar with how to set up a table, you may want to read the [MariaDB Basics](https://github.com/mariadb-corporation/docs-server/blob/test/en/mariadb-basics/README.md) article. To see what was just recorded by the [INSERT](../../reference/sql-statements/data-manipulation/inserting-loading-data/insert.md) statement above, the following may be entered (results follow):
+The column _session\_date_ is a `DATE` column. Notice that there are no quotes around the date function. If there were it would be taken as a literal value rather than a function. Incidentally, I've skipped discussing how the table was set up. If you're not familiar with how to set up a table, you may want to read the [MariaDB Basics](../../mariadb-quickstart-guides/basics-guide.md) article. To see what was just recorded by the [INSERT](../../reference/sql-statements/data-manipulation/inserting-loading-data/insert.md) statement above, the following may be entered (results follow):
 
 ```sql
 SELECT rec_id, doctor_id, 
