@@ -183,7 +183,7 @@ Enables administration of the [binary log](../../../server-management/server-mon
 * [sync\_binlog](../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#sync_binlog).
 {% endtab %}
 
-{% tab title="< 10.5.2" %}
+{% tab title="< 10.5" %}
 BINLOG ADMIN isn't available.
 {% endtab %}
 {% endtabs %}
