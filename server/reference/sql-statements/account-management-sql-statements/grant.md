@@ -300,7 +300,15 @@ Execute [FLUSH](../administrative-sql-statements/flush-commands/flush.md) statem
 
 #### **REPLICATION CLIENT**
 
-Execute [SHOW MASTER STATUS](../administrative-sql-statements/show/show-binlog-status.md) and [SHOW BINARY LOGS](../administrative-sql-statements/show/show-binary-logs.md) informative statements. Renamed to [BINLOG MONITOR](grant.md#binlog-monitor) in [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1052-release-notes) (but still supported as an alias for compatibility reasons). [SHOW SLAVE STATUS](../administrative-sql-statements/show/show-replica-status.md) was part of [REPLICATION CLIENT](grant.md#replication-client) prior to [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105).
+{% tabs %}
+{% tab title="Current" %}
+Execute [SHOW MASTER STATUS](../administrative-sql-statements/show/show-binlog-status.md) and [SHOW BINARY LOGS](../administrative-sql-statements/show/show-binary-logs.md) informative statements. Renamed to [BINLOG MONITOR](grant.md#binlog-monitor) (but still supported as an alias for compatibility reasons).
+{% endtab %}
+
+{% tab title="< 10.5" %}
+Execute [SHOW MASTER STATUS](../administrative-sql-statements/show/show-binlog-status.md) and [SHOW BINARY LOGS](../administrative-sql-statements/show/show-binary-logs.md) informative statements. [SHOW SLAVE STATUS](../administrative-sql-statements/show/show-replica-status.md) is part of [REPLICATION CLIENT](grant.md#replication-client).
+{% endtab %}
+{% endtabs %}
 
 {% tabs %}
 {% tab title="Current" %}
@@ -316,11 +324,11 @@ Execute [SHOW MASTER STATUS](../administrative-sql-statements/show/show-binlog-s
 
 {% tabs %}
 {% tab title="Current" %}
-Permits administration of primary servers, including the [SHOW REPLICA HOSTS](../administrative-sql-statements/show/show-replica-hosts.md) statement, and setting the [gtid\_binlog\_state](../../../ha-and-performance/standard-replication/gtid.md#gtid_binlog_state), [gtid\_domain\_id](../../../ha-and-performance/standard-replication/gtid.md#gtid_domain_id), [master\_verify\_checksum](../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#master_verify_checksum) and [server\_id](../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#server_id) system variables.&#x20;
+Permits administration of primary servers, including the [SHOW REPLICA HOSTS](../administrative-sql-statements/show/show-replica-hosts.md) statement, and setting the [gtid\_binlog\_state](../../../ha-and-performance/standard-replication/gtid.md#gtid_binlog_state), [gtid\_domain\_id](../../../ha-and-performance/standard-replication/gtid.md#gtid_domain_id), [master\_verify\_checksum](../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#master_verify_checksum) and [server\_id](../../../ha-and-performance/standard-replication/replication-and-binary-log-system-variables.md#server_id) system variables.
 {% endtab %}
 
 {% tab title="< 10.5" %}
-#### `REPLICATION MASTER ADMIN` is not available.
+**`REPLICATION MASTER ADMIN` is not available.**
 {% endtab %}
 {% endtabs %}
 
@@ -356,7 +364,7 @@ Synonym for [REPLICATION SLAVE](grant.md#replication-slave).
 {% endtab %}
 
 {% tab title="< 10.5" %}
-#### `REPLICATION REPLICA` is not available.
+**`REPLICATION REPLICA` is not available.**
 {% endtab %}
 {% endtabs %}
 
@@ -368,7 +376,7 @@ Accounts used by replica servers on the primary need this privilege. This is nee
 {% endtab %}
 
 {% tab title="< 10.5" %}
-Accounts used by replica servers on the primary need this privilege. This is needed to get the updates made on the master.&#x20;
+Accounts used by replica servers on the primary need this privilege. This is needed to get the updates made on the master.
 {% endtab %}
 {% endtabs %}
 
