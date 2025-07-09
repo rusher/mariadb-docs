@@ -1,4 +1,4 @@
-# MariaDB Connector/C 3.1.8 Release Notes
+# Connector/C 3.1.8 Release Notes
 
 The most recent [_**Stable**_](../../../mariadb-release-criteria.md) _**(GA)**_ release of MariaDB Connector/C is:[**MariaDB Connector/C 3.4.5**](../mariadb-connector-c-3-4-release-notes/mariadb-connector-c-3-4-5-release-notes.md)
 
@@ -13,7 +13,7 @@ Connector/C, formerly known as MariaDB Client Library for C.
 
 ## Notable Changes
 
-* Included in [MariaDB 10.5.3](../../../mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1053-release-notes.md), [MariaDB 10.4.13](../../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-10413-release-notes.md), [MariaDB 10.3.23](../../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-10323-release-notes.md), and [MariaDB 10.2.32](../../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-10232-release-notes.md)
+* Included in [MariaDB 10.5.3](../../../mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-1053-release-notes.md), [MariaDB 10.4.13](../../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-10413-release-notes.md), [MariaDB 10.3.23](../../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-10323-release-notes.md), and [MariaDB 10.2.32](../../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-10232-release-notes.md)
 * In this version we've moved to providing binaries for several different Linux distributions instead of just a pair of "generic" Linux binaries (a 32-bit and a 64-bit). If you want to continue using the generic binaries, they are still present and listed as "Ubuntu 14.04 32-bit" and "Ubuntu 14.04 64-bit" on the downloads page
 * [CONC-304](https://jira.mariadb.org/browse/CONC-304): Rename the static library to `libmariadb.a` and other `libmariadb` files in a consistent manner
 * [CONC-441](https://jira.mariadb.org/browse/CONC-441): Default user name for C/C is wrong if login user is different from effective user

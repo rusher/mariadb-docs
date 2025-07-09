@@ -24,7 +24,7 @@ Thanks, and enjoy MariaDB!
 * [MDEV-9640](https://jira.mariadb.org/browse/MDEV-9640) [INFORMATION\_SCHEMA.INNODB\_TABLESPACES\_ENCRYPTION](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_tablespaces_encryption-table) has a new column; `key_id`.
 * The [Galera library](https://codership.com/content/using-galera-cluster) has\
   been updated to version 25.3.15.
-* The [plugin maturity](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/information-on-plugins/list-of-plugins) has been updated for a number of plugins.
+* The [plugin maturity](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/plugins/list-of-plugins) has been updated for a number of plugins.
 * Fixes for the following [security vulnerabilities](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/security):
   * CVE-\`-\`\`\`
 
