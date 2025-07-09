@@ -8,6 +8,7 @@ The table contains the following columns:
 
 | Column               | Description                                                                   |
 | -------------------- | ----------------------------------------------------------------------------- |
+| Column               | Description                                                                   |
 | VARIABLE\_NAME       | Variable name.                                                                |
 | VARIABLE\_VALUE      | Variable value.                                                               |
 | VARIABLE\_TYPE       | Variable [type](../../../../../data-types/).                                  |

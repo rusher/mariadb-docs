@@ -28,6 +28,7 @@ The SQLTables function returns a result set having the following columns:
 
 | Field       | Data Type | Null | Info Type  | Flag Value |
 | ----------- | --------- | ---- | ---------- | ---------- |
+| Field       | Data Type | Null | Info Type  | Flag Value |
 | Table\_Cat  | char(128) | NO   | FLD\_CAT   | 17         |
 | Table\_Name | char(128) | NO   | FLD\_SCHEM | 18         |
 | Table\_Name | char(128) | NO   | FLD\_NAME  | 1          |
@@ -55,6 +56,7 @@ This will return:
 
 | table\_name |
 | ----------- |
+| table\_name |
 | Categories  |
 | Customers   |
 | Employees   |
@@ -109,6 +111,7 @@ which results in this table:
 
 | column\_name | type\_name | length | prec | nullable |
 | ------------ | ---------- | ------ | ---- | -------- |
+| column\_name | type\_name | length | prec | nullable |
 | CustomerID   | VARCHAR    | 5      | 0    | 1        |
 | CompanyName  | VARCHAR    | 40     | 0    | 1        |
 | ContactName  | VARCHAR    | 30     | 0    | 1        |
@@ -148,6 +151,7 @@ the following columns, depending on the table type:
 
 | Field             | Data Type    | Null | Info Type     | Flag Value | Returned by       |
 | ----------------- | ------------ | ---- | ------------- | ---------- | ----------------- |
+| Field             | Data Type    | Null | Info Type     | Flag Value | Returned by       |
 | Table\_Cat\*      | char(128)    | NO   | FLD\_CAT      | 17         | ODBC, JDBC        |
 | Table\_Schema\*   | char(128)    | NO   | FLD\_SCEM     | 18         | ODBC, JDBC        |
 | Table\_Name       | char(128)    | NO   | FLD\_TABNAME  | 19         | ODBC, JDBC        |
@@ -191,6 +195,7 @@ Currently the available `CATFUNC` are:
 
 | Function    | Specified as:                | Applies to table types:                            |
 | ----------- | ---------------------------- | -------------------------------------------------- |
+| Function    | Specified as:                | Applies to table types:                            |
 | FNC\_TAB    | tables                       | ODBC, JDBC, MYSQL                                  |
 | FNC\_COL    | columns                      | ODBC, JDBC, MYSQL, DBF, CSV, PROXY, XCOL, TBL, WMI |
 | FNC\_DSN    | datasourcesdsnsqldatasources | ODBC                                               |
@@ -205,6 +210,7 @@ The SQLDataSources function returns a result set having the following columns:
 
 | Field       | Data Type    | Null | Info Type | Flag value |
 | ----------- | ------------ | ---- | --------- | ---------- |
+| Field       | Data Type    | Null | Info Type | Flag value |
 | Name        | varchar(256) | NO   | FLD\_NAME | 1          |
 | Description | varchar(256) | NO   | FLD\_REM  | 9          |
 
@@ -219,6 +225,7 @@ The SQLDrivers function returns a result set having the following columns:
 
 | Field       | Type         | Null | Info Type | Flag value |
 | ----------- | ------------ | ---- | --------- | ---------- |
+| Field       | Type         | Null | Info Type | Flag value |
 | Description | varchar(128) | YES  | FLD\_NAME | 1          |
 | Attributes  | varchar(256) | YES  | FLD\_REM  | 9          |
 
@@ -238,6 +245,7 @@ catalog table can be chosen among the following:
 
 | Name           | Type | Flag | Description                    |
 | -------------- | ---- | ---- | ------------------------------ |
+| Name           | Type | Flag | Description                    |
 | Column\_Name   | CHAR | 1    | The name of the property       |
 | Data\_Type     | INT  | 2    | The SQL data type              |
 | Type\_Name     | CHAR | 3    | The SQL type name              |
@@ -270,6 +278,7 @@ will display the result:
 
 | Column\_name      | Data\_Type | Type\_name | Length | Prec |
 | ----------------- | ---------- | ---------- | ------ | ---- |
+| Column\_name      | Data\_Type | Type\_name | Length | Prec |
 | Caption           | 1          | CHAR       | 255    | 1    |
 | Description       | 1          | CHAR       | 255    | 1    |
 | IdentifyingNumber | 1          | CHAR       | 255    | 1    |
@@ -298,6 +307,7 @@ By default, this allocation is done for a maximum return line number of:
 
 | Catfunc      | Max lines |
 | ------------ | --------- |
+| Catfunc      | Max lines |
 | Drivers      | 256       |
 | Data Sources | 512       |
 | Columns      | 20,000    |

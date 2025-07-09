@@ -13,6 +13,7 @@ It contains the following columns:
 
 | Column | Description |
 | --- | --- |
+| Column | Description |
 | OBJECT_TYPE | Type of object to instrument, currently only . Currently, only TABLE', for base table. |
 | OBJECT_SCHEMA | Schema containing the object, either the literal or % for any schema. |
 | OBJECT_NAME | Name of the instrumented object, either the literal or % for any object. |

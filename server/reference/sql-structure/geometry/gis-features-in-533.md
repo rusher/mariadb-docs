@@ -31,6 +31,7 @@ Spatial operators. They produce new geometries.
 
 | Name                                                                                                            | Description                                                                    |
 | --------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------ |
+| Name                                                                                                            | Description                                                                    |
 | [ST\_UNION(A, B)](../../sql-statements/geometry-constructors/geometry-constructors/st_union.md)                 | union of A and B                                                               |
 | [ST\_INTERSECTION(A, B)](../../sql-statements/geometry-constructors/geometry-constructors/st_intersection.md)   | intersection of A and B                                                        |
 | [ST\_SYMDIFFERENCE(A, B)](../../sql-statements/geometry-constructors/geometry-constructors/st_symdifference.md) | symdifference, notintersecting parts of A and B                                |
@@ -40,6 +41,7 @@ Predicates, return boolean result of the relationship
 
 | Name                                                                                                   | Description                     |
 | ------------------------------------------------------------------------------------------------------ | ------------------------------- |
+| Name                                                                                                   | Description                     |
 | [ST\_INTERSECTS(A, B)](../../sql-statements/geometry-constructors/geometry-relations/st-intersects.md) | if A and B have an intersection |
 | [ST\_CROSSES(A, B)](../../sql-statements/geometry-constructors/geometry-relations/st-crosses.md)       | if A and B cross                |
 | [ST\_EQUALS(A, B)](../../sql-statements/geometry-constructors/geometry-relations/st-equals.md)         | if A and B are equal            |

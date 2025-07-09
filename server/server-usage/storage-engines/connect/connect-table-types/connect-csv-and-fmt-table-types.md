@@ -62,6 +62,7 @@ will display the table as:
 
 | name      | children | birth      |
 | --------- | -------- | ---------- |
+| name      | children | birth      |
 | Archibald | 3        | 2001-05-17 |
 | Nabucho   | 2        | 2003-08-12 |
 
@@ -175,6 +176,7 @@ This table will be displayed as:
 
 | ID    | NAME            | DEPNO | SALARY   |
 | ----- | --------------- | ----- | -------- |
+| ID    | NAME            | DEPNO | SALARY   |
 | 12345 | BERTRAND        | 200   | 5009.13  |
 | 56    | POIROT-DELMOTTE | 4256  | 18009.00 |
 | 345   | TRUCMUCHE       | 67    | 19000.25 |
@@ -217,6 +219,7 @@ The table result is:
 
 | ID    | NAME            | DEPNO | SALARY    |
 | ----- | --------------- | ----- | --------- |
+| ID    | NAME            | DEPNO | SALARY    |
 | 12345 | BERTRAND        | 200   | 5,009.13  |
 | 56    | POIROT-DELMOTTE | NULL  | 18,009.00 |
 | 345   | NULL            | 67    | 19,000.25 |

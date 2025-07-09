@@ -16,6 +16,7 @@ The table contains the following columns:
 
 | Column                  | Description                                           |
 | ----------------------- | ----------------------------------------------------- |
+| Column                  | Description                                           |
 | OBJECT\_TYPE            | The table opened by a table handle.                   |
 | OBJECT\_SCHEMA          | The schema that contains the object.                  |
 | OBJECT\_NAME            | The name of the instrumented object.                  |

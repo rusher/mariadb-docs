@@ -38,6 +38,7 @@ The available wrappers are:
 
 | Wrapper             | Description                                                                                                                    |
 | ------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| Wrapper             | Description                                                                                                                    |
 | JdbcInterface       | Used to make the connection with available drivers the standard way.                                                           |
 | ApacheInterface     | Based on the Apache common-dbcp2 package this interface enables making connections to DBCP data sources with any JDBC drivers. |
 | MariadbInterface    | Makes connection to a MariaDB data source.                                                                                     |
@@ -345,6 +346,7 @@ This query returns:
 
 | Table    | Column | Type | Name | Size       |
 | -------- | ------ | ---- | ---- | ---------- |
+| Table    | Column | Type | Name | Size       |
 | testuuid | id     | 1111 | uuid | 2147483647 |
 | testuuid | msg    | 12   | text | 2147483647 |
 
@@ -380,6 +382,7 @@ Result:
 
 | id                                   | msg    |
 | ------------------------------------ | ------ |
+| id                                   | msg    |
 | 4b173ee1-1488-4355-a7ed-62ba59c2b3e7 | First  |
 | 6859f850-94a7-4903-8d3c-fc3c874fc274 | Second |
 
@@ -399,6 +402,7 @@ Result:
 
 | id                                   | msg      |
 | ------------------------------------ | -------- |
+| id                                   | msg      |
 | 4b173ee1-1488-4355-a7ed-62ba59c2b3e7 | First    |
 | 6859f850-94a7-4903-8d3c-fc3c874fc274 | Second   |
 | 2f835fb8-73b0-42f3-a1d3-8a532b38feca | inserted |

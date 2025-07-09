@@ -47,6 +47,7 @@ It can have one or many of the following options:
 
 | Option         | Description                                                    |
 | -------------- | -------------------------------------------------------------- |
+| Option         | Description                                                    |
 | basic          | All old notes.                                                 |
 | unusable\_keys | Give warnings for unusable keys for SELECT, DELETE and UPDATE. |
 | explain        | Give warnings about unusable keys for EXPLAIN.                 |

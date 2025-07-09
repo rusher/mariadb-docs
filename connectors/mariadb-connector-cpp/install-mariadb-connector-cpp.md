@@ -8,6 +8,7 @@ MariaDB Connector/C++ has dependencies. You must install MariaDB Connector/C to 
 
 | MariaDB Connector/C++ | MariaDB Connector/C |
 | --------------------- | ------------------- |
+| MariaDB Connector/C++ | MariaDB Connector/C |
 | 1.1                   | 3.3.3 or later      |
 | 1.0                   | 3.1.1 or later      |
 

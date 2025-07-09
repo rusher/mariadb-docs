@@ -106,6 +106,7 @@ It will be displayed as:
 
 | AUTHOR                   | TITLE                          | TRANSLATOR   | PUBLISHER             | DATEPUB |
 | ------------------------ | ------------------------------ | ------------ | --------------------- | ------- |
+| AUTHOR                   | TITLE                          | TRANSLATOR   | PUBLISHER             | DATEPUB |
 | Jean-Christophe Bernadac | Construire une application XML |              | Eyrolles Paris        | 1999    |
 | William J. Pardi         | XML en Action                  | James Guerin | Microsoft Press Paris | 1999    |
 
@@ -140,6 +141,7 @@ This table returns the following:
 
 | ISBN          | LANG | SUBJECT      |
 | ------------- | ---- | ------------ |
+| ISBN          | LANG | SUBJECT      |
 | 9782212090819 | fr   | applications |
 | 9782840825685 | fr   | applications |
 
@@ -190,6 +192,7 @@ This will return the following result:
 
 | SUBJECT      | LANG | TITLE                          | AUTHOR                   |
 | ------------ | ---- | ------------------------------ | ------------------------ |
+| SUBJECT      | LANG | TITLE                          | AUTHOR                   |
 | applications | fr   | Construire une application XML | Jean-Christophe Bernadac |
 | applications | fr   | XML en Action                  | William J. Pardi         |
 
@@ -271,6 +274,7 @@ replies:
 
 | ISBN          | TITLE         | TRANSLATED              | TRANFN | TRANLN | LOCATION |
 | ------------- | ------------- | ----------------------- | ------ | ------ | -------- |
+| ISBN          | TITLE         | TRANSLATED              | TRANFN | TRANLN | LOCATION |
 | 9782840825685 | XML en Action | adapté de l'anglais par | James  | Guerin | Paris    |
 
 ### Libxml2 default name space issue
@@ -341,6 +345,7 @@ Displays:
 
 | lon               | lat              | ele             | time                |
 | ----------------- | ---------------- | --------------- | ------------------- |
+| lon               | lat              | ele             | time                |
 | -121,982223510742 | 37,3884925842285 | 6,6108512878418 | 01/04/2014 14:54:05 |
 | -121,982192993164 | 37,3885803222656 | 0               | 01/04/2014 14:54:08 |
 | -121,982162475586 | 37,3886299133301 | 0               | 01/04/2014 14:54:10 |
@@ -370,6 +375,7 @@ Displays:
 
 | lon               | lat              | ele             | time                |
 | ----------------- | ---------------- | --------------- | ------------------- |
+| lon               | lat              | ele             | time                |
 | -121,982223510742 | 37,3884925842285 | 6,6108512878418 | 01/04/2014 14:54:05 |
 | -121,982192993164 | 37,3885803222656 | 6.7878279685974 | 01/04/2014 14:54:08 |
 | -121,982162475586 | 37,3886299133301 | 6.7719874382019 | 01/04/2014 14:54:10 |
@@ -513,6 +519,7 @@ Everything seems correct when we get the result:
 
 | SUBJECT      | AUTHOR                   | TITLE                          | TRANSLATOR   | PUBLISHER             |
 | ------------ | ------------------------ | ------------------------------ | ------------ | --------------------- |
+| SUBJECT      | AUTHOR                   | TITLE                          | TRANSLATOR   | PUBLISHER             |
 | applications | Jean-Christophe Bernadac | Construire une application XML |              | Eyrolles Paris        |
 | applications | William J. Pardi         | XML en Action                  | James Guerin | Microsoft Press Paris |
 | général      | Alain Michard            | XML, Langage et Applications   |              | Eyrolles Paris        |
@@ -531,6 +538,7 @@ this returns an apparently wrong answer:
 
 | SUBJECT      | AUTHOR                   | TITLE                          | TRANSLATOR   | PUBLISHER             |
 | ------------ | ------------------------ | ------------------------------ | ------------ | --------------------- |
+| SUBJECT      | AUTHOR                   | TITLE                          | TRANSLATOR   | PUBLISHER             |
 | applications | Jean-Christophe Bernadac | Construire une application XML |              | Eyrolles Paris        |
 | applications | William J. Pardi         | XML en Action                  | James Guerin | Microsoft Press Paris |
 | général      |                          | XML, Langage et Applications   |              |                       |
@@ -624,6 +632,7 @@ This will retrieve and display the following result:
 
 | ISBN          | SUBJECT      | AUTHOR                   | TITLE                          |
 | ------------- | ------------ | ------------------------ | ------------------------------ |
+| ISBN          | SUBJECT      | AUTHOR                   | TITLE                          |
 | 9782212090819 | applications | Jean-Christophe Bernadac | Construire une application XML |
 | 9782212090819 | applications | François Knab            | Construire une application XML |
 | 9782840825685 | applications | William J. Pardi         | XML en Action                  |
@@ -639,6 +648,7 @@ this time the result will be:
 
 | ISBN          | SUBJECT      | TITLE                          | PUBLISHER             |
 | ------------- | ------------ | ------------------------------ | --------------------- |
+| ISBN          | SUBJECT      | TITLE                          | PUBLISHER             |
 | 9782212090819 | applications | Construire une application XML | Eyrolles Paris        |
 | 9782840825685 | applications | XML en Action                  | Microsoft Press Paris |
 | 9782212090529 | général      | XML, Langage et Applications   | Eyrolles Paris        |
@@ -661,6 +671,7 @@ This last query replies:
 
 | ISBN          | SUBJECT      | TITLE                          | PUBLISHER             |
 | ------------- | ------------ | ------------------------------ | --------------------- |
+| ISBN          | SUBJECT      | TITLE                          | PUBLISHER             |
 | 9782212090819 | applications | Construire une application XML | Eyrolles Paris        |
 | 9782212090819 | applications | Construire une application XML | Eyrolles Paris        |
 | 9782840825685 | applications | XML en Action                  | Microsoft Press Paris |
@@ -727,6 +738,7 @@ This query displays:
 
 | SUBJECT      | LANG | TITLE                          | FIRST           | LAST     | YEAR |
 | ------------ | ---- | ------------------------------ | --------------- | -------- | ---- |
+| SUBJECT      | LANG | TITLE                          | FIRST           | LAST     | YEAR |
 | applications | fr   | Construire une application XML | Jean-Christophe | Bernadac | 1999 |
 | applications | fr   | Construire une application XML | François        | Knab     | 1999 |
 | applications | fr   | XML en Action                  | William J.      | Pardi    | 1999 |
@@ -750,6 +762,7 @@ last one responding "Affected rows: 2", the last query answers:
 
 | subject      | lang | title                          | first           | last    | year |
 | ------------ | ---- | ------------------------------ | --------------- | ------- | ---- |
+| subject      | lang | title                          | first           | last    | year |
 | applications | fr   | Construire une application XML | Jean-Christophe | Mercier | 2002 |
 | applications | fr   | Construire une application XML | François        | Knab    | 2002 |
 | applications | fr   | XML en Action                  | William J.      | Pardi   | 1999 |
@@ -779,6 +792,7 @@ We will get the following result:
 
 | ISBN          | SUBJECT      | AUTHOR(S)                               | TITLE                          |
 | ------------- | ------------ | --------------------------------------- | ------------------------------ |
+| ISBN          | SUBJECT      | AUTHOR(S)                               | TITLE                          |
 | 9782212090819 | applications | Jean-Christophe Bernadac, François Knab | Construire une application XML |
 | 9782840825685 | applications | William J. Pardi                        | XML en Action                  |
 | 9782212090529 | général      | Alain Michard                           | XML, Langage et Applications   |
@@ -858,6 +872,7 @@ The table will be displayed as:
 
 | Name     | Origin   | Description                  |
 | -------- | -------- | ---------------------------- |
+| Name     | Origin   | Description                  |
 | Huntsman | Bath, UK | Wonderful hop, light alcohol |
 | Tuborg   | Danmark  | In small bottles             |
 
@@ -911,6 +926,7 @@ able to display the table:
 
 | Name      | Cups | Type     | Sugar |
 | --------- | ---- | -------- | ----- |
+| Name      | Cups | Type     | Sugar |
 | T. Sexton | 10   | Espresso | No    |
 | J. Dinnen | 5    | Decaf    | Yes   |
 
@@ -996,6 +1012,7 @@ This file can be used to display the table on a web browser (encoding should be`
 
 | handler | version | author           | description                               | maturity |
 | ------- | ------- | ---------------- | ----------------------------------------- | -------- |
+| handler | version | author           | description                               | maturity |
 | Maria   | 1.5     | Monty Program Ab | Compatibility aliases for the Aria engine | Gamma    |
 
 **Note:** The XML document encoding is generally specified in the XML header\

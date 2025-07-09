@@ -406,6 +406,7 @@ The `--ftwrl-wait-query-type` option supports the following query types. The def
 
 | Option | Description                                                           |
 | ------ | --------------------------------------------------------------------- |
+| Option | Description                                                           |
 | ALL    | Waits until all queries complete before issuing the global lock       |
 | SELECT | Waits until SELECT statements complete before issuing the global lock |
 | UPDATE | Waits until UPDATE statements complete before issuing the global lock |

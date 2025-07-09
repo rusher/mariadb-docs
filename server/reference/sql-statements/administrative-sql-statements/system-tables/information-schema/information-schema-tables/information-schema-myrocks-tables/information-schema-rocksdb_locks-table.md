@@ -8,6 +8,7 @@ It contains the following columns:
 
 | Column             | Description |
 | ------------------ | ----------- |
+| Column             | Description |
 | COLUMN\_FAMILY\_ID |             |
 | TRANSACTION\_ID    |             |
 | KEY                |             |

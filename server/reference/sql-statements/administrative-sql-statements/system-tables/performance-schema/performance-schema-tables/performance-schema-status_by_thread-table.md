@@ -10,6 +10,7 @@ The table contains the following columns:
 
 | Column          | Description                                                                   |
 | --------------- | ----------------------------------------------------------------------------- |
+| Column          | Description                                                                   |
 | THREAD\_ID      | The thread identifier of the session in which the status variable is defined. |
 | VARIABLE\_NAME  | Status variable name.                                                         |
 | VARIABLE\_VALUE | Aggregated status variable value.                                             |

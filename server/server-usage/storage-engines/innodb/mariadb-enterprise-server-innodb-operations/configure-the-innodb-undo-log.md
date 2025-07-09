@@ -46,6 +46,7 @@ Some example configuration file paths for different distributions are shown in t
 
 | Distributions                | Example configuration file path                |
 | ---------------------------- | ---------------------------------------------- |
+| Distributions                | Example configuration file path                |
 | CentOS RHEL Rocky Linux SLES | /etc/my.cnf.d/z-custom-mariadb.cnf             |
 | Debian Ubuntu                | /etc/mysql/mariadb.conf.d/z-custom-mariadb.cnf |
 
@@ -174,6 +175,7 @@ Some example configuration file paths for different distributions are shown in t
 
 | Distributions                | Example configuration file path                |
 | ---------------------------- | ---------------------------------------------- |
+| Distributions                | Example configuration file path                |
 | CentOS RHEL Rocky Linux SLES | /etc/my.cnf.d/z-custom-mariadb.cnf             |
 | Debian Ubuntu                | /etc/mysql/mariadb.conf.d/z-custom-mariadb.cnf |
 

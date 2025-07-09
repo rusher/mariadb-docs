@@ -8,6 +8,7 @@ generated from one row of the object table. For example, supposing we have &#x61
 
 | name    | dog | cat | rabbit | bird | fish |
 | ------- | --- | --- | ------ | ---- | ---- |
+| name    | dog | cat | rabbit | bird | fish |
 | John    | 2   | 0   | 0      | 0    | 0    |
 | Bill    | 0   | 1   | 0      | 0    | 0    |
 | Mary    | 1   | 1   | 0      | 0    | 0    |
@@ -37,6 +38,7 @@ We will get the result:
 
 | name    | race   | number |
 | ------- | ------ | ------ |
+| name    | race   | number |
 | John    | dog    | 2      |
 | Bill    | cat    | 1      |
 | Mary    | dog    | 1      |
@@ -69,6 +71,7 @@ You will get the result:
 
 | name    | race   | number |
 | ------- | ------ | ------ |
+| name    | race   | number |
 | John    | dog    | 2      |
 | Lisbeth | rabbit | 2      |
 | Kevin   | cat    | 2      |
@@ -99,6 +102,7 @@ This table is displayed as:
 
 | name | month     | day |
 | ---- | --------- | --- |
+| name | month     | day |
 | Foo  | january   | 8   |
 | Foo  | february  | 7   |
 | Foo  | march     | 2   |

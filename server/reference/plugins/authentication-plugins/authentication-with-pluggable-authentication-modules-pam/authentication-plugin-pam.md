@@ -493,6 +493,7 @@ You may find the following PAM-related tutorials helpful:
 
 | Version | Status | Introduced                                                                                                                                                                                                         |
 | ------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Version | Status | Introduced                                                                                                                                                                                                         |
 | 2.0     | Beta   | [MariaDB 10.4.0](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/plugins/authentication-plugins/authentication-with-pluggable-authentication-modules-pam/broken-reference/README.md) |
 | 1.0     | Stable | [MariaDB 10.0.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-10010-release-notes)                                |
 | 1.0     | Beta   | [MariaDB 5.2.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-2-series/mariadb-5210-release-notes)                                   |

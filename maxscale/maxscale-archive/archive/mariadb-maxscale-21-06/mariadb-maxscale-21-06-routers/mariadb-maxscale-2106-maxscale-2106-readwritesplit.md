@@ -449,6 +449,7 @@ loss of a master server.
 
 | Value            | Description                                                                                                                     |
 | ---------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| Value            | Description                                                                                                                     |
 | fail\_instantly  | When the failure of the master server is detected, the connection will be closed immediately.                                   |
 | fail\_on\_write  | The client connection is closed if a write query is received when no master is available.                                       |
 | error\_on\_write | If no master is available and a write query is received, an error is returned stating that the connection is in read-only mode. |
@@ -917,6 +918,7 @@ server which would cause the connection to be closed and a warning to be logged.
 
 | Connector         | Supported | Version |
 | ----------------- | --------- | ------- |
+| Connector         | Supported | Version |
 | Connector/J       | Yes       | 3.5.2   |
 | Connector/Node.js | Yes       | 3.4.0   |
 | Connector/R2DBC   | Yes       | 1.3.0   |

@@ -7,6 +7,7 @@ In contrast to the text protocol, the binary protocol transfers the data accordi
 
 | Field type | Representation |
 | --- | --- |
+| Field type | Representation |
 | MYSQL_TYPE_BIT | str_LEC |
 | MYSQL_TYPE_BLOB | str_LEC |
 | MYSQL_TYPE_DATE MYSQL_TYPE_DATETIME MYSQL_TYPE_TIMESTAMP | int_11 (default)int_7 (no microseconds)int_4 (no time values)int_0 (no values) |

@@ -167,6 +167,7 @@ delimiter ;
 
 | Option                                                                                                                        | Description                                                    |
 | ----------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------- |
+| Option                                                                                                                        | Description                                                    |
 | [innodb\_buffer\_pool\_size](../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_size) | Increase this if you have many indexes in InnoDB/XtraDB tables |
 | [key\_buffer\_size](../../../server-usage/storage-engines/myisam-storage-engine/myisam-system-variables.md#key_buffer_size)   | Increase this if you have many indexes in MyISAM tables        |
 | [max\_allowed\_packet](../system-variables/server-system-variables.md#max_allowed_packet)                                     | Increase this to allow bigger multi-insert statements          |

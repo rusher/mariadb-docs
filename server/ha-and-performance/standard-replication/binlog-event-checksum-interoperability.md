@@ -53,6 +53,7 @@ combination of primary and replica servers and checksum enabled/disabled:
 
 | Primary mariadb-lbinlog | Replica / enabled? | Checksums | Status                                                                                                              |
 | ----------------------- | ------------------ | --------- | ------------------------------------------------------------------------------------------------------------------- |
+| Primary mariadb-lbinlog | Replica / enabled? | Checksums | Status                                                                                                              |
 | OLD                     | OLD                | -         | Ok                                                                                                                  |
 | OLD                     | NEW-MARIA          | -         | Ok                                                                                                                  |
 | OLD                     | MYSQL              | -         | Ok                                                                                                                  |

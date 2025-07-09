@@ -10,6 +10,7 @@ The table contains the following columns:
 
 | Column          | Description                       |
 | --------------- | --------------------------------- |
+| Column          | Description                       |
 | VARIABLE\_NAME  | The global status variable name.  |
 | VARIABLE\_VALUE | The global status variable value. |
 

@@ -12,6 +12,7 @@ They contain the following columns:
 
 | Column         | Description                                                                                                                                           |
 | -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Column         | Description                                                                                                                                           |
 | host           | Host that the client connected from, or background for background threads (where the HOST column in the underlying Performance Schema table is NULL). |
 | total          | Total number of statements for the host.                                                                                                              |
 | max\_latency   | Maximum single wait time of timed statements for the host.                                                                                            |

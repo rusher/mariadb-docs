@@ -12,6 +12,7 @@ The Compressed row format supports the following block sizes:
 
 | Block Size | KEY\_BLOCK\_SIZE Value |
 | ---------- | ---------------------- |
+| Block Size | KEY\_BLOCK\_SIZE Value |
 | 1 KB       | 1                      |
 | 2 KB       | 2                      |
 | 4 KB       | 4                      |
@@ -28,6 +29,7 @@ The limit for indexing column values depends on the [innodb\_page\_size](../../.
 
 | Page Size | Index Prefix Limit |
 | --------- | ------------------ |
+| Page Size | Index Prefix Limit |
 | 16k       | 3072 bytes         |
 | 8k        | 1536 bytes         |
 | 4k        | 768 bytes          |

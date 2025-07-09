@@ -15,6 +15,7 @@ MaxScale supports different administrative interfaces for different kinds of env
 
 | Interface                                                                                     | Description                               |
 | --------------------------------------------------------------------------------------------- | ----------------------------------------- |
+| Interface                                                                                     | Description                               |
 | [MaxCtrl](administrative-tools-for-mariadb-maxscale-maxctrl/operating-maxscale-with-maxctrl/) | Command-line administrative utility.      |
 | [MaxGUI](maxgui/operating-maxscale-with-maxgui/)                                              | Graphical administrative utility.         |
 | [REST API](broken-reference)                                                                  | REST API for programmatic administration. |

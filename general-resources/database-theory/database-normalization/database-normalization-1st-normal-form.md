@@ -38,6 +38,7 @@ So far, the plant example has no keys, and there are repeating groups. To get it
 
 | Plant location table |
 | --- |
+| Plant location table |
 | Location code |
 | Location name |
 | Plant code |

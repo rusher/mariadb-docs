@@ -8,6 +8,7 @@ It contains the following columns:
 
 | Column       | Description                                                                                                 |
 | ------------ | ----------------------------------------------------------------------------------------------------------- |
+| Column       | Description                                                                                                 |
 | CF\_NAME     | [Column family](../../../../../../../server-usage/storage-engines/myrocks/myrocks-column-families.md) name. |
 | OPTION\_TYPE |                                                                                                             |
 | VALUE        |                                                                                                             |

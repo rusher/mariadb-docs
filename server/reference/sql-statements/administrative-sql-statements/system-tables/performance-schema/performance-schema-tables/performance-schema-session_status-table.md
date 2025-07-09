@@ -10,6 +10,7 @@ The table contains the following columns:
 
 | Column          | Description                        |
 | --------------- | ---------------------------------- |
+| Column          | Description                        |
 | VARIABLE\_NAME  | The session status variable name.  |
 | VARIABLE\_VALUE | The session status variable value. |
 

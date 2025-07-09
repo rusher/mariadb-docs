@@ -25,6 +25,7 @@ Known bug [MDEV-13094](https://jira.mariadb.org/browse/MDEV-13094). A few upgrad
 
 | type | pagesize | OLD version | file format | encrypted | compressed |  | NEW version | file format | encrypted | compressed | readonly | result | notes |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| type | pagesize | OLD version | file format | encrypted | compressed |  | NEW version | file format | encrypted | compressed | readonly | result | notes |
 | recovery | 16 | 10.3.9 (inbuilt) | Barracuda | on | - | => | 10.3.9 (inbuilt) | Barracuda | on | - | - | OK |  |
 | recovery | 16 | 10.3.9 (inbuilt) | Barracuda | on | zlib | => | 10.3.9 (inbuilt) | Barracuda | on | zlib | - | OK |  |
 | recovery | 4 | 10.3.9 (inbuilt) | Barracuda | on | - | => | 10.3.9 (inbuilt) | Barracuda | on | - | - | OK |  |

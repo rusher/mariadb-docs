@@ -10,6 +10,7 @@ It has the following columns:
 
 | Column | Description |
 | --- | --- |
+| Column | Description |
 | CONSTRAINT_CATALOG | Always def. |
 | CONSTRAINT_SCHEMA | Database name containing the constraint. |
 | CONSTRAINT_NAME | Constraint name. |

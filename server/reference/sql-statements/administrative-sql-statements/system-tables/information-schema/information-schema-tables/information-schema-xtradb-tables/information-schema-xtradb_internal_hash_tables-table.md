@@ -12,6 +12,7 @@ It has the following columns:
 
 | Column                      | Description     |
 | --------------------------- | --------------- |
+| Column                      | Description     |
 | INTERNAL\_HASH\_TABLE\_NAME | Hash table name |
 | TOTAL\_MEMORY               | Total memory    |
 | CONSTANT\_MEMORY            | Constant memory |

@@ -36,6 +36,7 @@ will return:
 
 | linenum | name  | city   | birth      | hired      | agehired | fn                           |
 | ------- | ----- | ------ | ---------- | ---------- | -------- | ---------------------------- |
+| linenum | name  | city   | birth      | hired      | agehired | fn                           |
 | 1       | John  | Boston | 1986-01-25 | 2010-06-02 | 24       | d:\mariadb\sql\data\boys.txt |
 | 2       | Henry | Boston | 1987-06-07 | 2008-04-01 | 20       | d:\mariadb\sql\data\boys.txt |
 | 6       | Bill  | Boston | 1986-09-11 | 2008-02-10 | 21       | d:\mariadb\sql\data\boys.txt |
@@ -44,6 +45,7 @@ Existing special columns are listed in the following table:
 
 | Special Name                   | Type    | Description of the column value                                                                                                                                                                                        |
 | ------------------------------ | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Special Name                   | Type    | Description of the column value                                                                                                                                                                                        |
 | ROWID                          | Integer | The row ordinal number in the table. This is not quite equivalent to a virtual column with an auto increment of 1 because rows are renumbered when deleting rows.                                                      |
 | ROWNUM                         | Integer | The row ordinal number in the file. This is different from ROWID for multiple tables, TBL/XCOL/OCCUR/PIVOT tables, XML tables with a multiple column, and for DBF tables where ROWNUM includes soft deleted rows.      |
 | FILEID FDISK FPATH FNAME FTYPE | String  | FILEID returns the full name of the file this row belongs to. Useful in particular for multiple tables represented by several files. The other special columns can be used to retrieve only one part of the full name. |

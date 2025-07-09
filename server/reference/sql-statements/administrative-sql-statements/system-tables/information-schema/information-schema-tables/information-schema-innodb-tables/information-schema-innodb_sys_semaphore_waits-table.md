@@ -8,6 +8,7 @@ It contains the following columns:
 
 | Column             | Description                             |
 | ------------------ | --------------------------------------- |
+| Column             | Description                             |
 | THREAD\_ID         | Thread id waiting for semaphore         |
 | OBJECT\_NAME       | Semaphore name                          |
 | FILE               | File name where semaphore was requested |

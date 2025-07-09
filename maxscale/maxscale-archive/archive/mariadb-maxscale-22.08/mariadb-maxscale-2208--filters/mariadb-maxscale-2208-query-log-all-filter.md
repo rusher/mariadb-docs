@@ -133,6 +133,7 @@ The type of log file to use.
 
 | Value   | Description                     |
 | ------- | ------------------------------- |
+| Value   | Description                     |
 | session | Write to session-specific files |
 | unified | Use one file for all sessions   |
 | stdout  | Same as unified, but to stdout  |
@@ -149,6 +150,7 @@ Type of data to log in the log files.
 
 | Value              | Description                                             |
 | ------------------ | ------------------------------------------------------- |
+| Value              | Description                                             |
 | service            | Service name                                            |
 | session            | Unique session id (ignored for session files)           |
 | date               | Timestamp                                               |

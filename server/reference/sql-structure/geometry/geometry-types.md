@@ -11,6 +11,7 @@ The basic geometry type is `GEOMETRY`. But the type can be more specific. The fo
 
 | Geometry Types                                                                                               |
 | ------------------------------------------------------------------------------------------------------------ |
+| Geometry Types                                                                                               |
 | [POINT](../../sql-statements/geometry-constructors/geometry-constructors/point.md)                           |
 | [LINESTRING](../../sql-statements/geometry-constructors/geometry-constructors/linestring.md)                 |
 | [POLYGON](../../sql-statements/geometry-constructors/geometry-constructors/polygon.md)                       |

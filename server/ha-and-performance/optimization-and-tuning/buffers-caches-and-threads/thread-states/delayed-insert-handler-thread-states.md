@@ -6,6 +6,7 @@ These correspond to the `STATE` values listed by the [SHOW PROCESSLIST](../../..
 
 | Value              | Description                                                                                       |
 | ------------------ | ------------------------------------------------------------------------------------------------- |
+| Value              | Description                                                                                       |
 | insert             | About to insert rows into the table.                                                              |
 | reschedule         | Sleeping in order to let other threads function, after inserting a number of rows into the table. |
 | upgrading lock     | Attempting to get lock on the table in order to insert rows.                                      |

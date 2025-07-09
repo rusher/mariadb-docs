@@ -311,6 +311,7 @@ The set of possible datatypes is mostly the same as that used by the SQL[CAST](.
 
 | type                | dynamic column internal type | description                                                                                                                 |
 | ------------------- | ---------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
+| type                | dynamic column internal type | description                                                                                                                 |
 | BINARY\[(N)]        | DYN\_COL\_STRING             | (variable length string with binary charset)                                                                                |
 | CHAR\[(N)]          | DYN\_COL\_STRING             | (variable length string with charset)                                                                                       |
 | DATE                | DYN\_COL\_DATE               | (date - 3 bytes)                                                                                                            |
@@ -355,6 +356,7 @@ It is also possible to create or parse dynamic columns blobs on the client side.
 
 | Description                               | Limit                                                                                                                                           |
 | ----------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| Description                               | Limit                                                                                                                                           |
 | Max number of columns                     | 65535                                                                                                                                           |
 | Max total length of packed dynamic column | [max\_allowed\_packet](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#max_allowed_packet) (1G) |
 

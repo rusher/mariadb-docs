@@ -100,6 +100,7 @@ In alignment to the MariaDB Corporation Engineering Policy, MariaDB Enterprise C
 
 | Note | MariaDB Enterprise ColumnStore 1.5 has been superseded by MariaDB Enterprise ColumnStore 5 in MariaDB Enterprise Server 10.5. |
 | ---- | ----------------------------------------------------------------------------------------------------------------------------- |
+| Note | MariaDB Enterprise ColumnStore 1.5 has been superseded by MariaDB Enterprise ColumnStore 5 in MariaDB Enterprise Server 10.5. |
 
 ## Installation Instructions
 

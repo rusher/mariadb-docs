@@ -14,6 +14,7 @@ Possible result formats are:
 
 | Function Call                    | Result Format       |
 | -------------------------------- | ------------------- |
+| Function Call                    | Result Format       |
 | GET\_FORMAT(DATE,'EUR')          | '%d.%m.%Y'          |
 | GET\_FORMAT(DATE,'USA')          | '%m.%d.%Y'          |
 | GET\_FORMAT(DATE,'JIS')          | '%Y-%m-%d'          |

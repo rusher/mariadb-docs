@@ -13,6 +13,7 @@ It contains the following columns:
 
 | Column | Description |
 | --- | --- |
+| Column | Description |
 | NAME | Type of instrument the timer is used for. |
 | TIMER_NAME | Timer applying to the instrument type. Can be modified. |
 

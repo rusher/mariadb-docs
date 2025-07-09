@@ -6,6 +6,7 @@ Choose an operation for the Sharded MariaDB Enterprise Spider topology:
 
 | Operation                                                                                              | Description                                               |
 | ------------------------------------------------------------------------------------------------------ | --------------------------------------------------------- |
+| Operation                                                                                              | Description                                               |
 | [Backup and Restore](federated-mariadb-enterprise-spider-topology-backup-and-restore.md)               | How to create a new backup or restore an existing backup. |
 | [Migrate Tables](federated-mariadb-enterprise-spider-topology-migrate-tables.md)                       | How to update the character set or collation.             |
 | [Update Character Set or Collation](spider-federated-overview.md#update-character-sets-and-collations) | How to update the character set or collation.             |

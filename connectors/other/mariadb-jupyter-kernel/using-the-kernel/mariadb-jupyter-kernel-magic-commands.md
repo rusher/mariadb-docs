@@ -5,6 +5,7 @@ For more help information regarding the usage and parameters of each magic comma
 
 | Magic     | Type | Description                                           |
 | --------- | ---- | ----------------------------------------------------- |
+| Magic     | Type | Description                                           |
 | lsmagic   | line | lists all available magic and help text for each      |
 | line      | line | line-plots the result of the last query               |
 | df        | line | write the result of the last query in a CSV file      |

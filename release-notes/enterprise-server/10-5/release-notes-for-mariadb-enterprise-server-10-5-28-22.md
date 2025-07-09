@@ -8,6 +8,7 @@ MariaDB Enterprise Server 10.5.28-22 was released on 19 Mar 2025.
 
 | CVE (with [cve.org](https://github.com/mariadb-corporation/docs-release-notes/blob/test/mariadb-enterprise-server-release-notes/mariadb-enterprise-server-10-5/cve.org) link) | CVSS base score |
 | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------- |
+| CVE (with [cve.org](https://github.com/mariadb-corporation/docs-release-notes/blob/test/mariadb-enterprise-server-release-notes/mariadb-enterprise-server-10-5/cve.org) link) | CVSS base score |
 | [CVE-2025-21490](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2025-21490)                                                                                               | 4.9             |
 
 ## Changes in Storage Engines

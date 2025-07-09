@@ -7,6 +7,7 @@ Suppose we have a _'children'_ table that can be displayed as:
 
 | name    | childlist                   |
 | ------- | --------------------------- |
+| name    | childlist                   |
 | Sophie  | Vivian, Antony              |
 | Lisbeth | Lucy,Charles,Diana          |
 | Corinne |                             |
@@ -35,6 +36,7 @@ The requested view:
 
 | mother  | child   |
 | ------- | ------- |
+| mother  | child   |
 | Sophia  | Vivian  |
 | Sophia  | Antony  |
 | Lisbeth | Lucy    |
@@ -64,6 +66,7 @@ This will return:
 
 | Mother | Child  |
 | ------ | ------ |
+| Mother | Child  |
 | Sophia | Antony |
 | Janet  | Arthur |
 
@@ -78,6 +81,7 @@ This will just return all the mothers:
 
 | mother  |
 | ------- |
+| mother  |
 | Sophia  |
 | Lisbeth |
 | Corinne |
@@ -102,6 +106,7 @@ Replies:
 
 | mother  | count(\*) |
 | ------- | --------- |
+| mother  | count(\*) |
 | Claude  | 1         |
 | Corinne | 1         |
 | Janet   | 1         |
@@ -118,6 +123,7 @@ Gives the more interesting result:
 
 | mother  | count(child) |
 | ------- | ------------ |
+| mother  | count(child) |
 | Claude  | 1            |
 | Corinne | 0            |
 | Janet   | 4            |
@@ -128,6 +134,7 @@ Some more options are available for this table type:
 
 | Option    | Description                                                                                                                                                     |
 | --------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Option    | Description                                                                                                                                                     |
 | Sep\_char | The separator character used in the "multiple" column, defaults to the comma.                                                                                   |
 | Mult      | Indicates the max number of multiple items. It is used to internally calculate the max size of the table and defaults to 10. (To be specified in OPTION\_LIST). |
 
@@ -147,6 +154,7 @@ This table will be displayed as:
 
 | rank | mother  | child   |
 | ---- | ------- | ------- |
+| rank | mother  | child   |
 | 1    | Sophia  | Vivian  |
 | 2    | Sophia  | Antony  |
 | 1    | Lisbeth | Lucy    |
@@ -168,6 +176,7 @@ returning:
 
 | mother  | child  |
 | ------- | ------ |
+| mother  | child  |
 | Sophia  | Vivian |
 | Lisbeth | Lucy   |
 | Claude  | Marc   |
@@ -206,6 +215,7 @@ This will display something like:
 
 | value                                |
 | ------------------------------------ |
+| value                                |
 | index\_merge=on                      |
 | index\_merge\_union=on               |
 | index\_merge\_sort\_union=on         |

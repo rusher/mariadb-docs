@@ -4,6 +4,7 @@ The `INNODB_MUTEXES` table monitors mutex and rw locks waits. It has the followi
 
 | Column       | Description                                         |
 | ------------ | --------------------------------------------------- |
+| Column       | Description                                         |
 | NAME         | Name of the lock, as it appears in the source code. |
 | CREATE\_FILE | File name of the mutex implementation.              |
 | CREATE\_LINE | Line number of the mutex implementation.            |

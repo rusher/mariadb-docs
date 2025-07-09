@@ -8,6 +8,7 @@ It contains the following columns:
 
 | Column               | Type        | Description |
 | -------------------- | ----------- | ----------- |
+| Column               | Type        | Description |
 | WRAPPER\_NAME        | varchar(64) |             |
 | WRAPPER\_VERSION     | varchar(20) |             |
 | WRAPPER\_DESCRIPTION | longtext    |             |

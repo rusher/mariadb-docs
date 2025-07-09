@@ -14,6 +14,7 @@ There are normal forms beyond 4th that are mainly of academic interest, as the p
 
 | Sales rep | Company | Product |
 | --- | --- | --- |
+| Sales rep | Company | Product |
 | Felicia Powers | Exclusive | Books |
 | Afzal Ignesund | Wordsworth | Magazines |
 | Felicia Powers | Exclusive | Magazines |
@@ -32,6 +33,7 @@ Let's look at a larger data set adhering to this condition:
 
 | Sales rep | Company | Product |
 | --- | --- | --- |
+| Sales rep | Company | Product |
 | Felicia Powers | Exclusive | Books |
 | Felicia Powers | Exclusive | Magazines |
 | Afzal Ignesund | Wordsworth | Books |
@@ -49,6 +51,7 @@ Now, with this extra dependency, you could normalize the table above into three 
 
 | Sales rep | Product |
 | --- | --- |
+| Sales rep | Product |
 | Felicia Powers | Books |
 | Felicia Powers | Magazines |
 | Afzal Ignesund | Books |
@@ -61,6 +64,7 @@ Now, with this extra dependency, you could normalize the table above into three 
 
 | Sales rep | Company |
 | --- | --- |
+| Sales rep | Company |
 | Felicia Powers | Exclusive |
 | Felicia Powers | Wordsworth |
 | Afzal Ignesund | Wordsworth |
@@ -73,6 +77,7 @@ Now, with this extra dependency, you could normalize the table above into three 
 
 | Company | Product |
 | --- | --- |
+| Company | Product |
 | Exclusive | Books |
 | Exclusive | Magazines |
 | Wordsworth | Books |

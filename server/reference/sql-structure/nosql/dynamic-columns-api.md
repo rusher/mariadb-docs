@@ -66,6 +66,7 @@ Every value has a type, which is determined by the `type` member.
 
 | type               | structure field                              |
 | ------------------ | -------------------------------------------- |
+| type               | structure field                              |
 | DYN\_COL\_NULL     | -                                            |
 | DYN\_COL\_INT      | value.x.long\_value                          |
 | DYN\_COL\_UINT     | value.x.ulong\_value                         |
@@ -89,6 +90,7 @@ Notes
 
 | value | name                         | meaning                                                              |
 | ----- | ---------------------------- | -------------------------------------------------------------------- |
+| value | name                         | meaning                                                              |
 | 0     | ER\_DYNCOL\_OK               | OK                                                                   |
 | 0     | ER\_DYNCOL\_NO               | (the same as ER\_DYNCOL\_OK but for functions which return a YES/NO) |
 | 1     | ER\_DYNCOL\_YES              | YES response or success                                              |

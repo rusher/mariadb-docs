@@ -70,6 +70,7 @@ they control. These should all be given as parameters to the -D switch i&#x6E;_&
 
 | Argument Name          | Explanation                                                                                                                                                                |
 | ---------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Argument Name          | Explanation                                                                                                                                                                |
 | CMAKE\_INSTALL\_PREFIX | Location where MariaDB MaxScale will be installed to. Set this to /usr if you want MariaDB MaxScale installed into the same place the packages are installed.              |
 | BUILD\_TESTS           | Build unit tests                                                                                                                                                           |
 | WITH\_SCRIPTS          | Install systemd and init.d scripts                                                                                                                                         |

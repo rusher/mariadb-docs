@@ -32,6 +32,7 @@ New Options
 
 | Option                        | Description                                                                                                                                                                                                                                           | Type      | Default              |
 | ----------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- | -------------------- |
+| Option                        | Description                                                                                                                                                                                                                                           | Type      | Default              |
 | `collation`                   | (used in replacement of charset) Permit to defined collation used for connection. This will defined the charset encoding used for exchanges with database and defines the order used when comparing strings. It's mainly used for micro-optimizations | _string_  | UTF8MB4\_UNICODE\_CI |
 | `permitConnectionWhenExpired` | Permit a user with expired password to connect. Only possible operation in this case will be to change password ('SET PASSWORD=PASSWORD('XXX')')                                                                                                      | _boolean_ | false                |
 
@@ -43,6 +44,7 @@ Pools now emits events.
 
 | event        | Description                                                                                               |
 | ------------ | --------------------------------------------------------------------------------------------------------- |
+| event        | Description                                                                                               |
 | `acquire`    | This event emits a connection is acquired from pool.                                                      |
 | `connection` | This event is emitted when a new connection is added to the pool. Has a connection object parameter       |
 | `enqueue`    | This event is emitted when a command cannot be satisfied immediately by the pool and is queued.           |

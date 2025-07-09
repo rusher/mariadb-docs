@@ -81,6 +81,7 @@ Every value has a type, which is determined by the `type` member.
 
 | type | structure field |
 | --- | --- |
+| type | structure field |
 | DYN_COL_NULL | - |
 | DYN_COL_INT | value.x.long_value |
 | DYN_COL_UINT | value.x.ulong_value |
@@ -111,6 +112,7 @@ Notes
 
 | value | name | meaning |
 | --- | --- | --- |
+| value | name | meaning |
 | 0 | ER_DYNCOL_OK | OK |
 | 0 | ER_DYNCOL_NO | (the same as ER_DYNCOL_OK but for functions which return a YES/NO) |
 | 1 | ER_DYNCOL_YES | YES response or success |

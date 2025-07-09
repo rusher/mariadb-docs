@@ -10,6 +10,7 @@ The `socket_instances` table contains the following columns:
 
 | Column | Description |
 | --- | --- |
+| Column | Description |
 | EVENT_NAME | NAME from the setup_instruments table, and the name of the wait/io/socket/* instrument that produced the event. |
 | OBJECT_INSTANCE_BEGIN | Memory address of the object. |
 | THREAD_ID | Thread identifier that the server assigns to each socket. |

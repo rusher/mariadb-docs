@@ -10,6 +10,7 @@ The table structure is identical to the `events_stage_current` table structure, 
 
 | Column | Description |
 | --- | --- |
+| Column | Description |
 | THREAD_ID | Thread associated with the event. Together with EVENT_ID uniquely identifies the row. |
 | EVENT_ID | Thread's current event number at the start of the event. Together with THREAD_ID uniquely identifies the row. |
 | END_EVENT_ID | NULL when the event starts, set to the thread's current event number at the end of the event. |

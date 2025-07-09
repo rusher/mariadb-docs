@@ -13,6 +13,7 @@ The [performance_schema_max_file_instances](../performance-schema-system-variabl
 
 | Column | Description |
 | --- | --- |
+| Column | Description |
 | FILE_NAME | File name. |
 | EVENT_NAME | Instrument name associated with the file. |
 | OPEN_COUNT | Open handles on the file. A value of greater than zero means that the file is currently open. |

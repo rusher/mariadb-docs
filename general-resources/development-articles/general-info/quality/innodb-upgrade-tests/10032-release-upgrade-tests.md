@@ -29,6 +29,7 @@ All tests passed
 
 | # | type | pagesize | OLD version | file format | encrypted | compressed |  | NEW version | file format | encrypted | compressed | readonly | result | notes |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| # | type | pagesize | OLD version | file format | encrypted | compressed |  | NEW version | file format | encrypted | compressed | readonly | result | notes |
 | 1 | crash | 4 | 10.0.28 (inbuilt) | Antelope | - | - | => | 10.0.32 (inbuilt) | Antelope | - | - | - | OK |  |
 | 2 | crash | 4 | 10.0.28 (inbuilt) | Barracuda | - | - | => | 10.0.32 (inbuilt) | Barracuda | - | - | - | OK |  |
 | 3 | crash | 8 | 10.0.28 (inbuilt) | Antelope | - | - | => | 10.0.32 (inbuilt) | Antelope | - | - | - | OK |  |
@@ -71,6 +72,7 @@ All tests passed
 
 | # | type | pagesize | OLD version | file format | encrypted | compressed |  | NEW version | file format | encrypted | compressed | readonly | result | notes |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| # | type | pagesize | OLD version | file format | encrypted | compressed |  | NEW version | file format | encrypted | compressed | readonly | result | notes |
 | 1 | normal | 16 | 5.6.35 (inbuilt) | Antelope | - | - | => | 10.0.32 (inbuilt) | Antelope | - | - | - | OK |  |
 | 2 | normal | 16 | 5.6.35 (inbuilt) | Barracuda | - | - | => | 10.0.32 (inbuilt) | Barracuda | - | - | - | OK |  |
 | 3 | normal | 4 | 5.6.35 (inbuilt) | Barracuda | - | - | => | 10.0.32 (inbuilt) | Barracuda | - | - | - | OK |  |
@@ -107,6 +109,7 @@ All tests passed
 
 | # | type | pagesize | OLD version | file format | encrypted | compressed |  | NEW version | file format | encrypted | compressed | readonly | result | notes |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| # | type | pagesize | OLD version | file format | encrypted | compressed |  | NEW version | file format | encrypted | compressed | readonly | result | notes |
 | 1 | crash | 16 | 10.0.32 (inbuilt) | Antelope | - | - | => | 10.0.32 (inbuilt) | Antelope | - | - | - | OK |  |
 | 2 | crash | 16 | 10.0.32 (inbuilt) | Barracuda | - | - | => | 10.0.32 (inbuilt) | Barracuda | - | - | - | OK |  |
 | 3 | crash | 4 | 10.0.32 (inbuilt) | Barracuda | - | - | => | 10.0.32 (inbuilt) | Barracuda | - | - | - | OK |  |

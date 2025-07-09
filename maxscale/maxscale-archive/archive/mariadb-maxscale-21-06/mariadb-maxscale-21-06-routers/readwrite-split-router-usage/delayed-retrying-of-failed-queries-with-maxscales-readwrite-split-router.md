@@ -8,6 +8,7 @@ The [Read/Write Split Router (readwritesplit)](../../../mariadb-maxscale-23-02/m
 
 | Parameter               | Description                                                                                                                                                                                                                                                           |
 | ----------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Parameter               | Description                                                                                                                                                                                                                                                           |
 | delayed\_retry          | • When this parameter is enabled, failed queries will not immediately return an error to the client. Instead, the router will retry the query if a different server becomes available before the timeout is reached. • This parameter is disabled by default.         |
 | delayed\_retry\_timeout | • The maximum amount of time to wait until returning an error if a query fails. • The value can be followed by any of the following units: h, m, s, and ms, for specifying durations in hours, minutes, seconds, and milliseconds. • The default value is 10 seconds. |
 

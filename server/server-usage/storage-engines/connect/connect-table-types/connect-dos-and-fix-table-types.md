@@ -100,6 +100,7 @@ This table is displayed as:
 
 | name   | city     | birth      | hired      |
 | ------ | -------- | ---------- | ---------- |
+| name   | city     | birth      | hired      |
 | John   | Boston   | 1986-01-25 | 2010-06-02 |
 | Henry  | Boston   | 1987-06-07 | 2008-04-01 |
 | George | San Jose | 1981-08-10 | 2010-06-02 |
@@ -196,6 +197,7 @@ The first row is displayed as:
 
 | COL1     | COL2     | COL3    | COL4     | COL5       | COL6    | COL7 | COL8 |
 | -------- | -------- | ------- | -------- | ---------- | ------- | ---- | ---- |
+| COL1     | COL2     | COL3    | COL4     | COL5       | COL6    | COL7 | COL8 |
 | 4567.056 | 4567.056 | 4567.06 | 4567.056 | -23456.800 | 3.14159 | 4567 | 4567 |
 
 The number of decimals displayed for all float columns is the column precision, the second argument of the column type option. Of course, integer columns have no decimals, although their formats specify some.
@@ -223,6 +225,7 @@ result.
 
 | Column | Row 1        | Comment (all numeric fields are written right justified)                                                                        |
 | ------ | ------------ | ------------------------------------------------------------------------------------------------------------------------------- |
+| Column | Row 1        | Comment (all numeric fields are written right justified)                                                                        |
 | COL1   | 4567.056     | No format, the value was entered as is.                                                                                         |
 | COL2   | 4567.0560    | The format ‘4’ forces to write 4 decimals.                                                                                      |
 | COL3   | 4567060      | N3 → No decimal point. The last 3 digits are decimals. However, the second decimal was rounded because of the column precision. |

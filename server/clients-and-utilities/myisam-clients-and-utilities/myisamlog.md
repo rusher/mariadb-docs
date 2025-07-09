@@ -19,6 +19,7 @@ the command line, only those tables are updated.
 
 | Option                           | Description                                                                                                                                       |
 | -------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Option                           | Description                                                                                                                                       |
 | -?, -I                           | Display a help message and exit.                                                                                                                  |
 | -c N                             | Execute only N commands.                                                                                                                          |
 | -f N                             | Specify the maximum number of open files.                                                                                                         |

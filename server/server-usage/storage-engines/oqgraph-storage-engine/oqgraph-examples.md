@@ -160,6 +160,7 @@ SELECT * FROM oq_graph WHERE latch='leaves' AND destid=5;
 
 | Latch          | Alternative   | additional where clause fields | Graph operation                                                                                                                                              |
 | -------------- | ------------- | ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Latch          | Alternative   | additional where clause fields | Graph operation                                                                                                                                              |
 | NULL           | (unspecified) | (none)                         | List original data                                                                                                                                           |
 | (empty string) | 0             | (none extra)                   | List all vertices in linkid column                                                                                                                           |
 | (empty string) | 0             | origid                         | List all first hop vertices from origid in linkid column                                                                                                     |

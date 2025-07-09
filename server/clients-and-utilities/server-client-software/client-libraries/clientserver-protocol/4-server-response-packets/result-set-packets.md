@@ -60,6 +60,7 @@ The column type field in the column definition packet describes the base type of
 
 | Value | Protocol Column Type      | Encoding                                                                                                                          |
 | ----- | ------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| Value | Protocol Column Type      | Encoding                                                                                                                          |
 | 0     | MYSQL\_TYPE\_DECIMAL      | [byte encoding](../protocol-data-types.md#length-encoded-bytes)                                                                   |
 | 1     | MYSQL\_TYPE\_TINY         | [TINYINT Binary encoding](resultset-row.md#tinyint-binary-encoding)                                                               |
 | 2     | MYSQL\_TYPE\_SHORT        | [SMALLINT Binary encoding](resultset-row.md#smallint-binary-encoding)                                                             |
@@ -100,6 +101,7 @@ It is a bitmask with the following flags:
 
 | Flag Value | Flag Name                | Flag Description                          |
 | ---------- | ------------------------ | ----------------------------------------- |
+| Flag Value | Flag Name                | Flag Description                          |
 | 1          | NOT\_NULL                | field cannot be null                      |
 | 2          | PRIMARY\_KEY             | field is a primary key                    |
 | 4          | UNIQUE\_KEY              | field is unique                           |

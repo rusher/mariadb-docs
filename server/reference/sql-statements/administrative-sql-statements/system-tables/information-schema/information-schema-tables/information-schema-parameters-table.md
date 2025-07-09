@@ -6,6 +6,7 @@ It contains the following columns:
 
 | Column                     | Description                                                                                                                                                                    |
 | -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Column                     | Description                                                                                                                                                                    |
 | SPECIFIC\_CATALOG          | Always def.                                                                                                                                                                    |
 | SPECIFIC\_SCHEMA           | Database name containing the stored routine parameter.                                                                                                                         |
 | SPECIFIC\_NAME             | Stored routine name.                                                                                                                                                           |

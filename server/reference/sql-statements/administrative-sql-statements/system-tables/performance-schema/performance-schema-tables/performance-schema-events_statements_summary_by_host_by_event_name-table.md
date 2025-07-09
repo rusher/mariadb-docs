@@ -7,6 +7,7 @@ The [Performance Schema](../README.md) events_statements_summary_by_host_by_even
 
 | Column | Description |
 | --- | --- |
+| Column | Description |
 | HOST | Host. Used together with EVENT_NAME for grouping events. |
 | EVENT_NAME | Event name. Used together with HOST for grouping events. |
 | COUNT_STAR | Number of summarized events |

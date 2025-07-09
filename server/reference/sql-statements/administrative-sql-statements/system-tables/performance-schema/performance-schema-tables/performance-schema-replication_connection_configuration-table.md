@@ -10,6 +10,7 @@ It contains the following fields.
 
 | Column                           | Type                                     | Null | Description                                                                                                                                     |
 | -------------------------------- | ---------------------------------------- | ---- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| Column                           | Type                                     | Null | Description                                                                                                                                     |
 | CHANNEL\_NAME                    | varchar(256)                             | NO   | The replication channel used.                                                                                                                   |
 | HOST                             | char(60)                                 | NO   | The host name of the source that the replica is connected to.                                                                                   |
 | PORT                             | int(11)                                  | NO   | The port used to connect to the source.                                                                                                         |

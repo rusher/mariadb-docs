@@ -70,6 +70,7 @@ A new parameter is added :
 
 | useLegacyDatetimeCode |
 | --------------------- |
+| useLegacyDatetimeCode |
 
 There is no change when the parameter `useLegacyDatetimeCode` is not specified\
 or is `true` (it is `true` by default). When this parameter is set to`false` in the JDBC connection string, the new implementation is used.\
@@ -80,6 +81,7 @@ Example with a particular timezone:
 
 | UTC TIME                  | PARIS TIME                | CANADA TIME               |
 | ------------------------- | ------------------------- | ------------------------- |
+| UTC TIME                  | PARIS TIME                | CANADA TIME               |
 | 2015- 2- 29T00:45:00+0000 | 2015- 2- 29T01:45:00+1000 | 2015- 2- 28 21:45:00-3000 |
 | 2015- 2- 29T01:15:00+0000 | 2015- 2- 29T03:15:00+2000 | 2015- 2- 28 22:15:00-3000 |
 
@@ -112,12 +114,14 @@ with `useLegacyDatetimeCode=false`:
 
 | t1                         | t2                         |
 | -------------------------- | -------------------------- |
+| t1                         | t2                         |
 | 2015-03-28 21:45:00.000000 | 2015-03-28 22:15:00.000000 |
 
 with `useLegacyDatetimeCode=true`:
 
 | t1                         | t2                         |
 | -------------------------- | -------------------------- |
+| t1                         | t2                         |
 | 2015-03-29 01:45:00.000000 | 2015-03-29 03:15:00.000000 |
 
 ### New failover options
@@ -128,6 +132,7 @@ A new parameter is added :
 
 | assureReadOnly |
 | -------------- |
+| assureReadOnly |
 
 When switching host to a slave (by using "connection.setReadOnly(true);" for\
 example), if the database permit it, the connector was always setting the\

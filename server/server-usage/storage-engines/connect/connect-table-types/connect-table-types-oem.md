@@ -40,6 +40,7 @@ Of course, the mongo (dll or so) exporting the GetREST and colREST functions mus
 
 | Module   | Subtype | Description                                                           |
 | -------- | ------- | --------------------------------------------------------------------- |
+| Module   | Subtype | Description                                                           |
 | libhello | HELLO   | A sample OEM wrapper displaying a one line table saying “Hello world” |
 | mongo    | MONGO   | Enables using tables based on MongoDB collections.                    |
 | Tabfic   | FIC     | Handles files having the Windev HyperFile format.                     |

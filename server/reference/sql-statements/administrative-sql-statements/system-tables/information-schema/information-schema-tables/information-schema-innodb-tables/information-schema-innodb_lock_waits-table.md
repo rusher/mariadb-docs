@@ -6,6 +6,7 @@ It contains the following columns:
 
 | Column              | Description                                                                                                                                           |
 | ------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Column              | Description                                                                                                                                           |
 | REQUESTING\_TRX\_ID | Requesting transaction ID from the [INNODB\_TRX](information-schema-innodb_trx-table.md) table.                                                       |
 | REQUESTED\_LOCK\_ID | Lock ID from the [INNODB.LOCKS](information-schema-innodb_locks-table.md) table for the waiting transaction.                                          |
 | BLOCKING\_TRX\_ID   | Blocking transaction ID from the [INNODB\_TRX](information-schema-innodb_trx-table.md) table.                                                         |

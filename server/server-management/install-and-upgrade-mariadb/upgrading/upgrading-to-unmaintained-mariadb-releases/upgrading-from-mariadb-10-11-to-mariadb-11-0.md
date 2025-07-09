@@ -47,6 +47,7 @@ On most servers upgrading from 10.11 should be painless. However, there are some
 
 | Option                                                                                                                               | Old default      | New default |
 | ------------------------------------------------------------------------------------------------------------------------------------ | ---------------- | ----------- |
+| Option                                                                                                                               | Old default      | New default |
 | [innodb\_undo\_tablespaces](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_undo_tablespaces)      | 0                | 3           |
 | [histogram\_type](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#histogram_type) | DOUBLE\_PREC\_HB | JSON\_HB    |
 
@@ -56,6 +57,7 @@ The following options should be removed or renamed if you use them in your [opti
 
 | Option                                                                                                                                        | Reason                                                                                                     |
 | --------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| Option                                                                                                                                        | Reason                                                                                                     |
 | [innodb\_change\_buffer\_max\_size](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_change_buffer_max_size) | [InnoDB Change Buffer removed](../../../../server-usage/storage-engines/innodb/innodb-change-buffering.md) |
 | [innodb\_change\_buffering](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_change_buffering)               | [InnoDB Change Buffer removed](../../../../server-usage/storage-engines/innodb/innodb-change-buffering.md) |
 
@@ -65,6 +67,7 @@ The following options have been deprecated. They have not yet been removed, but 
 
 | Option                                                                                                                                                       | Reason                                                                                                                                                                                                                    |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Option                                                                                                                                                       | Reason                                                                                                                                                                                                                    |
 | [innodb\_defragment](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_defragment)                                           | [InnoDB Defragmentation](../../../../ha-and-performance/optimization-and-tuning/optimizing-tables/defragmenting-innodb-tablespaces.md#innodb-defragmentation) is not particularly useful and causes a maintenance burden. |
 | [innodb\_defragment\_n\_pages](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_defragment_n_pages)                         |                                                                                                                                                                                                                           |
 | [innodb\_defragment\_stats\_accuracy](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_defragment_stats_accuracy)           |                                                                                                                                                                                                                           |

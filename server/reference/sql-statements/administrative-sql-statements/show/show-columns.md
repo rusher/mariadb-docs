@@ -49,6 +49,7 @@ The **Extra** field contains any additional information that is available about 
 
 | Value                        | Description                                                                          |
 | ---------------------------- | ------------------------------------------------------------------------------------ |
+| Value                        | Description                                                                          |
 | AUTO\_INCREMENT              | The column was created with the AUTO\_INCREMENT keyword.                             |
 | PERSISTENT                   | The column was created with the PERSISTENT keyword.                                  |
 | VIRTUAL                      | The column was created with the VIRTUAL keyword.                                     |

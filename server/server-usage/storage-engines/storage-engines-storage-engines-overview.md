@@ -12,6 +12,7 @@ A storage engine is a type of [plugin](../../reference/plugins/) for MariaDB:
 
 | Engine                                                                    | Target          | Optimization         | Availability |
 | ------------------------------------------------------------------------- | --------------- | -------------------- | ------------ |
+| Engine                                                                    | Target          | Optimization         | Availability |
 | [Aria](aria/)                                                             | Read-Heavy      | Reads                | ES 10.5+     |
 | [ColumnStore](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/columnstore) | Analytics, HTAP | Big Data, Analytical | ES 10.5+     |
 | [InnoDB](innodb/)                                                         | General Purpose | Mixed Read/Write     | ES 10.5+     |

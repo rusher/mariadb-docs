@@ -7,6 +7,7 @@ It aggregates object wait events, and contains the following columns:
 
 | Column | Description |
 | --- | --- |
+| Column | Description |
 | OBJECT_TYPE | Groups records together with OBJECT_SCHEMA and OBJECT_NAME. |
 | OBJECT_SCHEMA | Groups records together with OBJECT_TYPE and OBJECT_NAME. |
 | OBJECT_NAME | Groups records together with OBJECT_SCHEMA and OBJECT_TYPE. |

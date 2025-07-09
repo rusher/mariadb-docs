@@ -6,6 +6,7 @@ It contains the following columns:
 
 | Column Name      | Description                                                                                                                     |
 | ---------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| Column Name      | Description                                                                                                                     |
 | KEY\_CACHE\_NAME | The name of the key cache                                                                                                       |
 | SEGMENTS         | total number of segments (set to NULL for regular key caches)                                                                   |
 | SEGMENT\_NUMBER  | segment number (set to NULL for any regular key caches and for rows containing aggregation statistics for segmented key caches) |

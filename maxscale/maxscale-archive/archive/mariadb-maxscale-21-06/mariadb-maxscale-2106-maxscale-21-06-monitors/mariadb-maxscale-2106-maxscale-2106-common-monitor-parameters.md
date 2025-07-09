@@ -374,6 +374,7 @@ descriptions.
 
 | Event Name   | Description                                  |
 | ------------ | -------------------------------------------- |
+| Event Name   | Description                                  |
 | master\_down | A Master server has gone down                |
 | master\_up   | A Master server has come up                  |
 | slave\_down  | A Slave server has gone down                 |

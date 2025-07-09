@@ -52,6 +52,7 @@ Install, picking default options mostly, with the following notes:
 
 | Device | Size(MB) | Mount Point | Type | Format |
 | --- | --- | --- | --- | --- |
+| Device | Size(MB) | Mount Point | Type | Format |
 | sda2 | 5672 | / | ext4 | yes |
 | sda3 | (max allowable) | (n/a) | swap | yes |
 

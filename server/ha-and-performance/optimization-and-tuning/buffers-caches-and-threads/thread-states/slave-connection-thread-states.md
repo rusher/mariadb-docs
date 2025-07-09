@@ -4,6 +4,7 @@ This article documents thread states that are related to connection threads that
 
 | Value                                     | Description                                                                                                                                               |
 | ----------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Value                                     | Description                                                                                                                                               |
 | Changing master                           | Processing a [CHANGE MASTER TO](../../../../reference/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) statement. |
 | Killing slave                             | Processing a [STOP SLAVE](../../../../reference/sql-statements/administrative-sql-statements/replication-statements/stop-replica.md) statement.           |
 | Opening master dump table                 | A table has been created from a master dump and is now being opened.                                                                                      |

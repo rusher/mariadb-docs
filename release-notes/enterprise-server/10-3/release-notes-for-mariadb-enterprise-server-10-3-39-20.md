@@ -10,6 +10,7 @@ MariaDB Enterprise Server 10.3 is EOL (end-of-life) as of 2023-05-25. Users of t
 
 | CVE (with cve.org link)                                                             | CVSS base score                                                           |
 | ----------------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| CVE (with cve.org link)                                                             | CVSS base score                                                           |
 | [CVE-2022-47015](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-47015) N/A | (Medium)[#1](release-notes-for-mariadb-enterprise-server-10-3-39-20.md#1) |
 
 `#1`:\

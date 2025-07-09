@@ -8,6 +8,7 @@ Connections are created, used, and managed using the following Java classes:
 
 | Class                                            | Description                                               |
 | ------------------------------------------------ | --------------------------------------------------------- |
+| Class                                            | Description                                               |
 | org.mariadb.r2dbc.MariadbConnectionFactory       | Creates client connections.                               |
 | org.mariadb.r2dbc.MariadbConnectionConfiguration | Configures client connections for the connection factory. |
 | io.r2dbc.spi.Connection                          | Implements the R2DBC client connection.                   |

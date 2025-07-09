@@ -235,6 +235,7 @@ This query returns:
 
 | city    | first\_name | job      |
 | ------- | ----------- | -------- |
+| city    | first\_name | job      |
 | boston  | Johnny      | RESEARCH |
 | chicago | Jim         | SALES    |
 
@@ -313,6 +314,7 @@ This query replies:
 
 | partition\_name | table\_rows |
 | --------------- | ----------- |
+| partition\_name | table\_rows |
 | 1               | 4           |
 | 2               | 4           |
 | 3               | 3           |
@@ -327,6 +329,7 @@ This query replies:
 
 | id | select\_type | table | partitions | type | possible\_keys | key | key\_len | ref | rows | Extra       |
 | -- | ------------ | ----- | ---------- | ---- | -------------- | --- | -------- | --- | ---- | ----------- |
+| id | select\_type | table | partitions | type | possible\_keys | key | key\_len | ref | rows | Extra       |
 | 1  | SIMPLE       | part5 | 3          | ALL  |                |     |          |     | 22   | Using where |
 
 When executing this select query, only sub-table xt3 will be used.

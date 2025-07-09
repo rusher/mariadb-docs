@@ -16,6 +16,7 @@ Flushes different types of information stored on the server. The bit-masked para
 
 | Option              | Description                                         |
 | ------------------- | --------------------------------------------------- |
+| Option              | Description                                         |
 | REFRESH\_GRANT      | Refresh grant tables.                               |
 | REFRESH\_LOG        | Flush logs.                                         |
 | REFRESH\_TABLES     | Flush table cache.                                  |

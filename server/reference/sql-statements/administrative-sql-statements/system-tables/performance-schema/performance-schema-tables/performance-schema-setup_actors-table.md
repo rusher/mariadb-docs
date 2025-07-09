@@ -12,6 +12,7 @@ or combination thereof.
 
 | Column | Description                                                           |
 | ------ | --------------------------------------------------------------------- |
+| Column | Description                                                           |
 | HOST   | Host name, either a literal, or the % wildcard representing any host. |
 | USER   | User name, either a literal or the % wildcard representing any name.  |
 | ROLE   | Unused                                                                |

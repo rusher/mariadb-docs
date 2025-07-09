@@ -7,6 +7,7 @@ The [Performance Schema](../README.md) `file_summary_by_instance` table contains
 
 | Column | Description |
 | --- | --- |
+| Column | Description |
 | FILE_NAME | File name. |
 | EVENT_NAME | Event name. |
 | OBJECT_INSTANCE_BEGIN | Address in memory. Together with FILE_NAME and EVENT_NAME uniquely identifies a row. |

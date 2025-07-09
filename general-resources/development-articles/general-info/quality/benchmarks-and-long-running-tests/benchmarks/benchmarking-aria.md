@@ -30,6 +30,7 @@ Results (times in seconds, lower is better):
 
 | Test | Aria 8K page size | Aria 2K page size | MyISAM |
 | ---- | ----------------- | ----------------- | ------ |
+| Test | Aria 8K page size | Aria 2K page size | MyISAM |
 | Q1   | 3.08              | 2.41              | 2.17   |
 | Q2   | 6.24              | 5.21              | 12.89  |
 | Q3   | 4.87              | 4.05              | 4.04   |

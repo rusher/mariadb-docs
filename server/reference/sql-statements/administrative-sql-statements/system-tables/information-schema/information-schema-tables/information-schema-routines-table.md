@@ -6,6 +6,7 @@ It contains the following columns:
 
 | Column                     | Description                                                                                                                                                                    |
 | -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Column                     | Description                                                                                                                                                                    |
 | SPECIFIC\_NAME             |                                                                                                                                                                                |
 | ROUTINE\_CATALOG           | Always def.                                                                                                                                                                    |
 | ROUTINE\_SCHEMA            | Database name associated with the routine.                                                                                                                                     |

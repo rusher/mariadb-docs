@@ -82,6 +82,7 @@ The TLS protocol versions that are supported depend on the underlying TLS librar
 
 | TLS Library | Supported TLS Protocol Versions  |
 | ----------- | -------------------------------- |
+| TLS Library | Supported TLS Protocol Versions  |
 | openSSL     | TLSv1, TLSv1.1, TLSv1.2, TLSv1.3 |
 | wolfSSL     | TLSv1, TLSv1.1, TLSv1.2, TLSv1.3 |
 | yaSSL       | TLSv1, TLSv1.1                   |

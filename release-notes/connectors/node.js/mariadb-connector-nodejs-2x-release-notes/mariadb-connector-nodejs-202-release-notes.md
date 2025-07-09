@@ -18,6 +18,7 @@ New options:
 
 | noControlAfterUse |
 | ----------------- |
+| noControlAfterUse |
 
 ### correction
 

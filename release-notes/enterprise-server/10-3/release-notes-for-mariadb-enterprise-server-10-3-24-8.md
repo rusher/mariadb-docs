@@ -8,6 +8,7 @@ MariaDB Enterprise Server 10.3.24-8 was released on 2020-09-08.
 
 | CVE (with [cve.org](https://github.com/mariadb-corporation/docs-release-notes/blob/test/mariadb-enterprise-server-release-notes/mariadb-enterprise-server-10-3/cve.org) link) | CVSS base score |
 | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------- |
+| CVE (with [cve.org](https://github.com/mariadb-corporation/docs-release-notes/blob/test/mariadb-enterprise-server-release-notes/mariadb-enterprise-server-10-3/cve.org) link) | CVSS base score |
 | [CVE-2021-2022](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-2022)                                                                                                 | 4.4             |
 
 ## Notable Changes

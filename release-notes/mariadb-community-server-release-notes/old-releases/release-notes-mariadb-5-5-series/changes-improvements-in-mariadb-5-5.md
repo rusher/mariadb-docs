@@ -141,6 +141,7 @@ The following CVEs are also fixed in [MariaDB 5.5](changes-improvements-in-maria
 
 | Date        | Release                                           | Status            | Release Notes                                   | Changelog                                                                             |
 | ----------- | ------------------------------------------------- | ----------------- | ----------------------------------------------- | ------------------------------------------------------------------------------------- |
+| Date        | Release                                           | Status            | Release Notes                                   | Changelog                                                                             |
 | 12 May 2020 | [MariaDB 5.5.68](mariadb-5568-release-notes.md)   | Stable (GA)       | [Release Notes](mariadb-5568-release-notes.md)  | [Changelog](../../changelogs/changelogs-mariadb-55-series/mariadb-5568-changelog.md)  |
 | 28 Jan 2020 | [MariaDB 5.5.67](mariadb-5567-release-notes.md)   | Stable (GA)       | [Release Notes](mariadb-5567-release-notes.md)  | [Changelog](../../changelogs/changelogs-mariadb-55-series/mariadb-5567-changelog.md)  |
 | 5 Nov 2019  | [MariaDB 5.5.66](mariadb-5566-release-notes.md)   | Stable (GA)       | [Release Notes](mariadb-5566-release-notes.md)  | [Changelog](../../changelogs/changelogs-mariadb-55-series/mariadb-5566-changelog.md)  |

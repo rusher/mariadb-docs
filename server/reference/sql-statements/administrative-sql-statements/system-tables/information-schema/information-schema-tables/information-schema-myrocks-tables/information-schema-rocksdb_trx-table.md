@@ -8,6 +8,7 @@ It contains the following columns:
 
 | Column                      | Description |
 | --------------------------- | ----------- |
+| Column                      | Description |
 | TRANSACTION\_ID             |             |
 | STATE                       |             |
 | NAME                        |             |

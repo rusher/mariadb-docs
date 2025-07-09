@@ -10,6 +10,7 @@ With R2DBC, DML operations are performed with the following classes:
 
 | Class                    | Description                                   |
 | ------------------------ | --------------------------------------------- |
+| Class                    | Description                                   |
 | io.r2dbc.spi.Statement   | Creates a statement to execute on the server. |
 | io.r2dbc.spi.Result      | Contains the result-set from the server.      |
 | io.r2dbc.spi.Row         | Contains a single row.                        |

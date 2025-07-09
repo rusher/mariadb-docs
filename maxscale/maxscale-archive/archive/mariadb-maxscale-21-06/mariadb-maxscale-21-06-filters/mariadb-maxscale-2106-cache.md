@@ -854,6 +854,7 @@ following the implication of different combinations is explained.
 
 | cached\_data/users | mixed                                                                                                                          | isolated                                                                                                                        |
 | ------------------ | ------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------- |
+| cached\_data/users | mixed                                                                                                                          | isolated                                                                                                                        |
 | thread\_specific   | No thread contention. Data/work duplicated across threads. May cause unintended sharing.                                       | No thread contention. Data/work duplicated across threads and users. No unintended sharing. Requires the most amount of memory. |
 | shared             | Thread contention under high load. No duplicated data/work. May cause unintended sharing. Requires the least amount of memory. | Thread contention under high load. Data/work duplicated across users. No unintended sharing.                                    |
 
@@ -1555,6 +1556,7 @@ only indicative.
 
 | selects           | Rule         | qps |
 | ----------------- | ------------ | --- |
+| selects           | Rule         | qps |
 | assume\_cacheable | none         | 100 |
 | assume\_cacheable | regexp match | 83  |
 | assume\_cacheable | exact match  | 83  |

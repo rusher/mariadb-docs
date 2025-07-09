@@ -10,6 +10,7 @@ The definitive list of reserved words for each version can be found by examining
 
 | Keyword                           | Notes                                                                                                                                                                         |
 | --------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Keyword                           | Notes                                                                                                                                                                         |
 | ACCESSIBLE                        |                                                                                                                                                                               |
 | ADD                               |                                                                                                                                                                               |
 | ALL                               |                                                                                                                                                                               |
@@ -268,6 +269,7 @@ Some keywords are exceptions for historical reasons, and are permitted as unquot
 
 | Keyword                                                             |
 | ------------------------------------------------------------------- |
+| Keyword                                                             |
 | ACTION                                                              |
 | [BIT](../../data-types/numeric-data-types/bit.md)                   |
 | [DATE](../../data-types/date-and-time-data-types/date.md)           |
@@ -283,6 +285,7 @@ In [Oracle mode, from MariaDB 10.3](https://github.com/mariadb-corporation/docs-
 
 | Keyword      | Notes                                                                                                                                                                                                                                                                                                                                              |
 | ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Keyword      | Notes                                                                                                                                                                                                                                                                                                                                              |
 | BODY         |                                                                                                                                                                                                                                                                                                                                                    |
 | ELSIF        |                                                                                                                                                                                                                                                                                                                                                    |
 | GOTO         |                                                                                                                                                                                                                                                                                                                                                    |

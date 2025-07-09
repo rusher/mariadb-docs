@@ -79,6 +79,7 @@ Tables in a relational database are in a grid, or table format (MariaDB, like mo
 
 | Location code | Location name | Plant code | Plant name | Soil category | Soil description |
 | --- | --- | --- | --- | --- | --- |
+| Location code | Location name | Plant code | Plant name | Soil category | Soil description |
 | 11 | Kirstenbosch Gardens | 431 | Leaucadendron | A | Sandstone |
 |  |  | 446 | Protea | B | Sandstone/limestone |
 |  |  | 482 | Erica | C | Limestone |
@@ -96,6 +97,7 @@ How are you to enter this data into a table in the database? You could try to co
 
 | Location code | Location name | Plant code | Plant name | Soil category | Soil description |
 | --- | --- | --- | --- | --- | --- |
+| Location code | Location name | Plant code | Plant name | Soil category | Soil description |
 | 11 | Kirstenbosch Gardens | 431 | Leucadendron | A | Sandstone |
 | NULL | NULL | 446 | Protea | B | Sandstone/limestone |
 | NULL | NULL | 482 | Erica | C | Limestone |
@@ -116,6 +118,7 @@ So, the solution is to make sure each table row can stand alone, and is not part
 
 | Location code | Location name | Plant code | Plant name | Soil category | Soil description |
 | --- | --- | --- | --- | --- | --- |
+| Location code | Location name | Plant code | Plant name | Soil category | Soil description |
 | 11 | Kirstenbosch Gardens | 431 | Leucadendron | A | Sandstone |
 | 11 | Kirstenbosch Gardens | 446 | Protea | B | Sandstone/limestone |
 | 11 | Kirstenbosch Gardens | 482 | Erica | C | Limestone |
@@ -136,6 +139,7 @@ So, now the data can go in table format, but there are still problems with it. T
 
 | Location code | Location name | Plant code | Plant name | Soil category | Soil description |
 | --- | --- | --- | --- | --- | --- |
+| Location code | Location name | Plant code | Plant name | Soil category | Soil description |
 | 11 | Kirstenbosch Gardens | 431 | Leucadendron | A | Sandstone |
 | 11 | Kirstenbosh Gardens | 446 | Protea | B | Sandstone/limestone |
 | 11 | Kirstenbosch Gardens | 482 | Erica | C | Limestone |
@@ -159,6 +163,7 @@ There are quite a few fields where this is the case. Location name is dependent 
 
 | Location code | Plant code |
 | --- | --- |
+| Location code | Plant code |
 | 11 | 431 |
 | 11 | 446 |
 | 11 | 482 |
@@ -176,6 +181,7 @@ Clearly you can't remove the data and leave it out of your database completely. 
 
 | Plant code | Plant name | Soil category | Soil description |
 | --- | --- | --- | --- |
+| Plant code | Plant name | Soil category | Soil description |
 | 431 | Leucadendron | A | Sandstone |
 | 446 | Protea | B | Sandstone/limestone |
 | 482 | Erica | C | Limestone |
@@ -193,6 +199,7 @@ You do the same process with the location data, shown below:
 
 | Location code | Location name |
 | --- | --- |
+| Location code | Location name |
 | 11 | Kirstenbosch Gardens |
 | 12 | Karbonkelberg Mountains |
 
@@ -210,6 +217,7 @@ But the table is still not perfect. There is still a chance for anomalies to sli
 
 | Plant code | Plant name | Soil category | Soil description |
 | --- | --- | --- | --- |
+| Plant code | Plant name | Soil category | Soil description |
 | 431 | Leucadendron | A | Sandstone |
 | 446 | Protea | B | Sandstone/limestone |
 | 482 | Erica | C | Limestone |
@@ -227,6 +235,7 @@ The problem in the table above is that the Restio has been associated with Sands
 
 | Plant code | Plant name | Soil category |
 | --- | --- | --- |
+| Plant code | Plant name | Soil category |
 | 431 | Leucadendron | A |
 | 446 | Protea | B |
 | 482 | Erica | C |
@@ -240,6 +249,7 @@ The problem in the table above is that the Restio has been associated with Sands
 
 | Soil category | Soil description |
 | --- | --- |
+| Soil category | Soil description |
 | A | Sandstone |
 | B | Sandstone/limestone |
 | C | Limestone |

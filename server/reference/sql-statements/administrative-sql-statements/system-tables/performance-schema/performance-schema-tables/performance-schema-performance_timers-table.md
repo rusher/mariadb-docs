@@ -13,6 +13,7 @@ It contains the following columns:
 
 | Column | Description |
 | --- | --- |
+| Column | Description |
 | TIMER_NAME | Time name, used in the [setup_timers](performance-schema-setup_timers-table.md) table. |
 | TIMER_FREQUENCY | Number of timer units per second. Dependent on the processor speed. |
 | TIMER_RESOLUTION | Number of timer units by which timed values increase each time. |

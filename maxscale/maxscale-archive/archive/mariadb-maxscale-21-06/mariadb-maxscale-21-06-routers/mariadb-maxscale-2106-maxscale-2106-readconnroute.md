@@ -57,6 +57,7 @@ Here is a list of all possible values for the `router_options`.
 
 | Role    | Description                                                                                                                                                                                                            |
 | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Role    | Description                                                                                                                                                                                                            |
 | master  | A server assigned as a master by one of MariaDB MaxScale monitors. Depending on the monitor implementation, this could be a master server of a Master-Slave replication cluster or a Write-Master of a Galera cluster. |
 | slave   | A server assigned as a slave of a master. If all slaves are down, but the master is still available, then the router will use the master.                                                                              |
 | synced  | A Galera cluster node which is in a synced state with the cluster.                                                                                                                                                     |

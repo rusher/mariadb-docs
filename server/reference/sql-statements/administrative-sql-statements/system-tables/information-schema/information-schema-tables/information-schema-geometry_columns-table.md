@@ -13,6 +13,7 @@ It contains the following columns:
 
 | Column | Type | Null | Description |
 | --- | --- | --- | --- |
+| Column | Type | Null | Description |
 | F_TABLE_CATALOG | VARCHAR(512) | NO | Together with F_TABLE_SCHEMA and F_TABLE_NAME, the fully qualified name of the featured table containing the geometry column. |
 | F_TABLE_SCHEMA | VARCHAR(64) | NO | Together with F_TABLE_CATALOG and F_TABLE_NAME, the fully qualified name of the featured table containing the geometry column. |
 | F_TABLE_NAME | VARCHAR(64) | NO | Together with F_TABLE_CATALOG and F_TABLE_SCHEMA, the fully qualified name of the featured table containing the geometry column. |
@@ -38,6 +39,7 @@ The integers in the `storage_type` field match the geometry types as follows:
 
 | Integer | Type |
 | --- | --- |
+| Integer | Type |
 | 0 | GEOMETRY |
 | 1 | POINT |
 | 3 | LINESTRING |

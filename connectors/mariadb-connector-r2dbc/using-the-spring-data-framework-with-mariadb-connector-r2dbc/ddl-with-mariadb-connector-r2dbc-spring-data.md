@@ -14,6 +14,7 @@ With Spring Data, DDL operations can be performed by invoking the following meth
 
 | Method                             | Description                |
 | ---------------------------------- | -------------------------- |
+| Method                             | Description                |
 | DatabaseClient.execute(String sql) | Execute any DDL statement. |
 
 ### Code Example: CREATE TABLE

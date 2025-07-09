@@ -8,6 +8,7 @@ It contains the following columns:
 
 | Column | Description                                           |
 | ------ | ----------------------------------------------------- |
+| Column | Description                                           |
 | TIME   | Time interval                                         |
 | COUNT  | Count of queries falling into the time interval       |
 | TOTAL  | Total execution time of all queries for this interval |

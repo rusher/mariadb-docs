@@ -43,6 +43,7 @@ Now, to begin the logical and physical design, you need to add attributes that c
 
 | Field         | Definition           |
 | ------------- | -------------------- |
+| Field         | Definition           |
 | poet code     | primary key, integer |
 | first name    | character (30)       |
 | surname       | character (40)       |
@@ -54,6 +55,7 @@ Now, to begin the logical and physical design, you need to add attributes that c
 
 | Field         | Definition           |
 | ------------- | -------------------- |
+| Field         | Definition           |
 | poem code     | primary key, integer |
 | poem title    | character(50)        |
 | poem contents | text                 |
@@ -63,6 +65,7 @@ Now, to begin the logical and physical design, you need to add attributes that c
 
 | Field            | Definition                              |
 | ---------------- | --------------------------------------- |
+| Field            | Definition                              |
 | poem code        | joint primary key, foreign key, integer |
 | publication code | joint primary key, foreign key, integer |
 
@@ -70,6 +73,7 @@ Now, to begin the logical and physical design, you need to add attributes that c
 
 | Field            | Definition           |
 | ---------------- | -------------------- |
+| Field            | Definition           |
 | publication code | primary key, integer |
 | title            | character(100)       |
 | price            | numeric(5.2)         |
@@ -78,6 +82,7 @@ Now, to begin the logical and physical design, you need to add attributes that c
 
 | Field            | Definition                              |
 | ---------------- | --------------------------------------- |
+| Field            | Definition                              |
 | sale code        | joint primary key, foreign key, integer |
 | publication code | joint primary key, foreign key, integer |
 
@@ -85,6 +90,7 @@ Now, to begin the logical and physical design, you need to add attributes that c
 
 | Field         | Definition           |
 | ------------- | -------------------- |
+| Field         | Definition           |
 | sale code     | primary key, integer |
 | date          | date                 |
 | amount        | numeric(10.2)        |
@@ -94,6 +100,7 @@ Now, to begin the logical and physical design, you need to add attributes that c
 
 | Field         | Definition           |
 | ------------- | -------------------- |
+| Field         | Definition           |
 | customer code | primary key, integer |
 | first name    | character (30)       |
 | surname       | character (40)       |

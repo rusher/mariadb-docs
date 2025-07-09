@@ -69,6 +69,7 @@ This will display:
 
 | city     | boy    | birth      |
 | -------- | ------ | ---------- |
+| city     | boy    | birth      |
 | Boston   | John   | 1986-01-25 |
 | Boston   | Henry  | 1987-06-07 |
 | San Jose | George | 1981-08-10 |

@@ -18,6 +18,7 @@ When activated, a sync point can
 
 | Nomenclature      | Description                                                                                                                                                                                                                    |
 | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Nomenclature      | Description                                                                                                                                                                                                                    |
 | signal            | A value of a global variable that persists until overwritten by a new signal. The global variable can also be seen as a "signal post" or "flag mast". Then the signal is what is attached to the "signal post" or "flag mast". |
 | emit a signal     | Assign the value (the signal) to the global variable ("set a flag") and broadcast a global condition to wake those waiting for a signal.                                                                                       |
 | wait for a signal | Loop over waiting for the global condition until the global value matches the wait-for signal.                                                                                                                                 |

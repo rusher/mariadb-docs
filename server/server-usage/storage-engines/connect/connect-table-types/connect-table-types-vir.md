@@ -27,6 +27,7 @@ This will return:
 
 | what                     | value              |
 | ------------------------ | ------------------ |
+| what                     | value              |
 | The square root of 1 is  | 1.0000000000000000 |
 | The square root of 2 is  | 1.4142135623730951 |
 | The square root of 3 is  | 1.7320508075688772 |
@@ -66,6 +67,7 @@ This table shows the sum and the sum of the square of the n first integers:
 
 | n    | sig1   | sig2      |
 | ---- | ------ | --------- |
+| n    | sig1   | sig2      |
 | 996  | 496506 | 329845486 |
 | 997  | 497503 | 330839495 |
 | 998  | 498501 | 331835499 |

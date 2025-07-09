@@ -99,6 +99,7 @@ The following options relate to how MariaDB/MySQL command-line tools handles opt
 
 | Option                  | Description                                      |
 | ----------------------- | ------------------------------------------------ |
+| Option                  | Description                                      |
 | --print-defaults        | Print the program argument list and exit.        |
 | --no-defaults           | Don't read default options from any option file. |
 | --defaults-file=#       | Only read default options from the given file #. |
@@ -110,6 +111,7 @@ Percona XtraBackup reads server options from the following [option groups](../..
 
 | Group         | Description                                                                                                                  |
 | ------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| Group         | Description                                                                                                                  |
 | \[xtrabackup] | Options read by [mariadb-backup](../../../server-usage/backing-up-and-restoring-databases/mariadb-backup/) and Percona XtraBackup. |
 | \[mysqld]     | Options read by mysqld, which includes both MariaDB Server and MySQL Server.                                                 |
 
@@ -119,6 +121,7 @@ Percona XtraBackup reads client options from the following [option groups](../..
 
 | Group         | Description                                                                                                                                                                                                                     |
 | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Group         | Description                                                                                                                                                                                                                     |
 | \[xtrabackup] | Options read by [mariadb-backup](../../../server-usage/backing-up-and-restoring-databases/mariadb-backup/) and Percona XtraBackup.                                                                                                    |
 | \[client]     | Options read by all MariaDB and MySQL [client programs](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/clients-utilities/README.md), which includes both MariaDB and MySQL clients. For example, mysqldump. |
 

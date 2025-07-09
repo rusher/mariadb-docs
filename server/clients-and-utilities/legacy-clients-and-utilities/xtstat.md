@@ -36,6 +36,7 @@ Before PBXT has recovered, not all statistics are available. In particular, the 
 
 | Option                  | Description                                                                                  |
 | ----------------------- | -------------------------------------------------------------------------------------------- |
+| Option                  | Description                                                                                  |
 | -?, --help              | Prints help text.                                                                            |
 | -h, --host=value        | Connect to host.                                                                             |
 | -u, --user=value        | User for login if not current user.                                                          |

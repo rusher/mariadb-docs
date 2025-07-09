@@ -12,6 +12,7 @@ Returns the collation coercibility value of the string argument. Coercibility de
 
 | Coercibility | Description     | Example                                                     |
 | ------------ | --------------- | ----------------------------------------------------------- |
+| Coercibility | Description     | Example                                                     |
 | 0            | Explicit        | Value using a COLLATE clause                                |
 | 1            | No collation    | Concatenated strings using different collations             |
 | 2            | Implicit        | A string data type column value, CAST to a string data type |

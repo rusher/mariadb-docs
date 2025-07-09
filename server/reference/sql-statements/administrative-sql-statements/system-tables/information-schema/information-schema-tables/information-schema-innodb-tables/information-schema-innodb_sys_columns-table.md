@@ -8,6 +8,7 @@ It has the following columns:
 
 | Column    | Description                                                                                                               |
 | --------- | ------------------------------------------------------------------------------------------------------------------------- |
+| Column    | Description                                                                                                               |
 | TABLE\_ID | Table identifier, matching the value from [INNODB\_SYS\_TABLES.TABLE\_ID](information-schema-innodb_sys_tables-table.md). |
 | NAME      | Column name.                                                                                                              |
 | POS       | Ordinal position of the column in the table, starting from 0. This value is adjusted when columns are added or removed.   |
@@ -19,6 +20,7 @@ The column `MTYPE` uses a numeric column type identifier, which has the followin
 
 | Column Type Identifier | Description                                                           |
 | ---------------------- | --------------------------------------------------------------------- |
+| Column Type Identifier | Description                                                           |
 | 1                      | [VARCHAR](../../../../../../data-types/string-data-types/varchar.md)  |
 | 2                      | [CHAR](../../../../../../data-types/string-data-types/char.md)        |
 | 3                      | FIXBINARY                                                             |

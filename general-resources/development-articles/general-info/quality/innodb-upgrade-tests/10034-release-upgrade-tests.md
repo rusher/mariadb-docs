@@ -25,6 +25,7 @@ All tests passed
 
 | type | pagesize | OLD version | file format | encrypted | compressed |  | NEW version | file format | encrypted | compressed | readonly | result | notes |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| type | pagesize | OLD version | file format | encrypted | compressed |  | NEW version | file format | encrypted | compressed | readonly | result | notes |
 | undo-recovery | 4 | 10.0.34 (inbuilt) |  | - | - | => | 10.0.34 (inbuilt) |  | - | - | - | OK |  |
 | undo-recovery | 8 | 10.0.34 (inbuilt) |  | - | - | => | 10.0.34 (inbuilt) |  | - | - | - | OK |  |
 | undo-recovery | 16 | 10.0.34 (inbuilt) |  | - | - | => | 10.0.34 (inbuilt) |  | - | - | - | OK |  |

@@ -38,6 +38,7 @@ Regardless of the cipher used to encrypt the binlogs, the encrypted data will be
 
 | Hex  | Event type description                                                      |
 | ---- | --------------------------------------------------------------------------- |
+| Hex  | Event type description                                                      |
 | 0x02 | [QUERY\_EVENT](query_event.md)                                              |
 | 0x03 | [STOP\_EVENT](stop_event.md)                                                |
 | 0x04 | [ROTATE\_EVENT](rotate_event.md)                                            |
@@ -73,6 +74,7 @@ These are generated on the fly, never written.
 
 | Hex    | Event flag description                                                                                                                                                                                                                                                                                                                          |
 | ------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Hex    | Event flag description                                                                                                                                                                                                                                                                                                                          |
 | 0x0001 | LOG\_EVENT\_BINLOG\_IN\_USE\_FThis flag only makes sense for Format\_description\_log\_event. It is set when the event is written, and _reset_ when a binlog file is closed (yes, it's the only case when MySQL modifies already written part of binlog). Thus it is a reliable indicator that binlog was closed correctly.                     |
 | 0x0002 | LOG\_EVENT\_FORCED\_ROTATE\_F(unused)                                                                                                                                                                                                                                                                                                           |
 | 0x0004 | LOG\_EVENT\_THREAD\_SPECIFIC\_F If the query depends on the thread (for example: TEMPORARY TABLE)                                                                                                                                                                                                                                               |

@@ -16,6 +16,7 @@ hidden: true
 
 | Name                                                                                                              | Cmd-Line | Scope | Data type   | Default Value | Range   |
 | ----------------------------------------------------------------------------------------------------------------- | -------- | ----- | ----------- | ------------- | ------- |
+| Name                                                                                                              | Cmd-Line | Scope | Data type   | Default Value | Range   |
 | [infinidb\_compression\_type](columnstore-system-variables.md#compression-mode)                                   | Yes      | Both  | enumeration | 2             | 0,2     |
 | [infinidb\_decimal\_scale](columnstore-system-variables.md#columnstore-decimal-scale)                             | Yes      | Both  | numeric     | 8             |         |
 | [infinidb\_diskjoin\_bucketsize](columnstore-system-variables.md#disk-based-joins)                                | Yes      | Both  | numeric     | 100           |         |

@@ -291,6 +291,7 @@ When connecting from Unix client to Windows server with ADO.NET, in an Active Di
 
 | Version | Status | Introduced                                                                                                                                                                          |
 | ------- | ------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Version | Status | Introduced                                                                                                                                                                          |
 | 1.0     | Stable | [MariaDB 10.1.15](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10115-release-notes) |
 | 1.0     | Beta   | [MariaDB 10.1.11](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10111-release-notes) |
 

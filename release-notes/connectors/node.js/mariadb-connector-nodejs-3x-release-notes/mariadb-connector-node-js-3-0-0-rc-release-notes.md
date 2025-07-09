@@ -48,6 +48,7 @@ pool option _resetAfterUse_ now default to false. This permit avoids executing a
 
 | Option | Description                                                        | Type     | default |
 | ------ | ------------------------------------------------------------------ | -------- | ------- |
+| Option | Description                                                        | Type     | default |
 | stream | permits to set a function with parameter to set stream (since 3.0) | function |         |
 
 The option `stream` provides a way to execute a function with a callback parameter before each connection stream creation.

@@ -16,6 +16,7 @@ If the numeric-dump-file is not given, the stack trace is read from stdin.
 
 | Option                       | Description                          |
 | ---------------------------- | ------------------------------------ |
+| Option                       | Description                          |
 | -h, --help                   | Display this help and exit.          |
 | -V, --version                | Output version information and exit. |
 | -s, --symbols-file=name      | Use specified symbols file.          |

@@ -8,6 +8,7 @@ It contains the following fields:
 
 | Field         | Type        | Null | Key | Default | Description |
 | ------------- | ----------- | ---- | --- | ------- | ----------- |
+| Field         | Type        | Null | Key | Default | Description |
 | format\_id    | int(11)     | NO   | PRI | 0       |             |
 | gtrid\_length | int(11)     | NO   | PRI | 0       |             |
 | bqual\_length | int(11)     | NO   |     | 0       |             |

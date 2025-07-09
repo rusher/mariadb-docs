@@ -13,6 +13,7 @@ The table size is determined at startup by the value of the [performance_schema_
 
 | Column | Description |
 | --- | --- |
+| Column | Description |
 | USER | The connection's client user name for the connection, or NULL if an internal thread. |
 | CURRENT_CONNECTIONS | Current connections for the user. |
 | TOTAL_CONNECTIONS | Total connections for the user. |

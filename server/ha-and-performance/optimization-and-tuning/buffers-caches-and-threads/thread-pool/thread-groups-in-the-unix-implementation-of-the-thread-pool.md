@@ -129,6 +129,7 @@ In [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-communi
 
 | Number of Threads in Thread Group                                                                       | Throttling Interval (milliseconds) |
 | ------------------------------------------------------------------------------------------------------- | ---------------------------------- |
+| Number of Threads in Thread Group                                                                       | Throttling Interval (milliseconds) |
 | 0-(1 + [thread\_pool\_oversubscribe](thread-pool-system-status-variables.md#thread_pool_oversubscribe)) | 0                                  |
 | 4-7                                                                                                     | 50 \* THROTTLING\_FACTOR           |
 | 8-15                                                                                                    | 100 \* THROTTLING\_FACTOR          |

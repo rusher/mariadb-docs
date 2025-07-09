@@ -16,6 +16,7 @@ The [performance_schema_max_mutex_instances](../performance-schema-system-variab
 
 | Column | Description |
 | --- | --- |
+| Column | Description |
 | NAME | Instrument name associated with the mutex. |
 | OBJECT_INSTANCE_BEGIN | Memory address of the instrumented mutex. |
 | LOCKED_BY_THREAD_ID | The THREAD_ID of the locking thread if a thread has a mutex locked, otherwise NULL. |

@@ -7,6 +7,7 @@ The `table_io_waits_summary_by_index_usage` table records table I/O waits by ind
 
 | Column | Description |
 | --- | --- |
+| Column | Description |
 | OBJECT_TYPE | TABLE in the case of all indexes. |
 | OBJECT_SCHEMA | Schema name. |
 | OBJECT_NAME | Table name. |

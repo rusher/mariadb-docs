@@ -12,6 +12,7 @@ It has the following columns:
 
 | Column                            | Description                                                                                                                          |
 | --------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
+| Column                            | Description                                                                                                                          |
 | SPACE                             | InnoDB table space id number.                                                                                                        |
 | NAME                              | Path to the table space file, without the extension.                                                                                 |
 | COMPRESSED                        | The compressed page size, or zero if uncompressed.                                                                                   |

@@ -22,6 +22,7 @@ Signal 1 is used if the kill() system call cannot handle signal 0
 
 | Option        | Description                                                    |
 | ------------- | -------------------------------------------------------------- |
+| Option        | Description                                                    |
 | -?, --help    | Display help and exit                                          |
 | -I, --help    | Synonym for -?                                                 |
 | -v, --verbose | Be more verbose. Give a warning, if kill can't handle signal 0 |

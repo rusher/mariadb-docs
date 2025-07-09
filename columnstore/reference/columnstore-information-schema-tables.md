@@ -25,6 +25,7 @@ This table displays the extent map in a user-consumable form. An extent is a col
 
 | Column                | Description                                                                                           |
 | --------------------- | ----------------------------------------------------------------------------------------------------- |
+| Column                | Description                                                                                           |
 | OBJECT\_ID            | The object ID for the extent                                                                          |
 | OBJECT\_TYPE          | Whether this is a "Column" or "Dictionary" extent                                                     |
 | LOGICAL\_BLOCK\_START | ColumnStore's internal start LBID for this extent                                                     |
@@ -57,6 +58,7 @@ The columnstore\_files table provides information about each file associated wit
 
 | Column                 | Description                                                                                                                               |
 | ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| Column                 | Description                                                                                                                               |
 | OBJECT\_ID             | The object ID for the extent                                                                                                              |
 | SEGMENT\_ID            | The segment ID for the extent                                                                                                             |
 | PARTITION\_ID          | The partition ID for the extent                                                                                                           |

@@ -346,6 +346,7 @@ expression as `V`. For the logical operators, the sub-expression is marked as`ex
 
 | Expression   | Logic          | Types               |
 | ------------ | -------------- | ------------------- |
+| Expression   | Logic          | Types               |
 | eq(json)     | S == V         | All JSON types      |
 | ne(json)     | S != V         | All JSON types      |
 | lt(json)     | S < V          | Numbers and strings |

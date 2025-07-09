@@ -33,6 +33,7 @@ New Options :
 
 | sslMode |
 | ------- |
+| sslMode |
 
 The options `useSsl`, `trustServerCertificate`, and `disableSslHostnameVerification` still exist, but `sslMode` allows for easier configuration.
 
@@ -84,6 +85,7 @@ New Options :
 
 | restrictedAuth |
 | -------------- |
+| restrictedAuth |
 
 example setting `restrictedAuth` to "mysql\_native\_password,client\_ed25519,auth\_gssapi\_client", only those plugins can be use. If server return ask for an authentication plugin not listed in `restrictedAuth`, driver will throw an exception.
 

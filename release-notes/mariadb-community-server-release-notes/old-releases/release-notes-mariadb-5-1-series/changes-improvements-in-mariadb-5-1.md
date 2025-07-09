@@ -6,6 +6,7 @@
 
 | Date        | Release                                          | Status            | Release Notes                                  | Changelog                                                                            |
 | ----------- | ------------------------------------------------ | ----------------- | ---------------------------------------------- | ------------------------------------------------------------------------------------ |
+| Date        | Release                                          | Status            | Release Notes                                  | Changelog                                                                            |
 | 30 Jan 2013 | [MariaDB 5.1.67](mariadb-5167-release-notes.md)  | Stable (GA)       | [Release Notes](mariadb-5167-release-notes.md) | [Changelog](../../changelogs/changelogs-mariadb-51-series/mariadb-5167-changelog.md) |
 | 29 Nov 2012 | [MariaDB 5.1.66](mariadb-5166-release-notes.md)  | Stable (GA)       | [Release Notes](mariadb-5166-release-notes.md) | [Changelog](../../changelogs/changelogs-mariadb-51-series/mariadb-5166-changelog.md) |
 | 6 Apr 2012  | [MariaDB 5.1.62](mariadb-5162-release-notes.md)  | Stable (GA)       | [Release Notes](mariadb-5162-release-notes.md) | [Changelog](../../changelogs/changelogs-mariadb-51-series/mariadb-5162-changelog.md) |

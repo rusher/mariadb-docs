@@ -12,6 +12,7 @@ There are two types of users:
 
 | User Type | Description                                                             |
 | --------- | ----------------------------------------------------------------------- |
+| User Type | Description                                                             |
 | Basic     | The user has read-only access                                           |
 | Admin     | The user can change global MaxScale parameters and reconfigure modules. |
 

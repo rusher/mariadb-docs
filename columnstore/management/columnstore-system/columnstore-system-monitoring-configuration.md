@@ -125,6 +125,7 @@ For each module (PM and UM), the following resource monitoring parameters can be
 
 | Resource Monitoring Parameter  | mcsadmin command                                                                                                         |
 | ------------------------------ | ------------------------------------------------------------------------------------------------------------------------ |
+| Resource Monitoring Parameter  | mcsadmin command                                                                                                         |
 | CPU thresholds                 | setModuleTypeConfig (module name) ModuleCPU(Clear/ Minor/Major/Critical)Threshold n (where n= percentage of CPU usage)   |
 | Disk file system use threshold | setModuleTypeConfig (module name) ModuleDisk(Minor/ Major/Critical)Threshold n (where n= percentage of disk system used) |
 | Module swap thresholds         | setModuleTypeConfig (module name) ModuleSwap(Minor/ Major/Crictical)Threshold n (where n= percentage of swap space used) |

@@ -74,6 +74,7 @@ The following options relate to how MariaDB command-line tools handles option fi
 
 | Option                    | Description                                                                         |
 | ------------------------- | ----------------------------------------------------------------------------------- |
+| Option                    | Description                                                                         |
 | --print-defaults          | Print the program argument list and exit.                                           |
 | --no-defaults             | Don't read default options from any option file.                                    |
 | --defaults-file=#         | Only read default options from the given file #.                                    |
@@ -88,6 +89,7 @@ In [MariaDB 10.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-communi
 
 | Group             | Description                                                                                                                                                                                                                                                                       |
 | ----------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Group             | Description                                                                                                                                                                                                                                                                       |
 | \[mysqlshow]      | Options read by mysqlshow, which includes both MariaDB Server and MySQL Server.                                                                                                                                                                                                   |
 | \[mariadb-show]   | Options read by mariadb-show. Available starting with [MariaDB 10.4.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-1046-release-notes).                                          |
 | \[client]         | Options read by all MariaDB and MySQL [client programs](https://github.com/mariadb-corporation/docs-server/blob/test/server/kb/en/clients-utilities/README.md), which includes both MariaDB and MySQL clients. For example, mysqldump.                                            |

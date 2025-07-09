@@ -10,6 +10,7 @@ The table contains the following columns:
 
 | Column          | Description                                     |
 | --------------- | ----------------------------------------------- |
+| Column          | Description                                     |
 | HOST            | Host for which the status variable is reported. |
 | VARIABLE\_NAME  | Status variable name.                           |
 | VARIABLE\_VALUE | Aggregated status variable value                |

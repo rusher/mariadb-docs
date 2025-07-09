@@ -10,6 +10,7 @@ It contains the following columns:
 
 | Column | Description |
 | --- | --- |
+| Column | Description |
 | USER | User. Used together with HOST and EVENT_NAME for grouping events. |
 | HOST | Host. Used together with USER and EVENT_NAME for grouping events. |
 | EVENT_NAME | Event name. Used together with USER and HOST for grouping events. |

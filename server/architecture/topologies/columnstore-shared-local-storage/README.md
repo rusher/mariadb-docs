@@ -4,6 +4,7 @@
 
 | Software Version                                                                                       | Diagram                                                                | Features                                                                                                                                                                                                                                                                                                                                                            |
 | ------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Software Version                                                                                       | Diagram                                                                | Features                                                                                                                                                                                                                                                                                                                                                            |
 | <ul><li>Enterprise Server 10.5</li><li>Enterprise Server 10.6</li><li>Enterprise Server 11.4</li></ul> | ![](../../../.gitbook/assets/es-columnstore-topology-nfs-no-title.png) | <p>Columnar storage engine with S3-compatible object storage</p><ul><li>Highly available</li><li>Automatic failover via MaxScale and CMAPI</li><li>Scales reads via MaxScale</li><li>Bulk data import</li><li>Enterprise Server 10.5, Enterprise ColumnStore 5, MaxScale 2.5</li><li>Enterprise Server 10.6, Enterprise ColumnStore 23.02, MaxScale 22.08</li></ul> |
 
 This procedure describes the deployment of the ColumnStore Shared Local Storage topology with MariaDB Enterprise Server 10.5, MariaDB Enterprise ColumnStore 5, and MariaDB MaxScale 2.5.
@@ -42,6 +43,7 @@ The following components are deployed during this procedure:
 
 | Component                                                                                           | Function                                                                                                   |
 | --------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| Component                                                                                           | Function                                                                                                   |
 | [MariaDB Enterprise Server](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/SsmexDFPv2xG2OTyO5yV/) | Modern SQL RDBMS with high availability, pluggable storage engines, hot online backups, and audit logging. |
 | [MariaDB MaxScale](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/0pSbu5DcMSW4KwAkUcmX/)          | Database proxy that extends the availability, scalability, and security of MariaDB Enterprise Servers      |
 
@@ -49,12 +51,14 @@ The following components are deployed during this procedure:
 
 | Component                                                                                                | Description                                                                                                                                                                                                               |
 | -------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Component                                                                                                | Description                                                                                                                                                                                                               |
 | [MariaDB Enterprise ColumnStore](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/rBEU9juWLfTDcdwF3Q14/) | • Columnar storage engine • Highly available • Optimized for Online Analytical Processing (OLAP) workloads • Scalable query execution • Cluster Management API (CMAPI) provides a REST API for multi-node administration. |
 
 ### MariaDB MaxScale Components
 
 | Component               | Description                                                                                                                                                                                        |
 | ----------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Component               | Description                                                                                                                                                                                        |
 | Listener                | Listens for client connections to MaxScale then passes them to the router service                                                                                                                  |
 | MariaDB Monitor         | Tracks changes in the state of MariaDB Enterprise Servers.                                                                                                                                         |
 | Read Connection Router  | Routes connections from the listener to any available Enterprise ColumnStore node                                                                                                                  |
@@ -122,6 +126,7 @@ The minimum hardware requirements are:
 
 | Component                   | CPU      | Memory |
 | --------------------------- | -------- | ------ |
+| Component                   | CPU      | Memory |
 | MaxScale node               | 4+ cores | 4+ GB  |
 | Enterprise ColumnStore node | 4+ cores | 4+ GB  |
 
@@ -147,6 +152,7 @@ The recommended hardware requirements are:
 
 | Component                   | CPU       | Memory  |
 | --------------------------- | --------- | ------- |
+| Component                   | CPU       | Memory  |
 | MaxScale node               | 8+ cores  | 16+ GB  |
 | Enterprise ColumnStore node | 64+ cores | 128+ GB |
 
@@ -156,6 +162,7 @@ The ColumnStore Object Storage topology requires the following storage types:
 
 | Storage Type                                                                                                                              | Description                                                                                                                                                                                                                                      |
 | ----------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Storage Type                                                                                                                              | Description                                                                                                                                                                                                                                      |
 | [Shared Local Storage](https://app.gitbook.com/s/rBEU9juWLfTDcdwF3Q14/architecture/columnstore-storage-architecture#shared-local-storage) | The ColumnStore Object Storage topology uses shared local storage for the [Storage Manager directory](https://app.gitbook.com/s/rBEU9juWLfTDcdwF3Q14/architecture/columnstore-storage-architecture#storage-manager-directory) to store metadata. |
 
 ### Shared Local Storage Directories
@@ -262,6 +269,7 @@ $ curl -k -s -X DELETE https://mcs1:8640/cmapi/0.4.0/cluster/node \
 
 | Method             | Description                                                                                                                                                           |
 | ------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Method             | Description                                                                                                                                                           |
 | Configuration File | Configuration files (such as /etc/my.cnf) can be used to set system-variables and options. The server must be restarted to apply changes made to configuration files. |
 | Command-line       | The server can be started with command-line options that set system-variables and options.                                                                            |
 | SQL                | Users can set system-variables that support dynamic changes on-the-fly using the SET statement.                                                                       |

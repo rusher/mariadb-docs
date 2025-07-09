@@ -27,6 +27,7 @@ A new option "disableSslHostnameVerification" permit to deactivate this validati
 
 | disableSslHostnameVerification |
 | ------------------------------ |
+| disableSslHostnameVerification |
 
 ### [CONJ-400](https://jira.mariadb.org/browse/CONJ-400) - Galera validation
 
@@ -63,6 +64,7 @@ A new option "useBulkStmts" permit to deactivate this functionality.
 
 | useBulkStmts |
 | ------------ |
+| useBulkStmts |
 
 ### other evolution
 

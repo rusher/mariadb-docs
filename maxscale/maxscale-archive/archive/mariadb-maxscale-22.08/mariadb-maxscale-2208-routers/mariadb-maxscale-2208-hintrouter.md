@@ -33,6 +33,7 @@ end in error and the session closes. The different values are:
 
 | Value  | Description                                                                |
 | ------ | -------------------------------------------------------------------------- |
+| Value  | Description                                                                |
 | master | Route to the master server.                                                |
 | slave  | Route to any single slave server.                                          |
 | named  | Route to a named server. The name is given in the default\_server-setting. |

@@ -8,6 +8,7 @@ MariaDB Enterprise Server 10.2.37-11 was released on 2021-03-15.
 
 | CVE (with cve.org link)                                                         | CVSS base score                                                                 |
 | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| CVE (with cve.org link)                                                         | CVSS base score                                                                 |
 | [CVE-2021-27928](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-27928) | N/A (Critical)[#1](release-notes-for-mariadb-enterprise-server-10-2-37-11.md#1) |
 
 `#1`:\

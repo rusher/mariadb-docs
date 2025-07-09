@@ -29,6 +29,7 @@ All tests passed
 
 | # | type | pagesize | OLD version | encrypted | compressed |  | NEW version | encrypted | compressed | readonly | result | notes |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| # | type | pagesize | OLD version | encrypted | compressed |  | NEW version | encrypted | compressed | readonly | result | notes |
 | 1 | crash | 16 | 10.0.29 (inbuilt) | - | - | => | 10.1.22 (inbuilt) | - | - | - | OK |  |
 | 2 | crash | 16 | 10.0.29 (inbuilt) | - | - | => | 10.1.22 (inbuilt) | on | - | - | OK |  |
 | 3 | crash | 4 | 10.0.29 (inbuilt) | - | - | => | 10.1.22 (inbuilt) | on | - | - | OK |  |
@@ -155,6 +156,7 @@ adc91387e3add6d9c850b7c2a44760deaceb3638
 
 | # | type | pagesize | OLD version | encrypted | compressed |  | NEW version | encrypted | compressed | readonly | result | notes |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| # | type | pagesize | OLD version | encrypted | compressed |  | NEW version | encrypted | compressed | readonly | result | notes |
 | 1 | crash | 16 | 10.1.20 (inbuilt) | on | - | => | 10.1.22 (inbuilt) | on | - | - | OK |  |
 | 2 | crash | 16 | 10.1.20 (inbuilt) | on | - | => | 10.1.22 (inbuilt) | - | - | - | OK |  |
 | 3 | crash | 16 | 10.1.20 (inbuilt) | - | - | => | 10.1.22 (inbuilt) | on | - | - | OK |  |
@@ -1465,6 +1467,7 @@ All tests passed
 
 | # | type | pagesize | OLD version | encrypted | compressed |  | NEW version | encrypted | compressed | readonly | result | notes |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| # | type | pagesize | OLD version | encrypted | compressed |  | NEW version | encrypted | compressed | readonly | result | notes |
 | 1 | crash | 16 | 5.6.35 (inbuilt) | - | - | => | 10.1.22 (inbuilt) | - | - | - | OK |  |
 | 2 | crash | 16 | 5.6.35 (inbuilt) | - | - | => | 10.1.22 (inbuilt) | on | - | - | OK |  |
 | 3 | crash | 4 | 5.6.35 (inbuilt) | - | - | => | 10.1.22 (inbuilt) | - | - | - | OK |  |

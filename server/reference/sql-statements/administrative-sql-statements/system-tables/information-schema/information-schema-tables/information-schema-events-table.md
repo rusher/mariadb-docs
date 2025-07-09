@@ -6,6 +6,7 @@ It contains the following columns:
 
 | Column                 | Description                                                                                                                                                                                                              |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Column                 | Description                                                                                                                                                                                                              |
 | EVENT\_CATALOG         | Always def.                                                                                                                                                                                                              |
 | EVENT\_SCHEMA          | Database where the event was defined.                                                                                                                                                                                    |
 | EVENT\_NAME            | Event name.                                                                                                                                                                                                              |

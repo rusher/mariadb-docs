@@ -18,6 +18,7 @@ A from-string can contain these special characters:
 
 | Character | Description                                                                                                                                                                          |
 | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Character | Description                                                                                                                                                                          |
 | ^         | Match start of line.                                                                                                                                                                 |
 | $         | Match end of line.                                                                                                                                                                   |
 | \b        | Match space-character, start of line or end of line. For an end \b the next replace starts looking at the end space-character. A \b alone in a string matches only a space-character |
@@ -47,6 +48,7 @@ The replace program is used by [msql2mysql](../legacy-clients-and-utilities/msql
 
 | Option           | Description                                                       |
 | ---------------- | ----------------------------------------------------------------- |
+| Option           | Description                                                       |
 | -?, -I           | Display a help message and exit.                                  |
 | -#debug\_options | Enable debugging.                                                 |
 | -s               | Silent mode. Print less information about what the program does.  |

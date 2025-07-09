@@ -42,6 +42,7 @@ myisam_ftdump -c mytexttable 1 | sort -r
 
 | Option        | Description                                           |
 | ------------- | ----------------------------------------------------- |
+| Option        | Description                                           |
 | -h, --help    | Display help and exit.                                |
 | -?, --help    | Synonym for -h.                                       |
 | -c, --count   | Calculate per-word stats (counts and global weights). |

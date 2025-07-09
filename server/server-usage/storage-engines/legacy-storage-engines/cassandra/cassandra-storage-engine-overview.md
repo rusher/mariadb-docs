@@ -60,6 +60,7 @@ stored in MariaDB with data that's stored in Cassandra.
 
 | Cassandra SE Version | Introduced                                                                                                                                                                        | Maturity     |
 | -------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ |
+| Cassandra SE Version | Introduced                                                                                                                                                                        | Maturity     |
 | Cassandra SE 1.8     | [MariaDB 10.0.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-1001-release-notes) | Experimental |
 
 ### What about CQL?
@@ -171,6 +172,7 @@ The types must be mapped as follows:
 
 | Cassandra | MariaDB                                                                                                                                |
 | --------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| Cassandra | MariaDB                                                                                                                                |
 | blob      | BLOB, VARBINARY(n)                                                                                                                     |
 | ascii     | BLOB, VARCHAR(n), use charset=latin1                                                                                                   |
 | text      | BLOB, VARCHAR(n), use charset=utf8                                                                                                     |
@@ -248,6 +250,7 @@ looked-up, and how many results were produced with these status variables:
 
 | Variable\_name                                                                                      | Value |
 | --------------------------------------------------------------------------------------------------- | ----- |
+| Variable\_name                                                                                      | Value |
 | [Cassandra\_multiget\_reads](cassandra-status-variables.md#cassandra_multiget_reads)                | 0     |
 | [Cassandra\_multiget\_keys\_scanned](cassandra-status-variables.md#cassandra_multiget_keys_scanned) | 0     |
 | [Cassandra\_multiget\_rows\_read](cassandra-status-variables.md#cassandra_multiget_rows_read)       | 0     |
@@ -258,6 +261,7 @@ The following [system variables](cassandra-system-variables.md) are available:
 
 | Variable name                                                                                   | Description                                              |
 | ----------------------------------------------------------------------------------------------- | -------------------------------------------------------- |
+| Variable name                                                                                   | Description                                              |
 | [cassandra\_default\_thrift\_host](cassandra-system-variables.md#cassandra_default_thrift_host) | Host to connect to, if not specified on per-table basis  |
 | [cassandra\_failure\_retries](cassandra-system-variables.md#cassandra_failure_retries)          | Number of times to retry on timeout/unavailable failures |
 | [cassandra\_insert\_batch\_size](cassandra-system-variables.md#cassandra_insert_batch_size)     | INSERT batch size                                        |
@@ -270,6 +274,7 @@ The following [status variables](cassandra-status-variables.md) are available:
 
 | Variable name                                                                                        | Description                                            |
 | ---------------------------------------------------------------------------------------------------- | ------------------------------------------------------ |
+| Variable name                                                                                        | Description                                            |
 | [Cassandra\_row\_inserts](cassandra-status-variables.md#cassandra_row_inserts)                       | Number of rows inserted                                |
 | [Cassandra\_row\_insert\_batches](cassandra-status-variables.md#cassandra_row_insert_batches)        | Number of insert batches performed                     |
 | [Cassandra\_multiget\_reads](cassandra-status-variables.md#cassandra_multiget_reads)                 | Number of read operations                              |

@@ -12,6 +12,7 @@ The table contains the following columns:
 
 | Column          | Description                                                            |
 | --------------- | ---------------------------------------------------------------------- |
+| Column          | Description                                                            |
 | THREAD\_ID      | The thread identifier of the session in which the variable is defined. |
 | VARIABLE\_NAME  | The variable name, without the leading @ character.                    |
 | VARIABLE\_VALUE | The variable value                                                     |

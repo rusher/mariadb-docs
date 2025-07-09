@@ -114,6 +114,7 @@ select name, address from resto limit 3;
 
 | name                  | address                                                                                       |
 | --------------------- | --------------------------------------------------------------------------------------------- |
+| name                  | address                                                                                       |
 | Morris Park Bake Shop | {"building":"1007","coord":\[-73.8561,40.8484], "street":"Morris ParkAve", "zipcode":"10462"} |
 | Wendy'S               | {"building":"469","coord":\[-73.9617,40.6629], "street":"Flatbush Avenue", "zipcode":"11225"} |
 | Reynolds Restaurant   | {"building":"351","coord":\[-73.9851,40.7677], "street":"West 57Street", "zipcode":"10019"}   |
@@ -168,6 +169,7 @@ select name, street, score, date from newresto limit 5;
 
 | name                           | street           | score | date       |
 | ------------------------------ | ---------------- | ----- | ---------- |
+| name                           | street           | score | date       |
 | Morris Park Bake Shop          | Morris Park Ave  | 2     | 03/03/2014 |
 | Wendy'S                        | Flatbush Avenue  | 8     | 30/12/2014 |
 | Dj Reynolds Pub And Restaurant | West 57 Street   | 2     | 06/09/2014 |
@@ -180,6 +182,7 @@ The MongoDB syntax for Jpath does not allow the CONNECT specific items on arrays
 
 | Option      | Type    | Description                             |
 | ----------- | ------- | --------------------------------------- |
+| Option      | Type    | Description                             |
 | Colist      | String  | Options to pass to the MongoDB cursor.  |
 | Filter      | String  | Query used by the MongoDB cursor.       |
 | Pipeline\*  | Boolean | If True, Colist is a pipeline.          |
@@ -237,6 +240,7 @@ This query will return:
 
 | \_id                     | borough  | name                    | restaurant\_id |
 | ------------------------ | -------- | ----------------------- | -------------- |
+| \_id                     | borough  | name                    | restaurant\_id |
 | 58ada47de5a51ddfcd5ee1f3 | Brooklyn | The Park Slope Chipshop | 40816202       |
 | 58ada47de5a51ddfcd5ee999 | Brooklyn | Chip Shop               | 41076583       |
 | 58ada47ee5a51ddfcd5f13d5 | Brooklyn | The Monro               | 41660253       |
@@ -270,6 +274,7 @@ This query replies:
 
 | name      | grade | score | date                |
 | --------- | ----- | ----- | ------------------- |
+| name      | grade | score | date                |
 | Bistro Sk | A     | 10    | 21/11/2014 01:00:00 |
 | Bistro Sk | A     | 12    | 19/02/2014 01:00:00 |
 | Bistro Sk | B     | 18    | 12/06/2013 02:00:00 |
@@ -285,6 +290,7 @@ Can be used to get the average score inside the grades array.
 
 | name             | average |
 | ---------------- | ------- |
+| name             | average |
 | Bouley Botanical | 25,0000 |
 | Cheri            | 46,0000 |
 | Graine De Paris  | 30,0000 |
@@ -314,6 +320,7 @@ The format ‘\*’ indicates we want to see the Json documents. This small coll
 
 | Collection                                                                                         |
 | -------------------------------------------------------------------------------------------------- |
+| Collection                                                                                         |
 | {"\_id":{"$oid":"58f63a5099b37d9c930f9f3b"},"item":"journal","prices":\[87.0,45.0,63.0,12.0,78.0]} |
 | {"\_id":{"$oid":"58f63a5099b37d9c930f9f3c"},"item":"notebook","prices":\[123.0,456.0,789.0]}       |
 
@@ -358,6 +365,7 @@ And is displayed as:
 
 | item     | prices\_0 | prices\_1 | prices\_2 | prices\_3 | prices\_4 |
 | -------- | --------- | --------- | --------- | --------- | --------- |
+| item     | prices\_0 | prices\_1 | prices\_2 | prices\_3 | prices\_4 |
 | journal  | 87.00     | 45.00     | 63.00     | 12.00     | 78.00     |
 | notebook | 123.00    | 456.00    | 789.00    | NULL      | NULL      |
 
@@ -410,6 +418,7 @@ The result will be:
 
 | n    | m       | surname | name     | age | price\_1 | price\_2 | price\_3 |
 | ---- | ------- | ------- | -------- | --- | -------- | -------- | -------- |
+| n    | m       | surname | name     | age | price\_1 | price\_2 | price\_3 |
 | 1789 | Welcome | Olivier | Bertrand | 56  | 3,14     | 2,36     | 8,45     |
 | 1515 | Hello   | John    | Smith    | 32  | 65,17    | 98,12    | NULL     |
 | 2014 | Coucou  | Foo     | Bar      | 20  | -1       | 74       | 81356    |
@@ -450,6 +459,7 @@ From Connect 1.7.0002
 
 | n    | name    | prices                                                               |
 | ---- | ------- | -------------------------------------------------------------------- |
+| n    | name    | prices                                                               |
 | 1789 | Olivier | \[3.1400000000000001243,2.3599999999999998757,8.4499999999999992895] |
 | 1515 | John    | \[65.170000000000001705,98.120000000000004547,null]                  |
 | 2014 | Foo     | \[null,74.0,83.359999999999999432]                                   |
@@ -458,6 +468,7 @@ Before Connect 1.7.002
 
 | n    | name    | prices              |
 | ---- | ------- | ------------------- |
+| n    | name    | prices              |
 | 1789 | Olivier | \[3.14, 2.36, 8.45] |
 | 1515 | John    | \[65.17, 98.12]     |
 | 2014 | Foo     | \[, 74.0, 83.36]    |
@@ -472,6 +483,7 @@ This query returns:
 
 | name    | sum\_prices | avg\_prices |
 | ------- | ----------- | ----------- |
+| name    | sum\_prices | avg\_prices |
 | Olivier | 13.95       | 4.65        |
 | John    | 163.29      | 81.64       |
 | Foo     | 157,36      | 78.68       |

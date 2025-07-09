@@ -10,6 +10,7 @@ It contains the following columns:
 
 | Column                 | Description                                                                                                                                                |
 | ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Column                 | Description                                                                                                                                                |
 | TABLE\_ID              | Table ID, matching the [INNODB\_SYS\_TABLES.TABLE\_ID](information-schema-innodb_sys_tables-table.md) value.                                               |
 | SCHEMA                 | Database name (XtraDB only).                                                                                                                               |
 | NAME                   | Table name, matching the [INNODB\_SYS\_TABLES.NAME](information-schema-innodb_sys_tables-table.md) value.                                                  |

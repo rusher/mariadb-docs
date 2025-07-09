@@ -16,6 +16,7 @@ Server option, which can be one of the following values:
 
 | Option                                | Description                      |
 | ------------------------------------- | -------------------------------- |
+| Option                                | Description                      |
 | MYSQL\_OPTION\_MULTI\_STATEMENTS\_OFF | Disables multi statement support |
 | MYSQL\_OPTION\_MULTI\_STATEMENTS\_ON  | Enable multi statement support   |
 

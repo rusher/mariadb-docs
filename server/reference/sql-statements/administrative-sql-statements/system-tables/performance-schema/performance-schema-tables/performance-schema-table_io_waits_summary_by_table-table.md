@@ -7,6 +7,7 @@ The `table_io_waits_summary_by_table` table records table I/O waits by table.
 
 | Column | Description |
 | --- | --- |
+| Column | Description |
 | OBJECT_TYPE | Since this table records waits by table, always set to TABLE. |
 | OBJECT_SCHEMA | Schema name. |
 | OBJECT_NAME | Table name. |

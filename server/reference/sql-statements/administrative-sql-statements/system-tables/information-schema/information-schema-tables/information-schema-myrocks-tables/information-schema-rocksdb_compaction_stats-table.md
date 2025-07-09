@@ -8,6 +8,7 @@ It contains the following columns:
 
 | Column   | Description |
 | -------- | ----------- |
+| Column   | Description |
 | CF\_NAME |             |
 | LEVEL    |             |
 | TYPE     |             |

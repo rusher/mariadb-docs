@@ -32,6 +32,7 @@ Displays:
 
 | fname        | size   | modified            |
 | ------------ | ------ | ------------------- |
+| fname        | size   | modified            |
 | handler      | 152177 | 2011-06-13 18:08:29 |
 | sql\_handler | 25321  | 2011-06-13 18:08:31 |
 
@@ -39,6 +40,7 @@ Displays:
 
 | Flag value | Information                |
 | ---------- | -------------------------- |
+| Flag value | Information                |
 | 0          | The disk drive (Windows)   |
 | 1          | The file path              |
 | 2          | The file name              |
@@ -69,6 +71,7 @@ You will get the following result set showing how many tables are created in the
 
 | path                                           | count(\*) | sum(size) |
 | ---------------------------------------------- | --------- | --------- |
+| path                                           | count(\*) | sum(size) |
 | \CommonSource\mariadb-5.2.7\sql\data\connect\\ | 30        | 264469    |
 | \CommonSource\mariadb-5.2.7\sql\data\mysql\\   | 23        | 207168    |
 | \CommonSource\mariadb-5.2.7\sql\data\test\\    | 22        | 196882    |
@@ -135,6 +138,7 @@ Will return a result such as:
 
 | Column            | Row 1                                |
 | ----------------- | ------------------------------------ |
+| Column            | Row 1                                |
 | Caption           | Computer system product              |
 | Description       | Computer system product              |
 | IdentifyingNumber | LXAP50X32982327A922300               |
@@ -251,6 +255,7 @@ Column names can be freely chosen because their signification, i.e. the values t
 
 | Flag | Valeur         | Type         |
 | ---- | -------------- | ------------ |
+| Flag | Valeur         | Type         |
 | 1    | Host name      | varchar(132) |
 | 2    | Domain         | varchar(132) |
 | 3    | DNS address    | varchar(24)  |
@@ -299,6 +304,7 @@ It will return, for example:
 
 | Host    | Address           | IP           | Gateway       | Lease               |
 | ------- | ----------------- | ------------ | ------------- | ------------------- |
+| Host    | Address           | IP           | Gateway       | Lease               |
 | OLIVIER | 00-A0-D1-A4-61-36 | 0.0.0.0      | 0.0.0.0       | 1970-01-01 00:00:00 |
 | OLIVIER | 00-1D-E0-9B-90-0B | 192.168.0.10 | 192.168.0.254 | 2011-09-18 10:28:5  |
 

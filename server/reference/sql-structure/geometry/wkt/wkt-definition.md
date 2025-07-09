@@ -6,6 +6,7 @@ The Well-Known Text (WKT) representation of Geometry is designed to exchange geo
 
 | Geometry Types                                                                                                  |
 | --------------------------------------------------------------------------------------------------------------- |
+| Geometry Types                                                                                                  |
 | [POINT](../../../sql-statements/geometry-constructors/geometry-constructors/point.md)                           |
 | [LINESTRING](../../../sql-statements/geometry-constructors/geometry-constructors/linestring.md)                 |
 | [POLYGON](../../../sql-statements/geometry-constructors/geometry-constructors/polygon.md)                       |

@@ -33,6 +33,7 @@ This version is a bug-fix release.
 
 | passwordCharacterEncoding |
 | ------------------------- |
+| passwordCharacterEncoding |
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 

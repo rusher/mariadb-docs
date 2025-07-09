@@ -8,6 +8,7 @@ It contains the following columns:
 
 | Column                   | Description                                               |
 | ------------------------ | --------------------------------------------------------- |
+| Column                   | Description                                               |
 | ID                       | Row ID.                                                   |
 | NAME                     | Locale name, for example en\_GB.                          |
 | DESCRIPTION              | Locale description, for example English - United Kingdom. |

@@ -6,6 +6,7 @@ It contains the following columns:
 
 | Column          | Description              |
 | --------------- | ------------------------ |
+| Column          | Description              |
 | VARIABLE\_NAME  | System variable name.    |
 | VARIABLE\_VALUE | Global or session value. |
 

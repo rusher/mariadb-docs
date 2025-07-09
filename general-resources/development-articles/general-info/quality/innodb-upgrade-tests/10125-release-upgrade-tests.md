@@ -29,6 +29,7 @@ All tests passed
 
 | # | type | pagesize | OLD version | file format | encrypted | compressed |  | NEW version | file format | encrypted | compressed | readonly | result | notes |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| # | type | pagesize | OLD version | file format | encrypted | compressed |  | NEW version | file format | encrypted | compressed | readonly | result | notes |
 | 1 | crash | 4 | 10.0.28 (inbuilt) | Antelope | - | - | => | 10.1.25 (inbuilt) | Antelope | - | - | - | OK |  |
 | 2 | crash | 4 | 10.0.28 (inbuilt) | Barracuda | - | - | => | 10.1.25 (inbuilt) | Barracuda | - | - | - | OK |  |
 | 3 | crash | 4 | 10.0.28 (inbuilt) | Antelope | - | - | => | 10.1.25 (inbuilt) | Antelope | on | - | - | OK |  |
@@ -83,6 +84,7 @@ da7604a2943f633df3b193e26ee20110bae9fa7a
 
 | # | type | pagesize | OLD version | file format | encrypted | compressed |  | NEW version | file format | encrypted | compressed | readonly | result | notes |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| # | type | pagesize | OLD version | file format | encrypted | compressed |  | NEW version | file format | encrypted | compressed | readonly | result | notes |
 | 1 | crash | 64 | 10.1.20 (inbuilt) | Antelope | - | zlib | => | 10.1.25 (inbuilt) | Antelope | - | zlib | - | OK |  |
 | 2 | crash | 64 | 10.1.20 (inbuilt) | Barracuda | - | zlib | => | 10.1.25 (inbuilt) | Barracuda | - | zlib | - | OK |  |
 | 3 | crash | 64 | 10.1.20 (inbuilt) | Barracuda | on | zlib | => | 10.1.25 (inbuilt) | Barracuda | on | zlib | - | FAIL | [MDEV-13112](https://jira.mariadb.org/browse/MDEV-13112)(31) |
@@ -193,6 +195,7 @@ All tests passed
 
 | # | type | pagesize | OLD version | file format | encrypted | compressed |  | NEW version | file format | encrypted | compressed | readonly | result | notes |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| # | type | pagesize | OLD version | file format | encrypted | compressed |  | NEW version | file format | encrypted | compressed | readonly | result | notes |
 | 1 | normal | 16 | 5.6.35 (inbuilt) | Antelope | - | - | => | 10.1.25 (inbuilt) | Antelope | - | - | - | OK |  |
 | 2 | normal | 16 | 5.6.35 (inbuilt) | Barracuda | - | - | => | 10.1.25 (inbuilt) | Barracuda | - | - | - | OK |  |
 | 3 | normal | 16 | 5.6.35 (inbuilt) | Antelope | - | - | => | 10.1.25 (inbuilt) | Antelope | on | - | - | OK |  |
@@ -235,6 +238,7 @@ da7604a2943f633df3b193e26ee20110bae9fa7a
 
 | # | type | pagesize | OLD version | file format | encrypted | compressed |  | NEW version | file format | encrypted | compressed | readonly | result | notes |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| # | type | pagesize | OLD version | file format | encrypted | compressed |  | NEW version | file format | encrypted | compressed | readonly | result | notes |
 | 1 | crash | 16 | 10.1.25 (inbuilt) | Antelope | on | - | => | 10.1.25 (inbuilt) | Antelope | on | - | - | OK |  |
 | 2 | crash | 16 | 10.1.25 (inbuilt) | Barracuda | on | - | => | 10.1.25 (inbuilt) | Barracuda | on | - | - | OK |  |
 | 3 | crash | 16 | 10.1.25 (inbuilt) | Antelope | - | - | => | 10.1.25 (inbuilt) | Antelope | - | - | - | OK |  |

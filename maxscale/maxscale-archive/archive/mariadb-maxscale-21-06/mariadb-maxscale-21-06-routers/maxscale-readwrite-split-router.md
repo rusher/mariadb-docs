@@ -4,10 +4,12 @@ MariaDB MaxScale is a database proxy that extends the high availability, scalabi
 
 | Router                                                                                                    | Description                                                                                                                                                                                                                                                         |
 | --------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Router                                                                                                    | Description                                                                                                                                                                                                                                                         |
 | [Read/Write Split Router](readwrite-split-router-usage/understanding-maxscales-readwrite-split-router.md) | • Performs query-based load balancing. • Each client connected to MaxScale is mapped to multiple connections to different back-end database servers. • Routes write queries to connection to primary server. • Routes read queries to connection to replica server. |
 
 | Feature                                                                                    | Read/Write Split Router |
 | ------------------------------------------------------------------------------------------ | ----------------------- |
+| Feature                                                                                    | Read/Write Split Router |
 | Supports MariaDB Replication deployments                                                   | Yes                     |
 | Supports Galera Cluster deployments                                                        | Yes                     |
 | Supports Multi-Node Enterprise ColumnStore deployments                                     | Yes                     |

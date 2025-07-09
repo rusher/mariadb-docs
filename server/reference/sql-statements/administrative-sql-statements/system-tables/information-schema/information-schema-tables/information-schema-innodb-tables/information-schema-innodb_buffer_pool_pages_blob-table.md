@@ -6,6 +6,7 @@ It has the following columns:
 
 | Column         | Description                                                                                                      |
 | -------------- | ---------------------------------------------------------------------------------------------------------------- |
+| Column         | Description                                                                                                      |
 | SPACE\_ID      | Tablespace ID.                                                                                                   |
 | PAGE\_NO       | Page offset within tablespace.                                                                                   |
 | COMPRESSED     | 1 if the blob contains compressed data, 0 if not.                                                                |

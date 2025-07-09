@@ -802,6 +802,7 @@ There are default configuration files in the directory
 
 | Parameter | Description |
 | --- | --- |
+| Parameter | Description |
 | RESULTS_DB_CONFIG | The configuration file for results DB settings |
 | TEST_CONFIG | The configuration file for the test settings |
 | QUERIES_CONFIG | The configuration file for the queries settings |
@@ -856,6 +857,7 @@ Here is the list of parameters that could be set into this configuration file:
 
 | Parameter | Description |
 | --- | --- |
+| Parameter | Description |
 | DBMS_HOME | Where the instalation folder of MariaDB / MySQL / PostgreSQL is located.NOTE: The automation script uses "./bin/mysqld_safe" to start the mysqld process. So the versions of MariaDB and MySQL should be a "binary distribution" ones. |
 | DBMS_USER | The database user that will be used. |
 | CONFIG_FILE | The config file that mysqld or postgres will use when starting |
@@ -942,6 +944,7 @@ Here is the list of parameters that could be set into this configuration file:
 
 | Parameter | Description |
 | --- | --- |
+| Parameter | Description |
 | QUERIES_AT_ONCE | If set to 1, then all the queries are executed sequentially without restarting the server or clearing the caches between queries. |
 | CLEAR_CACHES | If set to 1, the disk caches will be cleared before each query test. |
 | WARMUP | Perform a warm-up runs before running the query. |
@@ -992,6 +995,7 @@ Here is the list of parameters that could be set into this configuration file:
 
 | Parameter | Description |
 | --- | --- |
+| Parameter | Description |
 | QUERIES_HOME | Where the queries are located on disk. This value is concatenated to the QUERY setting and this makes the path to the particular query. NOTE: This setting should be set under the section [queries_settings]. |
 | CONFIG_FILE | This overrides the startup setting CONFIG_FILE from DMBS server configuration file and sets the database configuration file that is used. It could be used if some configuration file without any optimizations should be set for this particular queries configuration file.NOTE: This setting should be set under the section [queries_settings]. |
 | QUERY | The name of the query located into QUERIES_HOME folder. E.g. "1.sql" |
@@ -1061,6 +1065,7 @@ Here is the list of parameters that could be set into this configuration file:
 
 | Parameter | Description |
 | --- | --- |
+| Parameter | Description |
 | DBMS_HOME | Where the database directory is located. E.g. "$PROJECT_HOME/mariadb-5.3.x-beta-linux-x86_64". This should be a binary distribution of MariaDB or MySQL. |
 | DBMS_USER | The user that will be used by the DBMS |
 | DATADIR | Where the data directory is located for the results database |
@@ -1099,6 +1104,7 @@ Here is a list of the startup parameters:
 
 | Parameter | Description |
 | --- | --- |
+| Parameter | Description |
 | test | The top-level benchmark configuration file that will be run. This is a required startup parameter. |
 | results-output-dir | Where the results of the benchmark will be stored. A timestamp is automatically attached to the directory name so that it keeps track of time and date of the benchmark. This is a required parameter. |
 | dry-run | If set, no benchmark will be performed. Instead only messages will be displayed for the actions that were intended to be done. |

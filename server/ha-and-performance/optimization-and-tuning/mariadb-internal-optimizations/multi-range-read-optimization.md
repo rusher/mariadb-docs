@@ -183,6 +183,7 @@ There are three status variables related to Multi Range Read:
 
 | Variable name                                                                                            | Meaning                                                                   |
 | -------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| Variable name                                                                                            | Meaning                                                                   |
 | [Handler\_mrr\_init](../system-variables/server-status-variables.md#handler_mrr_init)                    | Counts how many Multi Range Read scans were performed                     |
 | [Handler\_mrr\_key\_refills](../system-variables/server-status-variables.md#handler_mrr_key_refills)     | Number of times key buffer was refilled (not counting the initial fill)   |
 | [Handler\_mrr\_rowid\_refills](../system-variables/server-status-variables.md#handler_mrr_rowid_refills) | Number of times rowid buffer was refilled (not counting the initial fill) |

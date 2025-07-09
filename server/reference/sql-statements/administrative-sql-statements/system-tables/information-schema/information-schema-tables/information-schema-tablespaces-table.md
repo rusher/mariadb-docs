@@ -10,6 +10,7 @@ The table is a MariaDB and MySQL extension, and does not include information abo
 
 | Column | Description |
 | --- | --- |
+| Column | Description |
 | TABLESPACE_NAME |  |
 | ENGINE |  |
 | TABLESPACE_TYPE |  |

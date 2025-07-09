@@ -18,6 +18,7 @@ The table contains the following columns:
 
 | Field                            | Type                | Null | Default | Description                                                                           |
 | -------------------------------- | ------------------- | ---- | ------- | ------------------------------------------------------------------------------------- |
+| Field                            | Type                | Null | Default | Description                                                                           |
 | USER                             | char(32)            | YES  | NULL    | User portion of the account.                                                          |
 | HOST                             | char(60)            | YES  | NULL    | Host portion of the account.                                                          |
 | EVENT\_NAME                      | varchar(128)        | NO   | NULL    | Event name.                                                                           |

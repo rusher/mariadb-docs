@@ -22,6 +22,7 @@ Note that [ALTER TABLE table\_name ENGINE=S3](using-the-s3-storage-engine.md) wi
 
 | Option                         | Description                                                                                      |
 | ------------------------------ | ------------------------------------------------------------------------------------------------ |
+| Option                         | Description                                                                                      |
 | -?, --help                     | Display this help and exit.                                                                      |
 | -k, --s3-access-key=name       | AWS access key ID                                                                                |
 | -r, --s3-region=name           | AWS region                                                                                       |

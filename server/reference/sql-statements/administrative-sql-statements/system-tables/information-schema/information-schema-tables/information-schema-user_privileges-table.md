@@ -6,6 +6,7 @@ It contains the following columns:
 
 | Column          | Description                                                                                                                                    |
 | --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| Column          | Description                                                                                                                                    |
 | GRANTEE         | In the format user\_name@host\_name.                                                                                                           |
 | TABLE\_CATALOG  | Always def.                                                                                                                                    |
 | PRIVILEGE\_TYPE | The specific privilege, for example CREATE USER, RELOAD, SHUTDOWN, SELECT, INSERT, UPDATE or REFERENCES.                                       |

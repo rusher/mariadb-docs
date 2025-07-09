@@ -31,6 +31,7 @@ To see the procedure to perform a full backup and restore, choose the storage ty
 
 | Storage Type                                                                                                                                                  | Diagram                                                                             |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| Storage Type                                                                                                                                                  | Diagram                                                                             |
 | [Enterprise ColumnStore with Object Storage](mariadb-enterprise-columnstore-backup-and-restore-with-object-storage.md)                                        | ![columnstore-topology-s3](<../../.gitbook/assets/columnstore-topology-s3 (1).png>) |
 | [Enterprise ColumnStore with Shared Local Storage](../../architecture/columnstore-architectural-overview.md#enterprise-columnstore-with-shared-local-storage) | ![columnstore-topology](../../.gitbook/assets/columnstore-topology.png)             |
 

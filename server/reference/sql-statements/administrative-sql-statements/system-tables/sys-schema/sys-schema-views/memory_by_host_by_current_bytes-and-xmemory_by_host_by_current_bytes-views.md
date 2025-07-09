@@ -14,6 +14,7 @@ They contain the following columns:
 
 | Column               | Description                                                                                                                                                                                       |
 | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Column               | Description                                                                                                                                                                                       |
 | host                 | Host from which the client connected. If the HOST column in the underlying Performance Schema table is NULL, rows are assumed to be for background threads, and the background host name is used. |
 | current\_count\_used | Current number of allocated memory blocks that have not yet been freed for the host.                                                                                                              |
 | current\_allocated   | Current number of allocated bytes that have not yet been freed for the host.                                                                                                                      |

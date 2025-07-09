@@ -27,6 +27,7 @@ The InnoDB Background Thread Pool performs internal operations in multiple categ
 
 | Feature        | Detail                              | Resources                                                                    |
 | -------------- | ----------------------------------- | ---------------------------------------------------------------------------- |
+| Feature        | Detail                              | Resources                                                                    |
 | Thread Pool    | InnoDB Background Thread Pool       |                                                                              |
 | Storage Engine | InnoDB                              |                                                                              |
 | Purpose        | Handles background tasks for InnoDB |                                                                              |

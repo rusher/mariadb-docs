@@ -16,6 +16,7 @@ They contain the following columns:
 
 | Column         | Description                                                                                                                                       |
 | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Column         | Description                                                                                                                                       |
 | object\_schema | Object schema name, or InnoDB System if the table belongs to the [InnoDB storage engine](../../../../../../server-usage/storage-engines/innodb/). |
 | allocated      | Total number of bytes allocated for the schema.                                                                                                   |
 | data           | Total number of data bytes allocated for the schema.                                                                                              |

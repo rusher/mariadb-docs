@@ -55,6 +55,7 @@ New Option :[CONJ-465](https://jira.mariadb.org/browse/CONJ-465) - new option "e
 
 | enablePacketDebug |
 | ----------------- |
+| enablePacketDebug |
 
 ## Change version 2.0.0 release candidate
 
@@ -101,6 +102,7 @@ New Options:
 
 | usePipelineAuth |
 | --------------- |
+| usePipelineAuth |
 
 ### Performance improvement storing data in resultset
 

@@ -20,6 +20,7 @@ The size of the InnoDB Buffer Pool can be configured by setting the [innodb\_buf
 
 | Available Memory | Recommended InnoDB Buffer Pool Size |
 | ---------------- | ----------------------------------- |
+| Available Memory | Recommended InnoDB Buffer Pool Size |
 | 4 GB             | 2 GB                                |
 | 8 GB             | 4-8 GB                              |
 | 16 GB            | 8-12 GB                             |
@@ -32,6 +33,7 @@ The method to configure the Buffer Pool size depends on whether a server restart
 
 | Product Versions | Server Restart? | Method                                                                      |
 | ---------------- | --------------- | --------------------------------------------------------------------------- |
+| Product Versions | Server Restart? | Method                                                                      |
 | Any ES Any CS    | No              | [Configure size with SET GLOBA](configure-the-innodb-buffer-pool.md).       |
 | Any ES Any CS    | No              | [Configure size in configuration file](configure-the-innodb-buffer-pool.md) |
 
@@ -81,6 +83,7 @@ Some example configuration file paths for different distributions are shown in t
 
 | Distributions                | Example configuration file path                |
 | ---------------------------- | ---------------------------------------------- |
+| Distributions                | Example configuration file path                |
 | CentOS RHEL Rocky Linux SLES | /etc/my.cnf.d/z-custom-mariadb.cnf             |
 | Debian Ubuntu                | /etc/mysql/mariadb.conf.d/z-custom-mariadb.cnf |
 
@@ -110,6 +113,7 @@ Some example configuration file paths for different distributions are shown in t
 
 | Distributions                | Example configuration file path                |
 | ---------------------------- | ---------------------------------------------- |
+| Distributions                | Example configuration file path                |
 | CentOS RHEL Rocky Linux SLES | /etc/my.cnf.d/z-custom-mariadb.cnf             |
 | Debian Ubuntu                | /etc/mysql/mariadb.conf.d/z-custom-mariadb.cnf |
 

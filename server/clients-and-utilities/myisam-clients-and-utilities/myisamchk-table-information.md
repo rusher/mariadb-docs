@@ -18,6 +18,7 @@ The following table describes the output from the running myisamchk with the _-d
 
 | Heading             | Description                                                                                                                                                                                                             |
 | ------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Heading             | Description                                                                                                                                                                                                             |
 | MyISAM file         | Name and path of the MyISAM index file (without the extension)                                                                                                                                                          |
 | Record format       | [Storage format](../../server-usage/storage-engines/myisam-storage-engine/myisam-storage-formats.md). One of packed (dynamic), fixed or compressed.                                                                     |
 | Chararacter set     | Default [character set](../../reference/data-types/string-data-types/character-sets/) for the table.                                                                                                                    |
@@ -56,6 +57,7 @@ The following table describes the output from the running myisamchk with the _-d
 
 | Data type                | Description                                                                              |
 | ------------------------ | ---------------------------------------------------------------------------------------- |
+| Data type                | Description                                                                              |
 | constant                 | All rows contain the same value.                                                         |
 | no endspace              | No endspace is stored.                                                                   |
 | no endspace, not\_always | No endspace is stored, and endspace compression is not always performed for all values.  |
@@ -71,6 +73,7 @@ The following table describes the output from the running myisamchk with the _-e
 
 | Heading          | Description                                                                                                                                                                                                                   |
 | ---------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Heading          | Description                                                                                                                                                                                                                   |
 | Data records     | Number of records in the table.                                                                                                                                                                                               |
 | Deleted blocks   | Number of deleted blocks that are still reserving space. Use [OPTIMIZE TABLE](../../ha-and-performance/optimization-and-tuning/optimizing-tables/optimize-table.md) to defragment.                                            |
 | Key              | Index number, starting with one.                                                                                                                                                                                              |

@@ -10,6 +10,7 @@ The table contains the following columns:
 
 | Column          | Description                                     |
 | --------------- | ----------------------------------------------- |
+| Column          | Description                                     |
 | USER            | User for which the status variable is reported. |
 | HOST            | Host for which the status variable is reported. |
 | VARIABLE\_NAME  | Status variable name.                           |

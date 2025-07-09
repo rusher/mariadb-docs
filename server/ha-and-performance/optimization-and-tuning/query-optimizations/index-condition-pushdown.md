@@ -87,6 +87,7 @@ There are two server status variables:
 
 | Variable name                                                                                 | Meaning                                             |
 | --------------------------------------------------------------------------------------------- | --------------------------------------------------- |
+| Variable name                                                                                 | Meaning                                             |
 | [Handler\_icp\_attempts](../system-variables/server-status-variables.md#handler_icp_attempts) | Number of times pushed index condition was checked. |
 | [Handler\_icp\_match](../system-variables/server-status-variables.md#handler_icp_match)       | Number of times the condition was matched.          |
 

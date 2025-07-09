@@ -14,6 +14,7 @@ be
 
 | Dimension | Definition                               |
 | --------- | ---------------------------------------- |
+| Dimension | Definition                               |
 | -1        | empty geometry                           |
 | 0         | geometry with no length or area          |
 | 1         | geometry with no area but nonzero length |

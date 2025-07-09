@@ -8,6 +8,7 @@ The following files exist for each partitioned tables:
 
 | File name                         | Notes                                                                                                               |
 | --------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
+| File name                         | Notes                                                                                                               |
 | table\_name.frm                   | Contains the table definition. Non-partitioned tables have this file, too.                                          |
 | table\_name.par                   | Contains the partitions definitions.                                                                                |
 | table\_name#P#partition\_name.ext | Normal files created by the storage engine use this pattern for names. The extension depends on the storage engine. |

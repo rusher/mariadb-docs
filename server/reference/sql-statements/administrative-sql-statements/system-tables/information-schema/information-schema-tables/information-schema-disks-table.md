@@ -24,6 +24,7 @@ The table contains the following columns:
 
 | Column    | Description                                         |
 | --------- | --------------------------------------------------- |
+| Column    | Description                                         |
 | DISK      | Name of the disk itself.                            |
 | PATH      | Mount point of the disk.                            |
 | TOTAL     | Total space in KiB.                                 |

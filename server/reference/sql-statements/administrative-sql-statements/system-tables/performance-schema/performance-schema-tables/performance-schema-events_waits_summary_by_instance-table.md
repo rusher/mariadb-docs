@@ -7,6 +7,7 @@ The [Performance Schema](../README.md) `events_waits_summary_by_instance` table 
 
 | Column | Description |
 | --- | --- |
+| Column | Description |
 | EVENT_NAME | Event name. Used together with OBJECT_INSTANCE_BEGIN for grouping events. |
 | OBJECT_INSTANCE_BEGIN | If an instrument creates multiple instances, each instance has a unique OBJECT_INSTANCE_BEGIN value to allow for grouping by instance. |
 | COUNT_STAR | Number of summarized events |

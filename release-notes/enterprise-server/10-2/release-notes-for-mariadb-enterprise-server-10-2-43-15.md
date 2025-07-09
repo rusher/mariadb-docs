@@ -10,6 +10,7 @@ MariaDB Enterprise Server 10.2 is EOL (end-of-life) as of 2022-05-23. Users of t
 
 | CVE (with cve.org link)                                                         | CVSS base score |
 | ------------------------------------------------------------------------------- | --------------- |
+| CVE (with cve.org link)                                                         | CVSS base score |
 | [CVE-2021-46668](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-46668) | 5.5             |
 | [CVE-2021-46665](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-46665) | 5.5             |
 | [CVE-2021-46664](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-46664) | 5.5             |

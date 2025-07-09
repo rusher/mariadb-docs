@@ -12,6 +12,7 @@ Contains the following columns:
 
 | Column                 | Description                                                                                                                                            |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Column                 | Description                                                                                                                                            |
 | table\_schema          | Schema name containing the table with the auto\_increment attribute.                                                                                   |
 | table\_name            | Table containing the auto\_increment attribute.                                                                                                        |
 | column\_name           | Name of the column containing the auto\_increment attribute.                                                                                           |

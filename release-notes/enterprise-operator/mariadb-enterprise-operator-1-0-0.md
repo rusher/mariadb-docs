@@ -42,6 +42,7 @@ The current release has been tested with the following versions:
 
 | Platform/Component        | Version  |
 | ------------------------- | -------- |
+| Platform/Component        | Version  |
 | Kubernetes                | v1.32    |
 | OpenShift                 | v4.18.1  |
 | MariaDB Enterprise Server | 11.4.5-3 |

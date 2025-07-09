@@ -12,6 +12,7 @@ The [innodb\_encrypt\_tables](../../../../../server-usage/storage-engines/innodb
 
 | Option | Description                                                                                                                                                                                                                                                                 |
 | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Option | Description                                                                                                                                                                                                                                                                 |
 | OFF    | Disables table encryption.                                                                                                                                                                                                                                                  |
 | ON     | Enables table encryption, but allows unencrypted tables to be created.                                                                                                                                                                                                      |
 | FORCE  | Enables table encryption, and doesn't allow unencrypted tables to be created. Added in [MariaDB 10.1.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-4-release-notes). |
@@ -99,6 +100,7 @@ If you do not want to automatically encrypt every InnoDB table, then it is possi
 
 | Table Option        | Value          | Description                                          |
 | ------------------- | -------------- | ---------------------------------------------------- |
+| Table Option        | Value          | Description                                          |
 | ENCRYPTED           | Boolean        | Defines whether to encrypt the table                 |
 | ENCRYPTION\_KEY\_ID | 32-bit integer | Defines the identifier for the encryption key to use |
 
@@ -182,6 +184,7 @@ The [innodb\_encrypt\_temporary\_tables](../../../../../server-usage/storage-eng
 
 | Option | Description                          |
 | ------ | ------------------------------------ |
+| Option | Description                          |
 | OFF    | Disables temporary table encryption. |
 | ON     | Enables temporary table encryption.  |
 

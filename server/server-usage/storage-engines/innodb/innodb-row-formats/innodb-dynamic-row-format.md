@@ -10,6 +10,7 @@ The limit for indexing column values depends on the [innodb\_page\_size](../inno
 
 | Page Size   | Index Prefix Limit |
 | ----------- | ------------------ |
+| Page Size   | Index Prefix Limit |
 | 16k 32k 16k | 3072 bytes         |
 | 8k          | 1536 bytes         |
 | 4k          | 768 bytes          |

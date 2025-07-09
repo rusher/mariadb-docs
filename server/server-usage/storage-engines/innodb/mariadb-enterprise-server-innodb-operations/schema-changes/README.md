@@ -29,6 +29,7 @@ By default, InnoDB will use the most permissive locking strategy supported by an
 
 | Feature                                              | Detail | Resources                                                                                   |
 | ---------------------------------------------------- | ------ | ------------------------------------------------------------------------------------------- |
+| Feature                                              | Detail | Resources                                                                                   |
 | Operations support instant algorithm                 | Yes    | [InnoDB Schema Changes with the INSTANT Algorithm](schema-changes-innodb-schema-changes.md) |
 | Operations support no-copy algorithm                 | Yes    | [InnoDB Schema Changes with the NOCOPY Algorithm](schema-changes-innodb-schema-changes.md)  |
 | Operations support in-place algorithm                | Yes    | InnoDB Schema Changes with the INPLACE Algorithm                                            |

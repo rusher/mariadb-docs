@@ -4,6 +4,7 @@ The [Information Schema](../) `MROONGA_STATS` table only exists if the [Mroonga]
 
 | Column        | Description                                  |
 | ------------- | -------------------------------------------- |
+| Column        | Description                                  |
 | VERSION       | Mroonga version.                             |
 | rows\_written | Number of rows written into Mroonga tables.  |
 | rows\_read    | Number of rows read from all Mroonga tables. |

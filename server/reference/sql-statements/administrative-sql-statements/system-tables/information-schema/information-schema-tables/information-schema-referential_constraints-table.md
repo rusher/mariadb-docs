@@ -6,6 +6,7 @@ It has the following columns:
 
 | Column                      | Description                                                                                                                     |
 | --------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| Column                      | Description                                                                                                                     |
 | CONSTRAINT\_CATALOG         | Always def.                                                                                                                     |
 | CONSTRAINT\_SCHEMA          | Database name, together with CONSTRAINT\_NAME identifies the foreign key.                                                       |
 | CONSTRAINT\_NAME            | Foreign key name, together with CONSTRAINT\_SCHEMA identifies the foreign key.                                                  |

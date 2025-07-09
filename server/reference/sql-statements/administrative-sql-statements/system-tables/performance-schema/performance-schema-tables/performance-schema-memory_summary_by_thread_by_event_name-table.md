@@ -18,6 +18,7 @@ The table contains the following columns:
 
 | Field                            | Type                | Null | Default | Description                                                                           |
 | -------------------------------- | ------------------- | ---- | ------- | ------------------------------------------------------------------------------------- |
+| Field                            | Type                | Null | Default | Description                                                                           |
 | THREAD\_ID                       | bigint(20) unsigned | NO   | NULL    | Thread id.                                                                            |
 | EVENT\_NAME                      | varchar(128)        | NO   | NULL    | Event name.                                                                           |
 | COUNT\_ALLOC                     | bigint(20) unsigned | NO   | NULL    | Total number of allocations to memory.                                                |

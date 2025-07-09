@@ -89,6 +89,7 @@ The scripts are of type 'compile-#cpu#-how\_to\_build'. Some common scripts-are
 
 | Script                       | Description                                                                                                                                                                                                                     |
 | ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Script                       | Description                                                                                                                                                                                                                     |
 | compile-pentium64            | Compile an optimized binary optimized for 64 bit pentium (works also for amd64)                                                                                                                                                 |
 | compile-pentium-debug        | Compile a debug binary optimized for 64 bit pentium                                                                                                                                                                             |
 | compile-pentium-valgrind-max | Compile a debug binary that can be used with [valgrind](https://www.valgrind.org/) to find wrong memory accesses and memory leaks. Should be used if one want's to run the mysql-test-run test suite with the --valgrind option |
@@ -97,6 +98,7 @@ Some common suffixes used for the scripts:
 
 | Suffix    | Description                                                                                                                                                                                         |
 | --------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Suffix    | Description                                                                                                                                                                                         |
 | 32        | Compile for 32 bit cpu's                                                                                                                                                                            |
 | 64        | Compile for 64 bit cpu's                                                                                                                                                                            |
 | -max      | Enable (almost) all features and plugins that MariaDB supports                                                                                                                                      |
@@ -109,6 +111,7 @@ All `BUILD` scripts support the following options:
 
 | Suffix               | Description                                                                       |
 | -------------------- | --------------------------------------------------------------------------------- |
+| Suffix               | Description                                                                       |
 | -h, --help           | Show this help message.                                                           |
 | -n, --just-print     | Don't actually run any commands; just print them.                                 |
 | -c, --just-configure | Stop after running configure. Combined with --just-print shows configure options. |

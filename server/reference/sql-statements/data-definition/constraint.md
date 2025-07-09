@@ -42,6 +42,7 @@ There are four types of table constraints:
 
 | Constraint  | Description                                                               |
 | ----------- | ------------------------------------------------------------------------- |
+| Constraint  | Description                                                               |
 | PRIMARY KEY | Sets the column for referencing rows. Values must be unique and not null. |
 | FOREIGN KEY | Sets the column to reference the primary key on another table.            |
 | UNIQUE      | Requires values in column or columns only occur once in the table.        |

@@ -10,6 +10,7 @@ It contains the following columns:
 
 | Column              | Description                                |
 | ------------------- | ------------------------------------------ |
+| Column              | Description                                |
 | TABLE\_CATALOG      | Always contains the string 'def'.          |
 | TABLE\_SCHEMA       | Database name.                             |
 | TABLE\_NAME         | Table name.                                |
