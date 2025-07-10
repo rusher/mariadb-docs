@@ -35,12 +35,12 @@ TLS is optional in the Provider `WSREP TLS` Mode. When the provider is not confi
 
 Each node obtains its TLS configuration from the [wsrep\_provider\_options](../reference/wsrep_provider_options.md) system variable. The following options are used:
 
-| **WSREP Provider Option**                                                                                   | **Description**                                                   |
-| ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------- |
-| [socket.ssl](https://docs-archive.mariadb.net/server/ref/mdb/wsrep_provider_options/socket.ssl/)            | Set this option to `true` to enable TLS.                          |
-| [socket.ssl\_ca](https://docs-archive.mariadb.net/server/ref/mdb/wsrep_provider_options/socket.ssl_ca/)     | Set this option to the path of the CA chain file.                 |
-| [socket.ssl\_cert](https://docs-archive.mariadb.net/server/ref/mdb/wsrep_provider_options/socket.ssl_cert/) | Set this option to the path of the node's X.509 certificate file. |
-| [socket.ssl\_key](https://docs-archive.mariadb.net/server/ref/mdb/wsrep_provider_options/socket.ssl_key/)   | Set this option to the path of the node's private key file.       |
+|                                                     |                                                                   |
+| --------------------------------------------------- | ----------------------------------------------------------------- |
+| [socket.ssl](../reference/socket.ssl.md)            | Set this option to `true` to enable TLS.                          |
+| [socket.ssl\_ca](../reference/socket.ssl_ca.md)     | Set this option to the path of the CA chain file.                 |
+| [socket.ssl\_cert](../reference/socket.ssl_cert.md) | Set this option to the path of the node's X.509 certificate file. |
+| [socket.ssl\_key](../reference/socket.ssl_key.md)   | Set this option to the path of the node's private key file.       |
 
 For example:
 
@@ -63,12 +63,12 @@ TLS is mandatory in both the Server and Server X.509 `WSREP TLS` Modes. When Mar
 
 Each node obtains its TLS configuration from the node's MariaDB Enterprise Server configuration. The following system variables are used:
 
-| **System Variable**                                                                         | **Description**                                                                                                                                                                                                                                                                                             |
-| ------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [ssl\_ca](https://docs-archive.mariadb.net/server/ref/mdb/system-variables/ssl_ca/)         | Set this system variables to the path of the CA chain file.                                                                                                                                                                                                                                                 |
-| [ssl\_capath](https://docs-archive.mariadb.net/server/ref/mdb/system-variables/ssl_capath/) | Optionally set this system variables to the path of the CA chain directory. The directory must have been processed by `openssl rehash`. When your CA chain is stored in a single file, use the [ssl\_ca](https://docs-archive.mariadb.net/server/ref/mdb/system-variables/ssl_ca/) system variable instead. |
-| [ssl\_cert](https://docs-archive.mariadb.net/server/ref/mdb/system-variables/ssl_cert/)     | Set this system variable to the path of the node's X.509 certificate file.                                                                                                                                                                                                                                  |
-| [ssl\_key](https://docs-archive.mariadb.net/server/ref/mdb/system-variables/ssl_key/)       | Set this system variable to the path of the node's private key file.                                                                                                                                                                                                                                        |
+| **System Variable**                       | **Description**                                                                                                                                                                                                                                           |
+| ----------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [ssl\_ca](../reference/ssl_ca.md)         | Set this system variables to the path of the CA chain file.                                                                                                                                                                                               |
+| [ssl\_capath](../reference/ssl_capath.md) | Optionally set this system variables to the path of the CA chain directory. The directory must have been processed by `openssl rehash`. When your CA chain is stored in a single file, use the [ssl\_ca](../reference/ssl_ca.md) system variable instead. |
+| [ssl\_cert](../reference/ssl_cert.md)     | Set this system variable to the path of the node's X.509 certificate file.                                                                                                                                                                                |
+| [ssl\_key](../reference/ssl_key.md)       | Set this system variable to the path of the node's private key file.                                                                                                                                                                                      |
 
 For example:
 
@@ -84,12 +84,12 @@ ssl_key = /certs/server-key.pem
 
 ### SST TLS Modes
 
-MariaDB Enterprise Cluster, powered by Galera, adds the `ssl-mode` option, which configures the SST TLS Mode for State Snapshot Transfers (SSTs). The `ssl-mode` option is supported by the following SST methods, which can be configured using the [wsrep\_sst\_method](https://docs-archive.mariadb.net/server/ref/mdb/system-variables/wsrep_sst_method/) system variable:
+MariaDB Enterprise Cluster, powered by Galera, adds the `ssl-mode` option, which configures the SST TLS Mode for State Snapshot Transfers (SSTs). The `ssl-mode` option is supported by the following SST methods, which can be configured using the [wsrep\_sst\_method](../reference/wsrep_sst_method.md) system variable:
 
-| **SST Method**            | [wsrep\_sst\_method](https://docs-archive.mariadb.net/server/ref/mdb/system-variables/wsrep_sst_method/) |
-| ------------------------- | -------------------------------------------------------------------------------------------------------- |
-| MariaDB Enterprise Backup | `mariabackup`                                                                                            |
-| Rsync                     | `rsync`                                                                                                  |
+| **SST Method**            | [wsrep\_sst\_method](../reference/wsrep_sst_method.md) |
+| ------------------------- | ------------------------------------------------------ |
+| MariaDB Enterprise Backup | `mariabackup`                                          |
+| Rsync                     | `rsync`                                                |
 
 The following SST TLS Modes are supported:
 
@@ -165,7 +165,7 @@ ssl_key = /certs/server-key.pem
 ssl_mode = VERIFY_CA
 ```
 
-When the [backward-compatible TLS parameters in the \[sst\] group](mariadb-enterprise-cluster-security.md#sst-tls-modes-backward-compatible) are configured, the Server and Server X.509 SST TLS Modes use those parameters instead of the MariaDB Enterprise Server system variables. In that case, the following message will be written to the [MariaDB error log](https://docs-archive.mariadb.net/server/ref/mdb/logging/error/):
+When the [backward-compatible TLS parameters in the \[sst\] group](mariadb-enterprise-cluster-security.md#sst-tls-modes-backward-compatible) are configured, the Server and Server X.509 SST TLS Modes use those parameters instead of the MariaDB Enterprise Server system variables. In that case, the following message will be written to the [MariaDB error log](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/server-monitoring-logs/error-log):
 
 ```
 new ssl configuration options (ssl-ca, ssl-cert and ssl-key) are ignored by SST due to presence of the tca, tcert and/or tkey in the [sst] section
@@ -181,10 +181,10 @@ Prior to performing a State Snapshot Transfer (SST) or Incremental State Transfe
 
 MariaDB Enterprise Cluster, powered by Galera, can be configured to write certificate expiration warnings to the [MariaDB Error Log](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/server-monitoring-logs/error-log) when the node's X.509 certificate is close to expiration.
 
-Certificate expiration warnings can be configured using the [wsrep\_certificate\_expiration\_hours\_warning](https://docs-archive.mariadb.net/server/ref/mdb/system-variables/wsrep_certificate_expiration_hours_warning/) system variable:
+Certificate expiration warnings can be configured using the [wsrep\_certificate\_expiration\_hours\_warning](../reference/wsrep_certificate_expiration_hours_warning.md) system variable:
 
-* When the [wsrep\_certificate\_expiration\_hours\_warning](https://docs-archive.mariadb.net/server/ref/mdb/system-variables/wsrep_certificate_expiration_hours_warning/) system variable is set to `0`, certificate expiration warnings are not printed to the MariaDB Error Log.
-* When the [wsrep\_certificate\_expiration\_hours\_warning](https://docs-archive.mariadb.net/server/ref/mdb/system-variables/wsrep_certificate_expiration_hours_warning/) system variable is set to a value `N`, which is greater than `0`, certificate expiration warnings are printed to the MariaDB Error Log when the node's certificate expires in `N` hours or less.
+* When the `wsrep_certificate_expiration_hours_warning` system variable is set to `0`, certificate expiration warnings are not printed to the MariaDB Error Log.
+* When the `wsrep_certificate_expiration_hours_warning` system variable is set to a value `N`, which is greater than `0`, certificate expiration warnings are printed to the MariaDB Error Log when the node's certificate expires in `N` hours or less.
 
 For example:
 

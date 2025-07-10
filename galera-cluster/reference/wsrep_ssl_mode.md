@@ -6,7 +6,7 @@ This system variable is available from MariaDB 11.4 and 10.6.
 
 Select which SSL implementation is used for wsrep provider communications: PROVIDER - wsrep provider internal SSL implementation; SERVER - use server side SSL implementation; SERVER\_X509 - as SERVER and require valid X509 certificate.
 
-### USAGE
+## Usage
 
 The `wsrep_ssl_mode` system variable is used to configure the `WSREP` TLS Mode used by MariaDB Enterprise Cluster, powered by Galera.
 
@@ -31,7 +31,7 @@ wsrep_ssl_mode = PROVIDER
 wsrep_provider_options = "socket.ssl=true;socket.ssl_cert=/certs/server-cert.pem;socket.ssl_ca=/certs/ca-cert.pem;socket.ssl_key=/certs/server-key.pem"
 ```
 
-### DETAILS
+## Details
 
 The `wsrep_ssl_mode` system variable configures the `WSREP` TLS Mode. The following `WSREP` TLS Modes are supported:
 
@@ -52,14 +52,14 @@ When the `wsrep_ssl_mode` system variable is set to `PROVIDER`, each node obtain
 
 When the `wsrep_ssl_mode` system variable is set to `SERVER` or `SERVER_X509`, each node obtains its TLS configuration from the node's MariaDB Enterprise Server configuration. The following system variables are used:
 
-| **System Variable**                                                                         | **Description**                                                                                                                                                                                                                                                                                             |
-| ------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [ssl\_ca](https://docs-archive.mariadb.net/server/ref/mdb/system-variables/ssl_ca/)         | Set this system variables to the path of the CA chain file.                                                                                                                                                                                                                                                 |
-| [ssl\_capath](https://docs-archive.mariadb.net/server/ref/mdb/system-variables/ssl_capath/) | Optionally set this system variables to the path of the CA chain directory. The directory must have been processed by `openssl rehash`. When your CA chain is stored in a single file, use the [ssl\_ca](https://docs-archive.mariadb.net/server/ref/mdb/system-variables/ssl_ca/) system variable instead. |
-| [ssl\_cert](https://docs-archive.mariadb.net/server/ref/mdb/system-variables/ssl_cert/)     | Set this system variable to the path of the node's X509 certificate file.                                                                                                                                                                                                                                   |
-| [ssl\_key](https://docs-archive.mariadb.net/server/ref/mdb/system-variables/ssl_key/)       | Set this system variable to the path of the node's private key file.                                                                                                                                                                                                                                        |
+| **System Variable**          | **Description**                                                                                                                                                                                                                                                                                             |
+| ---------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [ssl\_ca](ssl_ca.md)         | Set this system variables to the path of the CA chain file.                                                                                                                                                                                                                                                 |
+| [ssl\_capath](ssl_capath.md) | Optionally set this system variables to the path of the CA chain directory. The directory must have been processed by `openssl rehash`. When your CA chain is stored in a single file, use the [ssl\_ca](https://docs-archive.mariadb.net/server/ref/mdb/system-variables/ssl_ca/) system variable instead. |
+| [ssl\_cert](ssl_cert.md)     | Set this system variable to the path of the node's X509 certificate file.                                                                                                                                                                                                                                   |
+| [ssl\_key](ssl_key.md)       | Set this system variable to the path of the node's private key file.                                                                                                                                                                                                                                        |
 
-#### PARAMETERS
+#### Parameters
 
 | Command-line          | --wsrep\_ssl\_mode={PROVIDER\|SERVER\|SERVER\_X509} |
 | --------------------- | --------------------------------------------------- |

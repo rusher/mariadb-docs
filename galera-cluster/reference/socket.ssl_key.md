@@ -10,9 +10,8 @@ The `wsrep_provider_options` system variable applies to MariaDB Enterprise Clust
 
 The node uses the certificate key, a self-signed private key, in encrypting replication traffic over SSL. You can use either an absolute path or one relative to the working directory. The file must use PEM format.
 
-| Attribute     | Value                  |
-| ------------- | ---------------------- |
 | Option Name   | socket.ssl\_key        |
+| ------------- | ---------------------- |
 | Maximum Value | "" _(an empty string)_ |
 | Dynamic       | NO                     |
 | Debug         | `NO`                   |
