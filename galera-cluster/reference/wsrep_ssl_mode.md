@@ -43,12 +43,12 @@ The `wsrep_ssl_mode` system variable configures the `WSREP` TLS Mode. The follow
 
 When the `wsrep_ssl_mode` system variable is set to `PROVIDER`, each node obtains its TLS configuration from the [wsrep\_provider\_options](galera-cluster-system-variables.md#wsrep_provider_options) system variable. The following options are used:
 
-| **WSREP Provider Option**                                                                                   | **Description**                                                  |
-| ----------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------- |
-| [socket.ssl](https://docs-archive.mariadb.net/server/ref/mdb/wsrep_provider_options/socket.ssl/)            | Set this option to `true` to enable TLS.                         |
-| [socket.ssl\_ca](https://docs-archive.mariadb.net/server/ref/mdb/wsrep_provider_options/socket.ssl_ca/)     | Set this option to the path of the CA chain file.                |
-| [socket.ssl\_cert](https://docs-archive.mariadb.net/server/ref/mdb/wsrep_provider_options/socket.ssl_cert/) | Set this option to the path of the node's X509 certificate file. |
-| [socket.ssl\_key](https://docs-archive.mariadb.net/server/ref/mdb/wsrep_provider_options/socket.ssl_key/)   | Set this option to the path of the node's private key file.      |
+| **WSREP Provider Option**              | **Description**                                                  |
+| -------------------------------------- | ---------------------------------------------------------------- |
+| [socket.ssl](socket.ssl.md)            | Set this option to `true` to enable TLS.                         |
+| [socket.ssl\_ca](socket.ssl_ca.md)     | Set this option to the path of the CA chain file.                |
+| [socket.ssl\_cert](socket.ssl_cert.md) | Set this option to the path of the node's X509 certificate file. |
+| [socket.ssl\_key](socket.ssl_key.md)   | Set this option to the path of the node's private key file.      |
 
 When the `wsrep_ssl_mode` system variable is set to `SERVER` or `SERVER_X509`, each node obtains its TLS configuration from the node's MariaDB Enterprise Server configuration. The following system variables are used:
 
