@@ -2,7 +2,7 @@
 
 ## Overview <a href="#overview_h2" id="overview_h2"></a>
 
-Defines the path to the SSL certificate key
+Defines the path to the SSL certificate key.
 
 The `wsrep_provider_options` system variable applies to MariaDB Enterprise Cluster, powered by Galera and to Galera Cluster available with MariaDB Community Server. This page relates specifically to the socket.ssl\_key `wsrep_provider_options`.
 

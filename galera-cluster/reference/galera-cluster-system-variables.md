@@ -1,6 +1,6 @@
 # Galera Cluster System Variables
 
-This page documents system variables related to Galera Cluster. For options that are not system variables, see [Galera Options](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/starting-and-stopping-mariadb/mariadbd-options#galera-cluster-options).
+/This page documents system variables related to Galera Cluster. For options that are not system variables, see [Galera Options](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/starting-and-stopping-mariadb/mariadbd-options#galera-cluster-options).
 
 See [Server System Variables](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables) for a complete list of system variables and instructions on setting them.
 
@@ -33,8 +33,13 @@ Also see the [Full list of MariaDB options, system and status variables](https:/
 * Dynamic: Yes
 * Data Type: Boolean
 * Default Value: `OFF`
-* Deprecated: [MariaDB 10.1.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10-1-3-release-notes)
 * Removed: [MariaDB 11.3.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-3-rolling-releases/mariadb-11-3-0-release-notes)
+
+#### `wsrep_certificate_expiration_hours_warning`&#x20;
+
+{% content-ref url="wsrep-variable-details/wsrep_certificate_expiration_hours_warning.md" %}
+[wsrep\_certificate\_expiration\_hours\_warning.md](wsrep-variable-details/wsrep_certificate_expiration_hours_warning.md)
+{% endcontent-ref %}
 
 #### `wsrep_certification_rules`
 
@@ -47,7 +52,6 @@ Also see the [Full list of MariaDB options, system and status variables](https:/
 * Data Type: Enumeration
 * Default Value: `strict`
 * Valid Values: `strict`, `optimized`
-* Introduced: [MariaDB 10.4.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-1043-release-notes), MariazDB 10.3.13, [MariaDB 10.2.22](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-10222-release-notes), [MariaDB 10.1.38](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10138-release-notes)
 
 #### `wsrep_certify_nonPK`
 
@@ -81,7 +85,11 @@ Also see the [Full list of MariaDB options, system and status variables](https:/
 * Scope: Global
 * Dynamic: Yes
 * Data Type: String
-* Default Value: `my_wsrep_cluster`
+* Default Value: `my_wsrep_cluster`&#x20;
+
+{% content-ref url="wsrep-variable-details/wsrep_cluster_name.md" %}
+[wsrep\_cluster\_name.md](wsrep-variable-details/wsrep_cluster_name.md)
+{% endcontent-ref %}
 
 #### `wsrep_convert_LOCK_to_trx`
 
@@ -211,7 +219,6 @@ It is an enum. Valid values are:`0: NONE`: Off (default)`1: SERVER`: MariaDB ser
 * Data Type: Numeric
 * Default Value: `7`
 * Range: `0` to `7`
-* Introduced: [MariaDB 10.4.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-1042-release-notes)
 
 #### `wsrep_load_data_splitting`
 
@@ -380,6 +387,10 @@ It is an enum. Valid values are:`0: NONE`: Off (default)`1: SERVER`: MariaDB ser
 * Data Type: String
 * Default Value: Empty
 
+{% content-ref url="wsrep-variable-details/wsrep_provider_options.md" %}
+[wsrep\_provider\_options.md](wsrep-variable-details/wsrep_provider_options.md)
+{% endcontent-ref %}
+
 #### `wsrep_recover`
 
 * Description: If set to `ON` when the server starts, the server will recover the sequence number of the most recent write set applied by Galera, and it will be output to `stderr`, which is usually redirected to the [error log](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/server-monitoring-logs/error-log). At that point, the server will exit. This sequence number can be provided to the [wsrep\_start\_position](galera-cluster-system-variables.md#wsrep_start_position) system variable.
@@ -401,7 +412,6 @@ It is an enum. Valid values are:`0: NONE`: Off (default)`1: SERVER`: MariaDB ser
 * Data Type: Enum
 * Default Value: `NONE`
 * Valid Values: `NONE`, `ALL`, `ALL_KILL`
-* Introduced: [MariaDB 10.3.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-1036-release-notes), [MariaDB 10.2.14](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-10214-release-notes), [MariaDB 10.1.32](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-1-series/mariadb-10132-release-notes)
 
 #### `wsrep_replicate_myisam`
 
@@ -470,8 +480,13 @@ It is an enum. Valid values are:`0: NONE`: Off (default)`1: SERVER`: MariaDB ser
 * Dynamic: No
 * Data Type: Enum
 * Default Value: `table`
-* Valid Values: `table`, `none`
-* Introduced: [MariaDB 10.4.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-1042-release-notes)
+* Valid Values: `table`, `none`&#x20;
+
+#### `wsrep_ssl_mode`
+
+{% content-ref url="wsrep-variable-details/wsrep_ssl_mode.md" %}
+[wsrep\_ssl\_mode.md](wsrep-variable-details/wsrep_ssl_mode.md)
+{% endcontent-ref %}
 
 #### `wsrep_sst_auth`
 
@@ -509,7 +524,11 @@ It is an enum. Valid values are:`0: NONE`: Off (default)`1: SERVER`: MariaDB ser
 * Dynamic: Yes
 * Data Type: String
 * Default Value: `rsync`
-* Valid Values: `rsync`, `mysqldump`, `xtrabackup`, `xtrabackup-v2`, `mariadb-backup`
+* Valid Values: `rsync`, `mysqldump`, `xtrabackup`, `xtrabackup-v2`, `mariadb-backup`&#x20;
+
+{% content-ref url="wsrep-variable-details/wsrep_sst_method.md" %}
+[wsrep\_sst\_method.md](wsrep-variable-details/wsrep_sst_method.md)
+{% endcontent-ref %}
 
 #### `wsrep_sst_receive_address`
 
@@ -590,7 +609,8 @@ It is an enum. Valid values are:`0: NONE`: Off (default)`1: SERVER`: MariaDB ser
 * Data Type: numeric
 * Default Value: `0`
 * Range: `0` to `2147483647`
-* Introduced: [MariaDB 10.4.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-1042-release-notes)
+
+
 
 #### `wsrep_trx_fragment_unit`
 
@@ -604,7 +624,8 @@ It is an enum. Valid values are:`0: NONE`: Off (default)`1: SERVER`: MariaDB ser
 * Data Type: enum
 * Default Value: `bytes`
 * Valid Values: `bytes`, `rows` or `statements`
-* Introduced: [MariaDB 10.4.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-1042-release-notes)
+
+
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
