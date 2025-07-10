@@ -143,11 +143,11 @@ TLS is mandatory in both the Server and Server X.509 `SST TLS` Modes. When Maria
 
 Each node obtains its TLS configuration from the node's MariaDB Enterprise Server configuration. The following system variables are used:
 
-| **System Variable**                                                                     | **Description**                                                            |
-| --------------------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
-| [ssl\_ca](https://docs-archive.mariadb.net/server/ref/mdb/system-variables/ssl_ca/)     | Set this system variables to the path of the CA chain file.                |
-| [ssl\_cert](https://docs-archive.mariadb.net/server/ref/mdb/system-variables/ssl_cert/) | Set this system variable to the path of the node's X.509 certificate file. |
-| [ssl\_key](https://docs-archive.mariadb.net/server/ref/mdb/system-variables/ssl_key/)   | Set this system variable to the path of the node's private key file.       |
+| **System Variable**                   | **Description**                                                            |
+| ------------------------------------- | -------------------------------------------------------------------------- |
+| [ssl\_ca](../reference/ssl_ca.md)     | Set this system variables to the path of the CA chain file.                |
+| [ssl\_cert](../reference/ssl_cert.md) | Set this system variable to the path of the node's X.509 certificate file. |
+| [ssl\_key](../reference/ssl_key.md)   | Set this system variable to the path of the node's private key file.       |
 
 For example:
 
@@ -175,7 +175,7 @@ new ssl configuration options (ssl-ca, ssl-cert and ssl-key) are ignored by SST 
 
 MariaDB Enterprise Cluster, powered by Galera, adds cluster name verification for Joiner nodes, which ensures that the Joiner node does not perform a State Snapshot Transfer (SST) or an Incremental State Transfer (IST) for the wrong cluster.
 
-Prior to performing a State Snapshot Transfer (SST) or Incremental State Transfer (IST), the Donor node verifies the [wsrep\_cluster\_name](https://docs-archive.mariadb.net/server/ref/mdb/system-variables/wsrep_cluster_name/) value configured by the Joiner node to verify that the node belongs to the cluster.
+Prior to performing a State Snapshot Transfer (SST) or Incremental State Transfer (IST), the Donor node verifies the [wsrep\_cluster\_name](../reference/wsrep_cluster_name.md) value configured by the Joiner node to verify that the node belongs to the cluster.
 
 ### Certificate Expiration Warnings
 

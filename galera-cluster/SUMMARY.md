@@ -43,6 +43,7 @@
   * [Galera Cluster Status Variables](reference/galera-cluster-status-variables.md)
   * [Galera Cluster System Variables](reference/galera-cluster-system-variables.md)
   * [wsrep\_certificate\_expiration\_hours\_warning](reference/wsrep_certificate_expiration_hours_warning.md)
+  * [wsrep\_cluster\_name](reference/wsrep_cluster_name.md)
   * [wsrep\_provider\_options](reference/wsrep_provider_options.md)
   * [wsrep\_ssl\_mode](reference/wsrep_ssl_mode.md)
   * [wsrep\_sst\_method](reference/wsrep_sst_method.md)
