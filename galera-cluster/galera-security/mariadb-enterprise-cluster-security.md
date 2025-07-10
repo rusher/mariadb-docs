@@ -19,7 +19,7 @@ MariaDB Enterprise Cluster, powered by Galera, adds some security features:
 
 ## WSREP TLS Modes
 
-MariaDB Enterprise Cluster, powered by Galera, adds the [wsrep\_ssl\_mode](../reference/wsrep_ssl_mode.md) system variable, which configures the `WSREP` TLS Mode used for Enterprise Cluster replication traffic.
+MariaDB Enterprise Cluster, powered by Galera, adds the [wsrep\_ssl\_mode](../reference/wsrep-variable-details/wsrep_ssl_mode.md) system variable, which configures the `WSREP` TLS Mode used for Enterprise Cluster replication traffic.
 
 The following `WSREP` TLS Modes are supported:
 
@@ -33,18 +33,18 @@ The following `WSREP` TLS Modes are supported:
 
 MariaDB Enterprise Cluster supports the Provider `WSREP TLS` Mode, which is equivalent to Enterprise Cluster's TLS implementation in earlier versions of MariaDB Server. The Provider `WSREP TLS` Mode is primarily intended for backward compatibility, and it is most useful for users who need to perform a rolling upgrade to Enterprise Server 10.6.
 
-The Provider `WSREP TLS` Mode can be configured by setting the [wsrep\_ssl\_mode](../reference/wsrep_ssl_mode.md) system variable to `PROVIDER`.
+The Provider `WSREP TLS` Mode can be configured by setting the [wsrep\_ssl\_mode](../reference/wsrep-variable-details/wsrep_ssl_mode.md) system variable to `PROVIDER`.
 
 TLS is optional in the Provider `WSREP TLS` Mode. When the provider is not configured to use TLS on a node, the node will connect to the cluster without TLS.
 
 Each node obtains its TLS configuration from the [wsrep\_provider\_options](../reference/wsrep-variable-details/wsrep_provider_options.md) system variable. The following options are used:
 
-|                                                     |                                                                   |
-| --------------------------------------------------- | ----------------------------------------------------------------- |
-| [socket.ssl](../reference/socket.ssl.md)            | Set this option to `true` to enable TLS.                          |
-| [socket.ssl\_ca](../reference/socket.ssl_ca.md)     | Set this option to the path of the CA chain file.                 |
-| [socket.ssl\_cert](../reference/socket.ssl_cert.md) | Set this option to the path of the node's X.509 certificate file. |
-| [socket.ssl\_key](../reference/socket.ssl_key.md)   | Set this option to the path of the node's private key file.       |
+|                                                                            |                                                                   |
+| -------------------------------------------------------------------------- | ----------------------------------------------------------------- |
+| [socket.ssl](../reference/wsrep-variable-details/socket.ssl.md)            | Set this option to `true` to enable TLS.                          |
+| [socket.ssl\_ca](../reference/wsrep-variable-details/socket.ssl_ca.md)     | Set this option to the path of the CA chain file.                 |
+| [socket.ssl\_cert](../reference/wsrep-variable-details/socket.ssl_cert.md) | Set this option to the path of the node's X.509 certificate file. |
+| [socket.ssl\_key](../reference/wsrep-variable-details/socket.ssl_key.md)   | Set this option to the path of the node's private key file.       |
 
 For example:
 
@@ -59,20 +59,20 @@ wsrep_provider_options = "socket.ssl=true;socket.ssl_cert=/certs/server-cert.pem
 
 MariaDB Enterprise Cluster adds the Server and Server X.509 `WSREP TLS` Modes for users who require mandatory TLS.
 
-The Server `WSREP TLS` Mode can be configured by setting the [wsrep\_ssl\_mode](../reference/wsrep_ssl_mode.md) system variable to `SERVER`. In the Server `WSREP TLS` Mode, TLS is mandatory, but X.509 certificate verification is not performed. The Server `WSREP TLS` Mode is the default.
+The Server `WSREP TLS` Mode can be configured by setting the [wsrep\_ssl\_mode](../reference/wsrep-variable-details/wsrep_ssl_mode.md) system variable to `SERVER`. In the Server `WSREP TLS` Mode, TLS is mandatory, but X.509 certificate verification is not performed. The Server `WSREP TLS` Mode is the default.
 
-The Server X.509 `WSREP TLS` Mode can be configured by setting the [wsrep\_ssl\_mode](../reference/wsrep_ssl_mode.md) system variable to `SERVER_X509`. In the Server X.509 `WSREP TLS` Mode, TLS and X.509 certification verification are mandatory.
+The Server X.509 `WSREP TLS` Mode can be configured by setting the [wsrep\_ssl\_mode](../reference/wsrep-variable-details/wsrep_ssl_mode.md) system variable to `SERVER_X509`. In the Server X.509 `WSREP TLS` Mode, TLS and X.509 certification verification are mandatory.
 
 TLS is mandatory in both the Server and Server X.509 `WSREP TLS` Modes. When MariaDB Enterprise Server is not configured to use TLS on a node, the node will fail to connect to the cluster.
 
 Each node obtains its TLS configuration from the node's MariaDB Enterprise Server configuration. The following system variables are used:
 
-| **System Variable**                       | **Description**                                                                                                                                                                                                                                           |
-| ----------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [ssl\_ca](../reference/ssl_ca.md)         | Set this system variables to the path of the CA chain file.                                                                                                                                                                                               |
-| [ssl\_capath](../reference/ssl_capath.md) | Optionally set this system variables to the path of the CA chain directory. The directory must have been processed by `openssl rehash`. When your CA chain is stored in a single file, use the [ssl\_ca](../reference/ssl_ca.md) system variable instead. |
-| [ssl\_cert](../reference/ssl_cert.md)     | Set this system variable to the path of the node's X.509 certificate file.                                                                                                                                                                                |
-| [ssl\_key](../reference/ssl_key.md)       | Set this system variable to the path of the node's private key file.                                                                                                                                                                                      |
+| **System Variable**                                              | **Description**                                                                                                                                                                                                                                                                  |
+| ---------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [ssl\_ca](../reference/wsrep-variable-details/ssl_ca.md)         | Set this system variables to the path of the CA chain file.                                                                                                                                                                                                                      |
+| [ssl\_capath](../reference/wsrep-variable-details/ssl_capath.md) | Optionally set this system variables to the path of the CA chain directory. The directory must have been processed by `openssl rehash`. When your CA chain is stored in a single file, use the [ssl\_ca](../reference/wsrep-variable-details/ssl_ca.md) system variable instead. |
+| [ssl\_cert](../reference/wsrep-variable-details/ssl_cert.md)     | Set this system variable to the path of the node's X.509 certificate file.                                                                                                                                                                                                       |
+| [ssl\_key](../reference/wsrep-variable-details/ssl_key.md)       | Set this system variable to the path of the node's private key file.                                                                                                                                                                                                             |
 
 For example:
 
@@ -88,12 +88,12 @@ ssl_key = /certs/server-key.pem
 
 ## SST TLS Modes
 
-MariaDB Enterprise Cluster, powered by Galera, adds the `ssl-mode` option, which configures the SST TLS Mode for State Snapshot Transfers (SSTs). The `ssl-mode` option is supported by the following SST methods, which can be configured using the [wsrep\_sst\_method](../reference/wsrep_sst_method.md) system variable:
+MariaDB Enterprise Cluster, powered by Galera, adds the `ssl-mode` option, which configures the SST TLS Mode for State Snapshot Transfers (SSTs). The `ssl-mode` option is supported by the following SST methods, which can be configured using the [wsrep\_sst\_method](../reference/wsrep-variable-details/wsrep_sst_method.md) system variable:
 
-| **SST Method**            | [wsrep\_sst\_method](../reference/wsrep_sst_method.md) |
-| ------------------------- | ------------------------------------------------------ |
-| MariaDB Enterprise Backup | `mariabackup`                                          |
-| Rsync                     | `rsync`                                                |
+| **SST Method**            | [wsrep\_sst\_method](../reference/wsrep-variable-details/wsrep_sst_method.md) |
+| ------------------------- | ----------------------------------------------------------------------------- |
+| MariaDB Enterprise Backup | `mariabackup`                                                                 |
+| Rsync                     | `rsync`                                                                       |
 
 The following SST TLS Modes are supported:
 
@@ -147,11 +147,11 @@ TLS is mandatory in both the Server and Server X.509 `SST TLS` Modes. When Maria
 
 Each node obtains its TLS configuration from the node's MariaDB Enterprise Server configuration. The following system variables are used:
 
-| **System Variable**                   | **Description**                                                            |
-| ------------------------------------- | -------------------------------------------------------------------------- |
-| [ssl\_ca](../reference/ssl_ca.md)     | Set this system variables to the path of the CA chain file.                |
-| [ssl\_cert](../reference/ssl_cert.md) | Set this system variable to the path of the node's X.509 certificate file. |
-| [ssl\_key](../reference/ssl_key.md)   | Set this system variable to the path of the node's private key file.       |
+| **System Variable**                                          | **Description**                                                            |
+| ------------------------------------------------------------ | -------------------------------------------------------------------------- |
+| [ssl\_ca](../reference/wsrep-variable-details/ssl_ca.md)     | Set this system variables to the path of the CA chain file.                |
+| [ssl\_cert](../reference/wsrep-variable-details/ssl_cert.md) | Set this system variable to the path of the node's X.509 certificate file. |
+| [ssl\_key](../reference/wsrep-variable-details/ssl_key.md)   | Set this system variable to the path of the node's private key file.       |
 
 For example:
 
@@ -179,13 +179,13 @@ new ssl configuration options (ssl-ca, ssl-cert and ssl-key) are ignored by SST 
 
 MariaDB Enterprise Cluster, powered by Galera, adds cluster name verification for Joiner nodes, which ensures that the Joiner node does not perform a State Snapshot Transfer (SST) or an Incremental State Transfer (IST) for the wrong cluster.
 
-Prior to performing a State Snapshot Transfer (SST) or Incremental State Transfer (IST), the Donor node verifies the [wsrep\_cluster\_name](../reference/wsrep_cluster_name.md) value configured by the Joiner node to verify that the node belongs to the cluster.
+Prior to performing a State Snapshot Transfer (SST) or Incremental State Transfer (IST), the Donor node verifies the [wsrep\_cluster\_name](../reference/wsrep-variable-details/wsrep_cluster_name.md) value configured by the Joiner node to verify that the node belongs to the cluster.
 
 ## Certificate Expiration Warnings
 
 MariaDB Enterprise Cluster, powered by Galera, can be configured to write certificate expiration warnings to the [MariaDB Error Log](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/server-monitoring-logs/error-log) when the node's X.509 certificate is close to expiration.
 
-Certificate expiration warnings can be configured using the [wsrep\_certificate\_expiration\_hours\_warning](../reference/wsrep_certificate_expiration_hours_warning.md) system variable:
+Certificate expiration warnings can be configured using the [wsrep\_certificate\_expiration\_hours\_warning](../reference/wsrep-variable-details/wsrep_certificate_expiration_hours_warning.md) system variable:
 
 * When the `wsrep_certificate_expiration_hours_warning` system variable is set to `0`, certificate expiration warnings are not printed to the MariaDB Error Log.
 * When the `wsrep_certificate_expiration_hours_warning` system variable is set to a value `N`, which is greater than `0`, certificate expiration warnings are printed to the MariaDB Error Log when the node's certificate expires in `N` hours or less.
