@@ -30,6 +30,7 @@
     * [Upgrading from MariaDB 10.6 to MariaDB 10.11 with Galera Cluster](galera-management/upgrading-galera-cluster/upgrading-from-mariadb-10-6-to-mariadb-10-11-with-galeracluster.md)
 * [Galera Security](galera-security/README.md)
   * [Securing Communications in Galera Cluster](galera-security/securing-communications-in-galera-cluster.md)
+  * [MariaDB Enterprise Cluster Security](galera-security/mariadb-enterprise-cluster-security.md)
 * [Galera Use Cases](galera-use-cases.md)
 * [High Availability](high-availability/README.md)
   * [Galera Load Balancer](high-availability/galera-load-balancer.md)
