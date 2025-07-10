@@ -122,8 +122,7 @@ Also see the [Full list of MariaDB options, system and status variables](https:/
 * Description: WSREP debug level logging.
   * Before [MariaDB 10.6.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/mariadb-1061-release-notes), DDL logging was only logged on the originating node. From [MariaDB 10.6.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/mariadb-1061-release-notes), it is logged on other nodes as well.
 
-It is an enum. Valid values are:`0: NONE`: Off (default)`1: SERVER`: MariaDB server code contains WSREP\_DEBUG log writes, and these will be added to server error log`2: TRANSACTION`: Logging from wsrep-lib transaction is added to the error log`3: STREAMING`: Logging from streaming transactions in wsrep-lib is added to the error log`4: CLIENT`: Logging from wsrep-lib client state is added to the error log\
-<>
+It is an enum. Valid values are:`0: NONE`: Off (default)`1: SERVER`: MariaDB server code contains WSREP\_DEBUG log writes, and these will be added to server error log`2: TRANSACTION`: Logging from wsrep-lib transaction is added to the error log`3: STREAMING`: Logging from streaming transactions in wsrep-lib is added to the error log`4: CLIENT`: Logging from wsrep-lib client state is added to the error log.
 
 * Commandline:
   * `--wsrep-debug[={NONE|SERVER|TRANSACTION|STREAMING|CLIENT}]`
