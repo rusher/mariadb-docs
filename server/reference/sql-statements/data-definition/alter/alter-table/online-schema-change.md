@@ -101,17 +101,25 @@ Now, a complete list of limitations we are aware of follows:
 
 ### Switching back
 
-Starting with [MariaDB Community Server 11.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-2-series) the online copy is the default mode whenever `NOCOPY` does not apply. In case of any problem with it, it can be disabled by specifying `LOCK=SHARED` to force the usual `COPY` algorithm.
+{% tabs %}
+{% tab title="Current" %}
+Online copy is the default mode whenever `NOCOPY` does not apply. In case of any problem with it, it can be disabled by specifying `LOCK=SHARED` to force the usual `COPY` algorithm.
 
-To better support existing workflows, a new old\_mode flag was also added: setting
+To better support existing workflows, a new `old_mode` flag was also added. The following statement disables online copy by default:
 
 ```sql
 set old_mode= LOCK_ALTER_TABLE_COPY;
 ```
 
-disables online copy by default. It can still be forced to use the new feature under this mode by explicitly specifying `LOCK=NONE` in the `ALTER TABLE` statement.
+It can still be forced to use the new feature under this mode by explicitly specifying `LOCK=NONE` in the `ALTER TABLE` statement.
 
 Server-wide online schema change expands MariaDB Server’s capability for the `LOCK=NONE` approach broadly. The change is made in the core Server operation, which interferes with many components, so it took quite a while to get our approach right. This is still an early version of the feature so please note the limitations that we outlined above.
 
 For more information, refer to, [Reduced operational downtime with new ALTER TABLE](https://mariadb.com/resources/blog/reduced-operational-downtime-with-new-alter-table-features/)
+{% endtab %}
+
+{% tab title="< 11.2" %}
+Online copy is **not** the default mode.
+{% endtab %}
+{% endtabs %}
 
