@@ -115,7 +115,7 @@ INSTALL SONAME "ha_spider";
 SELECT * FROM information_schema.SPIDER_WRAPPER_PROTOCOLS;
 ```
 
-### Connect to Oracle Server through ODBC
+### Create ODBC Spider Table (with an Oracle remote server)
 
 ```sql
 INSTALL SONAME 'ha_spider';
