@@ -55,13 +55,13 @@ When InnoDB performs a referential constraint check, the outcome depends on seve
 
 | Operation                                                                                   | Result of Constraint Check                                     | Action              | Consequence                                                                                                                                                                                                                          |
 | ------------------------------------------------------------------------------------------- | -------------------------------------------------------------- | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [UPDATE](../../reference/sql-statements/data-manipulation/changing-deleting-data/update.md) | InnoDB finds corresponding rows in the child table             | ON UPDATE RESTRICT  | • Fails with [ER\_ROW\_IS\_REFERENCED\_2](https://github.com/mariadb-corporation/docs-server/blob/test/server/architecture/server-constraints/broken-reference/README.md) error code                                                 |
-| [UPDATE](../../reference/sql-statements/data-manipulation/changing-deleting-data/update.md) | InnoDB finds corresponding rows in the child table             | ON UPDATE NO ACTION | •. Fails with [ER\_ROW\_IS\_REFERENCED\_2](https://github.com/mariadb-corporation/docs-server/blob/test/server/architecture/server-constraints/broken-reference/README.md) error code                                                |
+| [UPDATE](../../reference/sql-statements/data-manipulation/changing-deleting-data/update.md) | InnoDB finds corresponding rows in the child table             | ON UPDATE RESTRICT  | • Fails with [ER\_ROW\_IS\_REFERENCED\_2](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/development-articles/mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-codes-1400-to-1499/e1451) error code  |
+| [UPDATE](../../reference/sql-statements/data-manipulation/changing-deleting-data/update.md) | InnoDB finds corresponding rows in the child table             | ON UPDATE NO ACTION | •. Fails with [ER\_ROW\_IS\_REFERENCED\_2](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/development-articles/mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-codes-1400-to-1499/e1451) error code |
 | [UPDATE](../../reference/sql-statements/data-manipulation/changing-deleting-data/update.md) | InnoDB finds corresponding rows in the child table             | ON UPDATE CASCADE   | • Success. • Row in the parent table is updated. • Corresponding rows in the child table are also updated with the new foreign key value. If the child table has an update trigger, the trigger will not be executed for the update. |
 | [UPDATE](../../reference/sql-statements/data-manipulation/changing-deleting-data/update.md) | InnoDB finds corresponding rows in the child table             | ON UPDATE SET NULL  | • Success. • Row in the parent table is updated. • Corresponding rows in the child table are also updated with NULL. If the child table has an update trigger, the trigger will not be executed for the update.                      |
 | [UPDATE](../../reference/sql-statements/data-manipulation/changing-deleting-data/update.md) | InnoDB does not find any corresponding rows in the child table | NA                  | • Success.• Row in the parent table is updated                                                                                                                                                                                       |
-| [DELETE](../../reference/sql-statements/data-manipulation/changing-deleting-data/delete.md) | InnoDB finds corresponding rows in the child table             | ON DELETE RESTRICT  | • Fails with [ER\_ROW\_IS\_REFERENCED\_2](https://github.com/mariadb-corporation/docs-server/blob/test/server/architecture/server-constraints/broken-reference/README.md) error code                                                 |
-| [DELETE](../../reference/sql-statements/data-manipulation/changing-deleting-data/delete.md) | InnoDB finds corresponding rows in the child table             | ON DELETE NO ACTION | • Fails with [ER\_ROW\_IS\_REFERENCED\_2](https://github.com/mariadb-corporation/docs-server/blob/test/server/architecture/server-constraints/broken-reference/README.md) error code                                                 |
+| [DELETE](../../reference/sql-statements/data-manipulation/changing-deleting-data/delete.md) | InnoDB finds corresponding rows in the child table             | ON DELETE RESTRICT  | • Fails with [ER\_ROW\_IS\_REFERENCED\_2](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/development-articles/mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-codes-1400-to-1499/e1451) error code  |
+| [DELETE](../../reference/sql-statements/data-manipulation/changing-deleting-data/delete.md) | InnoDB finds corresponding rows in the child table             | ON DELETE NO ACTION | • Fails with [ER\_ROW\_IS\_REFERENCED\_2](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/development-articles/mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-codes-1400-to-1499/e1451) error code  |
 | [DELETE](../../reference/sql-statements/data-manipulation/changing-deleting-data/delete.md) | InnoDB finds corresponding rows in the child table             | ON DELETE CASCADE   | • Success. • Row in the parent table is deleted. • Corresponding rows in the child table are also deleted. If the child table has a delete trigger, the trigger will not be executed for the delete.                                 |
 | [DELETE](../../reference/sql-statements/data-manipulation/changing-deleting-data/delete.md) | InnoDB finds rows in the child table for the row               | ON DELETE SET NULL  | • Success. • Row in the parent table is deleted. • Corresponding rows in the child table are updated with NULL. If the child table has an update trigger, the trigger will not be executed for the update.                           |
 | [DELETE](../../reference/sql-statements/data-manipulation/changing-deleting-data/delete.md) | InnoDB does not find any rows in the child table for the row   | NA                  | • Success. • Row in the parent table is deleted                                                                                                                                                                                      |
@@ -78,15 +78,15 @@ When an InnoDB table is referenced by a foreign key, it is known as a child tabl
 
 When InnoDB performs a referential constraint check, the outcome depends on several factors. The following table describes the details:
 
-| Operation                                                                                   | Result of Constraint Check                           | Consequence                                                                                                                                                                        |
-| ------------------------------------------------------------------------------------------- | ---------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [INSERT](../../reference/sql-statements/data-manipulation/inserting-loading-data/insert.md) | New foreign key value is present in parent table     | Success                                                                                                                                                                            |
-| [INSERT](../../reference/sql-statements/data-manipulation/inserting-loading-data/insert.md) | New foreign key value is not present in parent table | Fails with ER\_NO\_REFERENCED\_ROW\_2 error code                                                                                                                                   |
-| [INSERT](../../reference/sql-statements/data-manipulation/inserting-loading-data/insert.md) | New foreign key value is NULL                        | Success                                                                                                                                                                            |
-| [UPDATE](../../reference/sql-statements/data-manipulation/changing-deleting-data/update.md) | New foreign key value is present in parent table     | Success                                                                                                                                                                            |
-| [UPDATE](../../reference/sql-statements/data-manipulation/changing-deleting-data/update.md) | New foreign key value is not present in parent table | Fails with [ER\_NO\_REFERENCED\_ROW\_2](https://github.com/mariadb-corporation/docs-server/blob/test/server/architecture/server-constraints/broken-reference/README.md) error code |
-| [UPDATE](../../reference/sql-statements/data-manipulation/changing-deleting-data/update.md) | New foreign key value is NULL                        | Success                                                                                                                                                                            |
-| [DROP TABLE](../../reference/sql-statements/data-definition/drop/drop-table.md)             | Table is referenced by a foreign key                 | Fails with                                                                                                                                                                         |
+| Operation                                                                                   | Result of Constraint Check                           | Consequence                                                                                                                                                                                                                       |
+| ------------------------------------------------------------------------------------------- | ---------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [INSERT](../../reference/sql-statements/data-manipulation/inserting-loading-data/insert.md) | New foreign key value is present in parent table     | Success                                                                                                                                                                                                                           |
+| [INSERT](../../reference/sql-statements/data-manipulation/inserting-loading-data/insert.md) | New foreign key value is not present in parent table | Fails with [ER\_NO\_REFERENCED\_ROW\_2](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/development-articles/mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-codes-1400-to-1499/e1452) error code |
+| [INSERT](../../reference/sql-statements/data-manipulation/inserting-loading-data/insert.md) | New foreign key value is NULL                        | Success                                                                                                                                                                                                                           |
+| [UPDATE](../../reference/sql-statements/data-manipulation/changing-deleting-data/update.md) | New foreign key value is present in parent table     | Success                                                                                                                                                                                                                           |
+| [UPDATE](../../reference/sql-statements/data-manipulation/changing-deleting-data/update.md) | New foreign key value is not present in parent table | Fails with [ER\_NO\_REFERENCED\_ROW\_2](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/development-articles/mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-codes-1400-to-1499/e1452) error code |
+| [UPDATE](../../reference/sql-statements/data-manipulation/changing-deleting-data/update.md) | New foreign key value is NULL                        | Success                                                                                                                                                                                                                           |
+| [DROP TABLE](../../reference/sql-statements/data-definition/drop/drop-table.md)             | Table is referenced by a foreign key                 | Fails with                                                                                                                                                                                                                        |
 
 ## Creating InnoDB Tables with a Foreign Key Constraint
 
@@ -172,7 +172,7 @@ DELETE FROM hq_sales.customers
    WHERE customer_id = 1;
 ```
 
-This will fail with the [ER\_ROW\_IS\_REFERENCED\_2](https://github.com/mariadb-corporation/docs-server/blob/test/server/architecture/server-constraints/broken-reference/README.md) error code as explained in the Operating on a Parent Table section:
+This will fail with the [ER\_ROW\_IS\_REFERENCED\_2](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/development-articles/mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-codes-1400-to-1499/e1451) error code as explained in the Operating on a Parent Table section:
 
 ```sql
 ERROR 1451 (23000): Cannot delete or update a parent row: a foreign key constraint fails
@@ -189,7 +189,7 @@ VALUES
    (1, 3, '2020-05-10 14:25:16', 227.15, 'CASH');
 ```
 
-This will fail with the [ER\_NO\_REFERENCED\_ROW\_2](https://github.com/mariadb-corporation/docs-server/blob/test/server/architecture/server-constraints/broken-reference/README.md) error code as explained in the Operating on a Child Table section:
+This will fail with the [ER\_NO\_REFERENCED\_ROW\_2](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/development-articles/mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-codes-1400-to-1499/e1452) error code as explained in the Operating on a Child Table section:
 
 ```sql
 ERROR 1452 (23000): Cannot add or update a child row: a foreign key constraint fails
@@ -286,7 +286,7 @@ DELETE FROM hq_sales.customers
    WHERE customer_id = 1;
 ```
 
-This will fail with the [ER\_ROW\_IS\_REFERENCED\_2](https://github.com/mariadb-corporation/docs-server/blob/test/server/architecture/server-constraints/broken-reference/README.md) error code as explained in the Operating on a Parent Table section:
+This will fail with the [ER\_ROW\_IS\_REFERENCED\_2](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/development-articles/mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-codes-1400-to-1499/e1451) error code as explained in the Operating on a Parent Table section:
 
 ```sql
 ERROR 1451 (23000): Cannot delete or update a parent row: a foreign key constraint fails
@@ -303,7 +303,7 @@ VALUES
    (1, 3, '2020-05-10 14:25:16', 227.15, 'CASH');
 ```
 
-This will fail with the [ER\_NO\_REFERENCED\_ROW\_2](https://github.com/mariadb-corporation/docs-server/blob/test/server/architecture/server-constraints/broken-reference/README.md) error code as explained in the Operating on a Child Table section:
+This will fail with the [ER\_NO\_REFERENCED\_ROW\_2](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/development-articles/mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-codes-1400-to-1499/e1452) error code as explained in the Operating on a Child Table section:
 
 ```sql
 ERROR 1452 (23000): Cannot add or update a child row: a foreign key constraint fails
@@ -357,7 +357,7 @@ Let's temporarily disable foreign key constraint checks, and then perform some t
 $ mariadb --user=root
 ```
 
-2. Temporarily disable foreign key constraint checks by setting the [foreign\_key\_checks](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#foreign_key_checks) system variable with the [SET SESSION](https://mariadb.com/kb/en/set-session) statement:
+2. Temporarily disable foreign key constraint checks by setting the [foreign\_key\_checks](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#foreign_key_checks) system variable with the [SET SESSION](../../set-session-authorization.md) statement:
 
 ```sql
 SET SESSION foreign_key_checks=OFF;
@@ -381,9 +381,9 @@ VALUES
    (1, 3, '2020-05-10 14:25:16', 227.15, 'CASH');
 ```
 
-This operation would usually fail with the [ER\_NO\_REFERENCED\_ROW\_2](https://github.com/mariadb-corporation/docs-server/blob/test/server/architecture/server-constraints/broken-reference/README.md) error code as explained in the [Operating on a Child Table](foreign-key-constraints.md#operating-on-a-child-table) section, but if foreign key constraint checks are disable, then it will succeed.
+This operation would usually fail with the [ER\_NO\_REFERENCED\_ROW\_2](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/development-articles/mariadb-internals/using-mariadb-with-your-programs-api/error-codes/mariadb-error-codes-1400-to-1499/e1452) error code as explained in the [Operating on a Child Table](foreign-key-constraints.md#operating-on-a-child-table) section, but if foreign key constraint checks are disable, then it will succeed.
 
-5. Re-enable foreign key constraint checks by setting the [foreign\_key\_checks](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#foreign_key_checks) system variable with the [SET SESSION](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/sql-statements-and-structure/sql-statements/data-manipulation/server-constraints/set-session/README.md) statement:
+5. Re-enable foreign key constraint checks by setting the [foreign\_key\_checks](../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#foreign_key_checks) system variable with the [SET SESSION](../../set-session-authorization.md) statement:
 
 ```sql
 SET SESSION foreign_key_checks=ON;
