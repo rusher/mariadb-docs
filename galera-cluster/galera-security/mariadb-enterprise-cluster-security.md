@@ -15,7 +15,7 @@ MariaDB Enterprise Cluster, powered by Galera, adds some security features:
 
 ### WSREP TLS Modes
 
-MariaDB Enterprise Cluster, powered by Galera, adds the [wsrep\_ssl\_mode](https://docs-archive.mariadb.net/server/ref/mdb/system-variables/wsrep_ssl_mode/) system variable, which configures the WSREP TLS Mode used for Enterprise Cluster replication traffic.
+MariaDB Enterprise Cluster, powered by Galera, adds the [wsrep\_ssl\_mode](../reference/wsrep_ssl_mode.md) system variable, which configures the WSREP TLS Mode used for Enterprise Cluster replication traffic.
 
 The following WSREP TLS Modes are supported:
 
@@ -29,11 +29,11 @@ The following WSREP TLS Modes are supported:
 
 MariaDB Enterprise Cluster supports the Provider `WSREP TLS` Mode, which is equivalent to Enterprise Cluster's TLS implementation in earlier versions of MariaDB Server. The Provider `WSREP TLS` Mode is primarily intended for backward compatibility, and it is most useful for users who need to perform a rolling upgrade to Enterprise Server 10.6.
 
-The Provider `WSREP TLS` Mode can be configured by setting the [wsrep\_ssl\_mode](https://docs-archive.mariadb.net/server/ref/mdb/system-variables/wsrep_ssl_mode/) system variable to `PROVIDER`.
+The Provider `WSREP TLS` Mode can be configured by setting the [wsrep\_ssl\_mode](../reference/wsrep_ssl_mode.md) system variable to `PROVIDER`.
 
 TLS is optional in the Provider `WSREP TLS` Mode. When the provider is not configured to use TLS on a node, the node will connect to the cluster without TLS.
 
-Each node obtains its TLS configuration from the [wsrep\_provider\_options](https://docs-archive.mariadb.net/server/ref/mdb/system-variables/wsrep_provider_options/) system variable. The following options are used:
+Each node obtains its TLS configuration from the [wsrep\_provider\_options](../reference/wsrep_provider_options.md) system variable. The following options are used:
 
 | **WSREP Provider Option**                                                                                   | **Description**                                                   |
 | ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------- |
@@ -55,9 +55,9 @@ wsrep_provider_options = "socket.ssl=true;socket.ssl_cert=/certs/server-cert.pem
 
 MariaDB Enterprise Cluster adds the Server and Server X.509 `WSREP TLS` Modes for users who require mandatory TLS.
 
-The Server `WSREP TLS` Mode can be configured by setting the [wsrep\_ssl\_mode](https://docs-archive.mariadb.net/server/ref/mdb/system-variables/wsrep_ssl_mode/) system variable to `SERVER`. In the Server `WSREP TLS` Mode, TLS is mandatory, but X.509 certificate verification is not performed. The Server `WSREP TLS` Mode is the default.
+The Server `WSREP TLS` Mode can be configured by setting the [wsrep\_ssl\_mode](../reference/wsrep_ssl_mode.md) system variable to `SERVER`. In the Server `WSREP TLS` Mode, TLS is mandatory, but X.509 certificate verification is not performed. The Server `WSREP TLS` Mode is the default.
 
-The Server X.509 `WSREP TLS` Mode can be configured by setting the [wsrep\_ssl\_mode](https://docs-archive.mariadb.net/server/ref/mdb/system-variables/wsrep_ssl_mode/) system variable to `SERVER_X509`. In the Server X.509 `WSREP TLS` Mode, TLS and X.509 certification verification are mandatory.
+The Server X.509 `WSREP TLS` Mode can be configured by setting the [wsrep\_ssl\_mode](../reference/wsrep_ssl_mode.md) system variable to `SERVER_X509`. In the Server X.509 `WSREP TLS` Mode, TLS and X.509 certification verification are mandatory.
 
 TLS is mandatory in both the Server and Server X.509 `WSREP TLS` Modes. When MariaDB Enterprise Server is not configured to use TLS on a node, the node will fail to connect to the cluster.
 
@@ -179,12 +179,12 @@ Prior to performing a State Snapshot Transfer (SST) or Incremental State Transfe
 
 ### Certificate Expiration Warnings
 
-MariaDB Enterprise Cluster, powered by Galera, can be configured to write certificate expiration warnings to the [MariaDB Error Log](https://docs-archive.mariadb.net/server/ref/mdb/logging/error/) when the node's X.509 certificate is close to expiration.
+MariaDB Enterprise Cluster, powered by Galera, can be configured to write certificate expiration warnings to the [MariaDB Error Log](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/server-monitoring-logs/error-log) when the node's X.509 certificate is close to expiration.
 
 Certificate expiration warnings can be configured using the [wsrep\_certificate\_expiration\_hours\_warning](https://docs-archive.mariadb.net/server/ref/mdb/system-variables/wsrep_certificate_expiration_hours_warning/) system variable:
 
-* When the [wsrep\_certificate\_expiration\_hours\_warning](https://docs-archive.mariadb.net/server/ref/mdb/system-variables/wsrep_certificate_expiration_hours_warning/) system variable is set to `0`, certificate expiration warnings are not printed to the [MariaDB Error Log](https://docs-archive.mariadb.net/server/ref/mdb/logging/error/).
-* When the [wsrep\_certificate\_expiration\_hours\_warning](https://docs-archive.mariadb.net/server/ref/mdb/system-variables/wsrep_certificate_expiration_hours_warning/) system variable is set to a value `N`, which is greater than `0`, certificate expiration warnings are printed to the [MariaDB Error Log](https://docs-archive.mariadb.net/server/ref/mdb/logging/error/) when the node's certificate expires in `N` hours or less.
+* When the [wsrep\_certificate\_expiration\_hours\_warning](https://docs-archive.mariadb.net/server/ref/mdb/system-variables/wsrep_certificate_expiration_hours_warning/) system variable is set to `0`, certificate expiration warnings are not printed to the MariaDB Error Log.
+* When the [wsrep\_certificate\_expiration\_hours\_warning](https://docs-archive.mariadb.net/server/ref/mdb/system-variables/wsrep_certificate_expiration_hours_warning/) system variable is set to a value `N`, which is greater than `0`, certificate expiration warnings are printed to the MariaDB Error Log when the node's certificate expires in `N` hours or less.
 
 For example:
 
@@ -199,7 +199,7 @@ wsrep_certificate_expiration_hours_warning=72
 
 MariaDB Enterprise Cluster, powered by Galera, adds new capabilities that allow TLS to be enabled for Enterprise Cluster replication traffic without downtime.
 
-Enabling TLS without downtime relies on two new options implemented for the [wsrep\_provider\_options](https://docs-archive.mariadb.net/server/ref/mdb/system-variables/wsrep_provider_options/) system variable:
+Enabling TLS without downtime relies on two new options implemented for the [wsrep\_provider\_options](../reference/wsrep_provider_options.md) system variable:
 
 | **Option**          | **Dynamic?** | **Default** | **Description**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 | ------------------- | ------------ | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
