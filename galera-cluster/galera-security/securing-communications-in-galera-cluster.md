@@ -10,12 +10,12 @@ For each cluster node, you also need a certificate, private key, and the Certifi
 
 ## Securing Galera Cluster Replication Traffic
 
-In order to enable TLS for Galera Cluster's replication traffic, there are a number of [wsrep\_provider\_options](../reference/wsrep_provider_options.md) that you need to set, such as:
+In order to enable TLS for Galera Cluster's replication traffic, there are a number of [wsrep\_provider\_options](../reference/wsrep-variable-details/wsrep_provider_options.md) that you need to set, such as:
 
-* You need to set the path to the server's certificate by setting the [socket.ssl\_cert](../reference/wsrep_provider_options.md#socketssl_cert) wsrep\_provider\_option.
-* You need to set the path to the server's private key by setting the [socket.ssl\_key](../reference/wsrep_provider_options.md#socketssl_key) wsrep\_provider\_option.
-* You need to set the path to the certificate authority (CA) chain that can verify the server's certificate by setting the [socket.ssl\_ca](../reference/wsrep_provider_options.md#socketssl_ca) wsrep\_provider\_option.
-* If you want to restrict the server to certain ciphers, then you also need to set the [socket.ssl\_cipher](../reference/wsrep_provider_options.md#socketssl_cipher) wsrep\_provider\_option.
+* You need to set the path to the server's certificate by setting the [socket.ssl\_cert](../reference/wsrep-variable-details/wsrep_provider_options.md#socketssl_cert) wsrep\_provider\_option.
+* You need to set the path to the server's private key by setting the [socket.ssl\_key](../reference/wsrep-variable-details/wsrep_provider_options.md#socketssl_key) wsrep\_provider\_option.
+* You need to set the path to the certificate authority (CA) chain that can verify the server's certificate by setting the [socket.ssl\_ca](../reference/wsrep-variable-details/wsrep_provider_options.md#socketssl_ca) wsrep\_provider\_option.
+* If you want to restrict the server to certain ciphers, then you also need to set the [socket.ssl\_cipher](../reference/wsrep-variable-details/wsrep_provider_options.md#socketssl_cipher) wsrep\_provider\_option.
 
 It is also a good idea to set MariaDB Server's regular TLS-related system variables, so that TLS will be enabled for regular client connections as well. See [Securing Connections for Client and Server](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/securing-connections-for-client-and-server) for information on how to do that.
 

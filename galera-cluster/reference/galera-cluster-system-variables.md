@@ -68,7 +68,7 @@ Also see the [Full list of MariaDB options, system and status variables](https:/
   * For example:
     * `gcomm://192.168.0.1,192.168.0.2,192.168.0.3`
     * `gcomm://192.168.0.1:1234,192.168.0.2:1234,192.168.0.3:1234?gmcast.listen_addr=tcp://0.0.0.0:1234`
-  * See also [gmcast.listen\_addr](wsrep_provider_options.md#gmcastlisten_addr)
+  * See also [gmcast.listen\_addr](wsrep-variable-details/wsrep_provider_options.md#gmcastlisten_addr)
 * Commandline: `--wsrep-cluster-address=value`
 * Scope: Global
 * Dynamic: No
@@ -127,7 +127,7 @@ It is an enum. Valid values are:`0: NONE`: Off (default)`1: SERVER`: MariaDB ser
 
 #### `wsrep_desync`
 
-* Description: When a node receives more write-sets than it can apply, the transactions are placed in a received queue. If the node's received queue has too many write-sets waiting to be applied (as defined by the [gcs.fc\_limit](wsrep_provider_options.md#gcsfc_limit) WSREP provider option), then the node would usually engage Flow Control. However, when this option is set to `ON`, Flow Control will be disabled for the desynced node. The desynced node works through the received queue until it reaches a more manageable size. The desynced node continues to receive write-sets from the other nodes in the cluster. The other nodes in the cluster do not wait for the desynced node to catch up, so the desynced node can fall even further behind the other nodes in the cluster. You can check if a node is desynced by checking if the [wsrep\_local\_state\_comment](galera-cluster-status-variables.md#wsrep_local_state_comment) status variable is equal to `Donor/Desynced`.
+* Description: When a node receives more write-sets than it can apply, the transactions are placed in a received queue. If the node's received queue has too many write-sets waiting to be applied (as defined by the [gcs.fc\_limit](wsrep-variable-details/wsrep_provider_options.md#gcsfc_limit) WSREP provider option), then the node would usually engage Flow Control. However, when this option is set to `ON`, Flow Control will be disabled for the desynced node. The desynced node works through the received queue until it reaches a more manageable size. The desynced node continues to receive write-sets from the other nodes in the cluster. The other nodes in the cluster do not wait for the desynced node to catch up, so the desynced node can fall even further behind the other nodes in the cluster. You can check if a node is desynced by checking if the [wsrep\_local\_state\_comment](galera-cluster-status-variables.md#wsrep_local_state_comment) status variable is equal to `Donor/Desynced`.
 * Commandline: `--wsrep-desync[={0|1}]`
 * Scope: Global
 * Dynamic: Yes
@@ -196,7 +196,7 @@ It is an enum. Valid values are:`0: NONE`: Off (default)`1: SERVER`: MariaDB ser
 * Dynamic: Yes
 * Data Type: `numeric`
 * Range: `0` to `18446744073709551615`
-* Introduced: [MariaDB 10.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1051-release-notes)
+* Introduced: [MariaDB 10.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-1051-release-notes)
 
 #### `wsrep_ignore_apply_errors`
 
@@ -294,7 +294,7 @@ It is an enum. Valid values are:`0: NONE`: Off (default)`1: SERVER`: MariaDB ser
   * servers running multiple nodes.
   * network address translation (NAT).
   * clusters with nodes in more than one region.
-* See also [wsrep\_provider\_options -> gmcast.listen\_addr](wsrep_provider_options.md#gmcastlisten_addr)
+* See also [wsrep\_provider\_options -> gmcast.listen\_addr](wsrep-variable-details/wsrep_provider_options.md#gmcastlisten_addr)
 * Commandline: `--wsrep-node-address=value`
 * Scope: Global
 * Dynamic: No
@@ -303,7 +303,7 @@ It is an enum. Valid values are:`0: NONE`: Off (default)`1: SERVER`: MariaDB ser
 
 #### `wsrep_node_incoming_address`
 
-* Description: This is the address from which the node listens for client connections. If an address is not specified or it's set to `AUTO` (default), mysqld uses either [--bind-address](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#bind_address) or [--wsrep-node-address](galera-cluster-system-variables.md#wsrep_node_address), or tries to get one from the list of available network interfaces, in the same order. See also [wsrep\_provider\_options -> gmcast.listen\_addr](wsrep_provider_options.md#gmcastlisten_addr).
+* Description: This is the address from which the node listens for client connections. If an address is not specified or it's set to `AUTO` (default), mysqld uses either [--bind-address](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/server-system-variables#bind_address) or [--wsrep-node-address](galera-cluster-system-variables.md#wsrep_node_address), or tries to get one from the list of available network interfaces, in the same order. See also [wsrep\_provider\_options -> gmcast.listen\_addr](wsrep-variable-details/wsrep_provider_options.md#gmcastlisten_addr).
 * Commandline: `--wsrep-node-incoming-address=value`
 * Scope: Global
 * Dynamic: No
@@ -325,8 +325,8 @@ It is an enum. Valid values are:`0: NONE`: Off (default)`1: SERVER`: MariaDB ser
 * Commandline: `--wsrep-notify-command=value`
 * Scope: Global
 * Dynamic:
-  * No (>= [MariaDB 10.5.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1059-release-notes))
-  * Yes (<= [MariaDB 10.5.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1058-release-notes))
+  * No (>= [MariaDB 10.5.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-1059-release-notes))
+  * Yes (<= [MariaDB 10.5.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-1058-release-notes))
 * Data Type: String
 * Default Value: Empty
 
@@ -366,14 +366,14 @@ It is an enum. Valid values are:`0: NONE`: Off (default)`1: SERVER`: MariaDB ser
 * Description: Location of the wsrep library, usually `/usr/lib/libgalera_smm.so` on Debian and Ubuntu, and `/usr/lib64/libgalera_smm.so` on Red Hat/CentOS.
 * Commandline: `--wsrep-provider=value`
 * Scope: Global
-  * No (>= [MariaDB 10.5.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1059-release-notes))
-  * Yes (<= [MariaDB 10.5.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1058-release-notes))
+  * No (>= [MariaDB 10.5.9](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-1059-release-notes))
+  * Yes (<= [MariaDB 10.5.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-1058-release-notes))
 * Data Type: String
 * Default Value: None
 
 #### `wsrep_provider_options`
 
-* Description: Semicolon (;) separated list of wsrep options (see [wsrep\_provider\_options](wsrep_provider_options.md)).
+* Description: Semicolon (;) separated list of wsrep options (see [wsrep\_provider\_options](wsrep-variable-details/wsrep_provider_options.md)).
 * Commandline: `--wsrep-provider-options=value`
 * Scope: Global
 * Dynamic: No
@@ -484,7 +484,7 @@ It is an enum. Valid values are:`0: NONE`: Off (default)`1: SERVER`: MariaDB ser
 
 #### `wsrep_sst_donor`
 
-* Description: Comma-separated list (from 5.5.33) or name (as per [wsrep\_node\_name](galera-cluster-system-variables.md#wsrep_node_name)) of the servers as donors, or the source of the state transfer, in order of preference. The donor-selection algorithm, in general, prefers a donor capable of transferring only the missing transactions (IST) to the joiner node, instead of the complete state (SST). Thus, it starts by looking for an IST-capable node in the given donor list followed by rest of the nodes in the cluster. In case multiple candidate nodes are found outside the specified donor list, the node in the same segment ([gmcast.segment](wsrep_provider_options.md#gmcastsegment)) as the joiner is preferred. If none of the existing nodes in the cluster can serve the missing transactions through IST, the algorithm moves on to look for a suitable node to transfer the entire state (SST). It first looks at the nodes specified in the donor list (irrespective of their segment). If no suitable donor is still found, the rest of the donor nodes are checked for suitability only if the donor list has a "terminating-comma". Note that a stateless node (the Galera arbitrator) can never be a donor. See [Introduction to State Snapshot Transfers (SSTs)](../galera-management/state-snapshot-transfers-ssts-in-galera-cluster/introduction-to-state-snapshot-transfers-ssts.md) for more information.\
+* Description: Comma-separated list (from 5.5.33) or name (as per [wsrep\_node\_name](galera-cluster-system-variables.md#wsrep_node_name)) of the servers as donors, or the source of the state transfer, in order of preference. The donor-selection algorithm, in general, prefers a donor capable of transferring only the missing transactions (IST) to the joiner node, instead of the complete state (SST). Thus, it starts by looking for an IST-capable node in the given donor list followed by rest of the nodes in the cluster. In case multiple candidate nodes are found outside the specified donor list, the node in the same segment ([gmcast.segment](wsrep-variable-details/wsrep_provider_options.md#gmcastsegment)) as the joiner is preferred. If none of the existing nodes in the cluster can serve the missing transactions through IST, the algorithm moves on to look for a suitable node to transfer the entire state (SST). It first looks at the nodes specified in the donor list (irrespective of their segment). If no suitable donor is still found, the rest of the donor nodes are checked for suitability only if the donor list has a "terminating-comma". Note that a stateless node (the Galera arbitrator) can never be a donor. See [Introduction to State Snapshot Transfers (SSTs)](../galera-management/state-snapshot-transfers-ssts-in-galera-cluster/introduction-to-state-snapshot-transfers-ssts.md) for more information.\
   \[NOTE] Although the variable is dynamic, the node will not use the new value unless the node requiring SST or IST disconnects from the cluster. To force this, set [wsrep\_cluster\_address](galera-cluster-system-variables.md#wsrep_cluster_address) to an empty string and back to the nodes list. After setting this variable dynamically, on startup the value from the configuration file will be used again.
 * Commandline: `--wsrep-sst-donor=value`
 * Scope: Global
@@ -550,7 +550,7 @@ It is an enum. Valid values are:`0: NONE`: Off (default)`1: SERVER`: MariaDB ser
 * Dynamic: Yes
 * Data Type: `boolean`
 * Default Value: `OFF`
-* Introduced: [MariaDB 10.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1051-release-notes)
+* Introduced: [MariaDB 10.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-1051-release-notes)
 * Deprecated: [MariaDB 10.6.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/mariadb-1060-release-notes)
 * Removed: [MariaDB 10.7.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-7-series/mariadb-1070-release-notes)
 

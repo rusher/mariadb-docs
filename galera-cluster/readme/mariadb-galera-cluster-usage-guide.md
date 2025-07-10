@@ -252,9 +252,9 @@ For data-in-transit, MariaDB Enterprise Cluster supports encryption the same as 
 
 ### Data-in-Transit Encryption
 
-MariaDB Enterprise Server 10.6 encrypts Galera replication and SST traffic using the server's TLS configuration by default. With the `wsrep_ssl_mode` system variable, you can configure the node to use the TLS configuration of [wsrep Provider options](../reference/wsrep_provider_options.md).
+MariaDB Enterprise Server 10.6 encrypts Galera replication and SST traffic using the server's TLS configuration by default. With the `wsrep_ssl_mode` system variable, you can configure the node to use the TLS configuration of [wsrep Provider options](../reference/wsrep-variable-details/wsrep_provider_options.md).
 
-MariaDB Enterprise Server 10.5 and earlier support encrypting Galera replication and SST traffic through [wsrep Provider options](../reference/wsrep_provider_options.md).
+MariaDB Enterprise Server 10.5 and earlier support encrypting Galera replication and SST traffic through [wsrep Provider options](../reference/wsrep-variable-details/wsrep_provider_options.md).
 
 TLS encryption is only available when used by all nodes in the cluster.
 

@@ -1,6 +1,6 @@
 # wsrep\_provider\_options
 
-The following options can be set as part of the Galera [wsrep\_provider\_options](galera-cluster-system-variables.md#wsrep_provider_options) variable. Dynamic options can be changed while the server is running.
+The following options can be set as part of the Galera [wsrep\_provider\_options](../galera-cluster-system-variables.md#wsrep_provider_options) variable. Dynamic options can be changed while the server is running.
 
 Options need to be provided as a semicolon (;) separated list on a single line. Options that are not explicitly set are set to their default value.
 
@@ -52,7 +52,7 @@ Note that before Galera 3, the `repl` tag was named `replicator`.
 
 #### `evs.debug_log_mask`
 
-* Description: Controls EVS debug logging. Only effective when [wsrep\_debug](galera-cluster-system-variables.md#wsrep_debug) is on.
+* Description: Controls EVS debug logging. Only effective when [wsrep\_debug](../galera-cluster-system-variables.md#wsrep_debug) is on.
 * Dynamic: Yes
 * Default: `0x1`
 
@@ -326,7 +326,7 @@ Note that before Galera 3, the `repl` tag was named `replicator`.
 
 * Description: Address for listening for Incremental State Transfer.
 * Dynamic: No
-* Default::\<port+1> from [wsrep\_node\_address](galera-cluster-system-variables.md#wsrep_node_address)
+* Default::\<port+1> from [wsrep\_node\_address](../galera-cluster-system-variables.md#wsrep_node_address)
 
 #### `ist.recv_bind`
 
