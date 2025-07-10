@@ -2,16 +2,25 @@
 
 ## Syntax
 
+{% hint style="info" %}
+In the syntax, these options are the same as for the [CREATE TABLE statement](../../create/create-table.md):
+
+* table\_option
+* column\_definition
+* partition\_options
+* partition\_definition
+{% endhint %}
+
 ```sql
 ALTER [ONLINE] [IGNORE] TABLE [IF EXISTS] tbl_name
     [WAIT n | NOWAIT]
     alter_specification [, alter_specification] ...
 
 alter_specification:
-    &#x3C;a data-footnote-ref href="#user-content-fn-1">table_option&#x3C;/a> ...
-  | ADD [COLUMN] [IF NOT EXISTS] col_name &#x3C;a data-footnote-ref href="#user-content-fn-2">column_definition&#x3C;/a>
+    table_option ...
+  | ADD [COLUMN] [IF NOT EXISTS] col_name column_definition
         [FIRST | AFTER col_name ]
-  | ADD [COLUMN] [IF NOT EXISTS] (col_name &#x3C;a data-footnote-ref href="#user-content-fn-2">column_definition&#x3C;/a>,...)
+  | ADD [COLUMN] [IF NOT EXISTS] (col_name column_definition, ...)
   | ADD {INDEX|KEY} [IF NOT EXISTS] [index_name]
         [index_type] (index_col_name,...) [index_option] ...
   | ADD [CONSTRAINT [symbol]] PRIMARY KEY [IF NOT EXISTS]
@@ -55,7 +64,7 @@ alter_specification:
   | ALGORITHM [=] {DEFAULT|INPLACE|COPY|NOCOPY|INSTANT}
   | LOCK [=] {DEFAULT|NONE|SHARED|EXCLUSIVE}
   | FORCE
-  | &#x3C;a data-footnote-ref href="#user-content-fn-3">partition_options&#x3C;/a>
+  | partition_options
   | CONVERT TABLE normal_table TO partition_definition [{WITH | WITHOUT} VALIDATION]
   | CONVERT PARTITION partition_name TO TABLE tbl_name
   | ADD PARTITION [IF NOT EXISTS] (partition_definition)
@@ -76,7 +85,6 @@ alter_specification:
 index_col_name:
     col_name [(length)] [ASC | DESC]
 
-
 index_type:
     USING {BTREE | HASH | RTREE}
 
@@ -89,13 +97,11 @@ index_option:
   | CLUSTERING={YES| NO} ]
   [ IGNORED | NOT IGNORED ]
 
-  table_options: same as for CREATE TABLE; see below
+  table_option [[,] table_option] ...
 
 ```
 
-{% hint style="info" %}
-## Table options (table\_options above) are the same options used by [CREATE TABLE](../../create/create-table.md#table-options).
-{% endhint %}
+
 
 ## Description
 
