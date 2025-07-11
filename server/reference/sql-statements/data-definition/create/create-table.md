@@ -241,7 +241,54 @@ Specifying a column as a unique key creates a unique index on that column. See t
 
 Use `UNIQUE KEY` (or just `UNIQUE`) to specify that all values in the column must be distinct from each other. Unless the column is `NOT NULL`, there may be multiple rows with `NULL` in the column.
 
+```sql
+CREATE TABLE t_long_keys (   a INT PRIMARY KEY,   b  VARCHAR(4073),   UNIQUE KEY `uk_b` (b) ) ENGINE=InnoDB;
+Query OK, 0 rows affected (0.022 sec)
+
+show create table t_long_keys\G
+*************************** 1. row ***************************
+       Table: t_long_keys
+Create Table: CREATE TABLE `t_long_keys` (
+  `a` int(11) NOT NULL,
+  `b` varchar(4073) DEFAULT NULL,
+  PRIMARY KEY (`a`),
+  UNIQUE KEY `uk_b` (`b`) USING HASH
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci
+1 row in set (0.001 sec)
+
+select * from information_schema.INNODB_SYS_TABLES where name like '%t_long_keys%';;
++----------+----------------------+------+--------+-------+------------+---------------+------------+
+| TABLE_ID | NAME                 | FLAG | N_COLS | SPACE | ROW_FORMAT | ZIP_PAGE_SIZE | SPACE_TYPE |
++----------+----------------------+------+--------+-------+------------+---------------+------------+
+|       64 | securedb/t_long_keys |   33 |      5 |    43 | Dynamic    |             0 | Single     |
++----------+----------------------+------+--------+-------+------------+---------------+------------+
+1 row in set (0.003 sec)
+
+
+select * from information_schema.INNODB_SYS_COLUMNS where TABLE_ID=64;
++----------+---------------+-------+-------+--------+------+
+| TABLE_ID | NAME          | POS   | MTYPE | PRTYPE | LEN  |
++----------+---------------+-------+-------+--------+------+
+|       64 | a             |     0 |     6 |   1283 |    4 |
+|       64 | b             |     1 |     1 | 528399 | 4073 |
+|       64 | DB_ROW_HASH_1 | 65538 |     6 |   9736 |    8 |
++----------+---------------+-------+-------+--------+------+
+
+```
+
 Specifying a column as a unique key creates a unique index on that column.
+
+When any inserts or updates occur in the table, reading the binlog shows the hidden column (@3). it causes confusion for the user; we can document these behaviours.
+
+```sql
+### INSERT INTO `securedb`.`t_long_keys`
+### SET
+###   @1=1 /* INT meta=0 nullable=0 is_null=0 */
+###   @2='a' /* VARSTRING(4073) meta=4073 nullable=1 is_null=0 */
+###   @3=580 /* LONGINT meta=0 nullable=1 is_null=0 */
+```
+
+
 
 See the [Index Definitions](create-table.md#index-definitions) section below for more information.
 
