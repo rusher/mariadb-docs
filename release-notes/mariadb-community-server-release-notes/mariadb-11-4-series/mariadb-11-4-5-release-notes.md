@@ -1,5 +1,7 @@
 # MariaDB 11.4.5 Release Notes
 
+{% include "../../.gitbook/includes/latest-11-4.md" %}
+
 [Download](https://mariadb.com/downloads)[Release Notes](mariadb-11-4-5-release-notes.md)[Changelog](../changelogs/changelogs-mariadb-11-4-series/mariadb-11-4-5-changelog.md)[Overview of 11.4](what-is-mariadb-114.md)
 
 [_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/11.4.5/)
