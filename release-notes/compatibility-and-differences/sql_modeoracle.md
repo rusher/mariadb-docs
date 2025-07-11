@@ -170,6 +170,8 @@ There are a number of [extra reserved words](https://app.gitbook.com/s/SsmexDFPv
 
 The [SHOW CREATE TABLE](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/show/show-create-table) statement will not display MariaDB-specific table options, such as AUTO\_INCREMENT or CHARSET, when Oracle mode is set.
 
+&nbsp;
+
 ## See Also
 
 * [mariadb\_schema](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/administrative-sql-statements/system-tables/mariadb_schema)
