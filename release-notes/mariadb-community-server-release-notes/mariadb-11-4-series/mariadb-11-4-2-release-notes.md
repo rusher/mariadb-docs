@@ -1,8 +1,10 @@
 # MariaDB 11.4.2 Release Notes
 
-The most recent release of [MariaDB 11.4](what-is-mariadb-114.md) is:[**MariaDB 11.4.5**](mariadb-11-4-5-release-notes.md) Stable (GA) [Download Now](https://mariadb.com/downloads/)[_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/11.4.5/)
+{% include "../../.gitbook/includes/latest-11-4.md" %}
 
-[Download 11.4.2](https://downloads.mariadb.org/mariadb/11.4.2)[Release Notes](mariadb-11-4-2-release-notes.md)[Changelog](../changelogs/changelogs-mariadb-11-4-series/mariadb-11-4-2-changelog.md)[Overview of 11.4](what-is-mariadb-114.md)
+<a href="https://mariadb.com/downloads" class="button primary">Download</a> <a href="mariadb-11-4-2-release-notes.md" class="button secondary">Release Notes</a> <a href="../changelogs/changelogs-mariadb-11-4-series/mariadb-11-4-2-changelog.md" class="button secondary">Changelog</a> <a href="what-is-mariadb-114.md" class="button secondary">Overview of 11.4</a>
+
+[<sup>_Alternate download from mariadb.org_</sup>](https://downloads.mariadb.org/mariadb/11.4.2/)
 
 **Release date:** 29 May 2024
 
