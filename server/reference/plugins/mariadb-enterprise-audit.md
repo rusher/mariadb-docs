@@ -10,7 +10,7 @@ Audit mechanisms are most effective when they produce a manageable quantity of o
 
 Where audit mechanisms may only be effective when control parameters can also be audited, MariaDB Enterprise Audit implements logging of configuration changes.
 
-## Installation and Configuration Overview
+## Configuration Overview
 
 MariaDB Enterprise Audit is installed and loaded by default. If you are unsure whether it is loaded on your system, you can [confirm that the plugin is loaded](mariadb-enterprise-audit.md#confirm-the-audit-plugin-is-loaded).
 
@@ -168,22 +168,22 @@ If the query returns no results, then the plugin has been uninstalled.
 
 To uninstall the MariaDB Audit plugin with a configuration file:
 
-1. Check your configuration files for the plugin\_load\_add option:
+1. Check your configuration files for the `plugin_load_add` option:
 
-```sql
+```bash
 $ grep --extended-regexp --with-filename \
    'plugin[-_]load[-_]add[[:blank:]]*=[[:blank:]]*server_audit' \
    /etc/mysql/my.cnf \
    /etc/mysql/mariadb.conf.d/*
 ```
 
-```
+```bash
 /etc/mysql/mariadb.conf.d/enable-audit.cnf:plugin_load_add=server_audit
 ```
 
 2. Remove or comment out the plugin\_load\_add option from the configuration file:
 
-```
+```ini
 [mariadb]
 # plugin_load_add=server_audit
 ```
@@ -211,29 +211,29 @@ SHOW GLOBAL VARIABLES
 
 2. Confirm that your server's plugin directory contains server\_audit.so, which is the shared library for MariaDB Enterprise Audit:
 
-```sql
+```bash
 $ ls -l /usr/lib64/mysql/plugin/server_audit.so
 ```
 
-```
+```bash
 -rwxr-xr-x. 1 root root 70432 Jul 15 19:03 /usr/lib64/mysql/plugin/server_audit.so
 ```
 
-MariaDB Enterprise Audit is included in all distributions (binary tarball, DEB/RPM package tarball, DEB/RPM packages) for MariaDB Enterprise Server. If the server\_audit2.so file is not present, confirm that MariaDB Enterprise Server is properly installed. For additional information, see "Deploy".
+MariaDB Enterprise Audit is included in all distributions (binary tarball, DEB/RPM package tarball, DEB/RPM packages) for MariaDB Enterprise Server. If the `server_audit2.so` file is not present, confirm that MariaDB Enterprise Server is properly installed.
 
 ## Load the Audit Plugin
 
-MariaDB Enterprise Audit is loaded by the mariadb-enterprise.cnf configuration file included by default in MariaDB Enterprise Server and later, so it does not generally need to be manually loaded.
+MariaDB Enterprise Audit is loaded by the `mariadb-enterprise.cnf` configuration file included by default in MariaDB Enterprise Server, so it does not generally need to be manually loaded.
 
-The mariadb-enterprise.cnf configuration file loads MariaDB Enterprise Audit by setting the plugin-load-add and server-audit options:
+The `mariadb-enterprise.cnf` configuration file loads MariaDB Enterprise Audit by setting the plugin-load-add and server-audit options:
 
-```sql
+```ini
 # -- Auditing - pre-load Plugin
 plugin-load-add=server_audit
 server_audit=FORCE_PLUS_PERMANENT
 ```
 
-If you do not use mariadb-enterprise.cnf in your environment, you can load MariaDB Enterprise Audit by setting the same options in your configuration file.
+If you do not use `mariadb-enterprise.cnf` in your environment, you can load MariaDB Enterprise Audit by setting the same options in your configuration file.
 
 ### Confirm the Audit Plugin is Loaded
 
@@ -253,7 +253,7 @@ PLUGIN_DESCRIPTION: MariaDB Enterprise Audit
        LOAD_OPTION: FORCE_PLUS_PERMANENT
 ```
 
-MariaDB Enterprise Audit is loaded by the mariadb-enterprise.cnf configuration file included by default in MariaDB Enterprise Server. If your output does not match the example output shown above, confirm that the mariadb-enterprise.cnf configuration file sets the plugin-load-add and server-audit options.
+MariaDB Enterprise Audit is loaded by the `mariadb-enterprise.cnf` configuration file included by default in MariaDB Enterprise Server. If your output does not match the example output shown above, confirm that the `mariadb-enterprise.cnf` configuration file sets the plugin-load-add and server-audit options.
 
 ## Start Audit Logging
 
@@ -272,14 +272,14 @@ Audit logging with MariaDB Enterprise Audit can be started by setting the [serve
 
 1. Set the [server\_audit\_logging](mariadb-audit-plugin/mariadb-audit-plugin-options-and-system-variables.md#server_audit_logging) system variable in a configuration file:
 
-```
+```ini
 [mariadb]
 server_audit_logging = ON
 ```
 
 2. Restart MariaDB Enterprise Server:
 
-```
+```bash
 $ sudo systemctl restart mariadb
 ```
 
@@ -306,7 +306,7 @@ Audit logging with MariaDB Enterprise Audit can be started by setting the [serve
 
 1. Set the [server\_audit\_logging](mariadb-audit-plugin/mariadb-audit-plugin-options-and-system-variables.md#server_audit_logging) system variable with the [SET GLOBAL](../sql-statements/administrative-sql-statements/set-commands/set.md) statement:
 
-```
+```sql
 SET GLOBAL server_audit_logging=ON;
 ```
 
@@ -327,7 +327,7 @@ SHOW GLOBAL STATUS
 
 When a system variable is dynamically changed with the [SET GLOBAL](../sql-statements/administrative-sql-statements/set-commands/set.md) statement, the change does not survive server restarts. To ensure that audit logging is started when the server restarts, set the[server\_audit\_logging](mariadb-audit-plugin/mariadb-audit-plugin-options-and-system-variables.md#server_audit_logging) system variable in a configuration file too:
 
-```
+```ini
 [mariadb]
 server_audit_logging = ON
 ```
@@ -351,23 +351,25 @@ SHOW GLOBAL STATUS
 
 ## Forbid Uninstallation
 
-In a secure environment, MariaDB Enterprise Audit provides administrators with an audit trail of actions performed by users on the MariaDB Enterprise Server node. To protect the integrity of the audit trail, users should not be able to uninstall MariaDB Enterprise Audit. If the server-audit option is set to FORCE\_PLUS\_PERMANENT, MariaDB Enterprise Server will prevent MariaDB Enterprise Audit from being uninstalled:
+In a secure environment, MariaDB Enterprise Audit provides administrators with an audit trail of actions performed by users on the MariaDB Enterprise Server node. To protect the integrity of the audit trail, users should not be able to uninstall MariaDB Enterprise Audit. If the server-audit option is set to `FORCE_PLUS_PERMANENT`, MariaDB Enterprise Server will prevent MariaDB Enterprise Audit from being uninstalled:
 
-```
+```ini
 server_audit=FORCE_PLUS_PERMANENT
 ```
 
 When a user tries to uninstall MariaDB Enterprise Audit with the server-audit option set to FORCE\_PLUS\_PERMANENT, the operation fails with the ER\_PLUGIN\_IS\_PERMANENT error code:
 
-```
+```sql
 UNINSTALL SONAME 'server_audit2';
 ```
 
-```
+```sql
 ERROR 1702 (HY000): Plugin 'SERVER_AUDIT' is force_plus_permanent and can not be unloaded
 ```
 
-The mariadb-enterprise.cnf configuration file included by default in MariaDB Enterprise Server sets the server-audit option to FORCE\_PLUS\_PERMANENT. As a consequence, MariaDB Enterprise Server forbids MariaDB Enterprise Audit from being uninstalled by default.
+{% hint style="info" %}
+The `mariadb-enterprise.cnf` configuration file included by default in MariaDB Enterprise Server sets the server-audit option to `FORCE_PLUS_PERMANENT`. As a consequence, MariaDB Enterprise Server forbids MariaDB Enterprise Audit from being uninstalled by default.
+{% endhint %}
 
 If you do not use mariadb-enterprise.cnf in your environment, you can configure MariaDB Enterprise Audit to forbid uninstallation by setting the server-audit option in your configuration file.
 
@@ -389,7 +391,7 @@ PLUGIN_DESCRIPTION: MariaDB Enterprise Audit
        LOAD_OPTION: FORCE_PLUS_PERMANENT
 ```
 
-If your output does not match the example output shown above, confirm that the mariadb-enterprise.cnf configuration file sets the server-audit option to FORCE\_PLUS\_PERMANENT.
+If your output does not match the example output shown above, confirm that the `mariadb-enterprise.cnf` configuration file sets the server-audit option to `FORCE_PLUS_PERMANENT`.
 
 ## Server Startup Behavior
 
@@ -450,7 +452,9 @@ INSERT INTO mysql.server_audit_filters (filtername, rule)
       ));
 ```
 
-**Warning**: It is recommended to have full auditing added for such users instead and to only use named audit filters for relaxing the auditing level.
+{% hint style="danger" %}
+It is recommended to have full auditing added for such users instead and to only use named audit filters for relaxing the auditing level.
+{% endhint %}
 
 ### Create a Default Audit Filter
 
@@ -489,9 +493,9 @@ This example Audit Filter configures audit logging for all Connection Events and
 
 The example passes the JSON object to the [JSON\_COMPACT()](../sql-functions/special-functions/json-functions/json_compact.md) function, so that the JSON object is compacted prior to being inserted into the system table. This step is recommended, but not required.
 
-4. Reload the Audit Filters by setting the server\_audit\_reload\_filters system variable to ON:
+4. Reload the Audit Filters by setting the server\_audit\_reload\_filters system variable to `ON`:
 
-```
+```sql
 SET GLOBAL server_audit_reload_filters=ON;
 ```
 
@@ -503,7 +507,7 @@ Multiple Named Audit Filters can be defined in the mysql.server\_audit\_filters 
 
 ### Create a Named Audit Filter
 
-To create a Named Audit Filter, insert a row with the Audit Filter's name and the rule into the mysql.server\_audit\_filters system table:
+To create a Named Audit Filter, insert a row with the Audit Filter's name and the rule into the `mysql.server_audit_filters` system table:
 
 ```sql
 INSERT INTO mysql.server_audit_filters (filtername, rule)
@@ -527,7 +531,7 @@ INSERT INTO mysql.server_audit_filters (filtername, rule)
 
 This example Audit Filter is defined with the name reporting, and it configures audit logging for Connection Events and Disconnection Events and for several types of Table Events. This example Audit Filter can be useful for read-only users since it does not log table reads, but it does log table writes and schema changes which are illegitimate activities for a read-only user.
 
-The example passes the JSON object to the JSON\_COMPACT() function, so that the JSON object is compacted prior to being inserted into the system table. This step is recommended, but not required.
+The example passes the JSON object to the `JSON_COMPACT`() function, so that the JSON object is compacted prior to being inserted into the system table. This step is recommended, but not required.
 
 For additional information on how to assign the Audit Filter to a user account, see "[Assign a Named Audit Filter](mariadb-enterprise-audit.md#assign-a-named-audit-filter)".
 
@@ -537,16 +541,16 @@ Named Audit Filters are only active when they are assigned to a specific user ac
 
 To assign a Named Audit Filter to a user account:
 
-1. Insert a row with the user account details and the Audit Filter's name into the mysql.server\_audit\_users system table:
+1. Insert a row with the user account details and the Audit Filter's name into the `mysql.server_audit_users` system table:
 
 ```sql
 INSERT INTO mysql.server_audit_users (host, user, filtername)
    VALUES ("%", "reader", "reporting");
 ```
 
-This example statement assigns the reporting Audit Filter created in "[Create a Named Audit Filter](mariadb-enterprise-audit.md#create-a-named-audit-filter)" to the reader@% user account.
+This example statement assigns the reporting Audit Filter created in "[Create a Named Audit Filter](mariadb-enterprise-audit.md#create-a-named-audit-filter)" to the `reader@%` user account.
 
-2. Reload the Audit Filters by setting the server\_audit\_reload\_filters system variable to ON:
+2. Reload the Audit Filters by setting the server\_audit\_reload\_filters system variable to `ON`:
 
 ```sql
 SET GLOBAL server_audit_reload_filters=ON;
@@ -560,8 +564,12 @@ You can use the `DML_NO_SELECT` filter for the query\_event. It allows excluding
 
 To use the `DML_NO_SELECT` filter, add it to the query\_event configuration option in the \[audit] section of the MariaDB configuration file. For example:
 
-\[audit] `query_event = DML, DDL, DCL, DML_NO_SELECT` \
-To verify that the `DML_NO_SELEC`T filter is working correctly, run a `SELECT` statement, then check the audit log. The event should not be categorized as DML.
+```ini
+[audit] 
+query_event = DML, DDL, DCL, DML_NO_SELECT 
+```
+
+To verify that the `DML_NO_SELECT` filter is working correctly, run a `SELECT` statement and check the audit log. The event should not be categorized as DML.
 
 Note that excluding `SELECT` statements from the DML category may reduce the amount of audit data generated, but it may also miss important events.
 
@@ -573,7 +581,7 @@ There are two system tables for Audit Filters:
 
 ### Query Audit Filters
 
-You can query Audit Filters by querying the mysql.server\_audit\_filters system table.
+You can query Audit Filters by querying the `mysql.server_audit_filters` system table.
 
 The JSON objects can be made more human-readable by passing them to the [JSON\_DETAILED()](../sql-functions/special-functions/json-functions/json_detailed.md) or [JSON\_LOOSE()](../sql-functions/special-functions/json-functions/json_loose.md) functions:
 
@@ -583,7 +591,7 @@ SELECT filtername,
 FROM mysql.server_audit_filters\G
 ```
 
-```sql
+```json
 *************************** 1. row ***************************
          filtername: reporting
 JSON_DETAILED(rule): {
@@ -608,7 +616,7 @@ JSON_DETAILED(rule): {
 
 ### Query User Assignments for Named Audit Filters
 
-You can query user assignments for Named Audit Filters by joining the mysql.server\_audit\_filters and mysql.server\_audit\_users system tables.
+You can query user assignments for Named Audit Filters by joining the `mysql.server_audit_filters` and `mysql.server_audit_users` system tables.
 
 The JSON objects can be made more human-readable by passing them to the [JSON\_DETAILED()](../sql-functions/special-functions/json-functions/json_detailed.md) or [JSON\_LOOSE()](../sql-functions/special-functions/json-functions/json_loose.md) functions:
 
@@ -621,7 +629,7 @@ JOIN mysql.server_audit_users sau
 WHERE saf.filtername != 'default'\G
 ```
 
-```sql
+```json
 *************************** 1. row ***************************
                    host: %
                    user: reader
@@ -678,7 +686,7 @@ To reload Audit Filters, set the server\_audit\_reload\_filters system variable 
 SET GLOBAL server_audit_reload_filters=ON;
 ```
 
-When you set the server\_audit\_reload\_filters system variable to ON, MariaDB Enterprise Audit reloads all Audit Filters and assignments to ensure that it is using the latest definitions. Afterward, it sets server\_audit\_reload\_filters back to OFF.
+When you set the server\_audit\_reload\_filters system variable to ON, MariaDB Enterprise Audit reloads all Audit Filters and assignments to ensure that it is using the latest definitions. Afterward, it sets `server_audit_reload_filters` back to `OFF`.
 
 For additional information on how to use the server\_audit\_reload\_filters system variable, see "[Default Audit Filter](mariadb-enterprise-audit.md#default-audit-filter)" and "[Named Audit Filters](mariadb-enterprise-audit.md#named-audit-filters)".
 
@@ -704,7 +712,7 @@ MariaDB Enterprise Audit logs Audit Config (AUDIT\_CONFIG) Events in the followi
 * When one of MariaDB Enterprise Audit's system variables is changed with the [SET GLOBAL](../sql-statements/administrative-sql-statements/set-commands/set.md) statement, the change is logged.
 * When the audit log file is rotated, it is logged.
 
-In the following example output, 3 Audit Config Events and 1 Query Event are shown:
+In the following output, three audit configuration events (`AUDIT_CONFIG`) and one query event (`QUERY`) are shown:
 
 ```
 20190622 02:10:21,localhost.localdomain,,,0,0,AUDIT_CONFIG,,file_path=server_audit.log,0
@@ -713,7 +721,9 @@ In the following example output, 3 Audit Config Events and 1 Query Event are sho
 20190622 02:10:21,localhost.localdomain,root,localhost,8,7,QUERY,mysql,'set global server_audit_logging = on',0
 ```
 
-Audit Config Events are always logged, so no configuration is required when [audit logging](mariadb-enterprise-audit.md#start-audit-logging) is started.
+{% hint style="success" %}
+`AUDIT_CONFIG` events are always logged, so no configuration is required when [audit logging](mariadb-enterprise-audit.md#start-audit-logging) is started.
+{% endhint %}
 
 ### Connection Events
 
@@ -727,7 +737,7 @@ MariaDB Enterprise Audit logs Connection Events in the following situations:
 * When an existing connection authenticates as a different user, it is logged with the `CHANGE_USER` Event sub-class.
 * When an authentication plugin changes to a proxy user, it is logged with the `PROXY_CONNECT` Event sub-class.
 
-In the following example output, multiple sub-classes of Connection Events are shown:
+In the following output, multiple sub-classes of connection events (`CONNECT`, `DISCONNECT`, `FAILED_CONNECT`) are shown:
 
 ```sql
 20190710 00:05:30,localhost.localdomain,root, localhost,2,0,CONNECT,,,0
@@ -736,7 +746,7 @@ In the following example output, multiple sub-classes of Connection Events are s
 20190710 00:06:28,localhost.localdomain,unknownuser, localhost,3,0,DISCONNECT,,,0
 ```
 
-An Event Filter for Connection Events can be added to an Audit Filter with the connect\_event key, which supports the following values:
+An **event filter for connection events** can be added to an Audit filter with the `connect_event` key, which supports the following values:
 
 | Value           | Description                                                                                                                                    |
 | --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -747,7 +757,7 @@ An Event Filter for Connection Events can be added to an Audit Filter with the c
 | PROXY\_CONNECT  | Records proxy user connections. This Connection Event sub-class was added in ES10.4.17-10 and ES10.5.8-5.                                      |
 | ALL             | Records all connection Events                                                                                                                  |
 
-For example, the following query defines a [Named Audit Filter](mariadb-enterprise-audit.md#named-audit-filters) that specifies Connection Events:
+This query defines a [Named Audit Filter](mariadb-enterprise-audit.md#named-audit-filters) that specifies connection events:
 
 ```sql
 INSERT INTO mysql.server_audit_filters (filtername, rule)
@@ -770,17 +780,17 @@ MariaDB Enterprise Audit implements Query Events to audit the execution of a spe
 
 MariaDB Enterprise Audit logs Query Events in the following situations:
 
-* When a SQL statement is directly executed, it is logged with the `QUERY` Event.
+* When a SQL statement is directly executed, it is logged with the `QUERY` event.
 
-MariaDB Enterprise Audit does not log Query Events for SQL statements that are indirectly executed. For example, if an SQL statement is executed as part of a view, stored procedure, stored function, or trigger, the query will not be logged. If you want to audit all table accesses, including indirect table accesses, it is recommended to enable audit logging for [Table Events](mariadb-enterprise-audit.md#table-events) in addition to Query Events.
+MariaDB Enterprise Audit does not log query events for SQL statements that are indirectly executed. For example, if an SQL statement is executed as part of a view, stored procedure, stored function, or trigger, the query will not be logged. If you want to audit all table accesses, including indirect table accesses, it is recommended to enable audit logging for [Table Events](mariadb-enterprise-audit.md#table-events) in addition to query events.
 
-In the following example output, 1 Query Event is shown:
+This query shows one query event:
 
 ```sql
 20190710 02:21:07,localhost.localdomain,John,localhost,3,30,QUERY,db1,'SELECT * FROM services WHERE typeid IN (SELECT id FROM services_types WHERE name="consulting")',0
 ```
 
-An Event Filter for Query Events can be added to an Audit Filter with the `query_event` key, which supports the following values:
+An **event filter for query events** can be added to an Audit Filter with the `query_event` key, which supports the following values:
 
 | Value           | Description                                                                                                                                               |
 | --------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -816,7 +826,15 @@ INSERT INTO mysql.server_audit_filters (filtername, rule)
 
 The example passes the JSON object to the [JSON\_COMPACT()](../sql-functions/special-functions/json-functions/json_compact.md) function, so that the JSON object is compacted prior to being inserted into the system table. This step is recommended, but not required.
 
-MariaDB Enterprise Audit also supports [Object Filters](mariadb-enterprise-audit.md#object-filters) for Query Events. Support for Object Filters was added in MariaDB Enterprise Server 10.6. Support for Object Filters was backported to ES 10.4.21-13 and ES 10.5.12-8.
+{% tabs %}
+{% tab title="Current" %}
+MariaDB Enterprise Audit supports [Object Filters](mariadb-enterprise-audit.md#object-filters) for Query Events.
+{% endtab %}
+
+{% tab title="< 10.6 / 10.5.12 / 10.4.21" %}
+MariaDB Enterprise Audit does **not** support [Object Filters](mariadb-enterprise-audit.md#object-filters) for Query Events.
+{% endtab %}
+{% endtabs %}
 
 ### Table Events
 
@@ -844,7 +862,7 @@ In the following example output, 6 sub-classes of Table Events are shown:
 20190710 02:21:45,localhost.localdomain,John,localhost,3,38,DROP,db1,services_new,
 ```
 
-When a query uses the DELAYED keyword, it is executed by a system user. In this case, any Table Event associated with the query is written to the audit log with the user set to DELAYED. However, the Query Event associated with the query is written to the audit log with the original user:
+When a query uses the `DELAYED` keyword, it is executed by a system user. In this case, any Table Event associated with the query is written to the audit log with the user set to `DELAYED`. However, the Query Event associated with the query is written to the audit log with the original user:
 
 ```sql
 20190622 02:10:21,localhost.localdomain,root,localhost,8,5,QUERY,test,'INSERT DELAYED INTO t1 VALUES(1),(2),(3);',0
@@ -852,15 +870,15 @@ When a query uses the DELAYED keyword, it is executed by a system user. In this 
 20190622 02:10:25,localhost,DELAYED,localhost,2,2,WRITE,test,t1,
 ```
 
-When your application executes queries with the DELAYED keyword, it is recommended to enable audit logging for Query Events in addition to Table Events to ensure that the full details are logged.
+When your application executes queries with the `DELAYED` keyword, it is recommended to enable audit logging for Query Events in addition to Table Events to ensure that the full details are logged.
 
-If the query cache is enabled, READ Table Events may not be audit logged. If MariaDB Enterprise Audit detects that the query cache is enabled during startup, MariaDB Enterprise Audit writes the following message to the MariaDB error log:
+If the query cache is enabled, `READ` Table Events may not be audit logged. If MariaDB Enterprise Audit detects that the query cache is enabled during startup, MariaDB Enterprise Audit writes the following message to the MariaDB error log:
 
 ```sql
 2021-07-23  0:11:26 server_audit: Query cache is enabled with the TABLE events. Some table reads can be veiled.
 ```
 
-An Event Filter for Table Events can be added to an Audit Filter with the table\_event key, which supports the following values:
+An Event Filter for Table Events can be added to an Audit Filter with the `table_event` key, which supports the following values:
 
 | Value  | Description                                                                                             |
 | ------ | ------------------------------------------------------------------------------------------------------- |
@@ -894,7 +912,15 @@ INSERT INTO mysql.server_audit_filters (filtername, rule)
 
 The example passes the JSON object to the [JSON\_COMPACT()](../sql-functions/special-functions/json-functions/json_compact.md) function, so that the JSON object is compacted prior to being inserted into the system table. This step is recommended, but not required.
 
-MariaDB Enterprise Audit also supports [Object Filters](mariadb-enterprise-audit.md#object-filters) for Table Events. Support for Object Filters was added in MariaDB Enterprise Server 10.6. Support for Object Filters was backported to ES 10.4.21-13 and ES 10.5.12-8.
+{% tabs %}
+{% tab title="Current" %}
+MariaDB Enterprise Audit supports [Object Filters](mariadb-enterprise-audit.md#object-filters) for Table Events.
+{% endtab %}
+
+{% tab title="< 10.6 / 10.5.12 / 10.4.21" %}
+MariaDB Enterprise Audit does **not** support [Object Filters](mariadb-enterprise-audit.md#object-filters) for Table Events.&#x20;
+{% endtab %}
+{% endtabs %}
 
 ## Logging Filter
 
@@ -925,12 +951,14 @@ The example passes the JSON object to the [JSON\_COMPACT()](../sql-functions/spe
 
 ## Object Filters
 
+{% hint style="info" %}
+Object Filters are available from MariaDB 10.6, 10.5.12, and 10.4.21.
+{% endhint %}
+
 Object Filters allow Audit Filters to be limited to specific databases and/or tables. Object Filters can be specified at different scopes:
 
 * An Object Filter can be specified for an entire Audit Filter
 * An Object Filter can be specified for a single Event for the Audit Filter
-
-Support for Object Filters was added in MariaDB Enterprise Server 10.6. Support for Object Filters was backported to ES 10.4.21-13 and ES 10.5.12-8.
 
 ### Object Filter Format
 
@@ -942,32 +970,32 @@ For Object Filters, the key in the key-value pair refers to the specific type of
 | ---------- | ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | No         | ignore\_databases | When one or more databases are specified with the ignore\_databases Object Filter key, the specified databases will not be audit logged. The ignore\_databases Object Filter key is an alias for the ignore\_tables Object Filter key, with the table identifier set to the wildcard character (\*). The ignore\_databases Object Filter key cannot be specified in the same Object Filter as the log\_databases and log\_tables Object Filter keys. |
 | No         | ignore\_tables    | When one or more tables are specified with the ignore\_tables Object Filter key, the specified tables will not be audit logged. Table names must be provided in the form database.table. Wildcard characters (\*) are allowed. The ignore\_tables Object Filter key cannot be specified in the same Object Filter as the log\_databases and log\_tables Object Filter keys.                                                                          |
-| Yes        | log\_databases    | When one or more databases are specified with the log\_databases Object Filter key, the specified databases will be audit logged, and all other databases will not be audit logged. The log\_databases Object Filter key is an alias for the log\_tables Object Filter key, with the table identifier set to the wildcard character (\*).                                                                                                            |
-| Yes        | log\_tables       | When one or more databases are specified with the log\_tables Object Filter key, the specified tables will be audit logged, and all other tables will not be audit logged. Table names must be provided in the form database.table. Wildcard characters (\*) are allowed.                                                                                                                                                                            |
+| Yes        | log\_databases    | When one or more databases are specified with the log\_databases Object Filter key, the specified databases will be audit logged, and all other databases will not be audit logged. The log\_databases Object Filter key is an alias for the log\_tables Object Filter key, with the table identifier set to the wildcard character (`*`).                                                                                                           |
+| Yes        | log\_tables       | When one or more databases are specified with the log\_tables Object Filter key, the specified tables will be audit logged, and all other tables will not be audit logged. Table names must be provided in the form database.table. Wildcard characters (`*`) are allowed.                                                                                                                                                                           |
 
-The values in the key-value pair refer to one or more object names.
+The values in the key-value pair refer to iniobject names.
 
 When the Object Filter only applies to one object, the object name can be specified as a string scalar value in the JSON object:
 
-```sql
+```json
 {"object_filter_key": "object"}
 ```
 
 When the Object Filter applies to multiple objects, the object names can be specified in a JSON array in the JSON object:
 
-```sql
+```json
 {"object_filter_key": [ "object", "object" ]}
 ```
 
 In the following example, the Object Filter is designed to audit log the production and reporting databases and to skip audit logging for all other databases and tables:
 
-```
+```json
 {"log_tables": ["production.*", "reporting.*"]}
 ```
 
 And in the following example, the Object Filter is designed to skip audit logging for the production.app\_log table:
 
-```
+```json
 {"ignore_tables": "production.app_log"}
 ```
 
@@ -1141,7 +1169,7 @@ SET GLOBAL server_audit_file_path = 'mariadb-enterprise-audit.log'
 
 When a system variable is dynamically changed with the [SET GLOBAL](../sql-statements/administrative-sql-statements/set-commands/set.md) statement, the change does not survive server restarts. To ensure that the new path is used when the server restarts, set the [server\_audit\_file\_path](mariadb-audit-plugin/mariadb-audit-plugin-options-and-system-variables.md#server_audit_file_path) system variable in a configuration file:
 
-```sql
+```ini
 [mariadb]
 server_audit_file_path=mariadb-enterprise-audit.log
 ```
@@ -1152,13 +1180,13 @@ When MariaDB Enterprise Audit is configured to use the dedicated audit log file,
 
 The file is rotated when its size exceeds the size specified by the [server\_audit\_file\_rotate\_size](mariadb-audit-plugin/mariadb-audit-plugin-options-and-system-variables.md#server_audit_file_rotate_size) system variable. For example, to set the maximum log size to 2 GB with the [SET GLOBAL](../sql-statements/administrative-sql-statements/set-commands/set.md) statement:
 
-```
+```sql
 SET GLOBAL server_audit_file_rotate_size = 2 * (1024 * 1024 * 1024);
 ```
 
 When a system variable is dynamically changed with the [SET GLOBAL](../sql-statements/administrative-sql-statements/set-commands/set.md) statement, the change does not survive server restarts. To ensure that the new file rotation size is used when the server restarts, set the [server\_audit\_file\_rotate\_size](mariadb-audit-plugin/mariadb-audit-plugin-options-and-system-variables.md#server_audit_file_rotate_size) system variable in a configuration file:
 
-```
+```ini
 [mariadb]
 ...
 server_audit_file_rotate_size=2147483648
@@ -1302,7 +1330,7 @@ For additional information, see "[Reload Audit Filters and Assignments](mariadb-
 
 ### Conflict with the Query Cache
 
-If the query cache is enabled, READ Table Events may not be audit logged. If MariaDB Enterprise Audit detects during startup that the query cache is enabled, MariaDB Enterprise Audit writes the following message to the MariaDB error log:
+If the query cache is enabled, `READ` Table Events may not be audit logged. If MariaDB Enterprise Audit detects during startup that the query cache is enabled, MariaDB Enterprise Audit writes the following message to the MariaDB error log:
 
 ```
 2021-08-03 21:07:03 server_audit: Query cache is enabled with the TABLE events. Some table reads can be veiled.
@@ -1310,7 +1338,7 @@ If the query cache is enabled, READ Table Events may not be audit logged. If Mar
 
 ## Upgrades
 
-MariaDB Enterprise Audit is included with MariaDB Enterprise Server. Special consideration is needed when upgrading from MariaDB releases that include the MariaDB Audit Plugin, including MariaDB Community Server (Any Version)
+MariaDB Enterprise Audit is included with MariaDB Enterprise Server. Special consideration is needed when upgrading from MariaDB releases that include the MariaDB Audit Plugin, including MariaDB Community.
 
 For details on how to upgrade from the MariaDB Audit Plugin to MariaDB Enterprise Audit, see the sections below.
 
@@ -1326,13 +1354,13 @@ If you are upgrading from the MariaDB Audit Plugin to MariaDB Enterprise Audit, 
 
 1. Remove or comment out lines involving the [server\_audit\_events system](mariadb-audit-plugin/mariadb-audit-plugin-options-and-system-variables.md#server_audit_events) variable from the configuration file:
 
-```sql
+```ini
 [mariadb]
 ...
 # server_audit_events=CONNECT,QUERY
 ```
 
-2. Insert a replacement Audit Filter into the mysql.server\_audit\_filters system table:
+2. Insert a replacement Audit Filter into the `mysql.server_audit_filters` system table:
 
 ```sql
 INSERT INTO mysql.server_audit_filters
@@ -1355,7 +1383,7 @@ If you are upgrading from the MariaDB Audit Plugin to MariaDB Enterprise Audit, 
 
 1. Remove or comment out lines involving the [server\_audit\_incl\_users](mariadb-audit-plugin/mariadb-audit-plugin-options-and-system-variables.md#server_audit_incl_users) and [server\_audit\_excl\_users](mariadb-audit-plugin/mariadb-audit-plugin-options-and-system-variables.md#server_audit_excl_users) system variables from the configuration file:
 
-```sql
+```ini
 [mariadb]
 ...
 # server_audit_incl_users = root,app
@@ -1364,7 +1392,7 @@ If you are upgrading from the MariaDB Audit Plugin to MariaDB Enterprise Audit, 
 
 2. For any user account previously mentioned in the [server\_audit\_incl\_users](mariadb-audit-plugin/mariadb-audit-plugin-options-and-system-variables.md#server_audit_incl_users) system variable, determine if the user account can use the [Default Audit Filter](mariadb-enterprise-audit.md#default-audit-filter) or if the user account requires a [Named Audit Filter](mariadb-enterprise-audit.md#named-audit-filters).
 
-Insert the relevant Audit Filters into the mysql.server\_audit\_filters system table, and insert the user assignments into the mysql.server\_audit\_users system table:
+Insert the relevant Audit Filters into the `mysql.server_audit_filters` system table, and insert the user assignments into the `mysql.server_audit_users` system table:
 
 ```sql
 INSERT INTO mysql.server_audit_filters
@@ -1396,7 +1424,7 @@ The example passes the JSON object to the [JSON\_COMPACT()](../sql-functions/spe
 
 3. For any user account previously mentioned in the [server\_audit\_excl\_users](mariadb-audit-plugin/mariadb-audit-plugin-options-and-system-variables.md#server_audit_excl_users) system variable, create a [Named Audit Filter](mariadb-enterprise-audit.md#named-audit-filters) that acts as an exclusion filter.
 
-Insert the relevant Audit Filters into the mysql.server\_audit\_filters system table, and insert the user assignments into the mysql.server\_audit\_users system table:
+Insert the relevant Audit Filters into the `mysql.server_audit_filters` system table, and insert the user assignments into the `mysql.server_audit_users` system table:
 
 ```sql
 INSERT INTO mysql.server_audit_filters

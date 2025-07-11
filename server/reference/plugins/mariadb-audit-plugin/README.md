@@ -1,8 +1,8 @@
 ---
 description: >-
-  Learn about the MariaDB Audit Plugin. This section details how to enable and
-  configure the plugin to log database activities, crucial for security,
-  compliance, and troubleshooting.
+  Learn about the MariaDB Community Audit Plugin. This section details how to
+  enable and configure the plugin to log database activities, crucial for
+  security, compliance, and troubleshooting.
 layout:
   width: default
   title:
@@ -17,5 +17,5 @@ layout:
     visible: false
 ---
 
-# MariaDB Audit Plugin
+# MariaDB Community Audit
 
