@@ -917,34 +917,34 @@ The options and system variables related to the [MyRocks](../../server-usage/sto
 
 ### S3 Storage Engine Options
 
-The options and system variables related to the [S3](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/s3-storage-engine/README.md) storage engine can be found [here](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/s3-storage-engine/s3-storage-engine-system-variables.md).
+The options and system variables related to the [S3](../../server-usage/storage-engines/s3-storage-engine/) storage engine can be found [here](../../server-usage/storage-engines/s3-storage-engine/s3-storage-engine-status-variables.md).
 
 ### CONNECT Storage Engine Options
 
-The options related to the [CONNECT](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/connect/README.md) storage engine are described below.
+The options related to the [CONNECT](../../server-usage/storage-engines/connect/) storage engine are described below.
 
 #### CONNECT Storage Engine Options and System Variables
 
-Some options and system variables related to the [CONNECT](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/connect/README.md) storage engine can be found [here](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/connect/connect-system-variables.md). Direct links to many of them can be found below.
+Some options and system variables related to the [CONNECT](../../server-usage/storage-engines/connect/) storage engine can be found [here](../../server-usage/storage-engines/connect/connect-system-variables.md). Direct links to many of them can be found below.
 
-* [connect-class-path](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/connect/connect-system-variables.md#connect_class_path)
-* [connect-cond-push](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/connect/connect-system-variables.md#connect_cond_push)
-* [connect-conv-size](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/connect/connect-system-variables.md#connect_conv_size)
-* [connect-default-depth](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/connect/connect-system-variables.md#connect_default_depth)
-* [connect-default-prec](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/connect/connect-system-variables.md#connect_default_prec)
-* [connect-enable-mongo](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/connect/connect-system-variables.md#connect_enable_mongo)
-* [connect-exact-info](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/connect/connect-system-variables.md#connect_exact_info)
-* [connect-force\_bson](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/connect/connect-system-variables.md#connect_force_bson)
-* [connect-indx-map](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/connect/connect-system-variables.md#connect_indx_map)
-* [connect-java-wrapper](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/connect/connect-system-variables.md#connect_java_wrapper)
-* [connect-json-all-path](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/connect/connect-system-variables.md#connect_json_all_path)
-* [connect-json-grp-size](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/connect/connect-system-variables.md#connect_json_grp_size)
-* [connect-json-null](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/connect/connect-system-variables.md#connect_json_null)
-* [connect-jvm-path](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/connect/connect-system-variables.md#connect_jvm_path)
-* [connect-type-conv](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/connect/connect-system-variables.md#connect_type_conv)
-* [connect-use-tempfile](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/connect/connect-system-variables.md#connect_use_tempfile)
-* [connect-work-size](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/connect/connect-system-variables.md#connect_work_size)
-* [connect-xtrace](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/connect/connect-system-variables.md#connect_xtrace)
+* [connect-class-path](../../server-usage/storage-engines/connect/connect-system-variables.md#connect_class_path)
+* [connect-cond-push](../../server-usage/storage-engines/connect/connect-system-variables.md#connect_cond_push)
+* [connect-conv-size](../../server-usage/storage-engines/connect/connect-system-variables.md#connect_conv_size)
+* [connect-default-depth](../../server-usage/storage-engines/connect/connect-system-variables.md#connect_default_depth)
+* [connect-default-prec](../../server-usage/storage-engines/connect/connect-system-variables.md#connect_default_prec)
+* [connect-enable-mongo](../../server-usage/storage-engines/connect/connect-system-variables.md#connect_enable_mongo)
+* [connect-exact-info](../../server-usage/storage-engines/connect/connect-system-variables.md#connect_exact_info)
+* [connect-force\_bson](../../server-usage/storage-engines/connect/connect-system-variables.md#connect_force_bson)
+* [connect-indx-map](../../server-usage/storage-engines/connect/connect-system-variables.md#connect_indx_map)
+* [connect-java-wrapper](../../server-usage/storage-engines/connect/connect-system-variables.md#connect_java_wrapper)
+* [connect-json-all-path](../../server-usage/storage-engines/connect/connect-system-variables.md#connect_json_all_path)
+* [connect-json-grp-size](../../server-usage/storage-engines/connect/connect-system-variables.md#connect_json_grp_size)
+* [connect-json-null](../../server-usage/storage-engines/connect/connect-system-variables.md#connect_json_null)
+* [connect-jvm-path](../../server-usage/storage-engines/connect/connect-system-variables.md#connect_jvm_path)
+* [connect-type-conv](../../server-usage/storage-engines/connect/connect-system-variables.md#connect_type_conv)
+* [connect-use-tempfile](../../server-usage/storage-engines/connect/connect-system-variables.md#connect_use_tempfile)
+* [connect-work-size](../../server-usage/storage-engines/connect/connect-system-variables.md#connect_work_size)
+* [connect-xtrace](../../server-usage/storage-engines/connect/connect-system-variables.md#connect_xtrace)
 
 ### Spider Storage Engine Options
 
