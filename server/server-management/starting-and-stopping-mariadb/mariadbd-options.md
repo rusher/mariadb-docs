@@ -1,6 +1,6 @@
 # mariadbd Option
 
-This page lists all of the options for `mariadbd` (called mysqld before [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/what-is-mariadb-105)), ordered by topic. For a full alphabetical list of all mariadbd options, as well as server and status variables, see [Full list of MariaDB options, system and status variables](../../reference/full-list-of-mariadb-options-system-and-status-variables.md).
+fThis page lists all of the options for `mariadbd` (called mysqld before [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/what-is-mariadb-105)), ordered by topic. For a full alphabetical list of all mariadbd options, as well as server and status variables, see [Full list of MariaDB options, system and status variables](../../reference/full-list-of-mariadb-options-system-and-status-variables.md).
 
 In many cases, the entry here is a summary, and links to the full description.
 
@@ -877,43 +877,43 @@ Some options and system variables related to the [InnoDB](../../server-usage/sto
 
 ### Aria Storage Engine Options
 
-Options related to the [Aria](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/aria/README.md) storage engine are listed below:
+Options related to the [Aria](../../server-usage/storage-engines/aria/) storage engine are listed below:
 
 #### Aria Storage Engine Options and System Variables
 
-Some options and system variables related to the [Aria](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/aria/README.md) storage engine can be found [here](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/aria/aria-system-variables.md). Direct links to many of them can be found below.
+Some options and system variables related to the [Aria](../../server-usage/storage-engines/aria/) storage engine can be found [here](../../server-usage/storage-engines/aria/aria-system-variables.md). Direct links to many of them can be found below.
 
-* [aria-block-size](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/aria/aria-system-variables.md#aria_block_size)
-* [aria-checkpoint-interval](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/aria/aria-system-variables.md#aria_checkpoint_interval)
-* [aria-checkpoint-log-activity](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/aria/aria-system-variables.md#aria_checkpoint_log_activity)
-* [aria-encrypt-tables](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/aria/aria-system-variables.md#aria_encrypt_tables)
-* [aria-force-start-after-recovery-failures](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/aria/aria-system-variables.md#aria_force_start_after_recovery_failures)
-* [aria-group-commit](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/aria/aria-system-variables.md#aria_group_commit)
-* [aria-group-commit-interval](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/aria/aria-system-variables.md#aria_group_commit_interval)
-* [aria-log-dir-path](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/aria/aria-system-variables.md#aria_log_dir_path)
-* [aria-log-file-size](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/aria/aria-system-variables.md#aria_log_file_size)
-* [aria-log-purge-type](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/aria/aria-system-variables.md#aria_log_purge_type)
-* [aria-max-sort-file-size](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/aria/aria-system-variables.md#aria_max_sort_file_size)
-* [aria-page-checksum](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/aria/aria-system-variables.md#aria_page_checksum)
-* [aria-pagecache-age-threshold](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/aria/aria-system-variables.md#aria_pagecache_age_threshold)
-* [aria-pagecache-buffer-size](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/aria/aria-system-variables.md#aria_pagecache_buffer_size)
-* [aria-pagecache-division-limit](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/aria/aria-system-variables.md#aria_pagecache_division_limit)
-* [aria-pagecache-file-hash-size](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/aria/aria-system-variables.md#aria_pagecache_file_hash_size)
-* [aria-recover](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/aria/aria-system-variables.md#aria_recover)
-* [aria-recover-options](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/aria/aria-system-variables.md#aria_recover_options)
-* [aria-repair-threads](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/aria/aria-system-variables.md#aria_repair_threads)
-* [aria-sort-buffer-size](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/aria/aria-system-variables.md#aria_sort_buffer_size)
-* [aria-stats-method](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/aria/aria-system-variables.md#aria_stats_method)
-* [aria-sync-log-dir](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/aria/aria-system-variables.md#aria_sync_log_dir)
-* [aria-used-for-temp-tables](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/aria/aria-system-variables.md#aria_used_for_temp_tables)
-* [deadlock-search-depth-long](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/aria/aria-system-variables.md#deadlock_search_depth_long)
-* [deadlock-search-depth-short](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/aria/aria-system-variables.md#deadlock_search_depth_short)
-* [deadlock-timeout-long](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/aria/aria-system-variables.md#deadlock_timeout_long)
-* [deadlock-timeout-short](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/aria/aria-system-variables.md#deadlock_timeout_short)
+* [aria-block-size](../../server-usage/storage-engines/aria/aria-system-variables.md#aria_block_size)
+* [aria-checkpoint-interval](../../server-usage/storage-engines/aria/aria-system-variables.md#aria_checkpoint_interval)
+* [aria-checkpoint-log-activity](../../server-usage/storage-engines/aria/aria-system-variables.md#aria_checkpoint_log_activity)
+* [aria-encrypt-tables](../../server-usage/storage-engines/aria/aria-system-variables.md#aria_encrypt_tables)
+* [aria-force-start-after-recovery-failures](../../server-usage/storage-engines/aria/aria-system-variables.md#aria_force_start_after_recovery_failures)
+* [aria-group-commit](../../server-usage/storage-engines/aria/aria-system-variables.md#aria_group_commit)
+* [aria-group-commit-interval](../../server-usage/storage-engines/aria/aria-system-variables.md#aria_group_commit_interval)
+* [aria-log-dir-path](../../server-usage/storage-engines/aria/aria-system-variables.md#aria_log_dir_path)
+* [aria-log-file-size](../../server-usage/storage-engines/aria/aria-system-variables.md#aria_log_file_size)
+* [aria-log-purge-type](../../server-usage/storage-engines/aria/aria-system-variables.md#aria_log_purge_type)
+* [aria-max-sort-file-size](../../server-usage/storage-engines/aria/aria-system-variables.md#aria_max_sort_file_size)
+* [aria-page-checksum](../../server-usage/storage-engines/aria/aria-system-variables.md#aria_page_checksum)
+* [aria-pagecache-age-threshold](../../server-usage/storage-engines/aria/aria-system-variables.md#aria_pagecache_age_threshold)
+* [aria-pagecache-buffer-size](../../server-usage/storage-engines/aria/aria-system-variables.md#aria_pagecache_buffer_size)
+* [aria-pagecache-division-limit](../../server-usage/storage-engines/aria/aria-system-variables.md#aria_pagecache_division_limit)
+* [aria-pagecache-file-hash-size](../../server-usage/storage-engines/aria/aria-system-variables.md#aria_pagecache_file_hash_size)
+* [aria-recover](../../server-usage/storage-engines/aria/aria-system-variables.md#aria_recover)
+* [aria-recover-options](../../server-usage/storage-engines/aria/aria-system-variables.md#aria_recover_options)
+* [aria-repair-threads](../../server-usage/storage-engines/aria/aria-system-variables.md#aria_repair_threads)
+* [aria-sort-buffer-size](../../server-usage/storage-engines/aria/aria-system-variables.md#aria_sort_buffer_size)
+* [aria-stats-method](../../server-usage/storage-engines/aria/aria-system-variables.md#aria_stats_method)
+* [aria-sync-log-dir](../../server-usage/storage-engines/aria/aria-system-variables.md#aria_sync_log_dir)
+* [aria-used-for-temp-tables](../../server-usage/storage-engines/aria/aria-system-variables.md#aria_used_for_temp_tables)
+* [deadlock-search-depth-long](../../server-usage/storage-engines/aria/aria-system-variables.md#deadlock_search_depth_long)
+* [deadlock-search-depth-short](../../server-usage/storage-engines/aria/aria-system-variables.md#deadlock_search_depth_short)
+* [deadlock-timeout-long](../../server-usage/storage-engines/aria/aria-system-variables.md#deadlock_timeout_long)
+* [deadlock-timeout-short](../../server-usage/storage-engines/aria/aria-system-variables.md#deadlock_timeout_short)
 
 ### MyRocks Storage Engine Options
 
-The options and system variables related to the [MyRocks](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/myrocks/README.md) storage engine can be found [here](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/myrocks/myrocks-system-variables.md).
+The options and system variables related to the [MyRocks](../../server-usage/storage-engines/myrocks/) storage engine can be found [here](../../server-usage/storage-engines/myrocks/myrocks-system-variables.md).
 
 ### S3 Storage Engine Options
 
