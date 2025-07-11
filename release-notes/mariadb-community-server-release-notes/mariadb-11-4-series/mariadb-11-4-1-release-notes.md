@@ -14,7 +14,7 @@
 
 [MariaDB 11.4.1](mariadb-11-4-1-release-notes.md) is a [_**Release Candidate (RC)**_](../../mariadb-release-criteria.md) release.
 
-**For an overview of** [**MariaDB 11.4**](what-is-mariadb-114.md) **see the**[**What is MariaDB 11.4?**](what-is-mariadb-114.md) **page.**
+**For an overview of** [**MariaDB 11.4**](what-is-mariadb-114.md) **see the** [**What is MariaDB 11.4?**](what-is-mariadb-114.md) **page.**
 
 Thanks, and enjoy MariaDB!
 
