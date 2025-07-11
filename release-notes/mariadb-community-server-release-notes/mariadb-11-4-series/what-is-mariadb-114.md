@@ -1,6 +1,6 @@
 # MariaDB 11.4 Changes & Improvements
 
-The most recent release of [MariaDB 11.4](what-is-mariadb-114.md) is:[**MariaDB 11.4.5**](mariadb-11-4-5-release-notes.md) Stable (GA) [Download Now](https://mariadb.com/downloads/)[_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/11.4.5/)
+{% include "../../.gitbook/includes/latest-11-4.md" %}
 
 [MariaDB 11.4](what-is-mariadb-114.md) is a current long-term series, maintained until May 2029.
 
