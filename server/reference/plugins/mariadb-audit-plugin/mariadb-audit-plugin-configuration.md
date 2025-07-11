@@ -1,12 +1,10 @@
-# MariaDB Audit Plugin - Configuration
+# Configuration
 
 After the audit plugin has been installed and loaded, there will be some new global variables within MariaDB. These can be used to configure many components, limits, and methods related to auditing the server. You may set these variables related to the logs, such as their location, size limits, rotation parameters, and method of logging information. You may also set what information is logged, such connects, disconnects, and failed attempts to connect. You can also have the audit plugin log queries, read and write access to tables. So as not to overload your logs, the audit plugin can be configured based on lists of users. You can include or exclude the activities of specific users in the logs.
 
-####
-
 To see a list of [audit plugin-related variables](mariadb-audit-plugin-options-and-system-variables.md) on the server and their values, execute the follow while connected to the server:
 
-```
+```sql
 SHOW GLOBAL VARIABLES LIKE 'server_audit%';
 
 +-------------------------------+-----------------------+
@@ -32,20 +30,20 @@ SHOW GLOBAL VARIABLES LIKE 'server_audit%';
 
 The values of these variables can be changed by an administrator with the `SUPER` privilege, using the [SET](../../sql-statements/administrative-sql-statements/set-commands/set.md) statement. Below is an example of how to disable audit logging:
 
-```
+```sql
 SET GLOBAL server_audit_logging=OFF;
 ```
 
 Although it is possible to change all of the variables shown above, some of them may be reset when the server restarts. Therefore, you may want set them in the configuration file (e.g., `/etc/my.cnf.d/server.cnf`) to ensure the values are the same after a restart:
 
-```
+```ini
 [server]
 ... 
 server_audit_logging=OFF 
 …
 ```
 
-For the reason given in the paragraph above, you would not generally set variables related to the auditing plugin using the [SET](../../sql-statements/administrative-sql-statements/set-commands/set.md) statement. However, you might do so to test settings before making them more permanent. Since one cannot always restart the server, you would use the [SET](../../sql-statements/administrative-sql-statements/set-commands/set.md) statement to change immediately the variables and then include the same settings in the configuration file so that the variables are set again as you prefer when the server is restarted.
+For the reason given in the paragraph above, you would not generally set variables related to the auditing plugin using the `SET` statement. However, you might do so to test settings before making them more permanent. Since one cannot always restart the server, you would use the `SET` statement to change immediately the variables and then include the same settings in the configuration file so that the variables are set again as you prefer when the server is restarted.
 
 #### Configuring Logs and Setting Other Variables
 

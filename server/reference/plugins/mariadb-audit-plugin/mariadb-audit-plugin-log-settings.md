@@ -1,14 +1,14 @@
-# MariaDB Audit Plugin - Log Settings
+# Log Settings
 
 Events that are logged by the MariaDB Audit Plugin are grouped generally into different types: connect, query, and table events. To log based on these types of events, set the variable, [server\_audit\_events](mariadb-audit-plugin-options-and-system-variables.md#server_audit_events) to `CONNECT`, `QUERY`, or `TABLE`. To have the Audit Plugin log more than one type of event, put them in a comma-separated list like so:
 
-```
+```sql
 SET GLOBAL server_audit_events = 'CONNECT,QUERY,TABLE';
 ```
 
 You can put the equivalent of this in the configuration file like so:
 
-```
+```ini
 [mysqld]
 ...
 server_audit_events=connect,query
@@ -18,17 +18,17 @@ By default, logging is set to `OFF`. To enable it, set the [server\_audit\_loggi
 
 There are a few types of events that may be logged, not just the three common ones mentioned above. A full list of related system variables is detailed on the [Server\_Audit System Variables](mariadb-audit-plugin-options-and-system-variables.md#server_audit) page, and status variables on the [Server\_Audit System Variables](mariadb-audit-plugin-options-and-system-variables.md#server_audit) page of this documentation. Some of the major ones are highlighted below:
 
-| Type                   | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
-| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| CONNECT                | Connects, disconnects and failed connects—including the error code                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
-| QUERY                  | Queries executed and their results in plain text, including failed queries due to syntax or permission errors                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-| TABLE                  | Tables affected by query execution                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
-| QUERY\_DDL             | Similar to QUERY, but filters only DDL-type queries (CREATE, ALTER, DROP, RENAME and TRUNCATE). There are some exceptions however. RENAME USER is not logged, while CREATE/DROP \[PROCEDURE / FUNCTION / USER] are only logged from [MariaDB 10.2.38](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-2-series/mariadb-10238-release-notes), [MariaDB 10.3.29](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-10329-release-notes), [MariaDB 10.4.22](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-10422-release-notes), [MariaDB 10.5.13](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-10513-release-notes) and [MariaDB 10.6.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/mariadb-1065-release-notes). In earlier versions they are not logged. See [MDEV-23457](https://jira.mariadb.org/browse/MDEV-23457). |
-| QUERY\_DML             | Similar to QUERY, but filters only DML-type queries (DO, CALL, LOAD DATA/XML, DELETE, INSERT, SELECT, UPDATE, HANDLER and REPLACE statements)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-| QUERY\_DML\_NO\_SELECT | Similar to QUERY\_DML, but doesn't log SELECT queries. (since version 1.4.4) (DO, CALL, LOAD DATA/XML, DELETE, INSERT, UPDATE, HANDLER and REPLACE statements)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
-| QUERY\_DCL             | Similar to QUERY, but filters only DCL-type queries (CREATE USER, DROP USER, RENAME USER, GRANT, REVOKE and SET PASSWORD statements)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| Type                   | Description                                                                                                                                                                                                                               |
+| ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| CONNECT                | Connects, disconnects and failed connects—including the error code.                                                                                                                                                                       |
+| QUERY                  | Queries executed and their results in plain text, including failed queries due to syntax or permission errors.                                                                                                                            |
+| TABLE                  | Tables affected by query execution.                                                                                                                                                                                                       |
+| QUERY\_DDL             | Similar to `QUERY`, but filters only DDL-type queries (`CREATE`, `ALTER`, `DROP`, `RENAME` and `TRUNCATE`). There are some exceptions however. `RENAME USER` is not logged, while `CREATE/DROP [PROCEDURE / FUNCTION / USER]` are logged. |
+| QUERY\_DML             | Similar to `QUERY`, but filters only DML-type queries (`DO`, `CALL`, `LOAD DATA/XML`, `DELETE`, `INSERT`, `SELECT`, `UPDATE`, `HANDLER` , and `REPLACE` statements).                                                                      |
+| QUERY\_DML\_NO\_SELECT | Similar to `QUERY_DML`, but doesn't log `SELECT` queries.                                                                                                                                                                                 |
+| QUERY\_DCL             | Similar to `QUERY`, but filters only DCL-type queries (`CREATE USER`, `DROP USER`, `RENAME USER`, `GRANT`, `REVOKE` and `SET PASSWORD` statements).                                                                                       |
 
-Since there are other types of queries besides DDL and DML, using the `QUERY_DDL` and `QUERY_DML` options together is not equivalent to using `QUERY`. Starting in version 1.3.0 of the Audit Plugin, there is the `QUERY_DCL`option for logging DCL types of queries (e.g., and `GRANT``REVOKE`statements). In the same version, the [server\_audit\_query\_log\_limit](mariadb-audit-plugin-options-and-system-variables.md#server_audit_query_log_limit) variable was added to be able to set the length of a log record. Previously, a log entry would be truncated due to long query strings.
+Since there are other types of queries besides DDL and DML, using the `QUERY_DDL` and `QUERY_DML` options together is not equivalent to using `QUERY`. There is the `QUERY_DCL` option for logging DCL types of queries (e.g., and `GRANT``REVOKE`statements). In the same version, the [server\_audit\_query\_log\_limit](mariadb-audit-plugin-options-and-system-variables.md#server_audit_query_log_limit) variable was added to be able to set the length of a log record. Previously, a log entry would be truncated due to long query strings.
 
 ## Logging Connect Events
 
@@ -46,7 +46,7 @@ You may find failed queries to be more interesting: They can reveal problems wit
 
 Below is an example in which a user attempts to execute an `UPDATE` statement on a table for which he does not have permission:
 
-```
+```sql
 UPDATE employees 
 SET salary = salary * 1.2 
 WHERE emp_id = 18236;
@@ -57,14 +57,14 @@ UPDATE command denied to user 'bob'@'localhost' for table 'employees'
 
 Looking in the Audit Plugin log (`server_audit.log`) for this entry, you can see the following entry:
 
-```
+```sql
 20170817 11:07:18,ip-172-30-0-38,bob,localhost,15,46,QUERY,company,
 'UPDATE employees SET salary = salary * 1.2 WHERE emp_id = 18236',1142
 ```
 
 This log entry would be on one line, but it's reformatted here for better rendering. Looking at this log entry, you can see the date and time of the query, followed by the server host and the user and host for the account. Next is the connection and query identification numbers (i.e., `15` and `46`). After the log event type (i.e., `QUERY`), the database name (i.e., `company`), the query, and the error number are recorded.
 
-Notice that the last value in the log entry is `1142`. That's the error number for the query. To find failed queries, you would look for two elements: the notation indicating that it's an entry `QUERY`and the last value for the entry. If the query is successful, the value will be`0`
+Notice that the last value in the log entry is `1142`. That's the error number for the query. To find failed queries, you would look for two elements: the notation indicating that it's an entry `QUERY` and the last value for the entry. If the query is successful, the value will be`0` .
 
 ### Queries Not Included in Subordinate Query Event Types
 
@@ -122,7 +122,7 @@ Although MariaDB considers a user as the combination of the username and hostnam
 
 The following example shows how to add a new username to the [`server_audit_incl_users`](mariadb-audit-plugin-options-and-system-variables.md#server_audit_incl_users) variable without removing previous usernames:
 
-```
+```sql
 SET GLOBAL server_audit_incl_users = CONCAT(@@global.server_audit_incl_users, ',Maria');
 ```
 
@@ -132,7 +132,7 @@ Remember to add also any new users to be included in the logs to the same variab
 
 By default events from all users are logged, but certain users can be excluded from logging by using the [`server_audit_excl_users`](mariadb-audit-plugin-options-and-system-variables.md#server_audit_excl_users) variable. For example, to exclude users _valerianus_ and _rocky_ from having their events logged:
 
-```
+```ini
 server_audit_excl_users=valerianus,rocky
 ```
 
@@ -140,7 +140,9 @@ This option is primarily used to exclude the activities of trusted applications.
 
 Alternatively, [`server_audit_incl_users`](mariadb-audit-plugin-options-and-system-variables.md#server_audit_incl_users) can be used to specifically include users. Both variables can be used, but if a user appears on both lists, [`server_audit_incl_users`](mariadb-audit-plugin-options-and-system-variables.md#server_audit_incl_users) has a higher priority, and their activities will be logged.
 
+{% hint style="info" %}
 Note that `CONNECT` events are always logged for all users, regardless of these two settings. Logging is also based on username only, not the username and hostname combination that MariaDB uses to determine privileges.
+{% endhint %}
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 
