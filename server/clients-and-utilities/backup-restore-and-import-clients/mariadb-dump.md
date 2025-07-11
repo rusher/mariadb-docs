@@ -164,7 +164,16 @@ If the --comments option and this option are given, mariadb-dump produces a comm
 Dump tables with [history](../../reference/sql-structure/temporal-tables/system-versioned-tables.md). From [MariaDB 10.11.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-11-series/mariadb-10-11-0-release-notes). Until this option, mariadb-dump could not read historical rows from versioned tables, and so historical data would not be backed up.
 
 #### --dump-slave\[=value]
-Used for producing a dump file from a replica server that can be used to set up another replica server with the same primary. Causes the [binary log](../../server-management/server-monitoring-logs/binary-log/) position and filename of the primary to be appended to the dumped data output. Setting the value to 1 (the default) will print it as a [CHANGE MASTER](../../reference/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) command in the dumped data output; if set to 2, that command will be prefixed with a comment symbol. This option will turn --lock-all-tables on, unless --single-transaction is specified too (in which case a global read lock is only taken a short time at the beginning of the dump - don't forget to read about --single-transaction below). In all cases any action on logs will happen at the exact moment of the dump. Option automatically turns --lock-tables off. Using this option causes mariadb-dump to stop the replica SQL thread before beginning the dump, and restart it again after completion.
+Used for producing a dump file from a replica server that can be used to set up another replica server with the same primary. Causes the [binary log](../../server-management/server-monitoring-logs/binary-log/) position and filename of the primary to be appended to the dumped data output. Setting the value to 1 (the default) will print it as a [CHANGE MASTER](../../reference/sql-statements/administrative-sql-statements/replication-statements/change-master-to.md) command in the dumped data output; if set to 2, that command will be prefixed with a comment symbol. This option will turn --lock-all-tables on, unless --single-transaction is specified too (in which case a global read lock is only taken a short time at the beginning of the dump - don't forget to read about --single-transaction below). In all cases any action on logs will happen at the exact moment of the dump. Option automatically turns --lock-tables off.
+
+{% tabs %}
+{% tab title="Current" %}
+This option pauses any running SQL threads during the dump.
+{% endtab %}
+{% tab title="< 10.11 ([MDEV-7611](https://jira.mariadb.org/browse/MDEV-7611))" %}
+This option stops any running SQL threads before the dump, and restarts **all stopped IO and SQL** threads after completion.
+{% endtab %}
+{% endtabs %}
 
 #### -E, --events
 Include [Event Scheduler events](../../server-usage/triggers-events/event-scheduler/) for the dumped databases in the output.
