@@ -18,6 +18,10 @@ This section contains release notes for MariaDB Server releases divided into the
 [mariadb-11-4-series](mariadb-11-4-series/)
 {% endcontent-ref %}
 
+{% content-ref url="mariadb-10-11-series/" %}
+[mariadb-10-11-series](mariadb-10-11-series/)
+{% endcontent-ref %}
+
 {% content-ref url="mariadb-10-6-series/" %}
 [mariadb-10-6-series](mariadb-10-6-series/)
 {% endcontent-ref %}
