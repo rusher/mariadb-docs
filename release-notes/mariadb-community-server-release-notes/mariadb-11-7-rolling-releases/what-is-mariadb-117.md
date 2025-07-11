@@ -79,7 +79,6 @@ Add listcve macro here - removed for performance reasons
 
 | Date        | Release                                           | Status | Release Notes                                    | Changelog                                                                                |
 | ----------- | ------------------------------------------------- | ------ | ------------------------------------------------ | ---------------------------------------------------------------------------------------- |
-| Date        | Release                                           | Status | Release Notes                                    | Changelog                                                                                |
 | 21 Nov 2024 | [MariaDB 11.7.2](mariadb-11-7-2-release-notes.md) | RC     | [Release Notes](mariadb-11-7-1-release-notes.md) | [Changelog](../../changelogs/changelogs-mariadb-11-7-series/mariadb-11-7-1-changelog.md) |
 | 21 Nov 2024 | [MariaDB 11.7.1](mariadb-11-7-1-release-notes.md) | RC     | [Release Notes](mariadb-11-7-1-release-notes.md) | [Changelog](../../changelogs/changelogs-mariadb-11-7-series/mariadb-11-7-1-changelog.md) |
 | 25 Sep 2024 | [MariaDB 11.7.0](mariadb-11-7-0-release-notes.md) | Alpha  | [Release Notes](mariadb-11-7-0-release-notes.md) |                                                                                          |

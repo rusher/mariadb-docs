@@ -6,7 +6,6 @@ It contains the following columns:
 
 | Column          | Description                                                        |
 | --------------- | ------------------------------------------------------------------ |
-| Column          | Description                                                        |
 | GRANTEE         | Account granted the privilege in the format user\_name@host\_name. |
 | TABLE\_CATALOG  | Always def                                                         |
 | TABLE\_SCHEMA   | Database name.                                                     |

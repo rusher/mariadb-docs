@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 AVG([DISTINCT] expr)
 ```
 
@@ -16,7 +16,7 @@ AVG() can be used as a [window function](../special-functions/window-functions/)
 
 ## Examples
 
-```
+```sql
 CREATE TABLE sales (sales_value INT);
 
 INSERT INTO sales VALUES(10),(20),(20),(40);
@@ -38,7 +38,7 @@ SELECT AVG(DISTINCT(sales_value)) FROM sales;
 
 Commonly, AVG() is used with a [GROUP BY](../../sql-statements/data-manipulation/selecting-data/select.md#group-by) clause:
 
-```
+```sql
 CREATE TABLE student (name CHAR(10), test CHAR(10), score TINYINT); 
 
 INSERT INTO student VALUES 
@@ -60,7 +60,7 @@ SELECT name, AVG(score) FROM student GROUP BY name;
 
 Be careful to avoid this common mistake, not grouping correctly and returning mismatched data:
 
-```
+```sql
 SELECT name,test,AVG(score) FROM student;
 +------+------+------------+
 | name | test | MIN(score) |
@@ -71,7 +71,7 @@ SELECT name,test,AVG(score) FROM student;
 
 As a [window function](../special-functions/window-functions/):
 
-```
+```sql
 CREATE TABLE student_test (name CHAR(10), test CHAR(10), score TINYINT); 
 
 INSERT INTO student_test VALUES 
@@ -102,6 +102,6 @@ SELECT name, test, score, AVG(score) OVER (PARTITION BY test)
 * [MIN](min.md) (minimum)
 * [SUM](sum.md) (sum total)
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

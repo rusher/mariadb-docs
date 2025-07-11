@@ -1,6 +1,6 @@
 # Avrorouter Tutorial
 
-This tutorial is a short introduction to the [Avrorouter](../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-avrorouter.md), how to set it up and how it interacts\
+This tutorial is a short introduction to the [Avrorouter](../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-avrorouter.md), how to set it up and how it interacts\
 with the binlogrouter.
 
 The first part configures the services and sets them up for the binary log to Avro file conversion. The second part of this tutorial uses the client listener interface for the avrorouter and shows how to communicate with the service over the network.
@@ -71,7 +71,7 @@ first binlog that the binlogrouter will replicate. For example, if the first\
 file you are replicating is `my-binlog-file.001234`, set the parameters to`filestem=my-binlog-file` and `start_index=1234`.
 
 For more information on the avrorouter options, read the [Avrorouter\
-Documentation](../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-avrorouter.md).
+Documentation](../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-avrorouter.md).
 
 ## Preparing the data in the primary server
 
@@ -87,7 +87,7 @@ created. There are multiple ways to do this:
 * Dump the database to a replica, configure it to replicate from the primary and\
   point MaxScale to this replica (this is the recommended method as it requires no\
   extra steps)
-* Use the [cdc\_schema Go utility](../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-avrorouter.md)\
+* Use the [cdc\_schema Go utility](../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-avrorouter.md)\
   and copy the generated .avsc files to the avrodir
 * Use the [Python version of the schema generator](https://mariadb.com/server/modules/protocol/examples/cdc_schema.py)\
   and copy the generated .avsc files to the avrodir
@@ -121,7 +121,7 @@ This will start the replication of binary logs from the primary server at\
 replicates is `binlog.000015`. This is the same file that was configured as the\
 starting file in the avrorouter.
 
-For more details about the SQL commands, refer to the[Binlogrouter](../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-binlogrouter.md) documentation.
+For more details about the SQL commands, refer to the[Binlogrouter](../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-routers/mariadb-maxscale-2501-maxscale-2501-binlogrouter.md) documentation.
 
 After the binary log streaming has started, the avrorouter will automatically\
 start processing the binlogs.

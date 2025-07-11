@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 COLUMN_CHECK(dyncol_blob);
 ```
 

@@ -1,8 +1,8 @@
 # Performance Schema status\_by\_account Table
 
-**MariaDB starting with** [**10.5.2**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1052-release-notes)
+**MariaDB starting with** [**10.5.2**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-1052-release-notes)
 
-The `status_by_account` table was added in [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1052-release-notes).
+The `status_by_account` table was added in [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-1052-release-notes).
 
 The `status_by_account` table contains status variable information by user/host account. The table does not collect statistics for `Com_xxx` variables.
 
@@ -10,7 +10,6 @@ The table contains the following columns:
 
 | Column          | Description                                     |
 | --------------- | ----------------------------------------------- |
-| Column          | Description                                     |
 | USER            | User for which the status variable is reported. |
 | HOST            | Host for which the status variable is reported. |
 | VARIABLE\_NAME  | Status variable name.                           |

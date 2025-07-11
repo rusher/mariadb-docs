@@ -2,7 +2,7 @@
 
 ## EXCEPT
 
-The result of `EXCEPT` contains all records of the left `SELECT` result set except records which are in right `SELECT` result set. In other words, it is the subtraction of two result sets.&#x20;
+The result of `EXCEPT` contains all records of the left `SELECT` result set except records which are in right `SELECT` result set. In other words, it is the subtraction of two result sets.
 
 {% tabs %}
 {% tab title="Current" %}
@@ -51,7 +51,7 @@ The result of `EXCEPT` is all records of the left `SELECT` result except records
 
 Parentheses can be used to specify precedence. Before this, a syntax error would be returned.
 
-**MariaDB starting with** [**10.5.0**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1050-release-notes)
+**MariaDB starting with** [**10.5.0**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-1050-release-notes)
 
 #### ALL/DISTINCT
 

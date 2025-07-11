@@ -1,6 +1,8 @@
 # ST\_Simplify
 
+{% hint style="info" %}
 ST\_Simplify was added in [MariaDB 12.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-12.0-rolling-releases/what-is-mariadb-120).
+{% endhint %}
 
 ## Syntax
 
@@ -16,7 +18,7 @@ The goal of the Douglas-Peucker algorithm is to provide generalized simplificati
 
 The algorithm may produce self-intersections and therefore result in invalid geometries. [ST\_IsValid](st_isvalid.md) can be used to test validity of the result.
 
-If the max\_distance is not positive or is NULL, an ER\_WRONG\_ARGUMENT will occur.
+If the max\_distance is not positive or is `NULL`, an `ER_WRONG_ARGUMENT` will occur.
 
 ## Examples
 

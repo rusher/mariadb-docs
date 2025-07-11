@@ -8,13 +8,13 @@ Although the plugin's shared library is distributed with MariaDB by default, the
 
 The first method can be used to install the plugin without restarting the server. You can install the plugin dynamically by executing [INSTALL SONAME](../../../../sql-statements/administrative-sql-statements/plugin-sql-statements/install-soname.md) or [INSTALL PLUGIN](../../../../sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin.md). For example:
 
-```
+```sql
 INSTALL SONAME 'locales';
 ```
 
 The second method can be used to tell the server to load the plugin when it starts up. The plugin can be installed this way by providing the [--plugin-load](../../../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md) or the [--plugin-load-add](../../../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md) options. This can be specified as a command-line argument to [mysqld](../../../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md) or it can be specified in a relevant server [option group](../../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md). For example:
 
-```
+```sql
 [mariadb]
 ...
 plugin_load_add = locales
@@ -24,7 +24,7 @@ plugin_load_add = locales
 
 You can uninstall the plugin dynamically by executing [UNINSTALL SONAME](../../../../sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md) or [UNINSTALL PLUGIN](../../../../sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md). For example:
 
-```
+```sql
 UNINSTALL SONAME 'locales';
 ```
 
@@ -32,7 +32,7 @@ If you installed the plugin by providing the [--plugin-load](../../../../../serv
 
 ## Example
 
-```
+```sql
 SELECT * FROM INFORMATION_SCHEMA.LOCALES;
 +-----+-------+-------------------------------------+-----------------------+---------------------+---------------+--------------+------------------------+
 | ID  | NAME  | DESCRIPTION                         | MAX_MONTH_NAME_LENGTH | MAX_DAY_NAME_LENGTH | DECIMAL_POINT | THOUSAND_SEP | ERROR_MESSAGE_LANGUAGE |
@@ -55,15 +55,6 @@ SELECT * FROM INFORMATION_SCHEMA.LOCALES;
 +-----+-------+-------------------------------------+-----------------------+---------------------+---------------+--------------+------------------------+
 ```
 
-## Versions
-
-| Version | Status | Introduced                                                                                                                                                                                                    |
-| ------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Version | Status | Introduced                                                                                                                                                                                                    |
-| 1.0     | Stable | [MariaDB 10.1.13](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/data-types/string-data-types/character-sets/internationalization-and-localization/broken-reference/README.md) |
-| 1.0     | Gamma  | [MariaDB 10.0.10](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-10010-release-notes)                           |
-| 1.0     | Alpha  | [MariaDB 10.0.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-1004-release-notes)                             |
-
 ## Options
 
 ### `locales`
@@ -71,11 +62,11 @@ SELECT * FROM INFORMATION_SCHEMA.LOCALES;
 * Description: Controls how the server should treat the plugin when the server starts up.
   * Valid values are:
     * `OFF` - Disables the plugin without removing it from the [mysql.plugins](../../../../sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-plugin-table.md) table.
-    * `ON` - Enables the plugin. If the plugin cannot be initialized, then the server will still continue starting up, but the plugin will be disabled.
-    * `FORCE` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error.
-    * `FORCE_PLUS_PERMANENT` - Enables the plugin. If the plugin cannot be initialized, then the server will fail to start with an error. In addition, the plugin cannot be uninstalled with [UNINSTALL SONAME](../../../../sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md) or [UNINSTALL PLUGIN](../../../../sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md) while the server is running.
+    * `ON` - Enables the plugin. If the plugin cannot be initialized, then the server still continues starting up, but the plugin will be disabled.
+    * `FORCE` - Enables the plugin. If the plugin cannot be initialized, then the server fails to start with an error.
+    * `FORCE_PLUS_PERMANENT` - Enables the plugin. If the plugin cannot be initialized, then the server fails to start with an error. In addition, the plugin cannot be uninstalled with [UNINSTALL SONAME](../../../../sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md) or [UNINSTALL PLUGIN](../../../../sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md) while the server is running.
   * See [Plugin Overview: Configuring Plugin Activation at Server Startup](../../../../plugins/plugin-overview.md#configuring-plugin-activation-at-server-startup) for more information.
-* Commandline: `--locales=value`
+* Command line: `--locales=value`
 * Data Type: `enumerated`
 * Default Value: `ON`
 * Valid Values: `OFF`, `ON`, `FORCE`, `FORCE_PLUS_PERMANENT`

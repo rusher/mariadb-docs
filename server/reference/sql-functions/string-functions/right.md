@@ -2,18 +2,17 @@
 
 ## Syntax
 
-```
+```sql
 RIGHT(str,len)
 ```
 
 ## Description
 
-Returns the rightmost _`len`_ characters from the string _`str`_, or NULL if\
-any argument is NULL.
+Returns the rightmost _`len`_ characters from the string _`str`_, or `NULL` if any argument is `NULL`.
 
 ## Examples
 
-```
+```sql
 SELECT RIGHT('MariaDB', 2);
 +---------------------+
 | RIGHT('MariaDB', 2) |

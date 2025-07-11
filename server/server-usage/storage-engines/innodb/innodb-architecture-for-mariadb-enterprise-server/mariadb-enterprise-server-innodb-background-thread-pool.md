@@ -25,13 +25,12 @@ The InnoDB Background Thread Pool performs internal operations in multiple categ
 
 ## Feature Summary
 
-| Feature        | Detail                              | Resources                                                                                                                        |
-| -------------- | ----------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| Feature        | Detail                              | Resources                                                                                                                        |
-| Thread Pool    | InnoDB Background Thread Pool       |                                                                                                                                  |
-| Storage Engine | InnoDB                              |                                                                                                                                  |
-| Purpose        | Handles background tasks for InnoDB |                                                                                                                                  |
-| Availability   | • ES 10.5+ • CS 10.5+               | [MariaDB Enterprise Server](https://github.com/mariadb-corporation/docs-server/blob/test/en/mariadb-enterprise-server/README.md) |
+| Feature        | Detail                              | Resources                                                                                           |
+| -------------- | ----------------------------------- | --------------------------------------------------------------------------------------------------- |
+| Thread Pool    | InnoDB Background Thread Pool       |                                                                                                     |
+| Storage Engine | InnoDB                              |                                                                                                     |
+| Purpose        | Handles background tasks for InnoDB |                                                                                                     |
+| Availability   | • ES 10.5+ • CS 10.5+               | [MariaDB Enterprise Server](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/JqgUabdZsoY5EiaJmqgn/) |
 
 <sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
 

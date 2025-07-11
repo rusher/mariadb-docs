@@ -2,15 +2,13 @@
 
 ## Syntax
 
-```
+```sql
 INSTR(str,substr)
 ```
 
 ## Description
 
-Returns the position of the first occurrence of substring _substr_ in\
-string _str_. This is the same as the two-argument form of [LOCATE()](locate.md),\
-except that the order of the arguments is reversed.
+Returns the position of the first occurrence of substring _substr_ in string _str_. This is the same as the two-argument form of [LOCATE()](locate.md), except that the order of the arguments is reversed.
 
 `INSTR()` performs a case-insensitive search.
 
@@ -18,7 +16,7 @@ If any argument is `NULL`, returns `NULL`.
 
 ## Examples
 
-```
+```sql
 SELECT INSTR('foobarbar', 'bar');
 +---------------------------+
 | INSTR('foobarbar', 'bar') |

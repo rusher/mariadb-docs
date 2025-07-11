@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 DATE_FORMAT(date, format[, locale])
 ```
 
@@ -16,7 +16,6 @@ The options that can be used by DATE\_FORMAT(), as well as its inverse [STR\_TO\
 
 | Option | Description                                                                                                                                                                                                                                                                         |
 | ------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Option | Description                                                                                                                                                                                                                                                                         |
 | %a     | Short weekday name in current locale (Variable [lc\_time\_names](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#lc_time_names)).                                                                                                   |
 | %b     | Short form month name in current locale. For locale en\_US this is one of: Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov or Dec.                                                                                                                                                      |
 | %c     | Month with 1 or 2 digits.                                                                                                                                                                                                                                                           |
@@ -55,11 +54,11 @@ The options that can be used by DATE\_FORMAT(), as well as its inverse [STR\_TO\
 | %@     | For [str\_to\_date](str_to_date.md)(), skip all alpha characters.                                                                                                                                                                                                                   |
 | %%     | A literal % character.                                                                                                                                                                                                                                                              |
 
-To get a date in one of the standard formats, [GET_FORMAT()](get_format.md) can be used.
+To get a date in one of the standard formats, [GET\_FORMAT()](get_format.md) can be used.
 
 ## Examples
 
-```
+```sql
 SELECT DATE_FORMAT('2009-10-04 22:23:00', '%W %M %Y');
 +------------------------------------------------+
 | DATE_FORMAT('2009-10-04 22:23:00', '%W %M %Y') |
@@ -105,7 +104,7 @@ SELECT DATE_FORMAT('2006-06-00', '%d');
 
 Optionally, the locale can be explicitly specified as the third DATE\_FORMAT() argument. Doing so makes the function independent from the session settings, and the three argument version of DATE\_FORMAT() can be used in virtual indexed and persistent [generated-columns](../../sql-statements/data-definition/create/generated-columns.md):
 
-```
+```sql
 SELECT DATE_FORMAT('2006-01-01', '%W', 'el_GR');
 +------------------------------------------+
 | DATE_FORMAT('2006-01-01', '%W', 'el_GR') |
@@ -114,9 +113,11 @@ SELECT DATE_FORMAT('2006-01-01', '%W', 'el_GR');
 +------------------------------------------+
 ```
 
-From [MariaDB 11.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-3-rolling-releases/what-is-mariadb-113), the timezone information:
+{% hint style="info" %}
+Timezone information from MariaDB 11.3:
+{% endhint %}
 
-```
+```sql
 SELECT DATE_FORMAT(NOW(), '%W %d %M %Y %H:%i:%s %Z %z');
 +--------------------------------------------------+
 | DATE_FORMAT(NOW(), '%W %d %M %Y %H:%i:%s %Z %z') |
@@ -130,6 +131,6 @@ SELECT DATE_FORMAT(NOW(), '%W %d %M %Y %H:%i:%s %Z %z');
 * [STR\_TO\_DATE()](str_to_date.md)
 * [FROM\_UNIXTIME()](from_unixtime.md)
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

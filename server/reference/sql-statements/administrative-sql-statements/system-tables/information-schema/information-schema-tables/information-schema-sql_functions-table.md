@@ -12,7 +12,6 @@ It contains a single column:
 
 | Column   | Description   |
 | -------- | ------------- |
-| Column   | Description   |
 | FUNCTION | Function name |
 
 The table is not a standard Information Schema table, and is a MariaDB extension.

@@ -4,22 +4,22 @@
 
 A foreign key is a constraint which can be used to enforce data integrity. It is composed by a column (or a set of columns) in a table called the child table, which references to a column (or a set of columns) in a table called the parent table. If foreign keys are used, MariaDB performs some checks to enforce that some integrity rules are always enforced. For a more exhaustive explanation, see [Relational databases: Foreign Keys](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/database-theory/relational-databases-foreign-keys).
 
-Foreign keys can only be used with storage engines that support them. The default [InnoDB](../../../server-usage/storage-engines/innodb/) and the obsolete [PBXT](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-usage/replication-cluster-multi-master/optimization-and-tuning/optimization-and-indexes/PBXT/README.md) support foreign keys.
+Foreign keys can only be used with storage engines that support them. The default [InnoDB](../../../server-usage/storage-engines/innodb/) supports foreign keys.
 
 [Partitioned tables](../../../server-usage/partitioning-tables/) cannot contain foreign keys, and cannot be referenced by a foreign key.
 
 ## Syntax
 
-**Note:** Until [MariaDB 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/optimization-and-tuning/optimization-and-indexes/broken-reference/README.md), MariaDB accepts the shortcut format with a REFERENCES clause only in ALTER TABLE and CREATE TABLE statements, but that syntax does nothing. For example:
+**Note:** Until [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104), MariaDB accepts the shortcut format with a REFERENCES clause only in ALTER TABLE and CREATE TABLE statements, but that syntax does nothing. For example:
 
 ```
 CREATE TABLE b(for_key INT REFERENCES a(not_key));
 ```
 
 MariaDB simply parses it without returning any error or warning, for compatibility with other DBMS's. However, only the syntax described below creates foreign keys.\
-From [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105), MariaDB will attempt to apply the constraint. See the [Examples](foreign-keys.md#references) below.
+From [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/what-is-mariadb-105), MariaDB will attempt to apply the constraint. See the [Examples](foreign-keys.md#references) below.
 
-Foreign keys are created with [CREATE TABLE](../../../reference/sql-statements/data-definition/create/create-table.md) or [ALTER TABLE](../../../reference/sql-statements/data-definition/alter/alter-table.md). The definition must follow this syntax:
+Foreign keys are created with [CREATE TABLE](../../../reference/sql-statements/data-definition/create/create-table.md) or [ALTER TABLE](../../../reference/sql-statements/data-definition/alter/alter-table/). The definition must follow this syntax:
 
 ```sql
 [CONSTRAINT [symbol]] FOREIGN KEY
@@ -70,11 +70,11 @@ Foreign key constraints can be disabled by setting the [foreign\_key\_checks](..
 
 ## Metadata
 
-The [Information Schema](../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/) [REFERENTIAL_CONSTRAINTS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-referential_constraints-table.md) table contains information about foreign keys. The individual columns are listed in the [KEY_COLUMN_USAGE](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-key_column_usage-table.md) table.
+The [Information Schema](../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/) [REFERENTIAL\_CONSTRAINTS](../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-referential_constraints-table.md) table contains information about foreign keys. The individual columns are listed in the [KEY\_COLUMN\_USAGE](../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-key_column_usage-table.md) table.
 
-The InnoDB-specific Information Schema tables also contain information about the InnoDB foreign keys. The foreign key information is stored in the [INNODB_SYS_FOREIGN](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_sys_foreign-table.md). Data about the individual columns are stored in [INNODB_SYS_FOREIGN_COLS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_sys_foreign_cols-table.md).
+The InnoDB-specific Information Schema tables also contain information about the InnoDB foreign keys. The foreign key information is stored in the [INNODB\_SYS\_FOREIGN](../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_sys_foreign-table.md). Data about the individual columns are stored in [INNODB\_SYS\_FOREIGN\_COLS](../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_sys_foreign-table.md).
 
-The most human-readable way to get information about a table's foreign keys sometimes is the [SHOW CREATE TABLE](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-create-table.md) statement.
+The most human-readable way to get information about a table's foreign keys sometimes is the [SHOW CREATE TABLE](../../../reference/sql-statements/administrative-sql-statements/show/show-create-table.md) statement.
 
 ## Limitations
 
@@ -157,7 +157,7 @@ ERROR 1451 (23000): Cannot delete or update a parent row: a foreign key constrai
 
 ### REFERENCES
 
-Until [MariaDB 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/optimization-and-tuning/optimization-and-indexes/broken-reference/README.md)
+Until  [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104)
 
 ```sql
 CREATE TABLE a(a_key INT PRIMARY KEY, not_key INT);
@@ -191,7 +191,7 @@ SELECT * FROM b;
 +---------+
 ```
 
-From [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105)
+From [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/what-is-mariadb-105)
 
 ```sql
 CREATE TABLE a(a_key INT PRIMARY KEY, not_key INT);
@@ -231,9 +231,7 @@ SELECT * FROM c;
 +---------+
 ```
 
-## See Also
-
-* [MariaDB: InnoDB foreign key constraint errors](https://blog.mariadb.org/mariadb-innodb-foreign-key-constraint-errors/), a post in the MariaDB blog
+##
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

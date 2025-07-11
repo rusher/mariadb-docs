@@ -24,9 +24,9 @@ have a specific internal format. The CONNECT handler supports the use of standar
 of the file based table types.
 
 You can define them in the [CREATE TABLE](../../../../reference/sql-statements/data-definition/create/create-table.md) statement, or either using the CREATE\
-INDEX statement or the [ALTER TABLE](../../../../reference/sql-statements/data-definition/alter/alter-table.md) statement. In all cases, the index files are\
+INDEX statement or the [ALTER TABLE](../../../../reference/sql-statements/data-definition/alter/alter-table/) statement. In all cases, the index files are\
 automatically made. They can be dropped either using the [DROP INDEX](../../../../reference/sql-statements/data-definition/drop/drop-index.md) statement\
-or the [ALTER TABLE](../../../../reference/sql-statements/data-definition/alter/alter-table.md) statement, and this erases the index files.
+or the [ALTER TABLE](../../../../reference/sql-statements/data-definition/alter/alter-table/) statement, and this erases the index files.
 
 Indexes are automatically reconstructed when the table is created, modified by\
 INSERT, UPDATE or DELETE commands, or when the SEPINDEX option is changed.\

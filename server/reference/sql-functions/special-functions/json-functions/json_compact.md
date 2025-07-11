@@ -1,24 +1,18 @@
-
-# JSON_COMPACT
+# JSON\_COMPACT
 
 ## Syntax
 
-
-```
+```sql
 JSON_COMPACT(json_doc)
 ```
 
-
 ## Description
-
 
 Removes all unnecessary spaces so the json document is as short as possible.
 
-
 ## Example
 
-
-```
+```sql
 SET @j = '{ "A": 1, "B": [2, 3]}';
 
 SELECT JSON_COMPACT(@j), @j;
@@ -31,11 +25,8 @@ SELECT JSON_COMPACT(@j), @j;
 
 ## See Also
 
-
-* [JSON video tutorial](https://www.youtube.com/watch?v=sLE7jPETp8g) covering JSON_COMPACT.
-
+* [JSON video tutorial](https://www.youtube.com/watch?v=sLE7jPETp8g) covering JSON\_COMPACT.
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
-
 
 {% @marketo/form formId="4316" %}

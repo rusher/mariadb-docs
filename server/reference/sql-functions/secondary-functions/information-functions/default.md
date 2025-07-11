@@ -2,44 +2,40 @@
 
 ## Syntax
 
-```
+```sql
 DEFAULT(col_name)
 ```
 
 ## Description
 
-Returns the default value for a table column. If the column has no default value (and is not NULLABLE - NULLABLE fields have a NULL default), an error is returned.
+Returns the default value for a table column. If the column has no default value (and is not NULLABLE - NULLABLE fields have a `NULL` default), an error is returned.
 
 For integer columns using [AUTO\_INCREMENT](../../../data-types/auto_increment.md), `0` is returned.
 
-When using `DEFAULT` as a value to set in an [INSERT](../../../sql-statements/data-manipulation/inserting-loading-data/insert.md) or [UPDATE](../../../sql-statements/data-manipulation/changing-deleting-data/update.md)\
-statement, you can use the bare keyword `DEFAULT` without the parentheses and argument to\
-refer to the column in context. You can only use `DEFAULT` as a bare keyword if you are using it\
-alone without a surrounding expression or function.
+When using `DEFAULT` as a value to set in an [INSERT](../../../sql-statements/data-manipulation/inserting-loading-data/insert.md) or [UPDATE](../../../sql-statements/data-manipulation/changing-deleting-data/update.md) statement, you can use the bare keyword `DEFAULT` without the parentheses and argument to refer to the column in context. You can only use `DEFAULT` as a bare keyword if you are using it alone without a surrounding expression or function.
 
 ## Examples
 
 Select only non-default values for a column:
 
-```
+```sql
 SELECT i FROM t WHERE i != DEFAULT(i);
 ```
 
 Update values to be one greater than the default value:
 
-```
+```sql
 UPDATE t SET i = DEFAULT(i)+1 WHERE i < 100;
 ```
 
-When referring to the default value exactly in `UPDATE` or `INSERT`,\
-you can omit the argument:
+When referring to the default value exactly in `UPDATE` or `INSERT`, you can omit the argument:
 
-```
+```sql
 INSERT INTO t (i) VALUES (DEFAULT);
 UPDATE t SET i = DEFAULT WHERE i < 100;
 ```
 
-```
+```sql
 CREATE OR REPLACE TABLE t (
   i INT NOT NULL AUTO_INCREMENT, 
   j INT NOT NULL, 
@@ -123,6 +119,6 @@ SELECT * FROM t WHERE m <=> DEFAULT(m);
 
 * [CREATE TABLE DEFAULT Clause](../../../sql-statements/data-definition/create/create-table.md#default-column-option)
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

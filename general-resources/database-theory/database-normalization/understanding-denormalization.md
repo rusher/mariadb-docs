@@ -22,7 +22,6 @@ The table below introduces a common structure where it may not be in your best i
 
 | Customer table |
 | --- |
-| Customer table |
 | ID |
 | First name |
 | Surname |

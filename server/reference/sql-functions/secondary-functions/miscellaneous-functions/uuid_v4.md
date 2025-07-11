@@ -1,12 +1,14 @@
 # UUID\_v4
 
-**MariaDB starting with** [**11.7**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-11-7-rolling-releases/what-is-mariadb-117)
+{% hint style="info" %}
+`UUID_v4` is available from MariaDB [11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-11-7-rolling-releases/what-is-mariadb-117).
+{% endhint %}
 
-From [MariaDB 11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-11-7-rolling-releases/what-is-mariadb-117), it is possible to generate UUIDv4 and UUIDv7, in addition to UUIDv1.
+It is possible to generate UUIDv4 and UUIDv7, in addition to UUIDv1.
 
 ## Syntax
 
-```
+```sql
 UUID_v4()
 ```
 
@@ -18,15 +20,13 @@ A UUID is designed as a number that is globally unique in space and time. Two ca
 
 UUID\_v4() results are intended to be unique, but cannot always be relied upon to be unpredictable and unguessable.
 
-A UUID is a 128-bit number represented by a utf8 string of five\
-hexadecimal numbers in `aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee`\
-format:
+A UUID is a 128-bit number represented by a utf8 string of five hexadecimal numbers in `aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee` format.
 
 Statements using the UUID\_v4() function are not [safe for statement-based replication](../../../../ha-and-performance/standard-replication/unsafe-statements-for-statement-based-replication.md).
 
 ## Examples
 
-```
+```sql
 SELECT UUID(),UUID_v4(),UUID_v7()\G 
 *************************** 1. row ***************************
   UUID(): 63ae8c92-799a-11ef-98b2-f859713e4be4

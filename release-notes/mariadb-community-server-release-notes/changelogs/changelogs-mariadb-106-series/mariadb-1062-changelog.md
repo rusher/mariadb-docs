@@ -420,7 +420,7 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-25815](https://jira.mariadb.org/browse/MDEV-25815) mariadb-backup crash or debug assert with --backup --databases-exclude
 * [Revision #a70a5537e7](https://github.com/MariaDB/server/commit/a70a5537e7)\
   2021-05-23 21:23:18 -0700
-  * Deb: Innotop: Add support for [MariaDB 10.5](../../mariadb-10-5-series/what-is-mariadb-105.md)+
+  * Deb: Innotop: Add support for [MariaDB 10.5](../../old-releases/mariadb-10-5-series/what-is-mariadb-105.md)+
 * [Revision #08bc7ee068](https://github.com/MariaDB/server/commit/08bc7ee068)\
   2021-05-27 00:37:51 +0200
   * [MDEV-25792](https://jira.mariadb.org/browse/MDEV-25792) server hangs on early shutdown if InnoDB needs to purge indexed virtual columns

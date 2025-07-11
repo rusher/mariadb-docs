@@ -7,7 +7,6 @@ The [Performance Schema](../README.md) `events_statements_summary_by_thread_by_e
 
 | Column | Description |
 | --- | --- |
-| Column | Description |
 | THREAD_ID | Thread associated with the event. Together with EVENT_NAME uniquely identifies the row. |
 | EVENT_NAME | Event name. Used together with THREAD_ID for grouping events. |
 | COUNT_STAR | Number of summarized events |

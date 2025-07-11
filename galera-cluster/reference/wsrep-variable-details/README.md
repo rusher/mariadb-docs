@@ -1,0 +1,2 @@
+# WSREP Variable Details
+

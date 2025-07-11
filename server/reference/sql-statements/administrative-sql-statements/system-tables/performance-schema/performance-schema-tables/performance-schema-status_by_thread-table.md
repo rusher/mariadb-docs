@@ -1,8 +1,8 @@
 # Performance Schema status\_by\_thread Table
 
-**MariaDB starting with** [**10.5.2**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1052-release-notes)
+**MariaDB starting with** [**10.5.2**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-1052-release-notes)
 
-The `session_status` table was added in [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1052-release-notes).
+The `session_status` table was added in [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-1052-release-notes).
 
 The `status_by_thread` table contains status variable information about active foreground threads. The table does not collect statistics for `Com_xxx` variables.
 
@@ -10,7 +10,6 @@ The table contains the following columns:
 
 | Column          | Description                                                                   |
 | --------------- | ----------------------------------------------------------------------------- |
-| Column          | Description                                                                   |
 | THREAD\_ID      | The thread identifier of the session in which the status variable is defined. |
 | VARIABLE\_NAME  | Status variable name.                                                         |
 | VARIABLE\_VALUE | Aggregated status variable value.                                             |

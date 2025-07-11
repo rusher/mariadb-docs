@@ -2,13 +2,15 @@
 
 ## Syntax
 
-```
+```sql
 ENCODE(str,pass_str)
 ```
 
 ## Description
 
-ENCODE is not considered cryptographically secure, and should not be used for password encryption.
+{% hint style="warning" %}
+`ENCODE` is not considered cryptographically secure, and should not be used for password encryption.
+{% endhint %}
 
 Encrypt `str` using `pass_str` as the password. To decrypt the result, use[DECODE()](decode.md).
 
@@ -20,7 +22,7 @@ It is not recommended to rely on the encryption performed by the ENCODE function
 
 ## Examples
 
-```
+```sql
 ENCODE('not so secret text', CONCAT('random_salt','password'))
 ```
 

@@ -1,15 +1,17 @@
 # MariaDB Connector/Node.js 0.7.0 Release Notes
 
-The most recent [_**Stable (GA)**_](../../../mariadb-release-criteria.md) release of [MariaDB Connector/Node.js](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/about-mariadb-connector-nodejs/README.md) is:[**MariaDB Connector/Node.js 3.4.2**](../mariadb-connector-nodejs-3x-release-notes/mariadb-connector-node-js-3-4-2-release-notes.md)
+{% include "../../../.gitbook/includes/latest-nodejs.md" %}
 
-[Download](https://downloads.mariadb.org/connector-nodejs/0.7.0/)[Release Notes](mariadb-connector-nodejs-070-release-notes.md)[Changelog](../changelogs/mariadb-connector-nodejs-0x-changelogs/mariadb-connector-nodejs-070-changelog.md)[Connector/J Overview](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/about-mariadb-connector-nodejs/README.md)
+[Download](https://downloads.mariadb.org/connector-nodejs/0.7.0/) | [Release Notes](mariadb-connector-nodejs-070-release-notes.md) | [Changelog](../changelogs/mariadb-connector-nodejs-0x-changelogs/mariadb-connector-nodejs-070-changelog.md) | [Connector/Node.js Overview](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-nodejs/mariadb-connector-node-js-guide)
 
 **Release date:** 19 Jul 2018
 
 MariaDB Connector/Node.js 0.7.0 is an [_**Alpha**_](../../../mariadb-release-criteria.md)\
 release.
 
-**For an overview of MariaDB Connector/Node.js see the**[**About MariaDB Connector/Node.js**](https://app.gitbook.com/s/rfK8h3eGTK4lYdomGpGT/readme/mariadb-connectors/mariadb-connector-node.js/about-mariadb-connector-node.js) **page**
+{% hint style="success" %}
+**For an overview of MariaDB Connector/Node.js see the** [**About MariaDB Connector/Node.js**](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-nodejs/mariadb-connector-node-js-guide) **page**
+{% endhint %}
 
 ## Features
 

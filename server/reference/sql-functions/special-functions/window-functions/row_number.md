@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 ROW_NUMBER() OVER (
   [ PARTITION BY partition_expression ]
   [ ORDER BY order_list ]
@@ -11,13 +11,13 @@ ROW_NUMBER() OVER (
 
 ## Description
 
-ROW\_NUMBER() is a [window function](./) that displays the number of a given row, starting at one and following the [ORDER BY](../../../sql-statements/data-manipulation/selecting-data/order-by.md) sequence of the window function, with identical values receiving different row numbers. It is similar to the [RANK()](rank.md) and [DENSE\_RANK()](dense_rank.md) functions except that in that function, identical values will receive the same rank for each result.
+`ROW_NUMBER()` is a [window function](./) that displays the number of a given row, starting at one and following the [ORDER BY](../../../sql-statements/data-manipulation/selecting-data/order-by.md) sequence of the window function, with identical values receiving different row numbers. It is similar to the [RANK()](rank.md) and [DENSE\_RANK()](dense_rank.md) functions except that in that function, identical values will receive the same rank for each result.
 
 ## Examples
 
 The distinction between [DENSE\_RANK()](dense_rank.md), [RANK()](rank.md) and ROW\_NUMBER():
 
-```
+```sql
 CREATE TABLE student(course VARCHAR(10), mark int, name varchar(10));
 
 INSERT INTO student VALUES 

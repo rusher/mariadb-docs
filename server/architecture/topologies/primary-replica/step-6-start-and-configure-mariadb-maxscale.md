@@ -21,7 +21,7 @@ admin_host       = 0.0.0.0
 admin_secure_gui = false
 ```
 
-For additional information, see "[Global Settings](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide#global-settings)".
+For additional information, see "[Global Settings](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide#global-settings)".
 
 ## Restart MaxScale
 
@@ -97,7 +97,7 @@ In this example:
 * `readconnroute` is the name of the module that implements the Read Connection Router.
 * `user=MAXSCALE_USER` sets the `user` parameter to the database user account that MaxScale uses to connect to the ES nodes.
 * `password=MAXSCALE_USER_PASSWORD` sets the password parameter to the password used by the database user account that MaxScale uses to connect to the ES nodes.
-* `router_options=slave` sets the `router_options` parameter parameter to `slave`, so that MaxScale only routes connections to the replica nodes.
+* `router_options=slave` sets the `router_options` parameter to `slave`, so that MaxScale only routes connections to the replica nodes.
 * `--servers sets the servers` parameter to the set of nodes to which MaxScale should route connections. All non-option arguments after `--servers`are interpreted as server names.
 * Other Module Parameters supported by `readconnroute` in MaxScale 25.01 can also be specified.
 

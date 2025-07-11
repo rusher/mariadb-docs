@@ -25,7 +25,6 @@ Tests passed
 
 | type | pagesize | OLD version | file format | encrypted | compressed |  | NEW version | file format | encrypted | compressed | readonly | result | notes |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| type | pagesize | OLD version | file format | encrypted | compressed |  | NEW version | file format | encrypted | compressed | readonly | result | notes |
 | recovery | 16 | 10.1.36 (inbuilt) | Barracuda | on | - | => | 10.1.36 (inbuilt) | Barracuda | on | - | - | OK |  |
 | recovery | 16 | 10.1.36 (inbuilt) | Barracuda | on | zlib | => | 10.1.36 (inbuilt) | Barracuda | on | zlib | - | OK |  |
 | recovery | 4 | 10.1.36 (inbuilt) | Barracuda | on | - | => | 10.1.36 (inbuilt) | Barracuda | on | - | - | OK |  |

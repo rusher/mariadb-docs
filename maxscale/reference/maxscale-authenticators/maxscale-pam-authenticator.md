@@ -58,7 +58,7 @@ account         required        pam_unix.so
 
 #### `pam_use_cleartext_plugin`
 
-* Type: [boolean](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [boolean](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: No
 * Default: `false`
@@ -75,7 +75,7 @@ authenticator_options=pam_use_cleartext_plugin=1
 
 #### `pam_mode`
 
-* Type: [enumeration](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [enumeration](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: No
 * Values: `password`, `password_2FA`, `suid`
@@ -112,7 +112,7 @@ authentication.
 
 #### `pam_backend_mapping`
 
-* Type: [enumeration](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
+* Type: [enumeration](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md)
 * Mandatory: No
 * Dynamic: No
 * Values: `none`, `mariadb`
@@ -139,7 +139,7 @@ users cannot be used on the same listener.
 
 Because the client still needs to authenticate to MaxScale normally, an\
 anonymous user may be required. If the backends do not allow such a user, one\
-can be manually added using the service setting[user\_accounts\_file](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md).
+can be manually added using the service setting[user\_accounts\_file](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md).
 
 To map usernames, the PAM service needs to use a module such a&#x73;_&#x70;am\_user\_map.so_. This module is not a standard Linux component and needs to be\
 installed separately. It is included in recent MariaDB Server packages and can\
@@ -148,7 +148,7 @@ for more information on how to configure the module. If the goal is to only map\
 users from PAM to MariaDB in MaxScale, then configuring user mapping\
 on just the machine running MaxScale is enough.
 
-Instead of using `pam_backend_mapping`, consider using the listener setting[user\_mapping\_file](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md),\
+Instead of using `pam_backend_mapping`, consider using the listener setting[user\_mapping\_file](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md),\
 as it is easier to configure. `pam_backend_mapping` should only be used when\
 the user mapping needs to be defined by pam.
 

@@ -60,7 +60,6 @@ The following parser settings are available:
 
 | Setting                                     | Description                                                                                                             |
 | ------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
-| Setting                                     | Description                                                                                                             |
 | off                                         | No tokenizing is performed.                                                                                             |
 | TokenBigram                                 | Default value. Continuous alphabetical characters, numbers or symbols are treated as a token.                           |
 | TokenBigramIgnoreBlank                      | Same as TokenBigram except that white spaces are ignored.                                                               |

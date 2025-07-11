@@ -63,7 +63,7 @@ $ sudo chown maxscale /var/cache/maxscale
 
 The following step is to create the MariaDB MaxScale configuration file `/etc/maxscale.cnf`.\
 The file `etc/maxscale.cnf.template` can be used as a base.\
-Please refer to [Configuration Guide](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md) for details.
+Please refer to [Configuration Guide](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md) for details.
 
 When the configuration file has been created, MariaDB MaxScale can be started.
 
@@ -97,7 +97,7 @@ $ tar -xzvf maxscale-x.y.z.OS.tar.gz
 
 The next step is to create the MaxScale configuration file `maxscale-x.y.z/etc/maxscale.cnf`.\
 The file `maxscale-x.y.z/etc/maxscale.cnf.template` can be used as a base.\
-Please refer to [Configuration Guide](../../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md) for details.
+Please refer to [Configuration Guide](../../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md) for details.
 
 When the configuration file has been created, MariaDB MaxScale can be started.
 

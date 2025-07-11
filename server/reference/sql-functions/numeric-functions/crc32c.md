@@ -1,12 +1,14 @@
 # CRC32C
 
-**MariaDB starting with** [**10.8**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-8-series/what-is-mariadb-108)
+{% hint style="info" %}
+`CRC32C` is available from MariaDB [10.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-8-series/what-is-mariadb-108).
+{% endhint %}
 
-Introduced in [MariaDB 10.8.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-8-series/mariadb-10-8-0-release-notes) to compute a cyclic redundancy check (CRC) value using the Castagnoli polynomial.
+`CRC32C` is used to compute a cyclic redundancy check (CRC) value using the Castagnoli polynomial.
 
 ## Syntax
 
-```
+```sql
 CRC32C([par,]expr)
 ```
 
@@ -18,15 +20,14 @@ InnoDB and MyRocks use a different polynomial, which was implemented in SSE4.2 i
 
 The CRC32C function uses the Castagnoli polynomial.
 
-This allows `SELECT…INTO DUMPFILE` to be used for the creation of files with\
-valid checksums, such as a logically empty InnoDB redo log file`ib_logfile0` corresponding to a particular log sequence number.
+This allows `SELECT…INTO DUMPFILE` to be used for the creation of files with valid checksums, such as a logically empty InnoDB redo log file`ib_logfile0` corresponding to a particular log sequence number.
 
 The optional parameter allows the checksum to be computed in pieces:\
 CRC32C('MariaDB')=CRC32C(CRC32C('Maria'),'DB').
 
 ## Examples
 
-```
+```sql
 SELECT CRC32C('MariaDB');
 +-------------------+
 | CRC32C('MariaDB') |

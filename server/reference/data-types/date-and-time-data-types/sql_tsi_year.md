@@ -1,6 +1,4 @@
-# sql\_tsi\_year
-
-## SQL\_TSI\_YEAR
+# SQL\_TSI\_YEAR
 
 ## Overview
 
@@ -8,17 +6,17 @@ See [YEAR](../../sql-functions/date-time-functions/year.md).
 
 ## EXAMPLES
 
-```
+```sql
 CREATE TABLE sql_tsi_year_example (
   example SQL_TSI_YEAR
 );
 ```
 
-```
+```sql
 SHOW CREATE TABLE sql_tsi_year_example\G
 ```
 
-```
+```sql
 *************************** 1. row ***************************
        Table: sql_tsi_year_example
 Create Table: CREATE TABLE `sql_tsi_year_example` (

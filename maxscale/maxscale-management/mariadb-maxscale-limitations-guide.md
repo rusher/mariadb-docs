@@ -184,7 +184,7 @@ the same server is considered an error.
 #### Limitations with Galera Cluster Monitoring (galeramon)
 
 The default master selection is based only on MIN(wsrep\_local\_index). This\
-can be influenced with the server priority mechanic described in the[Galera Monitor](../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-2501-maxscale-25-01-monitors/mariadb-maxscale-2501-maxscale-2501-galera-monitor.md) manual.
+can be influenced with the server priority mechanic described in the[Galera Monitor](../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-2501-maxscale-25-01-monitors/mariadb-maxscale-2501-maxscale-2501-galera-monitor.md) manual.
 
 ### Router limitations
 

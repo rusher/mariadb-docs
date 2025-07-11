@@ -1,6 +1,8 @@
 # ST\_IsValid
 
-ST\_IsValid was added in [MariaDB 12.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-12.0-rolling-releases/what-is-mariadb-120).
+{% hint style="info" %}
+ST\_IsValid is available from [MariaDB 12.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/release-notes-mariadb-12.0-rolling-releases/what-is-mariadb-120).
+{% endhint %}
 
 ## Syntax
 
@@ -34,7 +36,7 @@ SELECT ST_IsValid(ST_GeomFromText('LINESTRING (0 0, 0 0)'));
 
 A [POINT](../geometry-constructors/point.md) requires both x and y co-ordinates:
 
-```
+```sql
 SELECT ST_IsValid(ST_GeomFromText('POINT (0)'));  
 ERROR 3037 (22023): Invalid GIS data provided to function st_isvalid.
 ```

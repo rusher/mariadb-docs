@@ -1,8 +1,28 @@
 # Account Locking
 
+## Syntax
+
+```
+ CREATE USER [...]
+ [lock_option] [password_option] 
+ 
+ ALTER USER [...]
+ [lock_option] [password_option] 
+```
+
+{% tabs %}
+{% tab title="Current" %}
+The _lock\_option_ and _password\_option_ clauses can occur in either order.
+{% endtab %}
+
+{% tab title="<10.4.7, < 10.5.8" %}
+Prior to [MariaDB 10.4.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-1047-release-notes) and [MariaDB 10.5.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-1058-release-notes), the _lock\_option_ must be placed before the _password\_option_.
+{% endtab %}
+{% endtabs %}
+
 ## Description
 
-Account locking is available for all current versions of MariaDB. Account locking permits privileged administrators to lock/unlock user accounts. No new client connections will be permitted if an account is locked (existing connections are not affected).
+Account locking permits privileged administrators to lock/unlock user accounts. No new client connections will be permitted if an account is locked (existing connections are not affected).
 
 User accounts can be locked at creation, with the [CREATE USER](../../reference/sql-statements/account-management-sql-statements/create-user.md) statement, or modified after creation with the [ALTER USER](../../reference/sql-statements/account-management-sql-statements/alter-user.md) statement. For example:
 

@@ -144,7 +144,6 @@ For a complete list, see [ms681381.aspx](https://msdn.microsoft.com/en-us/librar
 
 | Number | Error Code                       | Description                                                                                  |
 | ------ | -------------------------------- | -------------------------------------------------------------------------------------------- |
-| Number | Error Code                       | Description                                                                                  |
 | 1      | ERROR\_INVALID\_FUNCTION         | Incorrect function.                                                                          |
 | 2      | ERROR\_FILE\_NOT\_FOUND          | The system cannot find the file specified.                                                   |
 | 3      | ERROR\_PATH\_NOT\_FOUND          | The system cannot find the path specified.                                                   |

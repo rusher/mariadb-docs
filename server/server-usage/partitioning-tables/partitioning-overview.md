@@ -53,7 +53,7 @@ If partition is listed as DISABLED:
 +-------------------------------+----------+--------------------+---------+---------+
 ```
 
-MariaDB has either been built without partitioning support, or has been started with the the [--skip-partition](../../server-management/starting-and-stopping-mariadb/mariadbd-options.md) option, or one of its variants:
+MariaDB has either been built without partitioning support, or has been started with the [--skip-partition](../../server-management/starting-and-stopping-mariadb/mariadbd-options.md) option, or one of its variants:
 
 ```sql
 --skip-partition
@@ -67,7 +67,7 @@ and you will not be able to create partitions.
 
 It is possible to create a new partitioned table using [CREATE TABLE](../../reference/sql-statements/data-definition/create/create-table.md).
 
-[ALTER TABLE](../../reference/sql-statements/data-definition/alter/alter-table.md) allows one to:
+[ALTER TABLE](../../reference/sql-statements/data-definition/alter/alter-table/) allows one to:
 
 * Partition an existing table;
 * Remove partitions from a partitioned table (with all data in the partition);
@@ -788,7 +788,7 @@ See also: [Using CONNECT - Partitioning and Sharding](../storage-engines/connect
 
 ## See Also
 
-* [ALTER TABLE](../../reference/sql-statements/data-definition/alter/alter-table.md)
+* [ALTER TABLE](../../reference/sql-statements/data-definition/alter/alter-table/)
 * [INFORMATION\_SCHEMA.PARTITIONS](../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-partitions-table.md) contains information about existing partitions.
 * [Partition Maintenance](partition-maintenance.md) for suggestions on using partitions
 

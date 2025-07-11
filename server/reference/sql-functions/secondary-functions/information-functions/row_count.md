@@ -2,16 +2,13 @@
 
 ## Syntax
 
-```
+```sql
 ROW_COUNT()
 ```
 
 ## Description
 
-ROW\_COUNT() returns the number of rows updated, inserted or deleted\
-by the preceding statement. This is the same as the row count that the\
-mariadb client displays and the value from the [mysql\_affected\_rows()](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/api-functions/mysql_affected_rows) C\
-API function.
+`ROW_COUNT()` returns the number of rows updated, inserted or deleted by the preceding statement. This is the same as the row count that the mariadb client displays and the value from the [mysql\_affected\_rows()](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/api-functions/mysql_affected_rows) C API function.
 
 Generally:
 
@@ -21,29 +18,29 @@ Generally:
 
 For [UPDATE](../../../sql-statements/data-manipulation/changing-deleting-data/update.md), affected rows is by default the number of rows that were actually changed. If the CLIENT\_FOUND\_ROWS flag to [mysql\_real\_connect()](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-c/api-functions/mysql_real_connect) is specified when connecting to mariadbd, affected rows is instead the number of rows matched by the WHERE clause.
 
-For [REPLACE](../../../sql-statements/data-manipulation/changing-deleting-data/replace.md), deleted rows are also counted. So, if REPLACE deletes a row and adds a new row, ROW\_COUNT() returns 2.
+For [REPLACE](../../../sql-statements/data-manipulation/changing-deleting-data/replace.md), deleted rows are also counted. So, if REPLACE deletes a row and adds a new row, `ROW_COUNT()` returns 2.
 
 For [INSERT ... ON DUPLICATE KEY](../../../sql-statements/data-manipulation/inserting-loading-data/insert-on-duplicate-key-update.md), values returned are as follows:
 
-* 0: an existing row is set to its current values, and the CLIENT\_FOUND\_ROWS is not set
-* 1: the values are inserted as a new row, or an existing row is set to its current values, and the CLIENT\_FOUND\_ROWS is set
-* 2: an existing row is updated with new values
+* 0: an existing row is set to its current values, and the `CLIENT_FOUND_ROWS` is not set.
+* 1: the values are inserted as a new row, or an existing row is set to its current values, and the `CLIENT_FOUND_ROWS` is set.
+* 2: an existing row is updated with new values.
 
-ROW\_COUNT() does not take into account rows that are not directly deleted/updated by the last statement. This means that rows deleted by foreign keys or triggers are not counted.
+`ROW_COUNT()` does not take into account rows that are not directly deleted/updated by the last statement. This means that rows deleted by foreign keys or triggers are not counted.
 
-**Warning:** You can use ROW\_COUNT() with prepared statements, but you need to call it after EXECUTE, not after [DEALLOCATE PREPARE](../../../sql-statements/prepared-statements/deallocate-drop-prepare.md), because the row count for allocate prepare is always 0.
+**Warning:** You can use `ROW_COUNT()` with prepared statements, but you need to call it after `EXECUTE`, not after [DEALLOCATE PREPARE](../../../sql-statements/prepared-statements/deallocate-drop-prepare.md), because the row count for allocate prepare is always 0.
 
 **Warning:** When used after a [CALL](../../../sql-statements/stored-routine-statements/call.md) statement, this function returns the number of rows affected by the last statement in the procedure, not by the whole procedure.
 
-**Warning:** After [INSERT DELAYED](../../../sql-statements/data-manipulation/inserting-loading-data/insert-delayed.md), ROW\_COUNT() returns the number of the rows you tried to insert, not the number of the successful writes.
+**Warning:** After [INSERT DELAYED](../../../sql-statements/data-manipulation/inserting-loading-data/insert-delayed.md), `ROW_COUNT()` returns the number of the rows you tried to insert, not the number of the successful writes.
 
 This information can also be found in the [diagnostics area](../../../sql-statements/programmatic-compound-statements/programmatic-compound-statements-diagnostics/diagnostics-area.md).
 
-Statements using the ROW\_COUNT() function are not [safe for statement-based replication](../../../../ha-and-performance/standard-replication/unsafe-statements-for-statement-based-replication.md).
+Statements using the `ROW_COUNT()` function are not [safe for statement-based replication](../../../../ha-and-performance/standard-replication/unsafe-statements-for-statement-based-replication.md).
 
 ## Examples
 
-```
+```sql
 CREATE TABLE t (A INT);
 
 INSERT INTO t VALUES(1),(2),(3);
@@ -67,7 +64,7 @@ SELECT ROW_COUNT();
 
 Example with prepared statements:
 
-```
+```sql
 SET @q = 'INSERT INTO t VALUES(1),(2),(3);';
 
 PREPARE stmt FROM @q;

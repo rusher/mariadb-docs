@@ -14,7 +14,6 @@ With R2DBC, DDL statements are performed with the following classes:
 
 | Class                  | Description                                   |
 | ---------------------- | --------------------------------------------- |
-| Class                  | Description                                   |
 | io.r2dbc.spi.Statement | Creates a statement to execute on the server. |
 | io.r2dbc.spi.Result    | Contains the result-set from the server.      |
 

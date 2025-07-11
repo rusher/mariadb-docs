@@ -7,7 +7,6 @@ The [Performance Schema](../README.md) `events_statements_summary_by_user_by_eve
 
 | Column | Description |
 | --- | --- |
-| Column | Description |
 | USER | User. Used together with EVENT_NAME for grouping events. |
 | EVENT_NAME | Event name. Used together with USER for grouping events. |
 | COUNT_STAR | Number of summarized events |

@@ -9,10 +9,10 @@ DROP PROCEDURE [IF EXISTS] sp_name
 ## Description
 
 This statement is used to drop a [stored procedure](./). That is, the\
-specified routine is removed from the server along with all privileges specific to the [procedure](../../../reference/sql-statements/account-management-sql-statements/grant.md). You must have the `ALTER ROUTINE` privilege for the routine. If the [automatic_sp_privileges](../../../replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#automatic_sp_privileges) server system variable is set, that privilege and `EXECUTE` are granted automatically to the routine creator - see [Stored Routine Privileges](../stored-functions/stored-routine-privileges.md).
+specified routine is removed from the server along with all privileges specific to the [procedure](../../../reference/sql-statements/account-management-sql-statements/grant.md). You must have the `ALTER ROUTINE` privilege for the routine. If the [automatic\_sp\_privileges](../../../reference/sql-statements/account-management-sql-statements/grant.md) server system variable is set, that privilege and `EXECUTE` are granted automatically to the routine creator - see [Stored Routine Privileges](../stored-functions/stored-routine-privileges.md).
 
 The `IF EXISTS` clause is a MySQL/MariaDB extension. It\
-prevents an error from occurring if the procedure or function does not exist. A`NOTE` is produced that can be viewed with [SHOW WARNINGS](../../../../reference/sql-statements-and-structure/sql-statements/administrative-sql-statements/show/show-warnings.md).
+prevents an error from occurring if the procedure or function does not exist. A`NOTE` is produced that can be viewed with [SHOW WARNINGS](../../../reference/sql-statements/administrative-sql-statements/show/show-warnings.md).
 
 While this statement takes effect immediately, threads which are executing a procedure can continue execution.
 
@@ -49,6 +49,6 @@ SHOW WARNINGS;
 * [SHOW PROCEDURE STATUS](../../../reference/sql-statements/administrative-sql-statements/show/show-procedure-status.md)
 * [Information Schema ROUTINES Table](../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-routines-table.md)
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

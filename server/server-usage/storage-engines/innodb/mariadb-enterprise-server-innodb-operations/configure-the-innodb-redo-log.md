@@ -22,7 +22,6 @@ The method to configure the Redo Log size depends on the server version and whet
 
 | Product Versions                    | Server Restart? | Method                               |
 | ----------------------------------- | --------------- | ------------------------------------ |
-| Product Versions                    | Server Restart? | Method                               |
 | ES 10.5 and Later                   | No              | Configure size with SET GLOBAL       |
 | ES 10.5 and Later CS 10.5 and Later | Yes             | Configure size in configuration file |
 
@@ -72,7 +71,6 @@ Some example configuration file paths for different distributions are shown in t
 
 | Distributions                | Example configuration file path                |
 | ---------------------------- | ---------------------------------------------- |
-| Distributions                | Example configuration file path                |
 | CentOS RHEL Rocky Linux SLES | /etc/my.cnf.d/z-custom-mariadb.cnf             |
 | Debian Ubuntu                | /etc/mysql/mariadb.conf.d/z-custom-mariadb.cnf |
 
@@ -114,7 +112,6 @@ Some example configuration file paths for different distributions are shown in t
 
 | Distributions                | Example configuration file path                |
 | ---------------------------- | ---------------------------------------------- |
-| Distributions                | Example configuration file path                |
 | CentOS RHEL Rocky Linux SLES | /etc/my.cnf.d/z-custom-mariadb.cnf             |
 | Debian Ubuntu                | /etc/mysql/mariadb.conf.d/z-custom-mariadb.cnf |
 

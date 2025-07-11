@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 GROUP_CONCAT(expr)
 ```
 
@@ -18,7 +18,7 @@ If group\_concat\_max\_len <= 512, the return type is [VARBINARY](../../data-typ
 
 The full syntax is as follows:
 
-```
+```sql
 GROUP_CONCAT([DISTINCT] expr [,expr ...]
              [ORDER BY {unsigned_integer | col_name | expr}
                  [ASC | DESC] [,col_name ...]]
@@ -34,11 +34,11 @@ GROUP_CONCAT([DISTINCT] expr [,expr ...]
 
 ### LIMIT
 
-The [LIMIT](../../sql-statements/data-manipulation/selecting-data/limit.md) clause can be used with `GROUP_CONCAT`. This was not possible prior to [MariaDB 10.3.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-1033-release-notes).
+The [LIMIT](../../sql-statements/data-manipulation/selecting-data/limit.md) clause can be used with `GROUP_CONCAT`.&#x20;
 
 ## Examples
 
-```
+```sql
 SELECT student_name,
        GROUP_CONCAT(test_score)
        FROM student
@@ -47,7 +47,7 @@ SELECT student_name,
 
 Get a readable list of MariaDB users from the [mysql.user](../../sql-statements/administrative-sql-statements/system-tables/the-mysql-database-tables/mysql-user-table.md) table:
 
-```
+```sql
 SELECT GROUP_CONCAT(DISTINCT User ORDER BY User SEPARATOR '\n')
    FROM mysql.user;
 ```
@@ -56,16 +56,16 @@ In the former example, `DISTINCT` is used because the same user may occur more t
 
 Get a readable list of hosts from which each user can connect:
 
-```
+```sql
 SELECT User, GROUP_CONCAT(Host ORDER BY Host SEPARATOR ', ') 
    FROM mysql.user GROUP BY User ORDER BY User;
 ```
 
 The former example shows the difference between the `GROUP_CONCAT`'s [ORDER BY](../../sql-statements/data-manipulation/selecting-data/order-by.md) (which sorts the concatenated hosts), and the `SELECT`'s [ORDER BY](../../sql-statements/data-manipulation/selecting-data/order-by.md) (which sorts the rows).
 
-From [MariaDB 10.3.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-1033-release-notes), [LIMIT](../../sql-statements/data-manipulation/selecting-data/limit.md) can be used with `GROUP_CONCAT`, so, for example, given the following table:
+[LIMIT](../../sql-statements/data-manipulation/selecting-data/limit.md) can be used with `GROUP_CONCAT`, so, for example, given the following table:
 
-```
+```sql
 CREATE TABLE d (dd DATE, cc INT);
 
 INSERT INTO d VALUES ('2017-01-01',1);
@@ -75,8 +75,9 @@ INSERT INTO d VALUES ('2017-01-04',3);
 
 the following query:
 
-```
-SELECT SUBSTRING_INDEX(GROUP_CONCAT(CONCAT_WS(":",dd,cc) ORDER BY cc DESC),",",1) FROM d;
+```sql
+SELECT SUBSTRING_INDEX(GROUP_CONCAT(CONCAT_WS(":",dd,cc) 
+ORDER BY cc DESC),",",1) FROM d;
 +----------------------------------------------------------------------------+
 | SUBSTRING_INDEX(GROUP_CONCAT(CONCAT_WS(":",dd,cc) ORDER BY cc DESC),",",1) |
 +----------------------------------------------------------------------------+
@@ -86,7 +87,7 @@ SELECT SUBSTRING_INDEX(GROUP_CONCAT(CONCAT_WS(":",dd,cc) ORDER BY cc DESC),",",1
 
 can be more simply rewritten as:
 
-```
+```sql
 SELECT GROUP_CONCAT(CONCAT_WS(":",dd,cc) ORDER BY cc DESC LIMIT 1) FROM d;
 +-------------------------------------------------------------+
 | GROUP_CONCAT(CONCAT_WS(":",dd,cc) ORDER BY cc DESC LIMIT 1) |
@@ -97,7 +98,7 @@ SELECT GROUP_CONCAT(CONCAT_WS(":",dd,cc) ORDER BY cc DESC LIMIT 1) FROM d;
 
 NULLS:
 
-```
+```sql
 CREATE OR REPLACE TABLE t1 (a int, b char);
 
 INSERT INTO t1 VALUES (1, 'a'), (2, NULL);
@@ -117,6 +118,6 @@ SELECT GROUP_CONCAT(a, b) FROM t1;
 * [SELECT](../../sql-statements/data-manipulation/selecting-data/select.md)
 * [ORDER BY](../../sql-statements/data-manipulation/selecting-data/order-by.md)
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

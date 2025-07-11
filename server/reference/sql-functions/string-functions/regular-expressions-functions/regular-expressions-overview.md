@@ -7,15 +7,13 @@ Regular Expressions allow MariaDB to perform complex pattern matching on a strin
 
 In other cases you may need more control over the returned matches, and will need to use regular expressions.
 
-Until [MariaDB 10.0.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-1005-release-notes), MariaDB used the POSIX 1003.2 compliant regular expression library. The current PCRE library is mostly backwards compatible with what is described below - see the [PCRE Regular Expressions](pcre.md) article for the enhancements made in 10.0.5.
-
 Regular expression matches are performed with the [REGEXP](regexp.md) function. `RLIKE` is a synonym for `REGEXP`.
 
 Comparisons are performed on the byte value, so characters that are treated as equivalent by a collation, but do not have the same byte-value, such as accented characters, could evaluate as unequal.
 
 Without any special characters, a regular expression match is true if the characters match. The match is case-insensitive, except in the case of BINARY strings.
 
-```
+```sql
 SELECT 'Maria' REGEXP 'Maria';
 +------------------------+
 | 'Maria' REGEXP 'Maria' |
@@ -40,7 +38,7 @@ SELECT BINARY 'Maria' REGEXP 'maria';
 
 Note that the word being matched must match the whole pattern:
 
-```
+```sql
 SELECT 'Maria' REGEXP 'Mari';
 +-----------------------+
 | 'Maria' REGEXP 'Mari' |
@@ -60,7 +58,7 @@ The first returns true because the pattern "Mari" exists in the expression "Mari
 
 A match can be performed against more than one word with the `|` character. For example:
 
-```
+```sql
 SELECT 'Maria' REGEXP 'Monty|Maria';
 +------------------------------+
 | 'Maria' REGEXP 'Monty|Maria' |
@@ -75,9 +73,9 @@ The above examples introduce the syntax, but are not very useful on their own. I
 
 #### ^
 
-`^` matches the beginning of a string (inside square brackets it can also mean NOT - see below):
+`^` matches the beginning of a string (inside square brackets it can also mean `NOT` - see below):
 
-```
+```sql
 SELECT 'Maria' REGEXP '^Ma';
 +----------------------+
 | 'Maria' REGEXP '^Ma' |
@@ -90,7 +88,7 @@ SELECT 'Maria' REGEXP '^Ma';
 
 `$` matches the end of a string:
 
-```
+```sql
 SELECT 'Maria' REGEXP 'ia$';
 +----------------------+
 | 'Maria' REGEXP 'ia$' |
@@ -103,7 +101,7 @@ SELECT 'Maria' REGEXP 'ia$';
 
 `.` matches any single character:
 
-```
+```sql
 SELECT 'Maria' REGEXP 'Ma.ia';
 +------------------------+
 | 'Maria' REGEXP 'Ma.ia' |
@@ -123,7 +121,7 @@ SELECT 'Maria' REGEXP 'Ma..ia';
 
 `x*` matches zero or more of a character `x`. In the examples below, it's the `r` character.
 
-```
+```sql
 SELECT 'Maria' REGEXP 'Mar*ia';
 +-------------------------+
 | 'Maria' REGEXP 'Mar*ia' |
@@ -150,7 +148,7 @@ SELECT 'Marrria' REGEXP 'Mar*ia';
 
 `x+` matches one or more of a character `x`. In the examples below, it's the `r` character.
 
-```
+```sql
 SELECT 'Maria' REGEXP 'Mar+ia';
 +-------------------------+
 | 'Maria' REGEXP 'Mar+ia' |
@@ -177,7 +175,7 @@ SELECT 'Marrria' REGEXP 'Mar+ia';
 
 `x?` matches zero or one of a character `x`. In the examples below, it's the `r` character.
 
-```
+```sql
 SELECT 'Maria' REGEXP 'Mar?ia';
 +-------------------------+
 | 'Maria' REGEXP 'Mar?ia' |
@@ -204,7 +202,7 @@ SELECT 'Marrria' REGEXP 'Mar?ia';
 
 `(xyz)` - combine a sequence, for example `(xyz)+` or `(xyz)*`
 
-```
+```sql
 SELECT 'Maria' REGEXP '(ari)+';
 +-------------------------+
 | 'Maria' REGEXP '(ari)+' |
@@ -218,7 +216,7 @@ SELECT 'Maria' REGEXP '(ari)+';
 `x{n}` and `x{m,n}`\
 This notation is used to match many instances of the `x`. In the case of `x{n}` the match must be exactly that many times. In the case of `x{m,n}`, the match can occur from `m` to `n` times. For example, to match zero or one instance of the string `ari` (which is identical to `(ari)?`), the following can be used:
 
-```
+```sql
 SELECT 'Maria' REGEXP '(ari){0,1}';
 +-----------------------------+
 | 'Maria' REGEXP '(ari){0,1}' |
@@ -231,7 +229,7 @@ SELECT 'Maria' REGEXP '(ari){0,1}';
 
 `[xy]` groups characters for matching purposes. For example, to match either the `p` or the `r` character:
 
-```
+```sql
 SELECT 'Maria' REGEXP 'Ma[pr]ia';
 +---------------------------+
 | 'Maria' REGEXP 'Ma[pr]ia' |
@@ -242,7 +240,7 @@ SELECT 'Maria' REGEXP 'Ma[pr]ia';
 
 The square brackets also permit a range match, for example, to match any character from a-z, `[a-z]` is used. Numeric ranges are also permitted.
 
-```
+```sql
 SELECT 'Maria' REGEXP 'Ma[a-z]ia';
 +----------------------------+
 | 'Maria' REGEXP 'Ma[a-z]ia' |
@@ -253,7 +251,7 @@ SELECT 'Maria' REGEXP 'Ma[a-z]ia';
 
 The following does not match, as `r` falls outside of the range `a-p`.
 
-```
+```sql
 SELECT 'Maria' REGEXP 'Ma[a-p]ia';
 +----------------------------+
 | 'Maria' REGEXP 'Ma[a-p]ia' |
@@ -266,7 +264,7 @@ SELECT 'Maria' REGEXP 'Ma[a-p]ia';
 
 The `^` character means does `NOT` match, for example:
 
-```
+```sql
 SELECT 'Maria' REGEXP 'Ma[^p]ia';
 +---------------------------+
 | 'Maria' REGEXP 'Ma[^p]ia' |
@@ -284,7 +282,7 @@ SELECT 'Maria' REGEXP 'Ma[^r]ia';
 
 The `[` and `]` characters on their own can be literally matched inside a `[]` block, without escaping, as long as they immediately match the opening bracket:
 
-```
+```sql
 SELECT '[Maria' REGEXP '[[]';
 +-----------------------+
 | '[Maria' REGEXP '[[]' |
@@ -316,7 +314,7 @@ SELECT ']Maria' REGEXP '[]a]';
 
 Incorrect order, so no match:
 
-```
+```sql
 SELECT ']Maria' REGEXP '[a]]';
 +------------------------+
 | ']Maria' REGEXP '[a]]' |
@@ -327,7 +325,7 @@ SELECT ']Maria' REGEXP '[a]]';
 
 The `-` character can also be matched in the same way:
 
-```
+```sql
 SELECT '-Maria' REGEXP '[1-10]';
 +--------------------------+
 | '-Maria' REGEXP '[1-10]' |
@@ -345,9 +343,9 @@ SELECT '-Maria' REGEXP '[-1-10]';
 
 #### Word boundaries
 
-The [:<:](https://mariadb.com/kb/en/%3C%3A) and [:>:](https://mariadb.com/kb/en/%3E%3A) patterns match the beginning and the end of a word respectively. For example:
+The :<: and :>: patterns match the beginning and the end of a word respectively. For example:
 
-```
+```sql
 SELECT 'How do I upgrade MariaDB?' REGEXP '[[:<:]]MariaDB[[:>:]]';
 +------------------------------------------------------------+
 | 'How do I upgrade MariaDB?' REGEXP '[[:<:]]MariaDB[[:>:]]' |
@@ -369,7 +367,6 @@ There are a number of shortcuts to match particular preset character classes. Th
 
 | Character Class | Description                              |
 | --------------- | ---------------------------------------- |
-| Character Class | Description                              |
 | alnum           | Alphanumeric                             |
 | alpha           | Alphabetic                               |
 | blank           | Whitespace                               |
@@ -385,7 +382,7 @@ There are a number of shortcuts to match particular preset character classes. Th
 
 For example:
 
-```
+```sql
 SELECT 'Maria' REGEXP 'Mar[[:alnum:]]*';
 +--------------------------------+
 | 'Maria' REGEXP 'Mar[:alnum:]*' |
@@ -396,7 +393,7 @@ SELECT 'Maria' REGEXP 'Mar[[:alnum:]]*';
 
 Remember that matches are by default case-insensitive, unless a binary string is used, so the following example, specifically looking for an uppercase, counter-intuitively matches a lowercase character:
 
-```
+```sql
 SELECT 'Mari' REGEXP 'Mar[[:upper:]]+';
 +---------------------------------+
 | 'Mari' REGEXP 'Mar[[:upper:]]+' |
@@ -418,7 +415,6 @@ There are also number of shortcuts to match particular preset character names. T
 
 | Name                 | Character |
 | -------------------- | --------- |
-| Name                 | Character |
 | NUL                  | 0         |
 | SOH                  | 001       |
 | STX                  | 002       |
@@ -517,7 +513,7 @@ There are also number of shortcuts to match particular preset character names. T
 
 For example:
 
-```
+```sql
 SELECT '|' REGEXP '[[.vertical-line.]]';
 +----------------------------------+
 | '|' REGEXP '[[.vertical-line.]]' |
@@ -532,7 +528,7 @@ The true power of regular expressions is unleashed when the above is combined, t
 
 The first example fails to match, as while the `Ma` matches, either `i` or `r` only matches once before the `ia` characters at the end.
 
-```
+```sql
 SELECT 'Maria' REGEXP 'Ma[ir]{2}ia';
 +------------------------------+
 | 'Maria' REGEXP 'Ma[ir]{2}ia' |
@@ -543,7 +539,7 @@ SELECT 'Maria' REGEXP 'Ma[ir]{2}ia';
 
 This example matches, as either `i` or `r` match exactly twice after the `Ma`, in this case one `r` and one `i`.
 
-```
+```sql
 SELECT 'Maria' REGEXP 'Ma[ir]{2}';
 +----------------------------+
 | 'Maria' REGEXP 'Ma[ir]{2}' |
@@ -558,7 +554,7 @@ With the large number of special characters, care needs to be taken to properly 
 
 To match the literal `(Ma`:
 
-```
+```sql
 SELECT '(Maria)' REGEXP '(Ma';
 ERROR 1139 (42000): Got error 'parentheses not balanced' from regexp
 
@@ -575,7 +571,7 @@ SELECT '(Maria)' REGEXP '\\(Ma';
 
 To match `r+`: The first two examples are incorrect, as they match `r` one or more times, not `r+`:
 
-```
+```sql
 SELECT 'Mar+ia' REGEXP 'r+';
 +----------------------+
 | 'Mar+ia' REGEXP 'r+' |

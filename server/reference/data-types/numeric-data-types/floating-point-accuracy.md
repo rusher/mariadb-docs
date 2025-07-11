@@ -8,9 +8,9 @@ Sometimes, changing a floating-point number from single-precision (FLOAT) to dou
 
 ## Example
 
-f1, f2 and f3 have seemingly identical values across each row, but due to floating point accuracy, the results may be unexpected.
+In the following query, f1, f2 and f3 have seemingly identical values across each row, but due to floating point accuracy, the results may be unexpected.
 
-```
+```sql
 CREATE TABLE fpn (id INT, f1 FLOAT, f2 DOUBLE, f3 DECIMAL (10,3));
 INSERT INTO fpn VALUES (1,2,2,2),(2,0.1,0.1,0.1);
 
@@ -24,7 +24,7 @@ SELECT * FROM fpn WHERE f1*f1 = f2*f2;
 
 The reason why only one instead of two rows was returned becomes clear when we see how the floating point squares were evaluated.
 
-```
+```sql
 SELECT f1*f1, f2*f2, f3*f3 FROM fpn;
 +----------------------+----------------------+----------+
 | f1*f1                | f2*f2                | f3*f3    |

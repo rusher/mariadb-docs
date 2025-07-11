@@ -22,7 +22,6 @@ The client library supports the following character sets:
 
 | Character set | Description                                                              |
 | ------------- | ------------------------------------------------------------------------ |
-| Character set | Description                                                              |
 | armscii8      | 8 bit character set for Armenian                                         |
 | ascii         | US ASCII character set                                                   |
 | big5          | 2 byte character set for traditional Chinese, Hongkong, Macau and Taiwan |

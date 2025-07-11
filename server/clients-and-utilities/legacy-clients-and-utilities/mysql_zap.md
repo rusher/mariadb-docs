@@ -21,7 +21,6 @@ mysql\_zap supports the following additional options:
 
 | Option         | Description                                                                |
 | -------------- | -------------------------------------------------------------------------- |
-| Option         | Description                                                                |
 | --help, -?, -I | Display a help message and exit.                                           |
 | -f             | Force mode. mysql\_zap attempts to kill each process without confirmation. |
 | -t             | Test mode. Display information about each process but do not kill it.      |

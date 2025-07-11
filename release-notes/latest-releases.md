@@ -18,7 +18,7 @@ The most recent release of [MariaDB 10.11](mariadb-community-server-release-note
 
 The most recent release of [MariaDB 10.6](mariadb-community-server-release-notes/mariadb-10-6-series/what-is-mariadb-106.md) is:[**MariaDB 10.6.21**](mariadb-community-server-release-notes/mariadb-10-6-series/mariadb-10-6-21-release-notes.md) Stable (GA) [Download Now](https://mariadb.com/downloads/)[_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/10.6.21/)
 
-The most recent release of [MariaDB 10.5](mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105.md) is:[**MariaDB 10.5.28**](mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-10-5-28-release-notes.md) Stable (GA) [Download Now](https://mariadb.com/downloads/)[_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/10.5.28/)
+The most recent release of [MariaDB 10.5](mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/what-is-mariadb-105.md) is:[**MariaDB 10.5.28**](mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-10-5-28-release-notes.md) Stable (GA) [Download Now](https://mariadb.com/downloads/)[_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/10.5.28/)
 
 ### MariaDB Connectors
 

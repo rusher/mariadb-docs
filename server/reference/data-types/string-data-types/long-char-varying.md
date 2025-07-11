@@ -1,27 +1,22 @@
-
 # LONG CHAR VARYING
 
-
-# Overview
-
+## Overview
 
 See [MEDIUMTEXT](mediumtext.md).
 
+## EXAMPLES
 
-# EXAMPLES
-
-
-```
+```sql
 CREATE TABLE long_char_varying_example (
   example LONG CHAR VARYING
 );
 ```
 
-```
+```sql
 SHOW CREATE TABLE long_char_varying_example\G
 ```
 
-```
+```sql
 *************************** 1. row ***************************
        Table: long_char_varying_example
 Create Table: CREATE TABLE `long_char_varying_example` (
@@ -29,8 +24,6 @@ Create Table: CREATE TABLE `long_char_varying_example` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1
 ```
 
-
 <sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
-
 
 {% @marketo/form formId="4316" %}

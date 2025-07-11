@@ -6,7 +6,6 @@ It contains the following columns:
 
 | Column                | Description                                                        |
 | --------------------- | ------------------------------------------------------------------ |
-| Column                | Description                                                        |
 | COLLATION\_NAME       | Collation name.                                                    |
 | CHARACTER\_SET\_NAME  | Name of the associated character set.                              |
 | FULL\_COLLATION\_NAME | Name of the associated character set/collation combination.        |

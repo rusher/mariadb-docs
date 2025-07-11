@@ -49,7 +49,6 @@ If a non-zlib compression algorithm was used in [InnoDB](../../../../server-usag
 
 | Option                                                                                                                                        | Old default | New default         |
 | --------------------------------------------------------------------------------------------------------------------------------------------- | ----------- | ------------------- |
-| Option                                                                                                                                        | Old default | New default         |
 | [innodb\_buffer\_pool\_chunk\_size](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_buffer_pool_chunk_size) | 134217728   | Autosized           |
 | [spider\_auto\_increment\_mode](../../../../server-usage/storage-engines/spider/spider-system-variables.md)                                   | -1          | 0                   |
 | [spider\_bgs\_first\_read](../../../../server-usage/storage-engines/spider/spider-system-variables.md)                                        | -1          | 2                   |
@@ -105,7 +104,6 @@ The following options should be removed or renamed if you use them in your [opti
 
 | Option                                                                                                                                      | Reason                                                                                                                          |
 | ------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
-| Option                                                                                                                                      | Reason                                                                                                                          |
 | [innodb\_log\_write\_ahead\_size](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_log_write_ahead_size)   | On Linux and Windows, the physical block size of the underlying storage is instead detected and used.                           |
 | [innodb\_version](../../../../server-usage/storage-engines/innodb/innodb-system-variables.md#innodb_version)                                | Redundant                                                                                                                       |
 | [wsrep\_replicate\_myisam](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_replicate_myisam) | Use [wsrep\_mode](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_mode) instead. |
@@ -117,7 +115,6 @@ The following options have been deprecated. They have not yet been removed, but 
 
 | Option                                                                                                                                             | Reason                                                                       |
 | -------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
-| Option                                                                                                                                             | Reason                                                                       |
 | [keep\_files\_on\_create](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#keep_files_on_create) | MariaDB now deletes orphan files, so this setting should never be necessary. |
 
 ### See Also

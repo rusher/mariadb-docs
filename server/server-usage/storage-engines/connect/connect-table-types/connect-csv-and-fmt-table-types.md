@@ -62,7 +62,6 @@ will display the table as:
 
 | name      | children | birth      |
 | --------- | -------- | ---------- |
-| name      | children | birth      |
 | Archibald | 3        | 2001-05-17 |
 | Nabucho   | 2        | 2003-08-12 |
 
@@ -95,7 +94,7 @@ not be recognized as such but will be regarded as string fields.
 
 ### Restrictions on CSV Tables
 
-* If [secure_file_priv](../../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#secure_file_priv) is set to the path of some directory, then CSV tables can only be created with files in that directory.
+* If [secure\_file\_priv](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#secure_file_priv) is set to the path of some directory, then CSV tables can only be created with files in that directory.
 
 ## FMT Type
 
@@ -176,7 +175,6 @@ This table will be displayed as:
 
 | ID    | NAME            | DEPNO | SALARY   |
 | ----- | --------------- | ----- | -------- |
-| ID    | NAME            | DEPNO | SALARY   |
 | 12345 | BERTRAND        | 200   | 5009.13  |
 | 56    | POIROT-DELMOTTE | 4256  | 18009.00 |
 | 345   | TRUCMUCHE       | 67    | 19000.25 |
@@ -196,7 +194,7 @@ Let us suppose for instance that the preceding example file could be:
 ```
 
 This will display an error message such as _“Bad format line x field y of_\
-&#xNAN;_&#x46;MTSAMPLE”._ To avoid this and accept these records, the corresponding fields\
+\&#xNAN;_FMTSAMPLE”._ To avoid this and accept these records, the corresponding fields\
 must be specified as "optional". In the above example, fields 2 and 3 can have\
 null values (in lines 3 and 2 respectively). To specify them as optional, their\
 format must be terminated by `%m` (instead of the second `%n`). A statement\
@@ -219,7 +217,6 @@ The table result is:
 
 | ID    | NAME            | DEPNO | SALARY    |
 | ----- | --------------- | ----- | --------- |
-| ID    | NAME            | DEPNO | SALARY    |
 | 12345 | BERTRAND        | 200   | 5,009.13  |
 | 56    | POIROT-DELMOTTE | NULL  | 18,009.00 |
 | 345   | NULL            | 67    | 19,000.25 |

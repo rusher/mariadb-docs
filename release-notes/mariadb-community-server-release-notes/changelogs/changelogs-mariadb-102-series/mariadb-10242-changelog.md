@@ -135,7 +135,7 @@ in that revision.
   * [MDEV-27544](https://jira.mariadb.org/browse/MDEV-27544) database() function should return 64 characters
 * [Revision #810ef9117a](https://github.com/MariaDB/server/commit/810ef9117a)\
   2022-01-19 11:15:22 +0700
-  * [MDEV-24827](https://jira.mariadb.org/browse/MDEV-24827): [MariaDB 10.5.5](../../mariadb-10-5-series/mariadb-1055-release-notes.md) crash (sig 11) during a SELECT
+  * [MDEV-24827](https://jira.mariadb.org/browse/MDEV-24827): [MariaDB 10.5.5](../../old-releases/mariadb-10-5-series/mariadb-1055-release-notes.md) crash (sig 11) during a SELECT
 * [Revision #9cd6ecfe50](https://github.com/MariaDB/server/commit/9cd6ecfe50)\
   2022-01-17 16:26:47 +0100
   * [MDEV-18284](https://jira.mariadb.org/browse/MDEV-18284): JSON casting using JSON\_COMPACT doesn't always work with values from subqueries

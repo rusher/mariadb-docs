@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 REGEXP_INSTR(subject, pattern)
 ```
 
@@ -14,11 +14,11 @@ The function follows the case sensitivity rules of the effective [collation](../
 
 The collation case sensitivity can be overwritten using the (?i) and (?-i) PCRE flags.
 
-MariaDB uses the [PCRE regular expression](pcre.md) library for enhanced regular expression performance, and REGEXP\_INSTR was introduced as part of this enhancement.
+MariaDB uses the [PCRE regular expression](pcre.md) library for enhanced regular expression performance, and `REGEXP_INSTR` was introduced as part of this enhancement.
 
 ## Examples
 
-```
+```sql
 SELECT REGEXP_INSTR('abc','b');
 -> 2
 
@@ -31,14 +31,14 @@ SELECT REGEXP_INSTR('BJÖRN','N');
 
 Casting a multi-byte character set as BINARY to get offsets in bytes:
 
-```
+```sql
 SELECT REGEXP_INSTR(BINARY 'BJÖRN','N') AS cast_utf8_to_binary;
 -> 6
 ```
 
 Case sensitivity:
 
-```
+```sql
 SELECT REGEXP_INSTR('ABC','b');
 -> 2
 

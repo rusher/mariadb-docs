@@ -1,8 +1,8 @@
 # Performance Schema table\_handles Table
 
-**MariaDB starting with** [**10.5.2**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1052-release-notes)
+**MariaDB starting with** [**10.5.2**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-1052-release-notes)
 
-The `table_handles` table was added in [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1052-release-notes).
+The `table_handles` table was added in [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-1052-release-notes).
 
 The `table_handles` table contains table lock information. It uses the `wait/lock/table/sql/handler` instrument, which is enabled by default.
 
@@ -16,7 +16,6 @@ The table contains the following columns:
 
 | Column                  | Description                                           |
 | ----------------------- | ----------------------------------------------------- |
-| Column                  | Description                                           |
 | OBJECT\_TYPE            | The table opened by a table handle.                   |
 | OBJECT\_SCHEMA          | The schema that contains the object.                  |
 | OBJECT\_NAME            | The name of the instrumented object.                  |

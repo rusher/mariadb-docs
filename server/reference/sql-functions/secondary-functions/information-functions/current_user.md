@@ -2,16 +2,13 @@
 
 ## Syntax
 
-```
+```sql
 CURRENT_USER, CURRENT_USER()
 ```
 
 ## Description
 
-Returns the user name and host name combination for the MariaDB account\
-that the server used to authenticate the current client. This account\
-determines your access privileges. The return value is a string in the\
-utf8 [character set](../../../data-types/string-data-types/character-sets/).
+Returns the user name and host name combination for the MariaDB account that the server used to authenticate the current client. This account determines your access privileges. The return value is a string in the utf8 [character set](../../../data-types/string-data-types/character-sets/).
 
 The value of `CURRENT_USER()` can differ from the value of [USER()](user.md). [CURRENT\_ROLE()](current_role.md) returns the current active role.
 
@@ -19,12 +16,12 @@ Statements using the `CURRENT_USER` function are not [safe for statement-based r
 
 ## Examples
 
-```
+```sql
 shell> mysql --user="anonymous"
 
-select user(),current_user();
+SELECT USER(),CURRENT_USER();
 +---------------------+----------------+
-| user()              | current_user() |
+| USER()              | CURRENT_USER() |
 +---------------------+----------------+
 | anonymous@localhost | @localhost     |
 +---------------------+----------------+
@@ -38,6 +35,6 @@ When calling `CURRENT_USER()` in a stored procedure, it returns the owner of the
 * [SESSION\_USER()](session_user.md)
 * [CREATE PROCEDURE](../../../../server-usage/stored-routines/stored-procedures/create-procedure.md)
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

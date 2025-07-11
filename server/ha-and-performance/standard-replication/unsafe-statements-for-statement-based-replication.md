@@ -36,7 +36,7 @@ The following statements are regarded as unsafe:
 * When a table has an [AUTO\_INCREMENT](../../reference/data-types/auto_increment.md) column and a [trigger](../../server-usage/triggers-events/triggers/) or [stored procedure](../../server-usage/stored-routines/) executes an [UPDATE](../../reference/sql-statements/data-manipulation/changing-deleting-data/update.md) statement against the table.
 * [UPDATE](../../reference/sql-statements/data-manipulation/changing-deleting-data/update.md) statements that use [LIMIT](../../reference/sql-statements/data-manipulation/selecting-data/select.md#limit), since the order of the returned rows is unspecified. This applies even to statements using an ORDER BY clause, which are deterministic (a known bug). However, `LIMIT 0` is an exception to this rule (see [MDEV-6170](https://jira.mariadb.org/browse/MDEV-6170)), and these statements are safe for replication.
 * When using a [user-defined function](../../server-usage/user-defined-functions/).
-* Statements using using any of the following functions, which can return different results on the replica:
+* Statements using any of the following functions, which can return different results on the replica:
   * [CURRENT\_ROLE()](../../reference/sql-functions/secondary-functions/information-functions/current_role.md)
   * [CURRENT\_USER()](../../reference/sql-functions/secondary-functions/information-functions/current_user.md)
   * [FOUND\_ROWS()](../../reference/sql-functions/secondary-functions/information-functions/found_rows.md)
@@ -86,7 +86,7 @@ The following statements are not deterministic, but are considered safe for bina
 
 ## Isolation Levels
 
-Even when using safe statements, not all [transaction isolation levels](../../reference/sql-statements/transactions/set-transaction.md#isolation-levels) are safe with statement-based or mixed binary logging. The REPEATABLE READ and SERIALIZABLE isolation levels can only be used with the row-based format.
+Even when using safe statements, not all [transaction isolation levels](../../reference/sql-statements/transactions/set-transaction.md#isolation-levels) are safe with statement-based or mixed binary logging. While the REPEATABLE READ and SERIALIZABLE isolation levels can be used with both statement- and row-based replication, the READ COMMITTED and READ UNCOMMITTED isolation levels only support row-based replication, as with them isolation between transactions is not guaranteed at all, and different transaction orders on a replica, or when doing point-in-time recovery, would lead to different results than on the original master.
 
 This restriction does not apply if only non-transactional storage engines are used.
 

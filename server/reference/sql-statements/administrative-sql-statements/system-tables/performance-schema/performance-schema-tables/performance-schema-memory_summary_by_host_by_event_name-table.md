@@ -1,8 +1,8 @@
 # Performance Schema memory\_summary\_by\_host\_by\_event\_name Table
 
-**MariaDB starting with** [**10.5.2**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1052-release-notes)
+**MariaDB starting with** [**10.5.2**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-1052-release-notes)
 
-The memory\_summary\_by\_host\_by\_event\_name table was introduced in [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1052-release-notes).
+The memory\_summary\_by\_host\_by\_event\_name table was introduced in [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-1052-release-notes).
 
 There are five memory summary tables in the Performance Schema that share a number of fields in common. These include:
 
@@ -18,7 +18,6 @@ The table contains the following columns:
 
 | Field                            | Type                | Null | Default | Description                                                                           |
 | -------------------------------- | ------------------- | ---- | ------- | ------------------------------------------------------------------------------------- |
-| Field                            | Type                | Null | Default | Description                                                                           |
 | HOST                             | char(60)            | YES  | NULL    | Host portion of the account.                                                          |
 | EVENT\_NAME                      | varchar(128)        | NO   | NULL    | Event name.                                                                           |
 | COUNT\_ALLOC                     | bigint(20) unsigned | NO   | NULL    | Total number of allocations to memory.                                                |

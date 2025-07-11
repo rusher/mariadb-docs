@@ -6,7 +6,6 @@ It has the following columns:
 
 | Column                 | Description                                                                                                                                                                                                                                                                                                    |
 | ---------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Column                 | Description                                                                                                                                                                                                                                                                                                    |
 | TABLE\_CATALOG         | Aways def.                                                                                                                                                                                                                                                                                                     |
 | TABLE\_SCHEMA          | Database name containing the view.                                                                                                                                                                                                                                                                             |
 | TABLE\_NAME            | View table name.                                                                                                                                                                                                                                                                                               |
@@ -42,7 +41,7 @@ COLLATION_CONNECTION: utf8_general_ci
 * [CREATE VIEW](create-view.md)
 * [ALTER VIEW](alter-view.md)
 * [DROP VIEW](drop-view.md)
-* [SHOW CREATE VIEWS](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-usage/programming-customizing-mariadb/views/show-create-views/README.md)
+* [SHOW CREATE VIEWS](../../reference/sql-statements/administrative-sql-statements/show/show-create-view.md)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

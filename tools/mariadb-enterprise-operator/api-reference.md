@@ -1,187 +1,228 @@
-# API Reference
 
 ## Packages
+- [enterprise.mariadb.com/v1alpha1](#enterprisemariadbcomv1alpha1)
 
-* [enterprise.mariadb.com/v1alpha1](api-reference.md#enterprisemariadbcomv1alpha1)
 
 ## enterprise.mariadb.com/v1alpha1
 
 Package v1alpha1 contains API Schema definitions for the v1alpha1 API group
 
-### Resource Types
 
-* [Backup](api-reference.md#backup)
-* [Connection](api-reference.md#connection)
-* [Database](api-reference.md#database)
-* [Grant](api-reference.md#grant)
-* [MariaDB](api-reference.md#mariadb)
-* [MaxScale](api-reference.md#maxscale)
-* [Restore](api-reference.md#restore)
-* [SqlJob](api-reference.md#sqljob)
-* [User](api-reference.md#user)
+
+### Resource Types
+- [Backup](#backup)
+- [Connection](#connection)
+- [Database](#database)
+- [Grant](#grant)
+- [MariaDB](#mariadb)
+- [MaxScale](#maxscale)
+- [Restore](#restore)
+- [SqlJob](#sqljob)
+- [User](#user)
+
+
 
 #### Affinity
 
-Refer to the Kubernetes docs: [#affinity-v1-core](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#affinity-v1-core).
+
+
+Refer to the Kubernetes docs: https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#affinity-v1-core.
+
+
 
 _Appears in:_
+- [AffinityConfig](#affinityconfig)
 
-* [AffinityConfig](api-reference.md#affinityconfig)
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `podAntiAffinity` _[PodAntiAffinity](#podantiaffinity)_ |  |  |  |
+| `nodeAffinity` _[NodeAffinity](#nodeaffinity)_ |  |  |  |
 
-| Field                                                               | Description | Default | Validation |
-| ------------------------------------------------------------------- | ----------- | ------- | ---------- |
-| podAntiAffinity [PodAntiAffinity](api-reference.md#podantiaffinity) |             |         |            |
-| nodeAffinity [NodeAffinity](api-reference.md#nodeaffinity)          |             |         |            |
 
 #### AffinityConfig
 
+
+
 AffinityConfig defines policies to schedule Pods in Nodes.
 
+
+
 _Appears in:_
+- [BackupSpec](#backupspec)
+- [Exporter](#exporter)
+- [Job](#job)
+- [JobPodTemplate](#jobpodtemplate)
+- [MariaDBSpec](#mariadbspec)
+- [MaxScalePodTemplate](#maxscalepodtemplate)
+- [MaxScaleSpec](#maxscalespec)
+- [PodTemplate](#podtemplate)
+- [RestoreSpec](#restorespec)
+- [SqlJobSpec](#sqljobspec)
 
-* [BackupSpec](api-reference.md#backupspec)
-* [Exporter](api-reference.md#exporter)
-* [Job](api-reference.md#job)
-* [JobPodTemplate](api-reference.md#jobpodtemplate)
-* [MariaDBSpec](api-reference.md#mariadbspec)
-* [MaxScalePodTemplate](api-reference.md#maxscalepodtemplate)
-* [MaxScaleSpec](api-reference.md#maxscalespec)
-* [PodTemplate](api-reference.md#podtemplate)
-* [RestoreSpec](api-reference.md#restorespec)
-* [SqlJobSpec](api-reference.md#sqljobspec)
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `podAntiAffinity` _[PodAntiAffinity](#podantiaffinity)_ |  |  |  |
+| `nodeAffinity` _[NodeAffinity](#nodeaffinity)_ |  |  |  |
+| `antiAffinityEnabled` _boolean_ | AntiAffinityEnabled configures PodAntiAffinity so each Pod is scheduled in a different Node, enabling HA.<br />Make sure you have at least as many Nodes available as the replicas to not end up with unscheduled Pods. |  |  |
 
-| Field                                                               | Description                                                                                                                                                                                                       | Default | Validation |
-| ------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | ---------- |
-| podAntiAffinity [PodAntiAffinity](api-reference.md#podantiaffinity) |                                                                                                                                                                                                                   |         |            |
-| nodeAffinity [NodeAffinity](api-reference.md#nodeaffinity)          |                                                                                                                                                                                                                   |         |            |
-| antiAffinityEnabled boolean                                         | AntiAffinityEnabled configures PodAntiAffinity so each Pod is scheduled in a different Node, enabling HA.Make sure you have at least as many Nodes available as the replicas to not end up with unscheduled Pods. |         |            |
 
 #### Backup
 
+
+
 Backup is the Schema for the backups API. It is used to define backup jobs and its storage.
 
-| Field                                                                                                          | Description                                                   | Default | Validation |
-| -------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------- | ------- | ---------- |
-| apiVersion string                                                                                              | enterprise.mariadb.com/v1alpha1                               |         |            |
-| kind string                                                                                                    | Backup                                                        |         |            |
-| metadata [ObjectMeta](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#objectmeta-v1-meta) | Refer to Kubernetes API documentation for fields of metadata. |         |            |
-| spec [BackupSpec](api-reference.md#backupspec)                                                                 |                                                               |         |            |
+
+
+
+
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `apiVersion` _string_ | `enterprise.mariadb.com/v1alpha1` | | |
+| `kind` _string_ | `Backup` | | |
+| `metadata` _[ObjectMeta](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#objectmeta-v1-meta)_ | Refer to Kubernetes API documentation for fields of `metadata`. |  |  |
+| `spec` _[BackupSpec](#backupspec)_ |  |  |  |
+
 
 #### BackupSpec
 
+
+
 BackupSpec defines the desired state of Backup
 
+
+
 _Appears in:_
+- [Backup](#backup)
 
-* [Backup](api-reference.md#backup)
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `args` _string array_ | Args to be used in the Container. |  |  |
+| `resources` _[ResourceRequirements](#resourcerequirements)_ | Resouces describes the compute resource requirements. |  |  |
+| `securityContext` _[SecurityContext](#securitycontext)_ | SecurityContext holds security configuration that will be applied to a container. |  |  |
+| `podMetadata` _[Metadata](#metadata)_ | PodMetadata defines extra metadata for the Pod. |  |  |
+| `imagePullSecrets` _[LocalObjectReference](#localobjectreference) array_ | ImagePullSecrets is the list of pull Secrets to be used to pull the image. |  |  |
+| `podSecurityContext` _[PodSecurityContext](#podsecuritycontext)_ | SecurityContext holds pod-level security attributes and common container settings. |  |  |
+| `serviceAccountName` _string_ | ServiceAccountName is the name of the ServiceAccount to be used by the Pods. |  |  |
+| `affinity` _[AffinityConfig](#affinityconfig)_ | Affinity to be used in the Pod. |  |  |
+| `nodeSelector` _object (keys:string, values:string)_ | NodeSelector to be used in the Pod. |  |  |
+| `tolerations` _[Toleration](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#toleration-v1-core) array_ | Tolerations to be used in the Pod. |  |  |
+| `priorityClassName` _string_ | PriorityClassName to be used in the Pod. |  |  |
+| `successfulJobsHistoryLimit` _integer_ | SuccessfulJobsHistoryLimit defines the maximum number of successful Jobs to be displayed. |  | Minimum: 0 <br /> |
+| `failedJobsHistoryLimit` _integer_ | FailedJobsHistoryLimit defines the maximum number of failed Jobs to be displayed. |  | Minimum: 0 <br /> |
+| `timeZone` _string_ | TimeZone defines the timezone associated with the cron expression. |  |  |
+| `mariaDbRef` _[MariaDBRef](#mariadbref)_ | MariaDBRef is a reference to a MariaDB object. |  | Required: \{\} <br /> |
+| `compression` _[CompressAlgorithm](#compressalgorithm)_ | Compression algorithm to be used in the Backup. |  | Enum: [none bzip2 gzip] <br /> |
+| `stagingStorage` _[BackupStagingStorage](#backupstagingstorage)_ | StagingStorage defines the temporary storage used to keep external backups (i.e. S3) while they are being processed.<br />It defaults to an emptyDir volume, meaning that the backups will be temporarily stored in the node where the Backup Job is scheduled.<br />The staging area gets cleaned up after each backup is completed, consider this for sizing it appropriately. |  |  |
+| `storage` _[BackupStorage](#backupstorage)_ | Storage defines the final storage for backups. |  | Required: \{\} <br /> |
+| `schedule` _[Schedule](#schedule)_ | Schedule defines when the Backup will be taken. |  |  |
+| `maxRetention` _[Duration](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#duration-v1-meta)_ | MaxRetention defines the retention policy for backups. Old backups will be cleaned up by the Backup Job.<br />It defaults to 30 days. |  |  |
+| `databases` _string array_ | Databases defines the logical databases to be backed up. If not provided, all databases are backed up. |  |  |
+| `ignoreGlobalPriv` _boolean_ | IgnoreGlobalPriv indicates to ignore the mysql.global_priv in backups.<br />If not provided, it will default to true when the referred MariaDB instance has Galera enabled and otherwise to false. |  |  |
+| `logLevel` _string_ | LogLevel to be used n the Backup Job. It defaults to 'info'. | info |  |
+| `backoffLimit` _integer_ | BackoffLimit defines the maximum number of attempts to successfully take a Backup. |  |  |
+| `restartPolicy` _[RestartPolicy](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#restartpolicy-v1-core)_ | RestartPolicy to be added to the Backup Pod. | OnFailure | Enum: [Always OnFailure Never] <br /> |
+| `inheritMetadata` _[Metadata](#metadata)_ | InheritMetadata defines the metadata to be inherited by children resources. |  |  |
 
-| Field                                                                                                                     | Description                                                                                                                                                                                                                                                                                                                                                          | Default   | Validation                      |
-| ------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- | ------------------------------- |
-| args string array                                                                                                         | Args to be used in the Container.                                                                                                                                                                                                                                                                                                                                    |           |                                 |
-| resources [ResourceRequirements](api-reference.md#resourcerequirements)                                                   | Resouces describes the compute resource requirements.                                                                                                                                                                                                                                                                                                                |           |                                 |
-| securityContext [SecurityContext](api-reference.md#securitycontext)                                                       | SecurityContext holds security configuration that will be applied to a container.                                                                                                                                                                                                                                                                                    |           |                                 |
-| podMetadata [Metadata](api-reference.md#metadata)                                                                         | PodMetadata defines extra metadata for the Pod.                                                                                                                                                                                                                                                                                                                      |           |                                 |
-| imagePullSecrets [LocalObjectReference](api-reference.md#localobjectreference) array                                      | ImagePullSecrets is the list of pull Secrets to be used to pull the image.                                                                                                                                                                                                                                                                                           |           |                                 |
-| podSecurityContext [PodSecurityContext](api-reference.md#podsecuritycontext)                                              | SecurityContext holds pod-level security attributes and common container settings.                                                                                                                                                                                                                                                                                   |           |                                 |
-| serviceAccountName string                                                                                                 | ServiceAccountName is the name of the ServiceAccount to be used by the Pods.                                                                                                                                                                                                                                                                                         |           |                                 |
-| affinity [AffinityConfig](api-reference.md#affinityconfig)                                                                | Affinity to be used in the Pod.                                                                                                                                                                                                                                                                                                                                      |           |                                 |
-| nodeSelector object (keys:string, values:string)                                                                          | NodeSelector to be used in the Pod.                                                                                                                                                                                                                                                                                                                                  |           |                                 |
-| tolerations [Toleration](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#toleration-v1-core) array   | Tolerations to be used in the Pod.                                                                                                                                                                                                                                                                                                                                   |           |                                 |
-| priorityClassName string                                                                                                  | PriorityClassName to be used in the Pod.                                                                                                                                                                                                                                                                                                                             |           |                                 |
-| successfulJobsHistoryLimit integer                                                                                        | SuccessfulJobsHistoryLimit defines the maximum number of successful Jobs to be displayed.                                                                                                                                                                                                                                                                            |           | Minimum: 0                      |
-| failedJobsHistoryLimit integer                                                                                            | FailedJobsHistoryLimit defines the maximum number of failed Jobs to be displayed.                                                                                                                                                                                                                                                                                    |           | Minimum: 0                      |
-| timeZone string                                                                                                           | TimeZone defines the timezone associated with the cron expression.                                                                                                                                                                                                                                                                                                   |           |                                 |
-| mariaDbRef [MariaDBRef](api-reference.md#mariadbref)                                                                      | MariaDBRef is a reference to a MariaDB object.                                                                                                                                                                                                                                                                                                                       |           | Required: {}                    |
-| compression [CompressAlgorithm](api-reference.md#compressalgorithm)                                                       | Compression algorithm to be used in the Backup.                                                                                                                                                                                                                                                                                                                      |           | Enum: \[none bzip2 gzip]        |
-| stagingStorage [BackupStagingStorage](api-reference.md#backupstagingstorage)                                              | StagingStorage defines the temporary storage used to keep external backups (i.e. S3) while they are being processed.It defaults to an emptyDir volume, meaning that the backups will be temporarily stored in the node where the Backup Job is scheduled.The staging area gets cleaned up after each backup is completed, consider this for sizing it appropriately. |           |                                 |
-| storage [BackupStorage](api-reference.md#backupstorage)                                                                   | Storage defines the final storage for backups.                                                                                                                                                                                                                                                                                                                       |           | Required: {}                    |
-| schedule [Schedule](api-reference.md#schedule)                                                                            | Schedule defines when the Backup will be taken.                                                                                                                                                                                                                                                                                                                      |           |                                 |
-| maxRetention [Duration](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#duration-v1-meta)            | MaxRetention defines the retention policy for backups. Old backups will be cleaned up by the Backup Job.It defaults to 30 days.                                                                                                                                                                                                                                      |           |                                 |
-| databases string array                                                                                                    | Databases defines the logical databases to be backed up. If not provided, all databases are backed up.                                                                                                                                                                                                                                                               |           |                                 |
-| ignoreGlobalPriv boolean                                                                                                  | IgnoreGlobalPriv indicates to ignore the mysql.global\_priv in backups.If not provided, it will default to true when the referred MariaDB instance has Galera enabled and otherwise to false.                                                                                                                                                                        |           |                                 |
-| logLevel string                                                                                                           | LogLevel to be used n the Backup Job. It defaults to 'info'.                                                                                                                                                                                                                                                                                                         | info      |                                 |
-| backoffLimit integer                                                                                                      | BackoffLimit defines the maximum number of attempts to successfully take a Backup.                                                                                                                                                                                                                                                                                   |           |                                 |
-| restartPolicy [RestartPolicy](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#restartpolicy-v1-core) | RestartPolicy to be added to the Backup Pod.                                                                                                                                                                                                                                                                                                                         | OnFailure | Enum: \[Always OnFailure Never] |
-| inheritMetadata [Metadata](api-reference.md#metadata)                                                                     | InheritMetadata defines the metadata to be inherited by children resources.                                                                                                                                                                                                                                                                                          |           |                                 |
 
 #### BackupStagingStorage
 
+
+
 BackupStagingStorage defines the temporary storage used to keep external backups (i.e. S3) while they are being processed.
 
+
+
 _Appears in:_
+- [BackupSpec](#backupspec)
+- [BootstrapFrom](#bootstrapfrom)
+- [RestoreSource](#restoresource)
+- [RestoreSpec](#restorespec)
 
-* [BackupSpec](api-reference.md#backupspec)
-* [BootstrapFrom](api-reference.md#bootstrapfrom)
-* [RestoreSource](api-reference.md#restoresource)
-* [RestoreSpec](api-reference.md#restorespec)
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `persistentVolumeClaim` _[PersistentVolumeClaimSpec](#persistentvolumeclaimspec)_ | PersistentVolumeClaim is a Kubernetes PVC specification. |  |  |
+| `volume` _[StorageVolumeSource](#storagevolumesource)_ | Volume is a Kubernetes volume specification. |  |  |
 
-| Field                                                                                         | Description                                              | Default | Validation |
-| --------------------------------------------------------------------------------------------- | -------------------------------------------------------- | ------- | ---------- |
-| persistentVolumeClaim [PersistentVolumeClaimSpec](api-reference.md#persistentvolumeclaimspec) | PersistentVolumeClaim is a Kubernetes PVC specification. |         |            |
-| volume [StorageVolumeSource](api-reference.md#storagevolumesource)                            | Volume is a Kubernetes volume specification.             |         |            |
 
 #### BackupStorage
 
+
+
 BackupStorage defines the final storage for backups.
 
+
+
 _Appears in:_
+- [BackupSpec](#backupspec)
 
-* [BackupSpec](api-reference.md#backupspec)
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `s3` _[S3](#s3)_ | S3 defines the configuration to store backups in a S3 compatible storage. |  |  |
+| `persistentVolumeClaim` _[PersistentVolumeClaimSpec](#persistentvolumeclaimspec)_ | PersistentVolumeClaim is a Kubernetes PVC specification. |  |  |
+| `volume` _[StorageVolumeSource](#storagevolumesource)_ | Volume is a Kubernetes volume specification. |  |  |
 
-| Field                                                                                         | Description                                                               | Default | Validation |
-| --------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------- | ---------- |
-| s3 [S3](api-reference.md#s3)                                                                  | S3 defines the configuration to store backups in a S3 compatible storage. |         |            |
-| persistentVolumeClaim [PersistentVolumeClaimSpec](api-reference.md#persistentvolumeclaimspec) | PersistentVolumeClaim is a Kubernetes PVC specification.                  |         |            |
-| volume [StorageVolumeSource](api-reference.md#storagevolumesource)                            | Volume is a Kubernetes volume specification.                              |         |            |
 
 #### BasicAuth
 
+
+
 KubernetesAuth refers to the basic authentication mechanism utilized for establishing a connection from the operator to the agent.
 
+
+
 _Appears in:_
+- [GaleraAgent](#galeraagent)
 
-* [GaleraAgent](api-reference.md#galeraagent)
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `enabled` _boolean_ | Enabled is a flag to enable BasicAuth |  |  |
+| `username` _string_ | Username to be used for basic authentication |  |  |
+| `passwordSecretKeyRef` _[GeneratedSecretKeyRef](#generatedsecretkeyref)_ | PasswordSecretKeyRef to be used for basic authentication |  |  |
 
-| Field                                                                                | Description                                              | Default | Validation |
-| ------------------------------------------------------------------------------------ | -------------------------------------------------------- | ------- | ---------- |
-| enabled boolean                                                                      | Enabled is a flag to enable BasicAuth                    |         |            |
-| username string                                                                      | Username to be used for basic authentication             |         |            |
-| passwordSecretKeyRef [GeneratedSecretKeyRef](api-reference.md#generatedsecretkeyref) | PasswordSecretKeyRef to be used for basic authentication |         |            |
 
 #### BootstrapFrom
 
+
+
 BootstrapFrom defines a source to bootstrap MariaDB from.
 
+
+
 _Appears in:_
+- [MariaDBSpec](#mariadbspec)
 
-* [MariaDBSpec](api-reference.md#mariadbspec)
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `backupRef` _[LocalObjectReference](#localobjectreference)_ | BackupRef is a reference to a Backup object. It has priority over S3 and Volume. |  |  |
+| `s3` _[S3](#s3)_ | S3 defines the configuration to restore backups from a S3 compatible storage. It has priority over Volume. |  |  |
+| `volume` _[StorageVolumeSource](#storagevolumesource)_ | Volume is a Kubernetes Volume object that contains a backup. |  |  |
+| `targetRecoveryTime` _[Time](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#time-v1-meta)_ | TargetRecoveryTime is a RFC3339 (1970-01-01T00:00:00Z) date and time that defines the point in time recovery objective.<br />It is used to determine the closest restoration source in time. |  |  |
+| `stagingStorage` _[BackupStagingStorage](#backupstagingstorage)_ | StagingStorage defines the temporary storage used to keep external backups (i.e. S3) while they are being processed.<br />It defaults to an emptyDir volume, meaning that the backups will be temporarily stored in the node where the Restore Job is scheduled. |  |  |
+| `restoreJob` _[Job](#job)_ | RestoreJob defines additional properties for the Job used to perform the Restore. |  |  |
 
-| Field                                                                                                        | Description                                                                                                                                                                                                                                                | Default | Validation |
-| ------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | ---------- |
-| backupRef [LocalObjectReference](api-reference.md#localobjectreference)                                      | BackupRef is a reference to a Backup object. It has priority over S3 and Volume.                                                                                                                                                                           |         |            |
-| s3 [S3](api-reference.md#s3)                                                                                 | S3 defines the configuration to restore backups from a S3 compatible storage. It has priority over Volume.                                                                                                                                                 |         |            |
-| volume [StorageVolumeSource](api-reference.md#storagevolumesource)                                           | Volume is a Kubernetes Volume object that contains a backup.                                                                                                                                                                                               |         |            |
-| targetRecoveryTime [Time](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#time-v1-meta) | TargetRecoveryTime is a RFC3339 (1970-01-01T00:00:00Z) date and time that defines the point in time recovery objective.It is used to determine the closest restoration source in time.                                                                     |         |            |
-| stagingStorage [BackupStagingStorage](api-reference.md#backupstagingstorage)                                 | StagingStorage defines the temporary storage used to keep external backups (i.e. S3) while they are being processed.It defaults to an emptyDir volume, meaning that the backups will be temporarily stored in the node where the Restore Job is scheduled. |         |            |
-| restoreJob [Job](api-reference.md#job)                                                                       | RestoreJob defines additional properties for the Job used to perform the Restore.                                                                                                                                                                          |         |            |
 
 #### CSIVolumeSource
 
-Refer to the Kubernetes docs: [#csivolumesource-v1-core](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#csivolumesource-v1-core).
+
+
+Refer to the Kubernetes docs: https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#csivolumesource-v1-core.
+
+
 
 _Appears in:_
+- [StorageVolumeSource](#storagevolumesource)
+- [Volume](#volume)
+- [VolumeSource](#volumesource)
 
-* [StorageVolumeSource](api-reference.md#storagevolumesource)
-* [Volume](api-reference.md#volume)
-* [VolumeSource](api-reference.md#volumesource)
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `driver` _string_ |  |  |  |
+| `readOnly` _boolean_ |  |  |  |
+| `fsType` _string_ |  |  |  |
+| `volumeAttributes` _object (keys:string, values:string)_ |  |  |  |
+| `nodePublishSecretRef` _[LocalObjectReference](#localobjectreference)_ |  |  |  |
 
-| Field                                                                              | Description | Default | Validation |
-| ---------------------------------------------------------------------------------- | ----------- | ------- | ---------- |
-| driver string                                                                      |             |         |            |
-| readOnly boolean                                                                   |             |         |            |
-| fsType string                                                                      |             |         |            |
-| volumeAttributes object (keys:string, values:string)                               |             |         |            |
-| nodePublishSecretRef [LocalObjectReference](api-reference.md#localobjectreference) |             |         |            |
 
 #### CleanupPolicy
 
@@ -189,17 +230,19 @@ _Underlying type:_ _string_
 
 CleanupPolicy defines the behavior for cleaning up a resource.
 
+
+
 _Appears in:_
+- [DatabaseSpec](#databasespec)
+- [GrantSpec](#grantspec)
+- [SQLTemplate](#sqltemplate)
+- [UserSpec](#userspec)
 
-* [DatabaseSpec](api-reference.md#databasespec)
-* [GrantSpec](api-reference.md#grantspec)
-* [SQLTemplate](api-reference.md#sqltemplate)
-* [UserSpec](api-reference.md#userspec)
+| Field | Description |
+| --- | --- |
+| `Skip` | CleanupPolicySkip indicates that the resource will NOT be deleted from the database after the CR is deleted.<br /> |
+| `Delete` | CleanupPolicyDelete indicates that the resource will be deleted from the database after the CR is deleted.<br /> |
 
-| Field  | Description                                                                                                  |
-| ------ | ------------------------------------------------------------------------------------------------------------ |
-| Skip   | CleanupPolicySkip indicates that the resource will NOT be deleted from the database after the CR is deleted. |
-| Delete | CleanupPolicyDelete indicates that the resource will be deleted from the database after the CR is deleted.   |
 
 #### CompressAlgorithm
 
@@ -207,1108 +250,1348 @@ _Underlying type:_ _string_
 
 CompressAlgorithm defines the compression algorithm for a Backup resource.
 
+
+
 _Appears in:_
+- [BackupSpec](#backupspec)
 
-* [BackupSpec](api-reference.md#backupspec)
+| Field | Description |
+| --- | --- |
+| `none` | No compression<br /> |
+| `bzip2` | Bzip2 compression. Good compression ratio, but slower compression/decompression speed compared to gzip.<br /> |
+| `gzip` | Gzip compression. Good compression/decompression speed, but worse compression ratio compared to bzip2.<br /> |
 
-| Field | Description                                                                                             |
-| ----- | ------------------------------------------------------------------------------------------------------- |
-| none  | No compression                                                                                          |
-| bzip2 | Bzip2 compression. Good compression ratio, but slower compression/decompression speed compared to gzip. |
-| gzip  | Gzip compression. Good compression/decompression speed, but worse compression ratio compared to bzip2.  |
 
 #### ConfigMapKeySelector
 
-Refer to the Kubernetes docs: [#configmapkeyselector-v1-core](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#configmapkeyselector-v1-core).
+
+
+Refer to the Kubernetes docs: https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#configmapkeyselector-v1-core.
+
+
 
 _Appears in:_
+- [EnvVarSource](#envvarsource)
+- [MariaDBSpec](#mariadbspec)
+- [SqlJobSpec](#sqljobspec)
 
-* [EnvVarSource](api-reference.md#envvarsource)
-* [MariaDBSpec](api-reference.md#mariadbspec)
-* [SqlJobSpec](api-reference.md#sqljobspec)
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `name` _string_ |  |  |  |
+| `key` _string_ |  |  |  |
 
-| Field       | Description | Default | Validation |
-| ----------- | ----------- | ------- | ---------- |
-| name string |             |         |            |
-| key string  |             |         |            |
 
 #### ConfigMapVolumeSource
 
-Refer to the Kubernetes docs: [#configmapvolumesource-v1-core](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#configmapvolumesource-v1-core).
+
+
+Refer to the Kubernetes docs: https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#configmapvolumesource-v1-core.
+
+
 
 _Appears in:_
+- [Volume](#volume)
+- [VolumeSource](#volumesource)
 
-* [Volume](api-reference.md#volume)
-* [VolumeSource](api-reference.md#volumesource)
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `name` _string_ |  |  |  |
+| `defaultMode` _integer_ |  |  |  |
 
-| Field               | Description | Default | Validation |
-| ------------------- | ----------- | ------- | ---------- |
-| name string         |             |         |            |
-| defaultMode integer |             |         |            |
 
 #### Connection
 
+
+
 Connection is the Schema for the connections API. It is used to configure connection strings for the applications connecting to MariaDB.
 
-| Field                                                                                                          | Description                                                   | Default | Validation |
-| -------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------- | ------- | ---------- |
-| apiVersion string                                                                                              | enterprise.mariadb.com/v1alpha1                               |         |            |
-| kind string                                                                                                    | Connection                                                    |         |            |
-| metadata [ObjectMeta](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#objectmeta-v1-meta) | Refer to Kubernetes API documentation for fields of metadata. |         |            |
-| spec [ConnectionSpec](api-reference.md#connectionspec)                                                         |                                                               |         |            |
+
+
+
+
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `apiVersion` _string_ | `enterprise.mariadb.com/v1alpha1` | | |
+| `kind` _string_ | `Connection` | | |
+| `metadata` _[ObjectMeta](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#objectmeta-v1-meta)_ | Refer to Kubernetes API documentation for fields of `metadata`. |  |  |
+| `spec` _[ConnectionSpec](#connectionspec)_ |  |  |  |
+
 
 #### ConnectionSpec
 
+
+
 ConnectionSpec defines the desired state of Connection
 
+
+
 _Appears in:_
+- [Connection](#connection)
 
-* [Connection](api-reference.md#connection)
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `secretName` _string_ | SecretName to be used in the Connection. |  |  |
+| `secretTemplate` _[SecretTemplate](#secrettemplate)_ | SecretTemplate to be used in the Connection. |  |  |
+| `healthCheck` _[HealthCheck](#healthcheck)_ | HealthCheck to be used in the Connection. |  |  |
+| `params` _object (keys:string, values:string)_ | Params to be used in the Connection. |  |  |
+| `serviceName` _string_ | ServiceName to be used in the Connection. |  |  |
+| `port` _integer_ | Port to connect to. If not provided, it defaults to the MariaDB port or to the first MaxScale listener. |  |  |
+| `mariaDbRef` _[MariaDBRef](#mariadbref)_ | MariaDBRef is a reference to the MariaDB to connect to. Either MariaDBRef or MaxScaleRef must be provided. |  |  |
+| `maxScaleRef` _[ObjectReference](#objectreference)_ | MaxScaleRef is a reference to the MaxScale to connect to. Either MariaDBRef or MaxScaleRef must be provided. |  |  |
+| `username` _string_ | Username to use for configuring the Connection. |  | Required: \{\} <br /> |
+| `passwordSecretKeyRef` _[SecretKeySelector](#secretkeyselector)_ | PasswordSecretKeyRef is a reference to the password to use for configuring the Connection.<br />Either passwordSecretKeyRef or tlsClientCertSecretRef must be provided as client credentials.<br />If the referred Secret is labeled with "enterprise.mariadb.com/watch", updates may be performed to the Secret in order to update the password. |  |  |
+| `tlsClientCertSecretRef` _[LocalObjectReference](#localobjectreference)_ | TLSClientCertSecretRef is a reference to a Kubernetes TLS Secret used as authentication when checking the connection health.<br />Either passwordSecretKeyRef or tlsClientCertSecretRef must be provided as client credentials.<br />If not provided, the client certificate provided by the referred MariaDB is used if TLS is enabled.<br />If the referred Secret is labeled with "enterprise.mariadb.com/watch", updates may be performed to the Secret in order to update the client certificate. |  |  |
+| `host` _string_ | Host to connect to. If not provided, it defaults to the MariaDB host or to the MaxScale host. |  |  |
+| `database` _string_ | Database to use when configuring the Connection. |  |  |
 
-| Field                                                                                | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | Default | Validation   |
-| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------- | ------------ |
-| secretName string                                                                    | SecretName to be used in the Connection.                                                                                                                                                                                                                                                                                                                                                                                                                                             |         |              |
-| secretTemplate [SecretTemplate](api-reference.md#secrettemplate)                     | SecretTemplate to be used in the Connection.                                                                                                                                                                                                                                                                                                                                                                                                                                         |         |              |
-| healthCheck [HealthCheck](api-reference.md#healthcheck)                              | HealthCheck to be used in the Connection.                                                                                                                                                                                                                                                                                                                                                                                                                                            |         |              |
-| params object (keys:string, values:string)                                           | Params to be used in the Connection.                                                                                                                                                                                                                                                                                                                                                                                                                                                 |         |              |
-| serviceName string                                                                   | ServiceName to be used in the Connection.                                                                                                                                                                                                                                                                                                                                                                                                                                            |         |              |
-| port integer                                                                         | Port to connect to. If not provided, it defaults to the MariaDB port or to the first MaxScale listener.                                                                                                                                                                                                                                                                                                                                                                              |         |              |
-| mariaDbRef [MariaDBRef](api-reference.md#mariadbref)                                 | MariaDBRef is a reference to the MariaDB to connect to. Either MariaDBRef or MaxScaleRef must be provided.                                                                                                                                                                                                                                                                                                                                                                           |         |              |
-| maxScaleRef [ObjectReference](api-reference.md#objectreference)                      | MaxScaleRef is a reference to the MaxScale to connect to. Either MariaDBRef or MaxScaleRef must be provided.                                                                                                                                                                                                                                                                                                                                                                         |         |              |
-| username string                                                                      | Username to use for configuring the Connection.                                                                                                                                                                                                                                                                                                                                                                                                                                      |         | Required: {} |
-| passwordSecretKeyRef [SecretKeySelector](api-reference.md#secretkeyselector)         | PasswordSecretKeyRef is a reference to the password to use for configuring the Connection.Either passwordSecretKeyRef or tlsClientCertSecretRef must be provided as client credentials.If the referred Secret is labeled with "enterprise.mariadb.com/watch", updates may be performed to the Secret in order to update the password.                                                                                                                                                |         |              |
-| tlsClientCertSecretRef [LocalObjectReference](api-reference.md#localobjectreference) | TLSClientCertSecretRef is a reference to a Kubernetes TLS Secret used as authentication when checking the connection health.Either passwordSecretKeyRef or tlsClientCertSecretRef must be provided as client credentials.If not provided, the client certificate provided by the referred MariaDB is used if TLS is enabled.If the referred Secret is labeled with "enterprise.mariadb.com/watch", updates may be performed to the Secret in order to update the client certificate. |         |              |
-| host string                                                                          | Host to connect to. If not provided, it defaults to the MariaDB host or to the MaxScale host.                                                                                                                                                                                                                                                                                                                                                                                        |         |              |
-| database string                                                                      | Database to use when configuring the Connection.                                                                                                                                                                                                                                                                                                                                                                                                                                     |         |              |
 
 #### ConnectionTemplate
 
+
+
 ConnectionTemplate defines a template to customize Connection objects.
 
+
+
 _Appears in:_
+- [ConnectionSpec](#connectionspec)
+- [MariaDBMaxScaleSpec](#mariadbmaxscalespec)
+- [MariaDBSpec](#mariadbspec)
+- [MaxScaleSpec](#maxscalespec)
 
-* [ConnectionSpec](api-reference.md#connectionspec)
-* [MariaDBMaxScaleSpec](api-reference.md#mariadbmaxscalespec)
-* [MariaDBSpec](api-reference.md#mariadbspec)
-* [MaxScaleSpec](api-reference.md#maxscalespec)
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `secretName` _string_ | SecretName to be used in the Connection. |  |  |
+| `secretTemplate` _[SecretTemplate](#secrettemplate)_ | SecretTemplate to be used in the Connection. |  |  |
+| `healthCheck` _[HealthCheck](#healthcheck)_ | HealthCheck to be used in the Connection. |  |  |
+| `params` _object (keys:string, values:string)_ | Params to be used in the Connection. |  |  |
+| `serviceName` _string_ | ServiceName to be used in the Connection. |  |  |
+| `port` _integer_ | Port to connect to. If not provided, it defaults to the MariaDB port or to the first MaxScale listener. |  |  |
 
-| Field                                                            | Description                                                                                             | Default | Validation |
-| ---------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------- | ---------- |
-| secretName string                                                | SecretName to be used in the Connection.                                                                |         |            |
-| secretTemplate [SecretTemplate](api-reference.md#secrettemplate) | SecretTemplate to be used in the Connection.                                                            |         |            |
-| healthCheck [HealthCheck](api-reference.md#healthcheck)          | HealthCheck to be used in the Connection.                                                               |         |            |
-| params object (keys:string, values:string)                       | Params to be used in the Connection.                                                                    |         |            |
-| serviceName string                                               | ServiceName to be used in the Connection.                                                               |         |            |
-| port integer                                                     | Port to connect to. If not provided, it defaults to the MariaDB port or to the first MaxScale listener. |         |            |
 
 #### Container
 
+
+
 Container object definition.
 
+
+
 _Appears in:_
+- [MariaDBSpec](#mariadbspec)
+- [PodTemplate](#podtemplate)
 
-* [MariaDBSpec](api-reference.md#mariadbspec)
-* [PodTemplate](api-reference.md#podtemplate)
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `name` _string_ | Name to be given to the container. |  |  |
+| `image` _string_ | Image name to be used by the container. The supported format is `<image>:<tag>`. |  | Required: \{\} <br /> |
+| `imagePullPolicy` _[PullPolicy](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#pullpolicy-v1-core)_ | ImagePullPolicy is the image pull policy. One of `Always`, `Never` or `IfNotPresent`. If not defined, it defaults to `IfNotPresent`. |  | Enum: [Always Never IfNotPresent] <br /> |
+| `command` _string array_ | Command to be used in the Container. |  |  |
+| `args` _string array_ | Args to be used in the Container. |  |  |
+| `env` _[EnvVar](#envvar) array_ | Env represents the environment variables to be injected in a container. |  |  |
+| `volumeMounts` _[VolumeMount](#volumemount) array_ | VolumeMounts to be used in the Container. |  |  |
+| `resources` _[ResourceRequirements](#resourcerequirements)_ | Resouces describes the compute resource requirements. |  |  |
 
-| Field                                                                                                                 | Description                                                                                                                  | Default | Validation                         |
-| --------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | ------- | ---------------------------------- |
-| name string                                                                                                           | Name to be given to the container.                                                                                           |         |                                    |
-| image string                                                                                                          | Image name to be used by the container. The supported format is :.                                                           |         | Required: {}                       |
-| imagePullPolicy [PullPolicy](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#pullpolicy-v1-core) | ImagePullPolicy is the image pull policy. One of Always, Never or IfNotPresent. If not defined, it defaults to IfNotPresent. |         | Enum: \[Always Never IfNotPresent] |
-| command string array                                                                                                  | Command to be used in the Container.                                                                                         |         |                                    |
-| args string array                                                                                                     | Args to be used in the Container.                                                                                            |         |                                    |
-| env [EnvVar](api-reference.md#envvar) array                                                                           | Env represents the environment variables to be injected in a container.                                                      |         |                                    |
-| volumeMounts [VolumeMount](api-reference.md#volumemount) array                                                        | VolumeMounts to be used in the Container.                                                                                    |         |                                    |
-| resources [ResourceRequirements](api-reference.md#resourcerequirements)                                               | Resouces describes the compute resource requirements.                                                                        |         |                                    |
 
 #### ContainerTemplate
 
+
+
 ContainerTemplate defines a template to configure Container objects.
 
+
+
 _Appears in:_
+- [GaleraAgent](#galeraagent)
+- [GaleraInit](#galerainit)
+- [MariaDBSpec](#mariadbspec)
+- [MaxScaleSpec](#maxscalespec)
 
-* [GaleraAgent](api-reference.md#galeraagent)
-* [GaleraInit](api-reference.md#galerainit)
-* [MariaDBSpec](api-reference.md#mariadbspec)
-* [MaxScaleSpec](api-reference.md#maxscalespec)
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `command` _string array_ | Command to be used in the Container. |  |  |
+| `args` _string array_ | Args to be used in the Container. |  |  |
+| `env` _[EnvVar](#envvar) array_ | Env represents the environment variables to be injected in a container. |  |  |
+| `envFrom` _[EnvFromSource](#envfromsource) array_ | EnvFrom represents the references (via ConfigMap and Secrets) to environment variables to be injected in the container. |  |  |
+| `volumeMounts` _[VolumeMount](#volumemount) array_ | VolumeMounts to be used in the Container. |  |  |
+| `livenessProbe` _[Probe](#probe)_ | LivenessProbe to be used in the Container. |  |  |
+| `readinessProbe` _[Probe](#probe)_ | ReadinessProbe to be used in the Container. |  |  |
+| `startupProbe` _[Probe](#probe)_ | StartupProbe to be used in the Container. |  |  |
+| `resources` _[ResourceRequirements](#resourcerequirements)_ | Resouces describes the compute resource requirements. |  |  |
+| `securityContext` _[SecurityContext](#securitycontext)_ | SecurityContext holds security configuration that will be applied to a container. |  |  |
 
-| Field                                                                   | Description                                                                                                             | Default | Validation |
-| ----------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- | ------- | ---------- |
-| command string array                                                    | Command to be used in the Container.                                                                                    |         |            |
-| args string array                                                       | Args to be used in the Container.                                                                                       |         |            |
-| env [EnvVar](api-reference.md#envvar) array                             | Env represents the environment variables to be injected in a container.                                                 |         |            |
-| envFrom [EnvFromSource](api-reference.md#envfromsource) array           | EnvFrom represents the references (via ConfigMap and Secrets) to environment variables to be injected in the container. |         |            |
-| volumeMounts [VolumeMount](api-reference.md#volumemount) array          | VolumeMounts to be used in the Container.                                                                               |         |            |
-| livenessProbe [Probe](api-reference.md#probe)                           | LivenessProbe to be used in the Container.                                                                              |         |            |
-| readinessProbe [Probe](api-reference.md#probe)                          | ReadinessProbe to be used in the Container.                                                                             |         |            |
-| startupProbe [Probe](api-reference.md#probe)                            | StartupProbe to be used in the Container.                                                                               |         |            |
-| resources [ResourceRequirements](api-reference.md#resourcerequirements) | Resouces describes the compute resource requirements.                                                                   |         |            |
-| securityContext [SecurityContext](api-reference.md#securitycontext)     | SecurityContext holds security configuration that will be applied to a container.                                       |         |            |
 
 #### CooperativeMonitoring
 
 _Underlying type:_ _string_
 
-CooperativeMonitoring enables coordination between multiple MaxScale instances running monitors.\
-See:
+CooperativeMonitoring enables coordination between multiple MaxScale instances running monitors.
+See: https://mariadb.com/docs/server/architecture/components/maxscale/monitors/mariadbmon/use-cooperative-locking-ha-maxscale-mariadb-monitor/
+
+
 
 _Appears in:_
+- [MaxScaleMonitor](#maxscalemonitor)
 
-* [MaxScaleMonitor](api-reference.md#maxscalemonitor)
+| Field | Description |
+| --- | --- |
+| `majority_of_all` | CooperativeMonitoringMajorityOfAll requires a lock from the majority of the MariaDB servers, even the ones that are down.<br /> |
+| `majority_of_running` | CooperativeMonitoringMajorityOfRunning requires a lock from the majority of the MariaDB servers.<br /> |
 
-| Field                 | Description                                                                                                               |
-| --------------------- | ------------------------------------------------------------------------------------------------------------------------- |
-| majority\_of\_all     | CooperativeMonitoringMajorityOfAll requires a lock from the majority of the MariaDB servers, even the ones that are down. |
-| majority\_of\_running | CooperativeMonitoringMajorityOfRunning requires a lock from the majority of the MariaDB servers.                          |
 
 #### CronJobTemplate
 
+
+
 CronJobTemplate defines parameters for configuring CronJob objects.
 
+
+
 _Appears in:_
+- [BackupSpec](#backupspec)
+- [SqlJobSpec](#sqljobspec)
 
-* [BackupSpec](api-reference.md#backupspec)
-* [SqlJobSpec](api-reference.md#sqljobspec)
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `successfulJobsHistoryLimit` _integer_ | SuccessfulJobsHistoryLimit defines the maximum number of successful Jobs to be displayed. |  | Minimum: 0 <br /> |
+| `failedJobsHistoryLimit` _integer_ | FailedJobsHistoryLimit defines the maximum number of failed Jobs to be displayed. |  | Minimum: 0 <br /> |
+| `timeZone` _string_ | TimeZone defines the timezone associated with the cron expression. |  |  |
 
-| Field                              | Description                                                                               | Default | Validation |
-| ---------------------------------- | ----------------------------------------------------------------------------------------- | ------- | ---------- |
-| successfulJobsHistoryLimit integer | SuccessfulJobsHistoryLimit defines the maximum number of successful Jobs to be displayed. |         | Minimum: 0 |
-| failedJobsHistoryLimit integer     | FailedJobsHistoryLimit defines the maximum number of failed Jobs to be displayed.         |         | Minimum: 0 |
-| timeZone string                    | TimeZone defines the timezone associated with the cron expression.                        |         |            |
 
 #### Database
 
+
+
 Database is the Schema for the databases API. It is used to define a logical database as if you were running a 'CREATE DATABASE' statement.
 
-| Field                                                                                                          | Description                                                   | Default | Validation |
-| -------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------- | ------- | ---------- |
-| apiVersion string                                                                                              | enterprise.mariadb.com/v1alpha1                               |         |            |
-| kind string                                                                                                    | Database                                                      |         |            |
-| metadata [ObjectMeta](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#objectmeta-v1-meta) | Refer to Kubernetes API documentation for fields of metadata. |         |            |
-| spec [DatabaseSpec](api-reference.md#databasespec)                                                             |                                                               |         |            |
+
+
+
+
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `apiVersion` _string_ | `enterprise.mariadb.com/v1alpha1` | | |
+| `kind` _string_ | `Database` | | |
+| `metadata` _[ObjectMeta](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#objectmeta-v1-meta)_ | Refer to Kubernetes API documentation for fields of `metadata`. |  |  |
+| `spec` _[DatabaseSpec](#databasespec)_ |  |  |  |
+
 
 #### DatabaseSpec
 
+
+
 DatabaseSpec defines the desired state of Database
 
+
+
 _Appears in:_
+- [Database](#database)
 
-* [Database](api-reference.md#database)
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `requeueInterval` _[Duration](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#duration-v1-meta)_ | RequeueInterval is used to perform requeue reconciliations. |  |  |
+| `retryInterval` _[Duration](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#duration-v1-meta)_ | RetryInterval is the interval used to perform retries. |  |  |
+| `cleanupPolicy` _[CleanupPolicy](#cleanuppolicy)_ | CleanupPolicy defines the behavior for cleaning up a SQL resource. |  | Enum: [Skip Delete] <br /> |
+| `mariaDbRef` _[MariaDBRef](#mariadbref)_ | MariaDBRef is a reference to a MariaDB object. |  | Required: \{\} <br /> |
+| `characterSet` _string_ | CharacterSet to use in the Database. | utf8 |  |
+| `collate` _string_ | Collate to use in the Database. | utf8_general_ci |  |
+| `name` _string_ | Name overrides the default Database name provided by metadata.name. |  | MaxLength: 80 <br /> |
 
-| Field                                                                                                             | Description                                                         | Default           | Validation           |
-| ----------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------- | ----------------- | -------------------- |
-| requeueInterval [Duration](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#duration-v1-meta) | RequeueInterval is used to perform requeue reconciliations.         |                   |                      |
-| retryInterval [Duration](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#duration-v1-meta)   | RetryInterval is the interval used to perform retries.              |                   |                      |
-| cleanupPolicy [CleanupPolicy](api-reference.md#cleanuppolicy)                                                     | CleanupPolicy defines the behavior for cleaning up a SQL resource.  |                   | Enum: \[Skip Delete] |
-| mariaDbRef [MariaDBRef](api-reference.md#mariadbref)                                                              | MariaDBRef is a reference to a MariaDB object.                      |                   | Required: {}         |
-| characterSet string                                                                                               | CharacterSet to use in the Database.                                | utf8              |                      |
-| collate string                                                                                                    | Collate to use in the Database.                                     | utf8\_general\_ci |                      |
-| name string                                                                                                       | Name overrides the default Database name provided by metadata.name. |                   | MaxLength: 80        |
 
 #### EmptyDirVolumeSource
 
-Refer to the Kubernetes docs: [#emptydirvolumesource-v1-core](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#emptydirvolumesource-v1-core).
+
+
+Refer to the Kubernetes docs: https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#emptydirvolumesource-v1-core.
+
+
 
 _Appears in:_
+- [StorageVolumeSource](#storagevolumesource)
+- [Volume](#volume)
+- [VolumeSource](#volumesource)
 
-* [StorageVolumeSource](api-reference.md#storagevolumesource)
-* [Volume](api-reference.md#volume)
-* [VolumeSource](api-reference.md#volumesource)
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `medium` _[StorageMedium](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#storagemedium-v1-core)_ |  |  |  |
+| `sizeLimit` _[Quantity](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#quantity-resource-api)_ |  |  |  |
 
-| Field                                                                                                              | Description | Default | Validation |
-| ------------------------------------------------------------------------------------------------------------------ | ----------- | ------- | ---------- |
-| medium [StorageMedium](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#storagemedium-v1-core) |             |         |            |
-| sizeLimit [Quantity](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#quantity-resource-api)   |             |         |            |
 
 #### EnvFromSource
 
-Refer to the Kubernetes docs: [#envfromsource-v1-core](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#envfromsource-v1-core).
+
+
+Refer to the Kubernetes docs: https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#envfromsource-v1-core.
+
+
 
 _Appears in:_
+- [ContainerTemplate](#containertemplate)
+- [GaleraAgent](#galeraagent)
+- [GaleraInit](#galerainit)
+- [MariaDBSpec](#mariadbspec)
+- [MaxScaleSpec](#maxscalespec)
 
-* [ContainerTemplate](api-reference.md#containertemplate)
-* [GaleraAgent](api-reference.md#galeraagent)
-* [GaleraInit](api-reference.md#galerainit)
-* [MariaDBSpec](api-reference.md#mariadbspec)
-* [MaxScaleSpec](api-reference.md#maxscalespec)
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `prefix` _string_ |  |  |  |
+| `configMapRef` _[LocalObjectReference](#localobjectreference)_ |  |  |  |
+| `secretRef` _[LocalObjectReference](#localobjectreference)_ |  |  |  |
 
-| Field                                                                      | Description | Default | Validation |
-| -------------------------------------------------------------------------- | ----------- | ------- | ---------- |
-| prefix string                                                              |             |         |            |
-| configMapRef [LocalObjectReference](api-reference.md#localobjectreference) |             |         |            |
-| secretRef [LocalObjectReference](api-reference.md#localobjectreference)    |             |         |            |
 
 #### EnvVar
 
-Refer to the Kubernetes docs: [#envvarsource-v1-core](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#envvarsource-v1-core).
+
+
+Refer to the Kubernetes docs: https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#envvarsource-v1-core.
+
+
 
 _Appears in:_
+- [Container](#container)
+- [ContainerTemplate](#containertemplate)
+- [GaleraAgent](#galeraagent)
+- [GaleraInit](#galerainit)
+- [MariaDBSpec](#mariadbspec)
+- [MaxScaleSpec](#maxscalespec)
 
-* [Container](api-reference.md#container)
-* [ContainerTemplate](api-reference.md#containertemplate)
-* [GaleraAgent](api-reference.md#galeraagent)
-* [GaleraInit](api-reference.md#galerainit)
-* [MariaDBSpec](api-reference.md#mariadbspec)
-* [MaxScaleSpec](api-reference.md#maxscalespec)
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `name` _string_ | Name of the environment variable. Must be a C_IDENTIFIER. |  |  |
+| `value` _string_ |  |  |  |
+| `valueFrom` _[EnvVarSource](#envvarsource)_ |  |  |  |
 
-| Field                                                   | Description                                                | Default | Validation |
-| ------------------------------------------------------- | ---------------------------------------------------------- | ------- | ---------- |
-| name string                                             | Name of the environment variable. Must be a C\_IDENTIFIER. |         |            |
-| value string                                            |                                                            |         |            |
-| valueFrom [EnvVarSource](api-reference.md#envvarsource) |                                                            |         |            |
 
 #### EnvVarSource
 
-Refer to the Kubernetes docs: [#envvarsource-v1-core](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#envvarsource-v1-core).
+
+
+Refer to the Kubernetes docs: https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#envvarsource-v1-core.
+
+
 
 _Appears in:_
+- [EnvVar](#envvar)
 
-* [EnvVar](api-reference.md#envvar)
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `fieldRef` _[ObjectFieldSelector](#objectfieldselector)_ |  |  |  |
+| `configMapKeyRef` _[ConfigMapKeySelector](#configmapkeyselector)_ |  |  |  |
+| `secretKeyRef` _[SecretKeySelector](#secretkeyselector)_ |  |  |  |
 
-| Field                                                                         | Description | Default | Validation |
-| ----------------------------------------------------------------------------- | ----------- | ------- | ---------- |
-| fieldRef [ObjectFieldSelector](api-reference.md#objectfieldselector)          |             |         |            |
-| configMapKeyRef [ConfigMapKeySelector](api-reference.md#configmapkeyselector) |             |         |            |
-| secretKeyRef [SecretKeySelector](api-reference.md#secretkeyselector)          |             |         |            |
 
 #### ExecAction
 
-Refer to the Kubernetes docs: [#execaction-v1-core](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#execaction-v1-core).
+
+
+Refer to the Kubernetes docs: https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#execaction-v1-core.
+
+
 
 _Appears in:_
+- [Probe](#probe)
+- [ProbeHandler](#probehandler)
 
-* [Probe](api-reference.md#probe)
-* [ProbeHandler](api-reference.md#probehandler)
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `command` _string array_ |  |  |  |
 
-| Field                | Description | Default | Validation |
-| -------------------- | ----------- | ------- | ---------- |
-| command string array |             |         |            |
 
 #### Exporter
 
+
+
 Exporter defines a metrics exporter container.
 
+
+
 _Appears in:_
+- [MariadbMetrics](#mariadbmetrics)
+- [MaxScaleMetrics](#maxscalemetrics)
 
-* [MariadbMetrics](api-reference.md#mariadbmetrics)
-* [MaxScaleMetrics](api-reference.md#maxscalemetrics)
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `image` _string_ | Image name to be used as metrics exporter. The supported format is `<image>:<tag>`. |  |  |
+| `imagePullPolicy` _[PullPolicy](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#pullpolicy-v1-core)_ | ImagePullPolicy is the image pull policy. One of `Always`, `Never` or `IfNotPresent`. If not defined, it defaults to `IfNotPresent`. |  | Enum: [Always Never IfNotPresent] <br /> |
+| `imagePullSecrets` _[LocalObjectReference](#localobjectreference) array_ | ImagePullSecrets is the list of pull Secrets to be used to pull the image. |  |  |
+| `args` _string array_ | Args to be used in the Container. |  |  |
+| `port` _integer_ | Port where the exporter will be listening for connections. |  |  |
+| `resources` _[ResourceRequirements](#resourcerequirements)_ | Resouces describes the compute resource requirements. |  |  |
+| `podMetadata` _[Metadata](#metadata)_ | PodMetadata defines extra metadata for the Pod. |  |  |
+| `securityContext` _[SecurityContext](#securitycontext)_ | SecurityContext holds container-level security attributes. |  |  |
+| `podSecurityContext` _[PodSecurityContext](#podsecuritycontext)_ | SecurityContext holds pod-level security attributes and common container settings. |  |  |
+| `affinity` _[AffinityConfig](#affinityconfig)_ | Affinity to be used in the Pod. |  |  |
+| `nodeSelector` _object (keys:string, values:string)_ | NodeSelector to be used in the Pod. |  |  |
+| `tolerations` _[Toleration](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#toleration-v1-core) array_ | Tolerations to be used in the Pod. |  |  |
+| `priorityClassName` _string_ | PriorityClassName to be used in the Pod. |  |  |
 
-| Field                                                                                                                   | Description                                                                                                                  | Default | Validation                         |
-| ----------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | ------- | ---------------------------------- |
-| image string                                                                                                            | Image name to be used as metrics exporter. The supported format is :.                                                        |         |                                    |
-| imagePullPolicy [PullPolicy](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#pullpolicy-v1-core)   | ImagePullPolicy is the image pull policy. One of Always, Never or IfNotPresent. If not defined, it defaults to IfNotPresent. |         | Enum: \[Always Never IfNotPresent] |
-| imagePullSecrets [LocalObjectReference](api-reference.md#localobjectreference) array                                    | ImagePullSecrets is the list of pull Secrets to be used to pull the image.                                                   |         |                                    |
-| args string array                                                                                                       | Args to be used in the Container.                                                                                            |         |                                    |
-| port integer                                                                                                            | Port where the exporter will be listening for connections.                                                                   |         |                                    |
-| resources [ResourceRequirements](api-reference.md#resourcerequirements)                                                 | Resouces describes the compute resource requirements.                                                                        |         |                                    |
-| podMetadata [Metadata](api-reference.md#metadata)                                                                       | PodMetadata defines extra metadata for the Pod.                                                                              |         |                                    |
-| securityContext [SecurityContext](api-reference.md#securitycontext)                                                     | SecurityContext holds container-level security attributes.                                                                   |         |                                    |
-| podSecurityContext [PodSecurityContext](api-reference.md#podsecuritycontext)                                            | SecurityContext holds pod-level security attributes and common container settings.                                           |         |                                    |
-| affinity [AffinityConfig](api-reference.md#affinityconfig)                                                              | Affinity to be used in the Pod.                                                                                              |         |                                    |
-| nodeSelector object (keys:string, values:string)                                                                        | NodeSelector to be used in the Pod.                                                                                          |         |                                    |
-| tolerations [Toleration](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#toleration-v1-core) array | Tolerations to be used in the Pod.                                                                                           |         |                                    |
-| priorityClassName string                                                                                                | PriorityClassName to be used in the Pod.                                                                                     |         |                                    |
 
 #### Galera
 
+
+
 Galera allows you to enable multi-master HA via Galera in your MariaDB cluster.
 
+
+
 _Appears in:_
+- [MariaDBSpec](#mariadbspec)
 
-* [MariaDBSpec](api-reference.md#mariadbspec)
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `primary` _[PrimaryGalera](#primarygalera)_ | Primary is the Galera configuration for the primary node. |  |  |
+| `sst` _[SST](#sst)_ | SST is the Snapshot State Transfer used when new Pods join the cluster.<br />More info: https://galeracluster.com/library/documentation/sst.html. |  | Enum: [rsync mariabackup mysqldump] <br /> |
+| `availableWhenDonor` _boolean_ | AvailableWhenDonor indicates whether a donor node should be responding to queries. It defaults to false. |  |  |
+| `galeraLibPath` _string_ | GaleraLibPath is a path inside the MariaDB image to the wsrep provider plugin. It is defaulted if not provided.<br />More info: https://galeracluster.com/library/documentation/mysql-wsrep-options.html#wsrep-provider. |  |  |
+| `replicaThreads` _integer_ | ReplicaThreads is the number of replica threads used to apply Galera write sets in parallel.<br />More info: https://mariadb.com/kb/en/galera-cluster-system-variables/#wsrep_slave_threads. |  |  |
+| `providerOptions` _object (keys:string, values:string)_ | ProviderOptions is map of Galera configuration parameters.<br />More info: https://mariadb.com/kb/en/galera-cluster-system-variables/#wsrep_provider_options. |  |  |
+| `agent` _[GaleraAgent](#galeraagent)_ | GaleraAgent is a sidecar agent that co-operates with mariadb-enterprise-operator. |  |  |
+| `recovery` _[GaleraRecovery](#galerarecovery)_ | GaleraRecovery is the recovery process performed by the operator whenever the Galera cluster is not healthy.<br />More info: https://galeracluster.com/library/documentation/crash-recovery.html. |  |  |
+| `initContainer` _[GaleraInit](#galerainit)_ | InitContainer is an init container that runs in the MariaDB Pod and co-operates with mariadb-enterprise-operator. |  |  |
+| `initJob` _[GaleraInitJob](#galerainitjob)_ | InitJob defines a Job that co-operates with mariadb-enterprise-operator by performing initialization tasks. |  |  |
+| `config` _[GaleraConfig](#galeraconfig)_ | GaleraConfig defines storage options for the Galera configuration files. |  |  |
+| `clusterName` _string_ | ClusterName is the name of the cluster to be used in the Galera config file. |  |  |
+| `enabled` _boolean_ | Enabled is a flag to enable Galera. |  |  |
 
-| Field                                                      | Description                                                                                                                                                                                                                                                                   | Default | Validation                           |
-| ---------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | ------------------------------------ |
-| primary [PrimaryGalera](api-reference.md#primarygalera)    | Primary is the Galera configuration for the primary node.                                                                                                                                                                                                                     |         |                                      |
-| sst [SST](api-reference.md#sst)                            | SST is the Snapshot State Transfer used when new Pods join the cluster.More info: [sst.html](https://galeracluster.com/library/documentation/sst.html).                                                                                                                       |         | Enum: \[rsync mariadb-backup mysqldump] |
-| availableWhenDonor boolean                                 | AvailableWhenDonor indicates whether a donor node should be responding to queries. It defaults to false.                                                                                                                                                                      |         |                                      |
-| galeraLibPath string                                       | GaleraLibPath is a path inside the MariaDB image to the wsrep provider plugin. It is defaulted if not provided.More info: [mysql-wsrep-options.html#wsrep-provider](https://galeracluster.com/library/documentation/mysql-wsrep-options.html#wsrep-provider).                 |         |                                      |
-| replicaThreads integer                                     | ReplicaThreads is the number of replica threads used to apply Galera write sets in parallel.More info: [galera-cluster-system-variables#wsrep\_slave\_threads](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_slave_threads). |         |                                      |
-| providerOptions object (keys:string, values:string)        | ProviderOptions is map of Galera configuration parameters.More info: [galera-cluster-system-variables#wsrep\_provider\_options](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_provider_options).                             |         |                                      |
-| agent [GaleraAgent](api-reference.md#galeraagent)          | GaleraAgent is a sidecar agent that co-operates with mariadb-enterprise-operator.                                                                                                                                                                                             |         |                                      |
-| recovery [GaleraRecovery](api-reference.md#galerarecovery) | GaleraRecovery is the recovery process performed by the operator whenever the Galera cluster is not healthy.More info: [crash-recovery.html](https://galeracluster.com/library/documentation/crash-recovery.html).                                                            |         |                                      |
-| initContainer [GaleraInit](api-reference.md#galerainit)    | InitContainer is an init container that runs in the MariaDB Pod and co-operates with mariadb-enterprise-operator.                                                                                                                                                             |         |                                      |
-| initJob [GaleraInitJob](api-reference.md#galerainitjob)    | InitJob defines a Job that co-operates with mariadb-enterprise-operator by performing initialization tasks.                                                                                                                                                                   |         |                                      |
-| config [GaleraConfig](api-reference.md#galeraconfig)       | GaleraConfig defines storage options for the Galera configuration files.                                                                                                                                                                                                      |         |                                      |
-| clusterName string                                         | ClusterName is the name of the cluster to be used in the Galera config file.                                                                                                                                                                                                  |         |                                      |
-| enabled boolean                                            | Enabled is a flag to enable Galera.                                                                                                                                                                                                                                           |         |                                      |
 
 #### GaleraAgent
 
+
+
 GaleraAgent is a sidecar agent that co-operates with mariadb-enterprise-operator.
 
+
+
 _Appears in:_
+- [Galera](#galera)
+- [GaleraSpec](#galeraspec)
 
-* [Galera](api-reference.md#galera)
-* [GaleraSpec](api-reference.md#galeraspec)
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `command` _string array_ | Command to be used in the Container. |  |  |
+| `args` _string array_ | Args to be used in the Container. |  |  |
+| `env` _[EnvVar](#envvar) array_ | Env represents the environment variables to be injected in a container. |  |  |
+| `envFrom` _[EnvFromSource](#envfromsource) array_ | EnvFrom represents the references (via ConfigMap and Secrets) to environment variables to be injected in the container. |  |  |
+| `volumeMounts` _[VolumeMount](#volumemount) array_ | VolumeMounts to be used in the Container. |  |  |
+| `livenessProbe` _[Probe](#probe)_ | LivenessProbe to be used in the Container. |  |  |
+| `readinessProbe` _[Probe](#probe)_ | ReadinessProbe to be used in the Container. |  |  |
+| `startupProbe` _[Probe](#probe)_ | StartupProbe to be used in the Container. |  |  |
+| `resources` _[ResourceRequirements](#resourcerequirements)_ | Resouces describes the compute resource requirements. |  |  |
+| `securityContext` _[SecurityContext](#securitycontext)_ | SecurityContext holds security configuration that will be applied to a container. |  |  |
+| `image` _string_ | Image name to be used by the MariaDB instances. The supported format is `<image>:<tag>`. |  |  |
+| `imagePullPolicy` _[PullPolicy](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#pullpolicy-v1-core)_ | ImagePullPolicy is the image pull policy. One of `Always`, `Never` or `IfNotPresent`. If not defined, it defaults to `IfNotPresent`. |  | Enum: [Always Never IfNotPresent] <br /> |
+| `port` _integer_ | Port where the agent will be listening for API connections. |  |  |
+| `probePort` _integer_ | Port where the agent will be listening for probe connections. |  |  |
+| `kubernetesAuth` _[KubernetesAuth](#kubernetesauth)_ | KubernetesAuth to be used by the agent container |  |  |
+| `basicAuth` _[BasicAuth](#basicauth)_ | BasicAuth to be used by the agent container |  |  |
+| `gracefulShutdownTimeout` _[Duration](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#duration-v1-meta)_ | GracefulShutdownTimeout is the time we give to the agent container in order to gracefully terminate in-flight requests. |  |  |
 
-| Field                                                                                                                     | Description                                                                                                                  | Default | Validation                         |
-| ------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | ------- | ---------------------------------- |
-| command string array                                                                                                      | Command to be used in the Container.                                                                                         |         |                                    |
-| args string array                                                                                                         | Args to be used in the Container.                                                                                            |         |                                    |
-| env [EnvVar](api-reference.md#envvar) array                                                                               | Env represents the environment variables to be injected in a container.                                                      |         |                                    |
-| envFrom [EnvFromSource](api-reference.md#envfromsource) array                                                             | EnvFrom represents the references (via ConfigMap and Secrets) to environment variables to be injected in the container.      |         |                                    |
-| volumeMounts [VolumeMount](api-reference.md#volumemount) array                                                            | VolumeMounts to be used in the Container.                                                                                    |         |                                    |
-| livenessProbe [Probe](api-reference.md#probe)                                                                             | LivenessProbe to be used in the Container.                                                                                   |         |                                    |
-| readinessProbe [Probe](api-reference.md#probe)                                                                            | ReadinessProbe to be used in the Container.                                                                                  |         |                                    |
-| startupProbe [Probe](api-reference.md#probe)                                                                              | StartupProbe to be used in the Container.                                                                                    |         |                                    |
-| resources [ResourceRequirements](api-reference.md#resourcerequirements)                                                   | Resouces describes the compute resource requirements.                                                                        |         |                                    |
-| securityContext [SecurityContext](api-reference.md#securitycontext)                                                       | SecurityContext holds security configuration that will be applied to a container.                                            |         |                                    |
-| image string                                                                                                              | Image name to be used by the MariaDB instances. The supported format is :.                                                   |         |                                    |
-| imagePullPolicy [PullPolicy](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#pullpolicy-v1-core)     | ImagePullPolicy is the image pull policy. One of Always, Never or IfNotPresent. If not defined, it defaults to IfNotPresent. |         | Enum: \[Always Never IfNotPresent] |
-| port integer                                                                                                              | Port where the agent will be listening for API connections.                                                                  |         |                                    |
-| probePort integer                                                                                                         | Port where the agent will be listening for probe connections.                                                                |         |                                    |
-| kubernetesAuth [KubernetesAuth](api-reference.md#kubernetesauth)                                                          | KubernetesAuth to be used by the agent container                                                                             |         |                                    |
-| basicAuth [BasicAuth](api-reference.md#basicauth)                                                                         | BasicAuth to be used by the agent container                                                                                  |         |                                    |
-| gracefulShutdownTimeout [Duration](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#duration-v1-meta) | GracefulShutdownTimeout is the time we give to the agent container in order to gracefully terminate in-flight requests.      |         |                                    |
 
 #### GaleraConfig
 
+
+
 GaleraConfig defines storage options for the Galera configuration files.
 
+
+
 _Appears in:_
+- [Galera](#galera)
+- [GaleraSpec](#galeraspec)
 
-* [Galera](api-reference.md#galera)
-* [GaleraSpec](api-reference.md#galeraspec)
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `reuseStorageVolume` _boolean_ | ReuseStorageVolume indicates that storage volume used by MariaDB should be reused to store the Galera configuration files.<br />It defaults to false, which implies that a dedicated volume for the Galera configuration files is provisioned. |  |  |
+| `volumeClaimTemplate` _[VolumeClaimTemplate](#volumeclaimtemplate)_ | VolumeClaimTemplate is a template for the PVC that will contain the Galera configuration files shared between the InitContainer, Agent and MariaDB. |  |  |
 
-| Field                                                                           | Description                                                                                                                                                                                                                              | Default | Validation |
-| ------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | ---------- |
-| reuseStorageVolume boolean                                                      | ReuseStorageVolume indicates that storage volume used by MariaDB should be reused to store the Galera configuration files.It defaults to false, which implies that a dedicated volume for the Galera configuration files is provisioned. |         |            |
-| volumeClaimTemplate [VolumeClaimTemplate](api-reference.md#volumeclaimtemplate) | VolumeClaimTemplate is a template for the PVC that will contain the Galera configuration files shared between the InitContainer, Agent and MariaDB.                                                                                      |         |            |
 
 #### GaleraInit
 
+
+
 GaleraInit is an init container that runs in the MariaDB Pod and co-operates with mariadb-enterprise-operator.
 
+
+
 _Appears in:_
+- [Galera](#galera)
+- [GaleraSpec](#galeraspec)
 
-* [Galera](api-reference.md#galera)
-* [GaleraSpec](api-reference.md#galeraspec)
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `command` _string array_ | Command to be used in the Container. |  |  |
+| `args` _string array_ | Args to be used in the Container. |  |  |
+| `env` _[EnvVar](#envvar) array_ | Env represents the environment variables to be injected in a container. |  |  |
+| `envFrom` _[EnvFromSource](#envfromsource) array_ | EnvFrom represents the references (via ConfigMap and Secrets) to environment variables to be injected in the container. |  |  |
+| `volumeMounts` _[VolumeMount](#volumemount) array_ | VolumeMounts to be used in the Container. |  |  |
+| `livenessProbe` _[Probe](#probe)_ | LivenessProbe to be used in the Container. |  |  |
+| `readinessProbe` _[Probe](#probe)_ | ReadinessProbe to be used in the Container. |  |  |
+| `startupProbe` _[Probe](#probe)_ | StartupProbe to be used in the Container. |  |  |
+| `resources` _[ResourceRequirements](#resourcerequirements)_ | Resouces describes the compute resource requirements. |  |  |
+| `securityContext` _[SecurityContext](#securitycontext)_ | SecurityContext holds security configuration that will be applied to a container. |  |  |
+| `image` _string_ | Image name to be used by the MariaDB instances. The supported format is `<image>:<tag>`. |  | Required: \{\} <br /> |
+| `imagePullPolicy` _[PullPolicy](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#pullpolicy-v1-core)_ | ImagePullPolicy is the image pull policy. One of `Always`, `Never` or `IfNotPresent`. If not defined, it defaults to `IfNotPresent`. |  | Enum: [Always Never IfNotPresent] <br /> |
 
-| Field                                                                                                                 | Description                                                                                                                  | Default | Validation                         |
-| --------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | ------- | ---------------------------------- |
-| command string array                                                                                                  | Command to be used in the Container.                                                                                         |         |                                    |
-| args string array                                                                                                     | Args to be used in the Container.                                                                                            |         |                                    |
-| env [EnvVar](api-reference.md#envvar) array                                                                           | Env represents the environment variables to be injected in a container.                                                      |         |                                    |
-| envFrom [EnvFromSource](api-reference.md#envfromsource) array                                                         | EnvFrom represents the references (via ConfigMap and Secrets) to environment variables to be injected in the container.      |         |                                    |
-| volumeMounts [VolumeMount](api-reference.md#volumemount) array                                                        | VolumeMounts to be used in the Container.                                                                                    |         |                                    |
-| livenessProbe [Probe](api-reference.md#probe)                                                                         | LivenessProbe to be used in the Container.                                                                                   |         |                                    |
-| readinessProbe [Probe](api-reference.md#probe)                                                                        | ReadinessProbe to be used in the Container.                                                                                  |         |                                    |
-| startupProbe [Probe](api-reference.md#probe)                                                                          | StartupProbe to be used in the Container.                                                                                    |         |                                    |
-| resources [ResourceRequirements](api-reference.md#resourcerequirements)                                               | Resouces describes the compute resource requirements.                                                                        |         |                                    |
-| securityContext [SecurityContext](api-reference.md#securitycontext)                                                   | SecurityContext holds security configuration that will be applied to a container.                                            |         |                                    |
-| image string                                                                                                          | Image name to be used by the MariaDB instances. The supported format is :.                                                   |         | Required: {}                       |
-| imagePullPolicy [PullPolicy](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#pullpolicy-v1-core) | ImagePullPolicy is the image pull policy. One of Always, Never or IfNotPresent. If not defined, it defaults to IfNotPresent. |         | Enum: \[Always Never IfNotPresent] |
 
 #### GaleraInitJob
 
+
+
 GaleraInitJob defines a Job used to be used to initialize the Galera cluster.
 
+
+
 _Appears in:_
+- [Galera](#galera)
+- [GaleraSpec](#galeraspec)
 
-* [Galera](api-reference.md#galera)
-* [GaleraSpec](api-reference.md#galeraspec)
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `metadata` _[Metadata](#metadata)_ | Refer to Kubernetes API documentation for fields of `metadata`. |  |  |
+| `resources` _[ResourceRequirements](#resourcerequirements)_ | Resouces describes the compute resource requirements. |  |  |
 
-| Field                                                                   | Description                                                   | Default | Validation |
-| ----------------------------------------------------------------------- | ------------------------------------------------------------- | ------- | ---------- |
-| metadata [Metadata](api-reference.md#metadata)                          | Refer to Kubernetes API documentation for fields of metadata. |         |            |
-| resources [ResourceRequirements](api-reference.md#resourcerequirements) | Resouces describes the compute resource requirements.         |         |            |
 
 #### GaleraRecovery
 
-GaleraRecovery is the recovery process performed by the operator whenever the Galera cluster is not healthy.\
-More info: [crash-recovery.html](https://galeracluster.com/library/documentation/crash-recovery.html).
+
+
+GaleraRecovery is the recovery process performed by the operator whenever the Galera cluster is not healthy.
+More info: https://galeracluster.com/library/documentation/crash-recovery.html.
+
+
 
 _Appears in:_
+- [Galera](#galera)
+- [GaleraSpec](#galeraspec)
 
-* [Galera](api-reference.md#galera)
-* [GaleraSpec](api-reference.md#galeraspec)
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `enabled` _boolean_ | Enabled is a flag to enable GaleraRecovery. |  |  |
+| `minClusterSize` _[IntOrString](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#intorstring-intstr-util)_ | MinClusterSize is the minimum number of replicas to consider the cluster healthy. It can be either a number of replicas (1) or a percentage (50%).<br />If Galera consistently reports less replicas than this value for the given 'ClusterHealthyTimeout' interval, a cluster recovery is iniated.<br />It defaults to '1' replica, and it is highly recommendeded to keep this value at '1' in most cases.<br />If set to more than one replica, the cluster recovery process may restart the healthy replicas as well. |  |  |
+| `clusterMonitorInterval` _[Duration](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#duration-v1-meta)_ | ClusterMonitorInterval represents the interval used to monitor the Galera cluster health. |  |  |
+| `clusterHealthyTimeout` _[Duration](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#duration-v1-meta)_ | ClusterHealthyTimeout represents the duration at which a Galera cluster, that consistently failed health checks,<br />is considered unhealthy, and consequently the Galera recovery process will be initiated by the operator. |  |  |
+| `clusterBootstrapTimeout` _[Duration](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#duration-v1-meta)_ | ClusterBootstrapTimeout is the time limit for bootstrapping a cluster.<br />Once this timeout is reached, the Galera recovery state is reset and a new cluster bootstrap will be attempted. |  |  |
+| `clusterUpscaleTimeout` _[Duration](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#duration-v1-meta)_ | ClusterUpscaleTimeout represents the maximum duration for upscaling the cluster's StatefulSet during the recovery process. |  |  |
+| `clusterDownscaleTimeout` _[Duration](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#duration-v1-meta)_ | ClusterDownscaleTimeout represents the maximum duration for downscaling the cluster's StatefulSet during the recovery process. |  |  |
+| `podRecoveryTimeout` _[Duration](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#duration-v1-meta)_ | PodRecoveryTimeout is the time limit for recevorying the sequence of a Pod during the cluster recovery. |  |  |
+| `podSyncTimeout` _[Duration](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#duration-v1-meta)_ | PodSyncTimeout is the time limit for a Pod to join the cluster after having performed a cluster bootstrap during the cluster recovery. |  |  |
+| `forceClusterBootstrapInPod` _string_ | ForceClusterBootstrapInPod allows you to manually initiate the bootstrap process in a specific Pod.<br />IMPORTANT: Use this option only in exceptional circumstances. Not selecting the Pod with the highest sequence number may result in data loss.<br />IMPORTANT: Ensure you unset this field after completing the bootstrap to allow the operator to choose the appropriate Pod to bootstrap from in an event of cluster recovery. |  |  |
+| `job` _[GaleraRecoveryJob](#galerarecoveryjob)_ | Job defines a Job that co-operates with mariadb-enterprise-operator by performing the Galera cluster recovery . |  |  |
 
-| Field                                                                                                                      | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             | Default | Validation |
-| -------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | ---------- |
-| enabled boolean                                                                                                            | Enabled is a flag to enable GaleraRecovery.                                                                                                                                                                                                                                                                                                                                                                                                                                                             |         |            |
-| minClusterSize [IntOrString](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#intorstring-intstr-util) | MinClusterSize is the minimum number of replicas to consider the cluster healthy. It can be either a number of replicas (1) or a percentage (50%).If Galera consistently reports less replicas than this value for the given 'ClusterHealthyTimeout' interval, a cluster recovery is iniated.It defaults to '1' replica, and it is highly recommendeded to keep this value at '1' in most cases.If set to more than one replica, the cluster recovery process may restart the healthy replicas as well. |         |            |
-| clusterMonitorInterval [Duration](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#duration-v1-meta)   | ClusterMonitorInterval represents the interval used to monitor the Galera cluster health.                                                                                                                                                                                                                                                                                                                                                                                                               |         |            |
-| clusterHealthyTimeout [Duration](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#duration-v1-meta)    | ClusterHealthyTimeout represents the duration at which a Galera cluster, that consistently failed health checks,is considered unhealthy, and consequently the Galera recovery process will be initiated by the operator.                                                                                                                                                                                                                                                                                |         |            |
-| clusterBootstrapTimeout [Duration](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#duration-v1-meta)  | ClusterBootstrapTimeout is the time limit for bootstrapping a cluster.Once this timeout is reached, the Galera recovery state is reset and a new cluster bootstrap will be attempted.                                                                                                                                                                                                                                                                                                                   |         |            |
-| clusterUpscaleTimeout [Duration](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#duration-v1-meta)    | ClusterUpscaleTimeout represents the maximum duration for upscaling the cluster's StatefulSet during the recovery process.                                                                                                                                                                                                                                                                                                                                                                              |         |            |
-| clusterDownscaleTimeout [Duration](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#duration-v1-meta)  | ClusterDownscaleTimeout represents the maximum duration for downscaling the cluster's StatefulSet during the recovery process.                                                                                                                                                                                                                                                                                                                                                                          |         |            |
-| podRecoveryTimeout [Duration](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#duration-v1-meta)       | PodRecoveryTimeout is the time limit for recevorying the sequence of a Pod during the cluster recovery.                                                                                                                                                                                                                                                                                                                                                                                                 |         |            |
-| podSyncTimeout [Duration](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#duration-v1-meta)           | PodSyncTimeout is the time limit for a Pod to join the cluster after having performed a cluster bootstrap during the cluster recovery.                                                                                                                                                                                                                                                                                                                                                                  |         |            |
-| forceClusterBootstrapInPod string                                                                                          | ForceClusterBootstrapInPod allows you to manually initiate the bootstrap process in a specific Pod.IMPORTANT: Use this option only in exceptional circumstances. Not selecting the Pod with the highest sequence number may result in data loss.IMPORTANT: Ensure you unset this field after completing the bootstrap to allow the operator to choose the appropriate Pod to bootstrap from in an event of cluster recovery.                                                                            |         |            |
-| job [GaleraRecoveryJob](api-reference.md#galerarecoveryjob)                                                                | Job defines a Job that co-operates with mariadb-enterprise-operator by performing the Galera cluster recovery .                                                                                                                                                                                                                                                                                                                                                                                         |         |            |
 
 #### GaleraRecoveryJob
 
+
+
 GaleraRecoveryJob defines a Job used to be used to recover the Galera cluster.
 
+
+
 _Appears in:_
+- [GaleraRecovery](#galerarecovery)
 
-* [GaleraRecovery](api-reference.md#galerarecovery)
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `metadata` _[Metadata](#metadata)_ | Refer to Kubernetes API documentation for fields of `metadata`. |  |  |
+| `resources` _[ResourceRequirements](#resourcerequirements)_ | Resouces describes the compute resource requirements. |  |  |
+| `podAffinity` _boolean_ | PodAffinity indicates whether the recovery Jobs should run in the same Node as the MariaDB Pods. It defaults to true. |  |  |
 
-| Field                                                                   | Description                                                                                                           | Default | Validation |
-| ----------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- | ------- | ---------- |
-| metadata [Metadata](api-reference.md#metadata)                          | Refer to Kubernetes API documentation for fields of metadata.                                                         |         |            |
-| resources [ResourceRequirements](api-reference.md#resourcerequirements) | Resouces describes the compute resource requirements.                                                                 |         |            |
-| podAffinity boolean                                                     | PodAffinity indicates whether the recovery Jobs should run in the same Node as the MariaDB Pods. It defaults to true. |         |            |
 
 #### GaleraSpec
 
+
+
 GaleraSpec is the Galera desired state specification.
 
+
+
 _Appears in:_
+- [Galera](#galera)
 
-* [Galera](api-reference.md#galera)
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `primary` _[PrimaryGalera](#primarygalera)_ | Primary is the Galera configuration for the primary node. |  |  |
+| `sst` _[SST](#sst)_ | SST is the Snapshot State Transfer used when new Pods join the cluster.<br />More info: https://galeracluster.com/library/documentation/sst.html. |  | Enum: [rsync mariabackup mysqldump] <br /> |
+| `availableWhenDonor` _boolean_ | AvailableWhenDonor indicates whether a donor node should be responding to queries. It defaults to false. |  |  |
+| `galeraLibPath` _string_ | GaleraLibPath is a path inside the MariaDB image to the wsrep provider plugin. It is defaulted if not provided.<br />More info: https://galeracluster.com/library/documentation/mysql-wsrep-options.html#wsrep-provider. |  |  |
+| `replicaThreads` _integer_ | ReplicaThreads is the number of replica threads used to apply Galera write sets in parallel.<br />More info: https://mariadb.com/kb/en/galera-cluster-system-variables/#wsrep_slave_threads. |  |  |
+| `providerOptions` _object (keys:string, values:string)_ | ProviderOptions is map of Galera configuration parameters.<br />More info: https://mariadb.com/kb/en/galera-cluster-system-variables/#wsrep_provider_options. |  |  |
+| `agent` _[GaleraAgent](#galeraagent)_ | GaleraAgent is a sidecar agent that co-operates with mariadb-enterprise-operator. |  |  |
+| `recovery` _[GaleraRecovery](#galerarecovery)_ | GaleraRecovery is the recovery process performed by the operator whenever the Galera cluster is not healthy.<br />More info: https://galeracluster.com/library/documentation/crash-recovery.html. |  |  |
+| `initContainer` _[GaleraInit](#galerainit)_ | InitContainer is an init container that runs in the MariaDB Pod and co-operates with mariadb-enterprise-operator. |  |  |
+| `initJob` _[GaleraInitJob](#galerainitjob)_ | InitJob defines a Job that co-operates with mariadb-enterprise-operator by performing initialization tasks. |  |  |
+| `config` _[GaleraConfig](#galeraconfig)_ | GaleraConfig defines storage options for the Galera configuration files. |  |  |
+| `clusterName` _string_ | ClusterName is the name of the cluster to be used in the Galera config file. |  |  |
 
-| Field                                                      | Description                                                                                                                                                                                                                                                                   | Default | Validation                           |
-| ---------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | ------------------------------------ |
-| primary [PrimaryGalera](api-reference.md#primarygalera)    | Primary is the Galera configuration for the primary node.                                                                                                                                                                                                                     |         |                                      |
-| sst [SST](api-reference.md#sst)                            | SST is the Snapshot State Transfer used when new Pods join the cluster.More info: [sst.html](https://galeracluster.com/library/documentation/sst.html).                                                                                                                       |         | Enum: \[rsync mariadb-backup mysqldump] |
-| availableWhenDonor boolean                                 | AvailableWhenDonor indicates whether a donor node should be responding to queries. It defaults to false.                                                                                                                                                                      |         |                                      |
-| galeraLibPath string                                       | GaleraLibPath is a path inside the MariaDB image to the wsrep provider plugin. It is defaulted if not provided.More info: [mysql-wsrep-options.html#wsrep-provider](https://galeracluster.com/library/documentation/mysql-wsrep-options.html#wsrep-provider).                 |         |                                      |
-| replicaThreads integer                                     | ReplicaThreads is the number of replica threads used to apply Galera write sets in parallel.More info: [galera-cluster-system-variables#wsrep\_slave\_threads](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_slave_threads). |         |                                      |
-| providerOptions object (keys:string, values:string)        | ProviderOptions is map of Galera configuration parameters.More info: [galera-cluster-system-variables#wsrep\_provider\_options](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_provider_options).                             |         |                                      |
-| agent [GaleraAgent](api-reference.md#galeraagent)          | GaleraAgent is a sidecar agent that co-operates with mariadb-enterprise-operator.                                                                                                                                                                                             |         |                                      |
-| recovery [GaleraRecovery](api-reference.md#galerarecovery) | GaleraRecovery is the recovery process performed by the operator whenever the Galera cluster is not healthy.More info: [crash-recovery.html](https://galeracluster.com/library/documentation/crash-recovery.html).                                                            |         |                                      |
-| initContainer [GaleraInit](api-reference.md#galerainit)    | InitContainer is an init container that runs in the MariaDB Pod and co-operates with mariadb-enterprise-operator.                                                                                                                                                             |         |                                      |
-| initJob [GaleraInitJob](api-reference.md#galerainitjob)    | InitJob defines a Job that co-operates with mariadb-enterprise-operator by performing initialization tasks.                                                                                                                                                                   |         |                                      |
-| config [GaleraConfig](api-reference.md#galeraconfig)       | GaleraConfig defines storage options for the Galera configuration files.                                                                                                                                                                                                      |         |                                      |
-| clusterName string                                         | ClusterName is the name of the cluster to be used in the Galera config file.                                                                                                                                                                                                  |         |                                      |
 
 #### GeneratedSecretKeyRef
 
+
+
 GeneratedSecretKeyRef defines a reference to a Secret that can be automatically generated by mariadb-enterprise-operator if needed.
 
+
+
 _Appears in:_
+- [BasicAuth](#basicauth)
+- [MariaDBSpec](#mariadbspec)
+- [MariadbMetrics](#mariadbmetrics)
+- [MaxScaleAuth](#maxscaleauth)
 
-* [BasicAuth](api-reference.md#basicauth)
-* [MariaDBSpec](api-reference.md#mariadbspec)
-* [MariadbMetrics](api-reference.md#mariadbmetrics)
-* [MaxScaleAuth](api-reference.md#maxscaleauth)
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `name` _string_ |  |  |  |
+| `key` _string_ |  |  |  |
+| `generate` _boolean_ | Generate indicates whether the Secret should be generated if the Secret referenced is not present. | false |  |
 
-| Field            | Description                                                                                        | Default | Validation |
-| ---------------- | -------------------------------------------------------------------------------------------------- | ------- | ---------- |
-| name string      |                                                                                                    |         |            |
-| key string       |                                                                                                    |         |            |
-| generate boolean | Generate indicates whether the Secret should be generated if the Secret referenced is not present. | false   |            |
 
 #### Grant
 
+
+
 Grant is the Schema for the grants API. It is used to define grants as if you were running a 'GRANT' statement.
 
-| Field                                                                                                          | Description                                                   | Default | Validation |
-| -------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------- | ------- | ---------- |
-| apiVersion string                                                                                              | enterprise.mariadb.com/v1alpha1                               |         |            |
-| kind string                                                                                                    | Grant                                                         |         |            |
-| metadata [ObjectMeta](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#objectmeta-v1-meta) | Refer to Kubernetes API documentation for fields of metadata. |         |            |
-| spec [GrantSpec](api-reference.md#grantspec)                                                                   |                                                               |         |            |
+
+
+
+
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `apiVersion` _string_ | `enterprise.mariadb.com/v1alpha1` | | |
+| `kind` _string_ | `Grant` | | |
+| `metadata` _[ObjectMeta](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#objectmeta-v1-meta)_ | Refer to Kubernetes API documentation for fields of `metadata`. |  |  |
+| `spec` _[GrantSpec](#grantspec)_ |  |  |  |
+
 
 #### GrantSpec
 
+
+
 GrantSpec defines the desired state of Grant
 
+
+
 _Appears in:_
+- [Grant](#grant)
 
-* [Grant](api-reference.md#grant)
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `requeueInterval` _[Duration](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#duration-v1-meta)_ | RequeueInterval is used to perform requeue reconciliations. |  |  |
+| `retryInterval` _[Duration](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#duration-v1-meta)_ | RetryInterval is the interval used to perform retries. |  |  |
+| `cleanupPolicy` _[CleanupPolicy](#cleanuppolicy)_ | CleanupPolicy defines the behavior for cleaning up a SQL resource. |  | Enum: [Skip Delete] <br /> |
+| `mariaDbRef` _[MariaDBRef](#mariadbref)_ | MariaDBRef is a reference to a MariaDB object. |  | Required: \{\} <br /> |
+| `privileges` _string array_ | Privileges to use in the Grant. |  | MinItems: 1 <br />Required: \{\} <br /> |
+| `database` _string_ | Database to use in the Grant. | * |  |
+| `table` _string_ | Table to use in the Grant. | * |  |
+| `username` _string_ | Username to use in the Grant. |  | Required: \{\} <br /> |
+| `host` _string_ | Host to use in the Grant. It can be localhost, an IP or '%'. |  |  |
+| `grantOption` _boolean_ | GrantOption to use in the Grant. | false |  |
 
-| Field                                                                                                             | Description                                                        | Default | Validation               |
-| ----------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------ | ------- | ------------------------ |
-| requeueInterval [Duration](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#duration-v1-meta) | RequeueInterval is used to perform requeue reconciliations.        |         |                          |
-| retryInterval [Duration](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#duration-v1-meta)   | RetryInterval is the interval used to perform retries.             |         |                          |
-| cleanupPolicy [CleanupPolicy](api-reference.md#cleanuppolicy)                                                     | CleanupPolicy defines the behavior for cleaning up a SQL resource. |         | Enum: \[Skip Delete]     |
-| mariaDbRef [MariaDBRef](api-reference.md#mariadbref)                                                              | MariaDBRef is a reference to a MariaDB object.                     |         | Required: {}             |
-| privileges string array                                                                                           | Privileges to use in the Grant.                                    |         | MinItems: 1 Required: {} |
-| database string                                                                                                   | Database to use in the Grant.                                      | \*      |                          |
-| table string                                                                                                      | Table to use in the Grant.                                         | \*      |                          |
-| username string                                                                                                   | Username to use in the Grant.                                      |         | Required: {}             |
-| host string                                                                                                       | Host to use in the Grant. It can be localhost, an IP or '%'.       |         |                          |
-| grantOption boolean                                                                                               | GrantOption to use in the Grant.                                   | false   |                          |
 
 #### HTTPGetAction
 
-Refer to the Kubernetes docs: [#httpgetaction-v1-core](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#httpgetaction-v1-core).
+
+
+Refer to the Kubernetes docs: https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#httpgetaction-v1-core.
+
+
 
 _Appears in:_
+- [Probe](#probe)
+- [ProbeHandler](#probehandler)
 
-* [Probe](api-reference.md#probe)
-* [ProbeHandler](api-reference.md#probehandler)
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `path` _string_ |  |  |  |
+| `port` _[IntOrString](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#intorstring-intstr-util)_ |  |  |  |
+| `host` _string_ |  |  |  |
+| `scheme` _[URIScheme](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#urischeme-v1-core)_ |  |  |  |
 
-| Field                                                                                                            | Description | Default | Validation |
-| ---------------------------------------------------------------------------------------------------------------- | ----------- | ------- | ---------- |
-| path string                                                                                                      |             |         |            |
-| port [IntOrString](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#intorstring-intstr-util) |             |         |            |
-| host string                                                                                                      |             |         |            |
-| scheme [URIScheme](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#urischeme-v1-core)       |             |         |            |
 
 #### HealthCheck
 
+
+
 HealthCheck defines intervals for performing health checks.
 
+
+
 _Appears in:_
+- [ConnectionSpec](#connectionspec)
+- [ConnectionTemplate](#connectiontemplate)
 
-* [ConnectionSpec](api-reference.md#connectionspec)
-* [ConnectionTemplate](api-reference.md#connectiontemplate)
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `interval` _[Duration](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#duration-v1-meta)_ | Interval used to perform health checks. |  |  |
+| `retryInterval` _[Duration](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#duration-v1-meta)_ | RetryInterval is the interval used to perform health check retries. |  |  |
 
-| Field                                                                                                           | Description                                                         | Default | Validation |
-| --------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------- | ------- | ---------- |
-| interval [Duration](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#duration-v1-meta)      | Interval used to perform health checks.                             |         |            |
-| retryInterval [Duration](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#duration-v1-meta) | RetryInterval is the interval used to perform health check retries. |         |            |
 
 #### HostPathVolumeSource
 
-Refer to the Kubernetes docs: [#hostpathvolumesource-v1-core](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#hostpathvolumesource-v1-core)
+
+
+Refer to the Kubernetes docs: https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#hostpathvolumesource-v1-core
+
+
 
 _Appears in:_
+- [StorageVolumeSource](#storagevolumesource)
+- [Volume](#volume)
+- [VolumeSource](#volumesource)
 
-* [StorageVolumeSource](api-reference.md#storagevolumesource)
-* [Volume](api-reference.md#volume)
-* [VolumeSource](api-reference.md#volumesource)
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `path` _string_ |  |  |  |
+| `type` _string_ |  |  |  |
 
-| Field       | Description | Default | Validation |
-| ----------- | ----------- | ------- | ---------- |
-| path string |             |         |            |
-| type string |             |         |            |
 
 #### Job
 
+
+
 Job defines a Job used to be used with MariaDB.
 
+
+
 _Appears in:_
+- [BootstrapFrom](#bootstrapfrom)
 
-* [BootstrapFrom](api-reference.md#bootstrapfrom)
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `metadata` _[Metadata](#metadata)_ | Refer to Kubernetes API documentation for fields of `metadata`. |  |  |
+| `affinity` _[AffinityConfig](#affinityconfig)_ | Affinity to be used in the Pod. |  |  |
+| `resources` _[ResourceRequirements](#resourcerequirements)_ | Resouces describes the compute resource requirements. |  |  |
+| `args` _string array_ | Args to be used in the Container. |  |  |
 
-| Field                                                                   | Description                                                   | Default | Validation |
-| ----------------------------------------------------------------------- | ------------------------------------------------------------- | ------- | ---------- |
-| metadata [Metadata](api-reference.md#metadata)                          | Refer to Kubernetes API documentation for fields of metadata. |         |            |
-| affinity [AffinityConfig](api-reference.md#affinityconfig)              | Affinity to be used in the Pod.                               |         |            |
-| resources [ResourceRequirements](api-reference.md#resourcerequirements) | Resouces describes the compute resource requirements.         |         |            |
-| args string array                                                       | Args to be used in the Container.                             |         |            |
 
 #### JobContainerTemplate
 
+
+
 JobContainerTemplate defines a template to configure Container objects that run in a Job.
 
+
+
 _Appears in:_
+- [BackupSpec](#backupspec)
+- [RestoreSpec](#restorespec)
+- [SqlJobSpec](#sqljobspec)
 
-* [BackupSpec](api-reference.md#backupspec)
-* [RestoreSpec](api-reference.md#restorespec)
-* [SqlJobSpec](api-reference.md#sqljobspec)
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `args` _string array_ | Args to be used in the Container. |  |  |
+| `resources` _[ResourceRequirements](#resourcerequirements)_ | Resouces describes the compute resource requirements. |  |  |
+| `securityContext` _[SecurityContext](#securitycontext)_ | SecurityContext holds security configuration that will be applied to a container. |  |  |
 
-| Field                                                                   | Description                                                                       | Default | Validation |
-| ----------------------------------------------------------------------- | --------------------------------------------------------------------------------- | ------- | ---------- |
-| args string array                                                       | Args to be used in the Container.                                                 |         |            |
-| resources [ResourceRequirements](api-reference.md#resourcerequirements) | Resouces describes the compute resource requirements.                             |         |            |
-| securityContext [SecurityContext](api-reference.md#securitycontext)     | SecurityContext holds security configuration that will be applied to a container. |         |            |
 
 #### JobPodTemplate
 
+
+
 JobPodTemplate defines a template to configure Container objects that run in a Job.
 
+
+
 _Appears in:_
+- [BackupSpec](#backupspec)
+- [RestoreSpec](#restorespec)
+- [SqlJobSpec](#sqljobspec)
 
-* [BackupSpec](api-reference.md#backupspec)
-* [RestoreSpec](api-reference.md#restorespec)
-* [SqlJobSpec](api-reference.md#sqljobspec)
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `podMetadata` _[Metadata](#metadata)_ | PodMetadata defines extra metadata for the Pod. |  |  |
+| `imagePullSecrets` _[LocalObjectReference](#localobjectreference) array_ | ImagePullSecrets is the list of pull Secrets to be used to pull the image. |  |  |
+| `podSecurityContext` _[PodSecurityContext](#podsecuritycontext)_ | SecurityContext holds pod-level security attributes and common container settings. |  |  |
+| `serviceAccountName` _string_ | ServiceAccountName is the name of the ServiceAccount to be used by the Pods. |  |  |
+| `affinity` _[AffinityConfig](#affinityconfig)_ | Affinity to be used in the Pod. |  |  |
+| `nodeSelector` _object (keys:string, values:string)_ | NodeSelector to be used in the Pod. |  |  |
+| `tolerations` _[Toleration](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#toleration-v1-core) array_ | Tolerations to be used in the Pod. |  |  |
+| `priorityClassName` _string_ | PriorityClassName to be used in the Pod. |  |  |
 
-| Field                                                                                                                   | Description                                                                        | Default | Validation |
-| ----------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ------- | ---------- |
-| podMetadata [Metadata](api-reference.md#metadata)                                                                       | PodMetadata defines extra metadata for the Pod.                                    |         |            |
-| imagePullSecrets [LocalObjectReference](api-reference.md#localobjectreference) array                                    | ImagePullSecrets is the list of pull Secrets to be used to pull the image.         |         |            |
-| podSecurityContext [PodSecurityContext](api-reference.md#podsecuritycontext)                                            | SecurityContext holds pod-level security attributes and common container settings. |         |            |
-| serviceAccountName string                                                                                               | ServiceAccountName is the name of the ServiceAccount to be used by the Pods.       |         |            |
-| affinity [AffinityConfig](api-reference.md#affinityconfig)                                                              | Affinity to be used in the Pod.                                                    |         |            |
-| nodeSelector object (keys:string, values:string)                                                                        | NodeSelector to be used in the Pod.                                                |         |            |
-| tolerations [Toleration](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#toleration-v1-core) array | Tolerations to be used in the Pod.                                                 |         |            |
-| priorityClassName string                                                                                                | PriorityClassName to be used in the Pod.                                           |         |            |
 
 #### KubernetesAuth
 
-KubernetesAuth refers to the Kubernetes authentication mechanism utilized for establishing a connection from the operator to the agent.\
+
+
+KubernetesAuth refers to the Kubernetes authentication mechanism utilized for establishing a connection from the operator to the agent.
 The agent validates the legitimacy of the service account token provided as an Authorization header by creating a TokenReview resource.
 
+
+
 _Appears in:_
+- [GaleraAgent](#galeraagent)
 
-* [GaleraAgent](api-reference.md#galeraagent)
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `enabled` _boolean_ | Enabled is a flag to enable KubernetesAuth |  |  |
+| `authDelegatorRoleName` _string_ | AuthDelegatorRoleName is the name of the ClusterRoleBinding that is associated with the "system:auth-delegator" ClusterRole.<br />It is necessary for creating TokenReview objects in order for the agent to validate the service account token. |  |  |
 
-| Field                        | Description                                                                                                                                                                                                                                | Default | Validation |
-| ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------- | ---------- |
-| enabled boolean              | Enabled is a flag to enable KubernetesAuth                                                                                                                                                                                                 |         |            |
-| authDelegatorRoleName string | AuthDelegatorRoleName is the name of the ClusterRoleBinding that is associated with the "system:auth-delegator" ClusterRole.It is necessary for creating TokenReview objects in order for the agent to validate the service account token. |         |            |
 
 #### LabelSelector
 
-_Underlying type:_ [_struct{MatchLabels map\[string\]string "json:"matchLabels,omitempty""; MatchExpressions \[\]LabelSelectorRequirement "json:"matchExpressions,omitempty""}_](api-reference.md#struct{matchlabels-map\[string]string-"json:"matchlabels,omitempty"";-matchexpressions-\[]labelselectorrequirement-"json:"matchexpressions,omitempty""})
+_Underlying type:_ _[struct{MatchLabels map[string]string "json:\"matchLabels,omitempty\""; MatchExpressions []LabelSelectorRequirement "json:\"matchExpressions,omitempty\""}](#struct{matchlabels-map[string]string-"json:\"matchlabels,omitempty\"";-matchexpressions-[]labelselectorrequirement-"json:\"matchexpressions,omitempty\""})_
 
-Refer to the Kubernetes docs: [#labelselector-v1-meta](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#labelselector-v1-meta)
+Refer to the Kubernetes docs: https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#labelselector-v1-meta
+
+
 
 _Appears in:_
+- [PodAffinityTerm](#podaffinityterm)
 
-* [PodAffinityTerm](api-reference.md#podaffinityterm)
+
+
+
 
 #### LocalObjectReference
 
-Refer to the Kubernetes docs: [#localobjectreference-v1-core](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#localobjectreference-v1-core).
+
+
+Refer to the Kubernetes docs: https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#localobjectreference-v1-core.
+
+
 
 _Appears in:_
+- [BackupSpec](#backupspec)
+- [BootstrapFrom](#bootstrapfrom)
+- [CSIVolumeSource](#csivolumesource)
+- [ConfigMapKeySelector](#configmapkeyselector)
+- [ConfigMapVolumeSource](#configmapvolumesource)
+- [ConnectionSpec](#connectionspec)
+- [EnvFromSource](#envfromsource)
+- [Exporter](#exporter)
+- [GeneratedSecretKeyRef](#generatedsecretkeyref)
+- [JobPodTemplate](#jobpodtemplate)
+- [MariaDBSpec](#mariadbspec)
+- [MaxScalePodTemplate](#maxscalepodtemplate)
+- [MaxScaleSpec](#maxscalespec)
+- [MaxScaleTLS](#maxscaletls)
+- [PodTemplate](#podtemplate)
+- [RestoreSource](#restoresource)
+- [RestoreSpec](#restorespec)
+- [SecretKeySelector](#secretkeyselector)
+- [SqlJobSpec](#sqljobspec)
+- [TLS](#tls)
 
-* [BackupSpec](api-reference.md#backupspec)
-* [BootstrapFrom](api-reference.md#bootstrapfrom)
-* [CSIVolumeSource](api-reference.md#csivolumesource)
-* [ConfigMapKeySelector](api-reference.md#configmapkeyselector)
-* [ConfigMapVolumeSource](api-reference.md#configmapvolumesource)
-* [ConnectionSpec](api-reference.md#connectionspec)
-* [EnvFromSource](api-reference.md#envfromsource)
-* [Exporter](api-reference.md#exporter)
-* [GeneratedSecretKeyRef](api-reference.md#generatedsecretkeyref)
-* [JobPodTemplate](api-reference.md#jobpodtemplate)
-* [MariaDBSpec](api-reference.md#mariadbspec)
-* [MaxScalePodTemplate](api-reference.md#maxscalepodtemplate)
-* [MaxScaleSpec](api-reference.md#maxscalespec)
-* [MaxScaleTLS](api-reference.md#maxscaletls)
-* [PodTemplate](api-reference.md#podtemplate)
-* [RestoreSource](api-reference.md#restoresource)
-* [RestoreSpec](api-reference.md#restorespec)
-* [SecretKeySelector](api-reference.md#secretkeyselector)
-* [SqlJobSpec](api-reference.md#sqljobspec)
-* [TLS](api-reference.md#tls)
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `name` _string_ |  |  |  |
 
-| Field       | Description | Default | Validation |
-| ----------- | ----------- | ------- | ---------- |
-| name string |             |         |            |
 
 #### MariaDB
 
+
+
 MariaDB is the Schema for the mariadbs API. It is used to define MariaDB clusters.
 
-| Field                                                                                                          | Description                                                   | Default | Validation |
-| -------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------- | ------- | ---------- |
-| apiVersion string                                                                                              | enterprise.mariadb.com/v1alpha1                               |         |            |
-| kind string                                                                                                    | MariaDB                                                       |         |            |
-| metadata [ObjectMeta](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#objectmeta-v1-meta) | Refer to Kubernetes API documentation for fields of metadata. |         |            |
-| spec [MariaDBSpec](api-reference.md#mariadbspec)                                                               |                                                               |         |            |
+
+
+
+
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `apiVersion` _string_ | `enterprise.mariadb.com/v1alpha1` | | |
+| `kind` _string_ | `MariaDB` | | |
+| `metadata` _[ObjectMeta](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#objectmeta-v1-meta)_ | Refer to Kubernetes API documentation for fields of `metadata`. |  |  |
+| `spec` _[MariaDBSpec](#mariadbspec)_ |  |  |  |
+
 
 #### MariaDBMaxScaleSpec
 
+
+
 MariaDBMaxScaleSpec defines a reduced version of MaxScale to be used with the current MariaDB.
 
+
+
 _Appears in:_
+- [MariaDBSpec](#mariadbspec)
 
-* [MariaDBSpec](api-reference.md#mariadbspec)
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `enabled` _boolean_ | Enabled is a flag to enable a MaxScale instance to be used with the current MariaDB. |  |  |
+| `image` _string_ | Image name to be used by the MaxScale instances. The supported format is `<image>:<tag>`.<br />Only MariaDB official images are supported. |  |  |
+| `imagePullPolicy` _[PullPolicy](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#pullpolicy-v1-core)_ | ImagePullPolicy is the image pull policy. One of `Always`, `Never` or `IfNotPresent`. If not defined, it defaults to `IfNotPresent`. |  | Enum: [Always Never IfNotPresent] <br /> |
+| `services` _[MaxScaleService](#maxscaleservice) array_ | Services define how the traffic is forwarded to the MariaDB servers. |  |  |
+| `monitor` _[MaxScaleMonitor](#maxscalemonitor)_ | Monitor monitors MariaDB server instances. |  |  |
+| `admin` _[MaxScaleAdmin](#maxscaleadmin)_ | Admin configures the admin REST API and GUI. |  |  |
+| `config` _[MaxScaleConfig](#maxscaleconfig)_ | Config defines the MaxScale configuration. |  |  |
+| `auth` _[MaxScaleAuth](#maxscaleauth)_ | Auth defines the credentials required for MaxScale to connect to MariaDB. |  |  |
+| `metrics` _[MaxScaleMetrics](#maxscalemetrics)_ | Metrics configures metrics and how to scrape them. |  |  |
+| `tls` _[MaxScaleTLS](#maxscaletls)_ | TLS defines the PKI to be used with MaxScale. |  |  |
+| `connection` _[ConnectionTemplate](#connectiontemplate)_ | Connection provides a template to define the Connection for MaxScale. |  |  |
+| `replicas` _integer_ | Replicas indicates the number of desired instances. |  |  |
+| `podDisruptionBudget` _[PodDisruptionBudget](#poddisruptionbudget)_ | PodDisruptionBudget defines the budget for replica availability. |  |  |
+| `updateStrategy` _[StatefulSetUpdateStrategy](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#statefulsetupdatestrategy-v1-apps)_ | UpdateStrategy defines the update strategy for the StatefulSet object. |  |  |
+| `kubernetesService` _[ServiceTemplate](#servicetemplate)_ | KubernetesService defines a template for a Kubernetes Service object to connect to MaxScale. |  |  |
+| `guiKubernetesService` _[ServiceTemplate](#servicetemplate)_ | GuiKubernetesService define a template for a Kubernetes Service object to connect to MaxScale's GUI. |  |  |
+| `requeueInterval` _[Duration](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#duration-v1-meta)_ | RequeueInterval is used to perform requeue reconciliations. |  |  |
 
-| Field                                                                                                                                              | Description                                                                                                                  | Default | Validation                         |
-| -------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | ------- | ---------------------------------- |
-| enabled boolean                                                                                                                                    | Enabled is a flag to enable a MaxScale instance to be used with the current MariaDB.                                         |         |                                    |
-| image string                                                                                                                                       | Image name to be used by the MaxScale instances. The supported format is :.Only MariaDB official images are supported.       |         |                                    |
-| imagePullPolicy [PullPolicy](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#pullpolicy-v1-core)                              | ImagePullPolicy is the image pull policy. One of Always, Never or IfNotPresent. If not defined, it defaults to IfNotPresent. |         | Enum: \[Always Never IfNotPresent] |
-| services [MaxScaleService](api-reference.md#maxscaleservice) array                                                                                 | Services define how the traffic is forwarded to the MariaDB servers.                                                         |         |                                    |
-| monitor [MaxScaleMonitor](api-reference.md#maxscalemonitor)                                                                                        | Monitor monitors MariaDB server instances.                                                                                   |         |                                    |
-| admin [MaxScaleAdmin](api-reference.md#maxscaleadmin)                                                                                              | Admin configures the admin REST API and GUI.                                                                                 |         |                                    |
-| config [MaxScaleConfig](api-reference.md#maxscaleconfig)                                                                                           | Config defines the MaxScale configuration.                                                                                   |         |                                    |
-| auth [MaxScaleAuth](api-reference.md#maxscaleauth)                                                                                                 | Auth defines the credentials required for MaxScale to connect to MariaDB.                                                    |         |                                    |
-| metrics [MaxScaleMetrics](api-reference.md#maxscalemetrics)                                                                                        | Metrics configures metrics and how to scrape them.                                                                           |         |                                    |
-| tls [MaxScaleTLS](api-reference.md#maxscaletls)                                                                                                    | TLS defines the PKI to be used with MaxScale.                                                                                |         |                                    |
-| connection [ConnectionTemplate](api-reference.md#connectiontemplate)                                                                               | Connection provides a template to define the Connection for MaxScale.                                                        |         |                                    |
-| replicas integer                                                                                                                                   | Replicas indicates the number of desired instances.                                                                          |         |                                    |
-| podDisruptionBudget [PodDisruptionBudget](api-reference.md#poddisruptionbudget)                                                                    | PodDisruptionBudget defines the budget for replica availability.                                                             |         |                                    |
-| updateStrategy [StatefulSetUpdateStrategy](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#statefulsetupdatestrategy-v1-apps) | UpdateStrategy defines the update strategy for the StatefulSet object.                                                       |         |                                    |
-| kubernetesService [ServiceTemplate](api-reference.md#servicetemplate)                                                                              | KubernetesService defines a template for a Kubernetes Service object to connect to MaxScale.                                 |         |                                    |
-| guiKubernetesService [ServiceTemplate](api-reference.md#servicetemplate)                                                                           | GuiKubernetesService define a template for a Kubernetes Service object to connect to MaxScale's GUI.                         |         |                                    |
-| requeueInterval [Duration](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#duration-v1-meta)                                  | RequeueInterval is used to perform requeue reconciliations.                                                                  |         |                                    |
 
 #### MariaDBRef
 
+
+
 MariaDBRef is a reference to a MariaDB object.
 
+
+
 _Appears in:_
+- [BackupSpec](#backupspec)
+- [ConnectionSpec](#connectionspec)
+- [DatabaseSpec](#databasespec)
+- [GrantSpec](#grantspec)
+- [MaxScaleSpec](#maxscalespec)
+- [RestoreSpec](#restorespec)
+- [SqlJobSpec](#sqljobspec)
+- [UserSpec](#userspec)
 
-* [BackupSpec](api-reference.md#backupspec)
-* [ConnectionSpec](api-reference.md#connectionspec)
-* [DatabaseSpec](api-reference.md#databasespec)
-* [GrantSpec](api-reference.md#grantspec)
-* [MaxScaleSpec](api-reference.md#maxscalespec)
-* [RestoreSpec](api-reference.md#restorespec)
-* [SqlJobSpec](api-reference.md#sqljobspec)
-* [UserSpec](api-reference.md#userspec)
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `name` _string_ |  |  |  |
+| `namespace` _string_ |  |  |  |
+| `waitForIt` _boolean_ | WaitForIt indicates whether the controller using this reference should wait for MariaDB to be ready. | true |  |
 
-| Field             | Description                                                                                          | Default | Validation |
-| ----------------- | ---------------------------------------------------------------------------------------------------- | ------- | ---------- |
-| name string       |                                                                                                      |         |            |
-| namespace string  |                                                                                                      |         |            |
-| waitForIt boolean | WaitForIt indicates whether the controller using this reference should wait for MariaDB to be ready. | true    |            |
 
 #### MariaDBSpec
 
+
+
 MariaDBSpec defines the desired state of MariaDB
 
+
+
 _Appears in:_
+- [MariaDB](#mariadb)
 
-* [MariaDB](api-reference.md#mariadb)
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `command` _string array_ | Command to be used in the Container. |  |  |
+| `args` _string array_ | Args to be used in the Container. |  |  |
+| `env` _[EnvVar](#envvar) array_ | Env represents the environment variables to be injected in a container. |  |  |
+| `envFrom` _[EnvFromSource](#envfromsource) array_ | EnvFrom represents the references (via ConfigMap and Secrets) to environment variables to be injected in the container. |  |  |
+| `volumeMounts` _[VolumeMount](#volumemount) array_ | VolumeMounts to be used in the Container. |  |  |
+| `livenessProbe` _[Probe](#probe)_ | LivenessProbe to be used in the Container. |  |  |
+| `readinessProbe` _[Probe](#probe)_ | ReadinessProbe to be used in the Container. |  |  |
+| `startupProbe` _[Probe](#probe)_ | StartupProbe to be used in the Container. |  |  |
+| `resources` _[ResourceRequirements](#resourcerequirements)_ | Resouces describes the compute resource requirements. |  |  |
+| `securityContext` _[SecurityContext](#securitycontext)_ | SecurityContext holds security configuration that will be applied to a container. |  |  |
+| `podMetadata` _[Metadata](#metadata)_ | PodMetadata defines extra metadata for the Pod. |  |  |
+| `imagePullSecrets` _[LocalObjectReference](#localobjectreference) array_ | ImagePullSecrets is the list of pull Secrets to be used to pull the image. |  |  |
+| `initContainers` _[Container](#container) array_ | InitContainers to be used in the Pod. |  |  |
+| `sidecarContainers` _[Container](#container) array_ | SidecarContainers to be used in the Pod. |  |  |
+| `podSecurityContext` _[PodSecurityContext](#podsecuritycontext)_ | SecurityContext holds pod-level security attributes and common container settings. |  |  |
+| `serviceAccountName` _string_ | ServiceAccountName is the name of the ServiceAccount to be used by the Pods. |  |  |
+| `affinity` _[AffinityConfig](#affinityconfig)_ | Affinity to be used in the Pod. |  |  |
+| `nodeSelector` _object (keys:string, values:string)_ | NodeSelector to be used in the Pod. |  |  |
+| `tolerations` _[Toleration](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#toleration-v1-core) array_ | Tolerations to be used in the Pod. |  |  |
+| `volumes` _[Volume](#volume) array_ | Volumes to be used in the Pod. |  |  |
+| `priorityClassName` _string_ | PriorityClassName to be used in the Pod. |  |  |
+| `topologySpreadConstraints` _[TopologySpreadConstraint](#topologyspreadconstraint) array_ | TopologySpreadConstraints to be used in the Pod. |  |  |
+| `suspend` _boolean_ | Suspend indicates whether the current resource should be suspended or not.<br />This can be useful for maintenance, as disabling the reconciliation prevents the operator from interfering with user operations during maintenance activities. | false |  |
+| `image` _string_ | Image name to be used by the MariaDB instances. The supported format is `<image>:<tag>`.<br />Only MariaDB official images are supported. |  |  |
+| `imagePullPolicy` _[PullPolicy](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#pullpolicy-v1-core)_ | ImagePullPolicy is the image pull policy. One of `Always`, `Never` or `IfNotPresent`. If not defined, it defaults to `IfNotPresent`. |  | Enum: [Always Never IfNotPresent] <br /> |
+| `inheritMetadata` _[Metadata](#metadata)_ | InheritMetadata defines the metadata to be inherited by children resources. |  |  |
+| `rootPasswordSecretKeyRef` _[GeneratedSecretKeyRef](#generatedsecretkeyref)_ | RootPasswordSecretKeyRef is a reference to a Secret key containing the root password. |  |  |
+| `rootEmptyPassword` _boolean_ | RootEmptyPassword indicates if the root password should be empty. Don't use this feature in production, it is only intended for development and test environments. |  |  |
+| `database` _string_ | Database is the name of the initial Database. |  |  |
+| `username` _string_ | Username is the initial username to be created by the operator once MariaDB is ready.<br />The initial User will have ALL PRIVILEGES in the initial Database. |  |  |
+| `passwordSecretKeyRef` _[GeneratedSecretKeyRef](#generatedsecretkeyref)_ | PasswordSecretKeyRef is a reference to a Secret that contains the password to be used by the initial User.<br />If the referred Secret is labeled with "enterprise.mariadb.com/watch", updates may be performed to the Secret in order to update the password. |  |  |
+| `passwordHashSecretKeyRef` _[SecretKeySelector](#secretkeyselector)_ | PasswordHashSecretKeyRef is a reference to the password hash to be used by the initial User.<br />If the referred Secret is labeled with "enterprise.mariadb.com/watch", updates may be performed to the Secret in order to update the password hash.<br />It requires the 'skip-strict-password-validation' option to be set. See: https://mariadb.com/docs/server/ref/mdb/cli/mariadbd/strict-password-validation/. |  |  |
+| `passwordPlugin` _[PasswordPlugin](#passwordplugin)_ | PasswordPlugin is a reference to the password plugin and arguments to be used by the initial User.<br />It requires the 'skip-strict-password-validation' option to be set. See: https://mariadb.com/docs/server/ref/mdb/cli/mariadbd/strict-password-validation/. |  |  |
+| `myCnf` _string_ | MyCnf allows to specify the my.cnf file mounted by Mariadb.<br />Updating this field will trigger an update to the Mariadb resource. |  |  |
+| `myCnfConfigMapKeyRef` _[ConfigMapKeySelector](#configmapkeyselector)_ | MyCnfConfigMapKeyRef is a reference to the my.cnf config file provided via a ConfigMap.<br />If not provided, it will be defaulted with a reference to a ConfigMap containing the MyCnf field.<br />If the referred ConfigMap is labeled with "enterprise.mariadb.com/watch", an update to the Mariadb resource will be triggered when the ConfigMap is updated. |  |  |
+| `timeZone` _string_ | TimeZone sets the default timezone. If not provided, it defaults to SYSTEM and the timezone data is not loaded. |  |  |
+| `bootstrapFrom` _[BootstrapFrom](#bootstrapfrom)_ | BootstrapFrom defines a source to bootstrap from. |  |  |
+| `storage` _[Storage](#storage)_ | Storage defines the storage options to be used for provisioning the PVCs mounted by MariaDB. |  |  |
+| `metrics` _[MariadbMetrics](#mariadbmetrics)_ | Metrics configures metrics and how to scrape them. |  |  |
+| `tls` _[TLS](#tls)_ | TLS defines the PKI to be used with MariaDB. |  |  |
+| `galera` _[Galera](#galera)_ | Galera configures high availability via Galera. |  |  |
+| `maxScaleRef` _[ObjectReference](#objectreference)_ | MaxScaleRef is a reference to a MaxScale resource to be used with the current MariaDB.<br />Providing this field implies delegating high availability tasks such as primary failover to MaxScale. |  |  |
+| `maxScale` _[MariaDBMaxScaleSpec](#mariadbmaxscalespec)_ | MaxScale is the MaxScale specification that defines the MaxScale resource to be used with the current MariaDB.<br />When enabling this field, MaxScaleRef is automatically set. |  |  |
+| `replicas` _integer_ | Replicas indicates the number of desired instances. | 1 |  |
+| `replicasAllowEvenNumber` _boolean_ | disables the validation check for an odd number of replicas. | false |  |
+| `port` _integer_ | Port where the instances will be listening for connections. | 3306 |  |
+| `servicePorts` _[ServicePort](#serviceport) array_ | ServicePorts is the list of additional named ports to be added to the Services created by the operator. |  |  |
+| `podDisruptionBudget` _[PodDisruptionBudget](#poddisruptionbudget)_ | PodDisruptionBudget defines the budget for replica availability. |  |  |
+| `updateStrategy` _[UpdateStrategy](#updatestrategy)_ | UpdateStrategy defines how a MariaDB resource is updated. |  |  |
+| `service` _[ServiceTemplate](#servicetemplate)_ | Service defines a template to configure the general Service object.<br />The network traffic of this Service will be routed to all Pods. |  |  |
+| `connection` _[ConnectionTemplate](#connectiontemplate)_ | Connection defines a template to configure the general Connection object.<br />This Connection provides the initial User access to the initial Database.<br />It will make use of the Service to route network traffic to all Pods. |  |  |
+| `primaryService` _[ServiceTemplate](#servicetemplate)_ | PrimaryService defines a template to configure the primary Service object.<br />The network traffic of this Service will be routed to the primary Pod. |  |  |
+| `primaryConnection` _[ConnectionTemplate](#connectiontemplate)_ | PrimaryConnection defines a template to configure the primary Connection object.<br />This Connection provides the initial User access to the initial Database.<br />It will make use of the PrimaryService to route network traffic to the primary Pod. |  |  |
+| `secondaryService` _[ServiceTemplate](#servicetemplate)_ | SecondaryService defines a template to configure the secondary Service object.<br />The network traffic of this Service will be routed to the secondary Pods. |  |  |
+| `secondaryConnection` _[ConnectionTemplate](#connectiontemplate)_ | SecondaryConnection defines a template to configure the secondary Connection object.<br />This Connection provides the initial User access to the initial Database.<br />It will make use of the SecondaryService to route network traffic to the secondary Pods. |  |  |
 
-| Field                                                                                                                   | Description                                                                                                                                                                                                                                                                                                                                          | Default | Validation                         |
-| ----------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | ---------------------------------- |
-| command string array                                                                                                    | Command to be used in the Container.                                                                                                                                                                                                                                                                                                                 |         |                                    |
-| args string array                                                                                                       | Args to be used in the Container.                                                                                                                                                                                                                                                                                                                    |         |                                    |
-| env [EnvVar](api-reference.md#envvar) array                                                                             | Env represents the environment variables to be injected in a container.                                                                                                                                                                                                                                                                              |         |                                    |
-| envFrom [EnvFromSource](api-reference.md#envfromsource) array                                                           | EnvFrom represents the references (via ConfigMap and Secrets) to environment variables to be injected in the container.                                                                                                                                                                                                                              |         |                                    |
-| volumeMounts [VolumeMount](api-reference.md#volumemount) array                                                          | VolumeMounts to be used in the Container.                                                                                                                                                                                                                                                                                                            |         |                                    |
-| livenessProbe [Probe](api-reference.md#probe)                                                                           | LivenessProbe to be used in the Container.                                                                                                                                                                                                                                                                                                           |         |                                    |
-| readinessProbe [Probe](api-reference.md#probe)                                                                          | ReadinessProbe to be used in the Container.                                                                                                                                                                                                                                                                                                          |         |                                    |
-| startupProbe [Probe](api-reference.md#probe)                                                                            | StartupProbe to be used in the Container.                                                                                                                                                                                                                                                                                                            |         |                                    |
-| resources [ResourceRequirements](api-reference.md#resourcerequirements)                                                 | Resouces describes the compute resource requirements.                                                                                                                                                                                                                                                                                                |         |                                    |
-| securityContext [SecurityContext](api-reference.md#securitycontext)                                                     | SecurityContext holds security configuration that will be applied to a container.                                                                                                                                                                                                                                                                    |         |                                    |
-| podMetadata [Metadata](api-reference.md#metadata)                                                                       | PodMetadata defines extra metadata for the Pod.                                                                                                                                                                                                                                                                                                      |         |                                    |
-| imagePullSecrets [LocalObjectReference](api-reference.md#localobjectreference) array                                    | ImagePullSecrets is the list of pull Secrets to be used to pull the image.                                                                                                                                                                                                                                                                           |         |                                    |
-| initContainers [Container](api-reference.md#container) array                                                            | InitContainers to be used in the Pod.                                                                                                                                                                                                                                                                                                                |         |                                    |
-| sidecarContainers [Container](api-reference.md#container) array                                                         | SidecarContainers to be used in the Pod.                                                                                                                                                                                                                                                                                                             |         |                                    |
-| podSecurityContext [PodSecurityContext](api-reference.md#podsecuritycontext)                                            | SecurityContext holds pod-level security attributes and common container settings.                                                                                                                                                                                                                                                                   |         |                                    |
-| serviceAccountName string                                                                                               | ServiceAccountName is the name of the ServiceAccount to be used by the Pods.                                                                                                                                                                                                                                                                         |         |                                    |
-| affinity [AffinityConfig](api-reference.md#affinityconfig)                                                              | Affinity to be used in the Pod.                                                                                                                                                                                                                                                                                                                      |         |                                    |
-| nodeSelector object (keys:string, values:string)                                                                        | NodeSelector to be used in the Pod.                                                                                                                                                                                                                                                                                                                  |         |                                    |
-| tolerations [Toleration](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#toleration-v1-core) array | Tolerations to be used in the Pod.                                                                                                                                                                                                                                                                                                                   |         |                                    |
-| volumes [Volume](api-reference.md#volume) array                                                                         | Volumes to be used in the Pod.                                                                                                                                                                                                                                                                                                                       |         |                                    |
-| priorityClassName string                                                                                                | PriorityClassName to be used in the Pod.                                                                                                                                                                                                                                                                                                             |         |                                    |
-| topologySpreadConstraints [TopologySpreadConstraint](api-reference.md#topologyspreadconstraint) array                   | TopologySpreadConstraints to be used in the Pod.                                                                                                                                                                                                                                                                                                     |         |                                    |
-| suspend boolean                                                                                                         | Suspend indicates whether the current resource should be suspended or not.This can be useful for maintenance, as disabling the reconciliation prevents the operator from interfering with user operations during maintenance activities.                                                                                                             | false   |                                    |
-| image string                                                                                                            | Image name to be used by the MariaDB instances. The supported format is :.Only MariaDB official images are supported.                                                                                                                                                                                                                                |         |                                    |
-| imagePullPolicy [PullPolicy](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#pullpolicy-v1-core)   | ImagePullPolicy is the image pull policy. One of Always, Never or IfNotPresent. If not defined, it defaults to IfNotPresent.                                                                                                                                                                                                                         |         | Enum: \[Always Never IfNotPresent] |
-| inheritMetadata [Metadata](api-reference.md#metadata)                                                                   | InheritMetadata defines the metadata to be inherited by children resources.                                                                                                                                                                                                                                                                          |         |                                    |
-| rootPasswordSecretKeyRef [GeneratedSecretKeyRef](api-reference.md#generatedsecretkeyref)                                | RootPasswordSecretKeyRef is a reference to a Secret key containing the root password.                                                                                                                                                                                                                                                                |         |                                    |
-| rootEmptyPassword boolean                                                                                               | RootEmptyPassword indicates if the root password should be empty. Don't use this feature in production, it is only intended for development and test environments.                                                                                                                                                                                   |         |                                    |
-| database string                                                                                                         | Database is the name of the initial Database.                                                                                                                                                                                                                                                                                                        |         |                                    |
-| username string                                                                                                         | Username is the initial username to be created by the operator once MariaDB is ready.The initial User will have ALL PRIVILEGES in the initial Database.                                                                                                                                                                                              |         |                                    |
-| passwordSecretKeyRef [GeneratedSecretKeyRef](api-reference.md#generatedsecretkeyref)                                    | PasswordSecretKeyRef is a reference to a Secret that contains the password to be used by the initial User.If the referred Secret is labeled with "enterprise.mariadb.com/watch", updates may be performed to the Secret in order to update the password.                                                                                             |         |                                    |
-| passwordHashSecretKeyRef [SecretKeySelector](api-reference.md#secretkeyselector)                                        | PasswordHashSecretKeyRef is a reference to the password hash to be used by the initial User.If the referred Secret is labeled with "enterprise.mariadb.com/watch", updates may be performed to the Secret in order to update the password hash.It requires the 'skip-strict-password-validation' option to be set. See:.                             |         |                                    |
-| passwordPlugin [PasswordPlugin](api-reference.md#passwordplugin)                                                        | PasswordPlugin is a reference to the password plugin and arguments to be used by the initial User.It requires the 'skip-strict-password-validation' option to be set. See:.                                                                                                                                                                          |         |                                    |
-| myCnf string                                                                                                            | MyCnf allows to specify the my.cnf file mounted by Mariadb.Updating this field will trigger an update to the Mariadb resource.                                                                                                                                                                                                                       |         |                                    |
-| myCnfConfigMapKeyRef [ConfigMapKeySelector](api-reference.md#configmapkeyselector)                                      | MyCnfConfigMapKeyRef is a reference to the my.cnf config file provided via a ConfigMap.If not provided, it will be defaulted with a reference to a ConfigMap containing the MyCnf field.If the referred ConfigMap is labeled with "enterprise.mariadb.com/watch", an update to the Mariadb resource will be triggered when the ConfigMap is updated. |         |                                    |
-| timeZone string                                                                                                         | TimeZone sets the default timezone. If not provided, it defaults to SYSTEM and the timezone data is not loaded.                                                                                                                                                                                                                                      |         |                                    |
-| bootstrapFrom [BootstrapFrom](api-reference.md#bootstrapfrom)                                                           | BootstrapFrom defines a source to bootstrap from.                                                                                                                                                                                                                                                                                                    |         |                                    |
-| storage [Storage](api-reference.md#storage)                                                                             | Storage defines the storage options to be used for provisioning the PVCs mounted by MariaDB.                                                                                                                                                                                                                                                         |         |                                    |
-| metrics [MariadbMetrics](api-reference.md#mariadbmetrics)                                                               | Metrics configures metrics and how to scrape them.                                                                                                                                                                                                                                                                                                   |         |                                    |
-| tls [TLS](api-reference.md#tls)                                                                                         | TLS defines the PKI to be used with MariaDB.                                                                                                                                                                                                                                                                                                         |         |                                    |
-| galera [Galera](api-reference.md#galera)                                                                                | Galera configures high availability via Galera.                                                                                                                                                                                                                                                                                                      |         |                                    |
-| maxScaleRef [ObjectReference](api-reference.md#objectreference)                                                         | MaxScaleRef is a reference to a MaxScale resource to be used with the current MariaDB.Providing this field implies delegating high availability tasks such as primary failover to MaxScale.                                                                                                                                                          |         |                                    |
-| maxScale [MariaDBMaxScaleSpec](api-reference.md#mariadbmaxscalespec)                                                    | MaxScale is the MaxScale specification that defines the MaxScale resource to be used with the current MariaDB.When enabling this field, MaxScaleRef is automatically set.                                                                                                                                                                            |         |                                    |
-| replicas integer                                                                                                        | Replicas indicates the number of desired instances.                                                                                                                                                                                                                                                                                                  | 1       |                                    |
-| replicasAllowEvenNumber boolean                                                                                         | disables the validation check for an odd number of replicas.                                                                                                                                                                                                                                                                                         | false   |                                    |
-| port integer                                                                                                            | Port where the instances will be listening for connections.                                                                                                                                                                                                                                                                                          | 3306    |                                    |
-| servicePorts [ServicePort](api-reference.md#serviceport) array                                                          | ServicePorts is the list of additional named ports to be added to the Services created by the operator.                                                                                                                                                                                                                                              |         |                                    |
-| podDisruptionBudget [PodDisruptionBudget](api-reference.md#poddisruptionbudget)                                         | PodDisruptionBudget defines the budget for replica availability.                                                                                                                                                                                                                                                                                     |         |                                    |
-| updateStrategy [UpdateStrategy](api-reference.md#updatestrategy)                                                        | UpdateStrategy defines how a MariaDB resource is updated.                                                                                                                                                                                                                                                                                            |         |                                    |
-| service [ServiceTemplate](api-reference.md#servicetemplate)                                                             | Service defines a template to configure the general Service object.The network traffic of this Service will be routed to all Pods.                                                                                                                                                                                                                   |         |                                    |
-| connection [ConnectionTemplate](api-reference.md#connectiontemplate)                                                    | Connection defines a template to configure the general Connection object.This Connection provides the initial User access to the initial Database.It will make use of the Service to route network traffic to all Pods.                                                                                                                              |         |                                    |
-| primaryService [ServiceTemplate](api-reference.md#servicetemplate)                                                      | PrimaryService defines a template to configure the primary Service object.The network traffic of this Service will be routed to the primary Pod.                                                                                                                                                                                                     |         |                                    |
-| primaryConnection [ConnectionTemplate](api-reference.md#connectiontemplate)                                             | PrimaryConnection defines a template to configure the primary Connection object.This Connection provides the initial User access to the initial Database.It will make use of the PrimaryService to route network traffic to the primary Pod.                                                                                                         |         |                                    |
-| secondaryService [ServiceTemplate](api-reference.md#servicetemplate)                                                    | SecondaryService defines a template to configure the secondary Service object.The network traffic of this Service will be routed to the secondary Pods.                                                                                                                                                                                              |         |                                    |
-| secondaryConnection [ConnectionTemplate](api-reference.md#connectiontemplate)                                           | SecondaryConnection defines a template to configure the secondary Connection object.This Connection provides the initial User access to the initial Database.It will make use of the SecondaryService to route network traffic to the secondary Pods.                                                                                                |         |                                    |
 
 #### MariadbMetrics
 
+
+
 MariadbMetrics defines the metrics for a MariaDB.
 
+
+
 _Appears in:_
+- [MariaDBSpec](#mariadbspec)
 
-* [MariaDBSpec](api-reference.md#mariadbspec)
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `enabled` _boolean_ | Enabled is a flag to enable Metrics |  |  |
+| `exporter` _[Exporter](#exporter)_ | Exporter defines the metrics exporter container. |  |  |
+| `serviceMonitor` _[ServiceMonitor](#servicemonitor)_ | ServiceMonitor defines the ServiceMonior object. |  |  |
+| `username` _string_ | Username is the username of the monitoring user used by the exporter. |  |  |
+| `passwordSecretKeyRef` _[GeneratedSecretKeyRef](#generatedsecretkeyref)_ | PasswordSecretKeyRef is a reference to the password of the monitoring user used by the exporter.<br />If the referred Secret is labeled with "enterprise.mariadb.com/watch", updates may be performed to the Secret in order to update the password. |  |  |
 
-| Field                                                                                | Description                                                                                                                                                                                                                                    | Default | Validation |
-| ------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | ---------- |
-| enabled boolean                                                                      | Enabled is a flag to enable Metrics                                                                                                                                                                                                            |         |            |
-| exporter [Exporter](api-reference.md#exporter)                                       | Exporter defines the metrics exporter container.                                                                                                                                                                                               |         |            |
-| serviceMonitor [ServiceMonitor](api-reference.md#servicemonitor)                     | ServiceMonitor defines the ServiceMonior object.                                                                                                                                                                                               |         |            |
-| username string                                                                      | Username is the username of the monitoring user used by the exporter.                                                                                                                                                                          |         |            |
-| passwordSecretKeyRef [GeneratedSecretKeyRef](api-reference.md#generatedsecretkeyref) | PasswordSecretKeyRef is a reference to the password of the monitoring user used by the exporter.If the referred Secret is labeled with "enterprise.mariadb.com/watch", updates may be performed to the Secret in order to update the password. |         |            |
 
 #### MaxScale
 
+
+
 MaxScale is the Schema for the maxscales API. It is used to define MaxScale clusters.
 
-| Field                                                                                                          | Description                                                   | Default | Validation |
-| -------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------- | ------- | ---------- |
-| apiVersion string                                                                                              | enterprise.mariadb.com/v1alpha1                               |         |            |
-| kind string                                                                                                    | MaxScale                                                      |         |            |
-| metadata [ObjectMeta](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#objectmeta-v1-meta) | Refer to Kubernetes API documentation for fields of metadata. |         |            |
-| spec [MaxScaleSpec](api-reference.md#maxscalespec)                                                             |                                                               |         |            |
+
+
+
+
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `apiVersion` _string_ | `enterprise.mariadb.com/v1alpha1` | | |
+| `kind` _string_ | `MaxScale` | | |
+| `metadata` _[ObjectMeta](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#objectmeta-v1-meta)_ | Refer to Kubernetes API documentation for fields of `metadata`. |  |  |
+| `spec` _[MaxScaleSpec](#maxscalespec)_ |  |  |  |
+
 
 #### MaxScaleAdmin
 
+
+
 MaxScaleAdmin configures the admin REST API and GUI.
 
+
+
 _Appears in:_
+- [MariaDBMaxScaleSpec](#mariadbmaxscalespec)
+- [MaxScaleSpec](#maxscalespec)
 
-* [MariaDBMaxScaleSpec](api-reference.md#mariadbmaxscalespec)
-* [MaxScaleSpec](api-reference.md#maxscalespec)
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `port` _integer_ | Port where the admin REST API and GUI will be exposed. |  |  |
+| `guiEnabled` _boolean_ | GuiEnabled indicates whether the admin GUI should be enabled. |  |  |
 
-| Field              | Description                                                   | Default | Validation |
-| ------------------ | ------------------------------------------------------------- | ------- | ---------- |
-| port integer       | Port where the admin REST API and GUI will be exposed.        |         |            |
-| guiEnabled boolean | GuiEnabled indicates whether the admin GUI should be enabled. |         |            |
 
 #### MaxScaleAuth
 
+
+
 MaxScaleAuth defines the credentials required for MaxScale to connect to MariaDB.
 
+
+
 _Appears in:_
+- [MariaDBMaxScaleSpec](#mariadbmaxscalespec)
+- [MaxScaleSpec](#maxscalespec)
 
-* [MariaDBMaxScaleSpec](api-reference.md#mariadbmaxscalespec)
-* [MaxScaleSpec](api-reference.md#maxscalespec)
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `generate` _boolean_ | Generate  defies whether the operator should generate users and grants for MaxScale to work.<br />It only supports MariaDBs specified via spec.mariaDbRef. |  |  |
+| `adminUsername` _string_ | AdminUsername is an admin username to call the admin REST API. It is defaulted if not provided. |  |  |
+| `adminPasswordSecretKeyRef` _[GeneratedSecretKeyRef](#generatedsecretkeyref)_ | AdminPasswordSecretKeyRef is Secret key reference to the admin password to call the admin REST API. It is defaulted if not provided. |  |  |
+| `deleteDefaultAdmin` _boolean_ | DeleteDefaultAdmin determines whether the default admin user should be deleted after the initial configuration. If not provided, it defaults to true. |  |  |
+| `metricsUsername` _string_ | MetricsUsername is an metrics username to call the REST API. It is defaulted if metrics are enabled. |  |  |
+| `metricsPasswordSecretKeyRef` _[GeneratedSecretKeyRef](#generatedsecretkeyref)_ | MetricsPasswordSecretKeyRef is Secret key reference to the metrics password to call the admib REST API. It is defaulted if metrics are enabled.<br />If the referred Secret is labeled with "enterprise.mariadb.com/watch", updates may be performed to the Secret in order to update the password. |  |  |
+| `clientUsername` _string_ | ClientUsername is the user to connect to MaxScale. It is defaulted if not provided. |  |  |
+| `clientPasswordSecretKeyRef` _[GeneratedSecretKeyRef](#generatedsecretkeyref)_ | ClientPasswordSecretKeyRef is Secret key reference to the password to connect to MaxScale. It is defaulted if not provided.<br />If the referred Secret is labeled with "enterprise.mariadb.com/watch", updates may be performed to the Secret in order to update the password. |  |  |
+| `clientMaxConnections` _integer_ | ClientMaxConnections defines the maximum number of connections that the client can establish.<br />If HA is enabled, make sure to increase this value, as more MaxScale replicas implies more connections.<br />It defaults to 30 times the number of MaxScale replicas. |  |  |
+| `serverUsername` _string_ | ServerUsername is the user used by MaxScale to connect to MariaDB server. It is defaulted if not provided. |  |  |
+| `serverPasswordSecretKeyRef` _[GeneratedSecretKeyRef](#generatedsecretkeyref)_ | ServerPasswordSecretKeyRef is Secret key reference to the password used by MaxScale to connect to MariaDB server. It is defaulted if not provided.<br />If the referred Secret is labeled with "enterprise.mariadb.com/watch", updates may be performed to the Secret in order to update the password. |  |  |
+| `serverMaxConnections` _integer_ | ServerMaxConnections defines the maximum number of connections that the server can establish.<br />If HA is enabled, make sure to increase this value, as more MaxScale replicas implies more connections.<br />It defaults to 30 times the number of MaxScale replicas. |  |  |
+| `monitorUsername` _string_ | MonitorUsername is the user used by MaxScale monitor to connect to MariaDB server. It is defaulted if not provided. |  |  |
+| `monitorPasswordSecretKeyRef` _[GeneratedSecretKeyRef](#generatedsecretkeyref)_ | MonitorPasswordSecretKeyRef is Secret key reference to the password used by MaxScale monitor to connect to MariaDB server. It is defaulted if not provided.<br />If the referred Secret is labeled with "enterprise.mariadb.com/watch", updates may be performed to the Secret in order to update the password. |  |  |
+| `monitorMaxConnections` _integer_ | MonitorMaxConnections defines the maximum number of connections that the monitor can establish.<br />If HA is enabled, make sure to increase this value, as more MaxScale replicas implies more connections.<br />It defaults to 30 times the number of MaxScale replicas. |  |  |
+| `syncUsername` _string_ | MonitoSyncUsernamerUsername is the user used by MaxScale config sync to connect to MariaDB server. It is defaulted when HA is enabled. |  |  |
+| `syncPasswordSecretKeyRef` _[GeneratedSecretKeyRef](#generatedsecretkeyref)_ | SyncPasswordSecretKeyRef is Secret key reference to the password used by MaxScale config to connect to MariaDB server. It is defaulted when HA is enabled.<br />If the referred Secret is labeled with "enterprise.mariadb.com/watch", updates may be performed to the Secret in order to update the password. |  |  |
+| `syncMaxConnections` _integer_ | SyncMaxConnections defines the maximum number of connections that the sync can establish.<br />If HA is enabled, make sure to increase this value, as more MaxScale replicas implies more connections.<br />It defaults to 30 times the number of MaxScale replicas. |  |  |
 
-| Field                                                                                       | Description                                                                                                                                                                                                                                                                                               | Default | Validation |
-| ------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | ---------- |
-| generate boolean                                                                            | Generate defies whether the operator should generate users and grants for MaxScale to work.It only supports MariaDBs specified via spec.mariaDbRef.                                                                                                                                                       |         |            |
-| adminUsername string                                                                        | AdminUsername is an admin username to call the admin REST API. It is defaulted if not provided.                                                                                                                                                                                                           |         |            |
-| adminPasswordSecretKeyRef [GeneratedSecretKeyRef](api-reference.md#generatedsecretkeyref)   | AdminPasswordSecretKeyRef is Secret key reference to the admin password to call the admin REST API. It is defaulted if not provided.                                                                                                                                                                      |         |            |
-| deleteDefaultAdmin boolean                                                                  | DeleteDefaultAdmin determines whether the default admin user should be deleted after the initial configuration. If not provided, it defaults to true.                                                                                                                                                     |         |            |
-| metricsUsername string                                                                      | MetricsUsername is an metrics username to call the REST API. It is defaulted if metrics are enabled.                                                                                                                                                                                                      |         |            |
-| metricsPasswordSecretKeyRef [GeneratedSecretKeyRef](api-reference.md#generatedsecretkeyref) | MetricsPasswordSecretKeyRef is Secret key reference to the metrics password to call the admib REST API. It is defaulted if metrics are enabled.If the referred Secret is labeled with "enterprise.mariadb.com/watch", updates may be performed to the Secret in order to update the password.             |         |            |
-| clientUsername string                                                                       | ClientUsername is the user to connect to MaxScale. It is defaulted if not provided.                                                                                                                                                                                                                       |         |            |
-| clientPasswordSecretKeyRef [GeneratedSecretKeyRef](api-reference.md#generatedsecretkeyref)  | ClientPasswordSecretKeyRef is Secret key reference to the password to connect to MaxScale. It is defaulted if not provided.If the referred Secret is labeled with "enterprise.mariadb.com/watch", updates may be performed to the Secret in order to update the password.                                 |         |            |
-| clientMaxConnections integer                                                                | ClientMaxConnections defines the maximum number of connections that the client can establish.If HA is enabled, make sure to increase this value, as more MaxScale replicas implies more connections.It defaults to 30 times the number of MaxScale replicas.                                              |         |            |
-| serverUsername string                                                                       | ServerUsername is the user used by MaxScale to connect to MariaDB server. It is defaulted if not provided.                                                                                                                                                                                                |         |            |
-| serverPasswordSecretKeyRef [GeneratedSecretKeyRef](api-reference.md#generatedsecretkeyref)  | ServerPasswordSecretKeyRef is Secret key reference to the password used by MaxScale to connect to MariaDB server. It is defaulted if not provided.If the referred Secret is labeled with "enterprise.mariadb.com/watch", updates may be performed to the Secret in order to update the password.          |         |            |
-| serverMaxConnections integer                                                                | ServerMaxConnections defines the maximum number of connections that the server can establish.If HA is enabled, make sure to increase this value, as more MaxScale replicas implies more connections.It defaults to 30 times the number of MaxScale replicas.                                              |         |            |
-| monitorUsername string                                                                      | MonitorUsername is the user used by MaxScale monitor to connect to MariaDB server. It is defaulted if not provided.                                                                                                                                                                                       |         |            |
-| monitorPasswordSecretKeyRef [GeneratedSecretKeyRef](api-reference.md#generatedsecretkeyref) | MonitorPasswordSecretKeyRef is Secret key reference to the password used by MaxScale monitor to connect to MariaDB server. It is defaulted if not provided.If the referred Secret is labeled with "enterprise.mariadb.com/watch", updates may be performed to the Secret in order to update the password. |         |            |
-| monitorMaxConnections integer                                                               | MonitorMaxConnections defines the maximum number of connections that the monitor can establish.If HA is enabled, make sure to increase this value, as more MaxScale replicas implies more connections.It defaults to 30 times the number of MaxScale replicas.                                            |         |            |
-| syncUsername string                                                                         | MonitoSyncUsernamerUsername is the user used by MaxScale config sync to connect to MariaDB server. It is defaulted when HA is enabled.                                                                                                                                                                    |         |            |
-| syncPasswordSecretKeyRef [GeneratedSecretKeyRef](api-reference.md#generatedsecretkeyref)    | SyncPasswordSecretKeyRef is Secret key reference to the password used by MaxScale config to connect to MariaDB server. It is defaulted when HA is enabled.If the referred Secret is labeled with "enterprise.mariadb.com/watch", updates may be performed to the Secret in order to update the password.  |         |            |
-| syncMaxConnections integer                                                                  | SyncMaxConnections defines the maximum number of connections that the sync can establish.If HA is enabled, make sure to increase this value, as more MaxScale replicas implies more connections.It defaults to 30 times the number of MaxScale replicas.                                                  |         |            |
 
 #### MaxScaleConfig
 
+
+
 MaxScaleConfig defines the MaxScale configuration.
 
+
+
 _Appears in:_
+- [MariaDBMaxScaleSpec](#mariadbmaxscalespec)
+- [MaxScaleSpec](#maxscalespec)
 
-* [MariaDBMaxScaleSpec](api-reference.md#mariadbmaxscalespec)
-* [MaxScaleSpec](api-reference.md#maxscalespec)
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `params` _object (keys:string, values:string)_ | Params is a key value pair of parameters to be used in the MaxScale static configuration file.<br />Any parameter supported by MaxScale may be specified here. See reference:<br />https://mariadb.com/kb/en/mariadb-maxscale-2308-mariadb-maxscale-configuration-guide/#global-settings. |  |  |
+| `volumeClaimTemplate` _[VolumeClaimTemplate](#volumeclaimtemplate)_ | VolumeClaimTemplate provides a template to define the PVCs for storing MaxScale runtime configuration files. It is defaulted if not provided. |  |  |
+| `sync` _[MaxScaleConfigSync](#maxscaleconfigsync)_ | Sync defines how to replicate configuration across MaxScale replicas. It is defaulted when HA is enabled. |  |  |
 
-| Field                                                                           | Description                                                                                                                                                                                                                                                                                                                                                                                                                              | Default | Validation |
-| ------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | ---------- |
-| params object (keys:string, values:string)                                      | Params is a key value pair of parameters to be used in the MaxScale static configuration file.Any parameter supported by MaxScale may be specified here. See reference:[#global-settings](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/other-maxscale-versions/mariadb-maxscale-24-08-beta/mariadb-maxscale-24-08-beta-getting-started/mariadb-maxscale-2408-maxscale-2408-beta-mariadb-maxscale-configuration-guide#global-settings). |         |            |
-| volumeClaimTemplate [VolumeClaimTemplate](api-reference.md#volumeclaimtemplate) | VolumeClaimTemplate provides a template to define the PVCs for storing MaxScale runtime configuration files. It is defaulted if not provided.                                                                                                                                                                                                                                                                                            |         |            |
-| sync [MaxScaleConfigSync](api-reference.md#maxscaleconfigsync)                  | Sync defines how to replicate configuration across MaxScale replicas. It is defaulted when HA is enabled.                                                                                                                                                                                                                                                                                                                                |         |            |
 
 #### MaxScaleConfigSync
 
+
+
 MaxScaleConfigSync defines how the config changes are replicated across replicas.
 
+
+
 _Appears in:_
+- [MaxScaleConfig](#maxscaleconfig)
 
-* [MaxScaleConfig](api-reference.md#maxscaleconfig)
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `database` _string_ | Database is the MariaDB logical database where the 'maxscale_config' table will be created in order to persist and synchronize config changes. If not provided, it defaults to 'mysql'. |  |  |
+| `interval` _[Duration](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#duration-v1-meta)_ | Interval defines the config synchronization interval. It is defaulted if not provided. |  |  |
+| `timeout` _[Duration](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#duration-v1-meta)_ | Interval defines the config synchronization timeout. It is defaulted if not provided. |  |  |
 
-| Field                                                                                                      | Description                                                                                                                                                                              | Default | Validation |
-| ---------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | ---------- |
-| database string                                                                                            | Database is the MariaDB logical database where the 'maxscale\_config' table will be created in order to persist and synchronize config changes. If not provided, it defaults to 'mysql'. |         |            |
-| interval [Duration](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#duration-v1-meta) | Interval defines the config synchronization interval. It is defaulted if not provided.                                                                                                   |         |            |
-| timeout [Duration](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#duration-v1-meta)  | Interval defines the config synchronization timeout. It is defaulted if not provided.                                                                                                    |         |            |
 
 #### MaxScaleListener
 
+
+
 MaxScaleListener defines how the MaxScale server will listen for connections.
 
+
+
 _Appears in:_
+- [MaxScaleService](#maxscaleservice)
 
-* [MaxScaleService](api-reference.md#maxscaleservice)
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `suspend` _boolean_ | Suspend indicates whether the current resource should be suspended or not.<br />This can be useful for maintenance, as disabling the reconciliation prevents the operator from interfering with user operations during maintenance activities. | false |  |
+| `name` _string_ | Name is the identifier of the listener. It is defaulted if not provided |  |  |
+| `port` _integer_ | Port is the network port where the MaxScale server will listen. |  | Required: \{\} <br /> |
+| `protocol` _string_ | Protocol is the MaxScale protocol to use when communicating with the client. If not provided, it defaults to MariaDBProtocol. |  |  |
+| `params` _object (keys:string, values:string)_ | Params defines extra parameters to pass to the listener.<br />Any parameter supported by MaxScale may be specified here. See reference:<br />https://mariadb.com/kb/en/mariadb-maxscale-2308-mariadb-maxscale-configuration-guide/#listener_1. |  |  |
 
-| Field                                      | Description                                                                                                                                                                                                                                                                                                                                                                             | Default | Validation   |
-| ------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | ------------ |
-| suspend boolean                            | Suspend indicates whether the current resource should be suspended or not.This can be useful for maintenance, as disabling the reconciliation prevents the operator from interfering with user operations during maintenance activities.                                                                                                                                                | false   |              |
-| name string                                | Name is the identifier of the listener. It is defaulted if not provided                                                                                                                                                                                                                                                                                                                 |         |              |
-| port integer                               | Port is the network port where the MaxScale server will listen.                                                                                                                                                                                                                                                                                                                         |         | Required: {} |
-| protocol string                            | Protocol is the MaxScale protocol to use when communicating with the client. If not provided, it defaults to MariaDBProtocol.                                                                                                                                                                                                                                                           |         |              |
-| params object (keys:string, values:string) | Params defines extra parameters to pass to the listener.Any parameter supported by MaxScale may be specified here. See reference:[#listener\_1](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/other-maxscale-versions/mariadb-maxscale-24-08-beta/mariadb-maxscale-24-08-beta-getting-started/mariadb-maxscale-2408-maxscale-2408-beta-mariadb-maxscale-configuration-guide#listener). |         |              |
 
 #### MaxScaleMetrics
 
+
+
 MaxScaleMetrics defines the metrics for a Maxscale.
 
+
+
 _Appears in:_
+- [MariaDBMaxScaleSpec](#mariadbmaxscalespec)
+- [MaxScaleSpec](#maxscalespec)
 
-* [MariaDBMaxScaleSpec](api-reference.md#mariadbmaxscalespec)
-* [MaxScaleSpec](api-reference.md#maxscalespec)
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `enabled` _boolean_ | Enabled is a flag to enable Metrics |  |  |
+| `exporter` _[Exporter](#exporter)_ | Exporter defines the metrics exporter container. |  |  |
+| `serviceMonitor` _[ServiceMonitor](#servicemonitor)_ | ServiceMonitor defines the ServiceMonior object. |  |  |
 
-| Field                                                            | Description                                      | Default | Validation |
-| ---------------------------------------------------------------- | ------------------------------------------------ | ------- | ---------- |
-| enabled boolean                                                  | Enabled is a flag to enable Metrics              |         |            |
-| exporter [Exporter](api-reference.md#exporter)                   | Exporter defines the metrics exporter container. |         |            |
-| serviceMonitor [ServiceMonitor](api-reference.md#servicemonitor) | ServiceMonitor defines the ServiceMonior object. |         |            |
 
 #### MaxScaleMonitor
 
+
+
 MaxScaleMonitor monitors MariaDB server instances
 
+
+
 _Appears in:_
+- [MariaDBMaxScaleSpec](#mariadbmaxscalespec)
+- [MaxScaleSpec](#maxscalespec)
 
-* [MariaDBMaxScaleSpec](api-reference.md#mariadbmaxscalespec)
-* [MaxScaleSpec](api-reference.md#maxscalespec)
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `suspend` _boolean_ | Suspend indicates whether the current resource should be suspended or not.<br />This can be useful for maintenance, as disabling the reconciliation prevents the operator from interfering with user operations during maintenance activities. | false |  |
+| `name` _string_ | Name is the identifier of the monitor. It is defaulted if not provided. |  |  |
+| `module` _[MonitorModule](#monitormodule)_ | Module is the module to use to monitor MariaDB servers. It is mandatory when no MariaDB reference is provided. |  |  |
+| `interval` _[Duration](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#duration-v1-meta)_ | Interval used to monitor MariaDB servers. It is defaulted if not provided. |  |  |
+| `cooperativeMonitoring` _[CooperativeMonitoring](#cooperativemonitoring)_ | CooperativeMonitoring enables coordination between multiple MaxScale instances running monitors. It is defaulted when HA is enabled. |  | Enum: [majority_of_all majority_of_running] <br /> |
+| `params` _object (keys:string, values:string)_ | Params defines extra parameters to pass to the monitor.<br />Any parameter supported by MaxScale may be specified here. See reference:<br />https://mariadb.com/kb/en/mariadb-maxscale-2308-common-monitor-parameters/.<br />Monitor specific parameter are also suported:<br />https://mariadb.com/kb/en/mariadb-maxscale-2308-galera-monitor/#galera-monitor-optional-parameters.<br />https://mariadb.com/kb/en/mariadb-maxscale-2308-mariadb-monitor/#configuration. |  |  |
 
-| Field                                                                                                      | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               | Default | Validation                                       |
-| ---------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | ------------------------------------------------ |
-| suspend boolean                                                                                            | Suspend indicates whether the current resource should be suspended or not.This can be useful for maintenance, as disabling the reconciliation prevents the operator from interfering with user operations during maintenance activities.                                                                                                                                                                                                                                                                                                                                                                  | false   |                                                  |
-| name string                                                                                                | Name is the identifier of the monitor. It is defaulted if not provided.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |         |                                                  |
-| module [MonitorModule](api-reference.md#monitormodule)                                                     | Module is the module to use to monitor MariaDB servers. It is mandatory when no MariaDB reference is provided.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |         |                                                  |
-| interval [Duration](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#duration-v1-meta) | Interval used to monitor MariaDB servers. It is defaulted if not provided.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |         |                                                  |
-| cooperativeMonitoring [CooperativeMonitoring](api-reference.md#cooperativemonitoring)                      | CooperativeMonitoring enables coordination between multiple MaxScale instances running monitors. It is defaulted when HA is enabled.                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |         | Enum: \[majority\_of\_all majority\_of\_running] |
-| params object (keys:string, values:string)                                                                 | <p>Params defines extra parameters to pass to the monitor.Any parameter supported by MaxScale may be specified here. See reference: <a href="https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/other-maxscale-versions/mariadb-maxscale-23-02/mariadb-maxscale-23-02-monitors/mariadb-maxscale-2302-common-monitor-parameters">Common Monitor Parameters</a></p><p>specific parameter are also suported: <a href="https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/other-maxscale-versions/mariadb-maxscale-23-02/mariadb-maxscale-23-02-monitors/mariadb-maxscale-2302-galera-monitor">Galera Monitor</a></p> |         |                                                  |
 
 #### MaxScalePodTemplate
 
+
+
 MaxScalePodTemplate defines a template for MaxScale Pods.
 
+
+
 _Appears in:_
+- [MaxScaleSpec](#maxscalespec)
 
-* [MaxScaleSpec](api-reference.md#maxscalespec)
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `podMetadata` _[Metadata](#metadata)_ | PodMetadata defines extra metadata for the Pod. |  |  |
+| `imagePullSecrets` _[LocalObjectReference](#localobjectreference) array_ | ImagePullSecrets is the list of pull Secrets to be used to pull the image. |  |  |
+| `podSecurityContext` _[PodSecurityContext](#podsecuritycontext)_ | SecurityContext holds pod-level security attributes and common container settings. |  |  |
+| `serviceAccountName` _string_ | ServiceAccountName is the name of the ServiceAccount to be used by the Pods. |  |  |
+| `affinity` _[AffinityConfig](#affinityconfig)_ | Affinity to be used in the Pod. |  |  |
+| `nodeSelector` _object (keys:string, values:string)_ | NodeSelector to be used in the Pod. |  |  |
+| `tolerations` _[Toleration](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#toleration-v1-core) array_ | Tolerations to be used in the Pod. |  |  |
+| `priorityClassName` _string_ | PriorityClassName to be used in the Pod. |  |  |
+| `topologySpreadConstraints` _[TopologySpreadConstraint](#topologyspreadconstraint) array_ | TopologySpreadConstraints to be used in the Pod. |  |  |
 
-| Field                                                                                                                   | Description                                                                        | Default | Validation |
-| ----------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ------- | ---------- |
-| podMetadata [Metadata](api-reference.md#metadata)                                                                       | PodMetadata defines extra metadata for the Pod.                                    |         |            |
-| imagePullSecrets [LocalObjectReference](api-reference.md#localobjectreference) array                                    | ImagePullSecrets is the list of pull Secrets to be used to pull the image.         |         |            |
-| podSecurityContext [PodSecurityContext](api-reference.md#podsecuritycontext)                                            | SecurityContext holds pod-level security attributes and common container settings. |         |            |
-| serviceAccountName string                                                                                               | ServiceAccountName is the name of the ServiceAccount to be used by the Pods.       |         |            |
-| affinity [AffinityConfig](api-reference.md#affinityconfig)                                                              | Affinity to be used in the Pod.                                                    |         |            |
-| nodeSelector object (keys:string, values:string)                                                                        | NodeSelector to be used in the Pod.                                                |         |            |
-| tolerations [Toleration](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#toleration-v1-core) array | Tolerations to be used in the Pod.                                                 |         |            |
-| priorityClassName string                                                                                                | PriorityClassName to be used in the Pod.                                           |         |            |
-| topologySpreadConstraints [TopologySpreadConstraint](api-reference.md#topologyspreadconstraint) array                   | TopologySpreadConstraints to be used in the Pod.                                   |         |            |
 
 #### MaxScaleServer
 
+
+
 MaxScaleServer defines a MariaDB server to forward traffic to.
 
+
+
 _Appears in:_
+- [MaxScaleSpec](#maxscalespec)
 
-* [MaxScaleSpec](api-reference.md#maxscalespec)
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `name` _string_ | Name is the identifier of the MariaDB server. |  | Required: \{\} <br /> |
+| `address` _string_ | Address is the network address of the MariaDB server. |  | Required: \{\} <br /> |
+| `port` _integer_ | Port is the network port of the MariaDB server. If not provided, it defaults to 3306. |  |  |
+| `protocol` _string_ | Protocol is the MaxScale protocol to use when communicating with this MariaDB server. If not provided, it defaults to MariaDBBackend. |  |  |
+| `maintenance` _boolean_ | Maintenance indicates whether the server is in maintenance mode. |  |  |
+| `params` _object (keys:string, values:string)_ | Params defines extra parameters to pass to the server.<br />Any parameter supported by MaxScale may be specified here. See reference:<br />https://mariadb.com/kb/en/mariadb-maxscale-2308-mariadb-maxscale-configuration-guide/#server_1. |  |  |
 
-| Field                                      | Description                                                                                                                                                                                                          | Default | Validation   |
-| ------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | ------------ |
-| name string                                | Name is the identifier of the MariaDB server.                                                                                                                                                                        |         | Required: {} |
-| address string                             | Address is the network address of the MariaDB server.                                                                                                                                                                |         | Required: {} |
-| port integer                               | Port is the network port of the MariaDB server. If not provided, it defaults to 3306.                                                                                                                                |         |              |
-| protocol string                            | Protocol is the MaxScale protocol to use when communicating with this MariaDB server. If not provided, it defaults to MariaDBBackend.                                                                                |         |              |
-| maintenance boolean                        | Maintenance indicates whether the server is in maintenance mode.                                                                                                                                                     |         |              |
-| params object (keys:string, values:string) | Params defines extra parameters to pass to the server.Any parameter supported by MaxScale may be specified here. See reference:[#server\_1](https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/SsmexDFPv2xG2OTyO5yV/). |         |              |
 
 #### MaxScaleService
 
+
+
 Services define how the traffic is forwarded to the MariaDB servers.
 
+
+
 _Appears in:_
+- [MariaDBMaxScaleSpec](#mariadbmaxscalespec)
+- [MaxScaleSpec](#maxscalespec)
 
-* [MariaDBMaxScaleSpec](api-reference.md#mariadbmaxscalespec)
-* [MaxScaleSpec](api-reference.md#maxscalespec)
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `suspend` _boolean_ | Suspend indicates whether the current resource should be suspended or not.<br />This can be useful for maintenance, as disabling the reconciliation prevents the operator from interfering with user operations during maintenance activities. | false |  |
+| `name` _string_ | Name is the identifier of the MaxScale service. |  | Required: \{\} <br /> |
+| `router` _[ServiceRouter](#servicerouter)_ | Router is the type of router to use. |  | Enum: [readwritesplit readconnroute] <br />Required: \{\} <br /> |
+| `listener` _[MaxScaleListener](#maxscalelistener)_ | MaxScaleListener defines how the MaxScale server will listen for connections. |  | Required: \{\} <br /> |
+| `params` _object (keys:string, values:string)_ | Params defines extra parameters to pass to the service.<br />Any parameter supported by MaxScale may be specified here. See reference:<br />https://mariadb.com/kb/en/mariadb-maxscale-2308-mariadb-maxscale-configuration-guide/#service_1.<br />Router specific parameter are also suported:<br />https://mariadb.com/kb/en/mariadb-maxscale-2308-readwritesplit/#configuration.<br />https://mariadb.com/kb/en/mariadb-maxscale-2308-readconnroute/#configuration. |  |  |
 
-| Field                                                          | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                | Default | Validation                                         |
-| -------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------- | -------------------------------------------------- |
-| suspend boolean                                                | Suspend indicates whether the current resource should be suspended or not.This can be useful for maintenance, as disabling the reconciliation prevents the operator from interfering with user operations during maintenance activities.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   | false   |                                                    |
-| name string                                                    | Name is the identifier of the MaxScale service.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |         | Required: {}                                       |
-| router [ServiceRouter](api-reference.md#servicerouter)         | Router is the type of router to use.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |         | Enum: \[readwritesplit readconnroute] Required: {} |
-| listener [MaxScaleListener](api-reference.md#maxscalelistener) | MaxScaleListener defines how the MaxScale server will listen for connections.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |         | Required: {}                                       |
-| params object (keys:string, values:string)                     | <p>Params defines extra parameters to pass to the service.Any parameter supported by MaxScale may be specified here. See reference:</p><p><a href="https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/other-maxscale-versions/mariadb-maxscale-23-02/mariadb-maxscale-23-02-getting-started/mariadb-maxscale-2302-mariadb-maxscale-configuration-guide">https://app.gitbook.com/o/diTpXxF5WsbHqTReoBsS/s/0pSbu5DcMSW4KwAkUcmX/other-maxscale-versions/mariadb-maxscale-23-02/mariadb-maxscale-23-02-getting-started/mariadb-maxscale-2302-mariadb-maxscale-configuration-guide</a></p><p>specific parameter are also suported:</p><p><a href="https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/other-maxscale-versions/mariadb-maxscale-mariadb-maxscale-20/maxscale-20-routers/mariadb-maxscale-20-readwritesplit">Readwritesplit</a></p><p>: <a href="https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/other-maxscale-versions/mariadb-maxscale-mariadb-maxscale-20/maxscale-20-routers/mariadb-maxscale-20-readconnroute">Readconnroute</a></p> |         |                                                    |
 
 #### MaxScaleSpec
 
+
+
 MaxScaleSpec defines the desired state of MaxScale.
 
+
+
 _Appears in:_
+- [MaxScale](#maxscale)
 
-* [MaxScale](api-reference.md#maxscale)
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `command` _string array_ | Command to be used in the Container. |  |  |
+| `args` _string array_ | Args to be used in the Container. |  |  |
+| `env` _[EnvVar](#envvar) array_ | Env represents the environment variables to be injected in a container. |  |  |
+| `envFrom` _[EnvFromSource](#envfromsource) array_ | EnvFrom represents the references (via ConfigMap and Secrets) to environment variables to be injected in the container. |  |  |
+| `volumeMounts` _[VolumeMount](#volumemount) array_ | VolumeMounts to be used in the Container. |  |  |
+| `livenessProbe` _[Probe](#probe)_ | LivenessProbe to be used in the Container. |  |  |
+| `readinessProbe` _[Probe](#probe)_ | ReadinessProbe to be used in the Container. |  |  |
+| `startupProbe` _[Probe](#probe)_ | StartupProbe to be used in the Container. |  |  |
+| `resources` _[ResourceRequirements](#resourcerequirements)_ | Resouces describes the compute resource requirements. |  |  |
+| `securityContext` _[SecurityContext](#securitycontext)_ | SecurityContext holds security configuration that will be applied to a container. |  |  |
+| `podMetadata` _[Metadata](#metadata)_ | PodMetadata defines extra metadata for the Pod. |  |  |
+| `imagePullSecrets` _[LocalObjectReference](#localobjectreference) array_ | ImagePullSecrets is the list of pull Secrets to be used to pull the image. |  |  |
+| `podSecurityContext` _[PodSecurityContext](#podsecuritycontext)_ | SecurityContext holds pod-level security attributes and common container settings. |  |  |
+| `serviceAccountName` _string_ | ServiceAccountName is the name of the ServiceAccount to be used by the Pods. |  |  |
+| `affinity` _[AffinityConfig](#affinityconfig)_ | Affinity to be used in the Pod. |  |  |
+| `nodeSelector` _object (keys:string, values:string)_ | NodeSelector to be used in the Pod. |  |  |
+| `tolerations` _[Toleration](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#toleration-v1-core) array_ | Tolerations to be used in the Pod. |  |  |
+| `priorityClassName` _string_ | PriorityClassName to be used in the Pod. |  |  |
+| `topologySpreadConstraints` _[TopologySpreadConstraint](#topologyspreadconstraint) array_ | TopologySpreadConstraints to be used in the Pod. |  |  |
+| `suspend` _boolean_ | Suspend indicates whether the current resource should be suspended or not.<br />This can be useful for maintenance, as disabling the reconciliation prevents the operator from interfering with user operations during maintenance activities. | false |  |
+| `mariaDbRef` _[MariaDBRef](#mariadbref)_ | MariaDBRef is a reference to the MariaDB that MaxScale points to. It is used to initialize the servers field. |  |  |
+| `servers` _[MaxScaleServer](#maxscaleserver) array_ | Servers are the MariaDB servers to forward traffic to. It is required if 'spec.mariaDbRef' is not provided. |  |  |
+| `image` _string_ | Image name to be used by the MaxScale instances. The supported format is `<image>:<tag>`.<br />Only MaxScale official images are supported. |  |  |
+| `imagePullPolicy` _[PullPolicy](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#pullpolicy-v1-core)_ | ImagePullPolicy is the image pull policy. One of `Always`, `Never` or `IfNotPresent`. If not defined, it defaults to `IfNotPresent`. |  | Enum: [Always Never IfNotPresent] <br /> |
+| `inheritMetadata` _[Metadata](#metadata)_ | InheritMetadata defines the metadata to be inherited by children resources. |  |  |
+| `services` _[MaxScaleService](#maxscaleservice) array_ | Services define how the traffic is forwarded to the MariaDB servers. It is defaulted if not provided. |  |  |
+| `monitor` _[MaxScaleMonitor](#maxscalemonitor)_ | Monitor monitors MariaDB server instances. It is required if 'spec.mariaDbRef' is not provided. |  |  |
+| `admin` _[MaxScaleAdmin](#maxscaleadmin)_ | Admin configures the admin REST API and GUI. |  |  |
+| `config` _[MaxScaleConfig](#maxscaleconfig)_ | Config defines the MaxScale configuration. |  |  |
+| `auth` _[MaxScaleAuth](#maxscaleauth)_ | Auth defines the credentials required for MaxScale to connect to MariaDB. |  |  |
+| `metrics` _[MaxScaleMetrics](#maxscalemetrics)_ | Metrics configures metrics and how to scrape them. |  |  |
+| `tls` _[MaxScaleTLS](#maxscaletls)_ | TLS defines the PKI to be used with MaxScale. |  |  |
+| `connection` _[ConnectionTemplate](#connectiontemplate)_ | Connection provides a template to define the Connection for MaxScale. |  |  |
+| `replicas` _integer_ | Replicas indicates the number of desired instances. | 1 |  |
+| `podDisruptionBudget` _[PodDisruptionBudget](#poddisruptionbudget)_ | PodDisruptionBudget defines the budget for replica availability. |  |  |
+| `updateStrategy` _[StatefulSetUpdateStrategy](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#statefulsetupdatestrategy-v1-apps)_ | UpdateStrategy defines the update strategy for the StatefulSet object. |  |  |
+| `kubernetesService` _[ServiceTemplate](#servicetemplate)_ | KubernetesService defines a template for a Kubernetes Service object to connect to MaxScale. |  |  |
+| `guiKubernetesService` _[ServiceTemplate](#servicetemplate)_ | GuiKubernetesService defines a template for a Kubernetes Service object to connect to MaxScale's GUI. |  |  |
+| `requeueInterval` _[Duration](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#duration-v1-meta)_ | RequeueInterval is used to perform requeue reconciliations. If not defined, it defaults to 10s. |  |  |
 
-| Field                                                                                                                                              | Description                                                                                                                                                                                                                              | Default | Validation                         |
-| -------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | ---------------------------------- |
-| command string array                                                                                                                               | Command to be used in the Container.                                                                                                                                                                                                     |         |                                    |
-| args string array                                                                                                                                  | Args to be used in the Container.                                                                                                                                                                                                        |         |                                    |
-| env [EnvVar](api-reference.md#envvar) array                                                                                                        | Env represents the environment variables to be injected in a container.                                                                                                                                                                  |         |                                    |
-| envFrom [EnvFromSource](api-reference.md#envfromsource) array                                                                                      | EnvFrom represents the references (via ConfigMap and Secrets) to environment variables to be injected in the container.                                                                                                                  |         |                                    |
-| volumeMounts [VolumeMount](api-reference.md#volumemount) array                                                                                     | VolumeMounts to be used in the Container.                                                                                                                                                                                                |         |                                    |
-| livenessProbe [Probe](api-reference.md#probe)                                                                                                      | LivenessProbe to be used in the Container.                                                                                                                                                                                               |         |                                    |
-| readinessProbe [Probe](api-reference.md#probe)                                                                                                     | ReadinessProbe to be used in the Container.                                                                                                                                                                                              |         |                                    |
-| startupProbe [Probe](api-reference.md#probe)                                                                                                       | StartupProbe to be used in the Container.                                                                                                                                                                                                |         |                                    |
-| resources [ResourceRequirements](api-reference.md#resourcerequirements)                                                                            | Resouces describes the compute resource requirements.                                                                                                                                                                                    |         |                                    |
-| securityContext [SecurityContext](api-reference.md#securitycontext)                                                                                | SecurityContext holds security configuration that will be applied to a container.                                                                                                                                                        |         |                                    |
-| podMetadata [Metadata](api-reference.md#metadata)                                                                                                  | PodMetadata defines extra metadata for the Pod.                                                                                                                                                                                          |         |                                    |
-| imagePullSecrets [LocalObjectReference](api-reference.md#localobjectreference) array                                                               | ImagePullSecrets is the list of pull Secrets to be used to pull the image.                                                                                                                                                               |         |                                    |
-| podSecurityContext [PodSecurityContext](api-reference.md#podsecuritycontext)                                                                       | SecurityContext holds pod-level security attributes and common container settings.                                                                                                                                                       |         |                                    |
-| serviceAccountName string                                                                                                                          | ServiceAccountName is the name of the ServiceAccount to be used by the Pods.                                                                                                                                                             |         |                                    |
-| affinity [AffinityConfig](api-reference.md#affinityconfig)                                                                                         | Affinity to be used in the Pod.                                                                                                                                                                                                          |         |                                    |
-| nodeSelector object (keys:string, values:string)                                                                                                   | NodeSelector to be used in the Pod.                                                                                                                                                                                                      |         |                                    |
-| tolerations [Toleration](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#toleration-v1-core) array                            | Tolerations to be used in the Pod.                                                                                                                                                                                                       |         |                                    |
-| priorityClassName string                                                                                                                           | PriorityClassName to be used in the Pod.                                                                                                                                                                                                 |         |                                    |
-| topologySpreadConstraints [TopologySpreadConstraint](api-reference.md#topologyspreadconstraint) array                                              | TopologySpreadConstraints to be used in the Pod.                                                                                                                                                                                         |         |                                    |
-| suspend boolean                                                                                                                                    | Suspend indicates whether the current resource should be suspended or not.This can be useful for maintenance, as disabling the reconciliation prevents the operator from interfering with user operations during maintenance activities. | false   |                                    |
-| mariaDbRef [MariaDBRef](api-reference.md#mariadbref)                                                                                               | MariaDBRef is a reference to the MariaDB that MaxScale points to. It is used to initialize the servers field.                                                                                                                            |         |                                    |
-| servers [MaxScaleServer](api-reference.md#maxscaleserver) array                                                                                    | Servers are the MariaDB servers to forward traffic to. It is required if 'spec.mariaDbRef' is not provided.                                                                                                                              |         |                                    |
-| image string                                                                                                                                       | Image name to be used by the MaxScale instances. The supported format is :.Only MaxScale official images are supported.                                                                                                                  |         |                                    |
-| imagePullPolicy [PullPolicy](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#pullpolicy-v1-core)                              | ImagePullPolicy is the image pull policy. One of Always, Never or IfNotPresent. If not defined, it defaults to IfNotPresent.                                                                                                             |         | Enum: \[Always Never IfNotPresent] |
-| inheritMetadata [Metadata](api-reference.md#metadata)                                                                                              | InheritMetadata defines the metadata to be inherited by children resources.                                                                                                                                                              |         |                                    |
-| services [MaxScaleService](api-reference.md#maxscaleservice) array                                                                                 | Services define how the traffic is forwarded to the MariaDB servers. It is defaulted if not provided.                                                                                                                                    |         |                                    |
-| monitor [MaxScaleMonitor](api-reference.md#maxscalemonitor)                                                                                        | Monitor monitors MariaDB server instances. It is required if 'spec.mariaDbRef' is not provided.                                                                                                                                          |         |                                    |
-| admin [MaxScaleAdmin](api-reference.md#maxscaleadmin)                                                                                              | Admin configures the admin REST API and GUI.                                                                                                                                                                                             |         |                                    |
-| config [MaxScaleConfig](api-reference.md#maxscaleconfig)                                                                                           | Config defines the MaxScale configuration.                                                                                                                                                                                               |         |                                    |
-| auth [MaxScaleAuth](api-reference.md#maxscaleauth)                                                                                                 | Auth defines the credentials required for MaxScale to connect to MariaDB.                                                                                                                                                                |         |                                    |
-| metrics [MaxScaleMetrics](api-reference.md#maxscalemetrics)                                                                                        | Metrics configures metrics and how to scrape them.                                                                                                                                                                                       |         |                                    |
-| tls [MaxScaleTLS](api-reference.md#maxscaletls)                                                                                                    | TLS defines the PKI to be used with MaxScale.                                                                                                                                                                                            |         |                                    |
-| connection [ConnectionTemplate](api-reference.md#connectiontemplate)                                                                               | Connection provides a template to define the Connection for MaxScale.                                                                                                                                                                    |         |                                    |
-| replicas integer                                                                                                                                   | Replicas indicates the number of desired instances.                                                                                                                                                                                      | 1       |                                    |
-| podDisruptionBudget [PodDisruptionBudget](api-reference.md#poddisruptionbudget)                                                                    | PodDisruptionBudget defines the budget for replica availability.                                                                                                                                                                         |         |                                    |
-| updateStrategy [StatefulSetUpdateStrategy](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#statefulsetupdatestrategy-v1-apps) | UpdateStrategy defines the update strategy for the StatefulSet object.                                                                                                                                                                   |         |                                    |
-| kubernetesService [ServiceTemplate](api-reference.md#servicetemplate)                                                                              | KubernetesService defines a template for a Kubernetes Service object to connect to MaxScale.                                                                                                                                             |         |                                    |
-| guiKubernetesService [ServiceTemplate](api-reference.md#servicetemplate)                                                                           | GuiKubernetesService defines a template for a Kubernetes Service object to connect to MaxScale's GUI.                                                                                                                                    |         |                                    |
-| requeueInterval [Duration](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#duration-v1-meta)                                  | RequeueInterval is used to perform requeue reconciliations. If not defined, it defaults to 10s.                                                                                                                                          |         |                                    |
 
 #### MaxScaleTLS
 
+
+
 TLS defines the PKI to be used with MaxScale.
 
+
+
 _Appears in:_
+- [MariaDBMaxScaleSpec](#mariadbmaxscalespec)
+- [MaxScaleSpec](#maxscalespec)
 
-* [MariaDBMaxScaleSpec](api-reference.md#mariadbmaxscalespec)
-* [MaxScaleSpec](api-reference.md#maxscalespec)
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `enabled` _boolean_ | Enabled indicates whether TLS is enabled, determining if certificates should be issued and mounted to the MaxScale instance.<br />It is enabled by default when the referred MariaDB instance (via mariaDbRef) has TLS enabled and enforced. |  |  |
+| `adminVersions` _string array_ | Versions specifies the supported TLS versions in the MaxScale REST API.<br />By default, the MaxScale's default supported versions are used. See: https://mariadb.com/kb/en/mariadb-maxscale-25-mariadb-maxscale-configuration-guide/#admin_ssl_version |  |  |
+| `serverVersions` _string array_ | ServerVersions specifies the supported TLS versions in both the servers and listeners managed by this MaxScale instance.<br />By default, the MaxScale's default supported versions are used. See: https://mariadb.com/kb/en/mariadb-maxscale-25-mariadb-maxscale-configuration-guide/#ssl_version. |  |  |
+| `adminCASecretRef` _[LocalObjectReference](#localobjectreference)_ | AdminCASecretRef is a reference to a Secret containing the admin certificate authority keypair. It is used to establish trust and issue certificates for the MaxScale's administrative REST API and GUI.<br />One of:<br />- Secret containing both the 'ca.crt' and 'ca.key' keys. This allows you to bring your own CA to Kubernetes to issue certificates.<br />- Secret containing only the 'ca.crt' in order to establish trust. In this case, either adminCertSecretRef or adminCertIssuerRef fields must be provided.<br />If not provided, a self-signed CA will be provisioned to issue the server certificate. |  |  |
+| `adminCertSecretRef` _[LocalObjectReference](#localobjectreference)_ | AdminCertSecretRef is a reference to a TLS Secret used by the MaxScale's administrative REST API and GUI. |  |  |
+| `adminCertIssuerRef` _[ObjectReference](#objectreference)_ | AdminCertIssuerRef is a reference to a cert-manager issuer object used to issue the MaxScale's administrative REST API and GUI certificate. cert-manager must be installed previously in the cluster.<br />It is mutually exclusive with adminCertSecretRef.<br />By default, the Secret field 'ca.crt' provisioned by cert-manager will be added to the trust chain. A custom trust bundle may be specified via adminCASecretRef. |  |  |
+| `adminCertConfig` _[TLSConfig](#tlsconfig)_ | AdminCertConfig allows configuring the admin certificates, either issued by the operator or cert-manager.<br />If not set, the default settings will be used. |  |  |
+| `listenerCASecretRef` _[LocalObjectReference](#localobjectreference)_ | ListenerCASecretRef is a reference to a Secret containing the listener certificate authority keypair. It is used to establish trust and issue certificates for the MaxScale's listeners.<br />One of:<br />- Secret containing both the 'ca.crt' and 'ca.key' keys. This allows you to bring your own CA to Kubernetes to issue certificates.<br />- Secret containing only the 'ca.crt' in order to establish trust. In this case, either listenerCertSecretRef or listenerCertIssuerRef fields must be provided.<br />If not provided, a self-signed CA will be provisioned to issue the listener certificate. |  |  |
+| `listenerCertSecretRef` _[LocalObjectReference](#localobjectreference)_ | ListenerCertSecretRef is a reference to a TLS Secret used by the MaxScale's listeners. |  |  |
+| `listenerCertIssuerRef` _[ObjectReference](#objectreference)_ | ListenerCertIssuerRef is a reference to a cert-manager issuer object used to issue the MaxScale's listeners certificate. cert-manager must be installed previously in the cluster.<br />It is mutually exclusive with listenerCertSecretRef.<br />By default, the Secret field 'ca.crt' provisioned by cert-manager will be added to the trust chain. A custom trust bundle may be specified via listenerCASecretRef. |  |  |
+| `listenerCertConfig` _[TLSConfig](#tlsconfig)_ | ListenerCertConfig allows configuring the listener certificates, either issued by the operator or cert-manager.<br />If not set, the default settings will be used. |  |  |
+| `serverCASecretRef` _[LocalObjectReference](#localobjectreference)_ | ServerCASecretRef is a reference to a Secret containing the MariaDB server CA certificates. It is used to establish trust with MariaDB servers.<br />The Secret should contain a 'ca.crt' key in order to establish trust.<br />If not provided, and the reference to a MariaDB resource is set (mariaDbRef), it will be defaulted to the referred MariaDB CA bundle. |  |  |
+| `serverCertSecretRef` _[LocalObjectReference](#localobjectreference)_ | ServerCertSecretRef is a reference to a TLS Secret used by MaxScale to connect to the MariaDB servers.<br />If not provided, and the reference to a MariaDB resource is set (mariaDbRef), it will be defaulted to the referred MariaDB client certificate (clientCertSecretRef). |  |  |
+| `verifyPeerCertificate` _boolean_ | VerifyPeerCertificate specifies whether the peer certificate's signature should be validated against the CA.<br />It is disabled by default. |  |  |
+| `verifyPeerHost` _boolean_ | VerifyPeerHost specifies whether the peer certificate's SANs should match the peer host.<br />It is disabled by default. |  |  |
+| `replicationSSLEnabled` _boolean_ | ReplicationSSLEnabled specifies whether the replication SSL is enabled. If enabled, the SSL options will be added to the server configuration.<br />It is enabled by default when the referred MariaDB instance (via mariaDbRef) has replication enabled.<br />If the MariaDB servers are manually provided by the user via the 'servers' field, this must be set by the user as well. |  |  |
 
-| Field                                                                               | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      | Default | Validation |
-| ----------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------- | ---------- |
-| enabled boolean                                                                     | Enabled indicates whether TLS is enabled, determining if certificates should be issued and mounted to the MaxScale instance.It is enabled by default when the referred MariaDB instance (via mariaDbRef) has TLS enabled and enforced.                                                                                                                                                                                                                                                                                                                                                           |         |            |
-| adminVersions string array                                                          | Versions specifies the supported TLS versions in the MaxScale REST API.By default, the MaxScale's default supported versions are used. See: [MariaDB MaxScale Configuration Guide](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/other-maxscale-versions/mariadb-maxscale-21-06/mariadb-maxscale-21-06-getting-started/mariadb-maxscale-2106-maxscale-2106-mariadb-maxscale-configuration-guide)                                                                                                                                                                                                |         |            |
-| serverVersions string array                                                         | ServerVersions specifies the supported TLS versions in both the servers and listeners managed by this MaxScale instance.By default, the MaxScale's default supported versions are used. See: [MariaDB MaxScale Configuration Guide](https://app.gitbook.com/s/0pSbu5DcMSW4KwAkUcmX/other-maxscale-versions/mariadb-maxscale-21-06/mariadb-maxscale-21-06-getting-started/mariadb-maxscale-2106-maxscale-2106-mariadb-maxscale-configuration-guide).                                                                                                                                              |         |            |
-| adminCASecretRef [LocalObjectReference](api-reference.md#localobjectreference)      | AdminCASecretRef is a reference to a Secret containing the admin certificate authority keypair. It is used to establish trust and issue certificates for the MaxScale's administrative REST API and GUI.One of:- Secret containing both the 'ca.crt' and 'ca.key' keys. This allows you to bring your own CA to Kubernetes to issue certificates.- Secret containing only the 'ca.crt' in order to establish trust. In this case, either adminCertSecretRef or adminCertIssuerRef fields must be provided.If not provided, a self-signed CA will be provisioned to issue the server certificate. |         |            |
-| adminCertSecretRef [LocalObjectReference](api-reference.md#localobjectreference)    | AdminCertSecretRef is a reference to a TLS Secret used by the MaxScale's administrative REST API and GUI.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |         |            |
-| adminCertIssuerRef [ObjectReference](api-reference.md#objectreference)              | AdminCertIssuerRef is a reference to a cert-manager issuer object used to issue the MaxScale's administrative REST API and GUI certificate. cert-manager must be installed previously in the cluster.It is mutually exclusive with adminCertSecretRef.By default, the Secret field 'ca.crt' provisioned by cert-manager will be added to the trust chain. A custom trust bundle may be specified via adminCASecretRef.                                                                                                                                                                           |         |            |
-| adminCertConfig [TLSConfig](api-reference.md#tlsconfig)                             | AdminCertConfig allows configuring the admin certificates, either issued by the operator or cert-manager.If not set, the default settings will be used.                                                                                                                                                                                                                                                                                                                                                                                                                                          |         |            |
-| listenerCASecretRef [LocalObjectReference](api-reference.md#localobjectreference)   | ListenerCASecretRef is a reference to a Secret containing the listener certificate authority keypair. It is used to establish trust and issue certificates for the MaxScale's listeners.One of:- Secret containing both the 'ca.crt' and 'ca.key' keys. This allows you to bring your own CA to Kubernetes to issue certificates.- Secret containing only the 'ca.crt' in order to establish trust. In this case, either listenerCertSecretRef or listenerCertIssuerRef fields must be provided.If not provided, a self-signed CA will be provisioned to issue the listener certificate.         |         |            |
-| listenerCertSecretRef [LocalObjectReference](api-reference.md#localobjectreference) | ListenerCertSecretRef is a reference to a TLS Secret used by the MaxScale's listeners.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |         |            |
-| listenerCertIssuerRef [ObjectReference](api-reference.md#objectreference)           | ListenerCertIssuerRef is a reference to a cert-manager issuer object used to issue the MaxScale's listeners certificate. cert-manager must be installed previously in the cluster.It is mutually exclusive with listenerCertSecretRef.By default, the Secret field 'ca.crt' provisioned by cert-manager will be added to the trust chain. A custom trust bundle may be specified via listenerCASecretRef.                                                                                                                                                                                        |         |            |
-| listenerCertConfig [TLSConfig](api-reference.md#tlsconfig)                          | ListenerCertConfig allows configuring the listener certificates, either issued by the operator or cert-manager.If not set, the default settings will be used.                                                                                                                                                                                                                                                                                                                                                                                                                                    |         |            |
-| serverCASecretRef [LocalObjectReference](api-reference.md#localobjectreference)     | ServerCASecretRef is a reference to a Secret containing the MariaDB server CA certificates. It is used to establish trust with MariaDB servers.The Secret should contain a 'ca.crt' key in order to establish trust.If not provided, and the reference to a MariaDB resource is set (mariaDbRef), it will be defaulted to the referred MariaDB CA bundle.                                                                                                                                                                                                                                        |         |            |
-| serverCertSecretRef [LocalObjectReference](api-reference.md#localobjectreference)   | ServerCertSecretRef is a reference to a TLS Secret used by MaxScale to connect to the MariaDB servers.If not provided, and the reference to a MariaDB resource is set (mariaDbRef), it will be defaulted to the referred MariaDB client certificate (clientCertSecretRef).                                                                                                                                                                                                                                                                                                                       |         |            |
-| verifyPeerCertificate boolean                                                       | VerifyPeerCertificate specifies whether the peer certificate's signature should be validated against the CA.It is disabled by default.                                                                                                                                                                                                                                                                                                                                                                                                                                                           |         |            |
-| verifyPeerHost boolean                                                              | VerifyPeerHost specifies whether the peer certificate's SANs should match the peer host.It is disabled by default.                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |         |            |
-| replicationSSLEnabled boolean                                                       | ReplicationSSLEnabled specifies whether the replication SSL is enabled. If enabled, the SSL options will be added to the server configuration.It is enabled by default when the referred MariaDB instance (via mariaDbRef) has replication enabled.If the MariaDB servers are manually provided by the user via the 'servers' field, this must be set by the user as well.                                                                                                                                                                                                                       |         |            |
 
 #### Metadata
 
+
+
 Metadata defines the metadata to added to resources.
 
+
+
 _Appears in:_
+- [BackupSpec](#backupspec)
+- [Exporter](#exporter)
+- [GaleraInitJob](#galerainitjob)
+- [GaleraRecoveryJob](#galerarecoveryjob)
+- [Job](#job)
+- [JobPodTemplate](#jobpodtemplate)
+- [MariaDBSpec](#mariadbspec)
+- [MaxScalePodTemplate](#maxscalepodtemplate)
+- [MaxScaleSpec](#maxscalespec)
+- [PodTemplate](#podtemplate)
+- [RestoreSpec](#restorespec)
+- [SecretTemplate](#secrettemplate)
+- [ServiceTemplate](#servicetemplate)
+- [SqlJobSpec](#sqljobspec)
+- [VolumeClaimTemplate](#volumeclaimtemplate)
 
-* [BackupSpec](api-reference.md#backupspec)
-* [Exporter](api-reference.md#exporter)
-* [GaleraInitJob](api-reference.md#galerainitjob)
-* [GaleraRecoveryJob](api-reference.md#galerarecoveryjob)
-* [Job](api-reference.md#job)
-* [JobPodTemplate](api-reference.md#jobpodtemplate)
-* [MariaDBSpec](api-reference.md#mariadbspec)
-* [MaxScalePodTemplate](api-reference.md#maxscalepodtemplate)
-* [MaxScaleSpec](api-reference.md#maxscalespec)
-* [PodTemplate](api-reference.md#podtemplate)
-* [RestoreSpec](api-reference.md#restorespec)
-* [SecretTemplate](api-reference.md#secrettemplate)
-* [ServiceTemplate](api-reference.md#servicetemplate)
-* [SqlJobSpec](api-reference.md#sqljobspec)
-* [VolumeClaimTemplate](api-reference.md#volumeclaimtemplate)
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `labels` _object (keys:string, values:string)_ | Labels to be added to children resources. |  |  |
+| `annotations` _object (keys:string, values:string)_ | Annotations to be added to children resources. |  |  |
 
-| Field                                           | Description                                    | Default | Validation |
-| ----------------------------------------------- | ---------------------------------------------- | ------- | ---------- |
-| labels object (keys:string, values:string)      | Labels to be added to children resources.      |         |            |
-| annotations object (keys:string, values:string) | Annotations to be added to children resources. |         |            |
 
 #### MonitorModule
 
@@ -1316,560 +1599,695 @@ _Underlying type:_ _string_
 
 MonitorModule defines the type of monitor module
 
+
+
 _Appears in:_
+- [MaxScaleMonitor](#maxscalemonitor)
 
-* [MaxScaleMonitor](api-reference.md#maxscalemonitor)
+| Field | Description |
+| --- | --- |
+| `mariadbmon` | MonitorModuleMariadb is a monitor to be used with MariaDB servers.<br /> |
+| `galeramon` | MonitorModuleGalera is a monitor to be used with Galera servers.<br /> |
 
-| Field      | Description                                                        |
-| ---------- | ------------------------------------------------------------------ |
-| mariadbmon | MonitorModuleMariadb is a monitor to be used with MariaDB servers. |
-| galeramon  | MonitorModuleGalera is a monitor to be used with Galera servers.   |
 
 #### NFSVolumeSource
 
-Refer to the Kubernetes docs: [#nfsvolumesource-v1-core](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#nfsvolumesource-v1-core).
+
+
+Refer to the Kubernetes docs: https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#nfsvolumesource-v1-core.
+
+
 
 _Appears in:_
+- [StorageVolumeSource](#storagevolumesource)
+- [Volume](#volume)
+- [VolumeSource](#volumesource)
 
-* [StorageVolumeSource](api-reference.md#storagevolumesource)
-* [Volume](api-reference.md#volume)
-* [VolumeSource](api-reference.md#volumesource)
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `server` _string_ |  |  |  |
+| `path` _string_ |  |  |  |
+| `readOnly` _boolean_ |  |  |  |
 
-| Field            | Description | Default | Validation |
-| ---------------- | ----------- | ------- | ---------- |
-| server string    |             |         |            |
-| path string      |             |         |            |
-| readOnly boolean |             |         |            |
 
 #### NodeAffinity
 
-Refer to the Kubernetes docs: [#nodeaffinity-v1-core](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#nodeaffinity-v1-core)
+
+
+Refer to the Kubernetes docs: https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#nodeaffinity-v1-core
+
+
 
 _Appears in:_
+- [Affinity](#affinity)
+- [AffinityConfig](#affinityconfig)
 
-* [Affinity](api-reference.md#affinity)
-* [AffinityConfig](api-reference.md#affinityconfig)
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `requiredDuringSchedulingIgnoredDuringExecution` _[NodeSelector](#nodeselector)_ |  |  |  |
+| `preferredDuringSchedulingIgnoredDuringExecution` _[PreferredSchedulingTerm](#preferredschedulingterm) array_ |  |  |  |
 
-| Field                                                                                                                     | Description | Default | Validation |
-| ------------------------------------------------------------------------------------------------------------------------- | ----------- | ------- | ---------- |
-| requiredDuringSchedulingIgnoredDuringExecution [NodeSelector](api-reference.md#nodeselector)                              |             |         |            |
-| preferredDuringSchedulingIgnoredDuringExecution [PreferredSchedulingTerm](api-reference.md#preferredschedulingterm) array |             |         |            |
 
 #### NodeSelector
 
-Refer to the Kubernetes docs: [#nodeselector-v1-core](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#nodeselector-v1-core)
+
+
+Refer to the Kubernetes docs: https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#nodeselector-v1-core
+
+
 
 _Appears in:_
+- [NodeAffinity](#nodeaffinity)
 
-* [NodeAffinity](api-reference.md#nodeaffinity)
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `nodeSelectorTerms` _[NodeSelectorTerm](#nodeselectorterm) array_ |  |  |  |
 
-| Field                                                                         | Description | Default | Validation |
-| ----------------------------------------------------------------------------- | ----------- | ------- | ---------- |
-| nodeSelectorTerms [NodeSelectorTerm](api-reference.md#nodeselectorterm) array |             |         |            |
+
+
 
 #### NodeSelectorTerm
 
-_Underlying type:_ [_struct{MatchExpressions \[\]NodeSelectorRequirement "json:"matchExpressions,omitempty""; MatchFields \[\]NodeSelectorRequirement "json:"matchFields,omitempty""}_](api-reference.md#struct{matchexpressions-\[]nodeselectorrequirement-"json:"matchexpressions,omitempty"";-matchfields-\[]nodeselectorrequirement-"json:"matchfields,omitempty""})
+_Underlying type:_ _[struct{MatchExpressions []NodeSelectorRequirement "json:\"matchExpressions,omitempty\""; MatchFields []NodeSelectorRequirement "json:\"matchFields,omitempty\""}](#struct{matchexpressions-[]nodeselectorrequirement-"json:\"matchexpressions,omitempty\"";-matchfields-[]nodeselectorrequirement-"json:\"matchfields,omitempty\""})_
 
-Refer to the Kubernetes docs: [#nodeselectorterm-v1-core](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#nodeselectorterm-v1-core)
+Refer to the Kubernetes docs: https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#nodeselectorterm-v1-core
+
+
 
 _Appears in:_
+- [NodeSelector](#nodeselector)
+- [PreferredSchedulingTerm](#preferredschedulingterm)
 
-* [NodeSelector](api-reference.md#nodeselector)
-* [PreferredSchedulingTerm](api-reference.md#preferredschedulingterm)
+
 
 #### ObjectFieldSelector
 
-Refer to the Kubernetes docs: [#objectfieldselector-v1-core](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#objectfieldselector-v1-core).
+
+
+Refer to the Kubernetes docs: https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#objectfieldselector-v1-core.
+
+
 
 _Appears in:_
+- [EnvVarSource](#envvarsource)
 
-* [EnvVarSource](api-reference.md#envvarsource)
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `apiVersion` _string_ |  |  |  |
+| `fieldPath` _string_ |  |  |  |
 
-| Field             | Description | Default | Validation |
-| ----------------- | ----------- | ------- | ---------- |
-| apiVersion string |             |         |            |
-| fieldPath string  |             |         |            |
 
 #### ObjectReference
 
-Refer to the Kubernetes docs: [#objectreference-v1-core](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#objectreference-v1-core).
+
+
+Refer to the Kubernetes docs: https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#objectreference-v1-core.
+
+
 
 _Appears in:_
+- [ConnectionSpec](#connectionspec)
+- [MariaDBRef](#mariadbref)
+- [MariaDBSpec](#mariadbspec)
 
-* [ConnectionSpec](api-reference.md#connectionspec)
-* [MariaDBRef](api-reference.md#mariadbref)
-* [MariaDBSpec](api-reference.md#mariadbspec)
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `name` _string_ |  |  |  |
+| `namespace` _string_ |  |  |  |
 
-| Field            | Description | Default | Validation |
-| ---------------- | ----------- | ------- | ---------- |
-| name string      |             |         |            |
-| namespace string |             |         |            |
 
 #### PasswordPlugin
 
+
+
 PasswordPlugin defines the password plugin and its arguments.
 
+
+
 _Appears in:_
+- [MariaDBSpec](#mariadbspec)
+- [UserSpec](#userspec)
 
-* [MariaDBSpec](api-reference.md#mariadbspec)
-* [UserSpec](api-reference.md#userspec)
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `pluginNameSecretKeyRef` _[SecretKeySelector](#secretkeyselector)_ | PluginNameSecretKeyRef is a reference to the authentication plugin to be used by the User.<br />If the referred Secret is labeled with "enterprise.mariadb.com/watch", updates may be performed to the Secret in order to update the authentication plugin. |  |  |
+| `pluginArgSecretKeyRef` _[SecretKeySelector](#secretkeyselector)_ | PluginArgSecretKeyRef is a reference to the arguments to be provided to the authentication plugin for the User.<br />If the referred Secret is labeled with "enterprise.mariadb.com/watch", updates may be performed to the Secret in order to update the authentication plugin arguments. |  |  |
 
-| Field                                                                          | Description                                                                                                                                                                                                                                                                          | Default | Validation |
-| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------- | ---------- |
-| pluginNameSecretKeyRef [SecretKeySelector](api-reference.md#secretkeyselector) | PluginNameSecretKeyRef is a reference to the authentication plugin to be used by the User.If the referred Secret is labeled with "enterprise.mariadb.com/watch", updates may be performed to the Secret in order to update the authentication plugin.                                |         |            |
-| pluginArgSecretKeyRef [SecretKeySelector](api-reference.md#secretkeyselector)  | PluginArgSecretKeyRef is a reference to the arguments to be provided to the authentication plugin for the User.If the referred Secret is labeled with "enterprise.mariadb.com/watch", updates may be performed to the Secret in order to update the authentication plugin arguments. |         |            |
 
 #### PersistentVolumeClaimSpec
 
-Refer to the Kubernetes docs: [#persistentvolumeclaimspec-v1-core](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#persistentvolumeclaimspec-v1-core).
+
+
+Refer to the Kubernetes docs: https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#persistentvolumeclaimspec-v1-core.
+
+
 
 _Appears in:_
+- [BackupStagingStorage](#backupstagingstorage)
+- [BackupStorage](#backupstorage)
+- [VolumeClaimTemplate](#volumeclaimtemplate)
 
-* [BackupStagingStorage](api-reference.md#backupstagingstorage)
-* [BackupStorage](api-reference.md#backupstorage)
-* [VolumeClaimTemplate](api-reference.md#volumeclaimtemplate)
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `accessModes` _[PersistentVolumeAccessMode](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#persistentvolumeaccessmode-v1-core) array_ |  |  |  |
+| `selector` _[LabelSelector](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#labelselector-v1-meta)_ |  |  |  |
+| `resources` _[VolumeResourceRequirements](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#volumeresourcerequirements-v1-core)_ |  |  |  |
+| `storageClassName` _string_ |  |  |  |
 
-| Field                                                                                                                                                   | Description | Default | Validation |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------- | ------- | ---------- |
-| accessModes [PersistentVolumeAccessMode](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#persistentvolumeaccessmode-v1-core) array |             |         |            |
-| selector [LabelSelector](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#labelselector-v1-meta)                                    |             |         |            |
-| resources [VolumeResourceRequirements](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#volumeresourcerequirements-v1-core)         |             |         |            |
-| storageClassName string                                                                                                                                 |             |         |            |
 
 #### PersistentVolumeClaimVolumeSource
 
-Refer to the Kubernetes docs: [#persistentvolumeclaimvolumesource-v1-core](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#persistentvolumeclaimvolumesource-v1-core).
+
+
+Refer to the Kubernetes docs: https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#persistentvolumeclaimvolumesource-v1-core.
+
+
 
 _Appears in:_
+- [StorageVolumeSource](#storagevolumesource)
+- [Volume](#volume)
+- [VolumeSource](#volumesource)
 
-* [StorageVolumeSource](api-reference.md#storagevolumesource)
-* [Volume](api-reference.md#volume)
-* [VolumeSource](api-reference.md#volumesource)
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `claimName` _string_ |  |  |  |
+| `readOnly` _boolean_ |  |  |  |
 
-| Field            | Description | Default | Validation |
-| ---------------- | ----------- | ------- | ---------- |
-| claimName string |             |         |            |
-| readOnly boolean |             |         |            |
 
 #### PodAffinityTerm
 
-Refer to the Kubernetes docs: [#podaffinityterm-v1-core](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#podaffinityterm-v1-core).
+
+
+Refer to the Kubernetes docs: https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#podaffinityterm-v1-core.
+
+
 
 _Appears in:_
+- [PodAntiAffinity](#podantiaffinity)
+- [WeightedPodAffinityTerm](#weightedpodaffinityterm)
 
-* [PodAntiAffinity](api-reference.md#podantiaffinity)
-* [WeightedPodAffinityTerm](api-reference.md#weightedpodaffinityterm)
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `labelSelector` _[LabelSelector](#labelselector)_ |  |  |  |
+| `topologyKey` _string_ |  |  |  |
 
-| Field                                                         | Description | Default | Validation |
-| ------------------------------------------------------------- | ----------- | ------- | ---------- |
-| labelSelector [LabelSelector](api-reference.md#labelselector) |             |         |            |
-| topologyKey string                                            |             |         |            |
 
 #### PodAntiAffinity
 
-Refer to the Kubernetes docs: [#podantiaffinity-v1-core](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#podantiaffinity-v1-core).
+
+
+Refer to the Kubernetes docs: https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#podantiaffinity-v1-core.
+
+
 
 _Appears in:_
+- [Affinity](#affinity)
+- [AffinityConfig](#affinityconfig)
 
-* [Affinity](api-reference.md#affinity)
-* [AffinityConfig](api-reference.md#affinityconfig)
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `requiredDuringSchedulingIgnoredDuringExecution` _[PodAffinityTerm](#podaffinityterm) array_ |  |  |  |
+| `preferredDuringSchedulingIgnoredDuringExecution` _[WeightedPodAffinityTerm](#weightedpodaffinityterm) array_ |  |  |  |
 
-| Field                                                                                                                     | Description | Default | Validation |
-| ------------------------------------------------------------------------------------------------------------------------- | ----------- | ------- | ---------- |
-| requiredDuringSchedulingIgnoredDuringExecution [PodAffinityTerm](api-reference.md#podaffinityterm) array                  |             |         |            |
-| preferredDuringSchedulingIgnoredDuringExecution [WeightedPodAffinityTerm](api-reference.md#weightedpodaffinityterm) array |             |         |            |
 
 #### PodDisruptionBudget
 
+
+
 PodDisruptionBudget is the Pod availability bundget for a MariaDB
 
+
+
 _Appears in:_
+- [MariaDBMaxScaleSpec](#mariadbmaxscalespec)
+- [MariaDBSpec](#mariadbspec)
+- [MaxScaleSpec](#maxscalespec)
 
-* [MariaDBMaxScaleSpec](api-reference.md#mariadbmaxscalespec)
-* [MariaDBSpec](api-reference.md#mariadbspec)
-* [MaxScaleSpec](api-reference.md#maxscalespec)
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `minAvailable` _[IntOrString](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#intorstring-intstr-util)_ | MinAvailable defines the number of minimum available Pods. |  |  |
+| `maxUnavailable` _[IntOrString](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#intorstring-intstr-util)_ | MaxUnavailable defines the number of maximum unavailable Pods. |  |  |
 
-| Field                                                                                                                      | Description                                                    | Default | Validation |
-| -------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------- | ------- | ---------- |
-| minAvailable [IntOrString](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#intorstring-intstr-util)   | MinAvailable defines the number of minimum available Pods.     |         |            |
-| maxUnavailable [IntOrString](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#intorstring-intstr-util) | MaxUnavailable defines the number of maximum unavailable Pods. |         |            |
 
 #### PodSecurityContext
 
-Refer to the Kubernetes docs: [#podsecuritycontext-v1-core](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#podsecuritycontext-v1-core)
+
+
+Refer to the Kubernetes docs: https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#podsecuritycontext-v1-core
+
+
 
 _Appears in:_
+- [BackupSpec](#backupspec)
+- [Exporter](#exporter)
+- [JobPodTemplate](#jobpodtemplate)
+- [MariaDBSpec](#mariadbspec)
+- [MaxScalePodTemplate](#maxscalepodtemplate)
+- [MaxScaleSpec](#maxscalespec)
+- [PodTemplate](#podtemplate)
+- [RestoreSpec](#restorespec)
+- [SqlJobSpec](#sqljobspec)
 
-* [BackupSpec](api-reference.md#backupspec)
-* [Exporter](api-reference.md#exporter)
-* [JobPodTemplate](api-reference.md#jobpodtemplate)
-* [MariaDBSpec](api-reference.md#mariadbspec)
-* [MaxScalePodTemplate](api-reference.md#maxscalepodtemplate)
-* [MaxScaleSpec](api-reference.md#maxscalespec)
-* [PodTemplate](api-reference.md#podtemplate)
-* [RestoreSpec](api-reference.md#restorespec)
-* [SqlJobSpec](api-reference.md#sqljobspec)
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `seLinuxOptions` _[SELinuxOptions](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#selinuxoptions-v1-core)_ |  |  |  |
+| `runAsUser` _integer_ |  |  |  |
+| `runAsGroup` _integer_ |  |  |  |
+| `runAsNonRoot` _boolean_ |  |  |  |
+| `supplementalGroups` _integer array_ |  |  |  |
+| `fsGroup` _integer_ |  |  |  |
+| `fsGroupChangePolicy` _[PodFSGroupChangePolicy](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#podfsgroupchangepolicy-v1-core)_ |  |  |  |
+| `seccompProfile` _[SeccompProfile](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#seccompprofile-v1-core)_ |  |  |  |
+| `appArmorProfile` _[AppArmorProfile](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#apparmorprofile-v1-core)_ |  |  |  |
 
-| Field                                                                                                                                             | Description | Default | Validation |
-| ------------------------------------------------------------------------------------------------------------------------------------------------- | ----------- | ------- | ---------- |
-| seLinuxOptions [SELinuxOptions](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#selinuxoptions-v1-core)                      |             |         |            |
-| runAsUser integer                                                                                                                                 |             |         |            |
-| runAsGroup integer                                                                                                                                |             |         |            |
-| runAsNonRoot boolean                                                                                                                              |             |         |            |
-| supplementalGroups integer array                                                                                                                  |             |         |            |
-| fsGroup integer                                                                                                                                   |             |         |            |
-| fsGroupChangePolicy [PodFSGroupChangePolicy](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#podfsgroupchangepolicy-v1-core) |             |         |            |
-| seccompProfile [SeccompProfile](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#seccompprofile-v1-core)                      |             |         |            |
-| appArmorProfile [AppArmorProfile](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#apparmorprofile-v1-core)                   |             |         |            |
 
 #### PodTemplate
 
+
+
 PodTemplate defines a template to configure Container objects.
 
+
+
 _Appears in:_
+- [MariaDBSpec](#mariadbspec)
 
-* [MariaDBSpec](api-reference.md#mariadbspec)
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `podMetadata` _[Metadata](#metadata)_ | PodMetadata defines extra metadata for the Pod. |  |  |
+| `imagePullSecrets` _[LocalObjectReference](#localobjectreference) array_ | ImagePullSecrets is the list of pull Secrets to be used to pull the image. |  |  |
+| `initContainers` _[Container](#container) array_ | InitContainers to be used in the Pod. |  |  |
+| `sidecarContainers` _[Container](#container) array_ | SidecarContainers to be used in the Pod. |  |  |
+| `podSecurityContext` _[PodSecurityContext](#podsecuritycontext)_ | SecurityContext holds pod-level security attributes and common container settings. |  |  |
+| `serviceAccountName` _string_ | ServiceAccountName is the name of the ServiceAccount to be used by the Pods. |  |  |
+| `affinity` _[AffinityConfig](#affinityconfig)_ | Affinity to be used in the Pod. |  |  |
+| `nodeSelector` _object (keys:string, values:string)_ | NodeSelector to be used in the Pod. |  |  |
+| `tolerations` _[Toleration](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#toleration-v1-core) array_ | Tolerations to be used in the Pod. |  |  |
+| `volumes` _[Volume](#volume) array_ | Volumes to be used in the Pod. |  |  |
+| `priorityClassName` _string_ | PriorityClassName to be used in the Pod. |  |  |
+| `topologySpreadConstraints` _[TopologySpreadConstraint](#topologyspreadconstraint) array_ | TopologySpreadConstraints to be used in the Pod. |  |  |
 
-| Field                                                                                                                   | Description                                                                        | Default | Validation |
-| ----------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ------- | ---------- |
-| podMetadata [Metadata](api-reference.md#metadata)                                                                       | PodMetadata defines extra metadata for the Pod.                                    |         |            |
-| imagePullSecrets [LocalObjectReference](api-reference.md#localobjectreference) array                                    | ImagePullSecrets is the list of pull Secrets to be used to pull the image.         |         |            |
-| initContainers [Container](api-reference.md#container) array                                                            | InitContainers to be used in the Pod.                                              |         |            |
-| sidecarContainers [Container](api-reference.md#container) array                                                         | SidecarContainers to be used in the Pod.                                           |         |            |
-| podSecurityContext [PodSecurityContext](api-reference.md#podsecuritycontext)                                            | SecurityContext holds pod-level security attributes and common container settings. |         |            |
-| serviceAccountName string                                                                                               | ServiceAccountName is the name of the ServiceAccount to be used by the Pods.       |         |            |
-| affinity [AffinityConfig](api-reference.md#affinityconfig)                                                              | Affinity to be used in the Pod.                                                    |         |            |
-| nodeSelector object (keys:string, values:string)                                                                        | NodeSelector to be used in the Pod.                                                |         |            |
-| tolerations [Toleration](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#toleration-v1-core) array | Tolerations to be used in the Pod.                                                 |         |            |
-| volumes [Volume](api-reference.md#volume) array                                                                         | Volumes to be used in the Pod.                                                     |         |            |
-| priorityClassName string                                                                                                | PriorityClassName to be used in the Pod.                                           |         |            |
-| topologySpreadConstraints [TopologySpreadConstraint](api-reference.md#topologyspreadconstraint) array                   | TopologySpreadConstraints to be used in the Pod.                                   |         |            |
 
 #### PreferredSchedulingTerm
 
-Refer to the Kubernetes docs: [#preferredschedulingterm-v1-core](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#preferredschedulingterm-v1-core)
+
+
+Refer to the Kubernetes docs: https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#preferredschedulingterm-v1-core
+
+
 
 _Appears in:_
+- [NodeAffinity](#nodeaffinity)
 
-* [NodeAffinity](api-reference.md#nodeaffinity)
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `weight` _integer_ |  |  |  |
+| `preference` _[NodeSelectorTerm](#nodeselectorterm)_ |  |  |  |
 
-| Field                                                            | Description | Default | Validation |
-| ---------------------------------------------------------------- | ----------- | ------- | ---------- |
-| weight integer                                                   |             |         |            |
-| preference [NodeSelectorTerm](api-reference.md#nodeselectorterm) |             |         |            |
 
 #### PrimaryGalera
 
+
+
 PrimaryGalera is the Galera configuration for the primary node.
 
+
+
 _Appears in:_
+- [Galera](#galera)
+- [GaleraSpec](#galeraspec)
 
-* [Galera](api-reference.md#galera)
-* [GaleraSpec](api-reference.md#galeraspec)
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `podIndex` _integer_ | PodIndex is the StatefulSet index of the primary node. The user may change this field to perform a manual switchover. |  |  |
+| `automaticFailover` _boolean_ | AutomaticFailover indicates whether the operator should automatically update PodIndex to perform an automatic primary failover. |  |  |
 
-| Field                     | Description                                                                                                                     | Default | Validation |
-| ------------------------- | ------------------------------------------------------------------------------------------------------------------------------- | ------- | ---------- |
-| podIndex integer          | PodIndex is the StatefulSet index of the primary node. The user may change this field to perform a manual switchover.           |         |            |
-| automaticFailover boolean | AutomaticFailover indicates whether the operator should automatically update PodIndex to perform an automatic primary failover. |         |            |
 
 #### Probe
 
-Refer to the Kubernetes docs: [#probe-v1-core](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#probe-v1-core).
+
+
+Refer to the Kubernetes docs: https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#probe-v1-core.
+
+
 
 _Appears in:_
+- [ContainerTemplate](#containertemplate)
+- [GaleraAgent](#galeraagent)
+- [GaleraInit](#galerainit)
+- [MariaDBSpec](#mariadbspec)
+- [MaxScaleSpec](#maxscalespec)
 
-* [ContainerTemplate](api-reference.md#containertemplate)
-* [GaleraAgent](api-reference.md#galeraagent)
-* [GaleraInit](api-reference.md#galerainit)
-* [MariaDBSpec](api-reference.md#mariadbspec)
-* [MaxScaleSpec](api-reference.md#maxscalespec)
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `exec` _[ExecAction](#execaction)_ |  |  |  |
+| `httpGet` _[HTTPGetAction](#httpgetaction)_ |  |  |  |
+| `tcpSocket` _[TCPSocketAction](#tcpsocketaction)_ |  |  |  |
+| `initialDelaySeconds` _integer_ |  |  |  |
+| `timeoutSeconds` _integer_ |  |  |  |
+| `periodSeconds` _integer_ |  |  |  |
+| `successThreshold` _integer_ |  |  |  |
+| `failureThreshold` _integer_ |  |  |  |
 
-| Field                                                         | Description | Default | Validation |
-| ------------------------------------------------------------- | ----------- | ------- | ---------- |
-| exec [ExecAction](api-reference.md#execaction)                |             |         |            |
-| httpGet [HTTPGetAction](api-reference.md#httpgetaction)       |             |         |            |
-| tcpSocket [TCPSocketAction](api-reference.md#tcpsocketaction) |             |         |            |
-| initialDelaySeconds integer                                   |             |         |            |
-| timeoutSeconds integer                                        |             |         |            |
-| periodSeconds integer                                         |             |         |            |
-| successThreshold integer                                      |             |         |            |
-| failureThreshold integer                                      |             |         |            |
 
 #### ProbeHandler
 
-Refer to the Kubernetes docs: [#probe-v1-core](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#probe-v1-core).
+
+
+Refer to the Kubernetes docs: https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#probe-v1-core.
+
+
 
 _Appears in:_
+- [Probe](#probe)
 
-* [Probe](api-reference.md#probe)
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `exec` _[ExecAction](#execaction)_ |  |  |  |
+| `httpGet` _[HTTPGetAction](#httpgetaction)_ |  |  |  |
+| `tcpSocket` _[TCPSocketAction](#tcpsocketaction)_ |  |  |  |
 
-| Field                                                         | Description | Default | Validation |
-| ------------------------------------------------------------- | ----------- | ------- | ---------- |
-| exec [ExecAction](api-reference.md#execaction)                |             |         |            |
-| httpGet [HTTPGetAction](api-reference.md#httpgetaction)       |             |         |            |
-| tcpSocket [TCPSocketAction](api-reference.md#tcpsocketaction) |             |         |            |
 
 #### ResourceRequirements
 
-Refer to the Kubernetes docs: [#resourcerequirements-v1-core](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#resourcerequirements-v1-core).
+
+
+Refer to the Kubernetes docs: https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#resourcerequirements-v1-core.
+
+
 
 _Appears in:_
+- [BackupSpec](#backupspec)
+- [Container](#container)
+- [ContainerTemplate](#containertemplate)
+- [Exporter](#exporter)
+- [GaleraAgent](#galeraagent)
+- [GaleraInit](#galerainit)
+- [GaleraInitJob](#galerainitjob)
+- [GaleraRecoveryJob](#galerarecoveryjob)
+- [Job](#job)
+- [JobContainerTemplate](#jobcontainertemplate)
+- [MariaDBSpec](#mariadbspec)
+- [MaxScaleSpec](#maxscalespec)
+- [RestoreSpec](#restorespec)
+- [SqlJobSpec](#sqljobspec)
 
-* [BackupSpec](api-reference.md#backupspec)
-* [Container](api-reference.md#container)
-* [ContainerTemplate](api-reference.md#containertemplate)
-* [Exporter](api-reference.md#exporter)
-* [GaleraAgent](api-reference.md#galeraagent)
-* [GaleraInit](api-reference.md#galerainit)
-* [GaleraInitJob](api-reference.md#galerainitjob)
-* [GaleraRecoveryJob](api-reference.md#galerarecoveryjob)
-* [Job](api-reference.md#job)
-* [JobContainerTemplate](api-reference.md#jobcontainertemplate)
-* [MariaDBSpec](api-reference.md#mariadbspec)
-* [MaxScaleSpec](api-reference.md#maxscalespec)
-* [RestoreSpec](api-reference.md#restorespec)
-* [SqlJobSpec](api-reference.md#sqljobspec)
+
 
 #### Restore
 
+
+
 Restore is the Schema for the restores API. It is used to define restore jobs and its restoration source.
 
-| Field                                                                                                          | Description                                                   | Default | Validation |
-| -------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------- | ------- | ---------- |
-| apiVersion string                                                                                              | enterprise.mariadb.com/v1alpha1                               |         |            |
-| kind string                                                                                                    | Restore                                                       |         |            |
-| metadata [ObjectMeta](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#objectmeta-v1-meta) | Refer to Kubernetes API documentation for fields of metadata. |         |            |
-| spec [RestoreSpec](api-reference.md#restorespec)                                                               |                                                               |         |            |
+
+
+
+
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `apiVersion` _string_ | `enterprise.mariadb.com/v1alpha1` | | |
+| `kind` _string_ | `Restore` | | |
+| `metadata` _[ObjectMeta](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#objectmeta-v1-meta)_ | Refer to Kubernetes API documentation for fields of `metadata`. |  |  |
+| `spec` _[RestoreSpec](#restorespec)_ |  |  |  |
+
 
 #### RestoreSource
 
+
+
 RestoreSource defines a source for restoring a MariaDB.
 
+
+
 _Appears in:_
+- [BootstrapFrom](#bootstrapfrom)
+- [RestoreSpec](#restorespec)
 
-* [BootstrapFrom](api-reference.md#bootstrapfrom)
-* [RestoreSpec](api-reference.md#restorespec)
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `backupRef` _[LocalObjectReference](#localobjectreference)_ | BackupRef is a reference to a Backup object. It has priority over S3 and Volume. |  |  |
+| `s3` _[S3](#s3)_ | S3 defines the configuration to restore backups from a S3 compatible storage. It has priority over Volume. |  |  |
+| `volume` _[StorageVolumeSource](#storagevolumesource)_ | Volume is a Kubernetes Volume object that contains a backup. |  |  |
+| `targetRecoveryTime` _[Time](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#time-v1-meta)_ | TargetRecoveryTime is a RFC3339 (1970-01-01T00:00:00Z) date and time that defines the point in time recovery objective.<br />It is used to determine the closest restoration source in time. |  |  |
+| `stagingStorage` _[BackupStagingStorage](#backupstagingstorage)_ | StagingStorage defines the temporary storage used to keep external backups (i.e. S3) while they are being processed.<br />It defaults to an emptyDir volume, meaning that the backups will be temporarily stored in the node where the Restore Job is scheduled. |  |  |
 
-| Field                                                                                                        | Description                                                                                                                                                                                                                                                | Default | Validation |
-| ------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | ---------- |
-| backupRef [LocalObjectReference](api-reference.md#localobjectreference)                                      | BackupRef is a reference to a Backup object. It has priority over S3 and Volume.                                                                                                                                                                           |         |            |
-| s3 [S3](api-reference.md#s3)                                                                                 | S3 defines the configuration to restore backups from a S3 compatible storage. It has priority over Volume.                                                                                                                                                 |         |            |
-| volume [StorageVolumeSource](api-reference.md#storagevolumesource)                                           | Volume is a Kubernetes Volume object that contains a backup.                                                                                                                                                                                               |         |            |
-| targetRecoveryTime [Time](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#time-v1-meta) | TargetRecoveryTime is a RFC3339 (1970-01-01T00:00:00Z) date and time that defines the point in time recovery objective.It is used to determine the closest restoration source in time.                                                                     |         |            |
-| stagingStorage [BackupStagingStorage](api-reference.md#backupstagingstorage)                                 | StagingStorage defines the temporary storage used to keep external backups (i.e. S3) while they are being processed.It defaults to an emptyDir volume, meaning that the backups will be temporarily stored in the node where the Restore Job is scheduled. |         |            |
 
 #### RestoreSpec
 
+
+
 RestoreSpec defines the desired state of restore
 
+
+
 _Appears in:_
+- [Restore](#restore)
 
-* [Restore](api-reference.md#restore)
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `args` _string array_ | Args to be used in the Container. |  |  |
+| `resources` _[ResourceRequirements](#resourcerequirements)_ | Resouces describes the compute resource requirements. |  |  |
+| `securityContext` _[SecurityContext](#securitycontext)_ | SecurityContext holds security configuration that will be applied to a container. |  |  |
+| `podMetadata` _[Metadata](#metadata)_ | PodMetadata defines extra metadata for the Pod. |  |  |
+| `imagePullSecrets` _[LocalObjectReference](#localobjectreference) array_ | ImagePullSecrets is the list of pull Secrets to be used to pull the image. |  |  |
+| `podSecurityContext` _[PodSecurityContext](#podsecuritycontext)_ | SecurityContext holds pod-level security attributes and common container settings. |  |  |
+| `serviceAccountName` _string_ | ServiceAccountName is the name of the ServiceAccount to be used by the Pods. |  |  |
+| `affinity` _[AffinityConfig](#affinityconfig)_ | Affinity to be used in the Pod. |  |  |
+| `nodeSelector` _object (keys:string, values:string)_ | NodeSelector to be used in the Pod. |  |  |
+| `tolerations` _[Toleration](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#toleration-v1-core) array_ | Tolerations to be used in the Pod. |  |  |
+| `priorityClassName` _string_ | PriorityClassName to be used in the Pod. |  |  |
+| `backupRef` _[LocalObjectReference](#localobjectreference)_ | BackupRef is a reference to a Backup object. It has priority over S3 and Volume. |  |  |
+| `s3` _[S3](#s3)_ | S3 defines the configuration to restore backups from a S3 compatible storage. It has priority over Volume. |  |  |
+| `volume` _[StorageVolumeSource](#storagevolumesource)_ | Volume is a Kubernetes Volume object that contains a backup. |  |  |
+| `targetRecoveryTime` _[Time](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#time-v1-meta)_ | TargetRecoveryTime is a RFC3339 (1970-01-01T00:00:00Z) date and time that defines the point in time recovery objective.<br />It is used to determine the closest restoration source in time. |  |  |
+| `stagingStorage` _[BackupStagingStorage](#backupstagingstorage)_ | StagingStorage defines the temporary storage used to keep external backups (i.e. S3) while they are being processed.<br />It defaults to an emptyDir volume, meaning that the backups will be temporarily stored in the node where the Restore Job is scheduled. |  |  |
+| `mariaDbRef` _[MariaDBRef](#mariadbref)_ | MariaDBRef is a reference to a MariaDB object. |  | Required: \{\} <br /> |
+| `database` _string_ | Database defines the logical database to be restored. If not provided, all databases available in the backup are restored.<br />IMPORTANT: The database must previously exist. |  |  |
+| `logLevel` _string_ | LogLevel to be used n the Backup Job. It defaults to 'info'. | info |  |
+| `backoffLimit` _integer_ | BackoffLimit defines the maximum number of attempts to successfully perform a Backup. | 5 |  |
+| `restartPolicy` _[RestartPolicy](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#restartpolicy-v1-core)_ | RestartPolicy to be added to the Backup Job. | OnFailure | Enum: [Always OnFailure Never] <br /> |
+| `inheritMetadata` _[Metadata](#metadata)_ | InheritMetadata defines the metadata to be inherited by children resources. |  |  |
 
-| Field                                                                                                                     | Description                                                                                                                                                                                                                                                | Default   | Validation                      |
-| ------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- | ------------------------------- |
-| args string array                                                                                                         | Args to be used in the Container.                                                                                                                                                                                                                          |           |                                 |
-| resources [ResourceRequirements](api-reference.md#resourcerequirements)                                                   | Resouces describes the compute resource requirements.                                                                                                                                                                                                      |           |                                 |
-| securityContext [SecurityContext](api-reference.md#securitycontext)                                                       | SecurityContext holds security configuration that will be applied to a container.                                                                                                                                                                          |           |                                 |
-| podMetadata [Metadata](api-reference.md#metadata)                                                                         | PodMetadata defines extra metadata for the Pod.                                                                                                                                                                                                            |           |                                 |
-| imagePullSecrets [LocalObjectReference](api-reference.md#localobjectreference) array                                      | ImagePullSecrets is the list of pull Secrets to be used to pull the image.                                                                                                                                                                                 |           |                                 |
-| podSecurityContext [PodSecurityContext](api-reference.md#podsecuritycontext)                                              | SecurityContext holds pod-level security attributes and common container settings.                                                                                                                                                                         |           |                                 |
-| serviceAccountName string                                                                                                 | ServiceAccountName is the name of the ServiceAccount to be used by the Pods.                                                                                                                                                                               |           |                                 |
-| affinity [AffinityConfig](api-reference.md#affinityconfig)                                                                | Affinity to be used in the Pod.                                                                                                                                                                                                                            |           |                                 |
-| nodeSelector object (keys:string, values:string)                                                                          | NodeSelector to be used in the Pod.                                                                                                                                                                                                                        |           |                                 |
-| tolerations [Toleration](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#toleration-v1-core) array   | Tolerations to be used in the Pod.                                                                                                                                                                                                                         |           |                                 |
-| priorityClassName string                                                                                                  | PriorityClassName to be used in the Pod.                                                                                                                                                                                                                   |           |                                 |
-| backupRef [LocalObjectReference](api-reference.md#localobjectreference)                                                   | BackupRef is a reference to a Backup object. It has priority over S3 and Volume.                                                                                                                                                                           |           |                                 |
-| s3 [S3](api-reference.md#s3)                                                                                              | S3 defines the configuration to restore backups from a S3 compatible storage. It has priority over Volume.                                                                                                                                                 |           |                                 |
-| volume [StorageVolumeSource](api-reference.md#storagevolumesource)                                                        | Volume is a Kubernetes Volume object that contains a backup.                                                                                                                                                                                               |           |                                 |
-| targetRecoveryTime [Time](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#time-v1-meta)              | TargetRecoveryTime is a RFC3339 (1970-01-01T00:00:00Z) date and time that defines the point in time recovery objective.It is used to determine the closest restoration source in time.                                                                     |           |                                 |
-| stagingStorage [BackupStagingStorage](api-reference.md#backupstagingstorage)                                              | StagingStorage defines the temporary storage used to keep external backups (i.e. S3) while they are being processed.It defaults to an emptyDir volume, meaning that the backups will be temporarily stored in the node where the Restore Job is scheduled. |           |                                 |
-| mariaDbRef [MariaDBRef](api-reference.md#mariadbref)                                                                      | MariaDBRef is a reference to a MariaDB object.                                                                                                                                                                                                             |           | Required: {}                    |
-| database string                                                                                                           | Database defines the logical database to be restored. If not provided, all databases available in the backup are restored.IMPORTANT: The database must previously exist.                                                                                   |           |                                 |
-| logLevel string                                                                                                           | LogLevel to be used n the Backup Job. It defaults to 'info'.                                                                                                                                                                                               | info      |                                 |
-| backoffLimit integer                                                                                                      | BackoffLimit defines the maximum number of attempts to successfully perform a Backup.                                                                                                                                                                      | 5         |                                 |
-| restartPolicy [RestartPolicy](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#restartpolicy-v1-core) | RestartPolicy to be added to the Backup Job.                                                                                                                                                                                                               | OnFailure | Enum: \[Always OnFailure Never] |
-| inheritMetadata [Metadata](api-reference.md#metadata)                                                                     | InheritMetadata defines the metadata to be inherited by children resources.                                                                                                                                                                                |           |                                 |
 
 #### S3
 
+
+
+
+
+
+
 _Appears in:_
+- [BackupStorage](#backupstorage)
+- [BootstrapFrom](#bootstrapfrom)
+- [RestoreSource](#restoresource)
+- [RestoreSpec](#restorespec)
 
-* [BackupStorage](api-reference.md#backupstorage)
-* [BootstrapFrom](api-reference.md#bootstrapfrom)
-* [RestoreSource](api-reference.md#restoresource)
-* [RestoreSpec](api-reference.md#restorespec)
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `bucket` _string_ | Bucket is the name Name of the bucket to store backups. |  | Required: \{\} <br /> |
+| `endpoint` _string_ | Endpoint is the S3 API endpoint without scheme. |  | Required: \{\} <br /> |
+| `region` _string_ | Region is the S3 region name to use. |  |  |
+| `prefix` _string_ | Prefix indicates a folder/subfolder in the bucket. For example: mariadb/ or mariadb/backups. A trailing slash '/' is added if not provided. |  |  |
+| `accessKeyIdSecretKeyRef` _[SecretKeySelector](#secretkeyselector)_ | AccessKeyIdSecretKeyRef is a reference to a Secret key containing the S3 access key id. |  |  |
+| `secretAccessKeySecretKeyRef` _[SecretKeySelector](#secretkeyselector)_ | AccessKeyIdSecretKeyRef is a reference to a Secret key containing the S3 secret key. |  |  |
+| `sessionTokenSecretKeyRef` _[SecretKeySelector](#secretkeyselector)_ | SessionTokenSecretKeyRef is a reference to a Secret key containing the S3 session token. |  |  |
+| `tls` _[TLSS3](#tlss3)_ | TLS provides the configuration required to establish TLS connections with S3. |  |  |
 
-| Field                                                                               | Description                                                                                                                                 | Default | Validation   |
-| ----------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- | ------- | ------------ |
-| bucket string                                                                       | Bucket is the name Name of the bucket to store backups.                                                                                     |         | Required: {} |
-| endpoint string                                                                     | Endpoint is the S3 API endpoint without scheme.                                                                                             |         | Required: {} |
-| region string                                                                       | Region is the S3 region name to use.                                                                                                        |         |              |
-| prefix string                                                                       | Prefix indicates a folder/subfolder in the bucket. For example: mariadb/ or mariadb/backups. A trailing slash '/' is added if not provided. |         |              |
-| accessKeyIdSecretKeyRef [SecretKeySelector](api-reference.md#secretkeyselector)     | AccessKeyIdSecretKeyRef is a reference to a Secret key containing the S3 access key id.                                                     |         |              |
-| secretAccessKeySecretKeyRef [SecretKeySelector](api-reference.md#secretkeyselector) | AccessKeyIdSecretKeyRef is a reference to a Secret key containing the S3 secret key.                                                        |         |              |
-| sessionTokenSecretKeyRef [SecretKeySelector](api-reference.md#secretkeyselector)    | SessionTokenSecretKeyRef is a reference to a Secret key containing the S3 session token.                                                    |         |              |
-| tls [TLSS3](api-reference.md#tlss3)                                                 | TLS provides the configuration required to establish TLS connections with S3.                                                               |         |              |
 
 #### SQLTemplate
 
+
+
 SQLTemplate defines a template to customize SQL objects.
 
+
+
 _Appears in:_
+- [DatabaseSpec](#databasespec)
+- [GrantSpec](#grantspec)
+- [UserSpec](#userspec)
 
-* [DatabaseSpec](api-reference.md#databasespec)
-* [GrantSpec](api-reference.md#grantspec)
-* [UserSpec](api-reference.md#userspec)
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `requeueInterval` _[Duration](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#duration-v1-meta)_ | RequeueInterval is used to perform requeue reconciliations. |  |  |
+| `retryInterval` _[Duration](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#duration-v1-meta)_ | RetryInterval is the interval used to perform retries. |  |  |
+| `cleanupPolicy` _[CleanupPolicy](#cleanuppolicy)_ | CleanupPolicy defines the behavior for cleaning up a SQL resource. |  | Enum: [Skip Delete] <br /> |
 
-| Field                                                                                                             | Description                                                        | Default | Validation           |
-| ----------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------ | ------- | -------------------- |
-| requeueInterval [Duration](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#duration-v1-meta) | RequeueInterval is used to perform requeue reconciliations.        |         |                      |
-| retryInterval [Duration](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#duration-v1-meta)   | RetryInterval is the interval used to perform retries.             |         |                      |
-| cleanupPolicy [CleanupPolicy](api-reference.md#cleanuppolicy)                                                     | CleanupPolicy defines the behavior for cleaning up a SQL resource. |         | Enum: \[Skip Delete] |
 
 #### SST
 
 _Underlying type:_ _string_
 
-SST is the Snapshot State Transfer used when new Pods join the cluster.\
-More info: [sst.html](https://galeracluster.com/library/documentation/sst.html).
+SST is the Snapshot State Transfer used when new Pods join the cluster.
+More info: https://galeracluster.com/library/documentation/sst.html.
+
+
 
 _Appears in:_
+- [Galera](#galera)
+- [GaleraSpec](#galeraspec)
 
-* [Galera](api-reference.md#galera)
-* [GaleraSpec](api-reference.md#galeraspec)
+| Field | Description |
+| --- | --- |
+| `rsync` | SSTRsync is an SST based on rsync.<br /> |
+| `mariabackup` | SSTMariaBackup is an SST based on mariabackup. It is the recommended SST.<br /> |
+| `mysqldump` | SSTMysqldump is an SST based on mysqldump.<br /> |
 
-| Field       | Description                                                               |
-| ----------- | ------------------------------------------------------------------------- |
-| rsync       | SSTRsync is an SST based on rsync.                                        |
-| mariadb-backup | SSTmariadb-backup is an SST based on mariadb-backup. It is the recommended SST. |
-| mysqldump   | SSTMysqldump is an SST based on mysqldump.                                |
 
 #### Schedule
 
+
+
 Schedule contains parameters to define a schedule
 
+
+
 _Appears in:_
+- [BackupSpec](#backupspec)
+- [SqlJobSpec](#sqljobspec)
 
-* [BackupSpec](api-reference.md#backupspec)
-* [SqlJobSpec](api-reference.md#sqljobspec)
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `cron` _string_ | Cron is a cron expression that defines the schedule. |  | Required: \{\} <br /> |
+| `suspend` _boolean_ | Suspend defines whether the schedule is active or not. | false |  |
 
-| Field           | Description                                            | Default | Validation   |
-| --------------- | ------------------------------------------------------ | ------- | ------------ |
-| cron string     | Cron is a cron expression that defines the schedule.   |         | Required: {} |
-| suspend boolean | Suspend defines whether the schedule is active or not. | false   |              |
 
 #### SecretKeySelector
 
-Refer to the Kubernetes docs: [#secretkeyselector-v1-core](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#secretkeyselector-v1-core).
+
+
+Refer to the Kubernetes docs: https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#secretkeyselector-v1-core.
+
+
 
 _Appears in:_
+- [ConnectionSpec](#connectionspec)
+- [EnvVarSource](#envvarsource)
+- [GeneratedSecretKeyRef](#generatedsecretkeyref)
+- [MariaDBSpec](#mariadbspec)
+- [PasswordPlugin](#passwordplugin)
+- [S3](#s3)
+- [SqlJobSpec](#sqljobspec)
+- [TLSS3](#tlss3)
+- [UserSpec](#userspec)
 
-* [ConnectionSpec](api-reference.md#connectionspec)
-* [EnvVarSource](api-reference.md#envvarsource)
-* [GeneratedSecretKeyRef](api-reference.md#generatedsecretkeyref)
-* [MariaDBSpec](api-reference.md#mariadbspec)
-* [PasswordPlugin](api-reference.md#passwordplugin)
-* [S3](api-reference.md#s3)
-* [SqlJobSpec](api-reference.md#sqljobspec)
-* [TLSS3](api-reference.md#tlss3)
-* [UserSpec](api-reference.md#userspec)
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `name` _string_ |  |  |  |
+| `key` _string_ |  |  |  |
 
-| Field       | Description | Default | Validation |
-| ----------- | ----------- | ------- | ---------- |
-| name string |             |         |            |
-| key string  |             |         |            |
 
 #### SecretTemplate
 
+
+
 SecretTemplate defines a template to customize Secret objects.
 
+
+
 _Appears in:_
+- [ConnectionSpec](#connectionspec)
+- [ConnectionTemplate](#connectiontemplate)
 
-* [ConnectionSpec](api-reference.md#connectionspec)
-* [ConnectionTemplate](api-reference.md#connectiontemplate)
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `metadata` _[Metadata](#metadata)_ | Refer to Kubernetes API documentation for fields of `metadata`. |  |  |
+| `key` _string_ | Key to be used in the Secret. |  |  |
+| `format` _string_ | Format to be used in the Secret. |  |  |
+| `usernameKey` _string_ | UsernameKey to be used in the Secret. |  |  |
+| `passwordKey` _string_ | PasswordKey to be used in the Secret. |  |  |
+| `hostKey` _string_ | HostKey to be used in the Secret. |  |  |
+| `portKey` _string_ | PortKey to be used in the Secret. |  |  |
+| `databaseKey` _string_ | DatabaseKey to be used in the Secret. |  |  |
 
-| Field                                          | Description                                                   | Default | Validation |
-| ---------------------------------------------- | ------------------------------------------------------------- | ------- | ---------- |
-| metadata [Metadata](api-reference.md#metadata) | Refer to Kubernetes API documentation for fields of metadata. |         |            |
-| key string                                     | Key to be used in the Secret.                                 |         |            |
-| format string                                  | Format to be used in the Secret.                              |         |            |
-| usernameKey string                             | UsernameKey to be used in the Secret.                         |         |            |
-| passwordKey string                             | PasswordKey to be used in the Secret.                         |         |            |
-| hostKey string                                 | HostKey to be used in the Secret.                             |         |            |
-| portKey string                                 | PortKey to be used in the Secret.                             |         |            |
-| databaseKey string                             | DatabaseKey to be used in the Secret.                         |         |            |
 
 #### SecretVolumeSource
 
-Refer to the Kubernetes docs: [#secretvolumesource-v1-core](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#secretvolumesource-v1-core).
+
+
+Refer to the Kubernetes docs: https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#secretvolumesource-v1-core.
+
+
 
 _Appears in:_
+- [Volume](#volume)
+- [VolumeSource](#volumesource)
 
-* [Volume](api-reference.md#volume)
-* [VolumeSource](api-reference.md#volumesource)
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `secretName` _string_ |  |  |  |
+| `defaultMode` _integer_ |  |  |  |
 
-| Field               | Description | Default | Validation |
-| ------------------- | ----------- | ------- | ---------- |
-| secretName string   |             |         |            |
-| defaultMode integer |             |         |            |
 
 #### SecurityContext
 
-Refer to the Kubernetes docs: [#securitycontext-v1-core](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#securitycontext-v1-core).
+
+
+Refer to the Kubernetes docs: https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#securitycontext-v1-core.
+
+
 
 _Appears in:_
+- [BackupSpec](#backupspec)
+- [ContainerTemplate](#containertemplate)
+- [Exporter](#exporter)
+- [GaleraAgent](#galeraagent)
+- [GaleraInit](#galerainit)
+- [JobContainerTemplate](#jobcontainertemplate)
+- [MariaDBSpec](#mariadbspec)
+- [MaxScaleSpec](#maxscalespec)
+- [RestoreSpec](#restorespec)
+- [SqlJobSpec](#sqljobspec)
 
-* [BackupSpec](api-reference.md#backupspec)
-* [ContainerTemplate](api-reference.md#containertemplate)
-* [Exporter](api-reference.md#exporter)
-* [GaleraAgent](api-reference.md#galeraagent)
-* [GaleraInit](api-reference.md#galerainit)
-* [JobContainerTemplate](api-reference.md#jobcontainertemplate)
-* [MariaDBSpec](api-reference.md#mariadbspec)
-* [MaxScaleSpec](api-reference.md#maxscalespec)
-* [RestoreSpec](api-reference.md#restorespec)
-* [SqlJobSpec](api-reference.md#sqljobspec)
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `capabilities` _[Capabilities](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#capabilities-v1-core)_ |  |  |  |
+| `privileged` _boolean_ |  |  |  |
+| `runAsUser` _integer_ |  |  |  |
+| `runAsGroup` _integer_ |  |  |  |
+| `runAsNonRoot` _boolean_ |  |  |  |
+| `readOnlyRootFilesystem` _boolean_ |  |  |  |
+| `allowPrivilegeEscalation` _boolean_ |  |  |  |
 
-| Field                                                                                                                  | Description | Default | Validation |
-| ---------------------------------------------------------------------------------------------------------------------- | ----------- | ------- | ---------- |
-| capabilities [Capabilities](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#capabilities-v1-core) |             |         |            |
-| privileged boolean                                                                                                     |             |         |            |
-| runAsUser integer                                                                                                      |             |         |            |
-| runAsGroup integer                                                                                                     |             |         |            |
-| runAsNonRoot boolean                                                                                                   |             |         |            |
-| readOnlyRootFilesystem boolean                                                                                         |             |         |            |
-| allowPrivilegeEscalation boolean                                                                                       |             |         |            |
 
 #### ServiceMonitor
 
+
+
 ServiceMonitor defines a prometheus ServiceMonitor object.
 
+
+
 _Appears in:_
+- [MariadbMetrics](#mariadbmetrics)
+- [MaxScaleMetrics](#maxscalemetrics)
 
-* [MariadbMetrics](api-reference.md#mariadbmetrics)
-* [MaxScaleMetrics](api-reference.md#maxscalemetrics)
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `prometheusRelease` _string_ | PrometheusRelease is the release label to add to the ServiceMonitor object. |  |  |
+| `jobLabel` _string_ | JobLabel to add to the ServiceMonitor object. |  |  |
+| `interval` _string_ | Interval for scraping metrics. |  |  |
+| `scrapeTimeout` _string_ | ScrapeTimeout defines the timeout for scraping metrics. |  |  |
 
-| Field                    | Description                                                                 | Default | Validation |
-| ------------------------ | --------------------------------------------------------------------------- | ------- | ---------- |
-| prometheusRelease string | PrometheusRelease is the release label to add to the ServiceMonitor object. |         |            |
-| jobLabel string          | JobLabel to add to the ServiceMonitor object.                               |         |            |
-| interval string          | Interval for scraping metrics.                                              |         |            |
-| scrapeTimeout string     | ScrapeTimeout defines the timeout for scraping metrics.                     |         |            |
 
 #### ServicePort
 
-Refer to the Kubernetes docs: [#serviceport-v1-core](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#serviceport-v1-core)
+
+
+Refer to the Kubernetes docs: https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#serviceport-v1-core
+
+
 
 _Appears in:_
+- [MariaDBSpec](#mariadbspec)
 
-* [MariaDBSpec](api-reference.md#mariadbspec)
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `name` _string_ |  |  |  |
+| `port` _integer_ |  |  |  |
 
-| Field        | Description | Default | Validation |
-| ------------ | ----------- | ------- | ---------- |
-| name string  |             |         |            |
-| port integer |             |         |            |
 
 #### ServiceRouter
 
@@ -1877,255 +2295,314 @@ _Underlying type:_ _string_
 
 ServiceRouter defines the type of service router.
 
+
+
 _Appears in:_
+- [MaxScaleService](#maxscaleservice)
 
-* [MaxScaleService](api-reference.md#maxscaleservice)
+| Field | Description |
+| --- | --- |
+| `readwritesplit` | ServiceRouterReadWriteSplit splits the load based on the queries. Write queries are performed on master and read queries on the replicas.<br /> |
+| `readconnroute` | ServiceRouterReadConnRoute splits the load based on the connections. Each connection is assigned to a server.<br /> |
 
-| Field          | Description                                                                                                                               |
-| -------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
-| readwritesplit | ServiceRouterReadWriteSplit splits the load based on the queries. Write queries are performed on master and read queries on the replicas. |
-| readconnroute  | ServiceRouterReadConnRoute splits the load based on the connections. Each connection is assigned to a server.                             |
 
 #### ServiceTemplate
 
+
+
 ServiceTemplate defines a template to customize Service objects.
 
+
+
 _Appears in:_
+- [MariaDBMaxScaleSpec](#mariadbmaxscalespec)
+- [MariaDBSpec](#mariadbspec)
+- [MaxScaleSpec](#maxscalespec)
 
-* [MariaDBMaxScaleSpec](api-reference.md#mariadbmaxscalespec)
-* [MariaDBSpec](api-reference.md#mariadbspec)
-* [MaxScaleSpec](api-reference.md#maxscalespec)
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `type` _[ServiceType](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#servicetype-v1-core)_ | Type is the Service type. One of `ClusterIP`, `NodePort` or `LoadBalancer`. If not defined, it defaults to `ClusterIP`. | ClusterIP | Enum: [ClusterIP NodePort LoadBalancer] <br /> |
+| `metadata` _[Metadata](#metadata)_ | Refer to Kubernetes API documentation for fields of `metadata`. |  |  |
+| `loadBalancerIP` _string_ | LoadBalancerIP Service field. |  |  |
+| `loadBalancerSourceRanges` _string array_ | LoadBalancerSourceRanges Service field. |  |  |
+| `externalTrafficPolicy` _[ServiceExternalTrafficPolicy](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#serviceexternaltrafficpolicy-v1-core)_ | ExternalTrafficPolicy Service field. |  |  |
+| `sessionAffinity` _[ServiceAffinity](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#serviceaffinity-v1-core)_ | SessionAffinity Service field. |  |  |
+| `allocateLoadBalancerNodePorts` _boolean_ | AllocateLoadBalancerNodePorts Service field. |  |  |
 
-| Field                                                                                                                                                           | Description                                                                                                     | Default   | Validation                               |
-| --------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------- | ---------------------------------------- |
-| type [ServiceType](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#servicetype-v1-core)                                                    | Type is the Service type. One of ClusterIP, NodePort or LoadBalancer. If not defined, it defaults to ClusterIP. | ClusterIP | Enum: \[ClusterIP NodePort LoadBalancer] |
-| metadata [Metadata](api-reference.md#metadata)                                                                                                                  | Refer to Kubernetes API documentation for fields of metadata.                                                   |           |                                          |
-| loadBalancerIP string                                                                                                                                           | LoadBalancerIP Service field.                                                                                   |           |                                          |
-| loadBalancerSourceRanges string array                                                                                                                           | LoadBalancerSourceRanges Service field.                                                                         |           |                                          |
-| externalTrafficPolicy [ServiceExternalTrafficPolicy](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#serviceexternaltrafficpolicy-v1-core) | ExternalTrafficPolicy Service field.                                                                            |           |                                          |
-| sessionAffinity [ServiceAffinity](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#serviceaffinity-v1-core)                                 | SessionAffinity Service field.                                                                                  |           |                                          |
-| allocateLoadBalancerNodePorts boolean                                                                                                                           | AllocateLoadBalancerNodePorts Service field.                                                                    |           |                                          |
 
 #### SqlJob
 
+
+
 SqlJob is the Schema for the sqljobs API. It is used to run sql scripts as jobs.
 
-| Field                                                                                                          | Description                                                   | Default | Validation |
-| -------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------- | ------- | ---------- |
-| apiVersion string                                                                                              | enterprise.mariadb.com/v1alpha1                               |         |            |
-| kind string                                                                                                    | SqlJob                                                        |         |            |
-| metadata [ObjectMeta](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#objectmeta-v1-meta) | Refer to Kubernetes API documentation for fields of metadata. |         |            |
-| spec [SqlJobSpec](api-reference.md#sqljobspec)                                                                 |                                                               |         |            |
+
+
+
+
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `apiVersion` _string_ | `enterprise.mariadb.com/v1alpha1` | | |
+| `kind` _string_ | `SqlJob` | | |
+| `metadata` _[ObjectMeta](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#objectmeta-v1-meta)_ | Refer to Kubernetes API documentation for fields of `metadata`. |  |  |
+| `spec` _[SqlJobSpec](#sqljobspec)_ |  |  |  |
+
 
 #### SqlJobSpec
 
+
+
 SqlJobSpec defines the desired state of SqlJob
 
+
+
 _Appears in:_
+- [SqlJob](#sqljob)
 
-* [SqlJob](api-reference.md#sqljob)
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `args` _string array_ | Args to be used in the Container. |  |  |
+| `resources` _[ResourceRequirements](#resourcerequirements)_ | Resouces describes the compute resource requirements. |  |  |
+| `securityContext` _[SecurityContext](#securitycontext)_ | SecurityContext holds security configuration that will be applied to a container. |  |  |
+| `podMetadata` _[Metadata](#metadata)_ | PodMetadata defines extra metadata for the Pod. |  |  |
+| `imagePullSecrets` _[LocalObjectReference](#localobjectreference) array_ | ImagePullSecrets is the list of pull Secrets to be used to pull the image. |  |  |
+| `podSecurityContext` _[PodSecurityContext](#podsecuritycontext)_ | SecurityContext holds pod-level security attributes and common container settings. |  |  |
+| `serviceAccountName` _string_ | ServiceAccountName is the name of the ServiceAccount to be used by the Pods. |  |  |
+| `affinity` _[AffinityConfig](#affinityconfig)_ | Affinity to be used in the Pod. |  |  |
+| `nodeSelector` _object (keys:string, values:string)_ | NodeSelector to be used in the Pod. |  |  |
+| `tolerations` _[Toleration](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#toleration-v1-core) array_ | Tolerations to be used in the Pod. |  |  |
+| `priorityClassName` _string_ | PriorityClassName to be used in the Pod. |  |  |
+| `successfulJobsHistoryLimit` _integer_ | SuccessfulJobsHistoryLimit defines the maximum number of successful Jobs to be displayed. |  | Minimum: 0 <br /> |
+| `failedJobsHistoryLimit` _integer_ | FailedJobsHistoryLimit defines the maximum number of failed Jobs to be displayed. |  | Minimum: 0 <br /> |
+| `timeZone` _string_ | TimeZone defines the timezone associated with the cron expression. |  |  |
+| `mariaDbRef` _[MariaDBRef](#mariadbref)_ | MariaDBRef is a reference to a MariaDB object. |  | Required: \{\} <br /> |
+| `schedule` _[Schedule](#schedule)_ | Schedule defines when the SqlJob will be executed. |  |  |
+| `username` _string_ | Username to be impersonated when executing the SqlJob. |  | Required: \{\} <br /> |
+| `passwordSecretKeyRef` _[SecretKeySelector](#secretkeyselector)_ | UserPasswordSecretKeyRef is a reference to the impersonated user's password to be used when executing the SqlJob. |  | Required: \{\} <br /> |
+| `tlsCASecretRef` _[LocalObjectReference](#localobjectreference)_ | TLSCACertSecretRef is a reference toa CA Secret used to establish trust when executing the SqlJob.<br />If not provided, the CA bundle provided by the referred MariaDB is used. |  |  |
+| `tlsClientCertSecretRef` _[LocalObjectReference](#localobjectreference)_ | TLSClientCertSecretRef is a reference to a Kubernetes TLS Secret used as authentication when executing the SqlJob.<br />If not provided, the client certificate provided by the referred MariaDB is used. |  |  |
+| `database` _string_ | Username to be used when executing the SqlJob. |  |  |
+| `dependsOn` _[LocalObjectReference](#localobjectreference) array_ | DependsOn defines dependencies with other SqlJob objectecs. |  |  |
+| `sql` _string_ | Sql is the script to be executed by the SqlJob. |  |  |
+| `sqlConfigMapKeyRef` _[ConfigMapKeySelector](#configmapkeyselector)_ | SqlConfigMapKeyRef is a reference to a ConfigMap containing the Sql script.<br />It is defaulted to a ConfigMap with the contents of the Sql field. |  |  |
+| `backoffLimit` _integer_ | BackoffLimit defines the maximum number of attempts to successfully execute a SqlJob. | 5 |  |
+| `restartPolicy` _[RestartPolicy](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#restartpolicy-v1-core)_ | RestartPolicy to be added to the SqlJob Pod. | OnFailure | Enum: [Always OnFailure Never] <br /> |
+| `inheritMetadata` _[Metadata](#metadata)_ | InheritMetadata defines the metadata to be inherited by children resources. |  |  |
 
-| Field                                                                                                                     | Description                                                                                                                                                                                         | Default   | Validation                      |
-| ------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------- | ------------------------------- |
-| args string array                                                                                                         | Args to be used in the Container.                                                                                                                                                                   |           |                                 |
-| resources [ResourceRequirements](api-reference.md#resourcerequirements)                                                   | Resouces describes the compute resource requirements.                                                                                                                                               |           |                                 |
-| securityContext [SecurityContext](api-reference.md#securitycontext)                                                       | SecurityContext holds security configuration that will be applied to a container.                                                                                                                   |           |                                 |
-| podMetadata [Metadata](api-reference.md#metadata)                                                                         | PodMetadata defines extra metadata for the Pod.                                                                                                                                                     |           |                                 |
-| imagePullSecrets [LocalObjectReference](api-reference.md#localobjectreference) array                                      | ImagePullSecrets is the list of pull Secrets to be used to pull the image.                                                                                                                          |           |                                 |
-| podSecurityContext [PodSecurityContext](api-reference.md#podsecuritycontext)                                              | SecurityContext holds pod-level security attributes and common container settings.                                                                                                                  |           |                                 |
-| serviceAccountName string                                                                                                 | ServiceAccountName is the name of the ServiceAccount to be used by the Pods.                                                                                                                        |           |                                 |
-| affinity [AffinityConfig](api-reference.md#affinityconfig)                                                                | Affinity to be used in the Pod.                                                                                                                                                                     |           |                                 |
-| nodeSelector object (keys:string, values:string)                                                                          | NodeSelector to be used in the Pod.                                                                                                                                                                 |           |                                 |
-| tolerations [Toleration](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#toleration-v1-core) array   | Tolerations to be used in the Pod.                                                                                                                                                                  |           |                                 |
-| priorityClassName string                                                                                                  | PriorityClassName to be used in the Pod.                                                                                                                                                            |           |                                 |
-| successfulJobsHistoryLimit integer                                                                                        | SuccessfulJobsHistoryLimit defines the maximum number of successful Jobs to be displayed.                                                                                                           |           | Minimum: 0                      |
-| failedJobsHistoryLimit integer                                                                                            | FailedJobsHistoryLimit defines the maximum number of failed Jobs to be displayed.                                                                                                                   |           | Minimum: 0                      |
-| timeZone string                                                                                                           | TimeZone defines the timezone associated with the cron expression.                                                                                                                                  |           |                                 |
-| mariaDbRef [MariaDBRef](api-reference.md#mariadbref)                                                                      | MariaDBRef is a reference to a MariaDB object.                                                                                                                                                      |           | Required: {}                    |
-| schedule [Schedule](api-reference.md#schedule)                                                                            | Schedule defines when the SqlJob will be executed.                                                                                                                                                  |           |                                 |
-| username string                                                                                                           | Username to be impersonated when executing the SqlJob.                                                                                                                                              |           | Required: {}                    |
-| passwordSecretKeyRef [SecretKeySelector](api-reference.md#secretkeyselector)                                              | UserPasswordSecretKeyRef is a reference to the impersonated user's password to be used when executing the SqlJob.                                                                                   |           | Required: {}                    |
-| tlsCASecretRef [LocalObjectReference](api-reference.md#localobjectreference)                                              | TLSCACertSecretRef is a reference toa CA Secret used to establish trust when executing the SqlJob.If not provided, the CA bundle provided by the referred MariaDB is used.                          |           |                                 |
-| tlsClientCertSecretRef [LocalObjectReference](api-reference.md#localobjectreference)                                      | TLSClientCertSecretRef is a reference to a Kubernetes TLS Secret used as authentication when executing the SqlJob.If not provided, the client certificate provided by the referred MariaDB is used. |           |                                 |
-| database string                                                                                                           | Username to be used when executing the SqlJob.                                                                                                                                                      |           |                                 |
-| dependsOn [LocalObjectReference](api-reference.md#localobjectreference) array                                             | DependsOn defines dependencies with other SqlJob objectecs.                                                                                                                                         |           |                                 |
-| sql string                                                                                                                | Sql is the script to be executed by the SqlJob.                                                                                                                                                     |           |                                 |
-| sqlConfigMapKeyRef [ConfigMapKeySelector](api-reference.md#configmapkeyselector)                                          | SqlConfigMapKeyRef is a reference to a ConfigMap containing the Sql script.It is defaulted to a ConfigMap with the contents of the Sql field.                                                       |           |                                 |
-| backoffLimit integer                                                                                                      | BackoffLimit defines the maximum number of attempts to successfully execute a SqlJob.                                                                                                               | 5         |                                 |
-| restartPolicy [RestartPolicy](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#restartpolicy-v1-core) | RestartPolicy to be added to the SqlJob Pod.                                                                                                                                                        | OnFailure | Enum: \[Always OnFailure Never] |
-| inheritMetadata [Metadata](api-reference.md#metadata)                                                                     | InheritMetadata defines the metadata to be inherited by children resources.                                                                                                                         |           |                                 |
 
 #### Storage
 
+
+
 Storage defines the storage options to be used for provisioning the PVCs mounted by MariaDB.
 
+
+
 _Appears in:_
+- [MariaDBSpec](#mariadbspec)
 
-* [MariaDBSpec](api-reference.md#mariadbspec)
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `ephemeral` _boolean_ | Ephemeral indicates whether to use ephemeral storage in the PVCs. It is only compatible with non HA MariaDBs. |  |  |
+| `size` _[Quantity](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#quantity-resource-api)_ | Size of the PVCs to be mounted by MariaDB. Required if not provided in 'VolumeClaimTemplate'. It supersedes the storage size specified in 'VolumeClaimTemplate'. |  |  |
+| `storageClassName` _string_ | StorageClassName to be used to provision the PVCS. It supersedes the 'StorageClassName' specified in 'VolumeClaimTemplate'.<br />If not provided, the default 'StorageClass' configured in the cluster is used. |  |  |
+| `resizeInUseVolumes` _boolean_ | ResizeInUseVolumes indicates whether the PVCs can be resized. The 'StorageClassName' used should have 'allowVolumeExpansion' set to 'true' to allow resizing.<br />It defaults to true. |  |  |
+| `waitForVolumeResize` _boolean_ | WaitForVolumeResize indicates whether to wait for the PVCs to be resized before marking the MariaDB object as ready. This will block other operations such as cluster recovery while the resize is in progress.<br />It defaults to true. |  |  |
+| `volumeClaimTemplate` _[VolumeClaimTemplate](#volumeclaimtemplate)_ | VolumeClaimTemplate provides a template to define the PVCs. |  |  |
 
-| Field                                                                                                       | Description                                                                                                                                                                                                                         | Default | Validation |
-| ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | ---------- |
-| ephemeral boolean                                                                                           | Ephemeral indicates whether to use ephemeral storage in the PVCs. It is only compatible with non HA MariaDBs.                                                                                                                       |         |            |
-| size [Quantity](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#quantity-resource-api) | Size of the PVCs to be mounted by MariaDB. Required if not provided in 'VolumeClaimTemplate'. It supersedes the storage size specified in 'VolumeClaimTemplate'.                                                                    |         |            |
-| storageClassName string                                                                                     | StorageClassName to be used to provision the PVCS. It supersedes the 'StorageClassName' specified in 'VolumeClaimTemplate'.If not provided, the default 'StorageClass' configured in the cluster is used.                           |         |            |
-| resizeInUseVolumes boolean                                                                                  | ResizeInUseVolumes indicates whether the PVCs can be resized. The 'StorageClassName' used should have 'allowVolumeExpansion' set to 'true' to allow resizing.It defaults to true.                                                   |         |            |
-| waitForVolumeResize boolean                                                                                 | WaitForVolumeResize indicates whether to wait for the PVCs to be resized before marking the MariaDB object as ready. This will block other operations such as cluster recovery while the resize is in progress.It defaults to true. |         |            |
-| volumeClaimTemplate [VolumeClaimTemplate](api-reference.md#volumeclaimtemplate)                             | VolumeClaimTemplate provides a template to define the PVCs.                                                                                                                                                                         |         |            |
 
 #### StorageVolumeSource
 
-Refer to the Kubernetes docs: [#volume-v1-core](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#volume-v1-core).
+
+
+Refer to the Kubernetes docs: https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#volume-v1-core.
+
+
 
 _Appears in:_
+- [BackupStagingStorage](#backupstagingstorage)
+- [BackupStorage](#backupstorage)
+- [BootstrapFrom](#bootstrapfrom)
+- [RestoreSource](#restoresource)
+- [RestoreSpec](#restorespec)
+- [Volume](#volume)
+- [VolumeSource](#volumesource)
 
-* [BackupStagingStorage](api-reference.md#backupstagingstorage)
-* [BackupStorage](api-reference.md#backupstorage)
-* [BootstrapFrom](api-reference.md#bootstrapfrom)
-* [RestoreSource](api-reference.md#restoresource)
-* [RestoreSpec](api-reference.md#restorespec)
-* [Volume](api-reference.md#volume)
-* [VolumeSource](api-reference.md#volumesource)
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `emptyDir` _[EmptyDirVolumeSource](#emptydirvolumesource)_ |  |  |  |
+| `nfs` _[NFSVolumeSource](#nfsvolumesource)_ |  |  |  |
+| `csi` _[CSIVolumeSource](#csivolumesource)_ |  |  |  |
+| `hostPath` _[HostPathVolumeSource](#hostpathvolumesource)_ |  |  |  |
+| `persistentVolumeClaim` _[PersistentVolumeClaimVolumeSource](#persistentvolumeclaimvolumesource)_ |  |  |  |
 
-| Field                                                                                                         | Description | Default | Validation |
-| ------------------------------------------------------------------------------------------------------------- | ----------- | ------- | ---------- |
-| emptyDir [EmptyDirVolumeSource](api-reference.md#emptydirvolumesource)                                        |             |         |            |
-| nfs [NFSVolumeSource](api-reference.md#nfsvolumesource)                                                       |             |         |            |
-| csi [CSIVolumeSource](api-reference.md#csivolumesource)                                                       |             |         |            |
-| hostPath [HostPathVolumeSource](api-reference.md#hostpathvolumesource)                                        |             |         |            |
-| persistentVolumeClaim [PersistentVolumeClaimVolumeSource](api-reference.md#persistentvolumeclaimvolumesource) |             |         |            |
 
 #### SuspendTemplate
 
+
+
 SuspendTemplate indicates whether the current resource should be suspended or not.
 
+
+
 _Appears in:_
+- [MariaDBSpec](#mariadbspec)
+- [MaxScaleListener](#maxscalelistener)
+- [MaxScaleMonitor](#maxscalemonitor)
+- [MaxScaleService](#maxscaleservice)
+- [MaxScaleSpec](#maxscalespec)
 
-* [MariaDBSpec](api-reference.md#mariadbspec)
-* [MaxScaleListener](api-reference.md#maxscalelistener)
-* [MaxScaleMonitor](api-reference.md#maxscalemonitor)
-* [MaxScaleService](api-reference.md#maxscaleservice)
-* [MaxScaleSpec](api-reference.md#maxscalespec)
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `suspend` _boolean_ | Suspend indicates whether the current resource should be suspended or not.<br />This can be useful for maintenance, as disabling the reconciliation prevents the operator from interfering with user operations during maintenance activities. | false |  |
 
-| Field           | Description                                                                                                                                                                                                                              | Default | Validation |
-| --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | ---------- |
-| suspend boolean | Suspend indicates whether the current resource should be suspended or not.This can be useful for maintenance, as disabling the reconciliation prevents the operator from interfering with user operations during maintenance activities. | false   |            |
 
 #### TCPSocketAction
 
-Refer to the Kubernetes docs: [#tcpsocketaction-v1-core](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#tcpsocketaction-v1-core).
+
+
+Refer to the Kubernetes docs: https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#tcpsocketaction-v1-core.
+
+
 
 _Appears in:_
+- [Probe](#probe)
+- [ProbeHandler](#probehandler)
 
-* [Probe](api-reference.md#probe)
-* [ProbeHandler](api-reference.md#probehandler)
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `port` _[IntOrString](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#intorstring-intstr-util)_ |  |  |  |
+| `host` _string_ |  |  |  |
 
-| Field                                                                                                            | Description | Default | Validation |
-| ---------------------------------------------------------------------------------------------------------------- | ----------- | ------- | ---------- |
-| port [IntOrString](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#intorstring-intstr-util) |             |         |            |
-| host string                                                                                                      |             |         |            |
 
 #### TLS
 
+
+
 TLS defines the PKI to be used with MariaDB.
 
+
+
 _Appears in:_
+- [MariaDBSpec](#mariadbspec)
 
-* [MariaDBSpec](api-reference.md#mariadbspec)
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `enabled` _boolean_ | Enabled indicates whether TLS is enabled, determining if certificates should be issued and mounted to the MariaDB instance.<br />It is enabled by default. |  |  |
+| `required` _boolean_ | Required specifies whether TLS must be enforced for all connections.<br />User TLS requirements take precedence over this.<br />It disabled by default. |  |  |
+| `versions` _string array_ | Versions specifies the supported TLS versions for this MariaDB instance.<br />By default, the MariaDB's default supported versions are used. See: https://mariadb.com/kb/en/ssltls-system-variables/#tls_version. |  |  |
+| `serverCASecretRef` _[LocalObjectReference](#localobjectreference)_ | ServerCASecretRef is a reference to a Secret containing the server certificate authority keypair. It is used to establish trust and issue server certificates.<br />One of:<br />- Secret containing both the 'ca.crt' and 'ca.key' keys. This allows you to bring your own CA to Kubernetes to issue certificates.<br />- Secret containing only the 'ca.crt' in order to establish trust. In this case, either serverCertSecretRef or serverCertIssuerRef must be provided.<br />If not provided, a self-signed CA will be provisioned to issue the server certificate. |  |  |
+| `serverCertSecretRef` _[LocalObjectReference](#localobjectreference)_ | ServerCertSecretRef is a reference to a TLS Secret containing the server certificate.<br />It is mutually exclusive with serverCertIssuerRef. |  |  |
+| `serverCertIssuerRef` _[ObjectReference](#objectreference)_ | ServerCertIssuerRef is a reference to a cert-manager issuer object used to issue the server certificate. cert-manager must be installed previously in the cluster.<br />It is mutually exclusive with serverCertSecretRef.<br />By default, the Secret field 'ca.crt' provisioned by cert-manager will be added to the trust chain. A custom trust bundle may be specified via serverCASecretRef. |  |  |
+| `serverCertConfig` _[TLSConfig](#tlsconfig)_ | ServerCertConfig allows configuring the server certificates, either issued by the operator or cert-manager.<br />If not set, the default settings will be used. |  |  |
+| `clientCASecretRef` _[LocalObjectReference](#localobjectreference)_ | ClientCASecretRef is a reference to a Secret containing the client certificate authority keypair. It is used to establish trust and issue client certificates.<br />One of:<br />- Secret containing both the 'ca.crt' and 'ca.key' keys. This allows you to bring your own CA to Kubernetes to issue certificates.<br />- Secret containing only the 'ca.crt' in order to establish trust. In this case, either clientCertSecretRef or clientCertIssuerRef fields must be provided.<br />If not provided, a self-signed CA will be provisioned to issue the client certificate. |  |  |
+| `clientCertSecretRef` _[LocalObjectReference](#localobjectreference)_ | ClientCertSecretRef is a reference to a TLS Secret containing the client certificate.<br />It is mutually exclusive with clientCertIssuerRef. |  |  |
+| `clientCertIssuerRef` _[ObjectReference](#objectreference)_ | ClientCertIssuerRef is a reference to a cert-manager issuer object used to issue the client certificate. cert-manager must be installed previously in the cluster.<br />It is mutually exclusive with clientCertSecretRef.<br />By default, the Secret field 'ca.crt' provisioned by cert-manager will be added to the trust chain. A custom trust bundle may be specified via clientCASecretRef. |  |  |
+| `clientCertConfig` _[TLSConfig](#tlsconfig)_ | ClientCertConfig allows configuring the client certificates, either issued by the operator or cert-manager.<br />If not set, the default settings will be used. |  |  |
+| `galeraSSTEnabled` _boolean_ | GaleraSSTEnabled determines whether Galera SST connections should use TLS.<br />It disabled by default. |  |  |
+| `galeraServerSSLMode` _string_ | GaleraServerSSLMode defines the server SSL mode for a Galera Enterprise cluster.<br />This field is only supported and applicable for Galera Enterprise >= 10.6 instances.<br />Refer to the MariaDB Enterprise docs for more detail: https://mariadb.com/docs/galera-cluster/galera-security/mariadb-enterprise-cluster-security#wsrep-tls-modes |  | Enum: [PROVIDER SERVER SERVER_X509] <br /> |
+| `galeraClientSSLMode` _string_ | GaleraClientSSLMode defines the client SSL mode for a Galera Enterprise cluster.<br />This field is only supported and applicable for Galera Enterprise >= 10.6 instances.<br />Refer to the MariaDB Enterprise docs for more detail: https://mariadb.com/docs/galera-cluster/galera-security/mariadb-enterprise-cluster-security#sst-tls-modes |  | Enum: [DISABLED REQUIRED VERIFY_CA VERIFY_IDENTITY] <br /> |
 
-| Field                                                                             | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              | Default | Validation                                             |
-| --------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | ------------------------------------------------------ |
-| enabled boolean                                                                   | Enabled indicates whether TLS is enabled, determining if certificates should be issued and mounted to the MariaDB instance.It is enabled by default.                                                                                                                                                                                                                                                                                                                                                                                                     |         |                                                        |
-| required boolean                                                                  | Required specifies whether TLS must be enforced for all connections.User TLS requirements take precedence over this.It disabled by default.                                                                                                                                                                                                                                                                                                                                                                                                              |         |                                                        |
-| versions string array                                                             | Versions specifies the supported TLS versions for this MariaDB instance.By default, the MariaDB's default supported versions are used. See: [tls\_version](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/ssltls-system-variables#tls_version).                                                                                                                                                                                                                         |         |                                                        |
-| serverCASecretRef [LocalObjectReference](api-reference.md#localobjectreference)   | ServerCASecretRef is a reference to a Secret containing the server certificate authority keypair. It is used to establish trust and issue server certificates.One of:- Secret containing both the 'ca.crt' and 'ca.key' keys. This allows you to bring your own CA to Kubernetes to issue certificates.- Secret containing only the 'ca.crt' in order to establish trust. In this case, either serverCertSecretRef or serverCertIssuerRef must be provided.If not provided, a self-signed CA will be provisioned to issue the server certificate.        |         |                                                        |
-| serverCertSecretRef [LocalObjectReference](api-reference.md#localobjectreference) | ServerCertSecretRef is a reference to a TLS Secret containing the server certificate.It is mutually exclusive with serverCertIssuerRef.                                                                                                                                                                                                                                                                                                                                                                                                                  |         |                                                        |
-| serverCertIssuerRef [ObjectReference](api-reference.md#objectreference)           | ServerCertIssuerRef is a reference to a cert-manager issuer object used to issue the server certificate. cert-manager must be installed previously in the cluster.It is mutually exclusive with serverCertSecretRef.By default, the Secret field 'ca.crt' provisioned by cert-manager will be added to the trust chain. A custom trust bundle may be specified via serverCASecretRef.                                                                                                                                                                    |         |                                                        |
-| serverCertConfig [TLSConfig](api-reference.md#tlsconfig)                          | ServerCertConfig allows configuring the server certificates, either issued by the operator or cert-manager.If not set, the default settings will be used.                                                                                                                                                                                                                                                                                                                                                                                                |         |                                                        |
-| clientCASecretRef [LocalObjectReference](api-reference.md#localobjectreference)   | ClientCASecretRef is a reference to a Secret containing the client certificate authority keypair. It is used to establish trust and issue client certificates.One of:- Secret containing both the 'ca.crt' and 'ca.key' keys. This allows you to bring your own CA to Kubernetes to issue certificates.- Secret containing only the 'ca.crt' in order to establish trust. In this case, either clientCertSecretRef or clientCertIssuerRef fields must be provided.If not provided, a self-signed CA will be provisioned to issue the client certificate. |         |                                                        |
-| clientCertSecretRef [LocalObjectReference](api-reference.md#localobjectreference) | ClientCertSecretRef is a reference to a TLS Secret containing the client certificate.It is mutually exclusive with clientCertIssuerRef.                                                                                                                                                                                                                                                                                                                                                                                                                  |         |                                                        |
-| clientCertIssuerRef [ObjectReference](api-reference.md#objectreference)           | ClientCertIssuerRef is a reference to a cert-manager issuer object used to issue the client certificate. cert-manager must be installed previously in the cluster.It is mutually exclusive with clientCertSecretRef.By default, the Secret field 'ca.crt' provisioned by cert-manager will be added to the trust chain. A custom trust bundle may be specified via clientCASecretRef.                                                                                                                                                                    |         |                                                        |
-| clientCertConfig [TLSConfig](api-reference.md#tlsconfig)                          | ClientCertConfig allows configuring the client certificates, either issued by the operator or cert-manager.If not set, the default settings will be used.                                                                                                                                                                                                                                                                                                                                                                                                |         |                                                        |
-| galeraSSTEnabled boolean                                                          | GaleraSSTEnabled determines whether Galera SST connections should use TLS.It disabled by default.                                                                                                                                                                                                                                                                                                                                                                                                                                                        |         |                                                        |
-| galeraServerSSLMode string                                                        | GaleraServerSSLMode defines the server SSL mode for a Galera Enterprise cluster.This field is only supported and applicable for Galera Enterprise >= 10.6 instances.Refer to the MariaDB Enterprise docs for more detail: #WSREP\_TLS\_Modes                                                                                                                                                                                                                                                                                                             |         | Enum: \[PROVIDER SERVER SERVER\_X509]                  |
-| galeraClientSSLMode string                                                        | GaleraClientSSLMode defines the client SSL mode for a Galera Enterprise cluster.This field is only supported and applicable for Galera Enterprise >= 10.6 instances.Refer to the MariaDB Enterprise docs for more detail: #SST\_TLS\_Modes                                                                                                                                                                                                                                                                                                               |         | Enum: \[DISABLED REQUIRED VERIFY\_CA VERIFY\_IDENTITY] |
 
 #### TLSConfig
 
+
+
 TLSConfig defines parameters to configure a certificate.
 
+
+
 _Appears in:_
+- [MaxScaleTLS](#maxscaletls)
+- [TLS](#tls)
 
-* [MaxScaleTLS](api-reference.md#maxscaletls)
-* [TLS](api-reference.md#tls)
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `caLifetime` _[Duration](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#duration-v1-meta)_ | CALifetime defines the CA certificate validity. |  |  |
+| `certLifetime` _[Duration](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#duration-v1-meta)_ | CertLifetime defines the certificate validity. |  |  |
+| `privateKeyAlgorithm` _string_ | PrivateKeyAlgorithm is the algorithm to be used for the CA and leaf certificate private keys.<br />One of: ECDSA or RSA |  | Enum: [ECDSA RSA] <br /> |
+| `privateKeySize` _integer_ | PrivateKeyAlgorithm is the key size to be used for the CA and leaf certificate private keys.<br />Supported values: ECDSA(256, 384, 521), RSA(2048, 3072, 4096) |  |  |
 
-| Field                                                                                                          | Description                                                                                                                                               | Default | Validation         |
-| -------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | ------------------ |
-| caLifetime [Duration](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#duration-v1-meta)   | CALifetime defines the CA certificate validity.                                                                                                           |         |                    |
-| certLifetime [Duration](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#duration-v1-meta) | CertLifetime defines the certificate validity.                                                                                                            |         |                    |
-| privateKeyAlgorithm string                                                                                     | PrivateKeyAlgorithm is the algorithm to be used for the CA and leaf certificate private keys.One of: ECDSA or RSA                                         |         | Enum: \[ECDSA RSA] |
-| privateKeySize integer                                                                                         | PrivateKeyAlgorithm is the key size to be used for the CA and leaf certificate private keys.Supported values: ECDSA(256, 384, 521), RSA(2048, 3072, 4096) |         |                    |
 
 #### TLSRequirements
 
-TLSRequirements specifies TLS requirements for the user to connect. See: [Requiring TLS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/securing-connections-for-client-and-server#requiring-tls).
+
+
+TLSRequirements specifies TLS requirements for the user to connect. See: https://mariadb.com/kb/en/securing-connections-for-client-and-server/#requiring-tls.
+
+
 
 _Appears in:_
+- [UserSpec](#userspec)
 
-* [UserSpec](api-reference.md#userspec)
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `ssl` _boolean_ | SSL indicates that the user must connect via TLS. |  |  |
+| `x509` _boolean_ | X509 indicates that the user must provide a valid x509 certificate to connect. |  |  |
+| `issuer` _string_ | Issuer indicates that the TLS certificate provided by the user must be issued by a specific issuer. |  |  |
+| `subject` _string_ | Subject indicates that the TLS certificate provided by the user must have a specific subject. |  |  |
 
-| Field          | Description                                                                                         | Default | Validation |
-| -------------- | --------------------------------------------------------------------------------------------------- | ------- | ---------- |
-| ssl boolean    | SSL indicates that the user must connect via TLS.                                                   |         |            |
-| x509 boolean   | X509 indicates that the user must provide a valid x509 certificate to connect.                      |         |            |
-| issuer string  | Issuer indicates that the TLS certificate provided by the user must be issued by a specific issuer. |         |            |
-| subject string | Subject indicates that the TLS certificate provided by the user must have a specific subject.       |         |            |
 
 #### TLSS3
 
+
+
+
+
+
+
 _Appears in:_
+- [S3](#s3)
 
-* [S3](api-reference.md#s3)
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `enabled` _boolean_ | Enabled is a flag to enable TLS. |  |  |
+| `caSecretKeyRef` _[SecretKeySelector](#secretkeyselector)_ | CASecretKeyRef is a reference to a Secret key containing a CA bundle in PEM format used to establish TLS connections with S3.<br />By default, the system trust chain will be used, but you can use this field to add more CAs to the bundle. |  |  |
 
-| Field                                                                  | Description                                                                                                                                                                                                                             | Default | Validation |
-| ---------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | ---------- |
-| enabled boolean                                                        | Enabled is a flag to enable TLS.                                                                                                                                                                                                        |         |            |
-| caSecretKeyRef [SecretKeySelector](api-reference.md#secretkeyselector) | CASecretKeyRef is a reference to a Secret key containing a CA bundle in PEM format used to establish TLS connections with S3.By default, the system trust chain will be used, but you can use this field to add more CAs to the bundle. |         |            |
 
 #### TopologySpreadConstraint
 
-Refer to the Kubernetes docs: [#topologyspreadconstraint-v1-core](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#topologyspreadconstraint-v1-core).
+
+
+Refer to the Kubernetes docs: https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#topologyspreadconstraint-v1-core.
+
+
 
 _Appears in:_
+- [MariaDBSpec](#mariadbspec)
+- [MaxScalePodTemplate](#maxscalepodtemplate)
+- [MaxScaleSpec](#maxscalespec)
+- [PodTemplate](#podtemplate)
 
-* [MariaDBSpec](api-reference.md#mariadbspec)
-* [MaxScalePodTemplate](api-reference.md#maxscalepodtemplate)
-* [MaxScaleSpec](api-reference.md#maxscalespec)
-* [PodTemplate](api-reference.md#podtemplate)
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `maxSkew` _integer_ |  |  |  |
+| `topologyKey` _string_ |  |  |  |
+| `whenUnsatisfiable` _[UnsatisfiableConstraintAction](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#unsatisfiableconstraintaction-v1-core)_ |  |  |  |
+| `labelSelector` _[LabelSelector](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#labelselector-v1-meta)_ |  |  |  |
+| `minDomains` _integer_ |  |  |  |
+| `nodeAffinityPolicy` _[NodeInclusionPolicy](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#nodeinclusionpolicy-v1-core)_ |  |  |  |
+| `nodeTaintsPolicy` _[NodeInclusionPolicy](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#nodeinclusionpolicy-v1-core)_ |  |  |  |
+| `matchLabelKeys` _string array_ |  |  |  |
 
-| Field                                                                                                                                                         | Description | Default | Validation |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------- | ------- | ---------- |
-| maxSkew integer                                                                                                                                               |             |         |            |
-| topologyKey string                                                                                                                                            |             |         |            |
-| whenUnsatisfiable [UnsatisfiableConstraintAction](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#unsatisfiableconstraintaction-v1-core) |             |         |            |
-| labelSelector [LabelSelector](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#labelselector-v1-meta)                                     |             |         |            |
-| minDomains integer                                                                                                                                            |             |         |            |
-| nodeAffinityPolicy [NodeInclusionPolicy](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#nodeinclusionpolicy-v1-core)                    |             |         |            |
-| nodeTaintsPolicy [NodeInclusionPolicy](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#nodeinclusionpolicy-v1-core)                      |             |         |            |
-| matchLabelKeys string array                                                                                                                                   |             |         |            |
 
 #### UpdateStrategy
 
+
+
 UpdateStrategy defines how a MariaDB resource is updated.
 
+
+
 _Appears in:_
+- [MariaDBSpec](#mariadbspec)
 
-* [MariaDBSpec](api-reference.md#mariadbspec)
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `type` _[UpdateType](#updatetype)_ | Type defines the type of updates. One of `ReplicasFirstPrimaryLast`, `RollingUpdate` or `OnDelete`. If not defined, it defaults to `ReplicasFirstPrimaryLast`. | ReplicasFirstPrimaryLast | Enum: [ReplicasFirstPrimaryLast RollingUpdate OnDelete Never] <br /> |
+| `rollingUpdate` _[RollingUpdateStatefulSetStrategy](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#rollingupdatestatefulsetstrategy-v1-apps)_ | RollingUpdate defines parameters for the RollingUpdate type. |  |  |
+| `autoUpdateDataPlane` _boolean_ | AutoUpdateDataPlane indicates whether the Galera data-plane version (agent and init containers) should be automatically updated based on the operator version. It defaults to false.<br />Updating the operator will trigger updates on all the MariaDB instances that have this flag set to true. Thus, it is recommended to progressively set this flag after having updated the operator. |  |  |
 
-| Field                                                                                                                                                           | Description                                                                                                                                                                                                                                                                                                                                                                            | Default                  | Validation                                                     |
-| --------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------ | -------------------------------------------------------------- |
-| type [UpdateType](api-reference.md#updatetype)                                                                                                                  | Type defines the type of updates. One of ReplicasFirstPrimaryLast, RollingUpdate or OnDelete. If not defined, it defaults to ReplicasFirstPrimaryLast.                                                                                                                                                                                                                                 | ReplicasFirstPrimaryLast | Enum: \[ReplicasFirstPrimaryLast RollingUpdate OnDelete Never] |
-| rollingUpdate [RollingUpdateStatefulSetStrategy](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#rollingupdatestatefulsetstrategy-v1-apps) | RollingUpdate defines parameters for the RollingUpdate type.                                                                                                                                                                                                                                                                                                                           |                          |                                                                |
-| autoUpdateDataPlane boolean                                                                                                                                     | AutoUpdateDataPlane indicates whether the Galera data-plane version (agent and init containers) should be automatically updated based on the operator version. It defaults to false.Updating the operator will trigger updates on all the MariaDB instances that have this flag set to true. Thus, it is recommended to progressively set this flag after having updated the operator. |                          |                                                                |
 
 #### UpdateType
 
@@ -2133,139 +2610,169 @@ _Underlying type:_ _string_
 
 UpdateType defines the type of update for a MariaDB resource.
 
+
+
 _Appears in:_
+- [UpdateStrategy](#updatestrategy)
 
-* [UpdateStrategy](api-reference.md#updatestrategy)
+| Field | Description |
+| --- | --- |
+| `ReplicasFirstPrimaryLast` | ReplicasFirstPrimaryLastUpdateType indicates that the update will be applied to all replica Pods first and later on to the primary Pod.<br />The updates are applied one by one waiting until each Pod passes the readiness probe<br />i.e. the Pod gets synced and it is ready to receive traffic.<br /> |
+| `RollingUpdate` | RollingUpdateUpdateType indicates that the update will be applied by the StatefulSet controller using the RollingUpdate strategy.<br />This strategy is unaware of the roles that the Pod have (primary or replica) and it will<br />perform the update following the StatefulSet ordinal, from higher to lower.<br /> |
+| `OnDelete` | OnDeleteUpdateType indicates that the update will be applied by the StatefulSet controller using the OnDelete strategy.<br />The update will be done when the Pods get manually deleted by the user.<br /> |
+| `Never` | NeverUpdateType indicates that the StatefulSet will never be updated.<br />This can be used to roll out updates progressively to a fleet of instances.<br /> |
 
-| Field                    | Description                                                                                                                                                                                                                                                                                          |
-| ------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| ReplicasFirstPrimaryLast | ReplicasFirstPrimaryLastUpdateType indicates that the update will be applied to all replica Pods first and later on to the primary Pod.The updates are applied one by one waiting until each Pod passes the readiness probei.e. the Pod gets synced and it is ready to receive traffic.              |
-| RollingUpdate            | RollingUpdateUpdateType indicates that the update will be applied by the StatefulSet controller using the RollingUpdate strategy.This strategy is unaware of the roles that the Pod have (primary or replica) and it willperform the update following the StatefulSet ordinal, from higher to lower. |
-| OnDelete                 | OnDeleteUpdateType indicates that the update will be applied by the StatefulSet controller using the OnDelete strategy.The update will be done when the Pods get manually deleted by the user.                                                                                                       |
-| Never                    | NeverUpdateType indicates that the StatefulSet will never be updated.This can be used to roll out updates progressively to a fleet of instances.                                                                                                                                                     |
 
 #### User
 
-User is the Schema for the users API. It is used to define grants as if you were running a 'CREATE USER' statement.
 
-| Field                                                                                                          | Description                                                   | Default | Validation |
-| -------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------- | ------- | ---------- |
-| apiVersion string                                                                                              | enterprise.mariadb.com/v1alpha1                               |         |            |
-| kind string                                                                                                    | User                                                          |         |            |
-| metadata [ObjectMeta](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#objectmeta-v1-meta) | Refer to Kubernetes API documentation for fields of metadata. |         |            |
-| spec [UserSpec](api-reference.md#userspec)                                                                     |                                                               |         |            |
+
+User is the Schema for the users API.  It is used to define grants as if you were running a 'CREATE USER' statement.
+
+
+
+
+
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `apiVersion` _string_ | `enterprise.mariadb.com/v1alpha1` | | |
+| `kind` _string_ | `User` | | |
+| `metadata` _[ObjectMeta](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#objectmeta-v1-meta)_ | Refer to Kubernetes API documentation for fields of `metadata`. |  |  |
+| `spec` _[UserSpec](#userspec)_ |  |  |  |
+
 
 #### UserSpec
 
+
+
 UserSpec defines the desired state of User
 
+
+
 _Appears in:_
+- [User](#user)
 
-* [User](api-reference.md#user)
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `requeueInterval` _[Duration](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#duration-v1-meta)_ | RequeueInterval is used to perform requeue reconciliations. |  |  |
+| `retryInterval` _[Duration](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#duration-v1-meta)_ | RetryInterval is the interval used to perform retries. |  |  |
+| `cleanupPolicy` _[CleanupPolicy](#cleanuppolicy)_ | CleanupPolicy defines the behavior for cleaning up a SQL resource. |  | Enum: [Skip Delete] <br /> |
+| `mariaDbRef` _[MariaDBRef](#mariadbref)_ | MariaDBRef is a reference to a MariaDB object. |  | Required: \{\} <br /> |
+| `passwordSecretKeyRef` _[SecretKeySelector](#secretkeyselector)_ | PasswordSecretKeyRef is a reference to the password to be used by the User.<br />If not provided, the account will be locked and the password will expire.<br />If the referred Secret is labeled with "enterprise.mariadb.com/watch", updates may be performed to the Secret in order to update the password. |  |  |
+| `passwordHashSecretKeyRef` _[SecretKeySelector](#secretkeyselector)_ | PasswordHashSecretKeyRef is a reference to the password hash to be used by the User.<br />If the referred Secret is labeled with "enterprise.mariadb.com/watch", updates may be performed to the Secret in order to update the password hash.<br />It requires the 'skip-strict-password-validation' option to be set. See: https://mariadb.com/docs/server/ref/mdb/cli/mariadbd/strict-password-validation/. |  |  |
+| `passwordPlugin` _[PasswordPlugin](#passwordplugin)_ | PasswordPlugin is a reference to the password plugin and arguments to be used by the User.<br />It requires the 'skip-strict-password-validation' option to be set. See: https://mariadb.com/docs/server/ref/mdb/cli/mariadbd/strict-password-validation/. |  |  |
+| `require` _[TLSRequirements](#tlsrequirements)_ | Require specifies TLS requirements for the user to connect. See: https://mariadb.com/kb/en/securing-connections-for-client-and-server/#requiring-tls. |  |  |
+| `maxUserConnections` _integer_ | MaxUserConnections defines the maximum number of simultaneous connections that the User can establish. | 10 |  |
+| `name` _string_ | Name overrides the default name provided by metadata.name. |  | MaxLength: 80 <br /> |
+| `host` _string_ | Host related to the User. |  | MaxLength: 255 <br /> |
 
-| Field                                                                                                             | Description                                                                                                                                                                                                                                                                                                      | Default | Validation           |
-| ----------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | -------------------- |
-| requeueInterval [Duration](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#duration-v1-meta) | RequeueInterval is used to perform requeue reconciliations.                                                                                                                                                                                                                                                      |         |                      |
-| retryInterval [Duration](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#duration-v1-meta)   | RetryInterval is the interval used to perform retries.                                                                                                                                                                                                                                                           |         |                      |
-| cleanupPolicy [CleanupPolicy](api-reference.md#cleanuppolicy)                                                     | CleanupPolicy defines the behavior for cleaning up a SQL resource.                                                                                                                                                                                                                                               |         | Enum: \[Skip Delete] |
-| mariaDbRef [MariaDBRef](api-reference.md#mariadbref)                                                              | MariaDBRef is a reference to a MariaDB object.                                                                                                                                                                                                                                                                   |         | Required: {}         |
-| passwordSecretKeyRef [SecretKeySelector](api-reference.md#secretkeyselector)                                      | PasswordSecretKeyRef is a reference to the password to be used by the User.If not provided, the account will be locked and the password will expire.If the referred Secret is labeled with "enterprise.mariadb.com/watch", updates may be performed to the Secret in order to update the password.               |         |                      |
-| passwordHashSecretKeyRef [SecretKeySelector](api-reference.md#secretkeyselector)                                  | PasswordHashSecretKeyRef is a reference to the password hash to be used by the User.If the referred Secret is labeled with "enterprise.mariadb.com/watch", updates may be performed to the Secret in order to update the password hash.It requires the 'skip-strict-password-validation' option to be set. See:. |         |                      |
-| passwordPlugin [PasswordPlugin](api-reference.md#passwordplugin)                                                  | PasswordPlugin is a reference to the password plugin and arguments to be used by the User.It requires the 'skip-strict-password-validation' option to be set. See:.                                                                                                                                              |         |                      |
-| require [TLSRequirements](api-reference.md#tlsrequirements)                                                       | Require specifies TLS requirements for the user to connect. See: [Requiring TLS](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/security/securing-mariadb/securing-mariadb-encryption/data-in-transit-encryption/securing-connections-for-client-and-server#requiring-tls).                                      |         |                      |
-| maxUserConnections integer                                                                                        | MaxUserConnections defines the maximum number of simultaneous connections that the User can establish.                                                                                                                                                                                                           | 10      |                      |
-| name string                                                                                                       | Name overrides the default name provided by metadata.name.                                                                                                                                                                                                                                                       |         | MaxLength: 80        |
-| host string                                                                                                       | Host related to the User.                                                                                                                                                                                                                                                                                        |         | MaxLength: 255       |
 
 #### Volume
 
-Refer to the Kubernetes docs: [#volume-v1-core](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#volume-v1-core).
+
+
+Refer to the Kubernetes docs: https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#volume-v1-core.
+
+
 
 _Appears in:_
+- [MariaDBSpec](#mariadbspec)
+- [PodTemplate](#podtemplate)
 
-* [MariaDBSpec](api-reference.md#mariadbspec)
-* [PodTemplate](api-reference.md#podtemplate)
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `name` _string_ |  |  |  |
+| `emptyDir` _[EmptyDirVolumeSource](#emptydirvolumesource)_ |  |  |  |
+| `nfs` _[NFSVolumeSource](#nfsvolumesource)_ |  |  |  |
+| `csi` _[CSIVolumeSource](#csivolumesource)_ |  |  |  |
+| `hostPath` _[HostPathVolumeSource](#hostpathvolumesource)_ |  |  |  |
+| `persistentVolumeClaim` _[PersistentVolumeClaimVolumeSource](#persistentvolumeclaimvolumesource)_ |  |  |  |
+| `secret` _[SecretVolumeSource](#secretvolumesource)_ |  |  |  |
+| `configMap` _[ConfigMapVolumeSource](#configmapvolumesource)_ |  |  |  |
 
-| Field                                                                                                         | Description | Default | Validation |
-| ------------------------------------------------------------------------------------------------------------- | ----------- | ------- | ---------- |
-| name string                                                                                                   |             |         |            |
-| emptyDir [EmptyDirVolumeSource](api-reference.md#emptydirvolumesource)                                        |             |         |            |
-| nfs [NFSVolumeSource](api-reference.md#nfsvolumesource)                                                       |             |         |            |
-| csi [CSIVolumeSource](api-reference.md#csivolumesource)                                                       |             |         |            |
-| hostPath [HostPathVolumeSource](api-reference.md#hostpathvolumesource)                                        |             |         |            |
-| persistentVolumeClaim [PersistentVolumeClaimVolumeSource](api-reference.md#persistentvolumeclaimvolumesource) |             |         |            |
-| secret [SecretVolumeSource](api-reference.md#secretvolumesource)                                              |             |         |            |
-| configMap [ConfigMapVolumeSource](api-reference.md#configmapvolumesource)                                     |             |         |            |
 
 #### VolumeClaimTemplate
 
+
+
 VolumeClaimTemplate defines a template to customize PVC objects.
 
+
+
 _Appears in:_
+- [GaleraConfig](#galeraconfig)
+- [MaxScaleConfig](#maxscaleconfig)
+- [Storage](#storage)
 
-* [GaleraConfig](api-reference.md#galeraconfig)
-* [MaxScaleConfig](api-reference.md#maxscaleconfig)
-* [Storage](api-reference.md#storage)
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `accessModes` _[PersistentVolumeAccessMode](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#persistentvolumeaccessmode-v1-core) array_ |  |  |  |
+| `selector` _[LabelSelector](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#labelselector-v1-meta)_ |  |  |  |
+| `resources` _[VolumeResourceRequirements](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#volumeresourcerequirements-v1-core)_ |  |  |  |
+| `storageClassName` _string_ |  |  |  |
+| `metadata` _[Metadata](#metadata)_ | Refer to Kubernetes API documentation for fields of `metadata`. |  |  |
 
-| Field                                                                                                                                                   | Description                                                   | Default | Validation |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------- | ------- | ---------- |
-| accessModes [PersistentVolumeAccessMode](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#persistentvolumeaccessmode-v1-core) array |                                                               |         |            |
-| selector [LabelSelector](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#labelselector-v1-meta)                                    |                                                               |         |            |
-| resources [VolumeResourceRequirements](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#volumeresourcerequirements-v1-core)         |                                                               |         |            |
-| storageClassName string                                                                                                                                 |                                                               |         |            |
-| metadata [Metadata](api-reference.md#metadata)                                                                                                          | Refer to Kubernetes API documentation for fields of metadata. |         |            |
 
 #### VolumeMount
 
-Refer to the Kubernetes docs: [#volumemount-v1-core](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#volumemount-v1-core).
+
+
+Refer to the Kubernetes docs: https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#volumemount-v1-core.
+
+
 
 _Appears in:_
+- [Container](#container)
+- [ContainerTemplate](#containertemplate)
+- [GaleraAgent](#galeraagent)
+- [GaleraInit](#galerainit)
+- [MariaDBSpec](#mariadbspec)
+- [MaxScaleSpec](#maxscalespec)
 
-* [Container](api-reference.md#container)
-* [ContainerTemplate](api-reference.md#containertemplate)
-* [GaleraAgent](api-reference.md#galeraagent)
-* [GaleraInit](api-reference.md#galerainit)
-* [MariaDBSpec](api-reference.md#mariadbspec)
-* [MaxScaleSpec](api-reference.md#maxscalespec)
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `name` _string_ | This must match the Name of a Volume. |  |  |
+| `readOnly` _boolean_ |  |  |  |
+| `mountPath` _string_ |  |  |  |
+| `subPath` _string_ |  |  |  |
 
-| Field            | Description                           | Default | Validation |
-| ---------------- | ------------------------------------- | ------- | ---------- |
-| name string      | This must match the Name of a Volume. |         |            |
-| readOnly boolean |                                       |         |            |
-| mountPath string |                                       |         |            |
-| subPath string   |                                       |         |            |
 
 #### VolumeSource
 
-Refer to the Kubernetes docs: [#volume-v1-core](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#volume-v1-core).
+
+
+Refer to the Kubernetes docs: https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#volume-v1-core.
+
+
 
 _Appears in:_
+- [Volume](#volume)
 
-* [Volume](api-reference.md#volume)
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `emptyDir` _[EmptyDirVolumeSource](#emptydirvolumesource)_ |  |  |  |
+| `nfs` _[NFSVolumeSource](#nfsvolumesource)_ |  |  |  |
+| `csi` _[CSIVolumeSource](#csivolumesource)_ |  |  |  |
+| `hostPath` _[HostPathVolumeSource](#hostpathvolumesource)_ |  |  |  |
+| `persistentVolumeClaim` _[PersistentVolumeClaimVolumeSource](#persistentvolumeclaimvolumesource)_ |  |  |  |
+| `secret` _[SecretVolumeSource](#secretvolumesource)_ |  |  |  |
+| `configMap` _[ConfigMapVolumeSource](#configmapvolumesource)_ |  |  |  |
 
-| Field                                                                                                         | Description | Default | Validation |
-| ------------------------------------------------------------------------------------------------------------- | ----------- | ------- | ---------- |
-| emptyDir [EmptyDirVolumeSource](api-reference.md#emptydirvolumesource)                                        |             |         |            |
-| nfs [NFSVolumeSource](api-reference.md#nfsvolumesource)                                                       |             |         |            |
-| csi [CSIVolumeSource](api-reference.md#csivolumesource)                                                       |             |         |            |
-| hostPath [HostPathVolumeSource](api-reference.md#hostpathvolumesource)                                        |             |         |            |
-| persistentVolumeClaim [PersistentVolumeClaimVolumeSource](api-reference.md#persistentvolumeclaimvolumesource) |             |         |            |
-| secret [SecretVolumeSource](api-reference.md#secretvolumesource)                                              |             |         |            |
-| configMap [ConfigMapVolumeSource](api-reference.md#configmapvolumesource)                                     |             |         |            |
 
 #### WeightedPodAffinityTerm
 
-Refer to the Kubernetes docs: [#weightedpodaffinityterm-v1-core](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#weightedpodaffinityterm-v1-core).
+
+
+Refer to the Kubernetes docs: https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.32/#weightedpodaffinityterm-v1-core.
+
+
 
 _Appears in:_
+- [PodAntiAffinity](#podantiaffinity)
 
-* [PodAntiAffinity](api-reference.md#podantiaffinity)
+| Field | Description | Default | Validation |
+| --- | --- | --- | --- |
+| `weight` _integer_ |  |  |  |
+| `podAffinityTerm` _[PodAffinityTerm](#podaffinityterm)_ |  |  |  |
 
-| Field                                                               | Description | Default | Validation |
-| ------------------------------------------------------------------- | ----------- | ------- | ---------- |
-| weight integer                                                      |             |         |            |
-| podAffinityTerm [PodAffinityTerm](api-reference.md#podaffinityterm) |             |         |            |
 
-{% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
-
-{% @marketo/form formId="4316" %}

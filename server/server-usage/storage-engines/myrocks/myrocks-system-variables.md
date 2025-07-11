@@ -1078,7 +1078,7 @@ column of the `INFORMATION_SCHEMA.ROCKSDB_DBSTATS` table.
 
 #### `rocksdb_remove_mariadb-backup_checkpoint`
 
-* Description: Remove [mariadb-backup](../../backing-up-and-restoring-databases/mariadb-backup/) checkpoint.
+* Description: Remove [mariadb-backup](../../backup-and-restore/mariadb-backup/mariadb-backup-overview.md) checkpoint.
 * Commandline: `--rocksdb-remove-mariadb-backup-checkpoint={0|1}`
 * Scope: Global
 * Dynamic: Yes

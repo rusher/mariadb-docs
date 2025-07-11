@@ -2,19 +2,17 @@
 
 ## Syntax
 
-```
+```sql
 SUBTIME(expr1,expr2)
 ```
 
 ## Description
 
-SUBTIME() returns `expr1` - `expr2` expressed as a value in the same\
-format as `expr1`. `expr1` is a time or datetime expression, and expr2 is\
-a time expression.
+SUBTIME() returns `expr1` - `expr2` expressed as a value in the same format as `expr1`. `expr1` is a time or datetime expression, and expr2 is a time expression.
 
 ## Examples
 
-```
+```sql
 SELECT SUBTIME('2007-12-31 23:59:59.999999','1 1:1:1.000002');
 +--------------------------------------------------------+
 | SUBTIME('2007-12-31 23:59:59.999999','1 1:1:1.000002') |

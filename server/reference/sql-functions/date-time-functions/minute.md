@@ -1,23 +1,18 @@
-
 # MINUTE
 
 ## Syntax
 
-
-```
+```sql
 MINUTE(time)
 ```
 
 ## Description
 
-
-Returns the minute for *time*, in the range 0 to 59.
-
+Returns the minute for _time_, in the range 0 to 59.
 
 ## Examples
 
-
-```
+```sql
 SELECT MINUTE('2013-08-03 11:04:03');
 +-------------------------------+
 | MINUTE('2013-08-03 11:04:03') |
@@ -33,8 +28,6 @@ SELECT MINUTE('2013-08-03 11:04:03');
 +---------------------+
 ```
 
-
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
-
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

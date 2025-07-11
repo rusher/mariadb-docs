@@ -2,18 +2,17 @@
 
 ## Syntax
 
-```
+```sql
 MAKEDATE(year,dayofyear)
 ```
 
 ## Description
 
-Returns a date, given `year` and `day-of-year values`. `dayofyear` must be\
-greater than 0 or the result is NULL.
+Returns a date, given `year` and `day-of-year values`. `dayofyear` must be greater than 0 or the result is `NULL`.
 
 ## Examples
 
-```
+```sql
 SELECT MAKEDATE(2011,31), MAKEDATE(2011,32);
 +-------------------+-------------------+
 | MAKEDATE(2011,31) | MAKEDATE(2011,32) |
@@ -24,7 +23,7 @@ SELECT MAKEDATE(2011,31), MAKEDATE(2011,32);
 
 2012 is a leap year:
 
-```
+```sql
 SELECT MAKEDATE(2011,365), MAKEDATE(2012,365);
 +--------------------+--------------------+
 | MAKEDATE(2011,365) | MAKEDATE(2012,365) |

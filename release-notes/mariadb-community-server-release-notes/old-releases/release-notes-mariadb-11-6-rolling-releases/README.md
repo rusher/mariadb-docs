@@ -1,16 +1,5 @@
 ---
-description: Release notes for MariaDB 11.6 series
-layout:
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: false
+description: MariaDB 11.6 was a rolling release, and is no longer maintained.
 ---
 
 # Release Notes - MariaDB 11.6 Rolling Releases

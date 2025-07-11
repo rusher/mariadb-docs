@@ -1,10 +1,8 @@
-
 # INT8
 
 `INT8` is a synonym for [BIGINT](bigint.md).
 
-
-```
+```sql
 CREATE TABLE t1 (x INT8);
 
 DESC t1;
@@ -17,14 +15,13 @@ DESC t1;
 
 ## EXAMPLES
 
-
-```
+```sql
 CREATE TABLE int8_example (
   example INT8
 );
 ```
 
-```
+```sql
 SHOW CREATE TABLE int8_example\G
 
 *************************** 1. row ***************************
@@ -34,8 +31,6 @@ Create Table: CREATE TABLE `int8_example` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1
 ```
 
-
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
-
 
 {% @marketo/form formId="4316" %}

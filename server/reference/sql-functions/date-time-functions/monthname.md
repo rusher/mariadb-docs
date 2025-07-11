@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 MONTHNAME(date)
 ```
 
@@ -12,7 +12,7 @@ Returns the full name of the month for date. The language used for the name is c
 
 ## Examples
 
-```
+```sql
 SELECT MONTHNAME('2019-02-03');
 +-------------------------+
 | MONTHNAME('2019-02-03') |
@@ -23,7 +23,7 @@ SELECT MONTHNAME('2019-02-03');
 
 Changing the locale:
 
-```
+```sql
 SET lc_time_names = 'fr_CA';
 
 SELECT MONTHNAME('2019-05-21');
@@ -34,6 +34,6 @@ SELECT MONTHNAME('2019-05-21');
 +-------------------------+
 ```
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

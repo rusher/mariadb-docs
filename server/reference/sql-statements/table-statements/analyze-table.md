@@ -31,11 +31,11 @@ By default, ANALYZE TABLE statements are written to the [binary log](../../../se
 {% endtab %}
 
 {% tab title="< 10.6.16" %}
-`ANALYZE TABLE` is blocking and intrusive.&#x20;
+`ANALYZE TABLE` is blocking and intrusive.
 {% endtab %}
 {% endtabs %}
 
-`ANALYZE TABLE` is also supported for partitioned tables. You can use [`ALTER TABLE`](../data-definition/alter/alter-table.md#analyze-partition) `... ANALYZE PARTITION` to analyze one or more partitions.
+`ANALYZE TABLE` is also supported for partitioned tables. You can use [`ALTER TABLE`](../data-definition/alter/alter-table/#analyze-partition) `... ANALYZE PARTITION` to analyze one or more partitions.
 
 The [Aria](../../../server-usage/storage-engines/aria/) storage engine supports [progress reporting](../administrative-sql-statements/show/show-processlist.md) for the `ANALYZE TABLE` statement.
 
@@ -68,7 +68,6 @@ The following overview indicates when a particular variable was introduced. When
 
 | Variable                                                                                                                                                  | Introduced in MariaDB version | Description                                                                                                                                                                                                                                                                                                         |
 | --------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Variable                                                                                                                                                  | Introduced in MariaDB version | Description                                                                                                                                                                                                                                                                                                         |
 | [analyze\_sample\_percentage](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#analyze_sample_percentage)  | 10.4.3                        | Percentage of rows from the table ANALYZE TABLE will sample to collect table statistics. Set to 0 to let MariaDB decide what percentage of rows to sample.                                                                                                                                                          |
 | [histogram\_type](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#histogram_type)                         | 10.4.3-11.0                   | Specifies the type of histograms created by ANALYZE. Options are #SINGLE\_PREC\_HB,DOUBLE\_PREC\_HB or JSON\_HB.                                                                                                                                                                                                    |
 | [histogram\_size](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#histogram_size)                         | 10.7                          | Number of bytes or buckets (in case of JSON\_HB) used for storing the histogram. If set to 0, no histograms are created by ANALYZE.]]                                                                                                                                                                               |

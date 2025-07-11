@@ -20,9 +20,9 @@ Index-only scans are supported for numeric and date/time datatypes. For CHAR and
 
 Index-only scans are currently not supported for less frequently used datatypes, like
 
-* [BIT(n)](../../data-types/data-types-numeric-data-types/bit.md)
-* [SET(...)](../../data-types/string-data-types/set-data-type.md)
-* [ENUM(...)](../../data-types/string-data-types/enum.md)\
+* [BIT(n)](../../../reference/data-types/numeric-data-types/bit.md)
+* [SET(...)](../../../reference/sql-statements/administrative-sql-statements/set-commands/set.md)
+* [ENUM(...)](../../../reference/data-types/string-data-types/enum.md)\
   It is actually possible to add support for those, feel free to write a patch or at least make a case why a particular datatype is important
 
 ## Index-Only Support for Various Collations

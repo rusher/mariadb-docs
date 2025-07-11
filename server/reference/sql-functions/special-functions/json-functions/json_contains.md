@@ -1,23 +1,18 @@
-
-# JSON_CONTAINS
+# JSON\_CONTAINS
 
 ## Syntax
 
-
-```
+```sql
 JSON_CONTAINS(json_doc, val[, path])
 ```
 
 ## Description
 
-
-Returns whether or not the specified value is found in the given JSON document or, optionally, at the specified path within the document. Returns `1` if it does, `0` if not and NULL if any of the arguments are null. An error occurs if the document or path is not valid, or contains the `*` or `**` wildcards.
-
+Returns whether or not the specified value is found in the given JSON document or, optionally, at the specified path within the document. Returns `1` if it does, `0` if not and `NULL` if any of the arguments are null. An error occurs if the document or path is not valid, or contains the `*` or `**` wildcards.
 
 ## Examples
 
-
-```
+```sql
 SET @json = '{"A": 0, "B": {"C": 1}, "D": 2}';
 
 SELECT JSON_CONTAINS(@json, '2', '$.A');
@@ -49,8 +44,6 @@ SELECT JSON_CONTAINS(@json, '{"C": 1}', '$.B');
 +-----------------------------------------+
 ```
 
-
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
-
 
 {% @marketo/form formId="4316" %}

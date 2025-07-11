@@ -2,21 +2,20 @@
 
 ## Syntax
 
-```
+```sql
 IFNULL(expr1,expr2)
 NVL(expr1,expr2)
 ```
 
 ## Description
 
-If _`expr1`_ is not NULL, IFNULL() returns _`expr1`_; otherwise it return&#x73;_`expr2`_. IFNULL() returns a numeric or string value, depending on the\
-context in which it is used.
+If _`expr1`_ is not `NULL`, `IFNULL()` returns _`expr1`_; otherwise it return&#x73;_`expr2`_. `IFNULL()` returns a numeric or string value, depending on the context in which it is used.
 
-From [MariaDB 10.3](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/what-is-mariadb-103), NVL() is an alias for IFNULL().
+`NVL()` is an alias for `IFNULL()`.
 
 ## Examples
 
-```
+```sql
 SELECT IFNULL(1,0); 
 +-------------+
 | IFNULL(1,0) |
@@ -55,6 +54,6 @@ SELECT IFNULL(1/0,'yes');
 * [NULLIF function](nullif.md)
 * [CONNECT data types](../../../server-usage/storage-engines/connect/connect-data-types.md#null-handling)
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

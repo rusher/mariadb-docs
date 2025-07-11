@@ -203,7 +203,6 @@ It contains the following data (in addition to the error header):
 
 | Option         | Number of bytes | Other info                                             |
 | -------------- | --------------- | ------------------------------------------------------ |
-| Option         | Number of bytes | Other info                                             |
 | 1              | 1               | Number of strings. For future                          |
 | Stage          | 1               | Stage from 1 - Max\_stage                              |
 | Max\_stage     | 1               | Max number of stages                                   |

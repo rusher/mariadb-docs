@@ -44,7 +44,7 @@ The `BLOCK_DDL` stage is designed for the following tasks:
 
 * Wait for all statements using write locked non-transactional tables to end.
 * Blocks [CREATE TABLE](../../data-definition/create/create-table.md), [DROP TABLE](../../data-definition/drop/drop-table.md), [TRUNCATE TABLE](../../table-statements/truncate-table.md), and [RENAME TABLE](../../data-definition/rename-table.md).
-* Blocks also start off a new [ALTER TABLE](../../data-definition/alter/alter-table.md) and the final rename phase of [ALTER TABLE](../../data-definition/alter/alter-table.md). Running ALTER TABLES are not blocked.
+* Blocks also start off a new [ALTER TABLE](../../data-definition/alter/alter-table/) and the final rename phase of [ALTER TABLE](../../data-definition/alter/alter-table/). Running ALTER TABLES are not blocked.
 
 ### `BACKUP STAGE BLOCK_COMMIT`
 

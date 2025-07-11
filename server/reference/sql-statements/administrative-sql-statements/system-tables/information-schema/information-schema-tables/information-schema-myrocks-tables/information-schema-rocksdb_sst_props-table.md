@@ -8,7 +8,6 @@ It contains the following columns:
 
 | Column                  | Description |
 | ----------------------- | ----------- |
-| Column                  | Description |
 | SST\_NAME               |             |
 | COLUMN\_FAMILY          |             |
 | DATA\_BLOCKS            |             |

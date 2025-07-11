@@ -63,9 +63,9 @@ $ sudo apt install mariadb-plugin-spider
 
 On other Linux distributions, the Spider storage engine is installed with MariaDB Server.
 
-### Step 2a: Load the Spider Plugin ([MariaDB 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/spider/broken-reference/README.md) and Later)
+### Step 2a: Load the Spider Plugin ([MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104) and Later)
 
-With [MariaDB 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/spider/broken-reference/README.md) and later, the Spider storage engine can be loaded as a normal plugin, and Spider automatically creates its dependencies. There are two primary ways to load the plugin.
+With [MariaDB 10.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/what-is-mariadb-104) and later, the Spider storage engine can be loaded as a normal plugin, and Spider automatically creates its dependencies. There are two primary ways to load the plugin.
 
 The plugin can be loaded dynamically without a server restart by executing `INSTALL SONAME` or `INSTALL PLUGIN`:
 
@@ -89,7 +89,6 @@ Loading the plugin also creates a series of new tables in the `mysql` database, 
 
 | table name                             | added version                                                                                                                                                                     |
 | -------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| table name                             | added version                                                                                                                                                                     |
 | spider\_xa                             | [MariaDB 10.0.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-1004-release-notes) |
 | spider\_xa\_member                     | [MariaDB 10.0.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-1004-release-notes) |
 | spider\_xa\_failed\_log                | [MariaDB 10.0.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-1005-release-notes) |
@@ -112,7 +111,6 @@ Running this configuration script also creates a series of new tables in the `my
 
 | table name                             | added version                                                                                                                                                                     |
 | -------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| table name                             | added version                                                                                                                                                                     |
 | spider\_xa                             | [MariaDB 10.0.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-1004-release-notes) |
 | spider\_xa\_member                     | [MariaDB 10.0.4](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-1004-release-notes) |
 | spider\_xa\_failed\_log                | [MariaDB 10.0.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/mariadb-1005-release-notes) |
@@ -147,7 +145,7 @@ With the data node or data nodes configured, you can set up the Spider node to u
 
 ### Configure the Server
 
-In order to connect the Spider node to the data nodes, you may issue a [CREATE SERVER](../../sql-statements-and-structure/sql-statements/data-definition/create/create-server.md) statement for each data node. You can then use the server definition in creating the Spider table.
+In order to connect the Spider node to the data nodes, you may issue a [CREATE SERVER](../../../reference/sql-statements/data-definition/create/create-server.md) statement for each data node. You can then use the server definition in creating the Spider table.
 
 ```sql
 CREATE SERVER dataNode1 FOREIGN DATA WRAPPER mysql
@@ -159,7 +157,7 @@ OPTIONS (
    PORT 3306);
 ```
 
-In the event that you need to modify or replace this server after setting up the Spider table, remember to issue a [FLUSH](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/flush-commands/flush.md) statement to update the server definition.
+In the event that you need to modify or replace this server after setting up the Spider table, remember to issue a [FLUSH](../../../reference/sql-statements/administrative-sql-statements/flush-commands/flush.md) statement to update the server definition.
 
 ```
 FLUSH TABLES;

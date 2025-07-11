@@ -8,7 +8,6 @@ It has the following columns:
 
 | Column     | Description                                                         |
 | ---------- | ------------------------------------------------------------------- |
-| Column     | Description                                                         |
 | rseg\_id   | Rollback segment id.                                                |
 | space\_id  | Space where the segment is placed.                                  |
 | zip\_size  | Size in bytes of the compressed page size, or zero if uncompressed. |

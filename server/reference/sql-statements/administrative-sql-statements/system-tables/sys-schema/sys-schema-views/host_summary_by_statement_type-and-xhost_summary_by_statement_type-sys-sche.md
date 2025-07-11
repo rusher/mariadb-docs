@@ -14,7 +14,6 @@ They contain the following columns:
 
 | Column         | Description                                                                                                                                           |
 | -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Column         | Description                                                                                                                                           |
 | host           | Host that the client connected from, or background for background threads (where the HOST column in the underlying Performance Schema table is NULL). |
 | statement      | Final component of the statement event name, for example create\_table or select.                                                                     |
 | total          | Total number of statement occurrences for the host.                                                                                                   |

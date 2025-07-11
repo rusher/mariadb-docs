@@ -1,17 +1,3 @@
----
-layout:
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: false
----
-
 # Schema Changes
 
 ## Overview
@@ -22,7 +8,7 @@ In MariaDB Enterprise Server, InnoDB supports many different schema change opera
 
 InnoDB schema changes are performed using the following DDL statements:
 
-* [ALTER TABLE](../../../../../reference/sql-statements/data-definition/alter/alter-table.md)
+* [ALTER TABLE](../../../../../reference/sql-statements/data-definition/alter/alter-table/)
 * [CREATE INDEX](../../../../../reference/sql-statements/data-definition/create/create-index.md)
 * [CREATE SPATIAL INDEX](../../../../../reference/sql-statements/data-definition/create/create-index.md)
 * [CREATE UNIQUE INDEX](../../../../../reference/sql-statements/data-definition/create/create-index.md)
@@ -35,15 +21,14 @@ InnoDB schema changes and online DDL are performed with a wide range of statemen
 
 Each operation supports a subset of the following algorithms: `INSTANT, NOCOPY, INPLACE, or COPY`.
 
-By default, InnoDB will use the most efficient algorithm supported by an operation. This behavior can be changed by using the `ALGORITHM` clause with the [ALTER TABLE](../../../../../reference/sql-statements/data-definition/alter/alter-table.md) statement or by changing the value of the alter\_algorithm system variable.
+By default, InnoDB will use the most efficient algorithm supported by an operation. This behavior can be changed by using the `ALGORITHM` clause with the [ALTER TABLE](../../../../../reference/sql-statements/data-definition/alter/alter-table/) statement or by changing the value of the alter\_algorithm system variable.
 
 Each operation supports a subset of the following locking strategies: `NONE, SHARED, or EXCLUSIVE`.
 
-By default, InnoDB will use the most permissive locking strategy supported by an operation. This behavior can be changed by using the LOCK clause with the [ALTER TABLE](../../../../../reference/sql-statements/data-definition/alter/alter-table.md) statement.
+By default, InnoDB will use the most permissive locking strategy supported by an operation. This behavior can be changed by using the LOCK clause with the [ALTER TABLE](../../../../../reference/sql-statements/data-definition/alter/alter-table/) statement.
 
 | Feature                                              | Detail | Resources                                                                                   |
 | ---------------------------------------------------- | ------ | ------------------------------------------------------------------------------------------- |
-| Feature                                              | Detail | Resources                                                                                   |
 | Operations support instant algorithm                 | Yes    | [InnoDB Schema Changes with the INSTANT Algorithm](schema-changes-innodb-schema-changes.md) |
 | Operations support no-copy algorithm                 | Yes    | [InnoDB Schema Changes with the NOCOPY Algorithm](schema-changes-innodb-schema-changes.md)  |
 | Operations support in-place algorithm                | Yes    | InnoDB Schema Changes with the INPLACE Algorithm                                            |

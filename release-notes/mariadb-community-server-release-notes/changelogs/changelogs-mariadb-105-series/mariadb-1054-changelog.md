@@ -1,12 +1,12 @@
 # MariaDB 10.5.4 Changelog
 
-The most recent release of [MariaDB 10.5](../../mariadb-10-5-series/what-is-mariadb-105.md) is:[**MariaDB 10.5.28**](../../mariadb-10-5-series/mariadb-10-5-28-release-notes.md) Stable (GA) [Download Now](https://mariadb.com/downloads/)[_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/10.5.28/)
+The most recent release of [MariaDB 10.5](../../old-releases/mariadb-10-5-series/what-is-mariadb-105.md) is:[**MariaDB 10.5.28**](../../old-releases/mariadb-10-5-series/mariadb-10-5-28-release-notes.md) Stable (GA) [Download Now](https://mariadb.com/downloads/)[_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/10.5.28/)
 
-[Download](https://downloads.mariadb.org/mariadb/10.5.4/)[Release Notes](../../mariadb-10-5-series/mariadb-1054-release-notes.md)[Changelog](mariadb-1054-changelog.md)[Overview of 10.5](../../mariadb-10-5-series/what-is-mariadb-105.md)
+[Download](https://downloads.mariadb.org/mariadb/10.5.4/)[Release Notes](../../old-releases/mariadb-10-5-series/mariadb-1054-release-notes.md)[Changelog](mariadb-1054-changelog.md)[Overview of 10.5](../../old-releases/mariadb-10-5-series/what-is-mariadb-105.md)
 
 **Release date:** 24 Jun 2020
 
-For the highlights of this release, see the[release notes](../../mariadb-10-5-series/mariadb-1054-release-notes.md).
+For the highlights of this release, see the[release notes](../../old-releases/mariadb-10-5-series/mariadb-1054-release-notes.md).
 
 The revision number links will take you to the revision's page on GitHub. On[GitHub](https://github.com/MariaDB/server/tree/10.5) you can view more\
 details of the revision and view diffs of the code modified in that revision.
@@ -692,7 +692,7 @@ details of the revision and view diffs of the code modified in that revision.
   * [MDEV-21282](https://jira.mariadb.org/browse/MDEV-21282) Assertion 'mariadb\_table' failed in gcol.innodb\_virtual\_debug\_purge
 * [Revision #d88870e6cc](https://github.com/MariaDB/server/commit/d88870e6cc)\
   2020-05-28 19:50:35 +0900
-  * MENT-805 ODBC login fails with with Spider from bb-10.5-MENT-30 if password contains a semicolon
+  * MENT-805 ODBC login fails with Spider from bb-10.5-MENT-30 if password contains a semicolon
 * [Revision #b3250ab3b2](https://github.com/MariaDB/server/commit/b3250ab3b2)\
   2020-05-15 23:53:12 +0900
   * MENT-787 Server from bb-10.5-MENT-30 crashes upon Spider installation

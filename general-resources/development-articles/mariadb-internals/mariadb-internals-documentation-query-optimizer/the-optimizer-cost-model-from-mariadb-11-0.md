@@ -110,7 +110,6 @@ things, except for `OPTIMIZER_DISK_READ_COST` as one should use published/tested
 
 | Variable                            | Type    | Description                                                                                                                                                                                                                                                                                  |
 | ----------------------------------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Variable                            | Type    | Description                                                                                                                                                                                                                                                                                  |
 | OPTIMIZER\_DISK\_READ\_COST         | Engine  | Time in microseconds to read a 4K block from a disk/SSD. The default is set for a 400MB/second SSD                                                                                                                                                                                           |
 | OPTIMIZER\_INDEX\_BLOCK\_COPY\_COST | Engine  | Cost to lock and a copy a block from the global cache to a local cache. This cost is added for every block accessed, independent of whether they are cached or not                                                                                                                           |
 | OPTIMIZER\_KEY\_COMPARE\_COST       | Engine  | Cost to compare two keys                                                                                                                                                                                                                                                                     |
@@ -202,7 +201,7 @@ SET GLOBAL innodb.OPTIMIZER_DISK_READ_RATIO=0.20;
 
 ### Examples of Changing Costs
 
-* `OPTIMIZER_WHERE_COST` is added as a cost for for all 'accepted rows'. Increasing this variable will cause the optimizer to choose plans with less estimated rows.
+* `OPTIMIZER_WHERE_COST` is added as a cost for all 'accepted rows'. Increasing this variable will cause the optimizer to choose plans with less estimated rows.
 * One can specify the kind of disk used by the system by changing `OPTIMIZER_DISK_READ_COST`. This should be the time to do a random read of a 4096 byte block.
 * The cost of a potential disk read is calculated as `OPTIMIZER_DISK_READ_COST * OPTIMIZER_DISK_READ_RATIO`. Increasing `OPTIMIZER_DISK_READ_RATIO` will inform the optimizer that not all data is cached.
 * `OPTIMIZER_SCAN_SETUP_COST` will increase the cost of a table scan. One can increase this to avoid using table scans.

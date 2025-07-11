@@ -1,6 +1,6 @@
 # Creating User-Defined Functions
 
-[User-defined functions](./) allow MariaDB to be extended with a new function that works like a native (built-in) MariaDB function such as [ABS()](../../reference/sql-functions/numeric-functions/abs.md) or [CONCAT()](../../reference/sql-functions/string-functions/concat.md). It was introduced in 1998 and is generally limited to supporting features that existed at that time. There are alternative ways to add a new function: a native function, which requires modifying and compiling the server source code; a [function plugin](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-usage/user-defined-functions/broken-reference/README.md); or a [stored function](../stored-routines/stored-functions/).
+[User-defined functions](./) allow MariaDB to be extended with a new function that works like a native (built-in) MariaDB function such as [ABS()](../../reference/sql-functions/numeric-functions/abs.md) or [CONCAT()](../../reference/sql-functions/string-functions/concat.md). It was introduced in 1998 and is generally limited to supporting features that existed at that time. There are alternative ways to add a new function: a native function, which requires modifying and compiling the server source code; a [function plugin](../../reference/plugins/); or a [stored function](../stored-routines/stored-functions/).
 
 Statements making use of user-defined functions are not [safe for replication](../../ha-and-performance/standard-replication/unsafe-statements-for-statement-based-replication.md).
 
@@ -18,7 +18,6 @@ Required for all UDFs; this is where the results are calculated.
 
 | C/C++ type | SQL type                                                            |
 | ---------- | ------------------------------------------------------------------- |
-| C/C++ type | SQL type                                                            |
 | char \*    | [STRING](../../reference/data-types/string-data-types/)             |
 | long long  | [INTEGER](../../reference/data-types/numeric-data-types/integer.md) |
 | double     | [REAL](../../reference/data-types/numeric-data-types/)              |
@@ -63,7 +62,7 @@ Used to add the argument to the current aggregate.
 
 ### x\_remove()
 
-Starting from [MariaDB 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-usage/user-defined-functions/broken-reference/README.md), improves the support of [window functions](../../reference/sql-functions/special-functions/window-functions/) (so it is not obligatory to add it) and should remove the argument from the current aggregate.
+Starting from [MariaDB 10.4](../../server-management/install-and-upgrade-mariadb/upgrading/upgrading-from-to-specific-versions/upgrading-from-mariadb-10-4-to-mariadb-10-5.md), improves the support of [window functions](../../reference/sql-functions/special-functions/window-functions/) (so it is not obligatory to add it) and should remove the argument from the current aggregate.
 
 ### Description
 

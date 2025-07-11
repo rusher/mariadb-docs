@@ -26,7 +26,7 @@ Thanks, and enjoy MariaDB!
 
 ### Variables
 
-* For a list of all new variables, see [System Variables Added in MariaDB 11.6](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/system-and-status-variables-added-by-major-release/system-variables-added-in-mariadb-11-6) and [Status Variables Added in MariaDB 11.6](https://github.com/mariadb-corporation/docs-release-notes/blob/test/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-6-rolling-releases/status-variables-added-in-mariadb-11-6/README.md).
+* For a list of all new variables, see [System Variables Added in MariaDB 11.6](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/ha-and-performance/optimization-and-tuning/system-variables/system-and-status-variables-added-by-major-release/system-and-status-variables-added-by-major-unmaintained-release/system-variables-added-in-mariadb-11-6) and [Status Variables Added in MariaDB 11.6](https://github.com/mariadb-corporation/docs-release-notes/blob/test/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-6-rolling-releases/status-variables-added-in-mariadb-11-6/README.md).
 
 {% include "../../../.gitbook/includes/announce.md" %}
 

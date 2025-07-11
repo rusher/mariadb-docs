@@ -26,7 +26,7 @@ In this mode, [InnoDB](./) does not hold any table-level locks at all. This is t
 
 ## Setting AUTO\_INCREMENT Values
 
-The [AUTO\_INCREMENT](../../../reference/data-types/auto_increment.md) value for an [InnoDB](./) table can be set for a table by executing the [ALTER TABLE](../../../reference/sql-statements/data-definition/alter/alter-table.md) statement and specifying the [AUTO\_INCREMENT](../../../reference/sql-statements/data-definition/create/create-table.md#auto_increment) table option. For example:
+The [AUTO\_INCREMENT](../../../reference/data-types/auto_increment.md) value for an [InnoDB](./) table can be set for a table by executing the [ALTER TABLE](../../../reference/sql-statements/data-definition/alter/alter-table/) statement and specifying the [AUTO\_INCREMENT](../../../reference/sql-statements/data-definition/create/create-table.md#auto_increment) table option. For example:
 
 ```
 ALTER TABLE tab AUTO_INCREMENT=100;

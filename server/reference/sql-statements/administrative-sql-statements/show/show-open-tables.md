@@ -21,7 +21,6 @@ The following information is returned:
 
 | Column       | Description                                                                         |
 | ------------ | ----------------------------------------------------------------------------------- |
-| Column       | Description                                                                         |
 | Database     | Database name.                                                                      |
 | Name         | Table name.                                                                         |
 | In\_use      | Number of table instances being used.                                               |

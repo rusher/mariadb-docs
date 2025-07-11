@@ -8,7 +8,6 @@ MariaDB Enterprise Server 10.4.21-13 was released on 2021-09-14.
 
 | CVE (with cve.org link)                                                         | CVSS base score |
 | ------------------------------------------------------------------------------- | --------------- |
-| CVE (with cve.org link)                                                         | CVSS base score |
 | [CVE-2021-2389](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-2389)   | 5.9             |
 | [CVE-2021-46666](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-46666) | 5.5             |
 | [CVE-2021-46658](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-46658) | 5.5             |

@@ -2,19 +2,17 @@
 
 ## Syntax
 
-```
+```sql
 PI()
 ```
 
 ## Description
 
-Returns the value of π (pi). The default number of decimal places\
-displayed is six, but MariaDB uses the full double-precision value\
-internally.
+Returns the value of π (pi). The default number of decimal places displayed is six, but MariaDB uses the full double-precision value internally.
 
 ## Examples
 
-```
+```sql
 SELECT PI();
 +----------+
 | PI()     |

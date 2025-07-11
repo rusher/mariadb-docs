@@ -1,6 +1,6 @@
 # CONSTRAINT
 
-MariaDB supports the implementation of constraints at the table-level using either [CREATE TABLE](create/create-table.md) or [ALTER TABLE](alter/alter-table.md) statements. A table constraint restricts the data you can add to the table. If you attempt to insert invalid data on a column, MariaDB throws an error.
+MariaDB supports the implementation of constraints at the table-level using either [CREATE TABLE](create/create-table.md) or [ALTER TABLE](alter/alter-table/) statements. A table constraint restricts the data you can add to the table. If you attempt to insert invalid data on a column, MariaDB throws an error.
 
 ## Syntax
 
@@ -42,7 +42,6 @@ There are four types of table constraints:
 
 | Constraint  | Description                                                               |
 | ----------- | ------------------------------------------------------------------------- |
-| Constraint  | Description                                                               |
 | PRIMARY KEY | Sets the column for referencing rows. Values must be unique and not null. |
 | FOREIGN KEY | Sets the column to reference the primary key on another table.            |
 | UNIQUE      | Requires values in column or columns only occur once in the table.        |
@@ -84,7 +83,7 @@ One can use most deterministic functions in a constraint, including [UDFs](../..
 CREATE TABLE t1 (a INT CHECK (a>2), b INT CHECK (b>2), CONSTRAINT a_greater CHECK (a>b));
 ```
 
-If you use the second format and you don't give a name to the constraint, then the constraint will get an automatically generated name. This is done so that you can later delete the constraint with [ALTER TABLE DROP constraint\_name](alter/alter-table.md).
+If you use the second format and you don't give a name to the constraint, then the constraint will get an automatically generated name. This is done so that you can later delete the constraint with [ALTER TABLE DROP constraint\_name](alter/alter-table/).
 
 One can disable all constraint expression checks by setting the [check\_constraint\_checks](../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#check_constraint_checks) variable to `OFF`. This is useful for example when loading a table that violates some constraints that you want to later find and fix in SQL.
 

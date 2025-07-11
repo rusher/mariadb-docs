@@ -8,7 +8,6 @@ MariaDB Enterprise Server 10.2.29-4 was released on 2019-11-18.
 
 | CVE (with cve.org link)                                                       | CVSS base score |
 | ----------------------------------------------------------------------------- | --------------- |
-| CVE (with cve.org link)                                                       | CVSS base score |
 | [CVE-2020-2780](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-2780) | 6.5             |
 | [CVE-2019-2974](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-2974) | 6.5             |
 | [CVE-2019-2938](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-2938) | 4.4             |

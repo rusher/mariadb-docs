@@ -6,7 +6,6 @@ It contains the following column:
 
 | Column     | Description                     |
 | ---------- | ------------------------------- |
-| Column     | Description                     |
 | ROLE\_NAME | The enabled role name, or NULL. |
 
 This table lists all roles that are currently enabled, one role per row — the current role, roles granted to the current role, roles granted to these roles and so on. If no role is set, the row contains a `NULL` value.

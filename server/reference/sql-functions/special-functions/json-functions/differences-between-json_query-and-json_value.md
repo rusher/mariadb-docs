@@ -1,20 +1,16 @@
+# Differences between JSON\_QUERY and JSON\_VALUE
 
-# Differences between JSON_QUERY and JSON_VALUE
+The primary difference between the two functions is that _JSON\_QUERY_ returns an object or an array, while _JSON\_VALUE_ returns a scalar.
 
-The primary difference between the two functions is that *JSON_QUERY* returns an object or an array, while *JSON_VALUE* returns a scalar.
+Take the following JSON document as an example:
 
-
-Take the following JSON document as an example
-
-
-```
+```sql
 SET @json='{ "x": [0,1], "y": "[0,1]", "z": "Monty" }';
 ```
 
 Note that data member "x" is an array, and data members "y" and "z" are strings. The following examples demonstrate the differences between the two functions.
 
-
-```
+```sql
 SELECT JSON_QUERY(@json,'$'), JSON_VALUE(@json,'$');
 +--------------------------------------------+-----------------------+
 | JSON_QUERY(@json,'$')                      | JSON_VALUE(@json,'$') |
@@ -51,8 +47,6 @@ SELECT JSON_QUERY(@json,'$.x[0]'), JSON_VALUE(@json,'$.x[0]');
 +----------------------------+----------------------------+
 ```
 
-
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
-
 
 {% @marketo/form formId="4316" %}

@@ -9,7 +9,6 @@ For example, let us suppose you have the following “Expenses” table:
 
 | Who   | Week | What | Amount |
 | ----- | ---- | ---- | ------ |
-| Who   | Week | What | Amount |
 | Joe   | 3    | Beer | 18.00  |
 | Beth  | 4    | Food | 17.00  |
 | Janet | 5    | Beer | 14.00  |
@@ -41,7 +40,6 @@ fields for each cell in the new table, gives the following desired result:
 
 | Who   | Week | Beer  | Car   | Food  |
 | ----- | ---- | ----- | ----- | ----- |
-| Who   | Week | Beer  | Car   | Food  |
 | Beth  | 3    | 16.00 | 0.00  | 0.00  |
 | Beth  | 4    | 15.00 | 0.00  | 17.00 |
 | Beth  | 5    | 20.00 | 0.00  | 12.00 |
@@ -119,7 +117,6 @@ Will display the resulting table:
 
 | Who   | What | 3     | 4     | 5     |
 | ----- | ---- | ----- | ----- | ----- |
-| Who   | What | 3     | 4     | 5     |
 | Beth  | Beer | 16.00 | 15.00 | 20.00 |
 | Beth  | Food | 0.00  | 17.00 | 12.00 |
 | Janet | Beer | 18.00 | 0.00  | 16.50 |
@@ -143,7 +140,6 @@ The result we get from the new table is:
 
 | Who   | Beer  | Car   | Food  |
 | ----- | ----- | ----- | ----- |
-| Who   | Beer  | Car   | Food  |
 | Beth  | 51.00 | 0.00  | 29.00 |
 | Janet | 51.00 | 48.00 | 30.00 |
 | Joe   | 81.00 | 20.00 | 77.00 |
@@ -174,7 +170,6 @@ The **options** and **sub-options** available for Pivot tables are:
 
 | Option     | Type             | Description                                                                                                                |
 | ---------- | ---------------- | -------------------------------------------------------------------------------------------------------------------------- |
-| Option     | Type             | Description                                                                                                                |
 | Tabname    | \[DB.]Name       | The name of the table to “pivot”. If not set SrcDef must be specified.                                                     |
 | SrcDef     | SQL\_statement   | The statement used to generate the intermediate mysql table.                                                               |
 | DBname     | name             | The name of the database containing the source table. Defaults to the current database.                                    |
@@ -279,7 +274,6 @@ Will display the result:
 
 | Who   | What | First  | Middle | Last   |
 | ----- | ---- | ------ | ------ | ------ |
-| Who   | What | First  | Middle | Last   |
 | Beth  | Beer | 104.96 | 98.40  | 131.20 |
 | Beth  | Food | 0.00   | 111.52 | 78.72  |
 | Janet | Beer | 118.08 | 0.00   | 216.48 |
@@ -310,7 +304,6 @@ instance, supposing we have the following _pet_ table:
 
 | name    | race   | number |
 | ------- | ------ | ------ |
-| name    | race   | number |
 | John    | dog    | 2      |
 | Bill    | cat    | 1      |
 | Mary    | dog    | 1      |
@@ -333,7 +326,6 @@ This gives the result:
 
 | name    | dog | cat | rabbit | bird | fish |
 | ------- | --- | --- | ------ | ---- | ---- |
-| name    | dog | cat | rabbit | bird | fish |
 | John    | 2   | 0   | 0      | 0    | 0    |
 | Bill    | 0   | 1   | 0      | 0    | 0    |
 | Mary    | 1   | 1   | 0      | 0    | 0    |
@@ -366,7 +358,6 @@ will be displayed as:
 
 | name    | dog | cat |
 | ------- | --- | --- |
-| name    | dog | cat |
 | John    | 2   | 0   |
 | Bill    | 0   | 1   |
 | Mary    | 1   | 1   |
@@ -391,7 +382,6 @@ This table will be displayed as:
 
 | name    | dog | cat | other |
 | ------- | --- | --- | ----- |
-| name    | dog | cat | other |
 | John    | 2   | 0   | 0     |
 | Bill    | 0   | 1   | 0     |
 | Mary    | 1   | 1   | 0     |

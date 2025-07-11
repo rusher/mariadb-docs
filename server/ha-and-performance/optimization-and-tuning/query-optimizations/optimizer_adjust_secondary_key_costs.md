@@ -6,9 +6,26 @@
 * Scope: Global, Session
 * Dynamic: Yes
 * Data Type: `set`
-* Default Value: `fix_card_multiplier`
+* Default Value: `fix_reuse_range_for_ref`, `fix_card_multiplier`
 * Range: `0` to `63` or any combination of `adjust_secondary_key_cost`, `disable_max_seek` or `disable_forced_index_in_group_by`, `fix_innodb_cardinality`,`fix_reuse_range_for_ref`, `fix_card_multiplier`
 * Introduced: [MariaDB 10.6.17](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/mariadb-10-6-17-release-notes), [MariaDB 10.11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-11-series/mariadb-10-11-7-release-notes)
+
+```sql
+MariaDB [securedb]> select @@version;
++-----------------------------------+
+| @@version             |
++-----------------------------------+
+| 10.6.20-16-MariaDB-enterprise-log |
++-----------------------------------+
+1 row in set (0.001 sec)
+
+MariaDB [securedb]> select @@optimizer_adjust_secondary_key_costs;
++---------------------------------------------+
+| @@optimizer_adjust_secondary_key_costs   |
++---------------------------------------------+
+| fix_reuse_range_for_ref,fix_card_multiplier |
++---------------------------------------------+
+```
 
 **MariaDB starting with** [**11.0**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-11-0-series/what-is-mariadb-110)
 
@@ -18,7 +35,6 @@ The value for `optimizer_adjust_secondary_key_costs` is one of more of the follo
 
 | Value                                 | Version added                                                                                                                                      | Old behavior                                                                                                                                                                                                                       | Change when variable is used                                                                                                                                                                                                                                                |
 | ------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Value                                 | Version added                                                                                                                                      | Old behavior                                                                                                                                                                                                                       | Change when variable is used                                                                                                                                                                                                                                                |
 | adjust\_secondary\_key\_cost          | [10.6.17](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/mariadb-10-6-17-release-notes) | Limit ref costs by max\_seeks                                                                                                                                                                                                      | The secondary key costs for ref are updated to be at least five times the clustered primary key costs if a clustered primary key exists                                                                                                                                     |
 | disable\_max\_seek                    | [10.6.17](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/mariadb-10-6-17-release-notes) | ref cost on secondary keys is limited to max\_seek = min('number of expected rows'/ 10, scan\_time\*3)                                                                                                                             | Disable 'max\_seek' optimization and do a slight adjustment of filter cost                                                                                                                                                                                                  |
 | disable\_forced\_index\_in\_group\_by | [10.6.18](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/mariadb-10-6-18-release-notes) | Use a rule-based choice when deciding to use an index to resolve GROUP BY                                                                                                                                                          | The choice is now cost based                                                                                                                                                                                                                                                |

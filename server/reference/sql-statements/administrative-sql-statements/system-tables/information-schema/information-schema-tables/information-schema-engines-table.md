@@ -6,7 +6,6 @@ It contains the following columns:
 
 | Column       | Description                                                                                        |
 | ------------ | -------------------------------------------------------------------------------------------------- |
-| Column       | Description                                                                                        |
 | ENGINE       | Name of the storage engine.                                                                        |
 | SUPPORT      | Whether the engine is the default, or is supported or not.                                         |
 | COMMENT      | Storage engine comments.                                                                           |

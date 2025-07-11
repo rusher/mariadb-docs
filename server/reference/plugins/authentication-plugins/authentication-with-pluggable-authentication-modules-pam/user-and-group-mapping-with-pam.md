@@ -24,7 +24,7 @@ Since MariaDB's user and group mapping is performed by an external PAM module, M
 
 ### Installing the pam\_user\_map PAM Module
 
-The `pam_user_map` PAM module gets installed as part of all our MariaDB server packages since [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105), and was added since 10.2.31, 10.3.22, and 10.4.12 in previous MariaDB major releases where it was not present from the beginning.
+The `pam_user_map` PAM module gets installed as part of all our MariaDB server packages since [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/what-is-mariadb-105), and was added since 10.2.31, 10.3.22, and 10.4.12 in previous MariaDB major releases where it was not present from the beginning.
 
 Some Linux distributions have not picked up this change in their own packages yet, so when e.g. installing MariaDB server from stock Ubuntu packages on Ubuntu 20.04LTS you still won't have the `pam_user_map` module installed even though the MariaDB server installed is more recent than [MariaDB 10.3.22](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-3-series/mariadb-10322-release-notes).
 
@@ -133,7 +133,7 @@ Also note that you might not be able to create the `''@'%'` anonymous account by
 
 ### Verifying that Mapping is Occurring
 
-In case any user mapping is performed, the original user name is returned by the SQL function [USER()](../../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/user.md), while the authenticated user name is returned by the SQL function [CURRENT_USER()](../../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/current_user.md). The latter actually defines what privileges are available to a connected user.
+In case any user mapping is performed, the original user name is returned by the SQL function [USER()](../../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/user.md), while the authenticated user name is returned by the SQL function [CURRENT\_USER()](../../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/current_user.md). The latter actually defines what privileges are available to a connected user.
 
 For example, if we have the following configured:
 
@@ -163,7 +163,7 @@ MariaDB [(none)]> SELECT USER(), CURRENT_USER();
 1 row in set (0.000 sec)
 ```
 
-We can verify that our `foo` PAM user was properly mapped to the `bar` MariaDB user by looking at the return value of [CURRENT_USER()](../../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/current_user.md).
+We can verify that our `foo` PAM user was properly mapped to the `bar` MariaDB user by looking at the return value of [CURRENT\_USER()](../../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/current_user.md).
 
 ### Logging
 
@@ -236,7 +236,7 @@ In the above log snippet, notice that both the `pam_unix` and the `pam_sss` PAM 
 
 This can be fixed by creating a PAM user with the same name as the mapped MariaDB user account, which is `dba` in this case.
 
-You may also be able to work around this problem by essentially disabling PAM's account verification for the service with the [pam_permit](https://linux.die.net/man/8/pam_permit) PAM module. For example, in the above case, that would be:
+You may also be able to work around this problem by essentially disabling PAM's account verification for the service with the [pam\_permit](https://linux.die.net/man/8/pam_permit) PAM module. For example, in the above case, that would be:
 
 ```
 auth required pam_sss.so

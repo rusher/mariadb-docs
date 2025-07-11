@@ -6,7 +6,6 @@ MariaDB ColumnStore supports the following aggregate functions, these can be use
 
 | Function | Description |
 | --- | --- |
-| Function | Description |
 | AVG([DISTINCT] column) | Average value of a numeric (INT variations, NUMERIC, DECIMAL) column |
 | CORR(ColumnY, ColumnX) | The correlation coefficient for non-null pairs in a group. |
 | COUNT (*, [DISTINCT] column) | The number of rows returned by a query or grouping. All datatypes are supported |

@@ -12,7 +12,7 @@ MBRCoveredBy(g1, g2)
 
 Returns 1 if the [minimum bounding rectangle](mbr-definition.md) of `g1` is covered by the minimum bounding rectangle of `g2`, otherwise 0.
 
-Returns NULL If any argument is NULL, or an argument is an empty geometry.
+Returns `NULL` If any argument is `NULL`, or an argument is an empty geometry.
 
 ## Examples
 

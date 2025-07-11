@@ -73,7 +73,6 @@ The ColumnStore storage engine can use either the custom select handler or the g
 
 | Value | Description                                                                                                                                                                         |
 | ----- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Value | Description                                                                                                                                                                         |
 | AUTO  | • When set to AUTO, Enterprise ColumnStore automatically chooses the best select handler for a given SELECT query. • AUTO was added in Enterprise ColumnStore 6.                    |
 | OFF   | • When set to OFF, Enterprise ColumnStore uses the generic select handler for all SELECT queries. • It is not recommended to use this value, unless recommended by MariaDB Support. |
 | ON    | • When set to ON, Enterprise ColumnStore uses the custom select handler for all SELECT queries. • ON is the default in Enterprise ColumnStore 5 and Enterprise ColumnStore 6.       |
@@ -92,7 +91,6 @@ The relevant configuration options are:
 
 | Section  | Option               | Description                                                                                                                                                                                                                          |
 | -------- | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Section  | Option               | Description                                                                                                                                                                                                                          |
 | HashJoin | PmMaxMemorySmallSide | • Configures the amount of memory available for a single join. • Valid values are from 0 to 4 GB. • Default value is 1 GB.                                                                                                           |
 | HashJoin | TotalUmMemory        | • Configures the amount of memory available for all joins. • Values can be specified as a percentage of total system memory or as a specific amount of memory. • Valid percentage values are from 0 to 100%. • Default value is 25%. |
 
@@ -111,7 +109,6 @@ The relevant configuration options are:
 
 | Section      | Option              | Description                                                                                                                                 |
 | ------------ | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
-| Section      | Option              | Description                                                                                                                                 |
 | HashJoin     | AllowDiskBasedJoin  | • Enables disk-based joins • Valid values are Y and N • Default value is N.                                                                 |
 | HashJoin     | TempFileCompression | • Enables compression for temporary files used by disk-based joins. • Valid values are Y and N • Default value is N.                        |
 | SystemConfig | SystemTempFileDir   | Configures the directory used for temporary files used by disk-based joins and aggregations • Default value is /tmp/columnstore\_tmp\_files |
@@ -138,7 +135,6 @@ The relevant configuration options are:
 
 | Section        | Option                    | Description                                                                                                                                 |
 | -------------- | ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
-| Section        | Option                    | Description                                                                                                                                 |
 | RowAggregation | AllowDiskBasedAggregation | • Enables disk-based joins • Valid values are Y and N • Default value is N.                                                                 |
 | RowAggregation | Compression               | • Enables compression for temporary files used by disk-based joins. • Valid values are Y and N • Default value is N.                        |
 | SystemConfig   | SystemTempFileDir         | Configures the directory used for temporary files used by disk-based joins and aggregations • Default value is /tmp/columnstore\_tmp\_files |

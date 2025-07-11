@@ -163,7 +163,7 @@ CREATE TABLE hq_sales.invoices (
 );
 ```
 
-5. Alter the table using the [ALTER TABLE](../../reference/sql-statements/data-definition/alter/alter-table.md) statement and specify the new primary key with the ADD PRIMARY KEY() clause:
+5. Alter the table using the [ALTER TABLE](../../reference/sql-statements/data-definition/alter/alter-table/) statement and specify the new primary key with the ADD PRIMARY KEY() clause:
 
 ```sql
 ALTER TABLE hq_sales.invoices ADD PRIMARY KEY (invoice_id);
@@ -173,7 +173,7 @@ ALTER TABLE hq_sales.invoices ADD PRIMARY KEY (invoice_id);
 
 Let's drop the primary key from the table created in the [create an InnoDB table without a primary key](primary-key-constraints.md#creating-an-innodb-table-with-a-single-column-primary-key) section:
 
-1. Alter the table using the [ALTER TABLE](../../reference/sql-statements/data-definition/alter/alter-table.md) statement and specify the `DROP PRIMARY KEY` clause:
+1. Alter the table using the [ALTER TABLE](../../reference/sql-statements/data-definition/alter/alter-table/) statement and specify the `DROP PRIMARY KEY` clause:
 
 ```sql
 ALTER TABLE hq_sales.invoices DROP PRIMARY KEY;
@@ -183,7 +183,7 @@ ALTER TABLE hq_sales.invoices DROP PRIMARY KEY;
 
 Let's change the primary key from the table created in the [create an InnoDB table without a primary key](primary-key-constraints.md#creating-an-innodb-table-with-a-single-column-primary-key) section:
 
-1. Alter the table using the [ALTER TABLE](../../reference/sql-statements/data-definition/alter/alter-table.md) statement and specify the `DROP PRIMARY KEY` clause to drop the old primary key, and specify the new primary key with the `ADD PRIMARY KEY()` clause:
+1. Alter the table using the [ALTER TABLE](../../reference/sql-statements/data-definition/alter/alter-table/) statement and specify the `DROP PRIMARY KEY` clause to drop the old primary key, and specify the new primary key with the `ADD PRIMARY KEY()` clause:
 
 ```sql
 ALTER TABLE hq_sales.invoices
@@ -257,7 +257,7 @@ WHERE t.TABLE_SCHEMA != 'mysql'
 +--------------+------------+
 ```
 
-6. To add a primary key, alter the table using the [ALTER TABLE](../../reference/sql-statements/data-definition/alter/alter-table.md) statement, and specify the primary key with the `ADD PRIMARY KEY()` clause:
+6. To add a primary key, alter the table using the [ALTER TABLE](../../reference/sql-statements/data-definition/alter/alter-table/) statement, and specify the primary key with the `ADD PRIMARY KEY()` clause:
 
 ```sql
 ALTER TABLE hq_sales.invoices ADD PRIMARY KEY (invoice_id);

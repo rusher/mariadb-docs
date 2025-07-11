@@ -16,7 +16,7 @@ The `SET` statement in stored programs is implemented as part of the pre-existin
 
 When setting several variables using the columns returned by a query, [SELECT INTO](selectinto.md) should be preferred.
 
-To set many variables to the same value, the [LAST\_VALUE( )](../../sql-statements-and-structure/sql-statements/built-in-functions/secondary-functions/information-functions/last_value.md) function can be used.
+To set many variables to the same value, the [LAST\_VALUE( )](../../sql-functions/secondary-functions/information-functions/last_value.md) function can be used.
 
 Below is an example of how a user-defined variable may be set:
 

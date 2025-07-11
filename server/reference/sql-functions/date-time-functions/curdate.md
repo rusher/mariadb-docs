@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 CURDATE()
 CURRENT_DATE
 CURRENT_DATE()
@@ -10,15 +10,13 @@ CURRENT_DATE()
 
 ## Description
 
-`CURDATE` returns the current date as a value in 'YYYY-MM-DD' or YYYYMMDD\
-format, depending on whether the function is used in a string or\
-numeric context.
+`CURDATE` returns the current date as a value in `YYYY-MM-DD` or `YYYYMMDD` format, depending on whether the function is used in a string or numeric context.
 
 `CURRENT_DATE` and `CURRENT_DATE()` are synonyms.
 
 ## Examples
 
-```
+```sql
 SELECT CURDATE();
 +------------+
 | CURDATE()  |
@@ -29,7 +27,7 @@ SELECT CURDATE();
 
 In a numeric context (note this is not performing date calculations):
 
-```
+```sql
 SELECT CURDATE() +0;
 +--------------+
 | CURDATE() +0 |
@@ -38,9 +36,9 @@ SELECT CURDATE() +0;
 +--------------+
 ```
 
-Data calculation:
+Date calculation:
 
-```
+```sql
 SELECT CURDATE() - INTERVAL 5 DAY;
 +----------------------------+
 | CURDATE() - INTERVAL 5 DAY |

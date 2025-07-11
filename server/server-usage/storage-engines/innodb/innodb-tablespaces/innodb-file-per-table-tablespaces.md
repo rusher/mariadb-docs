@@ -35,7 +35,7 @@ Note, the system user that runs the MariaDB Server process (which is usually `my
 
 ## Copying Transportable Tablespaces
 
-InnoDB's file-per-table tablespaces are transportable, which means that you can copy a file-per-table tablespace from one MariaDB Server to another server. You may find this useful in cases where you need to transport full tables between servers and don't want to use backup tools like [mariadb-backup](../../../backing-up-and-restoring-databases/mariadb-backup/) or [mariadb-dump](../../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md). In fact, this process can even be used with [mariadb-backup](../../../backing-up-and-restoring-databases/mariadb-backup/) in some cases, such as when [restoring partial backups](../../../backing-up-and-restoring-databases/mariadb-backup/partial-backup-and-restore-with-mariadb-backup.md) or when [restoring individual tables or partitions from a backup](../../../backing-up-and-restoring-databases/mariadb-backup/restoring-individual-tables-and-partitions-with-mariadb-backup.md).
+InnoDB's file-per-table tablespaces are transportable, which means that you can copy a file-per-table tablespace from one MariaDB Server to another server. You may find this useful in cases where you need to transport full tables between servers and don't want to use backup tools like [mariadb-backup](../../../backup-and-restore/mariadb-backup/mariadb-backup-overview.md) or [mariadb-dump](../../../../clients-and-utilities/backup-restore-and-import-clients/mariadb-dump.md). In fact, this process can even be used with [mariadb-backup](../../../backup-and-restore/mariadb-backup/mariadb-backup-overview.md) in some cases, such as when [restoring partial backups](../../../backup-and-restore/mariadb-backup/partial-backup-and-restore-with-mariadb-backup.md) or when [restoring individual tables or partitions from a backup](../../../backup-and-restore/mariadb-backup/restoring-individual-tables-and-partitions-with-mariadb-backup.md).
 
 ### Copying Transportable Tablespaces for Non-partitioned Tables
 
@@ -99,7 +99,7 @@ CREATE TABLE test.t1 (
 ) ENGINE=InnoDB;
 ```
 
-* Then, use [ALTER TABLE ... DISCARD TABLESPACE](../../../../reference/sql-statements/data-definition/alter/alter-table.md#discard-tablespace) to discard the new table's tablespace:
+* Then, use [ALTER TABLE ... DISCARD TABLESPACE](../../../../reference/sql-statements/data-definition/alter/alter-table/#discard-tablespace) to discard the new table's tablespace:
 
 ```sql
 ALTER TABLE test.t1 DISCARD TABLESPACE;
@@ -114,7 +114,7 @@ ALTER TABLE test.t1 DISCARD TABLESPACE;
 
 File-per-table tablespaces can be imported with just the `.ibd` file in many cases. If you do not have the tablespace's `.cfg` file for whatever reason, then it is usually worth trying to import the tablespace with just the `.ibd` file.
 
-* Then, once the files are in the proper directory on the target server, use [ALTER TABLE ... IMPORT TABLESPACE](../../../../reference/sql-statements/data-definition/alter/alter-table.md#import-tablespace) to import the new table's tablespace:
+* Then, once the files are in the proper directory on the target server, use [ALTER TABLE ... IMPORT TABLESPACE](../../../../reference/sql-statements/data-definition/alter/alter-table/#import-tablespace) to import the new table's tablespace:
 
 ```sql
 ALTER TABLE test.t1 IMPORT TABLESPACE;
@@ -226,7 +226,7 @@ This statement will create a new table called `t2_placeholder` that has the same
 
 From this point forward, the rest of our steps need to happen for each individual partition. For each partition, we need to do the following process:
 
-* First, we need to use [ALTER TABLE ... DISCARD TABLESPACE](../../../../reference/sql-statements/data-definition/alter/alter-table.md#discard-tablespace) to discard the placeholder table's tablespace:
+* First, we need to use [ALTER TABLE ... DISCARD TABLESPACE](../../../../reference/sql-statements/data-definition/alter/alter-table/#discard-tablespace) to discard the placeholder table's tablespace:
 
 ```sql
 ALTER TABLE test.t2_placeholder DISCARD TABLESPACE;
@@ -242,7 +242,7 @@ ALTER TABLE test.t2_placeholder DISCARD TABLESPACE;
 
 File-per-table tablespaces can be imported with just the `.ibd` file in many cases. If you do not have the tablepace's `.cfg` file for whatever reason, then it is usually worth trying to import the tablespace with just the `.ibd` file.
 
-* Then, once the files are in the proper directory on the target server, we need to use [ALTER TABLE ... IMPORT TABLESPACE](../../../../reference/sql-statements/data-definition/alter/alter-table.md#import-tablespace) to import the new table's tablespace:
+* Then, once the files are in the proper directory on the target server, we need to use [ALTER TABLE ... IMPORT TABLESPACE](../../../../reference/sql-statements/data-definition/alter/alter-table/#import-tablespace) to import the new table's tablespace:
 
 ```sql
 ALTER TABLE test.t2_placeholder IMPORT TABLESPACE;
@@ -260,7 +260,7 @@ SELECT * FROM test.t2_placeholder;
 +-------------+--------------+
 ```
 
-* Then, it's time to transfer the partition from the placeholder to the target table. This can be done with an [ALTER TABLE... EXCHANGE PARTITION](../../../../reference/sql-statements/data-definition/alter/alter-table.md#exchange-partition) statement:
+* Then, it's time to transfer the partition from the placeholder to the target table. This can be done with an [ALTER TABLE... EXCHANGE PARTITION](../../../../reference/sql-statements/data-definition/alter/alter-table/#exchange-partition) statement:
 
 ```sql
 ALTER TABLE test.t2 EXCHANGE PARTITION p0 WITH TABLE test.t2_placeholder;
@@ -305,7 +305,7 @@ DROP TABLE test.t2_placeholder;
 
 #### Differing Storage Formats for Temporal Columns
 
-[MariaDB 10.1.2](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-tablespaces/broken-reference/README.md) added the [mysql56\_temporal\_format](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#mysql56_temporal_format) system variable, which enables a new MySQL 5.6-compatible storage format for the [TIME](../../../../reference/data-types/date-and-time-data-types/time.md), [DATETIME](../../../../reference/data-types/date-and-time-data-types/datetime.md) and [TIMESTAMP](../../../../reference/data-types/date-and-time-data-types/timestamp.md) data types.
+[MariaDB 10.1.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/changelogs/changelogs-mariadb-101-series/mariadb-10-1-2-changelog) added the [mysql56\_temporal\_format](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#mysql56_temporal_format) system variable, which enables a new MySQL 5.6-compatible storage format for the [TIME](../../../../reference/data-types/date-and-time-data-types/time.md), [DATETIME](../../../../reference/data-types/date-and-time-data-types/datetime.md) and [TIMESTAMP](../../../../reference/data-types/date-and-time-data-types/timestamp.md) data types.
 
 If a file-per-tablespace file contains columns that use one or more of these temporal data types and if the tablespace file's original table was created with a certain storage format for these columns, then the tablespace file can only be imported into tables that were also created with the same storage format for these columns as the original table. Otherwise, you will see errors like the following:
 
@@ -316,7 +316,7 @@ ERROR 1808 (HY000): Schema mismatch (Column dt precise type mismatch.)
 
 See [MDEV-15225](https://jira.mariadb.org/browse/MDEV-15225) for more information.
 
-See the pages for the [TIME](../../../../reference/data-types/date-and-time-data-types/time.md), [DATETIME](../../../../reference/data-types/date-and-time-data-types/datetime.md) and [TIMESTAMP](../../../../reference/data-types/date-and-time-data-types/timestamp.md) data types to determine how to update the storage format for temporal columns in tables that were created before [MariaDB 10.1.2](https://github.com/mariadb-corporation/docs-server/blob/test/server/reference/storage-engines/innodb/innodb-tablespaces/broken-reference/README.md) or that were created with [mysql56\_temporal\_format=OFF](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#mysql56_temporal_format).
+See the pages for the [TIME](../../../../reference/data-types/date-and-time-data-types/time.md), [DATETIME](../../../../reference/data-types/date-and-time-data-types/datetime.md) and [TIMESTAMP](../../../../reference/data-types/date-and-time-data-types/timestamp.md) data types to determine how to update the storage format for temporal columns in tables that were created before [MariaDB 10.1.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/changelogs/changelogs-mariadb-101-series/mariadb-10-1-2-changelog) or that were created with [mysql56\_temporal\_format=OFF](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#mysql56_temporal_format).
 
 #### Differing ROW\_FORMAT Values
 

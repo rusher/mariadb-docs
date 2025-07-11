@@ -17,7 +17,6 @@ In spite of some resources stating the contrary, Boyce-Codd normal form is not t
 
 | Student Course Instructor table |
 | --- |
-| Student Course Instructor table |
 | Student |
 | Course |
 | Instructor |
@@ -45,7 +44,6 @@ Perhaps *student* and *instructor* seem like the best choice, as that would allo
 
 | Student Course Instructor table |
 | --- |
-| Student Course Instructor table |
 | Student |
 | Course |
 | Instructor |
@@ -64,7 +62,6 @@ But there are still some data anomalies. Look at the data sample below:
 
 | Student | Course | Instructor |
 | --- | --- | --- |
-| Student | Course | Instructor |
 | Conrad Pienaar | Biology | Nkosizana Asmal |
 | Dingaan Fortune | Mathematics | Kader Dlamini |
 | Gerrie Jantjies | Science | Helen Ginwala |
@@ -84,7 +81,6 @@ The fact that Peter Leon teaches science is stored redundantly, as are Kader Dla
 
 | Student Course Instructor table |
 | --- |
-| Student Course Instructor table |
 | Student |
 | Instructor |
 
@@ -99,7 +95,6 @@ After removing the *course* field, the primary key needs to include both remaini
 
 | Student Course Instructor table |
 | --- |
-| Student Course Instructor table |
 | Instructor |
 | Course |
 
@@ -134,7 +129,6 @@ Let's look at the example again, and see what happens if you chose student and i
 
 | Student Course Instructor table |
 | --- |
-| Student Course Instructor table |
 | Student |
 | Instructor |
 | Course |
@@ -150,7 +144,6 @@ Once again it's in 1st normal form because there is a primary key and there are 
 
 | Student Instructor table |
 | --- |
-| Student Instructor table |
 | Student |
 | Instructor |
 
@@ -162,7 +155,6 @@ Once again it's in 1st normal form because there is a primary key and there are 
 
 | Student Course Instructor table |
 | --- |
-| Student Course Instructor table |
 | Instructor |
 | Course |
 

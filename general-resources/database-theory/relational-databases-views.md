@@ -4,14 +4,12 @@ Views are virtual tables. They are only a structure, and contain no data. Their 
 
 | Student View |
 | ------------ |
-| Student View |
 | First name   |
 | Surname      |
 | Grade        |
 
 | Student Table |
 | ------------- |
-| Student Table |
 | Student\_id   |
 | First name    |
 | Surname       |
@@ -25,14 +23,12 @@ Alternatively, a view could be a combination of a number of tables, such as the 
 
 | Student View |
 | ------------ |
-| Student View |
 | First name   |
 | Surname      |
 | Grade        |
 
 | Student Table |
 | ------------- |
-| Student Table |
 | Student\_id   |
 | First name    |
 | Surname       |
@@ -41,13 +37,11 @@ Alternatively, a view could be a combination of a number of tables, such as the 
 
 | Course Table       |
 | ------------------ |
-| Course Table       |
 | Course\_id         |
 | Course description |
 
 | Grade Table | Student\_id |
 | ----------- | ----------- |
-| Grade Table |             |
 | Student\_id |             |
 | Course\_id  |             |
 | Grade       |             |

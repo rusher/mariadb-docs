@@ -157,7 +157,7 @@ In alignment to the [enterprise lifecycle](https://app.gitbook.com/o/diTpXxF5Wsb
 
 Some components of MariaDB Enterprise Server might not support all platforms. For additional information, see [MariaDB Corporation Engineering Policies".](https://mariadb.com/engineering-policies)
 
-## IInstallation Instructions
+## Installation Instructions
 
 [Deploy MariaDB Enterprise with Repositories](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/architecture/topologies/single-node-topologies/enterprise-server)
 
@@ -168,6 +168,8 @@ Some components of MariaDB Enterprise Server might not support all platforms. Fo
 ## Upgrade Instructions
 
 [Upgrade to MariaDB Enterprise Server 11.4](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/server-management/install-and-upgrade-mariadb/upgrading/upgrades/upgrade-to-mariadb-enterprise-server-11.4)
+
+
 
 {% include "https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/~/reusable/pNHZQXPP5OEz2TgvhFva/" %}
 

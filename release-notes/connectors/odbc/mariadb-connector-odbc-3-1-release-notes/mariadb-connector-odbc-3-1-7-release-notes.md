@@ -1,4 +1,4 @@
-# MariaDB Connector/ODBC 3.1.7 Release Notes
+# Connector/ODBC 3.1.7 Release Notes
 
 The most recent [_**Stable**_](../../../mariadb-release-criteria.md) _**(GA)**_ release of MariaDB Connector/ODBC is:[**MariaDB Connector/ODBC 3.2.5**](../mariadb-connector-odbc-3-2-release-notes/mariadb-connector-odbc-3-2-5-release-notes.md)
 
@@ -16,7 +16,7 @@ MariaDB Connector/ODBC 3.1.7 is built on top of[MariaDB Connector/C v.3.1.7](../
 * [ODBC-271](https://jira.mariadb.org/browse/ODBC-271) - MSI should not install on Windows 7
 * [ODBC-276](https://jira.mariadb.org/browse/ODBC-276) - Update of Binary data containing 0x00 does not work
 * [ODBC-277](https://jira.mariadb.org/browse/ODBC-277) - Memory Corruption from Incorrect Type for SQL\_IDENTIFIER\_CASE
-* [ODBC-274](https://jira.mariadb.org/browse/ODBC-274) - Support [INSERT/REPLACE ... RETURNING](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/inserting-loading-data/insertreturning) (requires [MariaDB 10.5](../../../mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105.md))
+* [ODBC-274](https://jira.mariadb.org/browse/ODBC-274) - Support [INSERT/REPLACE ... RETURNING](https://app.gitbook.com/s/SsmexDFPv2xG2OTyO5yV/reference/sql-statements/data-manipulation/inserting-loading-data/insertreturning) (requires [MariaDB 10.5](../../../mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/what-is-mariadb-105.md))
 
 ## Changelog
 

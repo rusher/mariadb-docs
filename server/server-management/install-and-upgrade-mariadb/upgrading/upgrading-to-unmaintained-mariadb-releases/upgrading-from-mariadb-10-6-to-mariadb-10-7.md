@@ -55,7 +55,6 @@ If a non-zlib compression algorithm was used in [InnoDB](../../../../server-usag
 
 | Option                                                                                                              | Old default | New default         |
 | ------------------------------------------------------------------------------------------------------------------- | ----------- | ------------------- |
-| Option                                                                                                              | Old default | New default         |
 | [spider\_auto\_increment\_mode](../../../../server-usage/storage-engines/spider/spider-system-variables.md)         | -1          | 0                   |
 | [spider\_bgs\_first\_read](../../../../server-usage/storage-engines/spider/spider-system-variables.md)              | -1          | 2                   |
 | [spider\_bgs\_mode](../../../../server-usage/storage-engines/spider/spider-system-variables.md)                     | -1          | 0                   |
@@ -110,7 +109,6 @@ The following options should be removed or renamed if you use them in your [opti
 
 | Option                                                                                                                                      | Reason                                                                                                                          |
 | ------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
-| Option                                                                                                                                      | Reason                                                                                                                          |
 | [wsrep\_replicate\_myisam](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_replicate_myisam) | Use [wsrep\_mode](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_mode) instead. |
 | [wsrep\_strict\_ddl](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_strict_ddl)             | Use [wsrep\_mode](https://app.gitbook.com/s/3VYeeVGUV4AMqrA3zwy7/reference/galera-cluster-system-variables#wsrep_mode) instead. |
 

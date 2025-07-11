@@ -30,7 +30,7 @@ CREATE TABLE hq_sales.invoices (
 
 ### ALTER TABLE .. MODIFY COLUMN .. NOT NULL
 
-With MariaDB Server, the [ALTER TABLE](../../reference/sql-statements/data-definition/alter/alter-table.md) statement can be used to add the `NOT NULL` constraint to a column using the `MODIFY COLUMN` clause:
+With MariaDB Server, the [ALTER TABLE](../../reference/sql-statements/data-definition/alter/alter-table/) statement can be used to add the `NOT NULL` constraint to a column using the `MODIFY COLUMN` clause:
 
 ```sql
 ALTER TABLE hq_sales.invoices
@@ -38,7 +38,7 @@ ALTER TABLE hq_sales.invoices
 ALTER TABLE .. MODIFY COLUMN .. NULL
 ```
 
-With MariaDB Server, the [ALTER TABLE](../../reference/sql-statements/data-definition/alter/alter-table.md) statement can be used to remove the `NOT NULL` constraint from a column using the `MODIFY COLUMN` clause:
+With MariaDB Server, the [ALTER TABLE](../../reference/sql-statements/data-definition/alter/alter-table/) statement can be used to remove the `NOT NULL` constraint from a column using the `MODIFY COLUMN` clause:
 
 ```sql
 ALTER TABLE hq_sales.invoices

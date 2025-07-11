@@ -48,7 +48,7 @@ routine creator. See also [Stored Routine Privileges](../stored-functions/stored
 
 The `DEFINER` and SQL SECURITY clauses specify the security context to\
 be used when checking access privileges at routine execution time, as\
-described [here](../stored-functions/stored-routine-privileges.md). Requires the [SUPER](../../../reference/sql-statements/account-management-sql-statements/grant.md#super) privilege, or, from [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1052-release-notes), the [SET USER](../../../reference/sql-statements/account-management-sql-statements/grant.md#set-user) privilege.
+described [here](../stored-functions/stored-routine-privileges.md). Requires the [SUPER](../../../reference/sql-statements/account-management-sql-statements/grant.md#super) privilege, or, from [MariaDB 10.5.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-1052-release-notes), the [SET USER](../../../reference/sql-statements/account-management-sql-statements/grant.md#set-user) privilege.
 
 If the routine name is the same as the name of a built-in SQL\
 function, you must use a space between the name and the following\
@@ -152,7 +152,7 @@ Procedure parameters can be declared with any character set/collation. If the ch
 
 ### Oracle Mode
 
-A subset of Oracle's PL/SQL language is supported in addition to the traditional SQL/PSM-based MariaDB syntax. See [Oracle mode](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-usage/stored-routines/stored-procedures/broken-reference/README.md) for details on changes when running Oracle mode.
+A subset of Oracle's PL/SQL language is supported in addition to the traditional SQL/PSM-based MariaDB syntax. See Oracle mode for details on changes when running Oracle mode.
 
 ## Examples
 

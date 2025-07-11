@@ -1,8 +1,8 @@
-# MariaDB Connector/Node.js 2.2.0 Changelog
+# Connector/Node.js 2.2.0 Changelog
 
-The most recent [_**Stable (GA)**_](../../../../mariadb-release-criteria.md) release of [MariaDB Connector/Node.js](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/about-mariadb-connector-nodejs/README.md) is:[**MariaDB Connector/Node.js 3.4.2**](../../mariadb-connector-nodejs-3x-release-notes/mariadb-connector-node-js-3-4-2-release-notes.md)
+{% include "../../../../.gitbook/includes/latest-nodejs.md" %}
 
-[Download](https://mariadb.com/downloads/#connectors)[Release Notes](../../mariadb-connector-nodejs-2x-release-notes/mariadb-connector-nodejs-220-release-notes.md)[Changelog](mariadb-connector-nodejs-220-changelog.md)[Connector/Node.js Overview](https://github.com/mariadb-corporation/docs-release-notes/blob/test/en/about-mariadb-connector-nodejs/README.md)
+[Download](https://mariadb.com/downloads/#connectors) | [Release Notes](../../mariadb-connector-nodejs-2x-release-notes/mariadb-connector-nodejs-220-release-notes.md) | [Changelog](mariadb-connector-nodejs-220-changelog.md) | [Connector/Node.js Overview](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-nodejs/mariadb-connector-node-js-guide)
 
 **Release date:** 4 Feb 2020
 
@@ -25,8 +25,8 @@ details of the revision and view diffs of the code modified in that revision.
 * [Revision #8475433](https://github.com/mariadb-corporation/mariadb-connector-j/commit/8475433) - \[[CONJS-118](https://jira.mariadb.org/browse/CONJS-118)] test addition
 * [Revision #83eee2c](https://github.com/mariadb-corporation/mariadb-connector-j/commit/83eee2c) - Merge branch 'pull/97' into develop
 * [Revision #47e12e8](https://github.com/mariadb-corporation/mariadb-connector-j/commit/47e12e8) - Fix missing Errors require.
-* [Revision #1c786ec](https://github.com/mariadb-corporation/mariadb-connector-j/commit/1c786ec) - \[misc] running windows tests with [MariaDB 10.5](../../../../mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105.md)
-* [Revision #e5f4d94](https://github.com/mariadb-corporation/mariadb-connector-j/commit/e5f4d94) - \[misc] running tests with [MariaDB 10.5](../../../../mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105.md) build version and 10.5.0 on windows
+* [Revision #1c786ec](https://github.com/mariadb-corporation/mariadb-connector-j/commit/1c786ec) - \[misc] running windows tests with [MariaDB 10.5](../../../../mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/what-is-mariadb-105.md)
+* [Revision #e5f4d94](https://github.com/mariadb-corporation/mariadb-connector-j/commit/e5f4d94) - \[misc] running tests with [MariaDB 10.5](../../../../mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/what-is-mariadb-105.md) build version and 10.5.0 on windows
 * [Revision #a5117c2](https://github.com/mariadb-corporation/mariadb-connector-j/commit/a5117c2) - \[misc] correct appveyor link since moving to github mariadb-corporation
 * [Revision #abb033a](https://github.com/mariadb-corporation/mariadb-connector-j/commit/abb033a) - \[[CONJS-117](https://jira.mariadb.org/browse/CONJS-117)] tests fiability improvement + test correction for MySQL8.0 that nox completly disable loading local data
 * [Revision #746c6a5](https://github.com/mariadb-corporation/mariadb-connector-j/commit/746c6a5) - \[misc] removing test deprecated [MariaDB 10.0](../../../../mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-0-series/changes-improvements-in-mariadb-10-0.md), since not available anymore

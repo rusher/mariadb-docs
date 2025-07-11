@@ -10,9 +10,9 @@ ST_INTERSECTS(g1,g2)
 
 Returns `1` or `0` to indicate whether geometry _`g1`_ spatially intersects geometry _`g2`_.
 
-ST\_INTERSECTS() uses object shapes, while [INTERSECTS()](intersects.md), based on the original MySQL implementation, uses object bounding rectangles.
+`ST_INTERSECTS()` uses object shapes, while [INTERSECTS()](intersects.md), based on the original MySQL implementation, uses object bounding rectangles.
 
-ST\_INTERSECTS() tests the opposite relationship to [ST\_DISJOINT()](st_disjoint.md).
+`ST_INTERSECTS()` tests the opposite relationship to [ST\_DISJOINT()](st_disjoint.md).
 
 ## Examples
 

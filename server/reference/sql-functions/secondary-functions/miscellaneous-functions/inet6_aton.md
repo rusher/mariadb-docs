@@ -2,7 +2,7 @@
 
 ## Syntax
 
-```
+```sql
 INET6_ATON(expr)
 ```
 
@@ -14,15 +14,23 @@ No trailing zone ID's or traling network masks are permitted. For IPv4 addresses
 
 The returned binary string will be [VARBINARY(16)](../../../data-types/string-data-types/varbinary.md) or [VARBINARY(4)](../../../data-types/string-data-types/varbinary.md) for IPv6 and IPv4 addresses respectively.
 
-Returns NULL if the argument is not understood.
+Returns `NULL` if the argument is not understood.
 
-**MariaDB starting with** [**10.5.0**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1050-release-notes)
+**MariaDB starting with** [**10.5.0**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-1050-release-notes)
 
-From [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1050-release-notes), `INET6_ATON` can take [INET6](../../../data-types/string-data-types/inet6.md) as an argument.
+{% tabs %}
+{% tab title="Current" %}
+`INET6_ATON` can take [INET6](../../../data-types/string-data-types/inet6.md) as an argument.
+{% endtab %}
+
+{% tab title="< 10.5" %}
+&#x20;`INET6_ATON` **cannot** take [INET6](../../../data-types/string-data-types/inet6.md) as an argument.
+{% endtab %}
+{% endtabs %}
 
 ## Examples
 
-```
+```sql
 SELECT HEX(INET6_ATON('10.0.1.1'));
 +-----------------------------+
 | HEX(INET6_ATON('10.0.1.1')) |

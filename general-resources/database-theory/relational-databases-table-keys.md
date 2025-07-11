@@ -22,7 +22,6 @@ For example, see the following table:
 
 | Customer_code | First_name | Surname | Telephone_number |
 | --- | --- | --- | --- |
-| Customer_code | First_name | Surname | Telephone_number |
 | 1 | Ariane | Edison | 448-2143 |
 | 2 | Georgei | Edison | 448-2142 |
 | 3 | Abbas | Edison | 9231-5312 |

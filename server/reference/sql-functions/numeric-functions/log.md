@@ -2,28 +2,25 @@
 
 ## Syntax
 
-```
+```sql
 LOG(X), LOG(B,X)
 ```
 
 ## Description
 
-If called with one parameter, this function returns the natural\
-logarithm of X. If X is less than or equal to 0, then NULL is\
-returned.
+If called with one parameter, this function returns the natural logarithm of X. If X is less than or equal to 0, then `NULL` is returned.
 
-If called with two parameters, it returns the logarithm of X to the base B. If B is <= 1 or X <= 0, the function returns NULL.
+If called with two parameters, it returns the logarithm of X to the base B. If B is <= 1 or X <= 0, the function returns `NULL`.
 
 If any argument is `NULL`, the function returns `NULL`.
 
-The inverse of this function (when called with a single argument) is\
-the [EXP()](exp.md) function.
+The inverse of this function (when called with a single argument) is the [EXP()](exp.md) function.
 
 ## Examples
 
 LOG(X):
 
-```
+```sql
 SELECT LOG(2);
 +-------------------+
 | LOG(2)            |
@@ -41,7 +38,7 @@ SELECT LOG(-2);
 
 LOG(B,X)
 
-```
+```sql
 SELECT LOG(2,16);
 +-----------+
 | LOG(2,16) |

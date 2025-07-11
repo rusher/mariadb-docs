@@ -1,12 +1,14 @@
 # UUID\_v7
 
-**MariaDB starting with** [**11.7**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-11-7-rolling-releases/what-is-mariadb-117)
+{% hint style="info" %}
+`UUID_v7` is available from MariaDB [11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-11-7-rolling-releases/what-is-mariadb-117).
+{% endhint %}
 
-From [MariaDB 11.7](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-11-7-rolling-releases/what-is-mariadb-117), it is possible to generate UUIDv4 and UUIDv7, in addition to UUIDv1.
+It is possible to generate UUIDv4 and UUIDv7, in addition to UUIDv1.
 
 ## Syntax
 
-```
+```sql
 UUID_v7()
 ```
 
@@ -16,15 +18,13 @@ Returns a Universally Unique Identifier (UUID) version 7. To generate a version 
 
 A UUID is designed as a number that is globally unique in space and time. Two calls to `UUID()` are expected to generate two different values, even if these calls are performed on two separate computers that are not connected to each other.
 
-A UUID is a 128-bit number represented by a utf8 string of five\
-hexadecimal numbers in `aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee`\
-format:
+A UUID is a 128-bit number represented by a utf8 string of five hexadecimal numbers in `aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee` format.
 
 Statements using the UUID\_v7() function are [not safe for statement-based replication](../../../../ha-and-performance/standard-replication/unsafe-statements-for-statement-based-replication.md).
 
 ## Examples
 
-```
+```sql
 SELECT UUID(),UUID_v4(),UUID_v7()\G 
 *************************** 1. row ***************************
   UUID(): 63ae8c92-799a-11ef-98b2-f859713e4be4

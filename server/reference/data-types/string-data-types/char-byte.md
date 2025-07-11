@@ -2,22 +2,21 @@
 
 ## Description
 
-The `CHAR BYTE` data type is an alias for the[BINARY](binary.md) data type. This is a\
-compatibility feature.
+The `CHAR BYTE` data type is an alias for the [BINARY](binary.md) data type. This is a compatibility feature.
 
 ## EXAMPLES
 
-```
+```sql
 CREATE TABLE char_byte_example (
   example CHAR BYTE
 );
 ```
 
-```
+```sql
 SHOW CREATE TABLE char_byte_example\G
 ```
 
-```
+```sql
 *************************** 1. row ***************************
        Table: char_byte_example
 Create Table: CREATE TABLE `char_byte_example` (

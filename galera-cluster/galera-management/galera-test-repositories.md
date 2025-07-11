@@ -1,21 +1,16 @@
-
 # Galera Test Repositories
 
-To facilitate development and QA, we have created some test repositories for
+To facilitate development and QA, we have created some test repositories for\
 the Galera wsrep provider.
-
 
 {% hint style="warning" %}
 These are **test** repositories. There will be periods when they do not work at all, or work incorrectly, or possibly cause earthquakes, typhoons, and tornadoes. You have been warned.
 {% endhint %}
 
-
 ## Galera Test Repositories for YUM
 
-
-Replace `${dist}` in the code below for
+Replace `${dist}` in the code below for\
 the YUM-based distribution you are testing. Valid distributions are:
-
 
 * `centos5-amd64`
 * `centos5-x86`
@@ -43,7 +38,6 @@ the YUM-based distribution you are testing. Valid distributions are:
 * `sles12-amd64`
 * `sles12-ppc64le`
 
-
 ```
 # Place this code block in a file at /etc/yum.repos.d/galera.repo
 [galera-test]
@@ -55,11 +49,9 @@ gpgcheck=1
 
 ## Galera Test Repositories for APT
 
-
-Replace `${dist}` in the code below
-for the APT-based distribution
+Replace `${dist}` in the code below\
+for the APT-based distribution\
 you are testing. Valid ones are:
-
 
 * `wheezy`
 * `jessie`
@@ -67,7 +59,6 @@ you are testing. Valid ones are:
 * `precise`
 * `trusty`
 * `xenial`
-
 
 ```
 # run the following command:
@@ -77,8 +68,6 @@ sudo apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 0xcbcb082a1bb943db
 deb http://yum.mariadb.org/galera/repo/deb ${dist} main
 ```
 
-
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
-
 
 {% @marketo/form formId="4316" %}

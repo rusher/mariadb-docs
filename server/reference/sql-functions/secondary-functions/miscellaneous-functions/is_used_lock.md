@@ -2,15 +2,13 @@
 
 ## Syntax
 
-```
+```sql
 IS_USED_LOCK(str)
 ```
 
 ## Description
 
-Checks whether the lock named `str` is in use (that is, locked). If so,\
-it returns the connection identifier of the client that holds the\
-lock. Otherwise, it returns `NULL`. `str` is case insensitive.
+Checks whether the lock named `str` is in use (that is, locked). If so, it returns the connection identifier of the client that holds the lock. Otherwise, it returns `NULL`. `str` is case insensitive.
 
 If the [metadata\_lock\_info](../../../plugins/other-plugins/metadata-lock-info-plugin.md) plugin is installed, the [Information Schema](../../../sql-statements/administrative-sql-statements/system-tables/information-schema/) [metadata\_lock\_info](../../../sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-metadata_lock_info-table.md) table contains information about locks of this kind (as well as [metadata locks](../../../sql-statements/transactions/metadata-locking.md)).
 
@@ -23,6 +21,6 @@ Statements using the `IS_USED_LOCK` function are [not safe for statement-based r
 * [IS\_FREE\_LOCK](is_free_lock.md)
 * [RELEASE\_ALL\_LOCKS](release_all_locks.md)
 
-<sub>_This page is licensed: GPLv2, originally from [fill\_help\_tables.sql](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)_</sub>
+<sub>_This page is licensed: GPLv2, originally from_</sub> [<sub>_fill\_help\_tables.sql_</sub>](https://github.com/MariaDB/server/blob/main/scripts/fill_help_tables.sql)
 
 {% @marketo/form formId="4316" %}

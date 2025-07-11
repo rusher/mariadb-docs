@@ -58,7 +58,7 @@ All statements can be prepared, except [PREPARE](prepare-statement.md), [EXECUTE
 
 Prior to this, not all statements can be prepared. Only the following SQL commands are permitted:
 
-* [ALTER TABLE](../data-definition/alter/alter-table.md)
+* [ALTER TABLE](../data-definition/alter/alter-table/)
 * [ANALYZE TABLE](../table-statements/analyze-table.md)
 * [BINLOG](../administrative-sql-statements/binlog.md)
 * [CACHE INDEX](../administrative-sql-statements/cache-index.md)

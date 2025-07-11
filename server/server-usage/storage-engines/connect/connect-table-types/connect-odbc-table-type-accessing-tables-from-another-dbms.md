@@ -88,7 +88,6 @@ There are several ways to enable random (position) access to a CONNECT ODBC tabl
 
 | Option       | Type    | Used For                          |
 | ------------ | ------- | --------------------------------- |
-| Option       | Type    | Used For                          |
 | Block\_Size  | Integer | Specifying the rowset size.       |
 | Memory\*     | Integer | Storing the result set in memory. |
 | Scrollable\* | Boolean | Using a scrollable cursor.        |
@@ -142,7 +141,6 @@ This will extract the data from Excel and display:
 
 | Nom                 | Fonction                            | Societe                 |
 | ------------------- | ----------------------------------- | ----------------------- |
-| Nom                 | Fonction                            | Societe                 |
 | Boisseau Frederic   |                                     | 9 Telecom               |
 | Martelliere Nicolas |                                     | Vidal SA (Groupe UBM)   |
 | Remy Agathe         |                                     | Price Minister          |
@@ -206,7 +204,6 @@ depending on the setting of the MEMORY or SCROLLABLE Boolean options:
 
 | Option         | Description                                                                                           |
 | -------------- | ----------------------------------------------------------------------------------------------------- |
-| Option         | Description                                                                                           |
 | Default        | Implementing "requery" by discarding the current result set and re submitting the query (as MFC does) |
 | Memory=1 or 2  | Storing the result set in memory as MYSQL tables do.                                                  |
 | Scrollable=Yes | Using a scrollable cursor.                                                                            |
@@ -256,7 +253,6 @@ The result:
 
 | country   | customers |
 | --------- | --------- |
-| country   | customers |
 | Brazil    | 9         |
 | France    | 11        |
 | Germany   | 11        |
@@ -433,7 +429,6 @@ This command returns:
 
 | command                                                          | number | message       |
 | ---------------------------------------------------------------- | ------ | ------------- |
-| command                                                          | number | message       |
 | CREATE TABLE lite (ID integer primary key autoincrement, name... | 0      | Affected rows |
 
 Now we can create a standard ODBC table on the newly created table:
@@ -462,7 +457,6 @@ select * from tlite;
 
 | ID | name | birth      | rem   |
 | -- | ---- | ---------- | ----- |
-| ID | name | birth      | rem   |
 | 1  | Toto | 2005-06-12 | NULL  |
 | 2  | Foo  | NULL       | No ID |
 | 3  | Truc | 1998-10-27 | NULL  |
@@ -479,7 +473,6 @@ This command returns:
 
 | command                                           | number | message       |
 | ------------------------------------------------- | ------ | ------------- |
-| command                                           | number | message       |
 | update lite set birth = '2012-07-15' where ID = 2 | 1      | Affected rows |
 
 Let us verify it:
@@ -490,7 +483,6 @@ select * from tlite where ID = 2;
 
 | ID | name | birth      | rem   |
 | -- | ---- | ---------- | ----- |
-| ID | name | birth      | rem   |
 | 2  | Foo  | 2012-07-15 | No ID |
 
 The syntax to send a command is rather strange and may seem unnatural. It is possible to use an easier\
@@ -704,7 +696,6 @@ instance:
 
 | Tabname | DBname | Description                                                    |
 | ------- | ------ | -------------------------------------------------------------- |
-| Tabname | DBname | Description                                                    |
 | test.t1 |        | The t1 table of the test schema.                               |
 | test.t1 | mydb   | The t1 table of the test schema (test has precedence)          |
 | t1      | mydb   | The t1 table of the mydb schema                                |
@@ -838,7 +829,6 @@ The following options can be given as comma-separated string to the `OPTION_LIST
 
 | Name           | Default | Description                                          |
 | -------------- | ------- | ---------------------------------------------------- |
-| Name           | Default | Description                                          |
 | MaxRes         | 0       | Maximum number of rows returned by catalog functions |
 | ConnectTimeout | -1      | Connection timeout in seconds, unlimited by default  |
 | QueryTimeout   | -1      | Query timeout in seconds, unlimited by default       |

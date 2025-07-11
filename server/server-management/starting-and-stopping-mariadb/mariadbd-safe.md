@@ -4,7 +4,7 @@ The `mariadbd-safe` startup script is in MariaDB distributions on Linux and Unix
 
 `mariadbd-safe` is the recommended way to start `mariadbd` on Linux and Unix distributions that do not support [systemd](systemd.md). Additionally, the [mysql.server](mysql-server.md) init script used by [sysVinit](sysvinit.md) starts `mariadbd` with `mariadbd-safe` by default.
 
-Prior to [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105), the client used to be called `mysqld_safe`, and can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
+Prior to [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/what-is-mariadb-105), the client used to be called `mysqld_safe`, and can still be accessed under this name, via a symlink in Linux, or an alternate binary in Windows.
 
 ## Using mariadbd-safe
 
@@ -23,7 +23,6 @@ options supported by [mariadbd](mariadbd-options.md). If an unknown option is pr
 
 | Option                                   | Description                                                                                                                                                                                                                                                                                                                                                                                |
 | ---------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Option                                   | Description                                                                                                                                                                                                                                                                                                                                                                                |
 | --help                                   | Display a help message and exit.                                                                                                                                                                                                                                                                                                                                                           |
 | --autoclose                              | (NetWare only) On NetWare, mariadbd-safe provides a screen presence. When you unload (shut down) the mariadbd-safe NLM, the screen does not by default go away. Instead, it prompts for user input: NLM has terminated; Press any key to close the screen. If you want NetWare to close the screen automatically instead, use the --autoclose option to mariadbd-safe.                     |
 | --basedir=path                           | The path to the MariaDB installation directory.                                                                                                                                                                                                                                                                                                                                            |
@@ -63,7 +62,6 @@ The following options relate to how MariaDB command-line tools handles option fi
 
 | Option                    | Description                                                                         |
 | ------------------------- | ----------------------------------------------------------------------------------- |
-| Option                    | Description                                                                         |
 | --print-defaults          | Print the program argument list and exit.                                           |
 | --no-defaults             | Don't read default options from any option file.                                    |
 | --defaults-file=#         | Only read default options from the given file #.                                    |
@@ -76,7 +74,6 @@ The following options relate to how MariaDB command-line tools handles option fi
 
 | Group            | Description                                                                                                                                                                                                                                                          |
 | ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Group            | Description                                                                                                                                                                                                                                                          |
 | \[mysqld\_safe]  | Options read by mysqld\_safe, which includes both MariaDB Server and MySQL Server.                                                                                                                                                                                   |
 | \[safe\_mysqld]  | Options read by mysqld\_safe, which includes both MariaDB Server and MySQL Server.                                                                                                                                                                                   |
 | \[mariadbd-safe] | Options read by mariadbd\_safe\_safe from MariaDB Server. Available starting with [MariaDB 10.4.6](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-10-4-series/mariadb-1046-release-notes). |
@@ -88,7 +85,6 @@ The `[safe_mariadbd]` option group is primarily supported for backward compatibi
 
 | Group            | Description                                                                                                                                                                                                                                                                |
 | ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Group            | Description                                                                                                                                                                                                                                                                |
 | \[mysqld]        | Options read by mysqld, which includes both MariaDB Server and MySQL Server.                                                                                                                                                                                               |
 | \[server]        | Options read by MariaDB Server.                                                                                                                                                                                                                                            |
 | \[mysqld-X.Y]    | Options read by a specific version of mysqld, which includes both MariaDB Server and MySQL Server. For example, \[mysqld-5.5].                                                                                                                                             |
@@ -97,7 +93,7 @@ The `[safe_mariadbd]` option group is primarily supported for backward compatibi
 | \[client-server] | Options read by all MariaDB [client programs](https://github.com/mariadb-corporation/docs-server/blob/test/kb/en/clients-utilities/README.md) and the MariaDB Server. This is useful for options like socket and port, which is common between the server and the clients. |
 | \[galera]        | Options read by a galera-capable MariaDB Server. Available on systems compiled with Galera support.                                                                                                                                                                        |
 
-For example, if you specify the [log_error](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#log_error) option in a server option group in an option file, like this:
+For example, if you specify the [log\_error](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#log_error) option in a server option group in an option file, like this:
 
 ```
 [mariadb]
@@ -117,7 +113,7 @@ open_files_limit=4294967295
 
 The option value is passed to `ulimit -n`. Note that you need to start `mariadbd-safe` as root for this to work properly. However, you can't currently set this to `unlimited`. See [MDEV-18410](https://jira.mariadb.org/browse/MDEV-18410) about that.
 
-When `mariadbd-safe` starts `mariadbd`, it also uses this option to set the value of the [open_files_limit](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#open_files_limit) system variable for `mariadbd`.
+When `mariadbd-safe` starts `mariadbd`, it also uses this option to set the value of the [open\_files\_limit](../../../server-usage/replication-cluster-multi-master/optimization-and-tuning/system-variables/server-system-variables.md#open_files_limit) system variable for `mariadbd`.
 
 ### Configuring the Core File Size
 

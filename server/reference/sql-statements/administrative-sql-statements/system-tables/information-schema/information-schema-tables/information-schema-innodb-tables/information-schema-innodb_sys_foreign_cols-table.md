@@ -8,7 +8,6 @@ It has the following columns:
 
 | Column         | Description                                                                                                                                  |
 | -------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
-| Column         | Description                                                                                                                                  |
 | ID             | Foreign key index associated with this column, matching the [INNODB\_SYS\_FOREIGN.ID](information-schema-innodb_sys_foreign-table.md) field. |
 | FOR\_COL\_NAME | Child column name.                                                                                                                           |
 | REF\_COL\_NAME | Parent column name.                                                                                                                          |

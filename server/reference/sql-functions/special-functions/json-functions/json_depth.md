@@ -1,28 +1,22 @@
-
-# JSON_DEPTH
+# JSON\_DEPTH
 
 ## Syntax
 
-
-```
+```sql
 JSON_DEPTH(json_doc)
 ```
 
 ## Description
 
-
-Returns the maximum depth of the given JSON document, or NULL if the argument is null. An error will occur if the argument is an invalid JSON document.
-
+Returns the maximum depth of the given JSON document, or `NULL` if the argument is null. An error  occurs if the argument is an invalid JSON document.
 
 * Scalar values or empty arrays or objects have a depth of 1.
 * Arrays or objects that are not empty but contain only elements or member values of depth 1 will have a depth of 2.
 * In other cases, the depth will be greater than 2.
 
-
 ## Examples
 
-
-```
+```sql
 SELECT JSON_DEPTH('[]'), JSON_DEPTH('true'), JSON_DEPTH('{}');
 +------------------+--------------------+------------------+
 | JSON_DEPTH('[]') | JSON_DEPTH('true') | JSON_DEPTH('{}') |
@@ -45,8 +39,6 @@ SELECT JSON_DEPTH('[1, 2, [3, 4, 5, 6], 7]');
 +---------------------------------------+
 ```
 
-
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
-
 
 {% @marketo/form formId="4316" %}

@@ -6,7 +6,6 @@ It contains the following columns:
 
 | Column                 | Description                |
 | ---------------------- | -------------------------- |
-| Column                 | Description                |
 | CHARACTER\_SET\_NAME   | Name of the character set. |
 | DEFAULT\_COLLATE\_NAME | Default collation used.    |
 | DESCRIPTION            | Character set description. |

@@ -1,12 +1,12 @@
 # FORMAT\_BYTES
 
-**MariaDB starting with** [**11.8**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-8-series/what-is-mariadb-118)
-
-Introduced in [MariaDB 11.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-8-series/what-is-mariadb-118)
+{% hint style="info" %}
+`FORMAT_BYTES` is available from MariaDB [11.8](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-11-8-series/what-is-mariadb-118).
+{% endhint %}
 
 ## Syntax
 
-```
+```sql
 FORMAT_BYTES(double)
 ```
 
@@ -16,11 +16,11 @@ Given a byte count, returns a string consisting of a value and the units in a hu
 
 The binary prefixes (kibi, mebi, gibi, tebi, pebi and exbi) were created in December 1998 by the International Electrotechnical Commission to avoid possible ambiguity, as the widely-used prefixes kilo, mega, giga, tera, peta and exa can be used to refer to both the power-of-10 decimal system multipliers and the power-of-two binary system multipliers.
 
-This function is similar to the [Sys Schema format\_bytes](../../../sql-statements/administrative-sql-statements/system-tables/sys-schema/sys-schema-stored-functions/sys_schema_format_bytes.md) function, except that that function does not display exbibytes.
+This function is similar to the [Sys Schema format\_bytes](../../../sql-statements/administrative-sql-statements/system-tables/sys-schema/sys-schema-stored-functions/sys_schema_format_bytes.md) function, except that function does not display exbibytes.
 
 ## Examples
 
-```
+```sql
 SELECT FORMAT_BYTES(1000)FORMAT_BYTES(1024);
 +--------------------+--------------------+
 | FORMAT_BYTES(1000) | FORMAT_BYTES(1024) |

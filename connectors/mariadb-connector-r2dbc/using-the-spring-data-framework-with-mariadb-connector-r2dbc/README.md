@@ -36,7 +36,6 @@ Spring Data R2DBC supports many features from the Spring Data framework:
 
 | Spring Data Feature    | Supported |
 | ---------------------- | --------- |
-| Spring Data Feature    | Supported |
 | DatabaseClient         | Yes       |
 | Repositories           | Yes       |
 | Object Mapping         | Yes       |

@@ -3,7 +3,7 @@
 ## Description
 
 MariaDB provides a standard way of creating spatial columns for geometry types,\
-for example, with [CREATE TABLE](../../sql-statements/data-definition/create/create-table.md) or [ALTER TABLE](../../sql-statements/data-definition/alter/alter-table.md).\
+for example, with [CREATE TABLE](../../sql-statements/data-definition/create/create-table.md) or [ALTER TABLE](../../sql-statements/data-definition/alter/alter-table/).\
 Currently, spatial columns are supported for [MyISAM](../../../server-usage/storage-engines/myisam-storage-engine/), [InnoDB](../../../server-usage/storage-engines/innodb/) and [ARCHIVE](../../../server-usage/storage-engines/archive.md)\
 tables. See also [SPATIAL INDEX](spatial-index.md).
 
@@ -11,7 +11,6 @@ The basic geometry type is `GEOMETRY`. But the type can be more specific. The fo
 
 | Geometry Types                                                                                               |
 | ------------------------------------------------------------------------------------------------------------ |
-| Geometry Types                                                                                               |
 | [POINT](../../sql-statements/geometry-constructors/geometry-constructors/point.md)                           |
 | [LINESTRING](../../sql-statements/geometry-constructors/geometry-constructors/linestring.md)                 |
 | [POLYGON](../../sql-statements/geometry-constructors/geometry-constructors/polygon.md)                       |

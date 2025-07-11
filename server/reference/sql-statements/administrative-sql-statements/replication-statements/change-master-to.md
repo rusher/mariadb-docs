@@ -219,9 +219,7 @@ START SLAVE;
 
 #### MASTER\_RETRY\_COUNT
 
-{% tabs %}
-{% tab title="Current" %}
-The `MASTER_RETRY_COUNT` option limits the number of connection attempts (i.e., `Connects_Tried` in [SHOW REPLICA STATUS][]). For example:
+The `MASTER_RETRY_COUNT` option limits the number of connection attempts (i.e., `Connects_Tried` in [SHOW REPLICA STATUS](../show/show-replica-status.md)). For example:
 
 ```sql
 STOP SLAVE;
@@ -230,18 +228,13 @@ CHANGE MASTER TO
 START SLAVE;
 ```
 
-Setting this option resets the `Connects_Tried` statistic in [SHOW REPLICA STATUS][] to 0.
+Setting this option resets the `Connects_Tried` statistic in [SHOW REPLICA STATUS](../show/show-replica-status.md) to 0.
 
-The default is the [`--master-retry-count`][] option, which be set either on the command-line or in a server [option group][] in an [option file][] prior to starting up the server. For example:
-
-[SHOW REPLICA STATUS]: ../show/show-replica-status.md
-{% endtab %}
+The default is the [`--master-retry-count`](../../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md#master-retry-count) option, which be set either on the command-line or in a server [option group](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
 
 {% tabs %}
 {% tab title="< 12.0" %}
-
-The `MASTER_RETRY_COUNT` option for `CHANGE MASTER` is only supported by MariaDB 12.0.1 and later and by MySQL. Please use the [`--master-retry-count`][] option instead, which be set either on the command-line or in a server [option group][] in an [option file][] prior to starting up the server. For example:
-
+The `MASTER_RETRY_COUNT` option for `CHANGE MASTER` is only supported by MariaDB 12.0.1 and later and by MySQL. Please use the [`--master-retry-count`](../../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md#master-retry-count) option instead, which be set either on the command-line or in a server [option group](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
 {% endtab %}
 {% endtabs %}
 
@@ -250,10 +243,6 @@ The `MASTER_RETRY_COUNT` option for `CHANGE MASTER` is only supported by MariaDB
 ...
 master_retry_count=4294967295
 ```
-
-[`--master-retry-count`]: ../../../../server-management/starting-and-stopping-mariadb/mariadbd-options.md#master-retry-count
-[option group]: ../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups
-[option file]: ../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md
 
 #### MASTER\_BIND
 
@@ -590,7 +579,7 @@ The `MASTER_USE_GTID` option for `CHANGE MASTER` can be used to configure the re
 The `MASTER_USE_GTID` option for `CHANGE MASTER` can be used to configure the replica to use the [global transaction ID (GTID)](../../../../ha-and-performance/standard-replication/gtid.md) when connecting to a primary. The possible values are:
 
 * `current_pos` - Replicate in [GTID](../../../../ha-and-performance/standard-replication/gtid.md) mode and use [gtid\_current\_pos](../../../../ha-and-performance/standard-replication/gtid.md#gtid_current_pos) as the position to start downloading transactions from the primary. Using to transition to primary can break the replication state if the replica executes local transactions due to actively updating gtid\_current\_pos with gtid\_binlog\_pos and gtid\_slave\_pos. Use the new, safe, [MASTER\_DEMOTE\_TO\_SLAVE=](change-master-to.md#master_demote_to_slave) option instead.
-* `slave_pos` - Replicate in [GTID](../../../../ha-and-performance/standard-replication/gtid.md) mode and use [gtid\_slave\_pos](../../../../ha-and-performance/standard-replication/gtid.md#gtid_slave_pos) as the position to start downloading transactions from the primary. From [MariaDB 10.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1051-release-notes), `replica_pos` is an alias for `slave_pos`.
+* `slave_pos` - Replicate in [GTID](../../../../ha-and-performance/standard-replication/gtid.md) mode and use [gtid\_slave\_pos](../../../../ha-and-performance/standard-replication/gtid.md#gtid_slave_pos) as the position to start downloading transactions from the primary. From [MariaDB 10.5.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-1051-release-notes), `replica_pos` is an alias for `slave_pos`.
 * `no` - Don't replicate in [GTID](../../../../ha-and-performance/standard-replication/gtid.md) mode.
 
 For example:

@@ -1,12 +1,16 @@
 # JSON\_ARRAYAGG
 
-**MariaDB starting with** [**10.5.0**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1050-release-notes)
+**MariaDB starting with** [**10.5.0**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-1050-release-notes)
 
-JSON\_ARRAYAGG was added in [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1050-release-notes).
+JSON\_ARRAYAGG was added in [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-1050-release-notes).
+
+{% hint style="info" %}
+`JSON_ARRAYAGG` is available from MariaDB 10.5.
+{% endhint %}
 
 ## Syntax
 
-```
+```sql
 JSON_ARRAYAGG(column_or_expression)
 ```
 
@@ -16,13 +20,13 @@ JSON_ARRAYAGG(column_or_expression)
 
 The maximum returned length in bytes is determined by the [group\_concat\_max\_len](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#group_concat_max_len) server system variable.
 
-Returns NULL in the case of an error, or if the result contains no rows.
+Returns `NULL` in the case of an error, or if the result contains no rows.
 
 `JSON_ARRAYAGG` cannot currently be used as a [window function](../window-functions/).
 
 The full syntax is as follows:
 
-```
+```sql
 JSON_ARRAYAGG([DISTINCT] expr
              [ORDER BY {unsigned_integer | col_name | expr}
                  [ASC | DESC] [,col_name ...]]
@@ -31,7 +35,7 @@ JSON_ARRAYAGG([DISTINCT] expr
 
 ## Examples
 
-```
+```sql
 CREATE TABLE t1 (a INT, b INT);
 
 INSERT INTO t1 VALUES (1, 1),(2, 1), (1, 1),(2, 1), (3, 2),(2, 2),(2, 2),(2, 2);

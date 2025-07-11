@@ -1,17 +1,3 @@
----
-layout:
-  title:
-    visible: true
-  description:
-    visible: true
-  tableOfContents:
-    visible: true
-  outline:
-    visible: true
-  pagination:
-    visible: false
----
-
 # MariaDB Release Notes
 
 Release dates for all upcoming MariaDB Server releases can be found [on Jira](https://jira.mariadb.org/).

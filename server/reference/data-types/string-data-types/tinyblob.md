@@ -2,16 +2,13 @@
 
 ## Syntax
 
-```
+```sql
 TINYBLOB
 ```
 
 ## Description
 
-A [BLOB](blob.md) column with a maximum length of\
-255 (28 - 1) bytes. Each\
-TINYBLOB value is stored using a one-byte length prefix that indicates\
-the number of bytes in the value.
+A [BLOB](blob.md) column with a maximum length of 255 (28 - 1) bytes. Each `TINYBLOB` value is stored using a one-byte length prefix that indicates the number of bytes in the value.
 
 ## EXAMPLES
 
@@ -19,14 +16,14 @@ the number of bytes in the value.
 
 Example of TINYBLOB:
 
-```
+```sql
 CREATE TABLE tinyblob_example (
    description VARCHAR(20),
    example TINYBLOB
 ) DEFAULT CHARSET=latin1; -- One byte per char makes the examples clearer
 ```
 
-```
+```sql
 INSERT INTO tinyblob_example VALUES
    ('Normal foo', 'foo'),
    ('Trailing spaces foo', 'foo      '),
@@ -35,12 +32,12 @@ INSERT INTO tinyblob_example VALUES
    ('Maximum', RPAD('', 255, CHAR(7)));
 ```
 
-```
+```sql
 SELECT description, LENGTH(example) AS length
    FROM tinyblob_example;
 ```
 
-```
+```sql
 +---------------------+--------+
 | description         | length |
 +---------------------+--------+
@@ -52,20 +49,20 @@ SELECT description, LENGTH(example) AS length
 +---------------------+--------+
 ```
 
-### Data Too Long
+### Data too Long
 
-When SQL\_MODE is strict (the default) a value is considered "too long" when its length exceeds the size of the data type, and an error is generated.
+When `SQL_MODE` is strict (the default), a value is considered "too long" when its length exceeds the size of the data type, and an error is generated.
 
-Example of data too long behavior for TINYBLOB:
+Example of data too long behavior for `TINYBLOB`:
 
-```
+```sql
 TRUNCATE tinyblob_example;
 
 INSERT INTO tinyblob_example VALUES
    ('Overflow', RPAD('', 256, CHAR(7)));
 ```
 
-```
+```sql
 ERROR 1406 (22001): Data too long for column 'example' at row 1
 ```
 

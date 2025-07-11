@@ -1,9 +1,6 @@
 # Subquery Cache
 
-The goal of the subquery cache is to optimize the evaluation of correlated\
-subqueries by storing results together with correlation parameters in a cache\
-and avoiding re-execution of the subquery in cases where the result is already\
-in the cache.
+The goal of the subquery cache is to optimize the evaluation of correlated subqueries by storing results together with correlation parameters in a cache and avoiding re-execution of the subquery in cases where the result is already in the cache.
 
 ## Administration
 
@@ -18,10 +15,7 @@ The efficiency of the subquery cache is visible in 2 statistical variables:
 * [Subquery\_cache\_hit](../../system-variables/server-status-variables.md#subquery_cache_hit) - Global counter for all subquery cache hits.
 * [Subquery\_cache\_miss](../../system-variables/server-status-variables.md#subquery_cache_miss) - Global counter for all subquery cache misses.
 
-The session variables [tmp\_table\_size](../../system-variables/server-system-variables.md#tmp_table_size) and [max\_heap\_table\_size](../../system-variables/server-system-variables.md#max_heap_table_size)\
-influence the size of in-memory temporary tables in the table used\
-for caching. It cannot grow more than the minimum of the above variables values\
-(see the [Implementation](subquery-cache.md#implementation) section for details).
+The session variables [tmp\_table\_size](../../system-variables/server-system-variables.md#tmp_table_size) and [max\_heap\_table\_size](../../system-variables/server-system-variables.md#max_heap_table_size) influence the size of in-memory temporary tables in the table used for caching. It cannot grow more than the minimum of the above variables values (see the [Implementation](subquery-cache.md#implementation) section for details).
 
 ## Visibility
 
@@ -52,16 +46,11 @@ using the subquery cache.
 
 ## Implementation
 
-Every subquery cache creates a temporary table where the results and all\
-parameters are stored. It has a unique index over all parameters. First the\
-cache is created in a [MEMORY](../../../../server-usage/storage-engines/memory-storage-engine.md) table (if doing this is impossible the cache becomes\
-disabled for that expression). When the table grows up to the minimum of`tmp_table_size` and `max_heap_table_size`, the hit rate will be checked:
+Every subquery cache creates a temporary table where the results and all parameters are stored. It has a unique index over all parameters. First the cache is created in a [MEMORY](../../../../server-usage/storage-engines/memory-storage-engine.md) table (if doing this is impossible the cache becomes disabled for that expression). When the table grows up to the minimum of`tmp_table_size` and `max_heap_table_size`, the hit rate will be checked:
 
 * if the hit rate is really small (<0.2) the cache will be disabled.
-* if the hit rate is moderate (<0.7) the table will be cleaned (all records\
-  deleted) to keep the table in memory
-* if the hit rate is high the table will be converted to a disk table\
-  (for 5.3.0 it can only be converted to a disk table).
+* if the hit rate is moderate (<0.7) the table will be cleaned (all records deleted) to keep the table in memory
+* if the hit rate is high the table will be converted to a disk table (for 5.3.0 it can only be converted to a disk table).
 
 ```
 hit rate = hit / (hit + miss)
@@ -69,9 +58,7 @@ hit rate = hit / (hit + miss)
 
 ## Performance Impact
 
-Here are some examples that show the performance impact of the subquery cache\
-(these tests were made on a 2.53 GHz Intel Core 2 Duo MacBook Pro with dbt-3\
-scale 1 data set).
+Here are some examples that show the performance impact of the subquery cache (these tests were made on a 2.53 GHz Intel Core 2 Duo MacBook Pro with dbt-3 scale 1 data set).
 
 | example | cache on | cache off              | gain     | hit    | miss  | hit rate | 1 | 2 | 3 | 4 |
 | ------- | -------- | ---------------------- | -------- | ------ | ----- | -------- | - | - | - | - |
@@ -175,7 +162,6 @@ ORDER BY
 * [Query cache](../../buffers-caches-and-threads/query-cache.md)
 * blog post describing impact of subquery cache optimization on queries used by DynamicPageList MediaWiki extension
 * [mariadb-subquery-cache-in-real-use-case.html](https://varokism.blogspot.ru/2013/06/mariadb-subquery-cache-in-real-use-case.html) Another use case from the real world
-* [What is MariaDB 5.3](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/optimization-and-tuning/query-optimizations/subquery-optimizations/broken-reference/README.md)
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

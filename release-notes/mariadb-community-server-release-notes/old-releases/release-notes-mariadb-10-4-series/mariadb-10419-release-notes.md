@@ -53,7 +53,7 @@ Thanks, and enjoy MariaDB!
 * Assertion \`\`state\_ == s\_exec'`failed in`wsrep::client\_state::start\_transaction\` ([MDEV-22227](https://jira.mariadb.org/browse/MDEV-22227))
 * Frequently Crashing Mariadb Cluster 10.4.18 ([MDEV-24980](https://jira.mariadb.org/browse/MDEV-24980))
 * Signal 11 on `TABLE_LIST::placeholder()` ([MDEV-24878](https://jira.mariadb.org/browse/MDEV-24878))
-* `ALTER TABLE` not replicated with Galera in [MariaDB 10.5.9](../../mariadb-10-5-series/mariadb-1059-release-notes.md) ([MDEV-24956](https://jira.mariadb.org/browse/MDEV-24956))
+* `ALTER TABLE` not replicated with Galera in [MariaDB 10.5.9](../mariadb-10-5-series/mariadb-1059-release-notes.md) ([MDEV-24956](https://jira.mariadb.org/browse/MDEV-24956))
 * "Flush SSL" command doesn't reload wsrep cert ([MDEV-22668](https://jira.mariadb.org/browse/MDEV-22668))
 * Avoid unnecessary rollbacks with SR ([MDEV-25553](https://jira.mariadb.org/browse/MDEV-25553))
 

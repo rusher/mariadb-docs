@@ -85,7 +85,7 @@ information on each push, see the [changelog](../../changelogs/changelogs-mariad
 
 ## Contributors
 
-For a full list of contributors to [MariaDB 10.5.5](../../mariadb-10-5-series/mariadb-1055-release-notes.md), see the [MariaDB Foundation release announcement](https://mariadb.org/mariadb-10-5-5-10-4-14-10-3-24-10-2-33-and-10-1-46-now-available/).
+For a full list of contributors to [MariaDB 10.5.5](../mariadb-10-5-series/mariadb-1055-release-notes.md), see the [MariaDB Foundation release announcement](https://mariadb.org/mariadb-10-5-5-10-4-14-10-3-24-10-2-33-and-10-1-46-now-available/).
 
 {% include "../../../.gitbook/includes/announce.md" %}
 

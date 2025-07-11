@@ -1,10 +1,8 @@
-
 # Window Frames
 
 ## Syntax
 
-
-```
+```sql
 frame_clause:
   {ROWS | RANGE} {frame_border | BETWEEN frame_border AND frame_border}
 
@@ -18,27 +16,22 @@ frame_border:
 
 ## Description
 
-
-A basic overview of [window functions](README.md) is described in [Window Functions Overview](window-functions-overview.md). Window frames expand this functionality by allowing the function to include a specified a number of rows around the current row.
-
+A basic overview of [window functions](./) is described in [Window Functions Overview](window-functions-overview.md). Window frames expand this functionality by allowing the function to include a specified a number of rows around the current row.
 
 These include:
 
-
-* All rows before the current row (UNBOUNDED PRECEDING), for example `RANGE BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW`
-* All rows after the current row (UNBOUNDED FOLLOWING), for example `RANGE BETWEEN CURRENT ROW AND UNBOUNDED FOLLOWING`
-* A set number of rows before the current row (expr PRECEDING) for example `RANGE BETWEEN 6 PRECEDING AND CURRENT ROW`
-* A set number of rows after the current row (expr PRECEDING AND expr FOLLOWING) for example `RANGE BETWEEN CURRENT ROW AND 2 FOLLOWING`
-* A specified number of rows both before and after the current row, for example `RANGE BETWEEN 6 PRECEDING AND 3 FOLLOWING`
-
+* All rows before the current row (UNBOUNDED PRECEDING), for example `RANGE BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW` .
+* All rows after the current row (UNBOUNDED FOLLOWING), for example `RANGE BETWEEN CURRENT ROW AND UNBOUNDED FOLLOWING` .
+* A set number of rows before the current row (expr PRECEDING) for example `RANGE BETWEEN 6 PRECEDING AND CURRENT ROW` .
+* A set number of rows after the current row (expr PRECEDING AND expr FOLLOWING) for example `RANGE BETWEEN CURRENT ROW AND 2 FOLLOWING` .
+* A specified number of rows both before and after the current row, for example `RANGE BETWEEN 6 PRECEDING AND 3 FOLLOWING` .
 
 The following functions operate on window frames:
 
-
 * [AVG](../../aggregate-functions/avg.md)
-* [BIT_AND](../../aggregate-functions/bit_and.md)
-* [BIT_OR](../../aggregate-functions/bit_or.md)
-* [BIT_XOR](../../aggregate-functions/bit_xor.md)
+* [BIT\_AND](../../aggregate-functions/bit_and.md)
+* [BIT\_OR](../../aggregate-functions/bit_or.md)
+* [BIT\_XOR](../../aggregate-functions/bit_xor.md)
 * [COUNT](../../aggregate-functions/count.md)
 * [LEAD](lead.md)
 * [MAX](../../aggregate-functions/max.md)
@@ -46,21 +39,18 @@ The following functions operate on window frames:
 * [NTILE](ntile.md)
 * [STD](../../aggregate-functions/std.md)
 * [STDDEV](../../aggregate-functions/stddev.md)
-* [STDDEV_POP](../../aggregate-functions/stddev_pop.md)
-* [STDDEV_SAMP](../../aggregate-functions/stddev_samp.md)
+* [STDDEV\_POP](../../aggregate-functions/stddev_pop.md)
+* [STDDEV\_SAMP](../../aggregate-functions/stddev_samp.md)
 * [SUM](../../aggregate-functions/sum.md)
-* [VAR_POP](../../aggregate-functions/var_pop.md)
-* [VAR_SAMP](../../aggregate-functions/var_samp.md)
+* [VAR\_POP](../../aggregate-functions/var_pop.md)
+* [VAR\_SAMP](../../aggregate-functions/var_samp.md)
 * [VARIANCE](../../aggregate-functions/variance.md)
 
-
-Window frames are determined by the *frame_clause* in the window function request.
-
+Window frames are determined by the _frame\_clause_ in the window function request.
 
 Take the following example:
 
-
-```
+```sql
 CREATE TABLE `student_test` (
   name char(10),
   test char(10),
@@ -89,10 +79,9 @@ SELECT name, test, score, SUM(score)
 +---------+--------+-------+-------------+
 ```
 
-By not specifying an OVER clause, the [SUM](../../aggregate-functions/sum.md) function is run over the entire dataset. However, if we specify an ORDER BY condition based on score (and order the entire result in the same way for clarity), the following result is returned:
+By not specifying an `OVER` clause, the [SUM](../../aggregate-functions/sum.md) function is run over the entire dataset. However, if we specify an `ORDER BY` condition based on score (and order the entire result in the same way for clarity), the following result is returned:
 
-
-```
+```sql
 SELECT name, test, score, SUM(score) 
   OVER (ORDER BY score) AS total_score 
   FROM student_test ORDER BY score;
@@ -109,13 +98,11 @@ SELECT name, test, score, SUM(score)
 +---------+--------+-------+-------------+
 ```
 
-The total_score column represents a running total of the current row, and all previous rows. The window frame in this example expands as the function proceeds.
-
+The `total_score` column represents a running total of the current row, and all previous rows. The window frame in this example expands as the function proceeds.
 
 The above query makes use of the default to define the window frame. It could be written explicitly as follows:
 
-
-```
+```sql
 SELECT name, test, score, SUM(score) 
   OVER (ORDER BY score RANGE BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS total_score 
   FROM student_test ORDER BY score;
@@ -134,11 +121,9 @@ SELECT name, test, score, SUM(score)
 
 Let's look at some alternatives:
 
+Firstly, applying the window function to the current row and all following rows can be done with the use of `UNBOUNDED FOLLOWING`:
 
-Firstly, applying the window function to the current row and all following rows can be done with the use of UNBOUNDED FOLLOWING:
-
-
-```
+```sql
 SELECT name, test, score, SUM(score) 
   OVER (ORDER BY score RANGE BETWEEN CURRENT ROW AND UNBOUNDED FOLLOWING) AS total_score 
   FROM student_test ORDER BY score;
@@ -157,8 +142,7 @@ SELECT name, test, score, SUM(score)
 
 It's possible to specify a number of rows, rather than the entire unbounded following or preceding set. The following example takes the current row, as well as the previous row:
 
-
-```
+```sql
 SELECT name, test, score, SUM(score) 
   OVER (ORDER BY score ROWS BETWEEN 1 PRECEDING AND CURRENT ROW) AS total_score 
   FROM student_test ORDER BY score;
@@ -177,8 +161,7 @@ SELECT name, test, score, SUM(score)
 
 The current row and the following row:
 
-
-```
+```sql
 SELECT name, test, score, SUM(score) 
   OVER (ORDER BY score ROWS BETWEEN 1 PRECEDING AND 1 FOLLOWING) AS total_score 
   FROM student_test ORDER BY score;
@@ -195,8 +178,6 @@ SELECT name, test, score, SUM(score)
 +---------+--------+-------+-------------+
 ```
 
-
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
-
 
 {% @marketo/form formId="4316" %}

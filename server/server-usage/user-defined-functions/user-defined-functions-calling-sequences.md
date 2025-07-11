@@ -69,7 +69,7 @@ It is called when the summary results need to be reset, that is at the beginning
 
 _is\_null_ is set to point to CHAR(0) before calling x\_clear().
 
-In the case of an error, you can store the value to which the error argument points (a single-byte variable, not a string string buffer) in the variable.
+In the case of an error, you can store the value to which the error argument points (a single-byte variable, not a string buffer) in the variable.
 
 ### x\_reset()
 
@@ -95,14 +95,14 @@ It is called for all rows belonging to the same group, and should be used to add
 
 ### x\_remove()
 
-_x\_remove()_ was added in [MariaDB 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-usage/user-defined-functions/broken-reference/README.md) and is declared as follows (same as _x\_add()_):
+_x\_remove()_ was added in [MariaDB 10.4](../../security/user-account-management/authentication-from-mariadb-10-4.md) and is declared as follows (same as _x\_add()_):
 
 ```
 void x_remove(UDF_INIT* initid, UDF_ARGS* args,
                char* is_null, char *error );
 ```
 
-It adds more efficient support of aggregate UDFs as [window functions](../../reference/sql-functions/special-functions/window-functions/). _x\_remove()_ should "subtract" the row (reverse _x\_add()_). In [MariaDB 10.4](https://github.com/mariadb-corporation/docs-server/blob/test/server/server-usage/user-defined-functions/broken-reference/README.md) aggregate UDFs will work as WINDOW functions without _x\_remove()_ but it will not be so efficient.
+It adds more efficient support of aggregate UDFs as [window functions](../../reference/sql-functions/special-functions/window-functions/). _x\_remove()_ should "subtract" the row (reverse _x\_add()_). In [MariaDB 10.4](../../security/user-account-management/authentication-from-mariadb-10-4.md) aggregate UDFs will work as WINDOW functions without _x\_remove()_ but it will not be so efficient.
 
 If _x\_remove()_ supported (defined) detected automatically.
 

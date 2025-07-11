@@ -4,7 +4,7 @@ The purpose of this tutorial is to introduce the MariaDB MaxScale Administrator 
 
 ### Administration audit file
 
-The REST API calls that MaxCtrl and MaxGui issue to MaxScale can be logged by enabling [admin\_audit](../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md).
+The REST API calls that MaxCtrl and MaxGui issue to MaxScale can be logged by enabling [admin\_audit](../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md).
 
 The generated file is a csv file that can be opened in most spread sheet programs.
 
@@ -186,7 +186,7 @@ Modify global MaxScale parameters:
 maxctrl alter maxscale auth_connect_timeout 5s
 ```
 
-Some global parameters cannot be modified at runtime. Refer to the[Configuration Guide](../maxscale-archive/archive-of-2x.xx-versions/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md) for a full list of parameters that can be modified at runtime.
+Some global parameters cannot be modified at runtime. Refer to the[Configuration Guide](../maxscale-archive/archive/mariadb-maxscale-25-01/mariadb-maxscale-25-01-getting-started/mariadb-maxscale-2501-maxscale-2501-mariadb-maxscale-configuration-guide.md) for a full list of parameters that can be modified at runtime.
 
 #### Managing Servers
 

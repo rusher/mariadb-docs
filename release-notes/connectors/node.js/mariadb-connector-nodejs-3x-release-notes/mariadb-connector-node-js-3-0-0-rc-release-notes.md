@@ -1,8 +1,8 @@
 # MariaDB Connector/Node.js 3.0.0-rc Release Notes
 
-The most recent [_**Stable (GA)**_](../../../mariadb-release-criteria.md) release of [MariaDB Connector/Node.js](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/about-mariadb-connector-nodejs/README.md) is:[**MariaDB Connector/Node.js 3.4.2**](mariadb-connector-node-js-3-4-2-release-notes.md)
+{% include "../../../.gitbook/includes/latest-nodejs.md" %}
 
-[Download](https://mariadb.com/downloads/#connectors)[Release Notes](mariadb-connector-node-js-3-0-0-rc-release-notes.md)[Changelog](../changelogs/mariadb-connector-nodejs-3x-changelogs/mariadb-connector-nodejs-300-rc-changelog.md)[Connector/Node.js Overview](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/about-mariadb-connector-nodejs/README.md)
+[Download](https://mariadb.com/downloads/#connectors) | [Release Notes](mariadb-connector-node-js-3-0-0-rc-release-notes.md) | [Changelog](../changelogs/mariadb-connector-nodejs-3x-changelogs/mariadb-connector-nodejs-300-rc-changelog.md) | [Connector/Node.js Overview](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-nodejs/mariadb-connector-node-js-guide)
 
 **Release date:** 20 Oct 2021
 
@@ -10,7 +10,9 @@ MariaDB Connector/Node.js 3.0.0-rc is an [_**RC**_](../../../mariadb-release-cri
 
 **Do not use non-stable (non-GA) releases in production!**
 
-**For an overview of MariaDB Connector/Node.js see the**[**About MariaDB Connector/Node.js**](https://github.com/mariadb-corporation/docs-release-notes/blob/test/kb/en/about-mariadb-connectornodejs/README.md) **page**
+{% hint style="success" %}
+**For an overview of MariaDB Connector/Node.js see the** [**About MariaDB Connector/Node.js**](https://app.gitbook.com/s/CjGYMsT2MVP4nd3IyW2L/mariadb-connector-nodejs/mariadb-connector-node-js-guide) **page**
+{% endhint %}
 
 see [3.0.0-beta](mariadb-connector-node-js-3-0-0-beta-release-notes.md) for 3.0.0 content from previous version.
 
@@ -46,7 +48,6 @@ pool option _resetAfterUse_ now default to false. This permit avoids executing a
 
 | Option | Description                                                        | Type     | default |
 | ------ | ------------------------------------------------------------------ | -------- | ------- |
-| Option | Description                                                        | Type     | default |
 | stream | permits to set a function with parameter to set stream (since 3.0) | function |         |
 
 The option `stream` provides a way to execute a function with a callback parameter before each connection stream creation.

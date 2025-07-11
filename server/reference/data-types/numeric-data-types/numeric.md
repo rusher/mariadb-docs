@@ -1,27 +1,22 @@
-
 # NUMERIC
 
-
-# Overview
-
+## Overview
 
 See [DECIMAL](decimal.md).
 
+## EXAMPLES
 
-# EXAMPLES
-
-
-```
+```sql
 CREATE TABLE numeric_example (
   example NUMERIC
 );
 ```
 
-```
+```sql
 SHOW CREATE TABLE numeric_example\G
 ```
 
-```
+```sql
 *************************** 1. row ***************************
        Table: numeric_example
 Create Table: CREATE TABLE `numeric_example` (
@@ -29,8 +24,6 @@ Create Table: CREATE TABLE `numeric_example` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1
 ```
 
-
 <sub>_This page is: Copyright © 2025 MariaDB. All rights reserved._</sub>
-
 
 {% @marketo/form formId="4316" %}

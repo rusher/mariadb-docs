@@ -6,7 +6,6 @@ By default MariaDB uses the following permissions for files and directories:
 
 | Object Type | Default Mode | Default Permissions |
 | ----------- | ------------ | ------------------- |
-| Object Type | Default Mode | Default Permissions |
 | Files       | 0660         | -rw-rw----          |
 | Directories | 0700         | drwx------          |
 
@@ -16,7 +15,6 @@ You can configure MariaDB to use different permissions for files and directories
 
 | Object Type | Environment Variable |
 | ----------- | -------------------- |
-| Object Type | Environment Variable |
 | Files       | UMASK                |
 | Directories | UMASK\_DIR           |
 

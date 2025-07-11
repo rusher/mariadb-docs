@@ -1,12 +1,14 @@
 # SYS\_GUID
 
-**MariaDB starting with** [**10.6.1**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/mariadb-1061-release-notes)
+{% hint style="info" %}
+`SYS_GUID` is available from MariaDB [10.6.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/mariadb-1061-release-notes).
+{% endhint %}
 
-The SYS\_GUID function was introduced in [MariaDB 10.6.1](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-6-series/mariadb-1061-release-notes) to enhance Oracle compatibility. Similar functionality can be achieved with the [UUID](uuid.md) function.
+The `SYS_GUID` function was introduced to enhance Oracle compatibility. Similar functionality can be achieved with the [UUID](uuid.md) function.
 
 ## Syntax
 
-```
+```sql
 SYS_GUID()
 ```
 
@@ -16,7 +18,7 @@ Returns a 16-byte globally unique identifier (GUID), similar to the [UUID](uuid.
 
 ## Example
 
-```
+```sql
 SELECT SYS_GUID();
 +----------------------------------+
 | SYS_GUID()                       |

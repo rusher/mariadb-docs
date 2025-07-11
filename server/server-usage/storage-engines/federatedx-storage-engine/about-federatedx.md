@@ -25,7 +25,7 @@ In [MariaDB 10.0.2](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-commu
 
 Although the plugin's shared library is distributed with MariaDB by default, the plugin is not actually installed by MariaDB by default. There are two methods that can be used to install the plugin with MariaDB.
 
-The first method can be used to install the plugin without restarting the server. You can install the plugin dynamically by executing [INSTALL SONAME](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-soname.md) or [INSTALL PLUGIN](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin.md). For example:
+The first method can be used to install the plugin without restarting the server. You can install the plugin dynamically by executing [INSTALL SONAME](../../../reference/sql-statements/administrative-sql-statements/plugin-sql-statements/install-soname.md) or [INSTALL PLUGIN](../../../reference/sql-statements/administrative-sql-statements/plugin-sql-statements/install-plugin.md). For example:
 
 ```sql
 INSTALL SONAME 'ha_federatedx';
@@ -41,7 +41,7 @@ plugin_load_add = ha_federatedx
 
 ## Uninstalling the Plugin
 
-You can uninstall the plugin dynamically by executing [UNINSTALL SONAME](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md) or [UNINSTALL PLUGIN](../../sql-statements-and-structure/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md). For example:
+You can uninstall the plugin dynamically by executing [UNINSTALL SONAME](../../../reference/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-soname.md) or [UNINSTALL PLUGIN](../../../reference/sql-statements/administrative-sql-statements/plugin-sql-statements/uninstall-plugin.md). For example:
 
 ```sql
 UNINSTALL SONAME 'ha_federatedx';
@@ -116,7 +116,7 @@ CREATE server 'server_one' FOREIGN data wrapper 'mysql' options
   OWNER 'root');
 ```
 
-**MariaDB starting with** [**10.11.12**](https://github.com/mariadb-corporation/docs-server/blob/test/en/mariadb-101112-release-notes/README.md)
+**MariaDB starting with** [**10.11.12**](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-11-series/mariadb-10-11-12-release-notes)
 
 You can also use 'mariadb' as a wrapper.
 
@@ -220,7 +220,7 @@ ha_federatedx::reset
 * There is no way for the handler to know if the foreign database or table has changed. The reason for this is that this database has to work like a data file that would never be written to by anything other than the database. The integrity of the data in the local table could be breached if there was any change to the foreign database.
 * Support for SELECT, INSERT, UPDATE, DELETE indexes.
 * No ALTER TABLE, DROP TABLE or any other Data Definition Language calls.
-* Prepared statements will not be used in the first implementation, it remains to to be seen whether the limited subset of the client API for the server supports this.
+* Prepared statements will not be used in the first implementation, it remains to be seen whether the limited subset of the client API for the server supports this.
 * This uses SELECT, INSERT, UPDATE, DELETE and not HANDLER for its implementation.
 * This will not work with the query cache.
 * FederatedX does not support [GEOMETRY](../../../reference/sql-structure/geometry/geometry-types.md) types. Such tables cannot be created explicitly, nor discovered.

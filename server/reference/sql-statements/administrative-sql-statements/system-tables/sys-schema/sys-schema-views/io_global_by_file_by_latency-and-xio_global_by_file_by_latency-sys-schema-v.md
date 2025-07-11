@@ -14,7 +14,6 @@ They contain the following columns:
 
 | Column         | Description                                             |
 | -------------- | ------------------------------------------------------- |
-| Column         | Description                                             |
 | file           | File path name.                                         |
 | total          | Total number of I/O events for the file.                |
 | total\_latency | Total wait time of timed I/O events for the file.       |

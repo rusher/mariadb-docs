@@ -55,7 +55,7 @@ Most of the things in the [MySQL 5.1 manual](https://dev.mysql.com/doc/refman/5.
 The following differences exists between "mysql\_upgrade" in MariaDB and MySQL (as of [MariaDB 5.1.50](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/release-notes-mariadb-5-1-series/mariadb-5150-release-notes)):
 
 * MariaDB will convert long table names properly.
-* MariaDB will convert [InnoDB](../../../../../server-usage/storage-engines/innodb/) tables (no need to do a dump/restore or [ALTER TABLE](../../../../../reference/sql-statements/data-definition/alter/alter-table.md)).
+* MariaDB will convert [InnoDB](../../../../../server-usage/storage-engines/innodb/) tables (no need to do a dump/restore or [ALTER TABLE](../../../../../reference/sql-statements/data-definition/alter/alter-table/)).
 * MariaDB will convert old archive tables to the new 5.1 format (note: new feature in testing).
 * "mysql\_upgrade --verbose" will run "mysqlcheck --verbose" so that you get more information of what is happening.
 

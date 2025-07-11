@@ -6,7 +6,7 @@ This article describes the system and status variables used by the MariaDB threa
 
 #### `extra_max_connections`
 
-* Description: The number of connections on the [extra_port](#extra_port).
+* Description: The number of connections on the [extra\_port](thread-pool-system-status-variables.md#extra_port).
   * See [Thread Pool in MariaDB: Configuring the Extra Port](thread-pool-in-mariadb.md#configuring-the-extra-port) for more information.
 * Commandline: `--extra-max-connections=#`
 * Scope: Global
@@ -50,7 +50,7 @@ This article describes the system and status variables used by the MariaDB threa
 * Dynamic:
 * Data Type: `boolean`
 * Default Value: `0`
-* Introduced: [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1050-release-notes)
+* Introduced: [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-1050-release-notes)
 
 #### `thread_pool_exact_stats`
 
@@ -62,13 +62,13 @@ This article describes the system and status variables used by the MariaDB threa
 * Dynamic:
 * Data Type: `boolean`
 * Default Value: `0`
-* Introduced: [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/mariadb-1050-release-notes)
+* Introduced: [MariaDB 10.5.0](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/mariadb-1050-release-notes)
 
 #### `thread_pool_idle_timeout`
 
 * Description: The number of seconds before an idle worker thread exits. The default value is `60`. If there is currently no work to do, how long should an idle thread wait before exiting?
   * This system variable is only meaningful on Unix.
-  * The [thread_pool_min_threads](#thread_pool_min_threads) system variable is comparable for Windows.
+  * The [thread\_pool\_min\_threads](thread-pool-system-status-variables.md#thread_pool_min_threads) system variable is comparable for Windows.
 * Commandline: `thread-pool-idle-timeout=#`
 * Scope: Global
 * Dynamic: Yes
@@ -96,7 +96,7 @@ This article describes the system and status variables used by the MariaDB threa
 
 * Description: Minimum number of threads in the [thread pool](thread-pool-in-mariadb.md). In bursty environments, after a period of inactivity, threads would normally be retired. When the next burst arrives, it would take time to reach the optimal level. Setting this value higher than the default would prevent thread retirement even if inactive.
   * This system variable is only meaningful on Windows.
-  * The [thread_pool_idle_timeout](#thread_pool_idle_timeout) system variable is comparable for Unix.
+  * The [thread\_pool\_idle\_timeout](thread-pool-system-status-variables.md#thread_pool_idle_timeout) system variable is comparable for Unix.
 * Commandline: `thread-pool-min-threads=#`
 * Data Type: `numeric`
 * Default Value: `1`
@@ -155,7 +155,7 @@ This article describes the system and status variables used by the MariaDB threa
 
 #### `thread_pool_stall_limit`
 
-* Description: The number of milliseconds between each stall check performed by the timer thread. The default value is `500`. Stall detection is used to prevent a single client connection from monopolizing a thread group. When the timer thread detects that a thread group is stalled, it wakes up a sleeping worker thread in the thread group, if one is available. If there isn't one, then it creates a new worker thread in the thread group. This temporarily allows several client connections in the thread group to run in parallel. However, note that the timer thread will not create a new worker thread if the number of threads in the thread pool is already greater than or equal to the maximum defined by the [thread_pool_max_threads](#thread_pool_max_threads) variable, unless the thread group does not already have a listener thread.
+* Description: The number of milliseconds between each stall check performed by the timer thread. The default value is `500`. Stall detection is used to prevent a single client connection from monopolizing a thread group. When the timer thread detects that a thread group is stalled, it wakes up a sleeping worker thread in the thread group, if one is available. If there isn't one, then it creates a new worker thread in the thread group. This temporarily allows several client connections in the thread group to run in parallel. However, note that the timer thread will not create a new worker thread if the number of threads in the thread pool is already greater than or equal to the maximum defined by the [thread\_pool\_max\_threads](thread-pool-system-status-variables.md#thread_pool_max_threads) variable, unless the thread group does not already have a listener thread.
   * See [Thread Groups in the Unix Implementation of the Thread Pool: Thread Group Stalls](thread-groups-in-the-unix-implementation-of-the-thread-pool.md#thread-group-stalls) for more information.
   * This system variable is only meaningful on Unix.
   * Note that if you are migrating from the MySQL Enterprise thread pool plugin, then the unit used in their implementation is 10ms, not 1ms.
@@ -164,7 +164,7 @@ This article describes the system and status variables used by the MariaDB threa
 * Dynamic: Yes
 * Data Type: `numeric`
 * Default Value: `500`
-* Range: `10` to `4294967295` (< [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105)), `1` to `4294967295` (>= [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/mariadb-10-5-series/what-is-mariadb-105))
+* Range: `10` to `4294967295` (< [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/what-is-mariadb-105)), `1` to `4294967295` (>= [MariaDB 10.5](https://app.gitbook.com/s/aEnK0ZXmUbJzqQrTjFyb/mariadb-community-server-release-notes/old-releases/mariadb-10-5-series/what-is-mariadb-105))
 * Documentation: [Using the thread pool](thread-pool-in-mariadb.md).
 
 ## Status variables
@@ -178,7 +178,7 @@ This article describes the system and status variables used by the MariaDB threa
 
 #### `Threadpool_threads`
 
-* Description: Number of threads in the [thread pool](thread-pool-in-mariadb.md). In rare cases, this can be slightly higher than [thread_pool_max_threads](#thread_pool_max_threads), because each thread group needs at least two threads (i.e. at least one worker thread and at least one listener thread) to prevent deadlocks.
+* Description: Number of threads in the [thread pool](thread-pool-in-mariadb.md). In rare cases, this can be slightly higher than [thread\_pool\_max\_threads](thread-pool-system-status-variables.md#thread_pool_max_threads), because each thread group needs at least two threads (i.e. at least one worker thread and at least one listener thread) to prevent deadlocks.
 * Scope: Global, Session
 * Data Type: `numeric`
 

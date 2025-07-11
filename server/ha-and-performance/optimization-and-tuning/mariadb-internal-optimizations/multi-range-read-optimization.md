@@ -5,7 +5,7 @@ Multi Range Read is an optimization aimed at improving performance for IO-bound 
 Multi Range Read can be used with
 
 * `range` access
-* `ref` and `eq_ref` access, when they are using [Batched Key Access](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/optimization-and-tuning/mariadb-internal-optimizations/broken-reference/README.md)
+* `ref` and `eq_ref` access, when they are using [Batched Key Access](https://app.gitbook.com/s/WCInJQ9cmGjq1lsTG91E/development-articles/mariadb-internals/mariadb-internals-documentation-query-optimizer/block-based-join-algorithms#batch-key-access-join)
 
 as shown in this diagram:
 
@@ -81,7 +81,7 @@ EXPLAIN SELECT * FROM t1,t2 WHERE t2.key1=t1.col1;
 2 rows in set (0.00 sec)
 ```
 
-Execution of this query will cause table `t2` to be hit in random locations by lookups made through `t2.key1=t1.col`. If you enable Multi Range and and Batched Key Access, you will get table `t2` to be accessed using a `Rowid-ordered scan`:
+Execution of this query will cause table `t2` to be hit in random locations by lookups made through `t2.key1=t1.col`. If you enable Multi Range and Batched Key Access, you will get table `t2` to be accessed using a `Rowid-ordered scan`:
 
 ```sql
 SET optimizer_switch='mrr=ON';
@@ -183,7 +183,6 @@ There are three status variables related to Multi Range Read:
 
 | Variable name                                                                                            | Meaning                                                                   |
 | -------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
-| Variable name                                                                                            | Meaning                                                                   |
 | [Handler\_mrr\_init](../system-variables/server-status-variables.md#handler_mrr_init)                    | Counts how many Multi Range Read scans were performed                     |
 | [Handler\_mrr\_key\_refills](../system-variables/server-status-variables.md#handler_mrr_key_refills)     | Number of times key buffer was refilled (not counting the initial fill)   |
 | [Handler\_mrr\_rowid\_refills](../system-variables/server-status-variables.md#handler_mrr_rowid_refills) | Number of times rowid buffer was refilled (not counting the initial fill) |
@@ -229,10 +228,7 @@ Multi Range Read will make separate calls for steps #1 and #2, causing TWO incre
 * MariaDB uses [mrr\_buffer\_size](../system-variables/server-system-variables.md#mrr_buffer_size) as a limit of MRR buffer size for `range` access, while MySQL uses [read\_rnd\_buffer\_size](../system-variables/server-system-variables.md#read_rnd_buffer_size).
 * MariaDB has three MRR counters: [Handler\_mrr\_init](../system-variables/server-status-variables.md#handler_mrr_init), `Handler_mrr_extra_rowid_sorts`, `Handler_mrr_extra_key_sorts`, while MySQL has only `Handler_mrr_init`, and it will only count MRR scans that were used by BKA. MRR scans used by range access are not counted.
 
-## See Also
-
-* [What is MariaDB 5.3](https://github.com/mariadb-corporation/docs-server/blob/test/server/ha-and-performance/optimization-and-tuning/mariadb-internal-optimizations/broken-reference/README.md)
-* [Multi-Range Read Optimization](https://dev.mysql.com/doc/refman/5.6/en/mrr-optimization.html) page in MySQL manual
+##
 
 <sub>_This page is licensed: CC BY-SA / Gnu FDL_</sub>
 

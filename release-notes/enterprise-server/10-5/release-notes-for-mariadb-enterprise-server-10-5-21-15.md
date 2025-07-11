@@ -8,7 +8,6 @@ MariaDB Enterprise Server 10.5.21-15 was released on 2023-06-13.
 
 | CVE (with cve.org link)                                                         | CVSS base score                                                               |
 | ------------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| CVE (with cve.org link)                                                         | CVSS base score                                                               |
 | [CVE-2022-47015](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-47015) | N/A (Medium)[#1](release-notes-for-mariadb-enterprise-server-10-5-21-15.md#1) |
 
 `#1`:\
