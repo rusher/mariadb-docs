@@ -12,7 +12,7 @@
 
 [MariaDB 11.4.2](mariadb-11-4-2-release-notes.md) is a [_**Stable (GA)**_](../../mariadb-release-criteria.md) release.
 
-**For an overview of** [**MariaDB 11.4**](what-is-mariadb-114.md) **see the**[**What is MariaDB 11.4?**](what-is-mariadb-114.md) **page.**
+**For an overview of** [**MariaDB 11.4**](what-is-mariadb-114.md) **see the** [**What is MariaDB 11.4?**](what-is-mariadb-114.md) **page.**
 
 Thanks, and enjoy MariaDB!
 
