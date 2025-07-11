@@ -2,9 +2,9 @@
 
 {% include "../../.gitbook/includes/latest-11-4.md" %}
 
-[Download](https://mariadb.com/downloads)[Release Notes](mariadb-11-4-5-release-notes.md)[Changelog](../changelogs/changelogs-mariadb-11-4-series/mariadb-11-4-5-changelog.md)[Overview of 11.4](what-is-mariadb-114.md)
+<a href="https://mariadb.com/downloads" class="button primary">Download</a> <a href="mariadb-11-4-5-release-notes.md" class="button secondary">Release Notes</a> <a href="../changelogs/changelogs-mariadb-11-4-series/mariadb-11-4-5-changelog.md" class="button secondary">Changelog</a> <a href="what-is-mariadb-114.md" class="button secondary">Overview of 11.8</a>
 
-[_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/11.4.5/)
+[<sup>_Alternate download from mariadb.org_</sup>](https://downloads.mariadb.org/mariadb/11.8.2/)
 
 **Release date:** 4 Feb 2025
 
