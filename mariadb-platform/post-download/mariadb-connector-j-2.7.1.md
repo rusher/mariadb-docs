@@ -30,7 +30,8 @@ layout:
 * The prior release in this series was MariaDB Connector/J 2.7.0, released on 25 Sep 2020.
 * This release (MariaDB Connector/J 2.7.1) was released on 23 Nov 2020.
 * The next release in this series is MariaDB Connector/J 2.7.2, released on 29 Jan 2021.
-* The latest release in this series is MariaDB Connector/J 2.7.10, released on 25 Aug 2023.
+
+{% include "../.gitbook/includes/most-recent-java.md" %}
 
 ## Useful Resources
 
