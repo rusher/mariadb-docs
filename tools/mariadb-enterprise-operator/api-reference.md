@@ -1,5 +1,4 @@
 
-# Packages
 - [enterprise.mariadb.com/v1alpha1](#enterprisemariadbcomv1alpha1)
 
 
@@ -10,15 +9,15 @@ Package v1alpha1 contains API Schema definitions for the v1alpha1 API group
 
 
 ### Resource Types
-- [Backup](#Backup)
-- [Connection](#Connection)
-- [Database](#Database)
-- [Grant](#Grant)
-- [MariaDB](#Mariadb)
-- [MaxScale](#MaxScale)
-- [Restore](#Restore)
-- [SqlJob](#SqlJob)
-- [User](#User)
+- [Backup](#backup)
+- [Connection](#connection)
+- [Database](#database)
+- [Grant](#grant)
+- [MariaDB](#mariadb)
+- [MaxScale](#maxscale)
+- [Restore](#restore)
+- [SqlJob](#sqljob)
+- [User](#user)
 
 
 
@@ -48,16 +47,16 @@ AffinityConfig defines policies to schedule Pods in Nodes.
 
 
 _Appears in:_
-- [BackupSpec](#BackupSpec)
-- [Exporter](#Exporter)
-- [Job](#Job)
-- [JobPodTemplate](#JobPodTemplate)
-- [MariaDBSpec](#MariadbSpec)
-- [MaxScalePodTemplate](#MaxScalePodTemplate)
-- [MaxScaleSpec](#MaxScaleSpec)
-- [PodTemplate](#PodTemplate)
-- [RestoreSpec](#RestoreSpec)
-- [SqlJobSpec](#SqlJobSpec)
+- [BackupSpec](#backupspec)
+- [Exporter](#exporter)
+- [Job](#job)
+- [JobPodTemplate](#jobpodtemplate)
+- [MariaDBSpec](#mariadbspec)
+- [MaxScalePodTemplate](#maxscalepodtemplate)
+- [MaxScaleSpec](#maxscalespec)
+- [PodTemplate](#podtemplate)
+- [RestoreSpec](#restorespec)
+- [SqlJobSpec](#sqljobspec)
 
 | Field | Description | Default | Validation |
 | --- | --- | --- | --- |
@@ -134,10 +133,10 @@ BackupStagingStorage defines the temporary storage used to keep external backups
 
 
 _Appears in:_
-- [BackupSpec](#BackupSpec)
-- [BootstrapFrom](#BootStrapFrom)
-- [RestoreSource](#RestoreSource)
-- [RestoreSpec](#RestoreSpec)
+- [BackupSpec](#backupspec)
+- [BootstrapFrom](#bootstrapfrom)
+- [RestoreSource](#restoresource)
+- [RestoreSpec](#restorespec)
 
 | Field | Description | Default | Validation |
 | --- | --- | --- | --- |
@@ -154,7 +153,7 @@ BackupStorage defines the final storage for backups.
 
 
 _Appears in:_
-- [BackupSpec](#BackupSpec)
+- [BackupSpec](#backupspec)
 
 | Field | Description | Default | Validation |
 | --- | --- | --- | --- |
@@ -172,7 +171,7 @@ KubernetesAuth refers to the basic authentication mechanism utilized for establi
 
 
 _Appears in:_
-- [GaleraAgent](#GaleraAgent)
+- [GaleraAgent](#galeraagent)
 
 | Field | Description | Default | Validation |
 | --- | --- | --- | --- |
