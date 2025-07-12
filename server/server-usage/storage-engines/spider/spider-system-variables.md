@@ -1076,7 +1076,7 @@ Before this change, a non-minus-one system variable value would override the tab
   * `1` :skip parallel search if query is not SELECT statement
   * `2` :skip parallel search if query has SQL\_NO\_CACHE
   * `3` :1+2
-* Commandline: `--spider-skip-parallel-search=#`
+* Command line: `--spider-skip-parallel-search=#`
 * Scope: Global, Session
 * Dynamic: Yes
 * Data Type: `numeric`
@@ -1092,7 +1092,7 @@ Before this change, a non-minus-one system variable value would override the tab
   * `1` read committed
   * `2` repeatable read
   * `3` serializable
-* Commandline: `--spider-slave-trx-isolation=#`
+* Command line: `--spider-slave-trx-isolation=#`
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `numeric`
@@ -1119,7 +1119,7 @@ Before this change, a non-minus-one system variable value would override the tab
   * `-1` Use [table parameter](spider-table-parameters.md).
   * `0` Do not store last CRD result in the system table.
   * `1` Store last CRD result in the system table.
-* Commandline: `--spider-store-last-crd=#`
+* Command line: `--spider-store-last-crd=#`
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `numeric`
@@ -1134,7 +1134,7 @@ Before this change, a non-minus-one system variable value would override the tab
   * `-1` Use [table parameter](spider-table-parameters.md).
   * `0` Do not store last STS result in the system table.
   * `1` Store last STS result in the system table.
-* Commandline: `--spider-store-last-sts=#`
+* Command line: `--spider-store-last-sts=#`
 * Scope: Global
 * Dynamic: Yes
 * Data Type: `numeric`
@@ -1281,7 +1281,7 @@ Before this change, a non-minus-one system variable value would override the tab
 #### `spider_table_crd_thread_count`
 
 * Description: Static background thread count of table crd.
-* Commandline: `--spider-table-crd-thread-count=#`
+* Command line: `--spider-table-crd-thread-count=#`
 * Scope: Global
 * Dynamic: No
 * Data Type: `numeric`
@@ -1303,7 +1303,7 @@ Before this change, a non-minus-one system variable value would override the tab
 #### `spider_table_sts_thread_count`
 
 * Description: Static background thread count of table sts.
-* Commandline: `--spider-table-sts-thread-count=#`
+* Command line: `--spider-table-sts-thread-count=#`
 * Scope: Global
 * Dynamic: No
 * Data Type: `numeric`
