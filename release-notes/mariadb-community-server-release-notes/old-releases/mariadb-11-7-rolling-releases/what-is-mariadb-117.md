@@ -1,6 +1,8 @@
-# Changes and Improvements in MariaDB 11.7
+# MariaDB 11.7 Changes & Improvements
 
-The most recent release of [MariaDB 11.7](what-is-mariadb-117.md) is:[**MariaDB 11.7.2**](mariadb-11-7-2-release-notes.md) [Download Now](https://mariadb.com/downloads)[_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/11.7.2)
+MariaDB 11.7 is no longer maintained. Please use a [more recent release](../../../latest-releases.md).
+
+The most recent release of [MariaDB 11.7](what-is-mariadb-117.md) is: [**MariaDB 11.7.2**](mariadb-11-7-2-release-notes.md) [Download Now](https://mariadb.com/downloads)[_Alternate download from mariadb.org_](https://downloads.mariadb.org/mariadb/11.7.2)
 
 [MariaDB 11.7](what-is-mariadb-117.md) is a [rolling release](../../../mariadb-release-model.md).
 
