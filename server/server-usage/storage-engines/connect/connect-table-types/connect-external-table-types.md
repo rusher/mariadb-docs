@@ -27,7 +27,7 @@ The way this works is by establishing a connection to the external data source a
 
 This is why, for SELECT queries, CONNECT uses the [cond\_push](../using-connect/using-connect-condition-pushdown.md) MariaDB feature to retrieve the maximum of the where clause of the original query that can be added to the query sent to the data source. This is automatic and does not require anything to be done by the user.
 
-However, more can be done. In addition to accessing a remote table, CONNECT offers the possibility to specify what the remote server must do. This is done by specifying it as a view in the srcdef option. For example:
+However, more can be done. In addition to accessing a remote table, CONNECT offers the possibility to specify what the remote server must do. This is done by specifying it as a view in the srcdef option:
 
 ```
 CREATE TABLE custnum ENGINE=CONNECT TABLE_TYPE=XXX

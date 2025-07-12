@@ -72,7 +72,7 @@ If the JVM library (jvm.dll on Windows, libjvm.so on Linux) was not placed in th
 
 If the JAVA\_HOME variable was exported as explained above, CONNECT can sometimes find it using this information. Otherwise, its search path can be added to the LD\_LIBRARY\_PATH environment variable. But all this is complicated because making environment variables permanent on Linux is painful (many different methods must be used depending on the Linux version and the used shell).
 
-This is why CONNECT introduced a new global variable connect\_jvm\_path to store this information. It can be set when starting the server as a command line option or even afterwards before the first use of the JDBC table type. For example:
+This is why CONNECT introduced a new global variable connect\_jvm\_path to store this information. It can be set when starting the server as a command line option or even afterwards before the first use of the JDBC table type:
 
 ```
 set global connect_jvm_path="/usr/lib/jvm/java-8-oracle/jre/lib/i386/client"

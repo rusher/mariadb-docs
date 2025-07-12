@@ -34,7 +34,7 @@ CREATE TABLE tab (
 
 ## Setting a Table's Row Format
 
-One way to specify an InnoDB table's row format is by setting the [ROW\_FORMAT](../../../../reference/sql-statements/data-definition/create/create-table.md#row_format) table option to the relevant row format in a [CREATE TABLE](../../../../reference/sql-statements/data-definition/create/create-table.md) or [ALTER TABLE](../../../../reference/sql-statements/data-definition/alter/alter-table/) statement. For example:
+One way to specify an InnoDB table's row format is by setting the [ROW\_FORMAT](../../../../reference/sql-statements/data-definition/create/create-table.md#row_format) table option to the relevant row format in a [CREATE TABLE](../../../../reference/sql-statements/data-definition/create/create-table.md) or [ALTER TABLE](../../../../reference/sql-statements/data-definition/alter/alter-table/) statement:
 
 ```sql
 SET SESSION innodb_strict_mode=ON;
@@ -51,7 +51,7 @@ CREATE TABLE tab (
 
 ## Checking a Table's Row Format
 
-The [SHOW TABLE STATUS](../../../../reference/sql-statements/administrative-sql-statements/show/show-table-status.md) statement can be used to see the row format used by a table. For example:
+The [SHOW TABLE STATUS](../../../../reference/sql-statements/administrative-sql-statements/show/show-table-status.md) statement can be used to see the row format used by a table:
 
 ```sql
 SHOW TABLE STATUS FROM db1 WHERE Name='tab'\G
@@ -76,7 +76,7 @@ Max_data_length: 0
         Comment:
 ```
 
-The [information\_schema.INNODB\_SYS\_TABLES](../../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_sys_tables-table.md) table can also be queried to see the row format used by a table. For example:
+The [information\_schema.INNODB\_SYS\_TABLES](../../../../reference/sql-statements/administrative-sql-statements/system-tables/information-schema/information-schema-tables/information-schema-innodb-tables/information-schema-innodb_sys_tables-table.md) table can also be queried to see the row format used by a table:
 
 ```sql
 SELECT * FROM information_schema.INNODB_SYS_TABLES WHERE name='db1/tab'\G

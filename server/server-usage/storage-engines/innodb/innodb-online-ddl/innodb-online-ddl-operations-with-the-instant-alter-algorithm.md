@@ -923,7 +923,7 @@ These operations require the following non-canonical changes to the storage form
 * A [BLOB](../../../../reference/data-types/string-data-types/blob.md) in the hidden metadata record is used to store column mappings. This makes it possible to drop or reorder columns without rebuilding the table. This also makes it possible to add columns to any position or drop columns from any position in the table without rebuilding the table.
 * If a column is dropped, old records will contain garbage in that column's former position, and new records will be written with [NULL](../../../../reference/data-types/null-values.md) values, empty strings, or dummy values.
 
-This non-canonical storage format has the potential to incur some performance or storage overhead for all subsequent DML operations. If you notice some issues like this and you want to normalize a table's storage format to avoid this problem, then you can do so by forcing a table rebuild by executing [ALTER TABLE ... FORCE](../../../../reference/sql-statements/data-definition/alter/alter-table/#force) with [ALGORITHM](../../../../reference/sql-statements/data-definition/alter/alter-table/#algorithm) set to `INPLACE`. For example:
+This non-canonical storage format has the potential to incur some performance or storage overhead for all subsequent DML operations. If you notice some issues like this and you want to normalize a table's storage format to avoid this problem, then you can do so by forcing a table rebuild by executing [ALTER TABLE ... FORCE](../../../../reference/sql-statements/data-definition/alter/alter-table/#force) with [ALGORITHM](../../../../reference/sql-statements/data-definition/alter/alter-table/#algorithm) set to `INPLACE`:
 
 ```sql
 SET SESSION alter_algorithm='INPLACE';
@@ -939,7 +939,7 @@ There are some known bugs that could lead to issues when an InnoDB DDL operation
 
 The effect of many of these bugs is that the table seems to _forget_ that its tablespace file is in the [non-canonical storage format](innodb-online-ddl-operations-with-the-instant-alter-algorithm.md#non-canonical-storage-format-caused-by-some-operations).
 
-If you are concerned that a table may be affected by one of these bugs, then your best option would be to normalize the table structure. This can be done by rebuilding the table. For example:
+If you are concerned that a table may be affected by one of these bugs, then your best option would be to normalize the table structure. This can be done by rebuilding the table:
 
 ```sql
 SET SESSION alter_algorithm='INPLACE';

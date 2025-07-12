@@ -131,7 +131,7 @@ A more accurate name for the algorithm would have been the `ENGINE` algorithm, s
 
 If an [ALTER TABLE](../../../../reference/sql-statements/data-definition/alter/alter-table/) operation supports the `INPLACE` algorithm, then it can be performed using optimizations by the underlying storage engine, but it may rebuilt.
 
-If the `INPLACE` algorithm is specified with the [ALGORITHM](../../../../reference/sql-statements/data-definition/alter/alter-table/#algorithm) clause or with the [alter\_algorithm](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#alter_algorithm) system variable and if the [ALTER TABLE](../../../../reference/sql-statements/data-definition/alter/alter-table/) operation does not support the `INPLACE` algorithm, then an error will be raised. For example:
+If the `INPLACE` algorithm is specified with the [ALGORITHM](../../../../reference/sql-statements/data-definition/alter/alter-table/#algorithm) clause or with the [alter\_algorithm](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#alter_algorithm) system variable and if the [ALTER TABLE](../../../../reference/sql-statements/data-definition/alter/alter-table/) operation does not support the `INPLACE` algorithm, then an error will be raised:
 
 ```sql
 SET SESSION alter_algorithm='INPLACE';
@@ -169,7 +169,7 @@ The `NOCOPY` algorithm is supported. The `INPLACE` algorithm can sometimes be su
 
 If an [ALTER TABLE](../../../../reference/sql-statements/data-definition/alter/alter-table/) operation supports the `NOCOPY` algorithm, then it can be performed without rebuilding the clustered index.
 
-If the `NOCOPY` algorithm is specified with the [ALGORITHM](../../../../reference/sql-statements/data-definition/alter/alter-table/#algorithm) clause or with the [alter\_algorithm](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#alter_algorithm) system variable and if the [ALTER TABLE](../../../../reference/sql-statements/data-definition/alter/alter-table/) operation does not support the `NOCOPY` algorithm, then an error will be raised. For example:
+If the `NOCOPY` algorithm is specified with the [ALGORITHM](../../../../reference/sql-statements/data-definition/alter/alter-table/#algorithm) clause or with the [alter\_algorithm](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#alter_algorithm) system variable and if the [ALTER TABLE](../../../../reference/sql-statements/data-definition/alter/alter-table/) operation does not support the `NOCOPY` algorithm, then an error will be raised:
 
 ```sql
 SET SESSION alter_algorithm='NOCOPY';
@@ -192,7 +192,7 @@ The `INSTANT` algorithm is supported. The `INPLACE` algorithm can sometimes be s
 
 If an [ALTER TABLE](../../../../reference/sql-statements/data-definition/alter/alter-table/) operation supports the `INSTANT` algorithm, then it can be performed without modifying any data files.
 
-If the `INSTANT` algorithm is specified with the [ALGORITHM](../../../../reference/sql-statements/data-definition/alter/alter-table/#algorithm) clause or with the [alter\_algorithm](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#alter_algorithm) system variable and if the [ALTER TABLE](../../../../reference/sql-statements/data-definition/alter/alter-table/) operation does not support the `INSTANT` algorithm, then an error will be raised. For example:
+If the `INSTANT` algorithm is specified with the [ALGORITHM](../../../../reference/sql-statements/data-definition/alter/alter-table/#algorithm) clause or with the [alter\_algorithm](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#alter_algorithm) system variable and if the [ALTER TABLE](../../../../reference/sql-statements/data-definition/alter/alter-table/) operation does not support the `INSTANT` algorithm, then an error will be raised:
 
 ```sql
 SET SESSION alter_algorithm='INSTANT';

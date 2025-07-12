@@ -124,7 +124,7 @@ The last ALTER is needed to display all the entries.
 
 #### File Zipping Method
 
-This method enables to make the zip file from another file when creating the table. It applies to all table types including DBF, XML and JSON. It is specified in the create table statement with the load option. For example:
+This method enables to make the zip file from another file when creating the table. It applies to all table types including DBF, XML and JSON. It is specified in the create table statement with the load option:
 
 ```
 create table XSERVZIP (

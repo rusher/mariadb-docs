@@ -15,7 +15,7 @@ The optional `BLOCK_SIZE` option gives the size of the table, defaulting to 1 if
 
 Many DBMS use a no-column one-line table to do this, often call “dual”. MySQL and MariaDB use\
 syntax where no table is specified. With CONNECT, you can achieve the same purpose with a virtual\
-table, with the noticeable advantage of being able to display several lines. For example:
+table, with the noticeable advantage of being able to display several lines:
 
 ```
 create table virt engine=connect table_type=VIR block_size=10;

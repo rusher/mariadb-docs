@@ -2,7 +2,7 @@
 
 When InnoDB needs to store general information relating to the system as a whole, rather than a specific table, the specific file it writes to is the system tablespace. By default, this is the `ibdata1` file located in the data directory, (as defined by either the [datadir](../../../../ha-and-performance/optimization-and-tuning/system-variables/server-system-variables.md#datadir) or [innodb\_data\_home\_dir](../innodb-system-variables.md#innodb_data_home_dir) system variables). InnoDB uses the system tablespace to store the data dictionary, change buffer, and undo logs.
 
-You can define the system tablespace filename or filenames, size and other options by setting the [innodb\_data\_file\_path](../innodb-system-variables.md#innodb_data_file_path) system variable. This system variable can be specified as a command-line argument to [mariadbd](../../../../server-management/starting-and-stopping-mariadb/mariadbd.md) or it can be specified in a relevant server [option group](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md). For example:
+You can define the system tablespace filename or filenames, size and other options by setting the [innodb\_data\_file\_path](../innodb-system-variables.md#innodb_data_file_path) system variable. This system variable can be specified as a command-line argument to [mariadbd](../../../../server-management/starting-and-stopping-mariadb/mariadbd.md) or it can be specified in a relevant server [option group](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md):
 
 ```
 [mariadb]
@@ -79,7 +79,7 @@ $ mysql -u root -p < full-backup.sql
 
 Instead of having InnoDB write to the file system, you can set it to use raw disk partitions. On Windows and some Linux distributions, this allows you to perform non-buffered I/O without the file system overhead. Note that in many use cases this may not actually improve performance. Run tests to verify if there are any real gains for your application usage.
 
-To enable a raw disk partition, first start MariaDB with the `newraw` option set on the tablespace. For example:
+To enable a raw disk partition, first start MariaDB with the `newraw` option set on the tablespace:
 
 ```
 [mariadb]
@@ -99,7 +99,7 @@ When you start MariaDB again, it'll read and write InnoDB data to the given disk
 
 ### Raw Disk Partitions on Windows
 
-When defining a raw disk partition for InnoDB on the Windows operating system, use the same procedure as defined above, but when defining the path for the [innodb\_data\_file\_path](../innodb-system-variables.md#innodb_data_file_path) system variable, use `./` at the start. For example:
+When defining a raw disk partition for InnoDB on the Windows operating system, use the same procedure as defined above, but when defining the path for the [innodb\_data\_file\_path](../innodb-system-variables.md#innodb_data_file_path) system variable, use `./` at the start:
 
 ```
 [mariadb]

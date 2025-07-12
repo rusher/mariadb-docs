@@ -1545,7 +1545,7 @@ The tb.json file will be changed to:
 Json_Array_Add(arg1, arg2, [arg3][, arg4][, ...])
 ```
 
-Note: The following describes this function for CONNECT version 1.4 only. The first argument must be a JSON array. The second argument is added as member of this array. For example:
+Note: The following describes this function for CONNECT version 1.4 only. The first argument must be a JSON array. The second argument is added as member of this array:
 
 ```
 select Json_Array_Add(Json_Array(56,3.1416,'machin',NULL),
@@ -1597,7 +1597,7 @@ Json\_Array\_Add\_Values added in CONNECT 1.4 replaces the function Json\_Array\
 Json_Array_Add_Values(arg, arglist)
 ```
 
-The first argument must be a JSON array string. Then all other arguments are added as members of this array. For example:
+The first argument must be a JSON array string. Then all other arguments are added as members of this array:
 
 ```
 select Json_Array_Add_Values
@@ -1614,7 +1614,7 @@ select Json_Array_Add_Values
 Json_Array_Delete(arg1, arg2 [,arg3] [...])
 ```
 
-The first argument should be a JSON array. The second argument is an integer indicating the rank (0 based conforming to general json usage) of the element to delete. For example:
+The first argument should be a JSON array. The second argument is an integer indicating the rank (0 based conforming to general json usage) of the element to delete:
 
 ```
 select Json_Array_Delete(Json_Array(56,3.1416,'foo',NULL),1) Array;
@@ -1762,7 +1762,7 @@ JsonGet_Int(arg1, arg2, [arg3] …)
 JsonGet_Real(arg1, arg2, [arg3] …)
 ```
 
-The first argument should be a JSON item. If it is a string with no alias, it will be converted as a json item. The second argument is the path of the item to be located in the first argument and returned, eventually converted according to the used function. For example:
+The first argument should be a JSON item. If it is a string with no alias, it will be converted as a json item. The second argument is the path of the item to be located in the first argument and returned, eventually converted according to the used function:
 
 ```
 select 
@@ -1846,7 +1846,7 @@ JsonLocate(arg1, arg2, [arg3], …):
 
 The first argument must be a JSON tree. The second argument is the item to be located. The item to be located can be a constant or a json item. Constant values must be equal in type and value to be found. This is "shallow equality" – strings, integers and doubles won't match.
 
-This function returns the json path to the located item or null if it is not found. For example:
+This function returns the json path to the located item or null if it is not found:
 
 ```
 select JsonLocate('{"AUTHORS":[{"FN":"Jules", "LN":"Verne"}, 
@@ -1892,7 +1892,7 @@ select JsonLocate('{"AUTHORS":[{"FN":"Jules", "LN":"Verne"},
 Json_Locate_All(arg1, arg2, [arg3], …):
 ```
 
-The first argument must be a JSON item. The second argument is the item to be located. This function returns the paths to all locations of the item as an array of strings. For example:
+The first argument must be a JSON item. The second argument is the item to be located. This function returns the paths to all locations of the item as an array of strings:
 
 ```
 select Json_Locate_All('[[45,28],[[36,45],89]]',45);
@@ -1924,7 +1924,7 @@ If specified, the third integer argument set the depth to search in the document
 Json_Make_Array(val1, …, valn)
 ```
 
-Json\_Make\_Array returns a string denoting a JSON array with all its arguments as members. For example:
+Json\_Make\_Array returns a string denoting a JSON array with all its arguments as members:
 
 ```
 select Json_Make_Array(56, 3.1416, 'My name is "Foo"', NULL);
@@ -1982,7 +1982,7 @@ select Json_Make_Object(matricule, nom, titre, salaire) from connect.employe whe
 Json_Object_Add(arg1, arg2, [arg3] …)
 ```
 
-The first argument must be a JSON object. The second argument is added as a pair to this object. For example:
+The first argument must be a JSON object. The second argument is added as a pair to this object:
 
 ```
 select Json_Object_Add
@@ -2003,7 +2003,7 @@ The third string argument is a Json path to the target object.
 Json_Object_Delete(arg1, arg2, [arg3] …):
 ```
 
-The first argument must be a JSON object. The second argument is the key of the pair to delete. For example:
+The first argument must be a JSON object. The second argument is the key of the pair to delete:
 
 ```
 select Json_Object_Delete('{"item":"T-shirt","qty":27,"price":24.99}' json_old, 'qty') newobj;
@@ -2064,7 +2064,7 @@ The object is filled with pairs made from each key/value arguments.
 Json_Object_List(arg1, …):
 ```
 
-The first argument must be a JSON object. This function returns an array containing the list of all keys existing in the object. For example:
+The first argument must be a JSON object. This function returns an array containing the list of all keys existing in the object:
 
 ```
 select Json_Object_List(Json_Object(56 qty,3.1416 price,'machin' truc, NULL garanty))
@@ -2092,7 +2092,7 @@ It is mainly used to avoid constructing useless null items when converting table
 Json_Object_Values(json_object)
 ```
 
-The first argument must be a JSON object. This function returns an array containing the list of all values existing in the object. For example:
+The first argument must be a JSON object. This function returns an array containing the list of all values existing in the object:
 
 ```
 select Json_Object_Values('{"One":1,"Two":2,"Three":3}') "Value List";

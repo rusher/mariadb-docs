@@ -8,19 +8,19 @@ InnoDB strict mode is enabled by default.
 
 InnoDB strict mode can be enabled or disabled by configuring the [innodb\_strict\_mode](innodb-system-variables.md) server system variable.
 
-Its global value can be changed dynamically with [SET GLOBAL](../../../reference/sql-statements/administrative-sql-statements/set-commands/set.md#global-session). For example:
+Its global value can be changed dynamically with [SET GLOBAL](../../../reference/sql-statements/administrative-sql-statements/set-commands/set.md#global-session):
 
 ```sql
 SET GLOBAL innodb_strict_mode=ON;
 ```
 
-Its value for the current session can also be changed dynamically with [SET SESSION](../../../reference/sql-statements/administrative-sql-statements/set-commands/set.md#global-session). For example:
+Its value for the current session can also be changed dynamically with [SET SESSION](../../../reference/sql-statements/administrative-sql-statements/set-commands/set.md#global-session):
 
 ```sql
 SET SESSION innodb_strict_mode=ON;
 ```
 
-It can also be set in a server [option group](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server. For example:
+It can also be set in a server [option group](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md#option-groups) in an [option file](../../../server-management/install-and-upgrade-mariadb/configuring-mariadb/configuring-mariadb-with-option-files.md) prior to starting up the server:
 
 ```
 [mariadb]
@@ -42,7 +42,7 @@ However, more details about the error can be found by executing [SHOW WARNINGS](
 
 For example, the error is raised in the following cases:
 
-* The [KEY\_BLOCK\_SIZE](../../../reference/sql-statements/data-definition/create/create-table.md#key_block_size) table option is set to a non-zero value, but the [ROW\_FORMAT](../../../reference/sql-statements/data-definition/create/create-table.md#row_format) table option is set to some row format other than the [COMPRESSED](innodb-row-formats/innodb-compressed-row-format.md) row format. For example:
+* The [KEY\_BLOCK\_SIZE](../../../reference/sql-statements/data-definition/create/create-table.md#key_block_size) table option is set to a non-zero value, but the [ROW\_FORMAT](../../../reference/sql-statements/data-definition/create/create-table.md#row_format) table option is set to some row format other than the [COMPRESSED](innodb-row-formats/innodb-compressed-row-format.md) row format:
 
 ```sql
 SET SESSION innodb_strict_mode=ON;

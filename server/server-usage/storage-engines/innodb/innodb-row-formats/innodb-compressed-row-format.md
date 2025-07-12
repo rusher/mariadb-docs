@@ -53,7 +53,7 @@ In earlier versions, the `COMPRESSED` row format is also only supported if the t
 
 It is also recommended to set the [innodb\_strict\_mode](../innodb-system-variables.md#innodb_strict_mode) system variable to `ON` when using this row format.
 
-InnoDB automatically uses the `COMPRESSED` row format for a table if the [KEY\_BLOCK\_SIZE](../../../../reference/sql-statements/data-definition/create/create-table.md#key_block_size) table option is set to some value in a [CREATE TABLE](../../../../reference/sql-statements/data-definition/create/create-table.md) or [ALTER TABLE](../../../../reference/sql-statements/data-definition/alter/alter-table/) statement. For example:
+InnoDB automatically uses the `COMPRESSED` row format for a table if the [KEY\_BLOCK\_SIZE](../../../../reference/sql-statements/data-definition/create/create-table.md#key_block_size) table option is set to some value in a [CREATE TABLE](../../../../reference/sql-statements/data-definition/create/create-table.md) or [ALTER TABLE](../../../../reference/sql-statements/data-definition/alter/alter-table/) statement:
 
 ```sql
 SET SESSION innodb_strict_mode=ON;
@@ -68,7 +68,7 @@ CREATE TABLE tab (
 ) ENGINE=InnoDB KEY_BLOCK_SIZE=4;
 ```
 
-If the [KEY\_BLOCK\_SIZE](../../../../reference/sql-statements/data-definition/create/create-table.md#key_block_size) table option is **not** set to some value, but the [ROW\_FORMAT](../../../../reference/sql-statements/data-definition/create/create-table.md#row_format) table option is set to `COMPRESSED` in a [CREATE TABLE](../../../../reference/sql-statements/data-definition/create/create-table.md) or [ALTER TABLE](../../../../reference/sql-statements/data-definition/alter/alter-table/) statement, then InnoDB uses a default value of `8` for the [KEY\_BLOCK\_SIZE](../../../../reference/sql-statements/data-definition/create/create-table.md#key_block_size) table option. For example:
+If the [KEY\_BLOCK\_SIZE](../../../../reference/sql-statements/data-definition/create/create-table.md#key_block_size) table option is **not** set to some value, but the [ROW\_FORMAT](../../../../reference/sql-statements/data-definition/create/create-table.md#row_format) table option is set to `COMPRESSED` in a [CREATE TABLE](../../../../reference/sql-statements/data-definition/create/create-table.md) or [ALTER TABLE](../../../../reference/sql-statements/data-definition/alter/alter-table/) statement, then InnoDB uses a default value of `8` for the [KEY\_BLOCK\_SIZE](../../../../reference/sql-statements/data-definition/create/create-table.md#key_block_size) table option:
 
 ```sql
 SET SESSION innodb_strict_mode=ON;

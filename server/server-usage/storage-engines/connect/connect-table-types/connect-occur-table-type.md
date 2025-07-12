@@ -84,7 +84,7 @@ as nullable, rows are also generated for columns containing null or pseudo-null\
 values.
 
 Occur tables can be also defined from views or source definition. Also, CONNECT\
-is able to generate the column definitions if not specified. For example:
+is able to generate the column definitions if not specified:
 
 ```
 create table ocsrc engine=connect table_type=occur

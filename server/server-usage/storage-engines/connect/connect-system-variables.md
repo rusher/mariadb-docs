@@ -195,7 +195,7 @@ See also the [Full list of MariaDB options, system and status variables](../../.
   * `HANDLER` or `128`: Creating and dropping CONNECT handlers
   * `BLOCK` or `256`: Creating and dropping CONNECT objects
   * `MONGO` or `512`: Mongo and REST (from [Connect 1.06.0010](./)) tracing
-* For example:
+:
   * `set global connect_xtrace=0; No trace`
   * `set global connect_xtrace='YES'; By name`
   * `set global connect_xtrace=1; By value`
