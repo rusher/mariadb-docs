@@ -562,7 +562,7 @@ MariaDB Enterprise Audit does not track changes to user accounts. If you delete 
 
 You can use the `DML_NO_SELECT` filter for the query\_event. It allows excluding `SELECT` statements, providing more granular control over audited events. When the filter is applied, only DML statements that change data, like `INSERT, UPDATE, and DELETE` are included. Note that this includes `SELECT` statements that change data, like `SELECT INTO` or `SELECT FOR UPDATE`.
 
-To use the `DML_NO_SELECT` filter, add it to the query\_event configuration option in the \[audit] section of the MariaDB configuration file. For example:
+To use the `DML_NO_SELECT` filter, add it to the query\_event configuration option in the \[audit] section of the MariaDB configuration file:
 
 ```ini
 [audit] 

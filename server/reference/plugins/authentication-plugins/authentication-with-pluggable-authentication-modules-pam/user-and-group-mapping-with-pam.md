@@ -36,13 +36,13 @@ When using such an installation, and not being able to switch to our own MariaDB
 
 Before the module can be compiled from source, you may need to install some dependencies.
 
-On RHEL, CentOS, and other similar Linux distributions that use [RPM packages](../../../../server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/rpm/), you need to install `gcc`, `pam-devel` and `MariaDB-devel`. For example:
+On RHEL, CentOS, and other similar Linux distributions that use [RPM packages](../../../../server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/rpm/), you need to install `gcc`, `pam-devel` and `MariaDB-devel`:
 
 ```
 sudo yum install gcc pam-devel MariaDB-devel
 ```
 
-On Debian, Ubuntu, and other similar Linux distributions that use [DEB packages](../../../../server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/installing-mariadb-deb-files.md), you need to install `gcc`, `libpam0g-dev`. For example:
+On Debian, Ubuntu, and other similar Linux distributions that use [DEB packages](../../../../server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/installing-mariadb-deb-files.md), you need to install `gcc`, `libpam0g-dev`:
 
 ```
 sudo apt-get install gcc libpam0g-dev libmariadb-dev
@@ -94,7 +94,7 @@ top:  accounting
 
 ### Configuring PAM
 
-With user and group mapping, configuring PAM is done similar to how it is [normally done with the pam authentication plugin](authentication-plugin-pam.md#configuring-pam). However, when configuring the PAM service, you will have to add an `auth` line for the `pam_user_map` PAM module to the service's PAM configuration file. For example:
+With user and group mapping, configuring PAM is done similar to how it is [normally done with the pam authentication plugin](authentication-plugin-pam.md#configuring-pam). However, when configuring the PAM service, you will have to add an `auth` line for the `pam_user_map` PAM module to the service's PAM configuration file:
 
 ```
 auth required pam_unix.so audit
@@ -167,7 +167,7 @@ We can verify that our `foo` PAM user was properly mapped to the `bar` MariaDB u
 
 ### Logging
 
-By default, the `pam_user_map` PAM module does not perform any logging. However, if you want to enable debug logging, then you can add the `debug` module argument to the service's PAM configuration file. For example:
+By default, the `pam_user_map` PAM module does not perform any logging. However, if you want to enable debug logging, then you can add the `debug` module argument to the service's PAM configuration file:
 
 ```
 auth required pam_unix.so audit

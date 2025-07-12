@@ -41,7 +41,7 @@ Below is a list of all system variables related to the Audit Plugin. See [Server
 
 #### `server_audit_events`
 
-* Description: If set, then this restricts audit logging to certain event types. If not set, then every event type is logged to the audit log. For example: SET GLOBAL server\_audit\_events='connect, query'.
+* Description: If set, then this restricts audit logging to certain event types. If not set, then every event type is logged to the audit log: SET GLOBAL server\_audit\_events='connect, query'.
 * Command line: `--server-audit-events=value`
 * Scope: Global
 * Dynamic: Yes
@@ -56,7 +56,7 @@ Below is a list of all system variables related to the Audit Plugin. See [Server
 
 #### `server_audit_excl_users`
 
-* Description: If not empty, it contains the list of users whose activity will NOT be logged. For example: `SET GLOBAL server_audit_excl_users='user_foo, user_bar'`. CONNECT records aren't affected by this variable - they are always logged. The user is still logged if it's specified in [server\_audit\_incl\_users](mariadb-audit-plugin-options-and-system-variables.md#server_audit_incl_users).
+* Description: If not empty, it contains the list of users whose activity will NOT be logged: `SET GLOBAL server_audit_excl_users='user_foo, user_bar'`. CONNECT records aren't affected by this variable - they are always logged. The user is still logged if it's specified in [server\_audit\_incl\_users](mariadb-audit-plugin-options-and-system-variables.md#server_audit_incl_users).
 * Command line: `--server-audit-excl-users=value`
 * Scope: Global
 * Dynamic: Yes
@@ -104,7 +104,7 @@ Below is a list of all system variables related to the Audit Plugin. See [Server
 
 #### `server_audit_incl_users`
 
-* Description: If not empty, it contains a comma-delimited list of users whose activity will be logged. For example: `SET GLOBAL server_audit_incl_users='user_foo, user_bar'`. CONNECT records aren't affected by this variable - they are always logged. This setting has higher priority than [server\_audit\_excl\_users](mariadb-audit-plugin-options-and-system-variables.md#server_audit_excl_users). So if the same user is specified both in incl\_ and excl\_ lists, they will still be logged.
+* Description: If not empty, it contains a comma-delimited list of users whose activity will be logged: `SET GLOBAL server_audit_incl_users='user_foo, user_bar'`. CONNECT records aren't affected by this variable - they are always logged. This setting has higher priority than [server\_audit\_excl\_users](mariadb-audit-plugin-options-and-system-variables.md#server_audit_excl_users). So if the same user is specified both in incl\_ and excl\_ lists, they will still be logged.
 * Command line: `--server-audit-incl-users=value`
 * Scope: Global
 * Dynamic: Yes
@@ -125,7 +125,7 @@ Below is a list of all system variables related to the Audit Plugin. See [Server
 
 #### `server_audit_logging`
 
-* Description: Enables/disables the logging. Expected values are ON/OFF. For example: `SET GLOBAL server_audit_logging=on` If the server\_audit\_output\_type is FILE, this will actually create/open the logfile so the [server\_audit\_file\_path](mariadb-audit-plugin-options-and-system-variables.md#server_audit_file_path) should be properly specified beforehand. Same about the `SYSLOG`-related parameters. The logging is turned off by default.
+* Description: Enables/disables the logging. Expected values are ON/OFF: `SET GLOBAL server_audit_logging=on` If the server\_audit\_output\_type is FILE, this will actually create/open the logfile so the [server\_audit\_file\_path](mariadb-audit-plugin-options-and-system-variables.md#server_audit_file_path) should be properly specified beforehand. Same about the `SYSLOG`-related parameters. The logging is turned off by default.
 * Command line: `--server-audit-logging[={0|1}]`
 * Scope: Global
 * Dynamic: Yes
@@ -144,7 +144,7 @@ Below is a list of all system variables related to the Audit Plugin. See [Server
 
 #### `server_audit_output_type`
 
-* Description: Specifies the desired output type. Can be SYSLOG, FILE or null as no output. For example: `SET GLOBAL server_audit_output_type=file` file: log records will be saved into the rotating log file. The name of the file set by [server\_audit\_file\_path](mariadb-audit-plugin-options-and-system-variables.md#server_audit_file_path) variable. syslog: log records will be sent to the local syslogd daemon with the standard \<syslog.h> API. The default value is 'file'.
+* Description: Specifies the desired output type. Can be SYSLOG, FILE or null as no output: `SET GLOBAL server_audit_output_type=file` file: log records will be saved into the rotating log file. The name of the file set by [server\_audit\_file\_path](mariadb-audit-plugin-options-and-system-variables.md#server_audit_file_path) variable. syslog: log records will be sent to the local syslogd daemon with the standard \<syslog.h> API. The default value is 'file'.
 * Command line: `--server-audit-output-type=value`
 * Scope: Global
 * Dynamic: Yes

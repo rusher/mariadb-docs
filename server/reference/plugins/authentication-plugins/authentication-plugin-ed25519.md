@@ -65,14 +65,14 @@ SELECT ed25519_password("secret");
 
 Now you can use it to create the user account using the new password hash. As with any password, you should always use a complex password that isn't easy to guess. If you don't, if anyone gets access to the stored passwords in the `mysql.user` table, they could use [rainbow tables](https://en.wikipedia.org/wiki/Rainbow_table) to figure out the original password.
 
-To create a user account via [CREATE USER](../../sql-statements/account-management-sql-statements/create-user.md), specify the name of the plugin in the [IDENTIFIED VIA](../../sql-statements/account-management-sql-statements/create-user.md#identified-viawith-authentication_plugin) clause while providing the password hash as the `USING` clause. For example:
+To create a user account via [CREATE USER](../../sql-statements/account-management-sql-statements/create-user.md), specify the name of the plugin in the [IDENTIFIED VIA](../../sql-statements/account-management-sql-statements/create-user.md#identified-viawith-authentication_plugin) clause while providing the password hash as the `USING` clause:
 
 ```sql
 CREATE USER username@hostname IDENTIFIED VIA ed25519 
   USING 'ZIgUREUg5PVgQ6LskhXmO+eZLS0nC8be6HPjYWR4YJY';
 ```
 
-If [SQL\_MODE](../../../server-management/variables-and-modes/sql-mode.md) does not have `NO_AUTO_CREATE_USER` set, you can also create the user account via [GRANT](../../sql-statements/account-management-sql-statements/grant.md). For example:
+If [SQL\_MODE](../../../server-management/variables-and-modes/sql-mode.md) does not have `NO_AUTO_CREATE_USER` set, you can also create the user account via [GRANT](../../sql-statements/account-management-sql-statements/grant.md):
 
 ```sql
 GRANT SELECT ON db.* TO username@hostname IDENTIFIED VIA ed25519 
@@ -85,7 +85,7 @@ Note that users require a password in order to be able to connect. It is possibl
 
 ## Changing User Passwords
 
-You can change a user account's password by executing the [SET PASSWORD](../../sql-statements/account-management-sql-statements/set-password.md) statement followed by the [PASSWORD()](../../sql-functions/secondary-functions/encryption-hashing-and-compression-functions/password.md) function and providing the plain-text password as an argument. For example:
+You can change a user account's password by executing the [SET PASSWORD](../../sql-statements/account-management-sql-statements/set-password.md) statement followed by the [PASSWORD()](../../sql-functions/secondary-functions/encryption-hashing-and-compression-functions/password.md) function and providing the plain-text password as an argument:
 
 ```sql
 SET PASSWORD =  PASSWORD('new_secret')
