@@ -6,7 +6,7 @@
 
 **Release date:** 24 December 2023
 
-**Do not use&#x20;**_**alpha**_**&#x20;releases in production!**
+{% include "../../.gitbook/includes/non-stable.md" %}
 
 [MariaDB 11.4](what-is-mariadb-114.md) is a long-term development series of MariaDB. It is an evolution of [MariaDB 11.3](../old-releases/release-notes-mariadb-11-3-rolling-releases/what-is-mariadb-113.md) with several entirely new features.
 
